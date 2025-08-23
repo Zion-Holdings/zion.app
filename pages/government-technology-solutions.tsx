@@ -1,23 +1,26 @@
 import React from 'react';
-import Head from 'next/head';
+import ServiceLanding from '../components/sections/ServiceLanding';
 
-export default function GovernmentTechnologySolutionsPage() {
+export default function GovernmentTechnologySolutions() {
 	return (
-		<div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8 text-white">
-			<Head>
-				<title>Government Technology Solutions | Zion Tech Group</title>
-				<meta name="description" content="Digital transformation, citizen services, cybersecurity, and AI automation for government." />
-				<link rel="canonical" href="https://ziontechgroup.com/government-technology-solutions" />
-			</Head>
-			<div className="max-w-5xl mx-auto space-y-6">
-				<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Government Technology Solutions</h1>
-				<ul className="list-disc list-inside text-slate-300 space-y-1">
-					<li>Citizen service portals and automation</li>
-					<li>Data security, privacy, and compliance</li>
-					<li>AI assistants for casework and triage</li>
-					<li>Open data and analytics platforms</li>
-				</ul>
-			</div>
-		</div>
+		<ServiceLanding
+			title="Government Technology Solutions"
+			description="Secure, compliant AI and digital platforms for agencies—improving service delivery, transparency, and mission outcomes."
+			subtitle="Modernize with security and accountability"
+			pricePerMonthUSD={5999}
+			implementationWeeks="Implementation: 8-12 weeks"
+			roiNote="Faster services at lower cost with improved oversight"
+			features={[
+				"Case management and digital services",
+				"AI document processing and discovery",
+				"Citizen experience personalization",
+				"Security, logging, and data sovereignty",
+				"Accessibility and multilingual support",
+				"FedRAMP/SOC2 paths; integrations: ServiceNow, Salesforce"
+			]}
+			industries={["Federal", "State", "Local", "Defense"]}
+			ctaHref="/contact"
+			canonical="https://ziontechgroup.com/government-technology-solutions"
+		/>
 	);
 }

@@ -1,83 +1,59 @@
 #!/usr/bin/env node
 "use strict";
 
-const { spawnSync } = require("child_process");
+const { spawnSync, execSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
-const yaml = require("js-yaml");
 
 class ComprehensiveGitHubActionsRedundancy {
   constructor() {
     this.config = {
-      workflows: [
-        ".github/workflows/marketing-sync.yml",
-        ".github/workflows/sync-health.yml"
+      workflowsDir: ".github/workflows",
+      primaryWorkflows: [
+        "marketing-sync.yml",
+        "sync-health.yml"
       ],
       backupWorkflows: [
-        "automation/backup-workflows/marketing-sync-backup.yml",
-        "automation/backup-workflows/sync-health-backup.yml"
+        "marketing-sync-backup.yml",
+        "sync-health-backup.yml"
       ],
-      monitoring: {
-        healthCheckInterval: 60000,
-        workflowValidationInterval: 300000,
-        autoRetry: true,
-        maxRetryAttempts: 3,
-        backupTriggers: true
-      },
-      logging: {
-        logDir: "automation/logs",
-        logLevel: process.env.GITHUB_ACTIONS_REDUNDANCY_LOG_LEVEL || "INFO"
-      },
-      triggers: {
-        marketingSync: {
-          cron: "0 */12 * * *",
-          manual: true,
-          backupCron: "30 */12 * * *"
-        },
-        syncHealth: {
-          cron: "*/15 * * * *",
-          manual: true,
-          backupCron: "45 */15 * * * *"
-        }
+      criticalWorkflows: [
+        "marketing-sync.yml",
+        "sync-health.yml"
+      ],
+      healthCheckInterval: 60000,
+      maxFailureThreshold: 5,
+      logDir: "automation/logs",
+      gitConfig: {
+        userName: "github-actions[bot]",
+        userEmail: "41898282+github-actions[bot]@users.noreply.github.com"
       }
     };
     
+    this.stats = {
+      totalFailures: 0,
+      workflowFailures: {},
+      lastHealthCheck: null,
+      lastRecovery: null,
+      systemHealth: "healthy"
+    };
+    
     this.ensureLogDirectory();
-    this.ensureBackupWorkflowDirectory();
-    this.workflowStatus = new Map();
-    this.retryAttempts = new Map();
-    this.initializeMonitoring();
   }
 
   ensureLogDirectory() {
-    if (!fs.existsSync(this.config.logging.logDir)) {
-      fs.mkdirSync(this.config.logging.logDir, { recursive: true });
-    }
-  }
-
-  ensureBackupWorkflowDirectory() {
-    const backupDir = "automation/backup-workflows";
-    if (!fs.existsSync(backupDir)) {
-      fs.mkdirSync(backupDir, { recursive: true });
+    if (!fs.existsSync(this.config.logDir)) {
+      fs.mkdirSync(this.config.logDir, { recursive: true });
     }
   }
 
   log(message, level = "INFO") {
     const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] [${level}] [GITHUB-ACTIONS-REDUNDANCY] ${message}`;
+    const logEntry = `[${timestamp}] [${level}] ${message}`;
+    console.log(logEntry);
     
-    if (this.shouldLog(level)) {
-      console.log(logEntry);
-    }
-    
-    const logFile = path.join(this.config.logging.logDir, `github-actions-redundancy-${new Date().toISOString().split('T')[0]}.log`);
+    const logFile = path.join(this.config.logDir, `github-actions-redundancy-${new Date().toISOString().split('T')[0]}.log`);
     fs.appendFileSync(logFile, logEntry + "\n");
-  }
-
-  shouldLog(level) {
-    const levels = { DEBUG: 0, INFO: 1, WARN: 2, ERROR: 3 };
-    const currentLevel = levels[this.config.logging.logLevel] || 1;
-    return levels[level] >= currentLevel;
   }
 
   async runCommand(command, args = [], options = {}) {
@@ -88,6 +64,7 @@ class ComprehensiveGitHubActionsRedundancy {
         shell: false,
         encoding: "utf8",
         maxBuffer: 1024 * 1024 * 20,
+        timeout: 30000,
         ...options
       });
       
@@ -100,365 +77,466 @@ class ComprehensiveGitHubActionsRedundancy {
     });
   }
 
-  async validateWorkflowYAML(workflowPath) {
+  async checkGitStatus() {
     try {
-      if (!fs.existsSync(workflowPath)) {
-        this.log(`Workflow file ${workflowPath} not found`, "ERROR");
-        return false;
-      }
+      const result = await this.runCommand("git", ["status", "--porcelain"]);
+      return result.status === 0;
+    } catch (error) {
+      return false;
+    }
+  }
 
-      const content = fs.readFileSync(workflowPath, 'utf8');
+  async checkWorkflowFile(workflowFile) {
+    const fullPath = path.join(this.config.workflowsDir, workflowFile);
+    
+    if (!fs.existsSync(fullPath)) {
+      return { exists: false, valid: false, error: "File not found" };
+    }
+
+    try {
+      const content = fs.readFileSync(fullPath, 'utf8');
       
       // Basic YAML validation
-      try {
-        yaml.load(content);
-      } catch (yamlError) {
-        this.log(`Invalid YAML in ${workflowPath}: ${yamlError.message}`, "ERROR");
-        return false;
+      if (!content.includes('name:') || !content.includes('on:')) {
+        return { exists: true, valid: false, error: "Invalid workflow syntax" };
       }
 
-      // Check for required workflow components
-      const hasName = content.includes('name:');
-      const hasOn = content.includes('on:');
-      const hasJobs = content.includes('jobs:');
+      // Check for required sections
+      const requiredSections = ['name', 'on', 'jobs'];
+      const missingSections = requiredSections.filter(section => !content.includes(`${section}:`));
       
-      if (!hasName || !hasOn || !hasJobs) {
-        this.log(`Workflow ${workflowPath} missing required components`, "WARN");
-        return false;
+      if (missingSections.length > 0) {
+        return { exists: true, valid: false, error: `Missing required sections: ${missingSections.join(', ')}` };
       }
 
-      // Check for cron schedules
-      const hasCron = content.includes('cron:');
-      const hasWorkflowDispatch = content.includes('workflow_dispatch:');
-      
-      if (!hasCron && !hasWorkflowDispatch) {
-        this.log(`Workflow ${workflowPath} missing trigger configuration`, "WARN");
-        return false;
-      }
-
-      this.log(`Workflow ${workflowPath} validation passed`);
-      return true;
+      return { exists: true, valid: true, error: null };
     } catch (error) {
-      this.log(`Workflow validation failed for ${workflowPath}: ${error.message}`, "ERROR");
+      return { exists: true, valid: false, error: error.message };
+    }
+  }
+
+  async validateWorkflow(workflowFile) {
+    this.log(`🔍 Validating workflow: ${workflowFile}`);
+    
+    const validation = await this.checkWorkflowFile(workflowFile);
+    
+    if (!validation.exists) {
+      this.log(`❌ Workflow file not found: ${workflowFile}`, "ERROR");
       return false;
     }
-  }
 
-  async checkWorkflowHealth(workflowPath) {
-    try {
-      const isValid = await this.validateWorkflowYAML(workflowPath);
-      
-      if (!isValid) {
-        this.workflowStatus.set(workflowPath, { status: "invalid", healthy: false, lastCheck: Date.now() });
-        return { status: "invalid", healthy: false };
-      }
-
-      // Check if workflow can be triggered manually
-      const content = fs.readFileSync(workflowPath, 'utf8');
-      const canTriggerManually = content.includes('workflow_dispatch:');
-      
-      // Check if workflow has proper permissions
-      const hasPermissions = content.includes('permissions:');
-      
-      const status = "valid";
-      const healthy = isValid && canTriggerManually && hasPermissions;
-      
-      this.workflowStatus.set(workflowPath, { status, healthy, lastCheck: Date.now() });
-      
-      return { status, healthy, canTriggerManually, hasPermissions };
-    } catch (error) {
-      this.log(`Health check failed for ${workflowPath}: ${error.message}`, "ERROR");
-      return { status: "error", healthy: false };
+    if (!validation.valid) {
+      this.log(`⚠️ Workflow validation failed: ${workflowFile} - ${validation.error}`, "WARN");
+      return false;
     }
+
+    this.log(`✅ Workflow validation passed: ${workflowFile}`);
+    return true;
   }
 
-  async createBackupWorkflow(workflowPath) {
+  async createBackupWorkflow(workflowFile) {
+    const sourcePath = path.join(this.config.workflowsDir, workflowFile);
+    const backupPath = path.join(this.config.workflowsDir, workflowFile.replace('.yml', '-backup.yml'));
+    
     try {
-      const workflowName = path.basename(workflowPath, '.yml');
-      const backupPath = `automation/backup-workflows/${workflowName}-backup.yml`;
-      
-      if (fs.existsSync(backupPath)) {
-        this.log(`Backup workflow ${backupPath} already exists`);
-        return backupPath;
-      }
-
-      const content = fs.readFileSync(workflowPath, 'utf8');
-      
-      // Modify the backup workflow to run as a backup
-      let backupContent = content;
-      
-      // Add backup identifier to name
-      backupContent = backupContent.replace(/^name:\s*(.+)$/m, 'name: $1 (Backup)');
-      
-      // Modify cron schedule to run at different times
-      if (workflowName.includes('marketing-sync')) {
-        backupContent = backupContent.replace(/cron:\s*'0 \*\/12 \* \* \*'/g, "cron: '30 */12 * * *'");
-      } else if (workflowName.includes('sync-health')) {
-        backupContent = backupContent.replace(/cron:\s*'\*\/15 \* \* \* \*'/g, "cron: '45 */15 * * * *'");
-      }
-      
-      // Add backup environment variable
-      backupContent = backupContent.replace(/env:/g, 'env:\n          IS_BACKUP: "true"');
-      
-      fs.writeFileSync(backupPath, backupContent);
-      this.log(`Backup workflow created: ${backupPath}`);
-      
-      return backupPath;
-    } catch (error) {
-      this.log(`Failed to create backup workflow for ${workflowPath}: ${error.message}`, "ERROR");
-      return null;
-    }
-  }
-
-  async triggerWorkflow(workflowPath, manual = false) {
-    try {
-      if (!fs.existsSync(workflowPath)) {
-        this.log(`Workflow file ${workflowPath} not found`, "ERROR");
-        return false;
-      }
-
-      if (manual) {
-        this.log(`Manually triggering workflow: ${workflowPath}`);
-        
-        // Use GitHub CLI if available
-        try {
-          const result = await this.runCommand("gh", ["workflow", "run", path.basename(workflowPath, '.yml')]);
-          if (result.status === 0) {
-            this.log(`Workflow ${workflowPath} triggered successfully via GitHub CLI`);
-            return true;
-          }
-        } catch (error) {
-          this.log("GitHub CLI not available, using alternative trigger method", "WARN");
-        }
-        
-        // Alternative: commit a trigger file
-        const triggerFile = `automation/triggers/${path.basename(workflowPath, '.yml')}-trigger.txt`;
-        const triggerDir = path.dirname(triggerFile);
-        
-        if (!fs.existsSync(triggerDir)) {
-          fs.mkdirSync(triggerDir, { recursive: true });
-        }
-        
-        fs.writeFileSync(triggerFile, `Triggered at ${new Date().toISOString()}`);
-        
-        // Commit and push the trigger
-        await this.runCommand("git", ["add", triggerFile]);
-        await this.runCommand("git", ["commit", "-m", `Trigger ${path.basename(workflowPath, '.yml')} workflow`]);
-        await this.runCommand("git", ["push", "origin", "main"]);
-        
-        this.log(`Workflow ${workflowPath} triggered via file commit`);
+      if (fs.existsSync(sourcePath)) {
+        fs.copyFileSync(sourcePath, backupPath);
+        this.log(`✅ Created backup workflow: ${backupPath}`);
         return true;
+      } else {
+        this.log(`⚠️ Source workflow not found for backup: ${sourcePath}`, "WARN");
+        return false;
       }
-      
-      return true;
     } catch (error) {
-      this.log(`Failed to trigger workflow ${workflowPath}: ${error.message}`, "ERROR");
+      this.log(`❌ Failed to create backup workflow: ${error.message}`, "ERROR");
       return false;
     }
   }
 
-  async performWorkflowRecovery(workflowPath) {
-    const attempts = this.retryAttempts.get(workflowPath) || 0;
+  async restoreWorkflowFromBackup(workflowFile) {
+    const backupPath = path.join(this.config.workflowsDir, workflowFile.replace('.yml', '-backup.yml'));
+    const targetPath = path.join(this.config.workflowsDir, workflowFile);
     
-    if (attempts >= this.config.monitoring.maxRetryAttempts) {
-      this.log(`Max retry attempts reached for ${workflowPath}, skipping recovery`, "WARN");
+    try {
+      if (fs.existsSync(backupPath)) {
+        fs.copyFileSync(backupPath, targetPath);
+        this.log(`✅ Restored workflow from backup: ${workflowFile}`);
+        return true;
+      } else {
+        this.log(`⚠️ Backup workflow not found: ${backupPath}`, "WARN");
+        return false;
+      }
+    } catch (error) {
+      this.log(`❌ Failed to restore workflow from backup: ${error.message}`, "ERROR");
       return false;
     }
-    
-    this.log(`Attempting recovery for ${workflowPath} (attempt ${attempts + 1})`);
-    
-    // Try to trigger the workflow
-    let recovered = await this.triggerWorkflow(workflowPath, true);
-    
-    if (recovered) {
-      this.retryAttempts.set(workflowPath, 0);
-      this.log(`Workflow ${workflowPath} recovery successful`);
-    } else {
-      this.retryAttempts.set(workflowPath, attempts + 1);
-      this.log(`Workflow ${workflowPath} recovery failed`, "ERROR");
-    }
-    
-    return recovered;
   }
 
-  async checkAllWorkflows() {
-    this.log("Checking all GitHub Actions workflows...");
+  async regenerateWorkflow(workflowFile) {
+    this.log(`🔄 Attempting to regenerate workflow: ${workflowFile}`);
+    
+    try {
+      // Try to restore from backup first
+      const restored = await this.restoreWorkflowFromBackup(workflowFile);
+      
+      if (restored) {
+        // Validate the restored workflow
+        const valid = await this.validateWorkflow(workflowFile);
+        if (valid) {
+          this.log(`✅ Successfully regenerated workflow: ${workflowFile}`);
+          return true;
+        }
+      }
+
+      // If backup restoration failed, try to create a basic workflow
+      return await this.createBasicWorkflow(workflowFile);
+    } catch (error) {
+      this.log(`❌ Error regenerating workflow: ${error.message}`, "ERROR");
+      return false;
+    }
+  }
+
+  async createBasicWorkflow(workflowFile) {
+    this.log(`🔄 Creating basic workflow: ${workflowFile}`);
+    
+    let workflowContent = '';
+    
+    if (workflowFile === 'marketing-sync.yml') {
+      workflowContent = `name: Marketing Sync
+
+on:
+  schedule:
+    - cron: '0 */12 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  run-marketing-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run marketing-sync
+        env:
+          LINKEDIN_ACCESS_TOKEN: \${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_URN: \${{ secrets.LINKEDIN_URN }}
+          IG_USER_ID: \${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: \${{ secrets.IG_ACCESS_TOKEN }}
+        run: node automation/marketing-sync.js
+
+      - name: Commit report if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "\$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "chore(marketing): update marketing-sync report"
+            git push origin HEAD:main
+          else
+            echo "No changes to commit."
+          fi`;
+    } else if (workflowFile === 'sync-health.yml') {
+      workflowContent = `name: Sync Health
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run pm2-auto-sync (safe mode)
+        env:
+          AUTO_SYNC_STRATEGY: hardreset
+          AUTO_SYNC_CLEAN: '0'
+        run: node automation/pm2-auto-sync.js || true
+
+      - name: Push if repository is ahead
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          AHEAD=\$(git rev-list --left-right --count HEAD...origin/main | awk '{print \$1}')
+          if [ "\$AHEAD" != "0" ]; then
+            git push origin HEAD:main
+          else
+            echo "No push needed."
+          fi`;
+    }
+
+    if (workflowContent) {
+      try {
+        const workflowPath = path.join(this.config.workflowsDir, workflowFile);
+        fs.writeFileSync(workflowPath, workflowContent);
+        this.log(`✅ Created basic workflow: ${workflowFile}`);
+        return true;
+      } catch (error) {
+        this.log(`❌ Failed to create basic workflow: ${error.message}`, "ERROR");
+        return false;
+      }
+    }
+
+    return false;
+  }
+
+  async performHealthCheck() {
+    this.log("🔍 Performing comprehensive GitHub Actions health check...");
     
     let allHealthy = true;
-    
-    for (const workflowPath of this.config.workflows) {
-      const workflowHealth = await this.checkWorkflowHealth(workflowPath);
+    const failedWorkflows = [];
+    const allWorkflows = [...this.config.primaryWorkflows, ...this.config.backupWorkflows];
+
+    // Check if workflows directory exists
+    if (!fs.existsSync(this.config.workflowsDir)) {
+      this.log(`⚠️ Workflows directory not found: ${this.config.workflowsDir}`, "WARN");
+      fs.mkdirSync(this.config.workflowsDir, { recursive: true });
+      this.log(`✅ Created workflows directory: ${this.config.workflowsDir}`);
+    }
+
+    // Validate all workflows
+    for (const workflow of allWorkflows) {
+      const valid = await this.validateWorkflow(workflow);
       
-      if (!workflowHealth.healthy) {
+      if (!valid) {
+        failedWorkflows.push(workflow);
         allHealthy = false;
-        this.log(`Workflow ${workflowPath} is unhealthy (${workflowHealth.status})`, "WARN");
         
-        if (this.config.monitoring.autoRetry) {
-          await this.performWorkflowRecovery(workflowPath);
-        }
-      } else {
-        this.log(`Workflow ${workflowPath} is healthy`);
+        // Track failures
+        this.stats.workflowFailures[workflow] = (this.stats.workflowFailures[workflow] || 0) + 1;
+        this.stats.totalFailures++;
       }
     }
-    
-    if (allHealthy) {
-      this.log("All GitHub Actions workflows are healthy");
-    } else {
-      this.log("Some GitHub Actions workflows need attention", "WARN");
+
+    // Check critical workflows specifically
+    for (const workflow of this.config.criticalWorkflows) {
+      const valid = await this.validateWorkflow(workflow);
+      
+      if (!valid) {
+        this.log(`🚨 Critical workflow failed: ${workflow}`, "ERROR");
+        
+        // Attempt immediate recovery for critical workflows
+        const recovered = await this.regenerateWorkflow(workflow);
+        if (recovered) {
+          this.log(`✅ Successfully recovered critical workflow: ${workflow}`);
+        } else {
+          this.log(`❌ Failed to recover critical workflow: ${workflow}`, "ERROR");
+        }
+      }
     }
+
+    if (failedWorkflows.length > 0) {
+      this.log(`🔄 Found ${failedWorkflows.length} failed workflows: ${failedWorkflows.join(", ")}`, "WARN");
+      
+      // Attempt recovery for non-critical workflows
+      for (const workflow of failedWorkflows) {
+        if (!this.config.criticalWorkflows.includes(workflow)) {
+          const recovered = await this.regenerateWorkflow(workflow);
+          if (recovered) {
+            this.log(`✅ Successfully recovered workflow: ${workflow}`);
+          }
+        }
+      }
+    }
+
+    this.stats.lastHealthCheck = new Date().toISOString();
+    this.updateSystemHealth();
     
     return allHealthy;
   }
 
-  async createBackupWorkflows() {
-    this.log("Creating backup workflows...");
+  async performRecovery() {
+    this.log("🚨 Performing GitHub Actions recovery actions...");
     
-    for (const workflowPath of this.config.workflows) {
-      if (fs.existsSync(workflowPath)) {
-        await this.createBackupWorkflow(workflowPath);
+    try {
+      // Ensure all backup workflows exist
+      for (const workflow of this.config.primaryWorkflows) {
+        await this.createBackupWorkflow(workflow);
       }
+
+      // Attempt to restore all failed workflows
+      const allWorkflows = [...this.config.primaryWorkflows, ...this.config.backupWorkflows];
+      let recoveryCount = 0;
+
+      for (const workflow of allWorkflows) {
+        const validation = await this.checkWorkflowFile(workflow);
+        
+        if (!validation.valid) {
+          const recovered = await this.regenerateWorkflow(workflow);
+          if (recovered) recoveryCount++;
+        }
+      }
+
+      this.stats.lastRecovery = new Date().toISOString();
+      this.log(`✅ Recovery completed. Recovered ${recoveryCount} workflows.`);
+      
+      return recoveryCount;
+    } catch (error) {
+      this.log(`❌ Recovery failed: ${error.message}`, "ERROR");
+      return 0;
     }
-    
-    this.log("Backup workflows creation completed");
   }
 
-  async validateAllWorkflows() {
-    this.log("Validating all workflows...");
-    
-    let allValid = true;
-    
-    for (const workflowPath of this.config.workflows) {
-      const isValid = await this.validateWorkflowYAML(workflowPath);
-      if (!isValid) {
-        allValid = false;
+  async commitAndPushChanges() {
+    try {
+      const gitStatus = await this.runCommand("git", ["status", "--porcelain"]);
+      
+      if (gitStatus.stdout.trim()) {
+        this.log("📝 Committing workflow changes...");
+        
+        // Configure git
+        await this.runCommand("git", ["config", "user.name", this.config.gitConfig.userName]);
+        await this.runCommand("git", ["config", "user.email", this.config.gitConfig.userEmail]);
+        
+        // Add and commit changes
+        await this.runCommand("git", ["add", this.config.workflowsDir]);
+        await this.runCommand("git", ["commit", "-m", "ci(workflows): restore and regenerate workflows [skip ci]"]);
+        
+        // Push changes
+        const pushResult = await this.runCommand("git", ["push", "origin", "HEAD:main"]);
+        
+        if (pushResult.status === 0) {
+          this.log("✅ Successfully pushed workflow changes");
+          return true;
+        } else {
+          this.log(`⚠️ Failed to push changes: ${pushResult.stderr}`, "WARN");
+          return false;
+        }
+      } else {
+        this.log("ℹ️ No workflow changes to commit");
+        return true;
       }
+    } catch (error) {
+      this.log(`❌ Error committing changes: ${error.message}`, "ERROR");
+      return false;
     }
-    
-    if (allValid) {
-      this.log("All workflows validation passed");
+  }
+
+  updateSystemHealth() {
+    if (this.stats.totalFailures === 0) {
+      this.stats.systemHealth = "healthy";
+    } else if (this.stats.totalFailures <= this.config.maxFailureThreshold) {
+      this.stats.systemHealth = "warning";
     } else {
-      this.log("Some workflows have validation issues", "WARN");
+      this.stats.systemHealth = "critical";
     }
-    
-    return allValid;
   }
 
-  async setupBackupTriggers() {
-    if (!this.config.monitoring.backupTriggers) {
-      return;
-    }
-    
-    this.log("Setting up backup triggers...");
-    
-    // Create a backup trigger script
-    const triggerScript = `#!/bin/bash
-# Backup trigger script for GitHub Actions workflows
+  async generateReport() {
+    const report = {
+      timestamp: new Date().toISOString(),
+      systemHealth: this.stats.systemHealth,
+      stats: this.stats,
+      config: {
+        primaryWorkflows: this.config.primaryWorkflows.length,
+        backupWorkflows: this.config.backupWorkflows.length,
+        criticalWorkflows: this.config.criticalWorkflows.length
+      }
+    };
 
-cd "$(dirname "$0")/.."
-
-# Trigger marketing sync backup
-if [ -f "automation/backup-workflows/marketing-sync-backup.yml" ]; then
-  echo "Triggering marketing sync backup workflow..."
-  git add automation/backup-workflows/marketing-sync-backup.yml
-  git commit -m "Trigger marketing sync backup workflow" || true
-  git push origin main || true
-fi
-
-# Trigger sync health backup
-if [ -f "automation/backup-workflows/sync-health-backup.yml" ]; then
-  echo "Triggering sync health backup workflow..."
-  git add automation/backup-workflows/sync-health-backup.yml
-  git commit -m "Trigger sync health backup workflow" || true
-  git push origin main || true
-fi
-
-echo "Backup triggers completed"
-`;
+    const reportFile = path.join(this.config.logDir, `github-actions-redundancy-report-${new Date().toISOString().split('T')[0]}.json`);
+    fs.writeFileSync(reportFile, JSON.stringify(report, null, 2));
     
-    const scriptPath = "automation/backup-triggers.sh";
-    fs.writeFileSync(scriptPath, triggerScript);
-    fs.chmodSync(scriptPath, '755');
-    
-    this.log("Backup trigger script created");
+    return report;
   }
 
-  initializeMonitoring() {
-    this.log("Initializing GitHub Actions redundancy monitoring...");
+  async startMonitoring() {
+    this.log("🚀 Starting comprehensive GitHub Actions redundancy monitoring...");
     
-    // Set up process monitoring
-    process.on('SIGINT', () => {
-      this.log("Received SIGINT, shutting down gracefully...");
-      this.shutdown();
-    });
+    // Initial health check
+    await this.performHealthCheck();
     
-    process.on('SIGTERM', () => {
-      this.log("Received SIGTERM, shutting down gracefully...");
-      this.shutdown();
-    });
+    // Start monitoring loop
+    setInterval(async () => {
+      await this.performHealthCheck();
+      await this.generateReport();
+    }, this.config.healthCheckInterval);
     
-    // Start periodic health checks
-    setInterval(() => {
-      this.checkAllWorkflows();
-    }, this.config.monitoring.healthCheckInterval);
-    
-    // Start periodic workflow validation
-    setInterval(() => {
-      this.validateAllWorkflows();
-    }, this.config.monitoring.workflowValidationInterval);
-    
-    // Initial setup
-    setTimeout(async () => {
-      await this.createBackupWorkflows();
-      await this.setupBackupTriggers();
-      await this.checkAllWorkflows();
-    }, 5000);
+    this.log("✅ GitHub Actions redundancy monitoring started");
   }
 
-  async shutdown() {
-    this.log("Shutting down GitHub Actions redundancy system...");
-    
-    // Save final status
-    const statusFile = path.join(this.config.logging.logDir, "github-actions-redundancy-status.json");
-    const statusData = {
-      workflowStatus: Object.fromEntries(this.workflowStatus),
-      retryAttempts: Object.fromEntries(this.retryAttempts),
-      timestamp: new Date().toISOString()
+  async getStatus() {
+    const status = {
+      workflowsDir: this.config.workflowsDir,
+      primaryWorkflows: this.config.primaryWorkflows,
+      backupWorkflows: this.config.backupWorkflows,
+      criticalWorkflows: this.config.criticalWorkflows,
+      stats: this.stats
     };
     
-    fs.writeFileSync(statusFile, JSON.stringify(statusData, null, 2));
-    
-    this.log("GitHub Actions redundancy system shutdown complete");
-    process.exit(0);
-  }
-
-  getStatus() {
-    return {
-      status: "running",
-      uptime: process.uptime(),
-      workflowStatus: Object.fromEntries(this.workflowStatus),
-      retryAttempts: Object.fromEntries(this.retryAttempts),
-      config: this.config,
-      timestamp: new Date().toISOString()
-    };
-  }
-
-  async runRecovery() {
-    this.log("Running GitHub Actions recovery...");
-    return await this.checkAllWorkflows();
+    return status;
   }
 }
 
-// Start the system if this file is run directly
+// CLI interface
 if (require.main === module) {
-  const system = new ComprehensiveGitHubActionsRedundancy();
+  const manager = new ComprehensiveGitHubActionsRedundancy();
   
-  // Keep the process alive
-  process.stdin.resume();
+  const command = process.argv[2];
   
-  // Handle graceful shutdown
-  process.on('SIGINT', () => {
-    system.shutdown();
-  });
+  switch (command) {
+    case 'start':
+      manager.startMonitoring();
+      break;
+    case 'health':
+      manager.performHealthCheck().then(healthy => {
+        console.log(`System health: ${healthy ? '✅ Healthy' : '❌ Unhealthy'}`);
+        process.exit(healthy ? 0 : 1);
+      });
+      break;
+    case 'recovery':
+      manager.performRecovery().then(count => {
+        console.log(`Recovery completed. Recovered ${count} workflows.`);
+        process.exit(0);
+      });
+      break;
+    case 'validate':
+      Promise.all(manager.config.primaryWorkflows.map(w => manager.validateWorkflow(w)))
+        .then(results => {
+          const valid = results.every(r => r);
+          console.log(`Validation result: ${valid ? '✅ All valid' : '❌ Some invalid'}`);
+          process.exit(valid ? 0 : 1);
+        });
+      break;
+    case 'backup':
+      Promise.all(manager.config.primaryWorkflows.map(w => manager.createBackupWorkflow(w)))
+        .then(results => {
+          const success = results.every(r => r);
+          console.log(`Backup result: ${success ? '✅ All backed up' : '❌ Some failed'}`);
+          process.exit(success ? 0 : 1);
+        });
+      break;
+    case 'status':
+      manager.getStatus().then(status => {
+        console.log(JSON.stringify(status, null, 2));
+        process.exit(0);
+      });
+      break;
+    default:
+      console.log('Usage: node comprehensive-github-actions-redundancy.cjs [start|health|recovery|validate|backup|status]');
+      process.exit(1);
+  }
 }
 
 module.exports = ComprehensiveGitHubActionsRedundancy;

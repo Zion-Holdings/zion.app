@@ -1,22 +1,33 @@
+import React from 'react';
 import Head from 'next/head';
+import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
+import Card from '../components/ui/Card';
 
 export default function ChatPage() {
+	const contactInfo = {
+		mobile: '+1 302 464 0950',
+		email: 'kleber@ziontechgroup.com',
+		address: '364 E Main St STE 1008 Middletown DE 19709',
+		website: 'https://ziontechgroup.com'
+	};
+
 	return (
-		<>
+		<UltraFuturisticBackground variant="quantum" intensity="high">
 			<Head>
 				<title>Live Chat | Zion Tech Group</title>
 				<link rel="canonical" href="https://ziontechgroup.com/chat" />
+				<meta name="description" content="Chat with Zion Tech Group about AI, cloud, and micro SaaS services. Fast responses and expert guidance." />
 			</Head>
-			<div className="min-h-screen bg-black text-white pt-24">
-				<div className="max-w-3xl mx-auto p-6">
-					<h1 className="text-4xl font-bold mb-4">Live Chat</h1>
-					<p className="text-gray-300 mb-6">Chat is coming soon. Reach us now via phone or email.</p>
-					<div className="flex gap-4">
-						<a href="tel:+13024640950" className="px-6 py-3 bg-gray-800 rounded">Call +1 302 464 0950</a>
-						<a href="mailto:kleber@ziontechgroup.com" className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded text-white">Email Us</a>
-					</div>
+			<div className="container mx-auto px-4 py-16 text-white">
+				<div className="max-w-3xl mx-auto space-y-6">
+					<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent text-center">Live Chat</h1>
+					<Card className="p-6 bg-black/50 border border-gray-700/60 text-center">
+						<div className="text-gray-300">Live chat integration will appear here. Meanwhile, contact us:</div>
+						<div className="mt-4 text-gray-200">{contactInfo.mobile} • {contactInfo.email}</div>
+						<div className="mt-2 text-gray-400 text-sm">Address: {contactInfo.address}</div>
+					</Card>
 				</div>
 			</div>
-		</>
+		</UltraFuturisticBackground>
 	);
 }

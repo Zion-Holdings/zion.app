@@ -1,214 +1,401 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { Atom, Brain, Zap, Target, Shield, Globe, ArrowRight, Star, CheckCircle, Rocket, Cpu, Cloud, Network, Heart, Eye, Code, Palette, TrendingUp, Users, Lock, Infinity, CpuIcon, Database, Server } from 'lucide-react';
 import Layout from '../components/layout/Layout';
-import { Atom, Brain, Zap, Network, Cpu, Target, Users, Award, Clock, CheckCircle } from 'lucide-react';
+import SEO from '../components/SEO';
 
-export default function QuantumNeuralEcosystem2040() {
+const QuantumNeuralEcosystem2040: React.FC = () => {
+  const features = [
+    {
+      icon: <Atom className="w-8 h-8" />,
+      title: "Quantum Processing",
+      description: "Revolutionary quantum computing power for neural network operations",
+      color: "from-blue-500 to-cyan-500"
+    },
+    {
+      icon: <Brain className="w-8 h-8" />,
+      title: "Neural Integration",
+      description: "Seamless integration of quantum and classical neural networks",
+      color: "from-purple-500 to-pink-500"
+    },
+    {
+              icon: <Cpu className="w-8 h-8" />,
+      title: "Quantum Circuits",
+      description: "Advanced quantum circuit design for neural processing",
+      color: "from-green-500 to-emerald-500"
+    },
+    {
+      icon: <Zap className="w-8 h-8" />,
+      title: "Lightning Speed",
+      description: "Exponential performance improvements over classical systems",
+      color: "from-yellow-500 to-orange-500"
+    }
+  ];
+
+  const capabilities = [
+    "Quantum neural network training",
+    "Superposition-based learning",
+    "Entanglement-enhanced processing",
+    "Quantum error correction",
+    "Hybrid quantum-classical systems",
+    "Quantum memory optimization",
+    "Quantum algorithm acceleration",
+    "Neural quantum state preparation",
+    "Quantum neural architecture search",
+    "Quantum neural network compression"
+  ];
+
+  const applications = [
+    {
+      title: "Drug Discovery",
+      description: "Quantum-powered molecular simulations and drug design",
+      icon: <Atom className="w-6 h-6" />
+    },
+    {
+      title: "Financial Modeling",
+      description: "Quantum neural networks for risk assessment and trading",
+      icon: <TrendingUp className="w-6 h-6" />
+    },
+    {
+      title: "Climate Prediction",
+      description: "Advanced climate modeling with quantum neural systems",
+      icon: <Globe className="w-6 h-6" />
+    },
+    {
+      title: "AI Research",
+      description: "Breakthrough AI capabilities through quantum enhancement",
+      icon: <Brain className="w-6 h-6" />
+    }
+  ];
+
+  const quantumAdvantages = [
+    {
+      title: "Exponential Speedup",
+      description: "Up to 1000x faster than classical neural networks",
+      icon: <Zap className="w-8 h-8" />,
+      color: "from-yellow-500 to-orange-500"
+    },
+    {
+      title: "Quantum Memory",
+      description: "Unlimited memory capacity through quantum superposition",
+      icon: <Database className="w-8 h-8" />,
+      color: "from-blue-500 to-cyan-500"
+    },
+    {
+      title: "Parallel Processing",
+      description: "Simultaneous processing of multiple neural pathways",
+      icon: <Server className="w-8 h-8" />,
+      color: "from-green-500 to-emerald-500"
+    },
+    {
+      title: "Quantum Entanglement",
+      description: "Instant information transfer across neural networks",
+      icon: <Network className="w-8 h-8" />,
+      color: "from-purple-500 to-pink-500"
+    }
+  ];
+
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
-        {/* Hero Section */}
-        <section className="relative py-20 px-4 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-cyan-500/10 to-blue-500/10"></div>
-          <div className="relative z-10 max-w-7xl mx-auto text-center">
-            <div className="mb-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30 rounded-full text-blue-300 text-sm mb-6">
-                <Atom className="w-4 h-4" />
-                Revolutionary 2040 Technology
-              </div>
-              <h1 className="text-5xl md:text-7xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                  Quantum Neural Ecosystem
-                </span>
-                <br />
-                <span className="text-white">2040</span>
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
-                Experience the future of computing with our revolutionary quantum neural ecosystem, 
-                combining quantum computing power with advanced neural network architectures.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105">
-                  Explore Ecosystem
-                </button>
-                <button className="px-8 py-4 border-2 border-blue-400 text-blue-400 font-semibold rounded-xl hover:bg-blue-400 hover:text-black transition-all duration-300">
-                  Learn More
-                </button>
-              </div>
+      <SEO 
+        title="Quantum Neural Ecosystem 2040 | Zion Tech Group"
+        description="Revolutionary quantum neural network systems with exponential performance improvements. Experience the future of AI with quantum-powered neural processing."
+        keywords={["quantum neural networks", "quantum computing", "AI", "neural networks", "quantum AI", "2040 technology", "Zion Tech Group"]}
+        canonical="https://ziontechgroup.com/quantum-neural-ecosystem-2040"
+      />
+      
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-black to-cyan-900/20" />
+        <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="mb-8"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30 rounded-full text-blue-300 text-sm mb-6">
+              <Atom className="w-4 h-4" />
+              Revolutionary 2040 Technology
             </div>
-          </div>
-        </section>
-
-        {/* Features Grid */}
-        <section className="py-20 px-4">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Revolutionary Quantum Neural Features
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Our quantum neural ecosystem represents the convergence of quantum mechanics and artificial intelligence, 
-                creating unprecedented computational capabilities.
-              </p>
+            <h1 className="text-6xl md:text-8xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-green-400 bg-clip-text text-transparent">
+                Quantum Neural
+              </span>
+              <br />
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                Ecosystem 2040
+              </span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
+              Experience the revolutionary fusion of quantum computing and neural networks, 
+              delivering exponential performance improvements and unprecedented AI capabilities.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-cyan-700 transition-all duration-300 shadow-lg shadow-blue-500/25"
+              >
+                Experience Quantum Power
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 border-2 border-blue-400 text-blue-400 font-semibold rounded-xl hover:bg-blue-400 hover:text-black transition-all duration-300"
+              >
+                Learn More
+              </motion.button>
             </div>
+          </motion.div>
+        </div>
+        
+        {/* Floating Elements */}
+        <motion.div
+          animate={{ 
+            y: [0, -20, 0],
+            rotate: [0, 5, 0]
+          }}
+          transition={{ 
+            duration: 6,
+            repeat: -1,
+            ease: "easeInOut"
+          }}
+          className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{ 
+            y: [0, 20, 0],
+            rotate: [0, -5, 0]
+          }}
+          transition={{ 
+            duration: 8,
+            repeat: -1,
+            ease: "easeInOut"
+          }}
+          className="absolute bottom-20 left-20 w-40 h-40 bg-gradient-to-r from-cyan-500/20 to-green-500/20 rounded-full blur-3xl"
+        />
+      </section>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: <Atom className="w-8 h-8" />,
-                  title: "Quantum Supremacy",
-                  description: "Achieve computational power beyond classical computing limitations with quantum algorithms.",
-                  color: "from-blue-500 to-cyan-500"
-                },
-                {
-                  icon: <Brain className="w-8 h-8" />,
-                  title: "Neural Quantum Processing",
-                  description: "Advanced neural networks optimized for quantum computing architectures.",
-                  color: "from-purple-500 to-pink-500"
-                },
-                {
-                  icon: <Zap className="w-8 h-8" />,
-                  title: "Quantum Speed Acceleration",
-                  description: "Exponential speed improvements for complex computational tasks.",
-                  color: "from-yellow-500 to-orange-500"
-                },
-                {
-                  icon: <Network className="w-8 h-8" />,
-                  title: "Distributed Quantum Computing",
-                  description: "Scalable quantum computing across multiple quantum nodes.",
-                  color: "from-green-500 to-emerald-500"
-                },
-                {
-                  icon: <Cpu className="w-8 h-8" />,
-                  title: "Hybrid Classical-Quantum",
-                  description: "Seamless integration between classical and quantum computing systems.",
-                  color: "from-red-500 to-pink-500"
-                },
-                {
-                  icon: <Target className="w-8 h-8" />,
-                  title: "Quantum Machine Learning",
-                  description: "Advanced ML algorithms leveraging quantum computing advantages.",
-                  color: "from-indigo-500 to-purple-500"
-                }
-              ].map((feature, index) => (
-                <div key={index} className="group p-8 bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 rounded-2xl hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105">
+      {/* Features Section */}
+      <section className="py-20 relative">
+        <div className="max-w-7xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                Revolutionary Features
+              </span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Discover the cutting-edge capabilities that make our quantum neural ecosystem 
+              the most advanced in the world.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                className="group"
+              >
+                <div className={`p-8 rounded-2xl bg-gradient-to-br ${feature.color} bg-opacity-10 border border-white/10 hover:border-white/20 transition-all duration-300 group-hover:scale-105`}>
                   <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${feature.color} p-4 mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     {feature.icon}
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-4">{feature.title}</h3>
-                  <p className="text-gray-400">{feature.description}</p>
+                  <h3 className="text-xl font-semibold mb-4 text-white">{feature.title}</h3>
+                  <p className="text-gray-300">{feature.description}</p>
                 </div>
-              ))}
-            </div>
+              </motion.div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Technology Stack */}
-        <section className="py-20 px-4 bg-gradient-to-r from-gray-900/50 to-black/50">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Advanced Quantum Technology Stack
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Built on the most advanced quantum technologies available in 2040, ensuring unparalleled computational power.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                "Quantum Qubit Management",
-                "Quantum Error Correction",
-                "Quantum Entanglement Networks",
-                "Neural Quantum Interfaces",
-                "Quantum-Classical Bridges",
-                "Quantum Memory Systems",
-                "Quantum Security Protocols",
-                "Quantum Optimization Engines"
-              ].map((tech, index) => (
-                <div key={index} className="flex items-center gap-3 p-4 bg-gray-800/30 border border-gray-700/30 rounded-xl">
-                  <CheckCircle className="w-5 h-5 text-green-400" />
-                  <span className="text-gray-300">{tech}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Use Cases */}
-        <section className="py-20 px-4">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Revolutionary Use Cases
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Our quantum neural ecosystem enables breakthrough applications across industries.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "Drug Discovery",
-                  description: "Accelerate pharmaceutical research with quantum molecular simulations.",
-                  icon: "🧬"
-                },
-                {
-                  title: "Financial Modeling",
-                  description: "Revolutionary risk assessment and portfolio optimization capabilities.",
-                  icon: "💰"
-                },
-                {
-                  title: "Climate Modeling",
-                  description: "Advanced climate prediction and environmental impact analysis.",
-                  icon: "🌍"
-                },
-                {
-                  title: "AI Training",
-                  description: "Exponentially faster training of complex neural networks.",
-                  icon: "🤖"
-                },
-                {
-                  title: "Cryptography",
-                  description: "Next-generation quantum-resistant encryption and security.",
-                  icon: "🔐"
-                },
-                {
-                  title: "Logistics Optimization",
-                  description: "Complex supply chain and routing optimization in real-time.",
-                  icon: "🚚"
-                }
-              ].map((useCase, index) => (
-                <div key={index} className="p-8 bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 rounded-2xl hover:border-blue-500/50 transition-all duration-300">
-                  <div className="text-4xl mb-4">{useCase.icon}</div>
-                  <h3 className="text-xl font-semibold text-white mb-4">{useCase.title}</h3>
-                  <p className="text-gray-400">{useCase.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-20 px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Experience Quantum Neural Computing?
+      {/* Quantum Advantages Section */}
+      <section className="py-20 relative bg-gradient-to-r from-blue-900/10 to-cyan-900/10">
+        <div className="max-w-7xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-cyan-400 to-green-400 bg-clip-text text-transparent">
+                Quantum Advantages
+              </span>
             </h2>
-            <p className="text-xl text-gray-400 mb-8">
-              Join us in the quantum computing revolution and experience unprecedented computational power.
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Experience the unprecedented benefits that quantum computing brings to neural networks.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {quantumAdvantages.map((advantage, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                className="group"
+              >
+                <div className={`p-8 rounded-2xl bg-gradient-to-br ${advantage.color} bg-opacity-10 border border-white/10 hover:border-white/20 transition-all duration-300 group-hover:scale-105`}>
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${advantage.color} p-4 mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    {advantage.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4 text-white">{advantage.title}</h3>
+                  <p className="text-gray-300">{advantage.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Capabilities Section */}
+      <section className="py-20 relative">
+        <div className="max-w-7xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+                Advanced Capabilities
+              </span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Our quantum neural ecosystem delivers unprecedented capabilities that push 
+              the boundaries of what artificial intelligence can achieve.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="space-y-6"
+            >
+              {capabilities.slice(0, 5).map((capability, index) => (
+                <div key={index} className="flex items-center gap-4">
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 p-2">
+                    <CheckCircle className="w-full h-full text-white" />
+                  </div>
+                  <span className="text-lg text-gray-300">{capability}</span>
+                </div>
+              ))}
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="space-y-6"
+            >
+              {capabilities.slice(5).map((capability, index) => (
+                <div key={index} className="flex items-center gap-4">
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-r from-cyan-500 to-green-500 p-2">
+                    <CheckCircle className="w-full h-full text-white" />
+                  </div>
+                  <span className="text-lg text-gray-300">{capability}</span>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Applications Section */}
+      <section className="py-20 relative bg-gradient-to-r from-cyan-900/10 to-green-900/10">
+        <div className="max-w-7xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+                Real-World Applications
+              </span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Discover how quantum neural networks are transforming industries and creating 
+              new possibilities across the globe.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {applications.map((app, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                className="group"
+              >
+                <div className="p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-white/10 hover:border-blue-500/30 transition-all duration-300 group-hover:scale-105">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 p-3 mb-4 group-hover:scale-110 transition-transform duration-300">
+                    {app.icon}
+                  </div>
+                  <h3 className="text-lg font-semibold mb-3 text-white">{app.title}</h3>
+                  <p className="text-gray-300 text-sm">{app.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 relative">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="bg-gradient-to-r from-blue-900/20 to-cyan-900/20 border border-blue-500/30 rounded-3xl p-12"
+          >
+            <h2 className="text-5xl font-bold mb-6">
+              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                Ready to Experience Quantum Power?
+              </span>
+            </h2>
+            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+              Join us in the quantum revolution and discover what's possible 
+              when quantum computing meets neural networks.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-cyan-700 transition-all duration-300 shadow-lg shadow-blue-500/25"
+              >
                 Get Started Today
-              </button>
-              <button className="px-8 py-4 border-2 border-blue-400 text-blue-400 font-semibold rounded-xl hover:bg-blue-400 hover:text-black transition-all duration-300">
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 border-2 border-blue-400 text-blue-400 font-semibold rounded-xl hover:bg-blue-400 hover:text-black transition-all duration-300"
+              >
                 Schedule Demo
-              </button>
+              </motion.button>
             </div>
-          </div>
-        </section>
-      </div>
+          </motion.div>
+        </div>
+      </section>
     </Layout>
   );
-}
+};
+
+export default QuantumNeuralEcosystem2040;

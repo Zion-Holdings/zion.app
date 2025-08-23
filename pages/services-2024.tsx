@@ -1,368 +1,408 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { 
-  Search, Star, CheckCircle, Sparkles, Brain, Shield, Cpu, Database, Cloud, TrendingUp, Users, ArrowRight, Zap
+  Search, Filter, Star, CheckCircle, ArrowRight, 
+  Brain, Atom, Shield, Rocket, Target, Microscope,
+  Phone, Mail, MapPin, TrendingUp, Users, Award,
+  Zap, Sparkles, Code, BarChart, Lock, Globe,
+  Cpu, Database, Cloud, Eye, BarChart3
 } from 'lucide-react';
-import { realMicroSaasServices2024 } from '../data/2024-real-micro-saas-services';
-import { innovativeITServices2024 } from '../data/2024-innovative-it-services';
-import UltraFuturisticBackground2034 from '../components/backgrounds/UltraFuturisticBackground2034';
 import Link from 'next/link';
 
-const Services2024Page: React.FC = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [sortBy, setSortBy] = useState<'name' | 'price' | 'rating' | 'customers'>('name');
-  const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
+// Import the new 2024 services
+import { realMicroSaasServices2024 } from '../data/2024-real-micro-saas-services';
+import { innovativeITServices2024 } from '../data/2024-innovative-it-services';
 
-  // Combine all services
-  const allServices = [...realMicroSaasServices2024, ...innovativeITServices2024];
+const contactInfo = {
+  mobile: '+1 302 464 0950',
+  email: 'kleber@ziontechgroup.com',
+  address: '364 E Main St STE 1008 Middletown DE 19709',
+  website: 'https://ziontechgroup.com'
+};
 
-  // Filter and sort services
-  const filteredServices = useMemo(() => {
-    let filtered = allServices.filter(service => {
-      const matchesSearch = service.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                           service.tagline.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                           service.features.some(feature => feature.toLowerCase().includes(searchQuery.toLowerCase()));
-      
-      const matchesCategory = selectedCategory === 'all' || 
-                             (selectedCategory === 'ai' && service.variant.includes('ai')) ||
-                             (selectedCategory === 'quantum' && service.variant.includes('security')) ||
-                             (selectedCategory === 'it' && service.variant.includes('it')) ||
-                             (selectedCategory === 'api' && service.variant.includes('api')) ||
-                             (selectedCategory === 'cloud' && service.variant.includes('cloud')) ||
-                             (selectedCategory === 'marketing' && service.variant.includes('marketing')) ||
-                             (selectedCategory === 'project' && service.variant.includes('project')) ||
-                             (selectedCategory === 'customer' && service.variant.includes('customer'));
-      
-      return matchesSearch && matchesCategory;
-    });
+const serviceCategories = [
+  {
+    id: 'ai-services',
+    title: '🧠 AI & Machine Learning',
+    description: 'Revolutionary AI-powered solutions for business automation and intelligence',
+    icon: Brain,
+    color: 'from-violet-500 to-purple-500',
+    services: realMicroSaasServices2024.filter(s => s.category.includes('AI')),
+    gradient: 'from-violet-500/20 to-indigo-500/20'
+  },
+  {
+    id: 'quantum-security',
+    title: '⚛️ Quantum & Security',
+    description: 'Future-proof quantum-resistant encryption and blockchain solutions',
+    icon: Atom,
+    color: 'from-indigo-500 to-blue-500',
+    services: [
+      ...realMicroSaasServices2024.filter(s => s.category.includes('Quantum') || s.category.includes('Blockchain')),
+      ...innovativeITServices2024.filter(s => s.category.includes('Security'))
+    ],
+    gradient: 'from-indigo-500/20 to-cyan-500/20'
+  },
+  {
+    id: 'enterprise-it',
+    title: '🏙️ Enterprise IT Solutions',
+    description: 'Autonomous operations and intelligent infrastructure management',
+    icon: Cpu,
+    color: 'from-blue-500 to-cyan-500',
+    services: innovativeITServices2024.filter(s => s.category.includes('Enterprise') || s.category.includes('DevOps')),
+    gradient: 'from-blue-500/20 to-teal-500/20'
+  },
+  {
+    id: 'api-development',
+    title: '🔌 API & Development',
+    description: 'Intelligent API management and development tools',
+    icon: Code,
+    color: 'from-teal-500 to-emerald-500',
+    services: innovativeITServices2024.filter(s => s.category.includes('API') || s.category.includes('Development')),
+    gradient: 'from-teal-500/20 to-green-500/20'
+  },
+  {
+    id: 'business-analytics',
+    title: '💰 Business & Analytics',
+    description: 'AI-powered business intelligence and optimization solutions',
+    icon: BarChart,
+    color: 'from-green-500 to-yellow-500',
+    services: realMicroSaasServices2024.filter(s => s.category.includes('Business') || s.category.includes('Analytics')),
+    gradient: 'from-green-500/20 to-orange-500/20'
+  },
+  {
+    id: 'marketing-automation',
+    title: '📱 Marketing & Automation',
+    description: 'Intelligent marketing automation and social media management',
+    icon: Target,
+    color: 'from-orange-500 to-red-500',
+    services: realMicroSaasServices2024.filter(s => s.category.includes('Marketing') || s.category.includes('Social')),
+    gradient: 'from-orange-500/20 to-pink-500/20'
+  }
+];
 
-    // Sort services
-    filtered.sort((a, b) => {
-      let aValue: any, bValue: any;
-      
-      switch (sortBy) {
-        case 'price':
-          aValue = parseFloat(a.price.replace(/[^0-9.]/g, ''));
-          bValue = parseFloat(b.price.replace(/[^0-9.]/g, ''));
-          break;
-        case 'rating':
-          aValue = a.rating;
-          bValue = b.rating;
-          break;
-        case 'customers':
-          aValue = parseInt(a.customers.replace(/[^0-9]/g, ''));
-          bValue = parseInt(b.customers.replace(/[^0-9]/g, ''));
-          break;
-        default:
-          aValue = a.name.toLowerCase();
-          bValue = b.name.toLowerCase();
-      }
-      
-      if (sortOrder === 'asc') {
-        return aValue > bValue ? 1 : -1;
-      } else {
-        return aValue < bValue ? 1 : -1;
-      }
-    });
+export default function Services2024Page() {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [priceRange, setPriceRange] = useState('all');
+  const [sortBy, setSortBy] = useState('popularity');
 
-    return filtered;
-  }, [allServices, searchQuery, selectedCategory, sortBy, sortOrder]);
+  const filteredServices = serviceCategories.flatMap(category => category.services).filter(service => {
+    const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         service.category.toLowerCase().includes(searchTerm.toLowerCase());
+    
+    const matchesCategory = selectedCategory === 'all' || 
+                           service.category.toLowerCase().includes(selectedCategory.toLowerCase());
+    
+    const matchesPrice = priceRange === 'all' || 
+                        (priceRange === 'low' && parseInt(service.price.replace('$', '')) < 200) ||
+                        (priceRange === 'medium' && parseInt(service.price.replace('$', '')) >= 200 && parseInt(service.price.replace('$', '')) < 500) ||
+                        (priceRange === 'high' && parseInt(service.price.replace('$', '')) >= 500);
+    
+    return matchesSearch && matchesCategory && matchesPrice;
+  });
 
-  const categories = [
-    { id: 'all', name: 'All Services', icon: Sparkles, count: allServices.length },
-    { id: 'ai', name: 'AI & ML', icon: Brain, count: allServices.filter(s => s.variant.includes('ai')).length },
-    { id: 'quantum', name: 'Quantum & Security', icon: Shield, count: allServices.filter(s => s.variant.includes('security')).length },
-    { id: 'it', name: 'Enterprise IT', icon: Cpu, count: allServices.filter(s => s.variant.includes('it')).length },
-    { id: 'api', name: 'API & Development', icon: Database, count: allServices.filter(s => s.variant.includes('api')).length },
-    { id: 'cloud', name: 'Cloud & DevOps', icon: Cloud, count: allServices.filter(s => s.variant.includes('cloud')).length },
-    { id: 'marketing', name: 'Marketing & SEO', icon: TrendingUp, count: allServices.filter(s => s.variant.includes('marketing')).length },
-    { id: 'project', name: 'Project Management', icon: Users, count: allServices.filter(s => s.variant.includes('project')).length },
-    { id: 'customer', name: 'Customer Success', icon: CheckCircle, count: allServices.filter(s => s.variant.includes('customer')).length }
-  ];
-
-  const getVariantIcon = (variant: string) => {
-    if (variant.includes('ai')) return Brain;
-    if (variant.includes('security')) return Shield;
-    if (variant.includes('it')) return Cpu;
-    if (variant.includes('api')) return Database;
-    if (variant.includes('cloud')) return Cloud;
-    if (variant.includes('marketing')) return TrendingUp;
-    if (variant.includes('project')) return Users;
-    if (variant.includes('customer')) return CheckCircle;
-    return Sparkles;
-  };
-
-  const getVariantColor = (variant: string) => {
-    if (variant.includes('ai')) return 'from-blue-500 to-cyan-500';
-    if (variant.includes('security')) return 'from-red-500 to-pink-500';
-    if (variant.includes('it')) return 'from-green-500 to-emerald-500';
-    if (variant.includes('api')) return 'from-purple-500 to-violet-500';
-    if (variant.includes('cloud')) return 'from-indigo-500 to-blue-500';
-    if (variant.includes('marketing')) return 'from-yellow-500 to-orange-500';
-    if (variant.includes('project')) return 'from-teal-500 to-cyan-500';
-    if (variant.includes('customer')) return 'from-pink-500 to-rose-500';
-    return 'from-gray-500 to-slate-500';
-  };
+  const sortedServices = [...filteredServices].sort((a, b) => {
+    switch (sortBy) {
+      case 'price-low':
+        return parseInt(a.price.replace('$', '')) - parseInt(b.price.replace('$', ''));
+      case 'price-high':
+        return parseInt(b.price.replace('$', '')) - parseInt(a.price.replace('$', ''));
+      case 'rating':
+        return b.rating - a.rating;
+      case 'popularity':
+      default:
+        return b.popular ? 1 : -1;
+    }
+  });
 
   return (
     <>
       <Head>
-        <title>2024 Revolutionary Services - Zion Tech Group</title>
-        <meta name="description" content="Discover our revolutionary 2024 services including AI automation, quantum security, and enterprise IT solutions. Transform your business with cutting-edge technology." />
-        <meta name="keywords" content="AI services, quantum security, enterprise IT, automation, 2024 technology, Zion Tech Group" />
+        <title>2024 Revolutionary Services - Zion Tech Group | AI, Quantum, Enterprise Solutions</title>
+        <meta name="description" content="Explore Zion Tech Group's revolutionary 2024 services including AI automation, quantum security, enterprise IT solutions, and innovative micro SAAS platforms." />
+        <meta name="keywords" content="AI automation, quantum security, enterprise IT, micro SAAS, business intelligence, marketing automation, API management, DevOps automation" />
+        <meta name="author" content="Zion Tech Group" />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="2024 Revolutionary Services - Zion Tech Group" />
+        <meta property="og:description" content="Revolutionary AI automation, quantum security, and enterprise IT solutions for 2024 and beyond." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ziontechgroup.com/services-2024" />
+        <meta property="og:image" content="https://ziontechgroup.com/og-image.jpg" />
         <link rel="canonical" href="https://ziontechgroup.com/services-2024" />
       </Head>
 
-      <UltraFuturisticBackground2034 intensity={0.8} theme="quantum" />
-
-      <div className="relative z-10 min-h-screen">
+      <div className="min-h-screen bg-black text-white">
         {/* Hero Section */}
-        <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto text-center">
+        <div className="relative overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black">
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10"></div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              className="text-center"
             >
-              <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-cyan-500/20 to-purple-600/20 border border-cyan-500/30 rounded-full px-6 py-2 mb-8">
-                <Sparkles className="w-5 h-5 text-cyan-400" />
-                <span className="text-cyan-400 font-medium">2024 Revolutionary Services</span>
-              </div>
-              
-              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-                <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
-                  Future-Ready
+              <h1 className="text-5xl md:text-7xl font-bold mb-6">
+                <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  2024 Revolutionary
                 </span>
                 <br />
-                <span className="text-white">Solutions</span>
+                <span className="text-white">Services</span>
               </h1>
-              
-              <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
-                Experience the next generation of AI, quantum security, and enterprise IT solutions. 
-                Transform your business with our revolutionary 2024 service portfolio.
+              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
+                Experience the future of technology with our cutting-edge AI automation, quantum security, 
+                and enterprise IT solutions designed for the modern digital landscape.
               </p>
-
-              {/* Stats */}
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-cyan-400 mb-2">{allServices.length}</div>
-                  <div className="text-gray-400">Revolutionary Services</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-400 mb-2">17</div>
-                  <div className="text-gray-400">Service Categories</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-pink-400 mb-2">4.8</div>
-                  <div className="text-gray-400">Average Rating</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-green-400 mb-2">1000+</div>
-                  <div className="text-gray-400">Happy Customers</div>
-                </div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Link
+                  href="/pricing-2033"
+                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-semibold rounded-lg shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 transform hover:scale-105"
+                >
+                  View Pricing
+                </Link>
+                <Link
+                  href="/contact"
+                  className="px-8 py-4 border-2 border-cyan-500/50 text-cyan-300 hover:bg-cyan-500/10 hover:border-cyan-400 rounded-lg transition-all duration-300"
+                >
+                  Get Started
+                </Link>
               </div>
             </motion.div>
           </div>
-        </section>
+        </div>
 
         {/* Search and Filters */}
-        <section className="px-4 sm:px-6 lg:px-8 mb-16">
-          <div className="max-w-7xl mx-auto">
-            <div className="bg-black/50 border border-cyan-500/30 rounded-2xl p-6 backdrop-blur-sm">
-              <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-                {/* Search */}
-                <div className="lg:col-span-2">
-                  <div className="relative">
-                    <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                    <input
-                      type="text"
-                      placeholder="Search services by name, features, or description..."
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full pl-12 pr-4 py-3 bg-black/50 border border-cyan-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all duration-200"
-                    />
-                  </div>
-                </div>
-
-                {/* Category Filter */}
-                <div>
-                  <select
-                    value={selectedCategory}
-                    onChange={(e) => setSelectedCategory(e.target.value)}
-                    className="w-full px-4 py-3 bg-black/50 border border-cyan-500/30 rounded-lg text-white focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all duration-200"
-                  >
-                    {categories.map((category) => (
-                      <option key={category.id} value={category.id}>
-                        {category.name} ({category.count})
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                {/* Sort */}
-                <div className="flex space-x-2">
-                  <select
-                    value={sortBy}
-                    onChange={(e) => setSortBy(e.target.value as any)}
-                    className="flex-1 px-4 py-3 bg-black/50 border border-cyan-500/30 rounded-lg text-white focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition-all duration-200"
-                  >
-                    <option value="name">Sort by Name</option>
-                    <option value="price">Sort by Price</option>
-                    <option value="rating">Sort by Rating</option>
-                    <option value="customers">Sort by Customers</option>
-                  </select>
-                  <button
-                    onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}
-                    className="px-4 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-200"
-                  >
-                    {sortOrder === 'asc' ? '↑' : '↓'}
-                  </button>
-                </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="bg-black/50 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-6 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {/* Search */}
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-cyan-400" />
+                <input
+                  type="text"
+                  placeholder="Search services..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full pl-10 pr-4 py-3 bg-black/50 border border-cyan-500/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50"
+                />
               </div>
+
+              {/* Category Filter */}
+              <select
+                value={selectedCategory}
+                onChange={(e) => setSelectedCategory(e.target.value)}
+                className="px-4 py-3 bg-black/50 border border-cyan-500/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50"
+              >
+                <option value="all">All Categories</option>
+                <option value="ai">AI & Machine Learning</option>
+                <option value="quantum">Quantum & Security</option>
+                <option value="enterprise">Enterprise IT</option>
+                <option value="api">API & Development</option>
+                <option value="business">Business & Analytics</option>
+                <option value="marketing">Marketing & Automation</option>
+              </select>
+
+              {/* Price Filter */}
+              <select
+                value={priceRange}
+                onChange={(e) => setPriceRange(e.target.value)}
+                className="px-4 py-3 bg-black/50 border border-cyan-500/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50"
+              >
+                <option value="all">All Prices</option>
+                <option value="low">Under $200/month</option>
+                <option value="medium">$200-$500/month</option>
+                <option value="high">Over $500/month</option>
+              </select>
+
+              {/* Sort By */}
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+                className="px-4 py-3 bg-black/50 border border-cyan-500/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50"
+              >
+                <option value="popularity">Most Popular</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="rating">Highest Rated</option>
+              </select>
             </div>
           </div>
-        </section>
 
-        {/* Services Grid */}
-        <section className="px-4 sm:px-6 lg:px-8 mb-20">
-          <div className="max-w-7xl mx-auto">
-            {filteredServices.length === 0 ? (
-              <div className="text-center py-20">
-                <div className="text-6xl mb-4">🔍</div>
-                <h3 className="text-2xl font-semibold text-white mb-2">No services found</h3>
-                <p className="text-gray-400">Try adjusting your search criteria or filters.</p>
-              </div>
-            ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {filteredServices.map((service, index) => (
-                  <motion.div
-                    key={service.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="group"
-                  >
-                    <div className="bg-black/50 border border-cyan-500/30 rounded-2xl p-6 h-full hover:border-cyan-400/50 transition-all duration-300 hover:transform hover:scale-105 backdrop-blur-sm">
-                      {/* Service Header */}
-                      <div className="flex items-start justify-between mb-4">
-                        <div className="w-12 h-12 bg-gradient-to-r from-cyan-500/20 to-purple-600/20 rounded-lg flex items-center justify-center">
-                          {React.createElement(getVariantIcon(service.variant), { 
-                            className: `w-6 h-6 text-cyan-400` 
-                          })}
+          {/* Service Categories */}
+          <div className="space-y-16">
+            {serviceCategories.map((category) => (
+              <motion.div
+                key={category.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="relative"
+              >
+                <div className="text-center mb-12">
+                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r ${category.color} mb-4`}>
+                    <category.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{category.title}</h2>
+                  <p className="text-xl text-gray-300 max-w-3xl mx-auto">{category.description}</p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {category.services.map((service) => (
+                    <motion.div
+                      key={service.id}
+                      whileHover={{ y: -5, scale: 1.02 }}
+                      transition={{ duration: 0.2 }}
+                      className="group relative bg-black/50 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-6 hover:border-cyan-400/40 transition-all duration-300"
+                    >
+                      {/* Popular Badge */}
+                      {service.popular && (
+                        <div className="absolute -top-3 left-6 bg-gradient-to-r from-cyan-500 to-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+                          ⭐ Most Popular
                         </div>
-                        <div className="text-right">
-                          <div className="text-2xl font-bold text-cyan-400">{service.price}</div>
-                          <div className="text-sm text-gray-400">per month</div>
-                        </div>
+                      )}
+
+                      {/* Service Icon */}
+                      <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-r ${service.color} mb-4`}>
+                        <span className="text-2xl">{service.icon}</span>
                       </div>
 
                       {/* Service Info */}
-                      <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-200">
+                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">
                         {service.name}
                       </h3>
-                      <p className="text-gray-300 mb-4 leading-relaxed">
-                        {service.tagline}
-                      </p>
+                      <p className="text-gray-400 mb-4 line-clamp-3">{service.description}</p>
 
-                      {/* Features */}
-                      <div className="mb-6">
-                        <h4 className="text-sm font-semibold text-gray-400 mb-3 uppercase tracking-wider">Key Features</h4>
-                        <div className="space-y-2">
-                          {service.features.slice(0, 3).map((feature, featureIndex) => (
-                            <div key={featureIndex} className="flex items-center space-x-2">
-                              <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
-                              <span className="text-sm text-gray-300">{feature}</span>
-                            </div>
-                          ))}
-                          {service.features.length > 3 && (
-                            <div className="text-sm text-cyan-400">
-                              +{service.features.length - 3} more features
-                            </div>
-                          )}
-                        </div>
+                      {/* Price */}
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="text-2xl font-bold text-cyan-400">{service.price}</div>
+                        <div className="text-sm text-gray-500">{service.period}</div>
+                      </div>
+
+                      {/* Features Preview */}
+                      <div className="space-y-2 mb-6">
+                        {service.features.slice(0, 3).map((feature, index) => (
+                          <div key={index} className="flex items-center text-sm text-gray-300">
+                            <CheckCircle className="w-4 h-4 text-cyan-400 mr-2 flex-shrink-0" />
+                            <span className="line-clamp-1">{feature}</span>
+                          </div>
+                        ))}
+                        {service.features.length > 3 && (
+                          <div className="text-sm text-cyan-400">
+                            +{service.features.length - 3} more features
+                          </div>
+                        )}
                       </div>
 
                       {/* Stats */}
-                      <div className="grid grid-cols-3 gap-4 mb-6">
-                        <div className="text-center">
-                          <div className="flex items-center justify-center space-x-1 mb-1">
-                            <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                            <span className="text-sm font-semibold text-white">{service.rating}</span>
-                          </div>
-                          <div className="text-xs text-gray-400">Rating</div>
+                      <div className="flex items-center justify-between text-sm text-gray-400 mb-6">
+                        <div className="flex items-center">
+                          <Star className="w-4 h-4 text-yellow-400 mr-1" />
+                          {service.rating} ({service.reviews} reviews)
                         </div>
-                        <div className="text-center">
-                          <div className="text-sm font-semibold text-white mb-1">{service.customers}</div>
-                          <div className="text-xs text-gray-400">Customers</div>
-                        </div>
-                        <div className="text-center">
-                          <div className="text-sm font-semibold text-white mb-1">{service.launchDate}</div>
-                          <div className="text-xs text-gray-400">Launched</div>
+                        <div className="flex items-center">
+                          <Users className="w-4 h-4 text-cyan-400 mr-1" />
+                          {service.customers.toLocaleString()}+ customers
                         </div>
                       </div>
 
-                      {/* CTA */}
-                      <div className="flex items-center justify-between">
-                        <Link
-                          href={service.link}
-                          className="flex items-center space-x-2 text-cyan-400 hover:text-cyan-300 transition-colors duration-200 group"
-                        >
-                          <span className="font-medium">Learn More</span>
-                          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-                        </Link>
-                        <div className="text-xs text-gray-400 bg-gray-800/50 px-2 py-1 rounded">
-                          {service.variant.replace('-futuristic', '').replace('-', ' ')}
-                        </div>
+                      {/* CTA Button */}
+                      <Link
+                        href={service.link}
+                        className="block w-full text-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-semibold rounded-lg shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 transform hover:scale-105"
+                      >
+                        Get Started
+                      </Link>
+
+                      {/* Trial Info */}
+                      <div className="text-center mt-3 text-sm text-gray-400">
+                        {service.trialDays}-day free trial • Setup in {service.setupTime}
                       </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            )}
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </section>
 
-        {/* CTA Section */}
-        <section className="px-4 sm:px-6 lg:px-8 mb-20">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="bg-gradient-to-r from-cyan-500/10 to-purple-600/10 border border-cyan-500/30 rounded-2xl p-12 backdrop-blur-sm"
-            >
-              <h2 className="text-4xl font-bold text-white mb-6">
-                Ready to Transform Your Business?
+          {/* CTA Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mt-20 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 border border-cyan-500/20 rounded-2xl p-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Ready to Transform Your Business?
+            </h2>
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+              Join thousands of businesses already using our revolutionary services to accelerate growth, 
+              enhance security, and automate operations.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link
+                href="/contact"
+                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-semibold rounded-lg shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 transform hover:scale-105"
+              >
+                Start Free Trial
+              </Link>
+              <Link
+                href="/pricing-2033"
+                className="px-8 py-4 border-2 border-cyan-500/50 text-cyan-300 hover:bg-cyan-500/10 hover:border-cyan-400 rounded-lg transition-all duration-300"
+              >
+                View All Pricing
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Contact Section */}
+        <div className="bg-gradient-to-r from-cyan-900/20 via-purple-900/20 to-pink-900/20 border-t border-cyan-500/20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Need Help Choosing?
               </h2>
-              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                Join thousands of businesses already leveraging our revolutionary 2024 services. 
-                Get started today and experience the future of technology.
+              <p className="text-xl text-gray-300">
+                Our experts are here to help you find the perfect solution for your business needs.
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-                <Link
-                  href="/contact"
-                  className="flex items-center space-x-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-cyan-500/25 font-semibold"
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <Phone className="w-12 h-12 text-cyan-400 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-2">Call Us</h3>
+                <a 
+                  href={`tel:${contactInfo.mobile}`}
+                  className="text-cyan-300 hover:text-cyan-200 transition-colors"
                 >
-                  <Zap className="w-5 h-5" />
-                  <span>Get Started Today</span>
-                </Link>
-                <Link
-                  href="/pricing-2033"
-                  className="flex items-center space-x-2 border border-cyan-500/30 text-cyan-400 px-8 py-4 rounded-lg hover:bg-cyan-500/10 transition-all duration-200 font-semibold"
-                >
-                  <span>View Pricing Plans</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
+                  {contactInfo.mobile}
+                </a>
               </div>
-            </motion.div>
+              
+              <div className="text-center">
+                <Mail className="w-12 h-12 text-purple-400 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-2">Email Us</h3>
+                <a 
+                  href={`mailto:${contactInfo.email}`}
+                  className="text-purple-300 hover:text-purple-200 transition-colors"
+                >
+                  {contactInfo.email}
+                </a>
+              </div>
+              
+              <div className="text-center">
+                <MapPin className="w-12 h-12 text-pink-400 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-2">Visit Us</h3>
+                <p className="text-pink-300">{contactInfo.address}</p>
+              </div>
+            </div>
           </div>
-        </section>
+        </div>
       </div>
     </>
   );
-};
-
-export default Services2024Page;
+}

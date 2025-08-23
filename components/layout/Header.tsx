@@ -1,232 +1,321 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X, Zap, Sparkles, ChevronDown } from 'lucide-react';
-import Button from '../ui/Button';
-import { motion } from 'framer-motion';
+import { useRouter } from 'next/router';
+import { Menu, X, ChevronDown, Zap, Globe, Shield } from 'lucide-react';
 
-const Header: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isClient, setIsClient] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
+export default function Header() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isProductDropdownOpen, setIsProductDropdownOpen] = useState(false);
+  const [isSolutionsDropdownOpen, setIsSolutionsDropdownOpen] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
-    if (!isClient) return;
-
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [isClient]);
+  }, []);
 
   const navigation = [
-    {
-      name: 'Services',
-      href: '/services',
-      description: '200+ Real Micro SaaS Solutions',
-      icon: <Zap className="w-5 h-5" />,
-      children: [
-        { name: 'All Services', href: '/services' },
-        { name: 'Industry Solutions', href: '/solutions' },
-        { name: 'Cloud Platform', href: '/cloud-platform' },
-        { name: 'AI Assistant', href: '/ai-assistant' },
-        { name: 'Status Pages & SLO', href: '/status-pages-slo' }
-      ]
-    },
-    {
-      name: 'Solutions',
-      href: '/solutions',
-      description: 'Industry-Specific Solutions',
-      icon: <Sparkles className="w-5 h-5" />,
-      children: [
-        { name: 'Case Studies', href: '/case-studies' },
-        { name: 'Cloud Platform', href: '/cloud-platform' },
-        { name: 'AI Assistant', href: '/ai-assistant' },
-        { name: 'Analytics', href: '/analytics' },
-        { name: 'Automation', href: '/automation' }
-      ]
-    },
-    { name: 'Pricing', href: '/pricing' },
+    { name: 'Product', href: '#', hasDropdown: true },
+    { name: 'Solutions', href: '/services' },
+    { name: 'Micro SaaS', href: '/micro-saas-services' },
     { name: 'Resources', href: '/resources' },
-    { name: 'Contact', href: '/contact' }
+    { name: 'Company', href: '/about' },
+    { name: 'Pricing', href: '/pricing' },
+    { name: 'Compare', href: '/pricing-comparison' },
   ];
 
-  const contactInfo = {
-    mobile: '+1 302 464 0950',
-    email: 'kleber@ziontechgroup.com'
-  };
+  const productDropdown = [
+    { name: 'AI Code Assistant', href: '/ai-assistant', description: 'Intelligent code completion and suggestions' },
+    { name: 'Cloud Platform', href: '/cloud-platform', description: 'Scalable cloud infrastructure' },
+    { name: 'Automation Hub', href: '/automation', description: 'AI-powered workflow automation' },
+    { name: 'Analytics', href: '/analytics', description: 'Real-time insights and reporting' },
+    { name: 'Micro SaaS Services', href: '/micro-saas-services', description: 'Professional business solutions' },
+  ];
+
+  const isActive = (href: string) => router.pathname === href;
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-gray-900/95 backdrop-blur-xl border-b border-gray-700/50 shadow-2xl' 
-        : 'bg-transparent'
-    }`}>
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled
+          ? 'bg-black/90 backdrop-blur-2xl border-b border-white/20 shadow-2xl shadow-black/50'
+          : 'bg-transparent'
+      }`}
+    >
+      {/* Futuristic Background Glow */}
+      {isScrolled && (
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-cyan-500/5" />
+      )}
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 lg:h-20">
+          {/* Enhanced Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <Zap className="w-6 h-6 text-white" />
-            </div>
-            <div className="hidden sm:block">
-              <div className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
-                Zion Tech Group
+            <div className="relative">
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 via-purple-500 to-cyan-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-2xl group-hover:shadow-blue-500/25">
+                <span className="text-white font-bold text-xl">Z</span>
               </div>
-              <div className="text-xs text-gray-400">Revolutionary Technology Solutions</div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 rounded-xl blur opacity-0 group-hover:opacity-75 transition-opacity duration-300 -z-10" />
+              {/* Animated border */}
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 transition-all duration-300">
+                Zion Tech
+              </span>
+              <span className="text-xs text-gray-400 group-hover:text-blue-400 transition-colors duration-300">
+                Group
+              </span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-1">
+            {/* Contact Info */}
+            <div className="flex items-center space-x-4 mr-6">
+              <a href="tel:+13024640950" className="flex items-center space-x-2 text-sm text-gray-300 hover:text-neon-blue transition-colors duration-200">
+                <span className="w-2 h-2 bg-neon-blue rounded-full animate-pulse"></span>
+                <span>+1 302 464 0950</span>
+              </a>
+            </div>
             {navigation.map((item) => (
-              <div key={item.name} className="relative group">
-                {item.children ? (
-                  <div
-                    className="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors cursor-pointer py-2"
-                    onMouseEnter={() => setActiveDropdown(item.name)}
-                    onMouseLeave={() => setActiveDropdown(null)}
-                  >
-                    <span>{item.name}</span>
-                    <ChevronDown className="w-4 h-4 group-hover:rotate-180 transition-transform" />
+              <div key={item.name} className="relative">
+                {item.hasDropdown ? (
+                  <div className="relative">
+                    <button
+                      onClick={() => {
+                        if (item.name === 'Product') {
+                          setIsProductDropdownOpen(!isProductDropdownOpen);
+                          setIsSolutionsDropdownOpen(false);
+                        } else if (item.name === 'Solutions') {
+                          setIsSolutionsDropdownOpen(!isSolutionsDropdownOpen);
+                          setIsProductDropdownOpen(false);
+                        }
+                      }}
+                      className="flex items-center space-x-1 px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/5"
+                    >
+                      {item.name}
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+                        (item.name === 'Product' && isProductDropdownOpen) || 
+                        (item.name === 'Solutions' && isSolutionsDropdownOpen) ? 'rotate-180' : ''
+                      }`} />
+                    </button>
+                    
+                    {item.name === 'Product' && isProductDropdownOpen && (
+                      <div className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl p-4">
+                        <div className="grid gap-3">
+                          {productDropdown.map((product) => (
+                            <Link
+                              key={product.name}
+                              href={product.href}
+                              className="flex items-center p-3 rounded-xl hover:bg-gradient-to-r hover:from-blue-500/10 hover:to-purple-500/10 transition-all duration-300 group hover:scale-105"
+                              onClick={() => setIsProductDropdownOpen(false)}
+                            >
+                              <div className="text-2xl mr-3 group-hover:scale-110 transition-transform duration-300">
+                                {product.icon}
+                              </div>
+                              <div className="flex-1">
+                                <div className="font-medium text-white mb-1 group-hover:text-blue-400 transition-colors duration-300">
+                                  {product.name}
+                                </div>
+                                <div className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+                                  {product.description}
+                                </div>
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {isSaasToolsDropdownOpen && (
+                      <div className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl p-4">
+                        <div className="grid gap-3">
+                          {saasToolsDropdown.map((tool) => (
+                            <Link
+                              key={tool.name}
+                              href={tool.href}
+                              className="flex flex-col p-3 rounded-lg hover:bg-white/5 transition-colors duration-200"
+                              onClick={() => setIsSaasToolsDropdownOpen(false)}
+                            >
+                              <div className="font-medium text-white mb-1">{tool.name}</div>
+                              <div className="text-sm text-gray-400">{tool.description}</div>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {item.name === 'Solutions' && isSolutionsDropdownOpen && (
+                      <div className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl p-4">
+                        <div className="grid gap-3">
+                          {solutionsDropdown.map((solution) => (
+                            <Link
+                              key={solution.name}
+                              href={solution.href}
+                              className="flex flex-col p-3 rounded-lg hover:bg-white/5 transition-colors duration-200"
+                              onClick={() => setIsSolutionsDropdownOpen(false)}
+                            >
+                              <div className="font-medium text-white mb-1">{solution.name}</div>
+                              <div className="text-sm text-gray-400">{solution.description}</div>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
                 ) : (
                   <Link
                     href={item.href}
-                    className="text-gray-300 hover:text-white transition-colors py-2"
+                    className={`px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg relative group ${
+                      isActive(item.href)
+                        ? 'text-blue-400 bg-gradient-to-r from-blue-500/20 to-purple-500/20'
+                        : 'text-gray-300 hover:text-white hover:bg-white/10'
+                    }`}
                   >
                     {item.name}
+                    {/* Hover glow effect */}
+                    <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
                   </Link>
-                )}
-
-                {/* Dropdown Menu */}
-                {item.children && activeDropdown === item.name && (
-                  <div
-                    className="absolute top-full left-0 mt-2 w-80 bg-gray-900/95 backdrop-blur-xl border border-gray-700/50 rounded-2xl shadow-2xl p-4"
-                    onMouseEnter={() => setActiveDropdown(item.name)}
-                    onMouseLeave={() => setActiveDropdown(null)}
-                  >
-                    <div className="flex items-center space-x-3 mb-4 p-3 bg-gradient-to-r from-gray-800/50 to-gray-700/50 rounded-xl">
-                      {item.icon}
-                      <div>
-                        <div className="font-semibold text-white">{item.name}</div>
-                        <div className="text-sm text-gray-400">{item.description}</div>
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      {item.children.map((child) => (
-                        <Link
-                          key={child.name}
-                          href={child.href}
-                          className="block p-3 text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-xl transition-all duration-200"
-                        >
-                          {child.name}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
                 )}
               </div>
             ))}
           </nav>
 
-          {/* Contact Info & CTA */}
-          <div className="hidden lg:flex items-center space-x-6">
-            <div className="flex items-center space-x-4 text-sm">
-              <a
-                href={`tel:${contactInfo.mobile}`}
-                className="text-cyan-400 hover:text-cyan-300 transition-colors flex items-center"
-              >
-                <span className="hidden xl:inline">{contactInfo.mobile}</span>
-                <span className="xl:hidden">Call</span>
-              </a>
-              <a
-                href={`mailto:${contactInfo.email}`}
-                className="text-purple-400 hover:text-purple-300 transition-colors flex items-center"
-              >
-                <span className="hidden xl:inline">{contactInfo.email}</span>
-                <span className="xl:hidden">Email</span>
-              </a>
-            </div>
-            <Button href="/contact" variant="primary" size="sm">
+          {/* Contact Button */}
+          <div className="hidden lg:flex items-center space-x-4">
+            <Link
+              href="/contact"
+              className="px-6 py-2 bg-gradient-to-r from-neon-blue to-neon-cyan text-black font-semibold rounded-lg hover:from-neon-cyan hover:to-neon-blue transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-neon-blue/25"
+            >
+              Contact Us
+            </Link>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="hidden lg:flex items-center space-x-3">
+            <Link
+              href="/contact"
+              className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors duration-300 rounded-lg hover:bg-white/10"
+            >
+              Contact
+            </Link>
+            <Link
+              href="/micro-saas"
+              className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25"
+            >
               Get Started
-            </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 text-gray-300 hover:text-white transition-colors"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="lg:hidden p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-colors duration-200"
           >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              {isMobileMenuOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              )}
+            </svg>
           </button>
         </div>
+      </div>
 
         {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="lg:hidden bg-gray-900/95 backdrop-blur-xl border-t border-gray-700/50">
-            <div className="py-6 space-y-4">
+        {isMobileMenuOpen && (
+          <div className="lg:hidden">
+            <div className="px-4 pt-4 pb-6 space-y-2 bg-black/90 backdrop-blur-xl rounded-xl mt-2 border border-white/10 shadow-2xl">
               {navigation.map((item) => (
                 <div key={item.name}>
-                  {item.children ? (
+                  {item.hasDropdown ? (
                     <div className="space-y-2">
-                      <div className="px-4 py-2 text-gray-300 font-medium">{item.name}</div>
-                      <div className="pl-8 space-y-2">
-                        {item.children.map((child) => (
+                      <div className="px-4 py-3 text-base font-medium text-white">
+                        {item.name}
+                      </div>
+                      <div className="pl-4 space-y-2">
+                        {item.name === 'Product' && productDropdown.map((product) => (
                           <Link
-                            key={child.name}
-                            href={child.href}
-                            className="block py-2 text-gray-400 hover:text-white transition-colors"
-                            onClick={() => setIsMenuOpen(false)}
+                            key={product.name}
+                            href={product.href}
+                            className="block px-4 py-2 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors duration-200"
+                            onClick={() => setIsMobileMenuOpen(false)}
                           >
-                            {child.name}
+                            <div className="font-medium">{product.name}</div>
+                            <div className="text-xs text-gray-500">{product.description}</div>
+                          </Link>
+                        ))}
+                        {item.name === 'Solutions' && solutionsDropdown.map((solution) => (
+                          <Link
+                            key={solution.name}
+                            href={solution.href}
+                            className="block px-4 py-2 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors duration-200"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            <div className="font-medium">{solution.name}</div>
+                            <div className="text-xs text-gray-500">{solution.description}</div>
                           </Link>
                         ))}
                       </div>
                     </div>
-                  ) : (
-                    <Link
-                      href={item.href}
-                      className="block px-4 py-2 text-gray-300 hover:text-white transition-colors"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
-                  )}
-                </div>
-              ))}
-              
-              {/* Mobile Contact Info */}
-              <div className="px-4 py-4 border-t border-gray-700/50 space-y-3">
-                <div className="text-sm text-gray-400">Contact Information</div>
-                <a
-                  href={`tel:${contactInfo.mobile}`}
-                  className="block text-cyan-400 hover:text-cyan-300 transition-colors"
-                >
-                  {contactInfo.mobile}
-                </a>
-                <a
-                  href={`mailto:${contactInfo.email}`}
-                  className="block text-purple-400 hover:text-purple-300 transition-colors"
-                >
-                  {contactInfo.email}
-                </a>
-                <Button href="/contact" variant="primary" size="sm" className="w-full">
-                  Get Started
-                </Button>
+                  </div>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className={`block px-4 py-2 text-base font-medium rounded-lg transition-colors duration-200 ${
+                      isActive(item.href)
+                        ? 'text-blue-400 bg-blue-500/10'
+                        : 'text-gray-300 hover:text-white hover:bg-white/10'
+                    }`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                )}
               </div>
+            ))}
+            
+            {/* Mobile CTA */}
+            <div className="pt-4 border-t border-white/20">
+              <Link
+                href="/contact"
+                className="block px-4 py-3 text-center text-gray-300 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/10 mb-3"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contact Us
+              </Link>
+              <Link
+                href="/micro-saas"
+                className="block px-4 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg text-center transition-all duration-300 hover:scale-105"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Get Started
+              </Link>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </header>
   );
-};
-
-export default Header;
+}

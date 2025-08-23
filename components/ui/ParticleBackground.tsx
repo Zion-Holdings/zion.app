@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 interface Particle {
   x: number;
@@ -10,41 +10,24 @@ interface Particle {
   opacity: number;
 }
 
-interface ParticleBackgroundProps {
-  children: React.ReactNode;
-  className?: string;
-}
-
-const ParticleBackground: React.FC<ParticleBackgroundProps> = ({
-  children,
-  className = ''
-}) => {
+const ParticleBackground: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  useEffect(() => {
-    if (!isClient || !canvasRef.current) return;
-
     const canvas = canvasRef.current;
+    if (!canvas) return;
+
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
     // Set canvas size
     const resizeCanvas = () => {
-      if (typeof window !== 'undefined') {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-      }
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
     };
 
     resizeCanvas();
-    if (typeof window !== 'undefined') {
-      window.addEventListener('resize', resizeCanvas);
-    }
+    window.addEventListener('resize', resizeCanvas);
 
     // Particle configuration
     const particles: Particle[] = [];
@@ -117,11 +100,9 @@ const ParticleBackground: React.FC<ParticleBackgroundProps> = ({
     animate();
 
     return () => {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('resize', resizeCanvas);
-      }
+      window.removeEventListener('resize', resizeCanvas);
     };
-  }, [isClient]);
+  }, []);
 
   const drawGeometricShapes = (ctx: CanvasRenderingContext2D, width: number, height: number) => {
     const time = Date.now() * 0.001;
@@ -181,11 +162,9 @@ const ParticleBackground: React.FC<ParticleBackgroundProps> = ({
   return (
     <canvas
       ref={canvasRef}
-      className={`fixed inset-0 pointer-events-none z-0 ${className}`}
+      className="fixed inset-0 pointer-events-none z-0"
       style={{ opacity: 0.3 }}
-    >
-      {children}
-    </canvas>
+    />
   );
 };
 

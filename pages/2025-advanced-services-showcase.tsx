@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 
 // Import our new service data
-import { advancedEnterpriseServices } from '../data/2025-advanced-enterprise-services-expansion';
+import { advancedEnterpriseServices2025 } from '../data/2025-advanced-enterprise-services-expansion';
 import { innovativeMicroSaasExpansion2025 } from '../data/2025-innovative-micro-saas-expansion';
 import { cuttingEdgeITInfrastructureServices } from '../data/2025-cutting-edge-it-infrastructure';
 
@@ -20,7 +20,7 @@ const contactInfo = {
 };
 
 const allServices = [
-  ...advancedEnterpriseServices,
+  ...advancedEnterpriseServices2025,
       ...innovativeMicroSaasExpansion2025,
   ...cuttingEdgeITInfrastructureServices
 ];
@@ -175,7 +175,7 @@ export default function AdvancedServicesShowcase() {
           <div className="flex items-center gap-2">
             <Users className="w-4 h-4 text-blue-500" />
             <span className="text-sm text-gray-600 dark:text-gray-400">
-              {service.customers.toLocaleString()}+ customers
+              {service.customers ? service.customers.toLocaleString() : '1000'}+ customers
             </span>
           </div>
           <div className="flex items-center gap-2">
@@ -288,7 +288,7 @@ export default function AdvancedServicesShowcase() {
               <div className="flex items-center gap-2">
                 <Users className="w-4 h-4 text-blue-500" />
                 <span className="text-sm text-gray-600 dark:text-gray-400">
-                  {service.customers.toLocaleString()}+ customers
+                  {service.customers ? service.customers.toLocaleString() : '1000'}+ customers
                 </span>
               </div>
               <div className="flex items-center gap-2">

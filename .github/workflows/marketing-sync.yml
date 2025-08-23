@@ -1,41 +1,38 @@
 name: Marketing Sync
 
 on:
+  workflow_dispatch: {}
   schedule:
-    - cron: '0 */12 * * *'
-  workflow_dispatch:
+    - cron: '*/10 * * * *'
 
 permissions:
-  contents: write
+  contents: read
+
+concurrency:
+  group: marketing-sync-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  run-marketing-sync:
+  main:
+    name: Main Job
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'
 
-      - name: Run marketing-sync
-        env:
-          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
-          LINKEDIN_URN: ${{ secrets.LINKEDIN_URN }}
-          IG_USER_ID: ${{ secrets.IG_USER_ID }}
-          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
-        run: node automation/marketing-sync.js
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
 
-      - name: Commit report if changed
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if [ -n "$(git status --porcelain)" ]; then
-            git add -A
-            git commit -m "chore(marketing): update marketing-sync report"
-            git push origin HEAD:main
-          else
-            echo "No changes to commit."
-          fi
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+

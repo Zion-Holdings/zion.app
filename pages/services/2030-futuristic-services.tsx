@@ -28,7 +28,7 @@ export default function FuturisticServices2030Page() {
       icon: Brain,
       color: 'from-cyan-500 to-blue-500',
       services: futuristicAIServices2030,
-      description: 'Next-generation AI consciousness and autonomous systems'
+      description: 'ArrowRight-generation AI consciousness and autonomous systems'
     },
     {
       title: '⚛️ Quantum & Emerging Tech 2030',
@@ -72,7 +72,9 @@ export default function FuturisticServices2030Page() {
       <SEO 
         title="2030 Futuristic Technology Services | Zion Tech Group - Revolutionary AI, Quantum, Space Tech" 
         description="Experience the future with our revolutionary 2030 technology services. From AI consciousness to space mining, quantum computing to metaverse development - we're building tomorrow's solutions today." 
-        canonical="https://ziontechgroup.com/services/2030-futuristic-services/"
+        url="https://ziontechgroup.com/services/2030-futuristic-services/"
+        section="2030 Futuristic Services"
+        tags={['AI Consciousness', 'Quantum Computing', 'Space Mining', 'Metaverse Development', 'Biotechnology']}
       />
 
       <UltraFuturisticBackground2031>
@@ -88,7 +90,7 @@ export default function FuturisticServices2030Page() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-center mb-16"
+              className="text-center mb-16]}
             >
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-8">
                 <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
@@ -108,14 +110,14 @@ export default function FuturisticServices2030Page() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 text-white rounded-xl font-semibold text-lg hover:from-cyan-600 hover:via-purple-600 hover:to-pink-600 transition-all duration-200"
+                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 text-white rounded-xl font-semibold text-lg hover:from-cyan-600 hover:via-purple-600 hover:to-pink-600 transition-all duration-200]}
                 >
                   Get Started Today
                 </motion.button>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 rounded-xl font-semibold text-lg hover:bg-cyan-400 hover:text-black transition-all duration-200"
+                  className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 rounded-xl font-semibold text-lg hover:bg-cyan-400 hover:text-black transition-all duration-200]}
                 >
                   View Pricing
                 </motion.button>
@@ -193,7 +195,7 @@ export default function FuturisticServices2030Page() {
                       
                       <div className="space-y-3 mb-4">
                         <div className="flex items-center justify-between">
-                          <span className="text-cyan-400 font-semibold">{service.price}{service.period}</span>
+                          <span className="text-cyan-400 font-semibold">${service.price?.monthly || service.price}{service.period || '/month'}</span>
                           <span className="text-xs text-purple-400 bg-purple-400/10 px-2 py-1 rounded-full">
                             {service.innovationLevel}
                           </span>

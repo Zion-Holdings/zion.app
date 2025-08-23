@@ -7,7 +7,7 @@ import {
 } from 'lucide-react';
 
 // Import our new 2025 services
-import { advancedAIAutomationServices } from '../data/2026-advanced-ai-automation-services';
+import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
 import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
 import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
 import { emergingTechnologyServices } from '../data/2025-emerging-technology-services';
@@ -22,11 +22,11 @@ const contact = {
 // Service categories with pricing tiers
 const serviceCategories = [
   {
-    id: 'ai-automation',
-    name: 'AI Automation Services',
+    id: 'enterprise-ai',
+    name: 'Enterprise AI Services',
     icon: <Brain className="w-8 h-8" />,
     color: 'from-purple-500 to-pink-500',
-    services: advancedAIAutomationServices
+    services: advancedAIAutomationServices2025
   },
   {
     id: 'it-infrastructure',
@@ -102,26 +102,99 @@ const pricingTiers = [
   }
 ];
 
+// Helper function to get service pricing
+const getServicePricing = (service: any) => {
+  if (service.pricing?.starter) return service.pricing.starter;
+  if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
+  if (service.price?.monthly) return `$${service.price.monthly}/month`;
+  return 'Contact for pricing';
+};
+
+// Helper function to get service pricing display
+const getServicePricingDisplay = (service: any) => {
+  if (service.pricing?.starter) return service.pricing.starter;
+  if (service.pricing?.monthly) return `$${service.pricing.monthly}`;
+  if (service.price?.monthly) return `$${service.price.monthly}`;
+  return 'Contact';
+};
+
+// Helper function to get service period
+const getServicePeriod = (service: any) => {
+  if (service.pricing?.starter || service.pricing?.monthly || service.price?.monthly) return '/month';
+  return '';
+};
+
 export default function InnovativePricing2025() {
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('monthly');
+
+  // Normalize services to unified format
+  const normalizeService = (service: any): UnifiedService => {
+    if (service.pricing) {
+      // IT Infrastructure service format
+      return {
+        id: service.id,
+        name: service.name,
+        tagline: service.description || '',
+        description: service.description || '',
+        category: service.category || service.type || '',
+        icon: '⚡',
+        popular: false,
+        link: service.website || `https://ziontechgroup.com${service.slug}`,
+        pricing: service.pricing,
+        price_monthly: 0, // Will be calculated from pricing
+        price_yearly: 0,
+        trialDays: 14,
+        setupTime: '1-2 weeks'
+      };
+    } else if (service.price && typeof service.price === 'object') {
+      // Emerging technology service format
+      return {
+        id: service.id,
+        name: service.name,
+        tagline: service.tagline || '',
+        description: service.description || '',
+        category: service.category || '',
+        icon: service.icon || '🚀',
+        popular: service.popular || false,
+        link: service.link || `https://ziontechgroup.com/${service.id}`,
+        price_monthly: service.price.monthly,
+        price_yearly: service.price.yearly,
+        trialDays: service.price.trialDays || 14,
+        setupTime: service.price.setupTime || '1-2 weeks'
+      };
+    } else {
+      // AI Automation and Micro SAAS format
+      return {
+        id: service.id,
+        name: service.name,
+        tagline: service.tagline || '',
+        description: service.description || '',
+        category: service.category || '',
+        icon: service.icon || '🤖',
+        popular: service.popular || false,
+        link: service.link || `https://ziontechgroup.com/${service.id}`,
+        price: service.price,
+        price_monthly: typeof service.price === 'string' ? 0 : 0,
+        price_yearly: typeof service.price === 'string' ? 0 : 0,
+        trialDays: service.trialDays || 14,
+        setupTime: service.setupTime || '1-2 weeks'
+      };
+    }
+  };
 
   const getFilteredServices = () => {
+    let allServices: UnifiedService[] = [];
+    
     if (selectedCategory === 'all') {
       return [
-        ...advancedAIAutomationServices,
+        ...advancedAIAutomationServices2025,
         ...innovativeITInfrastructureServices2025,
         ...innovativeMicroSaasSolutions2025,
         ...emergingTechnologyServices
       ];
     }
     
-    const category = serviceCategories.find(cat => cat.id === selectedCategory);
-    return category ? category.services : [];
-  };
-
-  const getYearlyDiscount = (monthlyPrice: number) => {
-    return Math.round(monthlyPrice * 12 * 0.17); // 17% discount for yearly
+    return allServices;
   };
 
   return (
@@ -129,7 +202,7 @@ export default function InnovativePricing2025() {
       <SEO 
         title="2025 Innovative Services Pricing | Zion Tech Group"
         description="Comprehensive pricing for our 2025 innovative services including AI automation, IT infrastructure, micro SAAS solutions, and emerging technology services."
-        keywords={["2025 pricing", "innovative services pricing", "AI automation pricing", "IT infrastructure pricing", "micro SAAS pricing", "Zion Tech Group"]}
+        keywords="2025 pricing, innovative services pricing, AI automation pricing, IT infrastructure pricing, micro SAAS pricing, Zion Tech Group"
       />
 
       {/* Hero Section */}
@@ -165,22 +238,8 @@ export default function InnovativePricing2025() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="flex items-center justify-center gap-4 mb-8"
             >
-              <span className={`text-lg ${billingCycle === 'monthly' ? 'text-white' : 'text-gray-400'}`}>
+              <span className={`text-lg text-white`}>
                 Monthly
-              </span>
-              <button
-                onClick={() => setBillingCycle(billingCycle === 'monthly' ? 'yearly' : 'monthly')}
-                className={`relative w-16 h-8 rounded-full transition-all duration-300 ${
-                  billingCycle === 'yearly' ? 'bg-purple-500' : 'bg-gray-600'
-                }`}
-              >
-                <div className={`absolute top-1 w-6 h-6 bg-white rounded-full transition-all duration-300 ${
-                  billingCycle === 'yearly' ? 'left-9' : 'left-1'
-                }`} />
-              </button>
-              <span className={`text-lg ${billingCycle === 'yearly' ? 'text-white' : 'text-gray-400'}`}>
-                Yearly
-                <span className="ml-2 text-sm text-green-400">Save 17%</span>
               </span>
             </motion.div>
           </div>
@@ -288,12 +347,7 @@ export default function InnovativePricing2025() {
               className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 hover:border-purple-500/50 transition-all duration-300"
             >
               <div className="flex items-start justify-between mb-4">
-                <div className="text-3xl">{service.icon}</div>
-                {service.popular && (
-                  <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-xs font-bold px-2 py-1 rounded-full">
-                    POPULAR
-                  </span>
-                )}
+                <div className="text-3xl">🚀</div>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-2">{service.name}</h3>
@@ -302,18 +356,12 @@ export default function InnovativePricing2025() {
               <div className="mb-4">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-2xl font-bold text-purple-400">
-                    ${typeof service.price === 'string' ? service.price : 
-                       billingCycle === 'monthly' ? service.price.monthly : service.price.yearly}
+                    {getServicePricingDisplay(service)}
                   </span>
                   <span className="text-gray-400">
-                    /{billingCycle === 'monthly' ? 'month' : 'year'}
+                    {getServicePeriod(service)}
                   </span>
                 </div>
-                {billingCycle === 'yearly' && typeof service.price !== 'string' && (
-                  <div className="text-sm text-green-400">
-                    Save ${getYearlyDiscount(service.price.monthly)} annually
-                  </div>
-                )}
               </div>
 
               <div className="mb-4">
@@ -324,15 +372,15 @@ export default function InnovativePricing2025() {
 
               <div className="space-y-2 mb-6">
                 <div className="text-xs text-gray-400">
-                  <span className="text-gray-500">Setup:</span> {typeof service.price === 'string' ? 'Custom' : service.price.setupTime}
+                  <span className="text-gray-500">Type:</span> {service.type}
                 </div>
                 <div className="text-xs text-gray-400">
-                  <span className="text-gray-500">Trial:</span> {typeof service.price === 'string' ? 'Contact' : service.price.trialDays} days
+                  <span className="text-gray-500">Market Size:</span> {service.marketSize}
                 </div>
               </div>
 
               <a
-                href={service.link}
+                href={service.slug || `/services/${service.id}`}
                 className="w-full bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 group"
               >
                 View Details

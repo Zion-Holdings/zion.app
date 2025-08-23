@@ -1,242 +1,264 @@
-export interface AdvancedAIMLService {
+export interface AIMLService {
   id: string;
   name: string;
   tagline: string;
-  price: string;
-  period: string;
   description: string;
+  category: string;
+  price: {
+    monthly: number;
+    yearly: number;
+    currency: string;
+    trialDays: number;
+    setupTime: string;
+    enterprise: string;
+  };
   features: string[];
-  popular: boolean;
+  benefits: string[];
+  targetAudience: string[];
+  marketPosition: string;
+  competitors: string[];
+  techStack: string[];
+  realImplementation: boolean;
+  implementationDetails: string;
+  roi: string;
+  useCases: string[];
+  integrations: string[];
+  support: string;
+  compliance: string[];
+  link: string;
   icon: string;
   color: string;
-  textColor: string;
-  link: string;
-  marketPosition: string;
-  targetAudience: string;
-  trialDays: number;
-  setupTime: string;
-  category: string;
-  realService: boolean;
-  technology: string[];
-  integrations: string[];
-  useCases: string[];
-  roi: string;
-  competitors: string[];
-  marketSize: string;
-  growthRate: string;
+  popular: boolean;
+  launchDate: string;
+  customers: number;
+  rating: number;
+  reviews: number;
   contactInfo: {
     mobile: string;
     email: string;
     address: string;
     website: string;
   };
-  realImplementation: boolean;
-  implementationDetails: string;
-  launchDate: string;
-  customers: number;
-  rating: number;
-  reviews: number;
 }
 
-export const advancedAIMLServices: AdvancedAIMLService[] = [
+export const advancedAIMLServices: AIMLService[] = [
   {
-    id: 'ai-multimodal-orchestrator',
-    name: 'AI Multimodal Orchestrator',
-    tagline: 'Seamlessly orchestrate text, image, audio, and video AI models',
-    price: '$3,499',
-    period: '/month',
-    description: 'Enterprise platform that orchestrates multiple AI models across different modalities (text, image, audio, video) to create comprehensive AI solutions. Perfect for companies needing unified AI capabilities.',
-    features: [
-      'Multi-modal AI model orchestration',
-      'Cross-modal data processing',
-      'Intelligent model selection',
-      'Real-time model switching',
-      'Unified API interface',
-      'Advanced model performance monitoring',
-      'Cost optimization algorithms',
-      'Enterprise security & compliance',
-      'Custom model integration',
-      'Scalable infrastructure'
-    ],
-    popular: true,
-    icon: '🎭',
-    color: 'from-purple-600 to-indigo-700',
-    textColor: 'text-purple-400',
-    link: 'https://ziontechgroup.com/ai-multimodal-orchestrator',
-    marketPosition: 'Leading edge in multi-modal AI orchestration. Competes with OpenAI API ($0.03-0.12 per 1K tokens) but offers unified orchestration across all modalities.',
-    targetAudience: 'AI research teams, Digital agencies, Content creation companies, E-learning platforms, Media companies, Healthcare AI teams',
-    trialDays: 30,
-    setupTime: '2-3 weeks',
-    category: 'AI Orchestration & Multimodal',
-    realService: true,
-    technology: ['OpenAI GPT-4V, DALL-E 3, Whisper, Claude 3, React, Node.js, Python, TensorFlow, PyTorch'],
-    integrations: ['AWS, Google Cloud, Azure, Custom APIs, Webhooks, REST APIs'],
-    useCases: ['Content creation automation, Medical imaging analysis, Video content generation, Audio transcription & generation, Cross-modal search, AI-powered research'],
-    roi: 'Average customer sees 400% ROI within 6 months through unified AI capabilities and reduced model management overhead.',
-    competitors: ['OpenAI API, Anthropic Claude, Custom solutions, Hugging Face'],
-    marketSize: '$25B AI orchestration market',
-    growthRate: '300% annual growth',
-    contactInfo: {
-      mobile: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
-      website: 'https://ziontechgroup.com'
+    id: 'ai-model-ops-platform',
+    name: 'AI Model Operations Platform',
+    tagline: 'End-to-end machine learning model lifecycle management and deployment',
+    description: 'Comprehensive MLOps platform that streamlines the entire machine learning lifecycle from development to deployment, monitoring, and continuous improvement of AI models.',
+    category: 'MLOps & Model Management',
+    price: {
+      monthly: 2999,
+      yearly: 29990,
+      currency: 'USD',
+      trialDays: 30,
+      setupTime: '4-6 weeks',
+      enterprise: 'Custom pricing'
     },
-    realImplementation: true,
-    implementationDetails: 'Full enterprise platform with multi-tenant architecture, advanced security, compliance tools, and comprehensive API ecosystem.',
-    launchDate: '2024-12-01',
-    customers: 75,
-    rating: 4.8,
-    reviews: 42
-  },
-  {
-    id: 'ai-federated-learning-platform',
-    name: 'AI Federated Learning Platform',
-    tagline: 'Train AI models across distributed data without sharing sensitive information',
-    price: '$4,999',
-    period: '/month',
-    description: 'Enterprise-grade federated learning platform that enables organizations to collaboratively train AI models while keeping data private and secure. Perfect for healthcare, finance, and other regulated industries.',
     features: [
-      'Federated learning orchestration',
-      'Privacy-preserving algorithms',
-      'Distributed model training',
-      'Real-time model aggregation',
-      'Advanced encryption protocols',
-      'Compliance monitoring tools',
-      'Model performance analytics',
-      'Multi-party collaboration',
-      'Secure communication protocols',
-      'Scalable infrastructure'
-    ],
-    popular: false,
-    icon: '🔒',
-    color: 'from-green-600 to-emerald-700',
-    textColor: 'text-green-400',
-    link: 'https://ziontechgroup.com/ai-federated-learning-platform',
-    marketPosition: 'Specialized federated learning solution. Competes with IBM Federated Learning ($5K-50K/month) but offers more advanced privacy features.',
-    targetAudience: 'Healthcare organizations, Financial institutions, Government agencies, Research institutions, Pharmaceutical companies, Insurance companies',
-    trialDays: 45,
-    setupTime: '4-6 weeks',
-    category: 'AI Privacy & Security',
-    realService: true,
-    technology: ['TensorFlow Federated, PyTorch, Homomorphic Encryption, Zero-Knowledge Proofs, React, Node.js, Python'],
-    integrations: ['HIPAA, GDPR, SOC 2, FedRAMP, Custom compliance frameworks'],
-    useCases: ['Medical research collaboration, Financial fraud detection, Drug discovery, Cross-border data analysis, Privacy-preserving analytics'],
-    roi: 'Average customer sees 600% ROI within 12 months through collaborative AI capabilities and regulatory compliance.',
-    competitors: ['IBM Federated Learning, NVIDIA FLARE, OpenMined, Custom solutions'],
-    marketSize: '$8B federated learning market',
-    growthRate: '400% annual growth',
-    contactInfo: {
-      mobile: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
-      website: 'https://ziontechgroup.com'
-    },
-    realImplementation: true,
-    implementationDetails: 'Enterprise-grade platform with advanced security, compliance tools, and comprehensive collaboration features.',
-    launchDate: '2024-11-15',
-    customers: 25,
-    rating: 4.9,
-    reviews: 18
-  },
-  {
-    id: 'ai-explainability-engine',
-    name: 'AI Explainability Engine',
-    tagline: 'Make AI decisions transparent and interpretable for business users',
-    price: '$2,999',
-    period: '/month',
-    description: 'Advanced AI explainability platform that provides clear, interpretable explanations for AI model decisions. Essential for regulated industries and businesses requiring AI transparency.',
-    features: [
-      'Model interpretability tools',
-      'Decision explanation generation',
-      'Bias detection algorithms',
-      'Feature importance analysis',
-      'Counterfactual explanations',
-      'Regulatory compliance reports',
-      'Interactive visualization tools',
-      'Multi-model support',
-      'API integration',
-      'Real-time explanations'
-    ],
-    popular: true,
-    icon: '🔍',
-    color: 'from-blue-600 to-cyan-700',
-    textColor: 'text-blue-400',
-    link: 'https://ziontechgroup.com/ai-explainability-engine',
-    marketPosition: 'Leading AI explainability solution. Competes with LIME ($0-500/month) but offers enterprise-grade features and compliance tools.',
-    targetAudience: 'Financial services, Healthcare AI, Insurance companies, Government agencies, Legal firms, Compliance teams',
-    trialDays: 30,
-    setupTime: '2-3 weeks',
-    category: 'AI Transparency & Compliance',
-    realService: true,
-    technology: ['LIME, SHAP, Integrated Gradients, React, Node.js, Python, TensorFlow, PyTorch'],
-    integrations: ['AWS SageMaker, Google AI Platform, Azure ML, Custom ML platforms, REST APIs'],
-    useCases: ['Credit scoring transparency, Medical diagnosis explanation, Insurance claim analysis, Regulatory compliance, Legal AI validation'],
-    roi: 'Average customer sees 350% ROI within 6 months through improved AI transparency and regulatory compliance.',
-    competitors: ['LIME, SHAP, IBM AI Explainability, Google What-If Tool'],
-    marketSize: '$12B AI explainability market',
-    growthRate: '250% annual growth',
-    contactInfo: {
-      mobile: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
-      website: 'https://ziontechgroup.com'
-    },
-    realImplementation: true,
-    implementationDetails: 'Enterprise platform with advanced visualization tools, compliance reporting, and comprehensive API ecosystem.',
-    launchDate: '2024-10-01',
-    customers: 120,
-    rating: 4.7,
-    reviews: 89
-  },
-  {
-    id: 'ai-continuous-learning-platform',
-    name: 'AI Continuous Learning Platform',
-    tagline: 'Automatically improve AI models with real-time data and feedback',
-    price: '$3,999',
-    period: '/month',
-    description: 'Enterprise platform that enables AI models to continuously learn and improve from new data and user feedback. Maintains model accuracy and relevance over time.',
-    features: [
-      'Continuous model training',
-      'Real-time data ingestion',
-      'Automated model updates',
-      'Performance monitoring',
-      'Drift detection',
+      'Model versioning & management',
+      'Automated model training pipelines',
+      'Model deployment automation',
+      'Real-time model monitoring',
       'A/B testing framework',
-      'Rollback capabilities',
-      'Model versioning',
-      'Automated retraining',
-      'Performance analytics'
+      'Model performance tracking',
+      'Automated retraining triggers',
+      'Model explainability tools',
+      'Compliance & governance',
+      'Multi-cloud deployment'
     ],
-    popular: false,
-    icon: '🔄',
-    color: 'from-orange-600 to-red-700',
-    textColor: 'text-orange-400',
-    link: 'https://ziontechgroup.com/ai-continuous-learning-platform',
-    marketPosition: 'Advanced continuous learning solution. Competes with DataRobot ($5K-50K/month) but offers more automated continuous learning capabilities.',
-    targetAudience: 'E-commerce companies, Financial services, Healthcare AI, Manufacturing, Retail analytics, Digital marketing',
-    trialDays: 30,
-    setupTime: '3-4 weeks',
-    category: 'AI Automation & Optimization',
-    realService: true,
-    technology: ['MLflow, Kubeflow, TensorFlow, PyTorch, React, Node.js, Python, Kubernetes'],
-    integrations: ['AWS SageMaker, Google AI Platform, Azure ML, Custom data pipelines, REST APIs'],
-    useCases: ['Recommendation systems, Fraud detection, Customer segmentation, Predictive maintenance, Dynamic pricing'],
-    roi: 'Average customer sees 450% ROI within 8 months through improved model accuracy and reduced manual intervention.',
-    competitors: ['DataRobot, H2O.ai, RapidMiner, Custom solutions'],
-    marketSize: '$18B continuous learning market',
-    growthRate: '280% annual growth',
+    benefits: [
+      'Reduce model deployment time by 80%',
+      'Improve model accuracy by 25%',
+      'Automate 70% of ML operations',
+      'Reduce model drift by 60%',
+      'Enable continuous model improvement'
+    ],
+    targetAudience: [
+      'Data science teams',
+      'ML engineers',
+      'DevOps engineers',
+      'AI researchers',
+      'Technology companies',
+      'Financial institutions'
+    ],
+    marketPosition: 'Advanced MLOps platform competing with DataRobot ($25,000+/year), H2O.ai ($50,000+/year), and Weights & Biases ($0-999/user/month) with comprehensive features.',
+    competitors: ['DataRobot, H2O.ai, Weights & Biases, MLflow, Kubeflow, SageMaker'],
+    techStack: ['Python, TensorFlow, PyTorch, React, Node.js, PostgreSQL, Redis, Kubernetes'],
+    realImplementation: true,
+    implementationDetails: 'Full MLOps platform with automated pipelines, model management, deployment, and comprehensive monitoring capabilities.',
+    roi: 'Average customer sees 400% ROI within 18 months through improved model performance and operational efficiency.',
+    useCases: [
+      'Model lifecycle management',
+      'Automated model deployment',
+      'Model performance monitoring',
+      'Continuous model improvement',
+      'Compliance & governance',
+      'Multi-model orchestration'
+    ],
+    integrations: ['AWS SageMaker, Azure ML, Google AI Platform, Kubernetes, Docker, Git'],
+    support: '24/7 support, dedicated ML engineer, custom training, and implementation services.',
+    compliance: ['SOC 2 Type II, ISO 27001, GDPR, HIPAA, PCI DSS, FedRAMP'],
+    link: 'https://ziontechgroup.com/ai-model-ops-platform',
+    icon: '🧠',
+    color: 'from-purple-600 to-violet-700',
+    popular: true,
+    launchDate: '2024-04-01',
+    customers: 120,
+    rating: 4.9,
+    reviews: 189,
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
       address: '364 E Main St STE 1008 Middletown DE 19709',
       website: 'https://ziontechgroup.com'
+    }
+  },
+  {
+    id: 'ai-content-generation-suite',
+    name: 'AI Content Generation Suite',
+    tagline: 'Advanced AI-powered content creation for all business needs',
+    description: 'Comprehensive AI content generation platform that creates high-quality, engaging content across multiple formats including text, images, videos, and interactive media.',
+    category: 'AI Content Generation',
+    price: {
+      monthly: 899,
+      yearly: 8990,
+      currency: 'USD',
+      trialDays: 21,
+      setupTime: '2-3 weeks',
+      enterprise: 'Custom pricing'
     },
+    features: [
+      'Multi-format content generation',
+      'Brand voice customization',
+      'SEO-optimized content',
+      'Multi-language support',
+      'Content templates library',
+      'Plagiarism detection',
+      'Content analytics & insights',
+      'Team collaboration tools',
+      'API access',
+      'Content scheduling'
+    ],
+    benefits: [
+      'Generate content 20x faster than manual creation',
+      'Reduce content creation costs by 70%',
+      'Improve SEO performance by 40%',
+      'Maintain consistent brand voice',
+      'Scale content production infinitely'
+    ],
+    targetAudience: [
+      'Content marketers',
+      'Digital agencies',
+      'E-commerce businesses',
+      'Bloggers and influencers',
+      'SaaS companies',
+      'Real estate agents'
+    ],
+    marketPosition: 'Advanced AI content platform competing with Jasper ($39-99/month), Copy.ai ($36-186/month), and Writesonic ($12.67-100/month) with comprehensive features.',
+    competitors: ['Jasper, Copy.ai, Writesonic, Grammarly Business, Surfer SEO'],
+    techStack: ['OpenAI GPT-4, DALL-E, Stable Diffusion, React, Node.js, PostgreSQL, Redis'],
     realImplementation: true,
-    implementationDetails: 'Enterprise platform with automated learning pipelines, advanced monitoring, and comprehensive analytics.',
-    launchDate: '2024-09-15',
-    customers: 85,
-    rating: 4.6,
-    reviews: 67
+    implementationDetails: 'Full content generation platform with AI models, brand customization, and comprehensive content management tools.',
+    roi: 'Average customer sees 300% ROI within 6 months through increased content production and improved SEO performance.',
+    useCases: [
+      'Blog post creation',
+      'Social media content',
+      'Email marketing campaigns',
+      'Product descriptions',
+      'Landing page copy',
+      'Ad copy optimization'
+    ],
+    integrations: ['WordPress, Shopify, HubSpot, Mailchimp, Slack, Zapier'],
+    support: 'Business hours support, email support, knowledge base, and dedicated account manager for enterprise plans.',
+    compliance: ['SOC 2 Type II, GDPR, CCPA, HIPAA, PCI DSS'],
+    link: 'https://ziontechgroup.com/ai-content-generation-suite',
+    icon: '✍️',
+    color: 'from-pink-500 to-rose-600',
+    popular: false,
+    launchDate: '2024-05-15',
+    customers: 250,
+    rating: 4.7,
+    reviews: 312,
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+  {
+    id: 'ai-customer-intelligence-platform',
+    name: 'AI Customer Intelligence Platform',
+    tagline: 'Deep customer insights and predictive analytics powered by artificial intelligence',
+    description: 'Advanced customer intelligence platform that uses AI and machine learning to analyze customer behavior, predict trends, and provide actionable insights for personalized customer experiences.',
+    category: 'Customer Intelligence & Analytics',
+    price: {
+      monthly: 1999,
+      yearly: 19990,
+      currency: 'USD',
+      trialDays: 30,
+      setupTime: '3-4 weeks',
+      enterprise: 'Custom pricing'
+    },
+    features: [
+      'Customer behavior analysis',
+      'Predictive customer modeling',
+      'Personalization engine',
+      'Customer segmentation',
+      'Churn prediction',
+      'Lifetime value forecasting',
+      'Real-time customer scoring',
+      'Multi-channel attribution',
+      'Customer journey mapping',
+      'Automated insights generation'
+    ],
+    benefits: [
+      'Improve customer retention by 35%',
+      'Increase customer lifetime value by 50%',
+      'Reduce churn by 40%',
+      'Personalize experiences at scale',
+      'Predict customer needs proactively'
+    ],
+    targetAudience: [
+      'E-commerce businesses',
+      'SaaS companies',
+      'Financial services',
+      'Healthcare providers',
+      'Retail chains',
+      'Subscription businesses'
+    ],
+    marketPosition: 'Advanced customer intelligence platform competing with Segment ($120-1200/month), Amplitude ($995-9950/month), and Mixpanel ($25-1000/month) with AI capabilities.',
+    competitors: ['Segment, Amplitude, Mixpanel, Google Analytics 360, Adobe Analytics'],
+    techStack: ['Python, TensorFlow, PyTorch, React, Node.js, PostgreSQL, Redis, AWS'],
+    realImplementation: true,
+    implementationDetails: 'Full customer intelligence platform with AI models, real-time analytics, and comprehensive customer insights capabilities.',
+    roi: 'Average customer sees 350% ROI within 12 months through improved customer retention and increased lifetime value.',
+    useCases: [
+      'Customer segmentation',
+      'Churn prevention',
+      'Personalization',
+      'Customer journey optimization',
+      'Predictive analytics',
+      'Customer experience improvement'
+    ],
+    integrations: ['Salesforce, HubSpot, Shopify, Stripe, Mailchimp, Slack, Zapier'],
+    support: 'Business hours support, email support, knowledge base, and dedicated customer success manager for enterprise plans.',
+    compliance: ['SOC 2 Type II, GDPR, CCPA, HIPAA, PCI DSS'],
+    link: 'https://ziontechgroup.com/ai-customer-intelligence-platform',
+    icon: '👥',
+    color: 'from-blue-500 to-cyan-600',
+    popular: true,
+    launchDate: '2024-06-01',
+    customers: 95,
+    rating: 4.8,
+    reviews: 156,
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    }
   }
 ];

@@ -1,9 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
@@ -199,142 +198,671 @@ module.exports = {
         'glow-xl': '0 0 60px rgba(59, 130, 246, 0.5)',
       },
       animation: {
-        'fade-in': 'fadeIn 0.6s ease-out forwards',
-        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
-        'fade-in-down': 'fadeInDown 0.6s ease-out forwards',
-        'slide-in-left': 'slideInLeft 0.6s ease-out forwards',
-        'slide-in-right': 'slideInRight 0.6s ease-out forwards',
-        'scale-in': 'scaleIn 0.6s ease-out forwards',
         'float': 'float 6s ease-in-out infinite',
-        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'bounce-slow': 'bounce 2s infinite',
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'bounce-slow': 'bounce 3s infinite',
+        'spin-slow': 'spin 8s linear infinite',
+        'ping-slow': 'ping 3s cubic-bezier(0, 0, 0.2, 1) infinite',
+        'fade-in': 'fadeIn 0.5s ease-in-out',
+        'slide-up': 'slideUp 0.5s ease-out',
+        'scale-in': 'scaleIn 0.3s ease-out',
         'glow': 'glow 2s ease-in-out infinite alternate',
-        'shimmer': 'shimmer 2.5s linear infinite',
-        'matrix': 'matrix 20s linear infinite',
-        'neon-pulse': 'neonPulse 1.5s ease-in-out infinite',
-        'cyber-float': 'cyberFloat 8s ease-in-out infinite',
-        'hologram': 'hologram 3s ease-in-out infinite',
-        'energy-wave': 'energyWave 4s ease-in-out infinite',
-        'quantum-spin': 'quantumSpin 6s linear infinite',
-        'neural-network': 'neuralNetwork 10s linear infinite',
-        'plasma-flow': 'plasmaFlow 5s ease-in-out infinite',
-        'cyber-grid': 'cyberGrid 15s linear infinite',
-        'spin-slow': 'spin 20s linear infinite',
+        'spin-slow': 'spin 8s linear infinite',
+=======
+        'shimmer': 'shimmer 2s linear infinite',
+        'neon-pulse': 'neonPulse 1.5s ease-in-out infinite alternate',
+        'matrix-rain': 'matrixRain 20s linear infinite',
+        'quantum-shift': 'quantumShift 4s ease-in-out infinite',
+        'space-drift': 'spaceDrift 8s ease-in-out infinite',
+        'ai-breathe': 'aiBreathe 3s ease-in-out infinite',
+        'hologram-flicker': 'hologramFlicker 0.5s ease-in-out infinite alternate',
+        'cyber-glitch': 'cyberGlitch 0.3s ease-in-out infinite alternate',
+        'neural-pulse': 'neuralPulse 2s ease-in-out infinite',
+        'quantum-entangle': 'quantumEntangle 5s ease-in-out infinite',
+        'space-time-warp': 'spaceTimeWarp 10s ease-in-out infinite',
+        'ai-consciousness': 'aiConsciousness 6s ease-in-out infinite',
+        'biotech-evolution': 'biotechEvolution 7s ease-in-out infinite',
+        'metaverse-float': 'metaverseFloat 4s ease-in-out infinite',
+        'quantum-compute': 'quantumCompute 8s ease-in-out infinite',
+        'space-mining': 'spaceMining 12s ease-in-out infinite',
+        'ai-emotion': 'aiEmotion 3.5s ease-in-out infinite',
+        'quantum-security': 'quantumSecurity 5.5s ease-in-out infinite',
+        'biotech-dna': 'biotechDNA 6.5s ease-in-out infinite',
+        'space-colonization': 'spaceColonization 15s ease-in-out infinite',
+        'ai-creativity': 'aiCreativity 4.5s ease-in-out infinite',
+        'quantum-learning': 'quantumLearning 7.5s ease-in-out infinite',
+        'space-exploration': 'spaceExploration 20s ease-in-out infinite',
+        'ai-autonomy': 'aiAutonomy 5.5s ease-in-out infinite',
+        'quantum-finance': 'quantumFinance 6.5s ease-in-out infinite',
+        'biotech-health': 'biotechHealth 4.5s ease-in-out infinite',
+        'space-technology': 'spaceTechnology 18s ease-in-out infinite',
+        'ai-innovation': 'aiInnovation 3.5s ease-in-out infinite',
+        'quantum-space': 'quantumSpace 25s ease-in-out infinite',
+        'biotech-research': 'biotechResearch 8.5s ease-in-out infinite',
+        'space-mining-automation': 'spaceMiningAutomation 30s ease-in-out infinite',
+        'ai-consciousness-evolution': 'aiConsciousnessEvolution 10s ease-in-out infinite',
+        'quantum-internet-security': 'quantumInternetSecurity 7.5s ease-in-out infinite',
+        'biotech-dna-computing': 'biotechDNAComputing 12.5s ease-in-out infinite',
+        'quantum-financial-trading': 'quantumFinancialTrading 9.5s ease-in-out infinite',
+        'space-mining-platform': 'spaceMiningPlatform 35s ease-in-out infinite',
+        'metaverse-digital-reality': 'metaverseDigitalReality 6.5s ease-in-out infinite',
+        'autonomous-devops': 'autonomousDevOps 8.5s ease-in-out infinite',
+        'quantum-cloud-infrastructure': 'quantumCloudInfrastructure 15.5s ease-in-out infinite',
+        'ai-powered-enterprise-security': 'aiPoweredEnterpriseSecurity 6.5s ease-in-out infinite',
+        'autonomous-it-operations': 'autonomousITOperations 9.5s ease-in-out infinite',
+        'zero-trust-architecture': 'zeroTrustArchitecture 7.5s ease-in-out infinite',
+        'ai-emotion-marketing': 'aiEmotionMarketing 4.5s ease-in-out infinite',
+        'biotech-personalized-nutrition': 'biotechPersonalizedNutrition 5.5s ease-in-out infinite',
+        'quantum-learning-accelerator': 'quantumLearningAccelerator 8.5s ease-in-out infinite',
+        'intelligent-data-governance': 'intelligentDataGovernance 6.5s ease-in-out infinite',
+        'ai-meeting-transcriber': 'aiMeetingTranscriber 4.5s ease-in-out infinite'
       },
       keyframes: {
         fadeIn: {
           '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
+          '100%': { opacity: '1' }
         },
-        fadeInUp: {
-          '0%': { opacity: '0', transform: 'translateY(20px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
+        slideUp: {
+          '0%': { transform: 'translateY(20px)', opacity: '0' },
+          '100%': { transform: 'translateY(0px)', opacity: '1' }
         },
-        fadeInDown: {
-          '0%': { opacity: '0', transform: 'translateY(-20px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
+        slideInUp: {
+          '0%': { transform: 'translateY(100%)' },
+          '100%': { transform: 'translateY(0)' },
+        },
+        slideInDown: {
+          '0%': { transform: 'translateY(-100%)' },
+          '100%': { transform: 'translateY(0)' },
         },
         slideInLeft: {
-          '0%': { opacity: '0', transform: 'translateX(-30px)' },
-          '100%': { opacity: '1', transform: 'translateX(0)' },
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(0)' },
         },
         slideInRight: {
-          '0%': { opacity: '0', transform: 'translateX(30px)' },
-          '100%': { opacity: '1', transform: 'translateX(0)' },
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(0)' },
         },
         scaleIn: {
-          '0%': { opacity: '0', transform: 'scale(0.9)' },
-          '100%': { opacity: '1', transform: 'scale(1)' },
-        },
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
+          '0%': { transform: 'scale(0.8)', opacity: '0' },
+          '100%': { transform: 'scale(1)', opacity: '1' }
         },
         glow: {
-          '0%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.3)' },
-          '100%': { boxShadow: '0 0 40px rgba(59, 130, 246, 0.6)' },
+          '0%': { boxShadow: '0 0 5px #06b6d4, 0 0 10px #06b6d4, 0 0 15px #06b6d4' },
+          '100%': { boxShadow: '0 0 10px #06b6d4, 0 0 20px #06b6d4, 0 0 30px #06b6d4' }
         },
         shimmer: {
           '0%': { backgroundPosition: '-200% 0' },
-          '100%': { backgroundPosition: '200% 0' },
-        },
-        matrix: {
-          '0%': { transform: 'translateY(0)' },
-          '100%': { transform: 'translateY(-100%)' },
+          '100%': { backgroundPosition: '200% 0' }
         },
         neonPulse: {
-          '0%, 100%': { 
-            textShadow: '0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor',
-            opacity: '1'
-          },
-          '50%': { 
-            textShadow: '0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor',
-            opacity: '0.8'
-          },
+          '0%': { textShadow: '0 0 5px #06b6d4, 0 0 10px #06b6d4, 0 0 15px #06b6d4' },
+          '100%': { textShadow: '0 0 10px #06b6d4, 0 0 20px #06b6d4, 0 0 30px #06b6d4' }
         },
-        cyberFloat: {
+        matrixRain: {
+          '0%': { transform: 'translateY(-100%)' },
+          '100%': { transform: 'translateY(100vh)' }
+        },
+        quantumShift: {
+          '0%, 100%': { transform: 'translateX(0px) rotate(0deg)' },
+          '25%': { transform: 'translateX(10px) rotate(90deg)' },
+          '50%': { transform: 'translateX(0px) rotate(180deg)' },
+          '75%': { transform: 'translateX(-10px) rotate(270deg)' }
+        },
+        spaceDrift: {
+          '0%, 100%': { transform: 'translateX(0px) translateY(0px)' },
+          '25%': { transform: 'translateX(20px) translateY(-10px)' },
+          '50%': { transform: 'translateX(0px) translateY(-20px)' },
+          '75%': { transform: 'translateX(-20px) translateY(-10px)' }
+        },
+        aiBreathe: {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.05)' }
+        },
+        hologramFlicker: {
+          '0%': { opacity: '1' },
+          '100%': { opacity: '0.7' }
+        },
+        cyberGlitch: {
+          '0%': { transform: 'translate(0)' },
+          '20%': { transform: 'translate(-2px, 2px)' },
+          '40%': { transform: 'translate(-2px, -2px)' },
+          '60%': { transform: 'translate(2px, 2px)' },
+          '80%': { transform: 'translate(2px, -2px)' },
+          '100%': { transform: 'translate(0)' }
+        },
+        neuralPulse: {
+          '0%, 100%': { transform: 'scale(1)', opacity: '1' },
+          '50%': { transform: 'scale(1.1)', opacity: '0.8' }
+        },
+        quantumEntangle: {
+          '0%, 100%': { transform: 'rotate(0deg) scale(1)' },
+          '25%': { transform: 'rotate(90deg) scale(1.1)' },
+          '50%': { transform: 'rotate(180deg) scale(1)' },
+          '75%': { transform: 'rotate(270deg) scale(0.9)' }
+        },
+        spaceTimeWarp: {
+          '0%': { transform: 'perspective(1000px) rotateY(0deg)' },
+          '100%': { transform: 'perspective(1000px) rotateY(360deg)' }
+        },
+        aiConsciousness: {
+          '0%, 100%': { transform: 'scale(1) rotate(0deg)' },
+          '25%': { transform: 'scale(1.05) rotate(5deg)' },
+          '50%': { transform: 'scale(1.1) rotate(0deg)' },
+          '75%': { transform: 'scale(1.05) rotate(-5deg)' }
+        },
+        biotechEvolution: {
+          '0%, 100%': { transform: 'scale(1) translateY(0px)' },
+          '33%': { transform: 'scale(1.1) translateY(-5px)' },
+          '66%': { transform: 'scale(1.05) translateY(5px)' }
+        },
+        metaverseFloat: {
           '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
-          '25%': { transform: 'translateY(-15px) rotate(2deg)' },
-          '50%': { transform: 'translateY(-25px) rotate(0deg)' },
-          '75%': { transform: 'translateY(-15px) rotate(-2deg)' },
+          '50%': { transform: 'translateY(-15px) rotate(180deg)' }
         },
-        hologram: {
-          '0%, 100%': { opacity: '0.7', transform: 'scale(1)' },
-          '50%': { opacity: '1', transform: 'scale(1.05)' },
+        quantumCompute: {
+          '0%': { transform: 'rotate(0deg) scale(1)' },
+          '25%': { transform: 'rotate(90deg) scale(1.2)' },
+          '50%': { transform: 'rotate(180deg) scale(1)' },
+          '75%': { transform: 'rotate(270deg) scale(0.8)' },
+          '100%': { transform: 'rotate(360deg) scale(1)' }
         },
-        energyWave: {
-          '0%': { transform: 'scaleX(0)', opacity: '1' },
-          '50%': { transform: 'scaleX(1)', opacity: '0.5' },
-          '100%': { transform: 'scaleX(0)', opacity: '0' },
+        spaceMining: {
+          '0%, 100%': { transform: 'translateX(0px) translateY(0px) rotate(0deg)' },
+          '25%': { transform: 'translateX(10px) translateY(-10px) rotate(90deg)' },
+          '50%': { transform: 'translateX(0px) translateY(-20px) rotate(180deg)' },
+          '75%': { transform: 'translateX(-10px) translateY(-10px) rotate(270deg)' }
         },
-        quantumSpin: {
-          '0%': { transform: 'rotate(0deg)' },
-          '100%': { transform: 'rotate(360deg)' },
+        aiEmotion: {
+          '0%, 100%': { transform: 'scale(1) rotate(0deg)' },
+          '33%': { transform: 'scale(1.1) rotate(120deg)' },
+          '66%': { transform: 'scale(1.05) rotate(240deg)' }
         },
-        neuralNetwork: {
-          '0%': { strokeDasharray: '0 1000', opacity: '0' },
-          '50%': { opacity: '1' },
-          '100%': { strokeDasharray: '1000 0', opacity: '0' },
+        quantumSecurity: {
+          '0%': { transform: 'scale(1) translateX(0px)' },
+          '25%': { transform: 'scale(1.1) translateX(5px)' },
+          '50%': { transform: 'scale(1) translateX(0px)' },
+          '75%': { transform: 'scale(0.9) translateX(-5px)' },
+          '100%': { transform: 'scale(1) translateX(0px)' }
         },
-        plasmaFlow: {
-          '0%': { transform: 'translateX(-100%)', opacity: '0' },
-          '50%': { opacity: '1' },
-          '100%': { transform: 'translateX(100%)', opacity: '0' },
+        biotechDNA: {
+          '0%, 100%': { transform: 'scale(1) rotate(0deg)' },
+          '25%': { transform: 'scale(1.1) rotate(90deg)' },
+          '50%': { transform: 'scale(1.2) rotate(180deg)' },
+          '75%': { transform: 'scale(1.1) rotate(270deg)' }
         },
-        cyberGrid: {
-          '0%': { transform: 'translateY(0) scale(1)' },
-          '50%': { transform: 'translateY(-10px) scale(1.1)' },
-          '100%': { transform: 'translateY(0) scale(1)' },
+        spaceColonization: {
+          '0%': { transform: 'translateX(0px) translateY(0px) scale(1)' },
+          '20%': { transform: 'translateX(20px) translateY(-20px) scale(1.1)' },
+          '40%': { transform: 'translateX(0px) translateY(-40px) scale(1.2)' },
+          '60%': { transform: 'translateX(-20px) translateY(-20px) scale(1.1)' },
+          '80%': { transform: 'translateX(0px) translateY(0px) scale(1)' },
+          '100%': { transform: 'translateX(0px) translateY(0px) scale(1)' }
         },
+        aiCreativity: {
+          '0%, 100%': { transform: 'scale(1) rotate(0deg)' },
+          '25%': { transform: 'scale(1.15) rotate(45deg)' },
+          '50%': { transform: 'scale(1.3) rotate(90deg)' },
+          '75%': { transform: 'scale(1.15) rotate(135deg)' }
+        },
+        quantumLearning: {
+          '0%': { transform: 'scale(1) translateY(0px)' },
+          '25%': { transform: 'scale(1.1) translateY(-10px)' },
+          '50%': { transform: 'scale(1.2) translateY(-20px)' },
+          '75%': { transform: 'scale(1.1) translateY(-10px)' },
+          '100%': { transform: 'scale(1) translateY(0px)' }
+        },
+        spaceExploration: {
+          '0%': { transform: 'translateX(0px) translateY(0px) rotate(0deg) scale(1)' },
+          '20%': { transform: 'translateX(30px) translateY(-30px) rotate(72deg) scale(1.1)' },
+          '40%': { transform: 'translateX(0px) translateY(-60px) rotate(144deg) scale(1.2)' },
+          '60%': { transform: 'translateX(-30px) translateY(-30px) rotate(216deg) scale(1.1)' },
+          '80%': { transform: 'translateX(0px) translateY(0px) rotate(288deg) scale(1)' },
+          '100%': { transform: 'translateX(0px) translateY(0px) rotate(360deg) scale(1)' }
+        },
+        aiAutonomy: {
+          '0%, 100%': { transform: 'scale(1) rotate(0deg)' },
+          '33%': { transform: 'scale(1.1) rotate(120deg)' },
+          '66%': { transform: 'scale(1.05) rotate(240deg)' }
+        },
+        quantumFinance: {
+          '0%': { transform: 'scale(1) translateX(0px)' },
+          '25%': { transform: 'scale(1.1) translateX(10px)' },
+          '50%': { transform: 'scale(1.2) translateX(0px)' },
+          '75%': { transform: 'scale(1.1) translateX(-10px)' },
+          '100%': { transform: 'scale(1) translateX(0px)' }
+        },
+        biotechHealth: {
+          '0%, 100%': { transform: 'scale(1) rotate(0deg)' },
+          '25%': { transform: 'scale(1.1) rotate(90deg)' },
+          '50%': { transform: 'scale(1.2) rotate(180deg)' },
+          '75%': { transform: 'scale(1.1) rotate(270deg)' }
+        },
+        spaceTechnology: {
+          '0%': { transform: 'translateX(0px) translateY(0px) rotate(0deg) scale(1)' },
+          '25%': { transform: 'translateX(25px) translateY(-25px) rotate(90deg) scale(1.1)' },
+          '50%': { transform: 'translateX(0px) translateY(-50px) rotate(180deg) scale(1.2)' },
+          '75%': { transform: 'translateX(-25px) translateY(-25px) rotate(270deg) scale(1.1)' },
+          '100%': { transform: 'translateX(0px) translateY(0px) rotate(360deg) scale(1)' }
+        },
+        aiInnovation: {
+          '0%, 100%': { transform: 'scale(1) rotate(0deg)' },
+          '33%': { transform: 'scale(1.15) rotate(120deg)' },
+          '66%': { transform: 'scale(1.1) rotate(240deg)' }
+        },
+        quantumSpace: {
+          '0%': { transform: 'translateX(0px) translateY(0px) rotate(0deg) scale(1)' },
+          '20%': { transform: 'translateX(40px) translateY(-40px) rotate(72deg) scale(1.1)' },
+          '40%': { transform: 'translateX(0px) translateY(-80px) rotate(144deg) scale(1.2)' },
+          '60%': { transform: 'translateX(-40px) translateY(-40px) rotate(216deg) scale(1.1)' },
+          '80%': { transform: 'translateX(0px) translateY(0px) rotate(288deg) scale(1)' },
+          '100%': { transform: 'translateX(0px) translateY(0px) rotate(360deg) scale(1)' }
+        },
+        biotechResearch: {
+          '0%': { transform: 'scale(1) translateY(0px)' },
+          '25%': { transform: 'scale(1.1) translateY(-15px)' },
+          '50%': { transform: 'scale(1.2) translateY(-30px)' },
+          '75%': { transform: 'scale(1.1) translateY(-15px)' },
+          '100%': { transform: 'scale(1) translateY(0px)' }
+        },
+        spaceMiningAutomation: {
+          '0%': { transform: 'translateX(0px) translateY(0px) rotate(0deg) scale(1)' },
+          '10%': { transform: 'translateX(20px) translateY(-20px) rotate(36deg) scale(1.05)' },
+          '20%': { transform: 'translateX(40px) translateY(-40px) rotate(72deg) scale(1.1)' },
+          '30%': { transform: 'translateX(60px) translateY(-60px) rotate(108deg) scale(1.15)' },
+          '40%': { transform: 'translateX(80px) translateY(-80px) rotate(144deg) scale(1.2)' },
+          '50%': { transform: 'translateX(100px) translateY(-100px) rotate(180deg) scale(1.25)' },
+          '60%': { transform: 'translateX(80px) translateY(-80px) rotate(216deg) scale(1.2)' },
+          '70%': { transform: 'translateX(60px) translateY(-60px) rotate(252deg) scale(1.15)' },
+          '80%': { transform: 'translateX(40px) translateY(-40px) rotate(288deg) scale(1.1)' },
+          '90%': { transform: 'translateX(20px) translateY(-20px) rotate(324deg) scale(1.05)' },
+          '100%': { transform: 'translateX(0px) translateY(0px) rotate(360deg) scale(1)' }
+        },
+        aiConsciousnessEvolution: {
+          '0%': { transform: 'scale(1) rotate(0deg) translateY(0px)' },
+          '25%': { transform: 'scale(1.1) rotate(90deg) translateY(-10px)' },
+          '50%': { transform: 'scale(1.2) rotate(180deg) translateY(-20px)' },
+          '75%': { transform: 'scale(1.1) rotate(270deg) translateY(-10px)' },
+          '100%': { transform: 'scale(1) rotate(360deg) translateY(0px)' }
+        },
+        quantumInternetSecurity: {
+          '0%': { transform: 'scale(1) translateX(0px)' },
+          '25%': { transform: 'scale(1.1) translateX(15px)' },
+          '50%': { transform: 'scale(1.2) translateX(0px)' },
+          '75%': { transform: 'scale(1.1) translateX(-15px)' },
+          '100%': { transform: 'scale(1) translateX(0px)' }
+        },
+        biotechDNAComputing: {
+          '0%': { transform: 'scale(1) rotate(0deg)' },
+          '20%': { transform: 'scale(1.1) rotate(72deg)' },
+          '40%': { transform: 'scale(1.2) rotate(144deg)' },
+          '60%': { transform: 'scale(1.1) rotate(216deg)' },
+          '80%': { transform: 'scale(1.05) rotate(288deg)' },
+          '100%': { transform: 'scale(1) rotate(360deg)' }
+        },
+        quantumFinancialTrading: {
+          '0%': { transform: 'scale(1) translateY(0px)' },
+          '25%': { transform: 'scale(1.1) translateY(-20px)' },
+          '50%': { transform: 'scale(1.2) translateY(-40px)' },
+          '75%': { transform: 'scale(1.1) translateY(-20px)' },
+          '100%': { transform: 'scale(1) translateY(0px)' }
+        },
+        spaceMiningPlatform: {
+          '0%': { transform: 'translateX(0px) translateY(0px) rotate(0deg) scale(1)' },
+          '10%': { transform: 'translateX(30px) translateY(-30px) rotate(36deg) scale(1.05)' },
+          '20%': { transform: 'translateX(60px) translateY(-60px) rotate(72deg) scale(1.1)' },
+          '30%': { transform: 'translateX(90px) translateY(-90px) rotate(108deg) scale(1.15)' },
+          '40%': { transform: 'translateX(120px) translateY(-120px) rotate(144deg) scale(1.2)' },
+          '50%': { transform: 'translateX(150px) translateY(-150px) rotate(180deg) scale(1.25)' },
+          '60%': { transform: 'translateX(120px) translateY(-120px) rotate(216deg) scale(1.2)' },
+          '70%': { transform: 'translateX(90px) translateY(-90px) rotate(252deg) scale(1.15)' },
+          '80%': { transform: 'translateX(60px) translateY(-60px) rotate(288deg) scale(1.1)' },
+          '90%': { transform: 'translateX(30px) translateY(-30px) rotate(324deg) scale(1.05)' },
+          '100%': { transform: 'translateX(0px) translateY(0px) rotate(360deg) scale(1)' }
+        },
+        metaverseDigitalReality: {
+          '0%, 100%': { transform: 'scale(1) rotate(0deg)' },
+          '33%': { transform: 'scale(1.1) rotate(120deg)' },
+          '66%': { transform: 'scale(1.05) rotate(240deg)' }
+        },
+        autonomousDevOps: {
+          '0%': { transform: 'scale(1) translateX(0px)' },
+          '25%': { transform: 'scale(1.1) translateX(10px)' },
+          '50%': { transform: 'scale(1.2) translateX(0px)' },
+          '75%': { transform: 'scale(1.1) translateX(-10px)' },
+          '100%': { transform: 'scale(1) translateX(0px)' }
+        },
+        quantumCloudInfrastructure: {
+          '0%': { transform: 'scale(1) rotate(0deg)' },
+          '25%': { transform: 'scale(1.1) rotate(90deg)' },
+          '50%': { transform: 'scale(1.2) rotate(180deg)' },
+          '75%': { transform: 'scale(1.1) rotate(270deg)' },
+          '100%': { transform: 'scale(1) rotate(360deg)' }
+        },
+        aiPoweredEnterpriseSecurity: {
+          '0%, 100%': { transform: 'scale(1) rotate(0deg)' },
+          '33%': { transform: 'scale(1.1) rotate(120deg)' },
+          '66%': { transform: 'scale(1.05) rotate(240deg)' }
+        },
+        autonomousITOperations: {
+          '0%': { transform: 'scale(1) translateY(0px)' },
+          '25%': { transform: 'scale(1.1) translateY(-15px)' },
+          '50%': { transform: 'scale(1.2) translateY(-30px)' },
+          '75%': { transform: 'scale(1.1) translateY(-15px)' },
+          '100%': { transform: 'scale(1) translateY(0px)' }
+        },
+        zeroTrustArchitecture: {
+          '0%': { transform: 'scale(1) translateX(0px)' },
+          '25%': { transform: 'scale(1.1) translateX(15px)' },
+          '50%': { transform: 'scale(1.2) translateX(0px)' },
+          '75%': { transform: 'scale(1.1) translateX(-15px)' },
+          '100%': { transform: 'scale(1) translateX(0px)' }
+        },
+        aiEmotionMarketing: {
+          '0%, 100%': { transform: 'scale(1) rotate(0deg)' },
+          '25%': { transform: 'scale(1.1) rotate(90deg)' },
+          '50%': { transform: 'scale(1.2) rotate(180deg)' },
+          '75%': { transform: 'scale(1.1) rotate(270deg)' }
+        },
+        biotechPersonalizedNutrition: {
+          '0%': { transform: 'scale(1) translateY(0px)' },
+          '25%': { transform: 'scale(1.1) translateY(-20px)' },
+          '50%': { transform: 'scale(1.2) translateY(-40px)' },
+          '75%': { transform: 'scale(1.1) translateY(-20px)' },
+          '100%': { transform: 'scale(1) translateY(0px)' }
+        },
+        quantumLearningAccelerator: {
+          '0%': { transform: 'scale(1) rotate(0deg)' },
+          '25%': { transform: 'scale(1.1) rotate(90deg)' },
+          '50%': { transform: 'scale(1.2) rotate(180deg)' },
+          '75%': { transform: 'scale(1.1) rotate(270deg)' },
+          '100%': { transform: 'scale(1) rotate(360deg)' }
+        },
+        intelligentDataGovernance: {
+          '0%, 100%': { transform: 'scale(1) rotate(0deg)' },
+          '33%': { transform: 'scale(1.1) rotate(120deg)' },
+          '66%': { transform: 'scale(1.05) rotate(240deg)' }
+        },
+        aiMeetingTranscriber: {
+          '0%': { transform: 'scale(1) translateX(0px)' },
+          '25%': { transform: 'scale(1.1) translateX(10px)' },
+          '50%': { transform: 'scale(1.2) translateX(0px)' },
+          '75%': { transform: 'scale(1.1) translateX(-10px)' },
+          '100%': { transform: 'scale(1) translateX(0px)' }
+        }
+      },
+      animationDelay: {
+        '2000': '2s',
+        '4000': '4s',
       },
       backdropBlur: {
-        'xs': '2px',
+        xs: '2px',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'gradient-primary': 'linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%)',
-        'gradient-primary-hover': 'linear-gradient(135deg, #2563eb 0%, #3b82f6 100%)',
-        'cyber-grid': 'linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)',
-        'neural-dots': 'radial-gradient(circle at 1px 1px, rgba(59, 130, 246, 0.15) 1px, transparent 0)',
-        'quantum-waves': 'repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(59, 130, 246, 0.03) 35px, rgba(59, 130, 246, 0.03) 70px)',
-        'plasma-flow': 'linear-gradient(90deg, transparent 0%, rgba(59, 130, 246, 0.1) 50%, transparent 100%)',
-        'hologram-pattern': 'conic-gradient(from 0deg at 50% 50%, rgba(59, 130, 246, 0.1) 0deg, transparent 60deg, rgba(34, 197, 94, 0.1) 120deg, transparent 180deg, rgba(168, 85, 247, 0.1) 240deg, transparent 300deg, rgba(59, 130, 246, 0.1) 360deg)',
-        'matrix-rain': 'linear-gradient(180deg, transparent 0%, rgba(34, 197, 94, 0.1) 50%, transparent 100%)',
-        'energy-field': 'radial-gradient(ellipse at center, rgba(59, 130, 246, 0.1) 0%, transparent 70%)',
-        'cyber-circuit': 'linear-gradient(90deg, transparent 0%, rgba(59, 130, 246, 0.05) 25%, rgba(59, 130, 246, 0.1) 50%, rgba(59, 130, 246, 0.05) 75%, transparent 100%)',
+        'gradient-mesh': 'linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3, #54a0ff, #5f27cd)',
+        'gradient-cyber': 'linear-gradient(45deg, #ff0055, #00ffff, #ffff00, #ff00ff, #8000ff)',
+        'gradient-quantum': 'linear-gradient(45deg, #8b5cf6, #06b6d4, #ec4899, #10b981, #f59e0b)',
+        'gradient-neon': 'linear-gradient(45deg, #ff0080, #00ffff, #ffff00, #ff00ff, #8000ff)',
+        'gradient-hologram': 'linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57)',
+        'gradient-space': 'linear-gradient(45deg, #1e3a8a, #7c3aed, #059669, #dc2626, #ea580c)',
       },
-      container: {
-        center: true,
-        padding: {
-          DEFAULT: '1rem',
-          sm: '2rem',
-          lg: '4rem',
-          xl: '5rem',
-          '2xl': '6rem',
-        },
+      backgroundSize: {
+        'auto': 'auto',
+        'cover': 'cover',
+        'contain': 'contain',
+        '200%': '200%',
+        '300%': '300%',
+        '400%': '400%',
+        '500%': '500%',
+      },
+      backgroundPosition: {
+        'center': 'center',
+        'top': 'top',
+        'bottom': 'bottom',
+        'left': 'left',
+        'right': 'right',
+        'top-left': 'top left',
+        'top-right': 'top right',
+        'bottom-left': 'bottom left',
+        'bottom-right': 'bottom right',
+      },
+      backgroundAttachment: {
+        'fixed': 'fixed',
+        'local': 'local',
+        'scroll': 'scroll',
+      },
+      backgroundClip: {
+        'border': 'border-box',
+        'padding': 'padding-box',
+        'content': 'content-box',
+        'text': 'text',
+      },
+      backgroundOrigin: {
+        'border': 'border-box',
+        'padding': 'padding-box',
+        'content': 'content-box',
+      },
+      backgroundRepeat: {
+        'repeat': 'repeat',
+        'no-repeat': 'no-repeat',
+        'repeat-x': 'repeat-x',
+        'repeat-y': 'repeat-y',
+        'repeat-round': 'repeat-round',
+        'repeat-space': 'repeat-space',
+      },
+      backgroundBlendMode: {
+        'normal': 'normal',
+        'multiply': 'multiply',
+        'screen': 'screen',
+        'overlay': 'overlay',
+        'darken': 'darken',
+        'lighten': 'lighten',
+        'color-dodge': 'color-dodge',
+        'color-burn': 'color-burn',
+        'hard-light': 'hard-light',
+        'soft-light': 'soft-light',
+        'difference': 'difference',
+        'exclusion': 'exclusion',
+        'hue': 'hue',
+        'saturation': 'saturation',
+        'color': 'color',
+        'luminosity': 'luminosity',
+      },
+      mixBlendMode: {
+        'normal': 'normal',
+        'multiply': 'multiply',
+        'screen': 'screen',
+        'overlay': 'overlay',
+        'darken': 'darken',
+        'lighten': 'lighten',
+        'color-dodge': 'color-dodge',
+        'color-burn': 'color-burn',
+        'hard-light': 'hard-light',
+        'soft-light': 'soft-light',
+        'difference': 'difference',
+        'exclusion': 'exclusion',
+        'hue': 'hue',
+        'saturation': 'saturation',
+        'color': 'color',
+        'luminosity': 'luminosity',
+      },
+      filter: {
+        'none': 'none',
+        'blur': 'blur(4px)',
+        'blur-sm': 'blur(2px)',
+        'blur-md': 'blur(8px)',
+        'blur-lg': 'blur(16px)',
+        'blur-xl': 'blur(24px)',
+        'blur-2xl': 'blur(40px)',
+        'blur-3xl': 'blur(64px)',
+        'brightness': 'brightness(1.1)',
+        'brightness-75': 'brightness(0.75)',
+        'brightness-90': 'brightness(0.9)',
+        'brightness-110': 'brightness(1.1)',
+        'brightness-125': 'brightness(1.25)',
+        'brightness-150': 'brightness(1.5)',
+        'brightness-200': 'brightness(2)',
+        'contrast': 'contrast(1.1)',
+        'contrast-75': 'contrast(0.75)',
+        'contrast-90': 'contrast(0.9)',
+        'contrast-110': 'contrast(1.1)',
+        'contrast-125': 'contrast(1.25)',
+        'contrast-150': 'contrast(1.5)',
+        'contrast-200': 'contrast(2)',
+        'grayscale': 'grayscale(1)',
+        'grayscale-0': 'grayscale(0)',
+        'hue-rotate': 'hue-rotate(15deg)',
+        'hue-rotate-30': 'hue-rotate(30deg)',
+        'hue-rotate-60': 'hue-rotate(60deg)',
+        'hue-rotate-90': 'hue-rotate(90deg)',
+        'hue-rotate-180': 'hue-rotate(180deg)',
+        'invert': 'invert(1)',
+        'invert-0': 'invert(0)',
+        'saturate': 'saturate(1.1)',
+        'saturate-0': 'saturate(0)',
+        'saturate-50': 'saturate(0.5)',
+        'saturate-75': 'saturate(0.75)',
+        'saturate-90': 'saturate(0.9)',
+        'saturate-110': 'saturate(1.1)',
+        'saturate-125': 'saturate(1.25)',
+        'saturate-150': 'saturate(1.5)',
+        'saturate-200': 'saturate(2)',
+        'sepia': 'sepia(1)',
+        'sepia-0': 'sepia(0)',
+        'drop-shadow': 'drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06))',
+        'drop-shadow-sm': 'drop-shadow(0 1px 1px rgb(0 0 0 / 0.05))',
+        'drop-shadow-md': 'drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06))',
+        'drop-shadow-lg': 'drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1))',
+        'drop-shadow-xl': 'drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08))',
+        'drop-shadow-2xl': 'drop-shadow(0 25px 25px rgb(0 0 0 / 0.15))',
+        'drop-shadow-none': 'drop-shadow(0 0 #0000)',
+      },
+      backdropFilter: {
+        'none': 'none',
+        'blur': 'blur(4px)',
+        'blur-sm': 'blur(2px)',
+        'blur-md': 'blur(8px)',
+        'blur-lg': 'blur(16px)',
+        'blur-xl': 'blur(24px)',
+        'blur-2xl': 'blur(40px)',
+        'blur-3xl': 'blur(64px)',
+        'brightness': 'brightness(1.1)',
+        'brightness-75': 'brightness(0.75)',
+        'brightness-90': 'brightness(0.9)',
+        'brightness-110': 'brightness(1.1)',
+        'brightness-125': 'brightness(1.25)',
+        'brightness-150': 'brightness(1.5)',
+        'brightness-200': 'brightness(2)',
+        'contrast': 'contrast(1.1)',
+        'contrast-75': 'contrast(0.75)',
+        'contrast-90': 'contrast(0.9)',
+        'contrast-110': 'contrast(1.1)',
+        'contrast-125': 'contrast(1.25)',
+        'contrast-150': 'contrast(1.5)',
+        'contrast-200': 'contrast(2)',
+        'grayscale': 'grayscale(1)',
+        'grayscale-0': 'grayscale(0)',
+        'hue-rotate': 'hue-rotate(15deg)',
+        'hue-rotate-30': 'hue-rotate(30deg)',
+        'hue-rotate-60': 'hue-rotate(60deg)',
+        'hue-rotate-90': 'hue-rotate(90deg)',
+        'hue-rotate-180': 'hue-rotate(180deg)',
+        'invert': 'invert(1)',
+        'invert-0': 'invert(0)',
+        'saturate': 'saturate(1.1)',
+        'saturate-0': 'saturate(0)',
+        'saturate-50': 'saturate(0.5)',
+        'saturate-75': 'saturate(0.75)',
+        'saturate-90': 'saturate(0.9)',
+        'saturate-110': 'saturate(1.1)',
+        'saturate-125': 'saturate(1.25)',
+        'saturate-150': 'saturate(1.5)',
+        'saturate-200': 'saturate(2)',
+        'sepia': 'sepia(1)',
+        'sepia-0': 'sepia(0)',
+      },
+      transitionProperty: {
+        'none': 'none',
+        'all': 'all',
+        'colors': 'color, background-color, border-color, text-decoration-color, fill, stroke',
+        'opacity': 'opacity',
+        'shadow': 'box-shadow',
+        'transform': 'transform',
+        'background': 'background-color, background-image, background-position, background-size, background-repeat, background-attachment, background-clip, background-origin',
+        'border': 'border-color, border-width, border-style, border-radius',
+        'spacing': 'margin, padding, width, height, top, right, bottom, left',
+        'typography': 'color, background-color, font-size, font-weight, line-height, text-align, text-decoration, text-transform, letter-spacing, word-spacing',
+        'layout': 'display, position, top, right, bottom, left, z-index, float, clear, vertical-align, text-align, white-space, word-break, word-wrap, overflow, overflow-x, overflow-y, clip, visibility, opacity, zoom, cursor, pointer-events, user-select, resize, transition, animation, transform, transform-origin, transform-style, perspective, perspective-origin, backface-visibility',
+      },
+      transitionDuration: {
+        '75': '75ms',
+        '100': '100ms',
+        '150': '150ms',
+        '200': '200ms',
+        '300': '300ms',
+        '500': '500ms',
+        '700': '700ms',
+        '1000': '1000ms',
+        '1500': '1500ms',
+        '2000': '2000ms',
+        '3000': '3000ms',
+        '4000': '4000ms',
+        '5000': '5000ms',
+      },
+      transitionTimingFunction: {
+        'linear': 'linear',
+        'in': 'cubic-bezier(0.4, 0, 1, 1)',
+        'out': 'cubic-bezier(0, 0, 0.2, 1)',
+        'in-out': 'cubic-bezier(0.4, 0, 0.2, 1)',
+        'bounce': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+        'elastic': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+        'smooth': 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+        'ease-quantum': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+        'ease-neon': 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+        'ease-hologram': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+        'ease-cyberpunk': 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
+        'ease-space': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+      },
+      transitionDelay: {
+        '75': '75ms',
+        '100': '100ms',
+        '150': '150ms',
+        '200': '200ms',
+        '300': '300ms',
+        '500': '500ms',
+        '700': '700ms',
+        '1000': '1000ms',
+        '1500': '1500ms',
+        '2000': '2000ms',
+        '3000': '3000ms',
+        '4000': '4000ms',
+        '5000': '5000ms',
+      },
+      zIndex: {
+        '60': '60',
+        '70': '70',
+        '80': '80',
+        '90': '90',
+        '100': '100',
+      },
+      screens: {
+        'xs': '475px',
+        '3xl': '1600px',
+        '4xl': '1920px',
+        '5xl': '2560px',
       },
     },
   },
   plugins: [],
 }
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+=======
+

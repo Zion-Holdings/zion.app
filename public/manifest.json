@@ -1,15 +1,15 @@
 {
-  "name": "Zion Tech Group - Revolutionary Technology Solutions",
+  "name": "Zion Tech Group",
   "short_name": "Zion Tech",
-  "description": "Experience the future of technology with cutting-edge AI consciousness, quantum computing, and autonomous systems. Transform your business with revolutionary micro SAAS solutions.",
+  "description": "Revolutionary AI & Quantum Technology Solutions",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
-  "theme_color": "#06b6d4",
+  "theme_color": "#000000",
   "orientation": "portrait-primary",
   "scope": "/",
   "lang": "en-US",
-  "categories": ["business", "productivity", "technology", "utilities"],
+  "categories": ["business", "productivity", "technology"],
   "icons": [
     {
       "src": "/icons/icon-72x72.png",
@@ -64,11 +64,11 @@
     {
       "name": "Services",
       "short_name": "Services",
-      "description": "Explore our revolutionary technology solutions",
+      "description": "Explore our revolutionary technology services",
       "url": "/services",
       "icons": [
         {
-          "src": "/icons/services-icon-96x96.png",
+          "src": "/icons/services-96x96.png",
           "sizes": "96x96"
         }
       ]
@@ -80,7 +80,7 @@
       "url": "/contact",
       "icons": [
         {
-          "src": "/icons/contact-icon-96x96.png",
+          "src": "/icons/contact-96x96.png",
           "sizes": "96x96"
         }
       ]
@@ -92,7 +92,7 @@
       "url": "/about",
       "icons": [
         {
-          "src": "/icons/about-icon-96x96.png",
+          "src": "/icons/about-96x96.png",
           "sizes": "96x96"
         }
       ]
@@ -100,21 +100,26 @@
   ],
   "screenshots": [
     {
-      "src": "/screenshots/desktop-homepage.png",
+      "src": "/screenshots/desktop-1.png",
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide",
-      "label": "Zion Tech Group Homepage - Revolutionary Technology Solutions"
+      "label": "Homepage - Revolutionary Technology Solutions"
     },
     {
-      "src": "/screenshots/mobile-homepage.png",
+      "src": "/screenshots/mobile-1.png",
       "sizes": "390x844",
       "type": "image/png",
       "form_factor": "narrow",
-      "label": "Zion Tech Group Mobile Experience - Optimized for Mobile Devices"
+      "label": "Mobile - AI & Quantum Services"
     }
   ],
-  "related_applications": [],
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://ziontechgroup.com"
+    }
+  ],
   "prefer_related_applications": false,
   "edge_side_panel": {
     "preferred_width": 400
@@ -128,45 +133,5 @@
       "protocol": "web+zion",
       "url": "/?protocol=%s"
     }
-  ],
-  "file_handlers": [
-    {
-      "action": "/file-handler",
-      "accept": {
-        "text/*": [".txt", ".md", ".json"],
-        "application/json": [".json"],
-        "image/*": [".png", ".jpg", ".jpeg", ".gif", ".webp"]
-      }
-    }
-  ],
-  "share_target": {
-    "action": "/share",
-    "method": "POST",
-    "enctype": "multipart/form-data",
-    "params": {
-      "title": "title",
-      "text": "text",
-      "url": "url",
-      "files": [
-        {
-          "name": "files",
-          "accept": ["image/*", "text/*", "application/*"]
-        }
-      ]
-    }
-  },
-  "permissions": [
-    "notifications",
-    "geolocation",
-    "camera",
-    "microphone"
-  ],
-  "features": [
-    "Cross Platform",
-    "fast",
-    "simple",
-    "Offline Support",
-    "Push Notifications",
-    "Background Sync"
   ]
 }

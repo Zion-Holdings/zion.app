@@ -1,7 +1,8 @@
 import React from 'react';
+import Link from 'next/link';
 import { Check, ExternalLink, Mail, MapPin, Phone } from 'lucide-react';
 import Card from '../ui/Card';
-import Button from '../ui/Button';
+import { Button } from '../ui/Button';
 
 export interface ServiceAdItem {
   title: string;
@@ -79,21 +80,21 @@ const ServiceAds: React.FC<ServiceAdsProps> = ({ items, heading = 'Featured Serv
                 )}
 
                 <div className="flex space-x-3">
-                  <Button
-                    href={item.link}
-                    target={item.link?.startsWith('http') ? '_blank' : undefined}
-                    rel={item.link?.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white py-3 px-4 rounded-lg font-semibold transition-all duration-300"
-                  >
-                    <ExternalLink className="w-4 h-4 mr-2" /> Learn More
-                  </Button>
-                  <Button
-                    href="/contact"
-                    variant="outline"
-                    className="px-4 py-3 border border-gray-600 text-gray-300 rounded-lg hover:border-cyan-500 hover:text-cyan-400 transition-all duration-300"
-                  >
-                    Contact
-                  </Button>
+                  <Link href={item.link} target={item.link?.startsWith('http') ? '_blank' : undefined} rel={item.link?.startsWith('http') ? 'noopener noreferrer' : undefined}>
+                    <Button
+                      className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white py-3 px-4 rounded-lg font-semibold transition-all duration-300"
+                    >
+                      <ExternalLink className="w-4 h-4 mr-2" /> Learn More
+                    </Button>
+                  </Link>
+                  <Link href="/contact">
+                    <Button
+                      variant="outline"
+                      className="px-4 py-3 border border-gray-600 text-gray-300 rounded-lg hover:border-cyan-500 hover:text-cyan-400 transition-all duration-300"
+                    >
+                      Contact
+                    </Button>
+                  </Link>
                 </div>
 
                 <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">

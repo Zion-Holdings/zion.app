@@ -1,35 +1,6 @@
-# Dependencies
-node_modules/
-
-# Next.js
-.next/
-out/
-
-# Logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-automation/logs/
-automation/.git-sync.lock
-automation/.content-completer.lock
-automation/.chat-to-agents.lock
-.npm-cache/
-
-# OS/Editor
+node_modules
 .DS_Store
-*.swp
-.vscode/
-Thumbs.db
-
-# Env
 .env
-.env.local
-.env.*.local
-core
-public/reports/
-public/reports/
-public/reports/
-public/reports/
-public/reports/
+server/.env
+npm-debug.log*
+yarn-error.log

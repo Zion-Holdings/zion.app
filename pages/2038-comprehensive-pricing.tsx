@@ -87,7 +87,7 @@ export default function Comprehensive2038Pricing() {
       <SEO 
         title="2038 Comprehensive Pricing | Zion Tech Group"
         description="Complete pricing for our revolutionary 2038 services. AI-powered solutions, quantum computing, space technology, and intelligent micro SAAS platforms with transparent pricing."
-        keywords={["2038 pricing", "AI services pricing", "quantum computing pricing", "space technology pricing", "micro SAAS pricing"]}
+        keywords="2038 pricing, AI services pricing, quantum computing pricing, space technology pricing, micro SAAS pricing"
       />
 
       {/* Hero Section */}

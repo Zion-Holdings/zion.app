@@ -1,21 +1,26 @@
 import React from 'react';
-import Head from 'next/head';
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import ServiceLanding from '../components/sections/ServiceLanding';
 
 export default function AIPoweredCybersecurity() {
-  return (
-    <UltraAdvancedFuturisticBackground>
-      <Head>
-        <title>AI-Powered Cybersecurity | Zion Tech Group</title>
-        <meta name="description" content="Threat detection, anomaly response, and SOAR automation powered by AI." />
-        <link rel="canonical" href="https://ziontechgroup.com/ai-powered-cybersecurity" />
-      </Head>
-      <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto space-y-6 text-slate-200">
-          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">AI-Powered Cybersecurity</h1>
-          <p className="text-lg text-slate-300">Intelligent threat detection, correlation, and automated response to keep your environment safe.</p>
-        </div>
-      </div>
-    </UltraAdvancedFuturisticBackground>
-  );
+	return (
+		<ServiceLanding
+			title="AI-Powered Cybersecurity"
+			description="Detect, prioritize, and remediate threats faster with AI-driven detection, investigation, and response across cloud and endpoints."
+			subtitle="Proactive defense with intelligent automation"
+			pricePerMonthUSD={3499}
+			implementationWeeks="Implementation: 3-6 weeks"
+			roiNote="Reduce mean time to detect/respond by 60-80%"
+			features={[
+				"Behavioral analytics and anomaly detection",
+				"LLM-assisted investigation and SOAR",
+				"Attack path and blast-radius analysis",
+				"Cloud posture and config drift detection",
+				"Threat intel and automatic enrichment",
+				"Integrations: CrowdStrike, SentinelOne, Splunk, Wiz"
+			]}
+			industries={["Finance", "Healthcare", "SaaS", "Public Sector"]}
+			ctaHref="/contact"
+			canonical="https://ziontechgroup.com/ai-powered-cybersecurity"
+		/>
+	);
 }

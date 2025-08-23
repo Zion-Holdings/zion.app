@@ -4,15 +4,14 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
   CheckCircle, ArrowRight, Star, TrendingUp, Phone, 
-  Shield, Mail, Brain, Sparkles, Atom, 
+  Shield, Mail, Brain, Atom, 
   Cloud, 
   Award, 
-  Shield as ShieldIcon, 
   Server, Network, Shield as SecurityIcon,
   Wifi, Building
 } from 'lucide-react';
 import Layout from '../components/layout/Layout';
-import { advancedITInfrastructureServices } from '../data/2025-advanced-it-infrastructure-services';
+import { advancedITInfrastructureServices2025 } from '../data/2025-advanced-it-infrastructure-services';
 
 const contactInfo = {
   mobile: '+1 302 464 0950',
@@ -32,7 +31,7 @@ const serviceCategories = [
   {
     title: 'Quantum Cloud Computing',
     description: 'Next-generation cloud infrastructure with quantum processing capabilities',
-    services: advancedITInfrastructureServices.filter(s => s.category === 'Quantum Cloud Computing'),
+    services: advancedITInfrastructureServices2025.filter(s => s.category === 'Quantum Cloud Computing'),
     icon: Cloud,
     color: 'from-indigo-500 to-purple-600',
     features: ['Quantum Processing', 'Hybrid Computing', 'AI Acceleration']
@@ -40,7 +39,7 @@ const serviceCategories = [
   {
     title: 'Edge Computing & IoT',
     description: 'Autonomous edge infrastructure with intelligent optimization',
-    services: advancedITInfrastructureServices.filter(s => s.category === 'Edge Computing & IoT'),
+    services: advancedITInfrastructureServices2025.filter(s => s.category === 'Edge Computing & IoT'),
     icon: Wifi,
     color: 'from-green-500 to-emerald-600',
     features: ['Edge Processing', 'IoT Orchestration', '5G Optimization']
@@ -48,7 +47,7 @@ const serviceCategories = [
   {
     title: 'Cybersecurity',
     description: 'Comprehensive security framework with continuous verification',
-    services: advancedITInfrastructureServices.filter(s => s.category === 'Cybersecurity'),
+    services: advancedITInfrastructureServices2025.filter(s => s.category === 'Cybersecurity'),
     icon: SecurityIcon,
     color: 'from-red-500 to-orange-600',
     features: ['Zero Trust', 'Threat Detection', 'Compliance Automation']
@@ -56,7 +55,7 @@ const serviceCategories = [
   {
     title: 'Data Center Infrastructure',
     description: 'Self-managing data center infrastructure with AI optimization',
-    services: advancedITInfrastructureServices.filter(s => s.category === 'Data Center Infrastructure'),
+    services: advancedITInfrastructureServices2025.filter(s => s.category === 'Data Center Infrastructure'),
     icon: Building,
     color: 'from-blue-500 to-cyan-600',
     features: ['AI Management', 'Predictive Maintenance', 'Cost Optimization']
@@ -64,7 +63,7 @@ const serviceCategories = [
   {
     title: 'Quantum Networking',
     description: 'Next-generation networking with quantum encryption and optimization',
-    services: advancedITInfrastructureServices.filter(s => s.category === 'Quantum Networking'),
+    services: advancedITInfrastructureServices2025.filter(s => s.category === 'Quantum Networking'),
     icon: Network,
     color: 'from-purple-500 to-pink-600',
     features: ['Quantum Encryption', 'Network Optimization', 'Security Monitoring']
@@ -274,11 +273,11 @@ export default function AdvancedITInfrastructureServices() {
                       viewport={{ once: true }}
                       className="relative group"
                     >
-                      <div className={`${service.color} p-1 rounded-xl`}>
+                      <div className={`${'color' in service ? service.color : 'from-blue-500 to-purple-600'} p-1 rounded-xl`}>
                         <div className="bg-gray-900 rounded-xl p-6 h-full">
                           <div className="flex items-center justify-between mb-4">
-                            <span className="text-3xl">{service.icon}</span>
-                            {service.popular && (
+                            <span className="text-3xl">{'icon' in service ? (service.icon as React.ReactNode) : '🚀'}</span>
+                            {'popular' in service && service.popular && (
                               <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-xs font-bold px-3 py-1 rounded-full">
                                 Popular
                               </span>
@@ -287,7 +286,7 @@ export default function AdvancedITInfrastructureServices() {
                           <h4 className="text-xl font-semibold text-white mb-2">{service.name}</h4>
                           <p className="text-gray-300 text-sm mb-4">{service.tagline}</p>
                           <div className="flex items-center justify-between mb-4">
-                            <span className="text-2xl font-bold text-white">${typeof service.price === 'string' ? service.price : (service.price as any)?.monthly || 0}</span>
+                            <span className="text-2xl font-bold text-white">${'price' in service && typeof service.price === 'string' ? service.price : ('pricing' in service && service.pricing?.starter ? service.pricing.starter : 'Custom')}</span>
                             <span className="text-gray-400">/month</span>
                           </div>
                           <p className="text-gray-300 text-sm mb-4">{service.description}</p>
@@ -301,7 +300,7 @@ export default function AdvancedITInfrastructureServices() {
                           </div>
                           <div className="flex items-center justify-between">
                             <Link
-                              href={service.link}
+                              href={'link' in service ? service.link : service.slug}
                               className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-300"
                             >
                               Learn More

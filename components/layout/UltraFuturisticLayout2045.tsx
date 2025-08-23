@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import UltraFuturisticNavigation2045 from './UltraFuturisticNavigation2045';
-import UltraFuturisticFooter2045 from './UltraFuturisticFooter2045';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
+import UltraFuturisticFooter2044 from './UltraFuturisticFooter2044';
 
 interface UltraFuturisticLayout2045Props {
   children: React.ReactNode;
@@ -9,7 +10,7 @@ interface UltraFuturisticLayout2045Props {
   description?: string;
   keywords?: string;
   ogImage?: string;
-  canonical?: string;
+  url?: string;
 }
 
 const UltraFuturisticLayout2045: React.FC<UltraFuturisticLayout2045Props> = ({
@@ -18,8 +19,9 @@ const UltraFuturisticLayout2045: React.FC<UltraFuturisticLayout2045Props> = ({
   description = "Discover revolutionary AI consciousness, quantum computing, and space technology solutions that will transform your business and propel humanity into the future.",
   keywords = "AI consciousness, quantum computing, space technology, metaverse, cybersecurity, futuristic technology, 2045, Zion Tech Group",
   ogImage = "https://ziontechgroup.com/og-image-2045.jpg",
-  canonical = "https://ziontechgroup.com"
+  url="https://ziontechgroup.com"
 }) => {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   return (
     <>
       <Head>
@@ -33,7 +35,7 @@ const UltraFuturisticLayout2045: React.FC<UltraFuturisticLayout2045Props> = ({
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={ogImage} />
-        <meta property="og:url" content={canonical} />
+        <meta property="og:url" content={url} />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Zion Tech Group" />
         
@@ -44,7 +46,7 @@ const UltraFuturisticLayout2045: React.FC<UltraFuturisticLayout2045Props> = ({
         <meta name="twitter:image" content={ogImage} />
         
         {/* Canonical */}
-        <link rel="canonical" href={canonical} />
+        <link rel="canonical" href={url} />
         
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />
@@ -95,7 +97,10 @@ const UltraFuturisticLayout2045: React.FC<UltraFuturisticLayout2045Props> = ({
 
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
         {/* Navigation */}
-        <UltraFuturisticNavigation2045 />
+        <UltraFuturisticNavigation2045 
+          sidebarOpen={sidebarOpen} 
+          setSidebarOpen={setSidebarOpen} 
+        />
         
         {/* Main Content */}
         <main className="relative z-10">
@@ -103,7 +108,7 @@ const UltraFuturisticLayout2045: React.FC<UltraFuturisticLayout2045Props> = ({
         </main>
         
         {/* Footer */}
-        <UltraFuturisticFooter2045 />
+        <UltraFuturisticFooter2044 />
       </div>
     </>
   );

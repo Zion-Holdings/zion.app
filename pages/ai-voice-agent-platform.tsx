@@ -28,7 +28,7 @@ export default function AIVoiceAgentPlatform() {
 							<h3 className="text-xl font-semibold text-white mb-2">Pricing (market)</h3>
 							<ul className="list-disc list-inside text-slate-300 space-y-1">
 								<li>$0.02–$0.15/minute usage</li>
-								<li>References: <a className="text-cyan-400 underline" href="https://openai.com/api/pricing" target="_blank" rel="noreferrer">OpenAI Realtime</a>, <a className="text-cyan-400 underline" href="https://www.twilio.com/voice/pricing" target="_blank" rel="noreferrer">Twilio Voice</a></li>
+								<li>References: <a className="text-cyan-400 underline" href="https://platform.openai.com/pricing" target="_blank" rel="noreferrer">OpenAI Pricing</a>, <a className="text-cyan-400 underline" href="https://www.twilio.com/voice/pricing" target="_blank" rel="noreferrer">Twilio Voice</a></li>
 							</ul>
 						</div>
 						<div className="p-6 rounded-2xl bg-black/50 border border-gray-800">

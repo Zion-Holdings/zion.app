@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 "use strict";
 
-const { spawnSync } = require("child_process");
+const { spawnSync, execSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
 const https = require("https");
@@ -12,34 +12,16 @@ class EnhancedGitHubActionsRedundancy {
     this.logDir = path.join(this.workspace, "automation/logs");
     this.logFile = path.join(this.logDir, "enhanced-github-actions-redundancy.log");
     this.ensureLogDir();
-    
-    this.config = {
-      workflows: [
-        "marketing-sync.yml",
-        "sync-health.yml"
-      ],
-      workflowPaths: [
-        ".github/workflows/marketing-sync.yml",
-        ".github/workflows/sync-health.yml"
-      ],
-      healthCheckInterval: 60000,
-      maxFailures: 3,
-      retryDelay: 30000,
-      autoTrigger: true,
-      backupTriggers: true,
-      enableWorkflowValidation: true,
-      enableAutoRecovery: true,
-      enableMetricsCollection: true,
-      workflowTemplates: {
-        "marketing-sync.yml": this.getMarketingSyncTemplate(),
-        "sync-health.yml": this.getSyncHealthTemplate()
-      }
+    this.config = this.loadConfig();
+    this.healthMetrics = {
+      totalChecks: 0,
+      successfulChecks: 0,
+      failedChecks: 0,
+      workflowsTriggered: 0,
+      lastCheck: null,
+      uptime: Date.now()
     };
-    
-    this.monitoring = false;
-    this.checkInterval = null;
-    this.failureCounts = new Map();
-    this.lastHealthCheck = null;
+    this.workflowCache = new Map();
   }
 
   ensureLogDir() {
@@ -48,91 +30,33 @@ class EnhancedGitHubActionsRedundancy {
     }
   }
 
-  getMarketingSyncTemplate() {
-    return `name: Marketing Sync
-
-on:
-  schedule:
-    - cron: '0 */12 * * *'
-  workflow_dispatch:
-
-permissions:
-  contents: write
-
-jobs:
-  run-marketing-sync:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Run marketing-sync
-        env:
-          LINKEDIN_ACCESS_TOKEN: \${{ secrets.LINKEDIN_ACCESS_TOKEN }}
-          LINKEDIN_URN: \${{ secrets.LINKEDIN_URN }}
-          IG_USER_ID: \${{ secrets.IG_USER_ID }}
-          IG_ACCESS_TOKEN: \${{ secrets.IG_ACCESS_TOKEN }}
-        run: node automation/marketing-sync.js
-
-      - name: Commit report if changed
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if [ -n "\$(git status --porcelain)" ]; then
-            git add -A
-            git commit -m "chore(marketing): update marketing-sync report"
-            git push origin HEAD:main
-          else
-            echo "No changes to commit."
-          fi`;
-  }
-
-  getSyncHealthTemplate() {
-    return `name: Sync Health
-
-on:
-  schedule:
-    - cron: '*/15 * * * *'
-  workflow_dispatch:
-
-permissions:
-  contents: write
-
-jobs:
-  check-sync:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Run pm2-auto-sync (safe mode)
-        env:
-          AUTO_SYNC_STRATEGY: hardreset
-          AUTO_SYNC_CLEAN: '0'
-        run: node automation/pm2-auto-sync.js || true
-
-      - name: Push if repository is ahead
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          AHEAD=\$(git rev-list --left-right --count HEAD...origin/main | awk '{print \$1}')
-          if [ "\$AHEAD" != "0" ]; then
-            git push origin HEAD:main
-          else
-            echo "No push needed."
-          fi`;
+  loadConfig() {
+    const configPath = path.join(this.workspace, "automation/redundancy-config.json");
+    if (fs.existsSync(configPath)) {
+      try {
+        return JSON.parse(fs.readFileSync(configPath, "utf8"));
+      } catch (error) {
+        this.log(`Error loading config: ${error.message}`);
+      }
+    }
+    
+    return {
+      githubActions: {
+        enabled: true,
+        checkInterval: 60000,
+        maxFailures: 3,
+        retryDelay: 30000,
+        workflows: [
+          "marketing-sync.yml",
+          "sync-health.yml"
+        ],
+        autoTrigger: true,
+        healthCheckWorkflow: "sync-health.yml",
+        validateSyntax: true,
+        checkDependencies: true,
+        monitorRuns: true
+      }
+    };
   }
 
   log(message, level = "INFO") {
@@ -168,392 +92,805 @@ jobs:
     });
   }
 
-  async checkWorkflowsDirectory() {
+  async checkGitHubActionsHealth() {
+    this.log("🔍 Starting enhanced GitHub Actions health check...");
+    this.healthMetrics.totalChecks++;
+    this.healthMetrics.lastCheck = Date.now();
+    
     try {
+      // Check if workflows directory exists
       const workflowsDir = path.join(this.workspace, ".github/workflows");
       if (!fs.existsSync(workflowsDir)) {
         this.log("❌ GitHub workflows directory not found", "ERROR");
-        return { exists: false, workflows: [] };
+        this.healthMetrics.failedChecks++;
+        return false;
       }
 
-      const workflowFiles = fs.readdirSync(workflowsDir).filter(file => file.endsWith('.yml'));
-      this.log(`📋 Found ${workflowFiles.length} workflow files`);
-      
-      return { exists: true, workflows: workflowFiles };
+      // Get all workflow files
+      const workflows = fs.readdirSync(workflowsDir).filter(file => file.endsWith('.yml'));
+      this.log(`📋 Found ${workflows.length} GitHub workflow files`);
+
+      let healthy = true;
+      let criticalIssues = 0;
+
+      // Validate each workflow
+      for (const workflow of workflows) {
+        const workflowPath = path.join(workflowsDir, workflow);
+        const workflowHealth = await this.validateWorkflow(workflowPath);
+        
+        if (!workflowHealth.healthy) {
+          this.log(`⚠️ Workflow ${workflow} has issues: ${workflowHealth.issues.join(", ")}`, "WARN");
+          healthy = false;
+          
+          if (workflowHealth.critical) {
+            criticalIssues++;
+            await this.handleCriticalWorkflow(workflow, workflowHealth);
+          } else {
+            await this.handleNonCriticalWorkflow(workflow, workflowHealth);
+          }
+        }
+      }
+
+      // Check workflow dependencies
+      const dependencyHealth = await this.checkWorkflowDependencies();
+      if (!dependencyHealth.healthy) {
+        this.log(`⚠️ Workflow dependency issues: ${dependencyHealth.issues.join(", ")}`, "WARN");
+        healthy = false;
+        await this.handleDependencyIssues(dependencyHealth);
+      }
+
+      // Check workflow syntax and structure
+      const syntaxHealth = await this.checkWorkflowSyntax();
+      if (!syntaxHealth.healthy) {
+        this.log(`⚠️ Workflow syntax issues: ${syntaxHealth.issues.join(", ")}`, "WARN");
+        healthy = false;
+        await this.handleSyntaxIssues(syntaxHealth);
+      }
+
+      // Monitor active workflow runs
+      const runHealth = await this.monitorWorkflowRuns();
+      if (!runHealth.healthy) {
+        this.log(`⚠️ Workflow run issues: ${runHealth.issues.join(", ")}`, "WARN");
+        healthy = false;
+        await this.handleRunIssues(runHealth);
+      }
+
+      // Check workflow permissions
+      const permissionHealth = await this.checkWorkflowPermissions();
+      if (!permissionHealth.healthy) {
+        this.log(`⚠️ Workflow permission issues: ${permissionHealth.issues.join(", ")}`, "WARN");
+        healthy = false;
+        await this.handlePermissionIssues(permissionHealth);
+      }
+
+      if (healthy) {
+        this.healthMetrics.successfulChecks++;
+        this.log("✅ Enhanced GitHub Actions health check completed successfully");
+      } else {
+        this.healthMetrics.failedChecks++;
+        this.log(`⚠️ GitHub Actions health check completed with ${criticalIssues} critical issues`, "WARN");
+      }
+
+      return healthy;
     } catch (error) {
-      this.log(`❌ Error checking workflows directory: ${error.message}`, "ERROR");
-      return { exists: false, workflows: [] };
+      this.log(`❌ Enhanced GitHub Actions health check failed: ${error.message}`, "ERROR");
+      this.healthMetrics.failedChecks++;
+      return false;
     }
   }
 
   async validateWorkflow(workflowPath) {
-    try {
-      const content = fs.readFileSync(workflowPath, 'utf8');
-      
-      // Basic YAML structure validation
-      const requiredSections = ['on:', 'jobs:'];
-      const hasRequiredSections = requiredSections.every(section => content.includes(section));
-      
-      if (!hasRequiredSections) {
-        this.log(`⚠️ Workflow ${path.basename(workflowPath)} missing required sections`, "WARN");
-        return { valid: false, errors: ["Missing required YAML sections"] };
-      }
-
-      // Check for common syntax issues
-      const syntaxIssues = [];
-      
-      // Check for proper indentation
-      const lines = content.split('\n');
-      let indentLevel = 0;
-      let hasIndentationIssues = false;
-      
-      for (const line of lines) {
-        if (line.trim() === '') continue;
-        
-        const currentIndent = line.search(/\S/);
-        if (currentIndent < 0) continue;
-        
-        if (currentIndent < indentLevel && currentIndent !== 0) {
-          hasIndentationIssues = true;
-          break;
-        }
-        indentLevel = currentIndent;
-      }
-      
-      if (hasIndentationIssues) {
-        syntaxIssues.push("Potential indentation issues");
-      }
-
-      // Check for unclosed quotes or brackets
-      const quoteCount = (content.match(/"/g) || []).length;
-      if (quoteCount % 2 !== 0) {
-        syntaxIssues.push("Unclosed quotes detected");
-      }
-
-      const bracketCount = (content.match(/\{/g) || []).length;
-      const closeBracketCount = (content.match(/\}/g) || []).length;
-      if (bracketCount !== closeBracketCount) {
-        syntaxIssues.push("Unclosed brackets detected");
-      }
-
-      if (syntaxIssues.length > 0) {
-        this.log(`⚠️ Workflow ${path.basename(workflowPath)} has syntax issues: ${syntaxIssues.join(', ')}`, "WARN");
-        return { valid: false, errors: syntaxIssues };
-      }
-
-      this.log(`✅ Workflow ${path.basename(workflowPath)} is valid`);
-      return { valid: true, errors: [] };
-    } catch (error) {
-      this.log(`❌ Error validating workflow ${path.basename(workflowPath)}: ${error.message}`, "ERROR");
-      return { valid: false, errors: [error.message] };
-    }
-  }
-
-  async checkWorkflowHealth(workflowName) {
-    try {
-      const workflowPath = path.join(this.workspace, ".github/workflows", workflowName);
-      
-      if (!fs.existsSync(workflowPath)) {
-        this.log(`❌ Workflow ${workflowName} not found`, "ERROR");
-        return { exists: false, valid: false, errors: ["Workflow file not found"] };
-      }
-
-      const validation = await this.validateWorkflow(workflowPath);
-      
-      return {
-        exists: true,
-        valid: validation.valid,
-        errors: validation.errors,
-        path: workflowPath
-      };
-    } catch (error) {
-      this.log(`❌ Error checking workflow ${workflowName}: ${error.message}`, "ERROR");
-      return { exists: false, valid: false, errors: [error.message] };
-    }
-  }
-
-  async restoreWorkflow(workflowName) {
-    this.log(`🔧 Attempting to restore workflow: ${workflowName}`);
-    
-    try {
-      const template = this.config.workflowTemplates[workflowName];
-      if (!template) {
-        this.log(`❌ No template available for workflow: ${workflowName}`, "ERROR");
-        return false;
-      }
-
-      const workflowPath = path.join(this.workspace, ".github/workflows", workflowName);
-      const workflowsDir = path.dirname(workflowPath);
-      
-      // Ensure workflows directory exists
-      if (!fs.existsSync(workflowsDir)) {
-        fs.mkdirSync(workflowsDir, { recursive: true });
-        this.log(`📁 Created workflows directory: ${workflowsDir}`);
-      }
-
-      // Write the workflow file
-      fs.writeFileSync(workflowPath, template);
-      this.log(`✅ Successfully restored workflow: ${workflowName}`);
-      
-      // Commit the restored workflow
-      await this.commitWorkflowRestoration(workflowName);
-      
-      return true;
-    } catch (error) {
-      this.log(`❌ Failed to restore workflow ${workflowName}: ${error.message}`, "ERROR");
-      return false;
-    }
-  }
-
-  async commitWorkflowRestoration(workflowName) {
-    try {
-      // Add the restored workflow
-      const addResult = await this.runCommand("git", ["add", `.github/workflows/${workflowName}`]);
-      if (addResult.status !== 0) {
-        this.log(`⚠️ Failed to add restored workflow to git: ${workflowName}`, "WARN");
-        return false;
-      }
-
-      // Commit the restoration
-      const commitResult = await this.runCommand("git", [
-        "commit", 
-        "-m", 
-        `fix(workflows): restore missing workflow ${workflowName}`
-      ]);
-      
-      if (commitResult.status !== 0) {
-        this.log(`⚠️ Failed to commit workflow restoration: ${workflowName}`, "WARN");
-        return false;
-      }
-
-      this.log(`✅ Committed workflow restoration: ${workflowName}`);
-      return true;
-    } catch (error) {
-      this.log(`❌ Error committing workflow restoration: ${error.message}`, "ERROR");
-      return false;
-    }
-  }
-
-  async triggerWorkflow(workflowName) {
-    if (!this.config.autoTrigger) {
-      this.log(`⚠️ Auto-triggering disabled for workflow: ${workflowName}`);
-      return false;
-    }
-
-    this.log(`🚀 Triggering workflow: ${workflowName}`);
-    
-    try {
-      // This would typically use GitHub API to trigger workflows
-      // For now, we'll simulate by checking if the workflow can be triggered manually
-      const workflowPath = path.join(this.workspace, ".github/workflows", workflowName);
-      
-      if (fs.existsSync(workflowPath)) {
-        const content = fs.readFileSync(workflowPath, 'utf8');
-        if (content.includes('workflow_dispatch:')) {
-          this.log(`✅ Workflow ${workflowName} supports manual triggering`);
-          return true;
-        } else {
-          this.log(`⚠️ Workflow ${workflowName} does not support manual triggering`);
-          return false;
-        }
-      } else {
-        this.log(`❌ Workflow ${workflowName} not found for triggering`);
-        return false;
-      }
-    } catch (error) {
-      this.log(`❌ Error triggering workflow ${workflowName}: ${error.message}`, "ERROR");
-      return false;
-    }
-  }
-
-  async performComprehensiveHealthCheck() {
-    this.log("🚀 Starting comprehensive GitHub Actions health check...");
-    
-    const results = {
-      workflows: {},
-      summary: {
-        total: this.config.workflows.length,
-        healthy: 0,
-        unhealthy: 0,
-        restored: 0,
-        triggered: 0
-      },
-      timestamp: new Date().toISOString()
-    };
-
-    // Check workflows directory
-    const workflowsDir = await this.checkWorkflowsDirectory();
-    if (!workflowsDir.exists) {
-      this.log("❌ Workflows directory not found, attempting to create...", "ERROR");
-      fs.mkdirSync(path.join(this.workspace, ".github/workflows"), { recursive: true });
-    }
-
-    // Check each workflow
-    for (const workflowName of this.config.workflows) {
-      const workflowHealth = await this.checkWorkflowHealth(workflowName);
-      results.workflows[workflowName] = workflowHealth;
-      
-      if (workflowHealth.exists && workflowHealth.valid) {
-        results.summary.healthy++;
-        this.log(`✅ Workflow ${workflowName} is healthy`);
-      } else {
-        results.summary.unhealthy++;
-        this.log(`❌ Workflow ${workflowName} is unhealthy`);
-        
-        if (this.config.enableAutoRecovery) {
-          const restored = await this.restoreWorkflow(workflowName);
-          if (restored) {
-            results.summary.restored++;
-            this.log(`✅ Successfully restored workflow: ${workflowName}`);
+          issuesFound++;
+          
+          // Attempt auto-fix if enabled
+          if (this.config.monitoring.autoFix) {
+            await this.attemptWorkflowFix(workflowName);
           }
+        } else {
+          this.log(`Workflow ${workflowName} is healthy`, "INFO");
+          this.failureCounts.set(workflowName, 0);
         }
+      } catch (error) {
+        this.log(`Error checking workflow ${workflowName}: ${error.message}`, "ERROR");
+        issuesFound++;
       }
     }
 
-    // Generate and log health report
-    const healthReport = this.generateHealthReport(results);
-    this.log(healthReport);
-
-    // Save health report
-    this.saveHealthReport(results);
-
-    this.lastHealthCheck = results;
-    return results;
-  }
-
-  generateHealthReport(results) {
-    let workflowStatus = "";
-    for (const [workflowName, health] of Object.entries(results.workflows)) {
-      const status = health.exists && health.valid ? "✅" : "❌";
-      const details = health.exists ? health.valid ? "HEALTHY" : `UNHEALTHY: ${health.errors.join(', ')}` : "MISSING";
-      workflowStatus += `${status} ${workflowName}: ${details}\n`;
+    if (issuesFound === 0) {
+      this.log("All GitHub Actions workflows are healthy", "INFO");
+    } else {
+      this.log(`Found ${issuesFound} workflow issues`, "WARN");
     }
 
-    return `
-📊 ENHANCED GITHUB ACTIONS HEALTH REPORT
-=========================================
-Timestamp: ${results.timestamp}
-
-📋 Workflow Health Summary:
-Total Workflows: ${results.summary.total}
-Healthy: ${results.summary.healthy}
-Unhealthy: ${results.summary.unhealthy}
-Restored: ${results.summary.restored}
-Triggered: ${results.summary.triggered}
-
-🔍 Individual Workflow Status:
-${workflowStatus}
-
-${results.summary.healthy === results.summary.total ? 
-  "🎉 All GitHub Actions workflows are healthy!" : 
-  "⚠️ Some GitHub Actions workflows require attention. Check logs for details."}
-`;
+    return issuesFound;
   }
 
-  saveHealthReport(results) {
+  async attemptWorkflowFix(workflowName) {
     try {
-      const reportPath = path.join(this.logDir, `github-actions-health-report-${new Date().toISOString().split('T')[0]}.json`);
-      fs.writeFileSync(reportPath, JSON.stringify(results, null, 2));
-      this.log(`📝 GitHub Actions health report saved to ${reportPath}`);
+      this.log(`Attempting to fix workflow ${workflowName}`, "INFO");
+      
+      // Try local execution as a fix
+      if (this.config.localExecution) {
+        const success = await this.executeWorkflowLocally(workflowName);
+        if (success) {
+          this.log(`Successfully fixed workflow ${workflowName} via local execution`, "INFO");
+          return true;
+        }
+      }
+
+      // Check if workflow file is corrupted
+      const workflowPath = path.join(this.workspace, ".github/workflows", workflowName);
+      if (fs.existsSync(workflowPath)) {
+        const content = fs.readFileSync(workflowPath, "utf8");
+        
+        // Try to fix common YAML issues
+        if (content.includes("{{") && content.includes("}}")) {
+          this.log(`Workflow ${workflowName} contains template variables, may need manual fix`, "WARN");
+        }
+      }
+
+      return false;
     } catch (error) {
-      this.log(`❌ Failed to save GitHub Actions health report: ${error.message}`, "ERROR");
+      this.log(`Error attempting to fix workflow ${workflowName}: ${error.message}`, "ERROR");
+      return false;
     }
   }
 
   async startMonitoring() {
     if (this.monitoring) {
-      this.log("⚠️ Monitoring is already running");
+      this.log("Monitoring already active", "WARN");
       return;
     }
 
-    this.log("🚀 Starting enhanced GitHub Actions redundancy monitoring...");
     this.monitoring = true;
+    this.log("Starting enhanced GitHub Actions redundancy monitoring", "INFO");
 
-    // Initial health check
-    await this.performComprehensiveHealthCheck();
+    const monitor = async () => {
+      if (!this.monitoring) return;
+      
+      try {
+        await this.checkAllWorkflows();
+      } catch (error) {
+        this.log(`Monitoring error: ${error.message}`, "ERROR");
+      }
 
-    // Set up periodic monitoring
-    this.checkInterval = setInterval(async () => {
-      await this.performComprehensiveHealthCheck();
-    }, this.config.healthCheckInterval);
+      this.checkInterval = setTimeout(monitor, this.config.checkInterval);
+    };
 
-    this.log("✅ Enhanced GitHub Actions redundancy monitoring started successfully");
+    await monitor();
   }
 
   async stopMonitoring() {
-    if (!this.monitoring) {
-      this.log("⚠️ Monitoring is not running");
-      return;
-    }
-
-    this.log("🛑 Stopping enhanced GitHub Actions redundancy monitoring...");
     this.monitoring = false;
-
     if (this.checkInterval) {
-      clearInterval(this.checkInterval);
+      clearTimeout(this.checkInterval);
       this.checkInterval = null;
     }
-
-    this.log("✅ Enhanced GitHub Actions redundancy monitoring stopped");
+    this.log("Stopped enhanced GitHub Actions redundancy monitoring", "INFO");
   }
 
-  async emergencyRecovery() {
-    this.log("🚨 Starting emergency GitHub Actions recovery...");
-    
+  async triggerWorkflow(workflowName) {
     try {
-      // Ensure workflows directory exists
-      const workflowsDir = path.join(this.workspace, ".github/workflows");
-      if (!fs.existsSync(workflowsDir)) {
-        fs.mkdirSync(workflowsDir, { recursive: true });
+      this.log(`Manually triggering workflow ${workflowName}`, "INFO");
+      
+      if (this.config.localExecution) {
+        return await this.executeWorkflowLocally(workflowName);
+      } else {
+        this.log("Local execution disabled, cannot trigger workflow", "WARN");
+        return false;
       }
-
-      // Restore all missing workflows
-      let restoredCount = 0;
-      for (const workflowName of this.config.workflows) {
-        const workflowPath = path.join(workflowsDir, workflowName);
-        if (!fs.existsSync(workflowPath)) {
-          const restored = await this.restoreWorkflow(workflowName);
-          if (restored) restoredCount++;
-        }
-      }
-
-      this.log(`✅ Emergency GitHub Actions recovery completed. Restored ${restoredCount} workflows.`);
-      return true;
     } catch (error) {
-      this.log(`❌ Emergency GitHub Actions recovery failed: ${error.message}`, "ERROR");
+      this.log(`Error triggering workflow ${workflowName}: ${error.message}`, "ERROR");
       return false;
     }
   }
 
-  getStatus() {
-    return {
-      monitoring: this.monitoring,
-      config: this.config,
-      lastHealthCheck: this.lastHealthCheck,
-      failureCounts: Object.fromEntries(this.failureCounts)
+  async generateHealthReport() {
+    const workflowsDir = await this.checkWorkflowsDirectory();
+    const report = {
+      timestamp: new Date().toISOString(),
+      workflowsDirectory: workflowsDir.exists,
+      totalWorkflows: workflowsDir.workflows.length,
+      configuredWorkflows: this.config.workflows,
+      workflowHealth: {},
+      issues: [],
+      recommendations: []
     };
+
+    for (const workflowName of this.config.workflows) {
+      const health = await this.checkWorkflowHealth(workflowName);
+      const dependencies = await this.checkWorkflowDependencies(
+        path.join(this.workspace, ".github/workflows", workflowName)
+      );
+      
+      report.workflowHealth[workflowName] = {
+        healthy: health.healthy,
+        reason: health.reason || null,
+        dependencies: dependencies.dependencies,
+        lastRun: this.lastRunTimes.get(workflowName) || null,
+        failureCount: this.failureCounts.get(workflowName) || 0
+      };
+
+      if (!health.healthy) {
+        report.issues.push(`${workflowName}: ${health.reason}`);
+      }
+    }
+
+    if (report.issues.length > 0) {
+      report.recommendations.push("Enable auto-fix for automatic workflow recovery");
+      report.recommendations.push("Check workflow YAML syntax and dependencies");
+      report.recommendations.push("Verify GitHub Actions permissions and secrets");
+    }
+
+    return report;
+=======
+    const issues = [];
+    let critical = false;
+
+    try {
+      const content = fs.readFileSync(workflowPath, "utf8");
+      const workflowName = path.basename(workflowPath);
+
+      // Check for required workflow structure
+      if (!content.includes("name:")) {
+        issues.push("Missing workflow name");
+        critical = true;
+      }
+
+      if (!content.includes("on:")) {
+        issues.push("Missing trigger configuration");
+        critical = true;
+      }
+
+      if (!content.includes("jobs:")) {
+        issues.push("Missing jobs configuration");
+        critical = true;
+      }
+
+      // Check cron syntax if schedule is used
+      if (content.includes("cron:") && content.includes("schedule:")) {
+        const cronMatch = content.match(/cron:\s*['"`]([^'"`]+)['"`]/);
+        if (cronMatch) {
+          const cron = cronMatch[1];
+          if (!this.isValidCron(cron)) {
+            issues.push(`Invalid cron syntax: ${cron}`);
+            critical = true;
+          }
+        }
+      }
+
+      // Check for common workflow issues
+      if (content.includes("actions/checkout@v4") && !content.includes("permissions:")) {
+        issues.push("Missing permissions configuration (recommended for security)");
+      }
+
+      if (content.includes("GITHUB_TOKEN") && !content.includes("contents: write")) {
+        issues.push("Missing write permissions for GITHUB_TOKEN");
+      }
+
+      // Check for deprecated actions
+      const deprecatedActions = [
+        "actions/checkout@v1",
+        "actions/checkout@v2",
+        "actions/checkout@v3",
+        "actions/setup-node@v1",
+        "actions/setup-node@v2",
+        "actions/setup-node@v3"
+      ];
+
+      for (const deprecated of deprecatedActions) {
+        if (content.includes(deprecated)) {
+          issues.push(`Deprecated action: ${deprecated}`);
+        }
+      }
+
+      // Check for security vulnerabilities
+      if (content.includes("pull_request_target:")) {
+        issues.push("Using pull_request_target (security consideration)");
+      }
+
+      // Validate YAML structure
+      try {
+        const yaml = require('js-yaml');
+        yaml.load(content);
+      } catch (yamlError) {
+        issues.push(`YAML syntax error: ${yamlError.message}`);
+        critical = true;
+      }
+
+    } catch (error) {
+      issues.push(`File read error: ${error.message}`);
+      critical = true;
+    }
+
+    return {
+      healthy: issues.length === 0,
+      critical,
+      issues
+    };
+  }
+
+  isValidCron(cron) {
+    const cronParts = cron.split(" ");
+    if (cronParts.length !== 5) return false;
+    
+    const validPatterns = [
+      /^\*\/\d+$/, // */n
+      /^\d+$/,     // n
+      /^\*$/,      // *
+      /^\d+-\d+$/, // n-m
+      /^\d+,\d+$/  // n,m
+    ];
+    
+    return cronParts.every(part => 
+      validPatterns.some(pattern => pattern.test(part))
+    );
+  }
+
+  async checkWorkflowDependencies() {
+    const issues = [];
+    let healthy = true;
+
+    try {
+      // Check if required Node.js version is available
+      const nodeVersion = await this.runCommand("node", ["--version"]);
+      if (nodeVersion.status !== 0) {
+        issues.push("Node.js not available");
+        healthy = false;
+      }
+
+      // Check if npm is available
+      const npmVersion = await this.runCommand("npm", ["--version"]);
+      if (npmVersion.status !== 0) {
+        issues.push("npm not available");
+        healthy = false;
+      }
+
+      // Check package.json dependencies
+      const packagePath = path.join(this.workspace, "package.json");
+      if (fs.existsSync(packagePath)) {
+        try {
+          const packageJson = JSON.parse(fs.readFileSync(packagePath, "utf8"));
+          
+          // Check for critical dependencies
+          const criticalDeps = ["next", "react", "react-dom"];
+          for (const dep of criticalDeps) {
+            if (!packageJson.dependencies?.[dep] && !packageJson.devDependencies?.[dep]) {
+              issues.push(`Critical dependency missing: ${dep}`);
+              healthy = false;
+            }
+          }
+        } catch (error) {
+          issues.push(`Package.json parse error: ${error.message}`);
+          healthy = false;
+        }
+      }
+
+      // Check for required environment variables
+      const requiredEnvVars = [
+        "LINKEDIN_ACCESS_TOKEN",
+        "LINKEDIN_URN",
+        "IG_USER_ID",
+        "IG_ACCESS_TOKEN"
+      ];
+
+      for (const envVar of requiredEnvVars) {
+        if (!process.env[envVar]) {
+          issues.push(`Required environment variable missing: ${envVar}`);
+        }
+      }
+
+    } catch (error) {
+      issues.push(`Dependency check error: ${error.message}`);
+      healthy = false;
+    }
+
+    return { healthy, issues };
+  }
+
+  async checkWorkflowSyntax() {
+    const issues = [];
+    let healthy = true;
+
+    try {
+      const workflowsDir = path.join(this.workspace, ".github/workflows");
+      const workflows = fs.readdirSync(workflowsDir).filter(file => file.endsWith('.yml'));
+
+      for (const workflow of workflows) {
+        const workflowPath = path.join(workflowsDir, workflow);
+        const content = fs.readFileSync(workflowPath, "utf8");
+
+        // Check for common syntax issues
+        if (content.includes("  - name:")) {
+          // Check for proper indentation
+          const lines = content.split('\n');
+          for (let i = 0; i < lines.length; i++) {
+            const line = lines[i];
+            if (line.includes("- name:") && !line.startsWith("      - name:")) {
+              issues.push(`Improper indentation in ${workflow}: line ${i + 1}`);
+              healthy = false;
+            }
+          }
+        }
+
+        // Check for missing quotes around values
+        const unquotedValues = content.match(/:\s*[^"'\s][^"'\n]*$/gm);
+        if (unquotedValues) {
+          issues.push(`Unquoted values in ${workflow}: ${unquotedValues.length} instances`);
+        }
+
+        // Check for proper job structure
+        if (!content.includes("runs-on:")) {
+          issues.push(`Missing runs-on in ${workflow}`);
+          healthy = false;
+        }
+
+        // Check for proper step structure
+        if (content.includes("steps:") && !content.includes("- name:")) {
+          issues.push(`Missing step names in ${workflow}`);
+          healthy = false;
+        }
+      }
+
+    } catch (error) {
+      issues.push(`Syntax check error: ${error.message}`);
+      healthy = false;
+    }
+
+    return { healthy, issues };
+  }
+
+  async monitorWorkflowRuns() {
+    const issues = [];
+    let healthy = true;
+
+    try {
+      // Check if workflows are properly configured for monitoring
+      const workflowsDir = path.join(this.workspace, ".github/workflows");
+      const workflows = fs.readdirSync(workflowsDir).filter(file => file.endsWith('.yml'));
+
+      for (const workflow of workflows) {
+        const workflowPath = path.join(workflowsDir, workflow);
+        const content = fs.readFileSync(workflowPath, "utf8");
+
+        // Check for proper error handling
+        if (content.includes("continue-on-error: true")) {
+          issues.push(`Workflow ${workflow} continues on error (may mask issues)`);
+        }
+
+        // Check for timeout configurations
+        if (content.includes("timeout-minutes:")) {
+          const timeoutMatch = content.match(/timeout-minutes:\s*(\d+)/);
+          if (timeoutMatch) {
+            const timeout = parseInt(timeoutMatch[1]);
+            if (timeout > 360) { // 6 hours
+              issues.push(`Long timeout in ${workflow}: ${timeout} minutes`);
+            }
+          }
+        }
+
+        // Check for proper job dependencies
+        if (content.includes("needs:") && !content.includes("if:")) {
+          issues.push(`Job dependencies without conditions in ${workflow}`);
+        }
+      }
+
+    } catch (error) {
+      issues.push(`Workflow run monitoring error: ${error.message}`);
+      healthy = false;
+    }
+
+    return { healthy, issues };
+  }
+
+  async checkWorkflowPermissions() {
+    const issues = [];
+    let healthy = true;
+
+    try {
+      const workflowsDir = path.join(this.workspace, ".github/workflows");
+      const workflows = fs.readdirSync(workflowsDir).filter(file => file.endsWith('.yml'));
+
+      for (const workflow of workflows) {
+        const workflowPath = path.join(workflowsDir, workflow);
+        const content = fs.readFileSync(workflowPath, "utf8");
+
+        // Check for overly permissive permissions
+        if (content.includes("permissions:") && content.includes("contents: write")) {
+          if (!content.includes("pull-requests: read")) {
+            issues.push(`Write permissions without read permissions in ${workflow}`);
+          }
+        }
+
+        // Check for GITHUB_TOKEN usage
+        if (content.includes("GITHUB_TOKEN") && !content.includes("permissions:")) {
+          issues.push(`GITHUB_TOKEN usage without explicit permissions in ${workflow}`);
+        }
+
+        // Check for security best practices
+        if (content.includes("pull_request_target:")) {
+          issues.push(`Using pull_request_target in ${workflow} (security consideration)`);
+        }
+      }
+
+    } catch (error) {
+      issues.push(`Permission check error: ${error.message}`);
+      healthy = false;
+    }
+
+    return { healthy, issues };
+  }
+
+  async handleCriticalWorkflow(workflow, health) {
+    this.log(`🚨 Handling critical workflow: ${workflow}`, "ERROR");
+    
+    try {
+      // Create backup of the workflow
+      const workflowPath = path.join(this.workspace, ".github/workflows", workflow);
+      const backupPath = path.join(this.workspace, ".github/workflows", `${workflow}.backup.${Date.now()}`);
+      
+      fs.copyFileSync(workflowPath, backupPath);
+      this.log(`📋 Created backup: ${backupPath}`);
+
+      // Attempt to fix common issues
+      await this.attemptWorkflowFix(workflow, health);
+      
+      // Validate the fix
+      const fixedHealth = await this.validateWorkflow(workflowPath);
+      if (fixedHealth.healthy) {
+        this.log(`✅ Workflow ${workflow} fixed successfully`);
+      } else {
+        this.log(`❌ Workflow ${workflow} fix failed`, "ERROR");
+        await this.escalateWorkflowIssue(workflow, health);
+      }
+    } catch (error) {
+      this.log(`❌ Failed to handle critical workflow ${workflow}: ${error.message}`, "ERROR");
+      await this.escalateWorkflowIssue(workflow, health);
+    }
+  }
+
+  async handleNonCriticalWorkflow(workflow, health) {
+    this.log(`⚠️ Handling non-critical workflow: ${workflow}`, "WARN");
+    
+    try {
+      // Log the issues for review
+      this.log(`📝 Workflow ${workflow} issues logged for review: ${health.issues.join(", ")}`);
+      
+      // Create a report
+      const report = {
+        timestamp: new Date().toISOString(),
+        workflow,
+        issues: health.issues,
+        severity: "non-critical"
+      };
+      
+      const reportPath = path.join(this.logDir, `workflow-issue-${workflow}-${Date.now()}.json`);
+      fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+      this.log(`📋 Issue report created: ${reportPath}`);
+    } catch (error) {
+      this.log(`❌ Failed to handle non-critical workflow ${workflow}: ${error.message}`, "ERROR");
+    }
+  }
+
+  async attemptWorkflowFix(workflow, health) {
+    this.log(`🔧 Attempting to fix workflow: ${workflow}`);
+    
+    try {
+      const workflowPath = path.join(this.workspace, ".github/workflows", workflow);
+      let content = fs.readFileSync(workflowPath, "utf8");
+
+      // Fix common issues
+      if (health.issues.some(issue => issue.includes("Missing workflow name"))) {
+        content = `name: ${workflow.replace('.yml', '')}\n${content}`;
+      }
+
+      if (health.issues.some(issue => issue.includes("Missing permissions"))) {
+        const permissionsBlock = `
+permissions:
+  contents: write
+  pull-requests: read
+  issues: read
+`;
+        content = content.replace("jobs:", `${permissionsBlock}\njobs:`);
+      }
+
+      // Write the fixed content
+      fs.writeFileSync(workflowPath, content);
+      this.log(`✅ Applied fixes to ${workflow}`);
+      
+    } catch (error) {
+      this.log(`❌ Failed to fix workflow ${workflow}: ${error.message}`, "ERROR");
+    }
+  }
+
+  async handleDependencyIssues(health) {
+    this.log("⚠️ Handling dependency issues", "WARN");
+    
+    try {
+      // Check if we can install missing dependencies
+      if (health.issues.some(issue => issue.includes("Critical dependency missing"))) {
+        this.log("🔄 Attempting to install missing dependencies...");
+        await this.runCommand("npm", ["install"]);
+      }
+
+      // Check environment variables
+      const missingEnvVars = health.issues
+        .filter(issue => issue.includes("Required environment variable missing"))
+        .map(issue => issue.match(/missing: (\w+)/)?.[1])
+        .filter(Boolean);
+
+      if (missingEnvVars.length > 0) {
+        this.log(`⚠️ Missing environment variables: ${missingEnvVars.join(", ")}`);
+        this.log("Please set these environment variables for proper workflow execution");
+      }
+    } catch (error) {
+      this.log(`❌ Failed to handle dependency issues: ${error.message}`, "ERROR");
+    }
+  }
+
+  async handleSyntaxIssues(health) {
+    this.log("⚠️ Handling syntax issues", "WARN");
+    
+    try {
+      // Create syntax validation report
+      const report = {
+        timestamp: new Date().toISOString(),
+        type: "syntax_issues",
+        issues: health.issues,
+        recommendations: [
+          "Review workflow indentation",
+          "Check YAML syntax",
+          "Validate step structure",
+          "Ensure proper quoting"
+        ]
+      };
+      
+      const reportPath = path.join(this.logDir, `syntax-issues-${Date.now()}.json`);
+      fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+      this.log(`📋 Syntax issues report created: ${reportPath}`);
+    } catch (error) {
+      this.log(`❌ Failed to handle syntax issues: ${error.message}`, "ERROR");
+    }
+  }
+
+  async handleRunIssues(health) {
+    this.log("⚠️ Handling workflow run issues", "WARN");
+    
+    try {
+      // Create run monitoring report
+      const report = {
+        timestamp: new Date().toISOString(),
+        type: "run_issues",
+        issues: health.issues,
+        recommendations: [
+          "Review timeout configurations",
+          "Check job dependencies",
+          "Validate error handling",
+          "Monitor resource usage"
+        ]
+      };
+      
+      const reportPath = path.join(this.logDir, `run-issues-${Date.now()}.json`);
+      fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+      this.log(`📋 Run issues report created: ${reportPath}`);
+    } catch (error) {
+      this.log(`❌ Failed to handle run issues: ${error.message}`, "ERROR");
+    }
+  }
+
+  async handlePermissionIssues(health) {
+    this.log("⚠️ Handling permission issues", "WARN");
+    
+    try {
+      // Create permission audit report
+      const report = {
+        timestamp: new Date().toISOString(),
+        type: "permission_issues",
+        issues: health.issues,
+        recommendations: [
+          "Review workflow permissions",
+          "Use least privilege principle",
+          "Check GITHUB_TOKEN usage",
+          "Validate security settings"
+        ]
+      };
+      
+      const reportPath = path.join(this.logDir, `permission-issues-${Date.now()}.json`);
+      fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+      this.log(`📋 Permission issues report created: ${reportPath}`);
+    } catch (error) {
+      this.log(`❌ Failed to handle permission issues: ${error.message}`, "ERROR");
+    }
+  }
+
+  async escalateWorkflowIssue(workflow, health) {
+    this.log(`🚨 Escalating workflow issue: ${workflow}`, "ERROR");
+    
+    try {
+      // Create incident report
+      const incidentReport = {
+        timestamp: new Date().toISOString(),
+        workflow,
+        issues: health.issues,
+        severity: "critical",
+        requiresManualIntervention: true
+      };
+      
+      const reportPath = path.join(this.logDir, `incident-${workflow}-${Date.now()}.json`);
+      fs.writeFileSync(reportPath, JSON.stringify(incidentReport, null, 2));
+      this.log(`📋 Incident report created: ${reportPath}`);
+      
+      // Send alert (placeholder for notification system)
+      this.log(`ALERT: Workflow ${workflow} requires manual intervention`, "ERROR");
+    } catch (error) {
+      this.log(`❌ Failed to escalate workflow issue: ${error.message}`, "ERROR");
+    }
+  }
+
+  async triggerWorkflowHealthCheck() {
+    try {
+      const healthWorkflow = path.join(this.workspace, ".github/workflows/sync-health.yml");
+      if (fs.existsSync(healthWorkflow)) {
+        this.log("📡 Triggering workflow health check...");
+        // This would typically use GitHub API to trigger workflows
+        // For now, we'll just log the action
+        this.healthMetrics.workflowsTriggered++;
+      }
+    } catch (error) {
+      this.log(`⚠️ Could not trigger workflow health check: ${error.message}`, "WARN");
+    }
+  }
+
+  async getHealthMetrics() {
+    const uptime = Date.now() - this.healthMetrics.uptime;
+    const successRate = this.healthMetrics.totalChecks > 0 
+      ? (this.healthMetrics.successfulChecks / this.healthMetrics.totalChecks) * 100 
+      : 0;
+    
+    return {
+      ...this.healthMetrics,
+      uptime,
+      successRate: successRate.toFixed(2),
+      healthStatus: successRate > 80 ? "HEALTHY" : successRate > 60 ? "DEGRADED" : "CRITICAL"
+    };
+  }
+
+  async startMonitoring() {
+    this.log("🚀 Starting enhanced GitHub Actions redundancy monitoring...");
+    
+    const interval = this.config.githubActions.checkInterval || 60000;
+    
+    setInterval(async () => {
+      await this.checkGitHubActionsHealth();
+    }, interval);
+    
+    // Initial health check
+    await this.checkGitHubActionsHealth();
+    
+    this.log(`✅ Enhanced GitHub Actions redundancy monitoring started (interval: ${interval}ms)`);
   }
 }
 
-// Start the enhanced GitHub Actions redundancy system
+// CLI interface
 if (require.main === module) {
-  const githubActionsRedundancy = new EnhancedGitHubActionsRedundancy();
+  const redundancy = new EnhancedGitHubActionsRedundancy();
   
-  // Handle graceful shutdown
-  process.on('SIGINT', async () => {
-    console.log('\n🛑 Shutting down enhanced GitHub Actions redundancy system...');
-    await githubActionsRedundancy.stopMonitoring();
-    process.exit(0);
-  });
+  const command = process.argv[2];
   
-  process.on('SIGTERM', async () => {
-    console.log('\n🛑 Terminating enhanced GitHub Actions redundancy system...');
-    await githubActionsRedundancy.stopMonitoring();
-    process.exit(0);
-  });
-
-  // Start monitoring
-  githubActionsRedundancy.startMonitoring();
+  switch (command) {
+    case "start":
+      redundancy.startMonitoring();
+      break;
+    case "check":
+      redundancy.checkGitHubActionsHealth().then(() => process.exit(0));
+      break;
+    case "status":
+      console.log(JSON.stringify(redundancy.getHealthMetrics(), null, 2));
+      break;
+    default:
+      console.log("Usage: node enhanced-github-actions-redundancy.cjs [start|check|status]");
+      process.exit(1);
+  }
 }
 
-module.exports = EnhancedGitHubActionsRedundancy;
+module.exports = { EnhancedGitHubActionsRedundancy };

@@ -29,18 +29,8 @@ class EnhancedMasterRedundancyOrchestrator {
     this.managerStatus = new Map();
     this.healthChecks = new Map();
     this.recoveryAttempts = new Map();
-    this.maxRecoveryAttempts = 5;
-    
-    // System-wide health tracking
-    this.systemHealth = {
-      overall: 'healthy',
-      lastCheck: new Date(),
-      uptime: new Date(),
-      totalOperations: 0,
-      successfulOperations: 0,
-      failedOperations: 0,
-      lastRecovery: null
-    };
+    this.systemHealth = 'unknown';
+    this.orchestratorActive = false;
   }
 
   ensureLogDir() {
@@ -51,7 +41,7 @@ class EnhancedMasterRedundancyOrchestrator {
 
   log(message, level = 'INFO') {
     const timestamp = new Date().toISOString();
-    const logMessage = `[${timestamp}] [${level}] [ENHANCED-MASTER-REDUNDANCY] ${message}`;
+    const logMessage = `[${timestamp}] [${level}] [ENHANCED-MASTER] ${message}`;
     console.log(logMessage);
     
     const logFile = path.join(this.logDir, 'enhanced-master-redundancy.log');
@@ -65,39 +55,47 @@ class EnhancedMasterRedundancyOrchestrator {
     
     for (const [name, manager] of this.managers) {
       try {
-        this.log(`Starting ${name} manager...`);
+        this.log(`Starting ${name} enhanced manager...`);
         
         // Start the manager in a controlled way
         if (name === 'pm2') {
-          await manager.start();
+          await manager.startBackupProcesses();
+          manager.startHealthMonitoring();
         } else if (name === 'github') {
-          await manager.start();
+          await manager.createBackupWorkflows();
+          await manager.createEmergencyBackupWorkflows();
+          await manager.createHealthCheckWorkflows();
+          manager.startHealthMonitoring();
         } else if (name === 'netlify') {
-          await manager.start();
+          await manager.createBackupFunctions();
+          await manager.createEmergencyBackupFunctions();
+          await manager.createHealthCheckFunctions();
+          manager.startHealthMonitoring();
         }
         
         this.managerStatus.set(name, {
           status: 'running',
           started: new Date(),
           health: 'healthy',
-          recoveryAttempts: 0
+          lastCheck: new Date()
         });
         
-        this.log(`${name} manager started successfully`);
+        this.log(`${name} enhanced manager started successfully`);
         
       } catch (error) {
-        this.log(`Failed to start ${name} manager: ${error.message}`, 'ERROR');
+        this.log(`Failed to start ${name} enhanced manager: ${error.message}`, 'ERROR');
         this.managerStatus.set(name, {
           status: 'failed',
           started: new Date(),
           health: 'unhealthy',
           error: error.message,
-          recoveryAttempts: 0
+          lastCheck: new Date()
         });
       }
     }
     
     this.log('All enhanced managers startup completed');
+    return true;
   }
 
   async startHealthMonitoring() {
@@ -113,13 +111,18 @@ class EnhancedMasterRedundancyOrchestrator {
       await this.fullSystemHealthCheck();
     });
 
+    this.log('Checking health of all enhanced managers...');
+    
+    let healthyManagers = 0;
+    let totalManagers = this.managers.size;
+=======
     // Comprehensive system health check every 2 hours
     cron.schedule('0 */2 * * *', async () => {
       await this.comprehensiveSystemHealthCheck();
     });
 
-    // Recovery attempt every 10 minutes
-    cron.schedule('*/10 * * * *', async () => {
+    // Recovery attempt every 15 minutes
+    cron.schedule('*/15 * * * *', async () => {
       await this.attemptSystemRecovery();
     });
 
@@ -127,275 +130,258 @@ class EnhancedMasterRedundancyOrchestrator {
     cron.schedule('0 * * * *', async () => {
       await this.generateSystemReport();
     });
+
+    this.log('Enhanced health monitoring started');
   }
 
   async checkAllManagerHealth() {
-    this.log('Checking all manager health...');
-    
-    let healthyManagers = 0;
-    let totalManagers = 0;
+    this.log('Checking all enhanced manager health...');
     
     for (const [name, manager] of this.managers) {
       try {
-        totalManagers++;
+        const status = await manager.getStatus();
+        const health = status.status === 'active' ? 'healthy' : 'unhealthy';
         
-        // Get manager status
-        const status = await manager.status();
-        const health = this.assessManagerHealth(status);
-        
-        // Update manager status
         const managerInfo = this.managerStatus.get(name);
         if (managerInfo) {
           managerInfo.health = health;
           managerInfo.lastCheck = new Date();
           managerInfo.lastStatus = status;
-          this.managerStatus.set(name, managerInfo);
         }
         
-        if (health === 'healthy') {
-          healthyManagers++;
+        if (health === 'unhealthy') {
+          this.log(`Manager ${name} health check failed`, 'WARN');
+          this.healthChecks.set(name, {
+            status: 'failed',
+            timestamp: new Date(),
+            attempts: (this.healthChecks.get(name)?.attempts || 0) + 1
+          });
         }
         
       } catch (error) {
         this.log(`Health check failed for ${name} manager: ${error.message}`, 'ERROR');
-        
         const managerInfo = this.managerStatus.get(name);
         if (managerInfo) {
-          managerInfo.health = 'unhealthy';
+          managerInfo.health = 'failed';
           managerInfo.lastCheck = new Date();
           managerInfo.lastError = error.message;
-          this.managerStatus.set(name, managerInfo);
         }
       }
     }
-    
-    // Update system health
-    const healthPercentage = totalManagers > 0 ? (healthyManagers / totalManagers) * 100 : 0;
-    
-    if (healthPercentage >= 80) {
-      this.systemHealth.overall = 'healthy';
-    } else if (healthPercentage >= 50) {
-      this.systemHealth.overall = 'degraded';
-    } else {
-      this.systemHealth.overall = 'critical';
-    }
-    
-    this.systemHealth.lastCheck = new Date();
-    
-    this.log(`Manager health check complete: ${healthyManagers}/${totalManagers} healthy (${healthPercentage.toFixed(1)}%)`);
-  }
-
-  assessManagerHealth(status) {
-    if (!status) return 'unknown';
-    
-    // Assess health based on manager type and status
-    if (status.totalProcesses || status.totalWorkflows || status.totalFunctions) {
-      const total = status.totalProcesses || status.totalWorkflows || status.totalFunctions;
-      const healthy = status.healthyProcesses || status.healthyWorkflows || status.healthyFunctions || 0;
-      const healthPercentage = total > 0 ? (healthy / total) * 100 : 0;
-      
-      if (healthPercentage >= 90) return 'healthy';
-      if (healthPercentage >= 70) return 'degraded';
-      if (healthPercentage >= 50) return 'unhealthy';
-      return 'critical';
-    }
-    
-    return 'unknown';
   }
 
   async fullSystemHealthCheck() {
     this.log('Running full system health check...');
     
-    // Check each manager's comprehensive health
-    for (const [name, manager] of this.managers) {
-      try {
-        if (name === 'pm2') {
-          await manager.comprehensiveHealthCheck();
-        } else if (name === 'github') {
-          await manager.comprehensiveHealthCheck();
-        } else if (name === 'netlify') {
-          await manager.comprehensiveHealthCheck();
-        }
-      } catch (error) {
-        this.log(`Full health check failed for ${name} manager: ${error.message}`, 'ERROR');
+    let healthyCount = 0;
+    let totalCount = 0;
+    
+    for (const [name, managerInfo] of this.managerStatus) {
+      totalCount++;
+      if (managerInfo.health === 'healthy') {
+        healthyCount++;
       }
     }
     
-    // Update system metrics
-    this.systemHealth.totalOperations++;
-    this.systemHealth.successfulOperations++;
+    const healthPercentage = totalCount > 0 ? (healthyCount / totalCount) * 100 : 0;
     
-    this.log('Full system health check completed');
+    // Update system health
+    if (healthPercentage >= 90) {
+      this.systemHealth = 'excellent';
+    } else if (healthPercentage >= 75) {
+      this.systemHealth = 'good';
+    } else if (healthPercentage >= 50) {
+      this.systemHealth = 'fair';
+    } else if (healthPercentage >= 25) {
+      this.systemHealth = 'poor';
+    } else {
+      this.systemHealth = 'critical';
+    }
+    
+    this.log(`Full system health: ${healthPercentage.toFixed(1)}% (${healthyCount}/${totalCount}) - ${this.systemHealth}`);
+    
+    // Trigger alerts for poor health
+    if (healthPercentage < 50) {
+      this.log('System health below 50%, triggering alert', 'WARN');
+      await this.triggerSystemAlert('poor-health', healthPercentage);
+    }
   }
 
   async comprehensiveSystemHealthCheck() {
     this.log('Running comprehensive system health check...');
     
-    // Generate comprehensive reports from all managers
-    const reports = {};
-    
-    for (const [name, manager] of this.managers) {
-      try {
-        if (name === 'pm2') {
-          reports.pm2 = await manager.generateHealthReport();
-        } else if (name === 'github') {
-          reports.github = await manager.generateHealthReport();
-        } else if (name === 'netlify') {
-          reports.netlify = await manager.generateHealthReport();
+    try {
+      // Get detailed status from all managers
+      const systemStatus = {
+        timestamp: new Date().toISOString(),
+        overallHealth: this.systemHealth,
+        managers: {},
+        summary: {
+          totalManagers: this.managers.size,
+          healthyManagers: 0,
+          unhealthyManagers: 0,
+          failedManagers: 0
         }
-      } catch (error) {
-        this.log(`Comprehensive report generation failed for ${name} manager: ${error.message}`, 'ERROR');
+      };
+      
+      for (const [name, manager] of this.managers) {
+        try {
+          const status = await manager.getStatus();
+          systemStatus.managers[name] = status;
+          
+          if (status.status === 'active') {
+            systemStatus.summary.healthyManagers++;
+          } else if (status.status === 'inactive') {
+            systemStatus.summary.unhealthyManagers++;
+          } else {
+            systemStatus.summary.failedManagers++;
+          }
+          
+        } catch (error) {
+          this.log(`Failed to get status from ${name} manager: ${error.message}`, 'ERROR');
+          systemStatus.managers[name] = { error: error.message, status: 'error' };
+          systemStatus.summary.failedManagers++;
+        }
       }
+      
+      // Save comprehensive status
+      const statusPath = path.join(this.logDir, 'comprehensive-system-status.json');
+      fs.writeFileSync(statusPath, JSON.stringify(systemStatus, null, 2));
+      
+      this.log('Comprehensive system health check completed');
+      
+      // Trigger recovery if needed
+      if (systemStatus.summary.failedManagers > 0) {
+        this.log(`${systemStatus.summary.failedManagers} managers failed, initiating recovery`, 'WARN');
+        await this.attemptSystemRecovery();
+      }
+      
+    } catch (error) {
+      this.log(`Comprehensive health check failed: ${error.message}`, 'ERROR');
     }
-    
-    // Generate system-wide comprehensive report
-    await this.generateComprehensiveSystemReport(reports);
-    
-    this.log('Comprehensive system health check completed');
   }
 
   async attemptSystemRecovery() {
     this.log('Attempting system recovery...');
     
     for (const [name, managerInfo] of this.managerStatus) {
-      if (managerInfo.health !== 'healthy' && managerInfo.recoveryAttempts < this.maxRecoveryAttempts) {
-        try {
-          await this.recoverManager(name);
-        } catch (error) {
-          this.log(`Recovery failed for ${name} manager: ${error.message}`, 'ERROR');
+      if (managerInfo.health === 'failed' || managerInfo.health === 'unhealthy') {
+        const attempts = this.recoveryAttempts.get(name) || 0;
+        
+        if (attempts < 3) {
+          this.log(`Attempting recovery for ${name} manager (attempt ${attempts + 1})`);
+          
+          try {
+            const recovered = await this.recoverManager(name);
+            if (recovered) {
+              this.log(`Successfully recovered ${name} manager`);
+              this.recoveryAttempts.set(name, 0);
+              managerInfo.health = 'healthy';
+              managerInfo.status = 'running';
+            } else {
+              this.recoveryAttempts.set(name, attempts + 1);
+            }
+          } catch (error) {
+            this.log(`Recovery failed for ${name} manager: ${error.message}`, 'ERROR');
+            this.recoveryAttempts.set(name, attempts + 1);
+          }
+        } else {
+          this.log(`Max recovery attempts reached for ${name} manager`, 'ERROR');
         }
       }
     }
   }
 
-  async recoverManager(managerName) {
-    const managerInfo = this.managerStatus.get(managerName);
-    if (!managerInfo) return;
-
-    this.log(`Attempting recovery for ${managerName} manager...`);
+  async recoverManager(name) {
+    this.log(`Recovering manager: ${name}`);
     
     try {
-      const manager = this.managers.get(managerName);
+      const manager = this.managers.get(name);
       if (!manager) {
-        throw new Error(`Manager ${managerName} not found`);
+        throw new Error(`Manager ${name} not found`);
       }
       
-      // Attempt restart
-      await manager.restart();
+      // Stop the manager first
+      if (name === 'pm2') {
+        await manager.stopAllBackupProcesses();
+      } else if (name === 'github') {
+        await manager.stopAllBackupWorkflows();
+      } else if (name === 'netlify') {
+        await manager.stopAllBackupFunctions();
+      }
       
-      // Update manager info
-      managerInfo.recoveryAttempts++;
-      managerInfo.lastRecovery = new Date();
-      managerInfo.health = 'healthy';
-      managerInfo.status = 'running';
+      // Wait a moment
+      await new Promise(resolve => setTimeout(resolve, 5000));
       
-      this.managerStatus.set(managerName, managerInfo);
+      // Restart the manager
+      if (name === 'pm2') {
+        await manager.startBackupProcesses();
+        manager.startHealthMonitoring();
+      } else if (name === 'github') {
+        await manager.createBackupWorkflows();
+        await manager.createEmergencyBackupWorkflows();
+        await manager.createHealthCheckWorkflows();
+        manager.startHealthMonitoring();
+      } else if (name === 'netlify') {
+        await manager.createBackupFunctions();
+        await manager.createEmergencyBackupFunctions();
+        await manager.createHealthCheckFunctions();
+        manager.startHealthMonitoring();
+      }
       
-      // Update system health
-      this.systemHealth.lastRecovery = new Date();
-      this.systemHealth.successfulOperations++;
-      
-      this.log(`Recovery successful for ${managerName} manager`);
+      return true;
       
     } catch (error) {
-      this.log(`Recovery failed for ${managerName} manager: ${error.message}`, 'ERROR');
-      
-      managerInfo.health = 'failed';
-      managerInfo.lastError = error.message;
-      this.managerStatus.set(managerName, managerInfo);
-      
-      // Update system health
-      this.systemHealth.failedOperations++;
+      this.log(`Manager recovery failed: ${error.message}`, 'ERROR');
+      return false;
     }
   }
 
-  async generateSystemReport() {
-    this.log('Generating system report...');
+  async triggerSystemAlert(alertType, data) {
+    this.log(`Triggering system alert: ${alertType}`, 'WARN');
     
-    const report = {
+    const alert = {
+      type: alertType,
       timestamp: new Date().toISOString(),
-      systemHealth: this.systemHealth,
-      managers: {},
-      summary: {
-        totalManagers: this.managers.size,
-        healthyManagers: 0,
-        unhealthyManagers: 0,
-        failedManagers: 0
-      }
+      data: data,
+      severity: alertType === 'critical' ? 'high' : 'medium'
     };
     
-    // Collect manager reports
-    for (const [name, managerInfo] of this.managerStatus) {
-      report.managers[name] = {
-        status: managerInfo.status,
-        health: managerInfo.health,
-        started: managerInfo.started,
-        lastCheck: managerInfo.lastCheck,
-        recoveryAttempts: managerInfo.recoveryAttempts,
-        lastRecovery: managerInfo.lastRecovery,
-        lastError: managerInfo.lastError
-      };
-      
-      // Update summary
-      switch (managerInfo.health) {
-        case 'healthy':
-          report.summary.healthyManagers++;
-          break;
-        case 'unhealthy':
-        case 'degraded':
-          report.summary.unhealthyManagers++;
-          break;
-        case 'failed':
-        case 'critical':
-          report.summary.failedManagers++;
-          break;
-      }
+    // Save alert to log
+    const alertPath = path.join(this.logDir, 'system-alerts.log');
+    fs.appendFileSync(alertPath, JSON.stringify(alert) + '\n');
+    
+    // Log alert details
+    this.log(`System alert triggered: ${JSON.stringify(alert)}`, 'WARN');
+    
+    // For critical alerts, attempt emergency recovery
+    if (alertType === 'critical' || data < 25) {
+      this.log('Critical alert detected, initiating emergency recovery', 'ERROR');
+      await this.emergencyRecovery();
     }
-    
-    const reportPath = path.join(this.logDir, 'enhanced-system-report.json');
-    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    
-    this.log(`System report generated: ${reportPath}`);
-    return report;
-  }
-
-  async generateComprehensiveSystemReport(managerReports) {
-    this.log('Generating comprehensive system report...');
-    
-    const comprehensiveReport = {
-      timestamp: new Date().toISOString(),
-      systemHealth: this.systemHealth,
-      managerReports: managerReports,
-      systemMetrics: {
-        uptime: Date.now() - this.systemHealth.uptime.getTime(),
-        totalOperations: this.systemHealth.totalOperations,
-        successfulOperations: this.systemHealth.successfulOperations,
-        failedOperations: this.systemHealth.failedOperations,
-        successRate: this.systemHealth.totalOperations > 0 ? 
-          (this.systemHealth.successfulOperations / this.systemHealth.totalOperations) * 100 : 0
-      }
-    };
-    
-    const reportPath = path.join(this.logDir, 'enhanced-comprehensive-system-report.json');
-    fs.writeFileSync(reportPath, JSON.stringify(comprehensiveReport, null, 2));
-    
-    this.log(`Comprehensive system report generated: ${reportPath}`);
-    return comprehensiveReport;
   }
 
   async emergencyRecovery() {
-    this.log('Initiating emergency recovery procedures...');
+    this.log('Initiating emergency recovery...');
     
     try {
       // Stop all managers
       for (const [name, manager] of this.managers) {
-        try {
-          await manager.stop();
-          this.log(`Stopped ${name} manager`);
-        } catch (error) {
-          this.log(`Failed to stop ${name} manager: ${error.message}`, 'ERROR');
+        this.log(`Stopping ${name} manager for emergency recovery`);
+        
+        if (name === 'pm2') {
+          await manager.stopAllBackupProcesses();
+        } else if (name === 'github') {
+          await manager.stopAllBackupWorkflows();
+        } else if (name === 'netlify') {
+          await manager.stopAllBackupFunctions();
         }
       }
+      
+      // Clear all tracking
+      this.managerStatus.clear();
+      this.healthChecks.clear();
+      this.recoveryAttempts.clear();
       
       // Wait for cleanup
       await new Promise(resolve => setTimeout(resolve, 10000));
@@ -411,117 +397,238 @@ class EnhancedMasterRedundancyOrchestrator {
     }
   }
 
-  async start() {
-    this.log('Starting Enhanced Master Redundancy Orchestrator...');
+  async generateSystemReport() {
+    this.log('Generating enhanced system report...');
     
     try {
-      await this.startAllManagers();
-      await this.startHealthMonitoring();
+      const report = {
+        timestamp: new Date().toISOString(),
+        systemHealth: this.systemHealth,
+        orchestratorStatus: this.orchestratorActive ? 'active' : 'inactive',
+        managers: {},
+        healthChecks: Array.from(this.healthChecks.entries()).map(([name, info]) => ({
+          name,
+          status: info.status,
+          timestamp: info.timestamp,
+          attempts: info.attempts
+        })),
+        recoveryAttempts: Array.from(this.recoveryAttempts.entries()).map(([name, attempts]) => ({
+          name,
+          attempts
+        })),
+        summary: {
+          totalManagers: this.managers.size,
+          healthyManagers: 0,
+          unhealthyManagers: 0,
+          failedManagers: 0
+        }
+      };
       
-      this.log('Enhanced Master Redundancy Orchestrator started successfully');
+      // Collect manager statuses
+      for (const [name, managerInfo] of this.managerStatus) {
+        report.managers[name] = {
+          status: managerInfo.status,
+          health: managerInfo.health,
+          started: managerInfo.started,
+          lastCheck: managerInfo.lastCheck,
+          lastError: managerInfo.lastError
+        };
+        
+        if (managerInfo.health === 'healthy') {
+          report.summary.healthyManagers++;
+        } else if (managerInfo.health === 'unhealthy') {
+          report.summary.unhealthyManagers++;
+        } else {
+          report.summary.failedManagers++;
+        }
+      }
       
-      // Initial health check
-      setTimeout(async () => {
-        await this.checkAllManagerHealth();
-        await this.generateSystemReport();
-      }, 15000);
+      // Save report
+      const reportPath = path.join(this.logDir, 'enhanced-system-report.json');
+      fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+      
+      this.log(`Enhanced system report generated: ${reportPath}`);
+      
+      return report;
       
     } catch (error) {
-      this.log(`Failed to start Enhanced Master Redundancy Orchestrator: ${error.message}`, 'ERROR');
+      this.log(`Failed to generate system report: ${error.message}`, 'ERROR');
+      return null;
+    }
+  }
+
+  async startOrchestrator() {
+    if (this.orchestratorActive) {
+      this.log('Orchestrator already active');
+      return;
+    }
+    
+    this.log('Starting enhanced master redundancy orchestrator...');
+    
+    try {
+      // Start all managers
+      await this.startAllManagers();
+      
+      // Start health monitoring
+      await this.startHealthMonitoring();
+      
+      this.orchestratorActive = true;
+      
+      this.log('Enhanced master redundancy orchestrator started successfully');
+      
+      // Generate initial report
+      await this.generateSystemReport();
+      
+    } catch (error) {
+      this.log(`Failed to start orchestrator: ${error.message}`, 'ERROR');
       throw error;
     }
   }
 
-  async stop() {
-    this.log('Stopping Enhanced Master Redundancy Orchestrator...');
+  async stopOrchestrator() {
+    this.log('Stopping enhanced master redundancy orchestrator...');
     
-    for (const [name, manager] of this.managers) {
-      try {
-        await manager.stop();
-        this.log(`Stopped ${name} manager`);
-      } catch (error) {
-        this.log(`Failed to stop ${name} manager: ${error.message}`, 'ERROR');
+    try {
+      // Stop all managers
+      for (const [name, manager] of this.managers) {
+        this.log(`Stopping ${name} manager`);
+        
+        if (name === 'pm2') {
+          await manager.stopAllBackupProcesses();
+        } else if (name === 'github') {
+          await manager.stopAllBackupWorkflows();
+        } else if (name === 'netlify') {
+          await manager.stopAllBackupFunctions();
+        }
       }
+      
+      // Clear tracking
+      this.managerStatus.clear();
+      this.healthChecks.clear();
+      this.recoveryAttempts.clear();
+      this.orchestratorActive = false;
+      
+      this.log('Enhanced master redundancy orchestrator stopped');
+      
+    } catch (error) {
+      this.log(`Failed to stop orchestrator: ${error.message}`, 'ERROR');
+      throw error;
     }
-    
-    this.log('Enhanced Master Redundancy Orchestrator stopped');
   }
 
-  async status() {
-    const report = await this.generateSystemReport();
+  async getStatus() {
+    const status = {
+      orchestrator: 'Enhanced Master Redundancy Orchestrator',
+      status: this.orchestratorActive ? 'active' : 'inactive',
+      systemHealth: this.systemHealth,
+      managers: Array.from(this.managerStatus.entries()).map(([name, info]) => ({
+        name,
+        status: info.status,
+        health: info.health,
+        started: info.started,
+        lastCheck: info.lastCheck,
+        lastError: info.lastError
+      })),
+      healthChecks: Array.from(this.healthChecks.entries()).map(([name, info]) => ({
+        name,
+        status: info.status,
+        timestamp: info.timestamp,
+        attempts: info.attempts
+      })),
+      recoveryAttempts: Array.from(this.recoveryAttempts.entries()).map(([name, attempts]) => ({
+        name,
+        attempts
+      }))
+    };
     
-    console.log('\n=== Enhanced Master Redundancy Orchestrator Status ===');
-    console.log(`System Health: ${this.systemHealth.overall.toUpperCase()}`);
-    console.log(`Uptime: ${Math.floor((Date.now() - this.systemHealth.uptime.getTime()) / (1000 * 60 * 60))} hours`);
-    console.log(`Success Rate: ${report.systemMetrics?.successRate?.toFixed(1) || 0}%`);
-    console.log('\nManager Status:');
+    return status;
+  }
+
+  async generateComprehensiveReport() {
+    this.log('Generating comprehensive enhanced system report...');
     
-    for (const [name, managerInfo] of this.managerStatus) {
-      const status = managerInfo.status || 'unknown';
-      const health = managerInfo.health || 'unknown';
-      console.log(`  ${name}: ${status} (${health})`);
+    try {
+      const report = {
+        timestamp: new Date().toISOString(),
+        orchestrator: await this.getStatus(),
+        detailedManagerReports: {}
+      };
+      
+      // Get detailed reports from each manager
+      for (const [name, manager] of this.managers) {
+        try {
+          const managerReport = await manager.generateReport();
+          report.detailedManagerReports[name] = managerReport;
+        } catch (error) {
+          this.log(`Failed to get report from ${name} manager: ${error.message}`, 'ERROR');
+          report.detailedManagerReports[name] = { error: error.message };
+        }
+      }
+      
+      // Save comprehensive report
+      const reportPath = path.join(this.logDir, 'comprehensive-enhanced-system-report.json');
+      fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+      
+      this.log(`Comprehensive enhanced system report generated: ${reportPath}`);
+      
+      return report;
+      
+    } catch (error) {
+      this.log(`Failed to generate comprehensive report: ${error.message}`, 'ERROR');
+      return null;
     }
-    
-    console.log('\nSummary:');
-    console.log(`  Total Managers: ${report.summary.totalManagers}`);
-    console.log(`  Healthy: ${report.summary.healthyManagers}`);
-    console.log(`  Unhealthy: ${report.summary.unhealthyManagers}`);
-    console.log(`  Failed: ${report.summary.failedManagers}`);
-    console.log('=====================================================\n');
-    
-    return report;
-  }
-
-  async restart() {
-    this.log('Restarting Enhanced Master Redundancy Orchestrator...');
-    await this.stop();
-    await new Promise(resolve => setTimeout(resolve, 10000));
-    await this.start();
-  }
-
-  async emergency() {
-    this.log('Emergency mode activated - initiating full system recovery...');
-    await this.emergencyRecovery();
   }
 }
 
 // CLI interface
 if (require.main === module) {
   const orchestrator = new EnhancedMasterRedundancyOrchestrator();
-  const command = process.argv[2] || 'start';
+  const command = process.argv[2];
   
-  (async () => {
-    try {
-      switch (command) {
-        case 'start':
-          await orchestrator.start();
-          break;
-        case 'stop':
-          await orchestrator.stop();
-          break;
-        case 'status':
-          await orchestrator.status();
-          break;
-        case 'restart':
-          await orchestrator.restart();
-          break;
-        case 'report':
-          await orchestrator.generateSystemReport();
-          break;
-        case 'comprehensive':
-          await orchestrator.comprehensiveSystemHealthCheck();
-          break;
-        case 'emergency':
-          await orchestrator.emergency();
-          break;
-        default:
-          console.log('Usage: node enhanced-master-redundancy-orchestrator.cjs [start|stop|status|restart|report|comprehensive|emergency]');
-      }
-    } catch (error) {
-      console.error(`Error: ${error.message}`);
-      process.exit(1);
-    }
-  })();
+  switch (command) {
+    case 'start':
+      orchestrator.startOrchestrator().then(() => {
+        console.log('Enhanced master redundancy orchestrator started');
+      }).catch(error => {
+        console.error('Failed to start orchestrator:', error.message);
+        process.exit(1);
+      });
+      break;
+    case 'stop':
+      orchestrator.stopOrchestrator().then(() => {
+        console.log('Enhanced master redundancy orchestrator stopped');
+      }).catch(error => {
+        console.error('Failed to stop orchestrator:', error.message);
+        process.exit(1);
+      });
+      break;
+    case 'status':
+      orchestrator.getStatus().then(status => {
+        console.log(JSON.stringify(status, null, 2));
+      });
+      break;
+    case 'report':
+      orchestrator.generateSystemReport().then(report => {
+        console.log(JSON.stringify(report, null, 2));
+      });
+      break;
+    case 'comprehensive':
+      orchestrator.generateComprehensiveReport().then(report => {
+        console.log(JSON.stringify(report, null, 2));
+      });
+      break;
+    case 'health':
+      orchestrator.fullSystemHealthCheck();
+      break;
+    case 'recovery':
+      orchestrator.attemptSystemRecovery();
+      break;
+    case 'emergency':
+      orchestrator.emergencyRecovery();
+      break;
+    default:
+      console.log('Usage: node enhanced-master-redundancy-orchestrator.cjs [start|stop|status|report|comprehensive|health|recovery|emergency]');
+  }
 }
 
 module.exports = EnhancedMasterRedundancyOrchestrator;

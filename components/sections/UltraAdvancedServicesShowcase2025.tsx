@@ -15,7 +15,7 @@ import { innovativeAIServicesEnhanced2025 } from '../../data/2025-innovative-ai-
 import { innovativeITServicesEnhanced2025 } from '../../data/2025-innovative-it-services-enhanced';
 import { emergingTechServicesEnhanced2025 } from '../../data/2025-emerging-tech-services-enhanced';
 import { advancedAIAutomationServices } from '../../data/2026-advanced-ai-automation-services';
-import { advancedITInfrastructureServices } from '../../data/2025-advanced-it-infrastructure-services';
+import { advancedITInfrastructureServices2025 } from '../../data/2025-advanced-it-infrastructure-services';
 import { innovativeBusinessSolutions2025 } from '../../data/2025-innovative-business-solutions';
 
 const UltraAdvancedServicesShowcase2025: React.FC = () => {
@@ -33,7 +33,7 @@ const UltraAdvancedServicesShowcase2025: React.FC = () => {
     ...innovativeITServicesEnhanced2025,
     ...emergingTechServicesEnhanced2025,
     ...advancedAIAutomationServices,
-    ...advancedITInfrastructureServices,
+    ...advancedITInfrastructureServices2025,
     ...innovativeBusinessSolutions2025
   ];
 
@@ -60,8 +60,12 @@ const UltraAdvancedServicesShowcase2025: React.FC = () => {
     })
     .sort((a, b) => {
       switch (sortBy) {
-        case 'popularity':
-          return (b.popular ? 1 : 0) - (a.popular ? 1 : 0);
+        case 'popularity': {
+          // Handle both old and new service structures
+          const aPopular = 'popular' in a ? a.popular : false;
+          const bPopular = 'popular' in b ? b.popular : false;
+          return (bPopular ? 1 : 0) - (aPopular ? 1 : 0);
+        }
         case 'price-low': {
           const aPrice = 'price' in a && typeof a.price === 'string' ? parseFloat(a.price.replace(/[^0-9.]/g, '')) : 
                          'pricing' in a && typeof a.pricing === 'object' && a.pricing && 'starter' in a.pricing ? (a.pricing as any).starter : 0;
@@ -76,8 +80,9 @@ const UltraAdvancedServicesShowcase2025: React.FC = () => {
                             'pricing' in b && typeof b.pricing === 'object' && b.pricing && 'starter' in b.pricing ? (b.pricing as any).starter : 0;
           return bPriceHigh - aPriceHigh;
         }
-        case 'name':
+        case 'name': {
           return a.name.localeCompare(b.name);
+        }
         default:
           return 0;
       }
@@ -289,8 +294,8 @@ const UltraAdvancedServicesShowcase2025: React.FC = () => {
                 <div className={`${
                   viewMode === 'list' ? 'flex-shrink-0' : 'mb-4'
                 }`}>
-                  <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300`}>
-                    <div className="text-2xl">{service.icon}</div>
+                  <div className={`w-16 h-16 bg-gradient-to-br ${'color' in service ? service.color : 'from-blue-500 to-purple-600'} rounded-xl flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300`}>
+                    <div className="text-2xl">{'icon' in service ? service.icon : '🚀'}</div>
                   </div>
                 </div>
 
@@ -304,7 +309,7 @@ const UltraAdvancedServicesShowcase2025: React.FC = () => {
                       </h3>
                       <p className="text-gray-400 text-sm mb-2">{service.tagline}</p>
                     </div>
-                    {service.popular && (
+                    {'popular' in service && service.popular && (
                       <div className="flex-shrink-0 ml-2">
                         <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-yellow-500 to-orange-500 text-white">
                           <Star className="w-3 h-3 mr-1" />
@@ -383,7 +388,7 @@ const UltraAdvancedServicesShowcase2025: React.FC = () => {
                         </span>
                       </div>
                       <a
-                        href={service.link}
+                        href={'link' in service ? service.link : service.slug}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center space-x-1 text-cyan-400 hover:text-cyan-300 transition-colors"

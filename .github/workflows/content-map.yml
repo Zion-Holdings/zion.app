@@ -1,0 +1,31 @@
+name: Content Map
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+jobs:
+  map:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run content:map
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/automation/content-map.json automation_logs/content-map.log || true
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(automation): update content map [skip ci]"
+            git push
+          else
+            echo "No changes to commit"
+          fi
