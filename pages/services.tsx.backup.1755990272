@@ -81,6 +81,9 @@ import { industryRealServices } from '../data/industry-real-services';
 
 // Helper function to get service category
 const getServiceCategory = (service: any) => {
+<<<<<<< HEAD
+  if (service.category) return service.category;
+=======
   if (service.category) {
     // Map specific categories to our filter categories
     const categoryMap: { [key: string]: string } = {
@@ -113,6 +116,7 @@ const getServiceCategory = (service: any) => {
     
     return categoryMap[service.category] || service.category.toLowerCase().replace(/\s+/g, '-');
   }
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-8185
   if (service.type) return service.type;
   return 'Other';
 };
@@ -164,10 +168,16 @@ const allServices = [
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
   // Our new 2025 advanced services
+<<<<<<< HEAD
+  ...advanced2025MicroSaasExpansion,
+  ...advanced2025ITSolutionsExpansion,
+  ...advanced2025AIServicesExpansion,
+=======
   ...advancedAIAutomationPlatforms2025,
   ...innovativeITInfrastructureSolutions2025,
   ...specializedMicroSaasSolutions2025,
   ...emergingTechnologyServices2025,
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-8185
   // Our new innovative services
   ...innovative2037MicroSaasServices,
   ...innovative2037ITServices,
@@ -294,6 +304,18 @@ const categories = [
   {
     id: 'it-infrastructure',
     name: 'IT Infrastructure',
+<<<<<<< HEAD
+    icon: <Network className="w-6 h-6" />,
+    color: 'from-blue-500 to-cyan-600',
+    description: 'Advanced infrastructure solutions'
+  },
+  {
+    id: 'business-automation',
+    name: 'Business Automation',
+    icon: <Zap className="w-6 h-6" />,
+    color: 'from-yellow-500 to-orange-600',
+    description: 'Business process automation'
+=======
     icon: <Server className="w-6 h-6" />,
     color: 'from-slate-500 to-gray-500',
     description: 'Advanced IT infrastructure and DevOps'
@@ -318,6 +340,7 @@ const categories = [
     icon: <Rocket className="w-6 h-6" />,
     color: 'from-gray-500 to-slate-600',
     description: 'Autonomous robotics and automation systems'
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-8185
   }
 ];
 
