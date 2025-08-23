@@ -392,7 +392,16 @@ module.exports = {
         '18': '4.5rem',
         '88': '22rem',
         '128': '32rem',
+<<<<<<< HEAD
+        'safe': '1rem',
+        'safe-sm': '1.5rem',
+        'safe-md': '2rem',
+        'safe-lg': '3rem',
+        'safe-xl': '4rem',
+        'safe-2xl': '5rem',
+=======
         '144': '36rem',
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-d9ea
       },
       borderRadius: {
         '4xl': '2rem',
@@ -429,6 +438,13 @@ module.exports = {
         'neon-pulse': 'neonPulse 2s ease-in-out infinite',
         'cyber-float': 'cyberFloat 4s ease-in-out infinite',
         'hologram': 'hologram 3s ease-in-out infinite',
+<<<<<<< HEAD
+        'energy-wave': 'energyWave 4s ease-in-out infinite',
+        'quantum-spin': 'quantumSpin 6s linear infinite',
+        'neural-network': 'neuralNetwork 10s linear infinite',
+        'plasma-flow': 'plasmaFlow 5s ease-in-out infinite',
+        'cyber-grid': 'cyberGrid 15s linear infinite',
+=======
         primary: {
           50: '#eff6ff',
           100: '#dbeafe',
@@ -504,12 +520,18 @@ module.exports = {
         'neural-network': 'neuralNetwork 4s ease-in-out infinite',
         'plasma-flow': 'plasmaFlow 3s ease-in-out infinite',
         'cyber-grid': 'cyberGrid 2s ease-in-out infinite',
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-d9ea
       },
       keyframes: {
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
+<<<<<<< HEAD
+        slideUp: {
+          '0%': { transform: 'translateY(20px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
+=======
         fadeInUp: {
           '0%': { opacity: '0', transform: 'translateY(20px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
@@ -589,6 +611,7 @@ module.exports = {
           '0%': { transform: 'translateY(0) scale(1)' },
           '50%': { transform: 'translateY(-10px) scale(1.1)' },
           '100%': { transform: 'translateY(0) scale(1)' },
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-d9ea
         },
       },
       backdropBlur: {
