@@ -31,6 +31,9 @@ export default class MyDocument extends Document {
 					<meta name="theme-color" content="#000000" />
 					<link rel="dns-prefetch" href="//plausible.io" />
 					<link rel="preconnect" href="https://plausible.io" crossOrigin="anonymous" />
+					<link rel="dns-prefetch" href="//plausible.io" />
+					<link rel="manifest" href="/site.webmanifest" />
+					<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 				</Head>
 				<body>
 					<Main />

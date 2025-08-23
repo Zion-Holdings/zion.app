@@ -1,5 +1,6 @@
-import React from 'react';
-import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
+import React, { useState } from 'react';
+import UltraFuturisticNavigation2035 from './UltraFuturisticNavigation2035';
+import UltraFuturisticFooter2035 from './UltraFuturisticFooter2035';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
 import AccessibilityEnhancer from '../AccessibilityEnhancer';
