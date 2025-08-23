@@ -1,13 +1,22 @@
-import EnhancedLayout from '../components/layout/EnhancedLayout';
-
-export default function About() {
-  return (
-    <EnhancedLayout>
-      <div className="py-10">About Zion</div>
-    </EnhancedLayout>
-  );
-}
-=======
 export default function About() {
   return <div>About page</div>;
 }
+=======
+import React from "react";
+import Head from "next/head";
+
+const Page: React.FC = () => {
+  return (
+    <>
+      <Head>
+        <title>Placeholder Page</title>
+        <meta name="robots" content="noindex" />
+      </Head>
+      <main>
+        <h1>Coming soon</h1>
+      </main>
+    </>
+  );
+};
+
+export default Page;

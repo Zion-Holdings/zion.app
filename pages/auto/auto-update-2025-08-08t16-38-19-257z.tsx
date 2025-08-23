@@ -1,3 +1,18 @@
-export default function AutoUpdate_2025_08_08T16_38_19_257Z() {
-  return <div>Auto Update - 2025-08-08T16:38:19.257Z</div>;
-}
+import React from "react";
+import Head from "next/head";
+
+const Page: React.FC = () => {
+  return (
+    <>
+      <Head>
+        <title>Placeholder Page</title>
+        <meta name="robots" content="noindex" />
+      </Head>
+      <main>
+        <h1>Coming soon</h1>
+      </main>
+    </>
+  );
+};
+
+export default Page;
