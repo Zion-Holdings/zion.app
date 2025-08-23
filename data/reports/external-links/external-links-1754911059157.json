@@ -1,8 +1,13 @@
 {
-  "generatedAt": "2025-08-11T11:19:54.752Z",
-  "total": 26,
-  "bad": 0,
+  "generatedAt": "2025-08-11T11:17:39.157Z",
+  "total": 31,
+  "bad": 5,
   "results": [
+    {
+      "url": "https://techcrunch.com/2025/08/08/how-to-use-instagram-map-and-protect-your-privacy/",
+      "statusCode": 200,
+      "ok": true
+    },
     {
       "url": "https://techcrunch.com/2025/08/08/sam-altman-addresses-bumpy-gpt-5-rollout-bringing-4o-back-and-the-chart-crime/",
       "statusCode": 200,
@@ -14,27 +19,7 @@
       "ok": true
     },
     {
-      "url": "https://techcrunch.com/2025/08/08/how-to-use-instagram-map-and-protect-your-privacy/",
-      "statusCode": 200,
-      "ok": true
-    },
-    {
       "url": "https://techcrunch.com/2025/08/08/pinterest-ceo-says-agentic-shopping-is-still-a-long-way-out/",
-      "statusCode": 200,
-      "ok": true
-    },
-    {
-      "url": "https://techcrunch.com/2025/08/08/openai-priced-gpt-5-so-low-it-may-spark-a-price-war/",
-      "statusCode": 200,
-      "ok": true
-    },
-    {
-      "url": "https://techcrunch.com/2025/08/08/softbank-reportedly-bought-foxconns-ohio-factory-for-the-stargate-ai-project/",
-      "statusCode": 200,
-      "ok": true
-    },
-    {
-      "url": "https://techcrunch.com/2025/08/08/meta-acquires-ai-audio-startup-waveforms/",
       "statusCode": 200,
       "ok": true
     },
@@ -44,7 +29,17 @@
       "ok": true
     },
     {
-      "url": "https://techcrunch.com/2025/08/08/impersonators-are-targeting-companies-with-fake-techcrunch-outreach/",
+      "url": "https://techcrunch.com/2025/08/08/softbank-reportedly-bought-foxconns-ohio-factory-for-the-stargate-ai-project/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/08/openai-priced-gpt-5-so-low-it-may-spark-a-price-war/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/08/meta-acquires-ai-audio-startup-waveforms/",
       "statusCode": 200,
       "ok": true
     },
@@ -54,17 +49,22 @@
       "ok": true
     },
     {
+      "url": "https://techcrunch.com/2025/08/08/impersonators-are-targeting-companies-with-fake-techcrunch-outreach/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
       "url": "https://techcrunch.com/2025/08/06/key-sections-of-the-us-constitution-deleted-from-governments-website/",
       "statusCode": 200,
       "ok": true
     },
     {
-      "url": "https://techcrunch.com/2025/08/08/nasa-and-google-are-building-an-ai-medical-assistant-to-keep-mars-bound-astronauts-healthy/",
+      "url": "https://techcrunch.com/2025/08/07/tesla-shuts-down-dojo-the-ai-training-supercomputer-that-musk-said-would-be-key-to-full-self-driving/",
       "statusCode": 200,
       "ok": true
     },
     {
-      "url": "https://techcrunch.com/2025/08/07/tesla-shuts-down-dojo-the-ai-training-supercomputer-that-musk-said-would-be-key-to-full-self-driving/",
+      "url": "https://techcrunch.com/2025/08/08/nasa-and-google-are-building-an-ai-medical-assistant-to-keep-mars-bound-astronauts-healthy/",
       "statusCode": 200,
       "ok": true
     },
@@ -84,12 +84,12 @@
       "ok": true
     },
     {
-      "url": "https://techcrunch.com/2025/08/03/the-uproar-over-vogues-ai-generated-ad-isnt-just-about-fashion/",
+      "url": "https://techcrunch.com/2025/08/05/three-weeks-after-acquiring-windsurf-cognition-offers-staff-the-exit-door/",
       "statusCode": 200,
       "ok": true
     },
     {
-      "url": "https://techcrunch.com/2025/08/05/three-weeks-after-acquiring-windsurf-cognition-offers-staff-the-exit-door/",
+      "url": "https://techcrunch.com/2025/08/03/the-uproar-over-vogues-ai-generated-ad-isnt-just-about-fashion/",
       "statusCode": 200,
       "ok": true
     },
@@ -104,12 +104,12 @@
       "ok": true
     },
     {
-      "url": "https://www.theverge.com/hands-on/756587/microsoft-copilot-3d-feature-hands-on",
+      "url": "https://www.netlify.com/",
       "statusCode": 200,
       "ok": true
     },
     {
-      "url": "https://www.netlify.com/",
+      "url": "https://www.theverge.com/hands-on/756587/microsoft-copilot-3d-feature-hands-on",
       "statusCode": 200,
       "ok": true
     },
@@ -124,14 +124,39 @@
       "ok": true
     },
     {
+      "url": "https://www.framer.com/motion/",
+      "statusCode": 308,
+      "ok": true
+    },
+    {
       "url": "https://ziontechgroup.com",
       "statusCode": 200,
       "ok": true
     },
     {
-      "url": "https://www.framer.com/motion/",
-      "statusCode": 308,
-      "ok": true
+      "url": "https://github.com/Zion-Holdings/zion.app/tree/main/automation",
+      "statusCode": 404,
+      "ok": false
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/tree/main/docs",
+      "statusCode": 404,
+      "ok": false
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md",
+      "statusCode": 404,
+      "ok": false
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app",
+      "statusCode": 404,
+      "ok": false
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/actions",
+      "statusCode": 404,
+      "ok": false
     }
   ]
 }

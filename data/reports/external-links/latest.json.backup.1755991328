@@ -1,7 +1,13 @@
 {
+<<<<<<< HEAD
+  "generatedAt": "2025-08-11T17:49:21.108Z",
+  "total": 31,
+  "bad": 5,
+=======
   "generatedAt": "2025-08-11T11:19:54.752Z",
   "total": 26,
   "bad": 0,
+>>>>>>> origin/cursor/crawl-and-fix-site-links-and-pages-2625
   "results": [
     {
       "url": "https://techcrunch.com/2025/08/08/sam-altman-addresses-bumpy-gpt-5-rollout-bringing-4o-back-and-the-chart-crime/",
@@ -9,17 +15,24 @@
       "ok": true
     },
     {
+<<<<<<< HEAD
+=======
       "url": "https://techcrunch.com/2025/08/08/former-googlers-ai-startup-openart-now-creates-brainrot-videos-in-just-one-click/",
       "statusCode": 200,
       "ok": true
     },
     {
+>>>>>>> origin/cursor/crawl-and-fix-site-links-and-pages-2625
       "url": "https://techcrunch.com/2025/08/08/how-to-use-instagram-map-and-protect-your-privacy/",
       "statusCode": 200,
       "ok": true
     },
     {
+<<<<<<< HEAD
+      "url": "https://techcrunch.com/2025/08/08/former-googlers-ai-startup-openart-now-creates-brainrot-videos-in-just-one-click/",
+=======
       "url": "https://techcrunch.com/2025/08/08/pinterest-ceo-says-agentic-shopping-is-still-a-long-way-out/",
+>>>>>>> origin/cursor/crawl-and-fix-site-links-and-pages-2625
       "statusCode": 200,
       "ok": true
     },
@@ -34,6 +47,14 @@
       "ok": true
     },
     {
+<<<<<<< HEAD
+      "url": "https://techcrunch.com/2025/08/08/pinterest-ceo-says-agentic-shopping-is-still-a-long-way-out/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+=======
+>>>>>>> origin/cursor/crawl-and-fix-site-links-and-pages-2625
       "url": "https://techcrunch.com/2025/08/08/meta-acquires-ai-audio-startup-waveforms/",
       "statusCode": 200,
       "ok": true
@@ -44,6 +65,14 @@
       "ok": true
     },
     {
+<<<<<<< HEAD
+      "url": "https://techcrunch.com/2025/08/08/nasa-and-google-are-building-an-ai-medical-assistant-to-keep-mars-bound-astronauts-healthy/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+=======
+>>>>>>> origin/cursor/crawl-and-fix-site-links-and-pages-2625
       "url": "https://techcrunch.com/2025/08/08/impersonators-are-targeting-companies-with-fake-techcrunch-outreach/",
       "statusCode": 200,
       "ok": true
@@ -54,17 +83,25 @@
       "ok": true
     },
     {
+<<<<<<< HEAD
+      "url": "https://techcrunch.com/2025/08/07/tesla-shuts-down-dojo-the-ai-training-supercomputer-that-musk-said-would-be-key-to-full-self-driving/",
+=======
       "url": "https://techcrunch.com/2025/08/06/key-sections-of-the-us-constitution-deleted-from-governments-website/",
+>>>>>>> origin/cursor/crawl-and-fix-site-links-and-pages-2625
       "statusCode": 200,
       "ok": true
     },
     {
+<<<<<<< HEAD
+      "url": "https://techcrunch.com/2025/08/06/key-sections-of-the-us-constitution-deleted-from-governments-website/",
+=======
       "url": "https://techcrunch.com/2025/08/08/nasa-and-google-are-building-an-ai-medical-assistant-to-keep-mars-bound-astronauts-healthy/",
       "statusCode": 200,
       "ok": true
     },
     {
       "url": "https://techcrunch.com/2025/08/07/tesla-shuts-down-dojo-the-ai-training-supercomputer-that-musk-said-would-be-key-to-full-self-driving/",
+>>>>>>> origin/cursor/crawl-and-fix-site-links-and-pages-2625
       "statusCode": 200,
       "ok": true
     },
@@ -79,6 +116,14 @@
       "ok": true
     },
     {
+<<<<<<< HEAD
+      "url": "https://techcrunch.com/2025/08/05/three-weeks-after-acquiring-windsurf-cognition-offers-staff-the-exit-door/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+=======
+>>>>>>> origin/cursor/crawl-and-fix-site-links-and-pages-2625
       "url": "https://techcrunch.com/2025/08/04/spotify-raises-subscription-prices/",
       "statusCode": 200,
       "ok": true
@@ -89,11 +134,14 @@
       "ok": true
     },
     {
+<<<<<<< HEAD
+=======
       "url": "https://techcrunch.com/2025/08/05/three-weeks-after-acquiring-windsurf-cognition-offers-staff-the-exit-door/",
       "statusCode": 200,
       "ok": true
     },
     {
+>>>>>>> origin/cursor/crawl-and-fix-site-links-and-pages-2625
       "url": "https://techcrunch.com/storyline/wwdc-2025-live-updates-a-fresh-look-for-ios-a-dedicated-gaming-app-and-more/",
       "statusCode": 200,
       "ok": true
@@ -104,12 +152,24 @@
       "ok": true
     },
     {
+<<<<<<< HEAD
+      "url": "https://www.netlify.com/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+=======
+>>>>>>> origin/cursor/crawl-and-fix-site-links-and-pages-2625
       "url": "https://www.theverge.com/hands-on/756587/microsoft-copilot-3d-feature-hands-on",
       "statusCode": 200,
       "ok": true
     },
     {
+<<<<<<< HEAD
+      "url": "https://ziontechgroup.com",
+=======
       "url": "https://www.netlify.com/",
+>>>>>>> origin/cursor/crawl-and-fix-site-links-and-pages-2625
       "statusCode": 200,
       "ok": true
     },
@@ -119,11 +179,44 @@
       "ok": true
     },
     {
+<<<<<<< HEAD
+      "url": "https://www.framer.com/motion/",
+      "statusCode": 308,
+      "ok": true
+    },
+    {
+=======
+>>>>>>> origin/cursor/crawl-and-fix-site-links-and-pages-2625
       "url": "https://supabase.com/",
       "statusCode": 200,
       "ok": true
     },
     {
+<<<<<<< HEAD
+      "url": "https://github.com/Zion-Holdings/zion.app/actions",
+      "statusCode": 404,
+      "ok": false
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/tree/main/docs",
+      "statusCode": 404,
+      "ok": false
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md",
+      "statusCode": 404,
+      "ok": false
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app",
+      "statusCode": 404,
+      "ok": false
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/tree/main/automation",
+      "statusCode": 404,
+      "ok": false
+=======
       "url": "https://ziontechgroup.com",
       "statusCode": 200,
       "ok": true
@@ -132,6 +225,7 @@
       "url": "https://www.framer.com/motion/",
       "statusCode": 308,
       "ok": true
+>>>>>>> origin/cursor/crawl-and-fix-site-links-and-pages-2625
     }
   ]
 }
