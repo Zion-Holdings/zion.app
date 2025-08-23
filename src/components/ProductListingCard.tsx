@@ -135,6 +135,22 @@ const ProductListingCardComponent = ({
       body: JSON.stringify({ id: listing.id, type: 'product' }),
     }).catch(() => {});
   };
+
+  const handleSave = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!user) {
+      toast.info('Log in to save favorites');
+      navigate(`/login?next=${encodeURIComponent(location.pathname + location.search)}`);
+      return;
+    }
+    dispatch(addToWishlist({ id: listing.id, type: 'product', data: listing }));
+    fetch(`${getApiUrl()}/wishlist`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: listing.id, type: 'product' }),
+    }).catch(() => {});
+  };
   
   const imageContainerClasses = isGrid ? 'h-48' : 'h-32 w-48';
 
