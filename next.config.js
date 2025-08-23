@@ -32,8 +32,8 @@ const nextConfig = {
     // Disable profiling for faster builds
     swcTraceProfiling: false,
     // Enable Node.js runtime for middleware to avoid Next.js warnings
-    nodeMiddleware: false, // Explicitly disable, was causing build issues
-    // Removed esmExternals to prevent external module dynamic import issues
+    nodeMiddleware: false, // Explicitly disable, was causing build issues (requires canary)
+    // Removed esmExternals to prevent external module dynamic import issues (already handled by deleting the property below)
   },
 
   // Image optimization configuration
@@ -52,9 +52,184 @@ const nextConfig = {
     }),
   },
 
-  // Webpack configuration for better performance
-  webpack: (config, { dev, isServer }) => {
-    // Optimize bundle splitting
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production' ? {
+      exclude: ['error', 'warn'],
+    } : false,
+    // Remove React DevTools in production
+    reactRemoveProperties: process.env.NODE_ENV === 'production' ? { properties: ['data-testid'] } : false,
+    // Enable SWC minification optimizations
+    styledComponents: false, // Disable if not using styled-components
+  },
+
+  transpilePackages: [
+    'react-markdown',
+    'date-fns',
+    'react-day-picker',
+    'bail',
+    'is-plain-obj',
+    'mdast-util-from-markdown',
+    'mdast-util-to-hast',
+    'unified',
+    'remark-parse',
+    'remark-rehype',
+    'formik',
+    'decode-named-character-reference',
+    'mdast-util-to-string',
+    'micromark-core-commonmark',
+    'micromark',
+    'micromark-util-character',
+    'micromark-util-chunked',
+    'micromark-util-classify-character',
+    'micromark-util-combine-extensions',
+    'micromark-util-decode-numeric-character-reference',
+    'micromark-util-decode-string',
+    'micromark-util-encode',
+    'micromark-util-html-tag-name',
+    'micromark-util-normalize-identifier',
+    'micromark-util-resolve-all',
+    'micromark-util-sanitize-uri',
+    'micromark-util-subtokenize',
+    'micromark-util-symbol',
+    'micromark-util-types',
+    // Add missing micromark factory packages
+    'micromark-factory-destination',
+    'micromark-factory-label',
+    'micromark-factory-space',
+    'micromark-factory-title',
+    'micromark-factory-whitespace',
+    // Character entities packages
+    'character-entities',
+    'character-entities-html4',
+    'character-entities-legacy',
+    // lodash is installed for Formik compatibility; lodash-es is used directly in our code.
+    'helia',
+    '@helia/json',
+    'multiformats',
+    'libp2p',
+    '@libp2p/identify',
+    'ajv',
+    'ajv-keywords',
+    '@ungap/structured-clone',
+    'axios-retry',
+    'react-error-boundary', // Add react-error-boundary
+    // i18next and related packages for transpilation
+    'i18next',
+    'i18next-browser-languagedetector',
+    // Fix dynamic import errors for these ESM-only packages
+    'react-hot-toast',
+    'sonner',
+    'stripe',
+    'swr',
+    'trim-lines',
+    'trough',
+    'unist-util-visit-parents',
+    'usehooks-ts',
+    'vfile-message',
+    'unist-util-is',
+    // UI libraries that need transpilation
+    '@chakra-ui/react',
+    '@radix-ui/react-accordion',
+    '@radix-ui/react-alert-dialog',
+    '@radix-ui/react-aspect-ratio',
+    '@radix-ui/react-avatar',
+    '@radix-ui/react-checkbox',
+    '@radix-ui/react-dialog',
+    '@radix-ui/react-dropdown-menu',
+    '@radix-ui/react-label',
+    '@radix-ui/react-popover',
+    '@radix-ui/react-progress',
+    '@radix-ui/react-scroll-area',
+    '@radix-ui/react-select',
+    '@radix-ui/react-separator',
+    '@radix-ui/react-slider',
+    '@radix-ui/react-slot',
+    '@radix-ui/react-switch',
+    '@radix-ui/react-tabs',
+    '@radix-ui/react-toast',
+    '@radix-ui/react-toggle',
+    '@radix-ui/react-tooltip',
+    '@radix-ui/react-hover-card',
+    '@radix-ui/react-navigation-menu',
+    '@hookform/resolvers',
+    '@google/model-viewer',
+    '@reduxjs/toolkit',
+    '@reown/appkit-adapter-ethers',
+    '@reown/appkit',
+    '@coinbase/wallet-sdk',
+    '@reown/appkit-common',
+    '@reown/appkit-controllers',
+    '@reown/appkit-pay',
+    '@reown/appkit-ui',
+    '@reown/appkit-wallet',
+    '@reown/appkit-utils',
+    'ethers',
+    'viem',
+    '@wagmi/core',
+    '@wagmi/connectors',
+    '@tanstack/react-query',
+    'axios',
+    'class-variance-authority',
+    'clsx',
+    'devlop',
+    'tailwind-merge',
+    'embla-carousel-react',
+    'framer-motion',
+    'hast-util-to-jsx-runtime',
+    'html-url-attributes',
+    'jspdf-autotable',
+    'jspdf',
+    'recharts',
+    'comma-separated-tokens',
+    'estree-util-is-identifier-name',
+    'hast-util-whitespace',
+    'property-information',
+    'react-hook-form',
+    'space-separated-tokens',
+    'style-to-object',
+    'unist-util-position',
+    'unist-util-stringify-position',
+    'unist-util-visit',
+    'vfile',
+    'zod',
+    'react-i18next',
+    'react-loading-skeleton',
+    'react-redux',
+    'remark-parse',
+    'remark-rehype',
+    'unified',
+    'micromark',
+    'micromark-util-character',
+    'micromark-util-chunked',
+    'micromark-util-classify-character',
+    'micromark-util-combine-extensions',
+    'micromark-util-decode-numeric-character-reference',
+    'micromark-util-decode-string',
+    'micromark-util-encode',
+    'micromark-util-html-tag-name',
+    'micromark-util-normalize-identifier',
+    'micromark-util-resolve-all',
+    'micromark-util-sanitize-uri',
+    'micromark-util-subtokenize',
+    'micromark-util-symbol',
+    'micromark-util-types',
+    // lodash is installed for Formik compatibility; lodash-es is used directly in our code.
+    'helia',
+    '@helia/json',
+    'multiformats',
+    'libp2p',
+    '@libp2p/identify',
+    'ajv',
+    'ajv-keywords',
+    '@ungap/structured-clone',
+    'axios-retry',
+  ],
+
+  webpack: (config, { dev, isServer, webpack }) => {
+    // Fix EventEmitter memory leak by increasing max listeners
+    // events.EventEmitter.defaultMaxListeners = 20; // Will be set by build script
+    
+    // CRITICAL: Add comprehensive polyfills as the very first entry point
     if (!isServer) {
       config.optimization.splitChunks = {
         chunks: 'all',
@@ -585,16 +760,17 @@ const nextConfig = {
     // Ensure consistent optimization settings in all environments
   config.optimization = {
     ...config.optimization,
+    // Explicitly disable usedExports to prevent cacheUnaffected conflicts
+    usedExports: false,
   };
 
-  // Disable usedExports to avoid cacheUnaffected conflicts
-  if (config.optimization && 'usedExports' in config.optimization) {
-    config.optimization.usedExports = false;
-  }
 
   // Remove cacheUnaffected in case any plugin re-added it
   if (config.cache && config.cache.cacheUnaffected !== undefined) {
     delete config.cache.cacheUnaffected;
+  }
+  if (config.optimization && 'cacheUnaffected' in config.optimization) {
+    delete config.optimization.cacheUnaffected;
   }
   if (config.experiments && 'cacheUnaffected' in config.experiments) {
     config.experiments.cacheUnaffected = false;

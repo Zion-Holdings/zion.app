@@ -9,13 +9,21 @@ import React, { Component } from 'react';
 import dynamic from 'next/dynamic';
 
 // Error boundary for component loading
-class ComponentErrorBoundary extends Component<
-  { children: React.ReactNode; fallback?: React.ComponentType },
-  { hasError: boolean }
-> {
-  constructor(props: any) {
+interface BoundaryProps {
+  children: React.ReactNode;
+  fallback?: React.ComponentType;
+}
+
+interface BoundaryState {
+  hasError: boolean;
+}
+
+class ComponentErrorBoundary extends Component<BoundaryProps, BoundaryState> {
+  declare props: Readonly<BoundaryProps>;
+  state: BoundaryState = { hasError: false };
+
+  constructor(props: BoundaryProps) {
     super(props);
-    this.state = { hasError: false };
   }
 
   static getDerivedStateFromError(): { hasError: boolean } {

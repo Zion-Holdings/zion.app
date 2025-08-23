@@ -32,7 +32,7 @@ export const isSupabaseConfigured = !!(
 // Only log in development and when debug is enabled
 if (process.env.NODE_ENV === 'development' && process.env.DEBUG_ENV_CONFIG === 'true') {
   logDebug('Supabase configuration details:', {
-    activeUrl: `${activeSupabaseUrl.substring(0, 30)}...`,
+    activeUrl: `${(activeSupabaseUrl ?? '').substring(0, 30)}...`,
     isConfigured: isSupabaseConfigured,
     usingUserProvidedCredentials: isUsingUserProvidedSupabaseCredentials,
     envUrlProvided: !!envSupabaseUrl,
