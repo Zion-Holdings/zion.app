@@ -1,0 +1,84 @@
+<<<<<<< HEAD
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { chatCompletion } from '../../../../utils/ai/openai';
+import { requireAuth } from '../../../../utils/security/auth';
+import { sanitizeText } from '../../../../utils/sanitize';
+import { createClient } from '@supabase/supabase-js';
+
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co';
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-key';
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method !== 'POST') {
+    res.status(405).json({ error: 'Method Not Allowed' });
+    return;
+  }
+
+  try {
+    const user = await requireAuth(req, res);
+    const { text, roleTitle } = req.body || {};
+    if (!text) {
+      res.status(400).json({ error: 'Invalid input' });
+      return;
+    }
+
+    const systemPrompt = 'You rewrite resume job descriptions for clarity, impact, and professionalism.';
+    const userPrompt = `Rewrite the following${roleTitle ? ` for the role "${roleTitle}"` : ''}:
+
+${text}
+
+Guidelines:
+- Use action verbs and quantify impact where reasonable.
+- Keep a neutral, third-person tone.
+- Keep it concise (1-3 sentences or 2-4 bullet points max).
+- Return plain text only.`;
+
+    const improvedRaw = await chatCompletion([
+      { role: 'system', content: systemPrompt },
+      { role: 'user', content: userPrompt },
+    ]);
+
+    const improved = sanitizeText(improvedRaw);
+
+    const supabase = createClient(supabaseUrl, supabaseAnonKey);
+    await supabase.from('resume_ai_outputs').insert({
+      user_id: user.id,
+      kind: 'improve',
+      input: { text: sanitizeText(text), roleTitle: sanitizeText(roleTitle) },
+      output: { improved },
+    } as any);
+
+    res.status(200).json({ improved });
+  } catch (e: any) {
+    if (!res.headersSent) {
+      res.status(500).json({ error: 'Internal Server Error', detail: e?.message || 'unknown' });
+    }
+=======
+import type { NextApiRequest, NextApiResponse } from 'next'
+import OpenAI from 'openai'
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (req.method !== 'POST') return res.status(405).end()
+  const { field, context } = req.body || {}
+  const apiKey = process.env.OPENAI_API_KEY
+  if (!apiKey) return res.status(400).json({ error: 'Missing OPENAI_API_KEY' })
+  const client = new OpenAI({ apiKey })
+
+  const instruction = `Improve the ${field} section of a resume. Return only the improved text. Be concise, impactful, and use active voice. Avoid fluff and personal pronouns.`
+
+  try {
+    const completion = await client.chat.completions.create({
+      model: 'gpt-4o-mini',
+      messages: [
+        { role: 'system', content: 'You output only the improved text with no surrounding commentary.' },
+        { role: 'user', content: JSON.stringify({ instruction, context }) },
+      ],
+      temperature: 0.4,
+    })
+    const text = completion.choices[0]?.message?.content || ''
+    res.status(200).json({ text })
+  } catch (e: any) {
+    res.status(500).json({ error: e.message })
+>>>>>>> origin/cursor/build-ai-resume-and-portfolio-tool-4f12
+  }
+}
