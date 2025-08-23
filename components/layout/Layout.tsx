@@ -165,8 +165,8 @@ export default function Layout({
         {/* Top Contact Bar */}
         <TopContactBar />
         
-        {/* Enhanced Navigation */}
-        <EnhancedNavigation2025 />
+        {/* Navigation */}
+        <UltraFuturisticNavigation2040 />
         
         {/* Enhanced Sidebar */}
         <EnhancedSidebar2025 isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />

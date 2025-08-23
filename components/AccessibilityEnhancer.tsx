@@ -106,15 +106,50 @@ const AccessibilityEnhancer: React.FC = () => {
       root.style.setProperty('--focus-outline', 'none');
     }
 
-    // Color scheme
-    if (settings.colorScheme === 'light') {
-      root.classList.remove('dark');
-      root.classList.add('light');
-    } else if (settings.colorScheme === 'dark') {
-      root.classList.remove('light');
-      root.classList.add('dark');
-    } else {
-      root.classList.remove('light', 'dark');
+  // Load saved settings
+  useEffect(() => {
+    const saved = localStorage.getItem('accessibility-settings');
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        setSettings(parsed);
+        applySettings(parsed);
+      } catch (e) {
+        // console.log('Failed to parse saved accessibility settings');
+      }
+    }
+  }, [applySettings]);
+
+  // Focus management
+  const handleFocusChange = useCallback((e: Event) => {
+    const target = e.target as HTMLElement;
+    if (target) {
+      setCurrentFocus(target);
+      announceToScreenReader(`Focused on ${target.textContent || target.tagName.toLowerCase()}`);
+    }
+  }, []);
+
+  // Keyboard navigation enhancements
+  const handleKeyDown = useCallback((e: Event) => {
+    // Tab navigation detected
+  }, []);
+
+  // Announce to screen reader
+  const announceToScreenReader = useCallback((message: string) => {
+    // setAnnouncements(prev => [...prev, message]); // This line was removed
+    
+    // Create live region for screen readers
+    if (!announcementRef.current) {
+      const liveRegion = document.createElement('div');
+      liveRegion.setAttribute('aria-live', 'polite');
+      liveRegion.setAttribute('aria-atomic', 'true');
+      liveRegion.className = 'sr-only';
+      document.body.appendChild(liveRegion);
+      announcementRef.current = liveRegion;
+    }
+    
+    if (announcementRef.current) {
+      announcementRef.current.textContent = message;
     }
   }, [settings]);
 
