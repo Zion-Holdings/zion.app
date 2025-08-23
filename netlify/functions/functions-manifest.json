@@ -1,36 +1,17 @@
 {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  "generatedAt": "2025-08-11T23:44:51.302Z",
-=======
-  "generatedAt": "2025-08-11T23:46:40.504Z",
->>>>>>> 8cc7475fdf (feat(automation): autonomous front/home advertisers + schedules cleanup [skip ci])
-=======
-  "generatedAt": "2025-08-11T23:46:40.504Z",
->>>>>>> 8cc7475fdf (feat(automation): autonomous front/home advertisers + schedules cleanup [skip ci])
-=======
-  "generatedAt": "2025-08-11T23:47:26.099Z",
->>>>>>> 106c3ec221 (fix: resolve merge markers and finalize front/home advertisers [skip ci])
+  "generatedAt": "2025-08-11T20:34:54.144Z",
   "functions": [
-    "a11y-alt-text-runner",
-    "adaptive-orchestrator",
     "ai-changelog-runner",
-    "ai-trends-radar-runner",
     "auto-scheduler",
     "automation-matrix",
     "autonomous-invention-orchestrator",
     "broken-image-scanner",
     "broken-image-scanner-runner",
     "cloud_orchestrator",
-    "component-coupling-graph-runner",
-    "component-size-report",
-    "content-freshness-score-runner",
     "continuous-front-runner",
     "continuous-orchestrator",
     "dead-code-audit",
     "dead-code-report",
-    "deps-auto-upgrade-runner",
     "docs-index-runner",
     "docs-search-index-runner",
     "external-link-check-runner",
@@ -56,21 +37,16 @@
     "hyper-front-index-accelerator",
     "image-optimizer-runner",
     "innovation-lab",
-    "knowledge-pack-runner",
-    "license-compliance-auditor",
     "link-and-health-scheduler",
     "link-crawler",
     "maintenance-scheduler",
     "marketing-and-features-promo",
     "marketing-scheduler",
     "media-og-and-optimize",
-    "metadata-optimizer-runner",
     "netlify-auto-healer-runner",
     "newsroom-auto-publisher",
     "newsroom-runner",
     "og-image-update-runner",
-    "orphan-pages-detector",
-    "pagespeed-insights-runner",
     "readme-advertiser",
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
@@ -81,18 +57,13 @@
     "schedule-site-health",
     "security-audit",
     "security-audit-runner",
-    "seo-audit-runner",
-    "site-404-map-runner",
     "site-crawler",
     "sitemap_runner",
-    "stale-content-auditor-runner",
     "todo-scanner-runner",
     "todo-summary-runner",
     "trigger-all-and-commit",
     "ui-enhancer",
     "ultrafast-front-orchestrator",
-    "ultrafast-orchestrator",
-    "unused-exports-runner",
-    "unused-media-scanner"
+    "ultrafast-orchestrator"
   ]
 }
