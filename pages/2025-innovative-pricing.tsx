@@ -12,6 +12,29 @@ import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-
 import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
 import { emergingTechnologyServices } from '../data/2025-emerging-technology-services';
 
+// Unified service interface for pricing display
+interface UnifiedService {
+  id: string;
+  name: string;
+  tagline: string;
+  description: string;
+  category: string;
+  icon?: string;
+  popular?: boolean;
+  link?: string;
+  price?: string | number;
+  pricing?: {
+    starter: string;
+    professional: string;
+    enterprise: string;
+    custom: string;
+  };
+  price_monthly?: number;
+  price_yearly?: number;
+  trialDays?: number;
+  setupTime?: string;
+}
+
 const contact = {
   mobile: '+1 302 464 0950',
   email: 'kleber@ziontechgroup.com',
@@ -106,18 +129,79 @@ export default function InnovativePricing2025() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('monthly');
 
+  // Normalize services to unified format
+  const normalizeService = (service: any): UnifiedService => {
+    if (service.pricing) {
+      // IT Infrastructure service format
+      return {
+        id: service.id,
+        name: service.name,
+        tagline: service.description || '',
+        description: service.description || '',
+        category: service.category || service.type || '',
+        icon: '⚡',
+        popular: false,
+        link: service.website || `https://ziontechgroup.com${service.slug}`,
+        pricing: service.pricing,
+        price_monthly: 0, // Will be calculated from pricing
+        price_yearly: 0,
+        trialDays: 14,
+        setupTime: '1-2 weeks'
+      };
+    } else if (service.price && typeof service.price === 'object') {
+      // Emerging technology service format
+      return {
+        id: service.id,
+        name: service.name,
+        tagline: service.tagline || '',
+        description: service.description || '',
+        category: service.category || '',
+        icon: service.icon || '🚀',
+        popular: service.popular || false,
+        link: service.link || `https://ziontechgroup.com/${service.id}`,
+        price_monthly: service.price.monthly,
+        price_yearly: service.price.yearly,
+        trialDays: service.price.trialDays || 14,
+        setupTime: service.price.setupTime || '1-2 weeks'
+      };
+    } else {
+      // AI Automation and Micro SAAS format
+      return {
+        id: service.id,
+        name: service.name,
+        tagline: service.tagline || '',
+        description: service.description || '',
+        category: service.category || '',
+        icon: service.icon || '🤖',
+        popular: service.popular || false,
+        link: service.link || `https://ziontechgroup.com/${service.id}`,
+        price: service.price,
+        price_monthly: typeof service.price === 'string' ? 0 : 0,
+        price_yearly: typeof service.price === 'string' ? 0 : 0,
+        trialDays: service.trialDays || 14,
+        setupTime: service.setupTime || '1-2 weeks'
+      };
+    }
+  };
+
   const getFilteredServices = () => {
+    let allServices: UnifiedService[] = [];
+    
     if (selectedCategory === 'all') {
-      return [
-        ...advancedAIAutomationServices,
-        ...innovativeITInfrastructureServices2025,
-        ...innovativeMicroSaasSolutions2025,
-        ...emergingTechnologyServices
+      allServices = [
+        ...advancedAIAutomationServices.map(normalizeService),
+        ...innovativeITInfrastructureServices2025.map(normalizeService),
+        ...innovativeMicroSaasSolutions2025.map(normalizeService),
+        ...emergingTechnologyServices.map(normalizeService)
       ];
+    } else {
+      const category = serviceCategories.find(cat => cat.id === selectedCategory);
+      if (category) {
+        allServices = category.services.map(normalizeService);
+      }
     }
     
-    const category = serviceCategories.find(cat => cat.id === selectedCategory);
-    return category ? category.services : [];
+    return allServices;
   };
 
   const getYearlyDiscount = (monthlyPrice: number) => {
@@ -288,7 +372,7 @@ export default function InnovativePricing2025() {
               className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 hover:border-purple-500/50 transition-all duration-300"
             >
               <div className="flex items-start justify-between mb-4">
-                <div className="text-3xl">{service.icon}</div>
+                <div className="text-3xl">{service.icon || '🚀'}</div>
                 {service.popular && (
                   <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-xs font-bold px-2 py-1 rounded-full">
                     POPULAR
@@ -302,16 +386,21 @@ export default function InnovativePricing2025() {
               <div className="mb-4">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-2xl font-bold text-purple-400">
-                    ${typeof service.price === 'string' ? service.price : 
-                       billingCycle === 'monthly' ? service.price.monthly : service.price.yearly}
+                    {service.pricing ? 
+                      (billingCycle === 'monthly' ? service.pricing.professional : service.pricing.professional) :
+                      (billingCycle === 'monthly' ? 
+                        (service.price_monthly ? `$${service.price_monthly}` : (service.price || 'Contact')) :
+                        (service.price_yearly ? `$${service.price_yearly}` : (service.price || 'Contact'))
+                      )
+                    }
                   </span>
                   <span className="text-gray-400">
                     /{billingCycle === 'monthly' ? 'month' : 'year'}
                   </span>
                 </div>
-                {billingCycle === 'yearly' && typeof service.price !== 'string' && (
+                {billingCycle === 'yearly' && service.price_monthly && (
                   <div className="text-sm text-green-400">
-                    Save ${getYearlyDiscount(service.price.monthly)} annually
+                    Save ${getYearlyDiscount(service.price_monthly)} annually
                   </div>
                 )}
               </div>
@@ -324,10 +413,10 @@ export default function InnovativePricing2025() {
 
               <div className="space-y-2 mb-6">
                 <div className="text-xs text-gray-400">
-                  <span className="text-gray-500">Setup:</span> {typeof service.price === 'string' ? 'Custom' : service.price.setupTime}
+                  <span className="text-gray-500">Setup:</span> {service.setupTime || 'Custom'}
                 </div>
                 <div className="text-xs text-gray-400">
-                  <span className="text-gray-500">Trial:</span> {typeof service.price === 'string' ? 'Contact' : service.price.trialDays} days
+                  <span className="text-gray-500">Trial:</span> {service.trialDays || 14} days
                 </div>
               </div>
 
