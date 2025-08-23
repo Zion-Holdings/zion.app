@@ -132,6 +132,8 @@ const Partners: React.FC = () => {
       title: 'Launch & Support',
       description: 'Execute partnership agreement and provide ongoing support.',
       duration: 'Ongoing'
+<<<<<<< HEAD
+=======
     }
   ];
 
@@ -153,10 +155,23 @@ const Partners: React.FC = () => {
       industry: "Consulting Services",
       result: "Expanded service portfolio to include AI and quantum solutions",
       testimonial: "Partnering with Zion Tech Group allowed us to offer cutting-edge technology solutions that our clients demand."
+>>>>>>> 2d4d481f1493a231e1d090623f77d5e17a4d5961
     }
   ];
 
   return (
+<<<<<<< HEAD
+    <Layout
+      title="Partners - Zion Tech Group"
+      description="Partner with Zion Tech Group to expand your business and access cutting-edge technology solutions."
+      keywords="partners, partnerships, technology partners, channel partners, Zion Tech Group"
+    >
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
+        {/* Hero Section */}
+        <section className="relative overflow-hidden py-20 lg:py-32">
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 via-blue-900/20 to-cyan-900/20" />
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+=======
     <Layout 
       title="Partnerships - Zion Tech Group"
       description="Join our partner ecosystem and leverage revolutionary AI consciousness, quantum computing, and autonomous technology solutions to grow your business."
@@ -165,9 +180,30 @@ const Partners: React.FC = () => {
         {/* Hero Section */}
         <section className="relative py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
+>>>>>>> 2d4d481f1493a231e1d090623f77d5e17a4d5961
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
+<<<<<<< HEAD
+              transition={{ duration: 0.8 }}
+              className="text-center"
+            >
+              <div className="flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center mr-4">
+                  <Handshake className="w-8 h-8 text-white" />
+                </div>
+                <h1 className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                  Partners
+                </h1>
+              </div>
+              <p className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
+                Grow together with strategic partnerships
+              </p>
+              <p className="text-lg text-gray-400 max-w-3xl mx-auto">
+                Join our network of technology partners and expand your business with 
+                cutting-edge AI, quantum computing, and cybersecurity solutions.
+              </p>
+=======
               transition={{ duration: 0.6 }}
             >
               <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
@@ -191,10 +227,51 @@ const Partners: React.FC = () => {
                   Learn More
                 </a>
               </div>
+>>>>>>> 2d4d481f1493a231e1d090623f77d5e17a4d5961
             </motion.div>
           </div>
         </section>
 
+<<<<<<< HEAD
+        {/* Partnership Types */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                Partnership Types
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Choose the partnership model that best fits your business goals
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {partnershipTypes.map((type, index) => (
+                <motion.div
+                  key={type.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-8 rounded-3xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300"
+                >
+                  <div className={`w-16 h-16 bg-gradient-to-br ${type.color} rounded-2xl flex items-center justify-center mb-6`}>
+                    {type.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-4">{type.title}</h3>
+                  <p className="text-gray-300 mb-6">{type.description}</p>
+                  <ul className="space-y-3">
+                    {type.benefits.map((benefit, benefitIndex) => (
+                      <li key={benefitIndex} className="flex items-start space-x-3">
+                        <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-300">{benefit}</span>
+=======
         {/* Partnership Types Section */}
         <section id="partnership-types" className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
@@ -231,6 +308,7 @@ const Partners: React.FC = () => {
                       <li key={benefitIndex} className="flex items-center text-gray-400">
                         <div className="w-2 h-2 bg-cyan-500 rounded-full mr-3"></div>
                         {benefit}
+>>>>>>> 2d4d481f1493a231e1d090623f77d5e17a4d5961
                       </li>
                     ))}
                   </ul>
@@ -240,6 +318,41 @@ const Partners: React.FC = () => {
           </div>
         </section>
 
+<<<<<<< HEAD
+        {/* Partner Benefits */}
+        <section className="py-20 bg-black/50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                Why Partner With Us?
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Discover the advantages of partnering with Zion Tech Group
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {partnerBenefits.map((benefit, index) => (
+                <motion.div
+                  key={benefit.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 p-6 rounded-2xl border border-gray-700/30 hover:border-blue-500/50 transition-all duration-300 text-center"
+                >
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    {benefit.icon}
+                  </div>
+                  <h3 className="text-lg font-bold text-white mb-2">{benefit.title}</h3>
+                  <p className="text-gray-300 text-sm">{benefit.description}</p>
+=======
         {/* Partner Benefits Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/30">
           <div className="max-w-7xl mx-auto">
@@ -271,12 +384,60 @@ const Partners: React.FC = () => {
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
                   <p className="text-gray-400">{benefit.description}</p>
+>>>>>>> 2d4d481f1493a231e1d090623f77d5e17a4d5961
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
+<<<<<<< HEAD
+        {/* Existing Partners */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                Our Partners
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Meet some of our trusted technology partners
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {existingPartners.map((partner, index) => (
+                <motion.div
+                  key={partner.name}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 p-6 rounded-2xl border border-gray-700/30 hover:border-purple-500/50 transition-all duration-300"
+                >
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center text-white font-bold text-xl">
+                      {partner.logo}
+                    </div>
+                    <div className="text-right">
+                      <span className="bg-purple-500/20 text-purple-400 text-xs font-semibold px-2 py-1 rounded-full">
+                        {partner.partnership}
+                      </span>
+                      <div className="text-sm text-gray-400 mt-1">{partner.year}</div>
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-2">{partner.name}</h3>
+                  <div className="text-sm text-purple-400 mb-3">{partner.industry}</div>
+                  <p className="text-gray-300 text-sm mb-4">{partner.description}</p>
+                  <div className="flex items-center space-x-2">
+                    <Star className="w-4 h-4 text-yellow-400" />
+                    <span className="text-sm text-gray-400">Trusted Partner</span>
+=======
         {/* Success Stories Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
@@ -306,6 +467,7 @@ const Partners: React.FC = () => {
                     <span className="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-sm rounded-full border border-cyan-500/30">
                       {story.industry}
                     </span>
+>>>>>>> 2d4d481f1493a231e1d090623f77d5e17a4d5961
                   </div>
                 </motion.div>
               ))}
@@ -354,14 +516,38 @@ const Partners: React.FC = () => {
         </section>
 
         {/* CTA Section */}
+<<<<<<< HEAD
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+=======
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
+>>>>>>> 2d4d481f1493a231e1d090623f77d5e17a4d5961
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
+<<<<<<< HEAD
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                Ready to Partner With Us?
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
+                Let's discuss how we can grow together and create innovative solutions for your customers.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-600 text-white font-semibold rounded-2xl hover:from-purple-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+                >
+                  Start Partnership Discussion
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
+                <a
+                  href="mailto:partnerships@ziontechgroup.com"
+                  className="inline-flex items-center px-8 py-4 border-2 border-purple-500/30 text-purple-400 font-semibold rounded-2xl hover:border-purple-500/50 hover:text-purple-300 transition-all duration-300"
+=======
               <h2 className="text-4xl font-bold mb-6">Ready to Partner With Us?</h2>
               <p className="text-xl text-gray-400 mb-8">
                 Join our ecosystem and start leveraging revolutionary technology to grow your business
@@ -376,6 +562,7 @@ const Partners: React.FC = () => {
                 <a
                   href="mailto:partnerships@ziontechgroup.com"
                   className="px-8 py-4 border border-cyan-500/30 text-cyan-400 rounded-lg font-semibold hover:bg-cyan-500/10 transition-all duration-300"
+>>>>>>> 2d4d481f1493a231e1d090623f77d5e17a4d5961
                 >
                   Email Partnerships Team
                 </a>
