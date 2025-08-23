@@ -14,11 +14,9 @@ const Services2025Launch = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <SEO 
-        data={{
-          pageTitle: "2025 Advanced Services Launch - Zion Tech Group",
-          pageDescription: "Transform your business with AI, IT, and Micro SAAS solutions. Discover autonomous AI, quantum-ready infrastructure, and intelligent business automation.",
-          pageKeywords: ["AI services", "IT solutions", "micro SAAS", "autonomous AI", "quantum computing", "business automation", "Zion Tech Group"]
-        }}
+        title="2025 Advanced Services Launch - Zion Tech Group"
+        description="Transform your business with AI, IT, and Micro SAAS solutions. Discover autonomous AI, quantum-ready infrastructure, and intelligent business automation."
+        keywords={["AI services", "IT solutions", "micro SAAS", "autonomous AI", "quantum computing", "business automation", "Zion Tech Group"]}
       />
 
       {/* Hero Section */}

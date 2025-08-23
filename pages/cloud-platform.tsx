@@ -35,6 +35,7 @@ import {
   Grid,
   Sparkles
 } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const CloudPlatformPage: React.FC = () => {
   const fadeInUp = {
@@ -162,267 +163,270 @@ const CloudPlatformPage: React.FC = () => {
   ];
 
   return (
-    <Layout 
-      title="Cloud Platform Services - Zion Tech Group"
-      description="Advanced cloud infrastructure, multi-cloud orchestration, and autonomous DevOps solutions. Transform your business with cutting-edge cloud technology."
-      keywords="cloud platform, cloud infrastructure, multi-cloud, DevOps, Kubernetes, AWS, Azure, Google Cloud, Zion Tech Group"
-    >
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white">
-        {/* Hero Section */}
-        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <motion.div 
-              className="text-center"
-              initial="initial"
-              animate="animate"
-              variants={staggerContainer}
-            >
-              <motion.h1 
-                className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 via-cyan-500 to-indigo-600 bg-clip-text text-transparent mb-6"
-                variants={fadeInUp}
-              >
-                Cloud Platform Services
-              </motion.h1>
-              <motion.p 
-                className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8"
-                variants={fadeInUp}
-              >
-                Revolutionary cloud infrastructure, multi-cloud orchestration, and autonomous DevOps solutions that transform how businesses operate in the digital age.
-              </motion.p>
+    <>
+      <SEO
+        title="Cloud Platform Services - Zion Tech Group"
+        description="Advanced cloud infrastructure, multi-cloud orchestration, and autonomous DevOps solutions. Transform your business with cutting-edge cloud technology."
+        keywords={["cloud platform", "cloud infrastructure", "multi-cloud", "DevOps", "Kubernetes", "AWS", "Azure", "Google Cloud", "Zion Tech Group"]}
+      />
+      <Layout>
+        <div className="min-h-screen bg-black text-white">
+          {/* Hero Section */}
+          <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto">
               <motion.div 
-                className="flex flex-col sm:flex-row gap-4 justify-center"
-                variants={fadeInUp}
+                className="text-center"
+                initial="initial"
+                animate="animate"
+                variants={staggerContainer}
               >
-                <a 
-                  href="/contact" 
-                  className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-600 text-white rounded-lg font-semibold hover:from-blue-600 hover:to-cyan-700 transition-all duration-300 flex items-center justify-center"
-                >
-                  Get Started <ArrowRight className="ml-2 w-5 h-5" />
-                </a>
-                <a 
-                  href="/demo" 
-                  className="px-8 py-4 border border-blue-500/40 text-blue-300 rounded-lg font-semibold hover:bg-blue-500/10 transition-all duration-300 flex items-center justify-center"
-                >
-                  Request Demo
-                </a>
-              </motion.div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Cloud Services Grid */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <motion.div 
-              className="text-center mb-16"
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Revolutionary Cloud Services
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Explore our comprehensive suite of cloud platform services designed for the future of computing.
-              </p>
-            </motion.div>
-
-            <motion.div 
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-            >
-              {cloudServices.map((service, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-gray-900/50 border border-gray-700/50 rounded-2xl p-8 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105"
+                <motion.h1 
+                  className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 via-cyan-500 to-indigo-600 bg-clip-text text-transparent mb-6"
                   variants={fadeInUp}
                 >
-                  <div className="mb-6">{service.icon}</div>
-                  <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
-                  <p className="text-gray-300 mb-6">{service.description}</p>
-                  <ul className="space-y-2 mb-6">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-gray-300">
-                        <CheckCircle className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+                  Cloud Platform Services
+                </motion.h1>
+                <motion.p 
+                  className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8"
+                  variants={fadeInUp}
+                >
+                  Revolutionary cloud infrastructure, multi-cloud orchestration, and autonomous DevOps solutions that transform how businesses operate in the digital age.
+                </motion.p>
+                <motion.div 
+                  className="flex flex-col sm:flex-row gap-4 justify-center"
+                  variants={fadeInUp}
+                >
                   <a 
-                    href={service.href}
-                    className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
+                    href="/contact" 
+                    className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-600 text-white rounded-lg font-semibold hover:from-blue-600 hover:to-cyan-700 transition-all duration-300 flex items-center justify-center"
                   >
-                    Learn More <ArrowRight className="ml-2 w-4 h-4" />
+                    Get Started <ArrowRight className="ml-2 w-5 h-5" />
+                  </a>
+                  <a 
+                    href="/demo" 
+                    className="px-8 py-4 border border-blue-500/40 text-blue-300 rounded-lg font-semibold hover:bg-blue-500/10 transition-all duration-300 flex items-center justify-center"
+                  >
+                    Request Demo
                   </a>
                 </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
+              </motion.div>
+            </div>
+          </section>
 
-        {/* Cloud Capabilities */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/30">
-          <div className="max-w-7xl mx-auto">
-            <motion.div 
-              className="text-center mb-16"
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Advanced Cloud Capabilities
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our cloud platform provides cutting-edge capabilities across all major cloud technologies.
-              </p>
-            </motion.div>
+          {/* Cloud Services Grid */}
+          <section className="py-20 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto">
+              <motion.div 
+                className="text-center mb-16"
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+              >
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  Revolutionary Cloud Services
+                </h2>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                  Explore our comprehensive suite of cloud platform services designed for the future of computing.
+                </p>
+              </motion.div>
 
-            <motion.div 
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-            >
-              {cloudCapabilities.map((category, index) => (
-                <motion.div
-                  key={index}
-                  className="text-center"
-                  variants={fadeInUp}
-                >
-                  <h3 className="text-2xl font-bold text-blue-400 mb-6">{category.category}</h3>
-                  <ul className="space-y-3">
-                    {category.capabilities.map((capability, capIndex) => (
-                      <li key={capIndex} className="text-gray-300">{capability}</li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
+              <motion.div 
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                variants={staggerContainer}
+              >
+                {cloudServices.map((service, index) => (
+                  <motion.div
+                    key={index}
+                    className="bg-gray-900/50 border border-gray-700/50 rounded-2xl p-8 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105"
+                    variants={fadeInUp}
+                  >
+                    <div className="mb-6">{service.icon}</div>
+                    <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
+                    <p className="text-gray-300 mb-6">{service.description}</p>
+                    <ul className="space-y-2 mb-6">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center text-gray-300">
+                          <CheckCircle className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                    <a 
+                      href={service.href}
+                      className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
+                    >
+                      Learn More <ArrowRight className="ml-2 w-4 h-4" />
+                    </a>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+          </section>
 
-        {/* Cloud Benefits */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <motion.div 
-              className="text-center mb-16"
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Cloud Transformation Benefits
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Discover how our cloud platform solutions transform businesses and drive innovation.
-              </p>
-            </motion.div>
+          {/* Cloud Capabilities */}
+          <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/30">
+            <div className="max-w-7xl mx-auto">
+              <motion.div 
+                className="text-center mb-16"
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+              >
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  Advanced Cloud Capabilities
+                </h2>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                  Our cloud platform provides cutting-edge capabilities across all major cloud technologies.
+                </p>
+              </motion.div>
 
-            <motion.div 
-              className="grid grid-cols-1 md:grid-cols-2 gap-8"
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-            >
-              {cloudBenefits.map((benefit, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-gray-900/50 border border-gray-700/50 rounded-2xl p-8"
-                  variants={fadeInUp}
-                >
-                  <div className="flex items-center mb-6">
-                    {benefit.icon}
-                    <h3 className="text-2xl font-bold text-white ml-4">{benefit.benefit}</h3>
-                  </div>
-                  <p className="text-gray-300">{benefit.description}</p>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
+              <motion.div 
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                variants={staggerContainer}
+              >
+                {cloudCapabilities.map((category, index) => (
+                  <motion.div
+                    key={index}
+                    className="text-center"
+                    variants={fadeInUp}
+                  >
+                    <h3 className="text-2xl font-bold text-blue-400 mb-6">{category.category}</h3>
+                    <ul className="space-y-3">
+                      {category.capabilities.map((capability, capIndex) => (
+                        <li key={capIndex} className="text-gray-300">{capability}</li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+          </section>
 
-        {/* Cloud Providers */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/30">
-          <div className="max-w-7xl mx-auto">
-            <motion.div 
-              className="text-center mb-16"
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Multi-Cloud Support
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                We support all major cloud providers and help you build hybrid and multi-cloud strategies.
-              </p>
-            </motion.div>
+          {/* Cloud Benefits */}
+          <section className="py-20 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto">
+              <motion.div 
+                className="text-center mb-16"
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+              >
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  Cloud Transformation Benefits
+                </h2>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                  Discover how our cloud platform solutions transform businesses and drive innovation.
+                </p>
+              </motion.div>
 
-            <motion.div 
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-            >
-              {cloudProviders.map((provider, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-gray-900/50 border border-gray-700/50 rounded-2xl p-8 text-center"
-                  variants={fadeInUp}
-                >
-                  <div className="mb-4">{provider.icon}</div>
-                  <h3 className="text-xl font-bold text-white mb-3">{provider.name}</h3>
-                  <p className="text-gray-300 text-sm">{provider.description}</p>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
+              <motion.div 
+                className="grid grid-cols-1 md:grid-cols-2 gap-8"
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                variants={staggerContainer}
+              >
+                {cloudBenefits.map((benefit, index) => (
+                  <motion.div
+                    key={index}
+                    className="bg-gray-900/50 border border-gray-700/50 rounded-2xl p-8"
+                    variants={fadeInUp}
+                  >
+                    <div className="flex items-center mb-6">
+                      {benefit.icon}
+                      <h3 className="text-2xl font-bold text-white ml-4">{benefit.benefit}</h3>
+                    </div>
+                    <p className="text-gray-300">{benefit.description}</p>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+          </section>
 
-        {/* CTA Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-900/20 to-cyan-900/20">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Ready to Transform Your Cloud Strategy?
-              </h2>
-              <p className="text-xl text-gray-300 mb-8">
-                Join the cloud revolution and unlock unprecedented scalability, efficiency, and innovation.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a 
-                  href="/contact" 
-                  className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-600 text-white rounded-lg font-semibold hover:from-blue-600 hover:to-cyan-700 transition-all duration-300"
-                >
-                  Start Your Cloud Journey
-                </a>
-                <a 
-                  href="/case-studies" 
-                  className="px-8 py-4 border border-blue-500/40 text-blue-300 rounded-lg font-semibold hover:bg-blue-500/10 transition-all duration-300"
-                >
-                  View Cloud Case Studies
-                </a>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-      </div>
-    </Layout>
+          {/* Cloud Providers */}
+          <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/30">
+            <div className="max-w-7xl mx-auto">
+              <motion.div 
+                className="text-center mb-16"
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+              >
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  Multi-Cloud Support
+                </h2>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                  We support all major cloud providers and help you build hybrid and multi-cloud strategies.
+                </p>
+              </motion.div>
+
+              <motion.div 
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                variants={staggerContainer}
+              >
+                {cloudProviders.map((provider, index) => (
+                  <motion.div
+                    key={index}
+                    className="bg-gray-900/50 border border-gray-700/50 rounded-2xl p-8 text-center"
+                    variants={fadeInUp}
+                  >
+                    <div className="mb-4">{provider.icon}</div>
+                    <h3 className="text-xl font-bold text-white mb-3">{provider.name}</h3>
+                    <p className="text-gray-300 text-sm">{provider.description}</p>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+          </section>
+
+          {/* CTA Section */}
+          <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-900/20 to-cyan-900/20">
+            <div className="max-w-4xl mx-auto text-center">
+              <motion.div
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                variants={fadeInUp}
+              >
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                  Ready to Transform Your Cloud Strategy?
+                </h2>
+                <p className="text-xl text-gray-300 mb-8">
+                  Join the cloud revolution and unlock unprecedented scalability, efficiency, and innovation.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a 
+                    href="/contact" 
+                    className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-600 text-white rounded-lg font-semibold hover:from-blue-600 hover:to-cyan-700 transition-all duration-300"
+                  >
+                    Start Your Cloud Journey
+                  </a>
+                  <a 
+                    href="/case-studies" 
+                    className="px-8 py-4 border border-blue-500/40 text-blue-300 rounded-lg font-semibold hover:bg-blue-500/10 transition-all duration-300"
+                  >
+                    View Cloud Case Studies
+                  </a>
+                </div>
+              </motion.div>
+            </div>
+          </section>
+        </div>
+      </Layout>
+    </>
   );
 };
 

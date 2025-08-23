@@ -2,103 +2,88 @@ import React from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
-  TrendingUp, DollarSign, BarChart3, Users, 
-  ArrowRight, CheckCircle, Globe, Brain, Atom,
-  Shield, Rocket, Target, Award, Star
+  DollarSign, TrendingUp, Globe, Target, Star, ArrowRight,
+  CheckCircle, Play, BookOpen, MessageCircle, Phone,
+  Building, Award, Zap, Shield, Brain, Rocket, BarChart3, Users
 } from 'lucide-react';
 import Link from 'next/link';
 
 const Investors: React.FC = () => {
   const investmentHighlights = [
     {
-      icon: <TrendingUp className="w-8 h-8" />,
+      icon: <TrendingUp className="w-6 h-6" />,
       title: 'Rapid Growth',
-      value: '300%+',
-      description: 'Year-over-year revenue growth',
-      color: 'from-green-500 to-emerald-600'
+      description: 'Consistent 300%+ year-over-year revenue growth across all business segments.',
+      metric: '300%+ YoY'
     },
     {
-      icon: <Globe className="w-8 h-8" />,
+      icon: <Globe className="w-6 h-6" />,
       title: 'Global Market',
-      value: '$110B+',
-      description: 'Total addressable market by 2045',
-      color: 'from-blue-500 to-cyan-600'
+      description: 'Expanding presence in 25+ countries with $50B+ addressable market.',
+      metric: '$50B+ TAM'
     },
     {
-      icon: <Users className="w-8 h-8" />,
+      icon: <Brain className="w-6 h-6" />,
+      title: 'Technology Leadership',
+      description: '200+ patents and cutting-edge innovations in AI, quantum, and space tech.',
+      metric: '200+ Patents'
+    },
+    {
+      icon: <Users className="w-6 h-6" />,
       title: 'Customer Base',
-      value: '500+',
-      description: 'Enterprise clients worldwide',
-      color: 'from-purple-500 to-pink-600'
-    },
-    {
-      icon: <Award className="w-8 h-8" />,
-      title: 'Patents',
-      value: '25+',
-      description: 'Proprietary technologies',
-      color: 'from-orange-500 to-red-600'
+      description: '500+ enterprise clients including Fortune 100 companies.',
+      metric: '500+ Clients'
     }
   ];
 
-  const marketOpportunities = [
+  const investmentOpportunities = [
     {
-      title: 'AI & Machine Learning',
-      marketSize: '$110B by 2045',
-      growth: '35% CAGR',
-      description: 'Advanced AI consciousness and emotional intelligence platforms',
-      icon: <Brain className="w-6 h-6" />
+      type: 'Series B',
+      amount: '$50M',
+      use: 'Product Development & Market Expansion',
+      timeline: 'Q4 2024',
+      status: 'Open'
     },
     {
-      title: 'Quantum Computing',
-      marketSize: '$65B by 2045',
-      growth: '40% CAGR',
-      description: 'Next-generation quantum computing solutions for enterprise',
-      icon: <Atom className="w-6 h-6" />
+      type: 'Strategic Investment',
+      amount: '$25M',
+      use: 'Quantum Computing R&D',
+      timeline: 'Q1 2025',
+      status: 'Open'
     },
     {
-      title: 'Cybersecurity',
-      marketSize: '$450B by 2045',
-      growth: '25% CAGR',
-      description: 'AI-powered security and compliance automation',
-      icon: <Shield className="w-6 h-6" />
-    },
-    {
-      title: 'Space Technology',
-      marketSize: '$1.4T by 2045',
-      growth: '45% CAGR',
-      description: 'Space resource intelligence and exploration platforms',
-      icon: <Rocket className="w-6 h-6" />
+      type: 'Series C',
+      amount: '$100M',
+      use: 'Global Expansion & Acquisitions',
+      timeline: 'Q2 2025',
+      status: 'Planning'
     }
   ];
 
   const financialMetrics = [
     {
-      metric: 'Revenue Growth',
-      value: '300%',
-      period: 'YoY',
-      trend: 'up',
-      description: 'Consistent triple-digit growth'
+      label: 'Annual Recurring Revenue',
+      value: '$25M+',
+      growth: '+300%',
+      period: 'YoY'
     },
     {
-      metric: 'Gross Margin',
+      label: 'Gross Margin',
       value: '85%',
-      period: 'Current',
-      trend: 'up',
-      description: 'High-margin software business'
+      growth: '+5%',
+      period: 'YoY'
     },
     {
-      metric: 'Customer Retention',
-      value: '98%',
-      period: 'Annual',
-      trend: 'up',
-      description: 'Exceptional customer loyalty'
+      label: 'Customer Acquisition Cost',
+      value: '$15K',
+      growth: '-25%',
+      period: 'YoY'
     },
     {
-      metric: 'Market Share',
-      value: '2.5%',
-      period: 'Target 2025',
-      trend: 'up',
-      description: 'Growing market presence'
+      label: 'Customer Lifetime Value',
+      value: '$150K',
+      growth: '+200%',
+      period: 'YoY'
     }
   ];
 
@@ -179,159 +164,191 @@ const Investors: React.FC = () => {
       description="Investment opportunities in cutting-edge AI, quantum computing, and space technology. Join us in shaping the future."
       keywords="investors, investment, funding, Zion Tech Group, AI, quantum computing, technology investment"
     >
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
         {/* Hero Section */}
-        <section className="relative overflow-hidden py-20 lg:py-32">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 via-blue-900/20 to-cyan-900/20" />
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto text-center">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-center"
             >
-              <div className="flex items-center justify-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center mr-4">
-                  <TrendingUp className="w-8 h-8 text-white" />
-                </div>
-                <h1 className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                  Investors
-                </h1>
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-400 text-sm font-medium mb-6">
+                <DollarSign className="w-4 h-4 mr-2" />
+                Investment Opportunities
               </div>
-              <p className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
-                Invest in the future of technology
+              
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                Invest in the Future of Technology
+              </h1>
+              
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                Join Zion Tech Group's mission to revolutionize AI, quantum computing, space technology, 
+                and beyond. Exceptional returns await forward-thinking investors.
               </p>
-              <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-                Join us in revolutionizing AI consciousness, quantum computing, and space technology. 
-                Be part of the next technological breakthrough that will transform industries worldwide.
-              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 transform hover:scale-105">
+                  Request Investor Package
+                </button>
+                <button className="px-8 py-4 border border-cyan-400/20 text-cyan-400 rounded-lg font-semibold hover:bg-cyan-400/10 transition-all duration-200">
+                  <Play className="w-5 h-5 inline mr-2" />
+                  Watch Investor Presentation
+                </button>
+              </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Investment Highlights */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Investment Highlights Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                Investment Highlights
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Why Invest in Zion Tech Group?
               </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Key metrics that demonstrate our growth and potential
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                Exceptional growth, market leadership, and breakthrough innovations
               </p>
             </motion.div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {investmentHighlights.map((highlight, index) => (
                 <motion.div
-                  key={highlight.title}
-                  initial={{ opacity: 0, y: 30 }}
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-6 rounded-2xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 text-center"
+                  className="bg-gray-900/50 backdrop-blur-sm border border-cyan-400/20 rounded-xl p-6 text-center hover:border-cyan-400/40 transition-all duration-300"
                 >
-                  <div className={`w-16 h-16 bg-gradient-to-br ${highlight.color} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
+                  <div className="w-16 h-16 bg-cyan-400/10 rounded-lg flex items-center justify-center mx-auto mb-4">
                     {highlight.icon}
                   </div>
-                  <div className="text-3xl font-bold text-white mb-2">{highlight.value}</div>
-                  <h3 className="text-lg font-bold text-white mb-2">{highlight.title}</h3>
-                  <p className="text-gray-300 text-sm">{highlight.description}</p>
+                  <h3 className="text-xl font-semibold text-white mb-3">
+                    {highlight.title}
+                  </h3>
+                  <p className="text-gray-400 mb-4">
+                    {highlight.description}
+                  </p>
+                  <div className="text-2xl font-bold text-cyan-400">
+                    {highlight.metric}
+                  </div>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Market Opportunities */}
-        <section className="py-20 bg-black/50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Financial Metrics Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/30">
+          <div className="max-w-7xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                Market Opportunities
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Massive addressable markets with exponential growth potential
-              </p>
-            </motion.div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {marketOpportunities.map((opportunity, index) => (
-                <motion.div
-                  key={opportunity.title}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6 }}
-                  viewport={{ once: true }}
-                  className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 p-6 rounded-2xl border border-gray-700/30 hover:border-blue-500/50 transition-all duration-300"
-                >
-                  <div className="flex items-center mb-4">
-                    <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center mr-3">
-                      {opportunity.icon}
-                    </div>
-                    <h3 className="text-xl font-bold text-white">{opportunity.title}</h3>
-                  </div>
-                  <div className="grid grid-cols-2 gap-4 mb-4">
-                    <div>
-                      <div className="text-2xl font-bold text-blue-400">{opportunity.marketSize}</div>
-                      <div className="text-sm text-gray-400">Market Size</div>
-                    </div>
-                    <div>
-                      <div className="text-2xl font-bold text-green-400">{opportunity.growth}</div>
-                      <div className="text-sm text-gray-400">Growth Rate</div>
-                    </div>
-                  </div>
-                  <p className="text-gray-300 text-sm">{opportunity.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Financial Metrics */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Financial Performance
               </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Strong financial fundamentals driving sustainable growth
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                Strong fundamentals and exceptional growth metrics
               </p>
             </motion.div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {financialMetrics.map((metric, index) => (
                 <motion.div
-                  key={metric.metric}
-                  initial={{ opacity: 0, y: 30 }}
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 p-6 rounded-2xl border border-gray-700/30 hover:border-green-500/50 transition-all duration-300 text-center"
+                  className="bg-gray-900/50 backdrop-blur-sm border border-cyan-400/20 rounded-xl p-6 text-center"
                 >
-                  <div className="text-3xl font-bold text-white mb-2">{metric.value}</div>
-                  <h3 className="text-lg font-bold text-white mb-2">{metric.metric}</h3>
-                  <div className="text-sm text-gray-400 mb-3">{metric.period}</div>
-                  <p className="text-gray-300 text-sm">{metric.description}</p>
+                  <h3 className="text-lg font-medium text-gray-300 mb-4">
+                    {metric.label}
+                  </h3>
+                  <div className="text-3xl font-bold text-white mb-2">
+                    {metric.value}
+                  </div>
+                  <div className="text-sm text-cyan-400">
+                    {metric.growth} {metric.period}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Investment Opportunities Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Current Investment Opportunities
+              </h2>
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                Join our next funding rounds and accelerate our growth trajectory
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {investmentOpportunities.map((opportunity, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gray-900/50 backdrop-blur-sm border border-cyan-400/20 rounded-xl p-8"
+                >
+                  <div className="flex justify-between items-start mb-6">
+                    <div>
+                      <h3 className="text-2xl font-bold text-white mb-2">
+                        {opportunity.type}
+                      </h3>
+                      <div className="text-3xl font-bold text-cyan-400 mb-2">
+                        {opportunity.amount}
+                      </div>
+                    </div>
+                    <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                      opportunity.status === 'Open' 
+                        ? 'bg-green-500/20 text-green-400' 
+                        : 'bg-yellow-500/20 text-yellow-400'
+                    }`}>
+                      {opportunity.status}
+                    </span>
+                  </div>
+                  
+                  <div className="space-y-4 mb-6">
+                    <div>
+                      <p className="text-gray-400 text-sm">Use of Funds</p>
+                      <p className="text-white">{opportunity.use}</p>
+                    </div>
+                    <div>
+                      <p className="text-gray-400 text-sm">Timeline</p>
+                      <p className="text-white">{opportunity.timeline}</p>
+                    </div>
+                  </div>
+
+                  <button className="w-full py-3 px-6 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-200">
+                    Express Interest
+                  </button>
                 </motion.div>
               ))}
             </div>
@@ -462,34 +479,29 @@ const Investors: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-cyan-500/10 to-blue-600/10">
+          <div className="max-w-4xl mx-auto text-center">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Ready to Invest in the Future?
               </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
-                Join us in building the technologies that will define the next decade. 
-                Contact our investment team to learn more about opportunities.
+              <p className="text-xl text-gray-300 mb-8">
+                Join our mission to revolutionize technology and achieve exceptional returns
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-600 text-white font-semibold rounded-2xl hover:from-purple-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
-                >
-                  Schedule Investment Meeting
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Link>
+                <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 transform hover:scale-105">
+                  Request Investor Package
+                </button>
                 <a
-                  href="mailto:investors@ziontechgroup.com"
-                  className="inline-flex items-center px-8 py-4 border-2 border-purple-500/30 text-purple-400 font-semibold rounded-2xl hover:border-purple-500/50 hover:text-purple-300 transition-all duration-300"
+                  href="/contact"
+                  className="px-8 py-4 border border-cyan-400/20 text-cyan-400 rounded-lg font-semibold hover:bg-cyan-400/10 transition-all duration-200"
                 >
-                  Investor Relations
+                  Contact Investment Team
                 </a>
               </div>
             </motion.div>

@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 
 // Import our new 2025 V2 innovative services
-import { innovativeMicroSaasExpansionV2 } from '../data/2025-innovative-micro-saas-expansion-v2';
+import { innovativeMicroSaas2025ExpansionV2 } from '../data/2025-innovative-micro-saas-expansion-v2';
 import { innovativeITInfrastructureServices2025V2 } from '../data/2025-innovative-it-infrastructure-services-v2';
 import { innovativeAIServices2025V2 } from '../data/2025-innovative-ai-services-v2';
 import { industrySpecificSolutions2025V2 } from '../data/2025-industry-specific-solutions-v2';
@@ -30,7 +30,7 @@ const staggerContainer = {
 
 export default function ComprehensiveServicesShowcase2025V2() {
   const allNewServices = [
-    ...innovativeMicroSaasExpansionV2,
+    ...innovativeMicroSaas2025ExpansionV2,
     ...innovativeITInfrastructureServices2025V2,
     ...innovativeAIServices2025V2,
     ...industrySpecificSolutions2025V2,
@@ -43,7 +43,7 @@ export default function ComprehensiveServicesShowcase2025V2() {
       name: 'Innovative Micro SAAS',
       icon: <Smartphone className="w-8 h-8" />,
       color: 'from-blue-500 to-cyan-500',
-      services: innovativeMicroSaasExpansionV2,
+      services: innovativeMicroSaas2025ExpansionV2,
       description: 'Cutting-edge micro SAAS solutions for modern businesses'
     },
     {

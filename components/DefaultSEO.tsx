@@ -25,7 +25,14 @@ const DefaultSEO: React.FC = () => {
         if (ctx?.renderedRef?.current) return null;
         if (!localRenderedRef.current) localRenderedRef.current = true;
         
-        return <SEO data={defaultSEOData} />;
+        return (
+          <SEO 
+            title={defaultSEOData.pageTitle}
+            description={defaultSEOData.pageDescription}
+            keywords={defaultSEOData.pageKeywords}
+            structuredData={defaultSEOData.structuredData}
+          />
+        );
       }}
     </SEOContext.Consumer>
   );

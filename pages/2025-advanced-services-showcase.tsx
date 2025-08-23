@@ -350,11 +350,9 @@ export default function AdvancedServicesShowcase() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
       <SEO 
-        data={{
-          pageTitle: "2025 Advanced Services Showcase - Zion Tech Group",
-          pageDescription: "Discover our comprehensive portfolio of advanced AI services, micro SAAS solutions, and cutting-edge IT infrastructure. Real, innovative, and market-ready solutions for modern businesses.",
-          pageKeywords: ["AI services", "micro SAAS", "IT infrastructure", "quantum computing", "enterprise solutions", "Zion Tech Group"]
-        }}
+        title="2025 Advanced Services Showcase - Zion Tech Group"
+        description="Discover our comprehensive portfolio of advanced AI services, micro SAAS solutions, and cutting-edge IT infrastructure. Real, innovative, and market-ready solutions for modern businesses."
+        keywords={["AI services", "micro SAAS", "IT infrastructure", "quantum computing", "enterprise solutions", "Zion Tech Group"]}
       />
       
       {/* Hero Section */}

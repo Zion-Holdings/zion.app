@@ -16,11 +16,11 @@ export default function ApiPerformanceTestingPage() {
 
 	return (
 		<>
-			<SEO data={{
-			pageTitle: title,
-			pageDescription: description,
-			pageKeywords: ["API performance testing", "API testing", "performance testing", "Zion Tech Group"]
-		}} />
+			<SEO 
+          title={title}
+          description={description}
+          keywords={["API performance testing", "API testing", "performance testing", "Zion Tech Group"]}
+        />
 			<section className="relative pt-28 pb-16 md:pt-36 md:pb-24">
 				<div className="container mx-auto px-4">
 					<h1 className="text-3xl md:text-5xl font-extrabold tracking-tight gradient-text-cyan-purple">API Performance Testing</h1>
