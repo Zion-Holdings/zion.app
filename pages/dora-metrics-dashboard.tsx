@@ -1,25 +1,31 @@
 import React from 'react';
-import Head from 'next/head';
-import { Database, Check, Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
+import { BarChart3, Check, Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import Button from '../components/ui/Button';
+import SEO from '../components/SEO';
 import { real2029Q3Additions } from '../data/real-2029-q3-additions';
 
-export default function DataQualityMonitorPage() {
-	const service = real2029Q3Additions.find(s => s.id === 'data-quality-monitor');
+export default function DoraMetricsDashboardPage() {
+	const service = real2029Q3Additions.find(s => s.id === 'dora-metrics-dashboard');
 	if (!service) return null;
+
+	const jsonLd = {
+		"@context": "https://schema.org",
+		"@type": "Service",
+		"name": service.name,
+		"description": service.description,
+		"provider": {"@type": "Organization", "name": "Zion Tech Group", "url": "https://ziontechgroup.com"},
+		"offers": {"@type": "Offer", "price": service.price.monthly, "priceCurrency": service.price.currency},
+		"url": "https://ziontechgroup.com/dora-metrics-dashboard"
+	};
 
 	return (
 		<UltraAdvancedFuturisticBackground>
-			<Head>
-				<title>{service.name} - Zion Tech Group</title>
-				<meta name="description" content={service.description} />
-				<link rel="canonical" href="https://ziontechgroup.com/data-quality-monitor" />
-			</Head>
+			<SEO title={`${service.name} - Zion Tech Group`} description={service.description} canonical="https://ziontechgroup.com/dora-metrics-dashboard" jsonLd={jsonLd} />
 			<div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
 				<div className="max-w-6xl mx-auto">
 					<div className="text-center mb-10">
-						<h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent flex items-center justify-center gap-3"><Database className="w-10 h-10" />{service.name}</h1>
+						<h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent flex items-center justify-center gap-3"><BarChart3 className="w-10 h-10" />{service.name}</h1>
 						<p className="mt-4 text-xl text-slate-300 max-w-3xl mx-auto">{service.tagline}</p>
 					</div>
 					<div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
@@ -52,4 +58,3 @@ export default function DataQualityMonitorPage() {
 		</UltraAdvancedFuturisticBackground>
 	);
 }
-
