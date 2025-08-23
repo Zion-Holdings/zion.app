@@ -385,7 +385,7 @@
     "@modelcontextprotocol/server-memory": "^2025.8.4",
     "@modelcontextprotocol/server-sequential-thinking": "^2025.7.1",
     "@supabase/ssr": "^0.6.1",
-    "@supabase/supabase-js": "^2.39.0",
+    "@supabase/supabase-js": "^2.56.0",
     "@tailwindcss/postcss": "^4.1.12",
     "@types/react-datepicker": "^6.2.0",
     "axios": "^1.11.0",
