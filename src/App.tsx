@@ -5,6 +5,7 @@ import { ThemeProvider } from "./components/ThemeProvider";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
+import InstallPrompt from "./components/InstallPrompt";
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -56,7 +57,7 @@ const baseRoutes = [
 const App = () => {
   return (
     <WhitelabelProvider>
-      <ThemeProvider defaultTheme="dark">
+      <ThemeProvider>
         <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
           <Routes>
             {baseRoutes.map(({ path, element }) => (
@@ -78,6 +79,7 @@ const App = () => {
         </Suspense>
         <Toaster />
         <SonnerToaster position="top-right" />
+        <InstallPrompt />
       </ThemeProvider>
     </WhitelabelProvider>
   );
