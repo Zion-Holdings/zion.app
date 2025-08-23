@@ -112,6 +112,15 @@ const AccessibilityEnhancer: React.FC = () => {
     }
   }, [applySettings]);
 
+<<<<<<< HEAD
+  // Toggle setting
+  const toggleSetting = useCallback((key: keyof AccessibilitySettings) => {
+    const newSettings = { ...settings, [key]: !settings[key] };
+    saveSettings(newSettings);
+  }, [settings, saveSettings]);
+
+  // Enhanced keyboard navigation
+=======
   // Focus management
   const handleFocusChange = useCallback((e: FocusEvent) => {
     const target = e.target as HTMLElement;
@@ -151,6 +160,7 @@ const AccessibilityEnhancer: React.FC = () => {
   }, []);
 
   // Auto-optimize accessibility
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-1ca5
   useEffect(() => {
     if (!settings.keyboardNavigation) return;
 

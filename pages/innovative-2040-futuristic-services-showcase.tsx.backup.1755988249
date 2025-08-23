@@ -99,6 +99,12 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
   const [sortBy, setSortBy] = useState<'name' | 'price' | 'popularity' | 'category'>('name');
   const [isLoading, setIsLoading] = useState(true);
 
+<<<<<<< HEAD
+  // Combine all services
+  const allServices = [
+    ...innovative2040FuturisticServices,
+    ...innovative2040ITServices,
+=======
   // Combine all services with proper mapping
   const allServices: Service[] = [
     ...innovative2040FuturisticServices.map(service => ({
@@ -167,6 +173,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
         website: service.contactInfo.website
       }
     })),
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-1ca5
     ...realMicroSaasServices,
     ...innovativeAIServices,
     ...enterpriseITServices
