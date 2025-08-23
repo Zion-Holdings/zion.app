@@ -14,13 +14,39 @@ export default function OfflineToast() {
     const handleOnline = () => {
       toast.success('Back online. Syncing queued actions...');
       navigator.serviceWorker.ready.then(reg => {
-        reg.active?.postMessage({ type: 'SYNC_QUEUE' });
+        try {
+          // Use MessageChannel to properly handle async response
+          const channel = new MessageChannel();
+          
+          // Set up response handler
+          channel.port1.onmessage = (event) => {
+            if (event.data?.type === 'SYNC_SUCCESS') {
+              console.log('Background sync completed successfully');
+            } else if (event.data?.type === 'UNKNOWN_MESSAGE_TYPE') {
+              console.warn('Service worker received unknown message type');
+            } else if (event.data?.type === 'MESSAGE_ERROR') {
+              console.warn('Service worker message error:', event.data.error);
+            }
+            channel.port1.close();
+          };
+          
+          // Send message with port
+          reg.active?.postMessage({ type: 'SYNC_QUEUE' }, [channel.port2]);
+        } catch (error) {
+          console.warn('Failed to send sync message to service worker:', error);
+        }
+      }).catch(error => {
+        console.warn('Service worker not ready:', error);
       });
     };
 
     const handleMessage = (event: MessageEvent) => {
       if (event.data?.type === 'QUEUE_SYNCED') {
         toast.success('Offline actions synchronized');
+      } else if (event.data?.type === 'SYNC_FAILED') {
+        console.warn('Background sync failed:', event.data.error);
+      } else if (event.data?.type === 'SYNC_TIMEOUT') {
+        console.warn('Background sync timed out:', event.data.error);
       }
     };
 

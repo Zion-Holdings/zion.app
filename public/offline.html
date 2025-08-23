@@ -199,99 +199,10 @@
     </style>
 </head>
 <body>
-    <div class="offline-container">
-        <div class="offline-icon">📡</div>
-        
-        <h1>You're Offline</h1>
-        <p class="subtitle">
-            Don't worry! While you're offline, you can still explore our cached content and learn about Zion Tech Group's innovative solutions.
-        </p>
-
-        <div class="message">
-            <h2>What You Can Do Offline</h2>
-            <p>
-                Browse our homepage, view service information, and access previously visited pages. 
-                We've cached the most important content to keep you connected even without internet.
-            </p>
-        </div>
-
-        <div class="actions">
-            <button class="btn btn-primary" onclick="window.location.reload()">
-                <span class="retry-indicator"></span>
-                Try Again
-            </button>
-            <a href="/" class="btn btn-secondary">Go to Homepage</a>
-        </div>
-
-        <div class="features">
-            <div class="feature">
-                <div class="feature-icon">🧠</div>
-                <h3>AI Consciousness</h3>
-                <p>Explore our revolutionary AI consciousness evolution platform</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">🛡️</div>
-                <h3>Quantum Security</h3>
-                <p>Learn about quantum-resistant cybersecurity solutions</p>
-            </div>
-            <div class="feature">
-                <div class="feature-icon">🏭</div>
-                <h3>Content Factory</h3>
-                <p>Discover our autonomous content creation platform</p>
-            </div>
-        </div>
-
-        <div class="status">
-            <p class="status-text">
-                <strong>Connection Status:</strong> Offline<br>
-                <strong>Last Sync:</strong> <span id="lastSync">Unknown</span><br>
-                <strong>Cache Status:</strong> Active
-            </p>
-        </div>
-    </div>
-
-    <script>
-        // Update last sync time
-        document.getElementById('lastSync').textContent = new Date().toLocaleString();
-
-        // Check connection status periodically
-        function checkConnection() {
-            if (navigator.onLine) {
-                window.location.reload();
-            }
-        }
-
-        // Listen for online/offline events
-        window.addEventListener('online', () => {
-            window.location.reload();
-        });
-
-        // Check connection every 5 seconds
-        setInterval(checkConnection, 5000);
-
-        // Add some interactivity
-        document.querySelector('.btn-primary').addEventListener('click', function() {
-            this.innerHTML = '<span class="retry-indicator"></span> Checking...';
-            setTimeout(() => {
-                if (!navigator.onLine) {
-                    this.innerHTML = '<span class="retry-indicator"></span> Still Offline';
-                    setTimeout(() => {
-                        this.innerHTML = '<span class="retry-indicator"></span> Try Again';
-                    }, 2000);
-                }
-            }, 1000);
-        });
-
-        // Add offline detection
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js')
-                .then(registration => {
-                    console.log('Service Worker registered:', registration);
-                })
-                .catch(error => {
-                    console.log('Service Worker registration failed:', error);
-                });
-        }
-    </script>
+  <h1>You are offline</h1>
+  <p>Please check your internet connection and try again.</p>
+  <p>If the app still shows a blank screen after reconnecting, run
+    <code>./setup.sh npm</code> to install missing dependencies.</p>
+  <p>Check <code>next_dev_server.log</code> for errors. After installing dependencies, run <code>npm run fix:loading</code> if needed.</p>
 </body>
 </html>

@@ -342,7 +342,7 @@ export default function TalentsPage() {
   // Loading state
   if (loading && talents.length === 0) {
     return (
-      <div className="container py-8" data-testid="talents-loading">
+      <main className="container py-8" data-testid="talents-loading">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -356,26 +356,26 @@ export default function TalentsPage() {
           </p>
         </motion.div>
         <TalentLoadingGrid />
-      </div>
+      </main>
     );
   }
 
   // Error state
   if (error) {
     return (
-      <div className="container py-8">
+      <main className="container py-8">
         <div className="text-center space-y-4">
           <h2 className="text-2xl font-bold">Unable to load talents</h2>
           <p className="text-muted-foreground">{error}</p>
           <Button onClick={refresh}>Try Again</Button>
         </div>
-      </div>
+      </main>
     );
   }
 
   // Main render
   return (
-    <div className="container py-8">
+    <main className="container py-8">
       {/* Header */}
       <motion.div 
         className="text-center mb-8"
@@ -506,6 +506,6 @@ export default function TalentsPage() {
           </motion.button>
         )}
       </AnimatePresence>
-    </div>
+    </main>
   );
 }

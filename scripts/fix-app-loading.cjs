@@ -6,6 +6,7 @@
  */
 
 const fs = require('fs');
+const { execSync } = require('child_process');
 
 console.log('🚨 EMERGENCY APP LOADING FIX');
 console.log('============================\n');
@@ -13,12 +14,44 @@ console.log('============================\n');
 // Check if we need to apply emergency fixes
 function checkAppStatus() {
   console.log('🔍 Checking app loading status...');
-  
+
+  // Ensure dependencies are installed
+  if (!fs.existsSync('node_modules')) {
+    console.log('❌ node_modules directory is missing');
+    console.log('   -> Attempting to install dependencies via "./setup.sh npm"');
+    try {
+      execSync('./setup.sh npm', { stdio: 'inherit' });
+    } catch (installErr) {
+      console.error('Failed to install dependencies:', installErr.message);
+      if (/EAI_AGAIN|ENOTFOUND|403 Forbidden/.test(installErr.message)) {
+        console.error('Network access appears to be restricted.');
+        console.error('Ensure internet connectivity or configure a proxy before running the setup script.');
+        console.error('Attempting to start offline development mode...');
+        try {
+          execSync('bash offline-dev.sh', { stdio: 'inherit' });
+          console.log('✅ Offline development mode started.');
+        } catch (offlineErr) {
+          console.error('Failed to start offline mode:', offlineErr.message);
+          console.error('You can still run "./offline-dev.sh" manually.');
+        }
+      }
+      console.log('   -> Please run "./setup.sh npm" manually when connectivity is restored.');
+      return false;
+    }
+    return true;
+  }
+
   // Test if the main app file exists and is readable
   try {
     const appContent = fs.readFileSync('pages/_app.tsx', 'utf8');
-    
-    if (appContent.includes('Force initializing after timeout')) {
+
+    const loadingFixMarkers = [
+      'Force initializing after timeout',
+      'Force completing app initialization due to timeout',
+      'Force initialization completion'
+    ];
+
+    if (loadingFixMarkers.some(marker => appContent.includes(marker))) {
       console.log('✅ Latest loading fix is already applied');
       return true;
     } else {
@@ -142,7 +175,8 @@ function runDiagnostics() {
   console.log('  2. Clear browser cache');
   console.log('  3. Check browser console for JavaScript errors');
   console.log('  4. Run: npm run build && npm run start');
-  console.log('  5. If still stuck, use emergency app component');
+  console.log('  5. Ensure dependencies are installed: ./setup.sh npm');
+  console.log('  6. If still stuck, use emergency app component');
 }
 
 // Main execution
@@ -160,19 +194,19 @@ async function main() {
     console.log('');
     console.log('💡 The app has timeout protection - it should load within 3 seconds');
     console.log('💡 If still stuck, check browser developer tools console');
+  } else {
+    createMinimalApp();
+    runDiagnostics();
+
+    console.log('\n🎯 IMMEDIATE FIXES TO TRY:');
+    console.log('==========================');
+    console.log('1. Hard refresh: Ctrl+Shift+R (Chrome/Firefox)');
+    console.log('2. Clear cache: F12 → Application → Storage → Clear site data');
+    console.log('3. Check console: F12 → Console tab for errors');
+    console.log('4. Rebuild: npm run build && npm run start');
+    console.log('');
+    console.log('✅ App should now load within 3 seconds max!');
   }
-  
-  createMinimalApp();
-  runDiagnostics();
-  
-  console.log('\n🎯 IMMEDIATE FIXES TO TRY:');
-  console.log('==========================');
-  console.log('1. Hard refresh: Ctrl+Shift+R (Chrome/Firefox)');
-  console.log('2. Clear cache: F12 → Application → Storage → Clear site data');
-  console.log('3. Check console: F12 → Console tab for errors');
-  console.log('4. Rebuild: npm run build && npm run start');
-  console.log('');
-  console.log('✅ App should now load within 3 seconds max!');
 }
 
 if (require.main === module) {
