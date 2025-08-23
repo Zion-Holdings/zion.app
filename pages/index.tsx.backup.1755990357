@@ -11407,8 +11407,12 @@ export default function HomePage() {
           </div>
         </section>
       
+<<<<<<< HEAD
+/* AUTO-GENERATED: HOME_UPDATER_START */
+=======
 {/* AUTO-GENERATED: HOME_UPDATER_START */}
 
+>>>>>>> origin/cursor/autonomous-cloud-page-enhancer-and-advertiser-c4d6
 <section className="mx-auto max-w-7xl px-6 pb-16">
   <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Explore more</h2>
 
@@ -11437,14 +11441,21 @@ export default function HomePage() {
 
   <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 
+<<<<<<< HEAD
+            <Link href="/automation"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Automation Status — live agents & reports</span></a></Link>
+=======
             <Link href="/automation"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Automation Hub — live agents &amp; reports</span></a></Link>
   
+>>>>>>> origin/cursor/autonomous-cloud-page-enhancer-and-advertiser-c4d6
 
             <Link href="/newsroom"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Newsroom — latest autonomous updates</span></a></Link>
 
             <Link href="/site-health"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Site Health — audits &amp; insights</span></a></Link>
   
+<<<<<<< HEAD
+=======
 
+>>>>>>> origin/cursor/autonomous-cloud-page-enhancer-and-advertiser-c4d6
   </div>
 
   <div className="mt-6 flex flex-wrap gap-2">
