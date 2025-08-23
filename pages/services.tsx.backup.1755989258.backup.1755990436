@@ -1,14 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
+<<<<<<< HEAD
+=======
 import UltraFuturisticNavigation2046 from '../components/layout/UltraFuturisticNavigation2046';
 import UltraFuturisticFooter2046 from '../components/layout/UltraFuturisticFooter2046';
+>>>>>>> 2d4d481f1493a231e1d090623f77d5e17a4d5961
 import { 
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
+<<<<<<< HEAD:pages/services.tsx.backup.1755989258
+  Building
+=======
   Building, Cpu, Globe, Users
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-33fe:pages/services.tsx
 } from 'lucide-react';
+<<<<<<< HEAD
+=======
 import Link from 'next/link';
 
 const Services: React.FC = () => {
@@ -25,6 +34,7 @@ import { advancedITInfrastructureServices2025 } from '../data/2025-advanced-it-i
 import { realMicroSaas2025Expansion } from '../data/real-micro-saas-2025-expansion';
 import { realITServices2025Expansion } from '../data/real-it-services-2025-expansion';
 import { realAIServices2025Expansion } from '../data/real-ai-services-2025-expansion';
+>>>>>>> 2d4d481f1493a231e1d090623f77d5e17a4d5961
 
 // Import our new service data
 import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
@@ -471,6 +481,10 @@ export default function Services() {
         return (((b as any).rating || 0) as number) - (((a as any).rating || 0) as number);
       default:
         return 0;
+<<<<<<< HEAD
+=======
+>>>>>>> origin/clean-website-enhancement
+>>>>>>> 2d4d481f1493a231e1d090623f77d5e17a4d5961
     }
   });
 
@@ -546,6 +560,10 @@ export default function Services() {
             </motion.div>
           )}
         </AnimatePresence>
+<<<<<<< HEAD
+
+=======
+>>>>>>> 2d4d481f1493a231e1d090623f77d5e17a4d5961
         {/* Hero Section */}
         <AnimatePresence>
           {isVisible && (

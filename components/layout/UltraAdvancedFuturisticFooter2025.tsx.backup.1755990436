@@ -20,6 +20,18 @@ const footerSections = [
     icon: <Rocket className="w-5 h-5 text-cyan-400" />,
     color: 'from-emerald-500 to-cyan-500',
     links: [
+<<<<<<< HEAD
+      { name: 'AI Content Optimizer Pro', href: '/ai-content-optimizer-pro', featured: true },
+      { name: 'Smart Inventory Manager', href: '/smart-inventory-manager', featured: true },
+      { name: 'Customer Success Automation', href: '/customer-success-automation', featured: true },
+      { name: 'Financial Analytics Dashboard', href: '/financial-analytics-dashboard' },
+      { name: 'HR Automation Suite', href: '/hr-automation-suite' },
+      { name: 'Project Management AI', href: '/project-management-ai' },
+      { name: 'Email Marketing Automation', href: '/email-marketing-automation' },
+      { name: 'Social Media Scheduler Pro', href: '/social-media-scheduler' },
+      { name: 'Lead Generation Automation', href: '/lead-generation-automation' },
+      { name: 'Customer Support Automation', href: '/customer-support-automation' }
+=======
       { label: 'AI & Machine Learning', href: '/services?category=ai-ml', description: 'Advanced AI solutions' },
       { label: 'Quantum Computing', href: '/services?category=quantum', description: 'Next-gen quantum tech' },
       { label: 'Space Technology', href: '/services?category=space-tech', description: 'Innovative space solutions' },
@@ -33,6 +45,7 @@ const footerSections = [
       { label: 'Autonomous Vehicles', href: '/services?category=autonomous-vehicles', description: 'AI transportation' },
       { label: 'Human Augmentation', href: '/services?category=human-augmentation', description: 'Brain-computer interfaces' },
       { label: 'View All Services', href: '/services', description: 'Complete service portfolio' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-33fe
     ]
   },
   {

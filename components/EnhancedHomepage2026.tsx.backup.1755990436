@@ -3,7 +3,11 @@ import Layout from './layout/Layout';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ArrowRight, Play, Star, Users, Award, TrendingUp, Brain, Shield, Rocket, Loader2,
+<<<<<<< HEAD
+  Zap, Globe, Cpu, Eye, Atom, ChevronLeft, ChevronRight
+=======
   Zap, Globe, Cpu, Eye, Atom, Heart
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-33fe
 } from 'lucide-react';
 
 // Lazy load heavy components
@@ -74,6 +78,66 @@ const EnhancedHomepage2026: React.FC = () => {
 
   const featuredServices = [
     {
+<<<<<<< HEAD
+      id: 'quantum-ai-orchestration',
+      title: "Quantum AI Orchestration Platform",
+      description: "Revolutionary AI orchestration leveraging quantum computing for unprecedented performance",
+      icon: Brain,
+      color: "from-purple-600 to-indigo-700",
+      price: "$4,999/month",
+      features: ["Quantum AI coordination", "Zero-latency switching", "Multi-model management"],
+      ariaLabel: "Learn more about Quantum AI Orchestration Platform"
+    },
+    {
+      id: 'autonomous-cybersecurity',
+      title: "Autonomous Cybersecurity Orchestrator",
+      description: "AI-powered cybersecurity automation with autonomous threat response",
+      icon: Shield,
+      color: "from-red-600 to-pink-700",
+      price: "$1,299/month",
+      features: ["Autonomous threat detection", "Real-time response", "Zero-trust architecture"],
+      ariaLabel: "Learn more about Autonomous Cybersecurity Orchestrator"
+    },
+    {
+      id: 'quantum-financial-modeling',
+      title: "Quantum Financial Modeling Suite",
+      description: "Quantum-powered financial modeling for superior risk assessment and optimization",
+      icon: Zap,
+      color: "from-yellow-600 to-orange-700",
+      price: "$2,999/month",
+      features: ["Quantum Monte Carlo", "Portfolio optimization", "Risk assessment"],
+      ariaLabel: "Learn more about Quantum Financial Modeling Suite"
+    },
+    {
+      id: 'metaverse-commerce',
+      title: "Metaverse Commerce Platform",
+      description: "Complete e-commerce solution for virtual worlds and digital asset management",
+      icon: Globe,
+      color: "from-purple-600 to-indigo-700",
+      price: "$799/month",
+      features: ["3D storefronts", "NFT management", "Virtual currency"],
+      ariaLabel: "Learn more about Metaverse Commerce Platform"
+    },
+    {
+      id: 'autonomous-devops',
+      title: "Autonomous DevOps Orchestrator",
+      description: "AI-powered DevOps automation with intelligent infrastructure management",
+      icon: Cpu,
+      color: "from-green-600 to-emerald-700",
+      price: "$1,199/month",
+      features: ["Autonomous CI/CD", "Self-healing infrastructure", "Predictive optimization"],
+      ariaLabel: "Learn more about Autonomous DevOps Orchestrator"
+    },
+    {
+      id: 'quantum-computer-vision',
+      title: "Quantum Computer Vision Suite",
+      description: "Quantum-powered computer vision for unprecedented image analysis accuracy",
+      icon: Eye,
+      color: "from-cyan-600 to-blue-700",
+      price: "$3,499/month",
+      features: ["Quantum image processing", "Real-time analysis", "3D vision"],
+      ariaLabel: "Learn more about Quantum Computer Vision Suite"
+=======
       title: "AI Content Marketing Automation Pro",
       description: "Automate your entire content marketing strategy with AI-powered intelligence",
       icon: Brain,
@@ -120,6 +184,7 @@ const EnhancedHomepage2026: React.FC = () => {
       color: "from-yellow-600 to-orange-700",
       price: "$2,499/month",
       features: ["Quantum algorithms", "Risk modeling", "Portfolio optimization"]
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-33fe
     }
   ];
 
@@ -252,6 +317,11 @@ const EnhancedHomepage2026: React.FC = () => {
           </AnimatePresence>
         </section>
 
+<<<<<<< HEAD
+        {/* Featured Services Section with Lazy Loading */}
+        <section className="py-20 bg-gradient-to-b from-gray-900 to-black" aria-labelledby="services-heading">
+          <div className="container mx-auto px-4">
+=======
         {/* Enhanced Statistics Section with Neon Effects */}
         <motion.section 
           className="py-24 px-4 bg-gradient-to-b from-gray-900/80 via-purple-900/40 to-gray-800/80 relative"
@@ -595,6 +665,7 @@ const EnhancedHomepage2026: React.FC = () => {
             >
               Join hundreds of companies already leveraging our cutting-edge <span className="text-cyan-400 font-semibold">quantum computing</span>, <span className="text-purple-400 font-semibold">autonomous AI</span>, and <span className="text-green-400 font-semibold">revolutionary marketing</span> solutions
             </motion.p>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-33fe
             <motion.div 
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}

@@ -80,6 +80,14 @@ const navigationItems: NavigationItem[] = [
         icon: <BarChart3 className="w-4 h-4" />,
         color: 'from-green-500 to-emerald-500'
       },
+<<<<<<< HEAD
+      { 
+        name: 'Automated Email Marketing', 
+        href: '/automated-email-marketing', 
+        description: 'AI-driven email campaigns and automation',
+        icon: <Mail className="w-4 h-4" />,
+        color: 'from-orange-500 to-red-500'
+=======
       {
         label: 'Cybersecurity',
         href: '/services?category=cybersecurity',
@@ -145,6 +153,7 @@ const navigationItems: NavigationItem[] = [
         href: '/services?category=human-augmentation',
         icon: <Users className="w-4 h-4" />,
         description: 'Brain-computer interfaces'
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-33fe
       }
     ]
   },
