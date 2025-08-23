@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { 
-  Brain, Atom, Rocket, Shield, Zap, Target, Star,
-  ArrowRight, Check, TrendingUp, Users, Globe, Cpu,
-  Database, Cloud, Lock, Settings, Eye, Award, Clock
+  Brain, Atom, Rocket, Zap, Check, Star, Cpu
 } from 'lucide-react';
 
 // Import our new service data
@@ -90,7 +88,7 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => {
         <div className="space-y-3 mb-6 text-xs text-gray-400">
           <div className="flex justify-between">
             <span>Setup Time:</span>
-            <span>{service.setupTime || '24 hours'}</span>
+            <span>{service.setupTime || 'Immediate'}</span>
           </div>
           <div className="flex justify-between">
             <span>Trial:</span>
@@ -98,12 +96,12 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => {
           </div>
           <div className="flex justify-between">
             <span>Customers:</span>
-            <span>{(service.customers || 0).toLocaleString()}</span>
+            <span>{service.customers ? service.customers.toLocaleString() : 'N/A'}</span>
           </div>
         </div>
         
         <a 
-          href={service.link || '#'} 
+          href={service.link} 
           className="block w-full text-center py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
         >
           Learn More
@@ -320,16 +318,18 @@ const ServiceShowcase = () => {
             <div className="text-center">
               <div className="text-3xl mb-2">📍</div>
               <div className="font-semibold text-white mb-2">Visit Us</div>
-              <div className="text-gray-400 text-sm">{contactInfo.address}</div>
+              <a href={`https://maps.google.com/?q=${encodeURIComponent(contactInfo.address)}`} target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 transition-colors">
+                {contactInfo.address}
+              </a>
             </div>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/contact" className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
-              Get Started Today
+              Schedule Consultation
             </a>
-            <a href="/services" className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105">
-              View All Services
+            <a href={`tel:${contactInfo.mobile}`} className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105">
+              Call Now
             </a>
           </div>
         </div>

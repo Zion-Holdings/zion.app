@@ -1,206 +1,147 @@
-import React, { ReactNode, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-interface PerformanceOptimizerProps {
-  children: ReactNode;
-  threshold?: number;
-  rootMargin?: string;
-  lazyLoad?: boolean;
-  preload?: boolean;
+interface PerformanceMetrics {
+  fcp: number;
+  lcp: number;
+  fid: number;
+  cls: number;
+  ttfb: number;
 }
 
-// Performance entry type definitions
-interface FirstInputEntry extends PerformanceEntry {
-  processingStart: number;
-  startTime: number;
-}
-
-interface LayoutShiftEntry extends PerformanceEntry {
-  value: number;
-}
-
-// IntersectionObserver polyfill check
-const getIntersectionObserver = () => {
-  if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
-    return window.IntersectionObserver;
-  }
-  // Return a mock observer for SSR
-  return class MockIntersectionObserver {
-    constructor() {}
-    observe() {}
-    unobserve() {}
-    disconnect() {}
-  };
-};
-
-const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({
-  children,
-  threshold = 0.1,
-  rootMargin = '50px',
-  lazyLoad = true,
-  preload = true
-}) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
+const PerformanceOptimizer: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [metrics, setMetrics] = useState<PerformanceMetrics | null>(null);
 
   useEffect(() => {
-    if (!lazyLoad) {
-      setIsVisible(true);
-      setIsLoaded(true);
-      return;
-    }
-
-    const IntersectionObserver = getIntersectionObserver();
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-            
-            // Add a small delay for smooth animation
-            setTimeout(() => {
-              setIsLoaded(true);
-            }, 100);
-            
-            // Once visible, disconnect the observer
-            if (containerRef.current) {
-              observer.unobserve(containerRef.current);
+    // Check if IntersectionObserver is available
+    if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
+      const observer = new (window as any).IntersectionObserver(
+        (entries: any[]) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              observer.unobserve(entry.target);
             }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      // Observe the component
+      const element = document.querySelector('[data-performance-optimizer]');
+      if (element) {
+        observer.observe(element);
+      }
+
+      return () => observer.disconnect();
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && 'PerformanceObserver' in window) {
+      // First Contentful Paint
+      const fcpObserver = new (window as any).PerformanceObserver((list: any) => {
+        const entries = list.getEntries();
+        entries.forEach((entry: any) => {
+          if (entry.name === 'first-contentful-paint') {
+            setMetrics(prev => prev ? { ...prev, fcp: entry.startTime } : { fcp: entry.startTime, lcp: 0, fid: 0, cls: 0, ttfb: 0 });
           }
         });
-      },
-      {
-        threshold,
-        rootMargin,
-        root: null
-      }
-    );
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
-
-    return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
-      }
-    };
-  }, [lazyLoad, threshold, rootMargin]);
-
-  // Preload critical resources
-  useEffect(() => {
-    if (preload && isVisible) {
-      // Preload critical images
-      const criticalImages = [
-        '/images/zion-tech-group-logo.png',
-        '/images/zion-tech-group-og.jpg'
-      ];
-
-      criticalImages.forEach((src) => {
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.as = 'image';
-        link.href = src;
-        document.head.appendChild(link);
       });
 
-      // Preload critical fonts
-      const criticalFonts = [
-        'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'
-      ];
-
-      criticalFonts.forEach((href) => {
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.as = 'style';
-        link.href = href;
-        document.head.appendChild(link);
+      // Largest Contentful Paint
+      const lcpObserver = new (window as any).PerformanceObserver((list: any) => {
+        const entries = list.getEntries();
+        entries.forEach((entry: any) => {
+          if (entry.name === 'largest-contentful-paint') {
+            setMetrics(prev => prev ? { ...prev, lcp: entry.startTime } : { fcp: 0, lcp: entry.startTime, fid: 0, cls: 0, ttfb: 0 });
+          }
+        });
       });
-    }
-  }, [preload, isVisible]);
 
-  // Performance monitoring
-  useEffect(() => {
-    if (typeof window !== 'undefined' && 'performance' in window) {
-      // Monitor Core Web Vitals
-      const observer = new PerformanceObserver((list) => {
-        list.getEntries().forEach((entry) => {
-          if (entry.entryType === 'largest-contentful-paint') {
-            // Log LCP for development only
-            if (process.env.NODE_ENV === 'development') {
-              // eslint-disable-next-line no-console
-              console.log('LCP:', entry.startTime);
-            }
+      // First Input Delay
+      const fidObserver = new (window as any).PerformanceObserver((list: any) => {
+        const entries = list.getEntries();
+        entries.forEach((entry: any) => {
+          if (entry.name === 'first-input') {
+            const firstInputEntry = entry as any;
+            setMetrics(prev => prev ? { ...prev, fid: firstInputEntry.processingStart - firstInputEntry.startTime } : { fcp: 0, lcp: 0, fid: firstInputEntry.processingStart - firstInputEntry.startTime, cls: 0, ttfb: 0 });
           }
-          if (entry.entryType === 'first-input') {
-            const firstInputEntry = entry as FirstInputEntry;
-            if (firstInputEntry.processingStart) {
-              // Log FID for development only
-              if (process.env.NODE_ENV === 'development') {
-                // eslint-disable-next-line no-console
-                console.log('FID:', firstInputEntry.processingStart - firstInputEntry.startTime);
-              }
-            }
-          }
-          if (entry.entryType === 'layout-shift') {
-            const layoutShiftEntry = entry as LayoutShiftEntry;
-            // Log CLS for development only
-            if (process.env.NODE_ENV === 'development') {
-              // eslint-disable-next-line no-console
-              console.log('CLS:', layoutShiftEntry.value);
-            }
+        });
+      });
+
+      // Cumulative Layout Shift
+      const clsObserver = new (window as any).PerformanceObserver((list: any) => {
+        const entries = list.getEntries();
+        entries.forEach((entry: any) => {
+          if (entry.name === 'layout-shift') {
+            const layoutShiftEntry = entry as any;
+            setMetrics(prev => prev ? { ...prev, cls: layoutShiftEntry.value } : { fcp: 0, lcp: 0, fid: 0, cls: layoutShiftEntry.value, ttfb: 0 });
           }
         });
       });
 
       try {
-        observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input', 'layout-shift'] });
-      } catch (error) {
-        // Log warning for development only
-        if (process.env.NODE_ENV === 'development') {
-          // eslint-disable-next-line no-console
-          console.warn('PerformanceObserver not supported:', error);
-        }
+        fcpObserver.observe({ entryTypes: ['paint'] });
+        lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
+        fidObserver.observe({ entryTypes: ['first-input'] });
+        clsObserver.observe({ entryTypes: ['layout-shift'] });
+      } catch {
+        // Silently handle errors for unsupported browsers
       }
 
       return () => {
-        observer.disconnect();
+        fcpObserver.disconnect();
+        lcpObserver.disconnect();
+        fidObserver.disconnect();
+        clsObserver.disconnect();
       };
     }
   }, []);
 
-  if (!lazyLoad) {
-    return <div className="performance-optimized">{children}</div>;
-  }
+  // Performance monitoring component (only shown in development)
+  const PerformanceMonitor = () => {
+    if (process.env.NODE_ENV !== 'development' || !metrics) return null;
+
+    return (
+      <div className="fixed bottom-4 right-4 bg-black/80 text-white p-4 rounded-lg text-xs font-mono z-50">
+        <div className="mb-2 font-bold">Performance Metrics</div>
+        <div>FCP: {metrics.fcp.toFixed(0)}ms</div>
+        <div>LCP: {metrics.lcp.toFixed(0)}ms</div>
+        <div>FID: {metrics.fid.toFixed(0)}ms</div>
+        <div>CLS: {metrics.cls.toFixed(3)}</div>
+        <div>TTFB: {metrics.ttfb.toFixed(0)}ms</div>
+      </div>
+    );
+  };
 
   return (
-    <div
-      ref={containerRef}
-      className={`performance-optimized transition-opacity duration-500 ${
-        isVisible ? 'opacity-100' : 'opacity-0'
-      }`}
-      style={{
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-        transition: 'opacity 0.5s ease-out, transform 0.5s ease-out'
-      }}
-    >
-      {isLoaded ? (
-        <div className="animate-fade-in">
-          {children}
-        </div>
-      ) : (
-        <div className="min-h-screen flex items-center justify-center">
-          <div className="text-center">
-            <div className="w-16 h-16 mx-auto mb-4">
-              <div className="w-full h-full border-4 border-cyan-500/20 border-t-cyan-500 rounded-full animate-spin"></div>
-            </div>
-            <div className="text-cyan-400 text-lg font-medium">Loading Zion Tech Group</div>
-            <div className="text-gray-500 text-sm mt-2">Pioneering the Future</div>
-          </div>
-        </div>
-      )}
-    </div>
+    <>
+      <div data-performance-optimizer>
+        {children}
+      </div>
+      <PerformanceMonitor />
+      
+      {/* Global CSS optimizations */}
+      <style jsx global>{`
+        /* Performance optimizations */
+        * {
+          contain: layout style paint;
+        }
+        
+        img {
+          loading: lazy;
+          decoding: async;
+        }
+        
+        /* Reduce motion for users who prefer it */
+        @media (prefers-reduced-motion: reduce) {
+          *, *::before, *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+          }
+        }
+      `}</style>
+    </>
   );
 };
 

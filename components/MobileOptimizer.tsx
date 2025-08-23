@@ -45,6 +45,7 @@ const MobileOptimizer: React.FC<MobileOptimizerProps> = ({
     touchSupport: false
   });
 
+  const [showLocalDebugInfo, setShowLocalDebugInfo] = useState(false);
   const [performanceMetrics, setPerformanceMetrics] = useState({
     loadTime: 0,
     memoryUsage: 0,
@@ -264,10 +265,10 @@ const MobileOptimizer: React.FC<MobileOptimizerProps> = ({
       }
 
       // Add to home screen prompt
-      let deferredPrompt: any;
+      // let deferredPrompt: any;
       window.addEventListener('beforeinstallprompt', (e) => {
         e.preventDefault();
-        deferredPrompt = e;
+        // deferredPrompt = e;
         // Could show custom install prompt here
       });
     }
@@ -302,7 +303,7 @@ const MobileOptimizer: React.FC<MobileOptimizerProps> = ({
       
       {/* Debug Panel */}
       <AnimatePresence>
-        {showDebugInfo && (
+        {showLocalDebugInfo && (
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -313,7 +314,7 @@ const MobileOptimizer: React.FC<MobileOptimizerProps> = ({
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-white font-semibold text-lg">Mobile Debug</h3>
                 <button
-                  onClick={() => setShowDebugInfo(false)}
+                  onClick={() => setShowLocalDebugInfo(false)}
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   ×
@@ -388,7 +389,7 @@ const MobileOptimizer: React.FC<MobileOptimizerProps> = ({
                 </button>
                 
                 <button
-                  onClick={() => setShowDebugInfo(false)}
+                  onClick={() => setShowLocalDebugInfo(false)}
                   className="w-full p-2 bg-gray-700 hover:bg-gray-600 text-white rounded text-sm transition-colors flex items-center justify-center space-x-2"
                 >
                   <Eye className="w-3 h-3" />
@@ -401,11 +402,11 @@ const MobileOptimizer: React.FC<MobileOptimizerProps> = ({
       </AnimatePresence>
 
       {/* Debug Toggle Button */}
-      {!showDebugInfo && (
+      {!showLocalDebugInfo && (
         <motion.button
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          onClick={() => setShowDebugInfo(true)}
+          onClick={() => setShowLocalDebugInfo(true)}
           className="fixed bottom-4 left-4 z-40 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-black"
           aria-label="Show mobile debug panel"
         >
