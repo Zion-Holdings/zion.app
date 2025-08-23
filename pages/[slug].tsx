@@ -270,6 +270,7 @@ export default function DynamicPage({ title, slug, description }: PageProps) {
 			<SEO 
 				title={`${title} | Zion Tech Group`} 
 				description={description} 
+				url={canonical}
 				section={title}
 				tags={[title, 'Services', 'Technology']}
 			/>

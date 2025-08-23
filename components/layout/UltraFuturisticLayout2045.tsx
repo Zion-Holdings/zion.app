@@ -9,7 +9,7 @@ interface UltraFuturisticLayout2045Props {
   description?: string;
   keywords?: string;
   ogImage?: string;
-  canonical?: string;
+  url?: string;
 }
 
 const UltraFuturisticLayout2045: React.FC<UltraFuturisticLayout2045Props> = ({
@@ -18,7 +18,7 @@ const UltraFuturisticLayout2045: React.FC<UltraFuturisticLayout2045Props> = ({
   description = "Discover revolutionary AI consciousness, quantum computing, and space technology solutions that will transform your business and propel humanity into the future.",
   keywords = "AI consciousness, quantum computing, space technology, metaverse, cybersecurity, futuristic technology, 2045, Zion Tech Group",
   ogImage = "https://ziontechgroup.com/og-image-2045.jpg",
-  canonical = "https://ziontechgroup.com"
+  url="https://ziontechgroup.com"
 }) => {
   return (
     <>
@@ -33,7 +33,7 @@ const UltraFuturisticLayout2045: React.FC<UltraFuturisticLayout2045Props> = ({
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={ogImage} />
-        <meta property="og:url" content={canonical} />
+        <meta property="og:url" content={url} />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Zion Tech Group" />
         
@@ -44,7 +44,7 @@ const UltraFuturisticLayout2045: React.FC<UltraFuturisticLayout2045Props> = ({
         <meta name="twitter:image" content={ogImage} />
         
         {/* Canonical */}
-        <link rel="canonical" href={canonical} />
+        <link rel="canonical" href={url} />
         
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />

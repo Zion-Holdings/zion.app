@@ -178,7 +178,7 @@ const Terms: React.FC = () => {
 
   return (
     <>
-      <SEO title="Terms of Service | Zion Tech Group" description="Terms of Service for Zion Tech Group - Learn about our service terms and conditions." />
+      <SEO title="Terms of Service | Zion Tech Group" description="Terms of Service for Zion Tech Group - Learn about our service terms and conditions." url="https://ziontechgroup.com/terms/" />
 
       {/* Hero Section */}
       <section className="relative py-24 bg-gradient-to-br from-cursor-darker via-cursor-dark to-cursor-darker overflow-hidden">

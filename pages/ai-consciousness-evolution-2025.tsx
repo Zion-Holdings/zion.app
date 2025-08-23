@@ -19,6 +19,7 @@ export default function AIConsciousnessEvolution2025() {
 				"Benchmarks and best-practice playbooks]}
 			]}
 			industries={["SaaS", "Healthcare", "Education", "Financial Services"]}
+			url="https://ziontechgroup.com/ai-consciousness-evolution-2025"
 		/>
 	);
 }
