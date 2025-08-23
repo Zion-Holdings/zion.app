@@ -8,8 +8,8 @@ echo "📊 Total cursor branches available: $(git branch -r | grep "origin/curso
 echo "⏰ Started at: $(date)"
 echo "---"
 
-# Configuration - small batch for testing
-BATCH_SIZE=3
+# Configuration
+TEST_BATCH_SIZE=5
 BACKUP_BRANCH="test-backup-$(date +%Y%m%d-%H%M%S)"
 
 # Create a backup branch
@@ -22,12 +22,15 @@ git checkout main
 SUCCESSFUL_MERGES=0
 FAILED_MERGES=0
 CONFLICT_RESOLUTIONS=0
+SKIPPED_BRANCHES=0
 
-# Get first few cursor branches
-BRANCHES=$(git branch -r | grep "origin/cursor/" | sed 's/origin\///' | head -$BATCH_SIZE)
+# Get first few cursor branches for testing
+BRANCHES=$(git branch -r | grep "origin/cursor/" | sed 's/origin\///' | head -$TEST_BATCH_SIZE | sort)
 
-echo "📋 Testing with branches:"
-echo "$BRANCHES"
+echo "🧪 Testing with branches:"
+echo "$BRANCHES" | while read branch; do
+    echo "   - $branch"
+done
 echo "---"
 
 # Function to resolve conflicts in a file
@@ -46,10 +49,10 @@ resolve_conflicts() {
         
         # Strategy: Keep both versions where possible, prefer main branch for critical files
         if [[ "$file" == "package.json" || "$file" == "package-lock.json" ]]; then
-            echo "📦 Critical file detected, keeping main version and merging dependencies..."
+            echo "📦 Critical file detected, keeping main version..."
             sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
             sed -i '/>>>>>>> /d' "$file"
-        elif [[ "$file" == "next.config.js" || "$file" == "tsconfig.json" ]]; then
+        elif [[ "$file" == "next.config.js" || "$file" == "tsconfig.json" || "$file" == "vite.config.ts" ]]; then
             echo "⚙️  Config file detected, keeping main version..."
             sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
             sed -i '/>>>>>>> /d' "$file"
@@ -75,6 +78,11 @@ can_merge_branch() {
     
     # Skip if branch is already merged
     if git branch --merged main | grep -q "$branch"; then
+        return 1
+    fi
+    
+    # Skip if branch is the current branch
+    if [[ "$branch" == "$(git branch --show-current)" ]]; then
         return 1
     fi
     
@@ -130,26 +138,28 @@ merge_branch() {
     fi
 }
 
-# Process each branch in the test batch
+# Main processing loop
 echo "🔄 Starting test batch processing..."
 echo "---"
 
 for branch in $BRANCHES; do
-    echo "📋 Processing test branch: $branch"
+    echo "📋 Processing branch: $branch"
     
     # Check if branch can be merged
     if ! can_merge_branch "$branch"; then
         echo "⏭️  Skipping $branch (already merged or doesn't exist)"
+        SKIPPED_BRANCHES=$((SKIPPED_BRANCHES + 1))
         continue
     fi
     
     # Try to merge the branch
     if merge_branch "$branch"; then
-        echo "✅ Test branch $branch processed successfully"
+        echo "✅ Branch $branch processed successfully"
     else
-        echo "❌ Failed to process test branch $branch"
+        echo "❌ Failed to process branch $branch"
     fi
     
+    # Progress update
     echo "📊 Progress: $SUCCESSFUL_MERGES successful, $FAILED_MERGES failed, $CONFLICT_RESOLUTIONS conflicts resolved"
     echo "---"
 done
@@ -165,18 +175,28 @@ echo "📊 Summary:"
 echo "   ✅ Successful merges: $SUCCESSFUL_MERGES"
 echo "   ❌ Failed merges: $FAILED_MERGES"
 echo "   🔧 Conflicts resolved: $CONFLICT_RESOLUTIONS"
+echo "   ⏭️  Skipped branches: $SKIPPED_BRANCHES"
 echo "   🔒 Backup branch: $BACKUP_BRANCH"
 echo "⏰ Completed at: $(date)"
 
-# Next steps
-echo ""
-echo "🚀 Next steps:"
+# Save test summary to file
+cat > "test-merge-summary-$(date +%Y%m%d-%H%M%S).txt" << EOF
+Test Merge Summary - $(date)
+============================
+Successful merges: $SUCCESSFUL_MERGES
+Failed merges: $FAILED_MERGES
+Conflicts resolved: $CONFLICT_RESOLUTIONS
+Skipped branches: $SKIPPED_BRANCHES
+Backup branch: $BACKUP_BRANCH
+EOF
+
+echo "📄 Test summary saved to test-merge-summary-$(date +%Y%m%d-%H%M%S).txt"
+
 if [ $SUCCESSFUL_MERGES -gt 0 ]; then
-    echo "   ✅ Test successful! You can now run the full incremental script:"
-    echo "      ./incremental-merge-prs.sh"
+    echo ""
+    echo "✅ Test successful! You can now run the full merge script:"
+    echo "   ./merge-all-open-prs.sh"
 else
-    echo "   ⚠️  Test had issues. Review the errors before proceeding."
+    echo ""
+    echo "⚠️  Test had issues. Please review before running the full script."
 fi
-echo "   1. Review the merged changes: git log --oneline -10"
-echo "   2. Test the application"
-echo "   3. Delete the test backup branch when satisfied: git push origin --delete $BACKUP_BRANCH"
