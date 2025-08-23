@@ -51,10 +51,10 @@ const UltraFuturisticFooter2040: React.FC = () => {
       icon: Brain,
       color: 'from-purple-500 to-pink-500',
       services: [
-        { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-platform-2045' },
-        { name: 'Emotional Intelligence AI', href: '/emotional-intelligence-ai-platform-2045' },
-        { name: 'Autonomous Decision Making', href: '/autonomous-decision-making-ai-2045' },
-        { name: 'AI Ethics & Governance', href: '/ai-ethics-governance-platform-2045' }
+        { name: 'AI Consciousness Evolution', href: '/services/ai-consciousness-evolution-platform-2045' },
+        { name: 'Emotional Intelligence AI', href: '/services/emotional-intelligence-ai-platform-2045' },
+        { name: 'Autonomous Decision Making', href: '/services/autonomous-decision-making-ai-2045' },
+        { name: 'AI Ethics & Governance', href: '/services/ai-ethics-governance-platform-2045' }
       ]
     },
     {
@@ -62,10 +62,10 @@ const UltraFuturisticFooter2040: React.FC = () => {
       icon: Atom,
       color: 'from-cyan-500 to-blue-500',
       services: [
-        { name: 'Quantum AI Hybrid Computing', href: '/quantum-ai-hybrid-computing-platform-2045' },
-        { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure-platform-2045' },
-        { name: 'Quantum Neural Networks', href: '/quantum-neural-networks-platform-2045' },
-        { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform-2045' }
+        { name: 'Quantum AI Hybrid Computing', href: '/services/quantum-ai-hybrid-computing-platform-2045' },
+        { name: 'Quantum Cloud Infrastructure', href: '/services/quantum-cloud-infrastructure-platform-2045' },
+        { name: 'Quantum Neural Networks', href: '/services/quantum-neural-networks-platform-2045' },
+        { name: 'Quantum Bio-Computing', href: '/services/quantum-bio-computing-platform-2045' }
       ]
     },
     {
@@ -73,10 +73,10 @@ const UltraFuturisticFooter2040: React.FC = () => {
       icon: Shield,
       color: 'from-red-500 to-orange-500',
       services: [
-        { name: 'Quantum Cybersecurity Intelligence', href: '/quantum-cybersecurity-intelligence-2045' },
-        { name: 'AI Threat Detection', href: '/ai-threat-detection-platform-2045' },
-        { name: 'Zero-Trust Security', href: '/zero-trust-security-platform-2045' },
-        { name: 'Quantum Encryption', href: '/quantum-encryption-platform-2045' }
+        { name: 'Quantum Cybersecurity Intelligence', href: '/services/quantum-cybersecurity-intelligence-2045' },
+        { name: 'AI Threat Detection', href: '/services/ai-threat-detection-platform-2045' },
+        { name: 'Zero-Trust Security', href: '/services/zero-trust-security-platform-2045' },
+        { name: 'Quantum Encryption', href: '/services/quantum-encryption-platform-2045' }
       ]
     },
     {
@@ -84,10 +84,32 @@ const UltraFuturisticFooter2040: React.FC = () => {
       icon: Target,
       color: 'from-emerald-500 to-teal-500',
       services: [
-        { name: 'Autonomous AI Business Intelligence', href: '/autonomous-ai-business-intelligence-2045' },
-        { name: 'AI Content Intelligence', href: '/ai-content-intelligence-platform-2045' },
-        { name: 'Predictive Analytics Platform', href: '/predictive-analytics-platform-2045' },
-        { name: 'Business Process Automation', href: '/business-process-automation-2045' }
+        { name: 'Autonomous AI Business Intelligence', href: '/services/autonomous-ai-business-intelligence-2045' },
+        { name: 'AI Content Intelligence', href: '/services/ai-content-intelligence-platform-2045' },
+        { name: 'Predictive Analytics Platform', href: '/services/predictive-analytics-platform-2045' },
+        { name: 'Business Process Automation', href: '/services/business-process-automation-2045' }
+      ]
+    },
+    {
+      title: 'IT Infrastructure',
+      icon: Cpu,
+      color: 'from-yellow-500 to-orange-500',
+      services: [
+        { name: 'Quantum Cloud Infrastructure', href: '/services/quantum-cloud-infrastructure-platform-2045' },
+        { name: 'Autonomous DevOps Intelligence', href: '/services/autonomous-devops-intelligence-platform-2045' },
+        { name: 'Edge Computing Platform', href: '/services/edge-computing-platform-2045' },
+        { name: 'Quantum Data Centers', href: '/services/quantum-data-centers-2045' }
+      ]
+    },
+    {
+      title: 'Space Technology',
+      icon: Rocket,
+      color: 'from-pink-500 to-red-500',
+      services: [
+        { name: 'Space Resource Intelligence', href: '/services/space-resource-intelligence-platform-2045' },
+        { name: 'Satellite Network Management', href: '/services/satellite-network-management-2045' },
+        { name: 'Planetary Exploration AI', href: '/services/planetary-exploration-ai-2045' },
+        { name: 'Space Mining Operations', href: '/services/space-mining-operations-2045' }
       ]
     }
   ];
