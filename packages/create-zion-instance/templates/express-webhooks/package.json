@@ -1,0 +1,15 @@
+{
+  "name": "zion-express-webhooks",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node index.js",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "body-parser": "^1.20.3",
+    "@zion/sdk": "^0.1.0"
+  }
+}
