@@ -158,6 +158,49 @@
   status = 301
 
 [[redirects]]
+<<<<<<< HEAD
+  from = "/events"
+  to = "/news"
+  status = 301
+
+[[redirects]]
+  from = "/webinars"
+  to = "/resources"
+  status = 301
+
+[[redirects]]
+  from = "/press"
+  to = "/news"
+  status = 301
+
+[[redirects]]
+  from = "/legal"
+  to = "/terms"
+  status = 301
+
+[[redirects]]
+  from = "/api"
+  to = "/api-documentation"
+  status = 301
+
+# Fix missing images referenced by meta tags
+[[redirects]]
+  from = "/og-image.jpg"
+  to = "/og-image.svg"
+  status = 200
+
+[[redirects]]
+  from = "/twitter-image.jpg"
+  to = "/og-image.svg"
+  status = 200
+
+# Ensure trailing slash consistency
+[[redirects]]
+  from = "/:splat"
+  to = "/:splat/"
+  status = 301
+  force = true
+=======
   from = "/ai-autonomous-ecosystem"
   to = "/ai-autonomous-ecosystem-manager"
   status = 301
@@ -226,3 +269,4 @@
   from = "/quantum-encryption-gateway"
   to = "/quantum-internet-security-platform"
   status = 301
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-b433
