@@ -9,7 +9,7 @@ import {
   Calendar, Calculator, GraduationCap,
   Cpu, Cloud, Settings, Monitor, Palette, Network, Layers, Code, Heart, ShoppingCart, Clock, MessageCircle, HelpCircle, Building,
   Zap, Infinity, Eye, Heart as HeartIcon, Code as CodeIcon, Palette as PaletteIcon,
-  BookOpen, FileText, Handshake, Users
+  BookOpen, FileText, Handshake, Users, Wrench, Dna, Car
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -101,6 +101,97 @@ const navigationItems: NavigationItem[] = [
         description: 'Neural interface technology',
         icon: <Brain className="w-4 h-4" />,
         color: 'from-pink-500 to-purple-500'
+      },
+      { 
+        name: 'AI Autonomous Research 2041', 
+        href: '/ai-autonomous-research-2041', 
+        description: 'Autonomous AI research systems',
+        icon: <Brain className="w-4 h-4" />,
+        color: 'from-emerald-500 to-teal-500'
+      },
+      { 
+        name: 'AI Content Personalization 2041', 
+        href: '/ai-content-personalization-2041', 
+        description: 'Conscious content personalization',
+        icon: <Brain className="w-4 h-4" />,
+        color: 'from-pink-500 to-purple-500'
+      },
+      { 
+        name: 'AI Ethics & Governance 2041', 
+        href: '/ai-ethics-governance-2041', 
+        description: 'Ethical AI governance',
+        icon: <Shield className="w-4 h-4" />,
+        color: 'from-green-500 to-blue-500'
+      },
+      { 
+        name: 'AI Autonomous Ecosystem 2041', 
+        href: '/ai-autonomous-ecosystem-2041', 
+        description: 'Autonomous AI ecosystems',
+        icon: <Network className="w-4 h-4" />,
+        color: 'from-indigo-500 to-purple-500'
+      },
+      { 
+        name: 'AI Predictive Maintenance 2041', 
+        href: '/ai-predictive-maintenance-2041', 
+        description: 'Predictive maintenance AI',
+        icon: <Wrench className="w-4 h-4" />,
+        color: 'from-orange-500 to-red-500'
+      },
+      { 
+        name: 'AI Customer Success 2041', 
+        href: '/ai-customer-success-2041', 
+        description: 'Customer success AI',
+        icon: <Users className="w-4 h-4" />,
+        color: 'from-blue-500 to-cyan-500'
+      },
+      { 
+        name: 'AI Sales Intelligence 2041', 
+        href: '/ai-sales-intelligence-2041', 
+        description: 'Sales intelligence AI',
+        icon: <TrendingUp className="w-4 h-4" />,
+        color: 'from-emerald-500 to-teal-500'
+      },
+      { 
+        name: 'Quantum Internet Security 2041', 
+        href: '/quantum-internet-security-2041', 
+        description: 'Quantum internet security',
+        icon: <Shield className="w-4 h-4" />,
+        color: 'from-red-500 to-orange-500'
+      },
+      { 
+        name: 'Quantum Cloud Infrastructure 2041', 
+        href: '/quantum-cloud-infrastructure-2041', 
+        description: 'Quantum cloud infrastructure',
+        icon: <Cloud className="w-4 h-4" />,
+        color: 'from-cyan-500 to-blue-500'
+      },
+      { 
+        name: 'Quantum Bio-Computing 2041', 
+        href: '/quantum-bio-computing-2041', 
+        description: 'Quantum bio-computing',
+        icon: <Dna className="w-4 h-4" />,
+        color: 'from-green-500 to-emerald-500'
+      },
+      { 
+        name: 'Autonomous Vehicle AI 2040', 
+        href: '/autonomous-vehicle-ai-2040', 
+        description: 'Autonomous vehicle AI',
+        icon: <Car className="w-4 h-4" />,
+        color: 'from-blue-500 to-indigo-500'
+      },
+      { 
+        name: 'Quantum Materials Discovery 2040', 
+        href: '/quantum-materials-discovery-2040', 
+        description: 'Quantum materials discovery',
+        icon: <Atom className="w-4 h-4" />,
+        color: 'from-purple-500 to-pink-500'
+      },
+      { 
+        name: 'Quantum Financial Intelligence 2040', 
+        href: '/quantum-financial-intelligence-2040', 
+        description: 'Quantum financial intelligence',
+        icon: <DollarSign className="w-4 h-4" />,
+        color: 'from-yellow-500 to-orange-500'
       }
     ]
   },

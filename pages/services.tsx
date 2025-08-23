@@ -68,9 +68,10 @@ const getServiceCategory = (service: { category?: string; type?: string }) => {
 };
 
 // Helper function to get service pricing
-const getServicePricing = (service: { pricing?: { starter?: string; monthly?: number }; price?: { monthly?: number } }) => {
+const getServicePricing = (service: { pricing?: { starter?: string; monthly?: number | string }; price?: { monthly?: number } | string }) => {
   if (service.pricing?.starter) return service.pricing.starter;
   if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
+  if (typeof service.price === 'string') return service.price;
   if (service.price?.monthly) return `$${service.price.monthly}/month`;
   return 'Contact for pricing';
 };
