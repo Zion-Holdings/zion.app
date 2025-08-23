@@ -6,8 +6,7 @@ import {
   Menu, X, ChevronDown, ChevronRight, Home, Rocket, Target, Building, BookOpen, MessageCircle,
   Brain, Atom, Shield, Cloud, BarChart, Code, Rocket as RocketIcon, Users, Info, Briefcase,
   Heart, DollarSign, Cog, FileText, Calendar, Lightbulb, HelpCircle, Monitor, Zap, Star,
-  Settings, Globe, Lock, Server, Database, Network, Palette, Cpu, Layers, Globe2, Truck,
-  Accessibility
+  Settings, Globe, Lock, Server, Database, Network, Palette, Cpu, Layers, Globe2, Truck, Accessibility
 } from 'lucide-react';
 
 interface SidebarItem {
