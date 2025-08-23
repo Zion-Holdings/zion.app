@@ -16,41 +16,13 @@ import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
 
-interface Service {
-  id: string;
-  name: string;
-  tagline: string;
-  price: string | { monthly: number; yearly: number; currency: string; trialDays: number; setupTime: string };
-  period?: string;
-  description: string;
-  features: string[];
-  popular: boolean;
-  icon: string;
-  color: string;
-  textColor?: string;
-  link: string;
-  category: string;
-  realService?: boolean;
-  technology?: string[];
-  integrations?: string[];
-  useCases?: string[];
-  roi?: string;
-  competitors?: string[];
-  marketSize?: string;
-  growthRate?: string;
-  contactInfo?: {
-    mobile: string;
-    email: string;
-    address: string;
-    website: string;
-  };
-  realImplementation?: boolean;
-  implementationDetails?: string;
-  launchDate?: string;
-  customers: number;
-  rating: number;
-  reviews: number;
-}
+// Union type for all service types
+type Service = 
+  | typeof innovative2040FuturisticServices[0]
+  | typeof innovative2040ITServices[0]
+  | typeof realMicroSaasServices[0]
+  | typeof innovativeAIServices[0]
+  | typeof enterpriseITServices[0];
 
 const Innovative2040FuturisticServicesShowcase: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -83,8 +55,8 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
     .sort((a, b) => {
       switch (sortBy) {
         case 'price': {
-          const aPrice = typeof a.price === 'string' ? parseFloat(a.price.replace(/[^0-9.]/g, '')) : a.price.monthly;
-          const bPrice = typeof b.price === 'string' ? parseFloat(b.price.replace(/[^0-9.]/g, '')) : b.price.monthly;
+          const aPrice = typeof a.price === 'string' ? parseFloat(a.price.replace(/[^0-9.]/g, '')) : 0;
+          const bPrice = typeof b.price === 'string' ? parseFloat(b.price.replace(/[^0-9.]/g, '')) : 0;
           return aPrice - bPrice;
         }
         case 'popularity':
@@ -291,16 +263,16 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                     variants={fadeInUp}
                     className="group relative bg-gray-800/50 border border-gray-700/50 rounded-2xl p-6 hover:border-cyan-500/50 hover:bg-gray-800/70 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/10"
                   >
-                    {/* Popular Badge */}
-                    {service.popular && (
+                    {/* Rating Badge */}
+                    {service.rating >= 4.5 && (
                       <div className="absolute -top-3 -right-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                        Popular
+                        Top Rated
                       </div>
                     )}
 
                     {/* Service Icon */}
-                    <div className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                      {service.icon}
+                    <div className="w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                      <Brain className="w-8 h-8 text-white" />
                     </div>
 
                     {/* Service Info */}
@@ -314,9 +286,9 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                     {/* Price */}
                     <div className="flex items-center justify-between mb-4">
                       <div className="text-2xl font-bold text-cyan-400">
-                        {typeof service.price === 'string' ? service.price : `$${service.price.monthly}/${service.price.currency}`}
+                        {typeof service.price === 'string' ? service.price : 'Contact for pricing'}
                         <span className="text-sm text-gray-400">
-                          {typeof service.price === 'string' ? service.period : '/month'}
+                          /month
                         </span>
                       </div>
                       <div className="flex items-center space-x-1 text-yellow-400">
@@ -389,8 +361,8 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                   >
                     <div className="flex items-start space-x-6">
                       {/* Service Icon */}
-                      <div className={`w-20 h-20 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center text-4xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
-                        {service.icon}
+                      <div className="w-20 h-20 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-2xl flex items-center justify-center text-4xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+                        <Brain className="w-10 h-10 text-white" />
                       </div>
 
                       {/* Service Details */}
@@ -407,18 +379,18 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                               <span className="inline-block px-3 py-1 bg-gray-700 text-cyan-400 text-sm font-medium rounded-full">
                                 {service.category}
                               </span>
-                              {service.popular && (
+                              {service.rating >= 4.5 && (
                                 <span className="inline-block px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-sm font-bold rounded-full">
-                                  Popular
+                                  Top Rated
                                 </span>
                               )}
                             </div>
                           </div>
                           <div className="text-right">
                                                        <div className="text-3xl font-bold text-cyan-400 mb-1">
-                             {typeof service.price === 'string' ? service.price : `$${service.price.monthly}/${service.price.currency}`}
+                             {typeof service.price === 'string' ? service.price : 'Contact for pricing'}
                              <span className="text-lg text-gray-400">
-                               {typeof service.price === 'string' ? service.period : '/month'}
+                               /month
                              </span>
                            </div>
                             <div className="flex items-center justify-end space-x-1 text-yellow-400 mb-2">
