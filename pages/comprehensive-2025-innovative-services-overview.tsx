@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Search, Grid, List, Filter,
-  Brain, Atom, Shield, Target, Rocket,
-  ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
-  Building, Cpu, Zap, Globe, Lock, ChartBar, Workflow,
-  Star, Users, TrendingUp, Award, Clock, DollarSign, Phone, Mail, MapPin
+  Search, Grid, List, Filter, Star, Users, TrendingUp, Award,
+  Brain, Atom, Shield, Target, Rocket, ArrowRight, Check, 
+  Cpu, Zap, Globe, Lock, ChartBar, Workflow, Phone, Mail, MapPin,
+  DollarSign, Clock, Globe2, ShieldCheck, Database, Cloud, 
+  Network, Server, Monitor, Smartphone, Laptop, ServerCog
 } from 'lucide-react';
 
-// Import our new innovative service suites
+// Import all our innovative service suites
 import { innovativeAIAutomationSuite } from '../data/2025-innovative-ai-automation-suite';
 import { innovativeITInfrastructureSuite } from '../data/2025-innovative-it-infrastructure-suite';
 import { innovativeCybersecuritySuite } from '../data/2025-innovative-cybersecurity-suite';
@@ -25,27 +25,94 @@ const allServices = [
   ...innovativeBusinessAutomationSuite
 ];
 
-// Service categories
-const categories = [
-  'All Services',
-  'AI & Automation',
-  'IT Infrastructure',
-  'Cybersecurity',
-  'Data Analytics',
-  'Business Automation'
+// Service categories with detailed information
+const serviceCategories = [
+  {
+    id: 'ai-automation',
+    name: 'AI & Automation',
+    description: 'Intelligent automation solutions powered by artificial intelligence',
+    icon: Brain,
+    color: 'from-blue-500 to-indigo-600',
+    services: innovativeAIAutomationSuite,
+    benefits: [
+      'Reduce manual tasks by 80%',
+      'Improve accuracy by 95%',
+      'Scale operations without headcount increase',
+      'Enable 24/7 business operations'
+    ]
+  },
+  {
+    id: 'it-infrastructure',
+    name: 'IT Infrastructure',
+    description: 'Enterprise-grade infrastructure and cloud solutions',
+    icon: Cpu,
+    color: 'from-green-500 to-emerald-600',
+    services: innovativeITInfrastructureSuite,
+    benefits: [
+      'Future-proof quantum-resistant security',
+      'Reduce deployment failures by 80%',
+      'Lower infrastructure costs by 25-35%',
+      'Achieve 99.99% uptime guarantee'
+    ]
+  },
+  {
+    id: 'cybersecurity',
+    name: 'Cybersecurity',
+    description: 'Advanced security solutions with AI-powered threat detection',
+    icon: Shield,
+    color: 'from-red-500 to-pink-600',
+    services: innovativeCybersecuritySuite,
+    benefits: [
+      'Detect threats 10x faster',
+      'Reduce security breaches by 90%',
+      'Automate 70% of security operations',
+      'Ensure comprehensive compliance'
+    ]
+  },
+  {
+    id: 'data-analytics',
+    name: 'Data Analytics',
+    description: 'Intelligent data processing and business intelligence',
+    icon: ChartBar,
+    color: 'from-purple-500 to-pink-600',
+    services: innovativeDataAnalyticsSuite,
+    benefits: [
+      'Reduce forecasting errors by 60%',
+      'Process millions of events per second',
+      'Improve data quality by 80%',
+      'Enable real-time decision making'
+    ]
+  },
+  {
+    id: 'business-automation',
+    name: 'Business Automation',
+    description: 'Streamline business processes with intelligent automation',
+    icon: Workflow,
+    color: 'from-yellow-500 to-orange-600',
+    services: innovativeBusinessAutomationSuite,
+    benefits: [
+      'Automate 80% of repetitive tasks',
+      'Optimize workflow efficiency by 40%',
+      'Generate reports 10x faster',
+      'Improve team productivity by 40%'
+    ]
+  }
 ];
 
-const Innovative2025ServicesShowcase: React.FC = () => {
+const Comprehensive2025InnovativeServicesOverview: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('All Services');
+  const [selectedCategory, setSelectedCategory] = useState('all');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [filteredServices, setFilteredServices] = useState(allServices);
 
   useEffect(() => {
     let filtered = allServices;
     
-    if (selectedCategory !== 'All Services') {
-      filtered = filtered.filter(service => service.category === selectedCategory);
+    if (selectedCategory !== 'all') {
+      filtered = filtered.filter(service => {
+        const category = serviceCategories.find(cat => cat.id === selectedCategory);
+        return category && category.services.includes(service);
+      });
     }
     
     if (searchTerm) {
@@ -60,33 +127,21 @@ const Innovative2025ServicesShowcase: React.FC = () => {
   }, [searchTerm, selectedCategory]);
 
   const getCategoryIcon = (category: string) => {
-    switch (category) {
-      case 'AI & Automation': return Brain;
-      case 'IT Infrastructure': return Cpu;
-      case 'Cybersecurity': return Shield;
-      case 'Data Analytics': return ChartBar;
-      case 'Business Automation': return Workflow;
-      default: return Rocket;
-    }
+    const cat = serviceCategories.find(c => c.id === category);
+    return cat ? cat.icon : Rocket;
   };
 
   const getCategoryColor = (category: string) => {
-    switch (category) {
-      case 'AI & Automation': return 'from-blue-500 to-indigo-600';
-      case 'IT Infrastructure': return 'from-green-500 to-emerald-600';
-      case 'Cybersecurity': return 'from-red-500 to-pink-600';
-      case 'Data Analytics': return 'from-purple-500 to-pink-600';
-      case 'Business Automation': return 'from-yellow-500 to-orange-600';
-      default: return 'from-gray-500 to-gray-600';
-    }
+    const cat = serviceCategories.find(c => c.id === category);
+    return cat ? cat.color : 'from-gray-500 to-gray-600';
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
       <SEO 
-        title="Innovative 2025 Services Showcase - Zion Tech Group"
-        description="Discover our cutting-edge micro SAAS services, IT solutions, and AI innovations. From AI automation to quantum security, we deliver real, market-ready solutions."
-        keywords={["AI automation", "IT infrastructure", "cybersecurity", "data analytics", "business automation", "micro SAAS", "Zion Tech Group"]}
+        title="Comprehensive 2025 Innovative Services Overview - Zion Tech Group"
+        description="Explore our complete portfolio of cutting-edge micro SAAS services, IT solutions, and AI innovations. From AI automation to quantum security, discover how Zion Tech Group transforms businesses."
+        keywords={["AI automation", "IT infrastructure", "cybersecurity", "data analytics", "business automation", "micro SAAS", "Zion Tech Group", "innovative services 2025"]}
       />
 
       {/* Hero Section */}
@@ -99,21 +154,21 @@ const Innovative2025ServicesShowcase: React.FC = () => {
           >
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
               <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                Innovative 2025
+                Comprehensive 2025
               </span>
               <br />
               <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                Services Showcase
+                Innovative Services Overview
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-              Discover our cutting-edge micro SAAS services, IT solutions, and AI innovations. 
-              From AI automation to quantum security, we deliver real, market-ready solutions 
-              that transform businesses and drive growth.
+              Discover our complete portfolio of cutting-edge micro SAAS services, IT solutions, and AI innovations. 
+              From AI automation to quantum security, we deliver real, market-ready solutions that transform businesses 
+              and drive measurable growth across all industries.
             </p>
             
             {/* Contact Information */}
-            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 mb-8 max-w-2xl mx-auto">
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 mb-8 max-w-3xl mx-auto">
               <h3 className="text-2xl font-bold text-white mb-4">Contact Zion Tech Group</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
                 <div className="flex flex-col items-center">
@@ -140,17 +195,76 @@ const Innovative2025ServicesShowcase: React.FC = () => {
                 whileTap={{ scale: 0.95 }}
                 className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-2xl transition-all duration-300"
               >
-                Explore Services
+                Explore All Services
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-gradient-to-r from-purple-500 to-pink-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-2xl transition-all duration-300"
               >
-                Get Started Today
+                Schedule Consultation
               </motion.button>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Service Categories Overview */}
+      <section className="px-4 sm:px-6 lg:px-8 mb-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Our <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Service Categories</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Comprehensive solutions across five key technology domains, each designed to address 
+              specific business challenges and drive measurable results.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {serviceCategories.map((category, index) => (
+              <motion.div
+                key={category.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-2xl p-6 hover:shadow-2xl transition-all duration-500"
+              >
+                <div className={`w-16 h-16 bg-gradient-to-r ${category.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <category.icon className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-white text-center mb-3">{category.name}</h3>
+                <p className="text-gray-300 text-center mb-6">{category.description}</p>
+                
+                <div className="space-y-3 mb-6">
+                  <h4 className="text-white font-semibold text-sm">Key Benefits:</h4>
+                  <ul className="space-y-2">
+                    {category.benefits.map((benefit, idx) => (
+                      <li key={idx} className="flex items-center text-gray-300 text-sm">
+                        <Check className="w-3 h-3 text-green-400 mr-2 flex-shrink-0" />
+                        {benefit}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="text-center">
+                  <p className="text-gray-400 text-sm mb-3">
+                    {category.services.length} innovative services available
+                  </p>
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => setSelectedCategory(category.id)}
+                    className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300"
+                  >
+                    View Services
+                  </motion.button>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -173,17 +287,27 @@ const Innovative2025ServicesShowcase: React.FC = () => {
 
               {/* Category Filter */}
               <div className="flex flex-wrap gap-2">
-                {categories.map((category) => (
+                <button
+                  onClick={() => setSelectedCategory('all')}
+                  className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
+                    selectedCategory === 'all'
+                      ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg'
+                      : 'bg-white/20 text-gray-300 hover:bg-white/30'
+                  }`}
+                >
+                  All Categories
+                </button>
+                {serviceCategories.map((category) => (
                   <button
-                    key={category}
-                    onClick={() => setSelectedCategory(category)}
+                    key={category.id}
+                    onClick={() => setSelectedCategory(category.id)}
                     className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 ${
-                      selectedCategory === category
+                      selectedCategory === category.id
                         ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg'
                         : 'bg-white/20 text-gray-300 hover:bg-white/30'
                     }`}
                   >
-                    {category}
+                    {category.name}
                   </button>
                 ))}
               </div>
@@ -217,7 +341,7 @@ const Innovative2025ServicesShowcase: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           <div className="mb-8">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              {selectedCategory === 'All Services' ? 'All Innovative Services' : `${selectedCategory} Services`}
+              {selectedCategory === 'all' ? 'All Innovative Services' : `${serviceCategories.find(c => c.id === selectedCategory)?.name} Services`}
             </h2>
             <p className="text-gray-300 text-lg">
               {filteredServices.length} cutting-edge services available
@@ -525,4 +649,4 @@ const Innovative2025ServicesShowcase: React.FC = () => {
   );
 };
 
-export default Innovative2025ServicesShowcase;
+export default Comprehensive2025InnovativeServicesOverview;
