@@ -120,6 +120,18 @@ const AccessibilityEnhancer: React.FC = () => {
 
   // Track focus changes
   useEffect(() => {
+<<<<<<< HEAD
+    const handleFocusChange = (event: Event) => {
+      const target = event.target as HTMLElement;
+      if (target && target !== currentFocus) {
+        setCurrentFocus(target);
+        setFocusHistory(prev => [target, ...prev.slice(0, 9)]);
+        
+        // Add focus indicator
+        if (settings.focusIndicator) {
+          target.style.outline = '3px solid #0066cc';
+          target.style.outlineOffset = '2px';
+=======
     const saved = localStorage.getItem('accessibility-settings');
     if (saved) {
       try {
@@ -173,10 +185,29 @@ const AccessibilityEnhancer: React.FC = () => {
       images.forEach(img => {
         if (!img.alt) {
           issues.push(`Image missing alt text: ${img.src}`);
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-a975
         }
       }
     };
 
+<<<<<<< HEAD
+    const handleBlur = (event: Event) => {
+      const target = event.target as HTMLElement;
+      if (target) {
+        target.style.outline = '';
+        target.style.outlineOffset = '';
+      }
+    };
+
+    document.addEventListener('focusin', handleFocusChange);
+    document.addEventListener('focusout', handleBlur);
+
+    return () => {
+      document.removeEventListener('focusin', handleFocusChange);
+      document.removeEventListener('focusout', handleBlur);
+    };
+  }, [currentFocus, settings.focusIndicator]);
+=======
   // Set up event listeners
   useEffect(() => {
     const handleFocusChangeWrapper = (e: Event) => {
@@ -195,6 +226,7 @@ const AccessibilityEnhancer: React.FC = () => {
       document.removeEventListener('keydown', handleKeyDown);
     };
   }, [handleKeyDown]);
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-a975
 
   // Highlighter effect
   useEffect(() => {
