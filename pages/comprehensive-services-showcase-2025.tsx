@@ -8,26 +8,72 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 
-const ComprehensiveServicesShowcase: React.FC = () => {
-  const serviceCategories = [
-    {
-      category: "AI Consciousness & Evolution",
-      icon: <Brain className="w-8 h-8" />,
-      color: "from-purple-500 to-pink-600",
-      services: [
-        {
-          name: "AI Consciousness Evolution Platform 2045",
-          description: "Revolutionary platform for developing conscious AI systems",
-          path: "/ai-consciousness-evolution-2045",
-          features: ["Consciousness Mapping", "Ethical AI Development", "Neural Evolution"]
-        },
-        {
-          name: "Quantum AI Cognitive Platform 2045",
-          description: "Quantum-powered cognitive computing solutions",
-          path: "/quantum-ai-cognitive-2045",
-          features: ["Quantum Cognition", "Neural Networks", "Advanced Analytics"]
-        }
-      ]
+// Import all service data
+import { innovativeRealMicroSaasServices2025 } from '../data/2025-innovative-real-micro-saas-services';
+import { advancedFuturisticMicroSaasServices2025 } from '../data/2025-advanced-futuristic-micro-saas';
+import { cuttingEdgeAIInnovations2025 } from '../data/2025-cutting-edge-ai-innovations';
+import { innovativeRealMicroSaasServices2025 as innovativeServices } from '../data/2025-innovative-real-micro-saas-services';
+import { innovativeAIServicesEnhanced2025 } from '../data/2025-innovative-ai-services-enhanced';
+import { innovativeITServicesEnhanced2025 } from '../data/2025-innovative-it-services-enhanced';
+import { emergingTechServicesEnhanced2025 } from '../data/2025-emerging-tech-services-enhanced';
+import { advancedAIAutomationServices } from '../data/2025-advanced-ai-automation-services';
+import { advancedITInfrastructureServices2025 } from '../data/2025-advanced-it-infrastructure-services';
+import { innovativeBusinessSolutions2025 } from '../data/2025-innovative-business-solutions';
+import { ultimateInnovativeServices2025 } from '../data/2025-ultimate-innovative-services';
+
+const contactInfo = {
+  mobile: '+1 302 464 0950',
+  email: 'kleber@ziontechgroup.com',
+  address: '364 E Main St STE 1008 Middletown DE 19709',
+  website: 'https://ziontechgroup.com'
+};
+
+const ComprehensiveServicesShowcase2025: React.FC = () => {
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [sortBy, setSortBy] = useState('popularity');
+  const [viewMode, setViewMode] = useState('grid');
+  const [selectedService, setSelectedService] = useState<any>(null);
+
+  // Combine all services
+  const allServices = [
+    ...innovativeRealMicroSaasServices2025,
+    ...advancedFuturisticMicroSaasServices2025,
+    ...cuttingEdgeAIInnovations2025,
+    ...innovativeServices,
+    ...innovativeAIServicesEnhanced2025,
+    ...innovativeITServicesEnhanced2025,
+    ...emergingTechServicesEnhanced2025,
+    ...advancedAIAutomationServices,
+    ...advancedITInfrastructureServices2025,
+    ...innovativeBusinessSolutions2025
+  ];
+
+  // Enhanced categories with icons and descriptions
+  const categories = [
+    { 
+      id: 'all', 
+      name: 'All Services', 
+      icon: <Globe className="w-6 h-6" />, 
+      count: allServices.length,
+      description: 'Complete portfolio of all technology services',
+      color: 'from-cyan-500 to-blue-500'
+    },
+    { 
+      id: 'ai', 
+      name: 'AI & Machine Learning', 
+      icon: <Brain className="w-6 h-6" />, 
+      count: allServices.filter(s => s.category.includes('AI') || s.category.includes('Machine Learning')).length,
+      description: 'Revolutionary AI and machine learning solutions',
+      color: 'from-purple-500 to-pink-500'
+    },
+    { 
+      id: 'quantum', 
+      name: 'Quantum & Emerging Tech', 
+      icon: <Atom className="w-6 h-6" />, 
+      count: allServices.filter(s => s.category.includes('Quantum') || s.category.includes('Emerging')).length,
+      description: 'Next-generation quantum and emerging technologies',
+      color: 'from-green-500 to-emerald-500'
     },
     {
       category: "Cybersecurity & Defense",
