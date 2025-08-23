@@ -191,6 +191,7 @@ const Homepage2040: React.FC = () => {
                   key={stat.label}
                   className="text-center p-8 group hover:bg-white/5 rounded-2xl transition-all duration-300"
                   initial={{ opacity: 0, y: 20 }}
+
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
                   viewport={{ once: true }}
