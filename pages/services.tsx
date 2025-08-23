@@ -10,11 +10,11 @@ import {
 
 // Import our new 2025 service data
 import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
-import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
+import { innovative2025ITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
 import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
 import { cuttingEdgeAIServices2025 } from '../data/2025-cutting-edge-ai-services';
 import { realEnterpriseMicroSaas2025 } from '../data/2025-real-enterprise-micro-saas';
-import { innovativeAIAutonomousServices2025 } from '../data/2025-innovative-ai-autonomous-services';
+import { innovative2025AIAutonomousServices } from '../data/2025-innovative-ai-autonomous-services';
 
 // Import our new service data
 import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
@@ -47,7 +47,6 @@ import { ultimate2025AIServicesExpansion } from '../data/2025-ultimate-ai-servic
 
 // Import our new 2025 Q4 innovative services
 import { innovative2025Q4NewServices } from '../data/innovative-2025-q4-new-services';
-import { advancedITInfrastructureServices2025 } from '../data/advanced-it-infrastructure-services-2025';
 
 
 // Import our new innovative 2040 services
@@ -61,7 +60,7 @@ import { cuttingEdgeITInfrastructureServices } from '../data/2025-cutting-edge-i
 // Import our new 2025 cutting-edge futuristic services
 import { cuttingEdgeFuturisticServices } from '../data/2025-cutting-edge-futuristic-services';
 import { advancedAIAutomationServices } from '../data/2026-advanced-ai-automation-services';
-import { advancedITInfrastructureServices } from '../data/2025-advanced-it-infrastructure-services';
+import { advancedITInfrastructureServices2025 } from '../data/2025-advanced-it-infrastructure-services';
 
 // Import our new innovative services expansion v2
 import { innovativeMicroSaasExpansionV2 } from '../data/2025-innovative-micro-saas-expansion-v2';
@@ -112,11 +111,11 @@ const getServiceDescription = (service: any) => {
 const allServices = [
   // Our new 2025 services
   ...advancedAIAutomationServices2025,
-  ...innovativeITInfrastructureServices2025,
+      ...innovative2025ITInfrastructureServices,
   ...innovativeMicroSaasSolutions2025,
   ...cuttingEdgeAIServices2025,
   ...realEnterpriseMicroSaas2025,
-  ...innovativeAIAutonomousServices2025,
+      ...innovative2025AIAutonomousServices,
   
   // Our new innovative services expansion v2
   ...innovativeMicroSaasExpansionV2,
@@ -131,7 +130,7 @@ const allServices = [
   ...enterpriseITServices,
   ...cuttingEdgeFuturisticServices,
   ...advancedAIAutomationServices,
-  ...advancedITInfrastructureServices,
+      ...advancedITInfrastructureServices2025,
   ...emergingTechServices,
   ...newRealServices,
   ...realOperationalServices,
