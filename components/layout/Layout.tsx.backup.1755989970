@@ -204,8 +204,13 @@ export default function Layout({
         {/* Top Contact Bar */}
         <TopContactBar />
         
+<<<<<<< HEAD
+        {/* Enhanced Navigation */}
+        <EnhancedNavigation2025 />
+=======
         {/* Navigation */}
         <UltraFuturisticNavigation2036 />
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-ff3f
         
         {/* Enhanced Sidebar */}
         <EnhancedSidebar2025 isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />

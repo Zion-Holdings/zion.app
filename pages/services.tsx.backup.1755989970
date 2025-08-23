@@ -7,7 +7,11 @@ import {
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
+<<<<<<< HEAD
   Building, Cpu, Database, Cloud, Lock, ShoppingCart, Lightbulb
+=======
+  Building, Lock, Database
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-ff3f
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -73,6 +77,13 @@ import { innovative2038ConsultingServices } from '../data/innovative-2038-consul
 import { innovative2037MicroSaasServices } from '../data/innovative-2037-micro-saas-services';
 import { innovative2037ITServices } from '../data/innovative-2037-it-services';
 import { innovative2037AIServices } from '../data/innovative-2037-ai-services';
+
+// Import 2026 innovative services
+import { innovative2026AIServicesAdditions } from '../data/innovative-2026-ai-services-additions';
+import { innovative2026ITServicesAdditions } from '../data/innovative-2026-it-services-additions';
+import { innovative2026MicroSaasAdditions } from '../data/innovative-2026-micro-saas-additions';
+import { innovative2026IndustryAIServices } from '../data/innovative-2026-industry-ai-services';
+import { innovative2026EmergingTechServices } from '../data/innovative-2026-emerging-tech-services';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -141,21 +152,18 @@ const allServices = [
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
 <<<<<<< HEAD
-  ...innovative2037MicroSaasServices,
-  ...innovative2037ITServices,
-  ...innovative2037AIServices,
-  // 2038 innovative services
-  ...innovative2038AIServices,
-  ...innovative2038ITServices,
-  ...innovative2038MicroSaasServices,
-  ...innovative2038IndustryServices,
-  ...innovative2038ConsultingServices
-=======
   // New innovative 2037 services
   ...innovative2037MicroSaasServices,
   ...innovative2037ITServices,
   ...innovative2037AIServices
->>>>>>> origin/cursor/add-and-advertise-new-services-then-build-f35d
+=======
+  // 2026 Innovative Services
+  ...innovative2026AIServicesAdditions,
+  ...innovative2026ITServicesAdditions,
+  ...innovative2026MicroSaasAdditions,
+  ...innovative2026IndustryAIServices,
+  ...innovative2026EmergingTechServices
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-ff3f
 ];
 
 const categories = [
@@ -230,6 +238,7 @@ const categories = [
     description: 'Learning and research platforms'
   },
   {
+<<<<<<< HEAD
     id: 'manufacturing-industry',
     name: 'Manufacturing & Industry',
     icon: <Building className="w-6 h-6" />,
@@ -249,6 +258,27 @@ const categories = [
     icon: <Lightbulb className="w-6 h-6" />,
     color: 'from-indigo-500 to-purple-500',
     description: 'Strategic consulting and advisory services'
+=======
+    id: 'cybersecurity',
+    name: 'Cybersecurity & Security',
+    icon: <Shield className="w-6 h-6" />,
+    color: 'from-red-500 to-orange-500',
+    description: 'Advanced security and compliance solutions'
+  },
+  {
+    id: 'blockchain-defi',
+    name: 'Blockchain & DeFi',
+    icon: <Database className="w-6 h-6" />,
+    color: 'from-yellow-500 to-green-500',
+    description: 'Blockchain and decentralized finance solutions'
+  },
+  {
+    id: 'biometric-identity',
+    name: 'Biometric & Identity',
+    icon: <Lock className="w-6 h-6" />,
+    color: 'from-purple-500 to-indigo-500',
+    description: 'Biometric authentication and identity management'
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-ff3f
   }
 ];
 

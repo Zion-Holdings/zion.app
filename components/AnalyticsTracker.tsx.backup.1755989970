@@ -1,6 +1,13 @@
 import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 
+<<<<<<< HEAD
+// Extend Window interface for Google Analytics
+declare global {
+  interface Window {
+    dataLayer: any[];
+    gtag: (...args: any[]) => void;
+=======
 const AnalyticsTracker: React.FC = () => {
   const router = useRouter();
 
@@ -300,6 +307,7 @@ declare global {
       action: string,
       params?: Record<string, unknown>
     ) => void;
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-ff3f
   }
 }
 
