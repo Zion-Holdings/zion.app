@@ -16,10 +16,10 @@ export default function AiManufacturingOptimization() {
 				"Quality control automation",
 				"Energy consumption optimization",
 				"Supply chain and logistics insights",
-				"Factory analytics dashboards"
+				"Factory analytics dashboards]}
 			]}
 			industries={["Manufacturing", "Industrial", "Automotive", "Electronics"]}
-			canonical="https://ziontechgroup.com/ai-manufacturing-optimization"
+			canonical="https://ziontechgroup.com/ai-manufacturing-optimization]}
 		/>
 	);
 }

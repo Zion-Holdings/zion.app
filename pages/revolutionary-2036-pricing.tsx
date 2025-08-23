@@ -189,7 +189,7 @@ const Revolutionary2036Pricing: React.FC = () => {
                     <h3 className="text-2xl font-bold text-white mb-2">{tier.name}</h3>
                     <p className="text-gray-400 mb-6">{tier.description}</p>
                     <div className="text-4xl font-bold text-white mb-2">
-                      {tier.price[selectedPeriod]}
+                      {tier.price[selectedPeriod"
                       <span className="text-gray-400 text-lg">
                         {selectedPeriod === 'monthly' ? '/month' : '/year'}
                       </span>

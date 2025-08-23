@@ -27,7 +27,7 @@ const GetStartedPage: React.FC = () => {
         'Define AI implementation goals',
         'Receive customized AI roadmap',
         'Begin AI platform deployment'
-      ]
+      "
     },
     {
       id: 'quantum',
@@ -41,7 +41,7 @@ const GetStartedPage: React.FC = () => {
         'Quantum infrastructure planning',
         'Quantum algorithm development',
         'Quantum solution deployment'
-      ]
+      "
     },
     {
       id: 'space',
@@ -55,7 +55,7 @@ const GetStartedPage: React.FC = () => {
         'Satellite system planning',
         'Space data integration',
         'Space platform deployment'
-      ]
+      "
     },
     {
       id: 'enterprise',
@@ -69,7 +69,7 @@ const GetStartedPage: React.FC = () => {
         'Technology stack modernization',
         'Security implementation',
         'Full deployment and training'
-      ]
+      "
     }
   ];
 
@@ -84,7 +84,7 @@ const GetStartedPage: React.FC = () => {
         'Book consultation call',
         'Prepare questions and goals',
         'Review current technology stack'
-      ]
+      "
     },
     {
       step: 2,
@@ -96,7 +96,7 @@ const GetStartedPage: React.FC = () => {
         'Infrastructure review',
         'Requirements gathering',
         'Custom roadmap creation'
-      ]
+      "
     },
     {
       step: 3,
@@ -108,7 +108,7 @@ const GetStartedPage: React.FC = () => {
         'Architecture design',
         'Technology selection',
         'Integration planning'
-      ]
+      "
     },
     {
       step: 4,
@@ -120,7 +120,7 @@ const GetStartedPage: React.FC = () => {
         'Phased deployment',
         'Testing and validation',
         'Performance optimization'
-      ]
+      "
     },
     {
       step: 5,
@@ -132,7 +132,7 @@ const GetStartedPage: React.FC = () => {
         'Team training sessions',
         'Documentation delivery',
         'Ongoing support setup'
-      ]
+      "
     }
   ];
 

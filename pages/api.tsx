@@ -28,7 +28,7 @@ const apiEndpoints = [
     example: `curl -X POST "https://api.ziontechgroup.com/error-reporting" \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -H "Content-Type: application/json" \\
-  -d '{"level": "error", "message": "Database connection failed"}'`
+  -d '{"level": "error, message": "Database connection failed"}'`
   },
   {
     method: 'GET',
@@ -53,7 +53,7 @@ const apiEndpoints = [
     ],
     example: `curl -X POST "https://api.ziontechgroup.com/contact" \\
   -H "Content-Type: application/json" \\
-  -d '{"name": "John Doe", "email": "john@example.com", "message": "Hello!"}'`
+  -d '{"name": "John Doe, email": "john@example.com, message": "Hello!"}'`
   }
 ];
 
@@ -78,7 +78,6 @@ analytics = client.analytics.get('30d')`
     name: 'Go',
     installation: 'go get github.com/ziontechgroup/go-api-client',
     example: `import "github.com/ziontechgroup/go-api-client"
-
 client := zionapi.NewClient("YOUR_API_KEY")
 analytics, err := client.Analytics.Get("30d")`
   }

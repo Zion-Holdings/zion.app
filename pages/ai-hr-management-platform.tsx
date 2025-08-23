@@ -18,10 +18,10 @@ export default function AiHrManagementPlatform() {
 				"Compensation banding and equity benchmarking",
 				"HRIS and ATS integrations (Workday, BambooHR, Greenhouse)",
 				"Policy Q&A and employee knowledge base",
-				"Headcount planning and attrition alerts"
+				"Headcount planning and attrition alerts]}
 			]}
 			industries={["SMB", "Mid-Market", "Enterprise"]}
-			canonical="https://ziontechgroup.com/ai-hr-management-platform"
+			canonical="https://ziontechgroup.com/ai-hr-management-platform]}
 		/>
 	);
 }

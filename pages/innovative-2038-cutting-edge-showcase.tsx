@@ -71,7 +71,7 @@ const Innovative2038CuttingEdgeShowcase: React.FC = () => {
       <SEO 
         title="Innovative 2038 Cutting-Edge Services Showcase | Zion Tech Group"
         description="Discover our revolutionary 2038 cutting-edge services including AI holographic meetings, quantum drug discovery, autonomous legal assistance, and more. Transform your business with next-generation technology."
-        keywords={[
+        keywords="
           '2038 services',
           'cutting-edge technology',
           'AI holographic',
@@ -79,7 +79,7 @@ const Innovative2038CuttingEdgeShowcase: React.FC = () => {
           'autonomous systems',
           'space technology',
           'Zion Tech Group'
-        ]}
+        "
       />
       
       <main className="relative z-10 pt-24 lg:pt-28">

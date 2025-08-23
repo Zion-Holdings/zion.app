@@ -16,10 +16,10 @@ export default function AiLegalDocumentAnalysis() {
 				"Key clause extraction and suggestions",
 				"Compliance and policy checks",
 				"Playbooks and negotiation aids",
-				"Audit trails and redlines"
+				"Audit trails and redlines]}
 			]}
 			industries={["Legal", "Enterprise", "Procurement", "Compliance"]}
-			canonical="https://ziontechgroup.com/ai-legal-document-analysis"
+			canonical="https://ziontechgroup.com/ai-legal-document-analysis]}
 		/>
 	);
 }

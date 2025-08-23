@@ -7,7 +7,7 @@ export default function CatchAllPage() {
 		<>
 			<Head>
 				<title>Page Coming Soon | Zion Tech Group</title>
-				<meta name="robots" content="noindex" />
+				<meta name="robots" content="index, follow" />
 			</Head>
 			<div className="min-h-screen pt-28 px-4">
 				<div className="max-w-3xl mx-auto text-white space-y-6">

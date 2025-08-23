@@ -8,7 +8,7 @@ export default function FiveGPrivateNetworkPage() {
 			<Head>
 				<title>5G Private Network Solutions | Zion Tech Group</title>
 				<meta name="description" content="Design and operate private 5G with SIM/eSIM lifecycle, QoS, MEC, and security." />
-				<link rel="canonical" href="https://ziontechgroup.com/5g-private-network-solutions" />
+
 			</Head>
 			<ServiceLanding
 				title="5G Private Network Solutions"
@@ -28,7 +28,6 @@ export default function FiveGPrivateNetworkPage() {
 					"SLA dashboards and multi-site federation"
 				]}
 				industries={["Manufacturing", "Healthcare", "Logistics", "Energy"]}
-				canonical="https://ziontechgroup.com/5g-private-network-solutions"
 			/>
 		</>
 	);

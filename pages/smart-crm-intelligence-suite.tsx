@@ -16,10 +16,10 @@ export default function SmartCrmIntelligenceSuite() {
 				"Auto-enrichment and dedupe",
 				"Meeting and email summarization",
 				"Forecast health and risk alerts",
-				"Salesforce/HubSpot/Pipedrive integrations"
+				"Salesforce/HubSpot/Pipedrive integrations]}
 			]}
 			industries={["Sales", "RevOps", "B2B SaaS"]}
-			canonical="https://ziontechgroup.com/smart-crm-intelligence-suite"
+			canonical="https://ziontechgroup.com/smart-crm-intelligence-suite]}
 		/>
 	);
 }

@@ -16,10 +16,10 @@ export default function SeoAutomationSuite() {
 				"Lighthouse budgets with alerts",
 				"INP/CLS/LCP Web Vitals tracking",
 				"Robots, meta, and canonical validation",
-				"Weekly reports with prioritized fixes"
+				"Weekly reports with prioritized fixes]}
 			]}
 			industries={["E-commerce", "B2B SaaS", "Publishers"]}
-			canonical="https://ziontechgroup.com/seo-automation-suite"
+			canonical="https://ziontechgroup.com/seo-automation-suite]}
 		/>
 	);
 }

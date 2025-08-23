@@ -55,19 +55,19 @@ const AIAutonomousRoboticsPlatform: React.FC = () => {
   const applications = [
     {
       industry: "Manufacturing",
-      useCases: ["Assembly Lines", "Quality Control", "Material Handling", "Warehouse Automation"]
+      useCases: ["Assembly Lines, Quality Control, Material Handling, Warehouse Automation""
     },
     {
       industry: "Healthcare",
-      useCases: ["Surgical Assistance", "Patient Care", "Medical Supply Delivery", "Sanitization"]
+      useCases: ["Surgical Assistance, Patient Care, Medical Supply Delivery, Sanitization""
     },
     {
       industry: "Agriculture",
-      useCases: ["Crop Monitoring", "Harvesting", "Soil Analysis", "Pest Control"]
+      useCases: ["Crop Monitoring, Harvesting, Soil Analysis, Pest Control""
     },
     {
       industry: "Logistics",
-      useCases: ["Package Sorting", "Inventory Management", "Last-Mile Delivery", "Storage Optimization"]
+      useCases: ["Package Sorting, Inventory Management, Last-Mile Delivery, Storage Optimization""
     }
   ];
 

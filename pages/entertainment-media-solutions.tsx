@@ -17,7 +17,7 @@ const EntertainmentMediaSolutions: React.FC = () => {
         'Automated Music Composition',
         'Intelligent Story Development',
         'Content Personalization Engine'
-      ]
+      "
     },
     {
       title: 'Digital Media Platforms',
@@ -28,7 +28,7 @@ const EntertainmentMediaSolutions: React.FC = () => {
         'Interactive Content Delivery',
         'Multi-Platform Distribution',
         'Real-time Analytics'
-      ]
+      "
     },
     {
       title: 'Gaming & Interactive Media',
@@ -39,7 +39,7 @@ const EntertainmentMediaSolutions: React.FC = () => {
         'VR/AR Experiences',
         'AI Game Development',
         'Interactive Storytelling'
-      ]
+      "
     },
     {
       title: 'Creative Production Tools',
@@ -50,7 +50,7 @@ const EntertainmentMediaSolutions: React.FC = () => {
         'Collaborative Workflows',
         'Asset Management',
         'Quality Assurance'
-      ]
+      "
     }
   ];
 

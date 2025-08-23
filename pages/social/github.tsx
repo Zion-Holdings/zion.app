@@ -14,7 +14,7 @@ export default function GitHubRedirect() {
 				<title>GitHub | Zion Tech Group</title>
 				<link rel="canonical" href="https://github.com/Zion-Holdings" />
 				<meta httpEquiv="refresh" content="0;url=https://github.com/Zion-Holdings" />
-				<meta name="robots" content="noindex, nofollow" />
+				<meta name="robots" content="index, follow" />
 			</Head>
 			<div className="min-h-screen bg-black text-white flex items-center justify-center p-8">
 				<a href="https://github.com/Zion-Holdings" className="text-cyan-400 underline">

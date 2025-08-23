@@ -127,7 +127,7 @@ const CareersPage: React.FC = () => {
         'Experience with monitoring and logging tools',
         'Understanding of security best practices'
       ],
-      benefits: ['Competitive salary', 'Remote work', 'Health benefits', 'Professional development']
+      benefits: ['Competitive salary', 'Remote work', 'Health benefits', 'Professional development'"
     }
   ];
 

@@ -44,7 +44,7 @@ const Revolutionary2045FuturisticServicesShowcase: React.FC = () => {
       textColor: "text-purple-400",
       link: "/ai-consciousness-evolution-2045",
       price: "$2,999/month",
-      features: ["Emotional Intelligence", "Self-Awareness", "Cognitive Evolution", "Ethical Decision Making"]
+      features: ["Emotional Intelligence, Self-Awareness, Cognitive Evolution, Ethical Decision Making""
     },
     {
       title: "Quantum Neural Ecosystem 2045",
@@ -55,7 +55,7 @@ const Revolutionary2045FuturisticServicesShowcase: React.FC = () => {
       textColor: "text-cyan-400",
       link: "/quantum-neural-ecosystem-2045",
       price: "$4,999/month",
-      features: ["Quantum Processing", "Neural Networks", "Hybrid Computing", "Exponential Performance"]
+      features: ["Quantum Processing, Neural Networks, Hybrid Computing, Exponential Performance""
     },
     {
       title: "Space Resource Intelligence 2045",
@@ -66,7 +66,7 @@ const Revolutionary2045FuturisticServicesShowcase: React.FC = () => {
       textColor: "text-pink-400",
       link: "/space-resource-intelligence-2045",
       price: "$3,999/month",
-      features: ["Space Mining", "Resource Mapping", "Colonization Planning", "Interplanetary Logistics"]
+      features: ["Space Mining, Resource Mapping, Colonization Planning, Interplanetary Logistics""
     },
     {
       title: "Metaverse Development Studio Pro 2045",
@@ -77,7 +77,7 @@ const Revolutionary2045FuturisticServicesShowcase: React.FC = () => {
       textColor: "text-green-400",
       link: "/metaverse-development-studio-pro-2045",
       price: "$1,999/month",
-      features: ["3D World Building", "AI Content Generation", "Blockchain Integration", "User Experience Design"]
+      features: ["3D World Building, AI Content Generation, Blockchain Integration, User Experience Design""
     },
     {
       title: "Quantum Cybersecurity Platform 2045",
@@ -88,7 +88,7 @@ const Revolutionary2045FuturisticServicesShowcase: React.FC = () => {
       textColor: "text-red-400",
       link: "/quantum-cybersecurity-platform-2045",
       price: "$2,499/month",
-      features: ["Quantum Resistance", "AI Threat Detection", "Advanced Encryption", "Real-time Monitoring"]
+      features: ["Quantum Resistance, AI Threat Detection, Advanced Encryption, Real-time Monitoring""
     }
   ];
 
@@ -111,7 +111,7 @@ const Revolutionary2045FuturisticServicesShowcase: React.FC = () => {
       link: "/ai-autonomous-business-process-automation-2045",
       price: "$1,999/month",
       category: "ai",
-      features: ["Autonomous Decision Making", "Continuous Learning", "Process Optimization", "Real-time Analytics"]
+      features: ["Autonomous Decision Making, Continuous Learning, Process Optimization, Real-time Analytics""
     },
     {
       name: "Quantum Bio-Computing Platform 2045",
@@ -121,7 +121,7 @@ const Revolutionary2045FuturisticServicesShowcase: React.FC = () => {
       link: "/quantum-bio-computing-platform-2045",
       price: "$3,999/month",
       category: "quantum",
-      features: ["Biological Integration", "Quantum Processing", "DNA Computing", "Bio-Security"]
+      features: ["Biological Integration, Quantum Processing, DNA Computing, Bio-Security""
     },
     {
       name: "Space Mining Automation Platform 2045",
@@ -131,7 +131,7 @@ const Revolutionary2045FuturisticServicesShowcase: React.FC = () => {
       link: "/space-mining-automation-platform-2045",
       price: "$2,999/month",
       category: "space",
-      features: ["Resource Discovery", "Extraction Optimization", "Autonomous Operations", "Interplanetary Logistics"]
+      features: ["Resource Discovery, Extraction Optimization, Autonomous Operations, Interplanetary Logistics""
     },
     {
       name: "Metaverse Digital Reality Platform 2045",
@@ -141,7 +141,7 @@ const Revolutionary2045FuturisticServicesShowcase: React.FC = () => {
       link: "/metaverse-digital-reality-platform-2045",
       price: "$1,499/month",
       category: "metaverse",
-      features: ["AI Content Generation", "Blockchain Integration", "Immersive Experiences", "Social Networking"]
+      features: ["AI Content Generation, Blockchain Integration, Immersive Experiences, Social Networking""
     },
     {
       name: "Quantum Internet Security Gateway 2045",
@@ -151,7 +151,7 @@ const Revolutionary2045FuturisticServicesShowcase: React.FC = () => {
       link: "/quantum-internet-security-gateway-2045",
       price: "$2,499/month",
       category: "cybersecurity",
-      features: ["Quantum Encryption", "Threat Detection", "Network Security", "Real-time Monitoring"]
+      features: ["Quantum Encryption, Threat Detection, Network Security, Real-time Monitoring""
     },
     {
       name: "AI Consciousness Training Platform 2045",
@@ -161,7 +161,7 @@ const Revolutionary2045FuturisticServicesShowcase: React.FC = () => {
       link: "/ai-consciousness-training-platform-2045",
       price: "$3,499/month",
       category: "ai",
-      features: ["Emotional Intelligence", "Ethical Training", "Consciousness Development", "Behavioral Analysis"]
+      features: ["Emotional Intelligence, Ethical Training, Consciousness Development, Behavioral Analysis""
     },
     {
       name: "Quantum Neural Network Platform 2045",
@@ -171,7 +171,7 @@ const Revolutionary2045FuturisticServicesShowcase: React.FC = () => {
       link: "/quantum-neural-network-platform-2045",
       price: "$4,499/month",
       category: "quantum",
-      features: ["Quantum Neural Networks", "Hybrid Computing", "Pattern Recognition", "Learning Optimization"]
+      features: ["Quantum Neural Networks, Hybrid Computing, Pattern Recognition, Learning Optimization""
     },
     {
       name: "Space Colonization Services 2045",
@@ -181,7 +181,7 @@ const Revolutionary2045FuturisticServicesShowcase: React.FC = () => {
       link: "/space-colonization-services-2045",
       price: "$5,999/month",
       category: "space",
-      features: ["Colonization Planning", "Resource Management", "Life Support Systems", "Sustainable Development"]
+      features: ["Colonization Planning, Resource Management, Life Support Systems, Sustainable Development""
     }
   ];
 

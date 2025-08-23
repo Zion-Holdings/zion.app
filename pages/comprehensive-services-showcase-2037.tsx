@@ -84,10 +84,10 @@ export default function ComprehensiveServicesShowcase2037() {
       <SEO 
         title="Comprehensive Services Showcase 2037 - Zion Tech Group"
         description="Discover our revolutionary 2037 services portfolio featuring AI consciousness, quantum computing, autonomous systems, and cutting-edge innovations. Transform your business with Zion Tech Group."
-        keywords={[
-          "AI services", "quantum computing", "autonomous systems", "metaverse", 
-          "consciousness", "2037", "innovation", "Zion Tech Group"
-        ]}
+        keywords="
+          "AI services, quantum computing, autonomous systems, metaverse", 
+          "consciousness, 2037, innovation, Zion Tech Group"
+        "
       />
       
       {/* Hero Section */}

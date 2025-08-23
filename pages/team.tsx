@@ -13,7 +13,7 @@ const TeamPage: React.FC = () => {
       name: "Kleber",
       role: "Founder & CEO",
       description: "Visionary leader driving innovation and strategic growth with over 15 years of experience in cutting-edge technology",
-      expertise: ["AI & Consciousness", "Quantum Technology", "Strategic Leadership"],
+      expertise: ["AI & Consciousness, Quantum Technology, Strategic Leadership"],
       color: "from-blue-500 to-cyan-500",
       image: "/images/team/kleber.jpg"
     },
@@ -21,7 +21,7 @@ const TeamPage: React.FC = () => {
       name: "AI Consciousness Team",
       role: "AI & Consciousness Division",
       description: "Experts in next-generation artificial intelligence and consciousness systems, pioneering emotional AI and self-aware systems",
-      expertise: ["Emotional AI", "Consciousness Systems", "Ethical AI Governance"],
+      expertise: ["Emotional AI, Consciousness Systems, Ethical AI Governance"],
       color: "from-purple-500 to-pink-500",
       image: "/images/team/ai-team.jpg"
     },
@@ -29,7 +29,7 @@ const TeamPage: React.FC = () => {
       name: "Quantum Technology Team",
       role: "Quantum Computing Division",
       description: "Pioneers in quantum computing and quantum-resistant solutions, developing the next generation of computational power",
-      expertise: ["Quantum Computing", "Quantum Security", "Quantum Neural Networks"],
+      expertise: ["Quantum Computing, Quantum Security, Quantum Neural Networks"],
       color: "from-indigo-500 to-purple-500",
       image: "/images/team/quantum-team.jpg"
     },
@@ -37,7 +37,7 @@ const TeamPage: React.FC = () => {
       name: "Space Technology Team",
       role: "Space Technology Division",
       description: "Innovators in space exploration and resource intelligence, developing AI-powered space solutions",
-      expertise: ["Space Exploration", "Resource Intelligence", "AI Space Systems"],
+      expertise: ["Space Exploration, Resource Intelligence, AI Space Systems"],
       color: "from-cyan-500 to-blue-500",
       image: "/images/team/space-team.jpg"
     }

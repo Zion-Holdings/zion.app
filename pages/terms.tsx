@@ -5,7 +5,7 @@ import Card from '../components/ui/Card';
 export default function TermsPage() {
   return (
     <>
-      <SEO title="Terms of Service | Zion Tech Group" description="Terms of Service for Zion Tech Group - Learn about our service terms and conditions." canonical="https://ziontechgroup.com/terms/" />
+      <SEO title="Terms of Service | Zion Tech Group" description="Terms of Service for Zion Tech Group - Learn about our service terms and conditions." />
 
       {/* Hero Section */}
       <section className="relative py-24 bg-gradient-to-br from-cursor-darker via-cursor-dark to-cursor-darker overflow-hidden">

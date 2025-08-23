@@ -16,10 +16,9 @@ export default function AIConsciousnessEvolution2025() {
 				"Ethical policy registry and enforcement hooks",
 				"Human-in-the-loop review workflows",
 				"Curriculum for team training and certifications",
-				"Benchmarks and best-practice playbooks"
+				"Benchmarks and best-practice playbooks]}
 			]}
 			industries={["SaaS", "Healthcare", "Education", "Financial Services"]}
-			canonical="https://ziontechgroup.com/ai-consciousness-evolution-2025"
 		/>
 	);
 }

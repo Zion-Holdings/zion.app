@@ -16,10 +16,10 @@ export default function QuantumSecureCloudInfrastructure() {
 				"HSM/KMS integrations and key rotation",
 				"Zero Trust + PQC reference designs",
 				"Threat modeling and validation",
-				"NIST PQC roadmap alignment"
+				"NIST PQC roadmap alignment]}
 			]}
 			industries={["Financial Services", "Healthcare", "Government"]}
-			canonical="https://ziontechgroup.com/quantum-secure-cloud-infrastructure"
+			canonical="https://ziontechgroup.com/quantum-secure-cloud-infrastructure]}
 		/>
 	);
 }

@@ -143,7 +143,7 @@ const PartnersPage: React.FC = () => {
       description: 'Space technology and research',
       category: 'ai',
       partnership: 'Government Partner',
-      benefits: ['Space research', 'Technology licensing', 'Mission support']
+      benefits: ['Space research', 'Technology licensing', 'Mission support'"
     }
   ];
 

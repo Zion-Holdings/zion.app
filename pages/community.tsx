@@ -17,7 +17,7 @@ const Community: React.FC = () => {
         'Code Reviews',
         'Best Practices',
         'Problem Solving'
-      ]
+      "
     },
     {
       title: 'Learning Hub',
@@ -28,7 +28,7 @@ const Community: React.FC = () => {
         'Webinars',
         'Documentation',
         'Tutorials'
-      ]
+      "
     },
     {
       title: 'Events & Meetups',
@@ -39,7 +39,7 @@ const Community: React.FC = () => {
         'Local Meetups',
         'Hackathons',
         'Networking Events'
-      ]
+      "
     },
     {
       title: 'Innovation Lab',
@@ -50,7 +50,7 @@ const Community: React.FC = () => {
         'Research Collaboration',
         'Innovation Challenges',
         'Mentorship Programs'
-      ]
+      "
     }
   ];
 

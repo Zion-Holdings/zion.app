@@ -19,7 +19,6 @@ export default function EmotionalIQPage() {
 				roiNote="Higher CSAT, better retention, and improved collaboration"
 				features={["Multimodal emotion recognition with consent","Personalized EI training plans","Role-play simulations with feedback","Manager dashboards and coaching tips","Privacy-first data handling","Integrations with HRIS and LMS"]}
 				industries={["Customer Support", "Sales", "HR", "Healthcare"]}
-				canonical="https://ziontechgroup.com/ai-emotional-intelligence-platform"
 			/>
 		</>
 	);

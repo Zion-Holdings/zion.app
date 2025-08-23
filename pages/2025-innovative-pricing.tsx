@@ -129,7 +129,7 @@ export default function InnovativePricing2025() {
       <SEO 
         title="2025 Innovative Services Pricing | Zion Tech Group"
         description="Comprehensive pricing for our 2025 innovative services including AI automation, IT infrastructure, micro SAAS solutions, and emerging technology services."
-        keywords={["2025 pricing", "innovative services pricing", "AI automation pricing", "IT infrastructure pricing", "micro SAAS pricing", "Zion Tech Group"]}
+        keywords="2025 pricing, innovative services pricing, AI automation pricing, IT infrastructure pricing, micro SAAS pricing, Zion Tech Group"
       />
 
       {/* Hero Section */}
