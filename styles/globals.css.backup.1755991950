@@ -1101,6 +1101,8 @@ body::after {
     filter: hue-rotate(10deg);
   }
 }
+<<<<<<< HEAD
+=======
 
 .futuristic-text-gradient {
   background: linear-gradient(
@@ -1454,3 +1456,4 @@ body::after {
     background: #ffffff !important;
   }
 }
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-d240

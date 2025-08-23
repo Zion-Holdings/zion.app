@@ -3,11 +3,24 @@ import { cn } from '../../utils/cn';
 
 interface EnhancedFuturisticBackgroundProps {
   children: React.ReactNode;
+<<<<<<< HEAD
+  variant?: 'neural' | 'quantum' | 'cyber' | 'cosmic';
+=======
   variant?: 'quantum-holographic-advanced' | 'neural-network' | 'cyberpunk-matrix' | 'quantum-advanced' | 'holographic-advanced' | 'neural-advanced' | 'cyberpunk-advanced';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-d240
   intensity?: 'low' | 'medium' | 'high';
   className?: string;
 }
 
+<<<<<<< HEAD
+export default function EnhancedFuturisticBackground({ 
+  children, 
+  variant = 'neural', 
+  intensity = 'medium',
+  className = '' 
+}: EnhancedFuturisticBackgroundProps) {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+=======
 const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> = ({
   children,
   variant = 'quantum-holographic-advanced',
@@ -16,6 +29,7 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number | null>(null);
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-d240
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -26,6 +40,11 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
+<<<<<<< HEAD
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+=======
     const resizeCanvas = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -35,12 +54,35 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
     window.addEventListener('resize', resizeCanvas);
 
     // Enhanced particle system
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-d240
     const particles: Array<{
       x: number;
       y: number;
       vx: number;
       vy: number;
       size: number;
+<<<<<<< HEAD
+      color: string;
+      type: 'neural' | 'quantum' | 'cyber' | 'cosmic';
+    }> = [];
+
+    const colors = {
+      neural: ['#00ffff', '#ff00ff', '#ffff00', '#00ff00'],
+      quantum: ['#8b5cf6', '#06b6d4', '#3b82f6', '#ec4899'],
+      cyber: ['#ef4444', '#f97316', '#eab308', '#22c55e'],
+      cosmic: ['#1e40af', '#7c3aed', '#be185d', '#059669']
+    };
+
+    const intensityMultiplier = {
+      low: 0.5,
+      medium: 1,
+      high: 1.5
+    };
+
+    // Create particles
+    const createParticles = () => {
+      const particleCount = Math.floor(50 * intensityMultiplier[intensity]);
+=======
       opacity: number;
       color: string;
       type: 'quantum' | 'holographic' | 'neural' | 'cyberpunk';
@@ -62,22 +104,134 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
     const initParticles = () => {
       particles.length = 0;
       const particleCount = intensity === 'high' ? 200 : intensity === 'medium' ? 120 : 80;
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-d240
       
       for (let i = 0; i < particleCount; i++) {
         const type = ['quantum', 'holographic', 'neural', 'cyberpunk'][Math.floor(Math.random() * 4)] as any;
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
+<<<<<<< HEAD
+          vx: (Math.random() - 0.5) * 2 * intensityMultiplier[intensity],
+          vy: (Math.random() - 0.5) * 2 * intensityMultiplier[intensity],
+          size: Math.random() * 3 + 1,
+          opacity: Math.random() * 0.8 + 0.2,
+          color: colors[variant][Math.floor(Math.random() * colors[variant].length)],
+          type: variant
+=======
           vx: (Math.random() - 0.5) * (intensity === 'high' ? 2 : intensity === 'medium' ? 1.5 : 1),
           vy: (Math.random() - 0.5) * (intensity === 'high' ? 2 : intensity === 'medium' ? 1.5 : 1),
           size: Math.random() * (intensity === 'high' ? 4 : intensity === 'medium' ? 3 : 2) + 1,
           opacity: Math.random() * 0.8 + 0.2,
           color: getParticleColor(type),
           type
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-d240
         });
       }
     };
 
+<<<<<<< HEAD
+    // Neural network connections
+    const drawNeuralConnections = () => {
+      ctx.strokeStyle = 'rgba(0, 255, 255, 0.1)';
+      ctx.lineWidth = 1;
+      
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          
+          if (distance < 150) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+    };
+
+    // Quantum entanglement effect
+    const drawQuantumEntanglement = () => {
+      ctx.strokeStyle = 'rgba(139, 92, 246, 0.3)';
+      ctx.lineWidth = 2;
+      
+      for (let i = 0; i < particles.length; i += 2) {
+        if (i + 1 < particles.length) {
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[i + 1].x, particles[i + 1].y);
+          ctx.stroke();
+          
+          // Add quantum glow
+          ctx.shadowColor = particles[i].color;
+          ctx.shadowBlur = 20;
+          ctx.stroke();
+          ctx.shadowBlur = 0;
+        }
+      }
+    };
+
+    // Cyber grid effect
+    const drawCyberGrid = () => {
+      ctx.strokeStyle = 'rgba(239, 68, 68, 0.2)';
+      ctx.lineWidth = 1;
+      
+      const gridSize = 50;
+      for (let x = 0; x < canvas.width; x += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, canvas.height);
+        ctx.stroke();
+      }
+      for (let y = 0; y < canvas.height; y += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(canvas.width, y);
+        ctx.stroke();
+      }
+    };
+
+    // Cosmic waves
+    const drawCosmicWaves = () => {
+      const time = Date.now() * 0.001;
+      ctx.strokeStyle = 'rgba(30, 64, 175, 0.3)';
+      ctx.lineWidth = 2;
+      
+      for (let i = 0; i < 3; i++) {
+        ctx.beginPath();
+        for (let x = 0; x < canvas.width; x += 5) {
+          const y = canvas.height / 2 + Math.sin(x * 0.01 + time + i) * 50;
+          if (x === 0) {
+            ctx.moveTo(x, y);
+          } else {
+            ctx.lineTo(x, y);
+          }
+        }
+        ctx.stroke();
+      }
+    };
+
+    // Update and draw particles
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // Draw background effects based on variant
+      switch (variant) {
+        case 'neural':
+          drawNeuralConnections();
+          break;
+        case 'quantum':
+          drawQuantumEntanglement();
+          break;
+        case 'cyber':
+          drawCyberGrid();
+          break;
+        case 'cosmic':
+          drawCosmicWaves();
+          break;
+=======
     // Enhanced animation loop
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -165,6 +319,7 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
         drawNeuralNetworkEffect(ctx, canvas);
       } else if (variant === 'cyberpunk-matrix') {
         drawCyberpunkMatrixEffect(ctx, canvas);
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-d240
       }
       
       // Update and draw particles
@@ -307,6 +462,21 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
   };
 
   return (
+<<<<<<< HEAD
+    <div className={`relative min-h-screen ${className}`}>
+      {/* Animated Background Canvas */}
+      <canvas
+        ref={canvasRef}
+        className="fixed inset-0 w-full h-full pointer-events-none z-0"
+        style={{ background: 'linear-gradient(135deg, #0f0f23 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #533483 100%)' }}
+      />
+      
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-black/20 z-10" />
+      
+      {/* Content */}
+      <div className="relative z-20">
+=======
     <div className={getBackgroundClasses()}>
       {/* Enhanced Canvas Background */}
       <canvas
@@ -353,6 +523,7 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
       
       {/* Content */}
       <div className="relative z-10">
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-d240
         {children}
       </div>
       

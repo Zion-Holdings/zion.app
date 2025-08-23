@@ -2110,6 +2110,13 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     ],
     popular: true,
     icon: '⚖️',
+<<<<<<< HEAD
+    color: 'from-amber-500 to-orange-600',
+    textColor: 'text-amber-400',
+    link: 'https://ziontechgroup.com/ai-legal-contracts',
+    marketPosition: 'Leading AI legal tech solution with 95% accuracy in contract analysis',
+    targetAudience: 'Law firms, corporate legal departments, contract managers, and legal professionals',
+=======
     color: 'from-indigo-500 to-purple-600',
     textColor: 'text-indigo-400',
     link: 'https://ziontechgroup.com/ai-legal-contract-analyzer',
@@ -2259,6 +2266,7 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     link: 'https://ziontechgroup.com/ai-climate-prediction',
     marketPosition: 'Advanced AI climate platform with 95% accuracy in extreme weather prediction',
     targetAudience: 'Government agencies, insurance companies, energy companies, and environmental organizations',
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-d240
     trialDays: 14,
     setupTime: '3 hours',
     category: 'AI & Machine Learning',
@@ -3876,6 +3884,16 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     ],
     popular: true,
     icon: '🌐',
+<<<<<<< HEAD
+    color: 'from-blue-500 to-indigo-600',
+    textColor: 'text-blue-400',
+    link: 'https://ziontechgroup.com/quantum-network-security',
+    marketPosition: 'Innovative quantum network security, 100% protection against quantum attacks',
+    targetAudience: 'Network operators, telecom companies, data centers, enterprise networks',
+    trialDays: 21,
+    setupTime: '2 weeks',
+    category: 'Quantum Computing',
+=======
     color: 'from-violet-500 to-purple-600',
     textColor: 'text-violet-400',
     link: 'https://ziontechgroup.com/quantum-metaverse',
@@ -3884,6 +3902,7 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     trialDays: 14,
     setupTime: '6 hours',
     category: 'AR/VR & Metaverse',
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-d240
     realService: true,
     technology: ['Quantum Cryptography', 'Network Security', 'Post-Quantum Algorithms', 'Network Monitoring'],
     integrations: ['Firewalls', 'VPN solutions', 'Network monitoring tools', 'Security information systems'],
@@ -3921,6 +3940,15 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     setupTime: '1 week',
     category: 'AI & Machine Learning',
     realService: true,
+<<<<<<< HEAD
+    technology: ['Natural Language Processing', 'Speech Recognition', 'Conversational AI', 'Machine Learning'],
+    integrations: ['Mobile apps', 'Web applications', 'IoT devices', 'Customer service platforms'],
+    useCases: ['Customer service', 'Voice-enabled apps', 'Smart devices', 'Accessibility'],
+    roi: '300% average ROI in 6 months',
+    competitors: ['Amazon Alexa', 'Google Assistant', 'Microsoft Azure Speech', 'IBM Watson'],
+    marketSize: '$2.8B global market',
+    growthRate: '45% annual growth'
+=======
     technology: ['Quantum Computing', 'AI', 'IoT', 'Machine Learning', 'Smart Grid', 'Urban Analytics'],
     integrations: ['IoT sensors', 'Traffic systems', 'Energy grids', 'Public services', 'Citizen apps'],
     useCases: ['Traffic optimization', 'Energy management', 'Public safety', 'Environmental monitoring', 'Urban planning'],
@@ -4324,6 +4352,7 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     competitors: ['Coursera', 'Udemy', 'Duolingo', 'Khan Academy'],
     marketSize: '$900M AI education market',
     growthRate: '150% annual growth'
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-d240
   }
 ];
 
