@@ -1,8 +1,11 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 
-interface PerformanceLayoutShift {
-  value: number;
+// Add browser API types
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
 }
 
 interface PerformanceMetrics {

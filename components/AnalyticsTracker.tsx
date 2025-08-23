@@ -59,20 +59,11 @@ const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
     }
   }, [trackingId, router, enableDebug]);
 
-  useEffect(() => {
-    // Track user engagement metrics
-    if (typeof window !== 'undefined') {
-      let startTime = Date.now();
-      let isActive = true;
-
-      const trackEngagement = () => {
-        if (isActive) {
-          const timeSpent = Date.now() - startTime;
-          
-          // Track time spent on page
-          if (timeSpent > 30000) { // 30 seconds
-            if (enableDebug) {
-              console.log('Analytics: User engaged for', Math.round(timeSpent / 1000), 'seconds');
+            // Track resource loading performance
+            const resources = performance.getEntriesByType('resource');
+            const slowResources = resources.filter((resource) => (resource as any).duration > 1000);
+            if (slowResources.length > 0) {
+              trackMetric('SlowResources', slowResources.length);
             }
           }
         }
@@ -87,12 +78,84 @@ const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
         }
       };
 
-      const handleBeforeUnload = () => {
-        const timeSpent = Date.now() - startTime;
-        if (enableDebug) {
-          console.log('Analytics: Session duration:', Math.round(timeSpent / 1000), 'seconds');
+      // Session duration tracking
+      setInterval(() => {
+        const sessionDuration = Date.now() - startTime;
+        trackMetric('SessionDuration', sessionDuration);
+      }, 60000); // Every minute
+    };
+
+    // Initialize when component mounts
+    initAnalytics();
+
+    // Cleanup function
+    return () => {
+      // Remove event listeners if needed
+      document.removeEventListener('click', trackInteraction);
+      document.removeEventListener('scroll', trackInteraction);
+      document.removeEventListener('keydown', trackInteraction);
+      window.removeEventListener('resize', trackViewport);
+    };
+  }, []);
+
+  // Track page views on route changes
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('config', 'G-XXXXXXXXXX', {
+        page_path: router.asPath,
+        page_title: document.title,
+        page_location: window.location.href
+      });
+    }
+
+    // Track custom page view event
+    trackEvent('PageView', {
+      path: router.asPath,
+      title: document.title,
+      referrer: document.referrer,
+      timestamp: Date.now()
+    });
+
+    // Track page performance metrics
+          if ('performance' in window) {
+        const navigation = performance.getEntriesByType('navigation')[0] as any;
+        if (navigation) {
+          const startTime = navigation.startTime || 0;
+          trackMetric('PageLoadTime', navigation.loadEventEnd - startTime);
+          trackMetric('DOMReadyTime', navigation.domContentLoadedEventEnd - startTime);
         }
-      };
+      }
+  }, [router.asPath]);
+
+  // Helper function to track metrics
+  const trackMetric = (name: string, value: number | string) => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'custom_metric', {
+        metric_name: name,
+        metric_value: value,
+        timestamp: Date.now()
+      });
+    }
+
+    // Send to custom analytics endpoint
+    if (process.env.NODE_ENV === 'production') {
+      fetch('/api/analytics/metrics', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          value,
+          timestamp: Date.now(),
+          url: window.location.href,
+          userAgent: navigator.userAgent
+        })
+      }).catch(() => {
+        // Silently handle fetch errors
+      });
+    }
+  };
 
       document.addEventListener('visibilitychange', handleVisibilityChange);
       window.addEventListener('beforeunload', handleBeforeUnload);
@@ -110,5 +173,30 @@ const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
   // Return null as this is a utility component
   return null;
 };
+
+// Performance entry types
+interface PerformanceEventTiming extends PerformanceEntry {
+  processingStart: number;
+  processingEnd: number;
+  target?: any;
+}
+
+interface LayoutShift extends PerformanceEntry {
+  value: number;
+  sources?: LayoutShiftSource[];
+}
+
+interface LayoutShiftSource {
+  node?: any;
+  currentRect?: any;
+  previousRect?: any;
+}
+
+// Extend Window interface for gtag
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
 
 export default AnalyticsTracker;
