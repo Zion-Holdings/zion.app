@@ -8,6 +8,12 @@ import TopContactBar from './TopContactBar';
 import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
 import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
+<<<<<<< HEAD
+import EnhancedErrorBoundary from '../EnhancedErrorBoundary';
+import ThemeToggle from '../ThemeToggle';
+import LoadingSpinner from '../LoadingSpinner';
+=======
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-960d
 import ServiceWorkerRegistration from '../ServiceWorkerRegistration';
 
 interface LayoutProps {
@@ -71,6 +77,73 @@ export default function Layout({
         <meta name="msapplication-tap-highlight" content="no" />
         <meta name="theme-color" content="#06b6d4" />
 
+<<<<<<< HEAD
+        {/* PWA Icons */}
+        <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#06b6d4" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+
+        {/* Preconnect to external domains */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+        
+        {/* DNS prefetch for performance */}
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+        <link rel="dns-prefetch" href="//api.ziontechgroup.com" />
+      </Head>
+
+      <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
+        {/* Skip to content link for accessibility */}
+        <a href="#main" className="skip-link">Skip to main content</a>
+        
+        {/* Offline indicator */}
+        {!isOnline && (
+          <div className="fixed top-0 left-0 right-0 z-50 bg-red-600 text-white text-center py-2 px-4 text-sm">
+            📡 You're currently offline. Some features may not be available.
+          </div>
+        )}
+        
+        {/* Futuristic Background */}
+        <UltraFuturisticBackground2036 />
+        
+        {/* Layout Structure */}
+        <div className="relative z-10">
+          {/* Top Contact Bar */}
+          <TopContactBar />
+          
+          {/* Navigation */}
+          <UltraFuturisticNavigation2040 />
+          
+          {/* Sidebar and Main Content */}
+          <div className="flex">
+            <EnhancedSidebar2025 
+              isOpen={sidebarOpen} 
+              onClose={() => setSidebarOpen(false)} 
+            />
+            
+            <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
+              {children}
+            </main>
+          </div>
+          
+          {/* Footer */}
+          <UltraFuturisticFooter2040 />
+        </div>
+
+        {/* Accessibility and Performance Tools */}
+        <AccessibilityEnhancer />
+        <PerformanceMonitor />
+        
+        {/* Cookie Consent Banner */}
+        <CookieConsentBanner />
+      </div>
+    </>
+=======
       {/* Accessibility and Performance Tools */}
       <AccessibilityEnhancer />
       <PerformanceMonitor />
@@ -81,5 +154,6 @@ export default function Layout({
       {/* Service Worker Registration */}
       <ServiceWorkerRegistration />
     </div>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-960d
   );
 };
