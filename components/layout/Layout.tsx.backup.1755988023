@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import UltraFuturisticNavigation2045 from './UltraFuturisticNavigation2045';
-import UltraFuturisticFooter2025 from './UltraFuturisticFooter2025';
+import Head from 'next/head';
+import UltraFuturisticNavigation2047 from './UltraFuturisticNavigation2047';
+import UltraFuturisticFooter2048 from './UltraFuturisticFooter2048';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
+<<<<<<< HEAD
 import UltraFuturisticBackground2037 from '../backgrounds/UltraFuturisticBackground2037';
 import TopContactBar from './TopContactBar';
 import UltraFuturisticBackground2047 from '../backgrounds/UltraFuturisticBackground2047';
+=======
+import TopContactBar from './TopContactBar';
+import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-5d49
 import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
 import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
@@ -184,8 +190,8 @@ export default function Layout({ children }: LayoutProps) {
         
         {/* Layout Structure */}
         <div className="relative z-10">
-          {/* Navigation */}
-          <UltraFuturisticNavigation2045 />
+          {/* Top Contact Bar */}
+          <TopContactBar />
           
           {/* Navigation */}
           <UltraFuturisticNavigation2047 />

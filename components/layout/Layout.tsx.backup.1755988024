@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
+<<<<<<< HEAD
+import Head from 'next/head';
+import UltraFuturisticNavigation2047 from './UltraFuturisticNavigation2047';
+import UltraFuturisticFooter2048 from './UltraFuturisticFooter2048';
+=======
 import UltraFuturisticNavigation2045 from './UltraFuturisticNavigation2045';
 import UltraFuturisticFooter2025 from './UltraFuturisticFooter2025';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-e718
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2037 from '../backgrounds/UltraFuturisticBackground2037';
 import TopContactBar from './TopContactBar';
@@ -184,8 +190,13 @@ export default function Layout({ children }: LayoutProps) {
         
         {/* Layout Structure */}
         <div className="relative z-10">
+<<<<<<< HEAD
+          {/* Top Contact Bar */}
+          <TopContactBar />
+=======
           {/* Navigation */}
           <UltraFuturisticNavigation2045 />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-e718
           
           {/* Navigation */}
           <UltraFuturisticNavigation2047 />
