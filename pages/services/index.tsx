@@ -51,6 +51,8 @@ import { real2025ExtraServices } from '../../data/real-2025-extra-services';
 import { real2026Q4ExpansionsV2 } from '../../data/real-2026-q4-expansions-v2';
 import { real2036ServiceExpansions } from '../../data/real-2036-service-expansions';
 import { real2026Q4ExpansionsV3 } from '../../data/real-2026-q4-expansions-v3';
+import { real2037Q1Additions } from '../../data/real-2037-q1-additions';
+import { real2037Q2Additions } from '../../data/real-2037-q2-additions';
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -62,6 +64,11 @@ const categories = [
   'Cloud & FinOps',
   'Observability',
   'Quality & Monitoring',
+  'Quantum Technology',
+  'Space Technology',
+  'Blockchain & Web3',
+  'Edge Computing',
+  'Metaverse & VR'
 ];
 
 export default function ServicesIndexPage() {
@@ -106,121 +113,156 @@ export default function ServicesIndexPage() {
       real2031MicroSaasAdditions as unknown[],
       real2031ITServicesAdditions as unknown[],
       real2031AIServicesAdditions as unknown[],
+      real2027Q3Additions as unknown[],
       professionalServices as unknown[],
       real2032ServiceExpansions as unknown[],
       real2035Q1Additions as unknown[],
       real2035Q2AdditionsExtra as unknown[],
       real2025ExtraServices as unknown[],
       real2026Q4ExpansionsV2 as unknown[],
-      real2026Q4ExpansionsV3 as unknown[]
-    )
-    .concat(real2036ServiceExpansions as unknown[]);
-  const byCategory: Record<string, unknown[]> = {};
-  for (const c of categories) byCategory[c] = [];
-  // Normalize various category labels into our main buckets
-  const categoryAliases: Record<string, string> = {
-    'AI & Data': 'AI & Data',
-    'AI & Machine Learning': 'AI & Data',
-    'GenAI': 'AI & Data',
-    'Cloud & FinOps': 'Cloud & FinOps',
-    'Cloud & Data': 'Cloud & FinOps',
-    'Platform Engineering': 'Cloud & FinOps',
-    'Observability': 'Observability',
-    'Observability & Telemetry': 'Observability',
-    'Quality & Monitoring': 'Quality & Monitoring',
-    'Security & Reliability': 'Quality & Monitoring',
-    'Security & Compliance': 'Quality & Monitoring',
-    'Developer Tools': 'Developer Tools',
-    'Growth & Marketing': 'Developer Tools'
-  };
-  for (const s of all) {
-    const service = s as { category?: string };
-    const rawCat = (service.category || '').trim();
-    const mapped = categoryAliases[rawCat] || (categories.includes(rawCat) ? rawCat : 'Developer Tools');
-    byCategory[mapped].push(s);
-  }
+      real2036ServiceExpansions as unknown[],
+      real2026Q4ExpansionsV3 as unknown[],
+      real2037Q1Additions as unknown[],
+      real2037Q2Additions as unknown[]
+    );
 
-  const anchorMap: Record<string, string> = {
-    'AI & Data': 'ai',
-    'Developer Tools': 'developer-tools',
-    'Cloud & FinOps': 'cloud',
-    'Observability': 'observability',
-    'Quality & Monitoring': 'quality',
-  };
+  // Filter out services without required properties
+  const validServices = all.filter(service => 
+    service && 
+    typeof service === 'object' && 
+    'name' in service && 
+    'description' in service
+  );
 
-  const [shownCounts, setShownCounts] = React.useState<Record<string, number>>(() => Object.fromEntries(categories.map(c => [c, 12])));
-  const [searchQuery, setSearchQuery] = React.useState('');
-
-  const normalized = (value: unknown) => {
-    const obj = value as { id?: string; name?: string; tagline?: string; description?: string };
-    return `${obj.id || ''} ${obj.name || ''} ${obj.tagline || ''} ${obj.description || ''}`.toLowerCase();
-  };
-
-  const filteredAll = searchQuery.trim().length
-    ? all.filter((s) => normalized(s).includes(searchQuery.toLowerCase()))
-    : all;
+  // Group services by category
+  const servicesByCategory = validServices.reduce((acc, service) => {
+    const serviceObj = service as { category?: string; name: string; description: string; price?: string };
+    const category = serviceObj.category || 'Other';
+    if (!acc[category]) {
+      acc[category] = [];
+    }
+    acc[category].push(serviceObj);
+    return acc;
+  }, {} as Record<string, any[]>);
 
   return (
-    <UltraFuturisticBackground variant="quantum" intensity="high">
-      <SEO title="Services | Zion Tech Group" description="Browse 350+ real micro SaaS, IT, and AI services with transparent pricing and fast onboarding." canonical="https://ziontechgroup.com/services/" />
-
-      <div className="container mx-auto px-4 py-16 space-y-12 text-white">
-        <div className="text-center">
-          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">All Services</h1>
-          <p className="text-gray-300 text-lg">Productized solutions across AI, cloud, DevOps, observability, and more. Average market prices linked in <a href="/market-pricing" className="text-cyan-400 underline">Market Pricing</a>. Contact: +1 302 464 0950 • kleber@ziontechgroup.com.</p>
-          <p className="mt-3 text-gray-400 text-sm">Prefer a tailored bundle? See <a href="/pricing" className="text-cyan-400 underline">Pricing</a> or <a href="/contact" className="text-cyan-400 underline">Contact Sales</a> for custom quotes.</p>
-          <div className="mt-6 flex flex-wrap justify-center gap-3 text-sm">
-            <a href="#ai" className="px-3 py-1.5 rounded-full bg-gray-800/60 border border-gray-700/70 hover:border-cyan-500/50">AI & Data</a>
-            <a href="#developer-tools" className="px-3 py-1.5 rounded-full bg-gray-800/60 border border-gray-700/70 hover:border-cyan-500/50">Developer Tools</a>
-            <a href="#cloud" className="px-3 py-1.5 rounded-full bg-gray-800/60 border border-gray-700/70 hover:border-cyan-500/50">Cloud & FinOps</a>
-            <a href="#observability" className="px-3 py-1.5 rounded-full bg-gray-800/60 border border-gray-700/70 hover:border-cyan-500/50">Observability</a>
-            <a href="#quality" className="px-3 py-1.5 rounded-full bg-gray-800/60 border border-gray-700/70 hover:border-cyan-500/50">Quality & Monitoring</a>
-          </div>
-          <div className="mt-6 max-w-3xl mx-auto">
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search services by name, feature, or use case..."
-              className="w-full px-4 py-3 rounded-xl bg-gray-900/70 border border-gray-700/70 focus:border-cyan-500/60 outline-none placeholder-gray-500"
-            />
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white">
+      <SEO 
+        title="Complete Services Portfolio | Zion Tech Group"
+        description="Explore our comprehensive portfolio of AI, Quantum Computing, Space Technology, Blockchain, and Micro SAAS services. Transform your business with cutting-edge solutions."
+        keywords="AI services, quantum computing, space technology, blockchain, micro SAAS, IT services, Zion Tech Group"
+        canonical="https://ziontechgroup.com/services"
+      />
+      
+      {/* Hero Section */}
+      <section className="relative py-20 px-4 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-purple-500/20 animate-pulse"></div>
+        <div className="relative z-10 max-w-6xl mx-auto text-center">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+            Our Complete Services Portfolio
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            Discover our comprehensive range of cutting-edge technology services designed to 
+            transform your business and drive innovation across all industries.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link 
+              href="/revolutionary-2037-services-showcase"
+              className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+            >
+              View 2037 Services
+            </Link>
+            <Link 
+              href="/pricing"
+              className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105"
+            >
+              View Pricing
+            </Link>
           </div>
         </div>
+      </section>
 
-        {categories.map((cat) => (
-          <section key={cat} id={anchorMap[cat] || toSlug(cat)}>
-            <h2 className="text-2xl md:text-3xl font-semibold text-white mb-4">{cat}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {byCategory[cat].slice(0, (shownCounts[cat] ?? 12)).map((s) => {
-                const service = s as { id?: string; name?: string; link?: string; category?: string; tagline?: string; description?: string; price?: string; period?: string };
-                const slug = service.link ? (() => { try { const u = new URL(service.link); const p = u.pathname.replace(/^\/+|\/+$/g, ''); return p.startsWith('services/') ? p.substring('services/'.length) : toSlug(service.id || service.name || ''); } catch { return toSlug(service.id || service.name || ''); } })() : toSlug(service.id || service.name || '');
-                return (
-                  <Card key={service.id || service.name} className="p-6 bg-black/50 border border-gray-700/60 hover:border-cyan-500/50 transition-colors shadow-lg/10">
-                    <div className="text-sm text-gray-400 mb-1">{service.category || 'Service'}</div>
-                    <h3 className="text-white text-xl font-semibold mb-2">{service.name}</h3>
-                    <p className="text-gray-300/90 line-clamp-3 mb-3">{service.tagline || service.description}</p>
-                    <div className="text-gray-100 font-bold mb-4">{service.price}<span className="text-sm text-gray-400 font-medium">{service.period}</span></div>
-                    <div className="flex gap-3">
-                      <Link href={service.link || `/services/${slug}`} className="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium shadow-glow hover:shadow-glow-lg">View</Link>
-                      <Link href={service.link || `/services/${slug}`} className="px-4 py-2 rounded-lg border border-gray-600 text-gray-200 hover:border-cyan-500/70">Learn</Link>
+      {/* Services by Category */}
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            Services by Category
+          </h2>
+          
+          {Object.entries(servicesByCategory).map(([category, services]) => (
+            <div key={category} className="mb-16">
+              <h3 className="text-2xl md:text-3xl font-bold mb-8 text-cyan-400 border-b border-cyan-400/30 pb-2">
+                {category}
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {services.slice(0, 6).map((service, index) => (
+                  <Card key={index} className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 hover:border-cyan-400/50 transition-all duration-300">
+                    <div className="p-6">
+                      <h4 className="text-lg font-semibold mb-2 text-white group-hover:text-cyan-400 transition-colors duration-300">
+                        {service.name}
+                      </h4>
+                      <p className="text-gray-300 text-sm mb-4 line-clamp-3">
+                        {service.description}
+                      </p>
+                      {service.price && (
+                        <div className="text-cyan-400 font-semibold mb-4">
+                          {service.price}
+                        </div>
+                      )}
+                      <Link
+                        href={`/services/${toSlug(service.name)}`}
+                        className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors duration-200 text-sm font-medium"
+                      >
+                        Learn More
+                        <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
                     </div>
                   </Card>
-                );
-              })}
-            </div>
-            {byCategory[cat].length > (shownCounts[cat] ?? 12) && (
-              <div className="mt-6 flex justify-center">
-                <button
-                  onClick={() => setShownCounts(prev => ({ ...prev, [cat]: (prev[cat] ?? 12) + 12 }))}
-                  className="px-4 py-2 rounded-lg bg-gray-800/60 border border-gray-700/70 hover:border-cyan-500/50"
-                >
-                  Show more
-                </button>
+                ))}
               </div>
-            )}
-          </section>
-        ))}
-      </div>
-    </UltraFuturisticBackground>
+              {services.length > 6 && (
+                <div className="text-center mt-8">
+                  <Link
+                    href={`/services/category/${toSlug(category)}`}
+                    className="inline-flex items-center px-6 py-3 border border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300"
+                  >
+                    View All {category} Services ({services.length})
+                  </Link>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4 bg-gradient-to-r from-gray-900/50 to-gray-800/50">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            Ready to Get Started?
+          </h2>
+          <p className="text-xl text-gray-300 mb-8">
+            Contact our team to discuss how our services can transform your business 
+            and drive innovation across your organization.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a 
+              href="tel:+13024640950"
+              className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+            >
+              Call Now: +1 302 464 0950
+            </a>
+            <a 
+              href="mailto:kleber@ziontechgroup.com"
+              className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105"
+            >
+              Email Us
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }
