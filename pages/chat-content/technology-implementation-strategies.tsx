@@ -1,10 +1,1 @@
-import Head from 'next/head';
-
-export default function TechnologyImplementationStrategiesPage() {
-  return (
-    <>
-      <Head><title>Technology Implementation Strategies</title></Head>
-      <div className="py-10">Content coming soon.</div>
-    </>
-  );
-}
+export default function ChatTechImplementation() { return <div className="p-6">Technology Implementation Strategies</div>; }

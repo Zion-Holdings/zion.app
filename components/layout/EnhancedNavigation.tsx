@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Menu, X, ChevronDown, Rocket, Star } from 'lucide-react';
 import Link from 'next/link';
+import DarkModeToggle from '../community/DarkModeToggle';
 
 interface NavigationItem {
   name: string;
@@ -182,7 +183,8 @@ const EnhancedNavigation: React.FC = () => {
           <Link href="/blog"><a>Blog</a></Link>
           <Link href="/talent"><a>Talent</a></Link>
           <Link href="/contact"><a>Contact</a></Link>
-          <Link href="/request-quote"><a className="px-3 py-1 rounded-md bg-indigo-600 text-white">Request a Quote</a></Link>
+          <Link href="/community"><a>Community</a></Link>
+          <DarkModeToggle />
         </div>
       </nav>
 

@@ -1,0 +1,29 @@
+name: Link Checker
+
+on:
+  schedule:
+    - cron: '15 */6 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run linkinator
+        run: |
+          npx linkinator https://ziontechgroup.com --recurse --skip "mailto:|tel:|#" --timeout 5000 --format JSON > link-report.json || true
+      - name: Store report
+        run: |
+          mkdir -p data/reports/links
+          mv link-report.json data/reports/links/link-report-$(date +"%Y%m%d%H%M").json
+      - name: Commit report
+        run: |
+          git config user.name "zion-autobot"
+          git config user.email "autobot@users.noreply.github.com"
+          git add -A
+          git commit -m "chore(auto): link check report [skip ci]" || true
+          git push || true
