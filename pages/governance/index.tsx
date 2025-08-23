@@ -1,174 +1,127 @@
-// pages/governance/index.tsx
-import React, { useEffect, useState, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
-import ProposalCard from '@/components/governance/ProposalCard'; // Adjust path if needed
-import type { Proposal } from '@/components/governance/ProposalCard';
-// import MainLayout from '@/components/layout/MainLayout'; // If exists
-import { Button } from '@/components/ui/button'; // Adjust path
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'; // Adjust path
-import { Input } from '@/components/ui/input'; // For potential text search filter
-import ConnectWalletButton from '@/components/ConnectWalletButton'; // Assuming this is the correct path
-import {logErrorToProduction} from '@/utils/productionLogger';
+import { useWallet } from '../../hooks/useWallet';
 
-
-
-const GovernancePage: React.FC = () => {
-  const [proposals, setProposals] = useState<Proposal[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  const [statusFilter, setStatusFilter] = useState<string>('ALL');
-  const [typeFilter, setTypeFilter] = useState<string>('ALL');
-  const [sortBy, setSortBy] = useState<string>('newest');
-  const [searchTerm, setSearchTerm] = useState<string>('');
-
-  // Fetch proposals
-  useEffect(() => {
-    const fetchProposals = async () => {
-      setIsLoading(true);
-      setError(null);
-      try {
-        const params = new URLSearchParams();
-        if (statusFilter !== 'ALL') params.append('status', statusFilter);
-        if (typeFilter !== 'ALL') params.append('proposal_type', typeFilter);
-        if (searchTerm) params.append('search', searchTerm);
-        if (sortBy === 'newest') params.append('ordering', '-created_at');
-        if (sortBy === 'expiring_soon') params.append('ordering', 'voting_ends_at');
-        if (sortBy === 'most_funded') params.append('ordering', '-funding_ask_amount');
-
-        const query = params.toString() ? `?${params.toString()}` : '';
-        const response = await fetch(`/api/governance/proposals/${query}`);
-        if (!response.ok) {
-          const errorData = await response.json().catch(() => ({ detail: `Failed to fetch proposals: ${response.status}` }));
-          throw new Error(errorData.detail || `Failed to fetch proposals: ${response.status}`);
-        }
-        const data = await response.json();
-        // The Django REST Framework by default returns paginated results under a "results" key.
-        // If not paginated, it might be a direct array.
-        setProposals(Array.isArray(data) ? data : (data.results || []));
-      } catch (err: any) {
-        setError(err.message);
-        logErrorToProduction('Fetch error:', { data: err });
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    fetchProposals();
-  }, [statusFilter, typeFilter, sortBy, searchTerm]);
-
-  const filteredAndSortedProposals = useMemo(() => {
-    let processedProposals = [...proposals];
-
-    if (statusFilter !== 'ALL') {
-      processedProposals = processedProposals.filter(p => p.status === statusFilter);
-    }
-    if (typeFilter !== 'ALL') {
-      processedProposals = processedProposals.filter(p => p.proposal_type === typeFilter);
-    }
-    if (searchTerm) {
-        processedProposals = processedProposals.filter(p =>
-            p.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            p.summary.toLowerCase().includes(searchTerm.toLowerCase())
-        );
-    }
-
-    if (sortBy === 'newest') {
-      processedProposals.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
-    } else if (sortBy === 'expiring_soon') {
-      processedProposals.sort((a, b) => {
-        const aDate = a.voting_ends_at ? new Date(a.voting_ends_at).getTime() : Infinity;
-        const bDate = b.voting_ends_at ? new Date(b.voting_ends_at).getTime() : Infinity;
-        if (aDate === Infinity && bDate === Infinity) return 0; // both null, keep order
-        return aDate - bDate;
-      });
-    } else if (sortBy === 'most_funded') {
-      processedProposals.sort((a, b) => (b.funding_ask_amount || 0) - (a.funding_ask_amount || 0));
-    }
-
-
-    return processedProposals;
-  }, [proposals, statusFilter, typeFilter, sortBy, searchTerm]);
-
-  // These should ideally come from an API or a shared constants file
-  const proposalStatuses = ['ALL', 'PENDING_REVIEW', 'ACTIVE', 'CLOSED_SUCCESSFUL', 'CLOSED_FAILED_QUORUM', 'CLOSED_FAILED_REJECTED', 'EXECUTED', 'QUEUED_FOR_EXECUTION', 'CANCELED'];
-  const proposalTypes = ['ALL', 'FEATURE', 'BUDGET', 'COMMUNITY_GRANT', 'GENERAL'];
-
-  return (
-    // <MainLayout>
-    <div className="container mx-auto p-4">
-      <div className="flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
-        <h1 className="text-3xl font-bold">Zion Governance</h1>
-        <div className="flex flex-col sm:flex-row items-center gap-2">
-          <ConnectWalletButton />
-          <Link href="/governance/my-votes">
-            <Button variant="outline" className="w-full sm:w-auto">My Votes</Button>
-          </Link>
-          <Link href="/governance/zgp-library">
-            <Button variant="secondary" className="w-full sm:w-auto">ZGP Library</Button>
-          </Link>
-          <Link href="/governance/create">
-            <Button className="w-full sm:w-auto">Create Proposal</Button>
-          </Link>
-        </div>
-      </div>
-
-      <div className="mb-6 p-4 border rounded-lg space-y-4">
-        <Input
-            placeholder="Search by title or summary..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full"
-        />
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <Select value={statusFilter} onValueChange={setStatusFilter}>
-              <SelectTrigger>
-                <SelectValue placeholder="Filter by Status" />
-              </SelectTrigger>
-              <SelectContent>
-                {proposalStatuses.map(status => (
-                  <SelectItem key={status} value={status}>{status.replace(/_/g, ' ')}</SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-
-            <Select value={typeFilter} onValueChange={setTypeFilter}>
-              <SelectTrigger>
-                <SelectValue placeholder="Filter by Type" />
-              </SelectTrigger>
-              <SelectContent>
-                {proposalTypes.map(type => (
-                  <SelectItem key={type} value={type}>{type.replace(/_/g, ' ')}</SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-
-            <Select value={sortBy} onValueChange={setSortBy}>
-              <SelectTrigger>
-                <SelectValue placeholder="Sort By" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="newest">Newest First</SelectItem>
-                <SelectItem value="expiring_soon">Expiring Soon</SelectItem>
-                <SelectItem value="most_funded">Most Funded</SelectItem>
-              </SelectContent>
-            </Select>
-        </div>
-      </div>
-
-      {isLoading && <div className="text-center py-10">Loading proposals...</div>}
-      {!isLoading && error && <div className="text-center py-10 text-red-500">Error: {error}</div>}
-      {!isLoading && !error && filteredAndSortedProposals.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredAndSortedProposals.map(proposal => (
-            <ProposalCard key={proposal.id} proposal={proposal} />
-          ))}
-        </div>
-      ) : (
-        !isLoading && !error && <p className="text-center py-10">No proposals found matching your criteria.</p>
-      )}
-    </div>
-    // </MainLayout>
-  );
+type Proposal = {
+  id: string; title: string; summary: string; type: string; quorumPercent: number; votingPeriodDays: number; fundingAsk?: number; referenceLinks?: string[]; createdAt: number; startTime: number; endTime: number; status: string; queued?: boolean; executedTxHash?: string;
 };
 
-export default GovernancePage;
+type Vote = { id: string; proposalId: string; voter: string; option: 'approve' | 'reject' | 'abstain'; power: number; createdAt: number };
+
+export default function GovernanceHome() {
+  const { address, connect, disconnect } = useWallet();
+  const [activeTab, setActiveTab] = useState<'board' | 'my' | 'dashboard'>('board');
+  const [proposals, setProposals] = useState<Proposal[]>([]);
+  const [votes, setVotes] = useState<Vote[]>([]);
+  const [sort, setSort] = useState<'newest' | 'expiring' | 'funded'>('newest');
+
+  useEffect(() => {
+    fetch('/api/governance/proposals').then(r => r.json()).then(d => setProposals(d.proposals || []));
+  }, []);
+
+  useEffect(() => {
+    fetch('/api/governance/vote').then(r => r.json()).then(d => setVotes(d.votes || []));
+  }, []);
+
+  const sorted = useMemo(() => {
+    const list = [...proposals];
+    if (sort === 'newest') list.sort((a, b) => b.createdAt - a.createdAt);
+    if (sort === 'expiring') list.sort((a, b) => a.endTime - b.endTime);
+    if (sort === 'funded') list.sort((a, b) => (b.fundingAsk || 0) - (a.fundingAsk || 0));
+    return list;
+  }, [proposals, sort]);
+
+  const myVotes = useMemo(() => votes.filter(v => v.voter === (address || '').toLowerCase()), [votes, address]);
+
+  return (
+    <div className="space-y-6">
+      <div className="flex items-center justify-between">
+        <h1 className="text-2xl font-semibold">Zion Governance</h1>
+        <div className="flex items-center gap-3">
+          {address ? (
+            <>
+              <span className="text-sm text-gray-600">{address.slice(0, 6)}...{address.slice(-4)}</span>
+              <button onClick={disconnect} className="px-3 py-1.5 rounded border">Disconnect</button>
+            </>
+          ) : (
+            <button onClick={connect} className="px-3 py-1.5 rounded bg-black text-white">Connect Wallet</button>
+          )}
+          <Link href="/governance/new"><a className="px-3 py-1.5 rounded border">Create Proposal</a></Link>
+        </div>
+      </div>
+
+      <div className="flex gap-2 text-sm">
+        <button className={`px-3 py-1.5 rounded ${activeTab==='board'?'bg-gray-900 text-white':'border'}`} onClick={() => setActiveTab('board')}>Proposal Board</button>
+        <button className={`px-3 py-1.5 rounded ${activeTab==='my'?'bg-gray-900 text-white':'border'}`} onClick={() => setActiveTab('my')}>My Votes</button>
+        <button className={`px-3 py-1.5 rounded ${activeTab==='dashboard'?'bg-gray-900 text-white':'border'}`} onClick={() => setActiveTab('dashboard')}>Dashboard</button>
+      </div>
+
+      {activeTab === 'board' && (
+        <div className="space-y-4">
+          <div className="flex items-center gap-2 text-sm">
+            <span className="text-gray-500">Sort:</span>
+            <select value={sort} onChange={e => setSort(e.target.value as any)} className="border rounded px-2 py-1">
+              <option value="newest">Newest</option>
+              <option value="expiring">Expiring soon</option>
+              <option value="funded">Funding ask</option>
+            </select>
+          </div>
+          <ul className="grid md:grid-cols-2 gap-4">
+            {sorted.map(p => (
+              <li key={p.id} className="border rounded p-4 space-y-2">
+                <div className="flex items-center justify-between">
+                  <div className="text-xs uppercase tracking-wide text-gray-500">{p.type}</div>
+                  <div className="text-xs px-2 py-0.5 rounded-full border">{p.status}</div>
+                </div>
+                <Link href={`/governance/${p.id}`}><a className="text-lg font-medium hover:underline">{p.title}</a></Link>
+                <p className="text-sm text-gray-600 line-clamp-3">{p.summary}</p>
+                {p.fundingAsk ? <div className="text-sm">Funding ask: <span className="font-medium">{p.fundingAsk}</span></div> : null}
+                <div className="text-xs text-gray-500">Ends {new Date(p.endTime).toLocaleString()}</div>
+              </li>
+            ))}
+            {sorted.length === 0 && <div className="text-gray-500">No proposals yet.</div>}
+          </ul>
+        </div>
+      )}
+
+      {activeTab === 'my' && (
+        <div className="space-y-3">
+          {!address && <div className="text-sm text-gray-600">Connect your wallet to see your votes.</div>}
+          {address && (
+            <ul className="space-y-3">
+              {myVotes.map(v => (
+                <li key={v.id} className="border rounded p-3 text-sm flex items-center justify-between">
+                  <span>Voted on <Link href={`/governance/${v.proposalId}`}><a className="underline">{v.proposalId.slice(0,8)}</a></Link></span>
+                  <span className="uppercase text-xs">{v.option}</span>
+                </li>
+              ))}
+              {myVotes.length === 0 && <div className="text-gray-500">You have not voted yet.</div>}
+            </ul>
+          )}
+        </div>
+      )}
+
+      {activeTab === 'dashboard' && (
+        <Dashboard proposals={proposals} votes={votes} />
+      )}
+    </div>
+  );
+}
+
+function Dashboard({ proposals, votes }: { proposals: Proposal[]; votes: Vote[] }) {
+  const numVoters = useMemo(() => new Set(votes.map(v => v.voter)).size, [votes]);
+  const totalPower = useMemo(() => votes.reduce((a, v) => a + v.power, 0), [votes]);
+  const outcomes = useMemo(() => {
+    const ended = proposals.filter(p => Date.now() > p.endTime);
+    const byStatus = ended.reduce((acc: Record<string, number>, p) => { acc[p.status] = (acc[p.status] || 0) + 1; return acc; }, {});
+    return byStatus;
+  }, [proposals]);
+
+  return (
+    <div className="grid md:grid-cols-3 gap-4">
+      <div className="border rounded p-4"><div className="text-sm text-gray-500">Voters</div><div className="text-2xl font-semibold">{numVoters}</div></div>
+      <div className="border rounded p-4"><div className="text-sm text-gray-500">ZION$ used</div><div className="text-2xl font-semibold">{totalPower}</div></div>
+      <div className="border rounded p-4"><div className="text-sm text-gray-500">Historical outcomes</div><div className="text-sm">{Object.entries(outcomes).map(([k,v]) => (<div key={k}>{k}: {v}</div>))}</div></div>
+    </div>
+  );
+}

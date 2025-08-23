@@ -13,7 +13,7 @@ curl -H "Authorization: Bearer YOUR_API_KEY" \
 ```javascript
 // Using fetch in Node.js
 const res = await fetch('https://api.ziontechgroup.com/v1/api/jobs', {
-  headers: { Authorization: `Bearer ${API_KEY}` }
+  headers: { Authorization: `Bearer ${API_KEY}` },
 });
 const data = await res.json();
 ```

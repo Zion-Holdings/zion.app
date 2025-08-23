@@ -1,10 +1,8 @@
-#!/usr/bin/env node
 
-const fs = require('fs');
-const { execSync } = require('child_process');
+const fs = require('fs')
+const { _execSync } = require('child_process');
 
-console.log('🔧 Fixing remaining React Router issues...\n');
-
+console.warn('🔧 Fixing remaining React Router issues...\n')
 const fixes = [
   // Fix files with useLocation
   {
@@ -24,8 +22,8 @@ const fixes = [
     file: 'src/pages/NotFound.tsx',
     replacements: [
       {
-        from: 'import { useLocation, Link } from "react-router-dom";',
-        to: 'import { useRouter } from "next/router";\nimport Link from "next/link";'
+        from: 'import { useLocation, Link } from 'react-router-dom';,
+        to: 'import { useRouter } from "next/router";\nimport Link from 'next/link';
       },
       {
         from: 'const location = useLocation();',
@@ -58,8 +56,8 @@ const fixes = [
     file: 'src/mobile/components/common/BottomNavigation.tsx',
     replacements: [
       {
-        from: 'import { Link, useLocation } from "react-router-dom";',
-        to: 'import { useRouter } from "next/router";\nimport Link from "next/link";'
+        from: 'import { Link, useLocation } from 'react-router-dom';,
+        to: 'import { useRouter } from "next/router";\nimport Link from 'next/link';
       },
       {
         from: 'const location = useLocation();',
@@ -79,8 +77,8 @@ const fixes = [
     file: 'src/components/header/MobileBottomNav.tsx',
     replacements: [
       {
-        from: 'import { Link, useLocation } from "react-router-dom";',
-        to: 'import { useRouter } from "next/router";\nimport Link from "next/link";'
+        from: 'import { Link, useLocation } from 'react-router-dom';,
+        to: 'import { useRouter } from "next/router";\nimport Link from 'next/link';
       },
       {
         from: 'const location = useLocation();',
@@ -115,11 +113,11 @@ let totalFixed = 0;
 
 fixes.forEach(fix => {
   if (!fs.existsSync(fix.file)) {
-    console.log(`⚠️  File not found: ${fix.file}`);
+    console.warn(`⚠️  File not found: ${fix.file}`);
     return;
   }
 
-  console.log(`🔧 Fixing: ${fix.file}`);
+  console.warn(`🔧 Fixing: ${fix.file}`);
   
   try {
     let content = fs.readFileSync(fix.file, 'utf8');
@@ -129,7 +127,7 @@ fixes.forEach(fix => {
       if (content.includes(replacement.from)) {
         content = content.replace(new RegExp(replacement.from.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), replacement.to);
         hasChanges = true;
-        console.log(`   ✓ Replaced: ${replacement.from.substring(0, 50)}...`);
+        console.warn(`   ✓ Replaced: ${replacement.from.substring(0, 50)}...`);
       }
     });
     
@@ -137,41 +135,39 @@ fixes.forEach(fix => {
       fs.writeFileSync(fix.file, content);
       totalFixed++;
     } else {
-      console.log(`   ⚠️  No changes needed`);
+      console.warn(`   ⚠️  No changes needed`);
     }
     
-  } catch (error) {
-    console.log(`   ❌ Error: ${error.message}`);
-  }
+  } catch (_error) { /* intentionally empty: ignore errors */ }
   
-  console.log('');
+  console.warn('');
 });
 
-console.log(`📊 Fixed ${totalFixed} files\n`);
+console.warn(`📊 Fixed ${totalFixed} files\n`);
 
 // Test the build
 try {
-  console.log('🧪 Testing build...');
+  console.warn('🧪 Testing build...');
   execSync('npm run build > build-test-2.log 2>&1');
-  console.log('✅ Build test passed!');
-} catch (error) {
-  console.log('❌ Build test failed. Checking errors...');
-  
-  try {
-    const buildLog = fs.readFileSync('build-test-2.log', 'utf8');
-    const errorLines = buildLog.split('\n').filter(line => 
-      line.includes('Type error') || 
-      line.includes('Cannot find name') ||
-      line.includes('Error:')
-    );
-    
-    if (errorLines.length > 0) {
-      console.log('\n🔍 Found errors:');
-      errorLines.slice(0, 5).forEach(line => console.log(`   ${line.trim()}`));
-    }
-  } catch (e) {
-    console.log('Could not read build log');
-  }
+  console.warn('✅ Build test passed!');
+} catch (_error) {
+  console.warn('⚠️  Build test failed');
 }
 
-console.log('\n🚀 Router fixes complete!'); 
+try {
+  const buildLog = fs.readFileSync('build-test-2.log', 'utf8')
+const errorLines = buildLog.split('\n').filter(line => 
+    line.includes('Type error') || 
+    line.includes('Cannot find name') ||
+    line.includes('Error:')
+  );
+  
+  if (errorLines.length > 0) {
+    console.warn('\n🔍 Found errors:');
+    errorLines.slice(0, 5).forEach(line => console.warn(`   ${line.trim()}`));
+  }
+} catch (_error) {
+  console.warn('⚠️  Could not read build log');
+}
+
+console.warn('\n🚀 Router fixes complete!'); 

@@ -10,8 +10,7 @@ import path from 'path';
 function collectRoutes(dir, base = '') {
   if (!fs.existsSync(dir)) return [];
 
-  const entries = fs.readdirSync(dir);
-  const routes = [];
+const IGNORE_DIRS = new Set(['.git', '.github', 'node_modules', 'dist']);
 
   for (const entry of entries) {
     if (entry.startsWith('_') || entry === 'api') continue;
@@ -51,24 +50,25 @@ let routes = [
   ...collectRoutes(path.join(process.cwd(), 'src', 'pages')),
 ];
 
-// Remove duplicates and sort for a stable sitemap
-routes = [...new Set(routes)].sort();
+  // Ensure root is present
+  if (!urls.includes('')) urls.push('');
 
-const baseUrl =
-  process.env.NEXT_PUBLIC_APP_URL || 'https://app.ziontechgroup.com';
-const lastmod = new Date().toISOString().split('T')[0];
-let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
-xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
-for (const route of routes) {
-  xml += '  <url>\n';
-  xml += `    <loc>${baseUrl}${route}</loc>\n`;
-  xml += `    <lastmod>${lastmod}</lastmod>\n`;
-  xml += '  </url>\n';
+  const now = new Date().toISOString();
+  const xmlUrls = urls
+    .sort()
+    .map((p) => {
+      const loc = baseUrl + p;
+      return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${now}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>${p === '' ? '1.0' : '0.6'}</priority>\n  </url>`;
+    })
+    .join('\n');
+
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${xmlUrls}\n</urlset>\n`;
+
+  await fs.writeFile(path.join(projectRoot, 'sitemap.xml'), xml, 'utf8');
+  console.log(`Generated sitemap.xml with ${urls.length} URLs.`);
 }
-xml += '</urlset>\n';
-fs.writeFileSync(path.join(process.cwd(), 'public', 'sitemap.xml'), xml);
 
 const robots = `User-agent: *\nAllow: /\n\nSitemap: ${baseUrl}/sitemap.xml\n`;
 fs.writeFileSync(path.join(process.cwd(), 'public', 'robots.txt'), robots);
 
-console.log(`Generated ${routes.length} routes to sitemap.xml and robots.txt`);
+console.warn(`Generated ${routes.length} routes to sitemap.xml and robots.txt`);

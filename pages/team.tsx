@@ -1,3 +1,8 @@
-import { createSafeComponent } from '../src/utils/safe-component-loader';
+import React from 'react';
+import dynamic from 'next/dynamic';
 
-export default createSafeComponent('../src/pages/OrgChart');
+const OrgChartPage = dynamic(() => import('../components/org/OrgChartPage'), { ssr: false });
+
+export default function TeamPage() {
+  return <OrgChartPage />;
+}
