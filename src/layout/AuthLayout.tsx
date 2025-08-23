@@ -9,11 +9,13 @@ interface AuthLayoutProps {
 export function AuthLayout({ children }: AuthLayoutProps) {
   return (
     <div className="auth-layout flex flex-col min-h-screen">
-      <header className="flex items-center justify-between p-4 border-b border-zion-purple/20 bg-zion-blue-dark">
+      <header className="flex items-center justify-between p-4 border-b border-zion-purple/20 bg-zion-blue-dark text-white">
         <Logo />
         <LanguageSelector />
       </header>
-      <main className="flex-1">{children}</main>
+      <main className="flex-1 flex items-center justify-center p-4">
+        <div className="w-full max-w-md mx-auto">{children}</div>
+      </main>
     </div>
   );
 }

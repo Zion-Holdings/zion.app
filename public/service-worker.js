@@ -1,13 +1,24 @@
 const CACHE_NAME = 'static-cache-v1';
 const DATA_CACHE_NAME = 'data-cache-v1';
 
-const FILES_TO_CACHE = [
-  '/',
-  '/index.html',
-  '/offline.html',
-  '/manifest.json',
-  '/vite.svg'
-];
+// Try multiple CDNs for Workbox
+try {
+  importScripts('https://storage.googleapis.com/workbox-cdn/releases/6.1.5/workbox-sw-no-eval.js');
+} catch (e) {
+  try {
+    importScripts('https://cdn.jsdelivr.net/npm/workbox-sw@6.1.5/build/workbox-sw.js');
+  } catch (e2) {
+    try {
+      importScripts('https://unpkg.com/workbox-sw@6.1.5/build/workbox-sw.js');
+    } catch (e3) {
+      console.error('Failed to load Workbox from all CDNs:', e3);
+      // Fallback to basic service worker without Workbox
+      self.skipWaiting();
+      self.clientsClaim();
+      return;
+    }
+  }
+}
 
 self.addEventListener('install', event => {
   event.waitUntil(
@@ -16,19 +27,95 @@ self.addEventListener('install', event => {
   self.skipWaiting();
 });
 
-self.addEventListener('activate', event => {
-  event.waitUntil(
-    caches.keys().then(keyList =>
-      Promise.all(
-        keyList.map(key => {
-          if (key !== CACHE_NAME && key !== DATA_CACHE_NAME) {
-            return caches.delete(key);
+self.addEventListener('push', event => {
+  const data = event.data ? event.data.json() : {};
+  const title = data.title || 'Zion Notification';
+  const options = {
+    body: data.body,
+    icon: '/logos/zion-logo.png'
+  };
+  event.waitUntil(self.registration.showNotification(title, options));
+});
+
+self.addEventListener('notificationclick', event => {
+  event.notification.close();
+  if (event.notification.data) {
+    event.waitUntil(clients.openWindow(event.notification.data));
+  }
+});
+
+// Manually trigger replay of the Background Sync queue
+self.addEventListener('message', event => {
+  try {
+    if (event.data && event.data.type === 'SYNC_QUEUE' && bgSyncPlugin) {
+      // Add timeout to prevent hanging operations
+      const timeoutPromise = new Promise((_, reject) => 
+        setTimeout(() => reject(new Error('Sync timeout')), 30000)
+      );
+      
+      const syncPromise = bgSyncPlugin.queue
+        .replayRequests()
+        .then(() => {
+          console.log('Background sync completed successfully');
+          // Send success response if there's a port
+          if (event.ports && event.ports[0]) {
+            try {
+              event.ports[0].postMessage({ type: 'SYNC_SUCCESS' });
+            } catch (postError) {
+              console.error('Failed to post sync success message:', postError);
+            }
           }
         })
-      )
-    )
-  );
-  self.clients.claim();
+        .catch(err => {
+          console.error('Background sync replay failed', err);
+          // Try to notify clients about the failure
+          return self.clients.matchAll().then(clients => {
+            clients.forEach(client => {
+              try {
+                client.postMessage({ type: 'SYNC_FAILED', error: err.message });
+              } catch (postError) {
+                console.error('Failed to post sync failure message:', postError);
+              }
+            });
+          });
+        });
+      
+      event.waitUntil(
+        Promise.race([syncPromise, timeoutPromise])
+          .catch(timeoutError => {
+            console.error('Background sync timed out:', timeoutError);
+            return self.clients.matchAll().then(clients => {
+              clients.forEach(client => {
+                try {
+                  client.postMessage({ type: 'SYNC_TIMEOUT', error: 'Sync operation timed out' });
+                } catch (postError) {
+                  console.error('Failed to post sync timeout message:', postError);
+                }
+              });
+            });
+          })
+      );
+    } else {
+      // Handle other message types or send error response
+      if (event.ports && event.ports[0]) {
+        try {
+          event.ports[0].postMessage({ type: 'UNKNOWN_MESSAGE_TYPE' });
+        } catch (postError) {
+          console.error('Failed to post error message:', postError);
+        }
+      }
+    }
+  } catch (error) {
+    console.error('Error handling service worker message:', error);
+    // Try to send error response if possible
+    if (event.ports && event.ports[0]) {
+      try {
+        event.ports[0].postMessage({ type: 'MESSAGE_ERROR', error: error.message });
+      } catch (postError) {
+        console.error('Failed to post error message:', postError);
+      }
+    }
+  }
 });
 
 self.addEventListener('fetch', event => {

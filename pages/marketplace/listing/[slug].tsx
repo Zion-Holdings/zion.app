@@ -163,7 +163,8 @@ export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({
       }
     } catch (apiError) {
       logWarn('API fetch for product ${slug} (attempting ID match) failed:', { data: apiError });
-      Sentry.captureMessage(`API fetch for product ${slug} (attempting ID match) failed`, { extra: { error: apiError } });
+      Sentry.captureMessage(`API fetch for product ${slug} (attempting ID match) failed`);
+      Sentry.addBreadcrumb({ message: `API error: ${apiError}` });
     }
 
     // Step 2: If not found via direct API ID lookup, try static data by ID
@@ -209,7 +210,8 @@ export const getServerSideProps: GetServerSideProps<ListingPageProps> = async ({
     
     if (!listing) {
       logInfo(`Listing not found for slug: ${slug}`);
-      Sentry.captureMessage(`Listing not found for slug: ${slug}`, { level: 'warning' });
+      Sentry.captureMessage(`Listing not found for slug: ${slug}`);
+      Sentry.addBreadcrumb({ message: `Listing not found for slug: ${slug}` });
       return { notFound: true };
     }
     
