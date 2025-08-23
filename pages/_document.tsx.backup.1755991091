@@ -1,6 +1,10 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
+<<<<<<< HEAD
+export default class MyDocument extends Document {
+=======
 class MyDocument extends Document {
+>>>>>>> origin/cursor/build-community-driven-zion-roadmap-page-15c3
   render() {
     return (
       <Html lang="en">
@@ -13,5 +17,8 @@ class MyDocument extends Document {
     );
   }
 }
+<<<<<<< HEAD
+=======
 
 export default MyDocument;
+>>>>>>> origin/cursor/build-community-driven-zion-roadmap-page-15c3
