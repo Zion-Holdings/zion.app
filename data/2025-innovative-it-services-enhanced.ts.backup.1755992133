@@ -389,10 +389,17 @@ export const innovativeITServicesEnhanced2025: InnovativeITService[] = [
     color: 'from-indigo-600 to-purple-600',
     textColor: 'text-indigo-400',
     link: 'https://ziontechgroup.com/blockchain-infrastructure-platform',
+<<<<<<< HEAD
+    marketPosition: 'Leading enterprise blockchain platform. Our advantage: Multi-blockchain support and enterprise-grade security.',
+    targetAudience: 'Financial institutions, Supply chain companies, Healthcare organizations, Government agencies, Technology companies',
+    trialDays: 30,
+    setupTime: '3-4 weeks',
+=======
     marketPosition: 'Advanced enterprise blockchain infrastructure platform with enhanced security, scalability, and business integration capabilities.',
     targetAudience: 'Financial services, Supply chain companies, Healthcare organizations, Government agencies, Gaming companies',
     trialDays: 21,
     setupTime: '2-4 weeks',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2aa8
     category: 'Blockchain & Web3',
     realService: true,
     technology: ['Python, Solidity, Rust, Blockchain protocols, Smart contracts, Web3'],
@@ -573,6 +580,9 @@ export const innovativeITServicesEnhanced2025: InnovativeITService[] = [
     launchDate: '2024-03-25',
     customers: 89,
     rating: 4.8,
+<<<<<<< HEAD
+    reviews: 52
+=======
     reviews: 89
   },
 
@@ -945,5 +955,6 @@ export const innovativeITServicesEnhanced2025: InnovativeITService[] = [
     customers: 5,
     rating: 5.0,
     reviews: 3
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2aa8
   }
 ];

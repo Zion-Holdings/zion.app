@@ -568,6 +568,13 @@ export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
       website: 'https://ziontechgroup.com'
     },
     realImplementation: true,
+<<<<<<< HEAD
+    implementationDetails: 'AI-powered education platform with personalized learning algorithms and adaptive curriculum generation.',
+    launchDate: '2024-03-25',
+    customers: 156,
+    rating: 4.8,
+    reviews: 89
+=======
     implementationDetails: 'AI-powered education platform with personalized learning algorithms, adaptive content, and comprehensive analytics.',
     launchDate: '2024-08-20',
     customers: 234,
@@ -1686,5 +1693,6 @@ export const innovativeAIServicesEnhanced2025: InnovativeAIService[] = [
     customers: 95,
     rating: 4.7,
     reviews: 58
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2aa8
   }
 ];
