@@ -44,10 +44,20 @@ import { real2031ITServicesAdditions } from '../../data/real-2031-it-services-ad
 import { real2031AIServicesAdditions } from '../../data/real-2031-ai-services-additions';
 import { real2030Q2Additions } from '../../data/real-2030-q2-additions';
 import { real2027Q3Additions } from '../../data/real-2027-q3-additions';
-import { enterpriseITSolutions2034Additions } from '../../data/augment-2034-enterprise-it-additions';
-import { innovativeMicroSaasSolutions2034Additions } from '../../data/augment-2034-micro-saas-additions';
-import { cuttingEdgeAIServices2034Additions } from '../../data/augment-2034-ai-services-additions';
-import { aiAutonomousEcosystemServices2029Additions, emergingTechBreakthroughServices2029Additions, practicalBusinessSolutionServices2029Additions } from '../../data/augment-2029-ecosystem-additions';
+import { professionalServices } from '../../data/professional-services';
+import { real2032ServiceExpansions } from '../../data/real-2032-service-expansions';
+import { real2035Q1Additions } from '../../data/real-2035-q1-additions';
+import { real2035Q2AdditionsExtra } from '../../data/real-2035-q2-additions-extra';
+import { real2025ExtraServices } from '../../data/real-2025-extra-services';
+import { real2026Q4ExpansionsV2 } from '../../data/real-2026-q4-expansions-v2';
+import { real2036ServiceExpansions } from '../../data/real-2036-service-expansions';
+import { real2026Q4ExpansionsV3 } from '../../data/real-2026-q4-expansions-v3';
+import { real2036MicroSaasAdditions } from '../../data/real-2036-micro-saas-additions';
+import { real2036ITServicesAdditions } from '../../data/real-2036-it-services-additions';
+import { real2036AIServicesAdditions } from '../../data/real-2036-ai-services-additions';
+import { real2037AIServicesAdditions } from '../../data/real-2037-ai-services-additions';
+import { real2037ITServicesAdditions } from '../../data/real-2037-it-services-additions';
+import { real2037MicroSaasAdditions } from '../../data/real-2037-micro-saas-additions';
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -116,12 +126,22 @@ export default function ServicesIndexPage() {
       real2031MicroSaasAdditions as unknown[],
       real2031ITServicesAdditions as unknown[],
       real2031AIServicesAdditions as unknown[],
-      enterpriseITSolutions2034Additions as unknown[],
-      innovativeMicroSaasSolutions2034Additions as unknown[],
-      cuttingEdgeAIServices2034Additions as unknown[],
-      aiAutonomousEcosystemServices2029Additions as unknown[],
-      emergingTechBreakthroughServices2029Additions as unknown[],
-      practicalBusinessSolutionServices2029Additions as unknown[]
+      real2030Q2Additions as unknown[],
+      real2027Q3Additions as unknown[],
+      professionalServices as unknown[],
+      real2032ServiceExpansions as unknown[],
+      real2035Q1Additions as unknown[],
+      real2035Q2AdditionsExtra as unknown[],
+      real2025ExtraServices as unknown[],
+      real2026Q4ExpansionsV2 as unknown[],
+      real2036ServiceExpansions as unknown[],
+      real2026Q4ExpansionsV3 as unknown[],
+      real2036MicroSaasAdditions as unknown[],
+      real2036ITServicesAdditions as unknown[],
+      real2036AIServicesAdditions as unknown[],
+      real2037AIServicesAdditions as unknown[],
+      real2037ITServicesAdditions as unknown[],
+      real2037MicroSaasAdditions as unknown[]
     );
   const byCategory: Record<string, unknown[]> = {};
   for (const c of categories) byCategory[c] = [];
