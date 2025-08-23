@@ -1,172 +1,208 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Head from 'next/head';
 
-interface SEOOptimizerProps {
-  title?: string;
-  description?: string;
-  keywords?: string;
-  ogImage?: string;
-  ogUrl?: string;
-  canonicalUrl?: string;
-  structuredData?: object;
-}
-
-const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
-  title = 'Zion Tech Group - Future of Technology | AI, Quantum Security, Micro SAAS',
-  description = 'Revolutionary micro SAAS services, cutting-edge AI solutions, quantum cybersecurity, and emerging technologies that transform businesses. 98+ innovative services for the modern enterprise.',
-  keywords = 'AI services, quantum cybersecurity, micro SAAS, automation, IT solutions, emerging technologies, Zion Tech Group, Delaware technology company',
-  ogImage = '/og-image.jpg',
-  ogUrl = 'https://ziontechgroup.com',
-  canonicalUrl = 'https://ziontechgroup.com',
-  structuredData = {}
-}) => {
-  useEffect(() => {
-    // Add structured data to page
-    if (structuredData && Object.keys(structuredData).length > 0) {
-      const script = document.createElement('script');
-      script.type = 'application/ld+json';
-      script.text = JSON.stringify(structuredData);
-      document.head.appendChild(script);
-
-      return () => {
-        document.head.removeChild(script);
-      };
-    }
-  }, [structuredData]);
-
-  // Default structured data for Zion Tech Group
-  const defaultStructuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'Zion Tech Group',
+const SEOOptimizer: React.FC = () => {
+  const siteConfig = {
+    title: 'Zion Tech Group - Pioneering the Future of Technology',
+    description: 'Empowering businesses with cutting-edge AI, quantum computing, and innovative technology solutions. Transform your operations with Zion Tech Group\'s comprehensive suite of services.',
     url: 'https://ziontechgroup.com',
-    logo: 'https://ziontechgroup.com/logo.png',
-    description: 'Revolutionary technology solutions including AI, quantum cybersecurity, and micro SAAS services.',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '364 E Main St STE 1008',
-      addressLocality: 'Middletown',
-      addressRegion: 'DE',
-      postalCode: '19709',
-      addressCountry: 'US'
+    siteName: 'Zion Tech Group',
+    twitterHandle: '@ziontechgroup',
+    image: '/og-image.jpg',
+    type: 'website',
+    keywords: [
+      'AI services',
+      'Machine Learning',
+      'Quantum Computing',
+      'Technology Solutions',
+      'Business Automation',
+      'IT Services',
+      'Digital Transformation',
+      'Cloud Solutions',
+      'Cybersecurity',
+      'Data Analytics'
+    ].join(', '),
+    author: 'Zion Tech Group',
+    publishedTime: new Date().toISOString(),
+    modifiedTime: new Date().toISOString(),
+    section: 'Technology Services',
+    tag: 'AI, Quantum Computing, Technology'
+  };
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Zion Tech Group",
+    "url": "https://ziontechgroup.com",
+    "logo": "https://ziontechgroup.com/logo.png",
+    "description": "Pioneering the future of technology with innovative solutions that drive business transformation",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "364 E Main St STE 1008",
+      "addressLocality": "Middletown",
+      "addressRegion": "DE",
+      "postalCode": "19709",
+      "addressCountry": "US"
     },
-    contactPoint: {
-      '@type': 'ContactPoint',
-      telephone: '+1-302-464-0950',
-      contactType: 'customer service',
-      email: 'kleber@ziontechgroup.com'
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-302-464-0950",
+      "contactType": "customer service",
+      "email": "kleber@ziontechgroup.com"
     },
-    sameAs: [
-      'https://ziontechgroup.com',
-      'https://linkedin.com/company/ziontechgroup'
+    "sameAs": [
+      "https://github.com/Zion-Holdings",
+      "https://linkedin.com/company/zion-tech-group"
     ],
-    serviceArea: {
-      '@type': 'Country',
-      name: 'United States'
-    },
-    hasOfferCatalog: {
-      '@type': 'OfferCatalog',
-      name: 'Technology Services',
-      itemListElement: [
+    "foundingDate": "2020",
+    "numberOfEmployees": "50+",
+    "serviceArea": "Worldwide",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Technology Services",
+      "itemListElement": [
         {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'AI Services',
-            description: 'Cutting-edge artificial intelligence solutions'
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "AI & Machine Learning Solutions",
+            "description": "Advanced artificial intelligence and machine learning services"
           }
         },
         {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Quantum Cybersecurity',
-            description: 'Next-generation quantum-resistant security'
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Quantum Computing Services",
+            "description": "Next-generation quantum computing solutions"
           }
         },
         {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Micro SAAS Services',
-            description: 'Revolutionary micro software-as-a-service solutions'
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Process Automation",
+            "description": "Intelligent automation solutions for business processes"
           }
         }
       ]
     }
   };
 
-  const finalStructuredData = Object.keys(structuredData).length > 0 ? structuredData : defaultStructuredData;
-
   return (
     <Head>
       {/* Basic Meta Tags */}
-      <title>{title}</title>
-      <meta name="description" content={description} />
-      <meta name="keywords" content={keywords} />
-      <meta name="author" content="Zion Tech Group" />
-      <meta name="robots" content="index, follow" />
-      <meta name="language" content="English" />
-      <meta name="revisit-after" content="7 days" />
+      <title>{siteConfig.title}</title>
+      <meta name="description" content={siteConfig.description} />
+      <meta name="keywords" content={siteConfig.keywords} />
+      <meta name="author" content={siteConfig.author} />
+      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
       
       {/* Canonical URL */}
-      <link rel="canonical" href={canonicalUrl} />
+      <link rel="canonical" href={siteConfig.url} />
       
       {/* Open Graph Meta Tags */}
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:image" content={ogImage} />
-      <meta property="og:url" content={ogUrl} />
-      <meta property="og:site_name" content="Zion Tech Group" />
+      <meta property="og:title" content={siteConfig.title} />
+      <meta property="og:description" content={siteConfig.description} />
+      <meta property="og:url" content={siteConfig.url} />
+      <meta property="og:site_name" content={siteConfig.siteName} />
+      <meta property="og:image" content={`${siteConfig.url}${siteConfig.image}`} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:type" content={siteConfig.type} />
       <meta property="og:locale" content="en_US" />
       
       {/* Twitter Card Meta Tags */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={ogImage} />
-      <meta name="twitter:site" content="@ziontechgroup" />
+      <meta name="twitter:site" content={siteConfig.twitterHandle} />
+      <meta name="twitter:title" content={siteConfig.title} />
+      <meta name="twitter:description" content={siteConfig.description} />
+      <meta name="twitter:image" content={`${siteConfig.url}${siteConfig.image}`} />
       
       {/* Additional Meta Tags */}
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="theme-color" content="#0891b2" />
-      <meta name="msapplication-TileColor" content="#0891b2" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <meta name="theme-color" content="#000000" />
+      <meta name="msapplication-TileColor" content="#000000" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       
-      {/* Preconnect to external domains for performance */}
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      
-      {/* Favicon */}
-      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+      {/* Favicon and App Icons */}
+      <link rel="icon" href="/favicon.ico" />
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-      
-      {/* Manifest */}
       <link rel="manifest" href="/site.webmanifest" />
+      
+      {/* Preconnect to External Domains */}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link rel="preconnect" href="https://www.google-analytics.com" />
+      
+      {/* DNS Prefetch */}
+      <link rel="dns-prefetch" href="//www.google-analytics.com" />
+      <link rel="dns-prefetch" href="//fonts.googleapis.com" />
       
       {/* Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(finalStructuredData)
+          __html: JSON.stringify(structuredData)
         }}
       />
       
       {/* Additional SEO Meta Tags */}
       <meta name="application-name" content="Zion Tech Group" />
+      <meta name="mobile-web-app-capable" content="yes" />
+      <meta name="format-detection" content="telephone=no" />
+      
+      {/* Performance Optimizations */}
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="referrer" content="strict-origin-when-cross-origin" />
+      
+      {/* Security Headers */}
+      <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
+      <meta httpEquiv="X-Frame-Options" content="DENY" />
+      <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
+      
+      {/* PWA Meta Tags */}
       <meta name="apple-mobile-web-app-title" content="Zion Tech Group" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="default" />
       
-      {/* Security Headers */}
-      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="referrer" content="strict-origin-when-cross-origin" />
+      {/* Business Information */}
+      <meta name="geo.region" content="US-DE" />
+      <meta name="geo.placename" content="Middletown, Delaware" />
+      <meta name="geo.position" content="39.4496;-75.7163" />
+      <meta name="ICBM" content="39.4496, -75.7163" />
       
-      {/* Performance Hints */}
-      <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-      <link rel="dns-prefetch" href="//www.google-analytics.com" />
+      {/* Social Media Verification */}
+      <meta name="google-site-verification" content="your-verification-code" />
+      <meta name="msvalidate.01" content="your-verification-code" />
+      
+      {/* Additional Open Graph Tags */}
+      <meta property="og:image:alt" content="Zion Tech Group - Technology Solutions" />
+      <meta property="og:image:type" content="image/jpeg" />
+      <meta property="og:image:secure_url" content={`${siteConfig.url}${siteConfig.image}`} />
+      
+      {/* Article Specific Meta Tags */}
+      <meta property="article:published_time" content={siteConfig.publishedTime} />
+      <meta property="article:modified_time" content={siteConfig.modifiedTime} />
+      <meta property="article:section" content={siteConfig.section} />
+      <meta property="article:tag" content={siteConfig.tag} />
+      
+      {/* Language and Region */}
+      <meta property="og:locale:alternate" content="es_ES" />
+      <meta property="og:locale:alternate" content="fr_FR" />
+      <meta property="og:locale:alternate" content="de_DE" />
+      
+      {/* Business Hours and Contact */}
+      <meta property="business:contact_data:street_address" content="364 E Main St STE 1008" />
+      <meta property="business:contact_data:locality" content="Middletown" />
+      <meta property="business:contact_data:region" content="DE" />
+      <meta property="business:contact_data:postal_code" content="19709" />
+      <meta property="business:contact_data:country_name" content="United States" />
+      <meta property="business:contact_data:phone_number" content="+1-302-464-0950" />
+      <meta property="business:contact_data:email" content="kleber@ziontechgroup.com" />
     </Head>
   );
 };
