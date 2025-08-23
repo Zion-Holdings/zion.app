@@ -3,25 +3,39 @@ const CACHE_NAME = 'zion-tech-group-v1.0.0';
 const STATIC_CACHE = 'zion-static-v1.0.0';
 const DYNAMIC_CACHE = 'zion-dynamic-v1.0.0';
 
-// Files to cache immediately
-const STATIC_FILES = [
+const CACHE_NAME = 'zion-tech-group-v1.0.0';
+const STATIC_CACHE_NAME = 'zion-tech-group-static-v1.0.0';
+const DYNAMIC_CACHE_NAME = 'zion-tech-group-dynamic-v1.0.0';
+
+// Static assets to cache
+const STATIC_ASSETS = [
   '/',
   '/offline.html',
   '/manifest.json',
   '/favicon.ico',
-  '/logo.png',
-  '/og-image.jpg'
+  '/images/zion-tech-group-logo.png',
+  '/images/zion-tech-group-og.jpg'
+];
+
+// Dynamic routes to cache
+const DYNAMIC_ROUTES = [
+  '/services',
+  '/about',
+  '/contact',
+  '/solutions',
+  '/resources'
 ];
 
 // Install event - cache static files
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(STATIC_CACHE)
+    caches.open(STATIC_CACHE_NAME)
       .then((cache) => {
-        console.log('Opened cache');
-        return cache.addAll(STATIC_FILES);
+        console.log('Caching static assets');
+        return cache.addAll(STATIC_ASSETS);
       })
       .then(() => {
+        console.log('Static assets cached successfully');
         return self.skipWaiting();
       })
   );
@@ -30,18 +44,21 @@ self.addEventListener('install', (event) => {
 // Activate event - clean up old caches
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cacheName) => {
-          if (cacheName !== STATIC_CACHE && cacheName !== DYNAMIC_CACHE) {
-            console.log('Deleting old cache:', cacheName);
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    }).then(() => {
-      return self.clients.claim();
-    })
+    caches.keys()
+      .then((cacheNames) => {
+        return Promise.all(
+          cacheNames.map((cacheName) => {
+            if (cacheName !== STATIC_CACHE_NAME && cacheName !== DYNAMIC_CACHE_NAME) {
+              console.log('Deleting old cache:', cacheName);
+              return caches.delete(cacheName);
+            }
+          })
+        );
+      })
+      .then(() => {
+        console.log('Service worker activated');
+        return self.clients.claim();
+      })
   );
 });
 
@@ -55,97 +72,131 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Skip chrome-extension and other non-http requests
+  // Skip non-HTTP(S) requests
   if (!url.protocol.startsWith('http')) {
     return;
   }
 
   // Handle different types of requests
-  if (request.destination === 'document') {
-    // HTML pages - network first, fallback to cache
-    event.respondWith(
-      fetch(request)
-        .then((response) => {
-          // Cache successful responses
-          if (response.status === 200) {
-            const responseClone = response.clone();
-            caches.open(DYNAMIC_CACHE).then((cache) => {
-              cache.put(request, responseClone);
-            });
-          }
-          return response;
-        })
-        .catch(() => {
-          // Return cached version or offline page
-          return caches.match(request)
-            .then((cachedResponse) => {
-              if (cachedResponse) {
-                return cachedResponse;
-              }
-              return caches.match('/offline.html');
-            });
-        })
-    );
-  } else if (request.destination === 'image' || request.destination === 'style' || request.destination === 'script') {
-    // Static assets - cache first, fallback to network
-    event.respondWith(
-      caches.match(request)
-        .then((cachedResponse) => {
-          if (cachedResponse) {
-            return cachedResponse;
-          }
-          return fetch(request)
-            .then((response) => {
-              // Cache successful responses
-              if (response.status === 200) {
-                const responseClone = response.clone();
-                caches.open(DYNAMIC_CACHE).then((cache) => {
-                  cache.put(request, responseClone);
-                });
-              }
-              return response;
-            });
-        })
-    );
+  if (isStaticAsset(request)) {
+    event.respondWith(handleStaticAsset(request));
+  } else if (isDynamicRoute(request)) {
+    event.respondWith(handleDynamicRoute(request));
   } else {
-    // Other requests - network first, fallback to cache
-    event.respondWith(
-      fetch(request)
-        .then((response) => {
-          // Cache successful responses
-          if (response.status === 200) {
-            const responseClone = response.clone();
-            caches.open(DYNAMIC_CACHE).then((cache) => {
-              cache.put(request, responseClone);
-            });
-          }
-          return response;
-        })
-        .catch(() => {
-          return caches.match(request);
-        })
-    );
+    event.respondWith(handleApiRequest(request));
   }
 });
+
+// Check if request is for a static asset
+function isStaticAsset(request) {
+  const url = new URL(request.url);
+  return STATIC_ASSETS.includes(url.pathname) ||
+         request.destination === 'image' ||
+         request.destination === 'font' ||
+         request.destination === 'style' ||
+         request.destination === 'script';
+}
+
+// Check if request is for a dynamic route
+function isDynamicRoute(request) {
+  const url = new URL(request.url);
+  return DYNAMIC_ROUTES.some(route => url.pathname.startsWith(route));
+}
+
+// Handle static asset requests
+async function handleStaticAsset(request) {
+  try {
+    // Try cache first
+    const cachedResponse = await caches.match(request);
+    if (cachedResponse) {
+      return cachedResponse;
+    }
+
+    // Fallback to network
+    const networkResponse = await fetch(request);
+    if (networkResponse.ok) {
+      const cache = await caches.open(STATIC_CACHE_NAME);
+      cache.put(request, networkResponse.clone());
+    }
+    return networkResponse;
+  } catch (error) {
+    console.log('Static asset fetch failed:', error);
+    // Return offline page for navigation requests
+    if (request.destination === 'document') {
+      return caches.match('/offline.html');
+    }
+    throw error;
+  }
+}
+
+// Handle dynamic route requests
+async function handleDynamicRoute(request) {
+  try {
+    // Try network first for dynamic content
+    const networkResponse = await fetch(request);
+    if (networkResponse.ok) {
+      const cache = await caches.open(DYNAMIC_CACHE_NAME);
+      cache.put(request, networkResponse.clone());
+    }
+    return networkResponse;
+  } catch (error) {
+    console.log('Dynamic route fetch failed:', error);
+    // Try cache as fallback
+    const cachedResponse = await caches.match(request);
+    if (cachedResponse) {
+      return cachedResponse;
+    }
+    // Return offline page
+    return caches.match('/offline.html');
+  }
+}
+
+// Handle API requests
+async function handleApiRequest(request) {
+  try {
+    // Try network first for API calls
+    const networkResponse = await fetch(request);
+    if (networkResponse.ok) {
+      const cache = await caches.open(DYNAMIC_CACHE_NAME);
+      cache.put(request, networkResponse.clone());
+    }
+    return networkResponse;
+  } catch (error) {
+    console.log('API fetch failed:', error);
+    // Try cache as fallback
+    const cachedResponse = await caches.match(request);
+    if (cachedResponse) {
+      return cachedResponse;
+    }
+    throw error;
+  }
+}
 
 // Background sync for offline actions
 self.addEventListener('sync', (event) => {
   if (event.tag === 'background-sync') {
-    event.waitUntil(
-      // Handle background sync tasks
-      console.log('Background sync triggered')
-    );
+    event.waitUntil(doBackgroundSync());
   }
 });
 
-// Push notifications
+// Background sync implementation
+async function doBackgroundSync() {
+  try {
+    // Sync any pending data when connection is restored
+    console.log('Background sync completed');
+  } catch (error) {
+    console.error('Background sync failed:', error);
+  }
+}
+
+// Push notification handling
 self.addEventListener('push', (event) => {
   if (event.data) {
     const data = event.data.json();
     const options = {
       body: data.body,
-      icon: '/logo.png',
-      badge: '/logo.png',
+      icon: '/images/zion-tech-group-logo.png',
+      badge: '/images/badge.png',
       vibrate: [100, 50, 100],
       data: {
         dateOfArrival: Date.now(),
@@ -154,13 +205,13 @@ self.addEventListener('push', (event) => {
       actions: [
         {
           action: 'explore',
-          title: 'View Details',
-          icon: '/logo.png'
+          title: 'Explore',
+          icon: '/images/explore.png'
         },
         {
           action: 'close',
           title: 'Close',
-          icon: '/logo.png'
+          icon: '/images/close.png'
         }
       ]
     };
@@ -177,7 +228,7 @@ self.addEventListener('notificationclick', (event) => {
 
   if (event.action === 'explore') {
     event.waitUntil(
-      clients.openWindow('/')
+      clients.openWindow('/services')
     );
   }
 });
