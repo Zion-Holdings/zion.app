@@ -1,0 +1,141 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - link "Skip to content":
+    - /url: "#main-content"
+  - navigation:
+    - link "Zion":
+      - /url: /
+    - text: Autonomous Cloud Automations
+    - link "Landing":
+      - /url: /landing/
+    - link "Explore":
+      - /url: /explore/
+    - link "Services":
+      - /url: /services/
+    - link "Automations":
+      - /url: /automation/
+    - link "Reports":
+      - /url: /reports/
+    - link "Updates":
+      - /url: /newsroom/
+    - link "Search":
+      - /url: /search/
+    - link "Get Started":
+      - /url: /main/front/#features
+- main:
+  - main:
+    - heading "Newsroom" [level=1]
+    - paragraph: Updated automatically from multiple sources.
+    - list:
+      - listitem:
+        - link "Cohere hits a $6.8B valuation as investors AMD, Nvidia, and Salesforce double down":
+          - /url: https://techcrunch.com/2025/08/14/cohere-hits-a-6-8b-valuation-as-investors-amd-nvidia-and-salesforce-double-down/
+        - text: (TechCrunch)
+      - listitem:
+        - link "Bluesky rolls out massive revamp to policies and Community Guidelines":
+          - /url: https://techcrunch.com/2025/08/14/bluesky-rolls-out-massive-revamp-to-policies-and-community-guidelines/
+        - text: (TechCrunch)
+      - listitem:
+        - link "Leaked Meta AI rules show chatbots were allowed to have romantic chats with kids":
+          - /url: https://techcrunch.com/2025/08/14/leaked-meta-ai-rules-show-chatbots-were-allowed-to-have-romantic-chats-with-kids/
+        - text: (TechCrunch)
+      - listitem:
+        - link "US government is reportedly in discussions to take stake in Intel":
+          - /url: https://techcrunch.com/2025/08/14/u-s-government-is-reportedly-in-discussions-to-take-stake-in-intel/
+        - text: (TechCrunch)
+      - listitem:
+        - 'link "The wait is almost over: The 2025 Startup Battlefield 200 list drops August 27"':
+          - /url: https://techcrunch.com/2025/08/14/the-wait-is-almost-over-the-2025-startup-battlefield-200-list-drops-august-27/
+        - text: (TechCrunch)
+      - listitem:
+        - link "Cohere hires long-time Meta research head Joelle Pineau as its chief AI officer":
+          - /url: https://techcrunch.com/2025/08/14/cohere-hires-long-time-meta-research-head-joelle-pineau-as-its-chief-ai-officer/
+        - text: (TechCrunch)
+      - listitem:
+        - link "AI translation tech Palabra gets backing from Reddit co-founder’s venture firm":
+          - /url: https://techcrunch.com/2025/08/14/ai-translation-tech-palabra-gets-backing-from-reddit-co-founders-venture-firm/
+        - text: (TechCrunch)
+      - listitem:
+        - link "Apple’s blood oxygen monitoring returns to its latest Apple Watches":
+          - /url: https://techcrunch.com/2025/08/14/apples-blood-oxygen-monitoring-returns-to-its-latest-apple-watches/
+        - text: (TechCrunch)
+      - listitem:
+        - link "What is Bluesky? Everything to know about the X competitor":
+          - /url: https://techcrunch.com/2025/08/14/what-is-bluesky-everything-to-know-about-the-x-competitor/
+        - text: (TechCrunch)
+      - listitem:
+        - link "Norway spy chief blames Russian hackers for hijacking dam":
+          - /url: https://techcrunch.com/2025/08/14/norway-spy-chief-blames-russian-hackers-for-hijacking-dam/
+        - text: (TechCrunch)
+      - listitem:
+        - link "Pixel 10, AI capabilities, and everything else we expect out of the Made by Google 2025 event":
+          - /url: https://techcrunch.com/2025/08/14/pixel-10-ai-capabilities-and-everything-else-we-expect-out-of-the-made-by-google-2025-event/
+        - text: (TechCrunch)
+      - listitem:
+        - link "iPhone 17, the ‘thinnest iPhone ever,’ and everything else we’re expecting out of Apple’s hardware event":
+          - /url: https://techcrunch.com/2025/08/14/iphone-17-the-thinnest-iphone-ever-and-everything-else-were-expecting-out-of-apples-hardware-event/
+        - text: (TechCrunch)
+      - listitem:
+        - link "Kodak denies it’s shutting down amid media reports of financial struggles":
+          - /url: https://techcrunch.com/2025/08/14/kodak-denies-its-shutting-down-amid-media-reports-of-financial-struggles/
+        - text: (TechCrunch)
+      - listitem:
+        - 'link "ChatGPT: Everything you need to know about the AI-powered chatbot"':
+          - /url: https://techcrunch.com/2025/08/14/chatgpt-everything-to-know-about-the-ai-chatbot/
+        - text: (TechCrunch)
+      - listitem:
+        - link "Co-founder of Elon Musk’s xAI departs the company":
+          - /url: https://techcrunch.com/2025/08/13/co-founder-of-elon-musks-xai-departs-the-company/
+        - text: (TechCrunch)
+      - listitem:
+        - link "Google CEO adds a new calendar feature at Stripe co-founder’s request":
+          - /url: https://techcrunch.com/2025/08/13/google-ceo-adds-a-new-calendar-feature-at-stripe-co-founders-request/
+        - text: (TechCrunch)
+      - listitem:
+        - link "iOS 26 beta 6 adds new ringtones, snappy app launches, and more":
+          - /url: https://techcrunch.com/2025/08/11/ios-26-beta-6-adds-new-ringtones-snappy-app-launches-and-more/
+        - text: (TechCrunch)
+      - listitem:
+        - link "Security flaws in a carmaker’s web portal let one hacker remotely unlock cars from anywhere":
+          - /url: https://techcrunch.com/2025/08/10/security-flaws-in-a-carmakers-web-portal-let-one-hacker-remotely-unlock-cars-from-anywhere/
+        - text: (TechCrunch)
+      - listitem:
+        - link "The hidden cost of living in Mark Zuckerberg’s $110M compound":
+          - /url: https://techcrunch.com/2025/08/10/the-hidden-cost-of-living-amid-mark-zuckerbergs-110m-compound/
+        - text: (TechCrunch)
+      - listitem:
+        - link "The computer science dream has become a nightmare":
+          - /url: https://techcrunch.com/2025/08/10/the-computer-science-dream-has-become-a-nightmare/
+        - text: (TechCrunch)
+      - listitem:
+        - link "Sign up for Installer | The Verge":
+          - /url: https://www.theverge.com/pages/installer-newsletter-sign-up
+        - text: (The Verge)
+- contentinfo:
+  - text: Zion
+  - paragraph: Autonomous Cloud Automations
+  - paragraph: Continuous, safe improvements delivered to main.
+  - navigation:
+    - link "Explore":
+      - /url: /explore/
+    - link "Automations":
+      - /url: /automation/
+    - link "Reports":
+      - /url: /reports/
+    - link "Updates":
+      - /url: /newsroom/
+    - link "Site Health":
+      - /url: /site-health/
+    - link "Search":
+      - /url: /search/
+    - link "Sitemap":
+      - /url: /sitemap.xml
+  - link "GitHub":
+    - /url: https://github.com/Zion-Holdings/zion.app
+  - link "Website":
+    - /url: https://ziontechgroup.com
+  - text: © 2025 Zion. All rights reserved. Built with Next.js & Netlify • Tailwind UI
+- alert
+```

@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
+import { Layout } from '../components/layout/Layout';
 import { Brain, Atom, Zap, Shield, Cpu, Database, Network, Server, Monitor, Globe, Lock, Cloud, Settings, Eye, Award, Clock, Heart, Lightbulb, Search, Grid, List, TrendingUp, ArrowRight } from 'lucide-react';
 
 const QuantumNeuralNetworkPlatform: React.FC = () => {

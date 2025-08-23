@@ -1,18 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import SEO from '../components/SEO';
-import { motion, AnimatePresence } from 'framer-motion';
+import Layout from '../components/layout/Layout';
+import { motion } from 'framer-motion';
 import { 
   Search, Grid, List, Filter,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
   Building, Cpu, Database, Cloud, Lock, Globe,
   Star, Users, TrendingUp, Zap, Award, Eye
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 } from 'lucide-react';
 
-// Import our new service data
-import { innovative2038AdvancedServices } from '../data/innovative-2038-advanced-services';
-import { revolutionary2040FuturisticServices } from '../data/revolutionary-2040-futuristic-services';
-import { practicalBusinessITServices2038 } from '../data/practical-business-it-services-2038';
+// Import 2038 innovative services
+import { innovative2038AIServices } from '../data/innovative-2038-ai-services';
+import { innovative2038ITServices } from '../data/innovative-2038-it-services';
+import { innovative2038MicroSaasServices } from '../data/innovative-2038-micro-saas-services';
+import { innovative2038IndustryServices } from '../data/innovative-2038-industry-services';
+import { innovative2038ConsultingServices } from '../data/innovative-2038-consulting-services';
 
 const contact = {
   mobile: '+1 302 464 0950',
@@ -114,9 +118,10 @@ export default function Innovative2038ServicesShowcase() {
         return b.popular ? 1 : -1;
     }
   });
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <>
       <SEO 
         title="Innovative 2038 Services Showcase - Zion Tech Group"
         description="Discover our revolutionary 2038 micro SAAS, IT, and AI services. From consciousness AI to quantum teleportation, space colonization to autonomous corporations."
@@ -478,3 +483,4 @@ const MapPin = ({ className }: { className?: string }) => (
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
   </svg>
 );
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

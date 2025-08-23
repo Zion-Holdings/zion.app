@@ -59,6 +59,7 @@ export type ServiceVariant =
   | 'quantum-energy-revolutionary'
   | 'quantum-logistics-revolutionary'
   | 'quantum-ai-finance'
+  | 'quantum-finance'
   | 'ai-emotional'
   | 'ai-multimodal'
   | 'ai-autonomous'
@@ -104,3 +105,4 @@ export type ServiceVariant =
   | 'energy-futuristic'
   | 'transportation-futuristic'
   | 'education-futuristic';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

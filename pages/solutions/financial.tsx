@@ -1,399 +1,231 @@
 import React from 'react';
+import Layout from '../../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
-  BarChart3, 
-  Shield, 
-  Database, 
-  Brain, 
-  Cpu, 
-  Zap, 
-  Target, 
-  CheckCircle, 
-  Star,
-  Lock,
-  Globe,
-  Users,
-  CreditCard,
-  TrendingUp,
-  Activity,
-  FileText,
-  Calculator,
-  DollarSign
+  Building, Users, Shield, Cpu, Database, Globe, Zap, Target, 
+  TrendingUp, BarChart3, Lock, Cloud, Server, Network, Settings, Brain,
+  DollarSign, CreditCard, PieChart, LineChart, Shield as ShieldIcon
 } from 'lucide-react';
-import Layout from '../../components/layout/Layout';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
 const FinancialSolutionsPage: React.FC = () => {
   const solutions = [
     {
-      title: 'AI-Powered Trading Platforms',
-      description: 'Advanced algorithmic trading systems that leverage machine learning for optimal investment decisions.',
-      icon: TrendingUp,
-      features: [
-        'Real-time market analysis',
-        'Predictive modeling',
-        'Risk management',
-        'Portfolio optimization',
-        'Automated trading',
-        'Performance analytics'
-      ],
-      benefits: ['Increased returns', 'Risk reduction', '24/7 trading', 'Data-driven decisions']
+=======
+      title: "Financial AI & Machine Learning",
+      description: "Advanced AI solutions for financial institutions with predictive analytics and risk assessment",
+      icon: <Brain className="w-8 h-8" />,
+      features: ["Fraud detection systems", "Credit risk assessment", "Algorithmic trading", "Regulatory compliance"],
+      href: "/services?category=ai-ml"
     },
     {
-      title: 'Blockchain & DeFi Solutions',
-      description: 'Decentralized finance platforms and blockchain infrastructure for modern financial services.',
-      icon: Globe,
-      features: [
-        'Smart contract development',
-        'DeFi protocol design',
-        'Cross-chain interoperability',
-        'Token economics',
-        'Governance systems',
-        'Security auditing'
-      ],
-      benefits: ['Transparency', 'Reduced costs', 'Global access', 'Innovation']
+      title: "Financial Cybersecurity",
+      description: "Bank-grade security solutions for financial institutions",
+      icon: <ShieldIcon className="w-8 h-8" />,
+      features: ["PCI DSS compliance", "Advanced threat protection", "Secure payment processing", "Data encryption"],
+      href: "/services?category=security"
     },
     {
-      title: 'RegTech & Compliance',
-      description: 'Regulatory technology solutions that automate compliance and reduce regulatory risk.',
-      icon: Shield,
-      features: [
-        'KYC/AML automation',
-        'Regulatory reporting',
-        'Compliance monitoring',
-        'Audit trails',
-        'Risk assessment',
-        'Policy management'
-      ],
-      benefits: ['Cost reduction', 'Risk mitigation', 'Regulatory compliance', 'Operational efficiency']
+      title: "Financial Cloud Infrastructure",
+      description: "Secure cloud solutions designed for financial services",
+      icon: <Cloud className="w-8 h-8" />,
+      features: ["Multi-region deployment", "Compliance automation", "High availability", "Cost optimization"],
+      href: "/services?category=cloud"
     },
     {
-      title: 'Financial Analytics & BI',
-      description: 'Comprehensive business intelligence solutions for financial data analysis and reporting.',
-      icon: BarChart3,
-      features: [
-        'Real-time dashboards',
-        'Predictive analytics',
-        'Financial modeling',
-        'Performance metrics',
-        'Custom reporting',
-        'Data visualization'
-      ],
-      benefits: ['Better insights', 'Faster decisions', 'Improved performance', 'Cost optimization']
-    },
-    {
-      title: 'Payment & Banking Solutions',
-      description: 'Modern payment processing and digital banking infrastructure for financial institutions.',
-      icon: CreditCard,
-      features: [
-        'Payment gateway integration',
-        'Digital wallets',
-        'Cross-border payments',
-        'Fraud detection',
-        'Multi-currency support',
-        'API-first architecture'
-      ],
-      benefits: ['Faster transactions', 'Lower costs', 'Better security', 'Global reach']
-    },
-    {
-      title: 'Risk Management & Fraud Detection',
-      description: 'Advanced risk assessment and fraud prevention systems using AI and machine learning.',
-      icon: Lock,
-      features: [
-        'Real-time fraud detection',
-        'Risk scoring models',
-        'Behavioral analysis',
-        'Anomaly detection',
-        'Compliance monitoring',
-        'Incident response'
-      ],
-      benefits: ['Fraud prevention', 'Risk reduction', 'Cost savings', 'Customer protection']
+      title: "Financial Analytics & BI",
+      description: "Real-time financial analytics and business intelligence",
+      icon: <BarChart3 className="w-8 h-8" />,
+      features: ["Real-time reporting", "Predictive analytics", "Regulatory reporting", "Executive dashboards"],
+      href: "/services?category=bi"
     }
   ];
 
-  const industries = [
+  const benefits = [
     {
-      name: 'Traditional Banking',
-      description: 'Digital transformation solutions for established financial institutions.',
-      icon: Users,
-      solutions: ['Core banking modernization', 'Digital channels', 'Customer experience', 'Operational efficiency']
+      title: "Compliance",
+      description: "Built-in regulatory compliance",
+      icon: <Shield className="w-6 h-6" />
     },
     {
-      name: 'Fintech Startups',
-      description: 'Scalable technology infrastructure for innovative financial services companies.',
-      icon: Zap,
-      solutions: ['MVP development', 'Scalable architecture', 'Regulatory compliance', 'Market launch']
+      title: "Security",
+      description: "Bank-grade security standards",
+      icon: <Lock className="w-6 h-6" />
     },
     {
-      name: 'Investment Management',
-      description: 'Advanced analytics and trading platforms for investment professionals.',
-      icon: TrendingUp,
-      solutions: ['Portfolio management', 'Risk analytics', 'Trading algorithms', 'Performance reporting']
+      title: "Scalability",
+      description: "Handles high transaction volumes",
+      icon: <TrendingUp className="w-6 h-6" />
     },
     {
-      name: 'Insurance & Risk',
-      description: 'Technology solutions for insurance companies and risk management firms.',
-      icon: Shield,
-      solutions: ['Claims processing', 'Risk assessment', 'Customer portals', 'Analytics platforms']
+      title: "Analytics",
+      description: "Advanced financial insights",
+      icon: <PieChart className="w-6 h-6" />
     }
-  ];
-
-  const compliance = [
-    {
-      title: 'PCI DSS',
-      description: 'Payment Card Industry Data Security Standard compliance for payment processing.',
-      icon: Lock,
-      features: ['Data encryption', 'Access controls', 'Network security', 'Regular audits']
-    },
-    {
-      title: 'SOC 2 Type II',
-      description: 'Service Organization Control 2 certification for financial services.',
-      icon: CheckCircle,
-      features: ['Security controls', 'Availability monitoring', 'Processing integrity', 'Confidentiality']
-    },
-    {
-      title: 'GDPR & Privacy',
-      description: 'General Data Protection Regulation compliance for data privacy.',
-      icon: Shield,
-      features: ['Data protection', 'Privacy by design', 'Consent management', 'Data portability']
-    }
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   ];
 
   return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black">
+    <Layout 
+=======
+      title="Financial Solutions - Zion Tech Group"
+      description="Advanced technology solutions for financial institutions. AI, cybersecurity, cloud infrastructure, and analytics designed for the financial sector."
+    >
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
         {/* Hero Section */}
-        <section className="relative py-20 lg:py-32 overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(6,182,212,0.1),transparent_50%)]" />
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.6 }}
             >
-              <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-                Financial{' '}
-                <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
-                  Technology Solutions
-                </span>
+              <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
+                Financial Solutions
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </h1>
-              <p className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
-                Revolutionizing financial services with cutting-edge technology that drives innovation, 
-                security, and compliance in the digital economy.
+              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
+                Transform your financial institution with cutting-edge technology solutions designed for 
+                security, compliance, and innovation. Built for the future of finance.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/contact"
-                  className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-semibold rounded-xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 transform hover:scale-105"
+                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
                 >
-                  Get Fintech Quote
+                  Get Started
                 </a>
                 <a
-                  href="/solutions"
-                  className="px-8 py-4 border border-cyan-400/50 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400/10 transition-all duration-300"
+                  href="/case-studies"
+                  className="px-8 py-4 border border-cyan-500/30 text-cyan-400 rounded-lg font-semibold hover:bg-cyan-500/10 transition-all duration-300"
                 >
-                  View All Solutions
+                  View Case Studies
                 </a>
               </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Solutions Overview */}
-        <section className="py-20 relative">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+=======
+        {/* Solutions Grid */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-                Fintech Solutions
-              </h2>
-              <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-                Our comprehensive fintech solutions address the evolving needs of modern financial 
-                services, from traditional banking to cutting-edge DeFi platforms.
+              <h2 className="text-4xl font-bold mb-4">Financial Technology Solutions</h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Comprehensive technology solutions designed specifically for financial institutions
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 gap-8">
               {solutions.map((solution, index) => (
                 <motion.div
                   key={solution.title}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-cyan-400/20 rounded-2xl p-8 hover:border-cyan-400/40 transition-all duration-300"
+                  transition={{ duration: 0.6, delay: 0.1 * index }}
+                  className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300"
                 >
-                  <div className="flex items-start space-x-4 mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <solution.icon className="w-8 h-8 text-white" />
+                  <div className="flex items-center mb-4">
+                    <div className="p-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg mr-4">
+                      {solution.icon}
                     </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-white mb-2">{solution.title}</h3>
-                      <p className="text-gray-300">{solution.description}</p>
-                    </div>
+                    <h3 className="text-2xl font-semibold">{solution.title}</h3>
                   </div>
-
-                  <div className="mb-6">
-                    <h4 className="text-white font-semibold mb-3">Key Features:</h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                      {solution.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center text-sm text-gray-300">
-                          <CheckCircle className="w-4 h-4 text-cyan-400 mr-2" />
-                          {feature}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div>
-                    <h4 className="text-white font-semibold mb-3">Business Benefits:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {solution.benefits.map((benefit, benefitIndex) => (
-                        <span
-                          key={benefitIndex}
-                          className="px-3 py-1 bg-cyan-400/10 text-cyan-400 text-sm rounded-full border border-cyan-400/20"
-                        >
-                          {benefit}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+                  <p className="text-gray-300 mb-6">{solution.description}</p>
+                  <ul className="space-y-2 mb-6">
+                    {solution.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center text-gray-400">
+                        <div className="w-2 h-2 bg-cyan-500 rounded-full mr-3"></div>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    href={solution.href}
+                    className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors"
+                  >
+                    Learn More
+                    <Zap className="w-4 h-4 ml-2" />
+                  </a>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Industry Solutions */}
-        <section className="py-20 relative">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+=======
+        {/* Benefits Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/30">
+          <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-                Industry-Specific Solutions
-              </h2>
-              <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-                Tailored fintech solutions designed for the unique challenges and requirements 
-                of different financial services sectors.
+              <h2 className="text-4xl font-bold mb-4">Why Choose Zion Tech Group for Financial Solutions?</h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Financial-grade solutions with the innovation and agility of a startup
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {industries.map((industry, index) => (
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {benefits.map((benefit, index) => (
                 <motion.div
-                  key={industry.name}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-                  className="bg-gradient-to-r from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-cyan-400/20 rounded-2xl p-8 hover:border-cyan-400/40 transition-all duration-300"
-                >
-                  <div className="flex items-center space-x-4 mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center">
-                      <industry.icon className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-white">{industry.name}</h3>
-                  </div>
-                  
-                  <p className="text-gray-300 mb-6">{industry.description}</p>
-                  
-                  <div>
-                    <h4 className="text-white font-semibold mb-3">Key Solutions:</h4>
-                    <div className="space-y-2">
-                      {industry.solutions.map((solution, solutionIndex) => (
-                        <div key={solutionIndex} className="flex items-center text-sm text-gray-300">
-                          <Star className="w-4 h-4 text-yellow-400 mr-2" />
-                          {solution}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Compliance & Security */}
-        <section className="py-20 relative">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-                Compliance & Security
-              </h2>
-              <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-                Our fintech solutions meet the highest standards of compliance and security 
-                required in the financial services industry.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {compliance.map((item, index) => (
-                <motion.div
-                  key={item.title}
+                  key={benefit.title}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
-                  className="bg-gradient-to-r from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-cyan-400/20 rounded-2xl p-8 hover:border-cyan-400/40 transition-all duration-300 text-center"
+                  transition={{ duration: 0.6, delay: 0.1 * index }}
+                  className="text-center"
                 >
-                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center">
-                    <item.icon className="w-8 h-8 text-white" />
+                  <div className="p-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                    <div className="text-cyan-400">
+                      {benefit.icon}
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-4">{item.title}</h3>
-                  <p className="text-gray-300 mb-6">{item.description}</p>
-                  <div className="space-y-2">
-                    {item.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center justify-center text-sm text-gray-300">
-                        <CheckCircle className="w-4 h-4 text-cyan-400 mr-2" />
-                        {feature}
-                      </div>
-                    ))}
-                  </div>
+                  <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
+                  <p className="text-gray-400">{benefit.description}</p>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Call to Action */}
-        <section className="py-20 relative">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* CTA Section */}
+=======
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.0 }}
-              className="bg-gradient-to-r from-cyan-400/10 to-blue-500/10 border border-cyan-400/20 rounded-3xl p-12"
+              transition={{ duration: 0.6, delay: 0.6 }}
             >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                Ready to Transform Financial Services?
-              </h2>
-              <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-                Let's discuss how our fintech solutions can drive innovation, 
-                ensure compliance, and create competitive advantages for your financial organization.
+              <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Financial Institution?</h2>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
+              <p className="text-xl text-gray-400 mb-8">
+                Let's discuss how our financial technology solutions can drive innovation and growth
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/contact"
-                  className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-semibold rounded-xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 transform hover:scale-105"
+                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
                 >
-                  Schedule Fintech Consultation
+                  Schedule a Consultation
                 </a>
                 <a
-                  href="/case-studies"
-                  className="px-8 py-4 border border-cyan-400/50 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400/10 transition-all duration-300"
+                  href="/pricing"
+                  className="px-8 py-4 border border-cyan-500/30 text-cyan-400 rounded-lg font-semibold hover:bg-cyan-500/10 transition-all duration-300"
                 >
-                  View Financial Case Studies
+                  View Pricing
                 </a>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </div>
             </motion.div>
           </div>

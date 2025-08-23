@@ -148,7 +148,7 @@ export default function Services2026ShowcasePage() {
   return (
     <UltraFuturisticBackground 
       intensity="high" 
-      variant="quantum"
+      variant="holographic"
     >
       <div className="min-h-screen">
         <Head>

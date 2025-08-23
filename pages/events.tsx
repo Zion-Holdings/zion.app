@@ -376,7 +376,7 @@ const EventsPage: React.FC = () => {
               </p>
             </motion.div>
           </div>
-        </section>
+        </main>
       </div>
     </UltraFuturisticBackground>
   );

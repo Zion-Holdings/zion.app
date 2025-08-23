@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -14,25 +14,34 @@ const UltraFuturisticNavigation2040: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
+  // Handle scroll effect with throttling for better performance
   useEffect(() => {
+    let ticking = false;
+    
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleDropdownToggle = useCallback((dropdown: string) => {
-    setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
-  }, [activeDropdown]);
+  // Enhanced accessibility: Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setActiveDropdown(null);
+        setIsSearchOpen(false);
+      }
+    };
 
-  const closeMobileMenu = useCallback(() => {
-    setIsOpen(false);
-    setActiveDropdown(null);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   const navigationItems = [
     {
       name: 'Home',
@@ -47,43 +56,50 @@ const UltraFuturisticNavigation2040: React.FC = () => {
       description: 'Explore our revolutionary solutions',
       dropdown: [
         {
-          name: 'AI & Consciousness',
-          href: '/services/ai-consciousness-evolution-platform-2045',
-          icon: Brain,
-          description: 'AI consciousness evolution and development',
+          name: 'Revolutionary 2046 Services',
+          href: '/revolutionary-2046-services-showcase',
+          icon: Sparkles,
+          description: 'Next-generation 2046 technology solutions',
           color: 'from-purple-500 to-pink-500'
         },
         {
-          name: 'Quantum Technology',
-          href: '/services/quantum-ai-hybrid-computing-platform-2045',
-          icon: Atom,
-          description: 'Quantum computing and hybrid systems',
+          name: 'AI & Consciousness',
+          href: '/services/ai-consciousness',
+          icon: Brain,
+          description: 'AI consciousness evolution and development',
           color: 'from-cyan-500 to-blue-500'
         },
         {
+          name: 'Quantum Technology',
+          href: '/services/quantum-technology',
+          icon: Atom,
+          description: 'Quantum computing and hybrid systems',
+          color: 'from-blue-500 to-indigo-500'
+        },
+        {
           name: 'Cybersecurity',
-          href: '/services/quantum-cybersecurity-intelligence-2045',
+          href: '/services/cybersecurity',
           icon: Shield,
           description: 'Advanced security and protection',
           color: 'from-red-500 to-orange-500'
         },
         {
           name: 'Business Solutions',
-          href: '/services/autonomous-ai-business-intelligence-2045',
+          href: '/services/business-solutions',
           icon: Target,
           description: 'Micro SAAS and business automation',
           color: 'from-emerald-500 to-teal-500'
         },
         {
           name: 'IT Infrastructure',
-          href: '/services/quantum-cloud-infrastructure-platform-2045',
+          href: '/services/it-infrastructure',
           icon: Cpu,
           description: 'Cloud and infrastructure solutions',
           color: 'from-yellow-500 to-orange-500'
         },
         {
           name: 'Space Technology',
-          href: '/services/space-resource-intelligence-platform-2045',
+          href: '/services/space-technology',
           icon: Rocket,
           description: 'Space exploration and resource management',
           color: 'from-pink-500 to-red-500'
@@ -202,12 +218,23 @@ const UltraFuturisticNavigation2040: React.FC = () => {
       icon: Phone,
       description: 'Get in touch with our experts'
     }
-  ];
+  }, []);
 
-  const contactInfo = {
-    phone: '+1 302 464 0950',
-    email: 'kleber@ziontechgroup.com',
-    address: '364 E Main St STE 1008 Middletown DE 19709'
+    const results: NavigationItem[] = [];
+    const searchInItems = (items: NavigationItem[]) => {
+      items.forEach(item => {
+        if (item.label.toLowerCase().includes(query.toLowerCase()) ||
+            item.description?.toLowerCase().includes(query.toLowerCase())) {
+          results.push(item);
+        }
+        if (item.children) {
+          searchInItems(item.children);
+        }
+      });
+    };
+
+    searchInItems(navigationItems);
+    setSearchResults(results.slice(0, 8)); // Limit results
   };
 
   return (
@@ -336,6 +363,7 @@ const UltraFuturisticNavigation2040: React.FC = () => {
                 <Brain className="w-5 h-5 text-white" />
               </div>
               <span className="text-lg font-bold text-white">Zion Tech</span>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </Link>
 
             {/* Mobile Menu Button */}
@@ -344,6 +372,7 @@ const UltraFuturisticNavigation2040: React.FC = () => {
               className="p-2 text-white hover:text-cyan-400 transition-colors duration-300"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </button>
           </div>
         </div>
@@ -461,6 +490,7 @@ const UltraFuturisticNavigation2040: React.FC = () => {
       {/* Spacer for fixed navigation */}
       <div className="h-20 lg:h-20" />
     </>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   );
 };
 

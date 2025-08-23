@@ -1,33 +1,75 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { Shield, Cookie, Settings, Eye, Lock, Database, Users, Globe } from 'lucide-react';
+import { 
+  Shield, Cookie, Settings, Eye, Lock, 
+  CheckCircle, XCircle, Info, ArrowRight,
+  Database, Users, Globe
+} from 'lucide-react';
+import Link from 'next/link';
 
-const CookiesPage: React.FC = () => {
+const Cookies: React.FC = () => {
   const cookieTypes = [
     {
-      title: "Essential Cookies",
-      description: "These cookies are necessary for the website to function properly",
-      examples: ["Authentication", "Security", "Basic functionality"],
+      name: 'Essential Cookies',
+      description: 'These cookies are necessary for the website to function properly and cannot be disabled.',
+      examples: ['Authentication cookies', 'Security cookies', 'Session management'],
+      necessary: true,
       icon: <Shield className="w-6 h-6" />
     },
     {
-      title: "Analytics Cookies",
-      description: "Help us understand how visitors interact with our website",
-      examples: ["Page views", "User behavior", "Performance metrics"],
-      icon: <Database className="w-6 h-6" />
+      name: 'Analytics Cookies',
+      description: 'These cookies help us understand how visitors interact with our website.',
+      examples: ['Page views', 'User behavior', 'Performance metrics'],
+      necessary: false,
+      icon: <Eye className="w-6 h-6" />
     },
     {
-      title: "Functional Cookies",
-      description: "Enable enhanced functionality and personalization",
-      examples: ["Language preferences", "User settings", "Customization"],
+      name: 'Functional Cookies',
+      description: 'These cookies enable enhanced functionality and personalization.',
+      examples: ['Language preferences', 'User settings', 'Form data'],
+      necessary: false,
       icon: <Settings className="w-6 h-6" />
     },
     {
-      title: "Marketing Cookies",
-      description: "Used to deliver relevant advertisements and track campaign performance",
-      examples: ["Ad targeting", "Campaign tracking", "Social media integration"],
-      icon: <Globe className="w-6 h-6" />
+      name: 'Marketing Cookies',
+      description: 'These cookies are used to deliver relevant advertisements and track marketing campaigns.',
+      examples: ['Ad targeting', 'Campaign tracking', 'Social media integration'],
+      necessary: false,
+      icon: <Cookie className="w-6 h-6" />
+    }
+  ];
+
+  const cookieDetails = [
+    {
+      name: '_ga',
+      purpose: 'Google Analytics - Used to distinguish unique users',
+      duration: '2 years',
+      provider: 'Google'
+    },
+    {
+      name: '_gid',
+      purpose: 'Google Analytics - Used to distinguish users',
+      duration: '24 hours',
+      provider: 'Google'
+    },
+    {
+      name: '_gat',
+      purpose: 'Google Analytics - Used to throttle request rate',
+      duration: '1 minute',
+      provider: 'Google'
+    },
+    {
+      name: 'session_id',
+      purpose: 'Maintains user session and authentication',
+      duration: 'Session',
+      provider: 'Zion Tech Group'
+    },
+    {
+      name: 'preferences',
+      purpose: 'Stores user preferences and settings',
+      duration: '1 year',
+      provider: 'Zion Tech Group'
     }
   ];
 
@@ -64,9 +106,10 @@ const CookiesPage: React.FC = () => {
         <section className="relative py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.8 }}
+              className="text-center"
             >
               <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
                 Cookie Policy
@@ -146,6 +189,18 @@ const CookiesPage: React.FC = () => {
                   </div>
                 </div>
               </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="relative"
+              >
+                <div className="w-full h-80 bg-gradient-to-br from-purple-900/30 to-blue-900/30 rounded-3xl border border-purple-500/20 flex items-center justify-center">
+                  <Cookie className="w-24 h-24 text-purple-400" />
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -168,7 +223,7 @@ const CookiesPage: React.FC = () => {
             <div className="grid md:grid-cols-2 gap-8">
               {cookieTypes.map((type, index) => (
                 <motion.div
-                  key={type.title}
+                  key={type.name}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.1 * index }}
@@ -178,7 +233,7 @@ const CookiesPage: React.FC = () => {
                     <div className="p-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg mr-4">
                       {type.icon}
                     </div>
-                    <h3 className="text-2xl font-semibold">{type.title}</h3>
+                    <h3 className="text-2xl font-semibold">{type.name}</h3>
                   </div>
                   <p className="text-gray-300 mb-4">{type.description}</p>
                   <div className="space-y-2">
@@ -195,39 +250,56 @@ const CookiesPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Privacy Features Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
+        {/* Cookie Details */}
+        <section className="py-20 bg-black/50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold mb-4">Your Privacy Matters</h2>
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                Specific Cookies We Use
+              </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                We're committed to protecting your privacy and giving you control over your data
+                Detailed information about the specific cookies used on our website
               </p>
             </motion.div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {privacyFeatures.map((feature, index) => (
-                <motion.div
-                  key={feature.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.1 * index }}
-                  className="text-center"
-                >
-                  <div className="p-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                    <div className="text-cyan-400">
-                      {feature.icon}
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                  <p className="text-gray-400">{feature.description}</p>
-                </motion.div>
-              ))}
+            
+            <div className="overflow-x-auto">
+              <table className="w-full bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl border border-gray-700/50">
+                <thead>
+                  <tr className="border-b border-gray-700/50">
+                    <th className="text-left p-6 text-white font-semibold">Cookie Name</th>
+                    <th className="text-left p-6 text-white font-semibold">Purpose</th>
+                    <th className="text-left p-6 text-white font-semibold">Duration</th>
+                    <th className="text-left p-6 text-white font-semibold">Provider</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {cookieDetails.map((cookie, index) => (
+                    <motion.tr
+                      key={cookie.name}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      viewport={{ once: true }}
+                      className="border-b border-gray-700/30 hover:bg-gray-800/30 transition-colors duration-300"
+                    >
+                      <td className="p-6">
+                        <code className="bg-gray-800/50 text-purple-400 px-2 py-1 rounded text-sm">
+                          {cookie.name}
+                        </code>
+                      </td>
+                      <td className="p-6 text-gray-300">{cookie.purpose}</td>
+                      <td className="p-6 text-gray-300">{cookie.duration}</td>
+                      <td className="p-6 text-gray-300">{cookie.provider}</td>
+                    </motion.tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </section>
@@ -270,31 +342,9 @@ const CookiesPage: React.FC = () => {
             </motion.div>
           </div>
         </section>
-
-        {/* Contact Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-            >
-              <h2 className="text-4xl font-bold mb-6">Questions About Our Cookie Policy?</h2>
-              <p className="text-xl text-gray-400 mb-8">
-                We're here to help clarify any questions you may have about how we use cookies
-              </p>
-              <a
-                href="/contact"
-                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
-              >
-                Contact Us
-              </a>
-            </motion.div>
-          </div>
-        </section>
       </div>
     </Layout>
   );
 };
 
-export default CookiesPage;
+export default Cookies;

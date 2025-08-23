@@ -16,10 +16,10 @@ export default function AiSupplyChainOptimization() {
 				"Logistics route planning",
 				"Supplier risk signals",
 				"Lead time variance analytics",
-				"What-if simulations"
+				"What-if simulations]}
 			]}
 			industries={["Retail", "Manufacturing", "CPG", "Logistics"]}
-			canonical="https://ziontechgroup.com/ai-supply-chain-optimization"
+			canonical="https://ziontechgroup.com/ai-supply-chain-optimization]}
 		/>
 	);
 }

@@ -1,125 +1,134 @@
 import React from 'react';
 import Layout from '../../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { 
-  Rocket, Sparkles, Zap, Target, Star, ArrowRight, 
-  CheckCircle, Users, Award, Clock, TrendingUp, Globe
-} from 'lucide-react';
+import { Rocket, Sparkles, Zap, Target, Users, Award, Clock, CheckCircle, Globe, Satellite } from 'lucide-react';
 import Link from 'next/link';
 
-const SpaceTechnologyServices: React.FC = () => {
+const SpaceTechnologyPage: React.FC = () => {
   const services = [
     {
-      title: "Space Resource Intelligence Platform",
-      description: "Revolutionary space resource intelligence with AI consciousness and exploration",
-      href: "/space-resource-intelligence-platform",
-      features: ["Space Resource Intelligence", "AI Consciousness", "Resource Exploration", "Space Mining"],
-      price: "$39,999/month",
-      badge: "Featured"
+      name: 'Space Resource Intelligence Platform 2045',
+      description: 'AI-powered space exploration with consciousness and resource management',
+      href: '/space-resource-intelligence-platform-2045',
+      icon: Rocket,
+      color: 'from-pink-500 to-red-500'
     },
     {
-      title: "Space Technology AI Platform",
-      description: "Advanced space technology with AI consciousness and autonomous systems",
-      href: "/space-technology-ai-platform",
-      features: ["Space Technology AI", "Autonomous Systems", "Consciousness Integration", "Space Exploration"],
-      price: "$29,999/month",
-      badge: "Advanced"
+      name: 'Quantum Space Communication 2045',
+      description: 'Quantum-powered space communication with consciousness integration',
+      href: '/quantum-space-communication-2045',
+      icon: Satellite,
+      color: 'from-red-500 to-purple-500'
     },
     {
-      title: "Space Resource Mining Platform",
-      description: "Next-generation space resource mining with consciousness and automation",
-      href: "/space-resource-mining-platform",
-      features: ["Space Mining", "Resource Extraction", "AI Consciousness", "Automated Systems"],
-      price: "$49,999/month",
-      badge: "Premium"
+      name: 'Autonomous Space Exploration AI 2045',
+      description: 'Fully autonomous space exploration with AI consciousness',
+      href: '/autonomous-space-exploration-ai-2045',
+      icon: Globe,
+      color: 'from-purple-500 to-pink-500'
     },
     {
-      title: "Space Exploration Intelligence",
-      description: "Comprehensive space exploration intelligence with AI consciousness",
-      href: "/space-exploration-intelligence",
-      features: ["Space Exploration", "AI Intelligence", "Consciousness Integration", "Discovery Systems"],
-      price: "$34,999/month",
-      badge: "Research"
+      name: 'Space Mining Intelligence Platform 2045',
+      description: 'AI-powered space mining with consciousness and resource optimization',
+      href: '/space-mining-intelligence-platform-2045',
+      icon: Sparkles,
+      color: 'from-pink-500 to-orange-500'
     }
   ];
 
+  const features = [
+    { icon: Rocket, title: "Space Exploration", description: "Advanced space missions" },
+    { icon: Satellite, title: "Quantum Communication", description: "Instant space communication" },
+    { icon: Globe, title: "Resource Management", description: "Intelligent resource allocation" },
+    { icon: Zap, title: "Autonomous AI", description: "Self-governing space systems" }
+  ];
+
   const stats = [
-    { number: "500+", label: "Space Projects", icon: Rocket },
-    { number: "99.9%", label: "Mission Success", icon: CheckCircle },
-    { number: "50+", label: "Space Partners", icon: Users },
-    { number: "24/7", label: "Space Monitoring", icon: Clock }
+    { number: "100+", label: "Space Missions", icon: Rocket },
+    { number: "99.99%", label: "Success Rate", icon: CheckCircle },
+    { number: "24/7", label: "Monitoring", icon: Clock },
+    { number: "50+", label: "Satellites", icon: Satellite }
   ];
 
   return (
     <Layout 
       title="Space Technology Services - Zion Tech Group"
-      description="Revolutionary space technology services including space resource intelligence, space mining, and space exploration. Pioneer the future of space technology with AI consciousness."
-      keywords="space technology, space resource intelligence, space mining, space exploration, Zion Tech Group"
+      description="Revolutionary space technology with AI consciousness, quantum communication, and autonomous exploration. Leading the future of space innovation."
+      keywords="space technology, space exploration, quantum space communication, autonomous space AI, space mining, Zion Tech Group"
     >
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-indigo-900 to-gray-900">
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
         {/* Hero Section */}
-        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto text-center">
+        <section className="relative pt-32 pb-20 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-pink-900/20 to-red-900/20"></div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="inline-flex items-center space-x-2 bg-indigo-500/20 border border-indigo-500/30 rounded-full px-4 py-2 mb-6">
-                <Rocket className="w-5 h-5 text-indigo-400" />
-                <span className="text-indigo-300 text-sm font-medium">Space Technology Services</span>
-              </div>
-              
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                Revolutionary
-                <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  {" "}Space Technology
+              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+                Space Technology
+                <span className="block bg-gradient-to-r from-pink-400 to-red-400 bg-clip-text text-transparent">
+                  Revolution Platform
                 </span>
-                <br />
-                Solutions
               </h1>
-              
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-                Pioneer the future of space exploration with AI consciousness, resource intelligence, 
-                and autonomous systems that transcend Earth's boundaries.
+              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
+                Pioneering the future of space exploration with AI consciousness, quantum communication, 
+                and autonomous exploration for unprecedented discoveries.
               </p>
-              
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link 
                   href="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold rounded-full hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 shadow-lg hover:shadow-indigo-500/25"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-pink-500 to-red-500 text-white font-semibold rounded-full hover:from-pink-600 hover:to-red-600 transition-all duration-300 transform hover:scale-105"
                 >
-                  Launch Space Project
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                  Explore Space
+                  <Rocket className="w-5 h-5 ml-2" />
                 </Link>
                 <Link 
-                  href="/solutions"
-                  className="inline-flex items-center px-8 py-4 border-2 border-indigo-500 text-indigo-400 font-semibold rounded-full hover:bg-indigo-500 hover:text-white transition-all duration-300"
+                  href="/services"
+                  className="inline-flex items-center px-8 py-4 border-2 border-pink-500 text-pink-400 font-semibold rounded-full hover:bg-pink-500 hover:text-white transition-all duration-300"
                 >
-                  Explore Solutions
+                  Explore All Services
                 </Link>
               </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {stats.map((stat, index) => (
+        {/* Features Section */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Revolutionary Space Capabilities
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Our space technology platform delivers unprecedented exploration capabilities with AI consciousness, 
+                quantum communication, and autonomous mission management.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {features.map((feature, index) => (
                 <motion.div
-                  key={index}
+                  key={feature.title}
                   initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="text-center"
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl rounded-2xl p-6 border border-gray-700/50 hover:border-pink-500/50 transition-all duration-300"
                 >
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-indigo-500/20 rounded-full mb-4">
-                    <stat.icon className="w-8 h-8 text-indigo-400" />
+                  <div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-red-500 rounded-xl flex items-center justify-center mb-4">
+                    <feature.icon className="w-8 h-8 text-white" />
                   </div>
-                  <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
-                  <div className="text-gray-400">{stat.label}</div>
+                  <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
+                  <p className="text-gray-400">{feature.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -127,60 +136,49 @@ const SpaceTechnologyServices: React.FC = () => {
         </section>
 
         {/* Services Grid */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Space Technology Services
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Our Space Technology Services
               </h2>
-              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                Choose from our comprehensive suite of space technology and exploration services
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Discover our comprehensive suite of AI-powered space exploration and communication solutions.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {services.map((service, index) => (
                 <motion.div
-                  key={index}
+                  key={service.name}
                   initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-indigo-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-500/10"
+                  viewport={{ once: true }}
+                  className="group"
                 >
-                  {service.badge && (
-                    <div className="inline-flex items-center px-3 py-1 bg-indigo-500/20 border border-indigo-500/30 rounded-full text-xs font-medium text-indigo-300 mb-4">
-                      {service.badge}
-                    </div>
-                  )}
-                  
-                  <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
-                  <p className="text-gray-300 mb-6">{service.description}</p>
-                  
-                  <div className="space-y-3 mb-6">
-                    {service.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center space-x-3">
-                        <CheckCircle className="w-5 h-5 text-indigo-400 flex-shrink-0" />
-                        <span className="text-gray-300">{feature}</span>
+                  <Link href={service.href}>
+                    <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl rounded-2xl p-8 border border-gray-700/50 hover:border-pink-500/50 transition-all duration-300 group-hover:scale-105">
+                      <div className={`w-20 h-20 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                        <service.icon className="w-10 h-10 text-white" />
                       </div>
-                    ))}
-                  </div>
-                  
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="text-2xl font-bold text-indigo-400">{service.price}</div>
-                    <Star className="w-5 h-5 text-yellow-400" />
-                  </div>
-                  
-                  <Link 
-                    href={service.href}
-                    className="inline-flex items-center justify-center w-full px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold rounded-lg hover:from-indigo-600 hover:to-purple-600 transition-all duration-300"
-                  >
-                    Learn More
-                    <ArrowRight className="w-5 h-5 ml-2" />
+                      <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-pink-400 transition-colors duration-300">
+                        {service.name}
+                      </h3>
+                      <p className="text-gray-400 text-lg leading-relaxed">
+                        {service.description}
+                      </p>
+                      <div className="mt-6 flex items-center text-pink-400 group-hover:text-pink-300 transition-colors duration-300">
+                        <span className="font-semibold">Learn More</span>
+                        <Rocket className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                      </div>
+                    </div>
                   </Link>
                 </motion.div>
               ))}
@@ -188,35 +186,59 @@ const SpaceTechnologyServices: React.FC = () => {
           </div>
         </section>
 
+        {/* Stats Section */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="text-center"
+                >
+                  <div className="w-20 h-20 bg-gradient-to-r from-pink-500 to-red-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <stat.icon className="w-10 h-10 text-white" />
+                  </div>
+                  <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.number}</div>
+                  <div className="text-gray-400">{stat.label}</div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
+        <section className="py-20">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Ready to Explore Space?
               </h2>
-              <p className="text-xl text-gray-300 mb-8">
-                Join the space revolution. Pioneer the future of space technology with our 
-                revolutionary space intelligence and exploration services.
+              <p className="text-xl text-gray-400 mb-8">
+                Join the space technology revolution with AI consciousness and quantum communication. 
+                Transform space exploration with the future of interplanetary innovation.
               </p>
-              
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link 
                   href="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold rounded-full hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 shadow-lg hover:shadow-indigo-500/25"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-pink-500 to-red-500 text-white font-semibold rounded-full hover:from-pink-600 hover:to-red-600 transition-all duration-300 transform hover:scale-105"
                 >
-                  Launch Space Mission
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                  Explore Space
+                  <Rocket className="w-5 h-5 ml-2" />
                 </Link>
                 <Link 
-                  href="/team"
-                  className="inline-flex items-center px-8 py-4 border-2 border-indigo-500 text-indigo-400 font-semibold rounded-full hover:bg-indigo-500 hover:text-white transition-all duration-300"
+                  href="/services"
+                  className="inline-flex items-center px-8 py-4 border-2 border-pink-500 text-pink-400 font-semibold rounded-full hover:bg-pink-500 hover:text-white transition-all duration-300"
                 >
-                  Meet Our Team
+                  Explore All Services
                 </Link>
               </div>
             </motion.div>
@@ -227,4 +249,4 @@ const SpaceTechnologyServices: React.FC = () => {
   );
 };
 
-export default SpaceTechnologyServices;
+export default SpaceTechnologyPage;

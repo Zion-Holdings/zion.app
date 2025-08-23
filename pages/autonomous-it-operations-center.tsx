@@ -16,10 +16,10 @@ export default function AutonomousItOperationsCenter() {
 				"SLO burn-rate monitoring",
 				"ChatOps and escalation workflows",
 				"Cloud/on-prem integrations",
-				"Compliance and audit trails"
+				"Compliance and audit trails]}
 			]}
 			industries={["Enterprise IT", "SRE/Platform", "Managed Services"]}
-			canonical="https://ziontechgroup.com/autonomous-it-operations-center"
+			canonical="https://ziontechgroup.com/autonomous-it-operations-center]}
 		/>
 	);
 }

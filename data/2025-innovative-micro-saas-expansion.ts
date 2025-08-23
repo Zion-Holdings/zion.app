@@ -694,5 +694,6 @@ export const innovativeMicroSaasExpansion2025: InnovativeMicroSaasService[] = [
     customers: 350,
     rating: 4.9,
     reviews: 150
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   }
 ];

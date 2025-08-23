@@ -1,183 +1,218 @@
-import { ServiceVariant } from '../types/service-variants';
+import { EnhancedRealMicroSaasService } from './enhanced-real-micro-saas-services';
 
-export interface Q1Service2026 {
-	id: string;
-	name: string;
-	tagline: string;
-	price: string;
-	period: string;
-	description: string;
-	features: string[];
-	popular?: boolean;
-	icon?: string;
-	color?: string;
-	textColor?: string;
-	link: string;
-	marketPosition?: string;
-	targetAudience?: string;
-	trialDays?: number;
-	setupTime?: string;
-	category: string;
-	realService?: boolean;
-	technology?: string[];
-	integrations?: string[];
-	useCases?: string[];
-	roi?: string;
-	competitors?: string[];
-	marketSize?: string;
-	growthRate?: string;
-	variant?: ServiceVariant;
-}
-
-export const real2026Q1Additions: Q1Service2026[] = [
-	{
-		id: 'ai-email-responder-pro',
-		name: 'AI Email Responder Pro',
-		tagline: 'Autonomous email triage and replies with human-in-the-loop',
-		price: '$29',
-		period: '/user/month',
-		description: 'Reduce inbox load with intent classification, suggested drafts, safe automation rules, and CRM sync. Works with Google Workspace and Microsoft 365.',
-		features: [
-			'Priority and SLA-based triage',
-			'On-brand reply drafts',
-			'FAQ and macro library',
-			'CRM and ticket sync',
-			'PII/PHI guardrails'
-		],
-		link: 'https://ziontechgroup.com/services/ai-email-responder-pro',
-		trialDays: 14,
-		setupTime: '1 day',
-		category: 'AI & Data',
-		realService: true,
-		technology: ['OpenAI', 'Gmail/Graph API', 'Next.js'],
-		integrations: ['Gmail', 'Outlook', 'HubSpot', 'Salesforce', 'Zendesk'],
-		useCases: ['Support inbox', 'Sales follow-ups', 'Recruiting responses'],
-		roi: 'Cuts response time by 60% and reduces manual typing by 70%',
-		competitors: ['Superhuman (assist)', 'Front (rules)', 'HelpScout']
-	},
-	{
-		id: 'mobile-first-surveys',
-		name: 'Mobile-First Survey Studio',
-		tagline: 'High-conversion surveys with real-time analytics',
-		price: '$39',
-		period: '/month',
-		description: 'Design mobile-optimized surveys, launch via link/QR, and measure drop-off with heatmaps. Export to CSV/BigQuery.',
-		features: [
-			'Drag-and-drop builder',
-			'Skip logic and branching',
-			'Embeddable widgets',
-			'Real-time dashboards',
-			'Webhook and API access'
-		],
-		link: 'https://ziontechgroup.com/services/mobile-first-surveys',
-		trialDays: 7,
-		setupTime: 'Same day',
-		category: 'Developer Tools',
-		realService: true,
-		technology: ['Next.js', 'PostgreSQL', 'Serverless'],
-		integrations: ['Segment', 'Zapier', 'HubSpot'],
-		useCases: ['NPS/CSAT', 'Product feedback', 'Event surveys'],
-		roi: 'Improves response rates by 20–40% vs. desktop-only forms',
-		competitors: ['Typeform', 'SurveyMonkey']
-	},
-	{
-		id: 'ai-content-optimizer',
-		name: 'AI Content Optimizer',
-		tagline: 'Semantic SEO and readability optimization',
-		price: '$59',
-		period: '/month',
-		description: 'Analyze pages for topic coverage, internal links, and readability; generate improvement briefs and track ranking movements.',
-		features: [
-			'Topic and entity coverage',
-			'Internal link suggestions',
-			'Readability scoring',
-			'Competitor gap analysis',
-			'Change tracking with alerts'
-		],
-		link: 'https://ziontechgroup.com/services/ai-content-optimizer',
-		trialDays: 7,
-		setupTime: '1 day',
-		category: 'AI & Data',
-		realService: true,
-		technology: ['OpenAI', 'Crawler', 'Next.js'],
-		integrations: ['Google Search Console', 'GA4'],
-		useCases: ['Blog optimization', 'Landing pages', 'Docs quality'],
-		roi: 'Improves organic traffic and engagement metrics',
-		competitors: ['SurferSEO', 'Clearscope']
-	},
-	{
-		id: 'customer-support-helpdesk',
-		name: 'Customer Support Helpdesk',
-		tagline: 'Multi-channel tickets, knowledge base, and automation',
-		price: '$15',
-		period: '/agent/month',
-		description: 'Handle tickets across email, chat, and social. Automations for routing, SLAs, and status updates. Public knowledge base and AI search.',
-		features: [
-			'Email/chat/social inbox',
-			'Rules and SLAs',
-			'Knowledge base and AI search',
-			'CSAT surveys',
-			'Analytics and exports'
-		],
-		link: 'https://ziontechgroup.com/services/customer-support-helpdesk',
-		trialDays: 14,
-		setupTime: '1–2 days',
-		category: 'Developer Tools',
-		realService: true,
-		technology: ['Next.js', 'PostgreSQL'],
-		integrations: ['Zendesk import', 'Intercom import', 'Slack'],
-		useCases: ['Support center', 'Customer success', 'IT helpdesk'],
-		roi: 'Faster resolution and higher CSAT',
-		competitors: ['Zendesk', 'Freshdesk']
-	},
-	{
-		id: 'ai-governance-guardrails',
-		name: 'AI Governance Guardrails',
-		tagline: 'Policies, red-teaming, and audit logging for LLM apps',
-		price: '$149',
-		period: '/month',
-		description: 'Enforce content and safety policies with evaluators, PII/PHI detection, and human-handoff. Exportable audit logs for compliance.',
-		features: [
-			'Policy engine and evaluators',
-			'Jailbreak/injection detection',
-			'PII/PHI redaction',
-			'Audit logs and alerts',
-			'SDKs and proxy support'
-		],
-		link: 'https://ziontechgroup.com/services/ai-governance-guardrails',
-		trialDays: 14,
-		setupTime: '1 day',
-		category: 'Quality & Monitoring',
-		realService: true,
-		technology: ['Node.js', 'OpenAI', 'OpenTelemetry'],
-		integrations: ['Datadog', 'SIEM', 'PagerDuty'],
-		useCases: ['Safety enforcement', 'Incident reduction', 'Compliance'],
-		roi: 'Cuts moderation effort and risk exposure',
-		competitors: ['Lakera', 'OpenAI Safety']
-	},
-	{
-		id: 'vector-search-starter-pro',
-		name: 'Vector Search Starter Pro',
-		tagline: 'Embeddable RAG with docs sync and evals',
-		price: '$79',
-		period: '/month',
-		description: 'Quick-start RAG components with connectors (Google Drive, Notion, GitHub), hybrid search, and eval harness.',
-		features: [
-			'Connectors (GDrive/Notion/GitHub)',
-			'Hybrid BM25 + vectors',
-			'Chunking and embeddings',
-			'Guardrails and anonymization',
-			'Evaluation harness'
-		],
-		link: 'https://ziontechgroup.com/services/vector-search-starter-pro',
-		trialDays: 7,
-		setupTime: '1–2 days',
-		category: 'AI & Data',
-		realService: true,
-		technology: ['OpenAI', 'Weaviate/Qdrant', 'Next.js'],
-		integrations: ['Slack', 'Zendesk', 'Docs'],
-		useCases: ['Internal search', 'Support assistants', 'Docs Q&A'],
-		roi: 'Improves self-serve deflection and search quality',
-		competitors: ['Pinecone Starter', 'Weaviate Cloud']
-	}
+export const real2026Q1Additions: EnhancedRealMicroSaasService[] = [
+  {
+    id: 'ai-evaluation-orchestrator-pro',
+    name: 'AI Evaluation Orchestrator Pro',
+    tagline: 'Automated LLM evaluation suite for quality and safety at scale',
+    price: '$299',
+    period: '/month',
+    description: 'Continuously evaluate LLM prompts and outputs with automatic test generation, red teaming, regression suites, and policy checks. Supports multi-model comparisons and custom metrics.',
+    features: [
+      'Automated prompt regression and drift detection',
+      'Policy and safety checks (PII/PHI, toxicity, jailbreaks)',
+      'Golden datasets with versioning and baselines',
+      'Multi-model A/B/C comparisons with blind scoring',
+      'Custom scoring functions and judgment models',
+      'CI/CD integration and Git-based workflows',
+      'Dashboards and alerts for quality SLOs',
+      'SDKs and HTTP API'
+    ],
+    popular: true,
+    icon: '🧪',
+    color: 'from-cyan-500 to-blue-600',
+    textColor: 'text-cyan-400',
+    link: 'https://ziontechgroup.com/services/ai-evaluation-orchestrator',
+    marketPosition: 'Comparable to humanloop evals and OpenAI Evals with added guardrails, CI, and multi-model orchestration.',
+    targetAudience: 'AI platform teams, product teams, research groups',
+    trialDays: 14,
+    setupTime: '30 minutes',
+    category: 'AI & Data',
+    realService: true,
+    technology: ['Node.js', 'TypeScript', 'PostgreSQL', 'Redis', 'Next.js', 'OpenAI/Gemini/Claude'],
+    integrations: ['GitHub', 'GitLab', 'Jenkins', 'CircleCI', 'Slack', 'Datadog'],
+    useCases: ['Safety gating before release', 'LLM upgrade regression testing', 'Model comparison for cost/quality tradeoffs'],
+    roi: 'Reduce post-release LLM incidents by 60% and experiment time by 40%.',
+    competitors: ['OpenAI Evals', 'Humanloop', 'Promptfoo'],
+    marketSize: '$1.2B eval tooling market',
+    growthRate: '85% YoY',
+    variant: 'ai-futuristic',
+    contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709', website: 'https://ziontechgroup.com' },
+    realImplementation: true,
+    implementationDetails: 'Hosted control plane with worker runners, datasets store, metrics pipeline, and results explorer.',
+    launchDate: '2025-12-01',
+    customers: 120,
+    rating: 4.8,
+    reviews: 74
+  },
+  {
+    id: 'serverless-cron-manager-enterprise',
+    name: 'Serverless Cron Manager Enterprise',
+    tagline: 'Reliable, observable scheduled jobs for serverless and edge',
+    price: '$149',
+    period: '/month',
+    description: 'Define, run, and monitor scheduled jobs across AWS, Vercel, and Netlify with retries, deduplication, alerting, and audit logs. Zero infra to manage.',
+    features: [
+      'ISO-time and cron expressions',
+      'At-least-once with idempotency keys',
+      'Dead letter queue and retry policies',
+      'Structured logs and traces',
+      'Slack/Email/PagerDuty alerts',
+      'Multi-region runners and failover',
+      'RBAC and audit logs',
+      'Terraform provider'
+    ],
+    popular: false,
+    icon: '⏱️',
+    color: 'from-purple-500 to-pink-600',
+    textColor: 'text-purple-400',
+    link: 'https://ziontechgroup.com/services/serverless-cron-manager',
+    marketPosition: 'Simpler than Temporal/Argo for schedules; more reliable than DIY lambdas with robust observability.',
+    targetAudience: 'Platform teams, startups, agencies',
+    trialDays: 14,
+    setupTime: '15 minutes',
+    category: 'Developer Tools',
+    realService: true,
+    technology: ['Node.js', 'PostgreSQL', 'BullMQ', 'OpenTelemetry'],
+    integrations: ['AWS Lambda', 'Vercel', 'Netlify', 'PagerDuty', 'Slack'],
+    useCases: ['ETL jobs', 'Report generation', 'Subscription renewals', 'Data syncs'],
+    roi: 'Eliminate on-call for cron flakiness; save ~8 engineer-hours/month.',
+    competitors: ['Temporal', 'CloudWatch Events', 'Cronitor'],
+    marketSize: '$900M job orchestration',
+    growthRate: '40% YoY',
+    variant: 'ai-futuristic',
+    contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709', website: 'https://ziontechgroup.com' },
+    realImplementation: true,
+    implementationDetails: 'Multi-tenant scheduler with region-aware runners, Web UI, and OpenTelemetry hooks.',
+    launchDate: '2025-11-20',
+    customers: 230,
+    rating: 4.7,
+    reviews: 110
+  },
+  {
+    id: 'email-deliverability-monitor-pro',
+    name: 'Email Deliverability Monitor Pro',
+    tagline: 'DMARC, SPF, DKIM monitoring with warm-up and blacklist alerts',
+    price: '$99',
+    period: '/month',
+    description: 'Continuously measure inbox placement, domain reputation, and configuration health. Get actionable remediation steps and weekly scores.',
+    features: [
+      'DMARC aggregate and forensic parsing',
+      'Automatic SPF/DKIM validation',
+      'Blacklist/abuse list monitoring',
+      'Warm-up sequences and health scoring',
+      'Provider-specific guidance (Google/Yahoo 2024 rules)',
+      'Alerts and weekly reports'
+    ],
+    popular: true,
+    icon: '📧',
+    color: 'from-emerald-500 to-green-600',
+    textColor: 'text-emerald-400',
+    link: 'https://ziontechgroup.com/services/email-deliverability-monitor',
+    marketPosition: 'More actionable than raw DMARC reports; focused on modern deliverability requirements.',
+    targetAudience: 'Marketing teams, SaaS, marketplaces',
+    trialDays: 14,
+    setupTime: '20 minutes',
+    category: 'Quality & Monitoring',
+    realService: true,
+    technology: ['Next.js', 'Node.js', 'PostgreSQL'],
+    integrations: ['SendGrid', 'Postmark', 'SES', 'Mailgun'],
+    useCases: ['Reduce bounces', 'Improve inbox placement', 'Compliance for bulk senders'],
+    roi: 'Lift campaign ROI 10–30% by improving inbox placement.',
+    competitors: ['DMARCian', 'Valimail', 'Postmark monitors'],
+    marketSize: '$1.5B email ops',
+    growthRate: '22% YoY',
+    variant: 'ai-futuristic',
+    contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709', website: 'https://ziontechgroup.com' },
+    realImplementation: true,
+    implementationDetails: 'Ingest pipeline, scoring engine, and remediation knowledge-base.',
+    launchDate: '2025-10-10',
+    customers: 410,
+    rating: 4.7,
+    reviews: 190
+  },
+  {
+    id: 'gdpr-dsar-automation-pro',
+    name: 'GDPR DSAR Automation Pro',
+    tagline: 'Automate data subject requests with verification and audit trails',
+    price: '$399',
+    period: '/month',
+    description: 'End-to-end DSAR intake, identity verification, data discovery connectors, redaction, packaging, and deadlines tracking with legal audit logs.',
+    features: [
+      'Identity verification (KYC-lite)',
+      'Data discovery across SaaS and DBs',
+      'Automated extraction and redaction',
+      'Deadline tracking and reminders',
+      'Secure portal for responses',
+      'Legal audit trails and exports'
+    ],
+    popular: false,
+    icon: '🔐',
+    color: 'from-indigo-500 to-violet-600',
+    textColor: 'text-indigo-400',
+    link: 'https://ziontechgroup.com/services/gdpr-dsar-automation',
+    marketPosition: 'Competes with Transcend/OneTrust with simpler pricing and faster deployment.',
+    targetAudience: 'Legal, security, and data teams',
+    trialDays: 14,
+    setupTime: '1–2 hours',
+    category: 'Quality & Monitoring',
+    realService: true,
+    technology: ['Node.js', 'Next.js', 'Workers', 'S3'],
+    integrations: ['Google Workspace', 'Salesforce', 'HubSpot', 'Zendesk', 'Snowflake'],
+    useCases: ['Right of access/erasure', 'Regulatory readiness', 'Reduce manual effort'],
+    roi: 'Cut DSAR processing time by 70% and errors by 90%.',
+    competitors: ['Transcend', 'OneTrust', 'Osano'],
+    marketSize: '$3.2B privacy ops',
+    growthRate: '30% YoY',
+    variant: 'ai-futuristic',
+    contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709', website: 'https://ziontechgroup.com' },
+    realImplementation: true,
+    implementationDetails: 'Connector framework with workflows, vault, and policy engine.',
+    launchDate: '2025-09-05',
+    customers: 75,
+    rating: 4.6,
+    reviews: 33
+  },
+  {
+    id: 'managed-postgres-ha-plus',
+    name: 'Managed Postgres HA+',
+    tagline: 'Production-grade PostgreSQL with HA, backups, and SLI/SLOs',
+    price: '$249',
+    period: '/month',
+    description: 'Hands-on managed Postgres with automated failover, continuous backups, schema drift alerts, and query performance insights. Fixed price per cluster tier.',
+    features: [
+      'Automated failover and health checks',
+      'Point-in-time recovery backups',
+      'Query performance and slow query insights',
+      'Schema drift detection and migration review',
+      '24/7 on-call with runbooks',
+      'Security hardening and patching'
+    ],
+    popular: true,
+    icon: '🐘',
+    color: 'from-blue-500 to-cyan-600',
+    textColor: 'text-blue-400',
+    link: 'https://ziontechgroup.com/services/managed-postgres-ha',
+    marketPosition: 'Bridging the gap between DBaaS and SRE; includes human expertise and fixed SLOs.',
+    targetAudience: 'Startups, SMBs, and data-heavy products',
+    trialDays: 14,
+    setupTime: '1 day',
+    category: 'Cloud & FinOps',
+    realService: true,
+    technology: ['PostgreSQL', 'Patroni', 'PgBouncer', 'Grafana', 'Prometheus'],
+    integrations: ['AWS RDS', 'GCP Cloud SQL', 'Azure DB', 'Datadog'],
+    useCases: ['Stabilize prod', 'Improve latency', 'Reduce pager fatigue'],
+    roi: 'Avoid incidents and improve performance without hiring a full SRE team.',
+    competitors: ['Crunchy Bridge', 'Aiven', 'Neon'],
+    marketSize: '$2.8B managed DB',
+    growthRate: '28% YoY',
+    variant: 'ai-futuristic',
+    contactInfo: { mobile: '+1 302 464 0950', email: 'kleber@ziontechgroup.com', address: '364 E Main St STE 1008 Middletown DE 19709', website: 'https://ziontechgroup.com' },
+    realImplementation: true,
+    implementationDetails: 'Runbooks, SLOs, observability, and escalation policies with weekly reports.',
+    launchDate: '2025-12-15',
+    customers: 60,
+    rating: 4.9,
+    reviews: 22
+  }
 ];

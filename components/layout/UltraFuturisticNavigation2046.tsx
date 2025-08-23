@@ -32,6 +32,7 @@ function normalizeHref(href: string): string {
   const hasQueryOrHash = href.includes('?') || href.includes('#');
   if (hasQueryOrHash) return href;
   return href.endsWith('/') ? href : href + '/';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 }
 
 const navigationItems: NavigationItem[] = [
@@ -41,12 +42,14 @@ const navigationItems: NavigationItem[] = [
     icon: <Rocket className="w-5 h-5" />,
     description: 'Future-defining technology solutions',
     badge: 'New 2046',
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     category: 'services',
     color: 'from-emerald-500 to-cyan-500',
     children: [
       { 
         name: 'All Services', 
         href: '/services', 
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         description: 'Complete revolutionary services overview',
         icon: <Grid className="w-4 h-4" />,
         featured: true
@@ -54,6 +57,7 @@ const navigationItems: NavigationItem[] = [
       { 
         name: 'AI Consciousness Evolution 2046', 
         href: '/ai-consciousness-evolution-platform-2046', 
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         description: 'Next-generation AI consciousness',
         icon: <Brain className="w-4 h-4" />,
         color: 'from-purple-500 to-pink-500',
@@ -62,6 +66,7 @@ const navigationItems: NavigationItem[] = [
       { 
         name: 'Quantum AI Neural Networks 2046', 
         href: '/quantum-ai-neural-network-platform-2046', 
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         description: 'Quantum-powered AI neural networks',
         icon: <Atom className="w-4 h-4" />,
         color: 'from-blue-500 to-cyan-500',
@@ -70,6 +75,7 @@ const navigationItems: NavigationItem[] = [
       { 
         name: 'AI Autonomous Business Intelligence 2046', 
         href: '/autonomous-ai-business-intelligence-platform-2046', 
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         description: 'AI-powered business intelligence',
         icon: <BarChart3 className="w-4 h-4" />,
         color: 'from-emerald-500 to-teal-500'
@@ -77,6 +83,7 @@ const navigationItems: NavigationItem[] = [
       { 
         name: 'Quantum Cybersecurity Intelligence 2046', 
         href: '/quantum-cybersecurity-intelligence-platform-2046', 
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         description: 'Quantum-resistant security',
         icon: <Shield className="w-4 h-4" />,
         color: 'from-red-500 to-orange-500'
@@ -84,6 +91,7 @@ const navigationItems: NavigationItem[] = [
       { 
         name: 'Autonomous Healthcare AI 2046', 
         href: '/autonomous-healthcare-ai-platform-2046', 
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         description: 'AI-powered healthcare',
         icon: <Heart className="w-4 h-4" />,
         color: 'from-pink-500 to-purple-500'
@@ -147,26 +155,15 @@ const navigationItems: NavigationItem[] = [
         href: '/quantum-cloud-infrastructure-platform-2046', 
         description: 'Quantum-powered cloud computing',
         icon: <Cloud className="w-4 h-4" />,
-        featured: true
+        description: 'Scalable cloud solutions',
+        neonColor: 'shadow-indigo-400/50'
       },
-      { 
-        name: 'Quantum Cybersecurity', 
-        href: '/quantum-cybersecurity-intelligence-platform-2046', 
-        description: 'Quantum-secure operations',
-        icon: <Shield className="w-4 h-4" />,
-        featured: true
-      },
-      { 
-        name: 'Quantum Space Intelligence', 
-        href: '/quantum-space-resource-intelligence-platform-2046', 
-        description: 'Space exploration with quantum tech',
-        icon: <Rocket className="w-4 h-4" />
-      },
-      { 
-        name: 'Quantum Data Centers', 
-        href: '/quantum-data-center-management-platform-2046', 
-        description: 'Quantum-powered data management',
-        icon: <Database className="w-4 h-4" />
+      {
+        label: 'Micro SAAS Solutions',
+        href: '/services?category=micro-saas',
+        icon: <Target2 className="w-4 h-4" />,
+        description: 'Innovative business solutions',
+        neonColor: 'shadow-emerald-400/50'
       }
     ]
   },
@@ -203,6 +200,7 @@ const navigationItems: NavigationItem[] = [
         href: '/quantum-it-service-management-platform-2046', 
         description: 'Quantum-powered IT services',
         icon: <Settings className="w-4 h-4" />
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       }
     ]
   },
@@ -239,6 +237,7 @@ const navigationItems: NavigationItem[] = [
         href: '/autonomous-ai-business-intelligence-platform-2046', 
         description: 'Autonomous business insights',
         icon: <BarChart3 className="w-4 h-4" />
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       }
     ]
   },
@@ -281,6 +280,7 @@ const navigationItems: NavigationItem[] = [
         icon: <Mail className="w-4 h-4" />
       }
     ]
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   }
 ];
 
@@ -288,6 +288,8 @@ const UltraFuturisticNavigation2046: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
+  const router = useRouter();
+  const navRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -345,8 +347,9 @@ const UltraFuturisticNavigation2046: React.FC = () => {
       </div>
 
       {/* Main Navigation */}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-3 group">
@@ -361,6 +364,7 @@ const UltraFuturisticNavigation2046: React.FC = () => {
               </div>
             </Link>
           </div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
@@ -428,21 +432,17 @@ const UltraFuturisticNavigation2046: React.FC = () => {
                     </motion.div>
                   )}
                 </AnimatePresence>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </div>
             ))}
           </div>
 
           {/* CTA Buttons */}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
           <div className="hidden lg:flex items-center space-x-4">
             <Link
               href="/contact"
-              className="px-6 py-3 text-cyan-400 border border-cyan-400 rounded-full hover:bg-cyan-400 hover:text-black transition-all duration-300"
-            >
-              Contact Us
-            </Link>
-            <Link
-              href="/get-started"
-              className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-full hover:from-cyan-600 hover:to-purple-700 transition-all duration-300"
+              className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 shadow-lg shadow-cyan-500/25"
             >
               Get Started
             </Link>
@@ -457,10 +457,11 @@ const UltraFuturisticNavigation2046: React.FC = () => {
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -472,21 +473,20 @@ const UltraFuturisticNavigation2046: React.FC = () => {
           >
             <div className="px-4 py-6 space-y-4">
               {navigationItems.map((item) => (
-                <div key={item.name}>
+                <div key={item.label}>
                   <button
-                    onClick={() => toggleDropdown(item.name)}
-                    className="flex items-center justify-between w-full text-left text-gray-300 hover:text-white transition-colors py-3 px-4 rounded-lg hover:bg-white/5"
+                    onClick={() => item.children ? handleDropdownToggle(item.label) : handleNavigation(item.href)}
+                    className="flex items-center justify-between w-full p-3 text-left text-white hover:text-cyan-400 transition-colors duration-200"
                   >
                     <div className="flex items-center space-x-3">
                       {item.icon}
-                      <span className="font-medium">{item.name}</span>
-                      {item.badge && (
-                        <span className="px-2 py-1 text-xs font-semibold bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-full">
-                          {item.badge}
-                        </span>
-                      )}
+                      <span className="font-medium">{item.label}</span>
                     </div>
-                    <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === item.name ? 'rotate-180' : ''}`} />
+                    {item.children && (
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+                        activeDropdown === item.label ? 'rotate-180' : ''
+                      }`} />
+                    )}
                   </button>
                   
                   {activeDropdown === item.name && (
@@ -509,6 +509,7 @@ const UltraFuturisticNavigation2046: React.FC = () => {
                               <div className="text-sm text-gray-400">{child.description}</div>
                             </div>
                           </div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                         </Link>
                       ))}
                     </div>
@@ -517,17 +518,11 @@ const UltraFuturisticNavigation2046: React.FC = () => {
               ))}
               
               <div className="pt-4 border-t border-gray-700 space-y-3">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 <Link
                   href="/contact"
-                  className="block w-full px-4 py-3 text-center text-cyan-400 border border-cyan-400 rounded-full hover:bg-cyan-400 hover:text-black transition-all duration-300"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Contact Us
-                </Link>
-                <Link
-                  href="/get-started"
-                  className="block w-full px-4 py-3 text-center bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-full hover:from-cyan-600 hover:to-purple-700 transition-all duration-300"
-                  onClick={() => setIsOpen(false)}
+                  onClick={closeDropdowns}
+                  className="block w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium text-center rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200"
                 >
                   Get Started
                 </Link>

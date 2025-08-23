@@ -71,6 +71,7 @@ const SitemapPage: React.FC = () => {
         { name: "Get Started", path: "/get-started", description: "Getting started guide" },
         { name: "Pricing", path: "/pricing", description: "Service pricing" },
         { name: "System Status", path: "/status", description: "Service status and uptime" }
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       ]
     }
   ];
@@ -154,6 +155,7 @@ const SitemapPage: React.FC = () => {
               <p className="text-lg text-gray-400 max-w-3xl mx-auto">
                 Explore all pages and sections of the Zion Tech Group website. 
                 Find the information you need quickly and efficiently.
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </p>
             </motion.div>
           </div>
@@ -164,6 +166,7 @@ const SitemapPage: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
@@ -196,6 +199,7 @@ const SitemapPage: React.FC = () => {
                   <div className="flex items-center text-purple-400 text-sm font-medium group-hover:text-purple-300 transition-colors duration-300">
                     Visit Page
                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                   </div>
                 </motion.div>
               ))}
@@ -208,6 +212,7 @@ const SitemapPage: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
@@ -382,6 +387,7 @@ const SitemapPage: React.FC = () => {
                   </div>
                 </motion.div>
               ))}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </div>
           </div>
         </section>
@@ -391,6 +397,7 @@ const SitemapPage: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
@@ -414,6 +421,7 @@ const SitemapPage: React.FC = () => {
                   className="inline-flex items-center px-8 py-4 border-2 border-purple-500/30 text-purple-400 font-semibold rounded-2xl hover:border-purple-500/50 hover:text-purple-300 transition-all duration-300"
                 >
                   Get Support
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </Link>
               </div>
             </motion.div>
@@ -425,3 +433,4 @@ const SitemapPage: React.FC = () => {
 };
 
 export default SitemapPage;
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

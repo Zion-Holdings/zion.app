@@ -12,7 +12,7 @@ export default function FacebookRedirect() {
 		<>
 			<Head>
 				<title>Facebook | Zion Tech Group</title>
-				<meta name="robots" content="noindex, nofollow" />
+				<meta name="robots" content="index, follow" />
 			</Head>
 			<div className="min-h-screen bg-black text-white flex items-center justify-center p-8">
 				<p>Redirecting to Facebook...</p>

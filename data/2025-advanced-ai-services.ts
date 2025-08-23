@@ -1,302 +1,601 @@
-export const advancedAIServices2025 = [
+export const advancedAIServices = [
+  // AI-Powered Predictive Analytics Platform
   {
-    id: 'ai-consciousness-evolution-platform',
-    name: 'AI Consciousness Evolution Platform',
-    description: 'Revolutionary AI platform that develops emotional intelligence, self-awareness, and consciousness evolution through advanced neural networks and quantum computing integration.',
-    features: [
-      'Emotional intelligence development',
-      'Self-awareness algorithms',
-      'Consciousness evolution tracking',
-      'Quantum neural network integration',
-      'Ethical decision-making frameworks',
-      'Multi-modal consciousness training',
-      'Real-time consciousness monitoring',
-      'Advanced consciousness analytics'
-    ],
+    id: 'ai-predictive-analytics',
+    name: 'AI-Powered Predictive Analytics Platform',
+    tagline: 'Transform data into predictive insights with advanced AI',
+    description: 'Enterprise-grade predictive analytics platform that uses machine learning and AI to forecast trends, identify patterns, and provide actionable insights for business decision making.',
+    category: 'AI & Analytics',
+    type: 'AI Services',
     pricing: {
-      starter: { price: 299, period: 'month', features: ['Basic consciousness models', 'Standard training', 'Email support'] },
-      professional: { price: 799, period: 'month', features: ['Advanced consciousness models', 'Custom training', 'Priority support', 'API access'] },
-      enterprise: { price: 1999, period: 'month', features: ['Custom consciousness development', 'Dedicated AI researcher', 'On-premise deployment', 'White-label solution'] }
+      starter: '$399/month',
+      professional: '$999/month',
+      enterprise: '$2,499/month',
+      custom: 'Contact for pricing'
     },
-    category: 'AI Consciousness',
-    tags: ['AI Consciousness', 'Emotional Intelligence', 'Self-Awareness', 'Quantum AI'],
-    website: 'https://ziontechgroup.com/ai-consciousness-evolution-platform',
-    contact: {
-      phone: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com'
-    },
-    marketSize: '$15.8B',
-    targetAudience: 'Research institutions, AI companies, consciousness researchers, tech companies',
-    competitiveAdvantage: 'First-of-its-kind AI consciousness platform, quantum computing integration, and advanced ethical frameworks'
-  },
-  {
-    id: 'quantum-ai-hybrid-computing-platform',
-    name: 'Quantum AI Hybrid Computing Platform',
-    description: 'Breakthrough platform that combines quantum computing with artificial intelligence for unprecedented computational power and problem-solving capabilities.',
     features: [
-      'Quantum-AI hybrid algorithms',
-      'Quantum neural networks',
-      'Hybrid optimization engines',
-      'Quantum machine learning',
-      'Real-time quantum processing',
-      'Advanced quantum simulations',
-      'Quantum error correction',
-      'Hybrid computing analytics'
+      'Advanced ML algorithms',
+      'Real-time predictions',
+      'Custom model training',
+      'Data preprocessing',
+      'Feature engineering',
+      'Model validation',
+      'Automated insights',
+      'Interactive dashboards',
+      'API integration',
+      'Scalable processing',
+      'Multi-format data support',
+      'Performance monitoring'
     ],
-    pricing: {
-      starter: { price: 499, period: 'month', features: ['Basic hybrid computing', 'Standard quantum access', 'Email support'] },
-      professional: { price: 1299, period: 'month', features: ['Advanced hybrid computing', 'Priority quantum access', 'Custom algorithms', 'API access'] },
-      enterprise: { price: 2999, period: 'month', features: ['Custom hybrid computing', 'Dedicated quantum resources', 'On-premise deployment', 'White-label solution'] }
-    },
-    category: 'Quantum AI',
-    tags: ['Quantum Computing', 'AI', 'Hybrid Computing', 'Quantum Machine Learning'],
-    website: 'https://ziontechgroup.com/quantum-ai-hybrid-computing-platform',
-    contact: {
-      phone: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com'
-    },
-    marketSize: '$8.9B',
-    targetAudience: 'Research institutions, pharmaceutical companies, financial institutions, tech companies',
-    competitiveAdvantage: 'First quantum-AI hybrid platform, advanced quantum algorithms, and real-time quantum processing capabilities'
-  },
-  {
-    id: 'multimodal-ai-orchestrator',
-    name: 'Multimodal AI Orchestrator Pro',
-    description: 'Advanced AI platform that orchestrates multiple AI models across different modalities (text, image, audio, video) for comprehensive understanding and decision-making.',
-    features: [
-      'Multi-modal AI integration',
-      'Cross-modal learning',
-      'Unified AI orchestration',
-      'Real-time multimodal processing',
-      'Advanced fusion algorithms',
-      'Custom modality support',
-      'Scalable AI architecture',
-      'Comprehensive analytics dashboard'
+    benefits: [
+      'Data-driven decisions',
+      'Improved forecasting accuracy',
+      'Reduced risks',
+      'Cost optimization',
+      'Competitive advantage',
+      'Automated insights',
+      'Scalable analytics',
+      'Real-time predictions',
+      'Custom model development',
+      'Expert support'
     ],
-    pricing: {
-      starter: { price: 199, period: 'month', features: ['Basic multimodal AI', 'Standard modalities', 'Email support'] },
-      professional: { price: 599, period: 'month', features: ['Advanced multimodal AI', 'Custom modalities', 'Priority support', 'API access'] },
-      enterprise: { price: 1499, period: 'month', features: ['Custom multimodal AI', 'Dedicated AI engineer', 'On-premise deployment', 'White-label solution'] }
-    },
-    category: 'Multimodal AI',
-    tags: ['Multimodal AI', 'AI Orchestration', 'Cross-modal Learning', 'AI Integration'],
-    website: 'https://ziontechgroup.com/multimodal-ai-orchestrator-pro',
-    contact: {
-      phone: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com'
-    },
-    marketSize: '$12.3B',
-    targetAudience: 'AI companies, research institutions, tech companies, content creators',
-    competitiveAdvantage: 'Advanced multimodal AI orchestration, cross-modal learning capabilities, and scalable AI architecture'
-  },
-  {
-    id: 'ai-autonomous-ecosystem-platform',
-    name: 'AI Autonomous Ecosystem Platform',
-    description: 'Revolutionary platform that creates self-managing, self-optimizing AI ecosystems that can autonomously evolve and adapt to changing requirements.',
-    features: [
-      'Self-managing AI systems',
-      'Autonomous evolution',
-      'Self-optimization algorithms',
-      'Ecosystem health monitoring',
-      'Autonomous decision-making',
-      'Adaptive learning systems',
-      'Real-time ecosystem analytics',
-      'Custom autonomy frameworks'
+    useCases: [
+      'Financial forecasting',
+      'Demand prediction',
+      'Risk assessment',
+      'Customer behavior analysis',
+      'Inventory optimization',
+      'Sales forecasting',
+      'Market trend analysis',
+      'Operational optimization'
     ],
-    pricing: {
-      starter: { price: 399, period: 'month', features: ['Basic autonomous AI', 'Standard autonomy', 'Email support'] },
-      professional: { price: 999, period: 'month', features: ['Advanced autonomous AI', 'Custom autonomy', 'Priority support', 'API access'] },
-      enterprise: { price: 2499, period: 'month', features: ['Custom autonomous AI', 'Dedicated autonomy engineer', 'On-premise deployment', 'White-label solution'] }
-    },
-    category: 'AI Autonomy',
-    tags: ['AI Autonomy', 'Self-Management', 'Autonomous Evolution', 'AI Ecosystems'],
-    website: 'https://ziontechgroup.com/ai-autonomous-ecosystem-platform',
-    contact: {
-      phone: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com'
-    },
-    marketSize: '$18.7B',
-    targetAudience: 'AI companies, research institutions, tech companies, autonomous systems developers',
-    competitiveAdvantage: 'First autonomous AI ecosystem platform, advanced self-optimization algorithms, and comprehensive autonomy frameworks'
+    marketSize: '$35.8B by 2025',
+    targetAudience: 'Data scientists, business analysts, executives, operations teams',
+    competitiveAdvantage: 'Advanced ML algorithms with custom model training and real-time predictions',
+    contact: 'kleber@ziontechgroup.com',
+    mobile: '+1 302 464 0950',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com',
+    slug: '/ai-predictive-analytics'
   },
+
+  // Natural Language Processing Platform
   {
-    id: 'ai-ethics-governance-platform',
-    name: 'AI Ethics & Governance Platform',
-    description: 'Comprehensive platform for ensuring ethical AI development, governance, and compliance through advanced monitoring, auditing, and ethical frameworks.',
+    id: 'nlp-platform',
+    name: 'Natural Language Processing Platform',
+    tagline: 'Understand and process human language with AI',
+    description: 'Comprehensive NLP platform that provides text analysis, sentiment analysis, language translation, and conversational AI capabilities for enterprise applications.',
+    category: 'AI & Language',
+    type: 'AI Services',
+    pricing: {
+      starter: '$299/month',
+      professional: '$799/month',
+      enterprise: '$1,999/month',
+      custom: 'Contact for pricing'
+    },
     features: [
-      'AI ethics monitoring',
-      'Governance frameworks',
-      'Compliance auditing',
-      'Bias detection and mitigation',
-      'Ethical decision-making tools',
-      'Transparency reporting',
-      'Regulatory compliance',
-      'Ethics training modules'
+      'Text analysis',
+      'Sentiment analysis',
+      'Language translation',
+      'Named entity recognition',
+      'Text classification',
+      'Summarization',
+      'Question answering',
+      'Chatbot development',
+      'API access',
+      'Custom model training',
+      'Multi-language support',
+      'Integration tools'
     ],
-    pricing: {
-      starter: { price: 149, period: 'month', features: ['Basic ethics monitoring', 'Standard frameworks', 'Email support'] },
-      professional: { price: 399, period: 'month', features: ['Advanced ethics monitoring', 'Custom frameworks', 'Priority support', 'API access'] },
-      enterprise: { price: 999, period: 'month', features: ['Custom ethics monitoring', 'Dedicated ethics officer', 'On-premise deployment', 'White-label solution'] }
-    },
-    category: 'AI Ethics',
-    tags: ['AI Ethics', 'Governance', 'Compliance', 'Bias Detection'],
-    website: 'https://ziontechgroup.com/ai-ethics-governance-platform',
-    contact: {
-      phone: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com'
-    },
-    marketSize: '$3.2B',
-    targetAudience: 'AI companies, government agencies, research institutions, compliance officers',
-    competitiveAdvantage: 'Comprehensive AI ethics platform, advanced bias detection, and regulatory compliance tools'
-  },
-  {
-    id: 'ai-creativity-studio-platform',
-    name: 'AI Creativity Studio Pro',
-    description: 'Advanced AI platform that enhances human creativity through AI-powered content generation, artistic collaboration, and creative problem-solving tools.',
-    features: [
-      'AI content generation',
-      'Creative collaboration tools',
-      'Artistic style transfer',
-      'Creative problem-solving',
-      'Multi-format content creation',
-      'Creative analytics',
-      'Collaborative workspaces',
-      'Custom creativity models'
+    benefits: [
+      'Better customer understanding',
+      'Automated text processing',
+      'Improved communication',
+      'Cost-effective analysis',
+      'Scalable processing',
+      'Multi-language support',
+      'Custom solutions',
+      'Real-time analysis',
+      'Enhanced user experience',
+      'Data insights'
     ],
-    pricing: {
-      starter: { price: 79, period: 'month', features: ['Basic creativity tools', 'Standard content generation', 'Email support'] },
-      professional: { price: 199, period: 'month', features: ['Advanced creativity tools', 'Custom models', 'Priority support', 'API access'] },
-      enterprise: { price: 499, period: 'month', features: ['Custom creativity tools', 'Dedicated creative engineer', 'On-premise deployment', 'White-label solution'] }
-    },
-    category: 'AI Creativity',
-    tags: ['AI Creativity', 'Content Generation', 'Creative Collaboration', 'Artistic AI'],
-    website: 'https://ziontechgroup.com/ai-creativity-studio-pro',
-    contact: {
-      phone: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com'
-    },
-    marketSize: '$7.8B',
-    targetAudience: 'Content creators, marketing agencies, design firms, creative professionals',
-    competitiveAdvantage: 'Advanced AI creativity platform, comprehensive content generation, and collaborative creative tools'
-  },
-  {
-    id: 'ai-education-platform',
-    name: 'AI Education Platform Pro',
-    description: 'Revolutionary AI-powered education platform that provides personalized learning experiences, adaptive curriculum, and intelligent tutoring systems.',
-    features: [
-      'Personalized learning paths',
-      'Adaptive curriculum',
-      'Intelligent tutoring',
-      'Learning analytics',
-      'Multi-modal learning',
-      'Progress tracking',
-      'Collaborative learning',
-      'Custom learning models'
+    useCases: [
+      'Customer service',
+      'Content analysis',
+      'Market research',
+      'Document processing',
+      'Social media monitoring',
+      'E-commerce',
+      'Healthcare',
+      'Legal services'
     ],
-    pricing: {
-      starter: { price: 29, period: 'month', features: ['Basic learning tools', 'Standard personalization', 'Email support'] },
-      professional: { price: 99, period: 'month', features: ['Advanced learning tools', 'Custom personalization', 'Priority support', 'API access'] },
-      enterprise: { price: 299, period: 'month', features: ['Custom learning tools', 'Dedicated education specialist', 'On-premise deployment', 'White-label solution'] }
-    },
-    category: 'AI Education',
-    tags: ['AI Education', 'Personalized Learning', 'Adaptive Curriculum', 'Intelligent Tutoring'],
-    website: 'https://ziontechgroup.com/ai-education-platform-pro',
-    contact: {
-      phone: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com'
-    },
-    marketSize: '$25.6B',
-    targetAudience: 'Educational institutions, corporate training, online learning platforms, students',
-    competitiveAdvantage: 'Advanced AI education platform, personalized learning experiences, and comprehensive learning analytics'
+    marketSize: '$28.6B by 2025',
+    targetAudience: 'Developers, data scientists, business analysts, customer service teams',
+    competitiveAdvantage: 'Comprehensive NLP capabilities with custom model training and multi-language support',
+    contact: 'kleber@ziontechgroup.com',
+    mobile: '+1 302 464 0950',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com',
+    slug: '/nlp-platform'
   },
+
+  // Computer Vision & Image Recognition
   {
-    id: 'ai-healthcare-diagnostics-platform',
-    name: 'AI Healthcare Diagnostics Pro',
-    description: 'Advanced AI platform for healthcare diagnostics that provides accurate disease detection, treatment recommendations, and patient monitoring through machine learning.',
+    id: 'computer-vision-platform',
+    name: 'Computer Vision & Image Recognition Platform',
+    tagline: 'See and understand images with AI-powered vision',
+    description: 'Advanced computer vision platform that provides image recognition, object detection, facial recognition, and visual analytics for enterprise applications.',
+    category: 'AI & Vision',
+    type: 'AI Services',
+    pricing: {
+      starter: '$349/month',
+      professional: '$899/month',
+      enterprise: '$2,299/month',
+      custom: 'Contact for pricing'
+    },
     features: [
-      'Disease detection algorithms',
+      'Image recognition',
+      'Object detection',
+      'Facial recognition',
+      'Image classification',
+      'Visual search',
+      'Quality inspection',
+      'Document processing',
+      'Video analysis',
+      'Custom model training',
+      'API integration',
+      'Real-time processing',
+      'Scalable infrastructure'
+    ],
+    benefits: [
+      'Automated visual analysis',
+      'Improved quality control',
+      'Enhanced security',
+      'Cost-effective processing',
+      'Real-time insights',
+      'Scalable solutions',
+      'Custom applications',
+      'Better user experience',
+      'Data extraction',
+      'Process automation'
+    ],
+    useCases: [
+      'Quality control',
+      'Security surveillance',
+      'Retail analytics',
+      'Healthcare imaging',
+      'Automotive safety',
+      'Document processing',
+      'E-commerce',
+      'Manufacturing'
+    ],
+    marketSize: '$32.4B by 2025',
+    targetAudience: 'Computer vision engineers, developers, quality control teams, security professionals',
+    competitiveAdvantage: 'Advanced computer vision with custom model training and real-time processing',
+    contact: 'kleber@ziontechgroup.com',
+    mobile: '+1 302 464 0950',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com',
+    slug: '/computer-vision-platform'
+  },
+
+  // AI-Powered Recommendation Engine
+  {
+    id: 'ai-recommendation-engine',
+    name: 'AI-Powered Recommendation Engine',
+    tagline: 'Personalize user experiences with intelligent recommendations',
+    description: 'Advanced recommendation engine that uses machine learning to provide personalized product, content, and service recommendations for improved user engagement and conversion.',
+    category: 'AI & Personalization',
+    type: 'AI Services',
+    pricing: {
+      starter: '$199/month',
+      professional: '$599/month',
+      enterprise: '$1,499/month',
+      custom: 'Contact for pricing'
+    },
+    features: [
+      'Personalized recommendations',
+      'Real-time learning',
+      'Multi-criteria filtering',
+      'A/B testing',
+      'Performance analytics',
+      'API integration',
+      'Custom algorithms',
+      'Scalable processing',
+      'Multi-platform support',
+      'User behavior tracking',
+      'Recommendation optimization',
+      'Reporting dashboard'
+    ],
+    benefits: [
+      'Increased user engagement',
+      'Higher conversion rates',
+      'Improved user experience',
+      'Better customer retention',
+      'Data-driven insights',
+      'Automated personalization',
+      'Scalable recommendations',
+      'Performance optimization',
+      'Revenue growth',
+      'Competitive advantage'
+    ],
+    useCases: [
+      'E-commerce platforms',
+      'Streaming services',
+      'Content platforms',
+      'Social media',
+      'News websites',
+      'Financial services',
+      'Healthcare',
+      'Education'
+    ],
+    marketSize: '$24.8B by 2025',
+    targetAudience: 'E-commerce businesses, content platforms, streaming services, marketing teams',
+    competitiveAdvantage: 'Advanced ML algorithms with real-time learning and multi-criteria optimization',
+    contact: 'kleber@ziontechgroup.com',
+    mobile: '+1 302 464 0950',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com',
+    slug: '/ai-recommendation-engine'
+  },
+
+  // AI-Powered Fraud Detection
+  {
+    id: 'ai-fraud-detection',
+    name: 'AI-Powered Fraud Detection Platform',
+    tagline: 'Detect and prevent fraud with intelligent AI algorithms',
+    description: 'Advanced fraud detection platform that uses machine learning and AI to identify fraudulent activities, prevent financial losses, and protect businesses from various types of fraud.',
+    category: 'AI & Security',
+    type: 'AI Services',
+    pricing: {
+      starter: '$499/month',
+      professional: '$1,299/month',
+      enterprise: '$3,199/month',
+      custom: 'Contact for pricing'
+    },
+    features: [
+      'Real-time fraud detection',
+      'Machine learning algorithms',
+      'Behavioral analysis',
+      'Risk scoring',
+      'Automated alerts',
+      'Case management',
+      'Compliance reporting',
+      'Integration APIs',
+      'Custom rules engine',
+      'Performance analytics',
+      'Multi-channel monitoring',
+      'Expert support'
+    ],
+    benefits: [
+      'Reduced fraud losses',
+      'Real-time protection',
+      'Improved security',
+      'Cost savings',
+      'Compliance assurance',
+      'Automated detection',
+      'Scalable protection',
+      'Risk mitigation',
+      'Better customer trust',
+      'Competitive advantage'
+    ],
+    useCases: [
+      'Financial institutions',
+      'E-commerce platforms',
+      'Insurance companies',
+      'Healthcare providers',
+      'Government agencies',
+      'Telecommunications',
+      'Retail businesses',
+      'Online services'
+    ],
+    marketSize: '$42.6B by 2025',
+    targetAudience: 'Security teams, fraud analysts, compliance officers, risk managers',
+    competitiveAdvantage: 'Advanced ML algorithms with real-time detection and comprehensive fraud prevention',
+    contact: 'kleber@ziontechgroup.com',
+    mobile: '+1 302 464 0950',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com',
+    slug: '/ai-fraud-detection'
+  },
+
+  // AI-Powered Customer Segmentation
+  {
+    id: 'ai-customer-segmentation',
+    name: 'AI-Powered Customer Segmentation Platform',
+    tagline: 'Segment customers intelligently with AI-driven insights',
+    description: 'Advanced customer segmentation platform that uses machine learning to analyze customer behavior, create meaningful segments, and enable personalized marketing strategies.',
+    category: 'AI & Marketing',
+    type: 'AI Services',
+    pricing: {
+      starter: '$249/month',
+      professional: '$699/month',
+      enterprise: '$1,799/month',
+      custom: 'Contact for pricing'
+    },
+    features: [
+      'AI-powered segmentation',
+      'Behavioral analysis',
+      'Predictive modeling',
+      'Dynamic segmentation',
+      'Marketing automation',
+      'Performance tracking',
+      'Integration capabilities',
+      'Custom algorithms',
+      'Real-time updates',
+      'Analytics dashboard',
+      'API access',
+      'Expert consultation'
+    ],
+    benefits: [
+      'Better customer understanding',
+      'Improved marketing ROI',
+      'Personalized campaigns',
+      'Higher conversion rates',
+      'Data-driven decisions',
+      'Automated segmentation',
+      'Scalable solutions',
+      'Competitive advantage',
+      'Customer retention',
+      'Revenue growth'
+    ],
+    useCases: [
+      'Marketing campaigns',
+      'Customer retention',
+      'Product development',
+      'Pricing strategies',
+      'Customer service',
+      'Sales optimization',
+      'E-commerce',
+      'Subscription services'
+    ],
+    marketSize: '$19.7B by 2025',
+    targetAudience: 'Marketing teams, customer success managers, business analysts, product managers',
+    competitiveAdvantage: 'AI-powered segmentation with behavioral analysis and predictive modeling',
+    contact: 'kleber@ziontechgroup.com',
+    mobile: '+1 302 464 0950',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com',
+    slug: '/ai-customer-segmentation'
+  },
+
+  // AI-Powered Supply Chain Optimization
+  {
+    id: 'ai-supply-chain-optimization',
+    name: 'AI-Powered Supply Chain Optimization Platform',
+    tagline: 'Optimize your supply chain with intelligent AI algorithms',
+    description: 'Advanced supply chain optimization platform that uses AI and machine learning to improve efficiency, reduce costs, and enhance visibility across the entire supply chain.',
+    category: 'AI & Supply Chain',
+    type: 'AI Services',
+    pricing: {
+      starter: '$399/month',
+      professional: '$1,099/month',
+      enterprise: '$2,799/month',
+      custom: 'Contact for pricing'
+    },
+    features: [
+      'Demand forecasting',
+      'Inventory optimization',
+      'Route optimization',
+      'Supplier management',
+      'Risk assessment',
+      'Performance analytics',
+      'Real-time monitoring',
+      'Integration capabilities',
+      'Custom algorithms',
+      'Reporting tools',
+      'Mobile access',
+      'Expert support'
+    ],
+    benefits: [
+      'Reduced costs',
+      'Improved efficiency',
+      'Better inventory management',
+      'Enhanced visibility',
+      'Risk mitigation',
+      'Performance optimization',
+      'Scalable operations',
+      'Data-driven decisions',
+      'Competitive advantage',
+      'Customer satisfaction'
+    ],
+    useCases: [
+      'Manufacturing companies',
+      'Retail chains',
+      'Logistics providers',
+      'E-commerce businesses',
+      'Distribution centers',
+      'Import/export companies',
+      'Food and beverage',
+      'Pharmaceutical industry'
+    ],
+    marketSize: '$26.3B by 2025',
+    targetAudience: 'Supply chain managers, operations teams, logistics professionals, procurement teams',
+    competitiveAdvantage: 'AI-powered optimization with comprehensive supply chain analytics and real-time monitoring',
+    contact: 'kleber@ziontechgroup.com',
+    mobile: '+1 302 464 0950',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com',
+    slug: '/ai-supply-chain-optimization'
+  },
+
+  // AI-Powered Quality Control
+  {
+    id: 'ai-quality-control',
+    name: 'AI-Powered Quality Control Platform',
+    tagline: 'Ensure product quality with intelligent AI inspection',
+    description: 'Advanced quality control platform that uses computer vision and AI to automate product inspection, detect defects, and maintain consistent quality standards.',
+    category: 'AI & Quality',
+    type: 'AI Services',
+    pricing: {
+      starter: '$299/month',
+      professional: '$799/month',
+      enterprise: '$1,999/month',
+      custom: 'Contact for pricing'
+    },
+    features: [
+      'Automated inspection',
+      'Defect detection',
+      'Quality scoring',
+      'Real-time monitoring',
+      'Custom algorithms',
+      'Integration capabilities',
+      'Performance analytics',
+      'Alert system',
+      'Reporting tools',
+      'Mobile access',
+      'API access',
+      'Expert support'
+    ],
+    benefits: [
+      'Improved quality',
+      'Reduced defects',
+      'Cost savings',
+      'Faster inspection',
+      'Consistent standards',
+      'Real-time monitoring',
+      'Scalable solutions',
+      'Data insights',
+      'Compliance assurance',
+      'Competitive advantage'
+    ],
+    useCases: [
+      'Manufacturing',
+      'Food processing',
+      'Pharmaceuticals',
+      'Electronics',
+      'Automotive',
+      'Textiles',
+      'Packaging',
+      'Construction'
+    ],
+    marketSize: '$18.9B by 2025',
+    targetAudience: 'Quality control teams, manufacturing engineers, production managers, compliance officers',
+    competitiveAdvantage: 'AI-powered inspection with custom algorithms and real-time quality monitoring',
+    contact: 'kleber@ziontechgroup.com',
+    mobile: '+1 302 464 0950',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com',
+    slug: '/ai-quality-control'
+  },
+
+  // AI-Powered Energy Management
+  {
+    id: 'ai-energy-management',
+    name: 'AI-Powered Energy Management Platform',
+    tagline: 'Optimize energy consumption with intelligent AI algorithms',
+    description: 'Advanced energy management platform that uses AI and machine learning to optimize energy consumption, reduce costs, and improve sustainability across facilities and operations.',
+    category: 'AI & Energy',
+    type: 'AI Services',
+    pricing: {
+      starter: '$199/month',
+      professional: '$599/month',
+      enterprise: '$1,499/month',
+      custom: 'Contact for pricing'
+    },
+    features: [
+      'Energy consumption analysis',
+      'Predictive optimization',
+      'Real-time monitoring',
+      'Automated controls',
+      'Cost optimization',
+      'Sustainability tracking',
+      'Integration capabilities',
+      'Custom algorithms',
+      'Performance analytics',
+      'Reporting tools',
+      'Mobile access',
+      'Expert consultation'
+    ],
+    benefits: [
+      'Reduced energy costs',
+      'Improved efficiency',
+      'Better sustainability',
+      'Automated optimization',
+      'Real-time monitoring',
+      'Data-driven decisions',
+      'Scalable solutions',
+      'Compliance assurance',
+      'Environmental impact',
+      'Competitive advantage'
+    ],
+    useCases: [
+      'Commercial buildings',
+      'Manufacturing facilities',
+      'Data centers',
+      'Retail stores',
+      'Hospitals',
+      'Universities',
+      'Government buildings',
+      'Industrial plants'
+    ],
+    marketSize: '$22.4B by 2025',
+    targetAudience: 'Facility managers, energy engineers, sustainability officers, operations teams',
+    competitiveAdvantage: 'AI-powered optimization with real-time monitoring and automated energy management',
+    contact: 'kleber@ziontechgroup.com',
+    mobile: '+1 302 464 0950',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com',
+    slug: '/ai-energy-management'
+  },
+
+  // AI-Powered Healthcare Diagnostics
+  {
+    id: 'ai-healthcare-diagnostics',
+    name: 'AI-Powered Healthcare Diagnostics Platform',
+    tagline: 'Improve healthcare outcomes with intelligent AI diagnostics',
+    description: 'Advanced healthcare diagnostics platform that uses AI and machine learning to assist medical professionals in diagnosis, treatment planning, and patient care optimization.',
+    category: 'AI & Healthcare',
+    type: 'AI Services',
+    pricing: {
+      starter: '$599/month',
+      professional: '$1,499/month',
+      enterprise: '$3,999/month',
+      custom: 'Contact for pricing'
+    },
+    features: [
+      'Medical image analysis',
+      'Diagnostic assistance',
       'Treatment recommendations',
       'Patient monitoring',
-      'Medical image analysis',
-      'Predictive diagnostics',
-      'Clinical decision support',
-      'Healthcare analytics',
-      'Custom medical models'
-    ],
-    pricing: {
-      starter: { price: 199, period: 'month', features: ['Basic diagnostics', 'Standard models', 'Email support'] },
-      professional: { price: 599, period: 'month', features: ['Advanced diagnostics', 'Custom models', 'Priority support', 'API access'] },
-      enterprise: { price: 1499, period: 'month', features: ['Custom diagnostics', 'Dedicated medical AI specialist', 'On-premise deployment', 'White-label solution'] }
-    },
-    category: 'AI Healthcare',
-    tags: ['AI Healthcare', 'Medical Diagnostics', 'Treatment Recommendations', 'Patient Monitoring'],
-    website: 'https://ziontechgroup.com/ai-healthcare-diagnostics-pro',
-    contact: {
-      phone: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com'
-    },
-    marketSize: '$45.2B',
-    targetAudience: 'Hospitals, clinics, medical research institutions, healthcare providers',
-    competitiveAdvantage: 'Advanced AI healthcare platform, accurate disease detection, and comprehensive medical analytics'
-  },
-  {
-    id: 'ai-financial-intelligence-platform',
-    name: 'AI Financial Intelligence Pro',
-    description: 'Comprehensive AI platform for financial intelligence that provides market analysis, investment recommendations, and risk assessment through advanced machine learning.',
-    features: [
-      'Market analysis algorithms',
-      'Investment recommendations',
       'Risk assessment',
-      'Portfolio optimization',
-      'Financial forecasting',
-      'Regulatory compliance',
-      'Financial analytics',
-      'Custom financial models'
+      'Clinical decision support',
+      'Integration capabilities',
+      'Compliance features',
+      'Performance analytics',
+      'Reporting tools',
+      'Expert support',
+      'Training programs'
     ],
-    pricing: {
-      starter: { price: 299, period: 'month', features: ['Basic financial intelligence', 'Standard models', 'Email support'] },
-      professional: { price: 799, period: 'month', features: ['Advanced financial intelligence', 'Custom models', 'Priority support', 'API access'] },
-      enterprise: { price: 1999, period: 'month', features: ['Custom financial intelligence', 'Dedicated financial AI specialist', 'On-premise deployment', 'White-label solution'] }
-    },
-    category: 'AI Finance',
-    tags: ['AI Finance', 'Market Analysis', 'Investment Recommendations', 'Risk Assessment'],
-    website: 'https://ziontechgroup.com/ai-financial-intelligence-pro',
-    contact: {
-      phone: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com'
-    },
-    marketSize: '$18.9B',
-    targetAudience: 'Investment firms, banks, hedge funds, financial advisors',
-    competitiveAdvantage: 'Advanced AI financial platform, comprehensive market analysis, and accurate investment recommendations'
-  },
-  {
-    id: 'ai-sustainability-platform',
-    name: 'AI Sustainability Platform Pro',
-    description: 'Innovative AI platform that helps organizations achieve sustainability goals through intelligent resource optimization, environmental monitoring, and sustainable decision-making.',
-    features: [
-      'Resource optimization',
-      'Environmental monitoring',
-      'Sustainable decision-making',
-      'Carbon footprint tracking',
-      'Energy efficiency analysis',
-      'Sustainability reporting',
-      'Environmental analytics',
-      'Custom sustainability models'
+    benefits: [
+      'Improved diagnostics',
+      'Better patient outcomes',
+      'Reduced errors',
+      'Faster diagnosis',
+      'Cost optimization',
+      'Enhanced efficiency',
+      'Data-driven decisions',
+      'Compliance assurance',
+      'Scalable solutions',
+      'Expert guidance'
     ],
-    pricing: {
-      starter: { price: 149, period: 'month', features: ['Basic sustainability tools', 'Standard monitoring', 'Email support'] },
-      professional: { price: 399, period: 'month', features: ['Advanced sustainability tools', 'Custom monitoring', 'Priority support', 'API access'] },
-      enterprise: { price: 999, period: 'month', features: ['Custom sustainability tools', 'Dedicated sustainability specialist', 'On-premise deployment', 'White-label solution'] }
-    },
-    category: 'AI Sustainability',
-    tags: ['AI Sustainability', 'Resource Optimization', 'Environmental Monitoring', 'Sustainable Decision-Making'],
-    website: 'https://ziontechgroup.com/ai-sustainability-platform-pro',
-    contact: {
-      phone: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com'
-    },
-    marketSize: '$12.8B',
-    targetAudience: 'Corporations, government agencies, environmental organizations, sustainability consultants',
-    competitiveAdvantage: 'Advanced AI sustainability platform, comprehensive environmental monitoring, and intelligent resource optimization'
+    useCases: [
+      'Hospitals',
+      'Clinics',
+      'Imaging centers',
+      'Research institutions',
+      'Telemedicine',
+      'Primary care',
+      'Specialty medicine',
+      'Emergency care'
+    ],
+    marketSize: '$45.2B by 2025',
+    targetAudience: 'Healthcare providers, radiologists, clinicians, medical researchers',
+    competitiveAdvantage: 'AI-powered diagnostics with comprehensive healthcare integration and compliance features',
+    contact: 'kleber@ziontechgroup.com',
+    mobile: '+1 302 464 0950',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com',
+    slug: '/ai-healthcare-diagnostics'
   }
 ];

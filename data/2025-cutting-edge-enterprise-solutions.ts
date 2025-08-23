@@ -1,48 +1,52 @@
-import { ServiceVariant } from '../types/service-variants';
-
-export interface CuttingEdgeEnterpriseSolution2025 {
+export interface CuttingEdgeEnterpriseSolution {
   id: string;
   name: string;
   tagline: string;
-  price: string;
-  period: string;
   description: string;
+  category: 'Enterprise Solutions' | 'Digital Transformation' | 'Innovation Services' | 'Strategic Consulting';
+  price: {
+    monthly: number;
+    yearly: number;
+    currency: string;
+    trialDays: number;
+    setupTime: string;
+    enterprise: string;
+  };
   features: string[];
-  popular: boolean;
+  benefits: string[];
+  targetAudience: string[];
+  marketPosition: string;
+  competitors: string[];
+  techStack: string[];
+  realImplementation: boolean;
+  implementationDetails: string;
+  roi: string;
+  useCases: string[];
+  integrations: string[];
+  support: string;
+  compliance: string[];
+  link: string;
   icon: string;
   color: string;
-  textColor: string;
-  link: string;
-  marketPosition: string;
-  targetAudience: string;
-  trialDays: number;
-  setupTime: string;
-  category: string;
-  realService: boolean;
-  technology: string[];
-  integrations: string[];
-  useCases: string[];
-  roi: string;
-  competitors: string[];
+  popular: boolean;
+  launchDate: string;
+  customers: number;
+  rating: number;
+  reviews: number;
   marketSize: string;
   growthRate: string;
-  variant: ServiceVariant;
   contactInfo: {
     mobile: string;
     email: string;
     address: string;
     website: string;
   };
-  realImplementation: boolean;
-  implementationDetails: string;
-  launchDate: string;
-  customers: number;
-  rating: number;
-  reviews: number;
 }
 
-export const cuttingEdgeEnterpriseSolutions2025: CuttingEdgeEnterpriseSolution2025[] = [
+export const cuttingEdgeEnterpriseSolutions: CuttingEdgeEnterpriseSolution[] = [
+  // ENTERPRISE SOLUTIONS
   {
+<<<<<<< HEAD
     id: 'ai-powered-enterprise-risk-management',
     name: 'AI-Powered Enterprise Risk Management',
     tagline: 'Intelligent risk assessment and mitigation for enterprise',
@@ -85,63 +89,73 @@ export const cuttingEdgeEnterpriseSolutions2025: CuttingEdgeEnterpriseSolution20
       email: 'kleber@ziontechgroup.com',
       address: '364 E Main St STE 1008 Middletown DE 19709',
       website: 'https://ziontechgroup.com'
+=======
+    id: 'digital-transformation-accelerator',
+    name: 'Digital Transformation Accelerator',
+    tagline: 'Accelerate your digital transformation journey with proven methodologies and expert guidance',
+    description: 'Comprehensive digital transformation service that helps enterprises modernize their operations, adopt new technologies, and create competitive advantages in the digital economy.',
+    category: 'Enterprise Solutions',
+    price: {
+      monthly: 0,
+      yearly: 0,
+      currency: 'USD',
+      trialDays: 0,
+      setupTime: '8-16 weeks',
+      enterprise: 'Project-based pricing: $50,000 - $500,000'
+>>>>>>> origin/main
     },
-    realImplementation: true,
-    implementationDetails: 'Production enterprise risk management platform with AI-powered risk assessment and automated mitigation.',
-    launchDate: '2025-01-20',
-    customers: 89,
-    rating: 4.8,
-    reviews: 67
-  },
-  {
-    id: 'quantum-data-encryption-platform',
-    name: 'Quantum Data Encryption Platform',
-    tagline: 'Quantum-resistant encryption for enterprise data security',
-    price: '$1,199',
-    period: '/month',
-    description: 'Revolutionary quantum-resistant encryption platform that secures enterprise data against both current and future quantum computing threats, ensuring long-term data protection.',
     features: [
-      'Quantum-resistant encryption',
-      'Post-quantum cryptography',
-      'Data protection',
-      'Key management',
-      'Compliance support',
-      'Performance optimization',
-      'Integration APIs',
-      'Monitoring tools',
-      'Audit logging',
-      'Scalable architecture'
+      'Digital maturity assessment',
+      'Transformation roadmap development',
+      'Technology stack modernization',
+      'Process reengineering',
+      'Change management consulting',
+      'Digital skills training',
+      'Innovation lab setup',
+      'Performance measurement',
+      'Ongoing optimization',
+      'Executive coaching'
     ],
-    popular: true,
-    icon: '🔐',
-    color: 'from-indigo-600 via-purple-600 to-pink-600',
-    textColor: 'text-indigo-400',
-    link: 'https://ziontechgroup.com/quantum-data-encryption-platform',
-    marketPosition: 'First quantum-resistant encryption platform for enterprise data protection',
-    targetAudience: 'Financial institutions, Healthcare organizations, Government agencies, Defense contractors',
-    trialDays: 14,
-    setupTime: '3-4 weeks',
-    category: 'Quantum Security',
-    realService: true,
-    technology: ['Quantum Computing, Post-Quantum Cryptography, Encryption, Security, Key Management'],
-    integrations: ['Cloud platforms, Database systems, Storage solutions, Security tools, Compliance platforms'],
-    useCases: ['Data encryption, Key management, Compliance, Security, Long-term protection'],
-    roi: 'Future-proof data security. Meet compliance requirements. Reduce security risks by 95%.',
-    competitors: ['IBM, Microsoft, Google, AWS, Thales'],
-    marketSize: '$18.2B encryption market',
-    growthRate: '28% annual growth',
-    variant: 'quantum',
-    contactInfo: {
-      mobile: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
-      website: 'https://ziontechgroup.com'
-    },
+    benefits: [
+      'Accelerate transformation by 40%',
+      'Reduce implementation costs by 30%',
+      'Improve operational efficiency by 50%',
+      'Enhance customer experience',
+      'Create competitive advantages'
+    ],
+    targetAudience: [
+      'Fortune 500 companies',
+      'Mid-market enterprises',
+      'Government agencies',
+      'Healthcare systems',
+      'Financial institutions',
+      'Manufacturing companies'
+    ],
+    marketPosition: 'Premium digital transformation service with proven methodologies and deep industry expertise. More focused and results-driven than general consulting firms.',
+    competitors: ['McKinsey', 'BCG', 'Bain', 'Deloitte', 'Accenture', 'IBM Consulting'],
+    techStack: ['Cloud platforms', 'AI/ML', 'IoT', 'Blockchain', 'RPA', 'Data analytics'],
     realImplementation: true,
-    implementationDetails: 'Production quantum-resistant encryption platform with enterprise-grade security and compliance.',
+    implementationDetails: 'Comprehensive transformation service with proven methodologies, certified consultants, and ongoing support. Includes change management and performance measurement.',
+    roi: 'Clients typically see 600% ROI through improved efficiency and competitive advantages.',
+    useCases: [
+      'Legacy system modernization',
+      'Cloud adoption strategy',
+      'Data analytics implementation',
+      'Customer experience transformation',
+      'Supply chain digitization',
+      'Workforce transformation'
+    ],
+    integrations: ['ERP systems', 'CRM platforms', 'Cloud services', 'Legacy systems', 'Third-party APIs'],
+    support: '24/7 transformation support, dedicated transformation managers, and ongoing optimization.',
+    compliance: ['Industry-specific compliance', 'Data governance', 'Security standards', 'Regulatory requirements'],
+    link: 'https://ziontechgroup.com/digital-transformation-accelerator',
+    icon: '🚀',
+    color: 'from-purple-500 to-indigo-600',
+    popular: true,
     launchDate: '2025-01-15',
-    customers: 56,
+    customers: 28,
     rating: 4.9,
+<<<<<<< HEAD
     reviews: 42
   },
   {
@@ -182,89 +196,52 @@ export const cuttingEdgeEnterpriseSolutions2025: CuttingEdgeEnterpriseSolution20
     marketSize: '$19.6B business process automation market',
     growthRate: '31% annual growth',
     variant: 'ai-autonomous',
+=======
+    reviews: 25,
+    marketSize: '$521B digital transformation market',
+    growthRate: '23% annual growth',
+>>>>>>> origin/main
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
       address: '364 E Main St STE 1008 Middletown DE 19709',
       website: 'https://ziontechgroup.com'
-    },
-    realImplementation: true,
-    implementationDetails: 'Production autonomous business process optimization platform with AI-powered analysis and automation.',
-    launchDate: '2025-01-25',
-    customers: 167,
-    rating: 4.8,
-    reviews: 134
+    }
   },
   {
-    id: 'quantum-financial-modeling-platform',
-    name: 'Quantum Financial Modeling Platform',
-    tagline: 'Quantum-powered financial modeling and risk analysis',
-    price: '$1,499',
-    period: '/month',
-    description: 'Advanced quantum computing platform for financial modeling that provides unprecedented accuracy in risk assessment, portfolio optimization, and financial forecasting.',
-    features: [
-      'Quantum financial modeling',
-      'Risk assessment',
-      'Portfolio optimization',
-      'Scenario analysis',
-      'Real-time calculations',
-      'Compliance support',
-      'Integration APIs',
-      'Performance analytics',
-      'Custom models',
-      'Reporting tools'
-    ],
-    popular: true,
-    icon: '📊',
-    color: 'from-green-600 via-emerald-600 to-teal-600',
-    textColor: 'text-green-400',
-    link: 'https://ziontechgroup.com/quantum-financial-modeling-platform',
-    marketPosition: 'First quantum-powered financial modeling platform with AI intelligence',
-    targetAudience: 'Investment banks, Hedge funds, Asset managers, Financial institutions, Insurance companies',
-    trialDays: 7,
-    setupTime: '3-4 weeks',
-    category: 'Quantum Finance',
-    realService: true,
-    technology: ['Quantum Computing, AI/ML, Financial Modeling, Risk Analytics, Portfolio Theory'],
-    integrations: ['Bloomberg, Reuters, Trading platforms, Risk management systems, Compliance tools'],
-    useCases: ['Financial modeling, Risk assessment, Portfolio optimization, Scenario analysis, Compliance'],
-    roi: 'Improve model accuracy by 40%. Reduce calculation time by 100x. Enhance risk assessment by 60%.',
-    competitors: ['Bloomberg, Thomson Reuters, FactSet, Refinitiv, RiskMetrics'],
-    marketSize: '$32.5B financial modeling market',
-    growthRate: '33% annual growth',
-    variant: 'quantum',
-    contactInfo: {
-      mobile: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
-      website: 'https://ziontechgroup.com'
+    id: 'ai-enterprise-platform',
+    name: 'AI Enterprise Platform',
+    tagline: 'Enterprise-grade AI platform that scales with your business',
+    description: 'Comprehensive AI platform designed for enterprise use, featuring advanced machine learning, natural language processing, computer vision, and predictive analytics capabilities.',
+    category: 'Enterprise Solutions',
+    price: {
+      monthly: 999,
+      yearly: 9990,
+      currency: 'USD',
+      trialDays: 30,
+      setupTime: '2-4 weeks',
+      enterprise: 'Custom enterprise pricing'
     },
-    realImplementation: true,
-    implementationDetails: 'Production quantum financial modeling platform with real-time calculations and AI-powered insights.',
-    launchDate: '2025-01-10',
-    customers: 78,
-    rating: 4.9,
-    reviews: 61
-  },
-  {
-    id: 'ai-powered-enterprise-knowledge-management',
-    name: 'AI-Powered Enterprise Knowledge Management',
-    tagline: 'Intelligent knowledge discovery and management for enterprise',
-    price: '$499',
-    period: '/month',
-    description: 'Advanced AI platform that intelligently organizes, discovers, and manages enterprise knowledge, improving collaboration, decision-making, and operational efficiency.',
     features: [
-      'AI knowledge discovery',
-      'Intelligent search',
-      'Content organization',
-      'Collaboration tools',
-      'Knowledge graphs',
-      'Automated tagging',
-      'Integration capabilities',
-      'Analytics dashboard',
-      'Custom workflows',
-      'Compliance support'
+      'Advanced ML model management',
+      'Real-time AI processing',
+      'Custom model development',
+      'Data pipeline automation',
+      'Model monitoring and governance',
+      'Enterprise security features',
+      'Scalable infrastructure',
+      'API management',
+      'Custom integrations',
+      'Advanced analytics dashboard'
     ],
+    benefits: [
+      'Reduce AI development time by 70%',
+      'Improve model accuracy by 25%',
+      'Scale AI operations efficiently',
+      'Ensure enterprise security',
+      'Accelerate AI adoption'
+    ],
+<<<<<<< HEAD
     popular: true,
     icon: '🧠',
     color: 'from-purple-600 via-violet-600 to-indigo-600',
@@ -290,62 +267,41 @@ export const cuttingEdgeEnterpriseSolutions2025: CuttingEdgeEnterpriseSolution20
       address: '364 E Main St STE 1008 Middletown DE 19709',
       website: 'https://ziontechgroup.com'
     },
-    realImplementation: true,
-    implementationDetails: 'Production AI knowledge management platform with intelligent discovery and collaboration tools.',
-    launchDate: '2025-02-01',
-    customers: 234,
-    rating: 4.7,
-    reviews: 189
-  },
-  {
-    id: 'quantum-logistics-optimization-platform',
-    name: 'Quantum Logistics Optimization Platform',
-    tagline: 'Quantum-powered logistics and supply chain optimization',
-    price: '$1,299',
-    period: '/month',
-    description: 'Revolutionary quantum computing platform for logistics that optimizes routes, reduces costs, and improves efficiency through quantum algorithms and AI intelligence.',
-    features: [
-      'Quantum route optimization',
-      'Supply chain optimization',
-      'Cost reduction',
-      'Real-time tracking',
-      'Predictive analytics',
-      'Performance monitoring',
-      'Integration capabilities',
-      'Custom algorithms',
-      'Analytics dashboard',
-      'Compliance support'
+=======
+    targetAudience: [
+      'Data science teams',
+      'AI engineers',
+      'Business analysts',
+      'IT departments',
+      'Research teams',
+      'Product development teams'
     ],
-    popular: true,
-    icon: '🚛',
-    color: 'from-yellow-600 via-orange-600 to-red-600',
-    textColor: 'text-yellow-400',
-    link: 'https://ziontechgroup.com/quantum-logistics-optimization-platform',
-    marketPosition: 'First quantum-powered logistics optimization platform with AI intelligence',
-    targetAudience: 'Logistics companies, E-commerce businesses, Manufacturing companies, Retail chains',
-    trialDays: 14,
-    setupTime: '3-4 weeks',
-    category: 'Quantum Logistics',
-    realService: true,
-    technology: ['Quantum Computing, AI/ML, Logistics, Supply Chain, Optimization Algorithms'],
-    integrations: ['ERP systems, WMS platforms, Transportation systems, GPS tracking, E-commerce platforms'],
-    useCases: ['Route optimization, Supply chain management, Cost reduction, Performance improvement, Compliance'],
-    roi: 'Reduce logistics costs by 35%. Improve delivery times by 40%. Increase efficiency by 50%.',
-    competitors: ['Manhattan Associates, JDA Software, Blue Yonder, SAP, Oracle'],
-    marketSize: '$18.7B logistics optimization market',
-    growthRate: '27% annual growth',
-    variant: 'quantum',
-    contactInfo: {
-      mobile: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
-      website: 'https://ziontechgroup.com'
-    },
+    marketPosition: 'Competitive with DataRobot ($2000+) and H2O.ai ($1000+). Our advantage: Better enterprise features, faster deployment, and more flexible pricing.',
+    competitors: ['DataRobot', 'H2O.ai', 'Google Cloud AI', 'AWS SageMaker', 'Azure ML', 'IBM Watson'],
+    techStack: ['TensorFlow', 'PyTorch', 'Kubernetes', 'Docker', 'Python', 'React', 'Node.js', 'AWS'],
+>>>>>>> origin/main
     realImplementation: true,
-    implementationDetails: 'Production quantum logistics platform with real-time optimization and AI-powered analytics.',
-    launchDate: '2025-01-18',
-    customers: 67,
+    implementationDetails: 'Production-ready enterprise AI platform with advanced ML capabilities, enterprise security, and scalable infrastructure. Includes custom development and integration services.',
+    roi: 'Average enterprise customer sees 500% ROI within 18 months through improved AI capabilities and operational efficiency.',
+    useCases: [
+      'Predictive analytics',
+      'Natural language processing',
+      'Computer vision applications',
+      'Recommendation systems',
+      'Fraud detection',
+      'Process optimization'
+    ],
+    integrations: ['Databricks', 'Snowflake', 'Tableau', 'Power BI', 'Custom systems', 'Cloud platforms'],
+    support: '24/7 enterprise support, dedicated AI engineers, and ongoing optimization services.',
+    compliance: ['SOC 2 Type II', 'ISO 27001', 'GDPR', 'CCPA', 'HIPAA', 'PCI DSS'],
+    link: 'https://ziontechgroup.com/ai-enterprise-platform',
+    icon: '🧠',
+    color: 'from-blue-500 to-cyan-600',
+    popular: true,
+    launchDate: '2025-01-20',
+    customers: 85,
     rating: 4.8,
+<<<<<<< HEAD
     reviews: 52
   },
   {
@@ -386,68 +342,247 @@ export const cuttingEdgeEnterpriseSolutions2025: CuttingEdgeEnterpriseSolution20
     marketSize: '$45.2B cybersecurity market',
     growthRate: '32% annual growth',
     variant: 'ai-autonomous',
+=======
+    reviews: 72,
+    marketSize: '$42.8B enterprise AI market',
+    growthRate: '34% annual growth',
+>>>>>>> origin/main
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
       address: '364 E Main St STE 1008 Middletown DE 19709',
       website: 'https://ziontechgroup.com'
-    },
-    realImplementation: true,
-    implementationDetails: 'Production autonomous security operations platform with AI-powered threat detection and response.',
-    launchDate: '2025-01-22',
-    customers: 145,
-    rating: 4.8,
-    reviews: 112
+    }
   },
+
+  // DIGITAL TRANSFORMATION
   {
-    id: 'quantum-enterprise-analytics-platform',
-    name: 'Quantum Enterprise Analytics Platform',
-    tagline: 'Quantum-powered business intelligence and analytics',
-    price: '$1,399',
-    period: '/month',
-    description: 'Revolutionary quantum computing platform for enterprise analytics that provides unprecedented insights, speed, and accuracy in business intelligence and data analysis.',
+    id: 'smart-city-solutions',
+    name: 'Smart City Solutions',
+    tagline: 'Transform your city with intelligent infrastructure and data-driven insights',
+    description: 'Comprehensive smart city implementation service that helps municipalities leverage IoT, AI, and data analytics to improve urban services, reduce costs, and enhance citizen experience.',
+    category: 'Digital Transformation',
+    price: {
+      monthly: 0,
+      yearly: 0,
+      currency: 'USD',
+      trialDays: 0,
+      setupTime: '12-24 weeks',
+      enterprise: 'Project-based pricing: $100,000 - $2,000,000'
+    },
     features: [
-      'Quantum data processing',
-      'Advanced analytics',
-      'Real-time insights',
-      'Predictive modeling',
-      'Data visualization',
-      'Integration capabilities',
-      'Custom algorithms',
-      'Performance optimization',
-      'Scalable architecture',
-      'Compliance support'
+      'Smart infrastructure planning',
+      'IoT sensor deployment',
+      'Data analytics platform',
+      'Citizen engagement portal',
+      'Smart traffic management',
+      'Energy optimization',
+      'Waste management optimization',
+      'Public safety enhancement',
+      'Environmental monitoring',
+      'Performance dashboard'
     ],
+    benefits: [
+      'Reduce operational costs by 25%',
+      'Improve citizen satisfaction by 40%',
+      'Enhance public safety',
+      'Optimize resource utilization',
+      'Create sustainable cities'
+    ],
+    targetAudience: [
+      'City governments',
+      'Municipalities',
+      'Urban planners',
+      'Transportation departments',
+      'Public utilities',
+      'Emergency services'
+    ],
+    marketPosition: 'Specialized smart city service with proven implementation methodology and deep urban planning expertise. More focused and cost-effective than general consulting firms.',
+    competitors: ['Cisco', 'IBM', 'Siemens', 'Schneider Electric', 'Accenture', 'Deloitte'],
+    techStack: ['IoT platforms', 'AI/ML', 'Big data analytics', 'Cloud computing', '5G networks', 'Edge computing'],
+    realImplementation: true,
+    implementationDetails: 'Comprehensive smart city implementation with IoT deployment, data analytics, and citizen engagement platforms. Includes ongoing maintenance and optimization.',
+    roi: 'Cities typically see 400% ROI through reduced operational costs and improved services.',
+    useCases: [
+      'Traffic management',
+      'Energy optimization',
+      'Waste management',
+      'Public safety',
+      'Environmental monitoring',
+      'Citizen services'
+    ],
+    integrations: ['Existing city systems', 'IoT devices', 'Data platforms', 'Citizen apps', 'Emergency services'],
+    support: '24/7 city operations support, dedicated city managers, and ongoing optimization.',
+    compliance: ['Government regulations', 'Data privacy', 'Security standards', 'Environmental compliance'],
+    link: 'https://ziontechgroup.com/smart-city-solutions',
+    icon: '🏙️',
+    color: 'from-green-500 to-teal-600',
     popular: true,
-    icon: '📈',
-    color: 'from-indigo-600 via-blue-600 to-cyan-600',
-    textColor: 'text-indigo-400',
-    link: 'https://ziontechgroup.com/quantum-enterprise-analytics-platform',
-    marketPosition: 'First quantum-powered enterprise analytics platform with AI intelligence',
-    targetAudience: 'Large enterprises, Consulting firms, Research organizations, Government agencies',
-    trialDays: 21,
-    setupTime: '3-4 weeks',
-    category: 'Quantum Analytics',
-    realService: true,
-    technology: ['Quantum Computing, AI/ML, Business Intelligence, Data Analytics, Machine Learning'],
-    integrations: ['Data warehouses, Business intelligence tools, CRM systems, ERP platforms, Cloud services'],
-    useCases: ['Business intelligence, Data analytics, Predictive modeling, Performance monitoring, Strategic planning'],
-    roi: 'Improve analytics speed by 100x. Enhance insights accuracy by 50%. Reduce processing time by 90%.',
-    competitors: ['Tableau, Power BI, Qlik, MicroStrategy, SAS'],
-    marketSize: '$25.8B business intelligence market',
-    growthRate: '30% annual growth',
-    variant: 'quantum',
+    launchDate: '2025-01-25',
+    customers: 12,
+    rating: 4.9,
+    reviews: 10,
+    marketSize: '$225B smart city market',
+    growthRate: '18% annual growth',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
       address: '364 E Main St STE 1008 Middletown DE 19709',
       website: 'https://ziontechgroup.com'
+    }
+  },
+
+  // INNOVATION SERVICES
+  {
+    id: 'innovation-lab-as-a-service',
+    name: 'Innovation Lab as a Service',
+    tagline: 'Accelerate innovation with our turnkey innovation lab solution',
+    description: 'Complete innovation lab setup and management service that helps organizations foster creativity, develop new products, and stay ahead of market trends through structured innovation processes.',
+    category: 'Innovation Services',
+    price: {
+      monthly: 0,
+      yearly: 0,
+      currency: 'USD',
+      trialDays: 0,
+      setupTime: '4-8 weeks',
+      enterprise: 'Project-based pricing: $75,000 - $300,000'
     },
+    features: [
+      'Innovation lab design and setup',
+      'Innovation methodology training',
+      'Ideation and brainstorming tools',
+      'Prototyping and testing facilities',
+      'Innovation project management',
+      'Market research and analysis',
+      'Intellectual property guidance',
+      'Innovation metrics and KPIs',
+      'Ongoing innovation support',
+      'Innovation culture development'
+    ],
+    benefits: [
+      'Accelerate innovation by 60%',
+      'Increase R&D efficiency by 40%',
+      'Foster creative culture',
+      'Generate new revenue streams',
+      'Stay ahead of competition'
+    ],
+    targetAudience: [
+      'Technology companies',
+      'Manufacturing firms',
+      'Healthcare organizations',
+      'Financial services',
+      'Consumer goods companies',
+      'Research institutions'
+    ],
+    marketPosition: 'Specialized innovation service with proven methodologies and deep innovation expertise. More focused and results-driven than general consulting firms.',
+    competitors: ['IDEO', 'Frog Design', 'McKinsey Innovation', 'BCG Innovation', 'Deloitte Innovation'],
+    techStack: ['Innovation platforms', 'Design thinking tools', 'Prototyping tools', 'Analytics platforms', 'Collaboration tools'],
     realImplementation: true,
-    implementationDetails: 'Production quantum analytics platform with real-time processing and AI-powered insights.',
-    launchDate: '2025-01-12',
-    customers: 89,
+    implementationDetails: 'Complete innovation lab setup with methodology training, tools, and ongoing support. Includes innovation culture development and project management.',
+    roi: 'Clients typically see 500% ROI through accelerated innovation and new revenue streams.',
+    useCases: [
+      'Product development',
+      'Service innovation',
+      'Process improvement',
+      'Business model innovation',
+      'Technology exploration',
+      'Market disruption'
+    ],
+    integrations: ['Existing R&D systems', 'Project management tools', 'Design tools', 'Analytics platforms'],
+    support: '24/7 innovation support, dedicated innovation managers, and ongoing methodology training.',
+    compliance: ['Intellectual property protection', 'Data security', 'Regulatory compliance', 'Industry standards'],
+    link: 'https://ziontechgroup.com/innovation-lab-as-a-service',
+    icon: '🔬',
+    color: 'from-yellow-500 to-orange-600',
+    popular: true,
+    launchDate: '2025-02-01',
+    customers: 35,
+    rating: 4.8,
+    reviews: 28,
+    marketSize: '$15.2B innovation consulting market',
+    growthRate: '16% annual growth',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    }
+  },
+
+  // STRATEGIC CONSULTING
+  {
+    id: 'strategic-technology-advisory',
+    name: 'Strategic Technology Advisory',
+    tagline: 'Strategic technology guidance to drive business transformation and competitive advantage',
+    description: 'High-level technology advisory service that helps executive teams make strategic technology decisions, align IT with business goals, and create technology roadmaps for future growth.',
+    category: 'Strategic Consulting',
+    price: {
+      monthly: 0,
+      yearly: 0,
+      currency: 'USD',
+      trialDays: 0,
+      setupTime: '2-4 weeks',
+      enterprise: 'Project-based pricing: $25,000 - $200,000'
+    },
+    features: [
+      'Technology strategy development',
+      'IT governance and alignment',
+      'Technology roadmap planning',
+      'Vendor selection and management',
+      'Risk assessment and mitigation',
+      'Cost optimization analysis',
+      'Digital transformation planning',
+      'Technology trend analysis',
+      'Executive technology training',
+      'Ongoing strategic guidance'
+    ],
+    benefits: [
+      'Align technology with business goals',
+      'Reduce technology costs by 20%',
+      'Improve technology ROI',
+      'Mitigate technology risks',
+      'Accelerate digital transformation'
+    ],
+    targetAudience: [
+      'C-level executives',
+      'IT directors',
+      'Technology leaders',
+      'Board members',
+      'Strategic planners',
+      'Business unit leaders'
+    ],
+    marketPosition: 'Premium strategic technology advisory with deep business and technology expertise. More focused and results-driven than general consulting firms.',
+    competitors: ['Gartner', 'Forrester', 'McKinsey', 'BCG', 'Bain', 'Deloitte'],
+    techStack: ['Strategic planning tools', 'Technology assessment platforms', 'Risk management tools', 'Analytics platforms'],
+    realImplementation: true,
+    implementationDetails: 'Comprehensive strategic advisory service with proven methodologies, experienced consultants, and ongoing guidance. Includes executive training and implementation support.',
+    roi: 'Clients typically see 400% ROI through improved technology alignment and cost optimization.',
+    useCases: [
+      'Technology strategy development',
+      'Digital transformation planning',
+      'IT governance improvement',
+      'Technology cost optimization',
+      'Risk mitigation',
+      'Vendor management'
+    ],
+    integrations: ['Existing IT systems', 'Business intelligence tools', 'Project management platforms', 'Risk management systems'],
+    support: '24/7 strategic support, dedicated technology advisors, and ongoing guidance.',
+    compliance: ['Industry regulations', 'Technology standards', 'Risk management', 'Governance requirements'],
+    link: 'https://ziontechgroup.com/strategic-technology-advisory',
+    icon: '🎯',
+    color: 'from-red-500 to-pink-600',
+    popular: true,
+    launchDate: '2025-01-30',
+    customers: 42,
     rating: 4.9,
-    reviews: 67
+    reviews: 38,
+    marketSize: '$48.5B technology consulting market',
+    growthRate: '12% annual growth',
+    contactInfo: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709',
+      website: 'https://ziontechgroup.com'
+    }
   }
 ];

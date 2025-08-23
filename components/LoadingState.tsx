@@ -1,284 +1,280 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Brain, 
-  Atom, 
-  Shield, 
-  Rocket, 
-  Cpu, 
-  Database, 
-  Target, 
-  Star, 
-  Sparkles,
-  Zap,
-  Globe,
-  Infinity
-} from 'lucide-react';
+import { Brain, Atom, Shield, Rocket, Zap, Sparkles } from 'lucide-react';
 
-interface LoadingStateProps {
-  message?: string;
-  showProgress?: boolean;
-  progress?: number;
-  variant?: 'default' | 'futuristic' | 'quantum' | 'space';
-}
+const LoadingState: React.FC = () => {
+  const [progress, setProgress] = useState(0);
+  const [currentStep, setCurrentStep] = useState(0);
+  const [showContent, setShowContent] = useState(false);
 
-const LoadingState: React.FC<LoadingStateProps> = ({
-  message = "Loading revolutionary technology...",
-  showProgress = true,
-  progress = 0,
-  variant = 'futuristic'
-}) => {
-  const [currentProgress, setCurrentProgress] = useState(0);
-  const [loadingText, setLoadingText] = useState(message);
-  const [currentIcon, setCurrentIcon] = useState(0);
-
-  const icons = [
-    { icon: Brain, color: 'from-purple-500 to-pink-500', label: 'AI Processing' },
-    { icon: Atom, color: 'from-cyan-500 to-blue-500', label: 'Quantum Computing' },
-    { icon: Shield, color: 'from-red-500 to-orange-500', label: 'Security Check' },
-    { icon: Rocket, color: 'from-emerald-500 to-teal-500', label: 'Launch Sequence' },
-    { icon: Cpu, color: 'from-blue-500 to-indigo-500', label: 'System Init' },
-    { icon: Database, color: 'from-green-500 to-emerald-500', label: 'Data Loading' },
-    { icon: Target, color: 'from-yellow-500 to-orange-500', label: 'Targeting' },
-    { icon: Star, color: 'from-pink-500 to-purple-500', label: 'Stellar Sync' },
-    { icon: Sparkles, color: 'from-cyan-500 to-purple-500', label: 'Magic Loading' },
-    { icon: Zap, color: 'from-yellow-500 to-cyan-500', label: 'Power Up' },
-    { icon: Globe, color: 'from-blue-500 to-green-500', label: 'Global Connect' },
-    { icon: Infinity, color: 'from-purple-500 to-cyan-500', label: 'Infinite Loop' }
-  ];
-
-  const loadingMessages = [
-    "Initializing AI consciousness...",
-    "Quantum entanglement in progress...",
-    "Establishing neural connections...",
-    "Calibrating space-time coordinates...",
-    "Synchronizing with future technology...",
-    "Preparing autonomous systems...",
-    "Loading revolutionary solutions...",
-    "Connecting to the matrix...",
-    "Booting up the future...",
-    "Almost there, just a moment..."
+  const loadingSteps = [
+    { icon: Brain, text: 'Initializing AI Consciousness', color: 'from-purple-500 to-pink-500' },
+    { icon: Atom, text: 'Loading Quantum Systems', color: 'from-blue-500 to-cyan-500' },
+    { icon: Shield, text: 'Activating Security Protocols', color: 'from-red-500 to-orange-500' },
+    { icon: Rocket, text: 'Launching Revolutionary Services', color: 'from-emerald-500 to-teal-500' },
+    { icon: Zap, text: 'Optimizing Performance', color: 'from-yellow-500 to-orange-500' },
+    { icon: Sparkles, text: 'Finalizing Experience', color: 'from-indigo-500 to-purple-500' }
   ];
 
   useEffect(() => {
-    if (showProgress && progress > 0) {
-      setCurrentProgress(progress);
-    } else if (showProgress) {
-      // Simulate progress
-      const interval = setInterval(() => {
-        setCurrentProgress(prev => {
-          if (prev >= 95) return prev;
-          return prev + Math.random() * 15;
-        });
-      }, 500);
-      return () => clearInterval(interval);
-    }
-  }, [showProgress, progress]);
-
-  useEffect(() => {
-    // Rotate through loading messages
-    const messageInterval = setInterval(() => {
-      setLoadingText(prev => {
-        const currentIndex = loadingMessages.findIndex(msg => msg === prev);
-        const nextIndex = (currentIndex + 1) % loadingMessages.length;
-        return loadingMessages[nextIndex];
+    // Simulate loading progress
+    const interval = setInterval(() => {
+      setProgress(prev => {
+        if (prev >= 100) {
+          clearInterval(interval);
+          setTimeout(() => setShowContent(true), 500);
+          return 100;
+        }
+        return prev + Math.random() * 15;
       });
-    }, 2000);
+    }, 200);
 
-    return () => clearInterval(messageInterval);
-  }, []);
+    // Update current step based on progress
+    const stepInterval = setInterval(() => {
+      setCurrentStep(prev => {
+        const newStep = Math.floor((progress / 100) * loadingSteps.length);
+        return Math.min(newStep, loadingSteps.length - 1);
+      });
+    }, 100);
 
-  useEffect(() => {
-    // Rotate through icons
-    const iconInterval = setInterval(() => {
-      setCurrentIcon(prev => (prev + 1) % icons.length);
-    }, 1500);
+    return () => {
+      clearInterval(interval);
+      clearInterval(stepInterval);
+    };
+  }, [progress, loadingSteps.length]);
 
-    return () => clearInterval(iconInterval);
-  }, []);
-
-  const getVariantStyles = () => {
-    switch (variant) {
-      case 'quantum':
-        return {
-          background: 'bg-gradient-to-br from-cyan-900 via-blue-900 to-purple-900',
-          accent: 'from-cyan-400 to-blue-400',
-          border: 'border-cyan-500/30'
-        };
-      case 'space':
-        return {
-          background: 'bg-gradient-to-br from-black via-purple-900 to-indigo-900',
-          accent: 'from-purple-400 to-pink-400',
-          border: 'border-purple-500/30'
-        };
-      case 'futuristic':
-      default:
-        return {
-          background: 'bg-gradient-to-br from-black via-gray-900 to-cyan-900',
-          accent: 'from-cyan-400 to-blue-400',
-          border: 'border-cyan-500/30'
-        };
-    }
-  };
-
-  const styles = getVariantStyles();
+  if (showContent) {
+    return (
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        className="min-h-screen bg-black flex items-center justify-center"
+      >
+        <div className="text-center">
+          <motion.div
+            initial={{ rotate: 0 }}
+            animate={{ rotate: 360 }}
+            transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+            className="w-20 h-20 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6"
+          >
+            <Sparkles className="w-10 h-10 text-white" />
+          </motion.div>
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">
+            Zion Tech Group 2046
+          </h1>
+          <p className="text-xl text-gray-300">Ready to revolutionize your future</p>
+        </div>
+      </motion.div>
+    );
+  }
 
   return (
-    <div className={`min-h-screen ${styles.background} flex items-center justify-center relative overflow-hidden`}>
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-emerald-500/10 to-teal-500/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
+    <div className="min-h-screen bg-black flex items-center justify-center relative overflow-hidden">
+      {/* Animated Background */}
+      <div className="absolute inset-0">
+        <motion.div
+          className="absolute top-1/4 left-1/4 w-32 h-32 bg-cyan-500/20 rounded-full blur-3xl"
+          animate={{
+            scale: [1, 1.5, 1],
+            opacity: [0.2, 0.5, 0.2],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div
+          className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl"
+          animate={{
+            scale: [1.5, 1, 1.5],
+            opacity: [0.3, 0.6, 0.3],
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
       </div>
 
-      <div className="relative z-10 text-center max-w-2xl mx-auto px-6">
-        {/* Main Loading Icon */}
-        <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mb-8"
-        >
-          <div className="relative">
-            {/* Rotating Icon Container */}
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 8, repeat: -1, ease: "linear" }}
-              className="w-32 h-32 mx-auto relative"
-            >
-              {icons.map((iconData, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ 
-                    opacity: index === currentIcon ? 1 : 0.3,
-                    scale: index === currentIcon ? 1 : 0.8
-                  }}
-                  transition={{ duration: 0.5 }}
-                  className={`absolute inset-0 w-32 h-32 rounded-full bg-gradient-to-r ${iconData.color} flex items-center justify-center ${
-                    index === currentIcon ? 'shadow-2xl shadow-cyan-500/25' : ''
-                  }`}
-                >
-                  <iconData.icon className="w-16 h-16 text-white" />
-                </motion.div>
-              ))}
-            </motion.div>
-
-            {/* Pulsing Ring */}
-            <motion.div
-              animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.2, 0.5] }}
-              transition={{ duration: 2, repeat: -1 }}
-              className="absolute inset-0 w-32 h-32 rounded-full border-4 border-cyan-400/30"
-            />
-          </div>
-        </motion.div>
-
-        {/* Loading Text */}
+      <div className="relative z-10 text-center max-w-2xl mx-auto px-4">
+        {/* Logo and Title */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="mb-6"
+          transition={{ duration: 0.8 }}
+          className="mb-8"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-              Zion Tech Group
-            </span>
-          </h2>
-          
-          <motion.p
-            key={loadingText}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-lg text-gray-300 font-medium"
+          <motion.div
+            animate={{ rotate: [0, 360] }}
+            transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+            className="w-24 h-24 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6"
           >
-            {loadingText}
-          </motion.p>
+            <Brain className="w-12 h-12 text-white" />
+          </motion.div>
+          <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">
+            Zion Tech Group 2046
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-300">
+            Revolutionary AI Consciousness & Quantum Technology
+          </p>
         </motion.div>
 
-        {/* Progress Bar */}
-        {showProgress && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="mb-8"
-          >
-            <div className="w-full max-w-md mx-auto">
-              <div className="flex justify-between text-sm text-gray-400 mb-2">
-                <span>Loading...</span>
-                <span>{Math.round(currentProgress)}%</span>
-              </div>
-              
-              <div className="w-full bg-gray-800/50 rounded-full h-3 border border-gray-700/50 overflow-hidden">
-                <motion.div
-                  initial={{ width: 0 }}
-                  animate={{ width: `${currentProgress}%` }}
-                  transition={{ duration: 0.5, ease: "easeOut" }}
-                  className={`h-full bg-gradient-to-r ${styles.accent} rounded-full relative`}
-                >
-                  <motion.div
-                    animate={{ 
-                      boxShadow: [
-                        "0 0 20px rgba(6, 182, 212, 0.5)",
-                        "0 0 40px rgba(6, 182, 212, 0.8)",
-                        "0 0 20px rgba(6, 182, 212, 0.5)"
-                      ]
-                    }}
-                    transition={{ duration: 2, repeat: -1 }}
-                    className="absolute inset-0 rounded-full"
-                  />
-                </motion.div>
-              </div>
-            </div>
-          </motion.div>
-        )}
-
-        {/* Current Icon Label */}
+        {/* Loading Progress */}
         <motion.div
-          key={currentIcon}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="mb-8"
         >
-          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-full px-4 py-2">
-            {React.createElement(icons[currentIcon].icon, { className: "w-4 h-4 text-cyan-400" })}
-            <span className="text-cyan-300 text-sm font-medium">
-              {icons[currentIcon].label}
-            </span>
+          <div className="relative">
+            {/* Progress Bar */}
+            <div className="w-full bg-gray-800/50 rounded-full h-3 mb-4 overflow-hidden">
+              <motion.div
+                className="h-full bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full"
+                initial={{ width: 0 }}
+                animate={{ width: `${progress}%` }}
+                transition={{ duration: 0.3 }}
+              />
+            </div>
+            
+            {/* Progress Text */}
+            <div className="text-center">
+              <span className="text-2xl font-bold text-white">{Math.round(progress)}%</span>
+              <span className="text-gray-400 ml-2">Complete</span>
+            </div>
           </div>
         </motion.div>
 
-        {/* Floating Particles */}
-        <div className="absolute inset-0 pointer-events-none">
-          {[...Array(20)].map((_, i) => (
+        {/* Current Step */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mb-8"
+        >
+          <AnimatePresence mode="wait">
+                         <motion.div
+               key={currentStep}
+               initial={{ opacity: 0, x: 20 }}
+               animate={{ opacity: 1, x: 0 }}
+               exit={{ opacity: 0, x: -20 }}
+               transition={{ duration: 0.3 }}
+               className="flex items-center justify-center gap-3"
+             >
+               <div className={`w-12 h-12 bg-gradient-to-r ${loadingSteps[currentStep].color} rounded-full flex items-center justify-center`}>
+                 {React.createElement(loadingSteps[currentStep].icon, { className: "w-6 h-6 text-white" })}
+               </div>
+               <span className="text-lg text-gray-300">{loadingSteps[currentStep].text}</span>
+             </motion.div>
+          </AnimatePresence>
+        </motion.div>
+
+        {/* Loading Animation */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
+          className="flex justify-center gap-2"
+        >
+          {[0, 1, 2].map((i) => (
             <motion.div
               key={i}
-              initial={{ 
-                x: Math.random() * window.innerWidth, 
-                y: Math.random() * window.innerHeight,
-                opacity: 0 
+              className="w-3 h-3 bg-cyan-400 rounded-full"
+              animate={{
+                scale: [1, 1.5, 1],
+                opacity: [0.5, 1, 0.5],
               }}
-              animate={{ 
-                x: Math.random() * window.innerWidth,
-                y: Math.random() * window.innerHeight,
-                opacity: [0, 1, 0]
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                delay: i * 0.2,
+                ease: "easeInOut"
               }}
-              transition={{ 
-                duration: Math.random() * 10 + 10,
-                repeat: -1,
-                delay: Math.random() * 5
-              }}
-              className="absolute w-2 h-2 bg-cyan-400/30 rounded-full"
             />
           ))}
-        </div>
+        </motion.div>
+
+        {/* Status Message */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
+          className="mt-8 text-center"
+        >
+          <p className="text-gray-400 text-sm">
+            Preparing the future of technology...
+          </p>
+          <p className="text-gray-500 text-xs mt-2">
+            This may take a few moments while we initialize our revolutionary systems
+          </p>
+        </motion.div>
+      </div>
+
+      {/* Floating Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 bg-cyan-400/40 rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              y: [0, -20, 0],
+              opacity: [0.4, 0.8, 0.4],
+            }}
+            transition={{
+              duration: 3 + Math.random() * 2,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+              ease: "easeInOut"
+            }}
+          />
+        ))}
       </div>
     </div>
   );
 };
+
+// Skeleton components for different content types
+export const ServiceCardSkeleton: React.FC = () => (
+  <div className="bg-gray-900/50 backdrop-blur-xl rounded-2xl p-6 border border-cyan-500/20 animate-pulse">
+    <div className="w-16 h-16 bg-gray-700 rounded-2xl mb-4"></div>
+    <div className="h-6 bg-gray-700 rounded w-3/4 mb-3"></div>
+    <div className="h-4 bg-gray-700 rounded w-full mb-2"></div>
+    <div className="h-4 bg-gray-700 rounded w-2/3 mb-4"></div>
+    <div className="space-y-2">
+      <div className="h-3 bg-gray-700 rounded"></div>
+      <div className="h-3 bg-gray-700 rounded w-5/6"></div>
+      <div className="h-3 bg-gray-700 rounded w-4/6"></div>
+    </div>
+  </div>
+);
+
+export const HeroSkeleton: React.FC = () => (
+  <div className="text-center space-y-6 animate-pulse">
+    <div className="h-16 bg-gray-700 rounded w-3/4 mx-auto"></div>
+    <div className="h-6 bg-gray-700 rounded w-1/2 mx-auto"></div>
+    <div className="h-6 bg-gray-700 rounded w-2/3 mx-auto"></div>
+    <div className="flex justify-center space-x-4">
+      <div className="h-12 bg-gray-700 rounded-lg w-32"></div>
+      <div className="h-12 bg-gray-700 rounded-lg w-32"></div>
+    </div>
+  </div>
+);
+
+export const StatsSkeleton: React.FC = () => (
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-8 animate-pulse">
+    {[1, 2, 3, 4].map((i) => (
+      <div key={i} className="text-center space-y-2">
+        <div className="h-8 bg-gray-700 rounded w-20 mx-auto"></div>
+        <div className="h-4 bg-gray-700 rounded w-16 mx-auto"></div>
+      </div>
+    ))}
+  </div>
+);
 
 export default LoadingState;
