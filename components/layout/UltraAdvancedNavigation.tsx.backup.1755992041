@@ -117,8 +117,12 @@ const companyLinks = [
 			{ name: 'Quantum', href: '/quantum-cloud-infrastructure', icon: Atom, description: 'Quantum & space' },
 			{ name: 'Enterprise IT', href: '/it-services', icon: Building2, description: 'Cloud, DevOps, Security' },
 			{ name: 'Services', href: '/services', icon: Monitor, description: 'Directory of services' },
+<<<<<<< HEAD
+			{ name: 'Advertising', href: '/services-advertising', description: 'Features, benefits and offers' },
+=======
 			{ name: 'Showcase', href: '/innovative-services-showcase', icon: Zap, description: 'Cutting-edge highlights' },
 			{ name: 'Advertising', href: '/services-advertising', icon: DollarSign, description: 'Benefits & pricing references' },
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0780
 			{ name: 'Market Pricing', href: '/market-pricing', icon: DollarSign, description: 'Vendor references' },
 			{ name: 'Contact', href: '/contact' }
 		];

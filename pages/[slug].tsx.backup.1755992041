@@ -82,6 +82,8 @@ export default function DynamicServicePage() {
     </UltraAdvancedFuturisticBackground>
   );
 }
+<<<<<<< HEAD
+=======
 
 // Static export support: generate root-level pages for service slugs
 type Svc = typeof enhancedRealMicroSaasServices[number];
@@ -168,3 +170,4 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   // No dynamic fetching needed; the component resolves the service client-side.
   return { props: {} };
 };
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0780
