@@ -3,7 +3,11 @@ import { motion } from 'framer-motion';
 
 interface EnhancedFuturisticBackgroundProps {
   children: React.ReactNode;
+<<<<<<< HEAD
+  variant?: 'neural' | 'quantum' | 'holographic' | 'cyberpunk' | 'quantum-advanced' | 'holographic-advanced' | 'quantum-holographic' | 'neural-quantum' | 'quantum-cyberpunk' | 'holographic-neural' | 'quantum-holographic-advanced' | 'quantum-financial' | 'biomedical-ai' | 'autonomous-systems' | 'quantum-materials' | 'climate-quantum' | 'energy-optimization' | 'manufacturing-intelligence';
+=======
   variant?: 'neural' | 'quantum' | 'holographic' | 'cyberpunk' | 'quantum-advanced' | 'holographic-advanced' | 'quantum-holographic' | 'neural-quantum' | 'quantum-cyberpunk' | 'holographic-neural' | 'quantum-holographic-advanced' | 'space-time' | 'dimensional-rift' | 'consciousness-stream' | 'reality-matrix';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-c9ab
   intensity?: 'low' | 'medium' | 'high';
   className?: string;
 }
@@ -48,6 +52,10 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
       life: number;
       maxLife: number;
       color: string;
+<<<<<<< HEAD
+      type: 'quantum' | 'holographic' | 'neural' | 'cyber' | 'entanglement' | 'neural-cyber';
+      connections: Particle[];
+=======
       type: string;
       rotation: number;
       rotationSpeed: number;
@@ -65,6 +73,7 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
       consciousnessLevel: number;
       realityDistortion: number;
     }> = [];
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-c9ab
 
     // Create particles based on variant
     const createParticles = () => {
@@ -123,6 +132,23 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
         case 'holographic-neural':
           return `hsl(${180 + Math.sin(time * 0.016) * 120}, 85%, 70%)`;
         case 'quantum-holographic-advanced':
+<<<<<<< HEAD
+          return `hsl(${260 + Math.sin(time * 0.05) * 220}, 98%, 85%)`;
+        case 'quantum-financial':
+          return `hsl(${120 + Math.sin(time * 0.03) * 60}, 90%, 65%)`;
+        case 'biomedical-ai':
+          return `hsl(${340 + Math.sin(time * 0.025) * 80}, 85%, 70%)`;
+        case 'autonomous-systems':
+          return `hsl(${60 + Math.sin(time * 0.02) * 100}, 80%, 60%)`;
+        case 'quantum-materials':
+          return `hsl(${40 + Math.sin(time * 0.035) * 120}, 95%, 75%)`;
+        case 'climate-quantum':
+          return `hsl(${180 + Math.sin(time * 0.018) * 140}, 90%, 70%)`;
+        case 'energy-optimization':
+          return `hsl(${30 + Math.sin(time * 0.032) * 90}, 100%, 65%)`;
+        case 'manufacturing-intelligence':
+          return `hsl(${200 + Math.sin(time * 0.026) * 110}, 75%, 55%)`;
+=======
           return `hsl(${260 + Math.sin(time * 0.024) * 140}, 90%, 75%)`;
         case 'space-time':
           return `hsl(${140 + Math.sin(time * 0.012) * 160}, 80%, 65%)`;
@@ -132,16 +158,226 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
           return `hsl(${60 + Math.sin(time * 0.019) * 200}, 85%, 75%)`;
         case 'reality-matrix':
           return `hsl(${340 + Math.sin(time * 0.026) * 160}, 90%, 80%)`;
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-c9ab
         default:
           return `hsl(${200 + Math.sin(time * 0.01) * 60}, 70%, 60%)`;
       }
     };
 
+<<<<<<< HEAD
+    // Enhanced particle rendering
+    const renderParticle = (particle: any) => {
+      const alpha = particle.life / particle.maxLife;
+      const size = particle.size * (1 + Math.sin(particle.pulse) * 0.3);
+      
+      ctx.save();
+      ctx.globalAlpha = alpha;
+      ctx.translate(particle.x, particle.y);
+      ctx.rotate(particle.rotation);
+
+      // Enhanced visual effects based on variant
+      switch (particle.type) {
+        case 'quantum-cyberpunk':
+          // Cyberpunk neon effect
+          ctx.shadowColor = particle.color;
+          ctx.shadowBlur = 20 + Math.sin(particle.cyberpunkGlow) * 15;
+          ctx.fillStyle = particle.color;
+          ctx.fillRect(-size/2, -size/2, size, size);
+          
+          // Glitch effect
+          if (Math.random() < 0.01) {
+            ctx.fillStyle = '#ff00ff';
+            ctx.fillRect(-size/2, -size/2, size, size);
+          }
+          break;
+          
+        case 'quantum-holographic-advanced':
+          // Advanced holographic effect
+          const layers = 3;
+          for (let i = 0; i < layers; i++) {
+            const layerAlpha = alpha * (1 - i * 0.3);
+            const layerSize = size * (1 + i * 0.2);
+            ctx.globalAlpha = layerAlpha;
+            ctx.strokeStyle = particle.color;
+            ctx.lineWidth = 2;
+            ctx.strokeRect(-layerSize/2, -layerSize/2, layerSize, layerSize);
+          }
+          break;
+          
+        case 'holographic-neural':
+          // Neural network visualization
+          ctx.strokeStyle = particle.color;
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.moveTo(-size/2, -size/2);
+          ctx.lineTo(size/2, size/2);
+          ctx.moveTo(size/2, -size/2);
+          ctx.lineTo(-size/2, size/2);
+          ctx.stroke();
+          
+          // Neural connections
+          if (Math.random() < 0.1) {
+            ctx.beginPath();
+            ctx.arc(0, 0, size * 0.8, 0, Math.PI * 2);
+            ctx.stroke();
+          }
+          break;
+          
+        case 'quantum-financial': {
+          // Financial data visualization
+          ctx.strokeStyle = particle.color;
+          ctx.lineWidth = 3;
+          ctx.beginPath();
+          ctx.moveTo(-size/2, 0);
+          ctx.lineTo(0, -size/2);
+          ctx.lineTo(size/2, 0);
+          ctx.lineTo(0, size/2);
+          ctx.closePath();
+          ctx.stroke();
+          
+          // Price ticker effect
+          if (Math.random() < 0.05) {
+            ctx.fillStyle = '#00ff00';
+            ctx.fillRect(-size/4, -size/4, size/2, size/2);
+          }
+          break;
+        }
+          
+        case 'biomedical-ai': {
+          // DNA helix effect
+          ctx.strokeStyle = particle.color;
+          ctx.lineWidth = 2;
+          for (let i = 0; i < 3; i++) {
+            const angle = (particle.rotation + i * Math.PI / 3) % (Math.PI * 2);
+            const x = Math.cos(angle) * size * 0.3;
+            const y = Math.sin(angle) * size * 0.3;
+            ctx.beginPath();
+            ctx.arc(x, y, size * 0.2, 0, Math.PI * 2);
+            ctx.stroke();
+          }
+          break;
+        }
+          
+        case 'autonomous-systems': {
+          // Autonomous vehicle effect
+          ctx.fillStyle = particle.color;
+          ctx.fillRect(-size/2, -size/3, size, size * 0.6);
+          ctx.fillRect(-size/3, -size/2, size * 0.6, size);
+          
+          // Sensor effect
+          if (Math.random() < 0.1) {
+            ctx.strokeStyle = '#00ffff';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.arc(0, 0, size * 1.2, 0, Math.PI * 2);
+            ctx.stroke();
+          }
+          break;
+        }
+          
+        case 'quantum-materials': {
+          // Crystal lattice effect
+          ctx.strokeStyle = particle.color;
+          ctx.lineWidth = 2;
+          for (let i = 0; i < 6; i++) {
+            const angle = (i * Math.PI) / 3;
+            const x = Math.cos(angle) * size * 0.5;
+            const y = Math.sin(angle) * size * 0.5;
+            ctx.beginPath();
+            ctx.moveTo(0, 0);
+            ctx.lineTo(x, y);
+            ctx.stroke();
+          }
+          break;
+        }
+          
+        case 'climate-quantum': {
+          // Weather pattern effect
+          ctx.strokeStyle = particle.color;
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.arc(0, 0, size * 0.8, 0, Math.PI * 2);
+          ctx.stroke();
+          
+          // Wind effect
+          if (Math.random() < 0.1) {
+            ctx.strokeStyle = '#87ceeb';
+            ctx.beginPath();
+            ctx.moveTo(-size, 0);
+            ctx.lineTo(size, 0);
+            ctx.stroke();
+          }
+          break;
+        }
+          
+        case 'energy-optimization': {
+          // Energy flow effect
+          ctx.strokeStyle = particle.color;
+          ctx.lineWidth = 3;
+          ctx.beginPath();
+          ctx.moveTo(-size/2, -size/2);
+          ctx.lineTo(size/2, size/2);
+          ctx.stroke();
+          
+          // Power surge effect
+          if (Math.random() < 0.05) {
+            ctx.strokeStyle = '#ffff00';
+            ctx.lineWidth = 5;
+            ctx.beginPath();
+            ctx.moveTo(-size, -size);
+            ctx.lineTo(size, size);
+            ctx.stroke();
+          }
+          break;
+        }
+          
+        case 'manufacturing-intelligence': {
+          // Factory automation effect
+          ctx.fillStyle = particle.color;
+          ctx.fillRect(-size/2, -size/2, size, size);
+          
+          // Production line effect
+          if (Math.random() < 0.1) {
+            ctx.strokeStyle = '#ff6b35';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(-size, 0);
+            ctx.lineTo(size, 0);
+            ctx.stroke();
+          }
+          break;
+        }
+          
+        default:
+          // Standard particle rendering
+          ctx.fillStyle = particle.color;
+          ctx.fillRect(-size/2, -size/2, size, size);
+      }
+      
+      ctx.restore();
+    };
+
+    // Enhanced animation loop
+    const animate = () => {
+      time += 0.016;
+      
+      // Clear canvas with gradient background
+      const gradient = ctx.createRadialGradient(canvas.width/2, canvas.height/2, 0, canvas.width/2, canvas.height/2, canvas.width/2);
+      gradient.addColorStop(0, 'rgba(0, 0, 0, 0.1)');
+      gradient.addColorStop(1, 'rgba(0, 0, 0, 0.3)');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Update and render particles
+      particles.forEach((particle, index) => {
+        // Update particle properties
+=======
     const updateParticles = () => {
       for (let i = particles.length - 1; i >= 0; i--) {
         const particle = particles[i];
         
         // Update position
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-c9ab
         particle.x += particle.vx;
         particle.y += particle.vy;
         
@@ -162,6 +398,28 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
         particle.consciousnessLevel += 0.02;
         particle.realityDistortion += 0.019;
         
+<<<<<<< HEAD
+        switch (type) {
+          case 'quantum':
+            this.color = `hsl(${200 + Math.random() * 60}, 70%, 60%)`;
+            break;
+          case 'holographic':
+            this.color = `hsl(${280 + Math.random() * 80}, 80%, 70%)`;
+            break;
+          case 'neural':
+            this.color = `hsl(${120 + Math.random() * 60}, 70%, 60%)`;
+            break;
+          case 'cyber':
+            this.color = `hsl(${0 + Math.random() * 60}, 80%, 70%)`;
+            break;
+          case 'entanglement':
+            this.color = `hsl(${300 + Math.random() * 60}, 90%, 70%)`;
+            break;
+          case 'neural-cyber':
+            this.color = `hsl(${180 + Math.random() * 60}, 80%, 70%)`;
+            break;
+        }
+=======
         // Update life
         particle.life--;
         
@@ -178,9 +436,131 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
       // Add new particles to maintain count
       if (particles.length < (intensity === 'high' ? 800 : intensity === 'medium' ? 500 : 250)) {
         createParticles();
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-c9ab
       }
     };
 
+<<<<<<< HEAD
+    // Initialize particles based on variant
+    const initParticles = () => {
+      particles.length = 0;
+      connections.length = 0;
+      const particleCount = Math.floor(80 * intensityMultiplier);
+
+        // Bounce off edges
+        if (this.x < 0 || this.x > width) this.vx *= -1;
+        if (this.y < 0 || this.y > height) this.vy *= -1;
+
+        // Quantum tunneling effect
+        if (this.type === 'quantum' && Math.random() < 0.01) {
+          this.x = Math.random() * width;
+          this.y = Math.random() * height;
+        }
+
+        // Holographic flicker
+        if (this.type === 'holographic' && Math.random() < 0.05) {
+          this.size *= 0.5 + Math.random();
+        }
+
+        // Neural connections
+        if (this.type === 'neural' && Math.random() < 0.02) {
+          this.vx += (Math.random() - 0.5) * 0.5;
+          this.vy += (Math.random() - 0.5) * 0.5;
+        }
+
+        // Cyber pulse
+        if (this.type === 'cyber' && Math.random() < 0.03) {
+          this.size *= 1.5;
+        }
+
+        // Quantum entanglement
+        if (this.type === 'entanglement' && Math.random() < 0.01) {
+          this.vx *= -1;
+          this.vy *= -1;
+        }
+
+        // Neural-cyber fusion
+        if (this.type === 'neural-cyber' && Math.random() < 0.02) {
+          this.vx = (this.vx + Math.random() - 0.5) * 0.8;
+          this.vy = (this.vy + Math.random() - 0.5) * 0.8;
+        }
+      }
+
+      draw(ctx: CanvasRenderingContext2D) {
+        const alpha = this.life / this.maxLife;
+        ctx.save();
+        ctx.globalAlpha = alpha;
+        
+        switch (this.type) {
+          case 'quantum':
+            // Quantum particle with wave function
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+            
+            // Wave function rings
+            for (let i = 1; i <= 3; i++) {
+              ctx.beginPath();
+              ctx.arc(this.x, this.y, this.size * i * 2, 0, Math.PI * 2);
+              ctx.strokeStyle = this.color;
+              ctx.globalAlpha = alpha * (0.3 / i);
+              ctx.lineWidth = 1;
+              ctx.stroke();
+            }
+            break;
+            
+          case 'holographic': {
+            // Holographic particle with rainbow effect
+            const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size * 2);
+            gradient.addColorStop(0, this.color);
+            gradient.addColorStop(0.5, `hsl(${parseInt(this.color.match(/hsl\((\d+)/)?.[1] || '0') + 60}, 80%, 70%)`);
+            gradient.addColorStop(1, 'transparent');
+            
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size * 2, 0, Math.PI * 2);
+            ctx.fillStyle = gradient;
+            ctx.fill();
+            break;
+          }
+            
+          case 'neural': {
+            // Neural particle with connection lines
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+            
+            // Draw connections to nearby particles
+            if (this.connections.length > 0) {
+              ctx.strokeStyle = this.color;
+              ctx.globalAlpha = alpha * 0.5;
+              ctx.lineWidth = 1;
+              this.connections.forEach(connection => {
+                ctx.beginPath();
+                ctx.moveTo(this.x, this.y);
+                ctx.lineTo(connection.x, connection.y);
+                ctx.stroke();
+              });
+            }
+            break;
+          }
+            
+          case 'cyber': {
+            // Cyber particle with geometric shapes
+            ctx.fillStyle = this.color;
+            ctx.strokeStyle = this.color;
+            ctx.lineWidth = 2;
+            
+            // Draw diamond shape
+            ctx.beginPath();
+            ctx.moveTo(this.x, this.y - this.size);
+            ctx.lineTo(this.x + this.size, this.y);
+            ctx.lineTo(this.x, this.y + this.size);
+            ctx.lineTo(this.x - this.size, this.y);
+            ctx.closePath();
+            ctx.fill();
+=======
     const drawParticles = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
@@ -516,6 +896,7 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-c9ab
             ctx.stroke();
             break;
           }
@@ -560,6 +941,179 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
         
         ctx.restore();
       }
+<<<<<<< HEAD
+    }
+
+    // Particle management
+    const particles: Particle[] = [];
+    const maxParticles = intensity === 'high' ? 200 : intensity === 'medium' ? 120 : 80;
+    
+    // Initialize particles based on variant
+    const getParticleTypes = () => {
+      switch (variant) {
+        case 'holographic-advanced':
+          return ['holographic', 'quantum'];
+        case 'quantum-holographic':
+          return ['quantum', 'holographic', 'entanglement'];
+        case 'neural-quantum':
+          return ['neural', 'quantum', 'entanglement'];
+        case 'cyber-futuristic':
+          return ['cyber', 'holographic', 'neural'];
+        case 'quantum-entanglement':
+          return ['quantum', 'entanglement'];
+        case 'neural-cyber':
+          return ['neural', 'cyber', 'neural-cyber'];
+        default:
+          return ['holographic', 'quantum'];
+      }
+    };
+
+    const particleTypes = getParticleTypes();
+    
+    for (let i = 0; i < maxParticles; i++) {
+      const type = particleTypes[Math.floor(Math.random() * particleTypes.length)];
+      particles.push(new Particle(type as any));
+    }
+
+    // Create neural connections
+    particles.forEach(particle => {
+      if (particle.type === 'neural' || particle.type === 'neural-cyber') {
+        const nearby = particles.filter(p => 
+          p !== particle && 
+          Math.hypot(p.x - particle.x, p.y - particle.y) < 100
+        );
+        particle.connections = nearby.slice(0, 3);
+      }
+    });
+
+    // Animation loop
+    const animate = () => {
+      ctx.clearRect(0, 0, width, height);
+      
+      // Update and draw particles
+      particles.forEach(particle => {
+        particle.update();
+        particle.draw(ctx);
+        
+        // Reset particle if it's dead
+        if (particle.life <= 0) {
+          const type = particleTypes[Math.floor(Math.random() * particleTypes.length)];
+          Object.assign(particle, new Particle(type as any));
+        }
+      });
+      
+      // Draw additional effects based on variant
+      drawVariantEffects(ctx, width, height);
+      
+      animationRef.current = requestAnimationFrame(animate);
+    };
+
+    // Variant-specific effects
+    const drawVariantEffects = (ctx: CanvasRenderingContext2D, width: number, height: number) => {
+      ctx.save();
+      
+      switch (variant) {
+        case 'holographic-advanced': {
+          // Holographic grid overlay
+          ctx.strokeStyle = 'rgba(59, 130, 246, 0.1)';
+          ctx.lineWidth = 1;
+          const gridSize = 50;
+          for (let x = 0; x < width; x += gridSize) {
+            ctx.beginPath();
+            ctx.moveTo(x, 0);
+            ctx.lineTo(x, height);
+            ctx.stroke();
+          }
+          for (let y = 0; y < height; y += gridSize) {
+            ctx.beginPath();
+            ctx.moveTo(0, y);
+            ctx.lineTo(width, y);
+            ctx.stroke();
+          }
+          break;
+        }
+          
+        case 'quantum-holographic': {
+          // Quantum wave patterns
+          ctx.strokeStyle = 'rgba(147, 51, 234, 0.15)';
+          ctx.lineWidth = 2;
+          for (let i = 0; i < 5; i++) {
+            ctx.beginPath();
+            ctx.moveTo(0, height * (0.2 + i * 0.15));
+            for (let x = 0; x < width; x += 5) {
+              const y = height * (0.2 + i * 0.15) + Math.sin(x * 0.01 + Date.now() * 0.001) * 20;
+              ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+          }
+          break;
+        }
+          
+        case 'neural-quantum': {
+          // Neural network connections
+          ctx.strokeStyle = 'rgba(16, 185, 129, 0.1)';
+          ctx.lineWidth = 1;
+          particles.forEach(particle => {
+            if (particle.type === 'neural') {
+              particle.connections.forEach(connection => {
+                ctx.beginPath();
+                ctx.moveTo(particle.x, particle.y);
+                ctx.lineTo(connection.x, connection.y);
+                ctx.stroke();
+              });
+            }
+          });
+          break;
+        }
+          
+        case 'cyber-futuristic': {
+          // Cyber circuit patterns
+          ctx.strokeStyle = 'rgba(239, 68, 68, 0.15)';
+          ctx.lineWidth = 1;
+          for (let i = 0; i < 3; i++) {
+            ctx.beginPath();
+            ctx.moveTo(0, height * 0.3 + i * 0.2);
+            for (let x = 0; x < width; x += 20) {
+              const y = height * (0.3 + i * 0.2) + (Math.random() - 0.5) * 40;
+              ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+          }
+          break;
+        }
+          
+        case 'quantum-entanglement': {
+          // Quantum entanglement visualization
+          ctx.strokeStyle = 'rgba(168, 85, 247, 0.2)';
+          ctx.lineWidth = 2;
+          for (let i = 0; i < particles.length; i += 2) {
+            if (i + 1 < particles.length) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[i + 1].x, particles[i + 1].y);
+              ctx.stroke();
+            }
+          }
+          break;
+        }
+          
+        case 'neural-cyber': {
+          // Neural-cyber fusion visualization
+          ctx.strokeStyle = 'rgba(6, 182, 212, 0.15)';
+          ctx.lineWidth = 1;
+          particles.forEach(particle => {
+            if (particle.type === 'neural-cyber') {
+              ctx.beginPath();
+              ctx.arc(particle.x, particle.y, particle.size * 3, 0, Math.PI * 2);
+              ctx.stroke();
+            }
+          });
+          break;
+        }
+      }
+      
+      ctx.restore();
+=======
     };
 
     const animate = () => {
@@ -567,6 +1121,7 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
       updateParticles();
       drawParticles();
       animationRef.current = requestAnimationFrame(animate);
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-c9ab
     };
 
     animate();
