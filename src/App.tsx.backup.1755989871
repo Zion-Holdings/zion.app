@@ -23,6 +23,40 @@ import {
   DeveloperRoutes,
   SellerRoutes
 } from './routes';
+<<<<<<< HEAD
+import Home from './pages/Home';
+import AIMatcherPage from './pages/AIMatcher';
+import TalentDirectory from './pages/TalentDirectory';
+import TalentsPage from './pages/TalentsPage';
+import MoreTalentsPage from './pages/MoreTalentsPage';
+import ServicesPage from './pages/ServicesPage';
+import EquipmentPage from './pages/EquipmentPage';
+import EquipmentDetail from './pages/EquipmentDetail';
+import Analytics from './pages/Analytics';
+import MobileLaunchPage from './pages/MobileLaunchPage';
+import CommunityPage from './pages/CommunityPage';
+import { CommunityProvider } from './context';
+import Categories from './pages/Categories';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
+import NewProductsPage from './pages/NewProductsPage';
+import MoreProductsPage from './pages/MoreProductsPage';
+import Sitemap from './pages/Sitemap';
+import PartnersPage from './pages/Partners';
+import Help from './pages/Help';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import SimpleSignup from './pages/SimpleSignup';
+import ITOnsiteServicesPage from './pages/ITOnsiteServicesPage';
+import OpenAppRedirect from './pages/OpenAppRedirect';
+import ContactPage from './pages/Contact';
+import ZionHireAI from './pages/ZionHireAI';
+import RequestQuotePage from './pages/RequestQuote';
+import WishlistPage from './pages/Wishlist';
+import CartPage from './pages/Cart';
+import Checkout from './pages/Checkout';
+import { SupportChatbot } from './components/SupportChatbot';
+=======
 const Home = React.lazy(() => import('./pages/Home'));
 const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory'));
@@ -45,6 +79,7 @@ const ContactPage = React.lazy(() => import('./pages/Contact'));
 const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
 const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
 const WishlistPage = React.lazy(() => import('./pages/Wishlist'));
+>>>>>>> origin/5yaxyc-codex/implement-wishlist-functionality
 
 const baseRoutes = [
   { path: '/', element: <Home /> },

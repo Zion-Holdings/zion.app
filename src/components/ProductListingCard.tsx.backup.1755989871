@@ -3,6 +3,19 @@ import { logDebug, logErrorToProduction } from '@/utils/productionLogger';
 import { useRouter } from 'next/router';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+<<<<<<< HEAD
+import type { ProductListing } from "@/types/listings";
+import { DollarSign } from 'lucide-react';
+
+import { RatingStars } from "@/components/RatingStars";
+import { FavoriteButton } from "@/components/FavoriteButton";
+import { useDispatch } from 'react-redux';
+import type { AppDispatch } from '@/store';
+import { addItem } from '@/store/cartSlice';
+import { toast } from '@/hooks/use-toast';
+import { useCurrency } from '@/hooks/useCurrency';
+import Image from 'next/image'; // Import next/image
+=======
 import { ProductListing } from "@/types/listings";
 import { Star, DollarSign, Heart } from "lucide-react";
 import { useAppDispatch } from "@/store/hooks";
@@ -10,6 +23,7 @@ import { addToWishlist, getApiUrl } from "@/store/wishlistSlice";
 import { useAuth } from "@/hooks/useAuth";
 import { useLocation } from "react-router-dom";
 import { toast } from "sonner";
+>>>>>>> origin/5yaxyc-codex/implement-wishlist-functionality
 
 interface ProductListingCardProps {
   listing: ProductListing;
@@ -25,6 +39,12 @@ const ProductListingCardComponent = ({
   detailBasePath = '/marketplace/listing'
 }: ProductListingCardProps) => {
   const isGrid = view === 'grid';
+<<<<<<< HEAD
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
+  const [imageSrc, setImageSrc] = useState(
+    listing.images && listing.images.length > 0 && listing.images[0]
+=======
   const navigate = useNavigate();
   const location = useLocation();
   const { user } = useAuth();
@@ -32,6 +52,7 @@ const ProductListingCardComponent = ({
   
   // Get the first image or use a placeholder
   const imageUrl = listing.images && listing.images.length > 0 
+>>>>>>> origin/5yaxyc-codex/implement-wishlist-functionality
     ? listing.images[0] 
     : '/placeholder.svg'
   );
@@ -252,6 +273,15 @@ const ProductListingCardComponent = ({
           
           <div className="flex gap-2">
             <Button
+<<<<<<< HEAD
+              size="sm"
+              className="bg-primary hover:bg-primary/80 text-primary-foreground"
+              onClick={(e) => {
+                e.stopPropagation(); // Prevent card click event
+                addToCart();
+              }}
+              disabled={loading}
+=======
               variant="ghost"
               size="icon"
               onClick={handleSave}
@@ -263,6 +293,7 @@ const ProductListingCardComponent = ({
             <Link
               to={`${detailBasePath}/${listing.id}`}
               onClick={(e) => e.stopPropagation()}
+>>>>>>> origin/5yaxyc-codex/implement-wishlist-functionality
             >
               {loading ? (
                 <>
