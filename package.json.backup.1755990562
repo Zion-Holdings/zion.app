@@ -454,10 +454,20 @@
     "redundancy:comprehensive:restart": "./automation/start-comprehensive-redundancy.sh restart",
     "redundancy:comprehensive:status": "./automation/start-comprehensive-redundancy.sh status",
     "redundancy:comprehensive:health": "./automation/start-comprehensive-redundancy.sh health",
+<<<<<<< HEAD
+    "redundancy:comprehensive:once": "./automation/start-comprehensive-redundancy.sh once",
+    "redundancy:comprehensive:logs": "./automation/start-comprehensive-redundancy.sh logs",
+    "redundancy:comprehensive:info": "./automation/start-comprehensive-redundancy.sh info",
+    "redundancy:comprehensive:orchestrator": "node automation/comprehensive-redundancy-orchestrator.cjs",
+    "redundancy:pm2:manager": "node automation/pm2-redundancy-manager.cjs",
+    "redundancy:github:manager": "node automation/github-actions-redundancy-manager.cjs",
+    "redundancy:netlify:manager": "node automation/netlify-functions-redundancy-manager.cjs"
+=======
     "redundancy:comprehensive:logs": "./automation/start-comprehensive-redundancy.sh logs",
     "redundancy:pm2:comprehensive": "node automation/comprehensive-pm2-redundancy.cjs",
     "redundancy:github:comprehensive": "node automation/comprehensive-github-actions-redundancy.cjs",
     "redundancy:netlify:comprehensive": "node automation/comprehensive-netlify-functions-redundancy.cjs"
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-ea74
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
