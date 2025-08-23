@@ -1,0 +1,77 @@
+name: Autonomous Cloud Automations
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # hourly
+  workflow_dispatch: {}
+
+concurrency:
+permissions:
+  contents: write
+  actions: read
+
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
+
+  contents: write
+
+jobs:
+main:
+  runs-on: ubuntu-latest
+  name: Main Job
+  steps:
+    name: Checkout repository
+    uses: actions/checkout@v4
+    with:
+      fetch-depth: 0
+    name: Setup Node.js
+    uses: actions/setup-node@v4
+    with:
+      node-version: 20
+      cache: npm
+    name: Install dependencies
+    run: npm ci --no-audit --no-fund
+    name: Run tests
+    run: npm test
+    name: Build project
+    run: npm run build
+
+  run-automations:
+        - name: Checkout
+        uses: actions/checkout@v4
+          persist-credentials: true
+        - name: Setup Node
+        uses: actions/setup-node@v4
+          node-version: '20'
+          cache: 'npm'
+        - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      
+        - name: Clean git state
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Clean up any existing rebase state
+          git rebase --abort 2>/dev/null || true
+          rm -rf .git/rebase-merge .git/rebase-apply 2>/dev/null || true
+          # Reset to clean state
+          git reset --hard HEAD
+          git clean -fd
+      
+        - name: Generate sitemap
+        run: node scripts/generate-sitemap.js
+        - name: Run AI Trends Radar
+        run: node scripts/ai-trends-radar.js
+        - name: Run SEO Audit
+        run: node scripts/seo-audit.js
+        - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add public/ data/ || true
+            git commit -m "chore(automation): autonomous reports update [skip ci]"
+            git push
+          else
+            echo "No changes to commit"
+          fi
