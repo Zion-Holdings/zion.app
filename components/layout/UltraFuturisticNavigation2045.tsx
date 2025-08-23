@@ -6,7 +6,8 @@ import {
   Brain, Rocket, Target, Atom, Shield,
   DollarSign, BarChart3, Globe, Grid, Heart, Database,
   Cpu, Palette, Cloud, Network, TrendingUp, ShoppingCart, Settings, Building, Monitor,
-  Zap, Eye, Infinity, Sparkles, Users, Lock, Code, Server, Layers, Globe2
+  Zap, Eye, Infinity, Sparkles, Users, Lock, Code, Server, Layers, Globe2,
+  Briefcase, Newspaper, FileText
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -260,6 +261,52 @@ const navigationItems: NavigationItem[] = [
         description: 'AI-powered customer success',
         icon: <Heart className="w-4 h-4" />,
         color: 'from-pink-500 to-purple-500'
+      }
+    ]
+  },
+  {
+    name: 'Company',
+    href: '/about',
+    icon: <Building className="w-5 h-5" />,
+    description: 'About Zion Tech Group',
+    badge: '2045',
+    category: 'company',
+    color: 'from-gray-500 to-slate-500',
+    children: [
+      { 
+        name: 'About Us', 
+        href: '/about', 
+        description: 'Learn about our mission and values',
+        icon: <Users className="w-4 h-4" />,
+        featured: true
+      },
+      { 
+        name: 'Our Team', 
+        href: '/team', 
+        description: 'Meet our leadership team',
+        icon: <Users className="w-4 h-4" />,
+        color: 'from-blue-500 to-cyan-500'
+      },
+      { 
+        name: 'Careers', 
+        href: '/careers', 
+        description: 'Join our innovative team',
+        icon: <Briefcase className="w-4 h-4" />,
+        color: 'from-emerald-500 to-teal-500'
+      },
+      { 
+        name: 'News & Blog', 
+        href: '/blog', 
+        description: 'Latest insights and updates',
+        icon: <Newspaper className="w-4 h-4" />,
+        color: 'from-purple-500 to-pink-500'
+      },
+      { 
+        name: 'Case Studies', 
+        href: '/case-studies', 
+        description: 'Success stories from our clients',
+        icon: <FileText className="w-4 h-4" />,
+        color: 'from-orange-500 to-red-500'
       }
     ]
   }
