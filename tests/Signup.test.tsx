@@ -1,7 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import Signup from '@/pages/Signup';
-import { vi } from 'vitest';
 import * as authHook from '@/hooks/useAuth';
 import * as toastHook from '@/hooks/use-toast';
 import * as router from 'react-router-dom';
@@ -20,7 +19,7 @@ function setup(success = true, errorMsg?: string, status = success ? 201 : 400) 
     status,
     json: () => Promise.resolve(success ? { token: 'jwt' } : { message: errorMsg }),
   } as Response);
-  vi.stubGlobal('fetch', fetchSpy);
+  global.fetch = fetchSpy as any;
 
   const successSpy = vi.spyOn(toastHook.toast, 'success').mockImplementation(() => {});
   const errorSpy = vi.spyOn(toastHook.toast, 'error').mockImplementation(() => {});

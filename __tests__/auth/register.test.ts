@@ -1,7 +1,8 @@
+import { expect, test, vi } from 'vitest';
 import handler from '@/pages/api/auth/register';
 
-const signUpMock = jest.fn();
-jest.mock('@supabase/supabase-js', () => ({
+const signUpMock = vi.fn();
+vi.mock('@supabase/supabase-js', () => ({
   createClient: () => ({
     auth: { signUp: signUpMock },
   }),
@@ -13,10 +14,10 @@ function mockReq(body: any) {
 
 function mockRes() {
   const res: any = {};
-  res.status = jest.fn().mockReturnValue(res);
-  res.json = jest.fn().mockReturnValue(res);
-  res.setHeader = jest.fn();
-  res.end = jest.fn();
+  res.status = vi.fn().mockReturnValue(res);
+  res.json = vi.fn().mockReturnValue(res);
+  res.setHeader = vi.fn();
+  res.end = vi.fn();
   return res;
 }
 

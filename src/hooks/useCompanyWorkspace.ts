@@ -27,7 +27,7 @@ export function useCompanyWorkspace(companySlug?: string) {
           teamSize: 12,
           teamLimit: 50,
           billingCycle: "Annual",
-          workspaceUrl: "acme.zion-ai.com",
+          workspaceUrl: "acme.ziontechgroup.com",
         });
         setError(null);
       } else {
@@ -46,7 +46,7 @@ export function useCompanyWorkspace(companySlug?: string) {
           teamSize: 5,
           teamLimit: 10,
           billingCycle: "Monthly",
-          workspaceUrl: `${companySlug}.zion-ai.com`,
+          workspaceUrl: `${companySlug}.ziontechgroup.com`,
         });
         setError(null);
       }

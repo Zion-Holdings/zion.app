@@ -1,7 +1,7 @@
 
 const OPENAI_API_KEY = '';
 // Base URL for opening Zion pages in a new tab
-const BASE_URL = 'https://zionai.com';
+const BASE_URL = 'https://app.ziontechgroup.com';
 
 async function askZionGPT(prompt) {
   if (!OPENAI_API_KEY) return { answer: 'Model key missing' };
@@ -34,7 +34,13 @@ async function askZionGPT(prompt) {
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.type === 'ask') {
-    askZionGPT(message.prompt).then(sendResponse);
+    askZionGPT(message.prompt).then(response => {
+      try {
+        sendResponse(response);
+      } catch (e) {
+        console.warn("Failed to send response to sender for 'ask' message. Channel likely closed.", e.message);
+      }
+    });
     return true;
   }
   if (message.type === 'post-job') {

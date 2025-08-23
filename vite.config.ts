@@ -26,13 +26,24 @@ export default defineConfig({
     },
   ],
   build: {
+    sourcemap: false,
+    minify: 'esbuild',
     rollupOptions: {
-      external: ['react-markdown'],
+      output: {
+        inlineDynamicImports: false,
+      },
+      // Bundle axios with the app to avoid missing module errors
     },
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src')
+      '@': path.resolve(__dirname, './src'),
+      'axios': path.resolve(__dirname, './src/lib/axios.ts')
+    }
+  },
+  server: {
+    hmr: {
+      clientPort: 443
     }
   }
 })

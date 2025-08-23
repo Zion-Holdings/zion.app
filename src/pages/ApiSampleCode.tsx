@@ -11,7 +11,7 @@ import axios from 'axios';
 
 // Configure Axios with the base URL and headers
 const api = axios.create({
-  baseURL: 'https://api.zionai.com/v1',
+  baseURL: 'https://api.ziontechgroup.com/v1',
   headers: {
     'Authorization': \`Bearer \${YOUR_API_KEY}\`,
     'Content-Type': 'application/json'
@@ -88,7 +88,7 @@ import requests
 import json
 
 API_KEY = 'YOUR_API_KEY'
-BASE_URL = 'https://api.zionai.com/v1'
+BASE_URL = 'https://api.ziontechgroup.com/v1'
 
 headers = {
     'Authorization': f'Bearer {API_KEY}',
@@ -152,7 +152,7 @@ if __name__ == "__main__":
 import fetch from 'node-fetch';
 
 const API_KEY = 'YOUR_API_KEY';
-const BASE_URL = 'https://api.zionai.com/v1';
+const BASE_URL = 'https://api.ziontechgroup.com/v1';
 
 // Helper to handle API requests
 async function apiRequest(endpoint, options = {}) {

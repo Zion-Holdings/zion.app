@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectTrigger, SelectContent, SelectItem } from "@/components/ui/select";
 import { Search, Filter, ArrowDownAZ, ArrowUpZA, Loader2 } from "lucide-react";
+import { safeStorage } from "@/utils/safeStorage";
 
 // Example listing type
 interface Listing {
@@ -54,19 +55,19 @@ export function CategoryListingPage({
 }: CategoryListingPageProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedSort, setSelectedSort] = useState(
-    () => localStorage.getItem('category_selected_sort') || sortOptions[0].value
+    () => safeStorage.getItem('category_selected_sort') || sortOptions[0].value
   );
   const [selectedFilter, setSelectedFilter] = useState(
-    () => localStorage.getItem('category_selected_filter') || filterOptions[0].value
+    () => safeStorage.getItem('category_selected_filter') || filterOptions[0].value
   );
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    localStorage.setItem('category_selected_sort', selectedSort);
+    safeStorage.setItem('category_selected_sort', selectedSort);
   }, [selectedSort]);
 
   useEffect(() => {
-    localStorage.setItem('category_selected_filter', selectedFilter);
+    safeStorage.setItem('category_selected_filter', selectedFilter);
   }, [selectedFilter]);
 
   useEffect(() => {

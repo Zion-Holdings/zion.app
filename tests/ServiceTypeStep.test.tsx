@@ -1,5 +1,4 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import { vi } from 'vitest';
 import { ServiceTypeStep } from '@/components/QuoteRequestForm/ServiceTypeStep';
 import { QuoteFormData } from '@/types/quotes';
 

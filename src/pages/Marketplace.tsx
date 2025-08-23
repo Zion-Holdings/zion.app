@@ -15,6 +15,14 @@ import { useNavigate } from "react-router-dom";
 import { SearchSuggestion } from "@/types/search";
 import styles from './Marketplace.module.css';
 import { useViewMode } from '@/context/ViewModeContext';
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from '@/components/ui/pagination';
 
 interface ProductContainerProps {
   listings: ProductListing[];
@@ -61,6 +69,8 @@ export default function Marketplace() {
   const [listings, setListings] = useState(MARKETPLACE_LISTINGS);
   const [isLoading, setIsLoading] = useState(false);
   const { viewMode, setViewMode } = useViewMode();
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
 
   // Automatically append a new listing every 2 minutes
   useEffect(() => {
@@ -75,6 +85,7 @@ export default function Marketplace() {
 
   useEffect(() => {
     setIsLoading(true);
+    setCurrentPage(1);
     const timeout = setTimeout(() => setIsLoading(false), 300);
     return () => clearTimeout(timeout);
   }, [searchQuery, selectedProductTypes, selectedLocations, selectedAvailability, selectedRating]);
@@ -110,6 +121,12 @@ export default function Marketplace() {
     
     return true;
   });
+
+  const totalPages = Math.ceil(filteredListings.length / itemsPerPage);
+  const paginatedListings = filteredListings.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
   
   const handleFilterChange = (filterType: string, value: string) => {
     console.log(`Filter changed: ${filterType} = ${value}`);
@@ -168,8 +185,8 @@ export default function Marketplace() {
   return (
     <main className="flex-grow container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto mb-8">
-          <h1 className="text-3xl font-bold text-white mb-4">AI & Tech Marketplace</h1>
-          <p className="text-zion-slate-light">
+          <h1 className="font-bold text-white mb-4 text-[clamp(1.5rem,3vw,1.875rem)]">AI & Tech Marketplace</h1>
+          <p className="text-zion-slate-light text-[clamp(1rem,2.5vw,1.125rem)]">
             Discover professional services and products for your AI and tech projects.
             Browse our curated collection of solutions from verified providers.
           </p>
@@ -259,9 +276,9 @@ export default function Marketplace() {
               </div>
             ) : filteredListings.length > 0 ? (
               viewMode === 'grid' ? (
-                <ProductGrid listings={filteredListings} onRequestQuote={handleRequestQuote} />
+                <ProductGrid listings={paginatedListings} onRequestQuote={handleRequestQuote} />
               ) : (
-                <ProductList listings={filteredListings} onRequestQuote={handleRequestQuote} />
+                <ProductList listings={paginatedListings} onRequestQuote={handleRequestQuote} />
               )
             ) : (
               <div className="col-span-2 text-center py-16 bg-zion-blue-dark border border-zion-blue-light rounded-lg">
@@ -275,6 +292,46 @@ export default function Marketplace() {
                 >
                   Clear Filters
                 </Button>
+              </div>
+            )}
+            {totalPages > 1 && (
+              <div className="mt-6">
+                <Pagination className="justify-center">
+                  <PaginationContent>
+                    <PaginationItem>
+                      <PaginationPrevious
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setCurrentPage(Math.max(1, currentPage - 1));
+                        }}
+                      />
+                    </PaginationItem>
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                      <PaginationItem key={page}>
+                        <PaginationLink
+                          href="#"
+                          isActive={page === currentPage}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            setCurrentPage(page);
+                          }}
+                        >
+                          {page}
+                        </PaginationLink>
+                      </PaginationItem>
+                    ))}
+                    <PaginationItem>
+                      <PaginationNext
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setCurrentPage(Math.min(totalPages, currentPage + 1));
+                        }}
+                      />
+                    </PaginationItem>
+                  </PaginationContent>
+                </Pagination>
               </div>
             )}
           </div>

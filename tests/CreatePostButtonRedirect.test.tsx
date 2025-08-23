@@ -1,6 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { vi } from 'vitest';
 import * as auth from '@/hooks/useAuth';
 import * as router from 'react-router-dom';
 import CreatePostButton from '@/components/community/CreatePostButton';

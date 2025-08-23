@@ -5,12 +5,12 @@ import { CodeBlock } from "@/components/developers/CodeBlock";
 
 export function ApiGettingStarted() {
   const authExample = `curl -X GET \\
-  https://api.zionai.com/v1/jobs \\
+  https://api.ziontechgroup.com/v1/jobs \\
   -H "Authorization: Bearer YOUR_API_KEY"`;
 
   const quickStartJs = `import axios from 'axios';
 
-const response = await axios.get('https://api.zionai.com/v1/jobs', {
+const response = await axios.get('https://api.ziontechgroup.com/v1/jobs', {
   headers: {
     Authorization: \`Bearer \${API_KEY}\`
   }
@@ -48,7 +48,7 @@ console.log(response.data);`;
         <h2>Base URL</h2>
         <p>All API requests should be made to the following base URL:</p>
         <div className="bg-zinc-900 p-4 rounded-md">
-          <code className="text-zion-cyan break-words">https://api.zionai.com/v1</code>
+          <code className="text-zion-cyan break-words">https://api.ziontechgroup.com/v1</code>
         </div>
         
         <h2>Content Type</h2>

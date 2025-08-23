@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { toast } from "sonner";
 
 interface CreatePostButtonProps {
   /** Optional category to preselect when creating a post */
@@ -26,7 +27,9 @@ export function CreatePostButton({ categoryId, className }: CreatePostButtonProp
     if (user) {
       navigate(target);
     } else {
-      navigate(`/login?next=${encodeURIComponent(target)}`);
+      toast.info("Please log in to create a post");
+      const next = encodeURIComponent(target);
+      navigate(`/login?next=${next}`, { replace: true });
     }
   };
 

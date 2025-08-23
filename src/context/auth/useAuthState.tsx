@@ -9,6 +9,7 @@ export function useAuthState() {
   const [user, setUser] = useState<UserProfile | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [onboardingStep, setOnboardingStep] = useState<string | null>(null);
+  const [tokens, setTokens] = useState<{ accessToken: string; refreshToken?: string } | null>(null);
   
   return {
     user,
@@ -16,6 +17,8 @@ export function useAuthState() {
     isLoading,
     setIsLoading,
     onboardingStep,
-    setOnboardingStep
+    setOnboardingStep,
+    tokens,
+    setTokens
   };
 }

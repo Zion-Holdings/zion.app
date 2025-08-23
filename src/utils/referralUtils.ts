@@ -1,4 +1,5 @@
 import { format } from 'date-fns';
+import { safeStorage } from './safeStorage';
 
 /**
  * Formats a date for display in the referral system
@@ -28,14 +29,14 @@ export function checkUrlForReferralCode(): string | null {
   const refCode = url.searchParams.get('ref');
   
   if (refCode) {
-    localStorage.setItem('referral_code', refCode);
+    safeStorage.setItem('referral_code', refCode);
     // Remove it from URL to keep it clean
     url.searchParams.delete('ref');
     window.history.replaceState({}, document.title, url.toString());
     return refCode;
   }
   
-  return localStorage.getItem('referral_code');
+  return safeStorage.getItem('referral_code');
 }
 
 /**
@@ -43,7 +44,7 @@ export function checkUrlForReferralCode(): string | null {
  */
 export async function trackReferral(userId: string, email: string) {
   try {
-    const refCode = localStorage.getItem('referral_code');
+    const refCode = safeStorage.getItem('referral_code');
     if (!refCode) return;
     
     // Call API to record the referral
@@ -62,7 +63,7 @@ export async function trackReferral(userId: string, email: string) {
     
     if (response.ok) {
       // Clear the stored referral code
-      localStorage.removeItem('referral_code');
+      safeStorage.removeItem('referral_code');
     }
   } catch (error) {
     console.error('Error tracking referral:', error);

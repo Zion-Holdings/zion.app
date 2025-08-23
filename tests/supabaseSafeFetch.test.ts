@@ -40,7 +40,7 @@ it('safeFetch preserves Headers object values', async () => {
   const headers = new Headers({ apikey: 'test-key' });
   const fetchSpy = vi.fn().mockResolvedValue({ ok: true, status: 200 } as Response);
   vi.spyOn(client, 'checkOnline').mockResolvedValue(true);
-  vi.stubGlobal('fetch', fetchSpy);
+  global.fetch = fetchSpy as any;
 
   await client.safeFetch('https://example.com', { headers });
 

@@ -62,7 +62,7 @@ export function ApiReference() {
         }
       },
       requestExample: `curl -X GET \\
-  https://api.zionai.com/v1/api/jobs?status=open&limit=10 \\
+  https://api.ziontechgroup.com/v1/api/jobs?status=open&limit=10 \\
   -H "Authorization: Bearer YOUR_API_KEY"`
     },
     {
@@ -110,7 +110,7 @@ export function ApiReference() {
         }
       },
       requestExample: `curl -X POST \\
-  https://api.zionai.com/v1/api/jobs \\
+  https://api.ziontechgroup.com/v1/api/jobs \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -165,7 +165,7 @@ export function ApiReference() {
         }
       },
       requestExample: `curl -X GET \\
-  https://api.zionai.com/v1/api/talent?skills=React,Node.js&limit=10 \\
+  https://api.ziontechgroup.com/v1/api/talent?skills=React,Node.js&limit=10 \\
   -H "Authorization: Bearer YOUR_API_KEY"`
     }
   ];

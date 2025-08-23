@@ -6,12 +6,11 @@ import { ResultsHeader } from "@/components/talent/ResultsHeader";
 import { TalentGrid } from "@/components/talent/TalentGrid";
 
 interface TalentResultsProps {
-  filteredTalents: TalentProfile[];
+  talents: TalentProfile[];
+  totalCount: number;
   isLoading: boolean;
   viewProfile: (id: string) => void;
   handleRequestHire: (talent: TalentProfile) => void;
-  savedTalents: string[];
-  handleToggleSave: (id: string, isSaved: boolean) => void;
   isAuthenticated: boolean;
   activeFiltersProps: {
     selectedSkills: string[];
@@ -29,12 +28,11 @@ interface TalentResultsProps {
 }
 
 export function TalentResults({
-  filteredTalents,
+  talents,
+  totalCount,
   isLoading,
   viewProfile,
   handleRequestHire,
-  savedTalents,
-  handleToggleSave,
   isAuthenticated,
   activeFiltersProps
 }: TalentResultsProps) {
@@ -45,19 +43,17 @@ export function TalentResults({
       
       {/* Results count */}
       <ResultsHeader 
-        isLoading={isLoading} 
-        resultCount={filteredTalents.length} 
+        isLoading={isLoading}
+        resultCount={totalCount}
       />
       
       {/* Talents grid */}
       <TalentGrid 
-        talents={filteredTalents}
+        talents={talents}
         isLoading={isLoading}
         onTalentClick={viewProfile}
         viewProfile={viewProfile}
         handleRequestHire={handleRequestHire}
-        savedTalentIds={savedTalents}
-        onToggleSave={handleToggleSave}
         isAuthenticated={isAuthenticated}
         clearFilters={activeFiltersProps.clearFilters}
       />

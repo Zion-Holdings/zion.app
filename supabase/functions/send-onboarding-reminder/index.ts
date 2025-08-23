@@ -85,7 +85,7 @@ serve(async (req: Request) => {
     
     // Send email
     const { data: emailData, error: emailError } = await resend.emails.send({
-      from: "Zion AI Marketplace <notifications@zion.ai>",
+      from: "Zion AI Marketplace <notifications@ziontechgroup.com>",
       to: userData.email,
       subject: "Complete your next step on Zion AI Marketplace",
       html: `
@@ -95,7 +95,7 @@ serve(async (req: Request) => {
           <p>Your next step is to <strong>${action}</strong>.</p>
           <p>This will help you get the most out of the platform and connect with the right opportunities.</p>
           <div style="margin: 30px 0;">
-            <a href="https://zion.ai/dashboard" style="background-color: #9b87f5; color: white; padding: 12px 20px; text-decoration: none; border-radius: 4px; font-weight: bold;">
+            <a href="https://app.ziontechgroup.com/dashboard" style="background-color: #9b87f5; color: white; padding: 12px 20px; text-decoration: none; border-radius: 4px; font-weight: bold;">
               Continue my setup
             </a>
           </div>
