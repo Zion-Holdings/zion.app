@@ -1,1 +1,2 @@
-export default function ChatCloudComputing() { return <div className="p-6">Cloud Computing Strategies</div>; }
+import React from 'react';
+export default function Page() { return <div className="min-h-screen p-8">Cloud Computing Strategies (WIP)</div>; }

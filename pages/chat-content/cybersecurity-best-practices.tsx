@@ -1,1 +1,2 @@
-export default function ChatCybersecurity() { return <div className="p-6">Cybersecurity Best Practices</div>; }
+import React from 'react';
+export default function Page() { return <div className="min-h-screen p-8">Cybersecurity Best Practices (WIP)</div>; }

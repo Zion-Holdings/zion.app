@@ -1,1 +1,2 @@
-export default function ChatDataAnalytics() { return <div className="p-6">Data Analytics Implementation</div>; }
+import React from 'react';
+export default function Page() { return <div className="min-h-screen p-8">Data Analytics Implementation (WIP)</div>; }
