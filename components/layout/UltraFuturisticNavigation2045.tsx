@@ -34,17 +34,17 @@ const navigationItems: NavigationItem[] = [
     label: 'Services',
     children: [
       {
-        label: 'AI & Machine Learning',
-        href: '/ai-services',
+        label: 'AI & Autonomous Ecosystems',
+        href: '/ai-autonomous-content-creation-2025',
         icon: <Brain className="w-4 h-4" />,
-        description: 'Cutting-edge AI solutions',
+        description: 'Fully autonomous AI platforms',
         featured: true,
-        badge: 'NEW',
+        badge: 'REVOLUTIONARY',
         color: 'from-purple-500 to-pink-500'
       },
       {
-        label: 'Quantum Computing',
-        href: '/quantum-computing',
+        label: 'Quantum Computing & Space Tech',
+        href: '/quantum-computing-as-a-service-2025',
         icon: <Atom className="w-4 h-4" />,
         description: 'Next-generation quantum solutions',
         featured: true,
@@ -52,52 +52,81 @@ const navigationItems: NavigationItem[] = [
         color: 'from-cyan-500 to-blue-500'
       },
       {
-        label: 'Space Technology',
-        href: '/space-tech',
+        label: 'Space Resource Intelligence',
+        href: '/space-resource-intelligence-2025',
         icon: <Rocket className="w-4 h-4" />,
-        description: 'Innovative space solutions',
+        description: 'AI-powered space exploration',
         featured: true,
         badge: 'FUTURE',
         color: 'from-pink-500 to-red-500'
       },
       {
-        label: 'Metaverse & VR',
-        href: '/metaverse-development',
+        label: 'Metaverse Development Studio',
+        href: '/metaverse-development-studio-pro-2025',
         icon: <Globe className="w-4 h-4" />,
-        description: 'Immersive virtual experiences',
+        description: 'Professional metaverse creation',
         featured: true,
         badge: 'IMMERSIVE',
         color: 'from-green-500 to-emerald-500'
       },
       {
-        label: 'Cybersecurity',
-        href: '/cybersecurity',
+        label: 'Quantum Cybersecurity',
+        href: '/quantum-cybersecurity-platform-2025',
         icon: <Shield className="w-4 h-4" />,
-        description: 'Enterprise security solutions',
+        description: 'Quantum-resistant security',
         badge: 'SECURE',
         color: 'from-red-500 to-pink-500'
       },
       {
-        label: 'Cloud & Infrastructure',
-        href: '/cloud-platform',
-        icon: <Cloud className="w-4 h-4" />,
-        description: 'Scalable cloud infrastructure',
-        badge: 'SCALABLE',
+        label: 'Business Process Automation',
+        href: '/ai-business-process-automation-suite-2025',
+        icon: <Settings className="w-4 h-4" />,
+        description: 'AI-powered automation suite',
+        badge: 'AUTOMATED',
         color: 'from-blue-500 to-indigo-500'
       },
       {
-        label: 'Data & Analytics',
-        href: '/data-analytics',
+        label: 'Supply Chain Optimization',
+        href: '/intelligent-supply-chain-optimization-2025',
         icon: <Database className="w-4 h-4" />,
-        description: 'Advanced data solutions',
-        badge: 'INSIGHTS',
+        description: 'AI-powered supply chain solutions',
+        badge: 'OPTIMIZED',
         color: 'from-indigo-500 to-purple-500'
       },
       {
-        label: 'DevOps & Automation',
-        href: '/devops-automation',
-        icon: <Settings className="w-4 h-4" />,
-        description: 'Automated development workflows',
+        label: 'Financial Planning & Analysis',
+        href: '/ai-financial-planning-analysis-2025',
+        icon: <BarChart3 className="w-4 h-4" />,
+        description: 'AI-powered financial insights',
+        badge: 'INTELLIGENT',
+        color: 'from-emerald-500 to-teal-500'
+      },
+      {
+        label: 'HR Analytics & Talent Management',
+        href: '/intelligent-hr-analytics-talent-management-2025',
+        icon: <Users className="w-4 h-4" />,
+        description: 'AI-powered HR solutions',
+        badge: 'SMART',
+        color: 'from-yellow-500 to-orange-500'
+      },
+      {
+        label: 'Customer Experience Optimization',
+        href: '/ai-customer-experience-optimization-2025',
+        icon: <Target className="w-4 h-4" />,
+        description: 'AI-powered CX optimization',
+        badge: 'OPTIMIZED',
+        color: 'from-purple-500 to-pink-500'
+      },
+      {
+        label: 'View All Services',
+        href: '/services',
+        icon: <ArrowRight className="w-4 h-4" />,
+        description: 'Complete service catalog',
+        badge: 'EXPLORE',
+        color: 'from-gray-500 to-blue-500'
+      }
+    ]
+  },
         badge: 'AUTOMATED',
         color: 'from-orange-500 to-red-500'
       },

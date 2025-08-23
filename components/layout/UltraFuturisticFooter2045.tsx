@@ -22,17 +22,18 @@ const UltraFuturisticFooter2045: React.FC = () => {
 
   const footerSections = [
     {
-      title: 'Services',
+      title: 'Revolutionary Services',
       links: [
-        { name: 'AI & Machine Learning', href: '/ai-services', icon: <Brain className="w-4 h-4" /> },
-        { name: 'Quantum Computing', href: '/quantum-computing', icon: <Atom className="w-4 h-4" /> },
-        { name: 'Space Technology', href: '/space-tech', icon: <Rocket className="w-4 h-4" /> },
-        { name: 'Metaverse & VR', href: '/metaverse-development', icon: <Globe className="w-4 h-4" /> },
-        { name: 'Cybersecurity', href: '/cybersecurity', icon: <Shield className="w-4 h-4" /> },
-        { name: 'Cloud & Infrastructure', href: '/cloud-platform', icon: <Cloud className="w-4 h-4" /> },
-        { name: 'Data & Analytics', href: '/data-analytics', icon: <Database className="w-4 h-4" /> },
-        { name: 'DevOps & Automation', href: '/devops-automation', icon: <Settings className="w-4 h-4" /> },
-        { name: 'Micro SAAS Solutions', href: '/comprehensive-2025-services-showcase', icon: <Code className="w-4 h-4" /> },
+        { name: 'AI Autonomous Ecosystems', href: '/ai-autonomous-content-creation-2025', icon: <Brain className="w-4 h-4" /> },
+        { name: 'Quantum Computing as a Service', href: '/quantum-computing-as-a-service-2025', icon: <Atom className="w-4 h-4" /> },
+        { name: 'Space Resource Intelligence', href: '/space-resource-intelligence-2025', icon: <Rocket className="w-4 h-4" /> },
+        { name: 'Metaverse Development Studio', href: '/metaverse-development-studio-pro-2025', icon: <Globe className="w-4 h-4" /> },
+        { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity-platform-2025', icon: <Shield className="w-4 h-4" /> },
+        { name: 'Business Process Automation', href: '/ai-business-process-automation-suite-2025', icon: <Settings className="w-4 h-4" /> },
+        { name: 'Supply Chain Optimization', href: '/intelligent-supply-chain-optimization-2025', icon: <Database className="w-4 h-4" /> },
+        { name: 'Financial Planning & Analysis', href: '/ai-financial-planning-analysis-2025', icon: <BarChart3 className="w-4 h-4" /> },
+        { name: 'HR Analytics & Talent Management', href: '/intelligent-hr-analytics-talent-management-2025', icon: <Users className="w-4 h-4" /> },
+        { name: 'Customer Experience Optimization', href: '/ai-customer-experience-optimization-2025', icon: <Target className="w-4 h-4" /> },
         { name: 'View All Services', href: '/services', icon: <ArrowRight className="w-4 h-4" /> }
       ]
     },
