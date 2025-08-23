@@ -1,7 +1,15 @@
 Contact: mailto:security@ziontechgroup.com
+<<<<<<< HEAD
+Expires: 2026-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://ziontechgroup.com/.well-known/security.txt
+Policy: https://ziontechgroup.com/security-policy
+Hiring: https://ziontechgroup.com/careers
+=======
 Contact: https://ziontechgroup.com/support/
 Expires: 2026-12-31T23:59:59Z
 Preferred-Languages: en
 Policy: https://ziontechgroup.com/security/
 Canonical: https://ziontechgroup.com/.well-known/security.txt
 Acknowledgments: https://ziontechgroup.com/security/#acknowledgments
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-9cbf
