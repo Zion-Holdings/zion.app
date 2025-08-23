@@ -9,19 +9,16 @@ import {
   Shield, 
   Cloud, 
   Target,
-  Star,
   Globe,
   ArrowRight,
   CheckCircle,
-  Clock,
   MapPin,
   Briefcase,
   Zap,
   Heart,
-  Lightbulb,
-  Award,
   TrendingUp,
-  Eye
+  Award,
+  Lightbulb
 } from 'lucide-react';
 import Link from 'next/link';
 

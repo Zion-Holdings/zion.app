@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
-  TrendingUp, 
   Brain, 
   Atom, 
   Rocket, 
@@ -14,13 +13,10 @@ import {
   Globe,
   ArrowRight,
   CheckCircle,
-  Clock,
   DollarSign,
   Zap,
-  Eye,
-  Heart,
-  MessageCircle,
-  Shopping
+  Shopping,
+  Clock
 } from 'lucide-react';
 import Link from 'next/link';
 

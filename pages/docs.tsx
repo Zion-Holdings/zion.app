@@ -8,26 +8,20 @@ import {
   Play, 
   Download, 
   Search, 
-  Filter,
   ArrowRight,
-  ExternalLink,
   Github,
   Terminal,
   Database,
   Shield,
-  Zap,
   Brain,
   Atom,
   Rocket,
-  Cloud,
   Target,
   Star,
-  Eye,
-  Heart,
-  MessageCircle,
+  Clock,
   Copy,
-  CheckCircle,
-  Clock
+  ExternalLink,
+  MessageCircle
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -216,15 +210,9 @@ const DocsPage: React.FC = () => {
 
   const allDocs = [...quickStartGuides, ...apiDocs, ...sdks, ...tutorials];
 
-  const filteredDocs = allDocs.filter(doc => {
-    const matchesSearch = doc.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         doc.description.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCategory = selectedCategory === 'all' || doc.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
 
-  const featuredDocs = allDocs.filter(doc => doc.featured);
-  const regularDocs = filteredDocs.filter(doc => !doc.featured);
+
+
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);

@@ -3,23 +3,19 @@ import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
   Search, 
-  Filter, 
   Calendar, 
-  Clock, 
   User, 
   Tag, 
   ArrowRight,
-  TrendingUp,
   Brain,
   Atom,
   Rocket,
   Shield,
   Cloud,
   Target,
-  Star,
   Eye,
-  Heart,
-  MessageCircle
+  Clock,
+  Heart
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -191,10 +187,7 @@ const BlogPage: React.FC = () => {
     });
   };
 
-  const getCategoryIcon = (categoryId: string) => {
-    const category = categories.find(cat => cat.id === categoryId);
-    return category ? category.icon : Eye;
-  };
+
 
   const getCategoryColor = (categoryId: string) => {
     const category = categories.find(cat => cat.id === categoryId);
