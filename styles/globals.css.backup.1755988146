@@ -441,10 +441,35 @@ body::before {
     display: none;
   }
   
+<<<<<<< HEAD
+  .mobile-full {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .desktop-only {
+    display: block;
+  }
+  
+  .mobile-only {
+    display: none;
+  }
+}
+
+/* Dark Mode Enhancements */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --neon-cyan: #00d4ff;
+    --neon-purple: #a855f7;
+    --neon-pink: #ec4899;
+  }
+=======
   /* Gradient Presets */
   --gradient-cyberpunk: linear-gradient(135deg, #00ffff 0%, #8b5cf6 50%, #ec4899 100%);
   --gradient-quantum: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%);
   --gradient-holographic: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%);
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-53c0
 }
 
 /* Light Theme Variables */
@@ -507,6 +532,8 @@ body::before {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+<<<<<<< HEAD
+=======
 }
 
 [data-motion="reduce"] *,
@@ -679,6 +706,7 @@ body::before {
     font-size: 0.9rem;
     line-height: 1.4;
   }
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-53c0
   
   .float,
   .pulse-glow,

@@ -9,6 +9,8 @@ import {
   Building, GraduationCap, Heart, Palette, BarChart3, Cloud, Lock,
   Handshake, Video, BookOpen
 } from 'lucide-react';
+<<<<<<< HEAD
+=======
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import ThemeToggle from '../ThemeToggle';
@@ -166,6 +168,7 @@ const socialLinks = [
   { href: 'https://github.com/ziontechgroup', icon: <Github className="w-5 h-5" />, label: 'GitHub' },
   { href: 'https://youtube.com/ziontechgroup', icon: <Youtube className="w-5 h-5" />, label: 'YouTube' }
 ];
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-53c0
 
 const UltraFuturisticNavigation2040: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -503,6 +506,8 @@ const UltraFuturisticNavigation2040: React.FC = () => {
               <div className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors duration-300">
                 Zion Tech Group
               </div>
+<<<<<<< HEAD
+=======
             ))}
           </div>
 
@@ -544,6 +549,7 @@ const UltraFuturisticNavigation2040: React.FC = () => {
               >
                 Get Started
               </motion.button>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-53c0
             </Link>
 
             {/* Navigation Items */}
