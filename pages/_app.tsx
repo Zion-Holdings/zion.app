@@ -7,5 +7,15 @@ import Analytics from '../components/Analytics';
 import { Layout } from '../components/layout/Layout';
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+	const renderedRef = useRef(false);
+	return (
+		<SEOContext.Provider value={{ renderedRef }}>
+			<DefaultSEO />
+			<Analytics />
+			<a href="#main-content" className="skip-link">Skip to content</a>
+			<main id="main-content">
+				<Component {...pageProps} />
+			</main>
+		</SEOContext.Provider>
+	);
 }

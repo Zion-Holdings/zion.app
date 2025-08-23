@@ -27,12 +27,10 @@ export default class MyDocument extends Document {
 					<meta httpEquiv="Content-Security-Policy" content={csp} />
 					<meta name="theme-color" content="#000000" />
 					<meta name="color-scheme" content="dark light" />
-					<meta name="format-detection" content="telephone=no" />
-					<link rel="preconnect" href="https://plausible.io" crossOrigin="anonymous" />
+					<meta name="viewport" content="width=device-width, initial-scale=1" />
+					<meta name="theme-color" content="#000000" />
 					<link rel="dns-prefetch" href="//plausible.io" />
-					<link rel="robots" href="/robots.txt" />
-					<link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-					<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+					<link rel="preconnect" href="https://plausible.io" crossOrigin="anonymous" />
 				</Head>
 				<body>
 					<Main />
