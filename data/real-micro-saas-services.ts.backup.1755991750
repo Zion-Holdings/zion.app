@@ -1166,6 +1166,8 @@ export const realMicroSaasServices: MicroSaasService[] = [
     launchDate: '2024-07-15',
     customers: 700,
     rating: 4.8,
+<<<<<<< HEAD
+=======
     reviews: 345
   },
 
@@ -1903,6 +1905,7 @@ export const realMicroSaasServices: MicroSaasService[] = [
     launchDate: '2024-01-30',
     customers: 234,
     rating: 4.7,
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-648a
     reviews: 112
   }
 ];
