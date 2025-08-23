@@ -1,11 +1,13 @@
-import Link from 'next/link'
+import Head from 'next/head';
 
-export default function TalentHome() {
+export default function TalentPage() {
   return (
-    <div className="space-y-4">
-      <h1 className="text-2xl font-bold">Talent Tools</h1>
-      <p className="text-sm text-gray-600 dark:text-gray-300">Build your profile, resumes, and projects for the Zion AI Marketplace.</p>
-      <Link href="/talent/resume-builder"><a className="inline-block px-4 py-2 border rounded hover:bg-gray-50 dark:hover:bg-gray-900">Open Resume & Portfolio Builder</a></Link>
-    </div>
-  )
+    <>
+      <Head><title>Talent</title></Head>
+      <div className="py-10">
+        <h1 className="text-3xl font-semibold mb-4">Talent</h1>
+        <p className="text-gray-600 dark:text-gray-300">Talent directory coming soon.</p>
+      </div>
+    </>
+  );
 }

@@ -1,1 +1,10 @@
-export default function Page() { return <div className="py-10">AI-powered business solutions</div> }
+import Head from 'next/head';
+
+export default function AIPoweredBusinessSolutionsDiscussionPage() {
+  return (
+    <>
+      <Head><title>AI-Powered Business Solutions</title></Head>
+      <div className="py-10">Content coming soon.</div>
+    </>
+  );
+}

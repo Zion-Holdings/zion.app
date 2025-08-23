@@ -182,6 +182,7 @@ const EnhancedNavigation: React.FC = () => {
           <Link href="/blog"><a>Blog</a></Link>
           <Link href="/talent"><a>Talent</a></Link>
           <Link href="/contact"><a>Contact</a></Link>
+          <Link href="/request-quote"><a className="px-3 py-1 rounded-md bg-indigo-600 text-white">Request a Quote</a></Link>
         </div>
       </nav>
 

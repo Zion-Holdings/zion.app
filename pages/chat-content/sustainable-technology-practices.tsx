@@ -1,1 +1,10 @@
-export default function Page() { return <div className="py-10">Sustainable technology practices</div> }
+import Head from 'next/head';
+
+export default function SustainableTechnologyPracticesPage() {
+  return (
+    <>
+      <Head><title>Sustainable Technology Practices</title></Head>
+      <div className="py-10">Content coming soon.</div>
+    </>
+  );
+}
