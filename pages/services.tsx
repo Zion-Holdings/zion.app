@@ -14,6 +14,13 @@ import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-
 import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
 import { cuttingEdgeAIServices2025 } from '../data/2025-cutting-edge-ai-services';
 
+// Import our new innovative 2025 enterprise services
+import { innovativeAIEnterpriseServices2025 } from '../data/2025-innovative-ai-enterprise-services';
+import { innovativeITInfrastructureEnterpriseServices2025 } from '../data/2025-innovative-it-infrastructure-enterprise';
+import { innovativeMicroSaasEnterpriseServices2025 } from '../data/2025-innovative-micro-saas-enterprise';
+import { innovativeCybersecurityServices2025 } from '../data/2025-innovative-cybersecurity-services';
+import { innovativeDataAnalyticsServices2025 } from '../data/2025-innovative-data-analytics-services';
+
 // Import our new service data
 import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
 import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas-solutions';
@@ -108,6 +115,13 @@ const allServices = [
   ...innovativeITInfrastructureServices2025,
   ...innovativeMicroSaasSolutions2025,
   ...cuttingEdgeAIServices2025,
+  
+  // Our new innovative 2025 enterprise services
+  ...innovativeAIEnterpriseServices2025,
+  ...innovativeITInfrastructureEnterpriseServices2025,
+  ...innovativeMicroSaasEnterpriseServices2025,
+  ...innovativeCybersecurityServices2025,
+  ...innovativeDataAnalyticsServices2025,
   
   ...enterpriseITSolutions,
   ...innovativeMicroSaasSolutions,
@@ -258,6 +272,20 @@ const categories = [
     icon: <GraduationCap className="w-6 h-6" />,
     color: 'from-yellow-500 to-orange-500',
     description: 'Learning and research platforms'
+  },
+  {
+    id: 'cybersecurity',
+    name: 'Cybersecurity',
+    icon: <Shield className="w-6 h-6" />,
+    color: 'from-red-500 to-orange-500',
+    description: 'Advanced security and threat protection'
+  },
+  {
+    id: 'data-analytics',
+    name: 'Data Analytics',
+    icon: <Cpu className="w-6 h-6" />,
+    color: 'from-cyan-500 to-blue-500',
+    description: 'Intelligent data analysis and insights'
   }
 ];
 
