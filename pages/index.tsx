@@ -105,41 +105,61 @@ export default function HomePage() {
                     <li><a href="/contact" className="hover:text-cyan-400 transition-colors">Contact</a></li>
                   </ul>
                 </div>
-                <div>
-                  <h3 className="text-lg font-bold mb-4 text-fuchsia-400">Services</h3>
-                  <ul className="space-y-2 text-white/70">
-                    <li><a href="/services" className="hover:text-fuchsia-400 transition-colors">AI Development</a></li>
-                    <li><a href="/services" className="hover:text-fuchsia-400 transition-colors">Automation</a></li>
-                    <li><a href="/services" className="hover:text-fuchsia-400 transition-colors">Cloud Infrastructure</a></li>
-                    <li><a href="/services" className="hover:text-fuchsia-400 transition-colors">Consulting</a></li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold mb-4 text-green-400">Resources</h3>
-                  <ul className="space-y-2 text-white/70">
-                    <li><a href="/blog" className="hover:text-green-400 transition-colors">Blog</a></li>
-                    <li><a href="/reports" className="hover:text-green-400 transition-colors">Reports</a></li>
-                    <li><a href="/api-documentation" className="hover:text-green-400 transition-colors">API Docs</a></li>
-                    <li><a href="/component-library" className="hover:text-green-400 transition-colors">Components</a></li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold mb-4 text-blue-400">Legal</h3>
-                  <ul className="space-y-2 text-white/70">
-                    <li><a href="/privacy" className="hover:text-blue-400 transition-colors">Privacy Policy</a></li>
-                    <li><a href="/terms" className="hover:text-blue-400 transition-colors">Terms of Service</a></li>
-                    <li><a href="/security" className="hover:text-blue-400 transition-colors">Security</a></li>
-                    <li><a href="/accessibility" className="hover:text-blue-400 transition-colors">Accessibility</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div className="border-t border-white/10 mt-8 pt-8 text-center text-white/60">
-                <p>&copy; 2025 Zion Tech Group. All rights reserved. | Autonomous Innovation Hub</p>
-              </div>
-            </div>
-          </footer>
-        </main>
-      </div>
-    </>
+                <h3 className="text-2xl font-semibold mb-3 group-hover:text-cyan-400 transition-colors">
+                  {feature.title}
+                </h3>
+                <p className="text-white/70">{feature.description}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      
+{/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */}
+
+ <section className="mx-auto max-w-7xl px-6 pb-14">
+   <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Latest Autonomous Content</h2>
+   <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <a href="/reports/updates/update-2025-08-19T03-44" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">Autonomous Update — 2025: 08: 19T03: 44</h3>
+              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
+            </a>
+            <a href="/reports/updates/ultra-1755575060652-modopi" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">Autonomous Update — ultra: 1755575060652: modopi</h3>
+              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
+            </a>
+            <a href="/reports/updates/ultra-1755575057915-utu171" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">Autonomous Update — ultra: 1755575057915: utu171</h3>
+              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
+            </a>
+            <a href="/reports/updates/ultra-1755575057167-q5tp5b" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">Autonomous Update — ultra: 1755575057167: q5tp5b</h3>
+              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
+            </a>
+            <a href="/reports/updates/update-2025-08-19-0044" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">Autonomous Update — 2025: 08: 19: 0044</h3>
+              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
+            </a>
+            <a href="/reports/updates/ultra-1755575056349-zlaxtt" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">Autonomous Update — ultra: 1755575056349: zlaxtt</h3>
+              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
+            </a>
+   </div>
+ </section>
+ 
+{/* AUTO-GENERATED: HOME_LATEST_CONTENT_END */}
+</section>
+    </div>
   );
 }
