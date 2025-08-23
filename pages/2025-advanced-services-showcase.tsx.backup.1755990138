@@ -8,10 +8,18 @@ import {
   Building, Star, Users, TrendingUp, Zap, Globe, Eye, Phone, Mail, MapPin
 } from 'lucide-react';
 
+<<<<<<< HEAD
+// Import 2025 advanced services
+import { real2025AdvancedMicroSaas } from '../data/real-2025-advanced-micro-saas';
+import { real2025AdvancedITServices } from '../data/real-2025-advanced-it-services';
+import { real2025AdvancedAIServices } from '../data/real-2025-advanced-ai-services';
+import { real2025EmergingTechServices } from '../data/real-2025-emerging-tech-services';
+=======
 // Import our new service data
 import { advancedEnterpriseServices2025 } from '../data/2025-advanced-enterprise-services-expansion';
 import { innovativeMicroSaasExpansion2025 } from '../data/2025-innovative-micro-saas-expansion';
 import { cuttingEdgeITInfrastructureServices } from '../data/2025-cutting-edge-it-infrastructure';
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-9481
 
 const contact = {
   mobile: '+1 302 464 0950',
@@ -20,11 +28,19 @@ const contact = {
   website: 'https://ziontechgroup.com'
 };
 
+<<<<<<< HEAD
+export default function AdvancedServicesShowcase2025() {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const [sortBy, setSortBy] = useState('name');
+=======
 const allServices = [
   ...advancedEnterpriseServices2025,
       ...innovativeMicroSaasExpansion2025,
   ...cuttingEdgeITInfrastructureServices
 ];
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-9481
 
   // Combine all services
   const allServices = [
@@ -156,6 +172,13 @@ const AdvancedServicesShowcase: React.FC = () => {
     return matchesCategory && matchesSearch;
   });
 
+<<<<<<< HEAD
+  const getServiceCategory = (service: any) => {
+    if (service.category.includes('AI')) return 'ai-services';
+    if (service.category.includes('Infrastructure') || service.category.includes('Cloud') || service.category.includes('DevOps')) return 'it-infrastructure';
+    return 'micro-saas';
+  };
+=======
     // Filter by category
     if (selectedCategory !== 'all') {
       filtered = filtered.filter(service => {
@@ -403,6 +426,7 @@ const AdvancedServicesShowcase: React.FC = () => {
       </div>
     </motion.div>
   );
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-9481
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
