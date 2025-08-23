@@ -232,7 +232,11 @@ const AdvancedServicesShowcase: React.FC = () => {
           <div className="flex items-center gap-2">
             <Users className="w-4 h-4 text-blue-500" />
             <span className="text-sm text-gray-600 dark:text-gray-400">
+<<<<<<< HEAD
+              {service.customers ? service.customers.toLocaleString() : '1000'}+ customers
+=======
               {(service.customers || 0).toLocaleString()}+ customers
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-a1b9
             </span>
           </div>
           <div className="flex items-center gap-2">
@@ -345,7 +349,11 @@ const AdvancedServicesShowcase: React.FC = () => {
               <div className="flex items-center gap-2">
                 <Users className="w-4 h-4 text-blue-500" />
                 <span className="text-sm text-gray-600 dark:text-gray-400">
+<<<<<<< HEAD
+                  {service.customers ? service.customers.toLocaleString() : '1000'}+ customers
+=======
                   {(service.customers || 0).toLocaleString()}+ customers
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-a1b9
                 </span>
               </div>
               <div className="flex items-center gap-2">

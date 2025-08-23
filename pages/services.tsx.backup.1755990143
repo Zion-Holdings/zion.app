@@ -24,6 +24,12 @@ import { advancedAIITSpecializedServices2025 } from '../data/2025-advanced-ai-it
 // Import our new 2025 enterprise services
 import { realEnterpriseMicroSaas2025 } from '../data/2025-real-enterprise-micro-saas';
 
+<<<<<<< HEAD
+// Import our new revolutionary 2046 services
+import { revolutionary2046AdvancedRealMicroSaas } from '../data/revolutionary-2046-advanced-real-micro-saas';
+import { revolutionary2046AdvancedITServices } from '../data/revolutionary-2046-advanced-it-services';
+import { revolutionary2046AdvancedAIServices } from '../data/revolutionary-2046-advanced-ai-services';
+=======
 // Import our new expansion services
 import { innovativeAIAutonomousServicesExpansion2025 } from '../data/2025-innovative-ai-autonomous-services-expansion';
 import { innovativeITInfrastructureServicesExpansion2025 } from '../data/2025-innovative-it-infrastructure-services-expansion';
@@ -52,6 +58,7 @@ import { revolutionary2040FuturisticServices } from '../data/revolutionary-2040-
 import { revolutionary2041AdvancedServices } from '../data/revolutionary-2041-advanced-services';
 import { advanced2041EnterpriseServices } from '../data/advanced-2041-enterprise-services';
 import { revolutionary2042MicroSaasServices } from '../data/revolutionary-2042-micro-saas-services';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-a1b9
 
 // Import our new innovative 2025 services
 import { realInnovativeMicroSaasServices2025 } from '../data/2025-real-innovative-micro-saas-expansion';
@@ -151,6 +158,9 @@ const allServices = [
   ...realOperationalServices,
   ...marketReadyServices,
   ...marketValidatedServices,
+<<<<<<< HEAD
+  ...industryRealServices
+=======
   // Our new 2025 Q4 innovative services
   ...innovative2025Q4NewServices,
   ...advancedITInfrastructureServices2025,
@@ -203,6 +213,7 @@ const allServices = [
   ...innovativeAIAutonomousServicesExpansion2025,
   ...innovativeITInfrastructureServicesExpansion2025,
   ...innovativeMicroSaasExpansion2025
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-a1b9
 ];
 
 const categories = [
