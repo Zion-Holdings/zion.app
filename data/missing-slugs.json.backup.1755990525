@@ -32,6 +32,12 @@
   "autonomous-vehicle-ai",
   "autonomous-vehicle-ai-2040",
   "blockchain-enterprise-platform",
+<<<<<<< HEAD
+  "blockchain-infrastructure",
+  "brain-computer-interface",
+  "compliance-automation",
+=======
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-5614
   "customer-intelligence-platform",
   "docs/api-rest",
   "industrial-automation-ai",
@@ -47,6 +53,14 @@
   "neural-finance-ai",
   "quantum-ai-cognitive-platform",
   "quantum-ai-fusion",
+<<<<<<< HEAD
+  "quantum-application-platform-2045",
+  "quantum-bio-computing",
+  "quantum-bio-computing-2041",
+  "quantum-cloud-infrastructure-2041",
+  "quantum-cloud-infrastructure-2045",
+=======
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-5614
   "quantum-compliance-automation",
   "quantum-creativity-studio",
   "quantum-crm-suite",
@@ -59,8 +73,18 @@
   "quantum-energy-optimization",
   "quantum-financial-intelligence-2040",
   "quantum-identity-verification",
+<<<<<<< HEAD
+  "quantum-integration-platform-2045",
+  "quantum-internet-security",
+  "quantum-internet-security-2041",
   "quantum-internet-security-gateway",
   "quantum-learning-accelerator",
+  "quantum-materials-discovery",
+  "quantum-materials-discovery-2040",
+=======
+  "quantum-internet-security-gateway",
+  "quantum-learning-accelerator",
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-5614
   "quantum-network-security",
   "quantum-networking",
   "quantum-payment-processor",
