@@ -124,6 +124,12 @@ const getServicePricing = (service: any) => {
   if (service.pricing?.starter) return service.pricing.starter;
   if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
   if (service.price?.monthly) return `$${service.price.monthly}/month`;
+<<<<<<< HEAD
+  if (typeof service.price === 'string') return service.price;
+  if (service.price && typeof service.price === 'object') {
+    if (service.price.monthly) return `$${service.price.monthly}/month`;
+    if (service.price.starter) return service.price.starter;
+=======
   if (service.price && service.period) return `${service.price}${service.period}`;
   if (service.price) return service.price;
   // Handle case where pricing is just a number
@@ -133,6 +139,7 @@ const getServicePricing = (service: any) => {
     // Check if it has yearly field and use that as fallback
     if (service.pricing.yearly) return service.pricing.yearly;
     return 'Contact for pricing';
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-bdcb
   }
   return 'Contact for pricing';
 };
