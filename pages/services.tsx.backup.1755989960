@@ -122,11 +122,18 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
+<<<<<<< HEAD
+  // New expanded services
+  ...innovativeMicroSaasServicesExpanded,
+  ...innovativeITServicesExpanded,
+  ...innovativeAIServicesExpanded
+=======
   // Add our new innovative 2027 services
   ...innovative2027AIBusinessIntelligenceServices,
   ...innovative2027CybersecurityComplianceServices,
   ...innovative2027CloudDevOpsServices,
   ...innovative2027IndustrySolutions
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-c4de
 ];
 
 const categories = [
