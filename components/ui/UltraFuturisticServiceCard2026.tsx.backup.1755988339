@@ -185,6 +185,26 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
         </div>
       </div>
 
+<<<<<<< HEAD
+      {/* Stats Section */}
+      <div className="relative z-10 mb-8">
+        <div className="grid grid-cols-3 gap-4">
+          <div className="text-center p-3 bg-gray-800/30 rounded-xl border border-gray-700/30">
+            <Users className="w-5 h-5 text-cyan-400 mx-auto mb-2" />
+            <div className="text-sm font-semibold text-white">500+</div>
+            <div className="text-xs text-gray-400">Clients</div>
+          </div>
+          <div className="text-center p-3 bg-gray-800/30 rounded-xl border border-gray-700/30">
+            <Clock className="w-5 h-5 text-blue-400 mx-auto mb-2" />
+            <div className="text-sm font-semibold text-white">24/7</div>
+            <div className="text-xs text-gray-400">Support</div>
+          </div>
+          <div className="text-center p-3 bg-gray-800/30 rounded-xl border border-gray-700/30">
+            <Award className="w-5 h-5 text-purple-400 mx-auto mb-2" />
+            <div className="text-sm font-semibold text-white">99.9%</div>
+            <div className="text-xs text-gray-400">Uptime</div>
+          </div>
+=======
         {/* Service Info */}
         <div className="flex-1">
           <motion.h3 
@@ -259,6 +279,7 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
               {isExpanded ? 'Show Less' : `Show ${service.features.length - 3} More`}
             </motion.button>
           )}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-7384
         </div>
       </div>
 

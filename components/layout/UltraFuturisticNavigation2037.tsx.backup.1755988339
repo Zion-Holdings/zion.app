@@ -46,6 +46,9 @@ function normalizeHref(href: string): string {
 
 const navigationItems: NavigationItem[] = [
   {
+<<<<<<< HEAD
+    name: 'AI & Machine Learning',
+=======
     name: 'Micro SAAS Services',
     href: '/services',
     icon: <Rocket className="w-5 h-5" />,
@@ -108,6 +111,7 @@ const navigationItems: NavigationItem[] = [
   },
   {
     name: 'AI Services',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-7384
     href: '/ai-services',
     icon: <BrainIcon className="w-5 h-5" />,
     description: 'Advanced AI solutions',
