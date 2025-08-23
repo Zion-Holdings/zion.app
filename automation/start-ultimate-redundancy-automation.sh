@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Ultimate Redundancy Automation System Startup Script
-# This script manages the new comprehensive redundancy automation system
+# Ultimate Redundancy Automation Startup Script
+# This script provides comprehensive redundancy for all PM2, GitHub Actions, and Netlify Functions automations
 
 set -e
 
@@ -11,10 +11,7 @@ WORKSPACE_DIR="$(cd "$SCRIPT_DIR/.." && pwd)"
 LOG_DIR="$WORKSPACE_DIR/automation/logs"
 PID_FILE="$LOG_DIR/ultimate-redundancy-automation.pid"
 LOG_FILE="$LOG_DIR/ultimate-redundancy-automation.log"
-SYSTEM_SCRIPT="ultimate-redundancy-automation-system.cjs"
-
-# Ensure log directory exists
-mkdir -p "$LOG_DIR"
+AUTOMATION_SCRIPT="$SCRIPT_DIR/ultimate-redundancy-automation.cjs"
 
 # Colors for output
 RED='\033[0;31m'
@@ -23,7 +20,10 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-# Logging function
+# Ensure log directory exists
+mkdir -p "$LOG_DIR"
+
+# Function to log messages
 log() {
     local level="$1"
     local message="$2"
@@ -93,20 +93,15 @@ is_running() {
         if kill -0 "$pid" 2>/dev/null; then
             return 0
         else
-            log "WARN" "PID file exists but process is not running, cleaning up"
+            # PID file exists but process is dead
             rm -f "$PID_FILE"
         fi
     fi
     return 1
 }
 
-# Start the system
-start_system() {
-    if is_running; then
-        log "WARN" "Ultimate Redundancy Automation System is already running"
-        return 1
-    fi
-    
+# Function to start the automation
+start() {
     log "INFO" "Starting Ultimate Redundancy Automation System..."
     
     cd "$SCRIPT_DIR"
@@ -115,21 +110,26 @@ start_system() {
     nohup node "$SYSTEM_SCRIPT" start > "$LOG_FILE" 2>&1 &
     local pid=$!
     
+    # Save PID to file
+    echo "$pid" > "$PID_FILE"
+    
     # Wait a moment to check if it started successfully
     sleep 2
-    
     if kill -0 "$pid" 2>/dev/null; then
         echo "$pid" > "$PID_FILE"
         log "INFO" "Ultimate Redundancy Automation System started successfully (PID: $pid)"
         return 0
     else
-        log "ERROR" "Failed to start Ultimate Redundancy Automation System"
+        log "ERROR" "Failed to start automation"
+        rm -f "$PID_FILE"
         return 1
     fi
 }
 
-# Stop the system
-stop_system() {
+# Function to stop the automation
+stop() {
+    log "INFO" "Stopping Ultimate Redundancy Automation System..."
+    
     if [ ! -f "$PID_FILE" ]; then
         log "WARN" "PID file not found, system may not be running"
         return 1
@@ -150,32 +150,79 @@ stop_system() {
             count=$((count + 1))
         done
         
-        # Force kill if still running
         if kill -0 "$pid" 2>/dev/null; then
-            log "WARN" "Force killing process (PID: $pid)"
-            kill -KILL "$pid"
+            log "WARNING" "Process did not stop gracefully, sending SIGKILL..."
+            kill -9 "$pid"
+        fi
+        
+        log "SUCCESS" "Automation stopped successfully"
+    else
+        log "WARNING" "Process $pid is not running"
+    fi
+    
+    rm -f "$PID_FILE"
+    return 0
+}
+
+# Function to restart the automation
+restart() {
+    log "INFO" "Restarting Ultimate Redundancy Automation System..."
+    stop
+    sleep 2
+    start
+}
+
+# Function to check status
+status() {
+    log "INFO" "Checking Ultimate Redundancy Automation System status..."
+    
+    if is_running; then
+        local pid=$(cat "$PID_FILE")
+        log "SUCCESS" "Automation is running (PID: $pid)"
+        
+        # Check process details
+        if command -v ps &> /dev/null; then
+            echo ""
+            echo "Process Details:"
+            ps -p "$pid" -o pid,ppid,cmd,etime,pcpu,pmem 2>/dev/null || true
+        fi
+        
+        # Check recent logs
+        if [ -f "$LOG_FILE" ]; then
+            echo ""
+            echo "Recent Logs (last 10 lines):"
+            tail -n 10 "$LOG_FILE" 2>/dev/null || true
         fi
         
         rm -f "$PID_FILE"
         log "INFO" "Ultimate Redundancy Automation System stopped"
         return 0
     else
-        log "WARN" "Process not running (PID: $pid), cleaning up"
-        rm -f "$PID_FILE"
+        log "WARNING" "Automation is not running"
         return 1
     fi
 }
 
-# Restart the system
-restart_system() {
-    log "INFO" "Restarting Ultimate Redundancy Automation System..."
-    stop_system
-    sleep 2
-    start_system
+# Function to show logs
+logs() {
+    if [ -f "$LOG_FILE" ]; then
+        if [ "$1" = "follow" ]; then
+            log "INFO" "Following logs (Ctrl+C to stop)..."
+            tail -f "$LOG_FILE"
+        else
+            log "INFO" "Showing recent logs..."
+            tail -n 50 "$LOG_FILE"
+        fi
+    else
+        log "WARNING" "No log file found: $LOG_FILE"
+        return 1
+    fi
 }
 
-# Show system status
-show_status() {
+# Function to check health
+health() {
+    log "INFO" "Checking system health..."
+    
     if is_running; then
         local pid=$(cat "$PID_FILE")
         local uptime=$(ps -o etime= -p "$pid" 2>/dev/null || echo "unknown")
@@ -219,9 +266,34 @@ run_health_check() {
     fi
 }
 
-# Run one-time check
-run_once() {
-    log "INFO" "Running one-time redundancy check..."
+# Function to show help
+show_help() {
+    echo "Ultimate Redundancy Automation Management Script"
+    echo ""
+    echo "Usage: $0 {start|stop|restart|status|logs|health|help}"
+    echo ""
+    echo "Commands:"
+    echo "  start     Start the ultimate redundancy automation system"
+    echo "  stop      Stop the automation system"
+    echo "  restart   Restart the automation system"
+    echo "  status    Show current status and process information"
+    echo "  logs      Show recent logs (use 'logs follow' to follow logs)"
+    echo "  health    Run a comprehensive health check"
+    echo "  help      Show this help message"
+    echo ""
+    echo "Examples:"
+    echo "  $0 start                    # Start the automation"
+    echo "  $0 status                   # Check status"
+    echo "  $0 logs follow              # Follow logs in real-time"
+    echo "  $0 health                   # Run health check"
+    echo ""
+    echo "Logs: $LOG_FILE"
+    echo "PID File: $PID_FILE"
+}
+
+# Function to perform comprehensive system check
+system_check() {
+    log "INFO" "Performing comprehensive system check..."
     
     cd "$SCRIPT_DIR"
     if node "$SYSTEM_SCRIPT" once >/dev/null 2>&1; then
@@ -232,96 +304,37 @@ run_once() {
     fi
 }
 
-# Test the system
-test_system() {
-    log "INFO" "Testing Ultimate Redundancy Automation System..."
-    
-    # Check if script can be loaded
-    cd "$SCRIPT_DIR"
-    if node -e "require('./$SYSTEM_SCRIPT'); console.log('Script loaded successfully')" >/dev/null 2>&1; then
-        log "INFO" "✓ Script can be loaded"
-    else
-        log "ERROR" "✗ Script cannot be loaded"
-        return 1
-    fi
-    
-    # Check if script can show help
-    if node "$SYSTEM_SCRIPT" >/dev/null 2>&1; then
-        log "INFO" "✓ Script CLI interface works"
-    else
-        log "ERROR" "✗ Script CLI interface failed"
-        return 1
-    fi
-    
-    log "INFO" "✓ All tests passed"
-}
+# Main script logic
+case "${1:-help}" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    restart)
+        restart
+        ;;
+    status)
+        status
+        ;;
+    logs)
+        logs "$2"
+        ;;
+    health)
+        health
+        ;;
+    check)
+        system_check
+        ;;
+    help|--help|-h)
+        show_help
+        ;;
+    *)
+        log "ERROR" "Unknown command: $1"
+        show_help
+        exit 1
+        ;;
+esac
 
-# Main function
-main() {
-    local command="${1:-help}"
-    
-    case "$command" in
-        "start")
-            check_node
-            check_system_script
-            check_workspace
-            start_system
-            ;;
-        "stop")
-            stop_system
-            ;;
-        "restart")
-            check_node
-            check_system_script
-            check_workspace
-            restart_system
-            ;;
-        "status")
-            show_status
-            ;;
-        "logs")
-            show_logs
-            ;;
-        "health")
-            check_node
-            check_system_script
-            check_workspace
-            run_health_check
-            ;;
-        "once")
-            check_node
-            check_system_script
-            check_workspace
-            run_once
-            ;;
-        "test")
-            check_node
-            check_system_script
-            test_system
-            ;;
-        "help"|*)
-            echo "Usage: $0 <command>"
-            echo ""
-            echo "Commands:"
-            echo "  start     - Start the Ultimate Redundancy Automation System"
-            echo "  stop      - Stop the Ultimate Redundancy Automation System"
-            echo "  restart   - Restart the Ultimate Redundancy Automation System"
-            echo "  status    - Show system status"
-            echo "  logs      - Show system logs"
-            echo "  health    - Run health check"
-            echo "  once      - Run one-time redundancy check"
-            echo "  test      - Test the system"
-            echo "  help      - Show this help message"
-            echo ""
-            echo "Environment Variables:"
-            echo "  REDUNDANCY_LOG_LEVEL - Log level (INFO, WARN, ERROR, DEBUG)"
-            echo "  REDUNDANCY_CHECK_INTERVAL - Main check interval in ms (default: 30000)"
-            echo "  REDUNDANCY_MAX_RETRIES - Maximum recovery attempts (default: 3)"
-            echo "  REDUNDANCY_AUTO_RECOVERY - Enable auto-recovery (default: true)"
-            echo "  HEALTH_CHECK_INTERVAL - Health check interval in ms (default: 60000)"
-            ;;
-    esac
-}
-
-# Run main function with all arguments
-main "$@"
+exit $?

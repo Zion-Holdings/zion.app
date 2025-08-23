@@ -1,4 +1,20 @@
 {
+<<<<<<< HEAD
+  "startTime": "2025-08-19T17:29:44.112Z",
+  "lastHealthCheck": "2025-08-19T17:35:00.057Z",
+  "pm2Status": {},
+  "githubActionsStatus": {
+    "totalWorkflows": 4,
+    "validWorkflows": 4,
+    "healthScore": 100,
+    "lastCheck": "2025-08-19T17:38:00.067Z"
+  },
+  "netlifyFunctionsStatus": {
+    "totalFunctions": 0,
+    "validFunctions": 0,
+    "healthScore": 100,
+    "lastCheck": "2025-08-19T17:38:00.053Z"
+=======
   "pm2": {
     "healthy": false,
     "processes": [],
@@ -29,6 +45,7 @@
       }
     ],
     "lastCheck": "2025-08-19T17:54:39.266Z"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-ce5e
   },
   "netlify": {
     "healthy": true,
@@ -521,9 +538,17 @@
     ],
     "lastCheck": "2025-08-19T17:54:39.266Z"
   },
+<<<<<<< HEAD
+  "gitSyncStatus": {
+    "isGitRepo": true,
+    "canExecuteGit": true,
+    "healthScore": 100,
+    "lastCheck": "2025-08-19T17:38:00.066Z"
+=======
   "system": {
     "healthy": true,
     "lastCheck": "2025-08-19T17:54:39.480Z"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-ce5e
   },
   "lastUpdate": "2025-08-19T17:54:39.480Z"
 }
