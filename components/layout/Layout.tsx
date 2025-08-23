@@ -1,10 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import EnhancedNavigation from './EnhancedNavigation';
-import UltraFuturisticFooter2036 from './UltraFuturisticFooter2036';
+import React, { useState } from 'react';
+import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
+import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
 import TopContactBar from './TopContactBar';
+import PerformanceMonitor from '../PerformanceMonitor';
+import AccessibilityEnhancer from '../AccessibilityEnhancer';
+import CookieConsentBanner from '../CookieConsentBanner';
+import EnhancedAnalytics from '../EnhancedAnalytics';
+import SecurityEnhancer from '../SecurityEnhancer';
+import MobileOptimizer from '../MobileOptimizer';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -12,107 +17,67 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    // Simulate initial loading
-    const timer = setTimeout(() => setIsLoading(false), 100);
-    return () => clearTimeout(timer);
-  }, []);
-
-  // Handle keyboard navigation for sidebar
-  const handleKeyDown = (event: React.KeyboardEvent) => {
-    if (event.key === 'Escape' && sidebarOpen) {
-      setSidebarOpen(false);
-    }
-  };
-
-  // Handle focus trap for sidebar
-  useEffect(() => {
-    if (sidebarOpen) {
-      const focusableElements = document.querySelectorAll(
-        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-      );
-      const firstElement = focusableElements[0] as HTMLElement;
-      const lastElement = focusableElements[focusableElements.length - 1] as HTMLElement;
-
-      const handleTabKey = (e: KeyboardEvent) => {
-        if (e.key === 'Tab') {
-          if (e.shiftKey) {
-            if (document.activeElement === firstElement) {
-              e.preventDefault();
-              lastElement.focus();
-            }
-          } else {
-            if (document.activeElement === lastElement) {
-              e.preventDefault();
-              firstElement.focus();
-            }
-          }
-        }
-      };
-
-      document.addEventListener('keydown', handleTabKey);
-      return () => document.removeEventListener('keydown', handleTabKey);
-    }
-  }, [sidebarOpen]);
+  const [showEnhancements, setShowEnhancements] = useState(false);
 
   return (
-    <div 
-      className="min-h-screen bg-black text-white relative overflow-x-hidden"
-      onKeyDown={handleKeyDown}
-      role="application"
-      aria-label="Zion Tech Group Application"
-    >
-      {/* Skip to content link for accessibility */}
-      <a 
-        href="#main" 
-        className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-cyan-500 focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-300"
-      >
-        Skip to main content
-      </a>
-
-      {/* Loading State */}
-      <AnimatePresence>
-        {isLoading && (
-          <motion.div
-            initial={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black"
-          >
-            <div className="text-center">
-              <div className="w-16 h-16 border-4 border-cyan-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-              <p className="text-cyan-400 text-lg font-semibold">Loading Zion Tech Group</p>
+    <AccessibilityEnhancer>
+      <MobileOptimizer>
+        <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
+          {/* Skip to content link for accessibility */}
+          <a href="#main" className="skip-link">Skip to main content</a>
+          
+          {/* Futuristic Background */}
+          <UltraFuturisticBackground2036 />
+          
+          {/* Layout Structure */}
+          <div className="relative z-10">
+            {/* Top Contact Bar */}
+            <TopContactBar />
+            
+            {/* Navigation */}
+            <UltraFuturisticNavigation2040 />
+            
+            {/* Sidebar and Main Content */}
+            <div className="flex">
+              <EnhancedSidebar2025 
+                isOpen={sidebarOpen} 
+                onClose={() => setSidebarOpen(false)} 
+              />
+              
+              <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
+                {children}
+              </main>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            
+            {/* Footer */}
+            <UltraFuturisticFooter2040 />
+          </div>
 
-      {/* Futuristic Background */}
-      <UltraFuturisticBackground2036 />
-      
-      {/* Layout Structure */}
-      <div className="relative z-10">
-        {/* Top Contact Bar */}
-        <TopContactBar />
-        
-        {/* Enhanced Navigation */}
-        <EnhancedNavigation />
-        
-        {/* Sidebar */}
-        <EnhancedSidebar2025 
-          isOpen={sidebarOpen} 
-          onClose={() => setSidebarOpen(false)} 
-        />
-        
-        {/* Main Content */}
-        <main id="main" className="pt-16">
-          {children}
-        </main>
-        
-        {/* Footer */}
-        <UltraFuturisticFooter2036 />
-      </div>
-    </div>
+          {/* Enhancement Toggle */}
+          <button
+            onClick={() => setShowEnhancements(!showEnhancements)}
+            className="fixed top-20 right-4 z-50 bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-full shadow-lg transition-all duration-300"
+            title="Toggle Enhancement Tools"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </button>
+
+          {/* Enhancement Tools */}
+          {showEnhancements && (
+            <>
+              <PerformanceMonitor showUI={true} />
+              <EnhancedAnalytics showUI={true} />
+              <SecurityEnhancer showUI={true} />
+            </>
+          )}
+          
+          {/* Cookie Consent Banner */}
+          <CookieConsentBanner />
+        </div>
+      </MobileOptimizer>
+    </AccessibilityEnhancer>
   );
 }
