@@ -8,6 +8,7 @@
   NEXT_PUBLIC_SITE_URL = "https://ziontechgroup.com"
   NEXT_PUBLIC_PLAUSIBLE_DOMAIN = "ziontechgroup.com"
 
+# Next.js plugin is not needed for static export
 # [[plugins]]
 #   package = "@netlify/plugin-nextjs"
 
