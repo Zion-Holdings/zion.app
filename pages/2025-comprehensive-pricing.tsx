@@ -90,10 +90,11 @@ const ComprehensivePricing: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100">
       <SEO 
-        title="2025 Comprehensive Pricing Guide | Zion Tech Group"
-        description="Explore our complete pricing guide for micro SAAS, IT services, and AI solutions. Find the perfect plan for your business needs with transparent pricing and feature comparisons."
-        keywords={["pricing", "micro SAAS pricing", "AI services pricing", "cybersecurity pricing", "cloud services pricing", "enterprise solutions pricing"]}
-        ogImage="https://ziontechgroup.com/og-image.jpg"
+        data={{
+          pageTitle: "2025 Comprehensive Pricing Guide | Zion Tech Group",
+          pageDescription: "Explore our complete pricing guide for micro SAAS, IT services, and AI solutions. Find the perfect plan for your business needs with transparent pricing and feature comparisons.",
+          pageKeywords: ["pricing", "micro SAAS pricing", "AI services pricing", "cybersecurity pricing", "cloud services pricing", "enterprise solutions pricing"]
+        }}
       />
 
       {/* Hero Section */}
