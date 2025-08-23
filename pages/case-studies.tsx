@@ -64,97 +64,44 @@ const CaseStudies: React.FC = () => {
       ],
       technologies: ['Space Data Analytics', 'Edge Computing', 'Real-time Processing'],
       duration: '10 months',
-      investment: '$680K',
-      roi: '340%',
-      image: '/api/placeholder/600/400',
-      category: 'Space Technology'
-    }
-  ];
-
-  const caseStudyCategories = [
-    {
-      icon: <Brain className="w-6 h-6" />,
-      title: 'AI & Machine Learning',
-      count: 24,
-      description: 'Transformative AI implementations across industries'
+      teamSize: '10 data scientists + 5 engineers',
+      featured: false
     },
     {
-      icon: <Shield className="w-6 h-6" />,
-      title: 'Cybersecurity',
-      count: 18,
-      description: 'Advanced security solutions for enterprise protection'
+      id: 'quantum-computing-automation',
+      title: 'Quantum Computing Automation Implementation',
+      company: 'Advanced Research Institute',
+      industry: 'Research & Development',
+      challenge: 'Complex optimization problems taking weeks to solve with classical computing methods',
+      solution: 'Implemented hybrid quantum-classical automation systems for research optimization and simulation',
+      results: [
+        '1000x faster optimization solving',
+        '90% reduction in research time',
+        'Breakthrough discoveries accelerated',
+        'New quantum algorithms developed'
+      ],
+      technologies: ['Quantum Computing', 'Hybrid Algorithms', 'Optimization', 'Research Automation'],
+      duration: '12 months',
+      teamSize: '15 quantum researchers + 8 engineers',
+      featured: false
     },
     {
-      icon: <Rocket className="w-6 h-6" />,
-      title: 'Space Technology',
-      count: 12,
-      description: 'Innovative space data and satellite solutions'
-    },
-    {
-      icon: <Globe className="w-6 h-6" />,
-      title: 'Blockchain & Web3',
-      count: 16,
-      description: 'Decentralized solutions and smart contract platforms'
-    },
-    {
-      icon: <Zap className="w-6 h-6" />,
-      title: 'Edge Computing',
-      count: 14,
-      description: 'High-performance edge computing deployments'
-    },
-    {
-      icon: <Building className="w-6 h-6" />,
-      title: 'Enterprise Solutions',
-      count: 31,
-      description: 'Comprehensive enterprise transformation projects'
-    }
-  ];
-
-  const successMetrics = [
-    {
-      icon: <TrendingUp className="w-8 h-8" />,
-      metric: '98.7%',
-      label: 'Success Rate',
-      description: 'Average project success rate across all implementations'
-    },
-    {
-      icon: <DollarSign className="w-8 h-8" />,
-      metric: '340%',
-      label: 'Average ROI',
-      description: 'Mean return on investment for our clients'
-    },
-    {
-      icon: <Clock className="w-8 h-8" />,
-      metric: '6.2 months',
-      label: 'Average Timeline',
-      description: 'Typical project completion time'
-    },
-    {
-      icon: <Users className="w-8 h-8" />,
-      metric: '500+',
-      label: 'Happy Clients',
-      description: 'Satisfied customers worldwide'
-    }
-  ];
-
-  const testimonials = [
-    {
-      quote: "Zion Tech Group transformed our healthcare operations with their AI platform. The results exceeded our expectations.",
-      author: "Dr. Sarah Chen",
-      position: "CTO, MedTech Innovations",
-      company: "MedTech Innovations"
-    },
-    {
-      quote: "Their quantum cybersecurity solution gave us the confidence to expand globally while maintaining security standards.",
-      author: "Michael Rodriguez",
-      position: "Head of Security",
-      company: "Global Finance Corp"
-    },
-    {
-      quote: "The space data analytics platform revolutionized our climate monitoring capabilities and saved us millions.",
-      author: "Dr. James Wilson",
-      position: "Director of Research",
-      company: "Satellite Solutions Inc"
+      id: 'edge-computing-iot',
+      title: 'Edge Computing IoT Automation',
+      company: 'Smart City Initiative',
+      industry: 'Smart Cities',
+      challenge: 'Centralized processing causing delays in critical city management decisions',
+      solution: 'Deployed edge computing infrastructure across city sensors for real-time autonomous decision making',
+      results: [
+        '95% reduction in response time',
+        'Real-time traffic optimization',
+        'Energy consumption reduced by 25%',
+        'Public safety improved by 40%'
+      ],
+      technologies: ['Edge Computing', 'IoT Sensors', 'Real-time Processing', 'Autonomous Systems'],
+      duration: '18 months',
+      teamSize: '12 engineers + 6 city planners',
+      featured: false
     }
   ];
 

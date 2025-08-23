@@ -131,11 +131,28 @@ export default function ResourcesPage() {
       registrationUrl: '#'
     },
     {
-      title: 'Sustainable Automation Webinar Series',
-      date: 'March 5, 2025',
-      location: 'Online',
-      description: 'Learn how autonomous systems are driving sustainability initiatives across industries.',
-      registrationUrl: '#'
+      id: 'automation-roi-calculator',
+      title: 'Automation ROI Calculator Guide',
+      description: 'How to calculate and maximize return on investment for automation initiatives.',
+      downloadUrl: '#',
+      pages: '28',
+      category: 'Business'
+    },
+    {
+      id: 'quantum-computing-automation',
+      title: 'Quantum Computing in Automation: A Practical Guide',
+      description: 'Understanding how quantum computing will revolutionize automation and optimization systems.',
+      downloadUrl: '#',
+      pages: '52',
+      category: 'Technology'
+    },
+    {
+      id: 'edge-computing-implementation',
+      title: 'Edge Computing Implementation Strategy',
+      description: 'Comprehensive guide to implementing edge computing for real-time automation and IoT systems.',
+      downloadUrl: '#',
+      pages: '38',
+      category: 'Technology'
     }
   ];
 
@@ -153,16 +170,32 @@ export default function ResourcesPage() {
       timeline: '2025-2026'
     },
     {
-      title: 'Human-AI Collaboration',
-      description: 'Researching optimal human-AI interaction patterns for enhanced productivity and safety.',
-      status: 'Planning Phase',
-      timeline: '2025-2028'
+      id: 'performance-benchmark',
+      title: 'Performance Benchmarking Tool',
+      description: 'Compare your automation performance against industry standards.',
+      type: 'Analytics Tool',
+      estimatedTime: '20 minutes'
     },
     {
-      title: 'Sustainable AI Development',
-      description: 'Investigating methods to reduce the environmental impact of AI training and deployment.',
-      status: 'Active Research',
-      timeline: '2025-2026'
+      id: 'quantum-readiness-assessment',
+      title: 'Quantum Computing Readiness Assessment',
+      description: 'Evaluate your organization\'s preparedness for quantum computing integration.',
+      type: 'Assessment Tool',
+      estimatedTime: '25 minutes'
+    },
+    {
+      id: 'edge-computing-calculator',
+      title: 'Edge Computing ROI Calculator',
+      description: 'Calculate the return on investment for edge computing implementation projects.',
+      type: 'Financial Tool',
+      estimatedTime: '20 minutes'
+    },
+    {
+      id: 'security-compliance-checker',
+      title: 'Security & Compliance Checker',
+      description: 'Assess your current security posture and compliance with industry standards.',
+      type: 'Security Tool',
+      estimatedTime: '35 minutes'
     }
   ];
 

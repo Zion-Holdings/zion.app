@@ -515,27 +515,113 @@ export default function Services() {
                 <Shield className="w-4 h-4 mr-2 text-blue-400" />
                 Complete Service Portfolio
               </div>
-              
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                Transform Your <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-red-500 bg-clip-text text-transparent">Business</span> with Our Services
-              </h1>
-              
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                From enterprise IT solutions to cutting-edge AI services and innovative micro SAAS platforms, 
-                we provide the technology you need to succeed in the digital age.
-              </p>
-              
-              {/* Innovative 2025 Services CTA */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="mt-8"
-              >
-                <div className="bg-gradient-to-r from-cyan-500/10 to-purple-500/10 backdrop-blur-sm rounded-2xl p-6 border border-cyan-400/20 max-w-2xl mx-auto">
-                  <h3 className="text-lg font-semibold text-cyan-400 mb-3">🚀 New for 2025!</h3>
-                  <p className="text-gray-300 mb-4">
-                    Discover our latest innovative services including quantum computing, AI autonomy, and space technology solutions.
+
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
+                <div className="text-4xl mb-4">☁️</div>
+                <h3 className="text-2xl font-bold mb-4 text-green-400">Cloud Infrastructure</h3>
+                <p className="text-white/70 mb-6">
+                  Scalable cloud solutions with automated deployment, monitoring, and optimization for peak performance.
+                </p>
+                <ul className="space-y-2 text-sm text-white/60">
+                  <li>• Cloud Migration</li>
+                  <li>• Auto-scaling</li>
+                  <li>• Performance Optimization</li>
+                  <li>• Security Hardening</li>
+                </ul>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
+                <div className="text-4xl mb-4">🔧</div>
+                <h3 className="text-2xl font-bold mb-4 text-blue-400">DevOps & CI/CD</h3>
+                <p className="text-white/70 mb-6">
+                  Streamlined development and deployment pipelines with automated testing, building, and deployment processes.
+                </p>
+                <ul className="space-y-2 text-sm text-white/60">
+                  <li>• CI/CD Pipeline Setup</li>
+                  <li>• Automated Testing</li>
+                  <li>• Infrastructure as Code</li>
+                  <li>• Monitoring & Alerting</li>
+                </ul>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
+                <div className="text-4xl mb-4">📊</div>
+                <h3 className="text-2xl font-bold mb-4 text-purple-400">Data Analytics</h3>
+                <p className="text-white/70 mb-6">
+                  Advanced analytics and business intelligence solutions that turn your data into actionable insights.
+                </p>
+                <ul className="space-y-2 text-sm text-white/60">
+                  <li>• Data Visualization</li>
+                  <li>• Predictive Analytics</li>
+                  <li>• Business Intelligence</li>
+                  <li>• Real-time Dashboards</li>
+                </ul>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
+                <div className="text-4xl mb-4">💡</div>
+                <h3 className="text-2xl font-bold mb-4 text-yellow-400">Technology Consulting</h3>
+                <p className="text-white/70 mb-6">
+                  Strategic technology consulting to help you navigate digital transformation and innovation challenges.
+                </p>
+                <ul className="space-y-2 text-sm text-white/60">
+                  <li>• Digital Strategy</li>
+                  <li>• Technology Roadmap</li>
+                  <li>• Innovation Workshops</li>
+                  <li>• Performance Audits</li>
+                </ul>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
+                <div className="text-4xl mb-4">🔮</div>
+                <h3 className="text-2xl font-bold mb-4 text-indigo-400">Quantum Computing Solutions</h3>
+                <p className="text-white/70 mb-6">
+                  Next-generation quantum computing automation for complex optimization problems and advanced simulations.
+                </p>
+                <ul className="space-y-2 text-sm text-white/60">
+                  <li>• Quantum Algorithm Development</li>
+                  <li>• Hybrid Classical-Quantum Systems</li>
+                  <li>• Optimization Problem Solving</li>
+                  <li>• Quantum Machine Learning</li>
+                </ul>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
+                <div className="text-4xl mb-4">🌐</div>
+                <h3 className="text-2xl font-bold mb-4 text-emerald-400">Edge Computing & IoT</h3>
+                <p className="text-white/70 mb-6">
+                  Distributed computing solutions that bring intelligence closer to data sources for real-time decision making.
+                </p>
+                <ul className="space-y-2 text-sm text-white/60">
+                  <li>• Edge Device Management</li>
+                  <li>• IoT Infrastructure</li>
+                  <li>• Real-time Processing</li>
+                  <li>• Distributed Intelligence</li>
+                </ul>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
+                <div className="text-4xl mb-4">🛡️</div>
+                <h3 className="text-2xl font-bold mb-4 text-red-400">Cybersecurity & Compliance</h3>
+                <p className="text-white/70 mb-6">
+                  Comprehensive security solutions with automated threat detection and compliance management systems.
+                </p>
+                <ul className="space-y-2 text-sm text-white/60">
+                  <li>• Threat Detection & Response</li>
+                  <li>• Compliance Automation</li>
+                  <li>• Security Monitoring</li>
+                  <li>• Zero Trust Architecture</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
+              <h2 className="text-3xl font-bold mb-6 text-cyan-400">Why Choose Our Services?</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-xl font-semibold mb-3 text-fuchsia-400">AI-Powered Excellence</h3>
+                  <p className="text-white/70">
+                    Our services leverage cutting-edge AI technology to deliver superior results, faster implementation, and continuous improvement.
                   </p>
                   <a
                     href="/innovative-2025-services-showcase"
