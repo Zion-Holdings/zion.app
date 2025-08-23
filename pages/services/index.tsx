@@ -65,7 +65,7 @@ import { advanced2025ITSolutionsExpansion } from '../../data/2025-advanced-it-so
 import { advanced2025AIServicesExpansion } from '../../data/2025-advanced-ai-services-expansion';
 
 // Import our new 2025 innovative services
-import { innovative2025MicroSaasExpansion } from '../../data/2025-innovative-micro-saas-expansion';
+import { innovativeMicroSaasExpansion2025 } from '../../data/2025-innovative-micro-saas-expansion';
 import { innovative2025ITSolutionsExpansion } from '../../data/2025-innovative-it-solutions-expansion';
 import { innovative2025AISolutionsExpansion } from '../../data/2025-innovative-ai-solutions-expansion';
 
@@ -162,7 +162,7 @@ export default function ServicesIndexPage() {
     .concat(advanced2025ITSolutionsExpansion as unknown[])
     .concat(advanced2025AIServicesExpansion as unknown[])
     // Our new 2025 innovative services
-    .concat(innovative2025MicroSaasExpansion as unknown[])
+    .concat(innovativeMicroSaasExpansion2025 as unknown[])
     .concat(innovative2025ITSolutionsExpansion as unknown[])
     .concat(innovative2025AISolutionsExpansion as unknown[]);
 
