@@ -1,1 +1,3 @@
-export default function Products() { return null; }
+export default function ProductsPage() {
+  return <div className="py-10">Products</div>;
+}
