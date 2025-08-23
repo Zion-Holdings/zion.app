@@ -3,27 +3,49 @@ const nextConfig = {
   // Enable React strict mode for better development experience
   reactStrictMode: true,
   
+  // Enable SWC minification for faster builds
+  swcMinify: true,
+  
   // Enable experimental features for better performance
   experimental: {
-    // Enable modern JavaScript features
+    // Enable modern React features
+    optimizeCss: true,
+    optimizePackageImports: ['lucide-react', 'framer-motion'],
+    
+    // Enable modern image optimization
+    turbo: {
+      rules: {
+        '*.svg': {
+          loaders: ['@svgr/webpack'],
+          as: '*.js',
+        },
+      },
+    },
+
+    // Enable modern bundling
     esmExternals: true,
     
-    // Enable optimized package imports
-    optimizePackageImports: ['framer-motion', 'lucide-react'],
+    // Enable modern CSS features
+    cssChunking: true,
+    
+    // Enable modern JavaScript features
+    modernCss: true,
   },
 
-  // Image optimization
+  // Image optimization configuration
   images: {
-    domains: ['ziontechgroup.com'],
     formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 60,
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
 
-  // Webpack configuration for performance
+  // Webpack configuration for better performance
   webpack: (config, { dev, isServer }) => {
     // Optimize bundle splitting
-    if (!dev && !isServer) {
+    if (!isServer) {
       config.optimization.splitChunks = {
         chunks: 'all',
         cacheGroups: {
@@ -31,12 +53,14 @@ const nextConfig = {
             test: /[\\/]node_modules[\\/]/,
             name: 'vendors',
             chunks: 'all',
+            priority: 10,
           },
           common: {
             name: 'common',
             minChunks: 2,
             chunks: 'all',
-            enforce: true,
+            priority: 5,
+            reuseExistingChunk: true,
           },
         },
       };
@@ -48,16 +72,21 @@ const nextConfig = {
       config.optimization.minimizer = config.optimization.minimizer || [];
     }
 
+    // Handle SVG files
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+
     return config;
   },
 
-  // Headers for security and performance
+  // Headers for better security and performance
   async headers() {
     return [
       {
         source: '/(.*)',
         headers: [
-          // Security headers
           {
             key: 'X-Frame-Options',
             value: 'DENY',
@@ -67,22 +96,12 @@ const nextConfig = {
             value: 'nosniff',
           },
           {
-            key: 'X-XSS-Protection',
-            value: '1; mode=block',
-          },
-          {
             key: 'Referrer-Policy',
             value: 'strict-origin-when-cross-origin',
           },
           {
             key: 'Permissions-Policy',
             value: 'camera=(), microphone=(), geolocation=()',
-          },
-          
-          // Performance headers
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
           },
         ],
       },
@@ -91,12 +110,12 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'no-cache, no-store, must-revalidate',
+            value: 'public, max-age=3600, stale-while-revalidate=86400',
           },
         ],
       },
       {
-        source: '/(.*).(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot)',
+        source: '/_next/static/(.*)',
         headers: [
           {
             key: 'Cache-Control',
@@ -123,16 +142,16 @@ const nextConfig = {
     ];
   },
 
-  // Rewrites for API routes
+  // Rewrites for better routing
   async rewrites() {
     return [
       {
-        source: '/api/analytics',
-        destination: '/api/analytics',
+        source: '/sitemap.xml',
+        destination: '/api/sitemap',
       },
       {
-        source: '/api/error-reporting',
-        destination: '/api/error-reporting',
+        source: '/robots.txt',
+        destination: '/api/robots',
       },
     ];
   },
@@ -142,23 +161,33 @@ const nextConfig = {
     CUSTOM_KEY: process.env.CUSTOM_KEY,
   },
 
-  // Compression
+  // Enable compression
   compress: true,
 
-  // Powered by header
+  // Enable powered by header removal
   poweredByHeader: false,
 
-  // Trailing slash
+  // Enable trailing slash for better SEO
   trailingSlash: false,
 
-  // Base path
-  basePath: '',
+  // Enable page extensions
+  pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
 
-  // Asset prefix
-  assetPrefix: '',
+  // Enable source maps in development
+  productionBrowserSourceMaps: false,
 
-  // Output configuration
-  output: 'standalone',
+  // Bundle analyzer configuration
+  ...(process.env.ANALYZE === 'true' && {
+    webpack: (config) => {
+      config.plugins.push(
+        new (require('webpack-bundle-analyzer').BundleAnalyzerPlugin)({
+          analyzerMode: 'static',
+          openAnalyzer: false,
+        })
+      );
+      return config;
+    },
+  }),
 };
 
 module.exports = nextConfig;
