@@ -125,10 +125,18 @@ const allServices = [
   ...innovative2037MicroSaasServices,
   ...innovative2037ITServices,
   ...innovative2037AIServices,
+<<<<<<< HEAD
+  // Latest innovative services
+  ...advancedAIAutomationServices,
+  ...nextGenITInfrastructureServices,
+  ...innovativeMicroSaasSolutions2025,
+  ...specializedIndustrySolutions
+=======
   // Add our new 2037 Q1 innovative services
   ...real2037Q1InnovativeAdditions,
   ...real2037Q1ITInnovations,
   ...real2037Q1MicroSaasInnovations
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-b89c
 ];
 
 const categories = [
