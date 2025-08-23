@@ -2,11 +2,11 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Menu, X, ChevronDown, ChevronRight, Search, User, ShoppingCart, 
-  Brain, Atom, Shield, Rocket, Cpu, Database, Target, Sparkles,
-  Home, Briefcase, Users, FileText, Phone, Mail, MapPin, Globe,
-  Zap, Star, TrendingUp, Award, Clock, CheckCircle, ExternalLink,
-  GraduationCap, Building, Truck, Zap as ZapIcon, Heart, DollarSign
+  Menu, ChevronDown, X, Phone, Mail, ArrowRight,
+  Brain, Rocket, Target, Atom, Shield,
+  DollarSign, BarChart3, Globe, Grid, Heart, Database,
+  Cpu, Palette, Cloud, Network, TrendingUp, ShoppingCart, Settings, Building, Monitor,
+  BookOpen, FileText, MessageCircle, HelpCircle, GraduationCap, Star, Handshake, Code
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -30,7 +30,62 @@ const contactInfo = {
 
 const navigationItems: NavigationItem[] = [
   {
-    name: 'AI & Machine Learning',
+    name: 'Revolutionary Services 2043',
+    href: '/services',
+    icon: <Rocket className="w-5 h-5" />,
+    description: 'Future-defining technology solutions',
+    badge: 'New 2043',
+    category: 'services',
+    color: 'from-emerald-500 to-cyan-500',
+    children: [
+      { 
+        name: 'All Services', 
+        href: '/services', 
+        description: 'Complete revolutionary services overview',
+        icon: <Grid className="w-4 h-4" />,
+        featured: true
+      },
+      { 
+        name: 'AI Consciousness Evolution 2043', 
+        href: '/ai-consciousness-evolution-2043', 
+        description: 'Next-generation AI consciousness',
+        icon: <Brain className="w-4 h-4" />,
+        color: 'from-purple-500 to-pink-500',
+        featured: true
+      },
+      { 
+        name: 'Quantum Neural Network 2043', 
+        href: '/quantum-ai-neural-2043', 
+        description: 'Quantum-powered AI neural networks',
+        icon: <Atom className="w-4 h-4" />,
+        color: 'from-blue-500 to-cyan-500',
+        featured: true
+      },
+      { 
+        name: 'AI Business Intelligence 2043', 
+        href: '/ai-business-intelligence-2043', 
+        description: 'AI-powered business intelligence',
+        icon: <BarChart3 className="w-4 h-4" />,
+        color: 'from-emerald-500 to-teal-500'
+      },
+      { 
+        name: 'Quantum Cybersecurity 2043', 
+        href: '/quantum-cybersecurity-2043', 
+        description: 'Quantum-resistant security',
+        icon: <Shield className="w-4 h-4" />,
+        color: 'from-red-500 to-orange-500'
+      },
+      { 
+        name: 'Brain-Computer Interface', 
+        href: '/brain-computer-interface-2040', 
+        description: 'Neural interface technology',
+        icon: <Brain className="w-4 h-4" />,
+        color: 'from-pink-500 to-purple-500'
+      }
+    ]
+  },
+  {
+    name: 'AI & Consciousness',
     href: '/ai-services',
     icon: <Brain className="w-5 h-5" />,
     description: 'Revolutionary AI consciousness and emotional intelligence',
@@ -54,20 +109,197 @@ const navigationItems: NavigationItem[] = [
     description: 'Next-generation quantum computing solutions',
     badge: 'Quantum',
     children: [
-      { name: 'Quantum Machine Learning', href: '/quantum-machine-learning-platform', description: 'Unlock quantum advantage in ML', featured: true },
-      { name: 'Quantum-Secure Cloud', href: '/quantum-secure-cloud-infrastructure', description: 'Future-proof security with quantum encryption' },
-      { name: 'Quantum Internet Security', href: '/quantum-internet-security-platform', description: 'Secure the future of the internet' },
-      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading-platform', description: 'Quantum advantage in financial markets' },
-      { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform', description: 'Discover new materials with quantum computing' },
-      { name: 'Quantum Neural Networks', href: '/quantum-neural-network-platform', description: 'Advanced quantum neural computing' }
+      { 
+        name: 'Quantum Cloud Infrastructure 2043', 
+        href: '/quantum-cloud-infrastructure-2043', 
+        description: 'Quantum-powered cloud infrastructure',
+        icon: <Cloud className="w-4 h-4" />,
+        featured: true
+      },
+      { 
+        name: 'Quantum Database Platform 2043', 
+        href: '/quantum-database-2043', 
+        description: 'Quantum-powered database',
+        icon: <Database className="w-4 h-4" />
+      },
+      { 
+        name: 'Quantum Edge Computing 2043', 
+        href: '/quantum-edge-computing-2043', 
+        description: 'Quantum-powered edge computing',
+        icon: <Cpu className="w-4 h-4" />
+      },
+      { 
+        name: 'Quantum API Gateway 2043', 
+        href: '/quantum-api-gateway-2043', 
+        description: 'Quantum-powered API gateway',
+        icon: <Network className="w-4 h-4" />
+      },
+      {
+        name: 'Quantum Cloud Infrastructure 2041',
+        href: '/quantum-cloud-infrastructure-2041',
+        description: 'Quantum cloud computing',
+        icon: <Cloud className="w-4 h-4" />
+      },
+      {
+        name: 'Quantum Bio-Computing 2041',
+        href: '/quantum-bio-computing-2041',
+        description: 'Quantum biological computing',
+        icon: <Atom className="w-4 h-4" />
+      },
+      {
+        name: 'Quantum Neural Network Simulator',
+        href: '/quantum-neural-network-simulator',
+        description: 'Simulate quantum neural networks',
+        icon: <Brain className="w-4 h-4" />
+      },
+      {
+        name: 'Quantum-Enhanced Cybersecurity',
+        href: '/quantum-cybersecurity-suite',
+        description: 'Future-proof quantum security',
+        icon: <Shield className="w-4 h-4" />
+      }
     ]
   },
   {
-    name: 'Emerging Technologies',
-    href: '/emerging-tech',
-    icon: <Rocket className="w-5 h-5" />,
-    description: 'Cutting-edge emerging technology solutions',
-    badge: 'Future',
+    name: 'Cybersecurity',
+    href: '/cybersecurity',
+    icon: <Shield className="w-5 h-5" />,
+    description: 'Advanced security solutions',
+    badge: 'Secure',
+    category: 'security',
+    color: 'from-red-500 to-orange-500',
+    children: [
+      { 
+        name: 'Quantum Cybersecurity 2043', 
+        href: '/quantum-cybersecurity-2043', 
+        description: 'Quantum-resistant cybersecurity',
+        icon: <Shield className="w-4 h-4" />,
+        featured: true
+      },
+      { 
+        name: 'AI Network Security 2043', 
+        href: '/ai-network-security-2043', 
+        description: 'AI-powered network security',
+        icon: <Network className="w-4 h-4" />
+      },
+      { 
+        name: 'Quantum Internet Security 2043', 
+        href: '/quantum-internet-security-2043', 
+        description: 'Quantum internet security',
+        icon: <Globe className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Business Solutions',
+    href: '/business-solutions',
+    icon: <Target className="w-5 h-5" />,
+    description: 'Enterprise business solutions',
+    badge: 'Business',
+    category: 'business',
+    color: 'from-emerald-500 to-teal-500',
+    children: [
+      { 
+        name: 'AI Business Intelligence 2043', 
+        href: '/ai-business-intelligence-2043', 
+        description: 'AI-powered business intelligence',
+        icon: <BarChart3 className="w-4 h-4" />,
+        featured: true
+      },
+      {
+        name: 'Zero-Trust Network Architecture',
+        href: '/zero-trust-network-architecture-platform',
+        description: 'Secure every connection',
+        icon: <Shield className="w-4 h-4" />
+      },
+      {
+        name: 'Autonomous Cloud Infrastructure',
+        href: '/autonomous-cloud-infrastructure-manager',
+        description: 'Self-managing cloud infrastructure',
+        icon: <Cloud className="w-4 h-4" />
+      },
+      {
+        name: 'Intelligent API Gateway',
+        href: '/intelligent-api-gateway-and-management',
+        description: 'Smart API management',
+        icon: <Network className="w-4 h-4" />
+      },
+      {
+        name: 'AI Customer Success 2041',
+        href: '/ai-customer-success-2041',
+        description: 'Autonomous customer management',
+        icon: <Heart className="w-4 h-4" />
+      },
+      { 
+        name: 'AI Marketing Automation 2043', 
+        href: '/ai-marketing-automation-2043', 
+        description: 'Intelligent marketing automation',
+        icon: <TrendingUp className="w-4 h-4" />
+      },
+      { 
+        name: 'Autonomous Supply Chain 2043', 
+        href: '/autonomous-supply-chain-2043', 
+        description: 'AI-powered supply chain',
+        icon: <ShoppingCart className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'IT Services',
+    href: '/it-services',
+    icon: <Cpu className="w-5 h-5" />,
+    description: 'Advanced IT infrastructure solutions',
+    badge: 'IT',
+    category: 'it',
+    color: 'from-blue-500 to-indigo-500',
+    children: [
+      { 
+        name: 'Autonomous DevOps Platform 2043', 
+        href: '/autonomous-devops-2043', 
+        description: 'AI-powered autonomous DevOps',
+        icon: <Settings className="w-4 h-4" />,
+        featured: true
+      },
+      { 
+        name: 'Autonomous Data Center 2043', 
+        href: '/autonomous-data-center-2043', 
+        description: 'AI-powered data center management',
+        icon: <Building className="w-4 h-4" />
+      },
+      { 
+        name: 'AI IT Service Management 2043', 
+        href: '/ai-itsm-2043', 
+        description: 'Intelligent IT service management',
+        icon: <Monitor className="w-4 h-4" />
+      },
+      {
+        name: 'Autonomous AI Research Assistant',
+        href: '/autonomous-ai-research-assistant',
+        description: 'Self-directed research with AI',
+        icon: <Brain className="w-4 h-4" />
+      },
+      {
+        name: 'Emotional Intelligence AI',
+        href: '/emotional-intelligence-ai-platform',
+        description: 'Human-like emotional understanding',
+        icon: <Heart className="w-4 h-4" />
+      },
+      {
+        name: 'Autonomous Content Creation',
+        href: '/autonomous-content-creation-engine',
+        description: 'Self-generating content with AI',
+        icon: <Code className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Solutions',
+    href: '/solutions',
+    icon: <Target className="w-5 h-5" />,
+    description: 'Industry-specific solutions',
+    badge: 'Solutions',
+    category: 'solutions',
+    color: 'from-orange-500 to-red-500',
     children: [
       { name: 'Metaverse Development', href: '/metaverse-development-platform', description: 'Build immersive virtual worlds', featured: true },
       { name: 'Space Technology AI', href: '/space-technology-ai-platform', description: 'AI-powered space exploration' },
@@ -108,11 +340,13 @@ const navigationItems: NavigationItem[] = [
     ]
   },
   {
-    name: 'Micro SAAS',
-    href: '/micro-saas',
-    icon: <Zap className="w-5 h-5" />,
-    description: 'Innovative business solutions for modern enterprises',
-    badge: 'SAAS',
+    name: 'Healthcare & Biotech',
+    href: '/healthcare',
+    icon: <Heart className="w-5 h-5" />,
+    description: 'Advanced healthcare solutions',
+    badge: 'Health',
+    category: 'healthcare',
+    color: 'from-red-500 to-pink-500',
     children: [
       { name: 'AI Content Creation', href: '/ai-content-creation-suite', description: 'Create engaging content at scale', featured: true },
       { name: 'AI Sales Intelligence', href: '/ai-sales-intelligence-platform', description: 'Supercharge sales with AI insights' },

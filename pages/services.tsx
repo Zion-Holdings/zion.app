@@ -55,26 +55,24 @@ import { revolutionary2042MicroSaasServices } from '../data/revolutionary-2042-m
 import { advanced2025MicroSaasExpansion } from '../data/2025-advanced-micro-saas-expansion';
 import { advanced2025ITSolutionsExpansion } from '../data/2025-advanced-it-solutions-expansion';
 import { advanced2025AIServicesExpansion } from '../data/2025-advanced-ai-services-expansion';
+
+// Import our new comprehensive advanced services
+import { advancedCybersecurityServices2025 } from '../data/2025-advanced-cybersecurity-services';
+import { advancedDevOpsInfrastructure2025 } from '../data/2025-advanced-devops-infrastructure';
+import { advancedDataAnalyticsBI2025 } from '../data/2025-advanced-data-analytics-bi';
+import { advancedFintechBlockchain2025 } from '../data/2025-advanced-fintech-blockchain';
+import { advancedHealthcareBiotech2025 } from '../data/2025-advanced-healthcare-biotech';
 // Import our new 2025 innovative services expansion
 import { innovative2025MicroSaasExpansion } from '../data/innovative-2025-micro-saas-expansion';
 import { innovative2025ITSolutionsExpansion } from '../data/innovative-2025-it-solutions-expansion';
 import { innovative2025AIServicesExpansion } from '../data/innovative-2025-ai-services-expansion';
 
-// Import our new 2025 cutting-edge innovative services
-import { innovative2025CuttingEdgeServices } from '../data/innovative-2025-cutting-edge-services';
-import { innovative2025EnterpriseSolutions } from '../data/innovative-2025-enterprise-solutions';
-import { innovative2025IndustrySolutions } from '../data/innovative-2025-industry-solutions';
-
-// Import new expanded services
-import { innovativeMicroSaasServicesExpanded } from '../data/innovative-2025-micro-saas-expanded';
-import { innovativeITServicesExpanded } from '../data/innovative-2025-it-services-expanded';
-import { innovativeAIServicesExpanded } from '../data/innovative-2025-ai-services-expanded';
-
-// Import our new innovative 2027 services
-import { innovative2027AIBusinessIntelligenceServices } from '../data/innovative-2027-ai-business-intelligence';
-import { innovative2027CybersecurityComplianceServices } from '../data/innovative-2027-cybersecurity-compliance';
-import { innovative2027CloudDevOpsServices } from '../data/innovative-2027-cloud-devops';
-import { innovative2027IndustrySolutions } from '../data/innovative-2027-industry-solutions';
+// Import our new innovative 2040 services
+import { innovative2040ITServices } from '../data/innovative-2040-it-services';
+// Import our new 2025 advanced enterprise services
+import { advancedEnterpriseServices } from '../data/2025-advanced-enterprise-services-expansion';
+import { innovativeMicroSaasServices } from '../data/innovative-2025-micro-saas-expansions';
+import { cuttingEdgeITInfrastructureServices } from '../data/2025-cutting-edge-it-infrastructure';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -178,176 +176,45 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
-  // Add our new innovative 2027 services
-  ...innovative2027AIBusinessIntelligenceServices,
-  ...innovative2027CybersecurityComplianceServices,
-  ...innovative2027CloudDevOpsServices,
-  ...innovative2027IndustrySolutions
-];
-
-const categories = [
-  {
-    id: 'all',
-    name: 'All Services',
-    icon: <Grid className="w-6 h-6" />,
-    color: 'from-gray-500 to-slate-500',
-    description: 'Complete portfolio of all services'
-  },
-  {
-    id: 'ai-automation',
-    name: 'AI Automation',
-    icon: <Brain className="w-6 h-6" />,
-    color: 'from-blue-500 to-purple-500',
-    description: 'AI-powered automation solutions'
-  },
-  {
-    id: 'it-infrastructure',
-    name: 'IT Infrastructure',
-    icon: <Building className="w-6 h-6" />,
-    color: 'from-indigo-500 to-purple-500',
-    description: 'Enterprise infrastructure and cloud solutions'
-  },
-  {
-    id: 'micro-saas',
-    name: 'Micro SAAS',
-    icon: <Target className="w-6 h-6" />,
-    color: 'from-green-500 to-emerald-500',
-    description: 'Innovative business solutions'
-  },
-  {
-    id: 'ai-services',
-    name: 'AI Services',
-    icon: <Cpu className="w-6 h-6" />,
-    color: 'from-purple-500 to-pink-500',
-    description: 'Cutting-edge AI and machine learning services'
-  },
-  {
-    id: 'business-intelligence',
-    name: 'Business Intelligence',
-    icon: <Target className="w-6 h-6" />,
-    color: 'from-emerald-500 to-teal-500',
-    description: 'Advanced analytics and business intelligence solutions'
-  },
-  {
-    id: 'enterprise-it',
-    name: 'Enterprise IT',
-    icon: <Building className="w-6 h-6" />,
-    color: 'from-blue-500 to-purple-500',
-    description: 'Enterprise solutions and infrastructure'
-  },
-  {
-    id: 'ai-consciousness',
-    name: 'AI & Consciousness',
-    icon: <Brain className="w-6 h-6" />,
-    color: 'from-cyan-500 to-blue-500',
-    description: 'Revolutionary AI consciousness and emotional intelligence'
-  },
-  {
-    id: 'revolutionary-2046',
-    name: 'Revolutionary 2046',
-    icon: <Rocket className="w-6 h-6" />,
-    color: 'from-emerald-500 to-cyan-500',
-    description: 'Future-defining 2046 technology solutions',
-    badge: 'New'
-  },
-  {
-    id: 'quantum-emerging',
-    name: 'Quantum & Emerging Tech',
-    icon: <Atom className="w-6 h-6" />,
-    color: 'from-purple-500 to-pink-500',
-    description: 'Quantum computing and breakthrough technologies'
-  },
-  {
-    id: 'space-metaverse',
-    name: 'Space & Metaverse',
-    icon: <Rocket className="w-6 h-6" />,
-    color: 'from-pink-500 to-rose-500',
-    description: 'Space exploration and virtual worlds'
-  },
-  {
-    id: 'creative-media',
-    name: 'Creative & Media',
-    icon: <Palette className="w-6 h-6" />,
-    color: 'from-indigo-500 to-purple-500',
-    description: 'AI-powered creative solutions'
-  },
-  {
-    id: 'healthcare-biotech',
-    name: 'Healthcare & Biotech',
-    icon: <Heart className="w-6 h-6" />,
-    color: 'from-red-500 to-pink-500',
-    description: 'Advanced healthcare solutions'
-  },
-  {
-    id: 'transportation-logistics',
-    name: 'Transportation & Logistics',
-    icon: <Truck className="w-6 h-6" />,
-    color: 'from-blue-500 to-cyan-500',
-    description: 'Smart transportation solutions'
-  },
-  {
-    id: 'education-research',
-    name: 'Education & Research',
-    icon: <GraduationCap className="w-6 h-6" />,
-    color: 'from-yellow-500 to-orange-500',
-    description: 'Learning and research platforms'
-  },
-  {
-    id: 'innovative-ai',
-    name: 'Innovative AI Solutions',
-    icon: <Brain className="w-6 h-6" />,
-    color: 'from-purple-500 to-indigo-500',
-    description: 'Cutting-edge AI and machine learning services'
-  },
-  {
-    id: 'enterprise-ai',
-    name: 'Enterprise AI',
-    icon: <Building className="w-6 h-6" />,
-    color: 'from-blue-500 to-cyan-500',
-    description: 'AI-powered enterprise solutions and automation'
-  },
-  {
-    id: 'industry-solutions',
-    name: 'Industry Solutions',
-    icon: <Cpu className="w-6 h-6" />,
-    color: 'from-green-600 to-teal-700',
-    description: 'AI-powered autonomous decision-making systems'
-  },
-  {
-    id: 'metaverse-business',
-    name: 'Metaverse Business',
-    icon: <Globe className="w-6 h-6" />,
-    color: 'from-blue-500 to-cyan-600',
-    description: 'Business infrastructure for the metaverse'
-  },
-  {
-    id: 'neural-quantum',
-    name: 'Neural & Quantum',
-    icon: <Atom className="w-6 h-6" />,
-    color: 'from-purple-600 to-pink-700',
-    description: 'Neural networks and quantum computing fusion'
-  },
-  {
-    id: 'revolutionary-2040',
-    name: 'Revolutionary 2040',
-    icon: <Rocket className="w-6 h-6" />,
-    color: 'from-purple-600 to-pink-700',
-    description: 'Revolutionary 2040 services with quantum consciousness and interdimensional capabilities'
-  },
-  {
-    id: 'revolutionary-2041',
-    name: 'Revolutionary 2041',
-    icon: <Globe className="w-6 h-6" />,
-    color: 'from-indigo-700 to-purple-800',
-    description: 'Revolutionary 2041 services with multiverse AI and temporal computing'
-  },
-  {
-    id: 'revolutionary-advertising',
-    name: 'Revolutionary Advertising',
-    icon: <Target className="w-6 h-6" />,
-    color: 'from-orange-600 to-red-700',
-    description: 'Revolutionary services with comprehensive advertising and marketing content'
-  }
+  // Our new 2025 advanced services
+  ...advanced2025MicroSaasExpansion,
+  ...advanced2025ITSolutionsExpansion,
+  ...advanced2025AIServicesExpansion,
+  
+  // Our new comprehensive advanced services (Priority)
+  ...advancedCybersecurityServices2025,
+  ...advancedDevOpsInfrastructure2025,
+  ...advancedDataAnalyticsBI2025,
+  ...advancedFintechBlockchain2025,
+  ...advancedHealthcareBiotech2025,
+  // Our new innovative services
+  ...innovative2037MicroSaasServices,
+  ...innovative2037ITServices,
+  ...innovative2037AIServices,
+  ...innovative2038CuttingEdgeServices,
+  ...innovative2038ITInfrastructureServices,
+  // Our additional innovative services
+  ...innovative2037Services,
+  ...advanced2038Services,
+  ...revolutionary2039Services,
+  
+  // Our new innovative 2040 services
+  ...innovative2040FuturisticServices,
+  ...innovative2040ITServices,
+  // Our new comprehensive services
+  ...revolutionary2040FuturisticServices,
+  ...revolutionary2041AdvancedServices,
+  // Our latest innovative services
+  ...advanced2041EnterpriseServices,
+  ...revolutionary2042MicroSaasServices,
+  // Our new 2025 innovative services expansion
+  ...innovative2025MicroSaasExpansion,
+  ...innovative2025ITSolutionsExpansion,
+  ...innovative2025AIServicesExpansion,
+  // Our new 2025 advanced enterprise services
+  ...advancedEnterpriseServices,
+  ...innovativeMicroSaasServices,
+  ...cuttingEdgeITInfrastructureServices
 ];
 
 const sortOptions = [

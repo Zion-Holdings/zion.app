@@ -8,6 +8,10 @@ export interface Innovative2040FuturisticService {
   period?: string;
   features: string[];
   benefits: string[];
+  icon?: string;
+  color?: string;
+  textColor?: string;
+  popular?: boolean;
   link: string;
   icon?: string;
   color?: string;
@@ -36,7 +40,7 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     price: '$15,000',
     period: '/month',
     icon: '🧠',
-    color: 'from-purple-600 to-indigo-700',
+    color: 'from-purple-600 to-pink-600',
     textColor: 'text-purple-400',
     popular: true,
     features: [
@@ -77,10 +81,10 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     category: 'Quantum & Emerging Tech',
     price: '$8,500',
     period: '/month',
-    icon: '🌐',
-    color: 'from-cyan-600 to-blue-700',
-    textColor: 'text-cyan-400',
-    popular: false,
+    icon: '🌟',
+    color: 'from-blue-600 to-cyan-600',
+    textColor: 'text-blue-400',
+    popular: true,
     features: [
       'True 3D holographic displays',
       'Quantum-powered real-time rendering',
@@ -117,7 +121,12 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     tagline: 'Predict the future with unprecedented accuracy',
     description: 'Advanced AI system that analyzes temporal patterns and predicts future events with remarkable precision across multiple domains.',
     category: 'AI & Machine Learning',
-    price: '$12,000/month',
+    price: '$12,000',
+    period: '/month',
+    icon: '🔮',
+    color: 'from-green-600 to-emerald-600',
+    textColor: 'text-green-400',
+    popular: false,
     features: [
       'Multi-dimensional time analysis',
       'Quantum-enhanced prediction algorithms',

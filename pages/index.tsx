@@ -37,11 +37,10 @@ const HomePage: React.FC = () => {
   return (
     <ErrorBoundary>
       <SEOOptimizer />
-      <AnalyticsTracker />
-      <PerformanceOptimizer />
+      <Analytics />
+      <AccessibilityEnhancer />
       <MobileOptimizer showDebugInfo={false}>
-        <AccessibilityEnhancer />
-        <Homepage2025 />
+        <Homepage2043 />
         <PerformanceMonitor showUI={true} />
       </MobileOptimizer>
     </ErrorBoundary>

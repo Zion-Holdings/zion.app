@@ -1,10 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
 import { 
-  Brain, Atom, Shield, Rocket, Cpu, Target, Sparkles, 
-  Heart, DollarSign, GraduationCap, Building, Truck, Zap,
-  Phone, Mail, MapPin, Globe, Linkedin, Twitter, Github, Youtube,
-  ArrowRight, Star, CheckCircle, TrendingUp, Award, Clock
+  Globe, Phone, Mail, MapPin, 
+  Brain, Atom, Target, 
+  Star, Rocket, Shield,
+  Twitter, Linkedin, Youtube, Github, 
+  ArrowUp, ArrowRight, ExternalLink
 } from 'lucide-react';
 
 const UltraFuturisticFooter2040: React.FC = () => {
