@@ -92,17 +92,16 @@ const EnhancedSidebar2025: React.FC<{ isOpen: boolean; onClose: () => void }> = 
       ]
     },
     {
-      id: 'industry-solutions',
-      title: 'Industry Solutions',
+      id: 'main-pages',
+      title: 'Company & Resources',
       icon: Building,
       color: 'from-indigo-500 to-purple-500',
       items: [
-        { label: 'Enterprise Solutions', href: '/solutions/enterprise', badge: 'Enterprise', featured: true },
-        { label: 'Startup Solutions', href: '/solutions/startup', badge: 'Startup', featured: true },
-        { label: 'Government Solutions', href: '/solutions/government', badge: 'Government', featured: true },
-        { label: 'Healthcare Solutions', href: '/healthcare-solutions' },
-        { label: 'Financial Services', href: '/financial-solutions' },
-        { label: 'Manufacturing Solutions', href: '/manufacturing-solutions' }
+        { label: 'About Us', href: '/about', badge: 'Company' },
+        { label: 'Case Studies', href: '/case-studies', badge: 'Success' },
+        { label: 'Blog', href: '/blog', badge: 'Insights' },
+        { label: 'Careers', href: '/careers', badge: 'Join Us' },
+        { label: 'Contact', href: '/contact', badge: 'Get In Touch' }
       ]
     },
     {
