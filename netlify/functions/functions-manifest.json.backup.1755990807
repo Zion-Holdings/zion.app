@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "generatedAt": "2025-08-11T18:34:16.950Z",
+=======
   "generatedAt": "2025-08-12T01:32:14.326Z",
+>>>>>>> origin/cursor/autonomous-cloud-automation-and-sync-1971
   "functions": [
     "a11y-alt-text-runner",
     "accelerated-sync-orchestrator",
@@ -13,8 +17,11 @@
     "branch-cleanup-runner",
     "broken-image-scanner",
     "broken-image-scanner-runner",
+<<<<<<< HEAD
+=======
     "canonical-auditor",
     "cloud-swarm-committer",
+>>>>>>> origin/cursor/autonomous-cloud-automation-and-sync-1971
     "cloud_orchestrator",
     "continuous-front-runner",
     "continuous-orchestrator",
@@ -58,9 +65,12 @@
     "newsroom-auto-publisher",
     "newsroom-runner",
     "og-image-update-runner",
+<<<<<<< HEAD
+=======
     "orchestrator-swarm",
     "orphan-pages-detector",
     "pagespeed-insights-runner",
+>>>>>>> origin/cursor/autonomous-cloud-automation-and-sync-1971
     "readme-advertiser",
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
