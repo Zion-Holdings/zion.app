@@ -113,10 +113,11 @@ const navigationItems: NavigationItem[] = [
         featured: true
       },
       { 
-        name: 'Autonomous AI Research 2043', 
-        href: '/autonomous-ai-research-2043', 
-        description: 'Fully autonomous AI research',
-        icon: <Cpu className="w-4 h-4" />
+        name: 'AI Business Intelligence 2043', 
+        href: '/ai-business-intelligence-2043', 
+        description: 'AI-powered business intelligence',
+        icon: <BarChart3 className="w-4 h-4" />,
+        featured: true
       },
       { 
         name: 'AI Content Personalization 2043', 
@@ -209,16 +210,16 @@ const navigationItems: NavigationItem[] = [
         featured: true
       },
       { 
-        name: 'AI Network Security 2043', 
-        href: '/ai-network-security-2043', 
-        description: 'AI-powered network security',
-        icon: <Network className="w-4 h-4" />
+        name: 'Zero-Trust Network Architecture', 
+        href: '/zero-trust-network-architecture', 
+        description: 'Advanced zero-trust security',
+        icon: <Shield className="w-4 h-4" />
       },
       { 
-        name: 'Quantum Internet Security 2043', 
-        href: '/quantum-internet-security-2043', 
-        description: 'Quantum internet security',
-        icon: <Globe className="w-4 h-4" />
+        name: 'AI-Powered Cybersecurity', 
+        href: '/ai-powered-cybersecurity', 
+        description: 'AI-powered security solutions',
+        icon: <Brain className="w-4 h-4" />
       }
     ]
   },
@@ -240,37 +241,25 @@ const navigationItems: NavigationItem[] = [
       },
       {
         name: 'Zero-Trust Network Architecture',
-        href: '/zero-trust-network-architecture-platform',
+        href: '/zero-trust-network-architecture',
         description: 'Secure every connection',
         icon: <Shield className="w-4 h-4" />
       },
       {
-        name: 'Autonomous Cloud Infrastructure',
-        href: '/autonomous-cloud-infrastructure-manager',
-        description: 'Self-managing cloud infrastructure',
-        icon: <Cloud className="w-4 h-4" />
-      },
-      {
-        name: 'Intelligent API Gateway',
-        href: '/intelligent-api-gateway-and-management',
-        description: 'Smart API management',
-        icon: <Network className="w-4 h-4" />
-      },
-      {
-        name: 'AI Customer Success 2041',
-        href: '/ai-customer-success-2041',
-        description: 'Autonomous customer management',
+        name: 'AI Customer Success Platform',
+        href: '/ai-customer-success-platform',
+        description: 'AI-powered customer management',
         icon: <Heart className="w-4 h-4" />
       },
-      { 
-        name: 'AI Marketing Automation 2043', 
-        href: '/ai-marketing-automation-2043', 
+      {
+        name: 'AI Marketing Automation',
+        href: '/ai-marketing-automation',
         description: 'Intelligent marketing automation',
         icon: <TrendingUp className="w-4 h-4" />
       },
       { 
-        name: 'Autonomous Supply Chain 2043', 
-        href: '/autonomous-supply-chain-2043', 
+        name: 'AI Supply Chain Optimization', 
+        href: '/ai-supply-chain-optimization', 
         description: 'AI-powered supply chain',
         icon: <ShoppingCart className="w-4 h-4" />
       }
@@ -286,40 +275,34 @@ const navigationItems: NavigationItem[] = [
     color: 'from-blue-500 to-indigo-500',
     children: [
       { 
-        name: 'Autonomous DevOps Platform 2043', 
-        href: '/autonomous-devops-2043', 
-        description: 'AI-powered autonomous DevOps',
+        name: 'Advanced IT Infrastructure', 
+        href: '/advanced-it-infrastructure-services', 
+        description: 'Advanced IT infrastructure solutions',
         icon: <Settings className="w-4 h-4" />,
         featured: true
       },
       { 
-        name: 'Autonomous Data Center 2043', 
-        href: '/autonomous-data-center-2043', 
-        description: 'AI-powered data center management',
-        icon: <Building className="w-4 h-4" />
+        name: 'AI-Powered Cybersecurity', 
+        href: '/ai-powered-cybersecurity', 
+        description: 'AI-powered security solutions',
+        icon: <Shield className="w-4 h-4" />
       },
       { 
-        name: 'AI IT Service Management 2043', 
-        href: '/ai-itsm-2043', 
-        description: 'Intelligent IT service management',
-        icon: <Monitor className="w-4 h-4" />
+        name: 'Cloud Landing Zone', 
+        href: '/cloud-landing-zone', 
+        description: 'Secure cloud infrastructure setup',
+        icon: <Cloud className="w-4 h-4" />
       },
       {
-        name: 'Autonomous AI Research Assistant',
+        name: 'AI Research Assistant',
         href: '/autonomous-ai-research-assistant',
         description: 'Self-directed research with AI',
         icon: <Brain className="w-4 h-4" />
       },
       {
-        name: 'Emotional Intelligence AI',
-        href: '/emotional-intelligence-ai-platform',
-        description: 'Human-like emotional understanding',
-        icon: <Heart className="w-4 h-4" />
-      },
-      {
-        name: 'Autonomous Content Creation',
-        href: '/autonomous-content-creation-engine',
-        description: 'Self-generating content with AI',
+        name: 'AI Content Generator',
+        href: '/ai-content-generator',
+        description: 'AI-powered content creation',
         icon: <Code className="w-4 h-4" />
       }
     ]
@@ -341,7 +324,7 @@ const navigationItems: NavigationItem[] = [
         featured: true
       },
       {
-        name: 'Financial Services',
+        name: 'Financial Solutions',
         href: '/financial-solutions',
         description: 'Quantum financial intelligence',
         icon: <TrendingUp className="w-4 h-4" />
@@ -394,16 +377,16 @@ const navigationItems: NavigationItem[] = [
         icon: <HelpCircle className="w-4 h-4" />
       },
       {
-        name: 'Training',
-        href: '/training',
-        description: 'Learn and get certified',
-        icon: <GraduationCap className="w-4 h-4" />
-      },
-      {
         name: 'Case Studies',
         href: '/case-studies',
         description: 'Success stories and examples',
         icon: <Star className="w-4 h-4" />
+      },
+      {
+        name: 'White Papers',
+        href: '/white-papers',
+        description: 'In-depth research and insights',
+        icon: <FileText className="w-4 h-4" />
       }
     ]
   },

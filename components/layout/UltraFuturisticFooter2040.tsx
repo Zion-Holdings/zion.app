@@ -20,12 +20,12 @@ const footerSections = [
       { name: 'Quantum AI Neural Network 2043', href: '/quantum-ai-neural-2043', featured: true },
       { name: 'AI Business Intelligence 2043', href: '/ai-business-intelligence-2043', featured: true },
       { name: 'Quantum Cybersecurity 2043', href: '/quantum-cybersecurity-2043', featured: true },
-      { name: 'Autonomous Customer Success 2043', href: '/autonomous-customer-success-2043', featured: true },
-      { name: 'Quantum Cloud Infrastructure 2043', href: '/quantum-cloud-infrastructure-2043' },
-      { name: 'Autonomous DevOps Platform 2043', href: '/autonomous-devops-2043' },
-      { name: 'AI Healthcare Platform 2043', href: '/ai-healthcare-platform-2043' },
-      { name: 'Quantum Financial Trading 2043', href: '/quantum-financial-trading-2043' },
-      { name: 'Autonomous Supply Chain 2043', href: '/autonomous-supply-chain-2043' }
+      { name: 'AI Customer Success Platform', href: '/ai-customer-success-platform', featured: true },
+      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure' },
+      { name: 'Advanced IT Infrastructure', href: '/advanced-it-infrastructure-services' },
+      { name: 'Healthcare Solutions', href: '/healthcare-solutions' },
+      { name: 'Financial Solutions', href: '/financial-solutions' },
+      { name: 'AI Supply Chain Optimization', href: '/ai-supply-chain-optimization' }
     ]
   },
   {

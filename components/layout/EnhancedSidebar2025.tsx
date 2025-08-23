@@ -24,11 +24,11 @@ const sidebarSections = [
     icon: <Brain className="w-5 h-5" />,
     color: 'text-violet-400',
     items: [
-      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', badge: 'New' },
-      { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network', badge: 'Hot' },
-      { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant', badge: 'New' },
-      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', badge: 'Popular' },
-      { name: 'AI Predictive Maintenance', href: '/ai-predictive-maintenance-platform', badge: 'New' },
+      { name: 'AI Consciousness Evolution 2043', href: '/ai-consciousness-evolution-2043', badge: 'New' },
+      { name: 'Quantum AI Neural Network 2043', href: '/quantum-ai-neural-2043', badge: 'Hot' },
+      { name: 'AI Business Intelligence 2043', href: '/ai-business-intelligence-2043', badge: 'New' },
+      { name: 'AI Content Generator', href: '/ai-content-generator', badge: 'Popular' },
+      { name: 'AI Autonomous Research', href: '/autonomous-ai-research-assistant', badge: 'New' },
       { name: 'AI Content Personalization', href: '/ai-content-personalization-engine', badge: 'New' },
       { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem-manager' },
       { name: 'AI Ethics & Governance', href: '/ai-ethics-governance-framework' },
@@ -55,11 +55,11 @@ const sidebarSections = [
       { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' },
       { name: 'Quantum Energy Platform', href: '/quantum-energy-platform' },
       { name: 'Quantum Robotics', href: '/quantum-robotics' },
-      { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity-platform' },
+      { name: 'Quantum Cybersecurity 2043', href: '/quantum-cybersecurity-2043' },
       { name: 'Quantum Logistics', href: '/quantum-logistics-optimization' },
       { name: 'Quantum Metaverse', href: '/quantum-metaverse' },
       { name: 'Quantum IoT Platform', href: '/quantum-iot' },
-      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading' }
+      { name: 'Quantum Financial Trading Platform', href: '/quantum-financial-trading-platform' }
     ]
   },
   {
@@ -74,11 +74,11 @@ const sidebarSections = [
       { name: 'AI-Powered DevOps', href: '/ai-powered-devops-platform', badge: 'New' },
       { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure-platform' },
       { name: 'Zero Trust Security', href: '/zero-trust-security-platform' },
-      { name: 'Browser Automation Cloud', href: '/browser-automation-cloud/' },
-      { name: 'Secrets Rotation Automation', href: '/secrets-rotation-automation/' },
-      { name: 'Quantum Networking', href: '/quantum-services' },
-      { name: 'Quantum Data Center', href: '/quantum-services' },
-      { name: 'Quantum Cloud Migration', href: '/quantum-cloud-infrastructure' }
+      { name: 'Browser Performance Monitor', href: '/browser-performance-monitor' },
+      { name: 'Secrets Rotation Automation', href: '/secrets-rotation-automation' },
+      { name: 'Advanced IT Infrastructure', href: '/advanced-it-infrastructure-services' },
+      { name: 'Cloud Landing Zone', href: '/cloud-landing-zone' },
+      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure' }
     ]
   },
   {
@@ -86,11 +86,11 @@ const sidebarSections = [
     icon: <Rocket className="w-5 h-5" />,
     color: 'text-emerald-400',
     items: [
-      { name: 'AI Customer Success', href: '/ai-customer-success-platform', badge: 'New' },
-      { name: 'Supply Chain Optimization', href: '/intelligent-supply-chain-optimization', badge: 'New' },
-      { name: 'Financial Planning AI', href: '/ai-financial-planning-platform', badge: 'New' },
-      { name: 'HR Analytics Platform', href: '/ai-hr-analytics-platform', badge: 'New' },
-      { name: 'Sales Intelligence AI', href: '/ai-sales-intelligence-platform', badge: 'New' },
+      { name: 'AI Customer Success Platform', href: '/ai-customer-success-platform', badge: 'New' },
+      { name: 'AI Supply Chain Optimization', href: '/ai-supply-chain-optimization', badge: 'New' },
+      { name: 'AI Financial Planning Platform', href: '/ai-financial-planning-platform', badge: 'New' },
+      { name: 'AI HR Management Platform', href: '/ai-hr-management-platform', badge: 'New' },
+      { name: 'AI Sales Automation', href: '/ai-sales-automation', badge: 'New' },
       { name: 'AI Decision Engine', href: '/ai-powered-decision-engine' },
       { name: 'Content Automation', href: '/intelligent-content-automation-platform' },
       { name: 'Smart CRM Suite', href: '/smart-crm-intelligence-suite' },
@@ -108,18 +108,16 @@ const sidebarSections = [
     icon: <Target className="w-5 h-5" />,
     color: 'text-orange-400',
     items: [
-      { name: 'Healthcare & Biotech', href: '/biotech-ai' },
-      { name: 'Financial Services', href: '/billing-analytics' },
-      { name: 'Manufacturing AI', href: '/autonomous-manufacturing' },
-      { name: 'Retail Technology', href: '/retail-technology-solutions' },
-      { name: 'Education Technology', href: '/training' },
-      { name: 'Government Solutions', href: '/enterprise-solutions-showcase' },
-      { name: 'Energy & Utilities', href: '/quantum-energy' },
-      { name: 'Transportation & Logistics', href: '/quantum-logistics' },
-      { name: 'Real Estate Technology', href: '/real-estate-technology-solutions' },
-      { name: 'Entertainment & Media', href: '/entertainment-media-solutions' },
+      { name: 'Healthcare Solutions', href: '/healthcare-solutions' },
+      { name: 'Financial Solutions', href: '/financial-solutions' },
+      { name: 'Manufacturing AI Solutions', href: '/manufacturing-ai-solutions' },
+      { name: 'Retail Technology Solutions', href: '/retail-technology-solutions' },
+      { name: 'Education Technology Solutions', href: '/education-technology-solutions' },
+      { name: 'Government Technology Solutions', href: '/government-technology-solutions' },
+      { name: 'Quantum Energy', href: '/quantum-energy' },
       { name: 'Space Technology', href: '/space-technology' },
-      { name: 'Biotech & Healthcare', href: '/biotech-ai' }
+      { name: 'Entertainment & Media Solutions', href: '/entertainment-media-solutions' },
+
     ]
   },
   {
