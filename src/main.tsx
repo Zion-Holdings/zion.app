@@ -26,8 +26,9 @@ import { NotificationProvider } from './context';
 
 // Import analytics provider
 import { AnalyticsProvider } from './context/AnalyticsContext';
-import { initGA } from './lib/gtag';
-import { ErrorBoundary } from './components/ErrorBoundary';
+import { ViewModeProvider } from './context/ViewModeContext';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
 
 // Initialize a React Query client with global error handling
 const queryClient = new QueryClient({
@@ -47,22 +48,26 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
-        <WhitelabelProvider>
-          <Router>
-            <AuthProvider>
-              <NotificationProvider>
-                <AnalyticsProvider>
-                  <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
-                    <ErrorBoundary>
-                      <App />
+        <Provider store={store}>
+          <WhitelabelProvider>
+            <Router>
+              <AuthProvider>
+                <NotificationProvider>
+                  <AnalyticsProvider>
+                    <LanguageProvider authState={{ isAuthenticated: false, user: null }}>
+                      <ViewModeProvider>
+                        <AppLayout>
+                          <App />
+                        </AppLayout>
+                      </ViewModeProvider>
                       <LanguageDetectionPopup />
-                    </ErrorBoundary>
-                  </LanguageProvider>
-                </AnalyticsProvider>
-              </NotificationProvider>
-            </AuthProvider>
-          </Router>
-        </WhitelabelProvider>
+                    </LanguageProvider>
+                  </AnalyticsProvider>
+                </NotificationProvider>
+              </AuthProvider>
+            </Router>
+          </WhitelabelProvider>
+        </Provider>
       </QueryClientProvider>
     </HelmetProvider>
   </React.StrictMode>,
