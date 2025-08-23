@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import { ThemeProvider } from "./components/ThemeProvider";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
+import InstallPrompt from "./components/InstallPrompt";
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -16,10 +17,9 @@ import {
   ErrorRoutes,
   EnterpriseRoutes,
   CommunityRoutes,
-  DeveloperRoutes
+  DeveloperRoutes,
+  SellerRoutes
 } from './routes';
-
-const Suspense = React.Suspense;
 const Home = React.lazy(() => import('./pages/Home'));
 const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory'));
@@ -33,6 +33,8 @@ const Categories = React.lazy(() => import('./pages/Categories'));
 const Login = React.lazy(() => import('./pages/Login'));
 const Signup = React.lazy(() => import('./pages/Signup'));
 const ITOnsiteServicesPage = React.lazy(() => import('./pages/ITOnsiteServicesPage'));
+const OpenAppRedirect = React.lazy(() => import('./pages/OpenAppRedirect'));
+const ContactPage = React.lazy(() => import('./pages/Contact'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -47,13 +49,15 @@ const baseRoutes = [
   { path: '/equipment', element: <EquipmentPage /> },
   { path: '/analytics', element: <Analytics /> },
   { path: '/mobile-launch', element: <MobileLaunchPage /> },
+  { path: '/open-app', element: <OpenAppRedirect /> },
   { path: '/community', element: <CommunityPage /> },
+  { path: '/contact', element: <ContactPage /> },
 ];
 
 const App = () => {
   return (
     <WhitelabelProvider>
-      <ThemeProvider defaultTheme="dark">
+      <ThemeProvider>
         <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
           <Routes>
             {baseRoutes.map(({ path, element }) => (
@@ -69,11 +73,13 @@ const App = () => {
             <Route path="/enterprise/*" element={<EnterpriseRoutes />} />
             <Route path="/community/*" element={<CommunityRoutes />} />
             <Route path="/developers/*" element={<DeveloperRoutes />} />
+            <Route path="/seller/*" element={<SellerRoutes />} />
             <Route path="*" element={<ErrorRoutes />} />
           </Routes>
         </Suspense>
         <Toaster />
         <SonnerToaster position="top-right" />
+        <InstallPrompt />
       </ThemeProvider>
     </WhitelabelProvider>
   );

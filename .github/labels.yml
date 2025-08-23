@@ -1,0 +1,75 @@
+# Base labels
+- name: automation
+  color: 1f6feb
+  description: Changes produced or managed by automation
+- name: auto-merge
+  color: 0e8a16
+  description: Eligible for automatic merging
+- name: improvement
+  color: fbca04
+  description: Continuous improvement change
+- name: stale
+  color: eeeeee
+  description: Inactive issue or PR
+- name: dependencies
+  color: 0366d6
+  description: Dependency updates
+- name: security
+  color: d93f0b
+  description: Security-related changes
+- name: performance
+  color: 5319e7
+  description: Performance-related changes
+- name: needs-triage
+  color: d4c5f9
+  description: Needs triage by maintainers
+
+# Area labels
+- name: area/automation
+  color: 0052cc
+  description: Automation scripts and systems
+- name: area/frontend
+  color: 0e8a16
+  description: Frontend code and UI
+- name: area/backend
+  color: 5319e7
+  description: Backend utilities and hooks
+
+# Type labels
+- name: type/bug
+  color: d73a4a
+  description: Bug fix
+- name: type/docs
+  color: 0075ca
+  description: Documentation
+- name: type/ci
+  color: 1d76db
+  description: CI/CD
+- name: type/test
+  color: a2eeef
+  description: Testing
+- name: type/security
+  color: b60205
+  description: Security
+- name: type/performance
+  color: c5def5
+  description: Performance
+- name: type/dependencies
+  color: 0366d6
+  description: Dependency updates
+- name: type/refactor
+  color: c2e0c6
+  description: Refactoring
+- name: type/chore
+  color: fef2c0
+  description: Chores and maintenance
+
+# Priority labels
+- name: priority/critical
+  color: b60205
+- name: priority/high
+  color: d93f0b
+- name: priority/medium
+  color: fbca04
+- name: priority/low
+  color: cccccc

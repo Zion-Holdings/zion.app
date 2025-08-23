@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+export default function Auto(){return <div className="p-6">Auto Update</div>;}
+=======
+export default function Page() { return <div className="py-10">Auto Update 17:23:07</div>; }
+>>>>>>> origin/cursor/build-investor-matchmaking-tool-37fa

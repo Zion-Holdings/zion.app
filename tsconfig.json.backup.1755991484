@@ -1,0 +1,69 @@
+{
+  "compilerOptions": {
+<<<<<<< HEAD
+    "target": "ES2020",
+    "module": "commonjs",
+=======
+    "target": "ES2024",
+    "useDefineForClassFields": true,
+    "lib": ["ES2024", "DOM", "DOM.Iterable", "WebWorker", "WebWorker.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "importHelpers": false,
+    "noEmitHelpers": false,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/pages/*": ["./src/pages/*", "./pages/*"],
+      "@/components/*": ["./src/components/*"],
+      "@/api/*": ["./src/api/*"],
+      "@/types/*": ["./src/types/*", "./types/*"],
+      "@/utils/*": ["./src/utils/*"],
+      "@/hooks/*": ["./src/hooks/*"],
+      "@/context/*": ["./src/context/*"],
+      "@/services/*": ["./src/services/*"],
+      "react-router-dom": ["./src/stubs/react-router-dom.tsx"],
+      "next-cloudinary": ["./types/next-cloudinary.d.ts"],
+      "types/*": ["./types/*"]
+    },
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "esModuleInterop": true,
+    "module": "esnext",
+    "esModuleInterop": true,
+>>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "strict": true,
+<<<<<<< HEAD
+    "outDir": "dist",
+    "types": ["node", "hardhat"],
+    "skipLibCheck": true
+  },
+  "include": ["scripts", "hardhat.config.ts", "typechain-types"],
+  "exclude": ["node_modules"]
+=======
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitReturns": true,
+    "allowJs": true,
+    "incremental": true,
+    "typeRoots": ["./node_modules/@types", "./types"],
+    "types": ["node"],
+    "jsx": "preserve",
+    "target": "ES2017"
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "zion.app/recovered-content/**"
+  ]
+>>>>>>> 5f48a381108fa3a8a43c189dd4b043133ce9307e
+}

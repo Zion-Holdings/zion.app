@@ -1,57 +1,83 @@
+// Temporary type declarations for offline development
+
+// Basic JSX namespace to allow JSX usage
+declare namespace JSX {
+  interface Element {}
+  interface IntrinsicElements { [elemName: string]: any }
+}
+
+// Minimal React typings using a namespace export
+declare namespace React {
+  export type ReactNode = any
+  export interface ReactElement {}
+
+  export interface FC<P = {}> {
+    (props: P & { children?: ReactNode }): ReactElement | null
+  }
+
+  export interface SyntheticEvent<T = Element> { target: T; preventDefault(): void }
+  export interface ChangeEvent<T = Element> extends SyntheticEvent<T> {}
+  export interface KeyboardEvent<T = Element> extends SyntheticEvent<T> { key: string; shiftKey: boolean }
+  export interface MouseEvent<T = Element> extends SyntheticEvent<T> {}
+  export interface FormEvent<T = Element> extends SyntheticEvent<T> {}
+
+  export type LegacyRef<T> = any
+  export type Ref<T> = any
+  export type ElementRef<T> = any
+  export type ComponentPropsWithoutRef<T> = any
+
+  export function useState<S>(initialState: S | (() => S)): [S, (value: S) => void]
+  export function useRef<T>(initialValue: T | null): { current: T | null }
+  export function useEffect(effect: () => void | (() => void), deps?: any[]): void
+
+  export const Fragment: any
+  const React: { createElement: any }
+  export default React
+}
+
 declare module 'react' {
-  const React: any;
-  export default React;
-  // Basic overloads for useRef to handle common cases
-  export function useRef<T>(initialValue: T): { current: T };
-  export function useRef<T>(initialValue: T | null): { current: T | null };
-  export function useRef<T = undefined>(initialValue?: T): { current: T | undefined };
-  export const useEffect: any;
-  export type Dispatch<A> = (value: A) => void;
-  export type SetStateAction<S> = S | ((prevState: S) => S);
-  export function useState<S>(
-    initialState: S | (() => S)
-  ): [S, Dispatch<SetStateAction<S>>];
-  export function createContext<T>(defaultValue: T): any;
-  export function useContext<T>(context: any): T;
-  export const useMemo: any;
-  export const useCallback: any;
-  export function useId(): string;
-  // Generic definition to allow usage like forwardRef<HTMLDivElement, Props>()
-  export function forwardRef<T, P = {}>(
-    render: (props: P, ref: Ref<T>) => ReactElement | null
-  ): any;
-  export const Fragment: any;
-  export const StrictMode: any;
-  export const cloneElement: any;
-  export type ReactNode = any;
-  export type ReactElement = any;
-  export type ComponentType<P = {}> = (props: P) => any;
-  export type FC<P = {}> = (props: P) => any;
-  export type ComponentProps<T = any> = any;
-  export type ComponentPropsWithoutRef<T = any> = any;
-  export type PropsWithoutRef<T = any> = any;
-  export type ComponentPropsWithRef<T = any> = any;
-  export type HTMLAttributes<T = any> = any;
-  export type ButtonHTMLAttributes<T = any> = any;
-  export type SVGProps<T = any> = any;
-  export type ChangeEvent<T = any> = any;
-  export type MouseEvent<T = any> = any;
-  export type DragEvent<T = any> = any;
-  export type FormEvent<T = any> = any;
-  export type KeyboardEvent<T = any> = any;
-  export type SyntheticEvent<T = any> = any;
-  export type Ref<T = any> = any;
-  export type LegacyRef<T = any> = any;
-  export type ElementRef<T = any> = any;
-  export type CSSProperties = Record<string, string | number | undefined>;
+  export = React
 }
 
-declare module 'react-dom' {
-  export * from 'react-dom/index';
-}
-
+// JSX runtime for React 17+
 declare module 'react/jsx-runtime' {
-  export const jsx: any;
-  export const jsxs: any;
-  export const Fragment: any;
+  export function jsx(type: any, props: any, key?: any): any
+  export const jsxs: typeof jsx
+  export const Fragment: any
+}
+
+// react-router-dom hooks
+declare module 'react-router-dom' {
+  export function useParams<Params extends Record<string, string | undefined> = {}>(): Partial<Params>
+}
+
+// react-hook-form
+declare module 'react-hook-form' {
+  export function useForm<T extends Record<string, any>>(options?: any): any
+}
+
+// zod utility
+declare module 'zod' {
+  const z: any
+  namespace z {
+    type infer<T> = any
+  }
+  export = z
+}
+
+// class-variance-authority helper
+declare module 'class-variance-authority' {
+  export type VariantProps<T> = any
+}
+
+// jspdf minimal class
+declare module 'jspdf' {
+  export class jsPDF {}
+  export default jsPDF
+}
+
+// Fallback for other modules
+declare module '*' {
+  const value: any;
+  export default value;
 }
