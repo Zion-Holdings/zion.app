@@ -310,40 +310,78 @@ const Homepage2040: React.FC = () => {
                   </p>
                 </motion.div>
 
-        {/* Mobile Navigation */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-black/40 backdrop-blur-xl border-t border-cyan-500/30"
-            >
-              <div className="px-4 py-4 space-y-4">
-                <Link href="/services" className="block text-gray-300 hover:text-cyan-400 transition-colors duration-200">
-                  Services
-                </Link>
-                <Link href="/about" className="block text-gray-300 hover:text-cyan-400 transition-colors duration-200">
-                  About
-                </Link>
-                <Link href="/contact" className="block text-gray-300 hover:text-cyan-400 transition-colors duration-200">
-                  Contact
-                </Link>
-                <Link href="/blog" className="block text-gray-300 hover:text-cyan-400 transition-colors duration-200">
-                  Blog
-                </Link>
-                
-                {/* Mobile Search */}
-                <div className="relative">
-                  <input
-                    type="text"
-                    placeholder="Search services..."
-                    value={searchQuery}
-                    onChange={(e) => handleSearch(e.target.value)}
-                    className="w-full px-4 py-2 bg-black/30 border border-cyan-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 transition-colors duration-200"
-                  />
-                  <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-                </div>
+                {/* Services Grid */}
+                <motion.div
+                  variants={staggerContainer}
+                  initial="initial"
+                  whileInView="animate"
+                  viewport={{ once: true }}
+                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                >
+                  {innovative2040FuturisticServices.slice(0, 6).map((service, index) => (
+                    <motion.div
+                      key={service.id}
+                      variants={fadeInUp}
+                      className="group relative bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-400/25"
+                    >
+                      {/* Service Icon */}
+                      <div className={`w-16 h-16 bg-gradient-to-r ${getColorClasses(index)} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                        <Rocket className="w-8 h-8 text-white" />
+                      </div>
+
+                      {/* Service Content */}
+                      <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
+                        {service.name}
+                      </h3>
+                      <p className="text-gray-300 mb-4 leading-relaxed">
+                        {service.tagline}
+                      </p>
+
+                      {/* Service Features */}
+                      <div className="space-y-2 mb-6">
+                        {service.features.slice(0, 3).map((feature, featureIndex) => (
+                          <div key={featureIndex} className="flex items-center space-x-2 text-sm text-gray-400">
+                            <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                            <span>{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Service Price */}
+                      <div className="mb-6">
+                        <span className="text-2xl font-bold text-cyan-400">
+                          {service.price}
+                        </span>
+                      </div>
+
+                      {/* CTA Button */}
+                      <Link 
+                        href={service.link}
+                        className="inline-flex items-center justify-center w-full px-6 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-semibold rounded-xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 group-hover:shadow-lg group-hover:shadow-cyan-400/25"
+                      >
+                        Learn More
+                        <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                      </Link>
+                    </motion.div>
+                  ))}
+                </motion.div>
+
+                {/* View All Services Button */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  className="text-center mt-12"
+                >
+                  <Link 
+                    href="/innovative-2040-futuristic-services-showcase"
+                    className="inline-flex items-center justify-center px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-2xl hover:bg-cyan-400 hover:text-black transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 text-lg"
+                  >
+                    View All 2040 Services
+                    <ArrowRight className="w-6 h-6 ml-3" />
+                  </Link>
+                </motion.div>
               </div>
             </motion.div>
           )}

@@ -1,6 +1,10 @@
-import React, { useState } from 'react';
-import SEO from '../components/SEO';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import Head from 'next/head';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import { innovative2025MicroSaasBatch } from '../data/innovative-2025-micro-saas-batch';
+import { innovative2025ITEnterpriseBatch } from '../data/innovative-2025-it-enterprise-batch';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
 import { 
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
@@ -71,101 +75,51 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      <SEO 
-        title="Comprehensive 2025 Services Showcase | Zion Tech Group"
-        description="Discover our comprehensive range of innovative 2025 micro SAAS, IT, and AI services. From quantum computing to space technology, we offer cutting-edge solutions for modern businesses."
-        keywords="micro SAAS, AI services, quantum technology, space technology, IT solutions, enterprise services, 2025 innovations"
-        image="https://ziontechgroup.com/og-image-2025-services.jpg"
-      />
-
-      {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-black to-black" />
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-transparent to-purple-500/5" />
-          
-          {/* Animated grid */}
-          <motion.div
-            className="absolute inset-0 opacity-5"
-            style={{
-              backgroundImage: `
-                linear-gradient(rgba(0, 255, 255, 0.3) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 255, 255, 0.3) 1px, transparent 1px)
-              `,
-              backgroundSize: '200px 200px'
-            }}
-            animate={{
-              backgroundPosition: ['0px 0px', '200px 200px']
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: 'linear'
-            }}
-          />
-        </div>
-
-        <div className="relative z-10 container mx-auto px-4 text-center">
-          <motion.h1 
-            className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            Comprehensive 2025
-            <br />
-            <span className="text-white">Services Showcase</span>
-          </motion.h1>
-          
-          <motion.p 
-            className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Discover our complete portfolio of innovative micro SAAS, IT, and AI services. 
-            Real solutions with proven ROI, competitive pricing, and enterprise-grade quality.
-          </motion.p>
-
-          <motion.div 
-            className="flex flex-wrap justify-center gap-4 mb-12"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <div className="bg-gradient-to-r from-cyan-600 to-blue-600 px-6 py-3 rounded-full text-sm font-semibold">
-              {allServices.length}+ Services
-            </div>
-            <div className="bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-3 rounded-full text-sm font-semibold">
-              AI-Powered Solutions
-            </div>
-            <div className="bg-gradient-to-r from-green-600 to-emerald-600 px-6 py-3 rounded-full text-sm font-semibold">
-              Enterprise Ready
-            </div>
-            <div className="bg-gradient-to-r from-orange-600 to-red-600 px-6 py-3 rounded-full text-sm font-semibold">
-              Competitive Pricing
-            </div>
-          </motion.div>
-
-          {/* Contact Info */}
-          <motion.div 
-            className="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-6 max-w-2xl mx-auto border border-gray-700"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          >
-            <h3 className="text-xl font-semibold mb-4 text-cyan-400">Ready to Get Started?</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-              <div className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-cyan-400" />
-                <span>{contactInfo.mobile}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <ExternalLink className="w-4 h-4 text-cyan-400" />
-                <a href={`mailto:${contactInfo.email}`} className="text-cyan-400 hover:text-cyan-300">
-                  {contactInfo.email}
-                </a>
+    <>
+      <Head>
+        <title>Comprehensive 2025 Services Showcase | Zion Tech Group</title>
+        <meta name="description" content="Discover our comprehensive range of innovative 2025 micro SAAS, IT, and AI services. From quantum computing to space technology, we offer cutting-edge solutions for modern businesses." />
+        <meta name="keywords" content="micro SAAS, AI services, quantum technology, space technology, IT solutions, enterprise services, 2025 innovations" />
+        <meta property="og:image" content="https://ziontechgroup.com/og-image-2025-services.jpg" />
+      </Head>
+      <UltraAdvancedFuturisticBackground />
+      
+      <div className="relative z-10 min-h-screen">
+        {/* Hero Section */}
+        <section className="pt-32 pb-20 px-4">
+          <div className="max-w-7xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+                2025 Services Showcase
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+                Experience the future of technology with our comprehensive suite of innovative micro SAAS, 
+                IT, and AI services. From quantum computing breakthroughs to space technology innovations, 
+                we're pioneering solutions that transform businesses.
+              </p>
+              
+              {/* Stats */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+                <div className="p-6 bg-black/20 rounded-xl border border-cyan-500/20">
+                  <div className="text-4xl font-bold text-cyan-400 mb-2">{allServices.length}+</div>
+                  <div className="text-gray-300">Innovative Services</div>
+                </div>
+                <div className="p-6 bg-black/20 rounded-xl border border-blue-500/20">
+                  <div className="text-4xl font-bold text-blue-400 mb-2">7</div>
+                  <div className="text-gray-300">Technology Categories</div>
+                </div>
+                <div className="p-6 bg-black/20 rounded-xl border border-purple-500/20">
+                  <div className="text-4xl font-bold text-purple-400 mb-2">24/7</div>
+                  <div className="text-gray-300">Support Available</div>
+                </div>
+                <div className="p-6 bg-black/20 rounded-xl border border-green-500/20">
+                  <div className="text-4xl font-bold text-green-400 mb-2">∞</div>
+                  <div className="text-gray-300">Future Possibilities</div>
+                </div>
               </div>
               <div className="flex items-center gap-2">
                 <Building className="w-4 h-4 text-cyan-400" />

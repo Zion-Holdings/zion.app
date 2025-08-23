@@ -1,23 +1,68 @@
-import React from 'react';
-import Layout from '../components/layout/Layout';
-import EnhancedContactForm from '../components/EnhancedContactForm';
-import SEOEnhancer from '../components/SEOEnhancer';
+import React, { useState } from 'react';
+import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Clock, MessageCircle } from 'lucide-react';
 
 const ContactPage: React.FC = () => {
   return (
-    <>
-      <SEOEnhancer
-        title="Contact Zion Tech Group - Get Started with AI & Quantum Solutions"
-        description="Ready to transform your business? Contact Zion Tech Group for AI, quantum computing, and space technology solutions. Free consultation available."
-        keywords="contact, AI solutions, quantum computing, business transformation, consultation, support"
-        type="website"
-      />
-      <Layout>
-        <main className="relative z-10 pt-24">
-          {/* Hero Section */}
-          <section className="py-20 px-4 text-center">
+    <div className="min-h-screen bg-black text-white">
+      <Head>
+        <title>Contact Zion Tech Group - Get in Touch for Innovative Technology Solutions</title>
+        <meta name="description" content="Get in touch with Zion Tech Group for innovative technology solutions. Contact our experts for AI, quantum computing, space technology, and IT services." />
+        <meta name="keywords" content="contact, Zion Tech Group, AI services, quantum computing, IT solutions, technology consulting" />
+      </Head>
+
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-purple-500/10 to-pink-500/10"></div>
+        <div className="max-w-6xl mx-auto relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+              Get In Touch
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Ready to transform your business with cutting-edge technology? Let's discuss how our innovative solutions can drive your success.
+            </p>
+          </motion.div>
+
+          {/* Contact Information Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            {contactInfo.map((info, index) => (
+              <motion.div
+                key={info.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="p-6 bg-white/5 rounded-xl border border-white/10 hover:border-cyan-400/30 transition-all duration-300 group"
+              >
+                <div className={`${info.color} mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  {info.icon}
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">{info.title}</h3>
+                <a 
+                  href={info.link}
+                  target={info.title === 'Website' ? '_blank' : '_self'}
+                  rel={info.title === 'Website' ? 'noopener noreferrer' : ''}
+                  className="text-gray-300 hover:text-cyan-400 transition-colors duration-300"
+                >
+                  {info.value}
+                </a>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Main Content */}
+      <section className="py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

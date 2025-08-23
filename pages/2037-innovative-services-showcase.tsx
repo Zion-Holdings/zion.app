@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import SEO from '../components/SEO';
-import Layout from '../components/layout/Layout';
+import React from 'react';
+import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { 
   Search, Grid, List, Filter,
@@ -9,7 +8,6 @@ import {
   Building, Cpu, Database, Cloud, Lock,
   Globe, Zap, Users, BarChart3
 } from 'lucide-react';
-import SEO from '../components/SEO';
 
 // Import our new 2037 service data
 import { real2037Q1InnovativeAdditions } from '../data/real-2037-q1-innovative-additions';
@@ -140,13 +138,13 @@ const ServicesShowcase2037: React.FC = () => {
   });
 
   return (
-    <Layout>
-      <SEO
-        title="2037 Innovative Services Showcase - Zion Tech Group"
-        description="Discover our revolutionary 2037 innovative services including AI consciousness evolution, quantum cybersecurity, autonomous systems, and cutting-edge micro SAAS solutions."
-        keywords="AI consciousness, quantum computing, autonomous systems, micro SAAS, innovative services, 2037 technology"
-      />
-
+    <div className="min-h-screen bg-black text-white">
+      <Head>
+        <title>2037 Innovative Services Showcase - Zion Tech Group</title>
+        <meta name="description" content="Discover our revolutionary 2037 innovative services including AI consciousness evolution, quantum cybersecurity, autonomous systems, and cutting-edge micro SAAS solutions." />
+        <meta name="keywords" content="AI consciousness, quantum computing, autonomous systems, micro SAAS, innovative services, 2037 technology" />
+      </Head>
+      
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900"></div>
