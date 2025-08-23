@@ -1,271 +1,337 @@
 import React from 'react';
 import Head from 'next/head';
-import { motion } from 'framer-motion';
-import { advancedAIAutomationServices } from '../data/2026-advanced-ai-automation-services';
-import UltraFuturisticBackground2026 from '../components/ui/UltraFuturisticBackground2026';
-import UltraFuturisticServiceCard2026 from '../components/ui/UltraFuturisticServiceCard2026';
+import Link from 'next/link';
 
 export default function AIAutomationServices() {
+  const services = [
+    {
+      title: 'Intelligent Process Automation',
+      description: 'Transform manual workflows into intelligent, self-optimizing processes that learn and improve over time.',
+      features: [
+        'Workflow automation with AI decision-making',
+        'Process optimization and continuous improvement',
+        'Integration with existing enterprise systems',
+        'Real-time monitoring and analytics'
+      ],
+      icon: '🤖',
+      category: 'Core Services'
+    },
+    {
+      title: 'AI-Powered Content Generation',
+      description: 'Create high-quality, engaging content at scale using advanced natural language processing and generation.',
+      features: [
+        'Automated content creation and curation',
+        'Multi-language content generation',
+        'SEO-optimized content strategies',
+        'Content performance analytics'
+      ],
+      icon: '✍️',
+      category: 'Content Services'
+    },
+    {
+      title: 'Predictive Analytics & Forecasting',
+      description: 'Leverage machine learning to predict trends, identify opportunities, and make data-driven decisions.',
+      features: [
+        'Advanced predictive modeling',
+        'Real-time data analysis',
+        'Custom forecasting algorithms',
+        'Actionable insights and recommendations'
+      ],
+      icon: '📊',
+      category: 'Analytics Services'
+    },
+    {
+      title: 'Autonomous Customer Service',
+      description: 'Provide 24/7 customer support with intelligent chatbots and automated response systems.',
+      features: [
+        'Natural language understanding',
+        'Multi-channel support integration',
+        'Escalation to human agents',
+        'Continuous learning and improvement'
+      ],
+      icon: '💬',
+      category: 'Customer Experience'
+    },
+    {
+      title: 'Smart Supply Chain Management',
+      description: 'Optimize supply chain operations with AI-driven demand forecasting and inventory management.',
+      features: [
+        'Demand prediction and planning',
+        'Inventory optimization',
+        'Supplier performance monitoring',
+        'Risk assessment and mitigation'
+      ],
+      icon: '🚚',
+      category: 'Operations'
+    },
+    {
+      title: 'Cybersecurity Automation',
+      description: 'Protect your systems with intelligent threat detection and automated response capabilities.',
+      features: [
+        'Real-time threat monitoring',
+        'Automated incident response',
+        'Behavioral analysis',
+        'Compliance monitoring and reporting'
+      ],
+      icon: '🔒',
+      category: 'Security'
+    }
+  ];
+
+  const industries = [
+    {
+      name: 'Healthcare',
+      description: 'AI automation for patient care, diagnosis, and administrative processes.',
+      icon: '🏥'
+    },
+    {
+      name: 'Finance',
+      description: 'Automated trading, risk assessment, and fraud detection systems.',
+      icon: '💳'
+    },
+    {
+      name: 'Manufacturing',
+      description: 'Smart factories with predictive maintenance and quality control.',
+      icon: '🏭'
+    },
+    {
+      name: 'Retail',
+      description: 'Personalized shopping experiences and inventory optimization.',
+      icon: '🛍️'
+    },
+    {
+      name: 'Transportation',
+      description: 'Route optimization and autonomous vehicle systems.',
+      icon: '🚗'
+    },
+    {
+      name: 'Energy',
+      description: 'Smart grid management and renewable energy optimization.',
+      icon: '⚡'
+    }
+  ];
+
+  const benefits = [
+    {
+      title: 'Increased Efficiency',
+      description: 'Reduce manual tasks by up to 80% while improving accuracy and consistency.',
+      icon: '⚡'
+    },
+    {
+      title: 'Cost Reduction',
+      description: 'Lower operational costs through automation and optimization of resource allocation.',
+      icon: '💰'
+    },
+    {
+      title: '24/7 Operation',
+      description: 'Enable continuous operation without human intervention or downtime.',
+      icon: '🌙'
+    },
+    {
+      title: 'Scalability',
+      description: 'Easily scale operations up or down based on demand and business needs.',
+      icon: '📈'
+    },
+    {
+      title: 'Data-Driven Insights',
+      description: 'Gain valuable insights from automated data analysis and pattern recognition.',
+      icon: '🔍'
+    },
+    {
+      title: 'Competitive Advantage',
+      description: 'Stay ahead of the competition with cutting-edge AI automation capabilities.',
+      icon: '🏆'
+    }
+  ];
+
   return (
     <>
       <Head>
-        <title>AI Automation Services - ZionTech Group | Advanced Business Process Automation</title>
-        <meta name="description" content="Transform your business with our advanced AI automation services. Self-learning automation, predictive maintenance, customer intelligence, and supply chain optimization. Contact us at +1 302 464 0950" />
-        <meta name="keywords" content="AI automation, business process automation, predictive maintenance, customer intelligence, supply chain optimization, ZionTech Group" />
-        <meta name="author" content="ZionTech Group" />
-        <meta name="robots" content="index, follow" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="AI Automation Services - ZionTech Group" />
-        <meta property="og:description" content="Advanced AI automation services that learn, adapt, and continuously optimize your business processes." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ziontechgroup.com/ai-automation-services" />
-        <meta property="og:site_name" content="ZionTech Group" />
-        
-        {/* Contact Information */}
-        <meta name="contact:phone" content="+1 302 464 0950" />
-        <meta name="contact:email" content="kleber@ziontechgroup.com" />
-        <meta name="contact:address" content="364 E Main St STE 1008 Middletown DE 19709" />
-        <meta name="contact:website" content="https://ziontechgroup.com" />
+        <title>AI Automation Services | Zion Tech Group - Intelligent Automation Solutions</title>
+        <meta name="description" content="Transform your business with Zion Tech Group's comprehensive AI automation services. From process automation to predictive analytics, we deliver intelligent solutions that drive growth and efficiency." />
+        <meta property="og:title" content="AI Automation Services | Zion Tech Group - Intelligent Automation Solutions" />
+        <meta property="og:description" content="Transform your business with Zion Tech Group's comprehensive AI automation services. From process automation to predictive analytics, we deliver intelligent solutions that drive growth and efficiency." />
       </Head>
-
-      <UltraFuturisticBackground2026 intensity="high" />
       
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16">
-          <div className="text-center z-10 max-w-6xl mx-auto">
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6"
-            >
-              <span className="bg-gradient-to-r from-emerald-400 via-teal-500 to-cyan-600 bg-clip-text text-transparent">
-                AI Automation Services
-              </span>
-            </motion.h1>
+      <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950 text-white">
+        <main className="container mx-auto px-6 py-12">
+          <div className="max-w-6xl mx-auto">
+            <nav className="mb-8">
+              <Link href="/" className="text-cyan-400 hover:text-cyan-300 transition-colors">
+                ← Back to Home
+              </Link>
+            </nav>
             
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-8 max-w-5xl mx-auto leading-relaxed"
-            >
-              Intelligent automation solutions that learn, adapt, and continuously optimize your business processes for maximum efficiency and ROI.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
-            >
-              <a
-                href="#services"
-                className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-emerald-600 hover:to-teal-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-emerald-500/25"
-              >
-                View Services
-              </a>
-              <a
-                href="mailto:kleber@ziontechgroup.com"
-                className="border-2 border-emerald-400 text-emerald-400 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-emerald-400 hover:text-black transition-all duration-300 transform hover:scale-105"
-              >
-                Get Started
-              </a>
-            </motion.div>
-
-            {/* Key Benefits */}
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.6 }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto"
-            >
-              <div className="bg-black/40 backdrop-blur-xl border border-emerald-400/30 rounded-2xl p-6">
-                <div className="text-4xl mb-4">🚀</div>
-                <h3 className="text-xl font-semibold text-white mb-2">Immediate ROI</h3>
-                <p className="text-gray-400 text-sm">See 300-500% ROI within the first year through process optimization and reduced manual work.</p>
-              </div>
-              <div className="bg-black/40 backdrop-blur-xl border border-emerald-400/30 rounded-2xl p-6">
-                <div className="text-4xl mb-4">🧠</div>
-                <h3 className="text-xl font-semibold text-white mb-2">Self-Learning AI</h3>
-                <p className="text-gray-400 text-sm">Our AI continuously learns and improves, becoming more efficient over time.</p>
-              </div>
-              <div className="bg-black/40 backdrop-blur-xl border border-emerald-400/30 rounded-2xl p-6">
-                <div className="text-4xl mb-4">⚡</div>
-                <h3 className="text-xl font-semibold text-white mb-2">Rapid Deployment</h3>
-                <p className="text-gray-400 text-sm">Get up and running in 1-4 weeks with our proven implementation framework.</p>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Services Section */}
-        <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 relative">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                <span className="bg-gradient-to-r from-emerald-400 to-teal-500 bg-clip-text text-transparent">
-                  Advanced AI Automation Solutions
-                </span>
-              </h2>
-              <p className="text-xl text-gray-300 max-w-4xl mx-auto">
-                Transform your business operations with intelligent automation that adapts to your needs and scales with your growth.
+            <header className="text-center mb-16">
+              <h1 className="text-5xl font-extrabold mb-6 bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
+                AI Automation Services
+              </h1>
+              <p className="text-xl text-white/80 max-w-3xl mx-auto">
+                Transform your business operations with intelligent automation solutions that learn, adapt, and optimize continuously
               </p>
-            </motion.div>
+            </header>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {advancedAIAutomationServices.map((service, index) => (
-                <motion.div
-                  key={service.id}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <UltraFuturisticServiceCard2026 
-                    service={service} 
-                    variant="enterprise"
-                  />
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
+            {/* Services Overview */}
+            <section className="mb-20">
+              <h2 className="text-3xl font-bold mb-12 text-center text-white">Our Core Services</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {services.map((service, index) => (
+                  <div key={index} className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 hover:transform hover:scale-105">
+                    <div className="text-4xl mb-4">{service.icon}</div>
+                    <div className="mb-3">
+                      <span className="px-3 py-1 bg-cyan-400/20 text-cyan-400 text-sm rounded-full border border-cyan-400/30">
+                        {service.category}
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-bold mb-3 text-white">{service.title}</h3>
+                    <p className="text-white/80 mb-4">{service.description}</p>
+                    <ul className="space-y-2">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="text-white/70 text-sm flex items-center">
+                          <span className="text-cyan-400 mr-2">✓</span>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </section>
 
-        {/* Why Choose Us Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 relative bg-black/20">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                <span className="bg-gradient-to-r from-emerald-400 to-teal-500 bg-clip-text text-transparent">
-                  Why Choose ZionTech Group?
-                </span>
-              </h2>
-            </motion.div>
+            {/* Industries We Serve */}
+            <section className="mb-20">
+              <h2 className="text-3xl font-bold mb-12 text-center text-white">Industries We Serve</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {industries.map((industry, index) => (
+                  <div key={index} className="bg-gradient-to-br from-white/10 to-white/5 rounded-xl p-6 border border-white/20 hover:border-fuchsia-400/30 transition-all duration-300">
+                    <div className="text-3xl mb-3">{industry.icon}</div>
+                    <h3 className="text-lg font-semibold mb-2 text-white">{industry.name}</h3>
+                    <p className="text-white/70 text-sm">{industry.description}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="text-6xl mb-4">🎯</div>
-                <h3 className="text-xl font-semibold text-white mb-2">Proven Results</h3>
-                <p className="text-gray-400 text-sm">Track record of delivering 300-500% ROI for our clients across industries.</p>
-              </motion.div>
+            {/* Benefits */}
+            <section className="mb-20">
+              <h2 className="text-3xl font-bold mb-12 text-center text-white">Why Choose AI Automation?</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {benefits.map((benefit, index) => (
+                  <div key={index} className="bg-gradient-to-br from-white/10 to-white/5 rounded-xl p-6 border border-white/20 hover:border-green-400/30 transition-all duration-300">
+                    <div className="text-3xl mb-3">{benefit.icon}</div>
+                    <h3 className="text-lg font-semibold mb-2 text-white">{benefit.title}</h3>
+                    <p className="text-white/70 text-sm">{benefit.description}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
 
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="text-6xl mb-4">🔬</div>
-                <h3 className="text-xl font-semibold text-white mb-2">Cutting-Edge AI</h3>
-                <p className="text-gray-400 text-sm">Latest machine learning and AI technologies for maximum effectiveness.</p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="text-6xl mb-4">⚡</div>
-                <h3 className="text-xl font-semibold text-white mb-2">Rapid Implementation</h3>
-                <p className="text-gray-400 text-sm">Get up and running in weeks, not months, with our streamlined process.</p>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="text-6xl mb-4">🛡️</div>
-                <h3 className="text-xl font-semibold text-white mb-2">Enterprise Security</h3>
-                <p className="text-gray-400 text-sm">Bank-level security and compliance for your most sensitive operations.</p>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Contact Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-                <span className="bg-gradient-to-r from-emerald-400 to-teal-500 bg-clip-text text-transparent">
-                  Ready to Automate Your Business?
-                </span>
-              </h2>
-              <p className="text-xl text-gray-300 mb-8">
-                Contact us today to learn how our AI automation services can transform your operations and drive unprecedented growth.
-              </p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                <div className="bg-black/40 backdrop-blur-xl border border-emerald-400/30 rounded-2xl p-6">
-                  <div className="text-3xl mb-4">📱</div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Phone</h3>
-                  <a href="tel:+13024640950" className="text-emerald-400 hover:text-emerald-300 transition-colors">
-                    +1 302 464 0950
-                  </a>
+            {/* Implementation Process */}
+            <section className="mb-20">
+              <h2 className="text-3xl font-bold mb-12 text-center text-white">Our Implementation Process</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full flex items-center justify-center text-2xl font-bold text-white mx-auto mb-4">
+                    1
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 text-white">Discovery & Analysis</h3>
+                  <p className="text-white/70 text-sm">We analyze your current processes and identify automation opportunities</p>
                 </div>
-                <div className="bg-black/40 backdrop-blur-xl border border-emerald-400/30 rounded-2xl p-6">
-                  <div className="text-3xl mb-4">✉️</div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Email</h3>
-                  <a href="mailto:kleber@ziontechgroup.com" className="text-emerald-400 hover:text-emerald-300 transition-colors">
-                    kleber@ziontechgroup.com
-                  </a>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full flex items-center justify-center text-2xl font-bold text-white mx-auto mb-4">
+                    2
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 text-white">Strategy & Design</h3>
+                  <p className="text-white/70 text-sm">We design a comprehensive automation strategy tailored to your needs</p>
                 </div>
-                <div className="bg-black/40 backdrop-blur-xl border border-emerald-400/30 rounded-2xl p-6">
-                  <div className="text-3xl mb-4">📍</div>
-                  <h3 className="text-xl font-semibold text-white mb-2">Address</h3>
-                  <p className="text-gray-300 text-sm">
-                    364 E Main St STE 1008<br />
-                    Middletown DE 19709
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-fuchsia-400 rounded-full flex items-center justify-center text-2xl font-bold text-white mx-auto mb-4">
+                    3
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 text-white">Development & Testing</h3>
+                  <p className="text-white/70 text-sm">We build and thoroughly test your automation solutions</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-fuchsia-400 to-cyan-400 rounded-full flex items-center justify-center text-2xl font-bold text-white mx-auto mb-4">
+                    4
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 text-white">Deployment & Support</h3>
+                  <p className="text-white/70 text-sm">We deploy your solutions and provide ongoing support and optimization</p>
+                </div>
+              </div>
+            </section>
+
+            {/* Technology Stack */}
+            <section className="mb-20">
+              <h2 className="text-3xl font-bold mb-12 text-center text-white">Our Technology Stack</h2>
+              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                {[
+                  'Machine Learning', 'Natural Language Processing', 'Computer Vision', 'Robotic Process Automation',
+                  'Cloud Computing', 'Edge Computing', 'IoT Integration', 'Blockchain', 'Quantum Computing',
+                  'Neural Networks', 'Deep Learning', 'Predictive Analytics'
+                ].map((tech, index) => (
+                  <div key={index} className="bg-gradient-to-br from-white/10 to-white/5 rounded-lg p-4 border border-white/20 text-center hover:border-cyan-400/30 transition-all duration-300">
+                    <p className="text-white/80 text-sm font-medium">{tech}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Case Studies Preview */}
+            <section className="mb-20">
+              <h2 className="text-3xl font-bold mb-12 text-center text-white">Success Stories</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl p-8 border border-white/20">
+                  <h3 className="text-xl font-bold mb-4 text-white">Manufacturing Efficiency</h3>
+                  <p className="text-white/80 mb-4">
+                    A leading manufacturer achieved 40% increase in production efficiency and 60% reduction in downtime 
+                    through our AI-powered predictive maintenance system.
                   </p>
+                  <div className="flex items-center gap-4 text-sm text-white/60">
+                    <span>Industry: Manufacturing</span>
+                    <span>ROI: 300%</span>
+                  </div>
+                </div>
+                <div className="bg-gradient-to-br from-white/10 to-white/5 rounded-2xl p-8 border border-white/20">
+                  <h3 className="text-xl font-bold mb-4 text-white">Customer Service Transformation</h3>
+                  <p className="text-white/80 mb-4">
+                    A retail company reduced customer service response time by 80% and increased customer satisfaction 
+                    scores through intelligent chatbot automation.
+                  </p>
+                  <div className="flex items-center gap-4 text-sm text-white/60">
+                    <span>Industry: Retail</span>
+                    <span>ROI: 250%</span>
+                  </div>
                 </div>
               </div>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="mailto:kleber@ziontechgroup.com"
-                  className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-emerald-600 hover:to-teal-600 transition-all duration-300 transform hover:scale-105"
-                >
-                  Start Your Automation Journey
-                </a>
-                <a
-                  href="https://ziontechgroup.com"
-                  className="border-2 border-emerald-400 text-emerald-400 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-emerald-400 hover:text-black transition-all duration-300 transform hover:scale-105"
-                >
-                  Visit Our Website
-                </a>
+            </section>
+
+            {/* CTA Section */}
+            <section className="text-center">
+              <div className="bg-gradient-to-r from-cyan-400/10 to-fuchsia-400/10 rounded-2xl p-12 border border-cyan-400/20">
+                <h2 className="text-3xl font-bold mb-6 text-white">Ready to Transform Your Business?</h2>
+                <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
+                  Let's discuss how AI automation can revolutionize your operations and drive unprecedented growth.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link 
+                    href="/contact" 
+                    className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-fuchsia-400 text-white font-semibold rounded-lg hover:from-cyan-500 hover:to-fuchsia-500 transition-all duration-300"
+                  >
+                    Get Started Today
+                  </Link>
+                  <Link 
+                    href="/case-studies" 
+                    className="px-8 py-4 border border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-white transition-all duration-300"
+                  >
+                    View Case Studies
+                  </Link>
+                </div>
               </div>
-            </motion.div>
+            </section>
           </div>
-        </section>
+        </main>
+      </div>
     </>
   );
 }
