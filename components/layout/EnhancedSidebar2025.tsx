@@ -33,9 +33,10 @@ const EnhancedSidebar2025: React.FC<{ isOpen: boolean; onClose: () => void }> = 
       icon: Brain,
       color: 'from-purple-500 to-pink-500',
       items: [
-        { label: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2044', badge: 'Hot', featured: true },
-        { label: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-platform', badge: 'New' },
-        { label: 'AI Autonomous Research', href: '/ai-autonomous-research', badge: 'Trending' },
+        { label: 'AI Consciousness Evolution 2045', href: '/ai-consciousness-evolution-2045', badge: 'Hot', featured: true },
+        { label: 'AI Services Platform', href: '/ai-services', badge: 'New' },
+        { label: 'AI Guardrails Suite', href: '/ai-guardrails', badge: 'Trending' },
+        { label: 'Agentic RAG Platform', href: '/agentic-rag', badge: 'Featured' },
         { label: 'AI Content Personalization', href: '/ai-content-personalization-engine' },
         { label: 'AI Ethics & Governance', href: '/ai-ethics-governance-framework' },
         { label: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem' },
@@ -46,8 +47,7 @@ const EnhancedSidebar2025: React.FC<{ isOpen: boolean; onClose: () => void }> = 
         { label: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' },
         { label: 'AI Manufacturing Optimization', href: '/ai-manufacturing-optimization' },
         { label: 'AI Market Research', href: '/ai-market-research' },
-        { label: 'AI Sustainability Platform', href: '/ai-sustainability-platform' },
-        { label: 'AI Autonomous Vehicle', href: '/ai-autonomous-vehicle-platform' }
+        { label: 'AI Sustainability Platform', href: '/ai-sustainability-platform' }
       ]
     },
     {
@@ -56,8 +56,8 @@ const EnhancedSidebar2025: React.FC<{ isOpen: boolean; onClose: () => void }> = 
       icon: Atom,
       color: 'from-blue-500 to-cyan-500',
       items: [
-        { label: 'Quantum Neural Ecosystem', href: '/quantum-neural-ecosystem-2040', badge: 'Revolutionary', featured: true },
-        { label: 'Quantum Cybersecurity', href: '/quantum-cybersecurity-platform-2044', badge: 'Critical' },
+        { label: 'Quantum Neural Network 2045', href: '/quantum-neural-network-platform-2045', badge: 'Revolutionary', featured: true },
+        { label: 'Quantum Cybersecurity', href: '/quantum-cybersecurity', badge: 'Critical' },
         { label: 'Quantum Internet Security', href: '/quantum-internet-security-platform' },
         { label: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure-2044' },
         { label: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' },
@@ -67,7 +67,7 @@ const EnhancedSidebar2025: React.FC<{ isOpen: boolean; onClose: () => void }> = 
         { label: 'Quantum Financial Trading', href: '/quantum-financial-trading' },
         { label: 'Quantum Internet Security Platform', href: '/quantum-internet-security-platform' },
         { label: 'Quantum Storage Solutions', href: '/quantum-storage-solutions-2044' },
-        { label: 'Quantum Workload Orchestration', href: '/quantum-workload-orchestration' }
+        { label: 'Quantum Neural Network 2044', href: '/quantum-neural-network-platform-2044' }
       ]
     },
     {
@@ -76,8 +76,8 @@ const EnhancedSidebar2025: React.FC<{ isOpen: boolean; onClose: () => void }> = 
       icon: Globe,
       color: 'from-indigo-500 to-purple-500',
       items: [
-        { label: 'Space Resource Intelligence', href: '/space-resource-intelligence-2044', badge: 'Future', featured: true },
-        { label: 'Satellite Technology', href: '/satellite-technology' },
+        { label: 'Space Resource Intelligence 2045', href: '/space-resource-intelligence-2045', badge: 'Future', featured: true },
+        { label: 'Space Technology', href: '/space-technology', badge: 'Core' },
         { label: 'Space Data Analytics', href: '/space-data-analytics' },
         { label: 'Orbital Computing', href: '/orbital-computing' },
         { label: 'Space Cybersecurity', href: '/space-cybersecurity' },

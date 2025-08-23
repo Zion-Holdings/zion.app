@@ -96,37 +96,47 @@ const navigationItems: NavigationItem[] = [
         category: 'ai'
       },
       {
-        label: 'Quantum Computing',
-        href: '/services?category=quantum',
+        label: 'AI Consciousness Evolution',
+        href: '/ai-consciousness-evolution-2045',
+        icon: <Brain className="w-4 h-4" />,
+        description: 'Revolutionary AI consciousness platform',
+        featured: true,
+        neonColor: 'shadow-purple-400/50',
+        category: 'ai'
+      },
+      {
+        label: 'Quantum Neural Networks',
+        href: '/quantum-neural-network-platform-2045',
         icon: <Atom className="w-4 h-4" />,
-        description: 'Next-generation quantum solutions',
+        description: 'Quantum-powered neural networks',
         featured: true,
         neonColor: 'shadow-blue-400/50',
         category: 'quantum'
       },
       {
-        label: 'Cybersecurity',
-        href: '/services?category=cybersecurity',
+        label: 'Space Resource Intelligence',
+        href: '/space-resource-intelligence-2045',
+        icon: <Rocket className="w-4 h-4" />,
+        description: 'Space exploration and resource mapping',
+        featured: true,
+        neonColor: 'shadow-pink-400/50',
+        category: 'space'
+      },
+      {
+        label: 'AI Guardrails',
+        href: '/ai-guardrails',
         icon: <Shield className="w-4 h-4" />,
-        description: 'Advanced security solutions',
+        description: 'AI safety and compliance framework',
         neonColor: 'shadow-red-400/50',
         category: 'security'
       },
       {
-        label: 'Cloud Infrastructure',
-        href: '/services?category=cloud',
-        icon: <Cloud className="w-4 h-4" />,
-        description: 'Scalable cloud solutions',
+        label: 'Agentic RAG Platform',
+        href: '/agentic-rag',
+        icon: <Target className="w-4 h-4" />,
+        description: 'Intelligent retrieval-augmented generation',
         neonColor: 'shadow-indigo-400/50',
-        category: 'infrastructure'
-      },
-      {
-        label: 'Business Intelligence',
-        href: '/services?category=bi',
-        icon: <BarChart3 className="w-4 h-4" />,
-        description: 'Data-driven insights',
-        neonColor: 'shadow-emerald-400/50',
-        category: 'business'
+        category: 'ai'
       }
     ]
   },
