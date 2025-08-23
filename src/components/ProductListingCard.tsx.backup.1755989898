@@ -4,9 +4,18 @@ import { useRouter } from 'next/router';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ProductListing } from "@/types/listings";
+<<<<<<< HEAD
+import { Star, DollarSign, Heart } from "lucide-react";
+import { useAppDispatch } from "@/store/hooks";
+import { addToWishlist, getApiUrl } from "@/store/wishlistSlice";
+import { useAuth } from "@/hooks/useAuth";
+import { useLocation } from "react-router-dom";
+import { toast } from "sonner";
+=======
 import { DollarSign } from "lucide-react";
 import { RatingStars } from "./RatingStars";
 import { FavoriteButton } from "@/components/FavoriteButton";
+>>>>>>> origin/9lfw2u-codex/render-filled-stars-for-ratings
 
 interface ProductListingCardProps {
   listing: ProductListing;
@@ -198,6 +207,9 @@ const ProductListingCardComponent = ({
               {listing.category}
             </Badge>
             {listing.rating && (
+<<<<<<< HEAD
+              <RatingStars value={listing.rating} count={listing.reviewCount ?? 0} />
+=======
               <div className="flex items-center text-zion-slate-light">
                 <RatingStars value={listing.rating} />
                 <span className="ml-1">{listing.rating.toFixed(1)}</span>
@@ -205,6 +217,7 @@ const ProductListingCardComponent = ({
                   <span className="text-xs ml-1">({listing.reviewCount})</span>
                 )}
               </div>
+>>>>>>> origin/9lfw2u-codex/render-filled-stars-for-ratings
             )}
           </div>
           

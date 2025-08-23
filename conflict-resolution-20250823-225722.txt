@@ -343,3 +343,8 @@
 2025-08-23 22:58:17 - Resolving conflicts in scripts/package.json for branch 9kvoyx-codex/fix-client-side-rendering-and-javascript-errors
 2025-08-23 22:58:17 - Resolving conflicts in scripts/prerender.js for branch 9kvoyx-codex/fix-client-side-rendering-and-javascript-errors
 2025-08-23 22:58:17 - Resolving conflicts in src/main.tsx for branch 9kvoyx-codex/fix-client-side-rendering-and-javascript-errors
+2025-08-23 22:58:18 - Merge conflicts detected in 9lfw2u-codex/render-filled-stars-for-ratings
+2025-08-23 22:58:18 - Resolving conflicts in src/components/ListingScoreCard.tsx for branch 9lfw2u-codex/render-filled-stars-for-ratings
+2025-08-23 22:58:18 - Resolving conflicts in src/components/ProductListingCard.tsx for branch 9lfw2u-codex/render-filled-stars-for-ratings
+2025-08-23 22:58:18 - Resolving conflicts in src/pages/EquipmentDetail.tsx for branch 9lfw2u-codex/render-filled-stars-for-ratings
+2025-08-23 22:58:18 - Resolving conflicts in src/pages/ListingDetail.tsx for branch 9lfw2u-codex/render-filled-stars-for-ratings

@@ -1,7 +1,14 @@
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+<<<<<<< HEAD
+import { StarIcon } from 'lucide-react';
+
+import Image from 'next/image'; // Import next/image
+import React, { useState } from 'react'; // Import useState
+=======
 import { RatingStars } from "./RatingStars";
+>>>>>>> origin/9lfw2u-codex/render-filled-stars-for-ratings
 
 interface ListingScoreCardProps {
   title: string;
