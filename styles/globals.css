@@ -26,15 +26,171 @@
   --holographic-wave: 0 0 200px rgba(139, 92, 246, 0.12);
   --cyberpunk-pulse: 0 0 180px rgba(236, 73, 153, 0.1);
   
-  /* New Enhanced Variables */
-  --quantum-aura: 0 0 300px rgba(0, 255, 255, 0.05);
-  --holographic-aura: 0 0 400px rgba(139, 92, 246, 0.08);
-  --neural-aura: 0 0 350px rgba(16, 185, 129, 0.06);
-  --cyberpunk-aura: 0 0 450px rgba(236, 73, 153, 0.07);
-  --quantum-resonance: 0 0 600px rgba(0, 255, 255, 0.03);
-  --holographic-resonance: 0 0 800px rgba(139, 92, 246, 0.04);
-  --neural-resonance: 0 0 700px rgba(16, 185, 129, 0.03);
-  --cyberpunk-resonance: 0 0 900px rgba(236, 73, 153, 0.04);
+  /* Enhanced color palette */
+  --gradient-primary: linear-gradient(135deg, #00d4ff, #3b82f6, #8b5cf6);
+  --gradient-secondary: linear-gradient(135deg, #ec4899, #f97316, #f59e0b);
+  --gradient-accent: linear-gradient(135deg, #10b981, #14b8a6, #06b6d4);
+  
+  /* Animation variables */
+  --animation-duration: 0.3s;
+  --animation-timing: cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Additional theme colors */
+  --primary-color: #06b6d4;
+  --secondary-color: #3b82f6;
+  --accent-color: #8b5cf6;
+  --background-color: #000000;
+  --text-color: #ffffff;
+  --surface-color: #1f2937;
+  --border-color: #374151;
+  
+  /* Accessibility variables */
+  --focus-ring: 3px solid #00d4ff;
+  --focus-ring-offset: 2px;
+  --high-contrast-text: #ffffff;
+  --high-contrast-bg: #000000;
+  --large-text-size: 1.25rem;
+  --dyslexia-line-height: 1.8;
+  --dyslexia-letter-spacing: 0.1em;
+}
+
+.light {
+  --background-color: #f9fafb;
+  --text-color: #111827;
+  --surface-color: #ffffff;
+  --border-color: #d1d5db;
+}
+
+.dark {
+  --background-color: #000000;
+  --text-color: #ffffff;
+  --surface-color: #1f2937;
+  --border-color: #374151;
+}
+
+/* High Contrast Mode */
+.high-contrast {
+  --text-color: var(--high-contrast-text);
+  --background-color: var(--high-contrast-bg);
+  --surface-color: #ffffff;
+  --border-color: #000000;
+}
+
+.high-contrast * {
+  color: var(--text-color) !important;
+  background-color: var(--background-color) !important;
+  border-color: var(--border-color) !important;
+}
+
+.high-contrast .bg-gray-800 {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+.high-contrast .bg-gray-700 {
+  background-color: #f3f4f6 !important;
+  color: #000000 !important;
+}
+
+/* Large Text Mode */
+.large-text {
+  font-size: var(--large-text-size);
+}
+
+.large-text h1 { font-size: 2.5rem; }
+.large-text h2 { font-size: 2rem; }
+.large-text h3 { font-size: 1.75rem; }
+.large-text p, .large-text span { font-size: 1.25rem; }
+
+/* Reduced Motion Mode */
+.reduced-motion *,
+.reduced-motion *::before,
+.reduced-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Dyslexia-Friendly Mode */
+.dyslexia-friendly {
+  font-family: 'OpenDyslexic', 'Comic Sans MS', 'Arial', sans-serif;
+  line-height: var(--dyslexia-line-height);
+  letter-spacing: var(--dyslexia-letter-spacing);
+}
+
+.dyslexia-friendly p {
+  margin-bottom: 1.5em;
+}
+
+/* Color Blindness Simulations */
+.color-blindness-protanopia {
+  filter: url('#protanopia-filter');
+}
+
+.color-blindness-deuteranopia {
+  filter: url('#deuteranopia-filter');
+}
+
+.color-blindness-tritanopia {
+  filter: url('#tritanopia-filter');
+}
+
+/* Focus Management */
+*:focus {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+*:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* Skip Links */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #000000;
+  color: #ffffff;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 1000;
+  border-radius: 4px;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Screen Reader Only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* High Contrast Focus Indicators */
+.high-contrast *:focus {
+  outline: 3px solid #ffff00 !important;
+  outline-offset: 2px !important;
+}
+
+/* Enhanced Typography */
+.text-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 3s ease-in-out infinite;
+>>>>>>> cursor/analyze-improve-and-deploy-ziontechgroup-app-9b2d
 }
 
 /* Enhanced Scrollbar */
@@ -635,9 +791,186 @@ body::after {
 @keyframes cyberpunkSpin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+=======
+  background: rgba(0, 212, 255, 0.4);
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.8);
+}
+
+/* Enhanced Focus States */
+.focus-ring {
+  @apply focus:outline-none focus:ring-4 focus:ring-cyan-500/50 focus:ring-offset-2 focus:ring-offset-gray-900;
+}
+
+.focus-ring-light {
+  @apply focus:outline-none focus:ring-4 focus:ring-cyan-500/50 focus:ring-offset-2 focus:ring-offset-white;
+}
+
+/* Enhanced Button States */
+.btn-primary {
+  @apply bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 
+         text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 
+         focus:outline-none focus:ring-4 focus:ring-cyan-500/50 focus:ring-offset-2 
+         active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-secondary {
+  @apply bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 
+         text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 
+         focus:outline-none focus:ring-4 focus:ring-purple-500/50 focus:ring-offset-2 
+         active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-ghost {
+  @apply bg-transparent border-2 border-gray-600 text-gray-300 hover:bg-gray-700 
+         hover:border-gray-500 hover:text-white font-semibold py-3 px-6 rounded-lg 
+         transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-gray-500/50 
+         focus:ring-offset-2 active:scale-95;
+}
+
+/* Enhanced Card Styles */
+.card {
+  @apply bg-gray-800 border border-gray-700 rounded-lg p-6 shadow-lg hover:shadow-xl 
+         transition-all duration-300 hover:border-gray-600;
+}
+
+.card-hover {
+  @apply transform hover:scale-105 hover:-translate-y-1 transition-all duration-300;
+}
+
+/* Enhanced Input Styles */
+.input-primary {
+  @apply bg-gray-700 border border-gray-600 text-white placeholder-gray-400 
+         rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500 
+         focus:border-transparent transition-all duration-300;
+}
+
+.input-error {
+  @apply border-red-500 focus:ring-red-500;
+}
+
+.input-success {
+  @apply border-green-500 focus:ring-green-500;
+}
+
+/* Enhanced Animation Classes */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounce 2s infinite;
+}
+
+/* Custom Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes neon-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+  }
+  50% {
+    box-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-up {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-down {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Utility Classes */
+.animate-slide-in-left {
+  animation: slide-in-left 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.6s ease-out;
+}
+
+.animate-slide-in-up {
+  animation: slide-in-up 0.6s ease-out;
+}
+
+.animate-slide-in-down {
+  animation: slide-in-down 0.6s ease-out;
+>>>>>>> cursor/analyze-improve-and-deploy-ziontechgroup-app-9b2d
 }
 
 /* Enhanced Responsive Design */
+@media (max-width: 640px) {
+  .container {
+    @apply px-4;
+  }
+  
+  .card {
+    @apply p-4;
+  }
+  
+  .btn-primary, .btn-secondary, .btn-ghost {
+    @apply py-2 px-4 text-sm;
+  }
+}
+
 @media (max-width: 768px) {
   .quantum-grid {
     background-size: 25px 25px;
