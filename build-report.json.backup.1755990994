@@ -1,4 +1,22 @@
 {
+<<<<<<< HEAD
+  "timestamp": "2025-07-01T19:19:13.358Z",
+  "duration": 70500,
+  "success": false,
+  "criticalErrors": 1,
+  "suppressedWarnings": 14,
+  "details": {
+    "criticalErrors": [
+      {
+        "message": "unhandledRejection TypeError: Cannot read properties of undefined (reading 'length')",
+        "timestamp": 1751397553206,
+        "classification": "critical"
+      }
+    ],
+    "suppressedWarnings": []
+  }
+}
+=======
   "timestamp": "2025-08-14T22:01:43.134Z",
   "success": false,
   "errors": [
@@ -37,3 +55,4 @@
     "warnings": 4
   }
 }
+>>>>>>> origin/cursor/bc-ea46a2eb-982d-4fb0-930c-ef6544ba8a75-a20a

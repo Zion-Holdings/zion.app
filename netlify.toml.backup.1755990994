@@ -1,6 +1,12 @@
 [build]
+<<<<<<< HEAD
+  command = "npm ci && npm run sitemap && npm run build"
+  publish = ".next"
+  functions = "netlify/functions"
+=======
   command = "chmod +x scripts/pre-build-check.sh && ./scripts/pre-build-check.sh && npm ci && npm run export"
   publish = "out"
+>>>>>>> origin/cursor/bc-ea46a2eb-982d-4fb0-930c-ef6544ba8a75-a20a
 
 [build.environment]
   NODE_VERSION = "22.12.0"
