@@ -1,5 +1,11 @@
 import React, { useEffect, useState, useCallback, memo } from 'react';
 import Layout from './layout/Layout';
+<<<<<<< HEAD
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { 
+  ArrowRight, Brain, Atom, Shield, Search, MessageCircle, Phone, Mail, Globe, Award, Users, Rocket
+=======
 import UltraFuturisticServiceCard2026 from './ui/UltraFuturisticServiceCard2026';
 import EnhancedSearch from './EnhancedSearch';
 import AIChatbot from './AIChatbot';
@@ -9,6 +15,7 @@ import { motion } from 'framer-motion';
 import { 
   ArrowRight, Star, 
   Brain, Atom, Shield, Zap, TrendingUp, Globe, MapPin, Search, MessageCircle, BarChart3
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-ebbc
 } from 'lucide-react';
 import { AnimatePresence } from 'framer-motion';
 import ThemeToggle from './ThemeToggle';
@@ -402,6 +409,17 @@ const Homepage2025: React.FC = () => {
               <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Rocket className="w-8 h-8 text-white" />
               </div>
+<<<<<<< HEAD
+              <h3 className="text-2xl font-bold text-white mb-4">Space Technology</h3>
+              <p className="text-gray-300 mb-6">
+                Revolutionary space solutions from satellite networks to interplanetary infrastructure.
+              </p>
+              <Link
+                href="/space-technology"
+                className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors group-hover:translate-x-1"
+              >
+                Learn More <ArrowRight className="ml-2 w-4 h-4" />
+=======
               
               {/* Trust Indicators */}
               <motion.div
@@ -646,14 +664,193 @@ const Homepage2025: React.FC = () => {
                   View All Services
                   <ArrowRight className="w-5 h-5" />
                 </button>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-ebbc
               </Link>
             </motion.div>
           </div>
         </section>
+<<<<<<< HEAD
+
+      {/* Performance & Innovation */}
+      <section id="performance" className="py-20 px-4 bg-black">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Performance & Innovation
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Our commitment to excellence drives every solution we deliver.
+            </p>
+          </motion.div>
+
+          {/* Performance Metrics Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="text-center p-6 bg-gradient-to-br from-cyan-900/20 to-transparent border border-cyan-500/20 rounded-xl"
+            >
+              <div className="text-4xl font-bold text-cyan-400 mb-2">10x</div>
+              <div className="text-gray-400">Performance Improvement</div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center p-6 bg-gradient-to-br from-purple-900/20 to-transparent border border-purple-500/20 rounded-xl"
+            >
+              <div className="text-4xl font-bold text-purple-400 mb-2">24/7</div>
+              <div className="text-gray-400">Support Availability</div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="text-center p-6 bg-gradient-to-br from-blue-900/20 to-transparent border border-blue-500/20 rounded-xl"
+            >
+              <div className="text-4xl font-bold text-blue-400 mb-2">100%</div>
+              <div className="text-gray-400">Client Satisfaction</div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="text-center p-6 bg-gradient-to-br from-green-900/20 to-transparent border border-green-500/20 rounded-xl"
+            >
+              <div className="text-4xl font-bold text-green-400 mb-2">50+</div>
+              <div className="text-gray-400">Patents Filed</div>
+            </motion.div>
+          </div>
+        </section>
+
+      {/* Enhanced Features Section */}
+      <section className="py-20 px-4" aria-labelledby="features-heading">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 id="features-heading" className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Why Choose Zion Tech Group?
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Our comprehensive suite of cutting-edge technologies and services sets us apart in the industry
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 p-8 cursor-pointer"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -10, scale: 1.02 }}
+                onClick={() => setActiveFeature(index)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setActiveFeature(index);
+                  }
+                }}
+                aria-label={`Learn more about ${feature.title}`}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative">
+                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${feature.color} p-3 mb-6`}>
+                    <feature.icon className="w-full h-full text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-4">{feature.title}</h3>
+                  <p className="text-gray-300 leading-relaxed">{feature.description}</p>
+                  <div className="mt-4 flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors">
+                    <span className="text-sm font-medium">Learn More</span>
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Floating Action Buttons */}
+      <AnimatePresence>
+        {showFloatingActions && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 20 }}
+            className="fixed bottom-6 right-6 flex flex-col space-y-3 z-40"
+          >
+            <motion.a
+              href="tel:+1-555-0123"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-14 h-14 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300"
+              title="Call Us"
+            >
+              <Phone className="w-6 h-6" />
+            </motion.a>
+            
+            <motion.a
+              href="mailto:contact@ziontechgroup.com"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-14 h-14 bg-gradient-to-r from-blue-500 to-cyan-600 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300"
+              title="Email Us"
+            >
+              <Mail className="w-6 h-6" />
+            </motion.a>
+            
+            <motion.a
+              href="/contact"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-14 h-14 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300"
+              title="Contact Form"
+            >
+              <MessageCircle className="w-6 h-6" />
+            </motion.a>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Floating Newsletter Button */}
+      <motion.button
+        className="fixed bottom-8 left-8 w-14 h-14 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-500/50 z-40"
+        onClick={() => setShowNewsletter(true)}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        aria-label="Open newsletter signup"
+      >
+        <Zap className="w-6 h-6 text-white mx-auto" />
+      </motion.button>
+=======
       </main>
 
       {/* AI Chatbot */}
       <AIChatbot />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-ebbc
     </Layout>
   );
 };

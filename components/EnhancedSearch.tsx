@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Search, X, Sparkles, Filter, TrendingUp, Clock, Star } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, X, TrendingUp, Clock, Star, ArrowRight, Brain, Atom, Rocket, Shield, Zap } from 'lucide-react';
-import Link from 'next/link';
 
 interface EnhancedSearchProps {
   onClose: () => void;
@@ -12,403 +11,326 @@ interface SearchResult {
   title: string;
   description: string;
   category: string;
-  icon: React.ReactNode;
-  featured?: boolean;
-  tags: string[];
+  url: string;
+  relevance: number;
+  lastUpdated: string;
+  featured: boolean;
 }
 
-const EnhancedSearch: React.FC<EnhancedSearchProps> = ({ onClose }) => {
+interface EnhancedSearchProps {
+  placeholder?: string;
+  className?: string;
+  onSearch?: (query: string) => void;
+}
+
+const EnhancedSearch: React.FC<EnhancedSearchProps> = ({
+  placeholder = "Search for AI, quantum, or autonomous solutions...",
+  className = "",
+  onSearch
+}) => {
   const [query, setQuery] = useState('');
-  const [isSearching, setIsSearching] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [results, setResults] = useState<SearchResult[]>([]);
-  const [recentSearches, setRecentSearches] = useState<string[]>([]);
-  const [popularSearches, setPopularSearches] = useState<string[]>([]);
-  const [selectedIndex, setSelectedIndex] = useState(-1);
+  const [filteredResults, setFilteredResults] = useState<SearchResult[]>([]);
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [isLoading, setIsLoading] = useState(false);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const searchRef = useRef<HTMLDivElement>(null);
 
-  // Memoized search suggestions
-  const searchSuggestions = useMemo(() => [
-    'AI Consciousness Evolution',
-    'Quantum Neural Networks',
-    'Space Resource Mining',
-    'Autonomous Business Operations',
-    'Brain-Computer Interface',
-    'Quantum Financial Trading',
-    'AI Emotional Intelligence',
-    'Zero Trust Security',
-    'Edge Computing',
-    'Blockchain Infrastructure'
-  ], []);
+  // Mock AI-powered search suggestions
+  const aiSuggestions = [
+    "AI consciousness evolution",
+    "Quantum neural networks",
+    "Autonomous business intelligence",
+    "Space resource mining",
+    "Brain-computer interface",
+    "Quantum cybersecurity",
+    "AI emotional intelligence",
+    "Autonomous vehicle AI"
+  ];
 
-  // Mock search results - in a real app, this would come from an API
-  const mockSearchResults = useMemo(() => [
+  // Mock search results
+  const mockResults: SearchResult[] = [
     {
       id: '1',
-      title: 'AI Consciousness Evolution 2029',
-      description: 'Revolutionary AI platform that evolves consciousness and emotional intelligence',
-      url: '/ai-consciousness-evolution-2029',
-      category: 'AI & Consciousness',
-      icon: <Brain className="w-5 h-5" />,
-      featured: true,
-      tags: ['AI', 'Consciousness', 'Evolution', '2029']
+      title: 'AI Consciousness Evolution 2040',
+      description: 'Revolutionary AI consciousness platform for advanced cognitive computing',
+      category: 'AI',
+      url: '/ai-consciousness-evolution-2040',
+      relevance: 0.98,
+      lastUpdated: '2025-01-23',
+      featured: true
     },
     {
       id: '2',
-      title: 'Quantum Neural Network Platform',
-      description: 'Breakthrough quantum computing solution for neural network processing',
-      url: '/quantum-neural-network-platform',
-      category: 'Quantum Technology',
-      icon: <Atom className="w-5 h-5" />,
-      featured: true,
-      tags: ['Quantum', 'Neural Networks', 'Computing']
+      title: 'Quantum Neural Ecosystem 2040',
+      description: 'Breakthrough quantum neural network platform for complex problem solving',
+      category: 'Quantum',
+      url: '/quantum-neural-ecosystem-2040',
+      relevance: 0.95,
+      lastUpdated: '2025-01-22',
+      featured: true
     },
     {
       id: '3',
-      title: 'Space Resource Mining Platform',
-      description: 'Next-generation space exploration and resource extraction technology',
-      url: '/space-resource-mining-platform',
-      category: 'Space Technology',
-      icon: <Rocket className="w-5 h-5" />,
-      featured: true,
-      tags: ['Space', 'Mining', 'Resources']
+      title: 'Autonomous Business Intelligence 2040',
+      description: 'Self-learning business intelligence platform with predictive analytics',
+      category: 'Business',
+      url: '/autonomous-business-intelligence-2040',
+      relevance: 0.92,
+      lastUpdated: '2025-01-21',
+      featured: false
     },
     {
       id: '4',
-      title: 'Zero Trust Security Platform',
-      description: 'Advanced cybersecurity solution with zero-trust architecture',
-      url: '/zero-trust-security-platform',
-      category: 'Enterprise IT',
-      icon: <Shield className="w-5 h-5" />,
-      tags: ['Security', 'Zero Trust', 'Cybersecurity']
-    },
-    {
-      id: '5',
-      title: 'Edge Computing Orchestration',
-      description: 'Intelligent edge computing management and optimization platform',
-      url: '/edge-computing-orchestration',
-      category: 'Enterprise IT',
-      icon: <Zap className="w-5 h-5" />,
-      tags: ['Edge Computing', 'Orchestration', 'IoT']
+      title: 'Space Resource Intelligence 2040',
+      description: 'Advanced space mining and resource optimization platform',
+      category: 'Space',
+      url: '/space-resource-intelligence-2040',
+      relevance: 0.89,
+      lastUpdated: '2025-01-20',
+      featured: false
     }
   ], []);
 
   // Load recent searches from localStorage
   useEffect(() => {
-    const saved = localStorage.getItem('recentSearches');
-    if (saved) {
-      setRecentSearches(JSON.parse(saved));
-    }
+    const handleClickOutside = (event: MouseEvent) => {
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+        setShowSuggestions(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Set popular searches
   useEffect(() => {
-    setPopularSearches([
-      'AI Services',
-      'Quantum Computing',
-      'Space Technology',
-      'Cybersecurity',
-      'Cloud Solutions'
-    ]);
-  }, []);
-
-  // Handle search with debouncing
-  const handleSearch = useCallback(async (searchQuery: string) => {
-    if (!searchQuery.trim()) {
+    if (query.length > 2) {
+      performSearch(query);
+      setShowSuggestions(false);
+    } else {
       setResults([]);
-      return;
+      setFilteredResults([]);
+      if (query.length > 0) {
+        setShowSuggestions(true);
+      }
     }
+  }, [query]);
 
-    setIsSearching(true);
+  useEffect(() => {
+    if (selectedCategory === 'all') {
+      setFilteredResults(results);
+    } else {
+      setFilteredResults(results.filter(result => result.category === selectedCategory));
+    }
+  }, [selectedCategory, results]);
+
+  const performSearch = async (searchQuery: string) => {
+    setIsLoading(true);
     
-    // Simulate API delay
+    // Simulate API call delay
     await new Promise(resolve => setTimeout(resolve, 300));
-
-    // Filter results based on query
-    const filteredResults = mockSearchResults.filter(result =>
+    
+    // Filter mock results based on query
+    const filtered = mockResults.filter(result =>
       result.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       result.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      result.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
+      result.category.toLowerCase().includes(searchQuery.toLowerCase())
     );
-
-    setResults(filteredResults);
-    setIsSearching(false);
-  }, []);
-
-  // Debounced search effect
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      handleSearch(query);
-    }, 300);
-
-    return () => clearTimeout(timeoutId);
-  }, [query, handleSearch]);
-
-  // Handle keyboard navigation
-  const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
-    switch (e.key) {
-      case 'ArrowDown':
-        e.preventDefault();
-        setSelectedIndex(prev => 
-          prev < results.length - 1 ? prev + 1 : prev
-        );
-        break;
-      case 'ArrowUp':
-        e.preventDefault();
-        setSelectedIndex(prev => prev > 0 ? prev - 1 : -1);
-        break;
-      case 'Enter':
-        e.preventDefault();
-        if (selectedIndex >= 0 && results[selectedIndex]) {
-          window.location.href = results[selectedIndex].url;
-        } else if (query.trim()) {
-          // Perform search
-          handleSearch(query);
-        }
-        break;
-      case 'Escape':
-        onClose();
-        break;
-    }
-  }, [results, selectedIndex, query, handleSearch, onClose]);
-
-  // Save search to recent searches
-  const saveSearch = useCallback((searchTerm: string) => {
-    const newRecentSearches = [
-      searchTerm,
-      ...recentSearches.filter(s => s !== searchTerm)
-    ].slice(0, 5);
     
-    setRecentSearches(newRecentSearches);
-    localStorage.setItem('recentSearches', JSON.stringify(newRecentSearches));
-  }, [recentSearches]);
+    setResults(filtered);
+    setFilteredResults(filtered);
+    setIsLoading(false);
+  };
 
-  // Handle search submission
-  const handleSubmit = useCallback((e: React.FormEvent) => {
+  const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (query.trim()) {
-      saveSearch(query);
-      handleSearch(query);
+      onSearch?.(query);
+      setIsOpen(false);
     }
   }, [query, saveSearch, handleSearch]);
 
-  // Handle result click
-  const handleResultClick = useCallback((result: SearchResult) => {
-    saveSearch(query);
-    onClose();
-  }, [query, saveSearch, onClose]);
+  const handleSuggestionClick = (suggestion: string) => {
+    setQuery(suggestion);
+    setShowSuggestions(false);
+    performSearch(suggestion);
+  };
+
+  const categories = [
+    { id: 'all', name: 'All Categories', count: results.length },
+    { id: 'AI', name: 'AI & ML', count: results.filter(r => r.category === 'AI').length },
+    { id: 'Quantum', name: 'Quantum', count: results.filter(r => r.category === 'Quantum').length },
+    { id: 'Business', name: 'Business', count: results.filter(r => r.category === 'Business').length },
+    { id: 'Space', name: 'Space Tech', count: results.filter(r => r.category === 'Space').length }
+  ];
 
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.95 }}
-      className="w-full max-w-4xl mx-auto bg-gray-900/95 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl overflow-hidden"
-    >
-      {/* Search Header */}
-      <div className="flex items-center justify-between p-6 border-b border-white/10">
-        <div className="flex items-center space-x-3">
-          <Search className="w-6 h-6 text-cyan-400" />
-          <h2 className="text-xl font-semibold text-white">Search Zion Tech Group</h2>
-        </div>
-        <button
-          onClick={onClose}
-          className="p-2 text-gray-400 hover:text-white transition-colors rounded-lg hover:bg-white/10"
-          aria-label="Close search"
-        >
-          <X className="w-5 h-5" />
-        </button>
-      </div>
-
+    <div className={`relative ${className}`} ref={searchRef}>
       {/* Search Input */}
-      <div className="p-6">
-        <form onSubmit={handleSubmit} className="relative">
-          <div className="relative">
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-            <input
-              type="text"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              onKeyDown={handleKeyDown}
-              placeholder="Search for services, solutions, or expertise..."
-              className="w-full pl-12 pr-4 py-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-lg"
-              autoFocus
-            />
-            {isSearching && (
-              <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
-                <div className="w-5 h-5 border-2 border-cyan-500 border-t-transparent rounded-full animate-spin"></div>
-              </div>
-            )}
-          </div>
-        </form>
-      </div>
-
-      {/* Search Results or Suggestions */}
-      <div className="max-h-96 overflow-y-auto">
-        <AnimatePresence mode="wait">
-          {query.trim() ? (
-            // Search Results
-            <motion.div
-              key="results"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="px-6 pb-6"
+      <form onSubmit={handleSearch} className="relative">
+        <div className="relative">
+          <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+          <input
+            type="text"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            onFocus={() => setIsOpen(true)}
+            placeholder={placeholder}
+            className="w-full pl-12 pr-12 py-3 bg-white/5 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all duration-300"
+          />
+          {query && (
+            <button
+              type="button"
+              onClick={() => setQuery('')}
+              className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
             >
-              {results.length > 0 ? (
-                <div className="space-y-3">
-                  <h3 className="text-sm font-medium text-gray-400 uppercase tracking-wider mb-4">
-                    Search Results ({results.length})
-                  </h3>
-                  {results.map((result, index) => (
+              <X className="w-5 h-5" />
+            </button>
+          )}
+        </div>
+      </form>
+
+      {/* AI Suggestions */}
+      <AnimatePresence>
+        {showSuggestions && query.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="absolute top-full left-0 right-0 mt-2 bg-gray-900/95 backdrop-blur-xl border border-white/20 rounded-xl shadow-2xl z-50"
+          >
+            <div className="p-4">
+              <div className="flex items-center gap-2 mb-3">
+                <Sparkles className="w-4 h-4 text-cyan-400" />
+                <span className="text-sm font-medium text-cyan-400">AI-Powered Suggestions</span>
+              </div>
+              <div className="space-y-2">
+                {aiSuggestions
+                  .filter(suggestion => suggestion.toLowerCase().includes(query.toLowerCase()))
+                  .slice(0, 4)
+                  .map((suggestion, index) => (
+                    <button
+                      key={index}
+                      onClick={() => handleSuggestionClick(suggestion)}
+                      className="w-full text-left p-2 rounded-lg hover:bg-white/5 transition-colors text-gray-300 hover:text-white"
+                    >
+                      {suggestion}
+                    </button>
+                  ))}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Search Results */}
+      <AnimatePresence>
+        {isOpen && (results.length > 0 || isLoading) && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="absolute top-full left-0 right-0 mt-2 bg-gray-900/95 backdrop-blur-xl border border-white/20 rounded-xl shadow-2xl z-50 max-h-96 overflow-hidden"
+          >
+            {/* Category Filters */}
+            <div className="p-4 border-b border-white/10">
+              <div className="flex items-center gap-2 mb-3">
+                <Filter className="w-4 h-4 text-purple-400" />
+                <span className="text-sm font-medium text-purple-400">Filter by Category</span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {categories.map((category) => (
+                  <button
+                    key={category.id}
+                    onClick={() => setSelectedCategory(category.id)}
+                    className={`px-3 py-1 rounded-full text-xs font-medium transition-all duration-200 ${
+                      selectedCategory === category.id
+                        ? 'bg-cyan-500 text-black'
+                        : 'bg-white/10 text-gray-300 hover:bg-white/20'
+                    }`}
+                  >
+                    {category.name} ({category.count})
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Results */}
+            <div className="max-h-64 overflow-y-auto">
+              {isLoading ? (
+                <div className="p-4 text-center">
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-cyan-500 mx-auto"></div>
+                  <p className="text-gray-400 mt-2">Searching with AI...</p>
+                </div>
+              ) : (
+                <div className="p-4 space-y-3">
+                  {filteredResults.map((result) => (
                     <motion.div
                       key={result.id}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                      className={`p-4 rounded-xl border transition-all duration-200 cursor-pointer ${
-                        selectedIndex === index
-                          ? 'border-cyan-500/50 bg-cyan-500/10'
-                          : 'border-white/10 hover:border-cyan-500/30 hover:bg-white/5'
-                      }`}
-                      onClick={() => handleResultClick(result)}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      className="group p-3 rounded-lg hover:bg-white/5 transition-all duration-200 cursor-pointer"
                     >
-                      <div className="flex items-start space-x-4">
-                        <div className="w-10 h-10 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                          {result.icon}
+                      <div className="flex items-start gap-3">
+                        <div className="flex-shrink-0">
+                          {result.featured ? (
+                            <Star className="w-5 h-5 text-yellow-400 fill-current" />
+                          ) : (
+                            <div className="w-5 h-5 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500"></div>
+                          )}
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="flex items-center space-x-2 mb-2">
-                            <h4 className="text-white font-semibold truncate">{result.title}</h4>
+                          <div className="flex items-center gap-2 mb-1">
+                            <h4 className="text-sm font-medium text-white group-hover:text-cyan-400 transition-colors truncate">
+                              {result.title}
+                            </h4>
                             {result.featured && (
-                              <span className="px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-full">
+                              <span className="px-2 py-1 text-xs bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full">
                                 Featured
                               </span>
                             )}
                           </div>
-                          <p className="text-gray-300 text-sm mb-2 line-clamp-2">{result.description}</p>
-                          <div className="flex items-center justify-between">
-                            <span className="text-xs text-gray-400">{result.category}</span>
-                            <div className="flex items-center space-x-1 text-cyan-400">
-                              <span className="text-xs">View</span>
-                              <ArrowRight className="w-3 h-3" />
-                            </div>
+                          <p className="text-xs text-gray-400 mb-2 line-clamp-2">
+                            {result.description}
+                          </p>
+                          <div className="flex items-center gap-4 text-xs text-gray-500">
+                            <span className="flex items-center gap-1">
+                              <TrendingUp className="w-3 h-3" />
+                              {Math.round(result.relevance * 100)}% match
+                            </span>
+                            <span className="flex items-center gap-1">
+                              <Clock className="w-3 h-3" />
+                              {result.lastUpdated}
+                            </span>
+                            <span className="px-2 py-1 bg-white/10 rounded-full">
+                              {result.category}
+                            </span>
                           </div>
                         </div>
                       </div>
                     </motion.div>
                   ))}
                 </div>
-              ) : (
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className="text-center py-12"
-                >
-                  <Search className="w-16 h-16 text-gray-600 mx-auto mb-4" />
-                  <h3 className="text-lg font-medium text-gray-300 mb-2">No results found</h3>
-                  <p className="text-gray-500">Try adjusting your search terms or browse our categories below.</p>
-                </motion.div>
               )}
-            </motion.div>
-          ) : (
-            // Search Suggestions
-            <motion.div
-              key="suggestions"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="px-6 pb-6"
-            >
-              {/* Recent Searches */}
-              {recentSearches.length > 0 && (
-                <div className="mb-6">
-                  <h3 className="text-sm font-medium text-gray-400 uppercase tracking-wider mb-3 flex items-center space-x-2">
-                    <Clock className="w-4 h-4" />
-                    <span>Recent Searches</span>
-                  </h3>
-                  <div className="flex flex-wrap gap-2">
-                    {recentSearches.map((search, index) => (
-                      <button
-                        key={index}
-                        onClick={() => setQuery(search)}
-                        className="px-3 py-2 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-cyan-500/30 rounded-lg text-sm text-gray-300 hover:text-white transition-all duration-200"
-                      >
-                        {search}
-                      </button>
-                    ))}
-                  </div>
-                </div>
-              )}
+            </div>
 
-              {/* Popular Searches */}
-              <div className="mb-6">
-                <h3 className="text-sm font-medium text-gray-400 uppercase tracking-wider mb-3 flex items-center space-x-2">
-                  <TrendingUp className="w-4 h-4" />
-                  <span>Popular Searches</span>
-                </h3>
-                <div className="grid grid-cols-2 gap-3">
-                  {popularSearches.map((search, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setQuery(search)}
-                      className="p-3 bg-white/5 hover:bg-white/10 border border-white/10 hover:border-cyan-500/30 rounded-lg text-left transition-all duration-200 group"
-                    >
-                      <div className="flex items-center space-x-2">
-                        <Star className="w-4 h-4 text-yellow-400" />
-                        <span className="text-gray-300 group-hover:text-white">{search}</span>
-                      </div>
-                    </button>
-                  ))}
-                </div>
+            {/* Footer */}
+            <div className="p-4 border-t border-white/10 bg-gray-900/50">
+              <div className="flex items-center justify-between text-xs text-gray-400">
+                <span>{filteredResults.length} results found</span>
+                <span className="flex items-center gap-1">
+                  <Sparkles className="w-3 h-3 text-cyan-400" />
+                  Powered by AI
+                </span>
               </div>
-            )}
-
-              {/* Quick Categories */}
-              <div>
-                <h3 className="text-sm font-medium text-gray-400 uppercase tracking-wider mb-3">
-                  Quick Categories
-                </h3>
-                <div className="grid grid-cols-2 gap-3">
-                  {[
-                    { name: 'AI & ML', icon: <Brain className="w-5 h-5" />, color: 'cyan' },
-                    { name: 'Quantum Tech', icon: <Atom className="w-5 h-5" />, color: 'purple' },
-                    { name: 'Space Tech', icon: <Rocket className="w-5 h-5" />, color: 'blue' },
-                    { name: 'Security', icon: <Shield className="w-5 h-5" />, color: 'green' }
-                  ].map((category, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setQuery(category.name)}
-                      className={`p-4 bg-gradient-to-br from-${category.color}-500/10 to-${category.color}-600/10 border border-${category.color}-500/20 hover:border-${category.color}-500/40 rounded-lg transition-all duration-200 group`}
-                    >
-                      <div className="flex items-center space-x-3">
-                        <div className={`w-8 h-8 bg-gradient-to-r from-${category.color}-500 to-${category.color}-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200`}>
-                          {category.icon}
-                        </div>
-                        <span className="text-white font-medium">{category.name}</span>
-                      </div>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-
-      {/* Search Footer */}
-      <div className="px-6 py-4 border-t border-white/10 bg-white/5">
-        <div className="flex items-center justify-between text-sm text-gray-400">
-          <div className="flex items-center space-x-4">
-            <span>Press <kbd className="px-2 py-1 bg-white/10 rounded text-xs">Enter</kbd> to search</span>
-            <span>Press <kbd className="px-2 py-1 bg-white/10 rounded text-xs">Esc</kbd> to close</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <span>Powered by</span>
-            <div className="w-6 h-6 bg-gradient-to-r from-cyan-400 to-purple-500 rounded"></div>
-            <span className="text-cyan-400 font-medium">Zion Tech Group</span>
-          </div>
-        </div>
-      </div>
-    </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 };
 
