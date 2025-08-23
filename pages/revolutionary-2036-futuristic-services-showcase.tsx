@@ -277,7 +277,7 @@ const Revolutionary2036FuturisticServicesShowcase: React.FC = () => {
               className="grid grid-cols-2 md:grid-cols-4 gap-8"
             >
               {[
-                { name: 'Quantum Computing', icon: '⚛️', description: 'Next-generation computational power' },
+                { name: 'Quantum Computing', icon: '⚛️', description: 'ArrowRight-generation computational power' },
                 { name: 'AI Consciousness', icon: '🧠', description: 'Advanced neural consciousness' },
                 { name: 'Holographic Tech', icon: '✨', description: '3D immersive experiences' },
                 { name: 'Space Technology', icon: '🚀', description: 'Interplanetary solutions' }

@@ -71,7 +71,7 @@ const Innovative2025ServicesShowcase: React.FC = () => {
   const stats = [
     { number: allServices.length, label: 'Innovative Services', description: 'Cutting-edge solutions' },
     { number: allServices.filter(s => s.popular).length, label: 'Popular Services', description: 'High-demand solutions' },
-    { number: allServices.filter(s => s.category.toLowerCase().includes('quantum')).length, label: 'Quantum Solutions', description: 'Next-gen computing' },
+    { number: allServices.filter(s => s.category.toLowerCase().includes('quantum')).length, label: 'Quantum Solutions', description: 'ArrowRight-gen computing' },
     { number: allServices.filter(s => s.category.toLowerCase().includes('ai')).length, label: 'AI Services', description: 'Intelligent automation' }
   ];
 

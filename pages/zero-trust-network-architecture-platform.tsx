@@ -61,7 +61,7 @@ const ZeroTrustNetworkArchitecturePlatform: React.FC = () => {
                 Zero Trust Network Architecture Platform
               </h1>
               <p className="text-xl sm:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Next-generation network security platform implementing zero-trust principles with AI-powered threat detection and continuous monitoring.
+                ArrowRight-generation network security platform implementing zero-trust principles with AI-powered threat detection and continuous monitoring.
               </p>
             </motion.div>
 
