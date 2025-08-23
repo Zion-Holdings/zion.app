@@ -109,8 +109,19 @@ const Solutions: React.FC = () => {
   ];
 
   return (
+<<<<<<< HEAD
+    <UltraFuturisticBackground variant="holographic">
+      <div className="min-h-screen">
+        <SEO data={{
+          pageTitle: "Solutions - Zion Tech Group | Revolutionary AI, Quantum Computing & Emerging Technology Solutions",
+          pageDescription: "Discover Zion Tech Group's comprehensive solutions portfolio including Micro SaaS platforms, AI-powered tools, Business Intelligence, Process Automation, and Cloud platforms.",
+          pageKeywords: ["solutions", "AI", "quantum computing", "emerging technology", "micro SaaS", "business intelligence", "process automation", "cloud platforms", "Zion Tech Group"]
+        }} />
+
+=======
     <Layout>
       <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-0de9
         {/* Hero Section */}
         <section className="relative py-20 px-4 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10" />
