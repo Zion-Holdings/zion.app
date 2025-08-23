@@ -1,1 +1,1 @@
-export default function AuthIndex() { return <div>Auth coming soon.</div>; }
+export default function AuthIndexPage() { return <div className="py-12">Auth portal coming soon.</div>; }

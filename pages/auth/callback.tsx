@@ -1,1 +1,1 @@
-export default function AuthCallback() { return <div>Auth callback…</div>; }
+export default function AuthCallbackPage() { return <div className="py-12">Auth callback processing...</div>; }
