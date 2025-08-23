@@ -315,6 +315,9 @@ body {
   color: rgba(255,255,255,0.95);
   overflow-x: hidden;
   position: relative;
+<<<<<<< HEAD
+  line-height: 1.6;
+=======
   animation: bodyGlow 10s ease-in-out infinite;
 }
 
@@ -325,6 +328,7 @@ body {
   50% { 
     box-shadow: 0 0 100px rgba(139, 92, 246, 0.2) inset;
   }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-59b4
 }
 
 /* Enhanced Background Patterns */
@@ -342,7 +346,10 @@ body::before {
     radial-gradient(circle at 90% 20%, rgba(16, 185, 129, 0.02) 0%, transparent 50%);
   pointer-events: none;
   z-index: -1;
+<<<<<<< HEAD
+=======
   animation: backgroundFloat 20s ease-in-out infinite;
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-59b4
 }
 
 /* Quantum Particle Effects */
@@ -368,6 +375,16 @@ body::after {
 
 /* Enhanced Animations */
 @keyframes backgroundFloat {
+<<<<<<< HEAD
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-20px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(20px) rotate(-1deg);
+=======
   0%, 100% { 
     transform: translate(0, 0) rotate(0deg) scale(1);
   }
@@ -379,6 +396,7 @@ body::after {
   }
   75% { 
     transform: translate(-10px, 20px) rotate(0.5deg) scale(1.01);
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-59b4
   }
 }
 
@@ -427,6 +445,24 @@ body::after {
   }
 }
 
+<<<<<<< HEAD
+@keyframes quantumEntanglement {
+  0%, 100% {
+    box-shadow: 0 0 50px rgba(139, 92, 246, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 80px rgba(139, 92, 246, 0.6), 0 0 120px rgba(139, 92, 246, 0.2);
+  }
+}
+
+@keyframes holographicMatrix {
+  0%, 100% {
+    box-shadow: 0 0 120px rgba(139, 92, 246, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 180px rgba(139, 92, 246, 0.3), 0 0 240px rgba(139, 92, 246, 0.1);
+  }
+=======
 /* Enhanced Quantum Particle Effects */
 @keyframes quantumPulse {
   0%, 100% {
@@ -578,6 +614,7 @@ body::after {
   background-clip: text;
   text-shadow: 0 0 25px rgba(139, 92, 246, 0.6);
   animation: holographicTextGlow 4s ease-in-out infinite;
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-59b4
 }
 
 @keyframes neuralQuantumCyberpunk {

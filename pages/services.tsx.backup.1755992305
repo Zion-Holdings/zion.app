@@ -138,6 +138,52 @@ import { innovativeAIServices } from '../data/innovative-ai-services';
 import { quantumSpaceServices } from '../data/quantum-space-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
+<<<<<<< HEAD
+import { additionalEnhancedServices } from '../data/additional-real-services';
+import { newRealServices } from '../data/new-real-services';
+import { industryRealServices } from '../data/industry-real-services';
+import { professionalServices } from '../data/professional-services';
+import { nextGenerationAIServices } from '../data/next-generation-ai-services';
+import { cuttingEdgeITServices } from '../data/cutting-edge-it-services';
+import { innovativeMicroSaasV2Services } from '../data/innovative-micro-saas-v2';
+import { marketValidatedServices } from '../data/market-validated-services';
+import { emergingTechnologyServices } from '../data/emerging-technology-services';
+import { comprehensiveITSolutions } from '../data/comprehensive-it-solutions';
+import { curatedMarketServices } from '../data/curated-market-services';
+import { realMarketServices } from '../data/real-market-services';
+import { new2025Services } from '../data/new-2025-services';
+import { newRealInnovations } from '../data/new-real-innovations';
+import { additional2025RealServices } from '../data/additional-2025-real-services';
+import { serviceExpansions2025 } from '../data/service-expansions-2025';
+import { newOperationalServices2025 } from '../data/new-operational-services-2025';
+import { verifiedRealServices2025Batch2 } from '../data/verified-real-services-2025-batch2';
+import { innovative2025Services } from '../data/innovative-2025-services';
+import { emergingTech2025Services } from '../data/emerging-tech-2025-services';
+import { extraServices } from '../data/extra-services';
+import { newlyAddedServices } from '../data/newly-added-services';
+import { moreRealServices2025 } from '../data/more-real-services-2025';
+import { verified2025Additions } from '../data/verified-2025-additions';
+import { realServicesQ12025 } from '../data/real-services-q1-2025';
+import { realEnterpriseServices2025 } from '../data/real-enterprise-services-2025';
+import { realMarketAugmentations2025 } from '../data/real-market-augmentations-2025';
+import { innovative2026MicroSaasServicesV2 } from '../data/innovative-2026-micro-saas-v2';
+import { emergingTech2026ServicesV2 } from '../data/emerging-tech-2026-services-v2';
+import { enterpriseIT2026ServicesV2 } from '../data/enterprise-it-2026-services-v2';
+import { aiAutonomousServices2026 } from '../data/2026-ai-autonomous-services';
+import { quantumSpaceTechServices2026 } from '../data/2026-quantum-space-tech-services';
+import { metaverseDigitalRealityServices2026 } from '../data/2026-metaverse-digital-reality-services';
+import { ultimate2026Services } from '../data/ultimate-2026-services';
+import { revolutionary2026Innovations } from '../data/revolutionary-2026-innovations';
+import { cuttingEdge2027Innovations } from '../data/2027-cutting-edge-innovations';
+import { practicalMicroSaas2027 } from '../data/2027-practical-micro-saas';
+import { revolutionary2027AIServices } from '../data/revolutionary-2027-ai-services';
+import { revolutionary2027ITServices } from '../data/revolutionary-2027-it-services';
+import { revolutionary2027MicroSaasServices } from '../data/revolutionary-2027-micro-saas';
+import { innovative2030MicroSaasServices } from '../data/2030-innovative-micro-saas-services';
+import { innovative2030ITServices } from '../data/2030-innovative-it-services';
+import { innovative2030AIServices } from '../data/2030-innovative-ai-services';
+import { emergingTech2030Services } from '../data/2030-emerging-tech-services';
+=======
 import { advancedAIServices } from '../data/advanced-ai-services';
 import { quantumAdvancedServices } from '../data/quantum-advanced-services';
 import { emergingTechServices } from '../data/emerging-tech-services';
@@ -145,6 +191,7 @@ import { spaceTechServices } from '../data/space-tech-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
 import { emergingTechAdvancedServices } from '../data/emerging-tech-advanced-services';
 import { itInfrastructureServices } from '../data/it-infrastructure-services';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-59b4
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -157,6 +204,15 @@ export default function ServicesPage() {
     ...extraServices,
     ...additionalEnhancedServices,
     ...advancedAIServices,
+<<<<<<< HEAD
+    ...advancedITServices
+  ];
+
+  // Get unique services by ID
+  const uniqueServices = allServices.filter((service, index, self) => 
+    index === self.findIndex(s => s.id === service.id)
+  );
+=======
     ...innovativeAIServices,
     ...quantumSpaceServices,
     ...enterpriseITServices,
@@ -203,6 +259,7 @@ export default function ServicesPage() {
     { id: 'biotech', name: 'Biotech & Healthcare', icon: <Dna className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('Biotech') || s.category.includes('Healthcare')).length },
     { id: 'finance', name: 'Financial Technology', icon: <DollarSign className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('Financial') || s.category.includes('Trading')).length },
     { id: 'iot', name: 'IoT & Edge Computing', icon: <Wifi className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('IoT') || s.category.includes('Edge')).length }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-59b4
   ];
 
   const categories = [
@@ -295,12 +352,21 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
       <Head>
+<<<<<<< HEAD
+        <title>Zion Tech Group - 500+ Revolutionary AI, Quantum & IT Services</title>
+        <meta name="description" content="Discover 500+ cutting-edge AI, quantum computing, and IT services. Achieve 1000% ROI with our revolutionary solutions. Contact: +1 302 464 0950" />
+        <meta name="keywords" content="AI services, quantum computing, IT services, micro SaaS, cybersecurity, cloud migration, enterprise solutions" />
+        <meta name="author" content="Zion Tech Group" />
+        <meta property="og:title" content="Zion Tech Group - 500+ Revolutionary AI, Quantum & IT Services" />
+        <meta property="og:description" content="500+ cutting-edge services with 1000% ROI guarantee. Contact: +1 302 464 0950" />
+=======
         <title>600+ Revolutionary Technology Services - Zion Tech Group</title>
         <meta name="description" content="Explore 600+ revolutionary AI, quantum computing, space technology, IT infrastructure, and emerging tech services. Transform your business with cutting-edge solutions. Contact: +1 302 464 0950" />
         <meta name="keywords" content="AI services, quantum computing, space technology, micro SaaS, technology solutions, Zion Tech Group" />
         <meta name="author" content="Zion Tech Group" />
         <meta property="og:title" content="600+ Revolutionary Technology Services - Zion Tech Group" />
         <meta property="og:description" content="Explore 600+ revolutionary AI, quantum computing, space technology, and IT infrastructure services." />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-59b4
         <meta property="og:url" content="https://ziontechgroup.com/services" />
         <link rel="canonical" href="https://ziontechgroup.com/services" />
       </Head>
