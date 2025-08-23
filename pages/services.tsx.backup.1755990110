@@ -235,10 +235,17 @@ const allServices = [
   ...advancedITInfrastructureSolutions2025,
   ...advancedAIAutomationSolutions2025,
   
+<<<<<<< HEAD
+  // Our new innovative services expansion v3
+  ...innovativeMicroSaasExpansionV3,
+  ...innovativeITInfrastructureExpansionV3,
+  ...innovativeAIServicesExpansionV3
+=======
   // Our new 2025 V3 innovative services
   ...innovativeMicroSaasServices2025V3,
   ...innovativeITInfrastructureServices2025V3,
   ...innovativeAIServices2025V3
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-5081
 ];
 
 const categories = [

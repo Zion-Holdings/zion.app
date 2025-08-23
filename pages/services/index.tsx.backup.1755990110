@@ -62,15 +62,24 @@ import { innovativeAIServices } from '../../data/innovative-2025-ai-services-exp
 // Import our new 2025 advanced services
 import { advanced2025MicroSaasExpansion } from '../../data/2025-advanced-micro-saas-expansion';
 import { advanced2025ITSolutionsExpansion } from '../../data/2025-advanced-it-solutions-expansion';
+<<<<<<< HEAD
+import { advancedAIServicesExpansion2025 } from '../../data/2025-advanced-ai-services-expansion';
+=======
 import { advanced2025AIServicesExpansion } from '../../data/2025-advanced-ai-services-expansion';
 import { advancedITInfrastructureServices2025 } from '../../data/2025-advanced-it-infrastructure-services';
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-5081
 
 // Import our new 2025 innovative services
 import { innovativeMicroSaasExpansion2025 } from '../../data/2025-innovative-micro-saas-expansion';
 import { innovative2025ITSolutionsExpansion } from '../../data/2025-innovative-it-solutions-expansion';
 import { innovative2025AISolutionsExpansion } from '../../data/2025-innovative-ai-solutions-expansion';
 
+<<<<<<< HEAD
+// Import our new 2025 advanced services
+import { advanced2025InnovativeMicroSaasExpansion } from '../../data/2025-advanced-innovative-micro-saas-expansion';
+=======
 
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-5081
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -220,9 +229,16 @@ export default function ServicesIndexPage() {
     .concat(innovative2025ITSolutionsExpansion as unknown[])
     .concat(innovative2025AISolutionsExpansion as unknown[])
     // Our new 2025 advanced services
+<<<<<<< HEAD
+    .concat(advanced2025InnovativeMicroSaasExpansion as unknown[])
+    .concat(advanced2025ITSolutionsExpansion as unknown[])
+    .concat(advanced2025AIServicesExpansion as unknown[])
+    ;
+=======
     .concat(advanced2025MicroSaasExpansion as unknown[])
     .concat(advancedITInfrastructureServices2025 as unknown[])
     .concat(advanced2025AIServicesExpansion as unknown[]);
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-5081
 
   const anchorMap: Record<string, string> = {
     'AI & Data': 'ai',
