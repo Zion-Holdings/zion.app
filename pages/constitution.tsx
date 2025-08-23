@@ -1,10 +1,7 @@
-const ConstitutionPage = () => {
+import React from 'react';
+import Head from 'next/head';
   return (
-    <div>
-      <h1>Constitution</h1>
-      <p>Content for the constitution page.</p>
-    </div>
+    <>
+      <Head><title>constitution - Zion App</title><meta name="description" content="constitution page" /></Head><div className="container mx-auto px-4 py-8"><h1 className="text-3xl font-bold mb-6">constitution</h1><p className="text-lg mb-4">This page is under construction.</p><div className="mt-4"><a href="/" className="text-blue-600 hover:underline">;
+            ← Back to Home</a></div></div></>;
   );
-};
-
-export default ConstitutionPage;

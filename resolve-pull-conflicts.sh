@@ -1,53 +1,14 @@
 #!/bin/bash
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-# Quick script to resolve pull conflicts
-echo "🔧 Resolving pull conflicts..."
-=======
-=======
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 # Script to resolve merge conflicts from git pull
 # This will handle the conflicts systematically
 
 set -e
 
 echo "🔧 Resolving merge conflicts from git pull..."
-<<<<<<< HEAD
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
-
-# Get list of conflicted files
-CONFLICTED_FILES=$(git diff --name-only --diff-filter=U)
-
-echo "📋 Found $(echo "$CONFLICTED_FILES" | wc -l) conflicted files"
-
-<<<<<<< HEAD
-# Resolve conflicts in each file
-for file in $CONFLICTED_FILES; do
-    if [ -f "$file" ]; then
-        echo "🔧 Resolving conflicts in $file..."
-        
-        # Create a backup
-        cp "$file" "${file}.backup.$(date +%s)"
-        
-        # Remove conflict markers and keep both versions where possible
-        sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
-        sed -i '/>>>>>>> /d' "$file"
-        
-        echo "✅ Resolved conflicts in $file"
-    fi
-done
-
-# Add all resolved files
-git add .
-
-echo "✅ All conflicts resolved!"
-=======
-=======
 echo "📊 Started at: $(date)"
 echo "---"
 
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 # Function to resolve conflicts in a file
 resolve_file_conflicts() {
     local file="$1"
@@ -114,11 +75,5 @@ else
     echo "✅ No conflicted files found!"
 fi
 
-<<<<<<< HEAD
-echo "✅ All conflicts resolved! Ready to commit."
-echo "💡 Run 'git commit' to complete the merge."
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
-=======
 echo "---"
 echo "🎯 Conflict resolution completed at: $(date)"
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96

@@ -54,14 +54,12 @@ import { real2027Q3Additions } from '../../data/real-2027-q3-additions';
 import { aiAutonomousEcosystemServices2029 } from '../../data/2029-ai-autonomous-ecosystem';
 import { emergingTechBreakthroughServices2029 } from '../../data/2029-emerging-tech-breakthroughs';
 import { practicalBusinessSolutionServices2029 } from '../../data/2029-practical-business-solutions';
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 import { professionalServices } from '../../data/professional-services';
 import { real2032ServiceExpansions } from '../../data/real-2032-service-expansions';
 import { real2035Q1Additions } from '../../data/real-2035-q1-additions';
 import { real2035Q2AdditionsExtra } from '../../data/real-2035-q2-additions-extra';
 import { real2036ServiceExpansions } from '../../data/real-2036-service-expansions';
 import { real2026Q4ExpansionsV3 } from '../../data/real-2026-q4-expansions-v3';
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
 type Service = typeof enhancedRealMicroSaasServices[number];
 
@@ -119,14 +117,12 @@ function getAllServices(): Service[] {
 		.concat(aiAutonomousEcosystemServices2029 as unknown as Service[])
 		.concat(emergingTechBreakthroughServices2029 as unknown as Service[])
 		.concat(practicalBusinessSolutionServices2029 as unknown as Service[])
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 		.concat(professionalServices as unknown as Service[])
 		.concat(real2032ServiceExpansions as unknown as Service[])
 		.concat(real2035Q1Additions as unknown as Service[])
 		.concat(real2035Q2AdditionsExtra as unknown as Service[])
 		.concat(real2026Q4ExpansionsV3 as unknown as Service[])
 		.concat(real2036ServiceExpansions as unknown as Service[]);
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 }
 
 function toSlug(value: string): string {

@@ -1,12 +1,10 @@
 import React from 'react';
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 import { motion } from 'framer-motion';
 import { 
   Users, 
   Target, 
   Star, 
   Zap, 
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
   Brain, 
   Atom, 
   Shield, 
@@ -16,7 +14,6 @@ import {
   Globe,
   Award,
   Heart,
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   ArrowRight
 } from 'lucide-react';
 import Link from 'next/link';
@@ -70,7 +67,6 @@ const AboutPage: React.FC = () => {
       year: '2025',
       description: 'Pioneering the future of technology with revolutionary solutions'
     }
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   ];
 
   const team = [
@@ -97,7 +93,6 @@ const AboutPage: React.FC = () => {
       role: 'Cybersecurity',
       description: 'Protecting digital assets with advanced security',
       icon: <Shield className="w-6 h-6" />
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
     }
   ];
 
@@ -125,7 +120,6 @@ const AboutPage: React.FC = () => {
               <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
                 Pioneering the future of technology with revolutionary AI consciousness, 
                 quantum computing, and autonomous solutions that transform businesses worldwide.
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
@@ -145,7 +139,6 @@ const AboutPage: React.FC = () => {
             </motion.div>
           </div>
         </section>
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
         {/* Mission Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
@@ -522,10 +515,8 @@ const AboutPage: React.FC = () => {
           </div>
         </section>
       </div>
->>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
     </Layout>
   );
 };
 
 export default AboutPage;
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96

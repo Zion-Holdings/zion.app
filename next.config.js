@@ -1,6 +1,17 @@
-const { i18n } = require('./next-i18next.config');
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  poweredByHeader: false,
+  trailingSlash: false,
+  reactStrictMode: true,
+  productionBrowserSourceMaps: false,
+  
+  // Environment configuration
+  env: {
+    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
+    NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
+    NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+  },
 
 module.exports = {
   i18n,
 };
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96

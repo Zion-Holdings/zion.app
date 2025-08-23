@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: "class",
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -143,7 +142,6 @@ module.exports = {
           700: "hsl(142 69% 24%)",
           800: "hsl(143 64% 24%)",
           900: "hsl(144 61% 20%)",
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         },
         warning: {
           DEFAULT: "hsl(38 92% 50%)",
@@ -199,7 +197,6 @@ module.exports = {
           'DejaVu Sans Mono',
           'monospace',
         ],
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out',
@@ -279,7 +276,6 @@ module.exports = {
       },
       backdropBlur: {
         xs: '2px',
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       },
       transitionTimingFunction: {
         'bounce-in': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',

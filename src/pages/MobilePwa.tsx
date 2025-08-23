@@ -1,6 +1,9 @@
 import React from 'react';
-import { MobileApp } from '@/mobile/MobileApp';
-
-const MobilePwa: React.FC = () => <><MobileApp><div /></MobileApp></>;
-
-export default MobilePwa;
+export function MobilePwa() {
+  return (
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}

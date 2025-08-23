@@ -3,6 +3,7 @@
 This book is an evolving guide to the Zion ecosystem. It blends visionary narrative with technical diagrams, community milestones, and design artifacts.
 
 ## Chapters
+
 1. Intro – Founder's Story
 2. Marketplace as OS
 3. ZionGPT + The AI State

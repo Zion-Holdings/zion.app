@@ -1,11 +1,9 @@
-import type { FallbackProps } from 'react-error-boundary';
-
-export default function LoginErrorFallback({ error }: FallbackProps) {
+import React from 'react';
+export function LoginErrorFallback() {
   return (
-    <div role="alert" style={{ padding: '20px', textAlign: 'center', color: 'red' }}>
-      <h1>Login Error</h1>
-      <p>Sorry, the login form could not be displayed due to an error.</p>
-      {error?.message && <pre>{error.message}</pre>}
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
     </div>
   );
 }

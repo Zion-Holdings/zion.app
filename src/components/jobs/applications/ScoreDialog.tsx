@@ -1,39 +1,9 @@
-
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle
-} from "@/components/ui/dialog";
-import type { JobApplication } from "@/types/jobs";
-import { ApplicationScoreCard } from "../ApplicationScoreCard";
-
-interface ScoreDialogProps {
-  open: boolean;
-  onOpenChange: (open: boolean) => void;
-  application: JobApplication | null;
-  onScoreUpdated: (updatedApplication: JobApplication) => void;
-}
-
-export function ScoreDialog({
-  open,
-  onOpenChange,
-  application,
-  onScoreUpdated
-}: ScoreDialogProps) {
+import React from 'react';
+export function ScoreDialog() {
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-md">
-        <DialogHeader>
-          <DialogTitle>Application Match Score</DialogTitle>
-        </DialogHeader>
-        {application && (
-          <ApplicationScoreCard 
-            application={application}
-            onScoreUpdated={onScoreUpdated}
-          />
-        )}
-      </DialogContent>
-    </Dialog>
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
   );
 }

@@ -120,7 +120,6 @@ const Privacy: React.FC = () => {
       region: 'Global',
       status: 'Certified',
       description: 'Information security management system'
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     }
   ];
 
@@ -163,7 +162,6 @@ const Privacy: React.FC = () => {
         {/* Last Updated */}
         <section className="py-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -174,7 +172,6 @@ const Privacy: React.FC = () => {
               <div className="inline-flex items-center space-x-2 bg-gray-800/50 px-4 py-2 rounded-full border border-gray-700/50">
                 <Calendar className="w-4 h-4 text-gray-400" />
                 <span className="text-gray-300 text-sm">Last Updated: December 2024</span>
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </div>
             </motion.div>
           </div>
@@ -215,7 +212,6 @@ const Privacy: React.FC = () => {
                   <p className="text-gray-300 text-sm">{principle.description}</p>
                 </motion.div>
               ))}
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </div>
           </div>
         </section>
@@ -223,7 +219,6 @@ const Privacy: React.FC = () => {
         {/* Data We Collect */}
         <section className="py-20 bg-black/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -256,7 +251,6 @@ const Privacy: React.FC = () => {
                       {category.examples.map((example, exampleIndex) => (
                         <li key={exampleIndex} className="text-gray-300 text-sm flex items-start space-x-2">
                           <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-2 flex-shrink-0" />
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                           <span>{example}</span>
                         </li>
                       ))}
@@ -269,7 +263,6 @@ const Privacy: React.FC = () => {
                   <div>
                     <div className="text-gray-400 text-sm mb-1">Retention:</div>
                     <p className="text-gray-300 text-sm">{category.retention}</p>
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                   </div>
                 </motion.div>
               ))}
@@ -278,7 +271,6 @@ const Privacy: React.FC = () => {
         </section>
 
         {/* Your Rights */}
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
@@ -313,7 +305,6 @@ const Privacy: React.FC = () => {
                     <h3 className="text-lg font-bold text-white">{right.right}</h3>
                   </div>
                   <p className="text-gray-300 text-sm">{right.description}</p>
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </motion.div>
               ))}
             </div>
@@ -323,7 +314,6 @@ const Privacy: React.FC = () => {
         {/* Data Protection Measures */}
         <section className="py-20 bg-black/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -509,7 +499,6 @@ const Privacy: React.FC = () => {
                   className="inline-flex items-center px-8 py-4 border-2 border-purple-500/30 text-purple-400 font-semibold rounded-2xl hover:border-purple-500/50 hover:text-purple-300 transition-all duration-300"
                 >
                   Send Email
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </a>
               </div>
             </motion.div>
@@ -518,8 +507,3 @@ const Privacy: React.FC = () => {
       </div>
     </Layout>
   );
-};
-
-export default Privacy;
-
- 

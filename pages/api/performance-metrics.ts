@@ -1,5 +1,4 @@
 // API endpoint for performance metrics collection
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 import type { NextApiRequest, NextApiResponse } from 'next';
 import type { PerformanceReport } from '@/utils/performance-monitor';
 

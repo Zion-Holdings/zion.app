@@ -1,5 +1,9 @@
 import React from 'react';
-
-const NewServicesPage = () => <div>New Services Page Placeholder</div>;
-
-export default NewServicesPage; 
+export function NewServicesPage() {
+  return (
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}
