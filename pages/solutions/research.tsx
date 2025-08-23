@@ -1,17 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Cpu, 
+  Lightbulb, 
   Shield, 
   Database, 
   Brain, 
+  Cpu, 
   Zap, 
   Target, 
   CheckCircle, 
   Star,
   Lock,
   BarChart3,
-  Globe,
   Users,
   Settings,
   Activity,
@@ -19,143 +19,146 @@ import {
   Wrench,
   Factory,
   Gauge,
-  Cloud
+  Globe,
+  Atom,
+  Microscope,
+  Rocket
 } from 'lucide-react';
 import Layout from '../../components/layout/Layout';
 
-const ManufacturingSolutionsPage: React.FC = () => {
+const ResearchSolutionsPage: React.FC = () => {
   const solutions = [
     {
-      title: 'Industrial IoT (IIoT)',
-      description: 'Connected sensors and devices that provide real-time monitoring and control of manufacturing processes.',
-      icon: Cpu,
-      features: [
-        'Sensor integration',
-        'Real-time monitoring',
-        'Predictive maintenance',
-        'Remote control',
-        'Data collection',
-        'Edge computing'
-      ],
-      benefits: ['Reduced downtime', 'Improved efficiency', 'Cost savings', 'Better quality']
-    },
-    {
-      title: 'Smart Manufacturing',
-      description: 'Intelligent automation systems that optimize production workflows and increase productivity.',
-      icon: Factory,
-      features: [
-        'Automated workflows',
-        'Quality control',
-        'Production optimization',
-        'Resource management',
-        'Performance analytics',
-        'Adaptive systems'
-      ],
-      benefits: ['Higher productivity', 'Better quality', 'Reduced waste', 'Faster time-to-market']
-    },
-    {
-      title: 'Predictive Maintenance',
-      description: 'AI-powered systems that predict equipment failures before they occur.',
+      title: 'AI Research Platforms',
+      description: 'Advanced AI research infrastructure for developing next-generation machine learning models.',
       icon: Brain,
       features: [
-        'Equipment monitoring',
-        'Failure prediction',
-        'Maintenance scheduling',
-        'Performance analytics',
-        'Cost optimization',
-        'Risk assessment'
+        'Model development',
+        'Training infrastructure',
+        'Data processing',
+        'Experiment tracking',
+        'Collaboration tools',
+        'Performance monitoring'
       ],
-      benefits: ['Prevented failures', 'Reduced costs', 'Extended equipment life', 'Better planning']
+      benefits: ['Faster research', 'Better collaboration', 'Reproducible results', 'Scalable experiments']
     },
     {
-      title: 'Quality Management',
-      description: 'Advanced quality control systems that ensure consistent product quality.',
-      icon: Target,
+      title: 'Quantum Computing Research',
+      description: 'Quantum computing platforms and tools for cutting-edge research and development.',
+      icon: Atom,
       features: [
-        'Automated inspection',
-        'Quality metrics',
-        'Defect detection',
-        'Compliance tracking',
-        'Statistical analysis',
-        'Continuous improvement'
+        'Quantum simulators',
+        'Algorithm development',
+        'Error correction',
+        'Quantum algorithms',
+        'Research collaboration',
+        'Performance analysis'
       ],
-      benefits: ['Better quality', 'Reduced defects', 'Customer satisfaction', 'Compliance']
+      benefits: ['Quantum advantage', 'Research leadership', 'Innovation', 'Future-proofing']
     },
     {
-      title: 'Supply Chain Optimization',
-      description: 'Intelligent supply chain management that reduces costs and improves efficiency.',
-      icon: Globe,
+      title: 'Space Technology Research',
+      description: 'Advanced space technology research platforms for satellite and space exploration.',
+      icon: Rocket,
       features: [
-        'Inventory management',
-        'Demand forecasting',
-        'Supplier management',
-        'Logistics optimization',
-        'Cost analysis',
-        'Risk management'
+        'Satellite simulation',
+        'Orbital mechanics',
+        'Space systems design',
+        'Mission planning',
+        'Data analysis',
+        'Collaboration tools'
       ],
-      benefits: ['Reduced costs', 'Better availability', 'Improved efficiency', 'Risk mitigation']
+      benefits: ['Space innovation', 'Research advancement', 'Technology leadership', 'Global impact']
     },
     {
-      title: 'Digital Twin Technology',
-      description: 'Virtual representations of physical manufacturing systems for simulation and optimization.',
-      icon: Settings,
+      title: 'Biotechnology Research',
+      description: 'Biotech research platforms for drug discovery and genetic research.',
+      icon: Microscope,
       features: [
-        '3D modeling',
-        'Real-time simulation',
-        'Performance optimization',
-        'Scenario planning',
-        'Virtual testing',
-        'Predictive analytics'
+        'Drug discovery',
+        'Genetic analysis',
+        'Protein modeling',
+        'Clinical trials',
+        'Data management',
+        'Collaboration tools'
       ],
-      benefits: ['Better planning', 'Reduced testing costs', 'Optimized performance', 'Risk reduction']
+      benefits: ['Medical breakthroughs', 'Research efficiency', 'Collaboration', 'Innovation']
+    },
+    {
+      title: 'Materials Science Research',
+      description: 'Advanced materials research platforms for discovering new materials and properties.',
+      icon: Gauge,
+      features: [
+        'Material modeling',
+        'Property analysis',
+        'Simulation tools',
+        'Data management',
+        'Collaboration',
+        'Performance tracking'
+      ],
+      benefits: ['New materials', 'Better properties', 'Research efficiency', 'Innovation']
+    },
+    {
+      title: 'Research Data Management',
+      description: 'Comprehensive data management solutions for research organizations.',
+      icon: Database,
+      features: [
+        'Data storage',
+        'Data processing',
+        'Data sharing',
+        'Collaboration tools',
+        'Security',
+        'Compliance'
+      ],
+      benefits: ['Data security', 'Better collaboration', 'Compliance', 'Efficiency']
     }
   ];
 
-  const industries = [
+  const researchAreas = [
     {
-      name: 'Automotive Manufacturing',
-      description: 'Advanced manufacturing solutions for automotive production and assembly.',
+      name: 'Academic Research',
+      description: 'Research solutions for universities and academic institutions.',
+      icon: Users,
+      solutions: ['Research platforms', 'Collaboration tools', 'Data management', 'Publication support']
+    },
+    {
+      name: 'Corporate R&D',
+      description: 'Research and development solutions for corporate research labs.',
       icon: Factory,
-      solutions: ['Assembly line automation', 'Quality control', 'Supply chain management', 'Predictive maintenance']
+      solutions: ['Innovation platforms', 'Product development', 'Research collaboration', 'IP management']
     },
     {
-      name: 'Electronics Manufacturing',
-      description: 'Precision manufacturing solutions for electronic components and devices.',
-      icon: Cpu,
-      solutions: ['PCB assembly', 'Component testing', 'Quality assurance', 'Production optimization']
-    },
-    {
-      name: 'Pharmaceutical Manufacturing',
-      description: 'Compliant manufacturing solutions for pharmaceutical and medical device production.',
+      name: 'Government Research',
+      description: 'Research solutions for government research institutions and agencies.',
       icon: Shield,
-      solutions: ['GMP compliance', 'Quality control', 'Documentation', 'Regulatory reporting']
+      solutions: ['National security', 'Public health', 'Environmental research', 'Defense technology']
     },
     {
-      name: 'Food & Beverage',
-      description: 'Safe and efficient manufacturing solutions for food and beverage production.',
-      icon: Target,
-      solutions: ['Food safety', 'Quality control', 'Production efficiency', 'Compliance management']
+      name: 'Startup Research',
+      description: 'Research solutions for innovative startups and research companies.',
+      icon: Lightbulb,
+      solutions: ['MVP development', 'Research validation', 'Technology transfer', 'Commercialization']
     }
   ];
 
   const technologies = [
     {
-      title: 'AI & Machine Learning',
-      description: 'Intelligent algorithms that optimize manufacturing processes and decision-making.',
-      icon: Brain,
-      features: ['Process optimization', 'Quality prediction', 'Demand forecasting', 'Anomaly detection']
+      title: 'High Performance Computing',
+      description: 'Scalable computing infrastructure for complex research simulations.',
+      icon: Cpu,
+      features: ['Parallel processing', 'GPU acceleration', 'Cloud computing', 'Distributed systems']
     },
     {
-      title: 'Edge Computing',
-      description: 'Localized computing that processes data closer to the source for faster response times.',
-      icon: Zap,
-      features: ['Real-time processing', 'Reduced latency', 'Local analytics', 'Offline operation']
+      title: 'Big Data Analytics',
+      description: 'Advanced analytics platforms for processing large research datasets.',
+      icon: BarChart3,
+      features: ['Data processing', 'Machine learning', 'Visualization', 'Real-time analysis']
     },
     {
-      title: 'Cloud Integration',
-      description: 'Scalable cloud solutions that connect and manage manufacturing operations globally.',
-      icon: Cloud,
-      features: ['Global access', 'Scalability', 'Data backup', 'Collaboration tools']
+      title: 'Collaboration Platforms',
+      description: 'Tools that enable researchers to collaborate effectively across disciplines.',
+      icon: Globe,
+      features: ['Team collaboration', 'Knowledge sharing', 'Project management', 'Communication tools']
     }
   ];
 
@@ -172,21 +175,21 @@ const ManufacturingSolutionsPage: React.FC = () => {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-                Smart{' '}
+                Research &{' '}
                 <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
-                  Manufacturing Solutions
+                  Development Solutions
                 </span>
               </h1>
               <p className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
-                Transform your manufacturing operations with cutting-edge IoT, AI, and automation 
-                solutions that drive efficiency and innovation.
+                Accelerate breakthrough research with cutting-edge technology platforms that 
+                enable innovation across all scientific disciplines.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/contact"
                   className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-semibold rounded-xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 transform hover:scale-105"
                 >
-                  Get Manufacturing Quote
+                  Get Research Quote
                 </a>
                 <a
                   href="/solutions"
@@ -209,11 +212,11 @@ const ManufacturingSolutionsPage: React.FC = () => {
               className="text-center mb-16"
             >
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-                Manufacturing Technology Solutions
+                Research Technology Solutions
               </h2>
               <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-                Our comprehensive manufacturing solutions leverage the latest technologies to 
-                optimize production, improve quality, and reduce costs.
+                Our comprehensive research solutions provide the infrastructure, tools, and 
+                platforms needed to accelerate scientific discovery and innovation.
               </p>
             </motion.div>
 
@@ -249,7 +252,7 @@ const ManufacturingSolutionsPage: React.FC = () => {
                   </div>
 
                   <div>
-                    <h4 className="text-white font-semibold mb-3">Business Benefits:</h4>
+                    <h4 className="text-white font-semibold mb-3">Benefits:</h4>
                     <div className="flex flex-wrap gap-2">
                       {solution.benefits.map((benefit, benefitIndex) => (
                         <span
@@ -267,7 +270,7 @@ const ManufacturingSolutionsPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Industry Solutions */}
+        {/* Research Areas */}
         <section className="py-20 relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
@@ -277,18 +280,18 @@ const ManufacturingSolutionsPage: React.FC = () => {
               className="text-center mb-16"
             >
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-                Industry-Specific Solutions
+                Research Areas
               </h2>
               <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-                Tailored manufacturing solutions designed for the unique challenges and requirements 
-                of different industries.
+                Our research solutions support diverse research areas and organizations, 
+                from academic institutions to corporate research labs.
               </p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {industries.map((industry, index) => (
+              {researchAreas.map((area, index) => (
                 <motion.div
-                  key={industry.name}
+                  key={area.name}
                   initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
@@ -296,17 +299,17 @@ const ManufacturingSolutionsPage: React.FC = () => {
                 >
                   <div className="flex items-center space-x-4 mb-6">
                     <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center">
-                      <industry.icon className="w-8 h-8 text-white" />
+                      <area.icon className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-2xl font-bold text-white">{industry.name}</h3>
+                    <h3 className="text-2xl font-bold text-white">{area.name}</h3>
                   </div>
                   
-                  <p className="text-gray-300 mb-6">{industry.description}</p>
+                  <p className="text-gray-300 mb-6">{area.description}</p>
                   
                   <div>
                     <h4 className="text-white font-semibold mb-3">Key Solutions:</h4>
                     <div className="space-y-2">
-                      {industry.solutions.map((solution, solutionIndex) => (
+                      {area.solutions.map((solution, solutionIndex) => (
                         <div key={solutionIndex} className="flex items-center text-sm text-gray-300">
                           <Star className="w-4 h-4 text-yellow-400 mr-2" />
                           {solution}
@@ -333,8 +336,8 @@ const ManufacturingSolutionsPage: React.FC = () => {
                 Core Technologies
               </h2>
               <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-                The foundational technologies that power our smart manufacturing solutions 
-                and drive operational excellence.
+                The foundational technologies that power our research solutions and 
+                enable breakthrough discoveries across all scientific disciplines.
               </p>
             </motion.div>
 
@@ -376,24 +379,24 @@ const ManufacturingSolutionsPage: React.FC = () => {
               className="bg-gradient-to-r from-cyan-400/10 to-blue-500/10 border border-cyan-400/20 rounded-3xl p-12"
             >
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                Ready to Transform Manufacturing?
+                Ready to Accelerate Research?
               </h2>
               <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-                Let's discuss how our smart manufacturing solutions can optimize your operations, 
-                improve quality, and reduce costs.
+                Let's discuss how our research technology solutions can accelerate your 
+                research, enable collaboration, and drive breakthrough discoveries.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/contact"
                   className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-semibold rounded-xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 transform hover:scale-105"
                 >
-                  Schedule Manufacturing Consultation
+                  Schedule Research Consultation
                 </a>
                 <a
                   href="/case-studies"
                   className="px-8 py-4 border border-cyan-400/50 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400/10 transition-all duration-300"
                 >
-                  View Manufacturing Case Studies
+                  View Research Case Studies
                 </a>
               </div>
             </motion.div>
@@ -404,4 +407,4 @@ const ManufacturingSolutionsPage: React.FC = () => {
   );
 };
 
-export default ManufacturingSolutionsPage;
+export default ResearchSolutionsPage;

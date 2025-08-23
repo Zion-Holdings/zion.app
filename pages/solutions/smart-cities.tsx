@@ -1,17 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Cpu, 
+  Globe, 
   Shield, 
   Database, 
   Brain, 
+  Cpu, 
   Zap, 
   Target, 
   CheckCircle, 
   Star,
   Lock,
   BarChart3,
-  Globe,
   Users,
   Settings,
   Activity,
@@ -19,143 +19,139 @@ import {
   Wrench,
   Factory,
   Gauge,
-  Cloud
+  Lightbulb,
+  Car,
+  Building
 } from 'lucide-react';
 import Layout from '../../components/layout/Layout';
 
-const ManufacturingSolutionsPage: React.FC = () => {
+const SmartCitiesSolutionsPage: React.FC = () => {
   const solutions = [
     {
-      title: 'Industrial IoT (IIoT)',
-      description: 'Connected sensors and devices that provide real-time monitoring and control of manufacturing processes.',
-      icon: Cpu,
+      title: 'Smart Transportation',
+      description: 'Intelligent transportation systems that optimize traffic flow and improve mobility.',
+      icon: Car,
       features: [
-        'Sensor integration',
+        'Traffic management',
+        'Public transit optimization',
+        'Parking solutions',
+        'Route optimization',
         'Real-time monitoring',
-        'Predictive maintenance',
-        'Remote control',
-        'Data collection',
-        'Edge computing'
-      ],
-      benefits: ['Reduced downtime', 'Improved efficiency', 'Cost savings', 'Better quality']
-    },
-    {
-      title: 'Smart Manufacturing',
-      description: 'Intelligent automation systems that optimize production workflows and increase productivity.',
-      icon: Factory,
-      features: [
-        'Automated workflows',
-        'Quality control',
-        'Production optimization',
-        'Resource management',
-        'Performance analytics',
-        'Adaptive systems'
-      ],
-      benefits: ['Higher productivity', 'Better quality', 'Reduced waste', 'Faster time-to-market']
-    },
-    {
-      title: 'Predictive Maintenance',
-      description: 'AI-powered systems that predict equipment failures before they occur.',
-      icon: Brain,
-      features: [
-        'Equipment monitoring',
-        'Failure prediction',
-        'Maintenance scheduling',
-        'Performance analytics',
-        'Cost optimization',
-        'Risk assessment'
-      ],
-      benefits: ['Prevented failures', 'Reduced costs', 'Extended equipment life', 'Better planning']
-    },
-    {
-      title: 'Quality Management',
-      description: 'Advanced quality control systems that ensure consistent product quality.',
-      icon: Target,
-      features: [
-        'Automated inspection',
-        'Quality metrics',
-        'Defect detection',
-        'Compliance tracking',
-        'Statistical analysis',
-        'Continuous improvement'
-      ],
-      benefits: ['Better quality', 'Reduced defects', 'Customer satisfaction', 'Compliance']
-    },
-    {
-      title: 'Supply Chain Optimization',
-      description: 'Intelligent supply chain management that reduces costs and improves efficiency.',
-      icon: Globe,
-      features: [
-        'Inventory management',
-        'Demand forecasting',
-        'Supplier management',
-        'Logistics optimization',
-        'Cost analysis',
-        'Risk management'
-      ],
-      benefits: ['Reduced costs', 'Better availability', 'Improved efficiency', 'Risk mitigation']
-    },
-    {
-      title: 'Digital Twin Technology',
-      description: 'Virtual representations of physical manufacturing systems for simulation and optimization.',
-      icon: Settings,
-      features: [
-        '3D modeling',
-        'Real-time simulation',
-        'Performance optimization',
-        'Scenario planning',
-        'Virtual testing',
         'Predictive analytics'
       ],
-      benefits: ['Better planning', 'Reduced testing costs', 'Optimized performance', 'Risk reduction']
-    }
-  ];
-
-  const industries = [
-    {
-      name: 'Automotive Manufacturing',
-      description: 'Advanced manufacturing solutions for automotive production and assembly.',
-      icon: Factory,
-      solutions: ['Assembly line automation', 'Quality control', 'Supply chain management', 'Predictive maintenance']
+      benefits: ['Reduced congestion', 'Better mobility', 'Lower emissions', 'Improved safety']
     },
     {
-      name: 'Electronics Manufacturing',
-      description: 'Precision manufacturing solutions for electronic components and devices.',
-      icon: Cpu,
-      solutions: ['PCB assembly', 'Component testing', 'Quality assurance', 'Production optimization']
+      title: 'Smart Energy Management',
+      description: 'Intelligent energy systems that optimize consumption and integrate renewable sources.',
+      icon: Zap,
+      features: [
+        'Smart grid technology',
+        'Energy monitoring',
+        'Demand response',
+        'Renewable integration',
+        'Load balancing',
+        'Efficiency optimization'
+      ],
+      benefits: ['Lower costs', 'Reduced emissions', 'Better reliability', 'Sustainability']
     },
     {
-      name: 'Pharmaceutical Manufacturing',
-      description: 'Compliant manufacturing solutions for pharmaceutical and medical device production.',
+      title: 'Smart Buildings',
+      description: 'Connected building systems that optimize comfort, security, and energy efficiency.',
+      icon: Building,
+      features: [
+        'Building automation',
+        'Energy management',
+        'Security systems',
+        'Climate control',
+        'Occupancy monitoring',
+        'Predictive maintenance'
+      ],
+      benefits: ['Energy savings', 'Better comfort', 'Improved security', 'Reduced maintenance']
+    },
+    {
+      title: 'Smart Water Management',
+      description: 'Intelligent water systems that monitor quality and optimize distribution.',
+      icon: Gauge,
+      features: [
+        'Water quality monitoring',
+        'Leak detection',
+        'Distribution optimization',
+        'Consumption tracking',
+        'Predictive maintenance',
+        'Quality assurance'
+      ],
+      benefits: ['Water conservation', 'Quality improvement', 'Cost reduction', 'Sustainability']
+    },
+    {
+      title: 'Smart Waste Management',
+      description: 'Intelligent waste collection and processing systems that improve efficiency.',
+      icon: Activity,
+      features: [
+        'Smart bins',
+        'Route optimization',
+        'Recycling tracking',
+        'Waste analytics',
+        'Automated collection',
+        'Environmental monitoring'
+      ],
+      benefits: ['Cost reduction', 'Better efficiency', 'Environmental impact', 'Public health']
+    },
+    {
+      title: 'Smart Public Safety',
+      description: 'Advanced security and emergency response systems that protect citizens.',
       icon: Shield,
-      solutions: ['GMP compliance', 'Quality control', 'Documentation', 'Regulatory reporting']
-    },
-    {
-      name: 'Food & Beverage',
-      description: 'Safe and efficient manufacturing solutions for food and beverage production.',
-      icon: Target,
-      solutions: ['Food safety', 'Quality control', 'Production efficiency', 'Compliance management']
+      features: [
+        'Surveillance systems',
+        'Emergency response',
+        'Crime prevention',
+        'Public monitoring',
+        'Incident management',
+        'Community alerts'
+      ],
+      benefits: ['Improved safety', 'Faster response', 'Crime reduction', 'Public confidence']
     }
   ];
 
   const technologies = [
     {
-      title: 'AI & Machine Learning',
-      description: 'Intelligent algorithms that optimize manufacturing processes and decision-making.',
+      title: 'IoT & Sensors',
+      description: 'Connected devices that collect real-time data from urban infrastructure.',
+      icon: Cpu,
+      features: ['Environmental monitoring', 'Traffic sensors', 'Energy meters', 'Water quality sensors']
+    },
+    {
+      title: 'AI & Analytics',
+      description: 'Intelligent algorithms that analyze data and optimize urban operations.',
       icon: Brain,
-      features: ['Process optimization', 'Quality prediction', 'Demand forecasting', 'Anomaly detection']
+      features: ['Predictive analytics', 'Pattern recognition', 'Optimization algorithms', 'Decision support']
     },
     {
-      title: 'Edge Computing',
-      description: 'Localized computing that processes data closer to the source for faster response times.',
-      icon: Zap,
-      features: ['Real-time processing', 'Reduced latency', 'Local analytics', 'Offline operation']
+      title: 'Cloud & Edge Computing',
+      description: 'Distributed computing that processes data efficiently across the city.',
+      icon: Globe,
+      features: ['Real-time processing', 'Scalable infrastructure', 'Data integration', 'Global access']
+    }
+  ];
+
+  const benefits = [
+    {
+      title: 'Sustainability',
+      description: 'Reduce environmental impact through intelligent resource management.',
+      icon: Lightbulb,
+      features: ['Lower emissions', 'Resource conservation', 'Renewable energy', 'Waste reduction']
     },
     {
-      title: 'Cloud Integration',
-      description: 'Scalable cloud solutions that connect and manage manufacturing operations globally.',
-      icon: Cloud,
-      features: ['Global access', 'Scalability', 'Data backup', 'Collaboration tools']
+      title: 'Efficiency',
+      description: 'Optimize urban operations and reduce costs through smart technology.',
+      icon: Target,
+      features: ['Cost reduction', 'Operational efficiency', 'Resource optimization', 'Performance improvement']
+    },
+    {
+      title: 'Quality of Life',
+      description: 'Improve citizen experience through better services and infrastructure.',
+      icon: Users,
+      features: ['Better mobility', 'Improved services', 'Enhanced safety', 'Community engagement']
     }
   ];
 
@@ -174,19 +170,19 @@ const ManufacturingSolutionsPage: React.FC = () => {
               <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
                 Smart{' '}
                 <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
-                  Manufacturing Solutions
+                  Cities Solutions
                 </span>
               </h1>
               <p className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
-                Transform your manufacturing operations with cutting-edge IoT, AI, and automation 
-                solutions that drive efficiency and innovation.
+                Transform urban environments with intelligent technology solutions that create 
+                sustainable, efficient, and livable cities of the future.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/contact"
                   className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-semibold rounded-xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 transform hover:scale-105"
                 >
-                  Get Manufacturing Quote
+                  Get Smart Cities Quote
                 </a>
                 <a
                   href="/solutions"
@@ -209,11 +205,11 @@ const ManufacturingSolutionsPage: React.FC = () => {
               className="text-center mb-16"
             >
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-                Manufacturing Technology Solutions
+                Smart City Technology Solutions
               </h2>
               <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-                Our comprehensive manufacturing solutions leverage the latest technologies to 
-                optimize production, improve quality, and reduce costs.
+                Our comprehensive smart city solutions integrate cutting-edge technologies to 
+                create intelligent, sustainable, and connected urban environments.
               </p>
             </motion.div>
 
@@ -249,7 +245,7 @@ const ManufacturingSolutionsPage: React.FC = () => {
                   </div>
 
                   <div>
-                    <h4 className="text-white font-semibold mb-3">Business Benefits:</h4>
+                    <h4 className="text-white font-semibold mb-3">Benefits:</h4>
                     <div className="flex flex-wrap gap-2">
                       {solution.benefits.map((benefit, benefitIndex) => (
                         <span
@@ -267,7 +263,7 @@ const ManufacturingSolutionsPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Industry Solutions */}
+        {/* Core Technologies */}
         <section className="py-20 relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
@@ -277,64 +273,11 @@ const ManufacturingSolutionsPage: React.FC = () => {
               className="text-center mb-16"
             >
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-                Industry-Specific Solutions
-              </h2>
-              <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-                Tailored manufacturing solutions designed for the unique challenges and requirements 
-                of different industries.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {industries.map((industry, index) => (
-                <motion.div
-                  key={industry.name}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-                  className="bg-gradient-to-r from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-cyan-400/20 rounded-2xl p-8 hover:border-cyan-400/40 transition-all duration-300"
-                >
-                  <div className="flex items-center space-x-4 mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center">
-                      <industry.icon className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-white">{industry.name}</h3>
-                  </div>
-                  
-                  <p className="text-gray-300 mb-6">{industry.description}</p>
-                  
-                  <div>
-                    <h4 className="text-white font-semibold mb-3">Key Solutions:</h4>
-                    <div className="space-y-2">
-                      {industry.solutions.map((solution, solutionIndex) => (
-                        <div key={solutionIndex} className="flex items-center text-sm text-gray-300">
-                          <Star className="w-4 h-4 text-yellow-400 mr-2" />
-                          {solution}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Core Technologies */}
-        <section className="py-20 relative">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
                 Core Technologies
               </h2>
               <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-                The foundational technologies that power our smart manufacturing solutions 
-                and drive operational excellence.
+                The foundational technologies that power our smart city solutions and 
+                enable intelligent urban management.
               </p>
             </motion.div>
 
@@ -344,7 +287,7 @@ const ManufacturingSolutionsPage: React.FC = () => {
                   key={tech.title}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+                  transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
                   className="bg-gradient-to-r from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-cyan-400/20 rounded-2xl p-8 hover:border-cyan-400/40 transition-all duration-300 text-center"
                 >
                   <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center">
@@ -366,6 +309,52 @@ const ManufacturingSolutionsPage: React.FC = () => {
           </div>
         </section>
 
+        {/* Benefits */}
+        <section className="py-20 relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+                Smart City Benefits
+              </h2>
+              <p className="text-lg text-gray-400 max-w-3xl mx-auto">
+                Discover how smart city solutions create value for citizens, businesses, 
+                and government organizations.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {benefits.map((benefit, index) => (
+                <motion.div
+                  key={benefit.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+                  className="bg-gradient-to-r from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-cyan-400/20 rounded-2xl p-8 hover:border-cyan-400/40 transition-all duration-300 text-center"
+                >
+                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center">
+                    <benefit.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-4">{benefit.title}</h3>
+                  <p className="text-gray-300 mb-6">{benefit.description}</p>
+                  <div className="space-y-2">
+                    {benefit.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-center justify-center text-sm text-gray-300">
+                        <Star className="w-4 h-4 text-yellow-400 mr-2" />
+                        {feature}
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Call to Action */}
         <section className="py-20 relative">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -376,24 +365,24 @@ const ManufacturingSolutionsPage: React.FC = () => {
               className="bg-gradient-to-r from-cyan-400/10 to-blue-500/10 border border-cyan-400/20 rounded-3xl p-12"
             >
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                Ready to Transform Manufacturing?
+                Ready to Build Smart Cities?
               </h2>
               <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-                Let's discuss how our smart manufacturing solutions can optimize your operations, 
-                improve quality, and reduce costs.
+                Let's discuss how our smart city solutions can transform your urban environment, 
+                improve citizen services, and create sustainable communities.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/contact"
                   className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-semibold rounded-xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 transform hover:scale-105"
                 >
-                  Schedule Manufacturing Consultation
+                  Schedule Smart Cities Consultation
                 </a>
                 <a
                   href="/case-studies"
                   className="px-8 py-4 border border-cyan-400/50 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400/10 transition-all duration-300"
                 >
-                  View Manufacturing Case Studies
+                  View Smart Cities Case Studies
                 </a>
               </div>
             </motion.div>
@@ -404,4 +393,4 @@ const ManufacturingSolutionsPage: React.FC = () => {
   );
 };
 
-export default ManufacturingSolutionsPage;
+export default SmartCitiesSolutionsPage;
