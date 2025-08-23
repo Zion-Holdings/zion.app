@@ -308,5 +308,10 @@ name = "duplicate-media-finder-runner"
   schedule = "0 2 * * *"
 
 [[scheduled.functions]]
+<<<<<<< HEAD
+  name = "autonomous-master-orchestrator"
+  schedule = "*/1 * * * *"
+=======
 name = "autonomous-cloud-trigger"
   schedule = "*/2 * * * *"
+>>>>>>> origin/cursor/develop-autonomous-cloud-agents-for-automation-orchestration-cb39
