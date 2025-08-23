@@ -93,7 +93,16 @@ const getServiceCategory = (service: any) => {
 
 // Helper function to get service pricing
 const getServicePricing = (service: any) => {
+<<<<<<< HEAD
+  if (service.pricing?.starter) return service.pricing.starter;
+  if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
+  if (service.price?.monthly) return `$${service.price.monthly}/month`;
+  if (typeof service.price === 'string') return service.price;
+  if (service.marketPrice) return service.marketPrice;
+  return 'Contact for pricing';
+=======
   return formatServicePrice(service.price);
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-a3c7
 };
 
 
@@ -227,6 +236,11 @@ const ServicesPage: React.FC = () => {
       }
     });
 
+<<<<<<< HEAD
+  const handleServiceClick = (service: any) => {
+    if (service.slug) {
+      window.location.href = service.slug;
+=======
     return () => clearTimeout(timer);
   }, []);
 
@@ -311,6 +325,7 @@ const ServicesPage: React.FC = () => {
         return <GraduationCap className="w-6 h-6 text-yellow-400" />;
       default:
         return <Shield className="w-6 h-6 text-gray-400" />;
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-a3c7
     }
   };
 

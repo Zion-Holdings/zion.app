@@ -27,6 +27,61 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
   const [sortBy, setSortBy] = useState<'name' | 'price' | 'popularity' | 'category'>('name');
   const [isLoading, setIsLoading] = useState(true);
 
+<<<<<<< HEAD
+  // Combine all services and ensure they have required properties
+  const allServices: Service[] = [
+    ...innovative2040FuturisticServices.map(service => ({
+      ...service,
+      popular: service.rating >= 4.5,
+      icon: '🚀',
+      color: 'from-blue-600 to-purple-700',
+      period: '/month',
+      realService: true,
+      customers: typeof service.customers === 'string' ? parseInt(service.customers) || 0 : service.customers,
+      contactInfo: {
+        ...service.contactInfo,
+        mobile: service.contactInfo.phone,
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
+    })),
+    ...innovative2040ITServices.map(service => ({
+      ...service,
+      popular: service.rating >= 4.5,
+      icon: '💻',
+      color: 'from-green-600 to-blue-700',
+      period: '/month',
+      realService: true,
+      customers: typeof service.customers === 'string' ? parseInt(service.customers) || 0 : service.customers,
+      contactInfo: {
+        ...service.contactInfo,
+        phone: service.contactInfo.mobile,
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
+    })),
+    ...realMicroSaasServices,
+    ...innovativeAIServices.map(service => ({
+      ...service,
+      customers: typeof service.customers === 'string' ? parseInt(service.customers) || 0 : service.customers,
+      contactInfo: {
+        ...service.contactInfo,
+        phone: service.contactInfo.mobile
+      }
+    })),
+    ...enterpriseITServices.map(service => ({
+      ...service,
+      popular: service.rating >= 4.5,
+      icon: '🏢',
+      color: 'from-indigo-600 to-cyan-700',
+      period: '/month',
+      realService: true,
+      customers: typeof service.customers === 'string' ? parseInt(service.customers) || 0 : service.customers,
+      contactInfo: {
+        ...service.contactInfo,
+        phone: service.contactInfo.mobile,
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
+    }))
+=======
   // Helper function to convert services to unified Service interface
   const convertToService = (service: any): Service => {
     return {
@@ -73,6 +128,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
     ...realMicroSaasServices.map(convertToService),
     ...innovativeAIServices.map(convertToService),
     ...enterpriseITServices.map(convertToService)
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-a3c7
   ];
 
   // Get unique categories

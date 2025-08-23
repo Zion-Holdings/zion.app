@@ -1,4 +1,8 @@
 import React from 'react';
+<<<<<<< HEAD
+import Layout from '../components/layout/Layout';
+import Homepage2040 from '../components/Homepage2040';
+=======
 import Homepage2045 from '../components/Homepage2045';
 import SEOOptimizer from '../components/SEOOptimizer';
 import AnalyticsTracker from '../components/AnalyticsTracker';
@@ -7,6 +11,7 @@ import PerformanceOptimizer from '../components/PerformanceOptimizer';
 import AccessibilityEnhancer from '../components/AccessibilityEnhancer';
 import PerformanceMonitor from '../components/PerformanceMonitor';
 import MobileOptimizer from '../components/MobileOptimizer';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-a3c7
 
 const HomePage: React.FC = () => {
   const seoConfig = {
@@ -20,6 +25,11 @@ const HomePage: React.FC = () => {
 
 export default function Home() {
   return (
+<<<<<<< HEAD
+    <Layout seo={seoConfig}>
+      <Homepage2040 />
+    </Layout>
+=======
     <ErrorBoundary>
       <SEOOptimizer />
       <AnalyticsTracker />
@@ -27,6 +37,7 @@ export default function Home() {
       <PerformanceMonitor />
       <AccessibilityEnhancer />
     </ErrorBoundary>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-a3c7
   );
 };
 
