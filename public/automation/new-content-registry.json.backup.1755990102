@@ -1,5 +1,11 @@
 {
-  "pages": [
+<<<<<<< HEAD
+  "generatedAt": "2025-08-14T11:56:43.862Z",
+  "items": [
+    {
+=======
+  "generatedAt": "2025-08-14T12:01:47.480Z",
+  "items": [
     {
       "title": "Reference Architecture — Autonomous Content Mesh",
       "href": "/reports/blueprints/blueprint-2025-08-14-120147",
@@ -15,6 +21,7 @@
       "source": "cloud-playbook-factory"
     },
     {
+>>>>>>> origin/automation/git-sync/2025-08-14T12-01-51-322Z
       "title": "Case Study — Autonomous Reports",
       "href": "/reports/cases/case-2025-08-14-120147",
       "desc": "New autonomous content",
