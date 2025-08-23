@@ -100,7 +100,7 @@ const Homepage2044: React.FC = () => {
           <div className="text-red-400 text-xl mb-4">Error: {error}</div>
           <button 
             onClick={() => window.location.reload()} 
-            className="px-6 py-3 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600"
+            className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
           >
             Retry
           </button>
@@ -111,7 +111,7 @@ const Homepage2044: React.FC = () => {
 
   return (
     <Layout>
-      <main className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900 text-white relative overflow-hidden">
+      <main className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
         {/* Hero Section */}
         <section 
           className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
