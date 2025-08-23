@@ -48,6 +48,10 @@ const footerSections: FooterSection[] = [
     title: 'Company',
     links: [
       { label: 'About Us', href: '/about', description: 'Our mission and values' },
+<<<<<<< HEAD
+      { label: 'Partners', href: '/partners', description: 'Strategic partnerships' },
+=======
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-c99e
       { label: 'Careers', href: '/careers', description: 'Join our team' },
       { label: 'Contact', href: '/contact', description: 'Get in touch' }
     ]
@@ -63,6 +67,8 @@ const footerSections: FooterSection[] = [
       { label: 'Case Studies', href: '/case-studies', description: 'Success stories' },
       { label: 'Support', href: '/support', description: 'Help & assistance' }
     ]
+<<<<<<< HEAD
+=======
   },
   {
     title: 'Industries',
@@ -73,13 +79,21 @@ const footerSections: FooterSection[] = [
       { label: 'Government', href: '/government-technology-solutions', description: 'Public sector' },
       { label: 'Education', href: '/education-technology-solutions', description: 'EdTech solutions' }
     ]
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-c99e
   }
 ];
 
 const socialLinks = [
   { icon: <Linkedin className="w-5 h-5" />, href: 'https://linkedin.com/company/ziontechgroup', label: 'LinkedIn', external: true },
+<<<<<<< HEAD
+  { icon: <Twitter className="w-5 h-5" />, href: 'https://x.com/ziontechgroup', label: 'Twitter', external: true },
+  { icon: <Github className="w-5 h-5" />, href: 'https://github.com/Zion-Holdings', label: 'GitHub', external: true },
+  { icon: <Youtube className="w-5 h-5" />, href: 'https://youtube.com/@ziontechgroup', label: 'YouTube', external: true },
+  { icon: <Facebook className="w-5 h-5" />, href: 'https://facebook.com/ziontechgroup', label: 'Facebook', external: true }
+=======
   { icon: <Twitter className="w-5 h-5" />, href: 'https://twitter.com/ziontechgroup', label: 'Twitter', external: true },
   { icon: <Github className="w-5 h-5" />, href: 'https://github.com/ziontechgroup', label: 'GitHub', external: true }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-c99e
 ];
 
 const quickLinks = [

@@ -53,6 +53,17 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
     transition={{ duration: 0.5, delay: index * 0.1 }}
     className="relative group"
   >
+<<<<<<< HEAD
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20"></div>
+    <div className={`relative bg-gradient-to-r from-cyan-500 to-blue-600 bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
+      <div className="flex items-start justify-between mb-6">
+        <div className="text-4xl">🚀</div>
+        {service.rating >= 4.5 && (
+          <span className="px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-semibold rounded-full">
+            Popular
+          </span>
+        )}
+=======
     <div className={`absolute inset-0 bg-gradient-to-r ${service.color || 'from-blue-500 to-purple-500'} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
     <div className={`relative bg-gradient-to-r ${service.color ? service.color.replace('from-', 'from-').replace('to-', 'to-') : 'from-blue-500 to-purple-500'} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
       <div className="flex items-start justify-between mb-6">
@@ -62,6 +73,7 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
           Popular
         </span>
       )}
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-c99e
       </div>
       
       <h3 className="text-2xl font-bold text-white mb-3">{service.name || 'Service'}</h3>
@@ -78,8 +90,13 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
       
       <div className="flex items-center justify-between mb-6">
         <div>
+<<<<<<< HEAD
+          <span className="text-3xl font-bold text-white">{service.pricing?.starter || 'Contact Us'}</span>
+          <span className="text-gray-400 text-sm">Starting Price</span>
+=======
           <span className="text-3xl font-bold text-white">{service.price || '$0'}</span>
           <span className="text-gray-400 text-sm">{service.period || '/month'}</span>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-c99e
         </div>
         <div className="text-right">
           <div className="flex items-center space-x-1 text-yellow-400">
@@ -87,7 +104,11 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
               <Star key={i} className={`w-4 h-4 ${i < Math.floor(service.rating || 0) ? 'fill-current' : ''}`} />
             ))}
           </div>
+<<<<<<< HEAD
+          <span className="text-gray-400 text-xs">{service.rating || 0}/5</span>
+=======
           <span className="text-gray-400 text-xs">{service.rating || 0}/5 ({service.reviews || 0} reviews)</span>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-c99e
         </div>
         
         <div className="space-y-3 mb-6 text-xs text-gray-400">
@@ -115,6 +136,18 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
       
       <div className="space-y-3 mb-6 text-xs text-gray-400">
         <div className="flex justify-between">
+<<<<<<< HEAD
+          <span>Launch Date:</span>
+          <span>{service.launchDate}</span>
+        </div>
+        <div className="flex justify-between">
+          <span>Category:</span>
+          <span>{service.category}</span>
+        </div>
+        <div className="flex justify-between">
+          <span>Technology:</span>
+          <span>{service.technology?.slice(0, 2).join(', ')}</span>
+=======
           <span>Setup Time:</span>
           <span>{service.setupTime || '1-2 days'}</span>
         </div>
@@ -125,6 +158,7 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
         <div className="flex justify-between">
           <span>Customers:</span>
           <span>{service.customers ? service.customers.toLocaleString() : '0'}</span>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-c99e
         </div>
       </div>
       
