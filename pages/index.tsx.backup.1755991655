@@ -13,6 +13,12 @@ import {
   Zap as ZapIcon, Leaf as LeafIcon
 } from 'lucide-react';
 import Button from '../components/ui/Button';
+<<<<<<< HEAD
+import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
+import AdvancedFuturisticCard from '../components/ui/AdvancedFuturisticCard';
+import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
+import { motion } from 'framer-motion';
+=======
 import UltraFuturisticMatrixBackground from '../components/ui/UltraFuturisticMatrixBackground';
 import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceCard';
 import ServiceAds from '../components/sections/ServiceAds';
@@ -23,6 +29,7 @@ import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-
 import { extraServices } from '../data/extra-services';
 import { additionalEnhancedServices } from '../data/additional-real-services';
 import { revolutionaryMicroSaasServices } from '../data/revolutionary-micro-saas-services';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-71e4
 
 export default function HomePage() {
   const heroStats = [
@@ -233,6 +240,8 @@ export default function HomePage() {
         <meta name="twitter:title" content="Zion Tech Group - Revolutionary Micro SaaS Services" />
         <meta name="twitter:description" content="500+ cutting-edge micro SaaS services with quantum AI, autonomous systems, and emerging technologies." />
       </Head>
+<<<<<<< HEAD
+=======
       {/* Revolutionary Services Section */}
       <RevolutionaryServices />
 
@@ -485,6 +494,7 @@ export default function HomePage() {
           }
         ]}
       />
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-71e4
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">

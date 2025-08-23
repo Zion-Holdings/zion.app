@@ -1,9 +1,14 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
+<<<<<<< HEAD
+import EnhancedNavigation from './EnhancedNavigation';
+import EnhancedFooter from './EnhancedFooter';
+=======
 import RevolutionaryNavigation from './RevolutionaryNavigation';
 import NeoFuturisticFooter from './NeoFuturisticFooter';
 import UltraAdvancedFuturisticBackground from '../ui/UltraAdvancedFuturisticBackground';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-71e4
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
@@ -39,6 +44,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     </div>
   );
 }
+<<<<<<< HEAD
+=======
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
 	return (
@@ -55,3 +62,4 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 };
 
 export default Layout;
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-71e4
