@@ -7,10 +7,13 @@ import {
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
   Building, Star, Users, TrendingUp, Zap, Globe
 } from 'lucide-react';
+<<<<<<< HEAD
+=======
 import { innovativeMicroSaasExpansions2025 } from '../data/2025-innovative-micro-saas-expansions';
 import { innovativeITServices } from '../data/2025-innovative-it-services-expansions';
 import { innovativeAIServicesExpansions2025 } from '../data/2025-innovative-ai-services-expansions';
 import { emergingTechInnovations2025 } from '../data/2025-emerging-tech-innovations';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4856
 
 // Import our new service data
 import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
@@ -22,6 +25,16 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+<<<<<<< HEAD
+  const [sortBy, setSortBy] = useState('name');
+
+  // Combine all services
+  const allServices = [
+    ...advancedAIAutomationServices2025,
+    ...innovativeITInfrastructureServices2025,
+    ...innovativeMicroSaasSolutions2025,
+    ...cuttingEdgeAIServices2025
+=======
 
   // Helper function to get monthly price safely
   const getMonthlyPrice = (service: any): number => {
@@ -76,6 +89,7 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
     { id: 'medium', name: '$1K - $3K/month', range: '$1K - $3K' },
     { id: 'high', name: '$3K - $6K/month', range: '$3K - $6K' },
     { id: 'enterprise', name: 'Over $6K/month', range: 'Over $6K' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4856
   ];
 
   // Filter and sort services
@@ -83,6 +97,28 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
     .filter(service => {
       const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+<<<<<<< HEAD
+                           service.tagline.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesCategory = selectedCategory === 'all' || service.category.toLowerCase().includes(selectedCategory.toLowerCase());
+      return matchesSearch && matchesCategory;
+    })
+    .sort((a, b) => {
+      switch (sortBy) {
+        case 'name':
+          return a.name.localeCompare(b.name);
+        case 'price':
+          return parseFloat(a.price.replace('$', '')) - parseFloat(b.price.replace('$', ''));
+        case 'rating':
+          return b.rating - a.rating;
+        case 'popularity':
+          return b.customers - a.customers;
+        default:
+          return 0;
+      }
+    });
+
+  const categories = ['all', 'AI Automation', 'IT Infrastructure', 'Micro SAAS', 'AI Services'];
+=======
                            service.category.toLowerCase().includes(searchTerm.toLowerCase());
 
       const matchesCategory = selectedCategory === 'all' ||
@@ -141,6 +177,7 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
       }
     }
   };
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4856
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white">
@@ -199,6 +236,22 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
         </div>
       </header>
 
+<<<<<<< HEAD
+      {/* Services Overview */}
+      <section className="py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-white mb-6">Service Categories</h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Our comprehensive service portfolio covers every aspect of modern business technology needs
+            </p>
+          </motion.div>
+=======
         {/* Services Grid/List */}
         <section className="px-4 sm:px-6 lg:px-8 pb-20">
           <div className="max-w-7xl mx-auto">
@@ -341,6 +394,7 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
             )}
           </div>
         </section>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4856
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* AI Automation Services */}

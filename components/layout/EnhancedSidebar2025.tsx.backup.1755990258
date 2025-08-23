@@ -13,6 +13,13 @@ import {
   Telescope, Plane, Moon, Sun, Heart, Handshake, Car, Building, Music, Trees, Leaf, DollarSign, Factory, Battery, Newspaper
 } from 'lucide-react';
 
+<<<<<<< HEAD
+const EnhancedSidebar2025: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ 
+  isOpen, 
+  onClose 
+}) => {
+  const [expandedSections, setExpandedSections] = useState<string[]>(['revolutionary-2045', 'ai-services']);
+=======
 const contactInfo = {
   mobile: '+1 302 464 0950',
   email: 'kleber@ziontechgroup.com',
@@ -227,6 +234,7 @@ interface EnhancedSidebar2025Props {
 
 export default function EnhancedSidebar2025({ isOpen, onClose }: EnhancedSidebar2025Props) {
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4856
   const [searchQuery, setSearchQuery] = useState('');
 
   // Auto-expand current section

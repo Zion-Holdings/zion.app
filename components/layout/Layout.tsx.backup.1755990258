@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import UltraFuturisticNavigation2045 from './UltraFuturisticNavigation2045';
 import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
+<<<<<<< HEAD
+import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
+=======
 import UltraFuturisticBackground2040 from '../backgrounds/UltraFuturisticBackground2040';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4856
 import TopContactBar from './TopContactBar';
 import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
 import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
@@ -74,6 +78,14 @@ export default function Layout({
         {/* Navigation */}
         <UltraFuturisticNavigation2045 />
         
+<<<<<<< HEAD
+        {/* Sidebar and Main Content */}
+        <div className="flex">
+          <EnhancedSidebar2025 
+            isOpen={sidebarOpen} 
+            onClose={() => setSidebarOpen(false)} 
+          />
+=======
         {/* Futuristic Background */}
         <UltraFuturisticBackground2040 theme="futuristic-2040" intensity="high" />
         
@@ -81,6 +93,7 @@ export default function Layout({
         <div className="relative z-10">
           {/* Top Contact Bar */}
           <TopContactBar />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4856
           
           <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
             <ErrorBoundary>

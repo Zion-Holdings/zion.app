@@ -49,6 +49,40 @@ const navigationItems: NavigationItem[] = [
     icon: <Home className="w-4 h-4" />,
     neonColor: 'shadow-cyan-400/50'
   },
+<<<<<<< HEAD
+  {
+    label: 'Services',
+    href: '/services',
+    icon: <Briefcase className="w-4 h-4" />,
+    description: 'Explore our comprehensive technology solutions',
+    badge: 'New',
+    neonColor: 'shadow-blue-400/50',
+    children: [
+      {
+        label: 'AI & Consciousness 2045',
+        href: '/ai-consciousness-evolution-2045',
+        icon: <Brain className="w-4 h-4" />,
+        description: 'Next-generation AI consciousness',
+        featured: true,
+        neonColor: 'shadow-purple-400/50'
+      },
+      {
+        label: 'Quantum Neural Networks 2045',
+        href: '/quantum-neural-network-platform-2045',
+        icon: <Atom className="w-4 h-4" />,
+        description: 'Quantum-powered AI with consciousness',
+        featured: true,
+        neonColor: 'shadow-blue-400/50'
+      },
+      {
+        label: 'Space Resource Intelligence 2045',
+        href: '/space-resource-intelligence-2045',
+        icon: <Rocket className="w-4 h-4" />,
+        description: 'AI-powered space exploration',
+        featured: true,
+        neonColor: 'shadow-pink-400/50'
+      },
+=======
         {
         label: 'Services',
         href: '/services',
@@ -89,6 +123,7 @@ const navigationItems: NavigationItem[] = [
             featured: true,
             neonColor: 'shadow-pink-400/50'
           },
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4856
       {
         label: 'Quantum Cybersecurity 2045',
         href: '/quantum-cybersecurity-platform-2045',
