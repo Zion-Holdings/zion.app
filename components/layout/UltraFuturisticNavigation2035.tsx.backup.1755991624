@@ -105,7 +105,11 @@ const navigationItems: NavigationItem[] = [
     children: [
       { name: 'Blog', href: '/blog', description: 'Insights and updates' },
       { name: 'Case Studies', href: '/case-studies', description: 'Proven results' },
+<<<<<<< HEAD
+      { name: 'Developer Resources', href: '/developer-resources', description: 'Docs and SDKs' },
+=======
       { name: 'Resources Hub', href: '/resources', description: 'Docs, SDKs, and guides' },
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3e55
       { name: 'Services Advertising', href: '/services-advertising', description: 'Features, benefits and market pricing links' },
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', description: 'Emotional intelligence & awareness' },
       { name: 'RAG Evaluation Lab', href: '/rag-evaluation-lab', description: 'Continuous evals for RAG quality' }
