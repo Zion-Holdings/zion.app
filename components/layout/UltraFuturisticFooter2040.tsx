@@ -21,7 +21,7 @@ const UltraFuturisticFooter2040: React.FC = () => {
   const socialLinks = [
     { 
       name: 'LinkedIn', 
-      href: 'https://linkedin.com/company/ziontechgroup', 
+      href: 'https://www.linkedin.com/company/ziontechgroup', 
       icon: Linkedin, 
       color: 'hover:text-blue-400' 
     },
@@ -33,13 +33,13 @@ const UltraFuturisticFooter2040: React.FC = () => {
     },
     { 
       name: 'GitHub', 
-      href: 'https://github.com/ziontechgroup', 
+      href: 'https://github.com/Zion-Holdings', 
       icon: Github, 
       color: 'hover:text-gray-300' 
     },
     { 
       name: 'YouTube', 
-      href: 'https://youtube.com/ziontechgroup', 
+      href: 'https://www.youtube.com/@ziontechgroup', 
       icon: Youtube, 
       color: 'hover:text-red-400' 
     }
