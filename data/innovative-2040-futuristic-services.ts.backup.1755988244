@@ -38,10 +38,13 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     category: 'AI & Consciousness',
     price: '$15,000',
     period: '/month',
+<<<<<<< HEAD
+=======
     icon: '🧠',
     color: 'from-purple-600 to-pink-600',
     textColor: 'text-purple-400',
     popular: true,
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-d192
     features: [
       'Quantum-enhanced neural signal processing',
       'Real-time consciousness-AI synchronization',
@@ -79,10 +82,13 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     category: 'Quantum & Emerging Tech',
     price: '$8,500',
     period: '/month',
+<<<<<<< HEAD
+=======
     icon: '🌟',
     color: 'from-blue-600 to-cyan-600',
     textColor: 'text-blue-400',
     popular: true,
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-d192
     features: [
       'True 3D holographic displays',
       'Quantum-powered real-time rendering',
@@ -120,10 +126,13 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     category: 'AI & Machine Learning',
     price: '$12,000',
     period: '/month',
+<<<<<<< HEAD
+=======
     icon: '🔮',
     color: 'from-green-600 to-emerald-600',
     textColor: 'text-green-400',
     popular: false,
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-d192
     features: [
       'Multi-dimensional time analysis',
       'Quantum-enhanced prediction algorithms',
