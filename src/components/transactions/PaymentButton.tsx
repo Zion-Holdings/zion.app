@@ -8,6 +8,9 @@ import { supabase } from "@/integrations/supabase/client";
 import { Loader2 } from "lucide-react";
 import { loadStripe } from "@stripe/stripe-js";
 import { useNavigate } from "react-router-dom";
+import { useAnalytics } from "@/context/AnalyticsContext";
+import { event as gtagEvent } from "@/lib/gtag";
+import { captureException } from "@/lib/sentry";
 
 const stripePromise = loadStripe(
   import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY || ""
@@ -31,17 +34,18 @@ export function PaymentButton({
   className,
   onPaymentInitiated,
   redirectUrl,
-}: PaymentButtonProps) {
-  const [isProcessing, setIsProcessing] = useState(false);
-  const { isAuthenticated, user } = useAuth();
-  const navigate = useNavigate();
+  }: PaymentButtonProps) {
+    const [isProcessing, setIsProcessing] = useState(false);
+    const { isAuthenticated, user } = useAuth();
+    const navigate = useNavigate();
+    const { trackEvent } = useAnalytics();
   
-  if (!supabase) throw new Error('Supabase client not initialized');
-
-  const handlePaymentClick = async () => {
-    if (!isAuthenticated) {
-      toast({
-        title: "Authentication required",
+    const handlePaymentClick = async () => {
+      trackEvent('button_click', { elementId: 'buy_now', serviceId });
+      gtagEvent('buy_now_click', { serviceId });
+      if (!isAuthenticated) {
+        toast({
+          title: "Authentication required",
         description: "Please sign in to make a purchase.",
       });
 
@@ -95,10 +99,11 @@ export function PaymentButton({
         throw new Error("No session ID returned");
       }
       
-    } catch (error) {
-      console.error("Payment error:", error);
-      toast({
-        title: "Payment error",
+      } catch (error) {
+        console.error("Payment error:", error);
+        captureException(error);
+        toast({
+          title: "Payment error",
         description: "There was a problem initiating your payment. Please try again.",
         variant: "destructive",
       });

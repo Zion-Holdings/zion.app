@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { useRouter } from 'next/router';
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
+import { pageview, event as gtagEvent } from '@/lib/gtag';
 
 // Analytics event types
 export type AnalyticsEventType = 
@@ -59,13 +59,17 @@ export function AnalyticsProvider({ children }: { children: ReactNode }) {
 
   // Track page views when location changes
   useEffect(() => {
-    trackEvent('page_view', { path: router.pathname });
+    trackEvent('page_view', { path: location.pathname });
+    pageview(location.pathname);
     setPageViews((prev) => prev + 1);
      
   }, [router.pathname]);
 
   // Function to track general analytics events
-  const trackEvent = async (type: AnalyticsEventType, metadata: Record<string, any> = {}) => {
+  const trackEvent = async (
+    type: AnalyticsEventType,
+    metadata: Record<string, any> = {}
+  ) => {
     const event: AnalyticsEvent = {
       type,
       path: router.pathname,
@@ -79,18 +83,17 @@ export function AnalyticsProvider({ children }: { children: ReactNode }) {
     
     try {
       // Store event in Supabase for persistent analytics
-      if (supabase) {
-        await supabase.from('analytics_events').insert([{
+      await supabase.from('analytics_events').insert([
+        {
           event_type: type,
-          path: router.pathname,
+          path: location.pathname,
           user_id: user?.id,
-          metadata: metadata
-        }]);
-      }
-      
-      if (process.env.NODE_ENV === 'development') {
-        logInfo('Analytics event tracked: ${type}', { data:  { data: metadata } });
-      }
+          metadata: metadata,
+        },
+      ]);
+
+      console.log(`Analytics event tracked: ${type}`, metadata);
+      gtagEvent(type, { path: location.pathname, ...metadata });
     } catch (error) {
       if (process.env.NODE_ENV === 'development') {
         logErrorToProduction('Error logging analytics event:', { data: error });
