@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SEO from '../components/SEO';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
@@ -171,7 +171,19 @@ export default function Services() {
   const [sortBy, setSortBy] = useState('name');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [currentPage, setCurrentPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
   const pageSize = 18;
+
+  // Simulate loading state for better UX
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+      setIsVisible(true);
+    }, 800);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   // Filter services based on search and category
   const filteredServices = allServices.filter(service => {
@@ -264,8 +276,31 @@ export default function Services() {
       <SEO title="Services | Zion Tech Group - Enterprise IT, AI, Micro SAAS Solutions" description="Discover our comprehensive portfolio of enterprise IT solutions, AI services, and innovative micro SAAS platforms. Transform your business with cutting-edge technology." canonical="https://ziontechgroup.com/services/" />
 
       <div className="min-h-screen bg-black text-white pt-24">
+        {/* Loading State */}
+        <AnimatePresence>
+          {isLoading && (
+            <motion.div
+              initial={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-50 bg-black flex items-center justify-center"
+            >
+              <div className="text-center">
+                <div className="w-16 h-16 border-4 border-cyan-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+                <p className="text-cyan-400 text-lg font-medium">Loading Services...</p>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         {/* Hero Section */}
-        <section className="py-20 relative overflow-hidden">
+        <AnimatePresence>
+          {isVisible && (
+            <motion.section
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="py-20 relative overflow-hidden"
+            >
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-blue-500/5 to-purple-600/5 rounded-full blur-3xl" />
             <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-br from-red-500/5 to-blue-500/5 rounded-full blur-3xl" />
@@ -387,7 +422,9 @@ export default function Services() {
               </p>
             </motion.div>
           </div>
-        </section>
+            </motion.section>
+          )}
+        </AnimatePresence>
 
         {/* Services Grid/List */}
         <section className="py-20 relative">
