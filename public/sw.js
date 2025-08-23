@@ -12,6 +12,7 @@ const urlsToCache = [
 ];
 
 // Install event - cache resources
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -34,6 +35,7 @@ self.addEventListener('fetch', (event) => {
         return fetch(event.request);
       }
     )
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   );
 });
 
@@ -53,6 +55,7 @@ self.addEventListener('activate', (event) => {
   );
 });
 
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 // Background sync for offline actions
 self.addEventListener('sync', (event) => {
   if (event.tag === 'background-sync') {
@@ -65,6 +68,7 @@ async function doBackgroundSync() {
   try {
     // Handle offline actions when connection is restored
     console.log('Background sync completed');
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   } catch (error) {
     console.error('Background sync failed:', error);
   }
@@ -97,6 +101,7 @@ self.addEventListener('push', (event) => {
 
     event.waitUntil(
       self.registration.showNotification(data.title || 'Zion Tech Group', options)
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     );
   }
 });
@@ -111,3 +116,4 @@ self.addEventListener('notificationclick', (event) => {
     );
   }
 });
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

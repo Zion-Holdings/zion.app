@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import Head from 'next/head';
 
 export default function Home() {
@@ -58,9 +57,6 @@ export default function Home() {
  
 {/* AUTO-GENERATED: HOME_LATEST_CONTENT_END */}
     </div>
-  );
-}
-=======
   return (
     <div style={{ ;
       padding: '2rem', 
@@ -81,4 +77,6 @@ export default function Home() {
         borderRadius: '8px' 
       }}><h3>🔧 Available Automation Scripts:</h3><ul><li><code>node scripts/comprehensive-app-automation.cjs</code> - Full automation</li><li><code>node scripts/continuous-improvement-automation.cjs</code> - Continuous improvement</li><li><code>node scripts/nodejs-compatibility-fix.cjs</code> - Node.js fixes</li><li><code>node scripts/advanced-file-fixer.cjs</code> - File corruption fixes</li></ul></div></div>;
   );
->>>>>>> origin/automation-error-fixes
+=======
+  );
+}

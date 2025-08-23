@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ArrowRight, Play, TrendingUp, Brain, Shield, Rocket, Globe, Cpu, Database, Atom, Target, Star, Sparkles as SparklesIcon,
   Brain as BrainIcon, Atom as AtomIcon, Shield as ShieldIcon, MessageCircle, ArrowUp
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 } from 'lucide-react';
 
 // Import our new innovative services
@@ -106,6 +107,7 @@ const Homepage2045: React.FC = () => {
   useEffect(() => {
     setIsVisible(true);
     setIsLoading(false);
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     
     // Track mouse movement for parallax effects
     const handleMouseMove = (e: MouseEvent) => {
@@ -114,6 +116,7 @@ const Homepage2045: React.FC = () => {
     
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('scroll', handleScroll);
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     
     return () => {
       clearTimeout(timer);
@@ -147,12 +150,14 @@ const Homepage2045: React.FC = () => {
     );
   }, [searchQuery]);
 
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   // Combine all revolutionary services
   const allRevolutionaryServices = useMemo(() => [
     ...revolutionary2045AdvancedRealMicroSaas,
     ...revolutionary2045AdvancedITServices,
     ...revolutionary2045AdvancedAIServices
   ], []);
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
   // Filter services by category
   const getFilteredServices = useCallback(() => {
@@ -211,6 +216,7 @@ const Homepage2045: React.FC = () => {
       rating: 5
     }
   ], []);
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
   const handleGetStarted = useCallback(() => {
     window.location.href = '/contact';
@@ -247,6 +253,7 @@ const Homepage2045: React.FC = () => {
     );
   }
 
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   return (
     <Layout>
       {/* Enhanced Header with Search and Theme Toggle */}
@@ -467,6 +474,7 @@ const Homepage2045: React.FC = () => {
               {/* Enhanced Stats */}
               <motion.div 
                 className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-4xl mx-auto pt-12"
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 1 }}
@@ -576,6 +584,7 @@ const Homepage2045: React.FC = () => {
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                 Trusted by industry leaders worldwide
               </p>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -621,6 +630,7 @@ const Homepage2045: React.FC = () => {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               viewport={{ once: true }}
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">

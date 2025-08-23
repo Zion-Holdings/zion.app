@@ -447,5 +447,6 @@ export const innovative2040ITServices: RealMarketService[] = [
     customers: 267,
     rating: 4.5,
     reviews: 198
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   }
 ];

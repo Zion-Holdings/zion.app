@@ -55,6 +55,7 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
   }
 }) => {
   const [metrics, setMetrics] = useState<PerformanceMetrics>({
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     lcp: 0,
     fid: 0,
     cls: 0,
@@ -155,6 +156,7 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
     
     let grade: 'A' | 'B' | 'C' | 'D' | 'F';
     let color: string;
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
     if (averageScore >= 90) {
       grade = 'A';
@@ -395,6 +397,7 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
         </motion.div>
       )}
     </AnimatePresence>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   );
 };
 

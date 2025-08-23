@@ -14,6 +14,7 @@ const UltraFuturisticNavigation2040: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
   // Handle scroll effect with throttling for better performance
   useEffect(() => {
@@ -40,6 +41,7 @@ const UltraFuturisticNavigation2040: React.FC = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   const navigationItems = [
     {
       name: 'Home',
@@ -361,6 +363,7 @@ const UltraFuturisticNavigation2040: React.FC = () => {
                 <Brain className="w-5 h-5 text-white" />
               </div>
               <span className="text-lg font-bold text-white">Zion Tech</span>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </Link>
 
             {/* Mobile Menu Button */}
@@ -369,6 +372,7 @@ const UltraFuturisticNavigation2040: React.FC = () => {
               className="p-2 text-white hover:text-cyan-400 transition-colors duration-300"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </button>
           </div>
         </div>
@@ -486,6 +490,7 @@ const UltraFuturisticNavigation2040: React.FC = () => {
       {/* Spacer for fixed navigation */}
       <div className="h-20 lg:h-20" />
     </>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   );
 };
 

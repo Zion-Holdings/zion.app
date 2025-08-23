@@ -1,4 +1,5 @@
 import React from 'react';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 import Layout from './layout/Layout';
 import { motion } from 'framer-motion';
 import { 
@@ -26,6 +27,7 @@ const Homepage2025: React.FC = () => {
       }
     }
   };
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
   return (
     <Layout>
@@ -57,6 +59,7 @@ const Homepage2025: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent leading-tight"
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             >
               Zion Tech Group
             </motion.h1>
@@ -64,6 +67,7 @@ const Homepage2025: React.FC = () => {
             <motion.p 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
             >
@@ -147,6 +151,7 @@ const Homepage2025: React.FC = () => {
                 Pioneering the future of technology with cutting-edge AI, quantum computing, and autonomous solutions that transform businesses worldwide.
               </p>
             </motion.div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -162,6 +167,7 @@ const Homepage2025: React.FC = () => {
               <button className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 backdrop-blur-sm">
                 Explore Solutions
               </button>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </motion.div>
           </div>
         </section>
@@ -287,6 +293,7 @@ const Homepage2025: React.FC = () => {
                 </motion.div>
               ))}
             </div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
           </div>
         </section>
 

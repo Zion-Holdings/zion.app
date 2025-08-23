@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useCallback } from 'react';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 import { motion } from 'framer-motion';
 
 interface UltraFuturisticBackground2036Props {
@@ -203,6 +204,7 @@ export default function UltraFuturisticBackground2036({
           // Neon particles with glow effect
           ctx.shadowColor = particle.color;
           ctx.shadowBlur = particle.size * 2;
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
           ctx.fillStyle = particle.color;
           ctx.beginPath();
           ctx.arc(0, 0, particle.size, 0, Math.PI * 2);
@@ -234,6 +236,7 @@ export default function UltraFuturisticBackground2036({
           const opacity = (100 - distance) / 100 * 0.1;
           ctx.strokeStyle = `rgba(6, 182, 212, ${opacity})`;
           ctx.beginPath();
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
           ctx.moveTo(p1.x, p1.y);
           ctx.lineTo(p2.x, p2.y);
           ctx.stroke();
@@ -243,11 +246,13 @@ export default function UltraFuturisticBackground2036({
 
     // Continue animation
     animationFrameRef.current = requestAnimationFrame(() => animate(canvas, ctx));
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   }, [getThemeColors]);
 
   // Enhanced initialization and cleanup
   useEffect(() => {
     initParticles();
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     animate();
 
     const handleResize = () => {
@@ -270,6 +275,7 @@ export default function UltraFuturisticBackground2036({
 
   return (
     <div ref={containerRef} className="fixed inset-0 pointer-events-none z-0">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       <canvas
         ref={canvasRef}
         className="w-full h-full"
@@ -279,6 +285,7 @@ export default function UltraFuturisticBackground2036({
       />
       
       {/* Additional visual elements */}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       <div className="absolute inset-0">
         <svg className="w-full h-full" style={{ opacity: 0.1 }}>
           <defs>
@@ -304,6 +311,7 @@ export default function UltraFuturisticBackground2036({
       </div>
       
       {children}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     </div>
   );
 }

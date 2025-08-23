@@ -90,6 +90,7 @@ const APIPage: React.FC = () => {
       description: 'Designed for high-performance and reliability',
       icon: <Zap className="w-6 h-6" />
     }
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   ];
 
   const stats = [
@@ -286,6 +287,7 @@ const APIPage: React.FC = () => {
                 </div>
               </div>
             </motion.div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
           </div>
         </section>
 
@@ -314,6 +316,7 @@ const APIPage: React.FC = () => {
                 >
                   Contact Us
                 </a>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </div>
             </motion.div>
           </div>

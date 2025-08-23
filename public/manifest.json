@@ -8,23 +8,8 @@
   "theme_color": "#0ea5e9",
   "orientation": "portrait-primary",
   "scope": "/",
-  "categories": ["business", "technology", "productivity"],
-  "screenshots": [
-    {
-      "src": "/images/screenshots/desktop-wide.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "form_factor": "wide",
-      "label": "Zion marketplace desktop view"
-    },
-    {
-      "src": "/images/screenshots/mobile-narrow.png",
-      "sizes": "375x812",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "Zion marketplace mobile view"
-    }
-  ],
+  "lang": "en",
+  "categories": ["business", "productivity", "technology"],
   "icons": [
     {
       "src": "/logos/zion-logo.png",

@@ -96,6 +96,7 @@ const EdgeComputingPage: React.FC = () => {
       title: 'Offline Capability',
       description: 'Continue operation without internet connection',
       icon: <CheckCircle className="w-6 h-6 text-purple-400" />
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     }
   ];
 
@@ -119,6 +120,7 @@ const EdgeComputingPage: React.FC = () => {
       name: 'Healthcare',
       description: 'Real-time patient monitoring and diagnostics',
       icon: <Heart className="w-6 h-6" />
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     }
   ];
 
@@ -162,6 +164,7 @@ const EdgeComputingPage: React.FC = () => {
                   Explore Edge AI
                 </a>
               </div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </motion.div>
           </div>
         </section>
@@ -312,6 +315,7 @@ const EdgeComputingPage: React.FC = () => {
                 </motion.div>
               ))}
             </div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
           </div>
         </section>
 
@@ -344,6 +348,7 @@ const EdgeComputingPage: React.FC = () => {
                   className="inline-flex items-center px-8 py-4 border-2 border-green-500 text-green-400 font-semibold rounded-lg hover:bg-green-500 hover:text-white transition-all duration-300"
                 >
                   View Edge Cases
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </a>
               </div>
             </motion.div>

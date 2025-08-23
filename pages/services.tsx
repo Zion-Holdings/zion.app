@@ -3,6 +3,7 @@ import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 import UltraFuturisticNavigation2046 from '../components/layout/UltraFuturisticNavigation2046';
 import UltraFuturisticFooter2046 from '../components/layout/UltraFuturisticFooter2046';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 import { 
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
@@ -11,81 +12,14 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 
-const ServicesPage: React.FC = () => {
-  const mainServices = [
-    {
-      title: "AI Consciousness Evolution",
-      description: "Revolutionary AI systems that develop self-awareness, emotional intelligence, and autonomous learning capabilities.",
-      icon: <Brain className="w-8 h-8" />,
-      color: "from-purple-500 to-pink-600",
-      features: [
-        "Emotional intelligence development",
-        "Self-aware learning systems",
-        "Consciousness evolution algorithms",
-        "Human-AI collaboration frameworks"
-      ],
-      benefits: [
-        "Enhanced decision-making capabilities",
-        "Improved human-AI interaction",
-        "Autonomous problem-solving",
-        "Continuous self-improvement"
-      ]
-    },
-    {
-      title: "Quantum Computing Solutions",
-      description: "Next-generation quantum computing platforms that solve previously impossible computational problems.",
-      icon: <Atom className="w-8 h-8" />,
-      color: "from-blue-500 to-cyan-600",
-      features: [
-        "Quantum algorithm optimization",
-        "Hybrid quantum-classical systems",
-        "Cryptography and security",
-        "Complex problem solving"
-      ],
-      benefits: [
-        "1000x faster computation",
-        "Breakthrough research capabilities",
-        "Unbreakable encryption",
-        "Optimization solutions"
-      ]
-    },
-    {
-      title: "Advanced Cybersecurity",
-      description: "AI-powered security systems that provide real-time threat detection and autonomous response capabilities.",
-      icon: <Shield className="w-8 h-8" />,
-      color: "from-green-500 to-emerald-600",
-      features: [
-        "AI threat intelligence",
-        "Zero-trust architecture",
-        "Automated incident response",
-        "Behavioral analysis"
-      ],
-      benefits: [
-        "99.9% threat detection rate",
-        "Real-time protection",
-        "Reduced false positives",
-        "Compliance assurance"
-      ]
-    },
-    {
-      title: "Space Technology",
-      description: "Autonomous space exploration systems and resource intelligence platforms for the final frontier.",
-      icon: <Rocket className="w-8 h-8" />,
-      color: "from-orange-500 to-red-600",
-      features: [
-        "Autonomous exploration systems",
-        "Space resource intelligence",
-        "Satellite network management",
-        "Mission planning and execution"
-      ],
-      benefits: [
-        "Reduced mission costs",
-        "Enhanced safety protocols",
-        "Real-time decision making",
-        "Resource optimization"
-      ]
-    }
-  });
+const sortOptions = [
+  { value: 'name', label: 'Name A-Z' },
+  { value: 'price-low', label: 'Price: Low to High' },
+  { value: 'price-high', label: 'Price: High to Low' },
+  { value: 'popular', label: 'Most Popular' },
+  { value: 'newest', label: 'Newest First' },
+  { value: 'rating', label: 'Highest Rated' }
+];
 
   // Pagination helpers
   const totalPages = Math.max(1, Math.ceil(sortedServices.length / pageSize));
@@ -94,6 +28,7 @@ const ServicesPage: React.FC = () => {
     (currentPageClamped - 1) * pageSize,
     currentPageClamped * pageSize
   );
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
   // Reset to first page when filters/sort change
   React.useEffect(() => {
@@ -134,12 +69,15 @@ const ServicesPage: React.FC = () => {
       case 'education':
       case 'education & research':
         return <GraduationCap className="w-6 h-6 text-yellow-400" />;
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       default:
         return <Shield className="w-6 h-6 text-gray-400" />;
     }
   };
 
+=======
   return (
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     <>
       <SEO title="Services | Zion Tech Group - Enterprise IT, AI, Micro SAAS Solutions" description="Discover our comprehensive portfolio of enterprise IT solutions, AI services, and innovative micro SAAS platforms. Transform your business with cutting-edge technology." canonical="https://ziontechgroup.com/services/" />
 
@@ -172,6 +110,7 @@ const ServicesPage: React.FC = () => {
     >
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
 =======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         {/* Hero Section */}
         <AnimatePresence>
           {isVisible && (
@@ -207,6 +146,7 @@ const ServicesPage: React.FC = () => {
                 we provide the technology you need to succeed in the digital age.
               </p>
             </motion.div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
             {/* Search and Filters */}
             <motion.div

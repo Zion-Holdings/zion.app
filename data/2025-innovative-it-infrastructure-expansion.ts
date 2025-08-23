@@ -489,5 +489,6 @@ export const innovativeITInfrastructureExpansion2025 = [
       phone: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com'
     }
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   }
 ];

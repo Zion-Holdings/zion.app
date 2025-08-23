@@ -74,6 +74,7 @@ const QuantumCybersecurityIntelligence: React.FC = () => {
         {/* Hero Section */}
         <section className="relative pt-32 pb-20 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -97,6 +98,7 @@ const QuantumCybersecurityIntelligence: React.FC = () => {
               <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8">
                 Experience the future of cybersecurity with our revolutionary quantum security platform. 
                 Combining quantum encryption with AI intelligence for unprecedented protection against evolving threats.
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -108,11 +110,13 @@ const QuantumCybersecurityIntelligence: React.FC = () => {
                 >
                   Start Free Trial
                   <ArrowRight className="ml-2 w-5 h-5" />
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </motion.button>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="px-8 py-4 border border-red-500/30 text-red-300 font-semibold rounded-lg hover:bg-red-500/10 transition-all duration-300"
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 >
                   Security Assessment
                 </motion.button>
@@ -154,6 +158,7 @@ const QuantumCybersecurityIntelligence: React.FC = () => {
                     </div>
                     <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
                     <p className="text-gray-300">{feature.description}</p>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                   </div>
                 </motion.div>
               ))}
@@ -164,6 +169,7 @@ const QuantumCybersecurityIntelligence: React.FC = () => {
         {/* Security Features Section */}
         <section className="py-20 bg-gradient-to-r from-red-500/5 to-orange-500/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -176,6 +182,7 @@ const QuantumCybersecurityIntelligence: React.FC = () => {
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                 Unlock unprecedented security protection with our quantum cybersecurity platform
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </p>
             </motion.div>
             
@@ -193,6 +200,7 @@ const QuantumCybersecurityIntelligence: React.FC = () => {
                     <CheckCircle className="w-5 h-5 text-white" />
                   </div>
                   <p className="text-lg text-gray-300">{feature}</p>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </motion.div>
               ))}
             </div>
@@ -202,6 +210,7 @@ const QuantumCybersecurityIntelligence: React.FC = () => {
         {/* Protection Areas Section */}
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -214,6 +223,7 @@ const QuantumCybersecurityIntelligence: React.FC = () => {
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                 Our platform protects every aspect of your digital infrastructure
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </p>
             </motion.div>
             
@@ -232,6 +242,7 @@ const QuantumCybersecurityIntelligence: React.FC = () => {
                   </div>
                   <h3 className="text-2xl font-semibold text-white mb-4">{area.title}</h3>
                   <p className="text-gray-300 text-lg">{area.description}</p>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </motion.div>
               ))}
             </div>
@@ -242,6 +253,7 @@ const QuantumCybersecurityIntelligence: React.FC = () => {
         {/* CTA Section */}
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -262,15 +274,18 @@ const QuantumCybersecurityIntelligence: React.FC = () => {
                   className="px-10 py-4 bg-gradient-to-r from-red-500 to-orange-500 text-white font-semibold rounded-lg hover:from-red-600 hover:to-orange-600 transition-all duration-300 text-lg"
                 >
                   Get Protected Now
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </motion.button>
               </div>
             </motion.div>
           </div>
         </section>
 =======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       </div>
     </Layout>
   );
 };
 
 export default QuantumCybersecurityIntelligence;
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

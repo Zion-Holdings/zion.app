@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 import { motion, AnimatePresence } from 'framer-motion';
 import { SkipForward, Volume2, VolumeX, Eye, EyeOff, Keyboard, Accessibility } from 'lucide-react';
 
@@ -342,6 +343,7 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
         {children}
       </div>
     </>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   );
 };
 

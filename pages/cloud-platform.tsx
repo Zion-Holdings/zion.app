@@ -29,6 +29,7 @@ import {
 } from 'lucide-react';
 
 const CloudPlatformPage: React.FC = () => {
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   const services = [
     {
       title: 'Quantum Cloud Infrastructure',
@@ -117,6 +118,7 @@ const CloudPlatformPage: React.FC = () => {
       name: 'AI/ML Workloads',
       description: 'Machine learning model training and deployment',
       icon: <Brain className="w-6 h-6" />
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     }
   ];
 
@@ -210,6 +212,7 @@ const CloudPlatformPage: React.FC = () => {
                     {service.features.map((feature) => (
                       <li key={feature} className="flex items-center text-sm text-gray-400">
                         <Star className="w-4 h-4 text-blue-400 mr-2" />
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                         {feature}
                       </li>
                     ))}
@@ -301,6 +304,7 @@ const CloudPlatformPage: React.FC = () => {
         </section>
       </div>
     </Layout>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   );
 };
 

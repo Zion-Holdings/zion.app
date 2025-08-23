@@ -136,12 +136,14 @@
   animation-delay: 0s !important;
   transition-duration: 0.1s !important;
   transition-delay: 0s !important;
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 }
 
 .reduced-motion .animate-pulse {
   animation: none !important;
 }
 
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 .reduced-motion .animate-spin {
   animation: none !important;
 }
@@ -155,6 +157,7 @@
 }
 
 /* Screen Reader Only */
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 .sr-only {
   position: absolute !important;
   width: 1px !important;
@@ -171,6 +174,7 @@
   position: static !important;
   width: auto !important;
   height: auto !important;
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   overflow: visible !important;
   clip: auto !important;
   white-space: normal !important;
@@ -386,6 +390,7 @@ textarea:disabled {
 
 .info:focus {
   outline-color: #3b82f6 !important;
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 }
 
 /* Print Styles */
@@ -393,6 +398,7 @@ textarea:disabled {
   .sr-only,
   .skip-link,
   button,
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   .no-print {
     display: none !important;
   }
@@ -410,5 +416,6 @@ textarea:disabled {
   
   a[href]:after {
     content: " (" attr(href) ")" !important;
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   }
 }

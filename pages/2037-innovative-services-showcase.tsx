@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import SEO from '../components/SEO';
+import Layout from '../components/layout/Layout';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 import { motion } from 'framer-motion';
 import { 
   Brain, Atom, Rocket, Shield, Zap, Target, Star,
   ArrowRight, Check, TrendingUp, Users, Globe, Cpu,
   Database, Cloud, Lock, Settings, Eye, Award, Clock
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 } from 'lucide-react';
 
 // Import our new 2037 service data
@@ -20,11 +23,12 @@ const contact = {
 };
 
 const ServiceCard = ({ service, index }: { service: any; index: number }) => (
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   <motion.div
-    initial={{ opacity: 0, y: 50 }}
+    initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5, delay: index * 0.1 }}
-    className="relative group"
+    className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-gray-600/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/10 group"
   >
     <div className={`absolute inset-0 bg-gradient-to-r ${service.color || 'from-gray-600 to-gray-700'} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
     <div className={`relative bg-gradient-to-r ${service.color ? service.color.replace('from-', 'from-').replace('to-', 'to-') : 'from-gray-600 to-gray-700'} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
@@ -53,60 +57,55 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
             <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
             <span className="text-gray-300 text-sm">{feature}</span>
           </div>
-        ))}
-      </div>
-      
-      <div className="flex items-center justify-between mb-6">
-        <div>
-          <span className="text-3xl font-bold text-white">{service.price}</span>
-          <span className="text-gray-400 text-sm">{service.period}</span>
-        </div>
-        <div className="text-right">
-          <div className="flex items-center space-x-1 text-yellow-400">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className={`w-4 h-4 ${i < Math.floor(service.rating) ? 'fill-current' : ''}`} />
-            ))}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-2xl p-8"
+        >
+          <h3 className="text-2xl font-bold text-white mb-4">Contact Information</h3>
+          <div className="space-y-4 text-gray-300">
+            <div className="flex items-center space-x-3">
+              <div className="w-5 h-5 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"></div>
+              <span>{contact.mobile}</span>
+            </div>
+            <div className="flex items-center space-x-3">
+              <div className="w-5 h-5 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full"></div>
+              <span>{contact.email}</span>
+            </div>
+            <div className="flex items-center space-x-3">
+              <div className="w-5 h-5 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full"></div>
+              <span>{contact.address}</span>
+            </div>
           </div>
-          <span className="text-gray-400 text-xs">{service.rating}/5 ({service.reviews} reviews)</span>
-        </div>
+        </motion.div>
       </div>
-      
-      <div className="space-y-3 mb-6 text-xs text-gray-400">
-        <div className="flex justify-between">
-          <span>Setup Time:</span>
-          <span>{service.setupTime || 'N/A'}</span>
-        </div>
-        <div className="flex justify-between">
-          <span>Trial:</span>
-          <span>{service.trialDays || 0} days</span>
-        </div>
-        <div className="flex justify-between">
-          <span>Customers:</span>
-          <span>{service.customers ? service.customers.toLocaleString() : '0'}</span>
-        </div>
-      </div>
-      
-      <a 
-        href={service.link} 
-        className="block w-full text-center py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="text-center"
       >
-        Learn More
-      </a>
+        <a
+          href={`mailto:${contact.email}?subject=2037 Services Consultation`}
+          className="inline-flex items-center space-x-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 font-semibold text-lg transform hover:scale-105"
+        >
+          <span>Start Your Transformation</span>
+          <ArrowRight className="w-5 h-5" />
+        </a>
+      </motion.div>
     </div>
-  </motion.div>
+  </section>
 );
 
-const ServiceShowcase = () => {
-  const [activeCategory, setActiveCategory] = useState('all');
-  
-  const categories = [
-    { id: 'all', name: 'All Services', icon: <Star className="w-5 h-5" />, count: innovative2037MicroSaasServices.length + innovative2037ITServices.length + innovative2037AIServices.length },
-    { id: 'ai', name: 'AI & Consciousness', icon: <Brain className="w-5 h-5" />, count: innovative2037AIServices.length },
-    { id: 'quantum', name: 'Quantum Technology', icon: <Atom className="w-5 h-5" />, count: innovative2037ITServices.filter(s => s.name.toLowerCase().includes('quantum')).length },
-    { id: 'autonomous', name: 'Autonomous Systems', icon: <Zap className="w-5 h-5" />, count: innovative2037ITServices.filter(s => s.name.toLowerCase().includes('autonomous')).length + innovative2037AIServices.filter(s => s.name.toLowerCase().includes('autonomous')).length },
-    { id: 'micro-saas', name: 'Micro SAAS', icon: <Rocket className="w-5 h-5" />, count: innovative2037MicroSaasServices.length },
-    { id: 'it', name: 'IT Solutions', icon: <Cpu className="w-5 h-5" />, count: innovative2037ITServices.length }
-  ];
+const ServicesShowcase2037: React.FC = () => {
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
 const ServicesShowcase2037: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -435,6 +434,7 @@ const ServicesShowcase2037: React.FC = () => {
         </div>
       </section>
     </div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   );
 };
 

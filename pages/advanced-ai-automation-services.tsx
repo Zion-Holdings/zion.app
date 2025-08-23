@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import { advancedAIAutomationServices } from '../data/2026-advanced-ai-automation-services';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
 const contactInfo = {
   mobile: '+1 302 464 0950',

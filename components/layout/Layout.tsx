@@ -13,6 +13,7 @@ import EnhancedErrorBoundary from '../EnhancedErrorBoundary';
 import ThemeToggle from '../ThemeToggle';
 import LoadingSpinner from '../LoadingSpinner';
 import ServiceWorkerRegistration from '../ServiceWorkerRegistration';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -92,6 +93,7 @@ export default function Layout({
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
   }, [theme]);
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
 
   useEffect(() => {
     // Check for saved theme preference or default to dark mode
@@ -231,8 +233,8 @@ export default function Layout({
         {/* Top Contact Bar */}
         <TopContactBar />
         
-        {/* Enhanced Navigation */}
-        <EnhancedNavigation2025 />
+        {/* Navigation */}
+        <UltraFuturisticNavigation2036 />
         
         {/* Enhanced Sidebar */}
         <EnhancedSidebar2025 isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
@@ -267,5 +269,6 @@ export default function Layout({
         )}
       </div>
     </>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   );
 };

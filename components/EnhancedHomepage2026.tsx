@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ArrowRight, Play, Star, Users, Award, TrendingUp, Brain, Shield, Rocket, Loader2,
   Zap, Globe, Cpu, Eye, Atom, ChevronLeft, ChevronRight
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 } from 'lucide-react';
 
 // Lazy load heavy components
@@ -223,6 +224,7 @@ const EnhancedHomepage2026: React.FC = () => {
                   </p>
                 </motion.div>
 
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {featuredServices.map((service, index) => (
                     <motion.div
@@ -243,6 +245,7 @@ const EnhancedHomepage2026: React.FC = () => {
                     </div>
                   ))}
                 </motion.div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
                 {/* Scroll Indicator */}
                 <motion.div 

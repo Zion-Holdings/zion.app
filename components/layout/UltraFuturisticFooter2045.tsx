@@ -8,6 +8,7 @@ import {
 
 const UltraFuturisticFooter2045: React.FC = () => {
   const currentYear = new Date().getFullYear();
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
   const contactInfo = {
     mobile: '+1 302 464 0950',
@@ -15,6 +16,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
     address: '364 E Main St STE 1008 Middletown DE 19709'
   };
 
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   const footerSections = [
     {
       title: 'Revolutionary Services 2045',
@@ -22,6 +24,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
         { name: 'AI Consciousness Evolution 2045', href: '/ai-consciousness-evolution-2045', icon: Brain },
         { name: 'Quantum Neural Networks 2045', href: '/quantum-neural-network-platform-2045', icon: Atom },
         { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence-2045', icon: Cpu },
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         { name: 'Quantum Cybersecurity 2045', href: '/quantum-cybersecurity-platform-2045', icon: Shield },
         { name: 'Space Resource Intelligence 2045', href: '/space-resource-intelligence-2045', icon: Rocket },
         { name: 'Autonomous Customer Success 2045', href: '/autonomous-customer-success-2045', icon: Users }
@@ -32,6 +35,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
       links: [
         { name: 'Quantum Cloud Infrastructure 2045', href: '/quantum-cloud-infrastructure-2045', icon: Cloud },
         { name: 'Autonomous DevOps Platform 2045', href: '/autonomous-devops-platform-2045', icon: Zap },
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         { name: 'Quantum Data Center Management 2045', href: '/quantum-data-center-management-2045', icon: Server },
         { name: 'Autonomous Network Management 2045', href: '/autonomous-network-management-2045', icon: Network },
         { name: 'Autonomous IT Service Management 2045', href: '/autonomous-it-service-management-2045', icon: Settings },
@@ -46,6 +50,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
         { name: 'Autonomous AI Research 2045', href: '/autonomous-ai-research-2045', icon: Cpu },
         { name: 'Emotional AI Intelligence 2045', href: '/emotional-ai-intelligence-2045', icon: Heart },
         { name: 'Quantum AI Metaverse 2045', href: '/quantum-ai-metaverse-2045', icon: Globe },
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence-2045', icon: Target }
       ]
     },
@@ -58,6 +63,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
         { name: 'Careers', href: '/careers', icon: Code },
         { name: 'News & Updates', href: '/news', icon: Globe },
         { name: 'Press Kit', href: '/press', icon: Star }
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       ]
     }
   ];
@@ -69,6 +75,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
     { name: 'Instagram', icon: Instagram, href: 'https://instagram.com/ziontechgroup', color: 'from-purple-500 to-pink-500' },
     { name: 'YouTube', icon: Youtube, href: 'https://youtube.com/@ziontechgroup', color: 'from-red-500 to-red-600' },
     { name: 'GitHub', icon: Github, href: 'https://github.com/ziontechgroup', color: 'from-gray-600 to-gray-700' }
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   ];
 
 // Quick stats
@@ -118,6 +125,7 @@ const NewsletterSignup: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/10 via-blue-900/10 to-purple-900/10"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(6,182,212,0.1),transparent_50%)]"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.1),transparent_50%)]"></div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="relative">
@@ -236,6 +244,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
                       <Link
                         href={link.href}
                         className="flex items-center space-x-3 text-gray-400 hover:text-cyan-400 transition-all duration-200 group hover:translate-x-1"
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                       >
                         <div className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-200">
                           <link.icon />
@@ -319,6 +328,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
             </div>
           </div>
         </div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       </div>
 
       {/* Enhanced Floating Elements */}

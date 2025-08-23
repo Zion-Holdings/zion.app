@@ -1,4 +1,5 @@
 import React from 'react';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
@@ -182,6 +183,7 @@ const Docs: React.FC = () => {
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               className="text-center"
@@ -213,6 +215,7 @@ const Docs: React.FC = () => {
               {/* Search Bar */}
               <div className="relative flex-1 max-w-md">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 <input
                   type="text"
                   placeholder="Search documentation..."
@@ -231,6 +234,7 @@ const Docs: React.FC = () => {
                   <option value="space-technology">Space Technology</option>
                 </select>
               </div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </div>
           </div>
         </section>
@@ -310,6 +314,7 @@ const Docs: React.FC = () => {
             </motion.div>
             
             <div className="space-y-8">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               {documentationCategories.map((category, index) => (
                 <motion.div
                   key={category.title}
@@ -445,6 +450,7 @@ const Docs: React.FC = () => {
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
                 Additional tools and resources to help you build amazing applications
               </p>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </motion.div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -517,6 +523,7 @@ const Docs: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
@@ -541,6 +548,7 @@ const Docs: React.FC = () => {
                   className="inline-flex items-center px-8 py-4 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-full hover:bg-cyan-500 hover:text-white transition-all duration-300"
                 >
                   View Getting Started
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </a>
               </div>
             </motion.div>
@@ -552,3 +560,4 @@ const Docs: React.FC = () => {
 };
 
 export default Docs;
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

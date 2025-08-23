@@ -6,6 +6,7 @@ import {
   Heart, DollarSign, GraduationCap, Building, Truck, Zap,
   Phone, Mail, MapPin, Globe, Linkedin, Twitter, Github, Youtube,
   ArrowRight, Star, CheckCircle, TrendingUp, Award, Clock
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 } from 'lucide-react';
 
 const UltraFuturisticFooter2040: React.FC = () => {
@@ -212,6 +213,7 @@ const UltraFuturisticFooter2040: React.FC = () => {
                   <h3 className="text-xl font-bold text-white">Zion Tech Group</h3>
                   <p className="text-sm text-cyan-400">Future Technology Solutions</p>
                 </div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </div>
               
               <p className="text-white/70 mb-6 leading-relaxed">
@@ -406,6 +408,7 @@ const UltraFuturisticFooter2040: React.FC = () => {
                 </Link>
               </div>
             </div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
           </div>
         </div>
       </div>

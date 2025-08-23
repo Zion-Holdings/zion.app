@@ -113,6 +113,7 @@ const CybersecurityPage: React.FC = () => {
       title: 'Cost Effective',
       description: 'Reduce security incidents and operational costs',
       icon: <TrendingUp className="w-6 h-6 text-yellow-400" />
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     }
   ];
 
@@ -154,6 +155,7 @@ const CybersecurityPage: React.FC = () => {
                   Explore Quantum Security
                 </a>
               </div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </motion.div>
           </div>
         </section>
@@ -236,6 +238,7 @@ const CybersecurityPage: React.FC = () => {
                     {service.features.map((feature) => (
                       <li key={feature} className="flex items-center text-sm text-gray-400">
                         <Star className="w-4 h-4 text-red-400 mr-2" />
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                         {feature}
                       </li>
                     ))}
@@ -296,6 +299,7 @@ const CybersecurityPage: React.FC = () => {
                 </motion.div>
               ))}
             </div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
           </div>
         </section>
 
@@ -327,6 +331,7 @@ const CybersecurityPage: React.FC = () => {
                   className="px-8 py-4 border border-red-500 text-red-400 font-semibold rounded-xl hover:bg-red-500/10 transition-all duration-300"
                 >
                   View Security Cases
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </a>
               </div>
             </motion.div>

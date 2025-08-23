@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Search, Shield, Menu, X, ChevronDown, ChevronRight, ExternalLink, 
   Building, Users, Brain, Cpu, Database, Atom, Rocket, Target, Zap, Globe
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -44,6 +45,7 @@ const navigationItems: NavigationItem[] = [
       {
         label: 'AI & Machine Learning',
         href: '/services?category=ai-ml',
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         icon: <Brain className="w-4 h-4" />,
         description: 'Advanced AI solutions for enterprise',
         featured: true,
@@ -91,6 +93,7 @@ const navigationItems: NavigationItem[] = [
         featured: true,
         neonColor: 'shadow-orange-400/50',
         category: 'saas'
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       }
     ]
   },
@@ -290,6 +293,7 @@ const UltraFuturisticNavigation2045: React.FC = () => {
   const router = useRouter();
   const navRef = useRef<HTMLElement>(null);
   const searchRef = useRef<HTMLDivElement>(null);
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
   // Responsive design detection
   useEffect(() => {
@@ -316,6 +320,7 @@ const UltraFuturisticNavigation2045: React.FC = () => {
 
   // Handle click outside search
   React.useEffect(() => {
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     const handleClickOutside = (event: MouseEvent) => {
       if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
         setIsSearchOpen(false);
@@ -331,6 +336,7 @@ const UltraFuturisticNavigation2045: React.FC = () => {
     const handleClickOutside = (event: MouseEvent) => {
       if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
         setSidebarOpen(false);
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       }
     };
 
@@ -360,6 +366,7 @@ const UltraFuturisticNavigation2045: React.FC = () => {
   }, []);
 
   const handleSearch = useCallback((e: React.FormEvent) => {
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     e.preventDefault();
     if (searchQuery.trim()) {
       router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
@@ -446,6 +453,7 @@ const UltraFuturisticNavigation2045: React.FC = () => {
       </AnimatePresence>
     );
   }, [activeDropdown, isActiveRoute]);
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
   return (
     <>

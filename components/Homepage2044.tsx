@@ -182,6 +182,7 @@ const Homepage2044: React.FC = () => {
   return (
     <Layout>
       <main className="relative">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         {/* Hero Section */}
         <section 
           className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"

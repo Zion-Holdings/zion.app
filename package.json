@@ -90,10 +90,32 @@
     "typescript": "5.8.3",
     "vitest": "^3.2.4"
   },
-  "lint-staged": {
-    "*.{js,ts,tsx,jsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ]
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "overrides": {
+    "superagent": "^9.0.0",
+    "valtio": "^2.1.5"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "description": "[![Netlify Status](https://api.netlify.com/api/v1/badges/ziontechgroup.com/deploy-status)](https://app.netlify.com/sites/ziontechgroup.com/deploys)",
+  "main": "babel.config.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zion-Holdings/zion.app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Zion-Holdings/zion.app/issues"
+  },
+  "homepage": "https://github.com/Zion-Holdings/zion.app#readme",
+  "resolutions": {
+    "postcss": "8.5.6"
   }
 }
