@@ -2367,6 +2367,11 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     integrations: ['PLC systems', 'SCADA platforms', 'MES systems', 'ERP platforms'],
     useCases: ['Production automation', 'Quality control', 'Predictive maintenance', 'Process optimization'],
     roi: '600% average ROI in 18 months',
+<<<<<<< HEAD
+    competitors: ['Siemens', 'Rockwell Automation', 'ABB', 'Schneider Electric'],
+    marketSize: '$35B global market',
+    growthRate: '140% annual growth'
+=======
     competitors: ['Unity', 'Unreal Engine', 'Roblox', 'Epic Games'],
     marketSize: '$3.8B gaming platform market',
     growthRate: '220% annual growth'
@@ -2730,6 +2735,7 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     competitors: ['AWS IoT', 'Azure IoT', 'Google Cloud IoT', 'IBM Watson IoT'],
     marketSize: '$22B IoT platform market',
     growthRate: '220% annual growth'
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-a497
   }
 ];
 
