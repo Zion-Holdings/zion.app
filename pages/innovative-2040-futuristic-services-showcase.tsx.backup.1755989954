@@ -23,7 +23,11 @@ interface Service {
   price: string | { monthly: number; yearly: number; currency: string; trialDays: number; setupTime: string };
   period?: string;
   description: string;
+<<<<<<< HEAD
+  features?: string[];
+=======
   features: string[];
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-ab61
   popular?: boolean;
   icon?: string;
   color?: string;
@@ -47,7 +51,11 @@ interface Service {
   };
   realImplementation?: boolean | string;
   implementationDetails?: string;
+<<<<<<< HEAD
+  launchDate: string;
+=======
   launchDate?: string;
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-ab61
   customers: number | string;
   rating: number;
   reviews: number;
