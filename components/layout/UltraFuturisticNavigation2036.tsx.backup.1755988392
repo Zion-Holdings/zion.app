@@ -54,6 +54,8 @@ interface NavigationItem {
   category?: string;
 }
 
+<<<<<<< HEAD
+=======
 interface UltraFuturisticNavigation2036Props {
   onMenuToggle?: () => void;
   isMenuOpen?: boolean;
@@ -66,6 +68,7 @@ const contactInfo = {
   website: 'https://ziontechgroup.com'
 };
 
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b79e
 function normalizeHref(href: string): string {
   if (!href) return href;
   if (href.startsWith('http://') || href.startsWith('https://') || href.startsWith('mailto:') || href.startsWith('tel:')) {
@@ -185,11 +188,28 @@ const navigationItems: NavigationItem[] = [
     icon: <Star className="w-5 h-5" />,
     description: 'Service showcases and pricing',
     badge: 'Showcase',
+<<<<<<< HEAD
+    category: 'showcase',
+    children: [
+      { 
+        name: '2040 Services Showcase', 
+        href: '/comprehensive-2040-services-showcase', 
+        description: 'Revolutionary 2040 technology solutions',
+        icon: <Star className="w-4 h-4" />,
+        featured: true,
+        badge: 'New'
+      },
+      { 
+        name: '2037 Services Showcase', 
+        href: '/comprehensive-2037-services-showcase', 
+        description: 'Revolutionary 2037 technology solutions',
+=======
     children: [
       { 
         name: '2025 Services Showcase', 
         href: '/comprehensive-services-showcase-2025', 
         description: 'Complete 2025 services overview',
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b79e
         icon: <Star className="w-4 h-4" />,
         featured: true
       },
@@ -213,10 +233,74 @@ const navigationItems: NavigationItem[] = [
         icon: <DollarSign className="w-4 h-4" />
       },
       { 
+<<<<<<< HEAD
+        name: 'Market Pricing', 
+        href: '/market-pricing', 
+        description: 'Market price references',
+        icon: <TrendingUp className="w-4 h-4" />
+      },
+      { 
+        name: 'Revolutionary 2025', 
+        href: '/revolutionary-2025-services-showcase', 
+        description: '2025 revolutionary services',
+        icon: <Star className="w-4 h-4" />
+      },
+      { 
+        name: 'Ultimate 2026', 
+        href: '/ultimate-2026-services-showcase', 
+        description: '2026 ultimate services',
+        icon: <Award className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Company',
+    href: '/about',
+    icon: <Building className="w-5 h-5" />,
+    description: 'About Zion Tech Group',
+    category: 'company',
+    children: [
+      { 
+        name: 'About Us', 
+        href: '/about', 
+        description: 'Company information',
+        icon: <Building className="w-4 h-4" />
+      },
+      { 
+        name: 'Contact', 
+        href: '/contact', 
+        description: 'Get in touch',
+        icon: <MessageCircle className="w-4 h-4" />
+      },
+      { 
+        name: 'Partners', 
+        href: '/partners', 
+        description: 'Partnership opportunities',
+        icon: <Users className="w-4 h-4" />
+      },
+      { 
+        name: 'Investors', 
+        href: '/investors', 
+        description: 'Investment information',
+        icon: <DollarSign className="w-4 h-4" />
+      },
+      { 
+        name: 'Careers', 
+        href: '/careers', 
+        description: 'Join our team',
+        icon: <Users className="w-4 h-4" />
+      },
+      { 
+        name: 'Locations', 
+        href: '/locations', 
+        description: 'Our global presence',
+        icon: <MapPin className="w-4 h-4" />
+=======
         name: 'Micro SAAS Solutions', 
         href: '/ultimate-2025-micro-saas-showcase', 
         description: 'Micro SAAS portfolio',
         icon: <Rocket className="w-4 h-4" />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b79e
       }
     ]
   },
@@ -233,6 +317,18 @@ const navigationItems: NavigationItem[] = [
         icon: <FileText className="w-4 h-4" />
       },
       { 
+<<<<<<< HEAD
+        name: 'Blog & News', 
+        href: '/news', 
+        description: 'Latest insights',
+        icon: <BookOpen className="w-4 h-4" />
+      },
+      { 
+        name: 'Case Studies', 
+        href: '/case-studies', 
+        description: 'Success stories',
+        icon: <FileText className="w-4 h-4" />
+=======
         name: 'White Papers', 
         href: '/white-papers', 
         description: 'Industry insights',
@@ -257,6 +353,7 @@ const navigationItems: NavigationItem[] = [
         href: '/contact', 
         description: 'Get in touch',
         icon: <MessageCircle className="w-4 h-4" />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b79e
       },
       { 
         name: 'Live Chat', 
@@ -267,22 +364,111 @@ const navigationItems: NavigationItem[] = [
       { 
         name: 'Knowledge Base', 
         href: '/support', 
+<<<<<<< HEAD
+        description: 'Technical support',
+        icon: <LifeBuoy className="w-4 h-4" />
+      },
+      { 
+        name: 'Training', 
+        href: '/training', 
+        description: 'Learning resources',
+        icon: <GraduationCap className="w-4 h-4" />
+      },
+      { 
+        name: 'White Papers', 
+        href: '/white-papers', 
+        description: 'Research papers',
+        icon: <FileText className="w-4 h-4" />
+      },
+      { 
+        name: 'Webinars', 
+        href: '/webinars', 
+        description: 'Educational webinars',
+        icon: <Play className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Industries',
+    href: '/industries',
+    icon: <Target className="w-5 h-5" />,
+    description: 'Industry solutions',
+    category: 'industries',
+    children: [
+      { 
+        name: 'Healthcare', 
+        href: '/healthcare-solutions', 
+        description: 'Healthcare technology',
+        icon: <Heart className="w-4 h-4" />
+      },
+      { 
+        name: 'Financial Services', 
+        href: '/financial-services', 
+        description: 'Fintech solutions',
+        icon: <DollarSign className="w-4 h-4" />
+      },
+      { 
+        name: 'Manufacturing', 
+        href: '/manufacturing-ai-solutions', 
+        description: 'AI manufacturing',
+        icon: <Zap className="w-4 h-4" />
+      },
+      { 
+        name: 'Retail', 
+        href: '/retail-technology-solutions', 
+        description: 'Retail technology',
+        icon: <ShoppingBag className="w-4 h-4" />
+      },
+      { 
+        name: 'Education', 
+        href: '/education-solutions', 
+        description: 'Educational technology',
+        icon: <GraduationCap className="w-4 h-4" />
+      },
+      { 
+        name: 'Government', 
+        href: '/government-technology-solutions', 
+        description: 'Government tech',
+        icon: <Building className="w-4 h-4" />
+      },
+      { 
+        name: 'Energy', 
+        href: '/energy-solutions', 
+        description: 'Energy technology',
+        icon: <Zap className="w-4 h-4" />
+      },
+      { 
+        name: 'Transportation', 
+        href: '/transportation-solutions', 
+        description: 'Transportation tech',
+        icon: <Truck className="w-4 h-4" />
+=======
         description: 'Self-service help',
         icon: <BookOpen className="w-4 h-4" />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b79e
       }
     ]
   }
 ];
 
+<<<<<<< HEAD
+const UltraFuturisticNavigation2036: React.FC = () => {
+=======
 export default function UltraFuturisticNavigation2036({ onMenuToggle, isMenuOpen }: UltraFuturisticNavigation2036Props) {
   const [scrolled, setScrolled] = useState(false);
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b79e
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   // Optimized scroll handler with throttling
   useEffect(() => {
     const handleScroll = () => {
+<<<<<<< HEAD
+      const scrolled = window.scrollY > 10;
+      setIsScrolled(scrolled);
+=======
       setScrolled(window.scrollY > 20);
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b79e
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -302,6 +488,110 @@ export default function UltraFuturisticNavigation2036({ onMenuToggle, isMenuOpen
 
   const closeDropdown = () => {
     setActiveDropdown(null);
+<<<<<<< HEAD
+  };
+
+  return (
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled 
+        ? 'bg-black/90 backdrop-blur-md border-b border-white/10' 
+        : 'bg-transparent'
+    }`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16 lg:h-20">
+          {/* Logo */}
+          <div className="flex-shrink-0">
+            <Link href="/" className="flex items-center space-x-2">
+              <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-xl">Z</span>
+              </div>
+              <span className="text-white font-bold text-xl lg:text-2xl">Zion Tech Group</span>
+            </Link>
+          </div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex lg:items-center lg:space-x-8">
+            {navigationItems.map((item) => (
+              <div key={item.name} className="relative group">
+                <button
+                  onClick={() => toggleDropdown(item.name)}
+                  className="flex items-center space-x-1 px-3 py-2 text-white hover:text-cyan-400 transition-colors duration-200"
+                >
+                  {item.icon}
+                  <span>{item.name}</span>
+                  {item.badge && (
+                    <span className="ml-2 px-2 py-1 text-xs font-medium bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-full">
+                      {item.badge}
+                    </span>
+                  )}
+                  <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
+                </button>
+
+                {/* Dropdown Menu */}
+                <AnimatePresence>
+                  {activeDropdown === item.name && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute top-full left-0 mt-2 w-80 bg-gray-900/95 backdrop-blur-md border border-gray-700/50 rounded-xl shadow-2xl shadow-black/50 overflow-hidden"
+                      onMouseLeave={closeDropdown}
+                    >
+                      <div className="p-4">
+                        <div className="grid grid-cols-1 gap-2">
+                          {item.children?.map((child) => (
+                            <Link
+                              key={child.name}
+                              href={normalizeHref(child.href)}
+                              className="flex items-center space-x-3 p-3 rounded-lg hover:bg-white/10 transition-colors duration-200 group"
+                            >
+                              <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-lg flex items-center justify-center">
+                                {child.icon}
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <p className="text-sm font-medium text-white group-hover:text-cyan-400 transition-colors">
+                                  {child.name}
+                                </p>
+                                <p className="text-xs text-gray-400 truncate">
+                                  {child.description}
+                                </p>
+                              </div>
+                              {child.featured && (
+                                <Star className="w-4 h-4 text-yellow-400 flex-shrink-0" />
+                              )}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            ))}
+          </div>
+
+          {/* Right side actions */}
+          <div className="hidden lg:flex lg:items-center lg:space-x-4">
+            <EnhancedSearch />
+            <Link
+              href="/contact"
+              className="bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-6 py-2 rounded-full text-sm font-semibold hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 transform hover:scale-105"
+            >
+              Get Started
+            </Link>
+          </div>
+
+          {/* Mobile menu button */}
+          <div className="lg:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-white hover:text-cyan-400 transition-colors duration-200"
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+=======
     setMobileMenuOpen(false);
   };
 
@@ -359,6 +649,7 @@ export default function UltraFuturisticNavigation2036({ onMenuToggle, isMenuOpen
             <div className="absolute inset-0 bg-gradient-to-b from-black/95 via-black/90 to-black/95"></div>
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-purple-500/5 to-pink-500/5"></div>
           </div>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b79e
         </div>
         
         <div className="relative z-10">
@@ -377,6 +668,56 @@ export default function UltraFuturisticNavigation2036({ onMenuToggle, isMenuOpen
                 </div>
               </Link>
 
+<<<<<<< HEAD
+      {/* Mobile Navigation */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="lg:hidden bg-gray-900/95 backdrop-blur-md border-t border-white/10"
+          >
+            <div className="px-4 py-6 space-y-4">
+              {navigationItems.map((item) => (
+                <div key={item.name}>
+                  <button
+                    onClick={() => toggleDropdown(item.name)}
+                    className="flex items-center justify-between w-full px-3 py-2 text-white hover:text-cyan-400 transition-colors duration-200"
+                  >
+                    <span className="flex items-center space-x-2">
+                      {item.icon}
+                      <span>{item.name}</span>
+                    </span>
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+                      activeDropdown === item.name ? 'rotate-180' : ''
+                    }`} />
+                  </button>
+                  
+                  {activeDropdown === item.name && (
+                    <div className="ml-6 mt-2 space-y-2">
+                      {item.children?.map((child) => (
+                        <Link
+                          key={child.name}
+                          href={normalizeHref(child.href)}
+                          className="block px-3 py-2 text-gray-300 hover:text-cyan-400 transition-colors duration-200"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {child.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+              
+              <div className="pt-4 border-t border-white/10">
+                <Link
+                  href="/contact"
+                  className="block w-full text-center bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-6 py-3 rounded-full text-sm font-semibold hover:shadow-lg transition-all duration-300"
+                  onClick={() => setIsOpen(false)}
+=======
               {/* Desktop Navigation */}
               <div className="hidden lg:flex items-center gap-8">
                 {navigationItems.map((item) => (
@@ -444,6 +785,7 @@ export default function UltraFuturisticNavigation2036({ onMenuToggle, isMenuOpen
                 <Link
                   href="/contact"
                   className="flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 bg-gradient-to-r from-cyan-500 to-blue-500 text-white hover:from-cyan-600 hover:to-blue-600 shadow-lg shadow-cyan-500/25 focus:outline-none focus:ring-4 focus:ring-cyan-500/50"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b79e
                 >
                   <ArrowRight className="w-4 h-4" />
                   <span>Get Started</span>

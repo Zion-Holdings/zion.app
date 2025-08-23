@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
+<<<<<<< HEAD
+import UltraFuturisticNavigation2045 from './UltraFuturisticNavigation2045';
+import UltraFuturisticFooter2025 from './UltraFuturisticFooter2025';
+=======
 import { motion, AnimatePresence } from 'framer-motion';
 import UltraFuturisticNavigation2036 from './UltraFuturisticNavigation2036';
 import UltraFuturisticFooter2036 from './UltraFuturisticFooter2036';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b79e
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
 import TopContactBar from './TopContactBar';
@@ -17,6 +22,27 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+<<<<<<< HEAD
+  const [isOnline, setIsOnline] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+
+
+  useEffect(() => {
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme') as 'dark' | 'light';
+    if (savedTheme) {
+      setTheme(savedTheme);
+    }
+
+
+    // Simulate loading time for better UX
+    const timer = setTimeout(() => setIsLoading(false), 1000);
+
+    // Check online status
+    const updateOnlineStatus = () => {
+      setIsOnline(navigator.onLine);
+=======
   const [isLoading, setIsLoading] = useState(true);
   const [focusTrap, setFocusTrap] = useState(false);
 
@@ -46,16 +72,52 @@ export default function Layout({ children }: LayoutProps) {
       if (e.key === 'Escape' && sidebarOpen) {
         setSidebarOpen(false);
       }
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b79e
     };
 
     if (sidebarOpen) {
       document.addEventListener('keydown', handleEscape);
+<<<<<<< HEAD
+      // Prevent body scroll when sidebar is open
+=======
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b79e
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
     }
 
     return () => {
+<<<<<<< HEAD
+      clearTimeout(timer);
+      window.removeEventListener('online', updateOnlineStatus);
+      window.removeEventListener('offline', updateOnlineStatus);
+    };
+  }, [sidebarOpen]);
+
+  // Handle focus management for accessibility
+  useEffect(() => {
+    if (sidebarOpen) {
+      // Focus the first focusable element in the sidebar
+      const firstFocusable = document.querySelector('.sidebar-focusable') as HTMLElement;
+      if (firstFocusable) {
+        firstFocusable.focus();
+      }
+    }
+  }, [sidebarOpen]);
+
+  useEffect(() => {
+    // Apply theme to document
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const handleThemeToggle = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  };
+
+  if (isLoading) {
+    return <LoadingSpinner />;
+=======
       document.removeEventListener('keydown', handleEscape);
       document.body.style.overflow = 'unset';
     };
@@ -74,11 +136,16 @@ export default function Layout({ children }: LayoutProps) {
         </motion.div>
       </div>
     );
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b79e
   }
 
   return (
     <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
       {/* Skip to content link for accessibility */}
+<<<<<<< HEAD
+      <a href="#main" className="skip-link">Skip to main content</a>
+      
+=======
       <a 
         href="#main" 
         className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 bg-cyan-500 text-black px-4 py-2 rounded-lg font-semibold focus:outline-none focus:ring-4 focus:ring-cyan-500/50"
@@ -94,6 +161,7 @@ export default function Layout({ children }: LayoutProps) {
         Skip to main content
       </a>
 
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b79e
       {/* Futuristic Background */}
       <UltraFuturisticBackground2045 theme="consciousness" intensity="high" />
       
@@ -102,6 +170,38 @@ export default function Layout({ children }: LayoutProps) {
         {/* Top Contact Bar */}
         <TopContactBar />
         
+<<<<<<< HEAD
+        {/* Futuristic Background */}
+        <UltraFuturisticBackground2046 />
+        
+        {/* Layout Structure */}
+        <div className="relative z-10">
+          {/* Navigation */}
+          <UltraFuturisticNavigation2025 />
+          
+          {/* Sidebar and Main Content */}
+          <div className="flex">
+            <EnhancedSidebar2025 
+              isOpen={sidebarOpen} 
+              onClose={() => setSidebarOpen(false)} 
+            />
+            
+            <main id="main" role="main" className="flex-1 pt-32 lg:pt-36">
+              {children}
+            </main>
+          </div>
+          
+          {/* Footer */}
+          <UltraFuturisticFooter2025 />
+        </div>
+
+      {/* Accessibility and Performance Tools */}
+      <AccessibilityEnhancer />
+      <PerformanceMonitor />
+      
+      {/* Cookie Consent Banner */}
+      <CookieConsentBanner />
+=======
         {/* Navigation */}
         <UltraFuturisticNavigation2036 
           onMenuToggle={() => setSidebarOpen(!sidebarOpen)}
@@ -165,6 +265,7 @@ export default function Layout({ children }: LayoutProps) {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
         </svg>
       </motion.button>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b79e
     </div>
   );
 }
