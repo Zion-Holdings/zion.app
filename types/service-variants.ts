@@ -127,4 +127,8 @@ export type ServiceVariant =
   | 'quantum-biology'
   | 'multiversal-tech'
   | 'autonomous-ai'
-  | 'quantum-reality-fusion';
+  | 'quantum-reality-fusion'
+  | 'ai-automation'
+  | 'it-infrastructure'
+  | 'micro-saas'
+  | 'ai-services';
