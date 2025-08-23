@@ -1,92 +1,26 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { SEO } from '@/components/SEO';
-import { Header } from '@/components/Header';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { 
-  ArrowRight, 
-  Zap, 
-  Users, 
-  Globe, 
-  Shield, 
-  TrendingUp, 
-  Star, 
-  CheckCircle,
-  Play,
-  ArrowUpRight,
-  Sparkles,
-  Rocket,
-  Target,
-  Award,
-  Heart,
-  Lightbulb
-} from 'lucide-react';
+import { CategoriesSection } from "@/components/CategoriesSection";
+import { BenefitsSection } from "@/components/BenefitsSection";
+import { HowItWorksSection } from "@/components/HowItWorksSection";
+import { NewsletterSection } from "@/components/NewsletterSection";
+import { FeaturedListingsSection } from "@/components/FeaturedListingsSection";
+import { SEO } from "@/components/SEO";
+import { HeroSection } from "@/components/HeroSection";
+import { QuickAccess } from "@/components/home/QuickAccess";
+import { FeatureCTAs } from "@/components/home/FeatureCTAs";
+import { FeatureHighlights } from "@/components/home/FeatureHighlights";
+import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
 
 export default function Home() {
   const { t } = useTranslation();
-
-  const features = [
-    {
-      icon: <Zap className="h-6 w-6" />,
-      title: t('home.features.ai.title', 'AI-Powered Matching'),
-      description: t('home.features.ai.description', 'Advanced algorithms connect you with the perfect talent and opportunities.')
-    },
-    {
-      icon: <Globe className="h-6 w-6" />,
-      title: t('home.features.global.title', 'Global Network'),
-      description: t('home.features.global.description', 'Access talent and opportunities from around the world.')
-    },
-    {
-      icon: <Shield className="h-6 w-6" />,
-      title: t('home.features.secure.title', 'Secure & Trusted'),
-      description: t('home.features.secure.description', 'Enterprise-grade security with verified profiles and escrow protection.')
-    },
-    {
-      icon: <TrendingUp className="h-6 w-6" />,
-      title: t('home.features.growth.title', 'Growth Focused'),
-      description: t('home.features.growth.description', 'Tools and insights to help you scale and succeed.')
-    }
-  ];
-
-  const stats = [
-    { label: t('home.stats.talent', 'Talent'), value: '10K+', icon: <Users className="h-4 w-4" /> },
-    { label: t('home.stats.projects', 'Projects'), value: '5K+', icon: <Target className="h-4 w-4" /> },
-    { label: t('home.stats.countries', 'Countries'), value: '50+', icon: <Globe className="h-4 w-4" /> },
-    { label: t('home.stats.satisfaction', 'Satisfaction'), value: '98%', icon: <Heart className="h-4 w-4" /> }
-  ];
-
-  const testimonials = [
-    {
-      name: 'Sarah Chen',
-      role: 'AI Research Lead',
-      company: 'TechCorp',
-      content: t('home.testimonials.sarah', 'Zion connected us with world-class AI researchers. The platform is incredible!'),
-      rating: 5
-    },
-    {
-      name: 'Marcus Rodriguez',
-      role: 'Startup Founder',
-      company: 'InnovateLab',
-      content: t('home.testimonials.marcus', 'Found our entire development team through Zion. Game changer for our startup.'),
-      rating: 5
-    },
-    {
-      name: 'Dr. Emily Watson',
-      role: 'Data Scientist',
-      company: 'DataFlow',
-      content: t('home.testimonials.emily', 'The quality of opportunities and the professional network is outstanding.'),
-      rating: 5
-    }
-  ];
-
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <SEO 
-        title={t('home.meta.title', 'Welcome to Zion')}
-        description={t('home.meta.description', 'The world\'s first free marketplace dedicated to high-tech and artificial intelligence')}
-        keywords={t('home.meta.keywords', 'AI marketplace, tech services, artificial intelligence')}
+    <div className="min-h-screen bg-background">
+      <SEO
+        title={t('home.seo_title')}
+        description={t('home.seo_description')}
+        keywords="AI, technology, marketplace, services, talent"
+        canonical="https://app.ziontechgroup.com/"
       />
       
       <Header />

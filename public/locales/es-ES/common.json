@@ -116,6 +116,21 @@
     "hero_title": "Mercado de IA",
     "hero_subtitle": "Descubre soluciones de IA y tecnología de vanguardia"
   },
+  "marketplace": {
+    "title": "Mercado de IA y Tecnología",
+    "description": "Descubra servicios profesionales y productos para sus proyectos de IA y tecnología. Explore nuestra colección de soluciones verificadas.",
+    "search_placeholder": "Buscar en el mercado..."
+  },
+  "checkout": {
+    "title": "Pagar",
+    "name": "Nombre",
+    "email": "Correo",
+    "address": "Dirección",
+    "city": "Ciudad",
+    "country": "País",
+    "subtotal": "Subtotal",
+    "pay": "Pagar con Stripe (prueba)"
+  },
   "jobs": {
     "post_job_title": "Publicar un Trabajo",
     "post_job_description": "Complete el formulario a continuación para publicar su trabajo y encontrar el talento perfecto",

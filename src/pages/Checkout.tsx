@@ -1,9 +1,8 @@
-import { useForm, type ControllerRenderProps } from 'react-hook-form';
-import { useSelector } from 'react-redux';
-import type { RootState } from '@/store';
-import { useRouter } from 'next/router';
-import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useForm } from 'react-hook-form';
+import { safeStorage } from '@/utils/safeStorage';
+import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { LoadingSpinner } from '@/components/ui/enhanced-loading-states';
@@ -33,7 +32,7 @@ interface CartItem {
 
 export default function Checkout() {
   const navigate = useNavigate();
-  const location = useLocation();
+  const { t } = useTranslation();
   const [items, setItems] = useState<CartItem[]>([]);
 
   useEffect(() => {
@@ -107,33 +106,14 @@ export default function Checkout() {
   const total = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
 
   return (
-    <div className="min-h-screen bg-zion-blue p-6">
-      <div className="max-w-xl mx-auto bg-zion-blue-dark rounded-lg p-6 text-white space-y-6">
-        <h1 className="text-2xl font-bold">Checkout</h1>
-        <ul className="space-y-2">
-          {items.map(item => (
-            <li key={item.id} className="flex justify-between">
-              <span>{item.name} x {item.quantity}</span>
-              <span>${(item.price * item.quantity).toFixed(2)}</span>
-            </li>
-          ))}
-        </ul>
-        <div className="flex justify-between font-semibold">
-          <span>Total</span>
-          <span>${total.toFixed(2)}</span>
-        </div>
-        <Button className="w-full" onClick={handleCheckout}>Buy Now</Button>
-        <Button variant="outline" className="w-full" onClick={() => navigate(-1)}>Back</Button>
-      </div>
-
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(handleCheckout)} className="space-y-4">
-          <FormField
-            control={form.control}
-            name="name"
-            render={({ field }: { field: ControllerRenderProps<CheckoutFormData, 'name'> }) => (
+    <div className="container max-w-2xl py-10">
+      <h1 className="text-3xl font-bold mb-6">{t('checkout.title')}</h1>
+      <div className="grid gap-6">
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+            <FormField name="name" control={form.control} render={({ field }) => (
               <FormItem>
-                <FormLabel>Full Name *</FormLabel>
+                <FormLabel>{t('checkout.name')}</FormLabel>
                 <FormControl>
                   <Input {...field} placeholder="Enter your full name" autoComplete="name" />
                 </FormControl>
@@ -147,7 +127,7 @@ export default function Checkout() {
             name="email"
             render={({ field }: { field: ControllerRenderProps<CheckoutFormData, 'email'> }) => (
               <FormItem>
-                <FormLabel>Email Address *</FormLabel>
+                <FormLabel>{t('checkout.email')}</FormLabel>
                 <FormControl>
                   <Input {...field} type="email" placeholder="Enter your email" autoComplete="email" />
                 </FormControl>
@@ -161,7 +141,7 @@ export default function Checkout() {
             name="address"
             render={({ field }: { field: ControllerRenderProps<CheckoutFormData, 'address'> }) => (
               <FormItem>
-                <FormLabel>Address *</FormLabel>
+                <FormLabel>{t('checkout.address')}</FormLabel>
                 <FormControl>
                   <Input {...field} placeholder="Enter your address" autoComplete="street-address" />
                 </FormControl>
@@ -175,7 +155,7 @@ export default function Checkout() {
             name="city"
             render={({ field }: { field: ControllerRenderProps<CheckoutFormData, 'city'> }) => (
               <FormItem>
-                <FormLabel>City *</FormLabel>
+                <FormLabel>{t('checkout.city')}</FormLabel>
                 <FormControl>
                   <Input {...field} placeholder="Enter your city" autoComplete="address-level2" />
                 </FormControl>
@@ -189,36 +169,25 @@ export default function Checkout() {
             name="country"
             render={({ field }: { field: ControllerRenderProps<CheckoutFormData, 'country'> }) => (
               <FormItem>
-                <FormLabel>Country *</FormLabel>
+                <FormLabel>{t('checkout.country')}</FormLabel>
                 <FormControl>
                   <Input {...field} placeholder="Enter your country" autoComplete="country-name" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
-            )}
-          />
-          
-          <Button
-            type="submit"
-            className="w-full mt-6"
-            disabled={isSubmitting}
-            size="lg"
-          >
-            {isSubmitting ? (
-              <>
-                <LoadingSpinner size="sm" className="mr-2" />
-                Processing...
-              </>
-            ) : (
-              `Continue to Payment ($${total.toFixed(2)})`
-            )}
-          </Button>
-        </form>
-      </Form>
-      
-      <p className="text-xs text-gray-500 mt-4 text-center">
-        You will be redirected to a secure payment page to complete your purchase.
-      </p>
+            )} />
+            <div className="border-t pt-4">
+              <div className="flex justify-between font-semibold mb-4">
+                <span>{t('checkout.subtotal')}</span>
+                <span>${subtotal.toFixed(2)}</span>
+              </div>
+              <Button className="w-full" type="submit">
+                {t('checkout.pay')}
+              </Button>
+            </div>
+          </form>
+        </Form>
+      </div>
     </div>
   );
 }
