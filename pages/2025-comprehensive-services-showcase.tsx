@@ -108,10 +108,9 @@ const ComprehensiveServicesShowcase: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100">
       <SEO 
-        title="2025 Comprehensive Services Showcase | Zion Tech Group"
-        description="Explore our comprehensive portfolio of innovative micro SAAS, IT services, and AI solutions. From enterprise solutions to cutting-edge automation, discover how we can transform your business."
-        keywords={["micro SAAS", "IT services", "AI solutions", "enterprise software", "cloud infrastructure", "automation", "digital transformation"]}
-        image="/og-services-showcase.jpg"
+        title="2025 Comprehensive Services Showcase - Zion Tech Group"
+        description="Discover our comprehensive portfolio of innovative micro SAAS, IT infrastructure, and AI services. Transform your business with cutting-edge solutions."
+        keywords="micro SAAS, IT services, AI services, business intelligence, automation, cloud infrastructure"
       />
 
       {/* Hero Section */}

@@ -151,7 +151,7 @@ export default function CuttingEdge2038ServicesShowcase() {
       <SEO 
         title="2038 Cutting-Edge Services Showcase | Zion Tech Group"
         description="Discover the future of technology with our revolutionary 2038 services. AI-powered solutions, quantum computing, space technology, and intelligent micro SAAS platforms."
-        keywords={["2038 services", "AI services", "quantum computing", "space technology", "micro SAAS", "cybersecurity", "healthcare AI", "climate technology"]}
+        keywords="2038 services, AI services, quantum computing, space technology, micro SAAS, cybersecurity, healthcare AI, climate technology"
       />
 
       {/* Hero Section */}

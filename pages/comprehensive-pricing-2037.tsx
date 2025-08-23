@@ -123,14 +123,9 @@ export default function ComprehensivePricing2037() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <SEO 
-        data={{
-          pageTitle: "Comprehensive Pricing 2037 - Zion Tech Group",
-          pageDescription: "Explore our complete 2037 services pricing with AI consciousness, quantum computing, autonomous systems, and cutting-edge innovations. Transparent pricing for revolutionary technology.",
-          pageKeywords: [
-            "pricing", "AI services", "quantum computing", "autonomous systems", 
-            "metaverse", "consciousness", "2037", "Zion Tech Group"
-          ]
-        }}
+        title="Comprehensive Pricing 2037 - Zion Tech Group"
+        description="Explore our complete 2037 services pricing with AI consciousness, quantum computing, autonomous systems, and cutting-edge innovations. Transparent pricing for revolutionary technology."
+                keywords="pricing, AI services, quantum computing, autonomous systems, metaverse, consciousness, 2037, Zion Tech Group"
       />
       
       {/* Hero Section */}

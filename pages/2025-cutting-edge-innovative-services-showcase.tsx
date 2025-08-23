@@ -59,7 +59,7 @@ const CuttingEdgeInnovativeServicesShowcase = () => {
       <SEO 
         title="2025 Cutting-Edge Innovative Services Showcase | Zion Tech Group"
         description="Discover our revolutionary 2025 cutting-edge innovative services including AI automation, quantum computing, advanced IT infrastructure, and autonomous business solutions."
-        keywords={["cutting-edge services", "innovative solutions", "AI automation", "quantum computing", "IT infrastructure", "business automation", "2025 services"]}
+        keywords="cutting-edge services, innovative solutions, AI automation, quantum computing, IT infrastructure, business automation, 2025 services"
       />
 
       {/* Hero Section */}

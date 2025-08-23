@@ -291,12 +291,23 @@ const navigationItems: NavigationItem[] = [
   }
 ];
 
-// Contact information
-const contactInfo = [
-  { icon: Phone, label: 'Call Us', value: '+1 302 464 0950', href: 'tel:+13024640950' },
-  { icon: Mail, label: 'Email Us', value: 'kleber@ziontechgroup.com', href: 'mailto:kleber@ziontechgroup.com' },
-  { icon: MapPin, label: 'Visit Us', value: '364 E Main St STE 1008, Middletown DE 19709', href: '#' }
-];
+interface UltraFuturisticNavigation2045Props {
+  sidebarOpen: boolean;
+  setSidebarOpen: (open: boolean) => void;
+}
+
+const UltraFuturisticNavigation2045: React.FC<UltraFuturisticNavigation2045Props> = ({ 
+  sidebarOpen, 
+  setSidebarOpen 
+}) => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const isMobileMenuOpen = sidebarOpen;
+  const router = useRouter();
+  const searchRef = React.useRef<HTMLDivElement>(null);
+  const mobileMenuRef = React.useRef<HTMLDivElement>(null);
 
 // Social media links
 const socialLinks = [
@@ -366,11 +377,23 @@ const UltraFuturisticNavigation2045: React.FC = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Close mobile menu when route changes
-  useEffect(() => {
-    setIsOpen(false);
+  // Handle click outside mobile menu
+  React.useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+        setSidebarOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  // Close mobile menu on route change
+  React.useEffect(() => {
+    setSidebarOpen(false);
     setActiveDropdown(null);
-  }, [router.asPath]);
+  }, [router.asPath, setSidebarOpen]);
 
   const toggleMenu = useCallback(() => {
     setIsOpen(!isOpen);
@@ -396,13 +419,13 @@ const UltraFuturisticNavigation2045: React.FC = () => {
     }
   }, [searchQuery, router]);
 
-  const toggleSearch = useCallback(() => {
-    setIsSearchOpen(!isSearchOpen);
-    if (!isSearchOpen) {
-      setTimeout(() => {
-        const searchInput = document.getElementById('search-input') as HTMLInputElement;
-        if (searchInput) searchInput.focus();
-      }, 100);
+  const handleMobileMenuToggle = useCallback(() => {
+    setSidebarOpen(!sidebarOpen);
+  }, [sidebarOpen, setSidebarOpen]);
+
+  const isActiveRoute = useCallback((href: string) => {
+    if (href === '/') {
+      return router.asPath === '/';
     }
   }, [isSearchOpen]);
 

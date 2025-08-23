@@ -2,8 +2,8 @@ import React from 'react';
 import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
+import TopContactBar from './TopContactBar';
 import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
-import EnhancedPerformanceOptimizer from '../EnhancedPerformanceOptimizer';
 import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
 
@@ -95,6 +95,33 @@ export const Layout: React.FC<LayoutProps> = ({
         
         <UltraFuturisticFooter2040 />
         
+        {/* Navigation */}
+        <UltraFuturisticNavigation2045 
+          sidebarOpen={sidebarOpen} 
+          setSidebarOpen={setSidebarOpen} 
+        />
+        
+        {/* Sidebar */}
+        <EnhancedSidebar2025 
+          isOpen={sidebarOpen} 
+          onClose={() => setSidebarOpen(false)} 
+        />
+        
+        {/* Main Content */}
+        <div className="relative z-10">
+          {children}
+        </div>
+        
+        {/* Footer */}
+        <UltraFuturisticFooter2045 />
+        
+        {/* Cookie Consent */}
+        <CookieConsentBanner />
+        
+        {/* Performance Monitor */}
+        <EnhancedPerformanceMonitor />
+        
+        {/* Accessibility Enhancer */}
         <AccessibilityEnhancer />
         <PerformanceOptimizer />
       </div>

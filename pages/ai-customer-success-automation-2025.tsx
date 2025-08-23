@@ -80,79 +80,25 @@ const AICustomerSuccessAutomation2025: React.FC = () => {
 
   return (
     <Layout>
-      <div className="min-h-screen bg-black text-white relative overflow-hidden">
-        {/* Futuristic Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/20 via-blue-900/20 to-purple-900/20"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(6,182,212,0.1),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.1),transparent_50%)]"></div>
-        
-        {/* Animated Grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.1)_1px,transparent_1px)] bg-[size:50px_50px] animate-pulse"></div>
-
-        <div className="relative z-10">
-          {/* Hero Section */}
-          <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="text-center mb-12"
-              >
-                <div className="inline-block bg-gradient-to-r from-emerald-500/20 to-teal-500/20 px-4 py-2 rounded-full border border-emerald-500/30 mb-6">
-                  <span className="text-emerald-400 font-medium">{service.type}</span>
-                </div>
-                <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-emerald-400 to-teal-500 bg-clip-text text-transparent">
-                  {service.name}
-                </h1>
-                <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                  {service.tagline}
-                </p>
-              </motion.div>
-
-              {/* Contact Information */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="bg-white/5 backdrop-blur-xl rounded-2xl p-8 max-w-4xl mx-auto border border-emerald-500/20 mb-12"
-              >
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="flex items-center justify-center space-x-3">
-                    <Phone className="w-6 h-6 text-emerald-400" />
-                    <div>
-                      <p className="text-sm text-gray-400">Phone</p>
-                      <p className="font-semibold">{service.mobile}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-center space-x-3">
-                    <Mail className="w-6 h-6 text-teal-400" />
-                    <div>
-                      <p className="text-sm text-gray-400">Email</p>
-                      <p className="font-semibold">{service.contact}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-center space-x-3">
-                    <Globe className="w-6 h-6 text-blue-400" />
-                    <div>
-                      <p className="text-sm text-gray-400">Website</p>
-                      <p className="font-semibold">{service.website}</p>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Service Description */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="text-center mb-16"
-              >
-                <p className="text-lg text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                  {service.description}
-                </p>
-              </motion.div>
+      <SEO 
+        title="AI Customer Success Automation Platform 2025 | Zion Tech Group"
+        description="Revolutionary AI-powered customer success automation with predictive analytics. Reduce churn by 40%, increase upsell revenue by 60%, and automate 80% of customer success tasks."
+        keywords="AI customer success, customer success automation, churn prediction, customer onboarding, upsell automation, customer analytics"
+      />
+      
+      {/* Hero Section */}
+      <section className="relative py-20 lg:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 via-cyan-500/20 to-blue-500/20" />
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
+          >
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
+              <Star className="w-4 h-4 mr-2" />
+              New 2025 Service
             </div>
           </section>
 
