@@ -1,220 +1,164 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Zap, Clock, Gauge, TrendingUp, AlertTriangle } from 'lucide-react';
+import { Activity, Zap, Clock, TrendingUp, AlertTriangle } from 'lucide-react';
 
 interface PerformanceMetrics {
-  fcp: number; // First Contentful Paint
-  lcp: number; // Largest Contentful Paint
-  fid: number; // First Input Delay
-  cls: number; // Cumulative Layout Shift
-  ttfb: number; // Time to First Byte
+  fcp: number | null;
+  lcp: number | null;
+  fid: number | null;
+  cls: number | null;
+  ttfb: number | null;
 }
 
-interface PerformanceMonitorProps {
-  showDetails?: boolean;
-  className?: string;
+// Performance entry interfaces
+interface FirstInputEntry extends PerformanceEntry {
+  processingStart: number;
+  startTime: number;
 }
 
-const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({ 
-  showDetails = false, 
-  className = '' 
-}) => {
-  const [metrics, setMetrics] = useState<PerformanceMetrics | null>(null);
+interface LayoutShiftEntry extends PerformanceEntry {
+  value: number;
+  hadRecentInput: boolean;
+}
+
+const PerformanceMonitor: React.FC = () => {
+  const [metrics, setMetrics] = useState<PerformanceMetrics>({
+    fcp: null,
+    lcp: null,
+    fid: null,
+    cls: null,
+    ttfb: null,
+  });
   const [isVisible, setIsVisible] = useState(false);
 
-  const getPerformanceScore = useCallback((metrics: PerformanceMetrics): number => {
-    let score = 100;
-    
-    // FCP scoring (0-2000ms is good)
-    if (metrics.fcp > 2000) score -= 20;
-    else if (metrics.fcp > 1000) score -= 10;
-    
-    // LCP scoring (0-2500ms is good)
-    if (metrics.lcp > 4000) score -= 25;
-    else if (metrics.lcp > 2500) score -= 15;
-    
-    // FID scoring (0-100ms is good)
-    if (metrics.fid > 300) score -= 20;
-    else if (metrics.fid > 100) score -= 10;
-    
-    // CLS scoring (0-0.1 is good)
-    if (metrics.cls > 0.25) score -= 25;
-    else if (metrics.cls > 0.1) score -= 15;
-    
-    return Math.max(0, score);
+  useEffect(() => {
+    // Only show in development or when explicitly enabled
+    if (process.env.NODE_ENV === 'development' || process.env.NEXT_PUBLIC_PERF_MONITOR === 'true') {
+      setIsVisible(true);
+      measurePerformance();
+    }
   }, []);
 
-  const getScoreColor = (score: number): string => {
-    if (score >= 90) return 'text-green-400';
-    if (score >= 70) return 'text-yellow-400';
-    if (score >= 50) return 'text-orange-400';
-    return 'text-red-400';
-  };
-
-  const getScoreIcon = (score: number) => {
-    if (score >= 90) return <TrendingUp className="w-4 h-4" />;
-    if (score >= 70) return <Gauge className="w-4 h-4" />;
-    if (score >= 50) return <Clock className="w-4 h-4" />;
-    return <AlertTriangle className="w-4 h-4" />;
-  };
-
-  const getMetricStatus = (metric: keyof PerformanceMetrics, value: number): { color: string; status: string } => {
-    const thresholds: Record<string, { good: number; needsImprovement: number }> = {
-      fcp: { good: 1000, needsImprovement: 2000 },
-      lcp: { good: 2500, needsImprovement: 4000 },
-      fid: { good: 100, needsImprovement: 300 },
-      cls: { good: 0.1, needsImprovement: 0.25 },
-      ttfb: { good: 800, needsImprovement: 1800 }
-    };
-
-    const threshold = thresholds[metric];
-    if (value <= threshold.good) return { color: 'text-green-400', status: 'Good' };
-    if (value <= threshold.needsImprovement) return { color: 'text-yellow-400', status: 'Needs Improvement' };
-    return { color: 'text-red-400', status: 'Poor' };
-  };
-
-  useEffect(() => {
-    // Check if Performance Observer is supported
-    if (!('PerformanceObserver' in window)) {
-      console.warn('Performance Observer not supported');
-      return;
-    }
-
-    let fcpObserver: PerformanceObserver | null = null;
-    let lcpObserver: PerformanceObserver | null = null;
-    let fidObserver: PerformanceObserver | null = null;
-    let clsObserver: PerformanceObserver | null = null;
-
-    try {
+  const measurePerformance = () => {
+    if (typeof window !== 'undefined' && 'PerformanceObserver' in window) {
       // First Contentful Paint
-      fcpObserver = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        const fcpEntry = entries.find(entry => entry.name === 'first-contentful-paint');
-        if (fcpEntry) {
-          setMetrics(prev => prev ? { ...prev, fcp: fcpEntry.startTime } : null);
+      new PerformanceObserver((entryList) => {
+        const entries = entryList.getEntries();
+        const fcp = entries[entries.length - 1];
+        if (fcp) {
+          setMetrics(prev => ({ ...prev, fcp: fcp.startTime }));
         }
-      });
-      fcpObserver.observe({ entryTypes: ['paint'] });
+      }).observe({ entryTypes: ['paint'] });
 
       // Largest Contentful Paint
-      lcpObserver = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        const lastEntry = entries[entries.length - 1];
-        if (lastEntry) {
-          setMetrics(prev => prev ? { ...prev, lcp: lastEntry.startTime } : null);
+      new PerformanceObserver((entryList) => {
+        const entries = entryList.getEntries();
+        const lcp = entries[entries.length - 1];
+        if (lcp) {
+          setMetrics(prev => ({ ...prev, lcp: lcp.startTime }));
         }
-      });
-      lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
+      }).observe({ entryTypes: ['largest-contentful-paint'] });
 
       // First Input Delay
-      fidObserver = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        const fidEntry = entries[0];
-        if (fidEntry) {
-          setMetrics(prev => prev ? { ...prev, fid: fidEntry.processingStart - fidEntry.startTime } : null);
+      new PerformanceObserver((entryList) => {
+        const entries = entryList.getEntries();
+        const fid = entries[entries.length - 1] as FirstInputEntry;
+        if (fid && 'processingStart' in fid) {
+          setMetrics(prev => ({ ...prev, fid: fid.processingStart - fid.startTime }));
         }
-      });
-      fidObserver.observe({ entryTypes: ['first-input'] });
+      }).observe({ entryTypes: ['first-input'] });
 
       // Cumulative Layout Shift
-      clsObserver = new PerformanceObserver((list) => {
-        let clsValue = 0;
-        for (const entry of list.getEntries()) {
-          if (!entry.hadRecentInput) {
-            clsValue += (entry as any).value;
+      new PerformanceObserver((entryList) => {
+        let cls = 0;
+        for (const entry of entryList.getEntries()) {
+          const layoutShiftEntry = entry as LayoutShiftEntry;
+          if (!layoutShiftEntry.hadRecentInput) {
+            cls += layoutShiftEntry.value;
           }
         }
-        setMetrics(prev => prev ? { ...prev, cls: clsValue } : null);
-      });
-      clsObserver.observe({ entryTypes: ['layout-shift'] });
+        setMetrics(prev => ({ ...prev, cls }));
+      }).observe({ entryTypes: ['layout-shift'] });
 
-      // Time to First Byte (from navigation timing)
+      // Time to First Byte
       const navigationEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
       if (navigationEntry) {
-        const ttfb = navigationEntry.responseStart - navigationEntry.requestStart;
-        setMetrics(prev => prev ? { ...prev, ttfb } : { fcp: 0, lcp: 0, fid: 0, cls: 0, ttfb });
+        setMetrics(prev => ({ ...prev, ttfb: navigationEntry.responseStart - navigationEntry.requestStart }));
       }
+    }
+  };
 
-    } catch (error) {
-      console.error('Error setting up performance observers:', error);
+  const getScore = (metric: keyof PerformanceMetrics, value: number | null): { score: number; color: string; label: string } => {
+    if (value === null) return { score: 0, color: 'text-gray-400', label: 'N/A' };
+    
+    let score = 0;
+    let color = 'text-red-400';
+    let label = 'Poor';
+
+    switch (metric) {
+      case 'fcp':
+        if (value < 1800) { score = 100; color = 'text-green-400'; label = 'Good'; }
+        else if (value < 3000) { score = 50; color = 'text-yellow-400'; label = 'Needs Improvement'; }
+        break;
+      case 'lcp':
+        if (value < 2500) { score = 100; color = 'text-green-400'; label = 'Good'; }
+        else if (value < 4000) { score = 50; color = 'text-yellow-400'; label = 'Needs Improvement'; }
+        break;
+      case 'fid':
+        if (value < 100) { score = 100; color = 'text-green-400'; label = 'Good'; }
+        else if (value < 300) { score = 50; color = 'text-yellow-400'; label = 'Needs Improvement'; }
+        break;
+      case 'cls':
+        if (value < 0.1) { score = 100; color = 'text-green-400'; label = 'Good'; }
+        else if (value < 0.25) { score = 50; color = 'text-yellow-400'; label = 'Needs Improvement'; }
+        break;
+      case 'ttfb':
+        if (value < 800) { score = 100; color = 'text-green-400'; label = 'Good'; }
+        else if (value < 1800) { score = 50; color = 'text-yellow-400'; label = 'Needs Improvement'; }
+        break;
     }
 
-    // Cleanup
-    return () => {
-      fcpObserver?.disconnect();
-      lcpObserver?.disconnect();
-      fidObserver?.disconnect();
-      clsObserver?.disconnect();
-    };
-  }, []);
+    return { score, color, label };
+  };
 
-  useEffect(() => {
-    if (metrics) {
-      setIsVisible(true);
-    }
-  }, [metrics]);
-
-  if (!metrics) {
-    return (
-      <div className={`flex items-center gap-2 text-sm text-gray-400 ${className}`}>
-        <Zap className="w-4 h-4" />
-        <span>Loading performance metrics...</span>
-      </div>
-    );
-  }
-
-  const score = getPerformanceScore(metrics);
+  if (!isVisible) return null;
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 10 }}
-      transition={{ duration: 0.5 }}
-      className={`flex items-center gap-2 text-sm ${className}`}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="fixed bottom-4 right-4 z-50 bg-black/90 backdrop-blur-sm border border-cyan-500/20 rounded-lg p-4 max-w-sm"
     >
-      <div className="flex items-center gap-2">
-        <Zap className="w-4 h-4 text-cyan-400" />
-        <span className="text-gray-300">Performance:</span>
-        <span className={`font-semibold ${getScoreColor(score)} flex items-center gap-1`}>
-          {getScoreIcon(score)}
-          {score}
-        </span>
+      <div className="flex items-center gap-2 mb-3">
+        <Activity className="w-5 h-5 text-cyan-400" />
+        <h3 className="text-sm font-semibold text-white">Performance Monitor</h3>
       </div>
-
-      {showDetails && (
-        <div className="hidden md:flex items-center gap-4 ml-4 text-xs">
-          <div className="flex items-center gap-1">
-            <span className="text-gray-400">FCP:</span>
-            <span className={getMetricStatus('fcp', metrics.fcp).color}>
-              {Math.round(metrics.fcp)}ms
-            </span>
-          </div>
-          <div className="flex items-center gap-1">
-            <span className="text-gray-400">LCP:</span>
-            <span className={getMetricStatus('lcp', metrics.lcp).color}>
-              {Math.round(metrics.lcp)}ms
-            </span>
-          </div>
-          <div className="flex items-center gap-1">
-            <span className="text-gray-400">FID:</span>
-            <span className={getMetricStatus('fid', metrics.fid).color}>
-              {Math.round(metrics.fid)}ms
-            </span>
-          </div>
-          <div className="flex items-center gap-1">
-            <span className="text-gray-400">CLS:</span>
-            <span className={getMetricStatus('cls', metrics.cls).color}>
-              {metrics.cls.toFixed(3)}
-            </span>
-          </div>
-          <div className="flex items-center gap-1">
-            <span className="text-gray-400">TTFB:</span>
-            <span className={getMetricStatus('ttfb', metrics.ttfb).color}>
-              {Math.round(metrics.ttfb)}ms
-            </span>
-          </div>
+      
+      <div className="space-y-2 text-xs">
+        {Object.entries(metrics).map(([key, value]) => {
+          const { score, color, label } = getScore(key as keyof PerformanceMetrics, value);
+          const displayValue = value ? `${value.toFixed(2)}${key === 'cls' ? '' : 'ms'}` : 'N/A';
+          
+          return (
+            <div key={key} className="flex items-center justify-between">
+              <span className="text-gray-300 uppercase">{key}</span>
+              <div className="flex items-center gap-2">
+                <span className={color}>{displayValue}</span>
+                <span className={`text-xs px-2 py-1 rounded ${color.replace('text-', 'bg-').replace('-400', '-400/20')}`}>
+                  {label}
+                </span>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      
+      <div className="mt-3 pt-3 border-t border-gray-700">
+        <div className="flex items-center gap-2 text-xs text-gray-400">
+          <Zap className="w-4 h-4" />
+          <span>Core Web Vitals</span>
         </div>
-      )}
+      </div>
     </motion.div>
   );
 };
