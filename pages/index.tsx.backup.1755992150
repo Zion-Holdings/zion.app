@@ -112,8 +112,12 @@ const heroStats = [
     ...realMarketServices,
     ...serviceExpansions2025,
     ...realOperationalServices,
+<<<<<<< HEAD
+    ...realVerifiedServices
+=======
     ...newOperationalServices2025,
     ...newVerifiedServicesQ22025
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3308
   ];
 
   // Get new 2029 services for enhanced showcase
