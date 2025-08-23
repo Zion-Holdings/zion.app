@@ -119,7 +119,11 @@
   schedule = "*/1 * * * *" # every minute
 
 [[scheduled.functions]]
+<<<<<<< HEAD
+  name = "autonomous-cloud-meta-orchestrator"
+=======
   name = "supreme-orchestrator"
+>>>>>>> origin/cursor/develop-autonomous-cloud-agents-for-automation-orchestration-7a18
   schedule = "*/1 * * * *" # every minute
 
 [[scheduled.functions]]
