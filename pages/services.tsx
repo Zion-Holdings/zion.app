@@ -42,6 +42,11 @@ import { innovative2025MicroSaasExpansion } from '../data/innovative-2025-micro-
 import { innovative2025ITSolutionsExpansion } from '../data/innovative-2025-it-solutions-expansion';
 import { innovative2025AIServicesExpansion } from '../data/innovative-2025-ai-services-expansion';
 
+// Import our new 2025 innovative services expansion v2
+import { innovativeMicroSaasServices2025 } from '../data/2025-innovative-micro-saas-expansion-v2';
+import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services-expansion-v2';
+import { innovativeITServices2025 } from '../data/2025-innovative-it-services-expansion-v2';
+
 // Import our new 2025 Q4 innovative services
 import { innovative2025Q4NewServices } from '../data/innovative-2025-q4-new-services';
 import { emergingTech2025Innovations } from '../data/emerging-tech-2025-innovations';
@@ -68,10 +73,12 @@ const getServiceCategory = (service: { category?: string; type?: string }) => {
 };
 
 // Helper function to get service pricing
-const getServicePricing = (service: { pricing?: { starter?: string; monthly?: number }; price?: { monthly?: number } }) => {
+const getServicePricing = (service: any) => {
   if (service.pricing?.starter) return service.pricing.starter;
   if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
   if (service.price?.monthly) return `$${service.price.monthly}/month`;
+  if (typeof service.price === 'string') return service.price;
+  if (service.marketPrice) return service.marketPrice;
   return 'Contact for pricing';
 };
 
@@ -139,7 +146,12 @@ const allServices = [
   ...innovative2025Q4NewServices,
   ...emergingTech2025Innovations,
   // Additional 2038 services
-  ...innovative2038ITMicroSaasServices
+  ...innovative2038ITMicroSaasServices,
+  
+  // Our new 2025 innovative services expansion v2
+  ...innovativeMicroSaasServices2025,
+  ...innovativeAIServices2025,
+  ...innovativeITServices2025
 ];
 
 const categories = [
