@@ -1,0 +1,52 @@
+name: A11y & Contrast Guardian
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: a11y-contrast-guardian-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Run a11y and metadata audits
+        run: |
+          node automation/a11y-alt-text-auditor.cjs || true
+          node scripts/seo-audit.js || true
+          node scripts/generate-search-index.js || true
+
+      - name: Build (non-blocking)
+        run: npm run build || true
+
+      - name: Commit and push changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore(a11y): accessibility and SEO audit updates [skip ci]"
+            git push origin HEAD:main
+          else
+            echo "No changes to push"
+          fi
