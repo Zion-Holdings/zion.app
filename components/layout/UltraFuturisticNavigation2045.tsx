@@ -51,6 +51,14 @@ const navigationItems: NavigationItem[] = [
         featured: true
       },
       { 
+        name: 'Real Enterprise Services 2025', 
+        href: '/2025-real-services-showcase', 
+        description: 'Professional, practical business solutions',
+        icon: <Building className="w-4 h-4" />,
+        color: 'from-emerald-500 to-teal-500',
+        featured: true
+      },
+      { 
         name: 'AI Consciousness Evolution 2045', 
         href: '/ai-consciousness-evolution-2045', 
         description: 'Next-generation AI consciousness',

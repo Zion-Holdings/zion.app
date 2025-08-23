@@ -10,6 +10,13 @@ import {
 const UltraFuturisticFooter2045: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
+  const contactInfo = {
+    phone: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com'
+  };
+
   const footerSections = [
     {
       title: 'Revolutionary Services 2045',
@@ -20,6 +27,17 @@ const UltraFuturisticFooter2045: React.FC = () => {
         { name: 'Quantum Cybersecurity 2045', href: '/quantum-cybersecurity-platform-2045' },
         { name: 'Space Resource Intelligence 2045', href: '/space-resource-intelligence-2045' },
         { name: 'Autonomous Customer Success 2045', href: '/autonomous-customer-success-2045' }
+      ]
+    },
+    {
+      title: 'Real Enterprise Services 2025',
+      links: [
+        { name: 'AI Customer Success Automation', href: '/ai-customer-success-automation-2025' },
+        { name: 'Intelligent Vendor Risk Management', href: '/intelligent-vendor-risk-management-2025' },
+        { name: 'Automated SOC2 Compliance Platform', href: '/automated-soc2-compliance-platform-2025' },
+        { name: 'Intelligent Infrastructure Drift Detection', href: '/intelligent-infrastructure-drift-detection-2025' },
+        { name: 'Advanced Kubernetes RBAC Auditor', href: '/advanced-kubernetes-rbac-auditor-2025' },
+        { name: 'Real Enterprise Services Showcase', href: '/2025-real-services-showcase' }
       ]
     },
     {
@@ -53,6 +71,15 @@ const UltraFuturisticFooter2045: React.FC = () => {
         { name: 'Careers', href: '/careers' },
         { name: 'News & Updates', href: '/news' },
         { name: 'Press Kit', href: '/press' }
+      ]
+    },
+    {
+      title: 'Contact Information',
+      links: [
+        { name: 'Phone: +1 302 464 0950', href: 'tel:+1 302 464 0950' },
+        { name: 'Email: kleber@ziontechgroup.com', href: 'mailto:kleber@ziontechgroup.com' },
+        { name: 'Website: ziontechgroup.com', href: 'https://ziontechgroup.com' },
+        { name: 'Address: 364 E Main St STE 1008 Middletown DE 19709', href: '#' }
       ]
     }
   ];
@@ -121,7 +148,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3 text-gray-400 hover:text-cyan-400 transition-colors duration-200">
                   <Phone className="w-4 h-4 text-cyan-400" />
-                  <span className="text-sm">{contactInfo.mobile}</span>
+                  <span className="text-sm">{contactInfo.phone}</span>
                 </div>
                 <div className="flex items-center space-x-3 text-gray-400 hover:text-cyan-400 transition-colors duration-200">
                   <Mail className="w-4 h-4 text-cyan-400" />
@@ -146,11 +173,8 @@ const UltraFuturisticFooter2045: React.FC = () => {
                     <li key={link.name}>
                       <Link
                         href={link.href}
-                        className="flex items-center space-x-3 text-gray-400 hover:text-cyan-400 transition-all duration-200 group hover:translate-x-1"
+                        className="text-gray-400 hover:text-cyan-400 transition-all duration-200 group hover:translate-x-1"
                       >
-                        <div className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-200">
-                          {link.icon}
-                        </div>
                         <span className="text-sm group-hover:text-cyan-400 transition-colors duration-200">
                           {link.name}
                         </span>
@@ -203,16 +227,19 @@ const UltraFuturisticFooter2045: React.FC = () => {
 
               {/* Social Links */}
               <div className="flex items-center space-x-4">
-                {socialLinks.map((social) => (
-                  <Link
-                    key={social.name}
-                    href={social.href}
-                    className={`p-2 rounded-lg bg-gray-900/50 border border-cyan-500/20 text-gray-400 ${social.color} transition-all duration-200 hover:scale-110 hover:border-cyan-500/50`}
-                    aria-label={social.name}
-                  >
-                    {social.icon}
-                  </Link>
-                ))}
+                {socialLinks.map((social) => {
+                  const IconComponent = social.icon;
+                  return (
+                    <Link
+                      key={social.name}
+                      href={social.href}
+                      className={`p-2 rounded-lg bg-gray-900/50 border border-cyan-500/20 text-gray-400 ${social.color} transition-all duration-200 hover:scale-110 hover:border-cyan-500/50`}
+                      aria-label={social.name}
+                    >
+                      <IconComponent className="w-5 h-5" />
+                    </Link>
+                  );
+                })}
               </div>
 
               {/* Additional Links */}
