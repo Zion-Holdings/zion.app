@@ -1,40 +1,21 @@
-import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 export default class MyDocument extends Document {
-	static override async getInitialProps(ctx: any) {
+	static async getInitialProps(ctx: any) {
 		const initialProps = await Document.getInitialProps(ctx);
 		return { ...initialProps };
 	}
 
-	override render() {
-		// Note: Using a meta CSP here for static export. Keep permissive enough for inline JSON-LD and plausible analytics.
-		const csp = [
-			"default-src 'self'",
-			"script-src 'self' 'unsafe-inline' 'unsafe-eval' https://plausible.io",
-			"style-src 'self' 'unsafe-inline'",
-			"img-src 'self' data: https:",
-			"font-src 'self' data: https:",
-			"connect-src 'self' https://plausible.io",
-			"frame-ancestors 'none'",
-			"base-uri 'self'",
-			"form-action 'self'"
-		].join('; ');
-
+	render() {
 		return (
 			<Html lang="en">
 				<Head>
-					<meta httpEquiv="Content-Security-Policy" content={csp} />
-					<meta name="theme-color" content="#000000" />
-					<meta name="color-scheme" content="dark light" />
-					<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+					<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+					<link rel="alternate icon" href="/favicon.ico" />
+					<link rel="manifest" href="/site.webmanifest" />
+					<meta name="theme-color" content="#0a0a0a" />
 					<link rel="preconnect" href="https://plausible.io" crossOrigin="anonymous" />
-					<link rel="dns-prefetch" href="//plausible.io" />
-					<meta name="color-scheme" content="dark light" />
-					{process.env.NEXT_PUBLIC_NOINDEX === 'true' ? (
-						<meta name="robots" content="noindex, nofollow" />
-					) : null}
-					<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+					<link rel="dns-prefetch" href="https://plausible.io" />
 				</Head>
 				<body>
 					<Main />
