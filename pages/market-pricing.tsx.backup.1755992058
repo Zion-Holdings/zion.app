@@ -531,6 +531,8 @@ export default function MarketPricing() {
               </ul>
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $10–$500/month per responder depending on features.</div>
             </div>
+<<<<<<< HEAD
+=======
 
             <div className="bg-black/30 rounded-2xl border border-amber-500/30 p-6">
               <h2 className="text-2xl font-semibold mb-2">SEO & Content</h2>
@@ -691,6 +693,7 @@ export default function MarketPricing() {
 
           <div className="text-center text-slate-400 mt-10">
             Need help benchmarking? <a href="/contact" className="text-cyan-400 underline">Contact us</a> — we align to transparent, vendor-verifiable pricing.
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-13a5
           </div>
         </div>
       </section>
