@@ -3,9 +3,9 @@ import SEO from '../components/SEO';
 import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
 import UltraFuturisticServiceCard2026 from '../components/ui/UltraFuturisticServiceCard2026';
 import Link from 'next/link';
-import { innovativeMicroSaasExpansions } from '../data/innovative-2025-micro-saas-expansions';
-import { innovativeITServicesExpansions } from '../data/innovative-2025-it-services-expansions';
-import { innovativeAIServicesExpansions } from '../data/innovative-2025-ai-services-expansions';
+import { innovativeMicroSaasServices } from '../data/innovative-2025-micro-saas-expansions';
+import { innovativeITServices } from '../data/innovative-2025-it-services-expansions';
+import { innovativeAIServices } from '../data/innovative-2025-ai-services-expansions';
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -28,11 +28,11 @@ const categories = [
 ];
 
 export default function Innovative2025ExpansionsShowcase() {
-  const allServices = [
-    ...innovativeMicroSaasExpansions,
-    ...innovativeITServicesExpansions,
-    ...innovativeAIServicesExpansions
-  ];
+      const allServices = [
+      ...innovativeMicroSaasServices,
+      ...innovativeITServices,
+      ...innovativeAIServices
+    ];
 
   // Group services by category
   const servicesByCategory = categories.reduce((acc, category) => {
