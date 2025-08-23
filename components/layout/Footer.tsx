@@ -14,7 +14,14 @@ import {
   Github,
   Facebook,
   Instagram,
-  Youtube
+  Youtube,
+  Brain,
+  Cpu,
+  BookOpen,
+  Users,
+  FileText,
+  Video,
+  Download
 } from 'lucide-react';
 
 const Footer: React.FC = () => {
@@ -27,38 +34,40 @@ const Footer: React.FC = () => {
 
   const services = [
     { name: 'AI & Machine Learning', href: '/ai-services' },
-    { name: 'Quantum Technology', href: '/quantum-services' },
+    { name: 'Quantum Computing', href: '/quantum-services' },
     { name: 'Space Technology', href: '/space-technology' },
     { name: 'IT Solutions', href: '/it-services' },
-    { name: 'Specialized Solutions', href: '/solutions' },
+    { name: 'Cybersecurity', href: '/cybersecurity' },
+    { name: 'Cloud Platform', href: '/cloud-platform' },
     { name: 'View All Services', href: '/services' }
   ];
 
   const solutions = [
-    { name: 'Services Showcase', href: '/comprehensive-services-showcase-2025' },
-    { name: 'Pricing Plans', href: '/pricing' },
     { name: 'Case Studies', href: '/case-studies' },
-    { name: 'Resources', href: '/resources' },
-    { name: 'Support', href: '/support' },
-    { name: 'Documentation', href: '/docs' }
-  ];
-
-  const company = [
-    { name: 'About Us', href: '/about' },
-    { name: 'Contact', href: '/contact' },
-    { name: 'Partners', href: '/partners' },
-    { name: 'Investors', href: '/investors' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Careers', href: '/careers' }
+    { name: 'Industry Solutions', href: '/solutions' },
+    { name: 'Digital Transformation', href: '/digital-transformation' },
+    { name: 'AI Implementation', href: '/ai-implementation' },
+    { name: 'Quantum Applications', href: '/quantum-applications' },
+    { name: 'Space Intelligence', href: '/space-intelligence' }
   ];
 
   const resources = [
     { name: 'Documentation', href: '/docs' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Case Studies', href: '/case-studies' },
-    { name: 'Support Center', href: '/support' },
-    { name: 'Resources', href: '/resources' },
-    { name: 'Training', href: '/training' }
+    { name: 'Blog & Articles', href: '/blog' },
+    { name: 'Webinars', href: '/webinars' },
+    { name: 'White Papers', href: '/white-papers' },
+    { name: 'Training', href: '/training' },
+    { name: 'Support Center', href: '/support' }
+  ];
+
+  const company = [
+    { name: 'About Us', href: '/about' },
+    { name: 'Mission & Vision', href: '/mission' },
+    { name: 'Team', href: '/team' },
+    { name: 'Partners', href: '/partners' },
+    { name: 'Investors', href: '/investors' },
+    { name: 'Careers', href: '/careers' },
+    { name: 'News', href: '/news' }
   ];
 
   const legal = [
@@ -69,12 +78,12 @@ const Footer: React.FC = () => {
   ];
 
   const socialLinks = [
-    { name: 'X', href: '/social/twitter', icon: Twitter },
-    { name: 'LinkedIn', href: '/social/linkedin', icon: Linkedin },
+    { name: 'X (Twitter)', href: 'https://twitter.com/ziontechgroup', icon: Twitter },
+    { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: Linkedin },
     { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: Github },
-    { name: 'Facebook', href: '/social/facebook', icon: Facebook },
-    { name: 'Instagram', href: '/social/instagram', icon: Instagram },
-    { name: 'YouTube', href: '/social/youtube', icon: Youtube }
+    { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: Facebook },
+    { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: Instagram },
+    { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: Youtube }
   ];
 
   return (
@@ -94,13 +103,15 @@ const Footer: React.FC = () => {
               </div>
             </div>
             <p className="text-gray-300 mb-6 max-w-xs">
-              Pioneering the future of technology with innovative solutions that drive business transformation.
+              Pioneering the future of technology with innovative AI, quantum computing, and space technology solutions that drive business transformation.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-cyan-500 transition-colors"
                   aria-label={social.name}
                 >
@@ -112,16 +123,19 @@ const Footer: React.FC = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold text-white mb-6">Services</h3>
+            <h3 className="text-lg font-semibold text-white mb-6 flex items-center">
+              <Zap className="w-5 h-5 mr-2 text-cyan-400" />
+              Services
+            </h3>
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.name}>
-                  <a
+                  <Link
                     href={service.href}
                     className="text-gray-300 hover:text-cyan-400 transition-colors"
                   >
                     {service.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -129,63 +143,75 @@ const Footer: React.FC = () => {
 
           {/* Solutions */}
           <div>
-            <h3 className="text-lg font-semibold text-white mb-6">Solutions</h3>
+            <h3 className="text-lg font-semibold text-white mb-6 flex items-center">
+              <Sparkles className="w-5 h-5 mr-2 text-purple-400" />
+              Solutions
+            </h3>
             <ul className="space-y-3">
               {solutions.map((solution) => (
                 <li key={solution.name}>
-                  <a
+                  <Link
                     href={solution.href}
                     className="text-gray-300 hover:text-cyan-400 transition-colors"
                   >
                     {solution.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Company */}
+          {/* Resources */}
           <div>
-            <h3 className="text-lg font-semibold text-white mb-6">Company</h3>
+            <h3 className="text-lg font-semibold text-white mb-6 flex items-center">
+              <BookOpen className="w-5 h-5 mr-2 text-emerald-400" />
+              Resources
+            </h3>
             <ul className="space-y-3">
-              {company.map((item) => (
-                <li key={item.name}>
-                  <a
-                    href={item.href}
-                    className="text-gray-300 hover:text-cyan-400 transition-colors"
-                  >
-                    {item.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Resources & Legal */}
-          <div>
-            <h3 className="text-lg font-semibold text-white mb-6">Resources</h3>
-            <ul className="space-y-3 mb-6">
               {resources.map((resource) => (
                 <li key={resource.name}>
-                  <a
+                  <Link
                     href={resource.href}
                     className="text-gray-300 hover:text-cyan-400 transition-colors"
                   >
                     {resource.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
-            <h3 className="text-lg font-semibold text-white mb-6">Legal</h3>
-            <ul className="space-y-3">
-              {legal.map((item) => (
+          </div>
+
+          {/* Company & Legal */}
+          <div>
+            <h3 className="text-lg font-semibold text-white mb-6 flex items-center">
+              <Users className="w-5 h-5 mr-2 text-blue-400" />
+              Company
+            </h3>
+            <ul className="space-y-3 mb-6">
+              {company.map((item) => (
                 <li key={item.name}>
-                  <a
+                  <Link
                     href={item.href}
                     className="text-gray-300 hover:text-cyan-400 transition-colors"
                   >
                     {item.name}
-                  </a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <h3 className="text-lg font-semibold text-white mb-6 flex items-center">
+              <Shield className="w-5 h-5 mr-2 text-indigo-400" />
+              Legal
+            </h3>
+            <ul className="space-y-3">
+              {legal.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="text-gray-300 hover:text-cyan-400 transition-colors"
+                  >
+                    {item.name}
+                  </Link>
                 </li>
               ))}
             </ul>

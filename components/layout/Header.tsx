@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Zap, Sparkles, ChevronDown } from 'lucide-react';
+import { Menu, X, Zap, Sparkles, ChevronDown, Brain, Rocket, Cpu, Shield, Globe, Users, FileText, BookOpen } from 'lucide-react';
 import Button from '../ui/Button';
 import { motion } from 'framer-motion';
 
@@ -29,14 +29,16 @@ const Header: React.FC = () => {
     {
       name: 'Services',
       href: '/services',
-      description: '200+ Real Micro SaaS Solutions',
+      description: '200+ Revolutionary Technology Solutions',
       icon: <Zap className="w-5 h-5" />,
       children: [
         { name: 'All Services', href: '/services' },
-        { name: 'Industry Solutions', href: '/solutions' },
-        { name: 'Cloud Platform', href: '/cloud-platform' },
-        { name: 'AI Assistant', href: '/ai-assistant' },
-        { name: 'Status Pages & SLO', href: '/status-pages-slo' }
+        { name: 'AI & Machine Learning', href: '/ai-services' },
+        { name: 'Quantum Computing', href: '/quantum-services' },
+        { name: 'Space Technology', href: '/space-technology' },
+        { name: 'IT Solutions', href: '/it-services' },
+        { name: 'Cybersecurity', href: '/cybersecurity' },
+        { name: 'Cloud Platform', href: '/cloud-platform' }
       ]
     },
     {
@@ -46,14 +48,43 @@ const Header: React.FC = () => {
       icon: <Sparkles className="w-5 h-5" />,
       children: [
         { name: 'Case Studies', href: '/case-studies' },
-        { name: 'Cloud Platform', href: '/cloud-platform' },
-        { name: 'AI Assistant', href: '/ai-assistant' },
-        { name: 'Analytics', href: '/analytics' },
-        { name: 'Automation', href: '/automation' }
+        { name: 'Industry Solutions', href: '/solutions' },
+        { name: 'Digital Transformation', href: '/digital-transformation' },
+        { name: 'AI Implementation', href: '/ai-implementation' },
+        { name: 'Quantum Applications', href: '/quantum-applications' },
+        { name: 'Space Intelligence', href: '/space-intelligence' }
+      ]
+    },
+    {
+      name: 'Resources',
+      href: '/resources',
+      description: 'Knowledge & Learning Hub',
+      icon: <BookOpen className="w-5 h-5" />,
+      children: [
+        { name: 'Documentation', href: '/docs' },
+        { name: 'Blog & Articles', href: '/blog' },
+        { name: 'Webinars', href: '/webinars' },
+        { name: 'White Papers', href: '/white-papers' },
+        { name: 'Training', href: '/training' },
+        { name: 'Support Center', href: '/support' }
+      ]
+    },
+    {
+      name: 'Company',
+      href: '/about',
+      description: 'About Zion Tech Group',
+      icon: <Users className="w-5 h-5" />,
+      children: [
+        { name: 'About Us', href: '/about' },
+        { name: 'Mission & Vision', href: '/mission' },
+        { name: 'Team', href: '/team' },
+        { name: 'Partners', href: '/partners' },
+        { name: 'Investors', href: '/investors' },
+        { name: 'Careers', href: '/careers' },
+        { name: 'News', href: '/news' }
       ]
     },
     { name: 'Pricing', href: '/pricing' },
-    { name: 'Resources', href: '/resources' },
     { name: 'Contact', href: '/contact' }
   ];
 
