@@ -31,14 +31,13 @@ const footerSections = [
       { name: 'Content Automation', href: '/intelligent-content-automation-platform' },
       { name: 'CRM Intelligence Suite', href: '/smart-crm-intelligence-suite' },
       { name: 'AI Evaluation Orchestrator', href: '/ai-evaluation-orchestrator', featured: true },
-      { name: 'SEO Automation Suite', href: '/seo-automation-suite' },
-      { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent' },
-      { name: 'Managed Postgres HA', href: '/managed-postgres-ha' },
-      { name: 'RAG Evaluation Lab', href: '/rag-evaluation-lab/' },
-      { name: 'Browser Automation Cloud', href: '/browser-automation-cloud/' },
-      { name: 'Secrets Rotation Automation', href: '/secrets-rotation-automation/' },
-      { name: 'API Performance Testing', href: '/api-performance-testing/' },
-      { name: 'SOC 2 Compliance Automation', href: '/soc2-compliance-automation/' }
+              { name: 'SEO Automation Suite', href: '/seo-automation-suite' },
+              { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent' },
+              { name: 'Managed Postgres HA', href: '/managed-postgres-ha' },
+              { name: 'DORA Metrics Dashboard', href: '/dora-metrics-dashboard' },
+              { name: 'Kubernetes Cost Guardrails', href: '/kubernetes-cost-guardrails' },
+              { name: 'OpenTelemetry Quickstart', href: '/opentelemetry-quickstart' },
+              { name: 'API Usage Billing Meter', href: '/api-usage-billing-meter' }
     ]
   },
   {
