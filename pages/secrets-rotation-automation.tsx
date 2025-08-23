@@ -1,6 +1,5 @@
 import React from 'react';
 import SEO from '../components/SEO';
-import Link from 'next/link';
 import { Check, ExternalLink } from 'lucide-react';
 
 export default function SecretsRotationAutomationPage() {
