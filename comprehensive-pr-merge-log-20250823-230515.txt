@@ -334,3 +334,23 @@ pages/sitemap.tsx[0m
 2025-08-23 23:05:27 - [1;33m⚠️  Found conflicts in pages/sitemap.tsx, resolving...[0m
 2025-08-23 23:05:27 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
 2025-08-23 23:05:27 - [0;32m✅ Resolved conflicts in pages/sitemap.tsx[0m
+2025-08-23 23:05:27 - [0;32m✅ Successfully resolved conflicts and merged cursor/optimize-application-internal-links-0f5e[0m
+2025-08-23 23:05:27 - [0;32m✅ PR #3898 (cursor/optimize-application-internal-links-0f5e) processed successfully[0m
+2025-08-23 23:05:27 - [0;34m🔒 Closing PR #3898 via GitHub API...[0m
+2025-08-23 23:05:27 - [0;34m📊 Progress: 3/100, ✅ 3, ❌ 0[0m
+2025-08-23 23:05:29 - [0;34m📋 Processing PR #3895: Changes from background agent bc-51f07a8d-4b14-47f7-af65-e76188b38c99 (branch: cursor/bc-51f07a8d-4b14-47f7-af65-e76188b38c99-87a6)[0m
+2025-08-23 23:05:30 - [0;34m🔄 Attempting to merge cursor/bc-51f07a8d-4b14-47f7-af65-e76188b38c99-87a6...[0m
+2025-08-23 23:05:30 - [1;33m⚠️  Merge conflicts detected in cursor/bc-51f07a8d-4b14-47f7-af65-e76188b38c99-87a6 (attempt 1/3), resolving...[0m
+2025-08-23 23:05:30 - [0;34m📋 Conflicted files: package-lock.json
+pages/sitemap.tsx
+tsconfig.tsbuildinfo[0m
+2025-08-23 23:05:30 - [0;34m🔧 Resolving conflicts in package-lock.json for branch cursor/bc-51f07a8d-4b14-47f7-af65-e76188b38c99-87a6...[0m
+2025-08-23 23:05:30 - [1;33m⚠️  Found conflicts in package-lock.json, resolving...[0m
+2025-08-23 23:05:30 - [0;34m📦 Package-lock.json detected, keeping main version...[0m
+2025-08-23 23:05:30 - [0;32m✅ Resolved conflicts in package-lock.json[0m
+2025-08-23 23:05:30 - [0;34m🔧 Resolving conflicts in pages/sitemap.tsx for branch cursor/bc-51f07a8d-4b14-47f7-af65-e76188b38c99-87a6...[0m
+2025-08-23 23:05:30 - [1;33m⚠️  Found conflicts in pages/sitemap.tsx, resolving...[0m
+2025-08-23 23:05:30 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:05:30 - [0;32m✅ Resolved conflicts in pages/sitemap.tsx[0m
+2025-08-23 23:05:30 - [0;34m🔧 Resolving conflicts in tsconfig.tsbuildinfo for branch cursor/bc-51f07a8d-4b14-47f7-af65-e76188b38c99-87a6...[0m
+2025-08-23 23:05:30 - [0;34mℹ️  No conflicts found in tsconfig.tsbuildinfo[0m
