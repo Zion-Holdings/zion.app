@@ -89,30 +89,39 @@ const Homepage2044: React.FC = () => {
     window.location.href = service.slug;
   }, []);
 
+  // Loading component
   if (isLoading) {
-    return <LoadingSpinner />;
+    return (
+      <Layout>
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center space-y-4">
+            <div className="w-16 h-16 mx-auto border-4 border-cyan-500 border-t-transparent rounded-full animate-spin"></div>
+            <h2 className="text-2xl font-semibold text-white">Loading Zion Tech Group</h2>
+            <p className="text-white/70">Preparing the future of technology...</p>
+          </div>
+        </div>
+      </Layout>
+    );
   }
 
+  // Error component
   if (error) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-black text-white">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-red-400 mb-4">Error Loading Page</h1>
-          <p className="text-gray-400 mb-6">{error}</p>
-          <button 
-            onClick={() => window.location.reload()} 
-            className="px-6 py-3 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition-colors"
-          >
-            Retry
-          </button>
+      <Layout>
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center space-y-4">
+            <div className="w-16 h-16 mx-auto border-4 border-red-500 border-t-transparent rounded-full"></div>
+            <h2 className="text-2xl font-semibold text-white">Error Loading Page</h2>
+            <p className="text-red-400">{error}</p>
+          </div>
         </div>
-      </div>
+      </Layout>
     );
   }
 
   return (
     <Layout>
-      <main className="min-h-screen bg-black text-white">
+      <main className="relative">
         {/* Hero Section */}
         <section 
           className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
