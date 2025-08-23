@@ -37,29 +37,13 @@ const ServicesIndex: NextPage = () => {
         <title>Services - Zion Tech Solutions</title>
         <meta name="description" content="Browse our services" />
       </Head>
-
-      <div className="flex items-center justify-between mb-4">
-        <h1 className="text-xl font-semibold">Services</h1>
-      </div>
-
-      <InteractiveSearch categories={categoryOptions} value={filters} onChange={setFilters} />
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {filtered.map((s: any) => (
-          <EnhancedMarketplaceCard
-            key={s.slug}
-            imageUrl={`https://picsum.photos/seed/${encodeURIComponent(s.slug)}/800/450`}
-            title={s.name}
-            description={s.description}
-            tags={[s.category]}
-            priceRangeLabel={`$${s.priceRangeUSD[0]} - $${s.priceRangeUSD[1]}`}
-            rating={s.rating ?? 4.6}
-            href={`/services/${s.slug}`}
-            quoteHref={`/contact?subject=${encodeURIComponent('Quote request: ' + s.name)}`}
-          />
-        ))}
-      </div>
-    </EnhancedLayout>
+      
+      <main>
+        <h1>Index</h1>
+        <p>Service details coming soon...</p>
+        <a href="/services">Back to Services</a>
+      </main>
+    </div>
   );
 };
 
