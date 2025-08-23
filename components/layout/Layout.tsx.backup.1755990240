@@ -1,5 +1,10 @@
+<<<<<<< HEAD
+import React, { useState, useEffect } from 'react';
+import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
+=======
 import React, { useState } from 'react';
 import UltraFuturisticNavigation2045 from './UltraFuturisticNavigation2045';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5b4b
 import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
@@ -68,12 +73,22 @@ export default function Layout({
       </a>
       
       {/* Futuristic Background */}
+<<<<<<< HEAD
+      <UltraFuturisticBackground2036 theme={getBackgroundTheme(theme)} />
+=======
       <UltraFuturisticBackground2045 />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5b4b
       
       {/* Layout Structure */}
       <div className="relative z-10">
         {/* Navigation */}
         <UltraFuturisticNavigation2045 />
+<<<<<<< HEAD
+        
+        {/* Theme Toggle */}
+        <ThemeToggle currentTheme={theme} onThemeChange={handleThemeChange} />
+=======
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5b4b
         
         {/* Sidebar and Main Content */}
         <div className="flex">
