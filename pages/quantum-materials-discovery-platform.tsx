@@ -4,7 +4,7 @@ import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackgroun
 
 export default function QuantumMaterialsDiscoveryPlatformPage() {
 	return (
-		<UltraFuturisticBackground variant="quantum" intensity="high">
+		<UltraFuturisticBackground variant="holographic" intensity="high">
 			<Head>
 				<title>Quantum Materials Discovery Platform | Zion Tech Group</title>
 				<link rel="canonical" href="https://ziontechgroup.com/quantum-materials-discovery-platform" />

@@ -4,7 +4,7 @@ import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackgroun
 
 export default function QuantumLogisticsOptimizationPage() {
 	return (
-		<UltraFuturisticBackground variant="quantum" intensity="medium">
+		<UltraFuturisticBackground variant="holographic" intensity="medium">
 			<Head>
 				<title>Quantum Logistics Optimization | Zion Tech Group</title>
 				<link rel="canonical" href="https://ziontechgroup.com/quantum-logistics-optimization" />

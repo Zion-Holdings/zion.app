@@ -23,7 +23,7 @@ export default function AuditLogVaultPage() {
   ];
 
   return (
-    <UltraFuturisticBackground variant="quantum" intensity="high">
+    <UltraFuturisticBackground variant="holographic" intensity="high">
       <Head>
         <title>Audit Log Vault | Zion Tech Group</title>
         <meta name="description" content="Immutable, indexed, long-term audit trails for compliance and forensics with search, exports and cryptographic attestations." />

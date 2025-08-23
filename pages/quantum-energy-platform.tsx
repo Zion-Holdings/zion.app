@@ -4,7 +4,7 @@ import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackgroun
 
 export default function QuantumEnergyPlatformPage() {
 	return (
-		<UltraFuturisticBackground variant="quantum" intensity="high">
+		<UltraFuturisticBackground variant="holographic" intensity="high">
 			<Head>
 				<title>Quantum Energy Platform | Zion Tech Group</title>
 				<link rel="canonical" href="https://ziontechgroup.com/quantum-energy-platform" />

@@ -59,10 +59,20 @@ import { innovative2025ITEnterpriseBatch } from '../../data/innovative-2025-it-e
 import { innovativeMicroSaasServices } from '../../data/innovative-2025-micro-saas-expansions';
 import { innovativeITServices } from '../../data/innovative-2025-it-services-expansions';
 import { innovativeAIServices } from '../../data/innovative-2025-ai-services-expansions';
-// Import our new 2025 Q4 innovative services expansion
-import { innovativeServicesExpansionQ4 } from '../../data/2025-innovative-services-expansion-q4';
-import { advancedITSolutionsExpansion } from '../../data/2025-advanced-it-solutions-expansion';
-import { advancedAIServicesExpansion } from '../../data/2025-advanced-ai-services-expansion';
+// Import our new 2025 advanced services
+import { advanced2025MicroSaasExpansion } from '../../data/2025-advanced-micro-saas-expansion';
+import { advanced2025ITSolutionsExpansion } from '../../data/2025-advanced-it-solutions-expansion';
+import { advanced2025AIServicesExpansion } from '../../data/2025-advanced-ai-services-expansion';
+
+// Import our new 2025 innovative services
+import { innovativeMicroSaasExpansion2025 } from '../../data/2025-innovative-micro-saas-expansion';
+import { innovative2025ITSolutionsExpansion } from '../../data/2025-innovative-it-solutions-expansion';
+import { innovative2025AISolutionsExpansion } from '../../data/2025-innovative-ai-solutions-expansion';
+
+// Import our new 2025 innovative services V3
+import { innovativeMicroSaasExpansionV32025 } from '../../data/2025-innovative-micro-saas-expansion-v3';
+import { innovativeITServicesExpansion2025V3 } from '../../data/2025-innovative-it-services-expansion-v3';
+import { innovativeAIServicesExpansion2025V3 } from '../../data/2025-innovative-ai-services-expansion-v3';
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -152,10 +162,23 @@ export default function ServicesIndexPage() {
     .concat(innovativeMicroSaasServices as unknown[])
     .concat(innovativeITServices as unknown[])
     .concat(innovativeAIServices as unknown[])
-    // Our new 2025 Q4 innovative services expansion
-    .concat(innovativeServicesExpansionQ4 as unknown[])
-    .concat(advancedITSolutionsExpansion as unknown[])
-    .concat(advancedAIServicesExpansion as unknown[]);
+    // Our new 2025 advanced services
+    .concat(advanced2025MicroSaasExpansion as unknown[])
+    .concat(advanced2025ITSolutionsExpansion as unknown[])
+    .concat(advanced2025AIServicesExpansion as unknown[])
+    // Our new 2025 innovative services
+    .concat(innovativeMicroSaasExpansion2025 as unknown[])
+    .concat(innovative2025ITSolutionsExpansion as unknown[])
+    .concat(innovative2025AISolutionsExpansion as unknown[])
+    // Our new 2025 advanced services V2
+    // .concat(advancedMicroSaasExpansion2025V2 as unknown[])
+    // .concat(advancedITInfrastructureExpansion2025V2 as unknown[])
+    // .concat(advancedAIServicesExpansion2025V2 as unknown[])
+    // Our new 2025 innovative services V3
+    .concat(innovativeMicroSaasExpansionV32025 as unknown[])
+    .concat(innovativeITServicesExpansion2025V3 as unknown[])
+    .concat(innovativeAIServicesExpansion2025V3 as unknown[])
+    ;
 
   // Filter out services without required properties
   const validServices = all.filter(service => 

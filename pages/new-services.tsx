@@ -20,7 +20,7 @@ const items = [
 
 export default function NewServices() {
 	return (
-		<UltraFuturisticBackground intensity="high" variant="quantum">
+		          <UltraFuturisticBackground intensity="high" variant="holographic">
 			<SEO title="New Services | Zion Tech Group" description="Explore our latest micro SAAS, IT, and AI solutions with transparent pricing." canonical="https://ziontechgroup.com/new-services/" />
 			<div className="container mx-auto px-4 py-16 text-white">
 				<div className="text-center max-w-3xl mx-auto">
