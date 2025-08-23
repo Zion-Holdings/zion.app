@@ -30,7 +30,18 @@ export default function BlogPage() {
       excerpt: 'Explore the cutting-edge trends shaping the future of AI automation and autonomous technology systems in 2025 and beyond.',
       date: 'January 15, 2025',
       readTime: '8 min read',
+<<<<<<< HEAD
+      category: 'AI & Automation',
+      featured: true,
+      author: {
+        name: 'Dr. Sarah Chen',
+        role: 'AI Research Director',
+        avatar: '👩‍🔬'
+      },
+      tags: ['AI', 'Automation', 'Trends', '2025', 'Technology']
+=======
       category: 'AI & Automation'
+>>>>>>> origin/cursor/add-more-project-content-6db1
     },
     {
       id: 'autonomous-content-generation',
@@ -139,7 +150,22 @@ export default function BlogPage() {
     }
   ];
 
+<<<<<<< HEAD
+  const categories = ['All', 'AI & Automation', 'Quantum AI', 'Cybersecurity', 'Sustainability', 'Content & AI', 'Infrastructure', 'AI Ethics', 'Performance', 'Future of Work'];
+
+  const filteredPosts = blogPosts.filter(post => {
+    const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         post.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+    const matchesCategory = selectedCategory === 'All' || post.category === selectedCategory;
+    return matchesSearch && matchesCategory;
+  });
+
+  const featuredPost = blogPosts.find(post => post.featured);
+  const regularPosts = filteredPosts.filter(post => !post.featured);
+=======
   const categories = ['All', 'Technical Deep Dive', 'AI & Automation', 'Content & AI', 'Infrastructure', 'AI Ethics', 'Performance', 'Future of Work'];
+>>>>>>> origin/cursor/add-more-project-content-6db1
 
   return (
     <>
