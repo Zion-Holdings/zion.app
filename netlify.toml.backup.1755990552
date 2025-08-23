@@ -278,6 +278,21 @@
   name = "adaptive-orchestrator"
   schedule = "*/5 * * * *"
 
+<<<<<<< HEAD
+# New orchestrators for rapid sync and meta optimization
+[[scheduled.functions]]
+  name = "autonomous-meta-orchestrator"
+  schedule = "*/3 * * * *"
+
+[[scheduled.functions]]
+  name = "rapid-sync"
+  schedule = "*/2 * * * *"
+
+[[scheduled.functions]]
+  name = "autonomous-invention-orchestrator"
+  schedule = "*/5 * * * *"
+=======
 [[scheduled.functions]]
   name = "autonomy-score-runner"
   schedule = "*/1 * * * *" # every minute
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-8558
