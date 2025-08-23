@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Menu, ChevronDown, X, ArrowRight,
+  Menu, ChevronDown, X, ArrowRight, Search,
   BookOpen, DollarSign, BarChart3, Users, Star, 
   Building, Play, Calculator,
   Grid, FileText, Code, Video
@@ -410,7 +410,14 @@ const UltraFuturisticNavigation2036: React.FC = () => {
 
               {/* Mobile Search */}
               <div className="mb-6">
-                <EnhancedSearch />
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                  <input
+                    type="text"
+                    placeholder="Search services..."
+                    className="w-full pl-10 pr-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400"
+                  />
+                </div>
               </div>
 
               {/* Mobile Navigation Items */}
