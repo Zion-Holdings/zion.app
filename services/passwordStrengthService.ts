@@ -1,210 +1,137 @@
 export interface PasswordStrengthResult {
-  score: number;
+  password: string;
+  score: number; // 0-100
   strength: 'very-weak' | 'weak' | 'medium' | 'strong' | 'very-strong';
   feedback: string[];
   suggestions: string[];
   details: {
-    length: boolean;
-    uppercase: boolean;
-    lowercase: boolean;
-    numbers: boolean;
-    symbols: boolean;
-    noCommonPatterns: boolean;
-    noPersonalInfo: boolean;
+    length: number;
+    hasUppercase: boolean;
+    hasLowercase: boolean;
+    hasNumbers: boolean;
+    hasSymbols: boolean;
+    hasCommonWords: boolean;
+    hasSequentialChars: boolean;
+    hasRepeatingChars: boolean;
     entropy: number;
+    crackTime: string;
   };
-  estimatedCrackTime: string;
-  riskLevel: 'low' | 'medium' | 'high' | 'critical';
+  warnings: string[];
 }
 
-export interface PasswordPolicy {
-  minLength: number;
-  requireUppercase: boolean;
-  requireLowercase: boolean;
-  requireNumbers: boolean;
-  requireSymbols: boolean;
-  maxConsecutiveChars: number;
-  preventCommonPasswords: boolean;
-  preventPersonalInfo: boolean;
-}
-
-export interface StrengthStats {
-  totalPasswords: number;
-  averageScore: number;
-  strengthDistribution: {
-    'very-weak': number;
-    'weak': number;
-    'medium': number;
-    'strong': number;
-    'very-strong': number;
-  };
-  commonIssues: { issue: string; count: number }[];
-  topSuggestions: { suggestion: string; count: number }[];
+export interface CommonPasswordData {
+  commonPasswords: Set<string>;
+  commonWords: Set<string>;
+  patterns: RegExp[];
 }
 
 class PasswordStrengthService {
-  private readonly commonPasswords = new Set([
-    'password', '123456', '123456789', 'qwerty', 'abc123', 'password123',
-    'admin', 'letmein', 'welcome', 'monkey', 'dragon', 'master', 'hello',
-    'freedom', 'whatever', 'qazwsx', 'trustno1', 'jordan', 'harley',
-    'rangers', 'iwantu', 'jennifer', 'hunter', 'buster', 'soccer',
-    'baseball', 'teens', 'silver', 'sexy', 'magic', 'bailey', 'blowme',
-    'shadow', 'abg123', '654321', 'jordan23', 'mike', 'superman', 'hello123'
-  ]);
+  private commonPasswords: Set<string>;
+  private commonWords: Set<string>;
+  private patterns: RegExp[];
 
-  private readonly personalInfoPatterns = [
-    /(?:19|20)\d{2}/, // Years
-    /\b\d{3}[-.]?\d{3}[-.]?\d{4}\b/, // Phone numbers
-    /\b\d{5}(?:-\d{4})?\b/, // ZIP codes
-    /\b[A-Z]{2}\d{2}[A-Z0-9]{10,30}\b/, // IBAN-like patterns
-    /\b\d{4}[- ]?\d{4}[- ]?\d{4}[- ]?\d{4}\b/ // Credit card patterns
-  ];
+  constructor() {
+    // Common weak passwords
+    this.commonPasswords = new Set([
+      'password', '123456', '123456789', 'qwerty', 'abc123', 'password123',
+      'admin', 'letmein', 'welcome', 'monkey', 'dragon', 'master', 'hello',
+      'freedom', 'whatever', 'qazwsx', 'trustno1', 'jordan', 'harley',
+      'ranger', 'iwantu', 'jennifer', 'hunter', 'buster', 'thomas', 'tigger',
+      'robert', 'soccer', 'batman', 'test', 'pass', 'killer', 'hockey',
+      'george', 'charlie', 'andrew', 'michelle', 'love', 'sunshine', 'jessica',
+      'asshole', '6969', 'amanda', 'access', 'yankees', '987654321', 'dallas',
+      'austin', 'thunder', 'taylor', 'bailey', 'shadow', 'wolverine', 'steelers'
+    ]);
 
-  private readonly stats = {
-    totalPasswords: 0,
-    scores: [] as number[],
-    issues: new Map<string, number>(),
-    suggestions: new Map<string, number>()
-  };
+    // Common words that make passwords weak
+    this.commonWords = new Set([
+      'password', 'admin', 'user', 'login', 'welcome', 'hello', 'test',
+      'guest', 'demo', 'sample', 'example', 'default', 'root', 'system',
+      'computer', 'internet', 'website', 'email', 'phone', 'mobile'
+    ]);
 
-  private readonly defaultPolicy: PasswordPolicy = {
-    minLength: 8,
-    requireUppercase: true,
-    requireLowercase: true,
-    requireNumbers: true,
-    requireSymbols: true,
-    maxConsecutiveChars: 3,
-    preventCommonPasswords: true,
-    preventPersonalInfo: true
-  };
+    // Common patterns that make passwords predictable
+    this.patterns = [
+      /123/, /abc/, /qwe/, /asd/, /zxc/, /qaz/, /wsx/, /edc/, /rfv/, /tgb/,
+      /qwerty/, /asdfgh/, /zxcvbn/, /password/, /admin/, /user/, /test/,
+      /1234/, /abcd/, /qwer/, /asdf/, /zxcv/, /qaz/, /wsx/, /edc/, /rfv/
+    ];
+  }
 
-  async checkPasswordStrength(password: string, policy?: Partial<PasswordPolicy>): Promise<PasswordStrengthResult> {
-    this.stats.totalPasswords++;
-    
-    const mergedPolicy = { ...this.defaultPolicy, ...policy };
+  /**
+   * Analyze password strength comprehensively
+   */
+  analyzePassword(password: string): PasswordStrengthResult {
     const result: PasswordStrengthResult = {
+      password,
       score: 0,
       strength: 'very-weak',
       feedback: [],
       suggestions: [],
       details: {
-        length: false,
-        uppercase: false,
-        lowercase: false,
-        numbers: false,
-        symbols: false,
-        noCommonPatterns: false,
-        noPersonalInfo: false,
-        entropy: 0
+        length: password.length,
+        hasUppercase: /[A-Z]/.test(password),
+        hasLowercase: /[a-z]/.test(password),
+        hasNumbers: /\d/.test(password),
+        hasSymbols: /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password),
+        hasCommonWords: this.hasCommonWords(password),
+        hasSequentialChars: this.hasSequentialChars(password),
+        hasRepeatingChars: this.hasRepeatingChars(password),
+        entropy: this.calculateEntropy(password),
+        crackTime: this.estimateCrackTime(password)
       },
-      estimatedCrackTime: 'instantly',
-      riskLevel: 'critical'
+      warnings: []
     };
 
-    try {
-      // Basic checks
-      result.details.length = password.length >= mergedPolicy.minLength;
-      result.details.uppercase = /[A-Z]/.test(password);
-      result.details.lowercase = /[a-z]/.test(password);
-      result.details.numbers = /\d/.test(password);
-      result.details.symbols = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password);
-      
-      // Advanced checks
-      result.details.noCommonPatterns = !this.hasCommonPatterns(password);
-      result.details.noPersonalInfo = !this.hasPersonalInfo(password);
-      
-      // Calculate entropy
-      result.details.entropy = this.calculateEntropy(password);
-      
-      // Calculate score
-      result.score = this.calculateScore(result.details, password, mergedPolicy);
-      
-      // Determine strength
-      result.strength = this.determineStrength(result.score);
-      
-      // Generate feedback and suggestions
-      this.generateFeedback(result, password, mergedPolicy);
-      
-      // Calculate crack time
-      result.estimatedCrackTime = this.estimateCrackTime(result.details.entropy);
-      
-      // Determine risk level
-      result.riskLevel = this.determineRiskLevel(result.score, result.details);
-      
-      // Update stats
-      this.stats.scores.push(result.score);
-      this.updateStats(result);
-      
-    } catch (error) {
-      console.error('Password strength check error:', error);
-      result.feedback.push('Error occurred during password analysis');
-    }
+    // Calculate score
+    result.score = this.calculateScore(result.details);
+    result.strength = this.getStrengthLevel(result.score);
+
+    // Generate feedback
+    result.feedback = this.generateFeedback(result.details);
+    result.suggestions = this.generateSuggestions(result.details);
+    result.warnings = this.generateWarnings(result.details);
 
     return result;
   }
 
-  private hasCommonPatterns(password: string): boolean {
-    const patterns = [
-      /(.)\1{2,}/, // Repeated characters
-      /(.)(.)\1\2/, // Repeated patterns
-      /123|234|345|456|567|678|789/, // Sequential numbers
-      /qwe|wer|ert|rty|tyu|yui|uio|iop/, // Keyboard patterns
-      /abc|bcd|cde|def|efg|fgh|ghi|hij|ijk|jkl|klm|lmn|mno|nop|opq|pqr|qrs|rst|stu|tuv|uvw|vwx|wxy|xyz/ // Alphabetical sequences
-    ];
-    
-    return patterns.some(pattern => pattern.test(password.toLowerCase()));
-  }
-
-  private hasPersonalInfo(password: string): boolean {
-    return this.personalInfoPatterns.some(pattern => pattern.test(password));
-  }
-
-  private calculateEntropy(password: string): number {
-    let charset = 0;
-    
-    if (/[a-z]/.test(password)) charset += 26;
-    if (/[A-Z]/.test(password)) charset += 26;
-    if (/\d/.test(password)) charset += 10;
-    if (/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password)) charset += 32;
-    
-    return Math.log2(Math.pow(charset, password.length));
-  }
-
-  private calculateScore(details: PasswordStrengthResult['details'], password: string, policy: PasswordPolicy): number {
+  /**
+   * Calculate password strength score
+   */
+  private calculateScore(details: PasswordStrengthResult['details']): number {
     let score = 0;
-    
-    // Length scoring
-    if (details.length) {
-      score += Math.min(20, password.length * 2);
-    }
-    
-    // Character type scoring
-    if (details.uppercase) score += 10;
-    if (details.lowercase) score += 10;
-    if (details.numbers) score += 10;
-    if (details.symbols) score += 15;
-    
-    // Advanced scoring
-    if (details.noCommonPatterns) score += 15;
-    if (details.noPersonalInfo) score += 10;
-    
-    // Entropy bonus
-    if (details.entropy > 50) score += 10;
-    else if (details.entropy > 30) score += 5;
-    
-    // Policy compliance bonus
-    if (password.length >= policy.minLength + 4) score += 5;
-    if (password.length >= policy.minLength + 8) score += 5;
-    
-    // Penalties
-    if (this.commonPasswords.has(password.toLowerCase())) {
-      score = Math.max(0, score - 50);
-    }
-    
-    return Math.min(100, Math.max(0, score));
+
+    // Length scoring (0-25 points)
+    if (details.length >= 12) score += 25;
+    else if (details.length >= 10) score += 20;
+    else if (details.length >= 8) score += 15;
+    else if (details.length >= 6) score += 10;
+    else if (details.length >= 4) score += 5;
+
+    // Character variety scoring (0-25 points)
+    if (details.hasUppercase) score += 5;
+    if (details.hasLowercase) score += 5;
+    if (details.hasNumbers) score += 5;
+    if (details.hasSymbols) score += 10;
+
+    // Complexity scoring (0-25 points)
+    if (details.entropy >= 4.0) score += 25;
+    else if (details.entropy >= 3.0) score += 20;
+    else if (details.entropy >= 2.0) score += 15;
+    else if (details.entropy >= 1.0) score += 10;
+
+    // Penalties (0-25 points deducted)
+    if (details.hasCommonWords) score -= 15;
+    if (details.hasSequentialChars) score -= 10;
+    if (details.hasRepeatingChars) score -= 10;
+
+    return Math.max(0, Math.min(100, score));
   }
 
-  private determineStrength(score: number): PasswordStrengthResult['strength'] {
+  /**
+   * Determine strength level based on score
+   */
+  private getStrengthLevel(score: number): PasswordStrengthResult['strength'] {
     if (score >= 90) return 'very-strong';
     if (score >= 80) return 'strong';
     if (score >= 60) return 'medium';
@@ -212,204 +139,235 @@ class PasswordStrengthService {
     return 'very-weak';
   }
 
-  private determineRiskLevel(score: number, details: PasswordStrengthResult['details']): PasswordStrengthResult['riskLevel'] {
-    if (score < 30 || this.commonPasswords.has('password')) return 'critical';
-    if (score < 50) return 'high';
-    if (score < 70) return 'medium';
-    return 'low';
+  /**
+   * Check if password contains common words
+   */
+  private hasCommonWords(password: string): boolean {
+    const lowerPassword = password.toLowerCase();
+    for (const word of this.commonWords) {
+      if (lowerPassword.includes(word)) {
+        return true;
+      }
+    }
+    return false;
   }
 
-  private estimateCrackTime(entropy: number): string {
+  /**
+   * Check for sequential characters
+   */
+  private hasSequentialChars(password: string): boolean {
+    for (const pattern of this.patterns) {
+      if (pattern.test(password.toLowerCase())) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  /**
+   * Check for repeating characters
+   */
+  private hasRepeatingChars(password: string): boolean {
+    for (let i = 0; i < password.length - 2; i++) {
+      if (password[i] === password[i + 1] && password[i] === password[i + 2]) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  /**
+   * Calculate password entropy (measure of randomness)
+   */
+  private calculateEntropy(password: string): number {
+    const charset = new Set(password.split('')).size;
+    return Math.log2(Math.pow(charset, password.length));
+  }
+
+  /**
+   * Estimate time to crack password
+   */
+  private estimateCrackTime(password: string): string {
+    const entropy = this.calculateEntropy(password);
     const attemptsPerSecond = 1000000000; // 1 billion attempts per second
-    const totalAttempts = Math.pow(2, entropy - 1);
+    const totalAttempts = Math.pow(2, entropy);
     const seconds = totalAttempts / attemptsPerSecond;
-    
-    if (seconds < 1) return 'instantly';
-    if (seconds < 60) return `${Math.round(seconds)} seconds`;
-    if (seconds < 3600) return `${Math.round(seconds / 60)} minutes`;
-    if (seconds < 86400) return `${Math.round(seconds / 3600)} hours`;
-    if (seconds < 31536000) return `${Math.round(seconds / 86400)} days`;
-    if (seconds < 31536000000) return `${Math.round(seconds / 31536000)} years`;
-    return `${Math.round(seconds / 31536000000)} centuries`;
+
+    if (seconds < 1) return 'Instantly';
+    if (seconds < 60) return `${Math.ceil(seconds)} seconds`;
+    if (seconds < 3600) return `${Math.ceil(seconds / 60)} minutes`;
+    if (seconds < 86400) return `${Math.ceil(seconds / 3600)} hours`;
+    if (seconds < 31536000) return `${Math.ceil(seconds / 86400)} days`;
+    return `${Math.ceil(seconds / 31536000)} years`;
   }
 
-  private generateFeedback(result: PasswordStrengthResult, password: string, policy: PasswordPolicy): void {
-    // Length feedback
-    if (!result.details.length) {
-      result.feedback.push(`Password must be at least ${policy.minLength} characters long`);
-      result.suggestions.push(`Increase password length to at least ${policy.minLength} characters`);
+  /**
+   * Generate feedback based on password analysis
+   */
+  private generateFeedback(details: PasswordStrengthResult['details']): string[] {
+    const feedback: string[] = [];
+
+    if (details.length < 8) {
+      feedback.push('Password is too short - minimum 8 characters recommended');
+    } else if (details.length < 12) {
+      feedback.push('Consider using a longer password for better security');
     }
-    
-    // Character type feedback
-    if (!result.details.uppercase) {
-      result.feedback.push('Include at least one uppercase letter');
-      result.suggestions.push('Add uppercase letters (A-Z) to your password');
+
+    if (!details.hasUppercase) {
+      feedback.push('Add uppercase letters to increase complexity');
     }
-    
-    if (!result.details.lowercase) {
-      result.feedback.push('Include at least one lowercase letter');
-      result.suggestions.push('Add lowercase letters (a-z) to your password');
+
+    if (!details.hasLowercase) {
+      feedback.push('Add lowercase letters to increase complexity');
     }
-    
-    if (!result.details.numbers) {
-      result.feedback.push('Include at least one number');
-      result.suggestions.push('Add numbers (0-9) to your password');
+
+    if (!details.hasNumbers) {
+      feedback.push('Include numbers to make password harder to guess');
     }
-    
-    if (!result.details.symbols) {
-      result.feedback.push('Include at least one special character');
-      result.suggestions.push('Add special characters (!@#$%^&*) to your password');
+
+    if (!details.hasSymbols) {
+      feedback.push('Add special characters for maximum security');
     }
-    
-    // Pattern feedback
-    if (!result.details.noCommonPatterns) {
-      result.feedback.push('Avoid common patterns and sequences');
-      result.suggestions.push('Avoid repeated characters, keyboard patterns, and sequential numbers');
+
+    if (details.hasCommonWords) {
+      feedback.push('Avoid common words that are easily guessed');
     }
-    
-    if (!result.details.noPersonalInfo) {
-      result.feedback.push('Avoid personal information in passwords');
-      result.suggestions.push('Don\'t use birth years, phone numbers, or other personal data');
+
+    if (details.hasSequentialChars) {
+      feedback.push('Avoid sequential character patterns');
     }
-    
-    // Common password feedback
-    if (this.commonPasswords.has(password.toLowerCase())) {
-      result.feedback.push('This is a commonly used password');
-      result.suggestions.push('Choose a unique password that\'s not commonly used');
+
+    if (details.hasRepeatingChars) {
+      feedback.push('Avoid repeating character patterns');
     }
-    
-    // Strength-specific suggestions
-    if (result.strength === 'very-weak' || result.strength === 'weak') {
-      result.suggestions.push('Consider using a passphrase with random words');
-      result.suggestions.push('Use a password manager to generate strong passwords');
-    }
-    
-    if (result.strength === 'medium') {
-      result.suggestions.push('Add more complexity with additional character types');
-      result.suggestions.push('Increase length for better security');
-    }
+
+    return feedback;
   }
 
-  private updateStats(result: PasswordStrengthResult): void {
-    // Update issue counts
-    if (!result.details.length) this.incrementStat(this.stats.issues, 'Too short');
-    if (!result.details.uppercase) this.incrementStat(this.stats.issues, 'No uppercase');
-    if (!result.details.lowercase) this.incrementStat(this.stats.issues, 'No lowercase');
-    if (!result.details.numbers) this.incrementStat(this.stats.issues, 'No numbers');
-    if (!result.details.symbols) this.incrementStat(this.stats.issues, 'No symbols');
-    if (!result.details.noCommonPatterns) this.incrementStat(this.stats.issues, 'Common patterns');
-    if (!result.details.noPersonalInfo) this.incrementStat(this.stats.issues, 'Personal info');
-    
-    // Update suggestion counts
-    result.suggestions.forEach(suggestion => {
-      this.incrementStat(this.stats.suggestions, suggestion);
-    });
+  /**
+   * Generate improvement suggestions
+   */
+  private generateSuggestions(details: PasswordStrengthResult['details']): string[] {
+    const suggestions: string[] = [];
+
+    if (details.length < 12) {
+      suggestions.push('Use at least 12 characters for strong passwords');
+    }
+
+    if (!details.hasUppercase || !details.hasLowercase || !details.hasNumbers || !details.hasSymbols) {
+      suggestions.push('Mix uppercase, lowercase, numbers, and symbols');
+    }
+
+    if (details.hasCommonWords) {
+      suggestions.push('Use random combinations instead of dictionary words');
+    }
+
+    if (details.hasSequentialChars) {
+      suggestions.push('Avoid keyboard patterns like qwerty or 123456');
+    }
+
+    suggestions.push('Consider using a passphrase with random words');
+    suggestions.push('Use unique passwords for each account');
+    suggestions.push('Consider a password manager for secure storage');
+
+    return suggestions;
   }
 
-  private incrementStat(map: Map<string, number>, key: string): void {
-    map.set(key, (map.get(key) || 0) + 1);
+  /**
+   * Generate security warnings
+   */
+  private generateWarnings(details: PasswordStrengthResult['details']): string[] {
+    const warnings: string[] = [];
+
+    if (details.length < 8) {
+      warnings.push('CRITICAL: Password is extremely weak and easily crackable');
+    }
+
+    if (details.hasCommonWords) {
+      warnings.push('WARNING: Common words make password vulnerable to dictionary attacks');
+    }
+
+    if (details.entropy < 2.0) {
+      warnings.push('WARNING: Low entropy makes password predictable');
+    }
+
+    if (details.crackTime === 'Instantly' || details.crackTime.includes('seconds')) {
+      warnings.push('WARNING: Password can be cracked in seconds');
+    }
+
+    return warnings;
   }
 
-  async generateStrongPassword(length: number = 16, includeSymbols: boolean = true): Promise<string> {
-    const charset = {
-      lowercase: 'abcdefghijklmnopqrstuvwxyz',
-      uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-      numbers: '0123456789',
-      symbols: '!@#$%^&*()_+-=[]{}|;:,.<>?'
-    };
-    
-    let allChars = charset.lowercase + charset.uppercase + charset.numbers;
-    if (includeSymbols) allChars += charset.symbols;
-    
+  /**
+   * Generate a strong password
+   */
+  generateStrongPassword(length: number = 16): string {
+    const charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>?';
     let password = '';
     
-    // Ensure at least one character from each required type
-    password += charset.lowercase[Math.floor(Math.random() * charset.lowercase.length)];
-    password += charset.uppercase[Math.floor(Math.random() * charset.uppercase.length)];
-    password += charset.numbers[Math.floor(Math.random() * charset.numbers.length)];
-    if (includeSymbols) {
-      password += charset.symbols[Math.floor(Math.random() * charset.symbols.length)];
-    }
+    // Ensure at least one character from each category
+    password += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'[Math.floor(Math.random() * 26)];
+    password += 'abcdefghijklmnopqrstuvwxyz'[Math.floor(Math.random() * 26)];
+    password += '0123456789'[Math.floor(Math.random() * 10)];
+    password += '!@#$%^&*()_+-=[]{}|;:,.<>?'[Math.floor(Math.random() * 32)];
     
-    // Fill remaining length with random characters
-    for (let i = password.length; i < length; i++) {
-      password += allChars[Math.floor(Math.random() * allChars.length)];
+    // Fill the rest randomly
+    for (let i = 4; i < length; i++) {
+      password += charset[Math.floor(Math.random() * charset.length)];
     }
     
     // Shuffle the password
     return password.split('').sort(() => Math.random() - 0.5).join('');
   }
 
-  async getStats(): Promise<StrengthStats> {
-    const averageScore = this.stats.scores.length > 0 
-      ? this.stats.scores.reduce((a, b) => a + b, 0) / this.stats.scores.length
-      : 0;
-
-    const strengthDistribution = {
-      'very-weak': 0,
-      'weak': 0,
-      'medium': 0,
-      'strong': 0,
-      'very-strong': 0
-    };
-
-    this.stats.scores.forEach(score => {
-      const strength = this.determineStrength(score);
-      strengthDistribution[strength]++;
-    });
-
-    const commonIssues = Array.from(this.stats.issues.entries())
-      .map(([issue, count]) => ({ issue, count }))
-      .sort((a, b) => b.count - a.count)
-      .slice(0, 10);
-
-    const topSuggestions = Array.from(this.stats.suggestions.entries())
-      .map(([suggestion, count]) => ({ suggestion, count }))
-      .sort((a, b) => b.count - a.count)
-      .slice(0, 10);
-
-    return {
-      totalPasswords: this.stats.totalPasswords,
-      averageScore: Math.round(averageScore * 100) / 100,
-      strengthDistribution,
-      commonIssues,
-      topSuggestions
-    };
-  }
-
-  async clearStats(): Promise<void> {
-    this.stats.totalPasswords = 0;
-    this.stats.scores = [];
-    this.stats.issues.clear();
-    this.stats.suggestions.clear();
-  }
-
-  // Batch password checking
-  async checkPasswords(passwords: string[], policy?: Partial<PasswordPolicy>): Promise<PasswordStrengthResult[]> {
-    const results: PasswordStrengthResult[] = [];
-    
-    for (const password of passwords) {
-      const result = await this.checkPasswordStrength(password, policy);
-      results.push(result);
-    }
-    
-    return results;
-  }
-
-  // Export results
-  exportResults(results: PasswordStrengthResult[]): string {
-    const csv = [
-      'Password,Score,Strength,Risk Level,Estimated Crack Time,Issues,Suggestions'
+  /**
+   * Generate a memorable passphrase
+   */
+  generatePassphrase(wordCount: number = 4): string {
+    const words = [
+      'apple', 'banana', 'cherry', 'dragon', 'eagle', 'forest', 'garden',
+      'harbor', 'island', 'jungle', 'knight', 'lighthouse', 'mountain',
+      'ocean', 'penguin', 'queen', 'river', 'sunset', 'tiger', 'umbrella',
+      'volcano', 'waterfall', 'xylophone', 'yellow', 'zebra'
     ];
     
-    results.forEach(result => {
-      const issues = result.feedback.join('; ');
-      const suggestions = result.suggestions.join('; ');
-      csv.push(`"***",${result.score},${result.strength},${result.riskLevel},"${result.estimatedCrackTime}","${issues}","${suggestions}"`);
-    });
+    let passphrase = '';
+    for (let i = 0; i < wordCount; i++) {
+      const word = words[Math.floor(Math.random() * words.length)];
+      passphrase += (i === 0 ? '' : '-') + word;
+    }
     
-    return csv.join('\n');
+    return passphrase;
+  }
+
+  /**
+   * Add custom common password
+   */
+  addCommonPassword(password: string): void {
+    this.commonPasswords.add(password.toLowerCase());
+  }
+
+  /**
+   * Remove password from common list
+   */
+  removeCommonPassword(password: string): void {
+    this.commonPasswords.delete(password.toLowerCase());
+  }
+
+  /**
+   * Get service statistics
+   */
+  getStats(): { totalCommonPasswords: number; totalCommonWords: number; totalPatterns: number } {
+    return {
+      totalCommonPasswords: this.commonPasswords.size,
+      totalCommonWords: this.commonWords.size,
+      totalPatterns: this.patterns.length
+    };
   }
 }
 
-export default new PasswordStrengthService();
+// Export singleton instance
+export const passwordStrengthService = new PasswordStrengthService();
+
+// Export the class for custom instances
+export { PasswordStrengthService };

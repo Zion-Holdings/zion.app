@@ -1,358 +1,307 @@
-// Export all services
-export { default as CodeReviewService } from './codeReviewService';
-export { default as RateLimiterService } from './rateLimiterService';
-export { default as EmailValidatorService } from './emailValidatorService';
-export { default as PasswordStrengthService } from './passwordStrengthService';
-export { default as UrlShortenerService } from './urlShortenerService';
-export { default as JsonFormatterService } from './jsonFormatterService';
-export { default as QrCodeService } from './qrCodeService';
-export { default as FileTypeDetectorService } from './fileTypeDetectorService';
-export { gitService } from './gitService';
+// Export all micro SaaS services
+export * from './rateLimitService';
+export * from './emailValidationService';
+export * from './passwordStrengthService';
+export * from './urlShortenerService';
+export * from './fileCompressionService';
+export * from './encryptionService';
+export * from './gitService';
 
-// Export types and interfaces
-export type {
-  CodeReviewRequest,
-  CodeReviewResponse,
-  CodeReviewResult,
-  RateLimitConfig,
-  RateLimitResult,
-  EmailValidationRequest,
-  EmailValidationResponse,
-  PasswordStrengthRequest,
-  PasswordStrengthResponse,
-  UrlShortenerRequest,
-  UrlShortenerResponse,
-  JsonFormatterRequest,
-  JsonFormatterResponse,
-  QrCodeRequest,
-  QrCodeResponse,
-  FileTypeRequest,
-  FileTypeResponse,
-  GitFileStatus,
-  GitCommit,
-  GitBranch,
-  GitRemote,
-  GitStatus
-} from './types';
+// Service registry for easy access
+export const services = {
+  rateLimit: () => import('./rateLimitService').then(m => m.rateLimitService),
+  emailValidation: () => import('./emailValidationService').then(m => m.emailValidationService),
+  passwordStrength: () => import('./passwordStrengthService').then(m => m.passwordStrengthService),
+  urlShortener: () => import('./urlShortenerService').then(m => m.urlShortenerService),
+  fileCompression: () => import('./fileCompressionService').then(m => m.fileCompressionService),
+  encryption: () => import('./encryptionService').then(m => m.encryptionService),
+  git: () => import('./gitService').then(m => m.gitService)
+};
 
-// Service categories for easy discovery
-export const SERVICE_CATEGORIES = {
-  DEVELOPMENT: {
-    name: 'Development Tools',
-    services: ['CodeReviewService', 'GitService'],
-    description: 'Tools for developers to improve code quality and manage projects'
-  },
-  SECURITY: {
-    name: 'Security & Validation',
-    services: ['EmailValidatorService', 'PasswordStrengthService', 'FileTypeDetectorService'],
-    description: 'Services to enhance security and validate user inputs'
-  },
-  INFRASTRUCTURE: {
-    name: 'Infrastructure & Performance',
-    services: ['RateLimiterService'],
-    description: 'Services for building scalable and performant applications'
-  },
-  UTILITIES: {
-    name: 'Utility Tools',
-    services: ['UrlShortenerService', 'JsonFormatterService', 'QrCodeService'],
-    description: 'Practical tools for everyday development tasks'
-  }
-} as const;
-
-// Service metadata for documentation and discovery
-export const SERVICE_METADATA = {
-  CodeReviewService: {
-    name: 'Code Review Assistant',
-    description: 'AI-powered code analysis with security, performance, and maintainability insights',
-    category: 'DEVELOPMENT',
+// Service metadata for discovery and documentation
+export const serviceMetadata = {
+  rateLimit: {
+    name: 'API Rate Limiting Service',
+    description: 'Protect your APIs from abuse with intelligent rate limiting',
+    category: 'Security & Performance',
     features: [
-      'Multi-language support (JavaScript, Python, TypeScript)',
-      'Security vulnerability detection',
-      'Performance optimization suggestions',
-      'Code complexity analysis',
-      'Maintainability scoring'
-    ],
-    useCases: [
-      'Code quality assurance',
-      'Security auditing',
-      'Performance optimization',
-      'Team code reviews',
-      'Learning best practices'
-    ],
-    pricing: 'Free tier available, Pro plans from $29/month'
-  },
-  RateLimiterService: {
-    name: 'API Rate Limiter',
-    description: 'Intelligent rate limiting with configurable policies and analytics',
-    category: 'INFRASTRUCTURE',
-    features: [
-      'Multiple rate limiting strategies',
-      'Real-time analytics and monitoring',
-      'IP, user, and API key-based limiting',
-      'Automatic blocking and recovery',
-      'Express.js middleware support'
+      'Configurable rate limits',
+      'Multiple time windows',
+      'Automatic cleanup',
+      'Statistics and monitoring',
+      'IP-based limiting'
     ],
     useCases: [
       'API protection',
       'DDoS prevention',
-      'Fair usage enforcement',
-      'Cost control',
-      'Service stability'
+      'User quota management',
+      'Traffic control'
     ],
-    pricing: 'Free tier available, Enterprise plans from $99/month'
+    pricing: 'Free tier available, premium plans from $9/month'
   },
-  EmailValidatorService: {
-    name: 'Email Validator',
-    description: 'Comprehensive email validation with security and deliverability analysis',
-    category: 'SECURITY',
+  emailValidation: {
+    name: 'Email Validation Service',
+    description: 'Comprehensive email validation with deliverability insights',
+    category: 'Data Quality',
     features: [
-      'Real-time email verification',
+      'Syntax validation',
+      'Domain verification',
       'Disposable email detection',
-      'MX record validation',
-      'Security risk assessment',
-      'Batch validation support'
+      'Role-based account detection',
+      'Deliverability scoring'
     ],
     useCases: [
       'User registration',
       'Email marketing',
-      'Form validation',
-      'Fraud prevention',
-      'Data quality assurance'
+      'Lead validation',
+      'Data cleaning'
     ],
-    pricing: 'Free tier available, Pro plans from $19/month'
+    pricing: 'Free tier: 100 validations/month, premium from $19/month'
   },
-  PasswordStrengthService: {
-    name: 'Password Strength Checker',
-    description: 'Advanced password analysis with security recommendations and policy enforcement',
-    category: 'SECURITY',
+  passwordStrength: {
+    name: 'Password Strength Analyzer',
+    description: 'Advanced password security analysis and recommendations',
+    category: 'Security',
     features: [
-      'Multi-factor strength scoring',
-      'Security risk assessment',
-      'Policy compliance checking',
-      'Strong password generation',
-      'Batch analysis support'
+      'Multi-factor scoring',
+      'Common password detection',
+      'Pattern analysis',
+      'Crack time estimation',
+      'Improvement suggestions'
     ],
     useCases: [
-      'User account security',
-      'Password policy enforcement',
+      'User registration',
+      'Password policies',
       'Security audits',
-      'Compliance requirements',
-      'User education'
+      'Compliance requirements'
     ],
-    pricing: 'Free tier available, Pro plans from $15/month'
+    pricing: 'Free tier available, enterprise plans from $49/month'
   },
-  UrlShortenerService: {
-    name: 'URL Shortener',
-    description: 'Professional URL shortening with analytics and customization options',
-    category: 'UTILITIES',
+  urlShortener: {
+    name: 'URL Shortener Service',
+    description: 'Professional URL shortening with analytics and management',
+    category: 'Marketing & Analytics',
     features: [
-      'Custom alias support',
-      'Click analytics and tracking',
-      'Password protection',
-      'Expiration dates',
-      'Bulk URL management'
+      'Custom short codes',
+      'Click analytics',
+      'Geographic tracking',
+      'Device detection',
+      'Password protection'
     ],
     useCases: [
-      'Marketing campaigns',
-      'Social media sharing',
-      'Link tracking',
-      'Branded URLs',
+      'Social media marketing',
+      'Campaign tracking',
+      'Link management',
       'Analytics insights'
     ],
-    pricing: 'Free tier available, Pro plans from $25/month'
+    pricing: 'Free tier: 100 URLs, premium from $29/month'
   },
-  JsonFormatterService: {
-    name: 'JSON Formatter',
-    description: 'Advanced JSON processing with validation, transformation, and schema generation',
-    category: 'UTILITIES',
+  fileCompression: {
+    name: 'File Compression Service',
+    description: 'Intelligent file compression for images, videos, and documents',
+    category: 'Performance & Storage',
     features: [
-      'Smart formatting and minification',
-      'JSON validation and error detection',
-      'Data transformation tools',
-      'Schema inference',
-      'Performance optimization'
+      'Multi-format support',
+      'Quality control',
+      'Batch processing',
+      'Compression recommendations',
+      'Metadata preservation'
     ],
     useCases: [
-      'API development',
-      'Data processing',
-      'Configuration management',
-      'Debugging and testing',
-      'Documentation generation'
+      'Website optimization',
+      'Storage reduction',
+      'Bandwidth savings',
+      'Content delivery'
     ],
-    pricing: 'Free tier available, Pro plans from $20/month'
+    pricing: 'Free tier: 10 files/month, premium from $39/month'
   },
-  QrCodeService: {
-    name: 'QR Code Generator',
-    description: 'Professional QR code creation with customization and security validation',
-    category: 'UTILITIES',
+  encryption: {
+    name: 'Data Encryption Service',
+    description: 'Enterprise-grade encryption with key management',
+    category: 'Security',
     features: [
-      'Multiple QR code types (URL, email, WiFi, vCard)',
-      'Custom styling and branding',
-      'Security validation',
-      'Bulk generation',
-      'Analytics tracking'
+      'Multiple algorithms',
+      'Key generation',
+      'Secure storage',
+      'Key rotation',
+      'Strength assessment'
     ],
     useCases: [
-      'Marketing materials',
-      'Contact sharing',
-      'WiFi network setup',
-      'Event management',
-      'Product packaging'
+      'Data protection',
+      'Compliance requirements',
+      'Secure communication',
+      'File encryption'
     ],
-    pricing: 'Free tier available, Pro plans from $30/month'
+    pricing: 'Free tier: 1GB/month, enterprise from $99/month'
   },
-  FileTypeDetectorService: {
-    name: 'File Type Detector',
-    description: 'Intelligent file analysis with security scanning and metadata extraction',
-    category: 'SECURITY',
+  git: {
+    name: 'Git Management Service',
+    description: 'Advanced Git operations and repository management',
+    category: 'Development',
     features: [
-      'Magic number detection',
-      'File signature analysis',
-      'Security threat assessment',
-      'Metadata extraction',
-      'Batch processing'
-    ],
-    useCases: [
-      'File upload validation',
-      'Security scanning',
-      'Content management',
-      'Compliance checking',
-      'Data classification'
-    ],
-    pricing: 'Free tier available, Pro plans from $35/month'
-  },
-  GitService: {
-    name: 'Git Management',
-    description: 'Comprehensive Git repository management and analytics',
-    category: 'DEVELOPMENT',
-    features: [
-      'Repository status monitoring',
+      'Repository status',
       'Branch management',
-      'Commit history analysis',
-      'Collaboration insights',
-      'Automation workflows'
+      'Commit history',
+      'File tracking',
+      'Remote management'
     ],
     useCases: [
-      'Project management',
-      'Team collaboration',
-      'Code review workflows',
-      'Deployment automation',
-      'Performance monitoring'
+      'Development workflows',
+      'CI/CD integration',
+      'Repository monitoring',
+      'Team collaboration'
     ],
-    pricing: 'Free tier available, Pro plans from $40/month'
+    pricing: 'Free tier available, team plans from $79/month'
   }
-} as const;
+};
 
-// Quick start examples for each service
-export const QUICK_START_EXAMPLES = {
-  CodeReviewService: `
-// Analyze JavaScript code
-const result = await CodeReviewService.analyzeCode(\`
-function calculateTotal(items) {
-  var total = 0;
-  for (var i = 0; i < items.length; i++) {
-    total += items[i].price;
-  }
-  return total;
-}\`, 'javascript');
+// Service categories for organization
+export const serviceCategories = {
+  'Security & Performance': ['rateLimit', 'passwordStrength', 'encryption'],
+  'Data Quality': ['emailValidation'],
+  'Marketing & Analytics': ['urlShortener'],
+  'Performance & Storage': ['fileCompression'],
+  'Development': ['git']
+};
 
-console.log('Code Score:', result.score);
-console.log('Issues:', result.issues);
-  `,
-  
-  RateLimiterService: `
-// Check rate limit for IP
-const rateLimit = await RateLimiterService.checkRateLimit('192.168.1.1', 'strict');
-if (rateLimit.blocked) {
-  console.log('Rate limit exceeded');
-} else {
-  console.log('Remaining requests:', rateLimit.remaining);
-}
-  `,
-  
-  EmailValidatorService: `
-// Validate email address
-const validation = await EmailValidatorService.validateEmail('user@example.com');
-console.log('Is Valid:', validation.isValid);
-console.log('Risk Level:', validation.riskLevel);
-console.log('Suggestions:', validation.suggestions);
-  `,
-  
-  PasswordStrengthService: `
-// Check password strength
-const strength = await PasswordStrengthService.checkPasswordStrength('MyPassword123!');
-console.log('Strength:', strength.strength);
-console.log('Score:', strength.score);
-console.log('Suggestions:', strength.suggestions);
-  `,
-  
-  UrlShortenerService: `
-// Create short URL
-const shortUrl = await UrlShortenerService.createShortUrl('https://example.com/very-long-url', {
-  customAlias: 'example',
-  expiresIn: 30
-});
-console.log('Short URL:', shortUrl.shortUrl);
-  `,
-  
-  JsonFormatterService: `
-// Format JSON with validation
-const result = await JsonFormatterService.formatJson('{"name":"John","age":30}', {
-  indentSize: 2,
-  validate: true
-});
-console.log('Formatted:', result.formatted);
-console.log('Is Valid:', result.isValid);
-  `,
-  
-  QrCodeService: `
-// Generate QR code for URL
-const qrCode = await QrCodeService.generateURLQRCode('https://example.com', {
-  size: 256,
-  foregroundColor: '#000000',
-  backgroundColor: '#FFFFFF'
-});
-console.log('QR Code generated:', qrCode.success);
-  `,
-  
-  FileTypeDetectorService: `
-// Detect file type
-const fileType = await FileTypeDetectorService.detectFileType(fileBuffer);
-console.log('MIME Type:', fileType.mimeType);
-console.log('Category:', fileType.category);
-console.log('Confidence:', fileType.confidence);
-  `,
-  
-  GitService: `
-// Get Git status
-const status = await GitService.getStatus();
-console.log('Current branch:', status.branch);
-console.log('Modified files:', status.modified.length);
-  `
-} as const;
+// Quick access functions
+export const getService = async (serviceName: keyof typeof services) => {
+  return services[serviceName]();
+};
 
-// Export service factory for easy instantiation
-export class ServiceFactory {
-  static getService(serviceName: keyof typeof SERVICE_METADATA) {
-    const services = {
-      CodeReviewService: require('./codeReviewService').default,
-      RateLimiterService: require('./rateLimiterService').default,
-      EmailValidatorService: require('./emailValidatorService').default,
-      PasswordStrengthService: require('./passwordStrengthService').default,
-      UrlShortenerService: require('./urlShortenerService').default,
-      JsonFormatterService: require('./jsonFormatterService').default,
-      QrCodeService: require('./qrCodeService').default,
-      FileTypeDetectorService: require('./fileTypeDetectorService').default,
-      GitService: require('./gitService').default
-    };
-    
-    return services[serviceName];
+export const getServiceMetadata = (serviceName: keyof typeof serviceMetadata) => {
+  return serviceMetadata[serviceName];
+};
+
+export const getServicesByCategory = (category: string) => {
+  return serviceCategories[category] || [];
+};
+
+export const getAllServices = () => {
+  return Object.keys(serviceMetadata);
+};
+
+// Service health check
+export const checkServiceHealth = async () => {
+  const healthStatus: { [key: string]: boolean } = {};
+  
+  for (const [serviceName, serviceGetter] of Object.entries(services)) {
+    try {
+      const service = await serviceGetter();
+      healthStatus[serviceName] = true;
+    } catch (error) {
+      healthStatus[serviceName] = false;
+    }
   }
   
-  static getAllServices() {
-    return Object.keys(SERVICE_METADATA).reduce((acc, serviceName) => {
-      acc[serviceName] = this.getService(serviceName as keyof typeof SERVICE_METADATA);
-      return acc;
-    }, {} as Record<string, any>);
+  return healthStatus;
+};
+
+// Service statistics
+export const getServiceStats = async () => {
+  const stats: { [key: string]: any } = {};
+  
+  try {
+    const rateLimitService = await services.rateLimit();
+    stats.rateLimit = rateLimitService.getStats();
+  } catch (error) {
+    stats.rateLimit = { error: 'Service unavailable' };
   }
-}
+  
+  try {
+    const emailValidationService = await services.emailValidation();
+    stats.emailValidation = emailValidationService.getStats();
+  } catch (error) {
+    stats.emailValidation = { error: 'Service unavailable' };
+  }
+  
+  try {
+    const passwordStrengthService = await services.passwordStrength();
+    stats.passwordStrength = passwordStrengthService.getStats();
+  } catch (error) {
+    stats.passwordStrength = { error: 'Service unavailable' };
+  }
+  
+  try {
+    const urlShortenerService = await services.urlShortener();
+    stats.urlShortener = urlShortenerService.getStats();
+  } catch (error) {
+    stats.urlShortener = { error: 'Service unavailable' };
+  }
+  
+  try {
+    const fileCompressionService = await services.fileCompression();
+    stats.fileCompression = fileCompressionService.getStats();
+  } catch (error) {
+    stats.fileCompression = { error: 'Service unavailable' };
+  }
+  
+  try {
+    const encryptionService = await services.encryption();
+    stats.encryption = encryptionService.getStats();
+  } catch (error) {
+    stats.encryption = { error: 'Service unavailable' };
+  }
+  
+  return stats;
+};
+
+// Service discovery and recommendations
+export const getServiceRecommendations = (useCase: string) => {
+  const recommendations: { service: string; reason: string; priority: 'high' | 'medium' | 'low' }[] = [];
+  
+  const useCaseLower = useCase.toLowerCase();
+  
+  if (useCaseLower.includes('security') || useCaseLower.includes('protect')) {
+    recommendations.push(
+      { service: 'encryption', reason: 'Essential for data protection', priority: 'high' },
+      { service: 'passwordStrength', reason: 'Improves user security', priority: 'high' },
+      { service: 'rateLimit', reason: 'Protects against abuse', priority: 'medium' }
+    );
+  }
+  
+  if (useCaseLower.includes('performance') || useCaseLower.includes('optimize')) {
+    recommendations.push(
+      { service: 'fileCompression', reason: 'Reduces file sizes and load times', priority: 'high' },
+      { service: 'rateLimit', reason: 'Prevents performance degradation', priority: 'medium' }
+    );
+  }
+  
+  if (useCaseLower.includes('marketing') || useCaseLower.includes('analytics')) {
+    recommendations.push(
+      { service: 'urlShortener', reason: 'Provides tracking and insights', priority: 'high' },
+      { service: 'emailValidation', reason: 'Improves email campaign quality', priority: 'medium' }
+    );
+  }
+  
+  if (useCaseLower.includes('data') || useCaseLower.includes('quality')) {
+    recommendations.push(
+      { service: 'emailValidation', reason: 'Ensures data integrity', priority: 'high' },
+      { service: 'passwordStrength', reason: 'Validates user input', priority: 'medium' }
+    );
+  }
+  
+  if (useCaseLower.includes('development') || useCaseLower.includes('git')) {
+    recommendations.push(
+      { service: 'git', reason: 'Essential for development workflows', priority: 'high' }
+    );
+  }
+  
+  return recommendations.sort((a, b) => {
+    const priorityOrder = { high: 3, medium: 2, low: 1 };
+    return priorityOrder[b.priority] - priorityOrder[a.priority];
+  });
+};
+
+export default {
+  services,
+  serviceMetadata,
+  serviceCategories,
+  getService,
+  getServiceMetadata,
+  getServicesByCategory,
+  getAllServices,
+  checkServiceHealth,
+  getServiceStats,
+  getServiceRecommendations
+};
