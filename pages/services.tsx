@@ -985,93 +985,90 @@ export default function Services() {
                 <div>
                   <h3 className="text-xl font-semibold mb-3 text-blue-400">Industry Expertise</h3>
                   <p className="text-white/70">
-                    Deep domain knowledge across healthcare, finance, retail, and manufacturing sectors with proven success stories.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-3 text-purple-400">Continuous Innovation</h3>
-                  <p className="text-white/70">
-                    We stay ahead of the curve with the latest AI research, tools, and methodologies to ensure your solutions are future-proof.
+                    With 248 active automations and 3,127+ pages generated, we have a track record of delivering measurable business value.
                   </p>
                 </div>
               </div>
             </div>
 
+            {/* Additional Service Offerings */}
             <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
-              <h2 className="text-3xl font-bold mb-6 text-fuchsia-400">Advanced AI Capabilities</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="bg-white/5 rounded-lg p-4 border border-white/20">
-                  <h4 className="font-semibold text-fuchsia-300 mb-2">Machine Learning</h4>
-                  <ul className="space-y-1 text-white/70 text-sm">
-                    <li>• Supervised & Unsupervised Learning</li>
-                    <li>• Deep Neural Networks</li>
-                    <li>• Reinforcement Learning</li>
-                    <li>• Transfer Learning</li>
-                  </ul>
+              <h2 className="text-3xl font-bold mb-6 text-purple-400">Specialized Solutions</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="bg-white/5 rounded-xl p-6 border border-white/20">
+                  <div className="text-3xl mb-3">🔐</div>
+                  <h3 className="text-xl font-semibold mb-3 text-cyan-400">Cybersecurity & AI</h3>
+                  <p className="text-white/70 text-sm">
+                    AI-powered threat detection, automated incident response, and intelligent security monitoring systems.
+                  </p>
                 </div>
-                <div className="bg-white/5 rounded-lg p-4 border border-white/20">
-                  <h4 className="font-semibold text-cyan-300 mb-2">Natural Language Processing</h4>
-                  <ul className="space-y-1 text-white/70 text-sm">
-                    <li>• Text Classification & Sentiment Analysis</li>
-                    <li>• Named Entity Recognition</li>
-                    <li>• Language Generation</li>
-                    <li>• Multilingual Support</li>
-                  </ul>
+                
+                <div className="bg-white/5 rounded-xl p-6 border border-white/20">
+                  <div className="text-3xl mb-3">🏥</div>
+                  <h3 className="text-xl font-semibold mb-3 text-fuchsia-400">Healthcare AI</h3>
+                  <p className="text-white/70 text-sm">
+                    Medical image analysis, patient data processing, and automated diagnostic assistance systems.
+                  </p>
                 </div>
-                <div className="bg-white/5 rounded-lg p-4 border border-white/20">
-                  <h4 className="font-semibold text-green-300 mb-2">Computer Vision</h4>
-                  <ul className="space-y-1 text-white/70 text-sm">
-                    <li>• Image Classification & Detection</li>
-                    <li>• Object Recognition</li>
-                    <li>• Facial Recognition</li>
-                    <li>• Medical Image Analysis</li>
-                  </ul>
+                
+                <div className="bg-white/5 rounded-xl p-6 border border-white/20">
+                  <div className="text-3xl mb-3">🏭</div>
+                  <h3 className="text-xl font-semibold mb-3 text-green-400">Industrial IoT</h3>
+                  <p className="text-white/70 text-sm">
+                    Smart manufacturing, predictive maintenance, and automated quality control systems.
+                  </p>
+                </div>
+                
+                <div className="bg-white/5 rounded-xl p-6 border border-white/20">
+                  <div className="text-3xl mb-3">🚗</div>
+                  <h3 className="text-xl font-semibold mb-3 text-blue-400">Autonomous Vehicles</h3>
+                  <p className="text-white/70 text-sm">
+                    Self-driving systems, traffic optimization, and intelligent transportation infrastructure.
+                  </p>
+                </div>
+                
+                <div className="bg-white/5 rounded-xl p-6 border border-white/20">
+                  <div className="text-3xl mb-3">🌱</div>
+                  <h3 className="text-xl font-semibold mb-3 text-emerald-400">Green Tech</h3>
+                  <p className="text-white/70 text-sm">
+                    Renewable energy optimization, environmental monitoring, and sustainable resource management.
+                  </p>
+                </div>
+                
+                <div className="bg-white/5 rounded-xl p-6 border border-white/20">
+                  <div className="text-3xl mb-3">🎯</div>
+                  <h3 className="text-xl font-semibold mb-3 text-yellow-400">Marketing AI</h3>
+                  <p className="text-white/70 text-sm">
+                    Automated content generation, personalized campaigns, and intelligent customer engagement systems.
+                  </p>
                 </div>
               </div>
             </div>
 
+            {/* Success Metrics */}
             <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
-              <h2 className="text-3xl font-bold mb-6 text-green-400">Industry Solutions</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="text-xl font-semibold mb-4 text-green-300">Healthcare & Life Sciences</h3>
-                  <div className="space-y-3">
-                    <div className="bg-white/5 rounded-lg p-3 border border-white/20">
-                      <h4 className="font-semibold text-green-200 mb-1">Medical Imaging AI</h4>
-                      <p className="text-white/70 text-sm">Advanced diagnostic assistance for radiologists and pathologists</p>
-                    </div>
-                    <div className="bg-white/5 rounded-lg p-3 border border-white/20">
-                      <h4 className="font-semibold text-green-200 mb-1">Drug Discovery</h4>
-                      <p className="text-white/70 text-sm">AI-powered molecular modeling and drug candidate screening</p>
-                    </div>
-                    <div className="bg-white/5 rounded-lg p-3 border border-white/20">
-                      <h4 className="font-semibold text-green-200 mb-1">Patient Care Optimization</h4>
-                      <p className="text-white/70 text-sm">Predictive analytics for patient outcomes and treatment planning</p>
-                    </div>
-                  </div>
+              <h2 className="text-3xl font-bold mb-6 text-yellow-400">Our Success Metrics</h2>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-cyan-400 mb-2">500+</div>
+                  <div className="text-sm text-white/70">Projects Delivered</div>
                 </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-4 text-blue-300">Financial Services</h3>
-                  <div className="space-y-3">
-                    <div className="bg-white/5 rounded-lg p-3 border border-white/20">
-                      <h4 className="font-semibold text-blue-200 mb-1">Fraud Detection</h4>
-                      <p className="text-white/70 text-sm">Real-time fraud detection using advanced ML algorithms</p>
-                    </div>
-                    <div className="bg-white/5 rounded-lg p-3 border border-white/20">
-                      <h4 className="font-semibold text-blue-200 mb-1">Risk Assessment</h4>
-                      <p className="text-white/70 text-sm">AI-powered credit scoring and risk modeling</p>
-                    </div>
-                    <div className="bg-white/5 rounded-lg p-3 border border-white/20">
-                      <h4 className="font-semibold text-blue-200 mb-1">Trading Algorithms</h4>
-                      <p className="text-white/70 text-sm">Automated trading strategies with risk management</p>
-                    </div>
-                  </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-fuchsia-400 mb-2">99.9%</div>
+                  <div className="text-sm text-white/70">Client Satisfaction</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-green-400 mb-2">40%</div>
+                  <div className="text-sm text-white/70">Avg. Efficiency Gain</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold text-blue-400 mb-2">24/7</div>
+                  <div className="text-sm text-white/70">Support Available</div>
                 </div>
               </div>
             </div>
 
-            {/* Enhanced Service Delivery Process */}
-            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8">
               <h2 className="text-3xl font-bold mb-6 text-blue-400">Service Delivery Process</h2>
               <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                 <div className="text-center">
@@ -1117,55 +1114,18 @@ export default function Services() {
               </div>
             </div>
 
-            {/* Client Testimonials */}
-            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
-              <h2 className="text-3xl font-bold mb-6 text-purple-400">What Our Clients Say</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center text-white font-bold">
-                      GM
-                    </div>
-                    <div>
-                      <div className="font-semibold text-white">Global Manufacturing Corp</div>
-                      <div className="text-white/60 text-sm">Manufacturing Industry</div>
-                    </div>
-                  </div>
-                  <p className="text-white/80 italic">
-                    "Zion Tech Group's AI automation solutions transformed our production line. 
-                    We saw a 40% increase in efficiency and 60% reduction in downtime within 6 months."
-                  </p>
-                </div>
-                
-                <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-fuchsia-400 to-purple-500 rounded-full flex items-center justify-center text-white font-bold">
-                      DM
-                    </div>
-                    <div>
-                      <div className="font-semibold text-white">Digital Marketing Agency</div>
-                      <div className="text-white/60 text-sm">Marketing Industry</div>
-                    </div>
-                  </div>
-                  <p className="text-white/80 italic">
-                    "Their autonomous content generation system scaled our output 10x while maintaining 
-                    quality. It's like having an entire content team working 24/7."
-                  </p>
-                </div>
-              </div>
-            </div>
-
             {/* Call to Action */}
-            <div className="bg-gradient-to-r from-cyan-500/20 via-fuchsia-500/20 to-purple-500/20 rounded-2xl p-8 text-center">
-              <h2 className="text-2xl font-bold text-white mb-4">Ready to Get Started?</h2>
-              <p className="text-white/80 mb-6">
-                Let's discuss how our AI and automation services can transform your business.
+            <div className="bg-gradient-to-r from-cyan-500/20 to-fuchsia-500/20 backdrop-blur-xl rounded-3xl p-12 text-center border border-white/20 mt-16">
+              <h2 className="text-4xl font-bold text-white mb-6">Ready to Transform Your Business?</h2>
+              <p className="text-xl text-white/80 mb-8 max-w-3xl mx-auto">
+                Let's discuss how our AI and automation services can drive innovation, 
+                improve efficiency, and create competitive advantages for your organization.
               </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <a href="/contact" className="px-6 py-3 bg-gradient-to-r from-cyan-400 to-fuchsia-400 hover:from-cyan-500 hover:to-fuchsia-500 text-white font-semibold rounded-lg transition-all duration-300">
-                  Schedule Consultation
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/contact" className="px-8 py-4 bg-gradient-to-r from-cyan-400 to-blue-500 hover:from-cyan-500 hover:to-blue-600 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105 shadow-lg">
+                  Get Started Today
                 </a>
-                <a href="/case-studies" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 hover:border-cyan-400/50 text-white font-semibold rounded-lg transition-all duration-300">
+                <a href="/case-studies" className="px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105">
                   View Case Studies
                 </a>
               </div>
