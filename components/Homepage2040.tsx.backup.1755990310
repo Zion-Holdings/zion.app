@@ -449,6 +449,20 @@ const Homepage2040: React.FC = () => {
               </a>
             </motion.div>
 
+<<<<<<< HEAD
+            <motion.div variants={itemVariants} className="text-center p-6 rounded-xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50">
+              <MapPin className="w-12 h-12 text-pink-400 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-white mb-2">Address</h3>
+              <p className="text-gray-300">
+                364 E Main St STE 1008<br />
+                Middletown DE 19709
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </motion.section>
+    </div>
+=======
                       {/* Service Price */}
                       <div className="mb-6">
                         <span className="text-2xl font-bold text-cyan-400">
@@ -619,6 +633,7 @@ const Homepage2040: React.FC = () => {
         )}
       </AnimatePresence>
     </Layout>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-9ffa
   );
 };
 

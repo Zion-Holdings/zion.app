@@ -1,23 +1,8 @@
-import React, { useState } from 'react';
+import React, { ReactNode } from 'react';
 import UltraFuturisticNavigation2045 from './UltraFuturisticNavigation2045';
-import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
-import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
-import TopContactBar from './TopContactBar';
-import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
-import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
-import CookieConsentBanner from '../CookieConsentBanner';
-import ServiceWorkerRegistration from '../ServiceWorkerRegistration';
-import SEOHead from '../SEOHead';
-
-interface SEOConfig {
-  title: string;
-  description: string;
-  keywords: string;
-  image: string;
-  url: string;
-  type: string;
-}
+import UltraFuturisticFooter2045 from './UltraFuturisticFooter2045';
+import AccessibilityEnhancer from '../AccessibilityEnhancer';
+import PerformanceOptimizer from '../PerformanceOptimizer';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -70,71 +55,12 @@ export default function Layout({ children, seo }: LayoutProps) {
   const finalSEO = seo || defaultSEO;
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
-      {/* SEO Head */}
-      <Head>
-        <title>{finalSEO.title}</title>
-        <meta name="description" content={finalSEO.description} />
-        <meta name="keywords" content={finalSEO.keywords} />
-        <meta property="og:title" content={finalSEO.title} />
-        <meta property="og:description" content={finalSEO.description} />
-        <meta property="og:image" content={finalSEO.image} />
-        <meta property="og:url" content={finalSEO.url} />
-        <meta property="og:type" content={finalSEO.type} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={finalSEO.title} />
-        <meta name="twitter:description" content={finalSEO.description} />
-        <meta name="twitter:image" content={finalSEO.image} />
-        <link rel="canonical" href={finalSEO.url} />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#000000" />
-      </Head>
-
-      {/* Skip to content link for accessibility */}
-      <a href="#main" className="skip-link">Skip to main content</a>
-      
-      {/* Futuristic Background */}
-      <UltraFuturisticBackground2045 theme="consciousness" intensity="high" />
-      
-      {/* Layout Structure */}
-      <div className="relative z-10">
-        {/* Navigation */}
-        <UltraFuturisticNavigation2045 />
-        
-        {/* Futuristic Background */}
-        <UltraFuturisticBackground2040 theme="futuristic-2040" intensity="high" />
-        
-        {/* Layout Structure */}
-        <div className="relative z-10">
-          {/* Top Contact Bar */}
-          <TopContactBar />
-          
-          {/* Navigation */}
-          <UltraFuturisticNavigation2046 />
-          
-          {/* Sidebar and Main Content */}
-          <div className="flex">
-            <EnhancedSidebar2025 
-              isOpen={sidebarOpen} 
-              onClose={() => setSidebarOpen(false)} 
-            />
-            
-            <main id="main" role="main" className="flex-1 pt-32 lg:pt-36">
-              <MobileOptimizer>
-                {children}
-              </MobileOptimizer>
-            </main>
-          </div>
-          
-          {/* Footer */}
-          <UltraFuturisticFooter2046 />
-        </div>
-        
-        {/* Footer */}
-        <UltraAdvancedFuturisticFooter2041 />
-      </div>
-
-      {/* Accessibility and Performance Tools */}
+    <div className="min-h-screen bg-gray-900 text-white">
+      <UltraFuturisticNavigation2045 />
+      <main className="relative z-10">
+        {children}
+      </main>
+      <UltraFuturisticFooter2045 />
       <AccessibilityEnhancer />
       <PerformanceMonitor />
       
