@@ -258,6 +258,19 @@
   name = "auto-scheduler"
   schedule = "*/15 * * * *" # every 15 minutes
 
+<<<<<<< HEAD
+[[scheduled.functions]]
+  name = "ui-audit-runner"
+  schedule = "7 */12 * * *" # twice per day staggered
+
+[[scheduled.functions]]
+  name = "roadmap-curator"
+  schedule = "17 */6 * * *" # every 6 hours staggered
+
+[[scheduled.functions]]
+  name = "content-curation-lab"
+  schedule = "*/20 * * * *" # every 20 minutes
+=======
 # New accessibility and quality automations
 [[scheduled.functions]]
   name = "a11y-audit-runner"
@@ -270,3 +283,4 @@
 [[scheduled.functions]]
   name = "perf-asset-watcher"
   schedule = "*/20 * * * *"
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-55f0
