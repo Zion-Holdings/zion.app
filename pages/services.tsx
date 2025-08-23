@@ -5,7 +5,7 @@ import {
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
-  Building, Cpu, Database, Cloud, Lock, ShoppingCart, Lightbulb
+  Building, Lock, Database
 } from 'lucide-react';
 
 // Import our new 2025 service data
@@ -104,6 +104,13 @@ import { innovative2037MicroSaasServices } from '../data/innovative-2037-micro-s
 import { innovative2037ITServices } from '../data/innovative-2037-it-services';
 import { innovative2037AIServices } from '../data/innovative-2037-ai-services';
 
+// Import 2026 innovative services
+import { innovative2026AIServicesAdditions } from '../data/innovative-2026-ai-services-additions';
+import { innovative2026ITServicesAdditions } from '../data/innovative-2026-it-services-additions';
+import { innovative2026MicroSaasAdditions } from '../data/innovative-2026-micro-saas-additions';
+import { innovative2026IndustryAIServices } from '../data/innovative-2026-industry-ai-services';
+import { innovative2026EmergingTechServices } from '../data/innovative-2026-emerging-tech-services';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -172,10 +179,12 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
-  // New innovative 2037 services
-  ...innovative2037MicroSaasServices,
-  ...innovative2037ITServices,
-  ...innovative2037AIServices
+  // 2026 Innovative Services
+  ...innovative2026AIServicesAdditions,
+  ...innovative2026ITServicesAdditions,
+  ...innovative2026MicroSaasAdditions,
+  ...innovative2026IndustryAIServices,
+  ...innovative2026EmergingTechServices
 ];
 
 const categories = [
@@ -278,25 +287,25 @@ const categories = [
     description: 'Learning and research platforms'
   },
   {
-    id: 'manufacturing-industry',
-    name: 'Manufacturing & Industry',
-    icon: <Building className="w-6 h-6" />,
-    color: 'from-gray-500 to-slate-500',
-    description: 'Industrial automation and smart manufacturing'
+    id: 'cybersecurity',
+    name: 'Cybersecurity & Security',
+    icon: <Shield className="w-6 h-6" />,
+    color: 'from-red-500 to-orange-500',
+    description: 'Advanced security and compliance solutions'
   },
   {
-    id: 'retail-ecommerce',
-    name: 'Retail & E-commerce',
-    icon: <ShoppingCart className="w-6 h-6" />,
-    color: 'from-pink-500 to-rose-500',
-    description: 'Retail technology and e-commerce solutions'
+    id: 'blockchain-defi',
+    name: 'Blockchain & DeFi',
+    icon: <Database className="w-6 h-6" />,
+    color: 'from-yellow-500 to-green-500',
+    description: 'Blockchain and decentralized finance solutions'
   },
   {
-    id: 'consulting-strategy',
-    name: 'Consulting & Strategy',
-    icon: <Lightbulb className="w-6 h-6" />,
-    color: 'from-indigo-500 to-purple-500',
-    description: 'Strategic consulting and advisory services'
+    id: 'biometric-identity',
+    name: 'Biometric & Identity',
+    icon: <Lock className="w-6 h-6" />,
+    color: 'from-purple-500 to-indigo-500',
+    description: 'Biometric authentication and identity management'
   }
 ];
 
