@@ -251,3 +251,11 @@
 2025-08-23 22:58:00 - Resolving conflicts in src/pages/ServicesPage.tsx for branch 7ieis8-codex/add-error-handling-and-fallback-data
 2025-08-23 22:58:01 - Merge conflicts detected in 7wzx4b-codex/fix-ts2554-error-in-disputeform
 2025-08-23 22:58:01 - Resolving conflicts in src/components/disputes/DisputeForm.tsx for branch 7wzx4b-codex/fix-ts2554-error-in-disputeform
+2025-08-23 22:58:02 - Merge conflicts detected in 7yfp2f-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:58:02 - Resolving conflicts in package.json for branch 7yfp2f-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:58:02 - Resolving conflicts in src/hooks/use-toast.ts for branch 7yfp2f-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:58:02 - Resolving conflicts in src/i18n/locales/en/translation.json for branch 7yfp2f-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:58:02 - Resolving conflicts in src/i18n/locales/es/translation.json for branch 7yfp2f-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:58:02 - Resolving conflicts in src/main.tsx for branch 7yfp2f-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:58:02 - Resolving conflicts in src/utils/sentry.ts for branch 7yfp2f-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:58:02 - Resolving conflicts in tsconfig.json for branch 7yfp2f-codex/implement-global-error-boundary-with-toasts

@@ -1,3 +1,32 @@
+<<<<<<< HEAD
+import { toast as hotToast, type ToastOptions as HotToastOptions } from 'react-hot-toast';
+
+export type ToastOptions = HotToastOptions & {
+  title?: string;
+  description?: string;
+  variant?: 'default' | 'destructive' | 'success';
+};
+
+export const useToast = () => ({ toast });
+
+function toast(options: ToastOptions) {
+  const message = options.description || options.title || '';
+  if (options.variant === 'destructive') {
+    hotToast.error(message, options);
+  } else if (options.variant === 'success') {
+    hotToast.success(message, options);
+  } else {
+    hotToast(message, options);
+  }
+}
+
+toast.title = (title: string) => hotToast(title);
+toast.description = (description: string) => hotToast(description);
+toast.error = (error: string) => hotToast.error(error);
+toast.success = (message: string) => hotToast.success(message);
+
+export { toast };
+=======
 import React from 'react';
 import { useSnackbar, VariantType, OptionsObject } from 'notistack';
 
@@ -29,3 +58,4 @@ export const toast = {
   error: (msg: string) => globalEnqueue?.(msg, { variant: 'error' }),
   success: (msg: string) => globalEnqueue?.(msg, { variant: 'success' }),
 };
+>>>>>>> origin/7yfp2f-codex/implement-global-error-boundary-with-toasts
