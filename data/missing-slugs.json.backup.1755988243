@@ -4,6 +4,9 @@
   "entertainment-media-solutions",
   "industry-solutions",
   "intelligent-project-management-suite",
+<<<<<<< HEAD
+  "leadership",
+=======
   "marketing-ai-platform",
   "metaverse-development-studio-pro",
   "metaverse-digital-reality-platform",
@@ -26,6 +29,7 @@
   "quantum-risk-financial-manager",
   "quantum-supply-chain-optimizer",
   "quantum-threat-detection",
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-e4a1
   "real-estate-technology-solutions",
   "transportation-logistics-solutions"
 ]

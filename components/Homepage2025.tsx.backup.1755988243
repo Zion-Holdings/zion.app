@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+import React, { useEffect, useState } from 'react';
+=======
 import React, { useEffect, useState, useCallback, memo } from 'react';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-e4a1
 import Layout from './layout/Layout';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -470,9 +474,14 @@ const Homepage2025: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.6 }}
             >
               <button 
+<<<<<<< HEAD
+                className="group px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 flex items-center gap-3 focus:outline-none focus:ring-4 focus:ring-cyan-500/50 text-lg"
+                onClick={() => window.location.href = '/contact'}
+=======
                 className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25 focus:outline-none focus:ring-4 focus:ring-cyan-500 focus:ring-opacity-50"
                 onClick={handleGetStarted}
                 aria-label="Get started with Zion Tech Group services"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-e4a1
               >
                 <Lightbulb className="w-6 h-6 group-hover:animate-pulse" />
                 Start Your Journey
@@ -682,12 +691,19 @@ const Homepage2025: React.FC = () => {
                 Start Your Journey
               </button>
               <button 
+<<<<<<< HEAD
+                className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
+                aria-label="Schedule a demo of our solutions"
+=======
                 className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400 focus:ring-opacity-50"
                 onClick={handleWatchDemo}
                 aria-label="Watch a demo of our services"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-e4a1
               >
                 Schedule a Demo
               </button>
+<<<<<<< HEAD
+=======
             </motion.div>
           </div>
         </section>
@@ -714,6 +730,7 @@ const Homepage2025: React.FC = () => {
               {stats.map((stat, index) => (
                 <StatsCard key={index} stat={stat} index={index} />
               ))}
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-e4a1
             </div>
             
             {/* View All Services CTA */}
@@ -724,6 +741,73 @@ const Homepage2025: React.FC = () => {
               viewport={{ once: true }}
               className="text-center mt-16"
             >
+<<<<<<< HEAD
+              <Link href="/services" aria-label="View all our services">
+                <button className="group px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-xl hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/25 flex items-center gap-2 mx-auto">
+                  View All Services
+                  <TrendingUp className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+                </button>
+              </Link>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Innovation Showcase */}
+        <section 
+          className="py-20 px-4 bg-gradient-to-b from-black/50 to-black/30 relative"
+          aria-labelledby="innovation-heading"
+        >
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 
+                id="innovation-heading"
+                className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent"
+              >
+                Innovation at Every Level
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                From autonomous operations to quantum breakthroughs, we're redefining what's possible in technology
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="p-6 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-400/20 rounded-xl backdrop-blur-sm hover:border-cyan-400/40 transition-all duration-300"
+              >
+                <Mail className="w-6 h-6 group-hover:rotate-12 transition-transform" />
+              </a>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+
+      {/* Newsletter Signup */}
+      <AnimatePresence>
+        {showNewsletter && (
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 100 }}
+            className="fixed bottom-8 left-8 right-8 md:left-auto md:right-8 md:w-96 z-50"
+          >
+            <div className="bg-gradient-to-r from-cyan-500/95 to-blue-500/95 backdrop-blur-md rounded-2xl p-6 border border-cyan-400/50 shadow-2xl">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-lg font-bold text-white">Stay Updated</h3>
+                <button
+                  onClick={() => setShowNewsletter(false)}
+                  className="text-white/80 hover:text-white transition-colors"
+                  aria-label="Close newsletter signup"
+=======
               <h2 id="features-heading" className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Why Choose Zion Tech Group?
               </h2>
@@ -794,6 +878,7 @@ const Homepage2025: React.FC = () => {
                   className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400 focus:ring-opacity-50"
                   onClick={() => window.location.href = '/demo'}
                   aria-label="Schedule a demo of our services"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-e4a1
                 >
                   <X className="w-5 h-5" />
                 </button>
