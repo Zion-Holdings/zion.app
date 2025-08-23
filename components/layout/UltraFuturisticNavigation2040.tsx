@@ -54,6 +54,14 @@ const navigationItems: NavigationItem[] = [
         featured: true
       },
       { 
+        name: '2025 Innovative Services Showcase', 
+        href: '/comprehensive-2025-innovative-services-showcase', 
+        description: 'Comprehensive showcase of our latest innovations',
+        icon: <Star className="w-4 h-4" />,
+        color: 'from-purple-500 to-pink-500',
+        featured: true
+      },
+      { 
         name: 'AI Consciousness Evolution', 
         href: '/ai-consciousness-evolution-2040', 
         description: 'Next-generation AI consciousness',
@@ -382,6 +390,42 @@ const navigationItems: NavigationItem[] = [
         href: '/quantum-financial-intelligence-2040',
         description: 'Quantum financial solutions',
         icon: <TrendingUp className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Contact & Support',
+    href: '/contact',
+    icon: <MessageCircle className="w-5 h-5" />,
+    description: 'Get in touch with our team',
+    badge: '24/7',
+    category: 'contact',
+    color: 'from-green-500 to-emerald-500',
+    children: [
+      {
+        name: 'Contact Us',
+        href: '/contact',
+        description: 'Get in touch with our team',
+        icon: <MessageCircle className="w-4 h-4" />,
+        featured: true
+      },
+      {
+        name: 'Support',
+        href: '/support',
+        description: 'Technical support and help',
+        icon: <HelpCircle className="w-4 h-4" />
+      },
+      {
+        name: 'Get Started',
+        href: '/get-started',
+        description: 'Start your journey with us',
+        icon: <Rocket className="w-4 h-4" />
+      },
+      {
+        name: 'Request Quote',
+        href: '/quote',
+        description: 'Get a custom quote',
+        icon: <Calculator className="w-4 h-4" />
       }
     ]
   }

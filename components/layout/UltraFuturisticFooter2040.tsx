@@ -16,16 +16,16 @@ const footerSections = [
     icon: <Star className="w-5 h-5 text-yellow-400" />,
     color: 'from-yellow-500 to-orange-500',
     links: [
-      { name: 'AI Consciousness Evolution 2040', href: '/ai-consciousness-evolution-2040', featured: true },
-      { name: 'Quantum Neural Ecosystem 2040', href: '/quantum-neural-ecosystem-2040', featured: true },
-      { name: 'Space Resource Intelligence 2040', href: '/space-resource-intelligence-2040', featured: true },
-      { name: 'Autonomous Business Intelligence 2040', href: '/autonomous-business-intelligence-2040', featured: true },
-      { name: 'Quantum Cybersecurity Future 2040', href: '/quantum-cybersecurity-future-2040', featured: true },
-      { name: 'Brain-Computer Interface 2040', href: '/brain-computer-interface-2040', featured: true },
-      { name: 'AI Autonomous Research 2041', href: '/ai-autonomous-research-2041' },
-      { name: 'Quantum Internet Security 2041', href: '/quantum-internet-security-2041' },
-      { name: 'AI Customer Success 2041', href: '/ai-customer-success-2041' },
-      { name: 'AI Sales Intelligence 2041', href: '/ai-sales-intelligence-2041' }
+      { name: '2025 Innovative Services Showcase', href: '/comprehensive-2025-innovative-services-showcase', featured: true },
+      { name: 'AI Autonomous Content Factory Pro', href: '/ai-autonomous-content-factory-pro', featured: true },
+      { name: 'AI Emotional Intelligence Platform 2040', href: '/ai-emotional-intelligence-platform-2040', featured: true },
+      { name: 'Quantum-Secure Cloud Infrastructure 2040', href: '/quantum-secure-cloud-infrastructure-2040', featured: true },
+      { name: 'Autonomous DevOps Platform 2040', href: '/autonomous-devops-platform-2040', featured: true },
+      { name: 'AI Autonomous HR Platform', href: '/ai-autonomous-hr-platform', featured: true },
+      { name: 'AI Autonomous Marketing Platform', href: '/ai-autonomous-marketing-platform', featured: true },
+      { name: 'AI Consciousness Evolution 2040', href: '/ai-consciousness-evolution-2040' },
+      { name: 'Quantum Neural Ecosystem 2040', href: '/quantum-neural-ecosystem-2040' },
+      { name: 'Space Resource Intelligence 2040', href: '/space-resource-intelligence-2040' }
     ]
   },
   {

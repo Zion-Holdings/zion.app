@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
   ArrowRight, Star, 
-  Brain, Atom, Shield, Zap, TrendingUp, Globe, MapPin
+  Brain, Atom, Shield, Zap, TrendingUp, Globe, MapPin, Phone, Mail
 } from 'lucide-react';
 
 const Homepage2025: React.FC = () => {
@@ -49,7 +49,7 @@ const Homepage2025: React.FC = () => {
               
               {/* Enhanced CTA Section */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <Link href="/get-started">
+                <Link href="/contact">
                   <button className="group px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25">
                     <span className="flex items-center gap-2">
                       Get Started
@@ -62,12 +62,33 @@ const Homepage2025: React.FC = () => {
                     Learn More
                   </button>
                 </Link>
-                <Link href="/comprehensive-2025-services-showcase">
+                <Link href="/comprehensive-2025-innovative-services-showcase">
                   <button className="px-8 py-4 border-2 border-purple-400 text-purple-400 font-semibold rounded-lg hover:bg-purple-400 hover:text-black transition-all duration-300 transform hover:scale-105">
-                    2025 Services Showcase
+                    2025 Innovative Services
                   </button>
                 </Link>
               </div>
+              
+              {/* Contact Information */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center mb-8 text-sm"
+              >
+                <div className="flex items-center space-x-2 text-cyan-400">
+                  <Phone className="w-4 h-4" />
+                  <span>+1 302 464 0950</span>
+                </div>
+                <div className="flex items-center space-x-2 text-purple-400">
+                  <Mail className="w-4 h-4" />
+                  <span>kleber@ziontechgroup.com</span>
+                </div>
+                <div className="flex items-center space-x-2 text-pink-400">
+                  <MapPin className="w-4 h-4" />
+                  <span>Middletown DE 19709</span>
+                </div>
+              </motion.div>
               
               {/* Trust Indicators */}
               <motion.div
