@@ -33,7 +33,8 @@ import {
   Cpu,
   BarChart3,
   Lightbulb,
-  Award
+  Award,
+  DollarSign
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -61,43 +62,61 @@ const navigationItems: NavigationItem[] = [
     icon: <Home className="w-4 h-4" />,
     neonColor: 'shadow-cyan-400/50'
   },
-  {
-    label: 'Services',
-    href: '/services',
-    icon: <Briefcase className="w-4 h-4" />,
-    description: 'Explore our comprehensive technology solutions',
-    badge: 'New',
-    neonColor: 'shadow-blue-400/50',
-    children: [
-      {
-        label: 'AI & Machine Learning',
-        href: '/services?category=ai-ml',
-        icon: <Brain className="w-4 h-4" />,
-        description: 'Advanced AI solutions for enterprise',
-        featured: true,
-        neonColor: 'shadow-purple-400/50',
-        category: 'AI Services'
-      },
-      {
-        label: 'Quantum Computing',
-        href: '/services?category=quantum',
-        icon: <Atom className="w-4 h-4" />,
-        description: 'Next-generation quantum solutions',
-        featured: true,
+        {
+        label: 'Services',
+        href: '/services',
+        icon: <Briefcase className="w-4 h-4" />,
+        description: 'Explore our comprehensive technology solutions',
+        badge: 'New',
         neonColor: 'shadow-blue-400/50',
-        category: 'Quantum Technology'
-      },
-      {
-        label: 'Space Technology',
-        href: '/services?category=space-tech',
-        icon: <Rocket className="w-4 h-4" />,
-        description: 'Innovative space tech applications',
-        featured: true,
-        neonColor: 'shadow-pink-400/50',
-        category: 'Space Technology'
-      },
-      {
-        label: 'Cybersecurity',
+        children: [
+          {
+            label: '2025 Ultimate Showcase',
+            href: '/2025-ultimate-services-showcase',
+            icon: <Sparkles className="w-4 h-4" />,
+            description: 'Complete showcase of all innovative services',
+            featured: true,
+            neonColor: 'shadow-purple-400/50',
+            category: 'Featured'
+          },
+          {
+            label: '2025 Ultimate Pricing',
+            href: '/2025-ultimate-pricing-showcase',
+            icon: <DollarSign className="w-4 h-4" />,
+            description: 'Complete pricing for all innovative services',
+            featured: true,
+            neonColor: 'shadow-green-400/50',
+            category: 'Featured'
+          },
+          {
+            label: 'AI & Machine Learning',
+            href: '/services?category=ai-ml',
+            icon: <Brain className="w-4 h-4" />,
+            description: 'Advanced AI solutions for enterprise',
+            featured: true,
+            neonColor: 'shadow-purple-400/50',
+            category: 'AI Services'
+          },
+          {
+            label: 'Quantum Computing',
+            href: '/services?category=quantum',
+            icon: <Atom className="w-4 h-4" />,
+            description: 'Next-generation quantum solutions',
+            featured: true,
+            neonColor: 'shadow-blue-400/50',
+            category: 'Quantum Technology'
+          },
+          {
+            label: 'Space Technology',
+            href: '/services?category=space-tech',
+            icon: <Rocket className="w-4 h-4" />,
+            description: 'Innovative space tech applications',
+            featured: true,
+            neonColor: 'shadow-pink-400/50',
+            category: 'Space Technology'
+          },
+          {
+            label: 'Cybersecurity',
         href: '/services?category=cybersecurity',
         icon: <Shield className="w-4 h-4" />,
         description: 'Advanced security solutions',
