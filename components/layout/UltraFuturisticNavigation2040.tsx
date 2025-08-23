@@ -8,6 +8,7 @@ import {
   Grid, Zap, 
   Building, Search
 } from 'lucide-react';
+import ThemeToggle from '../ThemeToggle';
 
 interface NavigationItem {
   name: string;
@@ -99,12 +100,10 @@ const navigationItems: NavigationItem[] = [
     description: 'Innovative business solutions for modern enterprises',
     badge: 'SAAS',
     children: [
-      { name: 'AI Content Creation', href: '/ai-content-creation-suite', description: 'Create engaging content at scale', featured: true },
-      { name: 'AI Sales Intelligence', href: '/ai-sales-intelligence-platform', description: 'Supercharge sales with AI insights' },
-      { name: 'AI Marketing Automation', href: '/ai-marketing-automation-suite', description: 'Automate and optimize marketing' },
-      { name: 'AI Customer Success', href: '/ai-customer-success-platform', description: 'Predict and prevent churn with AI' },
-      { name: 'AI HR Analytics', href: '/ai-hr-analytics-platform', description: 'Transform HR with data-driven insights' },
-      { name: 'AI Education Platform', href: '/ai-education-platform', description: 'Personalize learning with AI' }
+      { name: 'Pricing Calculator', href: '/pricing-calculator', description: 'Interactive pricing tool', featured: true },
+      { name: 'Service Comparison', href: '/service-comparison', description: 'Compare services side by side', featured: true },
+      { name: 'Micro SAAS Platform', href: '/micro-saas-platform', description: 'Scalable SAAS solutions' },
+      { name: 'Subscription Management', href: '/subscription-management', description: 'Handle recurring billing' }
     ]
   },
   {
@@ -258,6 +257,7 @@ const UltraFuturisticNavigation2040: React.FC = () => {
 
           {/* Right Side Actions */}
           <div className="hidden lg:flex items-center space-x-4">
+            <ThemeToggle />
             <button className="p-2 text-gray-400 hover:text-white transition-colors">
               <Search className="w-5 h-5" />
             </button>
@@ -325,7 +325,17 @@ const UltraFuturisticNavigation2040: React.FC = () => {
                 </div>
               ))}
               
-              <div className="pt-4 border-t border-cyan-500/20">
+              <div className="pt-4 border-t border-cyan-500/20 space-y-3">
+                <Link href="/pricing-calculator">
+                  <button className="w-full px-6 py-3 border border-cyan-400 text-cyan-400 rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-200">
+                    Pricing Calculator
+                  </button>
+                </Link>
+                <Link href="/service-comparison">
+                  <button className="w-full px-6 py-3 border border-purple-400 text-purple-400 rounded-lg hover:bg-purple-400 hover:text-black transition-all duration-200">
+                    Compare Services
+                  </button>
+                </Link>
                 <Link href="/contact">
                   <button className="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-200">
                     Contact Us
