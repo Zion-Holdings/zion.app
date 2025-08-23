@@ -1,0 +1,46 @@
+name: Update PR branches with main
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch: {}
+
+
+concurrency:
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
+
+  contents: write
+  pull-requests: write
+
+jobs:
+
+  list:
+      prs: ${{ steps.collect.outputs.prs }}
+          script: |
+            const { data: prs } = await github.rest.pulls.list({
+              owner: context.repo.owner,"
+              repo: context.repo.repo,"
+              state: 'open',
+              per_page: 100
+            });
+            const own = prs
+              .filter(pr => pr.head.repo && pr.head.repo.full_name === pr.base.repo.full_name)
+              .map(pr => ({ number: pr.number, headRef: pr.head.ref }));
+            core.setOutput('prs', JSON.stringify(own));
+
+  update:
+        include: ${{ fromJSON(needs.list.outputs.prs) }}
+      - name: Checkout PR head
+        uses: actions/checkout@v4
+          fetch-depth: 0
+          ref: ${{ matrix.headRef }}
+      - name: Merge main into PR branch
+        run: |
+          git fetch origin main
+          git merge --no-edit origin/main || true
+      - name: Push updated branch
+        run: |
+          git push origin HEAD:${{ matrix.headRef }} || echo "Push failed (likely fork)

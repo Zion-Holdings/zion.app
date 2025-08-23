@@ -1,3 +1,5 @@
-
-export { useMilestones } from './milestones/useMilestones';
-export type { Milestone, MilestoneStatus, MilestoneActivity } from './milestones/types';
+// Hook for useMilestones;
+export const useUseMilestones: unknown = () => {
+  // TODO: Implement hook logic;
+  return {};
+};

@@ -1,0 +1,53 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Prepare dist directory
+        run: |
+          rm -rf dist
+          mkdir -p dist
+          rsync -av --delete \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='node_modules' \
+            --exclude='dist' \
+            ./ dist/ | cat
+      - name: Minify HTML/CSS/JS
+        run: |
+          npx --yes minify@10.4.0 dist/index.html > dist/index.min.html && mv dist/index.min.html dist/index.html || true
+          if ls dist/*.css >/dev/null 2>&1; then for f in dist/*.css; do npx --yes clean-css-cli@5 -o "$f" "$f"; done; fi
+          if ls dist/*.js >/dev/null 2>&1; then for f in dist/*.js; do npx --yes terser@5 -c -m -o "$f" -- "$f"; done; fi
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,7 +1,5 @@
-
-// Export all hooks from messaging directory
-export * from './messaging';
-export * from './use-toast';
-export * from './useAuth';
-export * from './useOnboardingStatus';
-export * from './usePageViewTracking';
+// Hook for index;
+export const useIndex: unknown = () => {
+  // TODO: Implement hook logic;
+  return {};
+};
