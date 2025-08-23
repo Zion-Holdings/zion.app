@@ -15,6 +15,10 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "cypress:open": "cypress open",
+<<<<<<< HEAD
+    "cypress:run": "cypress run --browser chrome",
+    "test:accessibility": "vitest run tests/Accessibility.test.tsx"
+=======
     "cypress:run": "cypress run --browser electron",
     "audit": "npm audit --production",
     "clean:cache": "node scripts/clean-cache.js",
@@ -128,6 +132,7 @@
   },
   "prisma": {
     "seed": "ts-node prisma/seed.ts"
+>>>>>>> origin/9pfskl-codex/check-logs-and-fix-errors
   },
   "dependencies": {
     "@chainsafe/libp2p-gossipsub": "^14.1.1",
