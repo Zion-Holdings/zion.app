@@ -5,7 +5,11 @@ import {
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
+<<<<<<< HEAD
+  Building, Lock, Database
+=======
   Building, Cpu, BarChart3, TrendingUp
+>>>>>>> 0d3d59dc48bc65c272e3c7f2106b07881fc97407
 } from 'lucide-react';
 
 // Import our new innovative 2025 services
@@ -83,6 +87,31 @@ import { revolutionary2041AdvancedServices } from '../data/revolutionary-2041-ad
 import { advanced2041EnterpriseServices } from '../data/advanced-2041-enterprise-services';
 import { revolutionary2042MicroSaasServices } from '../data/revolutionary-2042-micro-saas-services';
 
+<<<<<<< HEAD
+// Import our new 2025 advanced services
+import { advanced2025MicroSaasExpansion } from '../data/2025-advanced-micro-saas-expansion';
+import { advanced2025ITSolutionsExpansion } from '../data/2025-advanced-it-solutions-expansion';
+import { advanced2025AIServicesExpansion } from '../data/2025-advanced-ai-services-expansion';
+
+// Import our new 2025 advanced services V2
+import { advanced2025MicroSaasExpansionV2 } from '../data/2025-advanced-micro-saas-expansion-v2';
+import { advanced2025ITSolutionsExpansionV2 } from '../data/2025-advanced-it-solutions-expansion-v2';
+import { advanced2025AIServicesExpansionV2 } from '../data/2025-advanced-ai-services-expansion-v2';
+// Import our new 2025 innovative services expansion
+import { innovative2025MicroSaasExpansion } from '../data/innovative-2025-micro-saas-expansion';
+import { innovative2025ITSolutionsExpansion } from '../data/innovative-2025-it-solutions-expansion';
+import { innovative2025AIServicesExpansion } from '../data/innovative-2025-ai-services-expansion';
+
+// Import our new 2025 comprehensive services
+import { advancedEnterpriseSolutions2025 } from '../data/2025-advanced-enterprise-solutions';
+import { innovativeAIAutomationServices2025 } from '../data/2025-innovative-ai-automation-services';
+import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
+import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
+
+// Import our new 2025 Q4 innovative services
+import { innovative2025Q4NewServices } from '../data/innovative-2025-q4-new-services';
+import { emergingTech2025Innovations } from '../data/emerging-tech-2025-innovations';
+=======
 // Import our new 2025 ultimate services expansion
 import { ultimate2025RealMicroSaasExpansion as ultimate2025MicroSaasExpansion } from '../data/2025-ultimate-real-micro-saas-expansion';
 import { ultimate2025ITServicesExpansion } from '../data/2025-ultimate-it-services-expansion';
@@ -99,10 +128,15 @@ import { advancedAIServices2025V2 } from '../data/2025-advanced-ai-services-expa
 // Import our new innovative 2040 services
 import { innovative2040ITServices } from '../data/innovative-2040-it-services';
 import { innovative2040FuturisticServices } from '../data/innovative-2040-futuristic-services';
+>>>>>>> 0d3d59dc48bc65c272e3c7f2106b07881fc97407
 
 // Import our new 2025 advanced enterprise services
 import { advancedEnterpriseServices } from '../data/2025-advanced-enterprise-services-expansion';
+<<<<<<< HEAD
+import { innovativeMicroSaasServices } from '../data/innovative-2025-micro-saas-expansions';
+=======
 import { innovative2025MicroSaasExpansion as innovativeMicroSaasServices } from '../data/2025-innovative-micro-saas-expansion';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-85e9
 import { cuttingEdgeITInfrastructureServices } from '../data/2025-cutting-edge-it-infrastructure';
 
 // Import our new innovative 2025 service suites
@@ -331,6 +365,14 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
+<<<<<<< HEAD
+  // 2026 Innovative Services
+  ...innovative2026AIServicesAdditions,
+  ...innovative2026ITServicesAdditions,
+  ...innovative2026MicroSaasAdditions,
+  ...innovative2026IndustryAIServices,
+  ...innovative2026EmergingTechServices
+=======
   // Our new 2025 advanced services
   ...ultimate2025MicroSaasExpansion,
   ...ultimate2025ITServicesExpansion,
@@ -368,12 +410,20 @@ const allServices = [
   // Our new 2025 advanced enterprise services
   ...advancedEnterpriseServices,
   ...cuttingEdgeITInfrastructureServices,
+<<<<<<< HEAD
+  // Our new 2025 advanced real micro SAAS expansion
+  ...advancedRealMicroSaasExpansion2025,
+  ...emergingTechBreakthroughServices2025,
+  ...practicalBusinessSolutions2025
+>>>>>>> 0d3d59dc48bc65c272e3c7f2106b07881fc97407
+=======
   
   // Our new 2025 advanced specialized services
   ...advancedCybersecurityMicroSaasServices,
   ...advancedAIMLMicroSaasServices,
   ...fintechBlockchainMicroSaasServices,
   ...healthcareBiotechMicroSaasServices
+>>>>>>> b158c850e5918955c6b05df28208d70c32592a79
 ];
 
 const categories = [
@@ -568,12 +618,40 @@ const categories = [
   },
   {
     id: 'cybersecurity',
+<<<<<<< HEAD
+    name: 'Cybersecurity & Security',
+    icon: <Shield className="w-6 h-6" />,
+    color: 'from-red-500 to-orange-500',
+    description: 'Advanced security and compliance solutions'
+  },
+  {
+    id: 'blockchain-defi',
+    name: 'Blockchain & DeFi',
+    icon: <Database className="w-6 h-6" />,
+    color: 'from-yellow-500 to-green-500',
+    description: 'Blockchain and decentralized finance solutions'
+  },
+  {
+    id: 'biometric-identity',
+    name: 'Biometric & Identity',
+    icon: <Lock className="w-6 h-6" />,
+    color: 'from-purple-500 to-indigo-500',
+    description: 'Biometric authentication and identity management'
+=======
     name: 'Cybersecurity',
     icon: <Shield className="w-6 h-6" />,
     color: 'from-red-500 to-orange-500',
     description: 'Advanced security and threat protection'
   },
   {
+<<<<<<< HEAD
+    id: 'data-analytics',
+    name: 'Data Analytics',
+    icon: <Cpu className="w-6 h-6" />,
+    color: 'from-cyan-500 to-blue-500',
+    description: 'Intelligent data analysis and insights'
+>>>>>>> 0d3d59dc48bc65c272e3c7f2106b07881fc97407
+=======
     id: 'ai-ml',
     name: 'AI & Machine Learning',
     icon: <Brain className="w-6 h-6" />,
@@ -586,6 +664,7 @@ const categories = [
     icon: <Target className="w-6 h-6" />,
     color: 'from-green-500 to-emerald-600',
     description: 'Financial technology and blockchain solutions'
+>>>>>>> b158c850e5918955c6b05df28208d70c32592a79
   }
 ];
 
@@ -768,9 +847,21 @@ export default function Services() {
       case 'education':
       case 'education & research':
         return <GraduationCap className="w-6 h-6 text-yellow-400" />;
+<<<<<<< HEAD
+      case 'manufacturing':
+      case 'manufacturing & industry':
+        return <Building className="w-6 h-6 text-gray-400" />;
+      case 'retail':
+      case 'retail & e-commerce':
+        return <ShoppingCart className="w-6 h-6 text-pink-400" />;
+      case 'consulting':
+      case 'consulting & strategy':
+        return <Lightbulb className="w-6 h-6 text-indigo-400" />;
+=======
       case 'fintech':
       case 'fintech & blockchain':
         return <Target className="w-6 h-6 text-green-400" />;
+>>>>>>> b158c850e5918955c6b05df28208d70c32592a79
       default:
         return <Shield className="w-6 h-6 text-gray-400" />;
     }
@@ -853,6 +944,128 @@ export default function Services() {
               </motion.div>
             </motion.div>
 
+<<<<<<< HEAD
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
+                <div className="text-4xl mb-4">☁️</div>
+                <h3 className="text-2xl font-bold mb-4 text-green-400">Cloud Infrastructure</h3>
+                <p className="text-white/70 mb-6">
+                  Scalable cloud solutions with automated deployment, monitoring, and optimization for peak performance.
+                </p>
+                <ul className="space-y-2 text-sm text-white/60 mb-6">
+                  <li>• Cloud Migration</li>
+                  <li>• Auto-scaling</li>
+                  <li>• Performance Optimization</li>
+                  <li>• Security Hardening</li>
+                  <li>• Multi-cloud Strategy</li>
+                  <li>• Disaster Recovery</li>
+                </ul>
+                <div className="text-green-400 font-semibold">Starting at $18,000</div>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
+                <div className="text-4xl mb-4">🔧</div>
+                <h3 className="text-2xl font-bold mb-4 text-blue-400">DevOps & CI/CD</h3>
+                <p className="text-white/70 mb-6">
+                  Streamlined development and deployment pipelines with automated testing, building, and deployment processes.
+                </p>
+                <ul className="space-y-2 text-sm text-white/60 mb-6">
+                  <li>• CI/CD Pipeline Setup</li>
+                  <li>• Automated Testing</li>
+                  <li>• Infrastructure as Code</li>
+                  <li>• Monitoring & Alerting</li>
+                  <li>• Container Orchestration</li>
+                  <li>• Security Scanning</li>
+                </ul>
+                <div className="text-blue-400 font-semibold">Starting at $10,000</div>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
+                <div className="text-4xl mb-4">📊</div>
+                <h3 className="text-2xl font-bold mb-4 text-purple-400">Data Analytics</h3>
+                <p className="text-white/70 mb-6">
+                  Advanced analytics and business intelligence solutions that turn your data into actionable insights.
+                </p>
+                <ul className="space-y-2 text-sm text-white/60 mb-6">
+                  <li>• Data Visualization</li>
+                  <li>• Predictive Analytics</li>
+                  <li>• Business Intelligence</li>
+                  <li>• Real-time Dashboards</li>
+                  <li>• Data Warehousing</li>
+                  <li>• Advanced Reporting</li>
+                </ul>
+                <div className="text-purple-400 font-semibold">Starting at $14,000</div>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
+                <div className="text-4xl mb-4">💡</div>
+                <h3 className="text-2xl font-bold mb-4 text-yellow-400">Technology Consulting</h3>
+                <p className="text-white/70 mb-6">
+                  Strategic technology consulting to help you navigate digital transformation and innovation challenges.
+                </p>
+                <ul className="space-y-2 text-sm text-white/60 mb-6">
+                  <li>• Digital Strategy</li>
+                  <li>• Technology Roadmap</li>
+                  <li>• Innovation Workshops</li>
+                  <li>• Performance Audits</li>
+                  <li>• Risk Assessment</li>
+                  <li>• Change Management</li>
+                </ul>
+                <div className="text-yellow-400 font-semibold">Starting at $8,000</div>
+              </div>
+            </div>
+
+            {/* Technology Stack Section */}
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
+              <h2 className="text-3xl font-bold mb-6 text-cyan-400">Our Technology Stack</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold mb-3 text-fuchsia-400">AI & Machine Learning</h3>
+                  <div className="space-y-2 text-sm text-white/70">
+                    <div>• TensorFlow & PyTorch</div>
+                    <div>• OpenAI GPT Models</div>
+                    <div>• Computer Vision APIs</div>
+                    <div>• NLP Frameworks</div>
+                  </div>
+                </div>
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold mb-3 text-green-400">Cloud & Infrastructure</h3>
+                  <div className="space-y-2 text-sm text-white/70">
+                    <div>• AWS, Azure, GCP</div>
+                    <div>• Kubernetes & Docker</div>
+                    <div>• Terraform & Ansible</div>
+                    <div>• Serverless Functions</div>
+                  </div>
+                </div>
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold mb-3 text-blue-400">Development Tools</h3>
+                  <div className="space-y-2 text-sm text-white/70">
+                    <div>• React & Next.js</div>
+                    <div>• Python & Node.js</div>
+                    <div>• Git & CI/CD</div>
+                    <div>• Testing Frameworks</div>
+                  </div>
+                </div>
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold mb-3 text-purple-400">Data & Analytics</h3>
+                  <div className="space-y-2 text-sm text-white/70">
+                    <div>• PostgreSQL & MongoDB</div>
+                    <div>• Apache Kafka</div>
+                    <div>• Tableau & Power BI</div>
+                    <div>• Apache Spark</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 mb-16">
+              <h2 className="text-3xl font-bold mb-6 text-cyan-400">Why Choose Our Services?</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-xl font-semibold mb-3 text-fuchsia-400">AI-Powered Excellence</h3>
+                  <p className="text-white/70">
+                    Our services leverage cutting-edge AI technology to deliver superior results, faster implementation, and continuous improvement.
+                  </p>
+=======
             {/* Enhanced Search and Filters */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -871,6 +1084,7 @@ export default function Services() {
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="w-full pl-12 pr-4 py-3 bg-black/50 border border-blue-500/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500"
                   />
+>>>>>>> 0d3d59dc48bc65c272e3c7f2106b07881fc97407
                 </div>
 
                 {/* Category Filter */}
@@ -952,6 +1166,77 @@ export default function Services() {
                   </ul>
                 </div>
 
+<<<<<<< HEAD
+                <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+                  <div className="text-3xl mb-3">🔍</div>
+                  <h3 className="text-xl font-bold mb-3 text-fuchsia-400">Computer Vision</h3>
+                  <p className="text-white/70 text-sm mb-4">
+                    Advanced image and video analysis for automation, quality control, and insights extraction.
+                  </p>
+                  <ul className="space-y-1 text-xs text-white/60">
+                    <li>• Object Detection & Recognition</li>
+                    <li>• Image Segmentation</li>
+                    <li>• Video Analytics</li>
+                    <li>• Quality Assurance</li>
+                  </ul>
+                </div>
+
+                <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+                  <div className="text-3xl mb-3">💬</div>
+                  <h3 className="text-xl font-bold mb-3 text-green-400">Natural Language Processing</h3>
+                  <p className="text-white/70 text-sm mb-4">
+                    Language understanding and generation systems for enhanced communication and automation.
+                  </p>
+                  <ul className="space-y-1 text-xs text-white/60">
+                    <li>• Sentiment Analysis</li>
+                    <li>• Text Classification</li>
+                    <li>• Language Generation</li>
+                    <li>• Translation Services</li>
+                  </ul>
+                </div>
+
+                <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+                  <div className="text-3xl mb-3">📈</div>
+                  <h3 className="text-xl font-bold mb-3 text-blue-400">Predictive Analytics</h3>
+                  <p className="text-white/70 text-sm mb-4">
+                    Data-driven forecasting and trend analysis for strategic decision-making and optimization.
+                  </p>
+                  <ul className="space-y-1 text-xs text-white/60">
+                    <li>• Time Series Forecasting</li>
+                    <li>• Risk Assessment</li>
+                    <li>• Demand Prediction</li>
+                    <li>• Anomaly Detection</li>
+                  </ul>
+                </div>
+
+                <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+                  <div className="text-3xl mb-3">🤖</div>
+                  <h3 className="text-xl font-bold mb-3 text-purple-400">Robotic Process Automation</h3>
+                  <p className="text-white/70 text-sm mb-4">
+                    Intelligent automation of repetitive tasks and business processes for increased efficiency.
+                  </p>
+                  <ul className="space-y-1 text-xs text-white/60">
+                    <li>• Process Mining</li>
+                    <li>• Workflow Automation</li>
+                    <li>• Document Processing</li>
+                    <li>• Integration Services</li>
+                  </ul>
+                </div>
+
+                <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+                  <div className="text-3xl mb-3">🔐</div>
+                  <h3 className="text-xl font-bold mb-3 text-yellow-400">AI Security & Compliance</h3>
+                  <p className="text-white/70 text-sm mb-4">
+                    Comprehensive security solutions for AI systems and regulatory compliance frameworks.
+                  </p>
+                  <ul className="space-y-1 text-xs text-white/60">
+                    <li>• Model Security</li>
+                    <li>• Data Privacy</li>
+                    <li>• Compliance Auditing</li>
+                    <li>• Threat Detection</li>
+                  </ul>
+                </div>
+=======
         {/* CTA Section */}
         <section className="py-20 relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -999,6 +1284,7 @@ export default function Services() {
                   <Building className="w-6 h-6" />
                   <span>Enterprise Solutions</span>
                 </motion.a>
+>>>>>>> b158c850e5918955c6b05df28208d70c32592a79
               </div>
             </div>
 
