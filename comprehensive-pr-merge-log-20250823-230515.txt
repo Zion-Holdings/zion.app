@@ -671,3 +671,50 @@ package.json[0m
 2025-08-23 23:06:12 - [1;33m⚠️  Found conflicts in package.json, resolving...[0m
 2025-08-23 23:06:12 - [0;34m📦 Package.json detected, merging dependencies intelligently...[0m
 2025-08-23 23:06:12 - [0;32m✅ Resolved conflicts in package.json[0m
+2025-08-23 23:06:12 - [0;32m✅ Successfully resolved conflicts and merged cursor/bc-4fc567b1-4586-4af3-be0c-14d02f7830f9-6109[0m
+2025-08-23 23:06:12 - [0;32m✅ PR #3879 (cursor/bc-4fc567b1-4586-4af3-be0c-14d02f7830f9-6109) processed successfully[0m
+2025-08-23 23:06:12 - [0;34m🔒 Closing PR #3879 via GitHub API...[0m
+2025-08-23 23:06:13 - [0;34m📊 Progress: 16/100, ✅ 16, ❌ 0[0m
+2025-08-23 23:06:15 - [0;34m📋 Processing PR #3878: Automate ai and it service creation (branch: cursor/automate-ai-and-it-service-creation-6b2f)[0m
+2025-08-23 23:06:15 - [0;34m🔄 Attempting to merge cursor/automate-ai-and-it-service-creation-6b2f...[0m
+2025-08-23 23:06:16 - [1;33m⚠️  Merge conflicts detected in cursor/automate-ai-and-it-service-creation-6b2f (attempt 1/3), resolving...[0m
+2025-08-23 23:06:16 - [0;34m📋 Conflicted files: ecosystem.config.js
+netlify/functions/functions-manifest.json
+package-lock.json
+package.json
+pages/dashboard.tsx
+pages/index.tsx
+pages/services.tsx
+pages/status.tsx[0m
+2025-08-23 23:06:16 - [0;34m🔧 Resolving conflicts in ecosystem.config.js for branch cursor/automate-ai-and-it-service-creation-6b2f...[0m
+2025-08-23 23:06:16 - [1;33m⚠️  Found conflicts in ecosystem.config.js, resolving...[0m
+2025-08-23 23:06:16 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:06:16 - [0;32m✅ Resolved conflicts in ecosystem.config.js[0m
+2025-08-23 23:06:16 - [0;34m🔧 Resolving conflicts in netlify/functions/functions-manifest.json for branch cursor/automate-ai-and-it-service-creation-6b2f...[0m
+2025-08-23 23:06:16 - [1;33m⚠️  Found conflicts in netlify/functions/functions-manifest.json, resolving...[0m
+2025-08-23 23:06:16 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:06:16 - [0;32m✅ Resolved conflicts in netlify/functions/functions-manifest.json[0m
+2025-08-23 23:06:16 - [0;34m🔧 Resolving conflicts in package-lock.json for branch cursor/automate-ai-and-it-service-creation-6b2f...[0m
+2025-08-23 23:06:16 - [1;33m⚠️  Found conflicts in package-lock.json, resolving...[0m
+2025-08-23 23:06:16 - [0;34m📦 Package-lock.json detected, keeping main version...[0m
+2025-08-23 23:06:16 - [0;32m✅ Resolved conflicts in package-lock.json[0m
+2025-08-23 23:06:16 - [0;34m🔧 Resolving conflicts in package.json for branch cursor/automate-ai-and-it-service-creation-6b2f...[0m
+2025-08-23 23:06:16 - [1;33m⚠️  Found conflicts in package.json, resolving...[0m
+2025-08-23 23:06:16 - [0;34m📦 Package.json detected, merging dependencies intelligently...[0m
+2025-08-23 23:06:16 - [0;32m✅ Resolved conflicts in package.json[0m
+2025-08-23 23:06:16 - [0;34m🔧 Resolving conflicts in pages/dashboard.tsx for branch cursor/automate-ai-and-it-service-creation-6b2f...[0m
+2025-08-23 23:06:16 - [1;33m⚠️  Found conflicts in pages/dashboard.tsx, resolving...[0m
+2025-08-23 23:06:16 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:06:16 - [0;32m✅ Resolved conflicts in pages/dashboard.tsx[0m
+2025-08-23 23:06:16 - [0;34m🔧 Resolving conflicts in pages/index.tsx for branch cursor/automate-ai-and-it-service-creation-6b2f...[0m
+2025-08-23 23:06:16 - [1;33m⚠️  Found conflicts in pages/index.tsx, resolving...[0m
+2025-08-23 23:06:16 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:06:16 - [0;32m✅ Resolved conflicts in pages/index.tsx[0m
+2025-08-23 23:06:16 - [0;34m🔧 Resolving conflicts in pages/services.tsx for branch cursor/automate-ai-and-it-service-creation-6b2f...[0m
+2025-08-23 23:06:16 - [1;33m⚠️  Found conflicts in pages/services.tsx, resolving...[0m
+2025-08-23 23:06:16 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:06:16 - [0;32m✅ Resolved conflicts in pages/services.tsx[0m
+2025-08-23 23:06:16 - [0;34m🔧 Resolving conflicts in pages/status.tsx for branch cursor/automate-ai-and-it-service-creation-6b2f...[0m
+2025-08-23 23:06:16 - [1;33m⚠️  Found conflicts in pages/status.tsx, resolving...[0m
+2025-08-23 23:06:16 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:06:16 - [0;32m✅ Resolved conflicts in pages/status.tsx[0m
