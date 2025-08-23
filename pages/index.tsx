@@ -1,11 +1,11 @@
 import React from 'react';
-import Homepage2046 from '../components/Homepage2046';
+import EnhancedHomepage2045V2 from '../components/EnhancedHomepage2045V2';
 import ErrorBoundary from '../components/ErrorBoundary';
 
 const HomePage: React.FC = () => {
   return (
     <ErrorBoundary>
-      <Homepage2046 />
+      <EnhancedHomepage2045V2 />
     </ErrorBoundary>
   );
 };
