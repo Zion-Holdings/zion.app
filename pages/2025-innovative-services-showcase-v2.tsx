@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
-import { 
+import {
   Search, Grid, List,
   Brain, Atom, Shield,
   ArrowRight, Check,
   Building, Cpu, Star, Phone, Mail,
-  TrendingUp, Heart, GraduationCap, Truck, Palette, Sparkles
+  Sparkles, DollarSign, Microscope
 } from 'lucide-react';
 
 // Import our new innovative services
@@ -25,7 +25,7 @@ import { marketReadyServices } from '../data/market-ready-services';
 import { marketValidatedServices } from '../data/market-validated-services';
 import { industryRealServices } from '../data/industry-real-services';
 
-// Helper function to get service pricing
+// Helper function to get service pricing safely
 const getServicePricing = (service: any) => {
   if (service.pricing?.starter) return service.pricing.starter;
   if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
@@ -34,7 +34,7 @@ const getServicePricing = (service: any) => {
   return 'Contact Us';
 };
 
-// Helper function to get service category
+// Helper function to get service category safely
 const getServiceCategory = (service: any) => {
   if (service.category) return service.category;
   if (service.type) return service.type;
@@ -55,22 +55,7 @@ const getServiceWebsite = (service: any) => {
   return `/services/${service.id || service.name.toLowerCase().replace(/\s+/g, '-')}`;
 };
 
-// Helper function to get service icon
-const getServiceIcon = (category: string) => {
-  if (category.includes('AI') || category.includes('Autonomous')) return Brain;
-  if (category.includes('Quantum')) return Atom;
-  if (category.includes('Infrastructure')) return Cpu;
-  if (category.includes('SAAS')) return Building;
-  if (category.includes('Security')) return Shield;
-  if (category.includes('Financial')) return TrendingUp;
-  if (category.includes('Healthcare')) return Heart;
-  if (category.includes('Education')) return GraduationCap;
-  if (category.includes('Manufacturing')) return Truck;
-  if (category.includes('Creative')) return Palette;
-  return Sparkles;
-};
-
-// Helper function to get service color
+// Helper function to get service color safely
 const getServiceColor = (category: string) => {
   if (category.includes('AI') || category.includes('Autonomous')) return 'from-cyan-500 to-blue-500';
   if (category.includes('Quantum')) return 'from-blue-500 to-indigo-500';
@@ -85,14 +70,14 @@ const getServiceColor = (category: string) => {
   return 'from-purple-500 to-pink-500';
 };
 
-const ServicesPage: React.FC = () => {
+const InnovativeServicesShowcase2025V2: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [sortBy, setSortBy] = useState<'name' | 'price' | 'market'>('name');
 
-  // Combine all services
-  const allServices = [
+  // Combine all innovative services
+  const allInnovativeServices = [
     ...innovativeAIAutonomousServicesExpansion2025,
     ...innovativeITInfrastructureExpansion2025,
     ...innovativeMicroSaasExpansionV32025,
@@ -108,11 +93,11 @@ const ServicesPage: React.FC = () => {
   ];
 
   // Filter services by search query and category
-  const filteredServices = allServices.filter(service => {
+  const filteredServices = allInnovativeServices.filter(service => {
     const matchesSearch = service.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          service.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          getServiceCategory(service).toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCategory = selectedCategory === 'all' || 
+    const matchesCategory = selectedCategory === 'all' ||
                            getServiceCategory(service).toLowerCase().includes(selectedCategory.toLowerCase());
     return matchesSearch && matchesCategory;
   });
@@ -142,53 +127,64 @@ const ServicesPage: React.FC = () => {
     { id: 'infrastructure', name: 'IT Infrastructure', icon: Cpu, color: 'from-green-500 to-teal-500' },
     { id: 'micro-saas', name: 'Micro SAAS', icon: Building, color: 'from-orange-500 to-red-500' },
     { id: 'cybersecurity', name: 'Cybersecurity', icon: Shield, color: 'from-red-500 to-orange-500' },
-    { id: 'fintech', name: 'FinTech', icon: TrendingUp, color: 'from-emerald-500 to-green-500' },
-    { id: 'healthcare', name: 'Healthcare', icon: Heart, color: 'from-pink-500 to-purple-500' }
+    { id: 'fintech', name: 'FinTech', icon: DollarSign, color: 'from-emerald-500 to-green-500' },
+    { id: 'healthcare', name: 'Healthcare', icon: Microscope, color: 'from-pink-500 to-purple-500' }
   ];
+
+  const getServiceIcon = (category: string) => {
+    if (category.includes('AI') || category.includes('Autonomous')) return Brain;
+    if (category.includes('Quantum')) return Atom;
+    if (category.includes('Infrastructure')) return Cpu;
+    if (category.includes('SAAS')) return Building;
+    if (category.includes('Security')) return Shield;
+    if (category.includes('Financial')) return DollarSign;
+    if (category.includes('Healthcare')) return Microscope;
+    return Sparkles;
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white">
-      <SEO 
-        title="Innovative Services - Zion Tech Group"
-        description="Discover our comprehensive range of innovative services including AI autonomous systems, quantum computing, IT infrastructure, and micro SAAS solutions."
+      <SEO
+        title="2025 Innovative Services Showcase - Zion Tech Group"
+        description="Discover our cutting-edge 2025 innovative services including AI autonomous systems, quantum computing infrastructure, and revolutionary micro SAAS solutions."
         keywords={[
-          'innovative services',
+          'innovative services 2025',
           'AI autonomous systems',
           'quantum computing',
-          'IT infrastructure',
           'micro SAAS',
+          'IT infrastructure',
           'Zion Tech Group'
         ]}
       />
 
       {/* Hero Section */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="relative overflow-hidden pt-32 pb-20"
+        className="relative overflow-hidden"
       >
         <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 via-blue-900/20 to-cyan-900/20" />
-        <div className="relative z-10 container mx-auto px-4">
+        <div className="relative z-10 container mx-auto px-4 py-20">
           <div className="text-center max-w-4xl mx-auto">
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent mb-6"
             >
-              Innovative Services
+              2025 Innovative Services
             </motion.h1>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed"
             >
-              Explore our comprehensive portfolio of cutting-edge services designed to transform 
-              businesses and drive innovation across industries.
+              Discover our revolutionary AI autonomous systems, quantum computing infrastructure,
+              and cutting-edge micro SAAS solutions that are shaping the future of technology.
             </motion.p>
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -212,7 +208,7 @@ const ServicesPage: React.FC = () => {
       </motion.div>
 
       {/* Search and Filters */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.8 }}
@@ -286,7 +282,7 @@ const ServicesPage: React.FC = () => {
       </motion.div>
 
       {/* Services Grid */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 1.0 }}
@@ -305,7 +301,7 @@ const ServicesPage: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {sortedServices.map((service, index) => (
               <motion.div
-                key={service.id || index}
+                key={service.id}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -330,7 +326,6 @@ const ServicesPage: React.FC = () => {
                     <span className={`px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${getServiceColor(getServiceCategory(service))} text-white`}>
                       {getServiceCategory(service)}
                     </span>
-                    <span className="text-xs text-gray-500">{getServiceCategory(service)}</span>
                   </div>
 
                   {/* Pricing */}
@@ -342,12 +337,10 @@ const ServicesPage: React.FC = () => {
                   </div>
 
                   {/* Market Info */}
-                  {getServiceMarketSize(service) && (
-                    <div className="flex items-center justify-between mb-4 text-sm">
-                      <span className="text-gray-400">Market Size:</span>
-                      <span className="text-green-400 font-medium">{getServiceMarketSize(service)}</span>
-                    </div>
-                  )}
+                  <div className="flex items-center justify-between mb-4 text-sm">
+                    <span className="text-gray-400">Market Size:</span>
+                    <span className="text-green-400 font-medium">{getServiceMarketSize(service)}</span>
+                  </div>
 
                   {/* Features Preview */}
                   {service.features && service.features.length > 0 && (
@@ -390,7 +383,7 @@ const ServicesPage: React.FC = () => {
           <div className="space-y-4">
             {sortedServices.map((service, index) => (
               <motion.div
-                key={service.id || index}
+                key={service.id}
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -414,7 +407,7 @@ const ServicesPage: React.FC = () => {
                         </p>
                         <div className="flex items-center gap-2 mb-3">
                           <span className={`px-3 py-1 rounded-full text-sm font-medium bg-gradient-to-r ${getServiceColor(getServiceCategory(service))} text-white`}>
-                            {getServiceCategory(service)}
+                            {service.category}
                           </span>
                           <span className="text-sm text-gray-500">{getServiceCategory(service)}</span>
                         </div>
@@ -427,12 +420,10 @@ const ServicesPage: React.FC = () => {
                           </div>
                           <div className="text-sm text-gray-500">Starting price</div>
                         </div>
-                        {getServiceMarketSize(service) && (
-                          <div className="text-sm">
-                            <span className="text-gray-400">Market: </span>
-                            <span className="text-green-400 font-medium">{getServiceMarketSize(service)}</span>
-                          </div>
-                        )}
+                        <div className="text-sm">
+                          <span className="text-gray-400">Market: </span>
+                          <span className="text-green-400 font-medium">{getServiceMarketSize(service)}</span>
+                        </div>
                       </div>
                     </div>
 
@@ -474,7 +465,7 @@ const ServicesPage: React.FC = () => {
       </motion.div>
 
       {/* Contact Section */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1.2 }}
@@ -485,7 +476,7 @@ const ServicesPage: React.FC = () => {
             Ready to Transform Your Business?
           </h2>
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-            Our innovative services are designed to give you a competitive edge in the rapidly evolving technology landscape. 
+            Our innovative services are designed to give you a competitive edge in the rapidly evolving technology landscape.
             Contact us today to learn how we can help you achieve your goals.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -514,4 +505,4 @@ const ServicesPage: React.FC = () => {
   );
 };
 
-export default ServicesPage;
+export default InnovativeServicesShowcase2025V2;
