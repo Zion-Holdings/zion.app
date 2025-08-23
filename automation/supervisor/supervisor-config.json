@@ -1,0 +1,19 @@
+{
+  "includePatterns": [
+    "*-cron.sh"
+  ],
+  "exclude": [
+    "autonomous-error-cron-system.sh"
+  ],
+  "errorKeywords": [
+    "error",
+    "fatal",
+    "TypeError",
+    "ReferenceError",
+    "UnhandledPromiseRejection",
+    "ENOENT",
+    "EADDRINUSE"
+  ],
+  "tailLines": 200,
+  "intervalSeconds": 180
+}
