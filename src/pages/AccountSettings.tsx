@@ -2,19 +2,23 @@
 import { useState } from 'react';
 import { useLocalStorage } from '@/hooks';
 import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
 import { SEO } from '@/components/SEO';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Wallet, Database, Save } from "lucide-react";
+import { Wallet, Database, Save } from 'lucide-react';
+
+
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
 import { toast } from 'sonner';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 export default function AccountSettings() {
+
   const { user } = useAuth();
   const [displayWeb3, setDisplayWeb3] = useLocalStorage('display_web3', false);
   const [didHandle, setDidHandle] = useLocalStorage('did_handle', '');
@@ -30,10 +34,10 @@ export default function AccountSettings() {
         setDisplayWeb3(displayWeb3);
         setDidHandle(didHandle);
         setEnableBackup(enableBackup);
-        console.log('Saved settings', { displayWeb3, didHandle, enableBackup });
+        logInfo('Saved settings', { displayWeb3, didHandle, enableBackup });
         toast.success('Account settings updated successfully');
       } catch (e) {
-        console.error('Failed to save settings', e);
+        logErrorToProduction('Failed to save settings', { data:  e });
         toast.error('Failed to save settings');
       } finally {
         setIsSubmitting(false);
@@ -69,7 +73,7 @@ export default function AccountSettings() {
           setDidHandle(ensName);
         }
       } catch (error) {
-        console.error('ENS lookup error:', error);
+        logErrorToProduction('ENS lookup error:', { data: error });
       }
       
       toast.success(`Wallet connected: ${address.slice(0, 6)}...${address.slice(-4)}`);
@@ -272,7 +276,6 @@ export default function AccountSettings() {
           </Card>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

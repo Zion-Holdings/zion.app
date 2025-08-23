@@ -1,17 +1,19 @@
 
-import { UserProfile, UserDetails } from '@/types/auth';
+import { UserDetails } from '@/types/auth';
 import { supabase } from '@/integrations/supabase/client';
 import { Conversation, ConversationContextData } from '@/types/messaging';
 import { toast } from '@/hooks/use-toast';
+import {logErrorToProduction} from '@/utils/productionLogger';
+
 
 // Allow either UserProfile or UserDetails
-type UserWithProfile = UserProfile | UserDetails | null;
+type UserWithProfile = UserDetails | null;
 
 /**
  * Hook to handle conversation operations
  */
 export function useConversations(
-  user: UserWithProfile,
+  user: UserDetails | null,
   setConversations: (conversations: Conversation[]) => void,
   setUnreadCount: (count: number) => void,
   setIsLoading: (loading: boolean) => void
@@ -34,7 +36,7 @@ export function useConversations(
       if (error) throw error;
       
       // Format conversations
-      const formattedConversations: Conversation[] = data.map(conv => {
+      const formattedConversations: Conversation[] = data.map((conv: any) => {
         const isUserOne = conv.user_one_id === user.id;
         const otherUserId = isUserOne ? conv.user_two_id : conv.user_one_id;
         
@@ -70,7 +72,7 @@ export function useConversations(
       );
       setUnreadCount(totalUnread);
     } catch (error) {
-      console.error('Error fetching conversations:', error);
+      logErrorToProduction('Error fetching conversations:', { data: error });
     } finally {
       setIsLoading(false);
     }
@@ -101,7 +103,7 @@ export function useConversations(
       
       if (existingConversations && existingConversations.length > 0) {
         // Use existing conversation
-        conversationId = existingConversations[0].id;
+        conversationId = existingConversations[0]?.id;
         
         // Update context if provided
         if (contextType || contextId || contextData) {
@@ -130,8 +132,8 @@ export function useConversations(
           .from('conversations')
           .insert({
             user_one_id: user.id,
-            user_one_name: user.displayName || user.email,
-            user_one_avatar: user.avatarUrl || ('avatar_url' in user ? user.avatar_url : undefined),
+            user_one_name: user.name || user.email,
+            user_one_avatar: user.avatarUrl,
             user_one_type: user.userType,
             user_two_id: recipientId,
             user_two_name: recipientData?.display_name || 'User',
@@ -171,7 +173,7 @@ export function useConversations(
       // Return the conversation ID
       return conversationId;
     } catch (error) {
-      console.error('Error creating conversation:', error);
+      logErrorToProduction('Error creating conversation:', { data: error });
       toast({
         title: "Failed to create conversation",
         description: "Please try again later",

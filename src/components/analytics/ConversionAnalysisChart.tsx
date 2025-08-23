@@ -1,7 +1,6 @@
-
 import React from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { AnalyticsChart } from "@/components/analytics/AnalyticsChart";
+import { DynamicAnalyticsChart as AnalyticsChart } from "@/utils/dynamicComponents";
 
 interface ConversionAnalysisProps {
   data: Array<Record<string, any>>;
@@ -10,7 +9,7 @@ interface ConversionAnalysisProps {
 }
 
 export function ConversionAnalysisChart({ data, timeRange, onTimeRangeChange }: ConversionAnalysisProps) {
-  const dataKeys = data && data.length > 0
+  const dataKeys = data && data.length > 0 && data[0]
     ? Object.keys(data[0]).filter(key => key !== 'date')
     : [];
 
@@ -23,7 +22,11 @@ export function ConversionAnalysisChart({ data, timeRange, onTimeRangeChange }: 
       <CardContent>
         <AnalyticsChart
           title=""
-          data={data || []}
+          data={(data || []).map(item => ({
+            name: item.name || item.label || 'Unknown',
+            value: item.value || item.count || 0,
+            ...item
+          }))}
           dataKeys={dataKeys}
           type="bar"
           timeRange={timeRange}

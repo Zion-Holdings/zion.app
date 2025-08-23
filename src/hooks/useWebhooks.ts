@@ -1,10 +1,11 @@
-
 import { useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 
 export type WebhookEventType = 'new_application' | 'quote_received' | 'milestone_approved' | 'talent_hired';
+
+import {logErrorToProduction} from "@/utils/productionLogger";
 
 export interface Webhook {
   id: string;
@@ -34,11 +35,10 @@ export function useWebhooks() {
     // import.meta may be undefined when this hook is executed in a Node
     // environment (e.g. during server side rendering or tests). Using optional
     // chaining avoids a TypeError in those cases and falls back to process.env.
-    const env = (import.meta as any)?.env ?? process.env;
+    // For Next.js, process.env is the primary source.
     const url =
-      env.VITE_SUPABASE_URL ||
-      env.NEXT_PUBLIC_SUPABASE_URL ||
-      env.SUPABASE_URL;
+      process.env.NEXT_PUBLIC_SUPABASE_URL ||
+      process.env.SUPABASE_URL; // Fallback if NEXT_PUBLIC_ is not set but SUPABASE_URL is
     return `${url}/functions/v1/webhook-manager`;
   };
 
@@ -59,7 +59,7 @@ export function useWebhooks() {
       const response = await fetch(`${getWebhookUrl()}/webhooks`, {
         method: 'GET',
         headers: {
-          'Authorization': `Bearer ${session.access_token}`,
+          'Authorization': `Bearer ${(session as any)?.access_token}`,
           'Content-Type': 'application/json'
         }
       });
@@ -72,7 +72,7 @@ export function useWebhooks() {
 
       setWebhooks(result.webhooks || []);
     } catch (err) {
-      console.error('Error fetching webhooks:', err);
+      logErrorToProduction('Error fetching webhooks:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -101,7 +101,7 @@ export function useWebhooks() {
       const response = await fetch(`${getWebhookUrl()}/create`, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${session.access_token}`,
+          'Authorization': `Bearer ${(session as any)?.access_token}`,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
@@ -128,7 +128,7 @@ export function useWebhooks() {
       
       return result.webhook;
     } catch (err) {
-      console.error('Error creating webhook:', err);
+      logErrorToProduction('Error creating webhook:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -157,7 +157,7 @@ export function useWebhooks() {
       const response = await fetch(`${getWebhookUrl()}/toggle`, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${session.access_token}`,
+          'Authorization': `Bearer ${(session as any)?.access_token}`,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ webhookId, isActive })
@@ -181,7 +181,7 @@ export function useWebhooks() {
       
       return result;
     } catch (err) {
-      console.error('Error toggling webhook:', err);
+      logErrorToProduction('Error toggling webhook:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -210,7 +210,7 @@ export function useWebhooks() {
       const response = await fetch(`${getWebhookUrl()}/delete`, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${session.access_token}`,
+          'Authorization': `Bearer ${(session as any)?.access_token}`,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ webhookId })
@@ -232,7 +232,7 @@ export function useWebhooks() {
       
       return result;
     } catch (err) {
-      console.error('Error deleting webhook:', err);
+      logErrorToProduction('Error deleting webhook:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -262,7 +262,7 @@ export function useWebhooks() {
       const response = await fetch(`${getWebhookUrl()}/test`, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${session.access_token}`,
+          'Authorization': `Bearer ${(session as any)?.access_token}`,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ webhookId, eventType })
@@ -293,7 +293,7 @@ export function useWebhooks() {
       
       return result;
     } catch (err) {
-      console.error('Error testing webhook:', err);
+      logErrorToProduction('Error testing webhook:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",

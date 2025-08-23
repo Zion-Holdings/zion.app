@@ -1,53 +1,53 @@
-export interface UserDetails {
-  id?: string;
-  name?: string;
-  email?: string;
-  userType?: string;
-  displayName?: string;
+export interface AuthState {
+  token: string | null;
+  isLoggedIn: boolean;
+}
+
+export interface UserProfile {
+  id: string;
+  email: string;
+  name: string;
+  userType?: 'talent' | 'client' | 'admin' | null;
+  profileComplete: boolean;
+  created_at: string;
+  updated_at: string;
+  role: string;
+  displayName: string;
+  points: number;
   avatarUrl?: string;
-  headline?: string;
-  profileComplete?: boolean;
-  role?: string;
-  permissions?: string[];
-  companyId?: string;
   bio?: string;
+  headline?: string;
+  emailVerified?: boolean;
+  interests?: string[];
+  preferredCategories?: string[];
+}
+
+export interface UserDetails extends UserProfile {
+  headline?: string;
   createdAt?: string;
   updatedAt?: string;
 }
 
-export interface UserProfile {
-  id?: string;
-  displayName?: string;
+export interface SignupParams {
   email: string;
-  userType: string;
-  profileComplete: boolean;
-  createdAt: string;
-  updatedAt: string;
-  avatar_url?: string;
-  bio?: string;
-  avatarUrl?: string;
-  headline?: string;
-  role?: string;
-  permissions?: string[];
-  companyId?: string;
+  password: string;
+  display_name: string;
 }
 
-// Update AuthContextType definition to match implementation
 export interface AuthContextType {
   user: UserDetails | null;
-  isLoading: boolean;
   isAuthenticated: boolean;
-  login: (email: string, password: string) => Promise<{ data?: any; error?: any }>;
-  signup: (email: string, password: string, userData?: any) => Promise<{ error?: any }>;
+  isLoading: boolean;
+  login: (email: string, password: string, rememberMe?: boolean) => Promise<{ error: any }>;
   logout: () => Promise<void>;
-  resetPassword: (email: string) => Promise<{ error?: any }>;
-  updateProfile: (data: Partial<UserDetails>) => Promise<{ error?: any }>;
-  loginWithGoogle: () => Promise<void>;
-  loginWithFacebook: () => Promise<void>;
-  loginWithTwitter: () => Promise<void>;
+  signUp: (email: string, password: string, userData?: Partial<UserDetails>) => Promise<{ error: any; emailVerificationRequired?: boolean }>;
+  resetPassword: (email: string) => Promise<{ error: any }>;
+  updateProfile: (data: Partial<UserDetails>) => Promise<{ error: any }>;
+  loginWithGoogle: () => void;
+  loginWithFacebook: () => void;
+  loginWithGitHub: () => void;
+  loginWithTwitter: () => void;
   loginWithWeb3: () => Promise<void>;
-  signIn?: (email: string, password: string) => Promise<{ error: any }>;
-  signOut?: () => Promise<void>;
-  signUp?: (email: string, password: string, userData?: Partial<UserDetails>) => Promise<{ error: any }>;
-  tokens?: { accessToken: string; refreshToken?: string } | null;
+  avatarUrl: string | null;
+  setUser: React.Dispatch<React.SetStateAction<UserDetails | null>>;
 }

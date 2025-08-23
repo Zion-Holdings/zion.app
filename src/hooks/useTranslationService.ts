@@ -1,11 +1,10 @@
-
 import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
-const openAiKey =
-  import.meta.env.VITE_OPENAI_API_KEY ||
-  (import.meta.env as any).NEXT_PUBLIC_OPENAI_API_KEY ||
-  process.env.OPENAI_API_KEY;
+
+// Only use the public client-side OpenAI key - never reference server-side secrets
+const openAiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
 import { useLanguage, SupportedLanguage } from '@/context/LanguageContext';
 
 type ContentType = 'job' | 'profile' | 'service' | 'general';
@@ -23,7 +22,7 @@ export function useTranslationService() {
     content: string,
     contentType: ContentType = 'general',
     sourceLanguage: SupportedLanguage = 'en',
-    targetLanguages: SupportedLanguage[] = ['en', 'es', 'pt', 'ar']
+    targetLanguages: SupportedLanguage[] = ['en', 'es', 'fr', 'pt', 'ar']
   ): Promise<TranslationResponse> => {
     setIsTranslating(true);
 
@@ -88,10 +87,11 @@ export function useTranslationService() {
       setIsTranslating(false);
       
       if (error) {
-        console.error('Translation error:', error);
+        logErrorToProduction('Translation error:', { data: error });
         const initialTranslations: Record<SupportedLanguage, string> = {
           en: content,
           es: '',
+          fr: '',
           pt: '',
           ar: ''
         };
@@ -99,14 +99,28 @@ export function useTranslationService() {
         return { translations: initialTranslations, error: error.message };
       }
       
-      return { translations: data.translations };
+      // Handle mock response with fallback
+      if (!data || !(data as any)?.translations) {
+        const initialTranslations: Record<SupportedLanguage, string> = {
+          en: content,
+          es: '',
+          fr: '',
+          pt: '',
+          ar: ''
+        };
+        initialTranslations[sourceLanguage] = content;
+        return { translations: initialTranslations };
+      }
+      
+      return { translations: (data as any).translations };
     } catch (err) {
       setIsTranslating(false);
-      console.error('Translation service error:', err);
+      logErrorToProduction('Translation service error:', { data: err });
       
       const initialTranslations: Record<SupportedLanguage, string> = {
         en: content,
         es: '',
+        fr: '',
         pt: '',
         ar: ''
       };

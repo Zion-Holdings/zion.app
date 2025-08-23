@@ -7,6 +7,8 @@ import { EducationForm } from '../forms/EducationForm';
 import { SkillsForm } from '../forms/SkillsForm';
 import { CertificationsForm } from '../forms/CertificationsForm';
 import { PreviewResume } from '../PreviewResume';
+import { logInfo } from '@/utils/productionLogger';
+
 
 interface ResumeStepContentProps {
   activeTab: string;
@@ -29,7 +31,7 @@ export const ResumeStepContent = ({
           initialData={resume?.basic_info}
           onSave={(data) => {
             // Here you would typically save the data to your backend
-            console.log("Saving basic info:", data);
+            logInfo('Saving basic info:', { data: data });
           }}
           onComplete={onNextStep} 
         />

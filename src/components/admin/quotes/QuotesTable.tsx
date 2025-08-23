@@ -1,6 +1,10 @@
 
 import React from "react";
-import { Eye, MoreHorizontal, Archive, Trash2 } from "lucide-react";
+import { Eye, MoreHorizontal, Archive, Trash2 } from 'lucide-react';
+
+
+
+
 import { 
   Table, 
   TableBody, 
@@ -138,7 +142,7 @@ export const QuotesTable: React.FC<QuotesTableProps> = ({
                     ) : (
                       <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                          <Button variant="ghost" size="icon">
+                          <Button variant="ghost" size="icon" aria-label="More actions">
                             <MoreHorizontal className="h-4 w-4" />
                             <span className="sr-only">Actions</span>
                           </Button>

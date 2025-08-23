@@ -1,6 +1,7 @@
 
 import React from "react";
-import { Star } from "lucide-react";
+import { Star } from 'lucide-react';
+
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 
 const testimonials = [
@@ -55,7 +56,7 @@ export const AppTestimonials: React.FC = () => {
               <CardFooter className="border-t border-zion-purple/20 pt-4">
                 <div className="flex items-center">
                   <div className="h-10 w-10 rounded-full overflow-hidden mr-4">
-                    <img src={testimonial.avatar} alt={testimonial.name} className="h-full w-full object-cover" />
+                    <img src={testimonial.avatar} alt={testimonial.name} className="h-full w-full object-cover" loading="lazy" />
                   </div>
                   <div>
                     <p className="font-semibold text-white">{testimonial.name}</p>

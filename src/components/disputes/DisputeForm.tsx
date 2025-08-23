@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, ControllerRenderProps } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
+import { FileText } from 'lucide-react';
 import {
   Form,
   FormControl,
@@ -20,10 +22,10 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
-import { DisputeReason, disputeReasonLabels } from "@/types/disputes";
+import { disputeReasonLabels } from "@/types/disputes";
 import { useDisputes } from "@/hooks/useDisputes";
 import { toast } from "sonner";
-import { FileText } from "lucide-react";
+
 
 const formSchema = z.object({
   reason_code: z.string()
@@ -89,7 +91,7 @@ export function DisputeForm({
         // Future enhancement: Upload attachments
         // For now we just log the files that would be uploaded
         if (files.length > 0) {
-          console.log(`Would upload ${files.length} files for dispute ${dispute.id}`);
+          // logInfo(`Would upload ${files.length} files for dispute ${dispute.id}`);
         }
         
         toast.success("Your dispute has been submitted");
@@ -99,7 +101,7 @@ export function DisputeForm({
         }
       }
     } catch (error) {
-      console.error("Error submitting dispute:", error);
+      logErrorToProduction('Error submitting dispute:', { data: error });
       toast.error("Failed to submit dispute. Please try again.");
     } finally {
       setIsSubmitting(false);
@@ -118,7 +120,7 @@ export function DisputeForm({
           <FormField
             control={form.control}
             name="reason_code"
-            render={({ field }) => (
+            render={({ field }: { field: ControllerRenderProps<z.infer<typeof formSchema>, "reason_code"> }) => (
               <FormItem>
                 <FormLabel>Reason for dispute</FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
@@ -141,7 +143,7 @@ export function DisputeForm({
           <FormField
             control={form.control}
             name="description"
-            render={({ field }) => (
+            render={({ field }: { field: ControllerRenderProps<z.infer<typeof formSchema>, "description"> }) => (
               <FormItem>
                 <FormLabel>Describe the issue in detail</FormLabel>
                 <FormControl>

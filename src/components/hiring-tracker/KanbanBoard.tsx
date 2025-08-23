@@ -2,12 +2,11 @@
 import { useState, useEffect } from "react";
 // Use a lightweight local stub for drag-and-drop to avoid missing dependency
 // errors when the real package isn't installed.
-import { DragDropContext, Droppable, Draggable } from "@/lib/dnd-stub";
+import { DragDropContext } from "@/lib/dnd-stub";
 import { useJobApplications } from "@/hooks/useJobApplications";
 import { JobApplication, ApplicationStatus } from "@/types/jobs";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import Skeleton from "@/components/ui/skeleton";
 import { toast } from "@/hooks/use-toast";
 import { KanbanColumn } from "./KanbanColumn";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -93,10 +92,10 @@ export function KanbanBoard({ jobId }: KanbanBoardProps) {
     const newStatus = destination.droppableId as ApplicationStatus;
     
     // Optimistically update the UI
-    const sourceColumn = [...columns[source.droppableId]];
-    const destColumn = [...columns[destination.droppableId]];
+    const sourceColumn = [...(columns[source.droppableId] || [])];
+    const destColumn = [...(columns[destination.droppableId] || [])];
     const [removed] = sourceColumn.splice(source.index, 1);
-    destColumn.splice(destination.index, 0, { ...removed, status: newStatus });
+    destColumn.splice(destination.index, 0, { ...removed, status: newStatus } as JobApplication);
     
     setColumns({
       ...columns,

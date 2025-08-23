@@ -1,14 +1,18 @@
-
 import { formatDistanceToNow } from "date-fns";
-import { Link } from "react-router-dom";
-import { Calendar, User, FileText, BarChart } from "lucide-react";
+import { Calendar, User, FileText, BarChart } from 'lucide-react';
+
+
+
+
 import { Button } from "@/components/ui/button";
-import { Avatar } from "@/components/ui/avatar";
+import { Avatar as AvatarPrimitive } from "@/components/ui/avatar"; // Renamed to avoid conflict
 import { TableRow, TableCell } from "@/components/ui/table";
 import { JobApplication, ApplicationStatus } from "@/types/jobs";
 import { StatusBadge } from "./StatusBadge";
 import { ScoreBadge } from "./ScoreBadge";
 import { ApplicationActions } from "./ApplicationActions";
+import Image from 'next/image'; // Import next/image
+import React, { useState } from 'react'; // Import useState
 
 interface ApplicationRowProps {
   application: JobApplication;
@@ -25,23 +29,31 @@ export function ApplicationRow({
   onStatusChange,
   onViewScore
 }: ApplicationRowProps) {
+  const [avatarError, setAvatarError] = useState(false);
+  const talentName = application.talent_profile?.full_name || "Unknown";
+
   return (
     <TableRow key={application.id}>
       <TableCell>
         <div className="flex items-center gap-3">
-          <Avatar className="h-9 w-9">
-            {application.talent_profile?.profile_picture_url ? (
-              <img 
+          <AvatarPrimitive className="h-9 w-9"> {/* Using renamed AvatarPrimitive */}
+            {application.talent_profile?.profile_picture_url && !avatarError ? (
+              <Image
                 src={application.talent_profile.profile_picture_url} 
-                alt={application.talent_profile.full_name} 
+                alt={talentName}
+                width={36} // Corresponds to h-9 w-9 (9 * 4px = 36px)
+                height={36} // Corresponds to h-9 w-9
+                className="rounded-full object-cover" // Ensure rounded and object-cover
+                onError={() => setAvatarError(true)}
+                priority={false}
               />
             ) : (
               <User className="h-5 w-5 text-gray-400" />
             )}
-          </Avatar>
+          </AvatarPrimitive>
           <div>
             <div className="font-medium">
-              {application.talent_profile?.full_name || "Unknown"}
+              {talentName}
             </div>
             <div className="text-xs text-muted-foreground">
               {application.talent_profile?.professional_title || "Talent"}

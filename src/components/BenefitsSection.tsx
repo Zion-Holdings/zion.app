@@ -1,39 +1,53 @@
 
 import { GradientHeading } from "./GradientHeading";
 import { FeatureCard } from "./FeatureCard";
-import { Bot, Clock, Globe, TrendingDown } from "lucide-react";
+import { Bot, Clock, Globe, TrendingDown } from 'lucide-react';
 
-const benefits = [
+
+
+
+import { cn } from "@/lib/utils";
+import { useTranslation } from "react-i18next";
+
+interface BenefitsSectionProps {
+  className?: string;
+  style?: React.CSSProperties;
+}
+
+const getBenefits = (t: any) => [
   {
-    title: "AI-Powered Matchmaking",
-    description: "Our advanced algorithms match your needs with the perfect service providers or products, saving you time and ensuring optimal results.",
+    title: t('benefits.ai_matchmaking'),
+    description: t('benefits.ai_matchmaking_desc'),
     icon: <Bot className="w-8 h-8" />,
   },
   {
-    title: "Global Availability",
-    description: "Access a worldwide network of tech talents, products, and services to find the best solutions regardless of geographic limitations.",
+    title: t('benefits.global_availability'),
+    description: t('benefits.global_availability_desc'),
     icon: <Globe className="w-8 h-8" />,
   },
   {
-    title: "24/7 Support",
-    description: "Our dedicated team is available around the clock to assist with any questions or issues you might encounter during your journey.",
+    title: t('benefits.support_24_7'),
+    description: t('benefits.support_24_7_desc'),
     icon: <Clock className="w-8 h-8" />,
   },
   {
-    title: "Cost Reduction",
-    description: "Eliminate middlemen and reduce costs by up to 40% through direct connections with service providers and product vendors.",
+    title: t('benefits.cost_reduction'),
+    description: t('benefits.cost_reduction_desc'),
     icon: <TrendingDown className="w-8 h-8" />,
   },
 ];
 
-export function BenefitsSection() {
+export function BenefitsSection({ className, style }: BenefitsSectionProps) {
+  const { t } = useTranslation();
+  const benefits = getBenefits(t);
+  
   return (
-    <section className="py-20 bg-zion-blue-light">
+    <section className={cn("py-20 bg-zion-blue-light", className)} style={style}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <GradientHeading>Why Zion?</GradientHeading>
+          <GradientHeading>{t('home.benefits_title')}</GradientHeading>
           <p className="text-zion-slate-light text-lg mt-4 max-w-2xl mx-auto">
-            Experience the next generation of tech marketplace with features designed to maximize efficiency and value
+            {t('home.benefits_subtitle')}
           </p>
         </div>
         

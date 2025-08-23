@@ -1,10 +1,11 @@
-import { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useState, useEffect } from 'react' // Added useEffect for router.isReady
+import { useRouter } from 'next/router' // Changed from useParams, useNavigate
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
+import { LoadingSpinner } from '@/components/ui/enhanced-loading-states'
 import { toast } from '@/hooks/use-toast'
+import { resetPassword } from '@/services/auth'
 
-const API_URL = import.meta.env.VITE_API_URL || ''
 
 function strength(pw: string) {
   if (pw.length < 8) return 0
@@ -14,11 +15,34 @@ function strength(pw: string) {
 }
 
 export default function ResetPassword() {
-  const { token = '', uid = '' } = useParams()
+  const router = useRouter()
+  const [token, setToken] = useState('')
+  // navigate is now router
   const [password, setPassword] = useState('')
   const [confirm, setConfirm] = useState('')
   const [loading, setLoading] = useState(false)
   const s = strength(password)
+
+  useEffect(() => {
+    if (router.isReady) {
+      const { token: rawToken } = router.query;
+      setToken(typeof rawToken === 'string' ? rawToken : '');
+    }
+  }, [router.isReady, router.query]);
+
+  if (!token && router.isReady) { // Check token only after router is ready
+    return (
+      <div className="flex min-h-screen items-center justify-center p-4 text-red-500">
+        <p>Invalid or missing reset token.</p>
+      </div>
+    )
+  }
+
+  // Show loading or placeholder if router not ready and token not yet set.
+  if (!router.isReady && !token) {
+     return <div className="flex min-h-screen items-center justify-center p-4">Loading...</div>;
+  }
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -28,16 +52,11 @@ export default function ResetPassword() {
     }
     setLoading(true)
     try {
-      const res = await fetch(`${API_URL}/auth/reset-password/${uid}/${token}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ password })
-      })
-      if (res.status === 200) {
-        toast.success('Password updated')
-      } else {
-        toast.error('Reset failed')
-      }
+      await resetPassword(token, password) // token is now from state, derived from router.query
+      toast.success('Password has been reset successfully!')
+      router.push('/login') // Changed to router.push
+    } catch (err: any) {
+      toast.error(err.message || 'Reset failed')
     } finally {
       setLoading(false)
     }
@@ -64,7 +83,16 @@ export default function ResetPassword() {
           value={confirm}
           onChange={(e) => setConfirm(e.target.value)}
         />
-        <Button type="submit" disabled={loading}>{loading ? 'Saving...' : 'Reset Password'}</Button>
+        <Button type="submit" disabled={loading}>
+          {loading ? (
+            <>
+              <LoadingSpinner size="sm" className="mr-2" />
+              Saving...
+            </>
+          ) : (
+            'Reset Password'
+          )}
+        </Button>
       </form>
     </div>
   )

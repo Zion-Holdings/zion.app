@@ -2,8 +2,10 @@ import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { Resume } from '@/types/resume';
 import { useAuth } from '@/hooks/useAuth';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function useFetchResume() {
+
   const { user } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -100,7 +102,7 @@ export function useFetchResume() {
       setResume(fullResume);
       return fullResume;
     } catch (e: any) {
-      console.error('Error fetching resume:', e);
+      logErrorToProduction('Error fetching resume:', { data:  e });
       setError(e.message);
       return null;
     } finally {

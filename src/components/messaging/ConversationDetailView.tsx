@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { format } from 'date-fns';
 import { MessageSquare } from 'lucide-react';
+
 import { useMessaging } from '@/context/MessagingContext';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -20,11 +21,13 @@ export function ConversationDetailView() {
   } = useMessaging();
   const [messageText, setMessageText] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLTextAreaElement | null>(null);
   
   useEffect(() => {
     if (activeConversation) {
       loadMessages(activeConversation.id);
     }
+    inputRef.current?.focus();
   }, [activeConversation?.id, loadMessages]);
   
   useEffect(() => {
@@ -35,12 +38,24 @@ export function ConversationDetailView() {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
   
-  const handleSendMessage = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const send = async () => {
     if (!messageText.trim() || !activeConversation) return;
-    
+
     await sendMessage(activeConversation.id, messageText);
     setMessageText('');
+    inputRef.current?.focus();
+  };
+
+  const handleSendMessage = async (e: React.FormEvent) => {
+    e.preventDefault();
+    await send();
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      send();
+    }
   };
   
   if (!activeConversation) {
@@ -106,13 +121,14 @@ export function ConversationDetailView() {
       {hasContextData && (
         <div className="p-4 border-b border-zion-purple/20 bg-zion-blue-dark/10">
           <div className="text-sm text-zion-slate flex items-start gap-3">
-            {activeConversation.context_data.image_url && (
+            {activeConversation.context_data && activeConversation.context_data.image_url && (
               <div className="w-16 h-16 flex-shrink-0">
                 <AspectRatio ratio={1/1} className="rounded bg-zion-blue-dark/30 overflow-hidden">
                   <img
                     src={activeConversation.context_data.image_url}
                     alt={activeConversation.context_data.title || "Context"}
                     className="object-cover"
+                    loading="lazy"
                   />
                 </AspectRatio>
               </div>
@@ -124,9 +140,9 @@ export function ConversationDetailView() {
                  'Regarding:'}
               </div>
               <div className="text-zion-cyan font-medium">
-                {activeConversation.context_data.title}
+                {activeConversation.context_data && activeConversation.context_data.title}
               </div>
-              {activeConversation.context_data.description && (
+              {activeConversation.context_data && activeConversation.context_data.description && (
                 <div className="text-xs text-zion-slate mt-1 line-clamp-2">
                   {activeConversation.context_data.description}
                 </div>
@@ -167,8 +183,10 @@ export function ConversationDetailView() {
           <textarea
             value={messageText}
             onChange={(e) => setMessageText(e.target.value)}
+            onKeyDown={handleKeyDown}
             placeholder="Type a message..."
             className="flex-1 bg-zion-blue-dark/30 border border-zion-purple/20 rounded-md p-2 min-h-[80px] text-black focus:outline-none focus:ring-2 focus:ring-zion-cyan"
+            ref={inputRef}
           />
           <Button 
             type="submit"

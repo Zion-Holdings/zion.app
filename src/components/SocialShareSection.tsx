@@ -1,11 +1,20 @@
 
 import { Button } from "./ui/button";
-import { Twitter, Facebook, Linkedin, Link } from "@/components/icons";
+import { Twitter, Facebook, Linkedin, Link } from 'lucide-react';
+
+
+
+
 import { toast } from "./ui/use-toast";
+import { useTranslation } from 'react-i18next';
 
 export function SocialShareSection() {
-  // Current URL and text to share
-  const shareUrl = encodeURIComponent(window.location.href);
+  const { t } = useTranslation();
+  
+  // Current URL is not available during SSR, guard with typeof check
+  const shareUrl = typeof window !== 'undefined'
+    ? encodeURIComponent(window.location.href)
+    : '';
   const shareText = encodeURIComponent("Check out Zion - The Future of AI & Tech Marketplace");
   
   // Social sharing functions
@@ -31,7 +40,7 @@ export function SocialShareSection() {
       })
       .catch(() => {
         toast({
-          title: "Failed to copy",
+          title: t('errors.failed_to_copy'),
           description: "Please try again or copy the URL manually",
           variant: "destructive"
         });
@@ -41,25 +50,25 @@ export function SocialShareSection() {
   const shareLinks = [
     {
       name: "Twitter",
-      icon: <Twitter className="h-5 w-5" />,
+      icon: <Twitter className="h-5 w-5" aria-hidden="true" />, 
       color: "bg-[#1DA1F2] hover:bg-[#1DA1F2]/80",
       onClick: shareToTwitter
     },
     {
       name: "Facebook",
-      icon: <Facebook className="h-5 w-5" />,
+      icon: <Facebook className="h-5 w-5" aria-hidden="true" />,
       color: "bg-[#4267B2] hover:bg-[#4267B2]/80",
       onClick: shareToFacebook
     },
     {
       name: "LinkedIn",
-      icon: <Linkedin className="h-5 w-5" />,
+      icon: <Linkedin className="h-5 w-5" aria-hidden="true" />,
       color: "bg-[#0077B5] hover:bg-[#0077B5]/80",
       onClick: shareToLinkedIn
     },
     {
       name: "Copy Link",
-      icon: <Link className="h-5 w-5" />,
+      icon: <Link className="h-5 w-5" aria-hidden="true" />,
       color: "bg-zion-blue-dark hover:bg-zion-blue-dark/80",
       onClick: copyLinkToClipboard
     },
@@ -84,7 +93,8 @@ export function SocialShareSection() {
                 title={link.name}
               >
                 {link.icon}
-                <span>{link.name}</span>
+                <span className="sr-only">{link.name}</span>
+                <span aria-hidden="true">{link.name}</span>
               </Button>
             ))}
           </div>

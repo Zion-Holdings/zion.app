@@ -1,8 +1,8 @@
-
 import React, { createContext, useState, useContext, useEffect, ReactNode } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 // Analytics event types
 export type AnalyticsEventType = 
@@ -18,7 +18,9 @@ export type AnalyticsEventType =
   | 'payment_initiated'
   | 'payment_completed'
   | 'signup'
-  | 'login';
+  | 'login'
+  | 'feature_usage'
+  | 'session_duration';
 
 // Interface for analytics events
 export interface AnalyticsEvent {
@@ -45,24 +47,27 @@ const AnalyticsContext = createContext<AnalyticsContextType | undefined>(
 );
 
 export function AnalyticsProvider({ children }: { children: ReactNode }) {
+  if (process.env.NODE_ENV === 'development') {
+    logInfo('[AnalyticsProvider] Initializing...');
+  }
   const [pageViews, setPageViews] = useState(0);
   const [events, setEvents] = useState<AnalyticsEvent[]>([]);
   const [lastEvent, setLastEvent] = useState<AnalyticsEvent | null>(null);
-  const location = useLocation();
+  const router = useRouter();
   const { user } = useAuth();
 
   // Track page views when location changes
   useEffect(() => {
-    trackEvent('page_view', { path: location.pathname });
+    trackEvent('page_view', { path: router.pathname });
     setPageViews((prev) => prev + 1);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [location.pathname]);
+     
+  }, [router.pathname]);
 
   // Function to track general analytics events
   const trackEvent = async (type: AnalyticsEventType, metadata: Record<string, any> = {}) => {
     const event: AnalyticsEvent = {
       type,
-      path: location.pathname,
+      path: router.pathname,
       timestamp: Date.now(),
       userId: user?.id,
       metadata
@@ -75,14 +80,18 @@ export function AnalyticsProvider({ children }: { children: ReactNode }) {
       // Store event in Supabase for persistent analytics
       await supabase.from('analytics_events').insert([{
         event_type: type,
-        path: location.pathname,
+        path: router.pathname,
         user_id: user?.id,
         metadata: metadata
       }]);
       
-      console.log(`Analytics event tracked: ${type}`, metadata);
+      if (process.env.NODE_ENV === 'development') {
+        logInfo(`Analytics event tracked: ${type}`, { data: metadata });
+      }
     } catch (error) {
-      console.error('Error logging analytics event:', error);
+      if (process.env.NODE_ENV === 'development') {
+        logErrorToProduction('Error logging analytics event:', { data: error });
+      }
     }
   };
 

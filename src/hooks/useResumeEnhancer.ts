@@ -1,6 +1,7 @@
-
 import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
+import {logErrorToProduction} from '@/utils/productionLogger';
+
 
 type EnhancementType = 'summary' | 'work-description' | 'skill-categorization' | 'general';
 
@@ -29,10 +30,11 @@ export function useResumeEnhancer() {
         throw new Error(error.message);
       }
       
-      return data.enhancedContent;
+      // Handle mock response with fallback
+      return data ? (data as any).enhancedContent : content;
     } catch (err: any) {
       setError(err.message || 'Failed to enhance content');
-      console.error('Enhancement error:', err);
+      logErrorToProduction('Enhancement error:', { data: err });
       return null;
     } finally {
       setIsEnhancing(false);

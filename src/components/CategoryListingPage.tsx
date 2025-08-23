@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { GradientHeading } from "@/components/GradientHeading";
 import { ListingScoreCard } from "@/components/ListingScoreCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Select, SelectTrigger, SelectContent, SelectItem } from "@/components/ui/select";
-import { Search, Filter, ArrowDownAZ, ArrowUpZA, Loader2 } from "lucide-react";
+import { Search, Filter, ArrowDownAZ, ArrowUpZA } from 'lucide-react';
+
+
+
+
+import ListingGridSkeleton from "@/components/skeletons/ListingGridSkeleton";
 import { safeStorage } from "@/utils/safeStorage";
 
 // Example listing type
@@ -55,10 +58,10 @@ export function CategoryListingPage({
 }: CategoryListingPageProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedSort, setSelectedSort] = useState(
-    () => safeStorage.getItem('category_selected_sort') || sortOptions[0].value
+    () => safeStorage.getItem('category_selected_sort') || sortOptions[0]?.value || 'newest'
   );
   const [selectedFilter, setSelectedFilter] = useState(
-    () => safeStorage.getItem('category_selected_filter') || filterOptions[0].value
+    () => safeStorage.getItem('category_selected_filter') || filterOptions[0]?.value || 'all'
   );
   const [isLoading, setIsLoading] = useState(false);
 
@@ -71,9 +74,15 @@ export function CategoryListingPage({
   }, [selectedFilter]);
 
   useEffect(() => {
+    let mounted = true;
     setIsLoading(true);
-    const timeout = setTimeout(() => setIsLoading(false), 300);
-    return () => clearTimeout(timeout);
+    const timeout = setTimeout(() => {
+      if (mounted) setIsLoading(false);
+    }, 300);
+    return () => {
+      mounted = false;
+      clearTimeout(timeout);
+    };
   }, [searchQuery, selectedSort, selectedFilter]);
   
   // Process listings based on filters and search
@@ -116,7 +125,6 @@ export function CategoryListingPage({
 
   return (
     <>
-      <Header />
       <div className="min-h-screen bg-zion-blue py-12 px-4">
         <div className="container mx-auto">
           <div className="text-center mb-12">
@@ -191,47 +199,46 @@ export function CategoryListingPage({
           </div>
 
           {/* Listings Grid */}
-          {isLoading ? (
-            <div className="flex justify-center py-20">
-              <Loader2 className="h-8 w-8 animate-spin text-zion-purple" />
-            </div>
-          ) : processedListings.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {processedListings.map((listing) => (
-                <ListingScoreCard 
-                  key={listing.id}
-                  title={listing.title}
-                  description={listing.description}
-                  category={listing.subcategory || listing.category}
-                  image={listing.image}
-                  tags={listing.tags}
-                  author={listing.author}
-                  authorImage={listing.authorImage}
-                  aiScore={listing.aiScore}
-                  rating={listing.rating}
-                  reviewCount={listing.reviewCount}
-                />
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-20">
-              <h3 className="text-xl font-bold text-white mb-2">No listings found</h3>
-              <p className="text-zion-slate-light mb-6">Try adjusting your filters or search query</p>
-              <Button 
-                variant="outline" 
-                onClick={() => {
-                  setSearchQuery("");
-                  setSelectedFilter(filterOptions[0].value);
-                }}
-                className="border-zion-purple text-zion-purple hover:bg-zion-purple/10"
-              >
-                Clear all filters
-              </Button>
-            </div>
-          )}
+          <div aria-busy={isLoading}>
+            {isLoading ? (
+              <ListingGridSkeleton />
+            ) : processedListings.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {processedListings.map((listing) => (
+                  <ListingScoreCard
+                    key={listing.id}
+                    title={listing.title}
+                    description={listing.description}
+                    category={listing.subcategory || listing.category}
+                    image={listing.image}
+                    tags={listing.tags}
+                    author={listing.author}
+                    authorImage={listing.authorImage}
+                    aiScore={listing.aiScore}
+                    rating={listing.rating}
+                    reviewCount={listing.reviewCount}
+                  />
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-20">
+                <h3 className="text-xl font-bold text-white mb-2">No listings found</h3>
+                <p className="text-zion-slate-light mb-6">Try adjusting your filters or search query</p>
+                <Button
+                  variant="outline"
+                  onClick={() => {
+                    setSearchQuery("");
+                    setSelectedFilter(filterOptions[0]?.value || 'all');
+                  }}
+                  className="border-zion-purple text-zion-purple hover:bg-zion-purple/10"
+                >
+                  Clear all filters
+                </Button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

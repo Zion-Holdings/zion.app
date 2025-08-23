@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { safeStorage } from '@/utils/safeStorage';
+import { logWarn } from '@/utils/productionLogger';
+
 
 /**
  * Persist state to localStorage and keep it in sync.
@@ -13,7 +15,7 @@ export function useLocalStorage<T>(key: string, initialValue: T) {
       const item = safeStorage.getItem(key);
       return item ? (JSON.parse(item) as T) : initialValue;
     } catch (error) {
-      console.warn('useLocalStorage: Error reading key', key, error);
+      logWarn('useLocalStorage: Error reading key', { data: { key, error } });
       return initialValue;
     }
   });
@@ -26,7 +28,7 @@ export function useLocalStorage<T>(key: string, initialValue: T) {
         safeStorage.setItem(key, JSON.stringify(valueToStore));
       }
     } catch (error) {
-      console.warn('useLocalStorage: Error setting key', key, error);
+      logWarn('useLocalStorage: Error setting key', { data: { key, error } });
     }
   };
 

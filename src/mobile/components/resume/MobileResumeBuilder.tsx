@@ -1,18 +1,21 @@
-
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { ChevronRight, Plus, Zap, Trash2 } from 'lucide-react';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
+  SelectValue
 } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
-import { ChevronRight, Plus, Zap, Trash2 } from "lucide-react";
+
+
+
+
 
 type ResumeStep = "basics" | "experience" | "education" | "skills";
 
@@ -86,23 +89,23 @@ function BasicsStep() {
       <CardContent className="p-4 space-y-4">
         <div className="space-y-2">
           <Label htmlFor="title">Resume Title</Label>
-          <Input id="title" placeholder="e.g. Senior Frontend Developer" />
+          <Input id="title" name="title" placeholder="e.g. Senior Frontend Developer" />
         </div>
         <div className="space-y-2">
           <Label htmlFor="fullName">Full Name</Label>
-          <Input id="fullName" placeholder="Your full name" />
+          <Input id="fullName" name="fullName" placeholder="Your full name" autoComplete="name" />
         </div>
         <div className="space-y-2">
           <Label htmlFor="email">Email Address</Label>
-          <Input id="email" type="email" placeholder="you@example.com" />
+          <Input id="email" name="email" type="email" placeholder="you@example.com" autoComplete="email" />
         </div>
         <div className="space-y-2">
           <Label htmlFor="phone">Phone Number</Label>
-          <Input id="phone" placeholder="Your phone number" />
+          <Input id="phone" name="phone" placeholder="Your phone number" autoComplete="tel" />
         </div>
         <div className="space-y-2">
           <Label htmlFor="location">Location</Label>
-          <Input id="location" placeholder="City, Country" />
+          <Input id="location" name="location" placeholder="City, Country" autoComplete="address-level2" />
         </div>
         <div className="space-y-2">
           <Label htmlFor="summary">Professional Summary</Label>
@@ -137,10 +140,11 @@ function ExperienceStep() {
             <div className="flex justify-between items-center">
               <h3 className="font-medium">Work Experience {index + 1}</h3>
               {experiences.length > 1 && (
-                <Button 
-                  variant="ghost" 
+                <Button
+                  variant="ghost"
                   size="icon"
                   onClick={() => removeExperience(exp.id)}
+                  aria-label="Remove experience"
                 >
                   <Trash2 className="h-5 w-5 text-destructive" />
                 </Button>
@@ -208,10 +212,11 @@ function EducationStep() {
             <div className="flex justify-between items-center">
               <h3 className="font-medium">Education {index + 1}</h3>
               {educations.length > 1 && (
-                <Button 
-                  variant="ghost" 
+                <Button
+                  variant="ghost"
                   size="icon"
                   onClick={() => removeEducation(edu.id)}
+                  aria-label="Remove education"
                 >
                   <Trash2 className="h-5 w-5 text-destructive" />
                 </Button>
@@ -307,6 +312,7 @@ function SkillsStep() {
                     variant="ghost"
                     size="icon"
                     onClick={() => removeSkill(skill.id)}
+                    aria-label="Remove skill"
                   >
                     <Trash2 className="h-4 w-4 text-destructive" />
                   </Button>

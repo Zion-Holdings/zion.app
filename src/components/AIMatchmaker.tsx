@@ -5,7 +5,11 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { AIMatchingResults } from "@/components/AIMatchingResults";
 import { findMatches, MatchResult } from "@/lib/ai-matchmaking";
 import { Textarea } from "@/components/ui/textarea";
-import { Sparkles, Search } from "lucide-react";
+import { Sparkles, Search } from 'lucide-react';
+
+
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
+
 
 interface AIMatchmakerProps {
   serviceType?: string;
@@ -33,7 +37,7 @@ export function AIMatchmaker({ serviceType = "", onMatchSelect, className }: AIM
     setHasSearched(true);
     
     try {
-      console.log("Starting AI matching with query:", query, "and service type:", serviceType);
+      logInfo("Starting AI matching", { data: { query, serviceType } });
       
       // Get AI matches
       const results = await findMatches(
@@ -42,7 +46,7 @@ export function AIMatchmaker({ serviceType = "", onMatchSelect, className }: AIM
         3
       );
       
-      console.log("AI matching results:", results);
+      logInfo('AI matching results:', { data: results });
       setMatches(results);
       
       toast({
@@ -50,7 +54,7 @@ export function AIMatchmaker({ serviceType = "", onMatchSelect, className }: AIM
         description: `Found ${results.length} matches based on your description.`,
       });
     } catch (error) {
-      console.error("Error during AI matching:", error);
+      logErrorToProduction('Error during AI matching:', { data: error });
       toast({
         title: "Matching Error",
         description: "We couldn't find matches for your request. Please try again.",
@@ -84,7 +88,7 @@ export function AIMatchmaker({ serviceType = "", onMatchSelect, className }: AIM
           AI Matchmaker
         </CardTitle>
         <p className="text-sm text-zion-slate-light">
-          Describe what you're looking for and our AI will find the best matches
+          Describe what you&apos;re looking for and our AI will find the best matches
         </p>
       </CardHeader>
       <CardContent>

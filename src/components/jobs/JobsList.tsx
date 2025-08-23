@@ -6,9 +6,15 @@ import { Job, JobStatus } from "@/types/jobs";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Loader2, Edit, X, Eye } from "lucide-react";
+import { Loader2, Edit, X, Eye } from 'lucide-react';
+
+
+
+
 import { format } from "date-fns";
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import {logErrorToProduction} from '@/utils/productionLogger';
+
 
 interface JobsListProps {
   filter?: JobStatus;
@@ -40,7 +46,7 @@ export function JobsList({ filter, onSelectJob }: JobsListProps) {
         if (error) throw error;
         setJobs(data as Job[]);
       } catch (error) {
-        console.error("Error fetching jobs:", error);
+        logErrorToProduction('Error fetching jobs:', { data: error });
       } finally {
         setIsLoading(false);
       }
@@ -67,7 +73,7 @@ export function JobsList({ filter, onSelectJob }: JobsListProps) {
           }
         </p>
         <Button asChild className="mt-4">
-          <Link to="/post-job">Post Your First Job</Link>
+          <Link href="/post-job">Post Your First Job</Link>
         </Button>
       </div>
     );
@@ -136,13 +142,13 @@ export function JobsList({ filter, onSelectJob }: JobsListProps) {
           </CardContent>
           <CardFooter className="flex justify-between p-4 pt-0 gap-2">
             <Button variant="outline" size="sm" asChild>
-              <Link to={`/jobs/${job.id}`}>
+              <Link href={`/jobs/${job.id}`}>
                 <Eye className="h-4 w-4 mr-1" /> View Details
               </Link>
             </Button>
             <div className="flex gap-2">
               <Button variant="outline" size="sm" asChild>
-                <Link to={`/jobs/${job.id}/edit`}>
+                <Link href={`/jobs/${job.id}/edit`}>
                   <Edit className="h-4 w-4" />
                 </Link>
               </Button>

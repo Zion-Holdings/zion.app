@@ -1,13 +1,13 @@
 
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import Link from 'next/link';
 
 // This component handles deep linking to the mobile app
 const OpenAppRedirect: React.FC = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [status, setStatus] = useState<'redirecting' | 'failed' | 'timeout'>('redirecting');
   
   useEffect(() => {
@@ -41,7 +41,7 @@ const OpenAppRedirect: React.FC = () => {
         // Not on mobile, redirect to mobile launch page
         setStatus('failed');
         setTimeout(() => {
-          navigate(fallbackUrl);
+          router.push(fallbackUrl);
         }, 1500);
       }
       
@@ -54,7 +54,7 @@ const OpenAppRedirect: React.FC = () => {
     };
     
     attemptAppOpen();
-  }, [navigate]);
+  }, [router]);
   
   return (
     <div className="min-h-screen flex items-center justify-center bg-zion-blue">
@@ -90,11 +90,7 @@ const OpenAppRedirect: React.FC = () => {
             <p className="text-gray-300 mb-6">
               We're taking you to our mobile app page where you can download the app.
             </p>
-            <Link to="/mobile-launch">
-              <Button className="bg-zion-cyan hover:bg-zion-cyan/80">
-                Go to Mobile App Page
-              </Button>
-            </Link>
+            <Link href="/mobile-launch"><Button className="bg-zion-cyan hover:bg-zion-cyan/80">Go to Mobile App Page</Button></Link>
           </>
         )}
       </div>

@@ -25,6 +25,6 @@ describe('LoginForm', () => {
     fireEvent.submit(screen.getByRole('button', { name: /login/i }));
 
     // wait for error message to appear
-    await screen.findByText('Invalid credentials');
+    await screen.findByText('Incorrect email or password');
   });
 });

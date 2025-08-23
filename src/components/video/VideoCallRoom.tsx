@@ -4,7 +4,16 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Video, VideoOff, Mic, MicOff, Phone, ScreenShare, ScreenShareOff, Volume2, VolumeX } from '@/components/icons';
+import { Video, VideoOff, Mic, MicOff, Phone, ScreenShare, ScreenShareOff, Volume2, VolumeX } from 'lucide-react';
+
+
+
+
+
+
+
+
+
 import './video-call.css';
 
 interface Participant {
@@ -168,47 +177,52 @@ export const VideoCallRoom: React.FC<VideoCallRoomProps> = ({
         </div>
         
         <div className="bg-zion-blue-dark border-t border-zion-blue-light p-4 flex items-center justify-center space-x-3">
-          <Button 
-            variant="outline" 
-            size="icon" 
+          <Button
+            variant="outline"
+            size="icon"
             className="video-button rounded-full h-10 w-10"
             onClick={handleToggleMute}
+            aria-label={isMuted ? 'Unmute microphone' : 'Mute microphone'}
           >
             {isMuted ? <MicOff /> : <Mic />}
           </Button>
           
-          <Button 
-            variant="outline" 
-            size="icon" 
+          <Button
+            variant="outline"
+            size="icon"
             className="video-button rounded-full h-10 w-10"
             onClick={handleToggleVideo}
+            aria-label={isVideoEnabled ? 'Disable camera' : 'Enable camera'}
           >
             {isVideoEnabled ? <Video /> : <VideoOff />}
           </Button>
           
-          <Button 
-            variant="outline" 
+          <Button
+            variant="outline"
             size="icon"
             className="video-button rounded-full h-10 w-10"
             onClick={handleToggleScreenShare}
+            aria-label={isScreenSharing ? 'Stop sharing screen' : 'Share screen'}
           >
             {isScreenSharing ? <ScreenShareOff /> : <ScreenShare />}
           </Button>
           
-          <Button 
-            variant="outline" 
+          <Button
+            variant="outline"
             size="icon"
             className="video-button rounded-full h-10 w-10"
             onClick={handleToggleAudioOnly}
+            aria-label={isAudioOnly ? 'Disable audio only' : 'Enable audio only'}
           >
             {isAudioOnly ? <VolumeX /> : <Volume2 />}
           </Button>
           
-          <Button 
-            variant="destructive" 
+          <Button
+            variant="destructive"
             size="icon"
             className="video-button video-button-danger rounded-full h-10 w-10"
             onClick={handleLeaveCall}
+            aria-label="Leave call"
           >
             <Phone className="rotate-135" />
           </Button>

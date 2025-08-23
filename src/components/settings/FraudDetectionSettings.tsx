@@ -1,10 +1,12 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Switch } from '@/components/ui/switch';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { ShieldAlert, Info } from 'lucide-react';
+
+
+import {logErrorToProduction} from '@/utils/productionLogger';
 import {
   Accordion,
   AccordionContent,
@@ -36,7 +38,7 @@ export function FraudDetectionSettings() {
         description: "Your fraud detection preferences have been updated.",
       });
     } catch (error) {
-      console.error('Error saving preferences:', error);
+      logErrorToProduction('Error saving preferences:', { data: error });
       toast({
         title: "Error",
         description: "Failed to save your preferences. Please try again.",

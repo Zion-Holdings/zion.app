@@ -7,16 +7,19 @@ import { Textarea } from '@/components/ui/textarea';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
 import { format } from 'date-fns';
+import { Loader2, Edit, Trash2 } from 'lucide-react';
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
-} from '@/components/ui/form';
+  FormMessage
+} from "@/components/ui/form";
 import { WorkExperience } from '@/types/resume';
-import { Loader2, Edit, Trash2 } from 'lucide-react';
+
+
+
 import { useResume } from '@/hooks/useResume';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Card, CardContent } from '@/components/ui/card';
@@ -159,6 +162,7 @@ export function WorkExperienceForm({ resumeId, workExperiences, onComplete, onBa
                       variant="ghost"
                       size="icon"
                       onClick={() => handleEdit(work)}
+                      aria-label="Edit experience"
                     >
                       <Edit className="h-4 w-4" />
                     </Button>
@@ -166,6 +170,7 @@ export function WorkExperienceForm({ resumeId, workExperiences, onComplete, onBa
                       variant="ghost"
                       size="icon"
                       onClick={() => handleDelete(work.id!)}
+                      aria-label="Delete experience"
                     >
                       <Trash2 className="h-4 w-4" />
                     </Button>
@@ -191,7 +196,7 @@ export function WorkExperienceForm({ resumeId, workExperiences, onComplete, onBa
               <FormField
                 control={form.control}
                 name="company_name"
-                render={({ field }) => (
+                render={({ field }: { field: any }) => (
                   <FormItem>
                     <FormLabel>Company Name</FormLabel>
                     <FormControl>
@@ -205,7 +210,7 @@ export function WorkExperienceForm({ resumeId, workExperiences, onComplete, onBa
               <FormField
                 control={form.control}
                 name="role_title"
-                render={({ field }) => (
+                render={({ field }: { field: any }) => (
                   <FormItem>
                     <FormLabel>Job Title</FormLabel>
                     <FormControl>
@@ -221,7 +226,7 @@ export function WorkExperienceForm({ resumeId, workExperiences, onComplete, onBa
               <FormField
                 control={form.control}
                 name="start_date"
-                render={({ field }) => (
+                render={({ field }: { field: any }) => (
                   <FormItem>
                     <FormLabel>Start Date</FormLabel>
                     <FormControl>
@@ -240,7 +245,7 @@ export function WorkExperienceForm({ resumeId, workExperiences, onComplete, onBa
                 <FormField
                   control={form.control}
                   name="is_current"
-                  render={({ field }) => (
+                  render={({ field }: { field: any }) => (
                     <FormItem className="flex flex-row items-start space-x-3 space-y-0 py-2">
                       <FormControl>
                         <Checkbox
@@ -259,7 +264,7 @@ export function WorkExperienceForm({ resumeId, workExperiences, onComplete, onBa
                   <FormField
                     control={form.control}
                     name="end_date"
-                    render={({ field }) => (
+                    render={({ field }: { field: any }) => (
                       <FormItem>
                         <FormLabel>End Date</FormLabel>
                         <FormControl>
@@ -280,7 +285,7 @@ export function WorkExperienceForm({ resumeId, workExperiences, onComplete, onBa
             <FormField
               control={form.control}
               name="location"
-              render={({ field }) => (
+              render={({ field }: { field: any }) => (
                 <FormItem>
                   <FormLabel>Location (Optional)</FormLabel>
                   <FormControl>
@@ -294,7 +299,7 @@ export function WorkExperienceForm({ resumeId, workExperiences, onComplete, onBa
             <FormField
               control={form.control}
               name="description"
-              render={({ field }) => (
+              render={({ field }: { field: any }) => (
                 <FormItem>
                   <FormLabel className="flex justify-between">
                     <span>Job Description</span>

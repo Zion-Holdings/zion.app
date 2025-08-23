@@ -8,15 +8,18 @@ import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
 import { TalentProfile } from "@/types/talent";
-import { UserProfile } from "@/types/auth";
+import type { UserProfile } from "@/types/auth";
 import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { useForm, ControllerRenderProps } from "react-hook-form";
 import { z } from "zod";
 import { format, addDays } from "date-fns";
-import { CalendarIcon, Check, Clock } from "lucide-react";
+import { CalendarIcon } from 'lucide-react';
+
 import { toast } from "@/components/ui/use-toast";
 import { useInterviews } from "@/hooks/useInterviews";
+import {logErrorToProduction} from '@/utils/productionLogger';
+
 
 interface InterviewRequestFormProps {
   talent: TalentProfile;
@@ -91,7 +94,7 @@ export function InterviewRequestForm({ talent, onClose, userDetails }: Interview
       });
       onClose();
     } catch (error) {
-      console.error("Failed to schedule interview:", error);
+      logErrorToProduction('Failed to schedule interview:', { data: error });
       toast({
         title: "Failed to schedule interview",
         description: "An error occurred while scheduling the interview. Please try again.",
@@ -114,10 +117,11 @@ export function InterviewRequestForm({ talent, onClose, userDetails }: Interview
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
         <div className="flex items-center mb-6">
           <div className="flex-shrink-0 h-12 w-12 rounded-full overflow-hidden mr-4">
-            <img 
-              src={talent.profile_picture_url || "/placeholder.svg"} 
-              alt={talent.full_name} 
+            <img
+              src={talent.profile_picture_url || "/placeholder.svg"}
+              alt={talent.full_name}
               className="h-full w-full object-cover"
+              loading="lazy"
             />
           </div>
           <div>
@@ -129,7 +133,7 @@ export function InterviewRequestForm({ talent, onClose, userDetails }: Interview
         <FormField
           control={form.control}
           name="title"
-          render={({ field }) => (
+          render={({ field }: { field: ControllerRenderProps<z.infer<typeof formSchema>, "title"> }) => (
             <FormItem>
               <FormLabel>Interview Title</FormLabel>
               <FormControl>
@@ -144,7 +148,7 @@ export function InterviewRequestForm({ talent, onClose, userDetails }: Interview
           <FormField
             control={form.control}
             name="date"
-            render={({ field }) => (
+            render={({ field }: { field: ControllerRenderProps<z.infer<typeof formSchema>, "date"> }) => (
               <FormItem className="flex flex-col">
                 <FormLabel>Date</FormLabel>
                 <Popover>
@@ -185,7 +189,7 @@ export function InterviewRequestForm({ talent, onClose, userDetails }: Interview
           <FormField
             control={form.control}
             name="time"
-            render={({ field }) => (
+            render={({ field }: { field: ControllerRenderProps<z.infer<typeof formSchema>, "time"> }) => (
               <FormItem>
                 <FormLabel>Time</FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
@@ -212,7 +216,7 @@ export function InterviewRequestForm({ talent, onClose, userDetails }: Interview
           <FormField
             control={form.control}
             name="duration"
-            render={({ field }) => (
+            render={({ field }: { field: ControllerRenderProps<z.infer<typeof formSchema>, "duration"> }) => (
               <FormItem>
                 <FormLabel>Duration</FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
@@ -236,7 +240,7 @@ export function InterviewRequestForm({ talent, onClose, userDetails }: Interview
           <FormField
             control={form.control}
             name="platform"
-            render={({ field }) => (
+            render={({ field }: { field: ControllerRenderProps<z.infer<typeof formSchema>, "platform"> }) => (
               <FormItem>
                 <FormLabel>Platform</FormLabel>
                 <Select onValueChange={field.onChange} defaultValue={field.value}>
@@ -262,7 +266,7 @@ export function InterviewRequestForm({ talent, onClose, userDetails }: Interview
           <FormField
             control={form.control}
             name="meetingLink"
-            render={({ field }) => (
+            render={({ field }: { field: ControllerRenderProps<z.infer<typeof formSchema>, "meetingLink"> }) => (
               <FormItem>
                 <FormLabel>Meeting Link (Optional)</FormLabel>
                 <FormControl>
@@ -280,7 +284,7 @@ export function InterviewRequestForm({ talent, onClose, userDetails }: Interview
         <FormField
           control={form.control}
           name="notes"
-          render={({ field }) => (
+          render={({ field }: { field: ControllerRenderProps<z.infer<typeof formSchema>, "notes"> }) => (
             <FormItem>
               <FormLabel>Notes (Optional)</FormLabel>
               <FormControl>

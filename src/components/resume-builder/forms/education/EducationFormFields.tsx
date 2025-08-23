@@ -4,6 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { format } from 'date-fns';
 import { Loader2 } from 'lucide-react';
+
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Input } from '@/components/ui/input';
@@ -75,7 +76,7 @@ export function EducationFormFields({
           <FormField
             control={form.control}
             name="institution"
-            render={({ field }) => (
+            render={({ field }: { field: any }) => (
               <FormItem>
                 <FormLabel>Institution</FormLabel>
                 <FormControl>
@@ -89,7 +90,7 @@ export function EducationFormFields({
           <FormField
             control={form.control}
             name="degree"
-            render={({ field }) => (
+            render={({ field }: { field: any }) => (
               <FormItem>
                 <FormLabel>Degree</FormLabel>
                 <FormControl>
@@ -104,7 +105,7 @@ export function EducationFormFields({
         <FormField
           control={form.control}
           name="field_of_study"
-          render={({ field }) => (
+          render={({ field }: { field: any }) => (
             <FormItem>
               <FormLabel>Field of Study</FormLabel>
               <FormControl>
@@ -119,7 +120,7 @@ export function EducationFormFields({
           <FormField
             control={form.control}
             name="start_date"
-            render={({ field }) => (
+            render={({ field }: { field: any }) => (
               <FormItem>
                 <FormLabel>Start Date</FormLabel>
                 <FormControl>
@@ -138,7 +139,7 @@ export function EducationFormFields({
             <FormField
               control={form.control}
               name="is_current"
-              render={({ field }) => (
+              render={({ field }: { field: any }) => (
                 <FormItem className="flex flex-row items-start space-x-3 space-y-0 py-2">
                   <FormControl>
                     <Checkbox
@@ -157,7 +158,7 @@ export function EducationFormFields({
               <FormField
                 control={form.control}
                 name="end_date"
-                render={({ field }) => (
+                render={({ field }: { field: any }) => (
                   <FormItem>
                     <FormLabel>End Date</FormLabel>
                     <FormControl>
@@ -178,7 +179,7 @@ export function EducationFormFields({
         <FormField
           control={form.control}
           name="location"
-          render={({ field }) => (
+          render={({ field }: { field: any }) => (
             <FormItem>
               <FormLabel>Location (Optional)</FormLabel>
               <FormControl>
@@ -192,7 +193,7 @@ export function EducationFormFields({
         <FormField
           control={form.control}
           name="description"
-          render={({ field }) => (
+          render={({ field }: { field: any }) => (
             <FormItem>
               <FormLabel>Description (Optional)</FormLabel>
               <FormControl>

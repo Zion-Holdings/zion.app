@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useRouter } from 'next/router'; // Changed from useParams
 import { SEO } from '@/components/SEO';
 import { ProfileLoadingState } from '@/components/profile/ProfileLoadingState';
 import { ProfileErrorState } from '@/components/profile/ProfileErrorState';
@@ -10,7 +10,9 @@ interface TalentProfileWithSocial extends TalentProfileType {
 }
 
 export default function TalentProfilePage() {
-  const { id } = useParams() as { id?: string };
+  const router = useRouter();
+  const { id: rawId } = router.query;
+  const id = typeof rawId === 'string' ? rawId : undefined;
   const [profile, setProfile] = useState<TalentProfileWithSocial | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -38,7 +40,7 @@ export default function TalentProfilePage() {
     fetchProfile();
   }, [id]);
 
-  if (loading) return <ProfileLoadingState />;
+  if (loading || (!profile && !error)) return <ProfileLoadingState />;
   if (error || !profile) return <ProfileErrorState error={error} />;
 
   return (

@@ -2,9 +2,13 @@
 import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { supabase } from "@/integrations/supabase/client";
-import { Loader2, Star, BarChart2, Lightbulb } from "lucide-react";
+import { Loader2, Star, BarChart2, Lightbulb } from 'lucide-react';
+
+
+
+
 import { toast } from "sonner";
 import { JobApplication } from "@/types/jobs";
 
@@ -68,7 +72,8 @@ export function ApplicationScoreCard({ application, onScoreUpdated }: Applicatio
           
         if (error) {
           setIsScoring(false);
-          return toast.error("Failed to check scoring status");
+          toast.error("Failed to check scoring status");
+          return;
         }
         
         if (data.scored_at) {
@@ -173,6 +178,18 @@ export function ApplicationScoreCard({ application, onScoreUpdated }: Applicatio
                       <div>
                         <p className="font-medium">Experience Match: {application.match_breakdown.experience_match.score}/100</p>
                         <p>{application.match_breakdown.experience_match.analysis}</p>
+                      </div>
+                    )}
+
+                    {application.match_breakdown.certifications_match && (
+                      <div>
+                        <p className="font-medium">Certifications Match: {application.match_breakdown.certifications_match.score}/100</p>
+                        {application.match_breakdown.certifications_match.matching && (
+                          <p>Matching certs: {application.match_breakdown.certifications_match.matching.join(", ")}</p>
+                        )}
+                        {application.match_breakdown.certifications_match.missing && (
+                          <p>Missing certs: {application.match_breakdown.certifications_match.missing.join(", ")}</p>
+                        )}
                       </div>
                     )}
                     

@@ -1,7 +1,9 @@
-
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import { ChevronLeft, Bell, Settings } from "lucide-react";
+import { useRouter } from 'next/router';
+import { ChevronLeft, Bell, Settings } from 'lucide-react';
+
+
+
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
@@ -24,7 +26,7 @@ export function MobileHeader({
   onNotificationsClick,
   onSettingsClick,
 }: MobileHeaderProps) {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   return (
     <header className={cn(
@@ -38,7 +40,7 @@ export function MobileHeader({
               variant="ghost" 
               size="icon" 
               className="mr-2" 
-              onClick={() => navigate(-1)}
+              onClick={() => router.back()}
             >
               <ChevronLeft className="h-5 w-5" />
               <span className="sr-only">Back</span>

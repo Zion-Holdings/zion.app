@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
@@ -7,10 +6,21 @@ import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Skeleton } from "@/components/ui/skeleton";
-import { ArrowLeft, ArrowRight, RefreshCcw, CheckCircle2, XCircle, Clock, AlertCircle } from "lucide-react";
+import Skeleton from "@/components/ui/skeleton";
+import { ArrowLeft, ArrowRight, RefreshCcw, CheckCircle2, XCircle, Clock, AlertCircle, ShieldAlert } from 'lucide-react';
+
+
+
+
+
+
+
+
 import { formatDistanceToNow } from "date-fns";
 import { safeStorage } from "@/utils/safeStorage";
+import { useCurrency } from '@/hooks/useCurrency';
+import {logErrorToProduction} from '@/utils/productionLogger';
+
 
 interface Transaction {
   id: string;
@@ -19,7 +29,7 @@ interface Transaction {
   service_id: string;
   amount: number;
   currency: string;
-  status: 'pending' | 'completed' | 'refunded' | 'cancelled';
+  status: 'pending' | 'in_escrow' | 'released' | 'disputed' | 'refunded' | 'cancelled';
   in_escrow: boolean;
   created_at: string;
   completed_at?: string;
@@ -62,7 +72,7 @@ export function TransactionHistory() {
       if (filter === 'pending') {
         query = query.eq('status', 'pending');
       } else if (filter === 'completed') {
-        query = query.eq('status', 'completed');
+        query = query.eq('status', 'released');
       } else if (filter === 'escrow') {
         query = query.eq('in_escrow', true);
       }
@@ -87,15 +97,15 @@ export function TransactionHistory() {
       
       toast({
         title: "Success",
-        description: data.message || "Transaction updated successfully",
+        description: (data as any)?.message || "Transaction updated successfully",
       });
       
       refetch();
     } catch (error) {
-      console.error("Error managing transaction:", error);
+      logErrorToProduction('Error managing transaction:', { data: error });
       toast({
         title: "Error",
-        description: error.message || "Failed to update transaction",
+        description: error instanceof Error ? error.message : "Failed to update transaction",
         variant: "destructive",
       });
     }
@@ -103,6 +113,12 @@ export function TransactionHistory() {
   
   const getStatusBadge = (status: string, inEscrow: boolean) => {
     switch(status) {
+      case 'in_escrow':
+        return (
+          <Badge variant="outline" className="bg-yellow-500/20 text-yellow-500 border-yellow-500">
+            <Clock className="w-3 h-3 mr-1" /> In Escrow
+          </Badge>
+        );
       case 'pending':
         return inEscrow ? (
           <Badge variant="outline" className="bg-yellow-500/20 text-yellow-500 border-yellow-500">
@@ -113,10 +129,22 @@ export function TransactionHistory() {
             <Clock className="w-3 h-3 mr-1" /> Pending
           </Badge>
         );
+      case 'released':
+        return (
+          <Badge variant="outline" className="bg-green-500/20 text-green-500 border-green-500">
+            <CheckCircle2 className="w-3 h-3 mr-1" /> Released
+          </Badge>
+        );
       case 'completed':
         return (
           <Badge variant="outline" className="bg-green-500/20 text-green-500 border-green-500">
             <CheckCircle2 className="w-3 h-3 mr-1" /> Completed
+          </Badge>
+        );
+      case 'disputed':
+        return (
+          <Badge variant="outline" className="bg-red-500/20 text-red-500 border-red-500">
+            <ShieldAlert className="w-3 h-3 mr-1" /> Disputed
           </Badge>
         );
       case 'refunded':
@@ -138,13 +166,12 @@ export function TransactionHistory() {
           </Badge>
         );
     }
-  };
-  
-  const formatCurrency = (amount: number, currency: string) => {
-    return new Intl.NumberFormat('en-US', {
-      style: 'currency',
-      currency: currency.toUpperCase()
-    }).format(amount);
+  }; 
+
+  const { formatPrice } = useCurrency();
+
+  const formatCurrency = (amount: number) => {
+    return formatPrice(amount);
   };
 
   if (error) {
@@ -230,11 +257,12 @@ export function TransactionHistory() {
           <div className="space-y-4">
             {transactions.map((transaction) => {
               const isClient = user?.id === transaction.user_id;
-              const isPending = transaction.status === 'pending';
+              const isPending =
+                transaction.status === 'pending' || transaction.status === 'in_escrow';
               const isInEscrow = transaction.in_escrow;
               const canRelease = !isClient && isPending && isInEscrow;
               const canCancel = isClient && isPending;
-              const canRefund = isClient && transaction.status === 'completed';
+              const canRefund = isClient && transaction.status === 'released';
               
               const counterpartyName = isClient 
                 ? transaction.provider?.display_name || 'Service Provider' 
@@ -264,7 +292,7 @@ export function TransactionHistory() {
                     <div className="flex justify-between items-center mb-1">
                       <span className="text-zion-slate-light">Amount:</span>
                       <span className="text-white font-medium text-lg">
-                        {formatCurrency(transaction.amount, transaction.currency)}
+                        {formatCurrency(transaction.amount)}
                       </span>
                     </div>
                     

@@ -1,7 +1,9 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Check, X } from "lucide-react";
+import { Check, X } from 'lucide-react';
+
+
 import {
   Table,
   TableBody,
@@ -117,12 +119,12 @@ export function EnterprisePricingTable() {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {plans[0].features.map((feature, index) => (
+              {(plans[0]?.features || []).map((feature, index) => (
                 <TableRow key={feature.name}>
                   <TableCell className="font-medium">{feature.name}</TableCell>
                   {plans.map((plan) => (
                     <TableCell key={`${plan.name}-${feature.name}`} className="text-center">
-                      {plan.features[index].included ? (
+                      {plan.features[index]?.included ? (
                         <Check className="h-5 w-5 text-green-500 mx-auto" />
                       ) : (
                         <X className="h-5 w-5 text-muted-foreground mx-auto" />

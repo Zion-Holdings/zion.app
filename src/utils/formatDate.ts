@@ -1,21 +1,25 @@
-
 /**
  * Format a date string or timestamp into a readable format
  * @param date Date to format
  * @param format Optional format specification
  * @returns Formatted date string
  */
-export const formatDate = (date: Date | string | number, format: string = 'medium'): string => {
+export const formatDate = (date: Date | string | number, format: string = 'medium', showTime: boolean = false): string => {
   const dateObj = new Date(date);
   
   switch (format) {
-    case 'short':
-      return dateObj.toLocaleDateString();
+    case 'short': {
+      const shortDate = dateObj.toLocaleDateString();
+      const shortTime = dateObj.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      const result = showTime ? `${shortDate} ${shortTime}` : shortDate;
+      return result;
+    }
     case 'medium':
-      return dateObj.toLocaleDateString(undefined, { 
+      return dateObj.toLocaleDateString([], { 
         year: 'numeric', 
         month: 'short', 
-        day: 'numeric' 
+        day: 'numeric',
+        ...(showTime && { hour: '2-digit', minute: '2-digit' })
       });
     case 'long':
       return dateObj.toLocaleDateString(undefined, { 
@@ -30,7 +34,7 @@ export const formatDate = (date: Date | string | number, format: string = 'mediu
         month: 'long', 
         day: 'numeric' 
       });
-    case 'relative':
+    case 'relative': {
       // Simple relative time (today, yesterday, or date)
       const now = new Date();
       const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
@@ -44,6 +48,7 @@ export const formatDate = (date: Date | string | number, format: string = 'mediu
       } else {
         return dateObj.toLocaleDateString();
       }
+    }
     default:
       return dateObj.toLocaleDateString();
   }

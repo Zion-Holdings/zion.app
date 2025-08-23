@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -10,13 +9,16 @@ import { TokenTransaction } from '@/types/tokens';
 import { ProtectedRoute } from '@/components/ProtectedRoute';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export default function TokenManager() {
+
   const { user } = useAuth();
   const { toast } = useToast();
   const [transactions, setTransactions] = useState<TokenTransaction[]>([]);
   const [userId, setUserId] = useState('');
   const [amount, setAmount] = useState(0);
+  const [processing, setProcessing] = useState(false);
 
   const isAdmin = user?.userType === 'admin';
 
@@ -34,25 +36,32 @@ export default function TokenManager() {
   };
 
   const handleIssue = async (type: 'earn' | 'burn') => {
-    if (!userId || amount <= 0) return;
-    const res = await fetch(`/functions/v1/token-manager/${type === 'earn' ? 'earn' : 'burn'}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ userId, amount }),
-    });
-    if (res.ok) {
+    if (!userId || amount <= 0 || processing) return;
+    setProcessing(true);
+    try {
+      const res = await fetch(`/functions/v1/token-manager/${type === 'earn' ? 'earn' : 'burn'}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userId, amount }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        throw new Error(data.error || `Error ${res.status}`);
+      }
       toast({
         title: 'Success',
         description: 'Transaction processed'
       });
       fetchTransactions();
-    } else {
-      const err = await res.json();
+    } catch (err: any) {
+      logErrorToProduction('Failed to process transaction:', { data: err });
       toast({
         title: 'Error',
-        description: err.error || 'Failed',
+        description: err.message || 'Failed',
         variant: 'destructive'
       });
+    } finally {
+      setProcessing(false);
     }
   };
 
@@ -71,8 +80,12 @@ export default function TokenManager() {
                 <Input placeholder="User ID" value={userId} onChange={e => setUserId(e.target.value)} />
                 <Input type="number" placeholder="Amount" value={amount} onChange={e => setAmount(parseInt(e.target.value))} />
                 <div className="flex gap-2">
-                  <Button onClick={() => handleIssue('earn')}>Issue</Button>
-                  <Button variant="destructive" onClick={() => handleIssue('burn')}>Revoke</Button>
+                  <Button onClick={() => handleIssue('earn')} disabled={processing}>
+                    {processing ? 'Processing...' : 'Issue'}
+                  </Button>
+                  <Button variant="destructive" onClick={() => handleIssue('burn')} disabled={processing}>
+                    {processing ? 'Processing...' : 'Revoke'}
+                  </Button>
                 </div>
               </CardContent>
             </Card>
@@ -94,7 +107,6 @@ export default function TokenManager() {
             </Tabs>
           </div>
         </div>
-        <Footer />
       </div>
     </ProtectedRoute>
   );

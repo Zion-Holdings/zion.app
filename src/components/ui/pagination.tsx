@@ -1,5 +1,8 @@
 import * as React from "react"
-import { ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-react"
+import { ChevronLeft, ChevronRight, MoreHorizontal } from 'lucide-react';
+
+
+
 
 import { cn } from "@/lib/utils"
 import { ButtonProps, buttonVariants } from "@/components/ui/button"
@@ -39,6 +42,12 @@ type PaginationLinkProps = {
   size?: ButtonProps["size"]
 } & React.ComponentProps<"a">
 
+interface PaginationButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  page: number
+  isActive?: boolean
+}
+
 const PaginationLink = ({
   className,
   isActive,
@@ -58,6 +67,26 @@ const PaginationLink = ({
   />
 )
 PaginationLink.displayName = "PaginationLink"
+
+const PaginationButton = React.forwardRef<HTMLButtonElement, PaginationButtonProps>(
+  ({ page, isActive, className, ...props }, ref) => (
+    <button
+      ref={ref}
+      type="button"
+      aria-label={`Page ${page}`}
+      aria-current={isActive ? 'page' : undefined}
+      className={cn(
+        buttonVariants({ variant: 'ghost', size: 'icon' }),
+        isActive && 'bg-green-600 text-white',
+        className
+      )}
+      {...props}
+    >
+      {page}
+    </button>
+  )
+)
+PaginationButton.displayName = 'PaginationButton'
 
 const PaginationPrevious = ({
   className,
@@ -112,6 +141,7 @@ export {
   PaginationEllipsis,
   PaginationItem,
   PaginationLink,
+  PaginationButton,
   PaginationNext,
   PaginationPrevious,
 }

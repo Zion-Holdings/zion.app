@@ -2,23 +2,35 @@ import React, { useState } from "react";
 import { useForm, useFieldArray } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useNavigate } from "react-router-dom";
-import { 
-  Form, FormControl, FormField, FormItem, FormLabel, FormMessage 
+import { useRouter } from 'next/router';
+import {logErrorToProduction} from '@/utils/productionLogger';
+import { User, Briefcase, Star, Calendar, Globe, DollarSign, FileText, Link, Upload, ArrowRight, ArrowLeft, Trash2, Plus, CheckCircle2 } from 'lucide-react';
+import {
+  Form, FormControl, FormField, FormItem, FormLabel, FormMessage
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { 
+import {
   Select, SelectContent, SelectItem, SelectTrigger, SelectValue 
 } from "@/components/ui/select";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Separator } from "@/components/ui/separator";
 import { toast } from "@/components/ui/use-toast";
-import { 
-  User, Briefcase, Star, Calendar, Globe, DollarSign, FileText, Link, Upload, ArrowRight, ArrowLeft, 
-  Trash2, Plus, CheckCircle2
-} from "lucide-react";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import { useAuth } from "@/hooks/useAuth";
 import { useTalentProfileEnhancer } from "@/hooks/useTalentProfileEnhancer";
 import { supabase } from "@/integrations/supabase/client";
@@ -27,7 +39,7 @@ import { supabase } from "@/integrations/supabase/client";
 const talentSchema = z.object({
   // Step 1: Basic Info
   basicInfo: z.object({
-    fullName: z.string().min(2, "Name must be at least 2 characters"),
+    fullName: z.string().min(2, "Full Name must be at least 2 characters"),
     professionalTitle: z.string().min(2, "Professional title is required"),
     profilePicture: z.any().optional(),
   }),
@@ -68,7 +80,7 @@ type TalentFormValues = z.infer<typeof talentSchema>;
 
 export function TalentOnboardingForm() {
   const { user } = useAuth();
-  const navigate = useNavigate();
+  const router = useRouter();
   const [currentStep, setCurrentStep] = useState(1);
   const [profilePictureUrl, setProfilePictureUrl] = useState<string | null>(null);
   const [cvFileName, setCvFileName] = useState<string | null>(null);
@@ -143,7 +155,7 @@ export function TalentOnboardingForm() {
       .upload(fileName, file);
       
     if (cvError) {
-      console.error("Error uploading CV:", cvError);
+      logErrorToProduction('Error uploading CV:', { data: cvError });
       throw new Error("Failed to upload CV");
     }
     

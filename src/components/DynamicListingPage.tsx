@@ -1,23 +1,26 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { GradientHeading } from "@/components/GradientHeading";
 import { ProductListingCard } from "@/components/ProductListingCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Select, SelectValue, SelectTrigger, SelectContent, SelectItem } from "@/components/ui/select";
-import { Skeleton } from "@/components/ui/skeleton";
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
+import { Search, Filter, LayoutGrid, List, Star } from 'lucide-react';
+import {
+  Select,
+  SelectValue,
+  SelectTrigger,
+  SelectContent,
+  SelectItem,
+} from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 import { Slider } from "@/components/ui/slider";
 import { ProductListing, ListingView } from "@/types/listings";
-import { Search, Filter, LayoutGrid, List, Star } from "lucide-react";
+
 import { toast } from "@/hooks/use-toast";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination";
+import { captureException } from "@/utils/sentry";
 
 interface PriceRange {
   min: number;
@@ -35,8 +38,6 @@ interface DynamicListingPageProps {
    * Base path for listing detail pages. Defaults to `/marketplace/listing`.
    */
   detailBasePath?: string;
-  /** Number of items to display per page. Default is all listings. */
-  itemsPerPage?: number;
 }
 
 export function DynamicListingPage({
@@ -46,96 +47,169 @@ export function DynamicListingPage({
   listings: allListings,
   categoryFilters,
   initialPrice = { min: 0, max: 10000 },
-  detailBasePath = '/marketplace/listing',
-  itemsPerPage,
+  detailBasePath = "/marketplace/listing",
 }: DynamicListingPageProps) {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const toggleCategory = (category: string) => {
+    setSelectedCategories(prev =>
+      prev.includes(category)
+        ? prev.filter(c => c !== category)
+        : [...prev, category]
+    );
+  };
+  const clearCategories = () => setSelectedCategories([]);
   const [view, setView] = useState<ListingView>("grid");
+  const isGrid = view === "grid";
+  // Swap icons to match action
+  const ToggleViewIcon = isGrid ? (
+    <List className="h-4 w-4" />
+  ) : (
+    <LayoutGrid className="h-4 w-4" />
+  );
   const [isLoading, setIsLoading] = useState(false);
-  const [priceRange, setPriceRange] = useState<PriceRange>(initialPrice);
-
-  const [currentPage, setCurrentPage] = useState(1);
+  const [priceRange, setPriceRange] = useState<PriceRange>({
+    min: 0,
+    max: 10000,
+  });
 
   const [selectedRating, setSelectedRating] = useState<number | null>(null);
+  const [selectedBrand, setSelectedBrand] = useState("all");
+  const [specQuery, setSpecQuery] = useState("");
+  const [selectedAvailability, setSelectedAvailability] = useState("all");
+  const [sortOption, setSortOption] = useState("newest");
+
+  const brandOptions = Array.from(
+    new Set(allListings.map((l) => l.brand).filter(Boolean)),
+  );
+  const availabilityOptions = Array.from(
+    new Set(allListings.map((l) => l.availability).filter(Boolean)),
+  );
 
   useEffect(() => {
-    const listingsWithPrice = allListings.filter(l => l.price !== null);
+    const listingsWithPrice = allListings.filter((l) => l.price !== null);
     if (listingsWithPrice.length > 0) {
-      const max = Math.max(...listingsWithPrice.map(l => l.price || 0));
+      const max = Math.max(...listingsWithPrice.map((l) => l.price || 0));
       setPriceRange({ min: 0, max });
       setCurrentPriceFilter([0, max]);
     }
   }, [allListings]);
 
-  const [currentPriceFilter, setCurrentPriceFilter] = useState<[number, number]>([
-    0,
-    initialPrice.max
-  ]);
+  const [currentPriceFilter, setCurrentPriceFilter] = useState<
+    [number, number]
+  >([0, initialPrice.max]);
 
   const handleSliderChange = (values: number[]) => {
-    setCurrentPriceFilter([values[0], values[1]]);
+    const [min, max] = values.map(Number);
+    if (min == null || max == null || isNaN(min) || isNaN(max)) return;
+    setCurrentPriceFilter([min, max]);
   };
 
-  const filteredListings = allListings.filter(listing => {
-    const matchesSearch = !searchQuery || 
-      listing.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-      listing.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (listing.tags && listing.tags.some((tag: string) => tag.toLowerCase().includes(searchQuery.toLowerCase())));
-    
-    const matchesCategory = selectedCategory === "all" || listing.category === selectedCategory;
-    
-    const matchesPrice = listing.price === null || (
-      listing.price >= currentPriceFilter[0] && 
-      listing.price <= currentPriceFilter[1]
-    );
-    
-    const matchesRating = 
-      selectedRating === null || 
-      (listing.rating !== undefined && listing.rating >= selectedRating);
-    
-    return matchesSearch && matchesCategory && matchesPrice && matchesRating;
-  });
+  let filteredListings: ProductListing[] = [];
+  try {
+    filteredListings = allListings.filter((listing) => {
+      const matchesSearch =
+        !searchQuery ||
+        listing.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        listing.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        (listing.tags &&
+          listing.tags.some((tag: string) =>
+            tag.toLowerCase().includes(searchQuery.toLowerCase()),
+          ));
 
-  const totalPages = itemsPerPage
-    ? Math.ceil(filteredListings.length / itemsPerPage)
-    : 1;
-  const paginatedListings = itemsPerPage
-    ? filteredListings.slice(
-        (currentPage - 1) * itemsPerPage,
-        currentPage * itemsPerPage
-      )
-    : filteredListings;
+      const matchesBrand =
+        selectedBrand === "all" ||
+        (listing.brand && listing.brand === selectedBrand);
 
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [searchQuery, selectedCategory, currentPriceFilter, selectedRating]);
+      const matchesSpecs =
+        !specQuery ||
+        (listing.specifications &&
+          listing.specifications.some((s) =>
+            s.toLowerCase().includes(specQuery.toLowerCase()),
+          )) ||
+        (listing.tags &&
+          listing.tags.some((tag) =>
+            tag.toLowerCase().includes(specQuery.toLowerCase()),
+          ));
+
+      const matchesAvailability =
+        selectedAvailability === "all" ||
+        (listing.availability && listing.availability === selectedAvailability);
+
+      const matchesCategory =
+        selectedCategories.length === 0 ||
+        selectedCategories.includes(listing.category);
+
+      const matchesPrice =
+        listing.price === null ||
+        (listing.price >= currentPriceFilter[0] &&
+          listing.price <= currentPriceFilter[1]);
+
+      const matchesRating =
+        selectedRating === null ||
+        (listing.rating !== undefined && listing.rating >= selectedRating);
+
+      return (
+        matchesSearch &&
+        matchesCategory &&
+        matchesPrice &&
+        matchesRating &&
+        matchesBrand &&
+        matchesSpecs &&
+        matchesAvailability
+      );
+    });
+    filteredListings.sort((a, b) => {
+      switch (sortOption) {
+        case "price-asc":
+          return (a.price || 0) - (b.price || 0);
+        case "price-desc":
+          return (b.price || 0) - (a.price || 0);
+        case "rating":
+          return (b.rating || 0) - (a.rating || 0);
+        case "newest":
+        default:
+          return (
+            new Date(b.createdAt).getTime() -
+            new Date(a.createdAt).getTime()
+          );
+      }
+    });
+  } catch (error) {
+    captureException(error);
+    logErrorToProduction('Listing filter error:', { data: error });
+  }
 
   const handleRequestQuote = (listingId: string) => {
     setIsLoading(true);
-    
-    const listing = allListings.find(item => item.id === listingId);
-    
+
+    const listing = allListings.find((item) => item.id === listingId);
+
     setTimeout(() => {
       setIsLoading(false);
       if (listing) {
         toast({
           title: "Quote Requested",
-          description: `Your quote request for ${listing.title} has been sent.`
+          description: `Your quote request for ${listing.title} has been sent.`,
         });
+
+        // Store quote data in sessionStorage for the request-quote page
+        const quoteData = {
+          serviceType: categorySlug,
+          specificItem: {
+            id: listing.id,
+            title: listing.title,
+            category: listing.category,
+            image: listing.images?.[0],
+          },
+        };
         
-        navigate("/request-quote", {
-          state: { 
-            serviceType: categorySlug, 
-            specificItem: {
-              id: listing.id,
-              title: listing.title,
-              category: listing.category,
-              image: listing.images?.[0]
-            }
-          }
-        });
+        if (typeof window !== 'undefined') {
+          sessionStorage.setItem('quoteRequestData', JSON.stringify(quoteData));
+        }
+
+        router.push("/request-quote");
       }
     }, 500);
   };
@@ -156,32 +230,100 @@ export function DynamicListingPage({
               <h3 className="text-lg font-medium text-white mb-4 flex items-center">
                 <Filter className="mr-2 h-5 w-5" /> Filters
               </h3>
-              
+
               <div className="mb-6">
                 <label className="text-sm font-medium text-zion-slate-light block mb-2">
-                  Category
+                  Categories
                 </label>
-                <Select 
-                  value={selectedCategory} 
-                  onValueChange={(value: string) => {
-                    console.log("Category selected:", value);
-                    setSelectedCategory(value);
-                  }}
-                >
-                  <SelectTrigger className="bg-zion-blue border border-zion-blue-light text-white">
-                    <SelectValue placeholder="Select Category" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-zion-blue-dark border border-zion-blue-light">
-                    <SelectItem value="all" className="text-white">All Categories</SelectItem>
-                    {categoryFilters.map((filter) => (
-                      <SelectItem key={filter.value} value={filter.value} className="text-white">
+                <div className="space-y-2">
+                  {categoryFilters.map(filter => (
+                    <div key={filter.value} className="flex items-center">
+                      <Checkbox
+                        id={`cat-${filter.value}`}
+                        checked={selectedCategories.includes(filter.value)}
+                        onCheckedChange={() => toggleCategory(filter.value)}
+                        className="border-zion-slate-light data-[state=checked]:bg-zion-purple data-[state=checked]:border-zion-purple"
+                      />
+                      <label
+                        htmlFor={`cat-${filter.value}`}
+                        className="ml-2 text-sm text-zion-slate-light cursor-pointer"
+                      >
                         {filter.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                      </label>
+                    </div>
+                  ))}
+                </div>
               </div>
-              
+
+              {brandOptions.length > 0 && (
+                <div className="mb-6">
+                  <label className="text-sm font-medium text-zion-slate-light block mb-2">
+                    Brand
+                  </label>
+                  <Select
+                    value={selectedBrand}
+                    onValueChange={(value: string) => setSelectedBrand(value)}
+                  >
+                    <SelectTrigger className="bg-zion-blue border border-zion-blue-light text-white">
+                      <SelectValue placeholder="Select Brand" />
+                    </SelectTrigger>
+                    <SelectContent className="bg-zion-blue-dark border border-zion-blue-light">
+                      <SelectItem value="all" className="text-white">
+                        All Brands
+                      </SelectItem>
+                      {brandOptions.map((b) => (
+                        <SelectItem key={b || 'unknown-brand'} value={b || ''} className="text-white">
+                          {b || 'N/A'}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+              )}
+
+              <div className="mb-6">
+                <label className="text-sm font-medium text-zion-slate-light block mb-2">
+                  Specifications
+                </label>
+                <Input
+                  type="text"
+                  placeholder="Search specifications..."
+                  value={specQuery}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    setSpecQuery(e.target.value)
+                  }
+                  className="bg-zion-blue border border-zion-blue-light text-white"
+                />
+              </div>
+
+              {availabilityOptions.length > 0 && (
+                <div className="mb-6">
+                  <label className="text-sm font-medium text-zion-slate-light block mb-2">
+                    Availability
+                  </label>
+                  <Select
+                    value={selectedAvailability}
+                    onValueChange={(value: string) =>
+                      setSelectedAvailability(value)
+                    }
+                  >
+                    <SelectTrigger className="bg-zion-blue border border-zion-blue-light text-white">
+                      <SelectValue placeholder="Select Availability" />
+                    </SelectTrigger>
+                    <SelectContent className="bg-zion-blue-dark border border-zion-blue-light">
+                      <SelectItem value="all" className="text-white">
+                        All
+                      </SelectItem>
+                      {availabilityOptions.map((a) => (
+                        <SelectItem key={a || 'unknown-availability'} value={a || ''} className="text-white">
+                          {a || 'N/A'}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+              )}
+
               <div className="mb-6">
                 <label className="text-sm font-medium text-zion-slate-light block mb-2">
                   Price Range
@@ -203,7 +345,7 @@ export function DynamicListingPage({
                   </div>
                 </div>
               </div>
-              
+
               <div className="mb-6">
                 <label className="text-sm font-medium text-zion-slate-light block mb-2">
                   Minimum Rating
@@ -211,15 +353,15 @@ export function DynamicListingPage({
                 <div className="flex flex-wrap gap-2">
                   {[null, 3, 4, 5].map((rating) => (
                     <Button
-                      key={rating === null ? 'any' : rating}
+                      key={rating === null ? "any" : rating}
                       variant="outline"
                       size="sm"
                       onClick={() => {
-                        console.log("Rating selected:", rating);
+                        logInfo('Rating selected:', { data: rating });
                         setSelectedRating(rating);
                       }}
                       aria-pressed={selectedRating === rating}
-                      className={`${
+                      className={`{
                         selectedRating === rating
                           ? "bg-zion-purple/30 border-zion-purple text-zion-purple"
                           : "border-zion-blue-light text-zion-slate-light"
@@ -230,7 +372,10 @@ export function DynamicListingPage({
                       ) : (
                         <div className="flex items-center">
                           {[...Array(rating)].map((_, i) => (
-                            <Star key={i} className="h-3 w-3 fill-zion-cyan text-zion-cyan" />
+                            <Star
+                              key={i}
+                              className="h-3 w-3 fill-zion-cyan text-zion-cyan"
+                            />
                           ))}
                           <span className="ml-1">& Up</span>
                         </div>
@@ -239,23 +384,26 @@ export function DynamicListingPage({
                   ))}
                 </div>
               </div>
-              
-              <Button 
-                variant="outline" 
+
+              <Button
+                variant="outline"
                 className="w-full border-zion-purple text-zion-purple hover:bg-zion-purple/10"
                 onClick={() => {
-                  console.log("Resetting filters");
+                  logInfo("Clearing filters");
                   setSearchQuery("");
-                  setSelectedCategory("all");
+                  clearCategories();
                   setCurrentPriceFilter([0, priceRange.max]);
                   setSelectedRating(null);
+                  setSelectedBrand("all");
+                  setSpecQuery("");
+                  setSelectedAvailability("all");
                 }}
               >
-                Reset Filters
+                Clear All
               </Button>
             </div>
           </div>
-          
+
           <div className="lg:col-span-3">
             <div className="bg-zion-blue-dark rounded-lg p-4 mb-6 border border-zion-blue-light">
               <div className="flex flex-col md:flex-row gap-4">
@@ -266,45 +414,37 @@ export function DynamicListingPage({
                     placeholder="Search listings..."
                     value={searchQuery}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                      console.log("Search query:", e.target.value);
+                      logInfo('Search query:', { data: e.target.value });
                       setSearchQuery(e.target.value);
                     }}
                     className="pl-10 bg-zion-blue border border-zion-blue-light text-white"
                   />
                 </div>
-                
+
                 <div className="flex items-center gap-2 ml-auto">
+                  <Select value={sortOption} onValueChange={setSortOption}>
+                    <SelectTrigger className="w-[150px] bg-zion-blue border border-zion-blue-light text-white">
+                      <SelectValue placeholder="Sort" />
+                    </SelectTrigger>
+                    <SelectContent className="bg-zion-blue-dark border border-zion-blue-light">
+                      <SelectItem value="newest" className="text-white">Newest</SelectItem>
+                      <SelectItem value="price-asc" className="text-white">Price: Low to High</SelectItem>
+                      <SelectItem value="price-desc" className="text-white">Price: High to Low</SelectItem>
+                      <SelectItem value="rating" className="text-white">Highest Rating</SelectItem>
+                    </SelectContent>
+                  </Select>
                   <Button
                     variant="outline"
                     size="icon"
-                    onClick={() => setView("grid")}
-                    aria-pressed={view === "grid"}
-                    aria-label="Grid view"
-                    title="Grid view"
-                    className={`${
-                      view === "grid"
-                        ? "bg-zion-purple/30 border-zion-purple text-zion-purple"
-                        : "border-zion-blue-light text-zion-slate-light"
-                    } focus-visible:ring-zion-purple`}
+                    onClick={() => setView(isGrid ? "list" : "grid")}
+                    aria-label={isGrid ? "List view" : "Grid view"}
+                    title={isGrid ? "List view" : "Grid view"}
+                    className="border-zion-blue-light text-zion-slate-light focus-visible:ring-zion-purple"
                   >
-                    <LayoutGrid className="h-4 w-4" />
-                    <span className="sr-only">Grid view</span>
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    onClick={() => setView("list")}
-                    aria-pressed={view === "list"}
-                    aria-label="List view"
-                    title="List view"
-                    className={`${
-                      view === "list"
-                        ? "bg-zion-purple/30 border-zion-purple text-zion-purple"
-                        : "border-zion-blue-light text-zion-slate-light"
-                    } focus-visible:ring-zion-purple`}
-                  >
-                    <List className="h-4 w-4" />
-                    <span className="sr-only">List view</span>
+                    {ToggleViewIcon}
+                    <span className="sr-only">
+                      {isGrid ? "List view" : "Grid view"}
+                    </span>
                   </Button>
                 </div>
               </div>
@@ -312,8 +452,9 @@ export function DynamicListingPage({
 
             <div className="mb-6">
               <p className="text-zion-slate-light">
-                Showing {paginatedListings.length} of {filteredListings.length} results
-                {selectedCategory !== "all" && ` in ${selectedCategory}`}
+                Showing {filteredListings.length} results
+                {selectedCategories.length > 0 &&
+                  ` in ${selectedCategories.join(', ')}`}
                 {searchQuery && ` for "${searchQuery}"`}
               </p>
             </div>
@@ -331,22 +472,21 @@ export function DynamicListingPage({
                     key={i}
                     className="rounded-lg overflow-hidden border border-zion-blue-light"
                   >
-                    <Skeleton className="h-48 w-full bg-zion-blue-light/20" />
+                    <Skeleton height={192} width="100%" />
                     <div className="p-4">
-                      <Skeleton className="h-6 w-1/3 mb-2 bg-zion-blue-light/20" />
-                      <Skeleton className="h-8 w-5/6 mb-4 bg-zion-blue-light/20" />
-                      <Skeleton className="h-4 w-full mb-2 bg-zion-blue-light/20" />
-                      <Skeleton className="h-4 w-4/5 mb-4 bg-zion-blue-light/20" />
+                      <Skeleton height={24} width="33%" className="mb-2" />
+                      <Skeleton height={32} width="83%" className="mb-4" />
+                      <Skeleton height={16} width="100%" className="mb-2" />
+                      <Skeleton height={16} width="80%" className="mb-4" />
                       <div className="flex justify-between items-center pt-4">
-                        <Skeleton className="h-6 w-1/4 bg-zion-blue-light/20" />
-                        <Skeleton className="h-8 w-1/4 bg-zion-blue-light/20" />
+                        <Skeleton height={24} width="25%" />
+                        <Skeleton height={32} width="25%" />
                       </div>
                     </div>
                   </div>
                 ))}
               </div>
             ) : filteredListings.length > 0 ? (
-              <>
               <div
                 className={
                   view === "grid"
@@ -354,7 +494,7 @@ export function DynamicListingPage({
                     : "flex flex-col gap-6"
                 }
               >
-                {paginatedListings.map((listing) => (
+                {filteredListings.map((listing) => (
                   <ProductListingCard
                     key={listing.id}
                     listing={listing}
@@ -364,62 +504,28 @@ export function DynamicListingPage({
                   />
                 ))}
               </div>
-              {totalPages > 1 && (
-                <div className="mt-8">
-                  <Pagination className="justify-center">
-                    <PaginationContent>
-                      <PaginationItem>
-                        <PaginationPrevious
-                          href="#"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            setCurrentPage(Math.max(1, currentPage - 1));
-                          }}
-                        />
-                      </PaginationItem>
-                      {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                        <PaginationItem key={page}>
-                          <PaginationLink
-                            href="#"
-                            isActive={page === currentPage}
-                            onClick={(e) => {
-                              e.preventDefault();
-                              setCurrentPage(page);
-                            }}
-                          >
-                            {page}
-                          </PaginationLink>
-                        </PaginationItem>
-                      ))}
-                      <PaginationItem>
-                        <PaginationNext
-                          href="#"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            setCurrentPage(Math.min(totalPages, currentPage + 1));
-                          }}
-                        />
-                      </PaginationItem>
-                    </PaginationContent>
-                  </Pagination>
-                </div>
-              )}
-              </>
             ) : (
               <div className="text-center py-20">
-                <h3 className="text-xl font-bold text-white mb-2">No listings found</h3>
-                <p className="text-zion-slate-light mb-6">Try adjusting your filters or search query</p>
-                <Button 
-                  variant="outline" 
+                <h3 className="text-xl font-bold text-white mb-2">
+                  No listings found
+                </h3>
+                <p className="text-zion-slate-light mb-6">
+                  Try adjusting your filters or search query
+                </p>
+                <Button
+                  variant="outline"
                   onClick={() => {
                     setSearchQuery("");
-                    setSelectedCategory("all");
+                    clearCategories();
                     setCurrentPriceFilter([0, priceRange.max]);
                     setSelectedRating(null);
+                    setSelectedBrand("all");
+                    setSpecQuery("");
+                    setSelectedAvailability("all");
                   }}
                   className="border-zion-purple text-zion-purple hover:bg-zion-purple/10"
                 >
-                  Clear all filters
+                  Clear All
                 </Button>
               </div>
             )}

@@ -11,6 +11,8 @@ import { toast } from "sonner";
 
 export type AppPlatform = "ios" | "android";
 
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
+
 export type AppMetadataValues = {
   appTitle: string;
   shortDescription: string;
@@ -44,7 +46,7 @@ export const MetadataManager: React.FC = () => {
     
     try {
       // This would be implemented with actual API calls in production
-      console.log("Saving metadata for", currentPlatform, data);
+      logInfo(`Saving metadata for ${currentPlatform}`, { data });
       
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
@@ -52,7 +54,7 @@ export const MetadataManager: React.FC = () => {
       toast.success(`${currentPlatform === "ios" ? "iOS" : "Android"} metadata saved successfully!`);
     } catch (error) {
       toast.error("Failed to save metadata");
-      console.error(error);
+      logErrorToProduction("Failed to save metadata", { data: error });
     } finally {
       setIsSaving(false);
     }

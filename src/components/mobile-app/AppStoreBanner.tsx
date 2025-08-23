@@ -1,7 +1,8 @@
 
 import React, { useState, useEffect } from "react";
 import { safeStorage } from "@/utils/safeStorage";
-import { X } from "lucide-react";
+import { X } from 'lucide-react';
+
 import { useIsMobile } from "@/hooks/use-mobile";
 
 export const AppStoreBanner: React.FC = () => {
@@ -18,6 +19,7 @@ export const AppStoreBanner: React.FC = () => {
       
       return () => clearTimeout(timer);
     }
+    return undefined;
   }, [isMobile]);
   
   const dismissBanner = () => {
@@ -43,7 +45,11 @@ export const AppStoreBanner: React.FC = () => {
           >
             View
           </a>
-          <button onClick={dismissBanner} className="text-gray-400">
+          <button
+            onClick={dismissBanner}
+            className="text-gray-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
+            aria-label="Dismiss banner"
+          >
             <X className="h-5 w-5" />
           </button>
         </div>

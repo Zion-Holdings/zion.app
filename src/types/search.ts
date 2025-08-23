@@ -1,7 +1,9 @@
 
 export interface SearchSuggestion {
+  id?: string;
   text: string;
-  type: 'product' | 'category' | 'tag' | 'skill' | 'person' | 'recent';
+  slug?: string; // URL-friendly version for navigation
+  type: 'product' | 'category' | 'tag' | 'skill' | 'person' | 'recent' | 'doc' | 'blog' | 'saved';
   iconUrl?: string;
 }
 
@@ -25,4 +27,6 @@ export interface FilterOptions {
     value: string;
   }[];
   ratingOptions: number[];
+  minPrice: number;
+  maxPrice: number;
 }

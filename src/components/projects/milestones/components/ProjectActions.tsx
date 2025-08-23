@@ -1,8 +1,9 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
-import { ShieldAlert } from "lucide-react";
+import Link from 'next/link';
+import { ShieldAlert } from 'lucide-react';
+
 import { RaiseDisputeButton } from '@/components/disputes/RaiseDisputeButton';
 
 interface ProjectActionsProps {
@@ -24,7 +25,7 @@ export function ProjectActions({
     <div className="flex gap-2">
       {isUnderDispute && disputeId ? (
         <Button variant="outline" asChild>
-          <Link to={`/dashboard/disputes/${disputeId}`}>
+          <Link href={`/dashboard/disputes/${disputeId}`}>
             <ShieldAlert className="h-4 w-4 mr-2" />
             View Active Dispute
           </Link>

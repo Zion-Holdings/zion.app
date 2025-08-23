@@ -1,12 +1,33 @@
 
 import { useState } from "react";
-import { BookOpen, Code, Copy, Terminal } from "lucide-react";
+import { BookOpen, Terminal } from 'lucide-react';
+
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 
 import CodeBlock from "./CodeBlock";
+import { logInfo } from '@/utils/productionLogger';
+
+
+interface EndpointParam {
+  name: string;
+  type: string;
+  description: string;
+  required?: boolean;
+}
+
+interface EndpointSectionProps {
+  method: string;
+  endpoint: string;
+  description: string;
+  note?: string;
+  params?: EndpointParam[];
+  codeExamples?: Record<string, string>;
+  responseExamples?: { success: string };
+}
 
 export function ApiDocumentation() {
   return (
@@ -63,7 +84,7 @@ export function ApiDocumentation() {
 });
 
 const data = await response.json();
-console.log(data);`,
+logInfo(data);`,
                 python: `import requests
 
 headers = {
@@ -131,7 +152,7 @@ const response = await fetch(\`https://api.ziontechgroup.com/v1/jobs/\${jobId}\`
 });
 
 const data = await response.json();
-console.log(data);`,
+logInfo(data);`,
                 python: `import requests
 
 headers = {
@@ -223,7 +244,7 @@ print(data)`
 });
 
 const data = await response.json();
-console.log(data);`,
+logInfo(data);`,
                 python: `import requests
 import json
 
@@ -302,7 +323,7 @@ print(data)`
 });
 
 const data = await response.json();
-console.log(data);`,
+logInfo(data);`,
                 python: `import requests
 
 headers = {
@@ -364,7 +385,7 @@ const response = await fetch(\`https://api.ziontechgroup.com/v1/talent/\${talent
 });
 
 const data = await response.json();
-console.log(data);`,
+logInfo(data);`,
                 python: `import requests
 
 headers = {
@@ -466,7 +487,7 @@ print(data)`
 });
 
 const data = await response.json();
-console.log(data);`,
+logInfo(data);`,
                 python: `import requests
 import json
 
@@ -541,7 +562,7 @@ print(data)`
 });
 
 const data = await response.json();
-console.log(data);`,
+logInfo(data);`,
                 python: `import requests
 
 headers = {
@@ -624,7 +645,7 @@ app.post('/webhook', express.raw({type: 'application/json'}), (req, res) => {
   
   // Process the webhook event
   const event = JSON.parse(payload);
-  console.log('Received valid webhook:', event);
+  logInfo('Received valid webhook:', { data: event });
   
   // Respond to acknowledge receipt
   res.status(200).send('Webhook received');
@@ -788,15 +809,15 @@ app.post('/webhook', express.raw({type: 'application/json'}), (req, res) => {
 }
 
 // Helper component for API endpoint documentation
-function EndpointSection({ 
-  method, 
-  endpoint, 
+function EndpointSection({
+  method,
+  endpoint,
   description,
   note,
   params = [],
   codeExamples,
   responseExamples
-}) {
+}: EndpointSectionProps) {
   const [activeTab, setActiveTab] = useState("curl");
   
   return (
@@ -876,7 +897,7 @@ function EndpointSection({
             </div>
           </div>
           <CodeBlock 
-            code={codeExamples[activeTab]}
+            code={codeExamples[activeTab] || "// Code example not available"}
             language={activeTab === "curl" ? "bash" : activeTab}
           />
         </div>

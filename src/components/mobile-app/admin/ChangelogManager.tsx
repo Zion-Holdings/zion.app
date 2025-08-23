@@ -4,7 +4,9 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Plus, Trash2 } from "lucide-react";
+import { Plus, Trash2 } from 'lucide-react';
+
+
 import { AppPlatform } from "./MetadataManager";
 
 interface ChangelogManagerProps {
@@ -30,7 +32,7 @@ export const ChangelogManager: React.FC<ChangelogManagerProps> = ({ platform }) 
   
   const [newEntry, setNewEntry] = useState<Omit<ChangelogEntry, "id">>({
     version: "",
-    date: new Date().toISOString().split('T')[0],
+    date: new Date().toISOString().split('T')[0] || new Date().toLocaleDateString('en-CA'),
     changes: ""
   });
   
@@ -45,7 +47,7 @@ export const ChangelogManager: React.FC<ChangelogManagerProps> = ({ platform }) 
     setEntries([entry, ...entries]);
     setNewEntry({
       version: "",
-      date: new Date().toISOString().split('T')[0],
+      date: new Date().toISOString().split('T')[0] || new Date().toLocaleDateString('en-CA'),
       changes: ""
     });
   };

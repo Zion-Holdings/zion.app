@@ -8,7 +8,7 @@ interface MilestoneCreatorProps {
   onCancel: () => void;
   projectScope?: string;
   projectStartDate?: string;
-  projectEndDate?: string | null;
+  projectEndDate?: string | undefined;
   projectType?: string;
 }
 

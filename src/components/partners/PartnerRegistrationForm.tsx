@@ -11,6 +11,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
 import { supabase } from "@/integrations/supabase/client";
+import {logErrorToProduction} from '@/utils/productionLogger';
+
 
 const partnerFormSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -20,8 +22,8 @@ const partnerFormSchema = z.object({
   youtube: z.string().optional(),
   linkedin: z.string().optional(),
   niche: z.string().min(2, { message: "Please specify your niche." }),
-  audience_size: z.string(),
-  payout_method: z.string(),
+  audience_size: z.string().nonempty({ message: "Please select your audience size." }),
+  payout_method: z.string().nonempty({ message: "Please select a payout method." }),
   bio: z.string().min(10, { message: "Bio must be at least 10 characters." }).max(500),
 });
 
@@ -51,7 +53,7 @@ export function PartnerRegistrationForm() {
     const { data: existingPartner } = await supabase
       .from('partner_profiles')
       .select('id')
-      .eq('user_id', user.id)
+      .eq('user_id', user?.id)
       .single();
 
     if (existingPartner) {
@@ -125,7 +127,7 @@ export function PartnerRegistrationForm() {
       }
 
     } catch (error: any) {
-      console.error('Error submitting partner application:', error);
+      logErrorToProduction('Error submitting partner application:', { data: error });
       toast({
         title: "Submission failed",
         description: error.message || "There was a problem submitting your application.",
@@ -149,7 +151,7 @@ export function PartnerRegistrationForm() {
               <FormField
                 control={form.control}
                 name="name"
-                render={({ field }) => (
+                render={({ field }: { field: any }) => (
                   <FormItem>
                     <FormLabel>Name / Brand</FormLabel>
                     <FormControl>
@@ -163,7 +165,7 @@ export function PartnerRegistrationForm() {
               <FormField
                 control={form.control}
                 name="website"
-                render={({ field }) => (
+                render={({ field }: { field: any }) => (
                   <FormItem>
                     <FormLabel>Website (Optional)</FormLabel>
                     <FormControl>
@@ -178,7 +180,7 @@ export function PartnerRegistrationForm() {
                 <FormField
                   control={form.control}
                   name="twitter"
-                  render={({ field }) => (
+                  render={({ field }: { field: any }) => (
                     <FormItem>
                       <FormLabel>Twitter (Optional)</FormLabel>
                       <FormControl>
@@ -192,7 +194,7 @@ export function PartnerRegistrationForm() {
                 <FormField
                   control={form.control}
                   name="instagram"
-                  render={({ field }) => (
+                  render={({ field }: { field: any }) => (
                     <FormItem>
                       <FormLabel>Instagram (Optional)</FormLabel>
                       <FormControl>
@@ -208,7 +210,7 @@ export function PartnerRegistrationForm() {
                 <FormField
                   control={form.control}
                   name="youtube"
-                  render={({ field }) => (
+                  render={({ field }: { field: any }) => (
                     <FormItem>
                       <FormLabel>YouTube (Optional)</FormLabel>
                       <FormControl>
@@ -222,7 +224,7 @@ export function PartnerRegistrationForm() {
                 <FormField
                   control={form.control}
                   name="linkedin"
-                  render={({ field }) => (
+                  render={({ field }: { field: any }) => (
                     <FormItem>
                       <FormLabel>LinkedIn (Optional)</FormLabel>
                       <FormControl>
@@ -237,7 +239,7 @@ export function PartnerRegistrationForm() {
               <FormField
                 control={form.control}
                 name="niche"
-                render={({ field }) => (
+                render={({ field }: { field: any }) => (
                   <FormItem>
                     <FormLabel>Your Niche</FormLabel>
                     <FormControl>
@@ -255,7 +257,7 @@ export function PartnerRegistrationForm() {
                 <FormField
                   control={form.control}
                   name="audience_size"
-                  render={({ field }) => (
+                  render={({ field }: { field: any }) => (
                     <FormItem>
                       <FormLabel>Audience Size</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
@@ -280,7 +282,7 @@ export function PartnerRegistrationForm() {
                 <FormField
                   control={form.control}
                   name="payout_method"
-                  render={({ field }) => (
+                  render={({ field }: { field: any }) => (
                     <FormItem>
                       <FormLabel>Preferred Payout Method</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
@@ -305,7 +307,7 @@ export function PartnerRegistrationForm() {
               <FormField
                 control={form.control}
                 name="bio"
-                render={({ field }) => (
+                render={({ field }: { field: any }) => (
                   <FormItem>
                     <FormLabel>Bio</FormLabel>
                     <FormControl>

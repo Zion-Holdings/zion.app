@@ -1,14 +1,20 @@
 
 import React from "react";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { useWhitelabel } from "@/context/WhitelabelContext";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Briefcase, PenTool, BarChart3, Users, Shield, Globe } from "lucide-react";
+import { ArrowRight, Briefcase, PenTool, BarChart3, Users, Shield, Globe } from 'lucide-react';
+
+
+
+
+
+
+
 import { useAuth } from "@/hooks/useAuth";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export default function ZionHireAI() {
   const { isWhitelabel, brandName, primaryColor } = useWhitelabel();
@@ -43,7 +49,7 @@ export default function ZionHireAI() {
                     className="bg-zion-purple hover:bg-zion-purple-light text-white"
                     asChild
                   >
-                    <Link to={isAuthenticated ? "/enterprise/admin" : "/login"}>
+                    <Link href={isAuthenticated ? "/enterprise/admin" : "/login"}>
                       Get Started <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
@@ -53,7 +59,7 @@ export default function ZionHireAI() {
                     className="bg-transparent border-white text-white hover:bg-white/10"
                     asChild
                   >
-                    <Link to="/enterprise/demo">
+                    <Link href="/enterprise/demo">
                       Request Demo
                     </Link>
                   </Button>
@@ -65,6 +71,7 @@ export default function ZionHireAI() {
                   src="https://placehold.co/600x400/192134/9b87f5?text=Zion+Hire+AI"
                   alt="Zion Hire AI Dashboard"
                   className="relative z-10 rounded-lg shadow-xl"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -255,14 +262,13 @@ export default function ZionHireAI() {
               className="bg-zion-purple hover:bg-zion-purple-light text-white"
               asChild
             >
-              <Link to="/enterprise/demo">
+              <Link href="/enterprise/demo">
                 Schedule a Demo
               </Link>
             </Button>
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }

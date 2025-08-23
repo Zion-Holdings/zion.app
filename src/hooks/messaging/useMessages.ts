@@ -1,17 +1,19 @@
 
-import { UserProfile, UserDetails } from '@/types/auth';
+import { UserDetails } from '@/types/auth';
 import { supabase } from '@/integrations/supabase/client';
 import { Message, Conversation } from '@/types/messaging';
 import { toast } from '@/hooks/use-toast';
+import {logErrorToProduction} from '@/utils/productionLogger';
+
 
 // Allow either UserProfile or UserDetails
-type UserWithProfile = UserProfile | UserDetails | null;
+type UserWithProfile = UserDetails | null;
 
 /**
  * Hook to handle message operations
  */
 export function useMessages(
-  user: UserWithProfile,
+  user: UserDetails | null,
   activeConversation: Conversation | null,
   activeMessages: Message[],
   setActiveMessages: (updater: (prev: Message[]) => Message[]) => void,
@@ -43,14 +45,14 @@ export function useMessages(
       
       // Mark messages as read
       const unreadMessages = data.filter(
-        msg => !msg.read && msg.recipient_id === user.id
+        (msg: any) => !msg.read && msg.recipient_id === user.id
       );
       
       if (unreadMessages.length > 0) {
         await markAsRead(conversationId);
       }
     } catch (error) {
-      console.error('Error fetching messages:', error);
+      logErrorToProduction('Error fetching messages:', { data: error });
     } finally {
       setIsLoading(false);
     }
@@ -95,7 +97,7 @@ export function useMessages(
       // Return the sent message
       return data;
     } catch (error) {
-      console.error('Error sending message:', error);
+      logErrorToProduction('Error sending message:', { data: error });
       toast({
         title: "Failed to send message",
         description: "Please try again later",
@@ -150,7 +152,7 @@ export function useMessages(
         );
       });
     } catch (error) {
-      console.error('Error marking messages as read:', error);
+      logErrorToProduction('Error marking messages as read:', { data: error });
     }
   };
 

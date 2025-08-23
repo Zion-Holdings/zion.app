@@ -1,7 +1,9 @@
 
 import { supabase } from '@/integrations/supabase/client';
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 export async function ensureAnalyticsTablesExist() {
+
   try {
     // Check if analytics_events table exists
     const { error } = await supabase
@@ -10,11 +12,11 @@ export async function ensureAnalyticsTablesExist() {
       .limit(1);
       
     if (error && error.code === 'PGRST204') {
-      console.log('Creating analytics tables...');
+      logInfo('Creating analytics tables...');
       await createAnalyticsTables();
     }
   } catch (error) {
-    console.warn('Error checking if analytics tables exist:', error);
+    logWarn('Error checking if analytics tables exist:', { data: error });
     // No need to create tables here, as this could be a connection error
   }
 }
@@ -82,9 +84,9 @@ async function createAnalyticsTables() {
       `
     });
     
-    console.log('Analytics tables created successfully');
+    logInfo('Analytics tables created successfully');
   } catch (error) {
-    console.error('Error creating analytics tables:', error);
+    logErrorToProduction('Error creating analytics tables:', { data: error });
     // Tables creation failed, but we can still continue
   }
 }

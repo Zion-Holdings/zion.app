@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import {logErrorToProduction} from '@/utils/productionLogger';
 import {
   Dialog,
   DialogContent,
@@ -142,7 +143,7 @@ export function HireConfirmationModal({
             return;
           }
         } catch (error) {
-          console.error('Error updating availability:', error);
+          logErrorToProduction('Error updating availability:', { data: error });
           toast({
             title: 'Error updating availability',
             description: 'Failed to update candidate availability status.',
@@ -160,7 +161,7 @@ export function HireConfirmationModal({
       onConfirm();
       onClose();
     } catch (error) {
-      console.error('Error hiring candidate:', error);
+      logErrorToProduction('Error hiring candidate:', { data: error });
       toast({
         title: 'Error hiring candidate',
         description: 'Failed to hire candidate. Please try again.',

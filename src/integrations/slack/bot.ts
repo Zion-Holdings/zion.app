@@ -1,6 +1,7 @@
 
 // Mock implementation of Slack bot that doesn't require external dependencies
 // This replaces the original implementation which had dependency issues
+import { switchNetlifySite } from 'scripts/switch-netlify-site.js';
 
 interface SlackCommand {
   text: string;
@@ -92,6 +93,16 @@ app.command('/zion', async ({ command, ack, respond }: { command: SlackCommand, 
   }
 });
 
+app.command('/zion-rollback', async ({ ack, respond }: { ack: SlackAck, respond: SlackRespond }) => {
+  await ack();
+  try {
+    await switchNetlifySite();
+    await respond('Rollback complete. DNS switched to the previous site.');
+  } catch (err: any) {
+    await respond(`Rollback failed: ${err.message}`);
+  }
+});
+
 // Mock startup with safer environment access
 (async () => {
   // Get PORT from environment or use default
@@ -100,5 +111,20 @@ app.command('/zion', async ({ command, ack, respond }: { command: SlackCommand, 
   const port = env.PORT ? Number(env.PORT) : 3000;
   await app.start(port);
 })();
+
+// Add this function either inside MockApp or as an exported function
+async function sendSlackAlert(message: string): Promise<void> {
+  // Safely log without direct console reference
+  const safeConsole = typeof globalThis !== 'undefined' ? globalThis.console : undefined;
+  if (safeConsole && safeConsole.log) {
+    safeConsole.log(`SLACK_ALERT: ${message}`);
+  }
+  // In a real scenario, this would use the Slack API to send a message
+  // For example: await app.client.chat.postMessage({ channel: '#alerts', text: message });
+  return Promise.resolve();
+}
+
+// Export it if it's standalone, or ensure it can be called
+export { sendSlackAlert }; // If standalone
 
 export default app;

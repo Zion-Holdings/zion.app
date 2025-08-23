@@ -1,45 +1,21 @@
 
+import { Quote } from 'lucide-react';
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
-  CarouselPrevious,
+  CarouselPrevious
 } from "@/components/ui/carousel";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Avatar } from "@/components/ui/avatar";
-import { Quote } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
-const testimonials = [
-  {
-    quote: "Zion has revolutionized how we source AI talent. We found three machine learning specialists within just one week!",
-    author: "Sarah Chen",
-    role: "CTO, DataMind Solutions",
-    avatar: "https://i.pravatar.cc/150?img=32",
-    company: "DataMind",
-  },
-  {
-    quote: "The IT equipment rentals saved us thousands compared to buying outright. Their 24/7 support is unmatched in the industry.",
-    author: "Michael Rodriguez",
-    role: "IT Director, GlobalTech",
-    avatar: "https://i.pravatar.cc/150?img=12",
-    company: "GlobalTech",
-  },
-  {
-    quote: "As an AI developer, Zion has become my primary platform for showcasing work and finding new clients. The free publishing is a game-changer.",
-    author: "Aanya Patel",
-    role: "Independent AI Consultant",
-    avatar: "https://i.pravatar.cc/150?img=28",
-    company: "AI Systems",
-  },
-  {
-    quote: "Their green IT recycling program helped us meet our sustainability goals while upgrading our server infrastructure.",
-    author: "Thomas Klein",
-    role: "Operations Manager, EcoTech Systems",
-    avatar: "https://i.pravatar.cc/150?img=67",
-    company: "EcoTech",
-  },
-];
+import Link from "next/link";
+import Image from "next/image";
+import { CASE_STUDIES } from "@/data/case-studies";
+
+const testimonials = CASE_STUDIES;
 
 export function TestimonialCarousel() {
   return (
@@ -63,11 +39,17 @@ export function TestimonialCarousel() {
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={index} className="md:basis-1/1 lg:basis-1/1">
-                  <Card className="bg-zion-blue-light border border-zion-purple/20 hover:border-zion-purple/40 transition-all duration-300">
-                    <CardContent className="p-8 flex flex-col md:flex-row gap-6">
+                  <Card className="bg-zion-blue-light border border-zion-purple/20 hover:border-zion-purple/40 transition-all duration-300 flex flex-col">
+                    <CardContent className="p-8 flex flex-col md:flex-row gap-6 flex-1">
                       <div className="flex-shrink-0 flex flex-col items-center">
                         <Avatar className="h-20 w-20 border-2 border-zion-cyan mb-3">
-                          <img src={testimonial.avatar} alt={testimonial.author} />
+                          <Image
+                            src={testimonial.avatar}
+                            alt={testimonial.author}
+                            width={80}
+                            height={80}
+                            loading="lazy"
+                          />
                         </Avatar>
                         <div className="text-center md:text-left">
                           <p className="font-bold text-zion-cyan">{testimonial.author}</p>
@@ -75,10 +57,26 @@ export function TestimonialCarousel() {
                         </div>
                       </div>
                       <div className="flex-1">
+                        <div className="flex items-center gap-3 mb-4">
+                          <Image
+                            src={testimonial.companyLogo}
+                            alt={`${testimonial.company} logo`}
+                            width={32}
+                            height={32}
+                            className="h-8 w-auto"
+                            loading="lazy"
+                          />
+                          <span className="text-white font-semibold">{testimonial.company}</span>
+                        </div>
                         <Quote className="h-10 w-10 text-zion-cyan opacity-30 mb-3" />
                         <p className="text-white text-lg mb-6">"{testimonial.quote}"</p>
                       </div>
                     </CardContent>
+                    <CardFooter className="p-6 pt-0">
+                      <Button variant="link" className="text-zion-cyan p-0" asChild>
+                        <Link href={`/case-studies/${testimonial.slug}`}>Read Case Study →</Link>
+                      </Button>
+                    </CardFooter>
                   </Card>
                 </CarouselItem>
               ))}

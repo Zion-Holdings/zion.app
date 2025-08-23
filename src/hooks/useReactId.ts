@@ -6,13 +6,18 @@ import * as React from "react"
  * a small fallback that mimics the API using `useRef`.
  */
 export function useReactId(): string {
+  const idRef = React.useRef<string | null>(null)
+
+  // If the built-in useId is available (React 18+), prefer it for
+  // consistency with React's own identifier generation.
   if (typeof (React as any).useId === "function") {
     return (React as any).useId()
   }
 
-  const idRef = React.useRef<string | null>(null)
+  // Fallback for React < 18 – generate a persistent random id once per hook
   if (idRef.current === null) {
     idRef.current = Math.random().toString(36).slice(2)
   }
+
   return idRef.current
 }

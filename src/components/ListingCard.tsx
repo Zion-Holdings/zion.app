@@ -1,17 +1,17 @@
-
+import React from "react";
 import { cn } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import Image from "next/image";
 
 interface ListingCardProps {
   id?: string;
   title: string;
   description: string;
-  image?: string;
+  images?: string[];
   category: string;
   tags?: string[];
-  author?: string;
-  authorImage?: string;
+  author?: { name: string; id?: string; avatarUrl?: string; email?: string; };
   className?: string;
   profileType?: 'service' | 'talent';
 }
@@ -20,11 +20,10 @@ export function ListingCard({
   id,
   title, 
   description, 
-  image, 
+  images,
   category, 
   tags, 
   author, 
-  authorImage, 
   className,
   profileType = 'service'
 }: ListingCardProps) {
@@ -34,19 +33,21 @@ export function ListingCard({
 
   return (
     <Link
-      to={`/profile/${profileId}`}
+      href={`/profile/${profileId}`}
       tabIndex={0}
       className={cn(
         "flex flex-col overflow-hidden rounded-lg border border-zion-blue-light bg-zion-blue hover:border-zion-purple/50 transition-all duration-300 group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zion-purple",
         className
       )}
     >
-      {image && (
-        <div className="h-48 w-full overflow-hidden">
-          <img 
-            src={image} 
-            alt={title} 
-            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+      {images && images.length > 0 && images[0] && (
+        <div className="h-48 w-full overflow-hidden relative">
+          <Image
+            src={images[0]}
+            alt={title}
+            fill
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
+            loading="lazy"
           />
         </div>
       )}
@@ -71,12 +72,12 @@ export function ListingCard({
         
         {author && (
           <div className="flex items-center mt-auto pt-4 border-t border-zion-blue-light">
-            {authorImage ? (
-              <img src={authorImage} alt={author} className="h-8 w-8 rounded-full mr-2" />
+            {author.avatarUrl ? (
+              <Image src={author.avatarUrl} alt={author.name} width={32} height={32} className="rounded-full mr-2" loading="lazy" />
             ) : (
               <div className="h-8 w-8 rounded-full bg-zion-purple/20 mr-2" />
             )}
-            <span className="text-sm text-zion-slate-light">{author}</span>
+            <span className="text-sm text-zion-slate-light">{author.name}</span>
           </div>
         )}
       </div>

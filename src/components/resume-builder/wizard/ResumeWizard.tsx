@@ -6,6 +6,9 @@ import { Tabs } from '@/components/ui/tabs';
 import { Card, CardContent } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { AlertCircle, FilePlus, Loader2 } from 'lucide-react';
+
+
+
 import { Button } from '@/components/ui/button';
 import { Resume } from '@/types/resume';
 
@@ -52,14 +55,20 @@ export function ResumeWizard() {
   const nextStep = () => {
     const currentIndex = RESUME_STEPS.findIndex(step => step.id === activeTab);
     if (currentIndex < RESUME_STEPS.length - 1) {
-      setActiveTab(RESUME_STEPS[currentIndex + 1].id);
+      const nextStep = RESUME_STEPS[currentIndex + 1];
+      if (nextStep) {
+        setActiveTab(nextStep.id);
+      }
     }
   };
   
   const prevStep = () => {
     const currentIndex = RESUME_STEPS.findIndex(step => step.id === activeTab);
     if (currentIndex > 0) {
-      setActiveTab(RESUME_STEPS[currentIndex - 1].id);
+      const prevStep = RESUME_STEPS[currentIndex - 1];
+      if (prevStep) {
+        setActiveTab(prevStep.id);
+      }
     }
   };
 

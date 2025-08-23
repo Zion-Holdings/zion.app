@@ -1,13 +1,19 @@
 
 import { ContractTemplate } from "@/types/contracts";
 import { Button } from "@/components/ui/button";
-import { Loader2, Edit, Trash, Star, StarOff } from "lucide-react";
+import { Loader2, Edit, Trash, Star, StarOff } from 'lucide-react';
+
+
+
+
+
 import { useContractTemplates } from "@/hooks/useContractTemplates";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { useAuth } from "@/hooks/useAuth";
-import { useNavigate, useLocation } from "react-router-dom";
+// useRouter replaces the old useLocation hook from react-router
+import { useRouter } from 'next/router';
 import {
   AlertDialog,
   AlertDialogAction,
@@ -36,8 +42,7 @@ export function TemplateList({
   const [templateToDelete, setTemplateToDelete] = useState<string | null>(null);
   const { deleteTemplate, setDefaultTemplate } = useContractTemplates();
   const { user } = useAuth();
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter();
 
   const handleDeleteClick = (templateId: string) => {
     setTemplateToDelete(templateId);
@@ -52,7 +57,8 @@ export function TemplateList({
 
   const handleSetDefault = async (templateId: string) => {
     if (!user) {
-      navigate(`/login?next=${encodeURIComponent(location.pathname + location.search)}`);
+      const currentPath = router.asPath;
+      router.push(`/auth/login?returnTo=${encodeURIComponent(currentPath)}`);
       return;
     }
     await setDefaultTemplate.mutateAsync(templateId);
@@ -94,14 +100,24 @@ export function TemplateList({
               </div>
               
               <div className="flex items-center gap-2">
-                <Button variant="ghost" size="icon" onClick={() => onEdit(template)}>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => onEdit(template)}
+                  aria-label="Edit template"
+                >
                   <Edit className="h-4 w-4" />
                 </Button>
                 {!template.is_default ? (
                   <TooltipProvider>
                     <Tooltip>
                       <TooltipTrigger asChild>
-                        <Button variant="ghost" size="icon" onClick={() => handleSetDefault(template.id)}>
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          onClick={() => handleSetDefault(template.id)}
+                          aria-label="Set as default"
+                        >
                           <Star className="h-4 w-4" />
                         </Button>
                       </TooltipTrigger>
@@ -113,11 +129,16 @@ export function TemplateList({
                     </Tooltip>
                   </TooltipProvider>
                 ) : (
-                  <Button variant="ghost" size="icon" disabled>
+                  <Button variant="ghost" size="icon" disabled aria-label="Default template">
                     <StarOff className="h-4 w-4" />
                   </Button>
                 )}
-                <Button variant="ghost" size="icon" onClick={() => handleDeleteClick(template.id)}>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={() => handleDeleteClick(template.id)}
+                  aria-label="Delete template"
+                >
                   <Trash className="h-4 w-4 text-destructive" />
                 </Button>
               </div>

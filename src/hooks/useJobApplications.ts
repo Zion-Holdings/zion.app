@@ -4,8 +4,10 @@ import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
 import { JobApplication, ApplicationStatus } from "@/types/jobs";
 import { toast } from "sonner";
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export const useJobApplications = (jobId?: string) => {
+
   const { user } = useAuth();
   const [applications, setApplications] = useState<JobApplication[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -35,20 +37,20 @@ export const useJobApplications = (jobId?: string) => {
       }
       
       // For talent users, only fetch their own applications
-      if (user.userType === "jobSeeker" || user.userType === "creator") {
+      if (user.userType === "talent") {
         query = query.eq("talent_id", user.id);
-      } 
+      }
       // For client users, fetch applications for their jobs
-      else if (user.userType === "employer" || user.userType === "buyer") {
+      else if (user.userType === "client") {
         if (!jobId) {
           // Fix: Convert the subquery to a proper array or string
           const { data: jobIds } = await supabase
             .from("jobs")
             .select("id")
             .eq("client_id", user.id);
-          
+
           if (jobIds && jobIds.length > 0) {
-            const jobIdArray = jobIds.map(job => job.id);
+            const jobIdArray = jobIds.map((job: any) => job.id);
             query = query.in("job_id", jobIdArray);
           }
         }
@@ -72,7 +74,7 @@ export const useJobApplications = (jobId?: string) => {
       setApplications(transformedData as JobApplication[]);
       setError(null);
     } catch (err: any) {
-      console.error("Error fetching applications:", err);
+      logErrorToProduction('Error fetching applications:', { data: err });
       setError("Failed to fetch applications: " + err.message);
       toast.error("Failed to fetch applications");
     } finally {
@@ -80,21 +82,42 @@ export const useJobApplications = (jobId?: string) => {
     }
   };
   
-  const applyToJob = async (jobId: string, coverLetter: string, resumeId?: string) => {
+  const applyToJob = async (
+    jobId: string,
+    coverLetter: string,
+    resumeId?: string,
+    resumeFile?: File
+  ) => {
     if (!user) {
       toast.error("You must be logged in to apply for jobs");
       return false;
     }
     
     try {
+      let resumeUrl: string | undefined;
+
+      if (resumeFile) {
+        const fileName = `resume-${user.id}-${Date.now()}-${resumeFile.name}`;
+        const { error: uploadError } = await supabase.storage
+          .from('resumes')
+          .upload(fileName, resumeFile);
+        if (uploadError) throw uploadError;
+
+        const {
+          data: { publicUrl }
+        } = supabase.storage.from('resumes').getPublicUrl(fileName);
+        resumeUrl = publicUrl;
+      }
+
       const { data, error } = await supabase
-        .from("job_applications")
+        .from('job_applications')
         .insert({
           job_id: jobId,
           talent_id: user.id,
           resume_id: resumeId,
+          resume_url: resumeUrl,
           cover_letter: coverLetter,
-          status: "new"
+          status: 'new'
         })
         .select()
         .single();
@@ -109,13 +132,23 @@ export const useJobApplications = (jobId?: string) => {
       }
       
       // Add the new application to the local state
-      const newApplication = data as JobApplication;
+      const newApplication = {
+        ...(data as JobApplication),
+        resume: resumeUrl
+          ? {
+              id: crypto.randomUUID(),
+              title: resumeFile?.name || 'Uploaded CV',
+              type: 'custom_upload',
+              file_url: resumeUrl
+            }
+          : (data as any).resume
+      } as JobApplication;
       setApplications(prev => [newApplication, ...prev]);
       
       toast.success("Application submitted successfully");
       return true;
     } catch (err: any) {
-      console.error("Error applying to job:", err);
+      logErrorToProduction('Error applying to job:', { data: err });
       toast.error("Failed to submit application: " + err.message);
       return false;
     }
@@ -138,7 +171,7 @@ export const useJobApplications = (jobId?: string) => {
       toast.success(`Application status updated to ${status}`);
       return true;
     } catch (err: any) {
-      console.error("Error updating application status:", err);
+      logErrorToProduction('Error updating application status:', { data: err });
       toast.error("Failed to update application status: " + err.message);
       return false;
     }
@@ -166,7 +199,7 @@ export const useJobApplications = (jobId?: string) => {
       
       return true;
     } catch (err) {
-      console.error("Error marking application as viewed:", err);
+      logErrorToProduction('Error marking application as viewed:', { data: err });
       return false;
     }
   };

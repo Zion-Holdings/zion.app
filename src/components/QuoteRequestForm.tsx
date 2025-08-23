@@ -1,7 +1,8 @@
 
 import { useState } from "react";
+import { logDebug, logErrorToProduction } from '@/utils/productionLogger';
 import { useToast } from "@/hooks/use-toast";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { GradientHeading } from "@/components/GradientHeading";
@@ -11,8 +12,11 @@ import { ProjectDetailsStep } from "@/components/QuoteRequestForm/ProjectDetails
 import { TimelineStep } from "@/components/QuoteRequestForm/TimelineStep";
 import { BudgetStep } from "@/components/QuoteRequestForm/BudgetStep";
 import { SummaryStep } from "@/components/QuoteRequestForm/SummaryStep";
+import { AutoFillModal } from "@/components/QuoteRequestForm/AutoFillModal";
 import { QuoteFormData } from "@/types/quotes";
-import { Sparkles } from "lucide-react";
+import { Sparkles, Loader2 } from 'lucide-react';
+
+
 import { z } from "zod";
 
 export type QuoteRequestSteps = "service" | "details" | "timeline" | "budget" | "summary";
@@ -23,10 +27,12 @@ const serviceStepSchema = z.object({
 });
 
 export function QuoteRequestForm() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { toast } = useToast();
   const [currentStep, setCurrentStep] = useState<QuoteRequestSteps>("service");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [autoFillLoading, setAutoFillLoading] = useState(false);
+  const [autoFillOpen, setAutoFillOpen] = useState(false);
   
   const [formData, setFormData] = useState<QuoteFormData>({
     serviceType: "",
@@ -112,7 +118,7 @@ export function QuoteRequestForm() {
     
     try {
       // In a real application, you would send the data to your backend
-      console.log("Submitting form data:", formData);
+      logDebug("Submitting form data:", { data: formData });
       
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1500));
@@ -123,8 +129,8 @@ export function QuoteRequestForm() {
       });
       
       // Redirect to confirmation page or homepage
-      navigate("/");
-    } catch (error) {
+      router.push("/");
+    } catch (_error) {
       toast({
         title: "Submission Failed",
         description: "There was an error submitting your request. Please try again.",
@@ -132,6 +138,40 @@ export function QuoteRequestForm() {
       });
     } finally {
       setIsSubmitting(false);
+    }
+  };
+
+  const handleAutoFill = async (description: string) => {
+    setAutoFillLoading(true);
+    try {
+      const res = await fetch("/api/openai/match", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ projectDescription: description }),
+      });
+      if (!res.ok) throw new Error("Request failed");
+      const { category, itemId, timeline, budget } = await res.json();
+      updateFormData({
+        projectDescription: description,
+        serviceType: category,
+        serviceCategory: category,
+        specificItem: itemId
+          ? { id: itemId, title: "AI Selected Item", category }
+          : formData.specificItem,
+        timeline: timeline || formData.timeline,
+        budget: { ...formData.budget, ...(budget || {}) },
+      });
+      setCurrentStep("summary");
+      setAutoFillOpen(false);
+    } catch (err) {
+      logErrorToProduction("Auto-fill API error", err as Error, { component: 'QuoteRequestForm', projectDescription: description });
+      toast({
+        title: "Auto-fill Failed",
+        description: "We couldn't process your request. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setAutoFillLoading(false);
     }
   };
   
@@ -155,7 +195,7 @@ export function QuoteRequestForm() {
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="max-w-3xl mx-auto">
-        <div className="text-center mb-8">
+        <div className="text-center mb-8 space-y-3">
           <GradientHeading>Request a Quote</GradientHeading>
           <p className="text-zion-slate-light mt-4">
             Tell us about your project and we'll create a customized quote for you
@@ -164,6 +204,17 @@ export function QuoteRequestForm() {
             <Sparkles className="h-4 w-4 text-zion-cyan mr-1" />
             <span className="text-sm text-white">AI-powered matching</span>
           </div>
+          <Button
+            size="sm"
+            onClick={() => setAutoFillOpen(true)}
+            disabled={autoFillLoading}
+            className="mt-2"
+          >
+            {autoFillLoading && (
+              <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+            )}
+            Auto Fill with AI
+          </Button>
         </div>
         
         <Card className="bg-zion-blue-dark border border-zion-blue-light mb-8">
@@ -205,6 +256,12 @@ export function QuoteRequestForm() {
           </CardContent>
         </Card>
       </div>
+      <AutoFillModal
+        open={autoFillOpen}
+        onOpenChange={setAutoFillOpen}
+        onSubmit={handleAutoFill}
+        loading={autoFillLoading}
+      />
     </div>
   );
 }

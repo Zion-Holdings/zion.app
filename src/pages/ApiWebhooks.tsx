@@ -3,8 +3,11 @@ import React from "react";
 import ApiDocsLayout from "@/components/developers/ApiDocsLayout";
 import { CodeBlock } from "@/components/developers/CodeBlock";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import Link from 'next/link';
+import { logInfo } from '@/utils/productionLogger';
 
 export function ApiWebhooks() {
+
   // Sample webhook event payload
   const newApplicationPayload = `{
   "event_type": "new_application",
@@ -103,27 +106,27 @@ app.post('/webhooks/zion', verifyWebhookSignature, (req, res) => {
   // Handle different event types
   switch (event_type) {
     case 'new_application':
-      console.log('New application received:', data.application_id);
+      logInfo('New application received:', { data: data.application_id });
       // Process the new application...
       break;
     
     case 'talent_hired':
-      console.log('Talent hired:', data.talent_id);
+      logInfo('Talent hired:', { data: data.talent_id });
       // Update your system...
       break;
     
     case 'quote_received':
-      console.log('New quote received:', data.quote_id);
+      logInfo('New quote received:', { data: data.quote_id });
       // Process the quote...
       break;
     
     case 'message_received':
-      console.log('New message received:', data.message_id);
+      logInfo('New message received:', { data: data.message_id });
       // Process the message...
       break;
     
     default:
-      console.log('Unknown event type:', event_type);
+      logInfo('Unknown event type:', { data: event_type });
   }
   
   // Always return a 200 response quickly
@@ -131,7 +134,7 @@ app.post('/webhooks/zion', verifyWebhookSignature, (req, res) => {
 });
 
 app.listen(3000, () => {
-  console.log('Webhook server listening on port 3000');
+  logInfo('Webhook server listening on port 3000');
 });`;
 
   return (
@@ -178,7 +181,7 @@ app.listen(3000, () => {
 
         <h2>Setting Up Webhooks</h2>
         <p>
-          You can configure webhooks in the <a href="/developers/portal" className="text-zion-cyan">Developer Portal</a> under the Webhooks tab.
+          You can configure webhooks in the <Link href="/developers/portal" className="text-zion-cyan">Developer Portal</Link> under the Webhooks tab.
           For each webhook, you'll need to provide:
         </p>
         

@@ -1,1 +1,3 @@
-export { default } from '../../src/pages/TalentDirectory';
+import dynamic from 'next/dynamic';
+
+export default dynamic(() => import('@/pages/TalentDirectory'));

@@ -1,7 +1,7 @@
 
 import { useEffect, useState, useRef, ReactNode } from "react";
 import { cn } from "@/lib/utils";
-import { Skeleton } from "@/components/ui/skeleton";
+import Skeleton from "@/components/ui/skeleton";
 
 interface LazyLoadProps {
   height?: string | number;
@@ -25,7 +25,8 @@ export function LazyLoad({
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting) {
+        const entry = entries[0];
+        if (entry && entry.isIntersecting) {
           setIsVisible(true);
           observer.disconnect();
         }
@@ -56,6 +57,7 @@ export function LazyLoad({
 
       return () => clearTimeout(timer);
     }
+    return undefined;
   }, [isVisible]);
 
   const defaultLoadingComponent = (

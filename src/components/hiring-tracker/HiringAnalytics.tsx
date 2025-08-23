@@ -41,10 +41,14 @@ export function HiringAnalytics({ jobId }: HiringAnalyticsProps) {
       
       if (hiredApplications.length > 0) {
         const totalDays = hiredApplications.reduce((sum, app) => {
-          const hireDate = new Date(app.updated_at);
-          const applyDate = new Date(app.created_at);
-          const daysDiff = (hireDate.getTime() - applyDate.getTime()) / (1000 * 3600 * 24);
-          return sum + daysDiff;
+          const hireDate = app.updated_at ? new Date(app.updated_at) : null;
+          if (hireDate) {
+            const applyDate = new Date(app.created_at);
+            const daysDiff = (hireDate.getTime() - applyDate.getTime()) / (1000 * 3600 * 24);
+            return sum + daysDiff;
+          } else {
+            return sum;
+          }
         }, 0);
         
         avgTimeToHire = Math.round(totalDays / hiredApplications.length);
@@ -111,7 +115,7 @@ export function HiringAnalytics({ jobId }: HiringAnalyticsProps) {
                 dataKey="count"
                 label={({name, percent}) => `${name}: ${(percent * 100).toFixed(0)}%`}
               >
-                {analyticsData.statusDistribution.map((entry, index) => (
+                {analyticsData.statusDistribution.map((_entry, index) => (
                   <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                 ))}
               </Pie>
@@ -166,7 +170,7 @@ export function HiringAnalytics({ jobId }: HiringAnalyticsProps) {
               <YAxis dataKey="name" type="category" width={100} />
               <Tooltip />
               <Bar dataKey="value" fill="#8884d8" radius={[0, 4, 4, 0]}>
-                {analyticsData.funnelData.map((entry, index) => (
+                {analyticsData.funnelData.map((_entry, index) => (
                   <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                 ))}
               </Bar>

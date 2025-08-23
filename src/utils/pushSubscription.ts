@@ -1,4 +1,6 @@
-const VAPID_PUBLIC_KEY = import.meta.env.VITE_VAPID_PUBLIC_KEY;
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
+
+const VAPID_PUBLIC_KEY = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY;
 
 function urlBase64ToUint8Array(base64String: string) {
   const padding = '='.repeat((4 - (base64String.length % 4)) % 4);
@@ -21,6 +23,10 @@ export async function subscribeToPush() {
     const existing = await registration.pushManager.getSubscription();
     if (existing) return;
 
+    if (!VAPID_PUBLIC_KEY) {
+      logWarn('VAPID_PUBLIC_KEY is not defined. Push subscription will be skipped.');
+      return;
+    }
     const subscription = await registration.pushManager.subscribe({
       userVisibleOnly: true,
       applicationServerKey: urlBase64ToUint8Array(VAPID_PUBLIC_KEY)
@@ -32,6 +38,6 @@ export async function subscribeToPush() {
       body: JSON.stringify(subscription)
     });
   } catch (err) {
-    console.error('Push subscription failed', err);
+    logErrorToProduction('Push subscription failed', { data: err });
   }
 }

@@ -4,10 +4,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Skeleton } from "@/components/ui/skeleton";
-import { Sparkles, ArrowRight } from "@/components/icons";
+import Skeleton from "@/components/ui/skeleton";
+import { Sparkles, ArrowRight } from 'lucide-react';
+
+
 import { supabase } from "@/integrations/supabase/client";
 import { Badge } from "@/components/ui/badge";
+import {logErrorToProduction} from '@/utils/productionLogger';
+
 
 interface GeneratedContent {
   description: string;
@@ -76,17 +80,17 @@ export function AIListingGenerator({ onApplyGenerated, initialValues = {} }: AIL
         throw new Error(error.message);
       }
       
-      if (data.error) {
-        throw new Error(data.error);
+      if ((data as any)?.error) {
+        throw new Error((data as any).error);
       }
 
-      setGeneratedContent(data.generated);
+      setGeneratedContent((data as any)?.generated || null);
       toast({
         title: "Content Generated",
         description: "AI has created optimized listing content for you."
       });
     } catch (error) {
-      console.error("Error generating content:", error);
+      logErrorToProduction('Error generating content:', { data: error });
       toast({
         title: "Generation Failed",
         description: error instanceof Error ? error.message : "Failed to generate content. Please try again.",
@@ -217,8 +221,8 @@ export function AIListingGenerator({ onApplyGenerated, initialValues = {} }: AIL
             <div>
               <h3 className="text-sm font-medium text-zion-slate-light mb-2">Tags</h3>
               <div className="flex flex-wrap gap-2">
-                {generatedContent.tags.map((tag, index) => (
-                  <Badge key={index} className="bg-zion-purple/20 text-zion-purple hover:bg-zion-purple/30">{tag}</Badge>
+                {generatedContent.tags?.map((tag, index) => (
+                  <Badge key={index}>{tag}</Badge>
                 ))}
               </div>
             </div>

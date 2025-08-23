@@ -4,8 +4,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { BarChart3, BriefcaseIcon, Monitor, User } from "@/components/icons";
-import { Skeleton } from "@/components/ui/skeleton";
+import { BarChart3, BriefcaseIcon, Monitor, User } from 'lucide-react';
+
+
+
+
+import Skeleton from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
 
 interface AIMatchingResultsProps {
@@ -114,7 +118,7 @@ export function AIMatchingResults({
                         <div className="flex items-start gap-4">
                           <Avatar className="h-12 w-12 border border-zion-blue-light">
                             {match.image ? (
-                              <AvatarImage src={match.image} />
+                              <AvatarImage src={match.image} alt={match.title} />
                             ) : (
                               <AvatarFallback className="bg-zion-purple/20">
                                 <CategoryIcon className="h-6 w-6 text-zion-purple" />
@@ -139,11 +143,11 @@ export function AIMatchingResults({
                             </div>
                             
                             <div className="mt-2 flex flex-wrap gap-1">
-                              <Badge variant="outline" className="text-xs bg-zion-blue text-zion-cyan border-zion-cyan/30">
+                              <Badge variant="outline">
                                 {match.category}
                               </Badge>
                               {match.skills && match.skills.slice(0, 3).map((skill: string, i: number) => (
-                                <Badge key={i} variant="outline" className="text-xs bg-zion-blue-dark text-white border-zion-blue-light">
+                                <Badge key={i} variant="outline">
                                   {skill}
                                 </Badge>
                               ))}

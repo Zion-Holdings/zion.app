@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X } from 'lucide-react';
+
+
 import { useIsMobile } from "@/hooks/use-mobile";
+import GlobalErrorBoundary from '@/components/GlobalErrorBoundary';
 
 export default function MarketplaceSidebar({ children }) {
   const isMobile = useIsMobile();
@@ -11,9 +14,10 @@ export default function MarketplaceSidebar({ children }) {
   }, [isMobile]);
 
   return (
-    <div className="relative flex">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
+    <GlobalErrorBoundary>
+      <div className="relative flex">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
         className="md:hidden p-2 text-white"
         aria-expanded={isOpen}
         aria-label="Toggle marketplace sidebar"
@@ -26,6 +30,7 @@ export default function MarketplaceSidebar({ children }) {
       >
         {children}
       </aside>
-    </div>
+      </div>
+    </GlobalErrorBoundary>
   );
 }

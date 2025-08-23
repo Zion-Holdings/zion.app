@@ -1,12 +1,13 @@
 import React from "react";
 import { useProjects } from "@/hooks/useProjects";
-import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Link } from "react-router-dom";
-import { Clock, Briefcase } from "lucide-react";
+import Link from "next/link";
+import { Clock, Briefcase } from 'lucide-react';
+
+
 
 function ProjectsContent() {
   const { projects, isLoading } = useProjects();
@@ -47,7 +48,7 @@ function ProjectsContent() {
                 </CardContent>
                 <CardFooter>
                   <Button asChild variant="outline" className="w-full">
-                    <Link to={`/project/${project.id}`}>View Details</Link>
+                    <Link href={`/project/${project.id}`}>View Details</Link>
                   </Button>
                 </CardFooter>
               </Card>
@@ -55,7 +56,6 @@ function ProjectsContent() {
           </div>
         )}
       </main>
-      <Footer />
     </>
   );
 }

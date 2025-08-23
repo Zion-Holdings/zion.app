@@ -1,15 +1,25 @@
-
-import { useParams, Link } from "react-router-dom";
-import { Header } from "@/components/header/Header";
-import { Footer } from "@/components/Footer";
 import { GradientHeading } from "@/components/GradientHeading";
 import { ProductListingCard } from "@/components/ProductListingCard";
-import { useState, useEffect, useRef } from "react";
-import { Brain, PenLine, BarChart, Eye, Bot, Mic, Code, Briefcase } from "lucide-react";
+import { useState, useEffect, useRef, Suspense } from "react";
+import { Brain, PenLine, BarChart, Eye, Bot, Mic, Code, Briefcase } from 'lucide-react';
+
+
+
+
+
+
+
+
 import { MARKETPLACE_LISTINGS } from "@/data/listingData";
 import { ProductListing } from "@/types/listings";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { toast } from "@/hooks/use-toast";
+import { NextSeo } from '@/components/NextSeo';
+import { Header } from "@/components/Header";
+import ListingGridSkeleton from '@/components/skeletons/ListingGridSkeleton';
+import {logErrorToProduction} from '@/utils/productionLogger';
+
 
 const AUTO_SERVICE_TITLES = [
   "AI-Powered Customer Support",
@@ -23,7 +33,7 @@ const AUTO_SERVICE_TITLES = [
 ];
 
 function generateInnovationListing(index: number): ProductListing {
-  const title = AUTO_SERVICE_TITLES[index % AUTO_SERVICE_TITLES.length];
+  const title = AUTO_SERVICE_TITLES[index % AUTO_SERVICE_TITLES.length] || 'AI Service';
   const price = Math.floor(Math.random() * 9500) + 500; // $500 - $10,000
   const rating = Math.floor(Math.random() * 2) + 4; // 4-5 stars
   const reviewCount = Math.floor(Math.random() * 50) + 10;
@@ -50,13 +60,24 @@ function generateInnovationListing(index: number): ProductListing {
   };
 }
 
-export default function CategoryDetail() {
-  // Cast to specify the expected route param type since useParams may be untyped
-  const { slug } = useParams() as { slug?: string };
-  const navigate = useNavigate();
+interface CategoryDetailProps {
+  slug?: string;
+}
+
+export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps = {}) {
+  const router = useRouter();
+  // Get slug from Next.js router query params
+  const params = router.query as { slug?: string };
+  const slug = slugProp ?? params.slug;
+
+  // Redirect to categories list if slug is missing
+  if (!slug) {
+    router.push('/categories');
+    return null;
+  }
   const [isLoading, setIsLoading] = useState(true);
   const [listings, setListings] = useState(MARKETPLACE_LISTINGS);
-  const [category, setCategory] = useState<{title: string, description: string, icon: JSX.Element}>({
+  const [category, setCategory] = useState<{title: string, description: string, icon: React.JSX.Element}>({
     title: "",
     description: "",
     icon: <Bot className="w-6 h-6" />
@@ -128,47 +149,63 @@ export default function CategoryDetail() {
   };
 
   useEffect(() => {
-    setIsLoading(true);
-    
-    // Find the category data based on slug
-    const currentCategory = categoryData[slug as keyof typeof categoryData] || {
-      title: slug?.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') || "Category",
-      description: "Explore our collection in this category",
-      icon: <Bot className="w-6 h-6" />
-    };
-    
-    setCategory(currentCategory);
-    innovationCounterRef.current = 0;
+    async function load() {
+      setIsLoading(true);
+      try {
+        // Find the category data based on slug
+        const currentCategory = categoryData[slug as keyof typeof categoryData] || {
+          title: slug
+            ?.split('-')
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ') || 'Category',
+          description: 'Explore our collection in this category',
+          icon: <Bot className="w-6 h-6" />,
+        };
 
-    // Filter listings by category
-    const categoryTitle = currentCategory.title;
-    const filteredListings = MARKETPLACE_LISTINGS.filter(listing => 
-      listing.category.toLowerCase() === categoryTitle.toLowerCase()
-    );
-    
-    // If we don't have real listings for this category, generate placeholder listings
-    const listingsToShow = filteredListings.length > 0 ? filteredListings : 
-      Array(4).fill(null).map((_, index) => ({
-        id: `${slug}-${index}`,
-        title: `${currentCategory.title} Product ${index + 1}`,
-        description: `A great ${currentCategory.title.toLowerCase()} solution for your needs.`,
-        category: currentCategory.title,
-        price: Math.floor(Math.random() * 500) + 50,
-        currency: "$",
-        tags: [`${slug}`, "ai", "tool"],
-        author: {
-          name: `Provider ${index + 1}`,
-          id: `author-${index + 1}`,
-          avatarUrl: undefined
-        },
-        images: [`/placeholder.svg`],
-        createdAt: new Date().toISOString(),
-        rating: Math.floor(Math.random() * 5) + 1,
-        reviewCount: Math.floor(Math.random() * 100)
-      }));
+        setCategory(currentCategory);
+        innovationCounterRef.current = 0;
 
-    setListings(listingsToShow);
-    setIsLoading(false);
+        // Filter listings by category
+        const categoryTitle = currentCategory.title;
+        const filteredListings = MARKETPLACE_LISTINGS.filter(
+          (listing) => listing.category.toLowerCase() === categoryTitle.toLowerCase()
+        );
+
+        // If we don't have real listings for this category, generate placeholder listings
+        const listingsToShow =
+          filteredListings.length > 0
+            ? filteredListings
+            : Array(4)
+                .fill(null)
+                .map((_, index) => ({
+                  id: `${slug}-${index}`,
+                  title: `${currentCategory.title} Product ${index + 1}`,
+                  description: `A great ${currentCategory.title.toLowerCase()} solution for your needs.`,
+                  category: currentCategory.title,
+                  price: Math.floor(Math.random() * 500) + 50,
+                  currency: '$',
+                  tags: [`${slug}`, 'ai', 'tool'],
+                  author: {
+                    name: `Provider ${index + 1}`,
+                    id: `author-${index + 1}`,
+                    avatarUrl: undefined,
+                  },
+                  images: [`/placeholder.svg`],
+                  createdAt: new Date().toISOString(),
+                  rating: Math.floor(Math.random() * 5) + 1,
+                  reviewCount: Math.floor(Math.random() * 100),
+                }));
+
+        setListings(listingsToShow);
+      } catch (err) {
+        logErrorToProduction('Category load error:', { data: err });
+        toast({ title: 'Error', description: 'Failed to load category' });
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    load();
   }, [slug]);
 
   useEffect(() => {
@@ -196,27 +233,33 @@ export default function CategoryDetail() {
       });
       
       // Navigate to the quote request page with the listing information
-      navigate("/request-quote", {
-        state: { 
-          serviceType: listing.category,
-          specificItem: {
-            id: listing.id,
-            title: listing.title,
-            category: listing.category,
-            image: listing.images?.[0]
-          }
-        }
+      const queryParams = new URLSearchParams({
+        serviceType: listing.category,
+        itemId: listing.id,
+        itemTitle: listing.title,
+        itemCategory: listing.category,
+        ...(listing.images?.[0] && { itemImage: listing.images[0] })
       });
+      
+      router.push(`/request-quote?${queryParams.toString()}`);
     }
   };
 
+  const seoTitle = category.title
+    ? `${category.title} | Zion Marketplace`
+    : 'Category | Zion Marketplace';
+  const seoDescription =
+    category.description || 'Explore listings in this category.';
+
   return (
     <>
+      <NextSeo title={seoTitle} description={seoDescription} />
       <Header />
-      <div className="min-h-screen bg-zion-blue">
-        <div className="container mx-auto px-4 py-12">
+      <Suspense fallback={<ListingGridSkeleton />}> 
+        <div className="min-h-screen bg-zion-blue">
+          <div className="container mx-auto px-4 py-12">
           <div className="mb-4">
-            <Link to="/categories" className="text-zion-cyan hover:text-zion-cyan-light transition-colors inline-flex items-center">
+            <Link href="/categories" className="text-zion-cyan hover:text-zion-cyan-light transition-colors inline-flex items-center">
               ← Back to Categories
             </Link>
           </div>
@@ -236,23 +279,22 @@ export default function CategoryDetail() {
           </div>
           
           {isLoading ? (
-            <div className="flex justify-center items-center h-64">
-              <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-zion-purple"></div>
-            </div>
+            <ListingGridSkeleton />
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {listings.map((listing) => (
-                <ProductListingCard 
-                  key={listing.id} 
+                <ProductListingCard
+                  key={listing.id}
                   listing={listing}
-                  onRequestQuote={handleRequestQuote} 
+                  onRequestQuote={handleRequestQuote}
+                  detailBasePath="/marketplace/listing"
                 />
               ))}
             </div>
           )}
+          </div>
         </div>
-      </div>
-      <Footer />
+      </Suspense>
     </>
   );
 }

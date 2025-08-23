@@ -1,11 +1,10 @@
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Switch } from "@/components/ui/switch";
 import { toast } from "sonner";
 
 interface Integration {
@@ -62,13 +61,16 @@ export function IntegrationConnectionModal({ isOpen, onClose, integration }: Int
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader className="flex flex-row items-center gap-4">
-          <img 
-            src={integration.logoUrl} 
-            alt={`${integration.name} logo`} 
-            className="h-12 w-12 rounded" 
+          <Image
+            src={integration.logoUrl || "/placeholder.svg"}
+            alt={`${integration.name} logo`}
+            width={48}
+            height={48}
+            className="rounded"
             onError={(e) => {
               (e.target as HTMLImageElement).src = "/placeholder.svg";
             }}
+            loading="lazy"
           />
           <div>
             <DialogTitle>{integration.name} Integration</DialogTitle>

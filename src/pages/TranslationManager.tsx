@@ -1,7 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -10,12 +8,19 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/use-toast";
 import { useTranslation } from "react-i18next";
-import { AlertTriangle, Check, Globe, Search, Loader2 } from "lucide-react";
+import { AlertTriangle, Check, Globe, Search, Loader2 } from 'lucide-react';
+
+
+
+
+
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useLanguage, SupportedLanguage } from "@/context/LanguageContext";
 import { useTranslationService } from "@/hooks/useTranslationService";
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export default function TranslationManager() {
+
   const { t, i18n } = useTranslation();
   const isMobile = useIsMobile();
   const { supportedLanguages } = useLanguage();
@@ -122,7 +127,7 @@ export default function TranslationManager() {
         if (!updatedTranslations[lang.code]) {
           updatedTranslations[lang.code] = {};
         }
-        updatedTranslations[lang.code][key] = editedTranslations[key][lang.code];
+        updatedTranslations[lang.code][key] = editedTranslations[key]?.[lang.code] || '';
       });
       
       setTranslations(updatedTranslations);
@@ -185,7 +190,7 @@ export default function TranslationManager() {
         description: t('translation.content_translated'),
       });
     } catch (error) {
-      console.error(`Error translating key ${key}:`, error);
+      logErrorToProduction('Error translating key ${key}:', { data: error });
       toast({
         title: t('translation.translation_failed'),
         description: error instanceof Error ? error.message : t('translation.unknown_error'),
@@ -202,10 +207,10 @@ export default function TranslationManager() {
     setEditedTranslations({
       ...editedTranslations,
       [key]: {
-        ...editedTranslations[key],
+        ...(editedTranslations[key] || {} as Record<SupportedLanguage, string>),
         [lang]: value
       }
-    });
+    } as Record<string, Record<SupportedLanguage, string>>);
   };
   
   const getMissingLanguages = (key: string): SupportedLanguage[] => {
@@ -279,17 +284,17 @@ export default function TranslationManager() {
                                     <span>{lang.flag}</span>
                                     <span>{lang.name}</span>
                                   </div>
-                                  {editedTranslations[key][lang.code]?.includes('\n') || 
-                                   editedTranslations[key][lang.code]?.length > 100 ? (
+                                  {editedTranslations[key]?.[lang.code]?.includes('\n') || 
+                                   (editedTranslations[key]?.[lang.code]?.length || 0) > 100 ? (
                                     <Textarea
-                                      value={editedTranslations[key][lang.code] || ''}
+                                      value={editedTranslations[key]?.[lang.code] || ''}
                                       onChange={(e) => handleChange(lang.code, key, e.target.value)}
                                       dir={lang.code === 'ar' ? 'rtl' : 'ltr'}
                                       className="min-h-20"
                                     />
                                   ) : (
                                     <Input
-                                      value={editedTranslations[key][lang.code] || ''}
+                                      value={editedTranslations[key]?.[lang.code] || ''}
                                       onChange={(e) => handleChange(lang.code, key, e.target.value)}
                                       dir={lang.code === 'ar' ? 'rtl' : 'ltr'}
                                     />
@@ -380,7 +385,6 @@ export default function TranslationManager() {
           </CardContent>
         </Card>
       </main>
-      <Footer />
     </>
   );
 }

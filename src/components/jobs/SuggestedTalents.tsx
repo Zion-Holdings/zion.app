@@ -5,14 +5,16 @@ import { toast } from "@/hooks/use-toast";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { EmptyMatchesCard } from "./EmptyMatchesCard";
 import { JobMatchCard } from "./JobMatchCard";
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
+
 
 interface SuggestedTalentsProps {
   jobId: string;
   jobTitle?: string;
 }
-
+ 
 export function SuggestedTalents({ jobId, jobTitle }: SuggestedTalentsProps) {
-  const [talents, setTalents] = useState([]);
+  const [talents, setTalents] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isProcessing, setIsProcessing] = useState(false);
 
@@ -44,7 +46,7 @@ export function SuggestedTalents({ jobId, jobTitle }: SuggestedTalentsProps) {
       if (error) throw error;
       setTalents(data || []);
     } catch (error) {
-      console.error("Error fetching suggested talents:", error);
+      logErrorToProduction('Error fetching suggested talents:', { data: error });
       toast({
         title: "Error",
         description: "Failed to load suggested talents. Please try again later.",
@@ -57,7 +59,7 @@ export function SuggestedTalents({ jobId, jobTitle }: SuggestedTalentsProps) {
 
   const handleViewProfile = (talentId: string) => {
     // Implement logic to view talent profile
-    console.log("View talent profile:", talentId);
+    logInfo('View talent profile:', { data: talentId });
     toast({
       title: "View Profile",
       description: `Navigating to talent profile: ${talentId}`,
@@ -66,7 +68,7 @@ export function SuggestedTalents({ jobId, jobTitle }: SuggestedTalentsProps) {
 
   const handleInvite = (talentId: string) => {
     // Implement logic to invite talent
-    console.log("Invite talent:", talentId);
+    logInfo('Invite talent:', { data: talentId });
     toast({
       title: "Invite Talent",
       description: `Inviting talent: ${talentId}`,

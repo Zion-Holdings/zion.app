@@ -2,7 +2,10 @@
 import React, { useState, useRef } from "react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Upload, Trash2, Plus } from "lucide-react";
+import { Upload, Trash2, Plus } from 'lucide-react';
+
+
+
 import { AppPlatform } from "./MetadataManager";
 import { toast } from "sonner";
 
@@ -108,7 +111,7 @@ export const ScreenshotManager: React.FC<ScreenshotManagerProps> = ({ platform }
           onDragLeave={handleDragLeave}
           onDrop={handleDrop}
         >
-          <Upload className="mx-auto h-8 w-8 text-gray-400 mb-2" />
+          <Upload className="mx-auto h-8 w-8 text-gray-300 mb-2" />
           <p className="text-sm mb-2">Drag & drop screenshots here</p>
           <input
             ref={fileInputRef}
@@ -128,7 +131,7 @@ export const ScreenshotManager: React.FC<ScreenshotManagerProps> = ({ platform }
           </Button>
         </div>
         
-        <div className="text-xs text-gray-400 mb-4">
+        <div className="text-xs text-gray-300 mb-4">
           {platform === "ios" 
             ? "Recommended size: 1290x2796 pixels for iPhone. Max 10 screenshots."
             : "Vary by device. Include phone and tablet screenshots. Max 8 per device type."
@@ -138,14 +141,16 @@ export const ScreenshotManager: React.FC<ScreenshotManagerProps> = ({ platform }
         <div className="grid grid-cols-2 gap-3">
           {screenshots.map((screenshot) => (
             <div key={screenshot.id} className="relative group">
-              <img 
+              <img
                 src={screenshot.url}
                 alt="App screenshot"
                 className="w-full h-auto rounded border border-zion-purple/20"
+                loading="lazy"
               />
               <button
                 onClick={() => removeScreenshot(screenshot.id)}
-                className="absolute top-1 right-1 bg-red-500/80 text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                className="absolute top-1 right-1 bg-red-500/80 text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                aria-label="Remove screenshot"
               >
                 <Trash2 className="h-3 w-3" />
               </button>

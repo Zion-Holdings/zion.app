@@ -1,7 +1,8 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { 
+import {logErrorToProduction} from '@/utils/productionLogger';
+import { FileText, ChevronDown, Loader2, Download } from 'lucide-react';
+import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
@@ -10,10 +11,13 @@ import {
   DropdownMenuLabel,
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
-  DropdownMenuCheckboxItem,
-} from '@/components/ui/dropdown-menu';
+  DropdownMenuCheckboxItem
+} from "@/components/ui/dropdown-menu";
 // Use the centralized icon wrapper to avoid missing icon issues
-import { FileText, ChevronDown, Loader2, Download } from '@/components/icons';
+
+
+
+
 import { Resume } from '@/types/resume';
 import { exportResumeToPDF, ExportOptions } from '@/utils/pdfExport';
 import { toast } from '@/hooks/use-toast';
@@ -61,7 +65,7 @@ export function PdfExportButton({ resume }: PdfExportButtonProps) {
         description: "Your resume has been downloaded as a PDF.",
       });
     } catch (error) {
-      console.error('Error exporting PDF:', error);
+      logErrorToProduction('Error exporting PDF:', { data: error });
       toast({
         title: "Export failed",
         description: "There was an error exporting your resume to PDF.",

@@ -1,6 +1,10 @@
 
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Server, Clock, MapPin } from "lucide-react";
+import { Server, Clock, MapPin } from 'lucide-react';
+
+
+
+import Image from "next/image";
 
 interface ServiceDetailsProps {
   country: string;
@@ -22,7 +26,7 @@ export function ServiceDetails({ country }: ServiceDetailsProps) {
       "default": ["Major metropolitan areas"]
     };
     
-    return dataCenters[country] || dataCenters["default"];
+    return dataCenters[country] || dataCenters["default"] || ["Major metropolitan areas"];
   };
   
   // Get region-specific image
@@ -39,7 +43,7 @@ export function ServiceDetails({ country }: ServiceDetailsProps) {
       "default": "https://source.unsplash.com/featured/900x700/?datacenter"
     };
     
-    return regions[country] || regions["default"];
+    return regions[country] || regions["default"] || "https://source.unsplash.com/featured/900x700/?datacenter";
   };
   
   // Get region-specific instructions
@@ -55,7 +59,7 @@ export function ServiceDetails({ country }: ServiceDetailsProps) {
       "default": "Local timezone"
     };
     
-    const timezone = timeZones[country] || timeZones["default"];
+    const timezone = timeZones[country] || timeZones["default"] || "Local timezone";
     
     return `Our technicians in ${country} operate during business hours (8AM-6PM ${timezone}). ` +
            `Response times are typically within 4 hours for metropolitan areas. ` +
@@ -77,11 +81,13 @@ export function ServiceDetails({ country }: ServiceDetailsProps) {
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
-        <div className="overflow-hidden rounded-lg mb-4">
-          <img 
+        <div className="overflow-hidden rounded-lg mb-4 relative h-48">
+          <Image
             src={getRegionalImage(country)}
             alt={`Datacenter in ${country}`}
-            className="w-full object-cover h-48 transform transition-transform duration-500 hover:scale-110"
+            fill
+            className="object-cover transform transition-transform duration-500 hover:scale-110"
+            loading="lazy"
           />
         </div>
         

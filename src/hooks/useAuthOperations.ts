@@ -1,22 +1,42 @@
-
 import { useState, useEffect } from "react";
+import type { UserDetails } from "@/types/auth";
+import { mutate } from 'swr';
+import { SignupParams } from "@/types/auth";
 import { supabase } from "@/integrations/supabase/client";
 import type { UserProfile } from "@/types/auth";
 import { toast } from "@/hooks/use-toast";
 import { showApiError } from "@/utils/apiErrorHandler";
 import { trackReferral, checkUrlForReferralCode } from "@/utils/referralUtils";
 import { cleanupAuthState } from "@/utils/authUtils";
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
+
+
+// Helper function to get the auth token from cookies
+function getAuthToken() {
+  if (typeof window === 'undefined') return null;
+  if (document.cookie.includes('authToken=')) {
+    const token = document.cookie.split('(^|;) ?authToken=([^;]*)(;|$)').pop()?.split(';').shift();
+    return token || null;
+  }
+  if (document.cookie.includes('ztg_token=')) {
+    const token = document.cookie.split('(^|;) ?ztg_token=([^;]*)(;|$)').pop()?.split(';').shift();
+    return token || null;
+  }
+  return null;
+}
 
 export function useAuthOperations(
-  setUser: React.Dispatch<React.SetStateAction<UserProfile | null>>,
-  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>
+  setUser: React.Dispatch<React.SetStateAction<UserDetails | null>>,
+  setIsLoading: React.Dispatch<React.SetStateAction<boolean>>,
+  setAvatarUrl: React.Dispatch<React.SetStateAction<string | null>>
 ) {
+  
   // Check for referral code in URL when the hook is first used
   useEffect(() => {
     checkUrlForReferralCode();
   }, []);
 
-  const login = async ({ email, password }: { email: string; password: string }) => {
+  const signIn = async ({ email, password }: { email: string; password: string }) => {
     setIsLoading(true);
     try {
       // Clean up any stale auth state before login
@@ -53,8 +73,10 @@ export function useAuthOperations(
       setIsLoading(false);
     }
   };
+  
 
-  const signup = async ({ email, password, display_name }) => {
+
+  const signUp = async ({ email, password, display_name }: SignupParams) => {
     setIsLoading(true);
     try {
       const { data, error } = await supabase.auth.signUp({
@@ -68,14 +90,38 @@ export function useAuthOperations(
       });
 
       if (error) {
-        showApiError(error, "Error during signup");
+        showApiError(error, "Error during signup", () => signUp({ email, password, display_name }));
         return { data: null, error: error.message };
       }
 
       // Add this after successful signup
-      if (data?.user) {
+      if ((data as any)?.user) {
+        let usedReferral = false;
         // Track referral if there was a referral code
-        await trackReferral(data.user.id, email);
+        usedReferral = await trackReferral((data as any).user.id, email);
+
+        try {
+          await fetch('/api/points/increment', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ userId: (data as any).user.id, amount: 10, reason: 'signup' })
+          });
+
+          // Bonus points when signing up with a referral code
+          if (usedReferral) {
+            await fetch('/api/points/increment', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ userId: (data as any).user.id, amount: 20, reason: 'referral_signup' })
+            });
+          }
+
+          // Generate a referral code for the new user
+          await supabase.rpc('generate_referral_code', { user_id: (data as any).user.id });
+        } catch (err) {
+          logErrorToProduction('Failed to complete signup rewards', { data: err });
+        }
+        mutate('user');
       }
 
       toast({
@@ -85,7 +131,7 @@ export function useAuthOperations(
 
       return { data, error: null };
     } catch (error) {
-      showApiError(error, "Failed to sign up. Please try again.");
+      showApiError(error, "Failed to sign up. Please try again.", () => signUp({ email, password, display_name }));
       return { data: null, error: "Failed to sign up." };
     } finally {
       setIsLoading(false);
@@ -101,17 +147,24 @@ export function useAuthOperations(
         toast({
           variant: "destructive",
           title: "Oh no! Something went wrong.",
-          description: error.message,
+          description: (error as any)?.message,
         });
       } else {
         setUser(null); // Clear the user state upon successful logout
+        setAvatarUrl(null);
+        try {
+          // Clear authToken cookie on backend
+          await fetch('/api/auth/logout', { method: 'POST' });
+        } catch (cookieErr) {
+          logWarn('useAuthOperations.logout: failed to clear auth cookie', { data: cookieErr });
+        }
         toast({
           title: "Logout successful!",
           description: "You have been successfully logged out.",
         });
       }
     } catch (error) {
-      console.error("Logout failed:", error);
+      logErrorToProduction('Logout failed:', { data: error });
       toast({
         variant: "destructive",
         title: "Logout failed",
@@ -169,9 +222,11 @@ export function useAuthOperations(
           display_name: profileData.displayName,
           user_type: profileData.userType,
           profile_complete: profileData.profileComplete,
-          bio: profileData.bio,
+          bio: profileData.bio ?? null,
           avatar_url: profileData.avatarUrl,
           headline: profileData.headline,
+          interests: profileData.interests,
+          preferred_categories: profileData.preferredCategories,
         })
         .eq("id", profileData.id);
 
@@ -199,7 +254,7 @@ export function useAuthOperations(
 
       return { error: null };
     } catch (error) {
-      console.error("Profile update failed:", error);
+      logErrorToProduction('Profile update failed:', { data: error });
       toast({
         variant: "destructive",
         title: "Profile update failed",
@@ -216,6 +271,25 @@ export function useAuthOperations(
     try {
       const { data, error } = await supabase.auth.signInWithOAuth({
         provider: "google",
+      });
+
+      if (error) {
+        toast({
+          variant: "destructive",
+          title: "Oh no! Something went wrong.",
+          description: error.message,
+        });
+      }
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const loginWithGitHub = async () => {
+    setIsLoading(true);
+    try {
+      const { data, error } = await supabase.auth.signInWithOAuth({
+        provider: "github",
       });
 
       if (error) {
@@ -282,16 +356,21 @@ export function useAuthOperations(
         params: [address, address]
       });
       
-      // Fix: Create a proper UserProfile object
-      setUser({
-        id: address,
-        displayName: address,
-        profileComplete: true,
-        email: '', // Add required fields
-        userType: 'talent', // Default user type
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString()
-      } as UserProfile);
+      // Fix: Create a proper UserDetails object
+     setUser({
+       id: address,
+       name: address,
+       profileComplete: true,
+       email: '', // Add required fields
+       userType: 'talent', // Default user type
+       createdAt: new Date().toISOString(),
+       updatedAt: new Date().toISOString(),
+       created_at: new Date().toISOString(),
+       updated_at: new Date().toISOString(),
+       role: 'user',
+       displayName: address,
+       points: 0
+     });
       
       toast({ title: 'Wallet connected', description: address });
     } catch (error: any) {
@@ -306,12 +385,13 @@ export function useAuthOperations(
   };
 
   return {
-    login,
-    signup,
+    login: async (email: string, password: string) => await signIn({email, password}),
+    signUp: async (email: string, password: string, userData?: Partial<UserDetails>) => await signUp({email, password, display_name: userData?.name || ""}),
     logout,
     resetPassword,
     updateProfile,
     loginWithGoogle,
+    loginWithGitHub,
     loginWithFacebook,
     loginWithTwitter,
     loginWithWeb3,

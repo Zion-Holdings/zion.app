@@ -239,6 +239,36 @@ async function processContentGeneration(supabase, contentType) {
         });
       }
     }
+
+    if (contentType === 'blog') {
+      try {
+        const slug = contentData.title
+          .toLowerCase()
+          .replace(/[^\w\s]/g, '')
+          .trim()
+          .replace(/\s+/g, '-');
+        const siteUrl = Deno.env.get('SITE_URL') || 'https://ziontechgroup.com';
+        const blogUrl = `${siteUrl}/blog/${slug}`;
+
+        await fetch(
+          `${Deno.env.get('SUPABASE_URL')}/functions/v1/share-blog-post`,
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${Deno.env.get('SUPABASE_ANON_KEY')}`,
+            },
+            body: JSON.stringify({
+              title: contentData.title,
+              url: blogUrl,
+              summary: contentData.tweetSummary,
+            }),
+          },
+        );
+      } catch (shareError) {
+        console.error('Error sharing blog post:', shareError);
+      }
+    }
     
     return contentData;
   } catch (error) {

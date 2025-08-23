@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import { QuoteFormData } from "@/types/quotes";
 import { Card, CardContent } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import { AIMatchingResults } from "@/components/AIMatchingResults";
 import { findMatches, MatchResult } from "@/lib/ai-matchmaking";
 import { toast } from "@/hooks/use-toast";
+import {logErrorToProduction} from '@/utils/productionLogger';
+
 
 interface SummaryStepProps {
   formData: QuoteFormData;
@@ -41,7 +42,7 @@ export function SummaryStep({ formData, updateFormData }: SummaryStepProps) {
         
         setMatches(results);
       } catch (error) {
-        console.error("Error during AI matching:", error);
+        logErrorToProduction('Error during AI matching:', { data: error });
         toast({
           title: "Matching Error",
           description: "We couldn't find matches for your request. Please try again.",

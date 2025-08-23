@@ -3,9 +3,15 @@ import React, { useState } from "react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Send, PaperclipIcon, ChevronLeft, MoreVertical, Video, Phone } from "lucide-react";
+import { Send, PaperclipIcon, ChevronLeft, MoreVertical, Video, Phone } from 'lucide-react';
+
+
+
+
+
+
 import { cn } from "@/lib/utils";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { toast } from "sonner";
 
 interface Message {
@@ -32,7 +38,7 @@ interface MobileChatViewProps {
 
 export function MobileChatView({ contact, messages, onBack, onSendMessage }: MobileChatViewProps) {
   const [newMessage, setNewMessage] = useState("");
-  const navigate = useNavigate();
+  const router = useRouter();
   
   const handleSend = () => {
     if (newMessage.trim() !== "") {
@@ -55,7 +61,7 @@ export function MobileChatView({ contact, messages, onBack, onSendMessage }: Mob
     });
     
     // Navigate to video call page
-    navigate(`/call/${roomId}`);
+    router.push(`/call/${roomId}`);
   };
   
   const startAudioCall = () => {
@@ -65,14 +71,19 @@ export function MobileChatView({ contact, messages, onBack, onSendMessage }: Mob
     });
     
     // Navigate to video call page with audio-only flag
-    navigate(`/call/${roomId}?audioOnly=true`);
+    router.push(`/call/${roomId}?audioOnly=true`);
   };
   
   return (
     <div className="flex flex-col h-full pb-safe">
       <header className="sticky top-0 z-10 bg-background border-b border-border">
         <div className="flex items-center h-14 px-4">
-          <Button variant="ghost" size="icon" onClick={onBack}>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={onBack}
+            aria-label="Go back"
+          >
             <ChevronLeft className="h-5 w-5" />
           </Button>
           
@@ -90,15 +101,25 @@ export function MobileChatView({ contact, messages, onBack, onSendMessage }: Mob
           </div>
           
           <div className="flex">
-            <Button variant="ghost" size="icon" onClick={startAudioCall}>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={startAudioCall}
+              aria-label="Start audio call"
+            >
               <Phone className="h-5 w-5" />
             </Button>
             
-            <Button variant="ghost" size="icon" onClick={startVideoCall}>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={startVideoCall}
+              aria-label="Start video call"
+            >
               <Video className="h-5 w-5" />
             </Button>
             
-            <Button variant="ghost" size="icon">
+            <Button variant="ghost" size="icon" aria-label="More options">
               <MoreVertical className="h-5 w-5" />
             </Button>
           </div>
@@ -141,7 +162,7 @@ export function MobileChatView({ contact, messages, onBack, onSendMessage }: Mob
       
       <div className="sticky bottom-0 bg-background border-t border-border p-2">
         <div className="flex items-center gap-2">
-          <Button variant="ghost" size="icon">
+          <Button variant="ghost" size="icon" aria-label="Attach file">
             <PaperclipIcon className="h-5 w-5" />
           </Button>
           
@@ -153,11 +174,12 @@ export function MobileChatView({ contact, messages, onBack, onSendMessage }: Mob
             className="flex-1"
           />
           
-          <Button 
-            size="icon" 
+          <Button
+            size="icon"
             onClick={handleSend}
             disabled={!newMessage.trim()}
             className={!newMessage.trim() ? "opacity-50" : ""}
+            aria-label="Send message"
           >
             <Send className="h-5 w-5" />
           </Button>

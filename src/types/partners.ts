@@ -22,6 +22,17 @@ export interface PartnerProfile {
   commission_rate?: number;
 }
 
+export interface PartnerProfileContent {
+  id: string;
+  slug: string;
+  name: string;
+  excerpt: string;
+  website?: string;
+  logo?: string;
+  publishedDate?: string;
+  content: string;
+}
+
 export interface PartnerSettings {
   id: string;
   commission_rate: number;

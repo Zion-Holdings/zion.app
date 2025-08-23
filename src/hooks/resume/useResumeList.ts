@@ -3,8 +3,10 @@ import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { Resume } from '@/types/resume';
 import { useAuth } from '@/hooks/useAuth';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function useResumeList() {
+
   const { user } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -36,7 +38,7 @@ export function useResumeList() {
       }
       
       // Transform data to match Resume type
-      const transformedResumes: Resume[] = resumeData.map(resume => ({
+      const transformedResumes: Resume[] = resumeData.map((resume: any) => ({
         id: resume.id,
         user_id: resume.user_id,
         basic_info: {
@@ -55,7 +57,7 @@ export function useResumeList() {
       setResumes(transformedResumes);
       return transformedResumes;
     } catch (e: any) {
-      console.error('Error fetching resumes:', e);
+      logErrorToProduction('Error fetching resumes:', { data:  e });
       setError(e.message);
       return [];
     } finally {

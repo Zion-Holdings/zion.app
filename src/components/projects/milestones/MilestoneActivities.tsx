@@ -4,7 +4,9 @@ import { supabase } from '@/integrations/supabase/client';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { format } from 'date-fns';
-import { Skeleton } from '@/components/ui/skeleton';
+import Skeleton from '@/components/ui/skeleton';
+import {logErrorToProduction} from '@/utils/productionLogger';
+
 
 interface MilestoneActivitiesProps {
   projectId: string;
@@ -51,7 +53,7 @@ export function MilestoneActivities({ projectId }: MilestoneActivitiesProps) {
         
         setActivities(data || []);
       } catch (err) {
-        console.error('Error fetching milestone activities:', err);
+        logErrorToProduction('Error fetching milestone activities:', { data: err });
       } finally {
         setIsLoading(false);
       }
@@ -118,7 +120,7 @@ export function MilestoneActivities({ projectId }: MilestoneActivitiesProps) {
             {activities.map((activity) => (
               <div key={activity.id} className="flex items-start space-x-4">
                 <Avatar className="h-10 w-10">
-                  <AvatarImage src={activity.created_by_profile?.avatar_url || ''} alt="User" />
+                  <AvatarImage src={activity.created_by_profile?.avatar_url || ''} alt={activity.created_by_profile?.display_name || "User avatar"} />
                   <AvatarFallback>
                     {activity.created_by_profile?.display_name?.charAt(0) || '?'}
                   </AvatarFallback>

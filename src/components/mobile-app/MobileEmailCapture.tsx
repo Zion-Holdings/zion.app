@@ -1,31 +1,63 @@
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useEnqueueSnackbar } from '@/context';
+import { logErrorToProduction } from '@/utils/productionLogger';
+import { isValidEmail } from '@/utils/email';
 
 export const MobileEmailCapture: React.FC = () => {
+
   const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const enqueueSnackbar = useEnqueueSnackbar();
+
+  const lastSubmit = useRef(0);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || isSubmitting) return;
 
+    const now = Date.now();
+    if (now - lastSubmit.current < 1000) return;
+    lastSubmit.current = now;
+
+    const trimmed = email.trim();
+    if (!isValidEmail(trimmed)) {
+      enqueueSnackbar('Invalid email', { variant: 'error' });
+      return;
+    }
+
     setIsSubmitting(true);
 
     try {
-      // In a real implementation, this would connect to a backend service
-      // For now, we'll simulate a successful submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      setIsSuccess(true);
-      setEmail("");
-      
-      setTimeout(() => {
-        setIsSuccess(false);
-      }, 5000);
-    } catch (error) {
-      console.error("Error subscribing:", error);
+      const res = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: trimmed })
+      });
+
+      const data = await res.json().catch(() => ({}));
+
+      if (res.ok) {
+        if (data.status === 'already_subscribed') {
+          enqueueSnackbar(data.message || "You're already subscribed!", { variant: 'success' });
+        } else {
+          enqueueSnackbar(data.message || 'Successfully subscribed!', { variant: 'success' });
+        }
+        setIsSuccess(true);
+        setEmail('');
+        setTimeout(() => {
+          setIsSuccess(false);
+        }, 5000);
+      } else {
+        logErrorToProduction('Newsletter subscription failed:', { data });
+        enqueueSnackbar(data.error || 'Subscription failed. Please try again.', { variant: 'error' });
+      }
+    } catch (error: any) {
+      logErrorToProduction('Error subscribing:', { data: error });
+      enqueueSnackbar('Unable to subscribe right now. Please try again later.', { variant: 'error' });
     } finally {
       setIsSubmitting(false);
     }
@@ -45,6 +77,7 @@ export const MobileEmailCapture: React.FC = () => {
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
             <Input
               type="email"
+              name="email"
               placeholder="Enter your email address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}

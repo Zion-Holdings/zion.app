@@ -1,17 +1,19 @@
 
+import type { UserDetails } from "@/types/auth";
 import { toast } from "@/hooks/use-toast";
 import type { UserProfile } from "@/types/auth";
 import { checkNewRegistration } from "@/utils/authUtils";
-import { useNavigate } from 'react-router-dom';
+import type { useRouter } from 'next/router'; // Import useRouter for ReturnType
 
 /**
  * Custom hook for auth event handling
  */
 export function useAuthEventHandlers(
-  setUser: React.Dispatch<React.SetStateAction<UserProfile | null>>,
-  setOnboardingStep: React.Dispatch<React.SetStateAction<string | null>>
+  setUser: React.Dispatch<React.SetStateAction<UserDetails | null>>,
+  setOnboardingStep: React.Dispatch<React.SetStateAction<string | null>>,
+  router: ReturnType<typeof useRouter> // Use ReturnType<typeof useRouter>
 ) {
-  const navigate = useNavigate();
+  // Removed: const router = useRouter();
 
   const handleSignedIn = (mappedUser: UserProfile) => {
     toast({
@@ -28,14 +30,14 @@ export function useAuthEventHandlers(
     }, 0);
 
     // Check if user needs to complete onboarding
-    if (!mappedUser.profileComplete && navigate) {
+    if (!mappedUser.profileComplete && router) { // check router instance
       setOnboardingStep('profile');
       toast({
         title: "Complete your profile",
         description: "Please complete your profile information to get started",
         variant: "default",
       });
-      navigate('/onboarding');
+      router.push('/onboarding'); // Use Next.js router
     }
   };
 

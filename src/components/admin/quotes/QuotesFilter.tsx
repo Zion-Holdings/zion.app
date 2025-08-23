@@ -1,5 +1,7 @@
 import React from "react";
-import { Calendar, RefreshCw } from "@/components/icons";
+import { Calendar, RefreshCw } from 'lucide-react';
+
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -7,7 +9,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Button } from "@/components/ui/button";
 import { Calendar as CalendarComponent } from "@/components/ui/calendar";
 import { format } from "date-fns";
-import type { DateRange } from "@/types/dateRange";
+import type { DateRange } from "react-day-picker";
 import type { QuoteStatus } from "@/types/quotes";
 
 interface QuotesFilterProps {

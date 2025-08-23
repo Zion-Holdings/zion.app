@@ -1,12 +1,14 @@
 
 import { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useRouter } from "next/router";
 import { ITServicePricingTable } from "@/components/services/ITServicePricingTable";
 import { GlobalServiceSection } from "@/components/GlobalServiceSection";
 import { QuoteFormSection } from "@/components/QuoteFormSection";
 import { TrustedBySection } from "@/components/TrustedBySection";
 import { CountryPricing, onsiteServicePricing } from "@/data/onsiteServicePricing";
 import { toast } from "@/hooks/use-toast";
+import { OnsiteQuoteModal } from "@/components/services/OnsiteQuoteModal";
+import { slugify } from "@/lib/slugify";
 import { PageHero } from "@/components/services/PageSections/PageHero";
 import { CountryTabs } from "@/components/services/PageSections/CountryTabs";
 import { ServiceDetailsSection } from "@/components/services/PageSections/ServiceDetailsSection";
@@ -15,13 +17,13 @@ import { ServiceIncludes } from "@/components/services/PageSections/ServiceInclu
 import { EnterpriseCallToAction } from "@/components/services/PageSections/EnterpriseCallToAction";
 
 export default function ITOnsiteServicesPage() {
-  const [searchParams] = useSearchParams();
+  const router = useRouter();
+  const { country: countrySlug, success } = router.query as { country?: string; success?: string };
   const [selectedCountry, setSelectedCountry] = useState<CountryPricing | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
-  
-  // Check for success parameter in URL
-  const success = searchParams.get("success");
-  
+  const [quoteOpen, setQuoteOpen] = useState(false);
+  const [quoteCountry, setQuoteCountry] = useState<CountryPricing | null>(null);
+
   // Show success toast if redirected from successful payment
   useEffect(() => {
     if (success === "true") {
@@ -31,6 +33,21 @@ export default function ITOnsiteServicesPage() {
       });
     }
   }, [success]);
+
+  // Set selected country from URL
+  useEffect(() => {
+    if (countrySlug) {
+      const match = onsiteServicePricing.find(c => slugify(c.country) === countrySlug);
+      setSelectedCountry(match || null);
+      if (match) {
+        setTimeout(() => {
+          document.getElementById('service-details')?.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    } else {
+      setSelectedCountry(null);
+    }
+  }, [countrySlug]);
   
   // Popular countries for the featured cards
   const popularCountries = ["United States", "United Kingdom", "Canada", "Germany", "Japan", "Singapore"];
@@ -53,12 +70,12 @@ export default function ITOnsiteServicesPage() {
     });
   
   const handleCountrySelect = (country: CountryPricing) => {
-    setSelectedCountry(country);
-    
-    // Scroll to the service details section
-    setTimeout(() => {
-      document.getElementById('service-details')?.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
+    router.push(`/it-onsite-services/${slugify(country.country)}?service=standard`);
+  };
+
+  const handleQuote = (country: CountryPricing) => {
+    setQuoteCountry(country);
+    setQuoteOpen(true);
   };
   
   return (
@@ -70,10 +87,11 @@ export default function ITOnsiteServicesPage() {
           
           {/* Country Selection Tabs */}
           <div className="mb-12">
-            <CountryTabs 
+            <CountryTabs
               popularCountries={popularCountries}
               filteredCountries={filteredCountries}
               handleCountrySelect={handleCountrySelect}
+              onQuote={handleQuote}
               searchQuery={searchQuery}
               setSearchQuery={setSearchQuery}
             />
@@ -111,6 +129,11 @@ export default function ITOnsiteServicesPage() {
       <GlobalServiceSection />
       <TrustedBySection />
       <QuoteFormSection />
+      <OnsiteQuoteModal
+        open={quoteOpen}
+        onOpenChange={setQuoteOpen}
+        country={quoteCountry?.country}
+      />
     </>
   );
 }

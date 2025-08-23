@@ -1,5 +1,7 @@
 
 import { supabase } from "@/integrations/supabase/client";
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
+
 
 /**
  * Checks if the profiles table exists and creates it if it doesn't
@@ -18,7 +20,7 @@ export const ensureProfilesTableExists = async () => {
     
     // If there's an error, log it and proceed with table creation
     if (error) {
-      console.warn("Error checking if profiles table exists, attempting to create it:", error);
+      logWarn('Error checking if profiles table exists, attempting to create it:', { data: error });
     }
     
     // Attempt to create the table and related objects
@@ -96,12 +98,12 @@ export const ensureProfilesTableExists = async () => {
     const { error: createError } = await supabase.rpc('exec', { sql: createTableQuery });
     
     if (createError) {
-      console.error('Error creating profiles table:', createError);
+      logErrorToProduction('Error creating profiles table:', { data: createError });
     } else {
-      console.log('Profiles table setup completed');
+      logInfo('Profiles table setup completed');
     }
   } catch (error) {
-    console.error('Error setting up profiles table:', error);
+    logErrorToProduction('Error setting up profiles table:', { data: error });
   }
 };
 

@@ -1,7 +1,14 @@
 
 import { useState, useEffect } from "react";
 import { format } from "date-fns";
-import { Globe, MoreVertical, PlayCircle, Plus, RefreshCw, Webhook, X } from "lucide-react";
+import { Globe, MoreVertical, PlayCircle, Plus, RefreshCw, Webhook, X } from 'lucide-react';
+
+
+
+
+
+
+
 import { useWebhooks, type WebhookEventType } from "@/hooks/useWebhooks";
 
 import { Button } from "@/components/ui/button";
@@ -248,9 +255,9 @@ export function WebhooksManager() {
                       </span>
                     </div>
                     
-                    <DropdownMenu>
+                      <DropdownMenu>
                       <DropdownMenuTrigger asChild>
-                        <Button variant="ghost" size="icon">
+                        <Button variant="ghost" size="icon" aria-label="More options">
                           <MoreVertical size={16} />
                         </Button>
                       </DropdownMenuTrigger>
@@ -273,7 +280,7 @@ export function WebhooksManager() {
                 </div>
                 
                 <div className="mt-3 flex flex-wrap gap-2">
-                  {webhook.event_types.map((event) => (
+                  {webhook.event_types.map((event: WebhookEventType) => (
                     <Badge 
                       key={event} 
                       variant="secondary"

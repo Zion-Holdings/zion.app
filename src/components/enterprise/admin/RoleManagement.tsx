@@ -1,5 +1,5 @@
-
 import React from "react";
+import { InfoIcon } from 'lucide-react';
 import {
   Table,
   TableBody,
@@ -11,7 +11,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Switch } from "@/components/ui/switch";
 import { toast } from "@/hooks/use-toast";
-import { InfoIcon } from "lucide-react";
+
 import {
   Tooltip,
   TooltipContent,
@@ -80,7 +80,7 @@ export function RoleManagement() {
     },
   ];
 
-  const handlePermissionChange = (memberId: number, permission: string, value: boolean) => {
+  const handlePermissionChange = (_memberId: number, permission: string, value: boolean) => {
     // In a real app, this would make an API call to update permissions
     toast({
       title: "Permission updated",

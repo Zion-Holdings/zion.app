@@ -1,10 +1,12 @@
-
-import React from "react";
-import ApiDocsLayout from "@/components/developers/ApiDocsLayout";
-import { CodeBlock } from "@/components/developers/CodeBlock";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import React from 'react';
+import ApiDocsLayout from '@/components/developers/ApiDocsLayout';
+import { CodeBlock } from '@/components/developers/CodeBlock';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import Link from 'next/link';
+import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 export function ApiSampleCode() {
+
   // JavaScript example with Axios
   const jsAxiosExample = `// Using Axios with JavaScript
 import axios from 'axios';
@@ -24,7 +26,7 @@ async function getJobs(filters = {}) {
     const response = await api.get('/api/jobs', { params: filters });
     return response.data;
   } catch (error) {
-    console.error('Error fetching jobs:', error.response?.data || error.message);
+    logErrorToProduction('Error fetching jobs:', { data: error.response?.data || error.message });
     throw error;
   }
 }
@@ -35,7 +37,7 @@ async function createJob(jobData) {
     const response = await api.post('/api/jobs', jobData);
     return response.data;
   } catch (error) {
-    console.error('Error creating job:', error.response?.data || error.message);
+    logErrorToProduction('Error creating job:', { data: error.response?.data || error.message });
     throw error;
   }
 }
@@ -46,7 +48,7 @@ async function searchTalent(filters = {}) {
     const response = await api.get('/api/talent', { params: filters });
     return response.data;
   } catch (error) {
-    console.error('Error searching talent:', error.response?.data || error.message);
+    logErrorToProduction('Error searching talent:', { data: error.response?.data || error.message });
     throw error;
   }
 }
@@ -56,7 +58,7 @@ async function main() {
   try {
     // Get all open jobs
     const jobs = await getJobs({ status: 'open', limit: 5 });
-    console.log('Jobs:', jobs);
+    logInfo('Jobs:', { data: jobs });
     
     // Create a new job
     const newJob = await createJob({
@@ -70,13 +72,13 @@ async function main() {
       },
       skills: ['React', 'TypeScript', 'Tailwind CSS']
     });
-    console.log('New job created:', newJob);
+    logInfo('New job created:', { data: newJob });
     
     // Search for talent with React skills
     const talent = await searchTalent({ skills: 'React', limit: 10 });
-    console.log('Talent:', talent);
+    logInfo('Talent:', { data: talent });
   } catch (error) {
-    console.error('Something went wrong:', error);
+    logErrorToProduction('Something went wrong:', { data: error });
   }
 }
 
@@ -215,7 +217,7 @@ async function main() {
   try {
     // Get all open jobs
     const jobs = await getJobs({ status: 'open', limit: 5 });
-    console.log('Jobs:', jobs);
+    logInfo('Jobs:', { data: jobs });
     
     // Create a new job
     const newJob = await createJob({
@@ -229,13 +231,13 @@ async function main() {
       },
       skills: ['Node.js', 'Express', 'MongoDB']
     });
-    console.log('New job created:', newJob);
+    logInfo('New job created:', { data: newJob });
     
     // Search for talent with Node.js skills
     const talent = await searchTalent({ skills: 'Node.js', limit: 10 });
-    console.log('Talent:', talent);
+    logInfo('Talent:', { data: talent });
   } catch (error) {
-    console.error('Something went wrong:', error);
+    logErrorToProduction('Something went wrong:', { data: error });
   }
 }
 
@@ -245,22 +247,27 @@ main();`;
     <ApiDocsLayout>
       <div className="max-w-3xl prose prose-invert">
         <h1>Sample Code</h1>
-        
+
         <p>
-          The following code examples demonstrate how to integrate with the Zion AI Marketplace API
-          using different programming languages and libraries.
+          The following code examples demonstrate how to integrate with the Zion
+          AI Marketplace API using different programming languages and
+          libraries.
         </p>
 
         <h2>Authentication</h2>
         <p>
-          All API requests require authentication using API keys. Make sure to include your API key
-          in the Authorization header as shown in the examples below.
+          All API requests require authentication using API keys. Make sure to
+          include your API key in the Authorization header as shown in the
+          examples below.
         </p>
-        
+
         <div className="bg-yellow-900/20 border border-yellow-700/50 rounded-md p-4 my-6">
-          <h3 className="text-yellow-500 text-sm font-medium mt-0">Security Warning</h3>
+          <h3 className="text-yellow-500 text-sm font-medium mt-0">
+            Security Warning
+          </h3>
           <p className="text-sm text-yellow-300/90 mb-0">
-            Never include your API key directly in client-side code. These examples are intended for server-side usage only.
+            Never include your API key directly in client-side code. These
+            examples are intended for server-side usage only.
           </p>
         </div>
 
@@ -273,29 +280,66 @@ main();`;
           </TabsList>
           <TabsContent value="javascript">
             <p>Using Axios with JavaScript:</p>
-            <CodeBlock code={jsAxiosExample} language="javascript" showLineNumbers={true} />
+            <CodeBlock
+              code={jsAxiosExample}
+              language="javascript"
+              showLineNumbers={true}
+            />
           </TabsContent>
           <TabsContent value="python">
             <p>Using requests with Python:</p>
-            <CodeBlock code={pythonExample} language="python" showLineNumbers={true} />
+            <CodeBlock
+              code={pythonExample}
+              language="python"
+              showLineNumbers={true}
+            />
           </TabsContent>
           <TabsContent value="node">
             <p>Using fetch with Node.js:</p>
-            <CodeBlock code={nodeFetchExample} language="javascript" showLineNumbers={true} />
+            <CodeBlock
+              code={nodeFetchExample}
+              language="javascript"
+              showLineNumbers={true}
+            />
           </TabsContent>
         </Tabs>
 
         <h2>Using the Examples</h2>
         <p>
-          To use these examples, you'll need to replace 'YOUR_API_KEY' with your actual API key,
-          which you can generate in the <a href="/developers/portal" className="text-zion-cyan">Developer Portal</a>.
+          To use these examples, you'll need to replace 'YOUR_API_KEY' with your
+          actual API key, which you can generate in the{' '}
+          <Link href="/developers/portal" className="text-zion-cyan">
+            Developer Portal
+          </Link>
+          .
         </p>
-        
+
         <h2>Additional Resources</h2>
         <ul>
-          <li>Download our <a href="#" className="text-zion-cyan">Postman Collection</a> for easy API testing</li>
-          <li>Check out our <a href="#" className="text-zion-cyan">GitHub repository</a> for more code examples</li>
-          <li>Join our <a href="#" className="text-zion-cyan">Developer Discord</a> for community support</li>
+          <li>
+            Download our{' '}
+            <a href="/postman-collection.json" className="text-zion-cyan">
+              Postman Collection
+            </a>{' '}
+            for easy API testing
+          </li>
+          <li>
+            Check out our{' '}
+            <a
+              href="https://github.com/zion-marketplace"
+              className="text-zion-cyan"
+            >
+              GitHub repository
+            </a>{' '}
+            for more code examples
+          </li>
+          <li>
+            Join our{' '}
+            <a href="https://discord.gg/ziontech" className="text-zion-cyan">
+              Developer Discord
+            </a>{' '}
+            for community support
+          </li>
         </ul>
       </div>
     </ApiDocsLayout>

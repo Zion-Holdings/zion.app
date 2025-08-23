@@ -1,9 +1,9 @@
 import handler from '@/pages/api/auth/register';
 
-const signUpMock = jest.fn();
+const mockSignUp = jest.fn();
 jest.mock('@supabase/supabase-js', () => ({
   createClient: jest.fn(() => ({
-    auth: { signUp: signUpMock },
+    auth: { signUp: mockSignUp },
   })),
 }));
 
@@ -26,7 +26,7 @@ beforeEach(() => {
 
 describe('register API', () => {
   it('returns 201 on success', async () => {
-    signUpMock.mockResolvedValue({
+    mockSignUp.mockResolvedValue({
       data: { user: { id: '1' }, session: { access_token: 'tok' } },
       error: null,
     });
@@ -38,7 +38,7 @@ describe('register API', () => {
   });
 
   it('returns 409 for duplicate email', async () => {
-    signUpMock.mockResolvedValue({
+    mockSignUp.mockResolvedValue({
       data: { user: null },
       error: { message: 'User already registered', status: 400 },
     });

@@ -1,7 +1,8 @@
-
 import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
+
+import { logErrorToProduction, logWarn } from "@/utils/productionLogger";
 
 export interface MilestoneInput {
   scope: string;
@@ -32,8 +33,15 @@ export function useMilestoneGenerator() {
 
       if (error) throw error;
 
+      // Check if data exists and has milestones before processing
+      if (!data || !(data as any)?.milestones) {
+        logWarn('No milestones data received from AI generator');
+        setGeneratedMilestones([]);
+        return [];
+      }
+
       // Mark each milestone as AI generated
-      const milestonesWithFlag = data.milestones.map((milestone: any) => ({
+      const milestonesWithFlag = (data as any).milestones.map((milestone: any) => ({
         ...milestone,
         isAiGenerated: true,
       }));
@@ -41,7 +49,7 @@ export function useMilestoneGenerator() {
       setGeneratedMilestones(milestonesWithFlag);
       return milestonesWithFlag;
     } catch (error) {
-      console.error('Error generating milestones:', error);
+      logErrorToProduction('Error generating milestones:', { data: error });
       toast.error('Failed to generate milestones');
       return [];
     } finally {

@@ -23,7 +23,7 @@ export function TimelineField({ form }: TimelineFieldProps) {
     <FormField
       control={form.control}
       name="timeline"
-      render={({ field }) => (
+      render={({ field }: { field: any }) => (
         <FormItem>
           <FormLabel className="text-white">Project Timeline</FormLabel>
           <FormControl>
@@ -32,11 +32,11 @@ export function TimelineField({ form }: TimelineFieldProps) {
               value={field.value}
               defaultValue={field.value}
             >
-              <SelectTrigger className="bg-zion-blue-light/20 border-zion-blue-light text-black">
+              <SelectTrigger className="bg-zion-blue-light/20 dark:bg-zion-blue-dark/30 border-zion-blue-light text-black dark:text-white">
                 <SelectValue placeholder="Select estimated timeline" />
               </SelectTrigger>
               <SelectContent>
-                {timelineOptions.map((option) => (
+                {timelineOptions.map((option: { value: string; label: string }) => (
                   <SelectItem key={option.value} value={option.value}>
                     {option.label}
                   </SelectItem>

@@ -1,3 +1,4 @@
+import { Job } from './jobs';
 
 export type ProjectStatus = 
   | 'offer_sent'
@@ -14,6 +15,7 @@ export interface Project {
   job_id: string;
   start_date: string;
   scope_summary: string;
+  end_date?: string;
   payment_terms: 'hourly' | 'fixed' | 'milestone';
   agreement_url?: string;
   status: ProjectStatus;

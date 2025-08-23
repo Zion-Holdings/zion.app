@@ -1,6 +1,11 @@
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
-import { Check, X, User, Star, MoreHorizontal } from "lucide-react";
+import { Check, X, User, Star, MoreHorizontal } from 'lucide-react';
+
+
+
+
+
 import { format } from "date-fns";
 import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
@@ -79,16 +84,6 @@ export function ReviewsModerationTable({
     },
   });
 
-  const getStatusColor = (status: ReviewStatus) => {
-    switch (status) {
-      case "approved":
-        return "bg-green-100 text-green-800 hover:bg-green-200";
-      case "rejected":
-        return "bg-red-100 text-red-800 hover:bg-red-200";
-      default:
-        return "bg-yellow-100 text-yellow-800 hover:bg-yellow-200";
-    }
-  };
 
   const getInitials = (name: string) => {
     return name
@@ -196,7 +191,6 @@ export function ReviewsModerationTable({
               <TableCell>
                 <Badge
                   variant="outline"
-                  className={`${getStatusColor(review.status as ReviewStatus)}`}
                 >
                   {review.status.charAt(0).toUpperCase() + review.status.slice(1)}
                 </Badge>
@@ -299,7 +293,7 @@ export function ReviewsModerationTable({
                         ? "Anonymous"
                         : selectedReview.reviewer_profile?.display_name || "User"}
                     </div>
-                    <Badge variant="outline" className={getStatusColor(selectedReview.status as ReviewStatus)}>
+                    <Badge variant="outline">
                       {selectedReview.status}
                     </Badge>
                   </div>
@@ -332,7 +326,6 @@ export function ReviewsModerationTable({
                   {selectedReview.would_work_again !== undefined && (
                     <Badge
                       variant={selectedReview.would_work_again ? "default" : "secondary"}
-                      className={selectedReview.would_work_again ? "bg-green-100 text-green-800" : "bg-gray-100 text-gray-800"}
                     >
                       {selectedReview.would_work_again ? "Would work again" : "Would not work again"}
                     </Badge>

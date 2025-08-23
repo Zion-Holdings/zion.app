@@ -4,9 +4,12 @@ import { useJobApplications } from "@/hooks/useJobApplications";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Loader2, MessageSquare, ExternalLink } from "lucide-react";
+import { Loader2, MessageSquare, ExternalLink } from 'lucide-react';
+
+
+
 import { formatDistanceToNow } from "date-fns";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ApplicationStatus } from "@/types/jobs";
 
 export function MyApplications() {
@@ -55,7 +58,7 @@ export function MyApplications() {
             You haven't submitted any applications yet.
           </p>
           <Button className="mt-4" asChild>
-            <Link to="/jobs">Browse Jobs</Link>
+            <Link href="/jobs">Browse Jobs</Link>
           </Button>
         </CardContent>
       </Card>
@@ -92,7 +95,7 @@ export function MyApplications() {
                   className="text-xs"
                   asChild
                 >
-                  <Link to={`/jobs/${application.job_id}`}>
+                  <Link href={`/jobs/${application.job_id}`}>
                     <ExternalLink className="h-3 w-3 mr-1" /> View Job
                   </Link>
                 </Button>
@@ -103,7 +106,7 @@ export function MyApplications() {
                   className="text-xs"
                   asChild
                 >
-                  <Link to={`/messages?jobId=${application.job_id}`}>
+                  <Link href={`/messages?jobId=${application.job_id}`}>
                     <MessageSquare className="h-3 w-3 mr-1" /> Contact Client
                   </Link>
                 </Button>

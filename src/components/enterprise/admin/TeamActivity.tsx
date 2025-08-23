@@ -1,5 +1,6 @@
 
 import React from "react";
+import { CalendarIcon, Search } from 'lucide-react';
 import {
   Table,
   TableBody,
@@ -9,7 +10,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import { CalendarIcon, Search } from "lucide-react";
+
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -93,7 +95,8 @@ export function TeamActivity() {
       billing: { variant: "destructive" },
     };
 
-    return <Badge variant={categoryStyles[category].variant}>{category}</Badge>;
+    const style = categoryStyles[category] || { variant: "default" as const };
+    return <Badge variant={style.variant}>{category}</Badge>;
   };
 
   return (
@@ -109,7 +112,7 @@ export function TeamActivity() {
               className="w-[200px] md:w-[300px] pl-9"
             />
           </div>
-          <Button variant="outline" size="icon" className="h-10 w-10">
+          <Button variant="outline" size="icon" className="h-10 w-10" aria-label="Filter by date">
             <CalendarIcon className="h-4 w-4" />
           </Button>
         </div>

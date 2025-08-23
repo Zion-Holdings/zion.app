@@ -1,5 +1,6 @@
 
 import React, { useState, useRef, useEffect } from "react";
+import { logDebug, logErrorToProduction } from '@/utils/productionLogger';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -8,7 +9,9 @@ import { toast } from "@/components/ui/use-toast";
 import { cn } from "@/lib/utils";
 import { ChatMessage } from "./ChatMessage";
 import { QuickReplyButton } from "./QuickReplyButton";
-import { Send, Loader2 } from "lucide-react";
+import { Send, Loader2 } from 'lucide-react';
+
+
 import { useTheme } from "@/hooks/useTheme";
 
 // Define suggested quick replies
@@ -95,7 +98,7 @@ export function ChatBotPanel() {
         setFailedAttempts(0);
       }
     } catch (error) {
-      console.error("Error in AI chat:", error);
+      logErrorToProduction("Error in AI chat", error as Error, { component: 'ChatBotPanel' });
       toast({
         variant: "destructive",
         title: "Communication Error",
@@ -136,7 +139,7 @@ export function ChatBotPanel() {
         message: data.message
       };
     } catch (error) {
-      console.error("Error in AI chat:", error);
+      logErrorToProduction("Error calling Supabase AI chat function", error as Error, { component: 'ChatBotPanel', functionName: 'ai-chat' });
       return {
         success: false,
         message: "I'm experiencing technical difficulties. Please try again later."
@@ -163,15 +166,16 @@ export function ChatBotPanel() {
     try {
       // Send the conversation to the backend for logging
       // This would be implemented in a real system
-      console.log("Support escalation triggered", { 
+      logDebug("Support escalation triggered", {
         conversationHistory: messages.map(m => ({
           content: m.content,
           sender: m.sender,
           timestamp: m.timestamp
-        }))
+        })),
+        component: 'ChatBotPanel'
       });
     } catch (error) {
-      console.error("Failed to log support escalation:", error);
+      logErrorToProduction("Failed to log support escalation", error as Error, { component: 'ChatBotPanel' });
     }
   };
 
@@ -306,11 +310,12 @@ export function ChatBotPanel() {
                 : "bg-white border-gray-200"
             )}
           />
-          <Button 
+          <Button
             type="submit"
             size="icon"
             disabled={isLoading || !inputValue.trim()}
             className="bg-zion-cyan hover:bg-zion-cyan/80 text-white"
+            aria-label="Send message"
           >
             <Send className="h-4 w-4" />
           </Button>

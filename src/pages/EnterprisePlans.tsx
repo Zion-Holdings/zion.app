@@ -1,8 +1,8 @@
 
 import React from "react";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { EnterpriseHero } from "@/components/enterprise/EnterpriseHero";
+import { EnterpriseStickyNav } from "@/components/enterprise/EnterpriseStickyNav";
 import { EnterprisePricingTable } from "@/components/enterprise/EnterprisePricingTable";
 import { EnterpriseFeatures } from "@/components/enterprise/EnterpriseFeatures";
 import { EnterpriseCTA } from "@/components/enterprise/EnterpriseCTA";
@@ -20,13 +20,13 @@ export default function EnterprisePlans() {
       <Header />
       <main className="min-h-screen bg-background">
         <EnterpriseHero />
+        <EnterpriseStickyNav />
         <EnterprisePricingTable />
         <EnterpriseFeatures />
         <EnterpriseTestimonials />
         <EnterpriseTrustBadges />
         <EnterpriseCTA />
       </main>
-      <Footer />
     </>
   );
 }

@@ -1,15 +1,14 @@
 
 import { useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
-import { 
-  BookOpen, 
-  Code, 
-  Key, 
-  List, 
-  LucideIcon, 
-  Terminal, 
-  Webhook 
-} from "lucide-react";
+import { BookOpen, Code, Key, List, LucideIcon, Terminal, Webhook } from 'lucide-react';
+
+
+
+
+
+
+
 
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { ApiKeysManager } from "@/components/developers/ApiKeysManager";

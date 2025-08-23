@@ -1,17 +1,8 @@
-
-import { Fragment } from "react";
-import { Route, Routes } from "react-router-dom";
-import NotFound from "@/pages/NotFound";
-import Unauthorized from "@/pages/Unauthorized";
+// Routes have been converted to Next.js pages structure
+// This component is no longer needed since Next.js uses file-based routing
 
 const ErrorRoutes = () => {
-  return (
-    <Routes>
-      {/* Error Routes */}
-      <Route path="/unauthorized" element={<Unauthorized />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
-  );
+  return null;
 };
 
 export default ErrorRoutes;

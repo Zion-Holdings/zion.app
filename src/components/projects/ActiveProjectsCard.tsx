@@ -1,7 +1,9 @@
 
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { BriefcaseIcon, Clock } from "lucide-react";
+import Link from "next/link";
+import { BriefcaseIcon, Clock } from 'lucide-react';
+
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -55,7 +57,7 @@ export function ActiveProjectsCard() {
         <CardContent className="text-center py-6">
           <p className="text-muted-foreground mb-2">You don't have any active projects at the moment.</p>
           <Button variant="outline" asChild>
-            <Link to="/jobs">Find Opportunities</Link>
+            <Link href="/jobs">Find Opportunities</Link>
           </Button>
         </CardContent>
       </Card>
@@ -88,7 +90,7 @@ export function ActiveProjectsCard() {
               <span>Started {new Date(project.start_date).toLocaleDateString()}</span>
             </div>
             <Button size="sm" variant="outline" className="w-full mt-2" asChild>
-              <Link to={`/project/${project.id}`}>View Project</Link>
+              <Link href={`/project/${project.id}`}>View Project</Link>
             </Button>
           </div>
         ))}
@@ -96,7 +98,7 @@ export function ActiveProjectsCard() {
       {activeProjects.length > 2 && (
         <CardFooter>
           <Button variant="ghost" className="w-full" asChild>
-            <Link to="/projects">View All Projects</Link>
+            <Link href="/projects">View All Projects</Link>
           </Button>
         </CardFooter>
       )}

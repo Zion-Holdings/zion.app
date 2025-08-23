@@ -14,14 +14,14 @@ export function PersonalInfoFields({ form }: PersonalInfoFieldsProps) {
       <FormField
         control={form.control}
         name="requesterName"
-        render={({ field }) => (
+        render={({ field }: { field: any }) => (
           <FormItem>
             <FormLabel className="text-white">Your Name</FormLabel>
             <FormControl>
               <Input
                 placeholder="Enter your full name"
                 {...field}
-                className="bg-zion-blue-light/20 border-zion-blue-light text-black"
+                className="bg-zion-blue-light/20 dark:bg-zion-blue-dark/30 border-zion-blue-light text-black dark:text-white"
               />
             </FormControl>
             <FormMessage />
@@ -32,7 +32,7 @@ export function PersonalInfoFields({ form }: PersonalInfoFieldsProps) {
       <FormField
         control={form.control}
         name="requesterEmail"
-        render={({ field }) => (
+        render={({ field }: { field: any }) => (
           <FormItem>
             <FormLabel className="text-white">Your Email</FormLabel>
             <FormControl>
@@ -40,7 +40,7 @@ export function PersonalInfoFields({ form }: PersonalInfoFieldsProps) {
                 placeholder="Enter your email address"
                 type="email"
                 {...field}
-                className="bg-zion-blue-light/20 border-zion-blue-light text-black"
+                className="bg-zion-blue-light/20 dark:bg-zion-blue-dark/30 border-zion-blue-light text-black dark:text-white"
               />
             </FormControl>
             <FormMessage />

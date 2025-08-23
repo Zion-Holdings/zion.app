@@ -1,38 +1,53 @@
 
+import React from 'react';
 import { GradientHeading } from "./GradientHeading";
-import { Check, Handshake, Search, Send } from "lucide-react";
+import { Check, Handshake, Search, Send } from 'lucide-react';
 
-const steps = [
+
+
+
+import { cn } from "@/lib/utils";
+import { useTranslation } from "react-i18next";
+
+interface HowItWorksSectionProps {
+  className?: string;
+  style?: React.CSSProperties;
+}
+
+const getSteps = (t: any) => [
   {
-    title: "Post",
-    description: "Publish your service, job, or equipment in minutes with our AI-powered form.",
+    title: t('how_it_works.post'),
+    description: t('how_it_works.post_desc'),
     icon: Send,
   },
   {
-    title: "Match",
-    description: "Our AI automatically matches your needs with the perfect providers or opportunities.",
+    title: t('how_it_works.match'),
+    description: t('how_it_works.match_desc'),
     icon: Search,
   },
   {
-    title: "Hire/Buy",
-    description: "Connect directly with matched providers and complete your transaction securely.",
+    title: t('how_it_works.hire_buy'),
+    description: t('how_it_works.hire_buy_desc'),
     icon: Handshake,
   },
   {
-    title: "Done",
-    description: "Enjoy hassle-free delivery and support for your technology solutions.",
+    title: t('how_it_works.done'),
+    description: t('how_it_works.done_desc'),
     icon: Check,
   },
 ];
 
-export function HowItWorksSection() {
+export function HowItWorksSection({ className, style }: HowItWorksSectionProps) {
+  const { t } = useTranslation();
+  const steps = getSteps(t);
+  
   return (
-    <section className="py-20 bg-zion-blue">
+    <section className={cn("py-20 bg-zion-blue", className)} style={style}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <GradientHeading>How It Works</GradientHeading>
+          <GradientHeading>{t('home.how_it_works_title')}</GradientHeading>
           <p className="text-zion-slate-light text-lg mt-4 max-w-2xl mx-auto">
-            A simple four-step process to connect technology providers with clients
+            {t('home.how_it_works_subtitle')}
           </p>
         </div>
 

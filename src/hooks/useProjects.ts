@@ -3,8 +3,10 @@ import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
 import { Project, ProjectStatus } from "@/types/projects";
 import { toast } from "sonner";
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function useProjects() {
+
   const { user } = useAuth();
   const [projects, setProjects] = useState<Project[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -32,9 +34,9 @@ export function useProjects() {
         `)
         .order("created_at", { ascending: false });
       
-      if (user.userType === "jobSeeker" || user.userType === "creator") {
+      if (user.userType === "talent") {
         query = query.eq("talent_id", user.id);
-      } else if (user.userType === "employer" || user.userType === "buyer") {
+      } else if (user.userType === "client") {
         query = query.eq("client_id", user.id);
       }
       
@@ -54,7 +56,7 @@ export function useProjects() {
       setProjects(transformedData as Project[]);
       setError(null);
     } catch (err: any) {
-      console.error("Error fetching projects:", err);
+      logErrorToProduction('Error fetching projects:', { data: err });
       setError("Failed to fetch projects: " + err.message);
       toast.error("Failed to fetch projects");
     } finally {
@@ -88,7 +90,7 @@ export function useProjects() {
       
       return transformedProject as Project;
     } catch (err: any) {
-      console.error("Error fetching project:", err);
+      logErrorToProduction('Error fetching project:', { data: err });
       toast.error("Failed to fetch project details");
       return null;
     }
@@ -111,7 +113,7 @@ export function useProjects() {
       toast.success(`Project status updated to ${status}`);
       return true;
     } catch (err: any) {
-      console.error("Error updating project status:", err);
+      logErrorToProduction('Error updating project status:', { data: err });
       toast.error("Failed to update project status");
       return false;
     }

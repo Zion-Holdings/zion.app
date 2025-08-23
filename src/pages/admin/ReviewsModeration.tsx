@@ -1,13 +1,15 @@
 
-import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { ReviewsModerationTable } from "@/components/admin/reviews/ReviewsModerationTable";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { useState, useEffect } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Star, AlertTriangle } from "lucide-react";
+import { Star, AlertTriangle } from 'lucide-react';
+
+
 import { toast } from "@/components/ui/use-toast";
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 function ReviewsModerationContent() {
   const [activeTab, setActiveTab] = useState("pending");
@@ -23,7 +25,7 @@ function ReviewsModerationContent() {
       setReviews([]);
       setIsLoading(false);
     } catch (error) {
-      console.error("Error fetching reviews:", error);
+      logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Error fetching reviews' });
       toast({
         title: "Error",
         description: "Failed to load reviews. Please try again later.",
@@ -93,7 +95,6 @@ function ReviewsModerationContent() {
           </CardContent>
         </Card>
       </main>
-      <Footer />
     </>
   );
 }

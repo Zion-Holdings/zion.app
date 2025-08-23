@@ -2,8 +2,12 @@
 import { SEO } from "@/components/SEO";
 import { GradientHeading } from "@/components/GradientHeading";
 import { Button } from "@/components/ui/button";
-import { Leaf, Server, Cloud } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Leaf, Server, Cloud } from 'lucide-react';
+
+
+
+import { OptimizedImage } from "@/components/ui/OptimizedImage";
+import Link from "next/link";
 
 export default function GreenIT() {
   const greenITSolutions = [
@@ -61,11 +65,12 @@ export default function GreenIT() {
                     </Button>
                   </div>
                 </div>
-                <div className="rounded-lg overflow-hidden">
-                  <img 
-                    src="https://images.unsplash.com/photo-1473876637954-4b493d59fd97?auto=format&fit=crop&w=800&h=600" 
-                    alt="Green IT sustainability" 
-                    className="object-cover w-full h-full"
+                <div className="rounded-lg overflow-hidden relative w-full h-full">
+                  <OptimizedImage
+                    src="https://images.unsplash.com/photo-1473876637954-4b493d59fd97?auto=format&fit=crop&w=800&h=600&q=80"
+                    alt="Green IT sustainability"
+                    className="object-cover"
+                    fill
                   />
                 </div>
               </div>
@@ -120,7 +125,7 @@ export default function GreenIT() {
               Connect with our experts to discuss how we can help you build a more sustainable IT infrastructure.
             </p>
             <Button className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple" asChild>
-              <Link to="/contact">Contact Our Team</Link>
+              <Link href="/contact">Contact Our Team</Link>
             </Button>
           </div>
         </div>

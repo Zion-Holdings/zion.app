@@ -1,0 +1,17 @@
+{
+  "timestamp": "2025-07-01T19:19:13.358Z",
+  "duration": 70500,
+  "success": false,
+  "criticalErrors": 1,
+  "suppressedWarnings": 14,
+  "details": {
+    "criticalErrors": [
+      {
+        "message": "unhandledRejection TypeError: Cannot read properties of undefined (reading 'length')",
+        "timestamp": 1751397553206,
+        "classification": "critical"
+      }
+    ],
+    "suppressedWarnings": []
+  }
+}

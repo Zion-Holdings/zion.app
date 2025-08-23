@@ -1,6 +1,12 @@
 
 import React from "react";
-import { Users, Shield, Briefcase, Award, Settings, Globe } from "lucide-react";
+import { Users, Shield, Briefcase, Award, Settings, Globe } from 'lucide-react';
+
+
+
+
+
+
 
 const features = [
   {
@@ -37,7 +43,7 @@ const features = [
 
 export function EnterpriseFeatures() {
   return (
-    <section className="py-20 px-4 md:px-6 bg-muted/50">
+    <section id="features" className="py-20 px-4 md:px-6 bg-muted/50">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">

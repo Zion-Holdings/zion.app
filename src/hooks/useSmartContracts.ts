@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
@@ -6,8 +5,10 @@ import { toast } from 'sonner';
 import { BlockchainNetwork, DeploymentOptions, SmartContractInfo } from '@/types/smart-contracts';
 import { TalentProfile } from '@/types/talent';
 import { ContractFormValues } from "@/components/contracts/components/ContractForm";
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function useSmartContracts() {
+
   const { user } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [deploymentStatus, setDeploymentStatus] = useState<'idle' | 'deploying' | 'success' | 'error'>('idle');
@@ -36,13 +37,13 @@ export function useSmartContracts() {
       
       if (error) throw error;
       
-      if (data && data.solidityCode) {
-        return data.solidityCode;
+      if (data && (data as any).solidityCode) {
+        return (data as any).solidityCode;
       } else {
         throw new Error("Failed to generate Solidity contract");
       }
     } catch (err: any) {
-      console.error("Error generating Solidity contract:", err);
+      logErrorToProduction('Error generating Solidity contract:', { data: err });
       toast.error("Failed to generate smart contract");
       throw err;
     } finally {
@@ -88,7 +89,7 @@ export function useSmartContracts() {
       
       return mockSmartContractInfo;
     } catch (err: any) {
-      console.error("Error deploying smart contract:", err);
+      logErrorToProduction('Error deploying smart contract:', { data: err });
       toast.error("Failed to deploy smart contract");
       setDeploymentStatus('error');
       return null;

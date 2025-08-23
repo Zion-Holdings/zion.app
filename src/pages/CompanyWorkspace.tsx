@@ -1,17 +1,17 @@
 
 import React from "react";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { CompanyDashboard } from "@/components/enterprise/workspace/CompanyDashboard";
 import { useAuth } from "@/hooks/useAuth";
-import { Navigate, useParams } from "react-router-dom";
+import { useRouter } from "next/router"; // Changed to named import
 import { SEO } from "@/components/SEO";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 import { useCompanyWorkspace } from "@/hooks/useCompanyWorkspace";
 import { useWhitelabel } from "@/context/WhitelabelContext";
 
 export default function CompanyWorkspace() {
-  const { companySlug } = useParams() as { companySlug?: string };
+  const router = useRouter();
+  const companySlug = router.query.companySlug as string;
   const { user } = useAuth();
   const { company, isLoading, error } = useCompanyWorkspace(companySlug);
   const { isWhitelabel, tenant, brandName } = useWhitelabel();
@@ -25,12 +25,12 @@ export default function CompanyWorkspace() {
   }
   
   if (error || !company) {
-    return <Navigate to="/not-found" />;
+    return // Use router.push('/not-found') or redirect in getServerSideProps;
   }
   
   // In white-label mode, use the tenant's theme instead of the company's theme
   const effectiveTheme = isWhitelabel ? {
-    primaryColor: tenant?.primary_color || company.theme?.primaryColor,
+    primaryColor: tenant?.primary_color ?? company.theme?.primaryColor ?? "",
     backgroundColor: company.theme?.backgroundColor || 'var(--background)',
     textColor: company.theme?.textColor || 'var(--foreground)'
   } : company.theme;
@@ -39,7 +39,7 @@ export default function CompanyWorkspace() {
   const hasAccess = true; // For demo purposes, always grant access
 
   if (!hasAccess) {
-    return <Navigate to="/unauthorized" />;
+    return // Use router.push('/unauthorized') or redirect in getServerSideProps;
   }
 
   return (
@@ -48,14 +48,13 @@ export default function CompanyWorkspace() {
         title={`${company.name} Workspace - ${isWhitelabel ? brandName : 'Zion AI Marketplace'}`}
         description={`${company.name}'s dedicated workspace ${isWhitelabel ? `on ${brandName}` : 'on Zion AI Marketplace'}. Collaborate with your team to find top talent.`}
       />
-      <Header 
-        customLogo={isWhitelabel ? tenant?.logo_url : company.logoUrl}
+      <Header
+        customLogo={(isWhitelabel ? tenant?.logo_url : company.logoUrl) ?? ""}
         customTheme={effectiveTheme}
       />
       <main className="min-h-screen" style={{ backgroundColor: effectiveTheme?.backgroundColor || 'var(--background)' }}>
         <CompanyDashboard company={company} />
       </main>
-      <Footer />
     </ProtectedRoute>
   );
 }

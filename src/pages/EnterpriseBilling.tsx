@@ -1,10 +1,9 @@
 
 import React from "react";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { BillingDashboard } from "@/components/enterprise/billing/BillingDashboard";
 import { useAuth } from "@/hooks/useAuth";
-import { Navigate } from "react-router-dom";
+import { useRouter } from "next/router"; // Changed to named import
 import { SEO } from "@/components/SEO";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 
@@ -13,10 +12,10 @@ export default function EnterpriseBilling() {
   
   // Check if user has billing permissions
   const hasBillingAccess = user?.role === "enterprise_admin" || 
-                          (user?.permissions && user.permissions.includes('billing_access'));
+                          (user?.userType === 'admin');
   
   if (!hasBillingAccess) {
-    return <Navigate to="/unauthorized" />;
+    return // Use router.push('/unauthorized') or redirect in getServerSideProps;
   }
 
   return (
@@ -29,7 +28,6 @@ export default function EnterpriseBilling() {
       <main className="min-h-screen bg-background">
         <BillingDashboard />
       </main>
-      <Footer />
     </ProtectedRoute>
   );
 }

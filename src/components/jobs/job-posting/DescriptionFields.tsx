@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { ControllerRenderProps } from 'react-hook-form';
 import { Control } from 'react-hook-form';
 import { FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage } from "@/components/ui/form";
 import { Textarea } from "@/components/ui/textarea";
@@ -17,7 +18,7 @@ export function DescriptionFields({ control, handleEditorChange, editorContent }
       <FormField
         control={control}
         name="description"
-        render={({ field }) => (
+        render={({ field }: { field: ControllerRenderProps<any, "description"> }) => (
           <FormItem>
             <FormLabel>Job Description</FormLabel>
             <FormControl>
@@ -42,7 +43,7 @@ export function DescriptionFields({ control, handleEditorChange, editorContent }
       <FormField
         control={control}
         name="responsibilities"
-        render={({ field }) => (
+        render={({ field }: { field: ControllerRenderProps<any, "responsibilities"> }) => (
           <FormItem>
             <FormLabel>Responsibilities (Optional)</FormLabel>
             <FormControl>
@@ -63,7 +64,7 @@ export function DescriptionFields({ control, handleEditorChange, editorContent }
       <FormField
         control={control}
         name="qualifications"
-        render={({ field }) => (
+        render={({ field }: { field: ControllerRenderProps<any, "qualifications"> }) => (
           <FormItem>
             <FormLabel>Qualifications (Optional)</FormLabel>
             <FormControl>
@@ -84,7 +85,7 @@ export function DescriptionFields({ control, handleEditorChange, editorContent }
       <FormField
         control={control}
         name="benefits"
-        render={({ field }) => (
+        render={({ field }: { field: ControllerRenderProps<any, "benefits"> }) => (
           <FormItem>
             <FormLabel>Benefits (Optional)</FormLabel>
             <FormControl>
@@ -105,7 +106,7 @@ export function DescriptionFields({ control, handleEditorChange, editorContent }
       <FormField
         control={control}
         name="application_instructions"
-        render={({ field }) => (
+        render={({ field }: { field: ControllerRenderProps<any, "application_instructions"> }) => (
           <FormItem>
             <FormLabel>Application Instructions (Optional)</FormLabel>
             <FormControl>

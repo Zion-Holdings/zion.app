@@ -1,27 +1,37 @@
-
+import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, Legend } from 'recharts';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useState } from "react";
 
+// Define proper chart data interface
+interface ChartDataPoint {
+  name: string;
+  value: number;
+  fill?: string;
+  [key: string]: string | number | undefined;
+}
+
 interface AnalyticsChartProps {
   title: string;
   description?: string;
-  data: any[];
+  data: ChartDataPoint[];
   type?: 'line' | 'bar';
   dataKeys: string[];
   timeRange?: string;
   onTimeRangeChange?: (range: string) => void;
+  height?: number;
 }
 
-export function AnalyticsChart({ 
+export default function AnalyticsChart({ 
   title, 
   description, 
   data, 
   type = 'line',
   dataKeys, 
   timeRange = '7d',
-  onTimeRangeChange
+  onTimeRangeChange,
+  height = 300
 }: AnalyticsChartProps) {
   const [chartType, setChartType] = useState<'line' | 'bar'>(type);
   
@@ -67,12 +77,12 @@ export function AnalyticsChart({
       </CardHeader>
       <CardContent className="p-0">
         <div className="h-72 w-full p-4">
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="100%" height={height}>
             {chartType === 'line' ? (
               <LineChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 25 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#354151" />
                 <XAxis 
-                  dataKey="date" 
+                  dataKey="name" 
                   tick={{ fill: '#b1b9c6', fontSize: 12 }}
                   angle={-30}
                   textAnchor="end"
@@ -102,7 +112,7 @@ export function AnalyticsChart({
               <BarChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 25 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#354151" />
                 <XAxis 
-                  dataKey="date" 
+                  dataKey="name" 
                   tick={{ fill: '#b1b9c6', fontSize: 12 }} 
                   angle={-30}
                   textAnchor="end"
@@ -133,3 +143,6 @@ export function AnalyticsChart({
     </Card>
   );
 }
+
+// Export both named and default for compatibility
+export { AnalyticsChart };

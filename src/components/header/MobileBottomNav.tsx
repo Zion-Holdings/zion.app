@@ -1,31 +1,38 @@
-
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useRouter } from "next/router";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
-import { useFavorites } from "@/hooks/useFavorites";
-import { useCart } from "@/context/CartContext";
-import {
-  Home,
-  Search,
-  MessageCircle,
-  Heart,
-  MessageSquare,
-  ShoppingCart,
-  User
-} from "lucide-react";
+import { useWishlist } from "@/hooks/useWishlist";
+import { useCart } from '@/context/CartContext';
+import { logWarn } from '@/utils/productionLogger';
+import { Home, Search, MessageCircle, Heart, MessageSquare, ShoppingCart, User } from 'lucide-react';
+
+
+
+
+
+
+
 
 interface MobileBottomNavProps {
   unreadCount?: number;
 }
 
 export function MobileBottomNav({ unreadCount = 0 }: MobileBottomNavProps) {
-  const location = useLocation();
+  const router = useRouter();
   const { user } = useAuth();
   const isAuthenticated = !!user;
-  const { count: favoritesCount } = useFavorites();
-  const { items } = useCart();
-  const cartCount = items.reduce((sum, i) => sum + i.quantity, 0);
+  const { items: wishlistItems } = useWishlist(); // Renamed to avoid conflict
+  const favoritesCount = wishlistItems.length;
+
+  const cartContextValue = useCart(); // Call hook at top level
+  let cartCount = 0;
+  if (cartContextValue && cartContextValue.items) {
+    cartCount = cartContextValue.items.reduce((sum, i) => sum + i.quantity, 0);
+  } else {
+    // logWarn("MobileBottomNav: Cart data or items not available, defaulting cartCount to 0.");
+  }
 
   const navItems = [
     {
@@ -84,28 +91,29 @@ export function MobileBottomNav({ unreadCount = 0 }: MobileBottomNavProps) {
   );
 
   return (
-    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-zion-blue-dark/95 backdrop-blur-md border-t border-zion-purple/20">
+    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-card/90 backdrop-blur-md border-t border-primary/20">
       <div className="flex justify-around items-center h-16">
         {visibleItems.map(item => (
           <Link
             key={item.name}
-            to={item.href}
+            href={item.href}
+            aria-label={item.name}
             className={cn(
-              "flex flex-col items-center justify-center w-full h-full px-1 py-1",
-              item.matches(location.pathname)
-                ? "text-zion-cyan"
-                : "text-white/70 hover:text-white"
+              "flex flex-col items-center justify-center w-full h-full px-1 py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",
+              item.matches(router.pathname)
+                ? "text-primary"
+                : "text-foreground/70 hover:text-foreground"
             )}
           >
             <div className="relative">
-              <item.icon className="h-5 w-5 mb-1" />
+              <item.icon className="h-5 w-5 mb-1" aria-hidden="true" />
               {item.badge && item.badge > 0 && (
-                <span className="absolute -top-2 -right-2 bg-zion-purple text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
+                <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs rounded-full h-4 w-4 flex items-center justify-center">
                   {item.badge > 9 ? '9+' : item.badge}
                 </span>
               )}
             </div>
-            <span className="text-xs font-medium">{item.name}</span>
+            <span className="hidden sm:block text-xs font-medium">{item.name}</span>
           </Link>
         ))}
       </div>

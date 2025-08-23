@@ -1,14 +1,19 @@
-import { safeStorage } from '../../utils/safeStorage';
+// COMPLETELY DISABLED Supabase storage adapter to prevent infinite loops
+// Since we're using Auth0, we don't need Supabase session persistence
+// This prevents the infinite "sb-your-project-auth-token" loop
 
 export const supabaseStorageAdapter = {
-  async getItem(key: string): Promise<string | null> {
-    return safeStorage.getItem(key);
+  getItem: (key: string) => {
+    // Completely disabled - return null for all operations
+    return null;
   },
-  async setItem(key: string, value: string): Promise<void> {
-    safeStorage.setItem(key, value);
+  setItem: (key: string, value: string) => {
+    // Completely disabled - no-op for all storage operations
+    return;
   },
-  async removeItem(key: string): Promise<void> {
-    safeStorage.removeItem(key);
+  removeItem: (key: string) => {
+    // Completely disabled - no-op for all storage operations  
+    return;
   },
 };
 

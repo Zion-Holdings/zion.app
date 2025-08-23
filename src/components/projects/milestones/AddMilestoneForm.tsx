@@ -4,6 +4,8 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { CalendarIcon, Loader2 } from 'lucide-react';
+
+
 import { format } from 'date-fns';
 
 import { Button } from '@/components/ui/button';
@@ -51,7 +53,7 @@ export function AddMilestoneForm({
   onCancel,
   projectScope = '',
   projectStartDate = '',
-  projectEndDate = null,
+  projectEndDate = '',
   projectType = 'Other'
 }: AddMilestoneFormProps) {
   const form = useForm<MilestoneFormValues>({
@@ -72,13 +74,15 @@ export function AddMilestoneForm({
     // If there's only one milestone, submit it directly
     if (milestones.length === 1) {
       const milestone = milestones[0];
-      onSubmit({
-        title: milestone.title,
-        description: milestone.description,
-        due_date: milestone.dueDate ? new Date(milestone.dueDate) : undefined,
-        amount: milestone.estimatedHours * 10, // Convert hours to a default payment amount
-      });
-      return;
+      if (milestone) {
+        onSubmit({
+          title: milestone.title,
+          description: milestone.description,
+          due_date: milestone.dueDate ? new Date(milestone.dueDate) : undefined,
+          amount: milestone.estimatedHours * 10, // Convert hours to a default payment amount
+        });
+        return;
+      }
     }
 
     // If there are multiple milestones, submit them one by one
@@ -120,7 +124,7 @@ export function AddMilestoneForm({
           <FormField
             control={form.control}
             name="title"
-            render={({ field }) => (
+            render={({ field }: { field: any }) => (
               <FormItem>
                 <FormLabel>Title</FormLabel>
                 <FormControl>
@@ -134,7 +138,7 @@ export function AddMilestoneForm({
           <FormField
             control={form.control}
             name="description"
-            render={({ field }) => (
+            render={({ field }: { field: any }) => (
               <FormItem>
                 <FormLabel>Description (optional)</FormLabel>
                 <FormControl>
@@ -153,7 +157,7 @@ export function AddMilestoneForm({
             <FormField
               control={form.control}
               name="due_date"
-              render={({ field }) => (
+              render={({ field }: { field: any }) => (
                 <FormItem className="flex flex-col">
                   <FormLabel>Due Date (optional)</FormLabel>
                   <Popover>
@@ -192,7 +196,7 @@ export function AddMilestoneForm({
             <FormField
               control={form.control}
               name="amount"
-              render={({ field }) => (
+              render={({ field }: { field: any }) => (
                 <FormItem>
                   <FormLabel>Amount ($)</FormLabel>
                   <FormControl>

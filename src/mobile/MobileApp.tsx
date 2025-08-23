@@ -1,37 +1,38 @@
-
 import React from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
 import { MobileThemeProvider } from "./theme/MobileThemeProvider";
-import { MobileOnboarding } from "./pages/MobileOnboarding";
-import { MobileHome } from "./pages/MobileHome";
-import { MobileBrowse } from "./pages/MobileBrowse";
-import { MobileProjects } from "./pages/MobileProjects";
-import { MobileMessages } from "./pages/MobileMessages";
-import { MobileResumeBuilder } from "./pages/MobileResumeBuilder";
-import { MobileJobPost } from "./pages/MobileJobPost";
-import { useAuth } from "@/hooks/useAuth";
+import {logErrorToProduction} from '@/utils/productionLogger';
+import { useCart } from '@/context/CartContext';
+import { logInfo } from '@/utils/productionLogger';
 
-export function MobileApp() {
-  const { isAuthenticated } = useAuth();
-  
+
+const CartContextTester = () => {
+  try {
+    const cart = useCart();
+    logInfo('CartContextTester: useCart() successful', { data: cart });
+    return (
+      <div style={{ position: 'fixed', top: '10px', left: '10px', backgroundColor: 'lightgreen', padding: '5px', zIndex: 9999 }}>
+        CartContextTester: OK
+      </div>
+    );
+  } catch (error) {
+    logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'CartContextTester: useCart() FAILED!' });
+    return (
+      <div style={{ position: 'fixed', top: '10px', left: '10px', backgroundColor: 'red', color: 'white', padding: '5px', zIndex: 9999 }}>
+        CartContextTester: FAILED - {(error as Error).message}
+      </div>
+    );
+  }
+};
+
+interface MobileAppProps {
+  children: React.ReactNode;
+}
+
+export function MobileApp({ children }: MobileAppProps) {
   return (
     <MobileThemeProvider>
-      <Routes>
-        <Route path="/onboarding" element={<MobileOnboarding />} />
-        <Route 
-          path="/" 
-          element={
-            isAuthenticated ? <MobileHome /> : <Navigate to="/onboarding" />
-          } 
-        />
-        <Route path="/browse" element={<MobileBrowse />} />
-        <Route path="/projects" element={<MobileProjects />} />
-        <Route path="/inbox" element={<MobileMessages />} />
-        <Route path="/resume" element={<MobileResumeBuilder />} />
-        <Route path="/post-job" element={<MobileJobPost />} />
-        <Route path="/profile" element={<div>Profile page</div>} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+      <CartContextTester />
+      {children}
     </MobileThemeProvider>
   );
 }

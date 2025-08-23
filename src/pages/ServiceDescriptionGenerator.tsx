@@ -1,12 +1,11 @@
 
 import React, { useState } from "react";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { ServiceDescriptionForm } from "@/components/services/ServiceDescriptionForm";
 import { GeneratedDescriptionDisplay } from "@/components/services/GeneratedDescriptionDisplay";
 import { SEO } from "@/components/SEO";
 import { useAuth } from "@/hooks/useAuth";
-import { Navigate } from "react-router-dom";
+import { useRouter } from "next/router";
 
 export default function ServiceDescriptionGenerator() {
   const { isAuthenticated, isLoading } = useAuth();
@@ -25,7 +24,7 @@ export default function ServiceDescriptionGenerator() {
   
   // Redirect to login if not authenticated
   if (!isAuthenticated) {
-    return <Navigate to="/login" state={{ from: '/service-description-generator' }} replace />;
+    return null // Redirect handled by useRouter;
   }
 
   const handleDescriptionSave = (editedDescription: string) => {
@@ -60,7 +59,6 @@ export default function ServiceDescriptionGenerator() {
           </div>
         </div>
       </main>
-      <Footer />
     </div>
   );
 }

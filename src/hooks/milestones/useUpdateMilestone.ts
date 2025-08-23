@@ -5,8 +5,11 @@ import { useAuth } from '@/hooks/useAuth';
 import { toast } from 'sonner';
 import { Milestone, MilestoneStatus } from './types';
 import { useRecordActivity } from './useRecordActivity';
+import { createNotification } from '@/utils/notifications';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export const useUpdateMilestone = () => {
+
   const { user } = useAuth();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { recordMilestoneActivity } = useRecordActivity();
@@ -20,7 +23,7 @@ export const useUpdateMilestone = () => {
       // Get the current status
       const { data: milestoneData, error: fetchError } = await supabase
         .from('project_milestones')
-        .select('status')
+        .select('status, project_id, title')
         .eq('id', milestoneId)
         .single();
       
@@ -38,13 +41,50 @@ export const useUpdateMilestone = () => {
       if (error) throw error;
       
       // Create activity record
-      await recordMilestoneActivity(milestoneId, 'status_changed', previousStatus, newStatus, comment);
+      await recordMilestoneActivity(
+        milestoneId,
+        'status_changed',
+        previousStatus,
+        newStatus,
+        comment
+      );
+
+      if (milestoneData?.project_id) {
+        const { data: project } = await supabase
+          .from('projects')
+          .select('client_id, talent_id')
+          .eq('id', milestoneData.project_id)
+          .single();
+
+        if (project) {
+          if (newStatus === 'completed') {
+            await createNotification({
+              userId: project.client_id,
+              title: 'Milestone Completed',
+              message: `Milestone "${milestoneData.title}" was marked as completed`,
+              type: 'milestone_complete',
+              relatedId: milestoneId,
+              sendEmail: true
+            });
+          }
+          if (newStatus === 'approved') {
+            await createNotification({
+              userId: project.talent_id,
+              title: 'Milestone Approved',
+              message: `Milestone "${milestoneData.title}" was approved`,
+              type: 'project_update',
+              relatedId: milestoneId,
+              sendEmail: true
+            });
+          }
+        }
+      }
       
       toast.success(`Milestone status changed to ${newStatus}`);
       
       return true;
     } catch (err: any) {
-      console.error("Error updating milestone status:", err);
+      logErrorToProduction('Error updating milestone status:', { data: err });
       toast.error("Failed to update status: " + err.message);
       return false;
     } finally {
@@ -72,7 +112,7 @@ export const useUpdateMilestone = () => {
       
       return true;
     } catch (err: any) {
-      console.error("Error updating milestone:", err);
+      logErrorToProduction('Error updating milestone:', { data: err });
       toast.error("Failed to update milestone: " + err.message);
       return false;
     } finally {

@@ -2,94 +2,112 @@
 import { ProductListingCard } from "@/components/ProductListingCard";
 import { GradientHeading } from "@/components/GradientHeading";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 interface FeaturedListingsSectionProps {
   showTitle?: boolean;
+  className?: string;
+  style?: React.CSSProperties;
 }
 
-export function FeaturedListingsSection({ showTitle = true }: FeaturedListingsSectionProps) {
+export function FeaturedListingsSection({
+  showTitle = true,
+  className,
+  style,
+}: FeaturedListingsSectionProps) {
   const featuredListings = [
     {
-      id: "advanced-nlp-model",
-      title: "Advanced NLP Model for Text Analysis",
-      description: "State-of-the-art natural language processing with 98% accuracy",
+      id: "ai-innovation-bootcamp",
+      title: "AI Innovation Bootcamp",
+      uspHeadline: "Master AI Skills Fast",
+      description:
+        "Join a focused, project-based bootcamp where industry mentors guide you through building real AI solutions. Perfect for jump-starting your career or expanding your capabilities in just weeks.",
       price: 4999,
       currency: "$",
-      category: "AI Models",
-      tags: ["AI", "NLP", "Machine Learning"],
-      images: ["https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&h=500"],
-      createdAt: "2023-11-15T14:48:00.000Z",
+      category: "Training",
+      tags: ["AI", "Bootcamp"],
+      images: ["https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&h=500"],
+      createdAt: "2024-05-01T09:00:00.000Z",
       rating: 4.8,
       reviewCount: 124,
       author: {
-        name: "TechAI Labs",
-        id: "tech-ai-labs",
-        avatarUrl: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=64&h=64&fit=crop&auto=format"
+        name: "Zion Academy",
+        id: "zion-academy"
       }
     },
     {
-      id: "image-generation-service",
-      title: "AI Image Generation Service",
-      description: "Create stunning visuals with our advanced AI image generator",
-      price: 2499,
-      currency: "$",
-      category: "Content Creation",
-      tags: ["AI", "Images", "Generation"],
-      images: ["https://images.unsplash.com/photo-1579403124614-197f69d8187b?auto=format&fit=crop&w=800&h=500"],
-      createdAt: "2023-10-20T11:15:00.000Z",
-      rating: 4.7,
-      reviewCount: 89,
-      author: {
-        name: "VisualAI",
-        id: "visual-ai"
-      }
-    },
-    {
-      id: "fullstack-ai-dev",
-      title: "Full-Stack AI Development",
-      description: "End-to-end development for AI-powered applications",
-      price: null, // Custom pricing
+      id: "freelance-ai-engineer",
+      title: "Freelance AI Engineer",
+      uspHeadline: "Expert Dev, On Demand",
+      description:
+        "Hire a seasoned AI engineer who integrates seamlessly with your team. From model design to deployment, get top-tier skills without the overhead of a full-time hire.",
+      price: null,
       currency: "$",
       category: "Services",
-      tags: ["Development", "Full-stack", "AI"],
-      images: ["https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&h=500"],
-      createdAt: "2023-12-15T09:45:00.000Z",
+      tags: ["AI", "Freelance"],
+      images: ["https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=800&h=500"],
+      createdAt: "2024-06-10T10:30:00.000Z",
       rating: 4.9,
       reviewCount: 56,
       author: {
-        name: "DataMinds Consulting",
-        id: "dataminds-consulting"
+        name: "TopTalent",
+        id: "toptalent"
       }
     },
     {
-      id: "sentiment-analysis-api",
-      title: "Sentiment Analysis API",
-      description: "Real-time sentiment analysis for social media monitoring",
+      id: "cloud-gpu-rental",
+      title: "Cloud GPU Rental",
+      uspHeadline: "Powerful GPUs, Anytime, Anywhere",
+      description:
+        "Access high-performance GPU instances in the cloud whenever you need them. Scale effortlessly for training, inference, or rendering tasks and only pay for what you use.",
       price: 1299,
       currency: "$",
-      category: "APIs",
-      tags: ["API", "Sentiment", "Analytics"],
-      images: ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500"],
-      createdAt: "2024-01-05T11:15:00.000Z",
+      category: "Infrastructure",
+      tags: ["GPU", "Cloud"],
+      images: ["https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&h=500"],
+      createdAt: "2024-03-20T11:15:00.000Z",
+      rating: 4.7,
+      reviewCount: 89,
+      author: {
+        name: "ComputeHub",
+        id: "computehub"
+      }
+    },
+    {
+      id: "ai-optimized-cloud-storage",
+      title: "AI-Optimized Cloud Storage",
+      uspHeadline: "Secure Storage for AI Workloads",
+      description:
+        "Store and retrieve massive datasets with lightning-fast throughput. Our AI-optimized cloud storage ensures efficient pipeline performance, built-in redundancy, and encryption for your machine learning workflows.",
+      price: 299,
+      currency: "$",
+      category: "Infrastructure",
+      tags: ["Storage", "Cloud"],
+      images: ["https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=800&h=500"],
+      createdAt: "2024-04-05T08:00:00.000Z",
       rating: 4.6,
       reviewCount: 72,
       author: {
-        name: "SocialAI",
-        id: "social-ai"
+        name: "DataCloud",
+        id: "datacloud"
       }
-    },
+    }
   ];
 
   return (
-    <section id="featured" className="py-12 px-4 bg-zion-blue-dark">
+    <section
+      id="featured"
+      className={cn("py-12 px-4 bg-background", className)}
+      style={style}
+    >
       <div className="container mx-auto">
         {showTitle && (
           <div className="text-center mb-12">
             <GradientHeading className="text-3xl md:text-4xl font-bold mb-4">
               Featured Listings
             </GradientHeading>
-            <p className="text-zion-slate-light max-w-3xl mx-auto">
+            <p className="text-foreground/80 max-w-3xl mx-auto">
               Discover our handpicked selection of top AI products and services
             </p>
           </div>
@@ -108,10 +126,10 @@ export function FeaturedListingsSection({ showTitle = true }: FeaturedListingsSe
         
         <div className="mt-10 text-center">
           <Button 
-            className="bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white px-8 py-6"
+            className="bg-gradient-to-r from-primary to-secondary hover:from-primary/80 hover:to-secondary/80 text-primary-foreground px-8 py-6"
             asChild
           >
-            <Link to="/marketplace">View All Listings</Link>
+            <Link href="/marketplace">View All Listings</Link>
           </Button>
         </div>
       </div>

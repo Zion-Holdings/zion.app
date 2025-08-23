@@ -1,15 +1,17 @@
 
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { 
-  getTalentRateSuggestion, 
+import {logErrorToProduction} from '@/utils/productionLogger';
+import { Sparkles } from 'lucide-react';
+import {
+  getTalentRateSuggestion,
   PricingSuggestion,
   TalentRateParams,
   trackPricingSuggestion
 } from "@/services/pricingSuggestionService";
 import { PricingSuggestionBox } from "./PricingSuggestionBox";
 import { useAuth } from "@/hooks/useAuth";
-import { Sparkles } from "lucide-react";
+
 
 interface TalentRateRecommenderProps {
   skills: string[];
@@ -46,7 +48,7 @@ export const TalentRateRecommender: React.FC<TalentRateRecommenderProps> = ({
       const result = await getTalentRateSuggestion(params);
       setSuggestion(result);
     } catch (error) {
-      console.error("Error generating rate suggestion:", error);
+      logErrorToProduction('Error generating rate suggestion:', { data: error });
     } finally {
       setIsLoading(false);
     }
@@ -59,10 +61,10 @@ export const TalentRateRecommender: React.FC<TalentRateRecommenderProps> = ({
       onSuggestionApplied(suggestedRate);
       
       // Track this suggestion application
-      if (user) {
+      if (user && user.id) {
         trackPricingSuggestion({
           userId: user.id,
-          suggestionType: 'talent',
+          suggestionType: "talent",
           suggestedMin: suggestion.minRate,
           suggestedMax: suggestion.maxRate,
           actualValue: suggestedRate,

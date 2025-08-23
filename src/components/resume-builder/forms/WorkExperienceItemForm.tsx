@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -13,7 +12,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 import { Switch } from "@/components/ui/switch";
 import { format } from "date-fns";
-import { CalendarIcon, Loader2 } from "lucide-react";
+import { CalendarIcon, Loader2 } from 'lucide-react';
+
+
 import { AIEnhancementButton } from "@/components/ai-enhancement/AIEnhancementButton";
 import { AIEnhancementDialog } from "@/components/ai-enhancement/AIEnhancementDialog";
 
@@ -93,7 +94,7 @@ export function WorkExperienceItemForm({
             <FormField
               control={form.control}
               name="company_name"
-              render={({ field }) => (
+              render={({ field }: { field: any }) => (
                 <FormItem>
                   <FormLabel>Company Name</FormLabel>
                   <FormControl>
@@ -107,7 +108,7 @@ export function WorkExperienceItemForm({
             <FormField
               control={form.control}
               name="role_title"
-              render={({ field }) => (
+              render={({ field }: { field: any }) => (
                 <FormItem>
                   <FormLabel>Role Title</FormLabel>
                   <FormControl>
@@ -123,7 +124,7 @@ export function WorkExperienceItemForm({
             <FormField
               control={form.control}
               name="location"
-              render={({ field }) => (
+              render={({ field }: { field: any }) => (
                 <FormItem>
                   <FormLabel>Location</FormLabel>
                   <FormControl>
@@ -137,7 +138,7 @@ export function WorkExperienceItemForm({
             <FormField
               control={form.control}
               name="is_current"
-              render={({ field }) => (
+              render={({ field }: { field: any }) => (
                 <FormItem className="flex flex-col">
                   <FormLabel>Current Position</FormLabel>
                   <div className="flex items-center gap-2 h-10">
@@ -161,7 +162,7 @@ export function WorkExperienceItemForm({
             <FormField
               control={form.control}
               name="start_date"
-              render={({ field }) => (
+              render={({ field }: { field: any }) => (
                 <FormItem className="flex flex-col">
                   <FormLabel>Start Date</FormLabel>
                   <Popover>
@@ -179,7 +180,7 @@ export function WorkExperienceItemForm({
                           ) : (
                             <span>Select date</span>
                           )}
-                          <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                          <CalendarIcon className="ml-auto h-4 w-4 opacity-50" aria-hidden="true" />
                         </Button>
                       </FormControl>
                     </PopoverTrigger>
@@ -189,7 +190,7 @@ export function WorkExperienceItemForm({
                         selected={field.value}
                         onSelect={field.onChange}
                         initialFocus
-                        captionLayout="dropdown-buttons"
+                        captionLayout="dropdown"
                         fromYear={1990}
                         toYear={new Date().getFullYear()}
                       />
@@ -204,7 +205,7 @@ export function WorkExperienceItemForm({
               <FormField
                 control={form.control}
                 name="end_date"
-                render={({ field }) => (
+                render={({ field }: { field: any }) => (
                   <FormItem className="flex flex-col">
                     <FormLabel>End Date</FormLabel>
                     <Popover>
@@ -222,7 +223,7 @@ export function WorkExperienceItemForm({
                             ) : (
                               <span>Select date</span>
                             )}
-                            <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                            <CalendarIcon className="ml-auto h-4 w-4 opacity-50" aria-hidden="true" />
                           </Button>
                         </FormControl>
                       </PopoverTrigger>
@@ -232,7 +233,7 @@ export function WorkExperienceItemForm({
                           selected={field.value || undefined}
                           onSelect={field.onChange}
                           initialFocus
-                          captionLayout="dropdown-buttons"
+                          captionLayout="dropdown"
                           fromYear={1990}
                           toYear={new Date().getFullYear()}
                           disabled={(date) => date > new Date()}
@@ -249,7 +250,7 @@ export function WorkExperienceItemForm({
           <FormField
             control={form.control}
             name="description"
-            render={({ field }) => (
+            render={({ field }: { field: any }) => (
               <FormItem>
                 <div className="flex justify-between items-center">
                   <FormLabel>Description</FormLabel>

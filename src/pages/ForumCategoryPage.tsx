@@ -1,24 +1,28 @@
-
-import { useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import CreatePostButton from "@/components/community/CreatePostButton";
 import { Input } from "@/components/ui/input";
 import { SEO } from "@/components/SEO";
 import PostCard from "@/components/community/PostCard";
-import { ForumCategoryInfo } from "@/types/community";
+import { PostListSkeleton } from "@/components/community/PostCardSkeleton";
+import { ForumCategoryInfo, ForumPost } from "@/types/community";
 import { usePostsByCategory } from "@/hooks/usePostsByCategory";
 import NotFound from "./NotFound";
 import { useAuth } from "@/hooks/useAuth";
-import {
-  MessageSquare,
-  Briefcase,
-  Code,
-  FileText,
-  Megaphone,
-  Search
-} from "@/components/icons";
+import { useCommunity } from "@/context";
+import { useToast } from "@/hooks/use-toast";
+import { useFollowedCategories } from "@/hooks/useFollowedCategories";
+import { logInfo } from '@/utils/productionLogger';
+import { MessageSquare, Briefcase, Code, FileText, Megaphone, Search } from 'lucide-react';
+
+
+
+
+
+
 
 // Mock category data
 const categoriesInfo: Record<string, ForumCategoryInfo> = {
@@ -59,7 +63,6 @@ const categoriesInfo: Record<string, ForumCategoryInfo> = {
   }
 };
 
-
 const iconMap = {
   "Briefcase": Briefcase,
   "MessageSquare": MessageSquare,
@@ -80,28 +83,50 @@ function CategoryContent({
   user: any;
 }) {
   const [searchQuery, setSearchQuery] = useState("");
-  const {
-    data: posts = [],
-    isPending: loading,
-    error,
-  } = usePostsByCategory(categoryId);
-  const errorMessage = error instanceof Error ? error.message : null;
+  const { featuredPosts, recentPosts } = useCommunity();
 
-  const filteredPosts = searchQuery
-    ? posts.filter((post) =>
+  // Filter posts by category from context data
+  const categoryPosts = [
+    ...featuredPosts.filter(post => post.categoryId === categoryId),
+    ...recentPosts.filter(post => post.categoryId === categoryId)
+  ].filter((post, index, self) => 
+    // Remove duplicates by id
+    index === self.findIndex(p => p.id === post.id)
+  );
+
+  // Apply search filter
+  const filteredPosts = searchQuery 
+    ? categoryPosts.filter(post => 
         post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         post.content.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        post.tags.some((tag) => tag.toLowerCase().includes(searchQuery.toLowerCase()))
+        post.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
       )
-    : posts;
+    : categoryPosts;
 
-  const canCreatePost =
-    categoryId !== "announcements" || (user?.userType === "admin" || user?.role === "admin");
+  const canCreatePost = user && (!category.adminOnly || user.userType === 'admin' || user.role === 'admin');
+  const { isFollowed, follow, unfollow } = useFollowedCategories();
+  const { toast } = useToast();
+
+  const handleFollow = () => {
+    if (!user) {
+      toast({ title: 'Login required', description: 'Please sign in to follow this category' });
+      return;
+    }
+    if (isFollowed(categoryId)) {
+      unfollow(categoryId);
+    } else {
+      follow(categoryId);
+    }
+  };
+
+  logInfo('CategoryContent - categoryId:', { data: categoryId });
+  logInfo('CategoryContent - categoryPosts:', { data: categoryPosts });
+  logInfo('CategoryContent - filteredPosts:', { data: filteredPosts });
 
   return (
     <div className="container py-8">
       <div className="flex items-center gap-3 mb-6">
-        <Link to="/community" className="text-sm text-muted-foreground hover:text-foreground">
+        <Link href="/community" className="text-sm text-muted-foreground hover:text-foreground">
           Forum
         </Link>
         <span className="text-muted-foreground">/</span>
@@ -119,7 +144,15 @@ function CategoryContent({
           </div>
         </div>
 
-        {canCreatePost && <CreatePostButton categoryId={categoryId} />}
+        <div className="flex items-center gap-2">
+          {canCreatePost && <CreatePostButton categoryId={categoryId} />}
+          <Button
+            variant={isFollowed(categoryId) ? 'outline' : 'default'}
+            onClick={handleFollow}
+          >
+            {isFollowed(categoryId) ? 'Following' : 'Follow'}
+          </Button>
+        </div>
       </div>
 
       <div className="mb-6">
@@ -134,56 +167,102 @@ function CategoryContent({
         </div>
       </div>
 
-      {loading ? (
-        <div className="text-center py-16">Loading...</div>
-      ) : errorMessage ? (
-        <div className="text-center py-16 text-destructive">{errorMessage}</div>
-      ) : posts.length > 0 ? (
-        <div className="space-y-4">
-          {filteredPosts.map((post) => (
+      <div className="space-y-4">
+        {filteredPosts.length > 0 ? (
+          filteredPosts.map((post) => (
             <PostCard key={post.id} post={post} />
-          ))}
-        </div>
-      ) : (
-        <div className="text-center py-16">
-          <h2 className="text-xl font-medium mb-2">No posts yet</h2>
-          <p className="text-muted-foreground mb-6">Be the first to start a discussion in this category!</p>
-
-          {canCreatePost && <CreatePostButton categoryId={categoryId} />}
-        </div>
-      )}
+          ))
+        ) : searchQuery ? (
+          <div className="text-center py-12">
+            <h3 className="text-lg font-medium mb-2">No posts found</h3>
+            <p className="text-muted-foreground mb-4">
+              Try adjusting your search terms or browse all posts in this category.
+            </p>
+            <Button variant="outline" onClick={() => setSearchQuery("")}>
+              Clear Search
+            </Button>
+          </div>
+        ) : (
+          <div className="text-center py-12">
+            <h3 className="text-lg font-medium mb-2">No posts yet</h3>
+            <p className="text-muted-foreground mb-4">
+              Be the first to start a conversation in this category.
+            </p>
+            {canCreatePost ? (
+              <CreatePostButton categoryId={categoryId} />
+            ) : (
+              <Button disabled>
+                Create Post
+              </Button>
+            )}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
 
 export default function ForumCategoryPage() {
-  const { categoryId } = useParams();
+  const router = useRouter();
+  const { categoryId } = router.query as { categoryId: string };
   const { user } = useAuth();
 
-  if (!categoryId || !categoriesInfo[categoryId]) {
+  // Check if the category exists and user has access
+  const category = categoryId ? categoriesInfo[categoryId] : null;
+  const IconComponent = category ? iconMap[category.icon as keyof typeof iconMap] : null;
+
+  // Check access for admin-only categories
+  const hasAccess = category && (
+    !category.adminOnly || 
+    (user && (user.userType === 'admin' || user.role === 'admin'))
+  );
+
+  useEffect(() => {
+    // Add a small delay to ensure router is ready
+    if (categoryId && category) {
+      logInfo('ForumCategoryPage - categoryId changed:', { data: categoryId });
+    }
+  }, [categoryId, category]);
+
+  if (!categoryId || !category) {
     return <NotFound />;
   }
 
-  const category = categoriesInfo[categoryId];
-  const IconComponent = iconMap[category.icon as keyof typeof iconMap] || MessageSquare;
+  if (!hasAccess) {
+    return (
+      <div className="container py-8">
+        <div className="text-center py-12">
+          <h1 className="text-2xl font-bold mb-4">Access Restricted</h1>
+          <p className="text-muted-foreground mb-4">
+            This category is only accessible to administrators.
+          </p>
+          <Button asChild>
+            <Link href="/community">Back to Community</Link>
+          </Button>
+        </div>
+      </div>
+    );
+  }
+
+  if (!IconComponent) {
+    return <NotFound />;
+  }
 
   return (
     <>
       <SEO
         title={`${category.name} | Community Forum | Zion AI Marketplace`}
         description={category.description}
-        keywords={`community, forum, ${category.id}, discussion, AI marketplace, questions, answers`}
+        keywords={`community, forum, ${category.name.toLowerCase()}, discussion`}
         canonical={`https://app.ziontechgroup.com/community/category/${categoryId}`}
       />
-
-      <Suspense fallback={<div className="text-center py-16">Loading...</div>}>
-        <CategoryContent
-          categoryId={categoryId}
-          category={category}
-          IconComponent={IconComponent}
-          user={user}
-        />
-      </Suspense>
+      
+      <CategoryContent
+        categoryId={categoryId}
+        category={category}
+        IconComponent={IconComponent}
+        user={user}
+      />
     </>
   );
 }

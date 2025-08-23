@@ -1,15 +1,19 @@
-import { useParams, Link } from 'react-router-dom';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { Button } from '@/components/ui/button';
-import { Skeleton } from '@/components/ui/skeleton';
+import { Clipboard } from 'lucide-react';
+
+import Skeleton from '@/components/ui/skeleton';
 import { useGetOrderQuery } from '@/hooks/useOrder';
 import { generateInvoicePdf } from '@/utils/generateInvoicePdf';
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from '@/hooks/use-toast';
+import { OrderTimeline } from '@/components/orders/OrderTimeline';
 
 export default function OrderDetailPage() {
-  // useParams may be untyped in this environment, so cast to the expected shape
-  const { orderId } = useParams() as { orderId?: string };
+  const router = useRouter();
+  const { orderId } = router.query as { orderId?: string };
   const { user } = useAuth();
   const { data: order, isLoading } = useGetOrderQuery(orderId);
 
@@ -40,6 +44,27 @@ export default function OrderDetailPage() {
     } catch (err) {
       toast({ title: 'Failed to send receipt', variant: 'destructive' });
     }
+  };
+
+  const handleCopySummary = async () => {
+    if (!order) return;
+    const summary = [
+      `Order #${order.orderId}`,
+      `Date: ${new Date(order.date).toLocaleDateString()}`,
+      '',
+      'Items:',
+      ...order.items.map((i) => `${i.name} x${i.quantity} - $${i.price.toFixed(2)}`),
+      '',
+      `Total: $${order.total.toFixed(2)}`,
+      '',
+      'Shipping Address:',
+      order.shippingAddress.name,
+      order.shippingAddress.street,
+      `${order.shippingAddress.city}, ${order.shippingAddress.state} ${order.shippingAddress.zip}`,
+    ].join('\n');
+
+    await navigator.clipboard.writeText(summary);
+    toast.success('Order summary copied to clipboard');
   };
 
   if (isLoading || !order) {
@@ -73,12 +98,20 @@ export default function OrderDetailPage() {
         <p>{order.shippingAddress.city}, {order.shippingAddress.state} {order.shippingAddress.zip}</p>
       </div>
 
+      <div>
+        <h2 className="font-semibold mb-2">Tracking</h2>
+        <OrderTimeline events={order.trackingEvents} />
+      </div>
+
       <div className="flex gap-3">
         <Button onClick={handleDownload}>Download PDF Invoice</Button>
+        <Button variant="outline" onClick={handleCopySummary}>
+          <Clipboard className="h-4 w-4" /> Copy Summary
+        </Button>
         <Button variant="outline" onClick={handleResend}>Resend Receipt</Button>
       </div>
 
-      <Link to="/orders" className="text-zion-purple underline">
+      <Link href="/orders" className="text-zion-purple underline">
         Back to orders
       </Link>
     </div>

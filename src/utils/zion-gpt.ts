@@ -3,6 +3,8 @@
 // This file handles interaction with the fine-tuned ZionGPT model
 
 import { supabase } from '@/integrations/supabase/client';
+import { logErrorToProduction } from '@/utils/productionLogger';
+import { logWarn } from '@/utils/productionLogger';
 
 export type ModelVersion = 'zion-job-generator-v1' | 'zion-resume-enhancer-v1' | 'zion-support-v1' | 'gpt-3.5-turbo';
 
@@ -35,7 +37,8 @@ export async function getActiveModelId(purpose: 'job' | 'resume' | 'support'): P
       .single();
     
     if (error || !data) {
-      console.warn('Failed to fetch active model, falling back to default', error);
+      logErrorToProduction(error?.message || 'No model data returned', error || undefined, { context: 'getActiveModelId' });
+      logWarn('Failed to fetch active model, falling back to default', { data: error });
       // Fallback to default models
       switch(purpose) {
         case 'job': return 'zion-job-generator-v1';
@@ -47,7 +50,7 @@ export async function getActiveModelId(purpose: 'job' | 'resume' | 'support'): P
     
     return data.id as ModelVersion;
   } catch (error) {
-    console.error('Error fetching active model:', error);
+    logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { context: 'getActiveModelId' });
     return 'gpt-3.5-turbo'; // Fallback to base model
   }
 }
@@ -74,7 +77,7 @@ export async function logModelUsage(
       });
       
   } catch (error) {
-    console.error('Error logging model usage:', error);
+    logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { context: 'logModelUsage' });
     // Non-blocking - we don't want to fail the main operation
   }
 }
@@ -117,18 +120,18 @@ export async function callZionGPT({
     if (error) throw error;
     
     // Log usage for analytics
-    if (data.tokensUsed) {
+    if (data && (data as any).tokensUsed) {
       await logModelUsage(
         modelId, 
-        data.tokensUsed,
+        (data as any).tokensUsed,
         `${purpose}-generation`,
         userId
       );
     }
     
-    return data.completion;
+    return (data as any)?.completion || '';
   } catch (error) {
-    console.error('Error calling ZionGPT:', error);
+    logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { context: 'callZionGPT' });
     throw error;
   }
 }

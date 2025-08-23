@@ -1,10 +1,12 @@
 import React from 'react';
+import FocusLock from 'react-focus-lock';
+import { SendIcon, Mail } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
   DialogHeader,
-  DialogTitle,
-} from '@/components/ui/dialog';
+  DialogTitle
+} from "@/components/ui/dialog";
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -16,17 +18,22 @@ import {
   FormControl,
   FormMessage,
 } from '@/components/ui/form';
-import { useForm } from 'react-hook-form';
+import { useForm, type Resolver } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { Send, Mail } from 'lucide-react';
+
+
+import api from '@/services/apiClient';
 import { toast } from '@/hooks/use-toast';
+import { useAuth } from '@/hooks/useAuth';
+import { LoginModal } from '@/components/auth/LoginModal';
 
 interface ContactPublisherModalProps {
   isOpen: boolean;
   onClose: () => void;
   publisherName: string;
   publisherEmail?: string;
+  productId?: string;
 }
 
 type FormValues = {
@@ -34,66 +41,86 @@ type FormValues = {
   message: string;
 };
 
-const schema = yup.object({
-  subject: yup
-    .string()
-    .min(5, 'Subject must be at least 5 characters')
-    .required('Subject is required'),
-  message: yup
-    .string()
-    .min(20, 'Message must be at least 20 characters')
-    .required('Message is required'),
-});
+const schema: yup.ObjectSchema<FormValues> = yup
+  .object({
+    subject: yup
+      .string()
+      .min(5, 'Subject must be at least 5 characters')
+      .required('Subject is required'),
+    message: yup
+      .string()
+      .min(20, 'Message must be at least 20 characters')
+      .required('Message is required'),
+  })
+  .required();
 
 export function ContactPublisherModal({
   isOpen,
   onClose,
   publisherName,
   publisherEmail,
+  productId,
 }: ContactPublisherModalProps) {
+  const { user } = useAuth();
   const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [error, setError] = React.useState<string | null>(null);
+  const [loginOpen, setLoginOpen] = React.useState(false);
 
   const form = useForm<FormValues>({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(schema) as Resolver<FormValues>,
     mode: 'onChange',
     defaultValues: { subject: '', message: '' },
   });
 
-  const onSubmit = async (values: FormValues) => {
+  const handleSend = async () => {
+    if (!user) {
+      setLoginOpen(true);
+      return;
+    }
+    const values = form.getValues();
     setIsSubmitting(true);
+    setError(null);
     try {
-      const res = await fetch('/api/messages', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(values),
+      await api.post('/api/messages', {
+        productId,
+        subject: values.subject,
+        body: values.message,
+        fromUser: user.id,
       });
-
-      if (res.status === 201) {
-        toast.success('Message sent');
-        form.reset();
-        onClose();
-      } else {
-        const data = await res.json().catch(() => ({}));
-        toast.error(data.error || 'Failed to send message');
-      }
-    } catch (err: any) {
-      toast.error(err?.message || 'Failed to send message');
+      toast.success('Message sent');
+      form.reset();
+      onClose();
     } finally {
       setIsSubmitting(false);
     }
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      e.stopPropagation();
+      onClose();
+    }
+  };
+
   return (
+    <>
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="bg-zion-blue-dark border border-zion-blue-light text-white sm:max-w-md">
-        <DialogHeader>
-          <DialogTitle className="text-xl font-bold text-white flex items-center gap-2">
-            <Mail className="h-5 w-5 text-zion-cyan" />
-            Contact Publisher
-          </DialogTitle>
-        </DialogHeader>
-        {publisherEmail && (
-          <div className="mb-4 text-zion-slate-light">
+      <FocusLock disabled={!isOpen} returnFocus>
+        <DialogContent
+          className="bg-zion-blue-dark border border-zion-blue-light text-white sm:max-w-md"
+          onKeyDown={handleKeyDown}
+          aria-modal="true"
+          aria-labelledby="contact-publisher-title"
+        >
+          <DialogHeader>
+            <DialogTitle id="contact-publisher-title" className="text-xl font-bold text-white flex items-center gap-2">
+              <Mail className="h-5 w-5 text-zion-cyan" />
+              Contact Publisher
+            </DialogTitle>
+          </DialogHeader>
+          {error && <p className="text-red-500 mb-2">{error}</p>}
+          {publisherEmail && (
+            <div className="mb-4 text-zion-slate-light">
             <span className="block">Email:</span>
             <a href={`mailto:${publisherEmail}`} className="text-zion-cyan hover:underline truncate block">
               {publisherEmail}
@@ -101,11 +128,11 @@ export function ContactPublisherModal({
           </div>
         )}
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+          <form onSubmit={(e) => e.preventDefault()} className="space-y-4">
             <FormField
               control={form.control}
               name="subject"
-              render={({ field }) => (
+              render={({ field }: { field: any }) => (
                 <FormItem>
                   <FormLabel>Subject</FormLabel>
                   <FormControl>
@@ -122,7 +149,7 @@ export function ContactPublisherModal({
             <FormField
               control={form.control}
               name="message"
-              render={({ field }) => (
+              render={({ field }: { field: any }) => (
                 <FormItem>
                   <FormLabel>Message</FormLabel>
                   <FormControl>
@@ -137,16 +164,19 @@ export function ContactPublisherModal({
               )}
             />
             <Button
-              type="submit"
-              className="w-full bg-zion-cyan hover:bg-zion-cyan/90"
+              onClick={handleSend}
+              className="w-full"
               disabled={!form.formState.isValid || isSubmitting}
             >
-              <Send className="mr-2 h-4 w-4" />
+              <SendIcon className="mr-2" />
               {isSubmitting ? 'Sending...' : 'Send Message'}
             </Button>
           </form>
         </Form>
-      </DialogContent>
+        </DialogContent>
+      </FocusLock>
     </Dialog>
+    <LoginModal isOpen={loginOpen} onOpenChange={setLoginOpen} />
+    </>
   );
 }

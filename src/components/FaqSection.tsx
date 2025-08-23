@@ -1,37 +1,53 @@
-
 import { GradientHeading } from "./GradientHeading";
+import { FileText } from 'lucide-react';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { FileText } from "lucide-react";
+
 
 const faqs = [
   {
-    question: "How do I publish my AI product or service on Zion?",
-    answer: "Publishing on Zion is completely free and straightforward. Simply create an account, click on 'Post Your Product/Service for Free' button, fill in the required details about your offering, add images, set pricing, and submit for review. Your listing will be live within 24 hours after passing our quality check.",
+    question: "How do I publish my AI product or service?",
+    answer:
+      "Create an account, choose 'Post Your Product/Service for Free,' fill in the details, and submit for review. Listings go live within 24 hours if they pass our quality check.",
   },
   {
-    question: "What types of AI jobs can I find or post on Zion?",
-    answer: "Zion hosts a wide range of AI-related job opportunities including machine learning engineers, data scientists, AI researchers, computer vision specialists, NLP experts, AI product managers, and more. Employers can post any tech or AI-related position, and job seekers can publish their CV with AI-specific skills highlighted for better matching.",
+    question: "What types of AI jobs can I find or post?",
+    answer:
+      "You can hire or apply for roles such as machine learning engineer, data scientist, AI researcher, computer vision expert and more.",
   },
   {
-    question: "What IT equipment is available for purchase or rental?",
-    answer: "Zion offers a comprehensive range of IT equipment including servers (rack, tower, blade), storage solutions (SAN, NAS, DAS), networking equipment (switches, routers, firewalls), power supplies, and complete rack solutions. All equipment is available for purchase or flexible rental terms, with options for new, refurbished, or certified used equipment.",
+    question: "What IT equipment is available to rent or buy?",
+    answer:
+      "Servers, storage solutions, networking gear, power supplies and complete rack setups are offered with flexible purchase or rental options.",
   },
   {
-    question: "How does Zion ensure 24x7x365 global availability?",
-    answer: "Our infrastructure is built on geographically distributed data centers with redundant systems and automatic failover mechanisms. We maintain a global team of IT specialists operating in rotating shifts across different time zones, ensuring seamless support and service availability at all times, regardless of your location.",
+    question: "How does Zion ensure 24x7x365 availability?",
+    answer:
+      "We use distributed data centers with automated failover and a global support team working in rotating shifts.",
   },
   {
-    question: "What is Zion's Green IT and recycling program?",
-    answer: "Zion's Green IT initiative focuses on sustainable IT practices throughout the equipment lifecycle. Our recycling program ensures proper disposal of obsolete equipment, component reuse where possible, and adherence to international environmental standards including WEEE, RoHS, and e-Stewards certification. We provide certificates of proper disposal for corporate compliance requirements.",
+    question: "What is Zion's Green IT program?",
+    answer:
+      "Obsolete hardware is recycled or reused in line with WEEE, RoHS and e-Stewards standards, and we provide disposal certificates when required.",
   },
   {
-    question: "Are there any fees for listing my products or services?",
-    answer: "No, publishing your products, services, job listings, or CV on Zion is completely free. We believe in creating an open marketplace that fosters innovation and connection in the tech and AI community without barriers to entry. Premium placement options are available for enhanced visibility, but the basic listing service has no costs attached.",
+    question: "Are there fees for listing my products or services?",
+    answer:
+      "No. Listing products, services, jobs or CVs is free, with optional paid promotion for extra visibility.",
+  },
+  {
+    question: "How do I track my order status?",
+    answer:
+      "Check the Orders page in your account or ask our chatbot with your order ID for a quick update.",
+  },
+  {
+    question: "How do I contact support?",
+    answer:
+      "Reach us via the chat widget, email support@ziontechgroup.com or call +1 302 464 0950 anytime.",
   },
 ];
 

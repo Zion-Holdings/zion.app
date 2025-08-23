@@ -3,7 +3,13 @@ import React, { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Bookmark, BookmarkCheck, ChevronRight, MapPin, Clock, DollarSign } from "lucide-react";
+import { Bookmark, BookmarkCheck, ChevronRight, MapPin, Clock, DollarSign } from 'lucide-react';
+
+
+
+
+
+
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 interface BrowseItem {
@@ -46,7 +52,7 @@ export function BrowseCards({ items, type, onViewDetails }: BrowseCardsProps) {
                 <div className="flex items-center gap-3">
                   {type === "talents" ? (
                     <Avatar className="h-12 w-12">
-                      <AvatarImage src={item.image} />
+                      <AvatarImage src={item.image} alt={item.title} />
                       <AvatarFallback>{item.title.charAt(0).toUpperCase()}</AvatarFallback>
                     </Avatar>
                   ) : (

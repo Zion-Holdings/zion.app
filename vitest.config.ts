@@ -6,11 +6,22 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src'),
       '@/pages': path.resolve(__dirname, './src/pages'),
+      '@/components': path.resolve(__dirname, './src/components'),
+      '@/hooks': path.resolve(__dirname, './src/hooks'),
+      '@/context': path.resolve(__dirname, './src/context'),
+      '@/lib': path.resolve(__dirname, './src/lib'),
+      '@/utils': path.resolve(__dirname, './src/utils'),
+      '@/config': path.resolve(__dirname, './src/config'),
+      '@/services': path.resolve(__dirname, './src/services'),
+      '@/integrations': path.resolve(__dirname, './src/integrations'),
+      '@/types': path.resolve(__dirname, './src/types'),
+      // Use lightweight React Router stubs to avoid Router context errors in tests
+      'react-router-dom': path.resolve(__dirname, './src/stubs/react-router-dom.ts'),
     },
   },
   define: {
-    'import.meta.env.VITE_SUPABASE_URL': JSON.stringify('http://localhost:54321'),
-    'import.meta.env.VITE_SUPABASE_ANON_KEY': JSON.stringify('test-anon-key-placeholder')
+    'import.meta.env.NEXT_PUBLIC_SUPABASE_URL': JSON.stringify('http://localhost:54321'),
+    'import.meta.env.NEXT_PUBLIC_SUPABASE_ANON_KEY': JSON.stringify('test-anon-key-placeholder')
   },
   test: {
     environment: 'jsdom',

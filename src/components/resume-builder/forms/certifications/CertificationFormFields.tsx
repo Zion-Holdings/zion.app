@@ -15,7 +15,7 @@ export function CertificationFormFields({ form }: CertificationFormFieldsProps) 
         <FormField
           control={form.control}
           name="name"
-          render={({ field }) => (
+          render={({ field }: { field: any }) => (
             <FormItem>
               <FormLabel>Certification Name</FormLabel>
               <FormControl>
@@ -29,7 +29,7 @@ export function CertificationFormFields({ form }: CertificationFormFieldsProps) 
         <FormField
           control={form.control}
           name="issuing_organization"
-          render={({ field }) => (
+          render={({ field }: { field: any }) => (
             <FormItem>
               <FormLabel>Issuing Organization</FormLabel>
               <FormControl>
@@ -45,7 +45,7 @@ export function CertificationFormFields({ form }: CertificationFormFieldsProps) 
         <FormField
           control={form.control}
           name="issue_date"
-          render={({ field }) => (
+          render={({ field }: { field: any }) => (
             <FormItem>
               <FormLabel>Issue Date</FormLabel>
               <FormControl>
@@ -63,7 +63,7 @@ export function CertificationFormFields({ form }: CertificationFormFieldsProps) 
         <FormField
           control={form.control}
           name="expiration_date"
-          render={({ field }) => (
+          render={({ field }: { field: any }) => (
             <FormItem>
               <FormLabel>Expiration Date (Optional)</FormLabel>
               <FormControl>
@@ -83,7 +83,7 @@ export function CertificationFormFields({ form }: CertificationFormFieldsProps) 
         <FormField
           control={form.control}
           name="credential_id"
-          render={({ field }) => (
+          render={({ field }: { field: any }) => (
             <FormItem>
               <FormLabel>Credential ID (Optional)</FormLabel>
               <FormControl>
@@ -97,7 +97,7 @@ export function CertificationFormFields({ form }: CertificationFormFieldsProps) 
         <FormField
           control={form.control}
           name="credential_url"
-          render={({ field }) => (
+          render={({ field }: { field: any }) => (
             <FormItem>
               <FormLabel>Credential URL (Optional)</FormLabel>
               <FormControl>

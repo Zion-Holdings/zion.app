@@ -1,1 +1,3 @@
-export { default } from '../../src/pages/OrderDetail';
+import dynamic from 'next/dynamic';
+
+export default dynamic(() => import('@/pages/OrderDetail'));

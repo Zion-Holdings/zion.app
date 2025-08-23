@@ -1,11 +1,13 @@
 
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { ShieldAlert } from "lucide-react";
+import { ShieldAlert } from 'lucide-react';
+
+import { useTranslation } from "react-i18next";
 
 export default function Unauthorized() {
+  const { t } = useTranslation();
   return (
     <>
       <Header />
@@ -16,27 +18,26 @@ export default function Unauthorized() {
               <ShieldAlert className="h-12 w-12 text-zion-purple" />
             </div>
           </div>
-          <h1 className="text-3xl font-bold text-white mb-3">Access Denied</h1>
+          <h1 className="text-3xl font-bold text-white mb-3">{t('errors.access_denied')}</h1>
           <p className="text-zion-slate-light mb-6">
-            You don't have permission to access this page. This could be because your account doesn't have the required permissions or you need to complete your profile.
+            {t('errors.no_permission')}
           </p>
           <div className="flex flex-col gap-3">
             <Link
-              to="/"
+              href="/"
               className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white px-4 py-2 rounded inline-flex items-center justify-center"
             >
-              Return to Home
+              {t('errors.return_home')}
             </Link>
             <Link
-              to="/login"
+              href="/auth/login"
               className="w-full border border-zion-blue-light text-zion-slate-light hover:bg-zion-blue hover:text-white px-4 py-2 rounded inline-flex items-center justify-center"
             >
-              Login with Different Account
+              {t('errors.login_different_account')}
             </Link>
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

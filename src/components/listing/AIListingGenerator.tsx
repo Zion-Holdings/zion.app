@@ -1,12 +1,14 @@
-
 import React, { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Sparkles } from "lucide-react";
+import { Sparkles } from 'lucide-react';
+
 import { supabase } from "@/integrations/supabase/client";
 import { AIListingForm } from "./AIListingForm";
 import { GeneratedContentDisplay } from "./GeneratedContentDisplay";
 import { LoadingContentSkeleton } from "./LoadingContentSkeleton";
+import {logErrorToProduction} from '@/utils/productionLogger';
+
 
 interface GeneratedContent {
   description: string;
@@ -55,17 +57,17 @@ export function AIListingGenerator({ onApplyGenerated, initialValues = {} }: AIL
         throw new Error(error.message);
       }
       
-      if (data.error) {
-        throw new Error(data.error);
+      if (data && (data as any).error) {
+        throw new Error((data as any).error);
       }
 
-      setGeneratedContent(data.generated);
+      setGeneratedContent((data as any)?.generated || null);
       toast({
         title: "Content Generated",
         description: "AI has created optimized listing content for you."
       });
     } catch (error) {
-      console.error("Error generating content:", error);
+      logErrorToProduction('Error generating content:', { data: error });
       toast({
         title: "Generation Failed",
         description: error instanceof Error ? error.message : "Failed to generate content. Please try again.",

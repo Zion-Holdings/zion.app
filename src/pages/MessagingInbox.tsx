@@ -1,15 +1,20 @@
 
 import React, { useEffect, useState } from 'react';
 import { MessageSquare, Video } from 'lucide-react';
+
+
 import { useMessaging } from '@/context/MessagingContext';
 import { ProtectedRoute } from '@/components/ProtectedRoute';
 import { ConversationsList, ConversationDetailView } from '@/components/messaging';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
-import { useNavigate } from 'react-router-dom';
+import { LoadingSpinner } from '@/components/ui/enhanced-loading-states';
+import { useRouter } from 'next/router'; // Changed from react-router-dom
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export default function MessagingInbox() {
+
   const { 
     conversations, 
     activeConversation, 
@@ -19,7 +24,7 @@ export default function MessagingInbox() {
     isLoading
   } = useMessaging();
   const isMobile = useIsMobile();
-  const navigate = useNavigate();
+  const router = useRouter(); // Changed from navigate
   const [activeCall, setActiveCall] = useState<string | null>(null);
   
   useEffect(() => {
@@ -28,7 +33,7 @@ export default function MessagingInbox() {
       try {
         await fetchConversations();
       } catch (error) {
-        console.error("Failed to load conversations:", error);
+        logErrorToProduction('Failed to load conversations:', { data: error });
         toast.error("Failed to load messages. Please try again.");
       }
     };
@@ -51,7 +56,7 @@ export default function MessagingInbox() {
     });
     
     // Navigate to video call page
-    navigate(`/call/${roomId}`);
+    router.push(`/call/${roomId}`); // Changed from navigate
   };
   
   return (
@@ -80,7 +85,7 @@ export default function MessagingInbox() {
               {/* Conversations List */}
               {isLoading ? (
                 <div className="flex-1 flex items-center justify-center p-8">
-                  <div className="animate-pulse">Loading conversations...</div>
+                  <LoadingSpinner variant="primary" />
                 </div>
               ) : (
                 <ConversationsList

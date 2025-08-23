@@ -1,108 +1,122 @@
-
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import CreatePostButton from "@/components/community/CreatePostButton";
+import { LoginModal } from "@/components/auth/LoginModal";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SEO } from "@/components/SEO";
 import ForumCategories from "@/components/community/ForumCategories";
 import PostCard from "@/components/community/PostCard";
-import { useAuth } from "@/hooks/useAuth";
-import { ForumPost } from "@/types/community";
-
-// Mock data for featured posts
-const featuredPosts: ForumPost[] = [
-  {
-    id: "1",
-    title: "Best practices for AI model fine-tuning",
-    content: "I've been working on fine-tuning models for specific tasks and wanted to share some approaches that have worked well for me...",
-    authorId: "user1",
-    authorName: "Alex Johnson",
-    authorAvatar: "https://i.pravatar.cc/150?img=3",
-    authorRole: "Verified Talent",
-    categoryId: "ai-tools",
-    tags: ["machine-learning", "fine-tuning", "gpt"],
-    createdAt: "2025-04-01T12:00:00Z",
-    updatedAt: "2025-04-01T12:00:00Z",
-    upvotes: 48,
-    downvotes: 2,
-    replyCount: 12,
-    isAnswered: true,
-    isFeatured: true
-  },
-  {
-    id: "2",
-    title: "How to build an effective AI talent profile?",
-    content: "I'm looking to improve my profile to get more client attention. What are the key elements I should focus on?",
-    authorId: "user2",
-    authorName: "Sarah Chen",
-    authorAvatar: "https://i.pravatar.cc/150?img=5",
-    categoryId: "getting-hired",
-    tags: ["profile", "tips", "hiring"],
-    createdAt: "2025-04-03T09:15:00Z",
-    updatedAt: "2025-04-03T09:15:00Z",
-    upvotes: 32,
-    downvotes: 0,
-    replyCount: 8,
-    isPinned: true,
-    isFeatured: true
-  }
-];
-
-// Mock data for recent posts
-const recentPosts: ForumPost[] = [
-  {
-    id: "3",
-    title: "Looking for feedback on my automated testing approach",
-    content: "I've set up a CI/CD pipeline with the following testing strategy...",
-    authorId: "user3",
-    authorName: "Michael Wong",
-    categoryId: "project-help",
-    tags: ["testing", "automation", "ci-cd"],
-    createdAt: "2025-04-10T14:30:00Z",
-    updatedAt: "2025-04-10T14:30:00Z",
-    upvotes: 5,
-    downvotes: 0,
-    replyCount: 2
-  },
-  {
-    id: "4",
-    title: "Feature request: Team collaboration tools",
-    content: "It would be really helpful if we could have built-in tools for team collaboration...",
-    authorId: "user4",
-    authorName: "Emma Davis",
-    categoryId: "feedback",
-    tags: ["feature-request", "teams", "collaboration"],
-    createdAt: "2025-04-09T18:45:00Z",
-    updatedAt: "2025-04-09T18:45:00Z",
-    upvotes: 12,
-    downvotes: 1,
-    replyCount: 3
-  },
-  {
-    id: "5",
-    title: "How to handle client scope creep?",
-    content: "I'm working on a project where the client keeps adding requirements...",
-    authorId: "user5",
-    authorName: "David Lin",
-    categoryId: "project-help",
-    tags: ["client-management", "scope", "projects"],
-    createdAt: "2025-04-08T10:20:00Z",
-    updatedAt: "2025-04-08T10:20:00Z",
-    upvotes: 24,
-    downvotes: 0,
-    replyCount: 7,
-    isAnswered: true
-  }
-];
+import NewPostDialog from "@/components/community/NewPostDialog";
+import { ChatAssistantTrigger } from "@/components/ChatAssistantTrigger";
+import { useRequireAuth } from "@/hooks/useAuthGuard";
+import { useAdvancedOnboardingStatus } from "@/hooks/useAdvancedOnboardingStatus";
+import { useCommunity } from "@/context";
+import type { ForumCategory } from "@/types/community";
+import { logErrorToProduction } from '@/utils/productionLogger';
+import { logInfo } from '@/utils/productionLogger';
 
 export default function CommunityPage() {
-  const { user } = useAuth();
+
+  logInfo('CommunityPage rendering');
+  const { user, loading } = useRequireAuth();
+  const { featuredPosts, recentPosts } = useCommunity();
   const [activeTab, setActiveTab] = useState("categories");
+  const router = useRouter();
+  const [showNewPost, setShowNewPost] = useState(false);
+  const [loginOpen, setLoginOpen] = useState(false);
+  const { markCommunityVisited } = useAdvancedOnboardingStatus();
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Loading community...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">Redirecting to login...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Combine posts for Q&A section, removing duplicates by id
+  const qaPosts = Array.from(
+    new Map(
+      [...featuredPosts, ...recentPosts].map((post) => [post.id, post])
+    ).values()
+  );
+
+  const initialCategory = router.query.category as ForumCategory | null;
+
+  useEffect(() => {
+    const wantsNew = router.query.new === "1";
+    if (wantsNew && !user) {
+      setLoginOpen(true);
+      setShowNewPost(false);
+      return;
+    }
+    setShowNewPost(wantsNew && !!user);
+    if (user) {
+      setLoginOpen(false);
+    }
+    markCommunityVisited();
+  }, [router, user, initialCategory, markCommunityVisited]);
+
+  // Handle tab changes in URL query params for better UX
+  useEffect(() => {
+    const tab = router.query.tab as string;
+    if (tab && ["categories", "featured", "recent", "qa"].includes(tab)) {
+      setActiveTab(tab);
+    }
+  }, [router.query.tab]);
+
+  const handleTabChange = (value: string) => {
+    setActiveTab(value);
+    // Update URL to reflect active tab
+    const newQuery = { ...router.query, tab: value };
+    router.replace({ pathname: router.pathname, query: newQuery }, undefined, { shallow: true });
+  };
+
+  const handleDialogChange = (open: boolean) => {
+    setShowNewPost(open);
+    if (!open) {
+      const currentQuery = { ...router.query };
+      delete currentQuery.new;
+      router.replace({ pathname: router.pathname, query: currentQuery }, undefined, { shallow: true });
+    }
+  };
+
+  const handleLoginModalChange = (open: boolean) => {
+    setLoginOpen(open);
+    if (!open) {
+      const currentQuery = { ...router.query };
+      delete currentQuery.new;
+      router.replace({ pathname: router.pathname, query: currentQuery }, undefined, { shallow: true });
+    }
+  };
+
+  logInfo('CommunityPage featuredPosts:', { data: featuredPosts });
+  logInfo('CommunityPage recentPosts:', { data: recentPosts });
+  logInfo('CommunityPage activeTab:', { data: activeTab });
+  
+  if (!featuredPosts || !recentPosts) {
+    logErrorToProduction('CommunityPage: Posts data is missing from context!', undefined, { message: 'CommunityPage: Posts data is missing from context!' });
+  }
   
   return (
     <>
       <SEO
-        title="Community Forum | Zion AI Marketplace"
-        description="Join the Zion AI Marketplace community forum. Ask questions, share knowledge, and connect with other AI professionals."
+        title="Community - Join the Zion Tech Marketplace Network"
+        description="Connect with innovators in the Zion Tech Marketplace community. Share ideas, collaborate on projects, and expand your tech network today. Gain points and unlock resources."
         keywords="community, forum, discussion, AI marketplace, questions, answers"
         canonical="https://app.ziontechgroup.com/community"
       />
@@ -116,14 +130,18 @@ export default function CommunityPage() {
             </p>
           </div>
           
-          <CreatePostButton />
+          <CreatePostButton onRequireLogin={(target) => {
+            router.push(target);
+            setLoginOpen(true);
+          }} />
         </div>
-        
-        <Tabs defaultValue="categories" value={activeTab} onValueChange={setActiveTab} className="mb-8">
+
+        <Tabs value={activeTab} onValueChange={handleTabChange} className="mb-8">
           <TabsList className="mb-6">
             <TabsTrigger value="categories">Categories</TabsTrigger>
             <TabsTrigger value="featured">Featured</TabsTrigger>
             <TabsTrigger value="recent">Recent</TabsTrigger>
+            <TabsTrigger value="qa">Q&A</TabsTrigger>
           </TabsList>
           
           <TabsContent value="categories">
@@ -132,21 +150,55 @@ export default function CommunityPage() {
           
           <TabsContent value="featured">
             <div className="space-y-4">
-              {featuredPosts.map((post) => (
-                <PostCard key={post.id} post={post} />
-              ))}
+              {featuredPosts && featuredPosts.length > 0 ? (
+                featuredPosts.map((post) => (
+                  <PostCard key={post.id} post={post} />
+                ))
+              ) : (
+                <div className="text-center py-8 text-muted-foreground">
+                  <p>No featured posts available at the moment.</p>
+                </div>
+              )}
             </div>
           </TabsContent>
           
           <TabsContent value="recent">
             <div className="space-y-4">
-              {recentPosts.map((post) => (
-                <PostCard key={post.id} post={post} />
-              ))}
+              {recentPosts && recentPosts.length > 0 ? (
+                recentPosts.map((post) => (
+                  <PostCard key={post.id} post={post} />
+                ))
+              ) : (
+                <div className="text-center py-8 text-muted-foreground">
+                  <p>No recent posts available at the moment.</p>
+                </div>
+              )}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="qa">
+            <div className="space-y-4">
+              {qaPosts && qaPosts.length > 0 ? (
+                qaPosts.map((post) => (
+                  <PostCard key={post.id} post={post} />
+                ))
+              ) : (
+                <div className="text-center py-8 text-muted-foreground">
+                  <p>No Q&A posts available at the moment.</p>
+                </div>
+              )}
             </div>
           </TabsContent>
         </Tabs>
       </div>
+
+      <NewPostDialog
+        open={showNewPost}
+        onOpenChange={handleDialogChange}
+        initialCategory={initialCategory}
+      />
+      <LoginModal isOpen={loginOpen} onOpenChange={handleLoginModalChange} />
+      <ChatAssistantTrigger />
     </>
   );
 }

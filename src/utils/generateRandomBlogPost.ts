@@ -30,8 +30,8 @@ export function generateRandomBlogPost(): BlogPost {
       year: "numeric"
     }),
     readTime: "3 min read",
-    category,
-    tags: [category.toLowerCase(), "automation"],
+    category: category || 'General',
+    tags: [(category || 'general').toLowerCase(), "automation"],
     featuredImage: "https://images.unsplash.com/photo-1581091012184-7b3403d00985?auto=format&fit=crop&w=1200&h=630"
   };
 }

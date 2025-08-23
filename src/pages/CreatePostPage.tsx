@@ -1,12 +1,16 @@
 
 import { useState, useEffect } from "react";
-import { Link, useNavigate, useSearchParams, useLocation } from "react-router-dom";
+import { mutate } from 'swr';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import PostForm from "@/components/community/PostForm";
 import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/use-toast";
 import { ForumCategory } from "@/types/community";
+import {logErrorToProduction} from '@/utils/productionLogger';
+
 
 interface PostFormValues {
   title: string;
@@ -16,20 +20,19 @@ interface PostFormValues {
 }
 
 export default function CreatePostPage() {
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter();
   const { user } = useAuth();
   const { toast } = useToast();
-  const [searchParams] = useSearchParams();
 
   useEffect(() => {
     if (!user) {
-      navigate(`/login?next=${encodeURIComponent(location.pathname + location.search)}`);
+      const currentPath = router.asPath;
+      router.push(`/auth/login?returnTo=${encodeURIComponent(currentPath)}`);
     }
-  }, [user, navigate, location]);
+  }, [user, router]);
   
   // Get category from URL query params if available
-  const initialCategory = searchParams.get("category") as ForumCategory | null;
+  const initialCategory = router.query.category as ForumCategory | null;
   
   const initialValues: Partial<PostFormValues> = {
     categoryId: initialCategory || "project-help"
@@ -47,9 +50,26 @@ export default function CreatePostPage() {
         title: "Post created",
         description: "Your post has been published successfully"
       });
+
+      if (user?.id) {
+        try {
+          const res = await fetch('/api/points/increment', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ userId: user.id, amount: 5, reason: 'post' })
+          });
+          if (!res.ok) {
+            const text = await res.text().catch(() => '');
+            throw new Error(text || `Error ${res.status}`);
+          }
+          mutate('user');
+        } catch (err) {
+          logErrorToProduction('Failed to award points:', { data: err });
+        }
+      }
       
       // Redirect to the forum category
-      navigate(`/community/category/${values.categoryId}`);
+      router.push(`/community/category/${values.categoryId}`);
     } catch (error) {
       toast({
         title: "Error",
@@ -69,7 +89,7 @@ export default function CreatePostPage() {
       
       <div className="container py-8">
         <div className="flex items-center gap-3 mb-6">
-          <Link to="/community" className="text-sm text-muted-foreground hover:text-foreground">
+          <Link href="/community" className="text-sm text-muted-foreground hover:text-foreground">
             Forum
           </Link>
           <span className="text-muted-foreground">/</span>

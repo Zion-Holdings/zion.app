@@ -1,16 +1,21 @@
-import { FileText } from 'lucide-react';
-import { Link } from 'react-router-dom';
+
+
+
+
+import Link from 'next/link'; // Changed from react-router-dom
 import { useAuth } from '@/hooks/useAuth';
 import { useGetOrdersQuery } from '@/hooks/useOrders';
+import { FileText, CheckCircle2, Clock, ShieldAlert } from 'lucide-react';
 import {
   Table,
   TableBody,
   TableCell,
   TableHead,
   TableHeader,
-  TableRow,
-} from '@/components/ui/table';
-import { Skeleton } from '@/components/ui/skeleton';
+  TableRow
+} from "@/components/ui/table";
+import { Badge } from '@/components/ui/badge';
+import Skeleton from '@/components/ui/skeleton';
 import { EmptyState } from '@/components/ui/empty-state';
 
 export default function OrdersPage() {
@@ -18,6 +23,32 @@ export default function OrdersPage() {
   const { data: orders, isLoading } = useGetOrdersQuery(user?.id);
 
   const formatDate = (date: string) => new Date(date).toLocaleDateString();
+
+  const getStatusBadge = (status: string) => {
+    switch (status) {
+      case 'in_escrow':
+        return (
+          <Badge variant="warning" className="flex items-center gap-1">
+            <Clock className="h-3 w-3" /> In Escrow
+          </Badge>
+        );
+      case 'released':
+      case 'completed':
+        return (
+          <Badge variant="success" className="flex items-center gap-1">
+            <CheckCircle2 className="h-3 w-3" /> Released
+          </Badge>
+        );
+      case 'disputed':
+        return (
+          <Badge variant="destructive" className="flex items-center gap-1">
+            <ShieldAlert className="h-3 w-3" /> Disputed
+          </Badge>
+        );
+      default:
+        return status;
+    }
+  };
 
   return (
     <div className="container max-w-4xl py-10">
@@ -68,10 +99,10 @@ export default function OrdersPage() {
                 <TableCell className="font-medium">{order.orderId}</TableCell>
                 <TableCell>{formatDate(order.date)}</TableCell>
                 <TableCell>{order.total}</TableCell>
-                <TableCell>{order.status}</TableCell>
+                <TableCell>{getStatusBadge(order.status)}</TableCell>
                 <TableCell>
                   <Link
-                    to={`/orders/${order.orderId}`}
+                    href={`/orders/${order.orderId}`} // Changed to href
                     className="text-zion-purple underline"
                   >
                     View

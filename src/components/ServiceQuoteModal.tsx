@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
@@ -10,11 +9,14 @@ import { Slider } from "@/components/ui/slider";
 import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { format } from "date-fns";
-import { CalendarIcon } from "lucide-react";
+import { CalendarIcon } from 'lucide-react';
+
 import { cn } from "@/lib/utils";
 import { ProductListing } from "@/types/listings";
 import { toast } from '@/hooks/use-toast';
 import { supabase } from "@/integrations/supabase/client";
+import {logErrorToProduction} from '@/utils/productionLogger';
+
 
 interface ServiceQuoteModalProps {
   open: boolean;
@@ -41,8 +43,8 @@ export function ServiceQuoteModal({ open, onOpenChange, service }: ServiceQuoteM
   const [formData, setFormData] = useState({
     description: '',
     email: '',
-    budget: BUDGET_RANGES[0].value,
-    timeframe: TIMELINE_OPTIONS[0].value,
+    budget: BUDGET_RANGES[0]?.value || '0-5000',
+    timeframe: TIMELINE_OPTIONS[0]?.value || 'lt-1month',
   });
   const [startDate, setStartDate] = useState<Date | undefined>(new Date());
   const [endDate, setEndDate] = useState<Date | undefined>(undefined);
@@ -88,14 +90,14 @@ export function ServiceQuoteModal({ open, onOpenChange, service }: ServiceQuoteM
       setFormData({
         description: '',
         email: '',
-        budget: BUDGET_RANGES[0].value,
-        timeframe: TIMELINE_OPTIONS[0].value,
+        budget: BUDGET_RANGES[0]?.value || '0-5000',
+        timeframe: TIMELINE_OPTIONS[0]?.value || 'lt-1month',
       });
       setStartDate(new Date());
       setEndDate(undefined);
       setCurrentStep('details');
     } catch (error) {
-      console.error("Error submitting quote:", error);
+      logErrorToProduction('Error submitting quote:', { data: error });
       toast({
         title: "Error",
         description: "There was an error submitting your quote request. Please try again.",
@@ -203,7 +205,7 @@ export function ServiceQuoteModal({ open, onOpenChange, service }: ServiceQuoteM
                           "bg-zion-blue-dark border-zion-blue-light text-white"
                         )}
                       >
-                        <CalendarIcon className="mr-2 h-4 w-4" />
+                        <CalendarIcon className="mr-2 h-4 w-4" aria-hidden="true" />
                         {startDate ? format(startDate, "PPP") : <span>Pick a date</span>}
                       </Button>
                     </PopoverTrigger>
@@ -230,7 +232,7 @@ export function ServiceQuoteModal({ open, onOpenChange, service }: ServiceQuoteM
                           "bg-zion-blue-dark border-zion-blue-light text-white"
                         )}
                       >
-                        <CalendarIcon className="mr-2 h-4 w-4" />
+                        <CalendarIcon className="mr-2 h-4 w-4" aria-hidden="true" />
                         {endDate ? format(endDate, "PPP") : <span>Pick a date</span>}
                       </Button>
                     </PopoverTrigger>

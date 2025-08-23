@@ -1,11 +1,14 @@
+import { Job } from '@/types/jobs';
 
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function useJobDetails(jobId: string | undefined) {
-  const [job, setJob] = useState(null);
+
+  const [job, setJob] = useState<Job | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string | null>(null);
 
   async function loadJobDetails() {
     if (!jobId) {
@@ -25,8 +28,8 @@ export function useJobDetails(jobId: string | undefined) {
       setJob(data);
       setError(null);
     } catch (err) {
-      console.error('Error loading job details:', err);
-      setError(err.message);
+      logErrorToProduction('Error loading job details:', { data: err });
+      setError((err as Error).message);
     } finally {
       setIsLoading(false);
     }

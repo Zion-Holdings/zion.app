@@ -1,7 +1,9 @@
 
 import React from "react";
-import { Link } from "react-router-dom";
-import { ArrowRight, Smartphone } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Smartphone } from 'lucide-react';
+
+
 import { Button } from "@/components/ui/button";
 import { AppStoreButtons } from "./AppStoreButtons";
 import { Card, CardContent } from "@/components/ui/card";
@@ -33,14 +35,14 @@ export const MobileLaunchHero: React.FC = () => {
             </div>
             
             <div className="flex flex-wrap gap-4">
-              <Link to="/open-app">
+              <Link href="/open-app">
                 <Button variant="outline" size="lg" className="flex gap-2 border-white text-white hover:bg-white/10">
                   Open App
                   <ArrowRight size={20} />
                 </Button>
               </Link>
               
-              <Link to="#features">
+              <Link href="#features">
                 <Button variant="ghost" size="lg" className="text-white hover:bg-white/10">
                   See Features
                 </Button>

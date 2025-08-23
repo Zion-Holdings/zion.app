@@ -1,13 +1,13 @@
-
 import React, { useState } from "react";
-import { Star } from "lucide-react";
+import { Star, ExternalLink } from 'lucide-react';
+
 import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
+
 import { TalentProfile } from "@/types/talent";
 import { HireRequestModal } from "@/components/profile/hire-request";
 import { useAuthStatus } from "@/hooks/talent";
-import { UserProfile } from "@/types/auth";
-import { useNavigate } from "react-router-dom";
+import type { UserProfile } from "@/types/auth";
+import { useRouter } from 'next/router';
 
 interface TalentCardFooterProps {
   profile: TalentProfile;
@@ -18,17 +18,21 @@ interface TalentCardFooterProps {
 export function TalentCardFooter({ profile, onViewProfile, onRequestHire }: TalentCardFooterProps) {
   const [isHireModalOpen, setIsHireModalOpen] = useState(false);
   const { userDetails } = useAuthStatus();
-  const navigate = useNavigate();
+  const router = useRouter();
 
   // Create a compatible UserProfile from UserDetails
   const userProfile: UserProfile = {
     id: userDetails?.id,
-    displayName: userDetails?.name || '',
+    name: userDetails?.name || '',
     email: userDetails?.email || '',
-    userType: '',
+    userType: null,
     profileComplete: false,
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString()
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
+    role: userDetails?.userType || '',
+    displayName: userDetails?.name || '',
+    points: 0,
+    avatarUrl: userDetails?.avatar || ''
   };
 
   // Handle request to hire
@@ -48,7 +52,7 @@ export function TalentCardFooter({ profile, onViewProfile, onRequestHire }: Tale
     e.stopPropagation();
     
     // Navigate to the talent profile page
-    navigate(`/talent/${profile.id || ''}`);
+    router.push(`/talent/${profile.id || ''}`);
     
     // Also call the onViewProfile callback if provided
     if (onViewProfile) {

@@ -1,14 +1,16 @@
 
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { 
+import Link from "next/link";
+import { Eye, ChevronDown, Loader2 } from 'lucide-react';
+import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
-import { Eye, ChevronDown, Loader2 } from "lucide-react";
+
+
+
 import { JobApplication, ApplicationStatus } from "@/types/jobs";
 
 interface ApplicationActionsProps {
@@ -79,7 +81,7 @@ export function ApplicationActions({
         size="sm"
         asChild
       >
-        <Link to={`/messages?talentId=${application.talent_id}`}>
+        <Link href={`/messages?talentId=${application.talent_id}`}>
           Contact
         </Link>
       </Button>

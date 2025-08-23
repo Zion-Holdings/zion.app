@@ -1,10 +1,9 @@
 
 import React, { useState } from "react";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { useAuth } from "@/hooks/useAuth";
-import { Navigate } from "react-router-dom";
+import { useRouter } from "next/router";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -14,6 +13,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { Switch } from "@/components/ui/switch";
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 export default function TenantOnboarding() {
   const { user } = useAuth();
@@ -35,7 +35,7 @@ export default function TenantOnboarding() {
   const isAdmin = user?.role === "admin";
   
   if (!isAdmin) {
-    return <Navigate to="/unauthorized" />;
+    return // Use router.push('/unauthorized') or redirect in getServerSideProps;
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -105,9 +105,9 @@ export default function TenantOnboarding() {
       });
       
     } catch (error: any) {
-      console.error("Error creating tenant:", error);
-      toast.error("Failed to create tenant", { 
-        description: error.message 
+      logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Error creating tenant' });
+      toast.error("Failed to create tenant", {
+        description: error.message
       });
     } finally {
       setIsSubmitting(false);
@@ -324,7 +324,6 @@ export default function TenantOnboarding() {
           </Card>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

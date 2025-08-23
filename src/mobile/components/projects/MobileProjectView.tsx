@@ -4,10 +4,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { CheckCircle, ChevronRight, FileText, MessageSquare, Video } from "lucide-react";
+import { CheckCircle, ChevronRight, FileText, MessageSquare, Video } from 'lucide-react';
+
+
+
+
+
 import { Progress } from "@/components/ui/progress";
 import { SeverityIndicator } from "../common/SeverityIndicator";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { toast } from "sonner";
 
 interface Milestone {
@@ -38,7 +43,7 @@ interface ProjectViewProps {
 }
 
 export function MobileProjectView({ project, milestones }: ProjectViewProps) {
-  const navigate = useNavigate();
+  const router = useRouter();
   
   const startProjectCall = () => {
     const roomId = `project-${project.id}`;
@@ -46,7 +51,7 @@ export function MobileProjectView({ project, milestones }: ProjectViewProps) {
       description: "Initializing video connection..."
     });
     
-    navigate(`/call/${roomId}`);
+    router.push(`/call/${roomId}`);
   };
   
   const messageClient = () => {
@@ -66,7 +71,7 @@ export function MobileProjectView({ project, milestones }: ProjectViewProps) {
                 <h2 className="text-lg font-medium">{project.title}</h2>
                 <div className="flex items-center gap-2 mt-1">
                   <Avatar className="h-6 w-6">
-                    <AvatarImage src={project.client.avatar} />
+                    <AvatarImage src={project.client.avatar} alt={project.client.name} />
                     <AvatarFallback>{project.client.name[0]}</AvatarFallback>
                   </Avatar>
                   <span className="text-sm">{project.client.name}</span>

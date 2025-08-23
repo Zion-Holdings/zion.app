@@ -1,5 +1,5 @@
 
-import { Helmet } from "react-helmet-async";
+import Head from 'next/head';
 
 interface SEOProps {
   title: string;
@@ -25,7 +25,7 @@ export function SEO({
   const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
   
   return (
-    <Helmet>
+    <Head>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       {keywords && <meta name="keywords" content={keywords} />}
@@ -49,6 +49,6 @@ export function SEO({
       
       {/* No index directive for search engines if needed */}
       {noindex && <meta name="robots" content="noindex" />}
-    </Helmet>
+    </Head>
   );
 }

@@ -1,6 +1,6 @@
-
 import { useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
+import {logErrorToProduction} from "@/utils/productionLogger";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 
@@ -41,11 +41,10 @@ export function useApiKeys() {
     // Using optional chaining ensures this function works both in the browser
     // (where import.meta.env is injected by Vite) and in Node environments
     // such as tests or server side rendering.
-    const env = (import.meta as any)?.env ?? process.env;
+    // For Next.js, process.env is the primary source.
     const url =
-      env.VITE_SUPABASE_URL ||
-      env.NEXT_PUBLIC_SUPABASE_URL ||
-      env.SUPABASE_URL;
+      process.env.NEXT_PUBLIC_SUPABASE_URL ||
+      process.env.SUPABASE_URL; // Fallback if NEXT_PUBLIC_ is not set but SUPABASE_URL is
     return `${url}/functions/v1/api-key-manager`;
   };
 
@@ -66,7 +65,7 @@ export function useApiKeys() {
       const response = await fetch(`${getApiUrl()}/keys`, {
         method: 'GET',
         headers: {
-          'Authorization': `Bearer ${session.access_token}`,
+          'Authorization': `Bearer ${(session as any)?.access_token}`,
           'Content-Type': 'application/json'
         }
       });
@@ -79,7 +78,7 @@ export function useApiKeys() {
 
       setKeys(result.keys || []);
     } catch (err) {
-      console.error('Error fetching API keys:', err);
+      logErrorToProduction('Error fetching API keys:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -109,7 +108,7 @@ export function useApiKeys() {
       const response = await fetch(`${getApiUrl()}/create`, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${session.access_token}`,
+          'Authorization': `Bearer ${(session as any)?.access_token}`,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
@@ -138,7 +137,7 @@ export function useApiKeys() {
       
       return result;
     } catch (err) {
-      console.error('Error creating API key:', err);
+      logErrorToProduction('Error creating API key:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -168,7 +167,7 @@ export function useApiKeys() {
       const response = await fetch(`${getApiUrl()}/regenerate`, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${session.access_token}`,
+          'Authorization': `Bearer ${(session as any)?.access_token}`,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ keyId })
@@ -195,7 +194,7 @@ export function useApiKeys() {
       
       return result;
     } catch (err) {
-      console.error('Error regenerating API key:', err);
+      logErrorToProduction('Error regenerating API key:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -224,7 +223,7 @@ export function useApiKeys() {
       const response = await fetch(`${getApiUrl()}/revoke`, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${session.access_token}`,
+          'Authorization': `Bearer ${(session as any)?.access_token}`,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ keyId })
@@ -248,7 +247,7 @@ export function useApiKeys() {
       
       return result;
     } catch (err) {
-      console.error('Error revoking API key:', err);
+      logErrorToProduction('Error revoking API key:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",
@@ -279,7 +278,7 @@ export function useApiKeys() {
         {
           method: 'GET',
           headers: {
-            'Authorization': `Bearer ${session.access_token}`,
+            'Authorization': `Bearer ${(session as any)?.access_token}`,
             'Content-Type': 'application/json'
           }
         }
@@ -296,7 +295,7 @@ export function useApiKeys() {
       
       return result;
     } catch (err) {
-      console.error('Error fetching API logs:', err);
+      logErrorToProduction('Error fetching API logs:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
       toast({
         variant: "destructive",

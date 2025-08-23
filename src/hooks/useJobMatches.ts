@@ -1,10 +1,11 @@
-
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import { JobMatch } from "@/types/jobs";
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function useJobMatches(jobId: string) {
+
   const [matches, setMatches] = useState<JobMatch[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isProcessing, setIsProcessing] = useState(false);
@@ -35,7 +36,7 @@ export function useJobMatches(jobId: string) {
       if (error) throw error;
       setMatches(data || []);
     } catch (error) {
-      console.error("Error fetching job matches:", error);
+      logErrorToProduction('Error fetching job matches:', { data: error });
       toast({
         title: "Error",
         description: "Failed to load matched talents. Please try again later.",
@@ -57,13 +58,13 @@ export function useJobMatches(jobId: string) {
       
       toast({
         title: "AI Matching Complete",
-        description: `Found ${response.data.matches || 0} potential talent matches for this job.`,
+        description: `Found ${(response.data as any)?.matches || 0} potential talent matches for this job.`,
       });
       
       // Refresh the matches list
       await fetchMatches();
     } catch (error) {
-      console.error("Error triggering AI matching:", error);
+      logErrorToProduction('Error triggering AI matching:', { data: error });
       toast({
         title: "Matching Failed",
         description: "Could not process talent matching. Please try again later.",

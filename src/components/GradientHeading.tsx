@@ -1,4 +1,3 @@
-
 import { cn } from "@/lib/utils";
 import React from "react";
 
@@ -14,9 +13,16 @@ export function GradientHeading({ children, className, level = "h2" }: GradientH
   return (
     <Tag 
       className={cn(
-        "text-4xl font-bold tracking-tight bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent",
+        "text-4xl font-bold tracking-tight bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent",
+        "font-heading leading-tight",
+        "text-transparent supports-[not(background-clip:text)]:text-foreground",
         className
       )}
+      style={{
+        minHeight: '1.2em',
+        contain: 'layout style',
+        willChange: 'auto'
+      }}
     >
       {children}
     </Tag>

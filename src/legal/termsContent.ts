@@ -9,36 +9,36 @@ export const TERMS_SECTIONS: TermsSection[] = [
     id: "introduction",
     title: "Introduction",
     content:
-      `<p>Welcome to Zion Tech Group. These Terms of Service govern your use of our marketplace platform.</p>`
+      `<p>Welcome to Zion Tech Group. By accessing the marketplace you agree to these Terms of Service which form a binding agreement between you and Zion Tech Group.</p>`
   },
   {
     id: "accounts",
     title: "Accounts",
     content:
-      `<p>You must create an account to access certain features of the platform. You are responsible for keeping your login credentials secure.</p>`
+      `<p>When you create an account you must provide accurate information and keep your login credentials confidential. You are responsible for all activity under your account.</p>`
   },
   {
     id: "payments",
     title: "Payments",
     content:
-      `<p>All transactions are processed securely. You agree to provide accurate billing details and comply with our payment policies.</p>`
+      `<p>Transactions are processed through our payment partners. By making a purchase you authorize us to charge your chosen payment method for any applicable fees.</p>`
   },
   {
     id: "prohibited",
     title: "Prohibited Activities",
     content:
-      `<p>Users may not engage in fraudulent, abusive, or illegal activity while using the platform.</p>`
+      `<p>You may not use the marketplace for any unlawful purpose or to violate the rights of others. We reserve the right to remove content that violates these terms.</p>`
   },
   {
     id: "termination",
     title: "Termination",
     content:
-      `<p>We may suspend or terminate your account if you violate these terms or engage in activities that harm the platform or other users.</p>`
+      `<p>We may suspend or terminate your access if you breach these Terms or engage in conduct that harms the platform or other users.</p>`
   },
   {
     id: "contact",
     title: "Contact Us",
     content:
-      `<p>If you have questions about these Terms of Service, contact us at <a href="mailto:support@ziontechgroup.com">support@ziontechgroup.com</a>.</p>`
+      `<p>If you have questions about these Terms, please contact us at <a href="mailto:legal@ziontechgroup.com">legal@ziontechgroup.com</a>.</p>`
   }
 ];

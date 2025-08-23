@@ -38,3 +38,56 @@ it('shows results when searching services', async () => {
   });
 });
 
+it('renders results from api', async () => {
+  const data = { ...baseData };
+  const updateFormData = (d: Partial<QuoteFormData>) => Object.assign(data, d);
+
+  global.fetch = vi.fn().mockResolvedValue({
+    ok: true,
+    json: async () => [
+      { id: 's1', title: 'A', category: 'service' },
+      { id: 's2', title: 'B', category: 'service' },
+      { id: 's3', title: 'C', category: 'service' },
+    ],
+  }) as any;
+
+  render(<ServiceTypeStep formData={data} updateFormData={updateFormData} />);
+
+  fireEvent.click(screen.getByText('Services'));
+
+  await waitFor(() => {
+    expect(screen.getAllByRole('button', { name: /request quote/i })).toHaveLength(3);
+  });
+});
+
+it('hides skeleton once services load', async () => {
+  const data = { ...baseData };
+  const updateFormData = (d: Partial<QuoteFormData>) => Object.assign(data, d);
+
+  let resolveFetch: () => void;
+  global.fetch = vi.fn().mockImplementation(
+    () =>
+      new Promise((res) => {
+        resolveFetch = () =>
+          res({
+            ok: true,
+            json: async () => [
+              { id: 's1', title: 'A', category: 'service' },
+            ],
+          });
+      })
+  ) as any;
+
+  render(<ServiceTypeStep formData={data} updateFormData={updateFormData} />);
+
+  fireEvent.click(screen.getByText('Services'));
+
+  expect(document.querySelectorAll('.animate-pulse').length).toBeGreaterThan(0);
+
+  resolveFetch();
+
+  await waitFor(() => {
+    expect(document.querySelectorAll('.animate-pulse').length).toBe(0);
+  });
+});
+

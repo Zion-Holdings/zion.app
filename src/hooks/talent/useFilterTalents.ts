@@ -2,14 +2,39 @@
 import { useState, useMemo } from 'react';
 import { TalentProfile } from '@/types/talent';
 
-export function useFilterTalents(talents: TalentProfile[]) {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
-  const [selectedAvailability, setSelectedAvailability] = useState<string[]>([]);
-  const [selectedRegions, setSelectedRegions] = useState<string[]>([]);
-  const [priceRange, setPriceRange] = useState<[number, number]>([50, 200]);
-  const [experienceRange, setExperienceRange] = useState<[number, number]>([0, 15]);
-  const [sortOption, setSortOption] = useState<string>('relevance');
+export interface TalentFilterOptions {
+  searchTerm?: string;
+  selectedSkills?: string[];
+  selectedAvailability?: string[];
+  selectedRegions?: string[];
+  priceRange?: [number, number];
+  experienceRange?: [number, number];
+  sortOption?: string;
+}
+
+export function useFilterTalents(
+  talents: TalentProfile[] = [],
+  initial: TalentFilterOptions = {}
+) {
+  const [searchTerm, setSearchTerm] = useState(initial.searchTerm || '');
+  const [selectedSkills, setSelectedSkills] = useState<string[]>(
+    initial.selectedSkills || []
+  );
+  const [selectedAvailability, setSelectedAvailability] = useState<string[]>(
+    initial.selectedAvailability || []
+  );
+  const [selectedRegions, setSelectedRegions] = useState<string[]>(
+    initial.selectedRegions || []
+  );
+  const [priceRange, setPriceRange] = useState<[number, number]>(
+    initial.priceRange || [50, 200]
+  );
+  const [experienceRange, setExperienceRange] = useState<[number, number]>(
+    initial.experienceRange || [0, 15]
+  );
+  const [sortOption, setSortOption] = useState<string>(
+    initial.sortOption || 'relevance'
+  );
   
   const toggleSkill = (skill: string) => {
     setSelectedSkills(prev => 

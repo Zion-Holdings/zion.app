@@ -1,7 +1,6 @@
-
 import { useState, useEffect } from "react";
 import { useAuth } from "@/hooks/useAuth";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -11,8 +10,16 @@ import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, D
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { toast } from "@/hooks/use-toast";
-import { Check, Flag, Search, Settings, X } from "lucide-react";
+import { Check, Flag, Search, Settings, X, Users } from 'lucide-react';
+
+
+
+
+
+
 import { supabase } from "@/integrations/supabase/client";
+import { logErrorToProduction } from '@/utils/productionLogger';
+import { EmptyState } from "@/components/ui/empty-state";
 
 interface PartnerProfile {
   id: string;
@@ -41,16 +48,16 @@ export default function PartnerManager() {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [commissionRate, setCommissionRate] = useState(25);
   const { user, isAuthenticated } = useAuth();
-  const navigate = useNavigate();
+  const router = useRouter();
 
   useEffect(() => {
     if (!isAuthenticated) {
-      navigate("/login");
+      router.push('/auth/login?returnTo=' + encodeURIComponent('/admin/partners'));
       return;
     }
 
     fetchPartners();
-  }, [isAuthenticated, navigate]);
+  }, [isAuthenticated, router]);
 
   const fetchPartners = async () => {
     try {
@@ -151,7 +158,7 @@ export default function PartnerManager() {
         filterPartners(data as PartnerProfile[], activeTab, searchQuery);
       }
     } catch (error) {
-      console.error("Error fetching partners:", error);
+      logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Error fetching partners' });
       toast({
         title: "Error",
         description: "Failed to load partner data",
@@ -229,7 +236,7 @@ export default function PartnerManager() {
         setIsDetailsOpen(false);
       }
     } catch (error) {
-      console.error("Error updating partner status:", error);
+      logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Error updating partner status' });
       toast({
         title: "Error",
         description: "Failed to update partner status",
@@ -261,7 +268,7 @@ export default function PartnerManager() {
       
       setIsSettingsOpen(false);
     } catch (error) {
-      console.error("Error updating partner settings:", error);
+      logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Error updating partner settings' });
       toast({
         title: "Error",
         description: "Failed to update partner settings",
@@ -611,8 +618,8 @@ interface PartnerTableProps {
   onViewDetails: (partner: PartnerProfile) => void;
   onUpdateStatus: (partnerId: string, status: 'approved' | 'rejected') => void;
   onOpenSettings: (partner: PartnerProfile) => void;
-  getStatusBadge: (status: string) => JSX.Element;
-  getFraudFlagBadge: (flags?: number) => JSX.Element | null;
+  getStatusBadge: (status: string) => React.JSX.Element;
+  getFraudFlagBadge: (flags?: number) => React.JSX.Element | null;
 }
 
 function PartnerTable({ 
@@ -634,8 +641,13 @@ function PartnerTable({
   
   if (partners.length === 0) {
     return (
-      <div className="text-center py-8">
-        <p className="text-zion-slate-light">No partners found.</p>
+      <div className="py-8">
+        <EmptyState
+          icon={<Users className="h-8 w-8" />}
+          title="No Partners Found"
+          description="There are no partner applications to display."
+          className="border-none bg-transparent text-center"
+        />
       </div>
     );
   }

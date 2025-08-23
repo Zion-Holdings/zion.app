@@ -1,88 +1,66 @@
-import { createClient } from '@supabase/supabase-js';
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { supabase } from '@/integrations/supabase/client';
+import { withErrorLogging } from '@/utils/withErrorLogging';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
-// Basic req/res types
-type Req = { method?: string; body?: any; query?: any };
-interface JsonRes {
-  statusCode?: number;
-  setHeader: (name: string, value: string) => void;
-  end: (data?: any) => void;
-  status: (code: number) => JsonRes;
-  json: (data: any) => void;
-}
 
-const supabaseUrl =
-  process.env.SUPABASE_URL ||
-  process.env.VITE_SUPABASE_URL ||
-  process.env.NEXT_PUBLIC_SUPABASE_URL ||
-  '';
-const serviceKey =
-  process.env.SUPABASE_SERVICE_ROLE_KEY ||
-  process.env.VITE_SUPABASE_ANON_KEY ||
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
-  '';
-
-const supabase = createClient(supabaseUrl, serviceKey);
-
-export default async function handler(req: Req, res: JsonRes) {
-  const userId = req.body?.user_id || req.query?.userId;
-
-  if (!userId) {
-    res.status(400).json({ error: 'Missing userId' });
-    return;
+async function handler(req: NextApiRequest, res: NextApiResponse) {
+  if (!supabase) {
+    return res.status(503).json({ error: 'Supabase not configured' });
   }
 
   if (req.method === 'GET') {
+    const { userId } = req.query as { userId: string | string[] };
+    if (typeof userId !== 'string') {
+      return res.status(400).json({ error: 'Missing userId' });
+    }
     const { data, error } = await supabase
       .from('favorites')
       .select('item_type, item_id, created_at')
       .eq('user_id', userId)
       .order('created_at', { ascending: false });
-
     if (error) {
-      res.status(500).json({ error: error.message });
-      return;
+      logErrorToProduction('Error fetching favorites:', { data: error });
+      return res.status(500).json({ error: 'Failed to fetch favorites' });
     }
-
-    res.status(200).json(data || []);
-    return;
-  }
-
-  const { item_type, item_id } = req.body || {};
-  if (!item_type || !item_id) {
-    res.status(400).json({ error: 'Missing item_type or item_id' });
-    return;
+    return res.status(200).json(data);
   }
 
   if (req.method === 'POST') {
+    const { user_id, item_type, item_id } = (req.body as { user_id?: string; item_type?: string; item_id?: string }) || {};
+    if (!user_id || !item_type || !item_id) {
+      return res.status(400).json({ error: 'Missing fields' });
+    }
     const { error } = await supabase
       .from('favorites')
-      .insert({ user_id: userId, item_type, item_id });
-
+      .insert({ user_id, item_type, item_id });
     if (error) {
-      res.status(500).json({ error: error.message });
-      return;
+      logErrorToProduction('Error adding favorite:', { data: error });
+      return res.status(500).json({ error: 'Failed to add favorite' });
     }
-
-    res.status(200).json({ success: true });
-    return;
+    return res.status(201).json({ message: 'Added' });
   }
 
   if (req.method === 'DELETE') {
+    const { user_id, item_type, item_id } = (req.body as { user_id?: string; item_type?: string; item_id?: string }) || {};
+    if (!user_id || !item_type || !item_id) {
+      return res.status(400).json({ error: 'Missing fields' });
+    }
     const { error } = await supabase
       .from('favorites')
       .delete()
-      .eq('user_id', userId)
+      .eq('user_id', user_id)
       .eq('item_type', item_type)
       .eq('item_id', item_id);
-
     if (error) {
-      res.status(500).json({ error: error.message });
-      return;
+      logErrorToProduction('Error removing favorite:', { data: error });
+      return res.status(500).json({ error: 'Failed to remove favorite' });
     }
-
-    res.status(200).json({ success: true });
-    return;
+    return res.status(200).json({ message: 'Removed' });
   }
 
-  res.status(405).end();
+  res.setHeader('Allow', ['GET', 'POST', 'DELETE']);
+  return res.status(405).end(`Method ${req.method} Not Allowed`);
 }
+
+export default withErrorLogging(handler);

@@ -1,19 +1,22 @@
 
 import React, { useState } from "react";
-import { MobileHeader } from "../components/common/MobileHeader";
-import { BottomNavigation } from "../components/common/BottomNavigation";
+import { MobileHeader } from "@/mobile/components/common/MobileHeader";
+import { BottomNavigation } from "@/mobile/components/common/BottomNavigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { 
-  Select, 
+import { Zap, ChevronLeft, ChevronRight } from 'lucide-react';
+import {
+  Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue 
+  SelectValue
 } from "@/components/ui/select";
-import { Zap, ChevronLeft, ChevronRight } from "lucide-react";
+
+
+
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 

@@ -29,7 +29,7 @@ export function useMessagingRealtime(
           table: 'messages', 
           filter: `recipient_id=eq.${user.id}` 
         }, 
-        (payload) => {
+        (payload: any) => {
           // Update messages if the conversation is selected
           if (activeConversation && payload.new.sender_id === activeConversation.other_user.id) {
             setActiveMessages(prev => [...prev, payload.new as Message]);

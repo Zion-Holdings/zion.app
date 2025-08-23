@@ -13,10 +13,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from '@/components/ui/button';
 import { toast } from '@/hooks/use-toast';
 import { Share, Users } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+
+
+import { useRouter } from 'next/router'; // Changed from useNavigate
 
 export default function ReferralsPage() {
-  const navigate = useNavigate();
+  const router = useRouter(); // Changed from navigate
   const { isAuthenticated } = useAuth();
   const {
     isLoading,
@@ -36,9 +38,9 @@ export default function ReferralsPage() {
         description: "Please login to access the referral program",
         variant: "destructive",
       });
-      navigate("/login");
+      router.push("/login"); // Changed to router.push
     }
-  }, [isAuthenticated, navigate]);
+  }, [isAuthenticated, router]); // Changed navigate to router in dependencies
 
   const referralLink = getReferralLink();
 

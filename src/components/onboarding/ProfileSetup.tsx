@@ -3,7 +3,11 @@ import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { User, Mail, AtSign, GraduationCap } from "lucide-react";
+import { User, Mail, AtSign, GraduationCap } from 'lucide-react';
+
+
+
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -17,7 +21,7 @@ import {
 } from "@/components/ui/form";
 
 const profileSchema = z.object({
-  displayName: z.string().min(2, "Name must be at least 2 characters"),
+  displayName: z.string().min(2, "Full Name must be at least 2 characters"),
   bio: z.string().min(10, "Bio must be at least 10 characters").max(500, "Bio must be less than 500 characters"),
   headline: z.string().min(5, "Headline must be at least 5 characters").max(100, "Headline must be less than 100 characters"),
 });
@@ -66,7 +70,7 @@ export function ProfileSetup({ onComplete, userType }: ProfileSetupProps) {
           <FormField
             control={form.control}
             name="displayName"
-            render={({ field }) => (
+            render={({ field }: { field: any }) => (
               <FormItem>
                 <FormLabel className="text-zion-slate-light">Full Name</FormLabel>
                 <FormControl>
@@ -87,7 +91,7 @@ export function ProfileSetup({ onComplete, userType }: ProfileSetupProps) {
           <FormField
             control={form.control}
             name="headline"
-            render={({ field }) => (
+            render={({ field }: { field: any }) => (
               <FormItem>
                 <FormLabel className="text-zion-slate-light">Professional Headline</FormLabel>
                 <FormControl>
@@ -112,7 +116,7 @@ export function ProfileSetup({ onComplete, userType }: ProfileSetupProps) {
           <FormField
             control={form.control}
             name="bio"
-            render={({ field }) => (
+            render={({ field }: { field: any }) => (
               <FormItem>
                 <FormLabel className="text-zion-slate-light">Bio</FormLabel>
                 <FormControl>

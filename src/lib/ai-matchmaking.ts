@@ -1,5 +1,5 @@
-
 // AI Matchmaking utility functions
+import {logErrorToProduction} from "@/utils/productionLogger";
 
 export interface MatchResultItem {
   id: string;
@@ -72,13 +72,13 @@ export async function findMatches(
       item,
       score: Math.floor(Math.random() * 40) + 60, // Random score between 60 and 99
       matchedSkills: item.skills?.slice(0, 2) || [],
-      reason: `This ${item.category.split(' - ')[0].toLowerCase()} matches your needs based on the provided description.`
+      reason: `This ${(item.category?.split(' - ')[0] || 'item').toLowerCase()} matches your needs based on the provided description.`
     }));
     
     // Sort by score
     return matches.sort((a, b) => b.score - a.score).slice(0, limit);
   } catch (error) {
-    console.error("Error in matchmaking:", error);
+    logErrorToProduction('Error in matchmaking:', { data: error });
     return [];
   }
 }

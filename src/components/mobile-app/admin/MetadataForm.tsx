@@ -7,7 +7,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Badge } from "@/components/ui/badge";
-import { X } from "lucide-react";
+import { X } from 'lucide-react';
+
 
 interface MetadataFormProps {
   form: UseFormReturn<AppMetadataValues>;
@@ -51,7 +52,7 @@ export const MetadataForm: React.FC<MetadataFormProps> = ({ form }) => {
             <FormField
               control={control}
               name="appTitle"
-              render={({ field }) => (
+              render={({ field }: { field: any }) => (
                 <FormItem>
                   <FormLabel>App Title</FormLabel>
                   <FormControl>
@@ -71,7 +72,7 @@ export const MetadataForm: React.FC<MetadataFormProps> = ({ form }) => {
             <FormField
               control={control}
               name="shortDescription"
-              render={({ field }) => (
+              render={({ field }: { field: any }) => (
                 <FormItem>
                   <FormLabel>Short Description</FormLabel>
                   <FormControl>
@@ -91,7 +92,7 @@ export const MetadataForm: React.FC<MetadataFormProps> = ({ form }) => {
             <FormField
               control={control}
               name="longDescription"
-              render={({ field }) => (
+              render={({ field }: { field: any }) => (
                 <FormItem>
                   <FormLabel>Long Description</FormLabel>
                   <FormControl>
@@ -122,10 +123,11 @@ export const MetadataForm: React.FC<MetadataFormProps> = ({ form }) => {
                 {keywords.map((keyword, index) => (
                   <Badge key={index} className="bg-zion-purple/60 hover:bg-zion-purple">
                     {keyword}
-                    <button 
+                    <button
                       type="button"
                       onClick={() => removeKeyword(keyword)}
-                      className="ml-1 hover:text-red-300"
+                      className="ml-1 hover:text-red-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded"
+                      aria-label="Remove keyword"
                     >
                       <X className="h-3 w-3" />
                     </button>
@@ -140,7 +142,7 @@ export const MetadataForm: React.FC<MetadataFormProps> = ({ form }) => {
             <FormField
               control={control}
               name="version"
-              render={({ field }) => (
+              render={({ field }: { field: any }) => (
                 <FormItem>
                   <FormLabel>App Version</FormLabel>
                   <FormControl>

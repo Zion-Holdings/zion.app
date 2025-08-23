@@ -5,7 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ClickableBadge } from "@/components/ui/clickable-badge";
-import { PlusCircle, Save, Trash, Play } from "lucide-react";
+import { PlusCircle, Save, Trash } from 'lucide-react';
+
+
+
 import { useWebhooks, WebhookEventType } from "@/hooks/useWebhooks";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "sonner";
@@ -220,7 +223,7 @@ export function WebhookManager() {
                     <div>
                       <Label className="text-sm">Events</Label>
                       <div className="flex flex-wrap gap-2 mt-1">
-                        {webhook.event_types.map(event => (
+                        {webhook.event_types.map((event: WebhookEventType) => (
                           <ClickableBadge key={event} variant="secondary">
                             {eventOptions.find(e => e.value === event)?.label || event}
                           </ClickableBadge>
@@ -251,7 +254,7 @@ export function WebhookManager() {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="test_event">Test (generic)</SelectItem>
-                      {webhook.event_types.map(event => (
+                      {webhook.event_types.map((event: WebhookEventType) => (
                         <SelectItem key={event} value={event}>
                           Test {eventOptions.find(e => e.value === event)?.label || event}
                         </SelectItem>

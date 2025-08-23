@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { TalentProfile } from "@/components/profile/TalentProfile";
 import { ProfileLoadingState } from "@/components/profile/ProfileLoadingState";
 import { ProfileErrorState } from "@/components/profile/ProfileErrorState";
@@ -10,16 +9,19 @@ import { HireRequestModal } from "@/components/profile/hire-request";
 import { useAuthStatus } from "@/hooks/talent";
 import { MessageTalentModal } from "@/components/messaging/MessageTalentModal";
 import { StickyAction } from "@/components/ui/sticky-action";
-import { Handshake, MessageSquare } from "lucide-react";
+import { Handshake, MessageSquare } from 'lucide-react';
+
+
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
 import { UserProfile } from "@/types/auth";
 import { toast } from "@/hooks/use-toast";
+import { SEO } from "@/components/SEO";
 
 export default function TalentProfilePage() {
-  // Cast to specify the expected route param type since useParams may be untyped
-  const { id } = useParams() as { id?: string };
-  const navigate = useNavigate();
+  const router = useRouter();
+  // Get id from Next.js router query params
+  const { id } = router.query as { id?: string };
   const { profile, isLoading, error } = useTalentProfile(id);
   const [isHireModalOpen, setIsHireModalOpen] = useState(false);
   const [isMessageModalOpen, setIsMessageModalOpen] = useState(false);
@@ -31,20 +33,24 @@ export default function TalentProfilePage() {
     id: user.id || '',
     displayName: user.displayName || '',
     email: user.email || '', // Ensure email is always a string
-    userType: user.userType || '',
+    userType: user.userType || null,
     profileComplete: user.profileComplete || false,
-    createdAt: user.createdAt || new Date().toISOString(),
-    updatedAt: user.updatedAt || new Date().toISOString(),
-    role: user.role || ''
+    created_at: user.created_at || new Date().toISOString(),
+    updated_at: user.updatedAt || new Date().toISOString(),
+    role: user.role || '',
+    name: user.name || '',
+    points: user.points || 0
   } : {
     id: userDetails?.id || '',
     displayName: userDetails?.name || '',
     email: userDetails?.email || '', // Ensure email is always a string
-    userType: '', // Default empty string since userDetails doesn't have this property
+    userType: null, // Default empty string since userDetails doesn't have this property
     profileComplete: false, // Default value since userDetails doesn't have this property
-    createdAt: new Date().toISOString(), // Default value since userDetails doesn't have this property
-    updatedAt: new Date().toISOString(), // Default value since userDetails doesn't have this property
-    role: '' // Default empty string since userDetails doesn't have this property
+    created_at: new Date().toISOString(), // Default value since userDetails doesn't have this property
+    updated_at: new Date().toISOString(), // Default value since userDetails doesn't have this property
+    role: '', // Default empty string since userDetails doesn't have this property
+    name: '',
+    points: 0
   };
 
   // Handle loading error gracefully
@@ -73,7 +79,7 @@ export default function TalentProfilePage() {
         description: "Please sign in to hire this talent.",
         variant: "default",
       });
-      navigate('/login', { state: { from: `/talent/${id}` } });
+      router.push(`/login?returnTo=${encodeURIComponent(`/talent/${id}`)}`);
       return;
     }
     setIsHireModalOpen(true);
@@ -86,16 +92,22 @@ export default function TalentProfilePage() {
         description: "Please sign in to message this talent.",
         variant: "default",
       });
-      navigate('/login', { state: { from: `/talent/${id}` } });
+      router.push(`/login?returnTo=${encodeURIComponent(`/talent/${id}`)}`);
       return;
     }
     setIsMessageModalOpen(true);
   };
 
   return (
-    <div className="min-h-screen bg-zion-blue pb-12">
-      <TalentProfile 
-        profile={profile} 
+    <>
+      <SEO
+        title={profile.full_name}
+        description={profile.bio || 'Talent profile'}
+        ogImage={profile.profile_picture_url}
+      />
+      <div className="min-h-screen bg-zion-blue pb-12">
+      <TalentProfile
+        profile={profile}
         onRequestHire={handleRequestHire}
         onMessageTalent={handleMessageTalent}
       />
@@ -139,5 +151,6 @@ export default function TalentProfilePage() {
         onClose={() => setIsMessageModalOpen(false)}
       />
     </div>
+    </>
   );
 }

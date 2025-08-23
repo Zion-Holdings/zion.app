@@ -1,22 +1,8 @@
-import { Fragment } from "react";
-import { Route, Routes } from "react-router-dom";
-import EnterprisePlans from "../pages/EnterprisePlans";
-import EnterpriseAdmin from "../pages/EnterpriseAdmin";
-import CompanyWorkspace from "../pages/CompanyWorkspace";
-import EnterpriseBilling from "../pages/EnterpriseBilling";
+// Routes have been converted to Next.js pages structure
+// This component is no longer needed since Next.js uses file-based routing
 
 const EnterpriseRoutes = () => {
-  return (
-    <Routes>
-      {/* Enterprise Routes */}
-      <Route path="/enterprise" element={<EnterprisePlans />} />
-      <Route path="/plans/enterprise" element={<EnterprisePlans />} />
-      <Route path="/enterprise/admin" element={<EnterpriseAdmin />} />
-      <Route path="/company/:companySlug" element={<CompanyWorkspace />} />
-      <Route path="/enterprise/billing" element={<EnterpriseBilling />} />
-      
-    </Routes>
-  );
+  return null;
 };
 
 export default EnterpriseRoutes;

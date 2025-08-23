@@ -5,6 +5,12 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from '@/components/ui/alert-dialog';
 import { Edit, Trash2, Github, Link, FileText } from 'lucide-react';
+
+
+
+
+
+import Image from 'next/image';
 import { PortfolioProject } from '@/types/resume';
 
 interface ProjectCardProps {
@@ -27,10 +33,12 @@ export function ProjectCard({ project, onEdit, onDelete }: ProjectCardProps) {
     <Card className="h-full flex flex-col">
       <div className="relative h-48 overflow-hidden rounded-t-lg bg-muted">
         {project.image_url ? (
-          <img 
-            src={project.image_url} 
-            alt={project.title} 
-            className="w-full h-full object-cover"
+          <Image
+            src={project.image_url}
+            alt={project.title}
+            fill
+            className="object-cover"
+            loading="lazy"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-muted">
@@ -69,7 +77,7 @@ export function ProjectCard({ project, onEdit, onDelete }: ProjectCardProps) {
               aria-label="GitHub"
               title="GitHub"
             >
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" aria-label="GitHub link">
                 <Github className="h-4 w-4" />
               </Button>
             </a>
@@ -83,7 +91,7 @@ export function ProjectCard({ project, onEdit, onDelete }: ProjectCardProps) {
               aria-label="Live demo"
               title="Live demo"
             >
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" aria-label="Live demo link">
                 <Link className="h-4 w-4" />
               </Button>
             </a>
@@ -91,10 +99,10 @@ export function ProjectCard({ project, onEdit, onDelete }: ProjectCardProps) {
         </div>
         
         <div className="flex gap-2">
-          <Button variant="ghost" size="icon" onClick={() => onEdit(project)}>
+          <Button variant="ghost" size="icon" onClick={() => onEdit(project)} aria-label="Edit project">
             <Edit className="h-4 w-4" />
           </Button>
-          <Button variant="ghost" size="icon" onClick={() => setDeleteDialogOpen(true)}>
+          <Button variant="ghost" size="icon" onClick={() => setDeleteDialogOpen(true)} aria-label="Delete project">
             <Trash2 className="h-4 w-4" />
           </Button>
         </div>

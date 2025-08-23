@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { FraudFlag, FraudStats } from "@/types/fraud";
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 // Import refactored components
 import {
@@ -49,16 +50,16 @@ export default function FraudDetection() {
       // Calculate stats
       const newStats: FraudStats = {
         total_flags: data?.length || 0,
-        pending_flags: data?.filter(flag => flag.status === 'pending').length || 0,
-        suspicious_count: data?.filter(flag => flag.severity === 'suspicious').length || 0,
-        dangerous_count: data?.filter(flag => flag.severity === 'dangerous').length || 0,
-        false_positives: data?.filter(flag => flag.is_false_positive).length || 0,
-        actioned_count: data?.filter(flag => flag.action_taken && flag.action_taken !== 'none').length || 0,
+        pending_flags: data?.filter((flag: any) => flag.status === 'pending').length || 0,
+        suspicious_count: data?.filter((flag: any) => flag.severity === 'suspicious').length || 0,
+        dangerous_count: data?.filter((flag: any) => flag.severity === 'dangerous').length || 0,
+        false_positives: data?.filter((flag: any) => flag.is_false_positive).length || 0,
+        actioned_count: data?.filter((flag: any) => flag.action_taken && flag.action_taken !== 'none').length || 0,
       };
       setStats(newStats);
       
     } catch (error) {
-      console.error("Error fetching fraud flags:", error);
+      logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Error fetching fraud flags' });
       toast({
         title: "Error",
         description: "Failed to load fraud detection data",
@@ -133,7 +134,7 @@ export default function FraudDetection() {
       fetchFraudFlags();
       
     } catch (error) {
-      console.error("Error updating fraud flag:", error);
+      logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Error updating fraud flag' });
       toast({
         title: "Error",
         description: "Failed to update flag",

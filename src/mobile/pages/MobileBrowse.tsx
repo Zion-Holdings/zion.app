@@ -1,11 +1,13 @@
 
 import React, { useState } from "react";
-import { MobileHeader } from "../components/common/MobileHeader";
-import { BottomNavigation } from "../components/common/BottomNavigation";
-import { BrowseFilters } from "../components/browse/BrowseFilters";
-import { BrowseCards } from "../components/browse/BrowseCards";
+import { MobileHeader } from "@/mobile/components/common/MobileHeader";
+import { BottomNavigation } from "@/mobile/components/common/BottomNavigation";
+import { BrowseFilters } from "@/mobile/components/browse/BrowseFilters";
+import { BrowseCards } from "@/mobile/components/browse/BrowseCards";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/hooks/useAuth";
+import { logInfo } from '@/utils/productionLogger';
+
 
 // Mock data for demonstration
 const jobsData = [
@@ -82,11 +84,11 @@ const talentsData = [
 
 export function MobileBrowse() {
   const { user } = useAuth();
-  const isClient = user?.userType === 'employer' || user?.userType === 'buyer';
+  const isClient = user?.userType === 'client' || user?.userType === 'admin';
   const [browseType, setBrowseType] = useState<"jobs" | "talents">(isClient ? "talents" : "jobs");
   
   const handleViewDetails = (id: string) => {
-    console.log(`View details for item ${id}`);
+    logInfo(`View details for item ${id}`);
     // Navigate to details page
   };
   

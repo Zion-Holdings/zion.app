@@ -4,8 +4,14 @@ import { formatDistanceToNow } from "date-fns";
 import { JobApplication } from "@/types/jobs";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { FileText, MessageSquare, HelpCircle, Calendar, ExternalLink, Download } from "lucide-react";
-import { Link } from "react-router-dom";
+import { FileText, MessageSquare, HelpCircle, Calendar, ExternalLink, Download } from 'lucide-react';
+
+
+
+
+
+
+import Link from "next/link";
 import { StatusBadge } from "./StatusBadge";
 import { ApplicationProgress } from "./ApplicationProgress";
 import { toast } from "sonner";
@@ -120,7 +126,7 @@ export function ApplicationCard({ application }: ApplicationCardProps) {
               size="sm"
               asChild
             >
-              <Link to={`/jobs/${application.job_id}`}>
+              <Link href={`/jobs/${application.job_id}`}>
                 <ExternalLink className="h-4 w-4 mr-1" /> View Job
               </Link>
             </Button>
@@ -133,7 +139,7 @@ export function ApplicationCard({ application }: ApplicationCardProps) {
           className="w-full"
           asChild
         >
-          <Link to={`/messages?jobId=${application.job_id}`}>
+          <Link href={`/messages?jobId=${application.job_id}`}>
             <MessageSquare className="h-4 w-4 mr-1" /> Message Client
           </Link>
         </Button>

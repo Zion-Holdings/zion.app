@@ -2,13 +2,17 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { Loader2, Sparkles, Plus, Calendar } from 'lucide-react';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
-  AccordionTrigger,
-} from '@/components/ui/accordion';
-import { Loader2, Sparkles, Plus, Calendar } from 'lucide-react';
+  AccordionTrigger
+} from "@/components/ui/accordion";
+
+
+
+
 import { format, parseISO } from 'date-fns';
 import { MilestoneInput, GeneratedMilestone, useMilestoneGenerator } from '@/hooks/useMilestoneGenerator';
 import { Badge } from '@/components/ui/badge';
@@ -47,8 +51,8 @@ export function AIMilestoneGenerator({
 
     await generateMilestones(input);
     // Initially select all milestones
-    const initialSelection = {};
-    generatedMilestones.forEach((_, index) => {
+    const initialSelection: Record<number, boolean> = {};
+    generatedMilestones.forEach((_, index: number) => {
       initialSelection[index] = true;
     });
     setSelectedMilestones(initialSelection);

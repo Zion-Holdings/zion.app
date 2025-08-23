@@ -1,5 +1,5 @@
 
-import { UseFormReturn } from "react-hook-form";
+import { UseFormReturn, ControllerRenderProps } from "react-hook-form";
 import { 
   FormField, 
   FormItem, 
@@ -17,19 +17,16 @@ import {
   SelectValue 
 } from "@/components/ui/select";
 import { MilestoneSuggestions } from "@/components/projects/milestones/MilestoneSuggestions";
-import { TalentProfile } from "@/types/talent";
 import { GeneratedMilestone } from "@/hooks/useMilestoneGenerator";
 import { ContractFormValues } from "./ContractForm";
 
 interface PaymentTermsFieldsProps {
   form: UseFormReturn<ContractFormValues>;
-  talent: TalentProfile;
   handleMilestonesGenerated: (milestones: GeneratedMilestone[]) => void;
 }
 
 export function PaymentTermsFields({ 
   form, 
-  talent,
   handleMilestonesGenerated 
 }: PaymentTermsFieldsProps) {
   return (
@@ -38,7 +35,7 @@ export function PaymentTermsFields({
         <FormField
           control={form.control}
           name="paymentTerms"
-          render={({ field }) => (
+          render={({ field }: { field: ControllerRenderProps<ContractFormValues, "paymentTerms"> }) => (
             <FormItem>
               <FormLabel>Payment Terms</FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
@@ -61,7 +58,7 @@ export function PaymentTermsFields({
         <FormField
           control={form.control}
           name="paymentAmount"
-          render={({ field }) => (
+          render={({ field }: { field: ControllerRenderProps<ContractFormValues, "paymentAmount"> }) => (
             <FormItem>
               <FormLabel>Payment Amount</FormLabel>
               <FormControl>

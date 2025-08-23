@@ -1,11 +1,10 @@
 
 import React from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, ControllerRenderProps } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -61,7 +60,7 @@ export function WhitelabelRequestForm() {
       };
       
       // Submit to Supabase
-      const { data, error } = await supabase
+      const { error } = await supabase
         .from('whitelabel_tenants')
         .insert(tenantData)
         .select()
@@ -100,7 +99,7 @@ export function WhitelabelRequestForm() {
               <FormField
                 control={form.control}
                 name="brand_name"
-                render={({ field }) => (
+                render={({ field }: { field: ControllerRenderProps<FormValues, "brand_name"> }) => (
                   <FormItem>
                     <FormLabel>Brand Name</FormLabel>
                     <FormControl>
@@ -114,7 +113,7 @@ export function WhitelabelRequestForm() {
               <FormField
                 control={form.control}
                 name="subdomain"
-                render={({ field }) => (
+                render={({ field }: { field: ControllerRenderProps<FormValues, "subdomain"> }) => (
                   <FormItem>
                     <FormLabel>Subdomain</FormLabel>
                     <FormControl>
@@ -131,7 +130,7 @@ export function WhitelabelRequestForm() {
               <FormField
                 control={form.control}
                 name="custom_domain"
-                render={({ field }) => (
+                render={({ field }: { field: ControllerRenderProps<FormValues, "custom_domain"> }) => (
                   <FormItem>
                     <FormLabel>Custom Domain (Optional)</FormLabel>
                     <FormControl>
@@ -145,7 +144,7 @@ export function WhitelabelRequestForm() {
               <FormField
                 control={form.control}
                 name="primary_color"
-                render={({ field }) => (
+                render={({ field }: { field: ControllerRenderProps<FormValues, "primary_color"> }) => (
                   <FormItem>
                     <FormLabel>Primary Brand Color</FormLabel>
                     <FormControl>
@@ -162,7 +161,7 @@ export function WhitelabelRequestForm() {
               <FormField
                 control={form.control}
                 name="theme_preset"
-                render={({ field }) => (
+                render={({ field }: { field: ControllerRenderProps<FormValues, "theme_preset"> }) => (
                   <FormItem>
                     <FormLabel>Theme Preset</FormLabel>
                     <Select onValueChange={field.onChange} defaultValue={field.value}>
@@ -190,7 +189,7 @@ export function WhitelabelRequestForm() {
                 <FormField
                   control={form.control}
                   name="headline"
-                  render={({ field }) => (
+                  render={({ field }: { field: ControllerRenderProps<FormValues, "headline"> }) => (
                     <FormItem>
                       <FormLabel>Headline</FormLabel>
                       <FormControl>
@@ -204,7 +203,7 @@ export function WhitelabelRequestForm() {
                 <FormField
                   control={form.control}
                   name="subtitle"
-                  render={({ field }) => (
+                  render={({ field }: { field: ControllerRenderProps<FormValues, "subtitle"> }) => (
                     <FormItem>
                       <FormLabel>Subtitle</FormLabel>
                       <FormControl>
@@ -218,7 +217,7 @@ export function WhitelabelRequestForm() {
                 <FormField
                   control={form.control}
                   name="cta"
-                  render={({ field }) => (
+                  render={({ field }: { field: ControllerRenderProps<FormValues, "cta"> }) => (
                     <FormItem>
                       <FormLabel>CTA Button Text</FormLabel>
                       <FormControl>

@@ -1,10 +1,18 @@
-
+import React from 'react';
+import { useRouter } from 'next/router';
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { MapPin, Clock, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { MapPin, Clock, ArrowRight, CheckCircle2 } from 'lucide-react';
+
+
+
+
 import { FavoriteButton } from "@/components/FavoriteButton";
-import { useNavigate } from "react-router-dom";
 import { TalentProfile } from "@/types/talent";
+import { RatingStars } from '@/components/RatingStars';
+import { useAuth } from '@/context/auth/AuthProvider';
+import { useCart } from '@/context/CartContext';
 
 export interface TalentCardProps {
   talent: TalentProfile;
@@ -13,17 +21,17 @@ export interface TalentCardProps {
   isAuthenticated: boolean;
 }
 
-export function TalentCard({
+const TalentCardComponent = ({
   talent,
   onViewProfile,
   onRequestHire,
   isAuthenticated
-}: TalentCardProps) {
-  const navigate = useNavigate();
+}: TalentCardProps) => {
+  const router = useRouter();
   
   const handleViewProfile = () => {
     // Navigate directly to the talent profile
-    navigate(`/talent/${talent.id}`);
+    router.push(`/talent/${talent.id}`);
     
     // Also call the onViewProfile callback if provided
     if (onViewProfile) {
@@ -55,10 +63,11 @@ export function TalentCard({
           <div className="relative mr-4">
             <div className="w-16 h-16 rounded-full overflow-hidden bg-zion-blue-dark border border-zion-blue-light">
               {talent.profile_picture_url ? (
-                <img 
-                  src={talent.profile_picture_url} 
-                  alt={talent.full_name} 
-                  className="w-full h-full object-cover" 
+                <img
+                  src={talent.profile_picture_url}
+                  alt={talent.full_name}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center text-zion-slate-light text-xl font-bold">
@@ -77,7 +86,7 @@ export function TalentCard({
           <div className="flex-1">
             <div className="flex justify-between items-start">
               <h3 className="text-lg font-bold text-white">{talent.full_name}</h3>
-              <FavoriteButton itemId={talent.id} itemType="talent" className="-mt-1" />
+              <FavoriteButton itemId={talent.id} className="-mt-1" />
             </div>
             <p className="text-white font-medium">{talent.professional_title}</p>
             
@@ -160,4 +169,7 @@ export function TalentCard({
       </div>
     </Card>
   );
-}
+};
+
+export const TalentCard = React.memo(TalentCardComponent);
+TalentCard.displayName = 'TalentCard';

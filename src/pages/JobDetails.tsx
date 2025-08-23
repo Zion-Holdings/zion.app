@@ -1,12 +1,16 @@
-
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router'; // Changed from useParams, useNavigate
 import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, Clock, DollarSign, Tag, Users, Briefcase } from '@/components/icons';
+import { Calendar, Clock, DollarSign, Tag, Users, Briefcase } from 'lucide-react';
+
+
+
+
+
+
 import { formatDistanceToNow } from 'date-fns';
 import { toast } from 'sonner';
 import { useAuth } from '@/hooks/useAuth';
@@ -14,23 +18,39 @@ import useJobDetails from '@/hooks/useJobDetails';
 import { ApplyToJobModal } from '@/components/messaging/job-application';
 import { SEO } from '@/components/SEO';
 import { useWhitelabel } from '@/context/WhitelabelContext';
+import { JobDetailsSkeleton } from '@/components/jobs';
+
+interface Job {
+  id: string;
+  title: string;
+  description: string;
+  company_name?: string;
+  budget: { min: number; max: number };
+  client_id: string;
+  skills?: string[];
+  created_at: string;
+  category: string;
+  deadline?: string;
+}
 
 export default function JobDetails() {
-  // Cast to specify the expected route param type since useParams may be untyped
-  const { jobId } = useParams() as { jobId?: string };
-  const { job, isLoading, error } = useJobDetails(jobId);
+  const router = useRouter(); // Init router
+  const { jobId: rawJobId } = router.query; // Get jobId from query
+  const jobId = typeof rawJobId === 'string' ? rawJobId : undefined;
+  const { job, isLoading, error } = useJobDetails(jobId) as { job: Job | undefined, isLoading: boolean, error: any };
   const { user, isAuthenticated } = useAuth();
-  const navigate = useNavigate();
+  // navigate is now router
   const { isWhitelabel, brandName } = useWhitelabel();
   
   const [isApplyModalOpen, setIsApplyModalOpen] = useState(false);
 
+  const formatBudget = (budget: any) => {
+    if (!budget) return "Not specified";
+    return `$${budget.min} - $${budget.max}`;
+  };
+
   if (isLoading) {
-    return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
-      </div>
-    );
+    return <JobDetailsSkeleton />;
   }
 
   if (error || !job) {
@@ -40,9 +60,8 @@ export default function JobDetails() {
         <div className="container mx-auto px-4 py-16 text-center">
           <h1 className="text-2xl font-bold mb-4">Job Not Found</h1>
           <p className="mb-8">The job you're looking for doesn't exist or has been removed.</p>
-          <Button onClick={() => navigate('/jobs')}>View All Jobs</Button>
+          <Button onClick={() => router.push('/careers')}>View All Jobs</Button>
         </div>
-        <Footer />
       </>
     );
   }
@@ -50,11 +69,11 @@ export default function JobDetails() {
   const handleApply = () => {
     if (!isAuthenticated) {
       toast.error("Please log in to apply for this job");
-      navigate('/login?redirect=' + encodeURIComponent(`/jobs/${jobId}`));
+      router.push(`/login?redirect=${encodeURIComponent(`/jobs/${jobId || ''}`)}`); // Added null check for jobId
       return;
     }
-    
-    if (user?.userType !== "jobSeeker" && user?.userType !== "talent") {
+
+    if (user?.userType !== "talent" && user?.userType !== "admin" && user?.userType !== "client") {
       toast.error("Only job seekers can apply for jobs");
       return;
     }
@@ -67,10 +86,6 @@ export default function JobDetails() {
     setIsApplyModalOpen(false);
   };
 
-  const formatBudget = (budget: any) => {
-    if (!budget) return "Not specified";
-    return `$${budget.min} - $${budget.max}`;
-  };
 
   const isOwnJob = user?.id === job.client_id;
 
@@ -86,7 +101,7 @@ export default function JobDetails() {
           <Button 
             variant="outline" 
             size="sm"
-            onClick={() => navigate('/jobs')}
+            onClick={() => router.push('/careers')}
           >
             ← Back to Jobs
           </Button>
@@ -178,7 +193,6 @@ export default function JobDetails() {
           </div>
         </div>
       </main>
-      <Footer />
       
       {/* Job application modal */}
       {job && (
@@ -187,9 +201,9 @@ export default function JobDetails() {
             id: job.id,
             title: job.title,
             description: job.description,
-            company_name: job.company_name || "Company",
-            budget: job.budget,
-            client_id: job.client_id
+            company_name: job.company_name ?? "Company",
+            budget: formatBudget(job.budget),
+            client_id: job.client_id,
           }}
           isOpen={isApplyModalOpen}
           onClose={() => setIsApplyModalOpen(false)}

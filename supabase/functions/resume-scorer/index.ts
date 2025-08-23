@@ -60,6 +60,7 @@ serve(async (req) => {
     // 2. Fetch resume details if a resume_id is provided
     let resumeContent = "";
     let resumeSkills: string[] = [];
+    let resumeCerts: string[] = [];
     
     if (application.resume_id) {
       const { data: resume, error: resumeError } = await supabase
@@ -69,7 +70,8 @@ serve(async (req) => {
           headline,
           resume_skills!inner(name, category, years_experience),
           work_history!inner(company_name, role_title, start_date, end_date, description),
-          education!inner(institution, degree, field_of_study)
+          education!inner(institution, degree, field_of_study),
+          certifications!inner(name, issuing_organization)
         `)
         .eq("id", application.resume_id)
         .single();
@@ -89,15 +91,19 @@ serve(async (req) => {
           ).join("\n\n")}
           
           Education:
-          ${resume.education.map((edu: any) => 
+          ${resume.education.map((edu: any) =>
             `${edu.degree} in ${edu.field_of_study || ""} from ${edu.institution}`
           ).join("\n")}
-          
+
           Skills:
           ${resume.resume_skills.map((skill: any) => skill.name).join(", ")}
+
+          Certifications:
+          ${resume.certifications.map((cert: any) => `${cert.name} from ${cert.issuing_organization}`).join(", ")}
         `;
         
         resumeSkills = resume.resume_skills.map((skill: any) => skill.name);
+        resumeCerts = resume.certifications.map((cert: any) => cert.name);
       }
     }
     
@@ -109,6 +115,7 @@ serve(async (req) => {
         Skills: ${application.talent_profile?.skills?.join(", ") || ""}
       `;
       resumeSkills = application.talent_profile?.skills || [];
+      resumeCerts = [];
     }
 
     // 4. Prepare job details
@@ -128,9 +135,7 @@ serve(async (req) => {
         messages: [
           {
             role: "system",
-            content: `You are an expert resume analyzer that compares resumes against job descriptions
-            to determine how well a candidate matches a job. Analyze the resume and job details 
-            provided, focusing on skills, experience, and qualifications.`
+            content: `You are an expert resume analyzer that compares candidate resumes to a job description. Focus on required skills, minimum experience level, and any certifications mentioned in the job.`
           },
           {
             role: "user",
@@ -139,14 +144,16 @@ serve(async (req) => {
             Title: ${jobTitle}
             Description: ${jobDescription}
             Required Skills: ${jobSkills.join(", ")}
-            
+
+            Candidate Certifications: ${resumeCerts.join(", ")}
+
             # Resume Content
             ${resumeContent}
-            
+
             Compare the resume to the job description and provide:
             1. A match score between 0-100 (where 100 is a perfect match)
             2. A brief summary of why this score was given (1-2 sentences)
-            3. A detailed breakdown of how well the candidate's skills and experience align with job requirements
+            3. A detailed breakdown of how well the candidate's skills, experience, and certifications align with job requirements
             4. A suggestion categorization: "Strongly Recommended", "Recommended for Review", or "Low Match"
             
             Respond in JSON format with the following structure:
@@ -162,6 +169,11 @@ serve(async (req) => {
                 "experience_match": {
                   "score": 70,
                   "analysis": "Candidate has X years experience in relevant field."
+                },
+                "certifications_match": {
+                  "score": 50,
+                  "matching": ["cert1"],
+                  "missing": ["cert2"]
                 },
                 "education_match": {
                   "score": 65,

@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -6,15 +5,21 @@ import { z } from 'zod';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import {logErrorToProduction} from '@/utils/productionLogger';
+import { Loader2, Link, FileImage, Github, Edit } from 'lucide-react';
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
-  FormMessage,
-} from '@/components/ui/form';
-import { Loader2, Link, FileImage, Github, Edit } from 'lucide-react';
+  FormMessage
+} from "@/components/ui/form";
+
+
+
+
+
 import { PortfolioProject } from '@/types/resume';
 import { usePortfolio } from '@/hooks/usePortfolio';
 import { useAuth } from '@/hooks/useAuth';
@@ -92,7 +97,7 @@ export function ProjectForm({ project, onSuccess, onCancel }: ProjectFormProps) 
         form.reset();
       }
     } catch (error) {
-      console.error('Error saving project:', error);
+      logErrorToProduction('Error saving project:', { data: error });
     } finally {
       setIsLoading(false);
     }
@@ -104,7 +109,7 @@ export function ProjectForm({ project, onSuccess, onCancel }: ProjectFormProps) 
         <FormField
           control={form.control}
           name="title"
-          render={({ field }) => (
+          render={({ field }: { field: any }) => (
             <FormItem>
               <FormLabel>Project Title</FormLabel>
               <FormControl>
@@ -118,7 +123,7 @@ export function ProjectForm({ project, onSuccess, onCancel }: ProjectFormProps) 
         <FormField
           control={form.control}
           name="description"
-          render={({ field }) => (
+          render={({ field }: { field: any }) => (
             <FormItem>
               <FormLabel>Project Description</FormLabel>
               <FormControl>
@@ -136,7 +141,7 @@ export function ProjectForm({ project, onSuccess, onCancel }: ProjectFormProps) 
         <FormField
           control={form.control}
           name="technologies"
-          render={({ field }) => (
+          render={({ field }: { field: any }) => (
             <FormItem>
               <FormLabel>Technologies Used</FormLabel>
               <FormControl>
@@ -151,7 +156,7 @@ export function ProjectForm({ project, onSuccess, onCancel }: ProjectFormProps) 
           <FormField
             control={form.control}
             name="github_url"
-            render={({ field }) => (
+            render={({ field }: { field: any }) => (
               <FormItem>
                 <FormLabel className="flex items-center gap-2">
                   <Github className="h-4 w-4" />
@@ -168,7 +173,7 @@ export function ProjectForm({ project, onSuccess, onCancel }: ProjectFormProps) 
           <FormField
             control={form.control}
             name="demo_url"
-            render={({ field }) => (
+            render={({ field }: { field: any }) => (
               <FormItem>
                 <FormLabel className="flex items-center gap-2">
                   <Link className="h-4 w-4" />
@@ -186,7 +191,7 @@ export function ProjectForm({ project, onSuccess, onCancel }: ProjectFormProps) 
         <FormField
           control={form.control}
           name="image_url"
-          render={({ field }) => (
+          render={({ field }: { field: any }) => (
             <FormItem>
               <FormLabel className="flex items-center gap-2">
                 <FileImage className="h-4 w-4" />

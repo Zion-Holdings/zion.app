@@ -1,11 +1,10 @@
 
-import { Header } from "@/components/header";
-import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 import { JobPostingForm } from "@/components/jobs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { SEO } from "@/components/SEO";
 import { useAuth } from "@/hooks/useAuth";
-import { Navigate } from "react-router-dom";
+import { useRouter } from "next/router"; // Changed to named import
 import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function PostJob() {
@@ -40,7 +39,6 @@ export default function PostJob() {
           </CardContent>
         </Card>
       </main>
-      <Footer />
       {/* Add extra bottom padding on mobile to account for the bottom nav */}
       {isMobile && <div className="h-16"></div>}
     </>

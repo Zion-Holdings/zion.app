@@ -1,6 +1,5 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { toast } from "sonner";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -12,14 +11,17 @@ import { DateFields } from './DateFields';
 import { DescriptionFields } from './DescriptionFields';
 import { useJobs } from "@/hooks/useJobs";
 import { JobSchemaType } from './validation';
+import {logErrorToProduction} from '@/utils/productionLogger';
+
 
 interface JobPostingFormProps {
   jobId?: string;
+  
   onSuccess?: () => void;
 }
 
 export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
-  const navigate = useNavigate();
+  // const router = useRouter(); // Available for navigation if needed // Changed from useNavigate
   const { createJob, updateJob, getJobById } = useJobs();
   const [isFormLoading, setIsFormLoading] = useState(false);
   const [editorContent, setEditorContent] = useState("");
@@ -65,7 +67,7 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
           }
         })
         .catch((error) => {
-          console.error("Failed to load job:", error);
+          logErrorToProduction('Failed to load job:', { data: error });
           toast.error("Failed to load job");
         })
         .finally(() => {
@@ -99,7 +101,7 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
         onSuccess();
       }
     } catch (error: any) {
-      console.error("Error creating/updating job:", error);
+      logErrorToProduction('Error creating/updating job:', { data: error });
       toast.error(error.message || "Failed to post job");
     } finally {
       setIsFormLoading(false);

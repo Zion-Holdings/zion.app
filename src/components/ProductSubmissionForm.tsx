@@ -1,11 +1,14 @@
 import React from "react";
-import { useForm } from "react-hook-form";
+import { useForm, ControllerRenderProps } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import z from "zod";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/use-toast";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
+import Image from 'next/image'; // Import next/image
+import {logErrorToProduction} from '@/utils/productionLogger';
+import { Sparkles } from 'lucide-react';
 
 import {
   Form,
@@ -22,17 +25,21 @@ import { Textarea } from "@/components/ui/textarea";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { AIListingGenerator } from "@/components/listing/AIListingGenerator";
-import { Sparkles } from "lucide-react";
+
 
 // Define the form schema with zod
 const productSchema = z.object({
   title: z.string().min(3, "Title must be at least 3 characters"),
   description: z.string().min(10, "Description must be at least 10 characters"),
-  price: z.string().refine((val) => !isNaN(parseFloat(val)) && parseFloat(val) >= 0, {
-    message: "Price must be a valid number",
-  }),
+  price: z
+    .string()
+    .refine((val) => !isNaN(parseFloat(val)) && parseFloat(val) >= 0, {
+      message: "Price must be a valid number",
+    }),
   category: z.string().min(1, "Please select a category"),
-  image: z.instanceof(File).optional(),
+  image: typeof window === 'undefined' ? z.any().optional() : z.instanceof(File).optional(),
+  video: typeof window === 'undefined' ? z.any().optional() : z.instanceof(File).optional(),
+  model: typeof window === 'undefined' ? z.any().optional() : z.instanceof(File).optional(),
   tags: z.string().optional(),
 });
 
@@ -42,7 +49,7 @@ type ProductFormValues = z.infer<typeof productSchema>;
 export function ProductSubmissionForm() {
   const { user } = useAuth();
   const { toast } = useToast();
-  const navigate = useNavigate();
+  const router = useRouter();
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [imagePreview, setImagePreview] = React.useState(null as string | null);
   const [activeTab, setActiveTab] = React.useState("manual");
@@ -55,6 +62,8 @@ export function ProductSubmissionForm() {
       description: "",
       price: "",
       category: "",
+      video: undefined,
+      model: undefined,
       tags: "",
     },
   });
@@ -69,6 +78,20 @@ export function ProductSubmissionForm() {
         setImagePreview(reader.result as string);
       };
       reader.readAsDataURL(file);
+    }
+  };
+
+  const handleVideoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      form.setValue("video", file);
+    }
+  };
+
+  const handleModelChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      form.setValue("model", file);
     }
   };
 
@@ -124,6 +147,8 @@ export function ProductSubmissionForm() {
         throw new Error(productError.message);
       }
 
+      let imagePublicUrl: string | undefined;
+
       // If we have an image, upload it
       if (values.image) {
         const imagePath = `product_images/${productRecord.id}/${values.image.name}`;
@@ -139,18 +164,84 @@ export function ProductSubmissionForm() {
         const { data: publicUrlData } = supabase.storage
           .from('products')
           .getPublicUrl(imagePath);
+        imagePublicUrl = publicUrlData.publicUrl;
           
         // Update the product with the image URL
         const { error: updateError } = await supabase
           .from('product_listings')
-          .update({ 
-            images: [publicUrlData.publicUrl]
+          .update({
+            images: [imagePublicUrl]
           })
           .eq('id', productRecord.id);
           
+      if (updateError) {
+        throw new Error(updateError.message);
+      }
+    }
+
+      // Upload video if provided
+      if (values.video) {
+        const videoPath = `product_videos/${productRecord.id}/${values.video.name}`;
+        const { error: uploadError } = await supabase.storage
+          .from('products')
+          .upload(videoPath, values.video);
+
+        if (uploadError) {
+          throw new Error(uploadError.message);
+        }
+
+        const { data: publicUrlData } = supabase.storage
+          .from('products')
+          .getPublicUrl(videoPath);
+
+        const { error: updateError } = await supabase
+          .from('product_listings')
+          .update({ video_url: publicUrlData.publicUrl })
+          .eq('id', productRecord.id);
+
         if (updateError) {
           throw new Error(updateError.message);
         }
+      }
+
+      // Upload model if provided
+      if (values.model) {
+        const modelPath = `product_models/${productRecord.id}/${values.model.name}`;
+        const { error: uploadError } = await supabase.storage
+          .from('products')
+          .upload(modelPath, values.model);
+
+        if (uploadError) {
+          throw new Error(uploadError.message);
+        }
+
+        const { data: publicUrlData } = supabase.storage
+          .from('products')
+          .getPublicUrl(modelPath);
+
+        const { error: updateError } = await supabase
+          .from('product_listings')
+          .update({ model_url: publicUrlData.publicUrl })
+          .eq('id', productRecord.id);
+
+        if (updateError) {
+          throw new Error(updateError.message);
+        }
+      }
+
+      // Send listing to moderation service
+      try {
+        await supabase.functions.invoke('moderate-listing', {
+          body: {
+            listingId: productRecord.id,
+            listingType: 'product',
+            description: values.description,
+            images: imagePublicUrl ? [imagePublicUrl] : [],
+            sellerId: user.id,
+          }
+        });
+      } catch (err) {
+        logErrorToProduction('Error invoking moderation:', { data: err });
       }
       
       // Show success message
@@ -160,7 +251,7 @@ export function ProductSubmissionForm() {
       });
       
       // Redirect to product page
-      navigate(`/marketplace/listing/${productRecord.id}`);
+      router.push(`/marketplace/listing/${productRecord.id}`);
     } catch (error) {
       toast({
         title: "Publication Failed",
@@ -190,31 +281,40 @@ export function ProductSubmissionForm() {
             <FormField
               control={form.control}
               name="title"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Product Title</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Enter product title" {...field} />
-                  </FormControl>
-                  <FormDescription>
-                    Create a compelling title that describes your product
-                  </FormDescription>
-                  <FormMessage />
-                </FormItem>
-              )}
+              render={({ field }: { field: ControllerRenderProps<ProductFormValues, "title"> }) => {
+                const { onChange, onBlur, value, ref } = field;
+                return (
+                  <FormItem>
+                    <FormLabel>Product Title</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder="Enter product title"
+                        onChange={onChange}
+                        onBlur={onBlur}
+                        value={value}
+                        ref={ref}
+                      />
+                    </FormControl>
+                    <FormDescription>
+                      Create a compelling title that describes your product
+                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                );
+              }}
             />
 
             <FormField
               control={form.control}
               name="description"
-              render={({ field }) => (
+              render={({ field }: { field: ControllerRenderProps<ProductFormValues, "description"> }) => (
                 <FormItem>
                   <FormLabel>Description</FormLabel>
                   <FormControl>
-                    <Textarea 
-                      placeholder="Describe your product in detail..." 
-                      className="min-h-32" 
-                      {...field} 
+                    <Textarea
+                      placeholder="Describe your product in detail..."
+                      className="min-h-32"
+                      {...field}
                     />
                   </FormControl>
                   <FormDescription>
@@ -229,7 +329,7 @@ export function ProductSubmissionForm() {
               <FormField
                 control={form.control}
                 name="price"
-                render={({ field }) => (
+                render={({ field }: { field: ControllerRenderProps<ProductFormValues, "price"> }) => (
                   <FormItem>
                     <FormLabel>Price (USD)</FormLabel>
                     <FormControl>
@@ -246,7 +346,7 @@ export function ProductSubmissionForm() {
               <FormField
                 control={form.control}
                 name="category"
-                render={({ field }) => (
+                render={({ field }: { field: ControllerRenderProps<ProductFormValues, "category"> }) => (
                   <FormItem>
                     <FormLabel>Category</FormLabel>
                     <FormControl>
@@ -272,7 +372,7 @@ export function ProductSubmissionForm() {
             <FormField
               control={form.control}
               name="tags"
-              render={({ field }) => (
+              render={({ field }: { field: ControllerRenderProps<ProductFormValues, "tags"> }) => (
                 <FormItem>
                   <FormLabel>Tags</FormLabel>
                   <FormControl>
@@ -308,14 +408,54 @@ export function ProductSubmissionForm() {
                   {imagePreview && (
                     <div className="mt-2 w-full max-w-md border rounded overflow-hidden">
                       <AspectRatio ratio={3/2}>
-                        <img 
-                          src={imagePreview} 
-                          alt="Preview" 
+                        <Image
+                          src={imagePreview}
+                          alt="Product image preview"
+                          width={600} // Example width, adjust as needed
+                          height={400} // Example height, adjust as needed
                           className="w-full h-full object-cover"
+                          priority={false} // Preview images are not LCP
+                          // `sizes` might not be strictly necessary for a preview of this nature,
+                          // but can be added if responsive behavior is critical here.
+                          // For local object URLs, optimization via loader won't occur.
                         />
                       </AspectRatio>
                     </div>
                   )}
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="video"
+              render={() => (
+                <FormItem>
+                  <FormLabel>Product Video (MP4)</FormLabel>
+                  <FormControl>
+                    <Input type="file" accept="video/mp4" onChange={handleVideoChange} className="cursor-pointer" />
+                  </FormControl>
+                  <FormDescription>
+                    Optional video demonstrating your product
+                  </FormDescription>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="model"
+              render={() => (
+                <FormItem>
+                  <FormLabel>3D Model (glb)</FormLabel>
+                  <FormControl>
+                    <Input type="file" accept="model/gltf-binary,.glb" onChange={handleModelChange} className="cursor-pointer" />
+                  </FormControl>
+                  <FormDescription>
+                    Upload a 3D model for interactive viewing
+                  </FormDescription>
+                  <FormMessage />
                 </FormItem>
               )}
             />

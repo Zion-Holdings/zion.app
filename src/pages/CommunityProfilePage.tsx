@@ -1,6 +1,7 @@
 
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import { SEO } from "@/components/SEO";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -104,7 +105,8 @@ const userPosts: ForumPost[] = [
 ];
 
 export default function CommunityProfilePage() {
-  const { userId } = useParams();
+  const router = useRouter();
+  const userId = router.query.userId as string;
   const [user, setUser] = useState<CommunityUser | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [posts, setPosts] = useState<ForumPost[]>([]);
@@ -132,7 +134,7 @@ export default function CommunityProfilePage() {
       <div className="container py-8">
         <h1>User not found</h1>
         <Button asChild className="mt-4">
-          <Link to="/community">Back to Community</Link>
+          <Link href="/community">Back to Community</Link>
         </Button>
       </div>
     );
@@ -148,7 +150,7 @@ export default function CommunityProfilePage() {
       
       <div className="container py-8">
         <div className="flex items-center gap-3 mb-6">
-          <Link to="/community" className="text-sm text-muted-foreground hover:text-foreground">
+          <Link href="/community" className="text-sm text-muted-foreground hover:text-foreground">
             Forum
           </Link>
           <span className="text-muted-foreground">/</span>
@@ -163,7 +165,7 @@ export default function CommunityProfilePage() {
               <CardHeader className="text-center">
                 <div className="flex justify-center mb-4">
                   <Avatar className="h-24 w-24">
-                    <AvatarImage src={user.avatar} />
+                    <AvatarImage src={user.avatar} alt={user.name} />
                     <AvatarFallback>{user.name.charAt(0)}</AvatarFallback>
                   </Avatar>
                 </div>
@@ -256,7 +258,7 @@ export default function CommunityProfilePage() {
                           {formatDistanceToNow(new Date("2025-04-10T14:30:00Z"), { addSuffix: true })}
                         </div>
                         <div>
-                          <p>Replied to <Link to="/community/post/3" className="text-zion-purple hover:underline">Looking for feedback on my automated testing approach</Link></p>
+                          <p>Replied to <Link href="/community/post/3" className="text-zion-purple hover:underline">Looking for feedback on my automated testing approach</Link></p>
                         </div>
                       </li>
                       <li className="flex items-start gap-4">
@@ -272,7 +274,7 @@ export default function CommunityProfilePage() {
                           {formatDistanceToNow(new Date("2025-04-05T16:40:00Z"), { addSuffix: true })}
                         </div>
                         <div>
-                          <p>Replied to <Link to="/community/post/7" className="text-zion-purple hover:underline">Comparing different vector embedding models</Link></p>
+                          <p>Replied to <Link href="/community/post/7" className="text-zion-purple hover:underline">Comparing different vector embedding models</Link></p>
                         </div>
                       </li>
                       <li className="flex items-start gap-4">
@@ -280,7 +282,7 @@ export default function CommunityProfilePage() {
                           {formatDistanceToNow(new Date("2025-04-01T12:00:00Z"), { addSuffix: true })}
                         </div>
                         <div>
-                          <p>Created post <Link to="/community/post/1" className="text-zion-purple hover:underline">Best practices for AI model fine-tuning</Link></p>
+                          <p>Created post <Link href="/community/post/1" className="text-zion-purple hover:underline">Best practices for AI model fine-tuning</Link></p>
                         </div>
                       </li>
                       <li className="flex items-start gap-4">
@@ -288,7 +290,7 @@ export default function CommunityProfilePage() {
                           {formatDistanceToNow(new Date("2025-03-25T08:20:00Z"), { addSuffix: true })}
                         </div>
                         <div>
-                          <p>Answer was accepted in <Link to="/community/post/15" className="text-zion-purple hover:underline">How to optimize RAG systems for better results</Link></p>
+                          <p>Answer was accepted in <Link href="/community/post/15" className="text-zion-purple hover:underline">How to optimize RAG systems for better results</Link></p>
                         </div>
                       </li>
                     </ul>

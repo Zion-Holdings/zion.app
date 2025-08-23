@@ -1,12 +1,14 @@
+import { Project } from '@/types/projects';
 
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import { useProjects } from '@/hooks/useProjects';
 import { useMilestones } from '@/hooks/useMilestones';
 import { useJobDetails } from '@/hooks/useJobDetails';
 import { useAuth } from '@/hooks/useAuth';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useDisputeCheck } from '@/hooks/useDisputeCheck';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 import { 
   MilestoneActivities,
@@ -17,7 +19,9 @@ import {
 } from './components';
 
 export function ProjectMilestonesContent() {
-  const { projectId } = useParams() as { projectId?: string };
+  const router = useRouter();
+  const { projectId: rawProjectId } = router.query;
+  const projectId = typeof rawProjectId === 'string' ? rawProjectId : undefined;
   const { user } = useAuth();
   const { getProjectById } = useProjects();
   const { 
@@ -31,7 +35,7 @@ export function ProjectMilestonesContent() {
     isSubmitting,
     refetch
   } = useMilestones(projectId);
-  const [project, setProject] = useState<any>(null);
+  const [project, setProject] = useState<Project | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [activeTab, setActiveTab] = useState('milestones');
   const { job, isLoading: jobLoading } = useJobDetails(project?.job_id);
@@ -49,7 +53,7 @@ export function ProjectMilestonesContent() {
           setProject(projectData);
         }
       } catch (error) {
-        console.error("Error loading project:", error);
+        logErrorToProduction('Error loading project:', { data: error });
       } finally {
         setIsLoading(false);
       }
@@ -107,7 +111,7 @@ export function ProjectMilestonesContent() {
         <ProjectActions 
           projectId={projectId || ''}
           isUnderDispute={isUnderDispute}
-          disputeId={disputeId}
+          disputeId={disputeId ?? undefined}
           isTalent={isTalent}
           onAddMilestone={() => setActiveTab('create')}
         />
@@ -152,7 +156,7 @@ export function ProjectMilestonesContent() {
               onCancel={() => setActiveTab('milestones')}
               projectScope={project.scope_summary}
               projectStartDate={project.start_date}
-              projectEndDate={project.end_date}
+              projectEndDate={project.end_date ?? undefined}
               projectType={projectType}
             />
           )}

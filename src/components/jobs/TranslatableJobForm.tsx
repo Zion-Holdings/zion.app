@@ -5,11 +5,15 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
-import { Loader2, Globe } from "lucide-react";
+import { Loader2, Globe } from 'lucide-react';
+
+
 import { useTranslation } from "react-i18next";
 import { useTranslationService } from "@/hooks/useTranslationService";
 import { useLanguage, SupportedLanguage } from "@/context/LanguageContext";
 import { toast } from "@/components/ui/use-toast";
+import {logErrorToProduction} from '@/utils/productionLogger';
+
 
 interface TranslatableJobFormProps {
   onSubmit: (formData: any) => void;
@@ -27,6 +31,7 @@ export function TranslatableJobForm({ onSubmit, isSubmitting = false }: Translat
   const [title, setTitle] = useState<Record<SupportedLanguage, string>>({
     en: "",
     es: "",
+    fr: "",
     pt: "",
     ar: "",
   });
@@ -34,6 +39,7 @@ export function TranslatableJobForm({ onSubmit, isSubmitting = false }: Translat
   const [description, setDescription] = useState<Record<SupportedLanguage, string>>({
     en: "",
     es: "",
+    fr: "",
     pt: "",
     ar: "",
   });
@@ -41,6 +47,7 @@ export function TranslatableJobForm({ onSubmit, isSubmitting = false }: Translat
   const [requirements, setRequirements] = useState<Record<SupportedLanguage, string>>({
     en: "",
     es: "",
+    fr: "",
     pt: "",
     ar: "",
   });
@@ -78,9 +85,10 @@ export function TranslatableJobForm({ onSubmit, isSubmitting = false }: Translat
   };
   
   // Auto translate content when language tab changes
-  const handleTabChange = async (tab: SupportedLanguage) => {
-    if (tab !== activeTab) {
-      setActiveTab(tab);
+  const handleTabChange = async (tab: string) => {
+    const selectedLanguage = tab as SupportedLanguage;
+    if (selectedLanguage !== activeTab) {
+      setActiveTab(selectedLanguage);
     }
   };
   
@@ -140,7 +148,7 @@ export function TranslatableJobForm({ onSubmit, isSubmitting = false }: Translat
         description: t('translation.content_translated'),
       });
     } catch (error) {
-      console.error(`Error translating ${field}:`, error);
+      logErrorToProduction('Error translating ${field}:', { data: error });
       toast({
         title: t('translation.translation_failed'),
         description: error instanceof Error ? error.message : t('translation.unknown_error'),
@@ -153,8 +161,8 @@ export function TranslatableJobForm({ onSubmit, isSubmitting = false }: Translat
   const ensureAllTranslations = async () => {
     const promises = [];
     
-    if (!title.en && !title.es && !title.pt && !title.ar) return;
-    if (!description.en && !description.es && !description.pt && !description.ar) return;
+    if (!title.en && !title.es && !title.fr && !title.pt && !title.ar) return;
+    if (!description.en && !description.es && !description.fr && !description.pt && !description.ar) return;
     
     // Title translations
     if (Object.values(title).some(val => val) && Object.values(title).some(val => !val)) {
@@ -196,7 +204,7 @@ export function TranslatableJobForm({ onSubmit, isSubmitting = false }: Translat
               size="sm"
               variant="outline"
               onClick={() => autoTranslate('title')}
-              disabled={isTranslating || (!title.en && !title.es && !title.pt && !title.ar)}
+              disabled={isTranslating || (!title.en && !title.es && !title.fr && !title.pt && !title.ar)}
               className="flex items-center gap-1"
             >
               {isTranslating ? (
@@ -244,7 +252,7 @@ export function TranslatableJobForm({ onSubmit, isSubmitting = false }: Translat
               size="sm"
               variant="outline"
               onClick={() => autoTranslate('description')}
-              disabled={isTranslating || (!description.en && !description.es && !description.pt && !description.ar)}
+              disabled={isTranslating || (!description.en && !description.es && !description.fr && !description.pt && !description.ar)}
               className="flex items-center gap-1"
             >
               {isTranslating ? (
@@ -290,7 +298,7 @@ export function TranslatableJobForm({ onSubmit, isSubmitting = false }: Translat
               size="sm"
               variant="outline"
               onClick={() => autoTranslate('requirements')}
-              disabled={isTranslating || (!requirements.en && !requirements.es && !requirements.pt && !requirements.ar)}
+              disabled={isTranslating || (!requirements.en && !requirements.es && !requirements.fr && !requirements.pt && !requirements.ar)}
               className="flex items-center gap-1"
             >
               {isTranslating ? (

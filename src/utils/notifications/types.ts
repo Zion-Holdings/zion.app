@@ -1,5 +1,13 @@
-
-export type NotificationType = 'message' | 'quote_request' | 'booking_confirmation' | 'hire_request' | 'onboarding' | 'system';
+export type NotificationType =
+  | 'message'
+  | 'quote_request'
+  | 'booking_confirmation'
+  | 'hire_request'
+  | 'onboarding'
+  | 'system'
+  | 'project_update'
+  | 'milestone_complete'
+  | 'order_status';
 
 export interface CreateNotificationParams {
   userId: string;
@@ -14,7 +22,7 @@ export interface CreateNotificationParams {
 
 export interface CreateNotificationResult {
   success: boolean;
-  notificationId?: string;
+  notificationId?: string | null;
   error?: any;
 }
 

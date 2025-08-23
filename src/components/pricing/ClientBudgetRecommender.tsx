@@ -1,15 +1,17 @@
 
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { 
-  getClientBudgetSuggestion, 
+import {logErrorToProduction} from '@/utils/productionLogger';
+import { Sparkles } from 'lucide-react';
+import {
+  getClientBudgetSuggestion,
   PricingSuggestion,
   ClientBudgetParams,
   trackPricingSuggestion
 } from "@/services/pricingSuggestionService";
 import { PricingSuggestionBox } from "./PricingSuggestionBox";
 import { useAuth } from "@/hooks/useAuth";
-import { Sparkles } from "lucide-react";
+
 
 interface ClientBudgetRecommenderProps {
   jobTitle: string;
@@ -51,7 +53,7 @@ export const ClientBudgetRecommender: React.FC<ClientBudgetRecommenderProps> = (
       const result = await getClientBudgetSuggestion(params);
       setSuggestion(result);
     } catch (error) {
-      console.error("Error generating budget suggestion:", error);
+      logErrorToProduction('Error generating budget suggestion:', { data: error });
     } finally {
       setIsLoading(false);
     }
@@ -62,10 +64,10 @@ export const ClientBudgetRecommender: React.FC<ClientBudgetRecommenderProps> = (
       onSuggestionApplied(suggestion.minRate, suggestion.maxRate);
       
       // Track this suggestion application
-      if (user) {
+      if (user && user.id) {
         trackPricingSuggestion({
           userId: user.id,
-          suggestionType: 'client',
+          suggestionType: "client",
           suggestedMin: suggestion.minRate,
           suggestedMax: suggestion.maxRate,
           accepted: true

@@ -3,18 +3,19 @@ import React, { useState } from "react";
 import { Dispute, DisputeStatus } from "@/types/disputes";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { ShieldAlert } from 'lucide-react';
 import {
   Table,
   TableBody,
   TableCell,
   TableHead,
   TableHeader,
-  TableRow,
+  TableRow
 } from "@/components/ui/table";
-import { Skeleton } from "@/components/ui/skeleton";
+import Skeleton from "@/components/ui/skeleton";
 import { formatDistanceToNow } from "date-fns";
-import { ShieldAlert } from "lucide-react";
-import { Link } from "react-router-dom";
+
+import Link from "next/link";
 
 type DisputesListProps = {
   disputes: Dispute[];
@@ -174,7 +175,7 @@ export function DisputesList({ disputes, isLoading }: DisputesListProps) {
                 </TableCell>
                 <TableCell className="text-right">
                   <Button asChild size="sm">
-                    <Link to={`/dashboard/disputes/${dispute.id}`}>View Details</Link>
+                    <Link href={`/dashboard/disputes/${dispute.id}`}>View Details</Link>
                   </Button>
                 </TableCell>
               </TableRow>

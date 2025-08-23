@@ -1,7 +1,6 @@
-
 import React from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { AnalyticsChart } from "@/components/analytics/AnalyticsChart";
+import { DynamicAnalyticsChart as AnalyticsChart } from "@/utils/dynamicComponents";
 
 interface PageViewsChartProps {
   data: Array<{ date: string; views: number }>;
@@ -19,7 +18,12 @@ export function PageViewsChart({ data, timeRange, onTimeRangeChange }: PageViews
       <CardContent className="p-0 pb-4">
         <AnalyticsChart 
           title=""
-          data={data || []}
+          data={(data || []).map(item => ({
+            name: item.date,
+            value: item.views,
+            date: item.date,
+            views: item.views
+          }))}
           dataKeys={['views']}
           timeRange={timeRange}
           onTimeRangeChange={onTimeRangeChange}

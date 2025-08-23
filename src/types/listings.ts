@@ -1,4 +1,3 @@
-
 export interface ListingCategory {
   id: string;
   name: string;
@@ -22,6 +21,8 @@ export interface ProductListing {
     email?: string; // Added optional email property
   };
   images: string[];
+  videoUrl?: string;
+  modelUrl?: string;
   createdAt: string;
   rating?: number;
   reviewCount?: number;
@@ -29,6 +30,10 @@ export interface ProductListing {
   aiScore?: number; // Added aiScore as optional property
   location?: string; // Adding location property to fix TypeScript errors
   availability?: string; // Adding availability property to fix TypeScript errors
+  stock?: number; // Inventory count
+  brand?: string; // Brand of the equipment
+  specifications?: string[]; // Key specifications for filtering
+  uspHeadline?: string; // Short unique selling point headline
 }
 
 export interface ListingItem {
@@ -39,4 +44,4 @@ export interface ListingItem {
   description?: string;
 }
 
-export type ListingView = 'grid' | 'list';
+export type ListingView = "grid" | "list";

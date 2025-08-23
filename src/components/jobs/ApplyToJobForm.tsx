@@ -1,6 +1,5 @@
-
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { useJobApplications } from "@/hooks/useJobApplications";
 import { useResume } from "@/hooks/useResume";
 import { useAuth } from "@/hooks/useAuth";
@@ -9,7 +8,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { AlertCircle, FileText, Loader2 } from "lucide-react";
+import { AlertCircle, FileText, Loader2 } from 'lucide-react';
+
+
+
 import { formatDistanceToNow } from "date-fns";
 import { Job } from "@/types/jobs";
 import { toast } from "sonner";
@@ -23,10 +25,11 @@ export function ApplyToJobForm({ job, onSuccess }: ApplyToJobFormProps) {
   const { user } = useAuth();
   const { applyToJob } = useJobApplications();
   const { resumes, isLoading: isResumesLoading } = useResume();
-  const navigate = useNavigate();
+  const router = useRouter();
   
   const [coverLetter, setCoverLetter] = useState(`I'm interested in the "${job.title}" position and would like to apply. My skills and experience align well with this role.`);
   const [selectedResumeId, setSelectedResumeId] = useState<string>("");
+  const [resumeFile, setResumeFile] = useState<File | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   
@@ -35,7 +38,7 @@ export function ApplyToJobForm({ job, onSuccess }: ApplyToJobFormProps) {
     
     if (!user) {
       toast.error("You must be logged in to apply");
-      navigate("/login", { state: { returnTo: `/jobs/${job.id}` } });
+      router.push(`/login?returnTo=${encodeURIComponent(`/jobs/${job.id}`)}`);
       return;
     }
     
@@ -48,7 +51,12 @@ export function ApplyToJobForm({ job, onSuccess }: ApplyToJobFormProps) {
     setError(null);
     
     try {
-      const success = await applyToJob(job.id, coverLetter, selectedResumeId || undefined);
+      const success = await applyToJob(
+        job.id,
+        coverLetter,
+        selectedResumeId || undefined,
+        resumeFile || undefined
+      );
       
       if (success) {
         toast.success("Your application has been submitted!");
@@ -113,11 +121,16 @@ export function ApplyToJobForm({ job, onSuccess }: ApplyToJobFormProps) {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="">No resume</SelectItem>
-                {resumes.map((resume) => (
-                  <SelectItem key={resume.id} value={resume.id}>
-                    {resume.basic_info.title || "Untitled Resume"}
-                  </SelectItem>
-                ))}
+                {resumes.map((resume) => {
+                  if (resume.id) {
+                    return (
+                      <SelectItem key={resume.id} value={resume.id}>
+                        {resume.basic_info.title || "Untitled Resume"}
+                      </SelectItem>
+                    );
+                  }
+                  return null;
+                })}
               </SelectContent>
             </Select>
           ) : (
@@ -130,12 +143,23 @@ export function ApplyToJobForm({ job, onSuccess }: ApplyToJobFormProps) {
                 variant="outline" 
                 size="sm" 
                 type="button"
-                onClick={() => navigate("/dashboard/talent/portfolio")}
+                onClick={() => router.push("/dashboard/talent/portfolio")}
               >
                 Create Resume
               </Button>
             </div>
           )}
+        </div>
+
+        <div>
+          <Label htmlFor="cvUpload">Or Upload CV (PDF)</Label>
+          <input
+            id="cvUpload"
+            type="file"
+            accept=".pdf"
+            className="mt-1"
+            onChange={(e) => setResumeFile(e.target.files?.[0] || null)}
+          />
         </div>
       </div>
       

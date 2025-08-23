@@ -72,6 +72,25 @@ serve(async (req) => {
       );
     }
 
+    await supabase.from('points_ledger').insert({
+      user_id: refCodeData.user_id,
+      delta: 50,
+      reason: 'referral',
+      order_id: null,
+    });
+
+    const { data: profile } = await supabase
+      .from('profiles')
+      .select('points')
+      .eq('id', refCodeData.user_id)
+      .single();
+
+    const current = profile?.points ?? 0;
+    await supabase
+      .from('profiles')
+      .update({ points: current + 50 })
+      .eq('id', refCodeData.user_id);
+
     return new Response(
       JSON.stringify({ success: true, data }),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' }, status: 200 }

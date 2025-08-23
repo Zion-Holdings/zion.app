@@ -1,37 +1,24 @@
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { withErrorLogging } from '@/utils/withErrorLogging';
 import { TALENT_PROFILES } from '@/data/talentData';
 
-// Generic request/response types so this file can run without Next.js
-interface Req {
-  method?: string;
-  query?: { id?: string };
-}
-interface JsonRes {
-  statusCode?: number;
-  setHeader: (name: string, value: string) => void;
-  end: (data?: any) => void;
-  status: (code: number) => JsonRes;
-  json: (data: any) => void;
-}
-
-export default function handler(req: Req, res: JsonRes) {
+function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'GET') {
-    res.status(405).end();
-    return;
+    res.setHeader('Allow', 'GET');
+    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
   }
 
-  const id = req.query?.id;
-  const profile = TALENT_PROFILES.find(t => t.id === id);
+  const { id } = req.query as { id: string | string[] };
+  if (typeof id !== 'string') {
+    return res.status(400).json({ error: 'Invalid id' });
+  }
 
+  const profile = TALENT_PROFILES.find((p) => p.id === id);
   if (!profile) {
-    res.status(404).json({ error: 'Talent not found' });
-    return;
+    return res.status(404).json({ error: 'Talent not found' });
   }
 
-  const first = profile.full_name.split(' ')[0].toLowerCase();
-  const social = {
-    twitter: `https://twitter.com/${first}`,
-    linkedin: `https://linkedin.com/in/${first}`,
-  };
-
-  res.status(200).json({ profile: { ...profile, social } });
+  return res.status(200).json({ profile });
 }
+
+export default withErrorLogging(handler);

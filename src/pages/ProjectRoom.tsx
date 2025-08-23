@@ -1,18 +1,25 @@
-
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useRouter } from 'next/router'; // Changed from useParams
 import { Header } from '@/components/Header';
-import { Footer } from '@/components/Footer';
 import { SEO } from '@/components/SEO';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { MessageSquare, FileText, Video, Calendar, Users, Settings, X } from 'lucide-react';
+
+
+
+
+
+
+
 import { VideoCallRoom } from '@/components/video/VideoCallRoom';
 import { toast } from 'sonner';
 
 export default function ProjectRoom() {
-  const { projectId } = useParams() as { projectId: string };
+  const router = useRouter();
+  const { projectId: rawProjectId } = router.query;
+  const projectId = typeof rawProjectId === 'string' ? rawProjectId : ''; // Ensure string, default to empty if not
   const [activeTab, setActiveTab] = useState('chat');
   const [isInCall, setIsInCall] = useState(false);
   const [callParticipants, setCallParticipants] = useState<Array<{
@@ -61,7 +68,7 @@ export default function ProjectRoom() {
     
     const randomUser = mockUsers[Math.floor(Math.random() * mockUsers.length)];
     
-    if (!callParticipants.find(p => p.id === randomUser.id)) {
+    if (randomUser && !callParticipants.find(p => p.id === randomUser.id)) {
       setCallParticipants(prev => [...prev, randomUser]);
       toast(`${randomUser.name} joined the call`);
     }
@@ -231,7 +238,6 @@ export default function ProjectRoom() {
           </TabsContent>
         </Tabs>
       </main>
-      <Footer />
     </>
   );
 }

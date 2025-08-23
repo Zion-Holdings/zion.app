@@ -1,11 +1,14 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router'; // Changed from useNavigate
 import { CheckCircle2 } from 'lucide-react';
 
+import { useTranslation } from 'react-i18next';
+
 export default function PaymentSuccess() {
-  const navigate = useNavigate();
+  const router = useRouter(); // Changed from navigate
+  const { t } = useTranslation();
   
   return (
     <div className="min-h-screen bg-zion-blue flex flex-col items-center justify-center p-4">
@@ -14,26 +17,26 @@ export default function PaymentSuccess() {
           <CheckCircle2 className="h-6 w-6 text-green-600" />
         </div>
         
-        <h1 className="text-2xl font-bold text-white mb-2">Payment Successful!</h1>
+        <h1 className="text-2xl font-bold text-white mb-2">{t('errors.payment_success_title')}</h1>
         
         <p className="text-zion-slate-light mb-6">
-          Your payment has been processed successfully. You now have access to all the premium features.
+          {t('errors.payment_success_message')}
         </p>
         
         <div className="flex flex-col space-y-3">
           <Button 
-            onClick={() => navigate('/dashboard')}
+            onClick={() => router.push('/dashboard')} // Changed to router.push
             className="bg-zion-purple hover:bg-zion-purple-dark text-white"
           >
-            Go to Dashboard
+            {t('errors.go_to_dashboard')}
           </Button>
           
           <Button 
             variant="outline"
-            onClick={() => navigate('/')}
+            onClick={() => router.push('/')} // Changed to router.push
             className="border-zion-blue-light text-zion-slate-light hover:bg-zion-blue-light hover:text-white"
           >
-            Return to Home
+            {t('errors.return_home')}
           </Button>
         </div>
       </div>

@@ -1,6 +1,7 @@
 
 import { ProductListing } from "@/types/listings";
 import { SearchSuggestion } from "@/types/search";
+import { slugify } from "@/lib/slugify";
 
 // Shared data source for marketplace listings
 export const MARKETPLACE_LISTINGS: ProductListing[] = [
@@ -24,7 +25,8 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     featured: true,
     location: "Global",
     availability: "Immediate",
-    aiScore: 98
+    aiScore: 98,
+    stock: 12
   },
   {
     id: "ai-service-2",
@@ -45,7 +47,8 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     reviewCount: 32,
     location: "North America",
     availability: "4-6 Weeks",
-    aiScore: 92
+    aiScore: 92,
+    stock: 3
   },
   {
     id: "ai-equipment-3",
@@ -66,7 +69,8 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     featured: true,
     location: "Global",
     availability: "2-3 Weeks",
-    aiScore: 95
+    aiScore: 95,
+    stock: 0
   },
   {
     id: "ai-content-4",
@@ -87,7 +91,8 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     reviewCount: 124,
     location: "Global",
     availability: "Immediate",
-    aiScore: 88
+    aiScore: 88,
+    stock: 7
   },
   {
     id: "ai-analytics-5",
@@ -107,7 +112,8 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     reviewCount: 47,
     location: "North America",
     availability: "1-2 Weeks",
-    aiScore: 90
+    aiScore: 90,
+    stock: 15
   },
   {
     id: "ai-vision-6",
@@ -129,7 +135,8 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     featured: true,
     location: "Global",
     availability: "Immediate",
-    aiScore: 94
+    aiScore: 94,
+    stock: 0
   },
   {
     id: "ai-storage-13",
@@ -149,7 +156,8 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     reviewCount: 27,
     location: "Global",
     availability: "Immediate",
-    aiScore: 87
+    aiScore: 87,
+    stock: 8
   },
   {
     id: "ai-edge-14",
@@ -169,7 +177,8 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     reviewCount: 15,
     location: "Global",
     availability: "1-2 Weeks",
-    aiScore: 90
+    aiScore: 90,
+    stock: 6
   },
   {
     id: "ai-labeling-15",
@@ -189,7 +198,8 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     reviewCount: 23,
     location: "Europe",
     availability: "2-3 Weeks",
-    aiScore: 85
+    aiScore: 85,
+    stock: 2
   },
   {
     id: "ai-security-16",
@@ -209,7 +219,8 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     reviewCount: 34,
     location: "North America",
     availability: "Immediate",
-    aiScore: 92
+    aiScore: 92,
+    stock: 5
   },
   {
     id: "ai-marketing-17",
@@ -229,7 +240,8 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     reviewCount: 52,
     location: "Global",
     availability: "Immediate",
-    aiScore: 89
+    stock: 8,
+    aiScore: 89,
   },
   {
     id: "ai-cloudgpu-18",
@@ -249,7 +261,56 @@ export const MARKETPLACE_LISTINGS: ProductListing[] = [
     reviewCount: 48,
     location: "Global",
     availability: "Immediate",
-    aiScore: 93
+    aiScore: 93,
+    stock: 4
+  },
+  {
+    id: "talent-19",
+    title: "Freelance AI Engineer",
+    description:
+      "Contract-based AI engineer specializing in model development and deployment.",
+    category: "Talents",
+    price: 120,
+    currency: "$",
+    tags: ["AI", "Machine Learning", "Freelance"],
+    author: {
+      name: "ExpertAI Freelancers",
+      id: "expertai"
+    },
+    images: [
+      "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&h=500"
+    ],
+    createdAt: "2024-03-25T10:00:00.000Z",
+    rating: 4.8,
+    reviewCount: 20,
+    location: "Remote",
+    availability: "Immediate",
+    stock: 9,
+    aiScore: 91,
+  },
+  {
+    id: "innovation-20",
+    title: "AI Innovation Bootcamp",
+    description:
+      "Four-week program turning AI ideas into prototypes with expert mentorship.",
+    category: "Innovation",
+    price: 3000,
+    currency: "$",
+    tags: ["Innovation", "Prototype", "Bootcamp"],
+    author: {
+      name: "InnovateLabs",
+      id: "innovate-labs"
+    },
+    images: [
+      "https://images.unsplash.com/photo-1532619187600-fb0b141abd59?auto=format&fit=crop&w=800&h=500"
+    ],
+    createdAt: "2024-03-30T09:00:00.000Z",
+    rating: 4.7,
+    reviewCount: 12,
+    location: "Global",
+    availability: "Scheduled",
+    aiScore: 88,
+    stock: 1
   }
 ];
 
@@ -270,6 +331,7 @@ export const generateSearchSuggestions = (): SearchSuggestion[] => {
   
   return suggestions.map(text => ({
     text,
+    slug: slugify(text),
     type: 'product' // Use a valid type from the SearchSuggestion interface
   }));
 };

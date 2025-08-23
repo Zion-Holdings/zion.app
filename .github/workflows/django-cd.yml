@@ -1,0 +1,176 @@
+# .github/workflows/django-cd.yml
+name: CD - Django Backend
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'backend/**'
+      - '.github/workflows/django-cd.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'backend/**'
+      - '.github/workflows/django-cd.yml'
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy-django:
+    runs-on: ubuntu-latest
+    # Use different environments for PRs vs pushes to main for more granular control/secrets
+    environment: ${{ (github.event_name == 'pull_request' && 'staging-preview') || (github.ref == 'refs/heads/main' && 'production') || 'staging' }}
+
+    steps:
+      # Optional: Manual approval for production deployments
+      # - name: Manual approval for production
+      #   if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+      #   uses: trstringer/manual-approval@v1
+      #   with:
+      #     secret: ${{ secrets.APPROVAL_TOKEN }} # Store a random string as a secret
+      #     approvers: "user1,user2" # GitHub usernames of approvers
+      #     minimum-approvals: 1
+      #     issue-title: "Deploy Django to Production: ${{ github.sha }}"
+      #     issue-body: "Please approve or reject the deployment of commit ${{ github.sha }} to production."
+      #     exclude-workflow-initiator-as-approver: false # Set to true if the person triggering the workflow cannot approve
+
+      - uses: actions/checkout@v4
+
+      - name: Log in to Docker registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ secrets.REGISTRY_URL }}
+          username: ${{ secrets.REGISTRY_USERNAME }}
+          password: ${{ secrets.REGISTRY_PASSWORD }}
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Determine Docker Image Tag
+        id: docker_meta
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            TAG="pr-${{ github.event.number }}-${{ github.sha }}"
+          else
+            TAG="${{ github.sha }}"
+          fi
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
+          echo "Using Docker tag: $TAG"
+
+      - name: Build and push Django Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./backend # Path to Django app and its Dockerfile
+          file: ./backend/Dockerfile
+          push: true
+          tags: ${{ secrets.REGISTRY_URL }}/zion-django-backend:${{ steps.docker_meta.outputs.tag }}
+
+      - name: Run Trivy vulnerability scanner for Django
+        uses: aquasecurity/trivy-action@0.20.0
+        with:
+          image-ref: '${{ secrets.REGISTRY_URL }}/zion-django-backend:${{ steps.docker_meta.outputs.tag }}'
+          format: 'table'
+          exit-code: '1'
+          ignore-unfixed: true
+          vuln-type: 'os,library'
+          severity: 'CRITICAL,HIGH'
+          # Optional: To fail on specific CVEs, add:
+          # cve-ids: 'CVE-2021-12345,CVE-2022-67890'
+          # Optional: For Sarif report to upload to GitHub Security tab
+          # sarif-file: 'trivy-django-results.sarif'
+
+      # If using Sarif report, uncomment and add this step to upload it
+      # - name: Upload Trivy scan results to GitHub Security tab
+      #   uses: github/codeql-action/upload-sarif@v2
+      #   if: always() # Ensure this runs even if Trivy fails the build
+      #   with:
+      #     sarif_file: 'trivy-django-results.sarif'
+
+      - name: Set up kubectl
+        uses: azure/setup-kubectl@v3
+        # Ensure kubectl version is compatible if different from frontend CD
+
+      - name: Configure kubeconfig
+        env:
+          KUBE_CONFIG_STAGING_PREVIEW: ${{ secrets.KUBE_CONFIG_DJANGO_STAGING_PREVIEW }}
+          KUBE_CONFIG_STAGING: ${{ secrets.KUBE_CONFIG_DJANGO_STAGING }}
+          KUBE_CONFIG_PRODUCTION: ${{ secrets.KUBE_CONFIG_DJANGO_PRODUCTION }}
+        run: |
+          TARGET_KUBECONFIG=""
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            TARGET_KUBECONFIG="$KUBE_CONFIG_STAGING_PREVIEW"
+            if [ -z "$TARGET_KUBECONFIG" ]; then
+              echo "Warning: KUBE_CONFIG_DJANGO_STAGING_PREVIEW not set, falling back to KUBE_CONFIG_DJANGO_STAGING for PR preview."
+              TARGET_KUBECONFIG="$KUBE_CONFIG_STAGING"
+            fi
+          elif [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
+            TARGET_KUBECONFIG="$KUBE_CONFIG_PRODUCTION"
+          else
+            # For other branches (if any) that might trigger this, default to staging
+            TARGET_KUBECONFIG="$KUBE_CONFIG_STAGING"
+          fi
+
+          if [ -z "$TARGET_KUBECONFIG" ]; then
+            echo "Error: Kubeconfig secret is not set for the target environment."
+            exit 1
+          fi
+          mkdir -p $HOME/.kube
+          echo "$TARGET_KUBECONFIG" > $HOME/.kube/config
+          chmod 600 $HOME/.kube/config
+
+      - name: Deploy to Kubernetes (Django)
+        run: |
+          IMAGE_NAME="${{ secrets.REGISTRY_URL }}/zion-django-backend:${{ steps.docker_meta.outputs.tag }}"
+
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            NAMESPACE="django-preview" # Or "django-pr-${{ github.event.number }}"
+            DEPLOYMENT_NAME="zion-django-app-pr-${{ github.event.number }}" # Example: unique deployment name for PR
+            echo "Deploying PR ${{ github.event.number }} to namespace: $NAMESPACE, Deployment: $DEPLOYMENT_NAME with image: $IMAGE_NAME"
+            # Implement actual deployment:
+            # Potentially copy a base manifest, update name, namespace, image, then apply.
+            # Or use kustomize/helm with parameters.
+            # Example: kubectl create deployment $DEPLOYMENT_NAME --image=$IMAGE_NAME -n $NAMESPACE # (Simplified: needs more config)
+            # kubectl set image deployment/$DEPLOYMENT_NAME zion-django-app=$IMAGE_NAME -n $NAMESPACE --record
+            echo "INFO: PR Deployment to $NAMESPACE. Implement specific logic and cleanup."
+
+          elif [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
+            NAMESPACE="django-production"
+            DEPLOYMENT_NAME="zion-django-app" # Standard deployment name for production
+            echo "Deploying to PRODUCTION namespace: $NAMESPACE, Deployment: $DEPLOYMENT_NAME with image: $IMAGE_NAME"
+            # Implement actual deployment for production:
+            kubectl set image deployment/$DEPLOYMENT_NAME zion-django-app=$IMAGE_NAME -n $NAMESPACE --record
+            # Check rollout status
+            kubectl rollout status deployment/$DEPLOYMENT_NAME -n $NAMESPACE --timeout=5m
+          else
+            # Default to staging for other branches or scenarios
+            NAMESPACE="django-staging"
+            DEPLOYMENT_NAME="zion-django-app" # Standard deployment name for staging
+            echo "Deploying to STAGING namespace: $NAMESPACE, Deployment: $DEPLOYMENT_NAME with image: $IMAGE_NAME"
+            # Implement actual deployment for staging:
+            kubectl set image deployment/$DEPLOYMENT_NAME zion-django-app=$IMAGE_NAME -n $NAMESPACE --record
+            kubectl rollout status deployment/$DEPLOYMENT_NAME -n $NAMESPACE --timeout=5m
+          fi
+
+          # General note: Ensure your Kubernetes manifests (e.g., in k8s/backend or similar)
+          # are structured to accept the image name and namespace as parameters.
+          # This could be via kustomize, helm, or sed replacements in yaml files.
+
+          # Example using kubectl set image (if deployment 'zion-django-app' exists in the namespace):
+          # kubectl set image deployment/zion-django-app zion-django-app=$IMAGE_NAME -n $NAMESPACE --record
+
+          # Example using kustomize (if you have overlays for staging/preview):
+          # cd k8s/overlays/ # or wherever your kustomize setup is
+          # if [[ "$NAMESPACE" == "django-preview" ]]; then
+          #   kustomize edit set image my-django-image=$IMAGE_NAME # In your preview kustomization.yaml
+          #   kubectl apply -k preview -n $NAMESPACE
+          # else
+          #   kustomize edit set image my-django-image=$IMAGE_NAME # In your staging kustomization.yaml
+          #   kubectl apply -k staging -n $NAMESPACE
+          # fi
+
+          echo "Deployment step placeholder: Actual deployment to Kubernetes needs to be implemented here."
+          echo "Target Namespace: $NAMESPACE, Image: $IMAGE_NAME"
+          echo "Ensure appropriate Kubernetes manifests and deployment scripts are configured."
+
+          # IMPORTANT: Add a step to clean up PR environments when PRs are closed/merged.
+          # This can be a separate job listening to `pull_request.closed` event.
+          # Example: kubectl delete namespace django-pr-${{ github.event.number }}

@@ -1,10 +1,11 @@
 
 import { useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { useForm, ControllerRenderProps } from "react-hook-form";
 import { z } from "zod";
-import { LockKeyhole } from "lucide-react";
+import { LockKeyhole } from 'lucide-react';
+
 
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -19,6 +20,7 @@ import {
 } from "@/components/ui/form";
 import { toast } from "@/hooks/use-toast";
 import { cleanupAuthState } from "@/utils/authUtils";
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 // Form validation schema
 const updatePasswordSchema = z
@@ -41,8 +43,7 @@ export default function UpdatePassword() {
   const [accessToken, setAccessToken] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter();
 
   // Initialize react-hook-form
   const form = useForm<UpdatePasswordFormValues>({
@@ -54,8 +55,9 @@ export default function UpdatePassword() {
   });
 
   useEffect(() => {
-    // Extract access token from URL hash
-    const hashParams = new URLSearchParams(location.hash.substring(1));
+    // Extract access token from URL hash on the client
+    const hash = typeof window !== 'undefined' ? window.location.hash : "";
+    const hashParams = new URLSearchParams(hash.substring(1));
     const token = hashParams.get("access_token");
     
     if (token) {
@@ -66,7 +68,7 @@ export default function UpdatePassword() {
 
     // Clean up auth state to prevent issues
     cleanupAuthState();
-  }, [location]);
+  }, []);
 
   // Form submission handler
   const onSubmit = async (data: UpdatePasswordFormValues) => {
@@ -108,10 +110,10 @@ export default function UpdatePassword() {
       // Clean auth state and redirect after a delay
       cleanupAuthState();
       setTimeout(() => {
-        navigate("/login");
+        router.push("/login");
       }, 3000);
     } catch (error: any) {
-      console.error("Password update error:", error);
+      logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Password update error' });
       toast({
         title: "Password update failed",
         description: error.message || "An unexpected error occurred",
@@ -151,7 +153,7 @@ export default function UpdatePassword() {
                   <Button 
                     className="mt-3 text-xs"
                     variant="outline"
-                    onClick={() => navigate('/forgot-password')}
+                    onClick={() => router.push('/forgot-password')}
                   >
                     Request new reset link
                   </Button>
@@ -177,7 +179,7 @@ export default function UpdatePassword() {
                     <FormField
                       control={form.control}
                       name="password"
-                      render={({ field }) => (
+                      render={({ field }: { field: ControllerRenderProps<UpdatePasswordFormValues, "password"> }) => (
                         <FormItem>
                           <FormLabel className="text-zion-slate-light">New Password</FormLabel>
                           <FormControl>
@@ -199,7 +201,7 @@ export default function UpdatePassword() {
                     <FormField
                       control={form.control}
                       name="confirmPassword"
-                      render={({ field }) => (
+                      render={({ field }: { field: ControllerRenderProps<UpdatePasswordFormValues, "password"> }) => (
                         <FormItem>
                           <FormLabel className="text-zion-slate-light">Confirm Password</FormLabel>
                           <FormControl>
@@ -230,7 +232,7 @@ export default function UpdatePassword() {
                       <Button
                         variant="link"
                         className="text-sm font-medium text-zion-cyan hover:text-zion-cyan-light p-0"
-                        onClick={() => navigate("/login")}
+                        onClick={() => router.push("/login")}
                         type="button"
                       >
                         Back to login

@@ -1,6 +1,8 @@
 
 
 // Define types for the pricing recommendation
+import {logErrorToProduction} from "@/utils/productionLogger";
+
 export interface PricingSuggestion {
   minRate: number;
   maxRate: number;
@@ -81,7 +83,7 @@ export async function getClientBudgetSuggestion(params: ClientBudgetParams): Pro
       explanation
     };
   } catch (error) {
-    console.error("Error generating budget suggestion:", error);
+    logErrorToProduction('Error generating budget suggestion:', { data: error });
     // Return a fallback suggestion
     return {
       minRate: 30,
@@ -157,7 +159,7 @@ export async function getTalentRateSuggestion(params: TalentRateParams): Promise
       explanation
     };
   } catch (error) {
-    console.error("Error generating rate suggestion:", error);
+    logErrorToProduction('Error generating rate suggestion:', { data: error });
     return {
       minRate: 25,
       maxRate: 50,
@@ -168,6 +170,8 @@ export async function getTalentRateSuggestion(params: TalentRateParams): Promise
 }
 
 // Function to save pricing analytics data
+import { supabase } from '@/integrations/supabase/client';
+
 export async function trackPricingSuggestion(data: {
   userId: string;
   suggestionType: 'client' | 'talent';
@@ -177,18 +181,23 @@ export async function trackPricingSuggestion(data: {
   accepted: boolean;
 }) {
   try {
-    // In a real implementation, this would save to the database
-    // For now, we'll just log it
-    console.log("Tracking pricing suggestion:", data);
-    
-    // In a real implementation with Supabase:
-    // await supabase
-    //  .from('pricing_suggestions')
-    //  .insert([data]);
-    
+    const { error } = await supabase
+      .from('pricing_suggestions')
+      .insert({
+        user_id: data.userId,
+        suggestion_type: data.suggestionType,
+        suggested_min: data.suggestedMin,
+        suggested_max: data.suggestedMax,
+        actual_value: data.actualValue,
+        accepted: data.accepted,
+        created_at: new Date().toISOString()
+      });
+
+    if (error) throw error;
+
     return true;
   } catch (error) {
-    console.error("Error tracking pricing suggestion:", error);
+    logErrorToProduction('Error tracking pricing suggestion:', { data: error });
     return false;
   }
 }

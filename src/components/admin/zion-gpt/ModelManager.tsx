@@ -1,12 +1,18 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import { Loader2, RefreshCw, Play, CheckCircle, AlertCircle } from "lucide-react";
+import { Loader2, RefreshCw, Play, CheckCircle, AlertCircle } from 'lucide-react';
+
+
+
+
+
 import { supabase } from '@/integrations/supabase/client';
 import { ModelConfig } from '@/utils/zion-gpt';
+import {logErrorToProduction} from '@/utils/productionLogger';
+
 
 interface ModelVersionData extends ModelConfig {
   trainingStatus: 'queued' | 'running' | 'succeeded' | 'failed';
@@ -34,7 +40,7 @@ export function ZionGPTModelManager() {
       if (error) throw error;
       
       // Map the data to our component state
-      setModels(data.map(model => ({
+      setModels(data.map((model: any) => ({
         id: model.id,
         version: model.version,
         createdAt: model.created_at,
@@ -45,7 +51,7 @@ export function ZionGPTModelManager() {
         errorMessage: model.error_message
       })));
     } catch (error) {
-      console.error('Error fetching models:', error);
+      logErrorToProduction('Error fetching models:', { data: error });
     } finally {
       setIsLoading(false);
     }
@@ -66,7 +72,7 @@ export function ZionGPTModelManager() {
       setModels(prev => 
         prev.map(model => 
           model.id === modelId 
-            ? { ...model, trainingStatus: data.status, errorMessage: data.error || null } 
+            ? { ...model, trainingStatus: (data as any)?.status || 'failed', errorMessage: (data as any)?.error || 'Unknown error' } 
             : model
         )
       );
@@ -75,15 +81,15 @@ export function ZionGPTModelManager() {
       await supabase
         .from('model_versions')
         .update({
-          training_status: data.status,
-          error_message: data.error || null,
+          training_status: (data as any)?.status || 'failed',
+          error_message: (data as any)?.error || 'Unknown error',
           // If training succeeded, automatically set to active
-          ...(data.status === 'succeeded' ? { active: true } : {})
+          ...((data as any)?.status === 'succeeded' ? { active: true } : {})
         })
         .eq('id', modelId);
       
     } catch (error) {
-      console.error(`Error checking status for model ${modelId}:`, error);
+      logErrorToProduction('Error checking status for model ${modelId}:', { data: error });
     } finally {
       setActiveJobs(prev => ({ ...prev, [modelId]: false }));
     }
@@ -108,7 +114,7 @@ export function ZionGPTModelManager() {
       // Refresh the model list
       fetchModels();
     } catch (error) {
-      console.error('Error toggling model active state:', error);
+      logErrorToProduction('Error toggling model active state:', { data: error });
     }
   };
 

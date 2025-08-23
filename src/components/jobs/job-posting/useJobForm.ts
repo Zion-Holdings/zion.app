@@ -1,22 +1,24 @@
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from "@hookform/resolvers/zod";
-import { format } from 'date-fns';
 import { toast } from "sonner";
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router';
 
 import { jobSchema, JobSchemaType } from './validation';
 import { useAuth } from "@/hooks/useAuth";
 
+import {logErrorToProduction} from "@/utils/productionLogger";
+
 export interface JobPostingProps {
   jobId?: string;
+  
   onSuccess?: () => void;
 }
 
 export const useJobForm = ({ jobId, onSuccess }: JobPostingProps) => {
   const { user } = useAuth();
-  const navigate = useNavigate();
+  const router = useRouter();
   
   const [startDate, setStartDate] = useState<Date | undefined>(undefined);
   const [endDate, setEndDate] = useState<Date | undefined>(undefined);
@@ -52,7 +54,7 @@ export const useJobForm = ({ jobId, onSuccess }: JobPostingProps) => {
   const submitJob = async (values: JobSchemaType) => {
     if (!user) {
       toast.error("You must be logged in to post a job");
-      navigate("/login");
+      router.push("/login");
       return;
     }
 
@@ -76,7 +78,7 @@ export const useJobForm = ({ jobId, onSuccess }: JobPostingProps) => {
       
       return jobData;
     } catch (error: any) {
-      console.error("Error in job form submission:", error);
+      logErrorToProduction('Error in job form submission:', { data: error });
       toast.error(error.message || "Failed to process form");
       throw error;
     } finally {

@@ -1,10 +1,9 @@
-
 import { format } from "date-fns";
 import { JobApplication } from "@/types/jobs";
-import { Avatar } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
+import { Avatar as AvatarPrimitive } from "@/components/ui/avatar"; // Renamed
 import { ClickableBadge } from "@/components/ui/clickable-badge";
-import { 
+import { Briefcase, User } from 'lucide-react';
+import {
   Table,
   TableBody,
   TableCell,
@@ -14,10 +13,12 @@ import {
 } from "@/components/ui/table";
 import { ApplicationActions } from "./ApplicationActions";
 import { StatusBadge } from "./StatusBadge";
-import { Briefcase, User } from "lucide-react";
+
+
 import { HireConfirmationModal } from "@/components/hiring-tracker/HireConfirmationModal";
-import { useState } from "react";
+import React, { useState } from "react"; // Import React and useState
 import { toast } from "@/hooks/use-toast";
+import Image from 'next/image'; // Import next/image
 
 interface ApplicationsTableProps {
   applications: JobApplication[];
@@ -26,6 +27,30 @@ interface ApplicationsTableProps {
   onStatusChange: (applicationId: string, newStatus: string) => Promise<void>;
   onViewScore: (application: JobApplication) => void;
 }
+
+// Sub-component for avatar to handle its own error state
+const ApplicationAvatar = ({ application }: { application: JobApplication }) => {
+  const [avatarError, setAvatarError] = useState(false);
+  const talentName = application.talent_profile?.full_name || "Candidate";
+
+  return (
+    <AvatarPrimitive className="h-8 w-8"> {/* Using Renamed AvatarPrimitive */}
+      {application.talent_profile?.profile_picture_url && !avatarError ? (
+        <Image
+          src={application.talent_profile.profile_picture_url}
+          alt={talentName}
+          width={32} // for h-8 w-8
+          height={32} // for h-8 w-8
+          className="rounded-full object-cover"
+          onError={() => setAvatarError(true)}
+          priority={false}
+        />
+      ) : (
+        <User className="h-4 w-4" />
+      )}
+    </AvatarPrimitive>
+  );
+};
 
 export function ApplicationsTable({ 
   applications, 
@@ -43,7 +68,6 @@ export function ApplicationsTable({
   };
   
   const handleHireConfirmed = () => {
-    // This will be called after the hire confirmation is completed
     toast({
       title: "Hiring process initiated",
       description: "Offer has been sent to the talent."
@@ -68,16 +92,7 @@ export function ApplicationsTable({
               <TableRow key={application.id}>
                 <TableCell>
                   <div className="flex items-center gap-3">
-                    <Avatar className="h-8 w-8">
-                      {application.talent_profile?.profile_picture_url ? (
-                        <img 
-                          src={application.talent_profile.profile_picture_url} 
-                          alt={application.talent_profile.full_name || "Candidate"} 
-                        />
-                      ) : (
-                        <User className="h-4 w-4" />
-                      )}
-                    </Avatar>
+                    <ApplicationAvatar application={application} /> {/* Use sub-component */}
                     <div>
                       <div className="font-medium">
                         {application.talent_profile?.full_name || "Candidate"}
@@ -130,7 +145,6 @@ export function ApplicationsTable({
         </Table>
       </div>
       
-      {/* Hire Confirmation Modal */}
       <HireConfirmationModal
         isOpen={hireModalOpen}
         onClose={() => setHireModalOpen(false)}

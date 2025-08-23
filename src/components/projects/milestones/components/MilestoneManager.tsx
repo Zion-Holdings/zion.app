@@ -3,7 +3,9 @@ import React from 'react';
 import { MilestonesList } from '../MilestonesList';
 import { PaymentSummary } from '../PaymentSummary';
 import { Milestone, MilestoneStatus, MilestoneActivity } from '@/hooks/useMilestones';
-import { toast } from "sonner";
+import { useEnqueueSnackbar } from '@/context';
+import {logErrorToProduction} from '@/utils/productionLogger';
+
 
 interface MilestoneManagerProps {
   projectId: string;
@@ -36,25 +38,26 @@ export function MilestoneManager({
   onUploadDeliverable,
   refetch
 }: MilestoneManagerProps) {
+  const enqueueSnackbar = useEnqueueSnackbar();
   const handleMilestoneApproved = async (milestoneId: string) => {
     try {
       await onUpdateStatus(milestoneId, "completed" as MilestoneStatus);
-      toast.success("Milestone approved");
+      enqueueSnackbar("Milestone approved", { variant: 'success' });
       await refetch();
-    } catch (error) {
-      console.error("Error approving milestone:", error);
-      toast.error("Failed to approve milestone");
+    } catch (error: any) {
+      logErrorToProduction('Error approving milestone:', { data: error });
+      enqueueSnackbar(error.message, { variant: 'error' });
     }
   };
-  
+
   const handleMilestoneRejected = async (milestoneId: string) => {
     try {
       await onUpdateStatus(milestoneId, "rejected" as MilestoneStatus);
-      toast.success("Milestone rejected");
+      enqueueSnackbar("Milestone rejected", { variant: 'success' });
       await refetch();
-    } catch (error) {
-      console.error("Error rejecting milestone:", error);
-      toast.error("Failed to reject milestone");
+    } catch (error: any) {
+      logErrorToProduction('Error rejecting milestone:', { data: error });
+      enqueueSnackbar(error.message, { variant: 'error' });
     }
   };
 
@@ -78,7 +81,7 @@ export function MilestoneManager({
       <div>
         <PaymentSummary 
           milestones={milestones} 
-          paymentTerms={paymentTerms}
+          paymentTerms={paymentTerms ?? null}
         />
       </div>
     </div>

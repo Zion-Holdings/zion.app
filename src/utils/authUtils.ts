@@ -2,14 +2,23 @@
 import { supabase } from "@/integrations/supabase/client";
 import type { UserDetails } from "@/types/auth";
 import { safeStorage, safeSessionStorage } from './safeStorage';
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
+
 
 /**
  * Utility function to clean up authentication state
  * This helps prevent auth state inconsistencies and "limbo" states
  */
 export const cleanupAuthState = () => {
-  // Remove standard auth tokens
+  const authTokenKey = "zion_token";
+  // Remove our custom auth token
+  safeStorage.removeItem(authTokenKey);
+  safeSessionStorage.removeItem(authTokenKey);
+
+  // Remove standard Supabase auth tokens (if any were previously used or set by other parts of the app)
   safeStorage.removeItem('supabase.auth.token');
+  // Also clear from session storage if it was ever used there by Supabase or other logic
+  safeSessionStorage.removeItem('supabase.auth.token');
   
   // Remove all Supabase auth keys from localStorage
   try {
@@ -19,7 +28,7 @@ export const cleanupAuthState = () => {
       }
     });
   } catch (e) {
-    console.warn('Storage access error:', e);
+    logWarn('Storage access error:', { data:  e });
   }
   
   // Remove from sessionStorage if in use
@@ -30,7 +39,7 @@ export const cleanupAuthState = () => {
       }
     });
   } catch (e) {
-    console.warn('Storage access error:', e);
+    logWarn('Storage access error:', { data:  e });
   }
 };
 
@@ -80,6 +89,6 @@ export const checkNewRegistration = async (user: UserDetails) => {
         });
     }
   } catch (error) {
-    console.error("Error checking or scheduling welcome email:", error);
+    logErrorToProduction('Error checking or scheduling welcome email:', { data: error });
   }
 };

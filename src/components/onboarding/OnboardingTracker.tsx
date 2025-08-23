@@ -1,9 +1,12 @@
 
 import React from "react";
-import { CheckCircle, Circle, ArrowRight } from "lucide-react";
+import { CheckCircle, Circle, ArrowRight } from 'lucide-react';
+
+
+
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 export interface OnboardingStep {
   id: string;
@@ -63,7 +66,7 @@ export function OnboardingTracker({
                 size="sm" 
                 className="text-zion-purple hover:text-zion-cyan hover:bg-zion-blue"
               >
-                <Link to={step.link}>
+                <Link href={step.link}>
                   {step.action} <ArrowRight className="ml-1 h-4 w-4" />
                 </Link>
               </Button>

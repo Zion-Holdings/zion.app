@@ -1,7 +1,9 @@
 
 import { jsPDF } from 'jspdf';
 
-export interface FontConfig {
+import {logErrorToProduction} from "@/utils/productionLogger";
+
+export interface FontBuffers {
   regular: ArrayBuffer;
   bold?: ArrayBuffer;
   italic?: ArrayBuffer;
@@ -34,7 +36,7 @@ export async function loadCustomFonts(doc: jsPDF, fontFamily: FontFamily = 'defa
         doc.setFont('helvetica');
     }
   } catch (error) {
-    console.error('Error loading custom fonts:', error);
+    logErrorToProduction('Error loading custom fonts:', { data: error });
     // Fall back to default font
     doc.setFont('helvetica');
   }

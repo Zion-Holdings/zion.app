@@ -1,7 +1,8 @@
 
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
+import { Loader2 } from 'lucide-react';
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useJobApplications } from "@/hooks/useJobApplications";
 import { useMessaging } from "@/context/MessagingContext";
@@ -10,6 +11,8 @@ import { ResumeSelector, ResumeOption } from "../resume-selector";
 import { MessageTab } from "./MessageTab";
 import { ResumeTab } from "./ResumeTab";
 import { Job } from "./types";
+import {logErrorToProduction} from '@/utils/productionLogger';
+
 
 interface ApplyFormProps {
   job: Job;
@@ -49,9 +52,14 @@ export function ApplyForm({ job, onClose, onApplySuccess }: ApplyFormProps) {
       
       // First submit the application to the job applications table
       const applicationSuccess = await applyToJob(
-        job.id, 
-        message, 
-        selectedResumeId
+        job.id,
+        message,
+        selectedResume && selectedResume.type === 'ai_resume'
+          ? selectedResumeId || undefined
+          : undefined,
+        selectedResume && selectedResume.type === 'custom_upload'
+          ? selectedResume.file
+          : undefined
       );
       
       if (!applicationSuccess) {
@@ -102,7 +110,7 @@ export function ApplyForm({ job, onClose, onApplySuccess }: ApplyFormProps) {
       
       onClose();
     } catch (error) {
-      console.error("Failed to send application:", error);
+      logErrorToProduction('Failed to send application:', { data: error });
       toast({
         title: "Application failed",
         description: "There was an error sending your application. Please try again.",

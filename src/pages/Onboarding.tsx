@@ -1,21 +1,33 @@
 
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useRouter } from 'next/router';
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { UserTypeSelection } from "@/components/onboarding/UserTypeSelection";
 import { ProfileSetup } from "@/components/onboarding/ProfileSetup";
+import { InterestSelection } from "@/components/onboarding/InterestSelection";
+import { CategorySelection } from "@/components/onboarding/CategorySelection";
 import { Steps, Step } from "@/components/ui/steps";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export default function Onboarding() {
+
   const { user, updateProfile, isLoading } = useAuth();
   const [currentStep, setCurrentStep] = useState(0);
   const [userType, setUserType] = useState<"serviceProvider" | "talent" | "client" | null>(null);
-  const navigate = useNavigate();
+  const [interests, setInterests] = useState<string[]>([]);
+  const [categories, setCategories] = useState<string[]>([]);
+  const router = useRouter();
+
+  useEffect(() => {
+    // Redirect to login if user is not authenticated and auth state is not loading
+    if (!isLoading && !user) {
+      router.push('/login');
+    }
+  }, [user, isLoading, router]);
 
   // Convert our user types to match what's expected in the database
   const mapUserTypeToDatabase = (type: "serviceProvider" | "talent" | "client") => {
@@ -36,10 +48,10 @@ export default function Onboarding() {
     
     // Direct to specific registration page based on user type
     if (type === "serviceProvider") {
-      navigate('/service-onboarding');
+      router.push('/service-onboarding');
       return;
     } else if (type === "talent") {
-      navigate('/talent-onboarding');
+      router.push('/talent-onboarding');
       return;
     }
     
@@ -54,18 +66,18 @@ export default function Onboarding() {
         description: "Your session may have expired. Please log in again.",
         variant: "destructive",
       });
-      navigate('/login');
+      router.push('/login');
       return;
     }
     
     const dbUserType = mapUserTypeToDatabase(userType);
     
     try {
-      await updateProfile({ 
+      await updateProfile({
         id: user.id,
         displayName: data.displayName,
         bio: data.bio, // This is now valid since we added bio to UserDetails
-        userType: dbUserType,
+        userType: dbUserType as any,
         headline: data.headline,
         profileComplete: true
       });
@@ -81,17 +93,12 @@ export default function Onboarding() {
         title: 'Profile completed!',
         description: 'Your profile has been set up successfully.',
       });
-      
-      // Get the appropriate dashboard route based on user type
-      const dashboardRoute = userType === "client" 
-        ? "/client-dashboard" 
-        : "/talent-dashboard";
-      
-      // Redirect to dashboard
-      navigate(dashboardRoute);
-      
+
+      // Proceed to next step
+      setCurrentStep(2);
+
     } catch (error) {
-      console.error('Error updating profile:', error);
+      logErrorToProduction('Error updating profile:', { data: error });
       toast({
         title: 'Error',
         description: 'There was a problem updating your profile. Please try again.',
@@ -100,14 +107,39 @@ export default function Onboarding() {
     }
   };
 
+  const handleInterestsComplete = (list: string[]) => {
+    setInterests(list);
+    setCurrentStep(3);
+  };
+
+  const handleCategoriesComplete = async (list: string[]) => {
+    setCategories(list);
+    if (user) {
+      try {
+        await updateProfile({
+          id: user.id,
+          interests,
+          preferredCategories: list,
+        });
+      } catch (err) {
+        logErrorToProduction('Error saving onboarding data:', { data: err });
+      }
+    }
+    const dashboardRoute = userType === 'client' ? '/client-dashboard' : '/talent-dashboard';
+    router.push(dashboardRoute);
+  };
+
   const steps = [
     { label: "Select Role", description: "Choose how you'll use the platform" },
     { label: "Create Profile", description: "Tell us about yourself" },
+    { label: "Interests", description: "What topics are you into?" },
+    { label: "Categories", description: "Tailor your experience" },
   ];
 
-  if (!user) {
-    navigate('/login');
-    return null;
+  // Show loading state or null while checking auth, useEffect will handle redirect
+  if (isLoading || !user) {
+    // You can return a loader here, or null, or a basic skeleton
+    return <div>Loading...</div>;
   }
 
   return (
@@ -144,27 +176,33 @@ export default function Onboarding() {
           </div>
 
           <div className="bg-zion-blue-dark rounded-xl p-8 shadow-lg border border-zion-blue-light">
-            {currentStep === 0 ? (
+            {currentStep === 0 && (
               <UserTypeSelection onSelect={handleUserTypeSelect} selectedType={userType} />
-            ) : (
+            )}
+            {currentStep === 1 && (
               <ProfileSetup onComplete={handleProfileComplete} userType={userType!} />
             )}
+            {currentStep === 2 && (
+              <InterestSelection onComplete={handleInterestsComplete} />
+            )}
+            {currentStep === 3 && (
+              <CategorySelection onComplete={handleCategoriesComplete} />
+            )}
 
-            {currentStep === 1 && (
+            {currentStep > 0 && (
               <div className="mt-6">
                 <Button
                   variant="outline"
                   className="w-full border-zion-blue-light text-white hover:bg-zion-blue-light"
-                  onClick={() => setCurrentStep(0)}
+                  onClick={() => setCurrentStep(currentStep - 1)}
                 >
-                  Back to Role Selection
+                  Back
                 </Button>
               </div>
             )}
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

@@ -1,8 +1,9 @@
-
 import { useState } from 'react';
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
 import { TalentProfile } from "@/types/talent";
+
+import {logErrorToProduction} from "@/utils/productionLogger";
 
 export interface HireRequestData {
   talent: {
@@ -46,9 +47,9 @@ export function useHireRequest() {
         description: `Your request to hire ${requestData.talent.full_name} has been sent successfully.`,
       });
       
-      return { success: true, requestId: response?.request_id };
+      return { success: true, requestId: (response as any)?.request_id };
     } catch (error) {
-      console.error("Error submitting hire request:", error);
+      logErrorToProduction('Error submitting hire request:', { data: error });
       
       const errorMessage = error instanceof Error 
         ? error.message 

@@ -3,7 +3,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ProfileProject } from "@/types/profile";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { FileText } from "lucide-react";
+import { FileText } from 'lucide-react';
+
 
 interface ProfileProjectsProps {
   projects: ProfileProject[];
@@ -19,10 +20,11 @@ export function ProfileProjects({ projects }: ProfileProjectsProps) {
           <Card key={project.id} className="bg-zion-blue border-zion-blue-light overflow-hidden hover:border-zion-purple/40 transition-colors duration-300">
             {project.imageUrl ? (
               <AspectRatio ratio={16/9}>
-                <img 
-                  src={project.imageUrl} 
-                  alt={project.title} 
+                <img
+                  src={project.imageUrl}
+                  alt={project.title}
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </AspectRatio>
             ) : (
@@ -37,7 +39,7 @@ export function ProfileProjects({ projects }: ProfileProjectsProps) {
               
               {project.tags && project.tags.length > 0 && (
                 <div className="flex flex-wrap gap-1 mb-2">
-                  {project.tags.map((tag, i) => (
+                  {project.tags?.map((tag, i) => (
                     <Badge key={i} variant="outline" className="text-xs border-zion-slate-dark text-zion-slate-light">
                       {tag}
                     </Badge>

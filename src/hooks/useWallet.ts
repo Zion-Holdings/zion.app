@@ -3,8 +3,10 @@ import { useEffect, useState } from 'react';
 import { useAuth } from '@/hooks/useAuth';
 import { supabase } from '@/integrations/supabase/client';
 import type { Wallet, TokenTransaction } from '@/types/tokens';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function useWallet() {
+
   const { user } = useAuth();
   const [wallet, setWallet] = useState<Wallet | null>(null);
   const [transactions, setTransactions] = useState<TokenTransaction[]>([]);
@@ -32,7 +34,7 @@ export function useWallet() {
 
       setWallet(data);
     } catch (err: any) {
-      console.error('Error fetching wallet:', err);
+      logErrorToProduction('Error fetching wallet:', { data: err });
       setError(err.message);
     } finally {
       setLoading(false);
@@ -54,24 +56,24 @@ export function useWallet() {
       if (error) throw error;
       setTransactions((data || []) as TokenTransaction[]);
     } catch (err: any) {
-      console.error('Error fetching transactions:', err);
+      logErrorToProduction('Error fetching transactions:', { data: err });
     }
   }
 
   async function earnTokens(amount: number, reason?: string) {
     if (!user?.id) return;
     setWallet(prev => prev ? { ...prev, balance: prev.balance + amount } : prev);
-    setTransactions(prev => [
-      {
+    setTransactions(prev => {
+      const newTransaction = {
         id: crypto.randomUUID(),
         user_id: user.id,
         amount,
-        transaction_type: 'earn',
+        transaction_type: 'earn' as const,
         reason: reason || null,
         created_at: new Date().toISOString(),
-      },
-      ...prev,
-    ]);
+      };
+      return [newTransaction, ...prev];
+    });
   }
 
   async function spendTokens(amount: number, reason?: string) {
@@ -79,17 +81,17 @@ export function useWallet() {
     setWallet(prev =>
       prev ? { ...prev, balance: Math.max(0, prev.balance - amount) } : prev
     );
-    setTransactions(prev => [
-      {
+    setTransactions(prev => {
+      const newTransaction = {
         id: crypto.randomUUID(),
         user_id: user.id,
         amount,
-        transaction_type: 'burn',
+        transaction_type: 'burn' as const,
         reason: reason || null,
         created_at: new Date().toISOString(),
-      },
-      ...prev,
-    ]);
+      };
+      return [newTransaction, ...prev];
+    });
   }
 
   useEffect(() => {

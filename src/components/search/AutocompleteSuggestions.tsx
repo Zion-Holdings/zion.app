@@ -1,12 +1,15 @@
-
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { SearchSuggestion, SearchHighlight } from "@/types/search";
+import { logInfo } from '@/utils/productionLogger';
+
 
 interface AutocompleteSuggestionsProps {
   suggestions: SearchSuggestion[];
   searchTerm: string;
-  onSelectSuggestion: (suggestion: string) => void;
+  onSelectSuggestion: (suggestion: SearchSuggestion) => void;
   visible: boolean;
+  highlightedIndex: number;
+  listId: string;
 }
 
 // Helper function to highlight matching text
@@ -30,27 +33,60 @@ const highlightMatch = (text: string, searchTerm: string): SearchHighlight => {
   };
 };
 
-export function AutocompleteSuggestions({ 
-  suggestions, 
-  searchTerm, 
+export function AutocompleteSuggestions({
+  suggestions,
+  searchTerm,
   onSelectSuggestion,
-  visible 
+  visible,
+  highlightedIndex,
+  listId
 }: AutocompleteSuggestionsProps) {
   if (!visible || suggestions.length === 0) return null;
   
+  const listRef = useRef<HTMLUListElement>(null);
+  const highlightedItemRef = useRef<HTMLLIElement>(null);
+
+  useEffect(() => {
+    if (highlightedIndex !== -1 && highlightedItemRef.current) {
+      highlightedItemRef.current.scrollIntoView({
+        block: "nearest",
+        inline: "nearest"
+      });
+    }
+  }, [highlightedIndex]);
+
   return (
-    <div className="absolute z-50 top-full left-0 right-0 mt-1 bg-zion-blue-dark border border-zion-blue-light rounded-lg shadow-lg overflow-hidden">
-      <ul className="py-2 max-h-60 overflow-y-auto">
+    <div
+      className="absolute z-50 top-full left-0 right-0 w-full mt-1 bg-zion-blue-dark border border-zion-blue-light rounded-lg shadow-lg max-h-64 overflow-y-auto search-dropdown"
+      data-testid="search-suggestions"
+    >
+      <ul
+        ref={listRef}
+        id={listId}
+        role="listbox"
+        className="py-2"
+      >
         {suggestions.map((suggestion, index) => {
           const highlight = highlightMatch(suggestion.text, searchTerm);
+          const isHighlighted = index === highlightedIndex;
 
           return (
             <li
               key={`${suggestion.type}-${index}`}
-              className="px-4 py-2 hover:bg-zion-blue-light/20 cursor-pointer"
-              onMouseDown={(e) => {
+              id={`suggestion-item-${index}`}
+              ref={isHighlighted ? highlightedItemRef : null}
+              role="option"
+              aria-selected={isHighlighted}
+              className={`px-4 py-2 cursor-pointer ${isHighlighted ? 'bg-zion-blue-light highlighted' : 'hover:bg-zion-blue-light/20'}`}
+              data-testid="suggestion-item"
+              onClick={(e) => {
                 e.preventDefault();
-                onSelectSuggestion(suggestion.text);
+                logInfo('Search suggestion clicked:', { data: suggestion });
+                onSelectSuggestion(suggestion);
+              }}
+              onMouseDown={(e) => {
+                // Prevent input blur when clicking suggestions
+                e.preventDefault();
               }}
             >
               <div className="flex items-center justify-between">

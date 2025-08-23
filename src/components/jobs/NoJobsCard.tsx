@@ -1,6 +1,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import Link from 'next/link';
 
 interface NoJobsCardProps {
   onUpdateProfile?: () => void;
@@ -15,7 +16,7 @@ export function NoJobsCard({ onUpdateProfile }: NoJobsCardProps) {
         </p>
         {onUpdateProfile && (
           <Button variant="outline" className="mt-4" asChild>
-            <a href="/profile">Update Profile</a>
+            <Link href="/profile">Update Profile</Link>
           </Button>
         )}
       </CardContent>

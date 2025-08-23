@@ -1,7 +1,7 @@
 
 import React from "react";
 import { BadgeEarned } from "./BadgeEarned";
-import { badgeList, BadgeKey } from "./badgeConfig";
+import { BadgeKey } from "./badgeConfig";
 
 // Dummy data for demo: what badges this user earned (with fake dates)
 const earnedBadges: { badge: BadgeKey; date: string }[] = [

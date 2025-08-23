@@ -1,19 +1,19 @@
-
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { TalentProfile } from "@/types/talent";
 import { toast } from "@/hooks/use-toast";
 import { showApiError } from "@/utils/apiErrorHandler";
 import { useAuthStatus } from "@/hooks/talent";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useRouter } from 'next/router';
+import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function useSavedTalents() {
+
   const { isAuthenticated, userDetails } = useAuthStatus();
   const [savedTalents, setSavedTalents] = useState<TalentProfile[]>([]);
   const [savedTalentIds, setSavedTalentIds] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter();
 
   // Fetch saved talents
   useEffect(() => {
@@ -35,7 +35,7 @@ export function useSavedTalents() {
         if (savedError) throw savedError;
 
         if (savedData) {
-          const talentIds = savedData.map(item => item.talent_id);
+          const talentIds = savedData.map((item: any) => item.talent_id);
           setSavedTalentIds(talentIds);
           
           if (talentIds.length > 0) {
@@ -53,8 +53,12 @@ export function useSavedTalents() {
           }
         }
       } catch (error) {
-        console.error('Error fetching saved talents:', error);
-        showApiError(error, 'There was a problem loading your saved talents.');
+        logErrorToProduction('Error fetching saved talents:', { data: error });
+        showApiError(
+          error,
+          'There was a problem loading your saved talents.',
+          fetchSavedTalents // Pass self as retry callback
+        );
       } finally {
         setIsLoading(false);
       }
@@ -71,8 +75,8 @@ export function useSavedTalents() {
         description: "Please log in to save talents to your favorites",
         variant: "destructive"
       });
-      const next = encodeURIComponent(location.pathname + location.search);
-      navigate(`/login?next=${next}`);
+      const returnTo = encodeURIComponent(router.asPath);
+      router.push(`/auth/login?returnTo=${returnTo}`);
       return;
     }
     
@@ -116,8 +120,12 @@ export function useSavedTalents() {
         });
       }
     } catch (error) {
-      console.error('Error toggling saved talent:', error);
-      showApiError(error, 'There was a problem updating your favorites. Please try again.');
+      logErrorToProduction('Error toggling saved talent:', { data: error });
+      showApiError(
+        error,
+        'There was a problem updating your favorites. Please try again.',
+        () => toggleSaveTalent(talent) // Pass a function that calls toggleSaveTalent with the current talent
+      );
     }
   };
 

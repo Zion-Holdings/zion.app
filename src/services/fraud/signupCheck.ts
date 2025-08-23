@@ -3,6 +3,8 @@
 import { supabase } from '@/integrations/supabase/client';
 import { analyzeEmail } from './analyzeEmail';
 import { SignupCheckResult } from './types';
+import {logErrorToProduction} from '@/utils/productionLogger';
+
 
 /**
  * Check for suspicious signup patterns
@@ -33,7 +35,7 @@ export const checkSignupPatterns = async (
         reasons.push(`Multiple accounts (${recentSignups.length}) created from same IP in last 24 hours`);
       }
     } catch (error) {
-      console.error('Error checking signup patterns:', error);
+      logErrorToProduction('Error checking signup patterns:', { data: error });
     }
   }
   

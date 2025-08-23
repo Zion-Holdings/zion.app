@@ -1,10 +1,9 @@
 
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, ControllerRenderProps } from "react-hook-form";
 import { 
   Card,
   CardContent,
-  CardFooter,
   CardHeader,
   CardTitle
 } from "@/components/ui/card";
@@ -70,11 +69,11 @@ export const PostForm = ({
             <FormField
               control={form.control}
               name="title"
-              render={({ field }) => (
+              render={({ field }: { field: ControllerRenderProps<PostFormValues, "title"> }) => (
                 <FormItem>
                   <FormLabel>Title</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter post title..." {...field} />
+                    <Input placeholder="Enter post title..." {...field} data-testid="post-title-input" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -84,14 +83,15 @@ export const PostForm = ({
             <FormField
               control={form.control}
               name="content"
-              render={({ field }) => (
+              render={({ field }: { field: ControllerRenderProps<PostFormValues, "content"> }) => (
                 <FormItem>
                   <FormLabel>Content</FormLabel>
                   <FormControl>
-                    <Textarea 
-                      placeholder="Write your post content here..." 
+                    <Textarea
+                      placeholder="Write your post content here..."
                       className="min-h-[200px]"
-                      {...field} 
+                      {...field}
+                      data-testid="post-content-input"
                     />
                   </FormControl>
                   <FormMessage />
@@ -102,7 +102,7 @@ export const PostForm = ({
             <FormField
               control={form.control}
               name="categoryId"
-              render={({ field }) => (
+              render={({ field }: { field: ControllerRenderProps<PostFormValues, "categoryId"> }) => (
                 <FormItem>
                   <FormLabel>Category</FormLabel>
                   <FormControl>
@@ -124,13 +124,13 @@ export const PostForm = ({
             <FormField
               control={form.control}
               name="tags"
-              render={({ field }) => (
+              render={({ field }: { field: ControllerRenderProps<PostFormValues, "tags"> }) => (
                 <FormItem>
                   <FormLabel>Tags (comma-separated)</FormLabel>
                   <FormControl>
-                    <Input 
-                      placeholder="e.g. resume, hiring, flutter" 
-                      {...field} 
+                    <Input
+                      placeholder="e.g. resume, hiring, flutter"
+                      {...field}
                     />
                   </FormControl>
                   <FormMessage />
@@ -138,7 +138,7 @@ export const PostForm = ({
               )}
             />
             
-            <Button type="submit" disabled={isSubmitting}>
+            <Button type="submit" disabled={isSubmitting} data-testid="publish-post-button">
               {isSubmitting ? "Submitting..." : isEditing ? "Update Post" : "Create Post"}
             </Button>
           </form>

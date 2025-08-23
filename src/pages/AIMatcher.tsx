@@ -1,17 +1,17 @@
-
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
 import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { GradientHeading } from "@/components/GradientHeading";
 import { AIMatchmaker } from "@/components/AIMatchmaker";
 import { Select, SelectValue, SelectTrigger, SelectContent, SelectItem } from "@/components/ui/select";
 import { toast } from "@/hooks/use-toast";
+import { useFeatureUsage } from "@/hooks/useFeatureUsage";
 import { MatchResult } from "@/lib/ai-matchmaking";
 
 export default function AIMatcherPage() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  useFeatureUsage('AI Matchmaker');
   
   const handleMatchSelect = (match: MatchResult) => {
     // Get the item type from the category
@@ -30,13 +30,18 @@ export default function AIMatcherPage() {
       description: `You've selected ${match.item.title}`,
     });
     
-    // Navigate to the quote request page with the selected item
-    navigate("/request-quote", {
-      state: { 
-        serviceType: itemType,
-        specificItem: match.item
-      }
-    });
+    // Store data in sessionStorage for the request-quote page
+    const quoteData = { 
+      serviceType: itemType,
+      specificItem: match.item
+    };
+    
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('quoteRequestData', JSON.stringify(quoteData));
+    }
+
+    // Navigate to the quote request page
+    router.push("/request-quote");
   };
   
   return (
@@ -76,7 +81,6 @@ export default function AIMatcherPage() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

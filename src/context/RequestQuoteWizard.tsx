@@ -5,8 +5,10 @@ import React, {
   useEffect,
   ReactNode,
 } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
+import {logErrorToProduction} from '@/utils/productionLogger';
 import { toast } from "@/hooks/use-toast";
+import axios from 'axios';
 
 export type WizardStep = "Services" | "Details" | "Success";
 
@@ -37,7 +39,7 @@ export function useRequestQuoteWizard(): RequestQuoteWizardContextType {
 export function RequestQuoteWizardProvider({ children }: { children: ReactNode }) {
   const [step, setStep] = useState<WizardStep>("Services");
   const [selectedService, setSelectedService] = useState<string | null>(null);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const goToStep = (next: WizardStep) => setStep(next);
 
@@ -53,14 +55,18 @@ export function RequestQuoteWizardProvider({ children }: { children: ReactNode }
 
   const submitQuote = async (message: string) => {
     if (!selectedService) return;
-    await fetch("/api/quotes", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ service_id: selectedService, user_message: message }),
-    });
-    toast.success("Quote request submitted");
-    navigate("/dashboard/quotes");
-    setStep("Success");
+    try {
+      await axios.post('/api/quotes', {
+        service_id: selectedService,
+        user_message: message,
+      });
+      toast.success("Quote request submitted");
+      router.push("/dashboard/quotes");
+      setStep("Success");
+    } catch (err) {
+      logErrorToProduction('Failed to submit quote', { data: err });
+      toast({ title: 'Error submitting quote', variant: 'destructive' });
+    }
   };
 
   useEffect(() => {

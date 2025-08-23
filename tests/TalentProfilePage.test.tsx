@@ -17,9 +17,9 @@ describe('TalentProfilePage', () => {
     });
 
     render(
-      <MemoryRouter initialEntries={['/talent/t-001']}>
+      <MemoryRouter initialEntries={['/talent/test-talent']}>
         <Routes>
-          <Route path="/talent/:id" element={<TalentProfilePage />} />
+          <Route path="/talent/:slug" element={<TalentProfilePage />} />
         </Routes>
       </MemoryRouter>
     );

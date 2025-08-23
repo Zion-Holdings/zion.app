@@ -1,5 +1,10 @@
 describe('orders page', () => {
   it('loads orders and shows download link', () => {
+    // Ensure we have a logged in user so the orders query runs
+    cy.loginByApi(
+      Cypress.env('EXISTING_USER_EMAIL'),
+      Cypress.env('EXISTING_USER_PASSWORD')
+    );
     const orders = [
       { orderId: 'ORD-1', date: '2024-05-01', total: 99.99, status: 'paid', invoiceUrl: '/inv1.pdf' }
     ];

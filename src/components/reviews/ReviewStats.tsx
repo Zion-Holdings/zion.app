@@ -1,6 +1,7 @@
 
-import { Star } from "lucide-react";
+
 import { Progress } from "@/components/ui/progress";
+import { Star } from 'lucide-react';
 
 interface ReviewStatsProps {
   averageRating: number;

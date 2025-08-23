@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { Loader2 } from "lucide-react";
+import { Loader2 } from 'lucide-react';
+
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
@@ -14,7 +15,8 @@ import { generateContract } from "../utils/contractUtils";
 import { ProjectDetailsFields } from "./ProjectDetailsFields";
 import { PaymentTermsFields } from "./PaymentTermsFields";
 import { AdditionalClausesFields } from "./AdditionalClausesFields";
-import { DeploymentOptions } from "@/types/smart-contracts";
+import {logErrorToProduction} from '@/utils/productionLogger';
+
 
 const formSchema = z.object({
   projectName: z.string().min(1, "Project name is required"),
@@ -25,7 +27,7 @@ const formSchema = z.object({
   endDate: z.date().optional(),
   paymentTerms: z.enum(["hourly", "fixed", "milestone"]),
   paymentAmount: z.string().min(1, "Payment amount is required"),
-  additionalClauses: z.array(z.string()).default([]),
+  additionalClauses: z.array(z.string()).optional(),
 });
 
 export type ContractFormValues = z.infer<typeof formSchema>;
@@ -36,8 +38,6 @@ interface ContractFormProps {
   initialValues?: ContractFormValues;
   onFormValuesChange?: (values: ContractFormValues) => void;
   onContractGenerated: (contractContent: string) => void;
-  deployOptions?: DeploymentOptions;
-  onDeployOptionsChange?: (options: DeploymentOptions) => void;
 }
 
 export function ContractForm({
@@ -46,8 +46,6 @@ export function ContractForm({
   initialValues,
   onFormValuesChange,
   onContractGenerated,
-  deployOptions,
-  onDeployOptionsChange
 }: ContractFormProps) {
   const [isGenerating, setIsGenerating] = useState(false);
   const [generatedMilestones, setGeneratedMilestones] = useState<GeneratedMilestone[]>([]);
@@ -84,6 +82,7 @@ export function ContractForm({
       
       return () => subscription.unsubscribe();
     }
+    return undefined;
   }, [form, onFormValuesChange]);
   
   const handleMilestonesGenerated = (milestones: GeneratedMilestone[]) => {
@@ -112,7 +111,7 @@ export function ContractForm({
       
       onContractGenerated(contract);
     } catch (error) {
-      console.error("Error generating contract:", error);
+      logErrorToProduction('Error generating contract:', { data: error });
       toast({
         title: "Contract Generation Failed",
         description: error instanceof Error ? error.message : "Something went wrong. Please try again.",
@@ -140,7 +139,6 @@ export function ContractForm({
           
           <PaymentTermsFields 
             form={form}
-            talent={talent}
             handleMilestonesGenerated={handleMilestonesGenerated}
           />
           
