@@ -1,45 +1,17 @@
-name-template: 'v$RESOLVED_VERSION'
-tag-template: 'v$RESOLVED_VERSION'
-
+name-template: 'v$NEXT_PATCH_VERSION'
+tag-template: 'v$NEXT_PATCH_VERSION'
 categories:
   - title: '🚀 Features'
     labels:
-      - 'feat'
       - 'feature'
+      - 'enhancement'
   - title: '🐛 Fixes'
     labels:
-      - 'fix'
       - 'bug'
-  - title: '⚡ Performance'
-    labels:
-      - 'perf'
-      - 'performance'
+      - 'fix'
   - title: '🧰 Maintenance'
     labels:
       - 'chore'
       - 'dependencies'
-  - title: '📝 Documentation'
-    labels:
-      - 'docs'
-  - title: '🔒 Security'
-    labels:
-      - 'security'
-
-change-template: '- $TITLE (#$NUMBER) @$AUTHOR'
-change-title-escapes: '\\`*_{}[]()#+-.!'
-
-version-resolver:
-  major:
-    labels: [ 'major' ]
-  minor:
-    labels: [ 'minor', 'feat', 'feature' ]
-  patch:
-    labels: [ 'patch', 'fix', 'perf', 'chore', 'docs', 'security' ]
-  default: patch
-
-template: |
-  ## Changes
-  $CHANGES
-
-  ## Contributors
-  $CONTRIBUTORS
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+no-changes-template: 'No user-facing changes.'

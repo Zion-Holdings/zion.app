@@ -8,12 +8,12 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     permissions:
       contents: write
       pull-requests: write
     steps:
       - name: Checkout
->>>>>>> origin/automation/git-sync/2025-08-13T22-22-32-390Z
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -45,5 +45,4 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: node automation/advanced-git-sync.cjs || node automation/git-sync.cjs
 
->>>>>>> origin/automation/git-sync/2025-08-13T22-22-32-390Z
 

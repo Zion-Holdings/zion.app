@@ -1,327 +1,762 @@
-import React from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import Head from 'next/head';
-import Container from '../components/ui/Container';
-
+import { useRouter } from 'next/router';
+import { Check, Star, TrendingUp, Clock, DollarSign, ShieldCheck, Search, Filter, Grid3X3, List, Phone, Mail, MapPin, ArrowRight, ExternalLink, Brain, Rocket, Globe, Cpu, Lock, Eye, Zap } from 'lucide-react';
 import Button from '../components/ui/Button';
-import FeaturesGrid from '../components/ui/FeaturesGrid';
+import { Check, Star, Zap, Shield, Users, Globe, TrendingUp, Clock, DollarSign, Target } from 'lucide-react';
 
 export default function ServicesPage() {
-  const services = [
-    {
-      icon: '🤖',
-      title: 'AI-Powered Automation',
-      description: 'Intelligent systems that learn, adapt, and optimize your business processes automatically.',
-      color: 'bg-gradient-to-br from-blue-400 to-indigo-500',
-    },
-    {
-      icon: '☁️',
-      title: 'Cloud Infrastructure',
-      description: 'Scalable, secure, and high-performance cloud solutions built for modern applications.',
-      color: 'bg-gradient-to-br from-green-400 to-emerald-500',
-    },
-    {
-      icon: '🔒',
-      title: 'Security & Compliance',
-      description: 'Enterprise-grade security with automated threat detection and compliance monitoring.',
-      color: 'bg-gradient-to-br from-red-400 to-pink-500',
-    },
+  const microSaasServices = [
     {
       icon: '📊',
-      title: 'Analytics & Insights',
-      description: 'Data-driven decision making with real-time analytics and predictive intelligence.',
-      color: 'bg-gradient-to-br from-purple-400 to-pink-500',
+      title: 'AI-Powered Social Media Analytics',
+      description: 'Real-time social media performance tracking with AI-driven insights and automated reporting for businesses.',
+      features: [
+        'Multi-platform social media monitoring',
+        'AI-powered sentiment analysis',
+        'Automated performance reports',
+        'Competitor analysis & benchmarking',
+        'ROI tracking & attribution',
+        'Custom dashboard & alerts'
+      ],
+      pricing: {
+        starter: '$49/month',
+        professional: '$149/month',
+        enterprise: '$399/month'
+      },
+      marketPosition: 'Competitive with Hootsuite, Buffer, and Sprout Social',
+      useCases: ['Marketing agencies', 'E-commerce brands', 'SaaS companies', 'Content creators'],
+      color: 'bg-gradient-to-br from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      gradient: 'from-blue-400 to-indigo-500',
+      cta: 'Start Free Trial'
     },
     {
-      icon: '⚡',
-      title: 'Performance Optimization',
-      description: 'Lightning-fast applications with automated optimization and monitoring.',
-      color: 'bg-gradient-to-br from-yellow-400 to-orange-500',
+      icon: '🔍',
+      title: 'SEO Content Optimization Suite',
+      description: 'AI-powered content optimization tool that analyzes and improves your content for better search rankings.',
+      features: [
+        'Real-time SEO scoring',
+        'Keyword density optimization',
+        'Content readability analysis',
+        'Competitor content research',
+        'Automated content suggestions',
+        'Performance tracking & reporting'
+      ],
+      color: 'bg-gradient-to-br from-emerald-500 to-green-600',
+      textColor: 'text-emerald-400',
+      gradient: 'from-emerald-400 to-emerald-500',
+      pricing: '$89/month',
+      link: 'https://seo.zion.app'
     },
     {
-      icon: '🔄',
-      title: 'DevOps & CI/CD',
-      description: 'Streamlined development workflows with automated testing and deployment.',
-      color: 'bg-gradient-to-br from-cyan-400 to-blue-500',
+      icon: '📧',
+      title: 'Smart Email Marketing Automation',
+      description: 'Intelligent email marketing platform with AI-powered segmentation, personalization, and automation workflows.',
+      features: [
+        'AI-powered audience segmentation',
+        'Behavioral trigger automation',
+        'Personalized content recommendations',
+        'A/B testing optimization',
+        'Advanced analytics & reporting',
+        'GDPR compliance tools'
+      ],
+      pricing: {
+        starter: '$29/month',
+        professional: '$79/month',
+        enterprise: '$199/month'
+      },
+      marketPosition: 'Competes with Mailchimp, ConvertKit, and ActiveCampaign',
+      useCases: ['E-commerce businesses', 'SaaS companies', 'Newsletters', 'Marketing teams'],
+      color: 'bg-gradient-to-br from-purple-500 to-pink-600',
+      textColor: 'text-purple-400',
+      gradient: 'from-purple-400 to-pink-500',
+      cta: 'Get Started'
     },
-  ];
-
-  const features = [
     {
-      icon: '🚀',
-      title: 'Scalable Architecture',
-      description: 'Built to grow with your business needs, from startup to enterprise.',
-      color: 'bg-gradient-to-br from-blue-400 to-indigo-500',
+      icon: '🎯',
+      title: 'Customer Feedback & Survey Platform',
+      description: 'Comprehensive feedback collection and analysis platform with AI-powered insights and automated reporting.',
+      features: [
+        'Multi-channel feedback collection',
+        'AI-powered sentiment analysis',
+        'Automated survey workflows',
+        'Real-time response tracking',
+        'Advanced analytics & reporting',
+        'Integration with popular tools'
+      ],
+      pricing: {
+        starter: '$19/month',
+        professional: '$59/month',
+        enterprise: '$159/month'
+      },
+      marketPosition: 'Alternative to SurveyMonkey, Typeform, and Qualtrics',
+      useCases: ['Product teams', 'Customer success', 'Market research', 'HR departments'],
+      color: 'bg-gradient-to-br from-orange-500 to-red-600',
+      textColor: 'text-orange-400',
+      gradient: 'from-orange-400 to-red-500',
+      cta: 'Start Collecting'
     },
     {
-      icon: '🔧',
-      title: 'Custom Development',
-      description: 'Tailored solutions designed specifically for your unique requirements.',
-      color: 'bg-gradient-to-br from-green-400 to-emerald-500',
+      icon: '📈',
+      title: 'Business Intelligence Dashboard',
+      description: 'Real-time business intelligence platform that consolidates data from multiple sources into actionable insights.',
+      features: [
+        'Multi-source data integration',
+        'Real-time dashboard updates',
+        'Custom KPI tracking',
+        'Automated reporting',
+        'Data visualization tools',
+        'Mobile-responsive design'
+      ],
+      cta: 'View Demo'
+    },
+    {
+      icon: '🤖',
+      title: 'AI Chatbot Builder',
+      description: 'No-code AI chatbot platform for customer service, lead generation, and business automation.',
+      features: [
+        'Drag-and-drop chatbot builder',
+        'AI-powered conversation flows',
+        'Multi-language support',
+        'Integration with popular platforms',
+        'Analytics & performance tracking',
+        'Custom branding options'
+      ],
+      pricing: {
+        starter: '$25/month',
+        professional: '$75/month',
+        enterprise: '$199/month'
+      },
+      marketPosition: 'Alternative to Intercom, Drift, and ManyChat',
+      useCases: ['Customer support', 'E-commerce', 'Lead generation', 'Small businesses'],
+      color: 'bg-gradient-to-br from-indigo-500 to-purple-600',
+      textColor: 'text-indigo-400',
+      gradient: 'from-indigo-400 to-purple-500',
+      cta: 'Build Your Bot'
+=======
+      color: 'bg-gradient-to-br from-rose-500 to-pink-600',
+      textColor: 'text-rose-400',
+      gradient: 'from-rose-400 to-pink-500',
+      pricing: '$99/month',
+      link: 'https://bi.zion.app'
+    },
+    {
+      icon: '📧',
+      title: 'Email Marketing Automation',
+      description: 'AI-powered email campaigns with automation, personalization, and analytics.',
+      features: [
+        'AI-powered subject line optimization',
+        'Behavioral email triggers',
+        'A/B testing automation',
+        'Advanced segmentation',
+        'Email template builder'
+      ],
+      color: 'bg-gradient-to-br from-indigo-500 to-purple-600',
+      textColor: 'text-indigo-400',
+      gradient: 'from-indigo-400 to-purple-500',
+      pricing: '$59/month',
+      link: 'https://email.zion.app'
     },
     {
       icon: '📱',
-      title: 'Multi-Platform Support',
-      description: 'Seamless experience across web, mobile, and desktop platforms.',
-      color: 'bg-gradient-to-br from-purple-400 to-pink-500',
+      title: 'Social Media Scheduler',
+      description: 'Intelligent social media management with AI optimization and analytics.',
+      features: [
+        'Multi-platform scheduling',
+        'AI-powered content optimization',
+        'Best time to post analysis',
+        'Content calendar management',
+        'Social media analytics'
+      ],
+      color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
+      textColor: 'text-teal-400',
+      gradient: 'from-teal-400 to-cyan-500',
+      pricing: '$44/month',
+      link: 'https://social.zion.app'
     },
     {
-      icon: '🌍',
-      title: 'Global Deployment',
-      description: 'Worldwide infrastructure ensuring fast performance everywhere.',
-      color: 'bg-gradient-to-br from-yellow-400 to-orange-500',
+      icon: '💰',
+      title: 'Invoice & Billing Manager',
+      description: 'Streamlined financial operations with automated invoicing and payment processing.',
+      features: [
+        'Automated invoice generation',
+        'Payment gateway integration',
+        'Recurring billing setup',
+        'Expense tracking',
+        'Financial reporting'
+      ],
+      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      gradient: 'from-green-400 to-emerald-500',
+      pricing: '$34/month',
+      link: 'https://billing.zion.app'
     },
+    {
+      icon: '📋',
+      title: 'Project Management Hub',
+      description: 'Collaborative project organization with task management and team collaboration.',
+      features: [
+        'Kanban and Gantt views',
+        'Time tracking integration',
+        'Team collaboration tools',
+        'Resource allocation',
+        'Progress reporting'
+      ],
+      color: 'bg-gradient-to-br from-orange-500 to-red-600',
+      textColor: 'text-orange-400',
+      gradient: 'from-orange-400 to-red-500',
+      pricing: '$54/month',
+      link: 'https://projects.zion.app'
+    },
+    {
+      icon: '🎧',
+      title: 'Customer Support Suite',
+      description: 'Comprehensive support management with AI-powered automation.',
+      features: [
+        'Ticket management system',
+        'AI-powered response suggestions',
+        'Knowledge base builder',
+        'Live chat integration',
+        'Customer satisfaction surveys'
+      ],
+      color: 'bg-gradient-to-br from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      gradient: 'from-blue-400 to-indigo-500',
+      pricing: '$74/month',
+      link: 'https://support.zion.app'
+    },
+    {
+      icon: '👥',
+      title: 'HR Management Platform',
+      description: 'Streamlined human resources with employee management and payroll integration.',
+      features: [
+        'Employee onboarding automation',
+        'Time and attendance tracking',
+        'Performance management',
+        'Payroll integration',
+        'Benefits administration'
+      ],
+      color: 'bg-gradient-to-br from-purple-500 to-pink-600',
+      textColor: 'text-purple-400',
+      gradient: 'from-purple-400 to-pink-500',
+      pricing: '$64/month',
+      link: 'https://hr.zion.app'
+    }
+  ];
+
+  const marketAnalysis = [
+    {
+      category: 'Social Media Tools',
+      marketSize: '$23.4B',
+      growthRate: '13.2%',
+      keyPlayers: 'Hootsuite, Buffer, Sprout Social',
+      ourAdvantage: 'AI-powered insights, competitive pricing, easy integration'
+    },
+    {
+      category: 'SEO Tools',
+      marketSize: '$1.2B',
+      growthRate: '18.7%',
+      keyPlayers: 'Clearscope, MarketMuse, Surfer SEO',
+      ourAdvantage: 'Real-time optimization, AI suggestions, comprehensive reporting'
+    },
+    {
+      category: 'Email Marketing',
+      marketSize: '$7.5B',
+      growthRate: '15.3%',
+      keyPlayers: 'Mailchimp, ConvertKit, ActiveCampaign',
+      ourAdvantage: 'AI segmentation, automation workflows, advanced analytics'
+    },
+    {
+      category: 'Survey Platforms',
+      marketSize: '$3.2B',
+      growthRate: '12.8%',
+      keyPlayers: 'SurveyMonkey, Typeform, Qualtrics',
+      ourAdvantage: 'AI sentiment analysis, automated workflows, competitive pricing'
+    }
+  ];
+
+  const categories = [
+    {
+      name: 'Core Services',
+      description: 'Enterprise-grade technology solutions for modern businesses',
+      services: services.filter(s => !s.category)
+    },
+    {
+      name: 'Content & Marketing',
+      description: 'AI-powered tools for content creation, email marketing, and social media',
+      services: services.filter(s => s.category === 'Content & Marketing')
+    },
+    {
+      name: 'Customer Experience',
+      description: 'Solutions to enhance customer support and engagement',
+      services: services.filter(s => s.category === 'Customer Experience')
+    },
+    {
+      name: 'Productivity & Collaboration',
+      description: 'Tools to streamline workflows and improve team collaboration',
+      services: services.filter(s => s.category === 'Productivity & Collaboration')
+    },
+    {
+      name: 'Analytics & Monitoring',
+      description: 'Data-driven insights and performance monitoring solutions',
+      services: services.filter(s => s.category === 'Analytics & Monitoring')
+    }
   ];
 
   return (
     <>
       <Head>
-        <title>Services | Zion Tech Group - Autonomous Innovation Solutions</title>
-        <meta name="description" content="Discover Zion Tech Group's comprehensive range of autonomous technology services including AI automation, system optimization, and intelligent infrastructure solutions." />
-        <meta property="og:title" content="Services | Zion Tech Group - Autonomous Innovation Solutions" />
-        <meta property="og:description" content="Discover Zion Tech Group's comprehensive range of autonomous technology services including AI automation, system optimization, and intelligent infrastructure solutions." />
+        <title>Micro SaaS Services | Zion Tech Group - Real Solutions with Market Pricing</title>
+        <meta name="description" content="Discover our real micro SaaS services: AI-powered social media analytics, SEO optimization, email marketing automation, and more. Competitive pricing with enterprise features." />
+        <meta property="og:title" content="Micro SaaS Services | Zion Tech Group" />
+        <meta property="og:description" content="Real micro SaaS solutions with competitive pricing. AI-powered tools for social media, SEO, email marketing, and business intelligence." />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      
-      <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950 text-white">
-        <main className="container mx-auto px-6 py-12">
-          </section>
-=======
-          <div className="max-w-6xl mx-auto">
-            <nav className="mb-8">
-              <a href="/" className="text-cyan-400 hover:text-cyan-300 transition-colors">
-                ← Back to Home
-              </a>
-            </nav>
-            
-            <header className="text-center mb-16">
-              <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
-                Our Services
-              </h1>
-              <p className="text-xl text-white/80 max-w-3xl mx-auto">
-                Comprehensive autonomous technology solutions designed to revolutionize your digital infrastructure
-              </p>
-            </header>
 
-            {/* Core Services */}
-            <section className="mb-20">
-              <h2 className="text-3xl font-bold text-center mb-12 text-white/90">Core Services</h2>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-cyan-400/30 transition-all duration-300">
-                  <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center mb-6">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-2xl font-bold mb-4 text-cyan-300">Autonomous System Development</h3>
-                  <p className="text-white/80 leading-relaxed mb-6">
-                    Build intelligent, self-managing systems that operate independently and continuously improve performance. Our autonomous agents handle complex tasks without human intervention.
-                  </p>
-                  <ul className="text-white/70 space-y-2">
-                    <li>• Self-healing infrastructure</li>
-                    <li>• Predictive maintenance systems</li>
-                    <li>• Automated optimization workflows</li>
-                    <li>• Intelligent resource management</li>
-                  </ul>
-                </div>
-
-                <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-fuchsia-400/30 transition-all duration-300">
-                  <div className="w-16 h-16 bg-gradient-to-br from-fuchsia-500 to-purple-500 rounded-xl flex items-center justify-center mb-6">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-2xl font-bold mb-4 text-fuchsia-300">AI-Powered Content Generation</h3>
-                  <p className="text-white/80 leading-relaxed mb-6">
-                    Leverage advanced AI systems to create, optimize, and manage content at scale. Our intelligent content engines generate high-quality, SEO-optimized material automatically.
-                  </p>
-                  <ul className="text-white/70 space-y-2">
-                    <li>• Automated content creation</li>
-                    <li>• SEO optimization engines</li>
-                    <li>• Multi-language support</li>
-                    <li>• Content quality assurance</li>
-                  </ul>
-                </div>
-
-                <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-green-400/30 transition-all duration-300">
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center mb-6">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-2xl font-bold mb-4 text-green-300">Infrastructure Optimization</h3>
-                  <p className="text-white/80 leading-relaxed mb-6">
-                    Transform your existing infrastructure with intelligent automation and optimization systems. Achieve unprecedented performance and reliability through autonomous management.
-                  </p>
-                  <ul className="text-white/70 space-y-2">
-                    <li>• Performance monitoring</li>
-                    <li>• Automated scaling</li>
-                    <li>• Load balancing optimization</li>
-                    <li>• Resource utilization management</li>
-                  </ul>
-                </div>
-
-                <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-blue-400/30 transition-all duration-300">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center mb-6">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-2xl font-bold mb-4 text-blue-300">Security & Compliance</h3>
-                  <p className="text-white/80 leading-relaxed mb-6">
-                    Comprehensive security solutions with autonomous threat detection and response. Our systems continuously monitor and protect your infrastructure from emerging threats.
-                  </p>
-                  <ul className="text-white/70 space-y-2">
-                    <li>• Automated threat detection</li>
-                    <li>• Vulnerability scanning</li>
-                    <li>• Compliance monitoring</li>
-                    <li>• Incident response automation</li>
-                  </ul>
-                </div>
-              </div>
-            </section>
-
-            {/* Specialized Solutions */}
-            <section className="mb-20">
-              <h2 className="text-3xl font-bold text-center mb-12 text-white/90">Specialized Solutions</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="bg-gradient-to-br from-cyan-500/20 to-blue-500/20 backdrop-blur-xl rounded-2xl p-6 border border-cyan-400/30">
-                  <h3 className="text-xl font-semibold mb-4 text-cyan-300">GitHub Actions Automation</h3>
-                  <p className="text-white/80 mb-4">
-                    Comprehensive CI/CD automation with intelligent workflow management and autonomous optimization.
-                  </p>
-                  <div className="text-sm text-cyan-300/80">
-                    • 227+ Active Workflows<br/>
-                    • Automated Testing<br/>
-                    • Intelligent Deployment<br/>
-                    • Performance Monitoring
-                  </div>
-                </div>
-
-                <div className="bg-gradient-to-br from-fuchsia-500/20 to-purple-500/20 backdrop-blur-xl rounded-2xl p-6 border border-fuchsia-400/30">
-                  <h3 className="text-xl font-semibold mb-4 text-fuchsia-300">Content Management Systems</h3>
-                  <p className="text-white/80 mb-4">
-                    AI-powered content generation and management with automated optimization and quality control.
-                  </p>
-                  <div className="text-sm text-fuchsia-300/80">
-                    • 2,960+ Generated Pages<br/>
-                    • SEO Optimization<br/>
-                    • Multi-format Support<br/>
-                    • Quality Assurance
-                  </div>
-                </div>
-
-                <div className="bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-xl rounded-2xl p-6 border border-green-400/30">
-                  <h3 className="text-xl font-semibold mb-4 text-green-300">Performance Optimization</h3>
-                  <p className="text-white/80 mb-4">
-                    Continuous performance monitoring and optimization with predictive analytics and automated improvements.
-                  </p>
-                  <div className="text-sm text-green-300/80">
-                    • Real-time Monitoring<br/>
-                    • Predictive Analytics<br/>
-                    • Automated Optimization<br/>
-                    • Performance Reporting
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            {/* Service Process */}
-            <section className="mb-20">
-              <h2 className="text-3xl font-bold text-center mb-12 text-white/90">Our Service Process</h2>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
-                    1
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2 text-cyan-300">Discovery</h3>
-                  <p className="text-white/80 text-sm">
-                    We analyze your current infrastructure and identify optimization opportunities.
-                  </p>
-                </div>
-
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-fuchsia-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
-                    2
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2 text-fuchsia-300">Design</h3>
-                  <p className="text-white/80 text-sm">
-                    Custom autonomous solutions designed specifically for your needs and goals.
-                  </p>
-                </div>
-
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
-                    3
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2 text-green-300">Implementation</h3>
-                  <p className="text-white/80 text-sm">
-                    Seamless deployment with minimal disruption to your existing operations.
-                  </p>
-                </div>
-
-                <div className="text-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
-                    4
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2 text-blue-300">Optimization</h3>
-                  <p className="text-white/80 text-sm">
-                    Continuous monitoring and autonomous optimization for ongoing improvement.
-                  </p>
-                </div>
-              </div>
-            </section>
-
-            {/* Technology Stack */}
-            <section className="mb-20">
-              <h2 className="text-3xl font-bold text-center mb-12 text-white/90">Technology Stack</h2>
-              <div className="bg-white/5 backdrop-blur-xl rounded-2xl p-8 border border-white/10">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl flex items-center justify-center mx-auto mb-4">
-                      <span className="text-white font-bold">Next.js</span>
-                    </div>
-                    <p className="text-white/80 text-sm">React Framework</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-green-800 rounded-xl flex items-center justify-center mx-auto mb-4">
-                      <span className="text-white font-bold">GitHub</span>
-                    </div>
-                    <p className="text-white/80 text-sm">Actions & CI/CD</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-800 rounded-xl flex items-center justify-center mx-auto mb-4">
-                      <span className="text-white font-bold">AI/ML</span>
-                    </div>
-                    <p className="text-white/80 text-sm">Machine Learning</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-cyan-600 to-cyan-800 rounded-xl flex items-center justify-center mx-auto mb-4">
-                      <span className="text-white font-bold">Cloud</span>
-                    </div>
-                    <p className="text-white/80 text-sm">Native Architecture</p>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            {/* Call to Action */}
-            <section className="text-center">
-              <div className="bg-gradient-to-r from-cyan-500/20 to-fuchsia-500/20 backdrop-blur-xl rounded-2xl p-12 border border-cyan-400/30">
-                <h2 className="text-3xl font-bold mb-6 text-white/90">Ready to Transform Your Infrastructure?</h2>
-                <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-                  Let's discuss how our autonomous technology solutions can revolutionize your digital operations and drive unprecedented efficiency.
-                </p>
-                <div className="flex flex-wrap justify-center gap-4">
-                  <a href="/about" className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:scale-105">
-                    Learn More About Us
-                  </a>
-                  <button className="border border-white/30 hover:border-cyan-400/50 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:scale-105 backdrop-blur-xl">
-                    Schedule Consultation
-                  </button>
-                </div>
-              </div>
-            </section>
+      {/* Hero Section */}
+      <section className="relative section-padding bg-gradient-cursor overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,122,204,0.08),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(0,122,204,0.06),transparent_50%)]" />
+        <div className="absolute inset-0 bg-grid opacity-10" />
+        
+        <div className="relative z-10 container-cursor text-center">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-cursor-blue/10 border border-cursor-blue/20 text-cursor-blue text-sm font-medium mb-6">
+            <span className="w-2 h-2 bg-cursor-blue rounded-full mr-2 animate-pulse" />
+            Real Micro SaaS Solutions
           </div>
-        </main>
+          <h1 className="text-responsive-xl font-black mb-8 gradient-text text-shadow-lg">
+            Proven Micro SaaS Services
+          </h1>
+          <p className="text-responsive-md text-gray-300 max-w-5xl mx-auto leading-relaxed">
+            Real solutions with competitive pricing. Our micro SaaS services are designed to solve specific business problems with AI-powered automation and enterprise-grade features.
+          </p>
+        </div>
+      </section>
+
+      {/* Market Analysis */}
+      <section className="section-padding bg-gradient-cursor-accent">
+        <div className="container-cursor">
+          <div className="text-center mb-16">
+            <h2 className="text-responsive-lg font-bold mb-8 gradient-text text-shadow">
+              Market Analysis & Competitive Positioning
+            </h2>
+            <p className="text-responsive-md text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Understanding the market landscape helps us deliver better value and competitive pricing.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {marketAnalysis.map((market, index) => (
+              <Card
+                key={index}
+                className="card-hover border-gradient-blue text-center"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <h3 className="text-xl font-bold text-white mb-4">{market.category}</h3>
+                <div className="space-y-3 text-sm">
+                  <div className="flex justify-between">
+                    <span className="text-gray-400">Market Size:</span>
+                    <span className="text-green-400 font-semibold">{market.marketSize}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-400">Growth Rate:</span>
+                    <span className="text-blue-400 font-semibold">{market.growthRate}</span>
+                  </div>
+                  <div className="text-left">
+                    <span className="text-gray-400 block mb-2">Key Players:</span>
+                    <span className="text-gray-300 text-xs">{market.keyPlayers}</span>
+                  </div>
+                  <div className="text-left">
+                    <span className="text-gray-400 block mb-2">Our Advantage:</span>
+                    <span className="text-cursor-blue text-xs">{market.ourAdvantage}</span>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+      <section className="section-padding bg-gradient-cursor">
+        <div className="container-cursor">
+          <div className="text-center mb-20">
+            <h2 className="text-responsive-lg font-bold mb-8 gradient-text text-shadow">
+              Our Micro SaaS Services
+            </h2>
+            <p className="text-responsive-md text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Each service is designed to solve specific business problems with competitive pricing and enterprise features.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {microSaasServices.map((service, index) => (
+              <Card
+                key={index}
+                className="card-hover text-center border-gradient-blue"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="flex items-start space-x-6">
+                  <div className="relative">
+                    <div className={`w-20 h-20 rounded-2xl flex items-center justify-center text-3xl bg-gradient-to-br ${service.color} shadow-xl group-hover:scale-110 transition-transform duration-300`}>
+                      {service.icon}
+                    </div>
+                    <div className={`absolute -inset-2 bg-gradient-to-r from-transparent via-${service.gradient} to-transparent rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-sm`} />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className={`text-2xl font-bold mb-4 ${service.textColor}`}>
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-400 leading-relaxed mb-6">
+                      {service.description}
+                    </p>
+                    
+                    {/* Pricing */}
+                    <div className="mb-6 p-4 bg-gray-800/50 rounded-lg">
+                      <h4 className="text-white font-semibold mb-3 flex items-center">
+                        <DollarSign className="w-4 h-4 mr-2" />
+                        Pricing Plans
+                      </h4>
+                      <div className="grid grid-cols-3 gap-2 text-sm">
+                        <div className="text-center">
+                          <div className="text-gray-400 text-xs">Starter</div>
+                          <div className="text-white font-semibold">{service.pricing.starter}</div>
+                        </div>
+                        <div className="text-center">
+                          <div className="text-gray-400 text-xs">Professional</div>
+                          <div className="text-white font-semibold">{service.pricing.professional}</div>
+                        </div>
+                        <div className="text-center">
+                          <div className="text-gray-400 text-xs">Enterprise</div>
+                          <div className="text-white font-semibold">{service.pricing.enterprise}</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Market Position */}
+                    <div className="mb-6 p-4 bg-blue-900/20 rounded-lg border border-blue-500/20">
+                      <h4 className="text-blue-400 font-semibold mb-2 flex items-center">
+                        <Target className="w-4 h-4 mr-2" />
+                        Market Position
+                      </h4>
+                      <p className="text-gray-300 text-sm">{service.marketPosition}</p>
+                    </div>
+
+                    {/* Use Cases */}
+                    <div className="mb-6">
+                      <h4 className="text-white font-semibold mb-3 flex items-center">
+                        <Users className="w-4 h-4 mr-2" />
+                        Perfect For
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {service.useCases.map((useCase, useCaseIndex) => (
+                          <span key={useCaseIndex} className="px-3 py-1 bg-gray-700 rounded-full text-xs text-gray-300">
+                            {useCase}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Features */}
+                    <ul className="space-y-2 mb-6">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center text-gray-300">
+                          <Check className="w-4 h-4 text-cursor-blue mr-3 flex-shrink-0" />
+                          <span className="text-sm">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <Button
+                      href="/contact"
+                      size="lg"
+                      className={`w-full bg-gradient-to-r ${service.gradient} hover:opacity-90 transition-opacity`}
+                    >
+                      {service.cta}
+                    </Button>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Technology Stack */}
+      <section className="section-padding bg-gradient-cursor-accent">
+        <div className="container-cursor">
+          <div className="text-center mb-20">
+            <h2 className="text-responsive-lg font-bold mb-8 gradient-text text-shadow">
+              Real Micro SaaS Services
+            </h2>
+            <p className="text-responsive-md text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Each service is backed by market research, competitive analysis, and real customer use cases. See actual pricing, ROI expectations, and market positioning.
+            </p>
+          </div>
+
+          <div className="space-y-8">
+            {microSaasServices.map((service, index) => (
+              <Card
+                key={index}
+                className="card-hover border-gradient-blue overflow-hidden"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="p-8">
+                  <div className="flex flex-col lg:flex-row gap-8">
+                    {/* Service Icon & Basic Info */}
+                    <div className="lg:w-1/4">
+                      <div className="text-center lg:text-left">
+                        <div className={`w-20 h-20 rounded-2xl flex items-center justify-center text-3xl bg-gradient-to-br ${service.color} shadow-xl mx-auto lg:mx-0 mb-6`}>
+                          {service.icon}
+                        </div>
+                        <h3 className={`text-2xl font-bold mb-3 ${service.textColor}`}>
+                          {service.title}
+                        </h3>
+                        <p className="text-gray-400 mb-4 leading-relaxed">
+                          {service.description}
+                        </p>
+                        
+                        {/* Market Data */}
+                        <div className="space-y-3 text-sm">
+                          <div className="flex items-center justify-between">
+                            <span className="text-gray-400">Market Price:</span>
+                            <span className="text-white font-semibold">{service.marketPrice}</span>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span className="text-gray-400">Target Market:</span>
+                            <span className="text-white">{service.targetMarket}</span>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span className="text-gray-400">ROI Expectation:</span>
+                            <span className="text-green-400 font-semibold">{service.roi}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Features & Use Cases */}
+                    <div className="lg:w-3/4">
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        {/* Features */}
+                        <div>
+                          <h4 className="text-lg font-semibold text-white mb-4 flex items-center">
+                            <Check className="w-5 h-5 mr-2 text-green-400" />
+                            Key Features
+                          </h4>
+                          <ul className="space-y-2">
+                            {service.features.map((feature, featureIndex) => (
+                              <li key={featureIndex} className="flex items-start text-gray-300 text-sm">
+                                <span className="w-2 h-2 bg-cursor-blue rounded-full mr-3 mt-2 flex-shrink-0" />
+                                {feature}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        {/* Use Cases */}
+                        <div>
+                          <h4 className="text-lg font-semibold text-white mb-4 flex items-center">
+                            <Zap className="w-5 h-5 mr-2 text-yellow-400" />
+                            Use Cases
+                          </h4>
+                          <ul className="space-y-2">
+                            {service.useCases.map((useCase, useCaseIndex) => (
+                              <li key={useCaseIndex} className="flex items-start text-gray-300 text-sm">
+                                <span className="w-2 h-2 bg-cursor-blue rounded-full mr-3 mt-2 flex-shrink-0" />
+                                {useCase}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+
+                      {/* Market Analysis */}
+                      <div className="mt-8 pt-6 border-t border-gray-700">
+                        <h4 className="text-lg font-semibold text-white mb-4 flex items-center">
+                          <BarChart3 className="w-5 h-5 mr-2 text-blue-400" />
+                          Market Analysis
+                        </h4>
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                          <div>
+                            <span className="text-gray-400">Competitors:</span>
+                            <div className="text-white mt-1">{service.competitors.join(', ')}</div>
+                          </div>
+                          <div>
+                            <span className="text-gray-400">Market Size:</span>
+                            <div className="text-white mt-1">{service.marketSize}</div>
+                          </div>
+                          <div>
+                            <span className="text-gray-400">Growth Rate:</span>
+                            <div className="text-green-400 mt-1">{service.growthRate}</div>
+                          </div>
+                          <div>
+                            <span className="text-gray-400">Pricing Tier:</span>
+                            <div className="text-white mt-1">{service.marketPrice}</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Micro SaaS Services CTA */}
+      <section className="section-padding bg-gradient-to-r from-purple-600 to-pink-600 relative overflow-hidden">
+        <div className="absolute inset-0 bg-dots opacity-10" />
+        <div className="container-cursor text-center relative z-10">
+          <h2 className="text-responsive-lg font-bold text-white mb-8 text-shadow-lg">
+            Discover Our Micro SaaS Services
+          </h2>
+          <p className="text-responsive-md text-purple-100 mb-12 max-w-4xl mx-auto leading-relaxed">
+            Explore our comprehensive suite of professional micro SaaS solutions designed for modern businesses. 
+            From AI content generation to performance monitoring, we deliver enterprise-grade features at competitive prices.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button
+              href="/micro-saas-services"
+              size="lg"
+              className="bg-white text-purple-600 hover:bg-gray-100 shadow-2xl hover-glow"
+            >
+              Explore Micro SaaS Services
+            </Button>
+            <Button
+              href="/pricing"
+              variant="outline"
+              size="lg"
+              className="border-white text-white hover:bg-white hover:text-purple-600 shadow-2xl"
+            >
+              View Pricing
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="section-padding bg-gradient-to-r from-cursor-blue to-blue-600 relative overflow-hidden">
+        <div className="absolute inset-0 bg-dots opacity-10" />
+        <div className="container-cursor text-center relative z-10">
+          <h2 className="text-responsive-lg font-bold text-white mb-8 text-shadow-lg">
+            Ready to Implement Real Solutions?
+          </h2>
+          <p className="text-responsive-md text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed">
+            Choose the perfect micro SaaS service for your business needs. All plans include a 14-day free trial with no credit card required.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button
+              href="/contact"
+              size="lg"
+              className="bg-white text-cursor-blue hover:bg-gray-100 shadow-2xl hover-glow"
+            >
+              Start Free Trial
+            </Button>
+            <Button
+              href="/pricing"
+              variant="outline"
+              size="lg"
+              className="border-white text-white hover:bg-white hover:text-cursor-blue shadow-2xl"
+            >
+              View Detailed Pricing
+            </Button>
+          </div>
+        </section>
+
+        {/* Call to Action */}
+        <section className="py-20 px-4">
+          <div className="container mx-auto text-center">
+            <AdvancedFuturisticCard
+              variant="quantum-holographic"
+              intensity="extreme"
+              className="p-12"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                Ready to Get Started?
+              </h2>
+              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                Choose from our 300+ real micro SaaS services and start transforming your business today. 
+                All services come with 21-day free trials and no setup fees.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+                <Button
+                  href="/contact"
+                  variant="primary"
+                  size="lg"
+                  className="text-lg px-8 py-4"
+                >
+                  Contact Sales Team
+                  <Phone className="ml-2 w-5 h-5" />
+                </Button>
+                <Button
+                  href="/pricing"
+                  variant="secondary"
+                  size="lg"
+                  className="text-lg px-8 py-4"
+                >
+                  View Pricing
+                  <DollarSign className="ml-2 w-5 h-5" />
+                </Button>
+              </div>
+
+              <div className="text-center">
+                <div className="text-sm text-gray-400 mb-4">Need Help? Contact Our Team</div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+                  <div>
+                    <div className="text-gray-400">Mobile</div>
+                    <div className="text-white font-semibold">{contactInfo.mobile}</div>
+                  </div>
+                  <div>
+                    <div className="text-gray-400">Email</div>
+                    <div className="text-white font-semibold">{contactInfo.email}</div>
+                  </div>
+                  <div>
+                    <div className="text-gray-400">Website</div>
+                    <div className="text-white font-semibold">{contactInfo.website}</div>
+                  </div>
+                </div>
+              </div>
+            </AdvancedFuturisticCard>
+          </div>
+        </section>
+      </div>
+    </AdvancedFuturisticBackground>
+=======
+        {/* CTA Section */}
+        <section className="py-24 bg-gradient-to-r from-blue-600 to-cyan-700 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-10" />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8">
+              Ready to Transform Your Business?
+            </h2>
+            <p className="text-xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed">
+              Whether you need enterprise infrastructure or specialized micro SaaS tools, 
+              we have the solutions to help your business succeed.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Button
+                href="/contact"
+                variant="secondary"
+                size="lg"
+                className="bg-white text-blue-600 hover:bg-gray-100 shadow-2xl"
+              >
+                Contact Us
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+              <Button
+                href="/micro-saas"
+                variant="outline"
+                size="lg"
+                className="border-white text-white hover:bg-white hover:text-blue-600 shadow-2xl"
+              >
+                Explore Micro SaaS
+              </Button>
+            </div>
+          </div>
+        </section>
       </div>
     </>
   );

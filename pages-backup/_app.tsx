@@ -1,9 +1,12 @@
 import type { AppProps } from 'next/app';
-import '../styles/enhanced-design-system.css';
-import '../styles/modern-design-system.css';
+import '../styles/globals.css';
+import Navigation from '../components/layout/Navigation';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+export default function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <>
+      <Navigation />
+      <Component {...pageProps} />
+    </>
+  );
 }
-
-export default MyApp;

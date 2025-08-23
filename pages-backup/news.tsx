@@ -47,14 +47,19 @@ import React from 'react';
     { id: '2023', name: '2023' }
   ];
 
-  const newsArticles = [
-    {
-=======
   Newspaper, Calendar, User, Tag, ArrowRight, ExternalLink,
   TrendingUp, Lightbulb, Rocket, Globe, Shield, Zap,
   Clock, BookOpen, Video, Podcast, FileText, Search
 } from 'lucide-react';
 import Link from 'next/link';
+=======
+  return (
+    <UltraFuturisticBackground>
+      <div className="min-h-screen">
+        <Head>
+          <title>News & Updates - Zion Tech Group | Latest Technology Insights & Company Updates</title>
+          <meta name="description" content="Stay updated with Zion Tech Group's latest news, product launches, partnerships, and industry insights. Read about our breakthroughs in AI, quantum computing, and emerging technologies." />
+        </Head>
 
       id: 1,
       title: "Zion Tech Group Launches Revolutionary Quantum AI Platform",

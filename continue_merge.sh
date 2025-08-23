@@ -10,7 +10,7 @@ echo "---"
 
 # Configuration
 BATCH_SIZE=100
-START_FROM_BRANCH=401  # Start from branch 401 since we've processed 1-400
+START_FROM_BRANCH=701  # Start from branch 701 since we've processed 1-700
 LOG_FILE="continue-merge-log-$(date +%Y%m%d-%H%M%S).txt"
 
 # Initialize counters

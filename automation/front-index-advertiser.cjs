@@ -32,6 +32,7 @@ function discoverInternalPages() {
   const priority = [
     { href: '/automation', label: 'Automation Hub', tagline: 'Live agents & workflows' },
     { href: '/site-health', label: 'Site Health', tagline: 'A11y, performance, links' },
+    { href: '/reports/link-health', label: 'Link Health', tagline: 'Live link checks' },
     { href: '/reports/seo', label: 'SEO Audit', tagline: 'Continuous improvements' },
     { href: '/reports/ai-trends', label: 'AI Trends', tagline: 'Intelligence signals' },
     { href: '/newsroom', label: 'Newsroom', tagline: 'Latest autonomous updates' },
@@ -82,13 +83,14 @@ function discoverInternalPages() {
 }
 
 function discoverExternalLinks() {
-  return [
+  const links = [
     { type: 'internal', href: '/.netlify/functions/docs-index-runner', label: 'Docs — technical notes & guides', tagline: 'Documentation' },
     { type: 'internal', href: '/newsroom', label: 'AI Changelog — highlights', tagline: 'Summarized updates' },
     { type: 'internal', href: '/.netlify/functions/unused-media-scanner', label: 'Unused Media Scanner', tagline: 'Find and report unreferenced assets' },
     { type: 'internal', href: '/.netlify/functions/orphan-pages-detector', label: 'Orphan Pages Detector', tagline: 'Discover pages with no inbound links' },
     { type: 'internal', href: '/.netlify/functions/component-size-report', label: 'Component Size Report', tagline: 'Largest components by lines and bytes' },
   ];
+  return links;
 }
 
 function buildCard(item) {

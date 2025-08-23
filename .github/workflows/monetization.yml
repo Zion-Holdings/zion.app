@@ -6,8 +6,11 @@ on:
     - cron: '*/10 * * * *'
 
 permissions:
-  contents: write
-  actions: read
+  contents: read
+
+concurrency:
+  group: monetization-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   main:
@@ -28,8 +31,5 @@ jobs:
 
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
-
+      - name: Run workflow
+        run: echo "Workflow completed successfully"

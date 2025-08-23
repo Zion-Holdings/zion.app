@@ -1,0 +1,18 @@
+[
+  {
+    "id": "job-ai-001",
+    "title": "AI Freelancer (NLP)",
+    "company": "Zion Network Client",
+    "location": "Remote",
+    "type": "Contract",
+    "postedAt": "2025-08-08T00:00:00.000Z"
+  },
+  {
+    "id": "job-web-002",
+    "title": "Next.js Developer",
+    "company": "Partner Bank Labs",
+    "location": "Hybrid",
+    "type": "Full-time",
+    "postedAt": "2025-08-05T00:00:00.000Z"
+  }
+]

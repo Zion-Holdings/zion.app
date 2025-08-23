@@ -1,47 +1,3 @@
-import React from 'react';
-import Head from 'next/head';
-import UltraFuturisticBackground from '../../components/ui/UltraFuturisticBackground';
-import { Button } from '../../components/ui/Button';
-import Card from '../../components/ui/Card';
-import { Check, Mail, MapPin, Phone, ExternalLink } from 'lucide-react';
-import { enhancedRealMicroSaasServices } from '../../data/enhanced-real-micro-saas-services';
-import { extraServices } from '../../data/extra-services';
-import { additionalEnhancedServices } from '../../data/additional-real-services';
-import { newlyAddedServices } from '../../data/newly-added-services';
-import { curatedMarketServices } from '../../data/curated-market-services';
-import { new2025Services } from '../../data/new-2025-services';
-import { marketValidatedServices } from '../../data/market-validated-services';
-import { moreRealServices2025 } from '../../data/more-real-services-2025';
-import { verified2025Additions } from '../../data/verified-2025-additions';
-import { realServicesQ12025 } from '../../data/real-services-q1-2025';
-import { realEnterpriseServices2025 } from '../../data/real-enterprise-services-2025';
-import { verifiedRealServices2025Batch2 } from '../../data/verified-real-services-2025-batch2';
-import { realMarketAugmentations2025 } from '../../data/real-market-augmentations-2025';
-import { additionalLiveServices2025 } from '../../data/additional-live-services-2025';
-import { real2025Q2Additions } from '../../data/real-2025-q2-additions';
-import { augmentedServicesBatch3 } from '../../data/real-augmented-services-2025-batch3';
-import { realServicesQ22025 } from '../../data/real-services-q2-2025';
-import { realServicesQ32025 } from '../../data/real-services-q3-2025';
-import { realQ4Services2025, } from '../../data/real-2025-q4-additions';
-import { real2025Q4Additions } from '../../data/real-2025-q4-additions';
-import { real2025Q4AugmentedBatch } from '../../data/real-2025-q4-augmented-batch';
-import { realMarketServicesExtended } from '../../data/real-market-services-extended';
-import { real2026Additions } from '../../data/real-2026-additions';
-import { real2026Q1Additions } from '../../data/real-2026-q1-additions';
-import { added2026Q2Services } from '../../data/added-2026-q2-services';
-import { real2026Q3Additions } from '../../data/real-2026-q3-additions';
-import { real2026Q4Additions } from '../../data/real-2026-q4-additions';
-import { real2026Q4NewServices } from '../../data/real-2026-q4-new-services';
-import { real2027Q1Additions } from '../../data/real-2027-q1-additions';
-import { real2027Q2Additions } from '../../data/real-2027-q2-additions';
-import { real2028ServiceExpansions } from '../../data/real-2028-service-expansions';
-
-import { real2029Q1Additions } from '../../data/real-2029-q1-additions';
-import { realMarketServices } from '../../data/real-market-services';
-import { real2029Q2Additions } from '../../data/real-2029-q2-additions';
-import { real2029Q3Additions } from '../../data/real-2029-q3-additions';
-import { real2029Q4Additions } from '../../data/real-2029-q4-additions';
-=======
 import { real2030Q1Additions } from '../../data/real-2030-q1-additions';
 import { enterpriseITSolutions } from '../../data/2034-enterprise-it-solutions';
 import { innovativeMicroSaasSolutions } from '../../data/2034-innovative-micro-saas-solutions';
@@ -269,7 +225,7 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
 
 export default function ServiceDetailPage({ service }: { service: Service }) {
 	return (
-		<UltraFuturisticBackground variant="holographic" intensity="high">
+		<UltraFuturisticBackground variant="quantum" intensity={1.5}>
 			<Head>
 				<title>{service.name} | Zion Tech Group</title>
 				<meta name="description" content={service.tagline || service.description} />
@@ -392,3 +348,64 @@ export default function ServiceDetailPage({ service }: { service: Service }) {
 		</UltraFuturisticBackground>
 	);
 }
+=======
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+import EnhancedLayout from '@/components/layout/EnhancedLayout';
+import services from '@/data/services/services.json';
+
+const ServiceDetail: NextPage = () => {
+  const router = useRouter();
+  const { slug } = router.query as { slug?: string };
+  const items = services as any[];
+  const service = items.find((s) => s.slug === slug);
+
+  if (!service) {
+    return (
+      <EnhancedLayout>
+        <Head>
+          <title>Service Not Found - Zion Tech Solutions</title>
+        </Head>
+        <div className="space-y-4">
+          <h1 className="text-xl font-semibold">Service not found</h1>
+          <Link href="/services"><a className="text-blue-600 hover:underline">Back to Services</a></Link>
+        </div>
+      </EnhancedLayout>
+    );
+  }
+
+  const priceRange = `$${service.priceRangeUSD[0]} - $${service.priceRangeUSD[1]}`;
+
+  return (
+    <EnhancedLayout>
+      <Head>
+        <title>{service.name} - Zion Tech Solutions</title>
+      </Head>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="md:col-span-2 space-y-4">
+          <img src={`https://picsum.photos/seed/${encodeURIComponent(service.slug)}/1200/600`} alt={service.name} className="w-full rounded-lg border border-gray-200 dark:border-gray-800" />
+          <div>
+            <h1 className="text-2xl font-semibold">{service.name}</h1>
+            <p className="opacity-80">Category: {service.category}</p>
+          </div>
+          <p className="leading-relaxed">{service.description}</p>
+          <div className="flex flex-wrap gap-2">
+            <span className="text-xs px-2 py-1 rounded-full bg-gray-100 dark:bg-zinc-800 text-gray-700 dark:text-gray-200 border border-gray-200 dark:border-zinc-700">{service.category}</span>
+          </div>
+        </div>
+        <aside className="md:col-span-1 space-y-3 p-4 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-zinc-900 h-max">
+          <div className="text-sm opacity-70">Price Range</div>
+          <div className="text-xl font-semibold">{priceRange}</div>
+          <Link href={`/contact?subject=${encodeURIComponent('Quote request: ' + service.name)}`}>
+            <a className="inline-flex items-center justify-center w-full px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700">Request Quote</a>
+          </Link>
+          <Link href="/services"><a className="text-sm text-blue-600 hover:underline">Back to Services</a></Link>
+        </aside>
+      </div>
+    </EnhancedLayout>
+  );
+};
+
+export default ServiceDetail;

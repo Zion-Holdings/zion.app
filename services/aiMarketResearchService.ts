@@ -2,58 +2,75 @@ export interface MarketTrend {
   id: string;
   keyword: string;
   searchVolume: number;
+  trendDirection: 'rising' | 'falling' | 'stable';
   growthRate: number;
-  competition: 'low' | 'medium' | 'high';
-  seasonality: string[];
   relatedKeywords: string[];
-  estimatedClicks: number;
-  estimatedCost: number;
+  marketOpportunity: 'high' | 'medium' | 'low';
+  timestamp: Date;
 }
 
 export interface CompetitorAnalysis {
   id: string;
   competitorName: string;
-  domain: string;
+  website: string;
   marketShare: number;
   strengths: string[];
   weaknesses: string[];
   opportunities: string[];
   threats: string[];
-  trafficSources: string[];
-  contentStrategy: string[];
   pricingStrategy: string;
+  featureComparison: Record<string, boolean>;
+  socialMediaPresence: Record<string, number>;
   lastUpdated: Date;
 }
 
-export interface MarketInsight {
+export interface MarketSegment {
   id: string;
+  name: string;
+  size: number;
+  growthRate: number;
+  demographics: Record<string, any>;
+  psychographics: Record<string, any>;
+  buyingBehavior: Record<string, any>;
+  painPoints: string[];
+  solutions: string[];
+}
+
+export interface MarketReport {
+  id: string;
+  title: string;
   industry: string;
-  trend: string;
-  description: string;
-  impact: 'low' | 'medium' | 'high';
-  timeframe: string;
+  summary: string;
+  keyFindings: string[];
+  marketSize: number;
+  growthProjection: number;
+  recommendations: string[];
   dataSources: string[];
-  confidence: number;
-  actionableInsights: string[];
+  generatedAt: Date;
+  expiresAt: Date;
 }
 
 export interface MarketResearchRequest {
   industry: string;
-  keywords: string[];
-  competitors: string[];
+  targetMarket: string;
+  researchType: 'trends' | 'competitors' | 'segments' | 'comprehensive';
   timeframe: '7d' | '30d' | '90d' | '1y';
-  includeTrends: boolean;
-  includeCompetitors: boolean;
-  includePricing: boolean;
+  includeHistoricalData: boolean;
+  customMetrics?: string[];
 }
 
 export interface MarketResearchResponse {
-  trends: MarketTrend[];
-  competitors: CompetitorAnalysis[];
-  insights: MarketInsight[];
-  summary: string;
+  success: boolean;
+  data: {
+    trends?: MarketTrend[];
+    competitors?: CompetitorAnalysis[];
+    segments?: MarketSegment[];
+    report?: MarketReport;
+  };
+  insights: string[];
   recommendations: string[];
   nextSteps: string[];
+  estimatedROI: number;
 }
 
 export class AIMarketResearchService {
@@ -65,149 +82,163 @@ export class AIMarketResearchService {
     this.baseUrl = baseUrl;
   }
 
-  async researchMarket(request: MarketResearchRequest): Promise<MarketResearchResponse> {
+  async analyzeMarketTrends(request: MarketResearchRequest): Promise<MarketTrend[]> {
     try {
-      const response = await fetch(`${this.baseUrl}/api/market-research`, {
+      const response = await fetch(`${this.baseUrl}/api/market-research/trends`, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
           'Authorization': `Bearer ${this.apiKey}`,
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(request),
       });
 
       if (!response.ok) {
-        throw new Error(`Market research failed: ${response.statusText}`);
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      return await response.json();
+      const data = await response.json();
+      return data.trends || [];
     } catch (error) {
-      console.error('Market research error:', error);
+      console.error('Error analyzing market trends:', error);
       throw error;
     }
   }
 
-  async getTrendingKeywords(industry: string, limit: number = 20): Promise<MarketTrend[]> {
+  async analyzeCompetitors(request: MarketResearchRequest): Promise<CompetitorAnalysis[]> {
     try {
-      const response = await fetch(`${this.baseUrl}/api/market-research/trends?industry=${encodeURIComponent(industry)}&limit=${limit}`, {
+      const response = await fetch(`${this.baseUrl}/api/market-research/competitors`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${this.apiKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(request),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      return data.competitors || [];
+    } catch (error) {
+      console.error('Error analyzing competitors:', error);
+      throw error;
+    }
+  }
+
+  async segmentMarket(request: MarketResearchRequest): Promise<MarketSegment[]> {
+    try {
+      const response = await fetch(`${this.baseUrl}/api/market-research/segments`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${this.apiKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(request),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      return data.segments || [];
+    } catch (error) {
+      console.error('Error segmenting market:', error);
+      throw error;
+    }
+  }
+
+  async generateComprehensiveReport(request: MarketResearchRequest): Promise<MarketReport> {
+    try {
+      const response = await fetch(`${this.baseUrl}/api/market-research/comprehensive`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${this.apiKey}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(request),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      return data.report;
+    } catch (error) {
+      console.error('Error generating comprehensive report:', error);
+      throw error;
+    }
+  }
+
+  async getRealTimeInsights(keyword: string): Promise<MarketTrend[]> {
+    try {
+      const response = await fetch(`${this.baseUrl}/api/market-research/realtime?keyword=${encodeURIComponent(keyword)}`, {
         headers: {
           'Authorization': `Bearer ${this.apiKey}`,
         },
       });
 
       if (!response.ok) {
-        throw new Error(`Failed to fetch trending keywords: ${response.statusText}`);
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      return await response.json();
+      const data = await response.json();
+      return data.trends || [];
     } catch (error) {
-      console.error('Error fetching trending keywords:', error);
+      console.error('Error getting real-time insights:', error);
       throw error;
     }
   }
 
-  async analyzeCompetitor(domain: string): Promise<CompetitorAnalysis> {
+  async exportReport(reportId: string, format: 'pdf' | 'csv' | 'excel'): Promise<string> {
     try {
-      const response = await fetch(`${this.baseUrl}/api/market-research/competitor/${encodeURIComponent(domain)}`, {
+      const response = await fetch(`${this.baseUrl}/api/market-research/export/${reportId}`, {
+        method: 'POST',
         headers: {
           'Authorization': `Bearer ${this.apiKey}`,
+          'Content-Type': 'application/json',
         },
+        body: JSON.stringify({ format }),
       });
 
       if (!response.ok) {
-        throw new Error(`Competitor analysis failed: ${response.statusText}`);
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      return await response.json();
+      const data = await response.json();
+      return data.downloadUrl;
     } catch (error) {
-      console.error('Competitor analysis error:', error);
+      console.error('Error exporting report:', error);
       throw error;
     }
   }
 
-  async getMarketInsights(industry: string): Promise<MarketInsight[]> {
+  async scheduleReport(request: MarketResearchRequest, schedule: 'daily' | 'weekly' | 'monthly'): Promise<string> {
     try {
-      const response = await fetch(`${this.baseUrl}/api/market-research/insights?industry=${encodeURIComponent(industry)}`, {
+      const response = await fetch(`${this.baseUrl}/api/market-research/schedule`, {
+        method: 'POST',
         headers: {
           'Authorization': `Bearer ${this.apiKey}`,
+          'Content-Type': 'application/json',
         },
+        body: JSON.stringify({ ...request, schedule }),
       });
 
       if (!response.ok) {
-        throw new Error(`Failed to fetch market insights: ${response.statusText}`);
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      return await response.json();
+      const data = await response.json();
+      return data.scheduleId;
     } catch (error) {
-      console.error('Error fetching market insights:', error);
-      throw error;
-    }
-  }
-
-  async generateReport(request: MarketResearchRequest): Promise<string> {
-    try {
-      const research = await this.researchMarket(request);
-      
-      let report = `# Market Research Report\n\n`;
-      report += `**Industry:** ${request.industry}\n`;
-      report += `**Analysis Period:** ${request.timeframe}\n`;
-      report += `**Generated:** ${new Date().toLocaleDateString()}\n\n`;
-      
-      if (research.trends.length > 0) {
-        report += `## Market Trends\n\n`;
-        research.trends.forEach(trend => {
-          report += `### ${trend.keyword}\n`;
-          report += `- Search Volume: ${trend.searchVolume.toLocaleString()}\n`;
-          report += `- Growth Rate: ${trend.growthRate}%\n`;
-          report += `- Competition: ${trend.competition}\n`;
-          report += `- Estimated Clicks: ${trend.estimatedClicks.toLocaleString()}\n`;
-          report += `- Estimated Cost: $${trend.estimatedCost.toLocaleString()}\n\n`;
-        });
-      }
-      
-      if (research.competitors.length > 0) {
-        report += `## Competitor Analysis\n\n`;
-        research.competitors.forEach(competitor => {
-          report += `### ${competitor.competitorName}\n`;
-          report += `- Market Share: ${competitor.marketShare}%\n`;
-          report += `- Strengths: ${competitor.strengths.join(', ')}\n`;
-          report += `- Weaknesses: ${competitor.weaknesses.join(', ')}\n`;
-          report += `- Opportunities: ${competitor.opportunities.join(', ')}\n\n`;
-        });
-      }
-      
-      if (research.insights.length > 0) {
-        report += `## Market Insights\n\n`;
-        research.insights.forEach(insight => {
-          report += `### ${insight.trend}\n`;
-          report += `- Impact: ${insight.impact}\n`;
-          report += `- Timeframe: ${insight.timeframe}\n`;
-          report += `- Confidence: ${insight.confidence}%\n`;
-          report += `- Actionable Insights:\n`;
-          insight.actionableInsights.forEach(action => {
-            report += `  - ${action}\n`;
-          });
-          report += `\n`;
-        });
-      }
-      
-      report += `## Summary\n\n${research.summary}\n\n`;
-      report += `## Recommendations\n\n`;
-      research.recommendations.forEach((rec, index) => {
-        report += `${index + 1}. ${rec}\n`;
-      });
-      
-      report += `\n## Next Steps\n\n`;
-      research.nextSteps.forEach((step, index) => {
-        report += `${index + 1}. ${step}\n`;
-      });
-      
-      return report;
-    } catch (error) {
-      console.error('Report generation error:', error);
+      console.error('Error scheduling report:', error);
       throw error;
     }
   }
 }
 
-export const aiMarketResearchService = new AIMarketResearchService(process.env.MARKET_RESEARCH_API_KEY || '');
+export const aiMarketResearchService = new AIMarketResearchService(process.env.MARKET_RESEARCH_API_KEY || 'demo-key');

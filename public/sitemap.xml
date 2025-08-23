@@ -1,247 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ziontechgroup.com/</loc>
-    <lastmod>2025-08-19T03:44:42.325Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/404</loc>
-    <lastmod>2025-08-19T03:44:42.325Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
+    <loc>https://zion.app/</loc>
+=======
     <loc>https://ziontechgroup.com/500</loc>
     <lastmod>2025-08-19T03:44:42.325Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/about</loc>
-    <lastmod>2025-08-19T03:44:42.325Z</lastmod>
+    <loc>https://zion.app/front</loc>
+    <lastmod>2025-08-11T11:14:25.268Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/api-documentation</loc>
-    <lastmod>2025-08-19T03:44:42.325Z</lastmod>
+    <loc>https://zion.app/main/front</loc>
+    <lastmod>2025-08-11T11:14:25.268Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/automation</loc>
-    <lastmod>2025-08-19T03:44:42.325Z</lastmod>
+    <loc>https://zion.app/newsroom</loc>
+    <lastmod>2025-08-11T11:14:25.268Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/automation-health</loc>
-    <lastmod>2025-08-19T03:44:42.325Z</lastmod>
+    <loc>https://zion.app/products</loc>
+    <lastmod>2025-08-11T11:14:25.268Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/blog</loc>
-    <lastmod>2025-08-19T03:44:42.325Z</lastmod>
+    <loc>https://zion.app/reports/ai-trends</loc>
+    <lastmod>2025-08-11T11:14:25.268Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/blog/ai-automation-trends-2025</loc>
-    <lastmod>2025-08-19T03:44:42.325Z</lastmod>
+    <loc>https://zion.app/reports/seo</loc>
+    <lastmod>2025-08-11T11:14:25.268Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/changelog</loc>
-    <lastmod>2025-08-19T03:44:42.325Z</lastmod>
+    <loc>https://zion.app/reports/seo/index.html</loc>
+    <lastmod>2025-08-11T11:14:25.268Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/component-library</loc>
-    <lastmod>2025-08-19T03:44:42.325Z</lastmod>
+    <loc>https://zion.app/reports/seo/latest.json</loc>
+    <lastmod>2025-08-11T11:14:25.268Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/components/form-demo</loc>
-    <lastmod>2025-08-19T03:44:42.325Z</lastmod>
+    <loc>https://zion.app/services</loc>
+    <lastmod>2025-08-11T11:14:25.268Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/components/modal-demo</loc>
-    <lastmod>2025-08-19T03:44:42.325Z</lastmod>
+    <loc>https://zion.app/services/ai-seo-auditor</loc>
+    <lastmod>2025-08-11T11:14:25.268Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/components/pagination-demo</loc>
-    <lastmod>2025-08-19T03:44:42.325Z</lastmod>
+    <loc>https://zion.app/services/customer-support-chatbot</loc>
+    <lastmod>2025-08-11T11:14:25.268Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/real-time-analytics/</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://zion.app/services/landing-page-generator</loc>
+    <lastmod>2025-08-11T11:14:25.268Z</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/reports/</loc>
-    <lastmod>2025-08-16T02:29:22.346Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/research-development/</loc>
-    <lastmod>2025-08-16T02:29:22.346Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/resources/</loc>
-    <lastmod>2025-08-16T02:29:22.350Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/retail-technology-solutions/</loc>
-    <lastmod>2025-08-16T02:29:22.350Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/revolutionary-2025-pricing/</loc>
-    <lastmod>2025-08-16T02:29:22.350Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/revolutionary-2025-services-showcase/</loc>
-    <lastmod>2025-08-16T02:29:22.350Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/revolutionary-2026-pricing/</loc>
-    <lastmod>2025-08-16T02:29:22.350Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/revolutionary-2026-services/</loc>
-    <lastmod>2025-08-16T02:29:22.350Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/revolutionary-2027-services-showcase/</loc>
-    <lastmod>2025-08-16T02:29:22.350Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/revolutionary-2028-pricing/</loc>
-    <lastmod>2025-08-16T02:29:22.350Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/robotics-automation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/sales-copilot/</loc>
-    <lastmod>2025-08-16T02:29:22.350Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/sales-email-optimizer/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/sales-enablement-intel/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/satellite-constellation-management/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/secrets-rotation-automation/</loc>
-    <lastmod>2025-08-16T02:29:22.350Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/security-posture-as-code/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/security-posture-packs/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/security/</loc>
-    <lastmod>2025-08-16T02:29:22.350Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/seo-automation-suite/</loc>
-    <lastmod>2025-08-16T02:29:22.350Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/seo-automation/</loc>
-    <lastmod>2025-08-16T02:29:22.350Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/seo-technical-copilot/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/serverless-cron-manager/</loc>
-    <lastmod>2025-08-16T02:29:22.350Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/services-2024/</loc>
-    <lastmod>2025-08-16T02:29:22.350Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/services-advertising/</loc>
-    <lastmod>2025-08-16T02:29:22.350Z</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/services/</loc>
-    <lastmod>2025-08-16T02:29:22.350Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/services/2030-futuristic-services/</loc>
-    <lastmod>2025-08-16T02:29:22.350Z</lastmod>
-=======
 =======
     <lastmod>2025-08-14T09:38:12.068Z</lastmod>
     <changefreq>weekly</changefreq>
@@ -1740,59 +1579,96 @@
   </url>
   <url>
     <loc>https://ziontechgroup.com/services/warehouse-native-product-analytics/</loc>
+=======
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://zion.app/about</loc>
+    <lastmod>2025-08-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/services/web-performance-rum-synthetic-starter/</loc>
+    <loc>https://zion.app/services</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://zion.app/micro-saas</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://zion.app/ai-tools</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://zion.app/developer-tools</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://zion.app/ai-assistant</loc>
+    <lastmod>2025-08-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/services/webhook-relay-replay-pro/</loc>
+    <loc>https://zion.app/cloud-platform</loc>
+    <lastmod>2025-08-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/services/website-accessibility-monitor/</loc>
+    <loc>https://zion.app/automation</loc>
+    <lastmod>2025-08-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/services/website-analytics-small-business/</loc>
+    <loc>https://zion.app/analytics</loc>
+    <lastmod>2025-08-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/services/zero-trust-network-architecture-2/</loc>
-    <changefreq>weekly</changefreq>
+    <loc>https://zion.app/pricing</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/services/zero-trust-network-architecture-2026/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://zion.app/contact</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/services/zero-trust-network-architecture/</loc>
+    <loc>https://zion.app/case-studies</loc>
+    <lastmod>2025-08-20</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/smart-city-infrastructure/</loc>
+    <loc>https://zion.app/blog</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://zion.app/resources</loc>
+    <lastmod>2025-08-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/automation</loc>
-    <lastmod>2025-08-14T09:38:12.068Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://ziontechgroup.com/contact</loc>
-    <lastmod>2025-08-14T09:38:12.068Z</lastmod>
-=======
 =======
     <loc>https://ziontechgroup.com/contact</loc>
     <lastmod>2025-08-14T09:38:12.068Z</lastmod>
@@ -1801,6 +1677,7 @@
     <lastmod>2025-08-14T09:38:12.068Z</lastmod>
 =======
     <loc>https://ziontechgroup.com/contact</loc>
+=======
     <lastmod>2025-08-19T03:44:42.325Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -1840,6 +1717,8 @@
 =======
     <loc>https://ziontechgroup.com/explore</loc>
     <lastmod>2025-08-14T09:38:12.068Z</lastmod>
+    <lastmod>2025-08-19T03:44:42.325Z</lastmod>
+=======
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -48829,13 +48708,29 @@
   <url>
     <loc>https://ziontechgroup.com/tutorials/rapid-1755575073402-zt8joq</loc>
     <lastmod>2025-08-19T03:44:42.325Z</lastmod>
+=======
+    <loc>https://zion.app/services/price-intelligence-service</loc>
+    <lastmod>2025-08-11T11:14:25.268Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://ziontechgroup.com/user-management</loc>
-    <lastmod>2025-08-19T03:44:42.325Z</lastmod>
+    <loc>https://zion.app/site-health</loc>
+    <lastmod>2025-08-11T11:14:25.268Z</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+</urlset>
+=======
+    <loc>https://zion.app/support</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://zion.app/docs</loc>
+    <lastmod>2025-08-20</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 </urlset>

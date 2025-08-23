@@ -1,41 +1,27 @@
 const path = require('path');
-const { execFile } = require('child_process');
+const { spawnSync } = require('child_process');
 
-function runNodeScript(relPath, args = []) {
-  const cwd = path.resolve(__dirname, '..', '..');
-  const abs = path.resolve(cwd, relPath);
-  return new Promise((resolve) => {
-    const startedAt = Date.now();
-    const child = execFile('node', [abs, ...args], { cwd, env: process.env }, (error, stdout, stderr) => {
-      resolve({
-        script: relPath,
-        ok: !error,
-        code: error ? error.code : 0,
-        durationMs: Date.now() - startedAt,
-        stdout: stdout ? stdout.toString() : '',
-        stderr: stderr ? stderr.toString() : '',
-      });
-    });
-    child.on('error', () => {});
-  });
+function runNode(relativePath, args = []) {
+  const abs = path.resolve(__dirname, '..', '..', relativePath);
+  const res = spawnSync('node', [abs, ...args], { stdio: 'pipe', encoding: 'utf8' });
+  return { status: res.status || 0, stdout: res.stdout || '', stderr: res.stderr || '' };
 }
 
-exports.config = { schedule: '23 */12 * * *' };
+exports.config = { schedule: '*/10 * * * *' };
 
 exports.handler = async () => {
-  const steps = [
-    'automation/content-freshness-auditor.cjs',
-    'automation/advanced-git-sync.cjs',
-  ];
-  const results = [];
-  for (const step of steps) {
-    try { results.push(await runNodeScript(step)); }
-    catch (err) { results.push({ script: step, ok: false, code: -1, durationMs: 0, stdout: '', stderr: String(err) }); }
-  }
-  const ok = results.every(r => r.ok || /Report written|generated/i.test(r.stdout));
-  return {
-    statusCode: ok ? 200 : 207,
-    headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ engine: 'content-freshness-auditor', results, timestamp: new Date().toISOString() })
+  const logs = [];
+  const step = (name, fn) => {
+    logs.push(`\n=== ${name} ===`);
+    const { status, stdout, stderr } = fn();
+    if (stdout) logs.push(stdout);
+    if (stderr) logs.push(stderr);
+    logs.push(`exit=${status}`);
+    return status;
   };
+
+  step('content-freshness-auditor', () => runNode('automation/content-freshness-auditor.cjs'));
+  step('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
+
+  return { statusCode: 200, headers: { 'content-type': 'text/plain' }, body: logs.join('\n') };
 };

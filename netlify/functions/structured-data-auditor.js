@@ -1,5 +1,28 @@
+const fs = require('fs');
 const path = require('path');
 const { spawnSync } = require('child_process');
+
+function scanForJsonLd(dir) {
+  const findings = [];
+  function walk(d) {
+    let entries = [];
+  try { entries = fs.readdirSync(d, { withFileTypes: true }); } catch { return; }
+    for (const e of entries) {
+      const p = path.join(d, e.name);
+      if (e.isDirectory()) walk(p);
+      else if (/\.(tsx|ts|jsx|js|html)$/i.test(e.name)) {
+        try {
+          const content = fs.readFileSync(p, 'utf8');
+          if (content.includes('application/ld+json')) {
+            findings.push({ file: p.replace(process.cwd() + '/', ''), hasJsonLd: true });
+          }
+        } catch { /* ignore */ }
+      }
+    }
+  }
+  walk(dir);
+  return findings;
+}
 
 function runNode(relPath, args = []) {
   const abs = path.resolve(__dirname, '..', '..', relPath);
@@ -7,23 +30,24 @@ function runNode(relPath, args = []) {
   return { status: res.status || 0, stdout: res.stdout || '', stderr: res.stderr || '' };
 }
 
-exports.config = {
-  schedule: '*/30 * * * *',
-};
+exports.config = { schedule: '0 */6 * * *' };
 
 exports.handler = async () => {
-  const logs = [];
-  function step(name, rel, args = []) {
-    logs.push(`\n=== ${name} ===`);
-    const { status, stdout, stderr } = runNode(rel, args);
-    if (stdout) logs.push(stdout);
-    if (stderr) logs.push(stderr);
-    logs.push(`exit=${status}`);
-    return status;
-  }
+  const repoRoot = path.resolve(__dirname, '..', '..');
+  const pagesDir = path.join(repoRoot, 'pages');
+  const componentsDir = path.join(repoRoot, 'components');
+  const findings = [...scanForJsonLd(pagesDir), ...scanForJsonLd(componentsDir)];
 
-  step('structured-data:audit', 'automation/structured-data-auditor.cjs');
-  step('git:sync', 'automation/advanced-git-sync.cjs');
+  const report = {
+    generatedAt: new Date().toISOString(),
+    totalFilesWithJsonLd: findings.length,
+    files: findings,
+  };
 
-  return { statusCode: 200, body: logs.join('\n') };
+  const outDir = path.join(repoRoot, 'public', 'reports');
+  fs.mkdirSync(outDir, { recursive: true });
+  fs.writeFileSync(path.join(outDir, 'structured-data-audit.json'), JSON.stringify(report, null, 2));
+
+  runNode('automation/advanced-git-sync.cjs');
+  return { statusCode: 200, body: JSON.stringify({ ok: true, total: findings.length }) };
 };

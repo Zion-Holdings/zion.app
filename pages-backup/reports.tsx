@@ -1,21 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
-import { motion } from 'framer-motion';
-import { 
-  TrendingUp,
-  Brain,
-  Atom,
-  Globe,
-  Shield,
-  Zap,
-  FileText,
-  Download,
-  Eye,
-  Calendar,
-  User,
-  ArrowRight
-} from 'lucide-react';
-import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
+import Link from 'next/link';
+import Breadcrumbs from '../components/Breadcrumbs';
+import RelatedContent from '../components/RelatedContent';
+import QuickNavigation from '../components/QuickNavigation';
 
 const ReportsPage: React.FC = () => {
   const reports = [
@@ -105,47 +93,22 @@ const ReportsPage: React.FC = () => {
     }
   ];
 
-  const categories = [
-    { name: 'All Reports', count: reports.length, active: true },
-    { name: 'Technology Trends', count: 1, active: false },
-    { name: 'Business Intelligence', count: 1, active: false },
-    { name: 'Security', count: 1, active: false },
-    { name: 'Market Analysis', count: 1, active: false },
-    { name: 'Emerging Tech', count: 1, active: false },
-    { name: 'Sustainability', count: 1, active: false }
-  ];
-
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', { 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
-    });
-  };
-
-  const formatNumber = (num: number) => {
-    if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
-    if (num >= 1000) return (num / 1000).toFixed(1) + 'K';
-    return num.toString();
-  };
-
   return (
-    <UltraFuturisticBackground variant="holographic">
+    <UltraFuturisticBackground>
       <div className="min-h-screen">
         <Head>
           <title>Research Reports - Zion Tech Group | Industry Analysis & Technology Insights</title>
           <meta name="description" content="Access Zion Tech Group's comprehensive research reports, whitepapers, and industry analysis covering AI, quantum computing, cybersecurity, and emerging technologies." />
         </Head>
 
-        {/* Hero Section */}
-        <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto text-center">
-            <motion.h1 
-              className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+        <QuickNavigation />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {categories.map((category) => (
+            <Link 
+              key={category.name}
+              href={category.href}
+              className="group bg-slate-900/50 border border-white/10 rounded-lg p-8 hover:border-cyan-400/50 transition-all hover:scale-105"
             >
               Research Reports
             </motion.h1>
@@ -391,11 +354,18 @@ const ReportsPage: React.FC = () => {
                   View Research Services
                 </a>
               </div>
-            </motion.div>
-          </div>
-        </section>
-      </div>
-    </UltraFuturisticBackground>
+              <h3 className="text-2xl font-semibold mb-3 group-hover:text-cyan-400 transition-colors">
+                {category.name}
+              </h3>
+              <p className="text-white/70 mb-4">{category.description}</p>
+              <span className="text-cyan-400 font-semibold">{category.count}</span>
+            </Link>
+          ))}
+        </div>
+        
+        <RelatedContent currentPage="reports" />
+      </main>
+    </div>
   );
 };
 
