@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const glob = require('glob');
+const glob = require('glob').sync || require('glob');
 
 function findFiles(patterns, cwd) {
   const files = new Set();
