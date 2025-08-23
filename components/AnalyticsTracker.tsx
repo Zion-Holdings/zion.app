@@ -352,11 +352,6 @@ interface LayoutShiftSource {
   previousRect?: DOMRectReadOnly;
 }
 
-// Extend Window interface for gtag
-declare global {
-  interface Window {
-    gtag: (...args: unknown[]) => void;
-  }
-}
+// gtag is already declared in PerformanceOptimizer.tsx
 
 export default AnalyticsTracker;

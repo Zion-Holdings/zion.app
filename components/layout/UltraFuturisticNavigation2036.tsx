@@ -12,7 +12,10 @@ import {
   Clock,
   MessageCircle,
   Calculator,
-  Play
+  Play,
+  DollarSign,
+  Shield,
+  Zap
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -58,6 +61,13 @@ const navigationItems: NavigationItem[] = [
         featured: true
       },
       { 
+        name: 'Innovative 2036 Services', 
+        href: '/innovative-2036-services-showcase', 
+        description: 'Revolutionary micro SAAS solutions',
+        icon: <Star className="w-4 h-4" />,
+        featured: true
+      },
+      { 
         name: 'AI & Machine Learning', 
         href: '/ai-services', 
         description: 'Advanced AI solutions',
@@ -80,6 +90,18 @@ const navigationItems: NavigationItem[] = [
         href: '/it-services', 
         description: 'Enterprise IT infrastructure',
         icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'Cybersecurity', 
+        href: '/cybersecurity', 
+        description: 'Advanced security solutions',
+        icon: <Shield className="w-4 h-4" />
+      },
+      { 
+        name: 'Business Automation', 
+        href: '/business-automation', 
+        description: 'Intelligent process optimization',
+        icon: <Zap className="w-4 h-4" />
       },
       { 
         name: 'Specialized Solutions', 
@@ -110,6 +132,13 @@ const navigationItems: NavigationItem[] = [
         href: '/pricing', 
         description: 'Service pricing information',
         icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: '2026 Pricing', 
+        href: '/pricing-2036', 
+        description: 'Competitive pricing for 2036',
+        icon: <DollarSign className="w-4 h-4" />,
+        featured: true
       },
       { 
         name: 'Market Pricing', 
@@ -238,7 +267,12 @@ const navigationItems: NavigationItem[] = [
   }
 ];
 
-export default function UltraFuturisticNavigation2036() {
+interface UltraFuturisticNavigation2036Props {
+  onMenuToggle: () => void;
+  'aria-expanded': boolean;
+}
+
+export default function UltraFuturisticNavigation2036({ onMenuToggle, 'aria-expanded': ariaExpanded }: UltraFuturisticNavigation2036Props) {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -469,9 +503,12 @@ export default function UltraFuturisticNavigation2036() {
               {/* Mobile Menu Button */}
               <button
                 className="lg:hidden p-2 text-white hover:text-cyan-400 transition-colors"
-                onClick={() => setIsOpen(!isOpen)}
+                onClick={() => {
+                  setIsOpen(!isOpen);
+                  onMenuToggle();
+                }}
                 aria-label="Toggle mobile menu"
-                aria-expanded={isOpen}
+                aria-expanded={ariaExpanded}
               >
                 {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>

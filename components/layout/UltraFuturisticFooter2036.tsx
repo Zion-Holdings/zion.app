@@ -30,16 +30,15 @@ const footerSections = [
     description: 'Our most popular and innovative solutions',
     icon: <Star className="w-5 h-5 text-yellow-400" />,
     links: [
-      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', featured: true },
-      { name: 'Quantum Neural Networks', href: '/quantum-neural-network-platform', featured: true },
-      { name: 'Autonomous Business Operations', href: '/autonomous-business-operations-platform', featured: true },
-      { name: 'Space Resource Mining', href: '/space-resource-mining-platform', featured: true },
-      { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform', featured: true },
-      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading', featured: true },
-      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', featured: true },
-      { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform' },
-      { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform' },
-      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' }
+      { name: 'Innovative 2036 Services', href: '/innovative-2036-services-showcase', featured: true },
+      { name: 'AI Autonomous Code Generation', href: '/ai-autonomous-code-generation', featured: true },
+      { name: 'Quantum AI Brain-Computer Interface', href: '/quantum-ai-brain-computer-interface', featured: true },
+      { name: 'Space Resource Mining Platform', href: '/space-resource-mining-platform', featured: true },
+      { name: 'Zero Trust Network Architecture', href: '/zero-trust-network-architecture', featured: true },
+      { name: 'AI Autonomous Customer Service', href: '/ai-autonomous-customer-service', featured: true },
+      { name: 'Quantum Financial Trading Platform', href: '/quantum-financial-trading-platform', featured: true },
+      { name: 'Intelligent Supply Chain Optimization', href: '/intelligent-supply-chain-optimization' },
+      { name: 'Metaverse AI Development Platform', href: '/metaverse-ai-development-platform' }
     ]
   },
   {
