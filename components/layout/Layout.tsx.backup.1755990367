@@ -1,7 +1,13 @@
+<<<<<<< HEAD
+import React, { useState, useEffect } from 'react';
+import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
+import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
+=======
 import React, { useState } from 'react';
 import Head from 'next/head';
 import UltraFuturisticNavigation2044 from './UltraFuturisticNavigation2044';
 import UltraFuturisticFooter2044 from './UltraFuturisticFooter2044';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a2aa
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
 import TopContactBar from './TopContactBar';
@@ -10,6 +16,25 @@ import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
 import ServiceWorkerRegistration from '../ServiceWorkerRegistration';
 
+<<<<<<< HEAD
+interface LayoutProps {
+  children: React.ReactNode;
+  title?: string;
+  description?: string;
+  keywords?: string;
+  ogImage?: string;
+  canonicalUrl?: string;
+}
+
+export default function Layout({ 
+  children, 
+  title = "Zion Tech Group - Revolutionary AI, Quantum Computing & Space Technology Solutions",
+  description = "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.",
+  keywords = "AI, artificial intelligence, quantum computing, space technology, cybersecurity, cloud infrastructure, enterprise solutions, autonomous systems, consciousness AI",
+  ogImage = "https://ziontechgroup.com/og-image.jpg",
+  canonicalUrl
+}: LayoutProps) {
+=======
 interface SEOConfig {
   title: string;
   description: string;
@@ -25,6 +50,7 @@ interface LayoutProps {
 }
 
 export default function Layout({ children, seo }: LayoutProps) {
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a2aa
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
@@ -70,6 +96,9 @@ export default function Layout({ children, seo }: LayoutProps) {
   const finalSEO = seo || defaultSEO;
 
   return (
+<<<<<<< HEAD
+    <div className={`min-h-screen ${theme === 'dark' ? 'bg-black text-white' : 'bg-gray-50 text-gray-900'} relative overflow-x-hidden transition-colors duration-300`}>
+=======
     <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
       {/* SEO Head */}
       <Head>
@@ -90,6 +119,7 @@ export default function Layout({ children, seo }: LayoutProps) {
         <meta name="theme-color" content="#000000" />
       </Head>
 
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a2aa
       {/* Skip to content link for accessibility */}
       <a href="#main" className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded focus:outline-none">
         Skip to main content
