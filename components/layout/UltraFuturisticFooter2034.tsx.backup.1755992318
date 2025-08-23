@@ -21,6 +21,12 @@ const serviceCategories = [
     title: 'AI & Consciousness',
     description: 'Revolutionary AI consciousness and emotional intelligence solutions',
     links: [
+<<<<<<< HEAD
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-platform' },
+      { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network-platform' },
+      { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant' },
+      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training' },
+=======
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2025' },
       { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training' },
       { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant' },
@@ -28,6 +34,7 @@ const serviceCategories = [
       { name: 'AI Content Personalization', href: '/ai-content-personalization-engine' },
       { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem-manager' },
       { name: 'AI Ethics & Governance', href: '/ai-ethics-governance-framework' },
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5eec
       { name: 'AI Creativity Studio', href: '/ai-creativity-studio-platform' },
       { name: 'AI Education Platform', href: '/ai-education-platform' }
     ]
@@ -36,20 +43,36 @@ const serviceCategories = [
     title: 'Quantum & Emerging Tech',
     description: 'Cutting-edge quantum computing and breakthrough technologies',
     links: [
+<<<<<<< HEAD
+      { name: 'Quantum Computing as a Service', href: '/quantum-computing-as-a-service' },
+=======
       { name: 'Quantum-Secure Cloud Infrastructure', href: '/quantum-secure-cloud-infrastructure' },
       { name: 'Quantum-Ready Database', href: '/quantum-ready-database-platform' },
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5eec
       { name: 'Space Resource Mining', href: '/space-resource-mining-platform' },
       { name: 'Quantum Internet Security', href: '/quantum-internet-security-platform' },
       { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform' },
       { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform' },
+<<<<<<< HEAD
+      { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform' }
+=======
       { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform' },
       { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5eec
     ]
   },
   {
     title: 'Enterprise IT',
     description: 'Advanced enterprise solutions and infrastructure',
     links: [
+<<<<<<< HEAD
+      { name: 'Zero Trust Security', href: '/zero-trust-security-architecture' },
+      { name: 'Quantum-Secure Cloud', href: '/quantum-secure-cloud-infrastructure' },
+      { name: 'Autonomous DevOps', href: '/autonomous-devops-orchestrator' },
+      { name: 'Edge Computing', href: '/edge-computing-orchestration-platform' },
+      { name: 'AI Data Pipeline', href: '/ai-powered-data-pipeline-platform' },
+      { name: 'Quantum Communication', href: '/quantum-secure-communication-platform' }
+=======
       { name: 'Zero Trust Security', href: '/zero-trust-network-security' },
       { name: 'AI DevOps Automation', href: '/ai-devops-automation-platform' },
       { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration' },
@@ -58,6 +81,7 @@ const serviceCategories = [
       { name: 'Autonomous IT Operations', href: '/autonomous-it-operations-center' },
       { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure' },
       { name: 'Advanced Cybersecurity', href: '/quantum-cybersecurity-services' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5eec
     ]
   },
   {
@@ -65,6 +89,13 @@ const serviceCategories = [
     description: 'Innovative business solutions for modern enterprises',
     links: [
       { name: 'AI Business Intelligence', href: '/ai-business-intelligence-suite' },
+<<<<<<< HEAD
+      { name: 'AI Content Generation', href: '/ai-content-generation-platform' },
+      { name: 'AI Customer Service', href: '/ai-customer-service-automation' },
+      { name: 'AI Sales Intelligence', href: '/ai-sales-intelligence-platform' },
+      { name: 'AI Project Management', href: '/ai-project-management-suite' },
+      { name: 'AI Financial Analytics', href: '/ai-financial-analytics-platform' }
+=======
       { name: 'AI Content Personalization', href: '/ai-content-personalization-engine' },
       { name: 'AI Customer Success', href: '/ai-customer-success-platform' },
       { name: 'AI Financial Planning', href: '/ai-financial-planning-platform' },
@@ -98,10 +129,23 @@ const serviceCategories = [
       { name: 'Training & Certification', href: '/training' },
       { name: 'Community Forum', href: '/community' },
       { name: 'Developer Resources', href: '/developer-resources' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5eec
     ]
   }
 ];
 
+<<<<<<< HEAD
+const quickLinks = [
+  { name: 'All Services', href: '/comprehensive-services-showcase-2025' },
+  { name: 'Pricing', href: '/pricing' },
+  { name: 'Case Studies', href: '/case-studies' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Support', href: '/support' },
+  { name: 'About Us', href: '/about' },
+  { name: 'Contact', href: '/contact' },
+  { name: 'Privacy Policy', href: '/privacy' },
+  { name: 'Terms of Service', href: '/terms' }
+=======
 const companyLinks = [
   { name: 'About Us', href: '/about' },
   { name: 'Leadership Team', href: '/leadership' },
@@ -139,6 +183,7 @@ const solutionLinks = [
   { name: 'Government Solutions', href: '/government-technology-solutions' },
   { name: 'Energy & Utilities', href: '/energy-utilities-solutions' },
   { name: 'Transportation & Logistics', href: '/transportation-logistics-solutions' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5eec
 ];
 
 const socialLinks = [
@@ -278,6 +323,8 @@ export default function UltraFuturisticFooter2034() {
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Quick Links */}
+<<<<<<< HEAD
+=======
             <div className="lg:col-span-2">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
@@ -451,6 +498,7 @@ export default function UltraFuturisticFooter2034() {
           {/* Social Links & Newsletter */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             {/* Social Links */}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5eec
             <div>
               <h4 className="text-lg font-semibold text-white mb-4 flex items-center space-x-2">
                 <Lightbulb className="w-5 h-5 text-yellow-400" />
