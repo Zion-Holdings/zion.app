@@ -5,8 +5,9 @@ import UltraFuturisticFooter2045 from './UltraFuturisticFooter2045';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import TopContactBar from './TopContactBar';
 import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
-import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
+
 import EnhancedAccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
+import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
 import CookieConsentBanner from '../CookieConsentBanner';
 
 interface LayoutProps {
@@ -245,13 +246,6 @@ export default function Layout({
         <CookieConsentBanner />
       </div>
 
-      {/* Enhanced Accessibility and Performance Tools */}
-      <EnhancedAccessibilityEnhancer />
-      <EnhancedPerformanceMonitor />
-      
-      {/* Cookie Consent Banner */}
-      <CookieConsentBanner />
-      
       {/* Service Worker Update Notification */}
       <div id="sw-update-notification" className="hidden fixed bottom-4 right-4 bg-cyan-600 text-white p-4 rounded-lg shadow-lg z-50 max-w-sm">
         <div className="flex items-start gap-3">
@@ -272,7 +266,7 @@ export default function Layout({
               </button>
               <button 
                 onClick={() => document.getElementById('sw-update-notification')?.classList.add('hidden')} 
-                className="text-cyan-100 hover:text-white text-sm transition-colors"
+                className="text-cyan-500 hover:text-white text-sm transition-colors"
               >
                 Later
               </button>
