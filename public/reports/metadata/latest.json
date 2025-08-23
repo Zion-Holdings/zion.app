@@ -1,0 +1,21 @@
+{
+  "generatedAt": "2025-08-12T22:54:24.236Z",
+  "baseUrl": "",
+  "results": [
+    {
+      "path": "/",
+      "status": 0,
+      "ttfbMs": 17
+    },
+    {
+      "path": "/automation",
+      "status": 0,
+      "ttfbMs": 1
+    },
+    {
+      "path": "/main/front",
+      "status": 0,
+      "ttfbMs": 0
+    }
+  ]
+}
