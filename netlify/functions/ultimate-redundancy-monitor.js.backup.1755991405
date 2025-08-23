@@ -1,5 +1,9 @@
 // Ultimate Redundancy Monitor Function
+<<<<<<< HEAD
+exports.handler = async function() {
+=======
 exports.handler = async function(_event, _context) {
+>>>>>>> origin/cursor/check-and-fix-project-errors-05af
   try {
     // Enhanced health check with ultimate redundancy
     const healthStatus = await checkUltimateRedundancyHealth();

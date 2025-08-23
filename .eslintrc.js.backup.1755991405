@@ -38,6 +38,12 @@ module.exports = {
     '*.config.ts',
     'scripts/',
     'automation/',
+<<<<<<< HEAD
+    'tmp/',
+    'public/',
+  ],
+=======
     'netlify/'
   ]
+>>>>>>> origin/cursor/check-and-fix-project-errors-05af
 };
