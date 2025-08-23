@@ -6,7 +6,7 @@ import {
   Brain, Rocket, Target, Atom, Shield,
   DollarSign, BarChart3, Globe, Grid, Heart, Database,
   Cpu, Palette, Cloud, Network, TrendingUp, ShoppingCart, Settings, Building, Monitor,
-  BookOpen, FileText, MessageCircle, HelpCircle, GraduationCap, Star, Handshake
+  BookOpen, FileText, MessageCircle, HelpCircle, GraduationCap, Star, Handshake, Code
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -165,6 +165,30 @@ const navigationItems: NavigationItem[] = [
         href: '/quantum-api-gateway-2043', 
         description: 'Quantum-powered API gateway',
         icon: <Network className="w-4 h-4" />
+      },
+      {
+        name: 'Quantum Cloud Infrastructure 2041',
+        href: '/quantum-cloud-infrastructure-2041',
+        description: 'Quantum cloud computing',
+        icon: <Cloud className="w-4 h-4" />
+      },
+      {
+        name: 'Quantum Bio-Computing 2041',
+        href: '/quantum-bio-computing-2041',
+        description: 'Quantum biological computing',
+        icon: <Atom className="w-4 h-4" />
+      },
+      {
+        name: 'Quantum Neural Network Simulator',
+        href: '/quantum-neural-network-simulator',
+        description: 'Simulate quantum neural networks',
+        icon: <Brain className="w-4 h-4" />
+      },
+      {
+        name: 'Quantum-Enhanced Cybersecurity',
+        href: '/quantum-cybersecurity-suite',
+        description: 'Future-proof quantum security',
+        icon: <Shield className="w-4 h-4" />
       }
     ]
   },
@@ -214,10 +238,28 @@ const navigationItems: NavigationItem[] = [
         icon: <BarChart3 className="w-4 h-4" />,
         featured: true
       },
-      { 
-        name: 'Autonomous Customer Success 2043', 
-        href: '/autonomous-customer-success-2043', 
-        description: 'AI-powered customer success',
+      {
+        name: 'Zero-Trust Network Architecture',
+        href: '/zero-trust-network-architecture-platform',
+        description: 'Secure every connection',
+        icon: <Shield className="w-4 h-4" />
+      },
+      {
+        name: 'Autonomous Cloud Infrastructure',
+        href: '/autonomous-cloud-infrastructure-manager',
+        description: 'Self-managing cloud infrastructure',
+        icon: <Cloud className="w-4 h-4" />
+      },
+      {
+        name: 'Intelligent API Gateway',
+        href: '/intelligent-api-gateway-and-management',
+        description: 'Smart API management',
+        icon: <Network className="w-4 h-4" />
+      },
+      {
+        name: 'AI Customer Success 2041',
+        href: '/ai-customer-success-2041',
+        description: 'Autonomous customer management',
         icon: <Heart className="w-4 h-4" />
       },
       { 
@@ -261,6 +303,24 @@ const navigationItems: NavigationItem[] = [
         href: '/ai-itsm-2043', 
         description: 'Intelligent IT service management',
         icon: <Monitor className="w-4 h-4" />
+      },
+      {
+        name: 'Autonomous AI Research Assistant',
+        href: '/autonomous-ai-research-assistant',
+        description: 'Self-directed research with AI',
+        icon: <Brain className="w-4 h-4" />
+      },
+      {
+        name: 'Emotional Intelligence AI',
+        href: '/emotional-intelligence-ai-platform',
+        description: 'Human-like emotional understanding',
+        icon: <Heart className="w-4 h-4" />
+      },
+      {
+        name: 'Autonomous Content Creation',
+        href: '/autonomous-content-creation-engine',
+        description: 'Self-generating content with AI',
+        icon: <Code className="w-4 h-4" />
       }
     ]
   },
