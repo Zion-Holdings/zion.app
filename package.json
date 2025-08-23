@@ -205,8 +205,11 @@
     "conflicts:cron:start": "bash automation/merge-conflict-cron.sh start",
     "conflicts:cron:stop": "bash automation/merge-conflict-cron.sh stop",
     "conflicts:cron:status": "bash automation/merge-conflict-cron.sh status",
-    "cloud:auto:once": "node automation/cloud-autonomous-orchestrator.cjs",
-    "cloud:auto": "node automation/cloud-autonomous-orchestrator.cjs"
+    "autopilot:economy": "ts-node scripts/economy-autopilot.ts",
+    "optimize:economy": "ts-node scripts/economy-optimizer.ts",
+    "detect:economy": "ts-node scripts/economy-anomaly-detector.ts",
+    "governance:brief": "ts-node scripts/economy-governance-brief.ts",
+    "postbuild": "mkdir -p public/reports/economy && cp -r data/reports/economy/* public/reports/economy/ || true && mkdir -p public/reports/economy/optimizer && cp -r data/reports/economy/optimizer/* public/reports/economy/optimizer/ || true && mkdir -p public/reports/economy/anomalies && cp -r data/reports/economy/anomalies/* public/reports/economy/anomalies/ || true && mkdir -p public/docs/governance && cp -r docs/governance/* public/docs/governance/ || true"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
@@ -222,6 +225,7 @@
     "autoprefixer": "^10.4.21",
     "axios": "^1.11.0",
     "chalk": "^5.5.0",
+    "chart.js": "^4.5.0",
     "cheerio": "^1.1.2",
     "child_process": "^1.0.2",
     "chokidar": "^4.0.3",
@@ -231,8 +235,10 @@
     "fs": "^0.0.1-security",
     "fs-extra": "^11.3.1",
     "glob": "^11.0.3",
+    "html2canvas": "^1.4.1",
     "https": "^1.0.0",
     "import-fresh": "^3.3.1",
+    "jspdf": "^3.0.1",
     "lucide-react": "^0.536.0",
     "next": "^11.1.4",
     "node-cron": "^4.2.1",
@@ -240,9 +246,7 @@
     "path": "^0.12.7",
     "postcss": "^8.4.32",
     "react": "^17.0.2",
-    "react-chartjs-2": "^3.3.0",
-    "chart.js": "^3.9.1",
-    "html-to-image": "^1.11.11",
+    "react-chartjs-2": "^5.3.0",
     "react-datepicker": "^8.4.0",
     "react-dom": "^17.0.2",
     "uuid": "^11.1.0"

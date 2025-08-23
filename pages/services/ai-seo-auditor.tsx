@@ -8,11 +8,12 @@ export default function Placeholder() {
         <title>Services • Ai-seo-auditor - Placeholder</title>
         <meta name="robots" content="noindex" />
       </Head>
-      <div className="max-w-3xl mx-auto">
-        <h1 className="text-2xl font-semibold mb-2">Services • Ai-seo-auditor</h1>
-        <p className="text-gray-600 mb-6">Auto-generated placeholder for missing route: <code>/services/ai-seo-auditor</code>.</p>
-        <Link href="/"><a className="text-blue-600 hover:underline">Back to Home</a></Link>
-      </div>
-    </main>
+      
+      <main>
+        <h1>AiSeoAuditor</h1>
+        <p>Service details coming soon...</p>
+        <a href="/services">Back to Services</a>
+      </main>
+    </div>
   );
 }

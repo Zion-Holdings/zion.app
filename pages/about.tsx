@@ -17,8 +17,6 @@ const About: NextPage = () => {
   );
 };
 
-export default About;
-=======
 import React from 'react';
 
 export default function AboutPage() {
@@ -29,3 +27,5 @@ export default function AboutPage() {
     </div>
   );
 }
+=======
+export default About;

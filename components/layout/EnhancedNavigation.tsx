@@ -22,8 +22,7 @@ export default function EnhancedNavigation() {
           <Link href="/automation/status"><a>Automation</a></Link>
           <Link href="/about"><a>About</a></Link>
           <Link href="/blog"><a>Blog</a></Link>
-          <Link href="/salary-insights"><a>Salary Insights</a></Link>
-          <Link href="/admin"><a>Admin</a></Link>
+          <Link href="/economy/simulator"><a>Economy</a></Link>
           <Link href="/contact"><a>Contact</a></Link>
           <Link href="/token/integrations"><a>Integrations</a></Link>
         </div>
