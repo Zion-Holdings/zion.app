@@ -12,13 +12,15 @@ const contactInfo = {
   address: '364 E Main St STE 1008 Middletown DE 19709',
   website: 'https://ziontechgroup.com',
   hours: 'Mon-Fri: 9AM-6PM EST',
-  rating: '4.9/5 (200+ Reviews)'
+  rating: '4.9/5 (500+ Reviews)',
+  availability: '24/7 Support Available'
 };
 
 const quickActions = [
   { name: 'Get Quote', href: '/contact', icon: <MessageCircle className="w-4 h-4" /> },
   { name: 'Book Demo', href: '/contact', icon: <Calendar className="w-4 h-4" /> },
-  { name: 'Live Chat', href: '/support', icon: <MessageCircle className="w-4 h-4" /> }
+  { name: 'Live Chat', href: '/support', icon: <MessageCircle className="w-4 h-4" /> },
+  { name: 'Free Trial', href: '/get-started', icon: <Star className="w-4 h-4" /> }
 ];
 
 export default function TopContactBar() {
@@ -27,15 +29,15 @@ export default function TopContactBar() {
   return (
     <div className="relative z-40">
       {/* Main Contact Bar */}
-      <div className="bg-gradient-to-r from-gray-900 via-black to-gray-900 border-b border-cyan-500/30">
+      <div className="bg-gradient-to-r from-gray-900 via-black to-gray-900 border-b-2 border-cyan-500/50 shadow-lg shadow-cyan-500/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-12">
+          <div className="flex items-center justify-between h-14">
             {/* Left Side - Contact Info */}
             <div className="hidden md:flex items-center space-x-6 text-sm">
               {/* Phone */}
               <div className="flex items-center space-x-2 text-gray-300 hover:text-cyan-400 transition-colors duration-200 group">
                 <Phone className="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform duration-200" />
-                <a href={`tel:${contactInfo.mobile}`} className="hover:text-cyan-400 transition-colors duration-200">
+                <a href={`tel:${contactInfo.mobile}`} className="hover:text-cyan-400 transition-colors duration-200 font-medium">
                   {contactInfo.mobile}
                 </a>
               </div>
@@ -43,7 +45,7 @@ export default function TopContactBar() {
               {/* Email */}
               <div className="flex items-center space-x-2 text-gray-300 hover:text-cyan-400 transition-colors duration-200 group">
                 <Mail className="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform duration-200" />
-                <a href={`mailto:${contactInfo.email}`} className="hover:text-cyan-400 transition-colors duration-200">
+                <a href={`mailto:${contactInfo.email}`} className="hover:text-cyan-400 transition-colors duration-200 font-medium">
                   {contactInfo.email}
                 </a>
               </div>

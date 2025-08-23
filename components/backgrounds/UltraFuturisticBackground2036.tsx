@@ -34,7 +34,7 @@ export default function UltraFuturisticBackground2036({
     pulseSpeed: number;
   }>>([]);
 
-  // Enhanced theme-based color schemes
+  // Enhanced theme-based color schemes with more vibrant colors
   const getThemeColors = useCallback(() => {
     switch (theme) {
       case 'neon':
@@ -64,14 +64,16 @@ export default function UltraFuturisticBackground2036({
           secondary: ['#f59e0b', '#ef4444', '#8b5cf6', '#06b6d4', '#ec4899', '#10b981'],
           accent: ['#ec4899', '#10b981', '#f59e0b', '#ef4444', '#00d4ff', '#8b5cf6'],
           neon: ['#ff0080', '#00ffff', '#ffff00', '#ff00ff', '#8000ff', '#00ff80'],
-          quantum: ['#00d4ff', '#8b5cf6', '#ec4899', '#10b981', '#f59e0b', '#ef4444']
+          quantum: ['#00d4ff', '#8b5cf6', '#ec4899', '#10b981', '#f59e0b', '#ef4444'],
+          ultra: ['#ff1493', '#00bfff', '#32cd32', '#ffd700', '#ff4500', '#8a2be2']
         };
       default: // quantum
         return {
           primary: ['#8b5cf6', '#06b6d4', '#ec4899', '#10b981', '#f59e0b', '#ef4444'],
           secondary: ['#f59e0b', '#ef4444', '#8b5cf6', '#06b6d4', '#ec4899', '#10b981'],
           accent: ['#ec4899', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#06b6d4'],
-          neon: ['#ff0080', '#00ffff', '#ffff00', '#ff00ff', '#8000ff', '#00ff80']
+          neon: ['#ff0080', '#00ffff', '#ffff00', '#ff00ff', '#8000ff', '#00ff80'],
+          ultra: ['#ff1493', '#00bfff', '#32cd32', '#ffd700', '#ff4500', '#8a2be2']
         };
     }
   }, [theme]);

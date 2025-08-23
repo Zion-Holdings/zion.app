@@ -54,55 +54,20 @@ import { real2026Q4ExpansionsV3 } from '../../data/real-2026-q4-expansions-v3';
 import { real2036MicroSaasAdditions } from '../../data/real-2036-micro-saas-additions';
 import { real2036ITServicesAdditions } from '../../data/real-2036-it-services-additions';
 import { real2036AIServicesAdditions } from '../../data/real-2036-ai-services-additions';
+import { innovative2025MicroSaasBatch } from '../../data/innovative-2025-micro-saas-batch';
+import { innovative2025ITEnterpriseBatch } from '../../data/innovative-2025-it-enterprise-batch';
 import { innovativeMicroSaasServices } from '../../data/innovative-2025-micro-saas-expansions';
 import { innovativeITServices } from '../../data/innovative-2025-it-services-expansions';
 import { innovativeAIServices } from '../../data/innovative-2025-ai-services-expansions';
-import { innovative2025MicroSaasBatch } from '../../data/innovative-2025-micro-saas-batch';
-import { innovative2025ITEnterpriseBatch } from '../../data/innovative-2025-it-enterprise-batch';
 // Import our new 2025 advanced services
 import { advanced2025MicroSaasExpansion } from '../../data/2025-advanced-micro-saas-expansion';
 import { advanced2025ITSolutionsExpansion } from '../../data/2025-advanced-it-solutions-expansion';
 import { advanced2025AIServicesExpansion } from '../../data/2025-advanced-ai-services-expansion';
-// Import our new innovative 2025 services
-import { innovative2025AdvancedServicesExpansion } from '../../data/innovative-2025-advanced-services-expansion';
-import { innovative2025EnterpriseSolutions } from '../../data/innovative-2025-enterprise-solutions';
-// Import our new cutting-edge 2025 innovative services
-import { cuttingEdgeInnovativeServices2025, innovativeITServices2025, innovativeAIServices2025 } from '../../data/2025-cutting-edge-innovative-services';
 
-// Define a proper interface for services
-interface Service {
-  id?: string;
-  name: string;
-  tagline?: string;
-  description: string;
-  price?: string;
-  period?: string;
-  pricing?: {
-    starter?: { price: string; period?: string };
-    monthly?: string;
-    [key: string]: { price: string; period?: string } | string;
-  };
-  features?: string[];
-  category: string;
-  popular?: boolean;
-  icon?: string;
-  launchDate?: string;
-  [key: string]: unknown;
-}
-
-// Transform service to match UltraFuturisticServiceCard2026 requirements
-const transformServiceForCard = (service: Service) => ({
-  id: service.id || service.name,
-  name: service.name,
-  tagline: service.description.substring(0, 100) + (service.description.length > 100 ? '...' : ''),
-  description: service.description,
-  price: service.price || service.pricing?.monthly || service.pricing?.starter?.price || '$99',
-  period: service.pricing?.starter?.period || '/month',
-  features: [service.description.substring(0, 50) + '...'],
-  popular: service.popular || false,
-  category: service.category,
-  icon: '🚀'
-});
+// Import our new 2025 innovative services
+import { innovative2025MicroSaasExpansion } from '../../data/2025-innovative-micro-saas-expansion';
+import { innovative2025ITSolutionsExpansion } from '../../data/2025-innovative-it-solutions-expansion';
+import { innovative2025AISolutionsExpansion } from '../../data/2025-innovative-ai-solutions-expansion';
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -166,7 +131,6 @@ export default function ServicesIndexPage() {
       innovativeMicroSaasServices as unknown[],
       innovativeITServices as unknown[],
       innovativeAIServices as unknown[],
-
       real2029Q1Additions as unknown[],
       real2029Q2Additions as unknown[],
       real2029Q3Additions as unknown[],
@@ -186,13 +150,8 @@ export default function ServicesIndexPage() {
       real2036ServiceExpansions as unknown[],
       real2036MicroSaasAdditions as unknown[],
       real2036ITServicesAdditions as unknown[],
-      real2036AIServicesAdditions as unknown[],
-      innovative2025AdvancedServicesExpansion as unknown[],
-      innovative2025EnterpriseSolutions as unknown[]
+      real2036AIServicesAdditions as unknown[]
     )
-    .concat(innovativeMicroSaasServices as unknown[])
-    .concat(innovativeITServices as unknown[])
-    .concat(innovativeAIServices as unknown[])
     .concat(innovative2025MicroSaasBatch as unknown[])
     .concat(innovative2025ITEnterpriseBatch as unknown[])
     .concat(innovativeMicroSaasServices as unknown[])
@@ -202,88 +161,36 @@ export default function ServicesIndexPage() {
     .concat(advanced2025MicroSaasExpansion as unknown[])
     .concat(advanced2025ITSolutionsExpansion as unknown[])
     .concat(advanced2025AIServicesExpansion as unknown[])
-    // Our new cutting-edge 2025 innovative services
-    .concat(cuttingEdgeInnovativeServices2025 as unknown[])
-    .concat(innovativeITServices2025 as unknown[])
-    .concat(innovativeAIServices2025 as unknown[]);
+    // Our new 2025 innovative services
+    .concat(innovative2025MicroSaasExpansion as unknown[])
+    .concat(innovative2025ITSolutionsExpansion as unknown[])
+    .concat(innovative2025AISolutionsExpansion as unknown[]);
 
-  // Filter out services without required properties and normalize pricing
+  // Filter out services without required properties
   const validServices = all.filter(service => 
     service && 
     typeof service === 'object' && 
     'name' in service && 
     'description' in service &&
-    ('price' in service || 'pricing' in service)
-  ).map((service: Service) => {
-    // Normalize pricing structure
-    if (service.pricing && typeof service.pricing === 'object') {
-      // If pricing is an object, use the starter price or first available price
-      if (service.pricing.starter && service.pricing.starter.price) {
-        return {
-          ...service,
-          price: `$${service.pricing.starter.price}`,
-          period: service.pricing.starter.period || 'month'
-        };
-      } else if (service.pricing.monthly) {
-        return {
-          ...service,
-          price: `$${service.pricing.monthly}`,
-          period: 'month'
-        };
-      } else {
-        // Fallback to first available pricing tier
-        const firstTier = Object.values(service.pricing)[0] as { price: string; period?: string };
-        if (firstTier && firstTier.price) {
-          return {
-            ...service,
-            price: `$${firstTier.price}`,
-            period: firstTier.period || 'month'
-          };
-        }
-      }
-    }
-    return service;
-  }).filter((service: Service) => service.price && typeof service.price === 'string');
+    'price' in service
+  );
 
   // Group services by category
   const servicesByCategory = categories.reduce((acc, category) => {
-    acc[category] = validServices.filter((service: Service) => 
+    acc[category] = validServices.filter((service: any) => 
       service.category && service.category.toLowerCase().includes(category.toLowerCase().replace(/\s+/g, ''))
     );
     return acc;
-  }, {} as Record<string, Service[]>);
+  }, {} as Record<string, any[]>);
 
   // Get featured services (marked as popular)
-  const featuredServices = validServices.filter((service: Service) => service.popular).slice(0, 6).map((service: Service) => ({
-    id: service.id || toSlug(service.name),
-    name: service.name,
-    tagline: service.tagline || service.description.slice(0, 80) + '...',
-    description: service.description,
-    price: service.price || '$99',
-    period: service.period || 'month',
-    features: service.features || [service.description],
-    popular: service.popular,
-    category: service.category,
-    icon: service.icon || '🚀'
-  }));
+  const featuredServices = validServices.filter((service: any) => service.popular).slice(0, 6);
 
   // Get latest services (assuming they have a launchDate)
   const latestServices = validServices
-    .filter((service: Service) => service.launchDate)
-    .sort((a: Service, b: Service) => new Date(b.launchDate as string).getTime() - new Date(a.launchDate as string).getTime())
-    .slice(0, 6)
-    .map((service: Service) => ({
-      id: service.id || toSlug(service.name),
-      name: service.name,
-      tagline: service.tagline || service.description.slice(0, 80) + '...',
-      description: service.description,
-      price: service.price || '$99',
-      period: service.period || 'month',
-      features: service.features || [service.description],
-      popular: service.popular,
-      category: service.category,
-      icon: service.icon || '🚀'
-    }));
+    .filter((service: any) => service.launchDate)
+    .sort((a: any, b: any) => new Date(b.launchDate).getTime() - new Date(a.launchDate).getTime())
+    .slice(0, 6);
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -327,7 +234,7 @@ export default function ServicesIndexPage() {
                   {featuredServices.map((service: any, index: number) => (
                     <UltraFuturisticServiceCard2026
                       key={`${service.id || service.name}-${index}`}
-                      service={transformServiceForCard(service)}
+                      service={service}
                       variant="quantum"
                       theme="quantum"
                     />
@@ -346,7 +253,7 @@ export default function ServicesIndexPage() {
                   {latestServices.map((service: any, index: number) => (
                     <UltraFuturisticServiceCard2026
                       key={`${service.id || service.name}-${index}`}
-                      service={transformServiceForCard(service)}
+                      service={service}
                       variant="ai"
                       theme="neon"
                     />
@@ -397,7 +304,7 @@ export default function ServicesIndexPage() {
                         {categoryServices.slice(0, 6).map((service: any, index: number) => (
                           <UltraFuturisticServiceCard2026
                             key={`${service.id || service.name}-${index}`}
-                            service={transformServiceForCard(service)}
+                            service={service}
                             variant="default"
                             theme="cyber"
                           />
@@ -485,7 +392,7 @@ export default function ServicesIndexPage() {
                 {featuredServices.map((service: any, index: number) => (
                   <UltraFuturisticServiceCard2026
                     key={`${service.id || service.name}-${index}`}
-                    service={transformServiceForCard(service)}
+                    service={service}
                     variant="quantum"
                     theme="quantum"
                   />
@@ -504,7 +411,7 @@ export default function ServicesIndexPage() {
                 {latestServices.map((service: any, index: number) => (
                   <UltraFuturisticServiceCard2026
                     key={`${service.id || service.name}-${index}`}
-                    service={transformServiceForCard(service)}
+                    service={service}
                     variant="ai"
                     theme="neon"
                   />
@@ -555,7 +462,7 @@ export default function ServicesIndexPage() {
                       {categoryServices.slice(0, 6).map((service: any, index: number) => (
                         <UltraFuturisticServiceCard2026
                           key={`${service.id || service.name}-${index}`}
-                          service={transformServiceForCard(service)}
+                          service={service}
                           variant="default"
                           theme="cyber"
                         />

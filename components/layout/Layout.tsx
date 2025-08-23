@@ -46,10 +46,12 @@ export default function Layout({ children }: LayoutProps) {
         {/* Footer */}
         <UltraFuturisticFooter2044 />
       </div>
-      
-      {/* Enhanced Components */}
+
+      {/* Accessibility and Performance Tools */}
       <AccessibilityEnhancer />
       <PerformanceMonitor />
+      
+      {/* Cookie Consent Banner */}
       <CookieConsentBanner />
     </div>
   );
