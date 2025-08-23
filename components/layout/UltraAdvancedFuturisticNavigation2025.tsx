@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, X, Search, ChevronDown, ChevronRight, 
   Home, Briefcase, Users, BookOpen, Phone, 
-  Zap, Shield, Brain, Rocket
+  Zap, Shield, Brain, Rocket, Cpu, FileText, Video, TrendingUp
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -45,7 +45,7 @@ const navigationItems: NavigationItem[] = [
       },
       {
         label: 'Space Technology',
-        href: '/space-tech',
+        href: '/space-technology',
         icon: <Rocket className="w-4 h-4" />,
         description: 'Innovative space tech applications'
       },
@@ -54,20 +54,84 @@ const navigationItems: NavigationItem[] = [
         href: '/cybersecurity',
         icon: <Shield className="w-4 h-4" />,
         description: 'Enterprise-grade security solutions'
+      },
+      {
+        label: 'Cloud Solutions',
+        href: '/cloud-platform',
+        icon: <Cpu className="w-4 h-4" />,
+        description: 'Scalable cloud infrastructure'
       }
     ]
   },
   {
-    label: 'About',
+    label: 'Company',
     href: '/about',
     icon: <Users className="w-4 h-4" />,
-    description: 'Learn about our mission and team'
+    description: 'Learn about our mission and team',
+    children: [
+      {
+        label: 'About Us',
+        href: '/about',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Our mission and values'
+      },
+      {
+        label: 'Leadership',
+        href: '/about#leadership',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Meet our team'
+      },
+      {
+        label: 'Careers',
+        href: '/careers',
+        icon: <Briefcase className="w-4 h-4" />,
+        description: 'Join our team'
+      },
+      {
+        label: 'News & Updates',
+        href: '/news',
+        icon: <BookOpen className="w-4 h-4" />,
+        description: 'Latest company news'
+      }
+    ]
   },
   {
     label: 'Resources',
     href: '/resources',
     icon: <BookOpen className="w-4 h-4" />,
-    description: 'Whitepapers, case studies, and insights'
+    description: 'Whitepapers, case studies, and insights',
+    children: [
+      {
+        label: 'Blog',
+        href: '/blog',
+        icon: <BookOpen className="w-4 h-4" />,
+        description: 'Industry insights and updates'
+      },
+      {
+        label: 'White Papers',
+        href: '/white-papers',
+        icon: <FileText className="w-4 h-4" />,
+        description: 'In-depth research and analysis'
+      },
+      {
+        label: 'Webinars',
+        href: '/webinars',
+        icon: <Video className="w-4 h-4" />,
+        description: 'Educational content and sessions'
+      },
+      {
+        label: 'Case Studies',
+        href: '/case-studies',
+        icon: <TrendingUp className="w-4 h-4" />,
+        description: 'Success stories and results'
+      },
+      {
+        label: 'Documentation',
+        href: '/docs',
+        icon: <BookOpen className="w-4 h-4" />,
+        description: 'Technical guides and API docs'
+      }
+    ]
   },
   {
     label: 'Contact',
