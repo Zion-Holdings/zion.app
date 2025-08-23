@@ -21,6 +21,12 @@
   "ai-sales-intelligence",
   "ai-seo-automation-suite",
   "ai-threat-detection",
+<<<<<<< HEAD
+  "autonomous-business-intelligence",
+  "autonomous-business-operations",
+  "autonomous-customer-success",
+=======
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-eedb
   "autonomous-devops-platform",
   "autonomous-it-operations",
   "autonomous-it-service-management",
