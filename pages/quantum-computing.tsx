@@ -1,9 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Cloud, Server, Shield, Zap, Users, Target, Globe, Cpu, Brain } from 'lucide-react';
+import { Brain, Shield, Users, Target, Globe, Cpu, Atom } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 
-export default function CloudPlatform() {
+export default function QuantumComputing() {
   return (
     <Layout>
       <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
@@ -17,11 +17,11 @@ export default function CloudPlatform() {
               className="text-center"
             >
               <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
-                Cloud Platform
+                Quantum Computing
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Scalable, secure, and intelligent cloud infrastructure that grows with your business. 
-                Built for the future with AI-powered automation and quantum-safe security.
+                Harnessing the power of quantum mechanics to solve previously impossible computational challenges. 
+                We're building the future of computing, one qubit at a time.
               </p>
             </motion.div>
           </div>
@@ -41,8 +41,9 @@ export default function CloudPlatform() {
                   <h2 className="text-3xl font-bold text-white">Our Mission</h2>
                 </div>
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  To provide enterprise-grade cloud infrastructure that enables businesses to scale 
-                  infinitely while maintaining security, performance, and cost efficiency.
+                  To accelerate human progress through revolutionary quantum technologies, 
+                  creating computational systems that solve humanity's greatest challenges while 
+                  maintaining ethical boundaries and quantum supremacy.
                 </p>
               </motion.div>
 
@@ -56,8 +57,8 @@ export default function CloudPlatform() {
                   <h2 className="text-3xl font-bold text-white">Our Vision</h2>
                 </div>
                 <p className="text-lg text-gray-300 leading-relaxed">
-                  A world where cloud computing is seamless, intelligent, and accessible to all, 
-                  powered by AI and quantum technologies.
+                  A world where quantum computing and classical computing work in harmony, 
+                  solving previously impossible problems and creating abundance for all of humanity.
                 </p>
               </motion.div>
             </div>
@@ -74,20 +75,20 @@ export default function CloudPlatform() {
               className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
             >
               <div className="p-6">
-                <div className="text-4xl font-bold text-cyan-400 mb-2">99.99%</div>
-                <div className="text-gray-300">Uptime SLA</div>
+                <div className="text-4xl font-bold text-cyan-400 mb-2">100+</div>
+                <div className="text-gray-300">Quantum Solutions</div>
               </div>
               <div className="p-6">
-                <div className="text-4xl font-bold text-blue-400 mb-2">Global</div>
-                <div className="text-gray-300">Data Centers</div>
+                <div className="text-4xl font-bold text-blue-400 mb-2">1000+</div>
+                <div className="text-gray-300">Qubits Processed</div>
               </div>
               <div className="p-6">
                 <div className="text-4xl font-bold text-purple-400 mb-2">24/7</div>
-                <div className="text-gray-300">Monitoring</div>
+                <div className="text-gray-300">Quantum Operations</div>
               </div>
               <div className="p-6">
                 <div className="text-4xl font-bold text-green-400 mb-2">∞</div>
-                <div className="text-gray-300">Scalability</div>
+                <div className="text-gray-300">Possibilities</div>
               </div>
             </motion.div>
           </div>
@@ -103,7 +104,7 @@ export default function CloudPlatform() {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-bold text-white mb-4">Core Values</h2>
-              <p className="text-xl text-gray-300">The principles that guide our cloud platform</p>
+              <p className="text-xl text-gray-300">The principles that guide our quantum journey</p>
             </motion.div>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -114,11 +115,11 @@ export default function CloudPlatform() {
                 className="text-center p-6 rounded-lg bg-gray-800/50 hover:bg-gray-800/70 transition-all duration-300"
               >
                 <div className="w-16 h-16 bg-cyan-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Cloud className="w-8 h-8 text-cyan-400" />
+                  <Brain className="w-8 h-8 text-cyan-400" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">Scalability</h3>
+                <h3 className="text-xl font-bold text-white mb-3">Innovation</h3>
                 <p className="text-gray-300">
-                  Infrastructure that grows with your business needs
+                  Pushing the boundaries of what's possible in quantum computing
                 </p>
               </motion.div>
 
@@ -133,7 +134,7 @@ export default function CloudPlatform() {
                 </div>
                 <h3 className="text-xl font-bold text-white mb-3">Security</h3>
                 <p className="text-gray-300">
-                  Enterprise-grade security with quantum-safe encryption
+                  Quantum-safe encryption and secure quantum communications
                 </p>
               </motion.div>
 
@@ -144,11 +145,11 @@ export default function CloudPlatform() {
                 className="text-center p-6 rounded-lg bg-gray-800/50 hover:bg-gray-800/70 transition-all duration-300"
               >
                 <div className="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Brain className="w-8 h-8 text-purple-400" />
+                  <Users className="w-8 h-8 text-purple-400" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">Intelligence</h3>
+                <h3 className="text-xl font-bold text-white mb-3">Collaboration</h3>
                 <p className="text-gray-300">
-                  AI-powered automation and optimization
+                  Working together to advance quantum computing for humanity
                 </p>
               </motion.div>
             </div>
@@ -164,8 +165,8 @@ export default function CloudPlatform() {
               transition={{ duration: 0.8, delay: 1.6 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold text-white mb-4">Cloud Services</h2>
-              <p className="text-xl text-gray-300">Comprehensive cloud infrastructure solutions</p>
+              <h2 className="text-4xl font-bold text-white mb-4">Quantum Services</h2>
+              <p className="text-xl text-gray-300">Comprehensive quantum computing solutions</p>
             </motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -176,13 +177,13 @@ export default function CloudPlatform() {
                 className="p-6 rounded-lg bg-gray-800/50 hover:bg-gray-800/70 transition-all duration-300"
               >
                 <div className="w-12 h-12 bg-cyan-500/20 rounded-lg flex items-center justify-center mb-4">
-                  <Server className="w-6 h-6 text-cyan-400" />
+                  <Cpu className="w-6 h-6 text-cyan-400" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">Infrastructure as a Service</h3>
+                <h3 className="text-xl font-bold text-white mb-3">Quantum Processors</h3>
                 <p className="text-gray-300 mb-4">
-                  Scalable compute, storage, and networking resources
+                  High-performance quantum processors for complex computational tasks
                 </p>
-                <a href="/services" className="text-cyan-400 hover:text-cyan-300 transition-colors">
+                <a href="/quantum-ai-hybrid-computing" className="text-cyan-400 hover:text-cyan-300 transition-colors">
                   Learn More →
                 </a>
               </motion.div>
@@ -194,13 +195,13 @@ export default function CloudPlatform() {
                 className="p-6 rounded-lg bg-gray-800/50 hover:bg-gray-800/70 transition-all duration-300"
               >
                 <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-4">
-                  <Brain className="w-6 h-6 text-blue-400" />
+                  <Shield className="w-6 h-6 text-blue-400" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">AI-Powered Analytics</h3>
+                <h3 className="text-xl font-bold text-white mb-3">Quantum Security</h3>
                 <p className="text-gray-300 mb-4">
-                  Intelligent insights and predictive analytics
+                  Quantum-resistant encryption and secure quantum communications
                 </p>
-                <a href="/ai-services" className="text-cyan-400 hover:text-cyan-300 transition-colors">
+                <a href="/quantum-cybersecurity" className="text-cyan-400 hover:text-cyan-300 transition-colors">
                   Learn More →
                 </a>
               </motion.div>
@@ -212,13 +213,13 @@ export default function CloudPlatform() {
                 className="p-6 rounded-lg bg-gray-800/50 hover:bg-gray-800/70 transition-all duration-300"
               >
                 <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-4">
-                  <Shield className="w-6 h-6 text-purple-400" />
+                  <Atom className="w-6 h-6 text-purple-400" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">Security & Compliance</h3>
+                <h3 className="text-xl font-bold text-white mb-3">Quantum Algorithms</h3>
                 <p className="text-gray-300 mb-4">
-                  Enterprise-grade security with compliance frameworks
+                  Custom quantum algorithms for specific industry applications
                 </p>
-                <a href="/cybersecurity" className="text-cyan-400 hover:text-cyan-300 transition-colors">
+                <a href="/quantum-bio-computing-platform" className="text-cyan-400 hover:text-cyan-300 transition-colors">
                   Learn More →
                 </a>
               </motion.div>
@@ -226,110 +227,19 @@ export default function CloudPlatform() {
           </div>
         </section>
 
-        {/* Features */}
-        <section className="py-20 px-4">
-          <div className="container mx-auto max-w-6xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 2.4 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl font-bold text-white mb-4">Platform Features</h2>
-              <p className="text-xl text-gray-300">Advanced capabilities for modern businesses</p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 2.6 }}
-                className="space-y-6"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 bg-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Zap className="w-4 h-4 text-cyan-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">Auto-scaling</h3>
-                    <p className="text-gray-300">Intelligent resource scaling based on demand</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 bg-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Shield className="w-4 h-4 text-blue-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">Multi-region deployment</h3>
-                    <p className="text-gray-300">Global infrastructure for optimal performance</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 bg-purple-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Brain className="w-4 h-4 text-purple-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">AI optimization</h3>
-                    <p className="text-gray-300">Machine learning for cost and performance optimization</p>
-                  </div>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 2.8 }}
-                className="space-y-6"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 bg-green-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Cpu className="w-4 h-4 text-green-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">Container orchestration</h3>
-                    <p className="text-gray-300">Kubernetes-native platform management</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 bg-yellow-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Server className="w-4 h-4 text-yellow-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">Serverless computing</h3>
-                    <p className="text-gray-300">Pay-per-use serverless functions</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 bg-pink-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Users className="w-4 h-4 text-pink-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-white mb-2">Team collaboration</h3>
-                    <p className="text-gray-300">Built-in collaboration and access management</p>
-                  </div>
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
         {/* CTA Section */}
-        <section className="py-20 px-4 bg-black/30">
+        <section className="py-20 px-4">
           <div className="container mx-auto max-w-4xl text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 3.0 }}
+              transition={{ duration: 0.8, delay: 2.4 }}
             >
               <h2 className="text-4xl font-bold text-white mb-6">
-                Ready to Scale Your Infrastructure?
+                Ready to Experience Quantum Computing?
               </h2>
               <p className="text-xl text-gray-300 mb-8">
-                Join us in building a cloud-native future
+                Join us in revolutionizing the future of computation
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a

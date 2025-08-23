@@ -51,6 +51,12 @@ const navigationItems: NavigationItem[] = [
         href: '/cybersecurity',
         icon: <Shield className="w-4 h-4" />,
         description: 'Enterprise-grade security solutions'
+      },
+      {
+        label: 'Cloud Platform',
+        href: '/cloud-platform',
+        icon: <Globe className="w-4 h-4" />,
+        description: 'Scalable cloud infrastructure'
       }
     ]
   },
@@ -64,7 +70,47 @@ const navigationItems: NavigationItem[] = [
     label: 'Resources',
     href: '/resources',
     icon: <BookOpen className="w-4 h-4" />,
-    description: 'Whitepapers, case studies, and insights'
+    description: 'Whitepapers, case studies, and insights',
+    children: [
+      {
+        label: 'Blog',
+        href: '/blog',
+        icon: <BookOpen className="w-4 h-4" />,
+        description: 'Latest insights and updates'
+      },
+      {
+        label: 'Case Studies',
+        href: '/case-studies',
+        icon: <Briefcase className="w-4 h-4" />,
+        description: 'Success stories and results'
+      },
+      {
+        label: 'White Papers',
+        href: '/white-papers',
+        icon: <BookOpen className="w-4 h-4" />,
+        description: 'In-depth research and analysis'
+      }
+    ]
+  },
+  {
+    label: 'Company',
+    href: '#',
+    icon: <Users className="w-4 h-4" />,
+    description: 'Company information and opportunities',
+    children: [
+      {
+        label: 'Careers',
+        href: '/careers',
+        icon: <Briefcase className="w-4 h-4" />,
+        description: 'Join our team'
+      },
+      {
+        label: 'News',
+        href: '/news',
+        icon: <Globe className="w-4 h-4" />,
+        description: 'Company updates and announcements'
+      }
+    ]
   },
   {
     label: 'Contact',
@@ -97,7 +143,7 @@ const UltraAdvancedFuturisticNavigation2025: React.FC = () => {
   // Handle click outside search
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+      if (searchRef.current && !searchRef.current.contains(event.target as HTMLElement)) {
         setIsSearchOpen(false);
       }
     };
@@ -109,7 +155,7 @@ const UltraAdvancedFuturisticNavigation2025: React.FC = () => {
   // Handle click outside mobile menu
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as HTMLElement)) {
         setIsMobileMenuOpen(false);
       }
     };
