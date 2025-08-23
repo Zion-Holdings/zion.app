@@ -1,6 +1,10 @@
 import React from 'react';
+<<<<<<< HEAD
+import Head from 'next/head';
+=======
 import SEO from '../components/SEO';
 import { Check, ExternalLink } from 'lucide-react';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0a60
 
 export default function BrowserAutomationCloudPage() {
 	return (
@@ -31,6 +35,14 @@ export default function BrowserAutomationCloudPage() {
 							<p className="mt-4 text-3xl font-bold">Custom</p>
 						</div>
 					</div>
+<<<<<<< HEAD
+					<div className="flex flex-wrap gap-4">
+						<a href="/contact" className="px-5 py-3 rounded-lg bg-cyan-600 hover:bg-cyan-500">Contact Sales</a>
+						<a href="/market-pricing" className="px-5 py-3 rounded-lg border border-gray-600">Market Pricing</a>
+					</div>
+				</div>
+			</div>
+=======
 					<div className="mt-8 flex flex-wrap items-center gap-4">
 						<a href="/contact" className="px-5 py-3 rounded-lg bg-white text-black font-semibold hover:bg-gray-200">Start from $99/mo</a>
 						<a href="/market-pricing" className="px-5 py-3 rounded-lg border border-white/20 text-white hover:bg-white/10">Market Pricing</a>
@@ -43,6 +55,7 @@ export default function BrowserAutomationCloudPage() {
 					</div>
 				</section>
 			</main>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0a60
 		</>
 	);
 }

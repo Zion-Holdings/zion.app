@@ -166,6 +166,89 @@ const navigationItems: NavigationItem[] = [
     badge: 'Quantum',
     category: 'it-infrastructure',
     children: [
+<<<<<<< HEAD
+      { 
+        name: 'Quantum Cloud Infrastructure', 
+        href: '/services/quantum-cloud-infrastructure-platform', 
+        description: 'Quantum-powered cloud platform',
+        featured: true
+      },
+      { 
+        name: 'Autonomous Cybersecurity Orchestrator', 
+        href: '/services/autonomous-cybersecurity-orchestrator', 
+        description: 'AI-powered threat defense'
+      },
+      { 
+        name: 'Quantum Data Center Solutions', 
+        href: '/services/quantum-data-center-solutions', 
+        description: 'Next-generation data centers'
+      },
+      { 
+        name: 'AI-Powered DevOps Automation', 
+        href: '/services/ai-powered-devops-automation', 
+        description: 'Intelligent development pipeline'
+      },
+      { 
+        name: 'Quantum Edge Computing Platform', 
+        href: '/services/quantum-edge-computing-platform', 
+        description: 'Quantum computing at the edge'
+      },
+      { 
+        name: 'Autonomous Network Optimization', 
+        href: '/services/autonomous-network-optimization', 
+        description: 'AI-powered network optimization'
+      },
+      { 
+        name: 'View All IT Services', 
+        href: '/it-services', 
+        description: 'Complete IT infrastructure portfolio'
+      }
+    ]
+  },
+  {
+    name: 'Advanced Solutions',
+    href: '/advanced-solutions',
+    icon: <Zap className="w-5 h-5" />,
+    description: 'Cutting-edge technology solutions',
+    badge: 'Advanced',
+    category: 'advanced-solutions',
+    children: [
+      { 
+        name: 'Quantum Predictive Analytics', 
+        href: '/services/quantum-predictive-analytics-engine', 
+        description: 'Predict the future with quantum AI'
+      },
+      { 
+        name: 'Autonomous Innovation AI', 
+        href: '/services/autonomous-innovation-ai', 
+        description: 'AI that generates breakthrough ideas'
+      },
+      { 
+        name: 'Quantum Emotional Healing AI', 
+        href: '/services/quantum-emotional-healing-ai', 
+        description: 'AI-powered emotional healing'
+      },
+      { 
+        name: 'AI Consciousness Collaboration', 
+        href: '/services/ai-consciousness-collaboration-platform', 
+        description: 'Collaborate with conscious AI'
+      },
+      { 
+        name: 'Quantum Blockchain Infrastructure', 
+        href: '/services/quantum-blockchain-infrastructure', 
+        description: 'Future-proof blockchain'
+      },
+      { 
+        name: 'Quantum Storage Solutions', 
+        href: '/services/quantum-storage-solutions', 
+        description: 'Next-generation storage'
+      },
+      { 
+        name: 'View All Advanced Solutions', 
+        href: '/advanced-solutions', 
+        description: 'Complete advanced solutions portfolio'
+      }
+=======
       { name: 'AI & Data', href: '/services#ai', description: 'AI, data, ML services' },
       { name: 'Cloud & FinOps', href: '/services#cloud', description: 'Cloud, cost, platform' },
       { name: 'Observability', href: '/services#observability', description: 'Monitoring & telemetry' },
@@ -184,6 +267,7 @@ const navigationItems: NavigationItem[] = [
       { name: 'AI Sales Email Autopilot', href: '/services/ai-sales-email-autopilot', description: 'Personalized outbound at scale' },
       { name: 'Kubernetes Cost & Rightsizing', href: '/services/kubernetes-cost-rightsizing', description: 'SLO-aware cost optimization' },
       { name: 'CI Flaky Test Detector', href: '/services/ci-flaky-test-detector', description: 'Auto quarantine and PR insights' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0a60
     ]
   },
   {
