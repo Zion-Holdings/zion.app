@@ -1,0 +1,68 @@
+# npm audit report
+
+electron  <=22.3.24
+Severity: high
+Context isolation bypass via leaked cross-context objects in Electron - https://github.com/advisories/GHSA-m93v-9qjc-3g79
+Context isolation bypass via contextBridge in Electron - https://github.com/advisories/GHSA-h9jc-284h-533g
+Arbitrary file read via window-open IPC in Electron - https://github.com/advisories/GHSA-f9mq-jph6-9mhm
+Context isolation bypass via Promise in Electron - https://github.com/advisories/GHSA-6vrv-94jv-crrg
+AutoUpdater module fails to validate certain nested components of the bundle - https://github.com/advisories/GHSA-77xc-hjv8-ww97
+Compromised child renderer processes could obtain IPC access without nodeIntegrationInSubFrames being enabled - https://github.com/advisories/GHSA-mq8j-3h7h-p8g7
+Exfiltration of hashed SMB credentials on Windows via file:// redirect - https://github.com/advisories/GHSA-p2jh-44qj-pf2v
+Electron's sandboxed renderers can obtain thumbnails of arbitrary files through the nativeImage API - https://github.com/advisories/GHSA-mpjm-v997-c4h4
+Renderers can obtain access to random bluetooth device without permission in Electron - https://github.com/advisories/GHSA-3p22-ghq8-v749
+Electron vulnerable to out-of-package code execution when launched with arbitrary cwd - https://github.com/advisories/GHSA-7x97-j373-85x5
+Electron context isolation bypass via nested unserializable return value - https://github.com/advisories/GHSA-p7v2-p9m8-qqg7
+Electron affected by libvpx's heap buffer overflow in vp8 encoding - https://github.com/advisories/GHSA-qqvq-6xgj-jw8g
+ASAR Integrity bypass via filetype confusion in electron - https://github.com/advisories/GHSA-7m48-wc93-9g85
+IPC messages delivered to the wrong frame in Electron - https://github.com/advisories/GHSA-hvf8-h2qh-37m9
+Depends on vulnerable versions of electron-download
+fix available via `npm audit fix --force`
+Will install react-devtools@6.1.2, which is a breaking change
+node_modules/react-devtools/node_modules/electron
+  react-devtools  <=5.2.0
+  Depends on vulnerable versions of electron
+  Depends on vulnerable versions of ip
+  Depends on vulnerable versions of react-devtools-core
+  node_modules/react-devtools
+
+ip  *
+Severity: high
+ip SSRF improper categorization in isPublic - https://github.com/advisories/GHSA-2p57-rm9w-gvfp
+fix available via `npm audit fix --force`
+Will install react-devtools@6.1.2, which is a breaking change
+node_modules/ip
+node_modules/react-devtools/node_modules/ip
+
+react-devtools-core  <4.28.4
+Severity: moderate
+React Developer Tools extension Improper Authorization vulnerability - https://github.com/advisories/GHSA-rxrc-rgv4-jpvx
+fix available via `npm audit fix --force`
+Will install react-devtools@6.1.2, which is a breaking change
+node_modules/react-devtools/node_modules/react-devtools-core
+
+request  *
+Severity: moderate
+Server-Side Request Forgery in Request - https://github.com/advisories/GHSA-p8p7-x288-28g6
+Depends on vulnerable versions of tough-cookie
+fix available via `npm audit fix --force`
+Will install react-devtools@6.1.2, which is a breaking change
+node_modules/request
+  nugget  *
+  Depends on vulnerable versions of request
+  node_modules/nugget
+    electron-download  *
+    Depends on vulnerable versions of nugget
+    node_modules/electron-download
+
+tough-cookie  <4.1.3
+Severity: moderate
+tough-cookie Prototype Pollution vulnerability - https://github.com/advisories/GHSA-72xf-g2v4-qvf3
+fix available via `npm audit fix --force`
+Will install react-devtools@6.1.2, which is a breaking change
+node_modules/request/node_modules/tough-cookie
+
+8 vulnerabilities (5 moderate, 3 high)
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force

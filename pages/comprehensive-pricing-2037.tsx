@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SEO from '../components/SEO';
+import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { 
   Brain, Atom, Shield, Target, Rocket, Globe, Cpu,
@@ -122,14 +122,11 @@ export default function ComprehensivePricing2037() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      <SEO 
-        title="Comprehensive Pricing 2037 - Zion Tech Group"
-        description="Explore our complete 2037 services pricing with AI consciousness, quantum computing, autonomous systems, and cutting-edge innovations. Transparent pricing for revolutionary technology."
-        keywords={[
-          "pricing", "AI services", "quantum computing", "autonomous systems", 
-          "metaverse", "consciousness", "2037", "Zion Tech Group"
-        ]}
-      />
+      <Head>
+        <title>Comprehensive Pricing 2037 - Zion Tech Group</title>
+        <meta name="description" content="Explore our complete 2037 services pricing with AI consciousness, quantum computing, autonomous systems, and cutting-edge innovations. Transparent pricing for revolutionary technology." />
+        <meta name="keywords" content="pricing, AI services, quantum computing, autonomous systems, metaverse, consciousness, 2037, Zion Tech Group" />
+      </Head>
       
       {/* Hero Section */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8">
@@ -460,7 +457,7 @@ export default function ComprehensivePricing2037() {
                 whileTap={{ scale: 0.95 }}
                 className="bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg flex items-center gap-2 hover:from-cyan-600 hover:to-purple-700 transition-all duration-300"
               >
-                Contact Sales Team
+                Contact Sales Users
                 <ArrowRight className="w-5 h-5" />
               </motion.button>
               <motion.button

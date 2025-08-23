@@ -1,0 +1,17 @@
+chains:
+  zksync:
+    chainId: 324
+    bridge: LayerZero
+  starknet:
+    chainId: 234485942
+    bridge: LayerZero
+  base:
+    chainId: 8453
+  cosmos:
+    chainId: "cosmwasm"
+  arbitrum:
+    chainId: 42161
+  optimism:
+    chainId: 10
+  polygon:
+    chainId: 137

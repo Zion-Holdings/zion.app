@@ -1,289 +1,277 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import Head from 'next/head';
 import Link from 'next/link';
-import { Calendar, Clock, ArrowRight, Brain, Rocket, Shield, Zap } from 'lucide-react';
-import Layout from '../../components/layout/Layout';
 
-const blogPosts = [
-  {
-    id: 'performance-optimization',
-    title: 'Performance Optimization Strategies for Modern Web Applications',
-    excerpt: 'Discover advanced techniques for optimizing web application performance, from code splitting to server-side rendering.',
-    category: 'Performance',
-    readTime: '8 min read',
-    date: '2025-01-15',
-    icon: <Zap className="w-6 h-6" />,
-    color: 'text-yellow-400',
-    bgColor: 'bg-yellow-400/10',
-    borderColor: 'border-yellow-400/20'
-  },
-  {
-    id: 'cloud-native-automation',
-    title: 'Cloud-Native Automation: Building Self-Healing Infrastructure',
-    excerpt: 'Learn how to implement autonomous infrastructure that automatically detects and resolves issues without human intervention.',
-    category: 'Cloud',
-    readTime: '12 min read',
-    date: '2025-01-10',
-    icon: <Rocket className="w-6 h-6" />,
-    color: 'text-blue-400',
-    bgColor: 'bg-blue-400/10',
-    borderColor: 'border-blue-400/20'
-  },
-  {
-    id: 'ai-automation-trends-2025',
-    title: 'AI Automation Trends 2025: The Future of Autonomous Systems',
-    excerpt: 'Explore the latest trends in AI automation and how they\'re reshaping industries across the globe.',
-    category: 'AI',
-    readTime: '10 min read',
-    date: '2025-01-05',
-    icon: <Brain className="w-6 h-6" />,
-    color: 'text-cyan-400',
-    bgColor: 'bg-cyan-400/10',
-    borderColor: 'border-cyan-400/20'
-  },
-  {
-    id: 'future-of-work',
-    title: 'The Future of Work: AI-Augmented Human Intelligence',
-    excerpt: 'How artificial intelligence is transforming the workplace and creating new opportunities for human-AI collaboration.',
-    category: 'Future',
-    readTime: '15 min read',
-    date: '2024-12-28',
-    icon: <Brain className="w-6 h-6" />,
-    color: 'text-purple-400',
-    bgColor: 'bg-purple-400/10',
-    borderColor: 'border-purple-400/20'
-  },
-  {
-    id: 'ai-ethics-automation',
-    title: 'AI Ethics in Automation: Balancing Innovation with Responsibility',
-    excerpt: 'Critical considerations for implementing ethical AI systems in automated decision-making processes.',
-    category: 'Ethics',
-    readTime: '11 min read',
-    date: '2024-12-20',
-    icon: <Shield className="w-6 h-6" />,
-    color: 'text-green-400',
-    bgColor: 'bg-green-400/10',
-    borderColor: 'border-green-400/20'
-  },
-  {
-    id: 'autonomous-content-generation',
-    title: 'Autonomous Content Generation: AI Writing the Future',
-    excerpt: 'How AI systems are revolutionizing content creation while maintaining human creativity and authenticity.',
-    category: 'Content',
-    readTime: '9 min read',
-    date: '2024-12-15',
-    icon: <Brain className="w-6 h-6" />,
-    color: 'text-pink-400',
-    bgColor: 'bg-pink-400/10',
-    borderColor: 'border-pink-400/20'
-  }
-];
+export default function BlogIndexPage() {
+  const blogPosts = [
+    {
+      id: 'ai-automation-trends-2025',
+      title: 'AI Automation Trends That Will Dominate 2025',
+      excerpt: 'Discover the top AI automation trends that are reshaping industries and transforming how businesses operate in 2025.',
+      author: 'Zion Tech Group Team',
+      date: '2025-08-15',
+      category: 'AI & Automation',
+      readTime: '8 min read',
+      featured: true
+    },
+    {
+      id: 'cloud-optimization-strategies',
+      title: 'Advanced Cloud Optimization Strategies for Enterprise',
+      excerpt: 'Learn proven strategies for optimizing cloud infrastructure, reducing costs, and improving performance across your organization.',
+      author: 'Cloud Solutions Team',
+      date: '2025-08-10',
+      category: 'Cloud Computing',
+      readTime: '12 min read',
+      featured: false
+    },
+    {
+      id: 'autonomous-systems-future',
+      title: 'The Future of Autonomous Systems in Business',
+      excerpt: 'Explore how autonomous systems are revolutionizing business operations and what this means for the future of work.',
+      author: 'Innovation Lab',
+      date: '2025-08-05',
+      category: 'Innovation',
+      readTime: '10 min read',
+      featured: false
+    },
+    {
+      id: 'performance-monitoring-best-practices',
+      title: 'Best Practices for AI-Powered Performance Monitoring',
+      excerpt: 'Implement effective performance monitoring strategies using AI and machine learning to optimize your systems.',
+      author: 'Performance Team',
+      date: '2025-07-30',
+      category: 'Performance',
+      readTime: '15 min read',
+      featured: false
+    },
+    {
+      id: 'security-automation-guide',
+      title: 'Complete Guide to Security Automation in 2025',
+      excerpt: 'A comprehensive guide to implementing security automation using AI and autonomous systems for enhanced protection.',
+      author: 'Security Team',
+      date: '2025-07-25',
+      category: 'Security',
+      readTime: '18 min read',
+      featured: false
+    },
+    {
+      id: 'data-engineering-automation',
+      title: 'Automating Data Engineering Workflows',
+      excerpt: 'How to leverage AI and automation to streamline data engineering processes and improve data quality.',
+      author: 'Data Team',
+      date: '2025-07-20',
+      category: 'Data Engineering',
+      readTime: '14 min read',
+      featured: false
+    }
+  ];
 
-const categories = [
-  { name: 'All', count: blogPosts.length, active: true },
-  { name: 'AI', count: blogPosts.filter(post => post.category === 'AI').length },
-  { name: 'Performance', count: blogPosts.filter(post => post.category === 'Performance').length },
-  { name: 'Cloud', count: blogPosts.filter(post => post.category === 'Cloud').length },
-  { name: 'Future', count: blogPosts.filter(post => post.category === 'Future').length },
-  { name: 'Ethics', count: blogPosts.filter(post => post.category === 'Ethics').length },
-  { name: 'Content', count: blogPosts.filter(post => post.category === 'Content').length }
-];
+  const categories = ['All', 'AI & Automation', 'Cloud Computing', 'Innovation', 'Performance', 'Security', 'Data Engineering'];
 
-export default function BlogIndex() {
   return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Head>
+        <title>Blog | Zion Tech Group - AI & Cloud Automation Insights</title>
+        <meta name="description" content="Stay updated with the latest insights on AI automation, cloud computing, and autonomous systems. Expert analysis and industry trends from Zion Tech Group." />
+        <meta name="keywords" content="AI automation blog, cloud computing insights, autonomous systems, technology trends, Zion Tech Group blog" />
+        <link rel="canonical" href="https://ziontechgroup.com/blog" />
+        
+        <meta property="og:title" content="Blog | Zion Tech Group - AI & Cloud Automation Insights" />
+        <meta property="og:description" content="Latest insights on AI automation, cloud computing, and autonomous systems." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ziontechgroup.com/blog" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Blog | Zion Tech Group" />
+        <meta name="twitter:description" content="AI & Cloud Automation Insights" />
+        
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          "headline": "Zion Tech Group Blog",
+          "description": "AI & Cloud Automation Insights",
+          "url": "https://ziontechgroup.com/blog",
+          "publisher": { "@type": "Organization", "name": "Zion Tech Group" }
+        })}</script>
+      </Head>
+      
+      <main className="container mx-auto px-6 py-12 max-w-6xl">
+        <Link href="/news" className="internal-link link-instance-3">[CONTENT] Content Link</Link>
         {/* Hero Section */}
-        <section className="relative py-20 px-4">
-          <div className="container mx-auto max-w-6xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center"
-            >
-              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
-                Zion Tech Blog
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Insights, trends, and breakthroughs in AI consciousness, quantum computing, and autonomous systems.
-                Stay ahead of the technological curve with our expert analysis.
-              </p>
-            </motion.div>
-          </div>
+        <section className="text-center mb-16">
+          <h1 className="text-5xl font-extrabold bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent mb-6">
+            Blog
+          </h1>
+          <p className="text-xl text-white/70 max-w-3xl mx-auto">
+            Stay ahead of the curve with expert insights on AI automation, cloud computing, 
+            autonomous systems, and the future of technology.
+          </p>
         </section>
 
-        {/* Category Filter */}
-        <section className="py-12 px-4">
-          <div className="container mx-auto max-w-6xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex flex-wrap justify-center gap-4"
-            >
-              {categories.map((category, index) => (
-                <button
-                  key={category.name}
-                  className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                    category.active
-                      ? 'bg-cyan-500 text-black shadow-lg shadow-cyan-500/25'
-                      : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 hover:text-white border border-gray-700/50'
-                  }`}
-                >
-                  {category.name} ({category.count})
-                </button>
-              ))}
-            </motion.div>
+        {/* Featured Post */}
+        <section className="mb-16">
+          <h2 className="text-2xl font-bold text-white mb-6">Featured Article</h2>
+          {blogPosts.filter(post => post.featured).map((post) => (
+            <div key={post.id} className="bg-gradient-to-r from-cyan-500/20 to-fuchsia-500/20 border border-cyan-400/30 rounded-lg p-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div>
+                  <span className="inline-block bg-cyan-500/20 text-cyan-400 text-sm px-3 py-1 rounded-full mb-4">
+                    {post.category}
+                  </span>
+                  <h3 className="text-3xl font-bold text-white mb-4">{post.title}</h3>
+                  <p className="text-white/80 text-lg mb-6">{post.excerpt}</p>
+                  <div className="flex items-center gap-4 text-sm text-white/60 mb-6">
+                    <span>By {post.author}</span>
+                    <span>•</span>
+                    <span>{post.date}</span>
+                    <span>•</span>
+                    <span>{post.readTime}</span>
+                  </div>
+                  <Link 
+                    href={`/blog/${post.id}`}
+                    className="inline-block bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+                  >
+                    Read Full Article →
+                  </Link>
+                </div>
+                <div className="bg-slate-900/50 border border-white/10 rounded-lg p-6">
+                  <div className="text-center">
+                    <div className="text-6xl mb-4">🚀</div>
+                    <h4 className="text-xl font-semibold text-white mb-2">Featured Content</h4>
+                    <p className="text-white/70 text-sm">
+                      In-depth analysis and expert insights on the latest AI automation trends
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </section>
+
+        {/* Filter Categories */}
+        <section className="mb-8">
+          <div className="flex flex-wrap gap-3 justify-center">
+            {categories.map((category) => (
+              <button
+                key={category}
+                className="px-4 py-2 rounded-lg border border-white/20 hover:border-cyan-400 hover:text-cyan-400 transition-colors"
+              >
+                {category}
+              </button>
+            ))}
           </div>
         </section>
 
         {/* Blog Posts Grid */}
-        <section className="py-20 px-4">
-          <div className="container mx-auto max-w-6xl">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {blogPosts.map((post, index) => (
-                <motion.article
-                  key={post.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.4 + index * 0.1 }}
-                  className="group"
-                >
-                  <Link href={`/blog/${post.id}`}>
-                    <div className={`p-6 rounded-2xl border ${post.borderColor} bg-black/40 hover:bg-black/60 transition-all duration-300 group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-cyan-500/10`}>
-                      {/* Category Badge */}
-                      <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium ${post.bgColor} ${post.color} ${post.borderColor} border mb-4`}>
-                        {post.icon}
-                        {post.category}
-                      </div>
+        <section className="mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {blogPosts.filter(post => !post.featured).map((post) => (
+              <article key={post.id} className="bg-slate-900/50 border border-white/10 rounded-lg overflow-hidden hover:border-cyan-400/50 transition-colors">
+                <div className="p-6">
+                  <div className="mb-4">
+                    <span className="inline-block bg-cyan-500/20 text-cyan-400 text-xs px-2 py-1 rounded-full mb-2">
+                      {post.category}
+                    </span>
+                    <h3 className="text-xl font-semibold text-white mb-3">{post.title}</h3>
+                    <p className="text-white/70 text-sm mb-4">{post.excerpt}</p>
+                  </div>
 
-                      {/* Title */}
-                      <h2 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
-                        {post.title}
-                      </h2>
+                  <div className="flex items-center justify-between text-sm mb-4">
+                    <span className="text-white/60">By {post.author}</span>
+                    <span className="text-white/60">{post.readTime}</span>
+                  </div>
 
-                      {/* Excerpt */}
-                      <p className="text-gray-300 mb-6 leading-relaxed">
-                        {post.excerpt}
-                      </p>
-
-                      {/* Meta Information */}
-                      <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
-                        <div className="flex items-center gap-2">
-                          <Calendar className="w-4 h-4" />
-                          {new Date(post.date).toLocaleDateString('en-US', {
-                            year: 'numeric',
-                            month: 'long',
-                            day: 'numeric'
-                          })}
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Clock className="w-4 h-4" />
-                          {post.readTime}
-                        </div>
-                      </div>
-
-                      {/* Read More */}
-                      <div className="flex items-center gap-2 text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300">
-                        <span className="font-medium">Read More</span>
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                      </div>
-                    </div>
-                  </Link>
-                </motion.article>
-              ))}
-            </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-white/60 text-sm">{post.date}</span>
+                    <Link 
+                      href={`/blog/${post.id}`}
+                      className="text-cyan-400 hover:text-cyan-300 underline text-sm"
+                    >
+                      Read More →
+                    </Link>
+                  </div>
+                </div>
+              </article>
+            ))}
           </div>
         </section>
 
         {/* Newsletter Signup */}
-        <section className="py-20 px-4 bg-black/30">
-          <div className="container mx-auto max-w-4xl text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.2 }}
-            >
-              <h2 className="text-4xl font-bold text-white mb-6">Stay Updated</h2>
-              <p className="text-xl text-gray-300 mb-8">
-                Get the latest insights on AI consciousness, quantum computing, and autonomous systems delivered to your inbox.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-6 py-4 bg-gray-800/50 border border-gray-700/50 rounded-full text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/25"
-                />
-                <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105">
-                  Subscribe
-                </button>
-              </div>
-            </motion.div>
+        <section className="mb-12">
+          <div className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-400/30 rounded-lg p-8 text-center">
+            <h2 className="text-3xl font-bold text-white mb-4">Stay Updated</h2>
+            <p className="text-white/80 mb-6 max-w-2xl mx-auto">
+              Get the latest insights on AI automation, cloud computing, and autonomous systems 
+              delivered directly to your inbox.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-3 rounded-lg bg-slate-800 border border-white/20 text-white placeholder-white/50 focus:border-cyan-400 focus:outline-none"
+              />
+              <button className="bg-purple-500 hover:bg-purple-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                Subscribe
+              </button>
+            </div>
+            <p className="text-white/60 text-sm mt-3">
+              No spam, unsubscribe at any time
+            </p>
           </div>
         </section>
 
-        {/* Featured Resources */}
-        <section className="py-20 px-4">
-          <div className="container mx-auto max-w-6xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.4 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl font-bold text-white mb-4">Featured Resources</h2>
-              <p className="text-xl text-gray-300">Explore our comprehensive guides and tools</p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  title: 'AI Services Guide',
-                  description: 'Comprehensive overview of our AI consciousness and automation services.',
-                  href: '/services',
-                  icon: <Brain className="w-8 h-8" />,
-                  color: 'text-cyan-400'
-                },
-                {
-                  title: 'Case Studies',
-                  description: 'Real-world examples of our revolutionary technology in action.',
-                  href: '/case-studies',
-                  icon: <Rocket className="w-8 h-8" />,
-                  color: 'text-blue-400'
-                },
-                {
-                  title: 'Training & Events',
-                  description: 'Join our workshops and events to learn from industry experts.',
-                  href: '/training',
-                  icon: <Zap className="w-8 h-8" />,
-                  color: 'text-purple-400'
-                }
-              ].map((resource, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 1.6 + index * 0.1 }}
-                  className="p-8 bg-black/40 border border-gray-800 rounded-2xl hover:border-cyan-500/50 transition-all duration-300"
-                >
-                  <div className={`${resource.color} mb-4`}>{resource.icon}</div>
-                  <h3 className="text-xl font-bold text-white mb-3">{resource.title}</h3>
-                  <p className="text-gray-300 mb-6 leading-relaxed">{resource.description}</p>
-                  <Link
-                    href={resource.href}
-                    className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors duration-300"
-                  >
-                    Learn More
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </motion.div>
-              ))}
+        {/* Popular Topics */}
+        <section className="mb-12">
+          <h2 className="text-3xl font-bold text-white mb-6 text-center">Popular Topics</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-slate-900/50 border border-white/10 rounded-lg p-6 text-center">
+              <div className="text-3xl mb-3">🤖</div>
+              <h3 className="text-lg font-semibold text-white mb-2">AI Automation</h3>
+              <p className="text-white/60 text-sm">Latest trends and implementation strategies</p>
+            </div>
+            <div className="bg-slate-900/50 border border-white/10 rounded-lg p-6 text-center">
+              <div className="text-3xl mb-3">☁️</div>
+              <h3 className="text-lg font-semibold text-white mb-2">Cloud Computing</h3>
+              <p className="text-white/60 text-sm">Optimization and migration insights</p>
+            </div>
+            <div className="bg-slate-900/50 border border-white/10 rounded-lg p-6 text-center">
+              <div className="text-3xl mb-3">🚀</div>
+              <h3 className="text-lg font-semibold text-white mb-2">Performance</h3>
+              <p className="text-white/60 text-sm">Monitoring and optimization techniques</p>
+            </div>
+            <div className="bg-slate-900/50 border border-white/10 rounded-lg p-6 text-center">
+              <div className="text-3xl mb-3">🔒</div>
+              <h3 className="text-lg font-semibold text-white mb-2">Security</h3>
+              <p className="text-white/60 text-sm">Automation and threat prevention</p>
             </div>
           </div>
         </section>
-      </div>
-    </Layout>
+
+        {/* Call to Action */}
+        <section className="text-center">
+          <div className="bg-gradient-to-r from-cyan-500/20 to-fuchsia-500/20 border border-cyan-400/30 rounded-lg p-8">
+            <h2 className="text-3xl font-bold text-white mb-4">Have a Topic in Mind?</h2>
+            <p className="text-white/80 mb-6 max-w-2xl mx-auto">
+              We're always looking for new topics to cover. Let us know what you'd like to learn more about.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                href="/contact"
+                className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+              >
+                Suggest a Topic
+              </Link>
+              <Link 
+                href="/reports"
+                className="bg-slate-700 hover:bg-slate-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+              >
+                View Our Reports
+              </Link>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
   );
 }
 
+<Link href="/blog/ai-automation-trends-2025" className="internal-link">Related Content</Link>

@@ -198,16 +198,7 @@ export default function ServicesShowcase2040() {
       <SEO 
         title="Zion Tech Group - Revolutionary 2040 Services Showcase | Cutting-Edge AI, Quantum & Space Technology"
         description="Discover Zion Tech Group's revolutionary 2040 services portfolio featuring cutting-edge AI consciousness, quantum computing, space technology, and autonomous business solutions. Transform your business with the future of technology."
-        keywords={[
-          'AI consciousness',
-          'quantum computing',
-          'space technology',
-          'autonomous systems',
-          'enterprise AI',
-          'micro SAAS',
-          'Zion Tech Group',
-          '2040 technology'
-        ]}
+        keywords="AI consciousness, quantum computing, space technology, autonomous systems, enterprise AI, micro SAAS, Zion Tech Group, 2040 technology"
         ogImage="/images/zion-tech-group-2040-services.jpg"
       />
 

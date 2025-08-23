@@ -1,23 +1,188 @@
 import React from 'react';
-import Head from 'next/head';
+import { motion } from 'framer-motion';
+import { DollarSign, TrendingUp, Shield, Brain, Cpu, Users, Target, Award, Globe, Zap } from 'lucide-react';
+import Layout from '../components/layout/Layout';
 
-export default function FinancialSolutionsPage() {
-	return (
-		<div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8 text-white">
-			<Head>
-				<title>Financial Services Solutions | Zion Tech Group</title>
-				<meta name="description" content="Quantum-enhanced trading, AI risk assessment, and financial analytics solutions." />
-				<link rel="canonical" href="https://ziontechgroup.com/financial-solutions" />
-			</Head>
-			<div className="max-w-5xl mx-auto space-y-6">
-				<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Financial Services Solutions</h1>
-				<ul className="list-disc list-inside text-slate-300 space-y-1">
-					<li>Quantum trading simulators and backtesting</li>
-					<li>AI credit risk and fraud detection</li>
-					<li>Customer lifetime value and churn analytics</li>
-					<li>Compliance automation and reporting</li>
-				</ul>
-			</div>
-		</div>
-	);
+export default function FinancialSolutions() {
+  const solutions = [
+    {
+      icon: DollarSign,
+      title: 'AI Revenue Forecasting Copilot',
+      description: 'Advanced revenue prediction and financial analytics platform',
+      features: ['Revenue forecasting', 'Market analysis', 'Trend identification', 'Financial planning'],
+      href: '/ai-revenue-forecasting-copilot'
+    },
+    {
+      icon: TrendingUp,
+      title: 'Quantum Financial Trading Platform',
+      description: 'Next-generation quantum computing for financial markets',
+      features: ['Quantum algorithms', 'High-frequency trading', 'Risk management', 'Market analysis'],
+      href: '/quantum-financial-trading-platform'
+    },
+    {
+      icon: Shield,
+      title: 'Financial Compliance Automation',
+      description: 'Automated compliance management for financial institutions',
+      features: ['Regulatory compliance', 'Audit automation', 'Risk assessment', 'Reporting automation'],
+      href: '/financial-compliance-automation'
+    },
+    {
+      icon: Brain,
+      title: 'AI-Powered Investment Analysis',
+      description: 'Intelligent investment decision support system',
+      features: ['Portfolio analysis', 'Risk assessment', 'Market insights', 'Investment recommendations'],
+      href: '/ai-powered-investment-analysis'
+    },
+    {
+      icon: Cpu,
+      title: 'Blockchain Financial Solutions',
+      description: 'Innovative blockchain technology for financial services',
+      features: ['Smart contracts', 'DeFi platforms', 'Digital assets', 'Cross-border payments'],
+      href: '/blockchain-financial-solutions'
+    },
+    {
+      icon: Users,
+      title: 'Financial Risk Management',
+      description: 'Comprehensive risk management and mitigation strategies',
+      features: ['Risk assessment', 'Stress testing', 'Scenario analysis', 'Mitigation planning'],
+      href: '/financial-risk-management'
+    }
+  ];
+
+  const stats = [
+    { number: '$1B+', label: 'Assets Managed', icon: DollarSign },
+    { number: '99.9%', label: 'Accuracy', icon: TrendingUp },
+    { number: '24/7', label: 'Monitoring', icon: Shield },
+    { number: '100+', label: 'Financial Clients', icon: Users }
+  ];
+
+  return (
+    <Layout>
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+        {/* Hero Section */}
+        <section className="relative py-20 px-4">
+          <div className="container mx-auto max-w-6xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center"
+            >
+              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-emerald-400 via-green-500 to-teal-400 bg-clip-text text-transparent mb-6">
+                Financial Solutions
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                Revolutionary financial technology solutions that transform how you manage, invest, and grow your wealth. 
+                From AI-powered forecasting to quantum trading platforms.
+              </p>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Stats Section */}
+        <section className="py-16 px-4 bg-black/30">
+          <div className="container mx-auto max-w-6xl">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="text-center"
+                >
+                  <div className="w-16 h-16 bg-gradient-to-br from-emerald-500/20 to-green-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <stat.icon className="w-8 h-8 text-emerald-400" />
+                  </div>
+                  <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
+                  <div className="text-gray-400">{stat.label}</div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Solutions Grid */}
+        <section className="py-20 px-4">
+          <div className="container mx-auto max-w-6xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Financial Solutions
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Cutting-edge financial technology designed to optimize performance and minimize risk
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {solutions.map((solution, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="group"
+                >
+                  <a href={solution.href} className="block">
+                    <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 h-full hover:bg-gray-700/50 transition-all duration-300 hover:scale-105">
+                      <div className="w-16 h-16 bg-gradient-to-br from-emerald-500/20 to-green-500/20 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <solution.icon className="w-8 h-8 text-emerald-400" />
+                      </div>
+                      <h3 className="text-xl font-bold text-white mb-4">{solution.title}</h3>
+                      <p className="text-gray-300 mb-6 leading-relaxed">{solution.description}</p>
+                      <ul className="space-y-2">
+                        {solution.features.map((feature, featureIndex) => (
+                          <li key={featureIndex} className="flex items-center gap-2 text-sm text-gray-400">
+                            <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </a>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 px-4">
+          <div className="container mx-auto max-w-4xl text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Transform Your Financial Future
+              </h2>
+              <p className="text-xl text-gray-300 mb-8">
+                Let our financial technology experts help you optimize your financial operations
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="/contact"
+                  className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-green-600 text-white font-semibold rounded-xl hover:from-emerald-600 hover:to-green-700 transition-all duration-300 transform hover:scale-105"
+                >
+                  Get Started
+                </a>
+                <a
+                  href="/solutions"
+                  className="px-8 py-4 border border-emerald-500 text-emerald-400 font-semibold rounded-xl hover:bg-emerald-500/10 transition-all duration-300"
+                >
+                  View All Solutions
+                </a>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      </div>
+    </Layout>
+  );
 }

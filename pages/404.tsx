@@ -1,13 +1,35 @@
-import React from 'react';
-import SEO from '../components/SEO';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
 
 export default function Custom404() {
-	return (
-		<div className="min-h-[60vh] flex flex-col items-center justify-center text-center p-8">
-			<SEO title="Page Not Found – Zion Tech Group" noindex />
-			<h1 className="text-5xl font-bold mb-4">404</h1>
-			<p className="text-gray-300 mb-8 max-w-xl">The page you're looking for doesn't exist or has moved.</p>
-			<a href="/" className="px-6 py-3 rounded-lg bg-cyan-500 text-black font-semibold hover:bg-cyan-400 transition">Go Home</a>
-		</div>
-	);
+  const navigate = useNavigate();
+  const [query, setQuery] = useState('');
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (query.trim()) {
+      navigate(`/marketplace/search?q=${encodeURIComponent(query)}`);
+    }
+  };
+
+  return (
+    <main className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6 text-center">
+      <h1 className="text-4xl font-bold mb-4 text-gray-800">404 - Page Not Found</h1>
+      <form onSubmit={handleSearch} className="w-full max-w-xs mb-6 space-y-3">
+        <Input
+          type="text"
+          placeholder="Search the marketplace..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+        <Button type="submit" className="w-full">Search</Button>
+      </form>
+      <Button asChild variant="outline">
+        <Link to="/marketplace">Back to Marketplace</Link>
+      </Button>
+    </main>
+  );
 }
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

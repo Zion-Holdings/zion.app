@@ -1,7 +1,7 @@
 import React from 'react';
-import SEO from '../../components/SEO';
+import Head from 'next/head';
 import UltraFuturisticBackground from '../../components/ui/UltraFuturisticBackground';
-import UltraFuturisticServiceCard2026 from '../../components/ui/UltraFuturisticServiceCard2026';
+import Card from '../../components/ui/Card';
 import Link from 'next/link';
 import { enhancedRealMicroSaasServices } from '../../data/enhanced-real-micro-saas-services';
 import { additionalEnhancedServices } from '../../data/additional-real-services';
@@ -14,7 +14,7 @@ import { marketValidatedServices } from '../../data/market-validated-services';
 import { moreRealServices2025 } from '../../data/more-real-services-2025';
 import { realOperationalServices } from '../../data/real-operational-services';
 import { verified2025Additions } from '../../data/verified-2025-additions';
-import { realServicesQ12025 } from '../../data/real-services-q1-2025';
+import { realServicesQ12025 } from '../../data/real-services-q1-2025'
 import { realEnterpriseServices2025 } from '../../data/real-enterprise-services-2025';
 import { realMarketAugmentations2025 } from '../../data/real-market-augmentations-2025';
 import { verifiedRealServices2025Batch2 } from '../../data/verified-real-services-2025-batch2';
@@ -62,7 +62,7 @@ import { innovativeAIServices } from '../../data/innovative-2025-ai-services-exp
 // Import our new 2025 advanced services
 import { advanced2025MicroSaasExpansion } from '../../data/2025-advanced-micro-saas-expansion';
 import { advanced2025ITSolutionsExpansion } from '../../data/2025-advanced-it-solutions-expansion';
-import { advanced2025AIServicesExpansion } from '../../data/2025-advanced-ai-services-expansion';
+import { advancedAIServicesExpansion2025 } from '../../data/2025-advanced-ai-services-expansion';
 
 // Import our new 2025 innovative services
 import { innovativeMicroSaasExpansion2025 } from '../../data/2025-innovative-micro-saas-expansion';
@@ -70,9 +70,10 @@ import { innovative2025ITSolutionsExpansion } from '../../data/2025-innovative-i
 import { innovative2025AISolutionsExpansion } from '../../data/2025-innovative-ai-solutions-expansion';
 
 // Import our new 2025 innovative services V3
-import { innovativeMicroSaasExpansion2025V3 } from '../../data/2025-innovative-micro-saas-expansion-v3';
+import { innovativeMicroSaasExpansionV32025 } from '../../data/2025-innovative-micro-saas-expansion-v3';
 import { innovativeITServicesExpansion2025V3 } from '../../data/2025-innovative-it-services-expansion-v3';
 import { innovativeAIServicesExpansion2025V3 } from '../../data/2025-innovative-ai-services-expansion-v3';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -87,6 +88,7 @@ const categories = [
   'Quantum Computing',
   'Space Technology',
   'Metaverse',
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   'Cybersecurity',
   'Supply Chain',
   'Financial Services',
@@ -97,7 +99,57 @@ const categories = [
   'Government',
   'Energy',
   'Transportation'
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 ];
+
+// Transform services data to match the expected Service interface
+const transformServiceData = (service: any): Service => {
+  // Extract features from description or create default features
+  const features = service.features || [
+    service.description?.split('.')[0] || 'Advanced Technology',
+    'Enterprise Ready',
+    '24/7 Support'
+  ].slice(0, 3);
+
+  // Generate icon based on category
+  const getIcon = (category: string): string => {
+    const categoryLower = category.toLowerCase();
+    if (categoryLower.includes('ai') || categoryLower.includes('machine learning')) return '🧠';
+    if (categoryLower.includes('quantum')) return '⚛️';
+    if (categoryLower.includes('space')) return '🚀';
+    if (categoryLower.includes('cyber') || categoryLower.includes('security')) return '🛡️';
+    if (categoryLower.includes('cloud')) return '☁️';
+    if (categoryLower.includes('blockchain')) return '🔗';
+    if (categoryLower.includes('metaverse')) return '🌐';
+    if (categoryLower.includes('supply chain')) return '📦';
+    if (categoryLower.includes('financial') || categoryLower.includes('trading')) return '💰';
+    if (categoryLower.includes('healthcare')) return '🏥';
+    if (categoryLower.includes('manufacturing')) return '🏭';
+    if (categoryLower.includes('retail')) return '🛍️';
+    if (categoryLower.includes('education')) return '📚';
+    if (categoryLower.includes('government')) return '🏛️';
+    if (categoryLower.includes('energy')) return '⚡';
+    if (categoryLower.includes('transportation')) return '🚗';
+    return '⚙️';
+  };
+
+  // Create tagline from description
+  const tagline = service.tagline || service.description?.split('.')[0] || 'Advanced Technology Solution';
+
+  return {
+    id: service.id || service.name?.toLowerCase().replace(/\s+/g, '-') || 'service',
+    name: service.name || 'Unnamed Service',
+    tagline,
+    description: service.description || 'Advanced technology solution',
+    price: service.price || '$999',
+    period: service.period || 'month',
+    features,
+    popular: service.popular || false,
+    category: service.category || 'Technology',
+    icon: service.icon || getIcon(service.category || 'Technology'),
+    launchDate: service.launchDate
+  };
+};
 
 export default function ServicesIndexPage() {
   const all = (enhancedRealMicroSaasServices as unknown[])
@@ -107,7 +159,6 @@ export default function ServicesIndexPage() {
       newlyAddedServices as unknown[],
       curatedMarketServices as unknown[],
       realMarketServices as unknown[],
-      realMarketServicesExtended as unknown[],
       new2025Services as unknown[],
       marketValidatedServices as unknown[],
       moreRealServices2025 as unknown[],
@@ -115,6 +166,9 @@ export default function ServicesIndexPage() {
       verified2025Additions as unknown[],
       realServicesQ12025 as unknown[],
       realEnterpriseServices2025 as unknown[],
+      innovative2025AIServices as unknown[],
+      innovative2025ITInfrastructureServices as unknown[],
+      innovative2025MicroSaasBatch2 as unknown[],
       realMarketAugmentations2025 as unknown[],
       verifiedRealServices2025Batch2 as unknown[],
       additionalLiveServices2025 as unknown[],
@@ -124,6 +178,7 @@ export default function ServicesIndexPage() {
       realServicesQ32025 as unknown[],
       realQ4Services2025 as unknown[],
       real2025Q4Additions as unknown[],
+      real2025Q4AugmentedBatch as unknown[],
       real2026Q1Additions as unknown[],
       added2026Q2Services as unknown[],
       real2026Q3Additions as unknown[],
@@ -131,7 +186,6 @@ export default function ServicesIndexPage() {
       real2026Q4NewServices as unknown[],
       real2027Q1Additions as unknown[],
       real2027Q2Additions as unknown[],
-      real2027Q3Additions as unknown[],
       real2028ServiceExpansions as unknown[],
       innovativeMicroSaasServices as unknown[],
       innovativeITServices as unknown[],
@@ -175,43 +229,84 @@ export default function ServicesIndexPage() {
     // .concat(advancedITInfrastructureExpansion2025V2 as unknown[])
     // .concat(advancedAIServicesExpansion2025V2 as unknown[])
     // Our new 2025 innovative services V3
-    .concat(innovativeMicroSaasExpansion2025V3 as unknown[])
+    .concat(innovativeMicroSaasExpansionV32025 as unknown[])
     .concat(innovativeITServicesExpansion2025V3 as unknown[])
     .concat(innovativeAIServicesExpansion2025V3 as unknown[])
     ;
 
-  // Filter out services without required properties
+  const anchorMap: Record<string, string> = {
+    'AI & Data': 'ai',
+    'Developer Tools': 'developer-tools',
+    'Cloud & FinOps': 'cloud',
+    'Observability': 'observability',
+    'Quality & Monitoring': 'quality',
+  };
+
+  const [shownCounts, setShownCounts] = React.useState<Record<string, number>>(() => Object.fromEntries(categories.map(c => [c, 12])));
+  const [searchQuery, setSearchQuery] = React.useState('');
+
+  // Filter out services without required properties and normalize pricing
   const validServices = all.filter(service => 
     service && 
     typeof service === 'object' && 
     'name' in service && 
     'description' in service &&
-    'price' in service
-  );
+    ('price' in service || 'pricing' in service)
+  ).map((service: ServiceItem) => {
+    // Normalize pricing structure
+    if (service.pricing && typeof service.pricing === 'object') {
+      // If pricing is an object, use the starter price or first available price
+      if (service.pricing.starter && service.pricing.starter.price) {
+        return {
+          ...service,
+          price: `$${service.pricing.starter.price}`,
+          period: service.pricing.starter.period || 'month'
+        };
+      } else if (service.pricing.monthly) {
+        return {
+          ...service,
+          price: `$${service.pricing.monthly}`,
+          period: 'month'
+        };
+      } else {
+        // Fallback to first available pricing tier
+        const firstTier = Object.values(service.pricing)[0] as { price: string; period?: string };
+        if (firstTier && firstTier.price) {
+          return {
+            ...service,
+            price: `$${firstTier.price}`,
+            period: firstTier.period || 'month'
+          };
+        }
+      }
+    }
+    return service;
+  }).filter((service: ServiceItem) => service.price && typeof service.price === 'string');
 
   // Group services by category
   const servicesByCategory = categories.reduce((acc, category) => {
-    acc[category] = validServices.filter((service: any) => 
+    acc[category] = validServices.filter((service: ServiceItem) => 
       service.category && service.category.toLowerCase().includes(category.toLowerCase().replace(/\s+/g, ''))
     );
     return acc;
-  }, {} as Record<string, any[]>);
+  }, {} as Record<string, ServiceItem[]>);
 
   // Get featured services (marked as popular)
-  const featuredServices = validServices.filter((service: any) => service.popular).slice(0, 6);
+  const featuredServices = validServices.filter((service: ServiceItem) => service.popular).slice(0, 6);
 
   // Get latest services (assuming they have a launchDate)
   const latestServices = validServices
-    .filter((service: any) => service.launchDate)
-    .sort((a: any, b: any) => new Date(b.launchDate).getTime() - new Date(a.launchDate).getTime())
+    .filter((service: ServiceItem) => service.launchDate)
+    .sort((a: ServiceItem, b: ServiceItem) => new Date(b.launchDate as string).getTime() - new Date(a.launchDate as string).getTime())
     .slice(0, 6);
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
   return (
     <div className="min-h-screen bg-black text-white">
       <SEO 
         title="Services - Zion Tech Group"
         description="Discover our comprehensive suite of cutting-edge technology solutions including AI, Quantum Computing, Space Technology, and more."
-        keywords={["AI services", "quantum computing", "space technology", "metaverse", "cybersecurity", "IT services", "micro SAAS"]}
+        keywords="AI services, quantum computing, space technology, metaverse, cybersecurity, IT services, micro SAAS"
       />
       
       <UltraFuturisticBackground>
@@ -245,10 +340,10 @@ export default function ServicesIndexPage() {
                   Featured Services
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {featuredServices.map((service: any, index: number) => (
+                  {featuredServices.map((service: ServiceItem, index: number) => (
                     <UltraFuturisticServiceCard2026
                       key={`${service.id || service.name}-${index}`}
-                      service={service}
+                      service={service as any}
                       variant="quantum"
                       theme="quantum"
                     />
@@ -264,10 +359,10 @@ export default function ServicesIndexPage() {
                   Latest Services (2026)
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {latestServices.map((service: any, index: number) => (
+                  {latestServices.map((service: ServiceItem, index: number) => (
                     <UltraFuturisticServiceCard2026
                       key={`${service.id || service.name}-${index}`}
-                      service={service}
+                      service={service as any}
                       variant="ai"
                       theme="neon"
                     />
@@ -315,10 +410,10 @@ export default function ServicesIndexPage() {
                         </span>
                       </h3>
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {categoryServices.slice(0, 6).map((service: any, index: number) => (
+                        {categoryServices.slice(0, 6).map((service: ServiceItem, index: number) => (
                           <UltraFuturisticServiceCard2026
                             key={`${service.id || service.name}-${index}`}
-                            service={service}
+                            service={service as any}
                             variant="default"
                             theme="cyber"
                           />
@@ -403,10 +498,10 @@ export default function ServicesIndexPage() {
                 Featured Services
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {featuredServices.map((service: any, index: number) => (
+                {featuredServices.map((service: ServiceItem, index: number) => (
                   <UltraFuturisticServiceCard2026
                     key={`${service.id || service.name}-${index}`}
-                    service={service}
+                    service={service as any}
                     variant="quantum"
                     theme="quantum"
                   />
@@ -422,10 +517,10 @@ export default function ServicesIndexPage() {
                 Latest Services (2026)
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {latestServices.map((service: any, index: number) => (
+                {latestServices.map((service: ServiceItem, index: number) => (
                   <UltraFuturisticServiceCard2026
                     key={`${service.id || service.name}-${index}`}
-                    service={service}
+                    service={service as any}
                     variant="ai"
                     theme="neon"
                   />
@@ -444,6 +539,13 @@ export default function ServicesIndexPage() {
                 const categoryServices = servicesByCategory[category];
                 if (!categoryServices || categoryServices.length === 0) return null;
 
+        {categories.map((cat) => (
+          <section key={cat} id={anchorMap[cat] || toSlug(cat)}>
+            <h2 className="text-2xl md:text-3xl font-semibold text-white mb-4">{cat}</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {byCategory[cat].slice(0, (shownCounts[cat] ?? 12)).map((s) => {
+                const service = s as { id?: string; name?: string; link?: string; category?: string; tagline?: string; description?: string; price?: string; period?: string };
+                const slug = service.link ? (() => { try { const u = new URL(service.link); const p = u.pathname.replace(/^\/+|\/+$/g, ''); return p.startsWith('services/') ? p.substring('services/'.length) : toSlug(service.id || service.name || ''); } catch { return toSlug(service.id || service.name || ''); } })() : toSlug(service.id || service.name || '');
                 return (
                   <div key={category} className="border border-gray-800 rounded-2xl p-8 bg-black/50 backdrop-blur-sm">
                     <h3 className="text-2xl font-bold mb-6 text-white flex items-center gap-3">
@@ -473,58 +575,32 @@ export default function ServicesIndexPage() {
                       </span>
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                      {categoryServices.slice(0, 6).map((service: any, index: number) => (
+                                              {categoryServices.slice(0, 6).map((service: ServiceItem, index: number) => (
                         <UltraFuturisticServiceCard2026
                           key={`${service.id || service.name}-${index}`}
-                          service={service}
+                          service={service as any}
                           variant="default"
                           theme="cyber"
                         />
                       ))}
                     </div>
-                    {categoryServices.length > 6 && (
-                      <div className="text-center mt-6">
-                        <Link
-                          href={`/services/category/${toSlug(category)}`}
-                          className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-lg text-cyan-300 hover:from-cyan-500/30 hover:to-blue-500/30 transition-all"
-                        >
-                          View All {category} Services ({categoryServices.length})
-                        </Link>
-                      </div>
-                    )}
-                  </div>
+                  </Card>
                 );
               })}
             </div>
-          </section>
-
-          {/* CTA Section */}
-          <section className="text-center">
-            <div className="bg-gradient-to-r from-cyan-900/20 to-purple-900/20 border border-cyan-500/20 rounded-2xl p-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-                Need a Custom Solution?
-              </h2>
-              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                Can't find exactly what you're looking for? Our team can create custom solutions tailored to your specific needs.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/contact"
-                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300"
+            {byCategory[cat].length > (shownCounts[cat] ?? 12) && (
+              <div className="mt-6 flex justify-center">
+                <button
+                  onClick={() => setShownCounts(prev => ({ ...prev, [cat]: (prev[cat] ?? 12) + 12 }))}
+                  className="px-4 py-2 rounded-lg bg-gray-800/60 border border-gray-700/70 hover:border-cyan-500/50"
                 >
-                  Contact Us
-                </Link>
-                <Link
-                  href="/get-started"
-                  className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300"
-                >
-                  Get Started
-                </Link>
+                  Show more
+                </button>
               </div>
-            </div>
+            )}
           </section>
-        </div>
+        ))}
       </div>
-    </div>
+    </UltraFuturisticBackground>
   );
 }

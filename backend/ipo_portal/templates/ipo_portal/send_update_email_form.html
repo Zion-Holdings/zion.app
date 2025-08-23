@@ -1,0 +1,59 @@
+{% extends "ipo_portal/base_portal.html" %}
+{% load i18n %}
+
+{% block title %}{{ page_title|default:"Send Investor Update Email" }} - IPO Portal{% endblock %}
+
+{% block page_title %}{{ page_title|default:"Send Email for Investor Update" }}{% endblock %}
+
+{% block content %}
+<h3>{% trans "Send Email for Update:" %} {{ update.title }}</h3>
+<p><strong>{% trans "Published on:" %}</strong> {{ update.publication_date|date:"Y-m-d" }}</p>
+<p><em>{% trans "The Investor Update PDF will be automatically attached to the email." %}</em></p>
+
+<form method="post" style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; border: 1px solid #eee;">
+    {% csrf_token %}
+
+    {% if form.non_field_errors %}
+        <div style="color: red; margin-bottom: 15px; border: 1px solid red; padding: 10px; border-radius: 4px;">
+            {{ form.non_field_errors }}
+        </div>
+    {% endif %}
+
+    <div style="margin-bottom: 15px;">
+        <label for="{{ form.investor_emails.id_for_label }}" style="display: block; margin-bottom: 5px; font-weight: bold;">{{ form.investor_emails.label }}</label>
+        {{ form.investor_emails }}
+        {% if form.investor_emails.errors %}<div style="color: red; font-size: 0.9em;">{{ form.investor_emails.errors }}</div>{% endif %}
+        {% if form.investor_emails.help_text %}<small style="display: block; margin-top: 5px; color: #555;">{{ form.investor_emails.help_text }}</small>{% endif %}
+    </div>
+
+    <div style="margin-bottom: 15px;">
+        <label for="{{ form.subject.id_for_label }}" style="display: block; margin-bottom: 5px; font-weight: bold;">{{ form.subject.label }}</label>
+        {{ form.subject }}
+        {% if form.subject.errors %}<div style="color: red; font-size: 0.9em;">{{ form.subject.errors }}</div>{% endif %}
+        {% if form.subject.help_text %}<small style="display: block; margin-top: 5px; color: #555;">{{ form.subject.help_text }}</small>{% endif %}
+    </div>
+
+    <div style="margin-bottom: 15px;">
+        <label for="{{ form.message.id_for_label }}" style="display: block; margin-bottom: 5px; font-weight: bold;">{{ form.message.label }}</label>
+        {{ form.message }}
+        {% if form.message.errors %}<div style="color: red; font-size: 0.9em;">{{ form.message.errors }}</div>{% endif %}
+        {% if form.message.help_text %}<small style="display: block; margin-top: 5px; color: #555;">{{ form.message.help_text }}</small>{% endif %}
+    </div>
+
+    <button type="submit" style="background-color: #007bff; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer;">
+        {% trans "Send Emails" %}
+    </button>
+    <a href="{% url 'ipo_portal:investor_updates' %}" style="margin-left: 10px; color: #555; text-decoration: none;">{% trans "Cancel" %}</a>
+</form>
+
+{% if messages %}
+    <div style="margin-top: 20px;">
+    {% for message in messages %}
+        <div style="padding: 10px; margin-bottom: 10px; border-radius: 4px; color: #fff; background-color: {% if message.tags == 'success' %}#28a745{% elif message.tags == 'error' %}#dc3545{% else %}#17a2b8{% endif %};">
+            {{ message }}
+        </div>
+    {% endfor %}
+    </div>
+{% endif %}
+
+{% endblock %}

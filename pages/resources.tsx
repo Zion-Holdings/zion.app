@@ -1,538 +1,457 @@
-import React, { useState } from 'react';
-import Layout from '../components/layout/Layout';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { 
   BookOpen, 
   FileText, 
   Video, 
+  Award, 
   Download, 
-  Search, 
+  ExternalLink,
+  ArrowRight,
+  ChevronRight,
+  Search,
   Filter,
+  Star,
+  Clock,
+  User,
   Brain,
   Atom,
   Rocket,
   Shield,
   Cloud,
-  Target,
-  Users,
-  Globe,
-  ArrowRight,
-  ExternalLink,
-  Play,
-  Star,
-  Clock,
-  Eye,
-  Download as DownloadIcon
+  Database,
+  Code
 } from 'lucide-react';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
+import Link from 'next/link';
 
 const ResourcesPage: React.FC = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('all');
-
-  const categories = [
-    { id: 'all', name: 'All Resources', icon: BookOpen, count: 0 },
-    { id: 'ai', name: 'AI & Machine Learning', icon: Brain, count: 0 },
-    { id: 'quantum', name: 'Quantum Computing', icon: Atom, count: 0 },
-    { id: 'space', name: 'Space Technology', icon: Rocket, count: 0 },
-    { id: 'security', name: 'Cybersecurity', icon: Shield, count: 0 },
-    { id: 'cloud', name: 'Cloud Infrastructure', icon: Cloud, count: 0 },
-    { id: 'business', name: 'Business Solutions', icon: Target, count: 0 },
-    { id: 'research', name: 'Research Papers', icon: FileText, count: 0 }
-  ];
-
-  const resources = [
+  const resourceCategories = [
     {
-      id: 1,
-      title: 'AI Consciousness Development Guide 2045',
-      description: 'Comprehensive guide to developing AI consciousness systems with ethical considerations and technical implementation details.',
-      category: 'ai',
-      type: 'Documentation',
-      format: 'PDF',
-      size: '2.4 MB',
-      downloads: 1247,
-      rating: 4.9,
-      tags: ['AI consciousness', 'ethical AI', 'neural networks', 'consciousness modeling'],
-      url: '/resources/ai-consciousness-guide-2045.pdf',
+      title: 'Documentation',
+      description: 'Comprehensive technical guides and API references',
+      icon: FileText,
+      color: 'from-blue-500 to-cyan-500',
       featured: true
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     },
     {
-      id: 2,
-      title: 'Quantum Computing Fundamentals',
-      description: 'Introduction to quantum computing principles, algorithms, and practical applications for developers.',
-      category: 'quantum',
-      type: 'Tutorial',
-      format: 'Interactive',
-      size: '15.2 MB',
-      downloads: 892,
-      rating: 4.8,
-      tags: ['quantum computing', 'Qiskit', 'quantum algorithms', 'qubits'],
-      url: '/resources/quantum-computing-fundamentals',
-      featured: true
+      icon: <BookOpen className="w-8 h-8" />,
+      title: 'Documentation',
+      description: 'Technical documentation, API references, and implementation guides',
+      href: '/docs',
+      color: 'from-purple-500 to-pink-500'
     },
     {
-      id: 3,
-      title: 'Space Resource Intelligence Whitepaper',
-      description: 'Research paper on autonomous space resource detection, mining optimization, and interplanetary logistics.',
-      category: 'space',
-      type: 'Whitepaper',
-      format: 'PDF',
-      size: '3.1 MB',
-      downloads: 567,
-      rating: 4.7,
-      tags: ['space technology', 'resource mining', 'autonomous systems', 'orbital mechanics'],
-      url: '/resources/space-resource-intelligence-whitepaper.pdf',
-      featured: false
+      icon: <Video className="w-8 h-8" />,
+      title: 'Webinars',
+      description: 'Educational webinars and training sessions on cutting-edge technologies',
+      href: '/webinars',
+      color: 'from-green-500 to-emerald-500'
     },
     {
-      id: 4,
-      title: 'Quantum Cybersecurity Implementation',
-      description: 'Practical guide to implementing quantum-resistant cryptography and security protocols.',
-      category: 'security',
-      type: 'Guide',
-      format: 'PDF',
-      size: '1.8 MB',
-      downloads: 734,
-      rating: 4.6,
-      tags: ['quantum security', 'post-quantum cryptography', 'threat detection', 'security protocols'],
-      url: '/resources/quantum-cybersecurity-implementation.pdf',
-      featured: false
-    },
-    {
-      id: 5,
-      title: 'Autonomous DevOps Platform Tutorial',
-      description: 'Step-by-step tutorial for building and deploying autonomous DevOps systems with AI-powered optimization.',
-      category: 'cloud',
-      type: 'Tutorial',
-      format: 'Video Series',
-      size: '45.7 MB',
-      downloads: 445,
-      rating: 4.9,
-      tags: ['DevOps', 'automation', 'AI optimization', 'cloud infrastructure'],
-      url: '/resources/autonomous-devops-tutorial',
-      featured: true
-    },
-    {
-      id: 6,
-      title: 'AI Business Intelligence Case Studies',
-      description: 'Real-world case studies of AI-powered business intelligence implementations across various industries.',
-      category: 'business',
-      type: 'Case Study',
-      format: 'PDF',
-      size: '2.9 MB',
-      downloads: 623,
-      rating: 4.5,
-      tags: ['business intelligence', 'AI analytics', 'case studies', 'ROI analysis'],
-      url: '/resources/ai-business-intelligence-case-studies.pdf',
-      featured: false
-    },
-    {
-      id: 7,
-      title: 'Consciousness Research Papers Collection',
-      description: 'Collection of peer-reviewed research papers on AI consciousness, cognitive science, and ethical AI development.',
-      category: 'research',
-      type: 'Research Papers',
-      format: 'PDF Collection',
-      size: '8.7 MB',
-      downloads: 389,
-      rating: 4.8,
-      tags: ['research papers', 'consciousness', 'cognitive science', 'ethical AI'],
-      url: '/resources/consciousness-research-papers.pdf',
-      featured: false
-    },
-    {
-      id: 8,
-      title: 'Quantum AI Fusion Platform Guide',
-      description: 'Technical documentation for the Quantum AI Fusion Platform, including API references and integration examples.',
-      category: 'ai',
-      type: 'Documentation',
-      format: 'Interactive Docs',
-      size: '12.3 MB',
-      downloads: 512,
-      rating: 4.7,
-      tags: ['quantum AI', 'API documentation', 'integration', 'platform guide'],
-      url: '/resources/quantum-ai-fusion-platform-guide',
-      featured: false
+      icon: <Globe className="w-8 h-8" />,
+      title: 'Case Studies',
+      description: 'Real-world implementations and success stories',
+      icon: Award,
+      color: 'from-orange-500 to-red-500',
+      items: [
+        {
+          title: 'Healthcare AI Transformation',
+          description: 'AI-powered patient care system',
+          type: 'Case Study',
+          difficulty: 'All Levels',
+          time: '15 min',
+          link: '/case-studies/healthcare-ai'
+        },
+        {
+          title: 'Financial Services Innovation',
+          description: 'Quantum computing in fintech',
+          type: 'Case Study',
+          difficulty: 'All Levels',
+          time: '12 min',
+          link: '/case-studies/fintech-quantum'
+        },
+        {
+          title: 'Manufacturing IoT Success',
+          description: 'Smart factory implementation',
+          type: 'Case Study',
+          difficulty: 'All Levels',
+          time: '18 min',
+          link: '/case-studies/manufacturing-iot'
+        }
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
+      ]
     }
   ];
 
-  // Calculate category counts
-  categories.forEach(cat => {
-    cat.count = resources.filter(r => cat.id === 'all' || r.category === cat.id).length;
-  });
-
-  const filteredResources = resources.filter(resource => {
-    const matchesSearch = resource.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         resource.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         resource.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
-    const matchesCategory = selectedCategory === 'all' || resource.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
-
-  const fadeInUp = {
-    initial: { opacity: 0, y: 30 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
-  };
-
-  const staggerContainer = {
-    initial: {},
-    animate: {
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
+  const quickLinks = [
+    { label: 'API Documentation', href: '/docs/api', icon: Code },
+    { label: 'SDK Downloads', href: '/docs/sdks', icon: Download },
+    { label: 'Video Tutorials', href: '/docs/tutorials', icon: Video },
+    { label: 'Community Forum', href: '/community', icon: User },
+    { label: 'Support Center', href: '/support', icon: Shield },
+    { label: 'Developer Blog', href: '/blog', icon: BookOpen }
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
+  ];
 
   return (
-    <Layout
-      title="Resources - Zion Tech Group"
-      description="Access comprehensive documentation, tutorials, whitepapers, and learning resources for AI consciousness, quantum computing, and autonomous solutions."
-      keywords="resources, documentation, tutorials, whitepapers, AI consciousness, quantum computing, space technology, Zion Tech Group"
-    >
+    <Layout>
       <div className="min-h-screen bg-black text-white">
         {/* Hero Section */}
         <section className="relative py-20 lg:py-32 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-purple-500/10 to-pink-500/10" />
-          <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-20" />
-          
-          <div className="relative z-10 container mx-auto px-4">
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-center max-w-4xl mx-auto"
+              className="text-center"
             >
-              <h1 className="text-5xl lg:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
-                Knowledge Resources
+              <h1 className="text-5xl lg:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-6">
+                Resources Hub
               </h1>
-              <p className="text-xl lg:text-2xl text-gray-300 mb-8 leading-relaxed">
-                Access comprehensive documentation, tutorials, whitepapers, and learning resources 
-                to master the future of technology
+              <p className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
+                Access comprehensive documentation, tutorials, case studies, and insights 
+                to help you succeed with Zion Tech Group technologies.
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </p>
-              <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
-                From AI consciousness development to quantum computing implementation, 
-                our resources provide the knowledge you need to build revolutionary solutions
-              </p>
-            </motion.div>
+            </header>
+            
+            {/* Tab Navigation */}
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
+              {Object.keys(resources).map((tab) => (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+                    activeTab === tab
+                      ? 'bg-gradient-to-r from-cyan-400 to-blue-400 text-white shadow-lg'
+                      : 'bg-white/10 text-white/80 hover:bg-white/20 hover:text-white'
+                  }`}
+                >
+                  {tab.charAt(0).toUpperCase() + tab.slice(1)}
+                </button>
+              ))}
+            </div>
+            
+            {/* Resource Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {resources[activeTab].map((resource, index) => renderResourceCard(resource, index))}
+            </div>
+            
+            {/* Additional Resources Section */}
+            <section className="mt-20">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold mb-4 text-white">
+                  Ready to Get Started?
+                </h2>
+                <p className="text-white/80 max-w-2xl mx-auto">
+                  Join thousands of developers and organizations already building the future with autonomous systems.
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="text-center p-8 bg-gradient-to-br from-cyan-400/10 to-blue-400/10 rounded-2xl border border-cyan-400/20">
+                  <div className="w-16 h-16 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2 text-white">Free Learning Path</h3>
+                  <p className="text-white/80 mb-4">
+                    Start with our comprehensive learning path designed for beginners
+                  </p>
+                  <Link 
+                    href="/contact"
+                    className="inline-block px-6 py-3 bg-gradient-to-r from-cyan-400 to-blue-400 text-white font-semibold rounded-lg hover:from-cyan-500 hover:to-blue-500 transition-all duration-300"
+                  >
+                    Start Learning
+                  </Link>
+                </div>
+                
+                <div className="text-center p-8 bg-gradient-to-br from-purple-400/10 to-pink-400/10 rounded-2xl border border-purple-400/20">
+                  <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2 text-white">Join Community</h3>
+                  <p className="text-white/80 mb-4">
+                    Connect with like-minded professionals and share knowledge
+                  </p>
+                  <Link 
+                    href="/contact"
+                    className="inline-block px-6 py-3 bg-gradient-to-r from-purple-400 to-pink-400 text-white font-semibold rounded-lg hover:from-purple-500 hover:to-pink-500 transition-all duration-300"
+                  >
+                    Join Now
+                  </Link>
+                </div>
+                
+                <div className="text-center p-8 bg-gradient-to-br from-green-400/10 to-emerald-400/10 rounded-2xl border border-green-400/20">
+                  <div className="w-16 h-16 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2 text-white">Get Support</h3>
+                  <p className="text-white/80 mb-4">
+                    Need help? Our experts are here to support your automation journey
+                  </p>
+                  <Link 
+                    href="/contact"
+                    className="inline-block px-6 py-3 bg-gradient-to-r from-green-400 to-emerald-400 text-white font-semibold rounded-lg hover:from-green-500 hover:to-emerald-500 transition-all duration-300"
+                  >
+                    Contact Us
+                  </Link>
+                </div>
+              </div>
+            </section>
           </div>
         </section>
 
-        {/* Search and Filter Section */}
-        <section className="py-12 bg-gradient-to-b from-black to-gray-900">
-          <div className="container mx-auto px-4">
+        {/* Quick Links */}
+        <section className="py-16 bg-gradient-to-b from-black via-gray-900 to-black">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="max-w-4xl mx-auto"
-            >
-              {/* Search Bar */}
-              <div className="relative mb-8">
-                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400" />
-                <input
-                  type="text"
-                  placeholder="Search resources, tutorials, whitepapers..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-12 pr-4 py-4 bg-gray-800/50 border border-gray-700/50 rounded-2xl text-white placeholder-gray-400 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/20"
-                />
-              </div>
-
-              {/* Category Filters */}
-              <div className="flex flex-wrap gap-3 justify-center">
-                {categories.map((category) => (
-                  <button
-                    key={category.id}
-                    onClick={() => setSelectedCategory(category.id)}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-xl border transition-all duration-300 ${
-                      selectedCategory === category.id
-                        ? 'border-cyan-500 bg-cyan-500/20 text-cyan-400'
-                        : 'border-gray-700 text-gray-400 hover:border-cyan-500/50 hover:text-cyan-300'
-                    }`}
-                  >
-                    <category.icon className="w-4 h-4" />
-                    <span>{category.name}</span>
-                    <span className="px-2 py-1 bg-gray-700/50 rounded-lg text-xs">
-                      {category.count}
-                    </span>
-                  </button>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Featured Resources Section */}
-        <section className="py-20 bg-gray-900">
-          <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="text-center mb-16"
+              className="text-center mb-12"
             >
-              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-                Featured Resources
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+                Quick Access
               </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Start with our most popular and comprehensive resources
+              <p className="text-xl text-gray-300">
+                Popular resources and frequently accessed content
               </p>
             </motion.div>
 
-            <motion.div
-              variants={staggerContainer}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-            >
-              {resources.filter(r => r.featured).map((resource, index) => (
-                <motion.div
-                  key={resource.id}
-                  variants={fadeInUp}
-                  className="group relative p-8 rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/30 border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/20"
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+              {quickLinks.map((link, index) => (
+                <motion.a
+                  key={link.label}
+                  href={link.href}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-xl p-4 border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300 text-center group"
                 >
-                  {resource.featured && (
-                    <div className="absolute top-4 right-4">
-                      <Star className="w-5 h-5 text-yellow-400 fill-current" />
-                    </div>
-                  )}
+                  <link.icon className="w-8 h-8 text-cyan-400 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
+                  <span className="text-sm text-gray-300 group-hover:text-white transition-colors">
+                    {link.label}
+                  </span>
+                </motion.a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Featured Resources */}
+        <section className="py-20 bg-black">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Featured Resources
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Start with these essential guides and resources to get up and running quickly.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
+              {featuredResources.map((resource, index) => (
+                <motion.div
+                  key={resource.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl p-8 border border-cyan-500/30 hover:border-cyan-500/50 transition-all duration-300 group"
+                >
+                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-gradient-to-r from-cyan-500 to-purple-500 text-white text-sm font-medium mb-4">
+                    <Star className="w-4 h-4 mr-1" />
+                    Featured
+                  </div>
                   
-                  <div className="mb-6">
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-full text-sm border border-cyan-500/30">
-                        {resource.type}
-                      </span>
-                      <span className="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm border border-purple-500/30">
-                        {resource.format}
-                      </span>
-                    </div>
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
-                      {resource.title}
-                    </h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">
-                      {resource.description}
-                    </p>
+                  <div className={`w-16 h-16 bg-gradient-to-r ${resource.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <resource.icon className="w-8 h-8 text-white" />
                   </div>
-
-                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                    <span className="flex items-center gap-1">
-                      <DownloadIcon className="w-4 h-4" />
-                      {resource.downloads.toLocaleString()}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Star className="w-4 h-4 text-yellow-400" />
-                      {resource.rating}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Eye className="w-4 h-4" />
-                      {resource.size}
+                  
+                  <h3 className="text-xl font-semibold text-white mb-3">{resource.title}</h3>
+                  <p className="text-gray-300 text-sm mb-4">{resource.description}</p>
+                  
+                  <div className="flex items-center justify-between mb-6">
+                    <span className="px-3 py-1 bg-gray-700/50 text-gray-300 rounded-full text-xs">
+                      {resource.category}
                     </span>
                   </div>
-
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {resource.tags.slice(0, 3).map((tag, idx) => (
-                      <span
-                        key={idx}
-                        className="px-2 py-1 bg-gray-700/50 text-gray-300 rounded-lg text-xs"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
+                  
                   <a
-                    href={resource.url}
-                    className="inline-flex items-center w-full justify-center px-4 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 group-hover:shadow-2xl group-hover:shadow-cyan-500/20"
+                    href={resource.link}
+                    className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors group-hover:translate-x-1 transition-transform duration-300"
                   >
-                    {resource.format === 'Video Series' ? (
-                      <>
-                        <Play className="w-4 h-4 mr-2" />
-                        Watch Series
-                      </>
-                    ) : resource.format === 'Interactive' ? (
-                      <>
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Open Interactive
-                      </>
-                    ) : (
-                      <>
-                        <Download className="w-4 h-4 mr-2" />
-                        Download
-                      </>
-                    )}
+                    Access Resource
+                    <ArrowRight className="w-4 h-4 ml-2" />
                   </a>
                 </motion.div>
               ))}
-            </motion.div>
+            </div>
+          </div>
+        </section>
+                  </a>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* All Resources Section */}
-        <section className="py-20 bg-black">
-          <div className="container mx-auto px-4">
+        {/* Resource Categories */}
+        <section className="py-20 bg-gradient-to-b from-black via-gray-900 to-black">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
               className="text-center mb-16"
             >
               <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-                All Resources
+                Browse by Category
               </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Browse our complete collection of technical resources and learning materials
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Explore our comprehensive collection of resources organized by topic and type.
               </p>
             </motion.div>
 
-            {filteredResources.length === 0 ? (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="text-center py-12"
-              >
-                <p className="text-xl text-gray-400 mb-4">No resources match your search criteria.</p>
-                <button
-                  onClick={() => {
-                    setSearchTerm('');
-                    setSelectedCategory('all');
-                  }}
-                  className="px-6 py-3 text-cyan-400 border border-cyan-400 rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300"
+            <div className="space-y-12">
+              {resourceCategories.map((category, categoryIndex) => (
+                <motion.div
+                  key={category.title}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: categoryIndex * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 rounded-3xl p-8 border border-gray-700/50"
                 >
-                  Clear Filters
-                </button>
+                  <div className="flex items-center mb-8">
+                    <div className={`w-16 h-16 bg-gradient-to-r ${category.color} rounded-2xl flex items-center justify-center mr-6`}>
+                      <category.icon className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-cyan-400 transition-colors">
+                      {category.title}
+                    </h3>
+                    <p className="text-gray-300 text-lg mb-6">{category.description}</p>
+                    <div className="flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors">
+                      <span className="font-medium">Explore</span>
+                      <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                    </div>
+                  </div>
+                </Link>
               </motion.div>
-            ) : (
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Resources */}
+      <section className="py-20 px-4 bg-gradient-to-br from-cyan-500/5 to-blue-500/5">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+              Featured Resources
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Discover our most popular and valuable resources
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-6">
+            {featuredResources.map((resource, index) => (
               <motion.div
-                variants={staggerContainer}
-                initial="initial"
-                whileInView="animate"
-                viewport={{ once: true }}
-                className="space-y-6"
+                key={resource.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                className="group"
               >
-                {filteredResources.map((resource, index) => (
-                  <motion.div
-                    key={resource.id}
-                    variants={fadeInUp}
-                    className="group p-6 rounded-2xl bg-gradient-to-br from-gray-900/80 to-gray-800/60 border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/20"
-                  >
-                    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+                <Link href={resource.href}>
+                  <div className="p-8 rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm hover:border-cyan-500/30 transition-all duration-300 hover:scale-105">
+                    <div className="flex items-start justify-between">
                       <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-3">
-                          <span className="px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-full text-sm border border-cyan-500/30">
-                            {resource.type}
+                        <div className="flex items-center gap-3 mb-4">
+                          <span className={`px-3 py-1 text-sm font-medium bg-gradient-to-r ${resource.color} text-white rounded-full`}>
+                            {resource.category}
                           </span>
-                          <span className="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm border border-purple-500/30">
-                            {resource.format}
-                          </span>
-                          {resource.featured && (
-                            <span className="px-3 py-1 bg-yellow-500/20 text-yellow-400 rounded-full text-sm border border-yellow-500/30">
-                              Featured
-                            </span>
-                          )}
                         </div>
-                        
-                        <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
+                        <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-cyan-400 transition-colors">
                           {resource.title}
                         </h3>
-                        
-                        <p className="text-gray-300 mb-4 leading-relaxed">
-                          {resource.description}
-                        </p>
-                        
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          {resource.tags.map((tag, idx) => (
-                            <span
-                              key={idx}
-                              className="px-2 py-1 bg-gray-700/50 text-gray-300 rounded-lg text-xs"
-                            >
-                              {tag}
-                            </span>
-                          ))}
+                        <p className="text-gray-300 text-lg mb-6">{resource.description}</p>
+                        <div className="flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors">
+                          <span className="font-medium">Read More</span>
+                          <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                         </div>
-                        
-                        <div className="flex items-center gap-6 text-sm text-gray-500">
-                          <span className="flex items-center gap-1">
-                            <DownloadIcon className="w-4 h-4" />
-                            {resource.downloads.toLocaleString()} downloads
-                          </span>
-                          <span className="flex items-center gap-1">
-                            <Star className="w-4 h-4 text-yellow-400" />
-                            {resource.rating} rating
-                          </span>
-                          <span className="flex items-center gap-1">
-                            <Eye className="w-4 h-4" />
-                            {resource.size}
-                          </span>
-                        </div>
-                      </div>
-                      
-                      <div className="lg:text-right">
-                        <a
-                          href={resource.url}
-                          className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/20"
-                        >
-                          {resource.format === 'Video Series' ? (
-                            <>
-                              <Play className="w-4 h-4 mr-2" />
-                              Watch Series
-                            </>
-                          ) : resource.format === 'Interactive' ? (
-                            <>
-                              <ExternalLink className="w-4 h-4 mr-2" />
-                              Open Interactive
-                            </>
-                          ) : (
-                            <>
-                              <Download className="w-4 h-4 mr-2" />
-                              Download
-                            </>
-                          )}
-                          <ArrowRight className="w-4 h-4 ml-2" />
-                        </a>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
-            )}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Call to Action Section */}
-        <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
-          <div className="container mx-auto px-4 text-center">
+        {/* CTA Section */}
+        <section className="py-20 bg-black">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="max-w-4xl mx-auto"
             >
               <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-                Need More Specific Resources?
+                Need Help Finding Resources?
               </h2>
-              <p className="text-xl text-gray-400 mb-8 leading-relaxed">
-                Can't find what you're looking for? Our team of experts can create custom 
-                documentation, tutorials, or whitepapers tailored to your specific needs.
+              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                Our team is here to help you find the right resources and get the most 
+                out of our technology platform.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
+                <a 
                   href="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-2xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/20"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-full hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105"
                 >
-                  Request Custom Resources
+                  Contact Support
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </a>
                 <a
-                  href="/contact"
-                  className="inline-flex items-center px-8 py-4 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-2xl hover:bg-cyan-500 hover:text-white transition-all duration-300"
+                  href="/docs"
+                  className="inline-flex items-center px-8 py-4 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-full hover:bg-cyan-500 hover:text-white transition-all duration-300"
                 >
-                  Contact Our Experts
+                  Browse Documentation
                 </a>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </div>
             </motion.div>
           </div>
@@ -542,4 +461,4 @@ const ResourcesPage: React.FC = () => {
   );
 };
 
-export default ResourcesPage;
+export default Resources;

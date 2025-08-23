@@ -1,13 +1,21 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, ChevronDown, X, ArrowRight,
   BookOpen, DollarSign, BarChart3, Users, Star, 
   Building, Play, Calculator,
   Grid, FileText, Code, Video
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 } from 'lucide-react';
 import Link from 'next/link';
-import EnhancedSearch from '../EnhancedSearch';
+
+// Custom ShoppingBag icon component
+const ShoppingBag = ({ className }: { className?: string }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+  </svg>
+);
 
 interface NavigationItem {
   name: string;
@@ -36,7 +44,7 @@ const navigationItems: NavigationItem[] = [
   {
     name: 'Services',
     href: '/services',
-    icon: <Play className="w-5 h-5" />,
+    icon: <Rocket className="w-5 h-5" />,
     description: 'Complete technology solutions',
     badge: 'Main',
     category: 'services',
@@ -45,117 +53,95 @@ const navigationItems: NavigationItem[] = [
         name: 'All Services', 
         href: '/services', 
         description: 'Complete services overview',
-        icon: <Calculator className="w-4 h-4" />,
+        icon: <Grid className="w-4 h-4" />,
         featured: true
       },
       { 
-        name: '2025 Services Showcase', 
-        href: '/comprehensive-2025-services-showcase', 
-        description: 'Comprehensive showcase of our latest services',
-        icon: <Star className="w-4 h-4" />,
-        featured: true
-      },
-      { 
-        name: '2038 Cutting-Edge Services', 
-        href: '/innovative-2038-cutting-edge-showcase', 
-        description: 'Revolutionary 2038 cutting-edge services',
-        icon: <Star className="w-4 h-4" />,
-        featured: true
+        name: 'Ultimate 2036 Showcase', 
+        href: '/ultimate-2036-futuristic-services-showcase', 
+        description: 'Latest futuristic services',
+        icon: <Sparkles className="w-4 h-4" />,
+        featured: true,
+        badge: 'NEW'
       },
       { 
         name: 'AI & Machine Learning', 
         href: '/ai-services', 
         description: 'Advanced AI solutions',
         icon: <Play className="w-4 h-4" />
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       },
       { 
         name: 'Quantum Technology', 
         href: '/quantum-services', 
         description: 'Quantum computing solutions',
         icon: <Play className="w-4 h-4" />
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       },
       { 
         name: 'Space Technology', 
         href: '/space-technology', 
         description: 'Space exploration solutions',
-        icon: <Play className="w-4 h-4" />
+        icon: <Rocket className="w-4 h-4" />
       },
       { 
         name: 'IT Solutions', 
         href: '/it-services', 
         description: 'Enterprise IT infrastructure',
-        icon: <Play className="w-4 h-4" />
+        icon: <Shield className="w-4 h-4" />
       },
       { 
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         name: 'Specialized Solutions', 
         href: '/solutions', 
         description: 'Industry-specific solutions',
         icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'Innovative 2025 Services', 
+        href: '/innovative-2025-services-showcase', 
+        description: 'Cutting-edge 2025 innovations',
+        icon: <Star className="w-4 h-4" />,
+        featured: true,
+        badge: 'New'
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       }
     ]
   },
   {
     name: 'Showcase & Pricing',
-    href: '/comprehensive-services-showcase-2025',
+    href: '/2036-innovative-services-showcase',
     icon: <Star className="w-5 h-5" />,
-    description: 'Services portfolio & pricing',
-    badge: 'Showcase',
+    description: 'Service showcases and pricing',
+    badge: 'Featured',
     category: 'showcase',
-    featured: true,
     children: [
-      { 
-        name: 'Services Showcase', 
-        href: '/comprehensive-services-showcase-2025', 
-        description: 'Complete services overview',
-        icon: <Calculator className="w-4 h-4" />,
+      {
+        name: '2025 Services',
+        href: '/comprehensive-services-showcase-2025',
+        description: 'Latest service offerings',
+        icon: <Star className="w-4 h-4" />,
         featured: true
       },
-      { 
-        name: 'Pricing Plans', 
-        href: '/pricing', 
-        description: 'Transparent pricing structure',
-        icon: <DollarSign className="w-4 h-4" />
+      {
+        name: 'Pricing Plans',
+        href: '/pricing',
+        description: 'Flexible pricing options',
+        icon: <Calculator className="w-4 h-4" />
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       },
-      { 
-        name: 'Case Studies', 
-        href: '/case-studies', 
-        description: 'Success stories and results',
-        icon: <BarChart3 className="w-4 h-4" />
-      }
-    ]
-  },
-  {
-    name: 'Resources',
-    href: '/resources',
-    icon: <BookOpen className="w-5 h-5" />,
-    description: 'Knowledge and insights',
-    category: 'resources',
-    children: [
-      { 
-        name: 'Blog & Insights', 
-        href: '/blog', 
-        description: 'Latest industry insights',
-        icon: <FileText className="w-4 h-4" />,
-        featured: true
-      },
-      { 
-        name: 'Documentation', 
-        href: '/docs', 
-        description: 'Technical documentation',
-        icon: <Code className="w-4 h-4" />
-      },
-      { 
-        name: 'Webinars', 
-        href: '/webinars', 
-        description: 'Educational sessions',
-        icon: <Video className="w-4 h-4" />
+      {
+        name: 'Enterprise Solutions',
+        href: '/enterprise-solutions-showcase',
+        description: 'Large-scale deployments',
+        icon: <Globe className="w-4 h-4" />
       }
     ]
   },
   {
     name: 'Company',
     href: '/about',
-    icon: <Building className="w-5 h-5" />,
+    icon: <Star className="w-5 h-5" />,
     description: 'About Zion Tech Group',
     category: 'company',
     children: [
@@ -165,56 +151,43 @@ const navigationItems: NavigationItem[] = [
         description: 'Our story and mission',
         icon: <Users className="w-4 h-4" />,
         featured: true
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       },
-      { 
-        name: 'Careers', 
-        href: '/careers', 
+      {
+        name: 'Leadership',
+        href: '/leadership',
+        description: 'Meet our team',
+        icon: <Star className="w-4 h-4" />
+      },
+      {
+        name: 'Careers',
+        href: '/careers',
         description: 'Join our team',
         icon: <Play className="w-4 h-4" />
       }
     ]
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   }
 ];
 
 const UltraFuturisticNavigation2036: React.FC = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const navRef = useRef<HTMLElement>(null);
   const dropdownRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
 
-  // Handle scroll effect for navigation styling
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Close dropdowns when clicking outside
+  // Close mobile menu when clicking outside
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (activeDropdown && !navRef.current?.contains(event.target as Node)) {
-        setActiveDropdown(null);
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as HTMLElement)) {
+        setIsOpen(false);
       }
     };
 
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [activeDropdown]);
-
-  // Handle keyboard navigation
-  const handleKeyDown = useCallback((event: KeyboardEvent) => {
-    if (event.key === 'Escape') {
-      setActiveDropdown(null);
-      setMobileMenuOpen(false);
-    }
   }, []);
 
   useEffect(() => {
@@ -237,6 +210,7 @@ const UltraFuturisticNavigation2036: React.FC = () => {
         duration: 0.2,
         ease: "easeOut" as const
       }
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     }
   };
 
@@ -259,6 +233,7 @@ const UltraFuturisticNavigation2036: React.FC = () => {
               href="/" 
               className="flex items-center space-x-2 group"
               aria-label="Zion Tech Group - Home"
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             >
               <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
                 <span className="text-white font-bold text-lg">Z</span>
@@ -398,6 +373,7 @@ const UltraFuturisticNavigation2036: React.FC = () => {
                 <div className="flex items-center space-x-3">
                   <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-lg"></div>
                   <span className="text-white font-bold text-lg">ZionTech Group</span>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </div>
                 <button
                   onClick={() => setMobileMenuOpen(false)}
@@ -465,6 +441,8 @@ const UltraFuturisticNavigation2036: React.FC = () => {
                   </div>
                 ))}
               </div>
+            ))}
+          </div>
 
               {/* Mobile CTA */}
               <div className="mt-8 pt-6 border-t border-white/10">
@@ -472,13 +450,41 @@ const UltraFuturisticNavigation2036: React.FC = () => {
                   <button className="w-full px-4 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-lg font-medium hover:from-cyan-600 hover:to-purple-600 transition-all duration-300">
                     Contact Us
                   </button>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </Link>
                 <Link href="/get-started" onClick={() => setMobileMenuOpen(false)}>
                   <button className="w-full px-4 py-3 text-sm font-medium bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-200 transform hover:scale-105">
                     Get Started
                   </button>
                 </Link>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Enhanced Search Overlay */}
+      <AnimatePresence>
+        {searchOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-40 bg-black/80 backdrop-blur-sm"
+            onClick={() => setSearchOpen(false)}
+          >
+            <div className="flex items-center justify-center min-h-screen p-4">
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                transition={{ duration: 0.2 }}
+                className="w-full max-w-2xl"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <EnhancedSearch onClose={() => setSearchOpen(false)} />
+              </motion.div>
             </div>
           </motion.div>
         )}

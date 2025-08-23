@@ -1,5 +1,5 @@
 import React from 'react';
-import SEO from '../components/SEO';
+import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { 
   Brain, Atom, Shield, Target, Rocket, Globe, Cpu,
@@ -81,14 +81,11 @@ export default function ComprehensiveServicesShowcase2037() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      <SEO 
-        title="Comprehensive Services Showcase 2037 - Zion Tech Group"
-        description="Discover our revolutionary 2037 services portfolio featuring AI consciousness, quantum computing, autonomous systems, and cutting-edge innovations. Transform your business with Zion Tech Group."
-        keywords={[
-          "AI services", "quantum computing", "autonomous systems", "metaverse", 
-          "consciousness", "2037", "innovation", "Zion Tech Group"
-        ]}
-      />
+      <Head>
+        <title>Comprehensive Services Showcase 2037 - Zion Tech Group</title>
+        <meta name="description" content="Discover our revolutionary 2037 services portfolio featuring AI consciousness, quantum computing, autonomous systems, and cutting-edge innovations. Transform your business with Zion Tech Group." />
+        <meta name="keywords" content="AI services, quantum computing, autonomous systems, metaverse, consciousness, 2037, innovation, Zion Tech Group" />
+      </Head>
       
       {/* Hero Section */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8">

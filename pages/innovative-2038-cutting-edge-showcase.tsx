@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import SEO from '../components/SEO';
-import Layout from '../components/layout/Layout';
+import { Layout } from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
   Search, Grid, List, Star, Phone, Mail, MapPin,
@@ -71,15 +71,7 @@ const Innovative2038CuttingEdgeShowcase: React.FC = () => {
       <SEO 
         title="Innovative 2038 Cutting-Edge Services Showcase | Zion Tech Group"
         description="Discover our revolutionary 2038 cutting-edge services including AI holographic meetings, quantum drug discovery, autonomous legal assistance, and more. Transform your business with next-generation technology."
-        keywords={[
-          '2038 services',
-          'cutting-edge technology',
-          'AI holographic',
-          'quantum computing',
-          'autonomous systems',
-          'space technology',
-          'Zion Tech Group'
-        ]}
+        keywords="2038 services, cutting-edge technology, AI holographic, quantum computing, autonomous systems, space technology, Zion Tech Group"
       />
       
       <main className="relative z-10 pt-24 lg:pt-28">
@@ -263,6 +255,7 @@ const Innovative2038CuttingEdgeShowcase: React.FC = () => {
                       <div className="flex gap-2">
                         <a
                           href={`tel:${'phone' in service.contactInfo ? service.contactInfo.phone : service.contactInfo.mobile}`}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                           className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-white/10 text-gray-300 text-sm rounded-lg hover:bg-white/20 transition-colors"
                         >
                           <Phone className="w-4 h-4" />
@@ -323,12 +316,18 @@ const Innovative2038CuttingEdgeShowcase: React.FC = () => {
                       {/* Pricing and Actions */}
                       <div className="lg:w-64 space-y-4">
                         <div className="text-center">
-                                                  <div className="text-3xl font-bold text-purple-400 mb-1">
-                          {'pricing' in service ? service.pricing.starter : service.price}
-                        </div>
+                          <div className="text-3xl font-bold text-purple-400 mb-1">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
+                            {'pricing' in service ? service.pricing.starter : service.price}
+                          </div>
                           <div className="text-sm text-gray-400 mb-2">Starting price</div>
                           <div className="text-xs text-gray-500">
-                            {'pricing' in service ? `${service.pricing.starter} | ${service.pricing.enterprise}` : `${service.price} ${service.period}`}
+                            {'pricing' in service ? (
+                              <>Pro: {service.pricing.pro} | Enterprise: {service.pricing.enterprise}</>
+                            ) : (
+                              <>Period: {service.period}</>
+                            )}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                           </div>
                         </div>
 
@@ -343,6 +342,7 @@ const Innovative2038CuttingEdgeShowcase: React.FC = () => {
                           <div className="grid grid-cols-2 gap-2">
                             <a
                               href={`tel:${'phone' in service.contactInfo ? service.contactInfo.phone : service.contactInfo.mobile}`}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                               className="flex items-center justify-center gap-2 px-3 py-2 bg-white/10 text-gray-300 text-sm rounded-lg hover:bg-white/20 transition-colors"
                             >
                               <Phone className="w-4 h-4" />
