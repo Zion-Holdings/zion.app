@@ -18,6 +18,9 @@
     "start": "next start",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "type-check": "tsc --noEmit",
+<<<<<<< HEAD
+    "prepare": "husky install",
+=======
     "prepare": "git config core.hooksPath .husky || true",
     "fix:all": "npm run lint -- --fix || true",
     "build:heal": "npm run build || (npm run fix:all && npm run search:index || true && npm run build)",
@@ -28,6 +31,7 @@
     "health:netlify": "node automation/enhanced-netlify-healer.cjs",
     "security:scan": "node automation/security-scanner.cjs || true && (npm audit --audit-level=high || true)",
     "auto:intel": "node automation/intelligent-orchestrator.cjs run intelligent",
+>>>>>>> origin/cursor/build-nextjs-app-and-deploy-39fe
     "autonomous": "node automation/launch-enhanced-autonomous-system.js",
     "autonomous:dev": "nodemon automation/launch-enhanced-autonomous-system.js",
     "autonomous:status": "node automation/launch-autonomous-systems-clean.js status",

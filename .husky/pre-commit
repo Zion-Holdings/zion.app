@@ -1,62 +1,26 @@
-echo "🚀 Enhanced Pre-commit System Starting..."
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
 
-# Set environment variables for autonomous operation
-export AUTONOMOUS_MODE=true
-export HUSKY_AUTOMATION=true
-export AUTO_FIX_ENABLED=true
+echo "🔍 Running pre-commit checks..."
 
-# Run lint-staged for staged files
-if [ -x "./node_modules/.bin/lint-staged" ]; then
-  npx lint-staged || {
-    echo "❌ Lint-staged checks failed. Please fix issues before committing."
-    exit 1
-  }
+# Run React component validation
+echo "📋 Validating React components..."
+if node automation/react-component-validator.cjs; then
+    echo "✅ React component validation passed"
 else
-  echo "ℹ️  Skipping lint-staged (not installed). Run 'npm install' to enable."
+    echo "❌ React component validation failed. Please fix issues before committing."
+    echo "💡 Run 'node automation/react-component-validator.cjs' for detailed report."
+    exit 1
 fi
 
-# Skip type-check if tsc is not available locally
-if [ -x "./node_modules/.bin/tsc" ]; then
-  npm run -s type-check || {
-    echo "❌ TypeScript type check failed. Please fix issues before committing."
-    exit 1
-  }
+# Run build preflight check
+echo "🚀 Running build preflight check..."
+if node automation/build-preflight-checker.cjs; then
+    echo "✅ Build preflight check passed"
 else
-  echo "ℹ️  Skipping type-check (tsc not found). Run 'npm install' to enable."
+    echo "❌ Build preflight check failed. Please fix issues before committing."
+    echo "💡 Run 'node automation/build-preflight-checker.cjs' for detailed report."
+    exit 1
 fi
 
-# Lint staged files
-if [ -x "./node_modules/.bin/lint-staged" ]; then
-  npx --no-install lint-staged || {
-    echo "❌ Linting staged files failed."
-    exit 1
-  }
-else
-  echo "ℹ️  Skipping lint-staged (not installed)."
-fi
-
-# Deletion guard to preserve files unless explicitly allowed
-sh ./scripts/prevent-deletion.sh
-
-# 2. Skip type checking for now
-echo "⚠️  Skipping type checking due to file corruption..."
-
-# 3. Skip formatting for now
-echo "⚠️  Skipping formatting due to file corruption..."
-
-# 4. Skip tests for now
-echo "⚠️  Skipping tests due to file corruption..."
-
-# 5. Check for security vulnerabilities
-echo "🔒 Security check..."
-npm audit --audit-level=moderate || {
-    echo "⚠️  Security vulnerabilities found, but continuing..."
-}
-
-# 6. Skip build check for now
-echo "⚠️  Skipping build check due to file corruption..."
-
-# 7. Skip autonomous improvements for now
-echo "⚠️  Skipping autonomous improvements due to file corruption..."
-
-echo "✅ Pre-commit checks completed successfully!"
+echo "🎉 All pre-commit checks passed!"
