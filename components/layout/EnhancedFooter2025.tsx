@@ -173,12 +173,12 @@ const EnhancedFooter2025: React.FC = () => {
                 type="email"
                 placeholder="Enter your email"
                 required
-                className="flex-1 px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-200"
+                className="flex-1 px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all duration-200"
                 aria-label="Email address for newsletter"
               />
               <button
                 type="submit"
-                className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 font-medium flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-cyan-500/50"
+                className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 font-medium flex items-center justify-center gap-2 focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 aria-label="Subscribe to newsletter"
               >
                 Subscribe
@@ -202,7 +202,7 @@ const EnhancedFooter2025: React.FC = () => {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800/50 hover:bg-cyan-500/20 rounded-xl flex items-center justify-center text-gray-400 hover:text-cyan-400 transition-all duration-200 group focus:outline-none focus:ring-2 focus:ring-cyan-500/50"
+                className="w-10 h-10 bg-gray-800/50 hover:bg-cyan-500/20 rounded-xl flex items-center justify-center text-gray-400 hover:text-cyan-400 transition-all duration-200 group focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 aria-label={social.label}
               >
                 <social.icon className="w-5 h-5" aria-hidden="true" />
@@ -214,19 +214,19 @@ const EnhancedFooter2025: React.FC = () => {
           <div className="flex items-center gap-6 text-sm">
             <Link
               href="/privacy"
-              className="text-gray-400 hover:text-cyan-400 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 rounded"
+              className="text-gray-400 hover:text-cyan-400 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              className="text-gray-400 hover:text-cyan-400 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 rounded"
+              className="text-gray-400 hover:text-cyan-400 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded"
             >
               Terms of Service
             </Link>
             <Link
               href="/cookies"
-              className="text-gray-400 hover:text-cyan-400 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 rounded"
+              className="text-gray-400 hover:text-cyan-400 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded"
             >
               Cookie Policy
             </Link>
