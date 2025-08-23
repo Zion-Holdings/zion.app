@@ -208,7 +208,7 @@ export default function ServicesShowcase2040() {
           'Zion Tech Group',
           '2040 technology'
         ]}
-        ogImage="/images/zion-tech-group-2040-services.jpg"
+        image="/images/zion-tech-group-2040-services.jpg"
       />
 
       {/* Hero Section */}
