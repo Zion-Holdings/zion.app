@@ -6,8 +6,12 @@ import {
   Brain, Atom, Shield, Rocket, Cpu, Database, Target, Sparkles,
   Home, Briefcase, Users, FileText, Phone, Mail, MapPin, Globe,
   Zap, Star, TrendingUp, Award, Clock, CheckCircle, ExternalLink,
+<<<<<<< HEAD
+  GraduationCap, Building, Truck, Zap as ZapIcon, Heart, DollarSign
+=======
   Building, GraduationCap, Heart, Palette, BarChart3, Cloud, Lock,
   Handshake, Video, BookOpen
+>>>>>>> origin/cursor/website-audit-and-enhancement-a5c8
 } from 'lucide-react';
 
 const UltraFuturisticNavigation2040: React.FC = () => {
@@ -61,16 +65,24 @@ const UltraFuturisticNavigation2040: React.FC = () => {
           href: '/services/ai-consciousness',
           icon: Brain,
           description: 'AI consciousness evolution and development',
+<<<<<<< HEAD
+          color: 'from-cyan-500 to-blue-500'
+=======
           color: 'from-purple-500 to-pink-500',
           featured: true
+>>>>>>> origin/cursor/website-audit-and-enhancement-a5c8
         },
         {
           name: 'Quantum Technology',
           href: '/services/quantum-technology',
           icon: Atom,
           description: 'Quantum computing and hybrid systems',
+<<<<<<< HEAD
+          color: 'from-blue-500 to-indigo-500'
+=======
           color: 'from-cyan-500 to-blue-500',
           featured: true
+>>>>>>> origin/cursor/website-audit-and-enhancement-a5c8
         },
         {
           name: 'Cybersecurity',
@@ -170,6 +182,20 @@ const UltraFuturisticNavigation2040: React.FC = () => {
           color: 'from-gray-500 to-blue-500'
         },
         {
+<<<<<<< HEAD
+          name: 'Energy & Utilities',
+          href: '/solutions/energy',
+          icon: ZapIcon,
+          description: 'Smart energy and grid solutions',
+          color: 'from-yellow-500 to-orange-500'
+        },
+        {
+          name: 'Transportation',
+          href: '/solutions/transportation',
+          icon: Truck,
+          description: 'Smart transportation and logistics',
+          color: 'from-blue-500 to-cyan-500'
+=======
           name: 'Entertainment & Media',
           href: '/entertainment-media-solutions',
           icon: Palette,
@@ -182,6 +208,7 @@ const UltraFuturisticNavigation2040: React.FC = () => {
           icon: Zap,
           description: 'Smart energy management',
           color: 'from-yellow-500 to-orange-500'
+>>>>>>> origin/cursor/website-audit-and-enhancement-a5c8
         }
       ]
     },
@@ -507,6 +534,30 @@ const UltraFuturisticNavigation2040: React.FC = () => {
                           }`} />
                         </button>
                         
+<<<<<<< HEAD
+                        {activeDropdown === item.label && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="ml-8 mt-2 space-y-2"
+                          >
+                            {item.children.map((child) => (
+                              <Link
+                                key={child.label}
+                                href={child.href}
+                                className="flex items-center space-x-3 px-4 py-2 text-gray-400 hover:text-white transition-colors duration-300 rounded-lg"
+                                onClick={closeNavigation}
+                              >
+                                {child.icon}
+                                <span>{child.label}</span>
+                                {child.featured && (
+                                  <span className="ml-auto px-2 py-1 text-xs bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-bold rounded-full">
+                                    Featured
+                                  </span>
+                                )}
+=======
                         {activeDropdown === item.name && (
                           <div className="ml-4 mt-2 space-y-2">
                             {item.dropdown.map((subItem) => (
@@ -517,6 +568,7 @@ const UltraFuturisticNavigation2040: React.FC = () => {
                                 onClick={closeMobileMenu}
                               >
                                 {subItem.name}
+>>>>>>> origin/cursor/website-audit-and-enhancement-a5c8
                               </Link>
                             ))}
                           </div>
@@ -525,14 +577,43 @@ const UltraFuturisticNavigation2040: React.FC = () => {
                     ) : (
                       <Link
                         href={item.href}
+<<<<<<< HEAD
+                        className="flex items-center space-x-3 px-4 py-3 text-gray-300 hover:text-white transition-colors duration-300 rounded-lg"
+                        onClick={closeNavigation}
+                      >
+                        {item.icon}
+                        <span>{item.label}</span>
+                        {item.badge && (
+                          <span className="ml-auto px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-purple-600 text-white rounded-full">
+                            {item.badge}
+                          </span>
+                        )}
+=======
                         className="block px-4 py-3 text-white hover:text-cyan-400 transition-colors duration-300"
                         onClick={closeMobileMenu}
                       >
                         {item.name}
+>>>>>>> origin/cursor/website-audit-and-enhancement-a5c8
                       </Link>
                     )}
                   </div>
                 ))}
+<<<<<<< HEAD
+                
+                {/* Mobile CTA */}
+                <div className="pt-4 border-t border-gray-700">
+                  <Link href="/contact">
+                    <motion.button
+                      className="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={closeNavigation}
+                      aria-label="Contact us"
+                    >
+                      Get Started
+                    </motion.button>
+                  </Link>
+=======
 
                 {/* Contact Button */}
                 <div className="pt-4">
@@ -561,6 +642,7 @@ const UltraFuturisticNavigation2040: React.FC = () => {
                       <span>{contactInfo.address}</span>
                     </div>
                   </div>
+>>>>>>> origin/cursor/website-audit-and-enhancement-a5c8
                 </div>
               </div>
             </motion.div>

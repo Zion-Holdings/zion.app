@@ -1,11 +1,21 @@
 [
+<<<<<<< HEAD
+  "accessibility",
+  "ai-autonomous-vehicle-ai-platform",
+=======
   "ai-autonomous-vehicle-platform",
+>>>>>>> origin/cursor/website-audit-and-enhancement-a5c8
   "ai-consciousness-evolution",
   "ai-content-marketing-automation",
   "ai-creativity-orchestrator",
   "ai-customer-intelligence-platform",
   "ai-customer-success-automation",
   "ai-dream-interpreter-platform",
+<<<<<<< HEAD
+  "ai-ethics-governance",
+  "ai-financial-fraud-detection",
+  "ai-powered-enterprise-security",
+=======
   "ai-education-platform-pro",
   "ai-ethics-governance",
   "ai-financial-fraud-detection",
@@ -13,10 +23,15 @@
   "ai-logistics-platform",
   "ai-powered-enterprise-security",
   "ai-threat-detection",
+>>>>>>> origin/cursor/website-audit-and-enhancement-a5c8
   "autonomous-devops-platform",
   "autonomous-it-operations",
   "autonomous-vehicle-ai",
   "blockchain-enterprise-platform",
+<<<<<<< HEAD
+  "compliance",
+  "metaverse-digital-reality-platform",
+=======
   "brain-computer-interface",
   "customer-intelligence-platform",
   "industrial-automation-ai",
@@ -29,11 +44,15 @@
   "orbital-computing",
   "quantum-ai-fusion",
   "quantum-bio-computing",
+>>>>>>> origin/cursor/website-audit-and-enhancement-a5c8
   "quantum-compliance-automation",
   "quantum-creativity-studio",
   "quantum-data-center",
   "quantum-encryption-gateway",
+<<<<<<< HEAD
+=======
   "quantum-energy-optimization",
+>>>>>>> origin/cursor/website-audit-and-enhancement-a5c8
   "quantum-identity-verification",
   "quantum-internet-security",
   "quantum-internet-security-gateway",
@@ -41,12 +60,19 @@
   "quantum-materials-discovery",
   "quantum-network-security",
   "quantum-networking",
+<<<<<<< HEAD
+=======
   "quantum-risk-financial-manager",
   "quantum-supply-chain-optimizer",
+>>>>>>> origin/cursor/website-audit-and-enhancement-a5c8
   "quantum-threat-detection",
   "services/data-contracts-hub",
   "services/serverless-lakehouse-starter",
   "space-data-analytics",
+<<<<<<< HEAD
+  "space-mining-automation-platform"
+=======
   "space-mining-automation-platform",
   "space-mining-platform"
+>>>>>>> origin/cursor/website-audit-and-enhancement-a5c8
 ]
