@@ -2,9 +2,14 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Menu, X, ChevronDown, Rocket, Star } from 'lucide-react';
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
+import { Bell } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { useUnreadNotificationsCount } from '../../hooks/useUnreadNotificationsCount';
 
-const NotificationBell = dynamic(() => import('../ui/NotificationBell'), { ssr: false });
+export default function EnhancedNavigation() {
+  const [isClient, setIsClient] = useState(false);
+  const unread = useUnreadNotificationsCount();
+  useEffect(() => setIsClient(true), []);
 
   return (
     <nav className="border-b border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-black/40 backdrop-blur supports-backdrop-blur:bg-white/50 sticky top-0 z-40">
@@ -19,7 +24,16 @@ const NotificationBell = dynamic(() => import('../ui/NotificationBell'), { ssr: 
           <Link href="/salary-insights"><a>Salary Insights</a></Link>
           <Link href="/admin"><a>Admin</a></Link>
           <Link href="/contact"><a>Contact</a></Link>
-          <NotificationBell />
+          <Link href="/notifications">
+            <a className="relative inline-flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-700 p-2 hover:bg-gray-50 dark:hover:bg-gray-800">
+              <Bell className="h-5 w-5" />
+              {isClient && unread > 0 && (
+                <span className="absolute -right-1 -top-1 inline-flex h-5 min-w-[20px] items-center justify-center rounded-full bg-gradient-to-r from-blue-500 via-cyan-500 to-purple-500 px-1 text-xs font-bold text-white shadow">
+                  {unread}
+                </span>
+              )}
+            </a>
+          </Link>
         </div>
       </nav>
 
