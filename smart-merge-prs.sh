@@ -10,8 +10,8 @@ echo "⏰ Started at: $(date)"
 echo "---"
 
 # Configuration
-BATCH_SIZE=10
-MAX_CONFLICTS_PER_BRANCH=10
+BATCH_SIZE=50
+MAX_CONFLICTS_PER_BRANCH=20
 BACKUP_BRANCH="backup-main-$(date +%Y%m%d-%H%M%S)"
 
 # Create a backup branch
