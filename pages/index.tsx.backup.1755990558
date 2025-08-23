@@ -1,5 +1,9 @@
 import React from 'react';
+<<<<<<< HEAD
+import Homepage2037 from '../components/Homepage2037';
+=======
 import Homepage2038 from '../components/Homepage2038';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-613b
 import SEOOptimizer from '../components/SEOOptimizer';
 import AnalyticsTracker from '../components/AnalyticsTracker';
 import ErrorBoundary from '../components/ErrorBoundary';
@@ -24,7 +28,11 @@ export default function Home() {
       <SEOOptimizer />
       <AnalyticsTracker />
       <PerformanceOptimizer>
+<<<<<<< HEAD
+        <Homepage2037 />
+=======
         <Homepage2038 />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-613b
       </PerformanceOptimizer>
     </ErrorBoundary>
   );

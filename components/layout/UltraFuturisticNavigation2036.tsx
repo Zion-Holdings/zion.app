@@ -166,6 +166,12 @@ const navigationItems: NavigationItem[] = [
         icon: <Play className="w-4 h-4" />
       },
       { 
+        name: '2038 Innovative Services', 
+        href: '/2038-innovative-services-showcase', 
+        description: 'Latest revolutionary technology',
+        icon: <Rocket className="w-4 h-4" />
+      },
+      { 
         name: 'Pricing Plans', 
         href: '/pricing', 
         description: 'Service pricing information',
