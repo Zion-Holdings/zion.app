@@ -106,18 +106,14 @@ const apiClient = axios.create({
   baseURL: `${API_BASE}/api/v1/services`,
 });
 
-apiClient.interceptors.request.use((config: unknown) => {
-  if (typeof config !== 'object' || config === null) {
-    return { headers: { Accept: 'application/json' } };
-  }
-  const headers = 'headers' in config && typeof (config as { headers?: unknown }).headers === 'object' && (config as { headers?: unknown }).headers !== null
-    ? { ...(config as { headers: Record<string, unknown> }).headers, Accept: 'application/json' }
-    : { Accept: 'application/json' };
-  return {
-    ...config,
-    headers,
-  };
-});
+export function setAuthToken(token: string) {
+  (apiClient.defaults.headers.common as any).Authorization = `Bearer ${token}`;
+}
+
+apiClient.interceptors.response.use(
+  (response) => response,
+  async (error) => {
+    const status = error.response?.status;
 
 axiosRetry(apiClient, {
   retries: 3,

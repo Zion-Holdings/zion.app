@@ -51,9 +51,9 @@ const TalentPage: React.FC = () => {
     return <NotFound />;
   }
 
-  // Other errors (non-404)
-  if (error) {
-    const err: any = error;
+  // Next.js router typing in this project doesn't include `isFallback`.
+  // Cast to any to access the property during static builds.
+  if ((router as any).isFallback) {
     return (
       <div className="flex flex-col items-center justify-center py-20 text-center">
         <h2 className="text-2xl font-semibold mb-2">Error</h2>
