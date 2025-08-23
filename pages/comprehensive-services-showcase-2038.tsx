@@ -192,12 +192,12 @@ export default function ComprehensiveServicesShowcase2038() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      <Head>
-        <title>Comprehensive Services Showcase 2038 | Zion Tech Group</title>
-        <meta name="description" content="Discover Zion Tech Group's revolutionary 2038 services portfolio featuring AI, quantum computing, cybersecurity, metaverse solutions, and more. Transform your business with cutting-edge technology." />
-        <meta name="keywords" content="AI services, quantum computing, cybersecurity, metaverse, biotechnology, space technology, Zion Tech Group, 2038 services" />
-        <meta property="og:image" content="https://ziontechgroup.com/og-image-2038-services.jpg" />
-      </Head>
+      <SEO 
+        title="Comprehensive Services Showcase 2038 | Zion Tech Group"
+        description="Discover Zion Tech Group's revolutionary 2038 services portfolio featuring AI, quantum computing, cybersecurity, metaverse solutions, and more. Transform your business with cutting-edge technology."
+        keywords="'AI services', 'quantum computing', 'cybersecurity', 'metaverse', 'biotechnology', 'space technology', 'Zion Tech Group', '2038 services'"
+        image="https://ziontechgroup.com/og-image-2038-services.jpg"
+      />
       
       {/* Hero Section */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8">

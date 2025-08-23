@@ -7,7 +7,166 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 
-const Partners: React.FC = () => {
+const PartnersPage: React.FC = () => {
+  const partnerCategories = [
+    {
+      id: 'technology',
+      name: 'Technology Partners',
+      description: 'Leading technology companies and platforms',
+      icon: <Cpu className="w-8 h-8" />,
+      color: 'from-cyan-500 to-blue-500'
+    },
+    {
+      id: 'cloud',
+      name: 'Cloud & Infrastructure',
+      description: 'Cloud providers and infrastructure solutions',
+      icon: <Cloud className="w-8 h-8" />,
+      color: 'from-blue-500 to-purple-500'
+    },
+    {
+      id: 'security',
+      name: 'Security & Compliance',
+      description: 'Cybersecurity and regulatory compliance partners',
+      icon: <Shield className="w-8 h-8" />,
+      color: 'from-purple-500 to-pink-500'
+    },
+    {
+      id: 'ai',
+      name: 'AI & Research',
+      description: 'AI research institutions and technology leaders',
+      icon: <Brain className="w-8 h-8" />,
+      color: 'from-pink-500 to-red-500'
+    }
+  ];
+
+  const technologyPartners = [
+    {
+      name: 'Microsoft',
+      logo: 'M',
+      description: 'Azure cloud services and enterprise solutions',
+      category: 'technology',
+      partnership: 'Strategic Cloud Partner',
+      benefits: ['Azure credits', 'Joint go-to-market', 'Technical support']
+    },
+    {
+      name: 'Amazon Web Services',
+      logo: 'AWS',
+      description: 'Cloud infrastructure and AI services',
+      category: 'cloud',
+      partnership: 'Premier Consulting Partner',
+      benefits: ['AWS credits', 'Training programs', 'Solution architect support']
+    },
+    {
+      name: 'Google Cloud',
+      logo: 'GC',
+      description: 'AI/ML platforms and cloud services',
+      category: 'cloud',
+      partnership: 'Technology Partner',
+      benefits: ['GCP credits', 'AI/ML expertise', 'Marketplace listing']
+    },
+    {
+      name: 'IBM',
+      logo: 'IBM',
+      description: 'Quantum computing and enterprise AI',
+      category: 'ai',
+      partnership: 'Quantum Research Partner',
+      benefits: ['Quantum access', 'Research collaboration', 'Enterprise solutions']
+    },
+    {
+      name: 'NVIDIA',
+      logo: 'NV',
+      description: 'GPU computing and AI acceleration',
+      category: 'technology',
+      partnership: 'AI Technology Partner',
+      benefits: ['GPU resources', 'AI frameworks', 'Developer support']
+    },
+    {
+      name: 'Intel',
+      logo: 'INT',
+      description: 'CPU optimization and AI acceleration',
+      category: 'technology',
+      partnership: 'Hardware Partner',
+      benefits: ['Hardware access', 'Optimization tools', 'Technical training']
+    }
+  ];
+
+  const securityPartners = [
+    {
+      name: 'CrowdStrike',
+      logo: 'CS',
+      description: 'Endpoint security and threat intelligence',
+      category: 'security',
+      partnership: 'Security Partner',
+      benefits: ['Security tools', 'Threat intelligence', 'Joint solutions']
+    },
+    {
+      name: 'Palo Alto Networks',
+      logo: 'PAN',
+      description: 'Network security and cloud protection',
+      category: 'security',
+      partnership: 'Cybersecurity Partner',
+      benefits: ['Security platforms', 'Threat prevention', 'Compliance tools']
+    },
+    {
+      name: 'Okta',
+      logo: 'OK',
+      description: 'Identity and access management',
+      category: 'security',
+      partnership: 'Identity Partner',
+      benefits: ['SSO solutions', 'MFA tools', 'Compliance support']
+    }
+  ];
+
+  const researchPartners = [
+    {
+      name: 'MIT',
+      logo: 'MIT',
+      description: 'AI research and quantum computing',
+      category: 'ai',
+      partnership: 'Research Institution Partner',
+      benefits: ['Research collaboration', 'Student programs', 'Technology transfer']
+    },
+    {
+      name: 'Stanford University',
+      logo: 'SU',
+      description: 'Machine learning and space technology',
+      category: 'ai',
+      partnership: 'Academic Partner',
+      benefits: ['Research projects', 'Talent pipeline', 'Innovation labs']
+    },
+    {
+      name: 'NASA',
+      logo: 'NASA',
+      description: 'Space technology and research',
+      category: 'ai',
+      partnership: 'Government Partner',
+      benefits: ['Space research', 'Technology licensing', 'Mission support'"
+    }
+  ];
+
+  const partnershipBenefits = [
+    {
+      icon: <Globe className="w-12 h-12" />,
+      title: 'Global Reach',
+      description: 'Access to worldwide markets and customer networks through our partner ecosystem.'
+    },
+    {
+      icon: <Rocket className="w-12 h-12" />,
+      title: 'Innovation Acceleration',
+      description: 'Collaborate on cutting-edge research and development projects.'
+    },
+    {
+      icon: <Users className="w-12 h-12" />,
+      title: 'Expert Network',
+      description: 'Connect with industry experts and thought leaders across technology domains.'
+    },
+    {
+      icon: <Award className="w-12 h-12" />,
+      title: 'Market Credibility',
+      description: 'Enhance your market position through strategic partnerships and joint solutions.'
+    }
+  ];
+
   const partnershipTypes = [
     {
       icon: <Users className="w-8 h-8" />,

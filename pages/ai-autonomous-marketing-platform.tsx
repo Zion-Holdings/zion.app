@@ -313,7 +313,7 @@ const AIAutonomousMarketingPlatform: React.FC = () => {
                     "White-label solutions",
                     "24/7 dedicated support",
                     "On-premise deployment"
-                  ]
+                  "
                 }
               ].map((plan, index) => (
                 <motion.div

@@ -8,18 +8,11 @@ import {
 } from 'lucide-react';
 
 // Import our new service data
-<<<<<<< HEAD
-import { advancedEnterpriseSolutions2025 } from '../data/2025-advanced-enterprise-solutions';
-import { innovativeAIAutomationServices2025 } from '../data/2025-innovative-ai-automation-services';
-import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
-import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
-=======
 import { advancedAIMLServices } from '../data/2025-advanced-ai-ml-services';
 import { advancedCybersecurityServices2025 } from '../data/2025-advanced-cybersecurity-services';
 import { advancedCloudDevOpsServices } from '../data/2025-advanced-cloud-devops-services';
 import { industrySpecificSolutions } from '../data/2025-industry-specific-solutions';
 import { emergingTechnologyServices } from '../data/2025-emerging-technology-services';
->>>>>>> 0d3d59dc48bc65c272e3c7f2106b07881fc97407
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -48,21 +41,12 @@ const pricingCategories = [
     services: allServices.filter(s => s.category.toLowerCase().includes('micro') || s.category.toLowerCase().includes('social') || s.category.toLowerCase().includes('email') || s.category.toLowerCase().includes('project'))
   },
   {
-<<<<<<< HEAD
-    name: 'AI & Automation Services',
-    description: 'Intelligent solutions powered by artificial intelligence',
-    priceRange: '$1,950 - $4,100/month',
-    icon: <Brain className="w-6 h-6" />,
-    color: 'from-purple-500 to-violet-600',
-    services: allServices.filter(s => s.category.toLowerCase().includes('ai') || s.category.toLowerCase().includes('automation') || s.category.toLowerCase().includes('customer service'))
-=======
     id: 'cybersecurity',
     name: 'Cybersecurity & Compliance',
     icon: Shield,
     description: 'Enterprise-grade security solutions and compliance automation',
     services: advancedCybersecurityServices2025,
     color: 'from-red-600 to-pink-700'
->>>>>>> 0d3d59dc48bc65c272e3c7f2106b07881fc97407
   },
   {
     name: 'Enterprise Solutions',
@@ -145,8 +129,8 @@ const ComprehensivePricing2025: React.FC = () => {
       <SEO 
         title="2025 Comprehensive Pricing Guide | Zion Tech Group"
         description="Explore our complete pricing guide for micro SAAS, IT services, and AI solutions. Find the perfect plan for your business needs with transparent pricing and feature comparisons."
-        keywords={["pricing", "micro SAAS pricing", "IT services pricing", "AI solutions pricing", "enterprise pricing", "cloud pricing"]}
-        image="/og-pricing-guide.jpg"
+        keywords="pricing, micro SAAS pricing, AI services pricing, cybersecurity pricing, cloud services pricing, enterprise solutions pricing"
+        image="https://ziontechgroup.com/og-image.jpg"
       />
 
       {/* Hero Section */}

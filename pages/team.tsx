@@ -49,60 +49,34 @@ const TeamPage: React.FC = () => {
     {
       name: "Kleber",
       role: "Founder & CEO",
-      description: "Visionary leader driving innovation and strategic growth",
-      expertise: ["AI & Consciousness", "Quantum Computing", "Strategic Leadership"],
-      experience: "15+ years",
-      education: "Advanced AI & Quantum Physics",
-      achievements: ["Pioneered AI consciousness research", "Led 200+ technology implementations", "Named Top 100 Tech Innovators"],
-      image: "/api/placeholder/400/400",
-      social: {
-        linkedin: "https://linkedin.com/in/kleber-zion",
-        twitter: "https://twitter.com/kleberzion",
-        github: "https://github.com/kleberzion"
-      }
-    }
-  ];
-
-  const coreTeams = [
-    {
-      name: "AI & Consciousness Team",
-      description: "Pioneering the future of artificial intelligence and consciousness systems",
-      icon: Brain,
+      description: "Visionary leader driving innovation and strategic growth with over 15 years of experience in cutting-edge technology",
+      expertise: ["AI & Consciousness, Quantum Technology, Strategic Leadership"],
       color: "from-blue-500 to-cyan-500",
-      members: 25,
-      expertise: ["AI Consciousness", "Neural Networks", "Ethical AI", "Machine Learning"],
-      projects: ["AI Consciousness Platform", "Ethical AI Framework", "Neural Network Architecture"],
-      achievements: ["Developed first AI consciousness system", "Published 50+ research papers", "Won 3 AI innovation awards"]
+      image: "/images/team/kleber.jpg"
+    },
+    {
+      name: "AI Consciousness Team",
+      role: "AI & Consciousness Division",
+      description: "Experts in next-generation artificial intelligence and consciousness systems, pioneering emotional AI and self-aware systems",
+      expertise: ["Emotional AI, Consciousness Systems, Ethical AI Governance"],
+      color: "from-purple-500 to-pink-500",
+      image: "/images/team/ai-team.jpg"
     },
     {
       name: "Quantum Technology Team",
-      description: "Advancing quantum computing and quantum-resistant solutions",
-      icon: Atom,
-      color: "from-purple-500 to-pink-500",
-      members: 18,
-      expertise: ["Quantum Computing", "Quantum Cryptography", "Quantum Algorithms", "Error Correction"],
-      projects: ["Quantum Computing Platform", "Post-Quantum Security", "Quantum Machine Learning"],
-      achievements: ["Built 1000+ qubit system", "Developed quantum-resistant algorithms", "Partnership with leading quantum labs"]
+      role: "Quantum Computing Division",
+      description: "Pioneers in quantum computing and quantum-resistant solutions, developing the next generation of computational power",
+      expertise: ["Quantum Computing, Quantum Security, Quantum Neural Networks"],
+      color: "from-indigo-500 to-purple-500",
+      image: "/images/team/quantum-team.jpg"
     },
     {
       name: "Space Technology Team",
-      description: "Innovating in space exploration and resource intelligence",
-      icon: Rocket,
-      color: "from-orange-500 to-red-500",
-      members: 22,
-      expertise: ["Satellite Technology", "Space Mining", "Resource Intelligence", "Orbital Mechanics"],
-      projects: ["Space Resource Platform", "Satellite Constellation", "Asteroid Mining Technology"],
-      achievements: ["Launched 50+ satellites", "Discovered valuable space resources", "Advanced space mining techniques"]
-    },
-    {
-      name: "Enterprise Solutions Team",
-      description: "Delivering cutting-edge enterprise technology solutions",
-      icon: Building,
-      color: "from-emerald-500 to-teal-500",
-      members: 35,
-      expertise: ["Digital Transformation", "Cloud Architecture", "Enterprise AI", "Cybersecurity"],
-      projects: ["Enterprise AI Platform", "Cloud Migration", "Security Solutions"],
-      achievements: ["Transformed 500+ enterprises", "99.9% uptime guarantee", "Zero security breaches"]
+      role: "Space Technology Division",
+      description: "Innovators in space exploration and resource intelligence, developing AI-powered space solutions",
+      expertise: ["Space Exploration, Resource Intelligence, AI Space Systems"],
+      color: "from-cyan-500 to-blue-500",
+      image: "/images/team/space-team.jpg"
     }
   ];
 

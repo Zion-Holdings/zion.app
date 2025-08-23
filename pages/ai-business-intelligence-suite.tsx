@@ -137,7 +137,7 @@ export default function AIBusinessIntelligenceSuite() {
                       <div className="text-blue-200 text-lg mb-4">per month</div>
                       <div className="text-gray-300 mb-6">21-day free trial</div>
                       <Button 
-                        href="/contact" 
+                        href="/contact"
                         variant="primary"
                         className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-bold py-3 px-6 rounded-xl"
                       >
@@ -153,7 +153,7 @@ export default function AIBusinessIntelligenceSuite() {
                   transition={{ duration: 0.2, delay: 0.1 }}
                 >
                   <Button 
-                    href="/contact" 
+                    href="/contact"
                     variant="secondary"
                     className="text-lg px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 shadow-2xl hover:shadow-green-500/25"
                   >
@@ -444,7 +444,7 @@ export default function AIBusinessIntelligenceSuite() {
                   transition={{ duration: 0.2 }}
                 >
                   <Button 
-                    href="/contact" 
+                    href="/contact"
                     variant="primary"
                     className="text-lg px-8 py-4 bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 shadow-2xl hover:shadow-blue-500/25"
                   >
@@ -462,7 +462,7 @@ export default function AIBusinessIntelligenceSuite() {
                   transition={{ duration: 0.2, delay: 0.1 }}
                 >
                   <Button 
-                    href="/contact" 
+                    href="/contact"
                     variant="secondary"
                     className="text-lg px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 shadow-2xl hover:shadow-green-500/25"
                   >

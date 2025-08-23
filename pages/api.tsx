@@ -1,33 +1,87 @@
 import React, { useState } from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { 
-  Code, 
-  BookOpen, 
-  Zap, 
-  Shield, 
-  Database, 
-  Cloud, 
-  Brain, 
-  Atom, 
-  Rocket,
-  Copy,
-  Check,
-  ExternalLink,
-  Search,
-  Filter,
-  Download,
-  Play,
-  Terminal,
-  Lock,
-  Key,
-  Server,
-  Cpu,
-  Globe,
-  ArrowRight,
-  ChevronDown,
-  ChevronRight
-} from 'lucide-react';
+import { Code, Database, Shield, Zap, Copy, Check, ExternalLink } from 'lucide-react';
+
+const apiEndpoints = [
+  {
+    method: 'GET',
+    endpoint: '/api/analytics',
+    description: 'Retrieve website analytics data',
+    parameters: [
+      { name: 'timeframe', type: 'string', required: true, description: '7d, 30d, 90d, or 1y' },
+      { name: 'metric', type: 'string', required: false, description: 'views, conversions, or users' }
+    ],
+    example: `curl -X GET "https://api.ziontechgroup.com/analytics?timeframe=30d&metric=views" \\
+  -H "Authorization: Bearer YOUR_API_KEY" \\
+  -H "Content-Type: application/json"`
+  },
+  {
+    method: 'POST',
+    endpoint: '/api/error-reporting',
+    description: 'Submit error reports and logs',
+    parameters: [
+      { name: 'level', type: 'string', required: true, description: 'error, warning, or info' },
+      { name: 'message', type: 'string', required: true, description: 'Error message' },
+      { name: 'stack', type: 'string', required: false, description: 'Stack trace' }
+    ],
+    example: `curl -X POST "https://api.ziontechgroup.com/error-reporting" \\
+  -H "Authorization: Bearer YOUR_API_KEY" \\
+  -H "Content-Type: application/json" \\
+  -d '{"level": "error, message": "Database connection failed"}'`
+  },
+  {
+    method: 'GET',
+    endpoint: '/api/services',
+    description: 'List all available services',
+    parameters: [
+      { name: 'category', type: 'string', required: false, description: 'Filter by service category' },
+      { name: 'limit', type: 'number', required: false, description: 'Number of results to return' }
+    ],
+    example: `curl -X GET "https://api.ziontechgroup.com/services?category=ai&limit=10" \\
+  -H "Authorization: Bearer YOUR_API_KEY" \\
+  -H "Content-Type: application/json"`
+  },
+  {
+    method: 'POST',
+    endpoint: '/api/contact',
+    description: 'Submit contact form data',
+    parameters: [
+      { name: 'name', type: 'string', required: true, description: 'Contact name' },
+      { name: 'email', type: 'string', required: true, description: 'Contact email' },
+      { name: 'message', type: 'string', required: true, description: 'Contact message' }
+    ],
+    example: `curl -X POST "https://api.ziontechgroup.com/contact" \\
+  -H "Content-Type: application/json" \\
+  -d '{"name": "John Doe, email": "john@example.com, message": "Hello!"}'`
+  }
+];
+
+const SDKs = [
+  {
+    name: 'JavaScript/Node.js',
+    installation: 'npm install @ziontechgroup/api-client',
+    example: `import { ZionAPI } from '@ziontechgroup/api-client';
+
+const client = new ZionAPI('YOUR_API_KEY');
+const analytics = await client.analytics.get('30d');`
+  },
+  {
+    name: 'Python',
+    installation: 'pip install zion-api-client',
+    example: `from zion_api import ZionAPI
+
+client = ZionAPI('YOUR_API_KEY')
+analytics = client.analytics.get('30d')`
+  },
+  {
+    name: 'Go',
+    installation: 'go get github.com/ziontechgroup/go-api-client',
+    example: `import "github.com/ziontechgroup/go-api-client"
+client := zionapi.NewClient("YOUR_API_KEY")
+analytics, err := client.Analytics.Get("30d")`
+  }
+];
 
 const APIPage: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');

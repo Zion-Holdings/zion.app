@@ -7,15 +7,139 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 
-const GetStarted: React.FC = () => {
+const GetStartedPage: React.FC = () => {
+  const [currentStep, setCurrentStep] = useState(1);
+  const [selectedPath, setSelectedPath] = useState('');
+
+  const paths = [
+    {
+      id: 'ai',
+      name: 'AI & Machine Learning',
+      description: 'Get started with our AI consciousness and machine learning platforms',
+      icon: <Brain className="w-8 h-8" />,
+      color: 'from-cyan-500 to-blue-500',
+      steps: [
+        'Schedule AI consultation call',
+        'Review current AI infrastructure',
+        'Define AI implementation goals',
+        'Receive customized AI roadmap',
+        'Begin AI platform deployment'
+      "
+    },
+    {
+      id: 'quantum',
+      name: 'Quantum Computing',
+      description: 'Explore quantum computing solutions for your organization',
+      icon: <Atom className="w-8 h-8" />,
+      color: 'from-purple-500 to-pink-500',
+      steps: [
+        'Quantum readiness assessment',
+        'Identify quantum use cases',
+        'Quantum infrastructure planning',
+        'Quantum algorithm development',
+        'Quantum solution deployment'
+      "
+    },
+    {
+      id: 'space',
+      name: 'Space Technology',
+      description: 'Leverage space technology for resource intelligence and exploration',
+      icon: <Rocket className="w-8 h-8" />,
+      color: 'from-blue-500 to-cyan-500',
+      steps: [
+        'Space technology consultation',
+        'Resource intelligence assessment',
+        'Satellite system planning',
+        'Space data integration',
+        'Space platform deployment'
+      "
+    },
+    {
+      id: 'enterprise',
+      name: 'Enterprise IT Solutions',
+      description: 'Transform your enterprise IT infrastructure and operations',
+      icon: <Shield className="w-8 h-8" />,
+      color: 'from-green-500 to-emerald-500',
+      steps: [
+        'IT infrastructure audit',
+        'Digital transformation planning',
+        'Technology stack modernization',
+        'Security implementation',
+        'Full deployment and training'
+      "
+    }
+  ];
+
   const onboardingSteps = [
     {
       step: '01',
       title: 'Initial Consultation',
       description: 'Schedule a free consultation to discuss your needs and goals',
       duration: '30 minutes',
+      icon: <Phone className="w-6 h-6" />,
+      actions: [
+        'Book consultation call',
+        'Prepare questions and goals',
+        'Review current technology stack'
+      "
+    },
+    {
+      step: 2,
+      title: 'Assessment & Planning',
+      description: 'We conduct a comprehensive assessment of your current infrastructure and create a customized implementation plan.',
+      duration: '1-2 weeks',
+      icon: <Target className="w-6 h-6" />,
+      actions: [
+        'Infrastructure review',
+        'Requirements gathering',
+        'Custom roadmap creation'
+      "
+    },
+    {
+      step: 3,
+      title: 'Solution Design',
+      description: 'Our team designs a tailored solution architecture that meets your specific business requirements.',
+      duration: '2-3 weeks',
+      icon: <Cpu className="w-6 h-6" />,
+      actions: [
+        'Architecture design',
+        'Technology selection',
+        'Integration planning'
+      "
+    },
+    {
+      step: 4,
+      title: 'Implementation',
+      description: 'We deploy your solution with minimal disruption to your operations, ensuring a smooth transition.',
+      duration: '4-8 weeks',
+      icon: <Rocket className="w-6 h-6" />,
+      actions: [
+        'Phased deployment',
+        'Testing and validation',
+        'Performance optimization'
+      "
+    },
+    {
+      step: 5,
+      title: 'Training & Support',
+      description: 'Comprehensive training for your team and ongoing support to ensure long-term success.',
+      duration: '1-2 weeks',
       icon: <Users className="w-6 h-6" />,
-      color: 'from-blue-500 to-cyan-600'
+      actions: [
+        'Team training sessions',
+        'Documentation delivery',
+        'Ongoing support setup'
+      "
+    }
+  ];
+
+  const resources = [
+    {
+      title: 'Getting Started Guide',
+      description: 'Comprehensive guide to implementing Zion Tech Group solutions',
+      type: 'PDF',
+      icon: <FileText className="w-6 h-6" />,
+      download: true
     },
     {
       step: '02',

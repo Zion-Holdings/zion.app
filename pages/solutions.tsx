@@ -71,11 +71,7 @@ const SolutionsPage: React.FC = () => {
   return (
     <UltraFuturisticBackground variant="holographic">
       <div className="min-h-screen">
-        <SEO data={{
-          pageTitle: "Solutions - Zion Tech Group | Revolutionary AI, Quantum Computing & Emerging Technology Solutions",
-          pageDescription: "Discover Zion Tech Group's comprehensive solutions portfolio including Micro SaaS platforms, AI-powered tools, Business Intelligence, Process Automation, and Cloud platforms.",
-          pageKeywords: ["solutions", "AI", "quantum computing", "emerging technology", "micro SaaS", "business intelligence", "process automation", "cloud platforms", "Zion Tech Group"]
-        }} />
+        <SEO title="Solutions - Zion Tech Group | Revolutionary AI, Quantum Computing & Emerging Technology Solutions" description="Discover Zion Tech Group's comprehensive solutions portfolio including Micro SaaS platforms, AI-powered tools, Business Intelligence, Process Automation, and Cloud platforms." />
 
         {/* Hero Section */}
         <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8">

@@ -267,13 +267,12 @@ export default function DynamicPage({ title, slug, description }: PageProps) {
 	
 	return (
 		<>
-			<Head>
-				<title>{`${title} | Zion Tech Group`}</title>
-				<meta name="description" content={description} />
-				<link rel="canonical" href={canonical} />
-				<meta name="section" content={title} />
-				<meta name="keywords" content={[title, 'Services', 'Technology'].join(', ')} />
-			</Head>
+			<SEO 
+				title={`${title} | Zion Tech Group`} 
+				description={description} 
+				section={title}
+				tags={[title, 'Services', 'Technology']}
+			/>
 			<div className="container mx-auto px-4 py-16">
 				<nav className="text-sm text-gray-400 mb-6">
 					<Link href="/" className="hover:text-white">Home</Link>

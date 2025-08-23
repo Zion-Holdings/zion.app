@@ -169,11 +169,11 @@ const ServiceShowcase = () => {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <Head>
-        <title>2037 Innovative Services Showcase - Zion Tech Group</title>
-        <meta name="description" content="Discover our revolutionary 2037 innovative services including AI consciousness evolution, quantum cybersecurity, autonomous systems, and cutting-edge micro SAAS solutions." />
-        <meta name="keywords" content="AI consciousness, quantum computing, autonomous systems, micro SAAS, innovative services, 2037 technology" />
-      </Head>
+      <SEO
+        title="2037 Innovative Services Showcase - Zion Tech Group"
+        description="Discover our revolutionary 2037 innovative services including AI consciousness evolution, quantum cybersecurity, autonomous systems, and cutting-edge micro SAAS solutions."
+        keywords="AI consciousness, quantum computing, autonomous systems, micro SAAS, innovative services, 2037 technology"
+      />
       
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">

@@ -37,12 +37,22 @@ const AIAutonomousResearch: React.FC = () => {
   ];
 
   const applications = [
-    "Scientific research",
-    "Market analysis",
-    "Technology development",
-    "Medical research",
-    "Academic studies",
-    "Innovation discovery"
+    {
+      field: "Scientific Discovery",
+      research: ["Drug Discovery, Material Science, Climate Modeling, Astrophysics""
+    },
+    {
+      field: "Technology Innovation",
+      research: ["Quantum Computing, Robotics, Biotechnology, Energy Systems""
+    },
+    {
+      field: "Social Sciences",
+      research: ["Economics, Psychology, Sociology, Political Science""
+    },
+    {
+      field: "Environmental Studies",
+      research: ["Climate Change, Biodiversity, Sustainability, Resource Management""
+    }
   ];
 
   return (

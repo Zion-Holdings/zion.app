@@ -10,71 +10,48 @@ import {
 const CommunityPage: React.FC = () => {
   const communityFeatures = [
     {
-      title: 'Expert Forums',
-      description: 'Connect with AI, quantum computing, and space technology experts',
-      icon: Users,
-      color: 'from-cyan-500 to-blue-500',
-      benefits: ['Ask Questions', 'Share Knowledge', 'Network with Peers', 'Get Expert Advice']
+      title: 'Developer Forums',
+      description: 'Connect with fellow developers and share knowledge',
+      icon: <Users className="w-8 h-8 text-blue-400" />,
+      features: [
+        'Technical Discussions',
+        'Code Reviews',
+        'Best Practices',
+        'Problem Solving'
+      "
     },
     {
-      title: 'Innovation Hub',
-      description: 'Collaborate on cutting-edge technology projects',
-      icon: Rocket,
-      color: 'from-purple-500 to-pink-500',
-      benefits: ['Project Collaboration', 'Innovation Challenges', 'Research Partnerships', 'Open Source Projects']
-    },
-    {
-      title: 'Learning Groups',
-      description: 'Join specialized learning communities and study groups',
-      icon: Brain,
-      color: 'from-blue-500 to-indigo-500',
-      benefits: ['Study Groups', 'Workshops', 'Certification Prep', 'Skill Development']
+      title: 'Learning Hub',
+      description: 'Access to exclusive training materials and resources',
+      icon: <BookOpen className="w-8 h-8 text-green-400" />,
+      features: [
+        'Online Courses',
+        'Webinars',
+        'Documentation',
+        'Tutorials'
+      "
     },
     {
       title: 'Events & Meetups',
-      description: 'Attend virtual and in-person community events',
-      icon: Calendar,
-      color: 'from-green-500 to-emerald-500',
-      benefits: ['Virtual Meetups', 'Conference Access', 'Networking Events', 'Expert Panels']
-    }
-  ];
-
-  const activeDiscussions = [
-    {
-      title: 'AI Consciousness Evolution Implementation',
-      author: 'Dr. Sarah Chen',
-      category: 'AI & Machine Learning',
-      replies: 47,
-      views: '2.3k',
-      lastActivity: '2 hours ago',
-      href: '/ai-consciousness-evolution-2045'
+      description: 'Join our virtual and in-person community events',
+      icon: <Calendar className="w-8 h-8 text-purple-400" />,
+      features: [
+        'Virtual Conferences',
+        'Local Meetups',
+        'Hackathons',
+        'Networking Events'
+      "
     },
     {
-      title: 'Quantum Neural Networks in Production',
-      author: 'Marcus Rodriguez',
-      category: 'Quantum Computing',
-      replies: 23,
-      views: '1.8k',
-      lastActivity: '5 hours ago',
-      href: '/quantum-neural-network-platform'
-    },
-    {
-      title: 'Space Resource Intelligence Platform',
-      author: 'Dr. Elena Petrova',
-      category: 'Space Technology',
-      replies: 31,
-      views: '1.5k',
-      lastActivity: '1 day ago',
-      href: '/space-resource-intelligence-2045'
-    },
-    {
-      title: 'Zero Trust Security Architecture',
-      author: 'Alex Thompson',
-      category: 'Cybersecurity',
-      replies: 56,
-      views: '3.1k',
-      lastActivity: '3 hours ago',
-      href: '/zero-trust-network-architecture-platform'
+      title: 'Innovation Lab',
+      description: 'Collaborate on cutting-edge projects and research',
+      icon: <Zap className="w-8 h-8 text-yellow-400" />,
+      features: [
+        'Open Source Projects',
+        'Research Collaboration',
+        'Innovation Challenges',
+        'Mentorship Programs'
+      "
     }
   ];
 

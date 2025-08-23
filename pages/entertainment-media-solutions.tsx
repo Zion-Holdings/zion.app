@@ -49,37 +49,48 @@ const EntertainmentMediaSolutions: React.FC = () => {
 
   const solutions = [
     {
-      category: "Content Creation",
-      items: [
-        "AI Script Writing & Storyboarding",
-        "Automated Video Editing",
-        "Intelligent Content Curation",
-        "Real-time Content Generation",
-        "Multi-language Content Adaptation",
-        "Personalized Content Recommendations"
-      ]
+      title: 'AI-Powered Content Creation',
+      description: 'Revolutionary AI tools for generating high-quality entertainment content',
+      icon: <Sparkles className="w-8 h-8 text-purple-400" />,
+      features: [
+        'AI Video Generation & Editing',
+        'Automated Music Composition',
+        'Intelligent Story Development',
+        'Content Personalization Engine'
+      "
     },
     {
-      category: "Production & Post-Production",
-      items: [
-        "AI-Powered Color Grading",
-        "Automated Sound Mixing",
-        "Smart Video Compression",
-        "Intelligent Asset Management",
-        "Real-time Rendering",
-        "Cloud-Based Workflows"
-      ]
+      title: 'Digital Media Platforms',
+      description: 'Next-generation platforms for content distribution and engagement',
+      icon: <Globe className="w-8 h-8 text-blue-400" />,
+      features: [
+        'Streaming Infrastructure',
+        'Interactive Content Delivery',
+        'Multi-Platform Distribution',
+        'Real-time Analytics'
+      "
     },
     {
-      category: "Distribution & Analytics",
-      items: [
-        "Multi-Platform Publishing",
-        "Audience Engagement Analytics",
-        "Content Performance Optimization",
-        "Real-time Streaming Analytics",
-        "Cross-Platform Content Sync",
-        "Predictive Content Success"
-      ]
+      title: 'Gaming & Interactive Media',
+      description: 'Cutting-edge gaming and interactive entertainment solutions',
+      icon: <Gamepad2 className="w-8 h-8 text-green-400" />,
+      features: [
+        'Cloud Gaming Platforms',
+        'VR/AR Experiences',
+        'AI Game Development',
+        'Interactive Storytelling'
+      "
+    },
+    {
+      title: 'Creative Production Tools',
+      description: 'Advanced tools for creative professionals and content creators',
+      icon: <Palette className="w-8 h-8 text-pink-400" />,
+      features: [
+        'AI-Assisted Design',
+        'Collaborative Workflows',
+        'Asset Management',
+        'Quality Assurance'
+      "
     }
   ];
 

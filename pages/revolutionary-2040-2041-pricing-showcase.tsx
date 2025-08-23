@@ -56,7 +56,7 @@ const Revolutionary20402041PricingShowcase: React.FC = () => {
     const features = {
       starter: ['Core functionality', 'Basic support', 'Standard features', 'Community access'],
       professional: ['Advanced features', 'Priority support', 'Custom integrations', 'Analytics dashboard'],
-      enterprise: ['Full feature set', '24/7 dedicated support', 'Custom development', 'White-label options']
+      enterprise: ['Full feature set', '24/7 dedicated support', 'Custom development', 'White-label options'"
     };
     return features[plan as keyof typeof features] || [];
   };
@@ -64,14 +64,12 @@ const Revolutionary20402041PricingShowcase: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
       <SEO 
-        data={{
-          pageTitle: "Revolutionary 2040-2041 Futuristic Services Pricing | Zion Tech Group",
-          pageDescription: "Explore our revolutionary 2040-2041 futuristic micro SAAS, IT, and AI services with comprehensive pricing. From AI consciousness evolution to quantum computing solutions.",
-          pageKeywords: [
-            "2040 services", "2041 services", "futuristic pricing", "AI consciousness", 
-            "quantum computing", "micro SAAS", "IT services", "AI services", "Zion Tech Group"
-          ]
-        }}
+        title="Revolutionary 2040-2041 Futuristic Services Pricing | Zion Tech Group"
+        description="Explore our revolutionary 2040-2041 futuristic micro SAAS, IT, and AI services with comprehensive pricing. From AI consciousness evolution to quantum computing solutions."
+        keywords="
+          "2040 services, 2041 services, futuristic pricing, AI consciousness", 
+          "quantum computing, micro SAAS, IT services, AI services, Zion Tech Group"
+        "
       />
 
       {/* Hero Section */}
@@ -215,7 +213,7 @@ const Revolutionary20402041PricingShowcase: React.FC = () => {
                     </div>
                     <div>
                       <p className="text-gray-400">Target</p>
-                      <p className="text-white font-medium">{service.targetAudience.split(',')[0]}</p>
+                      <p className="text-white font-medium">{service.targetAudience.split(',')[0"</p>
                     </div>
                   </div>
                 </div>

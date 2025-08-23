@@ -73,6 +73,12 @@ const footerSections = [
     website: 'https://ziontechgroup.com'
   };
 
+  const contactInfo = {
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709'
+  };
+
   const footerSections = [
     {
       title: 'Revolutionary Services 2045',
@@ -82,18 +88,7 @@ const footerSections = [
         { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence-2045', icon: <Cpu className="w-4 h-4" /> },
         { name: 'Quantum Cybersecurity 2045', href: '/quantum-cybersecurity-platform-2045', icon: <Shield className="w-4 h-4" /> },
         { name: 'Space Resource Intelligence 2045', href: '/space-resource-intelligence-2045', icon: <Rocket className="w-4 h-4" /> },
-        { name: 'Autonomous Customer Success 2045', href: '/autonomous-customer-success-2045', icon: <Users className="w-4 h-4" /> }
-      ]
-    },
-    {
-      title: 'Real Enterprise Services 2025',
-      links: [
-        { name: 'AI Customer Success Automation', href: '/ai-customer-success-automation-2025' },
-        { name: 'Intelligent Vendor Risk Management', href: '/intelligent-vendor-risk-management-2025' },
-        { name: 'Automated SOC2 Compliance Platform', href: '/automated-soc2-compliance-platform-2025' },
-        { name: 'Intelligent Infrastructure Drift Detection', href: '/intelligent-infrastructure-drift-detection-2025' },
-        { name: 'Advanced Kubernetes RBAC Auditor', href: '/advanced-kubernetes-rbac-auditor-2025' },
-        { name: 'Real Enterprise Services Showcase', href: '/2025-real-services-showcase' }
+        { name: 'Autonomous Customer Success 2045', href: '/autonomous-customer-success-2045', icon: <Heart className="w-4 h-4" /> }
       ]
     },
     {
@@ -114,7 +109,7 @@ const footerSections = [
         { name: 'Quantum AI Cognitive 2045', href: '/quantum-ai-cognitive-2045', icon: <Atom className="w-4 h-4" /> },
         { name: 'Autonomous AI Research 2045', href: '/autonomous-ai-research-2045', icon: <Zap className="w-4 h-4" /> },
         { name: 'Emotional AI Intelligence 2045', href: '/emotional-ai-intelligence-2045', icon: <Heart className="w-4 h-4" /> },
-        { name: 'Quantum AI Metaverse 2045', href: '/quantum-ai-metaverse-2045', icon: <Star className="w-4 h-4" /> },
+        { name: 'Quantum AI Metaverse 2045', href: '/quantum-ai-metaverse-2045', icon: <Globe className="w-4 h-4" /> },
         { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence-2045', icon: <Target className="w-4 h-4" /> }
       ]
     },
@@ -122,20 +117,11 @@ const footerSections = [
       title: 'Company',
       links: [
         { name: 'About Us', href: '/about', icon: <Users className="w-4 h-4" /> },
-        { name: 'Our Mission', href: '/mission', icon: <Target className="w-4 h-4" /> },
+        { name: 'Our Mission', href: '/mission', icon: <Star className="w-4 h-4" /> },
         { name: 'Leadership Team', href: '/team', icon: <Users className="w-4 h-4" /> },
-        { name: 'Careers', href: '/careers', icon: <Zap className="w-4 h-4" /> },
-        { name: 'News & Updates', href: '/news', icon: <Globe className="w-4 h-4" /> },
-        { name: 'Press Kit', href: '/press', icon: <Play className="w-4 h-4" /> }
-      ]
-    },
-    {
-      title: 'Contact Information',
-      links: [
-        { name: 'Phone: +1 302 464 0950', href: 'tel:+1 302 464 0950' },
-        { name: 'Email: kleber@ziontechgroup.com', href: 'mailto:kleber@ziontechgroup.com' },
-        { name: 'Website: ziontechgroup.com', href: 'https://ziontechgroup.com' },
-        { name: 'Address: 364 E Main St STE 1008 Middletown DE 19709', href: '#' }
+        { name: 'Careers', href: '/careers', icon: <Target className="w-4 h-4" /> },
+        { name: 'News & Updates', href: '/news', icon: <Play className="w-4 h-4" /> },
+        { name: 'Press Kit', href: '/press', icon: <Star className="w-4 h-4" /> }
       ]
     }
   ];

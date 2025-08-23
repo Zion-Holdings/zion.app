@@ -288,7 +288,7 @@ const AIAutonomousSalesPlatform: React.FC = () => {
                     "Email automation sequences",
                     "CRM integration",
                     "Standard reporting"
-                  ]
+                  "
                 },
                 {
                   title: "Professional",
@@ -317,7 +317,7 @@ const AIAutonomousSalesPlatform: React.FC = () => {
                     "Advanced analytics",
                     "24/7 dedicated support",
                     "On-premise deployment"
-                  ]
+                  "
                 }
               ].map((plan, index) => (
                 <motion.div

@@ -253,7 +253,7 @@ export default function EnhancedServicesShowcase() {
                         variant="secondary"
                         className="mt-6 w-full"
                       >
-                        View All {category.title.split(' ')[0]} Services
+                        View All {category.title.split(' ')[0" Services
                       </Button>
                     </div>
                   </div>
@@ -409,7 +409,7 @@ export default function EnhancedServicesShowcase() {
                           <ExternalLink className="ml-2 w-4 h-4" />
                         </Button>
                         <Button 
-                          href="/contact" 
+                          href="/contact"
                           variant="secondary"
                           className="flex-1"
                         >
@@ -470,7 +470,7 @@ export default function EnhancedServicesShowcase() {
                             <ExternalLink className="ml-2 w-4 h-4" />
                           </Button>
                           <Button 
-                            href="/contact" 
+                            href="/contact"
                             variant="secondary"
                             size="sm"
                           >
@@ -537,7 +537,7 @@ export default function EnhancedServicesShowcase() {
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 
-                  href="/contact" 
+                  href="/contact"
                   variant="primary"
                   size="lg"
                   className="text-lg px-8 py-4"
@@ -546,7 +546,7 @@ export default function EnhancedServicesShowcase() {
                   <Rocket className="ml-2 w-6 h-6" />
                 </Button>
                 <Button 
-                  href="/pricing" 
+                  href="/pricing"
                   variant="secondary"
                   size="lg"
                   className="text-lg px-8 py-4"
@@ -592,7 +592,7 @@ const Button = ({
     lg: 'px-8 py-4 text-lg'
   };
 
-  const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
+  const classes = `${baseClasses} ${variantClasses[variant" ${sizeClasses[size" ${className}`;
 
   if (href) {
     return (

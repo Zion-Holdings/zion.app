@@ -53,7 +53,7 @@ const Revolutionary2045ServicesShowcase: React.FC = () => {
       link: "/ai-consciousness-evolution-2045",
       price: "$2,999/month",
       category: "ai",
-      features: ["Emotional Intelligence", "Self-Awareness", "Cognitive Evolution", "Ethical Decision Making"],
+      features: ["Emotional Intelligence, Self-Awareness, Cognitive Evolution, Ethical Decision Making"],
       badge: "BREAKTHROUGH",
       rating: 5.0,
       reviews: 128
@@ -66,7 +66,7 @@ const Revolutionary2045ServicesShowcase: React.FC = () => {
       link: "/ai-autonomous-business-process-automation-2045",
       price: "$1,999/month",
       category: "ai",
-      features: ["Autonomous Decision Making", "Continuous Learning", "Process Optimization", "Real-time Analytics"],
+      features: ["Autonomous Decision Making, Continuous Learning, Process Optimization, Real-time Analytics"],
       badge: "NEW",
       rating: 4.9,
       reviews: 89
@@ -79,7 +79,7 @@ const Revolutionary2045ServicesShowcase: React.FC = () => {
       link: "/ai-consciousness-training-platform-2045",
       price: "$3,499/month",
       category: "ai",
-      features: ["Emotional Intelligence", "Ethical Training", "Consciousness Development", "Behavioral Analysis"],
+      features: ["Emotional Intelligence, Ethical Training, Consciousness Development, Behavioral Analysis"],
       badge: "INNOVATIVE",
       rating: 4.8,
       reviews: 67
@@ -94,7 +94,7 @@ const Revolutionary2045ServicesShowcase: React.FC = () => {
       link: "/quantum-neural-ecosystem-2045",
       price: "$4,999/month",
       category: "quantum",
-      features: ["Quantum Processing", "Neural Networks", "Hybrid Computing", "Exponential Performance"],
+      features: ["Quantum Processing, Neural Networks, Hybrid Computing, Exponential Performance"],
       badge: "QUANTUM",
       rating: 5.0,
       reviews: 156
@@ -107,7 +107,7 @@ const Revolutionary2045ServicesShowcase: React.FC = () => {
       link: "/quantum-bio-computing-platform-2045",
       price: "$3,999/month",
       category: "quantum",
-      features: ["Biological Integration", "Quantum Processing", "DNA Computing", "Bio-Security"],
+      features: ["Biological Integration, Quantum Processing, DNA Computing, Bio-Security"],
       badge: "BREAKTHROUGH",
       rating: 4.9,
       reviews: 92
@@ -120,7 +120,7 @@ const Revolutionary2045ServicesShowcase: React.FC = () => {
       link: "/quantum-neural-network-platform-2045",
       price: "$4,499/month",
       category: "quantum",
-      features: ["Quantum Neural Networks", "Hybrid Computing", "Pattern Recognition", "Learning Optimization"],
+      features: ["Quantum Neural Networks, Hybrid Computing, Pattern Recognition, Learning Optimization"],
       badge: "ADVANCED",
       rating: 4.8,
       reviews: 78
@@ -135,7 +135,7 @@ const Revolutionary2045ServicesShowcase: React.FC = () => {
       link: "/space-resource-intelligence-2045",
       price: "$3,999/month",
       category: "space",
-      features: ["Space Mining", "Resource Mapping", "Colonization Planning", "Interplanetary Logistics"],
+      features: ["Space Mining, Resource Mapping, Colonization Planning, Interplanetary Logistics"],
       badge: "FUTURE",
       rating: 4.9,
       reviews: 134
@@ -148,7 +148,7 @@ const Revolutionary2045ServicesShowcase: React.FC = () => {
       link: "/space-mining-automation-platform-2045",
       price: "$2,999/month",
       category: "space",
-      features: ["Resource Discovery", "Extraction Optimization", "Autonomous Operations", "Interplanetary Logistics"],
+      features: ["Resource Discovery, Extraction Optimization, Autonomous Operations, Interplanetary Logistics"],
       badge: "FUTURE",
       rating: 4.7,
       reviews: 56
@@ -161,7 +161,7 @@ const Revolutionary2045ServicesShowcase: React.FC = () => {
       link: "/space-colonization-services-2045",
       price: "$5,999/month",
       category: "space",
-      features: ["Colonization Planning", "Resource Management", "Life Support Systems", "Sustainable Development"],
+      features: ["Colonization Planning, Resource Management, Life Support Systems, Sustainable Development"],
       badge: "REVOLUTIONARY",
       rating: 5.0,
       reviews: 89
@@ -176,7 +176,7 @@ const Revolutionary2045ServicesShowcase: React.FC = () => {
       link: "/metaverse-development-studio-pro-2045",
       price: "$1,999/month",
       category: "metaverse",
-      features: ["3D World Building", "AI Content Generation", "Blockchain Integration", "User Experience Design"],
+      features: ["3D World Building, AI Content Generation, Blockchain Integration, User Experience Design"],
       badge: "IMMERSIVE",
       rating: 4.8,
       reviews: 112
@@ -189,7 +189,7 @@ const Revolutionary2045ServicesShowcase: React.FC = () => {
       link: "/metaverse-digital-reality-platform-2045",
       price: "$1,499/month",
       category: "metaverse",
-      features: ["AI Content Generation", "Blockchain Integration", "Immersive Experiences", "Social Networking"],
+      features: ["AI Content Generation, Blockchain Integration, Immersive Experiences, Social Networking"],
       badge: "IMMERSIVE",
       rating: 4.6,
       reviews: 78
@@ -204,7 +204,7 @@ const Revolutionary2045ServicesShowcase: React.FC = () => {
       link: "/quantum-cybersecurity-platform-2045",
       price: "$2,499/month",
       category: "cybersecurity",
-      features: ["Quantum Resistance", "AI Threat Detection", "Advanced Encryption", "Real-time Monitoring"],
+      features: ["Quantum Resistance, AI Threat Detection, Advanced Encryption, Real-time Monitoring"],
       badge: "SECURE",
       rating: 4.9,
       reviews: 145
@@ -217,7 +217,7 @@ const Revolutionary2045ServicesShowcase: React.FC = () => {
       link: "/quantum-internet-security-gateway-2045",
       price: "$2,499/month",
       category: "cybersecurity",
-      features: ["Quantum Encryption", "Threat Detection", "Network Security", "Real-time Monitoring"],
+      features: ["Quantum Encryption, Threat Detection, Network Security, Real-time Monitoring"],
       badge: "ADVANCED",
       rating: 4.7,
       reviews: 89

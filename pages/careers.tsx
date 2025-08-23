@@ -40,8 +40,70 @@ export default function Careers() {
       department: 'Engineering',
       location: 'Remote / Middletown, DE',
       type: 'Full-time',
-      description: 'Develop modern web applications and contribute to our platform development.',
-      requirements: ['BS in Computer Science', 'React, Node.js experience', 'Cloud platform knowledge', 'API development skills']
+      experience: '2+ years',
+      description: 'Build scalable web applications and microservices for our technology platforms.',
+      requirements: [
+        'Experience with React, Node.js, and TypeScript',
+        'Knowledge of cloud platforms (AWS, Azure, GCP)',
+        'Experience with databases and API design',
+        'Understanding of DevOps and CI/CD practices'
+      ],
+      benefits: ['Competitive salary', 'Remote work', 'Learning budget', 'Flexible hours']
+    },
+    {
+      id: 5,
+      title: 'Enterprise Sales Executive',
+      department: 'sales',
+      location: 'london',
+      type: 'Full-time',
+      experience: '5+ years',
+      description: 'Drive enterprise sales for our AI and quantum computing solutions in the EMEA market.',
+      requirements: [
+        'Proven track record in enterprise software sales',
+        'Experience with AI, ML, or enterprise technology',
+        'Strong network in enterprise IT decision makers',
+        'Excellent communication and presentation skills'
+      ],
+      benefits: ['Competitive commission', 'Base salary', 'Travel opportunities', 'Performance bonuses']
+    },
+    {
+      id: 6,
+      title: 'DevOps Engineer',
+      department: 'operations',
+      location: 'remote',
+      type: 'Full-time',
+      experience: '3+ years',
+      description: 'Manage and optimize our cloud infrastructure and deployment pipelines.',
+      requirements: [
+        'Experience with Kubernetes, Docker, and cloud platforms',
+        'Knowledge of infrastructure as code (Terraform, CloudFormation)',
+        'Experience with monitoring and logging tools',
+        'Understanding of security best practices'
+      ],
+      benefits: ['Competitive salary', 'Remote work', 'Health benefits', 'Professional development'"
+    }
+  ];
+
+  const culture = [
+    {
+      icon: <Brain className="w-12 h-12" />,
+      title: 'Innovation First',
+      description: 'We encourage creative thinking and experimentation. Every team member has the freedom to explore new ideas and push boundaries.'
+    },
+    {
+      icon: <Users2 className="w-12 h-12" />,
+      title: 'Collaborative Environment',
+      description: 'Work with brilliant minds across disciplines. We believe the best solutions come from diverse perspectives and teamwork.'
+    },
+    {
+      icon: <Zap className="w-12 h-12" />,
+      title: 'Fast-Paced Growth',
+      description: 'Join a rapidly growing company where you can make a real impact and accelerate your career development.'
+    },
+    {
+      icon: <Heart className="w-12 h-12" />,
+      title: 'Work-Life Balance',
+      description: 'We value your well-being with flexible schedules, unlimited PTO, and a supportive work environment.'
     }
   ];
 

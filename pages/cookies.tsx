@@ -204,9 +204,42 @@ const Cookies: React.FC = () => {
                 We use different types of cookies for various purposes to enhance your experience
               </p>
             </motion.div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {cookieTypes.map((type, index) => (
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                {
+                  icon: <Shield className="w-12 h-12 text-cyan-400" />,
+                  title: "Essential Cookies",
+                  description: "Required for basic website functionality and security. These cannot be disabled.",
+                  examples: ["Authentication, Security, Session management"],
+                  color: "text-cyan-400",
+                  bgColor: "bg-cyan-400/10"
+                },
+                {
+                  icon: <Settings className="w-12 h-12 text-blue-400" />,
+                  title: "Functional Cookies",
+                  description: "Remember your preferences and settings to enhance your experience.",
+                  examples: ["Language settings, Theme preferences, Form data"],
+                  color: "text-blue-400",
+                  bgColor: "bg-blue-400/10"
+                },
+                {
+                  icon: <Database className="w-12 h-12 text-purple-400" />,
+                  title: "Performance Cookies",
+                  description: "Help us understand how visitors interact with our website.",
+                  examples: ["Page load times, Error tracking, User behavior"],
+                  color: "text-purple-400",
+                  bgColor: "bg-purple-400/10"
+                },
+                {
+                  icon: <Users className="w-12 h-12 text-green-400" />,
+                  title: "Analytics Cookies",
+                  description: "Provide insights into website usage and performance metrics.",
+                  examples: ["Traffic analysis, Conversion tracking, A/B testing"],
+                  color: "text-green-400",
+                  bgColor: "bg-green-400/10"
+                }
+              ].map((category, index) => (
                 <motion.div
                   key={type.name}
                   initial={{ opacity: 0, y: 30 }}

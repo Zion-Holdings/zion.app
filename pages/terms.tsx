@@ -177,32 +177,31 @@ const Terms: React.FC = () => {
   ];
 
   return (
-    <Layout
-      title="Terms of Service - Zion Tech Group"
-      description="Read Zion Tech Group's terms of service and understand the conditions for using our AI consciousness and quantum computing services."
-      keywords="terms of service, terms and conditions, service agreement, Zion Tech Group, AI services, quantum computing"
-    >
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
-        {/* Hero Section */}
-        <section className="relative overflow-hidden py-20 lg:py-32">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 via-blue-900/20 to-cyan-900/20" />
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center"
-            >
-              <div className="flex items-center justify-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center mr-4">
-                  <FileText className="w-8 h-8 text-white" />
-                </div>
-                <h1 className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                  Terms of Service
-                </h1>
-              </div>
-              <p className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
-                Understanding our service agreement
+    <>
+      <SEO title="Terms of Service | Zion Tech Group" description="Terms of Service for Zion Tech Group - Learn about our service terms and conditions." />
+
+      {/* Hero Section */}
+      <section className="relative py-24 bg-gradient-to-br from-cursor-darker via-cursor-dark to-cursor-darker overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,122,204,0.08),transparent_50%)]" />
+        
+        <div className="relative z-10 container-cursor text-center">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 gradient-text">
+            Terms of Service
+          </h1>
+          <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 max-w-5xl mx-auto leading-relaxed">
+            Our terms and conditions for using Zion Tech Group services
+          </p>
+        </div>
+      </section>
+
+      {/* Terms Content */}
+      <section className="py-24 bg-gradient-to-b from-cursor-dark to-cursor-darker">
+        <div className="container-cursor">
+          <div className="max-w-4xl mx-auto space-y-12">
+            <Card className="hover:border-cursor-blue/30">
+              <h2 className="text-3xl font-bold mb-6 text-cursor-blue">1. Acceptance of Terms</h2>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                By accessing and using Zion Tech Group services, you accept and agree to be bound by the terms and provision of this agreement.
               </p>
               <p className="text-lg text-gray-400 max-w-3xl mx-auto">
                 These Terms of Service govern your use of Zion Tech Group's AI consciousness, 

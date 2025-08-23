@@ -1,97 +1,5 @@
-<<<<<<< HEAD
-import React, { useState, useEffect } from 'react';
-import SEO from '../components/SEO';
-import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Search, Grid, List, Star, TrendingUp, Users, Clock, CheckCircle,
-  Brain, Atom, Shield, Target, Rocket, ArrowRight, Check, Palette, 
-  Heart, Truck, GraduationCap, Building, Globe, Zap, Lock, Eye, Cloud, ShoppingCart
-} from 'lucide-react';
-
-// Import our latest innovative services
-import { advancedAIAutomationServices } from '../data/advanced-ai-automation-services';
-import { nextGenITInfrastructureServices } from '../data/next-gen-it-infrastructure-services';
-import { innovativeMicroSaasSolutions2025 } from '../data/innovative-micro-saas-solutions-2025';
-import { specializedIndustrySolutions } from '../data/specialized-industry-solutions';
-
-const InnovativeServicesShowcase2025: React.FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState('all');
-  const [searchTerm, setSearchTerm] = useState('');
-  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
-
-  const allServices = [
-    ...advancedAIAutomationServices,
-    ...nextGenITInfrastructureServices,
-    ...innovativeMicroSaasSolutions2025,
-    ...specializedIndustrySolutions
-  ];
-
-  const categories = [
-    { id: 'all', name: 'All Services', icon: <Grid className="w-5 h-5" />, count: allServices.length },
-    { id: 'AI & Automation', name: 'AI & Automation', icon: <Brain className="w-5 h-5" />, count: allServices.filter(s => s.category === 'AI & Automation').length },
-    { id: 'Infrastructure & Edge', name: 'Infrastructure', icon: <Globe className="w-5 h-5" />, count: allServices.filter(s => s.category === 'Infrastructure & Edge').length },
-    { id: 'Security & Compliance', name: 'Security', icon: <Shield className="w-5 h-5" />, count: allServices.filter(s => s.category === 'Security & Compliance').length },
-    { id: 'Monitoring & Observability', name: 'Monitoring', icon: <Eye className="w-5 h-5" />, count: allServices.filter(s => s.category === 'Monitoring & Observability').length },
-    { id: 'Data & Analytics', name: 'Data & Analytics', icon: <TrendingUp className="w-5 h-5" />, count: allServices.filter(s => s.category === 'Data & Analytics').length },
-    { id: 'Cloud & Governance', name: 'Cloud & Governance', icon: <Cloud className="w-5 h-5" />, count: allServices.filter(s => s.category === 'Cloud & Governance').length },
-    { id: 'Virtual Events & Communication', name: 'Virtual Events', icon: <Users className="w-5 h-5" />, count: allServices.filter(s => s.category === 'Virtual Events & Communication').length },
-    { id: 'Fashion & Retail', name: 'Fashion & Retail', icon: <Palette className="w-5 h-5" />, count: allServices.filter(s => s.category === 'Fashion & Retail').length },
-    { id: 'Smart Home & Energy', name: 'Smart Home', icon: <Zap className="w-5 h-5" />, count: allServices.filter(s => s.category === 'Smart Home & Energy').length },
-    { id: 'Legal & Compliance', name: 'Legal & Compliance', icon: <Lock className="w-5 h-5" />, count: allServices.filter(s => s.category === 'Legal & Compliance').length },
-    { id: 'Training & Education', name: 'Training & Education', icon: <GraduationCap className="w-5 h-5" />, count: allServices.filter(s => s.category === 'Training & Education').length },
-    { id: 'Healthcare & Medical', name: 'Healthcare', icon: <Heart className="w-5 h-5" />, count: allServices.filter(s => s.category === 'Healthcare & Medical').length },
-    { id: 'Financial Services', name: 'Financial Services', icon: <Target className="w-5 h-5" />, count: allServices.filter(s => s.category === 'Financial Services').length },
-    { id: 'Manufacturing & Industrial', name: 'Manufacturing', icon: <Building className="w-5 h-5" />, count: allServices.filter(s => s.category === 'Manufacturing & Industrial').length },
-    { id: 'Retail & E-commerce', name: 'Retail & E-commerce', icon: <ShoppingCart className="w-5 h-5" />, count: allServices.filter(s => s.category === 'Retail & E-commerce').length },
-    { id: 'Logistics & Supply Chain', name: 'Logistics', icon: <Truck className="w-5 h-5" />, count: allServices.filter(s => s.category === 'Logistics & Supply Chain').length }
-  ];
-
-  const filteredServices = allServices.filter(service => {
-    const matchesCategory = selectedCategory === 'all' || service.category === selectedCategory;
-    const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         service.tagline.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesCategory && matchesSearch;
-  });
-
-  const getServiceCategory = (service: any) => {
-    if (service.category) return service.category;
-    if (service.type) return service.type;
-    return 'Other';
-  };
-
-  const getServicePricing = (service: any) => {
-    if (service.pricing?.starter) return service.pricing.starter;
-    if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
-    if (service.price?.monthly) return `$${service.price.monthly}/month`;
-    return 'Contact for pricing';
-  };
-
-  const getServiceFeatures = (service: any) => {
-    if (service.features) return service.features;
-    if (service.keyFeatures) return service.keyFeatures;
-    return [];
-  };
-
-  const getServiceDescription = (service: any) => {
-    if (service.description) return service.description;
-    if (service.tagline) return service.tagline;
-    return 'No description available';
-  };
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      <SEO 
-        title="2025 Innovative Services Showcase | Zion Tech Group"
-        description="Discover our cutting-edge 2025 innovative services including AI automation, next-gen infrastructure, specialized industry solutions, and revolutionary micro SAAS platforms."
-        keywords={[
-          'innovative services 2025',
-          'AI automation',
-          'next-gen infrastructure',
-          'specialized solutions',
-          'micro SAAS',
-          'Zion Tech Group'
-        ]}
+        description="Discover our cutting-edge 2025 innovative services including AI automation, IT infrastructure, micro SAAS solutions, and emerging technology services."
+        keywords="2025 innovative services, AI automation, IT infrastructure, micro SAAS, emerging technology, Zion Tech Group"
       />
 
       {/* Hero Section */}
@@ -227,7 +135,6 @@ const InnovativeServicesShowcase2025: React.FC = () => {
                   key={category.id}
                   onClick={() => setSelectedCategory(category.id)}
 =======
->>>>>>> 0d3d59dc48bc65c272e3c7f2106b07881fc97407
 import React from 'react';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
@@ -663,40 +570,6 @@ const InnovativeServicesShowcase2025 = () => {
   );
 };
 
-<<<<<<< HEAD
-      {/* Contact Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="bg-gradient-to-r from-purple-600/20 to-blue-600/20 rounded-3xl p-8 border border-white/20 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Ready to Transform Your Business?
-          </h2>
-          <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-            Our 2025 innovative services are designed to give you a competitive edge. 
-            Contact us today to discuss how we can help implement these cutting-edge solutions.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a
-              href={`tel:${contact.mobile}`}
-              className="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 flex items-center gap-2"
-            >
-              <span>📞</span>
-              {contact.mobile}
-            </a>
-            <a
-              href={`mailto:${contact.email}`}
-              className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 flex items-center gap-2"
-            >
-              <span>✉️</span>
-              {contact.email}
-            </a>
-          </div>
-          <div className="mt-6 text-gray-400 text-sm">
-            <p>{contact.address}</p>
-            <p className="mt-2">
-              Visit our website: <a href={contact.website} className="text-blue-400 hover:underline">{contact.website}</a>
-            </p>
-          </div>
-=======
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                     selectedCategory === category.id
                       ? 'bg-cyan-500 text-white shadow-lg shadow-cyan-500/25'
@@ -919,4 +792,3 @@ const InnovativeServicesShowcase2025 = () => {
 export default InnovativeServicesShowcase2025;
 =======
 export default InnovativeServicesShowcase2025;
->>>>>>> 0d3d59dc48bc65c272e3c7f2106b07881fc97407

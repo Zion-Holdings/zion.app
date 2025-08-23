@@ -4,6 +4,59 @@ import { motion } from 'framer-motion';
 import { Bot, Cpu, Zap, Target, Users, Globe, Brain, Rocket, Shield } from 'lucide-react';
 
 const AIAutonomousRoboticsPlatform: React.FC = () => {
+  const platformComponents = [
+    {
+      icon: <Bot className="w-6 h-6" />,
+      title: "Autonomous Robots",
+      description: "Self-navigating robots with advanced AI decision-making capabilities"
+    },
+    {
+      icon: <Cpu className="w-6 h-6" />,
+      title: "AI Control System",
+      description: "Centralized AI brain managing all robotic operations and coordination"
+    },
+    {
+      icon: <Eye className="w-6 h-6" />,
+      title: "Computer Vision",
+      description: "Advanced visual processing for object recognition and navigation"
+    },
+    {
+      icon: <Zap className="w-6 h-6" />,
+      title: "Power Management",
+      description: "Intelligent energy optimization and autonomous charging systems"
+    }
+  ];
+
+  const capabilities = [
+    "Autonomous navigation and pathfinding",
+    "Real-time obstacle detection and avoidance",
+    "Multi-robot coordination and swarm intelligence",
+    "Adaptive learning and behavior modification",
+    "Human-robot collaboration and safety protocols",
+    "Remote monitoring and control systems",
+    "Predictive maintenance and self-diagnostics",
+    "Scalable deployment across multiple environments"
+  ];
+
+  const applications = [
+    {
+      industry: "Manufacturing",
+      useCases: ["Assembly Lines, Quality Control, Material Handling, Warehouse Automation""
+    },
+    {
+      industry: "Healthcare",
+      useCases: ["Surgical Assistance, Patient Care, Medical Supply Delivery, Sanitization""
+    },
+    {
+      industry: "Agriculture",
+      useCases: ["Crop Monitoring, Harvesting, Soil Analysis, Pest Control""
+    },
+    {
+      industry: "Logistics",
+      useCases: ["Package Sorting, Inventory Management, Last-Mile Delivery, Storage Optimization""
+    }
+  ];
+
   return (
     <Layout>
       <div className="min-h-screen bg-gradient-to-br from-black via-orange-900/20 to-red-900/20">

@@ -102,12 +102,14 @@ const PressPage: React.FC = () => {
     }
   ];
 
-  const companyStats = [
-    { number: "3000+", label: "Revolutionary Services", icon: <Star className="w-6 h-6" /> },
-    { number: "99.99%", label: "Uptime Guarantee", icon: <TrendingUp className="w-6 h-6" /> },
-    { number: "250+", label: "Countries Served", icon: <Globe className="w-6 h-6" /> },
-    { number: "24/7", label: "AI Support Available", icon: <Brain className="w-6 h-6" /> }
-  ];
+  const companyInfo = {
+    name: "Zion Tech Group",
+    founded: "2010",
+    headquarters: "Delaware, United States",
+    employees: "50+",
+    industries: ["Artificial Intelligence, Quantum Computing, Space Technology, Cybersecurity"],
+    description: "Zion Tech Group is a revolutionary technology company pioneering the future with AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide."
+  };
 
   const leadershipTeam = [
     {
