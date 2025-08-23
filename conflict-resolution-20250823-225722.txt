@@ -269,3 +269,10 @@
 2025-08-23 22:58:04 - Resolving conflicts in src/App.tsx for branch 85f672-codex/implement-wishlist-functionality
 2025-08-23 22:58:04 - Resolving conflicts in src/main.tsx for branch 85f672-codex/implement-wishlist-functionality
 2025-08-23 22:58:04 - Resolving conflicts in src/pages/Wishlist.tsx for branch 85f672-codex/implement-wishlist-functionality
+2025-08-23 22:58:05 - Merge conflicts detected in 87zh7m-codex/fix-netlify-build-failures-due-to-typescript-errors
+2025-08-23 22:58:05 - Resolving conflicts in src/components/ChatWidget.tsx for branch 87zh7m-codex/fix-netlify-build-failures-due-to-typescript-errors
+2025-08-23 22:58:05 - Resolving conflicts in src/pages/OrderConfirmation.tsx for branch 87zh7m-codex/fix-netlify-build-failures-due-to-typescript-errors
+2025-08-23 22:58:05 - Resolving conflicts in src/pages/WhitepaperViewPage.tsx for branch 87zh7m-codex/fix-netlify-build-failures-due-to-typescript-errors
+2025-08-23 22:58:05 - Resolving conflicts in src/types/react-router-dom.d.ts for branch 87zh7m-codex/fix-netlify-build-failures-due-to-typescript-errors
+2025-08-23 22:58:05 - Resolving conflicts in src/types/socket.io.d.ts for branch 87zh7m-codex/fix-netlify-build-failures-due-to-typescript-errors
+2025-08-23 22:58:06 - Resolving conflicts in tsconfig.json for branch 87zh7m-codex/fix-netlify-build-failures-due-to-typescript-errors
