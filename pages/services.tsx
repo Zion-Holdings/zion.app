@@ -65,6 +65,14 @@ const getServicePricing = (service: any) => {
   if (service.pricing?.starter) return service.pricing.starter;
   if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
   if (service.price?.monthly) return `$${service.price.monthly}/month`;
+  if (service.pricing && typeof service.pricing === 'object') {
+    // Handle complex pricing objects
+    if (service.pricing.starter) return service.pricing.starter;
+    if (service.pricing.monthly) return `$${service.pricing.monthly}/month`;
+    if (service.pricing.yearly) return `$${service.pricing.yearly}/year`;
+    // If it's a complex object, return a default message
+    return 'Contact for pricing';
+  }
   return 'Contact for pricing';
 };
 
