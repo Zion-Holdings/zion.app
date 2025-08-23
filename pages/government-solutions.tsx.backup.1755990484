@@ -1,72 +1,102 @@
 import React from 'react';
+<<<<<<< HEAD
+import Head from 'next/head';
+import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
+
+export default function GovernmentSolutionsLanding() {
+	return (
+		<UltraFuturisticBackground variant="government" intensity="high">
+			<Head>
+				<title>Government Solutions | Zion Tech Group</title>
+				<meta name="description" content="Secure, compliant, and innovative technology solutions designed specifically for government agencies and public sector organizations." />
+				<link rel="canonical" href="https://ziontechgroup.com/government-solutions" />
+			</Head>
+			<div className="container mx-auto px-4 py-24 space-y-6 text-white">
+				<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">Government Solutions</h1>
+				<p className="text-gray-300 max-w-3xl">Secure, compliant, and innovative technology solutions designed specifically for government agencies and public sector organizations. Contact: +1 302 464 0950 • kleber@ziontechgroup.com.</p>
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-blue-500/50" href="/cybersecurity">Cybersecurity</a>
+					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-blue-500/50" href="/zero-trust-security">Zero Trust Security</a>
+					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-blue-500/50" href="/soc2-compliance-automation">SOC2 Compliance</a>
+					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-blue-500/50" href="/privacy-compliance-automation">Privacy Compliance</a>
+					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-blue-500/50" href="/vulnerability-assessment-penetration-testing">Security Testing</a>
+					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-blue-500/50" href="/it-services">IT Infrastructure</a>
+					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-blue-500/50" href="/cloud-platform">Cloud Platform</a>
+					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-blue-500/50" href="/data-analytics">Data Analytics</a>
+					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-blue-500/50" href="/ai-services">AI Services</a>
+				</div>
+			</div>
+		</UltraFuturisticBackground>
+	);
+=======
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { Building, Users, Shield, Globe, Zap, Database, Rocket, Cpu } from 'lucide-react';
+import { Shield, Building, Globe, Lock, Users, Database, Rocket, Cpu } from 'lucide-react';
 
-export default function EnterpriseSolutions() {
+export default function GovernmentSolutions() {
   const features = [
     {
-      icon: Building,
-      title: "Enterprise Architecture",
-      description: "Scalable, secure architecture designed for large organizations"
+      icon: Shield,
+      title: "Security First",
+      description: "FedRAMP, SOC 2, and FISMA compliant security solutions"
     },
     {
-      icon: Shield,
-      title: "Enterprise Security",
-      description: "Comprehensive security solutions with compliance frameworks"
+      icon: Building,
+      title: "Government Ready",
+      description: "Built specifically for government requirements and compliance"
     },
     {
       icon: Globe,
-      title: "Global Deployment",
-      description: "Multi-region, multi-cloud solutions for global enterprises"
+      title: "Multi-Agency",
+      description: "Solutions that work across different government agencies"
     },
     {
-      icon: Zap,
-      title: "High Performance",
-      description: "Optimized performance for mission-critical applications"
-    },
-    {
-      icon: Database,
-      title: "Data Management",
-      description: "Enterprise-grade data storage, processing, and analytics"
+      icon: Lock,
+      title: "Data Protection",
+      description: "Advanced encryption and data protection for sensitive information"
     },
     {
       icon: Users,
-      title: "User Management",
-      description: "Advanced identity and access management for large teams"
+      title: "Citizen Services",
+      description: "Improve citizen experience with modern technology"
+    },
+    {
+      icon: Database,
+      title: "Compliance Ready",
+      description: "Meet all government compliance and regulatory requirements"
     }
   ];
 
   const solutions = [
     {
-      title: "Enterprise AI Platform",
-      href: "/enterprise-ai-platform",
-      description: "Scalable AI solutions for enterprise workloads"
+      title: "Government AI Platform",
+      href: "/government-ai-platform",
+      description: "AI solutions designed for government operations and citizen services"
     },
     {
-      title: "Enterprise Security Suite",
-      href: "/enterprise-security-suite",
-      description: "Comprehensive security for enterprise environments"
+      title: "Cybersecurity Suite",
+      href: "/government-cybersecurity",
+      description: "Comprehensive security solutions for government networks"
     },
     {
-      title: "Enterprise Cloud Migration",
-      href: "/enterprise-cloud-migration",
-      description: "Large-scale cloud migration and transformation"
+      title: "Data Analytics",
+      href: "/government-data-analytics",
+      description: "Transform government data into actionable insights"
     },
     {
-      title: "Enterprise Data Platform",
-      href: "/enterprise-data-platform",
-      description: "Centralized data management and analytics"
+      title: "Cloud Infrastructure",
+      href: "/government-cloud",
+      description: "Secure cloud solutions for government workloads"
     },
     {
-      title: "Enterprise Automation",
-      href: "/enterprise-automation",
-      description: "Process automation for enterprise operations"
+      title: "Digital Transformation",
+      href: "/government-digital-transformation",
+      description: "Modernize government operations and services"
     },
     {
-      title: "Enterprise Integration",
-      href: "/enterprise-integration",
-      description: "Connect legacy and modern systems seamlessly"
+      title: "Compliance Automation",
+      href: "/government-compliance",
+      description: "Automate compliance monitoring and reporting"
     }
   ];
 
@@ -83,11 +113,11 @@ export default function EnterpriseSolutions() {
               className="text-center"
             >
               <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
-                Enterprise Solutions
+                Government Solutions
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Enterprise-grade solutions designed for scale, security, and performance. 
-                Transform your organization with cutting-edge technology.
+                Secure, compliant technology solutions designed specifically for government agencies. 
+                Transform operations while maintaining the highest security standards.
               </p>
             </motion.div>
           </div>
@@ -130,9 +160,9 @@ export default function EnterpriseSolutions() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-center mb-12"
             >
-              <h2 className="text-4xl font-bold text-white mb-4">Enterprise Solutions</h2>
+              <h2 className="text-4xl font-bold text-white mb-4">Government Solutions</h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive solutions designed for enterprise-scale challenges
+                Comprehensive solutions designed for government success
               </p>
             </motion.div>
 
@@ -169,10 +199,10 @@ export default function EnterpriseSolutions() {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <h2 className="text-4xl font-bold text-white mb-6">
-                Ready to Transform Your Enterprise?
+                Ready to Transform Government?
               </h2>
               <p className="text-xl text-gray-300 mb-8">
-                Let our enterprise experts help you scale and modernize your organization
+                Let our government experts help you modernize your operations
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
@@ -194,4 +224,5 @@ export default function EnterpriseSolutions() {
       </div>
     </Layout>
   );
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-c68f
 }
