@@ -103,6 +103,23 @@ const footerSections = [
       { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics' },
       { name: 'AI Customer Journey Analytics', href: '/ai-customer-journey-analytics' }
     ]
+  },
+  {
+    title: 'Industry Solutions',
+    description: 'Specialized solutions for key industries',
+    icon: <Target className="w-5 h-5 text-orange-400" />,
+    links: [
+      { name: 'Healthcare AI Solutions', href: '/healthcare-ai-solutions' },
+      { name: 'Financial Technology Solutions', href: '/financial-solutions' },
+      { name: 'Government Technology Solutions', href: '/government-technology-solutions' },
+      { name: 'Retail Technology Solutions', href: '/retail-technology-solutions' },
+      { name: 'Manufacturing AI Solutions', href: '/manufacturing-ai-solutions' },
+      { name: 'Education Technology Solutions', href: '/education-technology-solutions' },
+      { name: 'Energy & Utilities Solutions', href: '/energy-utilities-solutions' },
+      { name: 'Entertainment & Media Solutions', href: '/entertainment-media-solutions' },
+      { name: 'Real Estate Technology Solutions', href: '/real-estate-technology-solutions' },
+      { name: 'Biotech AI Research Platform', href: '/biotech-ai-research-platform' }
+    ]
   }
 ];
 

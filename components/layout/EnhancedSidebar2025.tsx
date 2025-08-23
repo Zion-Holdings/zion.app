@@ -8,7 +8,7 @@ import {
   Zap,
   TrendingUp, Award, CheckCircle, Clock,
   Search, X as CloseIcon,
-  Target, BookOpen, Calendar, Video, FileText
+  Target, BookOpen, Calendar, Video, FileText, Building
 } from 'lucide-react';
 
 const contactInfo = {
@@ -97,68 +97,58 @@ const sidebarSections = [
       { name: 'Financial Analytics', href: '/automated-financial-analytics-platform' },
       { name: 'Project Management', href: '/intelligent-project-management-suite' },
       { name: 'Business Intelligence', href: '/ai-business-intelligence-suite' },
-      { name: 'Marketing Automation', href: '/ai-autonomous-marketing-platform' },
-      { name: 'Customer Service AI', href: '/ai-customer-service' },
-      { name: 'HR & Recruitment', href: '/ai-hr-recruitment' },
-      { name: 'Legal Contract Analysis', href: '/ai-legal-contract-analyzer' }
+      { name: 'Marketing Automation', href: '/ai-autonomous-marketing-platform' }
     ]
   },
   {
-    title: 'Solutions',
+    title: 'Industry Solutions',
     icon: <Target className="w-5 h-5" />,
     color: 'text-orange-400',
     items: [
-      { name: 'Healthcare & Biotech', href: '/biotech-ai' },
-      { name: 'Financial Services', href: '/billing-analytics' },
-      { name: 'Manufacturing AI', href: '/autonomous-manufacturing' },
-      { name: 'Retail Technology', href: '/retail-technology-solutions' },
-      { name: 'Education Technology', href: '/training' },
-      { name: 'Government Solutions', href: '/enterprise-solutions-showcase' },
-      { name: 'Energy & Utilities', href: '/quantum-energy' },
-      { name: 'Transportation & Logistics', href: '/quantum-logistics' },
-      { name: 'Real Estate Technology', href: '/real-estate-technology-solutions' },
+      { name: 'Healthcare Solutions', href: '/healthcare-solutions', badge: 'New' },
+      { name: 'Financial Solutions', href: '/financial-solutions', badge: 'New' },
+      { name: 'Government Solutions', href: '/government-technology-solutions', badge: 'New' },
+      { name: 'Retail Solutions', href: '/retail-technology-solutions', badge: 'New' },
+      { name: 'Manufacturing AI', href: '/manufacturing-ai-solutions', badge: 'New' },
+      { name: 'Education Technology', href: '/education-technology-solutions' },
+      { name: 'Energy & Utilities', href: '/energy-utilities-solutions' },
       { name: 'Entertainment & Media', href: '/entertainment-media-solutions' },
-      { name: 'Space Technology', href: '/space-technology' },
-      { name: 'Biotech & Healthcare', href: '/biotech-ai' }
+      { name: 'Real Estate Technology', href: '/real-estate-technology-solutions' },
+      { name: 'Biotech AI Research', href: '/biotech-ai-research-platform' }
     ]
   },
   {
-    title: 'Resources',
+    title: 'Resources & Support',
     icon: <BookOpen className="w-5 h-5" />,
-    color: 'text-cyan-400',
+    color: 'text-purple-400',
     items: [
-      { name: 'Documentation', href: '/docs' },
-      { name: 'API Reference', href: '/api-documentation' },
-      { name: 'Case Studies', href: '/case-studies' },
-      { name: 'Blog & News', href: '/blog' },
-      { name: 'Support Center', href: '/support' },
-      { name: 'Training & Certification', href: '/training' },
-      { name: 'Community Forum', href: '/community' },
-      { name: 'Developer Resources', href: '/developer-resources' },
-      { name: 'Research & Development', href: '/research-development' },
-      { name: 'White Papers', href: '/white-papers' },
+      { name: 'Documentation', href: '/docs', badge: 'New' },
+      { name: 'Blog & Insights', href: '/blog', badge: 'New' },
+      { name: 'Case Studies', href: '/case-studies', badge: 'New' },
+      { name: 'Support Center', href: '/support', badge: 'New' },
+      { name: 'Training Resources', href: '/training' },
       { name: 'Performance Reports', href: '/reports' },
-      { name: 'Market Analysis', href: '/market-pricing' },
-      { name: 'Services Advertising', href: '/services-advertising' }
+      { name: 'API Documentation', href: '/api-docs' },
+      { name: 'Developer Resources', href: '/developer-resources' },
+      { name: 'Community Forum', href: '/community' },
+      { name: 'Events & Webinars', href: '/events' }
     ]
   },
   {
-    title: 'Company',
-    icon: <Users className="w-5 h-5" />,
-    color: 'text-pink-400',
+    title: 'Company & Contact',
+    icon: <Building className="w-5 h-5" />,
+    color: 'text-gray-400',
     items: [
-      { name: 'About Us', href: '/about' },
-      { name: 'Leadership Team', href: '/leadership' },
-      { name: 'Careers', href: '/careers' },
-      { name: 'News & Press', href: '/news' },
-      { name: 'Partners', href: '/partners' },
-      { name: 'Investors', href: '/investors' },
-      { name: 'Contact Us', href: '/contact' },
-      { name: 'Locations', href: '/locations' },
-      { name: 'Sustainability', href: '/sustainability' },
-      { name: 'Diversity & Inclusion', href: '/diversity-inclusion' },
+      { name: 'About Us', href: '/about', badge: 'New' },
+      { name: 'Contact Information', href: '/contact', badge: 'New' },
+      { name: 'Partnerships', href: '/partners', badge: 'New' },
+      { name: 'Investment Info', href: '/investors', badge: 'New' },
+      { name: 'Career Opportunities', href: '/careers', badge: 'New' },
+      { name: 'News & Updates', href: '/news' },
+      { name: 'Company Status', href: '/status' },
+      { name: 'Privacy Policy', href: '/privacy' },
       { name: 'Terms of Service', href: '/terms' },
-      { name: 'Privacy Policy', href: '/privacy' }
+      { name: 'Cookie Policy', href: '/cookies' }
     ]
   }
 ];

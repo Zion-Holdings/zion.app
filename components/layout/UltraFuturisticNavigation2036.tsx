@@ -119,6 +119,18 @@ const navigationItems: NavigationItem[] = [
         href: '/market-pricing', 
         description: 'Market price references',
         icon: <BarChart3 className="w-4 h-4" />
+      },
+      { 
+        name: 'Revolutionary 2026', 
+        href: '/revolutionary-2026-services', 
+        description: 'Latest innovations showcase',
+        icon: <SparklesIcon className="w-4 h-4" />
+      },
+      { 
+        name: 'Ultimate 2035', 
+        href: '/ultimate-2035-futuristic-services-showcase', 
+        description: 'Future technology preview',
+        icon: <ZapIcon className="w-4 h-4" />
       }
     ]
   },
@@ -158,6 +170,12 @@ const navigationItems: NavigationItem[] = [
         href: '/careers', 
         description: 'Join our team',
         icon: <Users className="w-4 h-4" />
+      },
+      { 
+        name: 'News & Events', 
+        href: '/news', 
+        description: 'Latest company updates',
+        icon: <BookOpen className="w-4 h-4" />
       }
     ]
   },
@@ -197,6 +215,12 @@ const navigationItems: NavigationItem[] = [
         href: '/training', 
         description: 'Learning resources',
         icon: <BookOpenCheck className="w-4 h-4" />
+      },
+      { 
+        name: 'Reports', 
+        href: '/reports', 
+        description: 'Performance reports',
+        icon: <BarChart3 className="w-4 h-4" />
       }
     ]
   },
@@ -236,6 +260,58 @@ const navigationItems: NavigationItem[] = [
         href: '/manufacturing-ai-solutions', 
         description: 'Manufacturing AI',
         icon: <Settings className="w-4 h-4" />
+      },
+      { 
+        name: 'Education', 
+        href: '/education-technology-solutions', 
+        description: 'Education technology',
+        icon: <BookOpen className="w-4 h-4" />
+      },
+      { 
+        name: 'Energy & Utilities', 
+        href: '/energy-utilities-solutions', 
+        description: 'Energy solutions',
+        icon: <Zap className="w-4 h-4" />
+      },
+      { 
+        name: 'Entertainment & Media', 
+        href: '/entertainment-media-solutions', 
+        description: 'Media solutions',
+        icon: <Film className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Get Started',
+    href: '/get-started',
+    icon: <ArrowRight className="w-5 h-5" />,
+    description: 'Start your journey',
+    category: 'get-started',
+    children: [
+      { 
+        name: 'Get Started Guide', 
+        href: '/get-started', 
+        description: 'Begin your journey',
+        icon: <ArrowRight className="w-4 h-4" />,
+        featured: true
+      },
+      { 
+        name: 'Request Quote', 
+        href: '/quote', 
+        description: 'Get a custom quote',
+        icon: <DollarSign className="w-4 h-4" />
+      },
+      { 
+        name: 'Schedule Demo', 
+        href: '/demo', 
+        description: 'See our solutions',
+        icon: <Video className="w-4 h-4" />
+      },
+      { 
+        name: 'Contact Sales', 
+        href: '/contact', 
+        description: 'Talk to our team',
+        icon: <MessageCircle className="w-4 h-4" />
       }
     ]
   }
