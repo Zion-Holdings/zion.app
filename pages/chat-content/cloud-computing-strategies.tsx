@@ -1,5 +1,3 @@
-import React from 'react';
-
-export default function CloudComputingStrategiesPage() {
-  return <div>Cloud Computing Strategies</div>;
+export default function Page(){
+  return <div style={{padding:20}}>Content</div>
 }

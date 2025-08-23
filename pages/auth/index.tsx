@@ -1,5 +1,3 @@
-import React from 'react';
-
-export default function AuthIndexPage() {
-  return <div>Auth</div>;
+export default function Auth(){
+  return <div style={{padding:20}}>Auth</div>
 }

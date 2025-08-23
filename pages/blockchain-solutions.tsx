@@ -1,5 +1,3 @@
-import React from 'react';
-
-export default function BlockchainSolutionsPage() {
-  return <div>Blockchain Solutions</div>;
+export default function BlockchainSolutions(){
+  return <div style={{padding:20}}>Blockchain Solutions</div>
 }

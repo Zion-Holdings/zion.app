@@ -1,5 +1,3 @@
-import React from 'react';
-
-export default function DataAnalyticsImplementationPage() {
-  return <div>Data Analytics Implementation</div>;
+export default function Page(){
+  return <div style={{padding:20}}>Content</div>
 }

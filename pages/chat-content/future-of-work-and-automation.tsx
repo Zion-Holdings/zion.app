@@ -1,5 +1,3 @@
-import React from 'react';
-
-export default function FutureOfWorkAndAutomationPage() {
-  return <div>Future of Work and Automation</div>;
+export default function Page(){
+  return <div style={{padding:20}}>Content</div>
 }

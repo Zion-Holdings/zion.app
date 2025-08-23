@@ -1,5 +1,3 @@
-import React from 'react';
-
-export default function DigitalTransformationInsightsPage() {
-  return <div>Digital Transformation Insights</div>;
+export default function Page(){
+  return <div style={{padding:20}}>Content</div>
 }

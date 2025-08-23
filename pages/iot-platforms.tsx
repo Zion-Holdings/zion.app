@@ -1,5 +1,3 @@
-import React from 'react';
-
-export default function IoTPlatformsPage() {
-  return <div>IoT Platforms</div>;
+export default function IotPlatforms(){
+  return <div style={{padding:20}}>IoT Platforms</div>
 }

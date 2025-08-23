@@ -1,5 +1,3 @@
-import React from 'react';
-
-export default function EmergingTechnologyTrendsPage() {
-  return <div>Emerging Technology Trends</div>;
+export default function Page(){
+  return <div style={{padding:20}}>Content</div>
 }

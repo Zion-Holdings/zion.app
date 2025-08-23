@@ -1,5 +1,3 @@
-import React from 'react';
-
-export default function TalentIndexPage() {
-  return <div>Talent</div>;
+export default function Talent(){
+  return <div style={{padding:20}}>Talent</div>
 }

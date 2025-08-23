@@ -1,5 +1,3 @@
-import React from 'react';
-
-export default function NotFoundPage() {
-  return <div>404 – Page Not Found</div>;
+export default function NotFound(){
+  return <div style={{padding:20}}>Not Found</div>
 }

@@ -1,5 +1,3 @@
-import React from 'react';
-
-export default function VerifyPage() {
-  return <div>Verify Account</div>;
+export default function Verify(){
+  return <div style={{padding:20}}>Verify</div>
 }

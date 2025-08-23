@@ -1,5 +1,3 @@
-export default Contact;
-=======
 export default function ContactPage() {
   return (
     <div className="py-8">
@@ -13,4 +11,8 @@ import React from 'react';
 
 export default function ContactPage() {
   return <div>Contact Zion</div>;
+}
+=======
+export default function Contact(){
+  return <div style={{padding:20}}>Contact</div>
 }
