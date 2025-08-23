@@ -27,7 +27,11 @@ export default function EnhancedNavigation() {
           <Link href="/salary-insights"><a>Salary Insights</a></Link>
           <Link href="/admin"><a>Admin</a></Link>
           <Link href="/contact"><a>Contact</a></Link>
+<<<<<<< HEAD
+          <Link href="/academy/founder-course"><a className="font-medium">Founder Course</a></Link>
+=======
           <Link href="/admin/zion-brain"><a>Admin</a></Link>
+>>>>>>> origin/cursor/deploy-zion-brain-ai-system-5783
         </div>
       </nav>
 

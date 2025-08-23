@@ -1,6 +1,18 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
+<<<<<<< HEAD
+const [slug]: NextPage = () => {
+  return (
+    <div>
+      <Head>
+        <title>[slug] - Zion Tech Solutions</title>
+        <meta name="description" content="[slug] page" />
+      </Head>
+      
+      <main>
+        <h1>[slug]</h1>
+=======
 const TalentSlugPage: NextPage = () => {
   return (
     <div>
@@ -11,10 +23,15 @@ const TalentSlugPage: NextPage = () => {
       
       <main>
         <h1>Talent</h1>
+>>>>>>> origin/cursor/deploy-zion-brain-ai-system-5783
         <p>This page is under construction.</p>
       </main>
     </div>
   );
 };
 
+<<<<<<< HEAD
+export default [slug];
+=======
 export default TalentSlugPage;
+>>>>>>> origin/cursor/deploy-zion-brain-ai-system-5783
