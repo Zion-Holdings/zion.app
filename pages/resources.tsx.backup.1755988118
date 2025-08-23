@@ -217,6 +217,34 @@ export default function ResourcesPage() {
       title: 'Performance Benchmarking Tool',
       description: 'Compare your automation performance against industry standards.',
       type: 'Analytics Tool',
+<<<<<<< HEAD
+      estimatedTime: '20 minutes',
+      features: ['Real-time metrics', 'Industry comparisons', 'Performance trends', 'Optimization suggestions']
+    },
+    {
+      id: 'security-assessment',
+      title: 'AI Security Assessment Tool',
+      description: 'Comprehensive security evaluation for AI systems and implementations.',
+      type: 'Security Tool',
+      estimatedTime: '45 minutes',
+      features: ['Vulnerability scanning', 'Compliance checking', 'Risk assessment', 'Security recommendations']
+    },
+    {
+      id: 'cost-calculator',
+      title: 'AI Implementation Cost Calculator',
+      description: 'Estimate the total cost of ownership for AI automation initiatives.',
+      type: 'Financial Tool',
+      estimatedTime: '25 minutes',
+      features: ['Cost breakdown', 'ROI projections', 'Budget planning', 'Resource allocation']
+    },
+    {
+      id: 'talent-assessment',
+      title: 'AI Talent Assessment Framework',
+      description: 'Evaluate your team\'s AI capabilities and identify skill gaps.',
+      type: 'Assessment Tool',
+      estimatedTime: '35 minutes',
+      features: ['Skill evaluation', 'Gap analysis', 'Training recommendations', 'Team development planning']
+=======
       estimatedTime: '20 minutes'
     },
     {
@@ -232,6 +260,7 @@ export default function ResourcesPage() {
       description: 'Optimize your edge AI deployment for maximum performance and efficiency.',
       type: 'Optimization Tool',
       estimatedTime: '35 minutes'
+>>>>>>> origin/cursor/add-more-project-content-4ab0
     }
   ];
 
@@ -332,6 +361,138 @@ export default function ResourcesPage() {
               </div>
             </section>
             
+<<<<<<< HEAD
+            {/* Training & Certification Section */}
+            <section className="mb-20">
+              <h2 className="text-3xl font-bold mb-8 text-center text-white">Training & Certification</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-yellow-400/30 transition-all duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl">🎓</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">AI Fundamentals Course</h3>
+                  <p className="text-white/80 text-sm mb-4">Master the basics of artificial intelligence and machine learning.</p>
+                  <div className="space-y-2 mb-6">
+                    <span className="inline-block px-3 py-1 bg-yellow-400/20 text-yellow-400 text-xs rounded-full border border-yellow-400/30">
+                      Beginner
+                    </span>
+                    <span className="block text-white/60 text-xs">Duration: 8 weeks</span>
+                    <span className="block text-white/60 text-xs">Certification included</span>
+                  </div>
+                  <Link 
+                    href="/training/ai-fundamentals"
+                    className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-6 py-3 rounded-lg font-semibold hover:from-yellow-500 hover:to-orange-500 transition-all duration-300"
+                  >
+                    Enroll Now
+                    <span aria-hidden>→</span>
+                  </Link>
+                </div>
+
+                <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-purple-400/30 transition-all duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-indigo-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl">⚡</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">Advanced Automation</h3>
+                  <p className="text-white/80 text-sm mb-4">Deep dive into enterprise automation and AI deployment.</p>
+                  <div className="space-y-2 mb-6">
+                    <span className="inline-block px-3 py-1 bg-purple-400/20 text-purple-400 text-xs rounded-full border border-purple-400/30">
+                      Advanced
+                    </span>
+                    <span className="block text-white/60 text-xs">Duration: 12 weeks</span>
+                    <span className="block text-white/60 text-xs">Hands-on projects</span>
+                  </div>
+                  <Link 
+                    href="/training/advanced-automation"
+                    className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-400 to-indigo-400 text-white px-6 py-3 rounded-lg font-semibold hover:from-purple-500 hover:to-indigo-500 transition-all duration-300"
+                  >
+                    Enroll Now
+                    <span aria-hidden>→</span>
+                  </Link>
+                </div>
+
+                <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-blue-400/30 transition-all duration-300">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <span className="text-2xl">🛡️</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">AI Security Specialist</h3>
+                  <p className="text-white/80 text-sm mb-4">Learn to secure AI systems and protect against emerging threats.</p>
+                  <div className="space-y-2 mb-6">
+                    <span className="inline-block px-3 py-1 bg-blue-400/20 text-blue-400 text-xs rounded-full border border-blue-400/30">
+                      Intermediate
+                    </span>
+                    <span className="block text-white/60 text-xs">Duration: 10 weeks</span>
+                    <span className="block text-white/60 text-xs">Security certification</span>
+                  </div>
+                  <Link 
+                    href="/training/ai-security"
+                    className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-400 to-cyan-400 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-500 hover:to-cyan-500 transition-all duration-300"
+                  >
+                    Enroll Now
+                    <span aria-hidden>→</span>
+                  </Link>
+                </div>
+              </div>
+            </section>
+
+            {/* Community & Events Section */}
+            <section className="mb-20">
+              <h2 className="text-3xl font-bold mb-8 text-center text-white">Community & Events</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-emerald-400/30 transition-all duration-300">
+                  <h3 className="text-xl font-bold mb-4 text-white">AI Automation Summit 2025</h3>
+                  <p className="text-white/80 text-sm mb-4">Join industry leaders and experts for the premier AI automation conference.</p>
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center gap-2 text-white/70 text-sm">
+                      <span>📅</span>
+                      <span>March 15-17, 2025</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-white/70 text-sm">
+                      <span>📍</span>
+                      <span>San Francisco, CA</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-white/70 text-sm">
+                      <span>🎯</span>
+                      <span>500+ attendees expected</span>
+                    </div>
+                  </div>
+                  <Link 
+                    href="/events/summit-2025"
+                    className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-400 to-teal-400 text-white px-6 py-3 rounded-lg font-semibold hover:from-emerald-500 hover:to-teal-500 transition-all duration-300"
+                  >
+                    Register Now
+                    <span aria-hidden>→</span>
+                  </Link>
+                </div>
+
+                <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-pink-400/30 transition-all duration-300">
+                  <h3 className="text-xl font-bold mb-4 text-white">AI Innovation Lab</h3>
+                  <p className="text-white/80 text-sm mb-4">Collaborate with peers in our monthly innovation workshops and hackathons.</p>
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center gap-2 text-white/70 text-sm">
+                      <span>🔄</span>
+                      <span>Monthly workshops</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-white/70 text-sm">
+                      <span>👥</span>
+                      <span>Open to all skill levels</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-white/70 text-sm">
+                      <span>🏆</span>
+                      <span>Prizes and recognition</span>
+                    </div>
+                  </div>
+                  <Link 
+                    href="/community/innovation-lab"
+                    className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-400 to-rose-400 text-white px-6 py-3 rounded-lg font-semibold hover:from-pink-500 hover:to-rose-500 transition-all duration-300"
+                  >
+                    Join Community
+                    <span aria-hidden>→</span>
+                  </Link>
+                </div>
+              </div>
+            </section>
+
+=======
             {/* Webinars and Events Section */}
             <section className="mb-20">
               <h2 className="text-3xl font-bold mb-8 text-center text-white">Upcoming Webinars & Events</h2>
@@ -380,6 +541,7 @@ export default function ResourcesPage() {
               </div>
             </section>
             
+>>>>>>> origin/cursor/add-more-project-content-4ab0
             {/* Newsletter Signup */}
             <section className="text-center">
               <div className="bg-gradient-to-r from-cyan-500/10 to-fuchsia-500/10 rounded-2xl p-8 border border-cyan-500/20">
