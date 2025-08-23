@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
-import type { FocusEvent } from 'react';
+import React, { useState, useEffect, useCallback, useRef, FocusEvent } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Eye, 
@@ -115,7 +114,7 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
   }, [applySettings]);
 
   // Focus management
-  const handleFocusChange = useCallback((e: Event) => {
+  const handleFocusChange = useCallback((e: globalThis.FocusEvent) => {
     const target = e.target as HTMLElement;
     if (target) {
       setCurrentFocus(target);
@@ -124,11 +123,14 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
   }, []);
 
   // Keyboard navigation enhancements
-  const handleKeyDown = useCallback((e: Event) => {
+  const handleKeyDown = useCallback((e: globalThis.KeyboardEvent) => {
     // Tab navigation detected
   }, []);
+
   // Announce to screen reader
   const announceToScreenReader = useCallback((message: string) => {
+    // setAnnouncements(prev => [...prev, message]); // This line was removed
+    
     // Create live region for screen readers
     if (!announcementRef.current) {
       const liveRegion = document.createElement('div');
@@ -145,11 +147,9 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
     
     // Remove announcement after a delay
     setTimeout(() => {
-      // Cleanup handled by component unmount
+      // setAnnouncements(prev => prev.filter(a => a !== message)); // This line was removed
     }, 5000);
   }, []);
-
-
 
   // Auto-optimize accessibility
   useEffect(() => {

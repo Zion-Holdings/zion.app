@@ -63,9 +63,13 @@ import { innovativeAIServices } from '../../data/innovative-2025-ai-services-exp
 import { advanced2025MicroSaasExpansion } from '../../data/2025-advanced-micro-saas-expansion';
 import { advanced2025ITSolutionsExpansion } from '../../data/2025-advanced-it-solutions-expansion';
 import { advanced2025AIServicesExpansion } from '../../data/2025-advanced-ai-services-expansion';
+// Import our new 2025 innovative services
+import { innovativeMicroSaasExpansionV2 } from '../../data/2025-innovative-micro-saas-expansion-v2';
+import { enterpriseAISolutionsExpansion } from '../../data/2025-enterprise-ai-solutions-expansion';
+import { emergingTechInnovations } from '../../data/2025-emerging-tech-innovations';
 
 // Import our new 2025 innovative services
-import { innovativeMicroSaasExpansion2025 } from '../../data/2025-innovative-micro-saas-expansion';
+import { innovative2025MicroSaasExpansion } from '../../data/2025-innovative-micro-saas-expansion';
 import { innovative2025ITSolutionsExpansion } from '../../data/2025-innovative-it-solutions-expansion';
 import { innovative2025AISolutionsExpansion } from '../../data/2025-innovative-ai-solutions-expansion';
 
@@ -162,7 +166,7 @@ export default function ServicesIndexPage() {
     .concat(advanced2025ITSolutionsExpansion as unknown[])
     .concat(advanced2025AIServicesExpansion as unknown[])
     // Our new 2025 innovative services
-    .concat(innovativeMicroSaasExpansion2025 as unknown[])
+    .concat(innovative2025MicroSaasExpansion as unknown[])
     .concat(innovative2025ITSolutionsExpansion as unknown[])
     .concat(innovative2025AISolutionsExpansion as unknown[]);
 
@@ -175,47 +179,19 @@ export default function ServicesIndexPage() {
     'price' in service
   );
 
-  // Transform services to match the component interface
-  const transformedServices = validServices.map((service: any) => {
-    let priceString = 'Contact for pricing';
-    let period = '';
-    
-    if (service.price && typeof service.price === 'object') {
-      if (service.price.monthly) {
-        priceString = `$${service.price.monthly}`;
-        period = '/month';
-      } else if (service.price.yearly) {
-        priceString = `$${service.price.yearly}`;
-        period = '/year';
-      } else if (service.price.starter) {
-        priceString = String(service.price.starter);
-        period = '';
-      }
-    } else if (typeof service.price === 'string') {
-      priceString = service.price;
-      period = '';
-    }
-    
-    return {
-      ...service,
-      price: priceString,
-      period: period
-    };
-  });
-
   // Group services by category
   const servicesByCategory = categories.reduce((acc, category) => {
-    acc[category] = transformedServices.filter((service: any) => 
+    acc[category] = validServices.filter((service: any) => 
       service.category && service.category.toLowerCase().includes(category.toLowerCase().replace(/\s+/g, ''))
     );
     return acc;
   }, {} as Record<string, any[]>);
 
   // Get featured services (marked as popular)
-  const featuredServices = transformedServices.filter((service: any) => service.popular).slice(0, 6);
+  const featuredServices = validServices.filter((service: any) => service.popular).slice(0, 6);
 
   // Get latest services (assuming they have a launchDate)
-  const latestServices = transformedServices
+  const latestServices = validServices
     .filter((service: any) => service.launchDate)
     .sort((a: any, b: any) => new Date(b.launchDate).getTime() - new Date(a.launchDate).getTime())
     .slice(0, 6);
@@ -223,11 +199,9 @@ export default function ServicesIndexPage() {
   return (
     <div className="min-h-screen bg-black text-white">
       <SEO 
-        data={{
-          pageTitle: "Services - Zion Tech Group",
-          pageDescription: "Discover our comprehensive suite of cutting-edge technology solutions including AI, Quantum Computing, Space Technology, and more.",
-          pageKeywords: ["AI services", "quantum computing", "space technology", "metaverse", "cybersecurity", "IT services", "micro SAAS"]
-        }}
+        title="Services - Zion Tech Group"
+        description="Discover our comprehensive suite of cutting-edge technology solutions including AI, Quantum Computing, Space Technology, and more."
+        keywords={["AI services", "quantum computing", "space technology", "metaverse", "cybersecurity", "IT services", "micro SAAS"]}
       />
       
       <UltraFuturisticBackground>
@@ -243,7 +217,7 @@ export default function ServicesIndexPage() {
               </p>
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <span className="px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-full text-cyan-300">
-                  {transformedServices.length}+ Services
+                  {validServices.length}+ Services
                 </span>
                 <span className="px-4 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 rounded-full text-purple-300">
                   {categories.length} Categories
