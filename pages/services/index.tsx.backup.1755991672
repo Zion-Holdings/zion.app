@@ -35,7 +35,12 @@ import { real2026Q4Additions } from '../../data/real-2026-q4-additions';
 import { real2026Q4NewServices } from '../../data/real-2026-q4-new-services';
 import { real2027Q1Additions } from '../../data/real-2027-q1-additions';
 import { real2027Q2Additions } from '../../data/real-2027-q2-additions';
+<<<<<<< HEAD
+import { real2028ServiceExpansions } from '../../data/real-2028-service-expansions';
+import { real2029ServiceAdditions } from '../../data/real-2029-service-additions';
+=======
 import { real2027Q3Additions } from '../../data/real-2027-q3-additions';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-e0e2
 
 // Define a common service interface
 interface Service {
@@ -155,7 +160,12 @@ export default function ServicesIndexPage() {
       real2026Q4NewServices as unknown[],
       real2027Q1Additions as unknown[],
       real2027Q2Additions as unknown[],
+<<<<<<< HEAD
+      real2028ServiceExpansions as unknown[],
+      real2029ServiceAdditions as unknown[]
+=======
       real2027Q3Additions as unknown[]
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-e0e2
     );
     return acc;
   }, {} as Record<string, Service[]>);
