@@ -1,5 +1,10 @@
+<<<<<<< HEAD
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+=======
 import React, { useState } from 'react';
 
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-8c77
 import UltraFuturisticNavigation2036 from './UltraFuturisticNavigation2036';
 import UltraFuturisticFooter2036 from './UltraFuturisticFooter2036';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';

@@ -44,6 +44,9 @@ import { real2031ITServicesAdditions } from '../../data/real-2031-it-services-ad
 import { real2031AIServicesAdditions } from '../../data/real-2031-ai-services-additions';
 import { real2030Q2Additions } from '../../data/real-2030-q2-additions';
 import { real2027Q3Additions } from '../../data/real-2027-q3-additions';
+<<<<<<< HEAD
+import { real2032Q1Additions } from '../../data/real-2032-q1-additions';
+=======
 import { professionalServices } from '../../data/professional-services';
 import { real2032ServiceExpansions } from '../../data/real-2032-service-expansions';
 import { real2035Q1Additions } from '../../data/real-2035-q1-additions';
@@ -54,6 +57,7 @@ import { real2036ServiceExpansions } from '../../data/real-2036-service-expansio
 import { real2026Q4ExpansionsV3 } from '../../data/real-2026-q4-expansions-v3';
 import { real2036Q1Additions } from '../../data/real-2036-q1-additions';
 import { real2036Q2Additions } from '../../data/real-2036-q2-additions';
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-8c77
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -66,10 +70,29 @@ const categories = [
   'Observability',
   'Quality & Monitoring',
   'Quantum Computing',
+<<<<<<< HEAD
+  'Space Technology',
+  'Metaverse',
+  'Cybersecurity',
+  'Supply Chain',
+  'Financial Services',
+  'Healthcare',
+  'Manufacturing',
+  'Retail',
+  'Education',
+  'Government',
+  'Energy',
+  'Transportation',
+  'Biotechnology',
+  'Neurotechnology',
+  'Advanced Robotics',
+  'Renewable Energy'
+=======
   'Neuromorphic AI',
   'Edge Computing',
   'Cybersecurity',
   'Automation',
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-8c77
 ];
 
 export default function ServicesIndexPage() {
@@ -112,6 +135,9 @@ export default function ServicesIndexPage() {
       real2031MicroSaasAdditions as unknown[],
       real2031ITServicesAdditions as unknown[],
       real2031AIServicesAdditions as unknown[],
+<<<<<<< HEAD
+      real2032Q1Additions as unknown[]
+=======
       real2027Q3Additions as unknown[],
       professionalServices as unknown[],
       real2032ServiceExpansions as unknown[],
@@ -123,6 +149,7 @@ export default function ServicesIndexPage() {
       real2026Q4ExpansionsV3 as unknown[],
       real2036Q1Additions as unknown[],
       real2036Q2Additions as unknown[]
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-8c77
     );
   const byCategory: Record<string, unknown[]> = {};
   for (const c of categories) byCategory[c] = [];
@@ -159,11 +186,14 @@ export default function ServicesIndexPage() {
   };
 
   const [shownCounts, setShownCounts] = React.useState<Record<string, number>>(() => Object.fromEntries(categories.map(c => [c, 12])));
+<<<<<<< HEAD
+=======
   const [searchQuery, setSearchQuery] = React.useState('');
 
 
 
 
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-8c77
 
   return (
     <div className="min-h-screen bg-black text-white">
