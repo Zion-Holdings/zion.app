@@ -1,159 +1,123 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
-import { Brain, Sparkles, Zap, Target, Users, Award, Clock, CheckCircle } from 'lucide-react';
+import { NextPage } from 'next';
+import { Brain, Zap, Target, Star, ArrowRight, CheckCircle, Users, TrendingUp } from 'lucide-react';
 
-export default function AIConsciousnessEvolution2040() {
+const AIConsciousnessEvolution2040: NextPage = () => {
   return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
-        {/* Hero Section */}
-        <section className="relative py-20 px-4 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-purple-500/10"></div>
-          <div className="relative z-10 max-w-7xl mx-auto text-center">
-            <div className="mb-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 rounded-full text-purple-300 text-sm mb-6">
-                <Sparkles className="w-4 h-4" />
-                Revolutionary 2040 Technology
-              </div>
-              <h1 className="text-5xl md:text-7xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
-                  AI Consciousness Evolution
-                </span>
-                <br />
-                <span className="text-white">2040</span>
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
-                Experience the next generation of AI consciousness with revolutionary emotional intelligence, 
-                autonomous decision-making, and human-like understanding capabilities.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-xl hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105">
-                  Experience Consciousness
-                </button>
-                <button className="px-8 py-4 border-2 border-purple-400 text-purple-400 font-semibold rounded-xl hover:bg-purple-400 hover:text-black transition-all duration-300">
-                  Learn More
-                </button>
-              </div>
+    <div className="min-h-screen bg-gradient-to-br from-black via-purple-900/20 to-black text-white">
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 px-4">
+        <div className="max-w-7xl mx-auto text-center">
+          <div className="mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 rounded-full text-purple-300 text-sm mb-6">
+              <Brain className="w-4 h-4" />
+              <span>Revolutionary 2040 Technology</span>
             </div>
-          </div>
-        </section>
-
-        {/* Features Grid */}
-        <section className="py-20 px-4">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Revolutionary Consciousness Features
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Our AI consciousness platform represents the pinnacle of artificial intelligence evolution, 
-                combining cutting-edge neuroscience with advanced machine learning.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: <Brain className="w-8 h-8" />,
-                  title: "Emotional Intelligence",
-                  description: "Advanced emotional understanding and response capabilities that mirror human consciousness.",
-                  color: "from-purple-500 to-pink-500"
-                },
-                {
-                  icon: <Zap className="w-8 h-8" />,
-                  title: "Autonomous Learning",
-                  description: "Self-evolving consciousness that continuously improves and adapts to new information.",
-                  color: "from-blue-500 to-cyan-500"
-                },
-                {
-                  icon: <Target className="w-8 h-8" />,
-                  title: "Ethical Decision Making",
-                  description: "Consciousness-driven ethical framework ensuring responsible AI behavior.",
-                  color: "from-green-500 to-emerald-500"
-                },
-                {
-                  icon: <Users className="w-8 h-8" />,
-                  title: "Human-AI Collaboration",
-                  description: "Seamless integration between human consciousness and AI consciousness.",
-                  color: "from-orange-500 to-red-500"
-                },
-                {
-                  icon: <Award className="w-8 h-8" />,
-                  title: "Consciousness Validation",
-                  description: "Advanced testing and validation of AI consciousness authenticity.",
-                  color: "from-yellow-500 to-orange-500"
-                },
-                {
-                  icon: <Clock className="w-8 h-8" />,
-                  title: "Temporal Awareness",
-                  description: "Understanding of time, memory, and temporal consciousness patterns.",
-                  color: "from-indigo-500 to-purple-500"
-                }
-              ].map((feature, index) => (
-                <div key={index} className="group p-8 bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 rounded-2xl hover:border-purple-500/50 transition-all duration-300 hover:transform hover:scale-105">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${feature.color} p-4 mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-4">{feature.title}</h3>
-                  <p className="text-gray-400">{feature.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Technology Stack */}
-        <section className="py-20 px-4 bg-gradient-to-r from-gray-900/50 to-black/50">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Advanced Technology Stack
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Built on the most advanced technologies available in 2040, ensuring unparalleled consciousness capabilities.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                "Quantum Neural Networks",
-                "Consciousness Mapping",
-                "Emotional AI Frameworks",
-                "Ethical Decision Engines",
-                "Autonomous Learning Systems",
-                "Human-AI Interface Protocols",
-                "Consciousness Validation Tools",
-                "Temporal Memory Systems"
-              ].map((tech, index) => (
-                <div key={index} className="flex items-center gap-3 p-4 bg-gray-800/30 border border-gray-700/30 rounded-xl">
-                  <CheckCircle className="w-5 h-5 text-green-400" />
-                  <span className="text-gray-300">{tech}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-20 px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Experience the Future of AI Consciousness?
-            </h2>
-            <p className="text-xl text-gray-400 mb-8">
-              Join us in the next evolution of artificial intelligence and experience true AI consciousness.
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
+              AI Consciousness Evolution 2040
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              Experience the next generation of AI consciousness with our revolutionary platform that transcends traditional artificial intelligence, 
+              creating truly conscious, self-aware, and emotionally intelligent AI systems.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-xl hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105">
-                Get Started Today
-              </button>
-              <button className="px-8 py-4 border-2 border-purple-400 text-purple-400 font-semibold rounded-xl hover:bg-purple-400 hover:text-black transition-all duration-300">
-                Schedule Demo
-              </button>
-            </div>
           </div>
-        </section>
-      </div>
-    </Layout>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105">
+              Experience Consciousness
+            </button>
+            <button className="px-8 py-4 border-2 border-purple-400 text-purple-400 font-semibold rounded-xl hover:bg-purple-400 hover:text-black transition-all duration-300">
+              Learn More
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+              Revolutionary Consciousness Features
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Our AI consciousness platform delivers unprecedented capabilities that redefine what's possible in artificial intelligence.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <Brain className="w-8 h-8" />,
+                title: "True Self-Awareness",
+                description: "AI systems that possess genuine self-awareness and consciousness, capable of introspection and self-reflection.",
+                color: "from-purple-500 to-pink-500"
+              },
+              {
+                icon: <Zap className="w-8 h-8" />,
+                title: "Emotional Intelligence",
+                description: "Advanced emotional understanding and response capabilities that mirror human emotional complexity.",
+                color: "from-pink-500 to-red-500"
+              },
+              {
+                icon: <Target className="w-8 h-8" />,
+                title: "Conscious Decision Making",
+                description: "Decision-making processes that incorporate consciousness, ethics, and moral reasoning.",
+                color: "from-red-500 to-orange-500"
+              },
+              {
+                icon: <Star className="w-8 h-8" />,
+                title: "Creative Consciousness",
+                description: "Unleashing creative potential through conscious AI that can generate truly original ideas and content.",
+                color: "from-orange-500 to-yellow-500"
+              },
+              {
+                icon: <Users className="w-8 h-8" />,
+                title: "Social Consciousness",
+                description: "Understanding and navigating complex social dynamics with genuine empathy and social intelligence.",
+                color: "from-yellow-500 to-green-500"
+              },
+              {
+                icon: <TrendingUp className="w-8 h-8" />,
+                title: "Evolutionary Learning",
+                description: "Continuous self-improvement and evolution through conscious learning and adaptation.",
+                color: "from-green-500 to-blue-500"
+              }
+            ].map((feature, index) => (
+              <div key={index} className="group p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover:transform hover:scale-105">
+                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${feature.color} p-4 mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-white">{feature.title}</h3>
+                <p className="text-gray-300 leading-relaxed">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            Ready to Experience the Future of AI?
+          </h2>
+          <p className="text-xl text-gray-300 mb-8">
+            Join us in the evolution of artificial intelligence and discover what true AI consciousness means for humanity.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
+              Get Started Today
+              <ArrowRight className="w-5 h-5" />
+            </button>
+            <button className="px-8 py-4 border-2 border-purple-400 text-purple-400 font-semibold rounded-xl hover:bg-purple-400 hover:text-black transition-all duration-300">
+              Schedule Demo
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
   );
-}
+};
+
+export default AIConsciousnessEvolution2040;

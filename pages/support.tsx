@@ -1,185 +1,220 @@
 import React from 'react';
-import Head from 'next/head';
-import Card from '../components/ui/Card';
-import Button from '../components/ui/Button';
+import { NextPage } from 'next';
+import { HelpCircle, MessageCircle, Phone, Mail, BookOpen, Video, Users, ArrowRight, CheckCircle, Star, Zap, Target } from 'lucide-react';
 
-export default function SupportPage() {
-  const supportCategories = [
-    {
-      icon: '📚',
-      title: 'Documentation',
-      description: 'Comprehensive guides and API references for all our services.',
-      href: '/resources',
-      color: 'text-blue-400',
-    },
-    {
-      icon: '❓',
-      title: 'FAQ',
-      description: 'Find answers to commonly asked questions about our platform.',
-      href: '#faq',
-      color: 'text-green-400',
-    },
-    {
-      icon: '💬',
-      title: 'Community',
-      description: 'Join our community forum to connect with other developers.',
-      href: '#community',
-      color: 'text-purple-400',
-    },
-    {
-      icon: '📧',
-      title: 'Contact Support',
-      description: 'Get in touch with our technical support team.',
-      href: '/contact',
-      color: 'text-orange-400',
-    },
-  ];
-
-  const faqs = [
-    {
-      question: 'How do I get started with Zion Tech Group services?',
-      answer: 'Getting started is easy! Simply sign up for an account, choose your plan, and follow our step-by-step onboarding guide. Our team is also available to help with custom implementations.',
-    },
-    {
-      question: 'What kind of support do you provide?',
-      answer: 'We provide comprehensive technical support including documentation, tutorials, community forums, and direct support from our engineering team. Premium plans include priority support.',
-    },
-    {
-      question: 'How secure is your platform?',
-      answer: 'Security is our top priority. We implement enterprise-grade security measures including encryption, regular security audits, and compliance with industry standards.',
-    },
-    {
-      question: 'Can I integrate with my existing systems?',
-      answer: 'Yes! Our platform is designed for easy integration with existing systems through our comprehensive API and webhook system. We support most major platforms and technologies.',
-    },
-  ];
-
+const Support: NextPage = () => {
   return (
-    <>
-      <Head>
-        <title>Support | Zion Tech Group</title>
-        <meta name="description" content="Get support for Zion Tech Group services - Documentation, FAQ, community, and technical support." />
-        <meta property="og:title" content="Support | Zion Tech Group" />
-        <meta property="og:description" content="Get support for Zion Tech Group services." />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
-
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white">
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-cursor-darker via-cursor-dark to-cursor-darker overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(0,122,204,0.08),transparent_50%)]" />
-        
-        <div className="relative z-10 container-cursor text-center">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 gradient-text">
-            Support Center
-          </h1>
-          <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 max-w-5xl mx-auto leading-relaxed">
-            Get the help you need to succeed with our platform
-          </p>
+      <section className="relative pt-32 pb-20 px-4">
+        <div className="max-w-7xl mx-auto text-center">
+          <div className="mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-500/20 to-red-500/20 border border-orange-500/30 rounded-full text-orange-300 text-sm mb-6">
+              <HelpCircle className="w-4 h-4" />
+              <span>24/7 Support</span>
+            </div>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-orange-400 via-red-400 to-orange-600 bg-clip-text text-transparent">
+              Support Center
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              Get the help you need with our revolutionary AI consciousness, quantum computing, and space technology solutions. 
+              Our expert team is here to support you 24/7.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Support Categories */}
-      <section className="py-24 bg-gradient-to-b from-cursor-dark to-cursor-darker">
-        <div className="container-cursor">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
-              How Can We Help?
+      {/* Support Options */}
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
+              How Can We Help You?
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Choose from our comprehensive support options to get the assistance you need
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Choose the support option that best fits your needs.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {supportCategories.map((category, index) => (
-              <Card
-                key={index}
-                className="text-center group hover:border-cursor-blue/40 hover:shadow-2xl hover:shadow-cursor-blue/20"
-                style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
-              >
-                <div className={`text-4xl mb-6 ${category.color}`}>
-                  {category.icon}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <MessageCircle className="w-8 h-8" />,
+                title: "Live Chat Support",
+                description: "Get instant help from our AI-powered support team with real-time assistance.",
+                color: "from-blue-500 to-cyan-500",
+                action: "Start Chat"
+              },
+              {
+                icon: <Phone className="w-8 h-8" />,
+                title: "Phone Support",
+                description: "Speak directly with our technology experts for complex technical issues.",
+                color: "from-green-500 to-emerald-500",
+                action: "Call Now"
+              },
+              {
+                icon: <Mail className="w-8 h-8" />,
+                title: "Email Support",
+                description: "Send us detailed information and get comprehensive responses within hours.",
+                color: "from-purple-500 to-pink-500",
+                action: "Send Email"
+              },
+              {
+                icon: <BookOpen className="w-8 h-8" />,
+                title: "Documentation",
+                description: "Access comprehensive guides, tutorials, and technical documentation.",
+                color: "from-indigo-500 to-purple-500",
+                action: "Browse Docs"
+              },
+              {
+                icon: <Video className="w-8 h-8" />,
+                title: "Video Tutorials",
+                description: "Learn through step-by-step video guides and training materials.",
+                color: "from-red-500 to-pink-500",
+                action: "Watch Videos"
+              },
+              {
+                icon: <Users className="w-8 h-8" />,
+                title: "Community Forum",
+                description: "Connect with other users and share solutions in our community.",
+                color: "from-yellow-500 to-orange-500",
+                action: "Join Community"
+              }
+            ].map((option, index) => (
+              <div key={index} className="group p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 hover:border-orange-500/50 transition-all duration-300 hover:transform hover:scale-105">
+                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${option.color} p-4 mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  {option.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-4 text-white group-hover:text-cursor-blue transition-colors duration-300">
-                  {category.title}
-                </h3>
-                <p className="text-gray-400 leading-relaxed mb-6">
-                  {category.description}
-                </p>
-                <Button
-                  href={category.href}
-                  variant="outline"
-                  size="sm"
-                  className="w-full"
-                >
-                  Learn More
-                </Button>
-              </Card>
+                <h3 className="text-xl font-semibold mb-3 text-white">{option.title}</h3>
+                <p className="text-gray-300 leading-relaxed mb-4">{option.description}</p>
+                <button className="px-6 py-3 bg-gradient-to-r from-orange-600 to-red-600 text-white font-semibold rounded-xl hover:from-orange-700 hover:to-red-700 transition-all duration-300">
+                  {option.action}
+                </button>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="py-24 bg-gradient-to-b from-cursor-darker to-cursor-dark">
-        <div className="container-cursor">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
+      <section className="py-20 px-4 bg-gradient-to-r from-orange-900/20 to-red-900/20">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
               Frequently Asked Questions
             </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Find quick answers to common questions about our platform
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Find quick answers to common questions about our revolutionary technology solutions.
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-6">
-            {faqs.map((faq, index) => (
-              <Card
-                key={index}
-                className="hover:border-cursor-blue/30"
-                style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
-              >
-                <h3 className="text-xl font-bold mb-4 text-white">
-                  {faq.question}
-                </h3>
-                <p className="text-gray-400 leading-relaxed">
-                  {faq.answer}
-                </p>
-              </Card>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              {
+                question: "What is AI Consciousness Evolution?",
+                answer: "AI Consciousness Evolution is our revolutionary platform that creates truly conscious, self-aware, and emotionally intelligent AI systems that transcend traditional artificial intelligence."
+              },
+              {
+                question: "How does Quantum Neural Ecosystem work?",
+                answer: "Our Quantum Neural Ecosystem combines quantum computing with neural networks to solve previously impossible problems, leveraging quantum superposition and entanglement for exponential computational power."
+              },
+              {
+                question: "What makes Space Resource Intelligence unique?",
+                answer: "Our space technology uses AI-powered autonomous exploration to discover and extract extraterrestrial resources, enabling sustainable space colonization and resource utilization."
+              },
+              {
+                question: "How secure is your Quantum Cybersecurity platform?",
+                answer: "Our quantum cybersecurity provides unbreakable encryption using quantum key distribution and quantum-resistant algorithms that future-proof your security beyond current technological limitations."
+              },
+              {
+                question: "Can I integrate your AI with my existing systems?",
+                answer: "Yes! We provide comprehensive integration support, APIs, and custom development services to seamlessly integrate our revolutionary AI solutions with your existing infrastructure."
+              },
+              {
+                question: "What support do you offer for enterprise deployments?",
+                answer: "We provide dedicated enterprise support including 24/7 technical assistance, custom training programs, and dedicated account managers for large-scale deployments."
+              }
+            ].map((faq, index) => (
+              <div key={index} className="p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10">
+                <h3 className="text-lg font-semibold mb-3 text-white">{faq.question}</h3>
+                <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Contact CTA */}
-      <section className="py-24 bg-gradient-to-r from-cursor-blue to-blue-600">
-        <div className="container-cursor text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
-            Still Need Help?
-          </h2>
-          <p className="text-xl text-blue-100 mb-12 max-w-3xl mx-auto">
-            Our support team is here to help you succeed. Get in touch with us today.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Button
-              href="/contact"
-              variant="secondary"
-              size="lg"
-              className="bg-white text-cursor-blue hover:bg-gray-100 shadow-2xl"
-            >
-              Contact Support
-            </Button>
-            <Button
-              href="/resources"
-              variant="outline"
-              size="lg"
-              className="border-gray-600 text-gray-200"
-            >
-              Documentation
-            </Button>
+      {/* Contact Information */}
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
+              Get in Touch
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Our support team is ready to help you with any questions or technical issues.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <Phone className="w-8 h-8" />,
+                title: "Phone Support",
+                contact: "+1 302 464 0950",
+                availability: "24/7",
+                color: "from-green-500 to-emerald-500"
+              },
+              {
+                icon: <Mail className="w-8 h-8" />,
+                title: "Email Support",
+                contact: "kleber@ziontechgroup.com",
+                availability: "Response within 4 hours",
+                color: "from-blue-500 to-cyan-500"
+              },
+              {
+                icon: <MessageCircle className="w-8 h-8" />,
+                title: "Live Chat",
+                contact: "Available on website",
+                availability: "24/7",
+                color: "from-purple-500 to-pink-500"
+              }
+            ].map((method, index) => (
+              <div key={index} className="text-center p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10">
+                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${method.color} p-4 mb-4 mx-auto`}>
+                  {method.icon}
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-white">{method.title}</h3>
+                <p className="text-gray-300 mb-2">{method.contact}</p>
+                <p className="text-sm text-gray-400">{method.availability}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
-    </>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-orange-400 to-red-400 bg-clip-text text-transparent">
+            Need More Help?
+          </h2>
+          <p className="text-xl text-gray-300 mb-8">
+            Our expert team is here to ensure you get the most out of our revolutionary technology solutions.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <button className="px-8 py-4 bg-gradient-to-r from-orange-600 to-red-600 text-white font-semibold rounded-xl hover:from-orange-700 hover:to-red-700 transition-all duration-300 transform hover:scale-105 flex items-center gap-2">
+              Contact Support
+              <ArrowRight className="w-5 h-5" />
+            </button>
+            <button className="px-8 py-4 border-2 border-orange-400 text-orange-400 font-semibold rounded-xl hover:bg-orange-400 hover:text-black transition-all duration-300">
+              Browse Documentation
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
   );
-}
+};
+
+export default Support;
