@@ -52,13 +52,13 @@ export default function GrantsPage() {
   const [grants, setGrants] = useState<Grant[]>([]);
   const form = useForm<FormValues>({
     resolver: zodResolver(schema),
-    defaultValues: { category: categories[0] },
+    defaultValues: { category: categories[0] || 'Ecosystem Tools' },
   });
 
   const saveGrant = (values: FormValues, status: Grant['status']) => {
     const grant: Grant = { ...values, id: Date.now(), status };
     setGrants((prev) => [...prev, grant]);
-    form.reset({ category: categories[0] });
+    form.reset({ category: categories[0] || 'Ecosystem Tools' });
   };
 
   return (
@@ -157,7 +157,7 @@ export default function GrantsPage() {
                  return (
                   <FormItem>
                     <FormLabel>Category</FormLabel>
-                    <Select value={categoryValue} onValueChange={(value) => field.onChange({ target: { value } } as unknown)}>
+                    <Select value={categoryValue || ''} onValueChange={(value) => field.onChange({ target: { value } } as any)}>
                       <FormControl>
                         <SelectTrigger>
                           <SelectValue />

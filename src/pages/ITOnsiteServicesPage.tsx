@@ -133,7 +133,7 @@ export default function ITOnsiteServicesPage() {
       <OnsiteQuoteModal
         open={quoteOpen}
         onOpenChange={setQuoteOpen}
-        country={quoteCountry?.country}
+        country={quoteCountry?.country || ''}
       />
     </>
   );

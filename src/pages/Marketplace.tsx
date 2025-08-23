@@ -304,12 +304,143 @@ export default function Marketplace() {
       return;
     }
 
-  return (
-    <main className="flex-grow container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto mb-8">
-          <h1 className="text-3xl font-bold text-white mb-4">{t('marketplace.title')}</h1>
-          <p className="text-zion-slate-light">
-            {t('marketplace.description')}
+    // Navigate to admin products page
+    router.push('/admin/products');
+  }, [isAuthenticated, user, router, toast]);
+
+  // Fetch function for infinite scroll with AI product generation
+  const fetchProducts = useCallback(async (page: number, limit: number) => {
+    try {
+      const params = {
+        page,
+        limit,
+        ...(filterCategory && { category: filterCategory }),
+        sort: sortBy
+      };
+      logInfo('Marketplace.tsx: Fetching products from API with params:', { data:  { data: params } });
+      const response = await (apiClient as any).get('/products', { params });
+      let items: ProductListing[] = response.data?.items || [];
+      const total = response.data?.total ?? items.length;
+      const hasMore = (page * limit) < total;
+      if (showRecommended) {
+        items = items.filter((p) => p.rating != null && p.rating >= 4.3);
+      }
+      items = items.filter((p) => {
+        const price = p.price || 0;
+        const ai = p.aiScore || 0;
+        const rating = p.rating || 0;
+        const location = (p.location || '').toLowerCase();
+        const availability = (p.availability || '').toLowerCase();
+        return (
+          price >= priceRange[0] &&
+          price <= priceRange[1] &&
+          ai >= minAiScore &&
+          rating >= minRating &&
+          (!filterLocation || location.includes(filterLocation.toLowerCase())) &&
+          (!filterAvailability || availability === filterAvailability.toLowerCase())
+        );
+      });
+      return { items, hasMore, total };
+    } catch (error) {
+      logErrorToProduction('Marketplace.tsx: Error fetching products from API', { data: error });
+      return { items: [], hasMore: false, total: 0 };
+    }
+  }, [filterCategory, sortBy, showRecommended, priceRange, minAiScore, minRating, filterLocation, filterAvailability]);
+
+  // useInfiniteScrollPagination hook
+  const {
+    items: products, // These are the products to render
+    loading,          // True when initially loading or when fetchProducts is running
+    error,            // Contains the error object if fetchProducts throws
+    hasMore,          // True if the API indicates more items are available
+    isFetching,       // True if fetching more items (for infinite scroll)
+    lastElementRef,   // Ref for the last element to trigger loading more
+    refresh,          // Function to reload data from page 1
+    scrollToTop       // Function to scroll to the top of the page
+  } = useInfiniteScrollPagination(fetchProducts, 16); // 16 items per page
+
+  // Effect to refresh data when filters change
+  useEffect(() => {
+    if (firstRenderRef.current) {
+      firstRenderRef.current = false;
+      // On initial mount, useInfiniteScrollPagination handles the first load.
+      // We don't want to call refresh() here immediately if it's the very first render
+      // unless specifically needed. The new effect below handles re-mounts.
+      return;
+    }
+    logInfo('Filters changed, initiating refresh. Filters:', { filterCategory, sortBy, showRecommended, priceRange, minAiScore, minRating, filterAvailability, filterLocation });
+    isRefreshingAfterFilterChange.current = true; // Set flag before refresh
+    refresh();
+    // scrollToTop(); // Removed from here
+  }, [filterCategory, sortBy, showRecommended, priceRange, minAiScore, minRating, filterAvailability, filterLocation, refresh, toast]); // Added all filter dependencies
+
+  // Effect to explicitly refresh data when the component mounts or re-mounts
+  useEffect(() => {
+    logInfo('Marketplace.tsx: Component mounted/re-mounted, calling refresh to ensure fresh data.');
+    // We call refresh directly to ensure data is re-fetched.
+    // The useInfiniteScrollPagination hook's internal logic will manage its state.
+    refresh();
+    // Reset firstRenderRef for the new instance of the component, so filter changes behave as expected.
+    firstRenderRef.current = true;
+  }, [refresh]); // `refresh` is a dependency. Ensure it's stable.
+
+  // New effect to scroll to top AFTER products have been updated and refresh flag is set
+  useEffect(() => {
+    if (isRefreshingAfterFilterChange.current && !loading) { // Check flag and ensure loading is false
+      logInfo('Refresh complete and products updated, scrolling to top.');
+      scrollToTop();
+      isRefreshingAfterFilterChange.current = false; // Reset flag
+      // Optionally, provide user feedback about the filter change
+      // toast({ title: 'Filters updated', description: 'Displaying products based on new criteria.' });
+    }
+  }, [products, loading, scrollToTop, toast]); // Depends on products and loading state
+
+  // Calculate market stats
+  const marketStats = useMemo(() => {
+    if (products.length === 0) return null;
+    return {
+      averagePrice: products.reduce((sum, p) => sum + (p.price || 0), 0) / products.length,
+      averageRating: products.reduce((sum, p) => sum + (p.rating || 0), 0) / products.length,
+      totalProducts: products.length,
+      categoriesCount: Array.from(new Set(products.map(p => p.category))).length
+    };
+  }, [products]);
+
+  // Get unique categories and other filter values
+  const categories = useMemo(() => {
+    return Array.from(new Set(products.map((p) => p.category)));
+  }, [products]);
+  const locations = useMemo(() => {
+    return Array.from(new Set(products.map((p) => p.location).filter(Boolean)));
+  }, [products]).filter(Boolean) as string[];
+  const availabilityOptions = useMemo(() => {
+    return Array.from(new Set(products.map((p) => p.availability).filter(Boolean)));
+  }, [products]).filter(Boolean) as string[];
+
+  // Show scroll to top button
+  const [showScrollTop, setShowScrollTop] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 800);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Loading state with skeleton
+  if (loading && products.length === 0) {
+    return (
+      <main className="container py-8" data-testid="marketplace-loading">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-8"
+        >
+          <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            {t('marketplace.hero_title')}
+          </h1>
+          <p className="text-muted-foreground text-lg">
+            {t('marketplace.hero_subtitle')}
           </p>
         </div>
         

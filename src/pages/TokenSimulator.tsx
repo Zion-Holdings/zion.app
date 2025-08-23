@@ -47,7 +47,7 @@ const SCENARIOS = [
 // Type declaration for window.Chart
 declare global {
   interface Window {
-    Chart: typeof import('chart.js').Chart;
+    Chart: any; // Use any instead of specific chart.js types since it's loaded dynamically
   }
 }
 

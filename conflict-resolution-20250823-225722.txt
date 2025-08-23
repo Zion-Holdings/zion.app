@@ -202,3 +202,8 @@
 2025-08-23 22:57:46 - Resolving conflicts in tests/RegistrationForm.test.tsx for branch 5s5bm5-codex/introduce-automated-testing-with-jest-and-cypress
 2025-08-23 22:57:46 - Resolving conflicts in tests/__mocks__/server.ts for branch 5s5bm5-codex/introduce-automated-testing-with-jest-and-cypress
 2025-08-23 22:57:46 - Resolving conflicts in tests/jest.setup.ts for branch 5s5bm5-codex/introduce-automated-testing-with-jest-and-cypress
+2025-08-23 22:57:47 - Merge conflicts detected in 5smo5s-codex/check-logs-and-fix-errors
+2025-08-23 22:57:47 - Resolving conflicts in src/pages/Marketplace.tsx for branch 5smo5s-codex/check-logs-and-fix-errors
+2025-08-23 22:57:47 - Resolving conflicts in src/pages/SimpleSignup.tsx for branch 5smo5s-codex/check-logs-and-fix-errors
+2025-08-23 22:57:47 - Resolving conflicts in tsconfig.tsbuildinfo for branch 5smo5s-codex/check-logs-and-fix-errors
+2025-08-23 22:57:47 - Resolving conflicts in types/supabase-ssr.d.ts for branch 5smo5s-codex/check-logs-and-fix-errors

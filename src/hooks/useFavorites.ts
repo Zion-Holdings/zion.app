@@ -34,10 +34,10 @@ export function useFavorites() {
     }
   };
 
+   
   useEffect(() => {
     fetchFavorites();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user?.id]);
+  }, []);
 
   const toggleFavorite = async (item_type: string, item_id: string) => {
     if (!user) return;

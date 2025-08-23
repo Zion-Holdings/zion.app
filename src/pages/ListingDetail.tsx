@@ -293,7 +293,7 @@ export default function ListingDetail() {
             <DialogTitle className="text-xl font-bold text-white">Contact Publisher</DialogTitle>
           </DialogHeader>
           <ProfileContact 
-            email={listing.author.email} // TypeScript now knows this might be undefined
+            email={listing.author.email || ''}
             profileName={listing.author.name}
             profileType="service"
           />

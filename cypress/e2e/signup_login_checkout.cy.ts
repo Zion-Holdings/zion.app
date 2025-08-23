@@ -32,7 +32,7 @@ describe('signup to checkout flow', () => {
     cy.wait('@login');
 
     cy.visit('/equipment/pro-camera-x1000');
-    cy.contains('Add to Cart').click();
+    cy.get('[data-testid="add-to-cart-button"]', { timeout: 10000 }).click();
     cy.visit('/cart');
     cy.contains('Checkout').click();
 
