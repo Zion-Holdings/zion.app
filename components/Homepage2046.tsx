@@ -14,7 +14,7 @@ import { revolutionary2045AdvancedITServices } from '../data/revolutionary-2045-
 import { revolutionary2045AdvancedAIServices } from '../data/revolutionary-2045-advanced-ai-services';
 
 // Import our new innovative 2025 services
-import { innovativeAIAutonomousEcosystemServices2025 } from '../data/2025-innovative-ai-autonomous-ecosystem';
+import { innovativeAIAutonomousEcosystem2025 } from '../data/2025-innovative-ai-autonomous-ecosystem';
 import { cuttingEdgeITInfrastructureInnovations2025 } from '../data/2025-cutting-edge-it-infrastructure-innovations';
 import { innovativeMicroSaasBreakthroughs2025 } from '../data/2025-innovative-micro-saas-breakthroughs';
 
@@ -56,7 +56,7 @@ const Homepage2046: React.FC = () => {
     ...revolutionary2045AdvancedRealMicroSaas,
     ...revolutionary2045AdvancedITServices,
     ...revolutionary2045AdvancedAIServices,
-    ...innovativeAIAutonomousEcosystemServices2025,
+    ...innovativeAIAutonomousEcosystem2025,
     ...cuttingEdgeITInfrastructureInnovations2025,
     ...innovativeMicroSaasBreakthroughs2025,
     ...advancedInnovativeMicroSaasServices2026,
@@ -70,10 +70,11 @@ const Homepage2046: React.FC = () => {
   // Filter services by category
   const getFilteredServices = () => {
     if (selectedCategory === 'all') return allRevolutionaryServices;
-    return allRevolutionaryServices.filter(service => 
-      service.category.toLowerCase().includes(selectedCategory.toLowerCase()) ||
-      (service as any).type?.toLowerCase().includes(selectedCategory.toLowerCase())
-    );
+    return allRevolutionaryServices.filter(service => {
+      const category = Array.isArray(service.category) ? service.category.join(' ') : service.category;
+      return category.toLowerCase().includes(selectedCategory.toLowerCase()) ||
+        (service as any).type?.toLowerCase().includes(selectedCategory.toLowerCase());
+    });
   };
 
   const categories = [
