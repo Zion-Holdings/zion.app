@@ -5,6 +5,8 @@ import { Phone, Mail, MapPin, Check, ArrowRight, Star } from 'lucide-react';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import Button from '../components/ui/Button';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
+<<<<<<< HEAD
+=======
 import { extraServices } from '../data/extra-services';
 import { additionalEnhancedServices } from '../data/additional-real-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -30,6 +32,7 @@ import { real2025Q3Additions } from '../data/real-2025-q3-additions';
 import { realQ4Services2025 } from '../data/real-2025-q4-additions';
 import { real2026Q1Additions } from '../data/real-2026-q1-additions';
 import { ultimateFuturisticServices2025 } from '../data/2025-ultimate-futuristic-services';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2867
 
 export default function DynamicServicePage() {
   const router = useRouter();
@@ -37,6 +40,9 @@ export default function DynamicServicePage() {
 
   const service = useMemo(() => {
     if (!slug) return undefined;
+<<<<<<< HEAD
+    const byLink = enhancedRealMicroSaasServices.find(s => s.link?.endsWith(`/${slug}`));
+=======
     const all: any[] = ([] as any[])
       .concat(
         enhancedRealMicroSaasServices as any,
@@ -74,6 +80,7 @@ export default function DynamicServicePage() {
         return false;
       }
     });
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2867
     if (byLink) return byLink;
     const byId = enhancedRealMicroSaasServices.find(s => s.id === slug);
     if (byId) return byId;
@@ -161,6 +168,10 @@ function collectAllServices(): Svc[] {
       emergingTechnologyServices as Svc[],
       comprehensiveITSolutions as Svc[],
       marketValidatedServices as Svc[],
+<<<<<<< HEAD
+      newRealInnovations as Svc[],
+      realMarketServices as Svc[]
+=======
       curatedMarketServices as Svc[],
       cuttingEdgeITServices as Svc[],
       nextGenerationAIServices as Svc[],
@@ -173,6 +184,7 @@ function collectAllServices(): Svc[] {
       realQ4Services2025 as Svc[],
       real2026Q1Additions as Svc[],
       ultimateFuturisticServices2025 as unknown as Svc[]
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2867
     );
 }
 
