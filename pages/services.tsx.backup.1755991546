@@ -1,6 +1,27 @@
 =======
 import React from 'react';
 import Head from 'next/head';
+<<<<<<< HEAD
+import Link from 'next/link';
+
+export default function Services() {
+  return (
+    <div className="min-h-screen bg-slate-950 text-white p-8">
+      <Head>
+        <title>Services — Zion</title>
+        <meta name="description" content="Explore Zion services: autonomous automations, performance, a11y, SEO, and more." />
+      </Head>
+      <main className="mx-auto max-w-3xl">
+        <h1 className="text-3xl font-bold">Services</h1>
+        <p className="mt-3 text-white/80">
+          We offer autonomous cloud automations for code quality, performance, accessibility, and continuous content/SEO improvements.
+        </p>
+        <div className="mt-6">
+          <Link href="/"><a className="text-cyan-300 hover:underline">Back to Home</a></Link>
+        </div>
+      </main>
+    </div>
+=======
 import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles, Brain, Atom, Eye, Bot, Rocket as RocketIcon, Cpu as CpuIcon, Database as DatabaseIcon2, Cloud as CloudIcon2, Bot as BotIcon2, Shield as ShieldIcon2, Globe as GlobeIcon2, Zap as ZapIcon2, BarChart3 as BarChart3Icon2, TrendingUp as TrendingUpIcon2, Users as UsersIcon2, Target as TargetIcon2, Building as BuildingIcon2, Award as AwardIcon2, DollarSign as DollarSignIcon2, ChartBar as ChartBarIcon2, Lock as LockIcon2, Cpu as CpuIcon2, Database as DatabaseIcon3, Cloud as CloudIcon3, Smartphone as SmartphoneIcon2, Palette as PaletteIcon2, Search as SearchIcon2, MessageSquare as MessageSquareIcon2, FileText as FileTextIcon2, Calendar as CalendarIcon2, CreditCard as CreditCardIcon2, Settings as SettingsIcon2, Code as CodeIcon2, BookOpen as BookOpenIcon2, Activity as ActivityIcon2, Database as DatabaseIcon4, Play as PlayIcon2, Mail as MailIcon2, Phone as PhoneIcon2, MapPin as MapPinIcon2 } from 'lucide-react';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
@@ -877,6 +898,7 @@ export default function ServicesPage() {
         </section>
       </div>
     </EnhancedFuturisticBackground>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-17dc
   );
 }
 import Head from 'next/head';

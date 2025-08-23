@@ -1255,6 +1255,18 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     marketPosition: 'Advanced DeFi platform, competitive with Aave and Compound',
     targetAudience: 'DeFi users, crypto investors, financial institutions, and developers',
     trialDays: 7,
+<<<<<<< HEAD
+    setupTime: '1-2 days',
+    category: 'Blockchain & Web3',
+    realService: true,
+    technology: ['Blockchain', 'Smart Contracts', 'DeFi Protocols', 'Cryptocurrency', 'Web3'],
+    integrations: ['Ethereum', 'Polygon', 'BSC', 'MetaMask', 'WalletConnect'],
+    useCases: ['Lending', 'Borrowing', 'Trading', 'Yield farming', 'Liquidity provision'],
+    roi: '600% average ROI in 12 months',
+    competitors: ['Aave', 'Compound', 'MakerDAO', 'Uniswap'],
+    marketSize: '$20B global DeFi market',
+    growthRate: '50% annual growth'
+=======
     setupTime: '4 hours',
     category: 'Emerging Technologies',
     realService: true,
@@ -1517,6 +1529,7 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     competitors: ['Chainlink', 'Pyth Network', 'API3', 'Band Protocol'],
     marketSize: '$1.2B oracle market',
     growthRate: '200% annual growth'
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-17dc
   },
   {
     id: 'quantum-simulation-platform',
@@ -1726,6 +1739,15 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     setupTime: '1-2 weeks',
     category: 'Data & Analytics',
     realService: true,
+<<<<<<< HEAD
+    technology: ['Machine Learning', 'Data Analytics', 'Natural Language Processing', 'Predictive Modeling'],
+    integrations: ['Databases', 'Cloud services', 'CRM systems', 'ERP systems', 'Marketing platforms'],
+    useCases: ['Business analytics', 'Performance monitoring', 'Predictive insights', 'Decision support'],
+    roi: '450% average ROI in 9 months',
+    competitors: ['Tableau', 'Power BI', 'Qlik', 'Looker'],
+    marketSize: '$28B global business intelligence market',
+    growthRate: '30% annual growth'
+=======
     technology: ['Machine Learning', 'Adaptive Learning', 'Educational AI', 'Analytics'],
     integrations: ['LMS platforms', 'Student information systems', 'Content management', 'Assessment tools'],
     useCases: ['Personalized learning', 'Student assessment', 'Progress tracking', 'Content delivery'],
@@ -2093,6 +2115,7 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     competitors: ['Palo Alto Networks', 'CrowdStrike', 'SentinelOne', 'Darktrace'],
     marketSize: '$2.1B quantum security market',
     growthRate: '280% annual growth'
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-17dc
   }
 ];
 
