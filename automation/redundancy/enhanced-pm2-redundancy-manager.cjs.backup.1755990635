@@ -13,7 +13,14 @@ class EnhancedPM2RedundancyManager {
     this.backupProcesses = new Map();
     this.healthChecks = new Map();
     this.recoveryAttempts = new Map();
+<<<<<<< HEAD
+    this.primaryProcesses = [
+      'zion-auto-sync',
+      'zion-auto-sync-cron'
+    ];
+=======
     this.monitoringActive = false;
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
   }
 
   ensureLogDir() {
@@ -24,7 +31,23 @@ class EnhancedPM2RedundancyManager {
 
   log(message, level = 'INFO') {
     const timestamp = new Date().toISOString();
+<<<<<<< HEAD
+}
+
+// Export for use in other modules
+module.exports = { EnhancedPM2RedundancyManager };
+
+// If run directly, start the manager
+if (require.main === module) {
+  const manager = new EnhancedPM2RedundancyManager();
+  manager.start().catch(error => {
+    console.error('Failed to start Enhanced PM2 Redundancy Manager:', error);
+    process.exit(1);
+  });
+}
 =======
+=======
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
     const logMessage = `[${timestamp}] [${level}] [ENHANCED-PM2] ${message}`;
     console.log(logMessage);
     
@@ -84,6 +107,31 @@ class EnhancedPM2RedundancyManager {
     return processes;
   }
 
+<<<<<<< HEAD
+  async startAllBackupProcesses() {
+    this.log('Starting all enhanced backup PM2 processes...');
+    
+    // Start backup auto-sync processes
+    await this.startBackupAutoSync();
+    await this.startBackupAutoSyncEnhanced();
+    
+    // Start backup cron processes
+    await this.startBackupCron();
+    await this.startBackupCronEnhanced();
+    
+    // Start backup monitoring processes
+    await this.startBackupMonitoring();
+    await this.startBackupMonitoringEnhanced();
+    
+    // Start backup build processes
+    await this.startBackupBuildProcesses();
+    
+    // Start backup git sync processes
+    await this.startBackupGitSync();
+    
+    // Start backup marketing sync processes
+    await this.startBackupMarketingSync();
+=======
   async startBackupProcesses() {
     this.log('Starting enhanced backup PM2 processes...');
     
@@ -113,23 +161,81 @@ class EnhancedPM2RedundancyManager {
       this.log(`Failed to start backup processes: ${error.message}`, 'ERROR');
       return false;
     }
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
   }
 
   async startBackupAutoSync() {
     const scriptPath = path.join(process.cwd(), 'automation', 'pm2-auto-sync.js');
     
     if (!fs.existsSync(scriptPath)) {
+<<<<<<< HEAD
+      this.log(`Script not found: ${scriptPath}`, 'ERROR');
+      return false;
+    }
+
+    const processName = 'zion-auto-sync-backup';
+=======
       this.log('PM2 auto-sync script not found, skipping', 'WARN');
       return false;
     }
 
     const processName = 'zion-auto-sync-enhanced-backup';
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
     
     // Stop existing backup process if running
     this.runCommand('pm2', ['stop', processName]);
     this.runCommand('pm2', ['delete', processName]);
+<<<<<<< HEAD
+
+    const result = this.runCommand('pm2', [
+      'start', scriptPath,
+      '--name', processName,
+      '--interpreter', 'node',
+      '--cwd', process.cwd(),
+      '--watch', 'false',
+      '--autorestart', 'true',
+      '--max-restarts', '15',
+      '--exp-backoff-restart-delay', '1000',
+      '--env', 'NODE_ENV=production',
+      '--env', 'AUTO_SYNC_REMOTE=origin',
+      '--env', 'AUTO_SYNC_BRANCH=main',
+      '--env', 'AUTO_SYNC_STRATEGY=hardreset',
+      '--env', 'AUTO_SYNC_CLEAN=1',
+      '--env', 'AUTO_SYNC_GC=0'
+    ]);
+
+    if (result.success) {
+      this.log(`Started backup auto-sync process: ${processName}`);
+      this.backupProcesses.set(processName, {
+        type: 'auto-sync',
+        started: new Date(),
+        status: 'running'
+      });
+      return true;
+    } else {
+      this.log(`Failed to start backup auto-sync: ${result.stderr}`, 'ERROR');
+      return false;
+    }
+  }
+
+  async startBackupAutoSyncEnhanced() {
+    const scriptPath = path.join(process.cwd(), 'automation', 'pm2-auto-sync.js');
+    
+    if (!fs.existsSync(scriptPath)) {
+      this.log(`Script not found: ${scriptPath}`, 'ERROR');
+      return false;
+    }
+
+    const processName = 'zion-auto-sync-backup-enhanced';
+    
+    // Stop existing backup process if running
+    this.runCommand('pm2', ['stop', processName]);
+    this.runCommand('pm2', ['delete', processName]);
+
+=======
     
     // Start enhanced backup process
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
     const result = this.runCommand('pm2', [
       'start', scriptPath,
       '--name', processName,
@@ -138,12 +244,27 @@ class EnhancedPM2RedundancyManager {
       '--watch', 'false',
       '--autorestart', 'true',
       '--max-restarts', '20',
+<<<<<<< HEAD
+      '--exp-backoff-restart-delay', '2000',
+=======
       '--exp-backoff-restart-delay', '1000',
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
       '--env', 'NODE_ENV=production',
       '--env', 'AUTO_SYNC_REMOTE=origin',
       '--env', 'AUTO_SYNC_BRANCH=main',
       '--env', 'AUTO_SYNC_STRATEGY=hardreset',
       '--env', 'AUTO_SYNC_CLEAN=1',
+<<<<<<< HEAD
+      '--env', 'AUTO_SYNC_GC=1'
+    ]);
+
+    if (result.success) {
+      this.log(`Started enhanced backup auto-sync process: ${processName}`);
+      this.backupProcesses.set(processName, {
+        type: 'auto-sync-enhanced',
+        started: new Date(),
+        status: 'running'
+=======
       '--env', 'AUTO_SYNC_GC=0',
       '--log-date-format', 'YYYY-MM-DD HH:mm:ss Z',
       '--error', `logs/${processName}-error.log`,
@@ -159,6 +280,7 @@ class EnhancedPM2RedundancyManager {
         started: new Date(),
         health: 'healthy',
         restarts: 0
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
       });
       return true;
     } else {
@@ -171,17 +293,29 @@ class EnhancedPM2RedundancyManager {
     const scriptPath = path.join(process.cwd(), 'automation', 'pm2-auto-sync.js');
     
     if (!fs.existsSync(scriptPath)) {
+<<<<<<< HEAD
+      this.log(`Script not found: ${scriptPath}`, 'ERROR');
+      return false;
+    }
+
+    const processName = 'zion-auto-sync-cron-backup';
+=======
       this.log('PM2 auto-sync script not found, skipping cron backup', 'WARN');
       return false;
     }
 
     const processName = 'zion-auto-sync-cron-enhanced-backup';
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
     
     // Stop existing backup process if running
     this.runCommand('pm2', ['stop', processName]);
     this.runCommand('pm2', ['delete', processName]);
+<<<<<<< HEAD
+
+=======
     
     // Start enhanced cron backup process
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
     const result = this.runCommand('pm2', [
       'start', scriptPath,
       '--name', processName,
@@ -190,11 +324,72 @@ class EnhancedPM2RedundancyManager {
       '--watch', 'false',
       '--autorestart', 'false',
       '--instances', '1',
+<<<<<<< HEAD
+      '--cron-restart', '*/15 * * * *',
+=======
       '--cron-restart', '*/15 * * * *', // Every 15 minutes
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
       '--env', 'NODE_ENV=production',
       '--env', 'AUTO_SYNC_REMOTE=origin',
       '--env', 'AUTO_SYNC_BRANCH=main',
       '--env', 'AUTO_SYNC_STRATEGY=hardreset',
+<<<<<<< HEAD
+      '--env', 'AUTO_SYNC_CLEAN=0',
+      '--env', 'AUTO_SYNC_GC=0'
+    ]);
+
+    if (result.success) {
+      this.log(`Started backup cron process: ${processName}`);
+      this.backupProcesses.set(processName, {
+        type: 'cron',
+        started: new Date(),
+        status: 'running'
+      });
+      return true;
+    } else {
+      this.log(`Failed to start backup cron: ${result.stderr}`, 'ERROR');
+      return false;
+    }
+  }
+
+  async startBackupCronEnhanced() {
+    const scriptPath = path.join(process.cwd(), 'automation', 'pm2-auto-sync.js');
+    
+    if (!fs.existsSync(scriptPath)) {
+      this.log(`Script not found: ${scriptPath}`, 'ERROR');
+      return false;
+    }
+
+    const processName = 'zion-auto-sync-cron-backup-enhanced';
+    
+    // Stop existing backup process if running
+    this.runCommand('pm2', ['stop', processName]);
+    this.runCommand('pm2', ['delete', processName]);
+
+    const result = this.runCommand('pm2', [
+      'start', scriptPath,
+      '--name', processName,
+      '--interpreter', 'node',
+      '--cwd', process.cwd(),
+      '--watch', 'false',
+      '--autorestart', 'false',
+      '--instances', '1',
+      '--cron-restart', '*/20 * * * *',
+      '--env', 'NODE_ENV=production',
+      '--env', 'AUTO_SYNC_REMOTE=origin',
+      '--env', 'AUTO_SYNC_BRANCH=main',
+      '--env', 'AUTO_SYNC_STRATEGY=hardreset',
+      '--env', 'AUTO_SYNC_CLEAN=0',
+      '--env', 'AUTO_SYNC_GC=1'
+    ]);
+
+    if (result.success) {
+      this.log(`Started enhanced backup cron process: ${processName}`);
+      this.backupProcesses.set(processName, {
+        type: 'cron-enhanced',
+        started: new Date(),
+        status: 'running'
+=======
       '--env', 'AUTO_SYNC_CLEAN=1',
       '--env', 'AUTO_SYNC_GC=0',
       '--log-date-format', 'YYYY-MM-DD HH:mm:ss Z',
@@ -211,6 +406,7 @@ class EnhancedPM2RedundancyManager {
         started: new Date(),
         health: 'healthy',
         restarts: 0
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
       });
       return true;
     } else {
@@ -220,11 +416,53 @@ class EnhancedPM2RedundancyManager {
   }
 
   async startBackupMonitoring() {
+<<<<<<< HEAD
+    const processName = 'zion-monitoring-backup';
+=======
     const processName = 'zion-monitoring-enhanced-backup';
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
     
     // Stop existing backup process if running
     this.runCommand('pm2', ['stop', processName]);
     this.runCommand('pm2', ['delete', processName]);
+<<<<<<< HEAD
+
+    // Create a simple monitoring script
+    const monitoringScript = `
+#!/usr/bin/env node
+const { spawnSync } = require('child_process');
+const fs = require('fs');
+const path = require('path');
+
+function log(message) {
+  const timestamp = new Date().toISOString();
+  console.log(\`[\${timestamp}] [MONITORING] \${message}\`);
+}
+
+function checkProcessHealth() {
+  const result = spawnSync('pm2', ['status', '--no-daemon'], {
+    cwd: process.cwd(),
+    encoding: 'utf8'
+  });
+  
+  if (result.status === 0) {
+    log('PM2 processes health check completed');
+  } else {
+    log('PM2 health check failed');
+  }
+}
+
+// Run health check every 5 minutes
+setInterval(checkProcessHealth, 5 * 60 * 1000);
+checkProcessHealth(); // Initial check
+
+log('Backup monitoring process started');
+`;
+
+    const scriptPath = path.join(process.cwd(), 'automation', 'backup-monitoring.js');
+    fs.writeFileSync(scriptPath, monitoringScript);
+
+=======
     
     // Create monitoring script content
     const monitoringScript = `
@@ -248,6 +486,7 @@ class EnhancedPM2RedundancyManager {
     fs.writeFileSync(scriptPath, monitoringScript);
     
     // Start enhanced monitoring backup process
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
     const result = this.runCommand('pm2', [
       'start', scriptPath,
       '--name', processName,
@@ -255,6 +494,95 @@ class EnhancedPM2RedundancyManager {
       '--cwd', process.cwd(),
       '--watch', 'false',
       '--autorestart', 'true',
+<<<<<<< HEAD
+      '--max-restarts', '10'
+    ]);
+
+    if (result.success) {
+      this.log(`Started backup monitoring process: ${processName}`);
+      this.backupProcesses.set(processName, {
+        type: 'monitoring',
+        started: new Date(),
+        status: 'running'
+      });
+      return true;
+    } else {
+      this.log(`Failed to start backup monitoring: ${result.stderr}`, 'ERROR');
+      return false;
+    }
+  }
+
+  async startBackupMonitoringEnhanced() {
+    const processName = 'zion-monitoring-backup-enhanced';
+    
+    // Stop existing backup process if running
+    this.runCommand('pm2', ['stop', processName]);
+    this.runCommand('pm2', ['delete', processName]);
+
+    // Create an enhanced monitoring script
+    const enhancedMonitoringScript = `
+#!/usr/bin/env node
+const { spawnSync } = require('child_process');
+const fs = require('fs');
+const path = require('path');
+
+function log(message) {
+  const timestamp = new Date().toISOString();
+  console.log(\`[\${timestamp}] [ENHANCED-MONITORING] \${message}\`);
+}
+
+function checkProcessHealth() {
+  const result = spawnSync('pm2', ['status', '--no-daemon'], {
+    cwd: process.cwd(),
+    encoding: 'utf8'
+  });
+  
+  if (result.status === 0) {
+    log('Enhanced PM2 processes health check completed');
+    
+    // Check for failed processes and restart them
+    const output = result.stdout;
+    const lines = output.split('\\n');
+    
+    for (const line of lines) {
+      if (line.includes('│') && line.includes('errored')) {
+        const processName = line.split('│')[0].trim();
+        log(\`Found errored process: \${processName}, attempting restart\`);
+        spawnSync('pm2', ['restart', processName], { cwd: process.cwd() });
+      }
+    }
+  } else {
+    log('Enhanced PM2 health check failed');
+  }
+}
+
+// Run health check every 3 minutes
+setInterval(checkProcessHealth, 3 * 60 * 1000);
+checkProcessHealth(); // Initial check
+
+log('Enhanced backup monitoring process started');
+`;
+
+    const scriptPath = path.join(process.cwd(), 'automation', 'enhanced-backup-monitoring.js');
+    fs.writeFileSync(scriptPath, enhancedMonitoringScript);
+
+    const result = this.runCommand('pm2', [
+      'start', scriptPath,
+      '--name', processName,
+      '--interpreter', 'node',
+      '--cwd', process.cwd(),
+      '--watch', 'false',
+      '--autorestart', 'true',
+      '--max-restarts', '15'
+    ]);
+
+    if (result.success) {
+      this.log(`Started enhanced backup monitoring process: ${processName}`);
+      this.backupProcesses.set(processName, {
+        type: 'monitoring-enhanced',
+        started: new Date(),
+        status: 'running'
+=======
       '--max-restarts', '15',
       '--exp-backoff-restart-delay', '2000',
       '--env', 'NODE_ENV=production',
@@ -272,6 +600,7 @@ class EnhancedPM2RedundancyManager {
         started: new Date(),
         health: 'healthy',
         restarts: 0
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
       });
       return true;
     } else {
@@ -280,6 +609,92 @@ class EnhancedPM2RedundancyManager {
     }
   }
 
+<<<<<<< HEAD
+  async startBackupBuildProcesses() {
+    const processName = 'zion-build-backup';
+    
+    // Stop existing backup process if running
+    this.runCommand('pm2', ['stop', processName]);
+    this.runCommand('pm2', ['delete', processName]);
+
+    // Create a build monitoring script
+    const buildScript = `
+#!/usr/bin/env node
+const { spawnSync } = require('child_process');
+const fs = require('fs');
+const path = require('path');
+
+function log(message) {
+  const timestamp = new Date().toISOString();
+  console.log(\`[\${timestamp}] [BUILD-BACKUP] \${message}\`);
+}
+
+function checkBuildHealth() {
+  log('Checking build health...');
+  
+  // Check if build artifacts exist
+  const nextDir = path.join(process.cwd(), '.next');
+  const outDir = path.join(process.cwd(), 'out');
+  
+  if (!fs.existsSync(nextDir) && !fs.existsSync(outDir)) {
+    log('No build artifacts found, triggering build health check');
+    try {
+      spawnSync('npm', ['run', 'build:health-check'], {
+        cwd: process.cwd(),
+        stdio: 'inherit'
+      });
+    } catch (error) {
+      log(\`Build health check failed: \${error.message}\`);
+    }
+  } else {
+    log('Build artifacts found, build health OK');
+  }
+}
+
+// Run build health check every 30 minutes
+setInterval(checkBuildHealth, 30 * 60 * 1000);
+checkBuildHealth(); // Initial check
+
+log('Backup build process started');
+`;
+
+    const scriptPath = path.join(process.cwd(), 'automation', 'backup-build.js');
+    fs.writeFileSync(scriptPath, buildScript);
+
+    const result = this.runCommand('pm2', [
+      'start', scriptPath,
+      '--name', processName,
+      '--interpreter', 'node',
+      '--cwd', process.cwd(),
+      '--watch', 'false',
+      '--autorestart', 'true',
+      '--max-restarts', '8'
+    ]);
+
+    if (result.success) {
+      this.log(`Started backup build process: ${processName}`);
+      this.backupProcesses.set(processName, {
+        type: 'build',
+        started: new Date(),
+        status: 'running'
+      });
+      return true;
+    } else {
+      this.log(`Failed to start backup build process: ${result.stderr}`, 'ERROR');
+      return false;
+    }
+  }
+
+  async startBackupGitSync() {
+    const scriptPath = path.join(process.cwd(), 'automation', 'git-sync.cjs');
+    
+    if (!fs.existsSync(scriptPath)) {
+      this.log(`Script not found: ${scriptPath}`, 'ERROR');
+      return false;
+    }
+
+    const processName = 'zion-git-sync-backup';
+=======
   async startBackupBuildOrchestrator() {
     const scriptPath = path.join(process.cwd(), 'automation', 'master-build-orchestrator.cjs');
     
@@ -289,12 +704,17 @@ class EnhancedPM2RedundancyManager {
     }
 
     const processName = 'zion-build-orchestrator-enhanced-backup';
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
     
     // Stop existing backup process if running
     this.runCommand('pm2', ['stop', processName]);
     this.runCommand('pm2', ['delete', processName]);
+<<<<<<< HEAD
+
+=======
     
     // Start enhanced build orchestrator backup process
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
     const result = this.runCommand('pm2', [
       'start', scriptPath,
       '--name', processName,
@@ -302,6 +722,22 @@ class EnhancedPM2RedundancyManager {
       '--cwd', process.cwd(),
       '--watch', 'false',
       '--autorestart', 'true',
+<<<<<<< HEAD
+      '--max-restarts', '12',
+      '--cron-restart', '*/25 * * * *'
+    ]);
+
+    if (result.success) {
+      this.log(`Started backup git sync process: ${processName}`);
+      this.backupProcesses.set(processName, {
+        type: 'git-sync',
+        started: new Date(),
+        status: 'running'
+      });
+      return true;
+    } else {
+      this.log(`Failed to start backup git sync: ${result.stderr}`, 'ERROR');
+=======
       '--max-restarts', '18',
       '--exp-backoff-restart-delay', '1500',
       '--env', 'NODE_ENV=production',
@@ -323,10 +759,22 @@ class EnhancedPM2RedundancyManager {
       return true;
     } else {
       this.log(`Failed to start enhanced backup build orchestrator: ${result.stderr}`, 'ERROR');
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
       return false;
     }
   }
 
+<<<<<<< HEAD
+  async startBackupMarketingSync() {
+    const scriptPath = path.join(process.cwd(), 'automation', 'marketing-sync.js');
+    
+    if (!fs.existsSync(scriptPath)) {
+      this.log(`Script not found: ${scriptPath}`, 'ERROR');
+      return false;
+    }
+
+    const processName = 'zion-marketing-sync-backup';
+=======
   async startBackupGitSyncOrchestrator() {
     const scriptPath = path.join(process.cwd(), 'automation', 'enhanced-git-sync-orchestrator.cjs');
     
@@ -336,12 +784,17 @@ class EnhancedPM2RedundancyManager {
     }
 
     const processName = 'zion-git-sync-orchestrator-enhanced-backup';
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
     
     // Stop existing backup process if running
     this.runCommand('pm2', ['stop', processName]);
     this.runCommand('pm2', ['delete', processName]);
+<<<<<<< HEAD
+
+=======
     
     // Start enhanced git sync orchestrator backup process
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
     const result = this.runCommand('pm2', [
       'start', scriptPath,
       '--name', processName,
@@ -349,6 +802,22 @@ class EnhancedPM2RedundancyManager {
       '--cwd', process.cwd(),
       '--watch', 'false',
       '--autorestart', 'true',
+<<<<<<< HEAD
+      '--max-restarts', '10',
+      '--cron-restart', '0 */6 * * *'
+    ]);
+
+    if (result.success) {
+      this.log(`Started backup marketing sync process: ${processName}`);
+      this.backupProcesses.set(processName, {
+        type: 'marketing-sync',
+        started: new Date(),
+        status: 'running'
+      });
+      return true;
+    } else {
+      this.log(`Failed to start backup marketing sync: ${result.stderr}`, 'ERROR');
+=======
       '--max-restarts', '16',
       '--exp-backoff-restart-delay', '1200',
       '--env', 'NODE_ENV=production',
@@ -417,11 +886,37 @@ class EnhancedPM2RedundancyManager {
       return true;
     } else {
       this.log(`Failed to start enhanced backup continuous build monitor: ${result.stderr}`, 'ERROR');
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
       return false;
     }
   }
 
   async startHealthMonitoring() {
+<<<<<<< HEAD
+    this.log('Starting health monitoring for backup processes...');
+    
+    // Monitor process health every 3 minutes
+    cron.schedule('*/3 * * * *', async () => {
+      await this.checkBackupProcessHealth();
+    });
+
+    // Full health check every 15 minutes
+    cron.schedule('*/15 * * * *', async () => {
+      await this.fullHealthCheck();
+    });
+  }
+
+  async checkBackupProcessHealth() {
+    const processes = await this.checkPM2Status();
+    if (!processes) return;
+
+    for (const process of processes) {
+      if (process.name.includes('backup') || process.name.includes('enhanced')) {
+        if (process.status === 'errored' || process.status === 'stopped') {
+          this.log(`Backup process ${process.name} is ${process.status}, attempting recovery`, 'WARN');
+          await this.recoverProcess(process.name);
+        }
+=======
     if (this.monitoringActive) {
       this.log('Health monitoring already active');
       return;
@@ -463,10 +958,41 @@ class EnhancedPM2RedundancyManager {
           timestamp: new Date(),
           attempts: (this.healthChecks.get(processName)?.attempts || 0) + 1
         });
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
       }
     }
   }
 
+<<<<<<< HEAD
+  async recoverProcess(processName) {
+    this.log(`Attempting to recover process: ${processName}`);
+    
+    const recoveryCount = this.recoveryAttempts.get(processName) || 0;
+    if (recoveryCount >= 3) {
+      this.log(`Max recovery attempts reached for ${processName}`, 'ERROR');
+      return false;
+    }
+
+    this.recoveryAttempts.set(processName, recoveryCount + 1);
+    
+    // Restart the process
+    const result = this.runCommand('pm2', ['restart', processName]);
+    if (result.success) {
+      this.log(`Successfully recovered process: ${processName}`);
+      this.recoveryAttempts.set(processName, 0); // Reset counter
+      return true;
+    } else {
+      this.log(`Failed to recover process: ${processName}`, 'ERROR');
+      return false;
+    }
+  }
+
+  async fullHealthCheck() {
+    this.log('Running full health check...');
+    
+    const processes = await this.checkPM2Status();
+    if (!processes) return;
+=======
   async checkProcessHealth(processName) {
     const result = this.runCommand('pm2', ['show', processName]);
     
@@ -493,18 +1019,46 @@ class EnhancedPM2RedundancyManager {
       this.log('Comprehensive health check failed', 'ERROR');
       return;
     }
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
 
     let healthyCount = 0;
     let totalCount = 0;
 
+<<<<<<< HEAD
+    for (const process of processes) {
+      if (process.name.includes('backup') || process.name.includes('enhanced')) {
+        totalCount++;
+        if (process.status === 'online') {
+          healthyCount++;
+        }
+=======
     for (const [processName, processInfo] of this.backupProcesses) {
       totalCount++;
       if (processInfo.health === 'healthy') {
         healthyCount++;
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
       }
     }
 
     const healthPercentage = totalCount > 0 ? (healthyCount / totalCount) * 100 : 0;
+<<<<<<< HEAD
+    this.log(`Backup processes health: ${healthyCount}/${totalCount} (${healthPercentage.toFixed(1)}%)`);
+
+    if (healthPercentage < 80) {
+      this.log('Backup processes health below threshold, triggering recovery', 'WARN');
+      await this.triggerRecovery();
+    }
+  }
+
+  async triggerRecovery() {
+    this.log('Triggering comprehensive recovery...');
+    
+    // Restart all backup processes
+    for (const [name, info] of this.backupProcesses) {
+      if (info.status !== 'running') {
+        this.log(`Restarting ${name}...`);
+        this.runCommand('pm2', ['restart', name]);
+=======
     this.log(`Comprehensive health: ${healthPercentage.toFixed(1)}% (${healthyCount}/${totalCount})`);
 
     if (healthPercentage < 50) {
@@ -533,10 +1087,45 @@ class EnhancedPM2RedundancyManager {
         } else {
           this.log(`Max recovery attempts reached for ${processName}`, 'ERROR');
         }
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
       }
     }
   }
 
+<<<<<<< HEAD
+  async getStatus() {
+    const processes = await this.checkPM2Status();
+    if (!processes) return { error: 'Failed to get PM2 status' };
+
+    const backupProcesses = processes.filter(p => 
+      p.name.includes('backup') || p.name.includes('enhanced')
+    );
+
+    return {
+      totalBackupProcesses: backupProcesses.length,
+      healthyProcesses: backupProcesses.filter(p => p.status === 'online').length,
+      processes: backupProcesses,
+      recoveryAttempts: Object.fromEntries(this.recoveryAttempts),
+      lastHealthCheck: new Date().toISOString()
+    };
+  }
+
+  async stopAllBackupProcesses() {
+    this.log('Stopping all backup processes...');
+    
+    for (const [name, info] of this.backupProcesses) {
+      this.log(`Stopping ${name}...`);
+      this.runCommand('pm2', ['stop', name]);
+      this.runCommand('pm2', ['delete', name]);
+    }
+    
+    this.backupProcesses.clear();
+    this.log('All backup processes stopped');
+  }
+}
+
+module.exports = EnhancedPM2RedundancyManager;
+=======
   async recoverProcess(processName, processType) {
     this.log(`Recovering process: ${processName} (${processType})`);
     
@@ -694,3 +1283,4 @@ if (require.main === module) {
 }
 
 module.exports = EnhancedPM2RedundancyManager;
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342

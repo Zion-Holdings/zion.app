@@ -1,492 +1,504 @@
 #!/bin/bash
 
-# 🚀 Enhanced Redundancy Automation System Startup Script
-# This script initializes all enhanced redundancy systems for comprehensive automation coverage
+# Enhanced Redundancy System Startup Script
+# This script launches all redundancy automation systems for PM2, GitHub Actions, and Netlify Functions
 
 set -e
+
+# Configuration
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+WORKSPACE_DIR="$(dirname "$SCRIPT_DIR")"
+LOG_DIR="$WORKSPACE_DIR/automation/logs"
+PID_DIR="$WORKSPACE_DIR/automation/pids"
+CONFIG_FILE="$WORKSPACE_DIR/automation/redundancy-config.json"
 
 # Colors for output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
-PURPLE='\033[0;35m'
-CYAN='\033[0;36m'
 NC='\033[0m' # No Color
 
-# Configuration
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-WORKSPACE_DIR="$SCRIPT_DIR/.."
-LOGS_DIR="$WORKSPACE_DIR/automation/logs"
-REDUNDANCY_DIR="$WORKSPACE_DIR/automation"
-PID_FILE="$LOGS_DIR/enhanced-redundancy.pid"
-STATUS_FILE="$LOGS_DIR/enhanced-redundancy.status"
-
-# Ensure logs directory exists
-mkdir -p "$LOGS_DIR"
-
+# Logging function
 log() {
-    echo -e "${GREEN}[$(date '+%Y-%m-%d %H:%M:%S')]${NC} $1"
+    local level="$1"
+    shift
+    local message="$*"
+    local timestamp=$(date '+%Y-%m-%d %H:%M:%S')
+    
+    case "$level" in
+        "INFO")
+            echo -e "${BLUE}[$timestamp] [INFO]${NC} $message"
+            ;;
+        "WARN")
+            echo -e "${YELLOW}[$timestamp] [WARN]${NC} $message"
+            ;;
+        "ERROR")
+            echo -e "${RED}[$timestamp] [ERROR]${NC} $message"
+            ;;
+        "SUCCESS")
+            echo -e "${GREEN}[$timestamp] [SUCCESS]${NC} $message"
+            ;;
+        *)
+            echo -e "[$timestamp] [$level] $message"
+            ;;
+    esac
 }
 
-warn() {
-    echo -e "${YELLOW}[$(date '+%Y-%m-%d %H:%M:%S')] WARNING:${NC} $1"
+# Error handling
+error_exit() {
+    log "ERROR" "Error on line $1: ${BASH_COMMAND}"
+    exit 1
 }
 
-error() {
-    echo -e "${RED}[$(date '+%Y-%m-%d %H:%M:%S')] ERROR:${NC} $1"
-}
+trap 'error_exit $LINENO' ERR
 
-info() {
-    echo -e "${BLUE}[$(date '+%Y-%m-%d %H:%M:%S')] INFO:${NC} $1"
-}
-
-success() {
-    echo -e "${GREEN}[$(date '+%Y-%m-%d %H:%M:%S')] SUCCESS:${NC} $1"
+# Create necessary directories
+create_directories() {
+    log "INFO" "Creating necessary directories..."
+    
+    mkdir -p "$LOG_DIR"
+    mkdir -p "$PID_DIR"
+    
+    log "SUCCESS" "Directories created successfully"
 }
 
 # Check prerequisites
 check_prerequisites() {
-    log "🔍 Checking prerequisites..."
+    log "INFO" "Checking prerequisites..."
     
-    # Check if Node.js is installed
+    # Check if Node.js is available
     if ! command -v node &> /dev/null; then
-        error "Node.js is not installed. Please install Node.js 20+ first."
+        log "ERROR" "Node.js is not installed or not in PATH"
         exit 1
     fi
     
     # Check Node.js version
-    NODE_VERSION=$(node --version | cut -d'v' -f2 | cut -d'.' -f1)
-    if [ "$NODE_VERSION" -lt 20 ]; then
-        error "Node.js version 20+ is required. Current version: $(node --version)"
+    local node_version=$(node --version | cut -d'v' -f2)
+    local required_version="20.0.0"
+    
+    if ! command -v node-semver &> /dev/null; then
+        # Simple version comparison
+        if [[ "$(printf '%s\n' "$required_version" "$node_version" | sort -V | head -n1)" != "$required_version" ]]; then
+            log "ERROR" "Node.js version $node_version is lower than required $required_version"
+            exit 1
+        fi
+    fi
+    
+    # Check if npm is available
+    if ! command -v npm &> /dev/null; then
+        log "ERROR" "npm is not installed or not in PATH"
         exit 1
     fi
     
-    # Check if PM2 is installed
+    # Check if PM2 is available
     if ! command -v pm2 &> /dev/null; then
-        warn "PM2 is not installed. Installing PM2 globally..."
+        log "WARN" "PM2 is not installed. Installing PM2..."
         npm install -g pm2
     fi
     
-    # Check if required npm packages are installed
-    if [ ! -d "$WORKSPACE_DIR/node_modules" ]; then
-        warn "Installing npm dependencies..."
-        cd "$WORKSPACE_DIR"
-        npm install
+    # Check if Netlify CLI is available
+    if ! command -v netlify &> /dev/null; then
+        log "WARN" "Netlify CLI is not installed. Installing Netlify CLI..."
+        npm install -g netlify-cli
     fi
     
-    success "Prerequisites check completed successfully"
+    log "SUCCESS" "All prerequisites are satisfied"
 }
 
-# Initialize enhanced redundancy master system
-init_enhanced_redundancy_master() {
-    log "🚀 Initializing Enhanced Redundancy Master System..."
+# Load configuration
+load_config() {
+    log "INFO" "Loading configuration..."
+    
+    if [[ ! -f "$CONFIG_FILE" ]]; then
+        log "WARN" "Configuration file not found, using defaults"
+        return 0
+    fi
+    
+    # Validate JSON
+    if ! node -e "JSON.parse(require('fs').readFileSync('$CONFIG_FILE', 'utf8'))" 2>/dev/null; then
+        log "ERROR" "Invalid JSON in configuration file"
+        exit 1
+    fi
+    
+    log "SUCCESS" "Configuration loaded successfully"
+}
+
+# Check if processes are already running
+check_running_processes() {
+    log "INFO" "Checking for already running processes..."
+    
+    local pm2_pid="$PID_DIR/pm2-redundancy.pid"
+    local github_pid="$PID_DIR/github-actions-redundancy.pid"
+    local netlify_pid="$PID_DIR/netlify-functions-redundancy.pid"
+    local orchestrator_pid="$PID_DIR/master-orchestrator.pid"
+    
+    local processes_running=false
+    
+    if [[ -f "$pm2_pid" ]]; then
+        if kill -0 "$(cat "$pm2_pid")" 2>/dev/null; then
+            log "WARN" "PM2 redundancy process is already running (PID: $(cat "$pm2_pid"))"
+            processes_running=true
+        else
+            log "INFO" "Removing stale PM2 PID file"
+            rm -f "$pm2_pid"
+        fi
+    fi
+    
+    if [[ -f "$github_pid" ]]; then
+        if kill -0 "$(cat "$github_pid")" 2>/dev/null; then
+            log "WARN" "GitHub Actions redundancy process is already running (PID: $(cat "$github_pid"))"
+            processes_running=true
+        else
+            log "INFO" "Removing stale GitHub Actions PID file"
+            rm -f "$github_pid"
+        fi
+    fi
+    
+    if [[ -f "$netlify_pid" ]]; then
+        if kill -0 "$(cat "$netlify_pid")" 2>/dev/null; then
+            log "WARN" "Netlify functions redundancy process is already running (PID: $(cat "$netlify_pid"))"
+            processes_running=true
+        else
+            log "INFO" "Removing stale Netlify functions PID file"
+            rm -f "$netlify_pid"
+        fi
+    fi
+    
+    if [[ -f "$orchestrator_pid" ]]; then
+        if kill -0 "$(cat "$orchestrator_pid")" 2>/dev/null; then
+            log "WARN" "Master orchestrator process is already running (PID: $(cat "$orchestrator_pid"))"
+            processes_running=true
+        else
+            log "INFO" "Removing stale master orchestrator PID file"
+            rm -f "$orchestrator_pid"
+        fi
+    fi
+    
+    if [[ "$processes_running" == "true" ]]; then
+        log "WARN" "Some redundancy processes are already running"
+        read -p "Do you want to stop them and start fresh? (y/N): " -n 1 -r
+        echo
+        if [[ $REPLY =~ ^[Yy]$ ]]; then
+            log "INFO" "Stopping existing processes..."
+            "$SCRIPT_DIR/stop-enhanced-redundancy-system.sh"
+        else
+            log "INFO" "Continuing with existing processes..."
+        fi
+    fi
+}
+
+# Start PM2 redundancy system
+start_pm2_redundancy() {
+    log "INFO" "Starting PM2 redundancy system..."
+    
+    local pid_file="$PID_DIR/pm2-redundancy.pid"
+    local log_file="$LOG_DIR/pm2-redundancy-startup.log"
     
     cd "$WORKSPACE_DIR"
     
-    # Start the enhanced redundancy master
-    log "Starting Enhanced Redundancy Master..."
-    node automation/enhanced-redundancy-master.cjs start &
-    MASTER_PID=$!
+    # Start PM2 redundancy in background
+    nohup node automation/enhanced-pm2-redundancy.cjs start > "$log_file" 2>&1 &
+    local pid=$!
     
-    # Wait a moment for it to start
-    sleep 5
+    # Save PID
+    echo "$pid" > "$pid_file"
     
-    # Check if it's running
-    if kill -0 $MASTER_PID 2>/dev/null; then
-        success "Enhanced Redundancy Master started successfully (PID: $MASTER_PID)"
-        echo $MASTER_PID > "$PID_FILE"
+    # Wait a moment and check if process is still running
+    sleep 2
+    if kill -0 "$pid" 2>/dev/null; then
+        log "SUCCESS" "PM2 redundancy system started (PID: $pid)"
+        return 0
     else
-        error "Failed to start Enhanced Redundancy Master"
+        log "ERROR" "PM2 redundancy system failed to start"
+        rm -f "$pid_file"
         return 1
     fi
 }
 
-# Initialize enhanced PM2 redundancy system
-init_enhanced_pm2_redundancy() {
-    log "🔧 Initializing Enhanced PM2 Redundancy System..."
+# Start GitHub Actions redundancy system
+start_github_actions_redundancy() {
+    log "INFO" "Starting GitHub Actions redundancy system..."
+    
+    local pid_file="$PID_DIR/github-actions-redundancy.pid"
+    local log_file="$LOG_DIR/github-actions-redundancy-startup.log"
     
     cd "$WORKSPACE_DIR"
     
-    # Start the enhanced PM2 redundancy manager
-    log "Starting Enhanced PM2 Redundancy Manager..."
-    node automation/enhanced-pm2-redundancy-manager.cjs start &
-    PM2_PID=$!
+    # Start GitHub Actions redundancy in background
+    nohup node automation/enhanced-github-actions-redundancy.cjs start > "$log_file" 2>&1 &
+    local pid=$!
     
-    # Wait a moment for it to start
-    sleep 3
+    # Save PID
+    echo "$pid" > "$pid_file"
     
-    # Check if it's running
-    if kill -0 $PM2_PID 2>/dev/null; then
-        success "Enhanced PM2 Redundancy Manager started successfully (PID: $PM2_PID)"
-        echo $PM2_PID >> "$PID_FILE"
+    # Wait a moment and check if process is still running
+    sleep 2
+    if kill -0 "$pid" 2>/dev/null; then
+        log "SUCCESS" "GitHub Actions redundancy system started (PID: $pid)"
+        return 0
     else
-        warn "Failed to start Enhanced PM2 Redundancy Manager"
+        log "ERROR" "GitHub Actions redundancy system failed to start"
+        rm -f "$pid_file"
+        return 1
     fi
 }
 
-# Initialize enhanced GitHub Actions redundancy system
-init_enhanced_github_redundancy() {
-    log "🐙 Initializing Enhanced GitHub Actions Redundancy System..."
+# Start Netlify functions redundancy system
+start_netlify_functions_redundancy() {
+    log "INFO" "Starting Netlify functions redundancy system..."
+    
+    local pid_file="$PID_DIR/netlify-functions-redundancy.pid"
+    local log_file="$LOG_DIR/netlify-functions-redundancy-startup.log"
     
     cd "$WORKSPACE_DIR"
     
-    # Start the enhanced GitHub Actions redundancy manager
-    log "Starting Enhanced GitHub Actions Redundancy Manager..."
-    node automation/enhanced-github-actions-redundancy-manager.cjs start &
-    GITHUB_PID=$!
+    # Start Netlify functions redundancy in background
+    nohup node automation/enhanced-netlify-functions-redundancy.cjs start > "$log_file" 2>&1 &
+    local pid=$!
     
-    # Wait a moment for it to start
-    sleep 3
+    # Save PID
+    echo "$pid" > "$pid_file"
     
-    # Check if it's running
-    if kill -0 $GITHUB_PID 2>/dev/null; then
-        success "Enhanced GitHub Actions Redundancy Manager started successfully (PID: $GITHUB_PID)"
-        echo $GITHUB_PID >> "$PID_FILE"
+    # Wait a moment and check if process is still running
+    sleep 2
+    if kill -0 "$pid" 2>/dev/null; then
+        log "SUCCESS" "Netlify functions redundancy system started (PID: $pid)"
+        return 0
     else
-        warn "Failed to start Enhanced GitHub Actions Redundancy Manager"
+        log "ERROR" "Netlify functions redundancy system failed to start"
+        rm -f "$pid_file"
+        return 1
     fi
 }
 
-# Initialize enhanced Netlify functions redundancy system
-init_enhanced_netlify_redundancy() {
-    log "☁️ Initializing Enhanced Netlify Functions Redundancy System..."
+# Start master orchestrator
+start_master_orchestrator() {
+    log "INFO" "Starting master redundancy orchestrator..."
+    
+    local pid_file="$PID_DIR/master-orchestrator.pid"
+    local log_file="$LOG_DIR/master-orchestrator-startup.log"
     
     cd "$WORKSPACE_DIR"
     
-    # Start the enhanced Netlify functions redundancy manager
-    log "Starting Enhanced Netlify Functions Redundancy Manager..."
-    node automation/enhanced-netlify-functions-redundancy-manager.cjs start &
-    NETLIFY_PID=$!
+    # Start master orchestrator in background
+    nohup node automation/master-redundancy-orchestrator.cjs start > "$log_file" 2>&1 &
+    local pid=$!
     
-    # Wait a moment for it to start
-    sleep 3
+    # Save PID
+    echo "$pid" > "$pid_file"
     
-    # Check if it's running
-    if kill -0 $NETLIFY_PID 2>/dev/null; then
-        success "Enhanced Netlify Functions Redundancy Manager started successfully (PID: $NETLIFY_PID)"
-        echo $NETLIFY_PID >> "$PID_FILE"
+    # Wait a moment and check if process is still running
+    sleep 2
+    if kill -0 "$pid" 2>/dev/null; then
+        log "SUCCESS" "Master redundancy orchestrator started (PID: $pid)"
+        return 0
     else
-        warn "Failed to start Enhanced Netlify Functions Redundancy Manager"
+        log "ERROR" "Master redundancy orchestrator failed to start"
+        rm -f "$pid_file"
+        return 1
     fi
 }
 
-# Start PM2 redundancy ecosystem
-start_pm2_ecosystem() {
-    log "🔄 Starting PM2 Redundancy Ecosystem..."
+# Wait for systems to stabilize
+wait_for_stabilization() {
+    log "INFO" "Waiting for systems to stabilize..."
     
-    cd "$WORKSPACE_DIR"
+    local max_wait=60
+    local wait_time=0
+    local interval=5
     
-    # Stop existing PM2 processes if running
-    if pm2 list | grep -q "zion-auto-sync"; then
-        warn "Stopping existing PM2 processes..."
-        pm2 stop all 2>/dev/null || true
-        pm2 delete all 2>/dev/null || true
-    fi
-    
-    # Start redundancy ecosystem
-    log "Starting PM2 redundancy ecosystem..."
-    pm2 start ecosystem-redundancy.pm2.cjs
-    
-    # Save PM2 configuration
-    pm2 save
-    
-    # Setup PM2 startup script
-    pm2 startup 2>/dev/null || true
-    
-    success "PM2 redundancy ecosystem started successfully"
-}
-
-# Perform comprehensive health check
-perform_health_check() {
-    log "🏥 Performing comprehensive health check..."
-    
-    cd "$WORKSPACE_DIR"
-    
-    # Check Enhanced Redundancy Master
-    log "Checking Enhanced Redundancy Master..."
-    MASTER_STATUS=$(node automation/enhanced-redundancy-master.cjs status 2>/dev/null || echo "{}")
-    if echo "$MASTER_STATUS" | grep -q "monitoring.*true"; then
-        success "Enhanced Redundancy Master is running"
-    else
-        warn "Enhanced Redundancy Master is not running properly"
-    fi
-    
-    # Check Enhanced PM2 Redundancy Manager
-    log "Checking Enhanced PM2 Redundancy Manager..."
-    PM2_STATUS=$(node automation/enhanced-pm2-redundancy-manager.cjs status 2>/dev/null || echo "{}")
-    if echo "$PM2_STATUS" | grep -q "monitoring.*true"; then
-        success "Enhanced PM2 Redundancy Manager is running"
-    else
-        warn "Enhanced PM2 Redundancy Manager is not running properly"
-    fi
-    
-    # Check Enhanced GitHub Actions Redundancy Manager
-    log "Checking Enhanced GitHub Actions Redundancy Manager..."
-    GITHUB_STATUS=$(node automation/enhanced-github-actions-redundancy-manager.cjs status 2>/dev/null || echo "{}")
-    if echo "$GITHUB_STATUS" | grep -q "monitoring.*true"; then
-        success "Enhanced GitHub Actions Redundancy Manager is running"
-    else
-        warn "Enhanced GitHub Actions Redundancy Manager is not running properly"
-    fi
-    
-    # Check Enhanced Netlify Functions Redundancy Manager
-    log "Checking Enhanced Netlify Functions Redundancy Manager..."
-    NETLIFY_STATUS=$(node automation/enhanced-netlify-functions-redundancy-manager.cjs status 2>/dev/null || echo "{}")
-    if echo "$NETLIFY_STATUS" | grep -q "monitoring.*true"; then
-        success "Enhanced Netlify Functions Redundancy Manager is running"
-    else
-        warn "Enhanced Netlify Functions Redundancy Manager is not running properly"
-    fi
-    
-    # Check PM2 processes
-    log "Checking PM2 processes..."
-    if pm2 list | grep -q "online"; then
-        success "PM2 processes are running"
-    else
-        warn "No PM2 processes are running"
-    fi
-    
-    success "Comprehensive health check completed"
-}
-
-# Generate status report
-generate_status_report() {
-    log "📊 Generating status report..."
-    
-    cd "$WORKSPACE_DIR"
-    
-    # Create status report
-    cat > "$STATUS_FILE" << EOF
-Enhanced Redundancy Automation System Status Report
-Generated: $(date '+%Y-%m-%d %H:%M:%S')
-
-=== System Status ===
-Enhanced Redundancy Master: $(node automation/enhanced-redundancy-master.cjs status 2>/dev/null | grep -o '"monitoring":[^,]*' | cut -d: -f2 || echo "unknown")
-Enhanced PM2 Redundancy Manager: $(node automation/enhanced-pm2-redundancy-manager.cjs status 2>/dev/null | grep -o '"monitoring":[^,]*' | cut -d: -f2 || echo "unknown")
-Enhanced GitHub Actions Redundancy Manager: $(node automation/enhanced-github-actions-redundancy-manager.cjs status 2>/dev/null | grep -o '"monitoring":[^,]*' | cut -d: -f2 || echo "unknown")
-Enhanced Netlify Functions Redundancy Manager: $(node automation/enhanced-netlify-functions-redundancy-manager.cjs status 2>/dev/null | grep -o '"monitoring":[^,]*' | cut -d: -f2 || echo "unknown")
-
-=== PM2 Status ===
-$(pm2 list 2>/dev/null || echo "PM2 not available")
-
-=== Health Summary ===
-$(node automation/enhanced-redundancy-master.cjs health 2>/dev/null | grep -E "(status|Overall)" || echo "Health check not available")
-
-=== Log Files ===
-Enhanced Redundancy Master: $LOGS_DIR/enhanced-redundancy-master.log
-Enhanced PM2 Redundancy: $LOGS_DIR/enhanced-pm2-redundancy.log
-Enhanced GitHub Actions Redundancy: $LOGS_DIR/enhanced-github-actions-redundancy.log
-Enhanced Netlify Functions Redundancy: $LOGS_DIR/enhanced-netlify-functions-redundancy.log
-
-=== Configuration ===
-Redundancy Config: $WORKSPACE_DIR/automation/redundancy-config.json
-PM2 Ecosystems: 
-- $WORKSPACE_DIR/ecosystem.pm2.cjs
-- $WORKSPACE_DIR/ecosystem.redundancy.cjs
-- $WORKSPACE_DIR/ecosystem-redundancy.pm2.cjs
-
-=== GitHub Actions Workflows ===
-$(ls -la "$WORKSPACE_DIR/.github/workflows/" 2>/dev/null | grep "\.yml$" || echo "No workflows found")
-
-=== Netlify Functions ===
-$(ls -la "$WORKSPACE_DIR/netlify/functions/" 2>/dev/null | head -20 || echo "No functions found")
-EOF
-    
-    success "Status report generated: $STATUS_FILE"
-}
-
-# Stop all redundancy systems
-stop_all_systems() {
-    log "🛑 Stopping all enhanced redundancy systems..."
-    
-    cd "$WORKSPACE_DIR"
-    
-    # Stop Enhanced Redundancy Master
-    log "Stopping Enhanced Redundancy Master..."
-    node automation/enhanced-redundancy-master.cjs stop 2>/dev/null || true
-    
-    # Stop Enhanced PM2 Redundancy Manager
-    log "Stopping Enhanced PM2 Redundancy Manager..."
-    node automation/enhanced-pm2-redundancy-manager.cjs stop 2>/dev/null || true
-    
-    # Stop Enhanced GitHub Actions Redundancy Manager
-    log "Stopping Enhanced GitHub Actions Redundancy Manager..."
-    node automation/enhanced-github-actions-redundancy-manager.cjs stop 2>/dev/null || true
-    
-    # Stop Enhanced Netlify Functions Redundancy Manager
-    log "Stopping Enhanced Netlify Functions Redundancy Manager..."
-    node automation/enhanced-netlify-functions-redundancy-manager.cjs stop 2>/dev/null || true
-    
-    # Stop PM2 processes
-    log "Stopping PM2 processes..."
-    pm2 stop all 2>/dev/null || true
-    
-    # Remove PID file
-    rm -f "$PID_FILE"
-    
-    success "All enhanced redundancy systems stopped"
-}
-
-# Show system status
-show_status() {
-    log "📊 Enhanced Redundancy System Status:"
-    
-    if [ -f "$PID_FILE" ]; then
-        echo "🟢 System is running"
-        echo "Active PIDs:"
-        cat "$PID_FILE" | while read pid; do
-            if kill -0 $pid 2>/dev/null; then
-                echo "  ✅ PID $pid (running)"
-            else
-                echo "  ❌ PID $pid (not running)"
+    while [[ $wait_time -lt $max_wait ]]; do
+        local all_healthy=true
+        
+        # Check PM2 redundancy
+        if [[ -f "$PID_DIR/pm2-redundancy.pid" ]]; then
+            local pm2_pid=$(cat "$PID_DIR/pm2-redundancy.pid")
+            if ! kill -0 "$pm2_pid" 2>/dev/null; then
+                all_healthy=false
             fi
-        done
-    else
-        echo "🔴 System is not running"
-    fi
+        fi
+        
+        # Check GitHub Actions redundancy
+        if [[ -f "$PID_DIR/github-actions-redundancy.pid" ]]; then
+            local github_pid=$(cat "$PID_DIR/github-actions-redundancy.pid")
+            if ! kill -0 "$github_pid" 2>/dev/null; then
+                all_healthy=false
+            fi
+        fi
+        
+        # Check Netlify functions redundancy
+        if [[ -f "$PID_DIR/netlify-functions-redundancy.pid" ]]; then
+            local netlify_pid=$(cat "$PID_DIR/netlify-functions-redundancy.pid")
+            if ! kill -0 "$netlify_pid" 2>/dev/null; then
+                all_healthy=false
+            fi
+        fi
+        
+        # Check master orchestrator
+        if [[ -f "$PID_DIR/master-orchestrator.pid" ]]; then
+            local orchestrator_pid=$(cat "$PID_DIR/master-orchestrator.pid")
+            if ! kill -0 "$orchestrator_pid" 2>/dev/null; then
+                all_healthy=false
+            fi
+        fi
+        
+        if [[ "$all_healthy" == "true" ]]; then
+            log "SUCCESS" "All systems stabilized successfully"
+            return 0
+        fi
+        
+        log "INFO" "Waiting for systems to stabilize... ($((max_wait - wait_time))s remaining)"
+        sleep $interval
+        wait_time=$((wait_time + interval))
+    done
     
-    echo ""
-    echo "📁 Log files:"
-    ls -la "$LOGS_DIR"/*.log 2>/dev/null | head -10 || echo "No log files found"
-    
-    echo ""
-    echo "📋 PM2 status:"
-    pm2 list 2>/dev/null | head -20 || echo "PM2 not available"
+    log "WARN" "Systems did not stabilize within expected time"
+    return 1
 }
 
-# Show system health
-show_health() {
-    log "🏥 Enhanced Redundancy System Health:"
+# Perform health check
+perform_health_check() {
+    log "INFO" "Performing health check..."
     
     cd "$WORKSPACE_DIR"
     
-    echo "🔍 Enhanced Redundancy Master Health:"
-    node automation/enhanced-redundancy-master.cjs health 2>/dev/null | grep -E "(status|Overall|PM2|GitHub|Netlify)" || echo "Health check failed"
+    # Check PM2 redundancy health
+    if node automation/enhanced-pm2-redundancy.cjs status > /dev/null 2>&1; then
+        log "SUCCESS" "PM2 redundancy system is healthy"
+    else
+        log "WARN" "PM2 redundancy system health check failed"
+    fi
     
-    echo ""
-    echo "🔍 Enhanced PM2 Redundancy Health:"
-    node automation/enhanced-pm2-redundancy-manager.cjs health 2>/dev/null | grep -E "(status|Total|Healthy|Failed)" || echo "Health check failed"
+    # Check GitHub Actions redundancy health
+    if node automation/enhanced-github-actions-redundancy.cjs status > /dev/null 2>&1; then
+        log "SUCCESS" "GitHub Actions redundancy system is healthy"
+    else
+        log "WARN" "GitHub Actions redundancy system health check failed"
+    fi
     
-    echo ""
-    echo "🔍 Enhanced GitHub Actions Redundancy Health:"
-    node automation/enhanced-github-actions-redundancy-manager.cjs health 2>/dev/null | grep -E "(status|Total|Healthy|Failed)" || echo "Health check failed"
+    # Check Netlify functions redundancy health
+    if node automation/enhanced-netlify-functions-redundancy.cjs status > /dev/null 2>&1; then
+        log "SUCCESS" "Netlify functions redundancy system is healthy"
+    else
+        log "WARN" "Netlify functions redundancy system health check failed"
+    fi
     
-    echo ""
-    echo "🔍 Enhanced Netlify Functions Redundancy Health:"
-    node automation/enhanced-netlify-functions-redundancy-manager.cjs health 2>/dev/null | grep -E "(status|Total|Healthy|Failed)" || echo "Health check failed"
+    # Check master orchestrator health
+    if node automation/master-redundancy-orchestrator.cjs status > /dev/null 2>&1; then
+        log "SUCCESS" "Master orchestrator is healthy"
+    else
+        log "WARN" "Master orchestrator health check failed"
+    fi
 }
 
-# Show system logs
-show_logs() {
-    log "📝 Enhanced Redundancy System Logs:"
+# Display status
+display_status() {
+    log "INFO" "Enhanced redundancy system status:"
+    echo
     
-    echo "📋 Enhanced Redundancy Master Logs:"
-    tail -20 "$LOGS_DIR/enhanced-redundancy-master.log" 2>/dev/null || echo "No logs available"
+    local pm2_pid="$PID_DIR/pm2-redundancy.pid"
+    local github_pid="$PID_DIR/github-actions-redundancy.pid"
+    local netlify_pid="$PID_DIR/netlify-functions-redundancy.pid"
+    local orchestrator_pid="$PID_DIR/master-orchestrator.pid"
     
-    echo ""
-    echo "📋 Enhanced PM2 Redundancy Logs:"
-    tail -20 "$LOGS_DIR/enhanced-pm2-redundancy.log" 2>/dev/null || echo "No logs available"
+    echo "┌─────────────────────────────────────────────────────────────┐"
+    echo "│                    REDUNDANCY SYSTEM STATUS                │"
+    echo "├─────────────────────────────────────────────────────────────┤"
     
-    echo ""
-    echo "📋 Enhanced GitHub Actions Redundancy Logs:"
-    tail -20 "$LOGS_DIR/enhanced-github-actions-redundancy.log" 2>/dev/null || echo "No logs available"
+    # PM2 Redundancy
+    if [[ -f "$pm2_pid" ]] && kill -0 "$(cat "$pm2_pid")" 2>/dev/null; then
+        echo "│ PM2 Redundancy:        ${GREEN}RUNNING${NC} (PID: $(cat "$pm2_pid"))"
+    else
+        echo "│ PM2 Redundancy:        ${RED}STOPPED${NC}"
+    fi
     
-    echo ""
-    echo "📋 Enhanced Netlify Functions Redundancy Logs:"
-    tail -20 "$LOGS_DIR/enhanced-netlify-functions-redundancy.log" 2>/dev/null || echo "No logs available"
-}
-
-# Main startup function
-start_system() {
-    log "🚀 Starting Enhanced Redundancy Automation System..."
+    # GitHub Actions Redundancy
+    if [[ -f "$github_pid" ]] && kill -0 "$(cat "$github_pid")" 2>/dev/null; then
+        echo "│ GitHub Actions:        ${GREEN}RUNNING${NC} (PID: $(cat "$github_pid"))"
+    else
+        echo "│ GitHub Actions:        ${RED}STOPPED${NC}"
+    fi
     
-    # Check prerequisites
-    check_prerequisites
+    # Netlify Functions Redundancy
+    if [[ -f "$netlify_pid" ]] && kill -0 "$(cat "$netlify_pid")" 2>/dev/null; then
+        echo "│ Netlify Functions:     ${GREEN}RUNNING${NC} (PID: $(cat "$netlify_pid"))"
+    else
+        echo "│ Netlify Functions:     ${RED}STOPPED${NC}"
+    fi
     
-    # Initialize all systems
-    init_enhanced_redundancy_master
-    init_enhanced_pm2_redundancy
-    init_enhanced_github_redundancy
-    init_enhanced_netlify_redundancy
+    # Master Orchestrator
+    if [[ -f "$orchestrator_pid" ]] && kill -0 "$(cat "$orchestrator_pid")" 2>/dev/null; then
+        echo "│ Master Orchestrator:   ${GREEN}RUNNING${NC} (PID: $(cat "$orchestrator_pid"))"
+    else
+        echo "│ Master Orchestrator:   ${RED}STOPPED${NC}"
+    fi
     
-    # Start PM2 ecosystem
-    start_pm2_ecosystem
-    
-    # Wait for systems to stabilize
-    log "⏳ Waiting for systems to stabilize..."
-    sleep 10
-    
-    # Perform health check
-    perform_health_check
-    
-    # Generate status report
-    generate_status_report
-    
-    success "Enhanced Redundancy Automation System started successfully!"
-    
-    log "📊 System Overview:"
-    log "  ✅ Enhanced Redundancy Master - Comprehensive orchestration"
-    log "  ✅ Enhanced PM2 Redundancy - Process monitoring & recovery"
-    log "  ✅ Enhanced GitHub Actions Redundancy - Workflow validation & recovery"
-    log "  ✅ Enhanced Netlify Functions Redundancy - Function validation & recovery"
-    log "  ✅ PM2 Redundancy Ecosystem - Process management"
-    
-    log "📁 Logs available in: $LOGS_DIR"
-    log "📋 Status report: $STATUS_FILE"
-    log "🔄 Use './automation/start-enhanced-redundancy-system.sh status' to check status"
-    log "🔄 Use './automation/start-enhanced-redundancy-system.sh health' to check health"
-    log "🔄 Use './automation/start-enhanced-redundancy-system.sh logs' to view logs"
+    echo "├─────────────────────────────────────────────────────────────┤"
+    echo "│ Log Directory: $LOG_DIR"
+    echo "│ PID Directory: $PID_DIR"
+    echo "└─────────────────────────────────────────────────────────────┘"
+    echo
 }
 
 # Main function
 main() {
-    case "${1:-start}" in
-        start)
-            start_system
-            ;;
-        stop)
-            stop_all_systems
-            ;;
-        restart)
-            stop_all_systems
-            sleep 5
-            start_system
-            ;;
-        status)
-            show_status
-            ;;
-        health)
-            show_health
-            ;;
-        logs)
-            show_logs
-            ;;
-        *)
-            echo -e "${CYAN}Enhanced Redundancy Automation System${NC}"
-            echo ""
-            echo "Usage: $0 [command]"
-            echo ""
-            echo "Commands:"
-            echo "  start     - Start all enhanced redundancy systems"
-            echo "  stop      - Stop all enhanced redundancy systems"
-            echo "  restart   - Restart all enhanced redundancy systems"
-            echo "  status    - Show system status"
-            echo "  health    - Show system health"
-            echo "  logs      - Show system logs"
-            echo ""
-            echo "Features:"
-            echo "  ✅ Enhanced Redundancy Master - Comprehensive orchestration"
-            echo "  ✅ Enhanced PM2 Redundancy - Advanced process management"
-            echo "  ✅ Enhanced GitHub Actions Redundancy - Workflow validation"
-            echo "  ✅ Enhanced Netlify Functions Redundancy - Function validation"
-            echo "  ✅ Automatic health monitoring and recovery"
-            echo "  ✅ Comprehensive logging and reporting"
-            echo ""
-            echo "Logs: $LOGS_DIR"
-            echo "Status: $STATUS_FILE"
-            ;;
-    esac
+    log "INFO" "Starting enhanced redundancy system..."
+    log "INFO" "Workspace: $WORKSPACE_DIR"
+    log "INFO" "Script directory: $SCRIPT_DIR"
+    
+    # Create directories
+    create_directories
+    
+    # Check prerequisites
+    check_prerequisites
+    
+    # Load configuration
+    load_config
+    
+    # Check for running processes
+    check_running_processes
+    
+    # Start all systems
+    local startup_success=true
+    
+    if ! start_pm2_redundancy; then
+        startup_success=false
+    fi
+    
+    if ! start_github_actions_redundancy; then
+        startup_success=false
+    fi
+    
+    if ! start_netlify_functions_redundancy; then
+        startup_success=false
+    fi
+    
+    if ! start_master_orchestrator; then
+        startup_success=false
+    fi
+    
+    if [[ "$startup_success" == "false" ]]; then
+        log "ERROR" "Some systems failed to start. Check logs for details."
+        exit 1
+    fi
+    
+    # Wait for stabilization
+    if wait_for_stabilization; then
+        log "SUCCESS" "All systems started and stabilized successfully"
+    else
+        log "WARN" "Systems started but may not be fully stable"
+    fi
+    
+    # Perform health check
+    perform_health_check
+    
+    # Display final status
+    display_status
+    
+    log "SUCCESS" "Enhanced redundancy system startup completed"
+    log "INFO" "Use 'automation/stop-enhanced-redundancy-system.sh' to stop all systems"
+    log "INFO" "Check logs in $LOG_DIR for detailed information"
 }
 
 # Run main function

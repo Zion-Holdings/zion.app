@@ -1,6 +1,12 @@
 #!/usr/bin/env node
 "use strict";
 
+<<<<<<< HEAD
+const { spawnSync } = require("child_process");
+const fs = require("fs");
+const path = require("path");
+const crypto = require("crypto");
+=======
 const { spawnSync, execSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
@@ -10,6 +16,7 @@ const https = require("https");
 const { EnhancedPM2Redundancy } = require("./enhanced-pm2-redundancy.cjs");
 const { EnhancedGitHubActionsRedundancy } = require("./enhanced-github-actions-redundancy.cjs");
 const { EnhancedNetlifyFunctionsRedundancy } = require("./enhanced-netlify-functions-redundancy.cjs");
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
 
 class MasterRedundancyOrchestrator {
   constructor() {
@@ -18,6 +25,16 @@ class MasterRedundancyOrchestrator {
     this.logFile = path.join(this.logDir, "master-redundancy-orchestrator.log");
     this.ensureLogDir();
     this.config = this.loadConfig();
+<<<<<<< HEAD
+    this.monitoring = false;
+    this.checkInterval = null;
+    this.redundancySystems = new Map();
+    this.systemStatus = new Map();
+    this.overallHealth = "UNKNOWN";
+    this.lastCheckTime = null;
+    this.alertThreshold = 3;
+    this.alertCount = 0;
+=======
     
     // Initialize redundancy systems
     this.pm2Redundancy = new EnhancedPM2Redundancy();
@@ -43,6 +60,7 @@ class MasterRedundancyOrchestrator {
     this.circuitBreakers = new Map();
     this.healthHistory = [];
     this.maxHealthHistory = 100;
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
   }
 
   ensureLogDir() {
@@ -55,13 +73,58 @@ class MasterRedundancyOrchestrator {
     const configPath = path.join(this.workspace, "automation/redundancy-config.json");
     if (fs.existsSync(configPath)) {
       try {
+<<<<<<< HEAD
+        const config = JSON.parse(fs.readFileSync(configPath, "utf8"));
+        return config.master || {};
+      } catch (error) {
+        this.log(`Error loading master config: ${error.message}`);
+=======
         return JSON.parse(fs.readFileSync(configPath, "utf8"));
       } catch (error) {
         this.log(`Error loading config: ${error.message}`);
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
       }
     }
     
     return {
+<<<<<<< HEAD
+      enabled: true,
+      checkInterval: 60000, // 1 minute
+      maxFailures: 3,
+      alertThreshold: 3,
+      autoRecovery: true,
+      systems: {
+        pm2: {
+          enabled: true,
+          priority: "HIGH",
+          checkInterval: 30000,
+          maxRestartAttempts: 5
+        },
+        githubActions: {
+          enabled: true,
+          priority: "MEDIUM",
+          checkInterval: 60000,
+          maxRetries: 3
+        },
+        netlifyFunctions: {
+          enabled: true,
+          priority: "MEDIUM",
+          checkInterval: 120000,
+          maxRetries: 3
+        }
+      },
+      monitoring: {
+        healthChecks: true,
+        resourceMonitoring: true,
+        alerting: true,
+        reporting: true,
+        autoEscalation: true
+      },
+      escalation: {
+        levels: ["WARN", "ERROR", "CRITICAL"],
+        timeouts: [300000, 600000, 1800000], // 5min, 10min, 30min
+        actions: ["restart", "redeploy", "emergency"]
+=======
       orchestrator: {
         enabled: true,
         orchestrationInterval: 60000, // 1 minute
@@ -86,13 +149,18 @@ class MasterRedundancyOrchestrator {
         enabled: true,
         checkInterval: 120000,
         priority: "low"
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
       }
     };
   }
 
   log(message, level = "INFO") {
     const timestamp = new Date().toISOString();
+<<<<<<< HEAD
+    const logMessage = `[${timestamp}] [${level}] ${message}`;
+=======
     const logMessage = `[${timestamp}] [${level}] [ORCHESTRATOR] ${message}`;
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
     console.log(logMessage);
     
     try {
@@ -120,6 +188,307 @@ class MasterRedundancyOrchestrator {
         stderr: result.stderr || "",
         error: result.error
       });
+<<<<<<< HEAD
+    });
+  }
+
+  async startSystem(systemName, systemConfig) {
+    try {
+      this.log(`🚀 Starting ${systemName} redundancy system...`);
+      
+      if (!fs.existsSync(systemConfig.script)) {
+        this.log(`❌ Script not found for ${systemName}: ${systemConfig.script}`, "ERROR");
+        return false;
+      }
+
+      // Start the system process
+      const result = await this.runCommand("node", [systemConfig.script], {
+        timeout: 60000
+      });
+
+      if (result.status === 0) {
+        this.log(`✅ ${systemName} redundancy system started successfully`);
+        this.systemStatus.set(systemName, { status: "running", lastStart: new Date().toISOString() });
+        return true;
+      } else {
+        this.log(`❌ Failed to start ${systemName} redundancy system: ${result.stderr}`, "ERROR");
+        this.systemStatus.set(systemName, { status: "failed", lastStart: new Date().toISOString(), error: result.stderr });
+        return false;
+      }
+    } catch (error) {
+      this.log(`❌ Error starting ${systemName} redundancy system: ${error.message}`, "ERROR");
+      this.systemStatus.set(systemName, { status: "error", lastStart: new Date().toISOString(), error: error.message });
+      return false;
+    }
+  }
+
+  async stopSystem(systemName) {
+    try {
+      this.log(`🛑 Stopping ${systemName} redundancy system...`);
+      
+      // Find and kill the process
+      const result = await this.runCommand("pkill", ["-f", systemName]);
+      
+      if (result.status === 0 || result.status === 1) { // 1 means no processes found
+        this.log(`✅ ${systemName} redundancy system stopped`);
+        this.systemStatus.set(systemName, { status: "stopped", lastStop: new Date().toISOString() });
+        return true;
+      } else {
+        this.log(`⚠️ Could not stop ${systemName} redundancy system cleanly`, "WARN");
+        return false;
+      }
+    } catch (error) {
+      this.log(`❌ Error stopping ${systemName} redundancy system: ${error.message}`, "ERROR");
+      return false;
+    }
+  }
+
+  async restartSystem(systemName, systemConfig) {
+    try {
+      this.log(`🔄 Restarting ${systemName} redundancy system...`);
+      
+      await this.stopSystem(systemName);
+      await this.sleep(5000); // Wait for cleanup
+      const success = await this.startSystem(systemName, systemConfig);
+      
+      if (success) {
+        this.log(`✅ ${systemName} redundancy system restarted successfully`);
+      } else {
+        this.log(`❌ Failed to restart ${systemName} redundancy system`, "ERROR");
+      }
+      
+      return success;
+    } catch (error) {
+      this.log(`❌ Error restarting ${systemName} redundancy system: ${error.message}`, "ERROR");
+      return false;
+    }
+  }
+
+  async checkSystemHealth(systemName, systemConfig) {
+    try {
+      this.log(`🔍 Checking health of ${systemName} redundancy system...`);
+      
+      // Check if the system process is running
+      const result = await this.runCommand("pgrep", ["-f", systemName]);
+      const isRunning = result.status === 0;
+      
+      if (isRunning) {
+        this.log(`✅ ${systemName} redundancy system is running`);
+        this.systemStatus.set(systemName, { 
+          status: "healthy", 
+          lastCheck: new Date().toISOString(),
+          uptime: await this.getSystemUptime(systemName)
+        });
+        return true;
+      } else {
+        this.log(`⚠️ ${systemName} redundancy system is not running`, "WARN");
+        this.systemStatus.set(systemName, { 
+          status: "down", 
+          lastCheck: new Date().toISOString()
+        });
+        return false;
+      }
+    } catch (error) {
+      this.log(`❌ Error checking health of ${systemName} redundancy system: ${error.message}`, "ERROR");
+      return false;
+    }
+  }
+
+  async getSystemUptime(systemName) {
+    try {
+      const result = await this.runCommand("pgrep", ["-o", "-f", systemName]);
+      if (result.status === 0) {
+        const pid = result.stdout.trim();
+        const psResult = await this.runCommand("ps", ["-o", "etime=", "-p", pid]);
+        if (psResult.status === 0) {
+          return psResult.stdout.trim();
+        }
+      }
+      return "unknown";
+    } catch (error) {
+      return "unknown";
+    }
+  }
+
+  async performSystemRecovery(systemName, systemConfig) {
+    if (this.recoveryInProgress) {
+      this.log(`⚠️ Recovery already in progress, skipping ${systemName}`, "WARN");
+      return false;
+    }
+
+    try {
+      this.recoveryInProgress = true;
+      this.log(`🚨 Starting recovery for ${systemName} redundancy system...`);
+      
+      const recoverySuccess = await this.restartSystem(systemName, systemConfig);
+      
+      if (recoverySuccess) {
+        this.log(`✅ Recovery completed successfully for ${systemName}`);
+        this.systemStatus.set(systemName, { 
+          status: "recovered", 
+          lastRecovery: new Date().toISOString()
+        });
+      } else {
+        this.log(`❌ Recovery failed for ${systemName}`, "ERROR");
+        this.systemStatus.set(systemName, { 
+          status: "recovery_failed", 
+          lastRecovery: new Date().toISOString()
+        });
+      }
+      
+      return recoverySuccess;
+    } catch (error) {
+      this.log(`❌ Error during recovery of ${systemName}: ${error.message}`, "ERROR");
+      return false;
+    } finally {
+      this.recoveryInProgress = false;
+    }
+  }
+
+  async performMasterHealthCheck() {
+    this.log("🚀 Starting master redundancy orchestrator health check...");
+    
+    const results = {
+      systems: {},
+      overall: {
+        healthy: 0,
+        unhealthy: 0,
+        total: 0
+      },
+      timestamp: new Date().toISOString()
+    };
+
+    // Check each system
+    for (const [systemName, systemConfig] of Object.entries(this.config.systems)) {
+      if (!systemConfig.enabled) {
+        this.log(`⏭️ Skipping disabled system: ${systemName}`);
+        continue;
+      }
+
+      const isHealthy = await this.checkSystemHealth(systemName, systemConfig);
+      results.systems[systemName] = {
+        enabled: systemConfig.enabled,
+        healthy: isHealthy,
+        status: this.systemStatus.get(systemName) || { status: "unknown" }
+      };
+
+      if (isHealthy) {
+        results.overall.healthy++;
+      } else {
+        results.overall.unhealthy++;
+        
+        // Attempt recovery if enabled
+        if (systemConfig.autoRecovery && !this.recoveryInProgress) {
+          this.log(`🔄 Initiating auto-recovery for ${systemName}...`);
+          setTimeout(() => this.performSystemRecovery(systemName, systemConfig), 1000);
+        }
+      }
+      
+      results.overall.total++;
+    }
+
+    // Log results
+    this.log(`📊 Master Health Check Results:
+    - Total Systems: ${results.overall.total}
+    - Healthy: ${results.overall.healthy} ✅
+    - Unhealthy: ${results.overall.unhealthy} ❌
+    - Health Rate: ${results.overall.total > 0 ? Math.round((results.overall.healthy / results.overall.total) * 100) : 0}%`);
+
+    // Save health check results
+    const healthCheckFile = path.join(this.logDir, `master-health-check-${new Date().toISOString().split('T')[0]}.json`);
+    try {
+      fs.writeFileSync(healthCheckFile, JSON.stringify(results, null, 2));
+    } catch (error) {
+      this.log(`❌ Failed to save master health check results: ${error.message}`, "ERROR");
+    }
+
+    return results;
+  }
+
+  async emergencyMode() {
+    this.log("🚨 Entering emergency mode - attempting full system recovery...");
+    
+    try {
+      this.config.orchestration.emergencyMode = true;
+      
+      // Stop all systems
+      for (const [systemName, systemConfig] of Object.entries(this.config.systems)) {
+        if (systemConfig.enabled) {
+          await this.stopSystem(systemName);
+        }
+      }
+      
+      await this.sleep(10000); // Wait for cleanup
+      
+      // Start all systems in sequence
+      for (const [systemName, systemConfig] of Object.entries(this.config.systems)) {
+        if (systemConfig.enabled) {
+          await this.startSystem(systemName, systemConfig);
+          await this.sleep(this.config.orchestration.systemStartupDelay);
+        }
+      }
+      
+      // Perform health check
+      await this.performMasterHealthCheck();
+      
+      this.config.orchestration.emergencyMode = false;
+      this.log("✅ Emergency mode recovery completed");
+      return true;
+    } catch (error) {
+      this.log(`❌ Emergency mode recovery failed: ${error.message}`, "ERROR");
+      this.config.orchestration.emergencyMode = false;
+      return false;
+    }
+  }
+
+  async startAllSystems() {
+    this.log("🚀 Starting all redundancy systems...");
+    
+    const startupResults = {};
+    
+    for (const [systemName, systemConfig] of Object.entries(this.config.systems)) {
+      if (systemConfig.enabled) {
+        this.log(`📝 Starting ${systemName}...`);
+        const success = await this.startSystem(systemName, systemConfig);
+        startupResults[systemName] = success;
+        
+        if (success) {
+          await this.sleep(this.config.orchestration.systemStartupDelay);
+        }
+      } else {
+        this.log(`⏭️ Skipping disabled system: ${systemName}`);
+        startupResults[systemName] = "disabled";
+      }
+    }
+    
+    // Log startup results
+    const successful = Object.values(startupResults).filter(r => r === true).length;
+    const total = Object.keys(startupResults).length;
+    
+    this.log(`📊 System Startup Results: ${successful}/${total} systems started successfully`);
+    
+    return startupResults;
+  }
+
+  async stopAllSystems() {
+    this.log("🛑 Stopping all redundancy systems...");
+    
+    const stopResults = {};
+    
+    for (const [systemName, systemConfig] of Object.entries(this.config.systems)) {
+      if (systemConfig.enabled) {
+        this.log(`📝 Stopping ${systemName}...`);
+        const success = await this.stopSystem(systemName);
+        stopResults[systemName] = success;
+      } else {
+        this.log(`⏭️ Skipping disabled system: ${systemName}`);
+        stopResults[systemName] = "disabled";
+      }
+    }
+    
+    this.log("✅ All redundancy systems stopped");
+    return stopResults;
+=======
   async initializeRedundancySystems() {
     this.log("Initializing redundancy systems...", "INFO");
     
@@ -962,11 +1331,50 @@ class MasterRedundancyOrchestrator {
     
     this.log("✅ Master redundancy orchestration stopped");
   }
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
 }
 
 // CLI interface
 if (require.main === module) {
   const orchestrator = new MasterRedundancyOrchestrator();
+<<<<<<< HEAD
+  const command = process.argv[2];
+
+  switch (command) {
+    case "start":
+      orchestrator.startMonitoring();
+      break;
+    case "stop":
+      orchestrator.stopMonitoring();
+      break;
+    case "check":
+      orchestrator.checkAllSystems();
+      break;
+    case "restart":
+      orchestrator.emergencyRestart();
+      break;
+    case "redeploy":
+      orchestrator.emergencyRedeploy();
+      break;
+    case "emergency":
+      orchestrator.emergencyProcedures();
+      break;
+    case "recovery":
+      orchestrator.autoRecovery();
+      break;
+    case "status":
+      orchestrator.getSystemStatus().then(status => {
+        console.log(JSON.stringify(status, null, 2));
+      });
+      break;
+    case "report":
+      orchestrator.generateComprehensiveReport().then(report => {
+        console.log(JSON.stringify(report, null, 2));
+      });
+      break;
+    default:
+      console.log("Usage: node master-redundancy-orchestrator.cjs [start|stop|check|restart|redeploy|emergency|recovery|status|report]");
+=======
   
   const command = process.argv[2];
   
@@ -991,8 +1399,13 @@ if (require.main === module) {
       break;
     default:
       console.log("Usage: node master-redundancy-orchestrator.cjs [start|stop|orchestrate|status|health]");
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
       process.exit(1);
   }
 }
 
+<<<<<<< HEAD
 module.exports = { MasterRedundancyOrchestrator };
+=======
+module.exports = { MasterRedundancyOrchestrator };
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342

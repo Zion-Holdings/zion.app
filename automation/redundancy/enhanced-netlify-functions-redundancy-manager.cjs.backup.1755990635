@@ -1,6 +1,30 @@
 #!/usr/bin/env node
 'use strict';
 
+<<<<<<< HEAD
+const fs = require('fs');
+const path = require('path');
+const { spawnSync } = require('child_process');
+
+class EnhancedNetlifyFunctionsRedundancyManager {
+  constructor() {
+    this.functionsDir = path.join(process.cwd(), 'netlify', 'functions');
+    this.backupFunctionsDir = path.join(process.cwd(), 'netlify', 'functions', 'backup');
+    this.logDir = path.join(process.cwd(), 'automation', 'logs');
+    this.ensureDirectories();
+    this.backupFunctions = new Map();
+    this.healthChecks = new Map();
+    this.functionTemplates = new Map();
+  }
+
+  ensureDirectories() {
+    if (!fs.existsSync(this.logDir)) {
+      fs.mkdirSync(this.logDir, { recursive: true });
+    }
+    if (!fs.existsSync(this.backupFunctionsDir)) {
+      fs.mkdirSync(this.backupFunctionsDir, { recursive: true });
+    }
+=======
 const { spawnSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
@@ -22,6 +46,7 @@ class EnhancedNetlifyFunctionsRedundancyManager {
     if (!fs.existsSync(this.logDir)) {
       fs.mkdirSync(this.logDir, { recursive: true });
     }
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
   }
 
   log(message, level = 'INFO') {
@@ -29,7 +54,11 @@ class EnhancedNetlifyFunctionsRedundancyManager {
     const logMessage = `[${timestamp}] [${level}] [ENHANCED-NETLIFY] ${message}`;
     console.log(logMessage);
     
+<<<<<<< HEAD
+    const logFile = path.join(this.logDir, 'enhanced-netlify-redundancy.log');
+=======
     const logFile = path.join(this.logDir, 'enhanced-netlify-functions-redundancy.log');
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
     fs.appendFileSync(logFile, logMessage + '\n');
   }
 
@@ -37,7 +66,10 @@ class EnhancedNetlifyFunctionsRedundancyManager {
     const result = spawnSync(command, args, {
       cwd: process.cwd(),
       env: process.env,
+<<<<<<< HEAD
+=======
       shell: false,
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
       encoding: 'utf8',
       maxBuffer: 1024 * 1024 * 10
     });
@@ -49,6 +81,95 @@ class EnhancedNetlifyFunctionsRedundancyManager {
     };
   }
 
+<<<<<<< HEAD
+  async scanExistingFunctions() {
+    this.log('Scanning existing Netlify functions...');
+    
+    if (!fs.existsSync(this.functionsDir)) {
+      this.log('No functions directory found', 'WARN');
+      return [];
+    }
+
+    const functionFiles = fs.readdirSync(this.functionsDir)
+      .filter(file => file.endsWith('.js') || file.endsWith('.ts'))
+      .filter(file => !file.includes('backup') && !file.includes('runner'));
+
+    this.log(`Found ${functionFiles.length} primary functions`);
+    return functionFiles;
+  }
+
+  async scanFunctionsManifest() {
+    this.log('Scanning functions manifest...');
+    
+    const manifestPath = path.join(this.functionsDir, 'functions-manifest.json');
+    
+    if (!fs.existsSync(manifestPath)) {
+      this.log('No functions manifest found', 'WARN');
+      return [];
+    }
+
+    try {
+      const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+      const functions = manifest.functions || [];
+      
+      this.log(`Found ${functions.length} functions in manifest`);
+      return functions;
+    } catch (error) {
+      this.log(`Failed to parse functions manifest: ${error.message}`, 'ERROR');
+      return [];
+    }
+  }
+
+  async createAllBackupFunctions() {
+    this.log('Creating all enhanced backup functions...');
+    
+    // Scan both disk and manifest
+    const diskFunctions = await this.scanExistingFunctions();
+    const manifestFunctions = await this.scanFunctionsManifest();
+    
+    // Combine and deduplicate
+    const allFunctions = [...new Set([...diskFunctions, ...manifestFunctions])];
+    
+    this.log(`Creating backups for ${allFunctions.length} functions...`);
+    
+    for (const func of allFunctions) {
+      await this.createBackupFunction(func);
+    }
+    
+    // Create additional specialized backup functions
+    await this.createSpecializedBackupFunctions();
+    
+    this.log('All backup functions created');
+  }
+
+  async createBackupFunction(functionName) {
+    const functionPath = path.join(this.functionsDir, `${functionName}.js`);
+    const backupFunctionPath = path.join(this.backupFunctionsDir, `${functionName}-backup.js`);
+    
+    // Check if function exists on disk
+    if (!fs.existsSync(functionPath)) {
+      this.log(`Function not found on disk: ${functionPath}`, 'WARN');
+      // Create a backup function anyway based on the name
+      await this.createBackupFunctionFromName(functionName);
+      return;
+    }
+
+    try {
+      const functionContent = fs.readFileSync(functionPath, 'utf8');
+      const backupContent = this.generateBackupFunction(functionContent, functionName);
+      
+      fs.writeFileSync(backupFunctionPath, backupContent);
+      
+      const backupName = path.basename(backupFunctionPath);
+      this.backupFunctions.set(backupName, {
+        original: functionName,
+        created: new Date(),
+        status: 'created',
+        type: 'backup'
+      });
+      
+      this.log(`Created backup function: ${backupName}`);
+=======
   async scanFunctions() {
     this.log('Scanning Netlify functions...');
     
@@ -174,6 +295,7 @@ class EnhancedNetlifyFunctionsRedundancyManager {
         lastDeploy: null
       });
       
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
       return true;
       
     } catch (error) {
@@ -182,6 +304,188 @@ class EnhancedNetlifyFunctionsRedundancyManager {
     }
   }
 
+<<<<<<< HEAD
+  async createBackupFunctionFromName(functionName) {
+    const backupFunctionPath = path.join(this.backupFunctionsDir, `${functionName}-backup.js`);
+    
+    // Create a generic backup function based on the name
+    const backupContent = this.generateGenericBackupFunction(functionName);
+    
+    try {
+      fs.writeFileSync(backupFunctionPath, backupContent);
+      
+      const backupName = path.basename(backupFunctionPath);
+      this.backupFunctions.set(backupName, {
+        original: functionName,
+        created: new Date(),
+        status: 'created',
+        type: 'generic-backup'
+      });
+      
+      this.log(`Created generic backup function: ${backupName}`);
+      return true;
+      
+    } catch (error) {
+      this.log(`Failed to create generic backup for ${functionName}: ${error.message}`, 'ERROR');
+      return false;
+    }
+  }
+
+  generateBackupFunction(originalContent, functionName) {
+    // Create a backup wrapper around the original function
+    const backupContent = `// Backup function for ${functionName}
+// Generated: ${new Date().toISOString()}
+// Original function: ${functionName}
+
+const originalFunction = require('../${functionName}.js');
+
+exports.handler = async (event, context) => {
+  const startTime = Date.now();
+  const backupId = \`backup-\${Date.now()}-\${Math.random().toString(36).substr(2, 9)}\`;
+  
+  console.log(\`[BACKUP] \${functionName} backup function started: \${backupId}\`);
+  console.log(\`[BACKUP] Event: \${JSON.stringify(event)}\`);
+  
+  try {
+    // Call the original function
+    const result = await originalFunction.handler(event, context);
+    
+    const duration = Date.now() - startTime;
+    console.log(\`[BACKUP] \${functionName} backup function completed successfully: \${backupId} (duration: \${duration}ms)\`);
+    
+    // Add backup metadata to response
+    if (result && typeof result === 'object') {
+      result._backup = {
+        id: backupId,
+        originalFunction: '${functionName}',
+        timestamp: new Date().toISOString(),
+        duration: duration,
+        type: 'backup'
+      };
+    }
+    
+    return result;
+    
+  } catch (error) {
+    const duration = Date.now() - startTime;
+    console.error(\`[BACKUP] \${functionName} backup function failed: \${backupId} (duration: \${duration}ms)\`, error);
+    
+    // Return a backup error response
+    return {
+      statusCode: 500,
+      body: JSON.stringify({
+        error: 'Backup function execution failed',
+        originalFunction: '${functionName}',
+        backupId: backupId,
+        timestamp: new Date().toISOString(),
+        duration: duration,
+        originalError: error.message
+      })
+    };
+  }
+};
+
+// Export backup function metadata
+exports.backupMetadata = {
+  originalFunction: '${functionName}',
+  generatedAt: '${new Date().toISOString()}',
+  type: 'backup',
+  version: '1.0.0'
+};
+`;
+
+    return backupContent;
+  }
+
+  generateGenericBackupFunction(functionName) {
+    // Create a generic backup function when the original doesn't exist
+    const backupContent = `// Generic backup function for ${functionName}
+// Generated: ${new Date().toISOString()}
+// Original function: ${functionName} (not found on disk)
+
+exports.handler = async (event, context) => {
+  const startTime = Date.now();
+  const backupId = \`generic-backup-\${Date.now()}-\${Math.random().toString(36).substr(2, 9)}\`;
+  
+  console.log(\`[GENERIC-BACKUP] \${functionName} generic backup function started: \${backupId}\`);
+  console.log(\`[GENERIC-BACKUP] Event: \${JSON.stringify(event)}\`);
+  
+  try {
+    // Generic backup logic based on function name
+    let result = {};
+    
+    if (functionName.includes('audit') || functionName.includes('scanner')) {
+      // Audit/scanning functions
+      result = {
+        status: 'backup-executed',
+        message: 'Generic backup audit/scan completed',
+        timestamp: new Date().toISOString(),
+        functionType: 'audit/scan'
+      };
+    } else if (functionName.includes('runner') || functionName.includes('orchestrator')) {
+      // Runner/orchestrator functions
+      result = {
+        status: 'backup-executed',
+        message: 'Generic backup runner/orchestrator completed',
+        timestamp: new Date().toISOString(),
+        functionType: 'runner/orchestrator'
+      };
+    } else if (functionName.includes('scheduler') || functionName.includes('scheduler')) {
+      // Scheduler functions
+      result = {
+        status: 'backup-executed',
+        message: 'Generic backup scheduler completed',
+        timestamp: new Date().toISOString(),
+        functionType: 'scheduler'
+      };
+    } else {
+      // Generic fallback
+      result = {
+        status: 'backup-executed',
+        message: 'Generic backup function completed',
+        timestamp: new Date().toISOString(),
+        functionType: 'generic'
+      };
+    }
+    
+    const duration = Date.now() - startTime;
+    console.log(\`[GENERIC-BACKUP] \${functionName} generic backup function completed: \${backupId} (duration: \${duration}ms)\`);
+    
+    // Add backup metadata
+    result._backup = {
+      id: backupId,
+      originalFunction: '${functionName}',
+      timestamp: new Date().toISOString(),
+      duration: duration,
+      type: 'generic-backup'
+    };
+    
+    return {
+      statusCode: 200,
+      body: JSON.stringify(result)
+    };
+    
+  } catch (error) {
+    const duration = Date.now() - startTime;
+    console.error(\`[GENERIC-BACKUP] \${functionName} generic backup function failed: \${backupId} (duration: \${duration}ms)\`, error);
+    
+    return {
+      statusCode: 500,
+      body: JSON.stringify({
+}
+
+// Export for use in other modules
+module.exports = { EnhancedNetlifyFunctionsRedundancyManager };
+
+// If run directly, start the manager
+if (require.main === module) {
+  const manager = new EnhancedNetlifyFunctionsRedundancyManager();
+  manager.start().catch(error => {
+    console.error('Failed to start Enhanced Netlify Functions Redundancy Manager:', error);
+    process.exit(1);
+  });
+}
+=======
         error: 'Generic backup function execution failed',
         originalFunction: '${functionName}',
         backupId: backupId,
@@ -1395,10 +1699,82 @@ exports.metadata = {
       
     } catch (error) {
       this.log(`Recovery failed for ${functionName}: ${error.message}`, 'ERROR');
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
       return false;
     }
   }
 
+<<<<<<< HEAD
+  async createFunctionsManifest() {
+    this.log('Creating new functions manifest...');
+    
+    const manifestPath = path.join(this.functionsDir, 'functions-manifest.json');
+    const backupFunctions = fs.readdirSync(this.backupFunctionsDir)
+      .filter(file => file.endsWith('.js') || file.endsWith('.ts'))
+      .map(file => file.replace('.js', '').replace('.ts', ''));
+    
+    const manifest = {
+      generatedAt: new Date().toISOString(),
+      functions: [],
+      backupFunctions: backupFunctions,
+      backupFunctionsGeneratedAt: new Date().toISOString(),
+      totalBackupFunctions: backupFunctions.length,
+      version: '2.0.0',
+      type: 'enhanced-with-backups'
+    };
+    
+    try {
+      fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2));
+      this.log('Created new functions manifest');
+      return true;
+    } catch (error) {
+      this.log(`Failed to create functions manifest: ${error.message}`, 'ERROR');
+      return false;
+    }
+  }
+
+  async getStatus() {
+    const diskFunctions = await this.scanExistingFunctions();
+    const manifestFunctions = await this.scanFunctionsManifest();
+    const backupFiles = fs.existsSync(this.backupFunctionsDir) 
+      ? fs.readdirSync(this.backupFunctionsDir).filter(f => f.includes('backup'))
+      : [];
+    
+    return {
+      totalPrimaryFunctions: diskFunctions.length,
+      totalManifestFunctions: manifestFunctions.length,
+      totalBackupFunctions: backupFiles.length,
+      backupFunctions: Array.from(this.backupFunctions.entries()),
+      backupFunctionsDir: this.backupFunctionsDir,
+      lastScan: new Date().toISOString()
+    };
+  }
+
+  async cleanupOldBackups() {
+    this.log('Cleaning up old backup functions...');
+    
+    if (!fs.existsSync(this.backupFunctionsDir)) {
+      return;
+    }
+    
+    const backupFiles = fs.readdirSync(this.backupFunctionsDir)
+      .filter(file => file.includes('backup'));
+    
+    for (const file of backupFiles) {
+      const filePath = path.join(this.backupFunctionsDir, file);
+      const stats = fs.statSync(filePath);
+      const ageInDays = (Date.now() - stats.mtime.getTime()) / (1000 * 60 * 60 * 24);
+      
+      if (ageInDays > 30) {
+        fs.unlinkSync(filePath);
+        this.log(`Removed old backup function: ${file}`);
+      }
+    }
+  }
+}
+
+module.exports = EnhancedNetlifyFunctionsRedundancyManager;
+=======
   async emergencyRecovery() {
     this.log('Initiating emergency recovery...');
     
@@ -1524,3 +1900,4 @@ if (require.main === module) {
 }
 
 module.exports = EnhancedNetlifyFunctionsRedundancyManager;
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
