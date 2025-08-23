@@ -8,6 +8,7 @@ import TopContactBar from './TopContactBar';
 import PerformanceMonitor from '../PerformanceMonitor';
 import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
+import EnhancedErrorBoundary from '../EnhancedErrorBoundary';
 
 interface LayoutProps {
   children: React.ReactNode;
