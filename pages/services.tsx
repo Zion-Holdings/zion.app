@@ -14,6 +14,18 @@ import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-
 import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
 import { cuttingEdgeAIServices2025 } from '../data/2025-cutting-edge-ai-services';
 
+// Import our comprehensive new 2025 services
+import { aiBusinessIntelligencePlatform2025 } from '../data/2025-ai-business-intelligence-platform';
+import { cybersecurityCompliancePlatform2025 } from '../data/2025-cybersecurity-compliance-platform';
+import { cloudDevOpsAutomationPlatform2025 } from '../data/2025-cloud-devops-automation-platform';
+import { digitalTransformationInnovationPlatform2025 } from '../data/2025-digital-transformation-innovation-platform';
+import { healthcareBiotechInnovationPlatform2025 } from '../data/2025-healthcare-biotech-innovation-platform';
+import { fintechInnovationPlatform2025 } from '../data/2025-fintech-innovation-platform';
+import { sustainabilityGreenTechPlatform2025 } from '../data/2025-sustainability-green-tech-platform';
+import { spaceTechAerospaceInnovationPlatform2025 } from '../data/2025-space-tech-aerospace-innovation-platform';
+import { quantumComputingAdvancedTechPlatform2025 } from '../data/2025-quantum-computing-advanced-tech-platform';
+import { comprehensiveNewServices2025 } from '../data/2025-comprehensive-new-services-summary';
+
 // Import our new service data
 import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
 import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas-solutions';
@@ -103,7 +115,19 @@ const getServiceDescription = (service: any) => {
 
 // Create unified services array
 const allServices = [
-  // Our new 2025 services
+  // Our comprehensive new 2025 services
+  ...aiBusinessIntelligencePlatform2025,
+  ...cybersecurityCompliancePlatform2025,
+  ...cloudDevOpsAutomationPlatform2025,
+  ...digitalTransformationInnovationPlatform2025,
+  ...healthcareBiotechInnovationPlatform2025,
+  ...fintechInnovationPlatform2025,
+  ...sustainabilityGreenTechPlatform2025,
+  ...spaceTechAerospaceInnovationPlatform2025,
+  ...quantumComputingAdvancedTechPlatform2025,
+  ...comprehensiveNewServices2025,
+  
+  // Our existing 2025 services
   ...advancedAIAutomationServices2025,
   ...innovativeITInfrastructureServices2025,
   ...innovativeMicroSaasSolutions2025,
@@ -174,6 +198,69 @@ const categories = [
     icon: <Grid className="w-6 h-6" />,
     color: 'from-gray-500 to-slate-500',
     description: 'Complete portfolio of all services'
+  },
+  {
+    id: 'ai-business-intelligence',
+    name: 'AI & Business Intelligence',
+    icon: <Brain className="w-6 h-6" />,
+    color: 'from-purple-600 via-blue-600 to-cyan-600',
+    description: 'AI-powered business intelligence and analytics'
+  },
+  {
+    id: 'cybersecurity-compliance',
+    name: 'Cybersecurity & Compliance',
+    icon: <Shield className="w-6 h-6" />,
+    color: 'from-red-600 via-orange-600 to-yellow-600',
+    description: 'Advanced security and compliance solutions'
+  },
+  {
+    id: 'cloud-devops',
+    name: 'Cloud & DevOps',
+    icon: <Cpu className="w-6 h-6" />,
+    color: 'from-blue-600 via-cyan-600 to-teal-600',
+    description: 'Cloud orchestration and DevOps automation'
+  },
+  {
+    id: 'digital-transformation',
+    name: 'Digital Transformation',
+    icon: <Rocket className="w-6 h-6" />,
+    color: 'from-purple-600 via-pink-600 to-red-600',
+    description: 'Business transformation and innovation'
+  },
+  {
+    id: 'healthcare-biotech',
+    name: 'Healthcare & Biotech',
+    icon: <Heart className="w-6 h-6" />,
+    color: 'from-blue-600 via-cyan-600 to-teal-600',
+    description: 'Healthcare analytics and biotech innovation'
+  },
+  {
+    id: 'fintech',
+    name: 'Fintech Innovation',
+    icon: <Target className="w-6 h-6" />,
+    color: 'from-green-600 via-emerald-600 to-teal-600',
+    description: 'Financial technology and blockchain solutions'
+  },
+  {
+    id: 'sustainability-green-tech',
+    name: 'Sustainability & Green Tech',
+    icon: <Palette className="w-6 h-6" />,
+    color: 'from-green-600 via-emerald-600 to-teal-600',
+    description: 'Environmental sustainability and green technology'
+  },
+  {
+    id: 'space-tech-aerospace',
+    name: 'Space Tech & Aerospace',
+    icon: <Atom className="w-6 h-6" />,
+    color: 'from-blue-600 via-indigo-600 to-purple-600',
+    description: 'Space technology and aerospace innovation'
+  },
+  {
+    id: 'quantum-computing',
+    name: 'Quantum Computing',
+    icon: <Brain className="w-6 h-6" />,
+    color: 'from-purple-600 via-violet-600 to-indigo-600',
+    description: 'Quantum computing and advanced technology'
   },
   {
     id: 'ai-automation',
@@ -298,8 +385,28 @@ export default function Services() {
     if (selectedCategory === 'all') return matchesSearch;
     
     const serviceCategory = getServiceCategory(service).toLowerCase();
-    const categoryName = categories.find(cat => cat.id === selectedCategory)?.name.toLowerCase();
     
+    // Handle new category mappings
+    const categoryMappings: { [key: string]: string[] } = {
+      'ai-business-intelligence': ['AI Services', 'AI & Business Intelligence'],
+      'cybersecurity-compliance': ['Cybersecurity', 'Compliance'],
+      'cloud-devops': ['Cloud & DevOps', 'IT Infrastructure'],
+      'digital-transformation': ['Digital Transformation'],
+      'healthcare-biotech': ['Healthcare & Biotech'],
+      'fintech': ['Fintech'],
+      'sustainability-green-tech': ['Sustainability & Green Tech'],
+      'space-tech-aerospace': ['Space Technology', 'Aerospace'],
+      'quantum-computing': ['Quantum Computing']
+    };
+    
+    if (categoryMappings[selectedCategory]) {
+      const matchesCategory = categoryMappings[selectedCategory].some(cat => 
+        serviceCategory.includes(cat.toLowerCase())
+      );
+      return matchesSearch && matchesCategory;
+    }
+    
+    const categoryName = categories.find(cat => cat.id === selectedCategory)?.name.toLowerCase();
     return matchesSearch && serviceCategory.includes(categoryName || '');
   });
 
@@ -339,6 +446,25 @@ export default function Services() {
 
   const getCategoryIcon = (category: string) => {
     switch (category.toLowerCase()) {
+      case 'ai & business intelligence':
+        return <Brain className="w-6 h-6 text-purple-400" />;
+      case 'cybersecurity & compliance':
+        return <Shield className="w-6 h-6 text-red-400" />;
+      case 'cloud & devops':
+        return <Cpu className="w-6 h-6 text-blue-400" />;
+      case 'digital transformation':
+        return <Rocket className="w-6 h-6 text-pink-400" />;
+      case 'healthcare & biotech':
+        return <Heart className="w-6 h-6 text-blue-400" />;
+      case 'fintech':
+        return <Target className="w-6 h-6 text-green-400" />;
+      case 'sustainability & green tech':
+        return <Palette className="w-6 h-6 text-green-400" />;
+      case 'space technology':
+      case 'aerospace':
+        return <Atom className="w-6 h-6 text-blue-400" />;
+      case 'quantum computing':
+        return <Brain className="w-6 h-6 text-purple-400" />;
       case 'ai automation':
         return <Brain className="w-6 h-6 text-blue-400" />;
       case 'it infrastructure':
@@ -366,9 +492,6 @@ export default function Services() {
       case 'creative':
       case 'creative & media':
         return <Palette className="w-6 h-6 text-indigo-400" />;
-      case 'healthcare':
-      case 'healthcare & biotech':
-        return <Heart className="w-6 h-6 text-red-400" />;
       case 'transportation':
       case 'transportation & logistics':
         return <Truck className="w-6 h-6 text-blue-400" />;
