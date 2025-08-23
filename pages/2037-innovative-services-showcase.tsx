@@ -7,10 +7,7 @@ import {
   Database, Cloud, Lock, Settings, Eye, Award, Clock
 } from 'lucide-react';
 
-// Import our new service data
-import { innovative2037MicroSaasServices } from '../data/innovative-2037-micro-saas-services';
-import { innovative2037ITServices } from '../data/innovative-2037-it-services';
-import { innovative2037AIServices } from '../data/innovative-2037-ai-services';
+
 
 const contactInfo = {
   mobile: '+1 302 464 0950',
@@ -93,23 +90,23 @@ const ServiceShowcase = () => {
   const [activeCategory, setActiveCategory] = useState('all');
   
   const categories = [
-    { id: 'all', name: 'All Services', icon: <Star className="w-5 h-5" />, count: innovative2037MicroSaasServices.length + innovative2037ITServices.length + innovative2037AIServices.length },
-    { id: 'ai', name: 'AI & Consciousness', icon: <Brain className="w-5 h-5" />, count: innovative2037AIServices.length },
-    { id: 'quantum', name: 'Quantum Technology', icon: <Atom className="w-5 h-5" />, count: innovative2037ITServices.filter(s => s.name.toLowerCase().includes('quantum')).length },
-    { id: 'autonomous', name: 'Autonomous Systems', icon: <Zap className="w-5 h-5" />, count: innovative2037ITServices.filter(s => s.name.toLowerCase().includes('autonomous')).length + innovative2037AIServices.filter(s => s.name.toLowerCase().includes('autonomous')).length },
-    { id: 'micro-saas', name: 'Micro SAAS', icon: <Rocket className="w-5 h-5" />, count: innovative2037MicroSaasServices.length },
-    { id: 'it', name: 'IT Solutions', icon: <Cpu className="w-5 h-5" />, count: innovative2037ITServices.length }
+    { id: 'all', name: 'All Services', icon: <Star className="w-5 h-5" />, count: 0 },
+    { id: 'ai', name: 'AI & Consciousness', icon: <Brain className="w-5 h-5" />, count: 0 },
+    { id: 'quantum', name: 'Quantum Technology', icon: <Atom className="w-5 h-5" />, count: 0 },
+    { id: 'autonomous', name: 'Autonomous Systems', icon: <Zap className="w-5 h-5" />, count: 0 },
+    { id: 'micro-saas', name: 'Micro SAAS', icon: <Rocket className="w-5 h-5" />, count: 0 },
+          { id: 'it', name: 'IT Solutions', icon: <Cpu className="w-5 h-5" />, count: 0 }
   ];
 
   const getFilteredServices = () => {
-    const allServices = [...innovative2037MicroSaasServices, ...innovative2037ITServices, ...innovative2037AIServices];
+    const allServices: any[] = [];
     
     if (activeCategory === 'all') return allServices;
-    if (activeCategory === 'ai') return innovative2037AIServices;
-    if (activeCategory === 'quantum') return allServices.filter(s => s.name.toLowerCase().includes('quantum'));
-    if (activeCategory === 'autonomous') return allServices.filter(s => s.name.toLowerCase().includes('autonomous'));
-    if (activeCategory === 'micro-saas') return innovative2037MicroSaasServices;
-    if (activeCategory === 'it') return innovative2037ITServices;
+    if (activeCategory === 'ai') return [];
+    if (activeCategory === 'quantum') return [];
+    if (activeCategory === 'autonomous') return [];
+    if (activeCategory === 'micro-saas') return [];
+    if (activeCategory === 'it') return [];
     
     return allServices;
   };

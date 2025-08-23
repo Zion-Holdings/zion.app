@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Layout from './layout/Layout';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Users, TrendingUp, Brain, Shield, Rocket, Globe, Lock, Cpu, Database, Cloud, BarChart3, Star, Zap, X, Search, MessageCircle, Phone, Mail } from 'lucide-react';
+import { ArrowRight, Users, TrendingUp, Brain, Shield, Rocket, Globe, Lock, Cpu, Database, Cloud, BarChart3, Star, Zap, X, Search, MessageCircle, Phone, Mail, Atom } from 'lucide-react';
 
 /* eslint-disable no-undef */
 const Homepage2025: React.FC = () => {

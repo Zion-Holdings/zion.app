@@ -8,10 +8,7 @@ import {
   Phone, Mail, MapPin, Cpu
 } from 'lucide-react';
 
-// Import our new 2037 services
-import { innovative2037MicroSaasServices } from '../data/innovative-2037-micro-saas-services';
-import { innovative2037ITServices } from '../data/innovative-2037-it-services';
-import { innovative2037AIServices } from '../data/innovative-2037-ai-services';
+
 
 
 
@@ -60,12 +57,8 @@ const categories = [
   }
 ];
 
-// Combine all services
-const allServices = [
-  ...innovative2037MicroSaasServices,
-  ...innovative2037ITServices,
-  ...innovative2037AIServices
-];
+// Placeholder services for now
+const allServices: any[] = [];
 
 export default function FuturisticServicesShowcase2037() {
   const [selectedCategory, setSelectedCategory] = useState('all');
