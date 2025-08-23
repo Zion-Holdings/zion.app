@@ -47,7 +47,15 @@ const Header = () => {
       icon: <Zap className="w-5 h-5" />,
       children: [
         { name: 'All Services', href: '/services' },
+<<<<<<< HEAD
+        { name: 'AI & Consciousness', href: '/ai-services' },
+        { name: 'Quantum Computing', href: '/quantum-services' },
+        { name: 'Space Technology', href: '/space-technology' },
+        { name: 'IT Solutions', href: '/it-services' },
+        { name: 'Cybersecurity', href: '/cybersecurity' }
+=======
         { name: 'Status Pages & SLO', href: '/status-pages-slo' }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-680f
       ]
     },
     {
@@ -56,10 +64,34 @@ const Header = () => {
       description: 'Industry-Specific Solutions',
       icon: <Sparkles className="w-5 h-5" />,
       children: [
+<<<<<<< HEAD
+        { name: 'Case Studies', href: '/case-studies' },
+        { name: 'Industry Solutions', href: '/solutions' },
+        { name: 'Digital Transformation', href: '/digital-transformation' },
+        { name: 'Cloud Platform', href: '/cloud-platform' },
+        { name: 'AI Assistant', href: '/ai-assistant' }
+      ]
+    },
+    {
+      name: 'Resources',
+      href: '/resources',
+      description: 'Knowledge & Insights',
+      icon: <Sparkles className="w-5 h-5" />,
+      children: [
+        { name: 'Blog', href: '/blog' },
+        { name: 'Documentation', href: '/docs' },
+        { name: 'White Papers', href: '/white-papers' },
+        { name: 'Webinars', href: '/webinars' },
+        { name: 'Training', href: '/training' }
+      ]
+    },
+    { name: 'About', href: '/about' },
+=======
         { name: 'Case Studies', href: '/case-studies' }
       ]
     },
     { name: 'Market Pricing', href: '/market-pricing' },
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-680f
     { name: 'Pricing', href: '/pricing' },
     { name: 'Contact', href: '/contact' }
   ];

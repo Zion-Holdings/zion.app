@@ -380,6 +380,28 @@ export default function ServicesIndexPage() {
         </div>
       </UltraFuturisticBackground>
 
+<<<<<<< HEAD
+      <div className="relative z-10 pt-32 pb-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          <div className="text-center mb-20">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+              Our Services
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto">
+              Discover our comprehensive suite of cutting-edge technology solutions designed to transform your business and drive innovation
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
+              <span className="px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-full text-cyan-300">
+                {validServices.length}+ Services
+              </span>
+              <span className="px-4 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 rounded-full text-purple-300">
+                {categories.length} Categories
+              </span>
+              <span className="px-4 py-2 bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-full text-green-300">
+                Latest 2036 Tech
+              </span>
+=======
         {categories.map((cat) => (
           <section key={cat} id={anchorMap[cat] || toSlug(cat)}>
             <h2 className="text-2xl md:text-3xl font-semibold text-white mb-4">{cat}</h2>
@@ -400,6 +422,7 @@ export default function ServicesIndexPage() {
                   </Card>
                 );
               })}
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-680f
             </div>
           </div>
 
