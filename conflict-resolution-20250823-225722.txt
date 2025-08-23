@@ -97,3 +97,5 @@
 2025-08-23 22:57:36 - Resolving conflicts in index.html for branch 4pkscj-codex/disable-theme-toggle-and-set-default-dark-theme
 2025-08-23 22:57:36 - Resolving conflicts in src/index.css for branch 4pkscj-codex/disable-theme-toggle-and-set-default-dark-theme
 2025-08-23 22:57:36 - Resolving conflicts in src/layout/AppHeader.tsx for branch 4pkscj-codex/disable-theme-toggle-and-set-default-dark-theme
+2025-08-23 22:57:37 - Merge conflicts detected in 4xe4ab-codex/fix--settheme--not-found-in-usetheme
+2025-08-23 22:57:37 - Resolving conflicts in src/hooks/useTheme.tsx for branch 4xe4ab-codex/fix--settheme--not-found-in-usetheme
