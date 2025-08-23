@@ -1,19 +1,34 @@
 /* eslint-env serviceworker */
 /* global self, caches, Response, clients */
 
+<<<<<<< HEAD
+const STATIC_CACHE = 'zion-static-v2.0.0';
+const DYNAMIC_CACHE = 'zion-dynamic-v2.0.0';
+=======
 const CACHE_NAME = 'zion-tech-group-v1.0.0';
 const STATIC_CACHE = 'zion-static-v1.0.0';
 const DYNAMIC_CACHE = 'zion-dynamic-v1.0.0';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-aba1
 
 // Files to cache immediately
 const STATIC_FILES = [
   '/',
+<<<<<<< HEAD
+  '/offline',
+  '/manifest.json',
+  '/favicon.ico',
+  '/_next/static/css/app.css',
+  '/_next/static/js/main.js',
+  '/_next/static/js/chunks/vendors.js',
+  '/_next/static/js/chunks/pages/_app.js'
+=======
   '/offline.html',
   '/manifest.json',
   '/icons/icon-192x192.png',
   '/icons/icon-512x512.png',
   '/css/main.css',
   '/js/main.js'
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-aba1
 ];
 
 // Install event - cache static files
@@ -23,20 +38,43 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(STATIC_CACHE)
       .then((cache) => {
+<<<<<<< HEAD
+=======
         console.log('Caching static files');
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-aba1
         return cache.addAll(STATIC_FILES);
       })
       .then(() => {
         console.log('Static files cached successfully');
         return self.skipWaiting();
       })
+<<<<<<< HEAD
+      .catch(() => {
+        // Error caching static files
+=======
       .catch((error) => {
         console.error('Error caching static files:', error);
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-aba1
       })
   );
 });
 
 // Activate event - clean up old caches
+<<<<<<< HEAD
+self.addEventListener('activate', async (event) => {
+  event.waitUntil(
+    (async () => {
+      const cacheNames = await caches.keys();
+      await Promise.all(
+        cacheNames.map(cacheName => {
+          if (cacheName !== STATIC_CACHE && cacheName !== DYNAMIC_CACHE) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
+      await clients.claim();
+    })()
+=======
 self.addEventListener('activate', (event) => {
   console.log('Service Worker activating...');
   
@@ -56,6 +94,7 @@ self.addEventListener('activate', (event) => {
         console.log('Service Worker activated');
         return self.clients.claim();
       })
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-aba1
   );
 });
 
@@ -68,11 +107,75 @@ self.addEventListener('fetch', (event) => {
   if (request.method !== 'GET') {
     return;
   }
+<<<<<<< HEAD
+
+=======
   
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-aba1
   // Skip chrome-extension and other non-http requests
   if (!url.protocol.startsWith('http')) {
     return;
   }
+<<<<<<< HEAD
+
+  // Handle different types of requests
+  if (url.pathname.startsWith('/_next/static/') || url.pathname.startsWith('/static/')) {
+    // Static assets - cache first strategy
+    event.respondWith(cacheFirst(request, STATIC_CACHE));
+  } else if (url.pathname.startsWith('/api/')) {
+    // API requests - network first strategy
+    event.respondWith(networkFirst(request, DYNAMIC_CACHE));
+  } else {
+    // HTML pages - network first strategy
+    event.respondWith(networkFirst(request, DYNAMIC_CACHE));
+  }
+});
+
+// Cache first strategy for static assets
+async function cacheFirst(request, cacheName) {
+  try {
+    const cachedResponse = await caches.match(request);
+    if (cachedResponse) {
+      return cachedResponse;
+    }
+
+    const networkResponse = await fetch(request);
+    if (networkResponse.ok) {
+      const cache = await caches.open(cacheName);
+      cache.put(request, networkResponse.clone());
+    }
+    return networkResponse;
+  } catch {
+    return new Response('Network error', { status: 503 });
+  }
+}
+
+// Network first strategy for dynamic content
+async function networkFirst(request, cacheName) {
+  try {
+    const networkResponse = await fetch(request);
+    if (networkResponse.ok) {
+      const cache = await caches.open(cacheName);
+      cache.put(request, networkResponse.clone());
+    }
+    return networkResponse;
+  } catch {
+    // Try to serve from cache
+    const cachedResponse = await caches.match(request);
+    if (cachedResponse) {
+      return cachedResponse;
+    }
+
+    // Return offline page for HTML requests
+    if (request.headers.get('accept')?.includes('text/html')) {
+      return caches.match('/offline');
+    }
+
+    return new Response('Network error', { status: 503 });
+  }
+}
+
+=======
   
   // Handle different types of requests
   if (request.destination === 'document') {
@@ -171,15 +274,20 @@ self.addEventListener('fetch', (event) => {
   }
 });
 
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-aba1
 // Background sync for offline actions
 self.addEventListener('sync', (event) => {
   console.log('Background sync triggered:', event.tag);
   
   if (event.tag === 'background-sync') {
+<<<<<<< HEAD
+    event.waitUntil(doBackgroundSync());
+=======
     event.waitUntil(
       // Handle background sync tasks
       handleBackgroundSync()
     );
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-aba1
   }
 });
 
@@ -202,6 +310,24 @@ async function doBackgroundSync() {
 
 // Push notification handling
 self.addEventListener('push', (event) => {
+<<<<<<< HEAD
+  if (event.data) {
+    const data = event.data.json();
+    const options = {
+      body: data.body,
+      icon: '/favicon.ico',
+      badge: '/favicon.ico',
+      vibrate: [100, 50, 100],
+      data: {
+        url: data.url
+      }
+    };
+
+    event.waitUntil(
+      self.registration.showNotification(data.title, options)
+    );
+  }
+=======
   console.log('Push notification received');
   
   const options = {
@@ -230,6 +356,7 @@ self.addEventListener('push', (event) => {
   event.waitUntil(
     self.registration.showNotification('Zion Tech Group', options)
   );
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-aba1
 });
 
 // Notification click handling
@@ -238,6 +365,11 @@ self.addEventListener('notificationclick', (event) => {
   
   event.notification.close();
   
+<<<<<<< HEAD
+  if (event.notification.data?.url) {
+    event.waitUntil(
+      self.clients.openWindow(event.notification.data.url)
+=======
   if (event.action === 'explore') {
     event.waitUntil(
       clients.openWindow('/')
@@ -248,10 +380,14 @@ self.addEventListener('notificationclick', (event) => {
     // Default action - open the app
     event.waitUntil(
       clients.openWindow('/')
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-aba1
     );
   }
 });
 
+<<<<<<< HEAD
+// Message handling from main thread
+=======
 // Handle background sync
 async function handleBackgroundSync() {
   try {
@@ -290,12 +426,26 @@ async function clearPendingSyncData() {
 }
 
 // Message handling for communication with main thread
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-aba1
 self.addEventListener('message', (event) => {
   console.log('Service Worker received message:', event.data);
   
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
   }
+<<<<<<< HEAD
+});
+
+// Error handling
+self.addEventListener('error', () => {
+  // Service Worker error
+});
+
+// Unhandled rejection handling
+self.addEventListener('unhandledrejection', () => {
+  // Service Worker unhandled rejection
+});
+=======
   
   if (event.data && event.data.type === 'GET_VERSION') {
     event.ports[0].postMessage({ version: CACHE_NAME });
@@ -312,3 +462,4 @@ self.addEventListener('unhandledrejection', (event) => {
 });
 
 console.log('Service Worker loaded successfully');
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-aba1
