@@ -1,0 +1,12 @@
+Test Merge Summary - Sat Aug 23 10:40:24 PM UTC 2025
+============================
+
+Total branches processed: 0
+Successful merges: 0
+Failed merges: 0
+Skipped branches: 0
+
+Test merge branch: test-merge-20250823-224024
+
+This was a test run with a small batch.
+If successful, run the full bulk merge script: ./bulk_merge_open_prs.sh
