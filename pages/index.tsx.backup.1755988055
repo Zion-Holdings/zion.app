@@ -117,12 +117,18 @@ const testimonials = [
 
 export default function Home() {
   return (
+<<<<<<< HEAD
+    <ErrorBoundary>
+      <Homepage2047 />
+    </ErrorBoundary>
+=======
     <>
       <SEOHead />
       <ErrorBoundary>
         <EnhancedHomepage2025 />
       </ErrorBoundary>
     </>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-ddd2
   );
 };
 

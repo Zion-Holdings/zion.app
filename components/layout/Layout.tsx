@@ -8,10 +8,7 @@ import UltraFuturisticBackground2047 from '../backgrounds/UltraFuturisticBackgro
 import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
 import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
-import EnhancedErrorBoundary from '../EnhancedErrorBoundary';
-import ThemeToggle from '../ThemeToggle';
-import LoadingSpinner from '../LoadingSpinner';
-import ServiceWorkerRegistration from '../ServiceWorkerRegistration';
+import PerformanceOptimizer from '../PerformanceOptimizer';
 
 interface LayoutProps {
 	children: React.ReactNode;
@@ -81,171 +78,42 @@ export default function Layout({ children }: LayoutProps) {
   }
 
   return (
-    <>
-      <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <meta name="keywords" content={keywords} />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta charSet="utf-8" />
-        <meta name="robots" content="index, follow" />
-        <meta name="author" content="Zion Tech Group" />
-        <meta name="theme-color" content="#06b6d4" />
-        
-        {/* Canonical URL */}
-        {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
-        
-        {/* PWA Manifest */}
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="msapplication-TileColor" content="#06b6d4" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="apple-mobile-web-app-title" content="Zion Tech Group" />
-        
-        {/* Favicons */}
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        
-        {/* Open Graph */}
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:image" content={ogImage} />
-        <meta property="og:url" content={canonicalUrl || 'https://ziontechgroup.com'} />
-        <meta property="og:site_name" content="Zion Tech Group" />
-        
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={ogImage} />
-        <meta name="twitter:site" content="@ziontechgroup" />
-        
-        {/* Additional Meta Tags */}
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="application-name" content="Zion Tech Group" />
-        
-        {/* Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "Zion Tech Group",
-              "url": "https://ziontechgroup.com",
-              "logo": "https://ziontechgroup.com/logo.png",
-              "description": description,
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "364 E Main St STE 1008",
-                "addressLocality": "Middletown",
-                "addressRegion": "DE",
-                "postalCode": "19709",
-                "addressCountry": "US"
-              },
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+1-302-464-0950",
-                "contactType": "customer service",
-                "email": "kleber@ziontechgroup.com"
-              },
-              "sameAs": [
-                "https://linkedin.com/company/zion-tech-group",
-                "https://github.com/Zion-Holdings",
-                "https://twitter.com/ziontechgroup"
-              ]
-            })
-          }}
-        />
-      </Head>
-
-      <div className={`min-h-screen ${theme === 'dark' ? 'bg-black text-white' : 'bg-gray-50 text-gray-900'} relative overflow-hidden transition-colors duration-300`}>
+    <PerformanceOptimizer>
+      <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
         {/* Skip to content link for accessibility */}
-        <a href="#main" className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded">
-          Skip to main content
-        </a>
-        
-        {/* Online/Offline Status Indicator */}
-        {!isOnline && (
-          <div className="fixed top-0 left-0 right-0 bg-red-600 text-white text-center py-2 z-50">
-            <span className="flex items-center justify-center gap-2">
-              <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-              You're currently offline. Some features may be limited.
-            </span>
-          </div>
-        )}
+        <a href="#main" className="skip-link">Skip to main content</a>
         
         {/* Futuristic Background */}
-        <UltraFuturisticBackground2047 />
+        <UltraFuturisticBackground2036 />
         
         {/* Layout Structure */}
         <div className="relative z-10">
           {/* Navigation */}
-          <UltraFuturisticNavigation2045 />
+          <UltraFuturisticNavigation2025 />
           
-          {/* Navigation */}
-          <UltraFuturisticNavigation2047 />
-          
-          {/* Enhanced Sidebar */}
-          <EnhancedSidebar2025 isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
-          
-          {/* Main Content */}
-          <main id="main" role="main" className="pt-32 pb-16 relative z-10">
-            <EnhancedErrorBoundary>
+          {/* Sidebar and Main Content */}
+          <div className="flex">
+            <EnhancedSidebar2025 
+              isOpen={sidebarOpen} 
+              onClose={() => setSidebarOpen(false)} 
+            />
+            
+            <main id="main" role="main" className="flex-1 pt-32 lg:pt-36">
               {children}
-            </EnhancedErrorBoundary>
-          </main>
+            </main>
+          </div>
           
           {/* Footer */}
-          <UltraFuturisticFooter2048 />
-        </div>
-      </div>
-
-      {/* Accessibility and Performance Tools */}
-      <AccessibilityEnhancer />
-      <EnhancedPerformanceMonitor />
-      
-      {/* Cookie Consent Banner */}
-      <CookieConsentBanner />
-      
-      {/* Service Worker Update Notification */}
-      <div id="sw-update-notification" className="hidden fixed bottom-4 right-4 bg-cyan-600 text-white p-4 rounded-lg shadow-lg z-50 max-w-sm">
-        <div className="flex items-start gap-3">
-          <div className="flex-shrink-0">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <div className="flex-1">
-            <h4 className="font-semibold mb-1">Update Available</h4>
-            <p className="text-sm text-cyan-100 mb-3">A new version of Zion Tech Group is available.</p>
-            <div className="flex gap-2">
-              <button 
-                onClick={() => window.location.reload()} 
-                className="bg-white text-cyan-600 px-3 py-1 rounded text-sm font-medium hover:bg-cyan-500 transition-colors"
-              >
-                Update Now
-              </button>
-              <button 
-                onClick={() => document.getElementById('sw-update-notification')?.classList.add('hidden')} 
-                className="text-cyan-100 hover:text-white text-sm transition-colors"
-              >
-                Later
-              </button>
-            </div>
-          )}
+          <UltraFuturisticFooter2025 />
         </div>
 
-        {/* Theme Toggle Floating Button */}
-        <ThemeToggle theme={theme} onToggle={handleThemeToggle} />
+        {/* Accessibility and Performance Tools */}
+        <AccessibilityEnhancer />
+        <PerformanceMonitor />
         
-        {/* Service Worker Registration */}
-        <ServiceWorkerRegistration />
+        {/* Cookie Consent Banner */}
+        <CookieConsentBanner />
       </div>
-    </>
+    </PerformanceOptimizer>
   );
 }
