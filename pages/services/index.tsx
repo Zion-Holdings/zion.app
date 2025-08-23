@@ -174,8 +174,7 @@ export default function ServicesIndexPage() {
     // Our new 2025 advanced services V2
     // .concat(advancedMicroSaasExpansion2025V2 as unknown[])
     // .concat(advancedITInfrastructureExpansion2025V2 as unknown[])
-    // .concat(advancedAIServicesExpansion2025V2 as unknown[])
-    ;
+    // .concat(advancedAIServicesExpansion2025V2 as unknown[]);
 
   // Filter out services without required properties
   const validServices = all.filter(service => 
