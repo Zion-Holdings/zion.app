@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
 import { AlertCircle } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
@@ -172,13 +172,12 @@ export function SignUpForm() {
           ? "Already have an account? "
           : "Don't have an account? "
         }
-        <Button
-          variant="link"
-          className="p-0 h-auto"
-          onClick={() => setSignupMode(!signupMode)}
+        <Link
+          to="/login"
+          className="p-0 h-auto text-zion-cyan hover:text-zion-cyan-light cursor-pointer"
         >
-          {signupMode ? "Sign In" : "Sign Up"}
-        </Button>
+          Sign In
+        </Link>
       </p>
     </div>
   );

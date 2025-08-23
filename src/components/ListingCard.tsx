@@ -33,10 +33,11 @@ export function ListingCard({
   const profileId = id || (profileType === 'service' ? 'service-provider-1' : 'talent-1');
 
   return (
-    <Link 
+    <Link
       to={`/profile/${profileId}`}
+      tabIndex={0}
       className={cn(
-        "flex flex-col overflow-hidden rounded-lg border border-zion-blue-light bg-zion-blue hover:border-zion-purple/50 transition-all duration-300 group cursor-pointer",
+        "flex flex-col overflow-hidden rounded-lg border border-zion-blue-light bg-zion-blue hover:border-zion-purple/50 transition-all duration-300 group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zion-purple",
         className
       )}
     >

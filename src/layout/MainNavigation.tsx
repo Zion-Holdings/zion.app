@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/hooks/useAuth";
 import { MessageSquare } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 interface MainNavigationProps {
   isAdmin?: boolean;
@@ -14,60 +15,65 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
   const { user } = useAuth();
   const isAuthenticated = !!user;
   const location = useLocation();
-  
-  const links = [
+  const { t } = useTranslation();
+
+  const baseLinks = [
     {
-      name: "Home",
-      href: "/",
-      matches: (path: string) => path === "/"
+      key: 'home',
+      href: '/',
+      matches: (path: string) => path === '/'
     },
     {
-      name: "Marketplace",
-      href: "/marketplace",
-      matches: (path: string) => path.startsWith("/marketplace")
+      key: 'marketplace',
+      href: '/marketplace',
+      matches: (path: string) => path.startsWith('/marketplace')
     },
     {
-      name: "Categories",
-      href: "/categories",
-      matches: (path: string) => path.startsWith("/categories")
+      key: 'categories',
+      href: '/categories',
+      matches: (path: string) => path.startsWith('/categories')
     },
     {
-      name: "Talent",
-      href: "/talent",
-      matches: (path: string) => path.startsWith("/talent") && !path.includes("/talent-dashboard")
+      key: 'talent',
+      href: '/talent',
+      matches: (path: string) => path.startsWith('/talent') && !path.includes('/talent-dashboard')
     },
     {
-      name: "Equipment",
-      href: "/equipment",
-      matches: (path: string) => path.startsWith("/equipment")
+      key: 'equipment',
+      href: '/equipment',
+      matches: (path: string) => path.startsWith('/equipment')
     },
     {
-      name: "Community",
-      href: "/community",
-      matches: (path: string) => path.startsWith("/community") || path.startsWith("/forum")
+      key: 'community',
+      href: '/community',
+      matches: (path: string) => path.startsWith('/community') || path.startsWith('/forum')
     }
   ];
+
+  let links = baseLinks.map(link => ({ ...link, name: t(`nav.${link.key}`) }));
   
   // Add authenticated-only links
   if (isAuthenticated) {
     links.push({
-      name: "Dashboard",
-      href: "/dashboard",
-      matches: (path: string) => path === "/dashboard" || path === "/client-dashboard" || path === "/talent-dashboard"
+      key: 'dashboard',
+      name: t('nav.dashboard'),
+      href: '/dashboard',
+      matches: (path: string) => path === '/dashboard' || path === '/client-dashboard' || path === '/talent-dashboard'
     });
   }
   
   // Add admin-only links
   if (isAdmin) {
     links.push({
-      name: "Analytics",
-      href: "/analytics",
-      matches: (path: string) => path.startsWith("/analytics")
+      key: 'analytics',
+      name: t('nav.analytics'),
+      href: '/analytics',
+      matches: (path: string) => path.startsWith('/analytics')
     });
   }
   
   return (
-    <nav className={cn("ml-6 hidden md:flex", className)}>
+    <nav className={cn("navbar ml-6 hidden md:flex", className)}>
       <ul className="flex items-center gap-1">
         {links.map((link) => (
           <li key={link.name}>
@@ -98,7 +104,7 @@ export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: 
               )}
             >
               <MessageSquare className="w-4 h-4 mr-1" />
-              Messages
+              {t('nav.messages')}
               {unreadCount > 0 && (
                 <span className="absolute -top-1 -right-1 bg-zion-purple text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                   {unreadCount}

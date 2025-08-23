@@ -1,6 +1,8 @@
 
 import { useState } from "react";
-import { Draggable } from "react-beautiful-dnd";
+// Local stub is used in place of the @hello-pangea/dnd package which isn't
+// available in this environment.
+import { Draggable } from "@/lib/dnd-stub";
 import { formatDistanceToNow } from "date-fns";
 import { Link } from "react-router-dom";
 import { JobApplication } from "@/types/jobs";

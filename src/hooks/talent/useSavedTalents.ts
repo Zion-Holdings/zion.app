@@ -3,13 +3,17 @@ import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { TalentProfile } from "@/types/talent";
 import { toast } from "@/hooks/use-toast";
+import { showApiError } from "@/utils/apiErrorHandler";
 import { useAuthStatus } from "@/hooks/talent";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export function useSavedTalents() {
   const { isAuthenticated, userDetails } = useAuthStatus();
   const [savedTalents, setSavedTalents] = useState<TalentProfile[]>([]);
   const [savedTalentIds, setSavedTalentIds] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   // Fetch saved talents
   useEffect(() => {
@@ -50,11 +54,7 @@ export function useSavedTalents() {
         }
       } catch (error) {
         console.error('Error fetching saved talents:', error);
-        toast({
-          title: "Error loading favorites",
-          description: "There was a problem loading your saved talents.",
-          variant: "destructive"
-        });
+        showApiError(error, 'There was a problem loading your saved talents.');
       } finally {
         setIsLoading(false);
       }
@@ -71,6 +71,8 @@ export function useSavedTalents() {
         description: "Please log in to save talents to your favorites",
         variant: "destructive"
       });
+      const next = encodeURIComponent(location.pathname + location.search);
+      navigate(`/login?next=${next}`);
       return;
     }
     
@@ -115,11 +117,7 @@ export function useSavedTalents() {
       }
     } catch (error) {
       console.error('Error toggling saved talent:', error);
-      toast({
-        title: "Error",
-        description: "There was a problem updating your favorites. Please try again.",
-        variant: "destructive"
-      });
+      showApiError(error, 'There was a problem updating your favorites. Please try again.');
     }
   };
 

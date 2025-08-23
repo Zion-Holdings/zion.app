@@ -23,6 +23,10 @@ interface DynamicListingPageProps {
   listings: ProductListing[];
   categoryFilters: { label: string; value: string }[];
   initialPrice?: PriceRange;
+  /**
+   * Base path for listing detail pages. Defaults to `/marketplace/listing`.
+   */
+  detailBasePath?: string;
 }
 
 export function DynamicListingPage({
@@ -31,7 +35,8 @@ export function DynamicListingPage({
   categorySlug,
   listings: allListings,
   categoryFilters,
-  initialPrice = { min: 0, max: 10000 }
+  initialPrice = { min: 0, max: 10000 },
+  detailBasePath = '/marketplace/listing'
 }: DynamicListingPageProps) {
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
@@ -45,14 +50,14 @@ export function DynamicListingPage({
   useEffect(() => {
     const listingsWithPrice = allListings.filter(l => l.price !== null);
     if (listingsWithPrice.length > 0) {
-      const min = Math.min(...listingsWithPrice.map(l => l.price || 0));
       const max = Math.max(...listingsWithPrice.map(l => l.price || 0));
-      setPriceRange({ min, max });
+      setPriceRange({ min: 0, max });
+      setCurrentPriceFilter([0, max]);
     }
   }, [allListings]);
 
   const [currentPriceFilter, setCurrentPriceFilter] = useState<[number, number]>([
-    initialPrice.min,
+    0,
     initialPrice.max
   ]);
 
@@ -156,10 +161,11 @@ export function DynamicListingPage({
                 </label>
                 <div className="mt-6 px-2">
                   <Slider
-                    defaultValue={[priceRange.min, priceRange.max]}
-                    min={priceRange.min}
+                    aria-label="Price range"
+                    defaultValue={[0, priceRange.max]}
+                    min={0}
                     max={priceRange.max}
-                    step={(priceRange.max - priceRange.min) / 100}
+                    step={priceRange.max / 100}
                     value={currentPriceFilter}
                     onValueChange={handleSliderChange}
                     className="mb-4"
@@ -185,11 +191,12 @@ export function DynamicListingPage({
                         console.log("Rating selected:", rating);
                         setSelectedRating(rating);
                       }}
+                      aria-pressed={selectedRating === rating}
                       className={`${
-                        selectedRating === rating 
-                          ? "bg-zion-purple/20 border-zion-purple text-zion-purple" 
+                        selectedRating === rating
+                          ? "bg-zion-purple/30 border-zion-purple text-zion-purple"
                           : "border-zion-blue-light text-zion-slate-light"
-                      }`}
+                      } focus-visible:ring-zion-purple`}
                     >
                       {rating === null ? (
                         "Any"
@@ -213,7 +220,7 @@ export function DynamicListingPage({
                   console.log("Resetting filters");
                   setSearchQuery("");
                   setSelectedCategory("all");
-                  setCurrentPriceFilter([priceRange.min, priceRange.max]);
+                  setCurrentPriceFilter([0, priceRange.max]);
                   setSelectedRating(null);
                 }}
               >
@@ -244,17 +251,33 @@ export function DynamicListingPage({
                     variant="outline"
                     size="icon"
                     onClick={() => setView("grid")}
-                    className={`${view === "grid" ? "bg-zion-purple/20 border-zion-purple text-zion-purple" : "border-zion-blue-light text-zion-slate"}`}
+                    aria-pressed={view === "grid"}
+                    aria-label="Grid view"
+                    title="Grid view"
+                    className={`${
+                      view === "grid"
+                        ? "bg-zion-purple/30 border-zion-purple text-zion-purple"
+                        : "border-zion-blue-light text-zion-slate-light"
+                    } focus-visible:ring-zion-purple`}
                   >
                     <LayoutGrid className="h-4 w-4" />
+                    <span className="sr-only">Grid view</span>
                   </Button>
                   <Button
                     variant="outline"
                     size="icon"
                     onClick={() => setView("list")}
-                    className={`${view === "list" ? "bg-zion-purple/20 border-zion-purple text-zion-purple" : "border-zion-blue-light text-zion-slate"}`}
+                    aria-pressed={view === "list"}
+                    aria-label="List view"
+                    title="List view"
+                    className={`${
+                      view === "list"
+                        ? "bg-zion-purple/30 border-zion-purple text-zion-purple"
+                        : "border-zion-blue-light text-zion-slate-light"
+                    } focus-visible:ring-zion-purple`}
                   >
                     <List className="h-4 w-4" />
+                    <span className="sr-only">List view</span>
                   </Button>
                 </div>
               </div>
@@ -269,9 +292,18 @@ export function DynamicListingPage({
             </div>
 
             {isLoading ? (
-              <div className={`grid gap-6 ${view === "grid" ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1"}`}>
+              <div
+                className={
+                  view === "grid"
+                    ? "grid grid-cols-1 md:grid-cols-2 gap-6"
+                    : "flex flex-col gap-6"
+                }
+              >
                 {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="rounded-lg overflow-hidden border border-zion-blue-light">
+                  <div
+                    key={i}
+                    className="rounded-lg overflow-hidden border border-zion-blue-light"
+                  >
                     <Skeleton className="h-48 w-full bg-zion-blue-light/20" />
                     <div className="p-4">
                       <Skeleton className="h-6 w-1/3 mb-2 bg-zion-blue-light/20" />
@@ -287,13 +319,20 @@ export function DynamicListingPage({
                 ))}
               </div>
             ) : filteredListings.length > 0 ? (
-              <div className={`grid gap-6 ${view === "grid" ? "grid-cols-1 md:grid-cols-2" : "grid-cols-1"}`}>
+              <div
+                className={
+                  view === "grid"
+                    ? "grid grid-cols-1 md:grid-cols-2 gap-6"
+                    : "flex flex-col gap-6"
+                }
+              >
                 {filteredListings.map((listing) => (
-                  <ProductListingCard 
+                  <ProductListingCard
                     key={listing.id}
                     listing={listing}
                     view={view}
                     onRequestQuote={handleRequestQuote}
+                    detailBasePath={detailBasePath}
                   />
                 ))}
               </div>
@@ -306,7 +345,7 @@ export function DynamicListingPage({
                   onClick={() => {
                     setSearchQuery("");
                     setSelectedCategory("all");
-                    setCurrentPriceFilter([priceRange.min, priceRange.max]);
+                    setCurrentPriceFilter([0, priceRange.max]);
                     setSelectedRating(null);
                   }}
                   className="border-zion-purple text-zion-purple hover:bg-zion-purple/10"

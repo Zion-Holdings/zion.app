@@ -1,10 +1,8 @@
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import CreatePostButton from "@/components/community/CreatePostButton";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SEO } from "@/components/SEO";
-import { AppLayout } from "@/layout/AppLayout";
 import ForumCategories from "@/components/community/ForumCategories";
 import PostCard from "@/components/community/PostCard";
 import { useAuth } from "@/hooks/useAuth";
@@ -101,11 +99,12 @@ export default function CommunityPage() {
   const [activeTab, setActiveTab] = useState("categories");
   
   return (
-    <AppLayout>
-      <SEO 
+    <>
+      <SEO
         title="Community Forum | Zion AI Marketplace"
         description="Join the Zion AI Marketplace community forum. Ask questions, share knowledge, and connect with other AI professionals."
         keywords="community, forum, discussion, AI marketplace, questions, answers"
+        canonical="https://app.ziontechgroup.com/community"
       />
       
       <div className="container py-8">
@@ -117,11 +116,7 @@ export default function CommunityPage() {
             </p>
           </div>
           
-          <Button asChild>
-            <Link to={user ? "/community/create" : "/login?next=/community/create"}>
-              Create New Post
-            </Link>
-          </Button>
+          <CreatePostButton />
         </div>
         
         <Tabs defaultValue="categories" value={activeTab} onValueChange={setActiveTab} className="mb-8">
@@ -152,6 +147,6 @@ export default function CommunityPage() {
           </TabsContent>
         </Tabs>
       </div>
-    </AppLayout>
+    </>
   );
 }

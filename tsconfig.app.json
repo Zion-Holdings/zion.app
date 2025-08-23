@@ -27,5 +27,5 @@
     },
     "types": ["vite/client", "react", "react-router-dom"]
   },
-  "include": ["src"]
+  "include": ["src", "pages"]
 }

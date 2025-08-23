@@ -46,7 +46,7 @@ The description should:
 5. Include a compelling opening and closing statement`;
 
     const completion = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
+      model: "gpt-4o",
       messages: [{ role: "user", content: prompt }],
       temperature: 0.7,
     });

@@ -27,13 +27,21 @@ export function MobileFilterBar({
       </Button>
       
       <div className="relative mt-4">
+        <label htmlFor="mobile-talent-search" className="sr-only">
+          Search talents
+        </label>
         <Search className="absolute left-2 top-1/2 transform -translate-y-1/2 h-4 w-4 text-zion-slate" />
         <Input
+          id="mobile-talent-search"
           placeholder="Search talents..."
           value={searchTerm}
           onChange={e => setSearchTerm(e.target.value)}
+          aria-describedby="mobile-talent-search-help"
           className="pl-8 bg-zion-blue border-zion-blue-light text-white placeholder:text-zion-slate"
         />
+        <p id="mobile-talent-search-help" className="sr-only">
+          Search by name or skill
+        </p>
       </div>
     </div>
   );

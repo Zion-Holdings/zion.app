@@ -1,49 +1,76 @@
 import { createClient } from '@supabase/supabase-js';
 
-export const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-export const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseAnonKey) {
   throw new Error('Missing Supabase environment variables');
 }
 
-// Utility to detect network connectivity. navigator.onLine is not reliable in
-// all environments, so we also try a small request with a short timeout.
-export const checkOnline = async (): Promise<boolean> => {
-  if (typeof navigator !== 'undefined' && !navigator.onLine) {
-    return false;
+// Create Supabase client with proper configuration
+export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+  auth: {
+    persistSession: true,
+    autoRefreshToken: true,
+  },
+  global: {
+    headers: {
+      'apikey': supabaseAnonKey
+    }
   }
+});
+
+// Helper function to access profiles table
+export const getFromProfiles = () => supabase.from('profiles');
+
+// Check if the browser is online. Gracefully handle environments where
+// `navigator` is undefined such as server side rendering or tests.
+export async function checkOnline(): Promise<boolean> {
   try {
-    const controller = new AbortController();
-    const id = setTimeout(() => controller.abort(), 3000);
-    await fetch('https://clients3.google.com/generate_204', {
-      mode: 'no-cors',
-      signal: controller.signal,
-    });
-    clearTimeout(id);
-    return true;
+    return typeof navigator !== 'undefined' && navigator.onLine;
   } catch {
     return false;
   }
-};
+}
 
-// Custom fetch wrapper to provide clearer errors when network requests fail
-export const safeFetch: typeof fetch = async (input, init) => {
+// Helper function for safe fetching with retries. Adds the Supabase API key
+// header while preserving any existing Headers instance passed in `options`.
+// Throws a consistent error message when the request ultimately fails.
+export async function safeFetch(url: string, options: RequestInit = {}) {
   if (!(await checkOnline())) {
-    throw new Error('No internet connection');
-  }
-  try {
-    return await fetch(input, init);
-  } catch (err) {
-    // Log the original error for debugging
-    console.error('Supabase fetch failed:', err);
     throw new Error('Failed to connect to Supabase');
   }
-};
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
-  global: { fetch: safeFetch }
-});
+  const headers =
+    options.headers instanceof Headers
+      ? options.headers
+      : new Headers(options.headers);
 
-// Helper function to get profiles table
-export const getFromProfiles = () => supabase.from('profiles');
+  if (!headers.has('apikey')) {
+    headers.set('apikey', supabaseAnonKey);
+  }
+
+  const maxRetries = 3;
+  let lastError: any;
+
+  for (let i = 0; i < maxRetries; i++) {
+    try {
+      const response = await fetch(url, {
+        ...options,
+        headers,
+      });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      return response;
+    } catch (error) {
+      lastError = error;
+      // Wait before retrying (exponential backoff)
+      await new Promise(resolve => setTimeout(resolve, Math.pow(2, i) * 1000));
+    }
+  }
+
+  throw new Error('Failed to connect to Supabase');
+}

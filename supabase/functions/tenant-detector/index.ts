@@ -11,11 +11,14 @@ interface TenantInfo {
   theme_preset: string;
 }
 
+// Enhanced CORS headers
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type, Authorization, x-client-info',
+  'Access-Control-Allow-Headers': 'Content-Type, Authorization, x-client-info, apikey, X-Client-Info',
   'Access-Control-Max-Age': '86400',
+  'Access-Control-Expose-Headers': 'Content-Length',
+  'Access-Control-Allow-Credentials': 'true',
 };
 
 // Initialize Supabase client
@@ -29,7 +32,7 @@ if (!supabaseUrl || !supabaseServiceKey) {
 const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
 serve(async (req) => {
-  // Handle CORS preflight requests
+  // Enhanced CORS preflight handling
   if (req.method === 'OPTIONS') {
     return new Response(null, {
       status: 204,
@@ -56,7 +59,6 @@ serve(async (req) => {
     let tenantInfo: TenantInfo | null = null;
 
     if (subdomainParam) {
-      // Direct subdomain lookup
       const { data, error } = await supabase
         .from('whitelabel_tenants')
         .select('id, brand_name, subdomain, custom_domain, primary_color, logo_url, theme_preset')
@@ -113,13 +115,15 @@ serve(async (req) => {
     );
   } catch (error) {
     console.error('Tenant detector error:', error);
+    
     return new Response(
       JSON.stringify({ 
         error: error.message || 'Internal server error',
-        status: 'error'
+        status: 'error',
+        timestamp: new Date().toISOString(),
       }),
       {
-        status: 500,
+        status: error.message.includes('No hostname') ? 400 : 500,
         headers: {
           'Content-Type': 'application/json',
           ...corsHeaders,

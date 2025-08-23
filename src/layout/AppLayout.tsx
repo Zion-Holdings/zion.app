@@ -1,10 +1,11 @@
 
 import React from "react";
+import { Outlet } from "react-router-dom";
 import { AppHeader } from "./AppHeader";
 import { Footer } from "@/components/Footer";
 
 interface AppLayoutProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   hideFooter?: boolean;
 }
 
@@ -13,7 +14,7 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
     <div className="flex flex-col min-h-screen bg-background">
       <AppHeader />
       <main className="flex-grow">
-        {children}
+        {children ?? <Outlet />}
       </main>
       {!hideFooter && <Footer />}
     </div>

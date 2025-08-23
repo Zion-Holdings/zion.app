@@ -55,26 +55,26 @@ const config: Config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Custom Zion colors
+        // Custom Zion colors (updated palette)
         "zion-blue": {
-          DEFAULT: "#0a0f1f",
-          light: "#1e263b",
-          dark: "#090c1a",
+          DEFAULT: "#2e73ea",
+          light: "#8ab1f3",
+          dark: "#172d67",
         },
         "zion-purple": {
-          DEFAULT: "#a855f7",
-          light: "#d8b4fe",
-          dark: "#9333ea",
+          DEFAULT: "#8c15e9",
+          light: "#b971f2",
+          dark: "#530c8b",
         },
         "zion-cyan": {
-          DEFAULT: "#00e5ff",
-          light: "#7df9ff",
-          dark: "#00c4cc",
+          DEFAULT: "#22ddd2",
+          light: "#7aeae4",
+          dark: "#14847e",
         },
         "zion-slate": {
-          DEFAULT: "#94A3B8",
-          light: "#CBD5E1",
-          dark: "#64748B",
+          DEFAULT: "#17072b",
+          light: "#451582",
+          dark: "#000000",
         },
       },
       borderRadius: {

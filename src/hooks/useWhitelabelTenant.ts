@@ -26,76 +26,90 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
   const [tenant, setTenant] = useState<WhitelabelTenant | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [retryCount, setRetryCount] = useState(0);
+  const MAX_RETRIES = 5;
 
   useEffect(() => {
     const loadTenant = async () => {
       setIsLoading(true);
       setError(null);
 
-      // If running in the browser, bail out early when offline
-      if (typeof navigator !== 'undefined' && !navigator.onLine) {
-        setError('No internet connection');
-        setTenant(null);
-        setIsLoading(false);
-        return;
-      }
-
       try {
         // Get the current hostname, fallback to localhost if not available
         const hostname = window.location.hostname || 'localhost';
+        
+        // Some dev hosts generate long ephemeral subdomains that our edge function
+        // does not recognise. In those cases fall back to localhost.
+        const sanitizedHostname = /webcontainer-api\.io$/.test(hostname)
+          ? 'localhost'
+          : hostname;
+        
         const functionName = 'tenant-detector';
         
         // Build the query parameters
-        const params = externalSubdomain 
+        const params = externalSubdomain
           ? `?subdomain=${encodeURIComponent(externalSubdomain)}`
-          : `?host=${encodeURIComponent(hostname)}`;
+          : `?host=${encodeURIComponent(sanitizedHostname)}`;
 
         const { data, error: functionError } = await supabase.functions.invoke(
           `${functionName}${params}`,
           {
             headers: {
               'Content-Type': 'application/json',
+              'x-client-info': 'supabase-js-web',
             },
           }
         );
 
         if (functionError) {
-          console.error('Edge Function error:', functionError);
-          setError('Failed to load tenant configuration. Please try again later.');
-          setTenant(null);
-          return;
+          console.warn('Edge Function error:', {
+            error: functionError,
+            params,
+            hostname,
+            retryCount,
+          });
+
+          throw new Error(functionError.message || 'Failed to load tenant configuration');
         }
 
         if (!data) {
-          console.warn('No tenant data received');
+          console.warn('No tenant data received', { params, hostname });
           setTenant(null);
           return;
         }
 
         if (data.tenant) {
           setTenant(data.tenant);
+          setRetryCount(0); // Reset retry count on success
         } else {
           setTenant(null);
         }
       } catch (err: any) {
-        console.error('Error loading tenant:', err);
-        let message = err.message || 'An unexpected error occurred while loading tenant configuration';
-        if (
-          message.includes('Failed to send a request to the Edge Function') ||
-          message.includes('Failed to connect to Supabase') ||
-          message.includes('No internet connection')
-        ) {
-          message = 'Unable to reach the server. Please check your internet connection and try again.';
-        }
-        setError(message);
+        console.warn('Error loading tenant:', {
+          error: err,
+          retryCount,
+          timestamp: new Date().toISOString(),
+        });
+
+        setError('Unable to load tenant configuration. Retrying...');
         setTenant(null);
+
+        // Implement retry with exponential backoff
+        if (retryCount < MAX_RETRIES) {
+          const retryDelay = Math.min(Math.pow(2, retryCount) * 1000, 8000);
+          setTimeout(() => {
+            setRetryCount(prev => prev + 1);
+          }, retryDelay);
+        } else {
+          setError('Unable to load tenant configuration after multiple attempts. Please check your connection.');
+        }
       } finally {
         setIsLoading(false);
       }
     };
 
     loadTenant();
-  }, [externalSubdomain]);
+  }, [externalSubdomain, retryCount]);
 
   return { tenant, isLoading, error };
 }
@@ -115,7 +129,13 @@ export function useTenantAdminStatus(tenantId?: string) {
 
       try {
         const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
-        if (sessionError || !sessionData.session) {
+        if (sessionError) {
+          console.warn('Session error:', sessionError);
+          setIsAdmin(false);
+          return;
+        }
+
+        if (!sessionData.session) {
           setIsAdmin(false);
           return;
         }
@@ -128,9 +148,13 @@ export function useTenantAdminStatus(tenantId?: string) {
           .eq('user_id', userId)
           .single();
 
+        if (error) {
+          console.warn('Error checking admin status:', error);
+        }
+
         setIsAdmin(!!data && !error);
       } catch (err) {
-        console.error('Error checking tenant admin status:', err);
+        console.warn('Error checking tenant admin status:', err);
         setIsAdmin(false);
       } finally {
         setIsLoading(false);

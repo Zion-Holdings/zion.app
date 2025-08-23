@@ -97,6 +97,7 @@ export function TemplateSaveForm({
               <FormLabel className="cursor-pointer">Set as default template</FormLabel>
               <FormControl>
                 <Switch
+                  aria-label="Default template"
                   checked={field.value}
                   onCheckedChange={field.onChange}
                 />

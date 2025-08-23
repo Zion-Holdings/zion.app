@@ -24,3 +24,11 @@ it('converts slug back to title', () => {
 it('handles custom separator when unslugifying', () => {
   expect(unslugify('multi_word_title', '_')).toBe('Multi Word Title');
 });
+
+it('handles separators that include regex characters', () => {
+  expect(unslugify('multi.word.title', '.')).toBe('Multi Word Title');
+});
+
+it('collapses multiple spaces and trims separators', () => {
+  expect(slugify('  Multiple   Words  ')).toBe('multiple-words');
+});

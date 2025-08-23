@@ -1,7 +1,5 @@
 
 import React from 'react';
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { CategoriesSection } from "@/components/CategoriesSection";
 import { BenefitsSection } from "@/components/BenefitsSection";
 import { HowItWorksSection } from "@/components/HowItWorksSection";
@@ -12,6 +10,7 @@ import { HeroSection } from "@/components/HeroSection";
 import { QuickAccess } from "@/components/home/QuickAccess";
 import { FeatureCTAs } from "@/components/home/FeatureCTAs";
 import { FeatureHighlights } from "@/components/home/FeatureHighlights";
+import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
 
 export default function Home() {
   return (
@@ -22,8 +21,9 @@ export default function Home() {
         keywords="AI, technology, marketplace, services, talent"
         canonical="https://app.ziontechgroup.com/"
       />
-      <Header />
-      
+
+      <ITServiceRequestHero />
+
       <HeroSection />
       
       <QuickAccess />
@@ -37,7 +37,6 @@ export default function Home() {
       <HowItWorksSection />
       <FeaturedListingsSection />
       <NewsletterSection />
-      <Footer />
     </div>
   );
 }

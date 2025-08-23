@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/hooks/useAuth";
@@ -35,7 +35,13 @@ interface Transaction {
 export function TransactionHistory() {
   const { user } = useAuth();
   const { toast } = useToast();
-  const [filter, setFilter] = useState<'all' | 'pending' | 'completed' | 'escrow'>('all');
+  const [filter, setFilter] = useState<'all' | 'pending' | 'completed' | 'escrow'>(
+    () => (localStorage.getItem('transaction_filter') as any) || 'all'
+  );
+
+  useEffect(() => {
+    localStorage.setItem('transaction_filter', filter);
+  }, [filter]);
   
   const { data: transactions, isLoading, error, refetch } = useQuery({
     queryKey: ['transactions', user?.id, filter],

@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { AppLayout } from "@/layout/AppLayout";
 import { SEO } from "@/components/SEO";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -36,7 +35,7 @@ const mockUser: CommunityUser = {
       name: "Top Contributor",
       description: "Among the top 5% of contributors",
       icon: "Trophy",
-      color: "#F59E0B"
+      color: "#3b82f6"
     },
     {
       id: "badge3",
@@ -120,36 +119,32 @@ export default function CommunityProfilePage() {
   
   if (isLoading) {
     return (
-      <AppLayout>
-        <div className="container py-8">
-          <div className="flex justify-center items-center h-64">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-zion-purple"></div>
-          </div>
+      <div className="container py-8">
+        <div className="flex justify-center items-center h-64">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-zion-purple"></div>
         </div>
-      </AppLayout>
+      </div>
     );
   }
   
   if (!user) {
     return (
-      <AppLayout>
-        <div className="container py-8">
-          <h1>User not found</h1>
-          <Button asChild className="mt-4">
-            <Link to="/community">Back to Community</Link>
-          </Button>
-        </div>
-      </AppLayout>
+      <div className="container py-8">
+        <h1>User not found</h1>
+        <Button asChild className="mt-4">
+          <Link to="/community">Back to Community</Link>
+        </Button>
+      </div>
     );
   }
 
   return (
-    <AppLayout>
-      <SEO 
-        title={`${user.name}'s Profile | Community Forum | Zion AI Marketplace`}
-        description={`View ${user.name}'s profile, posts, and contributions in the Zion AI Marketplace community.`}
-        keywords={`community, forum, profile, user profile, ${user.name}`}
-      />
+    <>
+    <SEO
+      title={`${user.name}'s Profile | Community Forum | Zion AI Marketplace`}
+      description={`View ${user.name}'s profile, posts, and contributions in the Zion AI Marketplace community.`}
+      keywords={`community, forum, profile, user profile, ${user.name}`}
+    />
       
       <div className="container py-8">
         <div className="flex items-center gap-3 mb-6">
@@ -304,6 +299,6 @@ export default function CommunityProfilePage() {
           </div>
         </div>
       </div>
-    </AppLayout>
+    </>
   );
 }

@@ -2,8 +2,10 @@
 import { Button } from "@/components/ui/button";
 import { GradientHeading } from "@/components/GradientHeading";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export function HeroSection() {
+  const { t } = useTranslation();
   return (
     <section className="relative overflow-hidden py-20 md:py-32">
       {/* Background gradient effect */}
@@ -19,12 +21,11 @@ export function HeroSection() {
       
       <div className="container relative z-10 px-4 mx-auto text-center">
         <GradientHeading className="mb-6 text-5xl md:text-7xl font-bold">
-          The Future of Tech & AI Marketplace
+          {t('home.hero_title')}
         </GradientHeading>
 
         <p className="text-xl md:text-2xl text-zion-slate-light mb-10 max-w-3xl mx-auto">
-          The world's first free marketplace dedicated to high-tech and artificial intelligence. 
-          Publish, connect, and thrive — all in one place.
+          {t('home.hero_subtitle')}
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -33,16 +34,23 @@ export function HeroSection() {
             size="lg"
             asChild
           >
-            <Link to="/signup">Join Zion Now</Link>
+            <Link
+              to="/signup"
+              role="button"
+              aria-label={t('auth.signup')}
+              tabIndex={0}
+              data-testid="hero-signup-btn"
+            >
+              {t('auth.signup')}
+            </Link>
           </Button>
-          <Button
-            variant="outline"
-            className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-zion-blue-dark text-lg py-6"
-            size="lg"
-            asChild
+          <Link
+            id="browse-marketplace"
+            to="/marketplace"
+            className="border border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-zion-blue-dark active:bg-zion-cyan-light text-lg py-6 px-4 rounded-md inline-flex items-center justify-center"
           >
-            <Link to="/marketplace">Explore Marketplace</Link>
-          </Button>
+            {t('home.browse_marketplace')}
+          </Link>
         </div>
       </div>
     </section>

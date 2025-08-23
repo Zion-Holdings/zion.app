@@ -1,19 +1,55 @@
 
-import React, { useState } from "react";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
+import React, { useState, useEffect, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Grid3X3, ListFilter } from "lucide-react";
+import { Grid3X3, ListFilter, Loader2 } from "lucide-react";
 import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
 import { FilterSidebar } from "@/components/search/FilterSidebar";
 import { ActiveFiltersBar } from "@/components/search/ActiveFiltersBar";
 import { ProductListingCard } from "@/components/ProductListingCard";
+import { ProductListing } from "@/types/listings";
 import { MARKETPLACE_LISTINGS, generateSearchSuggestions, generateFilterOptions } from "@/data/marketplaceData";
+import { generateRandomListing } from "@/utils/generateRandomListing";
 import { toast } from "@/hooks/use-toast";
 import { useNavigate } from "react-router-dom";
 import { SearchSuggestion } from "@/types/search";
-import { AppLayout } from "@/layout/AppLayout";
+import styles from './Marketplace.module.css';
+import { useViewMode } from '@/context/ViewModeContext';
+
+interface ProductContainerProps {
+  listings: ProductListing[];
+  onRequestQuote: (id: string) => void;
+}
+
+function ProductGrid({ listings, onRequestQuote }: ProductContainerProps) {
+  return (
+    <div className={`${styles.grid} gap-6 product-grid`}>
+      {listings.map(listing => (
+        <ProductListingCard
+          key={listing.id}
+          listing={listing}
+          onRequestQuote={onRequestQuote}
+          view="grid"
+        />
+      ))}
+    </div>
+  );
+}
+
+function ProductList({ listings, onRequestQuote }: ProductContainerProps) {
+  return (
+    <div className={`${styles.list} gap-4 product-list`}>
+      {listings.map(listing => (
+        <ProductListingCard
+          key={listing.id}
+          listing={listing}
+          onRequestQuote={onRequestQuote}
+          view="list"
+        />
+      ))}
+    </div>
+  );
+}
 
 export default function Marketplace() {
   const navigate = useNavigate();
@@ -22,12 +58,29 @@ export default function Marketplace() {
   const [selectedLocations, setSelectedLocations] = useState<string[]>([]);
   const [selectedAvailability, setSelectedAvailability] = useState<string[]>([]);
   const [selectedRating, setSelectedRating] = useState<number | null>(null);
+  const [listings, setListings] = useState(MARKETPLACE_LISTINGS);
+  const [isLoading, setIsLoading] = useState(false);
+  const { viewMode, setViewMode } = useViewMode();
+
+  // Automatically append a new listing every 2 minutes
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setListings(prev => [...prev, generateRandomListing()]);
+    }, 120000); // 2 minutes
+    return () => clearInterval(interval);
+  }, []);
   
   const searchSuggestions: SearchSuggestion[] = generateSearchSuggestions();
-  const filterOptions = generateFilterOptions();
+  const filterOptions = useMemo(() => generateFilterOptions(listings), [listings]);
+
+  useEffect(() => {
+    setIsLoading(true);
+    const timeout = setTimeout(() => setIsLoading(false), 300);
+    return () => clearTimeout(timeout);
+  }, [searchQuery, selectedProductTypes, selectedLocations, selectedAvailability, selectedRating]);
   
   // Filter listings based on selected filters
-  const filteredListings = MARKETPLACE_LISTINGS.filter(listing => {
+  const filteredListings = listings.filter(listing => {
     // Search filter
     if (searchQuery && !listing.title.toLowerCase().includes(searchQuery.toLowerCase()) && 
         !listing.description.toLowerCase().includes(searchQuery.toLowerCase()) &&
@@ -61,18 +114,18 @@ export default function Marketplace() {
   const handleFilterChange = (filterType: string, value: string) => {
     console.log(`Filter changed: ${filterType} = ${value}`);
     switch (filterType) {
-      case 'productType':
-        setSelectedProductTypes(prev => 
+      case 'productTypes':
+        setSelectedProductTypes(prev =>
           prev.includes(value) ? prev.filter(item => item !== value) : [...prev, value]
         );
         break;
-      case 'location':
-        setSelectedLocations(prev => 
+      case 'locations':
+        setSelectedLocations(prev =>
           prev.includes(value) ? prev.filter(item => item !== value) : [...prev, value]
         );
         break;
       case 'availability':
-        setSelectedAvailability(prev => 
+        setSelectedAvailability(prev =>
           prev.includes(value) ? prev.filter(item => item !== value) : [...prev, value]
         );
         break;
@@ -89,7 +142,7 @@ export default function Marketplace() {
   
   // Handle requesting a quote
   const handleRequestQuote = (listingId: string) => {
-    const listing = MARKETPLACE_LISTINGS.find(item => item.id === listingId);
+    const listing = listings.find(item => item.id === listingId);
     
     if (listing) {
       toast({
@@ -113,8 +166,7 @@ export default function Marketplace() {
   };
 
   return (
-    <AppLayout>
-      <main className="flex-grow container mx-auto px-4 py-8">
+    <main className="flex-grow container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto mb-8">
           <h1 className="text-3xl font-bold text-white mb-4">AI & Tech Marketplace</h1>
           <p className="text-zion-slate-light">
@@ -130,15 +182,30 @@ export default function Marketplace() {
               <EnhancedSearchInput
                 value={searchQuery}
                 onChange={setSearchQuery}
+                onSelectSuggestion={setSearchQuery}
                 placeholder="Search the marketplace..."
                 searchSuggestions={searchSuggestions}
               />
             </div>
             <div className="flex gap-2">
-              <Button variant="ghost" size="icon" className="text-zion-slate-light">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setViewMode('grid')}
+                aria-label="Grid view"
+                aria-pressed={viewMode === 'grid'}
+                className="text-zion-slate-light"
+              >
                 <Grid3X3 className="h-4 w-4" />
               </Button>
-              <Button variant="ghost" size="icon" className="text-zion-slate-light">
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setViewMode('list')}
+                aria-label="List view"
+                aria-pressed={viewMode === 'list'}
+                className="text-zion-slate-light"
+              >
                 <ListFilter className="h-4 w-4" />
               </Button>
             </div>
@@ -186,33 +253,32 @@ export default function Marketplace() {
             </div>
             
             {/* Display actual marketplace listings */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {filteredListings.length > 0 ? (
-                filteredListings.map((listing) => (
-                  <ProductListingCard 
-                    key={listing.id} 
-                    listing={listing}
-                    onRequestQuote={handleRequestQuote}
-                  />
-                ))
+            {isLoading ? (
+              <div className="flex justify-center py-20">
+                <Loader2 className="h-8 w-8 animate-spin text-zion-purple" />
+              </div>
+            ) : filteredListings.length > 0 ? (
+              viewMode === 'grid' ? (
+                <ProductGrid listings={filteredListings} onRequestQuote={handleRequestQuote} />
               ) : (
-                <div className="col-span-2 text-center py-16 bg-zion-blue-dark border border-zion-blue-light rounded-lg">
-                  <h2 className="text-2xl font-bold text-white mb-4">No Results Found</h2>
-                  <p className="text-zion-slate-light max-w-md mx-auto mb-8">
-                    We couldn't find any listings matching your filters. Try adjusting your search criteria.
-                  </p>
-                  <Button 
-                    onClick={clearAllFilters}
-                    className="bg-zion-purple hover:bg-zion-purple-dark"
-                  >
-                    Clear Filters
-                  </Button>
-                </div>
-              )}
-            </div>
+                <ProductList listings={filteredListings} onRequestQuote={handleRequestQuote} />
+              )
+            ) : (
+              <div className="col-span-2 text-center py-16 bg-zion-blue-dark border border-zion-blue-light rounded-lg">
+                <h2 className="text-2xl font-bold text-white mb-4">No Results Found</h2>
+                <p className="text-zion-slate-light max-w-md mx-auto mb-8">
+                  We couldn't find any listings matching your filters. Try adjusting your search criteria.
+                </p>
+                <Button
+                  onClick={clearAllFilters}
+                  className="bg-zion-purple hover:bg-zion-purple-dark"
+                >
+                  Clear Filters
+                </Button>
+              </div>
+            )}
           </div>
         </div>
       </main>
-    </AppLayout>
   );
 }

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { AppLayout } from "@/layout/AppLayout";
 import { SEO } from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -153,7 +152,7 @@ export default function FraudDetection() {
   const hasFilters = !!(searchQuery || statusFilter || severityFilter || contentTypeFilter);
 
   return (
-    <AppLayout>
+    <>
       <SEO 
         title="Fraud Detection | Admin Dashboard" 
         description="Monitor and manage fraud detection alerts on the Zion AI Marketplace" 
@@ -233,6 +232,6 @@ export default function FraudDetection() {
           </TabsContent>
         </Tabs>
       </div>
-    </AppLayout>
+    </>
   );
 }

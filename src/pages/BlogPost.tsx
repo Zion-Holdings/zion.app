@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Calendar, Clock, ChevronLeft, ChevronRight, Share2, Facebook, Twitter, Linkedin } from "lucide-react";
 import type { BlogPost as BlogPostType } from "@/types/blog";
 import { Separator } from "@/components/ui/separator";
-import { AppLayout } from "@/layout/AppLayout";
 
 // Importing the sample blog posts - in a real app, you would fetch this from an API
 import { BLOG_POSTS } from "@/data/blog-posts";
@@ -44,11 +43,9 @@ export default function BlogPost() {
   
   if (!post) {
     return (
-      <AppLayout>
-        <div className="min-h-screen bg-zion-blue text-white p-8 flex justify-center items-center">
-          <div className="animate-pulse">Loading article...</div>
-        </div>
-      </AppLayout>
+      <div className="min-h-screen bg-zion-blue text-white p-8 flex justify-center items-center">
+        <div className="animate-pulse">Loading article...</div>
+      </div>
     );
   }
   
@@ -70,10 +67,10 @@ export default function BlogPost() {
   };
   
   return (
-    <AppLayout>
-      <SEO 
-        title={post.title} 
-        description={post.excerpt} 
+    <>
+      <SEO
+        title={post.title}
+        description={post.excerpt}
         keywords={post.tags.join(", ")}
         ogImage={post.featuredImage}
         canonical={`https://app.ziontechgroup.com/blog/${post.slug}`}
@@ -115,7 +112,7 @@ export default function BlogPost() {
                   className="w-12 h-12 rounded-full mr-3"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
-                    target.src = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=facearea&facepad=2&w=100&h=100&q=80";
+                    target.src = "/images/blog-placeholder.svg";
                   }}
                 />
                 <div>
@@ -146,29 +143,35 @@ export default function BlogPost() {
                   
                   {showShareMenu && (
                     <div className="absolute right-0 top-full mt-2 bg-zion-blue-dark border border-zion-blue-light rounded-md p-2 z-10">
-                      <a 
-                        href={getShareUrl('facebook')} 
-                        target="_blank" 
+                      <a
+                        href={getShareUrl('facebook')}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center p-2 hover:bg-zion-blue rounded transition-colors text-zion-slate-light hover:text-white"
+                        aria-label="Share on Facebook"
+                        title="Share on Facebook"
                       >
                         <Facebook className="h-4 w-4 mr-2" />
                         <span>Facebook</span>
                       </a>
-                      <a 
-                        href={getShareUrl('twitter')} 
-                        target="_blank" 
+                      <a
+                        href={getShareUrl('twitter')}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center p-2 hover:bg-zion-blue rounded transition-colors text-zion-slate-light hover:text-white"
+                        aria-label="Share on Twitter"
+                        title="Share on Twitter"
                       >
                         <Twitter className="h-4 w-4 mr-2" />
                         <span>Twitter</span>
                       </a>
-                      <a 
-                        href={getShareUrl('linkedin')} 
-                        target="_blank" 
+                      <a
+                        href={getShareUrl('linkedin')}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center p-2 hover:bg-zion-blue rounded transition-colors text-zion-slate-light hover:text-white"
+                        aria-label="Share on LinkedIn"
+                        title="Share on LinkedIn"
                       >
                         <Linkedin className="h-4 w-4 mr-2" />
                         <span>LinkedIn</span>
@@ -189,7 +192,7 @@ export default function BlogPost() {
                 className="object-cover w-full h-full"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
-                  target.src = "https://images.unsplash.com/photo-1581089778245-3ce67677f718?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3";
+                  target.src = "/images/blog-placeholder.svg";
                 }}
               />
             </div>
@@ -234,7 +237,7 @@ export default function BlogPost() {
                           className="object-cover w-full h-full"
                           onError={(e) => {
                             const target = e.target as HTMLImageElement;
-                            target.src = "https://images.unsplash.com/photo-1581089778245-3ce67677f718?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3";
+                            target.src = "/images/blog-placeholder.svg";
                           }}
                         />
                       </div>
@@ -264,6 +267,6 @@ export default function BlogPost() {
           </div>
         </div>
       </div>
-    </AppLayout>
+    </>
   );
 }

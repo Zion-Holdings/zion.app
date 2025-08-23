@@ -8,11 +8,11 @@ export default function PaymentCanceled() {
   const navigate = useNavigate();
   
   return (
-    <div className="min-h-screen bg-zion-blue flex flex-col items-center justify-center p-4">
-      <div className="max-w-md w-full bg-zion-blue-dark rounded-xl p-8 border border-zion-blue-light shadow-lg text-center">
-        <div className="inline-flex h-12 w-12 rounded-full bg-red-100 mb-4 items-center justify-center">
-          <XCircle className="h-6 w-6 text-red-600" />
-        </div>
+    <div className="flex flex-1 bg-zion-blue items-center justify-center p-4">
+        <div className="max-w-md w-full bg-zion-blue-dark rounded-xl p-8 border border-zion-blue-light shadow-lg text-center">
+          <div className="inline-flex h-12 w-12 rounded-full bg-red-100 mb-4 items-center justify-center">
+            <XCircle className="h-6 w-6 text-red-600" />
+          </div>
         
         <h1 className="text-2xl font-bold text-white mb-2">Payment Canceled</h1>
         
@@ -21,7 +21,7 @@ export default function PaymentCanceled() {
         </p>
         
         <div className="flex flex-col space-y-3">
-          <Button 
+          <Button
             onClick={() => navigate('/payments')}
             className="bg-zion-purple hover:bg-zion-purple-dark text-white"
           >
@@ -36,7 +36,7 @@ export default function PaymentCanceled() {
             Return to Dashboard
           </Button>
         </div>
+        </div>
       </div>
-    </div>
   );
 }

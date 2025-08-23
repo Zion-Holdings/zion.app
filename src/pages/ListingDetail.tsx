@@ -9,7 +9,6 @@ import { cn } from "@/lib/utils";
 import { MARKETPLACE_LISTINGS } from "@/data/marketplaceData";
 import { toast } from "@/hooks/use-toast";
 import { PaymentButton } from "@/components/transactions/PaymentButton";
-import { AppLayout } from "@/layout/AppLayout";
 import { ProfileContact } from "@/components/profile/ProfileContact";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
@@ -26,11 +25,10 @@ export default function ListingDetail() {
 
   if (!listing) {
     return (
-      <AppLayout>
-        <div className="min-h-screen bg-zion-blue py-12 px-4">
-          <div className="container mx-auto">
-            <div className="text-center py-20">
-              <h1 className="text-3xl font-bold text-white mb-4">Listing Not Found</h1>
+      <div className="min-h-screen bg-zion-blue py-12 px-4">
+        <div className="container mx-auto">
+          <div className="text-center py-20">
+            <h1 className="text-3xl font-bold text-white mb-4">Listing Not Found</h1>
               <p className="text-zion-slate-light mb-8">The listing you're looking for doesn't exist or has been removed.</p>
               <Button asChild className="bg-gradient-to-r from-zion-purple to-zion-purple-dark">
                 <a href="/marketplace">Back to Marketplace</a>
@@ -38,8 +36,7 @@ export default function ListingDetail() {
             </div>
           </div>
         </div>
-      </AppLayout>
-    );
+      );
   }
 
   const handleContact = () => {
@@ -47,7 +44,7 @@ export default function ListingDetail() {
   };
 
   return (
-    <AppLayout>
+    <>
       <div className="min-h-screen bg-zion-blue py-12 px-4">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -283,6 +280,6 @@ export default function ListingDetail() {
           />
         </DialogContent>
       </Dialog>
-    </AppLayout>
+    </>
   );
 }

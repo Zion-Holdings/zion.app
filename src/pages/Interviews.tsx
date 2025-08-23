@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import { useInterviews } from "@/hooks/useInterviews";
 import { Interview } from "@/types/interview";
-import { AppHeader } from "@/layout/AppHeader";
 import { Footer } from "@/components/Footer";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SEO } from "@/components/SEO";
@@ -100,7 +99,6 @@ function InterviewsContent() {
         title="Interviews | Zion AI Marketplace" 
         description="Manage your scheduled interviews with clients and talent" 
       />
-      <AppHeader />
       <main className="container mx-auto px-4 py-8">
         <div className="flex justify-between items-center mb-8">
           <div>

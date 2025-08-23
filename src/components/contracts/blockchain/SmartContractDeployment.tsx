@@ -75,8 +75,9 @@ export function SmartContractDeployment({
       <CardContent className="space-y-6">
         <div className="space-y-4">
           <div className="flex items-center space-x-2">
-            <Switch 
+            <Switch
               id="deploy-blockchain"
+              aria-label="Deploy to blockchain"
               checked={deploymentOptions.deployToChain}
               onCheckedChange={(checked) => setDeploymentOptions({
                 ...deploymentOptions,
@@ -123,8 +124,9 @@ export function SmartContractDeployment({
               </div>
               
               <div className="flex items-center space-x-2">
-                <Switch 
+                <Switch
                   id="use-escrow"
+                  aria-label="Use escrow"
                   checked={deploymentOptions.useEscrow}
                   onCheckedChange={(checked) => setDeploymentOptions({
                     ...deploymentOptions,

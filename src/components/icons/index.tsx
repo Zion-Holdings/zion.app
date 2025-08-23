@@ -49,6 +49,7 @@ const iconAliases: Record<string, keyof typeof LucideIcons> = {
   ChevronRight: 'ChevronRight',
   MoreHorizontal: 'MoreHorizontal',
   MoreVertical: 'MoreVertical',
+  Search: 'Search',
   
   // Content
   Quote: 'Quote',

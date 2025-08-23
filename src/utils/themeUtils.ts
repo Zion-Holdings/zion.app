@@ -16,11 +16,11 @@ export function getThemeColors(preset: ThemePreset, primaryColor: string): Theme
     case 'dark':
       return {
         primaryColor,
-        backgroundColor: '#0f172a',
-        textColor: '#e2e8f0',
+        backgroundColor: '#000000',
+        textColor: '#ffffff',
         accentColor: primaryColor,
         buttonColor: primaryColor,
-        cardBackground: '#1e293b',
+        cardBackground: '#0a0a0a',
       };
     case 'neon':
       return {
@@ -29,7 +29,7 @@ export function getThemeColors(preset: ThemePreset, primaryColor: string): Theme
         textColor: '#f8fafc',
         accentColor: '#00ffbb',
         buttonColor: primaryColor,
-        cardBackground: '#0f172a',
+        cardBackground: '#000000',
       };
     case 'corporate':
       return {
@@ -43,18 +43,18 @@ export function getThemeColors(preset: ThemePreset, primaryColor: string): Theme
     case 'startup':
       return {
         primaryColor,
-        backgroundColor: '#16181d',
-        textColor: '#fafafa',
-        accentColor: '#ff7f50',
+        backgroundColor: '#000000',
+        textColor: '#ffffff',
+        accentColor: '#3b82f6',
         buttonColor: primaryColor,
-        cardBackground: '#1e2127',
+        cardBackground: '#0a0a0a',
       };
     case 'light':
     default:
       return {
         primaryColor,
         backgroundColor: '#ffffff',
-        textColor: '#0f172a',
+        textColor: '#000000',
         accentColor: primaryColor,
         buttonColor: primaryColor,
         cardBackground: '#f8fafc',

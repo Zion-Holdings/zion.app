@@ -78,10 +78,11 @@ export function BrowseFilters({ type }: BrowseFiltersProps) {
                     
                     <div className="space-y-2">
                       <Label>Experience (years)</Label>
-                      <Slider 
-                        defaultValue={[0, 10]} 
-                        max={20} 
-                        step={1} 
+                      <Slider
+                        aria-label="Years of experience"
+                        defaultValue={[0, 10]}
+                        max={20}
+                        step={1}
                         className="my-4"
                       />
                       <div className="flex justify-between text-xs text-muted-foreground">

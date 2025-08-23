@@ -1,27 +1,70 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { QuoteFormData, ListingItem, ServiceType } from "@/types/quotes";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { Search } from "lucide-react";
 import { ListingScoreCard } from "@/components/ListingScoreCard";
+import { SAMPLE_SERVICES } from "@/data/sampleServices";
+import { Skeleton } from "@/components/ui/skeleton";
+import { useDebounce } from "@/hooks/useDebounce";
 
 interface ServiceTypeStepProps {
   formData: QuoteFormData;
   updateFormData: (data: Partial<QuoteFormData>) => void;
 }
 
-// Sample data - would come from an API in a real application
-const SAMPLE_LISTINGS: ListingItem[] = [
-  { id: "service-1", title: "AI Development", category: "Services", image: "https://images.unsplash.com/photo-1516192518150-0d8fee5425e3?w=800&auto=format" },
-  { id: "service-2", title: "Cloud Migration", category: "Services", image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format" },
-  { id: "talent-1", title: "AI Engineer", category: "Talents", image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&auto=format" },
-  { id: "talent-2", title: "Data Scientist", category: "Talents", image: "https://images.unsplash.com/photo-1573497491765-dccce02b29df?w=800&auto=format" },
-  { id: "equipment-1", title: "Workstation", category: "Equipment", image: "https://images.unsplash.com/photo-1547082299-de196ea013d6?w=800&auto=format" },
-  { id: "equipment-2", title: "Server Rack", category: "Equipment", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format" },
-];
 
 export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepProps) {
   const [searchQuery, setSearchQuery] = useState("");
+  const debouncedQuery = useDebounce(searchQuery, 300);
+  const [listings, setListings] = useState<ListingItem[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  // Fetch services when the service type or query changes
+  useEffect(() => {
+    if (!formData.serviceType) {
+      setListings([]);
+      return;
+    }
+
+    const fetchServices = async () => {
+      setLoading(true);
+      setError(null);
+      const url = `/api/services?category=${encodeURIComponent(formData.serviceType)}&q=${encodeURIComponent(debouncedQuery)}`;
+      const maxRetries = 3;
+
+      for (let attempt = 0; attempt < maxRetries; attempt++) {
+        try {
+          const response = await fetch(url);
+          if (!response.ok) throw new Error('Failed to fetch');
+          const data = await response.json();
+          setListings(data as ListingItem[]);
+          setError(null);
+          setLoading(false);
+          return;
+        } catch (err) {
+          if (attempt === maxRetries - 1) {
+            setError('Failed to load services');
+            setListings(
+              SAMPLE_SERVICES.filter(
+                item =>
+                  item.category === formData.serviceType &&
+                  item.title.toLowerCase().includes(debouncedQuery.toLowerCase())
+              )
+            );
+            setLoading(false);
+          } else {
+            await new Promise(res =>
+              setTimeout(res, Math.pow(2, attempt) * 500)
+            );
+          }
+        }
+      }
+    };
+
+    fetchServices();
+  }, [formData.serviceType, debouncedQuery]);
   
   const handleTypeSelect = (type: ServiceType) => {
     updateFormData({ serviceType: type });
@@ -35,7 +78,9 @@ export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepPro
     });
   };
   
-  const filteredListings = SAMPLE_LISTINGS.filter(item => {
+  const sourceListings = listings.length > 0 ? listings : SAMPLE_SERVICES;
+
+  const filteredListings = sourceListings.filter(item => {
     // Filter by category only when a service type has been selected
     if (formData.serviceType !== "") {
       const categoryMatch = item.category.toLowerCase() === formData.serviceType.toLowerCase();
@@ -103,11 +148,21 @@ export function ServiceTypeStep({ formData, updateFormData }: ServiceTypeStepPro
               className="pl-10 bg-zion-blue border border-zion-blue-light focus:border-zion-purple"
             />
           </div>
+
+          {error && (
+            <div className="text-center text-red-400 text-sm">{error}. Showing sample data.</div>
+          )}
           
           <div className="grid grid-cols-1 gap-4 mt-4">
-            {filteredListings.length > 0 ? (
+            {loading ? (
+              <>
+                <Skeleton className="h-[120px] w-full" />
+                <Skeleton className="h-[120px] w-full" />
+                <Skeleton className="h-[120px] w-full" />
+              </>
+            ) : filteredListings.length > 0 ? (
               filteredListings.map((item) => (
-                <div 
+                <div
                   key={item.id}
                   onClick={() => handleItemSelect(item)}
                   className={`cursor-pointer transition-all ${

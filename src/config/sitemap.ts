@@ -28,7 +28,7 @@ export const publicPages: SitemapItem[] = [
   {
     path: '/about',
     label: 'About Us',
-    description: 'Learn about the Zion AI Marketplace mission and team',
+    description: 'Learn about the Zion AI Marketplace mission, team and timeline',
     priority: 0.8,
     changeFreq: 'monthly',
     lastmod: currentDate,

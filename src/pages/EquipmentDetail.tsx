@@ -1,14 +1,14 @@
 
 import { useState } from "react";
-import { useParams } from "react-router-dom";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
+import { useParams, useNavigate } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ShoppingCart, Star, Truck, Shield, RotateCcw, Clock } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
+import { useAuth } from "@/hooks/useAuth";
+import { getStripe } from "@/utils/getStripe";
 
 interface EquipmentSpecification {
   name: string;
@@ -37,6 +37,28 @@ interface EquipmentDetails {
 
 // Sample data - in a real app this would come from an API
 const SAMPLE_EQUIPMENT: { [key: string]: EquipmentDetails } = {
+  "2u-rack-mount-server": {
+    id: "2u-rack-mount-server",
+    name: "2U Rack Mount Server",
+    description: "High‑density server optimized for virtualization and private cloud deployments.",
+    brand: "DataCore",
+    category: "Servers",
+    images: ["/images/equipment-placeholder.svg"],
+    price: 4200,
+    currency: "$",
+    rating: 4.8,
+    reviewCount: 23,
+    inStock: true,
+    expectedShipping: "3-5 business days",
+    specifications: [
+      { name: "CPU", value: "Dual Xeon" },
+      { name: "Memory", value: "64GB RAM" },
+      { name: "Power", value: "Dual PSU" },
+    ],
+    features: ["Hot-swappable drives", "Remote management"],
+    warranty: "1 year manufacturer warranty",
+    returnPolicy: "30-day return policy",
+  },
   "pro-camera-x1000": {
     id: "pro-camera-x1000",
     name: "Pro Camera X1000",
@@ -45,9 +67,9 @@ const SAMPLE_EQUIPMENT: { [key: string]: EquipmentDetails } = {
     category: "Equipment",
     subcategory: "Cameras",
     images: [
-      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1200&h=800",
-      "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=1200&h=800",
-      "https://images.unsplash.com/photo-1581591524425-c7e0978865fc?auto=format&fit=crop&w=1200&h=800"
+      "/images/equipment-placeholder.svg",
+      "/images/equipment-placeholder.svg",
+      "/images/equipment-placeholder.svg"
     ],
     price: 6999,
     currency: "$",
@@ -90,8 +112,8 @@ const SAMPLE_EQUIPMENT: { [key: string]: EquipmentDetails } = {
     category: "Equipment",
     subcategory: "Audio",
     images: [
-      "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=1200&h=800",
-      "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1200&h=800"
+      "/images/equipment-placeholder.svg",
+      "/images/equipment-placeholder.svg"
     ],
     price: 3499,
     currency: "$",
@@ -127,18 +149,19 @@ const SAMPLE_EQUIPMENT: { [key: string]: EquipmentDetails } = {
 };
 
 export default function EquipmentDetail() {
-  const { equipmentId } = useParams() as { equipmentId?: string };
+  const { id } = useParams() as { id?: string };
+  const navigate = useNavigate();
+  const { isAuthenticated } = useAuth();
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [isAdding, setIsAdding] = useState(false);
   
   // In a real app, this would fetch from an API
-  const equipment = equipmentId ? SAMPLE_EQUIPMENT[equipmentId] : undefined;
+  const equipment = id ? SAMPLE_EQUIPMENT[id] : undefined;
   
   if (!equipment) {
     return (
       <>
-        <Header />
         <div className="min-h-screen bg-zion-blue py-12 px-4">
           <div className="container mx-auto">
             <div className="text-center py-20">
@@ -147,7 +170,6 @@ export default function EquipmentDetail() {
             </div>
           </div>
         </div>
-        <Footer />
       </>
     );
   }
@@ -165,22 +187,33 @@ export default function EquipmentDetail() {
     }, 800);
   };
 
-  const handleBuyNow = () => {
+  const handleBuyNow = async () => {
+    if (!isAuthenticated) {
+      navigate(`/login?next=/equipment/${id}`);
+      return;
+    }
+
     setIsAdding(true);
-    
-    // Simulate API call
-    setTimeout(() => {
-      setIsAdding(false);
-      toast({
-        title: "Proceeding to checkout",
-        description: `Preparing your order for ${equipment.name}.`,
+    try {
+      const response = await fetch('/api/checkout_sessions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ productId: id }),
       });
-    }, 800);
+      const { sessionId } = await response.json();
+      const stripe = await getStripe();
+      if (stripe && sessionId) {
+        await stripe.redirectToCheckout({ sessionId });
+      }
+    } catch (err) {
+      toast({ title: 'Payment error', description: 'Could not start checkout.' });
+    } finally {
+      setIsAdding(false);
+    }
   };
 
   return (
     <>
-      <Header />
       <div className="min-h-screen bg-zion-blue py-12 px-4">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -423,7 +456,6 @@ export default function EquipmentDetail() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

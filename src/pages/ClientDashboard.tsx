@@ -1,6 +1,5 @@
 
 import { useState, useEffect } from "react";
-import { AppHeader } from "@/layout/AppHeader"; 
 import { Footer } from "@/components/Footer";
 import { JobsList } from "@/components/jobs/JobsList";
 import { Button } from "@/components/ui/button";
@@ -43,7 +42,6 @@ function ClientDashboardContent() {
         title="Client Dashboard | Zion AI Marketplace" 
         description="Manage your jobs and talent requests in the Zion AI Marketplace." 
       />
-      <AppHeader />
       <main className="container mx-auto px-4 py-8">
         <div className={`flex flex-col ${!isMobile ? 'md:flex-row md:justify-between md:items-center' : ''} mb-8 gap-4`}>
           <div>

@@ -1,12 +1,7 @@
 
 import { Moon, Sun } from "lucide-react"
 import { Button } from "@/components/ui/button"
-
-// Create a simplified theme hook for offline mode
-const useTheme = () => ({
-  theme: "dark",
-  setTheme: (theme: string) => console.log(`Theme would change to: ${theme}`)
-});
+import { useTheme } from "@/hooks/useTheme"
 
 export function ModeToggle() {
   const { theme, setTheme } = useTheme();
@@ -16,6 +11,10 @@ export function ModeToggle() {
       variant="ghost"
       size="icon"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      aria-pressed={theme === "dark"}
+      aria-label="Toggle theme"
+      title="Toggle theme"
+      className="focus-visible:ring-zion-purple"
     >
       {theme === "dark" ? (
         <Sun className="h-5 w-5 text-yellow-300" />

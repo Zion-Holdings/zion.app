@@ -163,7 +163,8 @@ export function WebhooksManager() {
                     type="password"
                     value={webhookSecret}
                     onChange={(e) => setWebhookSecret(e.target.value)}
-                    placeholder="••••••••••••••••"
+                    placeholder="Enter secret key"
+                    aria-label="Secret key"
                     className="bg-zinc-800 border-zinc-700"
                   />
                   <p className="text-xs text-zinc-500">
@@ -238,6 +239,7 @@ export function WebhooksManager() {
                   <div className="flex items-center space-x-2">
                     <div className="flex items-center mr-2">
                       <Switch
+                        aria-label="Toggle webhook"
                         checked={webhook.is_active}
                         onCheckedChange={() => handleToggleStatus(webhook.id, webhook.is_active)}
                       />

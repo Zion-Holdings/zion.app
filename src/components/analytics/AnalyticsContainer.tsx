@@ -1,7 +1,5 @@
 
 import React from "react";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
 import { SEO } from "@/components/SEO";
 import { Navigate } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
@@ -37,12 +35,11 @@ export function AnalyticsContainer({ children }: AnalyticsContainerProps) {
 
   return (
     <div className="min-h-screen flex flex-col bg-zion-blue">
-      <SEO 
-        title="Analytics Dashboard" 
+      <SEO
+        title="Analytics Dashboard"
         description="Track user behavior, page views, and conversion rates to improve your platform performance"
         noindex
       />
-      <Header />
       <main className="flex-1 p-6 md:p-8 container mx-auto">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-white mb-2">Analytics Dashboard</h1>
@@ -52,7 +49,6 @@ export function AnalyticsContainer({ children }: AnalyticsContainerProps) {
         </div>
         {children}
       </main>
-      <Footer />
     </div>
   );
 }

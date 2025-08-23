@@ -1,6 +1,8 @@
 
 import { useState, useEffect } from "react";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+// Use a lightweight local stub for drag-and-drop to avoid missing dependency
+// errors when the real package isn't installed.
+import { DragDropContext, Droppable, Draggable } from "@/lib/dnd-stub";
 import { useJobApplications } from "@/hooks/useJobApplications";
 import { JobApplication, ApplicationStatus } from "@/types/jobs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";

@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ProductListing } from "@/types/listings";
@@ -8,12 +8,18 @@ interface ProductListingCardProps {
   listing: ProductListing;
   view?: 'grid' | 'list';
   onRequestQuote?: (id: string) => void;
+  /**
+   * Base path for linking to the detail page. Defaults to
+   * `/marketplace/listing` to preserve existing behaviour.
+   */
+  detailBasePath?: string;
 }
 
-export function ProductListingCard({ 
-  listing, 
+export function ProductListingCard({
+  listing,
   view = 'grid',
-  onRequestQuote
+  onRequestQuote,
+  detailBasePath = '/marketplace/listing'
 }: ProductListingCardProps) {
   const isGrid = view === 'grid';
   const navigate = useNavigate();
@@ -36,7 +42,7 @@ export function ProductListingCard({
   
   // Handle navigating to listing detail
   const handleViewListing = () => {
-    navigate(`/listing/${listing.id}`);
+    navigate(`${detailBasePath}/${listing.id}`);
   };
   
   // Handle request quote button click
@@ -53,12 +59,16 @@ export function ProductListingCard({
   };
   
   return (
-    <div className={`bg-zion-blue-dark border border-zion-blue-light rounded-lg overflow-hidden flex ${isGrid ? 'flex-col' : 'flex-row'} cursor-pointer`} onClick={handleViewListing}>
+    <div
+      className={`bg-zion-blue-dark border border-zion-blue-light rounded-lg overflow-hidden flex ${isGrid ? 'flex-col' : 'flex-row'} cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-zion-purple`}
+      onClick={handleViewListing}
+      tabIndex={0}
+    >
       {/* Image */}
-      <div className={isGrid ? 'block w-full' : 'block w-1/3'} onClick={handleViewListing}>
-        <div className={`relative ${isGrid ? 'h-48' : 'h-full'}`}>
-          <img 
-            src={imageUrl} 
+      <div className={isGrid ? 'block w-full' : 'block w-48 flex-shrink-0'} onClick={handleViewListing}>
+        <div className={`relative ${isGrid ? 'h-48' : 'h-32 w-48'}`}>
+          <img
+            src={imageUrl}
             alt={listing.title}
             className="w-full h-full object-cover"
             onError={handleImageError}
@@ -131,16 +141,17 @@ export function ProductListingCard({
           </div>
           
           <div className="flex gap-2">
-            <Button 
-              size="sm" 
-              onClick={(e) => {
-                e.stopPropagation();
-                navigate(`/listing/${listing.id}`);
-              }}
-              className="bg-zion-purple hover:bg-zion-purple-dark text-white"
+            <Link
+              to={`${detailBasePath}/${listing.id}`}
+              onClick={(e) => e.stopPropagation()}
             >
-              Buy Now
-            </Button>
+              <Button
+                size="sm"
+                className="bg-zion-purple hover:bg-zion-purple-dark text-white"
+              >
+                Buy Now
+              </Button>
+            </Link>
             
             {onRequestQuote && (
               <Button 

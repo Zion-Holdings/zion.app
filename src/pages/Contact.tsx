@@ -11,7 +11,6 @@ import { toast } from "@/components/ui/use-toast";
 import z from "zod";
 import { ChatAssistant } from "@/components/ChatAssistant";
 import { Mail, MessageSquare, MapPin, Phone } from "lucide-react";
-import { AppLayout } from "@/layout/AppLayout";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -21,60 +20,67 @@ export default function Contact() {
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState<{
+    name?: string;
+    email?: string;
+    subject?: string;
+    message?: string;
+  }>({});
   const [isChatOpen, setIsChatOpen] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
+    setErrors(prev => ({ ...prev, [name]: undefined }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    try {
-      // Basic validation with Zod
-      const schema = z.object({
-        name: z.string().min(2, "Name must be at least 2 characters"),
-        email: z.string().email("Invalid email address"),
-        subject: z.string().min(2, "Subject must be at least 2 characters"),
-        message: z.string().min(10, "Message must be at least 10 characters")
-      });
-      
-      schema.parse(formData);
-      
-      // Simulate form submission
-      setIsSubmitting(true);
-      
-      setTimeout(() => {
-        setIsSubmitting(false);
-        toast({
-          title: "Message Sent",
-          description: "We've received your message and will get back to you soon.",
-        });
-        
-        // Reset form
-        setFormData({
-          name: "",
-          email: "",
-          subject: "",
-          message: ""
-        });
-      }, 1500);
-    } catch (error) {
-      if (error instanceof z.ZodError) {
-        toast({
-          title: "Form Validation Error",
-          description: error.errors[0].message,
-          variant: "destructive"
-        });
-      } else {
-        toast({
-          title: "An error occurred",
-          description: "Please try again later",
-          variant: "destructive"
-        });
+
+    const schema = z.object({
+      name: z.string().min(2, "Name must be at least 2 characters"),
+      email: z.string().email("Invalid email address"),
+      subject: z.string().min(2, "Subject must be at least 2 characters"),
+      message: z.string().min(10, "Message must be at least 10 characters"),
+    });
+
+    const result = schema.safeParse(formData);
+    if (!result.success) {
+      const fieldErrors: Record<string, string> = {};
+      for (const err of result.error.errors) {
+        if (err.path[0]) {
+          fieldErrors[err.path[0] as string] = err.message;
+        }
       }
+      setErrors(fieldErrors);
+      toast({
+        title: "Form Validation Error",
+        description: result.error.errors[0].message,
+        variant: "destructive",
+      });
+      return;
     }
+
+    setErrors({});
+
+    // Simulate form submission
+    setIsSubmitting(true);
+
+    setTimeout(() => {
+      setIsSubmitting(false);
+      toast({
+        title: "Message Sent",
+        description: "We've received your message and will get back to you soon.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    }, 1500);
   };
 
   // Handle sending messages to the AI chat assistant
@@ -122,10 +128,10 @@ export default function Contact() {
   ];
 
   return (
-    <AppLayout>
-      <SEO 
-        title="Contact Zion - Get in Touch" 
-        description="Have questions or want to learn more? Contact the Zion team about our AI and tech marketplace platform." 
+    <>
+      <SEO
+        title="Contact Zion - Get in Touch"
+        description="Have questions or want to learn more? Contact the Zion team about our AI and tech marketplace platform."
         keywords="contact Zion, AI marketplace support, tech platform contact"
         canonical="https://app.ziontechgroup.com/contact"
       />
@@ -150,55 +156,67 @@ export default function Contact() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="block text-white mb-2">Your Name</label>
-                    <Input 
+                    <Input
                       id="name"
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className="bg-zion-blue-dark border-zion-blue-light text-white"
+                      className={`bg-zion-blue-dark border-zion-blue-light text-white ${errors.name ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                       placeholder="John Doe"
                       required
                     />
+                    {errors.name && (
+                      <p className="mt-1 text-sm text-red-500">{errors.name}</p>
+                    )}
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-white mb-2">Email Address</label>
-                    <Input 
+                    <Input
                       id="email"
                       name="email"
                       type="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="bg-zion-blue-dark border-zion-blue-light text-white"
+                      className={`bg-zion-blue-dark border-zion-blue-light text-white ${errors.email ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                       placeholder="john@example.com"
                       required
                     />
+                    {errors.email && (
+                      <p className="mt-1 text-sm text-red-500">{errors.email}</p>
+                    )}
                   </div>
                 </div>
-                
+
                 <div>
                   <label htmlFor="subject" className="block text-white mb-2">Subject</label>
-                  <Input 
+                  <Input
                     id="subject"
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className="bg-zion-blue-dark border-zion-blue-light text-white"
+                    className={`bg-zion-blue-dark border-zion-blue-light text-white ${errors.subject ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                     placeholder="How can we help you?"
                     required
                   />
+                  {errors.subject && (
+                    <p className="mt-1 text-sm text-red-500">{errors.subject}</p>
+                  )}
                 </div>
-                
+
                 <div>
                   <label htmlFor="message" className="block text-white mb-2">Message</label>
-                  <Textarea 
+                  <Textarea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    className="bg-zion-blue-dark border-zion-blue-light text-white min-h-[150px]"
+                    className={`bg-zion-blue-dark border-zion-blue-light text-white min-h-[150px] ${errors.message ? 'border-red-500 focus-visible:ring-red-500' : ''}`}
                     placeholder="Tell us what you'd like to know..."
                     required
                   />
+                  {errors.message && (
+                    <p className="mt-1 text-sm text-red-500">{errors.message}</p>
+                  )}
                 </div>
                 
                 <Button 
@@ -314,6 +332,6 @@ export default function Contact() {
           onSendMessage={handleSendMessage}
         />
       )}
-    </AppLayout>
+    </>
   );
 }

@@ -20,7 +20,7 @@ export function QuoteFormSection() {
   };
 
   return (
-    <section className="py-20 bg-zion-blue">
+    <section id="quote-form" className="py-20 bg-zion-blue">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <GradientHeading>Get a Quote Now</GradientHeading>
@@ -123,7 +123,7 @@ export function QuoteFormSection() {
                 <textarea
                   id="message"
                   rows={4}
-                  className="w-full rounded-md bg-zion-blue-dark border border-zion-blue-light focus:border-zion-purple focus:ring-1 focus:ring-zion-purple text-white"
+                  className="w-full rounded-md bg-zion-blue-dark border border-zion-blue-light focus:border-zion-purple focus:ring-1 focus:ring-zion-purple text-black"
                 ></textarea>
               </div>
               

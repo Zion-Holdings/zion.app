@@ -5,7 +5,7 @@ import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
 import { generateSearchSuggestions } from "@/data/marketplaceData";
 import { SearchSuggestion } from "@/types/search";
 import { useAISearch } from "@/hooks/useAISearch";
-import { AppLayout } from "@/layout/AppLayout";
+import { Loader2 } from "lucide-react";
 
 export default function SearchPage() {
   const [params] = useSearchParams();
@@ -28,18 +28,27 @@ export default function SearchPage() {
   };
 
   return (
-    <AppLayout>
+    <>
       <main className="container mx-auto px-4 py-8">
         <form onSubmit={handleSubmit} className="mb-6">
           <EnhancedSearchInput
             value={query}
             onChange={setQuery}
+            onSelectSuggestion={(text) => {
+              navigate(`/search?q=${encodeURIComponent(text)}`);
+              setQuery(text);
+              search(text);
+            }}
             searchSuggestions={suggestions}
             placeholder="Search talent, jobs, and projects..."
           />
         </form>
 
-        {loading && <p className="text-zion-slate-light">Searching...</p>}
+        {loading && (
+          <div className="flex justify-center py-8">
+            <Loader2 className="h-8 w-8 animate-spin text-zion-purple" />
+          </div>
+        )}
         {!loading && results.length === 0 && (
           <p className="text-zion-slate-light">No results found.</p>
         )}
@@ -60,6 +69,6 @@ export default function SearchPage() {
           </div>
         )}
       </main>
-    </AppLayout>
+    </>
   );
 }

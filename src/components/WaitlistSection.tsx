@@ -80,7 +80,7 @@ export function WaitlistSection() {
                 placeholder="John Smith"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="bg-zion-blue-dark border-zion-blue-light"
+                className="bg-zion-blue-dark border-zion-blue-light text-white"
               />
             </div>
 
@@ -91,8 +91,8 @@ export function WaitlistSection() {
                 type="email"
                 placeholder="you@company.com"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="bg-zion-blue-dark border-zion-blue-light"
+                onChange={(e) => setEmail(e.target.value.trim())}
+                className="bg-zion-blue-dark border-zion-blue-light text-white"
               />
             </div>
 
@@ -103,7 +103,7 @@ export function WaitlistSection() {
                 placeholder="IT Manager, Developer, Business Owner, etc."
                 value={role}
                 onChange={(e) => setRole(e.target.value)}
-                className="bg-zion-blue-dark border-zion-blue-light"
+                className="bg-zion-blue-dark border-zion-blue-light text-white"
               />
             </div>
             
