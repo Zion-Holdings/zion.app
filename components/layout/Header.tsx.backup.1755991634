@@ -56,12 +56,16 @@ const Header = () => {
       description: 'Industry-Specific Solutions',
       icon: <Sparkles className="w-5 h-5" />,
       children: [
+<<<<<<< HEAD
+        { name: 'Case Studies', href: '/case-studies' }
+=======
         { name: 'Case Studies', href: '/case-studies' },
         { name: 'Cloud Platform', href: '/cloud-platform' },
         { name: 'AI Assistant', href: '/ai-assistant' },
         { name: 'Micro SaaS', href: '/micro-saas' },
         { name: 'Resources', href: '/resources' },
         { name: 'Support', href: '/support' }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-5a95
       ]
     },
     { name: 'Market Pricing', href: '/market-pricing' },

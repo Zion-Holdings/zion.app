@@ -80,9 +80,15 @@ const Footer: React.FC = () => {
     { name: 'X (Twitter)', href: '/social/twitter', icon: Twitter },
     { name: 'LinkedIn', href: '/social/linkedin', icon: Linkedin },
     { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: Github },
+<<<<<<< HEAD
+    { name: 'Facebook', href: 'https://www.facebook.com/ziontechgroup', icon: Facebook },
+    { name: 'Instagram', href: 'https://www.instagram.com/ziontechgroup', icon: Instagram },
+    { name: 'YouTube', href: 'https://www.youtube.com/@ziontechgroup', icon: Youtube }
+=======
     { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: Facebook },
     { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: Instagram },
     { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: Youtube }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-5a95
   ];
 
   return (
