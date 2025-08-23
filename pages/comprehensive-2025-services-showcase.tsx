@@ -190,8 +190,8 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
                           
                           {/* Price */}
                           <div className="flex items-baseline space-x-2 mb-6">
-                            <span className="text-3xl font-bold text-cyan-400">{service.price}</span>
-                            <span className="text-gray-400">{service.period}</span>
+                            <span className="text-3xl font-bold text-cyan-400">${service.price.monthly}</span>
+                            <span className="text-gray-400">/month</span>
                           </div>
                           
                           {/* Features Preview */}
@@ -214,15 +214,15 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
                             </ul>
                           </div>
                           
-                          {/* Market Info */}
+                          {/* Quick Stats */}
                           <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
                             <div>
-                              <div className="text-gray-400">Market Size</div>
-                              <div className="text-white font-semibold">{service.marketSize}</div>
+                              <div className="text-gray-400">Customers</div>
+                              <div className="text-white font-semibold">{service.customers.toLocaleString()}</div>
                             </div>
                             <div>
-                              <div className="text-gray-400">Growth Rate</div>
-                              <div className="text-green-400 font-semibold">{service.growthRate}</div>
+                              <div className="text-gray-400">Rating</div>
+                              <div className="text-green-400 font-semibold">{service.rating}/5</div>
                             </div>
                           </div>
                           
@@ -250,7 +250,7 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
                           {/* Trial Info */}
                           <div className="mt-4 text-center">
                             <span className="text-sm text-gray-400">
-                              {service.trialDays}-day free trial • Setup in {service.setupTime}
+                              {service.price.trialDays}-day free trial • Setup in {service.price.setupTime}
                             </span>
                           </div>
                         </div>

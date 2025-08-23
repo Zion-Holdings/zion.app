@@ -195,7 +195,7 @@ export default function FuturisticServices2030Page() {
                       
                       <div className="space-y-3 mb-4">
                         <div className="flex items-center justify-between">
-                          <span className="text-cyan-400 font-semibold">{service.price}{service.period}</span>
+                          <span className="text-cyan-400 font-semibold">${service.price?.monthly || service.price}{service.period || '/month'}</span>
                           <span className="text-xs text-purple-400 bg-purple-400/10 px-2 py-1 rounded-full">
                             {service.innovationLevel}
                           </span>

@@ -200,7 +200,7 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       <meta property="business:contact_data:postal_code" content="19709" />
       <meta property="business:contact_data:country_name" content="United States" />
       <meta property="business:contact_data:phone_number" content="+1-302-464-0950" />
-      <meta property="business:contact_data:email" content="contact@ziontechgroup.com" />
+              <meta property="business:contact_data:email" content="kleber@ziontechgroup.com" />
       <meta property="business:contact_data:website" content="https://ziontechgroup.com" />
       
       {/* Business Hours */}

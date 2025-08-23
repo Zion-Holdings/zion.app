@@ -2,6 +2,23 @@ import React, { useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Star, CheckCircle, Zap, Brain, Atom, Rocket } from 'lucide-react';
 
+function getPriceValue(price: any): string {
+	if (price && typeof price === 'object' && 'monthly' in price) {
+		return price.monthly.toString();
+	}
+	if (typeof price === 'string') {
+		return price;
+	}
+	return '99';
+}
+
+function getPeriodValue(price: any, period: string | undefined): string {
+	if (price && typeof price === 'object' && 'monthly' in price) {
+		return '/month';
+	}
+	return period || '/month';
+}
+
 interface Service {
   id: string;
   name: string;
@@ -195,8 +212,12 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            <span className="text-2xl font-bold text-white">{service.price}</span>
-            <span className="text-gray-400 text-sm ml-1">{service.period}</span>
+            <span className="text-2xl font-bold text-white">
+              {getPriceValue(service.price)}
+            </span>
+            <span className="text-gray-400 text-sm ml-1">
+              {getPeriodValue(service.price, service.period)}
+            </span>
           </motion.div>
 
           {/* Features */}
