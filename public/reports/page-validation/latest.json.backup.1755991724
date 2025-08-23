@@ -9,6 +9,9 @@
   },
   "results": [],
   "buildBreakingFiles": [],
+<<<<<<< HEAD
+  "generatedAt": "2025-08-20T22:03:55.516Z"
+=======
     "totalFiles": 1,
     "filesWithIssues": 1,
     "totalIssues": 3,
@@ -59,4 +62,5 @@
   "generatedAt": "2025-08-21T00:41:50.318Z"
 =======
   "generatedAt": "2025-08-20T22:28:10.605Z"
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-4782
 }
