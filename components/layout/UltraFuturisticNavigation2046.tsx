@@ -351,7 +351,68 @@ const navigationItems: NavigationItem[] = [
     description: 'Industry-specific technology solutions',
     neonColor: 'shadow-emerald-400/50',
     category: 'main',
-    priority: 3
+    priority: 3,
+    children: [
+      {
+        label: 'Enterprise',
+        href: '/solutions/enterprise',
+        icon: <Building className="w-4 h-4" />,
+        description: 'Enterprise-grade technology solutions'
+      },
+      {
+        label: 'Healthcare',
+        href: '/solutions/healthcare',
+        icon: <Heart className="w-4 h-4" />,
+        description: 'Healthcare technology and compliance solutions'
+      },
+      {
+        label: 'Financial',
+        href: '/solutions/financial',
+        icon: <DollarSign className="w-4 h-4" />,
+        description: 'Financial technology and security solutions'
+      },
+      {
+        label: 'Manufacturing',
+        href: '/solutions/manufacturing',
+        icon: <Cpu className="w-4 h-4" />,
+        description: 'Manufacturing automation and optimization'
+      }
+    ]
+  },
+  {
+    label: 'Resources',
+    href: '/resources',
+    icon: <BookOpen className="w-4 h-4" />,
+    description: 'Knowledge base and learning resources',
+    neonColor: 'shadow-teal-400/50',
+    category: 'main',
+    priority: 4,
+    children: [
+      {
+        label: 'Documentation',
+        href: '/docs',
+        icon: <FileText className="w-4 h-4" />,
+        description: 'Technical documentation and guides'
+      },
+      {
+        label: 'Blog',
+        href: '/blog',
+        icon: <FileText className="w-4 h-4" />,
+        description: 'Latest insights and industry news'
+      },
+      {
+        label: 'Webinars',
+        href: '/webinars',
+        icon: <Video className="w-4 h-4" />,
+        description: 'Educational webinars and training'
+      },
+      {
+        label: 'Case Studies',
+        href: '/case-studies',
+        icon: <BarChart3 className="w-4 h-4" />,
+        description: 'Success stories and implementations'
+      }
+    ]
   },
   {
     label: 'About',
@@ -360,7 +421,33 @@ const navigationItems: NavigationItem[] = [
     description: 'Learn about our company and mission',
     neonColor: 'shadow-teal-400/50',
     category: 'main',
-    priority: 4
+    priority: 5,
+    children: [
+      {
+        label: 'Our Mission',
+        href: '/mission',
+        icon: <Target className="w-4 h-4" />,
+        description: 'Our vision and mission statement'
+      },
+      {
+        label: 'Team',
+        href: '/team',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Meet our leadership and team'
+      },
+      {
+        label: 'Careers',
+        href: '/careers',
+        icon: <Briefcase className="w-4 h-4" />,
+        description: 'Join our innovative team'
+      },
+      {
+        label: 'Values',
+        href: '/values',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Our core values and principles'
+      }
+    ]
   },
   {
     label: 'Contact',
@@ -369,7 +456,7 @@ const navigationItems: NavigationItem[] = [
     description: 'Get in touch with our team',
     neonColor: 'shadow-pink-400/50',
     category: 'main',
-    priority: 5
+    priority: 6
   }
 ];
 
@@ -451,13 +538,13 @@ const UltraFuturisticNavigation2046: React.FC = () => {
               </span>
             </div>
             <div className="flex items-center space-x-3">
-              <Link href="https://linkedin.com" className="hover:text-cyan-400 transition-colors">
+              <Link href="https://linkedin.com/company/ziontechgroup" className="hover:text-cyan-400 transition-colors">
                 <Linkedin className="w-3 h-3" />
               </Link>
-              <Link href="https://twitter.com" className="hover:text-cyan-400 transition-colors">
+              <Link href="https://twitter.com/ziontechgroup" className="hover:text-cyan-400 transition-colors">
                 <Twitter className="w-3 h-3" />
               </Link>
-              <Link href="https://github.com" className="hover:text-cyan-400 transition-colors">
+              <Link href="https://github.com/Zion-Holdings" className="hover:text-cyan-400 transition-colors">
                 <Github className="w-3 h-3" />
               </Link>
             </div>
