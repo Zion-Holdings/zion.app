@@ -3,22 +3,26 @@ import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { 
   Brain, Building, Target, Cpu, Shield, 
-  Check, Phone, Mail, MapPin,
-  TrendingUp, Zap, Globe
+  ArrowRight, Check, Star, Phone, Mail, MapPin,
+  TrendingUp, Users, Zap, Globe, Lock
 } from 'lucide-react';
 
 // Import our new service data
-import { innovativeITServicesExpansion2025V3 } from '../data/2025-innovative-it-services-expansion-v3';
-import { innovativeMicroSaasExpansionV32025 } from '../data/2025-innovative-micro-saas-expansion-v3';
-import { innovativeAIServicesExpansion2025V3 } from '../data/2025-innovative-ai-services-expansion-v3';
+import { advancedBusinessIntelligenceServices2025 } from '../data/2025-advanced-business-intelligence-services';
+import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
+import { innovative2025ITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
+import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
+import { cuttingEdgeAIServices2025 } from '../data/2025-cutting-edge-ai-services';
 
 const ComprehensiveServicesShowcase2025 = () => {
   const [activeTab, setActiveTab] = useState('all');
 
   const allServices = [
-    ...innovativeITServicesExpansion2025V3,
-    ...innovativeMicroSaasExpansionV32025,
-    ...innovativeAIServicesExpansion2025V3
+    ...advancedBusinessIntelligenceServices2025,
+    ...advancedAIAutomationServices2025,
+    ...innovative2025ITInfrastructureServices,
+    ...innovativeMicroSaasSolutions2025,
+    ...cuttingEdgeAIServices2025
   ];
 
   const categories = [
@@ -36,8 +40,8 @@ const ComprehensiveServicesShowcase2025 = () => {
         if (activeTab === 'business-intelligence') return service.category?.includes('Business Intelligence') || service.category?.includes('Analytics');
         if (activeTab === 'ai-automation') return service.category?.includes('AI Automation');
         if (activeTab === 'it-infrastructure') return service.category?.includes('IT Infrastructure');
-        if (activeTab === 'micro-saas') return service.category?.includes('Micro SAAS');
-        if (activeTab === 'ai-services') return service.category?.includes('AI Services');
+        if (activeTab === 'micro-saas') return service.category?.includes('Micro SAAS') || service.type === 'Micro SAAS';
+        if (activeTab === 'ai-services') return service.category?.includes('AI Services') || service.type === 'AI Service';
         return true;
       });
 
@@ -148,14 +152,14 @@ const ComprehensiveServicesShowcase2025 = () => {
                         {service.name}
                       </h3>
                       <p className="text-gray-600 text-sm mb-3">
-                        {(service as any).tagline || service.description?.substring(0, 100) || 'Innovative service solution'}...
+                        {service.tagline}
                       </p>
                       <div className="flex items-center gap-2 text-sm text-gray-500">
                         <span className="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">
-                          {service.category || 'Innovative Service'}
+                          {service.category}
                         </span>
                         <span className="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">
-                          {(service as any).type || 'Micro SAAS'}
+                          {service.type}
                         </span>
                       </div>
                     </div>
@@ -172,18 +176,24 @@ const ComprehensiveServicesShowcase2025 = () => {
                   <div className="mb-4">
                     <h4 className="text-sm font-semibold text-gray-900 mb-2">Pricing</h4>
                     <div className="space-y-1">
-                      <div className="flex justify-between text-sm">
-                        <span className="text-gray-600">Starting at:</span>
-                        <span className="font-semibold text-green-600">
-                          {(service as any).price || (service as any).pricing?.starter || (service as any).pricing?.monthly || 'Contact Us'}
-                        </span>
-                      </div>
-                      <div className="text-xs text-gray-500">
-                        {(service as any).period ? `${(service as any).period}` : ''}
-                                                  {(service as any).pricing?.professional ? ` • Professional: ${(service as any).pricing.professional}` : ''}
-                                                  {(service as any).pricing?.enterprise ? ` • Enterprise: ${(service as any).pricing.enterprise}` : ''}
-                        {!(service as any).period && !(service as any).pricing?.professional && !(service as any).pricing?.enterprise ? 'Contact Us for Pricing' : ''}
-                      </div>
+                      {service.pricing?.starter && (
+                        <div className="flex justify-between text-sm">
+                          <span className="text-gray-600">Starter:</span>
+                          <span className="font-semibold text-green-600">{service.pricing.starter}</span>
+                        </div>
+                      )}
+                      {service.pricing?.professional && (
+                        <div className="flex justify-between text-sm">
+                          <span className="text-gray-600">Professional:</span>
+                          <span className="font-semibold text-blue-600">{service.pricing.professional}</span>
+                        </div>
+                      )}
+                      {service.pricing?.enterprise && (
+                        <div className="flex justify-between text-sm">
+                          <span className="text-gray-600">Enterprise:</span>
+                          <span className="font-semibold text-purple-600">{service.pricing.enterprise}</span>
+                        </div>
+                      )}
                     </div>
                   </div>
 
@@ -204,25 +214,38 @@ const ComprehensiveServicesShowcase2025 = () => {
                   <div className="mb-4 text-sm">
                     <div className="flex justify-between mb-1">
                       <span className="text-gray-600">Market Size:</span>
-                      <span className="font-semibold text-gray-900">{service.marketSize || 'N/A'}</span>
+                      <span className="font-semibold text-gray-900">{service.marketSize}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Growth Rate:</span>
-                      <span className="font-semibold text-gray-900">{service.growthRate || 'N/A'}</span>
+                      <span className="text-gray-600">Target Audience:</span>
+                      <span className="font-semibold text-gray-900">{service.targetAudience}</span>
+                    </div>
+                  </div>
+
+                  {/* Benefits */}
+                  <div className="mb-6">
+                    <h4 className="text-sm font-semibold text-gray-900 mb-2">Key Benefits</h4>
+                    <div className="space-y-1">
+                      {service.benefits?.slice(0, 4).map((benefit, idx) => (
+                        <div key={idx} className="flex items-center gap-2 text-sm text-gray-600">
+                          <Star className="w-3 h-3 text-yellow-500 flex-shrink-0" />
+                          <span>{benefit}</span>
+                        </div>
+                      ))}
                     </div>
                   </div>
 
                   {/* CTA Button */}
                   <div className="flex flex-col gap-2">
                     <a
-                      href={`mailto:${(service as any).contactInfo?.email || (service as any).contact?.email || 'kleber@ziontechgroup.com'}?subject=Inquiry about ${service.name}`}
+                      href={`mailto:${service.contact}?subject=Inquiry about ${service.name}`}
                       className="w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-2 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
                     >
                       <Mail className="w-4 h-4" />
                       Get Started
                     </a>
                     <a
-                      href={`tel:${(service as any).contactInfo?.mobile || (service as any).contact?.phone || '+1 302 464 0950'}`}
+                      href={`tel:${service.mobile}`}
                       className="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 text-center py-2 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
                     >
                       <Phone className="w-4 h-4" />

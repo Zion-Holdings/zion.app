@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import UltraFuturisticNavigation2045 from './UltraFuturisticNavigation2045';
-import UltraFuturisticFooter2045 from './UltraFuturisticFooter2045';
+import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
+import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
 import TopContactBar from './TopContactBar';
-import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
+import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
+import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
+import EnhancedAccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
+import MobileOptimizer from '../MobileOptimizer';
 import CookieConsentBanner from '../CookieConsentBanner';
 import EnhancedErrorBoundary from '../EnhancedErrorBoundary';
 
@@ -20,14 +22,16 @@ interface LayoutProps {
 
 export default function Layout({ 
   children, 
-  title = "Zion Tech Group - Revolutionary 2045 Technology",
+  title = "Zion Tech Group - Revolutionary 2046 Technology",
   description = "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.",
-  keywords = "AI consciousness, quantum computing, autonomous solutions, space technology, cybersecurity, business intelligence, Zion Tech Group, 2045 technology",
+  keywords = "AI consciousness, quantum computing, autonomous solutions, space technology, cybersecurity, business intelligence, Zion Tech Group, 2046 technology",
   ogImage = "/og-image.jpg",
   canonicalUrl
 }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isOnline, setIsOnline] = useState(true);
+  const [accessibilitySettings, setAccessibilitySettings] = useState({});
+  const [mobileOptimizationSettings, setMobileOptimizationSettings] = useState({});
 
   useEffect(() => {
     // Check online status
@@ -102,40 +106,45 @@ export default function Layout({
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         
-        {/* Open Graph Meta Tags */}
+        {/* Preconnect to external domains for performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+        
+        {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalUrl || "https://ziontechgroup.com"} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={ogImage} />
-        <meta property="og:url" content={canonicalUrl || "https://ziontechgroup.com"} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Zion Tech Group - Revolutionary 2046 Technology" />
         <meta property="og:site_name" content="Zion Tech Group" />
         <meta property="og:locale" content="en_US" />
         
-        {/* Twitter Card Meta Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={ogImage} />
-        <meta name="twitter:site" content="@ziontechgroup" />
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={canonicalUrl || "https://ziontechgroup.com"} />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={description} />
+        <meta property="twitter:image" content={ogImage} />
+        <meta property="twitter:site" content="@ziontechgroup" />
+        <meta property="twitter:creator" content="@ziontechgroup" />
         
-        {/* Additional SEO Meta Tags */}
+        {/* Additional Meta Tags */}
         <meta name="application-name" content="Zion Tech Group" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="format-detection" content="telephone=no" />
-        
-        {/* Preload Critical Resources */}
-        <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="/_next/static/css/app.css" as="style" />
-        
-        {/* DNS Prefetch */}
-        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
         
         {/* Security Headers */}
-        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
-        <meta httpEquiv="X-Frame-Options" content="DENY" />
-        <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
-        <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+        
+        {/* Performance Hints */}
+        <link rel="dns-prefetch" href="//www.google-analytics.com" />
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         
         {/* Structured Data */}
         <script
@@ -147,8 +156,8 @@ export default function Layout({
               "name": "Zion Tech Group",
               "url": "https://ziontechgroup.com",
               "logo": "https://ziontechgroup.com/logo.png",
-              "description": description,
-              "foundingDate": "2024",
+              "description": "Revolutionary technology solutions for the future",
+              "foundingDate": "2020",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "364 E Main St STE 1008",
@@ -166,104 +175,178 @@ export default function Layout({
               "sameAs": [
                 "https://github.com/Zion-Holdings",
                 "https://linkedin.com/company/zion-tech-group"
-              ],
-              "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "Technology Services",
-                "itemListElement": [
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "AI Consciousness Evolution 2045",
-                      "description": "Next-generation AI consciousness with emotional intelligence"
-                    }
-                  }
-                ]
-              }
+              ]
             })
           }}
         />
       </Head>
 
-      <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
-        {/* Skip to content link for accessibility */}
-        <a href="#main" className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-black focus:text-white focus:px-4 focus:py-2 focus:rounded">
-          Skip to main content
-        </a>
-        
-        {/* Online/Offline Status Indicator */}
-        {!isOnline && (
-          <div className="fixed top-0 left-0 right-0 bg-red-600 text-white text-center py-2 z-50">
-            <span className="flex items-center justify-center gap-2">
-              <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-              You're currently offline. Some features may be limited.
-            </span>
-          </div>
-        )}
-        
-        {/* Futuristic Background */}
+      {/* Online/Offline Status Indicator */}
+      {!isOnline && (
+        <div className="fixed top-0 left-0 right-0 bg-red-500 text-white text-center py-2 z-50">
+          You are currently offline. Some features may not be available.
+        </div>
+      )}
+
+      {/* Main Layout */}
+      <div className="min-h-screen bg-black text-white">
+        {/* Background Effects */}
         <UltraFuturisticBackground2045 />
         
-        {/* Layout Structure */}
-        <div className="relative z-10">
-          {/* Top Contact Bar */}
-          <TopContactBar />
-          
-          {/* Navigation */}
-          <UltraFuturisticNavigation2045 />
-          
-          {/* Sidebar and Main Content */}
-          <div className="flex">
-            <EnhancedSidebar2025 
-              isOpen={sidebarOpen} 
-              onClose={() => setSidebarOpen(false)} 
-            />
-            
-            <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
-              {children}
-            </main>
+        {/* Top Contact Bar */}
+        <TopContactBar />
+        
+        {/* Navigation */}
+        <UltraFuturisticNavigation2040 />
+        
+        {/* Sidebar */}
+        <EnhancedSidebar2025 isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+        
+        {/* Main Content */}
+        <main 
+          id="main-content"
+          role="main"
+          className="relative z-10"
+          tabIndex={-1}
+        >
+          {children}
+        </main>
+        
+        {/* Footer */}
+        <UltraFuturisticFooter2040 />
+        
+        {/* Enhancement Components */}
+        <EnhancedAccessibilityEnhancer 
+          onAccessibilityChange={setAccessibilitySettings}
+        />
+        <MobileOptimizer 
+          onMobileOptimizationChange={setMobileOptimizationSettings}
+        />
+        <EnhancedPerformanceMonitor />
+        <CookieConsentBanner />
+        
+        {/* Error Boundary */}
+        <EnhancedErrorBoundary>
+          <div className="hidden">
+            {/* Additional error boundary content if needed */}
           </div>
-          
-          {/* Footer */}
-          <UltraFuturisticFooter2045 />
-        </div>
+        </EnhancedErrorBoundary>
       </div>
 
-      {/* Accessibility and Performance Tools */}
-      <AccessibilityEnhancer />
-      
-      {/* Cookie Consent Banner */}
-      <CookieConsentBanner />
-      
-      {/* Service Worker Update Notification */}
-      <div id="sw-update-notification" className="hidden fixed bottom-4 right-4 bg-cyan-600 text-white p-4 rounded-lg shadow-lg z-50 max-w-sm">
-        <div className="flex items-start gap-3">
-          <div className="flex-shrink-0">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <div className="flex-1">
-            <h4 className="font-semibold mb-1">Update Available</h4>
-            <p className="text-sm text-cyan-100 mb-3">A new version of Zion Tech Group is available.</p>
-            <div className="flex gap-2">
-              <button 
-                onClick={() => window.location.reload()} 
-                className="bg-white text-cyan-600 px-3 py-1 rounded text-sm font-medium hover:bg-cyan-500 transition-colors"
-              >
-                Update Now
-              </button>
-              <button 
-                onClick={() => document.getElementById('sw-update-notification')?.classList.add('hidden')} 
-                className="text-cyan-100 hover:text-white text-sm transition-colors"
-              >
-                Later
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* Global Styles for Accessibility */}
+      <style jsx global>{`
+        :root {
+          --contrast-multiplier: 1;
+          --border-width: 1px;
+          --animation-duration: 0.3s;
+          --transition-duration: 0.3s;
+          --font-size-base: 16px;
+          --font-size-lg: 18px;
+          --font-size-xl: 20px;
+          --saturation-multiplier: 1;
+          --focus-ring-width: 3px;
+          --focus-ring-color: #06b6d4;
+          --touch-target-size: auto;
+          --touch-spacing: auto;
+          --animation-reduce: 1;
+          --transition-reduce: 1;
+          --line-height: 1.5;
+        }
+        
+        /* Accessibility Enhancements */
+        .sr-only {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          white-space: nowrap;
+          border: 0;
+        }
+        
+        /* Focus Indicators */
+        *:focus {
+          outline: var(--focus-ring-width) solid var(--focus-ring-color);
+          outline-offset: 2px;
+        }
+        
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+          *, *::before, *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+          }
+        }
+        
+        /* High Contrast */
+        .high-contrast {
+          filter: contrast(150%);
+        }
+        
+        /* Large Text */
+        .large-text {
+          font-size: 1.2em;
+          line-height: 1.6;
+        }
+        
+        /* Touch Optimization */
+        .touch-optimized button,
+        .touch-optimized a,
+        .touch-optimized input {
+          min-height: var(--touch-target-size);
+          min-width: var(--touch-target-size);
+          padding: var(--touch-spacing);
+        }
+        
+        /* Mobile Layout */
+        .mobile-layout {
+          --container-padding: 1rem;
+          --section-spacing: 2rem;
+        }
+        
+        /* Data Optimization */
+        .data-optimized img {
+          loading: lazy;
+        }
+        
+        /* Haptic Feedback */
+        .haptic-enabled button:active {
+          transform: scale(0.98);
+        }
+        
+        /* Swipe Navigation */
+        .swipe-enabled {
+          touch-action: pan-y;
+        }
+        
+        /* Mobile First */
+        .mobile-first {
+          --grid-columns: 1;
+        }
+        
+        @media (min-width: 768px) {
+          .mobile-first {
+            --grid-columns: 2;
+          }
+        }
+        
+        @media (min-width: 1024px) {
+          .mobile-first {
+            --grid-columns: 3;
+          }
+        }
+        
+        /* Line Clamp Utility */
+        .line-clamp-2 {
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+      `}</style>
     </>
   );
 }
