@@ -87,6 +87,24 @@ const navigationItems: NavigationItem[] = [
         href: '/solutions', 
         description: 'Industry-specific solutions',
         icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'AI Consciousness', 
+        href: '/ai-consciousness-evolution', 
+        description: 'Revolutionary AI consciousness',
+        icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'Quantum Security', 
+        href: '/quantum-internet-security', 
+        description: 'Quantum-secured communications',
+        icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'Brain-Computer Interface', 
+        href: '/brain-computer-interface', 
+        description: 'Neural interface technology',
+        icon: <Play className="w-4 h-4" />
       }
     ]
   },
