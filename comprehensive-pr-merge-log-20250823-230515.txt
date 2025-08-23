@@ -1533,3 +1533,20 @@ pages/main/front/index.tsx[0m
 2025-08-23 23:08:04 - [1;33m⚠️  Found conflicts in .github/workflows/guardian-scheduler.yml, resolving...[0m
 2025-08-23 23:08:04 - [0;34m📝 Regular file, removing conflict markers...[0m
 2025-08-23 23:08:04 - [0;32m✅ Resolved conflicts in .github/workflows/guardian-scheduler.yml[0m
+2025-08-23 23:08:04 - [0;32m✅ Successfully resolved conflicts and merged cursor/migrate-pm2-to-github-actions-ce27[0m
+2025-08-23 23:08:04 - [0;32m✅ PR #3841 (cursor/migrate-pm2-to-github-actions-ce27) processed successfully[0m
+2025-08-23 23:08:04 - [0;34m🔒 Closing PR #3841 via GitHub API...[0m
+2025-08-23 23:08:04 - [0;34m📊 Progress: 48/100, ✅ 48, ❌ 0[0m
+2025-08-23 23:08:06 - [0;34m📋 Processing PR #3840: Migrate pm2 to github actions (branch: cursor/migrate-pm2-to-github-actions-1c38)[0m
+2025-08-23 23:08:06 - [0;34m🔄 Attempting to merge cursor/migrate-pm2-to-github-actions-1c38...[0m
+2025-08-23 23:08:07 - [1;33m⚠️  Merge conflicts detected in cursor/migrate-pm2-to-github-actions-1c38 (attempt 1/3), resolving...[0m
+2025-08-23 23:08:07 - [0;34m📋 Conflicted files: .github/workflows/automation-guardian.yml
+.github/workflows/front-continuous.yml[0m
+2025-08-23 23:08:07 - [0;34m🔧 Resolving conflicts in .github/workflows/automation-guardian.yml for branch cursor/migrate-pm2-to-github-actions-1c38...[0m
+2025-08-23 23:08:07 - [1;33m⚠️  Found conflicts in .github/workflows/automation-guardian.yml, resolving...[0m
+2025-08-23 23:08:07 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:08:07 - [0;32m✅ Resolved conflicts in .github/workflows/automation-guardian.yml[0m
+2025-08-23 23:08:07 - [0;34m🔧 Resolving conflicts in .github/workflows/front-continuous.yml for branch cursor/migrate-pm2-to-github-actions-1c38...[0m
+2025-08-23 23:08:07 - [1;33m⚠️  Found conflicts in .github/workflows/front-continuous.yml, resolving...[0m
+2025-08-23 23:08:07 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:08:07 - [0;32m✅ Resolved conflicts in .github/workflows/front-continuous.yml[0m
