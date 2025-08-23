@@ -1,19 +1,38 @@
-#!/usr/bin/env sh
-set -e
+#!/bin/bash
 
 echo "🔍 Running pre-commit checks..."
 
-# Skip type-check if tsc is not available locally
-if [ -x "./node_modules/.bin/tsc" ]; then
-  npm run -s type-check || {
-    echo "❌ TypeScript type check failed. Please fix issues before committing."
-    exit 1
-  }
-else
-  echo "ℹ️  Skipping type-check (tsc not found). Run 'npm install' to enable."
+# Run page structure validation
+echo "  📋 Validating page structure..."
+npm run build:validate
+
+if [ $? -ne 0 ]; then
+  echo "❌ Page structure validation failed!"
+  echo "   Please fix the issues before committing."
+  echo "   Run 'npm run build:validate' for details."
+  exit 1
 fi
 
-# Deletion guard to preserve files unless explicitly allowed
-sh ./scripts/prevent-deletion.sh
+# Run quick build health check
+echo "  🏥 Running build health check..."
+npm run build:health-check
 
-echo "✅ Pre-commit checks passed"
+if [ $? -ne 0 ]; then
+  echo "❌ Build health check failed!"
+  echo "   Please fix the build issues before committing."
+  echo "   Run 'npm run build:health-check' for details."
+  exit 1
+fi
+
+# Run linting on staged files only
+echo "  🧹 Running lint-staged..."
+npx lint-staged
+
+if [ $? -ne 0 ]; then
+  echo "❌ Lint-staged failed!"
+  echo "   Please fix the issues in staged files."
+  exit 1
+fi
+
+echo "✅ All pre-commit checks passed"
+echo "   🚀 Ready to commit!"

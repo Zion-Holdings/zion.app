@@ -1,7 +1,0 @@
-{
-  "exclude": [
-    "autonomous-guardian.cjs",
-    "autonomous-guardian.js"
-  ]
-}
-
