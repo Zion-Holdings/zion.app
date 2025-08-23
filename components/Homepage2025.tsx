@@ -1,47 +1,39 @@
-import React, { Suspense, lazy } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from './layout/Layout';
-import { motion } from 'framer-motion';
-import { 
-  ArrowRight, 
-  Star, 
-  Zap, 
-  Shield, 
-  Globe, 
-  TrendingUp,
-  Users,
-  Award,
-  CheckCircle
-} from 'lucide-react';
-
-// Lazy load components for better performance
-const UltraFuturisticServiceCard2026 = lazy(() => import('./ui/UltraFuturisticServiceCard2026'));
-
-// Loading component
-const ServiceCardSkeleton = () => (
-  <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-6 h-80 animate-pulse">
-    <div className="h-8 bg-gray-700 rounded mb-4"></div>
-    <div className="h-4 bg-gray-700 rounded mb-2"></div>
-    <div className="h-4 bg-gray-700 rounded mb-4 w-3/4"></div>
-    <div className="space-y-2">
-      {[1, 2, 3].map((i) => (
-        <div key={i} className="h-3 bg-gray-700 rounded"></div>
-      ))}
-    </div>
-  </div>
-);
+import UltraFuturisticServiceCard2026 from './ui/UltraFuturisticServiceCard2026';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 const Homepage2025: React.FC = () => {
-  const fadeInUp = {
-    initial: { opacity: 0, y: 60 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
+  const [isVisible, setIsVisible] = useState(false);
+  const heroRef = useRef<HTMLElement>(null);
+  const servicesRef = useRef<HTMLElement>(null);
+  const isHeroInView = useInView(heroRef, { once: true, threshold: 0.3 });
+  const isServicesInView = useInView(servicesRef, { once: true, threshold: 0.2 });
+
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  const heroVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+        staggerChildren: 0.2
+      }
+    }
   };
 
-  const staggerContainer = {
-    animate: {
-      transition: {
-        staggerChildren: 0.1
-      }
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
     }
   };
 
@@ -50,7 +42,7 @@ const Homepage2025: React.FC = () => {
       id: 'ai-ml',
       name: 'AI & Machine Learning',
       tagline: 'Advanced artificial intelligence solutions',
-      description: 'Transform your business with cutting-edge AI and ML technologies',
+      description: 'Advanced artificial intelligence solutions for modern businesses',
       price: '$999',
       period: 'month',
       features: ['Machine Learning', 'Deep Learning', 'NLP', 'Computer Vision'],
@@ -62,7 +54,7 @@ const Homepage2025: React.FC = () => {
       id: 'quantum-computing',
       name: 'Quantum Computing',
       tagline: 'Next-generation computing solutions',
-      description: 'Harness the power of quantum computing for complex problem-solving',
+      description: 'Next-generation computing solutions for complex problems',
       price: '$1999',
       period: 'month',
       features: ['Quantum Algorithms', 'Quantum Security', 'Quantum Simulation'],
@@ -74,7 +66,7 @@ const Homepage2025: React.FC = () => {
       id: 'process-automation',
       name: 'Process Automation',
       tagline: 'Intelligent automation solutions',
-      description: 'Streamline operations with intelligent automation and analytics',
+      description: 'Intelligent automation to streamline your operations',
       price: '$799',
       period: 'month',
       features: ['Workflow Automation', 'RPA', 'AI Integration', 'Analytics'],
@@ -84,183 +76,155 @@ const Homepage2025: React.FC = () => {
     }
   ];
 
-  const stats = [
-    { label: 'Happy Clients', value: '500+', icon: Users },
-    { label: 'Projects Completed', value: '1000+', icon: CheckCircle },
-    { label: 'Years Experience', value: '15+', icon: Award },
-    { label: 'Global Reach', value: '50+', icon: Globe }
-  ];
-
-  const features = [
-    {
-      icon: Zap,
-      title: 'Lightning Fast',
-      description: 'Optimized performance with modern technologies'
-    },
-    {
-      icon: Shield,
-      title: 'Enterprise Security',
-      description: 'Bank-grade security for your business'
-    },
-    {
-      icon: TrendingUp,
-      title: 'Scalable Solutions',
-      description: 'Grow with confidence using our scalable architecture'
-    },
-    {
-      icon: Star,
-      title: 'Premium Support',
-      description: '24/7 expert support when you need it most'
-    }
-  ];
-
   return (
     <Layout>
-      <main className="relative z-10">
+      {/* Main Content */}
+      <main className="relative z-10" role="main" aria-label="Zion Tech Group homepage">
         {/* Hero Section */}
-        <section className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
+        <section 
+          ref={heroRef}
+          className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
+          aria-labelledby="hero-heading"
+        >
           {/* Background Elements */}
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl"></div>
-            <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-purple-500/20 to-pink-500/20 rounded-full blur-3xl"></div>
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-20 left-20 w-32 h-32 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-20 right-20 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl animate-pulse delay-500" />
           </div>
-          
+
           <motion.div 
-            className="text-center max-w-5xl mx-auto relative z-10"
-            initial="initial"
-            animate="animate"
-            variants={staggerContainer}
+            className="text-center max-w-4xl mx-auto relative z-10"
+            variants={heroVariants}
+            initial="hidden"
+            animate={isHeroInView ? "visible" : "hidden"}
           >
             <motion.h1 
-              className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent"
-              variants={fadeInUp}
+              id="hero-heading"
+              className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent"
+              variants={itemVariants}
             >
               Zion Tech Group
             </motion.h1>
+            
             <motion.p 
-              className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
-              variants={fadeInUp}
+              className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed"
+              variants={itemVariants}
             >
               Pioneering the future of technology with innovative solutions that drive business transformation
             </motion.p>
+            
             <motion.div 
-              className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
-              variants={fadeInUp}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              variants={itemVariants}
             >
-              <button className="group px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/25">
+              <motion.button 
+                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 focus:ring-offset-2 focus:ring-offset-black"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                aria-label="Get started with Zion Tech Group services"
+              >
                 Get Started
-                <ArrowRight className="inline-block ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <button className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105">
+              </motion.button>
+              
+              <motion.button 
+                className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 focus:ring-offset-2 focus:ring-offset-black"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                aria-label="Learn more about Zion Tech Group"
+              >
                 Learn More
-              </button>
+              </motion.button>
+            </motion.div>
+
+            {/* Trust Indicators */}
+            <motion.div 
+              className="mt-12 flex flex-wrap justify-center items-center gap-6 text-sm text-gray-400"
+              variants={itemVariants}
+            >
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                <span>Trusted by 500+ Companies</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
+                <span>99.9% Uptime Guarantee</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse" />
+                <span>24/7 Expert Support</span>
+              </div>
             </motion.div>
           </motion.div>
         </section>
 
-        {/* Stats Section */}
-        <motion.section 
-          className="py-20 px-4 bg-gradient-to-r from-gray-900/50 to-gray-800/50 backdrop-blur-sm"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  className="text-center"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl mb-4">
-                    <stat.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.value}</div>
-                  <div className="text-gray-400">{stat.label}</div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.section>
-
-        {/* Features Section */}
-        <motion.section 
-          className="py-20 px-4"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="max-w-6xl mx-auto">
-            <motion.h2 
-              className="text-4xl md:text-5xl font-bold mb-16 text-center bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              Why Choose Zion Tech Group?
-            </motion.h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {features.map((feature, index) => (
-                <motion.div
-                  key={feature.title}
-                  className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:transform hover:scale-105"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl mb-4">
-                    <feature.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
-                  <p className="text-gray-400 leading-relaxed">{feature.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.section>
-
         {/* Services Preview */}
-        <motion.section 
-          className="py-20 px-4 bg-gradient-to-r from-gray-900/30 to-gray-800/30"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+        <section 
+          ref={servicesRef}
+          className="py-20 px-4 relative"
+          aria-labelledby="services-heading"
         >
-          <div className="max-w-6xl mx-auto">
-            <motion.h2 
-              className="text-4xl md:text-5xl font-bold mb-16 text-center bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent"
+          {/* Background Elements */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-0 left-1/4 w-48 h-48 bg-gradient-to-r from-cyan-500/5 to-blue-500/5 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 right-1/4 w-56 h-56 bg-gradient-to-r from-purple-500/5 to-pink-500/5 rounded-full blur-3xl" />
+          </div>
+
+          <div className="max-w-6xl mx-auto relative z-10">
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={isServicesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="text-center mb-16"
             >
-              Our Services
-            </motion.h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <Suspense fallback={<ServiceCardSkeleton />}>
-                {services.map((service, index) => (
-                  <motion.div
-                    key={service.id}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    <UltraFuturisticServiceCard2026
-                      service={service}
-                      variant={service.category.toLowerCase() as 'ai' | 'quantum' | 'automation'}
-                    />
-                  </motion.div>
-                ))}
-              </Suspense>
-            </div>
+              <h2 
+                id="services-heading"
+                className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent"
+              >
+                Our Services
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Cutting-edge technology solutions designed to accelerate your business growth and innovation
+              </p>
+            </motion.div>
+            
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              initial={{ opacity: 0 }}
+              animate={isServicesInView ? { opacity: 1 } : { opacity: 0 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+            >
+              {services.map((service, index) => (
+                <motion.div
+                  key={service.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={isServicesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                  transition={{ duration: 0.6, delay: 0.4 + index * 0.1, ease: "easeOut" }}
+                >
+                  <UltraFuturisticServiceCard2026
+                    service={service}
+                    variant={service.category.toLowerCase() as any}
+                  />
+                </motion.div>
+              ))}
+            </motion.div>
+
+            {/* Call to Action */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={isServicesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+              className="text-center mt-16"
+            >
+              <motion.button
+                className="px-10 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-purple-400/50 focus:ring-offset-2 focus:ring-offset-black"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                aria-label="View all Zion Tech Group services"
+              >
+                View All Services
+              </motion.button>
+            </motion.div>
           </div>
         </motion.section>
 

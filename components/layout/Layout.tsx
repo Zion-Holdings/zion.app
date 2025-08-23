@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
-import UltraFuturisticNavigation2035 from './UltraFuturisticNavigation2035';
-import UltraFuturisticFooter2035 from './UltraFuturisticFooter2035';
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import UltraFuturisticNavigation2036 from './UltraFuturisticNavigation2036';
+import UltraFuturisticFooter2036 from './UltraFuturisticFooter2036';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
-import AccessibilityEnhancer from '../AccessibilityEnhancer';
-import PerformanceOptimizer from '../PerformanceOptimizer';
-import SEOOptimizer from '../SEOOptimizer';
-import ErrorBoundary from '../ErrorBoundary';
+import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
+import TopContactBar from './TopContactBar';
+import LoadingSpinner from '../ui/LoadingSpinner';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -17,60 +16,84 @@ interface LayoutProps {
   type?: string;
 }
 
-export const Layout: React.FC<LayoutProps> = ({
-  children,
-  title,
-  description,
-  keywords,
-  ogImage,
-  type
-}) => {
+export default function Layout({ children }: LayoutProps) {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    // Simulate initial loading
+    const timer = setTimeout(() => setIsLoading(false), 500);
+    
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  // Skip to content functionality
+  const handleSkipToContent = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      const mainContent = document.getElementById('main');
+      if (mainContent) {
+        mainContent.focus();
+        mainContent.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
+
   return (
-    <ErrorBoundary>
-      <div className="min-h-screen bg-black text-white">
-        {/* SVG Filters for Color Blindness Support */}
-        <svg width="0" height="0" className="sr-only">
-          <defs>
-            <filter id="protanopia-filter">
-              <feColorMatrix
-                type="matrix"
-                values="0.567 0.433 0 0 0 0.558 0.442 0 0 0 0 0.242 0.758 0 0 0 0 0 1 0"
-              />
-            </filter>
-            <filter id="deuteranopia-filter">
-              <feColorMatrix
-                type="matrix"
-                values="0.625 0.375 0 0 0 0.7 0.3 0 0 0 0 0.3 0.7 0 0 0 0 0 1 0"
-              />
-            </filter>
-            <filter id="tritanopia-filter">
-              <feColorMatrix
-                type="matrix"
-                values="0.95 0.05 0 0 0 0 0.433 0.567 0 0 0 0.475 0.525 0 0 0 0 0 1 0"
-              />
-            </filter>
-          </defs>
-        </svg>
-
-        {/* Skip Link for Accessibility */}
-        <a href="#main-content" className="skip-link">
-          Skip to main content
-        </a>
-
-        <UltraFuturisticNavigation2040 />
+    <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
+      {/* Enhanced Skip to content link for accessibility */}
+      <a 
+        href="#main" 
+        className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-cyan-500 focus:text-black focus:rounded focus:font-semibold"
+        onKeyDown={handleSkipToContent}
+        tabIndex={0}
+      >
+        Skip to main content
+      </a>
+      
+      {/* Futuristic Background with performance optimization */}
+      <UltraFuturisticBackground2036 intensity="medium" theme="quantum" />
+      
+      {/* Layout Structure */}
+      <div className="relative z-10">
+        {/* Top Contact Bar */}
+        <TopContactBar />
+        
+        {/* Navigation with scroll state */}
+        <UltraFuturisticNavigation2036 isScrolled={isScrolled} />
         
         <div className="flex">
           <EnhancedSidebar2025 isOpen={false} onClose={() => {}} />
           
-          <main id="main-content" className="flex-1">
-            <SEOOptimizer
-              title={title}
-              description={description}
-              keywords={keywords}
-              ogImage={ogImage}
-            />
-            {children}
-          </motion.main>
+          <main 
+            id="main" 
+            role="main" 
+            className="flex-1 pt-24 lg:pt-28 focus:outline-none"
+            tabIndex={-1}
+            aria-label="Main content"
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
+              {children}
+            </motion.div>
+          </main>
         </div>
         
         <UltraFuturisticFooter2040 />

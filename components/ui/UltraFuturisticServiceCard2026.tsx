@@ -117,15 +117,15 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
 
   return (
     <div
-      className={`relative group cursor-pointer transition-all duration-500 transform hover:scale-105 ${className}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      className={`group relative overflow-hidden rounded-2xl transition-all duration-500 transform hover:scale-105 cursor-pointer ${className}`}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       onClick={handleCardClick}
       onKeyPress={handleKeyPress}
       tabIndex={0}
-      role="button"
-      aria-label={`${service.name} service card`}
-      aria-expanded={isExpanded}
+      onKeyDown={handleKeyDown}
+      aria-label={`${service.name} service card - ${service.tagline}`}
+      aria-describedby={`service-description-${service.id}`}
     >
       {/* Popular Badge */}
       {service.popular && (
@@ -172,7 +172,10 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
             transition={{ delay: 0.1 }}
           >
             {service.name}
-          </motion.h3>
+          </h3>
+          <p id={`service-description-${service.id}`} className="text-gray-300 text-sm mb-3">
+            {service.tagline}
+          </p>
           
           {service.tagline && (
             <motion.p 
@@ -198,35 +201,22 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
           )}
 
           {/* Features */}
-          {service.features && service.features.length > 0 && (
-            <motion.div 
-              className="space-y-2 mb-4"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-            >
-              {service.features.slice(0, isExpanded ? service.features.length : 3).map((feature, index) => (
-                <motion.div 
-                  key={feature}
-                  className="flex items-center text-sm text-gray-300"
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.5 + index * 0.1 }}
-                >
-                  <div className={`w-2 h-2 rounded-full mr-3 ${variantStyles.accent}`}></div>
-                  {feature}
-                </motion.div>
-              ))}
-            </motion.div>
-          )}
+          <div id={`features-${service.id}`} className="space-y-2 mb-4" role="list" aria-label="Service features">
+            {service.features.slice(0, isExpanded ? undefined : 3).map((feature, index) => (
+              <div key={index} className="flex items-center text-sm text-gray-300" role="listitem">
+                <div className={`w-2 h-2 rounded-full mr-3 ${variantStyles.accent}`} aria-hidden="true" />
+                {feature}
+              </div>
+            ))}
+          </div>
 
           {/* Show More/Less Button */}
           {service.features && service.features.length > 3 && (
             <motion.button 
               className={`text-sm ${variantStyles.text} hover:underline focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-cyan-400`}
-              onClick={toggleExpanded}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              aria-expanded={isExpanded}
+              aria-controls={`features-${service.id}`}
+              aria-label={isExpanded ? 'Show fewer features' : `Show ${service.features.length - 3} more features`}
             >
               {isExpanded ? 'Show Less' : `Show ${service.features.length - 3} More`}
             </motion.button>

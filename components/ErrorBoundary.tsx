@@ -5,13 +5,13 @@ import { AlertTriangle, RefreshCw, Home, Mail, Phone } from 'lucide-react';
 interface Props {
   children: ReactNode;
   fallback?: ReactNode;
+  onError?: (error: Error, errorInfo: ErrorInfo) => void;
 }
 
 interface State {
   hasError: boolean;
   error?: Error;
   errorInfo?: ErrorInfo;
-  errorId?: string;
 }
 
 class ErrorBoundary extends Component<Props, State> {
@@ -21,64 +21,32 @@ class ErrorBoundary extends Component<Props, State> {
   }
 
   static getDerivedStateFromError(error: Error): State {
+    // Update state so the next render will show the fallback UI
     return { hasError: true, error };
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    // Generate unique error ID for tracking
-    const errorId = `error-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+    // Log error to console
+    console.error('ErrorBoundary caught an error:', error, errorInfo);
     
-    this.setState({
-      error,
-      errorInfo,
-      errorId
-    });
+    // Call custom error handler if provided
+    if (this.props.onError) {
+      this.props.onError(error, errorInfo);
+    }
 
-    // Log error to external service in production
-    if (process.env.NODE_ENV === 'production') {
-      this.logErrorToService(error, errorInfo, errorId);
+    // Log to analytics if available
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'exception', {
+        description: error.message,
+        fatal: false,
+        custom_parameters: {
+          component_stack: errorInfo.componentStack,
+          error_name: error.name,
+          error_stack: error.stack
+        }
+      });
     }
   }
-
-  private logErrorToService = async (error: Error, errorInfo: ErrorInfo, errorId: string) => {
-    try {
-      const errorData = {
-        errorId,
-        message: error.message,
-        stack: error.stack,
-        componentStack: errorInfo.componentStack,
-        timestamp: new Date().toISOString(),
-        userAgent: navigator.userAgent,
-        url: window.location.href,
-        environment: process.env.NODE_ENV
-      };
-
-      // Send to error reporting service (e.g., Sentry, LogRocket, etc.)
-      // await fetch('/api/error-reporting', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(errorData)
-      // });
-      
-      // For now, we'll just store the error data for potential future use
-      // This prevents the unused variable warning
-      void errorData;
-    } catch {
-      // Silently handle error logging failures
-    }
-  };
-
-  private handleRetry = () => {
-    this.setState({ hasError: false, error: undefined, errorInfo: undefined, errorId: undefined });
-  };
-
-  private handleGoHome = () => {
-    window.location.href = '/';
-  };
-
-  private handleContactSupport = () => {
-    window.location.href = '/contact';
-  };
 
   render() {
     if (this.state.hasError) {
@@ -89,137 +57,104 @@ class ErrorBoundary extends Component<Props, State> {
 
       // Default error UI
       return (
-        <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 flex items-center justify-center p-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-2xl w-full bg-gray-800/50 backdrop-blur-md border border-gray-700/50 rounded-2xl p-8 text-center"
-          >
+        <div className="min-h-screen bg-black text-white flex items-center justify-center px-4">
+          <div className="max-w-2xl mx-auto text-center">
             {/* Error Icon */}
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-              className="w-20 h-20 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center mx-auto mb-6"
-            >
-              <AlertTriangle className="w-10 h-10 text-white" />
-            </motion.div>
+            <div className="mb-8">
+              <div className="w-24 h-24 mx-auto bg-gradient-to-r from-red-500 to-pink-500 rounded-full flex items-center justify-center">
+                <svg 
+                  className="w-12 h-12 text-white" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" 
+                  />
+                </svg>
+              </div>
+            </div>
 
             {/* Error Message */}
-            <motion.h1
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
-              className="text-3xl font-bold text-white mb-4"
-            >
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-red-400 to-pink-400 bg-clip-text text-transparent">
               Oops! Something went wrong
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              className="text-gray-300 mb-6 text-lg"
-            >
+            </h1>
+            
+            <p className="text-xl text-gray-300 mb-8">
               We're sorry, but something unexpected happened. Our team has been notified and is working to fix this issue.
-            </motion.p>
+            </p>
 
             {/* Error Details (Development Only) */}
             {process.env.NODE_ENV === 'development' && this.state.error && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                transition={{ delay: 0.5 }}
-                className="mb-6 p-4 bg-gray-900/50 rounded-lg text-left"
-              >
-                <details className="text-sm text-gray-400">
-                  <summary className="cursor-pointer text-cyan-400 hover:text-cyan-300 mb-2">
-                    Error Details (Development)
-                  </summary>
-                  <div className="space-y-2">
+              <details className="mb-8 text-left bg-gray-900 rounded-lg p-4">
+                <summary className="cursor-pointer text-cyan-400 font-semibold mb-2">
+                  Error Details (Development)
+                </summary>
+                <div className="text-sm text-gray-400 space-y-2">
+                  <div>
+                    <strong>Error:</strong> {this.state.error.message}
+                  </div>
+                  <div>
+                    <strong>Name:</strong> {this.state.error.name}
+                  </div>
+                  {this.state.errorInfo && (
                     <div>
-                      <strong>Error ID:</strong> {this.state.errorId}
-                    </div>
-                    <div>
-                      <strong>Message:</strong> {this.state.error.message}
-                    </div>
-                    <div>
-                      <strong>Stack:</strong>
-                      <pre className="mt-1 text-xs bg-gray-800 p-2 rounded overflow-x-auto">
-                        {this.state.error.stack}
+                      <strong>Component Stack:</strong>
+                      <pre className="mt-2 text-xs overflow-auto">
+                        {this.state.errorInfo.componentStack}
                       </pre>
                     </div>
-                    {this.state.errorInfo && (
-                      <div>
-                        <strong>Component Stack:</strong>
-                        <pre className="mt-1 text-xs bg-gray-800 p-2 rounded overflow-x-auto">
-                          {this.state.errorInfo.componentStack}
-                        </pre>
-                      </div>
-                    )}
-                  </div>
-                </details>
-              </motion.div>
+                  )}
+                </div>
+              </details>
             )}
 
             {/* Action Buttons */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
-            >
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
-                onClick={this.handleRetry}
-                className="flex items-center justify-center space-x-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+                onClick={() => window.location.reload()}
+                className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 focus:ring-offset-2 focus:ring-offset-black"
               >
-                <RefreshCw className="w-5 h-5" />
-                <span>Try Again</span>
+                Refresh Page
               </button>
 
               <button
-                onClick={this.handleGoHome}
-                className="flex items-center justify-center space-x-2 px-6 py-3 border-2 border-gray-600 text-gray-300 font-semibold rounded-xl hover:border-cyan-500 hover:text-cyan-400 transition-all duration-300"
+                onClick={() => window.history.back()}
+                className="px-6 py-3 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 focus:ring-offset-2 focus:ring-offset-black"
               >
-                <Home className="w-5 h-5" />
-                <span>Go Home</span>
+                Go Back
               </button>
-
-              <button
-                onClick={this.handleContactSupport}
-                className="flex items-center justify-center space-x-2 px-6 py-3 border-2 border-gray-600 text-gray-300 font-semibold rounded-xl hover:border-cyan-500 hover:text-cyan-400 transition-all duration-300"
+              
+              <a
+                href="/"
+                className="px-6 py-3 border-2 border-purple-400 text-purple-400 font-semibold rounded-lg hover:bg-purple-400 hover:text-black transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-purple-400/50 focus:ring-offset-2 focus:ring-offset-black text-center"
               >
-                <Mail className="w-5 h-5" />
-                <span>Contact Support</span>
-              </button>
-            </motion.div>
+                Go Home
+              </a>
+            </div>
 
             {/* Contact Information */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.7 }}
-              className="mt-8 pt-6 border-t border-gray-700/50"
-            >
+            <div className="mt-12 pt-8 border-t border-gray-700">
               <p className="text-gray-400 mb-4">
-                Need immediate assistance? Contact our support team:
+                If this problem persists, please contact our support team:
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-6 text-sm">
-                <a
-                  href="tel:+1-302-464-0950"
-                  className="flex items-center space-x-2 text-cyan-400 hover:text-cyan-300 transition-colors duration-200"
-                >
-                  <Phone className="w-4 h-4" />
-                  <span>+1 (302) 464-0950</span>
-                </a>
-                <span className="text-gray-600 hidden sm:inline">•</span>
-                <a
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm">
+                <a 
                   href="mailto:kleber@ziontechgroup.com"
-                  className="flex items-center space-x-2 text-cyan-400 hover:text-cyan-300 transition-colors duration-200"
+                  className="text-cyan-400 hover:text-cyan-300 transition-colors"
                 >
-                  <Mail className="w-4 h-4" />
-                  <span>kleber@ziontechgroup.com</span>
+                  kleber@ziontechgroup.com
+                </a>
+                <span className="text-gray-600">|</span>
+                <a 
+                  href="tel:+13024640950"
+                  className="text-cyan-400 hover:text-cyan-300 transition-colors"
+                >
+                  +1 (302) 464-0950
                 </a>
                 <button
                   onClick={this.handleContactSupport}
@@ -228,20 +163,13 @@ class ErrorBoundary extends Component<Props, State> {
                   Contact Form
                 </button>
               </div>
-            </motion.div>
+            </div>
 
             {/* Error ID for Support */}
-            {this.state.errorId && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.8 }}
-                className="mt-4 text-xs text-gray-500"
-              >
-                Error ID: {this.state.errorId}
-              </motion.div>
-            )}
-          </motion.div>
+            <div className="mt-6 text-xs text-gray-500">
+              Error ID: {Date.now().toString(36)}-{Math.random().toString(36).substr(2, 5)}
+            </div>
+          </div>
         </div>
       );
     }
