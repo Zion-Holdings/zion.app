@@ -192,13 +192,13 @@
   schedule = "*/2 * * * *" # every 2 minutes
 
 [[scheduled.functions]]
-  name = "repo-complexity-runner"
+  name = "ai-trends-radar"
+  schedule = "*/30 * * * *" # every 30 minutes
+
+[[scheduled.functions]]
+  name = "revenue-ideas-orchestrator"
+  schedule = "0 */4 * * *" # every 4 hours
+
+[[scheduled.functions]]
+  name = "media-auto-release"
   schedule = "17 */6 * * *" # every 6 hours
-
-[[scheduled.functions]]
-  name = "docs-coverage-runner"
-  schedule = "23 */12 * * *" # every 12 hours
-
-[[scheduled.functions]]
-  name = "adaptive-cloud-factory"
-  schedule = "*/7 * * * *" # every 7 minutes
