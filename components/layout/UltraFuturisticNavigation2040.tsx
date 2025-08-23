@@ -5,7 +5,8 @@ import {
   Menu, ChevronDown, X, Phone, Mail, ArrowRight,
   Brain, Rocket, Target, Atom, Shield,
   DollarSign, BarChart3, Globe, Grid, Heart, Database,
-  Cpu, Palette, Cloud, Network, TrendingUp, ShoppingCart, Settings, Building, Monitor
+  Cpu, Palette, Cloud, Network, TrendingUp, ShoppingCart, Settings, Building, Monitor,
+  BookOpen, FileText, MessageCircle, HelpCircle, GraduationCap, Star, Handshake
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -80,17 +81,10 @@ const navigationItems: NavigationItem[] = [
         color: 'from-red-500 to-orange-500'
       },
       { 
-<<<<<<< HEAD
         name: 'Brain-Computer Interface', 
         href: '/brain-computer-interface-2040', 
         description: 'Neural interface technology',
         icon: <Brain className="w-4 h-4" />,
-=======
-        name: 'Autonomous Customer Success 2043', 
-        href: '/autonomous-customer-success-2043', 
-        description: 'AI-powered customer success',
-        icon: <Heart className="w-4 h-4" />,
->>>>>>> cursor/enhance-app-with-new-services-and-futuristic-design-285e
         color: 'from-pink-500 to-purple-500'
       }
     ]
@@ -271,7 +265,6 @@ const navigationItems: NavigationItem[] = [
     ]
   },
   {
-<<<<<<< HEAD
     name: 'Solutions',
     href: '/solutions',
     icon: <Target className="w-5 h-5" />,
@@ -390,14 +383,6 @@ const navigationItems: NavigationItem[] = [
     ]
   },
   {
-    name: 'Emerging Technology',
-    href: '/emerging-tech',
-    icon: <Zap className="w-5 h-5" />,
-    description: 'Cutting-edge emerging technologies',
-    badge: 'Emerging',
-    category: 'emerging',
-    color: 'from-yellow-500 to-orange-500',
-=======
     name: 'Healthcare & Biotech',
     href: '/healthcare',
     icon: <Heart className="w-5 h-5" />,
@@ -405,7 +390,6 @@ const navigationItems: NavigationItem[] = [
     badge: 'Health',
     category: 'healthcare',
     color: 'from-red-500 to-pink-500',
->>>>>>> cursor/enhance-app-with-new-services-and-futuristic-design-285e
     children: [
       { 
         name: 'AI Healthcare Platform 2043', 
