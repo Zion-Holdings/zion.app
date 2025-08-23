@@ -97,6 +97,12 @@
     "ui-enhancer",
     "ultrafast-front-orchestrator",
     "ultrafast-orchestrator",
+<<<<<<< HEAD
+    "unused-media-scanner",
+    "ultimate-redundancy-monitor",
+    "ultimate-build-guardian"
+=======
     "unused-media-scanner"
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-87ee
   ]
 }

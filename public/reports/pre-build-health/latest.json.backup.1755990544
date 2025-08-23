@@ -5,13 +5,21 @@
     "failedChecks": 1,
     "criticalFailures": 0,
     "canBuild": true,
+<<<<<<< HEAD
+    "timestamp": "2025-08-19T17:47:02.478Z"
+=======
     "timestamp": "2025-08-19T17:50:49.446Z"
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-87ee
   },
   "results": [
     {
       "name": "Page Structure Validation",
       "status": "PASS",
+<<<<<<< HEAD
+      "result": "All 3 pages are properly structured",
+=======
       "result": "All 1 pages are properly structured",
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-87ee
       "critical": true
     },
     {
