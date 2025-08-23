@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { motion } from 'framer-motion';
-import Layout from './layout/Layout';
+import { Layout } from './layout/Layout';
 import { 
   ArrowRight, 
   CheckCircle, 

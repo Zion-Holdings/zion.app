@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import { Phone, Mail, MapPin, Check } from 'lucide-react';
-import Button from '../components/ui/Button';
+import { Button } from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import QuantumHolographicMatrixBackground from '../components/ui/QuantumHolographicMatrixBackground';
 import ServiceAds from '../components/sections/ServiceAds';
@@ -101,7 +101,7 @@ export default function MicroSaasPage() {
                   <div className="text-2xl font-bold text-white">{s.price}<span className="text-base text-gray-400">{s.period}</span></div>
                   <div className="flex gap-2">
                     <Button href={s.link} className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Learn More</Button>
-                    <Button href="/contact" variant="outline" className="border border-gray-600 text-gray-200">Contact</Button>
+                    <Link href="/contact" variant="outline" className="border border-gray-600 text-gray-200">Contact</Button>
                   </div>
                 </div>
               </Card>

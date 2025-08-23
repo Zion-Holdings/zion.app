@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
-import Layout from '../components/layout/Layout';
+import { Layout } from '../components/layout/Layout';
 
 const contactInfo = {
   mobile: '+1 302 464 0950',

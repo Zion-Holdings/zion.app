@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
+import { Layout } from '../components/layout/Layout';
 import { Brain, Search, Target, Zap, Shield, Cpu, Database, Network, Server, Monitor, Globe, Lock, Cloud, Settings, Eye, Award, Clock, Heart, Lightbulb, TrendingUp, ArrowRight, BarChart3, FileText, CheckCircle, AlertCircle } from 'lucide-react';
 
 const RAGEvaluationLab: React.FC = () => {

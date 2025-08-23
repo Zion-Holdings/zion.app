@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { motion as motion2 } from 'framer-motion';
 import { Brain, Rocket, Shield, Zap, Target, Award, Users, TrendingUp, CheckCircle, Star } from 'lucide-react';
-import Layout from '../components/layout/Layout';
+import { Layout } from '../components/layout/Layout';
 
 const caseStudies = [
   {

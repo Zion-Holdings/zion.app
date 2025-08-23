@@ -1,8 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 import UltraFuturisticMatrixBackground from '../components/ui/UltraFuturisticMatrixBackground';
-import Button from '../components/ui/Button';
-import { Database, Link, Gauge, Check, Phone, Mail, MapPin, Rocket } from 'lucide-react';
+import { Button } from '../components/ui/Button';
+import { Database, Gauge, Check, Phone, Mail, MapPin, Rocket, Link2 } from 'lucide-react';
 
 export default function AgenticRAGPage() {
 	const contactInfo = {
@@ -31,8 +31,12 @@ export default function AgenticRAGPage() {
 					<h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">Agentic RAG</h1>
 					<p className="text-xl text-gray-300">Ingest everything. Retrieve precisely. Answer confidently with sources and chain-of-thought.</p>
 					<div className="mt-6 flex justify-center gap-3">
-						<Button href="/contact" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl"><Rocket className="w-4 h-4 mr-2" />Request a Demo</Button>
-						<Button href="/resources" variant="outline" className="border-gray-600 text-gray-200">Explore Docs</Button>
+						<Button variant="primary" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl">
+							<Rocket className="w-4 h-4 mr-2" />Request a Demo
+						</Button>
+						<Button variant="outline" className="border-gray-600 text-gray-200">
+							Explore Docs
+						</Button>
 					</div>
 				</div>
 
@@ -53,7 +57,7 @@ export default function AgenticRAGPage() {
 				<div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
 					<div className="bg-black/20 border border-gray-700/50 rounded-2xl p-6">
 						<div className="text-gray-400 text-sm mb-2">Ingestion</div>
-						<div className="text-white text-xl font-semibold flex items-center gap-2"><Link className="w-5 h-5 text-cyan-400" /> Connectors</div>
+						<div className="text-white text-xl font-semibold flex items-center gap-2"><Link2 className="w-5 h-5 text-cyan-400" /> Connectors</div>
 						<p className="text-gray-400 mt-2 text-sm">Web, PDFs, DOCX, Markdown, GitHub, and cloud storage with auto-chunking.</p>
 					</div>
 					<div className="bg-black/20 border border-gray-700/50 rounded-2xl p-6">
@@ -75,7 +79,9 @@ export default function AgenticRAGPage() {
 						<div className="flex items-center justify-center gap-2 text-green-400"><MapPin className="w-4 h-4" /><span className="text-xs">{contactInfo.address}</span></div>
 					</div>
 					<div className="text-center">
-						<Button href="/contact" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl">Talk to Engineering</Button>
+						<Button variant="primary" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl">
+							Talk to Engineering
+						</Button>
 					</div>
 				</div>
 			</div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import { RefreshCw, Zap, Bot, Workflow, ArrowRight, Check, BarChart3 } from 'lucide-react';
-import Button from '../components/ui/Button';
+import { Button } from '../components/ui/Button';
 
 export default function AutomationPage() {
   const features = [

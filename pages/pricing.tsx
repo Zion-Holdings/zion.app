@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { Check, Zap, Shield, Rocket, Brain, Atom, Target } from 'lucide-react';
-import Layout from '../components/layout/Layout';
+import { Layout } from '../components/layout/Layout';
 import { realMicroSaasServices2025 } from '../data/2025-real-micro-saas-services';
 import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services';
 import { innovativeITServices2025 } from '../data/2025-innovative-it-services';

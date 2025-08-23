@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Calendar, Clock, ArrowRight, Brain, Rocket, Shield, Zap } from 'lucide-react';
-import Layout from '../../components/layout/Layout';
+import { Layout } from '../../components/layout/Layout';
 
 const blogPosts = [
   {

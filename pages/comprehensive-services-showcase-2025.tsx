@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
+import { Layout } from '../components/layout/Layout';
 import { 
   Brain, Rocket, Shield, Zap, Target, Atom, BookOpen, ArrowRight,
   Truck, DollarSign, BarChart3, Globe, Users, Star, Sparkles, 

@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import { Cloud, Shield, Globe, Server, Database, ArrowRight, Check } from 'lucide-react';
-import Button from '../components/ui/Button';
+import { Button } from '../components/ui/Button';
 
 export default function CloudPlatformPage() {
   const features = [

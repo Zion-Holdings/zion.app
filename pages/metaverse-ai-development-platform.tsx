@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import { Globe, Phone, Mail, MapPin, Check, ArrowRight, Star } from 'lucide-react';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
-import Button from '../components/ui/Button';
+import { Button } from '../components/ui/Button';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 
 export default function MetaverseAIDevelopmentPlatformPage() {
@@ -42,7 +42,7 @@ export default function MetaverseAIDevelopmentPlatformPage() {
                 </div>
                 <div className="flex items-center text-yellow-400"><Star className="w-4 h-4 mr-1" />{service.rating.toFixed(1)}</div>
               </div>
-              <Button href="/contact" variant="quantum" size="lg" className="w-full">Start Your World<ArrowRight className="w-5 h-5 ml-2" /></Button>
+              <Link href="/contact" variant="quantum" size="lg" className="w-full">Start Your World<ArrowRight className="w-5 h-5 ml-2" /></Button>
               <div className="mt-6 space-y-3 text-sm text-slate-300">
                 <div className="flex items-center space-x-2"><Phone className="w-4 h-4 text-cyan-400" /><span>{service.contactInfo.mobile}</span></div>
                 <div className="flex items-center space-x-2"><Mail className="w-4 h-4 text-purple-400" /><span>{service.contactInfo.email}</span></div>

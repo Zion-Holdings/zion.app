@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
-import Button from '../components/ui/Button';
+import { Button } from '../components/ui/Button';
 import { Bot, CheckCircle, Zap, Shield, Network, Workflow, DollarSign, ExternalLink, Phone, Mail, MapPin } from 'lucide-react';
 
 export default function AIAssistantPage() {
@@ -45,8 +45,12 @@ export default function AIAssistantPage() {
             <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">AI Agent Orchestrator</h1>
             <p className="text-gray-300 text-lg max-w-3xl mx-auto">Design, evaluate, and operate reliable AI assistants with enterprise guardrails, HITL, and full observability.</p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button href="/contact" className="px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-700 text-white">Talk to Sales</Button>
-              <Button href="/market-pricing" variant="outline" className="px-8 py-4 border border-gray-600 text-gray-200">See Market Pricing</Button>
+              <Button variant="primary" className="px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-700 text-white">
+                Talk to Sales
+              </Button>
+              <Button variant="outline" className="px-8 py-4 border border-gray-600 text-gray-200">
+                See Market Pricing
+              </Button>
             </div>
           </header>
 
@@ -87,8 +91,12 @@ export default function AIAssistantPage() {
                     {p.includes.map((i) => <li key={i} className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-emerald-400 mt-0.5" />{i}</li>)}
                   </ul>
                   <div className="mt-6 flex gap-3">
-                    <Button href="/contact" className="flex-1">Contact Sales</Button>
-                    <Button href="/services" variant="outline" className="flex-1">Explore More</Button>
+                    <Button variant="primary" className="flex-1">
+                      Contact Sales
+                    </Button>
+                    <Button variant="outline" className="flex-1">
+                      Explore More
+                    </Button>
                   </div>
                 </div>
               ))}

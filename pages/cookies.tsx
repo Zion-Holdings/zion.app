@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Shield, Cookie, Settings, Eye, Lock, Database, Users, Info, Zap } from 'lucide-react';
-import Layout from '../components/layout/Layout';
+import { Layout } from '../components/layout/Layout';
 
 export default function Cookies() {
   return (

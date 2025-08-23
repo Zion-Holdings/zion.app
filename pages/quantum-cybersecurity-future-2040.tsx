@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
+import { Layout } from '../components/layout/Layout';
 import { Shield, Atom, Zap, Target, Users, Award, Clock, CheckCircle, Lock, Eye } from 'lucide-react';
 
 export default function QuantumCybersecurityFuture2040() {

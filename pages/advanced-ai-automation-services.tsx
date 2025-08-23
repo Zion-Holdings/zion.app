@@ -10,7 +10,7 @@ import {
   Zap as ZapIcon, Shield as ShieldIcon, Globe as GlobeIcon,
   Search, Code, TestTube, Server, Database, Network, Shield as SecurityIcon
 } from 'lucide-react';
-import Layout from '../components/layout/Layout';
+import { Layout } from '../components/layout/Layout';
 import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
 
 const contactInfo = {

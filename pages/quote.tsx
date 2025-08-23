@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Brain, Rocket, Shield, Zap, Target, Award, Globe, Users, Calculator, DollarSign, Clock, CheckCircle, ArrowRight, Mail, Phone, MapPin } from 'lucide-react';
-import Layout from '../components/layout/Layout';
+import { Layout } from '../components/layout/Layout';
 
 const serviceCategories = [
   {

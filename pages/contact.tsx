@@ -87,7 +87,7 @@ const ContactPage: React.FC = () => {
       <SEO 
         title="Contact Zion Tech Group - Get in Touch for Innovative Technology Solutions"
         description="Get in touch with Zion Tech Group for innovative technology solutions. Contact our experts for AI, quantum computing, space technology, and IT services."
-        keywords={["contact", "Zion Tech Group", "AI services", "quantum computing", "IT solutions", "technology consulting"]}
+        keywords="contact, Zion Tech Group, AI services, quantum computing, IT solutions, technology consulting"
       />
 
       {/* Hero Section */}

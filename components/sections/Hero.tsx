@@ -1,5 +1,6 @@
 import React from 'react';
-import Button from '../ui/Button';
+import Link from 'next/link';
+import { Button } from '../ui/Button';
 import { ArrowRight, Play, Star, Zap, Shield, Users, Globe, Rocket, Sparkles } from 'lucide-react';
 
 interface HeroProps {
@@ -117,29 +118,27 @@ const Hero: React.FC<HeroProps> = ({
 
         {/* Enhanced action buttons */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16 animate-fade-in-up stagger-4">
-          <Button
-            variant="futuristic"
-            size="lg"
-            href={primaryAction.href}
-            icon={primaryAction.icon}
-            iconPosition="right"
-            glow
-            className="min-w-[200px] btn-futuristic hover-glow"
-          >
-            {primaryAction.text}
-          </Button>
+          <Link href={primaryAction.href}>
+            <Button
+              variant="primary"
+              size="lg"
+              className="min-w-[200px] btn-futuristic hover-glow"
+            >
+              {primaryAction.text}
+              {primaryAction.icon && <span className="ml-2">{primaryAction.icon}</span>}
+            </Button>
+          </Link>
           
-          <Button
-            variant="outline"
-            size="lg"
-            href={secondaryAction.href}
-            icon={secondaryAction.icon}
-            iconPosition="left"
-            glow
-            className="min-w-[200px] border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white"
-          >
-            {secondaryAction.text}
-          </Button>
+          <Link href={secondaryAction.href}>
+            <Button
+              variant="outline"
+              size="lg"
+              className="min-w-[200px] border-purple-500 text-purple-400 hover:bg-purple-500 hover:text-white"
+            >
+              {secondaryAction.icon && <span className="mr-2">{secondaryAction.icon}</span>}
+              {secondaryAction.text}
+            </Button>
+          </Link>
         </div>
 
         {/* Enhanced stats grid */}

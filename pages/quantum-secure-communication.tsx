@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { 
   CheckCircle, Shield, Lock, TrendingUp as TrendingUpIcon, Phone, Rocket, ArrowRight
 } from 'lucide-react';
-import Button from '../components/ui/Button';
+import { Button } from '../components/ui/Button';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 

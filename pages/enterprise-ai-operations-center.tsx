@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
-import Button from '../components/ui/Button';
+import { Button } from '../components/ui/Button';
 import Card from '../components/ui/Card';
 
 export default function EnterpriseAIOpsPage() {
@@ -27,8 +27,8 @@ export default function EnterpriseAIOpsPage() {
               <div className="text-3xl font-bold text-white">Starting at $35,999<span className="text-base font-medium text-gray-400">/month</span></div>
               <div className="text-sm text-gray-400 mt-2">Trial: 30 days • Setup: 1–2 weeks</div>
               <div className="mt-6 flex gap-3">
-                <Button href="/contact" className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Contact Sales</Button>
-                <Button href="/services" variant="outline" className="flex-1 border border-gray-600 text-gray-200">Explore Services</Button>
+                <Link href="/contact" className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Contact Sales</Button>
+                <Link href="/services" variant="outline" className="flex-1 border border-gray-600 text-gray-200">Explore Services</Button>
               </div>
             </Card>
           </div>

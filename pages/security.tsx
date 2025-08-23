@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import { Shield, Lock, ShieldAlert, Check, Phone, Mail, MapPin, ExternalLink } from 'lucide-react';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
-import Button from '../components/ui/Button';
+import { Button } from '../components/ui/Button';
 
 export default function SecurityPage() {
   const contactInfo = {
@@ -72,7 +72,7 @@ export default function SecurityPage() {
             <div className="flex items-center justify-center gap-2 text-green-400"><MapPin className="w-4 h-4" /><span className="text-xs">{contactInfo.address}</span></div>
           </div>
           <div className="flex items-center justify-center gap-4">
-            <Button href="/contact" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl">Talk to Security</Button>
+            <Link href="/contact" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl">Talk to Security</Button>
             <a href="https://ziontechgroup.com/quantum-cybersecurity" className="text-cyan-400 hover:text-white inline-flex items-center gap-2"><ExternalLink className="w-4 h-4" /> Learn more</a>
           </div>
         </div>

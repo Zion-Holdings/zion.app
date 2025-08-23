@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Brain, Rocket, Shield, Zap, Target, Award, Globe, Users, CheckCircle, ArrowRight, BookOpen, Code, Video, Headphones, Mail, Phone, MapPin, Clock, Star, Download, ExternalLink } from 'lucide-react';
-import Layout from '../components/layout/Layout';
+import { Layout } from '../components/layout/Layout';
 
 const onboardingSteps = [
   {

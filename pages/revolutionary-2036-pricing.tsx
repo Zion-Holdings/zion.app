@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Check, Star, Zap, Shield, Brain, Globe, Rocket, DollarSign, Users, Clock, Award, ArrowRight } from 'lucide-react';
 import { revolutionary2036FuturisticServices } from '../data/revolutionary-2036-futuristic-services';
-import Layout from '../components/layout/Layout';
+import { Layout } from '../components/layout/Layout';
 
 const Revolutionary2036Pricing: React.FC = () => {
   const [selectedPeriod, setSelectedPeriod] = useState<'monthly' | 'yearly'>('monthly');

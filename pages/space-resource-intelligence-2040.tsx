@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
+import { Layout } from '../components/layout/Layout';
 import { Rocket, Satellite, Globe, Target, Users, Award, Clock, CheckCircle, Zap, Brain } from 'lucide-react';
 
 export default function SpaceResourceIntelligence2040() {

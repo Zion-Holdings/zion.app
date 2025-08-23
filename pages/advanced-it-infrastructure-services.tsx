@@ -11,7 +11,7 @@ import {
   Search, Code, TestTube, Server, Database, Network, Shield as SecurityIcon,
   Wifi, Building, Cpu as CpuIcon
 } from 'lucide-react';
-import Layout from '../components/layout/Layout';
+import { Layout } from '../components/layout/Layout';
 import { advancedITInfrastructureServices2025 } from '../data/2025-advanced-it-infrastructure-services';
 
 const contactInfo = {

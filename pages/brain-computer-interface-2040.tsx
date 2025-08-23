@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
+import { Layout } from '../components/layout/Layout';
 import { Brain, Cpu, Zap, Target, Users, Award, Clock, CheckCircle, Eye, Heart } from 'lucide-react';
 
 export default function BrainComputerInterface2040() {

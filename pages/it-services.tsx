@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import { Cloud, Cpu, Server, Database, Settings, Shield, Phone, Mail, MapPin, Check } from 'lucide-react';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
-import Button from '../components/ui/Button';
+import { Button } from '../components/ui/Button';
 import ServiceAds from '../components/sections/ServiceAds';
 
 export default function ITServicesPage() {
@@ -111,7 +111,7 @@ export default function ITServicesPage() {
             <div className="flex items-center justify-center gap-2 text-green-400"><MapPin className="w-4 h-4" /><span className="text-xs">{contactInfo.address}</span></div>
           </div>
           <div className="text-center">
-            <Button href="/contact" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl">Discuss Your Roadmap</Button>
+            <Link href="/contact" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl">Discuss Your Roadmap</Button>
           </div>
         </div>
       </div>

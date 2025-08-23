@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
-import Button from '../components/ui/Button';
+import { Button } from '../components/ui/Button';
 import { Shield, Lock, Check, Phone, Mail, MapPin, Rocket } from 'lucide-react';
 
 export default function AIGuardrailsPage() {
@@ -31,8 +31,8 @@ export default function AIGuardrailsPage() {
 					<h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-6">AI Guardrails</h1>
 					<p className="text-xl text-gray-300">Protect users and your brand with robust safety checks and policy enforcement for AI systems.</p>
 					<div className="mt-6 flex justify-center gap-3">
-						<Button href="/contact" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl"><Rocket className="w-4 h-4 mr-2" />Request a Demo</Button>
-						<Button href="/resources" variant="outline" className="border-gray-600 text-gray-200">Explore Docs</Button>
+						<Link href="/contact" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl"><Rocket className="w-4 h-4 mr-2" />Request a Demo</Button>
+						<Link href="/resources" variant="outline" className="border-gray-600 text-gray-200">Explore Docs</Button>
 					</div>
 				</div>
 
@@ -57,7 +57,7 @@ export default function AIGuardrailsPage() {
 						<div className="flex items-center justify-center gap-2 text-green-400"><MapPin className="w-4 h-4" /><span className="text-xs">{contactInfo.address}</span></div>
 					</div>
 					<div className="text-center">
-						<Button href="/contact" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl">Talk to Security</Button>
+						<Link href="/contact" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl">Talk to Security</Button>
 					</div>
 				</div>
 			</div>

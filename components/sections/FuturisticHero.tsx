@@ -1,8 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { ArrowRight, Star, Zap, Shield, Users, Globe } from 'lucide-react';
 import AnimatedBackground from '../ui/AnimatedBackground';
-import Button from '../ui/Button';
+import { Button } from '../ui/Button';
 
 const FuturisticHero: React.FC = () => {
   const features = [
@@ -81,20 +82,22 @@ const FuturisticHero: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
         >
-          <Button
-            href="/micro-saas"
-            className="btn-futuristic text-lg px-8 py-4 text-white font-semibold"
-          >
-            Explore Services
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
-          <Button
-            href="/contact"
-            variant="outline"
-            className="border-2 border-neon-blue text-neon-blue hover:bg-neon-blue hover:text-black text-lg px-8 py-4 font-semibold transition-all duration-300"
-          >
-            Get Started
-          </Button>
+          <Link href="/micro-saas">
+            <Button
+              className="btn-futuristic text-lg px-8 py-4 text-white font-semibold"
+            >
+              Explore Services
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
+          <Link href="/contact">
+            <Button
+              variant="outline"
+              className="border-2 border-neon-blue text-neon-blue hover:bg-neon-blue hover:text-black text-lg px-8 py-4 font-semibold transition-all duration-300"
+            >
+              Get Started
+            </Button>
+          </Link>
         </motion.div>
 
         {/* Stats Grid */}

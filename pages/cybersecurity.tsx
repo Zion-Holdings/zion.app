@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
-import Button from '../components/ui/Button';
+import { Button } from '../components/ui/Button';
 import { Shield, CheckCircle, Lock, Activity } from 'lucide-react';
 
 export default function CybersecurityPage() {
@@ -36,8 +36,8 @@ export default function CybersecurityPage() {
             <p className="text-gray-300 text-lg max-w-3xl mx-auto">From strategy to operations: identity, data, networks, and workloads secured by design.</p>
             <div className="mt-2 text-sm text-gray-400">New: VAPT and MDM offerings below.</div>
             <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button href="/contact" className="px-8 py-4">Security Assessment</Button>
-              <Button href="/market-pricing" variant="outline" className="px-8 py-4">See Market Pricing</Button>
+              <Link href="/contact" className="px-8 py-4">Security Assessment</Button>
+              <Link href="/market-pricing" variant="outline" className="px-8 py-4">See Market Pricing</Button>
             </div>
           </header>
 

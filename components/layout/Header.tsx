@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X, Zap, Sparkles, ChevronDown } from 'lucide-react';
-import Button from '../ui/Button';
+import { Button } from '../ui/Button';
 import { motion } from 'framer-motion';
 
 const Header: React.FC = () => {
@@ -154,9 +154,11 @@ const Header: React.FC = () => {
                 <span className="xl:hidden">Email</span>
               </a>
             </div>
-            <Button href="/contact" variant="primary" size="sm">
-              Get Started
-            </Button>
+            <Link href="/contact">
+              <Button variant="primary" size="sm">
+                Get Started
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -217,9 +219,11 @@ const Header: React.FC = () => {
                 >
                   {contactInfo.email}
                 </a>
-                <Button href="/contact" variant="primary" size="sm" className="w-full">
-                  Get Started
-                </Button>
+                <Link href="/contact">
+                  <Button variant="primary" size="sm" className="w-full">
+                    Get Started
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

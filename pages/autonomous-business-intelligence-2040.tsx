@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
+import { Layout } from '../components/layout/Layout';
 import { BarChart3, Brain, Zap, Target, Users, Award, Clock, CheckCircle, TrendingUp, Shield } from 'lucide-react';
 
 export default function AutonomousBusinessIntelligence2040() {

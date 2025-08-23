@@ -16,7 +16,7 @@ const Services2025Launch = () => {
       <SEO 
         title="2025 Advanced Services Launch - Zion Tech Group"
         description="Transform your business with AI, IT, and Micro SAAS solutions. Discover autonomous AI, quantum-ready infrastructure, and intelligent business automation."
-        keywords={["AI services", "IT solutions", "micro SAAS", "autonomous AI", "quantum computing", "business automation", "Zion Tech Group"]}
+        keywords="AI services, IT solutions, micro SAAS, autonomous AI, quantum computing, business automation, Zion Tech Group"
         canonical="https://ziontechgroup.com/2025-services-launch"
       />
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import SEO from '../components/SEO';
-import Layout from '../components/layout/Layout';
+import { Layout } from '../components/layout/Layout';
 import UltraFuturisticServiceCard2040 from '../components/ui/UltraFuturisticServiceCard2040';
 import { motion } from 'framer-motion';
 import { 
@@ -80,7 +80,7 @@ const Innovative2025ServicesShowcase: React.FC = () => {
       <SEO 
         title="Innovative 2025 Services Showcase - Zion Tech Group"
         description="Explore our comprehensive showcase of innovative 2025 technology services including AI, quantum computing, space technology, and enterprise solutions."
-        keywords={["innovative services", "2025 technology", "AI solutions", "quantum computing", "space technology", "enterprise solutions", "Zion Tech Group"]}
+        keywords="innovative services, 2025 technology, AI solutions, quantum computing, space technology, enterprise solutions, Zion Tech Group"
       />
 
       {/* Hero Section */}

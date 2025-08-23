@@ -3,16 +3,16 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Star, CheckCircle, Zap, Brain, Atom, Rocket } from 'lucide-react';
 
 interface Service {
-  id: string;
+  id?: string;
   name: string;
-  tagline: string;
+  tagline?: string;
   description: string;
-  price: string;
-  period: string;
-  features: string[];
+  price?: string;
+  period?: string;
+  features?: string[];
   popular?: boolean;
   category: string;
-  icon: string;
+  icon?: string;
 }
 
 interface UltraFuturisticServiceCard2026Props {
@@ -152,7 +152,7 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
         {/* Header */}
         <div className="flex items-start justify-between mb-4">
           <div className="flex items-center gap-3">
-            <div className="text-4xl mb-2" aria-hidden="true">{service.icon}</div>
+            {service.icon && <div className="text-4xl mb-2" aria-hidden="true">{service.icon}</div>}
             <div className="flex items-center gap-2">
               {variantStyles.icon}
             </div>
@@ -180,48 +180,54 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
             {service.name}
           </motion.h3>
           
-          <motion.p 
-            className="text-gray-300 text-sm mb-3"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-          >
-            {service.tagline}
-          </motion.p>
+          {service.tagline && (
+            <motion.p 
+              className="text-gray-300 text-sm mb-3"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+            >
+              {service.tagline}
+            </motion.p>
+          )}
           
-          <motion.div 
-            className="mb-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-          >
-            <span className="text-2xl font-bold text-white">{service.price}</span>
-            <span className="text-gray-400 text-sm ml-1">{service.period}</span>
-          </motion.div>
+          {(service.price || service.period) && (
+            <motion.div 
+              className="mb-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+            >
+              {service.price && <span className="text-2xl font-bold text-white">{service.price}</span>}
+              {service.period && <span className="text-gray-400 text-sm ml-1">{service.period}</span>}
+            </motion.div>
+          )}
 
           {/* Features */}
-          <motion.div 
-            className="space-y-2 mb-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-          >
-            {service.features.slice(0, isExpanded ? service.features.length : 3).map((feature, index) => (
-              <motion.div 
-                key={feature}
-                className="flex items-center text-sm text-gray-300"
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.5 + index * 0.1 }}
-              >
-                <div className={`w-2 h-2 rounded-full mr-3 ${variantStyles.accent}`}></div>
-                {feature}
-              </motion.div>
-            ))}
-          </motion.div>
+          {service.features && service.features.length > 0 && (
+            <motion.div 
+              className="space-y-2 mb-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+            >
+              {service.features.slice(0, isExpanded ? service.features.length : 3).map((feature, index) => (
+                <motion.div 
+                  key={feature}
+                  className="flex items-center text-sm text-gray-300"
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.5 + index * 0.1 }}
+                >
+                  <div className={`w-2 h-2 rounded-full mr-3 ${variantStyles.accent}`}></div>
+                  {feature}
+                </motion.div>
+              ))}
+            </motion.div>
+          )}
 
           {/* Show More/Less Button */}
-          {service.features.length > 3 && (
+          {service.features && service.features.length > 3 && (
             <motion.button 
               className={`text-sm ${variantStyles.text} hover:underline focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-cyan-400`}
               onClick={toggleExpanded}

@@ -1,5 +1,5 @@
-import React from 'react';
-import Layout from './layout/Layout';
+import React, { Suspense, lazy } from 'react';
+import { Layout } from './layout/Layout';
 import UltraFuturisticServiceCard2040 from './ui/UltraFuturisticServiceCard2040';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -11,6 +11,10 @@ import {
 } from 'lucide-react';
 import { innovative2025AdvancedServicesExpansion } from '../data/innovative-2025-advanced-services-expansion';
 import { innovative2025EnterpriseSolutions } from '../data/innovative-2025-enterprise-solutions';
+
+// Lazy load heavy components for better performance
+const LazyPerformanceMonitor = lazy(() => import('./PerformanceMonitor'));
+const LazyAccessibilityEnhancer = lazy(() => import('./AccessibilityEnhancer'));
 
 const Homepage2040: React.FC = () => {
   // Get featured services from the new data
@@ -397,6 +401,11 @@ const Homepage2040: React.FC = () => {
           </div>
         </section>
       </main>
+      
+      {/* Lazy load performance components */}
+      <Suspense fallback={<div className="hidden">Loading...</div>}>
+        <LazyPerformanceMonitor showUI={true} />
+      </Suspense>
     </Layout>
   );
 };
