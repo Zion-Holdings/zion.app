@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enable static export for Next.js 14
   output: 'export',
   trailingSlash: true,
   productionBrowserSourceMaps: false,
