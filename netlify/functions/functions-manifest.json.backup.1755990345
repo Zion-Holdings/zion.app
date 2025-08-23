@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "generatedAt": "2025-08-11T18:34:16.950Z",
+=======
   "generatedAt": "2025-08-12T01:32:14.326Z",
+>>>>>>> origin/cursor/autonomous-cloud-automation-and-sync-1971
   "functions": [
     "a11y-audit-runner",
     "ai-changelog-runner",
@@ -13,8 +17,12 @@
     "branch-cleanup-runner",
     "broken-image-scanner",
     "broken-image-scanner-runner",
+<<<<<<< HEAD
+    "cloud-autonomous-orchestrator-runner",
+=======
     "canonical-auditor",
     "cloud-swarm-committer",
+>>>>>>> origin/cursor/autonomous-cloud-automation-and-sync-1971
     "cloud_orchestrator",
     "content-gap-analyzer",
     "continuous-front-runner",
@@ -58,9 +66,12 @@
     "newsroom-auto-publisher",
     "newsroom-runner",
     "og-image-update-runner",
+<<<<<<< HEAD
+=======
     "orchestrator-swarm",
     "orphan-pages-detector",
     "pagespeed-insights-runner",
+>>>>>>> origin/cursor/autonomous-cloud-automation-and-sync-1971
     "readme-advertiser",
     "redirect-healer",
     "redirect-manager",
