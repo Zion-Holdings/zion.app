@@ -14,11 +14,11 @@ const HomePage: React.FC = () => {
       <SEOOptimizer />
       <AnalyticsTracker />
       <PerformanceOptimizer />
+      <AccessibilityEnhancer />
       <MobileOptimizer showDebugInfo={false}>
         <Homepage2025 />
         <PerformanceMonitor showUI={true} />
       </MobileOptimizer>
-      <AccessibilityEnhancer />
     </ErrorBoundary>
   );
 };
