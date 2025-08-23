@@ -1,147 +1,159 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
-import { Brain, Sparkles, Zap, Target, Users, Award, Clock, CheckCircle, Shield, Scale, Gavel, TrendingUp, Lock, Eye } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Brain, Shield, Scale, Users, Globe, Lock, CheckCircle, AlertTriangle, Heart, Zap } from 'lucide-react';
 
-export default function AIEthicsGovernance2041() {
+const AIEthicsGovernance2041: React.FC = () => {
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+      <div className="min-h-screen bg-gradient-to-br from-black via-emerald-900/20 to-blue-900/20">
         {/* Hero Section */}
-        <section className="relative py-20 px-4 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-amber-500/10 via-yellow-500/10 to-amber-500/10"></div>
-          <div className="relative z-10 max-w-7xl mx-auto text-center">
-            <div className="mb-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-amber-500/20 to-yellow-500/20 border border-amber-500/30 rounded-full text-amber-300 text-sm mb-6">
-                <Sparkles className="w-4 h-4" />
-                Revolutionary 2041 Technology
+        <section className="relative py-20 px-4">
+          <div className="max-w-7xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-500/20 to-blue-500/20 border border-emerald-500/30 rounded-full text-emerald-300 text-sm mb-6">
+                <Shield className="w-4 h-4" />
+                AI Ethics & Governance 2041
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-400 bg-clip-text text-transparent">
-                  AI Ethics & Governance
-                </span>
-                <br />
-                <span className="text-white">2041</span>
+              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-emerald-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent mb-6">
+                AI Ethics & Governance 2041
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
-                Experience the future of responsible AI with revolutionary ethics and governance frameworks that ensure 
-                AI systems operate safely, fairly, and transparently while maintaining the highest standards of accountability.
+                Comprehensive framework for ethical AI development, deployment, and governance with consciousness-based decision making
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-gradient-to-r from-amber-500 to-yellow-600 text-white font-semibold rounded-xl hover:from-amber-600 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105">
-                  Implement AI Ethics
+                <button className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-blue-500 text-white rounded-2xl font-semibold hover:shadow-2xl hover:shadow-emerald-500/25 transition-all duration-300">
+                  Implement Ethics Framework
                 </button>
-                <button className="px-8 py-4 border-2 border-amber-400 text-amber-400 font-semibold rounded-xl hover:bg-amber-400 hover:text-black transition-all duration-300">
+                <button className="px-8 py-4 border border-emerald-500/30 text-emerald-300 rounded-2xl hover:bg-emerald-500/10 transition-all duration-300">
                   Learn More
                 </button>
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
 
         {/* Features Grid */}
         <section className="py-20 px-4">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Revolutionary AI Ethics & Governance Features
+                Ethical AI Framework
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Our AI ethics and governance platform represents the pinnacle of responsible artificial intelligence, 
-                combining advanced governance frameworks with sophisticated monitoring and compliance capabilities.
+                Our comprehensive approach ensures AI systems operate with ethical consciousness and responsible governance
               </p>
-            </div>
+            </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  icon: <Shield className="w-8 h-8" />,
-                  title: "Ethical AI Framework",
-                  description: "Comprehensive framework ensuring AI systems operate within ethical boundaries and human values.",
-                  color: "from-amber-500 to-yellow-500"
+                  icon: <Scale className="w-8 h-8 text-emerald-400" />,
+                  title: "Ethical Decision Making",
+                  description: "AI systems that make decisions based on ethical principles and moral reasoning"
                 },
                 {
-                  icon: <Scale className="w-8 h-8" />,
-                  title: "Fairness & Bias Detection",
-                  description: "Advanced algorithms that detect and mitigate bias in AI decision-making processes.",
-                  color: "from-blue-500 to-cyan-500"
+                  icon: <Shield className="w-8 h-8 text-blue-400" />,
+                  title: "Responsible AI",
+                  description: "Development and deployment practices that prioritize human well-being and safety"
                 },
                 {
-                  icon: <Eye className="w-8 h-8" />,
-                  title: "Transparency & Explainability",
-                  description: "Clear visibility into AI decision-making processes for accountability and trust.",
-                  color: "from-purple-500 to-pink-500"
+                  icon: <Users className="w-8 h-8 text-cyan-400" />,
+                  title: "Human-Centric Design",
+                  description: "AI systems designed to augment human capabilities while preserving human dignity"
                 },
                 {
-                  icon: <Gavel className="w-8 h-8" />,
-                  title: "Compliance Monitoring",
-                  description: "Real-time monitoring of AI systems to ensure regulatory and ethical compliance.",
-                  color: "from-orange-500 to-red-500"
+                  icon: <Globe className="w-8 h-8 text-purple-400" />,
+                  title: "Global Standards",
+                  description: "Compliance with international AI ethics guidelines and regulatory frameworks"
                 },
                 {
-                  icon: <Lock className="w-8 h-8" />,
+                  icon: <Lock className="w-8 h-8 text-orange-400" />,
                   title: "Privacy Protection",
-                  description: "Advanced privacy safeguards ensuring AI systems respect user data and confidentiality.",
-                  color: "from-green-500 to-emerald-500"
+                  description: "Advanced privacy safeguards and data protection mechanisms"
                 },
                 {
-                  icon: <Brain className="w-8 h-8" />,
-                  title: "Consciousness Validation",
-                  description: "Validation of AI consciousness and ethical decision-making capabilities.",
-                  color: "from-indigo-500 to-purple-500"
+                  icon: <CheckCircle className="w-8 h-8 text-green-400" />,
+                  title: "Transparency",
+                  description: "Clear explanations of AI decision-making processes and outcomes"
                 }
               ].map((feature, index) => (
-                <div key={index} className="group p-8 bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 rounded-2xl hover:border-amber-500/50 transition-all duration-300 hover:transform hover:scale-105">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${feature.color} p-4 mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-4">{feature.title}</h3>
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="p-6 bg-black/40 border border-emerald-500/20 rounded-2xl hover:border-emerald-500/40 transition-all duration-300"
+                >
+                  <div className="mb-4">{feature.icon}</div>
+                  <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
                   <p className="text-gray-400">{feature.description}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Benefits Section */}
-        <section className="py-20 px-4 bg-gradient-to-r from-amber-500/5 to-yellow-500/5">
+        {/* Governance Principles */}
+        <section className="py-20 px-4">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Why Choose AI Ethics & Governance?
+                Governance Principles
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Build trust and ensure compliance with AI systems that operate ethically and responsibly.
+                Core principles that guide our AI governance and ethical decision-making processes
               </p>
-            </div>
+            </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
                 {
-                  icon: <CheckCircle className="w-8 h-8" />,
-                  title: "Regulatory Compliance",
-                  description: "Ensure your AI systems meet all regulatory requirements and industry standards.",
-                  color: "from-amber-500 to-yellow-500"
+                  title: "Accountability",
+                  description: "Clear responsibility for AI system outcomes and decision-making processes",
+                  icon: <CheckCircle className="w-12 h-12 text-emerald-400" />
                 },
                 {
-                  icon: <TrendingUp className="w-8 h-8" />,
-                  title: "Risk Mitigation",
-                  description: "Identify and mitigate potential risks associated with AI deployment and operation.",
-                  color: "from-blue-500 to-cyan-500"
+                  title: "Fairness",
+                  description: "Elimination of bias and discrimination in AI systems and outcomes",
+                  icon: <Scale className="w-12 h-12 text-blue-400" />
                 },
                 {
-                  icon: <Award className="w-8 h-8" />,
-                  title: "Trust Building",
-                  description: "Build customer and stakeholder trust through transparent and ethical AI practices.",
-                  color: "from-purple-500 to-pink-500"
+                  title: "Safety",
+                  description: "Robust safety measures and risk assessment protocols",
+                  icon: <Shield className="w-12 h-12 text-cyan-400" />
+                },
+                {
+                  title: "Human Control",
+                  description: "Maintenance of human oversight and control over AI systems",
+                  icon: <Users className="w-12 h-12 text-purple-400" />
                 }
-              ].map((benefit, index) => (
-                <div key={index} className="text-center p-6">
-                  <div className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${benefit.color} p-5 mx-auto mb-6`}>
-                    {benefit.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-4">{benefit.title}</h3>
-                  <p className="text-gray-400">{benefit.description}</p>
-                </div>
+              ].map((principle, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="p-8 bg-black/40 border border-emerald-500/20 rounded-2xl hover:border-emerald-500/40 transition-all duration-300"
+                >
+                  <div className="mb-6">{principle.icon}</div>
+                  <h3 className="text-2xl font-semibold text-white mb-4">{principle.title}</h3>
+                  <p className="text-gray-400 text-lg">{principle.description}</p>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -150,23 +162,26 @@ export default function AIEthicsGovernance2041() {
         {/* CTA Section */}
         <section className="py-20 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Implement AI Ethics?
-            </h2>
-            <p className="text-xl text-gray-400 mb-8">
-              Join the future of responsible AI and ensure your systems operate with the highest ethical standards.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-gradient-to-r from-amber-500 to-yellow-600 text-white font-semibold rounded-xl hover:from-amber-600 hover:to-yellow-700 transition-all duration-300 transform hover:scale-105">
-                Start Ethical AI Today
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to Implement Ethical AI?
+              </h2>
+              <p className="text-xl text-gray-400 mb-8">
+                Build AI systems that operate with ethical consciousness and responsible governance
+              </p>
+              <button className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-blue-500 text-white rounded-2xl font-semibold hover:shadow-2xl hover:shadow-emerald-500/25 transition-all duration-300">
+                Get Started
               </button>
-              <button className="px-8 py-4 border-2 border-amber-400 text-amber-400 font-semibold rounded-xl hover:bg-amber-400 hover:text-black transition-all duration-300">
-                Schedule Demo
-              </button>
-            </div>
+            </motion.div>
           </div>
         </section>
       </div>
     </Layout>
   );
-}
+};
+
+export default AIEthicsGovernance2041;

@@ -1,147 +1,159 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
-import { Brain, Sparkles, Zap, Target, Users, Award, Clock, CheckCircle, Dna, Leaf, TrendingUp, Shield, TestTube, Microscope } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Atom, Brain, Dna, TestTube, Zap, Globe, Shield, Cpu, CheckCircle, Star } from 'lucide-react';
 
-export default function QuantumBioComputing2041() {
+const QuantumBioComputing2041: React.FC = () => {
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+      <div className="min-h-screen bg-gradient-to-br from-black via-green-900/20 to-emerald-900/20">
         {/* Hero Section */}
-        <section className="relative py-20 px-4 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 via-emerald-500/10 to-green-500/10"></div>
-          <div className="relative z-10 max-w-7xl mx-auto text-center">
-            <div className="mb-8">
+        <section className="relative py-20 px-4">
+          <div className="max-w-7xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-full text-green-300 text-sm mb-6">
-                <Sparkles className="w-4 h-4" />
-                Revolutionary 2041 Technology
+                <Atom className="w-4 h-4" />
+                Quantum Bio-Computing 2041
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-green-400 via-emerald-400 to-green-400 bg-clip-text text-transparent">
-                  Quantum Bio-Computing
-                </span>
-                <br />
-                <span className="text-white">2041</span>
+              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-green-400 via-emerald-400 to-blue-400 bg-clip-text text-transparent mb-6">
+                Quantum Bio-Computing 2041
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
-                Experience the future of biological computing with revolutionary quantum technology that combines 
-                quantum mechanics with biological systems for unprecedented computational capabilities.
+                Revolutionary quantum computing integrated with biological systems for unprecedented computational power
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-xl hover:from-green-600 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105">
-                  Start Bio-Computing
+                <button className="px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-2xl font-semibold hover:shadow-2xl hover:shadow-green-500/25 transition-all duration-300">
+                  Deploy Bio-Quantum System
                 </button>
-                <button className="px-8 py-4 border-2 border-green-400 text-green-400 font-semibold rounded-xl hover:bg-green-400 hover:text-black transition-all duration-300">
-                  Learn More
+                <button className="px-8 py-4 border border-green-500/30 text-green-300 rounded-2xl hover:bg-green-500/10 transition-all duration-300">
+                  View Demo
                 </button>
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
 
         {/* Features Grid */}
         <section className="py-20 px-4">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Revolutionary Quantum Bio-Computing Features
+                Quantum Bio-Computing Features
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Our quantum bio-computing platform represents the pinnacle of biological computing technology, 
-                combining quantum mechanics with advanced biological systems and computational biology.
+                Advanced quantum computing integrated with biological systems for revolutionary computational capabilities
               </p>
-            </div>
+            </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  icon: <Dna className="w-8 h-8" />,
-                  title: "Quantum DNA Computing",
-                  description: "Quantum computing using DNA molecules for biological information processing.",
-                  color: "from-green-500 to-emerald-500"
+                  icon: <Atom className="w-8 h-8 text-green-400" />,
+                  title: "Quantum Processing",
+                  description: "Quantum computing power integrated with biological systems"
                 },
                 {
-                  icon: <Leaf className="w-8 h-8" />,
-                  title: "Biological Quantum Systems",
-                  description: "Integration of quantum mechanics with living biological systems.",
-                  color: "from-blue-500 to-cyan-500"
+                  icon: <Dna className="w-8 h-8 text-emerald-400" />,
+                  title: "Biological Integration",
+                  description: "Seamless integration with biological computing substrates"
                 },
                 {
-                  icon: <TestTube className="w-8 h-8" />,
-                  title: "Quantum Bio-Synthesis",
-                  description: "Quantum-controlled biological synthesis and molecular engineering.",
-                  color: "from-purple-500 to-pink-500"
+                  icon: <Brain className="w-8 h-8 text-blue-400" />,
+                  title: "Neural Networks",
+                  description: "Biological neural networks enhanced with quantum computing"
                 },
                 {
-                  icon: <Microscope className="w-8 h-8" />,
-                  title: "Quantum Bio-Imaging",
-                  description: "Advanced imaging using quantum bio-computing technology.",
-                  color: "from-orange-500 to-red-500"
+                  icon: <TestTube className="w-8 h-8 text-cyan-400" />,
+                  title: "Bio-Molecular Computing",
+                  description: "Computing using biological molecules and processes"
                 },
                 {
-                  icon: <Brain className="w-8 h-8" />,
-                  title: "Neural Quantum Computing",
-                  description: "Quantum computing integrated with biological neural networks.",
-                  color: "from-yellow-500 to-orange-500"
+                  icon: <Zap className="w-8 h-8 text-purple-400" />,
+                  title: "Lightning Performance",
+                  description: "Exponential speed improvements through quantum-bio integration"
                 },
                 {
-                  icon: <Shield className="w-8 h-8" />,
-                  title: "Bio-Security",
-                  description: "Advanced security protocols for biological computing systems.",
-                  color: "from-indigo-500 to-purple-500"
+                  icon: <Globe className="w-8 h-8 text-orange-400" />,
+                  title: "Global Applications",
+                  description: "Worldwide deployment of quantum bio-computing systems"
                 }
               ].map((feature, index) => (
-                <div key={index} className="group p-8 bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 rounded-2xl hover:border-green-500/50 transition-all duration-300 hover:transform hover:scale-105">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${feature.color} p-4 mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-4">{feature.title}</h3>
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="p-6 bg-black/40 border border-green-500/20 rounded-2xl hover:border-green-500/40 transition-all duration-300"
+                >
+                  <div className="mb-4">{feature.icon}</div>
+                  <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
                   <p className="text-gray-400">{feature.description}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Benefits Section */}
-        <section className="py-20 px-4 bg-gradient-to-r from-green-500/5 to-emerald-500/5">
+        {/* Applications */}
+        <section className="py-20 px-4">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Why Choose Quantum Bio-Computing?
+                Applications
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Transform your computing capabilities with quantum technology that integrates with biological systems.
+                Revolutionary applications enabled by quantum bio-computing technology
               </p>
-            </div>
+            </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
                 {
-                  icon: <CheckCircle className="w-8 h-8" />,
-                  title: "Biological Integration",
-                  description: "Seamless integration of quantum computing with biological systems.",
-                  color: "from-green-500 to-emerald-500"
+                  title: "Drug Discovery",
+                  description: "Accelerate pharmaceutical research with quantum bio-computing",
+                  icon: <TestTube className="w-12 h-12 text-green-400" />
                 },
                 {
-                  icon: <TrendingUp className="w-8 h-8" />,
-                  title: "Advanced Processing",
-                  description: "Unprecedented processing capabilities through quantum bio-computing.",
-                  color: "from-blue-500 to-cyan-500"
+                  title: "Genetic Engineering",
+                  description: "Advanced genetic manipulation and optimization",
+                  icon: <Dna className="w-12 h-12 text-emerald-400" />
                 },
                 {
-                  icon: <Award className="w-8 h-8" />,
-                  title: "Innovation Leadership",
-                  description: "Leading-edge technology at the intersection of quantum and biology.",
-                  color: "from-purple-500 to-pink-500"
+                  title: "Neural Interfaces",
+                  description: "Direct brain-computer interfaces with quantum processing",
+                  icon: <Brain className="w-12 h-12 text-blue-400" />
+                },
+                {
+                  title: "Biological Computing",
+                  description: "Computing systems built from biological components",
+                  icon: <Cpu className="w-12 h-12 text-cyan-400" />
                 }
-              ].map((benefit, index) => (
-                <div key={index} className="text-center p-6">
-                  <div className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${benefit.color} p-5 mx-auto mb-6`}>
-                    {benefit.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-4">{benefit.title}</h3>
-                  <p className="text-gray-400">{benefit.description}</p>
-                </div>
+              ].map((application, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="p-8 bg-black/40 border border-green-500/20 rounded-2xl hover:border-green-500/40 transition-all duration-300"
+                >
+                  <div className="mb-6">{application.icon}</div>
+                  <h3 className="text-2xl font-semibold text-white mb-4">{application.title}</h3>
+                  <p className="text-gray-400 text-lg">{application.description}</p>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -150,23 +162,26 @@ export default function QuantumBioComputing2041() {
         {/* CTA Section */}
         <section className="py-20 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Start Bio-Computing?
-            </h2>
-            <p className="text-xl text-gray-400 mb-8">
-              Join the future of quantum bio-computing and unlock the potential of biological quantum systems.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-xl hover:from-green-600 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105">
-                Start Bio-Computing Today
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready for Quantum Bio-Computing?
+              </h2>
+              <p className="text-xl text-gray-400 mb-8">
+                Deploy the future of computing with quantum-biological integration
+              </p>
+              <button className="px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-2xl font-semibold hover:shadow-2xl hover:shadow-green-500/25 transition-all duration-300">
+                Get Started
               </button>
-              <button className="px-8 py-4 border-2 border-green-400 text-green-400 font-semibold rounded-xl hover:bg-green-400 hover:text-black transition-all duration-300">
-                Schedule Demo
-              </button>
-            </div>
+            </motion.div>
           </div>
         </section>
       </div>
     </Layout>
   );
-}
+};
+
+export default QuantumBioComputing2041;

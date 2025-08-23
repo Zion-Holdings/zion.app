@@ -1,147 +1,159 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
-import { Brain, Sparkles, Zap, Target, Users, Award, Clock, CheckCircle, TrendingUp, BarChart3, DollarSign, Target as TargetIcon, Lightbulb, Shield } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { TrendingUp, Target, Users, Brain, Zap, Globe, Shield, Cpu, CheckCircle, Star } from 'lucide-react';
 
-export default function AISalesIntelligence2041() {
+const AISalesIntelligence2041: React.FC = () => {
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+      <div className="min-h-screen bg-gradient-to-br from-black via-orange-900/20 to-red-900/20">
         {/* Hero Section */}
-        <section className="relative py-20 px-4 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 via-red-500/10 to-orange-500/10"></div>
-          <div className="relative z-10 max-w-7xl mx-auto text-center">
-            <div className="mb-8">
+        <section className="relative py-20 px-4">
+          <div className="max-w-7xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-500/20 to-red-500/20 border border-orange-500/30 rounded-full text-orange-300 text-sm mb-6">
-                <Sparkles className="w-4 h-4" />
-                Revolutionary 2041 Technology
+                <TrendingUp className="w-4 h-4" />
+                AI Sales Intelligence 2041
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-orange-400 via-red-400 to-orange-400 bg-clip-text text-transparent">
-                  AI Sales Intelligence
-                </span>
-                <br />
-                <span className="text-white">2041</span>
+              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-orange-400 via-red-400 to-yellow-400 bg-clip-text text-transparent mb-6">
+                AI Sales Intelligence 2041
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
-                Experience the future of sales with revolutionary AI that provides intelligent lead scoring, 
-                predictive analytics, and autonomous sales optimization to maximize revenue and close rates.
+                Revolutionary AI-powered sales intelligence with predictive analytics and consciousness-based decision making
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-gradient-to-r from-orange-500 to-red-600 text-white font-semibold rounded-xl hover:from-orange-600 hover:to-red-700 transition-all duration-300 transform hover:scale-105">
-                  Transform Sales Intelligence
+                <button className="px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-2xl font-semibold hover:shadow-2xl hover:shadow-orange-500/25 transition-all duration-300">
+                  Boost Sales Performance
                 </button>
-                <button className="px-8 py-4 border-2 border-orange-400 text-orange-400 font-semibold rounded-xl hover:bg-orange-400 hover:text-black transition-all duration-300">
-                  Learn More
+                <button className="px-8 py-4 border border-orange-500/30 text-orange-300 rounded-2xl hover:bg-orange-500/10 transition-all duration-300">
+                  View Demo
                 </button>
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
 
         {/* Features Grid */}
         <section className="py-20 px-4">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Revolutionary AI Sales Intelligence Features
+                AI Sales Intelligence Features
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Our AI sales intelligence platform represents the pinnacle of intelligent sales optimization, 
-                combining advanced AI with deep understanding of sales processes and customer behavior patterns.
+                Advanced AI capabilities that revolutionize sales performance and revenue growth
               </p>
-            </div>
+            </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  icon: <Brain className="w-8 h-8" />,
-                  title: "Intelligent Lead Scoring",
-                  description: "AI-powered lead scoring that identifies high-value prospects with precision accuracy.",
-                  color: "from-orange-500 to-red-500"
-                },
-                {
-                  icon: <TrendingUp className="w-8 h-8" />,
+                  icon: <Brain className="w-8 h-8 text-orange-400" />,
                   title: "Predictive Analytics",
-                  description: "Advanced analytics that predict sales outcomes and identify growth opportunities.",
-                  color: "from-blue-500 to-cyan-500"
+                  description: "AI that predicts sales outcomes and identifies winning opportunities"
                 },
                 {
-                  icon: <TargetIcon className="w-8 h-8" />,
-                  title: "Sales Process Optimization",
-                  description: "AI-driven optimization of sales processes for maximum efficiency and conversion.",
-                  color: "from-purple-500 to-pink-500"
+                  icon: <Target className="w-8 h-8 text-red-400" />,
+                  title: "Lead Scoring",
+                  description: "Intelligent lead prioritization based on conversion probability"
                 },
                 {
-                  icon: <BarChart3 className="w-8 h-8" />,
-                  title: "Performance Analytics",
-                  description: "Comprehensive performance tracking and analysis for sales teams and individuals.",
-                  color: "from-green-500 to-emerald-500"
+                  icon: <Users className="w-8 h-8 text-yellow-400" />,
+                  title: "Customer Insights",
+                  description: "Deep understanding of customer behavior and preferences"
                 },
                 {
-                  icon: <Lightbulb className="w-8 h-8" />,
-                  title: "Intelligent Insights",
-                  description: "AI-generated insights that guide sales strategies and decision-making.",
-                  color: "from-yellow-500 to-orange-500"
-                },
-                {
-                  icon: <DollarSign className="w-8 h-8" />,
+                  icon: <TrendingUp className="w-8 h-8 text-emerald-400" />,
                   title: "Revenue Optimization",
-                  description: "Data-driven strategies to maximize revenue and improve sales performance.",
-                  color: "from-indigo-500 to-purple-500"
+                  description: "Maximize revenue through intelligent pricing and strategy"
+                },
+                {
+                  icon: <Shield className="w-8 h-8 text-blue-400" />,
+                  title: "Risk Assessment",
+                  description: "Identify and mitigate sales risks before they impact results"
+                },
+                {
+                  icon: <Globe className="w-8 h-8 text-purple-400" />,
+                  title: "Market Intelligence",
+                  description: "Real-time market analysis and competitive insights"
                 }
               ].map((feature, index) => (
-                <div key={index} className="group p-8 bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 rounded-2xl hover:border-orange-500/50 transition-all duration-300 hover:transform hover:scale-105">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${feature.color} p-4 mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-4">{feature.title}</h3>
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="p-6 bg-black/40 border border-orange-500/20 rounded-2xl hover:border-orange-500/40 transition-all duration-300"
+                >
+                  <div className="mb-4">{feature.icon}</div>
+                  <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
                   <p className="text-gray-400">{feature.description}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Benefits Section */}
-        <section className="py-20 px-4 bg-gradient-to-r from-orange-500/5 to-red-500/5">
+        {/* Sales Benefits */}
+        <section className="py-20 px-4">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Why Choose AI Sales Intelligence?
+                Sales Performance Benefits
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Transform your sales operations with AI that provides intelligent insights and optimization strategies.
+                Transform your sales organization with AI-powered intelligence and insights
               </p>
-            </div>
+            </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
                 {
-                  icon: <CheckCircle className="w-8 h-8" />,
                   title: "Increased Revenue",
-                  description: "Higher sales revenue through intelligent lead scoring and process optimization.",
-                  color: "from-orange-500 to-red-500"
+                  description: "Boost sales performance and revenue through intelligent insights",
+                  icon: <TrendingUp className="w-12 h-12 text-orange-400" />
                 },
                 {
-                  icon: <TrendingUp className="w-8 h-8" />,
-                  title: "Improved Conversion",
-                  description: "Better conversion rates through data-driven sales strategies and insights.",
-                  color: "from-blue-500 to-cyan-500"
+                  title: "Better Lead Quality",
+                  description: "Focus on high-probability opportunities that convert",
+                  icon: <Target className="w-12 h-12 text-red-400" />
                 },
                 {
-                  icon: <Award className="w-8 h-8" />,
-                  title: "Sales Efficiency",
-                  description: "Enhanced sales efficiency through AI-powered automation and optimization.",
-                  color: "from-purple-500 to-pink-500"
+                  title: "Faster Sales Cycles",
+                  description: "Accelerate deals with predictive insights and automation",
+                  icon: <Zap className="w-12 h-12 text-yellow-400" />
+                },
+                {
+                  title: "Improved Forecasting",
+                  description: "Accurate sales predictions and pipeline management",
+                  icon: <CheckCircle className="w-12 h-12 text-emerald-400" />
                 }
               ].map((benefit, index) => (
-                <div key={index} className="text-center p-6">
-                  <div className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${benefit.color} p-5 mx-auto mb-6`}>
-                    {benefit.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-4">{benefit.title}</h3>
-                  <p className="text-gray-400">{benefit.description}</p>
-                </div>
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="p-8 bg-black/40 border border-orange-500/20 rounded-2xl hover:border-orange-500/40 transition-all duration-300"
+                >
+                  <div className="mb-6">{benefit.icon}</div>
+                  <h3 className="text-2xl font-semibold text-white mb-4">{benefit.title}</h3>
+                  <p className="text-gray-400 text-lg">{benefit.description}</p>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -150,23 +162,26 @@ export default function AISalesIntelligence2041() {
         {/* CTA Section */}
         <section className="py-20 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Transform Sales Intelligence?
-            </h2>
-            <p className="text-xl text-gray-400 mb-8">
-              Join the future of AI-powered sales intelligence and maximize your revenue potential.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-gradient-to-r from-orange-500 to-red-600 text-white font-semibold rounded-xl hover:from-orange-600 hover:to-red-700 transition-all duration-300 transform hover:scale-105">
-                Start Sales AI Today
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to Transform Sales?
+              </h2>
+              <p className="text-xl text-gray-400 mb-8">
+                Deploy AI-powered sales intelligence that drives real revenue growth
+              </p>
+              <button className="px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-2xl font-semibold hover:shadow-2xl hover:shadow-orange-500/25 transition-all duration-300">
+                Get Started
               </button>
-              <button className="px-8 py-4 border-2 border-orange-400 text-orange-400 font-semibold rounded-xl hover:bg-orange-400 hover:text-black transition-all duration-300">
-                Schedule Demo
-              </button>
-            </div>
+            </motion.div>
           </div>
         </section>
       </div>
     </Layout>
   );
-}
+};
+
+export default AISalesIntelligence2041;

@@ -1,147 +1,159 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
-import { Brain, Sparkles, Zap, Target, Users, Award, Clock, CheckCircle, Building, Shield, TrendingUp, BarChart3, Globe, Lock } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Building, Shield, Users, Globe, Zap, Cpu, CheckCircle, Star, Lock, Target } from 'lucide-react';
 
-export default function GovernmentTechnologySolutions() {
+const GovernmentTechnologySolutions: React.FC = () => {
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+      <div className="min-h-screen bg-gradient-to-br from-black via-blue-900/20 to-indigo-900/20">
         {/* Hero Section */}
-        <section className="relative py-20 px-4 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-500/10 via-gray-500/10 to-slate-500/10"></div>
-          <div className="relative z-10 max-w-7xl mx-auto text-center">
-            <div className="mb-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-slate-500/20 to-gray-500/20 border border-slate-500/30 rounded-full text-slate-300 text-sm mb-6">
-                <Sparkles className="w-4 h-4" />
-                Revolutionary Government Technology
+        <section className="relative py-20 px-4">
+          <div className="max-w-7xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 border border-blue-500/30 rounded-full text-blue-300 text-sm mb-6">
+                <Building className="w-4 h-4" />
+                Government Technology Solutions
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-slate-400 via-gray-400 to-slate-400 bg-clip-text text-transparent">
-                  Government Technology Solutions
-                </span>
-                <br />
-                <span className="text-white">Powered by AI & Quantum Technology</span>
+              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent mb-6">
+                Government Technology Solutions
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
-                Experience the future of government with revolutionary AI and quantum technology that provides 
-                advanced security, intelligent automation, and next-generation public services.
+                Revolutionary AI-powered technology solutions that transform government operations and citizen services
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-gradient-to-r from-slate-500 to-gray-600 text-white font-semibold rounded-xl hover:from-slate-600 hover:to-gray-700 transition-all duration-300 transform hover:scale-105">
+                <button className="px-8 py-4 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-2xl font-semibold hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300">
                   Transform Government
                 </button>
-                <button className="px-8 py-4 border-2 border-slate-400 text-slate-400 font-semibold rounded-xl hover:bg-slate-400 hover:text-black transition-all duration-300">
-                  Learn More
+                <button className="px-8 py-4 border border-blue-500/30 text-blue-300 rounded-2xl hover:bg-blue-500/10 transition-all duration-300">
+                  View Solutions
                 </button>
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
 
         {/* Features Grid */}
         <section className="py-20 px-4">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Revolutionary Government Technology Features
+                Government Technology Features
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Our government technology platform represents the pinnacle of public sector innovation, 
-                combining advanced AI with quantum computing and cutting-edge government analytics.
+                Advanced AI capabilities that revolutionize government operations and citizen services
               </p>
-            </div>
+            </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  icon: <Brain className="w-8 h-8" />,
-                  title: "AI-Powered Analytics",
-                  description: "Advanced AI algorithms for comprehensive government analytics and insights.",
-                  color: "from-slate-500 to-gray-500"
-                },
-                {
-                  icon: <Building className="w-8 h-8" />,
-                  title: "Smart Infrastructure",
-                  description: "Intelligent infrastructure management optimized through AI and quantum computing.",
-                  color: "from-blue-500 to-cyan-500"
-                },
-                {
-                  icon: <Shield className="w-8 h-8" />,
-                  title: "National Security",
-                  description: "Advanced security protocols for government systems and data protection.",
-                  color: "from-purple-500 to-pink-500"
-                },
-                {
-                  icon: <Globe className="w-8 h-8" />,
-                  title: "Digital Services",
-                  description: "Modernized digital services for improved citizen experience.",
-                  color: "from-green-500 to-emerald-500"
-                },
-                {
-                  icon: <Lock className="w-8 h-8" />,
+                  icon: <Shield className="w-8 h-8 text-blue-400" />,
                   title: "Cybersecurity",
-                  description: "Quantum-enhanced cybersecurity for government networks and systems.",
-                  color: "from-yellow-500 to-orange-500"
+                  description: "Advanced government-grade security and threat protection"
                 },
                 {
-                  icon: <TrendingUp className="w-8 h-8" />,
-                  title: "Operational Efficiency",
-                  description: "AI-driven optimization of government operations and services.",
-                  color: "from-indigo-500 to-purple-500"
+                  icon: <Users className="w-8 h-8 text-indigo-400" />,
+                  title: "Citizen Services",
+                  description: "AI-powered citizen engagement and service delivery"
+                },
+                {
+                  icon: <Building className="w-8 h-8 text-purple-400" />,
+                  title: "Infrastructure Management",
+                  description: "Intelligent management of government infrastructure"
+                },
+                {
+                  icon: <Globe className="w-8 h-8 text-cyan-400" />,
+                  title: "Digital Transformation",
+                  description: "Complete digital transformation of government operations"
+                },
+                {
+                  icon: <Zap className="w-8 h-8 text-emerald-400" />,
+                  title: "Process Automation",
+                  description: "Automated government processes and workflows"
+                },
+                {
+                  icon: <Lock className="w-8 h-8 text-orange-400" />,
+                  title: "Compliance",
+                  description: "Regulatory compliance and governance systems"
                 }
               ].map((feature, index) => (
-                <div key={index} className="group p-8 bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 rounded-2xl hover:border-slate-500/50 transition-all duration-300 hover:transform hover:scale-105">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${feature.color} p-4 mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-4">{feature.title}</h3>
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="p-6 bg-black/40 border border-blue-500/20 rounded-2xl hover:border-blue-500/40 transition-all duration-300"
+                >
+                  <div className="mb-4">{feature.icon}</div>
+                  <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
                   <p className="text-gray-400">{feature.description}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Benefits Section */}
-        <section className="py-20 px-4 bg-gradient-to-r from-slate-500/5 to-gray-500/5">
+        {/* Government Benefits */}
+        <section className="py-20 px-4">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Why Choose AI Government Technology?
+                Government Benefits
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Transform government operations with technology that improves efficiency and enhances public services.
+                Transform government operations with AI-powered solutions
               </p>
-            </div>
+            </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {[
                 {
-                  icon: <CheckCircle className="w-8 h-8" />,
+                  title: "Improved Efficiency",
+                  description: "Streamlined government operations and reduced costs",
+                  icon: <Zap className="w-12 h-12 text-blue-400" />
+                },
+                {
+                  title: "Better Citizen Services",
+                  description: "Enhanced citizen engagement and service delivery",
+                  icon: <Users className="w-12 h-12 text-indigo-400" />
+                },
+                {
                   title: "Enhanced Security",
-                  description: "Improved national security through AI-powered threat detection.",
-                  color: "from-slate-500 to-gray-500"
+                  description: "Advanced cybersecurity and threat protection",
+                  icon: <Shield className="w-12 h-12 text-purple-400" />
                 },
                 {
-                  icon: <TrendingUp className="w-8 h-8" />,
-                  title: "Operational Efficiency",
-                  description: "Streamlined government operations through AI automation.",
-                  color: "from-blue-500 to-cyan-500"
-                },
-                {
-                  icon: <Award className="w-8 h-8" />,
-                  title: "Citizen Experience",
-                  description: "Enhanced public services and improved citizen satisfaction.",
-                  color: "from-purple-500 to-pink-500"
+                  title: "Data Insights",
+                  description: "Better decision-making through AI-powered analytics",
+                  icon: <Target className="w-12 h-12 text-cyan-400" />
                 }
               ].map((benefit, index) => (
-                <div key={index} className="text-center p-6">
-                  <div className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${benefit.color} p-5 mx-auto mb-6`}>
-                    {benefit.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-4">{benefit.title}</h3>
-                  <p className="text-gray-400">{benefit.description}</p>
-                </div>
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="p-8 bg-black/40 border border-blue-500/20 rounded-2xl hover:border-blue-500/40 transition-all duration-300"
+                >
+                  <div className="mb-6">{benefit.icon}</div>
+                  <h3 className="text-2xl font-semibold text-white mb-4">{benefit.title}</h3>
+                  <p className="text-gray-400 text-lg">{benefit.description}</p>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -150,23 +162,26 @@ export default function GovernmentTechnologySolutions() {
         {/* CTA Section */}
         <section className="py-20 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Transform Government?
-            </h2>
-            <p className="text-xl text-gray-400 mb-8">
-              Join the future of AI-powered government and create efficient, secure public services.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-gradient-to-r from-slate-500 to-gray-600 text-white font-semibold rounded-xl hover:from-slate-600 hover:to-gray-700 transition-all duration-300 transform hover:scale-105">
-                Start Government AI Today
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to Transform Government?
+              </h2>
+              <p className="text-xl text-gray-400 mb-8">
+                Deploy AI-powered government solutions that improve operations
+              </p>
+              <button className="px-8 py-4 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-2xl font-semibold hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300">
+                Get Started
               </button>
-              <button className="px-8 py-4 border-2 border-slate-400 text-slate-400 font-semibold rounded-xl hover:bg-slate-400 hover:text-black transition-all duration-300">
-                Schedule Demo
-              </button>
-            </div>
+            </motion.div>
           </div>
         </section>
       </div>
     </Layout>
   );
-}
+};
+
+export default GovernmentTechnologySolutions;
