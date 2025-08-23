@@ -62,15 +62,43 @@ export default function Layout({ children }: LayoutProps) {
   }, [sidebarOpen]);
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
-      <ServiceWorkerRegistration />
-      <UltraFuturisticNavigation2040 />
-      <main className="relative z-10">
-        {children}
-      </main>
-      <UltraAdvancedFuturisticFooter2025 />
-      <AccessibilityEnhancer showPanel={true} autoOptimize={true} />
-      <PerformanceOptimizer showMetrics={true} autoOptimize={true} />
+    <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
+      {/* Skip to content link for accessibility */}
+      <a href="#main" className="skip-link">Skip to main content</a>
+      
+      {/* Futuristic Background */}
+      <UltraFuturisticBackground2036 />
+      
+      {/* Layout Structure */}
+      <div className="relative z-10">
+        {/* Top Contact Bar */}
+        <TopContactBar />
+        
+        {/* Navigation */}
+        <UltraFuturisticNavigation2040 />
+        
+        {/* Sidebar and Main Content */}
+        <div className="flex">
+          <EnhancedSidebar2025 
+            isOpen={sidebarOpen} 
+            onClose={() => setSidebarOpen(false)} 
+          />
+          
+          <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
+            {children}
+          </main>
+        </div>
+        
+        {/* Footer */}
+        <UltraFuturisticFooter2040 />
+      </div>
+
+      {/* Accessibility and Performance Tools */}
+      <AccessibilityEnhancer />
+      <PerformanceMonitor />
+      
+      {/* Cookie Consent Banner */}
+      <CookieConsentBanner />
     </div>
   );
 };
