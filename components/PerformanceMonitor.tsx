@@ -38,6 +38,12 @@ interface LayoutShiftEntry extends PerformanceEntry {
   hadRecentInput: boolean;
 }
 
+interface PerformanceResourceTiming extends PerformanceEntry {
+  initiatorType: string;
+  duration: number;
+  name: string;
+}
+
 const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
   showUI = false,
   autoHide = true,
