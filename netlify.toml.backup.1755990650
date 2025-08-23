@@ -259,6 +259,94 @@
   schedule = "*/15 * * * *" # every 15 minutes
 
 [[scheduled.functions]]
+<<<<<<< HEAD
+  name = "internal-link-optimizer"
+  schedule = "*/7 * * * *" # every 7 minutes
+
+[[scheduled.functions]]
+  name = "revenue-ideas-orchestrator"
+  schedule = "13 */2 * * *" # every 2 hours at :13
+
+[[scheduled.functions]]
+  name = "internal-redirect-healer"
+  schedule = "*/15 * * * *"
+
+# Newly added autonomous scanners
+[[scheduled.functions]]
+  name = "a11y-audit-runner"
+  schedule = "17 */6 * * *" # every 6 hours, offset to avoid thundering herd
+
+[[scheduled.functions]]
+  name = "license-compliance-runner"
+  schedule = "29 */12 * * *" # every 12 hours
+
+[[scheduled.functions]]
+  name = "secrets-leak-scanner-runner"
+  schedule = "7 * * * *" # every hour
+
+[[scheduled.functions]]
+  name = "ux-heuristics-runner"
+  schedule = "*/15 * * * *" # every 15 minutes
+
+# Fresh autonomous audits
+[[scheduled.functions]]
+  name = "internal-link-graph-runner"
+  schedule = "7 */6 * * *"
+
+[[scheduled.functions]]
+  name = "anchor-integrity-runner"
+  schedule = "17 */6 * * *"
+
+[[scheduled.functions]]
+  name = "netlify-auto-healer-runner"
+  schedule = "*/20 * * * *"
+
+# Intelligent cloud automations
+[[scheduled.functions]]
+  name = "innovation-lab-pro"
+  schedule = "*/10 * * * *"
+
+[[scheduled.functions]]
+  name = "auto-discovery-runner"
+  schedule = "*/30 * * * *" # every 30 minutes
+
+[[scheduled.functions]]
+  name = "autonomous-invention-orchestrator"
+  schedule = "*/10 * * * *" # every 10 minutes
+
+[[scheduled.functions]]
+  name = "broken-image-scanner"
+  schedule = "0 */6 * * *"
+
+[[scheduled.functions]]
+  name = "auto-scheduler"
+  schedule = "*/15 * * * *" # every 15 minutes
+
+# Newly added autonomous runners
+[[scheduled.functions]]
+  name = "seo-audit-runner"
+  schedule = "0 */6 * * *"
+
+[[scheduled.functions]]
+  name = "ai-trends-radar-runner"
+  schedule = "0 * * * *"
+
+[[scheduled.functions]]
+  name = "deps-auto-upgrade-runner"
+  schedule = "7 */12 * * *"
+
+[[scheduled.functions]]
+  name = "og-meta-auditor"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+  name = "unused-media-report"
+  schedule = "13 */6 * * *"
+
+[[scheduled.functions]]
+  name = "orphan-page-finder"
+  schedule = "41 */6 * * *"
+=======
   name = "autonomous-ad-factory"
   schedule = "*/10 * * * *" # every 10 minutes
 
@@ -273,3 +361,4 @@
 [[scheduled.functions]]
   name = "continuous-cloud-refiner"
   schedule = "*/5 * * * *" # every 5 minutes
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-55b6
