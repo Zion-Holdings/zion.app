@@ -1,19 +1,28 @@
 [build]
-  command = "npm ci && npm run build"
-  publish = ".next"
+  command = "npm ci && npm run export"
+  publish = "out"
 
 [build.environment]
   NODE_VERSION = "20"
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
+  # When triggering chained builds via build hook, set NETLIFY_RERUN_CHAIN=1 in the hook payload/env
 
 [functions]
   directory = "netlify/functions"
   node_bundler = "esbuild"
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
 
 [[plugins]]
   package = "netlify-plugin-cloudinary"
+
+[[plugins]]
+  package = "./netlify/plugins/run-functions-and-rerun"
+  [plugins.inputs]
+    # Optional: comma-separated includes/excludes
+    include = ""
+    exclude = ""
+    concurrency = 6
+    timeoutMs = 180000
 
 # Scheduled Functions (new automations replacing some GitHub Actions cadence)
 [[scheduled.functions]]
@@ -73,6 +82,10 @@
   schedule = "*/1 * * * *" # every minute
 
 [[scheduled.functions]]
+  name = "trigger-all-and-commit"
+  schedule = "*/1 * * * *" # every minute
+
+[[scheduled.functions]]
   name = "front-maximizer"
   schedule = "*/5 * * * *" # every 5 minutes
 
@@ -83,10 +96,6 @@
 [[scheduled.functions]]
   name = "readme-advertiser"
   schedule = "13 */6 * * *" # every 6 hours
-
-[[scheduled.functions]]
-  name = "front-index-orchestrator"
-  schedule = "*/5 * * * *" # every 5 minutes
 
 [[scheduled.functions]]
   name = "front-ads-promoter"
@@ -106,13 +115,116 @@
   schedule = "*/1 * * * *" # every minute
 
 [[scheduled.functions]]
-  name = "ai-trends-radar"
-  schedule = "*/30 * * * *"
+  name = "dead-code-report"
+  schedule = "7 */6 * * *"
 
 [[scheduled.functions]]
-  name = "seo-audit"
+  name = "security-audit-runner"
+  schedule = "19 */6 * * *"
+
+[[scheduled.functions]]
+  name = "docs-index-runner"
+  schedule = "11 */4 * * *"
+
+[[scheduled.functions]]
+  name = "repo-knowledge-graph-runner"
+  schedule = "23 */6 * * *"
+
+[[scheduled.functions]]
+  name = "image-optimizer-runner"
+  schedule = "29 */6 * * *"
+
+[[scheduled.functions]]
+  name = "ai-changelog-runner"
+  schedule = "41 */6 * * *"
+
+[[scheduled.functions]]
+  name = "newsroom-runner"
+  schedule = "37 */6 * * *"
+
+[[scheduled.functions]]
+  name = "todo-scanner-runner"
+  schedule = "13 */6 * * *"
+
+[[scheduled.functions]]
+  name = "broken-image-scanner-runner"
   schedule = "17 */6 * * *"
 
 [[scheduled.functions]]
-  name = "newsroom-scheduler"
+  name = "external-link-check-runner"
+  schedule = "31 */6 * * *"
+
+[[scheduled.functions]]
+  name = "repo-radar-runner"
+  schedule = "43 */6 * * *"
+
+[[scheduled.functions]]
+  name = "og-image-update-runner"
+  schedule = "47 */6 * * *"
+
+[[scheduled.functions]]
+  name = "docs-search-index-runner"
+  schedule = "53 */6 * * *"
+
+[[scheduled.functions]]
+  name = "redirect-manager"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+  name = "a11y-audit-runner"
+  schedule = "*/20 * * * *"
+
+[[scheduled.functions]]
+  name = "todo-summary-runner"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+  name = "netlify-auto-healer-runner"
+  schedule = "*/20 * * * *"
+
+# New intelligent cloud automations
+[[scheduled.functions]]
+  name = "innovation-lab"
+  schedule = "*/10 * * * *" # every 10 minutes
+
+[[scheduled.functions]]
+  name = "broken-image-scanner"
+  schedule = "0 */6 * * *" # every 6 hours
+
+[[scheduled.functions]]
+  name = "auto-scheduler"
+  schedule = "*/15 * * * *" # every 15 minutes
+
+# From main (keep)
+[[scheduled.functions]]
+  name = "autonomous-innovation-generator"
+  schedule = "*/2 * * * *" # every 2 minutes
+
+[[scheduled.functions]]
+  name = "seo-audit-runner"
+  schedule = "17 */6 * * *"
+
+[[scheduled.functions]]
+  name = "ai-trends-radar-runner"
   schedule = "0 * * * *"
+
+[[scheduled.functions]]
+  name = "website-search-index-runner"
+  schedule = "29 */4 * * *"
+
+# From feature branch (keep)
+[[scheduled.functions]]
+  name = "automation-guardian-runner"
+  schedule = "*/10 * * * *" # every 10 minutes
+
+[[scheduled.functions]]
+  name = "auto-discovery-runner"
+  schedule = "*/30 * * * *" # every 30 minutes
+
+[[scheduled.functions]]
+  name = "cloud-autonomous-orchestrator-runner"
+  schedule = "*/15 * * * *" # every 15 minutes
+
+[[scheduled.functions]]
+  name = "branch-cleanup-runner"
+  schedule = "0 3 * * *" # daily at 03:00 UTC
