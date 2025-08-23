@@ -12,7 +12,12 @@ import {
   Clock,
   MessageCircle,
   Calculator,
-  Play
+  Play,
+  Users,
+  Brain,
+  Atom,
+  Rocket,
+  Zap
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -98,7 +103,7 @@ const navigationItems: NavigationItem[] = [
   },
   {
     name: 'Showcase & Pricing',
-    href: '/comprehensive-services-showcase-2025',
+    href: '/comprehensive-2025-services-showcase',
     icon: <Star className="w-5 h-5" />,
     description: 'Services portfolio & pricing',
     badge: 'Showcase',
@@ -107,7 +112,7 @@ const navigationItems: NavigationItem[] = [
     children: [
       { 
         name: 'Services Showcase', 
-        href: '/comprehensive-services-showcase-2025', 
+        href: '/comprehensive-2025-services-showcase', 
         description: 'Complete services overview',
         icon: <Calculator className="w-4 h-4" />,
         featured: true
@@ -138,6 +143,12 @@ const navigationItems: NavigationItem[] = [
         href: '/about', 
         description: 'Company information',
         icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'Leadership Team', 
+        href: '/leadership', 
+        description: 'Executive team',
+        icon: <Users className="w-4 h-4" />
       },
       { 
         name: 'Contact', 
@@ -201,6 +212,18 @@ const navigationItems: NavigationItem[] = [
         href: '/training', 
         description: 'Learning resources',
         icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'Events & Webinars', 
+        href: '/events', 
+        description: 'Upcoming events and webinars',
+        icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'Community', 
+        href: '/community', 
+        description: 'Join our community',
+        icon: <Play className="w-4 h-4" />
       }
     ]
   },
@@ -240,6 +263,45 @@ const navigationItems: NavigationItem[] = [
         href: '/government-technology-solutions', 
         description: 'Government technology solutions',
         icon: <Play className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Innovation & Research',
+    href: '/research-development',
+    icon: <Brain className="w-5 h-5" />,
+    description: 'Breakthrough research & innovation',
+    category: 'innovation',
+    children: [
+      { 
+        name: 'Research & Development', 
+        href: '/research-development', 
+        description: 'Our research initiatives',
+        icon: <Brain className="w-4 h-4" />
+      },
+      { 
+        name: 'AI Consciousness', 
+        href: '/ai-consciousness-evolution-2029', 
+        description: 'AI consciousness research',
+        icon: <Brain className="w-4 h-4" />
+      },
+      { 
+        name: 'Quantum Research', 
+        href: '/quantum-services', 
+        description: 'Quantum computing research',
+        icon: <Atom className="w-4 h-4" />
+      },
+      { 
+        name: 'Space Technology', 
+        href: '/space-technology', 
+        description: 'Space exploration research',
+        icon: <Rocket className="w-4 h-4" />
+      },
+      { 
+        name: 'Emerging Tech', 
+        href: '/emerging-tech', 
+        description: 'Future technology research',
+        icon: <Zap className="w-4 h-4" />
       }
     ]
   }

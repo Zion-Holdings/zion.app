@@ -165,7 +165,7 @@ const sidebarSections = [
 
 const quickLinks = [
   { name: 'Home', href: '/', icon: <Home className="w-4 h-4" /> },
-  { name: 'All Services', href: '/comprehensive-services-showcase-2025', icon: <Star className="w-4 h-4" /> },
+  { name: 'All Services', href: '/comprehensive-2025-services-showcase', icon: <Star className="w-4 h-4" /> },
   { name: 'Pricing', href: '/pricing', icon: <DollarSign className="w-4 h-4" /> },
   { name: 'Market Pricing', href: '/market-pricing', icon: <DollarSign className="w-4 h-4" /> },
   { name: 'Services Advertising', href: '/services-advertising', icon: <BookOpen className="w-4 h-4" /> },
@@ -182,6 +182,7 @@ const quickLinks = [
 
 const companyLinks = [
   { name: 'About Us', href: '/about', description: 'Our mission and vision' },
+  { name: 'Leadership Team', href: '/leadership', description: 'Executive team' },
   { name: 'Careers', href: '/careers', description: 'Join our team' },
   { name: 'News & Updates', href: '/news', description: 'Latest company news' },
   { name: 'Case Studies', href: '/case-studies', description: 'Success stories' },
