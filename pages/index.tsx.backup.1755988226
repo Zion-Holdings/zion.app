@@ -10,11 +10,18 @@ const HomePage: React.FC = () => {
   return (
     <ErrorBoundary>
       <SEOOptimizer />
+<<<<<<< HEAD
+      <Analytics showUI={true} autoRefresh={true} refreshInterval={60000} />
+      <AccessibilityEnhancer>
+        <Homepage2045 />
+        <PerformanceMonitor showUI={true} />
+=======
       <Analytics />
       <Homepage2045 />
       <PerformanceMonitor showUI={true} />
       <AccessibilityEnhancer>
         <div></div>
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-4e84
       </AccessibilityEnhancer>
     </ErrorBoundary>
   );
