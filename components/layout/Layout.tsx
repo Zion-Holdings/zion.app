@@ -3,9 +3,9 @@ import Head from 'next/head';
 import UltraFuturisticNavigation2046 from './UltraFuturisticNavigation2046';
 import UltraFuturisticFooter2046 from './UltraFuturisticFooter2046';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
+import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
 import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
-import EnhancedAccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
+import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
 import TopContactBar from './TopContactBar';
 
@@ -152,7 +152,7 @@ export default function Layout({
         )}
         
         {/* Futuristic Background */}
-        <UltraFuturisticBackground2036 />
+        <UltraFuturisticBackground2045 />
         
         {/* Layout Structure */}
         <div className="relative z-10">
@@ -180,7 +180,7 @@ export default function Layout({
       </div>
 
       {/* Accessibility and Performance Tools */}
-      <EnhancedAccessibilityEnhancer />
+      <AccessibilityEnhancer />
       <EnhancedPerformanceMonitor />
       
       {/* Cookie Consent Banner */}
