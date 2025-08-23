@@ -28,6 +28,36 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+<<<<<<< HEAD
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Workflow Health Monitor
+        run: node automation/workflow-health-monitor.cjs
+
+      - name: Fix YAML Issues
+        run: node automation/fix-workflow-yaml.cjs
+
+      - name: Fix Structural Issues
+        run: python3 comprehensive-workflow-fixer.py
+
+      - name: Validate All Workflows
+        run: |
+          echo "🔍 Validating all workflow files..."
+          for file in .github/workflows/*.yml; do
+            echo "Validating $file..."
+            python3 -c "import yaml; yaml.safe_load(open('$file'))" && echo "✅ $file is valid" || echo "❌ $file has errors"
+          done
+
+      - name: Create Auto-Heal Report
+=======
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
@@ -62,6 +92,7 @@ PY
             echo "All workflows are valid"
           fi
       - name: Report workflow status
+>>>>>>> origin/cursor/check-and-fix-github-actions-workflows-47e9
         run: |
           echo "📊 Auto-Heal Report" > auto-heal-report.md
           echo "===================" >> auto-heal-report.md
