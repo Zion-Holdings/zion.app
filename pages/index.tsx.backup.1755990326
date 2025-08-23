@@ -5,9 +5,24 @@ import EnhancedErrorBoundary from '../components/EnhancedErrorBoundary';
 
 export default function Home() {
   return (
+<<<<<<< HEAD
+    <>
+      <SEO 
+        title="Zion Tech Group - Revolutionary AI, Quantum Computing & Space Technology Solutions"
+        description="Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide. Leading-edge services in AI, cybersecurity, space tech, and quantum solutions."
+        keywords="AI, artificial intelligence, quantum computing, space technology, cybersecurity, machine learning, automation, Zion Tech Group, technology solutions, enterprise software, cloud computing, blockchain, IoT, robotics"
+        type="website"
+        url="https://ziontechgroup.com"
+      />
+      <ErrorBoundary>
+        <Homepage2044 />
+      </ErrorBoundary>
+    </>
+=======
     <EnhancedErrorBoundary>
       <Homepage2044 />
     </EnhancedErrorBoundary>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a647
   );
 };
 
