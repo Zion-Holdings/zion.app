@@ -74,8 +74,10 @@ import { innovative2025EnterpriseSolutions } from '../../data/innovative-2025-en
 interface Service {
   id?: string;
   name: string;
+  tagline?: string;
   description: string;
   price?: string;
+  period?: string;
   pricing?: {
     starter?: { price: string; period?: string };
     monthly?: string;
@@ -84,6 +86,8 @@ interface Service {
   category: string;
   popular?: boolean;
   launchDate?: string;
+  features?: string[];
+  icon?: string;
   [key: string]: unknown;
 }
 
@@ -285,7 +289,7 @@ export default function ServicesIndexPage() {
                   {featuredServices.map((service: Service, index: number) => (
                     <UltraFuturisticServiceCard2026
                       key={`${service.id || service.name}-${index}`}
-                      service={service}
+                      service={service as any}
                       variant="quantum"
                       theme="quantum"
                     />
@@ -304,7 +308,7 @@ export default function ServicesIndexPage() {
                   {latestServices.map((service: Service, index: number) => (
                     <UltraFuturisticServiceCard2026
                       key={`${service.id || service.name}-${index}`}
-                      service={service}
+                      service={service as any}
                       variant="ai"
                       theme="neon"
                     />
@@ -355,7 +359,7 @@ export default function ServicesIndexPage() {
                         {categoryServices.slice(0, 6).map((service: Service, index: number) => (
                           <UltraFuturisticServiceCard2026
                             key={`${service.id || service.name}-${index}`}
-                            service={service}
+                            service={service as any}
                             variant="default"
                             theme="cyber"
                           />
@@ -443,7 +447,7 @@ export default function ServicesIndexPage() {
                 {featuredServices.map((service: Service, index: number) => (
                   <UltraFuturisticServiceCard2026
                     key={`${service.id || service.name}-${index}`}
-                    service={service}
+                    service={service as any}
                     variant="quantum"
                     theme="quantum"
                   />
@@ -462,7 +466,7 @@ export default function ServicesIndexPage() {
                 {latestServices.map((service: Service, index: number) => (
                   <UltraFuturisticServiceCard2026
                     key={`${service.id || service.name}-${index}`}
-                    service={service}
+                    service={service as any}
                     variant="ai"
                     theme="neon"
                   />
@@ -513,7 +517,7 @@ export default function ServicesIndexPage() {
                       {categoryServices.slice(0, 6).map((service: Service, index: number) => (
                         <UltraFuturisticServiceCard2026
                           key={`${service.id || service.name}-${index}`}
-                          service={service}
+                          service={service as any}
                           variant="default"
                           theme="cyber"
                         />

@@ -287,7 +287,10 @@ const UltraFuturisticFooter2040: React.FC = () => {
             <div className="space-y-2">
               <Link href="/services" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">All Services</Link>
               <Link href="/ai-services" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">AI Services</Link>
-              <Link href="/quantum-services" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">Quantum Services</Link>
+              <Link href="/quantum-computing" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">Quantum Computing</Link>
+              <Link href="/space-tech" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">Space Technology</Link>
+              <Link href="/cybersecurity" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">Cybersecurity</Link>
+              <Link href="/cloud-platform" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">Cloud Solutions</Link>
               <Link href="/it-services" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">IT Services</Link>
             </div>
           </div>
@@ -296,9 +299,10 @@ const UltraFuturisticFooter2040: React.FC = () => {
             <h4 className="text-sm font-semibold text-gray-400 uppercase tracking-wider">Solutions</h4>
             <div className="space-y-2">
               <Link href="/solutions" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">Business Solutions</Link>
-              <Link href="/enterprise-solutions" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">Enterprise</Link>
-              <Link href="/emerging-tech" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">Emerging Tech</Link>
-              <Link href="/space-technology" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">Space Tech</Link>
+              <Link href="/enterprise-solutions-showcase" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">Enterprise Solutions</Link>
+              <Link href="/emerging-tech" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">Emerging Technology</Link>
+              <Link href="/micro-saas" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">Micro SaaS</Link>
+              <Link href="/innovative-2040-futuristic-services-showcase" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">2040 Services</Link>
             </div>
           </div>
 
@@ -309,6 +313,7 @@ const UltraFuturisticFooter2040: React.FC = () => {
               <Link href="/contact" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">Contact</Link>
               <Link href="/careers" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">Careers</Link>
               <Link href="/news" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">News</Link>
+              <Link href="/partners" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">Partners</Link>
             </div>
           </div>
 
@@ -316,9 +321,10 @@ const UltraFuturisticFooter2040: React.FC = () => {
             <h4 className="text-sm font-semibold text-gray-400 uppercase tracking-wider">Resources</h4>
             <div className="space-y-2">
               <Link href="/blog" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">Blog</Link>
-              <Link href="/whitepapers" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">Whitepapers</Link>
+              <Link href="/white-papers" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">Whitepapers</Link>
               <Link href="/webinars" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">Webinars</Link>
               <Link href="/support" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">Support</Link>
+              <Link href="/training" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">Training</Link>
             </div>
           </div>
         </motion.div>

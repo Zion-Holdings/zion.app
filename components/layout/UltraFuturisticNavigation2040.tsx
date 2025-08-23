@@ -4,7 +4,9 @@ import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, X, Search, ChevronDown, Zap, Globe, Lock, 
-  Phone, Mail, MapPin, ArrowRight, Star, Users, Award
+  Phone, Mail, MapPin, ArrowRight, Star, Users, Award,
+  Brain, Atom, Rocket, Shield, Target, Cpu, Database,
+  Building, BookOpenCheck, FileText, Video, MessageCircle
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -27,31 +29,25 @@ const navigationItems: NavigationItem[] = [
       {
         label: 'AI & Machine Learning',
         href: '/ai-services',
-        icon: <Star className="w-4 h-4" />,
+        icon: <Brain className="w-4 h-4" />,
         description: 'Advanced AI solutions for enterprise'
-      },
-      {
-        label: 'Innovative 2040 Services',
-        href: '/innovative-2040-futuristic-services-showcase',
-        icon: <Star className="w-4 h-4" />,
-        description: 'Cutting-edge futuristic technology solutions'
       },
       {
         label: 'Quantum Computing',
         href: '/quantum-computing',
-        icon: <Zap className="w-4 h-4" />,
+        icon: <Atom className="w-4 h-4" />,
         description: 'Next-generation quantum solutions'
       },
       {
         label: 'Space Technology',
         href: '/space-tech',
-        icon: <Star className="w-4 h-4" />,
+        icon: <Rocket className="w-4 h-4" />,
         description: 'Innovative space solutions'
       },
       {
         label: 'Cybersecurity',
         href: '/cybersecurity',
-        icon: <Lock className="w-4 h-4" />,
+        icon: <Shield className="w-4 h-4" />,
         description: 'Enterprise security solutions'
       },
       {
@@ -59,6 +55,18 @@ const navigationItems: NavigationItem[] = [
         href: '/cloud-platform',
         icon: <Globe className="w-4 h-4" />,
         description: 'Scalable cloud infrastructure'
+      },
+      {
+        label: 'IT Services',
+        href: '/it-services',
+        icon: <Cpu className="w-4 h-4" />,
+        description: 'Comprehensive IT solutions'
+      },
+      {
+        label: 'Innovative 2040 Services',
+        href: '/innovative-2040-futuristic-services-showcase',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Cutting-edge futuristic technology solutions'
       },
       {
         label: 'View All Services',
@@ -69,9 +77,91 @@ const navigationItems: NavigationItem[] = [
     ]
   },
   {
-    label: 'About',
-    href: '/about',
-    icon: <Users className="w-4 h-4" />
+    label: 'Solutions',
+    children: [
+      {
+        label: 'Business Solutions',
+        href: '/solutions',
+        icon: <Target className="w-4 h-4" />,
+        description: 'Enterprise transformation solutions'
+      },
+      {
+        label: 'Enterprise Solutions',
+        href: '/enterprise-solutions-showcase',
+        icon: <Building className="w-4 h-4" />,
+        description: 'Large-scale enterprise solutions'
+      },
+      {
+        label: 'Emerging Technology',
+        href: '/emerging-tech',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Cutting-edge technology solutions'
+      },
+      {
+        label: 'Micro SaaS',
+        href: '/micro-saas',
+        icon: <Database className="w-4 h-4" />,
+        description: 'Scalable SaaS solutions'
+      }
+    ]
+  },
+  {
+    label: 'Company',
+    children: [
+      {
+        label: 'About Us',
+        href: '/about',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Learn about Zion Tech Group'
+      },
+      {
+        label: 'Careers',
+        href: '/careers',
+        icon: <Award className="w-4 h-4" />,
+        description: 'Join our revolutionary team'
+      },
+      {
+        label: 'News',
+        href: '/news',
+        icon: <Globe className="w-4 h-4" />,
+        description: 'Latest company updates'
+      },
+      {
+        label: 'Partners',
+        href: '/partners',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Strategic partnerships'
+      }
+    ]
+  },
+  {
+    label: 'Resources',
+    children: [
+      {
+        label: 'Blog',
+        href: '/blog',
+        icon: <BookOpenCheck className="w-4 h-4" />,
+        description: 'Insights and analysis'
+      },
+      {
+        label: 'Whitepapers',
+        href: '/white-papers',
+        icon: <FileText className="w-4 h-4" />,
+        description: 'In-depth research papers'
+      },
+      {
+        label: 'Webinars',
+        href: '/webinars',
+        icon: <Video className="w-4 h-4" />,
+        description: 'Educational content'
+      },
+      {
+        label: 'Support',
+        href: '/support',
+        icon: <MessageCircle className="w-4 h-4" />,
+        description: 'Technical support and help'
+      }
+    ]
   },
   {
     label: 'Contact',
