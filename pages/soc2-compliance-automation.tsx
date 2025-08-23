@@ -8,7 +8,11 @@ export default function SOC2ComplianceAutomationPage() {
 
 	return (
 		<>
-			<SEO title={title} description={description} />
+			<SEO data={{
+			pageTitle: title,
+			pageDescription: description,
+			pageKeywords: ["SOC 2", "compliance", "automation", "audit", "security", "Zion Tech Group"]
+		}} />
 			<div className="relative isolate">
 				<section className="px-6 lg:px-10 pt-28 pb-16 md:pt-36 md:pb-24">
 					<div className="max-w-6xl mx-auto">

@@ -94,9 +94,11 @@ const Comprehensive2037ServicesShowcase: React.FC = () => {
   return (
     <Layout>
       <SEO 
-        title="Revolutionary 2037 Services Showcase | Zion Tech Group"
-        description="Discover our comprehensive suite of revolutionary 2037 technology services including AI consciousness, quantum computing, space technology, and autonomous systems."
-        keywords={["2037 services", "AI consciousness", "quantum computing", "space technology", "autonomous systems", "revolutionary technology"]}
+        data={{
+          pageTitle: "Revolutionary 2037 Services Showcase | Zion Tech Group",
+          pageDescription: "Discover our comprehensive suite of revolutionary 2037 technology services including AI consciousness, quantum computing, space technology, and autonomous systems.",
+          pageKeywords: ["2037 services", "AI consciousness", "quantum computing", "space technology", "autonomous systems", "revolutionary technology"]
+        }}
       />
       
       <main className="relative z-10 pt-8">
