@@ -2,6 +2,11 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Menu, X, Zap, Brain, Cloud, Shield, Rocket, Atom, Bot, Globe, BarChart3, Phone, Mail, MapPin, DollarSign } from 'lucide-react';
 
+<<<<<<< HEAD
+const NeoFuturisticNavigation: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+=======
 const navLinks: { name: string; href: string }[] = [
   { name: 'Home', href: '/' },
   { name: 'Services', href: '/services' },
@@ -17,6 +22,7 @@ const navLinks: { name: string; href: string }[] = [
 export default function NeoFuturisticNavigation() {
   const [open, setOpen] = useState(false);
   const router = useRouter();
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-2ac3
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
