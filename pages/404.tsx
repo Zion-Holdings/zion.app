@@ -4,14 +4,14 @@ import SEO from '../components/SEO';
 export default function Custom404() {
 	return (
 		<>
-			<SEO title="Page Not Found | Zion Tech Group" description="Sorry, we couldn't find the page you're looking for." noindex nofollow />
-			<div className="min-h-[60vh] flex items-center justify-center px-6">
-				<div className="text-center max-w-xl">
-					<h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">404</h1>
-					<p className="text-gray-300 mb-6">Sorry, the page you’re looking for doesn’t exist or has been moved.</p>
-					<div className="flex gap-3 justify-center">
-						<a href="/" className="px-5 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium hover:from-cyan-600 hover:to-blue-700 transition-colors">Go Home</a>
-						<a href="/market-pricing/" className="px-5 py-3 rounded-lg border border-cyan-500/50 text-cyan-300 hover:bg-cyan-500/10 transition-colors">Explore Services</a>
+			<SEO title="Page Not Found — Zion Tech Group" description="Sorry, we couldn't find that page. Explore our services and resources." />
+			<section className="relative pt-28 pb-16 md:pt-36 md:pb-24">
+				<div className="container mx-auto px-4 text-center max-w-3xl">
+					<h1 className="text-4xl md:text-6xl font-extrabold tracking-tight gradient-text-cyan-purple">404 — Page Not Found</h1>
+					<p className="mt-6 text-lg md:text-xl text-gray-300">The page you’re looking for might have been moved or deleted.</p>
+					<div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+						<Link href="/" className="inline-flex items-center justify-center px-6 py-3 rounded-md bg-white text-black font-semibold hover:bg-gray-200 transition-colors">Go Home</Link>
+						<Link href="/services/" className="inline-flex items-center justify-center px-6 py-3 rounded-md border border-white/30 text-white font-semibold hover:bg-white/10 transition-colors">Explore Services</Link>
 					</div>
 				</div>
 			</div>
