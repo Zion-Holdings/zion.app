@@ -76,35 +76,10 @@ import { innovative2025MicroSaasExpansion } from '../data/innovative-2025-micro-
 import { innovative2025ITServicesExpansion } from '../data/innovative-2025-it-services-expansion';
 import { innovative2025AIServicesExpansion } from '../data/innovative-2025-ai-services-expansion';
 
-// Import our latest 2025 comprehensive services
-import { innovative2025MicroSaasExpansion as innovative2025MicroSaasExpansionV2 } from '../data/innovative-2025-micro-saas-expansion';
-import { innovative2025ITServicesExpansion as innovative2025ITServicesExpansionV2 } from '../data/innovative-2025-it-services-expansion';
-import { innovative2025AIServicesExpansion as innovative2025AIServicesExpansionV2 } from '../data/innovative-2025-ai-services-expansion';
-
-// Import new expanded services
-import { innovative2025MicroSaasExpanded } from '../data/innovative-2025-micro-saas-expanded';
-import { innovative2025ITSolutionsExpanded } from '../data/innovative-2025-it-solutions-expanded';
-import { innovative2025AISolutionsExpanded } from '../data/innovative-2025-ai-solutions-expanded';
-
-// Import our latest 2040 innovative services
-import { innovative2040MicroSaasServices } from '../data/innovative-2040-micro-saas-services';
-import { innovative2040ITServices } from '../data/innovative-2040-it-services';
-import { innovative2040AIServices } from '../data/innovative-2040-ai-services';
-
-// Import new expanded services
-import { innovative2025MicroSaasExpanded } from '../data/innovative-2025-micro-saas-expanded';
-import { innovative2025ITSolutionsExpanded } from '../data/innovative-2025-it-solutions-expanded';
-import { innovative2025AISolutionsExpanded } from '../data/innovative-2025-ai-solutions-expanded';
-
-// Import new innovative services
-import { innovativeServicesExpansion2025 } from '../data/2025-innovative-services-expansion';
-import { emergingTechServices2025 } from '../data/2025-emerging-tech-services';
-import { specializedIndustryServices2025 } from '../data/2025-specialized-industry-services';
-
-// Import our new innovative 2025 services
-import { innovative2025MicroSaasExpansions } from '../data/innovative-2025-micro-saas-expansions';
-import { innovative2025ITSolutions } from '../data/innovative-2025-it-solutions';
-import { innovative2025AISolutions } from '../data/innovative-2025-ai-solutions';
+// Import our new 2025 comprehensive service expansions
+import { advancedEnterpriseSolutions } from '../data/2025-advanced-enterprise-solutions-expansion';
+import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions-expansion';
+import { cuttingEdgeITServices } from '../data/2025-cutting-edge-it-ai-services-expansion';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -126,9 +101,29 @@ const getServiceCategory = (service: any) => {
 
 // Helper function to get service pricing
 const getServicePricing = (service: any) => {
-  if (service.pricing?.starter) return service.pricing.starter;
-  if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
-  if (service.price?.monthly) return `$${service.price.monthly}/month`;
+  // Handle services with direct price and period fields
+  if (service.price && typeof service.price === 'string') {
+    return `${service.price}${service.period || ''}`;
+  }
+  
+  // Handle services with pricing object
+  if (service.pricing) {
+    if (service.pricing.starter && typeof service.pricing.starter === 'string') {
+      return service.pricing.starter;
+    }
+    if (service.pricing.monthly && typeof service.pricing.monthly === 'string') {
+      return `$${service.pricing.monthly}/month`;
+    }
+    if (service.pricing.monthly && typeof service.pricing.monthly === 'number') {
+      return `$${service.pricing.monthly}/month`;
+    }
+  }
+  
+  // Handle legacy price.monthly structure
+  if (service.price?.monthly) {
+    return `$${service.price.monthly}/month`;
+  }
+  
   return 'Contact for pricing';
 };
 
@@ -192,16 +187,41 @@ const allServices = [
   ...advancedITInfrastructureServices2025,
   ...industryRealServices,
   ...real2025Q4AugmentedBatch,
-  ...real2029Q3Additions,
-  ...validatedServices2025Q4,
+  // ...real2029Q3Additions,
+  // ...validatedServices2025Q4,
   ...real2035Q2Additions,
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
-  // Add our new innovative 2025 services
-  ...innovative2025MicroSaasExpansions,
-  ...innovative2025ITSolutions,
-  ...innovative2025AISolutions
+  // Our new 2025 advanced services
+  ...advanced2025MicroSaasExpansion,
+  ...advanced2025ITSolutionsExpansion,
+  ...advanced2025AIServicesExpansion,
+  // Our new innovative services
+  ...innovative2037MicroSaasServices,
+  ...innovative2037ITServices,
+  ...innovative2037AIServices,
+  ...innovative2038CuttingEdgeServices,
+  ...innovative2038ITInfrastructureServices,
+  // Our additional innovative services
+  ...innovative2037Services,
+  ...advanced2038Services,
+  ...revolutionary2039Services,
+  // Our revolutionary 2040-2041 services
+  ...revolutionary2040FuturisticServices,
+  ...revolutionary2041AdvancedServices,
+  // Our latest innovative services
+  ...innovative2040FuturisticServices,
+  ...advanced2041EnterpriseServices,
+  ...revolutionary2042MicroSaasServices,
+  // Our new 2025 innovative services expansion
+  ...innovative2025MicroSaasExpansion,
+  ...innovative2025ITSolutionsExpansion,
+  ...innovative2025AIServicesExpansion,
+  // Our new 2025 comprehensive service expansions
+  ...advancedEnterpriseSolutions,
+  ...innovativeMicroSaasSolutions2025,
+  ...cuttingEdgeITServices
 ];
 
 const categories = [
