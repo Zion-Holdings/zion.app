@@ -6,12 +6,11 @@ if (DSN) {
   Sentry.init({ dsn: DSN });
 }
 
-export function captureException(error: unknown) {
-  if (DSN) {
-    Sentry.captureException(error);
-  }
-  if (typeof console !== 'undefined') {
-    console.error('Sentry captured exception:', error);
+export function captureException(error: unknown, context?: any): void { // Added context capability
+  // The @sentry/nextjs SDK handles initialization.
+  // We can directly call captureException.
+  if (context) {
+    return Sentry.captureException(error, context);
   }
   return Sentry.captureException(error);
 }

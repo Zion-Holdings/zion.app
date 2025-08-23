@@ -39,8 +39,9 @@ export function ZionGPTModelManager() {
       
       if (error) throw error;
       
-      // Map the data to our component state
-      setModels(data.map((model: any) => ({
+      // Map the data to our component state. Provide a fallback to avoid
+      // "map is not a function" errors if the query returns null
+      setModels((data ?? []).map((model: any) => ({
         id: model.id,
         version: model.version,
         createdAt: model.created_at,

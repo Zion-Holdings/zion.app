@@ -147,7 +147,7 @@ if (typeof performance === 'undefined') {
 // Export for explicit imports
 export const initServerPolyfills = () => {
   // The polyfills are already applied when this module is imported
-  console.log('🔧 Server polyfills initialized');
+  // Server polyfills initialized
 };
 
 export default initServerPolyfills;

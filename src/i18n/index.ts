@@ -21,7 +21,7 @@ if (!i18n) {
     .use(LanguageDetector) // Detect user language
     .use(initReactI18next) // Initialize react-i18next
     .init({
-    resources: {
+      resources: {
       en: {
         translation: enTranslation
       },
