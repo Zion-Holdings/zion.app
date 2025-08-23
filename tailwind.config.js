@@ -153,10 +153,34 @@ module.exports = {
           900: '#134e4a',
           950: '#042f2e',
         },
+        'cyber': {
+          50: '#f0f9ff',
+          100: '#e0f2fe',
+          200: '#bae6fd',
+          300: '#7dd3fc',
+          400: '#38bdf8',
+          500: '#0ea5e9',
+          600: '#0284c7',
+          700: '#0369a1',
+          800: '#075985',
+          900: '#0c4a6e',
+          950: '#082f49',
+        },
+        'neon': {
+          cyan: '#00ffff',
+          pink: '#ff00ff',
+          yellow: '#ffff00',
+          green: '#00ff00',
+          purple: '#8000ff',
+          orange: '#ff8000',
+        },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+        'cyber': ['Orbitron', 'monospace'],
+        'futura': ['Futura', 'Arial', 'sans-serif'],
+        'tech': ['Rajdhani', 'sans-serif'],
       },
       fontSize: {
         'xs': ['0.75rem', { lineHeight: '1rem' }],
@@ -172,6 +196,7 @@ module.exports = {
         '7xl': ['4.5rem', { lineHeight: '1' }],
         '8xl': ['6rem', { lineHeight: '1' }],
         '9xl': ['8rem', { lineHeight: '1' }],
+        '2xs': ['0.625rem', { lineHeight: '0.75rem' }],
       },
       fontWeight: {
         thin: '100',
@@ -188,15 +213,24 @@ module.exports = {
         '18': '4.5rem',
         '88': '22rem',
         '128': '32rem',
+        '144': '36rem',
       },
       borderRadius: {
         '4xl': '2rem',
         '5xl': '2.5rem',
       },
       boxShadow: {
-        'glow': '0 0 20px rgba(59, 130, 246, 0.3)',
-        'glow-lg': '0 0 40px rgba(59, 130, 246, 0.4)',
-        'glow-xl': '0 0 60px rgba(59, 130, 246, 0.5)',
+        'glow': '0 0 20px rgba(6, 182, 212, 0.5)',
+        'glow-lg': '0 0 40px rgba(6, 182, 212, 0.6)',
+        'glow-xl': '0 0 60px rgba(6, 182, 212, 0.7)',
+        'glow-2xl': '0 0 80px rgba(6, 182, 212, 0.8)',
+        'neon': '0 0 5px rgba(6, 182, 212, 0.8), 0 0 10px rgba(6, 182, 212, 0.6), 0 0 15px rgba(6, 182, 212, 0.4)',
+        'neon-lg': '0 0 10px rgba(6, 182, 212, 0.8), 0 0 20px rgba(6, 182, 212, 0.6), 0 0 30px rgba(6, 182, 212, 0.4)',
+        'glow-2xl': '0 0 80px rgba(6, 182, 212, 0.8)',
+      },
+      textShadow: {
+        'glow': '0 0 10px rgba(6, 182, 212, 0.8)',
+        'neon': '0 0 5px rgba(6, 182, 212, 0.8), 0 0 10px rgba(6, 182, 212, 0.6)',
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out forwards',
@@ -219,7 +253,7 @@ module.exports = {
         'neural-network': 'neuralNetwork 10s linear infinite',
         'plasma-flow': 'plasmaFlow 5s ease-in-out infinite',
         'cyber-grid': 'cyberGrid 15s linear infinite',
-        'spin-slow': 'spin 20s linear infinite',
+        'spin-slow': 'spin 3s linear infinite',
       },
       keyframes: {
         fadeIn: {
@@ -227,19 +261,19 @@ module.exports = {
           '100%': { opacity: '1' },
         },
         fadeInUp: {
-          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '0%': { opacity: '0', transform: 'translateY(30px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         fadeInDown: {
-          '0%': { opacity: '0', transform: 'translateY(-20px)' },
+          '0%': { opacity: '0', transform: 'translateY(-30px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         slideInLeft: {
-          '0%': { opacity: '0', transform: 'translateX(-30px)' },
+          '0%': { opacity: '0', transform: 'translateX(-100px)' },
           '100%': { opacity: '1', transform: 'translateX(0)' },
         },
         slideInRight: {
-          '0%': { opacity: '0', transform: 'translateX(30px)' },
+          '0%': { opacity: '0', transform: 'translateX(100px)' },
           '100%': { opacity: '1', transform: 'translateX(0)' },
         },
         scaleIn: {
@@ -251,8 +285,8 @@ module.exports = {
           '50%': { transform: 'translateY(-20px)' },
         },
         glow: {
-          '0%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.3)' },
-          '100%': { boxShadow: '0 0 40px rgba(59, 130, 246, 0.6)' },
+          '0%': { boxShadow: '0 0 20px rgba(6, 182, 212, 0.5)' },
+          '100%': { boxShadow: '0 0 30px rgba(6, 182, 212, 0.8)' },
         },
         shimmer: {
           '0%': { backgroundPosition: '-200% 0' },
@@ -308,7 +342,8 @@ module.exports = {
         },
       },
       backdropBlur: {
-        'xs': '2px',
+        xs: '2px',
+        '4xl': '72px',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -323,6 +358,9 @@ module.exports = {
         'matrix-rain': 'linear-gradient(180deg, transparent 0%, rgba(34, 197, 94, 0.1) 50%, transparent 100%)',
         'energy-field': 'radial-gradient(ellipse at center, rgba(59, 130, 246, 0.1) 0%, transparent 70%)',
         'cyber-circuit': 'linear-gradient(90deg, transparent 0%, rgba(59, 130, 246, 0.05) 25%, rgba(59, 130, 246, 0.1) 50%, rgba(59, 130, 246, 0.05) 75%, transparent 100%)',
+        'gradient-mesh': 'linear-gradient(45deg, #0ea5e9, #8b5cf6, #ec4899, #f59e0b)',
+        'gradient-neural': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        'gradient-cyber': 'linear-gradient(45deg, #00d4ff, #0099cc, #0066ff, #9933ff)',
       },
       container: {
         center: true,
@@ -333,6 +371,41 @@ module.exports = {
           xl: '5rem',
           '2xl': '6rem',
         },
+      },
+      transitionProperty: {
+        'height': 'height',
+        'spacing': 'margin, padding',
+        'transform-gpu': 'transform',
+      },
+      transitionTimingFunction: {
+        'bounce-in': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+        'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
+        'spring': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+      },
+      zIndex: {
+        '60': '60',
+        '70': '70',
+        '80': '80',
+        '90': '90',
+        '100': '100',
+      },
+      lineHeight: {
+        'extra-tight': '1.1',
+        'extra-relaxed': '1.8',
+      },
+      borderWidth: {
+        '3': '3px',
+      },
+      gridTemplateColumns: {
+        '13': 'repeat(13, minmax(0, 1fr))',
+        '14': 'repeat(14, minmax(0, 1fr))',
+        '15': 'repeat(15, minmax(0, 1fr))',
+        '16': 'repeat(16, minmax(0, 1fr))',
+      },
+      gridTemplateRows: {
+        '8': 'repeat(8, minmax(0, 1fr))',
+        '9': 'repeat(9, minmax(0, 1fr))',
+        '10': 'repeat(10, minmax(0, 1fr))',
       },
     },
   },
