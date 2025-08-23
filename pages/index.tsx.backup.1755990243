@@ -1,12 +1,23 @@
 import React from 'react';
+<<<<<<< HEAD
+import Homepage2045 from '../components/Homepage2045';
+import ErrorBoundary from '../components/ErrorBoundary';
+=======
 import Homepage2044 from '../components/Homepage2044';
 import EnhancedErrorBoundary from '../components/EnhancedErrorBoundary';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a647
 
 export default function Home() {
   return (
+<<<<<<< HEAD
+    <ErrorBoundary>
+      <Homepage2045 />
+    </ErrorBoundary>
+=======
     <EnhancedErrorBoundary>
       <Homepage2044 />
     </EnhancedErrorBoundary>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a647
   );
 };
 
