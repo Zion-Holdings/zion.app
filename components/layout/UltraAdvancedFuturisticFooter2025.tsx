@@ -26,6 +26,8 @@ const footerSections: FooterSection[] = [
       { label: 'AI & Machine Learning', href: '/ai-services', description: 'Advanced AI solutions' },
       { label: 'Quantum Computing', href: '/quantum-computing', description: 'Next-gen quantum tech' },
       { label: 'Space Technology', href: '/space-tech', description: 'Innovative space solutions' },
+      { label: 'Q4 2025 Innovation', href: '/innovative-2025-q4-showcase', description: 'Latest revolutionary services' },
+      { label: 'Pricing Guide', href: '/comprehensive-pricing-2025-q4', description: 'Comprehensive pricing' },
       { label: 'Cybersecurity', href: '/cybersecurity', description: 'Enterprise security' },
       { label: 'Cloud Solutions', href: '/cloud-platform', description: 'Scalable cloud infrastructure' },
       { label: 'View All Services', href: '/services', description: 'Complete service portfolio' }

@@ -237,11 +237,11 @@ const Homepage2025: React.FC = () => {
                   color: "purple"
                 },
                 {
-                  title: "Space Technology",
-                  description: "Innovative space tech solutions for terrestrial and extraterrestrial applications",
-                  features: ["Satellite Systems", "Space Mining", "Interplanetary Communication"],
+                  title: "Q4 2025 Innovation",
+                  description: "Revolutionary new services featuring emerging technologies and breakthrough solutions",
+                  features: ["Brain-Computer Interfaces", "Space Mining", "AI Consciousness"],
                   icon: Rocket,
-                  color: "blue"
+                  color: "emerald"
                 }
               ].map((service, index) => (
                 <motion.div
@@ -312,9 +312,9 @@ const Homepage2025: React.FC = () => {
               </button>
               <button 
                 className="px-10 py-5 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
-                onClick={() => window.location.href = '/services'}
+                onClick={() => window.location.href = '/comprehensive-pricing-2025-q4'}
               >
-                Explore Services
+                View Pricing
               </button>
             </motion.div>
           </div>

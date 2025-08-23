@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, X, Search, ChevronDown, ChevronRight, 
   Home, Briefcase, Users, BookOpen, Phone, 
-  Globe, Zap, Shield, Brain, Rocket
+  Globe, Zap, Shield, Brain, Rocket, Sparkles, DollarSign
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -45,6 +45,18 @@ const navigationItems: NavigationItem[] = [
         href: '/space-tech',
         icon: <Rocket className="w-4 h-4" />,
         description: 'Innovative space tech applications'
+      },
+      {
+        label: 'Q4 2025 Innovation',
+        href: '/innovative-2025-q4-showcase',
+        icon: <Sparkles className="w-4 h-4" />,
+        description: 'Latest revolutionary services'
+      },
+      {
+        label: 'Pricing Guide',
+        href: '/comprehensive-pricing-2025-q4',
+        icon: <DollarSign className="w-4 h-4" />,
+        description: 'Comprehensive pricing for all services'
       },
       {
         label: 'Cybersecurity',
@@ -97,7 +109,7 @@ const UltraAdvancedFuturisticNavigation2025: React.FC = () => {
   // Handle click outside search
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+      if (searchRef.current && !searchRef.current.contains(event.target as HTMLElement)) {
         setIsSearchOpen(false);
       }
     };
@@ -109,7 +121,7 @@ const UltraAdvancedFuturisticNavigation2025: React.FC = () => {
   // Handle click outside mobile menu
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as HTMLElement)) {
         setIsMobileMenuOpen(false);
       }
     };
