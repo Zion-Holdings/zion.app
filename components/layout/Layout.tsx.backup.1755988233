@@ -1,14 +1,30 @@
+<<<<<<< HEAD
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import UltraFuturisticNavigation2036 from './UltraFuturisticNavigation2036';
+import UltraFuturisticFooter2036 from './UltraFuturisticFooter2036';
+import EnhancedSidebar2025 from './EnhancedSidebar2025';
+import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
+import TopContactBar from './TopContactBar';
+=======
 import React, { ReactNode } from 'react';
 import UltraAdvancedFuturisticNavigation2025 from './UltraAdvancedFuturisticNavigation2025';
 import UltraAdvancedFuturisticFooter2025 from './UltraAdvancedFuturisticFooter2025';
 import AccessibilityEnhancer from '../AccessibilityEnhancer';
 import PerformanceMonitor from '../PerformanceMonitor';
 import FloatingActionMenu from '../FloatingActionMenu';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-cd36
 
 interface LayoutProps {
 	children: React.ReactNode;
 }
 
+<<<<<<< HEAD
+export default function Layout({ children }: LayoutProps) {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [focusTrap, setFocusTrap] = useState(false);
+=======
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
@@ -23,6 +39,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     </div>
   );
 };
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-cd36
 
   useEffect(() => {
     // Simulate initial loading
