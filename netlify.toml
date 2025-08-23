@@ -1,71 +1,65 @@
 [build]
-  command = "npm ci && npm run export"
-  publish = "out"
-  functions = "netlify/functions"
+  command = "npm ci && npm run build"
+  publish = ".next"
 
 [build.environment]
-  NODE_VERSION = "22.18.0"
-  NEXT_PUBLIC_SITE_URL = "https://ziontechgroup.com"
-  NEXT_PUBLIC_PLAUSIBLE_DOMAIN = "ziontechgroup.com"
+  NODE_VERSION = "20"
 
-# [[plugins]]
-#   package = "@netlify/plugin-nextjs"
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
 
 [[plugins]]
   package = "netlify-plugin-cloudinary"
 
-[context.branch-deploy.environment]
-  NEXT_PUBLIC_NOINDEX = "true"
+# Scheduled Functions (new automations replacing some GitHub Actions cadence)
+[[scheduled.functions]]
+  name = "homepage_advertiser"
+  schedule = "*/15 * * * *" # every 15 minutes
 
-[context.deploy-preview.environment]
-  NEXT_PUBLIC_NOINDEX = "true"
+[[scheduled.functions]]
+  name = "cloud_orchestrator"
+  schedule = "0 */4 * * *" # every 4 hours
 
-[[headers]]
-  for = "/_next/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+[[scheduled.functions]]
+  name = "front-enhancer"
+  schedule = "*/10 * * * *" # every 10 minutes
 
-[[headers]]
-  for = "/fonts/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+[[scheduled.functions]]
+  name = "frontpage-enhancer"
+  schedule = "*/20 * * * *" # every 20 minutes
 
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    X-Content-Type-Options = "nosniff"
-    X-Frame-Options = "DENY"
-    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
-    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-    X-DNS-Prefetch-Control = "on"
-    Content-Security-Policy = "default-src 'self'; object-src 'none'; upgrade-insecure-requests; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://plausible.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
-    Cross-Origin-Opener-Policy = "same-origin"
-    Cross-Origin-Resource-Policy = "same-origin"
-    X-Permitted-Cross-Domain-Policies = "none"
-    Origin-Agent-Cluster = "?1"
+[[scheduled.functions]]
+  name = "marketing-and-features-promo"
+  schedule = "0 */2 * * *" # every 2 hours
 
-[[redirects]]
-  from = "/ai-consciousness-evolution"
-  to = "/ai-consciousness-evolution-2029"
-  status = 301
+[[scheduled.functions]]
+  name = "link-and-health-scheduler"
+  schedule = "0 */6 * * *" # every 6 hours
 
-[[redirects]]
-  from = "/quantum-internet-security-gateway"
-  to = "/quantum-internet-security-platform"
-  status = 301
+[[scheduled.functions]]
+  name = "sitemap_runner"
+  schedule = "0 */12 * * *" # twice per day
 
-[[redirects]]
-  from = "/space-mining-automation-platform"
-  to = "/space-resource-mining-platform"
-  status = 301
+[[scheduled.functions]]
+  name = "fast-front-promoter"
+  schedule = "*/15 * * * *" # every 15 minutes
 
-[[redirects]]
-  from = "/quantum-creativity-studio"
-  to = "/quantum-materials-discovery-platform"
-  status = 301
+[[scheduled.functions]]
+  name = "continuous-orchestrator"
+  schedule = "*/5 * * * *" # every 5 minutes
 
-[[redirects]]
-  from = "/team"
-  to = "/about"
-  status = 301
+[[scheduled.functions]]
+  name = "front-index-orchestrator"
+  schedule = "*/10 * * * *" # every 10 minutes
+
+[[scheduled.functions]]
+  name = "front-ads-promoter"
+  schedule = "*/10 * * * *" # every 10 minutes
+
+[[scheduled.functions]]
+  name = "ultrafast-front-orchestrator"
+  schedule = "*/5 * * * *" # every 5 minutes
