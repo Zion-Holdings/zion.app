@@ -1,5 +1,3 @@
-export default About;
-=======
 export default function About() {
   return (
     <div className="space-y-2">
@@ -7,4 +5,8 @@ export default function About() {
       <p className="text-gray-600 dark:text-gray-300">Autonomous cloud automations and modern product engineering.</p>
     </div>
   );
+}
+=======
+export default function About() {
+  return <div>About Zion</div>;
 }

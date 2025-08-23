@@ -29,7 +29,7 @@ export default function EnhancedNavigation() {
           <Link href="/automation/site-validator"><a>Validator</a></Link>
           <Link href="/automation/knowledge-graph"><a>Graph</a></Link>
           <Link href="/contact"><a>Contact</a></Link>
-          <Link href="/token/integrations"><a>Integrations</a></Link>
+          <Link href="/trust"><a>Trust</a></Link>
         </div>
       </nav>
 
