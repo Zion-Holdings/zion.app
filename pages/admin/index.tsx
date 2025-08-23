@@ -1,7 +1,13 @@
-import React from 'react';
-import Head from 'next/head';
+import AdminTable from '../../components/admin/AdminTable';
+
+export default function AdminDashboard() {
   return (
-    <>
-      <Head><title>admin/index - Zion App</title><meta name="description" content="admin/index page" /></Head><div className="container mx-auto px-4 py-8"><h1 className="text-3xl font-bold mb-6">admin/index</h1><p className="text-lg mb-4">This page is under construction.</p><div className="mt-4"><a href="/" className="text-blue-600 hover:underline">;
-            ← Back to Home</a></div></div></>;
+    <div className="space-y-6">
+      <h1 className="text-2xl font-semibold">Admin</h1>
+      <ul className="list-disc pl-6">
+        <li><Link href="/admin/vendors"><a>Vendors</a></Link></li>
+      </ul>
+      <div className="text-center text-xs text-gray-500">Powered by Zion</div>
+    </div>
   );
+}

@@ -48,12 +48,16 @@ const optimizedEnv = {
   NODE_ENV: 'production',
 
   // Critical build optimizations (prevents 18+ minute hanging)
-  NEXT_TELEMETRY_DISABLED: '1',
-  CI: 'true',
-  SKIP_TYPE_CHECK: 'true', // Skip type checking to speed up build
-  SKIP_SENTRY_BUILD: 'true', // Skip Sentry during React 19 transition
-  SKIP_DATADOG: 'true', // Skip Datadog native modules during build
-
+  NEXT_TELEMETRY_DISABLED: "1",
+  CI: "true",
+  SKIP_TYPE_CHECK: "true", // Skip type checking to speed up build
+  SKIP_SENTRY_BUILD: "true", // Skip Sentry during React 19 transition
+  SKIP_DATADOG: "true", // Skip Datadog native modules during build
+  
+  // ESM module resolution fixes for formik/lodash/date-fns
+  WEBPACK_DISABLE_LODASH_DEPRECATION: "true",
+  NEXT_FORCE_ESM_EXTERNALS: "true",
+  
   // CRITICAL: Anti-hanging optimizations
   NEXT_DISABLE_CSS_INLINE: 'true',
   NEXT_DISABLE_SOURCE_MAPS: 'true',

@@ -28,9 +28,12 @@ import { revolutionary2044AdvancedMicroSaas } from '../data/revolutionary-2044-a
 import { revolutionary2044ITServices } from '../data/revolutionary-2044-it-services';
 import { revolutionary2044AIServices } from '../data/revolutionary-2044-ai-services';
 import { realEnterpriseMicroSaas2025 } from '../data/2025-real-enterprise-micro-saas';
+<<<<<<< HEAD
+=======
 import { innovativeITServicesExpansion2025V3 } from '../data/2025-innovative-it-services-expansion-v3';
 import { innovativeAIServicesExpansion2025V3 } from '../data/2025-innovative-ai-services-expansion-v3';
 =======
+>>>>>>> 4e26761e9808218b595a40eae6dfbc7c204b5906
 import { innovative2025ITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
 import { innovative2025AIAutonomousServices } from '../data/2025-innovative-ai-autonomous-services';
 
@@ -75,9 +78,12 @@ const EnhancedHomepage: React.FC = () => {
     ...revolutionary2044ITServices,
     ...revolutionary2044AIServices,
     ...realEnterpriseMicroSaas2025,
+<<<<<<< HEAD
+=======
     ...innovativeITServicesExpansion2025V3,
     ...innovativeAIServicesExpansion2025V3
 =======
+>>>>>>> 4e26761e9808218b595a40eae6dfbc7c204b5906
     ...innovative2025ITInfrastructureServices,
     ...innovative2025AIAutonomousServices
   ];

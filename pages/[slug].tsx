@@ -1,9 +1,35 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import Head from 'next/head';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import fs from 'fs';
 import path from 'path';
-import Head from 'next/head';
+import { useRouter } from 'next/router';
+import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
+import Button from '../components/ui/Button';
+import Card from '../components/ui/Card';
+import { Check, Mail, MapPin, Phone, ExternalLink } from 'lucide-react';
+import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
+import { extraServices } from '../data/extra-services';
+import { additionalEnhancedServices } from '../data/additional-real-services';
+import { innovativeAIServices } from '../data/innovative-ai-services';
+import { quantumSpaceServices } from '../data/quantum-space-services';
+import { enterpriseITServices } from '../data/enterprise-it-services';
+import { newRealServices } from '../data/new-real-services';
+import { marketReadyServices } from '../data/market-ready-services';
+import { nextGenerationAIServices } from '../data/next-generation-ai-services';
+import { emergingTechnologyServices } from '../data/emerging-technology-services';
+import { comprehensiveITSolutions } from '../data/comprehensive-it-solutions';
+import { marketValidatedServices } from '../data/market-validated-services';
+import { newRealInnovations } from '../data/new-real-innovations';
+import { realMarketServices } from '../data/real-market-services';
+import { new2025Services } from '../data/new-2025-services';
+import { curatedMarketServices } from '../data/curated-market-services';
+import { cuttingEdgeITServices } from '../data/cutting-edge-it-services';
+import { nextGenAIServices } from '../data/next-gen-ai-services';
+import { industryRealServices } from '../data/industry-real-services';
+import { professionalServices } from '../data/professional-services';
+import { realEnterpriseServices2025 } from '../data/real-enterprise-services-2025';
+import { realImplementationServices2025 } from '../data/real-implementation-services-2025';
 
 export default function ServiceFallbackPage() {
   const router = useRouter();
@@ -34,9 +60,7 @@ export default function ServiceFallbackPage() {
         industryRealServices as any,
         professionalServices as any,
         realEnterpriseServices2025 as any,
-        augmentedServicesBatch3 as any,
-        real2025Q3Additions as any,
-        realServicesQ42025 as any
+        realImplementationServices2025 as any
       );
     const byLink = all.find(s => {
       try {
@@ -80,64 +104,48 @@ export default function ServiceFallbackPage() {
   }
 
   return (
-    <UltraFuturisticBackground variant="quantum" intensity="high">
+    <Layout>
       <Head>
-        <title>{service.name} | Zion Tech Group</title>
-        <meta name="description" content={service.tagline || service.description} />
-        <link rel="canonical" href={service.link} />
+        <title>Service Not Found | Zion Tech Group</title>
+        <meta name="robots" content="noindex" />
       </Head>
-
-      <div className="container mx-auto px-4 py-16">
-        <div className="text-center mb-10">
+      
+      <div className="container mx-auto px-4 py-24 text-center">
+        <div className="max-w-2xl mx-auto">
           <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
-            {service.name}
+            Service Not Found
           </h1>
-          <p className="text-gray-300 text-lg max-w-3xl mx-auto">{service.tagline || service.description}</p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
-          <div className="lg:col-span-2 space-y-6">
-            <Card className="p-6 bg-black/40 border border-gray-700/50">
-              <h2 className="text-white text-xl font-semibold mb-3">Overview</h2>
-              <p className="text-gray-300 leading-relaxed">{service.description}</p>
-            </Card>
-
-            <Card className="p-6 bg-black/40 border border-gray-700/50">
-              <h3 className="text-white text-lg font-semibold mb-4">Key Features</h3>
-              <ul className="space-y-2 text-gray-300">
-                {(service.features || []).slice(0, 12).map((f) => (
-                  <li key={f} className="flex items-start gap-2">
-                    <Check className="w-4 h-4 mt-0.5 text-emerald-400" />
-                    <span>{f}</span>
-                  </li>
-                ))}
-              </ul>
-            </Card>
+          <p className="text-gray-300 mb-8 text-lg">
+            This service link is no longer available. Explore our full catalog of innovative services and solutions.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link 
+              href="/services" 
+              className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-6 py-3 rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 font-semibold"
+            >
+              Browse Services
+            </Link>
+            <Link 
+              href="/contact" 
+              className="border border-gray-600 text-gray-200 px-6 py-3 rounded-xl hover:border-gray-500 hover:text-white transition-all duration-300 font-semibold"
+            >
+              Contact Us
+            </Link>
           </div>
-
-          <div className="space-y-6">
-            <Card className="p-6 bg-black/40 border border-gray-700/50">
-              <div className="text-sm text-gray-400 mb-1">Pricing</div>
-              <div className="text-3xl font-bold text-white">{service.price}<span className="text-base font-medium text-gray-400">{service.period}</span></div>
-              <div className="text-sm text-gray-400 mt-2">Trial: {service.trialDays || 14} days • Setup: {service.setupTime || 'Fast'}</div>
-              <div className="mt-6 flex gap-3">
-                <Button href="/contact" className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Contact Sales</Button>
-                <Button href={service.link} variant="outline" className="flex-1 border border-gray-600 text-gray-200"><ExternalLink className="w-4 h-4 mr-2" /> Learn More</Button>
-              </div>
-            </Card>
-
-            <Card className="p-6 bg-black/40 border border-gray-700/50">
-              <h3 className="text-white font-semibold mb-3">Contact</h3>
-              <div className="space-y-3 text-sm">
-                <div className="flex items-center gap-2 text-cyan-400"><Phone className="w-4 h-4" /><a href={`tel:${contactInfo.mobile.replace(/[^+\d]/g, '')}`} className="hover:underline">{contactInfo.mobile}</a></div>
-                <div className="flex items-center gap-2 text-purple-400"><Mail className="w-4 h-4" /><a href={`mailto:${contactInfo.email}`} className="hover:underline">{contactInfo.email}</a></div>
-                <div className="flex items-center gap-2 text-green-400"><MapPin className="w-4 h-4" /><a href={`https://maps.google.com/?q=${encodeURIComponent(contactInfo.address)}`} target="_blank" rel="noopener noreferrer" className="text-xs hover:underline">{contactInfo.address}</a></div>
-              </div>
-            </Card>
+          
+          <div className="mt-12 text-left">
+            <Link 
+              href="/" 
+              className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Back to Home
+            </Link>
           </div>
         </div>
       </div>
-    </UltraFuturisticBackground>
+    </Layout>
   );
 }
 
@@ -155,12 +163,12 @@ function collectAllServices(): Svc[] {
       newRealServices as Svc[],
       marketReadyServices as Svc[],
       nextGenerationAIServices as Svc[],
-      emergingTechnologyServices as unknown as Svc[],
+      emergingTechnologyServices as Svc[],
       comprehensiveITSolutions as Svc[],
       marketValidatedServices as Svc[],
       newRealInnovations as Svc[],
       realMarketServices as Svc[],
-      augmentedServicesBatch3 as Svc[]
+      realImplementationServices2025 as unknown as Svc[]
     );
 }
 
@@ -246,34 +254,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export default function DynamicPage({ title, slug, description }: PageProps) {
-	const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ziontechgroup.com';
-	const canonical = `${baseUrl.replace(/\/$/, '')}/${slug}/`;
-	
-	return (
-		<>
-			<SEO 
-				title={`${title} | Zion Tech Group`} 
-				description={description} 
-				url={canonical}
-				section={title}
-				tags={[title, 'Services', 'Technology']}
-			/>
-			<div className="container mx-auto px-4 py-16">
-				<nav className="text-sm text-gray-400 mb-6">
-					<Link href="/" className="hover:text-white">Home</Link>
-					<span className="mx-2">/</span>
-					<span className="text-gray-300">{title}</span>
-				</nav>
-				<h1 className="text-4xl font-bold mb-4">{title}</h1>
-				<p className="text-gray-300 mb-8">{description}</p>
-				<div className="flex gap-4">
-					<Link href="/services" className="px-6 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Browse Services</Link>
-					<Link href="/pricing" className="px-6 py-3 rounded-lg border border-cyan-500/40 text-cyan-300">View Pricing</Link>
-					<Link href="/contact" className="px-6 py-3 rounded-lg border border-gray-700 text-gray-200">Contact Sales</Link>
-				</div>
-				<div className="mt-12 text-sm text-gray-500">Auto-generated route: /{slug}</div>
-			</div>
-		</>
-	);
-}
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  // No dynamic fetching needed; the component resolves the service client-side.
+  return { props: {} };
+};

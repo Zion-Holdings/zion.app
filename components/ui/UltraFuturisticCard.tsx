@@ -1,39 +1,89 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface UltraFuturisticCardProps {
   children: React.ReactNode;
-  variant?: 'default' | 'holographic' | 'quantum' | 'cyberpunk' | 'neural' | 'quantum-holographic' | 'quantum-advanced' | 'holographic-advanced' | 'neural-quantum' | 'quantum-cyberpunk' | 'holographic-neural' | 'quantum-holographic-advanced' | 'quantum-matrix' | 'neural-cyberpunk' | 'holographic-quantum' | 'quantum-neural-advanced' | 'cyberpunk-holographic' | 'quantum-space' | 'ai-futuristic' | 'quantum-entanglement' | 'holographic-matrix' | 'neural-quantum-cyberpunk' | 'enterprise-futuristic' | 'quantum-futuristic' | 'holographic-futuristic' | 'quantum-iot' | 'quantum-logistics' | 'quantum-financial' | 'quantum-energy' | 'quantum-neural' | 'quantum-cyberpunk';
   className?: string;
-  onClick?: () => void;
+  variant?: 'quantum' | 'holographic' | 'neural' | 'cyberpunk' | 'space';
+  glowColor?: string;
   interactive?: boolean;
-  glowIntensity?: 'low' | 'medium' | 'high';
-  animationSpeed?: 'slow' | 'normal' | 'fast';
+  delay?: number;
 }
 
 const UltraFuturisticCard: React.FC<UltraFuturisticCardProps> = ({
   children,
-  variant = 'default',
   className = '',
-  onClick,
-  interactive = false,
-  glowIntensity = 'medium',
-  animationSpeed = 'normal'
+  variant = 'quantum',
+  glowColor,
+  interactive = true,
+  delay = 0
 }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const [isFocused, setIsFocused] = useState(false);
+  const [isPressed, setIsPressed] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
+  // Get variant-specific styles
+  const getVariantStyles = () => {
+    switch (variant) {
+      case 'quantum':
+        return {
+          bg: 'from-slate-900/80 via-slate-800/60 to-slate-900/80',
+          border: 'border-cyan-500/30',
+          glow: 'shadow-cyan-500/20',
+          accent: 'from-cyan-400 to-blue-500'
+        };
+      case 'holographic':
+        return {
+          bg: 'from-purple-900/80 via-pink-800/60 to-purple-900/80',
+          border: 'border-pink-500/30',
+          glow: 'shadow-pink-500/20',
+          accent: 'from-pink-400 to-purple-500'
+        };
+      case 'neural':
+        return {
+          bg: 'from-emerald-900/80 via-teal-800/60 to-emerald-900/80',
+          border: 'border-emerald-500/30',
+          glow: 'shadow-emerald-500/20',
+          accent: 'from-emerald-400 to-teal-500'
+        };
+      case 'cyberpunk':
+        return {
+          bg: 'from-red-900/80 via-orange-800/60 to-red-900/80',
+          border: 'border-orange-500/30',
+          glow: 'shadow-orange-500/20',
+          accent: 'from-orange-400 to-red-500'
+        };
+      case 'space':
+        return {
+          bg: 'from-indigo-900/80 via-blue-800/60 to-indigo-900/80',
+          border: 'border-blue-500/30',
+          glow: 'shadow-blue-500/20',
+          accent: 'from-blue-400 to-indigo-500'
+        };
+      default:
+        return {
+          bg: 'from-slate-900/80 via-slate-800/60 to-slate-900/80',
+          border: 'border-cyan-500/30',
+          glow: 'shadow-cyan-500/20',
+          accent: 'from-cyan-400 to-blue-500'
+        };
+    }
+  }[variant];
+
+  const variantStyles = getVariantStyles();
+  const customGlowColor = glowColor || variantStyles.glow;
+
+  // Mouse tracking for 3D effect
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      if (cardRef.current) {
-        const rect = cardRef.current.getBoundingClientRect();
-        setMousePosition({
-          x: e.clientX - rect.left,
-          y: e.clientY - rect.top
-        });
-      }
+      if (!cardRef.current) return;
+      
+      const rect = cardRef.current.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      setMousePosition({ x, y });
     };
 
     if (interactive) {
@@ -47,319 +97,191 @@ const UltraFuturisticCard: React.FC<UltraFuturisticCardProps> = ({
     };
   }, [interactive]);
 
-  const getVariantStyles = () => {
-    const baseStyles = 'relative overflow-hidden rounded-2xl border backdrop-blur-xl transition-all duration-500';
+  // Calculate 3D rotation based on mouse position
+  const get3DTransform = () => {
+    if (!interactive || !isHovered) return {};
     
-    switch (variant) {
-      case 'quantum':
-        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-blue-900/60 to-cyan-900/80 border-cyan-500/30 shadow-2xl shadow-cyan-500/20`;
-      case 'holographic':
-        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-purple-900/60 to-pink-900/80 border-purple-500/30 shadow-2xl shadow-purple-500/20`;
-      case 'cyberpunk':
-        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-red-900/60 to-orange-900/80 border-red-500/30 shadow-2xl shadow-red-500/20`;
-      case 'neural':
-        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-green-900/60 to-emerald-900/80 border-green-500/30 shadow-2xl shadow-green-500/20`;
-      case 'quantum-holographic':
-        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-blue-900/60 via-purple-900/60 to-pink-900/80 border-cyan-500/30 border-purple-500/30 shadow-2xl shadow-cyan-500/20 shadow-purple-500/20`;
-      case 'quantum-advanced':
-        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-indigo-900/60 via-blue-900/60 to-cyan-900/80 border-cyan-500/30 border-blue-500/30 shadow-2xl shadow-cyan-500/20 shadow-blue-500/20`;
-      case 'holographic-advanced':
-        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-violet-900/60 via-purple-900/60 to-pink-900/80 border-purple-500/30 border-pink-500/30 shadow-2xl shadow-purple-500/20 shadow-pink-500/20`;
-      case 'neural-quantum':
-        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-green-900/60 via-blue-900/60 to-cyan-900/80 border-green-500/30 border-cyan-500/30 shadow-2xl shadow-green-500/20 shadow-cyan-500/20`;
-      case 'quantum-cyberpunk':
-        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-blue-900/60 via-red-900/60 to-orange-900/80 border-cyan-500/30 border-red-500/30 shadow-2xl shadow-cyan-500/20 shadow-red-500/20`;
-      case 'holographic-neural':
-        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-purple-900/60 via-green-900/60 to-emerald-900/80 border-purple-500/30 border-green-500/30 shadow-2xl shadow-purple-500/20 shadow-green-500/20`;
-      case 'quantum-holographic-advanced':
-        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-blue-900/60 via-purple-900/60 via-pink-900/60 to-cyan-900/80 border-cyan-500/30 border-purple-500/30 border-pink-500/30 shadow-2xl shadow-cyan-500/20 shadow-purple-500/20 shadow-pink-500/20`;
-      case 'quantum-matrix':
-        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-green-900/60 via-blue-900/60 to-cyan-900/80 border-green-500/30 border-cyan-500/30 shadow-2xl shadow-green-500/20 shadow-cyan-500/20`;
-      case 'neural-cyberpunk':
-        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-green-900/60 via-red-900/60 to-orange-900/80 border-green-500/30 border-red-500/30 shadow-2xl shadow-green-500/20 shadow-red-500/20`;
-      case 'holographic-quantum':
-        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-purple-900/60 via-blue-900/60 to-cyan-900/80 border-purple-500/30 border-cyan-500/30 shadow-2xl shadow-purple-500/20 shadow-cyan-500/20`;
-      case 'quantum-neural-advanced':
-        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-blue-900/60 via-green-900/60 via-emerald-900/60 to-cyan-900/80 border-cyan-500/30 border-green-500/30 border-emerald-500/30 shadow-2xl shadow-cyan-500/20 shadow-green-500/20 shadow-emerald-500/20`;
-      case 'cyberpunk-holographic':
-        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-red-900/60 via-purple-900/60 to-pink-900/80 border-red-500/30 border-purple-500/30 shadow-2xl shadow-red-500/20 shadow-purple-500/20`;
-      case 'quantum-space':
-        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-blue-900/60 via-indigo-900/60 to-purple-900/80 border-cyan-500/30 border-indigo-500/30 shadow-2xl shadow-cyan-500/20 shadow-indigo-500/20`;
-      case 'ai-futuristic':
-        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-violet-900/60 via-blue-900/60 to-cyan-900/80 border-violet-500/30 border-cyan-500/30 shadow-2xl shadow-violet-500/20 shadow-cyan-500/20`;
-      case 'quantum-entanglement':
-        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-blue-900/60 via-cyan-900/60 to-teal-900/80 border-cyan-500/30 border-teal-500/30 shadow-2xl shadow-cyan-500/20 shadow-teal-500/20`;
-      case 'holographic-matrix':
-        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-purple-900/60 via-pink-900/60 to-rose-900/80 border-purple-500/30 border-pink-500/30 shadow-2xl shadow-purple-500/20 shadow-pink-500/20`;
-      case 'neural-quantum-cyberpunk':
-        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-green-900/60 via-blue-900/60 via-red-900/60 to-orange-900/80 border-green-500/30 border-cyan-500/30 border-red-500/30 shadow-2xl shadow-green-500/20 shadow-cyan-500/20 shadow-red-500/20`;
-      case 'enterprise-futuristic':
-        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-gray-800/60 via-slate-700/60 to-slate-600/80 border-slate-500/30 border-gray-500/30 shadow-2xl shadow-slate-500/20 shadow-gray-500/20`;
-      case 'quantum-futuristic':
-        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-blue-900/60 via-cyan-900/60 to-teal-900/80 border-cyan-500/30 border-teal-500/30 shadow-2xl shadow-cyan-500/20 shadow-teal-500/20`;
-      case 'holographic-futuristic':
-        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-purple-900/60 via-pink-900/60 to-rose-900/80 border-purple-500/30 border-pink-500/30 shadow-2xl shadow-purple-500/20 shadow-pink-500/20`;
-      case 'quantum-iot':
-        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-blue-900/60 via-green-900/60 to-emerald-900/80 border-cyan-500/30 border-green-500/30 shadow-2xl shadow-cyan-500/20 shadow-green-500/20`;
-      case 'quantum-logistics':
-        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-blue-900/60 via-indigo-900/60 to-purple-900/80 border-cyan-500/30 border-indigo-500/30 shadow-2xl shadow-cyan-500/20 shadow-indigo-500/20`;
-      case 'quantum-financial':
-        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-blue-900/60 via-yellow-900/60 to-orange-900/80 border-cyan-500/30 border-yellow-500/30 shadow-2xl shadow-cyan-500/20 shadow-yellow-500/20`;
-      case 'quantum-energy':
-        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-blue-900/60 via-green-900/60 to-emerald-900/80 border-cyan-500/30 border-green-500/30 shadow-2xl shadow-cyan-500/20 shadow-green-500/20`;
-      default:
-        return `${baseStyles} bg-gradient-to-br from-slate-900/80 via-slate-800/60 to-slate-900/80 border-slate-600/30 shadow-2xl shadow-slate-500/20`;
-    }
-  };
-
-  const getGlowIntensity = () => {
-    switch (glowIntensity) {
-      case 'low':
-        return 'shadow-lg';
-      case 'medium':
-        return 'shadow-2xl';
-      case 'high':
-        return 'shadow-2xl shadow-[0_0_50px_rgba(0,255,255,0.3)]';
-      default:
-        return 'shadow-2xl';
-    }
-  };
-
-  const getAnimationSpeed = () => {
-    switch (animationSpeed) {
-      case 'slow':
-        return 2;
-      case 'normal':
-        return 1;
-      case 'fast':
-        return 0.5;
-      default:
-        return 1;
-    }
-  };
-
-  const getVariantEffects = () => {
-    switch (variant) {
-      case 'quantum':
-        return (
-          <>
-            {/* Quantum field lines */}
-            <div className="absolute inset-0 opacity-20">
-              {[...Array(5)].map((_, i) => (
-                <div
-                  key={i}
-                  className="absolute w-full h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent"
-                  style={{
-                    top: `${20 + i * 15}%`,
-                    animation: `quantumWave ${3 + i}s ease-in-out infinite`,
-                    animationDelay: `${i * 0.5}s`
-                  }}
-                />
-              ))}
-            </div>
-            {/* Quantum particles */}
-            <div className="absolute inset-0">
-              {[...Array(8)].map((_, i) => (
-                <div
-                  key={i}
-                  className="absolute w-2 h-2 bg-cyan-400 rounded-full animate-pulse"
-                  style={{
-                    left: `${10 + i * 10}%`,
-                    top: `${15 + i * 8}%`,
-                    animationDelay: `${i * 0.3}s`,
-                    animationDuration: `${2 + i * 0.5}s`
-                  }}
-                />
-              ))}
-            </div>
-          </>
-        );
-      case 'holographic':
-        return (
-          <>
-            {/* Holographic grid */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute inset-0" style={{
-                backgroundImage: `
-                  linear-gradient(rgba(138, 43, 226, 0.3) 1px, transparent 1px),
-                  linear-gradient(90deg, rgba(138, 43, 226, 0.3) 1px, transparent 1px)
-                `,
-                backgroundSize: '20px 20px'
-              }} />
-            </div>
-            {/* Holographic scan lines */}
-            <div className="absolute inset-0 opacity-30">
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-400/20 to-transparent animate-pulse" />
-            </div>
-          </>
-        );
-      case 'cyberpunk':
-        return (
-          <>
-            {/* Cyberpunk matrix rain */}
-            <div className="absolute inset-0 opacity-20">
-              {[...Array(10)].map((_, i) => (
-                <div
-                  key={i}
-                  className="absolute text-green-400 text-xs font-mono animate-pulse"
-                  style={{
-                    left: `${5 + i * 8}%`,
-                    top: `${10 + i * 5}%`,
-                    animationDelay: `${i * 0.2}s`,
-                    animationDuration: `${1.5 + i * 0.3}s`
-                  }}
-                >
-                  01
-                </div>
-              ))}
-            </div>
-            {/* Cyberpunk energy waves */}
-            <div className="absolute inset-0 opacity-30">
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-red-500/20 to-transparent animate-pulse" />
-            </div>
-          </>
-        );
-      case 'neural':
-        return (
-          <>
-            {/* Neural connections */}
-            <div className="absolute inset-0 opacity-20">
-              {[...Array(6)].map((_, i) => (
-                <div
-                  key={i}
-                  className="absolute w-16 h-16 border border-green-400/30 rounded-full animate-spin"
-                  style={{
-                    left: `${15 + i * 12}%`,
-                    top: `${20 + i * 10}%`,
-                    animationDuration: `${10 + i * 2}s`,
-                    animationDirection: i % 2 === 0 ? 'normal' : 'reverse'
-                  }}
-                />
-              ))}
-            </div>
-            {/* Neural pulses */}
-            <div className="absolute inset-0 opacity-40">
-              <div className="absolute inset-0 bg-gradient-to-br from-transparent via-green-400/10 to-transparent animate-pulse" />
-            </div>
-          </>
-        );
-      default:
-        return null;
-    }
-  };
-
-  const cardVariants = {
-    initial: { 
-      scale: 1,
-      rotateX: 0,
-      rotateY: 0,
-      y: 0
-    },
-    hover: { 
-      scale: 1.02,
-      rotateX: interactive ? 5 : 0,
-      rotateY: interactive ? 5 : 0,
-      y: -5
-    },
-    focus: { 
-      scale: 1.01,
-      rotateX: 0,
-      rotateY: 0,
-      y: -2
-    }
-  };
-
-  const glowVariants = {
-    initial: { opacity: 0, scale: 0.8 },
-    hover: { opacity: 1, scale: 1.2 },
-    focus: { opacity: 0.8, scale: 1.1 }
+    const centerX = cardRef.current?.offsetWidth / 2 || 0;
+    const centerY = cardRef.current?.offsetHeight / 2 || 0;
+    
+    const rotateX = (mousePosition.y - centerY) / 20;
+    const rotateY = (mousePosition.x - centerX) / 20;
+    
+    return {
+      rotateX: `${rotateX}deg`,
+      rotateY: `${rotateY}deg`,
+      translateZ: '20px'
+    };
   };
 
   return (
     <motion.div
       ref={cardRef}
-      className={`${getVariantStyles()} ${getGlowIntensity()} ${className}`}
-      variants={cardVariants}
-      initial="initial"
-      whileHover={interactive ? "hover" : "initial"}
-      whileFocus={interactive ? "focus" : "initial"}
-      animate={isFocused ? "focus" : "initial"}
+      className={`relative group overflow-hidden rounded-2xl backdrop-blur-xl transition-all duration-700 ease-out ${className}`}
+      initial={{ opacity: 0, y: 50, scale: 0.95 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ 
+        duration: 0.8, 
+        delay: delay * 0.1,
+        ease: [0.25, 0.46, 0.45, 0.94]
+      }}
+      whileHover={interactive ? { scale: 1.02 } : {}}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       onFocus={() => setIsFocused(true)}
       onBlur={() => setIsFocused(false)}
-      onClick={onClick}
       style={{
-        transformStyle: 'preserve-3d',
-        perspective: '1000px'
-      }}
-      transition={{
-        duration: 0.3 * getAnimationSpeed(),
-        ease: "easeOut"
+        transform: `perspective(1000px) ${get3DTransform().rotateX ? `rotateX(${get3DTransform().rotateX}) rotateY(${get3DTransform().rotateY}) translateZ(${get3DTransform().translateZ})` : ''}`,
+        transition: 'transform 0.3s ease-out'
       }}
     >
-      {/* Background effects */}
-      {getVariantEffects()}
+      {/* Background with gradient */}
+      <div className={`absolute inset-0 bg-gradient-to-br ${variantStyles.bg}`} />
       
-      {/* Interactive mouse tracking effect */}
-      {interactive && isHovered && (
-        <motion.div
-          className="absolute inset-0 pointer-events-none"
-          initial="initial"
-          animate="hover"
-          variants={glowVariants}
-          transition={{ duration: 0.2 }}
-        >
-          <div
-            className="absolute w-32 h-32 bg-gradient-to-r from-cyan-400/20 to-purple-400/20 rounded-full blur-xl"
-            style={{
-              left: mousePosition.x - 64,
-              top: mousePosition.y - 64,
-              transform: 'translateZ(0)'
-            }}
-          />
-        </motion.div>
-      )}
-      
-      {/* Border glow effect */}
-      <div className="absolute inset-0 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500">
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-400/20 via-purple-400/20 to-pink-400/20 blur-sm" />
+      {/* Animated border */}
+      <div className={`absolute inset-0 rounded-2xl border ${variantStyles.border} transition-all duration-500`}>
+        <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${variantStyles.accent} opacity-0 transition-opacity duration-500 ${isHovered ? 'opacity-20' : ''}`} />
       </div>
-      
+
+      {/* Glow effect */}
+      <div 
+        className={`absolute inset-0 rounded-2xl transition-all duration-500 ${customGlowColor} ${
+          isHovered ? 'shadow-2xl scale-105' : 'shadow-lg'
+        }`}
+        style={{
+          filter: isHovered ? 'blur(20px)' : 'blur(10px)',
+          opacity: isHovered ? 0.6 : 0.3
+        }}
+      />
+
+      {/* Animated background patterns */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Quantum particles */}
+        <AnimatePresence>
+          {isHovered && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="absolute inset-0"
+            >
+              {[...Array(8)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute w-2 h-2 rounded-full"
+                  style={{
+                    background: `linear-gradient(45deg, ${variantStyles.accent})`,
+                    left: `${Math.random() * 100}%`,
+                    top: `${Math.random() * 100}%`
+                  }}
+                  animate={{
+                    scale: [0, 1, 0],
+                    opacity: [0, 1, 0],
+                    x: [0, (Math.random() - 0.5) * 100],
+                    y: [0, (Math.random() - 0.5) * 100]
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    delay: i * 0.2,
+                    ease: "easeInOut"
+                  }}
+                />
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Holographic grid */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `
+              linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
+            `,
+            backgroundSize: '20px 20px'
+          }} />
+        </div>
+
+        {/* Energy waves */}
+        <motion.div
+          className="absolute inset-0"
+          animate={{
+            background: [
+              `radial-gradient(circle at 20% 50%, ${variantStyles.accent} 0%, transparent 50%)`,
+              `radial-gradient(circle at 80% 50%, ${variantStyles.accent} 0%, transparent 50%)`,
+              `radial-gradient(circle at 20% 50%, ${variantStyles.accent} 0%, transparent 50%)`
+            ]
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          style={{ opacity: isHovered ? 0.1 : 0.05 }}
+        />
+      </div>
+
       {/* Content */}
       <div className="relative z-10 p-6">
         {children}
       </div>
-      
+
+      {/* Interactive overlay */}
+      {interactive && (
+        <motion.div
+          className="absolute inset-0 rounded-2xl bg-gradient-to-r from-white/5 to-transparent opacity-0 transition-opacity duration-300"
+          animate={{ opacity: isHovered ? 1 : 0 }}
+          style={{
+            background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(255,255,255,0.1) 0%, transparent 100px)`
+          }}
+        />
+      )}
+
       {/* Corner accents */}
       <div className="absolute top-0 left-0 w-8 h-8 border-l-2 border-t-2 border-cyan-400/50 rounded-tl-2xl" />
-      <div className="absolute top-0 right-0 w-8 h-8 border-r-2 border-t-2 border-purple-400/50 rounded-tr-2xl" />
-      <div className="absolute bottom-0 left-0 w-8 h-8 border-l-2 border-b-2 border-green-400/50 rounded-bl-2xl" />
-      <div className="absolute bottom-0 right-0 w-8 h-8 border-r-2 border-b-2 border-pink-400/50 rounded-br-2xl" />
-      
-      {/* CSS animations */}
-      <style jsx>{`
-        @keyframes quantumWave {
-          0%, 100% { transform: translateX(-100%); opacity: 0; }
-          50% { transform: translateX(100%); opacity: 1; }
-        }
-        
-        @keyframes holographicScan {
-          0% { transform: translateY(-100%); opacity: 0; }
-          50% { opacity: 1; }
-          100% { transform: translateY(100%); opacity: 0; }
-        }
-        
-        @keyframes cyberpunkMatrix {
-          0% { transform: translateY(-100%); opacity: 0; }
-          100% { transform: translateY(100%); opacity: 1; }
-        }
-        
-        @keyframes neuralPulse {
-          0%, 100% { transform: scale(1); opacity: 0.5; }
-          50% { transform: scale(1.1); opacity: 1; }
-        }
-      `}</style>
+      <div className="absolute top-0 right-0 w-8 h-8 border-r-2 border-t-2 border-cyan-400/50 rounded-tr-2xl" />
+      <div className="absolute bottom-0 left-0 w-8 h-8 border-l-2 border-b-2 border-cyan-400/50 rounded-bl-2xl" />
+      <div className="absolute bottom-0 right-0 w-8 h-8 border-r-2 border-b-2 border-cyan-400/50 rounded-br-2xl" />
+
+      {/* Floating elements */}
+      <AnimatePresence>
+        {isHovered && (
+          <>
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ 
+                scale: 1,
+                y: [0, -10, 0],
+                opacity: [0.5, 1, 0.5]
+              }}
+              exit={{ opacity: 0, scale: 0 }}
+              className="absolute top-4 right-4 w-3 h-3 bg-cyan-400 rounded-full"
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ 
+                scale: 1,
+                y: [0, 8, 0],
+                opacity: [0.5, 1, 0.5]
+              }}
+              exit={{ opacity: 0, scale: 0 }}
+              className="absolute bottom-4 left-4 w-2 h-2 bg-blue-400 rounded-full"
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 0.5
+              }}
+            />
+          </>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 };

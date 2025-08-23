@@ -52,12 +52,27 @@ export default function AIFinancialPlanningPlatform() {
     'Gain professional-grade financial insights'
   ];
 
-  const useCases = [
-    'Retirement Planning', 'Investment Management', 'Tax Optimization',
-    'Estate Planning', 'Insurance Planning', 'Debt Management',
-    'Cash Flow Analysis', 'Budget Planning', 'Emergency Fund Planning',
-    'Education Funding', 'Real Estate Planning', 'Business Financial Planning'
-  ];
+					<div className="mt-12">
+						<h2 className="text-2xl font-semibold">Pricing</h2>
+						<div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+							<div className="rounded-2xl border border-emerald-400/30 p-6">
+								<h3 className="text-xl font-bold">Starter</h3>
+								<p className="mt-2 text-gray-300">Up to 5 users, core models, board pack.</p>
+								<p className="mt-4 text-3xl font-bold">$390<span className="text-base font-normal text-gray-300">/mo</span></p>
+							</div>
+							<div className="rounded-2xl border border-cyan-400/30 p-6">
+								<h3 className="text-xl font-bold">Growth</h3>
+								<p className="mt-2 text-gray-300">25 users, consolidation, Snowflake/NetSuite.</p>
+								<p className="mt-4 text-3xl font-bold">$1,290<span className="text-base font-normal text-gray-300">/mo</span></p>
+							</div>
+							<div className="rounded-2xl border border-amber-400/30 p-6">
+								<h3 className="text-xl font-bold">Enterprise</h3>
+								<p className="mt-2 text-gray-300">Advanced governance, custom models, SSO.</p>
+								<p className="mt-4 text-3xl font-bold">Custom</p>
+							</div>
+						</div>
+						<p className="mt-4 text-sm text-gray-400">Market references: <a className="underline hover:text-cyan-300" href="https://www.workday.com/en-us/products/planning/adaptive-planning.html" target="_blank" rel="noreferrer">Workday Adaptive</a>, <a className="underline hover:text-cyan-300" href="https://www.anaplan.com/pricing/" target="_blank" rel="noreferrer">Anaplan</a>, <a className="underline hover:text-cyan-300" href="https://pigment.com/pricing" target="_blank" rel="noreferrer">Pigment</a>.</p>
+					</div>
 
   return (
     <>

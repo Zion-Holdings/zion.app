@@ -55,7 +55,47 @@ function ensureImports(tsx) {
   return tsx;
 }
 
-function apply() {
+function discoverExternalLinks() {
+  return [
+    { type: 'internal', href: '/.netlify/functions/supreme-orchestrator', label: 'Supreme Orchestrator', tagline: 'Meta trigger (1m)' },
+    { type: 'internal', href: '/.netlify/functions/docs-index-runner', label: 'Docs — technical notes & guides', tagline: 'Documentation' },
+    { type: 'internal', href: '/newsroom', label: 'AI Changelog — highlights', tagline: 'Summarized updates' },
+  ];
+}
+
+function buildCard(item) {
+  const common = 'group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo';
+  const inner = `\n  <div className=\"text-base font-semibold\">${item.label}</div>\n  <div className=\"mt-1 text-sm text-white/75\">${item.tagline || ''}</div>\n`;
+  if (item.type === 'external') {
+    return `              <a href=\"${item.href}\" target=\"_blank\" rel=\"noopener\" className=\"${common}\">${inner}  <div className=\"mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90\">Open <span aria-hidden>↗</span></div></a>`;
+  }
+  return `              <Link href=\"${item.href}\"><a className=\"${common}\">${inner}  <div className=\"mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90\">Open <span aria-hidden>→</span></div></a></Link>`;
+}
+
+function generateSection(items) {
+  return [
+    '<section id="auto-promoted" className="mx-auto max-w-7xl px-6 pb-14">',
+    '  <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Auto‑Promoted Features</h2>',
+    '  <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Continuously curated promos linking to live hubs, reports, and docs.</p>',
+    '  <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">',
+    items.map(buildCard).join('\n'),
+    '  </div>',
+    '</section>'
+  ].join('\n');
+}
+
+function replaceBetweenMarkers(source, startMarker, endMarker, replacement) {
+  const startIdx = source.indexOf(startMarker);
+  const endIdx = source.indexOf(endMarker);
+  if (startIdx === -1 || endIdx === -1 || endIdx < startIdx) {
+    throw new Error('Markers not found or invalid order in front index');
+  }
+  const before = source.slice(0, startIdx + startMarker.length);
+  const after = source.slice(endIdx);
+  return `${before}\n${replacement}\n${after}`;
+}
+
+(function main() {
   if (!fs.existsSync(FRONT_PAGE)) {
     throw new Error(`Front page not found at ${FRONT_PAGE}`);
   }

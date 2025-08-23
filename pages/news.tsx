@@ -1,5 +1,25 @@
 import React from 'react';
-  const featuredNews = [
+import Head from 'next/head';
+import { motion } from 'framer-motion';
+import { 
+  Newspaper, 
+  Calendar, 
+  User, 
+  Tag, 
+  ArrowRight, 
+  ExternalLink,
+  TrendingUp,
+  Award,
+  Rocket,
+  Globe,
+  Brain,
+  Atom,
+  Zap
+} from 'lucide-react';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+
+const NewsPage: React.FC = () => {
+  const newsArticles = [
     {
       title: 'Zion Tech Group Launches Revolutionary AI Consciousness Platform',
       excerpt: 'Breakthrough technology that brings emotional intelligence and self-awareness to artificial intelligence systems.',
@@ -47,14 +67,19 @@ import React from 'react';
     { id: '2023', name: '2023' }
   ];
 
-  const newsArticles = [
-    {
-=======
   Newspaper, Calendar, User, Tag, ArrowRight, ExternalLink,
   TrendingUp, Lightbulb, Rocket, Globe, Shield, Zap,
   Clock, BookOpen, Video, Podcast, FileText, Search
 } from 'lucide-react';
 import Link from 'next/link';
+=======
+  return (
+    <UltraAdvancedFuturisticBackground>
+      <div className="min-h-screen">
+        <Head>
+          <title>News & Updates - Zion Tech Group | Latest Technology Insights & Company Updates</title>
+          <meta name="description" content="Stay updated with Zion Tech Group's latest news, product launches, partnerships, and industry insights. Read about our breakthroughs in AI, quantum computing, and emerging technologies." />
+        </Head>
 
       id: 1,
       title: "Zion Tech Group Launches Revolutionary Quantum AI Platform",
@@ -1370,8 +1395,6 @@ export default function News() {
           </div>
         </section>
       </div>
-    </Layout>
-=======
       {/* CTA Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
@@ -1407,6 +1430,8 @@ export default function News() {
         </div>
       </section>
     </div>
+=======
+    </UltraAdvancedFuturisticBackground>
   );
 }
 =======

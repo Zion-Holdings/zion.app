@@ -1,46 +1,36 @@
-import type { NextPage, GetStaticProps } from 'next';
+import type { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
+import UltraFuturisticBackground from '../../components/ui/UltraFuturisticBackground';
 import Link from 'next/link';
-import fs from 'fs';
-import path from 'path';
 
-type BlogIndexProps = { slugs: string[] };
-
-export const getStaticProps: GetStaticProps<BlogIndexProps> = async () => {
-  const blogDir = path.join(process.cwd(), 'pages', 'blog');
-  let slugs: string[] = [];
-  try {
-    const files = fs.readdirSync(blogDir);
-    slugs = files
-      .filter((f) => f.endsWith('.tsx') && f !== 'index.tsx')
-      .map((f) => f.replace(/\.tsx$/, ''));
-  } catch {
-    slugs = [];
-  }
-  return { props: { slugs } };
-};
-
-const Index: NextPage<BlogIndexProps> = ({ slugs }) => {
-  return (
-    <div>
-      <Head>
-        <title>Blog - Zion Tech Solutions</title>
-        <meta name="description" content="Zion blog" />
-      </Head>
-      <main>
-        <h1>Blog</h1>
-        {slugs.length === 0 ? (
-          <p>No posts yet. Check back soon.</p>
-        ) : (
-          <ul>
-            {slugs.map((slug) => (
-              <li key={slug}>
-                <Link href={`/blog/${slug}`}>{slug.replace(/-/g, ' ')}</Link>
-              </li>
-            ))}
-          </ul>
-        )}
-        <p><Link href="/">Back to Home</Link></p>
-      </main>
-    </div>
-  );
+export default function BlogIndexPage() {
+	return (
+		<UltraFuturisticBackground variant="quantum" intensity="low">
+			<Head>
+				<title>Blog & Insights | Zion Tech Group</title>
+				<meta name="description" content="Insights on AI, cloud, security, and micro SaaS from Zion Tech Group." />
+				<link rel="canonical" href="https://ziontechgroup.com/blog" />
+			</Head>
+			<div className="container mx-auto px-4 py-24 space-y-8">
+				<div className="text-center">
+					<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">Blog & Insights</h1>
+					<p className="text-gray-300">Guides, benchmarks, and playbooks for AI, cloud, security, and micro SaaS.</p>
+				</div>
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<Link href="/market-pricing" className="p-6 bg-black/40 border border-gray-700/50 rounded-xl hover:border-cyan-500/50">
+						<h3 className="text-white text-xl font-semibold mb-2">Market Pricing References</h3>
+						<p className="text-gray-300 text-sm">Vendor-verifiable benchmarks for AI, cloud, and security tools.</p>
+					</Link>
+					<Link href="/resources" className="p-6 bg-black/40 border border-gray-700/50 rounded-xl hover:border-cyan-500/50">
+						<h3 className="text-white text-xl font-semibold mb-2">Resources</h3>
+						<p className="text-gray-300 text-sm">Reports, docs, and quick-start guides.</p>
+					</Link>
+					<Link href="/comprehensive-services-showcase-2025" className="p-6 bg-black/40 border border-gray-700/50 rounded-xl hover:border-cyan-500/50">
+						<h3 className="text-white text-xl font-semibold mb-2">All Services Showcase</h3>
+						<p className="text-gray-300 text-sm">Explore our full portfolio with pricing and use cases.</p>
+					</Link>
+				</div>
+			</div>
+		</UltraFuturisticBackground>
+	);
+}

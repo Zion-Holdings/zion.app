@@ -6,8 +6,12 @@ on:
     - cron: '*/10 * * * *'
 
 permissions:
-  contents: write
-  actions: read
+  contents: read
+  actions: write
+
+concurrency:
+  group: auto-heal-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   main:

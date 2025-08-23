@@ -1,60 +1,221 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { Menu, X, ChevronDown, Zap, Globe, Shield } from 'lucide-react';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isProductDropdownOpen, setIsProductDropdownOpen] = useState(false);
+  const [isSolutionsDropdownOpen, setIsSolutionsDropdownOpen] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navigation = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Services', href: '/services' },
-    { name: 'Case Studies', href: '/case-studies' },
-    { name: 'Blog', href: '/blog' },
+    { name: 'Product', href: '#', hasDropdown: true },
+    { name: 'Solutions', href: '/services' },
+    { name: 'Micro SaaS', href: '/micro-saas-services' },
     { name: 'Resources', href: '/resources' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Company', href: '/about' },
+    { name: 'Pricing', href: '/pricing' },
+    { name: 'Compare', href: '/pricing-comparison' },
   ];
 
+  const productDropdown = [
+    { name: 'AI Code Assistant', href: '/ai-assistant', description: 'Intelligent code completion and suggestions' },
+    { name: 'Cloud Platform', href: '/cloud-platform', description: 'Scalable cloud infrastructure' },
+    { name: 'Automation Hub', href: '/automation', description: 'AI-powered workflow automation' },
+    { name: 'Analytics', href: '/analytics', description: 'Real-time insights and reporting' },
+    { name: 'Micro SaaS Services', href: '/micro-saas-services', description: 'Professional business solutions' },
+  ];
+
+  const isActive = (href: string) => router.pathname === href;
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-gray-200/50">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled
+          ? 'bg-black/90 backdrop-blur-2xl border-b border-white/20 shadow-2xl shadow-black/50'
+          : 'bg-transparent'
+      }`}
+    >
+      {/* Futuristic Background Glow */}
+      {isScrolled && (
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-cyan-500/5" />
+      )}
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">Z</span>
+        <div className="flex items-center justify-between h-16 lg:h-20">
+          {/* Enhanced Logo */}
+          <Link href="/" className="flex items-center space-x-3 group">
+            <div className="relative">
+              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 via-purple-500 to-cyan-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-lg group-hover:shadow-2xl group-hover:shadow-blue-500/25">
+                <span className="text-white font-bold text-xl">Z</span>
+              </div>
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 rounded-xl blur opacity-0 group-hover:opacity-75 transition-opacity duration-300 -z-10" />
+              {/* Animated border */}
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">
-              Zion Tech Group
-            </span>
+            <div className="flex flex-col">
+              <span className="text-xl font-bold text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 transition-all duration-300">
+                Zion Tech
+              </span>
+              <span className="text-xs text-gray-400 group-hover:text-blue-400 transition-colors duration-300">
+                Group
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-1">
+            {/* Contact Info */}
+            <div className="flex items-center space-x-4 mr-6">
+              <a href="tel:+13024640950" className="flex items-center space-x-2 text-sm text-gray-300 hover:text-neon-blue transition-colors duration-200">
+                <span className="w-2 h-2 bg-neon-blue rounded-full animate-pulse"></span>
+                <span>+1 302 464 0950</span>
+              </a>
+            </div>
             {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors duration-200"
-              >
-                {item.name}
-              </Link>
+              <div key={item.name} className="relative">
+                {item.hasDropdown ? (
+                  <div className="relative">
+                    <button
+                      onClick={() => {
+                        if (item.name === 'Product') {
+                          setIsProductDropdownOpen(!isProductDropdownOpen);
+                          setIsSolutionsDropdownOpen(false);
+                        } else if (item.name === 'Solutions') {
+                          setIsSolutionsDropdownOpen(!isSolutionsDropdownOpen);
+                          setIsProductDropdownOpen(false);
+                        }
+                      }}
+                      className="flex items-center space-x-1 px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/5"
+                    >
+                      {item.name}
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+                        (item.name === 'Product' && isProductDropdownOpen) || 
+                        (item.name === 'Solutions' && isSolutionsDropdownOpen) ? 'rotate-180' : ''
+                      }`} />
+                    </button>
+                    
+                    {item.name === 'Product' && isProductDropdownOpen && (
+                      <div className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl p-4">
+                        <div className="grid gap-3">
+                          {productDropdown.map((product) => (
+                            <Link
+                              key={product.name}
+                              href={product.href}
+                              className="flex items-center p-3 rounded-xl hover:bg-gradient-to-r hover:from-blue-500/10 hover:to-purple-500/10 transition-all duration-300 group hover:scale-105"
+                              onClick={() => setIsProductDropdownOpen(false)}
+                            >
+                              <div className="text-2xl mr-3 group-hover:scale-110 transition-transform duration-300">
+                                {product.icon}
+                              </div>
+                              <div className="flex-1">
+                                <div className="font-medium text-white mb-1 group-hover:text-blue-400 transition-colors duration-300">
+                                  {product.name}
+                                </div>
+                                <div className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+                                  {product.description}
+                                </div>
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {isSaasToolsDropdownOpen && (
+                      <div className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl p-4">
+                        <div className="grid gap-3">
+                          {saasToolsDropdown.map((tool) => (
+                            <Link
+                              key={tool.name}
+                              href={tool.href}
+                              className="flex flex-col p-3 rounded-lg hover:bg-white/5 transition-colors duration-200"
+                              onClick={() => setIsSaasToolsDropdownOpen(false)}
+                            >
+                              <div className="font-medium text-white mb-1">{tool.name}</div>
+                              <div className="text-sm text-gray-400">{tool.description}</div>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {item.name === 'Solutions' && isSolutionsDropdownOpen && (
+                      <div className="absolute top-full left-0 mt-2 w-80 bg-black/90 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl p-4">
+                        <div className="grid gap-3">
+                          {solutionsDropdown.map((solution) => (
+                            <Link
+                              key={solution.name}
+                              href={solution.href}
+                              className="flex flex-col p-3 rounded-lg hover:bg-white/5 transition-colors duration-200"
+                              onClick={() => setIsSolutionsDropdownOpen(false)}
+                            >
+                              <div className="font-medium text-white mb-1">{solution.name}</div>
+                              <div className="text-sm text-gray-400">{solution.description}</div>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className={`px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg relative group ${
+                      isActive(item.href)
+                        ? 'text-blue-400 bg-gradient-to-r from-blue-500/20 to-purple-500/20'
+                        : 'text-gray-300 hover:text-white hover:bg-white/10'
+                    }`}
+                  >
+                    {item.name}
+                    {/* Hover glow effect */}
+                    <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
+                  </Link>
+                )}
+              </div>
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden md:flex items-center space-x-4">
+          {/* Contact Button */}
+          <div className="hidden lg:flex items-center space-x-4">
             <Link
               href="/contact"
-              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-200 transform hover:scale-105"
+              className="px-6 py-2 bg-gradient-to-r from-neon-blue to-neon-cyan text-black font-semibold rounded-lg hover:from-neon-cyan hover:to-neon-blue transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-neon-blue/25"
+            >
+              Contact Us
+            </Link>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="hidden lg:flex items-center space-x-3">
+            <Link
+              href="/contact"
+              className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors duration-300 rounded-lg hover:bg-white/10"
+            >
+              Contact
+            </Link>
+            <Link
+              href="/micro-saas"
+              className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-blue-500/25"
             >
               Get Started
             </Link>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 transition-colors duration-200"
+            className="lg:hidden p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-colors duration-200"
           >
             <svg
               className="w-6 h-6"
@@ -80,34 +241,81 @@ export default function Header() {
             </svg>
           </button>
         </div>
+      </div>
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden border-t border-gray-200/50">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white/95 backdrop-blur-xl">
+          <div className="lg:hidden">
+            <div className="px-4 pt-4 pb-6 space-y-2 bg-black/90 backdrop-blur-xl rounded-xl mt-2 border border-white/10 shadow-2xl">
               {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md transition-colors duration-200"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              ))}
-              <div className="pt-4">
-                <Link
-                  href="/contact"
-                  className="block w-full text-center bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-200"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Get Started
-                </Link>
+                <div key={item.name}>
+                  {item.hasDropdown ? (
+                    <div className="space-y-2">
+                      <div className="px-4 py-3 text-base font-medium text-white">
+                        {item.name}
+                      </div>
+                      <div className="pl-4 space-y-2">
+                        {item.name === 'Product' && productDropdown.map((product) => (
+                          <Link
+                            key={product.name}
+                            href={product.href}
+                            className="block px-4 py-2 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors duration-200"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            <div className="font-medium">{product.name}</div>
+                            <div className="text-xs text-gray-500">{product.description}</div>
+                          </Link>
+                        ))}
+                        {item.name === 'Solutions' && solutionsDropdown.map((solution) => (
+                          <Link
+                            key={solution.name}
+                            href={solution.href}
+                            className="block px-4 py-2 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors duration-200"
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            <div className="font-medium">{solution.name}</div>
+                            <div className="text-xs text-gray-500">{solution.description}</div>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className={`block px-4 py-2 text-base font-medium rounded-lg transition-colors duration-200 ${
+                      isActive(item.href)
+                        ? 'text-blue-400 bg-blue-500/10'
+                        : 'text-gray-300 hover:text-white hover:bg-white/10'
+                    }`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                )}
               </div>
+            ))}
+            
+            {/* Mobile CTA */}
+            <div className="pt-4 border-t border-white/20">
+              <Link
+                href="/contact"
+                className="block px-4 py-3 text-center text-gray-300 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/10 mb-3"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contact Us
+              </Link>
+              <Link
+                href="/micro-saas"
+                className="block px-4 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg text-center transition-all duration-300 hover:scale-105"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Get Started
+              </Link>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </header>
   );
 }

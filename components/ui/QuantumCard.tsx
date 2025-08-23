@@ -28,7 +28,7 @@ const QuantumCard: React.FC<QuantumCardProps> = ({
   const [isPressed, setIsPressed] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | null>(null);
 
   // Get variant-specific styles
   const getVariantStyles = () => {
@@ -180,7 +180,7 @@ const QuantumCard: React.FC<QuantumCardProps> = ({
       z: 20,
       transition: {
         duration: 0.3,
-        ease: "easeOut"
+        ease: "easeOut" as const
       }
     },
     pressed: { 
@@ -210,7 +210,7 @@ const QuantumCard: React.FC<QuantumCardProps> = ({
       onHoverStart={() => hover && setIsHovered(true)}
       onHoverEnd={() => hover && setIsHovered(false)}
       onTapStart={() => setIsPressed(true)}
-      onTapEnd={() => setIsPressed(false)}
+      onTap={() => setIsPressed(false)}
       onClick={onClick}
       style={{
         perspective: '1000px',

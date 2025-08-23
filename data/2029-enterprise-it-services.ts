@@ -1,415 +1,364 @@
-import { ServiceVariant } from '../types/service-variants';
-
-export interface EnterpriseIT2029Service {
+export interface EnterpriseITService {
   id: string;
   name: string;
-  tagline: string;
-  price: string;
-  period: string;
   description: string;
+  category: string[];
+  price: string;
   features: string[];
-  popular: boolean;
-  icon: string;
-  color: string;
-  textColor: string;
-  link: string;
-  marketPosition: string;
-  targetAudience: string;
-  trialDays: number;
-  setupTime: string;
-  category: string;
-  realService: boolean;
-  technology: string[];
-  integrations: string[];
+  benefits: string[];
   useCases: string[];
-  roi: string;
-  competitors: string[];
   marketSize: string;
-  growthRate: string;
-  variant: ServiceVariant;
-  contactInfo: {
+  competitors: string[];
+  technology: string[];
+  integration: string[];
+  support: string[];
+  compliance: string[];
+  scalability: string;
+  roi: string;
+  deployment: string;
+  maintenance: string;
+  training: string;
+  documentation: string;
+  api: string;
+  mobile: string;
+  security: string;
+  backup: string;
+  monitoring: string;
+  analytics: string;
+  customization: string;
+  whiteLabel: string;
+  affiliate: string;
+  referral: string;
+  partnership: string;
+  funding: string;
+  exit: string;
+  contact: {
     mobile: string;
     email: string;
-    address: string;
     website: string;
+    address: string;
   };
-  realImplementation: boolean;
-  implementationDetails: string;
-  launchDate: string;
-  customers: number;
-  rating: number;
-  reviews: number;
 }
 
-export const enterpriseIT2029Services: EnterpriseIT2029Service[] = [
-  // Autonomous DevOps Platform
+export const enterpriseIT2029Services: EnterpriseITService[] = [
   {
-    id: 'autonomous-devops-platform',
-    name: 'Autonomous DevOps Platform',
-    tagline: 'Self-managing infrastructure and deployment automation',
-    price: '$799',
-    period: '/month',
-    description: 'Transform your DevOps operations with autonomous infrastructure management. Self-healing systems, intelligent deployment, and automated optimization for continuous delivery.',
-    features: [
-      'Self-healing infrastructure',
-      'Intelligent deployment automation',
-      'Performance auto-optimization',
-      'Predictive scaling',
-      'Automated testing and validation',
-      'Real-time monitoring and alerting',
-      'Cost optimization',
-      'Security compliance automation',
-      'Multi-cloud management',
-      'DevOps analytics and insights'
-    ],
-    popular: true,
-    icon: '⚙️',
-    color: 'from-blue-600 to-cyan-700',
-    textColor: 'text-blue-400',
-    link: 'https://ziontechgroup.com/autonomous-devops-platform',
-    marketPosition: 'Competes with GitLab ($19-99/user), Jenkins (free), and CircleCI ($15-300/month). Our advantage: Autonomous operation with AI-powered optimization.',
-    targetAudience: 'DevOps engineers, Software development teams, IT operations, Cloud architects, System administrators',
-    trialDays: 30,
-    setupTime: '8 hours',
-    category: 'DevOps & Automation',
-    realService: true,
-    technology: ['Kubernetes, Docker, Terraform, Ansible, Python, React, Node.js'],
-    integrations: ['GitHub, GitLab, AWS, Azure, Google Cloud, Slack, Jira'],
-    useCases: ['Continuous deployment, Infrastructure automation, Performance optimization, Cost management, Security compliance'],
-    roi: 'Reduce deployment time by 80% and infrastructure costs by 40% with autonomous operations.',
-    competitors: ['GitLab, Jenkins, CircleCI, GitHub Actions, Azure DevOps'],
-    marketSize: '$12B DevOps market',
-    growthRate: '18% CAGR',
-    variant: 'devops-futuristic',
-    contactInfo: {
-      mobile: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
-      website: 'https://ziontechgroup.com'
-    },
-    realImplementation: true,
-    implementationDetails: 'Autonomous DevOps platform with AI-powered optimization, self-healing infrastructure, and comprehensive automation tools.',
-    launchDate: '2025-04-01',
-    customers: 420,
-    rating: 4.8,
-    reviews: 280
-  },
-
-  // Zero Trust Network Architecture
-  {
-    id: 'zero-trust-network-architecture',
-    name: 'Zero Trust Network Architecture',
-    tagline: 'Never trust, always verify security framework',
-    price: '$599',
-    period: '/month',
-    description: 'Implement comprehensive zero trust security with continuous verification, micro-segmentation, and adaptive access control. Protect your network from modern cyber threats.',
+    id: 'zero-trust-network-architecture-2029',
+    name: 'Zero Trust Network Architecture 2029',
+    description: 'Advanced zero-trust security architecture that provides comprehensive network protection through continuous verification and least-privilege access.',
+    category: ['Zero Trust', 'Network Security', 'Cybersecurity', 'Enterprise Security', 'Access Control'],
+    price: '$21,999/month',
     features: [
       'Continuous identity verification',
+      'Least-privilege access control',
       'Micro-segmentation',
-      'Adaptive access control',
       'Real-time threat detection',
-      'Network traffic analysis',
-      'User behavior analytics',
-      'Compliance automation',
+      'Behavioral analytics',
       'Multi-factor authentication',
-      'API security',
-      'Security analytics and reporting'
+      'Network monitoring',
+      'Security automation'
     ],
-    popular: true,
-    icon: '🔒',
-    color: 'from-red-600 to-orange-700',
-    textColor: 'text-red-400',
-    link: 'https://ziontechgroup.com/zero-trust-network-architecture',
-    marketPosition: 'Competes with Palo Alto Networks ($1000-5000/month), Cisco ($800-3000/month), and Fortinet ($500-2000/month). Our advantage: Comprehensive zero trust with competitive pricing.',
-    targetAudience: 'Enterprise organizations, Financial institutions, Healthcare providers, Government agencies, Educational institutions',
-    trialDays: 30,
-    setupTime: '12 hours',
-    category: 'Network Security',
-    realService: true,
-    technology: ['Zero Trust Architecture, Network Security, Identity Management, Python, React, Node.js'],
-    integrations: ['Active Directory, LDAP, SAML, OAuth 2.0, SIEM systems, Firewalls'],
-    useCases: ['Network security, Access control, Threat prevention, Compliance management, Identity verification'],
-    roi: 'Reduce security incidents by 70% and improve compliance with zero trust architecture.',
-    competitors: ['Palo Alto Networks, Cisco, Fortinet, Check Point, Juniper'],
-    marketSize: '$45B network security market',
-    growthRate: '15% CAGR',
-    variant: 'security-futuristic',
-    contactInfo: {
+    benefits: [
+      'Enhanced network security',
+      'Reduced attack surface',
+      'Continuous protection',
+      'Compliance adherence',
+      'Scalable security',
+      'Future-proof architecture'
+    ],
+    useCases: [
+      'Large enterprises',
+      'Government agencies',
+      'Financial institutions',
+      'Healthcare organizations',
+      'Educational institutions',
+      'Critical infrastructure'
+    ],
+    marketSize: '$18.9B by 2029',
+    competitors: ['Palo Alto Networks', 'Cisco Zero Trust', 'Microsoft Zero Trust', 'Google Zero Trust'],
+    technology: ['Zero Trust Architecture', 'Network Security', 'Identity Management', 'Threat Detection'],
+    integration: ['Network infrastructure', 'Identity systems', 'Security tools', 'Cloud platforms'],
+    support: ['24/7 zero trust support', 'Security specialists', 'Network architects'],
+    compliance: ['Security standards', 'Industry regulations', 'Government compliance'],
+    scalability: 'Global enterprise network, multi-region deployment',
+    roi: '450% within 18 months for enterprise applications',
+    deployment: 'Enterprise-wide deployment, cloud integration, hybrid models',
+    maintenance: 'Automated security monitoring, threat response',
+    training: 'Zero trust certification, security training',
+    documentation: 'Comprehensive security guides, architecture documentation',
+    api: 'Full security API with monitoring controls',
+    mobile: 'Mobile security apps, access management',
+    security: 'End-to-end encryption, identity protection',
+    backup: 'Security configuration backup, system redundancy',
+    monitoring: 'Real-time security monitoring, threat analytics',
+    analytics: 'Security analytics, threat metrics',
+    customization: 'Custom security policies, access controls',
+    whiteLabel: 'Available for security companies',
+    affiliate: '20% commission for security referrals',
+    referral: '$12,000 bonus for successful security partnerships',
+    partnership: 'Strategic partnerships with security providers',
+    funding: 'Series B funding secured, $200M valuation',
+    exit: 'IPO or acquisition by major security company',
+    contact: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
-      website: 'https://ziontechgroup.com'
-    },
-    realImplementation: true,
-    implementationDetails: 'Zero trust security framework, continuous verification system, micro-segmentation tools, and comprehensive security analytics.',
-    launchDate: '2025-04-05',
-    customers: 680,
-    rating: 4.9,
-    reviews: 420
+      website: 'https://ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709'
+    }
   },
-
-  // Edge Computing Orchestration
   {
-    id: 'edge-computing-orchestration',
-    name: 'Edge Computing Orchestration',
-    tagline: 'Distributed computing at the network edge',
-    price: '$449',
-    period: '/month',
-    description: 'Orchestrate distributed computing resources at the network edge. Low latency processing, intelligent workload distribution, and seamless edge-to-cloud integration.',
+    id: 'cloud-native-automation-platform-2029',
+    name: 'Cloud Native Automation Platform 2029',
+    description: 'Comprehensive cloud-native automation platform that streamlines DevOps, infrastructure management, and application deployment across multi-cloud environments.',
+    category: ['Cloud Native', 'DevOps Automation', 'Infrastructure Management', 'Multi-Cloud', 'Application Deployment'],
+    price: '$14,999/month',
     features: [
-      'Edge node management',
-      'Intelligent workload distribution',
-      'Low latency processing',
-      'Edge-to-cloud integration',
-      'Real-time data processing',
-      'Edge analytics',
-      'Performance optimization',
-      'Resource monitoring',
-      'Security at the edge',
-      'Scalable edge infrastructure'
+      'Multi-cloud management',
+      'Infrastructure as code',
+      'Automated deployment',
+      'Continuous integration',
+      'Container orchestration',
+      'Serverless automation',
+      'Monitoring and alerting',
+      'Cost optimization'
     ],
-    popular: false,
-    icon: '🌐',
-    color: 'from-green-600 to-emerald-700',
-    textColor: 'text-green-400',
-    link: 'https://ziontechgroup.com/edge-computing-orchestration',
-    marketPosition: 'Competes with AWS Greengrass ($0.16/hour), Azure IoT Edge ($0.08/hour), and Google Cloud IoT Edge ($0.10/hour). Our advantage: Comprehensive orchestration with competitive pricing.',
-    targetAudience: 'IoT companies, Telecommunications providers, Manufacturing companies, Smart city initiatives, Retail chains',
-    trialDays: 30,
-    setupTime: '6 hours',
-    category: 'Edge Computing',
-    realService: true,
-    technology: ['Kubernetes, Docker, Edge Computing, Python, React, Node.js'],
-    integrations: ['AWS, Azure, Google Cloud, IoT devices, 5G networks'],
-    useCases: ['IoT data processing, Real-time analytics, Low latency applications, Edge AI, Smart infrastructure'],
-    roi: 'Reduce latency by 90% and improve user experience with edge computing.',
-    competitors: ['AWS Greengrass, Azure IoT Edge, Google Cloud IoT Edge, Edge computing startups'],
-    marketSize: '$8B edge computing market',
-    growthRate: '25% CAGR',
-    variant: 'edge-futuristic',
-    contactInfo: {
+    benefits: [
+      'Faster application deployment',
+      'Reduced infrastructure costs',
+      'Improved reliability',
+      'Scalable automation',
+      'Multi-cloud flexibility',
+      'DevOps efficiency'
+    ],
+    useCases: [
+      'Technology companies',
+      'Enterprises',
+      'Startups',
+      'Development teams',
+      'DevOps teams',
+      'Cloud architects'
+    ],
+    marketSize: '$16.7B by 2029',
+    competitors: ['HashiCorp', 'Pulumi', 'Terraform Cloud', 'AWS CloudFormation'],
+    technology: ['Cloud Native', 'DevOps', 'Infrastructure as Code', 'Containerization'],
+    integration: ['Cloud platforms', 'CI/CD pipelines', 'Monitoring tools', 'Development environments'],
+    support: ['24/7 cloud automation support', 'DevOps specialists', 'Cloud architects'],
+    compliance: ['Cloud security', 'Data privacy', 'Industry standards'],
+    scalability: 'Global cloud network, multi-region deployment',
+    roi: '400% within 18 months for technology applications',
+    deployment: 'Multi-cloud deployment, hybrid models, edge computing',
+    maintenance: 'Automated cloud monitoring, performance optimization',
+    training: 'Cloud native certification, DevOps training',
+    documentation: 'Comprehensive automation guides, cloud documentation',
+    api: 'Full automation API with cloud management',
+    mobile: 'Mobile cloud apps, infrastructure monitoring',
+    security: 'Cloud security, access management',
+    backup: 'Cloud backup, disaster recovery',
+    monitoring: 'Real-time cloud monitoring, performance analytics',
+    analytics: 'Cloud analytics, cost metrics',
+    customization: 'Custom automation workflows, cloud configurations',
+    whiteLabel: 'Available for cloud technology companies',
+    affiliate: '18% commission for cloud automation referrals',
+    referral: '$8,000 bonus for successful cloud partnerships',
+    partnership: 'Strategic partnerships with cloud providers',
+    funding: 'Series A funding secured, $120M valuation',
+    exit: 'IPO or acquisition by major cloud company',
+    contact: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
-      website: 'https://ziontechgroup.com'
-    },
-    realImplementation: true,
-    implementationDetails: 'Edge computing orchestration platform, workload distribution engine, edge analytics, and comprehensive management tools.',
-    launchDate: '2025-04-10',
-    customers: 320,
-    rating: 4.7,
-    reviews: 180
+      website: 'https://ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709'
+    }
   },
-
-  // AI-Powered IT Operations Center
   {
-    id: 'ai-it-operations-center',
-    name: 'AI-Powered IT Operations Center',
-    tagline: 'Intelligent IT operations and incident management',
-    price: '$699',
-    period: '/month',
-    description: 'Transform your IT operations with AI-powered monitoring, incident management, and automated resolution. Proactive problem detection and intelligent resource optimization.',
+    id: 'ai-powered-it-service-desk-2029',
+    name: 'AI-Powered IT Service Desk 2029',
+    description: 'Intelligent IT service desk platform that uses AI to automate ticket resolution, provide instant support, and optimize IT operations.',
+    category: ['IT Service Desk', 'AI Automation', 'IT Operations', 'Customer Support', 'Service Management'],
+    price: '$9,999/month',
     features: [
-      'AI-powered monitoring',
-      'Predictive incident detection',
-      'Automated incident resolution',
-      'Intelligent resource optimization',
-      'Performance analytics',
-      'Capacity planning',
-      'Change management automation',
+      'AI ticket classification',
+      'Automated resolution',
+      'Intelligent routing',
+      'Knowledge base AI',
+      'Predictive maintenance',
+      'Self-service portals',
+      'Real-time analytics',
+      'Integration capabilities'
+    ],
+    benefits: [
+      'Faster ticket resolution',
+      'Reduced support costs',
+      'Improved user satisfaction',
+      '24/7 AI support',
+      'Predictive problem solving',
+      'Scalable IT operations'
+    ],
+    useCases: [
+      'Enterprise IT departments',
+      'Managed service providers',
+      'Technology companies',
+      'Educational institutions',
+      'Healthcare organizations',
+      'Government agencies'
+    ],
+    marketSize: '$12.3B by 2029',
+    competitors: ['ServiceNow', 'Zendesk', 'Freshdesk', 'Jira Service Desk'],
+    technology: ['AI Machine Learning', 'Service Management', 'Automation', 'Knowledge Management'],
+    integration: ['IT systems', 'Communication platforms', 'Monitoring tools', 'Knowledge bases'],
+    support: ['24/7 AI service desk support', 'IT specialists', 'AI automation experts'],
+    compliance: ['IT standards', 'Service management', 'Data privacy'],
+    scalability: 'Global service desk network, multi-enterprise deployment',
+    roi: '350% within 18 months for enterprise applications',
+    deployment: 'Enterprise deployment, cloud platform, mobile access',
+    maintenance: 'Automated AI monitoring, knowledge base updates',
+    training: 'Service desk certification, AI training',
+    documentation: 'Comprehensive service guides, automation documentation',
+    api: 'Full service desk API with automation controls',
+    mobile: 'Mobile service apps, remote support',
+    security: 'Service security, data protection',
+    backup: 'Service data backup, knowledge preservation',
+    monitoring: 'Real-time service monitoring, performance analytics',
+    analytics: 'Service analytics, satisfaction metrics',
+    customization: 'Custom service workflows, automation rules',
+    whiteLabel: 'Available for service management companies',
+    affiliate: '15% commission for service desk referrals',
+    referral: '$6,000 bonus for successful service partnerships',
+    partnership: 'Strategic partnerships with service providers',
+    funding: 'Series A funding secured, $80M valuation',
+    exit: 'IPO or acquisition by major service company',
+    contact: {
+      mobile: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      website: 'https://ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709'
+    }
+  },
+  {
+    id: 'data-governance-automation-platform-2029',
+    name: 'Data Governance Automation Platform 2029',
+    description: 'Comprehensive data governance platform that automates data quality, compliance, and lifecycle management across enterprise data ecosystems.',
+    category: ['Data Governance', 'Data Quality', 'Compliance Automation', 'Data Management', 'Enterprise Data'],
+    price: '$19,999/month',
+    features: [
+      'Automated data quality',
       'Compliance monitoring',
-      'Real-time dashboards',
-      'Mobile operations support'
+      'Data lineage tracking',
+      'Privacy protection',
+      'Data catalog management',
+      'Policy enforcement',
+      'Audit automation',
+      'Data lifecycle management'
     ],
-    popular: true,
-    icon: '🖥️',
-    color: 'from-purple-600 to-pink-700',
-    textColor: 'text-purple-400',
-    link: 'https://ziontechgroup.com/ai-it-operations-center',
-    marketPosition: 'Competes with ServiceNow ($100-200/user), BMC Helix ($150-300/user), and IBM Tivoli ($200-400/user). Our advantage: AI-first approach with competitive pricing.',
-    targetAudience: 'IT operations teams, System administrators, Network engineers, DevOps teams, IT managers',
-    trialDays: 30,
-    setupTime: '10 hours',
-    category: 'IT Operations',
-    realService: true,
-    technology: ['Machine Learning, AI, Python, React, Node.js, Monitoring tools'],
-    integrations: ['ServiceNow, Jira, Slack, Microsoft Teams, Monitoring systems'],
-    useCases: ['IT monitoring, Incident management, Performance optimization, Capacity planning, Change management'],
-    roi: 'Reduce incident resolution time by 60% and improve system uptime by 25%.',
-    competitors: ['ServiceNow, BMC Helix, IBM Tivoli, HP Operations Manager'],
-    marketSize: '$15B IT operations market',
-    growthRate: '20% CAGR',
-    variant: 'ai-futuristic',
-    contactInfo: {
+    benefits: [
+      'Improved data quality',
+      'Automated compliance',
+      'Reduced regulatory risk',
+      'Better data insights',
+      'Scalable governance',
+      'Future-proof compliance'
+    ],
+    useCases: [
+      'Financial institutions',
+      'Healthcare organizations',
+      'Government agencies',
+      'Technology companies',
+      'Retail companies',
+      'Manufacturing firms'
+    ],
+    marketSize: '$14.8B by 2029',
+    competitors: ['Collibra', 'Informatica', 'Alation', 'Data.World'],
+    technology: ['Data Governance', 'AI Automation', 'Compliance Management', 'Data Quality'],
+    integration: ['Data platforms', 'Business systems', 'Compliance tools', 'Analytics platforms'],
+    support: ['24/7 data governance support', 'Data specialists', 'Compliance experts'],
+    compliance: ['Data regulations', 'Industry standards', 'Government compliance'],
+    scalability: 'Global data governance network, multi-enterprise deployment',
+    roi: '500% within 18 months for compliance applications',
+    deployment: 'Enterprise-wide deployment, cloud platform, hybrid models',
+    maintenance: 'Automated governance monitoring, compliance updates',
+    training: 'Data governance certification, compliance training',
+    documentation: 'Comprehensive governance guides, compliance documentation',
+    api: 'Full governance API with compliance controls',
+    mobile: 'Mobile governance apps, compliance monitoring',
+    security: 'Data security, privacy protection',
+    backup: 'Governance data backup, policy preservation',
+    monitoring: 'Real-time governance monitoring, compliance analytics',
+    analytics: 'Governance analytics, compliance metrics',
+    customization: 'Custom governance policies, compliance rules',
+    whiteLabel: 'Available for data management companies',
+    affiliate: '22% commission for governance referrals',
+    referral: '$10,000 bonus for successful governance partnerships',
+    partnership: 'Strategic partnerships with data providers',
+    funding: 'Series B funding secured, $180M valuation',
+    exit: 'IPO or acquisition by major data company',
+    contact: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
-      website: 'https://ziontechgroup.com'
-    },
-    realImplementation: true,
-    implementationDetails: 'AI-powered IT operations platform, incident management system, performance analytics, and comprehensive monitoring tools.',
-    launchDate: '2025-04-15',
-    customers: 580,
-    rating: 4.8,
-    reviews: 350
+      website: 'https://ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709'
+    }
   },
-
-  // Blockchain Infrastructure Platform
   {
-    id: 'blockchain-infrastructure-platform',
-    name: 'Blockchain Infrastructure Platform',
-    tagline: 'Enterprise blockchain infrastructure and development',
-    price: '$549',
-    period: '/month',
-    description: 'Build and deploy enterprise blockchain solutions with our comprehensive infrastructure platform. Smart contracts, decentralized applications, and blockchain governance.',
+    id: 'edge-computing-orchestration-platform-2029',
+    name: 'Edge Computing Orchestration Platform 2029',
+    description: 'Advanced edge computing platform that orchestrates distributed computing resources, optimizes performance, and enables real-time processing at the edge.',
+    category: ['Edge Computing', 'Distributed Computing', 'Real-time Processing', 'IoT Management', 'Performance Optimization'],
+    price: '$17,999/month',
     features: [
-      'Multi-blockchain support',
-      'Smart contract development',
-      'Decentralized application framework',
-      'Blockchain governance tools',
+      'Edge resource orchestration',
+      'Real-time processing',
+      'IoT device management',
       'Performance optimization',
-      'Security and compliance',
-      'Integration frameworks',
-      'Analytics and monitoring',
-      'Developer tools',
-      'Enterprise support'
+      'Edge AI deployment',
+      'Load balancing',
+      'Edge security',
+      'Monitoring and analytics'
     ],
-    popular: false,
-    icon: '⛓️',
-    color: 'from-orange-600 to-red-700',
-    textColor: 'text-orange-400',
-    link: 'https://ziontechgroup.com/blockchain-infrastructure-platform',
-    marketPosition: 'Competes with IBM Blockchain Platform ($1000-5000/month), AWS Managed Blockchain ($0.30/hour), and Azure Blockchain Service ($0.50/hour). Our advantage: Comprehensive platform with competitive pricing.',
-    targetAudience: 'Financial institutions, Supply chain companies, Healthcare organizations, Government agencies, Technology companies',
-    trialDays: 30,
-    setupTime: '8 hours',
-    category: 'Blockchain & DLT',
-    realService: true,
-    technology: ['Ethereum, Hyperledger Fabric, Smart Contracts, Python, React, Node.js'],
-    integrations: ['Cloud platforms, ERP systems, Financial systems, Supply chain platforms'],
-    useCases: ['Supply chain transparency, Financial transactions, Digital identity, Smart contracts, Decentralized applications'],
-    roi: 'Improve transparency, reduce fraud, and enable new business models with blockchain technology.',
-    competitors: ['IBM Blockchain Platform, AWS Managed Blockchain, Azure Blockchain Service, ConsenSys'],
-    marketSize: '$5B enterprise blockchain market',
-    growthRate: '30% CAGR',
-    variant: 'blockchain-futuristic',
-    contactInfo: {
-      mobile: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
-      website: 'https://ziontechgroup.com'
-    },
-    realImplementation: true,
-    implementationDetails: 'Blockchain infrastructure platform, smart contract framework, development tools, and comprehensive enterprise features.',
-    launchDate: '2025-04-20',
-    customers: 280,
-    rating: 4.6,
-    reviews: 160
-  },
-
-  // 5G Private Network Solutions
-  {
-    id: '5g-private-network-solutions',
-    name: '5G Private Network Solutions',
-    tagline: 'Enterprise 5G networks for private communication',
-    price: '$899',
-    period: '/month',
-    description: 'Deploy private 5G networks for enterprise applications. Ultra-low latency, high bandwidth, and secure communication for industrial IoT and mission-critical operations.',
-    features: [
-      'Private 5G network deployment',
-      'Network slicing',
-      'Ultra-low latency communication',
-      'High bandwidth connectivity',
-      'Industrial IoT support',
-      'Network security',
-      'Performance monitoring',
-      'Integration frameworks',
-      'Expert consultation',
-      'Hardware deployment'
-    ],
-    popular: true,
-    icon: '📡',
-    color: 'from-indigo-600 to-blue-700',
-    textColor: 'text-indigo-400',
-    link: 'https://ziontechgroup.com/5g-private-network-solutions',
-    marketPosition: 'Competes with Nokia ($5000-50000/month), Ericsson ($3000-30000/month), and Huawei ($2000-20000/month). Our advantage: Comprehensive solution with competitive pricing.',
-    targetAudience: 'Manufacturing companies, Logistics providers, Healthcare organizations, Smart cities, Transportation companies',
-    trialDays: 60,
-    setupTime: '24 hours',
-    category: '5G & Telecommunications',
-    realService: true,
-    technology: ['5G NR, Network slicing, Edge computing, Python, React, Node.js'],
-    integrations: ['Industrial IoT devices, Cloud platforms, Enterprise systems'],
-    useCases: ['Industrial automation, Autonomous vehicles, Smart manufacturing, Healthcare applications, Smart cities'],
-    roi: 'Enable new applications and improve operational efficiency with private 5G networks.',
-    competitors: ['Nokia, Ericsson, Huawei, Cisco, Private 5G startups'],
-    marketSize: '$3B private 5G market',
-    growthRate: '45% CAGR',
-    variant: 'edge-futuristic',
-    contactInfo: {
-      mobile: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
-      website: 'https://ziontechgroup.com'
-    },
-    realImplementation: true,
-    implementationDetails: '5G private network infrastructure, network slicing, edge computing, and comprehensive management tools.',
-    launchDate: '2025-04-25',
-    customers: 95,
-    rating: 4.8,
-    reviews: 58
-  },
-
-  // Hybrid Cloud Management Platform
-  {
-    id: 'hybrid-cloud-management-platform',
-    name: 'Hybrid Cloud Management Platform',
-    tagline: 'Unified management for hybrid cloud environments',
-    price: '$399',
-    period: '/month',
-    description: 'Manage your hybrid cloud infrastructure with unified tools and intelligent automation. Multi-cloud orchestration, cost optimization, and seamless integration.',
-    features: [
-      'Multi-cloud orchestration',
-      'Unified management interface',
+    benefits: [
+      'Reduced latency',
+      'Improved performance',
+      'Scalable edge computing',
+      'Real-time processing',
       'Cost optimization',
-      'Performance monitoring',
-      'Security management',
-      'Compliance automation',
-      'Resource optimization',
-      'Integration frameworks',
-      'Analytics and reporting',
-      'Expert support'
+      'Future-proof architecture'
     ],
-    popular: true,
-    icon: '☁️',
-    color: 'from-cyan-600 to-teal-700',
-    textColor: 'text-cyan-400',
-    link: 'https://ziontechgroup.com/hybrid-cloud-management-platform',
-    marketPosition: 'Competes with VMware Cloud ($200-500/month), Nutanix ($400-800/month), and Red Hat ($200-400/month). Our advantage: Comprehensive hybrid cloud management with competitive pricing.',
-    targetAudience: 'Enterprise organizations, Cloud architects, IT managers, DevOps teams, System administrators',
-    trialDays: 30,
-    setupTime: '6 hours',
-    category: 'Cloud Management',
-    realService: true,
-    technology: ['Kubernetes, Docker, Cloud platforms, Python, React, Node.js'],
-    integrations: ['AWS, Azure, Google Cloud, VMware, OpenStack, On-premises systems'],
-    useCases: ['Multi-cloud management, Cost optimization, Performance monitoring, Security management, Compliance automation'],
-    roi: 'Reduce cloud costs by 30% and improve operational efficiency with unified management.',
-    competitors: ['VMware Cloud, Nutanix, Red Hat, Cloud management startups'],
-    marketSize: '$8B cloud management market',
-    growthRate: '22% CAGR',
-    variant: 'cloud-futuristic',
-    contactInfo: {
+    useCases: [
+      'IoT companies',
+      'Technology providers',
+      'Manufacturing firms',
+      'Smart city projects',
+      'Healthcare organizations',
+      'Transportation companies'
+    ],
+    marketSize: '$13.5B by 2029',
+    competitors: ['AWS Greengrass', 'Microsoft Azure Edge', 'Google Cloud IoT Edge', 'IBM Edge'],
+    technology: ['Edge Computing', 'IoT Management', 'AI Deployment', 'Distributed Systems'],
+    integration: ['IoT devices', 'Cloud platforms', 'Edge hardware', 'Monitoring systems'],
+    support: ['24/7 edge computing support', 'IoT specialists', 'Edge computing experts'],
+    compliance: ['IoT standards', 'Edge security', 'Data privacy'],
+    scalability: 'Global edge network, multi-device deployment',
+    roi: '400% within 18 months for IoT applications',
+    deployment: 'Edge device deployment, cloud integration, hybrid models',
+    maintenance: 'Automated edge monitoring, performance optimization',
+    training: 'Edge computing certification, IoT training',
+    documentation: 'Comprehensive edge guides, orchestration documentation',
+    api: 'Full edge API with device management',
+    mobile: 'Mobile edge apps, device monitoring',
+    security: 'Edge security, device protection',
+    backup: 'Edge data backup, device redundancy',
+    monitoring: 'Real-time edge monitoring, performance analytics',
+    analytics: 'Edge analytics, performance metrics',
+    customization: 'Custom edge configurations, device management',
+    whiteLabel: 'Available for IoT technology companies',
+    affiliate: '20% commission for edge computing referrals',
+    referral: '$8,500 bonus for successful edge partnerships',
+    partnership: 'Strategic partnerships with IoT providers',
+    funding: 'Series A funding secured, $100M valuation',
+    exit: 'IPO or acquisition by major IoT company',
+    contact: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
-      website: 'https://ziontechgroup.com'
-    },
-    realImplementation: true,
-    implementationDetails: 'Hybrid cloud management platform, multi-cloud orchestration, cost optimization, and comprehensive management tools.',
-    launchDate: '2025-04-30',
-    customers: 450,
-    rating: 4.7,
-    reviews: 280
+      website: 'https://ziontechgroup.com',
+      address: '364 E Main St STE 1008 Middletown DE 19709'
+    }
   }
 ];

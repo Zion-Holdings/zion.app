@@ -1,5 +1,29 @@
-import React, { useEffect, useState, useCallback } from 'react';
-import Layout from './layout/Layout';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  innovative2035MicroSaasServices 
+} from '../data/innovative-2035-micro-saas-services';
+import { 
+  innovative2035AIServices 
+} from '../data/innovative-2035-ai-services';
+import { 
+  innovative2035ITServices 
+} from '../data/innovative-2035-it-services';
+import { 
+  innovativeRealMicroSaasServices2025 
+} from '../data/2025-innovative-real-micro-saas-services';
+import { 
+  innovativeAIServicesEnhanced2025 
+} from '../data/2025-innovative-ai-services-enhanced';
+import { 
+  innovativeITServicesEnhanced2025 
+} from '../data/2025-innovative-it-services-enhanced';
+import { 
+  emergingTechServicesEnhanced2025 
+} from '../data/2025-emerging-tech-services-enhanced';
+import { advancedAIAutomationServices } from '../data/2026-advanced-ai-automation-services';
+import { quantumCybersecurityServices } from '../data/2026-quantum-cybersecurity-services';
+import UltraFuturisticBackground2035 from './backgrounds/UltraFuturisticBackground2035';
 import UltraFuturisticServiceCard2026 from './ui/UltraFuturisticServiceCard2026';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -9,27 +33,179 @@ import {
 } from 'lucide-react';
 import { innovative2025MicroSaasBatch } from '../data/innovative-2025-micro-saas-batch';
 
-const Homepage2025: React.FC = () => {
-  const featuredServices = innovative2025MicroSaasBatch.filter(service => service.popular).slice(0, 3);
+interface Homepage2025Props { showInternalNav?: boolean }
+
+const Homepage2025: React.FC<Homepage2025Props> = ({ showInternalNav = true }) => {
+  const [activeSection, setActiveSection] = useState('hero');
+  const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    setIsVisible(true);
+    const interval = setInterval(() => {
+      setCurrentServiceIndex((prev) => (prev + 1) % innovativeRealMicroSaasServices2025.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setActiveSection(sectionId);
+      setIsMobileMenuOpen(false);
+    }
+  };
+
+  const allServices = [
+    // New 2035 services (featured first)
+    ...innovative2035MicroSaasServices,
+    ...innovative2035AIServices,
+    ...innovative2035ITServices,
+    
+    // Existing services
+    ...innovativeRealMicroSaasServices2025,
+    ...innovativeAIServicesEnhanced2025,
+    ...innovativeITServicesEnhanced2025,
+    ...emergingTechServicesEnhanced2025,
+    ...advancedAIAutomationServices,
+    ...quantumCybersecurityServices
+  ];
+
+  const featuredServices = allServices.filter(service => service.popular).slice(0, 12);
+
+  const navigationSections = [
+    { id: 'hero', label: 'Home', icon: '🏠' },
+    { id: 'services', label: 'Micro SAAS', icon: '🚀' },
+    { id: 'ai', label: 'AI Services', icon: '🧠' },
+    { id: 'automation', label: 'AI Automation', icon: '⚡' },
+    { id: 'quantum', label: 'Quantum Security', icon: '🔐' },
+    { id: 'it', label: 'IT Solutions', icon: '💻' },
+    { id: 'emerging', label: 'Emerging Tech', icon: '🌟' },
+    { id: 'contact', label: 'Contact', icon: '📞' }
+  ];
 
   return (
-    <Layout>
-      <main className="relative z-10">
-        {/* Hero Section */}
-        <section 
-          className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
-          aria-labelledby="hero-heading"
-        >
-          {/* Background Elements */}
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-20 left-20 w-32 h-32 border border-cyan-400/20 rounded-lg animate-pulse"></div>
-            <div className="absolute top-40 right-32 w-24 h-24 border border-purple-400/20 rounded-full animate-pulse delay-1000"></div>
-            <div className="absolute bottom-32 left-32 w-40 h-40 border border-pink-400/20 transform rotate-45 animate-pulse delay-2000"></div>
-            <div className="absolute top-1/2 left-1/4 w-16 h-16 border border-blue-400/20 rounded-full animate-pulse delay-500"></div>
-            <div className="absolute top-1/3 right-1/4 w-20 h-20 border border-green-400/20 transform rotate-12 animate-pulse delay-1500"></div>
+    <UltraFuturisticBackground2035>
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-xl border-b border-white/10" aria-label="Primary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="flex items-center space-x-2"
+            >
+              <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg"></div>
+              <span className="text-white font-bold text-xl">ZionTech Group</span>
+            </motion.div>
+            
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex space-x-8">
+              {navigationSections.map((section) => (
+                <button
+                  key={section.id}
+                  onClick={() => scrollToSection(section.id)}
+                  className={`flex items-center space-x-2 text-sm font-medium transition-all duration-300 ${
+                    activeSection === section.id
+                      ? 'text-cyan-400 border-b-2 border-cyan-400'
+                      : 'text-gray-300 hover:text-cyan-400'
+                  }`}
+                >
+                  <span>{section.icon}</span>
+                  <span>{section.label}</span>
+                </button>
+              ))}
+            </div>
+
+            {/* Contact Info */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="hidden md:flex items-center space-x-4"
+            >
+              <a
+                href="tel:+13024640950"
+                className="text-cyan-400 hover:text-cyan-300 transition-colors text-sm"
+              >
+                +1 302 464 0950
+              </a>
+              <a
+                href="mailto:kleber@ziontechgroup.com"
+                className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-4 py-2 rounded-lg hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 text-sm"
+              >
+                Contact Us
+              </a>
+            </motion.div>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="lg:hidden text-white p-2"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-controls="mobile-navigation"
+              aria-expanded={isMobileMenuOpen}
+              aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
           </div>
 
-        <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
+          {/* Mobile Navigation Menu */}
+          <AnimatePresence>
+            {isMobileMenuOpen && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                className="lg:hidden border-t border-white/10"
+                id="mobile-navigation"
+              >
+                <div className="py-4 space-y-2">
+                  {navigationSections.map((section) => (
+                    <button
+                      key={section.id}
+                      onClick={() => scrollToSection(section.id)}
+                      className={`flex items-center space-x-3 w-full text-left px-4 py-2 rounded-lg transition-all duration-300 ${
+                        activeSection === section.id
+                          ? 'bg-cyan-400/20 text-cyan-400'
+                          : 'text-gray-300 hover:bg-white/10'
+                      }`}
+                    >
+                      <span>{section.icon}</span>
+                      <span>{section.label}</span>
+                    </button>
+                  ))}
+                  <div className="pt-4 border-t border-white/10">
+                    <a
+                      href="tel:+13024640950"
+                      className="flex items-center space-x-3 px-4 py-2 text-cyan-400 hover:bg-white/10 rounded-lg transition-all duration-300"
+                    >
+                      <span>📱</span>
+                      <span>+1 302 464 0950</span>
+                    </a>
+                    <a
+                      href="mailto:kleber@ziontechgroup.com"
+                      className="flex items-center space-x-3 px-4 py-2 text-cyan-400 hover:bg-white/10 rounded-lg transition-all duration-300"
+                    >
+                      <span>✉️</span>
+                      <span>kleber@ziontechgroup.com</span>
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </nav>
+      </>
+      )}
+
+      {/* Hero Section */}
+      <section id="hero" className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16">
+        <div className="text-center z-10 max-w-6xl mx-auto">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -370,186 +546,10 @@ const Homepage2025: React.FC = () => {
               </a>
             </motion.div>
           </div>
-        </section>
-
-        {/* Enhanced CTA Section */}
-        <section className="py-20 px-4" aria-labelledby="cta-heading">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="space-y-8"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-                Ready to Transform Your Business?
-              </h2>
-              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                Get in touch with our team to discuss how our innovative services can drive your success
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a 
-                  href="tel:+13024640950"
-                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25 flex items-center justify-center space-x-2"
-                >
-                  <Zap className="w-5 h-5" />
-                  <span>Call Now: +1 302 464 0950</span>
-                </a>
-                <a 
-                  href="mailto:kleber@ziontechgroup.com"
-                  className="px-8 py-4 border-2 border-purple-400 text-purple-400 font-semibold rounded-lg hover:bg-purple-400 hover:text-black transition-all duration-300 transform hover:scale-105"
-                >
-                  Email Us
-                </a>
-              </div>
-              
-              <div className="text-sm text-gray-400">
-                <p>Address: 364 E Main St STE 1008, Middletown DE 19709</p>
-                <p>Website: <a href="https://ziontechgroup.com" className="text-cyan-400 hover:text-cyan-300">https://ziontechgroup.com</a></p>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Service Categories Section */}
-        <section 
-          className="py-24 px-4 relative"
-          aria-labelledby="categories-heading"
-        >
-          <div className="max-w-7xl mx-auto">
-            <motion.div 
-              className="text-center mb-20"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 
-                id="categories-heading"
-                className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent"
-              >
-                Our Service Categories
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive solutions across all major technology domains
-              </p>
-            </motion.div>
-
-            <motion.div 
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-              variants={staggerContainer}
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-            >
-              {[
-                {
-                  icon: '🧠',
-                  title: "AI & Machine Learning",
-                  description: "Advanced artificial intelligence solutions for business transformation",
-                  services: "50+ AI Services",
-                  color: "from-cyan-500 to-blue-600"
-                },
-                {
-                  icon: '⚛️',
-                  title: "Quantum Technology",
-                  description: "Breakthrough quantum computing and quantum-secure solutions",
-                  services: "25+ Quantum Services",
-                  color: "from-purple-500 to-pink-600"
-                },
-                {
-                  icon: '🛡️',
-                  title: "Cybersecurity",
-                  description: "Enterprise-grade security and compliance solutions",
-                  services: "40+ Security Services",
-                  color: "from-red-500 to-orange-600"
-                },
-                {
-                  icon: '🌐',
-                  title: "IT Infrastructure",
-                  description: "Scalable and secure enterprise infrastructure solutions",
-                  services: "35+ Infrastructure Services",
-                  color: "from-green-500 to-emerald-600"
-                },
-                {
-                  icon: '📱',
-                  title: "Micro SAAS",
-                  description: "Innovative business solutions for modern enterprises",
-                  services: "60+ Micro SAAS Services",
-                  color: "from-yellow-500 to-amber-600"
-                },
-                {
-                  icon: '🚀',
-                  title: "Emerging Tech",
-                  description: "Cutting-edge technologies for future-ready businesses",
-                  services: "30+ Emerging Tech Services",
-                  color: "from-indigo-500 to-violet-600"
-                }
-              ].map((category, index) => (
-                <motion.div
-                  key={index}
-                  className="group p-8 rounded-2xl bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:transform hover:scale-105 cursor-pointer"
-                  variants={fadeInUp}
-                  whileHover={{ y: -10 }}
-                >
-                  <div className="mb-6 flex justify-center">
-                    <div className={`text-6xl group-hover:scale-110 transition-transform duration-300`}>
-                      {category.icon}
-                    </div>
-                  </div>
-                  <h3 className="text-2xl font-bold mb-3 text-white text-center">{category.title}</h3>
-                  <p className="text-gray-300 text-center mb-4">{category.description}</p>
-                  <div className={`text-center text-sm font-semibold bg-gradient-to-r ${category.color} bg-clip-text text-transparent`}>
-                    {category.services}
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-      </main>
-
-      {/* Video Modal */}
-      <AnimatePresence>
-        {isVideoModalOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-            onClick={() => setIsVideoModalOpen(false)}
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              className="relative w-full max-w-4xl aspect-video bg-gray-900 rounded-2xl overflow-hidden"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                onClick={() => setIsVideoModalOpen(false)}
-                className="absolute top-4 right-4 z-10 p-2 bg-black/50 hover:bg-black/70 rounded-full transition-colors"
-                aria-label="Close video modal"
-              >
-                <X className="w-6 h-6 text-white" />
-              </button>
-              <div className="w-full h-full flex items-center justify-center">
-                <div className="text-center text-white">
-                  <Play className="w-20 h-20 mx-auto mb-4 text-cyan-400" />
-                  <p className="text-xl">Company Overview Video</p>
-                  <p className="text-gray-400 mt-2">Video content would be embedded here</p>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </Layout>
+        </div>
+      </footer>
+    </UltraFuturisticBackground2035>
   );
-});
-
-Homepage2025.displayName = 'Homepage2025';
+}
 
 export default Homepage2025;

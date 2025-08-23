@@ -155,15 +155,6 @@ const companyLinks = [
   { name: '🔒 Support', href: '/support', icon: ShieldCheck }
 ];
 
-const serviceLinks = [
-  { name: '🎯 Business Solutions', href: '/business-solutions', icon: Target },
-  { name: '🤖 AI Services', href: '/ai-services', icon: Brain },
-  { name: '⚛️ Quantum Tech', href: '/quantum-technology', icon: Atom },
-  { name: '🌌 Space Technology', href: '/space-technology', icon: Globe },
-  { name: '🏢 Enterprise IT', href: '/enterprise-it', icon: Shield },
-  { name: '📱 Micro SAAS', href: '/micro-saas', icon: Zap }
-];
-
 const resourceLinks = [
   { name: '📖 Documentation', href: '/docs', icon: BookOpen },
   { name: '🎥 Video Tutorials', href: '/tutorials', icon: Video },

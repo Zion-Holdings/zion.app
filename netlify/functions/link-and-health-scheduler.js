@@ -1,14 +1,18 @@
-// Netlify Scheduled Function: Link & Health Scheduler
-// Replaces GH Actions for link integrity, health scans, and sitemap generation.
-
-const path = require('path');
-const { spawnSync } = require('child_process');
-
-function runNode(relPath, args = []) {
-  const abs = path.resolve(__dirname, '..', '..', relPath);
-  const res = spawnSync('node', [abs, ...args], { stdio: 'pipe', encoding: 'utf8' });
-  return { status: res.status || 0, stdout: res.stdout || '', stderr: res.stderr || '' };
-}
+// netlify/functions/link-and-health-scheduler.js
+exports.handler = async function() {
+  const { execSync } = require('child_process');
+  try {
+    execSync('node automation/site-link-crawler.cjs || true', { stdio: 'inherit', shell: true });
+    execSync('node automation/site-link-fixer.cjs || true', { stdio: 'inherit', shell: true });
+    execSync('node automation/external-link-check.cjs || true', { stdio: 'inherit', shell: true });
+    execSync('node scripts/generate-sitemap.js || true', { stdio: 'inherit', shell: true });
+    execSync('node automation/sitemap-runner.cjs || true', { stdio: 'inherit', shell: true });
+    execSync('git config user.name "zion-bot" && git config user.email "bot@zion.app" && git add -A && (git commit -m "chore(health): link checks + sitemap refresh [ci skip]" || true) && (git push origin main || true)', { stdio: 'inherit', shell: true });
+    return { statusCode: 200, body: JSON.stringify({ ok: true, task: 'link-and-health-scheduler' }) };
+  } catch (e) {
+    return { statusCode: 200, body: JSON.stringify({ ok: false, error: String(e) }) };
+  }
+};
 
 exports.config = {
   schedule: '0 */4 * * *', // every 4 hours
@@ -32,4 +36,3 @@ exports.handler = async () => {
 
   return { statusCode: 200, body: logs.join('\n') };
 };
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96

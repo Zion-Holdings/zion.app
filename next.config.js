@@ -1,21 +1,25 @@
-/** @type {import('next').NextConfig} */
-const path = require('path');
-
-let withSentryConfig = (cfg) => cfg;
-try {
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const sentry = require('@sentry/nextjs');
-  withSentryConfig = (cfg) => sentry.withSentryConfig(cfg, { silent: true });
-} catch {}
-
-const baseConfig = {
-  reactStrictMode: true,
-  images: { domains: ["localhost"] },
-  typescript: { ignoreBuildErrors: true },
-  eslint: { ignoreDuringBuilds: true },
-  async rewrites() { return [{ source: '/webhooks/receive', destination: '/api/webhooks/receive' }]; },
-  exportPathMap: async function (defaultPathMap) { delete defaultPathMap['/developers']; delete defaultPathMap['/dashboard/api-access']; return defaultPathMap; },
-  webpack: (config) => { config.resolve = config.resolve || {}; config.resolve.alias = config.resolve.alias || {}; config.resolve.alias['@'] = path.resolve(__dirname); return config; },
+const nextConfig = {
+	reactStrictMode: true,
+	trailingSlash: true,
+	output: 'export',
+	images: {
+		unoptimized: true
+	},
+	eslint: {
+		ignoreDuringBuilds: true
+	},
+	async redirects() {
+		return [
+			{ source: '/ai-customer-success-platform', destination: '/services/ai-customer-success-platform', permanent: true },
+			{ source: '/ai-sales-intelligence-platform', destination: '/services/ai-sales-intelligence-platform', permanent: true },
+			{ source: '/ai-financial-planning-platform', destination: '/services/ai-financial-planning-platform', permanent: true },
+			{ source: '/ai-powered-decision-engine', destination: '/services/ai-powered-decision-engine', permanent: true },
+			{ source: '/intelligent-content-automation-platform', destination: '/services/intelligent-content-automation-platform', permanent: true },
+			{ source: '/intelligent-hr-analytics-platform', destination: '/services/intelligent-hr-analytics-platform', permanent: true },
+			{ source: '/smart-crm-intelligence-suite', destination: '/services/smart-crm-intelligence-suite', permanent: true },
+			{ source: '/affiliate-attribution-suite', destination: '/services/affiliate-attribution-suite', permanent: true }
+		];
+	}
 };
 
 module.exports = withSentryConfig(baseConfig);

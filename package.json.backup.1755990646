@@ -142,6 +142,17 @@
     "netlify:trigger": "node scripts/trigger-netlify-automations.cjs",
     "readme:generate": "node scripts/generate-readme.js",
     "search:index": "node scripts/generate-search-index.js",
+          "sitemap": "node scripts/generate-sitemap.js",
+      "netlify:manifest": "node scripts/generate-netlify-functions-manifest.cjs",
+      "netlify:trigger": "node scripts/trigger-netlify-automations.cjs",
+      "readme:generate": "node scripts/generate-readme.js",
+      "search:index": "node scripts/generate-search-index.js",
+      "reports:link-health": "node automation/link-health-monitor.cjs",
+      "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider next build",
+    "prebuild": "npm run netlify:manifest",
+    "export": "NODE_OPTIONS=--openssl-legacy-provider next build && next export && (cp -f _redirects out/_redirects || true)",
+=======
     "content:fix": "node automation/content-quality-fixer.cjs && node automation/content-quality-analyzer.cjs",
     "dev": "NODE_OPTIONS=\"--max-old-space-size=4096 --openssl-legacy-provider\" next dev",
     "build": "NODE_OPTIONS=\"--max-old-space-size=6144 --openssl-legacy-provider\" next build",
@@ -440,26 +451,6 @@
     "redundancy:monitor": "node automation/redundancy-automation-system.cjs monitor",
     "redundancy:github": "node automation/github-actions-redundancy.cjs check",
     "redundancy:netlify": "node automation/netlify-functions-redundancy.cjs check",
-<<<<<<< HEAD
-    "redundancy:enhanced:start": "cd automation/redundancy && chmod +x start-enhanced-redundancy-system.sh && ./start-enhanced-redundancy-system.sh start",
-    "redundancy:enhanced:stop": "cd automation/redundancy && chmod +x start-enhanced-redundancy-system.sh && ./start-enhanced-redundancy-system.sh stop",
-    "redundancy:enhanced:status": "cd automation/redundancy && ./start-enhanced-redundancy-system.sh status",
-    "redundancy:enhanced:health": "cd automation/redundancy && ./start-enhanced-redundancy-system.sh health",
-    "redundancy:enhanced:restart": "cd automation/redundancy && ./start-enhanced-redundancy-system.sh restart",
-    "redundancy:enhanced:pm2": "node automation/redundancy/enhanced-pm2-redundancy-manager.cjs",
-    "redundancy:enhanced:github": "node automation/redundancy/enhanced-github-actions-redundancy-manager.cjs",
-    "redundancy:enhanced:netlify": "node automation/redundancy/enhanced-netlify-functions-redundancy-manager.cjs",
-    "redundancy:enhanced:master": "node automation/redundancy/enhanced-master-redundancy-orchestrator.cjs",
-    "redundancy:comprehensive:start": "./automation/start-comprehensive-redundancy.sh start",
-    "redundancy:comprehensive:stop": "./automation/start-comprehensive-redundancy.sh stop",
-    "redundancy:comprehensive:restart": "./automation/start-comprehensive-redundancy.sh restart",
-    "redundancy:comprehensive:status": "./automation/start-comprehensive-redundancy.sh status",
-    "redundancy:comprehensive:health": "./automation/start-comprehensive-redundancy.sh health",
-    "redundancy:comprehensive:logs": "./automation/start-comprehensive-redundancy.sh logs",
-    "redundancy:pm2:comprehensive": "node automation/comprehensive-pm2-redundancy.cjs",
-    "redundancy:github:comprehensive": "node automation/comprehensive-github-actions-redundancy.cjs",
-    "redundancy:netlify:comprehensive": "node automation/comprehensive-netlify-functions-redundancy.cjs"
-=======
     "redundancy:comprehensive:start": "./automation/start-comprehensive-redundancy.sh",
     "redundancy:comprehensive:status": "./automation/comprehensive-redundancy-status.sh",
     "redundancy:comprehensive:restart": "./automation/comprehensive-redundancy-restart.sh",
@@ -478,7 +469,6 @@
     "redundancy:ultimate:github": "bash automation/start-ultimate-redundancy.sh github",
     "redundancy:ultimate:netlify": "bash automation/start-ultimate-redundancy.sh netlify",
     "redundancy:ultimate:npm": "bash automation/start-ultimate-redundancy.sh npm"
->>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-f8c0
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
