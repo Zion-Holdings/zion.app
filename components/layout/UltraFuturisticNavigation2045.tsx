@@ -62,12 +62,12 @@ const navigationItems: NavigationItem[] = [
         icon: <Brain className="w-4 h-4" />,
         description: 'Advanced AI solutions for enterprise',
         children: [
-          { label: 'AI Automation', href: '/ai-automation-services' },
-          { label: 'AI Business Intelligence', href: '/ai-business-intelligence' },
-          { label: 'AI Customer Service', href: '/ai-customer-service-platform' },
-          { label: 'AI Content Generation', href: '/ai-content-generator' },
-          { label: 'AI Healthcare Solutions', href: '/ai-healthcare-diagnostics' },
-          { label: 'AI Financial Intelligence', href: '/ai-financial-intelligence' }
+          { label: 'AI Automation', href: '/ai-automation-services', icon: <Brain className="w-4 h-4" /> },
+          { label: 'AI Business Intelligence', href: '/ai-business-intelligence', icon: <Brain className="w-4 h-4" /> },
+          { label: 'AI Customer Service', href: '/ai-customer-service-platform', icon: <Brain className="w-4 h-4" /> },
+          { label: 'AI Content Generation', href: '/ai-content-generator', icon: <Brain className="w-4 h-4" /> },
+          { label: 'AI Healthcare Solutions', href: '/ai-healthcare-diagnostics', icon: <Brain className="w-4 h-4" /> },
+          { label: 'AI Financial Intelligence', href: '/ai-financial-intelligence', icon: <Brain className="w-4 h-4" /> }
         ]
       },
       {
@@ -76,10 +76,10 @@ const navigationItems: NavigationItem[] = [
         icon: <Atom className="w-4 h-4" />,
         description: 'Next-generation quantum solutions',
         children: [
-          { label: 'Quantum AI Fusion', href: '/quantum-ai-fusion-platform' },
-          { label: 'Quantum Cybersecurity', href: '/quantum-cybersecurity-platform' },
-          { label: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure-platform' },
-          { label: 'Quantum Neural Networks', href: '/quantum-neural-network-platform' }
+          { label: 'Quantum AI Fusion', href: '/quantum-ai-fusion-platform', icon: <Atom className="w-4 h-4" /> },
+          { label: 'Quantum Cybersecurity', href: '/quantum-cybersecurity-platform', icon: <Atom className="w-4 h-4" /> },
+          { label: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure-platform', icon: <Atom className="w-4 h-4" /> },
+          { label: 'Quantum Neural Networks', href: '/quantum-neural-network-platform', icon: <Atom className="w-4 h-4" /> }
         ]
       },
       {
@@ -88,10 +88,10 @@ const navigationItems: NavigationItem[] = [
         icon: <Server className="w-4 h-4" />,
         description: 'Enterprise IT solutions and services',
         children: [
-          { label: 'Advanced IT Infrastructure', href: '/advanced-it-infrastructure-services' },
-          { label: 'DevOps Automation', href: '/autonomous-devops-platform' },
-          { label: 'Cloud Solutions', href: '/cloud-platform' },
-          { label: 'Cybersecurity', href: '/cybersecurity' }
+          { label: 'Advanced IT Infrastructure', href: '/advanced-it-infrastructure-services', icon: <Server className="w-4 h-4" /> },
+          { label: 'DevOps Automation', href: '/autonomous-devops-platform', icon: <Server className="w-4 h-4" /> },
+          { label: 'Cloud Solutions', href: '/cloud-platform', icon: <Server className="w-4 h-4" /> },
+          { label: 'Cybersecurity', href: '/cybersecurity', icon: <Server className="w-4 h-4" /> }
         ]
       },
       {
@@ -100,9 +100,9 @@ const navigationItems: NavigationItem[] = [
         icon: <Rocket className="w-4 h-4" />,
         description: 'Innovative space solutions',
         children: [
-          { label: 'Space Resource Intelligence', href: '/space-resource-intelligence-platform' },
-          { label: 'Space Cybersecurity', href: '/space-cybersecurity' },
-          { label: 'Satellite Technology', href: '/satellite-technology' }
+          { label: 'Space Resource Intelligence', href: '/space-resource-intelligence-platform', icon: <Rocket className="w-4 h-4" /> },
+          { label: 'Space Cybersecurity', href: '/space-cybersecurity', icon: <Rocket className="w-4 h-4" /> },
+          { label: 'Satellite Technology', href: '/satellite-technology', icon: <Rocket className="w-4 h-4" /> }
         ]
       }
     ]
@@ -114,14 +114,14 @@ const navigationItems: NavigationItem[] = [
     description: 'Industry-specific solutions',
     neonColor: 'shadow-purple-400/50',
     category: 'main',
-    children: [
-      { label: 'Healthcare', href: '/healthcare-solutions' },
-      { label: 'Financial Services', href: '/financial-solutions' },
-      { label: 'Manufacturing', href: '/manufacturing-ai-solutions' },
-      { label: 'Government', href: '/government-technology-solutions' },
-      { label: 'Retail', href: '/retail-technology-solutions' },
-      { label: 'Education', href: '/education-technology-solutions' }
-    ]
+            children: [
+          { label: 'Healthcare', href: '/healthcare-solutions', icon: <Target className="w-4 h-4" /> },
+          { label: 'Financial Services', href: '/financial-solutions', icon: <Target className="w-4 h-4" /> },
+          { label: 'Manufacturing', href: '/manufacturing-ai-solutions', icon: <Target className="w-4 h-4" /> },
+          { label: 'Government', href: '/government-technology-solutions', icon: <Target className="w-4 h-4" /> },
+          { label: 'Retail', href: '/retail-technology-solutions', icon: <Target className="w-4 h-4" /> },
+          { label: 'Education', href: '/education-technology-solutions', icon: <Target className="w-4 h-4" /> }
+        ]
   },
   {
     label: 'Resources',
@@ -130,14 +130,14 @@ const navigationItems: NavigationItem[] = [
     description: 'Knowledge and insights',
     neonColor: 'shadow-green-400/50',
     category: 'main',
-    children: [
-      { label: 'Documentation', href: '/docs' },
-      { label: 'Case Studies', href: '/case-studies' },
-      { label: 'Blog', href: '/blog' },
-      { label: 'White Papers', href: '/white-papers' },
-      { label: 'Webinars', href: '/webinars' },
-      { label: 'Training', href: '/training' }
-    ]
+            children: [
+          { label: 'Documentation', href: '/docs', icon: <BookOpen className="w-4 h-4" /> },
+          { label: 'Case Studies', href: '/case-studies', icon: <BookOpen className="w-4 h-4" /> },
+          { label: 'Blog', href: '/blog', icon: <BookOpen className="w-4 h-4" /> },
+          { label: 'White Papers', href: '/white-papers', icon: <BookOpen className="w-4 h-4" /> },
+          { label: 'Webinars', href: '/webinars', icon: <BookOpen className="w-4 h-4" /> },
+          { label: 'Training', href: '/training', icon: <BookOpen className="w-4 h-4" /> }
+        ]
   },
   {
     label: 'Company',
@@ -146,16 +146,16 @@ const navigationItems: NavigationItem[] = [
     description: 'Learn about Zion Tech Group',
     neonColor: 'shadow-orange-400/50',
     category: 'main',
-    children: [
-      { label: 'About Us', href: '/about' },
-      { label: 'Our Mission', href: '/mission' },
-      { label: 'Leadership Team', href: '/team' },
-      { label: 'Careers', href: '/careers' },
-      { label: 'News & Updates', href: '/news' },
-      { label: 'Press Kit', href: '/press' },
-      { label: 'Partners', href: '/partners' },
-      { label: 'Investors', href: '/investors' }
-    ]
+            children: [
+          { label: 'About Us', href: '/about', icon: <Building className="w-4 h-4" /> },
+          { label: 'Our Mission', href: '/mission', icon: <Building className="w-4 h-4" /> },
+          { label: 'Leadership Team', href: '/team', icon: <Building className="w-4 h-4" /> },
+          { label: 'Careers', href: '/careers', icon: <Building className="w-4 h-4" /> },
+          { label: 'News & Updates', href: '/news', icon: <Building className="w-4 h-4" /> },
+          { label: 'Press Kit', href: '/press', icon: <Building className="w-4 h-4" /> },
+          { label: 'Partners', href: '/partners', icon: <Building className="w-4 h-4" /> },
+          { label: 'Investors', href: '/investors', icon: <Building className="w-4 h-4" /> }
+        ]
   },
   {
     label: 'Contact',
