@@ -54,7 +54,7 @@ const UltraFuturisticFooter2040: React.FC = () => {
         { name: 'Support Center', href: '/support' }
       ]
     }
-  ];
+  ], []);
 
   const socialLinks = [
     { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: Linkedin },

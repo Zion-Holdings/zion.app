@@ -93,7 +93,7 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
     // Apply large text
     if (newSettings.largeText) {
       root.style.fontSize = '18px';
-      root.style.lineHeight = '1.6';
+      root.style.setProperty('--text-scale', '1.2');
     } else {
       root.style.fontSize = '16px';
       root.style.lineHeight = '1.5';
@@ -101,7 +101,8 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
 
     // Apply reduced motion
     if (newSettings.reducedMotion) {
-      root.style.setProperty('--reduced-motion', 'reduce');
+      root.style.setProperty('--motion-reduced', 'true');
+      root.classList.add('motion-reduced');
     } else {
       root.style.setProperty('--reduced-motion', 'no-preference');
     }
@@ -198,7 +199,8 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
     announceToScreenReader(`Font size changed to ${newSize} pixels`);
   };
 
-  const resetSettings = () => {
+  // Performance optimization: Reset settings
+  const resetSettings = useCallback(() => {
     const defaultSettings: AccessibilitySettings = {
       highContrast: false,
       largeText: false,

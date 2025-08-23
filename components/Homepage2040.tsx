@@ -469,43 +469,49 @@ const Homepage2040: React.FC = () => {
 
       {/* Hero Section */}
       <section 
-        className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
+        className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden"
         aria-labelledby="hero-heading"
+        role="banner"
       >
-        {/* Background Elements with reduced animation for better performance */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 left-20 w-32 h-32 border border-cyan-400/20 rounded-lg animate-pulse"></div>
-          <div className="absolute top-40 right-32 w-24 h-24 border border-purple-400/20 rounded-full animate-pulse delay-1000"></div>
-          <div className="absolute bottom-32 left-32 w-40 h-40 border border-pink-400/20 transform rotate-45 animate-pulse delay-2000"></div>
+        {/* Enhanced Background with Performance Optimization */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(6,182,212,0.1),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(147,51,234,0.1),transparent_50%)]" />
         </div>
         
-        <div className="text-center max-w-6xl mx-auto relative z-10">
+        <div className="relative z-10 max-w-7xl mx-auto text-center">
           <motion.div
             variants={containerVariants}
             initial="hidden"
-            animate="visible"
+            animate={isLoaded ? "visible" : "hidden"}
             className="space-y-8"
           >
-            {/* Company Badge */}
+            {/* Enhanced Badge with Accessibility */}
             <motion.div
               variants={itemVariants}
-              className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-400/30 rounded-full text-cyan-400 text-sm font-medium"
-              role="banner"
-              aria-label="Company recognition"
+              className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-400/50 rounded-full text-cyan-400 text-sm font-medium backdrop-blur-sm"
+              style={{
+                boxShadow: '0 0 20px rgba(6, 182, 212, 0.5)',
+              }}
+              role="status"
+              aria-label="Latest innovation showcase"
             >
-              <Star className="w-5 h-5" aria-hidden="true" />
-              <span>Innovation Leader 2025</span>
+              <Star className="w-4 h-4" aria-hidden="true" />
+              <span>2025 Innovation Showcase</span>
+              <Star className="w-4 h-4 text-yellow-400" aria-hidden="true" />
             </motion.div>
-            
+
+            {/* Enhanced Main Heading with Better Typography */}
             <motion.h1 
-              variants={itemVariants}
               id="hero-heading"
               className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-bold mb-8 leading-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 30 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              Zion Tech Group
+              <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+                Zion Tech Group
+              </span>
             </motion.h1>
             
             <motion.p
