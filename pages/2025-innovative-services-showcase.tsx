@@ -62,8 +62,8 @@ const categories = [
 // Combine all services
 const allServices = [
   ...advancedAIAutomationServices2025,
-      ...innovativeITInfrastructureServices2025,
-    ...innovativeMicroSaasSolutions2025,
+  ...innovativeITInfrastructureServices2025,
+  ...innovativeMicroSaasSolutions2025,
   ...emergingTechnologyServices
 ];
 

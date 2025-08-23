@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
   ArrowRight, Star, 
-  Brain, Atom, Shield, Zap, TrendingUp, Globe, MapPin
+  Brain, Atom, Shield, Zap, TrendingUp, Globe, MapPin, Rocket, Check, Users, Building
 } from 'lucide-react';
 
 const Homepage2025: React.FC = () => {
@@ -99,43 +99,173 @@ const Homepage2025: React.FC = () => {
           <div className="max-w-6xl mx-auto relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
               className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
             >
-              <motion.div 
-                className="p-6 group hover:bg-white/5 rounded-xl transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-              >
-                <div className="text-4xl font-bold text-cyan-400 mb-2 group-hover:text-cyan-300 transition-colors">50+</div>
-                <div className="text-gray-300">AI Services</div>
-                <div className="text-xs text-cyan-400 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Cutting-edge solutions</div>
-              </motion.div>
-              <motion.div 
-                className="p-6 group hover:bg-white/5 rounded-xl transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-              >
-                <div className="text-4xl font-bold text-blue-400 mb-2 group-hover:text-blue-300 transition-colors">100+</div>
-                <div className="text-gray-300">Quantum Solutions</div>
-                <div className="text-xs text-blue-400 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Next-gen computing</div>
-              </motion.div>
-              <motion.div 
-                className="p-6 group hover:bg-white/5 rounded-xl transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-              >
-                <div className="text-4xl font-bold text-purple-400 mb-2 group-hover:text-purple-300 transition-colors">24/7</div>
-                <div className="text-gray-300">Autonomous Operations</div>
-                <div className="text-xs text-purple-400 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Always available</div>
-              </motion.div>
-              <motion.div 
-                className="p-6 group hover:bg-white/5 rounded-xl transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-              >
-                <div className="text-4xl font-bold text-green-400 mb-2 group-hover:text-green-300 transition-colors">∞</div>
-                <div className="text-gray-300">Future Possibilities</div>
-                <div className="text-xs text-green-400 mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Unlimited potential</div>
-              </motion.div>
+              <div className="space-y-2">
+                <div className="text-3xl md:text-4xl font-bold text-cyan-400">500+</div>
+                <div className="text-gray-400 text-sm">Services Available</div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-3xl md:text-4xl font-bold text-purple-400">10K+</div>
+                <div className="text-gray-400 text-sm">Happy Customers</div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-3xl md:text-4xl font-bold text-pink-400">99.9%</div>
+                <div className="text-gray-400 text-sm">Uptime Guarantee</div>
+              </div>
+              <div className="space-y-2">
+                <div className="text-3xl md:text-4xl font-bold text-blue-400">24/7</div>
+                <div className="text-gray-400 text-sm">Expert Support</div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* New Comprehensive Services Showcase */}
+        <section className="py-20 px-4 relative">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+                2025 Comprehensive Services Portfolio
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                Discover our cutting-edge AI automation, IT infrastructure, micro SAAS solutions, and advanced AI services designed to transform your business operations.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+              {[
+                {
+                  title: 'AI Automation',
+                  description: 'Intelligent automation solutions that streamline operations and boost productivity',
+                  icon: Brain,
+                  color: 'from-blue-600 to-indigo-600',
+                  features: ['Content Automation', 'Customer Service', 'Sales Automation', 'Workflow Optimization'],
+                  price: 'From $199/month',
+                  link: '/comprehensive-2025-services-showcase'
+                },
+                {
+                  title: 'IT Infrastructure',
+                  description: 'Advanced infrastructure solutions for modern digital enterprises',
+                  icon: Shield,
+                  color: 'from-green-600 to-emerald-600',
+                  features: ['Edge Computing', 'Zero Trust Security', 'Hybrid Cloud', 'Data Center Management'],
+                  price: 'From $399/month',
+                  link: '/comprehensive-2025-services-showcase'
+                },
+                {
+                  title: 'Micro SAAS',
+                  description: 'Scalable software solutions for growing businesses',
+                  icon: Rocket,
+                  color: 'from-orange-600 to-red-600',
+                  features: ['Email Automation', 'Invoice Management', 'Project Management', 'CRM Solutions'],
+                  price: 'From $79/month',
+                  link: '/comprehensive-2025-services-showcase'
+                },
+                {
+                  title: 'AI Services',
+                  description: 'Cutting-edge AI solutions for next-generation applications',
+                  icon: Atom,
+                  color: 'from-purple-600 to-pink-600',
+                  features: ['Video Generation', 'Code Generation', 'Data Analysis', 'Marketing Automation'],
+                  price: 'From $149/month',
+                  link: '/comprehensive-2025-services-showcase'
+                }
+              ].map((service, index) => (
+                <motion.div
+                  key={service.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.0 + index * 0.1 }}
+                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 hover:border-cyan-400/30 transition-all duration-300 hover:transform hover:scale-105"
+                >
+                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${service.color} flex items-center justify-center mb-6`}>
+                    <service.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
+                  <p className="text-gray-400 text-sm mb-4">{service.description}</p>
+                  
+                  <div className="space-y-2 mb-4">
+                    {service.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center space-x-2 text-sm text-gray-300">
+                        <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+                        <span>{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  <div className="text-lg font-bold text-cyan-400 mb-4">{service.price}</div>
+                  
+                  <Link href={service.link}>
+                    <button className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white py-3 px-4 rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105">
+                      Explore Services
+                    </button>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Contact Information */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.4 }}
+              className="bg-gradient-to-r from-cyan-500/10 to-purple-500/10 backdrop-blur-sm rounded-2xl p-8 border border-cyan-400/20 text-center"
+            >
+              <h3 className="text-2xl font-semibold mb-6 text-cyan-400">Ready to Get Started?</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div className="text-left">
+                  <h4 className="font-semibold text-purple-400 mb-3">Contact Information</h4>
+                  <div className="space-y-2 text-sm text-gray-300">
+                    <div className="flex items-center space-x-2">
+                      <Globe className="w-4 h-4 text-cyan-400" />
+                      <span>https://ziontechgroup.com</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Users className="w-4 h-4 text-purple-400" />
+                      <span>+1 302 464 0950</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Zap className="w-4 h-4 text-pink-400" />
+                      <span>kleber@ziontechgroup.com</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Building className="w-4 h-4 text-blue-400" />
+                      <span>364 E Main St STE 1008 Middletown DE 19709</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="text-left">
+                  <h4 className="font-semibold text-cyan-400 mb-3">Why Choose Zion Tech Group?</h4>
+                  <div className="space-y-2 text-sm text-gray-300">
+                    <div>✅ Proven track record with 500+ services</div>
+                    <div>✅ 24/7 expert support and consultation</div>
+                    <div>✅ Custom solutions tailored to your needs</div>
+                    <div>✅ Competitive pricing with flexible plans</div>
+                    <div>✅ Market-validated, production-ready solutions</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/comprehensive-2025-services-showcase">
+                  <button className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105">
+                    View All Services
+                  </button>
+                </Link>
+                <a href="mailto:kleber@ziontechgroup.com?subject=Service Inquiry">
+                  <button className="border-2 border-cyan-400 text-cyan-400 px-8 py-4 rounded-lg font-semibold hover:bg-cyan-400 hover:text-black transition-all duration-300">
+                    Contact Sales Team
+                  </button>
+                </a>
+              </div>
             </motion.div>
           </div>
         </section>

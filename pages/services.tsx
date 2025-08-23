@@ -39,6 +39,7 @@ import { ultimate2025AIServicesExpansion } from '../data/2025-ultimate-ai-servic
 
 // Import our new 2025 Q4 innovative services
 import { innovative2025Q4NewServices } from '../data/innovative-2025-q4-new-services';
+import { advancedITInfrastructureServices2025 } from '../data/advanced-it-infrastructure-services-2025';
 import { comprehensiveServicesAdvertising2025 } from '../data/comprehensive-services-advertising-2025';
 
 // Import our new innovative 2040 services
@@ -54,7 +55,7 @@ import { cuttingEdgeFuturisticServices } from '../data/2025-cutting-edge-futuris
 import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
 import { advancedITInfrastructureServices } from '../data/2025-advanced-it-infrastructure-services';
 
-// Import our new 2025 innovative services
+// Import our new 2025 comprehensive services
 import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
 import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
 import { cuttingEdgeAIServices2025 } from '../data/2025-cutting-edge-ai-services';
@@ -117,7 +118,7 @@ const allServices = [
   ...marketValidatedServices,
   // Our new 2025 Q4 innovative services
   ...innovative2025Q4NewServices,
-  ...advancedITInfrastructureServices,
+  ...advancedITInfrastructureServices2025,
   ...industryRealServices,
   ...real2025Q4AugmentedBatch,
   ...real2029Q3Additions,
@@ -150,13 +151,12 @@ const allServices = [
   // Our latest innovative services
   ...advanced2041EnterpriseServices,
   ...revolutionary2042MicroSaasServices,
-  // Our new 2025 ultimate services expansion
-  
-  // Our new 2025 innovative services
+  // Our new 2025 comprehensive services
   ...advancedAIAutomationServices2025,
   ...innovativeITInfrastructureServices2025,
   ...innovativeMicroSaasSolutions2025,
   ...cuttingEdgeAIServices2025,
+  // Our new 2025 ultimate services expansion
   ...ultimate2025MicroSaasExpansion,
   ...ultimate2025ITServicesExpansion,
   ...ultimate2025AIServicesExpansion,

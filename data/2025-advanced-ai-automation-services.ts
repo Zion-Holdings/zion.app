@@ -79,7 +79,7 @@ export const advancedAIAutomationServices2025: AdvancedAIAutomationService2025[]
     competitors: ['Jasper, Copy.ai, Grammarly, Buffer'],
     marketSize: '$15B content marketing market',
     growthRate: '25% annual growth',
-    variant: 'ai-automation',
+    variant: 'ai-autonomous',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -130,7 +130,7 @@ export const advancedAIAutomationServices2025: AdvancedAIAutomationService2025[]
     competitors: ['Intercom, Zendesk, Freshdesk, Drift'],
     marketSize: '$12B customer service software market',
     growthRate: '30% annual growth',
-    variant: 'ai-automation',
+    variant: 'ai-autonomous',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -181,7 +181,7 @@ export const advancedAIAutomationServices2025: AdvancedAIAutomationService2025[]
     competitors: ['HubSpot, Salesforce Einstein, Pipedrive, Outreach'],
     marketSize: '$18B sales automation market',
     growthRate: '28% annual growth',
-    variant: 'ai-automation',
+    variant: 'ai-autonomous',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -232,7 +232,7 @@ export const advancedAIAutomationServices2025: AdvancedAIAutomationService2025[]
     competitors: ['UiPath, Automation Anywhere, Blue Prism, Microsoft Power Automate'],
     marketSize: '$25B workflow automation market',
     growthRate: '35% annual growth',
-    variant: 'ai-automation',
+    variant: 'ai-autonomous',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -283,7 +283,7 @@ export const advancedAIAutomationServices2025: AdvancedAIAutomationService2025[]
     competitors: ['Tableau, Power BI, Looker, Domo'],
     marketSize: '$22B business intelligence market',
     growthRate: '32% annual growth',
-    variant: 'ai-automation',
+    variant: 'ai-autonomous',
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',

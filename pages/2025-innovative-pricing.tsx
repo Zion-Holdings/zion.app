@@ -110,8 +110,8 @@ export default function InnovativePricing2025() {
     if (selectedCategory === 'all') {
       return [
         ...advancedAIAutomationServices2025,
-                  ...innovativeITInfrastructureServices2025,
-          ...innovativeMicroSaasSolutions2025,
+        ...innovativeITInfrastructureServices2025,
+        ...innovativeMicroSaasSolutions2025,
         ...emergingTechnologyServices
       ];
     }
