@@ -38,17 +38,18 @@ const UltraFuturisticNavigation2045: React.FC = () => {
       name: 'Services',
       href: '/services',
       dropdown: [
-        { name: 'AI & Consciousness', href: '/services/ai-consciousness', icon: Brain, description: 'Revolutionary AI consciousness solutions' },
+        { name: 'AI & Autonomous Services', href: '/services/ai-autonomous', icon: Brain, description: 'Revolutionary AI autonomous solutions' },
         { name: 'Quantum Technology', href: '/services/quantum-technology', icon: Atom, description: 'Quantum computing and quantum AI' },
         { name: 'Cybersecurity', href: '/services/cybersecurity', icon: Shield, description: 'Advanced security and threat protection' },
         { name: 'Space Technology', href: '/services/space-technology', icon: Rocket, description: 'Space resource intelligence and mining' },
-        { name: 'Business Solutions', href: '/services/business-solutions', icon: Target, description: 'AI-powered business transformation' },
-        { name: 'IT Infrastructure', href: '/services/it-infrastructure', icon: Cloud, description: 'Modern cloud and infrastructure solutions' }
+        { name: 'IT Infrastructure', href: '/services/it-infrastructure', icon: Cloud, description: 'Modern cloud and infrastructure solutions' },
+        { name: 'Micro SAAS Solutions', href: '/services/micro-saas', icon: Target, description: 'Innovative micro SAAS platforms' },
+        { name: 'Business Intelligence', href: '/services/business-intelligence', icon: Target, description: 'AI-powered business transformation' }
       ]
     },
-    { name: 'About', href: '/about' },
     { name: 'Solutions', href: '/solutions' },
     { name: 'Resources', href: '/resources' },
+    { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' }
   ];
 

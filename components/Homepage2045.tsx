@@ -4,7 +4,8 @@ import Link from 'next/link';
 import { 
   ArrowRight, Play, TrendingUp, Brain, Shield, Rocket, Globe, Cpu, Database, Atom, Target, Star, Sparkles as SparklesIcon,
   Brain as BrainIcon, Atom as AtomIcon, Shield as ShieldIcon, Rocket as RocketIcon, Zap, Eye, Heart, Infinity,
-  Users, Building, Cloud, Code, Palette, Lightbulb, Award, Clock, CheckCircle, ArrowUpRight, ChevronDown, Menu, X
+  Users, Building, Cloud, Code, Palette, Lightbulb, Award, Clock, CheckCircle, ArrowUpRight, ChevronDown, Menu, X,
+  Truck, Server
 } from 'lucide-react';
 import Head from 'next/head';
 
@@ -17,6 +18,11 @@ import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-
 import { innovativeAIAutonomousServices2025 } from '../data/2025-innovative-ai-autonomous-services';
 import { revolutionary2045AdvancedAIServices } from '../data/revolutionary-2045-advanced-ai-services';
 import { revolutionary2045AdvancedITServices } from '../data/revolutionary-2045-advanced-it-services';
+
+// Import our new innovative services expansion
+import { innovativeAIAutonomousServices2025Expansion } from '../data/2025-innovative-ai-autonomous-services-expansion';
+import { innovativeITInfrastructureServices2025Expansion } from '../data/2025-innovative-it-infrastructure-services-expansion';
+import { innovativeMicroSaasServices2025Expansion } from '../data/2025-innovative-micro-saas-expansion';
 
 // Lazy load new components for better performance
 const ServiceCard = lazy(() => import('./ServiceCard'));
@@ -85,25 +91,44 @@ const Homepage2045: React.FC = () => {
     ...revolutionary2044AIServices,
     ...realEnterpriseMicroSaas2025,
     ...innovativeITInfrastructureServices2025,
-    ...innovativeAIAutonomousServices2025
+    ...innovativeAIAutonomousServices2025,
+    ...innovativeAIAutonomousServices2025Expansion,
+    ...innovativeITInfrastructureServices2025Expansion,
+    ...innovativeMicroSaasServices2025Expansion
   ];
 
   // Filter services by category
   const getFilteredServices = () => {
     if (selectedCategory === 'all') return allRevolutionaryServices;
-    return allRevolutionaryServices.filter(service => 
-      service.category.toLowerCase().includes(selectedCategory.toLowerCase()) ||
-      service.type.toLowerCase().includes(selectedCategory.toLowerCase())
-    );
+    
+    const category = categoryData.find(cat => cat.id === selectedCategory);
+    if (!category) return allRevolutionaryServices;
+    
+    return allRevolutionaryServices.filter(service => {
+      const serviceCategory = service.category?.toLowerCase() || '';
+      const serviceType = service.type?.toLowerCase() || '';
+      const categoryName = category.name.toLowerCase();
+      
+      return serviceCategory.includes(categoryName) || 
+             serviceType.includes(categoryName) ||
+             serviceCategory.includes(selectedCategory.toLowerCase()) ||
+             serviceType.includes(selectedCategory.toLowerCase());
+    });
   };
 
-  const categories = [
+  const categoryData = [
     { id: 'all', name: 'All Services', icon: SparklesIcon, color: 'from-purple-500 to-pink-500', count: allRevolutionaryServices.length },
-    { id: 'ai', name: 'AI & Consciousness', icon: BrainIcon, color: 'from-cyan-500 to-blue-500', count: revolutionary2045AdvancedAIServices.length },
+    { id: 'ai', name: 'AI & Autonomous', icon: BrainIcon, color: 'from-cyan-500 to-blue-500', count: allRevolutionaryServices.filter(s => s.category.includes('AI') || s.category.includes('Autonomous')).length },
     { id: 'quantum', name: 'Quantum Technology', icon: AtomIcon, color: 'from-blue-500 to-indigo-500', count: allRevolutionaryServices.filter(s => s.category.includes('Quantum')).length },
-    { id: 'cybersecurity', name: 'Cybersecurity', icon: ShieldIcon, color: 'from-red-500 to-orange-500', count: allRevolutionaryServices.filter(s => s.category.includes('Security')).length },
-    { id: 'business', name: 'Business Solutions', icon: Target, color: 'from-emerald-500 to-teal-500', count: allRevolutionaryServices.filter(s => s.type === 'Micro SAAS').length },
-    { id: 'it', name: 'IT Infrastructure', icon: Cpu, color: 'from-yellow-500 to-orange-500', count: revolutionary2045AdvancedITServices.length }
+    { id: 'cybersecurity', name: 'Cybersecurity', icon: ShieldIcon, color: 'from-red-500 to-orange-500', count: allRevolutionaryServices.filter(s => s.category.includes('Security') || s.category.includes('Cybersecurity')).length },
+    { id: 'it', name: 'IT Infrastructure', icon: Cpu, color: 'from-yellow-500 to-orange-500', count: allRevolutionaryServices.filter(s => s.category.includes('IT') || s.category.includes('Infrastructure')).length },
+    { id: 'micro-saas', name: 'Micro SAAS', icon: Target, color: 'from-emerald-500 to-teal-500', count: allRevolutionaryServices.filter(s => s.type === 'Micro SAAS').length },
+    { id: 'business-intelligence', name: 'Business Intelligence', icon: Target, color: 'from-purple-500 to-pink-500', count: allRevolutionaryServices.filter(s => s.category.includes('Business') || s.category.includes('Intelligence')).length },
+    { id: 'content-creation', name: 'Content Creation', icon: Code, color: 'from-cyan-500 to-blue-500', count: allRevolutionaryServices.filter(s => s.category.includes('Content') || s.category.includes('Creation')).length },
+    { id: 'customer-service', name: 'Customer Service', icon: Users, color: 'from-green-500 to-emerald-500', count: allRevolutionaryServices.filter(s => s.category.includes('Customer') || s.category.includes('Service')).length },
+    { id: 'supply-chain', name: 'Supply Chain', icon: Truck, color: 'from-orange-500 to-red-500', count: allRevolutionaryServices.filter(s => s.category.includes('Supply') || s.category.includes('Chain')).length },
+    { id: 'edge-computing', name: 'Edge Computing', icon: Server, color: 'from-indigo-500 to-purple-500', count: allRevolutionaryServices.filter(s => s.category.includes('Edge') || s.category.includes('Computing')).length },
+    { id: 'devops', name: 'DevOps', icon: Code, color: 'from-yellow-500 to-orange-500', count: allRevolutionaryServices.filter(s => s.category.includes('DevOps') || s.category.includes('Orchestration')).length }
   ];
 
   const features = [
@@ -377,24 +402,26 @@ const Homepage2045: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="flex flex-wrap justify-center gap-4 mb-12"
             >
-              {categories.map((category) => (
-                <button
+              {categoryData.map((category) => (
+                <motion.button
                   key={category.id}
                   onClick={() => handleCategoryChange(category.id)}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                   className={`group px-6 py-3 rounded-xl font-medium transition-all duration-300 transform hover:scale-105 ${
                     selectedCategory === category.id
-                      ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/25'
-                      : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 border border-gray-700/50'
+                      ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/25 border-2 border-cyan-400'
+                      : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 border border-gray-700/50 hover:border-cyan-500/50'
                   }`}
                 >
                   <span className="flex items-center space-x-2">
                     <category.icon className="w-5 h-5" />
                     <span>{category.name}</span>
-                    <span className="bg-gray-700/50 px-2 py-1 rounded-full text-xs">
+                    <span className="bg-gray-700/50 px-2 py-1 rounded-full text-xs font-bold">
                       {category.count}
                     </span>
                   </span>
-                </button>
+                </motion.button>
               ))}
             </motion.div>
           </div>

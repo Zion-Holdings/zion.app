@@ -20,40 +20,40 @@ const UltraFuturisticFooter2045: React.FC = () => {
 
   const footerSections = [
     {
-      title: 'Revolutionary Services 2045',
+      title: 'AI & Autonomous Services',
       links: [
-        { name: 'AI Consciousness Evolution 2045', href: '/ai-consciousness-evolution-2045', icon: <Brain className="w-5 h-5" /> },
-        { name: 'Quantum Neural Networks 2045', href: '/quantum-neural-network-platform-2045', icon: <Atom className="w-5 h-5" /> },
-        { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence-2045', icon: <Target className="w-5 h-5" /> },
-        { name: 'Quantum Cybersecurity 2045', href: '/quantum-cybersecurity-platform-2045', icon: <Shield className="w-5 h-5" /> },
-        { name: 'Space Resource Intelligence 2045', href: '/space-resource-intelligence-2045', icon: <Rocket className="w-5 h-5" /> },
-        { name: 'Autonomous Customer Success 2045', href: '/autonomous-customer-success-2045', icon: <Users className="w-5 h-5" /> }
+        { name: 'AI Autonomous Business Intelligence', href: '/ai-autonomous-business-intelligence', icon: <Brain className="w-5 h-5" /> },
+        { name: 'Quantum AI Neural Training', href: '/quantum-ai-neural-training', icon: <Atom className="w-5 h-5" /> },
+        { name: 'Autonomous Cybersecurity Response', href: '/autonomous-cybersecurity-response', icon: <Shield className="w-5 h-5" /> },
+        { name: 'AI Autonomous Customer Service', href: '/ai-autonomous-customer-service', icon: <Users className="w-5 h-5" /> },
+        { name: 'Autonomous Supply Chain Optimization', href: '/autonomous-supply-chain-optimization', icon: <Target className="w-5 h-5" /> },
+        { name: 'AI Content Creation Studio', href: '/ai-content-creation-studio', icon: <Code className="w-5 h-5" /> }
       ]
     },
     {
-      title: 'Technology Solutions',
+      title: 'IT Infrastructure & Cloud',
       links: [
-        { name: 'Quantum Cloud Infrastructure 2045', href: '/quantum-cloud-infrastructure-2045', icon: <Cloud className="w-5 h-5" /> },
-        { name: 'Autonomous DevOps Platform 2045', href: '/autonomous-devops-platform-2045', icon: <Code className="w-5 h-5" /> },
-        { name: 'Quantum Data Center Management 2045', href: '/quantum-data-center-management-2045', icon: <Server className="w-5 h-5" /> },
-        { name: 'Autonomous Network Management 2045', href: '/autonomous-network-management-2045', icon: <Network className="w-5 h-5" /> },
-        { name: 'Autonomous IT Service Management 2045', href: '/autonomous-it-service-management-2045', icon: <Settings className="w-5 h-5" /> },
-        { name: 'Autonomous Security Operations Center 2045', href: '/autonomous-security-operations-center-2045', icon: <Lock className="w-5 h-5" /> }
+        { name: 'Quantum-Enhanced Cloud Infrastructure', href: '/quantum-enhanced-cloud-infrastructure', icon: <Cloud className="w-5 h-5" /> },
+        { name: 'Autonomous DevOps Orchestration', href: '/autonomous-devops-orchestration', icon: <Code className="w-5 h-5" /> },
+        { name: 'Edge Computing Intelligence', href: '/edge-computing-intelligence', icon: <Server className="w-5 h-5" /> },
+        { name: 'Zero-Trust Network Architecture', href: '/zero-trust-network-architecture', icon: <Network className="w-5 h-5" /> },
+        { name: 'Autonomous Data Center Management', href: '/autonomous-data-center-management', icon: <Settings className="w-5 h-5" /> },
+        { name: 'Quantum Cybersecurity Platform', href: '/quantum-cybersecurity-platform-2045', icon: <Lock className="w-5 h-5" /> }
       ]
     },
     {
-      title: 'AI & Consciousness',
+      title: 'Micro SAAS Solutions',
       links: [
-        { name: 'AI Consciousness Evolution 2045', href: '/ai-consciousness-evolution-2045', icon: <Brain className="w-5 h-5" /> },
-        { name: 'Quantum AI Cognitive 2045', href: '/quantum-ai-cognitive-2045', icon: <Atom className="w-5 h-5" /> },
-        { name: 'Autonomous AI Research 2045', href: '/autonomous-ai-research-2045', icon: <Zap className="w-5 h-5" /> },
-        { name: 'Emotional AI Intelligence 2045', href: '/emotional-ai-intelligence-2045', icon: <Heart className="w-5 h-5" /> },
-        { name: 'Quantum AI Metaverse 2045', href: '/quantum-ai-metaverse-2045', icon: <Globe className="w-5 h-5" /> },
-        { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence-2045', icon: <Target className="w-5 h-5" /> }
+        { name: 'Autonomous Social Media Management', href: '/autonomous-social-media-management', icon: <Globe className="w-5 h-5" /> },
+        { name: 'AI Email Marketing Intelligence', href: '/ai-email-marketing-intelligence', icon: <Mail className="w-5 h-5" /> },
+        { name: 'Autonomous Customer Support', href: '/autonomous-customer-support-intelligence', icon: <Users className="w-5 h-5" /> },
+        { name: 'AI Business Intelligence Dashboard', href: '/ai-business-intelligence-dashboard', icon: <Target className="w-5 h-5" /> },
+        { name: 'Space Resource Intelligence', href: '/space-resource-intelligence-2045', icon: <Rocket className="w-5 h-5" /> },
+        { name: 'Quantum Neural Networks', href: '/quantum-neural-network-platform-2045', icon: <Atom className="w-5 h-5" /> }
       ]
     },
     {
-      title: 'Company',
+      title: 'Company & Resources',
       links: [
         { name: 'About Us', href: '/about', icon: <Users className="w-5 h-5" /> },
         { name: 'Our Mission', href: '/mission', icon: <Target className="w-5 h-5" /> },
