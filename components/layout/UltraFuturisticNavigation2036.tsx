@@ -447,16 +447,88 @@ const UltraFuturisticNavigation2036: React.FC = () => {
             transition={{ duration: 0.3 }}
             className="lg:hidden bg-gray-900/95 backdrop-blur-xl border-t border-gray-700/50"
           >
-            <div className="px-4 py-6 space-y-6">
-              {/* Contact Info */}
-              <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-400/20 rounded-lg p-4">
-                <h3 className="text-sm font-medium text-cyan-400 mb-3">Contact Information</h3>
-                <div className="space-y-2 text-sm text-gray-300">
-                  <div className="flex items-center space-x-2">
-                    <Phone className="w-4 h-4 text-cyan-400" />
-                    <a href={`tel:${contactInfo.mobile}`} className="hover:text-cyan-400 transition-colors">
-                      {contactInfo.mobile}
-                    </a>
+            <div className="p-6">
+              {/* Mobile Menu Header */}
+              <div className="flex items-center justify-between mb-8">
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-lg"></div>
+                  <span className="text-white font-bold text-lg">ZionTech Group</span>
+                </div>
+                <button
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="p-2 text-white hover:text-cyan-400 transition-colors"
+                  aria-label="Close mobile menu"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+
+              {/* Mobile Search */}
+              <div className="mb-6">
+                <EnhancedSearch 
+                  onSearch={(query) => {
+                    // Handle search - could navigate to search results page
+                    window.location.href = `/services?search=${encodeURIComponent(query)}`;
+                  }}
+                  onResultSelect={(result) => {
+                    // Handle result selection - navigate to the service page
+                    window.location.href = result.slug;
+                    setMobileMenuOpen(false);
+                  }}
+                  placeholder="Search services..."
+                  showFilters={false}
+                />
+              </div>
+
+              {/* Mobile Navigation Items */}
+              <div className="space-y-4">
+                {navigationItems.map((item) => (
+                  <div key={item.name}>
+                    <button
+                      className="w-full flex items-center justify-between p-3 text-left text-white hover:bg-white/5 rounded-lg transition-colors"
+                      onClick={() => setActiveDropdown(activeDropdown === item.name ? null : item.name)}
+                      aria-expanded={activeDropdown === item.name}
+                    >
+                      <div className="flex items-center space-x-3">
+                        {item.icon}
+                        <span>{item.name}</span>
+                        {item.badge && (
+                          <span className="px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-full">
+                            {item.badge}
+                          </span>
+                        )}
+                      </div>
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === item.name ? 'rotate-180' : ''}`} />
+                    </button>
+
+                    {/* Mobile Dropdown */}
+                    <AnimatePresence>
+                      {activeDropdown === item.name && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          className="ml-4 mt-2 space-y-2 overflow-hidden"
+                        >
+                          {item.children?.map((child) => (
+                            <Link
+                              key={child.name}
+                              href={normalizeHref(child.href)}
+                              className="flex items-center space-x-3 p-3 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                              onClick={() => setMobileMenuOpen(false)}
+                            >
+                              {child.icon}
+                              <span className="text-sm">{child.name}</span>
+                              {child.featured && (
+                                <span className="px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-full">
+                                  Featured
+                                </span>
+                              )}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Mail className="w-4 h-4 text-cyan-400" />
