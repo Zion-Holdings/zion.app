@@ -2,12 +2,23 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
+<<<<<<< HEAD
+  Menu, ChevronDown,
+  Brain, Rocket, Shield, 
+  Zap,
+  Target, Atom,
+  BookOpen,
+  Truck, DollarSign, BarChart3, Globe, Users, X, Phone, Mail, MapPin, ArrowRight,
+  Star, Sparkles, Cpu, Lock, Cloud, BarChart3 as BarChart3Icon, Settings, Eye, Award, Clock, Heart, Lightbulb,
+  Palette, Code, Database, Shield as ShieldIcon, Globe as GlobeIcon, Zap as ZapIcon, Target as TargetIcon
+=======
   Menu, X, ChevronDown, Search, 
   Brain, Cpu, Rocket, Shield, 
   Zap, Globe, Star, Users,
   Target, Microscope, Atom, Database,
   Lock, Cloud, BarChart3, Settings,
   TrendingUp, Stethoscope, GraduationCap, Leaf, Truck
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-29c7
 } from 'lucide-react';
 import SearchComponent from '../SearchComponent';
 import ThemeToggle from '../ThemeToggle';

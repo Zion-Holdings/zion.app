@@ -56,6 +56,14 @@ import UltraFuturisticBackground2029 from '../components/backgrounds/UltraFuturi
 import UltraFuturisticNavigation2029 from '../components/layout/UltraFuturisticNavigation2029';
 import UltraFuturisticFooter2029 from '../components/layout/UltraFuturisticFooter2029';
 
+<<<<<<< HEAD
+// Import all service data
+import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
+import { innovativeAIServices2029 } from '../data/2029-innovative-ai-services';
+import { quantumSpaceInnovations2029 } from '../data/2029-quantum-space-innovations';
+import { enterpriseITInnovations2029 } from '../data/2029-enterprise-it-innovations';
+import { innovativeMicroSaas2029 } from '../data/2029-innovative-micro-saas';
+=======
 // Import all the new 2025 service data
 import { realMicroSaasServices2025 } from '../data/2025-real-micro-saas-services';
 import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services';
@@ -202,6 +210,7 @@ const serviceCategories: Array<{
     gradient: 'from-orange-500/20 to-pink-500/20'
   }
 ];
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-29c7
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
