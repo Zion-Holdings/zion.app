@@ -9,7 +9,11 @@ import { TokenTransaction } from '@/types/tokens';
 import { ProtectedRoute } from '@/components/ProtectedRoute';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import { useToast } from '@/hooks/use-toast';
+<<<<<<< HEAD
+import {logErrorToProduction} from '@/utils/productionLogger';
+=======
 import api from '@/lib/api';
+>>>>>>> origin/4b9zsu-codex/surface-api-errors-across-the-app
 
 export default function TokenManager() {
 
@@ -36,19 +40,39 @@ export default function TokenManager() {
   };
 
   const handleIssue = async (type: 'earn' | 'burn') => {
+<<<<<<< HEAD
+    if (!userId || amount <= 0 || processing) return;
+    setProcessing(true);
+    try {
+      const res = await fetch(`/functions/v1/token-manager/${type === 'earn' ? 'earn' : 'burn'}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ userId, amount }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        throw new Error(data.error || `Error ${res.status}`);
+      }
+=======
     if (!userId || amount <= 0) return;
     const res = await api.post(
       `/functions/v1/token-manager/${type === 'earn' ? 'earn' : 'burn'}`,
       { userId, amount }
     );
     if (res.status >= 200 && res.status < 300) {
+>>>>>>> origin/4b9zsu-codex/surface-api-errors-across-the-app
       toast({
         title: 'Success',
         description: 'Transaction processed'
       });
       fetchTransactions();
+<<<<<<< HEAD
+    } catch (err: any) {
+      logErrorToProduction('Failed to process transaction:', { data: err });
+=======
     } else {
       const err = res.data;
+>>>>>>> origin/4b9zsu-codex/surface-api-errors-across-the-app
       toast({
         title: 'Error',
         description: err.message || 'Failed',
