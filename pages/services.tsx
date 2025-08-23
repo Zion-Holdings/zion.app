@@ -81,6 +81,11 @@ import { innovative2025MicroSaasExpansion as innovative2025MicroSaasExpansionV2 
 import { innovative2025ITServicesExpansion as innovative2025ITServicesExpansionV2 } from '../data/innovative-2025-it-services-expansion';
 import { innovative2025AIServicesExpansion as innovative2025AIServicesExpansionV2 } from '../data/innovative-2025-ai-services-expansion';
 
+// Import new expanded services
+import { innovative2025MicroSaasExpanded } from '../data/innovative-2025-micro-saas-expanded';
+import { innovative2025ITSolutionsExpanded } from '../data/innovative-2025-it-solutions-expanded';
+import { innovative2025AISolutionsExpanded } from '../data/innovative-2025-ai-solutions-expanded';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -173,36 +178,10 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
-  // Our new 2025 advanced services
-  ...ultimate2025MicroSaasExpansion,
-  ...ultimate2025ITServicesExpansion,
-  ...ultimate2025AIServicesExpansion,
-  // Our new innovative services
-  ...innovative2026MicroSaasExpansions,
-  ...innovative2026ITServicesExpansions,
-  ...innovative2026AIServicesExpansions,
-  ...innovative2038MicroSaasExpansions,
-  ...innovative2038ITServicesExpansions,
-  ...innovative2038AIServicesExpansions,
-  // Our new comprehensive services
-  ...innovative2038AdvancedServices,
-  // ...revolutionary2040FuturisticServices,
-  ...comprehensiveAdvertisingMarketingServices,
-  
-  // Our latest innovative services
-  ...innovative2040FuturisticServices,
-  ...advanced2041EnterpriseServices,
-  ...revolutionary2042MicroSaasServices,
-  
-  // Our new 2025 innovative services expansion
-  ...innovative2025MicroSaasExpansion,
-  ...innovative2025ITServicesExpansion,
-  ...innovative2025AIServicesExpansion,
-  
-  // Our latest 2025 comprehensive services
-  ...innovative2025MicroSaasExpansionV2,
-  ...innovative2025ITServicesExpansionV2,
-  ...innovative2025AIServicesExpansionV2
+  // New expanded services
+  ...innovative2025MicroSaasExpanded,
+  ...innovative2025ITSolutionsExpanded,
+  ...innovative2025AISolutionsExpanded
 ];
 
 const categories = [
