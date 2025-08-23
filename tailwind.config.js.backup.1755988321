@@ -729,6 +729,23 @@ module.exports = {
       },
     },
   },
+<<<<<<< HEAD
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/aspect-ratio'),
+  ],
+  darkMode: 'class',
+  variants: {
+    extend: {
+      opacity: ['disabled'],
+      cursor: ['disabled'],
+      backgroundColor: ['disabled'],
+      textColor: ['disabled'],
+    },
+  },
+};
+=======
   plugins: [],
   safelist: [
     'focus:ring-cyan-500',
@@ -742,3 +759,4 @@ module.exports = {
     'focus:ring-4'
   ],
 }
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-12ce
