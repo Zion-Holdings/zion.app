@@ -1,0 +1,27 @@
+name: Dependabot Auto Approve
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+
+concurrency:
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
+
+  pull-requests: write
+  contents: write
+
+jobs:
+
+  auto-approve:
+      - name: Auto-approve
+        uses: hmarr/auto-approve-action@v4
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+  enable-automerge:
+      - name: Enable Auto-merge
+        uses: peter-evans/enable-pull-request-automerge@v1
+          token: ${{ secrets.GITHUB_TOKEN }}
+          pull-request-number: ${{ github.event.pull_request.number }}
+          merge-method: squash

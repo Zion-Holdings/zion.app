@@ -1,0 +1,95 @@
+name: Workflow Health Monitor
+
+on:
+  schedule:
+    - cron: '0 */4 * * *'  # Every 4 hours
+  workflow_dispatch: {}
+  workflow_run:
+    workflows: ["CI", "Rapid Git Sync", "Autonomous Cloud Runner"]
+    types: [completed]
+    branches: [main]
+
+concurrency:
+permissions:
+  contents: write
+  actions: read
+
+  group: workflow-health-monitor
+  cancel-in-progress: false
+
+  contents: write
+  actions: read
+
+jobs:
+main:
+  runs-on: ubuntu-latest
+    - name: Main Job
+  steps:
+    - name: Checkout repository
+    - uses: actions/checkout@v4
+    - with:
+      fetch-depth: 0
+    - name: Setup Node.js
+    - uses: actions/setup-node@v4
+    - with:
+      node-version: 20
+      cache: npm
+    - name: Install dependencies
+    - run: npm ci --no-audit --no-fund
+    - name: Run tests
+    - run: npm test
+    - name: Build project
+    - run: npm run build
+
+        - name: Setup Node.js
+        - uses: actions/setup-node@v4
+          node-version: 20
+          cache: npm
+
+        - name: Install dependencies
+        - run: npm ci --omit=dev || npm ci
+
+        - name: Clean git state
+        - run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Clean up any existing rebase state
+          git rebase --abort 2>/dev/null || true
+          rm -rf .git/rebase-merge .git/rebase-apply 2>/dev/null || true
+          # Reset to clean state
+          git reset --hard HEAD
+          git clean -fd
+
+        - name: Run Workflow Health Monitor
+        - run: |
+          # Set environment variables for safer git operations
+          export GIT_AUTHOR_NAME="github-actions[bot]"
+          export GIT_COMMITTER_NAME="github-actions[bot]"
+          export GIT_AUTHOR_EMAIL="41898282+github-actions[bot]@users.noreply.github.com"
+          export GIT_COMMITTER_EMAIL="41898282+github-actions[bot]@users.noreply.github.com"
+          
+        - name: Upload health reports
+  if: always()
+          - name: workflow-health-reports
+          path: |
+            automation/logs/workflow-health-report.json
+            automation/logs/workflow-status.json
+            automation/logs/workflow-health-monitor.log
+          if-no-files-found: ignore
+
+        - name: Commit health improvements
+  if: always()
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "chore(health): auto-fix workflow issues and improve health score"
+            git push origin HEAD:$(git rev-parse --abbrev-ref HEAD) || echo "Failed to push changes"
+          else
+            echo "No changes to commit"
+          fi
+
+        - name: Create health summary
+  if: always()
+          if [ -f "automation/logs/workflow-health-report.json" ]; then
+            echo "## 📊 Workflow Health Summary" >> $GITHUB_STEP_SUMMARY
+            echo " >> $GITHUB_STEP_SUMMARY
+            

@@ -1,0 +1,44 @@
+name: PR Size Labeler
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+
+concurrency:
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: "true
+
+  contents: read
+
+jobs:
+main:
+  runs-on: ubuntu-latest
+  name: Main Job
+  steps:
+    name: Checkout repository
+    uses: actions/checkout@v4
+    with:
+      fetch-depth: 0
+    name: Setup Node.js
+    uses: actions/setup-node@v4
+    with:
+      node-version: 20
+      cache: npm
+    name: Install dependencies
+    run: npm ci --no-audit --no-fund
+    name: Run tests
+    run: npm test
+    name: Build project
+    run: npm run build
+
+
+  size-label:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          xs_label: size/XS
+          s_label: size/S
+          m_label: size/M
+          l_label: size/L
+          xl_label: size/XL"
+          fail_if_xl: false"
+          update_always: true

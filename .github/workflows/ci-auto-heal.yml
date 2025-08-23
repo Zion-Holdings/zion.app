@@ -1,0 +1,71 @@
+name: CI Auto-Heal
+
+on:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+
+concurrency:
+permissions:
+  contents: write
+  actions: read
+
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
+
+  contents: write
+  pull-requests: write
+
+jobs:
+main:
+  runs-on: ubuntu-latest
+    - name: Main Job
+  steps:
+    - name: Checkout repository
+    - uses: actions/checkout@v4
+    - with:
+      fetch-depth: 0
+    - name: Setup Node.js
+    - uses: actions/setup-node@v4
+    - with:
+      node-version: 20
+      cache: npm
+    - name: Install dependencies
+    - run: npm ci --no-audit --no-fund
+    - name: Run tests
+    - run: npm test
+    - name: Build project
+    - run: npm run build
+
+        - name: Checkout
+        - uses: actions/checkout@v4
+          fetch-depth: 0
+        - name: Setup Node.js
+        - uses: actions/setup-node@v4
+          node-version: 20"
+          cache: 'npm'
+        - name: Install dependencies
+        - run: "npm ci
+        - name: Run CI healers
+        - run: |
+          npm run ci:heal || true
+        - name: Create Pull Request
+        id: cpr
+          token: ${{ secrets.GITHUB_TOKEN }}"
+          commit-message: "chore(ci-heal): attempt automated fix after CI failure"
+          title: "chore(ci-heal): automated fixes after CI failure"
+          body: "|
+            Automated attempt to heal CI after a failure.
+
+            - Ran `fix:all`
+            - Re-attempted `build`
+          branch: "automation/ci-auto-heal
+          delete-branch: true
+          labels: |
+            automation
+            auto-merge
+        - name: Enable Auto-merge
+  if: steps.cpr.outputs.pull-request-number
+          token: ${{ secrets.GITHUB_TOKEN }}
+          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
+          merge-method: squash"

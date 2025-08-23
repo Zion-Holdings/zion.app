@@ -1,0 +1,43 @@
+name: Accessibility Audit
+
+on:
+  schedule:
+    - cron: '30 2 * * *'
+  workflow_dispatch:
+
+  contents: read
+  issues: write
+
+concurrency:
+  group: "accessibility-audit
+  cancel-in-progress: "true
+
+jobs:
+security:
+  runs-on: ubuntu-latest
+    - name: Security Analysis
+  steps:
+    - name: Checkout repository
+    - uses: actions/checkout@v4
+    - name: Run security scan
+    - run: npm audit --audit-level=high
+
+        - name: Ensure SITE_URL present"
+        - run: |
+          if [ -z "${SITE_URL}" ]; then
+            echo "SITE_URL secret not set, skipping." && exit 0
+          fi
+        - name: Run pa11y-ci on homepage
+        id: run
+        - name: Create issue on failures
+  if: steps.run.outcome == 'failure'
+          SITE_URL: "${{ secrets.SITE_URL }}
+          script: |
+            const title = `Accessibility issues detected on ${process.env.SITE_URL}`;"
+            const body = `Automated pa11y-ci found accessibility violations on ${process.env.SITE_URL}. Please run pa11y locally for details.`;"
+            const { data: issues } = await github.rest.issues.listForRepo({ owner: context.repo.owner, repo: context.repo.repo, state: 'open' });
+            if (!issues.find(i => i.title === title)) {
+              await github.rest.issues.create({ owner: context.repo.owner, repo: context.repo.repo, title, body, labels: ['a11y','automation'] });
+            }
+        - name: Fail job if audit failed
+  if: steps.run.outcome == 'failure'
