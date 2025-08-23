@@ -94,7 +94,7 @@ const navigationItems: NavigationItem[] = [
   },
   {
     name: 'Showcase & Pricing',
-    href: '/comprehensive-services-showcase-2025',
+    href: '/2036-innovative-services-showcase',
     icon: <Star className="w-5 h-5" />,
     description: 'Services portfolio & pricing',
     badge: 'Showcase',
@@ -102,11 +102,17 @@ const navigationItems: NavigationItem[] = [
     featured: true,
     children: [
       { 
+        name: '2036 Innovation Showcase', 
+        href: '/2036-innovative-services-showcase', 
+        description: 'Cutting-edge 2036 services',
+        icon: <Sparkles className="w-4 h-4" />,
+        featured: true
+      },
+      { 
         name: 'Services Showcase', 
         href: '/comprehensive-services-showcase-2025', 
         description: 'Complete services overview',
         icon: <Grid className="w-4 h-4" />,
-        featured: true
       },
       { 
         name: 'Pricing Plans', 
