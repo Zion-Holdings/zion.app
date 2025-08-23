@@ -81,6 +81,14 @@ import { cuttingEdgeInnovativeServices2025 } from '../data/2025-cutting-edge-inn
 import { advancedITInfrastructureSolutions2025 } from '../data/2025-advanced-it-infrastructure-solutions';
 import { advancedAIAutomationSolutions2025 } from '../data/2025-advanced-ai-automation-solutions';
 
+// Import our new innovative services
+import { advancedCybersecurityAutomationServices2025 } from '../data/2025-advanced-cybersecurity-automation-services';
+import { aiAutomationWorkflowServices2025 } from '../data/2025-ai-automation-workflow-services';
+import { cloudDevOpsAutomationServices2025 } from '../data/2025-cloud-devops-automation-services';
+import { businessIntelligenceAutomationServices2025 } from '../data/2025-business-intelligence-automation-services';
+import { marketingAutomationAIServices2025 } from '../data/2025-marketing-automation-ai-services';
+import { healthcareAISpecializedServices2025 } from '../data/2025-healthcare-ai-specialized-services';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -123,6 +131,14 @@ const getServiceDescription = (service: any) => {
 
 // Combine all services including new ones
 const allServices = [
+  // Our new innovative services 2025
+  ...advancedCybersecurityAutomationServices2025,
+  ...aiAutomationWorkflowServices2025,
+  ...cloudDevOpsAutomationServices2025,
+  ...businessIntelligenceAutomationServices2025,
+  ...marketingAutomationAIServices2025,
+  ...healthcareAISpecializedServices2025,
+  
   // New practical and specialized services
   ...realPracticalMicroSaasServices2025,
   ...advancedAIITSpecializedServices2025,
