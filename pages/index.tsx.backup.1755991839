@@ -14,7 +14,11 @@ export default function HomePage() {
     { value: '99.9%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
     { value: '21', label: 'Day Free Trials', color: 'text-blue-400' },
     { value: '24/7', label: 'AI Support', color: 'text-green-400' },
+<<<<<<< HEAD
+    { value: '$200M+', label: 'Market Value', color: 'text-yellow-400' },
+=======
     { value: '$100M+', label: 'Market Value', color: 'text-yellow-400' },
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-dae1
     { value: '800%+', label: 'Average ROI', color: 'text-purple-400' },
   ];
 
@@ -31,15 +35,26 @@ export default function HomePage() {
   const serviceHighlights = [
     {
       icon: <Cloud className="w-8 h-8 text-white" />,
+<<<<<<< HEAD
+      title: 'Real Micro SaaS Services',
+      description: '150+ fully functional micro SaaS tools with real implementations, not just mockups.',
+=======
       title: '200+ Real Micro SaaS Services',
       description: 'Complete portfolio of fully functional micro SaaS tools with real implementations, not just mockups. Starting from $49/month with 21-day free trials.',
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-dae1
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       gradient: 'from-cyan-400 to-blue-500',
     },
     {
+<<<<<<< HEAD
+      icon: <Atom className="w-8 h-8 text-white" />,
+      title: 'Quantum & AI Solutions',
+      description: 'Cutting-edge quantum computing, AI-powered automation, and next-generation technology solutions.',
+=======
       icon: <Bot className="w-8 h-8 text-white" />,
       title: 'AI-Powered Solutions',
       description: 'Advanced AI content generation, SEO automation, chatbots, business intelligence, and quantum computing platforms. Market-leading technology with 800%+ average ROI.',
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-dae1
       color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
       gradient: 'from-fuchsia-400 to-purple-500',
     },
@@ -257,6 +272,10 @@ export default function HomePage() {
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Ready to Transform Your Business?
               </h2>
+<<<<<<< HEAD
+              <p className="text-xl text-gray-300 mb-8">
+                Join thousands of businesses already achieving unprecedented ROI with our revolutionary micro SAAS services.
+=======
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                 Explore our cutting-edge micro SaaS solutions that are reshaping industries and driving innovation.
               </p>
@@ -643,6 +662,7 @@ export default function HomePage() {
               </h2>
               <p className="text-xl text-gray-300 mb-8 leading-relaxed">
                 Join thousands of businesses that have already revolutionized their operations with our 200+ cutting-edge solutions.
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-dae1
               </p>
               
               <div className="bg-gradient-to-r from-cyan-900/20 via-purple-900/20 to-pink-900/20 backdrop-blur-sm border border-cyan-500/30 rounded-2xl p-8 mb-8">
