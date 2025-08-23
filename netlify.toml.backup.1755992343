@@ -11,6 +11,8 @@
 
 [[plugins]]
   package = "netlify-plugin-cloudinary"
+<<<<<<< HEAD
+=======
 
 # Static redirects for exported site
 [[redirects]]
@@ -52,3 +54,4 @@
   from = "/affiliate-attribution-suite"
   to = "/services/affiliate-attribution-suite/"
   status = 301
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6753

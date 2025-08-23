@@ -18,11 +18,15 @@ import { realServicesQ12025 } from '../../data/real-services-q1-2025'
 import { realEnterpriseServices2025 } from '../../data/real-enterprise-services-2025';
 import { realMarketAugmentations2025 } from '../../data/real-market-augmentations-2025';
 import { verifiedRealServices2025Batch2 } from '../../data/verified-real-services-2025-batch2';
+<<<<<<< HEAD
+import { realImplementationServices2025 } from '../../data/real-implementation-services-2025';
+=======
 import { additionalLiveServices2025 } from '../../data/additional-live-services-2025';
 import { real2025Q2Additions } from '../../data/real-2025-q2-additions';
 import { augmentedServicesBatch3 } from '../../data/real-augmented-services-2025-batch3';
 import { realServicesQ22025 } from '../../data/real-services-q2-2025';
 import { real2025Q3Additions } from '../../data/real-2025-q3-additions';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6753
 
 const mapLocalToServiceItem = (item: any): ServiceItem => ({
   slug: item.slug,
@@ -58,11 +62,15 @@ export default function ServicesIndexPage() {
       realEnterpriseServices2025 as unknown[],
       realMarketAugmentations2025 as unknown[],
       verifiedRealServices2025Batch2 as unknown[],
+<<<<<<< HEAD
+      realImplementationServices2025 as unknown[]
+=======
       additionalLiveServices2025 as unknown[],
       real2025Q2Additions as unknown[],
       augmentedServicesBatch3 as unknown[],
       realServicesQ22025 as unknown[],
       real2025Q3Additions as unknown[]
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6753
     );
   const byCategory: Record<string, unknown[]> = {};
   for (const c of categories) byCategory[c] = [];
