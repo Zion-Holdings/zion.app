@@ -1,29 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Zap, Sparkles, ChevronDown } from 'lucide-react';
-import Button from '../ui/Button';
-import { motion } from 'framer-motion';
+import { useRouter } from 'next/router';
+import { Menu, X, ChevronDown } from 'lucide-react';
 
-const Header: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isClient, setIsClient] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isProductDropdownOpen, setIsProductDropdownOpen] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  useEffect(() => {
-    if (!isClient) return;
-
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [isClient]);
+  }, []);
 
   // Close mobile menu when route changes
   useEffect(() => {
@@ -44,91 +37,21 @@ const Header: React.FC = () => {
   }, [isProductDropdownOpen]);
 
   const navigation = [
-    {
-      name: 'Services',
-      href: '/services',
-      description: '200+ Real Micro SaaS Solutions',
-      icon: <Zap className="w-5 h-5" />,
-      children: [
-        { name: 'All Services', href: '/services' },
-        { name: 'AI Services', href: '/ai-services' },
-        { name: 'Quantum Technology', href: '/quantum-services' },
-        { name: 'Space Technology', href: '/space-technology' },
-        { name: 'IT Solutions', href: '/it-services' },
-        { name: 'Cybersecurity', href: '/cybersecurity' },
-        { name: 'Cloud Platform', href: '/cloud-platform' },
-        { name: 'AI Assistant', href: '/ai-assistant' },
-        { name: 'Status Pages & SLO', href: '/status-pages-slo' },
-        { name: 'AI Synthetic Data Studio', href: '/services/ai-synthetic-data-studio' },
-        { name: 'Zero-Trust SSO Mesh', href: '/services/zero-trust-sso-mesh' },
-        { name: 'ETL Reliability Copilot', href: '/services/etl-reliability-copilot' },
-        { name: 'Edge Personalization Kit', href: '/services/edge-personalization-kit' },
-        { name: 'Kubernetes Cost Anomaly Guard', href: '/services/kubernetes-cost-anomaly-guard' },
-        { name: 'AI Sales Sequence Personalizer', href: '/services/ai-sales-sequence-personalizer' },
-        { name: 'Postgres Performance Tuner', href: '/services/postgres-performance-tuner' }
-      ]
-    },
-    {
-      name: 'Solutions',
-      href: '/solutions',
-      description: 'Industry-Specific Solutions',
-      icon: <Sparkles className="w-5 h-5" />,
-      children: [
-        { name: 'Enterprise Solutions', href: '/solutions/enterprise' },
-        { name: 'Healthcare Solutions', href: '/solutions/healthcare' },
-        { name: 'Financial Solutions', href: '/solutions/financial' },
-        { name: 'Government Solutions', href: '/solutions/government' },
-        { name: 'Manufacturing Solutions', href: '/solutions/manufacturing' },
-        { name: 'Retail Solutions', href: '/solutions/retail' },
-        { name: 'Education Solutions', href: '/solutions/education' },
-        { name: 'Energy Solutions', href: '/solutions/energy' },
-        { name: 'Transportation Solutions', href: '/solutions/transportation' },
-        { name: 'Case Studies', href: '/case-studies' }
-      ]
-    },
-    {
-      name: 'Company',
-      href: '/about',
-      description: 'About Zion Tech Group',
-      icon: <Sparkles className="w-5 h-5" />,
-      children: [
-        { name: 'About Us', href: '/about' },
-        { name: 'Mission', href: '/mission' },
-        { name: 'Values', href: '/values' },
-        { name: 'Team', href: '/team' },
-        { name: 'Leadership', href: '/leadership' },
-        { name: 'Culture', href: '/culture' },
-        { name: 'Careers', href: '/careers' },
-        { name: 'Partners', href: '/partners' },
-        { name: 'Investors', href: '/investors' }
-      ]
-    },
-    {
-      name: 'Resources',
-      href: '/resources',
-      description: 'Knowledge & Tools',
-      icon: <Sparkles className="w-5 h-5" />,
-      children: [
-        { name: 'Documentation', href: '/docs' },
-        { name: 'API Reference', href: '/api-docs' },
-        { name: 'Blog', href: '/blog' },
-        { name: 'Webinars', href: '/webinars' },
-        { name: 'Events', href: '/events' },
-        { name: 'Training', href: '/training' },
-        { name: 'Support Center', href: '/support' },
-        { name: 'White Papers', href: '/white-papers' },
-        { name: 'Press', href: '/press' },
-        { name: 'Media Kit', href: '/media-kit' }
-      ]
-    },
+    { name: 'Product', href: '#', hasDropdown: true },
+    { name: 'Solutions', href: '/services' },
+    { name: 'Resources', href: '/resources' },
+    { name: 'Company', href: '/about' },
     { name: 'Pricing', href: '/pricing' },
-    { name: 'Contact', href: '/contact' }
   ];
 
-  const contactInfo = {
-    mobile: '+1 302 464 0950',
-    email: 'kleber@ziontechgroup.com'
-  };
+  const productDropdown = [
+    { name: 'AI Code Assistant', href: '/ai-assistant', description: 'Intelligent code completion and suggestions' },
+    { name: 'Cloud Platform', href: '/cloud-platform', description: 'Scalable cloud infrastructure' },
+    { name: 'Automation Hub', href: '/automation', description: 'AI-powered workflow automation' },
+    { name: 'Analytics', href: '/analytics', description: 'Real-time insights and reporting' },
+  ];
+
+  const isActive = (href: string) => router.pathname === href;
 
   return (
     <header
@@ -149,6 +72,9 @@ const Header: React.FC = () => {
               </div>
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl blur opacity-0 group-hover:opacity-75 transition-opacity duration-300 -z-10" />
             </div>
+            <span className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors duration-300">
+              Zion Tech
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -203,34 +129,6 @@ const Header: React.FC = () => {
                     {item.name}
                   </Link>
                 )}
-
-                {/* Dropdown Menu */}
-                {item.children && activeDropdown === item.name && (
-                  <div
-                    className="absolute top-full left-0 mt-2 w-80 bg-gray-900/95 backdrop-blur-xl border border-gray-700/50 rounded-2xl shadow-2xl p-4"
-                    onMouseEnter={() => setActiveDropdown(item.name)}
-                    onMouseLeave={() => setActiveDropdown(null)}
-                  >
-                    <div className="flex items-center space-x-3 mb-4 p-3 bg-gradient-to-r from-gray-800/50 to-gray-700/50 rounded-xl">
-                      {item.icon}
-                      <div>
-                        <div className="font-semibold text-white">{item.name}</div>
-                        <div className="text-sm text-gray-400">{item.description}</div>
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      {item.children.map((child) => (
-                        <Link
-                          key={child.name}
-                          href={child.href}
-                          className="block p-3 text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-xl transition-all duration-200"
-                        >
-                          {child.name}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                )}
               </div>
             ))}
           </nav>
@@ -248,38 +146,41 @@ const Header: React.FC = () => {
               className="px-4 py-3 text-sm font-medium bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black"
             >
               Get Started
-            </Button>
+            </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile menu button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="lg:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/5 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black"
             aria-expanded={isMobileMenuOpen}
             aria-label="Toggle mobile menu"
           >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="lg:hidden bg-gray-900/95 backdrop-blur-xl border-t border-gray-700/50">
-            <div className="py-6 space-y-4">
+        {isMobileMenuOpen && (
+          <div className="lg:hidden">
+            <div className="px-4 pt-4 pb-6 space-y-2 bg-black/90 backdrop-blur-xl rounded-xl mt-2 border border-white/10 shadow-2xl">
               {navigation.map((item) => (
                 <div key={item.name}>
-                  {item.children ? (
+                  {item.hasDropdown ? (
                     <div className="space-y-2">
-                      <div className="px-4 py-2 text-gray-300 font-medium">{item.name}</div>
-                      <div className="pl-8 space-y-2">
-                        {item.children.map((child) => (
+                      <div className="px-4 py-3 text-base font-medium text-white">
+                        {item.name}
+                      </div>
+                      <div className="pl-4 space-y-2">
+                        {productDropdown.map((product) => (
                           <Link
                             key={product.name}
                             href={product.href}
                             className="block px-4 py-2 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/5 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black"
                             onClick={() => setIsMobileMenuOpen(false)}
                           >
-                            {child.name}
+                            <div className="font-medium">{product.name}</div>
+                            <div className="text-xs text-gray-500">{product.description}</div>
                           </Link>
                         ))}
                       </div>
@@ -312,11 +213,8 @@ const Header: React.FC = () => {
                   className="block px-4 py-3 text-base font-medium bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 text-center focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {contactInfo.email}
-                </a>
-                <Button href="/contact" variant="primary" size="sm" className="w-full">
                   Get Started
-                </Button>
+                </Link>
               </div>
             </div>
           </div>

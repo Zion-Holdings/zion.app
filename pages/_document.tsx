@@ -10,36 +10,82 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-          <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
-          <link rel="icon" href="/favicon.ico" />
-          <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-          <link rel="manifest" href="/site.webmanifest" />
-
-          <meta name="application-name" content={siteName} />
-          <meta name="apple-mobile-web-app-capable" content="yes" />
-          <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-          <meta name="apple-mobile-web-app-title" content={siteName} />
-          <meta name="format-detection" content="telephone=no" />
-          <meta name="mobile-web-app-capable" content="yes" />
-          <meta name="theme-color" content={themeColorLight} media="(prefers-color-scheme: light)" />
-          <meta name="theme-color" content={themeColorDark} media="(prefers-color-scheme: dark)" />
-
-          <meta name="description" content={siteDescription} />
-          <meta property="og:type" content="website" />
-          <meta property="og:site_name" content={siteName} />
-          <meta property="og:title" content={siteName} />
-          <meta property="og:description" content={siteDescription} />
-          <meta property="og:url" content={siteUrl} />
-          <meta property="twitter:card" content="summary_large_image" />
-          <meta name="twitter:title" content={siteName} />
-          <meta name="twitter:description" content={siteDescription} />
-
-          <link rel="canonical" href={siteUrl} />
-        </Head>
-      <body className="antialiased bg-neutral-50 text-neutral-800 dark:bg-neutral-950 dark:text-neutral-100">
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="theme-color" content="#0a0a0a" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta property="og:site_name" content="Zion Tech Group" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ziontechgroup.com" />
+        <meta property="og:title" content="Zion Tech Group — Revolutionary Micro SaaS, AI and IT Services" />
+        <meta property="og:description" content="Hundreds of real, productized services across AI, Cloud, Security, Observability and more. Transparent pricing and fast onboarding." />
+        <meta property="og:image" content="https://ziontechgroup.com/og.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Zion Tech Group — Revolutionary Micro SaaS, AI and IT Services" />
+        <meta name="twitter:description" content="Hundreds of real, productized services across AI, Cloud, Security, Observability and more." />
+        <meta name="twitter:image" content="https://ziontechgroup.com/og.png" />
+        <script defer data-domain="ziontechgroup.com" src="https://plausible.io/js/script.js"></script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                name: "Zion Tech Group",
+                url: "https://ziontechgroup.com",
+                logo: "https://ziontechgroup.com/logo.png",
+                sameAs: [
+                  "https://www.linkedin.com/company/zion-tech-group",
+                  "https://github.com/Zion-Holdings",
+                  "https://www.instagram.com/ziontechgroup",
+                  "https://www.youtube.com/@ziontechgroup"
+                ],
+                contactPoint: [
+                  {
+                    "@type": "ContactPoint",
+                    telephone: "+13024640950",
+                    email: "kleber@ziontechgroup.com",
+                    contactType: "customer service",
+                    areaServed: "US",
+                    availableLanguage: ["English"]
+                  }
+                ],
+                address: {
+                  "@type": "PostalAddress",
+                  streetAddress: "364 E Main St STE 1008",
+                  addressLocality: "Middletown",
+                  addressRegion: "DE",
+                  postalCode: "19709",
+                  addressCountry: "US"
+                }
+              },
+              null,
+              2
+            )
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                name: "Zion Tech Group",
+                url: "https://ziontechgroup.com",
+                potentialAction: {
+                  "@type": "SearchAction",
+                  target: "https://ziontechgroup.com/services?search={search_term_string}",
+                  "query-input": "required name=search_term_string"
+                }
+              },
+              null,
+              2
+            )
+          }}
+        />
+      </Head>
+      <body>
         <Main />
         <NextScript />
       </body>

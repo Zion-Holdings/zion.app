@@ -96,7 +96,7 @@ const EnergySolutionsPage: React.FC = () => {
   ];
 
   return (
-    <UltraFuturisticBackground variant="quantum">
+    <UltraFuturisticBackground variant="holographic">
       <div className="min-h-screen">
         <SEO 
           title="Energy Solutions - Zion Tech Group | AI-Powered Energy Technology" 

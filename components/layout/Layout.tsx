@@ -10,8 +10,61 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
-export default function Layout({ children }: LayoutProps) {
+export default function Layout({ 
+  children, 
+  title = "Zion Tech Group - Revolutionary 2045 Technology",
+  description = "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.",
+  keywords = "AI consciousness, quantum computing, autonomous solutions, space technology, cybersecurity, business intelligence, Zion Tech Group, 2045 technology",
+  ogImage = "/og-image.jpg",
+  canonicalUrl
+}: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isOnline, setIsOnline] = useState(true);
+
+  useEffect(() => {
+    // Check online status
+    const updateOnlineStatus = () => {
+      setIsOnline(navigator.onLine);
+    };
+
+    window.addEventListener('online', updateOnlineStatus);
+    window.addEventListener('offline', updateOnlineStatus);
+    updateOnlineStatus();
+
+    // Register service worker
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js')
+        .then((registration) => {
+          // Check for updates
+          registration.addEventListener('updatefound', () => {
+            const newWorker = registration.installing;
+            if (newWorker) {
+              newWorker.addEventListener('statechange', () => {
+                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                  // New version available
+                  if (typeof window !== 'undefined' && window.confirm) {
+                    if (window.confirm('A new version is available! Would you like to update?')) {
+                      newWorker.postMessage({ type: 'SKIP_WAITING' });
+                      window.location.reload();
+                    }
+                  }
+                }
+              });
+            }
+          });
+        })
+        .catch((error) => {
+          // Silently handle service worker registration errors
+          // eslint-disable-next-line no-console
+          console.error('Service Worker registration failed:', error);
+        });
+    }
+
+    return () => {
+      window.removeEventListener('online', updateOnlineStatus);
+      window.removeEventListener('offline', updateOnlineStatus);
+    };
+  }, []);
 
   return (
     <div className={`min-h-screen ${darkMode ? 'bg-black text-white' : 'bg-white text-black'} relative overflow-x-hidden transition-colors duration-300`}>

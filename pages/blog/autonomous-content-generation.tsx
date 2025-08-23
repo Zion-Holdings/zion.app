@@ -169,13 +169,13 @@ export default function AutonomousContentGeneration() {
             <div className="mt-16 pt-8 border-t border-white/20">
               <h3 className="text-xl font-semibold mb-4 text-white">Share this article</h3>
               <div className="flex gap-4">
-                <a href="https://x.com/intent/tweet" className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-white transition-colors" target="_blank" rel="noopener noreferrer">
+                <a href="https://twitter.com/intent/tweet?text=Autonomous%20Content%20Generation%20-%20The%20Future%20of%20Content%20Creation&url=https://bolt.new.zion.app/blog/autonomous-content-generation" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-white transition-colors">
                   Twitter
                 </a>
-                <a href="https://www.linkedin.com/sharing/share-offsite/" className="px-4 py-2 bg-blue-800 hover:bg-blue-900 rounded-lg text-white transition-colors" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://bolt.new.zion.app/blog/autonomous-content-generation" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-blue-800 hover:bg-blue-900 rounded-lg text-white transition-colors">
                   LinkedIn
                 </a>
-                <a href="mailto:?subject=Interesting%20Read%20from%20Zion%20Tech&body=Check%20out%20this%20article:%20https://zion.app/blog/autonomous-content-generation" className="px-4 py-2 bg-green-600 hover:bg-green-700 rounded-lg text-white transition-colors">
+                <a href="mailto:?subject=Autonomous%20Content%20Generation%20-%20The%20Future%20of%20Content%20Creation&body=Check%20out%20this%20article%20about%20autonomous%20content%20generation:%20https://bolt.new.zion.app/blog/autonomous-content-generation" className="px-4 py-2 bg-green-600 hover:bg-green-700 rounded-lg text-white transition-colors">
                   Email
                 </a>
               </div>

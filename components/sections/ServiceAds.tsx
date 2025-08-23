@@ -79,14 +79,23 @@ const ServiceAds: React.FC<ServiceAdsProps> = ({ items, heading = 'Featured Serv
                 )}
 
                 <div className="flex space-x-3">
-                  <Button
-                    href={item.link}
-                    target={item.link?.startsWith('http') ? '_blank' : undefined}
-                    rel={item.link?.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white py-3 px-4 rounded-lg font-semibold transition-all duration-300"
-                  >
-                    <ExternalLink className="w-4 h-4 mr-2" /> Learn More
-                  </Button>
+                  {item.link?.startsWith('http') ? (
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white py-3 px-4 rounded-lg font-semibold transition-all duration-300 inline-flex items-center justify-center"
+                    >
+                      <ExternalLink className="w-4 h-4 mr-2" /> Learn More
+                    </a>
+                  ) : (
+                    <Button
+                      href={item.link}
+                      className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white py-3 px-4 rounded-lg font-semibold transition-all duration-300"
+                    >
+                      <ExternalLink className="w-4 h-4 mr-2" /> Learn More
+                    </Button>
+                  )}
                   <Button
                     href="/contact"
                     variant="outline"

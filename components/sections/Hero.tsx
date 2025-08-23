@@ -1,85 +1,39 @@
 import React from 'react';
 import Button from '../ui/Button';
-import { ArrowRight, Play, Star, Zap, Shield, Users, Globe, Rocket, Sparkles } from 'lucide-react';
+import { ArrowRight, Play, Star, Zap, Shield, Users } from 'lucide-react';
 
 interface HeroProps {
-  title?: string;
-  subtitle?: string;
-  description?: string;
+  title: string;
+  subtitle: string;
   primaryAction?: {
     text: string;
     href: string;
-    icon?: React.ReactNode;
   };
   secondaryAction?: {
     text: string;
     href: string;
-    icon?: React.ReactNode;
   };
   stats?: Array<{
     value: string;
     label: string;
     color: string;
   }>;
-  background?: 'default' | 'futuristic' | 'particles' | 'grid' | 'matrix';
 }
 
 const Hero: React.FC<HeroProps> = ({
-  title = "Transform Your Business with Real Micro SaaS Solutions",
-  subtitle = "Powered by Zion Tech Group",
-  description = "Discover 55+ fully-functional micro SaaS services that deliver immediate value. From AI-powered automation to cloud optimization, get enterprise-grade solutions without enterprise complexity.",
-  primaryAction = {
-    text: "Explore Services",
-    href: "/micro-saas",
-    icon: <ArrowRight className="w-4 h-4" />
-  },
-  secondaryAction = {
-    text: "Watch Demo",
-    href: "#demo",
-    icon: <Play className="w-4 h-4" />
-  },
-  stats = [
-    { value: '55+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
-    { value: '99.9%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
-    { value: '14', label: 'Day Free Trials', color: 'text-blue-400' },
-    { value: '24/7', label: 'AI Support', color: 'text-green-400' },
-  ],
-  background = 'futuristic'
+  title,
+  subtitle,
+  primaryAction,
+  secondaryAction,
+  stats,
 }) => {
-  const backgroundClasses = {
-    default: 'bg-gradient-to-br from-gray-900 via-gray-800 to-black',
-    futuristic: 'futuristic-bg',
-    particles: 'particles-bg',
-    grid: 'grid-bg',
-    matrix: 'matrix-bg'
-  };
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black" role="banner">
       {/* Background Elements */}
       <div className="absolute inset-0">
-        {/* Floating orbs */}
-        <div className="floating-orbs" />
-        
-        {/* Cyberpunk scan lines */}
-        <div className="cyberpunk-scan" />
-        
-        {/* Energy pulse rings */}
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 border border-blue-500/20 rounded-full animate-ping" />
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 border border-purple-500/20 rounded-full animate-ping" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 border border-cyan-500/20 rounded-full animate-ping" style={{ animationDelay: '2s' }} />
-        
-        {/* Additional floating elements */}
-        <div className="absolute top-1/3 right-1/4 w-32 h-32 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-xl animate-pulse" />
-        <div className="absolute bottom-1/3 left-1/3 w-24 h-24 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-full blur-lg animate-pulse" style={{ animationDelay: '1.5s' }} />
-        
-        {/* Matrix-style data streams */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-10">
-          <div className="data-stream-line" style={{ left: '10%', animationDelay: '0s' }} />
-          <div className="data-stream-line" style={{ left: '30%', animationDelay: '2s' }} />
-          <div className="data-stream-line" style={{ left: '70%', animationDelay: '4s' }} />
-          <div className="data-stream-line" style={{ left: '90%', animationDelay: '6s' }} />
-        </div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(59,130,246,0.08),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(34,197,94,0.06),transparent_50%)]" />
       </div>
 
       {/* Grid Pattern */}
@@ -152,12 +106,9 @@ const Hero: React.FC<HeroProps> = ({
                   {stat.label}
                 </div>
               </div>
-              
-              {/* Hover effect indicator */}
-              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-current to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
 
         {/* Trust Indicators */}
         <div className="animate-fade-in" style={{ animationDelay: '0.8s' }}>
@@ -166,25 +117,14 @@ const Hero: React.FC<HeroProps> = ({
               <Shield className="w-4 h-4" />
               <span>Enterprise Security</span>
             </div>
-            <div className="flex items-center space-x-2">
-              <Users className="w-5 h-5 text-blue-400" />
-              <span className="text-sm">10,000+ Users</span>
+            <div className="flex items-center gap-2">
+              <Users className="w-4 h-4" />
+              <span>10,000+ Developers</span>
             </div>
-            <div className="flex items-center space-x-2">
-              <Globe className="w-5 h-5 text-purple-400" />
-              <span className="text-sm">Global Infrastructure</span>
+            <div className="flex items-center gap-2">
+              <Star className="w-4 h-4 text-yellow-400" />
+              <span>99.9% Uptime</span>
             </div>
-            <div className="flex items-center space-x-2">
-              <Zap className="w-5 h-5 text-yellow-400" />
-              <span className="text-sm">99.9% Uptime</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Floating action indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse" />
           </div>
         </div>
       </div>
