@@ -118,8 +118,13 @@
   schedule = "*/5 * * * *" # every 5 minutes
 
 [[scheduled.functions]]
+<<<<<<< HEAD
+  name = "autonomous-cloud-brain"
+  schedule = "*/1 * * * *" # every minute for fastest sync
+=======
   name = "accelerated-sync-orchestrator"
   schedule = "*/1 * * * *" # every minute
+>>>>>>> origin/cursor/automate-cloud-cron-jobs-and-sync-repository-5730
 
 # New ultra-fast tools
 [[scheduled.functions]]

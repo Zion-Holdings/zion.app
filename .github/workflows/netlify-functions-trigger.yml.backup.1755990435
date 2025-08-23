@@ -1,8 +1,11 @@
 name: Netlify Functions Trigger
 
 on:
+<<<<<<< HEAD
+=======
   schedule:
     - cron: '*/10 * * * *' # every 10 minutes
+>>>>>>> origin/cursor/automate-cloud-cron-jobs-and-sync-repository-5730
   workflow_dispatch: {}
   schedule:
     - cron: '*/10 * * * *'
