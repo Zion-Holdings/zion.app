@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
-import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
+import UltraAdvancedFuturisticNavigation2041 from './UltraAdvancedFuturisticNavigation2041';
+import UltraAdvancedFuturisticFooter2041 from './UltraAdvancedFuturisticFooter2041';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
+import UltraAdvancedFuturisticBackground2040 from '../backgrounds/UltraAdvancedFuturisticBackground2040';
 import TopContactBar from './TopContactBar';
 import PerformanceMonitor from '../PerformanceMonitor';
 import AccessibilityEnhancer from '../AccessibilityEnhancer';
@@ -104,8 +104,11 @@ export default function Layout({ children }: LayoutProps) {
         </div>
       )}
       
-      {/* Futuristic Background */}
-      <UltraFuturisticBackground2036 />
+      {/* Ultra Advanced Futuristic Background */}
+      <UltraAdvancedFuturisticBackground2040 
+        intensity="medium" 
+        theme="consciousness-ai"
+      />
       
       {/* Layout Structure */}
       <div className="relative z-10">
@@ -113,7 +116,7 @@ export default function Layout({ children }: LayoutProps) {
         <TopContactBar />
         
         {/* Navigation */}
-        <UltraFuturisticNavigation2040 
+        <UltraAdvancedFuturisticNavigation2041 
           onMenuToggle={() => setSidebarOpen(!sidebarOpen)}
           isMenuOpen={sidebarOpen}
         />
@@ -146,7 +149,7 @@ export default function Layout({ children }: LayoutProps) {
         </div>
         
         {/* Footer */}
-        <UltraFuturisticFooter2040 />
+        <UltraAdvancedFuturisticFooter2041 />
       </div>
 
       {/* Accessibility and Performance Tools */}
