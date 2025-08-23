@@ -23,7 +23,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const file = path.join(process.cwd(), 'data', 'points.json');
   let ledger: any[] = [];
   try {
-    ledger = JSON.parse(fs.readFileSync(file, 'utf8'));
+    const fileContent = fs.readFileSync(file, 'utf8');
+    ledger = JSON.parse(typeof fileContent === 'string' ? fileContent : String(fileContent));
   } catch {
     // file might not exist or be empty
   }

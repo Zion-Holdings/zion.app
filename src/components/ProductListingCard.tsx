@@ -206,11 +206,11 @@ const ProductListingCardComponent = ({
           </p>
           
           {/* Tags */}
-          {listing.tags && listing.tags.length > 0 && (
+          {Array.isArray(listing.tags) && listing.tags.length > 0 && (
             <div className="flex flex-wrap gap-1 mb-4">
               {listing.tags.map((tag, idx) => (
-                <span 
-                  key={idx} 
+                <span
+                  key={idx}
                   className="text-xs text-foreground/70 bg-background/50 px-2 py-1 rounded-full"
                 >
                   {tag}
