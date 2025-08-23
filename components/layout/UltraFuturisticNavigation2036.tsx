@@ -58,6 +58,13 @@ const navigationItems: NavigationItem[] = [
         featured: true
       },
       { 
+        name: '2025 Services Showcase', 
+        href: '/comprehensive-2025-services-showcase', 
+        description: 'Comprehensive showcase of our latest services',
+        icon: <Star className="w-4 h-4" />,
+        featured: true
+      },
+      { 
         name: 'AI & Machine Learning', 
         href: '/ai-services', 
         description: 'Advanced AI solutions',
