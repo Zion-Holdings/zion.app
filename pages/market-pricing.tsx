@@ -25,7 +25,7 @@ export default function MarketPricingPage() {
             <div className="bg-black/30 rounded-2xl border border-cyan-500/30 p-6">
               <h2 className="text-2xl font-semibold mb-2">AI Guardrails & Safety</h2>
               <ul className="list-disc list-inside text-slate-300 space-y-1">
-                				<li>OpenAI Safety: <a className="text-cyan-400 underline" href={`https://platform.openai.com/docs/guides/safety-best-practices`} target="_blank" rel="noopener noreferrer">platform.openai.com/docs/guides/safety-best-practices</a></li>
+                				                <li>OpenAI Safety: <a className="text-cyan-400 underline" href={`https://openai.com/safety`} target="_blank" rel="noopener noreferrer">openai.com/safety</a></li>
                 <li>Anthropic RAI: <a className="text-cyan-400 underline" href={`https://www.anthropic.com/news`} target="_blank" rel="noopener noreferrer">anthropic.com/news</a> (policy updates)</li>
                 <li>Guardrails libraries: <a className="text-cyan-400 underline" href={`https://github.com/guardrails-ai/guardrails`} target="_blank" rel="noopener noreferrer">github.com/guardrails-ai/guardrails</a></li>
               </ul>
@@ -34,7 +34,7 @@ export default function MarketPricingPage() {
             <div className="bg-black/30 rounded-2xl border border-cyan-500/30 p-6">
               <h2 className="text-2xl font-semibold mb-2">LLM & AI Platforms</h2>
               <ul className="list-disc list-inside text-slate-300 space-y-1">
-                				<li>OpenAI API pricing: <a className="text-cyan-400 underline" href={`https://platform.openai.com/pricing`} target="_blank" rel="noopener noreferrer">platform.openai.com/pricing</a></li>
+                				                <li>OpenAI API pricing: <a className="text-cyan-400 underline" href={`https://openai.com/pricing`} target="_blank" rel="noopener noreferrer">openai.com/pricing</a></li>
                 <li>Anthropic pricing: <a className="text-cyan-400 underline" href={`https://www.anthropic.com/pricing`} target="_blank" rel="noopener noreferrer">anthropic.com/pricing</a></li>
                 <li>Langfuse (observability) pricing: <a className="text-cyan-400 underline" href={`https://langfuse.com/pricing`} target="_blank" rel="noopener noreferrer">langfuse.com/pricing</a> (community + paid tiers)</li>
                 <li>OpenRouter model pricing: <a className="text-cyan-400 underline" href={`https://openrouter.ai/models`} target="_blank" rel="noopener noreferrer">openrouter.ai/models</a></li>
@@ -48,9 +48,9 @@ export default function MarketPricingPage() {
               <h2 className="text-2xl font-semibold mb-2">Security & Compliance</h2>
               <ul className="list-disc list-inside text-slate-300 space-y-1">
                 <li>Wiz pricing overview: <a className="text-cyan-400 underline" href={`https://www.wiz.io/pricing`} target="_blank" rel="noopener noreferrer">wiz.io/pricing</a></li>
-                <li>Prisma Cloud: <a className="text-cyan-400 underline" href={`https://www.paloaltonetworks.com/prisma/cloud/pricing`} target="_blank" rel="noopener noreferrer">paloaltonetworks.com/prisma/cloud/pricing</a></li>
+                <li>Prisma Cloud: <a className="text-cyan-400 underline" href={`https://www.paloaltonetworks.com/prisma/cloud`} target="_blank" rel="noopener noreferrer">paloaltonetworks.com/prisma/cloud</a></li>
                 <li>HashiCorp Vault: <a className="text-cyan-400 underline" href={`https://www.hashicorp.com/products/vault/pricing`} target="_blank" rel="noopener noreferrer">hashicorp.com/products/vault/pricing</a></li>
-                <li>Cloudflare Zero Trust: <a className="text-cyan-400 underline" href={`https://www.cloudflare.com/plans/zero-trust/`} target="_blank" rel="noopener noreferrer">cloudflare.com/plans/zero-trust</a></li>
+                <li>Cloudflare Zero Trust: <a className="text-cyan-400 underline" href={`https://www.cloudflare.com/plans/`} target="_blank" rel="noopener noreferrer">cloudflare.com/plans</a></li>
               </ul>
               <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $200–$5,000/month based on scale and compliance scope.</div>
             </div>
@@ -81,7 +81,7 @@ export default function MarketPricingPage() {
             <div className="bg-black/30 rounded-2xl border border-rose-500/30 p-6">
               <h2 className="text-2xl font-semibold mb-2">PDF & Document Generation</h2>
               <ul className="list-disc list-inside text-slate-300 space-y-1">
-                <li>DocRaptor pricing: <a className="text-cyan-400 underline" href={`https://www.docraptor.com/pricing`} target="_blank" rel="noopener noreferrer">docraptor.com/pricing</a></li>
+                <li>DocRaptor pricing: <a className="text-cyan-400 underline" href={`https://docraptor.com`} target="_blank" rel="noopener noreferrer">docraptor.com</a></li>
                 <li>PDFMonkey pricing: <a className="text-cyan-400 underline" href={`https://www.pdfmonkey.io/pricing`} target="_blank" rel="noopener noreferrer">pdfmonkey.io/pricing</a></li>
                 <li>CloudConvert: <a className="text-cyan-400 underline" href={`https://cloudconvert.com/pricing`} target="_blank" rel="noopener noreferrer">cloudconvert.com/pricing</a></li>
                 <li>Gotenberg (self-hosted): <a className="text-cyan-400 underline" href={`https://gotenberg.dev`} target="_blank" rel="noopener noreferrer">gotenberg.dev</a></li>
