@@ -1,8 +1,16 @@
+<<<<<<< HEAD
+import React, { useState } from 'react';
+import UltraFuturisticNavigation2045 from './UltraFuturisticNavigation2045';
+import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
+import EnhancedSidebar2025 from './EnhancedSidebar2025';
+import UltraFuturisticBackground2040 from '../backgrounds/UltraFuturisticBackground2040';
+=======
 import React, { useState, useEffect } from 'react';
 import UltraAdvancedFuturisticNavigation2041 from './UltraAdvancedFuturisticNavigation2041';
 import UltraAdvancedFuturisticFooter2041 from './UltraAdvancedFuturisticFooter2041';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraAdvancedFuturisticBackground2040 from '../backgrounds/UltraAdvancedFuturisticBackground2040';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-21a7
 import TopContactBar from './TopContactBar';
 import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
 import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
@@ -66,19 +74,28 @@ export default function Layout({
         {/* Skip to content link for accessibility */}
         <a href="#main" className="skip-link">Skip to main content</a>
       
+<<<<<<< HEAD
+      {/* Futuristic Background */}
+      <UltraFuturisticBackground2045 />
+=======
       {/* Ultra Advanced Futuristic Background */}
       <UltraAdvancedFuturisticBackground2040 
         intensity="medium" 
         theme="consciousness-ai"
       />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-21a7
       
       {/* Layout Structure */}
       <div className="relative z-10">
         {/* Navigation */}
+<<<<<<< HEAD
+        <UltraFuturisticNavigation2045 />
+=======
         <UltraAdvancedFuturisticNavigation2041 
           onMenuToggle={() => setSidebarOpen(!sidebarOpen)}
           isMenuOpen={sidebarOpen}
         />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-21a7
         
         {/* Futuristic Background */}
         <UltraFuturisticBackground2040 theme="futuristic-2040" intensity="high" />
@@ -96,7 +113,11 @@ export default function Layout({
         </div>
         
         {/* Footer */}
+<<<<<<< HEAD
+        <UltraFuturisticFooter2045 />
+=======
         <UltraAdvancedFuturisticFooter2041 />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-21a7
       </div>
 
       {/* Accessibility and Performance Tools */}

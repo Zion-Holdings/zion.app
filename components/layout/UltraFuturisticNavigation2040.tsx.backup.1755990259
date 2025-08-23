@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
+<<<<<<< HEAD
+=======
   ChevronDown, 
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-21a7
   Menu, 
   X, 
   Search, 
@@ -27,6 +30,14 @@ import {
   Code,
   Cpu,
   Star
+<<<<<<< HEAD
+} from 'lucide-react';
+import Link from 'next/link';
+import { 
+  Menu, X, ChevronDown, Search, Globe, Brain, Rocket, Shield, 
+  Cpu, Database, Atom, Target, Star, Sparkles, Zap, Eye, Heart
+=======
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-21a7
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -89,6 +100,10 @@ const navigationItems: NavigationItem[] = [
         label: 'Quantum Cybersecurity 2045',
         href: '/quantum-cybersecurity-platform-2045',
         icon: <Shield className="w-4 h-4" />,
+<<<<<<< HEAD
+        description: 'Quantum-resistant security',
+        neonColor: 'shadow-red-400/50'
+=======
         color: 'from-red-500 to-orange-500'
       },
       { 
@@ -115,6 +130,7 @@ const navigationItems: NavigationItem[] = [
         description: 'Next-generation AI consciousness',
         icon: <Brain className="w-4 h-4" />,
         featured: true
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-21a7
       },
       {
         label: 'Autonomous Business Intelligence 2045',
@@ -215,6 +231,13 @@ const navigationItems: NavigationItem[] = [
         neonColor: 'shadow-purple-400/50'
       },
       {
+<<<<<<< HEAD
+        label: 'Government Solutions',
+        href: '/solutions/government',
+        icon: <Shield className="w-4 h-4" />,
+        description: 'Secure government technology',
+        neonColor: 'shadow-green-400/50'
+=======
         name: 'IT Infrastructure',
         href: '/it-infrastructure',
         description: 'Enterprise IT infrastructure',
@@ -232,10 +255,32 @@ const navigationItems: NavigationItem[] = [
         description: 'Cloud migration services',
         icon: <Cloud className="w-4 h-4" />
 
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-21a7
       }
     ]
   },
   {
+<<<<<<< HEAD
+    label: 'About',
+    href: '/about',
+    icon: <Users className="w-4 h-4" />,
+    description: 'Learn about our company and mission',
+    neonColor: 'shadow-yellow-400/50'
+  },
+  {
+    label: 'Case Studies',
+    href: '/case-studies',
+    icon: <Target className="w-4 h-4" />,
+    description: 'View our success stories and client results',
+    neonColor: 'shadow-green-400/50'
+  },
+  {
+    label: 'Resources',
+    href: '/resources',
+    icon: <BookOpen className="w-4 h-4" />,
+    description: 'Educational content and tools',
+    neonColor: 'shadow-orange-400/50',
+=======
     name: 'Resources',
     href: '/resources',
     icon: <BookOpen className="w-5 h-5" />,
@@ -282,6 +327,7 @@ const navigationItems: NavigationItem[] = [
     description: 'About Zion Tech Group',
     category: 'company',
     color: 'from-gray-500 to-slate-500',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-21a7
     children: [
       {
         label: 'Blog',
@@ -305,6 +351,13 @@ const navigationItems: NavigationItem[] = [
         neonColor: 'shadow-green-400/50'
       },
       {
+<<<<<<< HEAD
+        label: 'Case Studies',
+        href: '/case-studies',
+        icon: <Target className="w-4 h-4" />,
+        description: 'Client success stories',
+        neonColor: 'shadow-green-400/50'
+=======
         name: 'Partners',
         href: '/partners',
         description: 'Strategic partnerships',
@@ -315,6 +368,7 @@ const navigationItems: NavigationItem[] = [
         href: '/news',
         description: 'Company updates',
         icon: <Newspaper className="w-4 h-4" />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-21a7
       }
     ]
   },

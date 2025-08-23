@@ -15,6 +15,16 @@ const contactInfo = {
   address: '364 E Main St STE 1008 Middletown DE 19709',
   website: 'https://ziontechgroup.com',
   hours: 'Mon-Fri: 9AM-6PM EST',
+<<<<<<< HEAD
+  rating: '4.9/5 (500+ Reviews)'
+};
+
+const quickActions = [
+  { name: 'Get Quote', href: '/quote', icon: '💬' },
+  { name: 'Book Demo', href: '/contact', icon: '🎯' },
+  { name: 'Live Chat', href: '/support', icon: '💻' },
+  { name: 'Support', href: '/support', icon: '🆘' }
+=======
   rating: '4.9/5 (500+ Reviews)',
   founded: '2020',
   employees: '50+',
@@ -34,6 +44,7 @@ const socialLinks = [
   { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: '💼', color: 'hover:text-blue-600' },
   { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: '📺', color: 'hover:text-red-500' },
   { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: '💻', color: 'hover:text-gray-400' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-21a7
 ];
 
 export default function TopContactBar() {
@@ -42,7 +53,11 @@ export default function TopContactBar() {
   return (
     <div className="relative z-40">
       {/* Main Contact Bar */}
+<<<<<<< HEAD
+      <div className="bg-gradient-to-r from-gray-900 via-black to-gray-900 border-b-2 border-cyan-500/50 shadow-lg shadow-cyan-500/20">
+=======
       <div className="bg-gradient-to-r from-gray-900/90 via-black/90 to-gray-900/90 border-b border-cyan-500/30">
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-21a7
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14">
             {/* Left Side - Contact Info */}

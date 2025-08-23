@@ -323,7 +323,11 @@ const Innovative2038CuttingEdgeShowcase: React.FC = () => {
                             {'pricing' in service ? (
                               <>Pro: {service.pricing.pro} | Enterprise: {service.pricing.enterprise}</>
                             ) : (
+<<<<<<< HEAD
+                              <>Period: {service.period}</>
+=======
                               <>Contact for enterprise pricing</>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-21a7
                             )}
                           </div>
                         </div>
