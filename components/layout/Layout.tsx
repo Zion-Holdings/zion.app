@@ -83,60 +83,43 @@ export default function Layout({
         <meta name="keywords" content={keywords} />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta charSet="utf-8" />
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta name="author" content="Zion Tech Group" />
         <meta name="theme-color" content="#06b6d4" />
+        <meta name="color-scheme" content="light dark" />
+        
+        {/* Enhanced SEO Meta Tags */}
+        <meta name="application-name" content="Zion Tech Group" />
+        <meta name="apple-mobile-web-app-title" content="Zion Tech Group" />
+        <meta name="msapplication-TileColor" content="#06b6d4" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
         
         {/* Canonical URL */}
         {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
         
         {/* PWA Manifest */}
         <link rel="manifest" href="/manifest.json" />
-        <meta name="msapplication-TileColor" content="#06b6d4" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="apple-mobile-web-app-title" content="Zion Tech Group" />
         
-        {/* Favicons */}
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        
-        {/* Open Graph Meta Tags */}
+        {/* Enhanced Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={ogImage} />
-        <meta property="og:url" content={canonicalUrl || "https://ziontechgroup.com"} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Zion Tech Group - Revolutionary Technology Solutions" />
+        <meta property="og:url" content={canonicalUrl || 'https://ziontechgroup.com'} />
         <meta property="og:site_name" content="Zion Tech Group" />
         <meta property="og:locale" content="en_US" />
         
-        {/* Twitter Card Meta Tags */}
+        {/* Enhanced Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={ogImage} />
-        <meta name="twitter:site" content="@ziontechgroup" />
-        
-        {/* Additional SEO Meta Tags */}
-        <meta name="application-name" content="Zion Tech Group" />
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="format-detection" content="telephone=no" />
-        
-        {/* Preload Critical Resources */}
-        <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="/_next/static/css/app.css" as="style" />
-        
-        {/* DNS Prefetch */}
-        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
-        
-        {/* Security Headers */}
-        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
-        <meta httpEquiv="X-Frame-Options" content="DENY" />
-        <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
-        <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+        <meta name="twitter:image:alt" content="Zion Tech Group - Revolutionary Technology Solutions" />
         
         {/* Structured Data */}
         <script
@@ -149,42 +132,62 @@ export default function Layout({
               "url": "https://ziontechgroup.com",
               "logo": "https://ziontechgroup.com/logo.png",
               "description": description,
-              "foundingDate": "2024",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "364 E Main St STE 1008",
-                "addressLocality": "Middletown",
-                "addressRegion": "DE",
-                "postalCode": "19709",
-                "addressCountry": "US"
-              },
+              "foundingDate": "2020",
+              "sameAs": [
+                "https://www.linkedin.com/company/zion-tech-group",
+                "https://twitter.com/ziontechgroup",
+                "https://github.com/Zion-Holdings"
+              ],
               "contactPoint": {
                 "@type": "ContactPoint",
-                "telephone": "+1-302-464-0950",
+                "telephone": "+1-555-0123",
                 "contactType": "customer service",
-                "email": "kleber@ziontechgroup.com"
+                "email": "contact@ziontechgroup.com"
               },
-              "sameAs": [
-                "https://github.com/Zion-Holdings",
-                "https://linkedin.com/company/zion-tech-group"
-              ],
-              "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "Technology Services",
-                "itemListElement": [
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "AI Consciousness Evolution 2045",
-                      "description": "Next-generation AI consciousness with emotional intelligence"
-                    }
-                  }
-                ]
-              }
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "US",
+                "addressLocality": "San Francisco",
+                "addressRegion": "CA"
+              },
+              "serviceType": [
+                "AI & Machine Learning",
+                "Quantum Computing",
+                "Cybersecurity",
+                "Cloud Infrastructure",
+                "Business Intelligence"
+              ]
             })
           }}
         />
+        
+        {/* Preconnect to external domains for performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+        
+        {/* DNS Prefetch for performance */}
+        <link rel="dns-prefetch" href="//www.google-analytics.com" />
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        
+        {/* Favicons */}
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#06b6d4" />
+        
+        {/* Security Headers */}
+        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
+        <meta httpEquiv="X-Frame-Options" content="DENY" />
+        <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
+        <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+        
+        {/* Performance Hints */}
+        <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        
+        {/* Preload Critical Resources */}
+        <link rel="preload" href="/_next/static/css/app.css" as="style" />
       </Head>
 
       <div className="min-h-screen bg-black text-white relative overflow-x-hidden">

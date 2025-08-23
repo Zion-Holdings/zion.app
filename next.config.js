@@ -3,21 +3,40 @@ const nextConfig = {
   // Enable React strict mode for better development experience
   reactStrictMode: true,
   
-  // Enable experimental features for better performance
+  // Enhanced performance optimizations
   experimental: {
-    // Enable modern JavaScript features
-    esmExternals: true,
-    
-    // Enable optimized package imports
-    optimizePackageImports: ['framer-motion', 'lucide-react'],
+    optimizePackageImports: ['lucide-react', 'framer-motion'],
+    turbo: {
+      rules: {
+        '*.svg': {
+          loaders: ['@svgr/webpack'],
+          as: '*.js',
+        },
+      },
+    },
   },
-
-  // Image optimization
+  
+  // Bundle analyzer for development
+  ...(process.env.ANALYZE === 'true' && {
+    webpack: (config) => {
+      config.plugins.push(
+        new (require('@next/bundle-analyzer'))({
+          enabled: true,
+        })
+      );
+      return config;
+    },
+  }),
+  
+  // Enhanced compression
+  compress: true,
+  
+  // Optimize images
   images: {
-    domains: ['ziontechgroup.com'],
     formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 60,
   },
 
   // Webpack configuration for performance
@@ -141,9 +160,6 @@ const nextConfig = {
   env: {
     CUSTOM_KEY: process.env.CUSTOM_KEY,
   },
-
-  // Compression
-  compress: true,
 
   // Powered by header
   poweredByHeader: false,
