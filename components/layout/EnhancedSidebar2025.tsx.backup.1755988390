@@ -25,6 +25,12 @@ interface SidebarItem {
 
 const sidebarItems: SidebarItem[] = [
   {
+<<<<<<< HEAD
+    name: 'Home',
+    href: '/',
+    icon: <Home className="w-5 h-5" />,
+    description: 'Welcome to Zion Tech Group'
+=======
     title: 'AI & Consciousness',
     icon: <Brain className="w-5 h-5" />,
     color: 'text-violet-400',
@@ -50,6 +56,7 @@ const sidebarItems: SidebarItem[] = [
       { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform' },
       { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' }
     ]
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-766e
   },
   {
     name: 'Services',

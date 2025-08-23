@@ -42,6 +42,18 @@ const footerSections = [
     description: 'Cutting-edge future technology services',
     icon: <Lightbulb className="w-5 h-5 text-yellow-400" />,
     links: [
+<<<<<<< HEAD
+      { name: '2037-2038 Services', href: '/innovative-2037-2038-showcase', featured: true },
+      { name: 'Quantum AI Consciousness', href: '/quantum-ai-cognitive', featured: true },
+      { name: 'Holographic Metaverse AI', href: '/holographic-metaverse-ai-platform', featured: true },
+      { name: 'Neural Interface Development', href: '/neural-interface-development-kit' },
+      { name: 'Quantum Space Mining', href: '/quantum-space-mining-automation' },
+      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading-platform' },
+      { name: 'Holographic Healthcare AI', href: '/holographic-healthcare-ai' },
+      { name: 'Quantum Cybersecurity Suite', href: '/quantum-cybersecurity-suite' },
+      { name: 'Autonomous Logistics AI', href: '/autonomous-logistics-ai' },
+      { name: 'Quantum Climate Modeling', href: '/quantum-climate-modeling' }
+=======
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', featured: true },
       { name: 'Quantum Neural Networks', href: '/quantum-neural-network-platform', featured: true },
       { name: 'Autonomous Business Operations', href: '/autonomous-business-operations-platform', featured: true },
@@ -52,6 +64,7 @@ const footerSections = [
       { name: 'AI Revenue Forecasting Copilot', href: '/services/ai-revenue-forecasting-copilot', featured: true },
       { name: 'Quantum Financial Trading', href: '/quantum-financial-trading', featured: true },
       { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', featured: true }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-766e
     ]
   },
   {

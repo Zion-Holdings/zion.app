@@ -139,6 +139,51 @@ const navigationItems: NavigationItem[] = [
         name: 'Specialized Solutions', 
         href: '/solutions', 
         description: 'Industry-specific solutions',
+<<<<<<< HEAD
+        icon: <Target className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Innovation Showcase',
+    href: '/innovative-2037-2038-showcase',
+    icon: <Lightbulb className="w-5 h-5" />,
+    description: 'Future technology showcase',
+    badge: 'New',
+    category: 'showcase',
+    featured: true,
+    children: [
+      { 
+        name: '2037-2038 Services', 
+        href: '/innovative-2037-2038-showcase', 
+        description: 'Cutting-edge future services',
+        icon: <Star className="w-4 h-4" />,
+        featured: true
+      },
+      { 
+        name: 'Quantum AI Services', 
+        href: '/quantum-ai-cognitive', 
+        description: 'Quantum AI consciousness',
+        icon: <Brain className="w-4 h-4" />
+      },
+      { 
+        name: 'Holographic Metaverse', 
+        href: '/holographic-metaverse-ai', 
+        description: 'AI-powered metaverse',
+        icon: <Globe className="w-4 h-4" />
+      },
+      { 
+        name: 'Neural Interfaces', 
+        href: '/neural-interface-development', 
+        description: 'Brain-computer interfaces',
+        icon: <Brain className="w-4 h-4" />
+      },
+      { 
+        name: 'Space Mining AI', 
+        href: '/quantum-space-mining', 
+        description: 'Space resource automation',
+        icon: <Rocket className="w-4 h-4" />
+=======
         icon: <Play className="w-4 h-4" />
       },
       { 
@@ -164,6 +209,7 @@ const navigationItems: NavigationItem[] = [
         href: '/services/ai-revenue-forecasting-copilot', 
         description: 'Revenue prediction & planning',
         icon: <Play className="w-4 h-4" />
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-766e
       }
     ]
   },
