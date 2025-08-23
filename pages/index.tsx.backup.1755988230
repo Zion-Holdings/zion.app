@@ -1,4 +1,17 @@
 import React from 'react';
+<<<<<<< HEAD
+import Homepage2025 from '../components/Homepage2025';
+import SEOEnhancer from '../components/SEOEnhancer';
+import PerformanceEnhancer from '../components/PerformanceEnhancer';
+import AnalyticsTracker from '../components/AnalyticsTracker';
+import ErrorBoundary from '../components/ErrorBoundary';
+import PerformanceOptimizer from '../components/PerformanceOptimizer';
+
+      <SEOHead />
+      <ErrorBoundary>
+        <EnhancedHomepage2025 />
+      </ErrorBoundary>
+=======
 const HomePage: React.FC = () => {
   // Structured data for better SEO
   const structuredData = {
@@ -364,4 +377,5 @@ export default function HomePage() {
 			</section>
 		</>
 	);
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-bac0
 }
