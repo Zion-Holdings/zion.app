@@ -9,7 +9,7 @@ import {
 
 // Import our new service data
 import { innovativeITServicesExpansion2025V3 } from '../data/2025-innovative-it-services-expansion-v3';
-import { innovativeMicroSaasExpansion2025V3 } from '../data/2025-innovative-micro-saas-expansion-v3';
+import { innovativeMicroSaasExpansionV32025 } from '../data/2025-innovative-micro-saas-expansion-v3';
 import { innovativeAIServicesExpansion2025V3 } from '../data/2025-innovative-ai-services-expansion-v3';
 
 const ComprehensiveServicesShowcase2025 = () => {
@@ -17,7 +17,7 @@ const ComprehensiveServicesShowcase2025 = () => {
 
   const allServices = [
     ...innovativeITServicesExpansion2025V3,
-    ...innovativeMicroSaasExpansion2025V3,
+    ...innovativeMicroSaasExpansionV32025,
     ...innovativeAIServicesExpansion2025V3
   ];
 
@@ -148,14 +148,14 @@ const ComprehensiveServicesShowcase2025 = () => {
                         {service.name}
                       </h3>
                       <p className="text-gray-600 text-sm mb-3">
-                        {service.tagline}
+                        {(service as any).tagline || service.description?.substring(0, 100) || 'Innovative service solution'}...
                       </p>
                       <div className="flex items-center gap-2 text-sm text-gray-500">
                         <span className="px-2 py-1 bg-blue-100 text-blue-700 rounded-full text-xs font-medium">
-                          {service.category}
+                          {service.category || 'Innovative Service'}
                         </span>
                         <span className="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">
-                          Micro SAAS
+                          {(service as any).type || 'Micro SAAS'}
                         </span>
                       </div>
                     </div>
@@ -174,10 +174,15 @@ const ComprehensiveServicesShowcase2025 = () => {
                     <div className="space-y-1">
                       <div className="flex justify-between text-sm">
                         <span className="text-gray-600">Starting at:</span>
-                        <span className="font-semibold text-green-600">{service.price}{service.period}</span>
+                        <span className="font-semibold text-green-600">
+                          {(service as any).price || (service as any).pricing?.starter || (service as any).pricing?.monthly || 'Contact Us'}
+                        </span>
                       </div>
                       <div className="text-xs text-gray-500">
-                        {service.trialDays} days free trial • {service.setupTime} setup
+                        {(service as any).period ? `${(service as any).period}` : ''}
+                                                  {(service as any).pricing?.professional ? ` • Professional: ${(service as any).pricing.professional}` : ''}
+                                                  {(service as any).pricing?.enterprise ? ` • Enterprise: ${(service as any).pricing.enterprise}` : ''}
+                        {!(service as any).period && !(service as any).pricing?.professional && !(service as any).pricing?.enterprise ? 'Contact Us for Pricing' : ''}
                       </div>
                     </div>
                   </div>
@@ -199,27 +204,25 @@ const ComprehensiveServicesShowcase2025 = () => {
                   <div className="mb-4 text-sm">
                     <div className="flex justify-between mb-1">
                       <span className="text-gray-600">Market Size:</span>
-                      <span className="font-semibold text-gray-900">{service.marketSize}</span>
+                      <span className="font-semibold text-gray-900">{service.marketSize || 'N/A'}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-gray-600">Target Audience:</span>
-                      <span className="font-semibold text-gray-900">{service.targetAudience}</span>
+                      <span className="text-gray-600">Growth Rate:</span>
+                      <span className="font-semibold text-gray-900">{service.growthRate || 'N/A'}</span>
                     </div>
                   </div>
-
-
 
                   {/* CTA Button */}
                   <div className="flex flex-col gap-2">
                     <a
-                      href={`mailto:${service.contactInfo.email}?subject=Inquiry about ${service.name}`}
+                      href={`mailto:${(service as any).contactInfo?.email || (service as any).contact?.email || 'kleber@ziontechgroup.com'}?subject=Inquiry about ${service.name}`}
                       className="w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-2 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
                     >
                       <Mail className="w-4 h-4" />
                       Get Started
                     </a>
                     <a
-                      href={`tel:${service.contactInfo.mobile}`}
+                      href={`tel:${(service as any).contactInfo?.mobile || (service as any).contact?.phone || '+1 302 464 0950'}`}
                       className="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 text-center py-2 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
                     >
                       <Phone className="w-4 h-4" />
