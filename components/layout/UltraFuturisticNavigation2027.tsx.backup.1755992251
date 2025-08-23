@@ -10,6 +10,11 @@ import {
   Phone, Mail, MapPin, ExternalLink, Building
 } from 'lucide-react';
 
+<<<<<<< HEAD
+const UltraFuturisticNavigation2027: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+=======
 const contactInfo = {
   mobile: '+1 302 464 0950',
   email: 'kleber@ziontechgroup.com',
@@ -116,6 +121,7 @@ const technologyLinks = [
 
 export default function UltraFuturisticNavigation2027() {
   const [isOpen, setIsOpen] = useState(false);
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4372
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isClient, setIsClient] = useState(false);
 

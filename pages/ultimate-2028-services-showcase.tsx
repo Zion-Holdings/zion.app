@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, Brain, Sparkles,
-  ChevronDown, ChevronUp, X, Menu
+  Rocket, Brain, Atom, Globe, Zap, Sparkles, Shield, 
+  Target, Star, TrendingUp, Phone, Mail, MapPin,
+  ChevronDown, Search, Menu, X, ArrowRight, CheckCircle,
+  DollarSign, Users, Briefcase, BookOpen, MessageCircle,
+  Layers, Cpu, Database, Cloud, Lock, ShieldCheck
 } from 'lucide-react';
 import UltraFuturisticNavigation2027 from '../components/layout/UltraFuturisticNavigation2027';
 import UltraQuantumHolographicBackground from '../components/ui/UltraQuantumHolographicBackground';
@@ -21,64 +24,32 @@ const contactInfo = {
   website: 'https://ziontechgroup.com'
 };
 
-const pricingTiers = [
+const serviceCategories = [
   {
-    name: 'Starter',
-    price: '$199',
-    period: '/month',
-    description: 'Perfect for small businesses and startups',
+    title: '🚀 2028 Innovative Micro SAAS',
+    icon: Rocket,
     color: 'from-blue-600 to-cyan-600',
-    features: [
-      'Basic AI automation',
-      'Standard integrations',
-      'Email support',
-      'Basic analytics',
-      'Up to 5 users',
-      'Standard security'
-    ],
-    popular: false
+    description: 'Practical business solutions for today',
+    services: innovative2028Services.slice(0, 4)
   },
   {
-    name: 'Professional',
-    price: '$499',
-    period: '/month',
-    description: 'Ideal for growing businesses',
-    color: 'from-purple-600 to-indigo-600',
-    features: [
-      'Advanced AI capabilities',
-      'Premium integrations',
-      'Priority support',
-      'Advanced analytics',
-      'Up to 25 users',
-      'Enhanced security',
-      'Custom workflows',
-      'API access'
-    ],
-    popular: true
+    title: '⚛️ 2028 Emerging Technology',
+    icon: Atom,
+    color: 'from-indigo-600 to-purple-600',
+    description: 'Cutting-edge innovations and breakthroughs',
+    services: emergingTech2028Services.slice(0, 4)
   },
   {
-    name: 'Enterprise',
-    price: 'Custom',
-    period: '',
-    description: 'For large organizations with complex needs',
+    title: '🏢 2028 Enterprise IT Solutions',
+    icon: Shield,
     color: 'from-red-600 to-orange-600',
-    features: [
-      'Full AI suite',
-      'Custom integrations',
-      '24/7 dedicated support',
-      'Enterprise analytics',
-      'Unlimited users',
-      'Maximum security',
-      'Custom development',
-      'SLA guarantees',
-      'On-premise options',
-      'White-label solutions'
-    ],
-    popular: false
+    description: 'Enterprise-grade solutions and infrastructure',
+    services: enterpriseIT2028Services.slice(0, 4)
   }
 ];
 
-export default function Revolutionary2028Pricing() {
+export default function Ultimate2028ServicesShowcase() {
+  const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -87,6 +58,12 @@ export default function Revolutionary2028Pricing() {
     ...emergingTech2028Services,
     ...enterpriseIT2028Services
   ];
+
+  const filteredServices = allServices.filter(service =>
+    service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    service.category.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   const categories = [
     'all',
@@ -115,21 +92,17 @@ export default function Revolutionary2028Pricing() {
     'Cloud Migration & Enterprise'
   ];
 
-  const filteredServices = selectedCategory === 'all' 
-    ? allServices 
-    : allServices.filter(service => service.category === selectedCategory);
-
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
       <Head>
-        <title>Revolutionary 2028 Pricing - Zion Tech Group</title>
-        <meta name="description" content="Discover our comprehensive 2028 pricing for innovative micro SAAS, emerging technology, and enterprise IT solutions. Competitive pricing for cutting-edge technology." />
-        <meta name="keywords" content="2028 pricing, micro SAAS pricing, emerging technology pricing, enterprise IT pricing, AI pricing, quantum computing pricing, Zion Tech Group" />
-        <meta property="og:title" content="Revolutionary 2028 Pricing - Zion Tech Group" />
-        <meta property="og:description" content="Discover our comprehensive 2028 pricing for innovative micro SAAS, emerging technology, and enterprise IT solutions." />
-        <meta property="og:url" content="https://ziontechgroup.com/revolutionary-2028-pricing" />
+        <title>Ultimate 2028 Services Showcase - Zion Tech Group</title>
+        <meta name="description" content="Discover our comprehensive 2028 services showcase featuring innovative micro SAAS, emerging technology, and enterprise IT solutions. Transform your business with cutting-edge AI, quantum computing, and advanced technology." />
+        <meta name="keywords" content="2028 services, micro SAAS, emerging technology, enterprise IT, AI, quantum computing, blockchain, 5G, edge computing, Zion Tech Group" />
+        <meta property="og:title" content="Ultimate 2028 Services Showcase - Zion Tech Group" />
+        <meta property="og:description" content="Discover our comprehensive 2028 services showcase featuring innovative micro SAAS, emerging technology, and enterprise IT solutions." />
+        <meta property="og:url" content="https://ziontechgroup.com/ultimate-2028-services-showcase" />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://ziontechgroup.com/revolutionary-2028-pricing" />
+        <link rel="canonical" href="https://ziontechgroup.com/ultimate-2028-services-showcase" />
       </Head>
 
       <UltraQuantumHolographicBackground>
@@ -145,11 +118,11 @@ export default function Revolutionary2028Pricing() {
             className="mb-8"
           >
             <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent mb-6">
-              2028 Revolutionary Pricing
+              2028 Ultimate Services
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Transparent, competitive pricing for our comprehensive suite of innovative micro SAAS, 
-              emerging technology breakthroughs, and enterprise IT solutions.
+              Experience the future of technology with our comprehensive suite of innovative micro SAAS, 
+              emerging technology breakthroughs, and enterprise IT solutions designed to transform your business.
             </p>
           </motion.div>
 
@@ -165,122 +138,103 @@ export default function Revolutionary2028Pricing() {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </Link>
-            <Link href="/ultimate-2028-services-showcase">
+            <Link href="/pricing">
               <button className="px-8 py-4 border-2 border-purple-500 hover:bg-purple-500/20 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105">
-                View All Services
+                View Pricing
               </button>
             </Link>
           </motion.div>
         </div>
       </section>
 
-      {/* Pricing Tiers */}
+      {/* Search and Filter Section */}
+      <section className="relative z-10 px-4 sm:px-6 lg:px-8 mb-16">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="bg-gray-900/50 backdrop-blur-xl rounded-2xl p-6 border border-gray-700/50"
+          >
+            <div className="flex flex-col lg:flex-row gap-4">
+              <div className="flex-1 relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <input
+                  type="text"
+                  placeholder="Search services..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                />
+              </div>
+              <div className="relative">
+                <select
+                  value={selectedCategory}
+                  onChange={(e) => setSelectedCategory(e.target.value)}
+                  className="appearance-none px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent pr-10"
+                >
+                  {categories.map((category) => (
+                    <option key={category} value={category}>
+                      {category === 'all' ? 'All Categories' : category}
+                    </option>
+                  ))}
+                </select>
+                <ChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5 pointer-events-none" />
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Service Categories Showcase */}
       <section className="relative z-10 px-4 sm:px-6 lg:px-8 mb-20">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Choose Your Plan
+              Service Categories
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Flexible pricing options designed to scale with your business needs
+              Explore our comprehensive range of services across three main categories
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {pricingTiers.map((tier, index) => (
+            {serviceCategories.map((category, index) => (
               <motion.div
-                key={tier.name}
+                key={category.title}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 + index * 0.2 }}
-                className={`relative bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-xl rounded-2xl p-8 border ${
-                  tier.popular 
-                    ? 'border-purple-500/50 shadow-2xl shadow-purple-500/20' 
-                    : 'border-gray-700/50'
-                } hover:border-purple-500/50 transition-all duration-300 hover:transform hover:scale-105`}
+                transition={{ duration: 0.8, delay: 0.8 + index * 0.2 }}
+                className="bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-xl rounded-2xl p-8 border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 hover:transform hover:scale-105"
               >
-                {tier.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="px-6 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white text-sm font-semibold rounded-full">
-                      Most Popular
-                    </span>
-                  </div>
-                )}
-
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-white mb-4">{tier.name}</h3>
-                  <div className="mb-4">
-                    <span className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                      {tier.price}
-                    </span>
-                    <span className="text-gray-400">{tier.period}</span>
-                  </div>
-                  <p className="text-gray-300">{tier.description}</p>
+                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${category.color} flex items-center justify-center mb-6`}>
+                  <category.icon className="w-8 h-8 text-white" />
                 </div>
-
-                <ul className="space-y-4 mb-8">
-                  {tier.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center gap-3">
-                      <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                      <span className="text-gray-300">{feature}</span>
-                    </li>
+                <h3 className="text-2xl font-bold text-white mb-4">{category.title}</h3>
+                <p className="text-gray-300 mb-6">{category.description}</p>
+                <div className="space-y-3">
+                  {category.services.map((service) => (
+                    <div key={service.id} className="flex items-center gap-3 p-3 bg-gray-800/50 rounded-lg hover:bg-gray-700/50 transition-colors">
+                      <span className="text-2xl">{service.icon}</span>
+                      <div className="flex-1">
+                        <h4 className="font-semibold text-white">{service.name}</h4>
+                        <p className="text-sm text-gray-400">{service.price}{service.period}</p>
+                      </div>
+                    </div>
                   ))}
-                </ul>
-
-                <Link href="/contact" className="block">
-                  <button className={`w-full py-3 px-6 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 ${
-                    tier.popular
-                      ? 'bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white'
-                      : 'border-2 border-purple-500 hover:bg-purple-500/20 text-white'
-                  }`}>
-                    {tier.name === 'Enterprise' ? 'Contact Sales' : 'Get Started'}
-                  </button>
-                </Link>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Service Category Filter */}
-      <section className="relative z-10 px-4 sm:px-6 lg:px-8 mb-16">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="bg-gray-900/50 backdrop-blur-xl rounded-2xl p-6 border border-gray-700/50"
-          >
-            <div className="text-center mb-6">
-              <h3 className="text-2xl font-bold text-white mb-2">Filter Services by Category</h3>
-              <p className="text-gray-300">Explore our comprehensive service offerings</p>
-            </div>
-            
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-                    selectedCategory === category
-                      ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white'
-                      : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 hover:text-white'
-                  }`}
-                >
-                  {category === 'all' ? 'All' : category.split(' ').slice(-2).join(' ')}
-                </button>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Services Grid */}
+      {/* All Services Grid */}
       <section className="relative z-10 px-4 sm:px-6 lg:px-8 mb-20">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -290,10 +244,10 @@ export default function Revolutionary2028Pricing() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Service Pricing
+              All Services
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Detailed pricing for all our innovative 2028 services
+              Discover our complete portfolio of innovative solutions
             </p>
           </motion.div>
 
@@ -380,10 +334,10 @@ export default function Revolutionary2028Pricing() {
             className="bg-gradient-to-br from-purple-900/50 to-blue-900/50 backdrop-blur-xl rounded-2xl p-8 border border-purple-500/30 text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Get Started?
+              Ready to Transform Your Business?
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Contact our team to discuss pricing, implementation, and how our services can transform your business
+              Get in touch with our team to discuss how our 2028 services can revolutionize your operations
             </p>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -407,9 +361,9 @@ export default function Revolutionary2028Pricing() {
                   Contact Us Today
                 </button>
               </Link>
-              <Link href="/ultimate-2028-services-showcase">
+              <Link href="/pricing">
                 <button className="px-8 py-4 border-2 border-purple-500 hover:bg-purple-500/20 rounded-full font-semibold text-lg transition-all duration-300">
-                  View All Services
+                  View Pricing
                 </button>
               </Link>
             </div>
