@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+<<<<<<< HEAD
+  // Enable static export for Next.js 14
+=======
+>>>>>>> origin/cursor/bc-fb46ff41-f41c-4a05-88f2-2122b9c9c4ce-81c6
   output: 'export',
   trailingSlash: true,
   productionBrowserSourceMaps: false,
