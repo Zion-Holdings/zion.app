@@ -8,6 +8,8 @@ import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackgro
 import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
 import EnhancedAccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
+import EnhancedErrorBoundary from '../EnhancedErrorBoundary';
+import ThemeToggle from '../ThemeToggle';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -28,6 +30,8 @@ export default function Layout({
 }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isOnline, setIsOnline] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
 
   useEffect(() => {
     // Check online status
@@ -39,40 +43,50 @@ export default function Layout({
     window.addEventListener('offline', updateOnlineStatus);
     updateOnlineStatus();
 
-    // Register service worker
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js')
-        .then((registration) => {
-          // Check for updates
-          registration.addEventListener('updatefound', () => {
-            const newWorker = registration.installing;
-            if (newWorker) {
-              newWorker.addEventListener('statechange', () => {
-                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                  // New version available
-                  if (typeof window !== 'undefined' && window.confirm) {
-                    if (window.confirm('A new version is available! Would you like to update?')) {
-                      newWorker.postMessage({ type: 'SKIP_WAITING' });
-                      window.location.reload();
-                    }
-                  }
-                }
-              });
-            }
-          });
-        })
-        .catch((error) => {
-          // Silently handle service worker registration errors
-          // eslint-disable-next-line no-console
-          console.error('Service Worker registration failed:', error);
-        });
+    // Check for saved theme preference or default to dark
+    const savedTheme = localStorage.getItem('theme') as 'dark' | 'light' | null;
+    if (savedTheme) {
+      setTheme(savedTheme);
+    } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+      setTheme('light');
     }
+
+    // Simulate initial loading
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 100);
 
     return () => {
       window.removeEventListener('online', updateOnlineStatus);
       window.removeEventListener('offline', updateOnlineStatus);
+      clearTimeout(timer);
     };
   }, []);
+
+  // Apply theme to document
+  useEffect(() => {
+    document.documentElement.classList.remove('light', 'dark');
+    document.documentElement.classList.add(theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+  };
+
+  // Loading state
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-purple-900 to-cyan-900">
+        <div className="text-center space-y-4">
+          <div className="w-16 h-16 mx-auto border-4 border-cyan-500 border-t-transparent rounded-full animate-spin"></div>
+          <h2 className="text-2xl font-semibold text-white">Loading Zion Tech Group</h2>
+          <p className="text-white/70">Preparing the future of technology...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -178,107 +192,67 @@ export default function Layout({
             })
           }}
         />
-        
-        {/* Preload Critical Resources */}
-        <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="/_next/static/css/app.css" as="style" />
-        
-        {/* DNS Prefetch */}
-        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
-        
-        {/* Security Headers */}
-        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
-        <meta httpEquiv="X-Frame-Options" content="DENY" />
-        <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
-        <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
       </Head>
 
-      <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
-        {/* Skip to content link for accessibility */}
-        <a href="#main" className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-black focus:text-white focus:px-4 focus:py-2 focus:rounded">
+      <div className={`min-h-screen transition-colors duration-300 ${
+        theme === 'dark' 
+          ? 'bg-black text-white' 
+          : 'bg-gray-50 text-gray-900'
+      }`}>
+        {/* Skip Link for Accessibility */}
+        <a 
+          href="#main-content" 
+          className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-cyan-500 focus:text-white focus:rounded focus:outline-none focus:ring-2 focus:ring-cyan-300"
+        >
           Skip to main content
         </a>
-        
-        {/* Online/Offline Status Indicator */}
-        {!isOnline && (
-          <div className="fixed top-0 left-0 right-0 bg-red-600 text-white text-center py-2 z-50">
-            <span className="flex items-center justify-center gap-2">
-              <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-              You're currently offline. Some features may be limited.
-            </span>
-          </div>
-        )}
-        
-        {/* Futuristic Background */}
+
+        {/* Top Contact Bar */}
+        <TopContactBar />
+
+        {/* Navigation */}
+        <UltraFuturisticNavigation2045 
+          sidebarOpen={sidebarOpen} 
+          setSidebarOpen={setSidebarOpen}
+          theme={theme}
+          onThemeToggle={toggleTheme}
+        />
+
+        {/* Theme Toggle */}
+        <div className="fixed top-24 right-4 z-50">
+          <ThemeToggle theme={theme} onToggle={toggleTheme} />
+        </div>
+
+        {/* Main Content */}
+        <main id="main-content" className="relative z-10">
+          {children}
+        </main>
+
+        {/* Footer */}
+        <UltraFuturisticFooter2045 />
+
+        {/* Sidebar */}
+        <EnhancedSidebar2025 
+          isOpen={sidebarOpen} 
+          onClose={() => setSidebarOpen(false)} 
+        />
+
+        {/* Background */}
         <UltraFuturisticBackground2036 />
-        
-        {/* Layout Structure */}
-        <div className="relative z-10">
-          {/* Top Contact Bar */}
-          <TopContactBar />
-          
-          {/* Navigation */}
-          <UltraFuturisticNavigation2045 />
-          
-          {/* Sidebar and Main Content */}
-          <div className="flex">
-            <EnhancedSidebar2025 
-              isOpen={sidebarOpen} 
-              onClose={() => setSidebarOpen(false)} 
-            />
-            
-            <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
-              {children}
-            </main>
-          </div>
-          
-          {/* Footer */}
-          <UltraFuturisticFooter2045 />
-        </div>
 
-        {/* Accessibility and Performance Tools */}
-        <EnhancedAccessibilityEnhancer />
+        {/* Performance Monitor */}
         <EnhancedPerformanceMonitor />
-        
-        {/* Cookie Consent Banner */}
-        <CookieConsentBanner />
-      </div>
 
-      {/* Enhanced Accessibility and Performance Tools */}
-      <EnhancedAccessibilityEnhancer />
-      <EnhancedPerformanceMonitor />
-      
-      {/* Cookie Consent Banner */}
-      <CookieConsentBanner />
-      
-      {/* Service Worker Update Notification */}
-      <div id="sw-update-notification" className="hidden fixed bottom-4 right-4 bg-cyan-600 text-white p-4 rounded-lg shadow-lg z-50 max-w-sm">
-        <div className="flex items-start gap-3">
-          <div className="flex-shrink-0">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <div className="flex-1">
-            <h4 className="font-semibold mb-1">Update Available</h4>
-            <p className="text-sm text-cyan-100 mb-3">A new version of Zion Tech Group is available.</p>
-            <div className="flex gap-2">
-              <button 
-                onClick={() => window.location.reload()} 
-                className="bg-white text-cyan-600 px-3 py-1 rounded text-sm font-medium hover:bg-cyan-500 transition-colors"
-              >
-                Update Now
-              </button>
-              <button 
-                onClick={() => document.getElementById('sw-update-notification')?.classList.add('hidden')} 
-                className="text-cyan-100 hover:text-white text-sm transition-colors"
-              >
-                Later
-              </button>
-            </div>
-          </div>
-        </div>
+        {/* Accessibility Enhancer */}
+        <EnhancedAccessibilityEnhancer />
+
+        {/* Cookie Consent */}
+        <CookieConsentBanner />
+
+        {/* Error Boundary */}
+        <EnhancedErrorBoundary>
+          {children}
+        </EnhancedErrorBoundary>
       </div>
     </>
   );
