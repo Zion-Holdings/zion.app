@@ -1,5 +1,173 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
+<<<<<<< HEAD
+import { motion } from 'framer-motion';
+import { 
+  Headphones, MessageCircle, BookOpen, Video, FileText, 
+  Search, Clock, Star, Users, Globe, Zap, Shield 
+} from 'lucide-react';
+
+const SupportPage: React.FC = () => {
+  const supportChannels = [
+    {
+      title: "24/7 Live Chat",
+      description: "Get instant help from our support team",
+      icon: <MessageCircle className="w-8 h-8" />,
+      availability: "Available 24/7",
+      responseTime: "Instant",
+      priority: "High"
+    },
+    {
+      title: "Phone Support",
+      description: "Speak directly with our technical experts",
+      icon: <Headphones className="w-8 h-8" />,
+      availability: "Mon-Fri 8AM-8PM EST",
+      responseTime: "< 5 minutes",
+      priority: "High"
+    },
+    {
+      title: "Email Support",
+      description: "Detailed technical assistance via email",
+      icon: <FileText className="w-8 h-8" />,
+      availability: "24/7",
+      responseTime: "< 4 hours",
+      priority: "Medium"
+    },
+    {
+      title: "Video Call",
+      description: "Screen sharing and visual troubleshooting",
+      icon: <Video className="w-8 h-8" />,
+      availability: "By appointment",
+      responseTime: "Scheduled",
+      priority: "High"
+    }
+  ];
+    }
+  ];
+
+  const faqs = [
+    {
+
+      title: "Getting Started",
+      description: "Quick start guides and onboarding",
+      icon: <Zap className="w-6 h-6" />,
+      articles: 15,
+      popular: true
+    },
+    {
+      title: "Technical Documentation",
+      description: "Comprehensive API and integration guides",
+      icon: <BookOpen className="w-6 h-6" />,
+      articles: 45,
+      popular: true
+    },
+    {
+      title: "Troubleshooting",
+      description: "Common issues and solutions",
+      icon: <Search className="w-6 h-6" />,
+      articles: 32,
+      popular: false
+    },
+    {
+      title: "Best Practices",
+      description: "Optimization and performance tips",
+      icon: <Star className="w-6 h-6" />,
+      articles: 28,
+      popular: true
+    },
+    {
+      title: "Security & Compliance",
+      description: "Security guidelines and compliance info",
+      icon: <Shield className="w-6 h-6" />,
+      articles: 18,
+      popular: false
+    },
+    {
+      title: "Integration Guides",
+      description: "Step-by-step integration tutorials",
+      icon: <Globe className="w-6 h-6" />,
+      articles: 25,
+      popular: false
+    }
+  ];
+
+  const faqItems = [
+    {
+      question: "How do I get started with Zion Tech Group services?",
+      answer: "Getting started is easy! Simply contact our team through our contact form or call us directly. We'll schedule a consultation to understand your needs and create a customized implementation plan."
+    },
+    {
+      question: "What kind of support do you provide during implementation?",
+      answer: "We provide comprehensive support throughout the entire implementation process, including dedicated project managers, technical consultants, training sessions, and ongoing support to ensure successful deployment."
+    },
+    {
+      question: "Do you offer training for our team?",
+      answer: "Yes! We provide comprehensive training programs for your team, including hands-on workshops, documentation, video tutorials, and ongoing support to ensure your team is confident using our solutions."
+    },
+    {
+      question: "What are your response times for support requests?",
+      answer: "Our response times vary by priority: Critical issues (1 hour), High priority (4 hours), Medium priority (24 hours), and Low priority (48 hours). We're committed to resolving issues quickly."
+    },
+    {
+      question: "Do you provide 24/7 support?",
+      answer: "Yes, we offer 24/7 support for critical issues and enterprise customers. Our support team is available around the clock to ensure your systems remain operational and secure."
+    }
+  ];
+
+  const supportStats = [
+    { metric: "99.9%", label: "Uptime Guarantee" },
+    { metric: "< 4hrs", label: "Average Response Time" },
+    { metric: "24/7", label: "Support Availability" },
+    { metric: "98%", label: "Customer Satisfaction" }
+  ];
+
+  const contactInfo = {
+    phone: '+1 302 464 0950',
+    email: 'support@ziontechgroup.com',
+    emergencyEmail: 'emergency@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com'
+  };
+
+  return (
+
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                Support Categories
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Comprehensive support for all aspects of our services
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {supportCategories.map((category, index) => (
+                <motion.div
+                  key={category.title}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 p-6 rounded-2xl border border-gray-700/30 hover:border-purple-500/50 transition-all duration-300"
+                >
+                  <div className="flex items-center mb-4">
+                    <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-blue-600 rounded-xl flex items-center justify-center mr-3">
+                      {category.icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-white">{category.title}</h3>
+                  </div>
+                  <p className="text-gray-300 mb-4">{category.description}</p>
+                  <div className="grid grid-cols-2 gap-2">
+                    {category.topics.map((topic) => (
+                      <div key={topic} className="flex items-center space-x-2 text-sm">
+                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
+                        <span className="text-gray-300">{topic}</span>
+                      </div>
+                    ))}
+                  </div>
+=======
     <Layout 
       title="Support - Zion Tech Group"
       description="Get comprehensive support for all Zion Tech Group services. 24/7 assistance, documentation, and expert guidance to ensure your success."
@@ -813,6 +981,7 @@ export default function Support() {
             </div>
           </div>
         </section>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-d72c
       </div>
     </Layout>
   );

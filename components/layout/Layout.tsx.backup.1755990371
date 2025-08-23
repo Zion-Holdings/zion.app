@@ -15,6 +15,16 @@ export default function Layout({ children, seo }: LayoutProps) {
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
 
   return (
+<<<<<<< HEAD
+    <div className="min-h-screen bg-gray-900 text-white">
+      <UltraFuturisticNavigation2045 />
+      <main className="relative z-10">
+        {children}
+      </main>
+      <UltraFuturisticFooter2045 />
+      <AccessibilityEnhancer />
+      <PerformanceOptimizer showMetrics={true} autoOptimize={true} />
+=======
     <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
       {/* Skip to content link for accessibility */}
       <a href="#main" className="skip-link">Skip to main content</a>
@@ -52,6 +62,7 @@ export default function Layout({ children, seo }: LayoutProps) {
       
       {/* Cookie Consent Banner */}
       <CookieConsentBanner />
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-d72c
     </div>
   );
 };

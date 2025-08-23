@@ -23,11 +23,16 @@ export default function Home() {
     <ErrorBoundary>
       <SEOOptimizer />
       <AnalyticsTracker />
+<<<<<<< HEAD
+      <Homepage2045 />
+      <PerformanceMonitor />
+=======
       <PerformanceOptimizer />
       <MobileOptimizer showDebugInfo={false}>
         <Homepage2025 />
         <PerformanceMonitor showUI={true} />
       </MobileOptimizer>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-d72c
       <AccessibilityEnhancer />
     </ErrorBoundary>
   );

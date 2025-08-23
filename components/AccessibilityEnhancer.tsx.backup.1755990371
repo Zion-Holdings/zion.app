@@ -138,7 +138,11 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
   }, [applySettings]);
 
   // Focus management
+<<<<<<< HEAD
+  const handleFocusChange = useCallback((e: any) => {
+=======
   const handleFocusChange = useCallback((e: FocusEvent) => {
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-d72c
     const target = e.target as HTMLElement;
     if (target) {
       setCurrentFocus(target);

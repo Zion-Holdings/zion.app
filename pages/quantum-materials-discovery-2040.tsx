@@ -1,191 +1,148 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
-import { motion } from 'framer-motion';
-import { 
-  Brain, Cpu, Zap, Target, ArrowRight, 
-  Atom, TestTube, Eye, BarChart3, CheckCircle, 
-  Star, TrendingUp, Globe, Network, Code
-} from 'lucide-react';
+import { Brain, Sparkles, Zap, Target, Users, Award, Clock, CheckCircle, Atom, TestTube, TrendingUp, Shield, Microscope } from 'lucide-react';
 
-const QuantumMaterialsDiscovery2040: React.FC = () => {
-  const features = [
-    {
-      icon: <Atom className="w-8 h-8" />,
-      title: "Quantum Material Simulation",
-      description: "Revolutionary simulation of materials at the quantum level"
-    },
-    {
-              icon: <TestTube className="w-8 h-8" />,
-      title: "AI-Driven Discovery",
-      description: "Conscious AI that predicts and discovers new materials"
-    },
-    {
-      icon: <Eye className="w-8 h-8" />,
-      title: "Real-Time Analysis",
-      description: "Instant analysis of material properties and behaviors"
-    },
-    {
-      icon: <Brain className="w-8 h-8" />,
-      title: "Consciousness Integration",
-      description: "AI with human-like understanding of material science"
-    },
-    {
-      icon: <Network className="w-8 h-8" />,
-      title: "Global Collaboration",
-      description: "Worldwide material discovery network"
-    },
-    {
-      icon: <Code className="w-8 h-8" />,
-      title: "Quantum Algorithms",
-      description: "Next-generation algorithms for material discovery"
-    }
-  ];
-
-  const benefits = [
-    "1000x faster discovery",
-    "Unlimited material combinations",
-    "Real-time optimization",
-    "Conscious AI insights",
-    "Global collaboration",
-    "Sustainable materials"
-  ];
-
+export default function QuantumMaterialsDiscovery2040() {
   return (
     <Layout>
-      <div className="min-h-screen bg-black text-white">
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
         {/* Hero Section */}
         <section className="relative py-20 px-4 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-pink-900/20 to-red-900/20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-violet-500/10 via-purple-500/10 to-violet-500/10"></div>
           <div className="relative z-10 max-w-7xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 text-sm font-medium mb-6">
-                <Atom className="w-4 h-4 mr-2" />
-                Quantum Materials Discovery 2040
+            <div className="mb-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-violet-500/20 to-purple-500/20 border border-violet-500/30 rounded-full text-violet-300 text-sm mb-6">
+                <Sparkles className="w-4 h-4" />
+                Revolutionary 2040 Technology
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 bg-clip-text text-transparent mb-6">
-                Quantum Materials Discovery
+              <h1 className="text-5xl md:text-7xl font-bold mb-6">
+                <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-violet-400 bg-clip-text text-transparent">
+                  Quantum Materials Discovery
+                </span>
+                <br />
+                <span className="text-white">2040</span>
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
-                Revolutionary AI systems with consciousness that discover and optimize materials at the quantum level, 
-                creating breakthrough materials for the future.
+              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
+                Experience the future of materials science with revolutionary quantum technology that accelerates 
+                discovery, predicts properties, and creates next-generation materials with unprecedented capabilities.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-full hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105">
-                  Start Discovery
+                <button className="px-8 py-4 bg-gradient-to-r from-violet-500 to-purple-600 text-white font-semibold rounded-xl hover:from-violet-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
+                  Start Materials Discovery
                 </button>
-                <button className="px-8 py-4 border border-purple-500/50 text-purple-300 font-semibold rounded-full hover:bg-purple-500/20 transition-all duration-300">
-                  View Demo
+                <button className="px-8 py-4 border-2 border-violet-400 text-violet-400 font-semibold rounded-xl hover:bg-violet-400 hover:text-black transition-all duration-300">
+                  Learn More
                 </button>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
 
-        {/* Features Section */}
+        {/* Features Grid */}
         <section className="py-20 px-4">
           <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
+            <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Revolutionary Discovery Capabilities
+                Revolutionary Quantum Materials Discovery Features
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Our AI understands materials at the quantum level, enabling breakthrough discoveries.
+                Our quantum materials discovery platform represents the pinnacle of materials science technology, 
+                combining quantum computing with advanced simulation and prediction capabilities.
               </p>
-            </motion.div>
+            </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300"
-                >
-                  <div className="text-purple-400 mb-4">{feature.icon}</div>
-                  <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
-                  <p className="text-gray-400 leading-relaxed">{feature.description}</p>
-                </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: <Atom className="w-8 h-8" />,
+                  title: "Quantum Simulation",
+                  description: "Advanced quantum simulations for accurate materials property prediction.",
+                  color: "from-violet-500 to-purple-500"
+                },
+                {
+                  icon: <TestTube className="w-8 h-8" />,
+                  title: "Virtual Synthesis",
+                  description: "AI-powered virtual synthesis of new materials with desired properties.",
+                  color: "from-blue-500 to-cyan-500"
+                },
+                {
+                  icon: <Microscope className="w-8 h-8" />,
+                  title: "Quantum Analysis",
+                  description: "Quantum-powered analysis of materials at atomic and molecular levels.",
+                  color: "from-green-500 to-emerald-500"
+                },
+                {
+                  icon: <TestTube className="w-8 h-8" />,
+                  title: "Property Prediction",
+                  description: "Accurate prediction of materials properties before synthesis.",
+                  color: "from-orange-500 to-red-500"
+                },
+                {
+                  icon: <Brain className="w-8 h-8" />,
+                  title: "AI Integration",
+                  description: "AI algorithms that accelerate materials discovery and optimization.",
+                  color: "from-yellow-500 to-orange-500"
+                },
+                {
+                  icon: <Shield className="w-8 h-8" />,
+                  title: "Quality Assurance",
+                  description: "Advanced quality control and validation of discovered materials.",
+                  color: "from-indigo-500 to-purple-500"
+                }
+              ].map((feature, index) => (
+                <div key={index} className="group p-8 bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 rounded-2xl hover:border-violet-500/50 transition-all duration-300 hover:transform hover:scale-105">
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${feature.color} p-4 mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-4">{feature.title}</h3>
+                  <p className="text-gray-400">{feature.description}</p>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
         {/* Benefits Section */}
-        <section className="py-20 px-4 bg-gradient-to-b from-black to-purple-900/20">
+        <section className="py-20 px-4 bg-gradient-to-r from-violet-500/5 to-purple-500/5">
           <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
+            <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Transform Material Science
+                Why Choose Quantum Materials Discovery?
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Experience the future of materials with quantum discovery.
+                Accelerate your materials research with quantum technology that predicts and discovers breakthrough materials.
               </p>
-            </motion.div>
+            </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="space-y-6"
-              >
-                <h3 className="text-2xl font-semibold text-white mb-6">Key Benefits</h3>
-                <div className="space-y-4">
-                  {benefits.map((benefit, index) => (
-                    <div key={index} className="flex items-center space-x-3">
-                      <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                      <span className="text-gray-300">{benefit}</span>
-                    </div>
-                  ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: <CheckCircle className="w-8 h-8" />,
+                  title: "Accelerated Discovery",
+                  description: "Dramatically faster materials discovery through quantum simulation.",
+                  color: "from-violet-500 to-purple-500"
+                },
+                {
+                  icon: <TrendingUp className="w-8 h-8" />,
+                  title: "Cost Reduction",
+                  description: "Significant reduction in research and development costs.",
+                  color: "from-blue-500 to-cyan-500"
+                },
+                {
+                  icon: <Award className="w-8 h-8" />,
+                  title: "Innovation Leadership",
+                  description: "Stay ahead with cutting-edge materials science technology.",
+                  color: "from-green-500 to-emerald-500"
+                }
+              ].map((benefit, index) => (
+                <div key={index} className="text-center p-6">
+                  <div className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${benefit.color} p-5 mx-auto mb-6`}>
+                    {benefit.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-4">{benefit.title}</h3>
+                  <p className="text-gray-400">{benefit.description}</p>
                 </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="bg-white/5 p-8 rounded-2xl border border-white/10"
-              >
-                <h3 className="text-2xl font-semibold text-white mb-6">Discovery Metrics</h3>
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300">Discovery Speed</span>
-                    <span className="text-green-400 font-semibold">1000x Faster</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300">Material Combinations</span>
-                    <span className="text-green-400 font-semibold">Unlimited</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300">Optimization</span>
-                    <span className="text-green-400 font-semibold">Real-time</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-gray-300">AI Consciousness</span>
-                    <span className="text-green-400 font-semibold">Integrated</span>
-                  </div>
-                </div>
-              </motion.div>
+              ))}
             </div>
           </div>
         </section>
@@ -193,33 +150,23 @@ const QuantumMaterialsDiscovery2040: React.FC = () => {
         {/* CTA Section */}
         <section className="py-20 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Ready for Material Discovery?
-              </h2>
-              <p className="text-xl text-gray-400 mb-8">
-                Discover breakthrough materials with conscious AI and quantum computing.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-full hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105">
-                  Start Material Discovery
-                  <ArrowRight className="w-5 h-5 ml-2 inline" />
-                </button>
-                <button className="px-8 py-4 border border-purple-500/50 text-purple-300 font-semibold rounded-full hover:bg-purple-500/20 transition-all duration-300">
-                  Schedule Demo
-                </button>
-              </div>
-            </motion.div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Ready to Discover New Materials?
+            </h2>
+            <p className="text-xl text-gray-400 mb-8">
+              Join the future of quantum materials discovery and accelerate your breakthrough research.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="px-8 py-4 bg-gradient-to-r from-violet-500 to-purple-600 text-white font-semibold rounded-xl hover:from-violet-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
+                Start Discovery Today
+              </button>
+              <button className="px-8 py-4 border-2 border-violet-400 text-violet-400 font-semibold rounded-xl hover:bg-violet-400 hover:text-black transition-all duration-300">
+                Schedule Demo
+              </button>
+            </div>
           </div>
         </section>
       </div>
     </Layout>
   );
-};
-
-export default QuantumMaterialsDiscovery2040;
+}
