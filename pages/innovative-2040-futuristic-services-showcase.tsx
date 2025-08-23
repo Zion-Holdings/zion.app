@@ -59,9 +59,25 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
   const [sortBy, setSortBy] = useState<'name' | 'price' | 'popularity' | 'category'>('name');
   const [isLoading, setIsLoading] = useState(true);
 
-  // Combine all services
+  // Combine all services and map them to the Service interface
   const allServices: Service[] = [
-    ...innovative2040FuturisticServices,
+    ...innovative2040FuturisticServices.map(service => ({
+      ...service,
+      popular: false,
+      icon: '🚀',
+      color: 'from-cyan-400 to-blue-500',
+      textColor: 'text-cyan-400',
+      customers: 0,
+      rating: 0,
+      reviews: 0,
+      contactInfo: {
+        mobile: service.contactInfo.phone,
+        email: service.contactInfo.email,
+        address: '364 E Main St STE 1008 Middletown DE 19709',
+        website: service.contactInfo.website
+      },
+      realImplementation: typeof service.realImplementation === 'string' ? true : service.realImplementation
+    })),
     ...innovative2040ITServices,
     ...realMicroSaasServices,
     ...innovativeAIServices,
