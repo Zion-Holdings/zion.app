@@ -7,7 +7,11 @@ import {
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
+<<<<<<< HEAD
   Building
+=======
+  Building, Cpu, Database, Cloud, Lock, Sparkles
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-e8d4
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -32,14 +36,6 @@ import { innovative2025MicroSaasExpansion } from '../data/innovative-2025-micro-
 import { innovative2025ITSolutionsExpansion } from '../data/innovative-2025-it-solutions-expansion';
 import { innovative2025AIServicesExpansion } from '../data/innovative-2025-ai-services-expansion';
 
-<<<<<<< HEAD
-// Import our new innovative 2040 services
-import { innovative2040ITServices } from '../data/innovative-2040-it-services';
-// Import our new 2025 advanced enterprise services
-import { advancedEnterpriseServices } from '../data/2025-advanced-enterprise-services-expansion';
-import { innovativeMicroSaasServices } from '../data/innovative-2025-micro-saas-expansions';
-import { cuttingEdgeITInfrastructureServices } from '../data/2025-cutting-edge-it-infrastructure';
-=======
 // Import our new 2025 comprehensive services
 import { advancedEnterpriseSolutions2025 } from '../data/2025-advanced-enterprise-solutions';
 import { innovativeAIAutomationServices2025 } from '../data/2025-innovative-ai-automation-services';
@@ -49,12 +45,16 @@ import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-
 // Import our new 2025 Q4 innovative services
 import { innovative2025Q4NewServices } from '../data/innovative-2025-q4-new-services';
 import { emergingTech2025Innovations } from '../data/emerging-tech-2025-innovations';
->>>>>>> origin/cursor/add-and-advertise-new-services-then-build-e6ba
 
 // Import Q4 2037 cutting-edge services
 import { cuttingEdgeServices } from '../data/real-2037-q4-cutting-edge-services';
 import { itInfrastructureServices } from '../data/real-2037-q4-it-infrastructure-services';
 import { businessSolutionServices } from '../data/real-2037-q4-business-solutions';
+
+// Import revolutionary 2025-2026 services
+import { revolutionary20252026MicroSaasServices } from '../data/revolutionary-2025-2026-micro-saas-services';
+import { revolutionary20252026AIServices } from '../data/revolutionary-2025-2026-ai-services';
+import { revolutionary20252026ITInfrastructureServices } from '../data/revolutionary-2025-2026-it-infrastructure-services';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -76,30 +76,10 @@ const getServiceCategory = (service: any) => {
 
 // Helper function to get service pricing
 const getServicePricing = (service: any) => {
-<<<<<<< HEAD
-  // Debug logging to identify problematic services
-  if (!service.price && !service.pricing) {
-    console.warn('Service missing price field:', service.id, service.name);
-    return 'Contact for pricing';
-  }
-  
-  if (service.pricing?.starter) return service.pricing.starter;
-  if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
-  if (service.price?.monthly) return `$${service.price.monthly}/month`;
-  if (service.price && typeof service.price === 'object' && service.price.monthly) {
-    return `$${service.price.monthly}/month`;
-  }
-  if (service.price && service.period) return `${service.price}${service.period}`;
-  if (service.price && typeof service.price === 'string') return service.price;
-  
-  // If we get here, log the problematic service
-  console.warn('Service with unexpected price structure:', service.id, service.name, service.price);
-=======
   if (service.pricing?.starter) return service.pricing.starter;
   if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
   if (service.price?.monthly) return `$${service.price.monthly}/month`;
   if (typeof service.price === 'string') return service.price;
->>>>>>> origin/cursor/add-and-advertise-new-services-then-build-e6ba
   return 'Contact for pricing';
 };
 
@@ -119,31 +99,6 @@ const getServiceDescription = (service: any) => {
 
 // Create unified services array
 const allServices = [
-<<<<<<< HEAD
-  // ...enterpriseITSolutions,
-  // ...innovativeMicroSaasSolutions,
-  // ...cuttingEdgeAIServices,
-  // ...realMicroSaasServices,
-  // ...innovativeAIServices,
-  // ...enterpriseITServices,
-  // ...emergingTechServices,
-  // ...newRealServices,
-  // ...realOperationalServices,
-  // ...marketReadyServices,
-  // ...marketValidatedServices,
-  // ...industryRealServices,
-  // ...real2025Q4AugmentedBatch,
-  // ...real2029Q3Additions,
-  // Our new 2025 advanced services V2
-  ...advanced2025MicroSaasExpansionV2,
-  ...advanced2025ITSolutionsExpansionV2,
-  ...advanced2025AIServicesExpansionV2,
-  // ...validatedServices2025Q4,
-  // ...real2035Q2Additions,
-  // ...real2036ServiceExpansions,
-  // ...innovative2036MicroSaasServices,
-  // ...innovative2036ITServices,
-=======
   ...enterpriseITSolutions,
   ...innovativeMicroSaasSolutions,
   ...cuttingEdgeAIServices,
@@ -167,7 +122,7 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
->>>>>>> origin/cursor/add-and-advertise-new-services-then-build-e6ba
+<<<<<<< HEAD
   // Our new 2025 advanced services
   // ...advanced2025MicroSaasExpansion,
   // ...advanced2025ITSolutionsExpansion,
@@ -199,6 +154,13 @@ const allServices = [
   if (!service.id || !service.name) return false;
   return true;
 });
+=======
+  // Add revolutionary 2025-2026 services
+  ...revolutionary20252026MicroSaasServices,
+  ...revolutionary20252026AIServices,
+  ...revolutionary20252026ITInfrastructureServices
+];
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-e8d4
 
 const categories = [
   {
@@ -270,6 +232,13 @@ const categories = [
     icon: <GraduationCap className="w-6 h-6" />,
     color: 'from-yellow-500 to-orange-500',
     description: 'Learning and research platforms'
+  },
+  {
+    id: 'revolutionary-2025-2026',
+    name: 'Revolutionary 2025-2026',
+    icon: <Sparkles className="w-6 h-6" />,
+    color: 'from-cyan-500 to-purple-500',
+    description: 'Cutting-edge services for the future'
   }
 ];
 
