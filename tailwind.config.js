@@ -113,21 +113,21 @@ module.exports = {
         },
       },
       colors: {
-        // Modern color palette
+        // Modern color palette with better contrast ratios
         primary: {
-          50: '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#60a5fa',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
-          950: '#172554',
+          50: '#ecfeff',
+          100: '#cffafe',
+          200: '#a5f3fc',
+          300: '#67e8f9',
+          400: '#22d3ee',
+          500: '#06b6d4',
+          600: '#0891b2',
+          700: '#0e7490',
+          800: '#155e75',
+          900: '#164e63',
+          950: '#083344',
         },
-        // Extended color palette
+        // Extended color palette for better accessibility
         gray: {
           50: '#f9fafb',
           100: '#f3f4f6',
@@ -220,21 +220,21 @@ module.exports = {
           900: '#064e3b',
           950: '#022c22',
         },
-        pink: {
-          50: '#fdf2f8',
-          100: '#fce7f3',
-          200: '#fbcfe8',
-          300: '#f9a8d4',
-          400: '#f472b6',
-          500: '#ec4899',
-          600: '#db2777',
-          700: '#be185d',
-          800: '#9d174d',
-          900: '#831843',
-          950: '#500724',
+        rose: {
+          50: '#fff1f2',
+          100: '#ffe4e6',
+          200: '#fecdd3',
+          300: '#fda4af',
+          400: '#fb7185',
+          500: '#f43f5e',
+          600: '#e11d48',
+          700: '#be123c',
+          800: '#9f1239',
+          900: '#881337',
+          950: '#4c0519',
         },
-        yellow: {
-          50: '#fefce8',
+        amber: {
+          50: '#fffbeb',
           100: '#fef3c7',
           200: '#fde68a',
           300: '#fcd34d',
@@ -246,34 +246,19 @@ module.exports = {
           900: '#78350f',
           950: '#451a03',
         },
-        red: {
-          50: '#fef2f2',
-          100: '#fee2e2',
-          200: '#fecaca',
-          300: '#fca5a5',
-          400: '#f87171',
-          500: '#ef4444',
-          600: '#dc2626',
-          700: '#b91c1c',
-          800: '#991b1b',
-          900: '#7f1d1d',
-          950: '#450a0a',
-        },
-        // Accessibility-focused colors
-        'accessibility': {
-          'focus': '#ffff00',
-          'focus-high-contrast': '#00ff00',
-          'error': '#ff4444',
-          'success': '#00cc44',
-          'warning': '#ffaa00',
-          'info': '#0088ff',
-        },
-        // Semantic colors
-        'semantic': {
-          'positive': '#10b981',
-          'negative': '#ef4444',
-          'neutral': '#6b7280',
-          'caution': '#f59e0b',
+        // Custom brand colors
+        zion: {
+          50: '#f0f9ff',
+          100: '#e0f2fe',
+          200: '#bae6fd',
+          300: '#7dd3fc',
+          400: '#38bdf8',
+          500: '#0ea5e9',
+          600: '#0284c7',
+          700: '#0369a1',
+          800: '#075985',
+          900: '#0c4a6e',
+          950: '#082f49',
         }
       },
       fontFamily: {
@@ -303,13 +288,14 @@ module.exports = {
           'monospace',
         ],
         display: [
-          'Poppins',
+          'Cal Sans',
           'Inter',
           'system-ui',
           'sans-serif',
         ],
       },
       fontSize: {
+        '2xs': ['0.625rem', { lineHeight: '0.75rem' }],
         'xs': ['0.75rem', { lineHeight: '1rem' }],
         'sm': ['0.875rem', { lineHeight: '1.25rem' }],
         'base': ['1rem', { lineHeight: '1.5rem' }],
@@ -334,11 +320,13 @@ module.exports = {
         'fade-in': 'fadeIn 0.5s ease-in-out',
         'fade-in-up': 'fadeInUp 0.5s ease-out',
         'fade-in-down': 'fadeInDown 0.5s ease-out',
-        'slide-in-left': 'slideInLeft 0.3s ease-out',
-        'slide-in-right': 'slideInRight 0.3s ease-out',
-        'scale-in': 'scaleIn 0.2s ease-out',
+        'slide-in-left': 'slideInLeft 0.5s ease-out',
+        'slide-in-right': 'slideInRight 0.5s ease-out',
+        'scale-in': 'scaleIn 0.3s ease-out',
         'bounce-gentle': 'bounceGentle 2s infinite',
         'float': 'float 6s ease-in-out infinite',
+        'glow': 'glow 2s ease-in-out infinite alternate',
+        'shimmer': 'shimmer 2.5s linear infinite',
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'spin-slow': 'spin 3s linear infinite',
         'ping-slow': 'ping 3s cubic-bezier(0, 0, 0.2, 1) infinite',
@@ -364,22 +352,6 @@ module.exports = {
           '0%': { opacity: '0', transform: 'translateX(20px)' },
           '100%': { opacity: '1', transform: 'translateX(0)' },
         },
-        slideInUp: {
-          '0%': { opacity: '0', transform: 'translateY(100%)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        slideInDown: {
-          '0%': { opacity: '0', transform: 'translateY(-100%)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        slideInLeft: {
-          '0%': { opacity: '0', transform: 'translateX(-100%)' },
-          '100%': { opacity: '1', transform: 'translateX(0)' },
-        },
-        slideInRight: {
-          '0%': { opacity: '0', transform: 'translateX(100px)' },
-          '100%': { opacity: '1', transform: 'translateX(0)' },
-        },
         scaleIn: {
           '0%': { opacity: '0', transform: 'scale(0.9)' },
           '100%': { opacity: '1', transform: 'scale(1)' },
@@ -392,35 +364,54 @@ module.exports = {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-20px)' },
         },
+        glow: {
+          '0%': { boxShadow: '0 0 20px rgba(6, 182, 212, 0.5)' },
+          '100%': { boxShadow: '0 0 30px rgba(6, 182, 212, 0.8)' },
+        },
+        shimmer: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
       },
       backdropBlur: {
         xs: '2px',
       },
       boxShadow: {
-        'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
-        'medium': '0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-        'large': '0 10px 40px -10px rgba(0, 0, 0, 0.15), 0 20px 25px -5px rgba(0, 0, 0, 0.1)',
-        'glow': '0 0 20px rgba(59, 130, 246, 0.3)',
-        'glow-lg': '0 0 40px rgba(59, 130, 246, 0.4)',
-        'glow-xl': '0 0 60px rgba(59, 130, 246, 0.5)',
-        'inner-soft': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
-        'inner-medium': 'inset 0 2px 8px 0 rgba(0, 0, 0, 0.1)',
+        'glow': '0 0 20px rgba(6, 182, 212, 0.5)',
+        'glow-lg': '0 0 40px rgba(6, 182, 212, 0.3)',
+        'glow-xl': '0 0 60px rgba(6, 182, 212, 0.2)',
+        'inner-glow': 'inset 0 0 20px rgba(6, 182, 212, 0.3)',
+        'neon': '0 0 5px rgba(6, 182, 212, 0.8), 0 0 10px rgba(6, 182, 212, 0.6), 0 0 15px rgba(6, 182, 212, 0.4)',
       },
-      borderRadius: {
-        '4xl': '2rem',
-        '5xl': '2.5rem',
-        '6xl': '3rem',
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'gradient-mesh': 'linear-gradient(45deg, #06b6d4, #3b82f6, #8b5cf6, #ec4899)',
+        'gradient-shimmer': 'linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent)',
+      },
+      backgroundSize: {
+        'mesh': '400% 400%',
+        'shimmer': '200% 100%',
+      },
+      backgroundPosition: {
+        'mesh': '0% 50%',
+        'shimmer': '200% 0',
+      },
+      transitionProperty: {
+        'height': 'height',
+        'spacing': 'margin, padding',
+        'transform-gpu': 'transform',
+      },
+      transitionTimingFunction: {
+        'bounce-in': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+        'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
+        'spring': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
       },
       transitionDuration: {
         '400': '400ms',
         '600': '600ms',
         '800': '800ms',
         '1000': '1000ms',
-      },
-      transitionTimingFunction: {
-        'bounce-in': 'cubic-bezier(0.68, -0.55, 0.265, 1.55)',
-        'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
-        'spring': 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
       },
       zIndex: {
         '60': '60',
@@ -429,225 +420,80 @@ module.exports = {
         '90': '90',
         '100': '100',
       },
-      // Accessibility improvements
-      minHeight: {
-        'touch': '44px',
-        'touch-lg': '48px',
+      screens: {
+        'xs': '475px',
+        '3xl': '1600px',
+        '4xl': '1920px',
       },
-      minWidth: {
-        'touch': '44px',
-        'touch-lg': '48px',
+      container: {
+        center: true,
+        padding: {
+          DEFAULT: '1rem',
+          sm: '2rem',
+          lg: '4rem',
+          xl: '5rem',
+          '2xl': '6rem',
+        },
       },
-      // Custom utilities for accessibility
-      outline: {
-        'focus': '2px solid #3b82f6',
-        'focus-high-contrast': '3px solid #ffff00',
-      },
-      outlineOffset: {
-        'focus': '2px',
-        'focus-high-contrast': '3px',
+      aspectRatio: {
+        'auto': 'auto',
+        'square': '1 / 1',
+        'video': '16 / 9',
+        'golden': '1.618 / 1',
       },
     },
   },
   plugins: [
-    // Custom plugin for accessibility
-    function({ addUtilities, addComponents, theme }) {
-      // Accessibility utilities
-      const accessibilityUtilities = {
-        '.sr-only': {
-          position: 'absolute',
-          width: '1px',
-          height: '1px',
-          padding: '0',
-          margin: '-1px',
-          overflow: 'hidden',
-          clip: 'rect(0, 0, 0, 0)',
-          whiteSpace: 'nowrap',
-          border: '0',
+    // Custom plugin for better performance
+    function({ addUtilities, theme }) {
+      const newUtilities = {
+        '.text-balance': {
+          'text-wrap': 'balance',
         },
-        '.focus-visible': {
-          outline: `2px solid ${theme('colors.blue.500')}`,
-          outlineOffset: '2px',
+        '.text-pretty': {
+          'text-wrap': 'pretty',
         },
-        '.high-contrast-focus': {
-          outline: `3px solid ${theme('colors.yellow.400')}`,
-          outlineOffset: '3px',
-        },
-        '.skip-link': {
-          position: 'absolute',
-          top: '-40px',
-          left: '6px',
-          background: theme('colors.black'),
-          color: theme('colors.white'),
-          padding: '8px',
-          textDecoration: 'none',
-          borderRadius: '4px',
-          zIndex: '10000',
-          transition: 'top 0.3s',
-        },
-        '.skip-link:focus': {
-          top: '6px',
-        },
-      };
-
-      // High contrast mode utilities
-      const highContrastUtilities = {
-        '.high-contrast': {
-          '--text-primary': '#ffffff',
-          '--text-secondary': '#ffff00',
-          '--bg-primary': '#000000',
-          '--bg-secondary': '#000080',
-          '--accent-primary': '#ffff00',
-          '--accent-secondary': '#00ff00',
-          '--border-primary': '#ffffff',
-          '--border-secondary': '#ffff00',
-        },
-        '.high-contrast *': {
-          color: 'var(--text-primary) !important',
-          backgroundColor: 'var(--bg-primary) !important',
-          borderColor: 'var(--border-primary) !important',
-        },
-      };
-
-      // Large text mode utilities
-      const largeTextUtilities = {
-        '.large-text': {
-          '--font-size-base': '1.25rem',
-          '--font-size-lg': '1.5rem',
-          '--font-size-xl': '1.875rem',
-          '--font-size-2xl': '2.25rem',
-          '--font-size-3xl': '3rem',
-          '--font-size-4xl': '3.75rem',
-          '--font-size-5xl': '4.5rem',
-          '--font-size-6xl': '6rem',
-          '--font-size-7xl': '7.5rem',
-          '--font-size-8xl': '9rem',
-        },
-        '.large-text body': {
-          fontSize: 'var(--font-size-base)',
-          lineHeight: '1.6',
-        },
-        '.large-text h1': { fontSize: 'var(--font-size-6xl)' },
-        '.large-text h2': { fontSize: 'var(--font-size-5xl)' },
-        '.large-text h3': { fontSize: 'var(--font-size-4xl)' },
-        '.large-text h4': { fontSize: 'var(--font-size-3xl)' },
-        '.large-text h5': { fontSize: 'var(--font-size-2xl)' },
-        '.large-text h6': { fontSize: 'var(--font-size-xl)' },
-        '.large-text p, .large-text span, .large-text div': {
-          fontSize: 'var(--font-size-base)',
-        },
-        '.large-text button, .large-text .btn': {
-          fontSize: 'var(--font-size-lg)',
-          padding: '1rem 2rem',
-        },
-      };
-
-      // Reduced motion utilities
-      const reducedMotionUtilities = {
-        '.reduced-motion *': {
-          animationDuration: '0.01ms !important',
-          animationIterationCount: '1 !important',
-          transitionDuration: '0.01ms !important',
-          scrollBehavior: 'auto !important',
-        },
-        '.reduced-motion .animate-pulse, .reduced-motion .animate-spin, .reduced-motion .animate-bounce': {
-          animation: 'none !important',
-        },
-        '.reduced-motion .hover\\:scale-105:hover, .reduced-motion .hover\\:scale-110:hover, .reduced-motion .hover\\:scale-125:hover': {
-          transform: 'none !important',
-        },
-      };
-
-      // Performance utilities
-      const performanceUtilities = {
-        '.will-change-transform': {
-          willChange: 'transform',
-        },
-        '.will-change-opacity': {
-          willChange: 'opacity',
-        },
-        '.will-change-scroll': {
-          willChange: 'scroll-position',
-        },
-        '.contain-layout': {
-          contain: 'layout',
-        },
-        '.contain-paint': {
-          contain: 'paint',
-        },
-        '.contain-size': {
-          contain: 'size',
-        },
-        '.contain-strict': {
-          contain: 'strict',
-        },
-      };
-
-      addUtilities(accessibilityUtilities);
-      addUtilities(highContrastUtilities);
-      addUtilities(largeTextUtilities);
-      addUtilities(reducedMotionUtilities);
-      addUtilities(performanceUtilities);
-
-      // Custom components for better accessibility
-      const accessibilityComponents = {
-        '.btn-accessible': {
-          minHeight: '44px',
-          minWidth: '44px',
-          padding: '0.75rem 1.5rem',
-          fontSize: '1rem',
-          fontWeight: '500',
-          borderRadius: '0.5rem',
-          transition: 'all 0.2s ease-in-out',
-          cursor: 'pointer',
-          display: 'inline-flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          textDecoration: 'none',
-          border: 'none',
-          outline: 'none',
-          '&:focus-visible': {
-            outline: `3px solid ${theme('colors.blue.500')}`,
-            outlineOffset: '2px',
-            boxShadow: `0 0 0 3px ${theme('colors.blue.500')}40`,
-          },
-          '&:hover': {
-            transform: 'translateY(-1px)',
-            boxShadow: theme('boxShadow.medium'),
-          },
-          '&:active': {
-            transform: 'translateY(0)',
+        '.scrollbar-hide': {
+          '-ms-overflow-style': 'none',
+          'scrollbar-width': 'none',
+          '&::-webkit-scrollbar': {
+            display: 'none',
           },
         },
-        '.input-accessible': {
-          minHeight: '44px',
-          padding: '0.75rem 1rem',
-          fontSize: '1rem',
-          border: `1px solid ${theme('colors.gray.300')}`,
-          borderRadius: '0.5rem',
-          backgroundColor: theme('colors.white'),
-          color: theme('colors.gray.900'),
-          transition: 'all 0.2s ease-in-out',
-          '&:focus': {
-            outline: 'none',
-            borderColor: theme('colors.blue.500'),
-            boxShadow: `0 0 0 3px ${theme('colors.blue.500')}20`,
+        '.scrollbar-thin': {
+          'scrollbar-width': 'thin',
+          'scrollbar-color': `${theme('colors.gray.400')} ${theme('colors.gray.100')}`,
+          '&::-webkit-scrollbar': {
+            width: '8px',
           },
-          '&:focus-visible': {
-            outline: `2px solid ${theme('colors.blue.500')}`,
-            outlineOffset: '2px',
+          '&::-webkit-scrollbar-track': {
+            background: theme('colors.gray.100'),
+          },
+          '&::-webkit-scrollbar-thumb': {
+            background: theme('colors.gray.400'),
+            borderRadius: '4px',
           },
         },
+        '.backdrop-blur-xs': {
+          'backdrop-filter': 'blur(2px)',
+        },
+        '.animate-mesh': {
+          'animation': 'mesh 8s ease-in-out infinite',
+        },
+        '.animate-shimmer': {
+          'animation': 'shimmer 2.5s linear infinite',
+        },
       };
-
-      addComponents(accessibilityComponents);
+      addUtilities(newUtilities);
     },
   ],
   // Performance optimizations
   future: {
     hoverOnlyWhenSupported: true,
   },
-  experimental: {
-    optimizeUniversalDefaults: true,
+  // Reduce bundle size by removing unused utilities
+  corePlugins: {
+    preflight: true,
+    container: false, // We'll use our custom container
   },
 };

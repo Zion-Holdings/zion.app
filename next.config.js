@@ -1,33 +1,29 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enable React strict mode for better development experience
-  reactStrictMode: true,
-  
-  // Disable static generation to prevent SSR issues
-  output: 'export',
-  trailingSlash: true,
-  
-  // Enable experimental features for better performance
+  // Performance optimizations
   experimental: {
-    // Enable modern JavaScript features
-    esmExternals: true,
-    
-    // Enable optimized package imports
-    optimizePackageImports: ['framer-motion', 'lucide-react'],
+    optimizePackageImports: ['lucide-react', 'framer-motion'],
+    turbo: {
+      rules: {
+        '*.svg': {
+          loaders: ['@svgr/webpack'],
+          as: '*.js',
+        },
+      },
+    },
   },
-
+  
   // Image optimization
   images: {
-    unoptimized: true, // Required for static export
-    domains: ['ziontechgroup.com'],
     formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 60,
   },
 
-  // Webpack configuration for performance
+  // Bundle analyzer (optional)
   webpack: (config, { dev, isServer }) => {
-    // Optimize bundle splitting
+    // Bundle splitting optimizations
     if (!dev && !isServer) {
       config.optimization.splitChunks = {
         chunks: 'all',
@@ -36,33 +32,40 @@ const nextConfig = {
             test: /[\\/]node_modules[\\/]/,
             name: 'vendors',
             chunks: 'all',
+            priority: 10,
           },
           common: {
             name: 'common',
             minChunks: 2,
             chunks: 'all',
-            enforce: true,
+            priority: 5,
+            reuseExistingChunk: true,
           },
         },
       };
     }
 
-    // Optimize for production
-    if (!dev) {
-      config.optimization.minimize = true;
-      config.optimization.minimizer = config.optimization.minimizer || [];
-    }
+    // SVG optimization
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
 
     return config;
   },
 
-  // Headers for security and performance
+  // Compression
+  compress: true,
+  
+  // Powered by header removal
+  poweredByHeader: false,
+  
+  // Security headers
   async headers() {
     return [
       {
         source: '/(.*)',
         headers: [
-          // Security headers
           {
             key: 'X-Frame-Options',
             value: 'DENY',
@@ -72,40 +75,12 @@ const nextConfig = {
             value: 'nosniff',
           },
           {
-            key: 'X-XSS-Protection',
-            value: '1; mode=block',
-          },
-          {
             key: 'Referrer-Policy',
-            value: 'strict-origin-when-cross-origin',
+            value: 'origin-when-cross-origin',
           },
           {
             key: 'Permissions-Policy',
             value: 'camera=(), microphone=(), geolocation=()',
-          },
-          
-          // Performance headers
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
-      },
-      {
-        source: '/api/(.*)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'no-cache, no-store, must-revalidate',
-          },
-        ],
-      },
-      {
-        source: '/(.*).(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
           },
         ],
       },
@@ -121,43 +96,22 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/index.html',
-        destination: '/',
+        source: '/services/index',
+        destination: '/services',
         permanent: true,
       },
     ];
   },
 
-  // Rewrites for API routes
+  // Rewrites for dynamic routes
   async rewrites() {
     return [
       {
-        source: '/api/analytics',
-        destination: '/api/analytics',
-      },
-      {
-        source: '/api/error-reporting',
-        destination: '/api/error-reporting',
+        source: '/api/:path*',
+        destination: '/api/:path*',
       },
     ];
   },
-
-  // Environment variables
-  env: {
-    CUSTOM_KEY: process.env.CUSTOM_KEY,
-  },
-
-  // Compression
-  compress: true,
-
-  // Powered by header
-  poweredByHeader: false,
-
-  // Base path
-  basePath: '',
-
-  // Asset prefix
-  assetPrefix: '',
 };
 
 module.exports = nextConfig;
