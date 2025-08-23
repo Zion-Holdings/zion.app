@@ -24,9 +24,9 @@ interface Service {
   period?: string;
   description: string;
   features: string[];
-  popular: boolean;
-  icon: string;
-  color: string;
+  popular?: boolean;
+  icon?: string;
+  color?: string;
   textColor?: string;
   link: string;
   category: string;
@@ -39,17 +39,19 @@ interface Service {
   marketSize?: string;
   growthRate?: string;
   contactInfo?: {
-    mobile: string;
+    mobile?: string;
+    phone?: string;
     email: string;
-    address: string;
+    address?: string;
     website: string;
   };
-  realImplementation?: boolean;
+  realImplementation?: boolean | string;
   implementationDetails?: string;
   launchDate?: string;
-  customers: number;
+  customers: number | string;
   rating: number;
   reviews: number;
+  benefits?: string[];
 }
 
 const Innovative2040FuturisticServicesShowcase: React.FC = () => {
@@ -59,13 +61,59 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
   const [sortBy, setSortBy] = useState<'name' | 'price' | 'popularity' | 'category'>('name');
   const [isLoading, setIsLoading] = useState(true);
 
-  // Combine all services
+  // Combine all services and ensure they have required properties
   const allServices: Service[] = [
-    ...innovative2040FuturisticServices,
-    ...innovative2040ITServices,
+    ...innovative2040FuturisticServices.map(service => ({
+      ...service,
+      popular: service.rating >= 4.5,
+      icon: '🚀',
+      color: 'from-blue-600 to-purple-700',
+      period: '/month',
+      realService: true,
+      customers: typeof service.customers === 'string' ? parseInt(service.customers) || 0 : service.customers,
+      contactInfo: {
+        ...service.contactInfo,
+        mobile: service.contactInfo.phone,
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
+    })),
+    ...innovative2040ITServices.map(service => ({
+      ...service,
+      popular: service.rating >= 4.5,
+      icon: '💻',
+      color: 'from-green-600 to-blue-700',
+      period: '/month',
+      realService: true,
+      customers: typeof service.customers === 'string' ? parseInt(service.customers) || 0 : service.customers,
+      contactInfo: {
+        ...service.contactInfo,
+        phone: service.contactInfo.mobile,
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
+    })),
     ...realMicroSaasServices,
-    ...innovativeAIServices,
-    ...enterpriseITServices
+    ...innovativeAIServices.map(service => ({
+      ...service,
+      customers: typeof service.customers === 'string' ? parseInt(service.customers) || 0 : service.customers,
+      contactInfo: {
+        ...service.contactInfo,
+        phone: service.contactInfo.mobile
+      }
+    })),
+    ...enterpriseITServices.map(service => ({
+      ...service,
+      popular: service.rating >= 4.5,
+      icon: '🏢',
+      color: 'from-indigo-600 to-cyan-700',
+      period: '/month',
+      realService: true,
+      customers: typeof service.customers === 'string' ? parseInt(service.customers) || 0 : service.customers,
+      contactInfo: {
+        ...service.contactInfo,
+        phone: service.contactInfo.mobile,
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
+    }))
   ];
 
   // Get unique categories

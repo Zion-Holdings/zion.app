@@ -69,10 +69,14 @@ import { innovative2025EnterpriseSolutions } from '../../data/innovative-2025-en
 
 // Define a proper interface for services
 interface Service {
-  id?: string;
+  id: string;
   name: string;
+  tagline: string;
   description: string;
-  price?: string;
+  price: string;
+  period: string;
+  features: string[];
+  icon: string;
   pricing?: {
     starter?: { price: string; period?: string };
     monthly?: string;
@@ -218,7 +222,16 @@ export default function ServicesIndexPage() {
         }
       }
     }
-    return service;
+
+    // Add default values for missing properties required by UltraFuturisticServiceCard2026
+    return {
+      ...service,
+      id: service.id || service.name.toLowerCase().replace(/\s+/g, '-'),
+      tagline: service.tagline || service.description.substring(0, 100) + '...',
+      period: service.period || 'month',
+      features: service.features || [service.description.substring(0, 50) + '...'],
+      icon: service.icon || '🚀'
+    };
   }).filter((service: Service) => service.price && typeof service.price === 'string');
 
   // Group services by category
