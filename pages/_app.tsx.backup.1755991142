@@ -1,0 +1,23 @@
+<<<<<<< HEAD
+import type { AppProps } from 'next/app'
+import EnhancedLayout from '../components/layout/EnhancedLayout'
+import '../styles/enhanced-design-system.css'
+import '../styles/modern-design-system.css'
+=======
+import EnhancedLayout from '../components/layout/EnhancedLayout';
+import '../styles/enhanced-design-system.css';
+import '../styles/modern-design-system.css';
+import type { AppProps } from 'next/app';
+>>>>>>> origin/cursor/build-categorized-ziongpt-prompt-library-535a
+
+export default function App({ Component, pageProps }: AppProps) {
+  return (
+    <EnhancedLayout>
+      <Component {...pageProps} />
+    </EnhancedLayout>
+<<<<<<< HEAD
+  )
+=======
+  );
+>>>>>>> origin/cursor/build-categorized-ziongpt-prompt-library-535a
+}

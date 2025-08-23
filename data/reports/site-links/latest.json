@@ -1,0 +1,1539 @@
+{
+  "generatedAt": "2025-08-11T11:14:00.784Z",
+  "baseUrl": "http://localhost:3000",
+  "stats": {
+    "pagesCrawled": 87,
+    "discoveredInternal": 87,
+    "missing": 55
+  },
+  "pages": {
+    "/": {
+      "url": "http://localhost:3000/",
+      "status": 200,
+      "ok": true,
+      "links": [
+        "/.netlify/functions/auto-scheduler",
+        "/.netlify/functions/broken-image-scanner",
+        "/.netlify/functions/cloud_orchestrator",
+        "/.netlify/functions/continuous-front-runner",
+        "/.netlify/functions/continuous-orchestrator",
+        "/.netlify/functions/fast-front-promoter",
+        "/.netlify/functions/fast-orchestrator",
+        "/.netlify/functions/feature-advertiser",
+        "/.netlify/functions/features-capabilities-benefits-advertiser",
+        "/.netlify/functions/front-enhancer",
+        "/.netlify/functions/front-index-futurizer",
+        "/.netlify/functions/front-index-orchestrator",
+        "/.netlify/functions/front-index-scheduler",
+        "/.netlify/functions/front-maximizer",
+        "/.netlify/functions/frontpage-enhancer",
+        "/.netlify/functions/homepage_advertiser",
+        "/.netlify/functions/hyper-front-index-accelerator",
+        "/.netlify/functions/innovation-lab",
+        "/.netlify/functions/link-and-health-scheduler",
+        "/.netlify/functions/marketing-and-features-promo",
+        "/.netlify/functions/readme-advertiser",
+        "/automation",
+        "/contact",
+        "/front",
+        "/main/front",
+        "/newsroom",
+        "/products",
+        "/reports/ai-trends",
+        "/reports/seo",
+        "/services",
+        "/site-health"
+      ]
+    },
+    "/services": {
+      "url": "http://localhost:3000/services",
+      "status": 200,
+      "ok": true,
+      "links": [
+        "/"
+      ]
+    },
+    "/products": {
+      "url": "http://localhost:3000/products",
+      "status": 200,
+      "ok": true,
+      "links": [
+        "/"
+      ]
+    },
+    "/automation": {
+      "url": "http://localhost:3000/automation",
+      "status": 200,
+      "ok": true,
+      "links": [
+        "/.netlify/functions/auto-scheduler",
+        "/.netlify/functions/broken-image-scanner",
+        "/.netlify/functions/continuous-orchestrator",
+        "/.netlify/functions/fast-front-promoter",
+        "/.netlify/functions/fast-orchestrator",
+        "/.netlify/functions/features-capabilities-benefits-advertiser",
+        "/.netlify/functions/front-enhancer",
+        "/.netlify/functions/hyper-front-index-accelerator",
+        "/.netlify/functions/innovation-lab",
+        "/.netlify/functions/marketing-and-features-promo",
+        "/.netlify/functions/schedule-content-index",
+        "/.netlify/functions/schedule-homepage",
+        "/.netlify/functions/schedule-knowledge-graph",
+        "/.netlify/functions/schedule-site-health"
+      ]
+    },
+    "/contact": {
+      "url": "http://localhost:3000/contact",
+      "status": 200,
+      "ok": true,
+      "links": [
+        "/"
+      ]
+    },
+    "/main/front": {
+      "url": "http://localhost:3000/main/front",
+      "status": 200,
+      "ok": true,
+      "links": [
+        "/",
+        "/.netlify/functions/cloud_orchestrator",
+        "/.netlify/functions/front-enhancer",
+        "/.netlify/functions/homepage_advertiser",
+        "/.netlify/functions/sitemap_runner",
+        "/Zion-Holdings/zion.app",
+        "/Zion-Holdings/zion.app/actions",
+        "/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md",
+        "/Zion-Holdings/zion.app/issues",
+        "/Zion-Holdings/zion.app/tree/main/automation",
+        "/Zion-Holdings/zion.app/tree/main/docs",
+        "/automation",
+        "/automation#benefits",
+        "/automation#capabilities",
+        "/automation#feature-factories",
+        "/automation#features",
+        "/main/front",
+        "/main/front#benefits",
+        "/main/front#capabilities",
+        "/main/front#cases",
+        "/main/front#command-center",
+        "/main/front#demos",
+        "/main/front#feature-map",
+        "/main/front#features",
+        "/main/front#guardrails",
+        "/main/front#highlights",
+        "/main/front#pillars",
+        "/main/front#reports",
+        "/main/front#roadmap",
+        "/main/front#suites",
+        "/main/front#templates",
+        "/main/front#use-cases",
+        "/motion/",
+        "/newsroom",
+        "/reports/ai-trends",
+        "/reports/seo",
+        "/site-health"
+      ]
+    },
+    "/.netlify/functions/front-enhancer": {
+      "url": "http://localhost:3000/.netlify/functions/front-enhancer",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/site-health": {
+      "url": "http://localhost:3000/site-health",
+      "status": 200,
+      "ok": true,
+      "links": [
+        "/",
+        "/Zion-Holdings/zion.app/actions",
+        "/automation",
+        "/reports/ai-trends",
+        "/reports/seo",
+        "/reports/seo/index.html",
+        "/reports/seo/latest.json"
+      ]
+    },
+    "/reports/seo": {
+      "url": "http://localhost:3000/reports/seo",
+      "status": 200,
+      "ok": true,
+      "links": []
+    },
+    "/reports/ai-trends": {
+      "url": "http://localhost:3000/reports/ai-trends",
+      "status": 200,
+      "ok": true,
+      "links": []
+    },
+    "/newsroom": {
+      "url": "http://localhost:3000/newsroom",
+      "status": 200,
+      "ok": true,
+      "links": [
+        "/2025/08/03/the-uproar-over-vogues-ai-generated-ad-isnt-just-about-fashion/",
+        "/2025/08/04/spotify-raises-subscription-prices/",
+        "/2025/08/05/three-weeks-after-acquiring-windsurf-cognition-offers-staff-the-exit-door/",
+        "/2025/08/06/google-says-hackers-stole-its-customers-data-in-a-breach-of-its-salesforce-database/",
+        "/2025/08/06/instagram-takes-on-snapchat-with-new-instagram-map/",
+        "/2025/08/06/key-sections-of-the-us-constitution-deleted-from-governments-website/",
+        "/2025/08/07/tesla-shuts-down-dojo-the-ai-training-supercomputer-that-musk-said-would-be-key-to-full-self-driving/",
+        "/2025/08/08/dont-let-your-competitor-steal-the-brand-spotlight-secure-your-exhibit-table-at-techcrunch-disrupt-2025/",
+        "/2025/08/08/former-googlers-ai-startup-openart-now-creates-brainrot-videos-in-just-one-click/",
+        "/2025/08/08/how-to-use-instagram-map-and-protect-your-privacy/",
+        "/2025/08/08/impersonators-are-targeting-companies-with-fake-techcrunch-outreach/",
+        "/2025/08/08/meta-acquires-ai-audio-startup-waveforms/",
+        "/2025/08/08/nasa-and-google-are-building-an-ai-medical-assistant-to-keep-mars-bound-astronauts-healthy/",
+        "/2025/08/08/openai-priced-gpt-5-so-low-it-may-spark-a-price-war/",
+        "/2025/08/08/pinterest-ceo-says-agentic-shopping-is-still-a-long-way-out/",
+        "/2025/08/08/rip-microsoft-lens-a-simple-little-app-thats-getting-replaced-by-ai/",
+        "/2025/08/08/sam-altman-addresses-bumpy-gpt-5-rollout-bringing-4o-back-and-the-chart-crime/",
+        "/2025/08/08/softbank-reportedly-bought-foxconns-ohio-factory-for-the-stargate-ai-project/",
+        "/hands-on/756587/microsoft-copilot-3d-feature-hands-on",
+        "/news/756444/openai-gpt-5-vibe-graphing-chart-crime",
+        "/storyline/google-i-o-2025-live-coverage-google-ai-ultra-project-mariner-gemini-app-updates-and-more/",
+        "/storyline/wwdc-2025-live-updates-a-fresh-look-for-ios-a-dedicated-gaming-app-and-more/"
+      ]
+    },
+    "/.netlify/functions/frontpage-enhancer": {
+      "url": "http://localhost:3000/.netlify/functions/frontpage-enhancer",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/.netlify/functions/link-and-health-scheduler": {
+      "url": "http://localhost:3000/.netlify/functions/link-and-health-scheduler",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/.netlify/functions/marketing-and-features-promo": {
+      "url": "http://localhost:3000/.netlify/functions/marketing-and-features-promo",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/.netlify/functions/homepage_advertiser": {
+      "url": "http://localhost:3000/.netlify/functions/homepage_advertiser",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/.netlify/functions/cloud_orchestrator": {
+      "url": "http://localhost:3000/.netlify/functions/cloud_orchestrator",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/.netlify/functions/fast-orchestrator": {
+      "url": "http://localhost:3000/.netlify/functions/fast-orchestrator",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/.netlify/functions/continuous-orchestrator": {
+      "url": "http://localhost:3000/.netlify/functions/continuous-orchestrator",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/.netlify/functions/front-maximizer": {
+      "url": "http://localhost:3000/.netlify/functions/front-maximizer",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/.netlify/functions/continuous-front-runner": {
+      "url": "http://localhost:3000/.netlify/functions/continuous-front-runner",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/.netlify/functions/readme-advertiser": {
+      "url": "http://localhost:3000/.netlify/functions/readme-advertiser",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/.netlify/functions/features-capabilities-benefits-advertiser": {
+      "url": "http://localhost:3000/.netlify/functions/features-capabilities-benefits-advertiser",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/.netlify/functions/hyper-front-index-accelerator": {
+      "url": "http://localhost:3000/.netlify/functions/hyper-front-index-accelerator",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/.netlify/functions/innovation-lab": {
+      "url": "http://localhost:3000/.netlify/functions/innovation-lab",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/.netlify/functions/auto-scheduler": {
+      "url": "http://localhost:3000/.netlify/functions/auto-scheduler",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/.netlify/functions/broken-image-scanner": {
+      "url": "http://localhost:3000/.netlify/functions/broken-image-scanner",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/front": {
+      "url": "http://localhost:3000/front",
+      "status": 200,
+      "ok": true,
+      "links": [
+        "/.netlify/functions/auto-scheduler",
+        "/.netlify/functions/broken-image-scanner",
+        "/.netlify/functions/cloud_orchestrator",
+        "/.netlify/functions/continuous-front-runner",
+        "/.netlify/functions/continuous-orchestrator",
+        "/.netlify/functions/fast-front-promoter",
+        "/.netlify/functions/fast-orchestrator",
+        "/.netlify/functions/feature-advertiser",
+        "/.netlify/functions/features-capabilities-benefits-advertiser",
+        "/.netlify/functions/front-enhancer",
+        "/.netlify/functions/front-index-futurizer",
+        "/.netlify/functions/front-index-orchestrator",
+        "/.netlify/functions/front-index-scheduler",
+        "/.netlify/functions/front-maximizer",
+        "/.netlify/functions/frontpage-enhancer",
+        "/.netlify/functions/homepage_advertiser",
+        "/.netlify/functions/hyper-front-index-accelerator",
+        "/.netlify/functions/innovation-lab",
+        "/.netlify/functions/link-and-health-scheduler",
+        "/.netlify/functions/marketing-and-features-promo",
+        "/.netlify/functions/readme-advertiser",
+        "/automation",
+        "/contact",
+        "/front",
+        "/main/front",
+        "/newsroom",
+        "/products",
+        "/reports/ai-trends",
+        "/reports/seo",
+        "/services",
+        "/site-health"
+      ]
+    },
+    "/.netlify/functions/fast-front-promoter": {
+      "url": "http://localhost:3000/.netlify/functions/fast-front-promoter",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/.netlify/functions/feature-advertiser": {
+      "url": "http://localhost:3000/.netlify/functions/feature-advertiser",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/.netlify/functions/front-index-futurizer": {
+      "url": "http://localhost:3000/.netlify/functions/front-index-futurizer",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/.netlify/functions/front-index-orchestrator": {
+      "url": "http://localhost:3000/.netlify/functions/front-index-orchestrator",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/.netlify/functions/front-index-scheduler": {
+      "url": "http://localhost:3000/.netlify/functions/front-index-scheduler",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/.netlify/functions/schedule-homepage": {
+      "url": "http://localhost:3000/.netlify/functions/schedule-homepage",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/.netlify/functions/schedule-site-health": {
+      "url": "http://localhost:3000/.netlify/functions/schedule-site-health",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/.netlify/functions/schedule-content-index": {
+      "url": "http://localhost:3000/.netlify/functions/schedule-content-index",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/.netlify/functions/schedule-knowledge-graph": {
+      "url": "http://localhost:3000/.netlify/functions/schedule-knowledge-graph",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/main/front#command-center": {
+      "url": "http://localhost:3000/main/front#command-center",
+      "status": 200,
+      "ok": true,
+      "links": [
+        "/",
+        "/.netlify/functions/cloud_orchestrator",
+        "/.netlify/functions/front-enhancer",
+        "/.netlify/functions/homepage_advertiser",
+        "/.netlify/functions/sitemap_runner",
+        "/Zion-Holdings/zion.app",
+        "/Zion-Holdings/zion.app/actions",
+        "/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md",
+        "/Zion-Holdings/zion.app/issues",
+        "/Zion-Holdings/zion.app/tree/main/automation",
+        "/Zion-Holdings/zion.app/tree/main/docs",
+        "/automation",
+        "/automation#benefits",
+        "/automation#capabilities",
+        "/automation#feature-factories",
+        "/automation#features",
+        "/main/front",
+        "/main/front#benefits",
+        "/main/front#capabilities",
+        "/main/front#cases",
+        "/main/front#command-center",
+        "/main/front#demos",
+        "/main/front#feature-map",
+        "/main/front#features",
+        "/main/front#guardrails",
+        "/main/front#highlights",
+        "/main/front#pillars",
+        "/main/front#reports",
+        "/main/front#roadmap",
+        "/main/front#suites",
+        "/main/front#templates",
+        "/main/front#use-cases",
+        "/motion/",
+        "/newsroom",
+        "/reports/ai-trends",
+        "/reports/seo",
+        "/site-health"
+      ]
+    },
+    "/main/front#features": {
+      "url": "http://localhost:3000/main/front#features",
+      "status": 200,
+      "ok": true,
+      "links": [
+        "/",
+        "/.netlify/functions/cloud_orchestrator",
+        "/.netlify/functions/front-enhancer",
+        "/.netlify/functions/homepage_advertiser",
+        "/.netlify/functions/sitemap_runner",
+        "/Zion-Holdings/zion.app",
+        "/Zion-Holdings/zion.app/actions",
+        "/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md",
+        "/Zion-Holdings/zion.app/issues",
+        "/Zion-Holdings/zion.app/tree/main/automation",
+        "/Zion-Holdings/zion.app/tree/main/docs",
+        "/automation",
+        "/automation#benefits",
+        "/automation#capabilities",
+        "/automation#feature-factories",
+        "/automation#features",
+        "/main/front",
+        "/main/front#benefits",
+        "/main/front#capabilities",
+        "/main/front#cases",
+        "/main/front#command-center",
+        "/main/front#demos",
+        "/main/front#feature-map",
+        "/main/front#features",
+        "/main/front#guardrails",
+        "/main/front#highlights",
+        "/main/front#pillars",
+        "/main/front#reports",
+        "/main/front#roadmap",
+        "/main/front#suites",
+        "/main/front#templates",
+        "/main/front#use-cases",
+        "/motion/",
+        "/newsroom",
+        "/reports/ai-trends",
+        "/reports/seo",
+        "/site-health"
+      ]
+    },
+    "/main/front#feature-map": {
+      "url": "http://localhost:3000/main/front#feature-map",
+      "status": 200,
+      "ok": true,
+      "links": [
+        "/",
+        "/.netlify/functions/cloud_orchestrator",
+        "/.netlify/functions/front-enhancer",
+        "/.netlify/functions/homepage_advertiser",
+        "/.netlify/functions/sitemap_runner",
+        "/Zion-Holdings/zion.app",
+        "/Zion-Holdings/zion.app/actions",
+        "/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md",
+        "/Zion-Holdings/zion.app/issues",
+        "/Zion-Holdings/zion.app/tree/main/automation",
+        "/Zion-Holdings/zion.app/tree/main/docs",
+        "/automation",
+        "/automation#benefits",
+        "/automation#capabilities",
+        "/automation#feature-factories",
+        "/automation#features",
+        "/main/front",
+        "/main/front#benefits",
+        "/main/front#capabilities",
+        "/main/front#cases",
+        "/main/front#command-center",
+        "/main/front#demos",
+        "/main/front#feature-map",
+        "/main/front#features",
+        "/main/front#guardrails",
+        "/main/front#highlights",
+        "/main/front#pillars",
+        "/main/front#reports",
+        "/main/front#roadmap",
+        "/main/front#suites",
+        "/main/front#templates",
+        "/main/front#use-cases",
+        "/motion/",
+        "/newsroom",
+        "/reports/ai-trends",
+        "/reports/seo",
+        "/site-health"
+      ]
+    },
+    "/main/front#suites": {
+      "url": "http://localhost:3000/main/front#suites",
+      "status": 200,
+      "ok": true,
+      "links": [
+        "/",
+        "/.netlify/functions/cloud_orchestrator",
+        "/.netlify/functions/front-enhancer",
+        "/.netlify/functions/homepage_advertiser",
+        "/.netlify/functions/sitemap_runner",
+        "/Zion-Holdings/zion.app",
+        "/Zion-Holdings/zion.app/actions",
+        "/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md",
+        "/Zion-Holdings/zion.app/issues",
+        "/Zion-Holdings/zion.app/tree/main/automation",
+        "/Zion-Holdings/zion.app/tree/main/docs",
+        "/automation",
+        "/automation#benefits",
+        "/automation#capabilities",
+        "/automation#feature-factories",
+        "/automation#features",
+        "/main/front",
+        "/main/front#benefits",
+        "/main/front#capabilities",
+        "/main/front#cases",
+        "/main/front#command-center",
+        "/main/front#demos",
+        "/main/front#feature-map",
+        "/main/front#features",
+        "/main/front#guardrails",
+        "/main/front#highlights",
+        "/main/front#pillars",
+        "/main/front#reports",
+        "/main/front#roadmap",
+        "/main/front#suites",
+        "/main/front#templates",
+        "/main/front#use-cases",
+        "/motion/",
+        "/newsroom",
+        "/reports/ai-trends",
+        "/reports/seo",
+        "/site-health"
+      ]
+    },
+    "/main/front#capabilities": {
+      "url": "http://localhost:3000/main/front#capabilities",
+      "status": 200,
+      "ok": true,
+      "links": [
+        "/",
+        "/.netlify/functions/cloud_orchestrator",
+        "/.netlify/functions/front-enhancer",
+        "/.netlify/functions/homepage_advertiser",
+        "/.netlify/functions/sitemap_runner",
+        "/Zion-Holdings/zion.app",
+        "/Zion-Holdings/zion.app/actions",
+        "/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md",
+        "/Zion-Holdings/zion.app/issues",
+        "/Zion-Holdings/zion.app/tree/main/automation",
+        "/Zion-Holdings/zion.app/tree/main/docs",
+        "/automation",
+        "/automation#benefits",
+        "/automation#capabilities",
+        "/automation#feature-factories",
+        "/automation#features",
+        "/main/front",
+        "/main/front#benefits",
+        "/main/front#capabilities",
+        "/main/front#cases",
+        "/main/front#command-center",
+        "/main/front#demos",
+        "/main/front#feature-map",
+        "/main/front#features",
+        "/main/front#guardrails",
+        "/main/front#highlights",
+        "/main/front#pillars",
+        "/main/front#reports",
+        "/main/front#roadmap",
+        "/main/front#suites",
+        "/main/front#templates",
+        "/main/front#use-cases",
+        "/motion/",
+        "/newsroom",
+        "/reports/ai-trends",
+        "/reports/seo",
+        "/site-health"
+      ]
+    },
+    "/main/front#use-cases": {
+      "url": "http://localhost:3000/main/front#use-cases",
+      "status": 200,
+      "ok": true,
+      "links": [
+        "/",
+        "/.netlify/functions/cloud_orchestrator",
+        "/.netlify/functions/front-enhancer",
+        "/.netlify/functions/homepage_advertiser",
+        "/.netlify/functions/sitemap_runner",
+        "/Zion-Holdings/zion.app",
+        "/Zion-Holdings/zion.app/actions",
+        "/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md",
+        "/Zion-Holdings/zion.app/issues",
+        "/Zion-Holdings/zion.app/tree/main/automation",
+        "/Zion-Holdings/zion.app/tree/main/docs",
+        "/automation",
+        "/automation#benefits",
+        "/automation#capabilities",
+        "/automation#feature-factories",
+        "/automation#features",
+        "/main/front",
+        "/main/front#benefits",
+        "/main/front#capabilities",
+        "/main/front#cases",
+        "/main/front#command-center",
+        "/main/front#demos",
+        "/main/front#feature-map",
+        "/main/front#features",
+        "/main/front#guardrails",
+        "/main/front#highlights",
+        "/main/front#pillars",
+        "/main/front#reports",
+        "/main/front#roadmap",
+        "/main/front#suites",
+        "/main/front#templates",
+        "/main/front#use-cases",
+        "/motion/",
+        "/newsroom",
+        "/reports/ai-trends",
+        "/reports/seo",
+        "/site-health"
+      ]
+    },
+    "/main/front#pillars": {
+      "url": "http://localhost:3000/main/front#pillars",
+      "status": 200,
+      "ok": true,
+      "links": [
+        "/",
+        "/.netlify/functions/cloud_orchestrator",
+        "/.netlify/functions/front-enhancer",
+        "/.netlify/functions/homepage_advertiser",
+        "/.netlify/functions/sitemap_runner",
+        "/Zion-Holdings/zion.app",
+        "/Zion-Holdings/zion.app/actions",
+        "/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md",
+        "/Zion-Holdings/zion.app/issues",
+        "/Zion-Holdings/zion.app/tree/main/automation",
+        "/Zion-Holdings/zion.app/tree/main/docs",
+        "/automation",
+        "/automation#benefits",
+        "/automation#capabilities",
+        "/automation#feature-factories",
+        "/automation#features",
+        "/main/front",
+        "/main/front#benefits",
+        "/main/front#capabilities",
+        "/main/front#cases",
+        "/main/front#command-center",
+        "/main/front#demos",
+        "/main/front#feature-map",
+        "/main/front#features",
+        "/main/front#guardrails",
+        "/main/front#highlights",
+        "/main/front#pillars",
+        "/main/front#reports",
+        "/main/front#roadmap",
+        "/main/front#suites",
+        "/main/front#templates",
+        "/main/front#use-cases",
+        "/motion/",
+        "/newsroom",
+        "/reports/ai-trends",
+        "/reports/seo",
+        "/site-health"
+      ]
+    },
+    "/main/front#benefits": {
+      "url": "http://localhost:3000/main/front#benefits",
+      "status": 200,
+      "ok": true,
+      "links": [
+        "/",
+        "/.netlify/functions/cloud_orchestrator",
+        "/.netlify/functions/front-enhancer",
+        "/.netlify/functions/homepage_advertiser",
+        "/.netlify/functions/sitemap_runner",
+        "/Zion-Holdings/zion.app",
+        "/Zion-Holdings/zion.app/actions",
+        "/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md",
+        "/Zion-Holdings/zion.app/issues",
+        "/Zion-Holdings/zion.app/tree/main/automation",
+        "/Zion-Holdings/zion.app/tree/main/docs",
+        "/automation",
+        "/automation#benefits",
+        "/automation#capabilities",
+        "/automation#feature-factories",
+        "/automation#features",
+        "/main/front",
+        "/main/front#benefits",
+        "/main/front#capabilities",
+        "/main/front#cases",
+        "/main/front#command-center",
+        "/main/front#demos",
+        "/main/front#feature-map",
+        "/main/front#features",
+        "/main/front#guardrails",
+        "/main/front#highlights",
+        "/main/front#pillars",
+        "/main/front#reports",
+        "/main/front#roadmap",
+        "/main/front#suites",
+        "/main/front#templates",
+        "/main/front#use-cases",
+        "/motion/",
+        "/newsroom",
+        "/reports/ai-trends",
+        "/reports/seo",
+        "/site-health"
+      ]
+    },
+    "/main/front#templates": {
+      "url": "http://localhost:3000/main/front#templates",
+      "status": 200,
+      "ok": true,
+      "links": [
+        "/",
+        "/.netlify/functions/cloud_orchestrator",
+        "/.netlify/functions/front-enhancer",
+        "/.netlify/functions/homepage_advertiser",
+        "/.netlify/functions/sitemap_runner",
+        "/Zion-Holdings/zion.app",
+        "/Zion-Holdings/zion.app/actions",
+        "/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md",
+        "/Zion-Holdings/zion.app/issues",
+        "/Zion-Holdings/zion.app/tree/main/automation",
+        "/Zion-Holdings/zion.app/tree/main/docs",
+        "/automation",
+        "/automation#benefits",
+        "/automation#capabilities",
+        "/automation#feature-factories",
+        "/automation#features",
+        "/main/front",
+        "/main/front#benefits",
+        "/main/front#capabilities",
+        "/main/front#cases",
+        "/main/front#command-center",
+        "/main/front#demos",
+        "/main/front#feature-map",
+        "/main/front#features",
+        "/main/front#guardrails",
+        "/main/front#highlights",
+        "/main/front#pillars",
+        "/main/front#reports",
+        "/main/front#roadmap",
+        "/main/front#suites",
+        "/main/front#templates",
+        "/main/front#use-cases",
+        "/motion/",
+        "/newsroom",
+        "/reports/ai-trends",
+        "/reports/seo",
+        "/site-health"
+      ]
+    },
+    "/main/front#demos": {
+      "url": "http://localhost:3000/main/front#demos",
+      "status": 200,
+      "ok": true,
+      "links": [
+        "/",
+        "/.netlify/functions/cloud_orchestrator",
+        "/.netlify/functions/front-enhancer",
+        "/.netlify/functions/homepage_advertiser",
+        "/.netlify/functions/sitemap_runner",
+        "/Zion-Holdings/zion.app",
+        "/Zion-Holdings/zion.app/actions",
+        "/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md",
+        "/Zion-Holdings/zion.app/issues",
+        "/Zion-Holdings/zion.app/tree/main/automation",
+        "/Zion-Holdings/zion.app/tree/main/docs",
+        "/automation",
+        "/automation#benefits",
+        "/automation#capabilities",
+        "/automation#feature-factories",
+        "/automation#features",
+        "/main/front",
+        "/main/front#benefits",
+        "/main/front#capabilities",
+        "/main/front#cases",
+        "/main/front#command-center",
+        "/main/front#demos",
+        "/main/front#feature-map",
+        "/main/front#features",
+        "/main/front#guardrails",
+        "/main/front#highlights",
+        "/main/front#pillars",
+        "/main/front#reports",
+        "/main/front#roadmap",
+        "/main/front#suites",
+        "/main/front#templates",
+        "/main/front#use-cases",
+        "/motion/",
+        "/newsroom",
+        "/reports/ai-trends",
+        "/reports/seo",
+        "/site-health"
+      ]
+    },
+    "/main/front#highlights": {
+      "url": "http://localhost:3000/main/front#highlights",
+      "status": 200,
+      "ok": true,
+      "links": [
+        "/",
+        "/.netlify/functions/cloud_orchestrator",
+        "/.netlify/functions/front-enhancer",
+        "/.netlify/functions/homepage_advertiser",
+        "/.netlify/functions/sitemap_runner",
+        "/Zion-Holdings/zion.app",
+        "/Zion-Holdings/zion.app/actions",
+        "/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md",
+        "/Zion-Holdings/zion.app/issues",
+        "/Zion-Holdings/zion.app/tree/main/automation",
+        "/Zion-Holdings/zion.app/tree/main/docs",
+        "/automation",
+        "/automation#benefits",
+        "/automation#capabilities",
+        "/automation#feature-factories",
+        "/automation#features",
+        "/main/front",
+        "/main/front#benefits",
+        "/main/front#capabilities",
+        "/main/front#cases",
+        "/main/front#command-center",
+        "/main/front#demos",
+        "/main/front#feature-map",
+        "/main/front#features",
+        "/main/front#guardrails",
+        "/main/front#highlights",
+        "/main/front#pillars",
+        "/main/front#reports",
+        "/main/front#roadmap",
+        "/main/front#suites",
+        "/main/front#templates",
+        "/main/front#use-cases",
+        "/motion/",
+        "/newsroom",
+        "/reports/ai-trends",
+        "/reports/seo",
+        "/site-health"
+      ]
+    },
+    "/main/front#cases": {
+      "url": "http://localhost:3000/main/front#cases",
+      "status": 200,
+      "ok": true,
+      "links": [
+        "/",
+        "/.netlify/functions/cloud_orchestrator",
+        "/.netlify/functions/front-enhancer",
+        "/.netlify/functions/homepage_advertiser",
+        "/.netlify/functions/sitemap_runner",
+        "/Zion-Holdings/zion.app",
+        "/Zion-Holdings/zion.app/actions",
+        "/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md",
+        "/Zion-Holdings/zion.app/issues",
+        "/Zion-Holdings/zion.app/tree/main/automation",
+        "/Zion-Holdings/zion.app/tree/main/docs",
+        "/automation",
+        "/automation#benefits",
+        "/automation#capabilities",
+        "/automation#feature-factories",
+        "/automation#features",
+        "/main/front",
+        "/main/front#benefits",
+        "/main/front#capabilities",
+        "/main/front#cases",
+        "/main/front#command-center",
+        "/main/front#demos",
+        "/main/front#feature-map",
+        "/main/front#features",
+        "/main/front#guardrails",
+        "/main/front#highlights",
+        "/main/front#pillars",
+        "/main/front#reports",
+        "/main/front#roadmap",
+        "/main/front#suites",
+        "/main/front#templates",
+        "/main/front#use-cases",
+        "/motion/",
+        "/newsroom",
+        "/reports/ai-trends",
+        "/reports/seo",
+        "/site-health"
+      ]
+    },
+    "/main/front#reports": {
+      "url": "http://localhost:3000/main/front#reports",
+      "status": 200,
+      "ok": true,
+      "links": [
+        "/",
+        "/.netlify/functions/cloud_orchestrator",
+        "/.netlify/functions/front-enhancer",
+        "/.netlify/functions/homepage_advertiser",
+        "/.netlify/functions/sitemap_runner",
+        "/Zion-Holdings/zion.app",
+        "/Zion-Holdings/zion.app/actions",
+        "/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md",
+        "/Zion-Holdings/zion.app/issues",
+        "/Zion-Holdings/zion.app/tree/main/automation",
+        "/Zion-Holdings/zion.app/tree/main/docs",
+        "/automation",
+        "/automation#benefits",
+        "/automation#capabilities",
+        "/automation#feature-factories",
+        "/automation#features",
+        "/main/front",
+        "/main/front#benefits",
+        "/main/front#capabilities",
+        "/main/front#cases",
+        "/main/front#command-center",
+        "/main/front#demos",
+        "/main/front#feature-map",
+        "/main/front#features",
+        "/main/front#guardrails",
+        "/main/front#highlights",
+        "/main/front#pillars",
+        "/main/front#reports",
+        "/main/front#roadmap",
+        "/main/front#suites",
+        "/main/front#templates",
+        "/main/front#use-cases",
+        "/motion/",
+        "/newsroom",
+        "/reports/ai-trends",
+        "/reports/seo",
+        "/site-health"
+      ]
+    },
+    "/main/front#roadmap": {
+      "url": "http://localhost:3000/main/front#roadmap",
+      "status": 200,
+      "ok": true,
+      "links": [
+        "/",
+        "/.netlify/functions/cloud_orchestrator",
+        "/.netlify/functions/front-enhancer",
+        "/.netlify/functions/homepage_advertiser",
+        "/.netlify/functions/sitemap_runner",
+        "/Zion-Holdings/zion.app",
+        "/Zion-Holdings/zion.app/actions",
+        "/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md",
+        "/Zion-Holdings/zion.app/issues",
+        "/Zion-Holdings/zion.app/tree/main/automation",
+        "/Zion-Holdings/zion.app/tree/main/docs",
+        "/automation",
+        "/automation#benefits",
+        "/automation#capabilities",
+        "/automation#feature-factories",
+        "/automation#features",
+        "/main/front",
+        "/main/front#benefits",
+        "/main/front#capabilities",
+        "/main/front#cases",
+        "/main/front#command-center",
+        "/main/front#demos",
+        "/main/front#feature-map",
+        "/main/front#features",
+        "/main/front#guardrails",
+        "/main/front#highlights",
+        "/main/front#pillars",
+        "/main/front#reports",
+        "/main/front#roadmap",
+        "/main/front#suites",
+        "/main/front#templates",
+        "/main/front#use-cases",
+        "/motion/",
+        "/newsroom",
+        "/reports/ai-trends",
+        "/reports/seo",
+        "/site-health"
+      ]
+    },
+    "/main/front#guardrails": {
+      "url": "http://localhost:3000/main/front#guardrails",
+      "status": 200,
+      "ok": true,
+      "links": [
+        "/",
+        "/.netlify/functions/cloud_orchestrator",
+        "/.netlify/functions/front-enhancer",
+        "/.netlify/functions/homepage_advertiser",
+        "/.netlify/functions/sitemap_runner",
+        "/Zion-Holdings/zion.app",
+        "/Zion-Holdings/zion.app/actions",
+        "/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md",
+        "/Zion-Holdings/zion.app/issues",
+        "/Zion-Holdings/zion.app/tree/main/automation",
+        "/Zion-Holdings/zion.app/tree/main/docs",
+        "/automation",
+        "/automation#benefits",
+        "/automation#capabilities",
+        "/automation#feature-factories",
+        "/automation#features",
+        "/main/front",
+        "/main/front#benefits",
+        "/main/front#capabilities",
+        "/main/front#cases",
+        "/main/front#command-center",
+        "/main/front#demos",
+        "/main/front#feature-map",
+        "/main/front#features",
+        "/main/front#guardrails",
+        "/main/front#highlights",
+        "/main/front#pillars",
+        "/main/front#reports",
+        "/main/front#roadmap",
+        "/main/front#suites",
+        "/main/front#templates",
+        "/main/front#use-cases",
+        "/motion/",
+        "/newsroom",
+        "/reports/ai-trends",
+        "/reports/seo",
+        "/site-health"
+      ]
+    },
+    "/Zion-Holdings/zion.app/tree/main/docs": {
+      "url": "http://localhost:3000/Zion-Holdings/zion.app/tree/main/docs",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md": {
+      "url": "http://localhost:3000/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/Zion-Holdings/zion.app/tree/main/automation": {
+      "url": "http://localhost:3000/Zion-Holdings/zion.app/tree/main/automation",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/.netlify/functions/sitemap_runner": {
+      "url": "http://localhost:3000/.netlify/functions/sitemap_runner",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/Zion-Holdings/zion.app/actions": {
+      "url": "http://localhost:3000/Zion-Holdings/zion.app/actions",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/automation#features": {
+      "url": "http://localhost:3000/automation#features",
+      "status": 200,
+      "ok": true,
+      "links": [
+        "/.netlify/functions/auto-scheduler",
+        "/.netlify/functions/broken-image-scanner",
+        "/.netlify/functions/continuous-orchestrator",
+        "/.netlify/functions/fast-front-promoter",
+        "/.netlify/functions/fast-orchestrator",
+        "/.netlify/functions/features-capabilities-benefits-advertiser",
+        "/.netlify/functions/front-enhancer",
+        "/.netlify/functions/hyper-front-index-accelerator",
+        "/.netlify/functions/innovation-lab",
+        "/.netlify/functions/marketing-and-features-promo",
+        "/.netlify/functions/schedule-content-index",
+        "/.netlify/functions/schedule-homepage",
+        "/.netlify/functions/schedule-knowledge-graph",
+        "/.netlify/functions/schedule-site-health"
+      ]
+    },
+    "/automation#capabilities": {
+      "url": "http://localhost:3000/automation#capabilities",
+      "status": 200,
+      "ok": true,
+      "links": [
+        "/.netlify/functions/auto-scheduler",
+        "/.netlify/functions/broken-image-scanner",
+        "/.netlify/functions/continuous-orchestrator",
+        "/.netlify/functions/fast-front-promoter",
+        "/.netlify/functions/fast-orchestrator",
+        "/.netlify/functions/features-capabilities-benefits-advertiser",
+        "/.netlify/functions/front-enhancer",
+        "/.netlify/functions/hyper-front-index-accelerator",
+        "/.netlify/functions/innovation-lab",
+        "/.netlify/functions/marketing-and-features-promo",
+        "/.netlify/functions/schedule-content-index",
+        "/.netlify/functions/schedule-homepage",
+        "/.netlify/functions/schedule-knowledge-graph",
+        "/.netlify/functions/schedule-site-health"
+      ]
+    },
+    "/automation#benefits": {
+      "url": "http://localhost:3000/automation#benefits",
+      "status": 200,
+      "ok": true,
+      "links": [
+        "/.netlify/functions/auto-scheduler",
+        "/.netlify/functions/broken-image-scanner",
+        "/.netlify/functions/continuous-orchestrator",
+        "/.netlify/functions/fast-front-promoter",
+        "/.netlify/functions/fast-orchestrator",
+        "/.netlify/functions/features-capabilities-benefits-advertiser",
+        "/.netlify/functions/front-enhancer",
+        "/.netlify/functions/hyper-front-index-accelerator",
+        "/.netlify/functions/innovation-lab",
+        "/.netlify/functions/marketing-and-features-promo",
+        "/.netlify/functions/schedule-content-index",
+        "/.netlify/functions/schedule-homepage",
+        "/.netlify/functions/schedule-knowledge-graph",
+        "/.netlify/functions/schedule-site-health"
+      ]
+    },
+    "/automation#feature-factories": {
+      "url": "http://localhost:3000/automation#feature-factories",
+      "status": 200,
+      "ok": true,
+      "links": [
+        "/.netlify/functions/auto-scheduler",
+        "/.netlify/functions/broken-image-scanner",
+        "/.netlify/functions/continuous-orchestrator",
+        "/.netlify/functions/fast-front-promoter",
+        "/.netlify/functions/fast-orchestrator",
+        "/.netlify/functions/features-capabilities-benefits-advertiser",
+        "/.netlify/functions/front-enhancer",
+        "/.netlify/functions/hyper-front-index-accelerator",
+        "/.netlify/functions/innovation-lab",
+        "/.netlify/functions/marketing-and-features-promo",
+        "/.netlify/functions/schedule-content-index",
+        "/.netlify/functions/schedule-homepage",
+        "/.netlify/functions/schedule-knowledge-graph",
+        "/.netlify/functions/schedule-site-health"
+      ]
+    },
+    "/Zion-Holdings/zion.app/issues": {
+      "url": "http://localhost:3000/Zion-Holdings/zion.app/issues",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/motion/": {
+      "url": "http://localhost:3000/motion/",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/Zion-Holdings/zion.app": {
+      "url": "http://localhost:3000/Zion-Holdings/zion.app",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/reports/seo/latest.json": {
+      "url": "http://localhost:3000/reports/seo/latest.json",
+      "status": 200,
+      "ok": true,
+      "links": []
+    },
+    "/reports/seo/index.html": {
+      "url": "http://localhost:3000/reports/seo/index.html",
+      "status": 200,
+      "ok": true,
+      "links": []
+    },
+    "/2025/08/08/sam-altman-addresses-bumpy-gpt-5-rollout-bringing-4o-back-and-the-chart-crime/": {
+      "url": "http://localhost:3000/2025/08/08/sam-altman-addresses-bumpy-gpt-5-rollout-bringing-4o-back-and-the-chart-crime/",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/2025/08/08/how-to-use-instagram-map-and-protect-your-privacy/": {
+      "url": "http://localhost:3000/2025/08/08/how-to-use-instagram-map-and-protect-your-privacy/",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/2025/08/08/former-googlers-ai-startup-openart-now-creates-brainrot-videos-in-just-one-click/": {
+      "url": "http://localhost:3000/2025/08/08/former-googlers-ai-startup-openart-now-creates-brainrot-videos-in-just-one-click/",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/2025/08/08/pinterest-ceo-says-agentic-shopping-is-still-a-long-way-out/": {
+      "url": "http://localhost:3000/2025/08/08/pinterest-ceo-says-agentic-shopping-is-still-a-long-way-out/",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/2025/08/08/softbank-reportedly-bought-foxconns-ohio-factory-for-the-stargate-ai-project/": {
+      "url": "http://localhost:3000/2025/08/08/softbank-reportedly-bought-foxconns-ohio-factory-for-the-stargate-ai-project/",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/2025/08/08/openai-priced-gpt-5-so-low-it-may-spark-a-price-war/": {
+      "url": "http://localhost:3000/2025/08/08/openai-priced-gpt-5-so-low-it-may-spark-a-price-war/",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/2025/08/08/rip-microsoft-lens-a-simple-little-app-thats-getting-replaced-by-ai/": {
+      "url": "http://localhost:3000/2025/08/08/rip-microsoft-lens-a-simple-little-app-thats-getting-replaced-by-ai/",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/2025/08/08/meta-acquires-ai-audio-startup-waveforms/": {
+      "url": "http://localhost:3000/2025/08/08/meta-acquires-ai-audio-startup-waveforms/",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/2025/08/08/impersonators-are-targeting-companies-with-fake-techcrunch-outreach/": {
+      "url": "http://localhost:3000/2025/08/08/impersonators-are-targeting-companies-with-fake-techcrunch-outreach/",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/2025/08/08/dont-let-your-competitor-steal-the-brand-spotlight-secure-your-exhibit-table-at-techcrunch-disrupt-2025/": {
+      "url": "http://localhost:3000/2025/08/08/dont-let-your-competitor-steal-the-brand-spotlight-secure-your-exhibit-table-at-techcrunch-disrupt-2025/",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/2025/08/08/nasa-and-google-are-building-an-ai-medical-assistant-to-keep-mars-bound-astronauts-healthy/": {
+      "url": "http://localhost:3000/2025/08/08/nasa-and-google-are-building-an-ai-medical-assistant-to-keep-mars-bound-astronauts-healthy/",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/2025/08/07/tesla-shuts-down-dojo-the-ai-training-supercomputer-that-musk-said-would-be-key-to-full-self-driving/": {
+      "url": "http://localhost:3000/2025/08/07/tesla-shuts-down-dojo-the-ai-training-supercomputer-that-musk-said-would-be-key-to-full-self-driving/",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/2025/08/06/key-sections-of-the-us-constitution-deleted-from-governments-website/": {
+      "url": "http://localhost:3000/2025/08/06/key-sections-of-the-us-constitution-deleted-from-governments-website/",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/2025/08/06/instagram-takes-on-snapchat-with-new-instagram-map/": {
+      "url": "http://localhost:3000/2025/08/06/instagram-takes-on-snapchat-with-new-instagram-map/",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/2025/08/06/google-says-hackers-stole-its-customers-data-in-a-breach-of-its-salesforce-database/": {
+      "url": "http://localhost:3000/2025/08/06/google-says-hackers-stole-its-customers-data-in-a-breach-of-its-salesforce-database/",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/2025/08/05/three-weeks-after-acquiring-windsurf-cognition-offers-staff-the-exit-door/": {
+      "url": "http://localhost:3000/2025/08/05/three-weeks-after-acquiring-windsurf-cognition-offers-staff-the-exit-door/",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/2025/08/04/spotify-raises-subscription-prices/": {
+      "url": "http://localhost:3000/2025/08/04/spotify-raises-subscription-prices/",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/2025/08/03/the-uproar-over-vogues-ai-generated-ad-isnt-just-about-fashion/": {
+      "url": "http://localhost:3000/2025/08/03/the-uproar-over-vogues-ai-generated-ad-isnt-just-about-fashion/",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/storyline/wwdc-2025-live-updates-a-fresh-look-for-ios-a-dedicated-gaming-app-and-more/": {
+      "url": "http://localhost:3000/storyline/wwdc-2025-live-updates-a-fresh-look-for-ios-a-dedicated-gaming-app-and-more/",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/storyline/google-i-o-2025-live-coverage-google-ai-ultra-project-mariner-gemini-app-updates-and-more/": {
+      "url": "http://localhost:3000/storyline/google-i-o-2025-live-coverage-google-ai-ultra-project-mariner-gemini-app-updates-and-more/",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/news/756444/openai-gpt-5-vibe-graphing-chart-crime": {
+      "url": "http://localhost:3000/news/756444/openai-gpt-5-vibe-graphing-chart-crime",
+      "status": 404,
+      "ok": false,
+      "links": []
+    },
+    "/hands-on/756587/microsoft-copilot-3d-feature-hands-on": {
+      "url": "http://localhost:3000/hands-on/756587/microsoft-copilot-3d-feature-hands-on",
+      "status": 404,
+      "ok": false,
+      "links": []
+    }
+  },
+  "missingInternalPaths": [
+    {
+      "path": "/.netlify/functions/auto-scheduler",
+      "status": 404
+    },
+    {
+      "path": "/.netlify/functions/broken-image-scanner",
+      "status": 404
+    },
+    {
+      "path": "/.netlify/functions/cloud_orchestrator",
+      "status": 404
+    },
+    {
+      "path": "/.netlify/functions/continuous-front-runner",
+      "status": 404
+    },
+    {
+      "path": "/.netlify/functions/continuous-orchestrator",
+      "status": 404
+    },
+    {
+      "path": "/.netlify/functions/fast-front-promoter",
+      "status": 404
+    },
+    {
+      "path": "/.netlify/functions/fast-orchestrator",
+      "status": 404
+    },
+    {
+      "path": "/.netlify/functions/feature-advertiser",
+      "status": 404
+    },
+    {
+      "path": "/.netlify/functions/features-capabilities-benefits-advertiser",
+      "status": 404
+    },
+    {
+      "path": "/.netlify/functions/front-enhancer",
+      "status": 404
+    },
+    {
+      "path": "/.netlify/functions/front-index-futurizer",
+      "status": 404
+    },
+    {
+      "path": "/.netlify/functions/front-index-orchestrator",
+      "status": 404
+    },
+    {
+      "path": "/.netlify/functions/front-index-scheduler",
+      "status": 404
+    },
+    {
+      "path": "/.netlify/functions/front-maximizer",
+      "status": 404
+    },
+    {
+      "path": "/.netlify/functions/frontpage-enhancer",
+      "status": 404
+    },
+    {
+      "path": "/.netlify/functions/homepage_advertiser",
+      "status": 404
+    },
+    {
+      "path": "/.netlify/functions/hyper-front-index-accelerator",
+      "status": 404
+    },
+    {
+      "path": "/.netlify/functions/innovation-lab",
+      "status": 404
+    },
+    {
+      "path": "/.netlify/functions/link-and-health-scheduler",
+      "status": 404
+    },
+    {
+      "path": "/.netlify/functions/marketing-and-features-promo",
+      "status": 404
+    },
+    {
+      "path": "/.netlify/functions/readme-advertiser",
+      "status": 404
+    },
+    {
+      "path": "/.netlify/functions/schedule-content-index",
+      "status": 404
+    },
+    {
+      "path": "/.netlify/functions/schedule-homepage",
+      "status": 404
+    },
+    {
+      "path": "/.netlify/functions/schedule-knowledge-graph",
+      "status": 404
+    },
+    {
+      "path": "/.netlify/functions/schedule-site-health",
+      "status": 404
+    },
+    {
+      "path": "/.netlify/functions/sitemap_runner",
+      "status": 404
+    },
+    {
+      "path": "/2025/08/03/the-uproar-over-vogues-ai-generated-ad-isnt-just-about-fashion/",
+      "status": 404
+    },
+    {
+      "path": "/2025/08/04/spotify-raises-subscription-prices/",
+      "status": 404
+    },
+    {
+      "path": "/2025/08/05/three-weeks-after-acquiring-windsurf-cognition-offers-staff-the-exit-door/",
+      "status": 404
+    },
+    {
+      "path": "/2025/08/06/google-says-hackers-stole-its-customers-data-in-a-breach-of-its-salesforce-database/",
+      "status": 404
+    },
+    {
+      "path": "/2025/08/06/instagram-takes-on-snapchat-with-new-instagram-map/",
+      "status": 404
+    },
+    {
+      "path": "/2025/08/06/key-sections-of-the-us-constitution-deleted-from-governments-website/",
+      "status": 404
+    },
+    {
+      "path": "/2025/08/07/tesla-shuts-down-dojo-the-ai-training-supercomputer-that-musk-said-would-be-key-to-full-self-driving/",
+      "status": 404
+    },
+    {
+      "path": "/2025/08/08/dont-let-your-competitor-steal-the-brand-spotlight-secure-your-exhibit-table-at-techcrunch-disrupt-2025/",
+      "status": 404
+    },
+    {
+      "path": "/2025/08/08/former-googlers-ai-startup-openart-now-creates-brainrot-videos-in-just-one-click/",
+      "status": 404
+    },
+    {
+      "path": "/2025/08/08/how-to-use-instagram-map-and-protect-your-privacy/",
+      "status": 404
+    },
+    {
+      "path": "/2025/08/08/impersonators-are-targeting-companies-with-fake-techcrunch-outreach/",
+      "status": 404
+    },
+    {
+      "path": "/2025/08/08/meta-acquires-ai-audio-startup-waveforms/",
+      "status": 404
+    },
+    {
+      "path": "/2025/08/08/nasa-and-google-are-building-an-ai-medical-assistant-to-keep-mars-bound-astronauts-healthy/",
+      "status": 404
+    },
+    {
+      "path": "/2025/08/08/openai-priced-gpt-5-so-low-it-may-spark-a-price-war/",
+      "status": 404
+    },
+    {
+      "path": "/2025/08/08/pinterest-ceo-says-agentic-shopping-is-still-a-long-way-out/",
+      "status": 404
+    },
+    {
+      "path": "/2025/08/08/rip-microsoft-lens-a-simple-little-app-thats-getting-replaced-by-ai/",
+      "status": 404
+    },
+    {
+      "path": "/2025/08/08/sam-altman-addresses-bumpy-gpt-5-rollout-bringing-4o-back-and-the-chart-crime/",
+      "status": 404
+    },
+    {
+      "path": "/2025/08/08/softbank-reportedly-bought-foxconns-ohio-factory-for-the-stargate-ai-project/",
+      "status": 404
+    },
+    {
+      "path": "/hands-on/756587/microsoft-copilot-3d-feature-hands-on",
+      "status": 404
+    },
+    {
+      "path": "/motion/",
+      "status": 404
+    },
+    {
+      "path": "/news/756444/openai-gpt-5-vibe-graphing-chart-crime",
+      "status": 404
+    },
+    {
+      "path": "/storyline/google-i-o-2025-live-coverage-google-ai-ultra-project-mariner-gemini-app-updates-and-more/",
+      "status": 404
+    },
+    {
+      "path": "/storyline/wwdc-2025-live-updates-a-fresh-look-for-ios-a-dedicated-gaming-app-and-more/",
+      "status": 404
+    },
+    {
+      "path": "/Zion-Holdings/zion.app",
+      "status": 404
+    },
+    {
+      "path": "/Zion-Holdings/zion.app/actions",
+      "status": 404
+    },
+    {
+      "path": "/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md",
+      "status": 404
+    },
+    {
+      "path": "/Zion-Holdings/zion.app/issues",
+      "status": 404
+    },
+    {
+      "path": "/Zion-Holdings/zion.app/tree/main/automation",
+      "status": 404
+    },
+    {
+      "path": "/Zion-Holdings/zion.app/tree/main/docs",
+      "status": 404
+    }
+  ]
+}

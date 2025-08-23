@@ -1,1 +1,1 @@
-export { default } from '@/pages/TokenSimulator';
+export { default } from '../economy/simulator';

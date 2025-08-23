@@ -7,6 +7,7 @@ The client-side routing has been fixed by removing React Router conflicts and im
 ## Key Changes Made
 
 ### 1. Removed React Router Conflicts
+
 - ❌ **Removed**: `RouterWrapper` component that used React Router's `BrowserRouter`
 - ❌ **Removed**: React Router `Routes` and `Route` components from `src/App.tsx`
 - ✅ **Fixed**: Converted React Router hooks to Next.js equivalents:
@@ -15,7 +16,8 @@ The client-side routing has been fixed by removing React Router conflicts and im
   - `useParams()` → `useRouter().query`
 
 ### 2. Updated Core Application Files
-- **pages/_app.tsx**: Removed `RouterWrapper`, now uses only Next.js routing
+
+- **pages/\_app.tsx**: Removed `RouterWrapper`, now uses only Next.js routing
 - **src/App.tsx**: Simplified to remove React Router, now works with Next.js
 - **src/layout/AppLayout.tsx**: Updated to use Next.js `useRouter` instead of React Router hooks
 - **src/components/SearchBar.tsx**: Converted navigation calls to use Next.js router
@@ -23,6 +25,7 @@ The client-side routing has been fixed by removing React Router conflicts and im
 ## Complete Routing Structure
 
 ### Main Routes
+
 ```
 / → Home Page (pages/index.tsx) ✅
 /about → About Page (pages/about.tsx) ✅
@@ -30,6 +33,7 @@ The client-side routing has been fixed by removing React Router conflicts and im
 ```
 
 ### Marketplace Routes
+
 ```
 /marketplace → Marketplace Overview (pages/marketplace/index.tsx) ✅
 /marketplace/categories → Categories Page (pages/marketplace/categories.tsx) ✅
@@ -39,6 +43,7 @@ The client-side routing has been fixed by removing React Router conflicts and im
 ```
 
 ### Community Routes
+
 ```
 /community → Community Index (pages/community/index.tsx) ✅
 /community/blog → Blog Page (pages/community/blog.tsx) ✅
@@ -49,11 +54,13 @@ The client-side routing has been fixed by removing React Router conflicts and im
 ```
 
 ### Resources Routes
+
 ```
 /resources/docs → Documentation Page (pages/resources/docs.tsx) ✅
 ```
 
 ### Existing Routes (Already Working)
+
 ```
 /cart → Shopping Cart (pages/cart/index.tsx) ✅
 /equipment → Equipment Index (pages/equipment/index.tsx) ✅
@@ -64,26 +71,28 @@ The client-side routing has been fixed by removing React Router conflicts and im
 
 ## Route Components Mapping
 
-| Route | Component | Source |
-|-------|-----------|--------|
-| `/` | `Home` | `@/pages/Home` |
-| `/marketplace` | `MarketplacePage` | `pages/marketplace/index.tsx` |
-| `/marketplace/categories` | `Categories` | `@/pages/Categories` |
-| `/marketplace/talent` | `TalentsPage` | `@/pages/TalentsPage` |
-| `/marketplace/equipment` | `EquipmentPage` | `@/pages/EquipmentPage` |
-| `/category/[slug]` | `CategoryPage` | `@/pages/CategoryPage` |
-| `/community/blog` | `Blog` | `@/pages/Blog` |
-| `/community/forum` | `CommunityPage` | `@/pages/CommunityPage` |
-| `/partners` | `Partners` | `@/pages/Partners` |
-| `/community/category/[slug]` | `ForumCategoryPage` | `@/pages/ForumCategoryPage` |
-| `/resources/docs` | `ResourcesDocsPage` | Custom documentation page |
-| `/about` | `About` | Custom about page |
-| `/404` | `Custom404` | Custom 404 page |
+| Route                        | Component           | Source                        |
+| ---------------------------- | ------------------- | ----------------------------- |
+| `/`                          | `Home`              | `@/pages/Home`                |
+| `/marketplace`               | `MarketplacePage`   | `pages/marketplace/index.tsx` |
+| `/marketplace/categories`    | `Categories`        | `@/pages/Categories`          |
+| `/marketplace/talent`        | `TalentsPage`       | `@/pages/TalentsPage`         |
+| `/marketplace/equipment`     | `EquipmentPage`     | `@/pages/EquipmentPage`       |
+| `/category/[slug]`           | `CategoryPage`      | `@/pages/CategoryPage`        |
+| `/community/blog`            | `Blog`              | `@/pages/Blog`                |
+| `/community/forum`           | `CommunityPage`     | `@/pages/CommunityPage`       |
+| `/partners`                  | `Partners`          | `@/pages/Partners`            |
+| `/community/category/[slug]` | `ForumCategoryPage` | `@/pages/ForumCategoryPage`   |
+| `/resources/docs`            | `ResourcesDocsPage` | Custom documentation page     |
+| `/about`                     | `About`             | Custom about page             |
+| `/404`                       | `Custom404`         | Custom 404 page               |
 
 ## Testing Navigation
 
 ### Manual Testing
+
 1. **Start the development server**:
+
    ```bash
    npm run dev
    ```
@@ -111,7 +120,9 @@ The client-side routing has been fixed by removing React Router conflicts and im
    ```
 
 ### Automated Testing
+
 Run the test suite to verify routing:
+
 ```bash
 npm test __tests__/routing.test.tsx
 ```
@@ -123,12 +134,14 @@ The 404 page (`pages/404.tsx`) displays a simple message when a route is not fou
 ## Next.js Features Used
 
 ### File-Based Routing
+
 - **Static Routes**: `pages/about.tsx` → `/about`
 - **Nested Routes**: `pages/marketplace/categories.tsx` → `/marketplace/categories`
 - **Dynamic Routes**: `pages/community/[slug].tsx` → `/community/anything`
 - **Index Routes**: `pages/marketplace/index.tsx` → `/marketplace`
 
 ### Router Features
+
 - **Navigation**: `router.push()`, `router.replace()`
 - **Route Information**: `router.pathname`, `router.query`
 - **Route Events**: `router.events`
@@ -136,12 +149,14 @@ The 404 page (`pages/404.tsx`) displays a simple message when a route is not fou
 ## Troubleshooting
 
 ### If pages still require refresh:
+
 1. Clear browser cache
 2. Restart development server
 3. Check browser console for JavaScript errors
 4. Verify no remaining React Router imports
 
 ### Common Issues:
+
 - **Conflicting router imports**: Ensure all components use Next.js router
 - **Component lazy loading**: Some components may need dynamic imports
 - **State management**: Ensure global state works with Next.js routing
@@ -157,7 +172,8 @@ The 404 page (`pages/404.tsx`) displays a simple message when a route is not fou
 ## Migration Notes
 
 Components that were using React Router have been updated:
+
 - Search functionality now uses Next.js router
 - Navigation components use Next.js `Link`
 - Route guards and protected routes use Next.js patterns
-- State management compatible with Next.js routing 
+- State management compatible with Next.js routing

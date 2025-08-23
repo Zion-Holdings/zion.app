@@ -1,18 +1,34 @@
-export interface NextApiRequest {
+interface NextApiRequest {
   method?: string;
-  query: Record<string, any>;
-  body?: any;
-  cookies?: Record<string, any>;
+  query: Record<string, unknown>;
+  body?: unknown;
+  cookies?: Record<string, unknown>;
   headers?: Record<string, string | string[] | undefined>;
 }
-
-export interface NextApiResponse<T = any> {
+interface NextApiResponse<T = unknown> {
   status(code: number): NextApiResponse<T>;
   json(body: T): NextApiResponse<T>;
   setHeader(name: string, value: string | readonly string[]): void;
-  end(data?: any): void;
+  end(data?: unknown): void;
 }
+type GetStaticProps<_T = unknown> = unknown;
+type GetStaticPaths<_T = unknown> = unknown;
+type GetServerSideProps<_T = unknown> = unknown;
 
-export type GetStaticProps<T = any> = any;
-export type GetStaticPaths<T = any> = any;
-export type GetServerSideProps<T = any> = any;
+type NextPageWithLayout<_T = object> = NextPage<_T> & {
+  getLayout?: (page: ReactElement) => ReactNode;
+};
+
+type NextPageWithAuth<_T = object> = NextPage<_T> & {
+  requireAuth?: boolean;
+};
+
+type NextPageWithSeo<_T = object> = NextPage<_T> & {
+  seo?: {
+    title?: string;
+    description?: string;
+    keywords?: string[];
+    image?: string;
+    type?: string;
+  };
+};

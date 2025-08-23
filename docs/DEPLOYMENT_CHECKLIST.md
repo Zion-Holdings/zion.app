@@ -3,14 +3,16 @@
 ## Pre-Deployment Verification
 
 ### 1. Environment Variables ✅
+
 - [ ] All required environment variables are set in production platform
-- [ ] No placeholder values (YOUR_, dummy, fallback, etc.)
+- [ ] No placeholder values (YOUR\_, dummy, fallback, etc.)
 - [ ] Sentry DSN and auth token configured
 - [ ] Supabase URL and keys configured
 - [ ] REOWN project ID configured
 - [ ] API URLs point to production endpoints
 
 ### 2. Build Verification ✅
+
 - [ ] `npm run build` passes without errors
 - [ ] TypeScript compilation successful
 - [ ] No duplicate file warnings
@@ -18,6 +20,7 @@
 - [ ] Bundle size within acceptable limits
 
 ### 3. Error Handling ✅
+
 - [ ] Error boundaries are properly configured
 - [ ] Sentry integration working
 - [ ] Custom error reporting configured
@@ -25,6 +28,7 @@
 - [ ] Retry mechanisms functioning
 
 ### 4. Critical Features ✅
+
 - [ ] Authentication flow works
 - [ ] Payment processing functional
 - [ ] Database connectivity verified
@@ -34,7 +38,9 @@
 ## Staging Verification
 
 ### 1. Route Testing
+
 Visit each critical route and verify:
+
 - [ ] `/` - Homepage loads without errors
 - [ ] `/auth/login` - Authentication works
 - [ ] `/marketplace` - Product listings display
@@ -42,7 +48,9 @@ Visit each critical route and verify:
 - [ ] `/api/health` - Health check passes
 
 ### 2. Error Scenarios
+
 Test error handling:
+
 - [ ] Network errors display proper fallback
 - [ ] Invalid routes show 404 page
 - [ ] Server errors trigger error boundary
@@ -50,7 +58,9 @@ Test error handling:
 - [ ] Error reporting to Sentry
 
 ### 3. Performance
+
 Check critical metrics:
+
 - [ ] Page load times < 3 seconds
 - [ ] Time to First Byte < 800ms
 - [ ] Largest Contentful Paint < 2.5s
@@ -60,6 +70,7 @@ Check critical metrics:
 ## Post-Deployment Monitoring
 
 ### 1. Immediate Checks (0-15 minutes)
+
 - [ ] Homepage accessible
 - [ ] Critical user flows working
 - [ ] No error spikes in monitoring
@@ -67,6 +78,7 @@ Check critical metrics:
 - [ ] CDN serving assets properly
 
 ### 2. Short-term Monitoring (15 minutes - 2 hours)
+
 - [ ] Error rates within normal range
 - [ ] Response times acceptable
 - [ ] User registrations working
@@ -74,6 +86,7 @@ Check critical metrics:
 - [ ] Background jobs running
 
 ### 3. Extended Monitoring (2-24 hours)
+
 - [ ] Memory usage stable
 - [ ] No memory leaks detected
 - [ ] Database performance normal
@@ -83,6 +96,7 @@ Check critical metrics:
 ## Rollback Plan
 
 ### Triggers for Rollback
+
 - [ ] Error rate > 5% for 5 minutes
 - [ ] Homepage unavailable for > 2 minutes
 - [ ] Critical user flows broken
@@ -90,6 +104,7 @@ Check critical metrics:
 - [ ] Security vulnerability exposed
 
 ### Rollback Steps
+
 1. [ ] Notify team of rollback decision
 2. [ ] Revert to previous deployment
 3. [ ] Verify rollback successful
@@ -99,6 +114,7 @@ Check critical metrics:
 ## Environment-Specific Checklist
 
 ### Production
+
 - [ ] SSL certificate valid
 - [ ] CDN configuration correct
 - [ ] Database backups recent
@@ -106,6 +122,7 @@ Check critical metrics:
 - [ ] Log aggregation working
 
 ### Staging
+
 - [ ] Mirrors production configuration
 - [ ] Test data populated
 - [ ] Feature flags configured
@@ -115,16 +132,19 @@ Check critical metrics:
 ## Communication Plan
 
 ### Before Deployment
+
 - [ ] Notify stakeholders of deployment window
 - [ ] Announce potential downtime
 - [ ] Prepare rollback communication
 
 ### During Deployment
+
 - [ ] Monitor error rates and performance
 - [ ] Update team on progress
 - [ ] Document any issues encountered
 
 ### After Deployment
+
 - [ ] Confirm successful deployment
 - [ ] Share performance metrics
 - [ ] Document lessons learned
@@ -142,4 +162,4 @@ Check critical metrics:
 - **Performance**: Web Vitals
 - **Infrastructure**: Platform dashboard
 - **Logs**: Application logs
-- **Health Check**: `/api/health` 
+- **Health Check**: `/api/health`

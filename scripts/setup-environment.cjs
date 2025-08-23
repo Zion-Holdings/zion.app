@@ -1,13 +1,43 @@
-#!/usr/bin/env node
 
-/**
- * Environment Setup Script for Zion AI Marketplace
- * Helps configure required environment variables
- */
+const winston = require('winston');
 
-const fs = require('fs');
-const path = require('path');
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
 
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    logger.info('Starting ...');
+    
+    try {
+      #!/usr/bin/env node
+
+
+
+const fs = require('fs')
+const path = require('path')
 const envExample = `# Next.js Configuration
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 NEXT_PUBLIC_API_URL=http://localhost:3000/api
@@ -75,8 +105,7 @@ REDIS_URL=your_redis_url_here
 # External APIs
 OPENAI_API_KEY=your_openai_api_key_here
 EXAMPLE_API_URL=https://api.example.com
-`;
-
+`
 const envLocal = `# Local Development Environment
 # Copy this file to .env.local and update with your actual values
 
@@ -114,37 +143,80 @@ NEXT_PUBLIC_ENABLE_PAYMENTS=false
 
 # Development APIs
 EXAMPLE_API_URL=https://jsonplaceholder.typicode.com
-`;
-
+`
 function createEnvFiles() {
   const rootDir = path.resolve(__dirname, '..');
-  
+
   // Create .env.example
   fs.writeFileSync(path.join(rootDir, '.env.example'), envExample);
-  console.log('✅ Created .env.example');
-  
+  logger.warn('✅ Created .env.example');
+
   // Create .env.local.example
   fs.writeFileSync(path.join(rootDir, '.env.local.example'), envLocal);
-  console.log('✅ Created .env.local.example');
-  
+  logger.warn('✅ Created .env.local.example');
+
   // Check if .env.local exists
   const envLocalPath = path.join(rootDir, '.env.local');
   if (!fs.existsSync(envLocalPath)) {
     fs.writeFileSync(envLocalPath, envLocal);
-    console.log('✅ Created .env.local with development defaults');
+    logger.warn('✅ Created .env.local with development defaults');
   } else {
-    console.log('ℹ️  .env.local already exists, skipping');
+    logger.warn('ℹ️  .env.local already exists, skipping');
   }
-  
-  console.log('\n📋 Next Steps:');
-  console.log('1. Edit .env.local with your actual environment values');
-  console.log('2. For Supabase: Visit https://supabase.com/dashboard');
-  console.log('3. For Wallet: Visit https://cloud.walletconnect.com');
-  console.log('4. Generate NextAuth secret: openssl rand -base64 32');
+
+  logger.warn('\n📋 Next Steps:');
+  logger.warn('1. Edit .env.local with your actual environment values');
+  logger.warn('2. For Supabase: Visit https://supabase.com/dashboard');
+  logger.warn('3. For Wallet: Visit https://cloud.walletconnect.com');
+  logger.warn('4. Generate NextAuth secret: openssl rand -base64 32');
 }
 
 if (require.main === module) {
+  try {
+    
   createEnvFiles();
+
+  } catch (error) {
+    logger.error('Script execution failed:', error);
+    process.exit(1);
+  }
 }
 
-module.exports = { createEnvFiles }; 
+module.exports = { createEnvFiles };
+    } catch (error) {
+      logger.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    logger.info('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    logger.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

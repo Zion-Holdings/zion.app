@@ -1,273 +1,449 @@
-# Optimization Automation System
+# Intelligent Automation System
 
-A comprehensive automation system integrating Slack with Cursor agents for proactive performance monitoring, optimization triggers, and team notifications.
+A comprehensive, autonomous automation system that provides intelligent task scheduling, self-healing capabilities, anomaly detection, and real-time monitoring for development workflows.
 
-## 🎯 Overview
+## 🚀 Features
 
-This system provides:
-- **Real-time Performance Monitoring** with Slack notifications
-- **Automated Optimization Triggers** via Cursor agents
-- **Team Collaboration** through Slack workflows
-- **Intelligent Decision Making** with AI-powered analysis
-- **Proactive Issue Resolution** before users are affected
+### Core Capabilities
 
-## 🏗️ System Architecture
+- **Autonomous Operation**: Runs independently with minimal human intervention
+- **Self-Healing**: Automatically detects and recovers from failures
+- **Adaptive Scheduling**: Adjusts task frequency based on system conditions
+- **Anomaly Detection**: Identifies unusual patterns in performance and errors
+- **Real-time Monitoring**: Web dashboard with live status and controls
+- **Intelligent Reporting**: Automated daily/weekly reports with recommendations
 
-```mermaid
-graph TB
-    subgraph "Performance Monitoring"
-        PM[Performance Monitor] --> PD[Performance Data]
-        PD --> TH[Threshold Check]
-        TH --> AT[Alert Trigger]
-    end
-    
-    subgraph "Slack Integration"
-        AT --> SW[Slack Webhook]
-        SW --> SB[Slack Bot]
-        SB --> SC[Slack Commands]
-        SC --> SW2[Outgoing Webhooks]
-    end
-    
-    subgraph "Cursor Agents"
-        SW2 --> CA[Cursor Agent]
-        CA --> OR[Optimization Rules]
-        OR --> OE[Optimization Execution]
-        OE --> RF[Results Feedback]
-    end
-    
-    subgraph "Automation Workflows"
-        RF --> WF[Workflow Engine]
-        WF --> CO[Continuous Optimization]
-        CO --> PM
-    end
-```
+### Automation Tasks
+
+- **Dependency Updater**: Automatically updates npm packages and creates PRs
+- **Security Scanner**: Scans for vulnerabilities and security issues
+- **Code Quality Enforcer**: Runs linting, formatting, and tests
+- **Stale Cleaner**: Removes old branches and pull requests
+
+### Communication & Control
+
+- **Slack Integration**: Real-time notifications and ChatOps commands
+- **Web Dashboard**: Real-time status, logs, and manual controls
+- **Email Notifications**: Configurable email alerts
+- **API Endpoints**: RESTful API for external integration
+
+## 📋 Requirements
+
+- Node.js 16+
+- Git
+- GitHub CLI (for PR management)
+- Slack webhook URL (optional)
+
+## 🛠️ Installation
+
+1. **Clone the repository**
+
+   ```bash
+   git clone <repository-url>
+   cd <repository-name>
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Set up environment variables**
+
+   ```bash
+   # Required for Slack notifications
+   export SLACK_WEBHOOK_URL="https://hooks.slack.com/services/..."
+   export SLACK_CHANNEL="#automation"
+
+   # Optional dashboard configuration
+   export DASHBOARD_PORT=3001
+   export DASHBOARD_USERNAME=admin
+   export DASHBOARD_PASSWORD=secret
+   ```
+
+4. **Configure GitHub CLI** (for PR management)
+   ```bash
+   gh auth login
+   ```
 
 ## 🚀 Quick Start
 
-### 1. Environment Setup
+### Start the automation system
+
 ```bash
-# Copy environment template
-cp automation/.env.example .env
-
-# Configure Slack settings
-SLACK_BOT_TOKEN=xoxb-your-bot-token
-SLACK_WEBHOOK_URL=https://hooks.slack.com/services/...
-SLACK_CHANNEL=#optimization-alerts
-
-# Configure Cursor settings
-CURSOR_API_KEY=your-cursor-api-key
-OPTIMIZATION_THRESHOLD=80
+node automation/index.js
 ```
 
-### 2. Install Dependencies
+### Start with custom configuration
+
 ```bash
-npm install @slack/bolt @slack/web-api axios
+node automation/index.js --config custom-config.json
 ```
 
-### 3. Start the System
+### Run in dry-run mode
+
 ```bash
-# Start the automation system
-npm run automation:start
-
-# Monitor logs
-npm run automation:logs
+node automation/index.js --dry-run
 ```
 
-## 📊 Features
+### Disable dashboard
 
-### Performance Monitoring
-- **Bundle Size Tracking**: Monitors build size changes
-- **Load Time Analysis**: Tracks page performance metrics
-- **Core Web Vitals**: LCP, FID, CLS monitoring
-- **Resource Usage**: CPU, memory, network monitoring
-
-### Slack Integration
-- **Real-time Alerts**: Instant notifications for performance issues
-- **Interactive Commands**: `/optimize`, `/status`, `/report`
-- **Team Collaboration**: Shared optimization workflows
-- **Historical Reports**: Performance trend analysis
-
-### Cursor Agents
-- **Smart Optimization**: AI-powered performance improvements
-- **Code Analysis**: Automated code quality checks
-- **Dependency Management**: Package optimization suggestions
-- **Build Optimization**: Intelligent build configuration
-
-### Automation Workflows
-- **Threshold-based Triggers**: Automatic optimization when metrics decline
-- **Scheduled Optimization**: Regular performance audits
-- **Issue Prevention**: Proactive problem detection
-- **Continuous Improvement**: Learning from optimization history
-
-## 🔧 Configuration
-
-### Slack App Setup
-1. Create a new Slack app at [api.slack.com](https://api.slack.com)
-2. Enable Bot Token Scopes:
-   - `chat:write`
-   - `commands`
-   - `incoming-webhook`
-   - `channels:read`
-3. Install app to workspace
-4. Copy Bot Token to environment
-
-### Cursor Agent Rules
-The system includes specialized rules for:
-- **Performance optimization**
-- **Bundle analysis**
-- **Code quality improvement**
-- **Automated refactoring**
-
-### Webhook Endpoints
-- `/api/slack/events` - Slack event handling
-- `/api/slack/commands` - Slash command processing
-- `/api/optimization/trigger` - Manual optimization triggers
-- `/api/performance/alert` - Performance threshold alerts
-
-## 🤖 Available Commands
-
-### Slack Commands
 ```bash
-# Manual optimization trigger
-/optimize [target] [options]
-
-# Performance status check
-/status [component]
-
-# Generate performance report
-/report [timeframe]
-
-# List optimization suggestions
-/suggestions
-
-# Configure monitoring thresholds
-/configure [setting] [value]
+node automation/index.js --no-dashboard
 ```
 
-### Automation Scripts
-```bash
-# Start monitoring system
-npm run automation:start
+## 📊 Dashboard
 
-# Check system health
-npm run automation:health
+Once started, access the web dashboard at:
 
-# View optimization logs
-npm run automation:logs
-
-# Manual performance check
-npm run automation:check
-
-# Generate reports
-npm run automation:report
+```
+http://localhost:3001
 ```
 
-## 📈 Monitoring Dashboard
+The dashboard provides:
 
-Access real-time metrics at:
-- **Performance Dashboard**: `http://localhost:3001/dashboard`
-- **Slack Integration Status**: `http://localhost:3001/slack-status`
-- **Optimization History**: `http://localhost:3001/history`
+- Real-time system status
+- Task execution history
+- Performance metrics
+- Anomaly alerts
+- Manual task controls
+- Configuration management
 
-## 🔔 Alert Types
+## ⚙️ Configuration
 
-### Critical Alerts
-- Bundle size increase >20%
-- Page load time >3 seconds
-- Core Web Vitals below threshold
-- Build failures
+The system uses `automation/config.json` for configuration. Key sections:
 
-### Warning Alerts
-- Performance degradation trends
-- Dependency vulnerabilities
-- Code quality issues
-- Resource usage spikes
+### Autonomous Settings
 
-### Info Notifications
-- Successful optimizations
-- Performance improvements
-- System health updates
-- Scheduled maintenance
-
-## 🛠️ Customization
-
-### Custom Optimization Rules
-Create custom Cursor rules in `.cursor/rules/optimization/`:
-```markdown
----
-description: Custom performance optimization rule
-globs: src/**/*.{ts,tsx}
-alwaysApply: false
----
-
-# Custom Performance Rule
-
-## Conditions
-- Apply when bundle size > 5MB
-- Target React components
-- Focus on lazy loading opportunities
-
-## Actions
-- Implement dynamic imports
-- Add code splitting
-- Optimize image loading
+```json
+{
+  "autonomous": {
+    "enabled": true,
+    "selfHealing": true,
+    "learning": true,
+    "adaptiveScheduling": true
+  }
+}
 ```
 
-### Slack Workflow Customization
-Modify workflows in `automation/slack/workflows/`:
-- Performance alerts
-- Optimization suggestions
-- Team notifications
-- Report generation
+### Task Configuration
 
-## 🔍 Troubleshooting
+```json
+{
+  "tasks": {
+    "dependencyUpdater": {
+      "enabled": true,
+      "interval": 86400000,
+      "dryRun": false,
+      "autoCreatePR": true
+    }
+  }
+}
+```
+
+### Notification Settings
+
+```json
+{
+  "notifications": {
+    "slack": {
+      "enabled": true,
+      "channel": "#automation"
+    }
+  }
+}
+```
+
+## 🔧 Automation Tasks
+
+### Dependency Updater
+
+Automatically checks for outdated npm packages and creates pull requests.
+
+**Features:**
+
+- Skips major updates for critical packages
+- Tests updates before creating PRs
+- Configurable update limits
+- Self-healing for network issues
+
+**Configuration:**
+
+```json
+{
+  "dependencyUpdater": {
+    "enabled": true,
+    "interval": 86400000,
+    "dryRun": false,
+    "autoCreatePR": true,
+    "skipMajorUpdates": true,
+    "maxUpdates": 5
+  }
+}
+```
+
+### Security Scanner
+
+Scans for security vulnerabilities and code patterns.
+
+**Features:**
+
+- npm audit integration
+- Secret detection
+- Code pattern analysis
+- Auto-fix for low-severity issues
+
+**Configuration:**
+
+```json
+{
+  "securityScanner": {
+    "enabled": true,
+    "interval": 21600000,
+    "autoFix": true,
+    "alertThreshold": "high",
+    "scanPatterns": true,
+    "scanSecrets": true
+  }
+}
+```
+
+### Code Quality Enforcer
+
+Enforces code quality standards through linting and formatting.
+
+**Features:**
+
+- ESLint integration
+- Prettier formatting
+- TypeScript checking
+- Auto-fix capabilities
+- PR creation for violations
+
+**Configuration:**
+
+```json
+{
+  "codeQualityEnforcer": {
+    "enabled": true,
+    "interval": 7200000,
+    "autoFix": true,
+    "createPR": true,
+    "tools": ["eslint", "prettier", "typescript"]
+  }
+}
+```
+
+### Stale Cleaner
+
+Removes old branches and pull requests.
+
+**Features:**
+
+- Configurable age thresholds
+- Protected branch support
+- Unmerged commit detection
+- Dry-run mode
+
+**Configuration:**
+
+```json
+{
+  "staleCleaner": {
+    "enabled": true,
+    "interval": 43200000,
+    "staleBranchDays": 30,
+    "stalePRDays": 14,
+    "dryRun": false,
+    "autoDelete": false
+  }
+}
+```
+
+## 📈 Monitoring & Analytics
+
+### Anomaly Detection
+
+The system automatically detects:
+
+- High CPU/memory usage
+- Increased error rates
+- Unusual task durations
+- Pattern violations
+
+### Adaptive Scheduling
+
+Task frequencies are automatically adjusted based on:
+
+- System load
+- Error rates
+- Success rates
+- Task performance
+
+### Health Scoring
+
+Real-time health score (0-100) based on:
+
+- Task success rates
+- System performance
+- Anomaly frequency
+- Error rates
+
+## 📊 Reporting
+
+### Automated Reports
+
+- **Daily Reports**: Summary of daily activities
+- **Weekly Reports**: Trends and recommendations
+- **Monthly Reports**: Long-term analysis
+
+### Report Content
+
+- Executive summary
+- Task performance metrics
+- Anomaly analysis
+- System health status
+- Recommendations
+
+## 🔌 API Reference
+
+### REST Endpoints
+
+#### System Status
+
+```http
+GET /api/status
+```
+
+#### Task Management
+
+```http
+GET /api/tasks
+POST /api/tasks/:taskName/run
+POST /api/tasks/:taskName/pause
+POST /api/tasks/:taskName/resume
+```
+
+#### Scheduling
+
+```http
+GET /api/scheduling
+POST /api/scheduling/recalculate
+```
+
+#### Anomalies
+
+```http
+GET /api/anomalies
+```
+
+#### Reports
+
+```http
+GET /api/reports
+POST /api/reports/generate
+```
+
+#### System Controls
+
+```http
+POST /api/system/restart
+POST /api/system/shutdown
+```
+
+## 🚨 Troubleshooting
 
 ### Common Issues
-1. **Slack webhook not responding**
-   - Check webhook URL configuration
-   - Verify bot token permissions
-   - Test with curl command
 
-2. **Cursor agent not triggering**
-   - Verify API key configuration
-   - Check rule file syntax
-   - Review agent logs
+**Task failures**
 
-3. **Performance monitoring gaps**
-   - Check monitoring script execution
-   - Verify threshold configurations
-   - Review log collection
+- Check logs in dashboard
+- Verify task configuration
+- Ensure required tools are installed
 
-### Debug Commands
-```bash
-# Test Slack connection
-npm run automation:test-slack
+**Slack notifications not working**
 
-# Validate Cursor configuration
-npm run automation:test-cursor
+- Verify SLACK_WEBHOOK_URL is set
+- Check webhook URL is valid
+- Ensure channel exists
 
-# Check performance monitoring
-npm run automation:test-monitoring
+**Dashboard not accessible**
 
-# Full system diagnostic
-npm run automation:diagnose
-```
+- Check port configuration
+- Verify firewall settings
+- Check for port conflicts
 
-## 📚 Documentation
+**GitHub PR creation fails**
 
-- [Slack Integration Guide](./docs/slack-integration.md)
-- [Cursor Agent Configuration](./docs/cursor-agents.md)
-- [Performance Monitoring](./docs/performance-monitoring.md)
-- [Troubleshooting Guide](./docs/troubleshooting.md)
-- [API Reference](./docs/api-reference.md)
+- Verify GitHub CLI is authenticated
+- Check repository permissions
+- Ensure branch protection rules allow automation
+
+### Logs
+
+- System logs are available in the dashboard
+- Task-specific logs are shown in task details
+- Error logs include stack traces and context
+
+### Self-Healing
+
+The system automatically attempts to recover from:
+
+- Network connectivity issues
+- Git configuration problems
+- Permission errors
+- Resource constraints
+
+## 🔒 Security
+
+### Authentication
+
+- Optional basic auth for dashboard
+- Environment variable configuration
+- Secure credential management
+
+### Permissions
+
+- Minimal required permissions
+- Principle of least privilege
+- Audit trail for all actions
+
+### Data Protection
+
+- No sensitive data logging
+- Secure configuration storage
+- Encrypted communication
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create feature branch
-3. Add tests for new functionality
-4. Submit pull request
+### Adding New Tasks
+
+1. Create task class extending `AutomationTask`
+2. Implement required methods
+3. Add to task registry
+4. Update configuration schema
+
+### Extending Components
+
+1. Follow existing patterns
+2. Add comprehensive error handling
+3. Include self-healing capabilities
+4. Add monitoring and metrics
 
 ## 📄 License
 
-MIT License - see [LICENSE](./LICENSE) for details
+This project is licensed under the MIT License.
+
+## 🆘 Support
+
+For issues and questions:
+
+1. Check the troubleshooting section
+2. Review logs and error messages
+3. Check configuration settings
+4. Open an issue with detailed information
+
+---
+
+**Built with ❤️ for autonomous development workflows**

@@ -1,0 +1,378 @@
+{
+  "summary": {
+    "timestamp": "2025-08-10T11:39:36.650Z",
+    "totals": {
+      "checked": 52,
+      "broken": 0,
+      "external": 0,
+      "internal": 52,
+      "relative": 0
+    }
+  },
+  "results": [
+    {
+      "file": "/workspace/pages/services/ai-model-development-chat.tsx",
+      "link": "/services",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/services/ai-seo-auditor.tsx",
+      "link": "/services",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/services/api-development-chat.tsx",
+      "link": "/services",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/services/business-intelligence-chat.tsx",
+      "link": "/services",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/services/cloud-migration-services-chat.tsx",
+      "link": "/services",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/services/customer-support-chatbot.tsx",
+      "link": "/services",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/services/data-pipeline-engineering-chat.tsx",
+      "link": "/services",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/services/database-design-chat.tsx",
+      "link": "/services",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/services/index.tsx",
+      "link": "/services",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/services/instagram-content-scheduler.tsx",
+      "link": "/services",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/services/landing-page-generator.tsx",
+      "link": "/services",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/services/mobile-app-development-chat.tsx",
+      "link": "/services",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/services/network-security-chat.tsx",
+      "link": "/services",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/services/performance-optimization-chat.tsx",
+      "link": "/services",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/services/price-intelligence-service.tsx",
+      "link": "/services",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/services/quality-assurance-testing-chat.tsx",
+      "link": "/services",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/services/security-auditing-chat.tsx",
+      "link": "/services",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/services/system-administration-chat.tsx",
+      "link": "/services",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/services/technical-documentation-chat.tsx",
+      "link": "/services",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/services/ui-ux-design-chat.tsx",
+      "link": "/services",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/services/web-application-development-chat.tsx",
+      "link": "/services",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/category/ai-consulting-chat.tsx",
+      "link": "/blog",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/category/business-intelligence-chat.tsx",
+      "link": "/blog",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/category/cloud-architecture-chat.tsx",
+      "link": "/blog",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/category/cybersecurity-chat.tsx",
+      "link": "/blog",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/category/data-science-chat.tsx",
+      "link": "/blog",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/category/database-administration-chat.tsx",
+      "link": "/blog",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/category/devops-automation-chat.tsx",
+      "link": "/blog",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/category/mobile-development-chat.tsx",
+      "link": "/blog",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/category/network-engineering-chat.tsx",
+      "link": "/blog",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/category/product-management-chat.tsx",
+      "link": "/blog",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/category/quality-assurance-chat.tsx",
+      "link": "/blog",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/category/system-administration-chat.tsx",
+      "link": "/blog",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/category/technical-writing-chat.tsx",
+      "link": "/blog",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/category/ui-ux-design-chat.tsx",
+      "link": "/blog",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/category/web-development-chat.tsx",
+      "link": "/blog",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/blog/5g-technology-and-its-impact-on-iot-chat.tsx",
+      "link": "/blog",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/blog/ai-powered-marketplaces-the-future-of-digital-commerce-chat.tsx",
+      "link": "/blog",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/blog/api-first-development-building-scalable-systems-chat.tsx",
+      "link": "/blog",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/blog/augmented-reality-in-enterprise-applications-chat.tsx",
+      "link": "/blog",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/blog/blockchain-technology-in-modern-business-solutions-chat.tsx",
+      "link": "/blog",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/blog/cloud-native-architecture-best-practices-chat.tsx",
+      "link": "/blog",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/blog/cybersecurity-trends-for-2024-and-beyond-chat.tsx",
+      "link": "/blog",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/blog/data-analytics-in-digital-transformation-chat.tsx",
+      "link": "/blog",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/blog/devops-automation-strategies-for-modern-teams-chat.tsx",
+      "link": "/blog",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/blog/digital-twins-revolutionizing-industry-4-0-chat.tsx",
+      "link": "/blog",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/blog/index.tsx",
+      "link": "/blog",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/blog/machine-learning-applications-in-enterprise-software-chat.tsx",
+      "link": "/blog",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/blog/microservices-architecture-benefits-and-challenges-chat.tsx",
+      "link": "/blog",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/blog/quantum-computing-implications-for-business-chat.tsx",
+      "link": "/blog",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/blog/sustainable-technology-green-computing-solutions-chat.tsx",
+      "link": "/blog",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    },
+    {
+      "file": "/workspace/pages/blog/the-rise-of-edge-computing-in-iot-applications-chat.tsx",
+      "link": "/blog",
+      "type": "internal",
+      "ok": true,
+      "status": 200
+    }
+  ]
+}
