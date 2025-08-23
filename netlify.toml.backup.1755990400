@@ -293,6 +293,12 @@
   name = "duplicate-media-finder-runner"
   schedule = "0 2 * * *"
 
+<<<<<<< HEAD
+# Newly added intelligent meta orchestrator
+[[scheduled.functions]]
+  name = "intelligent-meta-orchestrator"
+  schedule = "*/3 * * * *"
+=======
 # Cron Hub — intelligent cloud schedulers
 [[scheduled.functions]]
   name = "cron-hub"
@@ -305,3 +311,4 @@
 [[scheduled.functions]]
   name = "cron-heartbeat"
   schedule = "*/1 * * * *"
+>>>>>>> origin/cursor/automate-cloud-cron-jobs-and-sync-repository-16dc
