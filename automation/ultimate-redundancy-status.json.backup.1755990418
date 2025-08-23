@@ -6,13 +6,21 @@
     "totalWorkflows": 4,
     "validWorkflows": 4,
     "healthScore": 100,
+<<<<<<< HEAD
+    "lastCheck": "2025-08-19T17:35:00.438Z"
+=======
     "lastCheck": "2025-08-19T17:38:00.067Z"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-bdcb
   },
   "netlifyFunctionsStatus": {
     "totalFunctions": 0,
     "validFunctions": 0,
     "healthScore": 100,
+<<<<<<< HEAD
+    "lastCheck": "2025-08-19T17:35:00.336Z"
+=======
     "lastCheck": "2025-08-19T17:38:00.053Z"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-bdcb
   },
   "buildStatus": {
     "totalFiles": 3,
@@ -24,7 +32,11 @@
     "isGitRepo": true,
     "canExecuteGit": true,
     "healthScore": 100,
+<<<<<<< HEAD
+    "lastCheck": "2025-08-19T17:35:00.437Z"
+=======
     "lastCheck": "2025-08-19T17:38:00.066Z"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-bdcb
   },
   "healthScore": 80,
   "totalChecks": 2,
