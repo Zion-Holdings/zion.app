@@ -1,13 +1,9 @@
 import React, { useEffect, useState, ReactNode } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Smartphone, Tablet, Monitor, Wifi, 
-  Battery, Zap, Eye
-} from 'lucide-react';
+
+
 
 interface MobileOptimizerProps {
   children: ReactNode;
-  showDebugInfo?: boolean;
   enableTouchGestures?: boolean;
   optimizeImages?: boolean;
   enablePWA?: boolean;
@@ -32,7 +28,6 @@ interface DeviceInfo {
 
 const MobileOptimizer: React.FC<MobileOptimizerProps> = ({
   children,
-  showDebugInfo = false,
   enableTouchGestures = true,
   optimizeImages = true,
   enablePWA = true
@@ -45,13 +40,8 @@ const MobileOptimizer: React.FC<MobileOptimizerProps> = ({
     touchSupport: false
   });
 
-  const [showLocalDebugInfo, setShowLocalDebugInfo] = useState(false);
-  const [performanceMetrics, setPerformanceMetrics] = useState({
-    loadTime: 0,
-    memoryUsage: 0,
-    networkSpeed: 0,
-    batteryLevel: 0
-  });
+  // const [showLocalDebugInfo, setShowLocalDebugInfo] = useState(false);
+
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -122,47 +112,7 @@ const MobileOptimizer: React.FC<MobileOptimizerProps> = ({
   }, []);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      // Performance monitoring
-      const measurePerformance = () => {
-        const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-        if (navigation) {
-          const loadTime = navigation.loadEventEnd - navigation.loadEventStart;
-          setPerformanceMetrics(prev => ({ ...prev, loadTime }));
-        }
 
-        // Memory usage (if available)
-        if ('memory' in performance) {
-          const memory = (performance as any).memory;
-          const memoryUsage = (memory.usedJSHeapSize / memory.jsHeapSizeLimit) * 100;
-          setPerformanceMetrics(prev => ({ ...prev, memoryUsage }));
-        }
-
-        // Network speed
-        if (deviceInfo?.connection) {
-          setPerformanceMetrics(prev => ({ 
-            ...prev, 
-            networkSpeed: deviceInfo.connection!.downlink 
-          }));
-        }
-
-        // Battery level
-        if (deviceInfo?.battery) {
-          setPerformanceMetrics(prev => ({ 
-            ...prev, 
-            batteryLevel: deviceInfo.battery!.level * 100 
-          }));
-        }
-      };
-
-      // Measure after page load
-      if (document.readyState === 'complete') {
-        measurePerformance();
-      } else {
-        window.addEventListener('load', measurePerformance);
-        return () => window.removeEventListener('load', measurePerformance);
-      }
-    }
   }, [deviceInfo]);
 
   useEffect(() => {
@@ -233,7 +183,7 @@ const MobileOptimizer: React.FC<MobileOptimizerProps> = ({
           const imageObserver = new window.IntersectionObserver((entries) => {
             entries.forEach((entry) => {
               if (entry.isIntersecting) {
-                const img = entry.target as window.HTMLImageElement;
+                const img = entry.target as any;
                 if (img.dataset.src) {
                   img.src = img.dataset.src;
                   img.classList.remove('lazy');
@@ -301,118 +251,7 @@ const MobileOptimizer: React.FC<MobileOptimizerProps> = ({
     <>
       {children}
       
-      {/* Debug Panel */}
-      <AnimatePresence>
-        {showLocalDebugInfo && (
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 50 }}
-            className="fixed bottom-4 left-4 z-50 bg-black/95 backdrop-blur-sm border border-gray-700 rounded-lg shadow-2xl max-w-sm"
-          >
-            <div className="p-4">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-white font-semibold text-lg">Mobile Debug</h3>
-                <button
-                  onClick={() => setShowLocalDebugInfo(false)}
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  ×
-                </button>
-              </div>
 
-              {/* Device Info */}
-              <div className="space-y-3 mb-4">
-                <div className="flex items-center space-x-2 text-white">
-                  {deviceInfo.type === 'mobile' && <Smartphone className="w-4 h-4 text-blue-400" />}
-                  {deviceInfo.type === 'tablet' && <Tablet className="w-4 h-4 text-green-400" />}
-                  {deviceInfo.type === 'desktop' && <Monitor className="w-4 h-4 text-purple-400" />}
-                  <span className="text-sm capitalize">{deviceInfo.type}</span>
-                </div>
-
-                <div className="text-gray-300 text-xs">
-                  <div>Screen: {deviceInfo.screenSize.width} × {deviceInfo.screenSize.height}</div>
-                  <div>Orientation: {deviceInfo.orientation}</div>
-                  <div>Pixel Ratio: {deviceInfo.pixelRatio}</div>
-                  <div>Touch: {deviceInfo.touchSupport ? 'Yes' : 'No'}</div>
-                </div>
-              </div>
-
-              {/* Performance Metrics */}
-              <div className="space-y-2 mb-4">
-                <h4 className="text-white font-medium text-sm">Performance</h4>
-                <div className="text-gray-300 text-xs space-y-1">
-                  <div>Load Time: {performanceMetrics.loadTime.toFixed(0)}ms</div>
-                  <div>Memory: {performanceMetrics.memoryUsage.toFixed(1)}%</div>
-                  <div>Battery: {performanceMetrics.batteryLevel.toFixed(0)}%</div>
-                  <div>Network: {performanceMetrics.networkSpeed.toFixed(1)}Mbps</div>
-                </div>
-              </div>
-
-              {/* Network Info */}
-              {deviceInfo.connection && (
-                <div className="space-y-2 mb-4">
-                  <h4 className="text-white font-medium text-sm">Network</h4>
-                  <div className="text-gray-300 text-xs space-y-1">
-                    <div className="flex items-center space-x-2">
-                      <Wifi className="w-3 h-3" />
-                      <span>{deviceInfo.connection.effectiveType}</span>
-                    </div>
-                    <div>Downlink: {deviceInfo.connection.downlink}Mbps</div>
-                    <div>RTT: {deviceInfo.connection.rtt}ms</div>
-                  </div>
-                </div>
-              )}
-
-              {/* Battery Info */}
-              {deviceInfo.battery && (
-                <div className="space-y-2 mb-4">
-                  <h4 className="text-white font-medium text-sm">Battery</h4>
-                  <div className="text-gray-300 text-xs space-y-1">
-                    <div className="flex items-center space-x-2">
-                      <Battery className="w-3 h-3" />
-                      <span>{deviceInfo.battery.level * 100}%</span>
-                    </div>
-                    <div>Charging: {deviceInfo.battery.charging ? 'Yes' : 'No'}</div>
-                  </div>
-                </div>
-              )}
-
-              {/* Quick Actions */}
-              <div className="space-y-2">
-                <button
-                  onClick={() => window.location.reload()}
-                  className="w-full p-2 bg-blue-600 hover:bg-blue-700 text-white rounded text-sm transition-colors flex items-center justify-center space-x-2"
-                >
-                  <Zap className="w-3 h-3" />
-                  <span>Refresh</span>
-                </button>
-                
-                <button
-                  onClick={() => setShowLocalDebugInfo(false)}
-                  className="w-full p-2 bg-gray-700 hover:bg-gray-600 text-white rounded text-sm transition-colors flex items-center justify-center space-x-2"
-                >
-                  <Eye className="w-3 h-3" />
-                  <span>Hide Debug</span>
-                </button>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Debug Toggle Button */}
-      {!showLocalDebugInfo && (
-        <motion.button
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          onClick={() => setShowLocalDebugInfo(true)}
-          className="fixed bottom-4 left-4 z-40 bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-black"
-          aria-label="Show mobile debug panel"
-        >
-          <Smartphone className="w-5 h-5" />
-        </motion.button>
-      )}
 
       {/* Mobile-specific CSS variables */}
       <style jsx global>{`
