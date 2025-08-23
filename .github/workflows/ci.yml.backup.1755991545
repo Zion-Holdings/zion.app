@@ -20,6 +20,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+<<<<<<< HEAD
+      - run: npm ci
+      - name: Pre-generate marketplace data
+        run: node automation/marketplace-orchestrator.cjs once || true
+      - run: npm run build
+=======
           cache: 'npm'
 
       - name: Install dependencies
@@ -57,3 +63,4 @@ jobs:
         continue-on-error: true
 
 
+>>>>>>> origin/cursor/enhance-and-automate-web-app-with-ai-ae0d
