@@ -1,110 +1,99 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { 
-  Search, 
-  Brain, 
-  TestTube, 
-  BookOpen, 
-  TrendingUp, 
-  Users,
-  Globe,
-  CheckCircle,
-  ArrowRight,
-  Play,
-  Database,
-  Lightbulb
-} from 'lucide-react';
+import { Zap, Brain, Target, Search, Award, Clock, CheckCircle, Shield, Database, Server, Layers, FileText } from 'lucide-react';
 
 const AIAutonomousResearch: React.FC = () => {
-  const researchAreas = [
+  const features = [
     {
-      icon: <Brain className="w-6 h-6" />,
-      title: "AI Consciousness",
-      description: "Advanced research into artificial consciousness and self-aware systems"
+      icon: Zap,
+      title: "Autonomous Discovery",
+      description: "AI-driven research and discovery processes"
     },
     {
-      icon: <TestTube className="w-6 h-6" />,
-      title: "Quantum AI",
-      description: "Exploration of quantum computing applications in artificial intelligence"
+      icon: Brain,
+      title: "Intelligent Analysis",
+      description: "Advanced AI analysis and pattern recognition"
     },
     {
-      icon: <Globe className="w-6 h-6" />,
-      title: "Space Technology",
-      description: "Research into AI applications for space exploration and colonization"
+      icon: Target,
+      title: "Research Automation",
+      description: "Automated research workflows and processes"
     },
     {
-      icon: <Database className="w-6 h-6" />,
-      title: "Neural Networks",
-      description: "Advanced neural network architectures and learning algorithms"
+      icon: Search,
+      title: "Data Mining",
+      description: "Intelligent data extraction and analysis"
     }
   ];
 
   const capabilities = [
-    "Autonomous hypothesis generation and testing",
-    "Real-time data analysis and pattern recognition",
-    "Cross-domain knowledge synthesis",
-    "Predictive modeling and forecasting",
-    "Automated literature review and synthesis",
-    "Collaborative research with human scientists",
-    "Continuous learning and adaptation",
-    "Ethical AI research and governance"
+    "Autonomous research workflows",
+    "Intelligent data analysis",
+    "Pattern recognition algorithms",
+    "Automated hypothesis generation",
+    "Research process optimization",
+    "Cross-domain knowledge synthesis"
   ];
 
   const applications = [
-    {
-      field: "Scientific Discovery",
-      research: ["Drug Discovery", "Material Science", "Climate Modeling", "Astrophysics"]
-    },
-    {
-      field: "Technology Innovation",
-      research: ["Quantum Computing", "Robotics", "Biotechnology", "Energy Systems"]
-    },
-    {
-      field: "Social Sciences",
-      research: ["Economics", "Psychology", "Sociology", "Political Science"]
-    },
-    {
-      field: "Environmental Studies",
-      research: ["Climate Change", "Biodiversity", "Sustainability", "Resource Management"]
-    }
+    "Scientific research",
+    "Market analysis",
+    "Technology development",
+    "Medical research",
+    "Academic studies",
+    "Innovation discovery"
   ];
 
   return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <Layout
+      title="AI Autonomous Research - Zion Tech Group"
+      description="Revolutionary AI autonomous research platform that automates research processes, discovers patterns, and generates insights across multiple domains."
+      keywords="AI research, autonomous research, AI discovery, research automation, Zion Tech Group"
+    >
+      <div className="min-h-screen bg-black text-white">
         {/* Hero Section */}
-        <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8">
-          <div className="absolute inset-0 bg-gradient-to-r from-indigo-600/20 to-purple-600/20" />
-          <div className="relative max-w-7xl mx-auto text-center">
+        <section className="relative py-20 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-green-900/20 via-emerald-900/20 to-teal-900/20"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(34,197,94,0.1),transparent_50%)]"></div>
+          
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              className="text-center"
             >
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              <div className="flex justify-center mb-6">
+                <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center">
+                  <Zap className="w-10 h-10 text-white" />
+                </div>
+              </div>
+              
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 bg-clip-text text-transparent">
                 AI Autonomous Research
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-                Revolutionize scientific discovery with autonomous AI systems that conduct research, 
-                generate hypotheses, and make breakthrough discoveries 24/7
+              
+              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+                Transform research with our AI autonomous research platform, 
+                automating discovery processes and generating breakthrough insights.
               </p>
+              
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
-                  <Play className="w-5 h-5 inline mr-2" />
-                  Explore Research
-                </button>
-                <button className="border-2 border-white/30 text-white hover:bg-white/10 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
+                <button className="px-8 py-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-semibold rounded-lg hover:from-green-600 hover:to-emerald-600 transition-all duration-200 transform hover:scale-105">
                   Start Research
+                </button>
+                <button className="px-8 py-3 border border-green-500 text-green-400 font-semibold rounded-lg hover:bg-green-500 hover:text-white transition-all duration-200">
+                  Request Demo
                 </button>
               </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Research Areas */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
+        {/* Features Section */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -112,27 +101,29 @@ const AIAutonomousResearch: React.FC = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Research Focus Areas
+              <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+                Revolutionary Features
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our autonomous AI research spans cutting-edge domains that are shaping the future
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                Our AI autonomous research platform delivers breakthrough capabilities
               </p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {researchAreas.map((area, index) => (
+              {features.map((feature, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 text-center"
+                  className="bg-gray-900/50 backdrop-blur-sm border border-green-500/20 rounded-xl p-6 hover:border-green-500/40 transition-all duration-300"
                 >
-                  <div className="text-indigo-400 mb-4 flex justify-center">{area.icon}</div>
-                  <h3 className="text-xl font-semibold text-white mb-3">{area.title}</h3>
-                  <p className="text-gray-300">{area.description}</p>
+                  <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mb-4">
+                    <feature.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2 text-white">{feature.title}</h3>
+                  <p className="text-gray-400 text-sm leading-relaxed">{feature.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -140,8 +131,8 @@ const AIAutonomousResearch: React.FC = () => {
         </section>
 
         {/* Capabilities Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white/5">
-          <div className="max-w-7xl mx-auto">
+        <section className="py-20 bg-gray-900/30">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -149,11 +140,11 @@ const AIAutonomousResearch: React.FC = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Advanced Research Capabilities
+              <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+                Core Capabilities
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our autonomous AI systems deliver unprecedented research capabilities
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                Advanced AI research capabilities that revolutionize discovery
               </p>
             </motion.div>
 
@@ -163,11 +154,13 @@ const AIAutonomousResearch: React.FC = () => {
                   key={index}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex items-center space-x-3"
+                  className="flex items-center space-x-4"
                 >
-                  <CheckCircle className="w-6 h-6 text-indigo-400 flex-shrink-0" />
+                  <div className="w-8 h-8 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center flex-shrink-0">
+                    <CheckCircle className="w-5 h-5 text-white" />
+                  </div>
                   <span className="text-gray-300 text-lg">{capability}</span>
                 </motion.div>
               ))}
@@ -176,8 +169,8 @@ const AIAutonomousResearch: React.FC = () => {
         </section>
 
         {/* Applications Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -185,97 +178,53 @@ const AIAutonomousResearch: React.FC = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
                 Research Applications
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our autonomous research AI is transforming discovery across multiple fields
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                Transform research across multiple domains
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {applications.map((application, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6"
+                  className="bg-gray-900/50 backdrop-blur-sm border border-green-500/20 rounded-xl p-6 hover:border-green-500/40 transition-all duration-300"
                 >
-                  <h3 className="text-xl font-semibold text-white mb-4 text-center">{application.field}</h3>
-                  <ul className="space-y-2">
-                    {application.research.map((item, itemIndex) => (
-                      <li key={itemIndex} className="flex items-center text-gray-300">
-                        <ArrowRight className="w-4 h-4 text-indigo-400 mr-2 flex-shrink-0" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mb-4">
+                    <Target className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 text-white">{application}</h3>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Benefits Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white/5">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                <div className="text-4xl font-bold text-indigo-400 mb-2">1000x</div>
-                <div className="text-gray-300 text-lg">Faster Discovery</div>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                <div className="text-4xl font-bold text-purple-400 mb-2">24/7</div>
-                <div className="text-gray-300 text-lg">Research Operation</div>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                viewport={{ once: true }}
-              >
-                <div className="text-4xl font-bold text-blue-400 mb-2">∞</div>
-                <div className="text-gray-300 text-lg">Knowledge Synthesis</div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
         {/* CTA Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
+        <section className="py-20 bg-gray-900/30">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
+              className="text-center"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Ready to Accelerate Discovery?
+              <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
+                Ready for AI Research?
               </h2>
-              <p className="text-xl text-gray-300 mb-8">
-                Join the future of autonomous AI-powered research and discovery
+              <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
+                Automate your research with AI intelligence
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
-                  Start Research
-                </button>
-                <button className="border-2 border-white/30 text-white hover:bg-white/10 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
-                  Learn More
-                </button>
-              </div>
+              <button className="px-10 py-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-semibold text-lg rounded-lg hover:from-green-600 hover:to-emerald-600 transition-all duration-200 transform hover:scale-105">
+                Start AI Research
+              </button>
             </motion.div>
           </div>
         </section>
