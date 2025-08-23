@@ -2,327 +2,230 @@
 
 ## Overview
 
-This document provides comprehensive documentation for all APIs, automation endpoints, and integration points available in the bolt.new.zion.app system.
+This document provides comprehensive information about the APIs, automation endpoints, and integration capabilities of bolt.new.zion.app.
 
-## Base URLs
+## Core APIs
 
-- **Development**: `http://localhost:3000`
-- **Production**: `https://bolt.new.zion.app`
-- **API Base**: `/api`
+### Content Management API
 
-## Authentication
+#### GET `/api/content`
+Retrieves content metadata and statistics.
 
-### API Keys
-Most endpoints require authentication via API keys passed in headers:
-```http
-Authorization: Bearer YOUR_API_KEY
-X-API-Key: YOUR_API_KEY
+**Response:**
+```json
+{
+  "totalPages": 2960,
+  "totalComponents": 12,
+  "automations": 227,
+  "lastUpdated": "2025-01-17T10:00:00Z"
+}
 ```
 
-### Rate Limiting
-- **Standard**: 100 requests per minute
-- **Premium**: 1000 requests per minute
-- **Enterprise**: 10000 requests per minute
+#### POST `/api/content/generate`
+Generates new content using AI automation.
 
-## Core API Endpoints
-
-### Content Management
-
-#### Get All Pages
-```http
-GET /api/pages
+**Request Body:**
+```json
+{
+  "type": "blog_post",
+  "topic": "AI Automation Trends 2025",
+  "keywords": ["automation", "AI", "trends"],
+  "length": "medium"
+}
 ```
 
 **Response:**
 ```json
 {
-  "success": true,
-  "data": {
-    "pages": [
-      {
-        "id": "page-1",
-        "title": "Homepage",
-        "slug": "/",
-        "status": "published",
-        "lastModified": "2025-01-17T10:00:00Z"
-      }
-    ],
-    "total": 2960,
-    "page": 1,
-    "limit": 50
-  }
+  "id": "content_12345",
+  "status": "generating",
+  "estimatedTime": "2-3 minutes"
 }
 ```
 
-#### Create Page
-```http
-POST /api/pages
-Content-Type: application/json
+### Automation API
 
-{
-  "title": "New Page",
-  "content": "Page content here",
-  "slug": "new-page",
-  "meta": {
-    "description": "Page description",
-    "keywords": ["keyword1", "keyword2"]
-  }
-}
-```
-
-#### Update Page
-```http
-PUT /api/pages/{pageId}
-Content-Type: application/json
-
-{
-  "title": "Updated Page Title",
-  "content": "Updated content"
-}
-```
-
-#### Delete Page
-```http
-DELETE /api/pages/{pageId}
-```
-
-### Automation Management
-
-#### Get Automation Status
-```http
-GET /api/automation/status
-```
+#### GET `/api/automation/status`
+Returns the current status of all automation systems.
 
 **Response:**
 ```json
 {
-  "success": true,
-  "data": {
-    "totalAutomations": 227,
-    "activeAutomations": 45,
-    "failedAutomations": 2,
-    "automations": [
-      {
-        "id": "content-sync",
-        "name": "Content Synchronization",
-        "status": "running",
-        "lastRun": "2025-01-17T09:30:00Z",
-        "nextRun": "2025-01-17T10:00:00Z"
-      }
-    ]
-  }
+  "systems": {
+    "content_generation": "active",
+    "seo_optimization": "active",
+    "security_monitoring": "active",
+    "performance_tracking": "active"
+  },
+  "lastRun": "2025-01-17T09:55:00Z",
+  "nextRun": "2025-01-17T10:00:00Z"
 }
 ```
 
-#### Start Automation
-```http
-POST /api/automation/start
-Content-Type: application/json
+#### POST `/api/automation/trigger`
+Manually triggers a specific automation workflow.
 
+**Request Body:**
+```json
 {
-  "automationId": "content-sync",
+  "workflow": "content_quality_audit",
+  "priority": "high",
   "parameters": {
-    "force": true,
-    "priority": "high"
+    "scope": "all_pages",
+    "fixIssues": true
   }
 }
 ```
 
-#### Stop Automation
-```http
-POST /api/automation/stop
-Content-Type: application/json
+### SEO API
 
-{
-  "automationId": "content-sync"
-}
-```
-
-### Monitoring & Health
-
-#### System Health Check
-```http
-GET /api/health
-```
-
-**Response:**
-```json
-{
-  "success": true,
-  "data": {
-    "status": "healthy",
-    "timestamp": "2025-01-17T10:00:00Z",
-    "services": {
-      "database": "healthy",
-      "cache": "healthy",
-      "automation": "healthy"
-    },
-    "metrics": {
-      "uptime": "99.9%",
-      "responseTime": "45ms",
-      "activeConnections": 125
-    }
-  }
-}
-```
-
-#### Performance Metrics
-```http
-GET /api/metrics/performance
-```
+#### GET `/api/seo/analysis`
+Performs SEO analysis on specified pages.
 
 **Query Parameters:**
-- `period`: Time period (1h, 24h, 7d, 30d)
-- `metric`: Specific metric (responseTime, throughput, errors)
+- `url` - Page URL to analyze
+- `depth` - Analysis depth (basic, standard, comprehensive)
+
+**Response:**
+```json
+{
+  "score": 85,
+  "issues": [
+    {
+      "type": "meta_description",
+      "severity": "medium",
+      "description": "Missing meta description",
+      "fix": "Add meta description tag"
+    }
+  ],
+  "recommendations": [
+    "Optimize page title length",
+    "Add structured data markup"
+  ]
+}
+```
+
+#### POST `/api/seo/optimize`
+Automatically optimizes SEO elements.
+
+**Request Body:**
+```json
+{
+  "url": "/blog/ai-automation-trends-2025",
+  "optimizations": ["meta_tags", "structured_data", "internal_links"]
+}
+```
+
+## Automation Endpoints
 
 ### Content Generation
 
-#### Generate Content
-```http
-POST /api/content/generate
-Content-Type: application/json
+#### `/api/automation/content/factory`
+AI-powered content generation system.
 
-{
-  "type": "blog-post",
-  "topic": "AI Automation Trends 2025",
-  "length": "medium",
-  "tone": "professional",
-  "keywords": ["AI", "automation", "trends"]
-}
-```
+**Features:**
+- Blog post generation
+- Case study creation
+- Resource page development
+- SEO optimization
 
-#### Content Templates
-```http
-GET /api/content/templates
-```
+#### `/api/automation/content/quality`
+Content quality assessment and improvement.
 
-**Response:**
-```json
-{
-  "success": true,
-  "data": {
-    "templates": [
-      {
-        "id": "blog-post",
-        "name": "Blog Post",
-        "description": "Standard blog post template",
-        "fields": ["title", "content", "meta", "tags"],
-        "example": "..."
-      }
-    ]
-  }
-}
-```
+**Capabilities:**
+- Grammar and style checking
+- SEO optimization
+- Readability scoring
+- Content gap analysis
 
-## Automation Scripts API
+### Performance Monitoring
 
-### PM2 Management
+#### `/api/automation/performance/lighthouse`
+Lighthouse performance monitoring.
 
-#### Get PM2 Status
-```http
-GET /api/pm2/status
-```
+**Metrics:**
+- Performance score
+- Accessibility score
+- Best practices score
+- SEO score
 
-#### Start PM2 Process
-```http
-POST /api/pm2/start
-Content-Type: application/json
+#### `/api/automation/performance/budgets`
+Performance budget monitoring.
 
-{
-  "ecosystem": "ecosystem.config.cjs",
-  "process": "app"
-}
-```
+**Thresholds:**
+- First Contentful Paint: < 1.5s
+- Largest Contentful Paint: < 2.5s
+- Cumulative Layout Shift: < 0.1
 
-#### Restart PM2 Process
-```http
-POST /api/pm2/restart
-Content-Type: application/json
+### Security
 
-{
-  "process": "app"
-}
-```
+#### `/api/automation/security/scan`
+Automated security scanning.
+
+**Scans:**
+- Dependency vulnerabilities
+- Code security issues
+- Configuration security
+- Access control review
+
+## Integration APIs
 
 ### GitHub Actions Integration
 
-#### Trigger Workflow
-```http
-POST /api/github/workflows/trigger
-Content-Type: application/json
+#### `/api/integration/github/status`
+GitHub Actions workflow status.
 
-{
-  "workflow": "ci-cd",
-  "ref": "main",
-  "inputs": {
-    "environment": "production"
-  }
-}
-```
+#### `/api/integration/github/trigger`
+Trigger GitHub Actions workflows.
 
-#### Get Workflow Status
-```http
-GET /api/github/workflows/{workflowId}/status
-```
+### Netlify Integration
 
-### LinkedIn Automation
+#### `/api/integration/netlify/deploy`
+Trigger Netlify deployments.
 
-#### Generate Content
-```http
-POST /api/linkedin/generate
-Content-Type: application/json
+#### `/api/integration/netlify/functions`
+Manage Netlify functions.
 
-{
-  "type": "post",
-  "topic": "AI trends",
-  "tone": "professional",
-  "hashtags": ["#AI", "#Automation"]
-}
-```
+### PM2 Integration
 
-#### Schedule Post
-```http
-POST /api/linkedin/schedule
-Content-Type: application/json
+#### `/api/integration/pm2/status`
+PM2 process status.
 
-{
-  "content": "Post content here",
-  "scheduledTime": "2025-01-18T10:00:00Z",
-  "platform": "linkedin"
-}
-```
+#### `/api/integration/pm2/restart`
+Restart PM2 processes.
 
 ## Webhook Endpoints
 
-### Content Webhooks
+### Content Updates
 
-#### Content Update Webhook
-```http
-POST /api/webhooks/content-update
-Content-Type: application/json
+#### POST `/api/webhooks/content/updated`
+Triggered when content is updated.
 
+**Payload:**
+```json
 {
-  "event": "page.updated",
-  "data": {
-    "pageId": "page-123",
-    "changes": ["title", "content"],
-    "timestamp": "2025-01-17T10:00:00Z"
-  }
+  "event": "content_updated",
+  "page": "/blog/new-post",
+  "timestamp": "2025-01-17T10:00:00Z",
+  "changes": ["title", "content", "meta_tags"]
 }
 ```
 
-#### Automation Complete Webhook
-```http
-POST /api/webhooks/automation-complete
-Content-Type: application/json
+### Automation Events
 
+#### POST `/api/webhooks/automation/completed`
+Triggered when automation completes.
+
+**Payload:**
+```json
 {
-  "event": "automation.completed",
-  "data": {
-    "automationId": "content-sync",
-    "status": "success",
-    "duration": 45000,
-    "timestamp": "2025-01-17T10:00:00Z"
+  "event": "automation_completed",
+  "workflow": "content_generation",
+  "status": "success",
+  "duration": "2m 30s",
+  "results": {
+    "pagesCreated": 5,
+    "issuesFixed": 12
   }
 }
 ```
@@ -332,146 +235,96 @@ Content-Type: application/json
 ### Standard Error Response
 ```json
 {
-  "success": false,
   "error": {
     "code": "VALIDATION_ERROR",
-    "message": "Invalid input parameters",
-    "details": [
-      {
-        "field": "title",
-        "message": "Title is required"
-      }
-    ]
+    "message": "Invalid request parameters",
+    "details": {
+      "field": "url",
+      "issue": "URL format is invalid"
+    }
   },
-  "timestamp": "2025-01-17T10:00:00Z"
+  "timestamp": "2025-01-17T10:00:00Z",
+  "requestId": "req_12345"
 }
 ```
 
 ### Error Codes
-- `AUTHENTICATION_ERROR`: Invalid or missing authentication
-- `AUTHORIZATION_ERROR`: Insufficient permissions
-- `VALIDATION_ERROR`: Invalid input parameters
-- `NOT_FOUND`: Resource not found
-- `RATE_LIMIT_EXCEEDED`: Too many requests
-- `INTERNAL_ERROR`: Server error
+- `VALIDATION_ERROR` - Invalid request parameters
+- `AUTHENTICATION_ERROR` - Authentication required
+- `AUTHORIZATION_ERROR` - Insufficient permissions
+- `RESOURCE_NOT_FOUND` - Requested resource not found
+- `INTERNAL_ERROR` - Server-side error
+- `RATE_LIMIT_EXCEEDED` - Too many requests
+
+## Rate Limiting
+
+- **Standard endpoints**: 100 requests per minute
+- **Automation endpoints**: 10 requests per minute
+- **Webhook endpoints**: 1000 requests per minute
+
+## Authentication
+
+### API Keys
+Include your API key in the `Authorization` header:
+```
+Authorization: Bearer YOUR_API_KEY
+```
+
+### OAuth 2.0
+For OAuth integration, use the standard OAuth 2.0 flow with these endpoints:
+- `/oauth/authorize` - Authorization endpoint
+- `/oauth/token` - Token endpoint
+- `/oauth/revoke` - Token revocation
 
 ## SDKs and Libraries
 
 ### JavaScript/Node.js
 ```bash
-npm install @zion-holdings/bolt-api
-```
-
-```javascript
-import { BoltAPI } from '@zion-holdings/bolt-api';
-
-const api = new BoltAPI({
-  apiKey: 'your-api-key',
-  baseURL: 'https://bolt.new.zion.app'
-});
-
-// Get pages
-const pages = await api.pages.list();
-
-// Create content
-const content = await api.content.generate({
-  type: 'blog-post',
-  topic: 'AI Trends'
-});
+npm install @zion-app/sdk
 ```
 
 ### Python
 ```bash
-pip install bolt-api-python
+pip install zion-app-sdk
 ```
 
-```python
-from bolt_api import BoltAPI
-
-api = BoltAPI(api_key='your-api-key')
-
-# Get automation status
-status = api.automation.get_status()
-
-# Generate content
-content = api.content.generate(
-    type='blog-post',
-    topic='AI Trends'
-)
+### Go
+```bash
+go get github.com/zion-app/go-sdk
 ```
 
-## Rate Limits and Quotas
+## Examples
 
-### Free Tier
-- 100 API calls per day
-- 10 automation runs per month
-- Basic content generation
-
-### Pro Tier
-- 10,000 API calls per day
-- 100 automation runs per month
-- Advanced content generation
-- Priority support
-
-### Enterprise Tier
-- Unlimited API calls
-- Unlimited automation runs
-- Custom content generation
-- Dedicated support
-- Custom integrations
-
-## WebSocket API
-
-### Real-time Updates
-
-Connect to WebSocket endpoint for real-time updates:
+### Content Generation
 ```javascript
-const ws = new WebSocket('wss://bolt.new.zion.app/ws');
+const response = await fetch('/api/automation/content/factory', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': `Bearer ${apiKey}`
+  },
+  body: JSON.stringify({
+    type: 'blog_post',
+    topic: 'Future of AI Automation',
+    keywords: ['AI', 'automation', 'future'],
+    length: 'long'
+  })
+});
 
-ws.onmessage = (event) => {
-  const data = JSON.parse(event.data);
-  
-  if (data.type === 'automation.update') {
-    console.log('Automation status:', data.data);
-  }
-};
+const result = await response.json();
 ```
 
-### WebSocket Events
-- `automation.update`: Automation status changes
-- `content.update`: Content modification events
-- `system.health`: System health updates
-- `performance.metrics`: Real-time performance data
-
-## Testing
-
-### Test Endpoints
-```http
-GET /api/test/health
-POST /api/test/webhook
-GET /api/test/automation
-```
-
-### Mock Data
-```http
-GET /api/test/mock/pages
-GET /api/test/mock/automations
-GET /api/test/mock/metrics
+### Performance Monitoring
+```javascript
+const status = await fetch('/api/automation/performance/lighthouse?url=/blog/post');
+const metrics = await status.json();
+console.log(`Performance Score: ${metrics.performance}`);
 ```
 
 ## Support
 
-### Documentation
-- [Interactive API Explorer](https://bolt.new.zion.app/api-explorer)
-- [SDK Documentation](https://docs.zion-holdings.com/bolt-api)
-- [Examples Repository](https://github.com/Zion-Holdings/bolt-api-examples)
-
-### Contact
-- **API Support**: api-support@zion-holdings.com
-- **Technical Issues**: tech-support@zion-holdings.com
-- **Feature Requests**: features@zion-holdings.com
-
----
-
-*Last updated: January 17, 2025*
-*API Version: v1.0.0*
+For API support and questions:
+- Check the [Developer Guide](./DEVELOPER_GUIDE.md)
+- Review [GitHub Issues](https://github.com/Zion-Holdings/zion.app/issues)
+- Contact the development team
+- Join community discussions
