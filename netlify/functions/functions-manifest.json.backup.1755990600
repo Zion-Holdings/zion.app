@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "generatedAt": "2025-08-11T23:40:45.305Z",
+=======
   "generatedAt": "2025-08-11T23:39:43.990Z",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-b49a
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
@@ -79,7 +83,11 @@
     "pagespeed-insights-runner",
     "performance-budget-runner",
     "readme-advertiser",
+<<<<<<< HEAD
+    "redirects-audit-runner",
+=======
     "repo-heatmap-runner",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-b49a
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",

@@ -234,6 +234,19 @@
 
 [[scheduled.functions]]
   name = "metadata-optimizer-runner"
+<<<<<<< HEAD
+  schedule = "*/15 * * * *" # every 15 minutes
+
+[[scheduled.functions]]
+  name = "seo-audit-runner"
+  schedule = "0 */2 * * *"
+
+[[scheduled.functions]]
+  name = "ai-trends-radar-runner"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+=======
   schedule = "*/15 * * * *"
 
 [[scheduled.functions]]
@@ -245,6 +258,7 @@
   schedule = "*/30 * * * *"
 
 [[scheduled.functions]]
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-b49a
   name = "stale-content-auditor-runner"
   schedule = "17 */6 * * *"
 
@@ -267,4 +281,16 @@
 
 [[scheduled.functions]]
   name = "component-size-report"
+<<<<<<< HEAD
+  schedule = "*/5 * * * *"
+
+[[scheduled.functions]]
+  name = "automation-guardian-runner"
+  schedule = "*/10 * * * *"
+
+[[scheduled.functions]]
+  name = "components-docs-runner"
+  schedule = "*/30 * * * *"
+=======
   schedule = "*/5 * * * *"}‬```
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-b49a
