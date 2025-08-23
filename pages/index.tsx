@@ -1,18 +1,3 @@
-import Head from 'next/head';
-import type { NextPage, GetStaticProps } from 'next';
-import Head from 'next/head';
-import fs from 'fs';
-import path from 'path';
-import Link from 'next/link';
-
-type Entry = { slug: string; createdAt: string; items: number };
-
-type Props = { auto: Entry[]; trends: Entry[] };
-
-const Home: NextPage<Props> = ({ auto, trends }) => {
-  const latestAuto = auto.slice(0, 5);
-  const latestTrends = trends.slice(0, 5);
-=======
 import Hero from '../components/ui/Hero';
 import FeaturesGrid from '../components/ui/FeaturesGrid';
 import Card from '../components/ui/Card';
@@ -412,3 +397,15 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 };
 
 export default Home;
+=======
+import Link from 'next/link';
+
+export default function Home() {
+  return (
+    <main className="min-h-screen p-8">
+      <h1 className="text-2xl font-semibold">Zion App</h1>
+      <p className="mt-2">Welcome. Explore the new contract builder:</p>
+      <Link href="/contract-builder"><span className="text-blue-600 underline mt-3 inline-block">Open Contract Builder</span></Link>
+    </main>
+  );
+}
