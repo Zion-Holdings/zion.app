@@ -1,9 +1,21 @@
+<<<<<<< HEAD
+import React, { Suspense, lazy } from 'react';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { 
+  ArrowRight, Star, 
+  Brain, Atom, Shield, Zap, TrendingUp, Globe,
+  Rocket, Target, Users, Cpu, Database, Cloud,
+  BarChart3, Code, Smartphone, Server, Lock,
+  Award, CheckCircle, Clock, DollarSign, Phone, Mail, MapPin
+=======
 import React, { useEffect, useState, useCallback, Suspense } from 'react';
 import Layout from './layout/Layout';
 import { motion } from 'framer-motion';
 import { 
   ArrowRight, Play, Users, TrendingUp, Brain, Shield, Rocket, Globe, Lock, Cpu, Database, Cloud, BarChart3,
   Atom, Target, Zap, Infinity, Sparkles, Star, Eye, Heart, Code, Palette, Layers, Loader2
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-71be
 } from 'lucide-react';
 
 // Import the new service data
@@ -40,6 +52,31 @@ const ErrorFallback = ({ error, resetErrorBoundary }: { error: Error; resetError
 );
 
 const Homepage2040: React.FC = () => {
+<<<<<<< HEAD
+  // Enhanced animation variants for better performance
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut" as const
+      }
+    }
+  };
+=======
   const [isVisible, setIsVisible] = useState(false);
   const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
@@ -71,6 +108,7 @@ const Homepage2040: React.FC = () => {
       return [];
     }
   }, []);
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-71be
 
   const statsData = [
     {
@@ -158,6 +196,42 @@ const Homepage2040: React.FC = () => {
     }
   ];
 
+<<<<<<< HEAD
+  const serviceCategories = [
+    {
+      name: 'AI & Machine Learning',
+      icon: Brain,
+      count: ultimate2025AIServicesExpansion.length,
+      description: 'Advanced AI solutions for enterprise',
+      href: '/ai-services',
+      color: 'from-purple-500 to-pink-500'
+    },
+    {
+      name: 'IT Infrastructure',
+      icon: Server,
+      count: ultimate2025ITServicesExpansion.length,
+      description: 'Enterprise IT solutions',
+      href: '/it-services',
+      color: 'from-blue-500 to-cyan-500'
+    },
+    {
+      name: 'Micro SAAS',
+      icon: Rocket,
+      count: ultimate2025MicroSaasExpansion.length,
+      description: 'Innovative micro services',
+      href: '/micro-saas',
+      color: 'from-emerald-500 to-teal-500'
+    },
+    {
+      name: 'Quantum Computing',
+      icon: Atom,
+      count: 25,
+      description: 'Next-generation quantum solutions',
+      href: '/quantum-computing',
+      color: 'from-indigo-500 to-purple-500'
+    }
+  ];
+=======
   const handleGetStarted = useCallback(() => {
     try {
       window.location.href = '/revolutionary-2040-2041-pricing-showcase';
@@ -173,6 +247,7 @@ const Homepage2040: React.FC = () => {
       setError('Navigation failed');
     }
   }, []);
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-71be
 
   // Show loading state
   if (isLoading) {
@@ -203,6 +278,29 @@ const Homepage2040: React.FC = () => {
   }
 
   return (
+<<<<<<< HEAD
+    <div className="relative z-10" id="main">
+      {/* Hero Section */}
+      <section 
+        className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
+        aria-labelledby="hero-heading"
+      >
+        {/* Background Elements with reduced animation for better performance */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 left-20 w-32 h-32 border border-cyan-400/20 rounded-lg animate-pulse"></div>
+          <div className="absolute top-40 right-32 w-24 h-24 border border-purple-400/20 rounded-full animate-pulse delay-1000"></div>
+          <div className="absolute bottom-32 left-32 w-40 h-40 border border-pink-400/20 transform rotate-45 animate-pulse delay-2000"></div>
+        </div>
+        
+        <div className="text-center max-w-6xl mx-auto relative z-10">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="space-y-8"
+          >
+            {/* Company Badge */}
+=======
     <Layout>
       {/* Main Content */}
       <main className="relative z-10" role="main" aria-label="Zion Tech Group Homepage">
@@ -255,6 +353,7 @@ const Homepage2040: React.FC = () => {
 
           {/* Hero Content */}
           <div className="text-center max-w-6xl mx-auto relative z-10">
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-71be
             <motion.div
               variants={itemVariants}
               className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-400/30 rounded-full text-cyan-400 text-sm font-medium"
@@ -304,8 +403,13 @@ const Homepage2040: React.FC = () => {
                 </button>
               </Link>
             </motion.div>
+<<<<<<< HEAD
+            
+            {/* Trust Indicators */}
+=======
 
             {/* Featured Service Showcase with Suspense */}
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-71be
             <motion.div
               variants={itemVariants}
               className="flex flex-wrap justify-center items-center gap-8 text-gray-400"
@@ -694,6 +798,23 @@ const Homepage2040: React.FC = () => {
                   <p className="text-cyan-400">+1 302 464 0950</p>
                 </div>
                 
+<<<<<<< HEAD
+                <div className="text-center md:text-left">
+                  <div className="w-12 h-12 mx-auto md:mx-0 mb-4 rounded-xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-cyan-400/30 flex items-center justify-center">
+                    <Mail className="w-6 h-6 text-cyan-400" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-2">Email</h3>
+                  <p className="text-cyan-400">kleber@ziontechgroup.com</p>
+                </div>
+                
+                <div className="text-center md:text-left">
+                  <div className="w-12 h-12 mx-auto md:mx-0 mb-4 rounded-xl bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-cyan-400/30 flex items-center justify-center">
+                    <MapPin className="w-6 h-6 text-cyan-400" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-2">Address</h3>
+                  <p className="text-cyan-400">364 E Main St STE 1008<br />Middletown DE 19709</p>
+                </div>
+=======
                 <Suspense fallback={<ServiceCardSkeleton />}>
                   <motion.div
                     key={currentServiceIndex}
@@ -726,8 +847,15 @@ const Homepage2040: React.FC = () => {
                     </button>
                   </motion.div>
                 </Suspense>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-71be
               </div>
             </div>
+<<<<<<< HEAD
+          </motion.div>
+        </div>
+      </section>
+    </div>
+=======
           </div>
         </section>
 
@@ -924,6 +1052,7 @@ const Homepage2040: React.FC = () => {
         </section>
       </main>
     </Layout>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-71be
   );
 };
 
