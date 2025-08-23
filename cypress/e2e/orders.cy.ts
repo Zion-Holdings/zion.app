@@ -1,6 +1,10 @@
 describe('orders page', () => {
-  it('loads orders and shows download link', () => {
+  it('loads orders and shows download link', function () {
     // Ensure we have a logged in user so the orders query runs
+    if (!Cypress.env('EXISTING_USER_EMAIL') || !Cypress.env('EXISTING_USER_PASSWORD')) {
+      cy.log('EXISTING_USER_EMAIL or EXISTING_USER_PASSWORD not set, skipping test');
+      this.skip();
+    }
     cy.loginByApi(
       Cypress.env('EXISTING_USER_EMAIL'),
       Cypress.env('EXISTING_USER_PASSWORD')

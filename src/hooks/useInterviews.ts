@@ -99,8 +99,9 @@ export function useInterviews() {
         return [];
       }
 
-      // Transform the data to match Interview type
-      const formattedInterviews = data.map((interview: any): Interview => ({
+      // Transform the data to match Interview type. Default to an empty array to
+      // avoid "map is not a function" errors when no interviews are returned
+      const formattedInterviews = (data ?? []).map((interview: any): Interview => ({
         id: interview.id,
         client_id: interview.client_id,
         talent_id: interview.talent_id,

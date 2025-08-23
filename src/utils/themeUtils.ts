@@ -1,4 +1,4 @@
-export type ThemePreset = 'light' | 'dark' | 'neon' | 'corporate' | 'startup' | 'zionDefault'; // Added zionDefault
+export type ThemePreset = 'light' | 'dark' | 'system' | 'neon' | 'corporate' | 'startup' | 'zionDefault'; // Added system & zionDefault
 
 export interface ThemeColors {
   // Core Tailwind variables

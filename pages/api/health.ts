@@ -152,24 +152,31 @@ async function performHealthChecks(): Promise<SystemHealth['checks']> {
   }
 
   // Services check (external dependencies)
-  try {
-    const serviceChecks = await Promise.allSettled([
-      // Check if we can reach external services
-      fetch('https://api.github.com', { method: 'HEAD', signal: AbortSignal.timeout(3000) }),
-      // Add other service checks as needed
-    ]);
+  if (process.env.DISABLE_EXTERNAL_SERVICE_CHECKS === 'true') {
+    checks.services = {
+      status: 'skipped',
+      message: 'External service checks disabled'
+    };
+  } else {
+    try {
+      const serviceChecks = await Promise.allSettled([
+        // Check if we can reach external services
+        fetch('https://api.github.com', { method: 'HEAD', signal: AbortSignal.timeout(3000) }),
+        // Add other service checks as needed
+      ]);
 
-    const failedServices = serviceChecks.filter(result => result.status === 'rejected').length;
-    
-    checks.services = {
-      status: failedServices === 0 ? 'healthy' : failedServices < serviceChecks.length ? 'degraded' : 'unhealthy',
-      message: `${serviceChecks.length - failedServices}/${serviceChecks.length} external services accessible`
-    };
-  } catch (error) {
-    checks.services = {
-      status: 'unhealthy',
-      message: `Service checks failed: ${error}`
-    };
+      const failedServices = serviceChecks.filter(result => result.status === 'rejected').length;
+
+      checks.services = {
+        status: failedServices === 0 ? 'healthy' : failedServices < serviceChecks.length ? 'degraded' : 'unhealthy',
+        message: `${serviceChecks.length - failedServices}/${serviceChecks.length} external services accessible`
+      };
+    } catch (error) {
+      checks.services = {
+        status: 'unhealthy',
+        message: `Service checks failed: ${error}`
+      };
+    }
   }
 
   return checks;

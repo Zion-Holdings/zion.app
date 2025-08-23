@@ -11,9 +11,12 @@ export default class MyDocument extends Document {
   const blankScreenDetectScript = `window.addEventListener('load', function () {
     setTimeout(function () {
       var root = document.getElementById('__next');
-      if (root && root.innerText.trim() === '') {
-        var first = root.firstElementChild;
-        if (!first || ['SCRIPT','STYLE','LINK'].indexOf(first.tagName) !== -1) {
+      if (root) {
+        var hasVisible = Array.from(root.children || []).some(function (el) {
+          return ['SCRIPT','STYLE','LINK'].indexOf(el.tagName) === -1;
+        });
+        var isBlank = !hasVisible && root.innerText.trim() === '';
+        if (isBlank) {
           console.error("Blank screen detected - replacing content");
           root.innerHTML = '<div style="padding:2rem;text-align:center;font-family:sans-serif;">\
             <h2>Application failed to load.</h2>\
@@ -132,13 +135,11 @@ export default class MyDocument extends Document {
     })();
   `;
 
+  const cspContent = "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://js.stripe.com https://*.launchdarkly.com https://www.googletagmanager.com https://widget.intercom.io https://*.googleapis.com https://*.gstatic.com https://*.sentry.io https://*.google-analytics.com https://*.doubleclick.net https://*.googlesyndication.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https://*.cloudinary.com; connect-src 'self' https://*.supabase.co https://*.sentry.io https://*.stripe.com";
   return (
     <Html lang="en">
       <Head>
-        <meta
-          httpEquiv="Content-Security-Policy"
-          content="default-src 'self'; script-src 'self' https://js.stripe.com 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://res.cloudinary.com; connect-src *; frame-src https://js.stripe.com"
-        />
+        <meta httpEquiv="Content-Security-Policy" content={cspContent} />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         {/* <script dangerouslySetInnerHTML={{ __html: loaderTimeoutScript }} /> */}
       </Head>

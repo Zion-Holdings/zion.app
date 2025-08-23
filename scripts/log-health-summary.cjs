@@ -73,7 +73,7 @@ class LogHealthSummary {
         console.log(`  ✅ Build exists (${this.results.build.status}, ${this.results.build.size})`);
       } else {
         this.results.build.status = 'missing';
-        console.log('  ⚠️  No build found');
+        console.log('  ⚠️  No build found (run "npm run build" to generate)');
       }
     } catch (error) {
       this.results.build.status = 'error';
@@ -237,7 +237,7 @@ class LogHealthSummary {
     // Build health (25 points)
     if (this.results.build.status === 'missing') {
       score -= 25;
-      issues.push('No build found');
+      issues.push('No build found - run "npm run build"');
     } else if (this.results.build.status === 'stale') {
       score -= 10;
       issues.push('Build is stale (>24h)');
