@@ -698,6 +698,8 @@ body::before {
     color: black !important;
   }
 }
+<<<<<<< HEAD
+=======
 
 /* Advanced Futuristic Effects */
 
@@ -973,3 +975,4 @@ body::before {
     transform: none;
   }
 }
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-c35b

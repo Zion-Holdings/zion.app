@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+<<<<<<< HEAD
+import { Menu, X, Zap, Globe, Bot, Cloud, Shield, Sparkles, Rocket, Cpu, Database, Brain, Atom, Eye, Lock, BarChart3, Users, Target, TrendingUp, Star, Award, ZapIcon, CloudIcon, BotIcon, ShieldIcon, GlobeIcon, CpuIcon, DatabaseIcon, BrainIcon, AtomIcon, EyeIcon, LockIcon, BarChart3Icon, UsersIcon, TargetIcon, TrendingUpIcon, StarIcon, AwardIcon } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu as HeadlessMenu, X as HeadlessX, Zap as HeadlessZap, Sparkles as HeadlessSparkles, ChevronDown, Globe as HeadlessGlobe, Shield as HeadlessShield, Cpu as HeadlessCpu, Brain as HeadlessBrain } from 'lucide-react';
+=======
 import { Menu, X, Zap, Globe, Bot, Cloud, Shield, Sparkles, Rocket, Cpu, Database, Brain, Atom, Eye, Lock, BarChart3, Users, Target, TrendingUp, Star, Award, ZapIcon, CloudIcon, BotIcon, ShieldIcon, GlobeIcon, CpuIcon, DatabaseIcon, BrainIcon, AtomIcon, EyeIcon, LockIcon, BarChart3Icon, UsersIcon, TargetIcon, TrendingUpIcon, StarIcon, AwardIcon, FlaskConical, Car, Leaf, DollarSign } from 'lucide-react';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-c35b
 
 const FuturisticNavbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,6 +44,14 @@ const FuturisticNavbar: React.FC = () => {
       dropdown: [
         { name: 'AI & Machine Learning', href: '/services?category=AI%20%26%20Machine%20Learning', icon: <Brain className="w-4 h-4" /> },
         { name: 'Quantum Computing', href: '/services?category=Quantum%20Computing', icon: <Atom className="w-4 h-4" /> },
+<<<<<<< HEAD
+        { name: 'IoT & Smart Cities', href: '/services?category=IoT%20%26%20Smart%20Cities', icon: <Cpu className="w-4 h-4" /> },
+        { name: 'Robotics & Automation', href: '/services?category=Robotics%20%26%20Automation', icon: <Bot className="w-4 h-4" /> },
+        { name: 'Biotechnology & Healthcare', href: '/services?category=Biotechnology%20%26%20Healthcare', icon: <Eye className="w-4 h-4" /> },
+        { name: 'Cybersecurity', href: '/services?category=Cybersecurity', icon: <Lock className="w-4 h-4" /> },
+        { name: 'Analytics & Business Intelligence', href: '/services?category=Analytics%20%26%20Business%20Intelligence', icon: <BarChart3 className="w-4 h-4" /> },
+        { name: 'Cloud & Infrastructure', href: '/services?category=Cloud%20%26%20Infrastructure', icon: <Sparkles className="w-4 h-4" /> }
+=======
         { name: 'Neuromorphic AI', href: '/services?category=Emerging%20Technologies', icon: <Brain className="w-4 h-4" /> },
         { name: 'Synthetic Biology', href: '/services?category=Biomedical%20%26%20Healthcare', icon: <FlaskConical className="w-4 h-4" /> },
         { name: 'Quantum Internet', href: '/services?category=Emerging%20Technologies', icon: <Globe className="w-4 h-4" /> },
@@ -46,6 +60,7 @@ const FuturisticNavbar: React.FC = () => {
         { name: 'Climate AI', href: '/services?category=Climate%20%26%20Environment', icon: <Leaf className="w-4 h-4" /> },
         { name: 'Quantum Finance', href: '/services?category=Financial%20Technology', icon: <DollarSign className="w-4 h-4" /> },
         { name: 'Cybersecurity', href: '/services?category=Cybersecurity', icon: <Lock className="w-4 h-4" /> }
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-c35b
       ]
     },
     { 

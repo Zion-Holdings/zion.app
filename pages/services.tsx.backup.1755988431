@@ -378,6 +378,8 @@ const ServicesPage: React.FC = () => {
 
 const ServicesPage: React.FC = () => {
   return (
+<<<<<<< HEAD
+=======
     <EnhancedFuturisticBackground variant="neural-quantum" intensity="high">
       <div className="min-h-screen">
         <Head>
@@ -391,6 +393,7 @@ const ServicesPage: React.FC = () => {
           <meta property="og:type" content="website" />
           <link rel="canonical" href="https://ziontechgroup.com/services" />
         </Head>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-c35b
 
 export default function Services() {
   return (
@@ -418,6 +421,28 @@ export default function Services() {
     <Layout>
       <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
+<<<<<<< HEAD
+        <section className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              Revolutionary Services
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
+              Discover our comprehensive portfolio of AI, Quantum, IT, and Micro SAAS solutions designed to transform your business
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-400">
+              <div className="flex items-center gap-2">
+                <Star className="w-4 h-4 text-yellow-400" />
+                <span>{allServices.length}+ Revolutionary Services</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Zap className="w-4 h-4 text-blue-400" />
+                <span>AI-Powered Solutions</span>
+=======
         <section className="relative py-20 overflow-hidden">
           <div className="container mx-auto px-4 text-center">
             <div className="max-w-4xl mx-auto">
@@ -456,6 +481,7 @@ export default function Services() {
                   <div className="text-3xl font-bold text-orange-400 mb-2">14</div>
                   <div className="text-sm text-gray-400">Day Trial</div>
                 </div>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-c35b
               </div>
               <div className="flex items-center gap-2">
                 <Atom className="w-4 h-4 text-cyan-400" />

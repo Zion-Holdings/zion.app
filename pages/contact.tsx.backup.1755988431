@@ -422,6 +422,68 @@ const Contact: React.FC = () => {
                 </p>
               </div>
 
+<<<<<<< HEAD
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-1">Phone</h3>
+                    <p className="text-gray-300">+1 302 464 0950</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-1">Email</h3>
+                    <p className="text-gray-300">kleber@ziontechgroup.com</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-1">Address</h3>
+                    <p className="text-gray-300">
+                      364 E Main St STE 1008<br />
+                      Middletown DE 19709
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-pink-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Clock className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-1">Business Hours</h3>
+                    <p className="text-gray-300">
+                      Monday - Friday: 9:00 AM - 6:00 PM EST<br />
+                      Saturday: 10:00 AM - 2:00 PM EST
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gray-800/50 border border-gray-700/50 rounded-xl p-6">
+                <h3 className="text-xl font-semibold text-white mb-3">Why Choose Zion Tech Group?</h3>
+                <ul className="space-y-2 text-gray-300">
+                  <li>• Cutting-edge AI and quantum technology</li>
+                  <li>• Expert team with decades of experience</li>
+                  <li>• Proven track record of success</li>
+                  <li>• 24/7 support and maintenance</li>
+                  <li>• Competitive pricing and flexible solutions</li>
+                </ul>
+              </div>
+            </motion.div>
+          </div>
+=======
       {/* Premium Services Showcase */}
       <section className="py-20 bg-gradient-to-br from-gray-900 to-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -547,6 +609,7 @@ const Contact: React.FC = () => {
               </Button>
             </div>
           </Card>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-c35b
         </div>
       </section>
     </div>
