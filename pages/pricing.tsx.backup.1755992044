@@ -1,10 +1,250 @@
 import React from 'react';
 import Head from 'next/head';
+<<<<<<< HEAD
+import { Check, Star, Zap, Shield, Users, Globe, TrendingUp, Clock, DollarSign, Target, ArrowRight, X } from 'lucide-react';
+=======
 import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, DollarSign } from 'lucide-react';
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-d599
 import Button from '../components/ui/Button';
 import { microSaasServices, serviceCategories, getServicesByCategory } from '../data/micro-saas-services';
 
 export default function PricingPage() {
+<<<<<<< HEAD
+  const microSaasPlans = [
+    {
+      name: 'Social Media Analytics',
+      icon: '📊',
+      description: 'AI-powered social media performance tracking and insights',
+      plans: [
+        {
+          name: 'Starter',
+          price: '$49',
+          period: '/month',
+          description: 'Perfect for small businesses and creators',
+          features: [
+            'Up to 5 social media accounts',
+            'Basic analytics & reporting',
+            'AI sentiment analysis',
+            'Email support',
+            'Basic competitor analysis',
+            'Monthly reports'
+          ],
+          popular: false,
+          color: 'from-blue-500 to-indigo-600',
+          cta: 'Start Free Trial'
+        },
+        {
+          name: 'Professional',
+          price: '$149',
+          period: '/month',
+          description: 'Ideal for growing businesses and agencies',
+          features: [
+            'Up to 25 social media accounts',
+            'Advanced AI insights',
+            'Real-time monitoring',
+            'Priority support',
+            'Advanced competitor analysis',
+            'Custom dashboards',
+            'API access',
+            'Team collaboration'
+          ],
+          popular: true,
+          color: 'from-blue-600 to-indigo-700',
+          cta: 'Start Free Trial'
+        },
+        {
+          name: 'Enterprise',
+          price: '$399',
+          period: '/month',
+          description: 'For large organizations with custom needs',
+          features: [
+            'Unlimited social media accounts',
+            'Custom AI models',
+            'White-label solutions',
+            '24/7 dedicated support',
+            'Advanced security & compliance',
+            'Custom integrations',
+            'SLA guarantees',
+            'On-premise options'
+          ],
+          popular: false,
+          color: 'from-blue-700 to-indigo-800',
+          cta: 'Contact Sales'
+        }
+      ],
+      competitors: ['Hootsuite', 'Buffer', 'Sprout Social'],
+      marketSize: '$23.4B',
+      growthRate: '13.2%'
+    },
+    {
+      name: 'SEO Content Optimization',
+      icon: '🔍',
+      description: 'AI-powered content optimization for better search rankings',
+      plans: [
+        {
+          name: 'Starter',
+          price: '$39',
+          period: '/month',
+          description: 'Perfect for bloggers and small websites',
+          features: [
+            'Up to 10 content analyses/month',
+            'Basic SEO scoring',
+            'Keyword suggestions',
+            'Email support',
+            'Basic reporting',
+            'Content templates'
+          ],
+          popular: false,
+          color: 'from-green-500 to-emerald-600',
+          cta: 'Try for Free'
+        },
+        {
+          name: 'Professional',
+          price: '$99',
+          period: '/month',
+          description: 'Ideal for content marketers and agencies',
+          features: [
+            'Up to 100 content analyses/month',
+            'Advanced AI optimization',
+            'Competitor research',
+            'Priority support',
+            'Advanced analytics',
+            'Custom workflows',
+            'API access',
+            'Team collaboration'
+          ],
+          popular: true,
+          color: 'from-green-600 to-emerald-700',
+          cta: 'Try for Free'
+        },
+        {
+          name: 'Enterprise',
+          price: '$249',
+          period: '/month',
+          description: 'For large content teams and enterprises',
+          features: [
+            'Unlimited content analyses',
+            'Custom AI models',
+            'White-label solutions',
+            '24/7 dedicated support',
+            'Advanced security',
+            'Custom integrations',
+            'SLA guarantees',
+            'On-premise options'
+          ],
+          popular: false,
+          color: 'from-green-700 to-emerald-800',
+          cta: 'Contact Sales'
+        }
+      ],
+      competitors: ['Clearscope', 'MarketMuse', 'Surfer SEO'],
+      marketSize: '$1.2B',
+      growthRate: '18.7%'
+    },
+    {
+      name: 'Email Marketing Automation',
+      icon: '📧',
+      description: 'Intelligent email marketing with AI-powered automation',
+      plans: [
+        {
+          name: 'Starter',
+          price: '$29',
+          period: '/month',
+          description: 'Perfect for small businesses and newsletters',
+          features: [
+            'Up to 2,500 subscribers',
+            'Basic automation',
+            'Email templates',
+            'Email support',
+            'Basic analytics',
+            'GDPR compliance'
+          ],
+          popular: false,
+          color: 'from-purple-500 to-pink-600',
+          cta: 'Get Started'
+        },
+        {
+          name: 'Professional',
+          price: '$79',
+          period: '/month',
+          description: 'Ideal for growing businesses and teams',
+          features: [
+            'Up to 25,000 subscribers',
+            'Advanced AI automation',
+            'A/B testing',
+            'Priority support',
+            'Advanced analytics',
+            'Custom integrations',
+            'API access',
+            'Team collaboration'
+          ],
+          popular: true,
+          color: 'from-purple-600 to-pink-700',
+          cta: 'Get Started'
+        },
+        {
+          name: 'Enterprise',
+          price: '$199',
+          period: '/month',
+          description: 'For large organizations with complex needs',
+          features: [
+            'Unlimited subscribers',
+            'Custom AI models',
+            'White-label solutions',
+            '24/7 dedicated support',
+            'Advanced security',
+            'Custom integrations',
+            'SLA guarantees',
+            'On-premise options'
+          ],
+          popular: false,
+          color: 'from-purple-700 to-pink-800',
+          cta: 'Contact Sales'
+        }
+      ],
+      competitors: ['Mailchimp', 'ConvertKit', 'ActiveCampaign'],
+      marketSize: '$7.5B',
+      growthRate: '15.3%'
+    }
+  ];
+
+  const comparisonTable = [
+    {
+      feature: 'AI-Powered Insights',
+      starter: 'Basic',
+      professional: 'Advanced',
+      enterprise: 'Custom'
+    },
+    {
+      feature: 'API Access',
+      starter: 'Limited',
+      professional: 'Full',
+      enterprise: 'Unlimited'
+    },
+    {
+      feature: 'Team Collaboration',
+      starter: 'Basic',
+      professional: 'Advanced',
+      enterprise: 'Enterprise'
+    },
+    {
+      feature: 'Custom Integrations',
+      starter: 'Pre-built',
+      professional: 'Custom',
+      enterprise: 'White-label'
+    },
+    {
+      feature: 'Support Response',
+      starter: '24-48 hours',
+      professional: '4-8 hours',
+      enterprise: '1-2 hours'
+    },
+    {
+      feature: 'SLA Guarantees',
+      starter: 'Standard',
+      professional: 'Enhanced',
+      enterprise: '99.9% uptime'
+=======
   const microSaasServices = [
     {
       name: 'AI Content Generator Pro',
@@ -405,6 +645,7 @@ export default function PricingPage() {
       title: 'Value Proposition',
       description: 'Focus on specialized functionality rather than broad, complex enterprise platforms.',
       stats: '3x faster time-to-value'
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-d599
     }
   ];
 
@@ -620,11 +861,19 @@ export default function Pricing() {
                 <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse" />
                 Micro SaaS Solutions
               </div>
+<<<<<<< HEAD
+              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8">
+                12 Specialized Tools & Services
+              </h2>
+              <p className="text-xl text-gray-400 max-w-4xl mx-auto">
+                Focused solutions for specific business needs with transparent, competitive pricing starting from $25/month.
+=======
               <h2 className="text-4xl font-bold text-white mb-8">
                 Specialized Tools for Every Business Need
               </h2>
               <p className="text-xl text-gray-400 max-w-4xl mx-auto">
                 Focused solutions with competitive pricing, market validation, and proven demand. All services include 14-day free trials.
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-d599
               </p>
             </div>
 
