@@ -10,29 +10,7 @@ import {
   Hand
 } from 'lucide-react';
 
-// Add proper types for TouchEvent
-declare global {
-  interface TouchEvent {
-    touches: TouchList;
-    changedTouches: TouchList;
-  }
-  
-  interface TouchList {
-    readonly length: number;
-    item(index: number): Touch | null;
-    [index: number]: Touch;
-  }
-  
-  interface Touch {
-    readonly clientX: number;
-    readonly clientY: number;
-  }
-  
-  var TouchEvent: {
-    prototype: TouchEvent;
-    new(): TouchEvent;
-  };
-}
+// TouchEvent types are already available in the DOM
 
 interface MobileOptimizerProps {
   children: React.ReactNode;

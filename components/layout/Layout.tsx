@@ -16,8 +16,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         {children}
       </main>
       <UltraAdvancedFuturisticFooter2025 />
-      <AccessibilityEnhancer />
-      <PerformanceOptimizer showMetrics={true} autoOptimize={true} />
+      <AccessibilityEnhancer>
+        <PerformanceOptimizer showMetrics={true} autoOptimize={true} />
+      </AccessibilityEnhancer>
     </div>
   );
 };

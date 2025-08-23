@@ -347,7 +347,7 @@ interface LayoutShift extends PerformanceEntry {
 }
 
 interface LayoutShiftSource {
-  node?: Node;
+  node?: Element;
   currentRect?: DOMRectReadOnly;
   previousRect?: DOMRectReadOnly;
 }
@@ -363,38 +363,6 @@ declare global {
     removeEventListener(type: string, listener: EventListener): void;
     dispatchEvent(event: Event): boolean;
   }
-  
-  interface Node {
-    nodeType: number;
-    nodeName: string;
-    nodeValue: string | null;
-  }
-  
-  interface DOMRectReadOnly {
-    readonly x: number;
-    readonly y: number;
-    readonly width: number;
-    readonly height: number;
-    readonly top: number;
-    readonly right: number;
-    readonly bottom: number;
-    readonly left: number;
-  }
-  
-  var EventTarget: {
-    prototype: EventTarget;
-    new(): EventTarget;
-  };
-  
-  var Node: {
-    prototype: Node;
-    new(): Node;
-  };
-  
-  var DOMRectReadOnly: {
-    prototype: DOMRectReadOnly;
-    new(): DOMRectReadOnly;
-  };
 }
 
 // Extend Window interface for gtag

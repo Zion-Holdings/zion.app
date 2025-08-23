@@ -101,10 +101,10 @@ const navigationItems: NavigationItem[] = [
         description: 'Financial technology solutions'
       },
       {
-        label: 'Manufacturing',
-        href: '/solutions/manufacturing',
-        icon: <Cpu className="w-4 h-4" />,
-        description: 'Smart manufacturing solutions'
+        label: 'Government & Defense',
+        href: '/solutions/government',
+        icon: <Shield className="w-4 h-4" />,
+        description: 'Secure government solutions'
       },
       {
         label: 'Retail & E-commerce',
@@ -118,7 +118,7 @@ const navigationItems: NavigationItem[] = [
     label: 'About',
     href: '/about',
     icon: <Users className="w-4 h-4" />,
-    description: 'Learn about our mission and team'
+    description: 'Learn about our company and mission'
   },
   {
     label: 'Resources',
@@ -130,21 +130,20 @@ const navigationItems: NavigationItem[] = [
     label: 'Contact',
     href: '/contact',
     icon: <Phone className="w-4 h-4" />,
-    description: 'Get in touch with our experts'
+    description: 'Get in touch with our team'
   }
 ];
 
 const UltraAdvancedFuturisticNavigation2025: React.FC = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [focusedIndex, setFocusedIndex] = useState(-1);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  
   const router = useRouter();
+  const navRef = useRef<HTMLElement>(null);
   const searchRef = useRef<HTMLDivElement>(null);
-  const mobileMenuRef = useRef<HTMLDivElement>(null);
-  const searchInputRef = useRef<HTMLInputElement>(null);
 
   // Handle scroll effect
   useEffect(() => {
@@ -156,24 +155,12 @@ const UltraAdvancedFuturisticNavigation2025: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Handle click outside search
+  // Handle click outside to close dropdowns
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setActiveDropdown(null);
         setIsSearchOpen(false);
-        setSearchQuery('');
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  // Handle click outside mobile menu
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
-        setIsMobileMenuOpen(false);
       }
     };
 
@@ -185,9 +172,9 @@ const UltraAdvancedFuturisticNavigation2025: React.FC = () => {
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
-        setIsMobileMenuOpen(false);
-        setIsSearchOpen(false);
         setActiveDropdown(null);
+        setIsSearchOpen(false);
+        setIsOpen(false);
       }
     };
 
@@ -195,156 +182,143 @@ const UltraAdvancedFuturisticNavigation2025: React.FC = () => {
     return () => document.removeEventListener('keydown', handleEscape);
   }, []);
 
-  // Focus search input when search opens
-  useEffect(() => {
-    if (isSearchOpen && searchInputRef.current) {
-      setTimeout(() => searchInputRef.current?.focus(), 100);
-    }
-  }, [isSearchOpen]);
-
-  // Close mobile menu on route change
-  useEffect(() => {
-    setIsMobileMenuOpen(false);
-    setActiveDropdown(null);
-  }, [router.asPath]);
-
-  const handleSearchSubmit = (e: React.FormEvent) => {
+  // Handle search
+  const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      // Implement search functionality
-      setIsSearchOpen(false);
+      router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
       setSearchQuery('');
+      setIsSearchOpen(false);
     }
   };
 
-  const handleKeyNavigation = (e: React.KeyboardEvent, index: number) => {
-    switch (e.key) {
-      case 'ArrowDown':
-        e.preventDefault();
-        setFocusedIndex((prev) => (prev + 1) % navigationItems.length);
-        break;
-      case 'ArrowUp':
-        e.preventDefault();
-        setFocusedIndex((prev) => (prev - 1 + navigationItems.length) % navigationItems.length);
-        break;
-      case 'Enter':
-      case ' ':
-        e.preventDefault();
-        if (navigationItems[index].href) {
-          router.push(navigationItems[index].href);
-        }
-        break;
+  // Handle navigation item click
+  const handleNavItemClick = (item: NavigationItem) => {
+    if (item.children) {
+      setActiveDropdown(activeDropdown === item.label ? null : item.label);
+    } else {
+      setIsOpen(false);
+      setActiveDropdown(null);
+      router.push(item.href);
     }
   };
 
-  const toggleDropdown = (label: string) => {
-    setActiveDropdown(activeDropdown === label ? null : label);
+  // Handle keyboard navigation
+  const handleKeyDown = (event: React.KeyboardEvent, item: NavigationItem) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      handleNavItemClick(item);
+    } else if (event.key === 'Escape') {
+      setActiveDropdown(null);
+    }
   };
 
   return (
     <nav 
+      ref={navRef}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-gray-900/95 backdrop-blur-md border-b border-gray-800/50' 
+          ? 'bg-gray-900/95 backdrop-blur-md border-b border-gray-700/50' 
           : 'bg-transparent'
       }`}
       role="navigation"
       aria-label="Main navigation"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-20">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link 
-            href="/" 
-            className="flex items-center space-x-2 group focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded-lg"
-            aria-label="Zion Tech Group - Go to homepage"
-          >
-            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-              <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-            </div>
-            <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              Zion Tech
-            </span>
-          </Link>
+          <div className="flex-shrink-0">
+            <Link 
+              href="/" 
+              className="flex items-center space-x-2 group"
+              aria-label="Zion Tech Group - Home"
+            >
+              <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center group-hover:from-cyan-500 group-hover:to-blue-600 transition-all duration-300">
+                <Zap className="w-6 h-6 text-white" aria-hidden="true" />
+              </div>
+              <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent group-hover:from-cyan-500 group-hover:to-blue-600 transition-all duration-300">
+                Zion Tech
+              </span>
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            {navigationItems.map((item, index) => (
+            {navigationItems.map((item) => (
               <div key={item.label} className="relative group">
-                {item.children ? (
-                  <button
-                    className={`flex items-center space-x-1 px-3 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-gray-900 ${
-                      focusedIndex === index ? 'ring-2 ring-cyan-500' : ''
-                    }`}
-                    onClick={() => toggleDropdown(item.label)}
-                    onKeyDown={(e) => handleKeyNavigation(e, index)}
-                    onFocus={() => setFocusedIndex(index)}
-                    onBlur={() => setFocusedIndex(-1)}
-                    aria-expanded={activeDropdown === item.label}
-                    aria-haspopup="true"
-                    aria-label={`${item.label} menu`}
-                  >
-                    {item.icon}
-                    <span>{item.label}</span>
+                <button
+                  onClick={() => handleNavItemClick(item)}
+                  onKeyDown={(e) => handleKeyDown(e, item)}
+                  className={`flex items-center space-x-1 px-4 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-gray-900 ${
+                    router.pathname === item.href ? 'text-cyan-400 bg-gray-800/50' : ''
+                  }`}
+                  aria-expanded={activeDropdown === item.label}
+                  aria-haspopup={item.children ? 'true' : 'false'}
+                  aria-label={item.description ? `${item.label} - ${item.description}` : item.label}
+                >
+                  {item.icon}
+                  <span>{item.label}</span>
+                  {item.children && (
                     <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
                       activeDropdown === item.label ? 'rotate-180' : ''
-                    }`} />
-                  </button>
-                ) : (
-                  <Link
-                    href={item.href}
-                    className={`flex items-center space-x-1 px-3 py-2 rounded-lg text-gray-300 hover:text-white hover:bg-gray-800/50 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-gray-900 ${
-                      router.asPath === item.href ? 'text-white bg-gray-800/50' : ''
-                    } ${
-                      focusedIndex === index ? 'ring-2 ring-cyan-500' : ''
-                    }`}
-                    onFocus={() => setFocusedIndex(index)}
-                    onBlur={() => setFocusedIndex(-1)}
-                    onKeyDown={(e) => handleKeyNavigation(e, index)}
-                    aria-label={item.description || item.label}
-                  >
-                    {item.icon}
-                    <span>{item.label}</span>
-                  </Link>
-                )}
+                    }`} aria-hidden="true" />
+                  )}
+                </button>
 
                 {/* Dropdown Menu */}
-                {item.children && activeDropdown === item.label && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                    transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-2 w-80 bg-gray-800/95 backdrop-blur-md rounded-xl border border-gray-700/50 shadow-2xl shadow-black/50 overflow-hidden"
-                    role="menu"
-                    aria-label={`${item.label} submenu`}
-                  >
-                    <div className="p-4">
-                      <div className="mb-3 pb-3 border-b border-gray-700/50">
-                        <h3 className="text-lg font-semibold text-white">{item.label}</h3>
-                        <p className="text-sm text-gray-400">{item.description}</p>
-                      </div>
-                      <div className="space-y-1">
-                        {item.children.map((child) => (
-                          <Link
-                            key={child.label}
-                            href={child.href}
-                            className="flex items-center space-x-3 p-3 rounded-lg text-gray-300 hover:text-white hover:bg-gray-700/50 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-gray-800"
-                            role="menuitem"
-                            aria-label={child.description || child.label}
-                          >
-                            <div className="w-8 h-8 bg-gray-700/50 rounded-lg flex items-center justify-center">
-                              {child.icon}
-                            </div>
-                            <div>
-                              <div className="font-medium text-white">{child.label}</div>
-                              <div className="text-sm text-gray-400">{child.description}</div>
-                            </div>
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  </motion.div>
+                {item.children && (
+                  <AnimatePresence>
+                    {activeDropdown === item.label && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute top-full left-0 mt-2 w-80 bg-gray-800/95 backdrop-blur-md rounded-xl border border-gray-700/50 shadow-2xl shadow-black/50 overflow-hidden"
+                        role="menu"
+                        aria-orientation="vertical"
+                        aria-labelledby={`menu-${item.label}`}
+                      >
+                        <div className="p-4">
+                          <h3 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
+                            {item.icon}
+                            {item.label}
+                          </h3>
+                          <div className="grid grid-cols-1 gap-2">
+                            {item.children.map((child) => (
+                              <Link
+                                key={child.label}
+                                href={child.href}
+                                className="flex items-start gap-3 p-3 rounded-lg text-gray-300 hover:text-white hover:bg-gray-700/50 transition-all duration-200 group/item"
+                                onClick={() => setActiveDropdown(null)}
+                                onKeyDown={(e) => {
+                      if (e.key === 'Enter') {
+                        setActiveDropdown(null);
+                      }
+                    }}
+                                role="menuitem"
+                              >
+                                <div className="flex-shrink-0 w-8 h-8 bg-gray-700/50 rounded-lg flex items-center justify-center group-hover/item:bg-cyan-500/20 transition-colors">
+                                  {child.icon}
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                  <div className="font-medium text-white group-hover/item:text-cyan-400 transition-colors">
+                                    {child.label}
+                                  </div>
+                                  {child.description && (
+                                    <div className="text-sm text-gray-400 mt-1">
+                                      {child.description}
+                                    </div>
+                                  )}
+                                </div>
+                                <ChevronRight className="w-4 h-4 text-gray-500 group-hover/item:text-cyan-400 transition-colors flex-shrink-0" aria-hidden="true" />
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 )}
               </div>
             ))}
@@ -352,166 +326,171 @@ const UltraAdvancedFuturisticNavigation2025: React.FC = () => {
 
           {/* Search and CTA */}
           <div className="hidden lg:flex items-center space-x-4">
-            {/* Search Button */}
-            <button
-              onClick={() => setIsSearchOpen(!isSearchOpen)}
-              className="p-2 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-gray-900"
-              aria-label="Open search"
-            >
-              <Search className="w-5 h-5" />
-            </button>
+            {/* Search */}
+            <div className="relative" ref={searchRef}>
+              <button
+                onClick={() => setIsSearchOpen(!isSearchOpen)}
+                className="p-2 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                aria-label="Open search"
+                aria-expanded={isSearchOpen}
+              >
+                <Search className="w-5 h-5" aria-hidden="true" />
+              </button>
+
+              <AnimatePresence>
+                {isSearchOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-full right-0 mt-2 w-80 bg-gray-800/95 backdrop-blur-md rounded-xl border border-gray-700/50 shadow-2xl shadow-black/50 overflow-hidden"
+                  >
+                    <form onSubmit={handleSearch} className="p-4">
+                      <div className="relative">
+                        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" aria-hidden="true" />
+                        <input
+                          type="text"
+                          value={searchQuery}
+                          onChange={(e) => setSearchQuery(e.target.value)}
+                          placeholder="Search services, solutions..."
+                          className="w-full pl-10 pr-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent"
+                          aria-label="Search query"
+                        />
+                      </div>
+                      <button
+                        type="submit"
+                        className="w-full mt-3 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-gray-800"
+                      >
+                        Search
+                      </button>
+                    </form>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
 
             {/* CTA Button */}
             <Link
-              href="/contact"
-              className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-gray-900"
-              aria-label="Contact Zion Tech Group"
-            >
+              href="/get-started"
+              className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-gray-900"
+              >
               Get Started
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-gray-900"
-            aria-expanded={isMobileMenuOpen}
-            aria-label="Toggle mobile menu"
-          >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
-          </button>
+          {/* Mobile menu button */}
+          <div className="lg:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+              aria-label="Toggle mobile menu"
+              aria-expanded={isOpen}
+              aria-controls="mobile-menu"
+            >
+              {isOpen ? (
+                <X className="w-6 h-6" aria-hidden="true" />
+              ) : (
+                <Menu className="w-6 h-6" aria-hidden="true" />
+              )}
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Search Overlay */}
+      {/* Mobile Navigation */}
       <AnimatePresence>
-        {isSearchOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.2 }}
-            className="absolute top-full left-0 right-0 bg-gray-900/95 backdrop-blur-md border-b border-gray-800/50"
-            ref={searchRef}
-          >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-              <form onSubmit={handleSearchSubmit} className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                <input
-                  ref={searchInputRef}
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search for services, solutions, or insights..."
-                  className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-                  aria-label="Search Zion Tech Group website"
-                />
-                <button
-                  type="submit"
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 px-3 py-1 bg-cyan-500 text-white text-sm rounded-md hover:bg-cyan-600 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-gray-800"
-                  aria-label="Submit search"
-                >
-                  Search
-                </button>
-              </form>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
+        {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-gray-900/95 backdrop-blur-md border-b border-gray-800/50 overflow-hidden"
-            ref={mobileMenuRef}
+            className="lg:hidden bg-gray-900/95 backdrop-blur-md border-t border-gray-700/50"
+            id="mobile-menu"
+            role="navigation"
+            aria-label="Mobile navigation"
           >
             <div className="px-4 py-6 space-y-4">
               {/* Mobile Search */}
-              <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+              <form onSubmit={handleSearch} className="relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" aria-hidden="true" />
                 <input
                   type="text"
-                  placeholder="Search..."
-                  className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-                  aria-label="Search Zion Tech Group website"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search services, solutions..."
+                  className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent"
+                  aria-label="Search query"
                 />
-              </div>
+              </form>
 
               {/* Mobile Navigation Items */}
               {navigationItems.map((item) => (
                 <div key={item.label}>
-                  {item.children ? (
-                    <div>
-                      <button
-                        onClick={() => toggleDropdown(item.label)}
-                        className="w-full flex items-center justify-between p-3 text-left text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-gray-900"
-                        aria-expanded={activeDropdown === item.label}
-                        aria-haspopup="true"
-                      >
-                        <div className="flex items-center space-x-3">
-                          {item.icon}
-                          <span>{item.label}</span>
-                        </div>
-                        <ChevronRight className={`w-4 h-4 transition-transform duration-200 ${
-                          activeDropdown === item.label ? 'rotate-90' : ''
-                        }`} />
-                      </button>
-                      
+                  <button
+                    onClick={() => handleNavItemClick(item)}
+                    onKeyDown={(e) => handleKeyDown(e, item)}
+                    className={`w-full flex items-center justify-between px-4 py-3 text-left text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400 ${
+                      router.pathname === item.href ? 'text-cyan-400 bg-gray-800/50' : ''
+                    }`}
+                    aria-expanded={activeDropdown === item.label}
+                    aria-haspopup={item.children ? 'true' : 'false'}
+                  >
+                    <div className="flex items-center space-x-3">
+                      {item.icon}
+                      <span>{item.label}</span>
+                    </div>
+                    {item.children && (
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+                        activeDropdown === item.label ? 'rotate-180' : ''
+                      }`} aria-hidden="true" />
+                    )}
+                  </button>
+
+                  {/* Mobile Dropdown */}
+                  {item.children && (
+                    <AnimatePresence>
                       {activeDropdown === item.label && (
                         <motion.div
                           initial={{ opacity: 0, height: 0 }}
                           animate={{ opacity: 1, height: 'auto' }}
                           exit={{ opacity: 0, height: 0 }}
                           transition={{ duration: 0.2 }}
-                          className="ml-6 mt-2 space-y-2"
+                          className="ml-8 mt-2 space-y-2"
                         >
                           {item.children.map((child) => (
                             <Link
                               key={child.label}
                               href={child.href}
-                              className="flex items-center space-x-3 p-3 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+                              className="flex items-center space-x-3 px-4 py-2 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-lg transition-all duration-200"
+                              onClick={() => {
+                                setIsOpen(false);
+                                setActiveDropdown(null);
+                              }}
+                              onKeyDown={(e) => {
+                      if (e.key === 'Enter') {
+                        setIsOpen(false);
+                      }
+                    }}
                             >
-                              <div className="w-6 h-6 bg-gray-700/50 rounded-lg flex items-center justify-center">
-                                {child.icon}
-                              </div>
+                              {child.icon}
                               <span>{child.label}</span>
                             </Link>
                           ))}
                         </motion.div>
                       )}
-                    </div>
-                  ) : (
-                    <Link
-                      href={item.href}
-                      className={`flex items-center space-x-3 p-3 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-gray-900 ${
-                        router.asPath === item.href 
-                          ? 'text-white bg-gray-800/50' 
-                          : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
-                      }`}
-                      aria-label={item.description || item.label}
-                    >
-                      {item.icon}
-                      <span>{item.label}</span>
-                    </Link>
+                    </AnimatePresence>
                   )}
                 </div>
               ))}
 
               {/* Mobile CTA */}
-              <div className="pt-4 border-t border-gray-800/50">
+              <div className="pt-4 border-t border-gray-700/50">
                 <Link
-                  href="/contact"
-                  className="w-full block px-4 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg text-center hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-gray-900"
-                  aria-label="Contact Zion Tech Group"
+                  href="/get-started"
+                  className="w-full block px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg text-center hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                  onClick={() => setIsOpen(false)}
                 >
                   Get Started
                 </Link>

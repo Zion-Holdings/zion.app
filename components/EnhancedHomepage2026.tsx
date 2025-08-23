@@ -1,15 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import Layout from './layout/Layout';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ArrowRight, Play, Star, Users, Award, TrendingUp, Brain, Shield, Rocket, Loader2,
-  Zap, Globe, Cpu, Eye, Atom
+  Zap, Globe, Cpu, Eye, Atom, ChevronLeft, ChevronRight
 } from 'lucide-react';
+
+// Lazy load heavy components for better performance
+const StatisticsSection = lazy(() => import('./sections/StatisticsSection'));
 
 const EnhancedHomepage2026: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isVisible, setIsVisible] = useState(false);
   const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
+  const [isAutoRotating, setIsAutoRotating] = useState(true);
 
   useEffect(() => {
     // Simulate content loading
@@ -18,16 +22,19 @@ const EnhancedHomepage2026: React.FC = () => {
       setIsVisible(true);
     }, 500);
 
-    // Auto-rotate featured services
-    const serviceTimer = setInterval(() => {
-      setCurrentServiceIndex((prev) => (prev + 1) % 6);
-    }, 4000);
+    // Auto-rotate featured services with pause on hover
+    let serviceTimer: NodeJS.Timeout;
+    if (isAutoRotating) {
+      serviceTimer = setInterval(() => {
+        setCurrentServiceIndex((prev) => (prev + 1) % 6);
+      }, 4000);
+    }
 
     return () => {
       clearTimeout(timer);
-      clearInterval(serviceTimer);
+      if (serviceTimer) clearInterval(serviceTimer);
     };
-  }, []);
+  }, [isAutoRotating]);
 
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
@@ -60,7 +67,8 @@ const EnhancedHomepage2026: React.FC = () => {
       icon: Brain,
       color: "from-purple-600 to-indigo-700",
       price: "$4,999/month",
-      features: ["Quantum AI coordination", "Zero-latency switching", "Multi-model management"]
+      features: ["Quantum AI coordination", "Zero-latency switching", "Multi-model management"],
+      ariaLabel: "Quantum AI Orchestration Platform - $4,999/month"
     },
     {
       title: "Autonomous Cybersecurity Orchestrator",
@@ -68,7 +76,8 @@ const EnhancedHomepage2026: React.FC = () => {
       icon: Shield,
       color: "from-red-600 to-pink-700",
       price: "$1,299/month",
-      features: ["Autonomous threat detection", "Real-time response", "Zero-trust architecture"]
+      features: ["Autonomous threat detection", "Real-time response", "Zero-trust architecture"],
+      ariaLabel: "Autonomous Cybersecurity Orchestrator - $1,299/month"
     },
     {
       title: "Quantum Financial Modeling Suite",
@@ -76,7 +85,8 @@ const EnhancedHomepage2026: React.FC = () => {
       icon: Zap,
       color: "from-yellow-600 to-orange-700",
       price: "$2,999/month",
-      features: ["Quantum Monte Carlo", "Portfolio optimization", "Risk assessment"]
+      features: ["Quantum Monte Carlo", "Portfolio optimization", "Risk assessment"],
+      ariaLabel: "Quantum Financial Modeling Suite - $2,999/month"
     },
     {
       title: "Metaverse Commerce Platform",
@@ -84,7 +94,8 @@ const EnhancedHomepage2026: React.FC = () => {
       icon: Globe,
       color: "from-purple-600 to-indigo-700",
       price: "$799/month",
-      features: ["3D storefronts", "NFT management", "Virtual currency"]
+      features: ["3D storefronts", "NFT management", "Virtual currency"],
+      ariaLabel: "Metaverse Commerce Platform - $799/month"
     },
     {
       title: "Autonomous DevOps Orchestrator",
@@ -92,7 +103,8 @@ const EnhancedHomepage2026: React.FC = () => {
       icon: Cpu,
       color: "from-green-600 to-emerald-700",
       price: "$1,199/month",
-      features: ["Autonomous CI/CD", "Self-healing infrastructure", "Predictive optimization"]
+      features: ["Autonomous CI/CD", "Self-healing infrastructure", "Predictive optimization"],
+      ariaLabel: "Autonomous DevOps Orchestrator - $1,199/month"
     },
     {
       title: "Quantum Computer Vision Suite",
@@ -100,9 +112,21 @@ const EnhancedHomepage2026: React.FC = () => {
       icon: Eye,
       color: "from-cyan-600 to-blue-700",
       price: "$3,499/month",
-      features: ["Quantum image processing", "Real-time analysis", "3D vision"]
+      features: ["Quantum image processing", "Real-time analysis", "3D vision"],
+      ariaLabel: "Quantum Computer Vision Suite - $3,499/month"
     }
   ];
+
+  const handleServiceNavigation = (direction: 'prev' | 'next') => {
+    if (direction === 'prev') {
+      setCurrentServiceIndex((prev) => (prev - 1 + 6) % 6);
+    } else {
+      setCurrentServiceIndex((prev) => (prev + 1) % 6);
+    }
+  };
+
+  const handleServicePause = () => setIsAutoRotating(false);
+  const handleServiceResume = () => setIsAutoRotating(true);
 
   if (isLoading) {
     return (
@@ -113,9 +137,11 @@ const EnhancedHomepage2026: React.FC = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
             className="text-center"
+            role="status"
+            aria-live="polite"
           >
             <div className="relative">
-              <Loader2 className="w-20 h-20 text-cyan-400 animate-spin mx-auto mb-6" />
+              <Loader2 className="w-20 h-20 text-cyan-400 animate-spin mx-auto mb-6" aria-hidden="true" />
               <div className="absolute inset-0 w-20 h-20 bg-cyan-400/20 rounded-full blur-xl animate-pulse"></div>
             </div>
             <p className="text-2xl text-gray-300 font-light">Loading Zion Tech Group...</p>
@@ -141,6 +167,7 @@ const EnhancedHomepage2026: React.FC = () => {
             variants={backgroundVariants}
             initial="initial"
             animate="animate"
+            aria-hidden="true"
           >
             {/* Animated Grid Pattern */}
             <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.1)_1px,transparent_1px)] bg-[size:50px_50px] animate-pulse"></div>
@@ -188,9 +215,14 @@ const EnhancedHomepage2026: React.FC = () => {
                     className="group px-12 py-6 bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 text-white font-bold text-xl rounded-2xl hover:from-cyan-600 hover:via-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 flex items-center gap-3 focus:outline-none focus:ring-4 focus:ring-cyan-500/50 relative overflow-hidden"
                     aria-label="Get started with Zion Tech Group services"
                     onClick={() => window.location.href = '/get-started'}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') {
+                        window.location.href = '/get-started';
+                      }
+                    }}
                   >
                     <span className="relative z-10">Get Started</span>
-                    <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform relative z-10" />
+                    <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform relative z-10" aria-hidden="true" />
                     <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </button>
                   
@@ -198,8 +230,13 @@ const EnhancedHomepage2026: React.FC = () => {
                     className="px-12 py-6 border-2 border-cyan-400 text-cyan-400 font-bold text-xl rounded-2xl hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 flex items-center gap-3 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 group"
                     aria-label="Learn more about Zion Tech Group"
                     onClick={() => window.location.href = '/about'}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') {
+                        window.location.href = '/about';
+                      }
+                    }}
                   >
-                    <Play className="w-6 h-6 group-hover:scale-110 transition-transform" />
+                    <Play className="w-6 h-6 group-hover:scale-110 transition-transform" aria-hidden="true" />
                     <span>Learn More</span>
                   </button>
                 </motion.div>
@@ -208,10 +245,12 @@ const EnhancedHomepage2026: React.FC = () => {
                 <motion.div 
                   className="grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-400"
                   variants={fadeInUp}
+                  role="region"
+                  aria-label="Company achievements and statistics"
                 >
                   <div className="flex flex-col items-center gap-4 p-6 rounded-2xl bg-gray-800/20 backdrop-blur-sm border border-cyan-400/30 hover:border-cyan-400/60 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-400/20 group">
                     <div className="relative">
-                      <Users className="w-10 h-10 text-cyan-400 group-hover:text-cyan-300 transition-colors" />
+                      <Users className="w-10 h-10 text-cyan-400 group-hover:text-cyan-300 transition-colors" aria-hidden="true" />
                       <div className="absolute inset-0 w-10 h-10 bg-cyan-400/20 rounded-full blur-lg group-hover:bg-cyan-400/30 transition-all"></div>
                     </div>
                     <span className="text-xl font-bold text-white">500+ Clients</span>
@@ -219,7 +258,7 @@ const EnhancedHomepage2026: React.FC = () => {
                   </div>
                   <div className="flex flex-col items-center gap-4 p-6 rounded-2xl bg-gray-800/20 backdrop-blur-sm border border-blue-400/30 hover:border-blue-400/60 transition-all duration-300 hover:shadow-lg hover:shadow-blue-400/20 group">
                     <div className="relative">
-                      <Award className="w-10 h-10 text-blue-400 group-hover:text-blue-300 transition-colors" />
+                      <Award className="w-10 h-10 text-blue-400 group-hover:text-blue-300 transition-colors" aria-hidden="true" />
                       <div className="absolute inset-0 w-10 h-10 bg-blue-400/20 rounded-full blur-lg group-hover:bg-blue-400/30 transition-all"></div>
                     </div>
                     <span className="text-xl font-bold text-white">Industry Leader</span>
@@ -227,7 +266,7 @@ const EnhancedHomepage2026: React.FC = () => {
                   </div>
                   <div className="flex flex-col items-center gap-4 p-6 rounded-2xl bg-gray-800/20 backdrop-blur-sm border border-purple-400/30 hover:border-purple-400/60 transition-all duration-300 hover:shadow-lg hover:shadow-purple-400/20 group">
                     <div className="relative">
-                      <TrendingUp className="w-10 h-10 text-purple-400 group-hover:text-purple-300 transition-colors" />
+                      <TrendingUp className="w-10 h-10 text-purple-400 group-hover:text-purple-300 transition-colors" aria-hidden="true" />
                       <div className="absolute inset-0 w-10 h-10 bg-purple-400/20 rounded-full blur-lg group-hover:bg-purple-400/30 transition-all"></div>
                     </div>
                     <span className="text-xl font-bold text-white">99.9% Uptime</span>
@@ -240,59 +279,15 @@ const EnhancedHomepage2026: React.FC = () => {
         </section>
 
         {/* Enhanced Statistics Section with Neon Effects */}
-        <motion.section 
-          className="py-24 px-4 bg-gradient-to-b from-gray-900/80 via-purple-900/40 to-gray-800/80 relative"
-          initial={{ opacity: 0, y: 100 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
-        >
-          {/* Background Pattern */}
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(147,51,234,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(147,51,234,0.05)_1px,transparent_1px)] bg-[size:100px_100px]"></div>
-          
-          <div className="max-w-7xl mx-auto relative z-10">
-            <motion.h2 
-              className="text-5xl md:text-6xl font-black text-center mb-20 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              Why Choose Zion Tech Group?
-            </motion.h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                { icon: Brain, title: "1000+ Services", description: "Comprehensive technology solutions", color: "cyan", gradient: "from-cyan-500 to-blue-500" },
-                { icon: Shield, title: "99% Satisfaction", description: "Client success rate", color: "blue", gradient: "from-blue-500 to-purple-500" },
-                { icon: Rocket, title: "24/7 Support", description: "Round-the-clock assistance", color: "purple", gradient: "from-purple-500 to-pink-500" },
-                { icon: Star, title: "100+ Industries", description: "Cross-sector expertise", color: "emerald", gradient: "from-emerald-500 to-teal-500" }
-              ].map((stat, index) => (
-                <motion.div
-                  key={stat.title}
-                  className="text-center p-8 rounded-2xl bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 hover:border-cyan-400/50 transition-all duration-300 hover:transform hover:scale-105 group relative overflow-hidden"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  whileHover={{ y: -10 }}
-                >
-                  {/* Background Gradient */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
-                  
-                  <div className="relative z-10">
-                    <div className="relative inline-block mb-6">
-                      <stat.icon className={`w-16 h-16 mx-auto text-${stat.color}-400 group-hover:text-${stat.color}-300 transition-colors`} />
-                      <div className={`absolute inset-0 w-16 h-16 bg-${stat.color}-400/20 rounded-full blur-xl group-hover:bg-${stat.color}-400/30 transition-all`}></div>
-                    </div>
-                    <h3 className="text-3xl font-bold text-white mb-3">{stat.title}</h3>
-                    <p className="text-gray-400 text-lg">{stat.description}</p>
-                  </div>
-                </motion.div>
-              ))}
+        <Suspense fallback={
+          <div className="py-24 px-4 bg-gradient-to-b from-gray-900/80 via-purple-900/40 to-gray-800/80 relative">
+            <div className="max-w-7xl mx-auto text-center">
+              <Loader2 className="w-16 h-16 text-cyan-400 animate-spin mx-auto" />
             </div>
           </div>
-        </motion.section>
+        }>
+          <StatisticsSection />
+        </Suspense>
 
         {/* Enhanced Featured Services Showcase */}
         <motion.section 
@@ -301,12 +296,14 @@ const EnhancedHomepage2026: React.FC = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
+          aria-labelledby="services-heading"
         >
           {/* Background Elements */}
           <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.03)_1px,transparent_1px)] bg-[size:80px_80px]"></div>
           
           <div className="max-w-7xl mx-auto relative z-10">
             <motion.h2 
+              id="services-heading"
               className="text-5xl md:text-6xl font-black text-center mb-20 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -316,7 +313,7 @@ const EnhancedHomepage2026: React.FC = () => {
               Our Revolutionary Services
             </motion.h2>
             
-            {/* Featured Service Showcase */}
+            {/* Featured Service Showcase with Navigation */}
             <div className="mb-16">
               <motion.div
                 className="text-center p-12 rounded-3xl bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm border border-gray-700/50 hover:border-cyan-400/50 transition-all duration-500 hover:scale-105 relative overflow-hidden"
@@ -325,14 +322,51 @@ const EnhancedHomepage2026: React.FC = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
                 whileHover={{ y: -5 }}
+                onMouseEnter={handleServicePause}
+                onMouseLeave={handleServiceResume}
+                onFocus={handleServicePause}
+                onBlur={handleServiceResume}
+                role="region"
+                aria-label={`Featured service: ${featuredServices[currentServiceIndex].title}`}
               >
                 {/* Background Pattern */}
                 <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.05)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
                 
+                {/* Navigation Controls */}
+                <div className="absolute top-4 left-4 flex gap-2">
+                  <button
+                    onClick={() => handleServiceNavigation('prev')}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') {
+                        handleServiceNavigation('prev');
+                      }
+                    }}
+                    className="p-2 rounded-full bg-gray-800/50 hover:bg-gray-700/70 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                    aria-label="Previous service"
+                  >
+                    <ChevronLeft className="w-5 h-5 text-cyan-400" />
+                  </button>
+                  <button
+                    onClick={() => handleServiceNavigation('next')}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') {
+                        handleServiceNavigation('next');
+                      }
+                    }}
+                    className="p-2 rounded-full bg-gray-800/50 hover:bg-gray-700/70 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                    aria-label="Next service"
+                  >
+                    <ChevronRight className="w-5 h-5 text-cyan-400" />
+                  </button>
+                </div>
+                
                 <div className="relative z-10">
                   <div className="flex items-center justify-center mb-8">
                     <div className={`p-6 rounded-2xl bg-gradient-to-r ${featuredServices[currentServiceIndex].color} shadow-2xl`}>
-                      {React.createElement(featuredServices[currentServiceIndex].icon, { className: "w-16 h-16 text-white" })}
+                      {React.createElement(featuredServices[currentServiceIndex].icon, { 
+                        className: "w-16 h-16 text-white",
+                        "aria-hidden": "true"
+                      })}
                     </div>
                   </div>
                   
@@ -355,6 +389,12 @@ const EnhancedHomepage2026: React.FC = () => {
                   <button 
                     className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 focus:outline-none focus:ring-4 focus:ring-cyan-500/50"
                     onClick={() => window.location.href = '/services'}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') {
+                        window.location.href = '/services';
+                      }
+                    }}
+                    aria-label="Explore all Zion Tech Group services"
                   >
                     Explore All Services
                   </button>
@@ -398,21 +438,23 @@ const EnhancedHomepage2026: React.FC = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   whileHover={{ y: -5, scale: 1.02 }}
+                  role="article"
+                  aria-labelledby={`service-${index}-title`}
                 >
                   {/* Background Gradient */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
                   
                   <div className="relative z-10">
                     <div className="relative inline-block mb-6">
-                      <service.icon className={`w-14 h-14 mb-4 text-${service.color}-400 group-hover:text-${service.color}-300 transition-colors`} />
+                      <service.icon className={`w-14 h-14 mb-4 text-${service.color}-400 group-hover:text-${service.color}-300 transition-colors`} aria-hidden="true" />
                       <div className={`absolute inset-0 w-14 h-14 bg-${service.color}-400/20 rounded-full blur-lg group-hover:bg-${service.color}-400/30 transition-all`}></div>
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
+                    <h3 id={`service-${index}-title`} className="text-2xl font-bold text-white mb-4">{service.title}</h3>
                     <p className="text-gray-400 mb-6 text-lg">{service.description}</p>
-                    <ul className="space-y-3">
+                    <ul className="space-y-3" role="list">
                       {service.features.map((feature, featureIndex) => (
                         <li key={featureIndex} className="flex items-center gap-3 text-gray-300">
-                          <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                          <div className="w-2 h-2 bg-cyan-400 rounded-full" aria-hidden="true"></div>
                           {feature}
                         </li>
                       ))}
@@ -431,6 +473,7 @@ const EnhancedHomepage2026: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
+          aria-labelledby="cta-heading"
         >
           {/* Background Elements */}
           <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.05)_1px,transparent_1px)] bg-[size:100px_100px]"></div>
@@ -439,6 +482,7 @@ const EnhancedHomepage2026: React.FC = () => {
           
           <div className="max-w-5xl mx-auto text-center relative z-10">
             <motion.h2 
+              id="cta-heading"
               className="text-5xl md:text-6xl font-black mb-10 text-white"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -466,6 +510,12 @@ const EnhancedHomepage2026: React.FC = () => {
               <button 
                 className="px-12 py-6 bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 text-white font-bold text-xl rounded-2xl hover:from-cyan-600 hover:via-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 focus:outline-none focus:ring-4 focus:ring-cyan-500/50 group relative overflow-hidden"
                 onClick={() => window.location.href = '/contact'}
+                                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') {
+                        window.location.href = '/contact';
+                      }
+                    }}
+                aria-label="Start your business transformation journey with Zion Tech Group"
               >
                 <span className="relative z-10">Start Your Journey</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -473,6 +523,12 @@ const EnhancedHomepage2026: React.FC = () => {
               <button 
                 className="px-12 py-6 border-2 border-cyan-400 text-cyan-400 font-bold text-xl rounded-2xl hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 group"
                 onClick={() => window.location.href = '/services'}
+                                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') {
+                        window.location.href = '/services';
+                      }
+                    }}
+                aria-label="Explore Zion Tech Group services"
               >
                 <span className="group-hover:scale-105 transition-transform inline-block">Explore Services</span>
               </button>
