@@ -10,17 +10,9 @@ import {
 import Link from 'next/link';
 
 // Import our new service data
-<<<<<<< HEAD
-import { enterpriseITSolutions } from '../data/2025-enterprise-it-solutions';
-import { innovativeMicroSaasSolutions } from '../data/2025-innovative-micro-saas-solutions';
-import { cuttingEdgeAIServices } from '../data/2025-cutting-edge-ai-services';
-import { advancedAIAutomationServices } from '../data/2025-advanced-ai-automation-services';
-import { innovativeITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
-=======
 import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
 import { innovativeMicroSaasSolutions as innovativeMicroSaasSolutions2034 } from '../data/2034-innovative-micro-saas-solutions';
 import { cuttingEdgeAIServices } from '../data/2034-cutting-edge-ai-services';
->>>>>>> origin/cursor/add-and-advertise-new-services-then-build-8699
 import { real2025Q4AugmentedBatch } from '../data/real-2025-q4-augmented-batch';
 import { real2029Q3Additions } from '../data/real-2029-q3-additions';
 import { enterpriseITSolutions2034Additions } from '../data/augment-2034-enterprise-it-additions';
@@ -54,6 +46,11 @@ import { innovative2025AIServicesExpansions } from '../data/innovative-2025-ai-s
 import { cuttingEdgeInnovativeServices } from '../data/2025-cutting-edge-innovative-services';
 import { enterpriseAISolutions } from '../data/2025-enterprise-ai-solutions';
 import { innovativeMicroSaasSolutions } from '../data/2025-innovative-micro-saas-solutions';
+
+// Import our new innovative services
+import { innovative2035MicroSaasExpansion } from '../data/innovative-2035-micro-saas-expansion';
+import { advancedAIEnterpriseServices } from '../data/advanced-ai-enterprise-services';
+import { specializedIndustrySolutions } from '../data/specialized-industry-solutions';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -141,14 +138,9 @@ const allServices = [
   ...validatedServices2025Q4,
   ...real2035Q2Additions,
   ...real2036ServiceExpansions,
+<<<<<<< HEAD
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
-<<<<<<< HEAD
-  // Add our new innovative 2025 service expansions
-  ...innovative2025MicroSaasExpansions,
-  ...innovative2025ITSolutionsExpansions,
-  ...innovative2025AIServicesExpansions
-=======
   // Our new innovative services
   ...innovative2037Services,
   ...advanced2038Services,
@@ -161,7 +153,12 @@ const allServices = [
   ...cuttingEdgeInnovativeServices,
   ...enterpriseAISolutions,
   ...innovativeMicroSaasSolutions
->>>>>>> origin/cursor/add-and-advertise-new-services-then-build-8699
+=======
+  // Add our new innovative services
+  ...innovative2035MicroSaasExpansion,
+  ...advancedAIEnterpriseServices,
+  ...specializedIndustrySolutions
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-86e9
 ];
 
 const categories = [
@@ -236,6 +233,7 @@ const categories = [
     description: 'Learning and research platforms'
   },
   {
+<<<<<<< HEAD
     id: 'healthcare-biotech',
     name: 'Healthcare & Biotech',
     icon: <Heart className="w-6 h-6" />,
@@ -283,6 +281,27 @@ const categories = [
     icon: <Users className="w-6 h-6" />,
     color: 'from-blue-500 to-cyan-500',
     description: 'Human resources and talent management solutions'
+=======
+    id: 'innovative-ai',
+    name: 'Innovative AI Solutions',
+    icon: <Brain className="w-6 h-6" />,
+    color: 'from-purple-500 to-indigo-500',
+    description: 'Cutting-edge AI and machine learning services'
+  },
+  {
+    id: 'enterprise-ai',
+    name: 'Enterprise AI',
+    icon: <Building className="w-6 h-6" />,
+    color: 'from-blue-500 to-cyan-500',
+    description: 'AI-powered enterprise solutions and automation'
+  },
+  {
+    id: 'industry-solutions',
+    name: 'Industry Solutions',
+    icon: <Cpu className="w-6 h-6" />,
+    color: 'from-emerald-500 to-teal-500',
+    description: 'Specialized solutions for specific industries'
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-86e9
   }
 ];
 
@@ -362,6 +381,7 @@ export default function Services() {
       case 'ai & consciousness':
       case 'ai services':
       case 'artificial intelligence':
+      case 'innovative ai solutions':
         return <Brain className="w-6 h-6 text-cyan-400" />;
       case 'quantum':
       case 'quantum & emerging tech':
@@ -384,6 +404,10 @@ export default function Services() {
       case 'education':
       case 'education & research':
         return <GraduationCap className="w-6 h-6 text-yellow-400" />;
+      case 'enterprise ai':
+        return <Building className="w-6 h-6 text-blue-400" />;
+      case 'industry solutions':
+        return <Cpu className="w-6 h-6 text-emerald-400" />;
       default:
         return <Shield className="w-6 h-6 text-gray-400" />;
     }
