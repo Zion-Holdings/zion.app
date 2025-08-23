@@ -1,196 +1,178 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  X, ChevronDown, ChevronRight, Search, Settings, User, 
-  Brain, Atom, Rocket, Shield, Cpu, Database, Cloud, 
-  BarChart3, Code, Smartphone, Server, Users, Award, 
-  TrendingUp, BookOpen, FileText, GraduationCap, Headphones,
-  Zap, Globe, Lock, Phone, Mail, MapPin, Star, MessageCircle,
-  ExternalLink, Home, Briefcase, Info, HelpCircle, Shield as ShieldIcon, Play, Building
+  Menu, X, ChevronDown, ChevronRight, Home, Rocket, Target, Building, BookOpen, MessageCircle,
+  Brain, Atom, Shield, Cloud, BarChart, Code, Rocket as RocketIcon, Users, Info, Briefcase,
+  Heart, DollarSign, Cog, FileText, Calendar, Lightbulb, HelpCircle, Monitor, Zap, Star,
+  Settings, Globe, Lock, Server, Database, Network, Palette, Cpu, Layers, Globe2, Truck, Accessibility
 } from 'lucide-react';
 
-const EnhancedSidebar2025: React.FC<{ isOpen: boolean; onClose: () => void }> = ({ 
-  isOpen, 
-  onClose 
-}) => {
-  const [expandedSections, setExpandedSections] = useState<string[]>(['ai-services']);
+interface SidebarItem {
+  name: string;
+  href: string;
+  icon: React.ReactNode;
+  description?: string;
+  children?: SidebarItem[];
+  badge?: string;
+  featured?: boolean;
+  category?: string;
+}
+
+const sidebarItems: SidebarItem[] = [
+  {
+    name: 'Home',
+    href: '/',
+    icon: <Home className="w-5 h-5" />,
+    description: 'Welcome to Zion Tech Group'
+  },
+  {
+    name: 'Services',
+    href: '/services',
+    icon: <Rocket className="w-5 h-5" />,
+    description: 'Our comprehensive technology solutions',
+    badge: 'Featured',
+    children: [
+      { name: 'All Services', href: '/services', icon: <Rocket className="w-4 h-4" />, featured: true },
+      { name: 'AI & Machine Learning', href: '/ai-services', icon: <Brain className="w-4 h-4" /> },
+      { name: 'Quantum Technology', href: '/quantum-services', icon: <Atom className="w-4 h-4" /> },
+      { name: 'Cybersecurity', href: '/cybersecurity', icon: <Shield className="w-4 h-4" /> },
+      { name: 'Cloud & Infrastructure', href: '/it-services', icon: <Cloud className="w-4 h-4" /> },
+      { name: 'Business Intelligence', href: '/data-analytics', icon: <BarChart className="w-4 h-4" /> },
+      { name: 'DevOps & Automation', href: '/devops-automation', icon: <Code className="w-4 h-4" /> },
+      { name: 'Space Technology', href: '/space-tech', icon: <RocketIcon className="w-4 h-4" /> }
+    ]
+  },
+  {
+    name: 'Solutions',
+    href: '/solutions',
+    icon: <Target className="w-5 h-5" />,
+    description: 'Industry-specific solutions',
+    children: [
+      { name: 'Enterprise Solutions', href: '/solutions/enterprise', icon: <Building className="w-4 h-4" /> },
+      { name: 'Healthcare Solutions', href: '/solutions/healthcare', icon: <Heart className="w-4 h-4" /> },
+      { name: 'Financial Solutions', href: '/solutions/financial', icon: <DollarSign className="w-4 h-4" /> },
+      { name: 'Manufacturing Solutions', href: '/solutions/manufacturing', icon: <Cog className="w-4 h-4" /> },
+      { name: 'Retail Solutions', href: '/retail-technology-solutions', icon: <Target className="w-4 h-4" /> },
+      { name: 'Government Solutions', href: '/government-technology-solutions', icon: <Shield className="w-4 h-4" /> }
+    ]
+  },
+  {
+    name: 'Company',
+    href: '/about',
+    icon: <Building className="w-5 h-5" />,
+    description: 'About Zion Tech Group',
+    children: [
+      { name: 'About Us', href: '/about', icon: <Info className="w-4 h-4" /> },
+      { name: 'Our Mission', href: '/mission', icon: <Target className="w-4 h-4" /> },
+      { name: 'Leadership Team', href: '/leadership', icon: <Users className="w-4 h-4" /> },
+      { name: 'Company Culture', href: '/culture', icon: <Heart className="w-4 h-4" /> },
+      { name: 'Our Values', href: '/values', icon: <Star className="w-4 h-4" /> },
+      { name: 'Careers', href: '/careers', icon: <Briefcase className="w-4 h-4" /> },
+      { name: 'News & Press', href: '/press', icon: <FileText className="w-4 h-4" /> }
+    ]
+  },
+  {
+    name: 'Resources',
+    href: '/resources',
+    icon: <BookOpen className="w-5 h-5" />,
+    description: 'Knowledge and resources',
+    children: [
+      { name: 'Documentation', href: '/docs', icon: <FileText className="w-4 h-4" /> },
+      { name: 'Blog & Articles', href: '/blog', icon: <BookOpen className="w-4 h-4" /> },
+      { name: 'Case Studies', href: '/case-studies', icon: <BarChart className="w-4 h-4" /> },
+      { name: 'White Papers', href: '/white-papers', icon: <FileText className="w-4 h-4" /> },
+      { name: 'Webinars', href: '/webinars', icon: <Calendar className="w-4 h-4" /> },
+      { name: 'Events', href: '/events-webinars', icon: <Calendar className="w-4 h-4" /> },
+      { name: 'Training', href: '/training', icon: <Lightbulb className="w-4 h-4" /> }
+    ]
+  },
+  {
+    name: 'Support',
+    href: '/support',
+    icon: <MessageCircle className="w-5 h-5" />,
+    description: 'Get help and support',
+    children: [
+      { name: 'Contact Us', href: '/contact', icon: <MessageCircle className="w-4 h-4" /> },
+      { name: 'Get Started', href: '/get-started', icon: <Zap className="w-4 h-4" /> },
+      { name: 'Support Center', href: '/support', icon: <HelpCircle className="w-4 h-4" /> },
+      { name: 'Status Page', href: '/status', icon: <Monitor className="w-4 h-4" /> },
+      { name: 'Developer Resources', href: '/developer-resources', icon: <Code className="w-4 h-4" /> }
+    ]
+  },
+  {
+    name: 'Compliance & Accessibility',
+    href: '/compliance',
+    icon: <Shield className="w-5 h-5" />,
+    description: 'Enterprise compliance and accessibility solutions',
+    children: [
+      { name: 'SOC 2 Compliance', href: '/soc2-compliance-automation', icon: <Shield className="w-4 h-4" /> },
+      { name: 'GDPR Compliance', href: '/privacy-compliance-automation', icon: <Lock className="w-4 h-4" /> },
+      { name: 'Accessibility Tools', href: '/accessibility', icon: <Accessibility className="w-4 h-4" /> },
+      { name: 'Compliance Monitoring', href: '/compliance', icon: <Monitor className="w-4 h-4" /> },
+      { name: 'Privacy Portal', href: '/privacy-request-portal', icon: <Users className="w-4 h-4" /> }
+    ]
+  }
+];
+
+interface EnhancedSidebar2025Props {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+const EnhancedSidebar2025: React.FC<EnhancedSidebar2025Props> = ({ isOpen, onClose }) => {
+  const router = useRouter();
+  const [expandedItems, setExpandedItems] = useState<Set<string>>(new Set());
   const [searchQuery, setSearchQuery] = useState('');
 
-  const toggleSection = (sectionId: string) => {
-    setExpandedSections(prev => 
-      prev.includes(sectionId) 
-        ? prev.filter(id => id !== sectionId)
-        : [...prev, sectionId]
-    );
-  };
+  // Auto-expand current section
+  useEffect(() => {
+    const currentPath = router.pathname;
+    const newExpandedItems = new Set<string>();
+    
+    sidebarItems.forEach(item => {
+      if (item.children) {
+        const hasActiveChild = item.children.some(child => 
+          currentPath === child.href || currentPath.startsWith(child.href + '/')
+        );
+        if (hasActiveChild) {
+          newExpandedItems.add(item.name);
+        }
+      }
+    });
+    
+    setExpandedItems(newExpandedItems);
+  }, [router.pathname]);
 
-  const sidebarSections = [
-    {
-      id: 'ai-services',
-      title: 'AI & Consciousness',
-      icon: Brain,
-      color: 'from-purple-500 to-pink-500',
-      items: [
-        { label: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2044', badge: 'Hot', featured: true },
-        { label: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-platform', badge: 'New' },
-        { label: 'AI Autonomous Research', href: '/ai-autonomous-research', badge: 'Trending' },
-        { label: 'AI Content Personalization', href: '/ai-content-personalization-engine' },
-        { label: 'AI Ethics & Governance', href: '/ai-ethics-governance-framework' },
-        { label: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem' },
-        { label: 'AI Predictive Maintenance', href: '/ai-predictive-maintenance-platform' },
-        { label: 'AI Customer Success', href: '/ai-customer-success-platform' },
-        { label: 'AI Sales Intelligence', href: '/ai-sales-intelligence-platform' },
-        { label: 'AI Financial Intelligence', href: '/ai-financial-intelligence' },
-        { label: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' },
-        { label: 'AI Manufacturing Optimization', href: '/ai-manufacturing-optimization' },
-        { label: 'AI Market Research', href: '/ai-market-research' },
-        { label: 'AI Sustainability Platform', href: '/ai-sustainability-platform' },
-        { label: 'AI Autonomous Vehicle', href: '/ai-autonomous-vehicle-ai-platform' }
-      ]
-    },
-    {
-      id: 'quantum-tech',
-      title: 'Quantum & Emerging Tech',
-      icon: Atom,
-      color: 'from-blue-500 to-cyan-500',
-      items: [
-        { label: 'Quantum Neural Ecosystem', href: '/quantum-neural-ecosystem-2040', badge: 'Revolutionary', featured: true },
-        { label: 'Quantum Cybersecurity', href: '/quantum-cybersecurity', badge: 'Critical' },
-        { label: 'Quantum Internet Security', href: '/quantum-internet-security-platform' },
-        { label: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure-2044' },
-        { label: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' },
-        { label: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform' },
-        { label: 'Quantum Financial Intelligence', href: '/quantum-financial-trading-platform' },
-        { label: 'Quantum Financial Trading', href: '/quantum-financial-trading' },
-        { label: 'Quantum Internet Security Platform', href: '/quantum-internet-security-platform' },
-        { label: 'Quantum Storage Solutions', href: '/quantum-storage-solutions-2044' },
-        { label: 'Quantum Neural Network', href: '/quantum-neural-network-platform-2044' }
-      ]
-    },
-    {
-      id: 'space-tech',
-      title: 'Space Technology',
-      icon: Globe,
-      color: 'from-indigo-500 to-purple-500',
-      items: [
-        { label: 'Space Resource Intelligence', href: '/space-resource-intelligence-2044', badge: 'Future', featured: true },
-        { label: 'Space Technology', href: '/space-technology', badge: 'Core' },
-        { label: 'Space Data Analytics', href: '/space-data-analytics' },
-        { label: 'Space Technology AI Platform', href: '/space-technology-ai-platform' },
-        { label: 'Space Resource Mining Platform', href: '/space-resource-mining-platform' }
-      ]
-    },
-    {
-      id: 'enterprise-it',
-      title: 'Enterprise IT Solutions',
-      icon: Server,
-      color: 'from-green-500 to-emerald-500',
-      items: [
-        { label: 'IT Infrastructure', href: '/it-services', badge: 'Popular' },
-        { label: 'Cloud Platform', href: '/cloud-platform', badge: 'Scalable' },
-        { label: 'Cybersecurity', href: '/cybersecurity', badge: 'Critical' },
-        { label: 'Data Analytics', href: '/data-analytics', badge: 'Insights' },
-        { label: 'DevOps Automation', href: '/devops-automation', badge: 'Efficient' },
-        { label: 'Zero Trust Security', href: '/zero-trust-security-platform' },
-        { label: 'Edge Computing', href: '/edge-computing-orchestration' },
-        { label: 'Blockchain Infrastructure', href: '/blockchain-infrastructure-platform' },
-        { label: 'Multi-Cloud Management', href: '/multi-cloud-disaster-recovery' },
-        { label: 'IT Asset Management', href: '/it-asset-discovery-agent' }
-      ]
-    },
-    {
-      id: 'industry-solutions',
-      title: 'Industry Solutions',
-      icon: Building,
-      color: 'from-orange-500 to-red-500',
-      items: [
-        { label: 'Healthcare AI Solutions', href: '/healthcare-ai-solutions', badge: 'Critical', featured: true },
-        { label: 'Financial Solutions', href: '/financial-solutions', badge: 'Secure' },
-        { label: 'Manufacturing AI', href: '/manufacturing-ai-solutions', badge: 'Efficient' },
-        { label: 'Government Technology', href: '/government-technology-solutions', badge: 'Compliant' },
-        { label: 'Retail Technology', href: '/retail-technology-solutions', badge: 'Innovative' },
-        { label: 'Energy & Utilities', href: '/energy-utilities-solutions', badge: 'Sustainable' },
-        { label: 'Education Technology', href: '/education-technology-solutions', badge: 'Future-Ready' },
-        { label: 'Entertainment & Media', href: '/entertainment-media-solutions', badge: 'Creative' }
-      ]
-    },
-    {
-      id: 'micro-saas',
-      title: 'Micro SAAS Platforms',
-      icon: Rocket,
-      color: 'from-orange-500 to-red-500',
-      items: [
-        { label: 'AI Content Factory', href: '/ai-autonomous-content-factory', badge: 'Trending', featured: true },
-        { label: 'Customer Success Platform', href: '/ai-customer-success-platform', badge: 'Popular' },
-        { label: 'HR Analytics Platform', href: '/ai-hr-analytics-platform' },
-        { label: 'Sales Intelligence', href: '/ai-sales-intelligence-platform' },
-        { label: 'Brain-Computer Interface', href: '/brain-computer-interface-platform' },
-        { label: 'Research Assistant', href: '/ai-autonomous-research-assistant' },
-        { label: 'Sustainability Platform', href: '/ai-sustainability-platform' },
-        { label: 'Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' },
-        { label: 'Financial Intelligence', href: '/ai-financial-intelligence' },
-        { label: 'Space Resource Intelligence', href: '/space-resource-intelligence-platform' },
-        { label: 'Materials Discovery', href: '/quantum-materials-discovery-platform' }
-      ]
-    },
-    {
-      id: 'company',
-      title: 'Company & Resources',
-      icon: Users,
-      color: 'from-gray-500 to-slate-500',
-      items: [
-        { label: 'About Us', href: '/about' },
-        { label: 'Our Mission', href: '/mission' },
-        { label: 'Company', href: '/company' },
-        { label: 'Culture', href: '/culture' },
-        { label: 'Values', href: '/values' },
-        { label: 'Careers', href: '/careers' },
-        { label: 'Career Development', href: '/career-development' },
-        { label: 'Benefits', href: '/benefits' },
-        { label: 'Contact', href: '/contact' },
-        { label: 'Partners', href: '/partners' },
-        { label: 'Blog', href: '/blog' },
-        { label: 'Case Studies', href: '/case-studies' },
-        { label: 'News', href: '/news' },
-        { label: 'Press', href: '/press' },
-        { label: 'Media Kit', href: '/media-kit' },
-        { label: 'Events & Webinars', href: '/events-webinars' },
-        { label: 'Support', href: '/support' },
-        { label: 'Training', href: '/training' },
-        { label: 'Resources', href: '/resources' },
-        { label: 'Documentation', href: '/docs' },
-        { label: 'API Reference', href: '/api-docs' },
-        { label: 'Webinars', href: '/webinars' },
-        { label: 'White Papers', href: '/white-papers' },
-        { label: 'Events', href: '/events' },
-        { label: 'Pricing', href: '/pricing' },
-        { label: 'Get Quote', href: '/quote' },
-        { label: 'Request Demo', href: '/demo' }
-      ]
+  const toggleExpanded = (itemName: string) => {
+    const newExpandedItems = new Set(expandedItems);
+    if (newExpandedItems.has(itemName)) {
+      newExpandedItems.delete(itemName);
+    } else {
+      newExpandedItems.add(itemName);
     }
-  ];
-
-  const contactInfo = {
-    phone: '+1 302 464 0950',
-    email: 'kleber@ziontechgroup.com',
-    address: '364 E Main St STE 1008 Middletown DE 19709',
-    website: 'https://ziontechgroup.com'
+    setExpandedItems(newExpandedItems);
   };
 
-  const quickActions = [
-    { label: 'Get Started', href: '/get-started', icon: Rocket, color: 'from-cyan-500 to-blue-600' },
-    { label: 'Contact Sales', href: '/contact', icon: MessageCircle, color: 'from-purple-500 to-pink-600' },
-    { label: 'Request Demo', href: '/demo', icon: Play, color: 'from-green-500 to-emerald-600' },
-    { label: 'Support', href: '/support', icon: HelpCircle, color: 'from-orange-500 to-red-600' }
-  ];
+  const isActive = (href: string) => {
+    return router.pathname === href || router.pathname.startsWith(href + '/');
+  };
 
-  const filteredSections = sidebarSections.map(section => ({
-    ...section,
-    items: section.items.filter(item => 
-      item.label.toLowerCase().includes(searchQuery.toLowerCase())
-    )
-  })).filter(section => section.items.length > 0);
+  const filteredItems = sidebarItems.filter(item => {
+    if (!searchQuery) return true;
+    const matchesName = item.name.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesDescription = item.description?.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesChildren = item.children?.some(child => 
+      child.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    return matchesName || matchesDescription || matchesChildren;
+  });
+
+  const handleItemClick = (href: string) => {
+    router.push(href);
+    onClose();
+  };
 
   return (
     <AnimatePresence>
@@ -204,181 +186,156 @@ const EnhancedSidebar2025: React.FC<{ isOpen: boolean; onClose: () => void }> = 
             className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden"
             onClick={onClose}
           />
-
+          
           {/* Sidebar */}
           <motion.div
             initial={{ x: '-100%' }}
             animate={{ x: 0 }}
             exit={{ x: '-100%' }}
-            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed left-0 top-0 h-full w-80 bg-black/95 backdrop-blur-xl border-r border-cyan-500/20 z-50 overflow-y-auto"
+            transition={{ type: 'tween', duration: 0.3 }}
+            className="fixed left-0 top-0 h-full w-80 bg-black/95 backdrop-blur-md border-r border-cyan-500/20 z-50 overflow-y-auto"
           >
             {/* Header */}
-            <div className="p-6 border-b border-cyan-500/20">
-              <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-xl flex items-center justify-center">
-                    <Zap className="w-6 h-6 text-white" />
+            <div className="sticky top-0 bg-black/80 backdrop-blur-md border-b border-cyan-500/20 p-4">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center space-x-2">
+                  <div className="w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center">
+                    <Zap className="w-5 h-5 text-white" />
                   </div>
-                  <div>
-                    <h2 className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-                      Zion Tech Group
-                    </h2>
-                    <p className="text-xs text-gray-400">Revolutionary Technology</p>
-                  </div>
+                  <span className="text-lg font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                    Zion Tech
+                  </span>
                 </div>
                 <button
                   onClick={onClose}
-                  className="p-2 text-gray-400 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+                  className="p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
-
+              
               {/* Search */}
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
                 <input
                   type="text"
-                  placeholder="Search services..."
+                  placeholder="Search navigation..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 bg-gray-900/50 border border-cyan-500/30 rounded-lg text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50"
+                  className="w-full px-3 py-2 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-sm"
                 />
               </div>
             </div>
 
-            {/* Quick Actions */}
-            <div className="p-6 border-b border-cyan-500/20">
-              <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">
-                Quick Actions
-              </h3>
-              <div className="grid grid-cols-2 gap-3">
-                {quickActions.map((action) => (
-                  <Link key={action.label} href={action.href}>
-                    <button className="w-full p-3 bg-gradient-to-r from-gray-900/50 to-gray-800/50 border border-cyan-500/20 rounded-lg hover:border-cyan-500/40 transition-all duration-300 group">
-                      <div className={`w-8 h-8 mx-auto mb-2 rounded-lg bg-gradient-to-r ${action.color} flex items-center justify-center`}>
-                        <action.icon className="w-4 h-4 text-white" />
-                      </div>
-                      <span className="text-xs font-medium text-gray-300 group-hover:text-cyan-400 transition-colors">
-                        {action.label}
-                      </span>
-                    </button>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Navigation Sections */}
-            <div className="flex-1 overflow-y-auto">
-              <nav className="p-6 space-y-6">
-                {filteredSections.map((section) => (
-                  <div key={section.id} className="space-y-3">
-                    <button
-                      onClick={() => toggleSection(section.id)}
-                      className="flex items-center justify-between w-full p-3 rounded-lg hover:bg-cyan-500/10 transition-colors group"
-                    >
-                      <div className="flex items-center space-x-3">
-                        <div className={`w-8 h-8 rounded-lg bg-gradient-to-r ${section.color} bg-opacity-20 border border-cyan-400/30 flex items-center justify-center group-hover:border-cyan-400/50 transition-all duration-300`}>
-                          <section.icon className="w-4 h-4 text-cyan-400" />
+            {/* Navigation Items */}
+            <div className="p-4 space-y-2">
+              {filteredItems.map((item) => (
+                <div key={item.name}>
+                  {item.children ? (
+                    <div>
+                      <button
+                        onClick={() => toggleExpanded(item.name)}
+                        className={`w-full flex items-center justify-between p-3 rounded-lg transition-all duration-200 group ${
+                          isActive(item.href) 
+                            ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/30' 
+                            : 'text-gray-300 hover:bg-gray-800/50 hover:text-white'
+                        }`}
+                      >
+                        <div className="flex items-center space-x-3">
+                          {item.icon}
+                          <span className="font-medium">{item.name}</span>
+                          {item.badge && (
+                            <span className="px-2 py-1 text-xs font-medium bg-cyan-500/20 text-cyan-300 rounded">
+                              {item.badge}
+                            </span>
+                          )}
                         </div>
-                        <span className="font-medium text-gray-200 group-hover:text-cyan-400 transition-colors">
-                          {section.title}
+                        {expandedItems.has(item.name) ? (
+                          <ChevronDown className="w-4 h-4 transition-transform duration-200" />
+                        ) : (
+                          <ChevronRight className="w-4 h-4 transition-transform duration-200" />
+                        )}
+                      </button>
+                      
+                      {/* Children */}
+                      <AnimatePresence>
+                        {expandedItems.has(item.name) && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.2 }}
+                            className="ml-6 mt-2 space-y-1"
+                          >
+                            {item.children.map((child) => (
+                              <button
+                                key={child.name}
+                                onClick={() => handleItemClick(child.href)}
+                                className={`w-full flex items-center space-x-3 p-2 rounded-lg transition-all duration-200 text-sm group ${
+                                  isActive(child.href)
+                                    ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/30'
+                                    : 'text-gray-400 hover:bg-gray-800/50 hover:text-white'
+                                }`}
+                              >
+                                {child.icon}
+                                <span>{child.name}</span>
+                                {child.featured && (
+                                  <span className="ml-auto px-2 py-1 text-xs font-medium bg-cyan-500/20 text-cyan-300 rounded">
+                                    Featured
+                                  </span>
+                                )}
+                              </button>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ) : (
+                    <button
+                      onClick={() => handleItemClick(item.href)}
+                      className={`w-full flex items-center space-x-3 p-3 rounded-lg transition-all duration-200 group ${
+                        isActive(item.href)
+                          ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/30'
+                          : 'text-gray-300 hover:bg-gray-800/50 hover:text-white'
+                      }`}
+                    >
+                      {item.icon}
+                      <span className="font-medium">{item.name}</span>
+                      {item.badge && (
+                        <span className="ml-auto px-2 py-1 text-xs font-medium bg-cyan-500/20 text-cyan-300 rounded">
+                          {item.badge}
                         </span>
-                      </div>
-                      {expandedSections.includes(section.id) ? (
-                        <ChevronDown className="w-4 h-4 text-gray-400 group-hover:text-cyan-400 transition-colors" />
-                      ) : (
-                        <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-cyan-400 transition-colors" />
                       )}
                     </button>
-
-                    <AnimatePresence>
-                      {expandedSections.includes(section.id) && (
-                        <motion.div
-                          initial={{ opacity: 0, height: 0 }}
-                          animate={{ opacity: 1, height: 'auto' }}
-                          exit={{ opacity: 0, height: 0 }}
-                          transition={{ duration: 0.3 }}
-                          className="ml-11 space-y-2"
-                        >
-                          {section.items.map((item, index) => (
-                            <motion.div
-                              key={item.href}
-                              initial={{ opacity: 0, x: -20 }}
-                              animate={{ opacity: 1, x: 0 }}
-                              transition={{ duration: 0.3, delay: index * 0.05 }}
-                            >
-                              <Link
-                                href={item.href}
-                                className="flex items-center justify-between p-2 rounded-lg hover:bg-cyan-500/10 transition-colors group"
-                                onClick={onClose}
-                              >
-                                <span className="text-sm text-gray-300 group-hover:text-cyan-400 transition-colors">
-                                  {item.label}
-                                </span>
-                                <div className="flex items-center space-x-2">
-                                  {item.featured && (
-                                    <span className="px-2 py-1 text-xs font-medium bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full">
-                                      Featured
-                                    </span>
-                                  )}
-                                  {item.badge && !item.featured && (
-                                    <span className="px-2 py-1 text-xs font-medium bg-gradient-to-r from-cyan-500/20 to-purple-500/20 text-cyan-400 border border-cyan-400/30 rounded-full">
-                                      {item.badge}
-                                    </span>
-                                  )}
-                                </div>
-                              </Link>
-                            </motion.div>
-                          ))}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                ))}
-              </nav>
+                  )}
+                </div>
+              ))}
             </div>
 
-            {/* Contact Information */}
-            <div className="p-6 border-t border-cyan-500/20 bg-gray-900/30">
-              <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">
-                Contact Information
-              </h3>
+            {/* Footer */}
+            <div className="sticky bottom-0 bg-black/80 backdrop-blur-md border-t border-cyan-500/20 p-4 mt-8">
               <div className="space-y-3">
-                <div className="flex items-center space-x-3 text-sm text-gray-300">
-                  <Phone className="w-4 h-4 text-cyan-400" />
-                  <a href={`tel:${contactInfo.phone}`} className="hover:text-cyan-400 transition-colors">
-                    {contactInfo.phone}
-                  </a>
+                <div className="text-xs text-gray-500 text-center">
+                  © 2025 Zion Tech Group
                 </div>
-                <div className="flex items-center space-x-3 text-sm text-gray-300">
-                  <Mail className="w-4 h-4 text-cyan-400" />
-                  <a href={`mailto:${contactInfo.email}`} className="hover:text-cyan-400 transition-colors">
-                    {contactInfo.email}
-                  </a>
-                </div>
-                <div className="flex items-start space-x-3 text-sm text-gray-300">
-                  <MapPin className="w-4 h-4 text-cyan-400 mt-1" />
-                  <span className="text-xs">{contactInfo.address}</span>
-                </div>
-                <div className="flex items-center space-x-3 text-sm text-gray-300">
-                  <Globe className="w-4 h-4 text-cyan-400" />
-                  <a href={contactInfo.website} className="hover:text-cyan-400 transition-colors text-xs">
-                    {contactInfo.website.replace('https://', '')}
-                  </a>
-                </div>
-              </div>
-
-              {/* Trust Indicators */}
-              <div className="mt-4 pt-4 border-t border-cyan-500/20">
-                <div className="flex items-center space-x-2 text-xs text-gray-400">
-                  <Star className="w-3 h-3 text-yellow-400" />
-                  <span>Innovation Leader 2025</span>
-                </div>
-                <div className="flex items-center space-x-2 text-xs text-gray-400 mt-2">
-                  <ShieldIcon className="w-3 h-3 text-green-400" />
-                  <span>Enterprise Security</span>
+                <div className="flex justify-center space-x-4">
+                  <Link
+                    href="/contact"
+                    className="text-xs text-cyan-400 hover:text-cyan-300 transition-colors"
+                  >
+                    Contact
+                  </Link>
+                  <Link
+                    href="/support"
+                    className="text-xs text-cyan-400 hover:text-cyan-300 transition-colors"
+                  >
+                    Support
+                  </Link>
+                  <Link
+                    href="/privacy"
+                    className="text-xs text-cyan-400 hover:text-cyan-300 transition-colors"
+                  >
+                    Privacy
+                  </Link>
                 </div>
               </div>
             </div>

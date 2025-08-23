@@ -2,10 +2,10 @@ import React from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
-  Target, Eye, Heart, Shield, Rocket, Brain, Atom, Cpu, Cloud, Globe, Users, 
-  Star, Zap, TrendingUp, Lightbulb, Award, Lock, Server, Database, Network,
-  Building, Code, Palette, BookOpen, GraduationCap, MessageCircle
+  Target, Rocket, Brain, Atom, Shield, Globe, Heart, Zap,
+  Users, Award, Star, Lightbulb, Eye, Lock, Server, Database
 } from 'lucide-react';
+import Link from 'next/link';
 
 const MissionPage: React.FC = () => {
   const fadeInUp = {
@@ -25,478 +25,471 @@ const MissionPage: React.FC = () => {
   const missionPillars = [
     {
       icon: Brain,
-      title: "AI Consciousness Evolution",
-      description: "Developing AI systems that understand, learn, and evolve with human-like consciousness and emotional intelligence.",
-      color: "from-purple-500 to-pink-500",
-      goals: [
-        "Create self-aware AI systems",
-        "Develop emotional intelligence algorithms",
-        "Build consciousness-driven decision making"
-      ]
+      title: "AI-First Innovation",
+      description: "Pioneering artificial intelligence solutions that transform how businesses operate and humans interact with technology.",
+      color: "from-purple-500 to-pink-500"
     },
     {
       icon: Atom,
-      title: "Quantum Computing Revolution",
-      description: "Pioneering quantum computing solutions that solve previously impossible computational challenges.",
-      color: "from-blue-500 to-cyan-500",
-      goals: [
-        "Quantum supremacy in business applications",
-        "Quantum-secure communications",
-        "Quantum machine learning platforms"
-      ]
+      title: "Quantum Excellence",
+      description: "Advancing quantum computing to solve previously impossible problems and unlock new computational frontiers.",
+      color: "from-blue-500 to-cyan-500"
     },
     {
       icon: Rocket,
-      title: "Space Technology Innovation",
-      description: "Advancing space technology to enable new frontiers in exploration, communication, and resource utilization.",
-      color: "from-indigo-500 to-purple-500",
-      goals: [
-        "Space resource intelligence platforms",
-        "Autonomous space operations",
-        "Interplanetary communication systems"
-      ]
+      title: "Space Technology",
+      description: "Revolutionizing space exploration and resource utilization through autonomous AI systems and advanced robotics.",
+      color: "from-indigo-500 to-purple-500"
     },
     {
       icon: Shield,
-      title: "Cybersecurity Excellence",
-      description: "Building impenetrable security systems that protect against evolving cyber threats and ensure data integrity.",
-      color: "from-red-500 to-orange-500",
-      goals: [
-        "Zero-trust security architecture",
-        "AI-powered threat detection",
-        "Quantum-resistant encryption"
-      ]
+      title: "Cybersecurity Leadership",
+      description: "Building impenetrable security systems that protect critical infrastructure and ensure digital trust.",
+      color: "from-red-500 to-orange-500"
     }
   ];
 
   const strategicObjectives = [
     {
       icon: Globe,
-      title: "Global Technology Democratization",
-      description: "Making advanced technology accessible to businesses of all sizes, regardless of location or resources.",
-      metrics: ["250+ countries served", "50,000+ businesses empowered", "99.9% uptime guarantee"]
+      title: "Global Impact",
+      description: "Extend our revolutionary technology solutions to every corner of the world, democratizing access to cutting-edge innovation.",
+      metrics: ["250+ Countries", "Global Research Network", "Localized Solutions"]
     },
     {
       icon: Users,
       title: "Human-AI Collaboration",
-      description: "Creating seamless partnerships between human intelligence and artificial intelligence for unprecedented productivity.",
-      metrics: ["10x productivity improvement", "95% task automation", "Real-time decision support"]
+      description: "Create seamless partnerships between human intelligence and artificial intelligence, enhancing human potential across all domains.",
+      metrics: ["AI-Augmented Work", "Human-Centric Design", "Ethical AI"]
     },
     {
-      icon: TrendingUp,
-      title: "Sustainable Innovation",
-      description: "Developing technology solutions that drive business growth while promoting environmental sustainability.",
-      metrics: ["Carbon-neutral operations", "Green computing initiatives", "Sustainable AI training"]
+      icon: Zap,
+      title: "Sustainable Technology",
+      description: "Develop environmentally conscious solutions that drive progress while preserving our planet for future generations.",
+      metrics: ["Green Computing", "Energy Efficiency", "Carbon Neutral"]
     },
     {
       icon: Award,
       title: "Industry Leadership",
-      description: "Setting new standards in technology innovation and becoming the trusted partner for digital transformation.",
-      metrics: ["Industry recognition awards", "Patent portfolio growth", "Thought leadership presence"]
+      description: "Set new standards in technology innovation, research excellence, and ethical business practices.",
+      metrics: ["Research Publications", "Patent Portfolio", "Industry Recognition"]
     }
   ];
 
   const impactAreas = [
     {
-      icon: Building,
-      title: "Enterprise Transformation",
-      description: "Revolutionizing how large organizations operate through intelligent automation and data-driven insights.",
-      examples: ["Fortune 500 companies", "Government agencies", "Healthcare systems"]
+      icon: Brain,
+      title: "Healthcare & Life Sciences",
+      description: "Revolutionizing medical diagnosis, drug discovery, and personalized treatment through AI and quantum computing.",
+      color: "from-green-500 to-emerald-500"
     },
     {
-      icon: Code,
-      title: "Developer Empowerment",
-      description: "Providing developers with cutting-edge tools and platforms to build the next generation of applications.",
-      examples: ["Open-source contributions", "Developer education", "API-first architecture"]
+      icon: Server,
+      title: "Financial Services",
+      description: "Transforming banking, insurance, and investment through intelligent automation and quantum-secure systems.",
+      color: "from-blue-500 to-indigo-500"
     },
     {
-      icon: Palette,
-      title: "Creative Industries",
-      description: "Enabling artists, designers, and creators to push boundaries with AI-powered creative tools.",
-      examples: ["Digital art platforms", "Content creation tools", "Design automation"]
+      icon: Database,
+      title: "Manufacturing & Industry",
+      description: "Enabling smart factories, predictive maintenance, and autonomous production systems for Industry 4.0.",
+      color: "from-orange-500 to-red-500"
     },
     {
-      icon: BookOpen,
-      title: "Education & Research",
-      description: "Advancing knowledge through AI-powered research tools and educational technology platforms.",
-      examples: ["Research institutions", "Universities", "Online learning platforms"]
+      icon: Globe,
+      title: "Government & Defense",
+      description: "Securing critical infrastructure and enhancing national security through advanced AI and cybersecurity solutions.",
+      color: "from-purple-500 to-pink-500"
     }
   ];
 
   const futureVision = [
     {
-      year: "2025-2030",
-      title: "AI Consciousness Era",
-      description: "Achieving true AI consciousness and emotional intelligence, enabling human-AI partnerships that transform every industry.",
-      milestones: [
-        "Self-aware AI systems deployment",
-        "Emotional intelligence breakthroughs",
-        "Consciousness-driven automation"
-      ]
+      year: "2025",
+      title: "AI Consciousness Breakthrough",
+      description: "Achieve significant milestones in AI consciousness research, enabling machines to understand and learn with human-like awareness."
     },
     {
-      year: "2030-2035",
-      title: "Quantum Revolution",
-      description: "Quantum computing becomes mainstream, solving previously impossible problems and enabling new scientific discoveries.",
-      milestones: [
-        "Quantum supremacy in business",
-        "Quantum internet deployment",
-        "Quantum AI fusion platforms"
-      ]
+      year: "2027",
+      title: "Quantum Internet Launch",
+      description: "Deploy the world's first quantum internet infrastructure, enabling ultra-secure communication and distributed quantum computing."
     },
     {
-      year: "2035-2040",
-      title: "Space Technology Integration",
-      description: "Space technology becomes integral to daily operations, enabling new communication and resource capabilities.",
-      milestones: [
-        "Space resource platforms",
-        "Interplanetary networks",
-        "Autonomous space operations"
-      ]
+      year: "2030",
+      title: "Space Mining Operations",
+      description: "Establish autonomous space mining operations on asteroids and lunar surfaces, unlocking unlimited resources for humanity."
     },
     {
-      year: "2040-2045",
-      title: "Autonomous Ecosystem",
-      description: "Fully autonomous business ecosystems that operate independently while maintaining human oversight and values.",
-      milestones: [
-        "Self-managing businesses",
-        "Autonomous decision systems",
-        "Human-AI symbiosis"
-      ]
+      year: "2035",
+      title: "AGI Achievement",
+      description: "Develop artificial general intelligence that matches or exceeds human cognitive capabilities across all domains."
     }
   ];
 
   return (
-    <Layout 
-      title="Our Mission - Zion Tech Group"
-      description="Discover Zion Tech Group's mission to revolutionize technology through AI consciousness, quantum computing, and autonomous solutions."
-      canonicalUrl="https://ziontechgroup.com/mission"
-    >
-      <div className="min-h-screen bg-black text-white">
+    <Layout>
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
         {/* Hero Section */}
-        <section className="relative py-20 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/20 via-blue-900/20 to-purple-900/20"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(6,182,212,0.1),transparent_50%)]"></div>
-          
-          <div className="relative z-10 container mx-auto px-4">
+        <motion.section 
+          className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
+          initial="initial"
+          animate="animate"
+          variants={staggerContainer}
+        >
+          {/* Background Effects */}
+          <div className="absolute inset-0 -z-10">
+            <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/5 to-blue-900/5"></div>
+            <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-r from-cyan-500/5 to-blue-500/5 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/5 to-pink-500/5 rounded-full blur-3xl"></div>
+          </div>
+
+          <div className="max-w-7xl mx-auto text-center">
             <motion.div 
-              className="text-center max-w-4xl mx-auto"
-              initial="initial"
-              animate="animate"
-              variants={staggerContainer}
+              className="inline-flex items-center gap-3 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-500/20 rounded-full px-6 py-3 mb-6"
+              variants={fadeInUp}
             >
-              <motion.div 
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-500/20 rounded-full px-6 py-3 mb-6"
-                variants={fadeInUp}
+              <Target className="w-5 h-5 text-cyan-400" />
+              <span className="text-cyan-400 font-medium">Our Mission</span>
+            </motion.div>
+            
+            <motion.h1 
+              className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6"
+              variants={fadeInUp}
+            >
+              Shaping the Future of Technology
+            </motion.h1>
+            <motion.p 
+              className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-12"
+              variants={fadeInUp}
+            >
+              We're on a mission to accelerate human progress through revolutionary AI, quantum computing, 
+              and space technology solutions that solve the world's most complex challenges.
+            </motion.p>
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              variants={fadeInUp}
+            >
+              <Link 
+                href="/contact"
+                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-2xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-cyan-500/25"
               >
-                <Target className="w-5 h-5 text-cyan-400" />
-                <span className="text-cyan-400 font-medium">Our Mission</span>
-              </motion.div>
-              
-              <motion.h1 
-                className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6"
-                variants={fadeInUp}
+                Join Our Mission
+              </Link>
+              <Link 
+                href="/about"
+                className="px-8 py-4 border-2 border-cyan-500/50 text-cyan-400 font-semibold rounded-2xl hover:bg-cyan-500/10 transition-all duration-300"
               >
-                Revolutionizing Technology for Humanity
-              </motion.h1>
-              <motion.p 
-                className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed"
-                variants={fadeInUp}
-              >
-                We're on a mission to democratize advanced technology, making AI consciousness, 
-                quantum computing, and autonomous solutions accessible to businesses worldwide.
-              </motion.p>
-              <motion.div 
-                className="flex flex-wrap justify-center gap-6"
-                variants={fadeInUp}
-              >
-                <div className="flex items-center gap-2 bg-purple-500/10 border border-purple-500/20 rounded-full px-6 py-3">
-                  <Brain className="w-5 h-5 text-purple-400" />
-                  <span className="text-purple-400 font-medium">AI Consciousness</span>
-                </div>
-                <div className="flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-6 py-3">
-                  <Atom className="w-5 h-5 text-blue-400" />
-                  <span className="text-blue-400 font-medium">Quantum Computing</span>
-                </div>
-                <div className="flex items-center gap-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full px-6 py-3">
-                  <Rocket className="w-5 h-5 text-cyan-400" />
-                  <span className="text-cyan-400 font-medium">Space Technology</span>
-                </div>
-              </motion.div>
+                Learn More
+              </Link>
             </motion.div>
           </div>
-        </section>
+        </motion.section>
 
         {/* Mission Statement */}
-        <section className="py-20 relative">
-          <div className="container mx-auto px-4">
-            <motion.div
-              className="max-w-5xl mx-auto text-center"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <div className="bg-gradient-to-br from-cyan-500/10 via-blue-500/10 to-purple-500/10 border border-cyan-500/20 rounded-3xl p-12">
-                <Target className="w-20 h-20 text-cyan-400 mx-auto mb-8" />
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Our Mission Statement</h2>
-                <p className="text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
-                  "To democratize advanced technology and empower businesses of all sizes with cutting-edge AI, 
-                  quantum computing, and autonomous solutions that drive unprecedented growth and innovation, 
-                  while ensuring these technologies benefit humanity and promote sustainable progress."
-                </p>
-                <div className="flex flex-wrap justify-center gap-4">
-                  <div className="flex items-center gap-2 bg-cyan-500/20 rounded-full px-4 py-2">
-                    <Heart className="w-4 h-4 text-cyan-400" />
-                    <span className="text-cyan-400 text-sm">Human-Centric</span>
+        <motion.section 
+          className="py-20 px-4 sm:px-6 lg:px-8"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div>
+                <motion.h2 
+                  className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-6"
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                >
+                  Our Mission Statement
+                </motion.h2>
+                <motion.p 
+                  className="text-xl text-gray-300 mb-6"
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  To accelerate human progress through revolutionary technology solutions that solve the world's most complex challenges, 
+                  while ensuring that innovation serves humanity and preserves our planet for future generations.
+                </motion.p>
+                <motion.p 
+                  className="text-lg text-gray-400 mb-8"
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  We believe that the convergence of AI consciousness, quantum computing, and space technology will unlock unprecedented 
+                  possibilities for human advancement, economic growth, and global prosperity.
+                </motion.p>
+                <motion.div 
+                  className="flex items-center space-x-4"
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center">
+                    <Target className="w-6 h-6 text-white" />
                   </div>
-                  <div className="flex items-center gap-2 bg-purple-500/20 rounded-full px-4 py-2">
-                    <Shield className="w-4 h-4 text-purple-400" />
-                    <span className="text-purple-400 text-sm">Ethical AI</span>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Purpose-Driven</h3>
+                    <p className="text-gray-400">Every innovation serves a higher purpose</p>
                   </div>
-                  <div className="flex items-center gap-2 bg-blue-500/20 rounded-full px-4 py-2">
-                    <Globe className="w-4 h-4 text-blue-400" />
-                    <span className="text-blue-400 text-sm">Global Impact</span>
+                </motion.div>
+              </div>
+              <div className="relative">
+                <div className="w-full h-96 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-3xl border border-cyan-500/20 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="w-24 h-24 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-3xl flex items-center justify-center mx-auto mb-6">
+                      <Rocket className="w-12 h-12 text-white" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-2">Future-Focused</h3>
+                    <p className="text-gray-400">Building tomorrow's technology today</p>
                   </div>
                 </div>
+                <div className="absolute -top-4 -right-4 w-32 h-32 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-2xl"></div>
+                <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-2xl"></div>
               </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Mission Pillars */}
-        <section className="py-20 relative">
-          <div className="container mx-auto px-4">
-            <motion.div
-              className="text-center mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Mission Pillars</h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Four foundational pillars that guide our mission and drive our innovation.
-              </p>
-            </motion.div>
-
-            <motion.div 
-              className="grid md:grid-cols-2 gap-8"
-              initial="initial"
-              whileInView="animate"
-              variants={staggerContainer}
-              viewport={{ once: true }}
-            >
-              {missionPillars.map((pillar, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 border border-gray-700 rounded-2xl p-8 hover:border-gray-600 transition-all duration-300"
-                  variants={fadeInUp}
-                >
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${pillar.color} flex items-center justify-center mb-6`}>
-                    <pillar.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-4 text-white">{pillar.title}</h3>
-                  <p className="text-gray-300 mb-6 leading-relaxed">{pillar.description}</p>
-                  <ul className="space-y-2">
-                    {pillar.goals.map((goal, goalIndex) => (
-                      <li key={goalIndex} className="flex items-center gap-3 text-gray-400">
-                        <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
-                        {goal}
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Strategic Objectives */}
-        <section className="py-20 relative">
-          <div className="container mx-auto px-4">
-            <motion.div
-              className="text-center mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Strategic Objectives</h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Key objectives that drive our mission forward and measure our success.
-              </p>
-            </motion.div>
-
-            <motion.div 
-              className="grid md:grid-cols-2 gap-8"
-              initial="initial"
-              whileInView="animate"
-              variants={staggerContainer}
-              viewport={{ once: true }}
-            >
-              {strategicObjectives.map((objective, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 rounded-2xl p-8"
-                  variants={fadeInUp}
-                >
-                  <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center mb-6">
-                    <objective.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-4 text-cyan-400">{objective.title}</h3>
-                  <p className="text-gray-300 mb-6 leading-relaxed">{objective.description}</p>
-                  <div className="space-y-2">
-                    {objective.metrics.map((metric, metricIndex) => (
-                      <div key={metricIndex} className="flex items-center gap-3 text-gray-400">
-                        <Star className="w-4 h-4 text-cyan-400" />
-                        {metric}
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Impact Areas */}
-        <section className="py-20 relative">
-          <div className="container mx-auto px-4">
-            <motion.div
-              className="text-center mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Areas of Impact</h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Our mission touches every industry and sector, driving transformation across the globe.
-              </p>
-            </motion.div>
-
-            <motion.div 
-              className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
-              initial="initial"
-              whileInView="animate"
-              variants={staggerContainer}
-              viewport={{ once: true }}
-            >
-              {impactAreas.map((area, index) => (
-                <motion.div
-                  key={index}
-                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 border border-gray-700 rounded-2xl p-6 text-center hover:border-gray-600 transition-all duration-300"
-                  variants={fadeInUp}
-                >
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <area.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 text-white">{area.title}</h3>
-                  <p className="text-gray-400 mb-4 leading-relaxed text-sm">{area.description}</p>
-                  <div className="space-y-1">
-                    {area.examples.map((example, exampleIndex) => (
-                      <div key={exampleIndex} className="text-xs text-gray-500">
-                        • {example}
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Future Vision */}
-        <section className="py-20 relative">
-          <div className="container mx-auto px-4">
-            <motion.div
-              className="text-center mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Future Vision</h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                A roadmap to the future, showing how our mission evolves and expands over the coming decades.
-              </p>
-            </motion.div>
-
-            <div className="relative">
-              <div className="absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-gradient-to-b from-cyan-500 to-purple-500"></div>
-              
-              <motion.div 
-                className="space-y-12"
-                initial="initial"
-                whileInView="animate"
-                variants={staggerContainer}
-                viewport={{ once: true }}
-              >
-                {futureVision.map((vision, index) => (
-                  <motion.div
-                    key={index}
-                    className={`relative flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
-                    variants={fadeInUp}
-                  >
-                    <div className="flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-cyan-500 to-purple-500 z-10 relative">
-                      <span className="text-white font-bold text-sm text-center px-2">{vision.year}</span>
-                    </div>
-                    
-                    <div className={`flex-1 ${index % 2 === 0 ? 'md:ml-8' : 'md:mr-8'}`}>
-                      <div className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 border border-gray-700 rounded-2xl p-6">
-                        <h3 className="text-2xl font-bold mb-3 text-cyan-400">{vision.title}</h3>
-                        <p className="text-gray-300 mb-4 leading-relaxed">{vision.description}</p>
-                        <ul className="space-y-2">
-                          {vision.milestones.map((milestone, milestoneIndex) => (
-                            <li key={milestoneIndex} className="flex items-center gap-3 text-gray-400">
-                              <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
-                              {milestone}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </motion.div>
             </div>
           </div>
-        </section>
+        </motion.section>
 
-        {/* Call to Action */}
-        <section className="py-20 relative">
-          <div className="container mx-auto px-4 text-center">
-            <motion.div
+        {/* Mission Pillars */}
+        <motion.section 
+          className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-gray-800/50 to-gray-900/50"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="max-w-7xl mx-auto">
+            <motion.h2 
+              className="text-4xl font-bold text-center text-white mb-16"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Join Us in Our Mission
-              </h2>
-              <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
-                Be part of the technological revolution that's shaping the future of business, 
-                society, and human potential.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="/contact"
-                  className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105"
+              Our Mission Pillars
+            </motion.h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {missionPillars.map((pillar, index) => (
+                <motion.div
+                  key={pillar.title}
+                  className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
                 >
-                  Partner With Us
-                </a>
-                <a
-                  href="/careers"
-                  className="border border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300"
+                  <div className={`w-16 h-16 bg-gradient-to-r ${pillar.color} rounded-2xl flex items-center justify-center mx-auto mb-6`}>
+                    <pillar.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-4">{pillar.title}</h3>
+                  <p className="text-gray-400">{pillar.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Strategic Objectives */}
+        <motion.section 
+          className="py-20 px-4 sm:px-6 lg:px-8"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="max-w-7xl mx-auto">
+            <motion.h2 
+              className="text-4xl font-bold text-center text-white mb-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              Strategic Objectives
+            </motion.h2>
+            <div className="grid lg:grid-cols-2 gap-8">
+              {strategicObjectives.map((objective, index) => (
+                <motion.div
+                  key={objective.title}
+                  className="p-8 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
                 >
-                  Join Our Team
-                </a>
-              </div>
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0">
+                      <objective.icon className="w-6 h-6 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-semibold text-white mb-3">{objective.title}</h3>
+                      <p className="text-gray-400 mb-4">{objective.description}</p>
+                      <div className="space-y-2">
+                        {objective.metrics.map((metric, metricIndex) => (
+                          <div key={metricIndex} className="flex items-center space-x-2">
+                            <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                            <span className="text-sm text-gray-300">{metric}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Areas of Impact */}
+        <motion.section 
+          className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-gray-800/50 to-gray-900/50"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="max-w-7xl mx-auto">
+            <motion.h2 
+              className="text-4xl font-bold text-center text-white mb-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              Areas of Impact
+            </motion.h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              {impactAreas.map((area, index) => (
+                <motion.div
+                  key={area.title}
+                  className="p-8 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="flex items-start space-x-4">
+                    <div className={`w-16 h-16 bg-gradient-to-r ${area.color} rounded-2xl flex items-center justify-center flex-shrink-0`}>
+                      <area.icon className="w-8 h-8 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-semibold text-white mb-3">{area.title}</h3>
+                      <p className="text-gray-400">{area.description}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Future Vision */}
+        <motion.section 
+          className="py-20 px-4 sm:px-6 lg:px-8"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="max-w-7xl mx-auto">
+            <motion.h2 
+              className="text-4xl font-bold text-center text-white mb-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              Our Future Vision
+            </motion.h2>
+            <div className="relative">
+              {/* Timeline Line */}
+              <div className="absolute left-1/2 transform -translate-x-px w-0.5 h-full bg-gradient-to-b from-cyan-500 to-blue-500"></div>
+              
+              {futureVision.map((vision, index) => (
+                <motion.div
+                  key={vision.year}
+                  className={`relative flex items-center mb-12 ${
+                    index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
+                  }`}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  {/* Timeline Dot */}
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full border-4 border-gray-900"></div>
+                  
+                  {/* Content */}
+                  <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
+                    <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-6 rounded-2xl border border-gray-700/50">
+                      <div className="text-2xl font-bold text-cyan-400 mb-2">{vision.year}</div>
+                      <h3 className="text-xl font-semibold text-white mb-3">{vision.title}</h3>
+                      <p className="text-gray-400">{vision.description}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Call to Action */}
+        <motion.section 
+          className="py-20 px-4 sm:px-6 lg:px-8"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.h2 
+              className="text-4xl font-bold text-white mb-6"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              Ready to Join Our Mission?
+            </motion.h2>
+            <motion.p 
+              className="text-xl text-gray-300 mb-8"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              Whether you're a client, partner, or team member, discover how you can be part of the next technological revolution.
+            </motion.p>
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <Link 
+                href="/contact"
+                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-2xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-cyan-500/25"
+              >
+                Get Started Today
+              </Link>
+              <Link 
+                href="/careers"
+                className="px-8 py-4 border-2 border-cyan-500/50 text-cyan-400 font-semibold rounded-2xl hover:bg-cyan-500/10 transition-all duration-300"
+              >
+                Join Our Team
+              </Link>
             </motion.div>
           </div>
-        </section>
+        </motion.section>
       </div>
     </Layout>
   );
