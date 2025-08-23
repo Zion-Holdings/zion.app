@@ -1,13 +1,9 @@
-name: Cloud Automation Suite
+name: Zion Autonomous Cloud Automations
 
 on:
-  workflow_dispatch:
   schedule:
-    - cron: '*/30 * * * *'
-
-concurrency:
-  group: cloud-automation-${{ github.ref }}
-  cancel-in-progress: true
+    - cron: '*/15 * * * *'
+  workflow_dispatch: {}
 
 permissions:
   contents: write
@@ -16,54 +12,24 @@ jobs:
   run-automations:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          persist-credentials: false
-
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20.x'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run maintenance
-        run: npm run maintenance:run
-
-      - name: Design improvements (analyze + factory)
-        run: npm run design:analyze
-
-      - name: Responsive content improvements
-        run: npm run responsive:analyze
-
-      - name: Variation analysis & generation
-        run: npm run variation:analyze
-
-      - name: Frontend sync autonomous (one-off)
-        run: npm run frontend-sync:autonomous:once
-
-      - name: Linting auto-fix (non-blocking)
-        run: npm run linting:fix || true
-
-      - name: Syntax/build sanity check (non-blocking)
-        run: npm run syntax:build-check || true
-
-      - name: Configure Git user
+          node-version: '20'
+      - name: Install minimal deps
         run: |
-          git config user.name "zion-cloud-bot"
-          git config user.email "noreply@zion.ai"
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-
-      - name: Commit and push changes
+          npm ci --omit=dev
+      - name: Run orchestrator
         run: |
-          if [ -n "$(git status --porcelain)" ]; then
-            git add -A
-            git commit -m "chore(automation): cloud automation update [skip ci]"
-            git push origin HEAD:${GITHUB_REF#refs/heads/}
-          else
-            echo "No changes to commit."
-          fi
+          node automation/cloud-autonomous-orchestrator.cjs
+      - name: Commit artifacts
+        run: |
+          git config user.name "zion-bot"
+          git config user.email "bot@zion.app"
+          git add public/metrics/latest.json public/automation/status.json docs/reports/ || true
+          git commit -m "chore(automation): update metrics and summary [skip ci]" || echo "No changes"
+          git push || true
