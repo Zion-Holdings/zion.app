@@ -151,12 +151,23 @@ const getServiceDescription = (service: any) => {
 
 // Combine all services with new ones first
 const allServices = [
+<<<<<<< HEAD
+  // Our new 2025 services
+  ...enterpriseAIAutomationServices2025,
+  ...innovativeITInfrastructureServices2025,
+  // New 2025 Innovative Micro SAAS Solutions
+  ...innovativeMicroSaasSolutions2025,
+  // Existing services
+  ...advancedAIAutomationServices2025,
+  ...cuttingEdgeAIServices2025,
+=======
   // Revolutionary 2045 Services (Latest & Most Advanced)
   ...revolutionary2045AdvancedMicroSaas,
   ...revolutionary2045ITServices,
   ...revolutionary2045AIServices,
   
   // Other services
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-9e3c
   ...enterpriseITSolutions,
   ...innovativeMicroSaasSolutions,
   ...cuttingEdgeAIServices,

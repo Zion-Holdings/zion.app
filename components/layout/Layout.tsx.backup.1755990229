@@ -1,6 +1,13 @@
+<<<<<<< HEAD
+import React, { useState, useEffect } from 'react';
+import Head from 'next/head';
+import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
+import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
+=======
 import React, { useState } from 'react';
 import UltraFuturisticNavigation2045 from './UltraFuturisticNavigation2045';
 import UltraFuturisticFooter2045 from './UltraFuturisticFooter2045';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-9e3c
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
 import TopContactBar from './TopContactBar';
@@ -56,6 +63,21 @@ export default function Layout({
   }, []);
 
   return (
+<<<<<<< HEAD
+    <>
+      <Head>
+        {/* PWA Meta Tags */}
+        <meta name="application-name" content="Zion Tech Group" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="Zion Tech" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
+        <meta name="msapplication-TileColor" content="#06b6d4" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="theme-color" content="#06b6d4" />
+=======
     <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
       {/* Skip to content link for accessibility */}
       <a href="#main" className="skip-link">Skip to main content</a>
@@ -83,6 +105,7 @@ export default function Layout({
         {/* Footer */}
         <UltraFuturisticFooter2045 />
       </div>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-9e3c
 
       {/* Accessibility and Performance Tools */}
       <AccessibilityEnhancer />
