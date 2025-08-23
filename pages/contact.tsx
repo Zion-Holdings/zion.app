@@ -1,12 +1,3 @@
-export default function Contact() {
-  return (
-    <div>
-      <h1 className="text-2xl font-semibold mb-2">Contact</h1>
-      <p className="text-sm opacity-80">Use the form to request a quote. If you came from a provider card, the provider is pre-selected.</p>
-    </div>
-  );
-}
-=======
 import React from "react";
 import Head from "next/head";
 
@@ -27,3 +18,7 @@ const Page: React.FC = () => {
 export default Page;
 =======
 export default function Contact() { return null; }
+=======
+export default function ContactPage() {
+  return <div className="py-10">Contact us at contact@zion.ai</div>;
+}

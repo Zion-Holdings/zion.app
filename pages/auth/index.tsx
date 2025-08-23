@@ -1,1 +1,3 @@
-export default function AuthIndex() { return null; }
+export default function AuthIndex() {
+  return <div className="py-10">Auth Portal</div>;
+}
