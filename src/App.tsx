@@ -1,11 +1,11 @@
-import React from 'react';
-import { Suspense } from 'react';
+import React, { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import { ThemeProvider } from "./components/ThemeProvider";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
+import InstallPrompt from "./components/InstallPrompt";
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -17,7 +17,8 @@ import {
   ErrorRoutes,
   EnterpriseRoutes,
   CommunityRoutes,
-  DeveloperRoutes
+  DeveloperRoutes,
+  SellerRoutes
 } from './routes';
 const Home = React.lazy(() => import('./pages/Home'));
 const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
@@ -29,7 +30,6 @@ const Analytics = React.lazy(() => import('./pages/Analytics'));
 const MobileLaunchPage = React.lazy(() => import('./pages/MobileLaunchPage'));
 const CommunityPage = React.lazy(() => import('./pages/CommunityPage'));
 const Categories = React.lazy(() => import('./pages/Categories'));
-const PartnersPage = React.lazy(() => import('./pages/Partners'));
 const Login = React.lazy(() => import('./pages/Login'));
 const Signup = React.lazy(() => import('./pages/Signup'));
 const ITOnsiteServicesPage = React.lazy(() => import('./pages/ITOnsiteServicesPage'));
@@ -52,13 +52,12 @@ const baseRoutes = [
   { path: '/open-app', element: <OpenAppRedirect /> },
   { path: '/community', element: <CommunityPage /> },
   { path: '/contact', element: <ContactPage /> },
-  { path: '/partners', element: <PartnersPage /> },
 ];
 
 const App = () => {
   return (
     <WhitelabelProvider>
-      <ThemeProvider defaultTheme="dark">
+      <ThemeProvider>
         <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
           <Routes>
             {baseRoutes.map(({ path, element }) => (
@@ -74,11 +73,13 @@ const App = () => {
             <Route path="/enterprise/*" element={<EnterpriseRoutes />} />
             <Route path="/community/*" element={<CommunityRoutes />} />
             <Route path="/developers/*" element={<DeveloperRoutes />} />
+            <Route path="/seller/*" element={<SellerRoutes />} />
             <Route path="*" element={<ErrorRoutes />} />
           </Routes>
         </Suspense>
         <Toaster />
         <SonnerToaster position="top-right" />
+        <InstallPrompt />
       </ThemeProvider>
     </WhitelabelProvider>
   );

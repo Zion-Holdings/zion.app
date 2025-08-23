@@ -1,0 +1,569 @@
+{
+  "links": [
+    {
+      "url": "https://ziontechgroup.com/ai-customer-success-automation",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/"
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-content-marketing-automation",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/"
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-consciousness-evolution",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/"
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-ecosystem",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/"
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-ethics-governance",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/"
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-business-process-automation",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/"
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-customer-intelligence-platform",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/"
+    },
+    {
+      "url": "https://ziontechgroup.com/quantum-encryption-gateway",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/"
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-financial-fraud-detection",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/"
+    },
+    {
+      "url": "https://ziontechgroup.com/quantum-threat-detection",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/"
+    },
+    {
+      "url": "https://ziontechgroup.com/quantum-identity-verification",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/"
+    },
+    {
+      "url": "https://ziontechgroup.com/quantum-compliance-automation",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/"
+    },
+    {
+      "url": "https://ziontechgroup.com/quantum-network-security",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/"
+    },
+    {
+      "url": "https://ziontechgroup.com/blockchain-enterprise-platform",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/"
+    },
+    {
+      "url": "https://ziontechgroup.com/quantum-networking",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/"
+    },
+    {
+      "url": "https://ziontechgroup.com/autonomous-it-operations",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/"
+    },
+    {
+      "url": "https://ziontechgroup.com/quantum-data-center",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/"
+    },
+    {
+      "url": "https://ziontechgroup.com/autonomous-vehicle-ai",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/"
+    },
+    {
+      "url": "https://ziontechgroup.com/quantum-materials-discovery",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/"
+    },
+    {
+      "url": "https://ziontechgroup.com/quantum-internet-security",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/"
+    },
+    {
+      "url": "https://linkedin.com/company/ziontechgroup",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/"
+    },
+    {
+      "url": "https://facebook.com/ziontechgroup",
+      "status": 400,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/"
+    },
+    {
+      "url": "https://openai.com/safety",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/market-pricing/"
+    },
+    {
+      "url": "https://openai.com/pricing",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/market-pricing/"
+    },
+    {
+      "url": "https://www.snowflake.com/en/pricing/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/market-pricing/"
+    },
+    {
+      "url": "https://www.paloaltonetworks.com/prisma/cloud/pricing",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/market-pricing/"
+    },
+    {
+      "url": "https://www.cloudflare.com/plans/zero-trust/",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/market-pricing/"
+    },
+    {
+      "url": "https://www.docraptor.com/pricing",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/market-pricing/"
+    },
+    {
+      "url": "https://www.mailgun.com/pricing/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/market-pricing/"
+    },
+    {
+      "url": "https://www.transcend.io/platform",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/market-pricing/"
+    },
+    {
+      "url": "https://drata.com/pricing",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/market-pricing/"
+    },
+    {
+      "url": "https://openai.com/api/pricing",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "url": "https://www.hubspot.com/pricing/starter",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "url": "https://www.thinkific.com/pricing/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "url": "https://plausible.io/pricing",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "url": "https://pganalyze.com/blog/postgres-index-tuning",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "url": "https://trust.servicenow.com/compliance/soc2/",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "url": "https://www.aicpa.org/resources/article/soc-2-faqs",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "url": "https://www.bigeye.com/pricing",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "url": "https://github.com/enterprise/code-security",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "url": "https://www.pigment.com/pricing",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "url": "https://www.anaplan.com/platform/overview",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "url": "https://www.mutinyhq.com/pricing",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "url": "https://www.rootly.com/pricing",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "url": "https://www.kompyte.com/pricing",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "url": "https://pagespeed.web.dev/pricing",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "url": "https://www.databricks.com/product/mlops",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "url": "https://www.cloudflare.com/products/zero-trust/pricing/",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "url": "https://openai.com/index/safety/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "url": "https://www.braze.com/pricing",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "url": "https://www.tecton.ai/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "url": "https://transcend.io/product/",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "url": "https://www.atera.com/pricing/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "url": "https://www.lansweeper.com/pricing/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "url": "https://www.bamboohr.com/pricing/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "url": "https://gusto.com/product/pricing",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "url": "https://www.tenable.com/products/tenable-io/pricing",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "url": "https://trustarc.com/plans/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "url": "https://www.cookiebot.com/en/pricing/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "url": "https://trustservicescriteria.aicpa.org/",
+      "status": 0,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "url": "https://ottertune.com/pricing",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "url": "https://www.tipalti.com/pricing/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "url": "https://www.stampli.com/pricing/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "url": "https://www.visier.com/pricing/",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/ai-hr-analytics-platform"
+    },
+    {
+      "url": "https://www.docusign.com/products/clm/pricing",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    },
+    {
+      "url": "https://www.workday.com/en-us/products/analytics-and-reporting/adaptive-planning/enterprise-planning.html",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/ai-financial-planning-platform"
+    },
+    {
+      "url": "https://pigment.com/pricing",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/ai-financial-planning-platform"
+    },
+    {
+      "url": "https://www.kinaxis.com/en/products/rapidresponse",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/intelligent-supply-chain-optimization/"
+    },
+    {
+      "url": "https://www.arkieva.com/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/intelligent-supply-chain-optimization/"
+    },
+    {
+      "url": "https://www.gainsight.com/pricing/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/ai-customer-success-platform/"
+    },
+    {
+      "url": "https://www.datarobot.com/platform/ai-accelerator",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/ai-powered-decision-engine/"
+    },
+    {
+      "url": "https://drata.com/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/soc2-compliance-automation/"
+    },
+    {
+      "url": "https://securityscorecard.com/",
+      "status": 403,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/soc2-compliance-automation/"
+    },
+    {
+      "url": "https://ziontechgroup.com/twitter-image.jpg",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/ai-consciousness-evolution-2029/"
+    },
+    {
+      "url": "https://ziontechgroup.com/og-image.jpg",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/ai-consciousness-evolution-2029/"
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-consciousness-evolution-platform/",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/ai-consciousness-evolution-2029/"
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-creativity-orchestrator/",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/ai-consciousness-evolution-2029/"
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-dream-interpreter-platform/",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/ai-consciousness-evolution-2029/"
+    },
+    {
+      "url": "https://ziontechgroup.com/quantum-internet-security-gateway/",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/ai-consciousness-evolution-2029/"
+    },
+    {
+      "url": "https://ziontechgroup.com/quantum-creativity-studio/",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/ai-consciousness-evolution-2029/"
+    },
+    {
+      "url": "https://ziontechgroup.com/quantum-learning-accelerator/",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/ai-consciousness-evolution-2029/"
+    },
+    {
+      "url": "https://ziontechgroup.com/space-mining-automation-platform/",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/ai-consciousness-evolution-2029/"
+    },
+    {
+      "url": "https://ziontechgroup.com/metaverse-digital-reality-platform/",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/ai-consciousness-evolution-2029/"
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-predictive-health-analytics/",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/ai-consciousness-evolution-2029/"
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-autonomous-business-manager/",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/ai-consciousness-evolution-2029/"
+    },
+    {
+      "url": "https://ziontechgroup.com/autonomous-devops-platform/",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/ai-consciousness-evolution-2029/"
+    },
+    {
+      "url": "https://ziontechgroup.com/ai-powered-enterprise-security/",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/ai-consciousness-evolution-2029/"
+    },
+    {
+      "url": "https://ziontechgroup.com/api/",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/ai-consciousness-evolution-2029/"
+    },
+    {
+      "url": "https://ziontechgroup.com/events/",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/ai-consciousness-evolution-2029/"
+    },
+    {
+      "url": "https://ziontechgroup.com/webinars/",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/ai-consciousness-evolution-2029/"
+    },
+    {
+      "url": "https://ziontechgroup.com/team/",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/ai-consciousness-evolution-2029/"
+    },
+    {
+      "url": "https://ziontechgroup.com/press/",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/ai-consciousness-evolution-2029/"
+    },
+    {
+      "url": "https://ziontechgroup.com/legal/",
+      "status": 404,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/ai-consciousness-evolution-2029/"
+    },
+    {
+      "url": "https://www.servicenow.com/",
+      "status": 0,
+      "state": "BROKEN",
+      "parent": "https://ziontechgroup.com/services-advertising/"
+    }
+  ],
+  "passed": false
+}

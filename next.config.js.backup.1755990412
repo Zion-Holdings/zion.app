@@ -1,0 +1,69 @@
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+<<<<<<< HEAD
+	reactStrictMode: true,
+	swcMinify: true,
+	// Optimize images
+	images: {
+		unoptimized: true,
+	},
+	// Optimize bundle
+	compiler: {
+		removeConsole: process.env.NODE_ENV === 'production',
+	},
+};
+
+  // Enhanced compress
+  compress: true,
+
+  // Enhanced devIndicators
+  devIndicators: {
+    buildActivity: true,
+    buildActivityPosition: 'bottom-right',
+  },
+
+  // Enhanced onDemandEntries
+  onDemandEntries: {
+    maxInactiveAge: 25 * 1000,
+    pagesBufferLength: 2,
+  },
+
+  // Enhanced pageExtensions
+  pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
+
+  // Enhanced typescript
+  typescript: {
+    ignoreBuildErrors: false,
+  },
+
+  // Enhanced eslint
+  eslint: {
+    ignoreDuringBuilds: false,
+  },
+
+  // Enhanced swcMinify
+  swcMinify: true,
+
+  // Enhanced modularizeImports
+  modularizeImports: {
+    'lucide-react': {
+      transform: 'lucide-react/dist/esm/icons/{{kebabCase}}',
+    },
+  },
+=======
+  poweredByHeader: false,
+  trailingSlash: false,
+  reactStrictMode: true,
+  productionBrowserSourceMaps: false,
+  
+  // Environment configuration
+  env: {
+    NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
+    NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
+    NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+  },
+
+module.exports = {
+  i18n,
+>>>>>>> 5e27e402e0b68b9c85b868b0fd8919518fd31198
+};
