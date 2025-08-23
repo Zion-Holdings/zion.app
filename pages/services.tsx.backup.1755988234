@@ -304,7 +304,16 @@ const allServices = [
   ...ultimate2025AIServicesExpansion,
   // Our new 2025 advanced enterprise services
   ...advancedEnterpriseServices,
+<<<<<<< HEAD
+  ...innovativeMicroSaasServices,
+  ...cuttingEdgeITInfrastructureServices,
+  // Our new Q4 2025 innovative services
+  ...innovative2025Q4MicroSaasServices,
+  ...innovative2025Q4ITServices,
+  ...innovative2025Q4AIServices
+=======
   ...cuttingEdgeITInfrastructureServices
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-fe05
 ];
 
 const categories = [
