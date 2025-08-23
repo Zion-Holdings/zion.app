@@ -146,4 +146,43 @@ const SEO: React.FC<SEOProps> = ({
   );
 };
 
-export default SEO;
+	return (
+		<Head>
+			<title>{pageTitle}</title>
+			<meta name="description" content={pageDescription} />
+			<meta name="robots" content={robotsContent} />
+			<link rel="canonical" href={canonicalUrl} />
+			{/* Hreflang alternates for single-language site */}
+			<link rel="alternate" hrefLang="en" href={canonicalUrl} />
+			<link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
+			{/* Optional sitemap link for crawlers */}
+			<link rel="sitemap" type="application/xml" href={`${baseUrl.replace(/\/$/, '')}/sitemap.xml`} />
+			{/* Disable automatic telephone number detection on iOS */}
+			<meta name="format-detection" content="telephone=no" />
+			<meta property="og:title" content={pageTitle} />
+			<meta property="og:description" content={pageDescription} />
+			<meta property="og:url" content={canonicalUrl} />
+			<meta property="og:type" content="website" />
+			<meta property="og:site_name" content="Zion Tech Group" />
+			<meta property="og:locale" content="en_US" />
+			<meta property="og:image" content={imageUrl} />
+			<meta property="og:image:alt" content={imageAlt} />
+			<meta property="og:image:width" content="1200" />
+			<meta property="og:image:height" content="630" />
+			{imageType ? <meta property="og:image:type" content={imageType} /> : null}
+			{/* Secure URL for Open Graph image */}
+			<meta property="og:image:secure_url" content={imageUrl.startsWith('http:') ? imageUrl.replace(/^http:/, 'https:') : imageUrl} />
+			<meta name="twitter:card" content="summary_large_image" />
+			<meta name="twitter:title" content={pageTitle} />
+			<meta name="twitter:description" content={pageDescription} />
+			<meta name="twitter:image" content={imageUrl} />
+			<meta name="twitter:image:alt" content={imageAlt} />
+			{imageType ? <meta name="twitter:image:type" content={imageType} /> : null}
+			{finalTwitterSite ? <meta name="twitter:site" content={finalTwitterSite} /> : null}
+			{finalTwitterCreator ? <meta name="twitter:creator" content={finalTwitterCreator} /> : null}
+			{(jsonLd || defaultJsonLd) ? (
+				<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd || defaultJsonLd) }} />
+			) : null}
+		</Head>
+	);
+}
