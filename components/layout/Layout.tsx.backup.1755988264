@@ -101,9 +101,13 @@ export default function Layout({
 
       {/* Accessibility and Performance Tools */}
       <AccessibilityEnhancer />
+<<<<<<< HEAD
+      <PerformanceOptimizer />
+=======
       <PerformanceOptimizer>
         {children}
       </PerformanceOptimizer>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-7309
       
       {/* Cookie Consent Banner */}
       <CookieConsentBanner 
