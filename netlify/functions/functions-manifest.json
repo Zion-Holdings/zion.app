@@ -1,20 +1,15 @@
 {
-  "generatedAt": "2025-08-11T22:47:27.415Z",
+  "generatedAt": "2025-08-11T23:10:39.958Z",
   "functions": [
-    "a11y-audit-runner",
     "ai-changelog-runner",
-    "ai-trends-radar-runner",
-    "auto-discovery-runner",
+    "alt-text-improver",
     "auto-scheduler",
-    "automation-guardian-runner",
     "automation-matrix",
-    "autonomous-innovation-generator",
     "autonomous-invention-orchestrator",
-    "branch-cleanup-runner",
     "broken-image-scanner",
     "broken-image-scanner-runner",
-    "cloud-autonomous-orchestrator-runner",
     "cloud_orchestrator",
+    "content-freshness-auditor",
     "continuous-front-runner",
     "continuous-orchestrator",
     "dead-code-audit",
@@ -44,6 +39,7 @@
     "hyper-front-index-accelerator",
     "image-optimizer-runner",
     "innovation-lab",
+    "internal-redirect-healer",
     "link-and-health-scheduler",
     "link-crawler",
     "maintenance-scheduler",
@@ -55,7 +51,6 @@
     "newsroom-runner",
     "og-image-update-runner",
     "readme-advertiser",
-    "redirect-manager",
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",
@@ -65,7 +60,6 @@
     "schedule-site-health",
     "security-audit",
     "security-audit-runner",
-    "seo-audit-runner",
     "site-crawler",
     "sitemap_runner",
     "todo-scanner-runner",
@@ -73,7 +67,6 @@
     "trigger-all-and-commit",
     "ui-enhancer",
     "ultrafast-front-orchestrator",
-    "ultrafast-orchestrator",
-    "website-search-index-runner"
+    "ultrafast-orchestrator"
   ]
 }
