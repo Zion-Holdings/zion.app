@@ -1,3 +1,1 @@
-export default function Page() {
-  return <div className="py-10">AI-powered Business Solutions Discussion</div>;
-}
+export default function Page(){return <div className="prose dark:prose-invert"><h1>AI-Powered Business Solutions</h1><p>Content coming soon.</p></div>}

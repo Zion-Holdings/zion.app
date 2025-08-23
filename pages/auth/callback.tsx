@@ -1,3 +1,1 @@
-export default function AuthCallback() {
-  return <div className="py-10">Auth Callback</div>;
-}
+export default function CallbackPage(){return <div className="prose dark:prose-invert"><h1>Callback</h1><p>Processing authentication…</p></div>}

@@ -1,3 +1,1 @@
-export default function EnhancedHome() {
-  return <div className="py-10">Enhanced Home</div>;
-}
+export default function EnhancedHome(){return <div className="prose dark:prose-invert"><h1>Enhanced Home</h1><p>Coming soon.</p></div>}
