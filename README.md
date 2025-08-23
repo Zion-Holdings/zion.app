@@ -1,32 +1,15 @@
-# Link Auditor
+# AI/IT Talent Profile — Jordan Lee
 
-A simple async site crawler to detect broken links and assets, with a CLI to produce CSV/JSON reports and naive fix suggestions.
+<!-- badges:start -->
 
-## Quickstart
+<!-- badges:end -->
 
-1. Install dependencies:
+A clean, modern profile page for an AI/ML engineer with autonomous cloud automations:
 
-```
-pip install -r requirements.txt
-```
+- Deploys to GitHub Pages
+- Generates sitemap and robots
+- Runs Lighthouse, accessibility, and link checks
+- Produces OpenGraph image and screenshots
+- Auto-formats code and validates HTML
 
-2. Crawl your site:
-
-```
-python -m link_auditor.cli crawl https://example.com --max-pages 5000 --concurrency 12 --timeout 15 --include-external --output-dir ./link_audit_report
-```
-
-3. Generate fix suggestions from the JSON report:
-
-```
-python -m link_auditor.cli suggest-fixes ./link_audit_report/report.json
-```
-
-Outputs:
-- `broken_links.csv`: list of broken links/assets with source pages
-- `report.json`: full crawl summary
-- `report.suggestions.json`: naive suggestions (https/www/trailing slash toggles)
-
-## CI (template)
-
-Add `.github/workflows/link-check.yml` to run weekly and on PRs.
+View the site after deployment on GitHub Pages.
