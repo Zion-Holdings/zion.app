@@ -53,6 +53,89 @@ interface Service {
   reviews: number;
 }
 
+const getServiceIcon = (service: any): string => {
+  if ('icon' in service && service.icon) {
+    return service.icon;
+  }
+  // Default icons based on category
+  const category = service.category?.toLowerCase() || '';
+  if (category.includes('ai') || category.includes('consciousness')) {
+    return '🧠';
+  } else if (category.includes('quantum')) {
+    return '⚛️';
+  } else if (category.includes('space')) {
+    return '🚀';
+  } else if (category.includes('it') || category.includes('infrastructure')) {
+    return '🖥️';
+  } else if (category.includes('saas') || category.includes('business')) {
+    return '💼';
+  } else if (category.includes('security') || category.includes('cyber')) {
+    return '🔒';
+  }
+  return '🚀';
+};
+
+const getServiceColor = (category: string): string => {
+  switch (category.toLowerCase()) {
+    case 'ai & consciousness':
+    case 'ai & machine learning':
+      return 'from-purple-500 to-pink-500';
+    case 'quantum & emerging tech':
+    case 'quantum computing':
+      return 'from-blue-500 to-cyan-500';
+    case 'space technology':
+    case 'space & metaverse':
+      return 'from-indigo-500 to-purple-500';
+    case 'it infrastructure':
+    case 'enterprise it':
+      return 'from-green-500 to-emerald-500';
+    case 'micro saas':
+    case 'business solutions':
+      return 'from-orange-500 to-red-500';
+    case 'cybersecurity':
+    case 'security':
+      return 'from-red-500 to-pink-500';
+    default:
+      return 'from-cyan-500 to-blue-500';
+  }
+};
+
+const getServicePrice = (service: any): string => {
+  if (typeof service.price === 'string') {
+    return service.price;
+  } else if (service.price && typeof service.price === 'object' && 'monthly' in service.price) {
+    return `$${service.price.monthly}`;
+  }
+  return '$0';
+};
+
+const getServicePeriod = (service: any): string => {
+  if (typeof service.price === 'string') {
+    // For Innovative2040FuturisticService, check if period exists
+    if ('period' in service && service.period) {
+      return service.period;
+    }
+    return '/month';
+  } else if (service.price && typeof service.price === 'object' && 'monthly' in service.price) {
+    return '/month';
+  }
+  return '/month';
+};
+
+const getServicePopular = (service: any): boolean => {
+  if ('popular' in service) {
+    return service.popular;
+  }
+  // For services without popular property, check rating or other indicators
+  if (service.rating && service.rating >= 4.5) {
+    return true;
+  }
+  if (service.reviews && service.reviews >= 50) {
+    return true;
+  }
+  return false;
+};
+
 const Innovative2040FuturisticServicesShowcase: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -300,8 +383,8 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                     )}
 
                     {/* Service Icon */}
-                    <div className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                      {service.icon}
+                    <div className={`w-16 h-16 bg-gradient-to-r ${getServiceColor(service.category)} rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                      {getServiceIcon(service)}
                     </div>
 
                     {/* Service Info */}
@@ -315,9 +398,9 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                     {/* Price */}
                     <div className="flex items-center justify-between mb-4">
                       <div className="text-2xl font-bold text-cyan-400">
-                        {typeof service.price === 'string' ? service.price : `$${service.price.monthly}/${service.price.currency}`}
+                        {getServicePrice(service)}
                         <span className="text-sm text-gray-400">
-                          {typeof service.price === 'string' ? service.period : '/month'}
+                          {getServicePeriod(service)}
                         </span>
                       </div>
                       <div className="flex items-center space-x-1 text-yellow-400">
@@ -390,8 +473,8 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                   >
                     <div className="flex items-start space-x-6">
                       {/* Service Icon */}
-                      <div className={`w-20 h-20 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center text-4xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
-                        {service.icon}
+                      <div className={`w-20 h-20 bg-gradient-to-r ${getServiceColor(service.category)} rounded-2xl flex items-center justify-center text-4xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
+                        {getServiceIcon(service)}
                       </div>
 
                       {/* Service Details */}
@@ -408,7 +491,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                               <span className="inline-block px-3 py-1 bg-gray-700 text-cyan-400 text-sm font-medium rounded-full">
                                 {service.category}
                               </span>
-                              {service.popular && (
+                              {getServicePopular(service) && (
                                 <span className="inline-block px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-sm font-bold rounded-full">
                                   Popular
                                 </span>
@@ -417,9 +500,9 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                           </div>
                           <div className="text-right">
                                                        <div className="text-3xl font-bold text-cyan-400 mb-1">
-                             {typeof service.price === 'string' ? service.price : `$${service.price.monthly}/${service.price.currency}`}
+                             {getServicePrice(service)}
                              <span className="text-lg text-gray-400">
-                               {typeof service.price === 'string' ? service.period : '/month'}
+                               {getServicePeriod(service)}
                              </span>
                            </div>
                             <div className="flex items-center justify-end space-x-1 text-yellow-400 mb-2">
