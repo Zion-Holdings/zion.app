@@ -34,7 +34,11 @@ const FuturisticHero: React.FC = () => {
   ];
 
   const stats = [
+<<<<<<< HEAD
+    { number: '45+', label: 'Real Micro SaaS Services' },
+=======
     { number: '35+', label: 'Real Micro SaaS Services' },
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-4782
     { number: '99.9%', label: 'Uptime Guarantee' },
     { number: '14 Days', label: 'Free Trial' },
     { number: '24/7', label: 'Expert Support' }
@@ -43,7 +47,11 @@ const FuturisticHero: React.FC = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Background */}
+<<<<<<< HEAD
+      <AnimatedBackground variant="quantum" intensity="medium" />
+=======
       <AnimatedBackground variant="cyber" intensity="high" />
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-4782
       
       {/* Futuristic Background Effects */}
       <div className="absolute inset-0 futuristic-bg">
@@ -73,7 +81,11 @@ const FuturisticHero: React.FC = () => {
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
             The future of <span className="neon-text-cyan">micro SaaS</span> is here. 
+<<<<<<< HEAD
+            Discover <span className="neon-text-green">45+ real services</span> that solve 
+=======
             Discover <span className="neon-text-green">35+ real services</span> that solve 
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-4782
             actual business problems with <span className="neon-text-pink">AI-powered intelligence</span>.
             From content creation to cybersecurity, we've got you covered.
           </p>
