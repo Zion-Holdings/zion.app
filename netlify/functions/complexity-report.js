@@ -8,21 +8,20 @@ function runNode(relPath, args = []) {
 }
 
 exports.config = {
-  schedule: '29 */12 * * *',
+  schedule: '13 */6 * * *',
 };
 
 exports.handler = async () => {
   const logs = [];
   function logStep(name, fn) {
-    logs.push(`\n=== ${name} ===`);
     const { status, stdout, stderr } = fn();
+    logs.push(`\n=== ${name} (exit=${status}) ===`);
     if (stdout) logs.push(stdout);
     if (stderr) logs.push(stderr);
-    logs.push(`exit=${status}`);
     return status;
   }
 
-  logStep('roadmap:synthesize', () => runNode('automation/roadmap-synthesizer.cjs'));
+  logStep('complexity:report', () => runNode('automation/complexity-report.cjs'));
   logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
 
   return { statusCode: 200, body: logs.join('\n') };

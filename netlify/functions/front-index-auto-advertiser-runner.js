@@ -8,7 +8,7 @@ function runNode(relPath, args = []) {
 }
 
 exports.config = {
-  schedule: '29 */12 * * *',
+  schedule: '*/5 * * * *',
 };
 
 exports.handler = async () => {
@@ -22,7 +22,7 @@ exports.handler = async () => {
     return status;
   }
 
-  logStep('roadmap:synthesize', () => runNode('automation/roadmap-synthesizer.cjs'));
+  logStep('front-index:auto-advertiser', () => runNode('automation/front-index-auto-advertiser.cjs'));
   logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
 
   return { statusCode: 200, body: logs.join('\n') };
