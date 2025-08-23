@@ -423,6 +423,13 @@ h3 {
   width: 100%;
   height: 100%;
   background: 
+<<<<<<< HEAD
+    radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(236, 73, 153, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 60% 60%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 10% 90%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+=======
     radial-gradient(circle at 20% 80%, rgba(0, 255, 255, 0.15) 0%, transparent 50%),
     radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 50%),
     radial-gradient(circle at 40% 40%, rgba(236, 73, 153, 0.15) 0%, transparent 50%),
@@ -434,6 +441,7 @@ h3 {
     radial-gradient(circle at 70% 30%, rgba(139, 92, 246, 0.08) 0%, transparent 40%),
     radial-gradient(circle at 50% 90%, rgba(236, 73, 153, 0.06) 0%, transparent 35%),
     radial-gradient(circle at 90% 50%, rgba(16, 185, 129, 0.06) 0%, transparent 35%);
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-4d3b
   pointer-events: none;
 }
 

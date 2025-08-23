@@ -49,6 +49,20 @@ const FuturisticNavbar: React.FC = () => {
       ]
     },
     { 
+      name: 'Innovative Services', 
+      href: '/innovative-services', 
+      icon: <Rocket className="w-4 h-4" />,
+      description: 'Quantum AI & Neural Technology',
+      dropdown: [
+        { name: 'Quantum AI Platform', href: '/innovative-services?category=Quantum%20Computing%20%26%20AI', icon: <Atom className="w-4 h-4" /> },
+        { name: 'Brain-Computer Interface', href: '/innovative-services?category=Neural%20Technology%20%26%20AI', icon: <Brain className="w-4 h-4" /> },
+        { name: 'Space Technology', href: '/innovative-services?category=Space%20Technology', icon: <Globe className="w-4 h-4" /> },
+        { name: 'Autonomous Manufacturing', href: '/innovative-services?category=Industrial%20AI%20%26%20Automation', icon: <Cpu className="w-4 h-4" /> },
+        { name: 'Biotech AI Research', href: '/innovative-services?category=Biotechnology%20%26%20Healthcare', icon: <Eye className="w-4 h-4" /> },
+        { name: 'Quantum Cybersecurity', href: '/innovative-services?category=Cybersecurity', icon: <Lock className="w-4 h-4" /> }
+      ]
+    },
+    { 
       name: 'IT Services', 
       href: '/it-services', 
       icon: <Globe className="w-4 h-4" />,
