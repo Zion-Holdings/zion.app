@@ -6,10 +6,10 @@
     "criticalFailures": 0,
     "canBuild": true,
 <<<<<<< HEAD
-    "timestamp": "2025-08-19T20:30:39.878Z"
-=======
     "timestamp": "2025-08-19T20:31:15.633Z"
->>>>>>> origin/cursor/build-and-fix-errors-cf10
+=======
+    "timestamp": "2025-08-19T20:30:33.704Z"
+>>>>>>> origin/cursor/build-and-fix-errors-cfbd
   },
   "results": [
     {
