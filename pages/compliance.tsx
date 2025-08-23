@@ -1,335 +1,295 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
-import { motion } from 'framer-motion';
-import { 
-  Shield, 
-  CheckCircle, 
-  FileText, 
-  Lock, 
-  Users, 
-  Globe, 
-  Award,
-  Monitor,
-  AlertTriangle,
-  TrendingUp,
-  Zap,
-  Database
-} from 'lucide-react';
+import Head from 'next/head';
+import { Shield, CheckCircle, FileText, Lock, Users, Globe, Award, TrendingUp } from 'lucide-react';
 
 const CompliancePage: React.FC = () => {
-  const complianceFrameworks = [
-    {
-      name: 'SOC 2 Type II',
-      description: 'Service Organization Control 2 compliance for data security and privacy',
-      icon: <Shield className="w-8 h-8" />,
-      features: [
-        'Security controls assessment',
-        'Availability monitoring',
-        'Processing integrity',
-        'Confidentiality protection',
-        'Privacy controls'
-      ]
-    },
-    {
-      name: 'ISO 27001',
-      description: 'Information Security Management System certification',
-      icon: <Lock className="w-8 h-8" />,
-      features: [
-        'Risk assessment & treatment',
-        'Security policies & procedures',
-        'Asset management',
-        'Access control',
-        'Incident management'
-      ]
-    },
-    {
-      name: 'GDPR Compliance',
-      description: 'General Data Protection Regulation compliance for EU data protection',
-      icon: <Globe className="w-8 h-8" />,
-      features: [
-        'Data protection impact assessment',
-        'Privacy by design',
-        'Data subject rights',
-        'Breach notification',
-        'Data processing agreements'
-      ]
-    },
-    {
-      name: 'HIPAA Compliance',
-      description: 'Health Insurance Portability and Accountability Act compliance',
-      icon: <Users className="w-8 h-8" />,
-      features: [
-        'Privacy rule compliance',
-        'Security rule implementation',
-        'Breach notification',
-        'Business associate agreements',
-        'Training & awareness'
-      ]
-    },
-    {
-      name: 'PCI DSS',
-      description: 'Payment Card Industry Data Security Standard compliance',
-      icon: <Database className="w-8 h-8" />,
-      features: [
-        'Network security',
-        'Vulnerability management',
-        'Access control',
-        'Security monitoring',
-        'Incident response'
-      ]
-    },
-    {
-      name: 'FedRAMP',
-      description: 'Federal Risk and Authorization Management Program compliance',
-      icon: <Award className="w-8 h-8" />,
-      features: [
-        'Security assessment',
-        'Authorization process',
-        'Continuous monitoring',
-        'Risk management',
-        'Compliance reporting'
-      ]
-    }
-  ];
-
-  const automatedServices = [
-    {
-      name: 'Continuous Monitoring',
-      description: 'Real-time compliance monitoring and alerting',
-      icon: <Monitor className="w-6 h-6" />
-    },
-    {
-      name: 'Automated Auditing',
-      description: 'AI-powered compliance assessment and reporting',
-      icon: <CheckCircle className="w-6 h-6" />
-    },
-    {
-      name: 'Risk Assessment',
-      description: 'Automated risk identification and mitigation',
-      icon: <AlertTriangle className="w-6 h-6" />
-    },
-    {
-      name: 'Policy Management',
-      description: 'Centralized policy creation and enforcement',
-      icon: <FileText className="w-6 h-6" />
-    },
-    {
-      name: 'Training Automation',
-      description: 'Automated compliance training and certification',
-      icon: <Users className="w-6 h-6" />
-    },
-    {
-      name: 'Reporting Dashboard',
-      description: 'Real-time compliance metrics and insights',
-      icon: <TrendingUp className="w-6 h-6" />
-    }
-  ];
-
-  const benefits = [
-    {
-      title: 'Reduced Risk',
-      description: 'Minimize compliance violations and associated penalties',
-      icon: <Shield className="w-6 h-6" />
-    },
-    {
-      title: 'Cost Efficiency',
-      description: 'Automate manual compliance processes to reduce costs',
-      icon: <TrendingUp className="w-6 h-6" />
-    },
-    {
-      title: 'Faster Audits',
-      description: 'Streamlined audit processes with automated evidence collection',
-      icon: <Zap className="w-6 h-6" />
-    },
-    {
-      title: 'Continuous Compliance',
-      description: 'Maintain compliance status with real-time monitoring',
-      icon: <Monitor className="w-6 h-6" />
-    }
-  ];
-
   return (
-    <Layout
-      title="Enterprise Compliance Solutions | Zion Tech Group"
-      description="Comprehensive enterprise compliance solutions including SOC 2, ISO 27001, GDPR, HIPAA, and PCI DSS. Automated compliance management and monitoring."
-      keywords="enterprise compliance, SOC 2, ISO 27001, GDPR, HIPAA, PCI DSS, FedRAMP, compliance automation, risk management"
-    >
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white">
+    <>
+      <Head>
+        <title>Compliance & Governance - Zion Tech Group</title>
+        <meta name="description" content="Zion Tech Group maintains comprehensive compliance with industry standards including SOC 2, GDPR, HIPAA, and more. Learn about our security and governance practices." />
+        <meta name="keywords" content="compliance, SOC 2, GDPR, HIPAA, security, governance, Zion Tech Group" />
+        <link rel="canonical" href="https://ziontechgroup.com/compliance" />
+      </Head>
+
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
         {/* Hero Section */}
-        <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 border border-blue-500/30 rounded-full text-blue-400 text-sm font-medium mb-6">
-                <Shield className="w-4 h-4" />
-                <span>Enterprise Compliance Solutions</span>
-              </div>
-              
-              <h1 className="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
-                Automated Enterprise Compliance
-              </h1>
-              
-              <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-4xl mx-auto leading-relaxed">
-                Streamline your compliance journey with our automated solutions. From SOC 2 to GDPR, 
-                we help you achieve and maintain compliance with global standards.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-indigo-600 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-blue-500/25">
-                  Get Compliance Assessment
-                </button>
-                <button className="px-8 py-4 border border-white/20 text-white font-semibold rounded-xl hover:bg-white/10 transition-all duration-300">
-                  Learn More
-                </button>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Compliance Frameworks */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Comprehensive Compliance Frameworks
-              </h2>
-              <p className="text-xl text-white/70 max-w-3xl mx-auto">
-                Our solutions cover all major compliance standards, ensuring your organization 
-                meets regulatory requirements across industries and geographies.
-              </p>
+            <div className="mb-8">
+              <Shield className="mx-auto h-16 w-16 text-cyan-400" />
             </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {complianceFrameworks.map((framework, index) => (
-                <motion.div
-                  key={framework.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="p-8 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all duration-300"
-                >
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 rounded-xl flex items-center justify-center mb-6">
-                    {framework.icon}
-                  </div>
-                  <h3 className="text-2xl font-semibold mb-4 text-white">
-                    {framework.name}
-                  </h3>
-                  <p className="text-white/70 mb-6 leading-relaxed">
-                    {framework.description}
-                  </p>
-                  <ul className="space-y-2">
-                    {framework.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center space-x-3 text-white/80 text-sm">
-                        <CheckCircle className="w-4 h-4 text-blue-400 flex-shrink-0" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Automated Services */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white/5">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Automated Compliance Services
-              </h2>
-              <p className="text-xl text-white/70 max-w-3xl mx-auto">
-                Leverage AI and automation to streamline your compliance processes, 
-                reduce manual effort, and ensure continuous compliance.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {automatedServices.map((service, index) => (
-                <motion.div
-                  key={service.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="p-6 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-all duration-300"
-                >
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 rounded-xl flex items-center justify-center mb-4">
-                    {service.icon}
-                  </div>
-                  <h3 className="text-lg font-semibold mb-2 text-white">
-                    {service.name}
-                  </h3>
-                  <p className="text-white/70 text-sm">
-                    {service.description}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Benefits */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Why Choose Our Compliance Solutions?
-              </h2>
-              <p className="text-xl text-white/70 max-w-3xl mx-auto">
-                Our automated compliance platform delivers measurable benefits that 
-                transform how your organization manages regulatory requirements.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {benefits.map((benefit, index) => (
-                <motion.div
-                  key={benefit.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="flex items-start space-x-4"
-                >
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 rounded-xl flex items-center justify-center flex-shrink-0">
-                    {benefit.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2 text-white">
-                      {benefit.title}
-                    </h3>
-                    <p className="text-white/70">
-                      {benefit.description}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Ready to Transform Your Compliance Process?
-            </h2>
-            <p className="text-xl text-white/70 mb-8">
-              Join leading organizations that trust us to automate and streamline their compliance journey. 
-              Let's build a more efficient, compliant future together.
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              Compliance & Governance
+            </h1>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Zion Tech Group maintains the highest standards of compliance and governance. 
+              Our comprehensive security framework ensures your data and operations meet industry standards.
             </p>
-            <button className="px-8 py-4 bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-indigo-600 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-blue-500/25">
-              Start Your Compliance Transformation
-            </button>
+          </div>
+        </section>
+
+        {/* Compliance Overview */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Our Compliance Framework
+              </h2>
+              <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+                We maintain compliance with multiple industry standards and regulations, 
+                providing you with confidence in our security and governance practices.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
+                <CheckCircle className="h-12 w-12 text-green-400 mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-3">SOC 2 Type II</h3>
+                <p className="text-gray-300">
+                  Service Organization Control 2 certification demonstrating our security, availability, 
+                  processing integrity, confidentiality, and privacy controls.
+                </p>
+              </div>
+
+              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
+                <Lock className="h-12 w-12 text-blue-400 mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-3">GDPR Compliance</h3>
+                <p className="text-gray-300">
+                  Full compliance with General Data Protection Regulation ensuring data privacy 
+                  and protection for EU citizens.
+                </p>
+              </div>
+
+              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
+                <Users className="h-12 w-12 text-purple-400 mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-3">HIPAA Compliance</h3>
+                <p className="text-gray-300">
+                  Health Insurance Portability and Accountability Act compliance for 
+                  healthcare data protection and privacy.
+                </p>
+              </div>
+
+              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
+                <Globe className="h-12 w-12 text-cyan-400 mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-3">ISO 27001</h3>
+                <p className="text-gray-300">
+                  International standard for information security management systems, 
+                  ensuring comprehensive security controls.
+                </p>
+              </div>
+
+              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
+                <Award className="h-12 w-12 text-yellow-400 mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-3">PCI DSS</h3>
+                <p className="text-gray-300">
+                  Payment Card Industry Data Security Standard compliance for 
+                  secure payment processing and cardholder data protection.
+                </p>
+              </div>
+
+              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
+                <TrendingUp className="h-12 w-12 text-green-400 mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-3">Continuous Monitoring</h3>
+                <p className="text-gray-300">
+                  Ongoing compliance monitoring and regular audits to ensure 
+                  standards are maintained and improved.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Security Controls */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-800/20">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
+              Security Controls & Practices
+            </h2>
+
+            <div className="grid md:grid-cols-2 gap-12">
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-6">Technical Controls</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
+                    <span className="text-gray-300">Multi-factor authentication (MFA)</span>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
+                    <span className="text-gray-300">End-to-end encryption</span>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
+                    <span className="text-gray-300">Regular security updates and patches</span>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
+                    <span className="text-gray-300">Intrusion detection and prevention</span>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
+                    <span className="text-gray-300">Vulnerability scanning and management</span>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
+                    <span className="text-gray-300">Secure development practices</span>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-2xl font-bold text-white mb-6">Administrative Controls</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
+                    <span className="text-gray-300">Security awareness training</span>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
+                    <span className="text-gray-300">Background checks and screening</span>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
+                    <span className="text-gray-300">Access control and management</span>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
+                    <span className="text-gray-300">Incident response procedures</span>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
+                    <span className="text-gray-300">Business continuity planning</span>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="h-5 w-5 text-green-400 mt-1 flex-shrink-0" />
+                    <span className="text-gray-300">Regular policy reviews and updates</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Compliance Process */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
+              Our Compliance Process
+            </h2>
+
+            <div className="grid md:grid-cols-4 gap-8">
+              <div className="text-center">
+                <div className="bg-cyan-500/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-cyan-400">1</span>
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">Assessment</h3>
+                <p className="text-gray-300">Comprehensive evaluation of current controls and gaps</p>
+              </div>
+
+              <div className="text-center">
+                <div className="bg-blue-500/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-blue-400">2</span>
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">Implementation</h3>
+                <p className="text-gray-300">Deploy necessary controls and processes</p>
+              </div>
+
+              <div className="text-center">
+                <div className="bg-purple-500/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-purple-400">3</span>
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">Testing</h3>
+                <p className="text-gray-300">Validate controls through testing and audits</p>
+              </div>
+
+              <div className="text-center">
+                <div className="bg-green-500/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-green-400">4</span>
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">Monitoring</h3>
+                <p className="text-gray-300">Continuous monitoring and improvement</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Documentation */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-800/20">
+          <div className="max-w-7xl mx-auto">
+            <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
+              <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-8">
+                Compliance Documentation
+              </h2>
+              
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-xl font-semibold text-white mb-4">Available Documents</h3>
+                  <ul className="space-y-3 text-gray-300">
+                    <li>• SOC 2 Type II Report</li>
+                    <li>• Privacy Policy</li>
+                    <li>• Data Processing Agreements</li>
+                    <li>• Security Whitepaper</li>
+                    <li>• Incident Response Plan</li>
+                    <li>• Business Continuity Plan</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-semibold text-white mb-4">Request Access</h3>
+                  <p className="text-gray-300 mb-4">
+                    For compliance documentation and audit support, please contact our compliance team.
+                  </p>
+                  <div className="space-y-2 text-gray-300">
+                    <p><strong>Email:</strong> compliance@ziontechgroup.com</p>
+                    <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+                    <p><strong>Response Time:</strong> Within 24 hours</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Get Compliance Support
+            </h2>
+            <p className="text-lg text-gray-300 mb-8">
+              Need help with compliance requirements? Our team can assist with audits, 
+              documentation, and implementation guidance.
+            </p>
+            
+            <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
+              <FileText className="mx-auto h-12 w-12 text-cyan-400 mb-4" />
+              <h3 className="text-xl font-semibold text-white mb-4">Compliance Services</h3>
+              <div className="grid md:grid-cols-2 gap-6 text-left">
+                <div>
+                  <h4 className="font-semibold text-white mb-2">For Clients</h4>
+                  <ul className="space-y-1 text-gray-300 text-sm">
+                    <li>• Compliance readiness assessments</li>
+                    <li>• Audit support and documentation</li>
+                    <li>• Security control implementation</li>
+                    <li>• Training and awareness programs</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-white mb-2">For Partners</h4>
+                  <ul className="space-y-1 text-gray-300 text-sm">
+                    <li>• Joint compliance initiatives</li>
+                    <li>• Shared security frameworks</li>
+                    <li>• Cross-certification support</li>
+                    <li>• Best practice sharing</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </div>
-    </Layout>
+    </>
   );
 };
 
