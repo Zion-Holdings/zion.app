@@ -1,6 +1,5 @@
 import React, { Component, ErrorInfo, ReactNode } from 'react';
-import { motion } from 'framer-motion';
-import { AlertTriangle, RefreshCw, Home, Bug, Shield, Zap } from 'lucide-react';
+import { AlertTriangle, RefreshCw, Home, Mail, Phone } from 'lucide-react';
 
 interface Props {
   children: ReactNode;
@@ -86,7 +85,11 @@ export default class ErrorBoundary extends Component<Props, State> {
     window.location.reload();
   };
 
-  public render() {
+  private handleContactSupport = () => {
+    window.location.href = 'mailto:kleber@ziontechgroup.com?subject=Website Error Report';
+  };
+
+  render() {
     if (this.state.hasError) {
       // Custom fallback UI
       if (this.props.fallback) {
@@ -94,130 +97,100 @@ export default class ErrorBoundary extends Component<Props, State> {
       }
 
       return (
-        <div className="min-h-screen bg-black text-white flex items-center justify-center p-4">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="max-w-2xl mx-auto text-center"
-          >
+        <div className="min-h-screen bg-black text-white flex items-center justify-center px-4">
+          <div className="max-w-2xl mx-auto text-center">
             {/* Error Icon */}
-            <motion.div
-              initial={{ rotate: 0 }}
-              animate={{ rotate: [0, -10, 10, -10, 0] }}
-              transition={{ duration: 0.6, repeat: Infinity, repeatDelay: 2 }}
-              className="w-24 h-24 mx-auto mb-8"
-            >
-              <div className="w-full h-full bg-gradient-to-r from-red-500 to-orange-500 rounded-full flex items-center justify-center">
-                <AlertTriangle className="w-12 h-12 text-white" />
-              </div>
-            </motion.div>
+            <div className="w-24 h-24 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-8">
+              <AlertTriangle className="w-12 h-12 text-red-400" />
+            </div>
 
             {/* Error Message */}
-            <h1 className="text-4xl font-bold text-white mb-4">
+            <h1 className="text-3xl font-bold mb-4 text-red-400">
               Oops! Something went wrong
             </h1>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              We encountered an unexpected error while loading this page. Our team has been notified and is working to fix it.
+            
+            <p className="text-gray-300 mb-6 text-lg">
+              We're sorry, but something unexpected happened. Our team has been notified and is working to fix this issue.
             </p>
 
             {/* Error Details (Development Only) */}
             {process.env.NODE_ENV === 'development' && this.state.error && (
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{ height: 'auto', opacity: 1 }}
-                className="bg-gray-900/50 rounded-xl p-6 mb-8 text-left"
-              >
-                <h3 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
-                  <Bug className="w-5 h-5 text-red-400" />
+              <details className="text-left bg-gray-900 p-4 rounded-lg mb-6 text-sm">
+                <summary className="cursor-pointer text-gray-400 hover:text-white mb-2">
                   Error Details (Development)
-                </h3>
-                <div className="space-y-3 text-sm">
+                </summary>
+                <div className="space-y-2">
                   <div>
-                    <span className="text-gray-400">Error ID:</span>
-                    <span className="text-cyan-400 ml-2 font-mono">{this.state.errorId}</span>
+                    <strong>Error:</strong> {this.state.error.message}
                   </div>
                   <div>
-                    <span className="text-gray-400">Message:</span>
-                    <span className="text-red-400 ml-2">{this.state.error.message}</span>
+                    <strong>Error ID:</strong> {this.state.errorId}
                   </div>
-                  {this.state.error.stack && (
-                    <div>
-                      <span className="text-gray-400">Stack:</span>
-                      <pre className="text-gray-300 mt-2 p-3 bg-gray-800/50 rounded-lg overflow-x-auto text-xs">
-                        {this.state.error.stack}
-                      </pre>
-                    </div>
-                  )}
+                  <div>
+                    <strong>Stack:</strong>
+                    <pre className="text-xs text-gray-500 mt-1 overflow-x-auto">
+                      {this.state.error.stack}
+                    </pre>
+                  </div>
                 </div>
-              </motion.div>
+              </details>
             )}
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button
                 onClick={this.handleRetry}
-                className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 font-medium flex items-center justify-center gap-2"
+                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
               >
-                <RefreshCw className="w-5 h-5" />
+                <RefreshCw className="w-4 h-4" />
                 Try Again
-              </motion.button>
+              </button>
               
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <button
                 onClick={this.handleGoHome}
-                className="px-6 py-3 border-2 border-cyan-400 text-cyan-400 rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-200 font-medium flex items-center justify-center gap-2"
+                className="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
               >
-                <Home className="w-5 h-5" />
+                <Home className="w-4 h-4" />
                 Go Home
-              </motion.button>
+              </button>
               
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={this.handleReload}
-                className="px-6 py-3 border-2 border-gray-600 text-gray-300 rounded-xl hover:bg-gray-600 hover:text-white transition-all duration-200 font-medium flex items-center justify-center gap-2"
+              <button
+                onClick={this.handleContactSupport}
+                className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
               >
-                <Zap className="w-5 h-5" />
-                Reload Page
-              </motion.button>
+                <Mail className="w-4 h-4" />
+                Contact Support
+              </button>
             </div>
 
-            {/* Additional Help */}
-            <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-2xl p-6 border border-cyan-500/20">
-              <h3 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
-                <Shield className="w-5 h-5 text-cyan-400" />
-                Need Help?
-              </h3>
-              <p className="text-gray-300 mb-4">
-                If this problem persists, please contact our support team.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            {/* Contact Information */}
+            <div className="mt-8 pt-6 border-t border-gray-700">
+              <p className="text-gray-400 mb-2">Need immediate assistance?</p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center text-sm">
                 <a
-                  href="mailto:support@ziontechgroup.com"
-                  className="text-cyan-400 hover:text-cyan-300 transition-colors duration-200"
+                  href="tel:+1-302-464-0950"
+                  className="text-blue-400 hover:text-blue-300 flex items-center justify-center gap-2"
                 >
-                  support@ziontechgroup.com
+                  <Phone className="w-4 h-4" />
+                  +1 (302) 464-0950
                 </a>
-                <span className="text-gray-500 hidden sm:inline">•</span>
                 <a
-                  href="tel:+18009466832"
-                  className="text-cyan-400 hover:text-cyan-300 transition-colors duration-200"
+                  href="mailto:kleber@ziontechgroup.com"
+                  className="text-blue-400 hover:text-blue-300 flex items-center justify-center gap-2"
                 >
-                  +1 (800) ZION-TECH
+                  <Mail className="w-4 h-4" />
+                  kleber@ziontechgroup.com
                 </a>
               </div>
             </div>
 
             {/* Error ID for Support */}
             {this.state.errorId && (
-              <div className="mt-6 text-sm text-gray-500">
-                Error ID: <span className="font-mono text-gray-400">{this.state.errorId}</span>
+              <div className="mt-4 text-xs text-gray-500">
+                Error ID: {this.state.errorId}
               </div>
             )}
-          </motion.div>
+          </div>
         </div>
       );
     }
