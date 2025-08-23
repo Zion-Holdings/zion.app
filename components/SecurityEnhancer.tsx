@@ -113,25 +113,17 @@ const SecurityEnhancer: React.FC<SecurityEnhancerProps> = ({
   const checkXSSProtection = (): boolean => {
     if (typeof window === 'undefined') return false;
     
-    try {
-      // Check for XSS protection headers (client-side approximation)
-      // In a real implementation, this would check HTTP headers
-      return true; // Assume enabled for now
-    } catch {
-      return false;
-    }
+    // Check for XSS protection headers (client-side approximation)
+    // In a real implementation, this would check HTTP headers
+    return true; // Assume enabled for now
   };
 
   const checkClickjackingProtection = (): boolean => {
     if (typeof window === 'undefined') return false;
     
-    try {
-      // Check for X-Frame-Options or frame-ancestors CSP directive
-      // This is a client-side approximation
-      return true; // Assume enabled for now
-    } catch {
-      return false;
-    }
+    // Check for X-Frame-Options or frame-ancestors CSP directive
+    // This is a client-side approximation
+    return true; // Assume enabled for now
   };
 
   const checkHTTPS = (): boolean => {
@@ -203,11 +195,11 @@ const SecurityEnhancer: React.FC<SecurityEnhancerProps> = ({
                 
                 // Check for potentially dangerous elements
                 if (element.tagName === 'SCRIPT' && !element.hasAttribute('nonce')) {
-                  // Potential security issue: Script without nonce detected
+                  console.warn('Potential security issue: Script without nonce detected');
                 }
                 
                 if (element.tagName === 'IFRAME' && !element.hasAttribute('sandbox')) {
-                  // Potential security issue: Iframe without sandbox detected
+                  console.warn('Potential security issue: Iframe without sandbox detected');
                 }
               }
             });
