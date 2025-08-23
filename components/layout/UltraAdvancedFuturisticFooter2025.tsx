@@ -30,7 +30,19 @@ const footerSections: FooterSection[] = [
       { label: 'Space Technology', href: '/space-tech', description: 'Innovative space solutions' },
       { label: 'Cybersecurity', href: '/cybersecurity', description: 'Enterprise security' },
       { label: 'Cloud Solutions', href: '/cloud-platform', description: 'Scalable cloud infrastructure' },
+      { label: 'Enterprise IT', href: '/enterprise-it', description: 'Enterprise technology' },
       { label: 'View All Services', href: '/services', description: 'Complete service portfolio' }
+    ]
+  },
+  {
+    title: 'Industries',
+    links: [
+      { label: 'Healthcare', href: '/healthcare-solutions', description: 'Medical technology' },
+      { label: 'Finance', href: '/financial-solutions', description: 'Fintech solutions' },
+      { label: 'Manufacturing', href: '/manufacturing-ai-solutions', description: 'Industry 4.0' },
+      { label: 'Retail', href: '/retail-technology-solutions', description: 'E-commerce tech' },
+      { label: 'Government', href: '/government-technology-solutions', description: 'Public sector' },
+      { label: 'Education', href: '/education-technology-solutions', description: 'EdTech solutions' }
     ]
   },
   {
@@ -53,17 +65,6 @@ const footerSections: FooterSection[] = [
       { label: 'Documentation', href: '/docs', description: 'Technical guides' },
       { label: 'API Reference', href: '/api-documentation', description: 'Developer resources' },
       { label: 'Support', href: '/support', description: 'Help & assistance' }
-    ]
-  },
-  {
-    title: 'Industries',
-    links: [
-      { label: 'Healthcare', href: '/healthcare-solutions', description: 'Medical technology' },
-      { label: 'Finance', href: '/financial-solutions', description: 'Fintech solutions' },
-      { label: 'Manufacturing', href: '/manufacturing-ai-solutions', description: 'Industry 4.0' },
-      { label: 'Retail', href: '/retail-technology-solutions', description: 'E-commerce tech' },
-      { label: 'Government', href: '/government-technology-solutions', description: 'Public sector' },
-      { label: 'Education', href: '/education-technology-solutions', description: 'EdTech solutions' }
     ]
   }
 ];

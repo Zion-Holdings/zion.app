@@ -3,7 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, X, Search, ChevronDown, ChevronRight, 
   Home, Briefcase, Users, BookOpen, Phone, 
-  Zap, Shield, Brain, Rocket
+  Zap, Shield, Brain, Rocket, Globe, Cloud, 
+  Building, GraduationCap, Heart, Factory, 
+  ShoppingCart, Building2, Code, FileText
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -54,6 +56,62 @@ const navigationItems: NavigationItem[] = [
         href: '/cybersecurity',
         icon: <Shield className="w-4 h-4" />,
         description: 'Enterprise-grade security solutions'
+      },
+      {
+        label: 'Cloud Platform',
+        href: '/cloud-platform',
+        icon: <Cloud className="w-4 h-4" />,
+        description: 'Scalable cloud infrastructure'
+      },
+      {
+        label: 'Enterprise IT',
+        href: '/enterprise-it',
+        icon: <Building className="w-4 h-4" />,
+        description: 'Enterprise technology solutions'
+      }
+    ]
+  },
+  {
+    label: 'Industries',
+    href: '/solutions',
+    icon: <Globe className="w-4 h-4" />,
+    description: 'Industry-specific technology solutions',
+    children: [
+      {
+        label: 'Healthcare',
+        href: '/healthcare-solutions',
+        icon: <Heart className="w-4 h-4" />,
+        description: 'Medical technology solutions'
+      },
+      {
+        label: 'Financial Services',
+        href: '/financial-solutions',
+        icon: <Zap className="w-4 h-4" />,
+        description: 'Fintech and banking solutions'
+      },
+      {
+        label: 'Manufacturing',
+        href: '/manufacturing-ai-solutions',
+        icon: <Factory className="w-4 h-4" />,
+        description: 'Industry 4.0 and AI manufacturing'
+      },
+      {
+        label: 'Retail',
+        href: '/retail-technology-solutions',
+        icon: <ShoppingCart className="w-4 h-4" />,
+        description: 'E-commerce and retail technology'
+      },
+      {
+        label: 'Government',
+        href: '/government-technology-solutions',
+        icon: <Building2 className="w-4 h-4" />,
+        description: 'Public sector technology'
+      },
+      {
+        label: 'Education',
+        href: '/education-technology-solutions',
+        icon: <GraduationCap className="w-4 h-4" />,
+        description: 'EdTech and learning platforms'
       }
     ]
   },
@@ -67,7 +125,45 @@ const navigationItems: NavigationItem[] = [
     label: 'Resources',
     href: '/resources',
     icon: <BookOpen className="w-4 h-4" />,
-    description: 'Whitepapers, case studies, and insights'
+    description: 'Whitepapers, case studies, and insights',
+    children: [
+      {
+        label: 'Blog',
+        href: '/blog',
+        icon: <FileText className="w-4 h-4" />,
+        description: 'Industry insights and updates'
+      },
+      {
+        label: 'White Papers',
+        href: '/white-papers',
+        icon: <FileText className="w-4 h-4" />,
+        description: 'In-depth research and analysis'
+      },
+      {
+        label: 'Webinars',
+        href: '/webinars',
+        icon: <BookOpen className="w-4 h-4" />,
+        description: 'Educational webinars and sessions'
+      },
+      {
+        label: 'Documentation',
+        href: '/docs',
+        icon: <Code className="w-4 h-4" />,
+        description: 'Technical guides and API docs'
+      },
+      {
+        label: 'API Reference',
+        href: '/api-documentation',
+        icon: <Code className="w-4 h-4" />,
+        description: 'Developer resources and APIs'
+      },
+      {
+        label: 'Support',
+        href: '/support',
+        icon: <BookOpen className="w-4 h-4" />,
+        description: 'Help and technical support'
+      }
+    ]
   },
   {
     label: 'Contact',
