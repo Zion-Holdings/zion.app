@@ -17,6 +17,10 @@ import { advancedITEnterpriseServices2025 } from '../data/advanced-it-enterprise
 import { specializedAIServices2025 } from '../data/specialized-ai-services-2025';
 
 const Homepage2025: React.FC = () => {
+<<<<<<< HEAD
+  const [showFloatingActions, setShowFloatingActions] = React.useState(true);
+  
+=======
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearch = (e: React.FormEvent) => {
@@ -163,6 +167,7 @@ const Homepage2025: React.FC = () => {
     }
   ];
 
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-7047
   return (
     <Layout>
       {/* Main Content */}
