@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "timestamp": "2025-08-08T22:52:19.494Z",
+=======
   "timestamp": "2025-08-08T16:28:13.822Z",
+>>>>>>> origin/cursor/automate-terminal-content-generation-and-deploy-5f97
   "startUrl": "https://ziontechgroup.com/",
   "totalVisited": 6,
   "pages": [
