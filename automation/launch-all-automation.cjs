@@ -130,7 +130,33 @@ class ComprehensiveAutomationLauncher {
   async startAllSystems() {
     this.log("🚀 Starting all automation systems...");
     
-    const results = [];
+    // Seed known long-running or important jobs
+    const seedSystems = [
+      { name: 'intelligent-orchestrator', script: 'intelligent-orchestrator.cjs', args: ['continuous'] },
+      { name: 'automation-dashboard', script: 'automation-dashboard.cjs', args: ['start'] },
+      { name: 'lint-monitor', script: 'lint-monitor.cjs', args: ['start'] },
+      { name: 'self-healing', script: 'self-healing-orchestrator.cjs', args: [] },
+      { name: 'alignment-orchestrator', script: 'alignment-orchestrator.cjs', args: ['continuous'] },
+      { name: 'design-orchestrator', script: 'design-orchestrator.cjs', args: ['continuous'] },
+      { name: 'diversification-orchestrator', script: 'diversification-orchestrator.cjs', args: [] },
+      { name: 'responsive-content-orchestrator', script: 'responsive-content-orchestrator.cjs', args: ['continuous'] },
+      { name: 'variation-orchestrator', script: 'variation-orchestrator.cjs', args: ['continuous'] },
+      { name: 'frontend-sync-orchestrator', script: 'frontend-sync-orchestrator.cjs', args: ['continuous'] },
+      { name: 'saas-services-orchestrator', script: 'saas-services-orchestrator.cjs', args: ['continuous'] },
+      { name: 'homepage-promo-orchestrator', script: 'homepage-promo-orchestrator.cjs', args: ['continuous'] },
+      { name: 'linkedin-marketing-orchestrator', script: 'linkedin-marketing-orchestrator.cjs', args: ['continuous'] },
+      { name: 'cursor-chat-orchestrator', script: 'cursor-chat-orchestrator.cjs', args: ['continuous'] },
+      { name: 'site-link-orchestrator', script: 'site-link-orchestrator.cjs', args: ['continuous'] },
+      { name: 'site-promo-orchestrator', script: 'site-promo-orchestrator.cjs', args: ['continuous'] },
+      { name: 'spec-dev-orchestrator', script: 'spec-dev-orchestrator.cjs', args: ['continuous'] },
+      { name: 'linkedin-pro-orchestrator', script: 'linkedin-pro-orchestrator.cjs', args: ['continuous'] },
+      { name: 'code-quality', script: 'code-quality-monitor.cjs', args: [] },
+      { name: 'performance', script: 'performance-optimizer.cjs', args: [] },
+      { name: 'security-scanner', script: 'security-scanner.cjs', args: [] },
+      { name: 'seo-optimizer', script: 'seo-optimizer.cjs', args: [] },
+      { name: 'test-generator', script: 'test-generator.cjs', args: [] },
+      { name: 'app-intelligence', script: 'app-intelligence-enhancer.cjs', args: ['continuous'] }
+    ];
     
     for (const system of this.config.systems) {
       const success = await this.startSystem(system);

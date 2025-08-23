@@ -131,6 +131,7 @@ const ComprehensivePricing2025: React.FC = () => {
         description="Explore our complete pricing guide for micro SAAS, IT services, and AI solutions. Find the perfect plan for your business needs with transparent pricing and feature comparisons."
         keywords="pricing, micro SAAS pricing, AI services pricing, cybersecurity pricing, cloud services pricing, enterprise solutions pricing"
         ogImage="https://ziontechgroup.com/og-image.jpg"
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       />
 
       {/* Hero Section */}
@@ -505,3 +506,4 @@ const ComprehensivePricing2025: React.FC = () => {
 };
 
 export default ComprehensivePricing2025;
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

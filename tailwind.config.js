@@ -1,46 +1,56 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: "class",
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './utils/**/*.{js,ts,jsx,tsx}',
-    './styles/**/*.{css,scss}',
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        'fade-in': 'fadeIn 0.6s ease-out forwards',
+        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
+        'fade-in-down': 'fadeInDown 0.6s ease-out forwards',
+        'slide-in-left': 'slideInLeft 0.6s ease-out forwards',
+        'slide-in-right': 'slideInRight 0.6s ease-out forwards',
+        'scale-in': 'scaleIn 0.6s ease-out forwards',
+        'float': 'float 6s ease-in-out infinite',
+        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'bounce-slow': 'bounce 2s infinite',
+        'glow': 'glow 2s ease-in-out infinite alternate',
+        'shimmer': 'shimmer 2.5s linear infinite',
+        'matrix': 'matrix 20s linear infinite',
+        'neon-pulse': 'neonPulse 1.5s ease-in-out infinite',
+        'cyber-float': 'cyberFloat 8s ease-in-out infinite',
+        'hologram': 'hologram 3s ease-in-out infinite',
+        'energy-wave': 'energyWave 4s ease-in-out infinite',
+        'quantum-spin': 'quantumSpin 6s linear infinite',
+        'neural-network': 'neuralNetwork 10s linear infinite',
+        'plasma-flow': 'plasmaFlow 5s ease-in-out infinite',
+        'cyber-grid': 'cyberGrid 15s linear infinite',
+=======
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
-          50: "hsl(var(--primary) / 0.05)",
-          100: "hsl(var(--primary) / 0.1)",
-          200: "hsl(var(--primary) / 0.2)",
-          300: "hsl(var(--primary) / 0.3)",
-          400: "hsl(var(--primary) / 0.4)",
-          500: "hsl(var(--primary) / 0.5)",
-          600: "hsl(var(--primary) / 0.6)",
-          700: "hsl(var(--primary) / 0.7)",
-          800: "hsl(var(--primary) / 0.8)",
-          900: "hsl(var(--primary) / 0.9)",
+          50: '#eff6ff',
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+          800: '#1e40af',
+          900: '#1e3a8a',
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
-        muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          50: '#fdf4ff',
+          100: '#fae8ff',
+          200: '#f5d0fe',
+          300: '#f0abfc',
+          400: '#e879f9',
+          500: '#d946ef',
+          600: '#c026d3',
+          700: '#a21caf',
+          800: '#86198f',
+          900: '#701a75',
         },
         accent: {
           DEFAULT: "hsl(var(--accent))",
@@ -746,10 +756,14 @@ module.exports = {
     },
   },
   plugins: [],
-  safelist: [
-    'focus:ring-cyan-500/50',
-    'focus:ring-cyan-400/50',
-    'focus:ring-offset-2',
-    'focus:ring-offset-gray-900'
-  ]
 }
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+=======
+

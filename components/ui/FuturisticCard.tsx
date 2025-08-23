@@ -1,137 +1,34 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React from 'react';
 
-interface FuturisticCardProps {
-  children: React.ReactNode;
-  className?: string;
-  glowColor?: string;
-  borderColor?: string;
-  hoverEffect?: boolean;
-  glassmorphism?: boolean;
-  neon?: boolean;
-  onClick?: () => void;
-  delay?: number;
-}
+export type FuturisticCardProps = {
+  title: string;
+  description: string;
+  action?: React.ReactNode;
+  icon?: React.ReactNode;
+};
 
-export default function FuturisticCard({
-  children,
-  className = '',
-  glowColor = '#00ffff',
-  borderColor = '#00ffff',
-  hoverEffect = true,
-  glassmorphism = true,
-  neon = true,
-  onClick,
-  delay = 0,
-}: FuturisticCardProps) {
-  const [isHovered, setIsHovered] = useState(false);
-
-  const baseClasses = `
-    relative overflow-hidden rounded-xl p-6 transition-all duration-300
-    ${glassmorphism ? 'backdrop-blur-md bg-white/10' : 'bg-gray-900/80'}
-    ${neon ? 'border border-opacity-50' : ''}
-    ${hoverEffect ? 'cursor-pointer' : ''}
-    ${className}
-  `;
-
-  const neonBorderClasses = neon ? `
-    before:absolute before:inset-0 before:rounded-xl before:p-[1px]
-    before:bg-gradient-to-r before:from-transparent before:via-${borderColor} before:to-transparent
-    before:opacity-0 before:transition-opacity before:duration-300
-    ${isHovered ? 'before:opacity-100' : ''}
-  ` : '';
-
-  const glowEffect = neon ? `
-    shadow-[0_0_20px_${glowColor}40] transition-shadow duration-300
-    ${isHovered ? `shadow-[0_0_30px_${glowColor}80]` : ''}
-  ` : '';
-
+export default function FuturisticCard({ title, description, action, icon }: FuturisticCardProps) {
   return (
-    <motion.div
-      className={baseClasses}
-      style={{
-        borderColor: neon ? borderColor : undefined,
-        boxShadow: neon ? `0 0 20px ${glowColor}40` : undefined,
-      }}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
-      onClick={onClick}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay }}
-      whileHover={hoverEffect ? { scale: 1.02, y: -5 } : {}}
-      whileTap={hoverEffect ? { scale: 0.98 } : {}}
-    >
-      {/* Animated background gradient */}
-      <div
-        className="absolute inset-0 opacity-20"
-        style={{
-          background: `linear-gradient(135deg, ${glowColor}20 0%, transparent 50%, ${glowColor}10 100%)`,
-        }}
-      />
-
-      {/* Animated border lines */}
-      {neon && (
-        <>
-          <div
-            className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-current to-transparent opacity-50"
-            style={{ color: borderColor }}
-          />
-          <div
-            className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-current to-transparent opacity-50"
-            style={{ color: borderColor }}
-          />
-          <div
-            className="absolute top-0 left-0 w-[1px] h-full bg-gradient-to-b from-transparent via-current to-transparent opacity-50"
-            style={{ color: borderColor }}
-          />
-          <div
-            className="absolute top-0 right-0 w-[1px] h-full bg-gradient-to-b from-transparent via-current to-transparent opacity-50"
-            style={{ color: borderColor }}
-          />
-        </>
-      )}
-
-      {/* Corner accents */}
-      {neon && (
-        <>
-          <div
-            className="absolute top-2 left-2 w-2 h-2 rounded-full opacity-60"
-            style={{ backgroundColor: borderColor }}
-          />
-          <div
-            className="absolute top-2 right-2 w-2 h-2 rounded-full opacity-60"
-            style={{ backgroundColor: borderColor }}
-          />
-          <div
-            className="absolute bottom-2 left-2 w-2 h-2 rounded-full opacity-60"
-            style={{ backgroundColor: borderColor }}
-          />
-          <div
-            className="absolute bottom-2 right-2 w-2 h-2 rounded-full opacity-60"
-            style={{ backgroundColor: borderColor }}
-          />
-        </>
-      )}
-
-      {/* Content */}
-      <div className="relative z-10">
-        {children}
+    <div className="relative rounded-2xl border border-white/10 dark:border-white/10 bg-white/60 dark:bg-white/[0.04] backdrop-blur-md p-6 overflow-hidden group">
+      <div className="absolute inset-px rounded-[1rem] pointer-events-none" style={{ boxShadow: 'inset 0 0 0 1px rgba(99,102,241,0.25)' }} />
+      <div className="absolute -inset-40 opacity-0 group-hover:opacity-100 transition-opacity duration-700" aria-hidden>
+        <div className="h-full w-full bg-gradient-to-tr from-indigo-500/10 via-purple-500/10 to-teal-400/10 blur-2xl" />
       </div>
-
-      {/* Hover glow effect */}
-      {hoverEffect && neon && (
-        <motion.div
-          className="absolute inset-0 rounded-xl opacity-0"
-          style={{
-            background: `radial-gradient(circle at center, ${glowColor}20 0%, transparent 70%)`,
-          }}
-          animate={{
-            opacity: isHovered ? 1 : 0,
-          }}
-          transition={{ duration: 0.3 }}
-        />
-      )}
-    </motion.div>
+      <div className="relative z-10">
+        <div className="flex items-center gap-3">
+          {icon && <div className="text-indigo-400">{icon}</div>}
+          <h3 className="text-lg font-semibold">{title}</h3>
+        </div>
+        <p className="mt-2 text-sm text-gray-700 dark:text-gray-300 leading-6">{description}</p>
+        {action && <div className="mt-4">{action}</div>}
+      </div>
+    </div>
   );
+
+  if (href) {
+    return (
+      <a href={href} className="group block">{inner}</a>
+    );
+  }
+  return inner;
 }

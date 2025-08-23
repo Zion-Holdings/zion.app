@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-
 {% block content %}
     <h2>Our Courses</h2>
     {% if courses %}
@@ -7,7 +6,10 @@
             {% for course in courses %}
                 <div class="course-card">
                     <h3>{{ course.title }}</h3>
-                    <p><strong>Category:</strong> {{ course.category.name if course.category else 'N/A' }}</p>
+                    <p>
+                        <strong>Category:</strong> {{ course.category.name if course.category else
+                        'N/A' }}
+                    </p>
                     <p>{{ course.description | truncate(100) }}</p>
                     <p>
                         {% if course.is_premium_tier %}
@@ -22,9 +24,12 @@
         </div>
     {% else %}
         <p>No courses available at the moment. Please check back later!</p>
-        <p>If you are an admin, try running: <br>
-           <code>flask init-db</code> (if you haven't already)<br>
-           <code>flask seed-db</code>
+        <p>
+            If you are an admin, try running:
+            <br />
+            <code>flask init-db</code> (if you haven't already)
+            <br />
+            <code>flask seed-db</code>
         </p>
     {% endif %}
 {% endblock %}

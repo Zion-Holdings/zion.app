@@ -2,27 +2,26 @@
 
 // Import server polyfills FIRST to handle client-side globals in server context
 // Immediately define self for webpack chunk loading
-if (typeof global !== 'undefined' && typeof (global as Record<string, unknown>).self === 'undefined') {
-  (global as Record<string, unknown>).self = global;
+if (typeof global !== 'undefined' && typeof (global as any).self === 'undefined') {
+  (global as any).self = global;
 }
-if (typeof globalThis !== 'undefined' && typeof (globalThis as Record<string, unknown>).self === 'undefined') {
-  (globalThis as Record<string, unknown>).self = globalThis;
+if (typeof globalThis !== 'undefined' && typeof (globalThis as any).self === 'undefined') {
+  (globalThis as any).self = globalThis;
 }
 
 import './src/utils/server-polyfill';
 
 // Conditionally import Sentry to avoid Node.js dependencies in browser
-let Sentry: { init?: Function } | null = null;
-let onRequestError: Function | null = null;
+let Sentry: any = null;
+let onRequestError: any = null;
 
 async function initializeSentryOrMock() {
   if (process.env['NEXT_RUNTIME'] === 'edge') {
-    // Edge runtime: skip Sentry initialization (not supported)
-    Sentry = null;
-    onRequestError = null;
-    return;
-  }
-  if (typeof window === 'undefined') { // Node.js server environment
+    console.log('instrumentation.ts: Edge runtime detected. Forcing Sentry mock.');
+    const mockSentry = await import('./src/utils/sentry-mock'); // Ensure this path is correct
+    Sentry = mockSentry.default;
+    onRequestError = mockSentry.onRequestError; // Ensure mock provides this if used
+  } else if (typeof window === 'undefined') { // Node.js server environment
     console.log('instrumentation.ts: Node.js runtime detected.');
     try {
       const shouldDisableSentry =
@@ -33,19 +32,23 @@ async function initializeSentryOrMock() {
         process.env['SENTRY_DSN']?.includes('placeholder');
 
       if (shouldDisableSentry) {
-        Sentry = null;
-        onRequestError = null;
-        return;
+        console.log('instrumentation.ts: Sentry DSN invalid or disabled by env var, using Sentry mock for Node.js.');
+        const mockSentry = await import('./src/utils/sentry-mock');
+        Sentry = mockSentry.default;
+        onRequestError = mockSentry.onRequestError;
       } else {
-        // Always use the real Sentry SDK
-        Sentry = require('@sentry/nextjs');
-        onRequestError = null;
+        console.log('instrumentation.ts: Valid Sentry DSN found, attempting to load actual @sentry/nextjs for Node.js.');
+        const sentryModule = await import("@sentry/nextjs");
+        Sentry = sentryModule;
+        // If ./sentry has specific onRequestError, it should be imported here too.
+        // For now, assuming @sentry/nextjs covers it or it's not critical for this path.
         console.log('instrumentation.ts: Actual Sentry SDK loaded for Node.js.');
       }
     } catch (error) {
-      console.warn('instrumentation.ts: Sentry SDK import/init failed for Node.js:', error);
-      Sentry = null;
-      onRequestError = null;
+      console.warn('instrumentation.ts: Sentry SDK import/init failed for Node.js, falling back to mock:', error);
+      const mockSentry = await import('./src/utils/sentry-mock');
+      Sentry = mockSentry.default;
+      onRequestError = mockSentry.onRequestError;
     }
   } else {
     // Client-side environment, Sentry is typically handled by _app.tsx or similar client-specific setup.
@@ -64,14 +67,10 @@ export { onRequestError }; // This might be null if not set by mock/actual
 export async function register() {
   await sentryInitializationPromise; // Ensure initialization is complete
 
-  if (process.env.NODE_ENV === 'development') {
-    console.log("instrumentation.ts: register() called");
-  }
+  console.log("instrumentation.ts: register() called");
 
   if (!Sentry || typeof Sentry.init !== 'function') {
-    if (process.env.NODE_ENV === 'development') {
-      console.log("instrumentation.ts: Sentry SDK not available or not correctly initialized, skipping Sentry.init().");
-    }
+    console.log("instrumentation.ts: Sentry SDK not available or not correctly initialized, skipping Sentry.init().");
     return;
   }
 
@@ -99,9 +98,7 @@ export async function register() {
     return;
   }
 
-  if (process.env.NODE_ENV === 'development') {
-    console.log(`instrumentation.ts: Initializing Sentry for server-side. Release: ${SENTRY_RELEASE}, Env: ${SENTRY_ENVIRONMENT}`);
-  }
+  console.log(`instrumentation.ts: Initializing Sentry for server-side. Release: ${SENTRY_RELEASE}, Env: ${SENTRY_ENVIRONMENT}`);
 
   try {
     Sentry.init({
@@ -110,21 +107,16 @@ export async function register() {
       environment: SENTRY_ENVIRONMENT,
       tracesSampleRate: process.env.NODE_ENV === 'development' ? 1.0 : 0.1,
 
-      beforeSend(event: unknown, _hint: unknown) {
-        if (typeof event === 'object' && event !== null && 'exception' in event) {
-          // @ts-expect-error: event may not have exception property
-          if (event.exception?.values?.[0]?.value === '' || event.exception?.values?.[0]?.value === undefined) {
-            console.log("instrumentation.ts: Sentry event dropped due to empty exception value.");
-            return null;
-          }
+      beforeSend(event: any, hint: any) {
+        // Drop events without meaningful exception messages
+        if (event.exception?.values?.[0]?.value === '' || event.exception?.values?.[0]?.value === undefined) {
+          console.log("instrumentation.ts: Sentry event dropped due to empty exception value.");
+          return null;
         }
 
         // Filter out common development noise
         if (process.env.NODE_ENV === 'development') {
-          let errorMessage = '';
-          if (typeof _hint === 'object' && _hint !== null && 'originalException' in _hint) {
-            errorMessage = (_hint as { originalException?: unknown }).originalException?.toString() || '';
-          }
+          const errorMessage = hint.originalException?.toString() || '';
           if (errorMessage.includes('ResizeObserver') || 
               errorMessage.includes('Non-Error promise rejection captured') ||
               errorMessage.includes('Loading chunk')) {
@@ -135,22 +127,15 @@ export async function register() {
         return event;
       },
       
-      initialScope: (scope: unknown) => {
-        if (
-          typeof scope === 'object' && scope !== null &&
-          'setTag' in scope && typeof (scope as { setTag?: unknown }).setTag === 'function'
-        ) {
-          const setTag = (scope as { setTag: (key: string, value: string) => void }).setTag;
-          if (SENTRY_RELEASE) {
-            setTag("release", SENTRY_RELEASE);
-          }
-          if (process.env.NEXT_PUBLIC_VERCEL_ENV) {
-            setTag("vercel_env", process.env.NEXT_PUBLIC_VERCEL_ENV);
-          }
-          if (process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA) {
-            setTag("commit", process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA);
-          }
+      initialScope: (scope: any) => {
+        if (SENTRY_RELEASE) {
+          scope.setTag("release", SENTRY_RELEASE);
         }
+        if (SENTRY_ENVIRONMENT) {
+          scope.setTag("environment", SENTRY_ENVIRONMENT);
+        }
+        scope.setTag("runtime", "server-side");
+        return scope;
       },
 
       // Enable debug logging only in development
@@ -166,4 +151,5 @@ export async function register() {
   } catch (error) {
     console.error("instrumentation.ts: Failed to initialize Sentry:", error);
   }
+>>>>>>> origin/codex/reactivate-features-gradually
 }

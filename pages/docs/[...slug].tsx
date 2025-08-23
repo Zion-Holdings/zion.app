@@ -1,57 +1,7 @@
-import fs from 'fs';
-import path from 'path';
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
-import type { GetStaticPaths, GetStaticProps } from 'next';
-import type { ParsedUrlQuery } from 'querystring';
-
-interface DocProps {
-  content: string | null;
-}
-
-interface DocPageParams extends ParsedUrlQuery {
-  slug?: string[];
-}
-
-const Doc: React.FC<DocProps> = ({ content }) => {
-  if (!content) {
-    return <div className="text-center py-16">Document not found</div>;
-  }
+import Head from 'next/head';
   return (
-    <main className="prose dark:prose-invert max-w-3xl mx-auto py-8">
-      <ReactMarkdown>{content}</ReactMarkdown>
-    </main>
+    <>
+      <Head><title>docs/[...slug] - Zion App</title><meta name="description" content="docs/[...slug] page" /></Head><div className="container mx-auto px-4 py-8"><h1 className="text-3xl font-bold mb-6">docs/[...slug]</h1><p className="text-lg mb-4">This page is under construction.</p><div className="mt-4"><a href="/" className="text-blue-600 hover:underline">;
+            ← Back to Home</a></div></div></>;
   );
-};
-
-const docsDir = path.join(process.cwd(), 'content', 'docs');
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths: { params: DocPageParams }[] = [];
-  if (fs.existsSync(docsDir)) {
-    for (const file of fs.readdirSync(docsDir)) {
-      if (file.endsWith('.md')) {
-        const slug = file.replace(/\.md$/, '');
-        // Ensure we don't generate a path for 'api-reference' if the dedicated page exists
-        if (slug !== 'api-reference') {
-          paths.push({ params: { slug: [slug] } });
-        }
-      }
-    }
-  }
-  return { paths, fallback: 'blocking' };
-};
-
-export const getStaticProps: GetStaticProps<DocProps, DocPageParams> = async ({ params }: { params: DocPageParams }) => {
-  const slugParts = params?.slug ?? [];
-  const filePath = path.join(docsDir, `${slugParts.join('/')}.md`);
-
-  try {
-    const content = fs.readFileSync(filePath, 'utf8');
-    return { props: { content } };
-  } catch {
-    return { props: { content: null } };
-  }
-};
-
-export default Doc;

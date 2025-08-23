@@ -279,17 +279,12 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
                 <div className="text-2xl font-bold text-white">
                   {getPerformanceScore()}
                 </div>
-                <div className="text-sm text-gray-400">/ 100</div>
               </div>
-              <div className="w-full bg-gray-700 rounded-full h-2 mt-2">
-                <div
-                  className={`h-2 rounded-full transition-all duration-500 ${
-                    getPerformanceScore() >= 90 ? 'bg-green-500' :
-                    getPerformanceScore() >= 70 ? 'bg-yellow-500' : 'bg-red-500'
-                  }`}
-                  style={{ width: `${getPerformanceScore()}%` }}
-                />
+              
+              <div className="text-xs text-gray-400 text-center">
+                Last updated: {lastUpdate.toLocaleTimeString()}
               </div>
+              <span className="text-sm font-mono text-white">{metrics.fid}ms</span>
             </div>
 
             {/* Key Metrics */}
@@ -383,8 +378,8 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
               )}
             </AnimatePresence>
           </div>
-        </motion.div>
-      )}
+        </div>
+      </motion.div>
     </AnimatePresence>
   );
 };

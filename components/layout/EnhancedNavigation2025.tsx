@@ -317,6 +317,103 @@ const EnhancedNavigation2025: React.FC = () => {
       {/* Mobile Navigation */}
       <AnimatePresence>
         {isOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm lg:hidden"
+              onClick={closeMobileMenu}
+            />
+            
+            {/* Mobile Menu Panel */}
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'tween', duration: 0.3 }}
+              className="fixed top-0 right-0 h-full w-80 bg-black/95 backdrop-blur-xl border-l border-cyan-500/20 lg:hidden"
+            >
+              <div className="flex flex-col h-full">
+                {/* Mobile Menu Header */}
+                <div className="flex items-center justify-between p-6 border-b border-cyan-500/20">
+                  <h2 className="text-white font-semibold text-lg">Menu</h2>
+                  <button
+                    onClick={closeMobileMenu}
+                    className="p-2 text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-lg"
+                    aria-label="Close mobile menu"
+                  >
+                    <X className="w-6 h-6" />
+                  </button>
+                </div>
+
+                {/* Mobile Search */}
+                <div className="p-6 border-b border-cyan-500/20">
+                  <form onSubmit={handleSearch}>
+                    <div className="relative">
+                      <input
+                        type="text"
+                        name="search"
+                        placeholder="Search solutions..."
+                        className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                        aria-label="Search solutions"
+                      />
+                      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                    </div>
+                  </form>
+                </div>
+
+                {/* Mobile Navigation */}
+                <nav className="flex-1 p-6 space-y-4">
+                  {navigationItems.map((item) => (
+                    <div key={item.label}>
+                      {item.label === 'Solutions' || item.label === 'Services' ? (
+                        <div>
+                          <button
+                            onClick={() => toggleDropdown(item.label)}
+                            className="flex items-center justify-between w-full text-left text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-lg px-3 py-2"
+                            aria-expanded={activeDropdown === item.label}
+                            aria-haspopup="true"
+                          >
+                            <span>{item.label}</span>
+                            <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${activeDropdown === item.label ? 'rotate-180' : ''}`} />
+                          </button>
+                          
+                          {activeDropdown === item.label && (
+                            <div className="ml-4 mt-2 space-y-2">
+                              {item.label === 'Solutions' && solutionsDropdown.map((solution) => (
+                                <Link
+                                  key={solution.label}
+                                  href={solution.href}
+                                  onClick={closeMobileMenu}
+                                  className="block text-gray-400 hover:text-cyan-300 transition-colors duration-200 py-2 px-3 rounded-lg hover:bg-cyan-500/10"
+                                >
+                                  {solution.label}
+                                </Link>
+                              ))}
+                              {item.label === 'Services' && servicesDropdown.map((service) => (
+                                <Link
+                                  key={service.label}
+                                  href={service.href}
+                                  onClick={closeMobileMenu}
+                                  className="block text-gray-400 hover:text-cyan-300 transition-colors duration-200 py-2 px-3 rounded-lg hover:bg-cyan-500/10"
+                                >
+                                  {service.label}
+                                </Link>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ) : (
+                        <Link
+                          href={item.href}
+                          onClick={closeMobileMenu}
+                          className="block text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-lg px-3 py-2"
+                        >
+                          {item.label}
+                        </Link>
+=======
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
@@ -354,6 +451,7 @@ const EnhancedNavigation2025: React.FC = () => {
                             </Link>
                           ))}
                         </div>
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
                       )}
                     </div>
                   ) : (

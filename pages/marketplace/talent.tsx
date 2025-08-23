@@ -1,13 +1,7 @@
 import React from 'react';
-import type { GetServerSideProps } from 'next';
-import TalentPage from '@/pages/TalentsPage';
-
-export const getServerSideProps: GetServerSideProps = async () => {
-  return {
-    props: {}
-  };
-};
-
-export default function MarketplaceTalentPage() {
-  return <TalentPage />;
-} 
+import Head from 'next/head';
+  return (
+    <>
+      <Head><title>marketplace/talent - Zion App</title><meta name="description" content="marketplace/talent page" /></Head><div className="container mx-auto px-4 py-8"><h1 className="text-3xl font-bold mb-6">marketplace/talent</h1><p className="text-lg mb-4">This page is under construction.</p><div className="mt-4"><a href="/" className="text-blue-600 hover:underline">;
+            ← Back to Home</a></div></div></>;
+  );

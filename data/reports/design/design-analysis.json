@@ -1,6 +1,6 @@
 {
-  "timestamp": "2025-08-08T17:08:44.405Z",
-  "filesAnalyzed": 108,
+  "timestamp": "2025-08-08T16:28:14.448Z",
+  "filesAnalyzed": 102,
   "items": [
     {
       "file": "/workspace/pages/404.tsx",
@@ -340,118 +340,6 @@
       ],
       "details": {
         "filePath": "/workspace/pages/auto/auto-update-2025-08-08t16-10-20-249z.tsx",
-        "hasHead": true,
-        "usesTailwind": true,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/auto/auto-update-2025-08-08t16-30-00-086z.tsx",
-      "issues": [
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/auto/auto-update-2025-08-08t16-30-00-086z.tsx",
-        "hasHead": true,
-        "usesTailwind": true,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/auto/auto-update-2025-08-08t16-30-20-949z.tsx",
-      "issues": [
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/auto/auto-update-2025-08-08t16-30-20-949z.tsx",
-        "hasHead": true,
-        "usesTailwind": true,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/auto/auto-update-2025-08-08t16-38-19-257z.tsx",
-      "issues": [
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/auto/auto-update-2025-08-08t16-38-19-257z.tsx",
-        "hasHead": true,
-        "usesTailwind": true,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/auto/auto-update-2025-08-08t16-49-54-200z.tsx",
-      "issues": [
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/auto/auto-update-2025-08-08t16-49-54-200z.tsx",
-        "hasHead": true,
-        "usesTailwind": true,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/auto/auto-update-2025-08-08t17-04-44-419z.tsx",
-      "issues": [
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/auto/auto-update-2025-08-08t17-04-44-419z.tsx",
-        "hasHead": true,
-        "usesTailwind": true,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/auto/auto-update-2025-08-08t17-07-22-213z.tsx",
-      "issues": [
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/auto/auto-update-2025-08-08t17-07-22-213z.tsx",
-        "hasHead": true,
-        "usesTailwind": true,
-        "usesEnhancedLayout": false,
-        "usesEnhancedNav": false,
-        "usesEnhancedFooter": false,
-        "hasMetaTitle": true,
-        "hasMetaDesc": true
-      }
-    },
-    {
-      "file": "/workspace/pages/auto/auto-update-2025-08-08t17-09-38-113z.tsx",
-      "issues": [
-        "missing_enhanced_layout"
-      ],
-      "details": {
-        "filePath": "/workspace/pages/auto/auto-update-2025-08-08t17-09-38-113z.tsx",
         "hasHead": true,
         "usesTailwind": true,
         "usesEnhancedLayout": false,

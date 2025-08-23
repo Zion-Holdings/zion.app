@@ -129,6 +129,11 @@ export const innovative2025AIAutonomousEcosystem = [
 
   // AI-Powered Autonomous Sales Intelligence Platform
   {
+    pricing: {
+      starter: '$2,800/month',
+      professional: '$9,500/month',
+      enterprise: '$28,000/month'
+=======
     id: 'ai-autonomous-sales-intelligence-2025',
     name: 'AI Autonomous Sales Intelligence Platform 2025',
     tagline: 'Fully autonomous sales intelligence with predictive analytics and lead scoring',

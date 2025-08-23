@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
+=======
       title: "Financial AI & Machine Learning",
       description: "Advanced AI solutions for financial institutions with predictive analytics and risk assessment",
       icon: <Brain className="w-8 h-8" />,

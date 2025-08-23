@@ -1,60 +1,29 @@
-const { execSync } = require('child_process');
-const fs = require('fs');
 const path = require('path');
+const { spawnSync } = require('child_process');
 
-exports.handler = async function(event, context) {
-  console.log('🤖 Starting adaptive-orchestrator...');
-  
-  try {
-    const timestamp = new Date().toISOString();
-    const reportPath = path.join(process.cwd(), 'adaptive-orchestrator-report.md');
-    
-    const reportContent = `# adaptive-orchestrator Report
+function runNode(relPath, args = []) {
+  const abs = path.resolve(__dirname, '..', '..', relPath);
+  const res = spawnSync('node', [abs, ...args], { stdio: 'pipe', encoding: 'utf8' });
+  return { status: res.status || 0, stdout: res.stdout || '', stderr: res.stderr || '' };
+}
 
-Generated: ${timestamp}
+exports.config = { schedule: '*/5 * * * *' };
 
-## Status
-- Task: adaptive-orchestrator
-- Status: Completed
-- Timestamp: ${timestamp}
+exports.handler = async () => {
+  const logs = [];
+  const logStep = (name, fn) => {
+    logs.push(`\n=== ${name} ===`);
+    const { status, stdout, stderr } = runNode(rel, args);
+    if (stdout) logs.push(stdout);
+    if (stderr) logs.push(stderr);
+    logs.push(`exit=${status}`);
+    return status;
+  };
 
-## Next Steps
-- Implement actual adaptive-orchestrator functionality
-- Add proper error handling
-- Add logging and monitoring
-`;
+  logStep('adaptive:orchestrator', () => runNode('automation/adaptive-orchestrator.cjs'));
+  logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
 
-    fs.writeFileSync(reportPath, reportContent);
-    console.log('📝 Report generated');
-    
-    try {
-      execSync('git add ' + reportPath, { stdio: 'inherit' });
-      execSync('git commit -m "🤖 Add adaptive-orchestrator report [skip ci]"', { stdio: 'inherit' });
-      execSync('git push', { stdio: 'inherit' });
-      console.log('✅ Report committed and pushed');
-    } catch (gitError) {
-      console.log('Git error:', gitError.message);
-    }
-    
-    console.log('✅ adaptive-orchestrator completed successfully');
-    
-    return {
-      statusCode: 200,
-      body: JSON.stringify({
-        message: 'adaptive-orchestrator completed successfully',
-        timestamp: timestamp
-      })
-    };
-    
-  } catch (error) {
-    console.error('❌ adaptive-orchestrator failed:', error.message);
-    
-    return {
-      statusCode: 500,
-      body: JSON.stringify({
-        error: error.message,
-        timestamp: new Date().toISOString()
-      })
-    };
-  }
+  step('git:sync', 'automation/advanced-git-sync.cjs');
+
+  return { statusCode: 200, headers: { 'content-type': 'text/plain' }, body: logs.join('\n') };
 };

@@ -200,6 +200,3 @@ const OfflinePage: React.FC = () => {
       </div>
     </>
   );
-};
-
-export default OfflinePage;

@@ -3,7 +3,9 @@
 /* Font loading optimizations */
 .font-loading-optimize {
   font-display: swap;
-  font-feature-settings: "kern" 1, "liga" 1;
+  font-feature-settings:
+    'kern' 1,
+    'liga' 1;
 }
 
 /* Prevent layout shift during font loading */
@@ -91,7 +93,12 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(to right, var(--primary), var(--secondary), var(--accent));
+  background-image: linear-gradient(
+    to right,
+    var(--primary),
+    var(--secondary),
+    var(--accent)
+  );
 }
 
 /* Fallback for browsers that don't support background-clip: text */
@@ -151,4 +158,4 @@
 
 .animation-optimized:not(:hover):not(:focus) {
   will-change: auto;
-} 
+}

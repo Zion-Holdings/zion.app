@@ -127,6 +127,7 @@ const CaseStudiesPage: React.FC = () => {
             </motion.h1>
             <motion.p 
               className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-12"
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -247,6 +248,7 @@ const CaseStudiesPage: React.FC = () => {
                     >
                       Read Full Case Study <ArrowRight className="w-4 h-4 ml-2" />
                     </a>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                   </div>
                 </motion.div>
               ))}
@@ -279,6 +281,7 @@ const CaseStudiesPage: React.FC = () => {
                 >
                   View All Services
                 </a>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </div>
             </motion.div>
           </div>

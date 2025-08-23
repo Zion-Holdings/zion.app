@@ -7,7 +7,11 @@ on:
 
 permissions:
   contents: write
-  actions: read
+  pull-requests: write
+
+concurrency:
+  group: "search-index"
+  cancel-in-progress: true
 
 jobs:
   main:

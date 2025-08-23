@@ -1,0 +1,7 @@
+<<<<<<< HEAD
+export default function Page() { return <div className="py-10">Data Analytics Implementation</div>; }
+=======
+export default function DataAnalyticsImplementation() {
+  return <div>Data Analytics Implementation</div>;
+}
+>>>>>>> origin/cursor/build-it-service-provider-directory-page-d0d3

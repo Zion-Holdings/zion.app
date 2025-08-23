@@ -1,6 +1,8 @@
 name: Netlify Functions Trigger
 
 on:
+  schedule:
+    - cron: '*/10 * * * *' # every 10 minutes
   workflow_dispatch: {}
   schedule:
     - cron: '*/10 * * * *'
@@ -13,7 +15,9 @@ jobs:
   main:
     name: Main Job
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 15
+    env:
+      NETLIFY_BASE_URL: ${{ vars.NETLIFY_BASE_URL }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4

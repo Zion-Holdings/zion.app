@@ -8,7 +8,7 @@ function runNode(relPath, args = []) {
 }
 
 exports.config = {
-  schedule: '*/2 * * * *',
+  schedule: '*/20 * * * *', // every 20 minutes
 };
 
 exports.handler = async () => {
@@ -22,8 +22,18 @@ exports.handler = async () => {
     return status;
   }
 
-  logStep('automation:insights', () => runNode('automation/automation-insights-digest.cjs'));
-  logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
+  // Crawl external links and generate report
+  logStep('links:check', () => runNode('scripts/automations/check_links.cjs'));
+
+  // If there are any local link fixers, run them (optional best-effort)
+  try {
+    logStep('links:fixer', () => runNode('automation/site-link-fixer.cjs'));
+  } catch (error) {
+    logs.push(`No site-link-fixer found or failed gracefully: ${String(error)}`);
+  }
+
+  // Commit and push any changes
+  logStep('git:sync', () => runNode('automation/git-sync.cjs'));
 
   return { statusCode: 200, body: logs.join('\n') };
 };

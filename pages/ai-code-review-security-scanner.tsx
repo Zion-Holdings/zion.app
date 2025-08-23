@@ -14,8 +14,8 @@ const AICodeReviewSecurityScanner = () => {
         title="AI-Powered Code Review & Security Scanner | Zion Tech Group"
         description="Advanced AI-powered platform that automatically reviews code, detects security vulnerabilities, suggests improvements, and ensures code quality across multiple programming languages."
         keywords={["AI code review", "security scanner", "vulnerability detection", "code quality", "automated code analysis", "security testing", "DevOps security"]}
-        image="https://ziontechgroup.com/og-ai-code-review.jpg"
-        url="https://ziontechgroup.com/ai-code-review-security-scanner"
+        ogImage="https://ziontechgroup.com/og-ai-code-review.jpg"
+        canonical="https://ziontechgroup.com/ai-code-review-security-scanner"
       />
       
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">

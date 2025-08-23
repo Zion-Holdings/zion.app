@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
+=======
       title: "Manufacturing AI & Machine Learning",
       description: "AI-powered manufacturing optimization with predictive maintenance and quality control",
       icon: <Brain className="w-8 h-8" />,
@@ -31,6 +32,10 @@ import {
     }
   ];
 
+      description="Advanced technology solutions for manufacturing. AI, cybersecurity, cloud infrastructure, and analytics designed for the manufacturing sector."
+    >
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
+=======
       <UltraFuturisticBackground>
         <div className="min-h-screen bg-black text-white relative z-10">
         {/* Hero Section */}

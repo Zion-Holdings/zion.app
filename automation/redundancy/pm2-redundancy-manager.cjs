@@ -1,348 +1,322 @@
 #!/usr/bin/env node
-'use strict';
+"use strict";
 
-const { spawnSync, spawn } = require('child_process');
-const fs = require('fs');
-const path = require('path');
-const cron = require('node-cron');
+const { spawnSync } = require("child_process");
+const fs = require("fs");
+const path = require("path");
 
 class PM2RedundancyManager {
   constructor() {
-    this.logDir = path.join(process.cwd(), 'automation', 'logs');
-    this.ensureLogDir();
-    this.backupProcesses = new Map();
-    this.healthChecks = new Map();
-    this.recoveryAttempts = new Map();
+    this.logsDir = path.join(process.cwd(), "automation", "logs");
+    this.backupDir = path.join(process.cwd(), "automation", "backups");
+    this.ensureDirectories();
   }
 
-  ensureLogDir() {
-    if (!fs.existsSync(this.logDir)) {
-      fs.mkdirSync(this.logDir, { recursive: true });
-    }
+  ensureDirectories() {
+    [this.logsDir, this.backupDir].forEach(dir => {
+      if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+      }
+    });
   }
 
-  log(message, level = 'INFO') {
+  log(message) {
     const timestamp = new Date().toISOString();
-    const logMessage = `[${timestamp}] [${level}] ${message}`;
+    const logMessage = `[${timestamp}] PM2-REDUNDANCY: ${message}`;
     console.log(logMessage);
     
-    const logFile = path.join(this.logDir, 'pm2-redundancy.log');
-    fs.appendFileSync(logFile, logMessage + '\n');
+    // Write to log file
+    const logFile = path.join(this.logsDir, "pm2-redundancy.log");
+    fs.appendFileSync(logFile, logMessage + "\n");
   }
 
-  runCommand(command, args = [], options = {}) {
+  runCommand(command, args = []) {
     const result = spawnSync(command, args, {
       cwd: process.cwd(),
       env: process.env,
       shell: false,
-      encoding: 'utf8',
+      encoding: "utf8",
       maxBuffer: 1024 * 1024 * 10
     });
     return {
       status: result.status,
-      stdout: result.stdout || '',
-      stderr: result.stderr || '',
+      stdout: result.stdout || "",
+      stderr: result.stderr || "",
       success: result.status === 0
     };
   }
 
-  async checkPM2Status() {
-    this.log('Checking PM2 status...');
-    const result = this.runCommand('pm2', ['status', '--no-daemon']);
-    
+  getPM2Status() {
+    const result = this.runCommand("pm2", ["status", "--no-daemon"]);
     if (!result.success) {
-      this.log(`PM2 status check failed: ${result.stderr}`, 'ERROR');
+      this.log(`Failed to get PM2 status: ${result.stderr}`);
+      return null;
+    }
+    return result.stdout;
+  }
+
+  getPM2Processes() {
+    const result = this.runCommand("pm2", ["jlist"]);
+    if (!result.success) {
+      this.log(`Failed to get PM2 processes: ${result.stderr}`);
+      return [];
+    }
+    
+    try {
+      return JSON.parse(result.stdout);
+    } catch (error) {
+      this.log(`Failed to parse PM2 processes: ${error.message}`);
+      return [];
+    }
+  }
+
+  backupPM2Configuration() {
+    const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
+    const backupFile = path.join(this.backupDir, `pm2-config-${timestamp}.json`);
+    
+    try {
+      const processes = this.getPM2Processes();
+      const config = {
+        timestamp: new Date().toISOString(),
+        processes: processes,
+        ecosystem: fs.existsSync("ecosystem.pm2.cjs") ? 
+          fs.readFileSync("ecosystem.pm2.cjs", "utf8") : null
+      };
+      
+      fs.writeFileSync(backupFile, JSON.stringify(config, null, 2));
+      this.log(`PM2 configuration backed up to: ${backupFile}`);
+      return backupFile;
+    } catch (error) {
+      this.log(`Failed to backup PM2 configuration: ${error.message}`);
+      return null;
+    }
+  }
+
+  restorePM2Configuration(backupFile) {
+    if (!fs.existsSync(backupFile)) {
+      this.log(`Backup file not found: ${backupFile}`);
       return false;
     }
 
-    const processes = this.parsePM2Status(result.stdout);
-    this.log(`Found ${processes.length} PM2 processes`);
-    return processes;
-  }
-
-  parsePM2Status(output) {
-    const lines = output.split('\n');
-    const processes = [];
-    
-    for (const line of lines) {
-      if (line.includes('│') && !line.includes('App name')) {
-        const parts = line.split('│').map(p => p.trim()).filter(p => p);
-        if (parts.length >= 4) {
-          processes.push({
-            name: parts[0],
-            status: parts[1],
-            cpu: parts[2],
-            memory: parts[3],
-            uptime: parts[4] || 'N/A'
-          });
-        }
-      }
-    }
-    
-    return processes;
-  }
-
-  async startBackupProcesses() {
-    this.log('Starting backup PM2 processes...');
-    
-    // Start backup auto-sync process
-    await this.startBackupAutoSync();
-    
-    // Start backup cron process
-    await this.startBackupCron();
-    
-    // Start backup monitoring process
-    await this.startBackupMonitoring();
-  }
-
-  async startBackupAutoSync() {
-    const scriptPath = path.join(process.cwd(), 'automation', 'pm2-auto-sync.js');
-    
-    if (!fs.existsSync(scriptPath)) {
-      this.log('PM2 auto-sync script not found, skipping backup', 'WARN');
-      return;
-    }
-
-    const processName = 'zion-auto-sync-backup';
-    
-    // Stop existing backup if running
-    this.runCommand('pm2', ['stop', processName]);
-    this.runCommand('pm2', ['delete', processName]);
-
-    // Start new backup process
-    const result = this.runCommand('pm2', [
-      'start', scriptPath,
-      '--name', processName,
-      '--interpreter', 'node',
-      '--cwd', process.cwd(),
-      '--watch', 'false',
-      '--autorestart', 'true',
-      '--max-restarts', '15',
-      '--exp-backoff-restart-delay', '1000'
-    ]);
-
-    if (result.success) {
-      this.log(`Started backup auto-sync process: ${processName}`);
-      this.backupProcesses.set(processName, {
-        type: 'auto-sync',
-        started: new Date(),
-        health: 'healthy'
-      });
-    } else {
-      this.log(`Failed to start backup auto-sync: ${result.stderr}`, 'ERROR');
-    }
-  }
-
-  async startBackupCron() {
-    const scriptPath = path.join(process.cwd(), 'automation', 'pm2-auto-sync.js');
-    
-    if (!fs.existsSync(scriptPath)) {
-      this.log('PM2 auto-sync script not found, skipping backup cron', 'WARN');
-      return;
-    }
-
-    const processName = 'zion-auto-sync-cron-backup';
-    
-    // Stop existing backup if running
-    this.runCommand('pm2', ['stop', processName]);
-    this.runCommand('pm2', ['delete', processName]);
-
-    // Start new backup cron process
-    const result = this.runCommand('pm2', [
-      'start', scriptPath,
-      '--name', processName,
-      '--interpreter', 'node',
-      '--cwd', process.cwd(),
-      '--watch', 'false',
-      '--autorestart', 'false',
-      '--instances', '1',
-      '--cron-restart', '*/15 * * * *' // every 15 minutes
-    ]);
-
-    if (result.success) {
-      this.log(`Started backup cron process: ${processName}`);
-      this.backupProcesses.set(processName, {
-        type: 'cron',
-        started: new Date(),
-        health: 'healthy'
-      });
-    } else {
-      this.log(`Failed to start backup cron: ${result.stderr}`, 'ERROR');
-    }
-  }
-
-  async startBackupMonitoring() {
-    const processName = 'zion-monitoring-backup';
-    
-    // Stop existing backup if running
-    this.runCommand('pm2', ['stop', processName]);
-    this.runCommand('pm2', ['delete', processName]);
-
-    // Start monitoring script
-    const result = this.runCommand('pm2', [
-      'start', 'node',
-      '--name', processName,
-      '--interpreter', 'node',
-      '--cwd', process.cwd(),
-      '--watch', 'false',
-      '--autorestart', 'true',
-      '--max-restarts', '20',
-      '--exp-backoff-restart-delelay', '2000'
-    ]);
-
-    if (result.success) {
-      this.log(`Started backup monitoring process: ${processName}`);
-      this.backupProcesses.set(processName, {
-        type: 'monitoring',
-        started: new Date(),
-        health: 'healthy'
-      });
-    } else {
-      this.log(`Failed to start backup monitoring: ${result.stderr}`, 'ERROR');
-    }
-  }
-
-  async monitorBackupProcesses() {
-    this.log('Monitoring backup processes...');
-    
-    for (const [name, info] of this.backupProcesses) {
-      const status = this.runCommand('pm2', ['status', name, '--no-daemon']);
-      
-      if (!status.success || status.stdout.includes('stopped') || status.stdout.includes('errored')) {
-        this.log(`Backup process ${name} is unhealthy, attempting recovery`, 'WARN');
-        await this.recoverProcess(name, info.type);
-      } else {
-        this.log(`Backup process ${name} is healthy`);
-        info.health = 'healthy';
-        info.lastCheck = new Date();
-      }
-    }
-  }
-
-  async recoverProcess(name, type) {
-    this.log(`Recovering process: ${name} (${type})`);
-    
-    const attempts = this.recoveryAttempts.get(name) || 0;
-    if (attempts >= 3) {
-      this.log(`Max recovery attempts reached for ${name}, skipping`, 'ERROR');
-      return;
-    }
-
-    this.recoveryAttempts.set(name, attempts + 1);
-    
-    // Stop and delete the process
-    this.runCommand('pm2', ['stop', name]);
-    this.runCommand('pm2', ['delete', name]);
-
-    // Restart based on type
-    switch (type) {
-      case 'auto-sync':
-        await this.startBackupAutoSync();
-        break;
-      case 'cron':
-        await this.startBackupCron();
-        break;
-      case 'monitoring':
-        await this.startBackupMonitoring();
-        break;
-    }
-  }
-
-  async startHealthMonitoring() {
-    this.log('Starting health monitoring...');
-    
-    // Monitor every 5 minutes
-    cron.schedule('*/5 * * * *', async () => {
-      await this.monitorBackupProcesses();
-    });
-
-    // Full health check every hour
-    cron.schedule('0 * * * *', async () => {
-      await this.fullHealthCheck();
-    });
-  }
-
-  async fullHealthCheck() {
-    this.log('Running full health check...');
-    
-    const processes = await this.checkPM2Status();
-    if (!processes) {
-      this.log('PM2 health check failed, attempting PM2 restart', 'WARN');
-      this.runCommand('pm2', ['kill']);
-      this.runCommand('pm2', ['resurrect']);
-      await this.startBackupProcesses();
-    }
-  }
-
-  async generateReport() {
-    const report = {
-      timestamp: new Date().toISOString(),
-      backupProcesses: Array.from(this.backupProcesses.entries()).map(([name, info]) => ({
-        name,
-        type: info.type,
-        started: info.started,
-        health: info.health,
-        lastCheck: info.lastCheck
-      })),
-      recoveryAttempts: Object.fromEntries(this.recoveryAttempts),
-      pm2Status: await this.checkPM2Status()
-    };
-
-    const reportPath = path.join(this.logDir, 'pm2-redundancy-report.json');
-    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    
-    this.log(`Report generated: ${reportPath}`);
-    return report;
-  }
-
-  async start() {
-    this.log('Starting PM2 Redundancy Manager...');
-    
     try {
-      await this.startBackupProcesses();
-      await this.startHealthMonitoring();
+      const backup = JSON.parse(fs.readFileSync(backupFile, "utf8"));
       
-      this.log('PM2 Redundancy Manager started successfully');
+      // Stop all current processes
+      this.runCommand("pm2", ["stop", "all"]);
+      this.runCommand("pm2", ["delete", "all"]);
       
-      // Generate initial report
-      await this.generateReport();
+      // Restore ecosystem file if it exists
+      if (backup.ecosystem) {
+        fs.writeFileSync("ecosystem.pm2.cjs", backup.ecosystem);
+        this.log("Ecosystem file restored");
+      }
       
-      // Keep the process running
-      setInterval(async () => {
-        await this.generateReport();
-      }, 300000); // Every 5 minutes
+      // Restart processes
+      if (fs.existsSync("ecosystem.pm2.cjs")) {
+        this.runCommand("pm2", ["start", "ecosystem.pm2.cjs"]);
+        this.log("PM2 processes restored from backup");
+        return true;
+      }
       
+      return false;
     } catch (error) {
-      this.log(`Failed to start PM2 Redundancy Manager: ${error.message}`, 'ERROR');
-      process.exit(1);
+      this.log(`Failed to restore PM2 configuration: ${error.message}`);
+      return false;
+    }
+  }
+
+  startRedundancyProcesses() {
+    this.log("Starting PM2 redundancy processes...");
+    
+    // Start the main auto-sync process
+    const autoSyncResult = this.runCommand("pm2", [
+      "start", "automation/pm2-auto-sync.js",
+      "--name", "zion-auto-sync-redundant",
+      "--interpreter", "node",
+      "--cwd", process.cwd(),
+      "--watch", "false",
+      "--autorestart", "true",
+      "--max-restarts", "15",
+      "--exp-backoff-restart-delay", "1000"
+    ]);
+    
+    if (autoSyncResult.success) {
+      this.log("Redundant auto-sync process started");
+    } else {
+      this.log(`Failed to start redundant auto-sync: ${autoSyncResult.stderr}`);
+    }
+    
+    // Start a backup cron process
+    const cronResult = this.runCommand("pm2", [
+      "start", "automation/pm2-auto-sync.js",
+      "--name", "zion-auto-sync-cron-redundant",
+      "--interpreter", "node",
+      "--cwd", process.cwd(),
+      "--watch", "false",
+      "--autorestart", "false",
+      "--cron-restart", "*/5 * * * *"
+    ]);
+    
+    if (cronResult.success) {
+      this.log("Redundant cron process started");
+    } else {
+      this.log(`Failed to start redundant cron: ${cronResult.stderr}`);
+    }
+    
+    // Start a health monitor process
+    const healthResult = this.runCommand("pm2", [
+      "start", "automation/pm2-health-monitor.cjs",
+      "--name", "zion-pm2-health-monitor",
+      "--interpreter", "node",
+      "--cwd", process.cwd(),
+      "--watch", "false",
+      "--autorestart", "true",
+      "--max-restarts", "10"
+    ]);
+    
+    if (healthResult.success) {
+      this.log("PM2 health monitor started");
+    } else {
+      this.log(`Failed to start health monitor: ${healthResult.stderr}`);
+    }
+  }
+
+  monitorAndRecover() {
+    this.log("Monitoring PM2 processes for failures...");
+    
+    const processes = this.getPM2Processes();
+    let needsRecovery = false;
+    
+    processes.forEach(process => {
+      if (process.pm2_env && process.pm2_env.status === "errored") {
+        this.log(`Process ${process.name} is in error state, attempting recovery...`);
+        needsRecovery = true;
+        
+        // Try to restart the failed process
+        this.runCommand("pm2", ["restart", process.name]);
+      }
+    });
+    
+    if (needsRecovery) {
+      this.log("Recovery actions completed");
+    }
+    
+    return needsRecovery;
+  }
+
+  createRedundancyEcosystem() {
+    const redundancyConfig = {
+      apps: [
+        {
+          name: "zion-auto-sync-redundant",
+          script: "automation/pm2-auto-sync.js",
+          interpreter: "node",
+          cwd: __dirname,
+          watch: false,
+          autorestart: true,
+          max_restarts: 15,
+          exp_backoff_restart_delay: 1000,
+          env: {
+            NODE_ENV: "production",
+            AUTO_SYNC_REMOTE: process.env.AUTO_SYNC_REMOTE || "origin",
+            AUTO_SYNC_BRANCH: process.env.AUTO_SYNC_BRANCH || "main",
+            AUTO_SYNC_STRATEGY: process.env.AUTO_SYNC_STRATEGY || "hardreset",
+            AUTO_SYNC_CLEAN: process.env.AUTO_SYNC_CLEAN || "1",
+            AUTO_SYNC_GC: process.env.AUTO_SYNC_GC || "0"
+          },
+          log_date_format: "YYYY-MM-DD HH:mm:ss Z",
+          error_file: "automation/logs/zion-auto-sync-redundant-error.log",
+          out_file: "automation/logs/zion-auto-sync-redundant-out.log",
+          time: true
+        },
+        {
+          name: "zion-auto-sync-cron-redundant",
+          script: "automation/pm2-auto-sync.js",
+          interpreter: "node",
+          cwd: __dirname,
+          watch: false,
+          autorestart: false,
+          instances: 1,
+          cron_restart: "*/5 * * * *",
+          env: {
+            NODE_ENV: "production",
+            AUTO_SYNC_REMOTE: process.env.AUTO_SYNC_REMOTE || "origin",
+            AUTO_SYNC_BRANCH: process.env.AUTO_SYNC_BRANCH || "main",
+            AUTO_SYNC_STRATEGY: process.env.AUTO_SYNC_STRATEGY || "hardreset",
+            AUTO_SYNC_CLEAN: process.env.AUTO_SYNC_CLEAN || "0",
+            AUTO_SYNC_GC: process.env.AUTO_SYNC_GC || "0"
+          },
+          log_date_format: "YYYY-MM-DD HH:mm:ss Z",
+          error_file: "automation/logs/zion-auto-sync-cron-redundant-error.log",
+          out_file: "automation/logs/zion-auto-sync-cron-redundant-out.log",
+          time: true
+        },
+        {
+          name: "zion-pm2-health-monitor",
+          script: "automation/pm2-health-monitor.cjs",
+          interpreter: "node",
+          cwd: __dirname,
+          watch: false,
+          autorestart: true,
+          max_restarts: 10,
+          env: {
+            NODE_ENV: "production"
+          },
+          log_date_format: "YYYY-MM-DD HH:mm:ss Z",
+          error_file: "automation/logs/zion-pm2-health-monitor-error.log",
+          out_file: "automation/logs/zion-pm2-health-monitor-out.log",
+          time: true
+        }
+      ]
+    };
+    
+    const configPath = path.join(process.cwd(), "ecosystem.redundancy.pm2.cjs");
+    fs.writeFileSync(configPath, `module.exports = ${JSON.stringify(redundancyConfig, null, 2)};`);
+    this.log(`Redundancy ecosystem file created: ${configPath}`);
+    return configPath;
+  }
+
+  run() {
+    const command = process.argv[2];
+    
+    switch (command) {
+      case "start":
+        this.startRedundancyProcesses();
+        break;
+      case "backup":
+        this.backupPM2Configuration();
+        break;
+      case "restore":
+        const backupFile = process.argv[3];
+        if (backupFile) {
+          this.restorePM2Configuration(backupFile);
+        } else {
+          this.log("Please specify backup file path");
+        }
+        break;
+      case "monitor":
+        this.monitorAndRecover();
+        break;
+      case "create-config":
+        this.createRedundancyEcosystem();
+        break;
+      case "status":
+        const status = this.getPM2Status();
+        if (status) {
+          console.log(status);
+        }
+        break;
+      default:
+        this.log("Available commands: start, backup, restore <file>, monitor, create-config, status");
+        this.log("Usage: node automation/redundancy/pm2-redundancy-manager.cjs <command>");
     }
   }
 }
 
-// CLI interface
+// Run if called directly
 if (require.main === module) {
   const manager = new PM2RedundancyManager();
-  
-  const command = process.argv[2];
-  
-  switch (command) {
-    case 'start':
-      manager.start();
-      break;
-    case 'status':
-      manager.checkPM2Status().then(processes => {
-        console.log('PM2 Status:', processes);
-      });
-      break;
-    case 'report':
-      manager.generateReport().then(report => {
-        console.log('Report:', JSON.stringify(report, null, 2));
-      });
-      break;
-    default:
-      console.log('Usage: node pm2-redundancy-manager.cjs [start|status|report]');
-      process.exit(1);
-  }
+  manager.run();
 }
 
 module.exports = PM2RedundancyManager;

@@ -1,4 +1,8 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { Brain, Sparkles, Zap, Target, Users, Award, Clock, CheckCircle, Heart, Activity } from 'lucide-react';
+import Link from 'next/link';
+=======
 import Head from 'next/head';
 import { 
   Heart, Brain, Shield, Zap, BarChart3, Cpu, 

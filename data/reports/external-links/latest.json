@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2025-08-11T17:49:21.108Z",
+  "generatedAt": "2025-08-11T11:17:54.888Z",
   "total": 31,
-  "bad": 5,
+  "bad": 0,
   "results": [
     {
-      "url": "https://techcrunch.com/2025/08/08/sam-altman-addresses-bumpy-gpt-5-rollout-bringing-4o-back-and-the-chart-crime/",
+      "url": "https://techcrunch.com/2025/08/08/former-googlers-ai-startup-openart-now-creates-brainrot-videos-in-just-one-click/",
       "statusCode": 200,
       "ok": true
     },
@@ -14,17 +14,12 @@
       "ok": true
     },
     {
-      "url": "https://techcrunch.com/2025/08/08/former-googlers-ai-startup-openart-now-creates-brainrot-videos-in-just-one-click/",
-      "statusCode": 200,
-      "ok": true
-    },
-    {
-      "url": "https://techcrunch.com/2025/08/08/openai-priced-gpt-5-so-low-it-may-spark-a-price-war/",
-      "statusCode": 200,
-      "ok": true
-    },
-    {
       "url": "https://techcrunch.com/2025/08/08/softbank-reportedly-bought-foxconns-ohio-factory-for-the-stargate-ai-project/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/08/sam-altman-addresses-bumpy-gpt-5-rollout-bringing-4o-back-and-the-chart-crime/",
       "statusCode": 200,
       "ok": true
     },
@@ -34,7 +29,7 @@
       "ok": true
     },
     {
-      "url": "https://techcrunch.com/2025/08/08/meta-acquires-ai-audio-startup-waveforms/",
+      "url": "https://techcrunch.com/2025/08/08/openai-priced-gpt-5-so-low-it-may-spark-a-price-war/",
       "statusCode": 200,
       "ok": true
     },
@@ -44,7 +39,7 @@
       "ok": true
     },
     {
-      "url": "https://techcrunch.com/2025/08/08/nasa-and-google-are-building-an-ai-medical-assistant-to-keep-mars-bound-astronauts-healthy/",
+      "url": "https://techcrunch.com/2025/08/08/meta-acquires-ai-audio-startup-waveforms/",
       "statusCode": 200,
       "ok": true
     },
@@ -59,6 +54,49 @@
       "ok": true
     },
     {
+      "url": "https://techcrunch.com/2025/08/06/instagram-takes-on-snapchat-with-new-instagram-map/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/actions",
+      "statusCode": 0,
+      "ok": true,
+      "skipped": true,
+      "reason": "skipped-host"
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/tree/main/docs",
+      "statusCode": 0,
+      "ok": true,
+      "skipped": true,
+      "reason": "skipped-host"
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md",
+      "statusCode": 0,
+      "ok": true,
+      "skipped": true,
+      "reason": "skipped-host"
+    },
+    {
+      "url": "https://github.com/Zion-Holdings/zion.app/tree/main/automation",
+      "statusCode": 0,
+      "ok": true,
+      "skipped": true,
+      "reason": "skipped-host"
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/08/nasa-and-google-are-building-an-ai-medical-assistant-to-keep-mars-bound-astronauts-healthy/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://techcrunch.com/2025/08/06/google-says-hackers-stole-its-customers-data-in-a-breach-of-its-salesforce-database/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
       "url": "https://techcrunch.com/2025/08/07/tesla-shuts-down-dojo-the-ai-training-supercomputer-that-musk-said-would-be-key-to-full-self-driving/",
       "statusCode": 200,
       "ok": true
@@ -69,22 +107,14 @@
       "ok": true
     },
     {
-      "url": "https://techcrunch.com/2025/08/06/google-says-hackers-stole-its-customers-data-in-a-breach-of-its-salesforce-database/",
-      "statusCode": 200,
-      "ok": true
-    },
-    {
-      "url": "https://techcrunch.com/2025/08/06/instagram-takes-on-snapchat-with-new-instagram-map/",
-      "statusCode": 200,
-      "ok": true
+      "url": "https://github.com/Zion-Holdings/zion.app",
+      "statusCode": 0,
+      "ok": true,
+      "skipped": true,
+      "reason": "skipped-host"
     },
     {
       "url": "https://techcrunch.com/2025/08/05/three-weeks-after-acquiring-windsurf-cognition-offers-staff-the-exit-door/",
-      "statusCode": 200,
-      "ok": true
-    },
-    {
-      "url": "https://techcrunch.com/2025/08/04/spotify-raises-subscription-prices/",
       "statusCode": 200,
       "ok": true
     },
@@ -99,6 +129,11 @@
       "ok": true
     },
     {
+      "url": "https://techcrunch.com/2025/08/04/spotify-raises-subscription-prices/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
       "url": "https://techcrunch.com/storyline/google-i-o-2025-live-coverage-google-ai-ultra-project-mariner-gemini-app-updates-and-more/",
       "statusCode": 200,
       "ok": true
@@ -109,7 +144,17 @@
       "ok": true
     },
     {
+      "url": "https://www.theverge.com/news/756444/openai-gpt-5-vibe-graphing-chart-crime",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
       "url": "https://www.theverge.com/hands-on/756587/microsoft-copilot-3d-feature-hands-on",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+      "url": "https://supabase.com/",
       "statusCode": 200,
       "ok": true
     },
@@ -119,44 +164,9 @@
       "ok": true
     },
     {
-      "url": "https://www.theverge.com/news/756444/openai-gpt-5-vibe-graphing-chart-crime",
-      "statusCode": 200,
-      "ok": true
-    },
-    {
       "url": "https://www.framer.com/motion/",
       "statusCode": 308,
       "ok": true
-    },
-    {
-      "url": "https://supabase.com/",
-      "statusCode": 200,
-      "ok": true
-    },
-    {
-      "url": "https://github.com/Zion-Holdings/zion.app/actions",
-      "statusCode": 404,
-      "ok": false
-    },
-    {
-      "url": "https://github.com/Zion-Holdings/zion.app/tree/main/docs",
-      "statusCode": 404,
-      "ok": false
-    },
-    {
-      "url": "https://github.com/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md",
-      "statusCode": 404,
-      "ok": false
-    },
-    {
-      "url": "https://github.com/Zion-Holdings/zion.app",
-      "statusCode": 404,
-      "ok": false
-    },
-    {
-      "url": "https://github.com/Zion-Holdings/zion.app/tree/main/automation",
-      "statusCode": 404,
-      "ok": false
     }
   ]
 }
