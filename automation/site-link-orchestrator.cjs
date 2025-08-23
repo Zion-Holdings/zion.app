@@ -1,34 +1,32 @@
 #!/usr/bin/env node
 
-const { spawnSync } = require('child_process');
-const fs = require('fs');
-const path = require('path');
+const { execSync } = require('child_process');
 
-const LOG = path.join(__dirname, 'logs', 'site-link-orchestrator.log');
-if (!fs.existsSync(path.dirname(LOG))) fs.mkdirSync(path.dirname(LOG), { recursive: true });
-
-function log(m) { const line = `[${new Date().toISOString()}] ${m}\n`; console.log(m); fs.appendFileSync(LOG, line); }
-function run(cmd, args) { log(`▶ ${cmd} ${args.join(' ')}`); const r = spawnSync(cmd, args, { stdio: 'pipe', encoding: 'utf8' }); if (r.stdout) fs.appendFileSync(LOG, r.stdout); if (r.stderr) fs.appendFileSync(LOG, r.stderr); }
-
-function cycle() {
-  // Generate fresh agents for this cycle as part of the new autonomous link factory
-  try { run('node', [path.join(__dirname, 'site-link-factory.cjs')]); } catch {}
-  run('node', [path.join(__dirname, 'site-link-crawler.cjs')]);
-  run('node', [path.join(__dirname, 'site-link-fixer.cjs')]);
+function run(cmd) {
+  execSync(cmd, { stdio: 'inherit', shell: true });
 }
 
-function start(mode = 'continuous') {
-  log('🚀 Site link orchestrator started');
-  if (mode === 'continuous') {
-    const loop = () => { cycle(); setTimeout(loop, 30 * 60 * 1000); }; // every 30 minutes
-    loop();
-  } else {
-    cycle();
+function main() {
+  const mode = process.argv[2] || 'once';
+  const commit = process.env.LINKS_COMMIT !== 'false';
+
+  run('node automation/site-link-crawler.cjs');
+  run('node automation/site-link-fixer.cjs');
+
+  if (commit) {
+    try {
+      run('git config user.name "zion-bot" && git config user.email "bot@zion.app"');
+      run('git add -A');
+      run('git commit -m "chore(links): crawl + fix redirects [ci skip]" || true');
+      run('git push origin main || true');
+    } catch (e) {
+      // ignore
+    }
+  }
+
+  if (mode === 'watch') {
+    console.log('Watching not implemented for site-link-orchestrator');
   }
 }
 
-if (require.main === module) start(process.argv[2] || 'continuous');
-
-module.exports = { start };
-
-
+main();

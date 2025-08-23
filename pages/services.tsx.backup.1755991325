@@ -1,3 +1,91 @@
+<<<<<<< HEAD
+import React from 'react';
+import Head from 'next/head';
+import Container from '../components/ui/Container';
+
+import Button from '../components/ui/Button';
+import FeaturesGrid from '../components/ui/FeaturesGrid';
+
+export default function ServicesPage() {
+  const services = [
+    {
+      icon: '🤖',
+      title: 'AI-Powered Automation',
+      description: 'Intelligent systems that learn, adapt, and optimize your business processes automatically.',
+      color: 'bg-gradient-to-br from-blue-400 to-indigo-500',
+    },
+    {
+      icon: '☁️',
+      title: 'Cloud Infrastructure',
+      description: 'Scalable, secure, and high-performance cloud solutions built for modern applications.',
+      color: 'bg-gradient-to-br from-green-400 to-emerald-500',
+    },
+    {
+      icon: '🔒',
+      title: 'Security & Compliance',
+      description: 'Enterprise-grade security with automated threat detection and compliance monitoring.',
+      color: 'bg-gradient-to-br from-red-400 to-pink-500',
+    },
+    {
+      icon: '📊',
+      title: 'Analytics & Insights',
+      description: 'Data-driven decision making with real-time analytics and predictive intelligence.',
+      color: 'bg-gradient-to-br from-purple-400 to-pink-500',
+    },
+    {
+      icon: '⚡',
+      title: 'Performance Optimization',
+      description: 'Lightning-fast applications with automated optimization and monitoring.',
+      color: 'bg-gradient-to-br from-yellow-400 to-orange-500',
+    },
+    {
+      icon: '🔄',
+      title: 'DevOps & CI/CD',
+      description: 'Streamlined development workflows with automated testing and deployment.',
+      color: 'bg-gradient-to-br from-cyan-400 to-blue-500',
+    },
+  ];
+
+  const features = [
+    {
+      icon: '🚀',
+      title: 'Scalable Architecture',
+      description: 'Built to grow with your business needs, from startup to enterprise.',
+      color: 'bg-gradient-to-br from-blue-400 to-indigo-500',
+    },
+    {
+      icon: '🔧',
+      title: 'Custom Development',
+      description: 'Tailored solutions designed specifically for your unique requirements.',
+      color: 'bg-gradient-to-br from-green-400 to-emerald-500',
+    },
+    {
+      icon: '📱',
+      title: 'Multi-Platform Support',
+      description: 'Seamless experience across web, mobile, and desktop platforms.',
+      color: 'bg-gradient-to-br from-purple-400 to-pink-500',
+    },
+    {
+      icon: '🌍',
+      title: 'Global Deployment',
+      description: 'Worldwide infrastructure ensuring fast performance everywhere.',
+      color: 'bg-gradient-to-br from-yellow-400 to-orange-500',
+    },
+  ];
+
+  return (
+    <>
+      <Head>
+        <title>Services | Zion Tech Group - Autonomous Innovation Solutions</title>
+        <meta name="description" content="Discover Zion Tech Group's comprehensive range of autonomous technology services including AI automation, system optimization, and intelligent infrastructure solutions." />
+        <meta property="og:title" content="Services | Zion Tech Group - Autonomous Innovation Solutions" />
+        <meta property="og:description" content="Discover Zion Tech Group's comprehensive range of autonomous technology services including AI automation, system optimization, and intelligent infrastructure solutions." />
+      </Head>
+      
+      <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950 text-white">
+        <main className="container mx-auto px-6 py-12">
+          </section>
+=======
           <div className="max-w-6xl mx-auto">
             <nav className="mb-8">
               <a href="/" className="text-cyan-400 hover:text-cyan-300 transition-colors">
@@ -258,5 +346,6 @@ export default function Services() {
         </div>
       </main>
     </div>
+>>>>>>> origin/cursor/crawl-and-fix-site-links-and-pages-1131
   );
 }
