@@ -1,27 +1,34 @@
-import React, { Suspense, lazy, useEffect, useState } from 'react';
+import React, { useState, useEffect, useCallback, useMemo, Suspense, lazy } from 'react';
 import Link from 'next/link';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
-  ArrowRight, Star, 
-  Brain, Atom, Shield, Zap, TrendingUp, Globe,
-  Rocket, Target, Users, Cpu, Sparkles, Eye,
-  Layers, Infinity, Crown, Award, Lightbulb,
-  ChevronRight, Play, Pause, Volume2, VolumeX
+  Sparkles, 
+  ArrowRight, 
+  Play, 
+  Pause, 
+  Volume2, 
+  VolumeX,
+  Brain,
+  Atom,
+  Cpu,
+  Star
 } from 'lucide-react';
-
-// Import new services
 import { cuttingEdgeInnovativeServices2025 } from '../data/2025-cutting-edge-innovative-services';
 
 // Lazy load heavy components for better performance
 const LazyServiceCard = lazy(() => import('./ui/UltraFuturisticServiceCard2026'));
+const LazyServiceCardErrorBoundary = lazy(() => import('./ui/ServiceCardErrorBoundary'));
+
+
 
 const EnhancedHomepage2025: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(false);
   const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Enhanced animation variants for better performance
-  const containerVariants = {
+  // Memoized animation variants for better performance
+  const containerVariants = useMemo(() => ({
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -30,9 +37,9 @@ const EnhancedHomepage2025: React.FC = () => {
         delayChildren: 0.2
       }
     }
-  };
+  }), []);
 
-  const itemVariants = {
+  const itemVariants = useMemo(() => ({
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
@@ -42,36 +49,23 @@ const EnhancedHomepage2025: React.FC = () => {
         ease: "easeOut" as const
       }
     }
-  };
+  }), []);
 
-  const floatingVariants = {
+  const floatingVariants = useMemo(() => ({
     float: {
       y: [-10, 10, -10],
       transition: {
         duration: 3,
-        repeat: 999999,
+        repeat: Infinity,
         ease: "easeInOut" as const
       }
     }
-  };
+  }), []);
 
-  const neonGlowVariants = {
-    glow: {
-      boxShadow: [
-        "0 0 5px #06b6d4",
-        "0 0 20px #06b6d4",
-        "0 0 40px #06b6d4",
-        "0 0 5px #06b6d4"
-      ],
-      transition: {
-        duration: 2,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
-  };
 
-  const statsData = [
+
+  // Memoized stats data
+  const statsData = useMemo(() => [
     {
       number: "50+",
       label: "AI Services",
@@ -103,56 +97,91 @@ const EnhancedHomepage2025: React.FC = () => {
       number: "∞",
       label: "Future Possibilities",
       description: "Unlimited potential",
-      icon: Infinity,
+      icon: Sparkles,
       color: "text-green-400",
       hoverColor: "group-hover:text-green-300",
       neonColor: "shadow-green-400/50"
     }
-  ];
+  ], []);
 
-  // Auto-rotate featured services
-  useEffect(() => {
+  // Optimized auto-rotate with useCallback
+  const rotateServices = useCallback(() => {
     if (isPlaying) {
-      const interval = setInterval(() => {
-        setCurrentServiceIndex((prev) => 
-          (prev + 1) % cuttingEdgeInnovativeServices2025.length
-        );
-      }, 5000);
-      return () => clearInterval(interval);
+      setCurrentServiceIndex((prev) => 
+        (prev + 1) % cuttingEdgeInnovativeServices2025.length
+      );
     }
   }, [isPlaying]);
 
+  // Auto-rotate featured services with better performance
+  useEffect(() => {
+    if (isPlaying) {
+      const interval = setInterval(rotateServices, 5000);
+      return () => clearInterval(interval);
+    }
+  }, [isPlaying, rotateServices]);
+
+  // Loading effect
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
   const currentService = cuttingEdgeInnovativeServices2025[currentServiceIndex];
+
+  // Accessibility improvements
+  const handlePlayPause = useCallback(() => {
+    setIsPlaying(!isPlaying);
+  }, [isPlaying]);
+
+  
+  const handleMuteToggle = useCallback(() => {
+    setIsMuted(!isMuted);
+  }, [isMuted]);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-cyan-400 mx-auto mb-4"></div>
+          <p className="text-cyan-400 text-lg">Loading Zion Tech Group...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="relative min-h-screen bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden">
-      {/* Futuristic Animated Background */}
+      {/* Futuristic Animated Background - Optimized */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Animated Grid */}
+        {/* Simplified Animated Grid */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.1)_1px,transparent_1px)] bg-[size:50px_50px] animate-pulse"></div>
         
-        {/* Floating Geometric Shapes */}
+        {/* Optimized Floating Geometric Shapes */}
         <motion.div
           variants={floatingVariants}
           animate="float"
           className="absolute top-20 left-20 w-32 h-32 border border-cyan-400/20 rounded-lg"
+          aria-hidden="true"
         ></motion.div>
         <motion.div
           variants={floatingVariants}
           animate="float"
           style={{ animationDelay: '1s' }}
           className="absolute top-40 right-32 w-24 h-24 border border-purple-400/20 rounded-full"
+          aria-hidden="true"
         ></motion.div>
         <motion.div
           variants={floatingVariants}
           animate="float"
           style={{ animationDelay: '2s' }}
           className="absolute bottom-32 left-32 w-40 h-40 border border-pink-400/20 transform rotate-45"
+          aria-hidden="true"
         ></motion.div>
         
-        {/* Particle Effects */}
+        {/* Reduced Particle Effects for Performance */}
         <div className="absolute inset-0">
-          {[...Array(20)].map((_, i) => (
+          {[...Array(10)].map((_, i) => (
             <motion.div
               key={i}
               className="absolute w-1 h-1 bg-cyan-400 rounded-full"
@@ -163,13 +192,14 @@ const EnhancedHomepage2025: React.FC = () => {
               }}
               transition={{
                 duration: Math.random() * 10 + 10,
-                repeat: 999999,
+                repeat: Infinity,
                 ease: "linear" as const
               }}
               style={{
                 left: Math.random() * 100 + '%',
                 top: Math.random() * 100 + '%',
               }}
+              aria-hidden="true"
             />
           ))}
         </div>
@@ -198,301 +228,292 @@ const EnhancedHomepage2025: React.FC = () => {
                   textShadow: '0 0 10px rgba(6, 182, 212, 0.8)'
                 }}
                 role="banner"
-                aria-label="Company recognition"
+                aria-label="Company status badge"
               >
-                <Star className="w-5 h-5" aria-hidden="true" />
-                <span>Innovation Leader 2025</span>
-                <Sparkles className="w-4 h-4 text-purple-400" />
+                <Star className="w-4 h-4" />
+                <span>Leading AI & Quantum Technology 2025</span>
               </motion.div>
-              
-              {/* Main Heading with Enhanced Neon Effect */}
-              <motion.h1 
-                variants={itemVariants}
+
+              {/* Main Heading */}
+              <motion.h1
                 id="hero-heading"
-                className="text-6xl md:text-8xl font-bold mb-8 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent"
+                variants={itemVariants}
+                className="text-5xl md:text-7xl font-bold text-white leading-tight"
                 style={{
-                  textShadow: '0 0 30px rgba(6, 182, 212, 0.8), 0 0 60px rgba(6, 182, 212, 0.4)'
+                  textShadow: '0 0 30px rgba(6, 182, 212, 0.8)'
                 }}
               >
-                Zion Tech Group
+                <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  Zion Tech Group
+                </span>
+                <br />
+                <span className="text-3xl md:text-5xl text-gray-200">
+                  Revolutionary AI & Quantum Solutions
+                </span>
               </motion.h1>
-              
-              {/* Enhanced Subtitle */}
-              <motion.p 
+
+              {/* Subtitle */}
+              <motion.p
                 variants={itemVariants}
-                className="text-xl md:text-3xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed"
+                className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed"
               >
-                Pioneering the future of technology with <span className="text-cyan-400 font-semibold">innovative AI consciousness</span>, 
-                <span className="text-blue-400 font-semibold"> quantum computing</span>, and 
-                <span className="text-purple-400 font-semibold"> autonomous solutions</span> that transform businesses worldwide
+                Pioneering the future of technology with innovative AI consciousness, 
+                quantum computing, and autonomous solutions that transform businesses worldwide.
               </motion.p>
-              
-              {/* Enhanced CTA Section */}
-              <motion.div 
-                variants={itemVariants}
-                className="flex flex-col sm:flex-row gap-6 justify-center mb-12"
-              >
-                <Link href="/get-started" aria-label="Get started with our services">
-                  <button 
-                    className="group px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2 focus:ring-offset-black relative overflow-hidden"
-                    style={{
-                      boxShadow: '0 0 30px rgba(6, 182, 212, 0.5)',
-                    }}
-                  >
-                    <span className="flex items-center gap-3">
-                      Get Started
-                      <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
-                    </span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                  </button>
-                </Link>
-                <Link href="/services" aria-label="Learn more about our services">
-                  <button className="px-10 py-5 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2 focus:ring-offset-black backdrop-blur-sm"
-                    style={{
-                      boxShadow: '0 0 20px rgba(6, 182, 212, 0.3)',
-                    }}>
-                    Learn More
-                  </button>
-                </Link>
-                <Link href="/comprehensive-2025-services-showcase" aria-label="View our 2025 services showcase">
-                  <button className="px-10 py-5 border-2 border-purple-400 text-purple-400 font-semibold rounded-xl hover:bg-purple-400 hover:text-black transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-300 focus:ring-offset-2 focus:ring-offset-black backdrop-blur-sm"
-                    style={{
-                      boxShadow: '0 0 20px rgba(147, 51, 234, 0.3)',
-                    }}>
-                    2025 Services Showcase
-                  </button>
-                </Link>
-              </motion.div>
-              
-              {/* Trust Indicators with Enhanced Design */}
+
+              {/* CTA Buttons */}
               <motion.div
                 variants={itemVariants}
-                className="flex flex-wrap justify-center gap-8 items-center"
+                className="flex flex-col sm:flex-row gap-4 justify-center items-center"
               >
-                <div className="flex items-center space-x-2 text-gray-400">
-                  <Shield className="w-5 h-5 text-green-400" />
-                  <span>Enterprise Security</span>
-                </div>
-                <div className="flex items-center space-x-2 text-gray-400">
-                  <Award className="w-5 h-5 text-yellow-400" />
-                  <span>Industry Leader</span>
-                </div>
-                <div className="flex items-center space-x-2 text-gray-400">
-                  <Users className="w-5 h-5 text-blue-400" />
-                  <span>500+ Clients</span>
-                </div>
-                <div className="flex items-center space-x-2 text-gray-400">
-                  <Globe className="w-5 h-5 text-purple-400" />
-                  <span>Global Reach</span>
-                </div>
+                <Link href="/services">
+                  <motion.button
+                    className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg text-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    aria-label="Explore our services"
+                  >
+                    <span className="relative z-10">Explore Services</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-purple-700 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </motion.button>
+                </Link>
+                
+                <Link href="/contact">
+                  <motion.button
+                    className="group relative px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg text-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    aria-label="Contact us for consultation"
+                  >
+                    <span className="relative z-10">Get Consultation</span>
+                    <div className="absolute inset-0 bg-cyan-400 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </motion.button>
+                </Link>
+              </motion.div>
+
+              {/* Media Controls */}
+              <motion.div
+                variants={itemVariants}
+                className="flex items-center justify-center space-x-4 mt-8"
+                role="group"
+                aria-label="Media controls"
+              >
+                <button
+                  onClick={handlePlayPause}
+                  className="p-3 rounded-full bg-cyan-500/20 border border-cyan-400/50 text-cyan-400 hover:bg-cyan-500/30 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50"
+                  aria-label={isPlaying ? "Pause service rotation" : "Play service rotation"}
+                >
+                  {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
+                </button>
+                
+                <button
+                  onClick={handleMuteToggle}
+                  className="p-3 rounded-full bg-purple-500/20 border border-purple-400/50 text-purple-400 hover:bg-purple-500/30 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-purple-400/50"
+                  aria-label={isMuted ? "Unmute" : "Mute"}
+                >
+                  {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
+                </button>
               </motion.div>
             </motion.div>
           </div>
         </section>
 
-        {/* Enhanced Stats Section */}
-        <section className="py-20 px-4 relative">
+        {/* Stats Section */}
+        <section 
+          className="py-20 px-4 relative"
+          aria-labelledby="stats-heading"
+        >
           <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
+            <motion.h2
+              id="stats-heading"
+              className="text-4xl md:text-5xl font-bold text-center text-white mb-16"
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="text-center mb-16"
+              transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                  Revolutionary
-                </span> Impact
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our cutting-edge solutions are transforming industries and driving innovation across the globe
-              </p>
-            </motion.div>
-
+              Why Choose Zion Tech Group?
+            </motion.h2>
+            
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {statsData.map((stat, index) => (
                 <motion.div
                   key={stat.label}
-                  initial={{ opacity: 0, y: 50 }}
+                  className="group text-center p-6 rounded-xl bg-gradient-to-br from-gray-900/50 to-gray-800/30 border border-gray-700/50 hover:border-cyan-400/50 transition-all duration-300 hover:transform hover:scale-105"
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="group relative"
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  whileHover={{ y: -5 }}
                 >
-                  <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 text-center hover:border-cyan-400/50 transition-all duration-300 hover:transform hover:scale-105"
-                    style={{
-                      boxShadow: `0 0 30px ${stat.neonColor}`,
-                    }}>
-                    <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-gray-700 to-gray-800 mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                      <stat.icon className={`w-8 h-8 ${stat.color}`} />
-                    </div>
-                    <div className={`text-4xl font-bold ${stat.color} mb-2`}>{stat.number}</div>
-                    <div className="text-lg font-semibold text-white mb-2">{stat.label}</div>
-                    <div className="text-gray-400">{stat.description}</div>
+                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-cyan-500/20 to-purple-500/20 border border-cyan-400/50 mb-4 group-hover:scale-110 transition-transform duration-300 ${stat.neonColor}`}>
+                    <stat.icon className={`w-8 h-8 ${stat.color}`} />
                   </div>
+                  
+                  <div className={`text-4xl font-bold mb-2 ${stat.color} ${stat.hoverColor}`}>
+                    {stat.number}
+                  </div>
+                  
+                  <h3 className="text-xl font-semibold text-white mb-2">
+                    {stat.label}
+                  </h3>
+                  
+                  <p className="text-gray-400 text-sm">
+                    {stat.description}
+                  </p>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Featured Service Showcase */}
-        <section className="py-20 px-4 relative">
+        {/* Featured Services Section */}
+        <section 
+          className="py-20 px-4 relative"
+          aria-labelledby="services-heading"
+        >
           <div className="max-w-7xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
               className="text-center mb-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                  Featured
-                </span> Innovation
+              <h2
+                id="services-heading"
+                className="text-4xl md:text-5xl font-bold text-white mb-6"
+              >
+                Featured Services
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Experience our most revolutionary service in action
+                Discover our cutting-edge AI and quantum technology solutions
               </p>
             </motion.div>
 
-            {/* Service Showcase with Controls */}
-            <div className="relative">
-              <div className="flex justify-between items-center mb-8">
-                <button
-                  onClick={() => setIsPlaying(!isPlaying)}
-                  className="flex items-center space-x-2 px-4 py-2 bg-gray-800/50 border border-gray-600 rounded-lg text-gray-300 hover:bg-gray-700/50 transition-colors"
-                >
-                  {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
-                  <span>{isPlaying ? 'Pause' : 'Play'}</span>
-                </button>
-                <button
-                  onClick={() => setIsMuted(!isMuted)}
-                  className="flex items-center space-x-2 px-4 py-2 bg-gray-800/50 border border-gray-600 rounded-lg text-gray-300 hover:bg-gray-700/50 transition-colors"
-                >
-                  {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
-                  <span>{isMuted ? 'Unmute' : 'Mute'}</span>
-                </button>
-              </div>
-
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentServiceIndex}
-                  initial={{ opacity: 0, x: 100 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -100 }}
-                  transition={{ duration: 0.5 }}
-                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8"
-                  style={{
-                    boxShadow: '0 0 40px rgba(6, 182, 212, 0.3)',
-                  }}
-                >
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                    <div>
-                      <div className="flex items-center space-x-2 mb-4">
-                        <span className="text-2xl">{currentService.icon || '🚀'}</span>
-                        <span className="text-sm text-cyan-400 font-medium">{currentService.category}</span>
-                        {currentService.popular && (
-                          <span className="px-2 py-1 bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-xs font-bold rounded-full">
-                            POPULAR
-                          </span>
-                        )}
-                      </div>
-                      <h3 className="text-3xl font-bold text-white mb-4">{currentService.name}</h3>
-                      <p className="text-gray-300 mb-6 leading-relaxed">{currentService.description}</p>
-                      
-                      <div className="flex items-center space-x-4 mb-6">
-                        <div className="text-3xl font-bold text-cyan-400">{currentService.price}</div>
-                        <div className="text-gray-400">{currentService.period}</div>
-                      </div>
-
-                      <div className="flex flex-wrap gap-2 mb-6">
-                        {currentService.features?.slice(0, 3).map((feature, index) => (
-                          <span
-                            key={index}
-                            className="px-3 py-1 bg-cyan-500/20 border border-cyan-400/30 rounded-full text-cyan-400 text-sm"
-                          >
-                            {feature}
-                          </span>
-                        ))}
-                      </div>
-
-                      <Link href={`/services/${currentService.id}`}>
-                        <button className="group px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105">
-                          <span className="flex items-center space-x-2">
-                            Learn More
-                            <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                          </span>
-                        </button>
-                      </Link>
-                    </div>
-
-                    <div className="relative">
-                      <div className="bg-gradient-to-br from-cyan-500/20 to-purple-500/20 rounded-2xl p-8 border border-cyan-400/30">
-                        <div className="text-center">
-                          <div className="text-6xl mb-4">🚀</div>
-                          <h4 className="text-xl font-semibold text-white mb-2">Revolutionary Technology</h4>
-                          <p className="text-gray-300 text-sm">
-                            Experience the future of {currentService.category.toLowerCase()} with our cutting-edge platform
-                          </p>
-                        </div>
-                      </div>
-                    </div>
+            {/* Featured Service Showcase */}
+            <motion.div
+              className="mb-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="bg-gradient-to-r from-cyan-900/20 to-purple-900/20 border border-cyan-400/30 rounded-2xl p-8 backdrop-blur-sm">
+                <div className="text-center mb-8">
+                  <div className="text-6xl mb-4">{currentService.icon}</div>
+                  <h3 className="text-3xl font-bold text-white mb-4">{currentService.name}</h3>
+                  <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-6">
+                    {currentService.description}
+                  </p>
+                  <div className="flex items-center justify-center space-x-4 mb-6">
+                    <span className="text-3xl font-bold text-cyan-400">{currentService.price}</span>
+                    <span className="text-gray-400">{currentService.period}</span>
                   </div>
-                </motion.div>
-              </AnimatePresence>
-
-              {/* Service Navigation Dots */}
-              <div className="flex justify-center space-x-2 mt-8">
-                {cuttingEdgeInnovativeServices2025.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentServiceIndex(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                      index === currentServiceIndex 
-                        ? 'bg-cyan-400 scale-125' 
-                        : 'bg-gray-600 hover:bg-gray-500'
-                    }`}
-                  />
-                ))}
+                  <Link href={`/services/${currentService.id}`}>
+                    <motion.button
+                      className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg text-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      aria-label={`Learn more about ${currentService.name}`}
+                    >
+                      Learn More
+                      <ArrowRight className="w-5 h-5 ml-2 inline" />
+                    </motion.button>
+                  </Link>
+                </div>
               </div>
+            </motion.div>
+
+            {/* Service Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {cuttingEdgeInnovativeServices2025.slice(0, 6).map((service, index) => (
+                <motion.div
+                  key={service.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                >
+                  <Suspense fallback={
+                    <div className="p-6 bg-gray-800/50 border border-gray-700/50 rounded-lg animate-pulse">
+                      <div className="h-4 bg-gray-700 rounded mb-2"></div>
+                      <div className="h-4 bg-gray-700 rounded mb-2"></div>
+                      <div className="h-4 bg-gray-700 rounded w-3/4"></div>
+                    </div>
+                  }>
+                    <LazyServiceCardErrorBoundary>
+                      <LazyServiceCard service={service} />
+                    </LazyServiceCardErrorBoundary>
+                  </Suspense>
+                </motion.div>
+              ))}
             </div>
+
+            {/* View All Services Button */}
+            <motion.div
+              className="text-center mt-12"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <Link href="/services">
+                <motion.button
+                  className="group px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg text-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  aria-label="View all our services"
+                >
+                  <span className="relative z-10">View All Services</span>
+                  <div className="absolute inset-0 bg-cyan-400 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </motion.button>
+              </Link>
+            </motion.div>
           </div>
         </section>
 
         {/* Call to Action Section */}
-        <section className="py-20 px-4 relative">
+        <section 
+          className="py-20 px-4 relative"
+          aria-labelledby="cta-heading"
+        >
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-cyan-500/20 to-purple-500/20 backdrop-blur-sm border border-cyan-400/30 rounded-3xl p-12"
-              style={{
-                boxShadow: '0 0 50px rgba(6, 182, 212, 0.4)',
-              }}
+              transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              <h2
+                id="cta-heading"
+                className="text-4xl md:text-5xl font-bold text-white mb-6"
+              >
                 Ready to Transform Your Business?
               </h2>
-              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                Join the future of technology with our revolutionary AI, quantum computing, and autonomous solutions
+              <p className="text-xl text-gray-300 mb-8">
+                Join the future of technology with Zion Tech Group's revolutionary AI and quantum solutions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/contact">
-                  <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25">
-                    <span className="flex items-center space-x-2">
-                      Get Started Today
-                      <ArrowRight className="w-5 h-5" />
-                    </span>
-                  </button>
+                  <motion.button
+                    className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg text-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    aria-label="Get started with Zion Tech Group"
+                  >
+                    Get Started Today
+                  </motion.button>
                 </Link>
-                <Link href="/services">
-                  <button className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105">
-                    Explore Services
-                  </button>
+                <Link href="/demo">
+                  <motion.button
+                    className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg text-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    aria-label="Request a demo of our services"
+                  >
+                    Request Demo
+                  </motion.button>
                 </Link>
               </div>
             </motion.div>
