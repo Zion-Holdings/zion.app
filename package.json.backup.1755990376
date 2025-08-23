@@ -614,6 +614,21 @@
     "redundancy:ultimate:master:stop": "node automation/ultimate-redundancy-master.cjs stop",
     "redundancy:ultimate:master:restart": "node automation/ultimate-redundancy-master.cjs restart",
     "redundancy:ultimate:master:status": "node automation/ultimate-redundancy-master.cjs status",
+<<<<<<< HEAD
+    "redundancy:ultimate:master:report": "node automation/ultimate-redundancy-master.cjs report",
+    "redundancy:ultimate:master:monitor": "node automation/ultimate-redundancy-master.cjs monitor",
+    "redundancy:complete:start": "./automation/start-complete-redundancy.sh start",
+    "redundancy:complete:stop": "./automation/start-complete-redundancy.sh stop",
+    "redundancy:complete:restart": "./automation/start-complete-redundancy.sh restart",
+    "redundancy:complete:status": "./automation/start-complete-redundancy.sh status",
+    "redundancy:complete:health": "./automation/start-complete-redundancy.sh health",
+    "redundancy:complete:logs": "./automation/start-complete-redundancy.sh logs",
+    "redundancy:complete:check": "./automation/start-complete-redundancy.sh check",
+    "redundancy:complete:pm2": "pm2 start ecosystem.complete-redundancy.pm2.cjs --update-env",
+    "redundancy:complete:pm2:stop": "pm2 stop ecosystem.complete-redundancy.pm2.cjs",
+    "redundancy:complete:pm2:restart": "pm2 restart ecosystem.complete-redundancy.pm2.cjs",
+    "redundancy:complete:pm2:status": "pm2 status ecosystem.complete-redundancy.pm2.cjs"
+=======
     "redundancy:ultimate:master:health": "node automation/ultimate-redundancy-master.cjs health",
     "redundancy:ultimate:v2:start": "bash automation/start-ultimate-redundancy-v2.sh start",
     "redundancy:ultimate:v2:stop": "bash automation/start-ultimate-redundancy-v2.sh stop",
@@ -661,6 +676,7 @@
     "redundancy:ultimate:v2:pm2:scale": "pm2 scale ecosystem.ultimate-redundancy-v2.cjs",
     "redundancy:ultimate:v2:pm2:monit": "pm2 monit",
     "redundancy:ultimate:v2:pm2:dashboard": "pm2 plus"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-bdcb
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
