@@ -28,6 +28,18 @@ const footerSections = [
     description: 'Our latest revolutionary solutions',
     icon: <Star className="w-5 h-5 text-yellow-400" />,
     links: [
+<<<<<<< HEAD
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-platform', featured: true },
+      { name: 'Quantum Cybersecurity Sentinel', href: '/quantum-cybersecurity-sentinel', featured: true },
+      { name: 'AI Autonomous Content Factory', href: '/ai-autonomous-content-factory', featured: true },
+      { name: 'Autonomous Business Intelligence', href: '/autonomous-business-intelligence', featured: true },
+      { name: 'Quantum Supply Chain Optimizer', href: '/quantum-supply-chain-optimizer', featured: true },
+      { name: 'AI Autonomous Customer Success', href: '/ai-autonomous-customer-success', featured: true },
+      { name: 'AI Autonomous DevOps Platform', href: '/ai-autonomous-devops-platform', featured: true },
+      { name: 'Autonomous Cloud Orchestrator', href: '/autonomous-cloud-orchestrator' },
+      { name: 'Quantum Edge Computing Platform', href: '/quantum-edge-computing-platform' },
+      { name: 'AI-Powered Enterprise Architecture', href: '/ai-powered-enterprise-architecture' }
+=======
       { name: 'AI Consciousness Evolution Platform', href: '/ai-consciousness-evolution-platform', featured: true },
       { name: 'Quantum AI Fusion Platform', href: '/quantum-ai-fusion-platform', featured: true },
       { name: 'Space Debris Mitigation Platform', href: '/space-debris-mitigation-platform', featured: true },
@@ -38,6 +50,7 @@ const footerSections = [
       { name: 'Quantum Financial Risk Predictor', href: '/quantum-financial-risk-predictor' },
       { name: 'Metaverse Reality Fusion Engine', href: '/metaverse-reality-fusion-engine' },
       { name: 'Autonomous Energy Grid Manager', href: '/autonomous-energy-grid-manager' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-c3ac
     ]
   },
   {
