@@ -15,6 +15,25 @@ export interface QuantumInnovationService2029 {
   compliance: string[];
   scalability: string;
   roi: string;
+<<<<<<< HEAD
+  deployment: string | string[];
+  maintenance: string | string[];
+  training: string | string[];
+  documentation: string | string[];
+  api: string | string[];
+  mobile: string | string[];
+  security: string | string[];
+  backup: string | string[];
+  monitoring: string | string[];
+  analytics: string | string[];
+  customization: string | string[];
+  whiteLabel: string | string[];
+  affiliate: string | string[];
+  referral: string | string[];
+  partnership: string | string[];
+  funding: string | string[];
+  exit: string | string[];
+=======
   deployment: string;
   maintenance: string;
   training: string;
@@ -32,6 +51,7 @@ export interface QuantumInnovationService2029 {
   partnership: string;
   funding: string;
   exit: string;
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-545a
   contact: {
     mobile: string;
     email: string;
