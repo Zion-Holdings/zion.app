@@ -173,6 +173,25 @@ export default function MainFrontIndex() {
               <Link href="/automation"><a className="rounded-xl border border-white/20 bg-white/5 px-6 py-3 font-semibold backdrop-blur-md hover:bg-white/10">View Cloud Automations</a></Link>
             </div>
 
+            {/* Cloud Automations Spotlight */}
+            <div className="mx-auto mt-6 max-w-5xl text-left">
+              <div className="mb-2 text-xs uppercase tracking-wide text-white/60">Cloud Automations (live)</div>
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5">
+                <a className="glow-card rounded-lg border border-white/10 bg-white/5 px-4 py-3 hover:bg-white/10" href="https://github.com/Zion-Holdings/zion.app/actions/workflows/ultra-rapid-sync.yml" target="_blank" rel="noopener">Ultra Rapid Sync →</a>
+                <a className="glow-card rounded-lg border border-white/10 bg-white/5 px-4 py-3 hover:bg-white/10" href="https://github.com/Zion-Holdings/zion.app/actions/workflows/automation-advertiser.yml" target="_blank" rel="noopener">Automation Advertiser →</a>
+                <a className="glow-card rounded-lg border border-white/10 bg-white/5 px-4 py-3 hover:bg-white/10" href="https://github.com/Zion-Holdings/zion.app/actions/workflows/knowledge-graph-radar.yml" target="_blank" rel="noopener">Knowledge Graph & Radar →</a>
+                <a className="glow-card rounded-lg border border-white/10 bg-white/5 px-4 py-3 hover:bg-white/10" href="https://github.com/Zion-Holdings/zion.app/actions/workflows/site-health-guardian.yml" target="_blank" rel="noopener">Site Health Guardian →</a>
+                <a className="glow-card rounded-lg border border-white/10 bg-white/5 px-4 py-3 hover:bg-white/10" href="/.netlify/functions/autonomous-meta-orchestrator">Meta Orchestrator →</a>
+              </div>
+              <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5">
+                <a className="glow-card rounded-lg border border-white/10 bg-white/5 px-4 py-3 hover:bg-white/10" href="/.netlify/functions/content-freshness-score-runner">Content Freshness Score →</a>
+                <a className="glow-card rounded-lg border border-white/10 bg-white/5 px-4 py-3 hover:bg-white/10" href="/.netlify/functions/internal-link-graph-runner">Internal Link Graph →</a>
+                <a className="glow-card rounded-lg border border-white/10 bg-white/5 px-4 py-3 hover:bg-white/10" href="/.netlify/functions/anchor-links-auto-fixer">Anchor Links Auto‑Fixer →</a>
+                <a className="glow-card rounded-lg border border-white/10 bg-white/5 px-4 py-3 hover:bg-white/10" href="/.netlify/functions/pagespeed-insights-runner">Pagespeed Runner →</a>
+                <a className="glow-card rounded-lg border border-white/10 bg-white/5 px-4 py-3 hover:bg-white/10" href="/.netlify/functions/trigger-all-and-commit">Run All & Sync →</a>
+              </div>
+            </div>
+
             {/* Live metrics strip */}
             <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
               {[
@@ -220,6 +239,9 @@ export default function MainFrontIndex() {
                 ['AI Trends', '/reports/ai-trends'],
                 ['Newsroom', '/newsroom'],
                 ['Site Health', '/site-health'],
+                ['Roadmap Curator','/.netlify/functions/roadmap-curator'],
+                ['Revenue Ideas','/.netlify/functions/revenue-ideas-lab'],
+                ['Auto Discovery','/.netlify/functions/auto-discovery-runner'],
               ].map(([label, href]) => (
                 <Link key={label as string} href={href as string}>
                   <a className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs text-white/80 backdrop-blur hover:bg-white/10">{label as string}</a>
@@ -445,16 +467,43 @@ export default function MainFrontIndex() {
               { label: 'Sitemap Runner', desc: 'Keeps sitemap fresh for SEO visibility.', href: '/.netlify/functions/sitemap_runner' },
               { label: 'SEO Audit Runner', desc: 'Analyzes meta and content signals; writes public report.', href: '/.netlify/functions/seo-audit-runner' },
               { label: 'AI Trends Radar', desc: 'Builds AI trends report from curated sources.', href: '/.netlify/functions/ai-trends-radar-runner' },
-              { label: 'Dependency Auto‑Upgrade', desc: 'Safely bumps deps and verifies a clean build.', href: '/.netlify/functions/deps-auto-upgrade-runner' },
-              { label: 'Structured Data Auditor', desc: 'Checks JSON‑LD coverage; writes a public report.', href: '/.netlify/functions/structured-data-auditor' },
-              { label: 'Robots Auditor', desc: 'Validates robots.txt and sitemap linkage.', href: '/.netlify/functions/robots-auditor' },
-              { label: 'Canonical Auditor', desc: 'Scans canonical tags for correctness.', href: '/.netlify/functions/canonical-auditor' }
+              { label: 'Dependency Auto‑Upgrade', desc: 'Safely bumps deps and verifies a clean build.', href: '/.netlify/functions/deps-auto-upgrade-runner' }
             ].map((f) => (
               <a key={f.label} href={f.href} target="_blank" rel="noopener" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
                 <div className="text-lg font-semibold">{f.label}</div>
                 <div className="mt-1 text-sm text-white/75">{f.desc}</div>
                 <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Trigger <span aria-hidden>↗</span></div>
+              </a>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* GitHub Actions Automations */}
+        <motion.section
+          id="github-actions-automations"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mx-auto max-w-7xl px-6 pb-14"
+        >
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">GitHub Actions Automations</h2>
+          <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Autonomous, cloud‑hosted workflows that run on a fast cadence and sync changes to main automatically.</p>
+          <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              { label: 'Ultra Rapid Sync (1m)', desc: 'Continuously syncs and applies safe homepage/front updates.', href: 'https://github.com/Zion-Holdings/zion.app/actions/workflows/ultra-rapid-sync.yml' },
+              { label: 'Cloud Autonomous Orchestrator (5m)', desc: 'Runs orchestrator, homepage/front curators, and sitemap.', href: 'https://github.com/Zion-Holdings/zion.app/actions/workflows/cloud-autonomous-orchestrator.yml' },
+              { label: 'Docs Intelligence (2h)', desc: 'Refreshes docs pages index, component props, and search index.', href: 'https://github.com/Zion-Holdings/zion.app/actions/workflows/docs-intelligence.yml' },
+              { label: 'Media Optimizer (6h)', desc: 'Optimizes and deduplicates media assets.', href: 'https://github.com/Zion-Holdings/zion.app/actions/workflows/media-optimizer.yml' },
+              { label: 'Topics & Clusters (6h)', desc: 'Publishes topics map and content clusters.', href: 'https://github.com/Zion-Holdings/zion.app/actions/workflows/topics-and-clusters.yml' },
+              { label: 'Security Auto‑Heal (daily)', desc: 'Scans and applies safe security fixes.', href: 'https://github.com/Zion-Holdings/zion.app/actions/workflows/security-auto-heal.yml' }
+            ].map((f) => (
+              <a key={f.label} href={f.href} target="_blank" rel="noopener" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <div className="text-lg font-semibold">{f.label}</div>
+                <div className="mt-1 text-sm text-white/75">{f.desc}</div>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
               </a>
             ))}
           </div>
@@ -670,7 +719,10 @@ export default function MainFrontIndex() {
               { Icon: Search, title: 'Broken Link Defender', desc: 'Continuously scans and fixes link integrity issues.', href: '/site-health' },
               { Icon: LineChart, title: 'Experimentation', desc: 'Automate A/B setups and monitor telemetry automatically.', href: '/automation' },
               { Icon: Palette, title: 'Design Tokens & Theming', desc: 'Enforce consistent theming, spacing, and motion.', href: '/newsroom' },
-              { Icon: Gauge, title: 'Image Pipeline', desc: 'Optimize and transform media assets automatically.', href: '/site-health' }
+              { Icon: Gauge, title: 'Image Pipeline', desc: 'Optimize and transform media assets automatically.', href: '/site-health' },
+              { Icon: Layers, title: 'Factory Composer', desc: 'Chains automations into higher‑order workflows.', href: '/automation' },
+              { Icon: Layers, title: 'Meta Orchestrator', desc: 'Triggers prioritized cloud functions and syncs changes.', href: '/.netlify/functions/intelligent-meta-orchestrator' },
+              { Icon: GitBranch, title: 'Main Sync', desc: 'Ships small, safe diffs to main continuously.', href: '/automation' }
             ].map(({ Icon, title, desc, href }) => (
               <Link key={title} href={href}>
                 <a className="group glow-card relative block overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-md hover:border-cyan-400/30 tilt-on-hover neon-ring">
@@ -788,11 +840,21 @@ export default function MainFrontIndex() {
           <Link href="/reports/seo"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">AI SEO Auditor</div><div className="mt-1 text-sm text-white/75">Continuous on‑site SEO improvements</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
           <Link href="/reports/ai-trends"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">AI Trends Radar</div><div className="mt-1 text-sm text-white/75">Signals that inspire new automations</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
           <Link href="/newsroom"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Newsroom</div><div className="mt-1 text-sm text-white/75">Curated updates and product evolution highlights</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+          <Link href="/reports/roadmap"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Reports Roadmap</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
           <Link href="/front"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Front</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
-          <Link href="/.netlify/functions/docs-index-runner"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Docs — TODO_REPORT</div><div className="mt-1 text-sm text-white/75">Open documentation</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
-          <Link href="/.netlify/functions/docs-index-runner"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Docs — MEDIA_RELEASE</div><div className="mt-1 text-sm text-white/75">Open documentation</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
-          <Link href="/.netlify/functions/docs-index-runner"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Docs — CHANGELOG_AI</div><div className="mt-1 text-sm text-white/75">Open documentation</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
-          <Link href="/.netlify/functions/docs-index-runner"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Docs — CHANGELOG</div><div className="mt-1 text-sm text-white/75">Open documentation</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+          <Link href="/reports/updates/update-2025-08-12-1915"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Reports Updates Update-2025-08-12-1915</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+          <Link href="/reports/updates/update-2025-08-12-1851"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Reports Updates Update-2025-08-12-1851</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+          <Link href="/reports/updates/update-2025-08-12-1846"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Reports Updates Update-2025-08-12-1846</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+          <Link href="/reports/updates/update-2025-08-12-1842"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Reports Updates Update-2025-08-12-1842</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+          <Link href="/reports/updates/update-2025-08-12-1831"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Reports Updates Update-2025-08-12-1831</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+          <Link href="/reports/updates/update-2025-08-12-1730"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Reports Updates Update-2025-08-12-1730</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+          <Link href="/reports/updates/update-2025-08-12-1530"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Reports Updates Update-2025-08-12-1530</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+          <Link href="/reports/updates/update-2025-08-12-1500"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Reports Updates Update-2025-08-12-1500</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+          <Link href="/reports/updates/update-2025-08-12-1432"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Reports Updates Update-2025-08-12-1432</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+          <Link href="/reports/updates/update-2025-08-12-1431"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Reports Updates Update-2025-08-12-1431</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+          <Link href="/reports/updates/update-2025-08-12-1417"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Reports Updates Update-2025-08-12-1417</div><div className="mt-1 text-sm text-white/75">Explore more</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+          <Link href="/.netlify/functions/docs-index-runner"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Docs — topics-map</div><div className="mt-1 text-sm text-white/75">Open documentation</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+          <Link href="/.netlify/functions/docs-index-runner"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover neon-ring"><div className="text-base font-semibold">Docs — components-props</div><div className="mt-1 text-sm text-white/75">Open documentation</div><div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
   </div>
 </section>
 
@@ -1696,14 +1758,6 @@ export default function MainFrontIndex() {
   <div className="text-base font-semibold">AI Trends</div>
   <div className="mt-1 text-sm text-white/75">Intelligence signals</div>
   <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
-              <Link href="/reports/a11y"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
-  <div className="text-base font-semibold">A11y Alt Text Auditor</div>
-  <div className="mt-1 text-sm text-white/75">Find missing alt text</div>
-  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
-              <Link href="/reports/metadata"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
-  <div className="text-base font-semibold">Metadata Optimizer</div>
-  <div className="mt-1 text-sm text-white/75">Missing meta tags</div>
-  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
               <Link href="/newsroom"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
   <div className="text-base font-semibold">Newsroom</div>
   <div className="mt-1 text-sm text-white/75">Latest autonomous updates</div>
@@ -1731,6 +1785,22 @@ export default function MainFrontIndex() {
               <Link href="/newsroom"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
   <div className="text-base font-semibold">AI Changelog — highlights</div>
   <div className="mt-1 text-sm text-white/75">Summarized updates</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+              <Link href="/.netlify/functions/topic-cluster-builder-runner"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">Topic Cluster Builder</div>
+  <div className="mt-1 text-sm text-white/75">Clusters content and code topics</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+              <Link href="/.netlify/functions/unused-media-scanner"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">Unused Media Scanner</div>
+  <div className="mt-1 text-sm text-white/75">Find and report unreferenced assets</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+              <Link href="/.netlify/functions/orphan-pages-detector"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">Orphan Pages Detector</div>
+  <div className="mt-1 text-sm text-white/75">Discover pages with no inbound links</div>
+  <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
+              <Link href="/.netlify/functions/component-size-report"><a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+  <div className="text-base font-semibold">Component Size Report</div>
+  <div className="mt-1 text-sm text-white/75">Largest components by lines and bytes</div>
   <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div></a></Link>
   </div>
 </section>
@@ -1763,39 +1833,6 @@ export default function MainFrontIndex() {
                 <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>→</span></div>
               </a>
             ))}
-          </div>
-        </motion.section>
-
-        {/* New: Intelligent Cloud Automations */
-        <motion.section
-          id="intelligent-cloud"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.5 }}
-          className="mx-auto max-w-7xl px-6 pb-16"
-        >
-          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Intelligent Cloud Automations</h2>
-          <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Autonomous, scheduled Netlify Functions inventing insights and syncing changes directly to the repository.</p>
-          <div className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            <a href="/.netlify/functions/internal-link-opportunities" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
-              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <div className="flex items-center gap-2"><Link2 className="h-5 w-5 text-cyan-300" /><h3 className="text-lg font-semibold">Internal Link Opportunities</h3></div>
-              <p className="mt-1 text-sm text-white/75">Finds high‑value internal links between related pages and publishes a report.</p>
-              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
-            </a>
-            <a href="/.netlify/functions/semantic-content-index" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
-              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <div className="flex items-center gap-2"><Search className="h-5 w-5 text-cyan-300" /><h3 className="text-lg font-semibold">Semantic Content Index</h3></div>
-              <p className="mt-1 text-sm text-white/75">Generates a lightweight semantic index for improved search and discovery.</p>
-              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
-            </a>
-            <a href="/.netlify/functions/cloud-heartbeat" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
-              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <div className="flex items-center gap-2"><Activity className="h-5 w-5 text-cyan-300" /><h3 className="text-lg font-semibold">Cloud Heartbeat</h3></div>
-              <p className="mt-1 text-sm text-white/75">Updates a public heartbeat to signal live autonomous operations.</p>
-              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
-            </a>
           </div>
         </motion.section>
 

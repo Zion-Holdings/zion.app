@@ -105,6 +105,10 @@
   name = "ultrafast-front-orchestrator"
   schedule = "*/5 * * * *" # every 5 minutes
 
+[[scheduled.functions]]
+  name = "autonomous-meta-orchestrator"
+  schedule = "*/1 * * * *" # every minute
+
 # New ultra-fast tools
 [[scheduled.functions]]
   name = "features-capabilities-benefits-advertiser"
@@ -176,16 +180,16 @@
 
 # New intelligent cloud automations
 [[scheduled.functions]]
-  name = "internal-link-opportunities"
-  schedule = "*/10 * * * *"
+  name = "innovation-lab"
+  schedule = "*/10 * * * *" # every 10 minutes
 
 [[scheduled.functions]]
-  name = "semantic-content-index"
-  schedule = "*/15 * * * *"
+  name = "broken-image-scanner"
+  schedule = "0 */6 * * *" # every 6 hours
 
 [[scheduled.functions]]
-  name = "cloud-heartbeat"
-  schedule = "*/2 * * * *"
+  name = "auto-scheduler"
+  schedule = "*/15 * * * *" # every 15 minutes
 
 [[scheduled.functions]]
   name = "a11y-alt-text-runner"
@@ -230,7 +234,7 @@
 
 [[scheduled.functions]]
   name = "pagespeed-insights-runner"
-  schedule = "11 */6 * * *"
+  schedule = "11 */6 * * *" # every 6 hours, offset
 
 [[scheduled.functions]]
   name = "knowledge-pack-runner"
@@ -250,17 +254,42 @@
 
 [[scheduled.functions]]
   name = "content-freshness-score-runner"
-  schedule = "7 */12 * * *"
+  schedule = "*/10 * * * *"
 
-# Newly added auditors
 [[scheduled.functions]]
-  name = "structured-data-auditor"
+  name = "internal-link-graph-runner"
+  schedule = "*/5 * * * *"
+
+[[scheduled.functions]]
+  name = "anchor-links-auto-fixer"
+  schedule = "*/5 * * * *"
+
+[[scheduled.functions]]
+  name = "pagespeed-insights-runner"
+  schedule = "11 */6 * * *"
+
+# New autonomous orchestrations
+[[scheduled.functions]]
+  name = "roadmap-curator"
   schedule = "*/30 * * * *"
 
 [[scheduled.functions]]
-  name = "robots-auditor"
-  schedule = "0 */6 * * *"
+  name = "revenue-ideas-lab"
+  schedule = "7 */6 * * *"
 
 [[scheduled.functions]]
-  name = "canonical-auditor"
-  schedule = "*/60 * * * *"
+  name = "auto-discovery-runner"
+  schedule = "*/15 * * * *"
+
+[[scheduled.functions]]
+  name = "code-smell-audit-runner"
+  schedule = "23 */6 * * *"
+
+[[scheduled.functions]]
+  name = "duplicate-media-finder-runner"
+  schedule = "0 2 * * *"
+
+# Newly added intelligent meta orchestrator
+[[scheduled.functions]]
+  name = "intelligent-meta-orchestrator"
+  schedule = "*/3 * * * *"
