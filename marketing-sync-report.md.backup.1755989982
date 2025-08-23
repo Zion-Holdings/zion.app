@@ -2,8 +2,15 @@
 
 Generated: 2025-08-23T00:31:59.788Z
 
+<<<<<<< HEAD
+## Status
+- Task: marketing-sync
+- Status: Skipped/Failed
+- Timestamp: 2025-08-23T00:31:59.788Z
+=======
 ## Executive Summary
 This report provides a comprehensive overview of the marketing synchronization status across all integrated platforms, highlighting performance metrics, synchronization issues, and strategic recommendations for optimization.
+>>>>>>> origin/cursor/add-more-project-content-68ea
 
 ## Status Overview
 - **Task**: marketing-sync
