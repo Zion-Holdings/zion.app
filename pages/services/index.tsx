@@ -23,10 +23,7 @@ import { real2025Q2Additions } from '../../data/real-2025-q2-additions';
 import { augmentedServicesBatch3 } from '../../data/real-augmented-services-2025-batch3';
 import { realServicesQ22025 } from '../../data/real-services-q2-2025';
 import { realServicesQ32025 } from '../../data/real-services-q3-2025';
-import { realQ4Services2025 } from '../../data/real-2025-q4-additions';
-import { real2025Q4Additions } from '../../data/real-2025-q4-additions';
-import { realMarketServicesExtended } from '../../data/real-market-services-extended';
-import { real2026Q1Additions } from '../../data/real-2026-q1-additions';
+import { realServicesQ42025 } from '../../data/real-services-q4-2025';
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -48,7 +45,6 @@ export default function ServicesIndexPage() {
       newlyAddedServices as unknown[],
       curatedMarketServices as unknown[],
       realMarketServices as unknown[],
-      realMarketServicesExtended as unknown[],
       new2025Services as unknown[],
       marketValidatedServices as unknown[],
       moreRealServices2025 as unknown[],
@@ -63,9 +59,7 @@ export default function ServicesIndexPage() {
       augmentedServicesBatch3 as unknown[],
       realServicesQ22025 as unknown[],
       realServicesQ32025 as unknown[],
-      realQ4Services2025 as unknown[],
-      real2025Q4Additions as unknown[],
-      real2026Q1Additions as unknown[]
+      realServicesQ42025 as unknown[]
     );
   const byCategory: Record<string, unknown[]> = {};
   for (const c of categories) byCategory[c] = [];
@@ -114,7 +108,6 @@ export default function ServicesIndexPage() {
         <div className="text-center">
           <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">All Services</h1>
           <p className="text-gray-300 text-lg">Productized solutions across AI, cloud, DevOps, observability, and more. Average market prices linked in <a href="/market-pricing" className="text-cyan-400 underline">Market Pricing</a>. Contact: +1 302 464 0950 • kleber@ziontechgroup.com.</p>
-          <p className="mt-3 text-gray-400 text-sm">Prefer a tailored bundle? See <a href="/pricing" className="text-cyan-400 underline">Pricing</a> or <a href="/contact" className="text-cyan-400 underline">Contact Sales</a> for custom quotes.</p>
           <div className="mt-6 flex flex-wrap justify-center gap-3 text-sm">
             <a href="#ai" className="px-3 py-1.5 rounded-full bg-gray-800/60 border border-gray-700/70 hover:border-cyan-500/50">AI & Data</a>
             <a href="#developer-tools" className="px-3 py-1.5 rounded-full bg-gray-800/60 border border-gray-700/70 hover:border-cyan-500/50">Developer Tools</a>
