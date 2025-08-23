@@ -115,6 +115,12 @@
     "automation:status": "node automation/launch-all-automation.cjs status",
     "automation:report": "node automation/launch-all-automation.cjs report",
     "automation:git-sync": "node automation/git-sync.cjs",
+<<<<<<< HEAD
+    "automation:scheduler:start": "bash automation/scheduler-daemon.sh start",
+    "automation:scheduler:stop": "bash automation/scheduler-daemon.sh stop",
+    "automation:scheduler:status": "bash automation/scheduler-daemon.sh status",
+    "automation:bootstrap": "node automation/cursor-rules-generator.cjs && npm run cursor:memory",
+=======
     "git:sync": "node automation/advanced-git-sync.cjs",
     "git:sync:enhanced": "node automation/enhanced-git-sync-orchestrator.cjs",
     "git:health": "node automation/enhanced-git-sync-orchestrator.cjs health-check",
@@ -133,6 +139,7 @@
     "navigation:cron:restart": "bash automation/navigation-cron-system.sh restart",
     "navigation:cron:status": "bash automation/navigation-cron-system.sh status",
     "navigation:launch": "npm run navigation:autonomous & npm run navigation:cron:start",
+>>>>>>> origin/cursor/automate-site-navigation-enhancement-285c
     "automation:improvement": "node automation/continuous-automation-improvement-system.js",
     "automation:guardian": "node automation/automation-guardian-10min.cjs",
     "automation:cloud": "node automation/cloud-autonomous-orchestrator.cjs",
