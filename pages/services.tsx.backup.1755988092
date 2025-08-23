@@ -5,7 +5,11 @@ import {
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
+<<<<<<< HEAD
+  Building, Cpu, DollarSign
+=======
   Building, Cpu, BarChart3, TrendingUp
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-fbf7
 } from 'lucide-react';
 
 // Import our new innovative 2025 services
@@ -362,6 +366,41 @@ const categories = [
     description: 'Learning and research platforms'
   },
   {
+<<<<<<< HEAD
+    id: 'customer-success',
+    name: 'Customer Success',
+    icon: <Users className="w-6 h-6" />,
+    color: 'from-blue-500 to-indigo-600',
+    description: 'AI-powered customer success and retention'
+  },
+  {
+    id: 'financial-technology',
+    name: 'Financial Technology',
+    icon: <DollarSign className="w-6 h-6" />,
+    color: 'from-green-500 to-emerald-600',
+    description: 'Quantum and AI-powered financial solutions'
+  },
+  {
+    id: 'devops-infrastructure',
+    name: 'DevOps & Infrastructure',
+    icon: <Settings className="w-6 h-6" />,
+    color: 'from-purple-500 to-pink-600',
+    description: 'AI-powered DevOps and infrastructure automation'
+  },
+  {
+    id: 'cybersecurity',
+    name: 'Cybersecurity',
+    icon: <Shield className="w-6 h-6" />,
+    color: 'from-red-500 to-pink-600',
+    description: 'Quantum-resistant security solutions'
+  },
+  {
+    id: 'sales-marketing',
+    name: 'Sales & Marketing',
+    icon: <TrendingUp className="w-6 h-6" />,
+    color: 'from-orange-500 to-red-600',
+    description: 'AI-powered sales and marketing automation'
+=======
     id: 'cybersecurity',
     name: 'Cybersecurity',
     icon: <Shield className="w-6 h-6" />,
@@ -374,11 +413,16 @@ const categories = [
     icon: <Rocket className="w-6 h-6" />,
     color: 'from-blue-500 to-indigo-600',
     description: 'Cloud infrastructure and DevOps automation'
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-fbf7
   },
   {
     id: 'data-analytics',
     name: 'Data & Analytics',
     icon: <BarChart3 className="w-6 h-6" />,
+<<<<<<< HEAD
+    color: 'from-indigo-500 to-purple-600',
+    description: 'Quantum-powered data analytics and insights'
+=======
     color: 'from-purple-500 to-pink-600',
     description: 'Business intelligence and data solutions'
   },
@@ -388,6 +432,7 @@ const categories = [
     icon: <TrendingUp className="w-6 h-6" />,
     color: 'from-green-500 to-emerald-600',
     description: 'Financial technology and blockchain innovations'
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-fbf7
   }
 ];
 
