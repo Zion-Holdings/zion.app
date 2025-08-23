@@ -4,322 +4,352 @@ import { motion } from 'framer-motion';
 import { BookOpen, FileText, Users, MessageCircle, GraduationCap, Star, Brain, Atom, Rocket, Shield } from 'lucide-react';
 import Link from 'next/link';
 
-const Resources: React.FC = () => {
-  const resourceCategories = [
+export default function ResourcesPage() {
+  const resources = [
     {
-      name: 'Documentation',
-      icon: <BookOpen className="w-8 h-8 text-cyan-400" />,
-      description: 'Comprehensive technical documentation and guides',
-      resources: [
-        { name: 'API Documentation', href: '/api-docs', description: 'Complete API reference and examples' },
-        { name: 'Developer Resources', href: '/developer-resources', description: 'Tools and resources for developers' },
-        { name: 'Technical Guides', href: '/docs', description: 'Step-by-step implementation guides' },
-        { name: 'Integration Examples', href: '/api-documentation', description: 'Real-world integration examples' }
+      category: 'Whitepapers',
+      items: [
+        {
+          title: 'The Future of Autonomous Systems: A Comprehensive Guide',
+          description: 'Deep dive into emerging trends, technologies, and implementation strategies for autonomous systems.',
+          downloadUrl: '#',
+          fileSize: '2.4 MB',
+          type: 'PDF'
+        },
+        {
+          title: 'AI Automation ROI Calculator: Measuring Business Impact',
+          description: 'Framework and tools for calculating return on investment from AI automation initiatives.',
+          downloadUrl: '#',
+          fileSize: '1.8 MB',
+          type: 'Excel'
+        },
+        {
+          title: 'Cybersecurity Best Practices for Autonomous Systems',
+          description: 'Comprehensive security guidelines and implementation checklist for protecting autonomous infrastructure.',
+          downloadUrl: '#',
+          fileSize: '3.1 MB',
+          type: 'PDF'
+        }
       ]
     },
     {
-      name: 'Blog & Insights',
-      icon: <FileText className="w-8 h-8 text-blue-400" />,
-      description: 'Latest insights, trends, and thought leadership',
-      resources: [
-        { name: 'AI Automation Trends 2025', href: '/blog/ai-automation-trends-2025', description: 'Latest trends in AI automation' },
-        { name: 'Future of Work', href: '/blog/future-of-work', description: 'How AI is reshaping the workplace' },
-        { name: 'AI Ethics & Automation', href: '/blog/ai-ethics-automation', description: 'Ethical considerations in AI' },
-        { name: 'Cloud Native Automation', href: '/blog/cloud-native-automation', description: 'Modern cloud automation strategies' },
-        { name: 'Performance Optimization', href: '/blog/performance-optimization', description: 'Tips for optimal performance' }
+      category: 'Case Studies',
+      items: [
+        {
+          title: 'Manufacturing Automation: 40% Efficiency Increase',
+          description: 'How a leading manufacturer transformed operations with autonomous systems and AI optimization.',
+          downloadUrl: '#',
+          fileSize: '1.2 MB',
+          type: 'PDF'
+        },
+        {
+          title: 'Healthcare AI: Improving Patient Outcomes',
+          description: 'Real-world implementation of autonomous systems in healthcare delivery and patient monitoring.',
+          downloadUrl: '#',
+          fileSize: '2.7 MB',
+          type: 'PDF'
+        },
+        {
+          title: 'Smart City Infrastructure: Sustainable Urban Development',
+          description: 'Case study of autonomous systems integration in modern city planning and management.',
+          downloadUrl: '#',
+          fileSize: '1.9 MB',
+          type: 'PDF'
+        }
       ]
     },
     {
-      name: 'Case Studies',
-      icon: <Users className="w-8 h-8 text-purple-400" />,
-      description: 'Real-world success stories and implementations',
-      resources: [
-        { name: 'Enterprise AI Transformation', href: '/case-studies', description: 'Large-scale AI implementations' },
-        { name: 'Quantum Computing Success', href: '/case-studies', description: 'Quantum computing breakthroughs' },
-        { name: 'Space Technology Applications', href: '/case-studies', description: 'Space tech innovations' },
-        { name: 'Cybersecurity Solutions', href: '/case-studies', description: 'Security transformation stories' }
+      category: 'Templates & Tools',
+      items: [
+        {
+          title: 'AI Project Planning Template',
+          description: 'Comprehensive project planning framework for AI automation initiatives.',
+          downloadUrl: '#',
+          fileSize: '856 KB',
+          type: 'Word'
+        },
+        {
+          title: 'Automation Assessment Checklist',
+          description: 'Step-by-step checklist for evaluating automation opportunities in your organization.',
+          downloadUrl: '#',
+          fileSize: '324 KB',
+          type: 'PDF'
+        },
+        {
+          title: 'ROI Calculation Spreadsheet',
+          description: 'Excel template for calculating and tracking automation project returns.',
+          downloadUrl: '#',
+          fileSize: '1.1 MB',
+          type: 'Excel'
+        }
       ]
     },
     {
-      name: 'Support & Training',
-      icon: <MessageCircle className="w-8 h-8 text-green-400" />,
-      description: 'Technical support and learning resources',
-      resources: [
-        { name: 'Technical Support', href: '/support', description: 'Get help with technical issues' },
-        { name: 'Training Programs', href: '/training', description: 'Learn from our experts' },
-        { name: 'Webinars', href: '/webinars', description: 'Live educational sessions' },
-        { name: 'White Papers', href: '/white-papers', description: 'In-depth research and analysis' }
-      ]
-    },
-    {
-      name: 'Research & Development',
-      icon: <GraduationCap className="w-8 h-8 text-yellow-400" />,
-      description: 'Cutting-edge research and innovation insights',
-      resources: [
-        { name: 'AI Research', href: '/research-development', description: 'Latest AI research findings' },
-        { name: 'Quantum Computing Research', href: '/research-development', description: 'Quantum computing breakthroughs' },
-        { name: 'Space Technology Research', href: '/research-development', description: 'Space exploration innovations' },
-        { name: 'Emerging Technologies', href: '/emerging-tech', description: 'Future technology trends' }
+      category: 'Educational Content',
+      items: [
+        {
+          title: 'AI Fundamentals: Understanding Machine Learning',
+          description: 'Beginner-friendly guide to machine learning concepts and applications.',
+          downloadUrl: '#',
+          fileSize: '4.2 MB',
+          type: 'PDF'
+        },
+        {
+          title: 'Automation Strategy Workshop Guide',
+          description: 'Facilitator guide for conducting automation strategy workshops with your team.',
+          downloadUrl: '#',
+          fileSize: '2.8 MB',
+          type: 'PDF'
+        },
+        {
+          title: 'Technology Stack Selection Guide',
+          description: 'Framework for choosing the right technologies for your automation projects.',
+          downloadUrl: '#',
+          fileSize: '1.5 MB',
+          type: 'PDF'
+        }
       ]
     }
   ];
 
-  const featuredResources = [
+  const upcomingEvents = [
     {
-      title: 'AI Consciousness Evolution 2029',
-      description: 'Revolutionary AI consciousness development platform',
-      href: '/ai-consciousness-evolution-2029',
-      icon: <Brain className="w-12 h-12 text-cyan-400" />,
-      category: 'AI & Machine Learning'
+      title: 'AI Automation Summit 2025',
+      date: 'February 15-17, 2025',
+      location: 'Virtual Event',
+      description: 'Join industry leaders and experts for three days of insights into the future of autonomous systems.',
+      registrationUrl: '#'
     },
     {
-      title: 'Quantum Neural Network Platform',
-      description: 'Advanced quantum neural computing solutions',
-      href: '/quantum-neural-network-platform',
-      icon: <Atom className="w-12 h-12 text-blue-400" />,
-      category: 'Quantum Computing'
+      title: 'Cybersecurity in Autonomous Systems Workshop',
+      date: 'February 28, 2025',
+      location: 'San Francisco, CA',
+      description: 'Hands-on workshop covering security best practices for autonomous infrastructure.',
+      registrationUrl: '#'
     },
     {
-      title: 'Space Resource Mining Platform',
-      description: 'Cutting-edge space exploration technology',
-      href: '/space-resource-mining-platform',
-      icon: <Rocket className="w-12 h-12 text-purple-400" />,
-      category: 'Space Technology'
+      title: 'Sustainable Automation Webinar Series',
+      date: 'March 5, 2025',
+      location: 'Online',
+      description: 'Learn how autonomous systems are driving sustainability initiatives across industries.',
+      registrationUrl: '#'
+    }
+  ];
+
+  const researchAreas = [
+    {
+      title: 'Quantum AI Integration',
+      description: 'Exploring the intersection of quantum computing and artificial intelligence for next-generation autonomous systems.',
+      status: 'Active Research',
+      timeline: '2025-2027'
     },
     {
-      title: 'Zero Trust Security Platform',
-      description: 'Advanced enterprise security architecture',
-      href: '/zero-trust-security-platform',
-      icon: <Shield className="w-12 h-12 text-green-400" />,
-      category: 'Enterprise Security'
+      title: 'Edge Computing Optimization',
+      description: 'Developing efficient edge computing solutions for autonomous systems in resource-constrained environments.',
+      status: 'In Progress',
+      timeline: '2025-2026'
+    },
+    {
+      title: 'Human-AI Collaboration',
+      description: 'Researching optimal human-AI interaction patterns for enhanced productivity and safety.',
+      status: 'Planning Phase',
+      timeline: '2025-2028'
+    },
+    {
+      title: 'Sustainable AI Development',
+      description: 'Investigating methods to reduce the environmental impact of AI training and deployment.',
+      status: 'Active Research',
+      timeline: '2025-2026'
     }
   ];
 
   return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
-        {/* Hero Section */}
-        <section className="relative py-20 px-4 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10" />
-          <div className="relative z-10 max-w-7xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="mb-8"
-            >
-              <div className="flex items-center justify-center mb-6">
-                <BookOpen className="w-16 h-16 text-cyan-400 mr-4" />
-                <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
-                  Resources
-                </h1>
-              </div>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Access comprehensive documentation, insights, case studies, and support to help you 
-                maximize the value of Zion Tech Group's technology solutions.
+    <>
+      <Head>
+        <title>Resources | Zion Tech Group - AI & Automation Resources</title>
+        <meta name="description" content="Access comprehensive resources, whitepapers, case studies, and tools for implementing autonomous systems and AI automation in your organization." />
+        <meta property="og:title" content="Resources | Zion Tech Group - AI & Automation Resources" />
+        <meta property="og:description" content="Access comprehensive resources, whitepapers, case studies, and tools for implementing autonomous systems and AI automation." />
+      </Head>
+      
+      <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950 text-white">
+        <main className="container mx-auto px-6 py-12">
+          <div className="max-w-6xl mx-auto">
+            <nav className="mb-8">
+              <Link href="/" className="text-cyan-400 hover:text-cyan-300 transition-colors">
+                ← Back to Home
+              </Link>
+            </nav>
+            
+            <header className="text-center mb-16">
+              <h1 className="text-5xl font-extrabold mb-6 bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
+                Resources & Tools
+              </h1>
+              <p className="text-xl text-white/80 max-w-3xl mx-auto">
+                Comprehensive resources to help you implement autonomous systems and AI automation in your organization
               </p>
-            </motion.div>
-          </div>
-        </section>
+            </header>
 
-        {/* Featured Resources */}
-        <section className="py-20 px-4">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl font-bold text-white mb-6">Featured Resources</h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Discover our most popular and innovative solutions that are transforming industries.
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {featuredResources.map((resource, index) => (
-                <motion.div
-                  key={resource.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="group"
-                >
-                  <Link href={resource.href}>
-                    <div className="p-6 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-cyan-400/50 transition-all duration-300 h-full">
-                      <div className="flex justify-center mb-4">{resource.icon}</div>
-                      <h3 className="text-xl font-semibold text-white mb-2 text-center group-hover:text-cyan-400 transition-colors">
-                        {resource.title}
-                      </h3>
-                      <p className="text-gray-300 text-sm text-center mb-3">
-                        {resource.description}
-                      </p>
-                      <div className="text-center">
-                        <span className="inline-block px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-medium rounded-full">
-                          {resource.category}
-                        </span>
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Resource Categories */}
-        <section className="py-20 px-4 bg-gradient-to-r from-cyan-500/10 to-purple-500/10">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl font-bold text-white mb-6">Resource Categories</h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Explore our comprehensive collection of resources organized by category to help you 
-                find exactly what you need.
-              </p>
-            </motion.div>
-
-            <div className="space-y-16">
-              {resourceCategories.map((category, categoryIndex) => (
-                <motion.div
-                  key={category.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: categoryIndex * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="flex items-center gap-4 mb-8">
-                    <div className="w-16 h-16 bg-gradient-to-r from-gray-800 to-gray-700 rounded-xl flex items-center justify-center">
-                      {category.icon}
-                    </div>
-                    <div>
-                      <h3 className="text-3xl font-bold text-white">{category.name}</h3>
-                      <p className="text-gray-300 text-lg">{category.description}</p>
-                    </div>
+            {/* Featured Resources */}
+            <section className="mb-16">
+              <h2 className="text-3xl font-bold mb-8 text-white">Featured Resources</h2>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="bg-gradient-to-br from-cyan-400/10 to-blue-400/10 rounded-xl p-6 border border-cyan-400/20">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="px-3 py-1 bg-cyan-400/20 text-cyan-400 text-sm rounded-full border border-cyan-400/30">
+                      Featured
+                    </span>
+                    <span className="text-white/60 text-sm">PDF</span>
                   </div>
-                  
+                  <h3 className="text-xl font-bold mb-3 text-white">The Future of Autonomous Systems</h3>
+                  <p className="text-white/80 mb-4">
+                    Comprehensive guide covering emerging trends, technologies, and implementation strategies.
+                  </p>
+                  <Link 
+                    href="#" 
+                    className="inline-block px-4 py-2 bg-cyan-400 text-white font-semibold rounded-lg hover:bg-cyan-500 transition-colors"
+                  >
+                    Download Now
+                  </Link>
+                </div>
+
+                <div className="bg-gradient-to-br from-purple-400/10 to-fuchsia-400/10 rounded-xl p-6 border border-purple-400/20">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="px-3 py-1 bg-purple-400/20 text-purple-400 text-sm rounded-full border border-purple-400/30">
+                      New
+                    </span>
+                    <span className="text-white/60 text-sm">Excel</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">AI Automation ROI Calculator</h3>
+                  <p className="text-white/80 mb-4">
+                    Framework and tools for calculating return on investment from AI automation initiatives.
+                  </p>
+                  <Link 
+                    href="#" 
+                    className="inline-block px-4 py-2 bg-purple-400 text-white font-semibold rounded-lg hover:bg-purple-500 transition-colors"
+                  >
+                    Download Now
+                  </Link>
+                </div>
+
+                <div className="bg-gradient-to-br from-green-400/10 to-emerald-400/10 rounded-xl p-6 border border-green-400/20">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="px-3 py-1 bg-green-400/20 text-green-400 text-sm rounded-full border border-green-400/30">
+                      Popular
+                    </span>
+                    <span className="text-white/60 text-sm">PDF</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">Cybersecurity Best Practices</h3>
+                  <p className="text-white/80 mb-4">
+                    Security guidelines and implementation checklist for protecting autonomous infrastructure.
+                  </p>
+                  <Link 
+                    href="#" 
+                    className="inline-block px-4 py-2 bg-green-400 text-white font-semibold rounded-lg hover:bg-green-500 transition-colors"
+                  >
+                    Download Now
+                  </Link>
+                </div>
+              </div>
+            </section>
+
+            {/* Resource Categories */}
+            <section className="mb-16">
+              <h2 className="text-3xl font-bold mb-8 text-white">Resource Categories</h2>
+              {resources.map((category, index) => (
+                <div key={index} className="mb-12">
+                  <h3 className="text-2xl font-semibold mb-6 text-cyan-400">{category.category}</h3>
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {category.resources.map((resource, resourceIndex) => (
-                      <motion.div
-                        key={resource.name}
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.5, delay: resourceIndex * 0.1 }}
-                        viewport={{ once: true }}
-                        className="group"
-                      >
-                        <Link href={resource.href}>
-                          <div className="p-6 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-cyan-400/50 transition-all duration-300 h-full">
-                            <h4 className="text-xl font-semibold text-white mb-3 group-hover:text-cyan-400 transition-colors">
-                              {resource.name}
-                            </h4>
-                            <p className="text-gray-300 text-sm leading-relaxed">
-                              {resource.description}
-                            </p>
-                            <div className="mt-4 flex items-center text-cyan-400 text-sm font-medium">
-                              Access Resource
-                              <Star className="w-4 h-4 ml-2 group-hover:scale-110 transition-transform" />
-                            </div>
-                          </div>
+                    {category.items.map((item, itemIndex) => (
+                      <div key={itemIndex} className="bg-gradient-to-br from-white/10 to-white/5 rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300">
+                        <div className="flex items-center justify-between mb-3">
+                          <span className="px-2 py-1 bg-white/20 text-white text-xs rounded border border-white/30">
+                            {item.type}
+                          </span>
+                          <span className="text-white/60 text-xs">{item.fileSize}</span>
+                        </div>
+                        <h4 className="text-lg font-semibold mb-3 text-white">{item.title}</h4>
+                        <p className="text-white/80 mb-4 text-sm">{item.description}</p>
+                        <Link 
+                          href={item.downloadUrl} 
+                          className="inline-block px-4 py-2 bg-gradient-to-r from-cyan-400 to-blue-400 text-white font-semibold rounded-lg hover:from-cyan-500 hover:to-blue-500 transition-all duration-300 text-sm"
+                        >
+                          Download
                         </Link>
-                      </motion.div>
+                      </div>
                     ))}
                   </div>
-                </motion.div>
+                </div>
               ))}
-            </div>
-          </div>
-        </div>
-      </section>
+            </section>
 
-        {/* Quick Access Section */}
-        <section className="py-20 px-4">
-          <div className="max-w-6xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl font-bold text-white mb-6">Quick Access</h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Get immediate access to the most commonly requested resources and support.
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                { name: 'Contact Support', href: '/contact', icon: <MessageCircle className="w-8 h-8" />, color: 'from-cyan-500 to-blue-600' },
-                { name: 'View Services', href: '/services', icon: <Star className="w-8 h-8" />, color: 'from-blue-500 to-purple-600' },
-                { name: 'Check Pricing', href: '/pricing', icon: <BookOpen className="w-8 h-8" />, color: 'from-purple-500 to-pink-600' },
-                { name: 'Read Blog', href: '/blog', icon: <FileText className="w-8 h-8" />, color: 'from-pink-500 to-red-600' },
-                { name: 'Case Studies', href: '/case-studies', icon: <Users className="w-8 h-8" />, color: 'from-red-500 to-orange-600' },
-                { name: 'Training', href: '/training', icon: <GraduationCap className="w-8 h-8" />, color: 'from-orange-500 to-yellow-600' }
-              ].map((quickAccess, index) => (
-                <motion.div
-                  key={quickAccess.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="group"
-                >
-                  <Link href={quickAccess.href}>
-                    <div className="p-8 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 hover:border-cyan-400/50 transition-all duration-300 h-full text-center">
-                      <div className="flex justify-center mb-4 text-white group-hover:text-cyan-400 transition-colors">
-                        {quickAccess.icon}
-                      </div>
-                      <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors">
-                        {quickAccess.name}
-                      </h3>
-                      <button className={`px-6 py-3 bg-gradient-to-r ${quickAccess.color} text-white font-semibold rounded-lg hover:scale-105 transition-transform`}>
-                        Access Now
-                      </button>
+            {/* Upcoming Events */}
+            <section className="mb-16">
+              <h2 className="text-3xl font-bold mb-8 text-white">Upcoming Events</h2>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {upcomingEvents.map((event, index) => (
+                  <div key={index} className="bg-gradient-to-br from-purple-400/10 to-fuchsia-400/10 rounded-xl p-6 border border-purple-400/20">
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="px-3 py-1 bg-purple-400/20 text-purple-400 text-sm rounded-full border border-purple-400/30">
+                        Event
+                      </span>
+                      <span className="text-white/60 text-sm">{event.date}</span>
                     </div>
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+                    <h3 className="text-xl font-bold mb-3 text-white">{event.title}</h3>
+                    <p className="text-white/60 text-sm mb-2">{event.location}</p>
+                    <p className="text-white/80 mb-4 text-sm">{event.description}</p>
+                    <Link 
+                      href={event.registrationUrl} 
+                      className="inline-block px-4 py-2 bg-purple-400 text-white font-semibold rounded-lg hover:bg-purple-500 transition-colors"
+                    >
+                      Register Now
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </section>
 
-        {/* CTA Section */}
-        <section className="py-20 px-4 bg-gradient-to-r from-cyan-500/10 to-purple-500/10">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl font-bold text-white mb-6">
-                Need Help Finding Resources?
-              </h2>
-              <p className="text-xl text-gray-300 mb-8">
-                Our team is here to help you find the right resources and get the most 
-                out of our technology solutions.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/contact">
-                  <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105">
-                    Contact Support
-                  </button>
-                </Link>
-                <Link href="/services">
-                  <button className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300">
-                    Explore Services
-                  </button>
-                </Link>
+            {/* Research Areas */}
+            <section className="mb-16">
+              <h2 className="text-3xl font-bold mb-8 text-white">Research & Development</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                {researchAreas.map((area, index) => (
+                  <div key={index} className="bg-gradient-to-br from-green-400/10 to-emerald-400/10 rounded-xl p-6 border border-green-400/20">
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="px-3 py-1 bg-green-400/20 text-green-400 text-sm rounded-full border border-green-400/30">
+                        {area.status}
+                      </span>
+                      <span className="text-white/60 text-sm">{area.timeline}</span>
+                    </div>
+                    <h3 className="text-xl font-bold mb-3 text-white">{area.title}</h3>
+                    <p className="text-white/80 text-sm">{area.description}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Contact CTA */}
+            <section className="text-center">
+              <div className="bg-gradient-to-r from-cyan-400/10 to-fuchsia-400/10 rounded-2xl p-12 border border-cyan-400/20">
+                <h2 className="text-3xl font-bold mb-4 text-white">Need Custom Resources?</h2>
+                <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
+                  Can't find what you're looking for? Our team can create custom resources, 
+                  conduct research, or provide personalized guidance for your specific needs.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link 
+                    href="/contact" 
+                    className="inline-block px-8 py-4 bg-gradient-to-r from-cyan-400 to-fuchsia-400 text-white font-semibold rounded-lg hover:from-cyan-500 hover:to-fuchsia-500 transition-all duration-300"
+                  >
+                    Contact Our Team
+                  </Link>
+                  <Link 
+                    href="/services" 
+                    className="inline-block px-8 py-4 bg-white/10 text-white font-semibold rounded-lg border border-white/20 hover:bg-white/20 transition-all duration-300"
+                  >
+                    View Services
+                  </Link>
+                </div>
               </div>
             </motion.div>
           </div>
