@@ -3,6 +3,11 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
+<<<<<<< HEAD
+  Menu, X, Search, ChevronDown, Zap, Globe, Lock, 
+  Phone, ArrowRight, Star, Users,
+  Brain, Shield, BookOpen, Target, HelpCircle
+=======
   Menu, ChevronDown, X, Phone, Mail, MapPin, ArrowRight,
   Brain, Rocket, Target, Atom, Shield,
   DollarSign, BarChart3, Globe, Star, Sparkles, 
@@ -11,6 +16,7 @@ import {
   Cpu, Cloud, Settings, Monitor, Palette, Network, Layers, Code, Heart, ShoppingCart, Clock, MessageCircle, HelpCircle, Building,
   Zap, Infinity, Eye, Heart as HeartIcon, Code as CodeIcon, Palette as PaletteIcon,
   BookOpen, FileText, Handshake, Users, Lock, Database, Server, Key, Search, Zap as ZapIcon
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-7826
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -382,6 +388,138 @@ const navigationItems: NavigationItem[] = [
         icon: <Network className="w-4 h-4" />
       },
       {
+<<<<<<< HEAD
+        name: 'Manufacturing & Industry 4.0',
+        href: '/services#manufacturing-industry-40',
+        description: 'Smart manufacturing solutions',
+        icon: <Settings className="w-4 h-4" />
+      },
+      {
+        name: 'Renewable Energy & Sustainability',
+        href: '/services#renewable-energy-sustainability',
+        description: 'Sustainable energy solutions',
+        icon: <Zap className="w-4 h-4" />
+      },
+      {
+        name: 'Education & Training',
+        href: '/services#education-training',
+        description: 'Innovative learning solutions',
+        icon: <GraduationCap className="w-4 h-4" />
+      },
+      {
+        name: 'Government & Public Sector',
+        href: '/services#government-public-sector',
+        description: 'Government technology solutions',
+        icon: <Building className="w-4 h-4" />
+      },
+      {
+        name: 'Transportation & Mobility',
+        href: '/services#transportation-mobility',
+        description: 'Smart transportation solutions',
+        icon: <Globe className="w-4 h-4" />
+      },
+      {
+        name: 'Retail & E-commerce',
+        href: '/services#retail-e-commerce',
+        description: 'Digital retail solutions',
+        icon: <ShoppingCart className="w-4 h-4" />
+      },
+      {
+        name: 'Entertainment & Media',
+        href: '/services#entertainment-media',
+        description: 'Digital entertainment solutions',
+        icon: <Star className="w-4 h-4" />
+      },
+      {
+        name: 'Gaming & Esports',
+        href: '/services#gaming-esports',
+        description: 'Advanced gaming solutions',
+        icon: <Target className="w-4 h-4" />
+      },
+      {
+        name: 'Real Estate & Property',
+        href: '/services#real-estate-property',
+        description: 'Property technology solutions',
+        icon: <Building className="w-4 h-4" />
+      },
+      {
+        name: 'Legal & Compliance',
+        href: '/services#legal-compliance',
+        description: 'Legal technology solutions',
+        icon: <FileText className="w-4 h-4" />
+      },
+      {
+        name: 'Agriculture & Food Technology',
+        href: '/services#agriculture-food-technology',
+        description: 'Agricultural technology solutions',
+        icon: <Heart className="w-4 h-4" />
+      },
+      {
+        name: 'Hospitality & Tourism',
+        href: '/services#hospitality-tourism',
+        description: 'Hospitality technology solutions',
+        icon: <Globe className="w-4 h-4" />
+      },
+      {
+        name: 'Sports & Fitness',
+        href: '/services#sports-fitness',
+        description: 'Sports technology solutions',
+        icon: <Target className="w-4 h-4" />
+      },
+      {
+        name: 'Environmental & Sustainability',
+        href: '/services#environmental-sustainability',
+        description: 'Environmental technology solutions',
+        icon: <Zap className="w-4 h-4" />
+      },
+      {
+        name: 'Research & Development',
+        href: '/services#research-development',
+        description: 'Research technology solutions',
+        icon: <Code className="w-4 h-4" />
+      },
+      {
+        name: 'Biotechnology & Life Sciences',
+        href: '/services#biotechnology-life-sciences',
+        description: 'Biotechnology solutions',
+        icon: <Heart className="w-4 h-4" />
+      },
+      {
+        name: 'Nanotechnology & Materials',
+        href: '/services#nanotechnology-materials',
+        description: 'Nanotechnology solutions',
+        icon: <Atom className="w-4 h-4" />
+      },
+      {
+        name: 'Robotics & Automation',
+        href: '/services#robotics-automation',
+        description: 'Robotics solutions',
+        icon: <Settings className="w-4 h-4" />
+      },
+      {
+        name: 'Blockchain & Web3',
+        href: '/services#blockchain-web3',
+        description: 'Blockchain technology solutions',
+        icon: <Network className="w-4 h-4" />
+      },
+      {
+        name: 'Internet of Things (IoT)',
+        href: '/services#internet-of-things-iot',
+        description: 'IoT technology solutions',
+        icon: <Layers className="w-4 h-4" />
+      },
+      {
+        name: 'Augmented Reality & Virtual Reality',
+        href: '/services#augmented-reality-virtual-reality',
+        description: 'AR/VR technology solutions',
+        icon: <Eye className="w-4 h-4" />
+      },
+      {
+        name: 'Edge Computing & 5G',
+        href: '/services#edge-computing-5g',
+        description: 'Edge computing solutions',
+        icon: <Cpu className="w-4 h-4" />
+=======
         name: 'AI Ethics & Governance 2041',
         href: '/ai-ethics-governance-2041',
         description: 'Comprehensive AI ethics framework',
@@ -417,6 +555,7 @@ const navigationItems: NavigationItem[] = [
         href: '/ai-autonomous-product-management',
         description: 'Intelligent product lifecycle management',
         icon: <Settings className="w-4 h-4" />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-7826
       }
     ]
   },
@@ -467,6 +606,13 @@ const navigationItems: NavigationItem[] = [
         featured: true
       },
       {
+<<<<<<< HEAD
+        label: 'IT Infrastructure',
+        href: '/it-services',
+        icon: <Server className="w-4 h-4" />,
+        description: 'Complete IT infrastructure solutions'
+      },
+=======
         name: 'Quantum Bio-Computing 2041',
         href: '/quantum-bio-computing-2041',
         description: 'Quantum biological computing',
@@ -490,6 +636,7 @@ const navigationItems: NavigationItem[] = [
     category: 'it',
     color: 'from-orange-500 to-red-500',
     children: [
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-7826
       {
         label: 'Data Analytics',
         href: '/data-analytics',
@@ -497,6 +644,51 @@ const navigationItems: NavigationItem[] = [
         description: 'Advanced analytics and insights'
       },
       {
+<<<<<<< HEAD
+        label: 'DevOps & Automation',
+        href: '/devops-automation',
+        icon: <Command className="w-4 h-4" />,
+        description: 'Automated development and operations'
+      },
+      {
+        label: 'Edge Computing',
+        href: '/edge-computing-orchestration-platform',
+        icon: <Server className="w-4 h-4" />,
+        description: 'Distributed computing solutions',
+        badge: 'Scalable'
+      }
+    ]
+  },
+  {
+    label: 'Micro SAAS',
+    children: [
+      {
+        label: 'Enterprise IT',
+        href: '/enterprise-solutions-showcase',
+        icon: <Globe className="w-4 h-4" />,
+        description: 'Complete enterprise IT solutions',
+        featured: true
+      },
+      {
+        label: 'Healthcare',
+        href: '/healthcare-solutions',
+        icon: <Heart className="w-4 h-4" />,
+        description: 'Healthcare technology solutions',
+        featured: true
+      },
+      {
+        label: 'Financial Services',
+        href: '/financial-solutions',
+        icon: <BarChart3 className="w-4 h-4" />,
+        description: 'Fintech and banking solutions',
+        featured: true
+      },
+      {
+        label: 'Manufacturing',
+        href: '/manufacturing-ai-solutions',
+        icon: <Cpu className="w-4 h-4" />,
+        description: 'Smart manufacturing solutions'
+=======
         name: 'AI-Powered DevOps Automation',
         href: '/ai-powered-devops-automation',
         description: 'Intelligent DevOps automation',
@@ -520,10 +712,45 @@ const navigationItems: NavigationItem[] = [
         href: '/blockchain-infrastructure-platform',
         description: 'Enterprise-grade blockchain infrastructure',
         icon: <Database className="w-4 h-4" />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-7826
       }
     ]
   },
   {
+<<<<<<< HEAD
+    name: 'Contact & Support',
+    href: '/contact',
+    icon: <MessageCircle className="w-5 h-5" />,
+    description: 'Get in touch with our team',
+    badge: '24/7',
+    category: 'contact',
+    color: 'from-green-500 to-emerald-500',
+    children: [
+      {
+        name: 'Contact Us',
+        href: '/contact',
+        description: 'Get in touch with our team',
+        icon: <MessageCircle className="w-4 h-4" />,
+        featured: true
+      },
+      {
+        name: 'Support',
+        href: '/support',
+        description: 'Technical support and help',
+        icon: <HelpCircle className="w-4 h-4" />
+      },
+      {
+        name: 'Get Started',
+        href: '/get-started',
+        description: 'Start your journey with us',
+        icon: <Rocket className="w-4 h-4" />
+      },
+      {
+        name: 'Request Quote',
+        href: '/quote',
+        description: 'Get a custom quote',
+        icon: <Calculator className="w-4 h-4" />
+=======
     name: 'Micro SAAS Solutions',
     href: '/micro-saas',
     icon: <Code className="w-5 h-5" />,
@@ -602,6 +829,7 @@ const navigationItems: NavigationItem[] = [
         href: '/community',
         description: 'User community and discussions',
         icon: <Users className="w-4 h-4" />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-7826
       }
     ]
   }

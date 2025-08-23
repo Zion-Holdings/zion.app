@@ -3,9 +3,13 @@ import Layout from './layout/Layout';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ArrowRight, Star, 
+<<<<<<< HEAD
+  Brain, Atom, Shield, Zap, TrendingUp, Globe, MapPin, Phone, Mail
+=======
   Brain, Atom, Shield, Zap, TrendingUp, Globe, MapPin,
   Rocket, Target, Cpu, Cloud, Lock, Users, BarChart3,
   Sparkles, Infinity, Eye, Heart, Code, Palette
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-7826
 } from 'lucide-react';
 import Link from 'next/link';
 import UltraFuturisticServiceCard2026 from './ui/UltraFuturisticServiceCard2026';
@@ -20,10 +24,17 @@ const Homepage2025: React.FC = () => {
   return (
     <Layout>
       {/* Main Content */}
+<<<<<<< HEAD
+      <main className="relative z-10" id="main">
+        {/* Hero Section */}
+        <section id="hero" className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
+          {/* Enhanced Background Elements */}
+=======
       <main className="relative z-10">
         {/* Hero Section with Enhanced Background */}
         <section className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
           {/* Enhanced Futuristic Background Elements */}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-7826
           <div className="absolute inset-0 pointer-events-none">
             {/* Animated Grid Pattern */}
             <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-purple-500/5">
@@ -37,6 +48,10 @@ const Homepage2025: React.FC = () => {
             <div className="absolute top-20 left-20 w-32 h-32 border border-cyan-400/20 rounded-lg animate-pulse"></div>
             <div className="absolute top-40 right-32 w-24 h-24 border border-purple-400/20 rounded-full animate-pulse delay-1000"></div>
             <div className="absolute bottom-32 left-32 w-40 h-40 border border-pink-400/20 transform rotate-45 animate-pulse delay-2000"></div>
+<<<<<<< HEAD
+            <div className="absolute top-1/2 left-1/4 w-16 h-16 border border-blue-400/20 rounded-lg animate-pulse delay-1500"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-20 h-20 border border-green-400/20 rounded-full animate-pulse delay-500"></div>
+=======
             
             {/* Additional Futuristic Elements */}
             <div className="absolute top-1/3 right-1/4 w-16 h-16 border border-blue-400/20 transform rotate-12 animate-pulse delay-500"></div>
@@ -46,6 +61,7 @@ const Homepage2025: React.FC = () => {
             <div className="absolute top-1/4 left-1/3 w-2 h-2 bg-cyan-400/40 rounded-full animate-bounce delay-300"></div>
             <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-purple-400/40 rounded-full animate-bounce delay-700"></div>
             <div className="absolute top-1/2 left-1/4 w-1.5 h-1.5 bg-pink-400/40 rounded-full animate-bounce delay-1000"></div>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-7826
           </div>
           
           <div className="text-center max-w-5xl mx-auto relative z-10">
@@ -88,6 +104,12 @@ const Homepage2025: React.FC = () => {
               </motion.p>
               
               {/* Enhanced CTA Section */}
+<<<<<<< HEAD
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <Link href="/contact">
+                  <button className="group px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25">
+                    <span className="flex items-center gap-2">
+=======
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -97,6 +119,7 @@ const Homepage2025: React.FC = () => {
                 <Link href="/get-started">
                   <button className="group px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40">
                     <span className="flex items-center gap-3 text-lg">
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-7826
                       Get Started
                       <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                     </span>
@@ -107,14 +130,45 @@ const Homepage2025: React.FC = () => {
                     <span className="text-lg">Explore Services</span>
                   </button>
                 </Link>
+<<<<<<< HEAD
+                <Link href="/comprehensive-2025-innovative-services-showcase">
+                  <button className="px-8 py-4 border-2 border-purple-400 text-purple-400 font-semibold rounded-lg hover:bg-purple-400 hover:text-black transition-all duration-300 transform hover:scale-105">
+                    2025 Innovative Services
+=======
                 <Link href="/comprehensive-2025-services-showcase">
                   <button className="px-10 py-5 border-2 border-purple-400 text-purple-400 font-semibold rounded-xl hover:bg-purple-400 hover:text-black transition-all duration-300 transform hover:scale-105 backdrop-blur-sm">
                     <span className="text-lg">2025 Showcase</span>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-7826
                   </button>
                 </Link>
               </motion.div>
               
+<<<<<<< HEAD
+              {/* Contact Information */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center mb-8 text-sm"
+              >
+                <div className="flex items-center space-x-2 text-cyan-400">
+                  <Phone className="w-4 h-4" />
+                  <span>+1 302 464 0950</span>
+                </div>
+                <div className="flex items-center space-x-2 text-purple-400">
+                  <Mail className="w-4 h-4" />
+                  <span>kleber@ziontechgroup.com</span>
+                </div>
+                <div className="flex items-center space-x-2 text-pink-400">
+                  <MapPin className="w-4 h-4" />
+                  <span>Middletown DE 19709</span>
+                </div>
+              </motion.div>
+              
+              {/* Trust Indicators */}
+=======
               {/* Enhanced Trust Indicators */}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-7826
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -162,8 +216,13 @@ const Homepage2025: React.FC = () => {
           </motion.div>
         </section>
 
+<<<<<<< HEAD
+        {/* Company Stats */}
+        <section id="stats" className="py-20 px-4 bg-black/30 relative">
+=======
         {/* Enhanced Company Stats Section */}
         <section className="py-24 px-4 bg-gradient-to-r from-black/40 via-cyan-500/5 to-purple-500/5 relative">
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-7826
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-purple-500/5"></div>
           <div className="max-w-7xl mx-auto relative z-10">
             <motion.div
@@ -174,32 +233,56 @@ const Homepage2025: React.FC = () => {
               className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
             >
               <motion.div 
+<<<<<<< HEAD
+                className="p-6 group hover:bg-white/5 rounded-xl transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+=======
                 className="p-8 group hover:bg-white/5 rounded-2xl transition-all duration-300 border border-cyan-400/20 hover:border-cyan-400/40"
                 whileHover={{ scale: 1.05, y: -5 }}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-7826
               >
                 <div className="text-5xl font-bold text-cyan-400 mb-3 group-hover:text-cyan-300 transition-colors">50+</div>
                 <div className="text-gray-300 text-lg mb-2">AI Services</div>
                 <div className="text-sm text-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity">Cutting-edge solutions</div>
               </motion.div>
               <motion.div 
+<<<<<<< HEAD
+                className="p-6 group hover:bg-white/5 rounded-xl transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+=======
                 className="p-8 group hover:bg-white/5 rounded-2xl transition-all duration-300 border border-blue-400/20 hover:border-blue-400/40"
                 whileHover={{ scale: 1.05, y: -5 }}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-7826
               >
                 <div className="text-5xl font-bold text-blue-400 mb-3 group-hover:text-blue-300 transition-colors">100+</div>
                 <div className="text-gray-300 text-lg mb-2">Quantum Solutions</div>
                 <div className="text-sm text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity">Next-gen computing</div>
               </motion.div>
               <motion.div 
+<<<<<<< HEAD
+                className="p-6 group hover:bg-white/5 rounded-xl transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+=======
                 className="p-8 group hover:bg-white/5 rounded-2xl transition-all duration-300 border border-purple-400/20 hover:border-purple-400/40"
                 whileHover={{ scale: 1.05, y: -5 }}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-7826
               >
                 <div className="text-5xl font-bold text-purple-400 mb-3 group-hover:text-purple-300 transition-colors">24/7</div>
                 <div className="text-gray-300 text-lg mb-2">Autonomous Operations</div>
                 <div className="text-sm text-purple-400 opacity-0 group-hover:opacity-100 transition-opacity">Always available</div>
               </motion.div>
               <motion.div 
+<<<<<<< HEAD
+                className="p-6 group hover:bg-white/5 rounded-xl transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+=======
                 className="p-8 group hover:bg-white/5 rounded-2xl transition-all duration-300 border border-green-400/20 hover:border-green-400/40"
                 whileHover={{ scale: 1.05, y: -5 }}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-7826
               >
                 <div className="text-5xl font-bold text-green-400 mb-3 group-hover:text-green-300 transition-colors">∞</div>
                 <div className="text-gray-300 text-lg mb-2">Future Possibilities</div>
@@ -209,9 +292,15 @@ const Homepage2025: React.FC = () => {
           </div>
         </section>
 
+<<<<<<< HEAD
+        {/* Enhanced Features Section */}
+        <section id="features" className="py-20 px-4">
+          <div className="max-w-6xl mx-auto">
+=======
         {/* Enhanced Services Preview Section */}
         <section className="py-24 px-4 bg-gradient-to-br from-purple-900/10 via-transparent to-cyan-900/10">
           <div className="max-w-7xl mx-auto">
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-7826
             <motion.div
               className="text-center mb-16"
               initial={{ opacity: 0, y: 40 }}
@@ -526,6 +615,44 @@ const Homepage2025: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
+<<<<<<< HEAD
+              className="text-center"
+            >
+              <div className="bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-500/20 rounded-2xl p-12">
+                <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                  Ready to Transform Your Business?
+                </h3>
+                <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                  Join thousands of businesses already leveraging our revolutionary technology solutions to achieve unprecedented growth and success.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Link href="/contact">
+                    <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25">
+                      Get Started Today
+                    </button>
+                  </Link>
+                  <Link href="/services">
+                    <button className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300">
+                      View All Services
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Services Preview */}
+        <section id="services" className="py-20 px-4">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+              Our Revolutionary Services
+            </h2>
+            <p className="text-xl text-gray-300 mb-16 text-center max-w-3xl mx-auto">
+              Discover cutting-edge AI, quantum computing, and autonomous solutions that transform businesses and industries
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+=======
               className="text-center mb-20"
             >
               <h2 className="text-5xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
@@ -537,6 +664,7 @@ const Homepage2025: React.FC = () => {
             </motion.div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-16">
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-7826
               <UltraFuturisticServiceCard2026
                 service={{
                   id: 'ai-consciousness',
@@ -597,6 +725,8 @@ const Homepage2025: React.FC = () => {
                 }}
                 variant="quantum"
               />
+<<<<<<< HEAD
+=======
               <UltraFuturisticServiceCard2026
                 service={{
                   id: 'autonomous-legal-ai',
@@ -621,14 +751,21 @@ const Homepage2025: React.FC = () => {
                   <ArrowRight className="w-6 h-6" />
                 </button>
               </Link>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-7826
             </div>
           </div>
         </section>
 
+<<<<<<< HEAD
+        {/* Enhanced CTA Section */}
+        <section id="cta" className="py-20 px-4" aria-labelledby="cta-heading">
+          <div className="max-w-4xl mx-auto text-center">
+=======
         {/* Enhanced Why Choose Us Section */}
         <section className="py-24 px-4 bg-gradient-to-r from-black/30 via-purple-500/5 to-pink-500/5 relative">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-pink-500/5"></div>
           <div className="max-w-7xl mx-auto relative z-10">
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-7826
             <motion.div
               className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-3xl p-12 border border-cyan-400/20 backdrop-blur-sm"
               initial={{ opacity: 0, y: 40 }}
@@ -637,6 +774,29 @@ const Homepage2025: React.FC = () => {
               viewport={{ once: true }}
               className="text-center mb-20"
             >
+<<<<<<< HEAD
+              <h2 id="contact-heading" className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Let's Build the Future Together
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Ready to revolutionize your business with cutting-edge technology? Our team of experts is here to help you succeed.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button 
+                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2 focus:ring-offset-black"
+                  onClick={() => window.location.href = '/get-started'}
+                  aria-label="Start your journey with Zion Tech Group"
+                >
+                  Start Your Journey
+                </button>
+                <button 
+                  className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2 focus:ring-offset-black"
+                  onClick={() => window.location.href = '/contact'}
+                  aria-label="Contact our team for more information"
+                >
+                  Contact Us
+                </button>
+=======
               <h2 className="text-5xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-purple-400 via-pink-500 to-cyan-400 bg-clip-text text-transparent">
                 Why Choose Zion Tech Group?
               </h2>
@@ -826,6 +986,7 @@ const Homepage2025: React.FC = () => {
               <div className="text-gray-400 text-lg">
                 <MapPin className="w-6 h-6 inline mr-3" />
                 364 E Main St STE 1008 Middletown DE 19709
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-7826
               </div>
             </motion.div>
           </div>
