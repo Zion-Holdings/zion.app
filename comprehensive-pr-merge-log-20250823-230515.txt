@@ -1417,3 +1417,35 @@ scripts/generate-readme.js[0m
 2025-08-23 23:07:44 - [0;32m✅ Resolved conflicts in pages/index.tsx[0m
 2025-08-23 23:07:44 - [0;34m🔧 Resolving conflicts in scripts/generate-readme.js for branch cursor/invent-and-deploy-autonomous-github-actions-21fe...[0m
 2025-08-23 23:07:44 - [0;34mℹ️  No conflicts found in scripts/generate-readme.js[0m
+2025-08-23 23:07:44 - [0;32m✅ Successfully resolved conflicts and merged cursor/invent-and-deploy-autonomous-github-actions-21fe[0m
+2025-08-23 23:07:44 - [0;32m✅ PR #3847 (cursor/invent-and-deploy-autonomous-github-actions-21fe) processed successfully[0m
+2025-08-23 23:07:44 - [0;34m🔒 Closing PR #3847 via GitHub API...[0m
+2025-08-23 23:07:44 - [0;34m📊 Progress: 42/100, ✅ 42, ❌ 0[0m
+2025-08-23 23:07:46 - [0;34m📋 Processing PR #3846: Invent and deploy autonomous github actions (branch: cursor/invent-and-deploy-autonomous-github-actions-fa8c)[0m
+2025-08-23 23:07:46 - [0;34m🔄 Attempting to merge cursor/invent-and-deploy-autonomous-github-actions-fa8c...[0m
+2025-08-23 23:07:47 - [1;33m⚠️  Merge conflicts detected in cursor/invent-and-deploy-autonomous-github-actions-fa8c (attempt 1/3), resolving...[0m
+2025-08-23 23:07:47 - [0;34m📋 Conflicted files: README.md
+automation/front-actions-advertiser.cjs
+package.json
+pages/index.tsx
+scripts/generate-readme.js[0m
+2025-08-23 23:07:47 - [0;34m🔧 Resolving conflicts in README.md for branch cursor/invent-and-deploy-autonomous-github-actions-fa8c...[0m
+2025-08-23 23:07:47 - [1;33m⚠️  Found conflicts in README.md, resolving...[0m
+2025-08-23 23:07:47 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:07:47 - [0;32m✅ Resolved conflicts in README.md[0m
+2025-08-23 23:07:47 - [0;34m🔧 Resolving conflicts in automation/front-actions-advertiser.cjs for branch cursor/invent-and-deploy-autonomous-github-actions-fa8c...[0m
+2025-08-23 23:07:47 - [1;33m⚠️  Found conflicts in automation/front-actions-advertiser.cjs, resolving...[0m
+2025-08-23 23:07:47 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:07:47 - [0;32m✅ Resolved conflicts in automation/front-actions-advertiser.cjs[0m
+2025-08-23 23:07:47 - [0;34m🔧 Resolving conflicts in package.json for branch cursor/invent-and-deploy-autonomous-github-actions-fa8c...[0m
+2025-08-23 23:07:47 - [1;33m⚠️  Found conflicts in package.json, resolving...[0m
+2025-08-23 23:07:47 - [0;34m📦 Package.json detected, merging dependencies intelligently...[0m
+2025-08-23 23:07:47 - [0;32m✅ Resolved conflicts in package.json[0m
+2025-08-23 23:07:47 - [0;34m🔧 Resolving conflicts in pages/index.tsx for branch cursor/invent-and-deploy-autonomous-github-actions-fa8c...[0m
+2025-08-23 23:07:47 - [1;33m⚠️  Found conflicts in pages/index.tsx, resolving...[0m
+2025-08-23 23:07:47 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:07:47 - [0;32m✅ Resolved conflicts in pages/index.tsx[0m
+2025-08-23 23:07:47 - [0;34m🔧 Resolving conflicts in scripts/generate-readme.js for branch cursor/invent-and-deploy-autonomous-github-actions-fa8c...[0m
+2025-08-23 23:07:47 - [1;33m⚠️  Found conflicts in scripts/generate-readme.js, resolving...[0m
+2025-08-23 23:07:47 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:07:47 - [0;32m✅ Resolved conflicts in scripts/generate-readme.js[0m

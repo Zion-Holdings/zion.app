@@ -298,10 +298,16 @@
     "netlify:trigger": "node scripts/trigger-netlify-automations.cjs",
     "readme:generate": "node scripts/generate-readme.js",
     "search:index": "node scripts/generate-search-index.js",
+<<<<<<< HEAD
+    "content:fix": "node automation/content-quality-fixer.cjs && node automation/content-quality-analyzer.cjs",
+    "dev": "NODE_OPTIONS=\"--max-old-space-size=4096 --openssl-legacy-provider\" next dev",
+    "build": "NODE_OPTIONS=\"--max-old-space-size=6144 --openssl-legacy-provider\" next build",
+=======
     "actions:catalog": "node scripts/generate-actions-catalog.js",
     "front:actions": "node automation/front-actions-advertiser.cjs",
     "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev",
     "build": "NODE_OPTIONS=--openssl-legacy-provider next build",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-github-actions-fa8c
     "prebuild": "npm run netlify:manifest",
     "export": "NODE_OPTIONS=--openssl-legacy-provider next build && next export && (cp -f _redirects out/_redirects || true)",
     "start": "next start",

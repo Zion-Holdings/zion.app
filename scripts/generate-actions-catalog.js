@@ -1,22 +1,22 @@
 #!/usr/bin/env node
 
-'use strict';
-
 const fs = require('fs');
 const path = require('path');
 
 const ROOT = process.cwd();
-const FRONT_PAGE = path.join(ROOT, 'pages', 'main', 'front', 'index.tsx');
-const START_MARKER = '/* AUTO-GENERATED: FRONT_ACTIONS_START */';
-const END_MARKER = '/* AUTO-GENERATED: FRONT_ACTIONS_END */';
+const HOMEPAGE = path.join(ROOT, 'pages', 'index.tsx');
+const START_MARKER = '/* AUTO-GENERATED: HOME_ACTIONS_START */';
+const END_MARKER = '/* AUTO-GENERATED: HOME_ACTIONS_END */';
 
 function getRepoSlug() {
   try {
     const pkg = JSON.parse(fs.readFileSync(path.join(ROOT, 'package.json'), 'utf8'));
     const url = (pkg.repository && pkg.repository.url) || '';
-    const match = url.match(/github\.com[:/]+([^/]+)\/([^\.]+)(?:\.git)?/i);
+    const match = url.match(/github.com[:/]+([^/]+)\/([^/]+?)(?:\.git)?$/i);
     if (match) return `${match[1]}/${match[2]}`;
-  } catch {}
+  } catch {
+    // noop
+  }
   return '';
 }
 
@@ -27,8 +27,10 @@ function listWorkflowFiles() {
     if (!fs.existsSync(dir)) continue;
     for (const name of fs.readdirSync(dir)) {
       if (!name.match(/\.(ya?ml)$/)) continue;
+      // Prefer real workflow definitions; skip common config files
       if (name.toLowerCase().includes('dependabot')) continue;
       const full = path.join(dir, name);
+      // Avoid duplicates if file exists in both places
       const key = `/${path.relative(ROOT, full).replace(/\\/g, '/')}`;
       if (!results.find((r) => r.key === key)) {
         results.push({ key, dir, name, full });
@@ -44,6 +46,7 @@ function readWorkflowMeta(filePath) {
   let cron = '';
   const nameMatch = src.match(/^name:\s*(.+)$/m);
   if (nameMatch) name = nameMatch[1].trim();
+  // Try to find the first cron entry
   const cronMatch = src.match(/cron:\s*["']?([^"'\n]+)["']?/);
   if (cronMatch) cron = cronMatch[1].trim();
   return { name, cron };
@@ -67,6 +70,7 @@ function buildCards(repoSlug, workflows) {
     const desc = meta.cron ? `Scheduled: ${meta.cron}` : 'On push / schedule';
     return { title, href, desc };
   });
+  // Limit to 12 for homepage density
   return items.slice(0, 12)
     .map((it) => (
       `              <a href="${it.href}" target="_blank" rel="noopener" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
@@ -79,15 +83,17 @@ function buildCards(repoSlug, workflows) {
     .join('\n');
 }
 
-function buildSection(cardsHtml) {
+function buildSection(cardsHtml, repoSlug) {
+  const viewAll = repoSlug ? `https://github.com/${repoSlug}/actions` : 'https://github.com/actions';
   return [
     START_MARKER,
-    '<section className="mx-auto max-w-7xl px-6 pb-14">',
-    '  <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">GitHub Actions — Live Automations</h2>',
-    '  <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Cloud‑native workflows that maintain, heal, and evolve the repo automatically.</p>',
+    '<section className="mx-auto max-w-7xl px-6 pb-16">',
+    '  <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Live GitHub Actions</h2>',
+    '  <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Autonomous workflows running fully in the cloud. Click to view runs and logs.</p>',
     '  <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">',
     cardsHtml,
     '  </div>',
+    `  <div className="mt-6 text-center"><a className="text-cyan-300 underline" href="${viewAll}" target="_blank" rel="noopener">View all workflows ↗</a></div>`,
     '</section>',
     END_MARKER
   ].join('\n');
@@ -101,14 +107,20 @@ function ensureMarkersAndInsert(source, block) {
     const endIdx = source.indexOf(END_MARKER);
     return source.slice(0, startIdx) + '\n' + block.split('\n').slice(1, -1).join('\n') + '\n' + source.slice(endIdx);
   }
-  const closingMain = source.lastIndexOf('</main>');
-  const insertIdx = closingMain !== -1 ? closingMain : source.length;
+  // Choose insertion point: before HOME_UPDATER_START if present, else before </main>
+  const homeUpdater = source.indexOf('/* AUTO-GENERATED: HOME_UPDATER_START */');
+  let insertIdx = -1;
+  if (homeUpdater !== -1) insertIdx = homeUpdater;
+  if (insertIdx === -1) {
+    const closingMain = source.lastIndexOf('</main>');
+    insertIdx = closingMain !== -1 ? closingMain : source.length;
+  }
   return source.slice(0, insertIdx) + '\n' + block + '\n' + source.slice(insertIdx);
 }
 
 (function main() {
-  if (!fs.existsSync(FRONT_PAGE)) {
-    console.log('Front page not found, skipping');
+  if (!fs.existsSync(HOMEPAGE)) {
+    console.log('Homepage not found');
     process.exit(0);
   }
   const workflows = listWorkflowFiles();
@@ -119,12 +131,12 @@ function ensureMarkersAndInsert(source, block) {
   const repoSlug = getRepoSlug();
   const cards = buildCards(repoSlug, workflows);
   const section = buildSection(cards, repoSlug);
-  const src = fs.readFileSync(FRONT_PAGE, 'utf8');
+  const src = fs.readFileSync(HOMEPAGE, 'utf8');
   const updated = ensureMarkersAndInsert(src, section);
   if (updated !== src) {
-    fs.writeFileSync(FRONT_PAGE, updated, 'utf8');
-    console.log('Front page actions catalog updated.');
+    fs.writeFileSync(HOMEPAGE, updated, 'utf8');
+    console.log('Homepage actions catalog updated.');
   } else {
-    console.log('Front page actions catalog up-to-date.');
+    console.log('Homepage actions catalog up-to-date.');
   }
 })();
