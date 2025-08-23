@@ -1,41 +1,53 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, Suspense, lazy } from 'react';
 import Layout from './layout/Layout';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
-  ArrowRight, Play, TrendingUp, Brain, Shield, Rocket, Globe, Cpu, Database, Atom, Target, Star, Sparkles as SparklesIcon,
-  Brain as BrainIcon, Atom as AtomIcon, Shield as ShieldIcon, Rocket as RocketIcon, Zap, Eye, Heart, Infinity
+  ArrowRight, Play, TrendingUp, Brain, Shield, Rocket, Globe, Cpu, Database, Atom, Star, Loader2
 } from 'lucide-react';
+
+// Lazy load components for better performance
+const TestimonialSection = lazy(() => import('./TestimonialSection'));
 
 // Import our new revolutionary services
 import { revolutionary2044AdvancedMicroSaas } from '../data/revolutionary-2044-advanced-micro-saas';
 import { revolutionary2044ITServices } from '../data/revolutionary-2044-it-services';
 import { revolutionary2044AIServices } from '../data/revolutionary-2044-ai-services';
 
+// Loading component for better UX
+const LoadingSpinner = () => (
+  <div className="flex items-center justify-center p-8">
+    <Loader2 className="w-8 h-8 animate-spin text-cyan-400" />
+    <span className="ml-2 text-cyan-400">Loading...</span>
+  </div>
+);
+
 const Homepage2044: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
-  const [selectedCategory, setSelectedCategory] = useState('all');
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   
   useEffect(() => {
-    setIsVisible(true);
-    
-    // Auto-rotate featured services
-    const interval = setInterval(() => {
-      setCurrentServiceIndex((prev) => (prev + 1) % 6);
-    }, 6000);
-    
-    // Track mouse movement for parallax effects
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+    const initializePage = async () => {
+      try {
+        setIsVisible(true);
+        setIsLoading(false);
+        
+        // Auto-rotate featured services
+        const interval = setInterval(() => {
+          setCurrentServiceIndex((prev) => (prev + 1) % 6);
+        }, 6000);
+        
+        return () => {
+          clearInterval(interval);
+        };
+      } catch {
+        setError('Failed to initialize page');
+        setIsLoading(false);
+      }
     };
-    
-    window.addEventListener('mousemove', handleMouseMove);
-    
-    return () => {
-      clearInterval(interval);
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
+
+    initializePage();
   }, []);
 
   // Combine all revolutionary services
@@ -47,24 +59,6 @@ const Homepage2044: React.FC = () => {
 
   // Get featured services for rotation
   const featuredServices = allRevolutionaryServices.slice(0, 6);
-
-  // Filter services by category
-  const getFilteredServices = () => {
-    if (selectedCategory === 'all') return allRevolutionaryServices;
-    return allRevolutionaryServices.filter(service => 
-      service.category.toLowerCase().includes(selectedCategory.toLowerCase()) ||
-      service.type.toLowerCase().includes(selectedCategory.toLowerCase())
-    );
-  };
-
-  const categories = [
-    { id: 'all', name: 'All Services', icon: SparklesIcon, color: 'from-purple-500 to-pink-500' },
-    { id: 'ai', name: 'AI & Consciousness', icon: BrainIcon, color: 'from-cyan-500 to-blue-500' },
-    { id: 'quantum', name: 'Quantum Technology', icon: AtomIcon, color: 'from-blue-500 to-indigo-500' },
-    { id: 'cybersecurity', name: 'Cybersecurity', icon: ShieldIcon, color: 'from-red-500 to-orange-500' },
-    { id: 'space', name: 'Space Technology', icon: RocketIcon, color: 'from-indigo-500 to-purple-500' },
-    { id: 'business', name: 'Business Solutions', icon: Target, color: 'from-emerald-500 to-teal-500' }
-  ];
 
   const features = [
     { icon: Brain, title: "AI Consciousness Evolution 2044", description: "Next-generation AI consciousness with emotional intelligence", href: "/ai-consciousness-evolution-2044", color: "from-purple-500 to-pink-500" },
@@ -90,14 +84,45 @@ const Homepage2044: React.FC = () => {
     window.location.href = '/services';
   }, []);
 
-  const handleServiceClick = useCallback((service: any) => {
+  const handleServiceClick = useCallback((service: { slug: string }) => {
     window.location.href = service.slug;
   }, []);
+
+  // Error boundary fallback
+  if (error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-black text-white">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold text-red-400 mb-4">Something went wrong</h1>
+          <p className="text-gray-400 mb-6">{error}</p>
+          <button 
+            onClick={() => window.location.reload()} 
+            className="px-6 py-3 bg-cyan-500 text-white rounded-lg hover:bg-cyan-600 transition-colors"
+          >
+            Reload Page
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // Loading state
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-black text-white">
+        <div className="text-center">
+          <Loader2 className="w-16 h-16 animate-spin text-cyan-400 mx-auto mb-4" />
+          <h1 className="text-2xl font-bold text-cyan-400">Loading Zion Tech Group</h1>
+          <p className="text-gray-400 mt-2">Preparing the future of technology...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <Layout>
       {/* Main Content */}
-      <main className="relative z-10">
+      <main className="relative z-10" role="main" aria-label="Zion Tech Group Homepage">
         {/* Hero Section */}
         <section 
           className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
@@ -106,12 +131,12 @@ const Homepage2044: React.FC = () => {
           {/* Enhanced Animated Background */}
           <div className="absolute inset-0 -z-10">
             {/* Floating orbs with neon effects */}
-            <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse shadow-[0_0_100px_rgba(6,182,212,0.5)]"></div>
-            <div className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000 shadow-[0_0_100px_rgba(168,85,247,0.5)]"></div>
-            <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-full blur-3xl animate-pulse delay-500 shadow-[0_0_100px_rgba(16,185,129,0.5)]"></div>
+            <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl animate-pulse shadow-[0_0_100px_rgba(6,182,212,0.5)]" aria-hidden="true"></div>
+            <div className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000 shadow-[0_0_100px_rgba(168,85,247,0.5)]" aria-hidden="true"></div>
+            <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-full blur-3xl animate-pulse delay-500 shadow-[0_0_100px_rgba(16,185,129,0.5)]" aria-hidden="true"></div>
             
             {/* Animated particles with neon trails */}
-            <div className="absolute inset-0">
+            <div className="absolute inset-0" aria-hidden="true">
               {[...Array(20)].map((_, i) => (
                 <motion.div
                   key={i}
@@ -124,7 +149,7 @@ const Homepage2044: React.FC = () => {
                   }}
                   transition={{
                     duration: 8 + i * 0.3,
-                    repeat: Infinity as any,
+                    repeat: Infinity as never,
                     delay: i * 0.2,
                     ease: "easeInOut"
                   }}
@@ -137,7 +162,7 @@ const Homepage2044: React.FC = () => {
             </div>
 
             {/* Grid pattern with neon glow */}
-            <div className="absolute inset-0 opacity-20">
+            <div className="absolute inset-0 opacity-20" aria-hidden="true">
               <div className="absolute inset-0" style={{
                 backgroundImage: `radial-gradient(circle at 1px 1px, rgba(6,182,212,0.3) 1px, transparent 0)`,
                 backgroundSize: '60px 60px'
@@ -154,9 +179,10 @@ const Homepage2044: React.FC = () => {
               }}
               transition={{
                 duration: 10,
-                repeat: Infinity as any,
+                repeat: Infinity as never,
                 ease: "linear"
               }}
+              aria-hidden="true"
             />
             <motion.div
               className="absolute bottom-32 left-32 w-16 h-16 border border-purple-400/30 rounded-full"
@@ -166,9 +192,10 @@ const Homepage2044: React.FC = () => {
               }}
               transition={{
                 duration: 8,
-                repeat: Infinity as any,
+                repeat: Infinity as never,
                 ease: "easeInOut"
               }}
+              aria-hidden="true"
             />
           </div>
 
@@ -261,6 +288,14 @@ const Homepage2044: React.FC = () => {
                     onClick={() => handleServiceClick(service)}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        handleServiceClick(service);
+                      }
+                    }}
+                    aria-label={`Learn more about ${service.name}`}
                   >
                     <div className="relative p-8 bg-gradient-to-br from-gray-900/80 to-gray-800/80 border border-gray-700/50 rounded-3xl backdrop-blur-xl shadow-[0_0_50px_rgba(0,0,0,0.5)] hover:shadow-[0_0_80px_rgba(6,182,212,0.3)] transition-all duration-300 group-hover:border-cyan-500/50">
                       <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -299,7 +334,7 @@ const Homepage2044: React.FC = () => {
         </section>
 
         {/* Features Section */}
-        <section className="py-24 px-4 relative">
+        <section className="py-24 px-4 relative" aria-labelledby="features-heading">
           <div className="max-w-7xl mx-auto">
             <motion.div
               className="text-center mb-20"
@@ -308,7 +343,7 @@ const Homepage2044: React.FC = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-5xl font-bold text-white mb-6">
+              <h2 id="features-heading" className="text-5xl font-bold text-white mb-6">
                 Revolutionary Technology Features
               </h2>
               <p className="text-xl text-gray-400 max-w-4xl mx-auto">
@@ -345,6 +380,7 @@ const Homepage2044: React.FC = () => {
                       <a
                         href={feature.href}
                         className="inline-flex items-center text-cyan-400 hover:text-cyan-300 font-medium transition-colors duration-300 group-hover:translate-x-2"
+                        aria-label={`Learn more about ${feature.title}`}
                       >
                         Learn More
                         <ArrowRight className="w-4 h-4 ml-2" />
@@ -358,8 +394,9 @@ const Homepage2044: React.FC = () => {
         </section>
 
         {/* Stats Section */}
-        <section className="py-24 px-4 relative">
+        <section className="py-24 px-4 relative" aria-labelledby="stats-heading">
           <div className="max-w-7xl mx-auto">
+            <h2 id="stats-heading" className="sr-only">Company Statistics</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
                 <motion.div
@@ -387,8 +424,13 @@ const Homepage2044: React.FC = () => {
           </div>
         </section>
 
+        {/* Testimonials Section - Lazy Loaded */}
+        <Suspense fallback={<LoadingSpinner />}>
+          <TestimonialSection />
+        </Suspense>
+
         {/* CTA Section */}
-        <section className="py-24 px-4 relative">
+        <section className="py-24 px-4 relative" aria-labelledby="cta-heading">
           <div className="max-w-6xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -396,7 +438,7 @@ const Homepage2044: React.FC = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-5xl font-bold text-white mb-8">
+              <h2 id="cta-heading" className="text-5xl font-bold text-white mb-8">
                 Ready to Experience the Future?
               </h2>
               
@@ -408,6 +450,7 @@ const Homepage2044: React.FC = () => {
                 <button 
                   className="px-12 py-6 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-3xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-[0_0_50px_rgba(6,182,212,0.4)] focus:outline-none focus:ring-4 focus:ring-cyan-500/50 text-xl"
                   onClick={handleGetStarted}
+                  aria-label="Get started with Zion Tech Group services"
                 >
                   Get Started Today
                   <ArrowRight className="w-6 h-6 ml-3 inline" />
@@ -416,6 +459,7 @@ const Homepage2044: React.FC = () => {
                 <button 
                   className="px-12 py-6 border-2 border-cyan-400 text-cyan-400 font-bold rounded-3xl hover:bg-cyan-400 hover:text-black transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 text-xl"
                   onClick={handleWatchDemo}
+                  aria-label="Schedule a demo of our services"
                 >
                   Schedule Demo
                   <Play className="w-6 h-6 ml-3 inline" />
