@@ -1,0 +1,70 @@
+import React, { useState } from 'react';
+import UltraFuturisticNavigation2043 from './UltraFuturisticNavigation2043';
+import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
+import EnhancedSidebar2025 from './EnhancedSidebar2025';
+import UltraFuturisticBackground2043 from '../backgrounds/UltraFuturisticBackground2043';
+import TopContactBar from './TopContactBar';
+import PerformanceMonitor from '../PerformanceMonitor';
+import AccessibilityEnhancer from '../AccessibilityEnhancer';
+import PerformanceOptimizer from '../PerformanceOptimizer';
+
+interface LayoutProps {
+  children: React.ReactNode;
+  seo?: SEOConfig;
+}
+
+export default function Layout({ children, seo }: LayoutProps) {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [showEnhancements, setShowEnhancements] = useState(false);
+
+  return (
+<<<<<<< HEAD
+    <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
+      {/* Skip to content link for accessibility */}
+      <a href="#main" className="skip-link">Skip to main content</a>
+      
+      {/* Futuristic Background */}
+      <UltraFuturisticBackground2043 />
+      
+      {/* Layout Structure */}
+      <div className="relative z-10">
+        {/* Top Contact Bar */}
+        <TopContactBar />
+        
+        {/* Navigation */}
+        <UltraFuturisticNavigation2043 />
+        
+        {/* Sidebar and Main Content */}
+        <div className="flex">
+          <EnhancedSidebar2025 
+            isOpen={sidebarOpen} 
+            onClose={() => setSidebarOpen(false)} 
+          />
+          
+          <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
+            {children}
+          </main>
+        </div>
+        
+        {/* Footer */}
+        <UltraFuturisticFooter2040 />
+      </div>
+
+      {/* Accessibility and Performance Tools */}
+      <AccessibilityEnhancer />
+      <PerformanceOptimizer showMetrics={true} autoOptimize={true} />
+    </div>
+=======
+    <AccessibilityEnhancer>
+      <div className="min-h-screen bg-gray-900 text-white">
+        <UltraAdvancedFuturisticNavigation2025 />
+        <main className="relative z-10">
+          {children}
+        </main>
+        <UltraAdvancedFuturisticFooter2025 />
+        <PerformanceOptimizer showMetrics={true} autoOptimize={true} />
+      </div>
+    </AccessibilityEnhancer>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-5426
+  );
+};

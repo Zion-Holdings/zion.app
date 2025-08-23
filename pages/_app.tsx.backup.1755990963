@@ -1,0 +1,30 @@
+import type { AppProps } from 'next/app';
+import EnhancedLayout from '../components/layout/EnhancedLayout';
+import '../styles/enhanced-design-system.css';
+import '../styles/modern-design-system.css';
+<<<<<<< HEAD
+import type { AppProps } from 'next/app';
+import '../styles/globals.css';
+import EnhancedLayout from '../components/layout/EnhancedLayout';
+import { useRouter } from 'next/router';
+import dynamic from 'next/dynamic';
+
+const AutomationPromoBanner = dynamic(() => import('../components/AutomationPromoBanner'), { ssr: false });
+
+export default function App({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+  const showBanner = router.pathname === '/';
+  return (
+    <EnhancedLayout>
+      {showBanner && <AutomationPromoBanner />}
+      <Component  {...pageProps} />
+=======
+
+export default function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <EnhancedLayout>
+      <Component {...pageProps} />
+>>>>>>> origin/cursor/bc-37c9148a-8898-4045-b95f-8ca2f79cfa5c-9330
+    </EnhancedLayout>
+  );
+}

@@ -1,0 +1,36 @@
+name: AI Crawl UX & Translation
+
+on:
+  schedule:
+    - cron: '0 */6 * * *' # every 6 hours
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - name: Run AI crawl
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          BASE_URL: https://ziontechgroup.com
+          LOCALES: en,es,fr
+        run: node scripts/ai-crawl-ux.mjs || true
+      - name: Commit crawl report
+        run: |
+          git config user.name "zion-autobot"
+          git config user.email "autobot@users.noreply.github.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "chore(auto): ai crawl ux report [skip ci]"
+            git push
+          else
+            echo "No changes"
+          fi
