@@ -2042,6 +2042,15 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     setupTime: '25 minutes',
     category: 'Compliance & Risk',
     realService: true,
+<<<<<<< HEAD
+    technology: ['AI/ML', 'NLP', 'Risk Modeling', 'Automation'],
+    integrations: ['ERP systems', 'GRC platforms', 'Regulatory databases', 'Audit systems'],
+    useCases: ['Compliance monitoring', 'Risk management', 'Regulatory reporting'],
+    roi: '600% average ROI in 15 months',
+    competitors: ['MetricStream', 'SaiGlobal', 'LogicGate'],
+    marketSize: '$2.8B global market',
+    growthRate: '40% annual growth'
+=======
     technology: ['Quantum Computing', 'Operations Research', 'Machine Learning', 'Optimization Algorithms', 'Supply Chain Analytics'],
     integrations: ['ERP systems', 'WMS platforms', 'TMS solutions', 'IoT sensors', 'Blockchain networks'],
     useCases: ['Route optimization', 'Inventory management', 'Demand planning', 'Supplier optimization', 'Risk mitigation'],
@@ -2445,6 +2454,7 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     competitors: ['Coursera', 'Udemy', 'Khan Academy', 'Duolingo'],
     marketSize: '$30B global market',
     growthRate: '180% annual growth'
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-ef9e
   }
 ];
 
