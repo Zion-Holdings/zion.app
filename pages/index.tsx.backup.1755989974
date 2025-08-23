@@ -32,6 +32,10 @@ export default function Home() {
               <Link href="/services" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-blue-400/50">
                 Our Services
               </Link>
+<<<<<<< HEAD
+              <Link href="/pricing" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-yellow-400/50">
+                Pricing
+=======
               <Link href="/ai-insights" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-indigo-400/50">
                 AI Insights
               </Link>
@@ -46,6 +50,7 @@ export default function Home() {
               </Link>
               <Link href="/resources" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-blue-400/50">
                 Resources
+>>>>>>> origin/cursor/add-more-project-content-1e50
               </Link>
               <Link href="/documentation" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-purple-400/50">
                 Documentation

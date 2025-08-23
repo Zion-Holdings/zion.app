@@ -11,6 +11,17 @@ import Link from 'next/link';
 const Blog: React.FC = () => {
   const featuredPosts = [
     {
+<<<<<<< HEAD
+      title: 'The Future of AI Consciousness: What to Expect in 2045',
+      excerpt: 'Explore the revolutionary developments in AI consciousness and how they will transform our understanding of intelligence.',
+      author: 'AI Research Team',
+      date: '2025-01-15',
+      category: 'AI & Consciousness',
+      readTime: '8 min read',
+      image: '/blog/ai-consciousness-2045.jpg',
+      tags: ['AI', 'Consciousness', 'Future Tech', '2045'],
+      icon: <Brain className="w-6 h-6" />
+=======
       id: 'quantum-ai-revolution-2025',
       title: 'Quantum AI Revolution 2025: The Next Frontier of Computing',
       excerpt: 'Discover how quantum computing is revolutionizing AI and automation in 2025, unlocking unprecedented computational power.',
@@ -34,6 +45,7 @@ const Blog: React.FC = () => {
       date: 'January 22, 2025',
       readTime: '10 min read',
       category: 'Sustainability'
+>>>>>>> origin/cursor/add-more-project-content-1e50
     },
     {
       title: 'Quantum Computing Breakthroughs: Solving Previously Impossible Problems',
@@ -59,7 +71,72 @@ const Blog: React.FC = () => {
     }
   ];
 
+<<<<<<< HEAD
+  const categories = [
+    { name: 'AI & Consciousness', icon: <Brain className="w-5 h-5" />, count: 15 },
+    { name: 'Quantum Computing', icon: <Atom className="w-5 h-5" />, count: 12 },
+    { name: 'Cybersecurity', icon: <Shield className="w-5 h-5" />, count: 18 },
+    { name: 'Space Technology', icon: <Rocket className="w-5 h-5" />, count: 8 },
+    { name: 'Edge Computing', icon: <Cloud className="w-5 h-5" />, count: 10 },
+    { name: 'Innovation', icon: <Zap className="w-5 h-5" />, count: 22 }
+  ];
+
+  const trendingTopics = [
+    "AI Consciousness Evolution",
+    "Quantum Supremacy",
+    "Zero-Trust Security",
+    "Autonomous Systems",
+    "Ethical AI",
+    "Space Mining",
+    "Neural Networks",
+    "Blockchain Security"
+  ];
+
+  const blogCategories = [
+    { name: "All", count: 45, active: true },
+    { name: "AI & Consciousness", count: 18, active: false },
+    { name: "Quantum Computing", count: 12, active: false },
+    { name: "Cybersecurity", count: 8, active: false },
+    { name: "Space Technology", count: 7, active: false }
+  ];
+
+  const recentArticles = [
+    {
+      title: 'Edge Computing Orchestration: The Future of Distributed Systems',
+      excerpt: 'How edge computing is transforming the way we process and analyze data.',
+      author: 'Edge Computing Team',
+      date: '2025-01-12',
+      category: 'Edge Computing',
+      readTime: '6 min read'
+    },
+    {
+      title: 'The Rise of Autonomous AI Systems in Enterprise',
+      excerpt: 'Exploring how autonomous AI is reshaping business operations and decision-making.',
+      author: 'AI Research Team',
+      date: '2025-01-10',
+      category: 'AI & Consciousness',
+      readTime: '7 min read'
+    },
+    {
+      title: 'Quantum Cybersecurity: Protecting Data in the Quantum Era',
+      excerpt: 'Understanding the security challenges and solutions in quantum computing.',
+      author: 'Quantum Team',
+      date: '2025-01-08',
+      category: 'Quantum Computing',
+      readTime: '9 min read'
+    },
+    {
+      title: 'Cloud Platform Evolution: From Infrastructure to Intelligence',
+      excerpt: 'How cloud platforms are becoming intelligent and autonomous.',
+      author: 'Cloud Team',
+      date: '2025-01-05',
+      category: 'Edge Computing',
+      readTime: '5 min read'
+    }
+  ];
+=======
   const categories = ['All', 'Quantum Computing', 'AI & Automation', 'Sustainability', 'Content & AI', 'Infrastructure', 'AI Ethics', 'Performance', 'Future of Work'];
+>>>>>>> origin/cursor/add-more-project-content-1e50
 
   return (
     <Layout 
