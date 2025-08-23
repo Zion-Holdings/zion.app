@@ -1,5 +1,7 @@
 {
   "summary": {
+<<<<<<< HEAD
+=======
     "totalFiles": 0,
     "filesWithIssues": 0,
     "totalIssues": 0,
@@ -59,4 +61,5 @@
     "pages/enhanced-services.tsx"
   ],
   "generatedAt": "2025-08-21T00:41:50.318Z"
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-392e
 }
