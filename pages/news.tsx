@@ -1,347 +1,338 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
+import Head from 'next/head';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
-  Calendar, Clock, User, Tag, ArrowRight, 
-  ExternalLink, TrendingUp, Sparkles, Globe,
-  Zap, Brain, Rocket, Shield, Star
+  Globe, Brain, Atom, Rocket, Shield, Cloud, Target, 
+  ArrowRight, Star, Check, Mail, Phone, MapPin, Zap, Calendar, Clock
 } from 'lucide-react';
 
 const NewsPage: React.FC = () => {
-  const featuredNews = [
+  const newsArticles = [
     {
-      id: 1,
-      title: "Zion Tech Group Launches Revolutionary AI Consciousness Platform",
-      excerpt: "Our latest breakthrough in AI consciousness evolution is set to transform how businesses interact with artificial intelligence, enabling unprecedented levels of understanding and collaboration.",
-      category: "AI Innovation",
-      date: "2024-12-15",
-      author: "Dr. Sarah Chen",
-      readTime: "5 min read",
-      image: "/api/placeholder/600/400",
-      featured: true
+      title: 'Zion Tech Group Launches Revolutionary AI Consciousness Platform',
+      excerpt: 'Our latest breakthrough in AI consciousness technology is now available, marking a new era in human-AI collaboration.',
+      category: 'AI Technology',
+      date: '2025-01-15',
+      readTime: '5 min read',
+      image: '/api/placeholder/600/400',
+      href: '/news/ai-consciousness-platform-launch',
+      icon: Brain,
+      color: 'from-cyan-500 to-blue-600'
     },
     {
-      id: 2,
-      title: "Quantum Cybersecurity Breakthrough: Unbreakable Encryption Achieved",
-      excerpt: "Our quantum-resistant security platform has achieved a major milestone, providing enterprise-grade protection against even the most sophisticated cyber threats.",
-      category: "Cybersecurity",
-      date: "2024-12-12",
-      author: "Marcus Rodriguez",
-      readTime: "4 min read",
-      image: "/api/placeholder/600/400",
-      featured: true
-    }
-  ];
-
-  const latestNews = [
-    {
-      id: 3,
-      title: "Autonomous DevOps Platform Reduces Deployment Time by 90%",
-      excerpt: "Enterprise clients report unprecedented efficiency gains with our fully autonomous DevOps solution, enabling faster time-to-market and improved reliability.",
-      category: "DevOps",
-      date: "2024-12-10",
-      author: "Alex Thompson",
-      readTime: "3 min read",
-      image: "/api/placeholder/400/300"
+      title: 'Quantum Computing Breakthrough: Solving Previously Impossible Problems',
+      excerpt: 'We\'ve achieved a major milestone in quantum computing that opens new possibilities for scientific research and business applications.',
+      category: 'Quantum Technology',
+      date: '2025-01-10',
+      readTime: '7 min read',
+      image: '/api/placeholder/600/400',
+      href: '/news/quantum-computing-breakthrough',
+      icon: Atom,
+      color: 'from-purple-500 to-blue-600'
     },
     {
-      id: 4,
-      title: "Space Resource Intelligence: Mapping the Future of Space Exploration",
-      excerpt: "Our AI-powered space intelligence platform is helping organizations identify and optimize resource extraction opportunities in near-Earth space.",
-      category: "Space Tech",
-      date: "2024-12-08",
-      author: "Dr. Elena Petrova",
-      readTime: "6 min read",
-      image: "/api/placeholder/400/300"
+      title: 'Space Resource Intelligence: Expanding Humanity\'s Reach',
+      excerpt: 'Our space technology division has developed new systems for resource discovery and mining in space.',
+      category: 'Space Technology',
+      date: '2025-01-05',
+      readTime: '6 min read',
+      image: '/api/placeholder/600/400',
+      href: '/news/space-resource-intelligence',
+      icon: Rocket,
+      color: 'from-indigo-500 to-purple-600'
     },
     {
-      id: 5,
-      title: "Quantum Neural Networks: The Next Frontier in Machine Learning",
-      excerpt: "Our quantum neural network platform demonstrates 1000x performance improvements over classical approaches for complex optimization problems.",
-      category: "Quantum Computing",
-      date: "2024-12-05",
-      author: "Dr. James Wilson",
-      readTime: "7 min read",
-      image: "/api/placeholder/400/300"
+      title: 'Cybersecurity Innovation: Unbreakable Quantum Encryption',
+      excerpt: 'We\'ve developed quantum-resistant encryption systems that will protect the digital future of humanity.',
+      category: 'Cybersecurity',
+      date: '2024-12-28',
+      readTime: '4 min read',
+      image: '/api/placeholder/600/400',
+      href: '/news/quantum-encryption-breakthrough',
+      icon: Shield,
+      color: 'from-red-500 to-orange-600'
     },
     {
-      id: 6,
-      title: "Autonomous Customer Success: AI That Understands Human Emotions",
-      excerpt: "Revolutionary emotional intelligence capabilities in our customer success platform are delivering personalized support that exceeds human capabilities.",
-      category: "Customer Experience",
-      date: "2024-12-03",
-      author: "Lisa Chang",
-      readTime: "4 min read",
-      image: "/api/placeholder/400/300"
+      title: 'Business Transformation: AI-Powered Solutions for Enterprise',
+      excerpt: 'New AI-driven business intelligence platforms are helping organizations achieve unprecedented efficiency and insights.',
+      category: 'Business Solutions',
+      date: '2024-12-20',
+      readTime: '8 min read',
+      image: '/api/placeholder/600/400',
+      href: '/news/ai-business-intelligence',
+      icon: Target,
+      color: 'from-green-500 to-emerald-600'
     },
     {
-      id: 7,
-      title: "Quantum Cloud Infrastructure: Performance Meets Security",
-      excerpt: "Our quantum-enhanced cloud platform delivers enterprise-grade performance while maintaining the highest security standards in the industry.",
-      category: "Cloud Computing",
-      date: "2024-11-30",
-      author: "Michael Chen",
-      readTime: "5 min read",
-      image: "/api/placeholder/400/300"
-    },
-    {
-      id: 8,
-      title: "Autonomous Network Management: Self-Healing Networks of the Future",
-      excerpt: "Our autonomous network management system continuously optimizes performance and security without human intervention, reducing downtime by 99.9%.",
-      category: "Network Management",
-      date: "2024-11-28",
-      author: "David Kim",
-      readTime: "4 min read",
-      image: "/api/placeholder/400/300"
+      title: 'Infrastructure Evolution: Quantum Cloud Computing',
+      excerpt: 'Our quantum-powered cloud infrastructure is revolutionizing how businesses scale and operate in the digital age.',
+      category: 'IT Infrastructure',
+      date: '2024-12-15',
+      readTime: '6 min read',
+      image: '/api/placeholder/600/400',
+      href: '/news/quantum-cloud-infrastructure',
+      icon: Cloud,
+      color: 'from-blue-500 to-sky-600'
     }
   ];
 
   const categories = [
-    { name: "All", count: 8, icon: Globe },
-    { name: "AI Innovation", count: 2, icon: Brain },
-    { name: "Cybersecurity", count: 1, icon: Shield },
-    { name: "DevOps", count: 1, icon: Zap },
-    { name: "Space Tech", count: 1, icon: Rocket },
-    { name: "Quantum Computing", count: 1, icon: Star },
-    { name: "Customer Experience", count: 1, icon: Sparkles },
-    { name: "Cloud Computing", count: 1, icon: Globe }
+    { name: 'All News', count: newsArticles.length, active: true },
+    { name: 'AI Technology', count: 1, active: false },
+    { name: 'Quantum Technology', count: 1, active: false },
+    { name: 'Space Technology', count: 1, active: false },
+    { name: 'Cybersecurity', count: 1, active: false },
+    { name: 'Business Solutions', count: 1, active: false },
+    { name: 'IT Infrastructure', count: 1, active: false }
   ];
 
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric'
-    });
+  const contactInfo = {
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com'
   };
 
   return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-purple-900">
-        {/* Hero Section */}
-        <section className="relative pt-32 pb-20 px-4">
+    <>
+      <Head>
+        <title>News & Updates - Zion Tech Group</title>
+        <meta name="description" content="Stay updated with the latest news, breakthroughs, and announcements from Zion Tech Group. Discover our revolutionary innovations in AI, quantum computing, and space technology." />
+        <meta name="keywords" content="news, updates, announcements, AI technology, quantum computing, space technology, Zion Tech Group" />
+        <link rel="canonical" href="https://ziontechgroup.com/news" />
+      </Head>
+
+      <div className="min-h-screen bg-black text-white relative overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/20 via-blue-900/20 to-purple-900/20"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(6,182,212,0.1),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.1),transparent_50%)]"></div>
+
+        {/* Header Section */}
+        <div className="relative z-10 pt-32 pb-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="mb-8"
             >
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 text-purple-300 text-sm font-medium mb-6">
-                <Sparkles className="w-4 h-4 mr-2" />
-                Latest Updates & Insights
+              <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-full px-4 py-2 mb-6">
+                <Globe className="w-5 h-5 text-cyan-400" />
+                <span className="text-cyan-400 font-medium">Latest News & Updates</span>
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent mb-6">
-                News & Insights
+              
+              <h1 className="text-5xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+                Stay Updated
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Stay updated with the latest breakthroughs, innovations, and insights 
-                from Zion Tech Group's cutting-edge technology research and development.
+              
+              <p className="text-xl lg:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+                Discover the latest breakthroughs, innovations, and announcements from Zion Tech Group. 
+                Stay informed about the future of technology and our mission to revolutionize humanity.
               </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link 
+                  href="#latest-news"
+                  className="inline-flex items-center space-x-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25"
+                >
+                  <span>Read Latest News</span>
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+                <Link 
+                  href="/contact"
+                  className="inline-flex items-center space-x-2 border border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 font-semibold px-8 py-4 rounded-xl transition-all duration-300"
+                >
+                  <span>Get in Touch</span>
+                </Link>
+              </div>
             </motion.div>
           </div>
-        </section>
+        </div>
 
         {/* Categories Filter */}
-        <section className="py-12 px-4">
+        <div className="relative z-10 pb-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="flex flex-wrap justify-center gap-4"
-            >
-              {categories.map((category, index) => (
-                <button
-                  key={index}
-                  className="flex items-center px-6 py-3 rounded-full bg-gray-800/30 hover:bg-purple-500/20 border border-gray-700/50 hover:border-purple-500/50 text-gray-300 hover:text-white transition-all duration-300 group"
-                >
-                  <category.icon className="w-4 h-4 mr-2" />
-                  {category.name}
-                  <span className="ml-2 px-2 py-1 bg-gray-700/50 rounded-full text-xs text-gray-400 group-hover:bg-purple-500/50 group-hover:text-white transition-all duration-300">
-                    {category.count}
-                  </span>
-                </button>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Featured News Section */}
-        <section className="py-20 px-4">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Featured Stories
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                News Categories
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our most important breakthroughs and innovations that are shaping 
-                the future of technology and business.
+                Explore news by category to find the information most relevant to your interests
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {featuredNews.map((article, index) => (
-                <motion.article
-                  key={article.id}
+            <div className="flex flex-wrap justify-center gap-4">
+              {categories.map((category, index) => (
+                <motion.button
+                  key={category.name}
                   initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="bg-gray-800/30 backdrop-blur-xl rounded-3xl overflow-hidden border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 group"
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+                  className={`px-6 py-3 rounded-xl border transition-all duration-300 ${
+                    category.active
+                      ? 'bg-cyan-500/20 border-cyan-500/50 text-cyan-400'
+                      : 'bg-gray-900/50 border-cyan-500/20 text-gray-300 hover:border-cyan-500/40 hover:bg-gray-900/70'
+                  }`}
                 >
-                  <div className="relative h-64 bg-gradient-to-br from-purple-900/50 to-pink-900/50">
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-purple-500/80 text-white text-sm font-medium rounded-full">
-                        {article.category}
-                      </span>
-                    </div>
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors duration-300">
-                        {article.title}
-                      </h3>
-                      <p className="text-gray-200 text-sm leading-relaxed">
-                        {article.excerpt}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
-                      <div className="flex items-center">
-                        <User className="w-4 h-4 mr-2" />
-                        {article.author}
-                      </div>
-                      <div className="flex items-center">
-                        <Clock className="w-4 h-4 mr-2" />
-                        {article.readTime}
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <div className="text-gray-400 text-sm">
-                        <Calendar className="w-4 h-4 inline mr-2" />
-                        {formatDate(article.date)}
-                      </div>
-                      <button className="flex items-center text-purple-400 hover:text-purple-300 transition-colors duration-300 group">
-                        Read More
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                      </button>
-                    </div>
-                  </div>
-                </motion.article>
+                  <span className="font-medium">{category.name}</span>
+                  <span className="ml-2 text-sm opacity-70">({category.count})</span>
+                </motion.button>
               ))}
             </div>
           </div>
-        </section>
+        </div>
 
         {/* Latest News Section */}
-        <section className="py-20 px-4 bg-gray-900/50">
+        <div id="latest-news" className="relative z-10 pb-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Latest News
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                Latest News & Updates
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Stay current with our latest developments, research findings, 
-                and industry insights.
+                Discover our most recent breakthroughs and announcements
               </p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {latestNews.map((article, index) => (
+              {newsArticles.map((article, index) => (
                 <motion.article
-                  key={article.id}
+                  key={article.title}
                   initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="bg-gray-800/30 backdrop-blur-xl rounded-2xl overflow-hidden border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 group"
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+                  className="group"
                 >
-                  <div className="relative h-48 bg-gradient-to-br from-purple-900/50 to-pink-900/50">
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <div className="absolute top-3 left-3">
-                      <span className="px-2 py-1 bg-purple-500/80 text-white text-xs font-medium rounded-full">
-                        {article.category}
-                      </span>
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors duration-300 line-clamp-2">
-                      {article.title}
-                    </h3>
-                    <p className="text-gray-400 text-sm mb-4 line-clamp-3">
-                      {article.excerpt}
-                    </p>
-                    <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
-                      <div className="flex items-center">
-                        <User className="w-4 h-4 mr-2" />
-                        {article.author}
+                  <Link href={article.href} className="block">
+                    <div className="bg-gray-900/50 backdrop-blur-xl border border-cyan-500/20 rounded-2xl overflow-hidden hover:border-cyan-500/40 hover:bg-gray-900/70 transition-all duration-300 transform hover:scale-105">
+                      {/* Article Image */}
+                      <div className="relative h-48 bg-gradient-to-br from-gray-800 to-gray-900">
+                        <div className={`absolute inset-0 bg-gradient-to-br ${article.color} opacity-20`}></div>
+                        <div className="absolute top-4 left-4">
+                          <span className="inline-flex items-center space-x-2 bg-black/50 backdrop-blur-sm text-white text-sm px-3 py-1 rounded-full border border-white/20">
+                            <article.icon className="w-4 h-4" />
+                            <span>{article.category}</span>
+                          </span>
+                        </div>
                       </div>
-                      <div className="flex items-center">
-                        <Clock className="w-4 h-4 mr-2" />
-                        {article.readTime}
+                      
+                      {/* Article Content */}
+                      <div className="p-6">
+                        <div className="flex items-center space-x-4 text-sm text-gray-400 mb-4">
+                          <div className="flex items-center space-x-1">
+                            <Calendar className="w-4 h-4" />
+                            <span>{new Date(article.date).toLocaleDateString()}</span>
+                          </div>
+                          <div className="flex items-center space-x-1">
+                            <Clock className="w-4 h-4" />
+                            <span>{article.readTime}</span>
+                          </div>
+                        </div>
+                        
+                        <h3 className="text-xl font-bold mb-3 text-white group-hover:text-cyan-400 transition-colors line-clamp-2">
+                          {article.title}
+                        </h3>
+                        
+                        <p className="text-gray-300 mb-4 line-clamp-3">
+                          {article.excerpt}
+                        </p>
+                        
+                        <div className="flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors">
+                          <span className="font-medium">Read More</span>
+                          <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                        </div>
                       </div>
                     </div>
-                    <div className="flex items-center justify-between">
-                      <div className="text-gray-400 text-sm">
-                        <Calendar className="w-4 h-4 inline mr-2" />
-                        {formatDate(article.date)}
-                      </div>
-                      <button className="flex items-center text-purple-400 hover:text-purple-300 transition-colors duration-300 group">
-                        Read More
-                        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                      </button>
-                    </div>
-                  </div>
+                  </Link>
                 </motion.article>
               ))}
             </div>
           </div>
-        </section>
+        </div>
 
-        {/* Newsletter Section */}
-        <section className="py-20 px-4">
+        {/* Newsletter Signup */}
+        <div className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="bg-gradient-to-r from-purple-900/30 to-pink-900/30 rounded-3xl p-12 border border-purple-500/30"
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
+              className="bg-gray-900/50 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-12"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Stay Updated
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                Stay in the Loop
               </h2>
               <p className="text-xl text-gray-300 mb-8">
-                Get the latest news, insights, and breakthroughs delivered directly 
-                to your inbox. Never miss an important update.
+                Subscribe to our newsletter for the latest updates, breakthroughs, and insights
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 px-6 py-4 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-purple-500/50 focus:ring-2 focus:ring-purple-500/20"
+                  className="flex-1 px-6 py-4 bg-gray-800/50 border border-cyan-500/30 rounded-xl text-white placeholder-gray-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none"
                 />
-                <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold rounded-xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105">
+                <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25">
                   Subscribe
                 </button>
               </div>
-              <p className="text-sm text-gray-400 mt-4">
-                We respect your privacy. Unsubscribe at any time.
-              </p>
             </motion.div>
           </div>
-        </section>
+        </div>
+
+        {/* Contact Section */}
+        <div className="relative z-10 py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
+            >
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                Have Questions?
+              </h2>
+              <p className="text-xl text-gray-300 mb-8">
+                Get in touch with our team for more information about our latest innovations
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div className="flex items-center justify-center space-x-3">
+                  <Phone className="w-6 h-6 text-cyan-400" />
+                  <span className="text-gray-300">{contactInfo.mobile}</span>
+                </div>
+                <div className="flex items-center justify-center space-x-3">
+                  <Mail className="w-6 h-6 text-cyan-400" />
+                  <span className="text-gray-300">{contactInfo.email}</span>
+                </div>
+                <div className="flex items-center justify-center space-x-3">
+                  <MapPin className="w-6 h-6 text-cyan-400" />
+                  <span className="text-gray-300">{contactInfo.address}</span>
+                </div>
+              </div>
+              
+              <Link 
+                href="/contact"
+                className="inline-flex items-center space-x-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-black font-semibold px-8 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25"
+              >
+                <span>Contact Us Today</span>
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </motion.div>
+          </div>
+        </div>
       </div>
-    </Layout>
+    </>
   );
 };
 
