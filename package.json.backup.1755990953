@@ -161,6 +161,8 @@
     "mcp:monitor": "node automation/mcp-integration-orchestrator.js performance-monitor",
     "mcp:status": "node automation/mcp-integration-orchestrator.js status",
     "mcp:test": "node simple-mcp-test.js",
+<<<<<<< HEAD
+=======
     "redundancy:start": "./automation/start-redundancy-system.sh start",
     "redundancy:stop": "./automation/start-redundancy-system.sh stop",
     "redundancy:restart": "./automation/start-redundancy-system.sh restart",
@@ -170,6 +172,7 @@
     "redundancy:github": "node automation/redundancy/github-actions-redundancy-manager.cjs",
     "redundancy:netlify": "node automation/redundancy/netlify-functions-redundancy-manager.cjs",
     "redundancy:orchestrator": "node automation/master-redundancy-orchestrator.cjs",
+>>>>>>> origin/cursor/build-and-fix-errors-008f
     "google-docs:start": "node automation/launch-google-docs-automation.js",
     "google-docs:dev": "nodemon automation/launch-google-docs-automation.js",
     "google-docs:status": "node automation/check-google-docs-status.js",
@@ -244,6 +247,32 @@
     "automation:guardian": "node automation/automation-guardian-10min.cjs",
     "automation:cloud": "node automation/cloud-autonomous-orchestrator.cjs",
     "automation:discover": "node automation/auto-discovery-runner.cjs",
+<<<<<<< HEAD
+    "redundancy:start": "node automation/redundancy/master-redundancy-orchestrator.cjs start",
+    "redundancy:stop": "node automation/redundancy/master-redundancy-orchestrator.cjs stop",
+    "redundancy:status": "node automation/redundancy/master-redundancy-orchestrator.cjs status",
+    "redundancy:health": "node automation/redundancy/master-redundancy-orchestrator.cjs health",
+    "redundancy:report": "node automation/redundancy/master-redundancy-orchestrator.cjs report",
+    "redundancy:pm2:start": "node automation/redundancy/pm2-redundancy-manager.cjs start",
+    "redundancy:pm2:stop": "node automation/redundancy/pm2-redundancy-manager.cjs stop",
+    "redundancy:pm2:status": "node automation/redundancy/pm2-redundancy-manager.cjs status",
+    "redundancy:github:start": "node automation/redundancy/github-actions-redundancy.cjs start",
+    "redundancy:github:stop": "node automation/redundancy/github-actions-redundancy.cjs stop",
+    "redundancy:github:status": "node automation/redundancy/github-actions-redundancy.cjs status",
+    "redundancy:netlify:start": "node automation/redundancy/netlify-functions-redundancy.cjs start",
+    "redundancy:netlify:stop": "node automation/redundancy/netlify-functions-redundancy.cjs stop",
+    "redundancy:netlify:status": "node automation/redundancy/netlify-functions-redundancy.cjs status",
+    "redundancy:test": "node automation/redundancy/pm2-redundancy-sync.cjs && node automation/redundancy/marketing-sync-redundancy.cjs",
+    "redundancy:restart": "./automation/start-redundancy-system.sh restart",
+    "redundancy:logs": "./automation/start-redundancy-system.sh logs",
+    "redundancy:system": "node automation/redundancy-automation-system.cjs",
+    "redundancy:git-sync": "node automation/redundancy-git-sync.cjs",
+    "redundancy:build": "node automation/redundancy-build-monitor.cjs",
+    "redundancy:pm2:legacy": "pm2 start ecosystem.redundancy.cjs",
+    "redundancy:pm2:legacy:stop": "pm2 stop ecosystem.redundancy.cjs",
+    "redundancy:pm2:legacy:restart": "pm2 restart ecosystem.redundancy.cjs",
+    "redundancy:pm2:legacy:status": "pm2 status",
+=======
     "redundancy:system": "node automation/redundancy-automation-system.cjs",
     "redundancy:health": "./automation/start-redundancy-system.sh health",
     "redundancy:git-sync": "node automation/redundancy-git-sync.cjs",
@@ -251,6 +280,7 @@
     "redundancy:pm2:stop": "pm2 stop ecosystem.redundancy.cjs",
     "redundancy:pm2:restart": "pm2 restart ecosystem.redundancy.cjs",
     "redundancy:pm2:status": "pm2 status",
+>>>>>>> origin/cursor/build-and-fix-errors-008f
     "automation:improvement:dev": "nodemon automation/continuous-automation-improvement-system.js",
     "automation:coordinator": "node automation/master-automation-coordinator.js",
     "automation:coordinator:dev": "nodemon automation/master-automation-coordinator.js",
@@ -363,6 +393,19 @@
     "alignment:start": "node automation/alignment-orchestrator.cjs",
     "alignment:cron:start": "bash automation/alignment-cron.sh",
     "alignment:scan": "node automation/chat-fetcher.cjs && (node automation/google-doc-fetcher.cjs || true) && node automation/alignment-crawler.cjs && node automation/alignment-analyzer.cjs && node automation/alignment-factory.cjs && node automation/alignment-dev-factory.cjs",
+<<<<<<< HEAD
+          "postautomation": "npm run automation:git-sync",
+      "lint:staged": "lint-staged",
+      "performance:audit": "node automation/performance-audit.cjs",
+      "nextgen:factory": "node automation/nextgen-autonomous-factory.cjs scan",
+      "nextgen:orchestrator": "node automation/nextgen-orchestrator.cjs start",
+      "nextgen:scan": "node automation/nextgen-autonomous-factory.cjs scan",
+      "nextgen:cron:start": "bash automation/nextgen-cron.sh start",
+      "nextgen:cron:stop": "bash automation/nextgen-cron.sh stop",
+      "nextgen:cron:status": "bash automation/nextgen-cron.sh status",
+      "nextgen:scheduler": "node automation/nextgen-scheduler.cjs"
+    },
+=======
     "maintenance:run": "node automation/site-maintenance-orchestrator.cjs",
     "maintenance:cron:start": "bash automation/site-maintenance-cron.sh start",
     "maintenance:cron:stop": "bash automation/site-maintenance-cron.sh stop",
@@ -493,6 +536,7 @@
     "master:status": "node automation/master-automation-launcher.cjs status",
     "master:report": "node automation/master-automation-launcher.cjs report"
   },
+>>>>>>> origin/cursor/build-and-fix-errors-008f
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
     "@google/generative-ai": "^0.24.1",
@@ -510,7 +554,11 @@
     "child_process": "^1.0.2",
     "chokidar": "^4.0.3",
     "cron-parser": "^5.3.0",
+<<<<<<< HEAD
+    "ethers": "^5.8.0",
+=======
     "dotenv": "^17.2.1",
+>>>>>>> origin/cursor/build-and-fix-errors-008f
     "events": "^3.3.0",
     "firebase": "^12.1.0",
     "firebase-admin": "^13.4.0",
@@ -521,8 +569,12 @@
     "html2canvas": "^1.4.1",
     "https": "^1.0.0",
     "import-fresh": "^3.3.1",
+<<<<<<< HEAD
+    "jspdf": "^3.0.1",
+=======
     "js-yaml": "^4.1.0",
     "jsdom": "^24.1.0",
+>>>>>>> origin/cursor/build-and-fix-errors-008f
     "lucide-react": "^0.536.0",
     "marked": "^16.1.2",
     "next": "^11.1.4",
