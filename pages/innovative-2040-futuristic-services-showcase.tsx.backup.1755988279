@@ -39,11 +39,19 @@ interface Service {
   marketSize?: string;
   growthRate?: string;
   contactInfo?: {
+<<<<<<< HEAD
+    phone?: string;
+    mobile?: string;
+    email: string;
+    address?: string;
+    website: string;
+=======
     mobile?: string;
     email?: string;
     address?: string;
     website?: string;
     phone?: string;
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-1a50
   };
   realImplementation?: boolean | string;
   implementationDetails?: string;

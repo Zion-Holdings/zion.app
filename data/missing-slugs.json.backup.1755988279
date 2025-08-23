@@ -43,8 +43,11 @@
   "quantum-risk-financial-manager",
   "quantum-supply-chain-optimizer",
   "quantum-threat-detection",
+<<<<<<< HEAD
+=======
   "real-estate-technology-solutions",
   "services",
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-1a50
   "services/data-contracts-hub",
   "services/serverless-lakehouse-starter",
   "space-data-analytics",
