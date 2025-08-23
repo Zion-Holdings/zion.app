@@ -132,11 +132,21 @@ import { marketReadyServices } from '../data/market-ready-services';
 import { marketValidatedServices } from '../data/market-validated-services';
 import { industryRealServices } from '../data/industry-real-services';
 
+<<<<<<< HEAD
+// Import our new 2025 innovative services
+import { advancedCybersecurityAutomationServices } from '../data/2025-advanced-cybersecurity-automation';
+import { aiPoweredBusinessAutomationServices } from '../data/2025-ai-powered-business-automation';
+import { advancedCloudDevOpsSolutions } from '../data/2025-advanced-cloud-devops-solutions';
+import { advancedDataAnalyticsSolutions } from '../data/2025-advanced-data-analytics-solutions';
+import { fintechBlockchainInnovations } from '../data/2025-fintech-blockchain-innovations';
+import { healthcareBiotechInnovations } from '../data/2025-healthcare-biotech-innovations';
+=======
 // Import our new 2025 advanced services
 import { advancedCybersecurityMicroSaasServices } from '../data/2025-advanced-cybersecurity-micro-saas';
 import { advancedAIMLMicroSaasServices } from '../data/2025-advanced-ai-ml-micro-saas';
 import { fintechBlockchainMicroSaasServices } from '../data/2025-fintech-blockchain-micro-saas';
 import { healthcareBiotechMicroSaasServices } from '../data/2025-healthcare-biotech-micro-saas';
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-ab50
 
 // Helper function to get service category
 const getServiceCategory = (service: any) => {
@@ -297,12 +307,19 @@ const allServices = [
   // Our new 2025 advanced enterprise services
   ...advancedEnterpriseServices,
   ...cuttingEdgeITInfrastructureServices,
+<<<<<<< HEAD
+  // Our new 2025 advanced real micro SAAS expansion
+  ...advancedRealMicroSaasExpansion2025,
+  ...emergingTechBreakthroughServices2025,
+  ...practicalBusinessSolutions2025
+=======
   
   // Our new 2025 advanced specialized services
   ...advancedCybersecurityMicroSaasServices,
   ...advancedAIMLMicroSaasServices,
   ...fintechBlockchainMicroSaasServices,
   ...healthcareBiotechMicroSaasServices
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-ab50
 ];
 
 const categories = [
@@ -503,6 +520,13 @@ const categories = [
     description: 'Advanced security and threat protection'
   },
   {
+<<<<<<< HEAD
+    id: 'data-analytics',
+    name: 'Data Analytics',
+    icon: <Cpu className="w-6 h-6" />,
+    color: 'from-cyan-500 to-blue-500',
+    description: 'Intelligent data analysis and insights'
+=======
     id: 'ai-ml',
     name: 'AI & Machine Learning',
     icon: <Brain className="w-6 h-6" />,
@@ -515,6 +539,7 @@ const categories = [
     icon: <Target className="w-6 h-6" />,
     color: 'from-green-500 to-emerald-600',
     description: 'Financial technology and blockchain solutions'
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-ab50
   }
 ];
 
@@ -554,6 +579,31 @@ export default function Services() {
     
     if (selectedCategory === 'all') return matchesSearch;
     
+<<<<<<< HEAD
+    const serviceCategory = getServiceCategory(service).toLowerCase();
+    
+    // Handle new category mappings
+    const categoryMappings: { [key: string]: string[] } = {
+      'ai-business-intelligence': ['AI Services', 'AI & Business Intelligence'],
+      'cybersecurity-compliance': ['Cybersecurity', 'Compliance'],
+      'cloud-devops': ['Cloud & DevOps', 'IT Infrastructure'],
+      'digital-transformation': ['Digital Transformation'],
+      'healthcare-biotech': ['Healthcare & Biotech'],
+      'fintech': ['Fintech'],
+      'sustainability-green-tech': ['Sustainability & Green Tech'],
+      'space-tech-aerospace': ['Space Technology', 'Aerospace'],
+      'quantum-computing': ['Quantum Computing']
+    };
+    
+    if (categoryMappings[selectedCategory]) {
+      const matchesCategory = categoryMappings[selectedCategory].some(cat => 
+        serviceCategory.includes(cat.toLowerCase())
+      );
+      return matchesSearch && matchesCategory;
+    }
+    
+    const categoryName = categories.find(cat => cat.id === selectedCategory)?.name.toLowerCase();
+=======
     const serviceCategory = getServiceDescription(service).toLowerCase();
     const categoryName = categories.find(cat => cat.id === selectedCategory)?.name.toLowerCase();
     
@@ -600,6 +650,7 @@ export default function Services() {
     }
     
     // Default category matching
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-ab50
     return matchesSearch && serviceCategory.includes(categoryName || '');
   });
 
