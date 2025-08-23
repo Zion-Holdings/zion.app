@@ -4,7 +4,13 @@ import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, Trend
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
+<<<<<<< HEAD
+import UltraFuturisticCard from '../components/ui/UltraFuturisticCard';
+import { enhancedRealMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/enhanced-real-micro-saas-services';
+import { motion } from 'framer-motion';
+=======
 import { enhancedMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/enhanced-micro-saas-services';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-e0c7
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -206,6 +212,18 @@ export default function ServicesPage() {
   ];
 
   return (
+<<<<<<< HEAD
+    <UltraAdvancedFuturisticBackground variant="holographic-matrix">
+      <Head>
+        <title>Micro SaaS Services - Zion Tech Group | 200+ Revolutionary Solutions</title>
+        <meta name="description" content="Explore 200+ revolutionary micro SaaS services powered by quantum computing, AI, blockchain, and cutting-edge technology. Transform your business today." />
+        <meta name="keywords" content="micro SaaS services, quantum AI, autonomous systems, blockchain, DeFi, IoT, cybersecurity, space technology" />
+        <meta property="og:title" content="Micro SaaS Services - Zion Tech Group" />
+        <meta property="og:description" content="200+ revolutionary micro SaaS services for modern businesses" />
+        <meta property="og:url" content="https://ziontechgroup.com/services" />
+        <link rel="canonical" href="https://ziontechgroup.com/services" />
+      </Head>
+=======
     <UltraFuturisticBackground variant="neural" intensity="high">
       <div className="min-h-screen">
         <Head>
@@ -219,6 +237,7 @@ export default function ServicesPage() {
           <meta property="og:type" content="website" />
           <link rel="canonical" href="https://ziontechgroup.com/services" />
         </Head>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-e0c7
 
       {/* Hero Section */}
       <section className="relative pt-20 pb-16 px-4 sm:px-6 lg:px-8">
@@ -425,6 +444,15 @@ export default function ServicesPage() {
                   </select>
                 </div>
 
+<<<<<<< HEAD
+                {/* Sort By Filter */}
+                <div>
+                  <label className="block text-sm font-medium text-white mb-2">Sort By</label>
+                  <select
+                    value={sortBy}
+                    onChange={(e) => setSortBy(e.target.value)}
+                    className="w-full px-3 py-2 bg-black/30 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
+=======
             {/* Results Count */}
             <div className="text-center mb-8">
               <p className="text-gray-300">
@@ -439,6 +467,7 @@ export default function ServicesPage() {
                   <Card
                     key={service.id}
                     className="futuristic-card hover:scale-105 transition-all duration-300"
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-e0c7
                   >
                     {sortOptions.map(option => (
                       <option key={option.value} value={option.value}>{option.label}</option>
@@ -637,9 +666,16 @@ export default function ServicesPage() {
                 </div>
               </div>
             </div>
+<<<<<<< HEAD
+          </motion.div>
+        </div>
+      </section>
+    </UltraAdvancedFuturisticBackground>
+=======
           </div>
         </section>
       </div>
     </UltraFuturisticBackground>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-e0c7
   );
 }

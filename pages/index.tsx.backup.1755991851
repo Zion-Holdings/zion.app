@@ -1,11 +1,31 @@
 import React from 'react';
 import Head from 'next/head';
+<<<<<<< HEAD
+import { 
+  Shield, Rocket, Clock, DollarSign, TrendingUp, Brain, Factory, Globe, 
+  Zap, Link, Building2, FlaskConical, Leaf, Car, Truck, Microscope, 
+  GraduationCap, ShieldCheck, Globe2, Cloud, Cpu, Database, Lock, 
+  Smartphone, Palette, Search, MessageSquare, FileText, Calendar, 
+  CreditCard, BarChart3, Code, BookOpen, Activity, Settings, Mail, 
+  Phone, MapPin, Sparkles, Atom, Eye, Trophy, Dna, ArrowRight, 
+  ExternalLink, Star, Users, ChevronRight, Play, Check, CpuIcon, 
+  BrainCircuit, Network, Satellite, ShieldAlert, FlaskConicalIcon,
+  RocketIcon, GlobeIcon, CpuIcon as CpuIcon2, Target, Award, 
+  Lightbulb, ShieldX, Zap as ZapIcon, BarChart
+} from 'lucide-react';
+import Button from '../components/ui/Button';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import UltraAdvancedFuturisticCard from '../components/ui/UltraAdvancedFuturisticCard';
+import { motion } from 'framer-motion';
+import { enhancedRealMicroSaasServices, getServicesByCategory, getPopularServices, serviceCategories } from '../data/enhanced-real-micro-saas-services';
+=======
 import Hero from '../components/sections/Hero';
 import Features from '../components/sections/Features';
 import UltraFuturisticCard from '../components/ui/UltraFuturisticCard';
 import Button from '../components/ui/Button';
 import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
 import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, ExternalLink, Star, Users, Globe, Lock, Rocket, Cpu, Database, TrendingUp, Clock, Target, Building, Award, DollarSign, ChartBar, Code, BookOpen, Activity, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, Settings, BookOpen as BookOpenIcon, Activity as ActivityIcon, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Sparkles, Atom, Brain, Eye, Shield as ShieldIcon, Zap as ZapIcon, Globe as GlobeIcon, Cpu as CpuIcon, Cloud as CloudIcon, Bot as BotIcon, Lock as LockIcon, BarChart3 as BarChart3Icon, TrendingUp as TrendingUpIcon, Users as UsersIcon, Award as AwardIcon, Star as StarIcon, Check as CheckIcon, ArrowRight as ArrowRightIcon, ExternalLink as ExternalLinkIcon, Phone as PhoneIcon, Mail as MailIcon, MapPin as MapPinIcon } from 'lucide-react';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-e0c7
 
 export default function HomePage() {
   const heroStats = [
@@ -172,6 +192,17 @@ export default function HomePage() {
     },
     {
       icon: '🌐',
+<<<<<<< HEAD
+      title: 'Unified Platform',
+      description: 'Access all services through ziontechgroup.com with single sign-on and integrated billing.',
+      color: 'from-teal-500 to-cyan-600'
+    },
+    {
+      icon: '🎯',
+      title: 'Focused Solutions',
+      description: 'Specialized tools that do one thing exceptionally well, without enterprise complexity.',
+      color: 'from-rose-500 to-pink-600'
+=======
       title: 'Blockchain & Web3',
       description: 'Decentralized solutions for NFTs, DeFi, and the future of digital ownership.',
       color: 'bg-gradient-to-br from-purple-500 to-violet-600',
@@ -240,10 +271,25 @@ export default function HomePage() {
       color: 'from-cyan-600 to-blue-600',
       link: 'https://ziontechgroup.com/autonomous-ai-agents',
       contactInfo: contactInfo
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-e0c7
     }
   ];
 
   return (
+<<<<<<< HEAD
+    <UltraAdvancedFuturisticBackground variant="quantum-entanglement">
+      <Head>
+        <title>Zion Tech Group - Revolutionary Micro SaaS Services | Quantum AI, Autonomous Systems, Blockchain</title>
+        <meta name="description" content="Discover 200+ revolutionary micro SaaS services powered by quantum computing, AI, and cutting-edge technology. Transform your business with our innovative solutions." />
+        <meta name="keywords" content="micro SaaS, quantum AI, autonomous systems, blockchain, DeFi, IoT, cybersecurity, space technology, metaverse" />
+        <meta name="author" content="Zion Tech Group" />
+        <meta property="og:title" content="Zion Tech Group - Revolutionary Micro SaaS Services" />
+        <meta property="og:description" content="200+ cutting-edge micro SaaS services powered by quantum computing and AI" />
+        <meta property="og:url" content="https://ziontechgroup.com" />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://ziontechgroup.com" />
+      </Head>
+=======
     <UltraFuturisticBackground variant="neural" intensity="extreme">
       <div className="min-h-screen">
         <Head>
@@ -257,6 +303,7 @@ export default function HomePage() {
           <meta property="og:type" content="website" />
           <link rel="canonical" href="https://ziontechgroup.com" />
         </Head>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-e0c7
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8">
@@ -398,6 +445,16 @@ export default function HomePage() {
             </p>
           </motion.div>
 
+<<<<<<< HEAD
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {marketInsights.map((insight, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+=======
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {platformFeatures.map((feature, index) => (
                 <UltraFuturisticCard
@@ -473,6 +530,7 @@ export default function HomePage() {
                 href="/services"
                 variant="primary"
                 size="lg"
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-e0c7
                 className="group"
               >
                 <div className={`p-8 rounded-2xl bg-gradient-to-br ${insight.color} bg-opacity-10 border border-white/10 backdrop-blur-sm group-hover:scale-105 transition-all duration-300`}>
@@ -723,6 +781,11 @@ export default function HomePage() {
                   <Phone className="w-4 h-4" />
                   <span>{contactInfo.mobile}</span>
                 </div>
+<<<<<<< HEAD
+                <div className="flex items-center justify-center gap-2 text-purple-400">
+                  <Mail className="w-4 h-4" />
+                  <span>{contactInfo.email}</span>
+=======
               ))}
             </div>
           </div>
@@ -817,6 +880,7 @@ export default function HomePage() {
                     <div className="text-sm text-gray-400">Address</div>
                     <div className="text-white font-medium text-sm">{contactInfo.address}</div>
                   </div>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-e0c7
                 </div>
                 <div className="flex items-center justify-center gap-2 text-green-400">
                   <MapPin className="w-4 h-4" />
@@ -824,9 +888,17 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
+<<<<<<< HEAD
+          </motion.div>
+        </div>
+      </section>
+      </UltraFuturisticBackground>
+    </div>
+=======
           </div>
         </section>
       </div>
     </UltraFuturisticBackground>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-e0c7
   );
 }
