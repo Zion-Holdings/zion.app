@@ -126,7 +126,7 @@ const ContactPage: React.FC = () => {
       <SEO 
         title="Contact Us | Zion Tech Group"
         description="Get in touch with Zion Tech Group for innovative technology solutions. Contact our experts for AI, quantum computing, space technology, and IT services."
-        keywords="contact, Zion Tech Group, AI services, quantum technology, IT solutions, support"
+        keywords={["contact", "Zion Tech Group", "AI services", "quantum technology", "IT solutions", "support"]}
         image="https://ziontechgroup.com/og-image-contact.jpg"
       />
       <UltraAdvancedFuturisticBackground />
