@@ -1,11 +1,19 @@
 {
+<<<<<<< HEAD
+  "generatedAt": "2025-08-11T23:47:08.817Z",
+=======
   "generatedAt": "2025-08-11T23:46:05.969Z",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-1585
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
     "ai-changelog-runner",
     "ai-trends-radar-runner",
+<<<<<<< HEAD
+    "asset-inventory-runner",
+=======
     "auto-roadmap-runner",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-1585
     "auto-scheduler",
     "automation-health",
     "automation-matrix",
@@ -17,9 +25,13 @@
     "canonical-auditor",
     "cloud-swarm-committer",
     "cloud_orchestrator",
+<<<<<<< HEAD
+    "content-freshness-runner",
+=======
     "code-hotspots-radar",
     "component-api-docs-runner",
     "component-size-report",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-1585
     "continuous-front-runner",
     "continuous-orchestrator",
     "contributing-refresher",
