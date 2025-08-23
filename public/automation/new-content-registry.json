@@ -1,39 +1,25 @@
 {
-  "generatedAt": "2025-08-14T19:28:06.138Z",
+  "generatedAt": "2025-08-14T19:32:51.960Z",
   "items": [
     {
-      "title": "Reference Architecture — Autonomous Content Mesh",
-      "href": "/reports/blueprints/blueprint-2025-08-14-192806",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T19:28:06.106Z",
-      "source": "cloud-blueprint-factory"
-    },
-    {
-      "title": "Playbook — Autonomous Delivery",
-      "href": "/reports/playbooks/playbook-2025-08-14-192806",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T19:28:06.074Z",
-      "source": "cloud-playbook-factory"
-    },
-    {
       "title": "Case Study — Trigger Homepage",
-      "href": "/reports/cases/case-2025-08-14-192806",
+      "href": "/reports/cases/case-2025-08-14-193251",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T19:28:06.035Z",
+      "createdAt": "2025-08-14T19:32:51.921Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Guide — Cloud Improving Implementation",
-      "href": "/reports/guides/guide-2025-08-14-192806",
+      "href": "/reports/guides/guide-2025-08-14-193251",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T19:28:06.035Z",
+      "createdAt": "2025-08-14T19:32:51.921Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Cloud Improving Continuously",
-      "href": "/reports/patterns/pattern-2025-08-14-192806",
+      "href": "/reports/patterns/pattern-2025-08-14-193251",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T19:28:06.035Z",
+      "createdAt": "2025-08-14T19:32:51.921Z",
       "source": "cloud-deep-research-factory"
     }
   ]
