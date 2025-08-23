@@ -80,6 +80,15 @@ const Homepage2025: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
+<<<<<<< HEAD
+              Pioneering the future of technology with innovative solutions that drive business transformation
+            </motion.p>
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+=======
               {/* Company Badge */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -164,6 +173,7 @@ const Homepage2025: React.FC = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
               className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-b89c
             >
               <button 
                 className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyan-500/50"
