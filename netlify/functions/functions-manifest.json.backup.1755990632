@@ -1,30 +1,53 @@
 {
+<<<<<<< HEAD
+  "generatedAt": "2025-08-11T23:02:57.531Z",
+=======
   "generatedAt": "2025-08-11T23:32:28.739Z",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-87af
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
     "ai-changelog-runner",
+<<<<<<< HEAD
+    "ai-trends-radar-runner",
+    "asset-size-guardian",
+    "auto-redirect-mapper",
+    "auto-scheduler",
+    "automation-guardian-runner",
+=======
     "anchor-integrity-runner",
     "auto-discovery-runner",
     "auto-scheduler",
     "automation-atlas-runner",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-87af
     "automation-matrix",
     "autonomous-cloud-inventor",
     "autonomous-innovation-generator",
     "autonomous-invention-orchestrator",
+<<<<<<< HEAD
+    "autonomous-roadmap-synthesizer",
+=======
     "branch-cleanup-runner",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-87af
     "broken-image-scanner",
     "broken-image-scanner-runner",
     "canonical-auditor",
     "cloud-swarm-committer",
     "cloud_orchestrator",
+<<<<<<< HEAD
+    "content-freshness-auditor",
+=======
     "component-catalog-runner",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-87af
     "continuous-front-runner",
     "continuous-orchestrator",
     "contributing-refresher",
     "dead-code-audit",
     "dead-code-report",
+<<<<<<< HEAD
+=======
     "dependency-freshness-radar",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-87af
     "deps-auto-upgrade-runner",
     "design-tokens-curator",
     "docs-index-runner",
@@ -58,9 +81,13 @@
     "image-dimension-audit-runner",
     "image-optimizer-runner",
     "innovation-lab",
+<<<<<<< HEAD
+    "large-image-auditor",
+=======
     "internal-link-graph-runner",
     "internal-link-optimizer",
     "license-compliance-runner",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-87af
     "link-and-health-scheduler",
     "link-crawler",
     "link-sentinel-aggregator-runner",
@@ -69,11 +96,30 @@
     "marketing-and-features-promo",
     "marketing-scheduler",
     "media-og-and-optimize",
+<<<<<<< HEAD
+    "merge-conflict-auto-resolver",
+    "metadata-optimizer-runner",
+=======
     "meta-tags-audit-runner",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-87af
     "netlify-auto-healer-runner",
     "newsroom-auto-publisher",
     "newsroom-runner",
     "og-image-update-runner",
+<<<<<<< HEAD
+    "ops-consolidator",
+    "orphan-pages-detector",
+    "pagespeed-insights-runner",
+    "performance-budget-runner",
+    "readme-advertiser",
+    "redirect-healer",
+    "redirect-manager",
+    "repo-insights-digest",
+    "repo-knowledge-graph-runner",
+    "repo-radar-and-graph",
+    "repo-radar-runner",
+    "route-map-generator",
+=======
     "perf-budget-runner",
     "readme-advertiser",
     "redirect-healer",
@@ -82,6 +128,7 @@
     "repo-radar-and-graph",
     "repo-radar-runner",
     "revenue-ideas-orchestrator",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-87af
     "schedule-content-index",
     "schedule-homepage",
     "schedule-knowledge-graph",
@@ -93,7 +140,11 @@
     "seo-audit-runner",
     "seo-title-meta-curator",
     "site-crawler",
+<<<<<<< HEAD
+    "site-promo-orchestrator",
+=======
     "sitemap-prioritizer",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-87af
     "sitemap_runner",
     "smart-redirector",
     "stale-content-auditor-runner",
@@ -108,8 +159,20 @@
     "ui-evolution-beautify",
     "ultrafast-front-orchestrator",
     "ultrafast-orchestrator",
+<<<<<<< HEAD
+    "unused-media-scanner",
+    {
+      "name": "ops-consolidator",
+      "path": "netlify/functions/ops-consolidator.js"
+    },
+    {
+      "name": "automation-health",
+      "path": "netlify/functions/automation-health.js"
+    }
+=======
     "ux-a11y-auditor",
     "ux-heuristics-runner",
     "website-search-index-runner"
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-87af
   ]
 }

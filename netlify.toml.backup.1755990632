@@ -44,7 +44,11 @@
 
 [[scheduled.functions]]
   name = "front-enhancer"
+<<<<<<< HEAD
+  schedule = "*/5 * * * *"
+=======
   schedule = "*/10 * * * *" # every 10 minutes
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-87af
 
 [[scheduled.functions]]
   name = "front-index-orchestrator"
@@ -237,7 +241,19 @@
   name = "netlify-auto-healer-runner"
   schedule = "*/20 * * * *"
 
+<<<<<<< HEAD
+[[scheduled.functions]]
+  name = "unused-exports-runner"
+  schedule = "17 */12 * * *" # twice daily
+
+[[scheduled.functions]]
+  name = "content-gap-analyzer"
+  schedule = "13 */6 * * *" # every 6 hours
+
+# New intelligent cloud automations
+=======
 # Intelligent cloud automations
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-87af
 [[scheduled.functions]]
   name = "innovation-lab"
   schedule = "*/10 * * * *"
@@ -252,6 +268,8 @@
 
 [[scheduled.functions]]
   name = "auto-scheduler"
+<<<<<<< HEAD
+=======
   schedule = "*/15 * * * *" # every 15 minutes
 
 [[scheduled.functions]]
@@ -278,6 +296,7 @@
 # New background UX/perf and innovation
 [[scheduled.functions]]
   name = "ux-a11y-auditor"
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-87af
   schedule = "*/15 * * * *"
 
 [[scheduled.functions]]
@@ -285,8 +304,13 @@ name = "a11y-alt-text-runner"
 schedule = "*/10 * * * *" # every 10 minutes
 
 [[scheduled.functions]]
+<<<<<<< HEAD
+name = "metadata-optimizer-runner"
+schedule = "*/15 * * * *" # every 15 minutes
+=======
   name = "auto-discovery-runner"
   schedule = "*/30 * * * *" # every 30 minutes
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-87af
 
 [[scheduled.functions]]
 name = "seo-audit-runner"
@@ -313,9 +337,14 @@ schedule = "7 */12 * * *"
   schedule = "*/10 * * * *" # every 10 minutes
 
 [[scheduled.functions]]
+<<<<<<< HEAD
+  name = "repo-insights-digest"
+  schedule = "*/15 * * * *" # every 15 minutes
+=======
   name = "deps-auto-upgrade-runner"
   schedule = "7 */12 * * *"
 
 [[scheduled.functions]]
   name = "website-search-index-runner"
   schedule = "59 */6 * * *"
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-87af
