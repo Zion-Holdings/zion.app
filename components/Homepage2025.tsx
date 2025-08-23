@@ -259,26 +259,23 @@ const Homepage2025: React.FC = () => {
               Zion Tech Group delivers cutting-edge AI, quantum computing, and space technology solutions that transform businesses and drive innovation across industries.
             </motion.p>
 
-            {/* Enhanced Search Bar */}
-            <motion.div
-              variants={fadeInUp}
-              className="relative max-w-2xl mx-auto mb-8"
-            >
-              <form onSubmit={handleSearch} className="relative">
-                <div className="relative">
-                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400" />
-                  <input
-                    type="text"
-                    placeholder="Search our services, solutions, or expertise..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    onFocus={() => setIsSearchFocused(true)}
-                    onBlur={() => setTimeout(() => setIsSearchFocused(false), 200)}
-                    className="w-full pl-14 pr-6 py-4 bg-white/10 border border-white/20 rounded-full text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent backdrop-blur-sm transition-all duration-300"
-                  />
+                <motion.div 
+                  className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-12"
+                  variants={fadeInUp}
+                >
                   <button 
-                    type="submit"
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-6 py-2 rounded-full hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300 hover:scale-105"
+                    className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 flex items-center justify-center gap-2 focus:outline-none focus:ring-4 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+                    aria-label="Get started with Zion Tech Group services"
+                    onClick={() => window.location.href = '/get-started'}
+                  >
+                    Get Started
+                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+                  </button>
+                  
+                  <button 
+                    className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2 focus:outline-none focus:ring-4 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-gray-900"
+                    aria-label="Learn more about Zion Tech Group"
+                    onClick={() => window.location.href = '/about'}
                   >
                     Search
                   </button>
@@ -683,10 +680,10 @@ const Homepage2025: React.FC = () => {
               exit={{ opacity: 0, scale: 0.8, x: -100 }}
               className="fixed bottom-24 left-4 z-50"
             >
-              <Link
-                href="/contact"
-                className="bg-gradient-to-r from-cyan-500 to-purple-600 text-white p-4 rounded-full shadow-2xl shadow-cyan-500/25 hover:scale-110 transition-all duration-300 flex items-center justify-center"
-                aria-label="Quick Contact"
+              <button 
+                className="w-full sm:w-auto px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 focus:outline-none focus:ring-4 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+                onClick={() => window.location.href = '/contact'}
+                aria-label="Start your digital transformation journey with Zion Tech Group"
               >
                 <MessageCircle className="w-6 h-6" />
               </Link>

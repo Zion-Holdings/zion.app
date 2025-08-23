@@ -4,41 +4,74 @@ import { ArrowRight } from 'lucide-react';
 
 interface ServiceCardProps {
   service: {
-    name: string;
-    tagline: string;
+    id: string;
+    title: string;
+    description: string;
     icon: React.ComponentType<{ className?: string }>;
-    href: string;
     color: string;
+    price: string;
+    features: string[];
+    ariaLabel: string;
   };
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
+  const IconComponent = service.icon;
+
   return (
     <motion.div
-      className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 p-6 cursor-pointer hover:border-white/20 transition-all duration-300"
-      whileHover={{ y: -10, scale: 1.02 }}
-      onClick={() => window.location.href = service.href}
-      role="button"
-      tabIndex={0}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          window.location.href = service.href;
-        }
-      }}
-      aria-label={`Learn more about ${service.name}`}
+      className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl p-8 border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:transform hover:scale-105 group"
+      whileHover={{ y: -5 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
     >
-      <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
-      <div className="relative">
-        <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${service.color} p-3 mb-6`}>
-          <service.icon className="w-full h-full text-white" aria-hidden="true" />
+      <div className="flex items-center mb-4">
+        <div className={`w-12 h-12 bg-gradient-to-r ${service.color} rounded-lg flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300`}>
+          <IconComponent className="w-6 h-6 text-white" aria-hidden="true" />
         </div>
-        <h3 className="text-xl font-semibold text-white mb-4">{service.name}</h3>
-        <p className="text-gray-300 leading-relaxed text-base">{service.tagline}</p>
-        <div className="mt-6 flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors">
-          <span className="text-sm font-medium">Learn More</span>
-          <ArrowRight className="w-4 h-4 ml-3 group-hover:translate-x-2 transition-transform" />
+        <div>
+          <h3 className="text-xl font-semibold text-white group-hover:text-cyan-400 transition-colors duration-300">
+            {service.title}
+          </h3>
+          <p className="text-cyan-400 font-medium">{service.price}</p>
         </div>
       </div>
+      
+      <p className="text-gray-300 mb-6 leading-relaxed">{service.description}</p>
+      
+      <div className="space-y-3 mb-6">
+        {service.features.map((feature, index) => (
+          <div key={index} className="flex items-center">
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="24" 
+              height="24" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="2" 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" 
+              aria-hidden="true"
+            >
+              <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+              <path d="m9 11 3 3L22 4"></path>
+            </svg>
+            <span className="text-gray-300 text-sm">{feature}</span>
+          </div>
+        ))}
+      </div>
+      
+      <a 
+        className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors font-medium group-hover:gap-2"
+        href={`/services/${service.id}`}
+        aria-label={service.ariaLabel}
+      >
+        Learn More
+        <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+      </a>
     </motion.div>
   );
 };

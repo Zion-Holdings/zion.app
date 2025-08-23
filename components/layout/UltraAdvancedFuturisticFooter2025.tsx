@@ -361,13 +361,14 @@ const UltraAdvancedFuturisticFooter2025: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Enhanced Bottom Bar */}
-        <motion.div 
-          className="border-t border-gray-800/50"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.8 }}
+      {/* Floating Contact Button */}
+      <div className="fixed bottom-6 right-6 z-40">
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="p-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+          onClick={() => window.location.href = '/contact'}
+          aria-label="Quick contact Zion Tech Group"
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">

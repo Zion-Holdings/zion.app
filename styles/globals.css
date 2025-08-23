@@ -214,41 +214,26 @@
   grid-template-columns: 1fr !important;
 }
 
-.large-text .grid-cols-4 {
-  grid-template-columns: 1fr 1fr !important;
+/* Focus Styles */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-black;
 }
 
-@media (min-width: 768px) {
-  .large-text .grid-cols-2 {
-    grid-template-columns: 1fr 1fr !important;
-  }
-  
-  .large-text .grid-cols-3 {
-    grid-template-columns: 1fr 1fr !important;
-  }
-  
-  .large-text .grid-cols-4 {
-    grid-template-columns: 1fr 1fr 1fr 1fr !important;
-  }
+.focus-ring-cyan {
+  @apply focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-black;
 }
 
-/* Accessibility Announcements */
-[aria-live="polite"] {
-  position: absolute;
-  left: -10000px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+/* Button Styles */
+.btn-primary {
+  @apply px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-black;
 }
 
-/* Focus Management */
-.focus-trap {
-  outline: none;
+.btn-secondary {
+  @apply px-6 py-3 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-black;
 }
 
-.focus-trap:focus {
-  outline: 3px solid var(--primary-color);
-  outline-offset: 2px;
+.btn-ghost {
+  @apply px-6 py-3 text-gray-300 hover:text-white transition-colors duration-200 font-medium focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-black rounded-lg;
 }
 
 /* High Contrast Scrollbars */
@@ -261,9 +246,9 @@
   border: 2px solid #ffffff;
 }
 
-.high-contrast ::-webkit-scrollbar-thumb {
-  background: #ffffff;
-  border-radius: 8px;
+/* Input Styles */
+.input-primary {
+  @apply px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all duration-200;
 }
 
 .high-contrast ::-webkit-scrollbar-thumb:hover {
