@@ -1,12 +1,10 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
+import React from 'react';
 
-const BlockchainSolutions: NextPage = () => (
-  <div className="py-10">
-    <Head><title>Blockchain Solutions - Zion</title></Head>
-    <h1 className="text-2xl font-semibold text-white">Blockchain Solutions</h1>
-    <p className="text-white/80 mt-2">Details coming soon.</p>
-  </div>
-);
-
-export default BlockchainSolutions;
+export default function BlockchainSolutionsPage() {
+  return (
+    <div className="container mx-auto px-4 py-10">
+      <h1 className="text-2xl font-semibold">Blockchain Solutions</h1>
+      <p className="mt-2 text-gray-600 dark:text-gray-300">Content coming soon.</p>
+    </div>
+  );
+}

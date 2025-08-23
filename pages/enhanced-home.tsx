@@ -1,12 +1,10 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
+import React from 'react';
 
-const EnhancedHome: NextPage = () => (
-  <div className="py-10">
-    <Head><title>Enhanced Home - Zion</title></Head>
-    <h1 className="text-2xl font-semibold text-white">Enhanced Home</h1>
-    <p className="text-white/80 mt-2">Enhanced homepage coming soon.</p>
-  </div>
-);
-
-export default EnhancedHome;
+export default function EnhancedHomePage() {
+  return (
+    <div className="container mx-auto px-4 py-10">
+      <h1 className="text-2xl font-semibold">Enhanced Home</h1>
+      <p className="mt-2 text-gray-600 dark:text-gray-300">Enhanced UI coming soon.</p>
+    </div>
+  );
+}

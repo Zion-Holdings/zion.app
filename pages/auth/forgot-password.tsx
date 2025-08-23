@@ -1,8 +1,10 @@
-export default function ForgotPassword() {
+import React from 'react';
+
+export default function ForgotPasswordPage() {
   return (
-    <div className="py-10">
-      <h1 className="text-2xl font-semibold text-white">Forgot Password</h1>
-      <p className="text-white/80 mt-2">Reset link flow coming soon.</p>
+    <div className="container mx-auto px-4 py-10">
+      <h1 className="text-2xl font-semibold">Forgot Password</h1>
+      <p className="mt-2 text-gray-600 dark:text-gray-300">Enter your email to reset your password.</p>
     </div>
   );
 }

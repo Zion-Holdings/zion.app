@@ -1,12 +1,10 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
+import React from 'react';
 
-const IoTPlatforms: NextPage = () => (
-  <div className="py-10">
-    <Head><title>IoT Platforms - Zion</title></Head>
-    <h1 className="text-2xl font-semibold text-white">IoT Platforms</h1>
-    <p className="text-white/80 mt-2">Content coming soon.</p>
-  </div>
-);
-
-export default IoTPlatforms;
+export default function IotPlatformsPage() {
+  return (
+    <div className="container mx-auto px-4 py-10">
+      <h1 className="text-2xl font-semibold">IoT Platforms</h1>
+      <p className="mt-2 text-gray-600 dark:text-gray-300">Content coming soon.</p>
+    </div>
+  );
+}
