@@ -477,37 +477,58 @@ const MarketPricing: React.FC = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20 bg-black/50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                Get Market-Competitive Pricing
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
-                Contact us for a customized quote that reflects your business needs and market positioning.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-600 text-white font-semibold rounded-2xl hover:from-purple-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
-                >
-                  Request Custom Quote
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Link>
-                <a
-                  href="tel:+13024640950"
-                  className="inline-flex items-center px-8 py-4 border-2 border-purple-500/30 text-purple-400 font-semibold rounded-2xl hover:border-purple-500/50 hover:text-purple-300 transition-all duration-300"
-                >
-                  Call for Pricing
-                </a>
-              </div>
-            </motion.div>
+          <div className="space-y-6">
+            <div className="bg-black/30 rounded-2xl border border-sky-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">CDP & Reverse ETL</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Segment: <a className="text-cyan-400 underline" href={`https://segment.com/pricing/`} target="_blank" rel="noopener noreferrer">segment.com/pricing</a></li>
+                <li>RudderStack: <a className="text-cyan-400 underline" href={`https://www.rudderstack.com/pricing/`} target="_blank" rel="noopener noreferrer">rudderstack.com/pricing</a></li>
+                <li>Hightouch (Reverse ETL): <a className="text-cyan-400 underline" href={`https://hightouch.com/pricing`} target="_blank" rel="noopener noreferrer">hightouch.com/pricing</a></li>
+                <li>Census (Reverse ETL): <a className="text-cyan-400 underline" href={`https://www.getcensus.com/pricing`} target="_blank" rel="noopener noreferrer">getcensus.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $100–$1,500/month depending on sources, destinations, and MAUs.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-rose-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Returns & Logistics</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Loop Returns: <a className="text-cyan-400 underline" href={`https://www.loopreturns.com/pricing/`} target="_blank" rel="noopener noreferrer">loopreturns.com/pricing</a></li>
+                <li>Happy Returns: <a className="text-cyan-400 underline" href={`https://www.happyreturns.com/`} target="_blank" rel="noopener noreferrer">happyreturns.com</a></li>
+                <li>Shippo: <a className="text-cyan-400 underline" href={`https://goshippo.com/pricing/`} target="_blank" rel="noopener noreferrer">goshippo.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$400/month plus label costs.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-emerald-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Feature Flags & Experimentation</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>LaunchDarkly pricing: <a className="text-cyan-400 underline" href={`https://launchdarkly.com/pricing/`} target="_blank" rel="noopener noreferrer">launchdarkly.com/pricing</a></li>
+                <li>Flagsmith pricing: <a className="text-cyan-400 underline" href={`https://www.flagsmith.com/pricing`} target="_blank" rel="noopener noreferrer">flagsmith.com/pricing</a></li>
+                <li>Optimizely Web: <a className="text-cyan-400 underline" href={`https://www.optimizely.com/pricing/`} target="_blank" rel="noopener noreferrer">optimizely.com/pricing</a></li>
+                <li>VWO pricing: <a className="text-cyan-400 underline" href={`https://vwo.com/pricing/`} target="_blank" rel="noopener noreferrer">vwo.com/pricing</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $50–$500/month for flags; $100–$1,000/month for experimentation depending on traffic.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-fuchsia-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Synthetic Data & Privacy</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Gretel pricing: <a className="text-cyan-400 underline" href={`https://gretel.ai/pricing`} target="_blank" rel="noopener noreferrer">gretel.ai/pricing</a></li>
+                <li>Mostly AI pricing: <a className="text-cyan-400 underline" href={`https://mostly.ai/pricing/`} target="_blank" rel="noopener noreferrer">mostly.ai/pricing</a></li>
+                <li>Hazy (synthetic data): <a className="text-cyan-400 underline" href={`https://hazy.com/`} target="_blank" rel="noopener noreferrer">hazy.com</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $99–$1,500/month based on datasets, privacy features, and synthesis volume.</div>
+            </div>
+
+            <div className="bg-black/30 rounded-2xl border border-teal-500/30 p-6">
+              <h2 className="text-2xl font-semibold mb-2">Data Reliability & Observability</h2>
+              <ul className="list-disc list-inside text-slate-300 space-y-1">
+                <li>Monte Carlo: <a className="text-cyan-400 underline" href={`https://www.montecarlodata.com/`} target="_blank" rel="noopener noreferrer">montecarlodata.com</a></li>
+                <li>Bigeye: <a className="text-cyan-400 underline" href={`https://www.bigeye.com/pricing`} target="_blank" rel="noopener noreferrer">bigeye.com/pricing</a></li>
+                <li>OpenTelemetry docs: <a className="text-cyan-400 underline" href={`https://opentelemetry.io/`} target="_blank" rel="noopener noreferrer">opentelemetry.io</a></li>
+              </ul>
+              <div className="text-sm text-slate-400 mt-3">Typical SMB budgets: $200–$2,000/month depending on data volume, SLAs, and alerting needs.</div>
+            </div>
           </div>
         </section>
       </div>
