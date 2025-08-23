@@ -3,6 +3,7 @@ import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 import UltraFuturisticNavigation2046 from '../components/layout/UltraFuturisticNavigation2046';
 import UltraFuturisticFooter2046 from '../components/layout/UltraFuturisticFooter2046';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 import { 
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
@@ -11,6 +12,8 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 
+<<<<<<< HEAD
+=======
 const Services: React.FC = () => {
 // Import our new innovative 2025 services
 import { realInnovativeMicroSaasServices2025 } from '../data/2025-real-innovative-micro-saas-expansion';
@@ -323,6 +326,7 @@ const categories = [
   }
 ];
 
+>>>>>>> 3c69eec6124bf95995ad8db99e4fcc1addda60da
 const sortOptions = [
   { value: 'name', label: 'Name A-Z' },
   { value: 'price-low', label: 'Price: Low to High' },
@@ -339,6 +343,7 @@ const sortOptions = [
     (currentPageClamped - 1) * pageSize,
     currentPageClamped * pageSize
   );
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
   // Reset to first page when filters/sort change
   React.useEffect(() => {
@@ -379,6 +384,7 @@ const sortOptions = [
       case 'education':
       case 'education & research':
         return <GraduationCap className="w-6 h-6 text-yellow-400" />;
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       default:
         return <Shield className="w-6 h-6 text-gray-400" />;
     }
@@ -386,6 +392,7 @@ const sortOptions = [
 
 =======
   return (
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     <>
       <SEO title="Services | Zion Tech Group - Enterprise IT, AI, Micro SAAS Solutions" description="Discover our comprehensive portfolio of enterprise IT solutions, AI services, and innovative micro SAAS platforms. Transform your business with cutting-edge technology." canonical="https://ziontechgroup.com/services/" />
 
@@ -418,6 +425,7 @@ const ServicesPage: React.FC = () => {
     >
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
 =======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         {/* Hero Section */}
         <AnimatePresence>
           {isVisible && (
@@ -453,6 +461,7 @@ const ServicesPage: React.FC = () => {
                 we provide the technology you need to succeed in the digital age.
               </p>
             </motion.div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
             {/* Search and Filters */}
             <motion.div
