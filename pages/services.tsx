@@ -20,6 +20,12 @@ import { real2036ServiceExpansions } from '../data/real-2036-service-expansions'
 import { innovative2036MicroSaasServices } from '../data/innovative-2036-micro-saas-services';
 import { innovative2036ITServices } from '../data/innovative-2036-it-services';
 
+// Import expanded 2036 services
+import { innovative2036AIServicesExpanded } from '../data/innovative-2036-ai-services-expanded';
+import { innovative2036ITServicesExpanded } from '../data/innovative-2036-it-services-expanded';
+import { innovative2036MicroSaasExpanded } from '../data/innovative-2036-micro-saas-expanded';
+import { innovative2036QuantumEmergingTech } from '../data/innovative-2036-quantum-emerging-tech';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -80,7 +86,12 @@ const allServices = [
   ...real2035Q2Additions,
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
-  ...innovative2036ITServices
+  ...innovative2036ITServices,
+  // New expanded 2036 services
+  ...innovative2036AIServicesExpanded,
+  ...innovative2036ITServicesExpanded,
+  ...innovative2036MicroSaasExpanded,
+  ...innovative2036QuantumEmergingTech
 ];
 
 const categories = [

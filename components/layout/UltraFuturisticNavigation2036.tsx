@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Menu, ChevronDown, X, Zap, Grid, Star, Search
+  Menu, ChevronDown, X, Zap, Grid, Star, Search, Target
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -51,32 +51,38 @@ const navigationItems: NavigationItem[] = [
       },
       { 
         name: 'AI & Machine Learning', 
-        href: '/ai-services', 
+        href: '/services?category=ai', 
         description: 'Advanced AI solutions',
         icon: <Zap className="w-4 h-4" />
       },
       { 
         name: 'Quantum Technology', 
-        href: '/quantum-services', 
+        href: '/services?category=quantum', 
         description: 'Quantum computing solutions',
         icon: <Zap className="w-4 h-4" />
       },
       { 
-        name: 'Space Technology', 
-        href: '/space-technology', 
-        description: 'Space exploration solutions',
+        name: 'Cybersecurity', 
+        href: '/services?category=security', 
+        description: 'Security and compliance',
         icon: <Zap className="w-4 h-4" />
       },
       { 
-        name: 'IT Solutions', 
-        href: '/it-services', 
-        description: 'Enterprise IT infrastructure',
+        name: 'IT Infrastructure', 
+        href: '/services?category=infrastructure', 
+        description: 'Enterprise IT solutions',
         icon: <Zap className="w-4 h-4" />
       },
       { 
-        name: 'Specialized Solutions', 
-        href: '/solutions', 
-        description: 'Industry-specific solutions',
+        name: 'Micro SAAS', 
+        href: '/services?category=micro-saas', 
+        description: 'Business solutions',
+        icon: <Zap className="w-4 h-4" />
+      },
+      { 
+        name: 'Emerging Tech', 
+        href: '/services?category=emerging', 
+        description: 'Cutting-edge technologies',
         icon: <Zap className="w-4 h-4" />
       }
     ]
@@ -108,6 +114,65 @@ const navigationItems: NavigationItem[] = [
         href: '/market-pricing', 
         description: 'Market price references',
         icon: <Star className="w-4 h-4" />
+      },
+      { 
+        name: '2026 Services', 
+        href: '/ultimate-2026-services-showcase', 
+        description: 'Latest 2026 services',
+        icon: <Star className="w-4 h-4" />
+      },
+      { 
+        name: '2035 Futuristic', 
+        href: '/ultimate-2035-futuristic-services-showcase', 
+        description: 'Future-ready services',
+        icon: <Star className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Solutions',
+    href: '/solutions',
+    icon: <Target className="w-5 h-5" />,
+    description: 'Industry-specific solutions',
+    badge: 'New',
+    category: 'solutions',
+    children: [
+      { 
+        name: 'All Solutions', 
+        href: '/solutions', 
+        description: 'Complete solutions overview',
+        icon: <Grid className="w-4 h-4" />,
+        featured: true
+      },
+      { 
+        name: 'Financial Services', 
+        href: '/solutions?industry=financial', 
+        description: 'Banking and fintech solutions',
+        icon: <Target className="w-4 h-4" />
+      },
+      { 
+        name: 'Healthcare', 
+        href: '/solutions?industry=healthcare', 
+        description: 'Healthcare technology solutions',
+        icon: <Target className="w-4 h-4" />
+      },
+      { 
+        name: 'Manufacturing', 
+        href: '/solutions?industry=manufacturing', 
+        description: 'Industrial automation solutions',
+        icon: <Target className="w-4 h-4" />
+      },
+      { 
+        name: 'Retail & E-commerce', 
+        href: '/solutions?industry=retail', 
+        description: 'Digital commerce solutions',
+        icon: <Target className="w-4 h-4" />
+      },
+      { 
+        name: 'Government', 
+        href: '/solutions?industry=government', 
+        description: 'Public sector solutions',
+        icon: <Target className="w-4 h-4" />
       }
     ]
   },

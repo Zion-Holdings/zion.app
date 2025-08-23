@@ -22,13 +22,13 @@ const footerSections = [
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', featured: true },
       { name: 'Quantum Neural Networks', href: '/quantum-neural-network-platform', featured: true },
       { name: 'Autonomous Business Operations', href: '/autonomous-business-operations-platform', featured: true },
-      { name: 'Space Resource Mining', href: '/space-resource-mining-platform', featured: true },
-      { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform', featured: true },
       { name: 'Quantum Financial Trading', href: '/quantum-financial-trading-platform', featured: true },
       { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', featured: true },
       { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform' },
-      { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform' },
-      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' }
+      { name: 'AI Predictive Maintenance', href: '/ai-predictive-maintenance-platform' },
+      { name: 'Quantum Internet Security', href: '/quantum-internet-security-platform' },
+      { name: 'AI Content Generator', href: '/ai-content-generator' },
+      { name: 'Quantum IoT Platform', href: '/quantum-iot-platform' }
     ]
   },
   {
@@ -97,6 +97,23 @@ const footerSections = [
       { name: 'AI Customer Success', href: '/ai-customer-success-platform' },
       { name: 'AI Ethics Framework', href: '/ai-ethics-governance-framework' },
       { name: 'AI Research Assistant', href: '/ai-autonomous-research-assistant' }
+    ]
+  },
+  {
+    title: 'Quick Links',
+    description: 'Essential pages and resources',
+    icon: <Zap className="w-5 h-5 text-cyan-400" />,
+    links: [
+      { name: 'Services Overview', href: '/services' },
+      { name: 'Pricing Plans', href: '/pricing' },
+      { name: '2026 Services Showcase', href: '/ultimate-2026-services-showcase' },
+      { name: '2035 Futuristic Services', href: '/ultimate-2035-futuristic-services-showcase' },
+      { name: 'About Us', href: '/about' },
+      { name: 'Contact', href: '/contact' },
+      { name: 'Support', href: '/support' },
+      { name: 'Blog & News', href: '/news' },
+      { name: 'Case Studies', href: '/case-studies' },
+      { name: 'Partners', href: '/partners' }
     ]
   }
 ];
@@ -183,6 +200,18 @@ export default function UltraFuturisticFooter2036() {
                   <address className="not-italic">
                     {contactInfo.address}
                   </address>
+                </div>
+                <div className="flex items-center space-x-3 text-gray-300 hover:text-cyan-400 transition-colors">
+                  <Zap className="w-5 h-5" />
+                  <a 
+                    href={contactInfo.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline"
+                    aria-label={`Visit our website at ${contactInfo.website}`}
+                  >
+                    {contactInfo.website}
+                  </a>
                 </div>
               </div>
             </motion.div>

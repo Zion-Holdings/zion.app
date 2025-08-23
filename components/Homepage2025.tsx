@@ -125,14 +125,14 @@ const Homepage2025: React.FC = () => {
             </motion.div>
 
             <motion.div 
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
               variants={staggerContainer}
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
             >
               <Suspense fallback={
-                <div className="h-96 bg-gray-800/50 rounded-2xl animate-pulse flex items-center justify-center">
+                <div className="h-80 bg-gray-800/50 rounded-2xl animate-pulse flex items-center justify-center">
                   <div className="text-gray-400">Loading...</div>
                 </div>
               }>
@@ -154,7 +154,7 @@ const Homepage2025: React.FC = () => {
               </Suspense>
 
               <Suspense fallback={
-                <div className="h-96 bg-gray-800/50 rounded-2xl animate-pulse flex items-center justify-center">
+                <div className="h-80 bg-gray-800/50 rounded-2xl animate-pulse flex items-center justify-center">
                   <div className="text-gray-400">Loading...</div>
                 </div>
               }>
@@ -176,7 +176,7 @@ const Homepage2025: React.FC = () => {
               </Suspense>
 
               <Suspense fallback={
-                <div className="h-96 bg-gray-800/50 rounded-2xl animate-pulse flex items-center justify-center">
+                <div className="h-80 bg-gray-800/50 rounded-2xl animate-pulse flex items-center justify-center">
                   <div className="text-gray-400">Loading...</div>
                 </div>
               }>
@@ -194,6 +194,28 @@ const Homepage2025: React.FC = () => {
                     icon: '⚡'
                   }}
                   variant="automation"
+                />
+              </Suspense>
+
+              <Suspense fallback={
+                <div className="h-80 bg-gray-800/50 rounded-2xl animate-pulse flex items-center justify-center">
+                  <div className="text-gray-400">Loading...</div>
+                </div>
+              }>
+                <UltraFuturisticServiceCard2026
+                  service={{
+                    id: 'quantum-security',
+                    name: 'Quantum Security',
+                    tagline: 'Future-proof security solutions',
+                    description: 'Quantum-secure infrastructure and post-quantum cryptography to protect against future quantum threats',
+                    price: '$2999',
+                    period: 'month',
+                    features: ['Post-Quantum Crypto', 'Quantum Key Distribution', 'Zero Trust', 'Compliance'],
+                    popular: true,
+                    category: 'Security',
+                    icon: '🔐'
+                  }}
+                  variant="it"
                 />
               </Suspense>
             </motion.div>
@@ -282,6 +304,103 @@ const Homepage2025: React.FC = () => {
                   </div>
                   <h3 className="text-xl font-semibold mb-3 text-white">{feature.title}</h3>
                   <p className="text-gray-300">{feature.description}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Service Categories Section */}
+        <section 
+          className="py-24 px-4 relative"
+          aria-labelledby="categories-heading"
+        >
+          <div className="max-w-7xl mx-auto">
+            <motion.div 
+              className="text-center mb-20"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 
+                id="categories-heading"
+                className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent"
+              >
+                Our Service Categories
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Comprehensive solutions across all major technology domains
+              </p>
+            </motion.div>
+
+            <motion.div 
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              variants={staggerContainer}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+            >
+              {[
+                {
+                  icon: '🧠',
+                  title: "AI & Machine Learning",
+                  description: "Advanced artificial intelligence solutions for business transformation",
+                  services: "50+ AI Services",
+                  color: "from-cyan-500 to-blue-600"
+                },
+                {
+                  icon: '⚛️',
+                  title: "Quantum Technology",
+                  description: "Breakthrough quantum computing and quantum-secure solutions",
+                  services: "25+ Quantum Services",
+                  color: "from-purple-500 to-pink-600"
+                },
+                {
+                  icon: '🛡️',
+                  title: "Cybersecurity",
+                  description: "Enterprise-grade security and compliance solutions",
+                  services: "40+ Security Services",
+                  color: "from-red-500 to-orange-600"
+                },
+                {
+                  icon: '🌐',
+                  title: "IT Infrastructure",
+                  description: "Scalable and secure enterprise infrastructure solutions",
+                  services: "35+ Infrastructure Services",
+                  color: "from-green-500 to-emerald-600"
+                },
+                {
+                  icon: '📱',
+                  title: "Micro SAAS",
+                  description: "Innovative business solutions for modern enterprises",
+                  services: "60+ Micro SAAS Services",
+                  color: "from-yellow-500 to-amber-600"
+                },
+                {
+                  icon: '🚀',
+                  title: "Emerging Tech",
+                  description: "Cutting-edge technologies for future-ready businesses",
+                  services: "30+ Emerging Tech Services",
+                  color: "from-indigo-500 to-violet-600"
+                }
+              ].map((category, index) => (
+                <motion.div
+                  key={index}
+                  className="group p-8 rounded-2xl bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:transform hover:scale-105 cursor-pointer"
+                  variants={fadeInUp}
+                  whileHover={{ y: -10 }}
+                >
+                  <div className="mb-6 flex justify-center">
+                    <div className={`text-6xl group-hover:scale-110 transition-transform duration-300`}>
+                      {category.icon}
+                    </div>
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3 text-white text-center">{category.title}</h3>
+                  <p className="text-gray-300 text-center mb-4">{category.description}</p>
+                  <div className={`text-center text-sm font-semibold bg-gradient-to-r ${category.color} bg-clip-text text-transparent`}>
+                    {category.services}
+                  </div>
                 </motion.div>
               ))}
             </motion.div>
