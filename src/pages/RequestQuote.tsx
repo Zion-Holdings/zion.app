@@ -1,16 +1,9 @@
-
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { QuoteRequestForm } from "@/components/QuoteRequestForm";
-
-export default function RequestQuote() {
+import React from 'react';
+export function RequestQuote() {
   return (
-    <>
-      <Header />
-      <div className="min-h-screen bg-zion-blue">
-        <QuoteRequestForm />
-      </div>
-      <Footer />
-    </>
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
   );
 }

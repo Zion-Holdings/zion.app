@@ -1,6 +1,9 @@
-
-import { createContext } from "react";
-import type { AuthContextType } from "@/types/auth";
-
-// Create the AuthContext and export it
-export const AuthContext = createContext<AuthContextType | undefined>(undefined);
+import React from 'react';
+export function AuthContext() {
+  return (
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
+  );
+}
