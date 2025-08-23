@@ -9,7 +9,7 @@ import {
 } from 'lucide-react';
 
 // Import our new innovative services
-import { innovativeMicroSaasExpansion2025V3 } from '../data/2025-innovative-micro-saas-expansion-v3';
+import { innovativeMicroSaasExpansionV32025 } from '../data/2025-innovative-micro-saas-expansion-v3';
 import { innovativeITServicesExpansion2025V3 } from '../data/2025-innovative-it-services-expansion-v3';
 import { innovativeAIServicesExpansion2025V3 } from '../data/2025-innovative-ai-services-expansion-v3';
 
@@ -19,7 +19,7 @@ const Innovative2025PricingShowcase: React.FC = () => {
 
   // Combine all innovative services
   const allInnovativeServices = [
-    ...innovativeMicroSaasExpansion2025V3,
+    ...innovativeMicroSaasExpansionV32025,
     ...innovativeITServicesExpansion2025V3,
     ...innovativeAIServicesExpansion2025V3
   ];
