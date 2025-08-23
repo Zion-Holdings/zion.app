@@ -5,7 +5,7 @@ import {
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
-  Building, Cpu, Database, Cloud, Lock
+  Building, Cpu, Database, Cloud, Lock, ShoppingCart, Users
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -25,6 +25,11 @@ import { innovative2036ITServices } from '../data/innovative-2036-it-services';
 import { innovative2025MicroSaasExpanded } from '../data/innovative-2025-micro-saas-expanded';
 import { innovative2025ITSolutionsExpanded } from '../data/innovative-2025-it-solutions-expanded';
 import { innovative2025AISolutionsExpanded } from '../data/innovative-2025-ai-solutions-expanded';
+
+// Import new innovative services
+import { innovativeServicesExpansion2025 } from '../data/2025-innovative-services-expansion';
+import { emergingTechServices2025 } from '../data/2025-emerging-tech-services';
+import { specializedIndustryServices2025 } from '../data/2025-specialized-industry-services';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -85,12 +90,10 @@ const allServices = [
   ...validatedServices2025Q4,
   ...real2035Q2Additions,
   ...real2036ServiceExpansions,
-  ...innovative2036MicroSaasServices,
-  ...innovative2036ITServices,
-  // New expanded services
-  ...innovative2025MicroSaasExpanded,
-  ...innovative2025ITSolutionsExpanded,
-  ...innovative2025AISolutionsExpanded
+  // New innovative services
+  ...innovativeServicesExpansion2025,
+  ...emergingTechServices2025,
+  ...specializedIndustryServices2025
 ];
 
 const categories = [
@@ -163,6 +166,55 @@ const categories = [
     icon: <GraduationCap className="w-6 h-6" />,
     color: 'from-yellow-500 to-orange-500',
     description: 'Learning and research platforms'
+  },
+  {
+    id: 'healthcare-biotech',
+    name: 'Healthcare & Biotech',
+    icon: <Heart className="w-6 h-6" />,
+    color: 'from-red-500 to-pink-500',
+    description: 'Advanced healthcare and biotechnology solutions'
+  },
+  {
+    id: 'fintech-banking',
+    name: 'FinTech & Banking',
+    icon: <Building className="w-6 h-6" />,
+    color: 'from-green-500 to-blue-500',
+    description: 'Financial technology and digital banking solutions'
+  },
+  {
+    id: 'manufacturing-industry',
+    name: 'Manufacturing & Industry 4.0',
+    icon: <Cpu className="w-6 h-6" />,
+    color: 'from-gray-500 to-blue-500',
+    description: 'Smart manufacturing and industrial automation'
+  },
+  {
+    id: 'retail-ecommerce',
+    name: 'Retail & E-commerce',
+    icon: <ShoppingCart className="w-6 h-6" />,
+    color: 'from-pink-500 to-purple-500',
+    description: 'Omnichannel retail and e-commerce solutions'
+  },
+  {
+    id: 'legal-compliance',
+    name: 'Legal & Compliance',
+    icon: <Shield className="w-6 h-6" />,
+    color: 'from-gray-500 to-blue-500',
+    description: 'Legal technology and compliance automation'
+  },
+  {
+    id: 'marketing-advertising',
+    name: 'Marketing & Advertising',
+    icon: <Target className="w-6 h-6" />,
+    color: 'from-purple-500 to-pink-500',
+    description: 'AI-powered marketing and advertising solutions'
+  },
+  {
+    id: 'hr-talent',
+    name: 'HR & Talent Management',
+    icon: <Users className="w-6 h-6" />,
+    color: 'from-blue-500 to-cyan-500',
+    description: 'Human resources and talent management solutions'
   }
 ];
 
