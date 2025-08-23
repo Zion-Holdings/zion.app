@@ -18,8 +18,6 @@ interface PerformanceMetrics {
 }
 
 interface PerformanceEntryExtended extends PerformanceEntry {
-  name?: string;
-  startTime?: number;
   processingStart?: number;
   value?: number;
 }

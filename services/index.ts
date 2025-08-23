@@ -235,6 +235,11 @@ export { advancedCloudDevOpsServices } from '../data/2025-advanced-cloud-devops-
 export { industrySpecificSolutions } from '../data/2025-industry-specific-solutions';
 export { emergingTechnologyServices } from '../data/2025-emerging-technology-services';
 
+// Export new 2025 innovative services
+export { advancedInnovativeServices2025 } from '../data/2025-advanced-innovative-services-expansion';
+export { cuttingEdgeEnterpriseServices2025 } from '../data/2025-cutting-edge-enterprise-services';
+export { specializedIndustrySolutions2025 } from '../data/2025-specialized-industry-solutions';
+
 // Export new service types
 export type { AIMLService } from '../data/2025-advanced-ai-ml-services';
 export type { CybersecurityComplianceService } from '../data/2025-advanced-cybersecurity-compliance-services';

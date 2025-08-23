@@ -10,10 +10,10 @@ import {
 
 // Import our new 2025 service data
 import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
-import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
+import { innovative2025ITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
 import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
 import { cuttingEdgeAIServices2025 } from '../data/2025-cutting-edge-ai-services';
-import { innovativeAIAutonomousServices2025 } from '../data/2025-innovative-ai-autonomous-services';
+import { innovative2025AIAutonomousServices } from '../data/2025-innovative-ai-autonomous-services';
 
 // Import our new practical and specialized services
 import { realPracticalMicroSaasServices2025 } from '../data/2025-real-practical-micro-saas-services';
@@ -84,6 +84,11 @@ import { advancedAIAutomationSolutions2025 } from '../data/2025-advanced-ai-auto
 // Import our new 2025 innovative AI services expansion
 import { innovativeAIServices2025Expansion } from '../data/2025-innovative-ai-services-expansion';
 
+// Import our new 2025 innovative services
+import { advancedInnovativeServices2025 } from '../data/2025-advanced-innovative-services-expansion';
+import { cuttingEdgeEnterpriseServices2025 } from '../data/2025-cutting-edge-enterprise-services';
+import { specializedIndustrySolutions2025 } from '../data/2025-specialized-industry-solutions';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -132,11 +137,11 @@ const allServices = [
   
   // Our new 2025 services
   ...advancedAIAutomationServices2025,
-  ...innovativeITInfrastructureServices2025,
+  ...innovative2025ITInfrastructureServices,
   ...innovativeMicroSaasSolutions2025,
   ...cuttingEdgeAIServices2025,
   ...realEnterpriseMicroSaas2025,
-  ...innovativeAIAutonomousServices2025,
+  ...innovative2025AIAutonomousServices,
   
   // Our new 2025 advanced services
   ...advancedBusinessIntelligenceServices2025,
@@ -198,7 +203,12 @@ const allServices = [
   ...advancedAIAutomationSolutions2025,
   
   // Our new 2025 innovative AI services expansion
-  ...innovativeAIServices2025Expansion
+  ...innovativeAIServices2025Expansion,
+  
+  // Our new 2025 innovative services
+  ...advancedInnovativeServices2025,
+  ...cuttingEdgeEnterpriseServices2025,
+  ...specializedIndustrySolutions2025
 ];
 
 const categories = [
