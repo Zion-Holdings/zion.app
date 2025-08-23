@@ -108,7 +108,8 @@ const Cookies: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.8 }}
+              className="text-center"
             >
               <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
                 Cookie Policy
@@ -338,28 +339,6 @@ const Cookies: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Contact Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-            >
-              <h2 className="text-4xl font-bold mb-6">Questions About Our Cookie Policy?</h2>
-              <p className="text-xl text-gray-400 mb-8">
-                We're here to help clarify any questions you may have about how we use cookies
-              </p>
-              <a
-                href="/contact"
-                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
-              >
-                Contact Us
-              </a>
             </motion.div>
           </div>
         </section>

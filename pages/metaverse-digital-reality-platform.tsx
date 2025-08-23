@@ -1,5 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
+}
+=======
 import { Globe, Users, Zap, Shield, Eye, Cpu, Palette, Rocket } from 'lucide-react';
 
 const MetaverseDigitalRealityPlatformPage: React.FC = () => {
@@ -361,3 +363,4 @@ const MetaverseDigitalRealityPlatformPage: React.FC = () => {
 };
 
 export default MetaverseDigitalRealityPlatformPage;
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

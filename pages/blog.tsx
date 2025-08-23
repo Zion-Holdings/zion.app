@@ -1,114 +1,53 @@
-import React from 'react';
-import Layout from '../components/layout/Layout';
-import { motion } from 'framer-motion';
-import { 
-  BookOpen, Calendar, Clock, User, ArrowRight, 
-  Tag, Search, Filter, TrendingUp, Brain, Atom,
-  Shield, Rocket, Star, Globe, Zap
-} from 'lucide-react';
+import React, { useState } from 'react';
+import Head from 'next/head';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 import Link from 'next/link';
 
 const Blog: React.FC = () => {
   const featuredPosts = [
     {
-      id: 1,
-      title: "The Future of AI Consciousness: Beyond Traditional Machine Learning",
-      excerpt: "Explore how AI consciousness is revolutionizing the way machines think, learn, and interact with humans. Discover the ethical implications and breakthrough applications.",
-      author: "Dr. Sarah Chen",
-      authorRole: "AI Research Director",
-      publishDate: "2024-01-15",
-      readTime: "8 min read",
-      category: "AI Consciousness",
-      tags: ["AI", "Consciousness", "Machine Learning", "Ethics"],
-      featured: true,
-      image: "/api/placeholder/600/400",
-      views: "12.5K",
-      comments: 47
+      title: 'The Future of AI Consciousness: What to Expect in 2045',
+      excerpt: 'Explore the revolutionary developments in AI consciousness and how they will transform our understanding of intelligence.',
+      author: 'AI Research Team',
+      date: '2025-01-15',
+      category: 'AI & Consciousness',
+      readTime: '8 min read',
+      image: '/blog/ai-consciousness-2045.jpg',
+      tags: ['AI', 'Consciousness', 'Future Tech', '2045'],
+      icon: <Brain className="w-6 h-6" />
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     },
     {
-      id: 2,
-      title: "Quantum Computing Breakthroughs: Solving Previously Impossible Problems",
-      excerpt: "From cryptography to drug discovery, quantum computing is opening new frontiers. Learn about the latest breakthroughs and their real-world applications.",
-      author: "Dr. Michael Rodriguez",
-      authorRole: "Quantum Computing Lead",
-      publishDate: "2024-01-10",
-      readTime: "12 min read",
-      category: "Quantum Computing",
-      tags: ["Quantum Computing", "Cryptography", "Drug Discovery", "Research"],
-      featured: true,
-      image: "/api/placeholder/600/400",
-      views: "8.9K",
-      comments: 32
+      title: 'Quantum Computing Breakthroughs: Solving Previously Impossible Problems',
+      excerpt: 'Discover how quantum computing is revolutionizing industries and solving complex computational challenges.',
+      author: 'Quantum Team',
+      date: '2025-01-10',
+      category: 'Quantum Computing',
+      readTime: '12 min read',
+      image: '/blog/quantum-breakthroughs.jpg',
+      tags: ['Quantum Computing', 'Innovation', 'Technology'],
+      icon: <Atom className="w-6 h-6" />
     },
     {
-      id: 3,
-      title: "Cybersecurity in the Age of AI: New Threats, New Defenses",
-      excerpt: "As AI becomes more sophisticated, so do cyber threats. Discover how AI-powered security systems are staying ahead of evolving attack vectors.",
-      author: "Jennifer Park",
-      authorRole: "Cybersecurity Expert",
-      publishDate: "2024-01-08",
-      readTime: "10 min read",
-      category: "Cybersecurity",
-      tags: ["Cybersecurity", "AI Security", "Threat Detection", "Defense"],
-      featured: true,
-      image: "/api/placeholder/600/400",
-      views: "15.2K",
-      comments: 89
-    }
-  ];
-
-  const recentPosts = [
-    {
-      id: 4,
-      title: "Space Technology Revolution: AI-Powered Exploration Systems",
-      excerpt: "How artificial intelligence is transforming space exploration, from autonomous rovers to intelligent satellite networks.",
-      author: "Alex Thompson",
-      authorRole: "Space Technology Specialist",
-      publishDate: "2024-01-05",
-      readTime: "6 min read",
-      category: "Space Technology",
-      tags: ["Space", "AI", "Exploration", "Satellites"],
-      image: "/api/placeholder/400/250",
-      views: "6.8K",
-      comments: 23
-    },
-    {
-      id: 5,
-      title: "The Business Impact of AI Consciousness: Real ROI Stories",
-      excerpt: "Real-world examples of how AI consciousness is driving business transformation and delivering measurable results.",
-      author: "David Kim",
-      authorRole: "Business Strategy Director",
-      publishDate: "2024-01-03",
-      readTime: "7 min read",
-      category: "Business Intelligence",
-      tags: ["Business", "ROI", "AI", "Transformation"],
-      image: "/api/placeholder/400/250",
-      views: "5.4K",
-      comments: 18
-    },
-    {
-      id: 6,
-      title: "Ethical AI Development: Building Trust in Machine Intelligence",
-      excerpt: "The importance of ethical considerations in AI development and how Zion Tech Group ensures responsible innovation.",
-      author: "Dr. Emily Watson",
-      authorRole: "AI Ethics Researcher",
-      publishDate: "2024-01-01",
-      readTime: "9 min read",
-      category: "AI Ethics",
-      tags: ["AI Ethics", "Responsible AI", "Trust", "Innovation"],
-      image: "/api/placeholder/400/250",
-      views: "7.1K",
-      comments: 31
+      title: 'Cybersecurity in the Age of AI: New Threats, New Defenses',
+      excerpt: 'Learn about the evolving cybersecurity landscape and how AI is both a threat and a solution.',
+      author: 'Security Team',
+      date: '2025-01-08',
+      category: 'Cybersecurity',
+      readTime: '10 min read',
+      image: '/blog/cybersecurity-ai.jpg',
+      tags: ['Cybersecurity', 'AI Security', 'Threat Detection'],
+      icon: <Shield className="w-6 h-6" />
     }
   ];
 
   const categories = [
-    { name: "AI Consciousness", count: 15, icon: Brain, color: "from-purple-500 to-pink-600" },
-    { name: "Quantum Computing", count: 12, icon: Atom, color: "from-blue-500 to-cyan-600" },
-    { name: "Cybersecurity", count: 18, icon: Shield, color: "from-green-500 to-emerald-600" },
-    { name: "Space Technology", count: 8, icon: Rocket, color: "from-orange-500 to-red-600" },
-    { name: "Business Intelligence", count: 10, icon: TrendingUp, color: "from-indigo-500 to-purple-600" },
-    { name: "AI Ethics", count: 6, icon: Globe, color: "from-teal-500 to-blue-600" }
+    { name: 'AI & Consciousness', icon: <Brain className="w-5 h-5" />, count: 15 },
+    { name: 'Quantum Computing', icon: <Atom className="w-5 h-5" />, count: 12 },
+    { name: 'Cybersecurity', icon: <Shield className="w-5 h-5" />, count: 18 },
+    { name: 'Space Technology', icon: <Rocket className="w-5 h-5" />, count: 8 },
+    { name: 'Edge Computing', icon: <Cloud className="w-5 h-5" />, count: 10 },
+    { name: 'Innovation', icon: <Zap className="w-5 h-5" />, count: 22 }
   ];
 
   const trendingTopics = [
@@ -132,76 +71,41 @@ const Blog: React.FC = () => {
 
   const recentArticles = [
     {
-      title: "Quantum Supremacy in 2025: What It Means for the Future",
-      excerpt: "Breaking down the latest quantum computing breakthroughs and their implications for cryptography, drug discovery, and climate modeling.",
-      author: "Dr. Michael Rodriguez",
-      date: "March 12, 2025",
-      readTime: "6 min read",
-      category: "Quantum Computing",
-      image: "/images/blog/quantum-supremacy.jpg"
+      title: 'Edge Computing Orchestration: The Future of Distributed Systems',
+      excerpt: 'How edge computing is transforming the way we process and analyze data.',
+      author: 'Edge Computing Team',
+      date: '2025-01-12',
+      category: 'Edge Computing',
+      readTime: '6 min read'
     },
     {
-      title: "Cybersecurity in the Age of AI: New Threats and Defenses",
-      excerpt: "How artificial intelligence is both creating new security challenges and providing innovative solutions to protect digital assets.",
-      author: "Alex Thompson",
-      date: "March 10, 2025",
-      readTime: "7 min read",
-      category: "Cybersecurity",
-      image: "/images/blog/ai-cybersecurity.jpg"
+      title: 'The Rise of Autonomous AI Systems in Enterprise',
+      excerpt: 'Exploring how autonomous AI is reshaping business operations and decision-making.',
+      author: 'AI Research Team',
+      date: '2025-01-10',
+      category: 'AI & Consciousness',
+      readTime: '7 min read'
     },
     {
-      title: "Space Resource Intelligence: Mining the Final Frontier",
-      excerpt: "The emerging field of space resource intelligence and how it's revolutionizing our approach to space exploration and resource utilization.",
-      author: "Dr. Elena Petrova",
-      date: "March 8, 2025",
-      readTime: "9 min read",
-      category: "Space Technology",
-      image: "/images/blog/space-resources.jpg"
+      title: 'Quantum Cybersecurity: Protecting Data in the Quantum Era',
+      excerpt: 'Understanding the security challenges and solutions in quantum computing.',
+      author: 'Quantum Team',
+      date: '2025-01-08',
+      category: 'Quantum Computing',
+      readTime: '9 min read'
     },
     {
-      title: "The Evolution of Neural Networks: From Perceptrons to Consciousness",
-      excerpt: "A comprehensive journey through the development of neural networks and their progression toward artificial consciousness.",
-      author: "Dr. James Wilson",
-      date: "March 5, 2025",
-      readTime: "10 min read",
-      category: "AI & Consciousness",
-      image: "/images/blog/neural-evolution.jpg"
-    },
-    {
-      title: "Quantum-Classical Hybrid Computing: The Best of Both Worlds",
-      excerpt: "Exploring how hybrid quantum-classical systems are solving real-world problems that neither approach could handle alone.",
-      author: "Dr. Maria Santos",
-      date: "March 3, 2025",
-      readTime: "8 min read",
-      category: "Quantum Computing",
-      image: "/images/blog/hybrid-computing.jpg"
-    },
-    {
-      title: "Ethical AI Development: Balancing Innovation with Responsibility",
-      excerpt: "The critical importance of ethical considerations in AI development and how Zion Tech Group is leading the way.",
-      author: "Dr. Sarah Chen",
-      date: "March 1, 2025",
-      readTime: "7 min read",
-      category: "AI & Consciousness",
-      image: "/images/blog/ethical-ai.jpg"
+      title: 'Cloud Platform Evolution: From Infrastructure to Intelligence',
+      excerpt: 'How cloud platforms are becoming intelligent and autonomous.',
+      author: 'Cloud Team',
+      date: '2025-01-05',
+      category: 'Edge Computing',
+      readTime: '5 min read'
     }
   ];
 
-  const popularTags = [
-    "Artificial Intelligence", "Quantum Computing", "Cybersecurity", "Space Technology",
-    "Machine Learning", "Neural Networks", "Consciousness", "Innovation",
-    "Future Tech", "Research", "Technology Trends", "Digital Transformation"
-  ];
-
-  const newsletterStats = [
-    { metric: "10K+", label: "Subscribers" },
-    { metric: "45", label: "Articles" },
-    { metric: "5", label: "Categories" },
-    { metric: "Weekly", label: "Updates" }
-  ];
-
   return (
-    <Layout
+    <Layout 
       title="Blog - Zion Tech Group"
       description="Insights, research, and thought leadership on AI consciousness, quantum computing, cybersecurity, and the future of technology."
       keywords="blog, AI consciousness, quantum computing, cybersecurity, space technology, business intelligence, Zion Tech Group"
@@ -263,10 +167,11 @@ const Blog: React.FC = () => {
                 </select>
               </div>
             </div>
-          </div>
-        </section>
+          </motion.div>
+        </div>
+      </section>
 
-        {/* Featured Article Section */}
+        {/* Featured Posts */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -276,28 +181,27 @@ const Blog: React.FC = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+              <h2 className="text-4xl font-bold text-white mb-4">
                 Featured Articles
               </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Deep insights and breakthrough research from our experts
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Deep insights and analysis on the latest developments in revolutionary technology.
               </p>
             </motion.div>
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               {featuredPosts.map((post, index) => (
                 <motion.article
-                  key={post.id}
+                  key={post.title}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 rounded-2xl border border-gray-700/30 hover:border-purple-500/50 transition-all duration-300 overflow-hidden group"
                 >
-                  <div className="aspect-video bg-gradient-to-br from-purple-500/20 to-blue-500/20 flex items-center justify-center">
-                    <div className="text-center">
-                      <BookOpen className="w-16 h-16 text-purple-400/50 mx-auto mb-2" />
-                      <p className="text-gray-400 text-sm">Featured Article</p>
+                  <div className="h-48 bg-gradient-to-br from-purple-500/20 to-blue-500/20 flex items-center justify-center">
+                    <div className="text-purple-400 text-6xl">
+                      {post.icon}
                     </div>
                   </div>
                   
@@ -306,13 +210,12 @@ const Blog: React.FC = () => {
                       <span className="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm font-medium">
                         {post.category}
                       </span>
+                      <span className="text-gray-400 text-sm">{post.readTime}</span>
                     </div>
-                    
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors duration-300 line-clamp-2">
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors duration-300">
                       {post.title}
                     </h3>
-                    
-                    <p className="text-gray-400 text-sm mb-4 line-clamp-3">
+                    <p className="text-gray-300 text-sm mb-4 leading-relaxed">
                       {post.excerpt}
                     </p>
                     
@@ -359,118 +262,89 @@ const Blog: React.FC = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+              <h2 className="text-4xl font-bold text-white mb-4">
                 Explore by Category
               </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Dive deep into specific areas of technology and innovation
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Find articles and insights in your areas of interest.
               </p>
             </motion.div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
               {categories.map((category, index) => (
                 <motion.div
                   key={category.name}
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 p-6 rounded-2xl border border-gray-700/30 hover:border-purple-500/50 transition-all duration-300 group cursor-pointer"
+                  className="text-center group cursor-pointer"
                 >
-                  <div className={`w-12 h-12 bg-gradient-to-br ${category.color} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                    <category.icon className="w-6 h-6 text-white" />
+                  <div className="w-16 h-16 bg-white/10 backdrop-blur-lg rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:bg-purple-500/20 transition-all duration-300 border border-white/20">
+                    <div className="text-purple-400 group-hover:text-purple-300 transition-colors duration-300">
+                      {category.icon}
+                    </div>
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-purple-400 transition-colors duration-300">
+                  <h3 className="text-sm font-semibold text-white mb-1">
                     {category.name}
                   </h3>
-                  <p className="text-gray-400 text-sm mb-4">
-                    {category.count} articles
-                  </p>
-                  <div className="flex items-center text-purple-400 text-sm font-medium group-hover:text-purple-300 transition-colors duration-300">
-                    Browse Articles
-                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                  </div>
+                  <p className="text-gray-400 text-xs">{category.count} articles</p>
                 </motion.div>
               ))}
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Recent Posts */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                Latest Articles
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Recent Articles
               </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Stay updated with our most recent insights and research
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Stay updated with our latest insights and analysis.
               </p>
             </motion.div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {recentPosts.map((post, index) => (
                 <motion.article
-                  key={post.id}
-                  initial={{ opacity: 0, y: 30 }}
+                  key={post.title}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 rounded-2xl border border-gray-700/30 hover:border-blue-500/50 transition-all duration-300 overflow-hidden group"
+                  className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 p-6 rounded-2xl border border-gray-700/30 hover:border-purple-500/50 transition-all duration-300 group"
                 >
-                  <div className="aspect-video bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center">
-                    <div className="text-center">
-                      <BookOpen className="w-12 h-12 text-blue-400/50 mx-auto mb-2" />
-                      <p className="text-gray-400 text-xs">Article</p>
-                    </div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-medium">
+                      {post.category}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
+                    </span>
+                    <span className="text-gray-400 text-sm">{post.readTime}</span>
                   </div>
-                  
-                  <div className="p-6">
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="px-2 py-1 bg-blue-500/20 text-blue-400 rounded-full text-xs font-medium">
-                        {post.category}
-                      </span>
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors duration-300">
+                    {post.title}
+                  </h3>
+                  <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                    {post.excerpt}
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <User className="w-4 h-4 text-gray-400" />
+                      <span className="text-gray-400 text-sm">{post.author}</span>
                     </div>
-                    
-                    <h3 className="text-lg font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300 line-clamp-2">
-                      {post.title}
-                    </h3>
-                    
-                    <p className="text-gray-400 text-sm mb-4 line-clamp-3">
-                      {post.excerpt}
-                    </p>
-                    
-                    <div className="flex items-center gap-4 text-xs text-gray-500 mb-4">
-                      <div className="flex items-center gap-1">
-                        <User className="w-3 h-3" />
-                        {post.author}
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Calendar className="w-3 h-3" />
-                        {new Date(post.publishDate).toLocaleDateString()}
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Clock className="w-3 h-3" />
-                        {post.readTime}
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-4 text-xs text-gray-500">
-                        <span>{post.views} views</span>
-                        <span>{post.comments} comments</span>
-                      </div>
-                      
-                      <button className="text-blue-400 hover:text-blue-300 transition-colors duration-300 flex items-center gap-1 group-hover:gap-2">
-                        Read More
-                        <ArrowRight className="w-4 h-4 transition-all duration-300" />
-                      </button>
+                    <div className="flex items-center gap-2">
+                      <Calendar className="w-4 h-4 text-gray-400" />
+                      <span className="text-gray-400 text-sm">{post.date}</span>
                     </div>
                   </div>
                 </motion.article>
@@ -482,6 +356,7 @@ const Blog: React.FC = () => {
         {/* Trending Topics */}
         <section className="py-20 bg-black/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -494,6 +369,7 @@ const Blog: React.FC = () => {
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
                 What's hot in the world of AI consciousness and quantum computing
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </p>
             </motion.div>
             
@@ -628,8 +504,9 @@ const Blog: React.FC = () => {
           </div>
         </section>
       </div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     </Layout>
   );
 };
 
-export default Blog;
+export default BlogPage;

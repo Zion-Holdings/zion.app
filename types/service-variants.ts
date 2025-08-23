@@ -59,6 +59,7 @@ export type ServiceVariant =
   | 'quantum-energy-revolutionary'
   | 'quantum-logistics-revolutionary'
   | 'quantum-ai-finance'
+  | 'quantum-finance'
   | 'ai-emotional'
   | 'ai-multimodal'
   | 'ai-autonomous'

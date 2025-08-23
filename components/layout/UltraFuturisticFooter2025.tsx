@@ -80,6 +80,7 @@ const UltraFuturisticFooter2025: React.FC = () => {
         { label: 'Leadership', href: '/leadership', icon: Star },
         { label: 'Careers', href: '/careers', icon: Users },
         { label: 'News & Press', href: '/news', icon: FileText },
+        { label: 'Case Studies', href: '/case-studies', icon: Award },
         { label: 'Partners', href: '/partners', icon: Handshake },
         { label: 'Contact', href: '/contact', icon: Phone }
       ]

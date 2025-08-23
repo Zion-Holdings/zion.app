@@ -1,164 +1,217 @@
-import React, { useEffect, useState, useCallback } from 'react';
-import { motion } from 'framer-motion';
-
-interface PerformanceLayoutShift {
-  value: number;
-}
+import React, { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Zap, TrendingUp, Clock, AlertTriangle, CheckCircle } from 'lucide-react';
 
 interface PerformanceMetrics {
   loadTime: number;
-  domContentLoaded: number;
   firstContentfulPaint: number;
   largestContentfulPaint: number;
   cumulativeLayoutShift: number;
+  timeToInteractive: number;
 }
 
 interface PerformanceOptimizerProps {
-  children: React.ReactNode;
-  onMetricsUpdate?: (metrics: PerformanceMetrics) => void;
+  showMetrics?: boolean;
+  autoOptimize?: boolean;
+  targetLoadTime?: number;
 }
 
-const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({ 
-  children, 
-  onMetricsUpdate 
+const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({
+  showMetrics = false,
+  autoOptimize = true,
+  targetLoadTime = 2000
 }) => {
   const [metrics, setMetrics] = useState<PerformanceMetrics | null>(null);
+  const [optimizations, setOptimizations] = useState<string[]>([]);
   const [isOptimizing, setIsOptimizing] = useState(false);
 
-  // Measure performance metrics
-  const measurePerformance = useCallback(() => {
-    if (typeof window === 'undefined' || !window.performance) return;
-
-    const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-    const paintEntries = performance.getEntriesByType('paint');
-    const layoutShiftEntries = performance.getEntriesByType('layout-shift');
-
-    const newMetrics: PerformanceMetrics = {
-      loadTime: navigation.loadEventEnd - navigation.loadEventStart,
-      domContentLoaded: navigation.domContentLoadedEventEnd - navigation.domContentLoadedEventStart,
-      firstContentfulPaint: paintEntries.find(entry => entry.name === 'first-contentful-paint')?.startTime || 0,
-      largestContentfulPaint: 0,
-      cumulativeLayoutShift: layoutShiftEntries.reduce((sum, entry) => sum + (entry as PerformanceLayoutShift).value, 0)
-    };
-
-    // Measure LCP if supported
-    if ('PerformanceObserver' in window) {
-      const observer = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        const lastEntry = entries[entries.length - 1];
-        newMetrics.largestContentfulPaint = lastEntry.startTime;
-        setMetrics(newMetrics);
-        onMetricsUpdate?.(newMetrics);
-      });
-      observer.observe({ entryTypes: ['largest-contentful-paint'] });
-    }
-
-    setMetrics(newMetrics);
-    onMetricsUpdate?.(newMetrics);
-  }, [onMetricsUpdate]);
-
-  // Optimize images and resources
-  const optimizeResources = useCallback(() => {
-    setIsOptimizing(true);
-    
-    // Lazy load images
-    const images = document.querySelectorAll('img[data-src]');
-    const imageObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const img = entry.target as HTMLImageElement;
-          img.src = img.dataset.src || '';
-          img.classList.remove('lazy');
-          imageObserver.unobserve(img);
-        }
-      });
-    });
-
-    images.forEach(img => imageObserver.observe(img));
-
-    // Preload critical resources
-    const criticalResources = [
-      '/fonts/inter-var.woff2',
-      '/css/critical.css'
-    ];
-
-    criticalResources.forEach(resource => {
-      const link = document.createElement('link');
-      link.rel = 'preload';
-      link.href = resource;
-      link.as = resource.endsWith('.woff2') ? 'font' : 'style';
-      document.head.appendChild(link);
-    });
-
-    setIsOptimizing(false);
-  }, []);
-
-  // Monitor performance
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    // Measure initial performance
+    // Measure performance metrics
+    const measurePerformance = () => {
+      if ('performance' in window) {
+        const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+        const paint = performance.getEntriesByType('paint');
+        
+        const fcp = paint.find(entry => entry.name === 'first-contentful-paint');
+        const lcp = performance.getEntriesByType('largest-contentful-paint')[0];
+        
+        const metrics: PerformanceMetrics = {
+          loadTime: navigation.loadEventEnd - navigation.loadEventStart,
+          firstContentfulPaint: fcp ? fcp.startTime : 0,
+          largestContentfulPaint: lcp ? lcp.startTime : 0,
+          cumulativeLayoutShift: 0, // Would need to be calculated with LayoutShift API
+          timeToInteractive: navigation.domInteractive - navigation.fetchStart
+        };
+
+        setMetrics(metrics);
+        
+        if (autoOptimize) {
+          suggestOptimizations(metrics);
+        }
+      }
+    };
+
+    // Wait for page to load completely
     if (document.readyState === 'complete') {
       measurePerformance();
     } else {
       window.addEventListener('load', measurePerformance);
     }
 
-    // Optimize resources after initial load
-    const timer = setTimeout(optimizeResources, 1000);
-
     return () => {
       window.removeEventListener('load', measurePerformance);
-      clearTimeout(timer);
     };
-  }, [measurePerformance, optimizeResources]);
+  }, [autoOptimize]);
 
-  // Performance warning component
-  const PerformanceWarning = () => {
-    if (!metrics) return null;
+  const suggestOptimizations = (metrics: PerformanceMetrics) => {
+    const suggestions: string[] = [];
 
-    const isSlow = metrics.loadTime > 3000 || metrics.firstContentfulPaint > 2000;
-    
-    if (!isSlow) return null;
+    if (metrics.loadTime > targetLoadTime) {
+      suggestions.push('Consider implementing lazy loading for images and components');
+      suggestions.push('Optimize bundle size with code splitting');
+      suggestions.push('Enable compression and caching');
+    }
 
-    return (
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="fixed top-4 right-4 bg-yellow-500 text-black px-4 py-2 rounded-lg shadow-lg z-50"
-      >
-        <div className="text-sm font-medium">Performance Notice</div>
-        <div className="text-xs">Page load time: {Math.round(metrics.loadTime)}ms</div>
-      </motion.div>
-    );
+    if (metrics.firstContentfulPaint > 1000) {
+      suggestions.push('Optimize critical rendering path');
+      suggestions.push('Reduce render-blocking resources');
+    }
+
+    if (metrics.largestContentfulPaint > 2500) {
+      suggestions.push('Optimize images and media files');
+      suggestions.push('Implement resource hints (preload, prefetch)');
+    }
+
+    setOptimizations(suggestions);
   };
 
+  const runOptimizations = async () => {
+    setIsOptimizing(true);
+    
+    // Simulate optimization process
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    // Apply some basic optimizations
+    if (typeof window !== 'undefined') {
+      // Lazy load images
+      const images = document.querySelectorAll('img[data-src]');
+      images.forEach(img => {
+        const dataSrc = img.getAttribute('data-src');
+        if (dataSrc) {
+          img.setAttribute('src', dataSrc);
+          img.removeAttribute('data-src');
+        }
+      });
+
+      // Preload critical resources
+      const criticalLinks = document.querySelectorAll('link[data-critical]');
+      criticalLinks.forEach(link => {
+        link.setAttribute('rel', 'preload');
+        link.removeAttribute('data-critical');
+      });
+    }
+
+    setIsOptimizing(false);
+  };
+
+    // Run optimizations in sequence
+    await new Promise(resolve => setTimeout(resolve, 500));
+    optimizeImages();
+    
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    optimizeFonts();
+    
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    optimizeCSS();
+    
+    await new Promise(resolve => setTimeout(resolve, 500));
+    setOptimizationStatus('Optimization complete!');
+    
+    setTimeout(() => {
+      setIsOptimizing(false);
+      setOptimizationStatus('');
+    }, 2000);
+  }, [optimizeImages, optimizeFonts, optimizeCSS]);
+
+  // Get performance grade
+  const getPerformanceGrade = useCallback(() => {
+    let score = 100;
+    
+    if (metrics.fcp && metrics.fcp > 1800) score -= 20;
+    if (metrics.lcp && metrics.lcp > 2500) score -= 20;
+    if (metrics.fid && metrics.fid > 100) score -= 20;
+    if (metrics.cls && metrics.cls > 0.1) score -= 20;
+    if (metrics.ttfb && metrics.ttfb > 600) score -= 20;
+
+    if (score >= 90) return { grade: 'A', color: 'text-green-400' };
+    if (score >= 80) return { grade: 'B', color: 'text-yellow-400' };
+    if (score >= 70) return { grade: 'C', color: 'text-orange-400' };
+    return { grade: 'D', color: 'text-red-400' };
+  }, [metrics]);
+
+  const performanceGrade = getPerformanceGrade();
+
   return (
-    <>
-      {children}
-      <PerformanceWarning />
-      
-      {/* Performance Debug Panel (only in development) */}
-      {process.env.NODE_ENV === 'development' && metrics && (
-        <motion.div
-          initial={{ opacity: 0, x: 300 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="fixed bottom-4 right-4 bg-gray-900 text-white p-4 rounded-lg shadow-lg z-50 max-w-xs"
-        >
-          <div className="text-sm font-bold mb-2">Performance Metrics</div>
-          <div className="text-xs space-y-1">
-            <div>Load Time: {Math.round(metrics.loadTime)}ms</div>
-            <div>DOM Ready: {Math.round(metrics.domContentLoaded)}ms</div>
-            <div>FCP: {Math.round(metrics.firstContentfulPaint)}ms</div>
-            <div>LCP: {Math.round(metrics.largestContentfulPaint)}ms</div>
-            <div>CLS: {metrics.cumulativeLayoutShift.toFixed(3)}</div>
+    <div className="fixed bottom-4 right-4 z-50">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="bg-gray-900/90 backdrop-blur-lg border border-gray-700 rounded-lg p-4 max-w-sm shadow-2xl"
+      >
+        <div className="flex items-center justify-between mb-3">
+          <h3 className="text-sm font-semibold text-white flex items-center">
+            <Zap className="w-4 h-4 mr-2 text-yellow-400" />
+            Performance Monitor
+          </h3>
+          <button
+            onClick={runOptimizations}
+            disabled={isOptimizing}
+            className="text-xs px-2 py-1 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-600 rounded text-white transition-colors"
+          >
+            {isOptimizing ? 'Optimizing...' : 'Optimize'}
+          </button>
+        </div>
+
+        {metrics && (
+          <div className="space-y-2 mb-3">
+            <div className="flex justify-between text-xs">
+              <span className="text-gray-400">Load Time:</span>
+              <span className={metrics.loadTime > targetLoadTime ? 'text-red-400' : 'text-green-400'}>
+                {metrics.loadTime.toFixed(0)}ms
+              </span>
+            </div>
+            <div className="flex justify-between text-xs">
+              <span className="text-gray-400">FCP:</span>
+              <span className={metrics.firstContentfulPaint > 1000 ? 'text-red-400' : 'text-green-400'}>
+                {metrics.firstContentfulPaint.toFixed(0)}ms
+              </span>
+            </div>
+            <div className="flex justify-between text-xs">
+              <span className="text-gray-400">LCP:</span>
+              <span className={metrics.largestContentfulPaint > 2500 ? 'text-red-400' : 'text-green-400'}>
+                {metrics.largestContentfulPaint.toFixed(0)}ms
+              </span>
+            </div>
           </div>
-          {isOptimizing && (
-            <div className="text-cyan-400 text-xs mt-2">Optimizing resources...</div>
-          )}
-        </motion.div>
-      )}
-    </>
+        )}
+
+        {optimizations.length > 0 && (
+          <div className="border-t border-gray-700 pt-3">
+            <h4 className="text-xs font-medium text-gray-300 mb-2">Optimization Suggestions:</h4>
+            <ul className="space-y-1">
+              {optimizations.slice(0, 3).map((suggestion, index) => (
+                <li key={index} className="text-xs text-gray-400 flex items-start">
+                  <AlertTriangle className="w-3 h-3 mr-1 mt-0.5 text-yellow-400 flex-shrink-0" />
+                  {suggestion}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </motion.div>
+    </div>
   );
 };
 

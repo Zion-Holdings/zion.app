@@ -1,205 +1,130 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import EnhancedNavigation2025 from './EnhancedNavigation2025';
-import EnhancedFooter2025 from './EnhancedFooter2025';
+import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
+import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
 import TopContactBar from './TopContactBar';
 import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
 import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
-import EnhancedErrorBoundary from '../EnhancedErrorBoundary';
+import ServiceWorkerRegistration from '../ServiceWorkerRegistration';
+import SEOHead from '../SEOHead';
 
 interface LayoutProps {
   children: React.ReactNode;
-  title?: string;
-  description?: string;
-  keywords?: string;
-  ogImage?: string;
-  canonicalUrl?: string;
+  seo?: SEOConfig;
 }
 
-export default function Layout({ 
-  children, 
-  title = "Zion Tech Group - Revolutionary 2045 Technology",
-  description = "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.",
-  keywords = "AI consciousness, quantum computing, autonomous solutions, space technology, cybersecurity, business intelligence, Zion Tech Group, 2045 technology",
-  ogImage = "/og-image.jpg",
-  canonicalUrl
-}: LayoutProps) {
+export default function Layout({ children, seo }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isOnline, setIsOnline] = useState(true);
 
   useEffect(() => {
     // Check online status
-    const updateOnlineStatus = () => {
-      setIsOnline(navigator.onLine);
-    };
+    const handleOnline = () => setIsOnline(true);
+    const handleOffline = () => setIsOnline(false);
 
-    window.addEventListener('online', updateOnlineStatus);
-    window.addEventListener('offline', updateOnlineStatus);
-    updateOnlineStatus();
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+    setIsOnline(navigator.onLine);
 
-    // Register service worker
+    // Register service worker for PWA
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/sw.js')
-        .then((registration) => {
-          // Check for updates
-          registration.addEventListener('updatefound', () => {
-            const newWorker = registration.installing;
-            if (newWorker) {
-              newWorker.addEventListener('statechange', () => {
-                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                  // New version available
-                  if (typeof window !== 'undefined' && window.confirm) {
-                    if (window.confirm('A new version is available! Would you like to update?')) {
-                      newWorker.postMessage({ type: 'SKIP_WAITING' });
-                      window.location.reload();
-                    }
-                  }
-                }
-              });
-            }
-          });
+        .then(() => {
+          // Service Worker registered successfully
         })
-        .catch((error) => {
-          // Silently handle service worker registration errors
-          // eslint-disable-next-line no-console
-          console.error('Service Worker registration failed:', error);
+        .catch(() => {
+          // Service Worker registration failed
         });
     }
 
     return () => {
-      window.removeEventListener('online', updateOnlineStatus);
-      window.removeEventListener('offline', updateOnlineStatus);
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
     };
   }, []);
 
   return (
     <>
       <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <meta name="keywords" content={keywords} />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta charSet="utf-8" />
-        <meta name="robots" content="index, follow" />
-        <meta name="author" content="Zion Tech Group" />
-        <meta name="theme-color" content="#06b6d4" />
-        
-        {/* Canonical URL */}
-        {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
-        
-        {/* PWA Manifest */}
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="msapplication-TileColor" content="#06b6d4" />
+        {/* PWA Meta Tags */}
+        <meta name="application-name" content="Zion Tech Group" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="apple-mobile-web-app-title" content="Zion Tech Group" />
-        
-        {/* Favicons */}
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        
-        {/* Open Graph */}
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:image" content={ogImage} />
-        <meta property="og:url" content={canonicalUrl || 'https://ziontechgroup.com'} />
-        <meta property="og:site_name" content="Zion Tech Group" />
-        
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={ogImage} />
-        <meta name="twitter:site" content="@ziontechgroup" />
-        
-        {/* Additional Meta Tags */}
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="Zion Tech" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="application-name" content="Zion Tech Group" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
+        <meta name="msapplication-TileColor" content="#06b6d4" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="theme-color" content="#06b6d4" />
+
+        {/* PWA Icons */}
+        <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#06b6d4" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+
+        {/* Preconnect to external domains */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://cdn.jsdelivr.net" />
         
-        {/* Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "Zion Tech Group",
-              "url": "https://ziontechgroup.com",
-              "logo": "https://ziontechgroup.com/logo.png",
-              "description": description,
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "364 E Main St STE 1008",
-                "addressLocality": "Middletown",
-                "addressRegion": "DE",
-                "postalCode": "19709",
-                "addressCountry": "US"
-              },
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+1-302-464-0950",
-                "contactType": "customer service",
-                "email": "kleber@ziontechgroup.com"
-              },
-              "sameAs": [
-                "https://linkedin.com/company/zion-tech-group",
-                "https://github.com/Zion-Holdings",
-                "https://twitter.com/ziontechgroup"
-              ]
-            })
-          }}
-        />
+        {/* DNS prefetch for performance */}
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+        <link rel="dns-prefetch" href="//api.ziontechgroup.com" />
       </Head>
 
-      <div className="min-h-screen bg-black text-white relative overflow-hidden">
-        {/* Background Effects */}
-        <UltraFuturisticBackground2045 />
+      <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
+        {/* Skip to content link for accessibility */}
+        <a href="#main" className="skip-link">Skip to main content</a>
         
-        {/* Top Contact Bar */}
-        <TopContactBar />
+        {/* Offline indicator */}
+        {!isOnline && (
+          <div className="fixed top-0 left-0 right-0 z-50 bg-red-600 text-white text-center py-2 px-4 text-sm">
+            📡 You're currently offline. Some features may not be available.
+          </div>
+        )}
         
-        {/* Enhanced Navigation */}
-        <EnhancedNavigation2025 />
+        {/* Futuristic Background */}
+        <UltraFuturisticBackground2036 />
         
-        {/* Enhanced Sidebar */}
-        <EnhancedSidebar2025 isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
-        
-        {/* Main Content */}
-        <main className="pt-32 pb-16 relative z-10">
-          <EnhancedErrorBoundary>
-            {children}
-          </EnhancedErrorBoundary>
-        </main>
-        
-        {/* Enhanced Footer */}
-        <EnhancedFooter2025 />
-        
-        {/* Performance Monitor */}
-        <EnhancedPerformanceMonitor />
-        
-        {/* Accessibility Enhancer */}
+        {/* Layout Structure */}
+        <div className="relative z-10">
+          {/* Top Contact Bar */}
+          <TopContactBar />
+          
+          {/* Navigation */}
+          <UltraFuturisticNavigation2040 />
+          
+          {/* Sidebar and Main Content */}
+          <div className="flex">
+            <EnhancedSidebar2025 
+              isOpen={sidebarOpen} 
+              onClose={() => setSidebarOpen(false)} 
+            />
+            
+            <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
+              {children}
+            </main>
+          </div>
+          
+          {/* Footer */}
+          <UltraFuturisticFooter2040 />
+        </div>
+
+        {/* Accessibility and Performance Tools */}
         <AccessibilityEnhancer />
+        <PerformanceMonitor />
         
         {/* Cookie Consent Banner */}
         <CookieConsentBanner />
-        
-        {/* Offline Indicator */}
-        {!isOnline && (
-          <div className="fixed bottom-4 right-4 bg-red-600 text-white px-4 py-2 rounded-lg shadow-lg z-50">
-            <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-              <span className="text-sm">You are offline</span>
-            </div>
-          </div>
-        )}
       </div>
     </>
   );
-}
+};

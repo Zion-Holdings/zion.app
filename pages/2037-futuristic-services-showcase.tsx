@@ -200,6 +200,7 @@ export default function FuturisticServicesShowcase2037() {
                 <div className="text-4xl font-bold text-emerald-400 mb-2">24/7</div>
                 <div className="text-white/60">Support Available</div>
               </motion.div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </div>
           </div>
         </section>

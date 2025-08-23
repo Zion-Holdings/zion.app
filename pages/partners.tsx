@@ -1,5 +1,4 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
   Handshake, Users, Globe, Zap, Brain, Atom, 
@@ -166,7 +165,7 @@ const Partners: React.FC = () => {
         <section className="relative py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
@@ -307,69 +306,6 @@ const Partners: React.FC = () => {
                       {story.industry}
                     </span>
                   </div>
-                  <div className="mb-4">
-                    <h4 className="font-semibold text-cyan-400 mb-2">Result:</h4>
-                    <p className="text-gray-300">{story.result}</p>
-                  </div>
-                  <blockquote className="text-gray-400 italic">
-                    "{story.testimonial}"
-                  </blockquote>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Partnership Process Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/30">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl font-bold mb-4">How to Become a Partner</h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Simple steps to join our partner ecosystem and start growing your business
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-4 gap-8">
-              {[
-                {
-                  step: "1",
-                  title: "Initial Contact",
-                  description: "Reach out to discuss partnership opportunities and alignment"
-                },
-                {
-                  step: "2",
-                  title: "Assessment",
-                  description: "We evaluate your business model and partnership potential"
-                },
-                {
-                  step: "3",
-                  title: "Agreement",
-                  description: "Sign partnership agreement and begin onboarding process"
-                },
-                {
-                  step: "4",
-                  title: "Launch",
-                  description: "Go to market with our revolutionary technology solutions"
-                }
-              ].map((step, index) => (
-                <motion.div
-                  key={step.step}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.1 * index }}
-                  className="text-center"
-                >
-                  <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl font-bold">{step.step}</span>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                  <p className="text-gray-400">{step.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -420,9 +356,10 @@ const Partners: React.FC = () => {
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 1.0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
             >
               <h2 className="text-4xl font-bold mb-6">Ready to Partner With Us?</h2>
               <p className="text-xl text-gray-400 mb-8">
@@ -448,6 +385,3 @@ const Partners: React.FC = () => {
       </div>
     </Layout>
   );
-};
-
-export default Partners;

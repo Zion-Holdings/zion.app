@@ -1,4 +1,5 @@
 import React from 'react';
+=======
 import Head from 'next/head';
 import { Brain, Sparkles, Zap, Target, Users, Globe, Cpu, Atom } from 'lucide-react';
 
@@ -68,6 +69,7 @@ const AIConsciousnessEvolutionPage: React.FC = () => {
                   Building AI capable of understanding, processing, and responding to 
                   human emotions and social contexts.
                 </p>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </div>
             </div>
           </div>
@@ -167,6 +169,7 @@ const AIConsciousnessEvolutionPage: React.FC = () => {
                 <h3 className="text-lg font-semibold text-white mb-2">Global Network</h3>
                 <p className="text-gray-300 text-sm">Worldwide infrastructure for consciousness research</p>
               </div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </div>
           </div>
         </section>
@@ -300,9 +303,12 @@ const AIConsciousnessEvolutionPage: React.FC = () => {
             </div>
           </div>
         </section>
+export default AIConsciousnessEvolution;
+=======
       </div>
     </>
   );
 };
 
 export default AIConsciousnessEvolutionPage;
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

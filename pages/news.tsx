@@ -1,14 +1,78 @@
 import React from 'react';
+  Newspaper, Calendar, User, Tag, ArrowRight, 
+  Star, Zap, Brain, Atom, Rocket, Globe
+} from 'lucide-react';
+import Link from 'next/link';
+
+const News: React.FC = () => {
+  const newsArticles = [
+=======
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
   Newspaper, Calendar, User, Tag, ArrowRight, 
   Star, Zap, Brain, Atom, Rocket, Globe,
   Clock, TrendingUp
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+=======
+  Newspaper, Calendar, User, Tag, ArrowRight, 
+  Star, Zap, Brain, Atom, Rocket, Globe,
+  Clock, TrendingUp
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 } from 'lucide-react';
 import Link from 'next/link';
 
-const News: React.FC = () => {
+const NewsPage: React.FC = () => {
+=======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
+  const featuredNews = [
+    {
+      title: 'Zion Tech Group Launches Revolutionary AI Consciousness Platform',
+      excerpt: 'Breakthrough technology that brings emotional intelligence and self-awareness to artificial intelligence systems.',
+      author: 'Press Team',
+      date: '2025-01-15',
+      author: 'Dr. Kleber',
+      featured: true,
+      image: '/api/placeholder/600/400',
+      tags: ['AI Consciousness', 'Breakthrough', 'Innovation'],
+      readTime: '5 min read'
+    },
+    {
+      title: 'Quantum Computing Breakthrough: Solving Complex Optimization Problems',
+      excerpt: 'Our quantum team achieves significant milestone in solving previously impossible computational challenges.',
+      author: 'Research Team',
+      date: '2025-01-12',
+      category: 'Research',
+      readTime: '6 min read',
+      image: '/news/quantum-breakthrough.jpg',
+      tags: ['Quantum Computing', 'Research', 'Breakthrough'],
+      icon: <Atom className="w-6 h-6" />,
+      featured: true
+    },
+    {
+      title: 'Cybersecurity Partnership with Global Tech Leaders',
+      excerpt: 'Strategic collaboration to advance AI-powered threat detection and response systems.',
+      author: 'Partnerships Team',
+      date: '2025-01-10',
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedYear, setSelectedYear] = useState('all');
+
+  const categories = [
+    { id: 'all', name: 'All News', icon: Newspaper, count: 45 },
+    { id: 'ai', name: 'AI & Technology', icon: Brain, count: 18 },
+    { id: 'quantum', name: 'Quantum Computing', icon: Atom, count: 12 },
+    { id: 'space', name: 'Space Technology', icon: Rocket, count: 8 },
+    { id: 'security', name: 'Cybersecurity', icon: Shield, count: 7 }
+  ];
+
+  const years = [
+    { id: 'all', name: 'All Years' },
+    { id: '2025', name: '2025' },
+    { id: '2024', name: '2024' },
+    { id: '2023', name: '2023' }
+  ];
+
   const newsArticles = [
     {
       id: 1,
@@ -19,8 +83,7 @@ const News: React.FC = () => {
       author: 'Dr. Kleber',
       featured: true,
       image: '/api/placeholder/600/400',
-      tags: ['AI Consciousness', 'Breakthrough', 'Innovation'],
-      readTime: '5 min read'
+      tags: ['AI Consciousness', 'Breakthrough', 'Innovation']
     },
     {
       id: 2,
@@ -28,6 +91,11 @@ const News: React.FC = () => {
       excerpt: 'Successfully integrated quantum computing capabilities into our AI platforms, opening unprecedented possibilities for problem-solving and data analysis.',
       category: 'Quantum Computing',
       date: '2025-01-10',
+      author: 'Quantum Team',
+      featured: false,
+      image: '/api/placeholder/600/400',
+      tags: ['Quantum Computing', 'AI Integration', 'Technology']
+=======
       author: 'Quantum Team',
       featured: false,
       image: '/api/placeholder/600/400',
@@ -107,10 +175,13 @@ const News: React.FC = () => {
         <section className="relative overflow-hidden py-20 lg:py-32">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 via-blue-900/20 to-cyan-900/20" />
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+=======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               className="text-center"
             >
               <div className="flex items-center justify-center mb-6">
@@ -128,10 +199,30 @@ const News: React.FC = () => {
                 Discover the latest developments in AI consciousness, quantum computing, 
                 and revolutionary technology solutions from Zion Tech Group.
               </p>
+              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
+                Latest News & Updates
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
+                Stay informed about the latest breakthroughs, innovations, and developments 
+                from Zion Tech Group's cutting-edge technology research.
+              </p>
+              <div className="flex justify-center">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg"
+                >
+                  <Newspaper className="w-6 h-6" />
+                  Stay Updated
+                </motion.div>
+              </div>
+=======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </motion.div>
           </div>
         </section>
 
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
+=======
         {/* Featured Article */}
         {featuredArticle && (
           <section className="py-20">
@@ -203,10 +294,13 @@ const News: React.FC = () => {
                   </div>
                 </div>
               </motion.div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </div>
           </section>
         )}
 
+=======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         {/* Category Filter */}
         <section className="py-12 bg-black/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -225,10 +319,82 @@ const News: React.FC = () => {
                 </button>
               ))}
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* News Grid */}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                Latest News
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Stay updated with our latest developments and breakthroughs
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {newsArticles.filter(article => !article.featured).map((article, index) => (
+                <motion.article
+                  key={article.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+        {/* CTA Section */}
+        <section className="py-20 relative">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 overflow-hidden"
+                >
+                  <div className="relative h-48 bg-gradient-to-br from-purple-900/30 to-blue-900/30 flex items-center justify-center">
+                    <Newspaper className="w-16 h-16 text-purple-400" />
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-center space-x-4 mb-4">
+                      <span className="bg-gray-800/50 text-purple-400 text-xs font-semibold px-2 py-1 rounded-full">
+                        {article.category}
+                      </span>
+                      <span className="text-gray-400 text-xs">
+                        <Calendar className="w-3 h-3 inline mr-1" />
+                        {new Date(article.date).toLocaleDateString()}
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-3 line-clamp-2">
+                      {article.title}
+                    </h3>
+                    <p className="text-gray-300 text-sm mb-4 line-clamp-3">
+                      {article.excerpt}
+                    </p>
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center space-x-2">
+                        <User className="w-4 h-4 text-gray-400" />
+                        <span className="text-gray-400 text-sm">{article.author}</span>
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {article.tags.slice(0, 2).map((tag) => (
+                        <span
+                          key={tag}
+                          className="bg-gray-800/30 text-gray-400 text-xs px-2 py-1 rounded-full border border-gray-700/30"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <Link
+                      href={`/news/${article.id}`}
+                      className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors duration-300"
+                    >
+                      Read More
+                      <ArrowRight className="w-4 h-4 ml-1" />
+                    </Link>
+                  </div>
+=======
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -314,6 +480,7 @@ const News: React.FC = () => {
                 >
                   {category.name} ({category.count})
                 </motion.button>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               ))}
             </div>
           </div>
@@ -321,11 +488,17 @@ const News: React.FC = () => {
 
         {/* News Grid */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
+        {/* CTA Section */}
+        <section className="py-20 relative">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+=======
           <div className="max-w-7xl mx-auto">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-bold mb-4">Latest News</h2>
@@ -371,6 +544,12 @@ const News: React.FC = () => {
         </section>
 
         {/* Newsletter Signup */}
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                Stay Updated
+              </h2>
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-8">
+                Subscribe to our newsletter for the latest news, insights, and breakthroughs in AI consciousness and quantum computing.
+=======
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/30">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
@@ -393,38 +572,175 @@ const News: React.FC = () => {
                 </button>
               </div>
             </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {pressReleases.map((release, index) => (
+                <motion.article
+                  key={release.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 p-6 rounded-2xl border border-gray-700/30 hover:border-purple-500/50 transition-all duration-300 group"
+                >
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-medium">
+                      {release.category}
+                    </span>
+                    <span className="text-gray-400 text-sm">{release.readTime}</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors duration-300">
+                    {release.title}
+                  </h3>
+                  <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                    {release.excerpt}
+                  </p>
+                  <div className="flex items-center gap-2">
+                    <Calendar className="w-4 h-4 text-gray-400" />
+                    <span className="text-gray-400 text-sm">{release.date}</span>
+                  </div>
+                </motion.article>
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* News Categories */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-4">
+                News Categories
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Explore news by category to find updates in your areas of interest.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+              {newsCategories.map((category, index) => (
+                <motion.div
+                  key={category.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="text-center group cursor-pointer"
+                >
+                  <div className="w-16 h-16 bg-white/10 backdrop-blur-lg rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:bg-purple-500/20 transition-all duration-300 border border-white/20">
+                    <div className="text-purple-400 group-hover:text-purple-300 transition-colors duration-300">
+                      {category.icon}
+                    </div>
+                  </div>
+                  <h3 className="text-sm font-semibold text-white mb-1">
+                    {category.name}
+                  </h3>
+                  <p className="text-gray-400 text-xs">{category.count} articles</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Recent News */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Recent News
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Stay updated with our latest announcements and developments.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {recentNews.map((news, index) => (
+                <motion.article
+                  key={news.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 p-6 rounded-2xl border border-gray-700/30 hover:border-purple-500/50 transition-all duration-300 group"
+                >
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-medium">
+                      {news.category}
+                    </span>
+                    <span className="text-gray-400 text-sm">{news.readTime}</span>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors duration-300">
+                    {news.title}
+                  </h3>
+                  <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                    {news.excerpt}
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <User className="w-4 h-4 text-gray-400" />
+                      <span className="text-gray-400 text-sm">{news.author}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Calendar className="w-4 h-4 text-gray-400" />
+                      <span className="text-gray-400 text-sm">{news.date}</span>
+                    </div>
+                  </div>
+                </motion.article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Media Contact */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                Get in Touch
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Media Inquiries
               </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
-                Have questions about our latest developments? Want to learn more about our revolutionary technology solutions?
+              <p className="text-xl text-gray-300 mb-8">
+                For press inquiries, media interviews, or additional information, 
+                please contact our communications team.
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+=======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
+                <a
                   href="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-600 text-white font-semibold rounded-2xl hover:from-purple-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105"
                 >
-                  Contact Us
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Link>
-                <Link
-                  href="/services"
-                  className="inline-flex items-center px-8 py-4 border-2 border-purple-500/30 text-purple-400 font-semibold rounded-2xl hover:border-purple-500/50 hover:text-purple-300 transition-all duration-300"
+                  Contact Media Team
+                  <Mic className="ml-2 w-5 h-5" />
+                </a>
+                <a
+                  href="/press"
+                  className="inline-flex items-center px-8 py-4 border-2 border-purple-500 text-purple-400 font-semibold rounded-lg hover:bg-purple-500 hover:text-white transition-all duration-300"
                 >
-                  Explore Services
-                </Link>
+                  Press Kit
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
+=======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
+                </a>
               </div>
             </motion.div>
           </div>
@@ -434,4 +750,7 @@ const News: React.FC = () => {
   );
 };
 
+export default NewsPage;
 export default News;
+=======
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

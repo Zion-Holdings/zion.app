@@ -237,13 +237,16 @@ const CaseStudies: React.FC = () => {
                   <p className="text-gray-300 text-sm">{metric.description}</p>
                 </motion.div>
               ))}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Featured Case Studies */}
         <section className="py-20 bg-black/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -332,6 +335,7 @@ const CaseStudies: React.FC = () => {
         {/* Industry Case Studies */}
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -428,7 +432,8 @@ const CaseStudies: React.FC = () => {
               ))}
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* CTA Section */}
         <section className="py-20">
@@ -464,6 +469,7 @@ const CaseStudies: React.FC = () => {
           </div>
         </section>
       </div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     </Layout>
   );
 };

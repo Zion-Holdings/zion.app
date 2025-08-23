@@ -1,5 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
+}
+=======
 import { Shield, CheckCircle, Zap, Brain, Atom, Globe, Lock, Users } from 'lucide-react';
 
 const QuantumComplianceAutomationPage: React.FC = () => {
@@ -470,3 +472,4 @@ const QuantumComplianceAutomationPage: React.FC = () => {
 };
 
 export default QuantumComplianceAutomationPage;
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

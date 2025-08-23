@@ -1,0 +1,96 @@
+<<<<<<< HEAD
+import { createSlice } from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
+import { safeStorage } from '@/utils/safeStorage';
+
+export interface WishlistState {
+  items: string[];
+}
+
+const loadState = (): string[] => {
+  const stored = safeStorage.getItem('wishlist');
+  if (!stored) return [];
+  try {
+    return JSON.parse(stored) as string[];
+  } catch {
+    return [];
+  }
+};
+
+const initialState: WishlistState = {
+  items: loadState(),
+};
+
+=======
+import { createSlice, PayloadAction, createAsyncThunk } from '@reduxjs/toolkit';
+
+export interface WishlistItem {
+  id: string;
+  type: string;
+  data?: any;
+}
+
+export interface WishlistState {
+  items: WishlistItem[];
+}
+
+const initialState: WishlistState = {
+  items: [],
+};
+
+export const getApiUrl = () => {
+  const env = (import.meta as any)?.env ?? process.env;
+  return env.VITE_API_URL || env.API_URL || '';
+};
+
+export const loadWishlistFromDB = createAsyncThunk<WishlistItem[], string>(
+  'wishlist/loadFromDB',
+  async (userId: string) => {
+    const res = await fetch(`${getApiUrl()}/wishlist?userId=${userId}`);
+    if (!res.ok) throw new Error('Failed to load');
+    return (await res.json()) as WishlistItem[];
+  }
+);
+
+>>>>>>> origin/5yaxyc-codex/implement-wishlist-functionality
+const wishlistSlice = createSlice({
+  name: 'wishlist',
+  initialState,
+  reducers: {
+<<<<<<< HEAD
+    add: (state, action: PayloadAction<string>) => {
+      if (!state.items.includes(action.payload)) {
+        state.items.push(action.payload);
+      }
+    },
+    remove: (state, action: PayloadAction<string>) => {
+      state.items = state.items.filter(id => id !== action.payload);
+    },
+    set: (state, action: PayloadAction<string[]>) => {
+      state.items = action.payload;
+    },
+  },
+});
+
+export const { add, remove, set } = wishlistSlice.actions;
+=======
+    addToWishlist(state, action: PayloadAction<WishlistItem>) {
+      const exists = state.items.some(
+        (item) => item.id === action.payload.id && item.type === action.payload.type
+      );
+      if (!exists) state.items.push(action.payload);
+    },
+    removeFromWishlist(state, action: PayloadAction<{ id: string }>) {
+      state.items = state.items.filter((item) => item.id !== action.payload.id);
+    },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(loadWishlistFromDB.fulfilled, (state, action) => {
+      state.items = action.payload;
+    });
+  },
+});
+
+export const { addToWishlist, removeFromWishlist } = wishlistSlice.actions;
+>>>>>>> origin/5yaxyc-codex/implement-wishlist-functionality
+export default wishlistSlice.reducer;

@@ -2,13 +2,7 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Rocket, Brain, Atom, Globe, Zap, Sparkles, Shield, 
-  Target, Crown, Star, TrendingUp, ArrowRight,
-  CheckCircle, DollarSign, Users, Clock, Award, Zap as ZapIcon,
-  Search, Phone, Mail, MapPin, Heart, Leaf, Car, GraduationCap, Scale,
-  Building, Factory, Camera, Video, Music, Gamepad2
-} from 'lucide-react';
+import { Rocket, Brain, Atom, Globe, Zap, Sparkles, Shield, Target, Crown, Star, TrendingUp, ArrowRight, CheckCircle, DollarSign, Users, Clock, Award, Search, Phone, Mail, MapPin, Heart, Leaf, Car, GraduationCap, Scale, Building, Factory, Camera, Video, Music, Gamepad2 } from 'lucide-react';
 import UltraFuturisticNavigation2028 from '../components/layout/UltraFuturisticNavigation2028';
 import UltraFuturisticFooter2028 from '../components/layout/UltraFuturisticFooter2028';
 import { cuttingEdge2028MicroSaas } from '../data/2028-cutting-edge-micro-saas';

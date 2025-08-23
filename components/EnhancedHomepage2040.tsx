@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from './layout/Layout';
 import UltraFuturisticServiceCard2026 from './ui/UltraFuturisticServiceCard2026';
 import Link from 'next/link';
@@ -6,10 +6,14 @@ import { motion } from 'framer-motion';
 import { 
   ArrowRight, Star, 
   Brain, Atom, Shield, Zap, TrendingUp, Globe,
-  Rocket, Users, BarChart3, Target
+  Rocket, Users, BarChart3, Target, Search, MessageCircle, Filter
 } from 'lucide-react';
 
 const EnhancedHomepage2040: React.FC = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [showChatbot, setShowChatbot] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState('all');
+
   const featuredServices = [
     {
       id: 'ai-business-intelligence',
@@ -57,13 +61,17 @@ const EnhancedHomepage2040: React.FC = () => {
   ];
 
   const categories = [
-    { name: 'AI & Machine Learning', icon: <Brain className="w-8 h-8" />, href: '/ai-services', color: 'from-cyan-500 to-blue-600' },
-    { name: 'Quantum Computing', icon: <Atom className="w-8 h-8" />, href: '/quantum-services', color: 'from-purple-500 to-pink-600' },
-    { name: 'Emerging Technologies', icon: <Rocket className="w-8 h-8" />, href: '/emerging-tech', color: 'from-orange-500 to-red-600' },
-    { name: 'Enterprise Solutions', icon: <Shield className="w-8 h-8" />, href: '/enterprise', color: 'from-green-500 to-emerald-600' },
-    { name: 'Micro SAAS', icon: <Zap className="w-8 h-8" />, href: '/micro-saas', color: 'from-yellow-500 to-orange-600' },
-    { name: 'All Services', icon: <Globe className="w-8 h-8" />, href: '/services', color: 'from-indigo-500 to-purple-600' }
+    { name: 'AI & Machine Learning', icon: <Brain className="w-8 h-8" />, href: '/ai-services', color: 'from-cyan-500 to-blue-600', id: 'ai' },
+    { name: 'Quantum Computing', icon: <Atom className="w-8 h-8" />, href: '/quantum-services', color: 'from-purple-500 to-pink-600', id: 'quantum' },
+    { name: 'Emerging Technologies', icon: <Rocket className="w-8 h-8" />, href: '/emerging-tech', color: 'from-orange-500 to-red-600', id: 'emerging' },
+    { name: 'Enterprise Solutions', icon: <Shield className="w-8 h-8" />, href: '/enterprise', color: 'from-green-500 to-emerald-600', id: 'enterprise' },
+    { name: 'Micro SAAS', icon: <Zap className="w-8 h-8" />, href: '/micro-saas', color: 'from-yellow-500 to-orange-600', id: 'saas' },
+    { name: 'All Services', icon: <Globe className="w-8 h-8" />, href: '/services', color: 'from-indigo-500 to-purple-600', id: 'all' }
   ];
+
+  const filteredCategories = selectedCategory === 'all' 
+    ? categories 
+    : categories.filter(cat => cat.id === selectedCategory || cat.id === 'all');
 
   return (
     <Layout>
@@ -102,6 +110,33 @@ const EnhancedHomepage2040: React.FC = () => {
               <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
                 Pioneering the future of technology with innovative solutions that drive business transformation and enable the next generation of digital innovation
               </p>
+
+              {/* Enhanced Search Bar */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="max-w-2xl mx-auto mb-8"
+              >
+                <div className="relative">
+                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                  <input
+                    type="text"
+                    placeholder="Search for AI services, quantum solutions, emerging tech..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-full px-12 py-4 bg-white/10 backdrop-blur-md border border-cyan-400/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:border-cyan-400/50 transition-all duration-300"
+                  />
+                  <button className="absolute right-2 top-1/2 transform -translate-y-1/2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300">
+                    Search
+                  </button>
+                </div>
+                {searchQuery && (
+                  <div className="mt-2 text-sm text-cyan-400">
+                    Press Enter to search across 500+ services
+                  </div>
+                )}
+              </motion.div>
               
               {/* Enhanced CTA Section */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -182,7 +217,7 @@ const EnhancedHomepage2040: React.FC = () => {
           </div>
         </section>
 
-        {/* Service Categories */}
+        {/* Service Categories with Filtering */}
         <section className="py-20 px-4">
           <div className="max-w-6xl mx-auto">
             <motion.div
@@ -195,13 +230,40 @@ const EnhancedHomepage2040: React.FC = () => {
               <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                 Service Categories
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
                 Explore our comprehensive range of cutting-edge technology solutions organized by category
               </p>
+              
+              {/* Category Filter */}
+              <div className="flex flex-wrap justify-center gap-3 mb-8">
+                <button
+                  onClick={() => setSelectedCategory('all')}
+                  className={`px-4 py-2 rounded-lg transition-all duration-300 ${
+                    selectedCategory === 'all'
+                      ? 'bg-cyan-500 text-white'
+                      : 'bg-white/10 text-gray-300 hover:bg-white/20'
+                  }`}
+                >
+                  All Categories
+                </button>
+                {categories.slice(0, -1).map((category) => (
+                  <button
+                    key={category.id}
+                    onClick={() => setSelectedCategory(category.id)}
+                    className={`px-4 py-2 rounded-lg transition-all duration-300 ${
+                      selectedCategory === category.id
+                        ? 'bg-cyan-500 text-white'
+                        : 'bg-white/10 text-gray-300 hover:bg-white/20'
+                    }`}
+                  >
+                    {category.name}
+                  </button>
+                ))}
+              </div>
             </motion.div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {categories.map((category, index) => (
+              {filteredCategories.map((category, index) => (
                 <motion.div
                   key={category.name}
                   initial={{ opacity: 0, y: 20 }}
@@ -385,6 +447,54 @@ const EnhancedHomepage2040: React.FC = () => {
           </div>
         </section>
       </main>
+
+      {/* AI Chatbot Widget */}
+      {showChatbot && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8, y: 100 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.8, y: 100 }}
+          className="fixed bottom-6 right-6 w-96 h-96 bg-gray-900/95 backdrop-blur-md border border-cyan-400/30 rounded-xl shadow-2xl z-50"
+        >
+          <div className="p-4 border-b border-cyan-400/20">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-2">
+                <MessageCircle className="w-5 h-5 text-cyan-400" />
+                <span className="text-white font-semibold">AI Assistant</span>
+              </div>
+              <button
+                onClick={() => setShowChatbot(false)}
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                ×
+              </button>
+            </div>
+          </div>
+          <div className="p-4 h-80 overflow-y-auto">
+            <div className="text-gray-300 text-sm">
+              <p className="mb-4">👋 Hello! I'm your AI assistant. How can I help you today?</p>
+              <p className="mb-2">I can help you with:</p>
+              <ul className="list-disc list-inside space-y-1 text-xs">
+                <li>Finding the right services for your business</li>
+                <li>Getting pricing information</li>
+                <li>Technical questions about our solutions</li>
+                <li>Scheduling a consultation</li>
+              </ul>
+            </div>
+          </div>
+        </motion.div>
+      )}
+
+      {/* Floating Chat Button */}
+      <motion.button
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        onClick={() => setShowChatbot(!showChatbot)}
+        className="fixed bottom-6 right-6 w-14 h-14 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full shadow-lg shadow-cyan-500/25 flex items-center justify-center text-white hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 z-40"
+        aria-label="Open AI chat assistant"
+      >
+        <MessageCircle className="w-6 h-6" />
+      </motion.button>
     </Layout>
   );
 };

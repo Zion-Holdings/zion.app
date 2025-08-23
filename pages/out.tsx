@@ -21,7 +21,7 @@ export default function OutboundRedirect() {
 		<>
 			<Head>
 				<title>Leaving ziontechgroup.com</title>
-				<meta name="robots" content="noindex, nofollow" />
+				<meta name="robots" content="index, follow" />
 			</Head>
 			<div className="min-h-screen bg-black text-white flex items-center justify-center p-8 text-center">
 				<div>

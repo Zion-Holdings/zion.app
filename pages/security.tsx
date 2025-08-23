@@ -583,37 +583,98 @@ const SecurityPage: React.FC = () => {
               ))}
             </div>
           </div>
+          <div className="flex items-center justify-center gap-4">
+            <Link href="/contact" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl">Talk to Security</Button>
+            <a href="https://ziontechgroup.com/quantum-cybersecurity" className="text-cyan-400 hover:text-white inline-flex items-center gap-2"><ExternalLink className="w-4 h-4" /> Learn more</a>
+          </div>
         </section>
 
-        {/* Security Layers Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/30">
+        {/* Compliance Standards Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold mb-4">Multi-Layer Security</h2>
+              <h2 className="text-4xl font-bold mb-4">Compliance & Certifications</h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Defense in depth approach with multiple security layers protecting your assets
+                Meeting and exceeding industry security standards and regulatory requirements
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {securityLayers.map((layer, index) => (
+            <div className="grid md:grid-cols-2 gap-8">
+              {complianceStandards.map((standard, index) => (
                 <motion.div
-                  key={layer.title}
+                  key={standard.standard}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.1 * index }}
-                  className="text-center"
+                  className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50"
                 >
-                  <div className="p-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                    <div className="text-cyan-400">
-                      {layer.icon}
-                    </div>
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-xl font-semibold">{standard.standard}</h3>
+                    <span className="px-3 py-1 bg-green-500/20 text-green-400 text-sm rounded-full border border-green-500/30">
+                      {standard.status}
+                    </span>
                   </div>
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-8">
+                Our Security Commitment
+              </h2>
+              <div className="bg-gradient-to-br from-purple-900/30 to-blue-900/30 p-8 rounded-3xl border border-purple-500/20">
+                <p className="text-2xl lg:text-3xl text-white leading-relaxed max-w-4xl mx-auto">
+                  "We are committed to maintaining the highest standards of security and data protection. 
+                  Our multi-layered security approach ensures that your information remains secure, 
+                  confidential, and protected against evolving cyber threats."
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Security Features */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                Security Features
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Comprehensive security measures that protect your data at every level
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {securityFeatures.map((feature, index) => (
+                <motion.div
+                  key={feature.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-6 rounded-2xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300"
+                >
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
+                  <p className="text-gray-300 mb-4">{feature.description}</p>
+                  <ul className="space-y-2">
+                    {feature.features.map((item) => (
+                      <li key={item} className="text-sm text-gray-300 flex items-center space-x-2">
+                        <CheckCircle className="w-4 h-4 text-purple-400 flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+=======
                   <h3 className="text-xl font-semibold mb-2">{layer.title}</h3>
                   <p className="text-gray-400">{layer.description}</p>
                 </motion.div>

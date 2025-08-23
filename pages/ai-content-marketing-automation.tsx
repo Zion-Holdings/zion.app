@@ -1,4 +1,5 @@
 import React from 'react';
+=======
 import Head from 'next/head';
 import { PenTool, Target, Users, TrendingUp, Zap, Globe, BarChart3, Smartphone } from 'lucide-react';
 
@@ -68,6 +69,7 @@ const AIContentMarketingAutomationPage: React.FC = () => {
                   Continuous learning and optimization based on 
                   real-time performance data and audience feedback.
                 </p>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </div>
             </div>
           </div>
@@ -343,9 +345,11 @@ const AIContentMarketingAutomationPage: React.FC = () => {
             </div>
           </div>
         </section>
+=======
       </div>
     </>
   );
 };
 
 export default AIContentMarketingAutomationPage;
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

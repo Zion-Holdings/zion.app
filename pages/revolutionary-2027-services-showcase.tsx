@@ -3,7 +3,7 @@ import Head from 'next/head';
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, CheckCircle, ArrowRight, Rocket, Mail, Phone, MapPin, MessageSquare, Globe } from 'lucide-react';
-import Button from '../components/ui/Button';
+import { Button } from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import UltraQuantumHolographicBackground from '../components/ui/UltraQuantumHolographicBackground';
 import { revolutionary2027AIServices } from '../data/revolutionary-2027-ai-services';
@@ -119,7 +119,7 @@ export default function Revolutionary2027ServicesShowcase() {
   return (
     <UltraQuantumHolographicBackground intensity={2.0}>
       <Head>
-        <title>Revolutionary 2027 Services Showcase - Zion Tech Group | Next-Generation AI, Quantum & Technology Solutions</title>
+        <title>Revolutionary 2027 Services Showcase - Zion Tech Group | ArrowRight-Generation AI, Quantum & Technology Solutions</title>
         <meta name="description" content="Discover the most revolutionary AI, Quantum, and Technology services of 2027. Cutting-edge solutions with proven ROI and real-world implementation." />
         <meta property="og:title" content="Revolutionary 2027 Services Showcase - Zion Tech Group" />
         <meta property="og:description" content="Explore the future of technology with our revolutionary 2027 services showcase." />
@@ -143,7 +143,7 @@ export default function Revolutionary2027ServicesShowcase() {
               Services Showcase
             </h2>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-              Experience the future of technology with our revolutionary AI, Quantum Computing, and Next-Generation IT services. 
+              Experience the future of technology with our revolutionary AI, Quantum Computing, and ArrowRight-Generation IT services. 
               Each solution delivers measurable ROI and transforms industries.
             </p>
             
@@ -177,11 +177,11 @@ export default function Revolutionary2027ServicesShowcase() {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Button href="/contact" className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-lg px-8 py-4 hover:from-cyan-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-300">
+              <Link href="/contact" className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-lg px-8 py-4 hover:from-cyan-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-300">
                 <Rocket className="w-5 h-5 mr-2" />
                 Get Started Today
               </Button>
-              <Button href="/services" variant="outline" className="border-2 border-purple-500 text-purple-400 text-lg px-8 py-4 hover:bg-purple-500 hover:text-white transform hover:scale-105 transition-all duration-300">
+              <Link href="/services" variant="outline" className="border-2 border-purple-500 text-purple-400 text-lg px-8 py-4 hover:bg-purple-500 hover:text-white transform hover:scale-105 transition-all duration-300">
                 <Globe className="w-5 h-5 mr-2" />
                 View All Services
               </Button>
@@ -363,8 +363,8 @@ export default function Revolutionary2027ServicesShowcase() {
                             Learn More
                           </Button>
                           <Button 
-                            href="/contact" 
-                            variant="outline" 
+                            href="/contact"
+                            variant="outline"
                             className="px-4 py-2 border border-gray-600 text-gray-200 hover:bg-gray-700 hover:border-gray-500 transform hover:scale-105 transition-all duration-300"
                           >
                             <MessageSquare className="w-4 h-4" />
@@ -434,11 +434,11 @@ export default function Revolutionary2027ServicesShowcase() {
             </div>
 
             <div className="flex flex-wrap items-center justify-center gap-4">
-              <Button href="/contact" className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-lg px-8 py-4 hover:from-cyan-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-300">
+              <Link href="/contact" className="bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-lg px-8 py-4 hover:from-cyan-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-300">
                 <Rocket className="w-5 h-5 mr-2" />
                 Start Your Transformation
               </Button>
-              <Button href="/services" variant="outline" className="border-2 border-purple-500 text-purple-400 text-lg px-8 py-4 hover:bg-purple-500 hover:text-white transform hover:scale-105 transition-all duration-300">
+              <Link href="/services" variant="outline" className="border-2 border-purple-500 text-purple-400 text-lg px-8 py-4 hover:bg-purple-500 hover:text-white transform hover:scale-105 transition-all duration-300">
                 <Globe className="w-5 h-5 mr-2" />
                 Explore All Services
               </Button>

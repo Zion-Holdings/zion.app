@@ -7,6 +7,7 @@ import {
   Brain, Atom, Shield, Cloud, BarChart, Code, Rocket as RocketIcon, Users, Info, Briefcase,
   Heart, DollarSign, Cog, FileText, Calendar, Lightbulb, HelpCircle, Monitor, Zap, Star,
   Settings, Globe, Lock, Server, Database, Network, Palette, Cpu, Layers, Globe2, Truck, Accessibility
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 } from 'lucide-react';
 
 interface SidebarItem {
@@ -22,98 +23,150 @@ interface SidebarItem {
 
 const sidebarItems: SidebarItem[] = [
   {
-    name: 'Home',
-    href: '/',
-    icon: <Home className="w-5 h-5" />,
-    description: 'Welcome to Zion Tech Group'
+    title: 'AI & Consciousness',
+    icon: <Brain className="w-5 h-5" />,
+    color: 'text-violet-400',
+    items: [
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', badge: 'New' },
+      { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network', badge: 'Hot' },
+      { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant', badge: 'New' },
+      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', badge: 'Popular' },
+      { name: 'AI Predictive Maintenance', href: '/ai-predictive-maintenance-platform', badge: 'New' },
+      { name: 'AI Content Personalization', href: '/ai-content-personalization-engine', badge: 'New' },
+      { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem-manager' },
+      { name: 'AI Ethics & Governance', href: '/ai-ethics-governance-framework' },
+      { name: 'AI Evaluation Orchestrator', href: '/services/ai-evaluation-orchestrator', badge: 'New' },
+      { name: 'AI Support Triage Router', href: '/services/ai-support-triage-router', badge: 'New' },
+      { name: 'AI Code Review Assistant Pro', href: '/services/ai-code-review-assistant-pro', badge: 'New' },
+      { name: 'AI Revenue Forecasting Copilot', href: '/services/ai-revenue-forecasting-copilot', badge: 'New' },
+      { name: 'RAG Evaluation Lab', href: '/rag-evaluation-lab/', badge: 'New' },
+      { name: 'API Performance Testing', href: '/api-performance-testing/' },
+      { name: 'AI Creativity Studio', href: '/ai-creativity-studio' },
+      { name: 'AI Education Platform', href: '/ai-education-platform' },
+      { name: 'AI Healthcare Diagnostics', href: '/healthcare-solutions' },
+      { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence' },
+      { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform' },
+      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' }
+    ]
   },
   {
     name: 'Services',
     href: '/services',
     icon: <Rocket className="w-5 h-5" />,
-    description: 'Our comprehensive technology solutions',
-    badge: 'Featured',
-    children: [
-      { name: 'All Services', href: '/services', icon: <Rocket className="w-4 h-4" />, featured: true },
-      { name: 'AI & Machine Learning', href: '/ai-services', icon: <Brain className="w-4 h-4" /> },
-      { name: 'Quantum Technology', href: '/quantum-services', icon: <Atom className="w-4 h-4" /> },
-      { name: 'Cybersecurity', href: '/cybersecurity', icon: <Shield className="w-4 h-4" /> },
-      { name: 'Cloud & Infrastructure', href: '/it-services', icon: <Cloud className="w-4 h-4" /> },
-      { name: 'Business Intelligence', href: '/data-analytics', icon: <BarChart className="w-4 h-4" /> },
-      { name: 'DevOps & Automation', href: '/devops-automation', icon: <Code className="w-4 h-4" /> },
-      { name: 'Space Technology', href: '/space-tech', icon: <RocketIcon className="w-4 h-4" /> }
+    color: 'text-emerald-400',
+    items: [
+      { name: 'AI Customer Success', href: '/ai-customer-success-platform', badge: 'New' },
+      { name: 'Supply Chain Optimization', href: '/intelligent-supply-chain-optimization', badge: 'New' },
+      { name: 'Financial Planning AI', href: '/ai-financial-planning-platform', badge: 'New' },
+      { name: 'HR Analytics Platform', href: '/ai-hr-analytics-platform', badge: 'New' },
+      { name: 'Sales Intelligence AI', href: '/ai-sales-intelligence-platform', badge: 'New' },
+      { name: 'AI Decision Engine', href: '/ai-powered-decision-engine' },
+      { name: 'Content Automation', href: '/intelligent-content-automation-platform' },
+      { name: 'Smart CRM Suite', href: '/smart-crm-intelligence-suite' },
+      { name: 'Financial Analytics', href: '/automated-financial-analytics-platform' },
+      { name: 'Project Management', href: '/intelligent-project-management-suite' },
+      { name: 'Business Intelligence', href: '/ai-business-intelligence-suite' },
+      { name: 'Marketing Automation', href: '/ai-autonomous-marketing-platform' }
     ]
   },
   {
-    name: 'Solutions',
-    href: '/solutions',
+    title: 'Industry Solutions',
     icon: <Target className="w-5 h-5" />,
-    description: 'Industry-specific solutions',
-    children: [
-      { name: 'Enterprise Solutions', href: '/solutions/enterprise', icon: <Building className="w-4 h-4" /> },
-      { name: 'Healthcare Solutions', href: '/solutions/healthcare', icon: <Heart className="w-4 h-4" /> },
-      { name: 'Financial Solutions', href: '/solutions/financial', icon: <DollarSign className="w-4 h-4" /> },
-      { name: 'Manufacturing Solutions', href: '/solutions/manufacturing', icon: <Cog className="w-4 h-4" /> },
-      { name: 'Retail Solutions', href: '/retail-technology-solutions', icon: <Target className="w-4 h-4" /> },
-      { name: 'Government Solutions', href: '/government-technology-solutions', icon: <Shield className="w-4 h-4" /> }
+    color: 'text-orange-400',
+    items: [
+      { name: 'Healthcare Solutions', href: '/healthcare-solutions', badge: 'New' },
+      { name: 'Financial Solutions', href: '/financial-solutions', badge: 'New' },
+      { name: 'Government Solutions', href: '/government-technology-solutions', badge: 'New' },
+      { name: 'Retail Solutions', href: '/retail-technology-solutions', badge: 'New' },
+      { name: 'Manufacturing AI', href: '/manufacturing-ai-solutions', badge: 'New' },
+      { name: 'Education Technology', href: '/education-technology-solutions' },
+      { name: 'Energy & Utilities', href: '/energy-utilities-solutions' },
+      { name: 'Entertainment & Media', href: '/entertainment-media-solutions' },
+      { name: 'Real Estate Technology', href: '/real-estate-technology-solutions' },
+      { name: 'Biotech AI Research', href: '/biotech-ai-research-platform' }
     ]
   },
   {
-    name: 'Company',
-    href: '/about',
-    icon: <Building className="w-5 h-5" />,
-    description: 'About Zion Tech Group',
-    children: [
-      { name: 'About Us', href: '/about', icon: <Info className="w-4 h-4" /> },
-      { name: 'Our Mission', href: '/mission', icon: <Target className="w-4 h-4" /> },
-      { name: 'Leadership Team', href: '/leadership', icon: <Users className="w-4 h-4" /> },
-      { name: 'Company Culture', href: '/culture', icon: <Heart className="w-4 h-4" /> },
-      { name: 'Our Values', href: '/values', icon: <Star className="w-4 h-4" /> },
-      { name: 'Careers', href: '/careers', icon: <Briefcase className="w-4 h-4" /> },
-      { name: 'News & Press', href: '/press', icon: <FileText className="w-4 h-4" /> }
-    ]
-  },
-  {
-    name: 'Resources',
-    href: '/resources',
+    title: 'Resources & Support',
     icon: <BookOpen className="w-5 h-5" />,
-    description: 'Knowledge and resources',
-    children: [
-      { name: 'Documentation', href: '/docs', icon: <FileText className="w-4 h-4" /> },
-      { name: 'Blog & Articles', href: '/blog', icon: <BookOpen className="w-4 h-4" /> },
-      { name: 'Case Studies', href: '/case-studies', icon: <BarChart className="w-4 h-4" /> },
-      { name: 'White Papers', href: '/white-papers', icon: <FileText className="w-4 h-4" /> },
-      { name: 'Webinars', href: '/webinars', icon: <Calendar className="w-4 h-4" /> },
-      { name: 'Events', href: '/events-webinars', icon: <Calendar className="w-4 h-4" /> },
-      { name: 'Training', href: '/training', icon: <Lightbulb className="w-4 h-4" /> }
+    color: 'text-purple-400',
+    items: [
+      { name: 'Documentation', href: '/docs', badge: 'New' },
+      { name: 'Blog & Insights', href: '/blog', badge: 'New' },
+      { name: 'Case Studies', href: '/case-studies', badge: 'New' },
+      { name: 'Support Center', href: '/support', badge: 'New' },
+      { name: 'Training Resources', href: '/training' },
+      { name: 'Performance Reports', href: '/reports' },
+      { name: 'API Documentation', href: '/api-docs' },
+      { name: 'Developer Resources', href: '/developer-resources' },
+      { name: 'Community Forum', href: '/community' },
+      { name: 'Events & Webinars', href: '/events' }
     ]
   },
   {
-    name: 'Support',
-    href: '/support',
-    icon: <MessageCircle className="w-5 h-5" />,
-    description: 'Get help and support',
-    children: [
-      { name: 'Contact Us', href: '/contact', icon: <MessageCircle className="w-4 h-4" /> },
-      { name: 'Get Started', href: '/get-started', icon: <Zap className="w-4 h-4" /> },
-      { name: 'Support Center', href: '/support', icon: <HelpCircle className="w-4 h-4" /> },
-      { name: 'Status Page', href: '/status', icon: <Monitor className="w-4 h-4" /> },
-      { name: 'Developer Resources', href: '/developer-resources', icon: <Code className="w-4 h-4" /> }
-    ]
-  },
-  {
-    name: 'Compliance & Accessibility',
-    href: '/compliance',
-    icon: <Shield className="w-5 h-5" />,
-    description: 'Enterprise compliance and accessibility solutions',
-    children: [
-      { name: 'SOC 2 Compliance', href: '/soc2-compliance-automation', icon: <Shield className="w-4 h-4" /> },
-      { name: 'GDPR Compliance', href: '/privacy-compliance-automation', icon: <Lock className="w-4 h-4" /> },
-      { name: 'Accessibility Tools', href: '/accessibility', icon: <Accessibility className="w-4 h-4" /> },
-      { name: 'Compliance Monitoring', href: '/compliance', icon: <Monitor className="w-4 h-4" /> },
-      { name: 'Privacy Portal', href: '/privacy-request-portal', icon: <Users className="w-4 h-4" /> }
+    title: 'Company & Contact',
+    icon: <Building className="w-5 h-5" />,
+    color: 'text-gray-400',
+    items: [
+      { name: 'About Us', href: '/about', badge: 'New' },
+      { name: 'Contact Information', href: '/contact', badge: 'New' },
+      { name: 'Partnerships', href: '/partners', badge: 'New' },
+      { name: 'Investment Info', href: '/investors', badge: 'New' },
+      { name: 'Career Opportunities', href: '/careers', badge: 'New' },
+      { name: 'News & Updates', href: '/news' },
+      { name: 'Company Status', href: '/status' },
+      { name: 'Privacy Policy', href: '/privacy' },
+      { name: 'Terms of Service', href: '/terms' },
+      { name: 'Cookie Policy', href: '/cookies' }
     ]
   }
+];
+
+const quickLinks = [
+  { name: 'Home', href: '/', icon: <Home className="w-4 h-4" /> },
+  { name: 'All Services', href: '/comprehensive-2025-services-showcase', icon: <Star className="w-4 h-4" /> },
+  { name: 'Pricing', href: '/pricing', icon: <DollarSign className="w-4 h-4" /> },
+  { name: 'Market Pricing', href: '/market-pricing', icon: <DollarSign className="w-4 h-4" /> },
+  { name: 'Services Advertising', href: '/services-advertising', icon: <BookOpen className="w-4 h-4" /> },
+  { name: 'Get Quote', href: '/quote', icon: <DollarSign className="w-4 h-4" /> },
+  { name: 'Book Demo', href: '/demo', icon: <Video className="w-4 h-4" /> },
+  { name: 'Blog', href: '/blog', icon: <FileText className="w-4 h-4" /> },
+  { name: 'Resources', href: '/resources', icon: <BookOpen className="w-4 h-4" /> },
+  { name: 'Events', href: '/events', icon: <Calendar className="w-4 h-4" /> },
+  { name: 'Webinars', href: '/webinars', icon: <Video className="w-4 h-4" /> },
+  { name: 'About Us', href: '/about', icon: <Users className="w-4 h-4" /> },
+  { name: 'Contact', href: '/contact', icon: <Mail className="w-4 h-4" /> },
+  { name: 'Support', href: '/support', icon: <HelpCircle className="w-4 h-4" /> }
+];
+
+const companyLinks = [
+  { name: 'About Us', href: '/about', description: 'Our mission and vision' },
+  { name: 'Leadership Team', href: '/leadership', description: 'Executive team' },
+  { name: 'Careers', href: '/careers', description: 'Join our team' },
+  { name: 'News & Updates', href: '/news', description: 'Latest company news' },
+  { name: 'Case Studies', href: '/case-studies', description: 'Success stories' },
+  { name: 'Resources', href: '/resources', description: 'Whitepapers and guides' },
+  { name: 'Blog', href: '/blog', description: 'Industry insights' },
+  { name: 'Partners', href: '/partners', description: 'Partnership opportunities' },
+  { name: 'Investors', href: '/investors', description: 'Investment information' }
+];
+
+const supportLinks = [
+  { name: 'Contact Support', href: '/support', description: 'Get help from our team' },
+  { name: 'Documentation', href: '/docs', description: 'Technical guides' },
+  { name: 'API Reference', href: '/api-docs', description: 'Developer documentation' },
+  { name: 'Status Page', href: '/status', description: 'Service status' },
+  { name: 'Training', href: '/training', description: 'Learn our platforms' },
+  { name: 'Community', href: '/community', description: 'Connect with users' },
+  { name: 'FAQ', href: '/support', description: 'Frequently asked questions' },
+  { name: 'Contact Us', href: '/contact', description: 'Get in touch directly' }
+];
+
+const stats = [
+  { label: 'Services Delivered', value: '500+', icon: <CheckCircle className="w-5 h-5" /> },
+  { label: 'Happy Clients', value: '200+', icon: <Users className="w-5 h-5" /> },
+  { label: 'Years Experience', value: '15+', icon: <Clock className="w-5 h-5" /> },
+  { label: 'Awards Won', value: '25+', icon: <Award className="w-5 h-5" /> }
 ];
 
 interface EnhancedSidebar2025Props {
@@ -173,6 +226,7 @@ const EnhancedSidebar2025: React.FC<EnhancedSidebar2025Props> = ({ isOpen, onClo
     router.push(href);
     onClose();
   };
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
   return (
     <AnimatePresence>
@@ -192,11 +246,11 @@ const EnhancedSidebar2025: React.FC<EnhancedSidebar2025Props> = ({ isOpen, onClo
             initial={{ x: '-100%' }}
             animate={{ x: 0 }}
             exit={{ x: '-100%' }}
-            transition={{ type: 'tween', duration: 0.3 }}
-            className="fixed left-0 top-0 h-full w-80 bg-black/95 backdrop-blur-md border-r border-cyan-500/20 z-50 overflow-y-auto"
+            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            className="fixed left-0 top-0 h-full w-80 bg-black/95 backdrop-blur-xl border-r border-white/10 z-50 overflow-y-auto"
           >
             {/* Header */}
-            <div className="sticky top-0 bg-black/80 backdrop-blur-md border-b border-cyan-500/20 p-4">
+            <div className="sticky top-0 bg-black/80 backdrop-blur-xl border-b border-white/10 p-4">
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center space-x-2">
                   <div className="w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center">
@@ -209,6 +263,7 @@ const EnhancedSidebar2025: React.FC<EnhancedSidebar2025Props> = ({ isOpen, onClo
                 <button
                   onClick={onClose}
                   className="p-2 text-gray-400 hover:text-white hover:bg-gray-800 rounded-lg transition-colors"
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -216,12 +271,14 @@ const EnhancedSidebar2025: React.FC<EnhancedSidebar2025Props> = ({ isOpen, onClo
               
               {/* Search */}
               <div className="relative">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 <input
                   type="text"
                   placeholder="Search navigation..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full px-3 py-2 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent text-sm"
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 />
               </div>
             </div>
@@ -336,6 +393,7 @@ const EnhancedSidebar2025: React.FC<EnhancedSidebar2025Props> = ({ isOpen, onClo
                   >
                     Privacy
                   </Link>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 </div>
               </div>
             </div>

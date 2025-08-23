@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
-import Button from '../components/ui/Button';
+import { Button } from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import { Check, Phone, Mail, MapPin, ExternalLink, Lock } from 'lucide-react';
 
@@ -55,8 +55,8 @@ export default function TLSCertificateMonitorPage() {
               <div className="text-3xl font-bold text-white">$39<span className="text-base text-gray-400">/month</span></div>
               <div className="text-sm text-gray-400 mt-2">Trial: 14 days • Setup: 10 minutes</div>
               <div className="mt-6 flex gap-3">
-                <Button href="/contact" className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Contact Sales</Button>
-                <Button href="https://ziontechgroup.com/tls-certificate-monitor" variant="outline" className="flex-1 border border-gray-600 text-gray-200"><ExternalLink className="w-4 h-4 mr-2" /> Learn More</Button>
+                <Link href="/contact" className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Contact Sales</Button>
+                <Link href="https://ziontechgroup.com/tls-certificate-monitor" variant="outline" className="flex-1 border border-gray-600 text-gray-200"><ExternalLink className="w-4 h-4 mr-2" /> Learn More</Button>
               </div>
               <div className="mt-6 space-y-3 text-sm">
                 <div className="flex items-center gap-2 text-cyan-400"><Phone className="w-4 h-4" /><a href={`tel:${contactInfo.mobile.replace(/[^+\\d]/g, '')}`} className="hover:underline">{contactInfo.mobile}</a></div>
