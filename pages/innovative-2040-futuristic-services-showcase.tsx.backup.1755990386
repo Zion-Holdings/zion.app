@@ -40,8 +40,13 @@ interface Service {
   marketSize?: string;
   growthRate?: string;
   contactInfo?: {
+<<<<<<< HEAD
+    mobile?: string;
+    phone?: string;
+=======
     phone?: string;
     mobile?: string;
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-78c3
     email: string;
     address?: string;
     website: string;
@@ -101,8 +106,13 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
     .sort((a, b) => {
       switch (sortBy) {
         case 'price': {
+<<<<<<< HEAD
+          const aPrice = typeof a.price === 'string' ? parseFloat(a.price.replace(/[^0-9.]/g, '')) : (a.price as any)?.monthly || 0;
+          const bPrice = typeof b.price === 'string' ? parseFloat(b.price.replace(/[^0-9.]/g, '')) : (b.price as any)?.monthly || 0;
+=======
           const aPrice = typeof a.price === 'string' && a.price ? parseFloat(a.price.replace(/[^0-9.]/g, '')) : (a.price && typeof a.price === 'object' ? a.price.monthly : 0);
           const bPrice = typeof b.price === 'string' && b.price ? parseFloat(b.price.replace(/[^0-9.]/g, '')) : (b.price && typeof b.price === 'object' ? b.price.monthly : 0);
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-78c3
           return aPrice - bPrice;
         }
         case 'popularity':
