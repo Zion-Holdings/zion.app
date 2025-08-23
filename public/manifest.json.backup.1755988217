@@ -1,7 +1,11 @@
 {
   "name": "Zion Tech Group - Revolutionary Technology Solutions",
   "short_name": "Zion Tech",
+<<<<<<< HEAD
+  "description": "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.",
+=======
   "description": "Pioneering the future of technology with innovative AI, quantum computing, and enterprise solutions that drive business transformation",
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b373
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
@@ -12,48 +16,82 @@
   "categories": ["business", "productivity", "technology", "utilities"],
   "icons": [
     {
+<<<<<<< HEAD
+      "src": "/icons/icon-72x72.png",
+=======
       "src": "/images/icon-72x72.png",
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b373
       "sizes": "72x72",
       "type": "image/png",
       "purpose": "maskable any"
     },
     {
+<<<<<<< HEAD
+      "src": "/icons/icon-96x96.png",
+=======
       "src": "/images/icon-96x96.png",
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b373
       "sizes": "96x96",
       "type": "image/png",
       "purpose": "maskable any"
     },
     {
+<<<<<<< HEAD
+      "src": "/icons/icon-128x128.png",
+=======
       "src": "/images/icon-128x128.png",
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b373
       "sizes": "128x128",
       "type": "image/png",
       "purpose": "maskable any"
     },
     {
+<<<<<<< HEAD
+      "src": "/icons/icon-144x144.png",
+=======
       "src": "/images/icon-144x144.png",
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b373
       "sizes": "144x144",
       "type": "image/png",
       "purpose": "maskable any"
     },
     {
+<<<<<<< HEAD
+      "src": "/icons/icon-152x152.png",
+=======
       "src": "/images/icon-152x152.png",
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b373
       "sizes": "152x152",
       "type": "image/png",
       "purpose": "maskable any"
     },
     {
+<<<<<<< HEAD
+      "src": "/icons/icon-192x192.png",
+=======
       "src": "/images/icon-192x192.png",
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b373
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable any"
     },
     {
+<<<<<<< HEAD
+      "src": "/icons/icon-384x384.png",
+=======
       "src": "/images/icon-384x384.png",
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b373
       "sizes": "384x384",
       "type": "image/png",
       "purpose": "maskable any"
     },
     {
+<<<<<<< HEAD
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+=======
       "src": "/images/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
@@ -74,17 +112,26 @@
       "type": "image/png",
       "form_factor": "narrow",
       "label": "Zion Tech Group Mobile Experience"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b373
     }
   ],
   "shortcuts": [
     {
       "name": "Services",
       "short_name": "Services",
+<<<<<<< HEAD
+      "description": "Explore our revolutionary technology services",
+      "url": "/services",
+      "icons": [
+        {
+          "src": "/icons/icon-96x96.png",
+=======
       "description": "View our revolutionary technology services",
       "url": "/services",
       "icons": [
         {
           "src": "/images/icon-services.png",
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b373
           "sizes": "96x96"
         }
       ]
@@ -96,7 +143,11 @@
       "url": "/contact",
       "icons": [
         {
+<<<<<<< HEAD
+          "src": "/icons/icon-96x96.png",
+=======
           "src": "/images/icon-contact.png",
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b373
           "sizes": "96x96"
         }
       ]
@@ -108,6 +159,9 @@
       "url": "/ai-consciousness-evolution-2040",
       "icons": [
         {
+<<<<<<< HEAD
+          "src": "/icons/icon-96x96.png",
+=======
           "src": "/images/icon-ai.png",
           "sizes": "96x96"
         }
@@ -121,12 +175,45 @@
       "icons": [
         {
           "src": "/images/icon-quantum.png",
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b373
           "sizes": "96x96"
         }
       ]
     }
   ],
+<<<<<<< HEAD
+  "screenshots": [
+    {
+      "src": "/screenshots/desktop-home.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Homepage on desktop"
+    },
+    {
+      "src": "/screenshots/mobile-home.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Homepage on mobile"
+    },
+    {
+      "src": "/screenshots/desktop-services.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Services page on desktop"
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://ziontechgroup.com"
+    }
+  ],
+=======
   "related_applications": [],
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b373
   "prefer_related_applications": false,
   "edge_side_panel": {
     "preferred_width": 400
@@ -135,6 +222,24 @@
     "client_mode": "navigate-existing"
   },
   "handle_links": "preferred",
+<<<<<<< HEAD
+  "protocol_handlers": [
+    {
+      "protocol": "web+zion",
+      "url": "/?protocol=%s"
+    }
+  ],
+  "file_handlers": [
+    {
+      "action": "/file-handler",
+      "accept": {
+        "text/*": [".txt", ".md", ".json"],
+        "application/pdf": [".pdf"],
+        "image/*": [".png", ".jpg", ".jpeg", ".gif", ".webp"]
+      }
+    }
+  ],
+=======
   "capture_links": "new-client-navigate",
   "file_handlers": [
     {
@@ -152,6 +257,7 @@
       "url": "/?protocol=%s"
     }
   ],
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b373
   "share_target": {
     "action": "/share",
     "method": "POST",
@@ -179,7 +285,12 @@
     "fast",
     "simple",
     "responsive",
+<<<<<<< HEAD
+    "offline-capable",
+    "push-notifications"
+=======
     "offline-capable"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-b373
   ],
   "developer": {
     "name": "Zion Tech Group",
