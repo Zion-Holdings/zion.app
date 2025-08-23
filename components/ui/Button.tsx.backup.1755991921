@@ -6,7 +6,12 @@ interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
   size?: 'sm' | 'md' | 'lg';
   href?: string;
+<<<<<<< HEAD
+  target?: string;
+  rel?: string;
+=======
   external?: boolean;
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-4739
   onClick?: () => void;
   disabled?: boolean;
   className?: string;
@@ -18,7 +23,12 @@ export default function Button({
   variant = 'primary',
   size = 'md',
   href,
+<<<<<<< HEAD
+  target,
+  rel,
+=======
   external = false,
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-4739
   onClick,
   disabled = false,
   className = '',
