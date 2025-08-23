@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
   Globe, Phone, Mail, MapPin, 
-  Brain, Atom, Shield, Rocket, Target, 
+  Brain, Atom, Target, 
   Star, 
   Twitter, Linkedin, Youtube, Github, 
   ArrowUp, ArrowRight, ExternalLink
@@ -79,7 +79,9 @@ const footerSections = [
       { name: 'Case Studies', href: '/case-studies' },
       { name: 'Support', href: '/support' },
       { name: 'Training', href: '/training' },
-      { name: 'Resources', href: '/resources' }
+      { name: 'Resources', href: '/resources' },
+      { name: 'AI Ethics & Governance', href: '/ai-ethics-governance' },
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution' }
     ]
   }
 ];

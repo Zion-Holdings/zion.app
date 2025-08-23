@@ -11,6 +11,33 @@ import { innovative2037MicroSaasServices } from '../data/innovative-2037-micro-s
 import { innovative2037ITServices } from '../data/innovative-2037-it-services';
 import { innovative2037AIServices } from '../data/innovative-2037-ai-services';
 
+interface ServiceCardProps {
+  id?: string;
+  name: string;
+  description: string;
+  category: string;
+  pricing?: {
+    starter: string;
+    pro: string;
+    enterprise: string;
+  };
+  features: string[];
+  benefits: string[];
+  useCases: string[];
+  marketPrice: string;
+  link: string;
+  launchDate: string;
+  rating: number;
+  technology: string[];
+  integrations: string[];
+  compliance: string[];
+  color?: string;
+  icon?: string;
+  popular?: boolean;
+  price?: string;
+  period?: string;
+}
+
 const contactInfo = {
   mobile: '+1 302 464 0950',
   email: 'kleber@ziontechgroup.com',
@@ -18,7 +45,7 @@ const contactInfo = {
   website: 'https://ziontechgroup.com'
 };
 
-const ServiceCard = ({ service, index }: { service: any; index: number }) => (
+const ServiceCard = ({ service, index }: { service: ServiceCardProps; index: number }) => (
   <motion.div
     initial={{ opacity: 0, y: 50 }}
     animate={{ opacity: 1, y: 0 }}
@@ -26,9 +53,9 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
     className="relative group"
   >
     <div className={`absolute inset-0 bg-gradient-to-r ${service.color} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
-    <div className={`relative bg-gradient-to-r ${service.color.replace('from-', 'from-').replace('to-', 'to-')} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
+    <div className={`relative bg-gradient-to-r ${service.color ? service.color.replace('from-', 'from-').replace('to-', 'to-') : 'from-gray-600 to-gray-800'} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
       <div className="flex items-start justify-between mb-6">
-        <div className="text-4xl">{service.icon}</div>
+        <div className="text-4xl">{service.icon || '🚀'}</div>
         {service.popular && (
           <span className="px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-semibold rounded-full">
             Popular
@@ -50,8 +77,8 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
       
       <div className="flex items-center justify-between mb-6">
         <div>
-          <span className="text-3xl font-bold text-white">{service.price}</span>
-          <span className="text-gray-400 text-sm">{service.period}</span>
+          <span className="text-3xl font-bold text-white">{service.pricing?.starter || service.price || '$99'}</span>
+          <span className="text-gray-400 text-sm">{service.period || '/month'}</span>
         </div>
         <div className="text-right">
           <div className="flex items-center space-x-1 text-yellow-400">

@@ -87,6 +87,53 @@ interface Service {
   [key: string]: unknown;
 }
 
+// Interface for the service card component
+interface ServiceCardService {
+  id: string;
+  name: string;
+  tagline: string;
+  description: string;
+  price: string;
+  period: string;
+  features: string[];
+  popular?: boolean;
+  category: string;
+  icon: string;
+}
+
+// Adapter function to convert services to the format expected by the service card
+function adaptServiceForCard(service: Service): ServiceCardService {
+  // Handle MicroSaasService format
+  if (service.price && typeof service.price === 'object' && 'monthly' in service.price) {
+    return {
+      id: service.id || service.name,
+      name: service.name,
+      tagline: service.tagline || service.description.substring(0, 100) + '...',
+      description: service.description,
+      price: `$${service.price.monthly}`,
+      period: '/month',
+      features: service.features || [],
+      popular: service.popular || false,
+      category: service.category,
+      icon: service.icon || '🚀'
+    };
+  }
+  
+  // Handle other service formats
+  return {
+    id: service.id || service.name,
+    name: service.name,
+    tagline: service.tagline || service.description.substring(0, 100) + '...',
+    description: service.description,
+    price: service.price || '$99',
+    period: service.period || '/month',
+    features: service.features || [],
+    popular: service.popular || false,
+    category: service.category,
+    icon: service.icon || '🚀'
+  };
+}
+
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 }
@@ -285,7 +332,7 @@ export default function ServicesIndexPage() {
                   {featuredServices.map((service: Service, index: number) => (
                     <UltraFuturisticServiceCard2026
                       key={`${service.id || service.name}-${index}`}
-                      service={service}
+                      service={adaptServiceForCard(service)}
                       variant="quantum"
                       theme="quantum"
                     />
@@ -304,7 +351,7 @@ export default function ServicesIndexPage() {
                   {latestServices.map((service: Service, index: number) => (
                     <UltraFuturisticServiceCard2026
                       key={`${service.id || service.name}-${index}`}
-                      service={service}
+                      service={adaptServiceForCard(service)}
                       variant="ai"
                       theme="neon"
                     />
@@ -355,7 +402,7 @@ export default function ServicesIndexPage() {
                         {categoryServices.slice(0, 6).map((service: Service, index: number) => (
                           <UltraFuturisticServiceCard2026
                             key={`${service.id || service.name}-${index}`}
-                            service={service}
+                            service={adaptServiceForCard(service)}
                             variant="default"
                             theme="cyber"
                           />
@@ -443,7 +490,7 @@ export default function ServicesIndexPage() {
                 {featuredServices.map((service: Service, index: number) => (
                   <UltraFuturisticServiceCard2026
                     key={`${service.id || service.name}-${index}`}
-                    service={service}
+                    service={adaptServiceForCard(service)}
                     variant="quantum"
                     theme="quantum"
                   />
@@ -462,7 +509,7 @@ export default function ServicesIndexPage() {
                 {latestServices.map((service: Service, index: number) => (
                   <UltraFuturisticServiceCard2026
                     key={`${service.id || service.name}-${index}`}
-                    service={service}
+                    service={adaptServiceForCard(service)}
                     variant="ai"
                     theme="neon"
                   />
@@ -510,14 +557,14 @@ export default function ServicesIndexPage() {
                       </span>
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                      {categoryServices.slice(0, 6).map((service: Service, index: number) => (
-                        <UltraFuturisticServiceCard2026
-                          key={`${service.id || service.name}-${index}`}
-                          service={service}
-                          variant="default"
-                          theme="cyber"
-                        />
-                      ))}
+                                              {categoryServices.slice(0, 6).map((service: Service, index: number) => (
+                          <UltraFuturisticServiceCard2026
+                            key={`${service.id || service.name}-${index}`}
+                            service={adaptServiceForCard(service)}
+                            variant="default"
+                            theme="cyber"
+                          />
+                        ))}
                     </div>
                     {categoryServices.length > 6 && (
                       <div className="text-center mt-6">

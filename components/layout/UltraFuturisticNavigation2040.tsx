@@ -4,7 +4,8 @@ import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, X, Search, ChevronDown, Zap, Globe, Lock, 
-  Phone, Mail, MapPin, ArrowRight, Star, Users, Award
+  Phone, ArrowRight, Star, Users,
+  Brain, Shield, BookOpen, Target, HelpCircle
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -29,6 +30,18 @@ const navigationItems: NavigationItem[] = [
         href: '/ai-services',
         icon: <Star className="w-4 h-4" />,
         description: 'Advanced AI solutions for enterprise'
+      },
+      {
+        label: 'AI Consciousness Evolution',
+        href: '/ai-consciousness-evolution',
+        icon: <Brain className="w-4 h-4" />,
+        description: 'Revolutionary AI consciousness platform'
+      },
+      {
+        label: 'AI Ethics & Governance',
+        href: '/ai-ethics-governance',
+        icon: <Shield className="w-4 h-4" />,
+        description: 'Responsible AI development framework'
       },
       {
         label: 'Innovative 2040 Services',
@@ -69,9 +82,62 @@ const navigationItems: NavigationItem[] = [
     ]
   },
   {
-    label: 'About',
-    href: '/about',
-    icon: <Users className="w-4 h-4" />
+    label: 'Company',
+    children: [
+      {
+        label: 'About Us',
+        href: '/about',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Learn about Zion Tech Group'
+      },
+      {
+        label: 'Careers',
+        href: '/careers',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Join our team'
+      },
+      {
+        label: 'Partners',
+        href: '/partners',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Strategic partnerships'
+      },
+      {
+        label: 'News',
+        href: '/news',
+        icon: <Globe className="w-4 h-4" />,
+        description: 'Latest updates and insights'
+      }
+    ]
+  },
+  {
+    label: 'Resources',
+    children: [
+      {
+        label: 'Blog',
+        href: '/blog',
+        icon: <BookOpen className="w-4 h-4" />,
+        description: 'Industry insights and analysis'
+      },
+      {
+        label: 'Case Studies',
+        href: '/case-studies',
+        icon: <Target className="w-4 h-4" />,
+        description: 'Success stories and implementations'
+      },
+      {
+        label: 'Support',
+        href: '/support',
+        icon: <HelpCircle className="w-4 h-4" />,
+        description: 'Technical support and documentation'
+      },
+      {
+        label: 'Training',
+        href: '/training',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Professional development programs'
+      }
+    ]
   },
   {
     label: 'Contact',
@@ -220,7 +286,7 @@ const UltraFuturisticNavigation2040: React.FC = () => {
                           className="absolute top-full left-0 mt-2 w-80 bg-gray-800/95 backdrop-blur-md border border-gray-700/50 rounded-2xl shadow-2xl overflow-hidden"
                         >
                           <div className="p-4 space-y-2">
-                            {item.children.map((child, childIndex) => (
+                            {item.children.map((child) => (
                               <Link
                                 key={child.label}
                                 href={child.href || '#'}
