@@ -1,233 +1,195 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Brain, Palette, Target, Star, CheckCircle, ArrowRight, Zap, Users, BarChart3, Sparkles } from 'lucide-react';
 import Layout from '../components/layout/Layout';
+import { Palette, Sparkles, Zap, Target, Users, Award, Clock, CheckCircle, Brain, FileText } from 'lucide-react';
 
 export default function AIContentPersonalization2041() {
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-green-900 via-emerald-900 to-teal-900">
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
         {/* Hero Section */}
         <section className="relative py-20 px-4 overflow-hidden">
-          <div className="max-w-7xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
+          <div className="absolute inset-0 bg-gradient-to-r from-green-500/10 via-emerald-500/10 to-green-500/10"></div>
+          <div className="relative z-10 max-w-7xl mx-auto text-center">
+            <div className="mb-8">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-full text-green-300 text-sm mb-6">
-                <Brain className="w-4 h-4" />
-                AI Consciousness Evolution 2041
+                <Sparkles className="w-4 h-4" />
+                Revolutionary 2041 Technology
               </div>
-              
-              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-                AI Content Personalization
-                <span className="block bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
-                  2041
+              <h1 className="text-5xl md:text-7xl font-bold mb-6">
+                <span className="bg-gradient-to-r from-green-400 via-emerald-400 to-green-400 bg-clip-text text-transparent">
+                  AI Content Personalization
                 </span>
+                <br />
+                <span className="text-white">2041</span>
               </h1>
-              
-              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-                Consciousness-driven content AI that understands individual preferences and creates deeply personalized experiences
+              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
+                Experience the future of content with AI systems that understand individual preferences 
+                and create personalized experiences that resonate with every user.
               </p>
-              
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-xl hover:from-green-600 hover:to-emerald-700 transition-all duration-300 flex items-center gap-2"
-                >
-                  Experience Personalized Content
-                  <ArrowRight className="w-5 h-5" />
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 border border-green-500/30 text-green-300 font-semibold rounded-xl hover:bg-green-500/10 transition-all duration-300"
-                >
-                  View Personalization Demo
-                </motion.button>
+                <button className="px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-xl hover:from-green-600 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105">
+                  Personalize Content
+                </button>
+                <button className="px-8 py-4 border-2 border-green-400 text-green-400 font-semibold rounded-xl hover:bg-green-400 hover:text-black transition-all duration-300">
+                  Learn More
+                </button>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
 
-        {/* Core Features Section */}
+        {/* Features Grid */}
         <section className="py-20 px-4">
           <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
+            <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Revolutionary Content Personalization Features
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our AI systems understand individual consciousness patterns to deliver truly personalized content experiences
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Our AI content personalization platform represents the pinnacle of user experience, 
+                combining deep learning with intuitive understanding of individual preferences.
               </p>
-            </motion.div>
+            </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  icon: <Brain className="w-12 h-12 text-green-400" />,
-                  title: "Consciousness Understanding",
-                  description: "AI that comprehends individual thought patterns, preferences, and emotional states",
-                  features: ["Cognitive pattern recognition", "Emotional state analysis", "Preference learning", "Behavioral prediction"]
+                  icon: <Brain className="w-8 h-8" />,
+                  title: "Deep User Understanding",
+                  description: "Advanced AI that learns and adapts to individual user preferences and behavior patterns.",
+                  color: "from-green-500 to-emerald-500"
                 },
                 {
-                  icon: <Palette className="w-12 h-12 text-emerald-400" />,
-                  title: "Dynamic Content Creation",
-                  description: "Real-time content generation that adapts to changing user preferences and contexts",
-                  features: ["Adaptive storytelling", "Context-aware content", "Real-time optimization", "Multi-format generation"]
+                  icon: <Palette className="w-8 h-8" />,
+                  title: "Dynamic Content Generation",
+                  description: "Real-time creation of personalized content that matches user interests and context.",
+                  color: "from-blue-500 to-cyan-500"
                 },
                 {
-                  icon: <Target className="w-12 h-12 text-teal-400" />,
-                  title: "Precision Personalization",
-                  description: "Content tailored to individual consciousness patterns with unprecedented accuracy",
-                  features: ["Micro-personalization", "Consciousness mapping", "Preference evolution", "Predictive content"]
+                  icon: <Zap className="w-8 h-8" />,
+                  title: "Contextual Intelligence",
+                  description: "Understanding of user context, timing, and environment for optimal content delivery.",
+                  color: "from-purple-500 to-pink-500"
+                },
+                {
+                  icon: <Users className="w-8 h-8" />,
+                  title: "Behavioral Analysis",
+                  description: "Continuous learning from user interactions to improve personalization accuracy.",
+                  color: "from-orange-500 to-red-500"
+                },
+                {
+                  icon: <Award className="w-8 h-8" />,
+                  title: "Quality Optimization",
+                  description: "Advanced algorithms that ensure content quality while maintaining personalization.",
+                  color: "from-yellow-500 to-orange-500"
+                },
+                {
+                  icon: <Clock className="w-8 h-8" />,
+                  title: "Real-time Adaptation",
+                  description: "Instant content updates based on changing user preferences and trends.",
+                  color: "from-indigo-500 to-purple-500"
                 }
               ].map((feature, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.2 }}
-                  className="bg-gradient-to-br from-green-900/50 to-emerald-900/50 border border-green-500/30 rounded-2xl p-8 hover:border-green-400/50 transition-all duration-300"
-                >
-                  <div className="mb-6">{feature.icon}</div>
-                  <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
-                  <p className="text-gray-300 mb-6">{feature.description}</p>
-                  <ul className="space-y-2">
-                    {feature.features.map((item, idx) => (
-                      <li key={idx} className="flex items-center gap-2 text-gray-300">
-                        <CheckCircle className="w-4 h-4 text-green-400" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
+                <div key={index} className="group p-8 bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 rounded-2xl hover:border-green-500/50 transition-all duration-300 hover:transform hover:scale-105">
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${feature.color} p-4 mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-4">{feature.title}</h3>
+                  <p className="text-gray-400">{feature.description}</p>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Applications Section */}
-        <section className="py-20 px-4 bg-gradient-to-r from-green-900/30 to-emerald-900/30">
+        {/* Content Types */}
+        <section className="py-20 px-4 bg-gradient-to-r from-green-500/5 to-emerald-500/5">
           <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
+            <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Transformative Applications
+                Personalize Every Type of Content
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                From entertainment to education, our content personalization AI revolutionizes how content is consumed
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                From text to multimedia, our AI personalization engine adapts to any content format 
+                and delivery channel for maximum user engagement.
               </p>
-            </motion.div>
+            </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                {
-                  title: "Entertainment & Media",
-                  description: "AI-generated content that adapts to individual tastes and emotional states",
-                  benefits: ["Personalized storytelling", "Adaptive music generation", "Dynamic video content", "Emotional engagement"]
-                },
-                {
-                  title: "Education & Learning",
-                  description: "Content that adapts to individual learning styles and cognitive patterns",
-                  benefits: ["Personalized curricula", "Adaptive difficulty", "Learning style optimization", "Engagement maximization"]
-                },
-                {
-                  title: "Marketing & Advertising",
-                  description: "Content that resonates with individual consciousness patterns and preferences",
-                  benefits: ["Consciousness-based targeting", "Emotional resonance", "Preference prediction", "Conversion optimization"]
-                },
-                {
-                  title: "Healthcare & Wellness",
-                  description: "Personalized health content that adapts to individual needs and conditions",
-                  benefits: ["Health education", "Treatment guidance", "Wellness coaching", "Condition management"]
-                }
-              ].map((app, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-green-800/30 to-emerald-800/30 border border-green-500/20 rounded-2xl p-8"
-                >
-                  <h3 className="text-2xl font-bold text-white mb-4">{app.title}</h3>
-                  <p className="text-gray-300 mb-6">{app.description}</p>
-                  <ul className="space-y-2">
-                    {app.benefits.map((benefit, idx) => (
-                      <li key={idx} className="flex items-center gap-2 text-gray-300">
-                        <Star className="w-4 h-4 text-yellow-400" />
-                        {benefit}
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
+                { name: "Text Content", description: "Articles, emails, notifications, and messaging" },
+                { name: "Visual Media", description: "Images, videos, infographics, and graphics" },
+                { name: "Audio Content", description: "Podcasts, music, voice messages, and audio ads" },
+                { name: "Interactive Elements", description: "Forms, surveys, games, and applications" },
+                { name: "Product Recommendations", description: "Personalized suggestions and offers" },
+                { name: "Social Media", description: "Posts, stories, and social interactions" },
+                { name: "Educational Content", description: "Courses, tutorials, and learning materials" },
+                { name: "Marketing Campaigns", description: "Targeted advertising and promotional content" }
+              ].map((type, index) => (
+                <div key={index} className="p-6 bg-white/5 border border-white/10 rounded-xl hover:border-green-500/30 transition-all duration-300">
+                  <h3 className="text-lg font-semibold text-white mb-2">{type.name}</h3>
+                  <p className="text-gray-400 text-sm">{type.description}</p>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Technology Stack Section */}
+        {/* Benefits Section */}
         <section className="py-20 px-4">
           <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
+            <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Advanced Technology Stack
+                Transform User Experience with AI Personalization
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Cutting-edge AI technologies that power our consciousness-driven content personalization
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Create deeper connections, increase engagement, and drive business growth through 
+                intelligent content personalization.
               </p>
-            </motion.div>
+            </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  icon: <Brain className="w-12 h-12 text-green-400" />,
-                  title: "Consciousness AI",
-                  description: "Advanced neural networks that understand human consciousness patterns"
+                  icon: <CheckCircle className="w-8 h-8 text-green-400" />,
+                  title: "Increased Engagement",
+                  description: "Higher user interaction rates through relevant, personalized content."
                 },
                 {
-                  icon: <Palette className="w-12 h-12 text-emerald-400" />,
-                  title: "Content Generation",
-                  description: "Large language models trained on consciousness-aware datasets"
+                  icon: <CheckCircle className="w-8 h-8 text-green-400" />,
+                  title: "Improved Conversion",
+                  description: "Better conversion rates with content that speaks directly to user needs."
                 },
                 {
-                  icon: <BarChart3 className="w-12 h-12 text-teal-400" />,
-                  title: "Analytics Engine",
-                  description: "Real-time analysis of user behavior and preference evolution"
+                  icon: <CheckCircle className="w-8 h-8 text-green-400" />,
+                  title: "Enhanced User Loyalty",
+                  description: "Stronger user relationships through personalized experiences."
                 },
                 {
-                  icon: <Sparkles className="w-12 h-12 text-cyan-400" />,
-                  title: "Adaptive Learning",
-                  description: "Continuous learning systems that evolve with user preferences"
+                  icon: <CheckCircle className="w-8 h-8 text-green-400" />,
+                  title: "Reduced Bounce Rate",
+                  description: "Lower bounce rates with content that immediately captures interest."
+                },
+                {
+                  icon: <CheckCircle className="w-8 h-8 text-green-400" />,
+                  title: "Better User Retention",
+                  description: "Improved user retention through continuous personalization."
+                },
+                {
+                  icon: <CheckCircle className="w-8 h-8 text-green-400" />,
+                  title: "Data-Driven Insights",
+                  description: "Valuable insights into user preferences and behavior patterns."
                 }
-              ].map((tech, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="text-center bg-gradient-to-br from-green-800/20 to-emerald-800/20 border border-green-500/20 rounded-2xl p-6"
-                >
-                  <div className="mb-4">{tech.icon}</div>
-                  <h3 className="text-xl font-bold text-white mb-3">{tech.title}</h3>
-                  <p className="text-gray-300 text-sm">{tech.description}</p>
-                </motion.div>
+              ].map((benefit, index) => (
+                <div key={index} className="p-6 bg-white/5 border border-white/10 rounded-xl">
+                  <div className="flex items-start space-x-4">
+                    {benefit.icon}
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">{benefit.title}</h3>
+                      <p className="text-gray-400 text-sm">{benefit.description}</p>
+                    </div>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
@@ -236,26 +198,21 @@ export default function AIContentPersonalization2041() {
         {/* CTA Section */}
         <section className="py-20 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Ready for Conscious Content?
-              </h2>
-              <p className="text-xl text-gray-300 mb-8">
-                Experience content that truly understands and adapts to your consciousness
-              </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-10 py-5 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold text-lg rounded-xl hover:from-green-600 hover:to-emerald-700 transition-all duration-300 flex items-center gap-3 mx-auto"
-              >
-                Start Your Personalized Journey
-                <ArrowRight className="w-5 h-5" />
-              </motion.button>
-            </motion.div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Ready to Personalize Your Content?
+            </h2>
+            <p className="text-xl text-gray-400 mb-8">
+              Join the future of content personalization and create experiences that 
+              truly resonate with every individual user.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-xl hover:from-green-600 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105">
+                Start Personalizing Today
+              </button>
+              <button className="px-8 py-4 border-2 border-green-400 text-green-400 font-semibold rounded-xl hover:bg-green-400 hover:text-black transition-all duration-300">
+                Schedule Demo
+              </button>
+            </div>
           </div>
         </section>
       </div>

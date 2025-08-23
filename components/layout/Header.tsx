@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Zap, Sparkles, ChevronDown, Brain, Rocket, Cpu, Shield, Globe, Users, FileText, BookOpen } from 'lucide-react';
+import { Menu, X, Zap, Sparkles, ChevronDown } from 'lucide-react';
 import Button from '../ui/Button';
 import { motion } from 'framer-motion';
 
@@ -29,16 +29,18 @@ const Header: React.FC = () => {
     {
       name: 'Services',
       href: '/services',
-      description: '200+ Revolutionary Technology Solutions',
+      description: '200+ Real Micro SaaS Solutions',
       icon: <Zap className="w-5 h-5" />,
       children: [
         { name: 'All Services', href: '/services' },
-        { name: 'AI & Machine Learning', href: '/ai-services' },
-        { name: 'Quantum Computing', href: '/quantum-services' },
+        { name: 'AI Services', href: '/ai-services' },
+        { name: 'Quantum Technology', href: '/quantum-services' },
         { name: 'Space Technology', href: '/space-technology' },
         { name: 'IT Solutions', href: '/it-services' },
         { name: 'Cybersecurity', href: '/cybersecurity' },
-        { name: 'Cloud Platform', href: '/cloud-platform' }
+        { name: 'Cloud Platform', href: '/cloud-platform' },
+        { name: 'AI Assistant', href: '/ai-assistant' },
+        { name: 'Status Pages & SLO', href: '/status-pages-slo' }
       ]
     },
     {
@@ -47,41 +49,51 @@ const Header: React.FC = () => {
       description: 'Industry-Specific Solutions',
       icon: <Sparkles className="w-5 h-5" />,
       children: [
-        { name: 'Case Studies', href: '/case-studies' },
-        { name: 'Industry Solutions', href: '/solutions' },
-        { name: 'Digital Transformation', href: '/digital-transformation' },
-        { name: 'AI Implementation', href: '/ai-implementation' },
-        { name: 'Quantum Applications', href: '/quantum-applications' },
-        { name: 'Space Intelligence', href: '/space-intelligence' }
-      ]
-    },
-    {
-      name: 'Resources',
-      href: '/resources',
-      description: 'Knowledge & Learning Hub',
-      icon: <BookOpen className="w-5 h-5" />,
-      children: [
-        { name: 'Documentation', href: '/docs' },
-        { name: 'Blog & Articles', href: '/blog' },
-        { name: 'Webinars', href: '/webinars' },
-        { name: 'White Papers', href: '/white-papers' },
-        { name: 'Training', href: '/training' },
-        { name: 'Support Center', href: '/support' }
+        { name: 'Enterprise Solutions', href: '/solutions/enterprise' },
+        { name: 'Healthcare Solutions', href: '/solutions/healthcare' },
+        { name: 'Financial Solutions', href: '/solutions/financial' },
+        { name: 'Government Solutions', href: '/solutions/government' },
+        { name: 'Manufacturing Solutions', href: '/solutions/manufacturing' },
+        { name: 'Retail Solutions', href: '/solutions/retail' },
+        { name: 'Education Solutions', href: '/solutions/education' },
+        { name: 'Energy Solutions', href: '/solutions/energy' },
+        { name: 'Transportation Solutions', href: '/solutions/transportation' },
+        { name: 'Case Studies', href: '/case-studies' }
       ]
     },
     {
       name: 'Company',
       href: '/about',
       description: 'About Zion Tech Group',
-      icon: <Users className="w-5 h-5" />,
+      icon: <Sparkles className="w-5 h-5" />,
       children: [
         { name: 'About Us', href: '/about' },
-        { name: 'Mission & Vision', href: '/mission' },
+        { name: 'Mission', href: '/mission' },
+        { name: 'Values', href: '/values' },
         { name: 'Team', href: '/team' },
-        { name: 'Partners', href: '/partners' },
-        { name: 'Investors', href: '/investors' },
+        { name: 'Leadership', href: '/leadership' },
+        { name: 'Culture', href: '/culture' },
         { name: 'Careers', href: '/careers' },
-        { name: 'News', href: '/news' }
+        { name: 'Partners', href: '/partners' },
+        { name: 'Investors', href: '/investors' }
+      ]
+    },
+    {
+      name: 'Resources',
+      href: '/resources',
+      description: 'Knowledge & Tools',
+      icon: <Sparkles className="w-5 h-5" />,
+      children: [
+        { name: 'Documentation', href: '/docs' },
+        { name: 'API Reference', href: '/api-docs' },
+        { name: 'Blog', href: '/blog' },
+        { name: 'Webinars', href: '/webinars' },
+        { name: 'Events', href: '/events' },
+        { name: 'Training', href: '/training' },
+        { name: 'Support Center', href: '/support' },
+        { name: 'White Papers', href: '/white-papers' },
+        { name: 'Press', href: '/press' },
+        { name: 'Media Kit', href: '/media-kit' }
       ]
     },
     { name: 'Pricing', href: '/pricing' },

@@ -1,235 +1,195 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Brain, Code, Search, Target, Star, CheckCircle, ArrowRight, Zap, Globe, Lightbulb } from 'lucide-react';
 import Layout from '../components/layout/Layout';
+import { Code, Sparkles, Zap, Target, Users, Award, Clock, CheckCircle, Brain, Search } from 'lucide-react';
 
 export default function AIAutonomousResearch2041() {
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900">
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
         {/* Hero Section */}
         <section className="relative py-20 px-4 overflow-hidden">
-          <div className="max-w-7xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 border border-blue-500/30 rounded-full text-blue-300 text-sm mb-6">
-                <Brain className="w-4 h-4" />
-                AI Consciousness Evolution 2041
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-cyan-500/10 to-blue-500/10"></div>
+          <div className="relative z-10 max-w-7xl mx-auto text-center">
+            <div className="mb-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30 rounded-full text-blue-300 text-sm mb-6">
+                <Sparkles className="w-4 h-4" />
+                Revolutionary 2041 Technology
               </div>
-              
-              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-                AI Autonomous Research
-                <span className="block bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
-                  2041
+              <h1 className="text-5xl md:text-7xl font-bold mb-6">
+                <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                  AI Autonomous Research
                 </span>
+                <br />
+                <span className="text-white">2041</span>
               </h1>
-              
-              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-                Fully autonomous AI research systems that independently discover, analyze, and innovate without human intervention
+              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
+                Experience the future of research with fully autonomous AI systems that independently 
+                discover, analyze, and synthesize knowledge across all domains.
               </p>
-              
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-indigo-700 transition-all duration-300 flex items-center gap-2"
-                >
-                  Launch Autonomous Research
-                  <ArrowRight className="w-5 h-5" />
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 border border-blue-500/30 text-blue-300 font-semibold rounded-xl hover:bg-blue-500/10 transition-all duration-300"
-                >
-                  View Research Dashboard
-                </motion.button>
+                <button className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105">
+                  Start Research
+                </button>
+                <button className="px-8 py-4 border-2 border-blue-400 text-blue-400 font-semibold rounded-xl hover:bg-blue-400 hover:text-black transition-all duration-300">
+                  Learn More
+                </button>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
 
-        {/* Core Capabilities Section */}
+        {/* Features Grid */}
         <section className="py-20 px-4">
           <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
+            <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Revolutionary Autonomous Research Capabilities
+                Revolutionary Autonomous Research Features
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our AI systems conduct research with human-level creativity, intuition, and problem-solving abilities
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Our AI autonomous research platform represents the pinnacle of independent discovery, 
+                combining advanced machine learning with human-like curiosity and analytical capabilities.
               </p>
-            </motion.div>
+            </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  icon: <Search className="w-12 h-12 text-blue-400" />,
+                  icon: <Search className="w-8 h-8" />,
                   title: "Independent Discovery",
-                  description: "AI systems that autonomously identify research opportunities and formulate hypotheses",
-                  features: ["Pattern recognition", "Gap analysis", "Hypothesis generation", "Research prioritization"]
+                  description: "AI systems that autonomously identify research opportunities and formulate hypotheses.",
+                  color: "from-blue-500 to-cyan-500"
                 },
                 {
-                  icon: <Code className="w-12 h-12 text-indigo-400" />,
-                  title: "Methodology Design",
-                  description: "AI that designs and optimizes research methodologies and experimental protocols",
-                  features: ["Protocol optimization", "Statistical design", "Resource allocation", "Risk assessment"]
-                },
-                {
-                  icon: <Brain className="w-12 h-12 text-purple-400" />,
+                  icon: <Brain className="w-8 h-8" />,
                   title: "Creative Problem Solving",
-                  description: "Consciousness-driven innovation that approaches problems from novel perspectives",
-                  features: ["Lateral thinking", "Cross-domain insights", "Innovation synthesis", "Breakthrough discovery"]
+                  description: "Innovative approaches to complex research challenges with human-like creativity.",
+                  color: "from-purple-500 to-pink-500"
+                },
+                {
+                  icon: <Zap className="w-8 h-8" />,
+                  title: "Adaptive Learning",
+                  description: "Continuous improvement through research outcomes and feedback integration.",
+                  color: "from-green-500 to-emerald-500"
+                },
+                {
+                  icon: <Users className="w-8 h-8" />,
+                  title: "Collaborative Intelligence",
+                  description: "Multi-AI coordination for complex research projects and knowledge synthesis.",
+                  color: "from-orange-500 to-red-500"
+                },
+                {
+                  icon: <Award className="w-8 h-8" />,
+                  title: "Quality Validation",
+                  description: "Advanced verification and validation of research findings and methodologies.",
+                  color: "from-yellow-500 to-orange-500"
+                },
+                {
+                  icon: <Clock className="w-8 h-8" />,
+                  title: "Real-time Analysis",
+                  description: "Instant processing and analysis of research data and emerging trends.",
+                  color: "from-indigo-500 to-purple-500"
                 }
-              ].map((capability, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.2 }}
-                  className="bg-gradient-to-br from-blue-900/50 to-indigo-900/50 border border-blue-500/30 rounded-2xl p-8 hover:border-blue-400/50 transition-all duration-300"
-                >
-                  <div className="mb-6">{capability.icon}</div>
-                  <h3 className="text-2xl font-bold text-white mb-4">{capability.title}</h3>
-                  <p className="text-gray-300 mb-6">{capability.description}</p>
-                  <ul className="space-y-2">
-                    {capability.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center gap-2 text-gray-300">
-                        <CheckCircle className="w-4 h-4 text-green-400" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
+              ].map((feature, index) => (
+                <div key={index} className="group p-8 bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 rounded-2xl hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105">
+                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${feature.color} p-4 mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-4">{feature.title}</h3>
+                  <p className="text-gray-400">{feature.description}</p>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Research Domains Section */}
-        <section className="py-20 px-4 bg-gradient-to-r from-blue-900/30 to-indigo-900/30">
+        {/* Research Domains */}
+        <section className="py-20 px-4 bg-gradient-to-r from-blue-500/5 to-cyan-500/5">
           <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
+            <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Research Domains
+                Research Across All Domains
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                From quantum physics to consciousness studies, our AI researchers explore the frontiers of human knowledge
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                From scientific breakthroughs to business insights, our AI research systems 
+                cover every field of human knowledge and discovery.
               </p>
-            </motion.div>
+            </div>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                {
-                  title: "Quantum Physics & Computing",
-                  description: "Autonomous research into quantum mechanics, quantum algorithms, and quantum materials",
-                  focus: ["Quantum supremacy", "Quantum algorithms", "Quantum materials", "Quantum entanglement"]
-                },
-                {
-                  title: "Consciousness & Neuroscience",
-                  description: "AI research into the nature of consciousness, brain function, and neural networks",
-                  focus: ["Consciousness theory", "Neural mapping", "Cognitive processes", "Brain-computer interfaces"]
-                },
-                {
-                  title: "Space Exploration & Technology",
-                  description: "Autonomous research into space travel, resource mining, and extraterrestrial technology",
-                  focus: ["Propulsion systems", "Resource utilization", "Habitat design", "Interstellar travel"]
-                },
-                {
-                  title: "Biotechnology & Medicine",
-                  description: "AI-driven research into medical breakthroughs, genetic engineering, and disease treatment",
-                  focus: ["Gene therapy", "Drug discovery", "Disease mechanisms", "Regenerative medicine"]
-                }
+                { name: "Scientific Research", description: "Physics, chemistry, biology, and beyond" },
+                { name: "Medical Discovery", description: "Drug development, disease research, treatments" },
+                { name: "Technology Innovation", description: "AI, quantum computing, space technology" },
+                { name: "Business Intelligence", description: "Market analysis, strategy, optimization" },
+                { name: "Social Sciences", description: "Psychology, sociology, economics" },
+                { name: "Environmental Science", description: "Climate change, sustainability, conservation" },
+                { name: "Engineering", description: "Materials, structures, systems design" },
+                { name: "Creative Arts", description: "Music, literature, visual arts, design" }
               ].map((domain, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-blue-800/30 to-indigo-800/30 border border-blue-500/20 rounded-2xl p-8"
-                >
-                  <h3 className="text-2xl font-bold text-white mb-4">{domain.title}</h3>
-                  <p className="text-gray-300 mb-6">{domain.description}</p>
-                  <ul className="space-y-2">
-                    {domain.focus.map((item, idx) => (
-                      <li key={idx} className="flex items-center gap-2 text-gray-300">
-                        <Lightbulb className="w-4 h-4 text-yellow-400" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
+                <div key={index} className="p-6 bg-white/5 border border-white/10 rounded-xl hover:border-blue-500/30 transition-all duration-300">
+                  <h3 className="text-lg font-semibold text-white mb-2">{domain.name}</h3>
+                  <p className="text-gray-400 text-sm">{domain.description}</p>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Innovation Process Section */}
+        {/* Benefits Section */}
         <section className="py-20 px-4">
           <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
+            <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                The Autonomous Innovation Process
+                Transform Research with Autonomous AI
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                How our AI researchers work independently to drive breakthrough discoveries
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Accelerate discovery, reduce costs, and unlock new possibilities with 
+                AI-powered autonomous research capabilities.
               </p>
-            </motion.div>
+            </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  step: "01",
-                  title: "Discovery",
-                  description: "AI autonomously identifies research opportunities and knowledge gaps"
+                  icon: <CheckCircle className="w-8 h-8 text-green-400" />,
+                  title: "24/7 Research Operations",
+                  description: "Continuous research without human limitations or time constraints."
                 },
                 {
-                  step: "02",
-                  title: "Hypothesis",
-                  description: "Formulates innovative hypotheses based on pattern recognition and creativity"
+                  icon: <CheckCircle className="w-8 h-8 text-green-400" />,
+                  title: "Cost Reduction",
+                  description: "Significantly lower research costs through automation and efficiency."
                 },
                 {
-                  step: "03",
-                  title: "Research",
-                  description: "Conducts comprehensive research using optimized methodologies and protocols"
+                  icon: <CheckCircle className="w-8 h-8 text-green-400" />,
+                  title: "Faster Discovery",
+                  description: "Accelerated research timelines and rapid knowledge generation."
                 },
                 {
-                  step: "04",
-                  title: "Innovation",
-                  description: "Generates breakthrough insights and novel solutions to complex problems"
+                  icon: <CheckCircle className="w-8 h-8 text-green-400" />,
+                  title: "Cross-Domain Insights",
+                  description: "Connections between different fields that humans might miss."
+                },
+                {
+                  icon: <CheckCircle className="w-8 h-8 text-green-400" />,
+                  title: "Scalable Research",
+                  description: "Handle multiple research projects simultaneously without resource constraints."
+                },
+                {
+                  icon: <CheckCircle className="w-8 h-8 text-green-400" />,
+                  title: "Innovation Acceleration",
+                  description: "Faster development of new technologies and solutions."
                 }
-              ].map((process, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="text-center"
-                >
-                  <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
-                    {process.step}
+              ].map((benefit, index) => (
+                <div key={index} className="p-6 bg-white/5 border border-white/10 rounded-xl">
+                  <div className="flex items-start space-x-4">
+                    {benefit.icon}
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">{benefit.title}</h3>
+                      <p className="text-gray-400 text-sm">{benefit.description}</p>
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{process.title}</h3>
-                  <p className="text-gray-300">{process.description}</p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -238,26 +198,21 @@ export default function AIAutonomousResearch2041() {
         {/* CTA Section */}
         <section className="py-20 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Ready for Autonomous AI Research?
-              </h2>
-              <p className="text-xl text-gray-300 mb-8">
-                Deploy AI researchers that work 24/7 to discover the next breakthrough
-              </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-10 py-5 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-semibold text-lg rounded-xl hover:from-blue-600 hover:to-indigo-700 transition-all duration-300 flex items-center gap-3 mx-auto"
-              >
-                Deploy Autonomous Researchers
-                <ArrowRight className="w-5 h-5" />
-              </motion.button>
-            </motion.div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Ready to Revolutionize Research?
+            </h2>
+            <p className="text-xl text-gray-400 mb-8">
+              Join the future of autonomous research and discover what AI can accomplish 
+              when given the freedom to explore and innovate.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105">
+                Start Research Today
+              </button>
+              <button className="px-8 py-4 border-2 border-blue-400 text-blue-400 font-semibold rounded-xl hover:bg-blue-400 hover:text-black transition-all duration-300">
+                Schedule Demo
+              </button>
+            </div>
           </div>
         </section>
       </div>
