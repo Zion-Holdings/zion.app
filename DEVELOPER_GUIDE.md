@@ -15,13 +15,19 @@ cd zion.app
 npm install
 ```
 
-### Development Environment
+### Development Setup
 ```bash
 # Start development server
 npm run dev
 
-# Run with enhanced memory allocation
-NODE_OPTIONS="--max-old-space-size=4096" npm run dev
+# Run linting
+npm run lint
+
+# Type checking
+npm run type-check
+
+# Build the project
+npm run build
 ```
 
 ## Project Structure
@@ -34,217 +40,103 @@ NODE_OPTIONS="--max-old-space-size=4096" npm run dev
 - `styles/` - CSS and styling files
 
 ### Key Files
-- `ecosystem.pm2.cjs` - PM2 process management
-- `next.config.js` - Next.js configuration
+- `package.json` - Dependencies and scripts
 - `tsconfig.json` - TypeScript configuration
+- `next.config.js` - Next.js configuration
+- `ecosystem.pm2.cjs` - PM2 process management
 
 ## Development Workflow
 
 ### Code Quality
-```bash
-# Lint and fix code
-npm run lint
-npm run fix:all
-
-# Type checking
-npm run type-check
-
-# Build validation
-npm run build:validate
-```
+- ESLint for code linting
+- Prettier for code formatting
+- Husky for git hooks
+- TypeScript for type safety
 
 ### Testing
-```bash
-# Run tests
-npm test
+- Playwright for end-to-end testing
+- Jest for unit testing
+- Automated testing in CI/CD pipeline
 
-# Run specific test suites
-npm run test:unit
-npm run test:integration
-```
-
-### Building
-```bash
-# Smart build with auto-fix
-npm run build:smart
-
-# Production build
-npm run build
-
-# Export static files
-npm run export
-```
-
-## Automation System
-
-### Starting Automation
-```bash
-# Start all automation systems
-npm run autonomous
-
-# Start specific automation
-npm run mcp:start
-npm run google-docs:start
-```
-
-### Monitoring
-```bash
-# Check automation status
-npm run autonomous:status
-npm run mcp:status
-
-# View logs
-npm run pm2:logs
-```
+### Automation
+- GitHub Actions for CI/CD
+- PM2 for process management
+- Automated dependency updates
+- Content generation automation
 
 ## Contributing
 
 ### Code Standards
-- Follow ESLint configuration
-- Use TypeScript for new files
-- Follow existing naming conventions
-- Add JSDoc comments for complex functions
+1. Follow TypeScript best practices
+2. Use functional components with hooks
+3. Implement proper error handling
+4. Add comprehensive documentation
+5. Write meaningful commit messages
 
 ### Pull Request Process
-1. Create feature branch from `main`
-2. Make changes following code standards
+1. Create a feature branch
+2. Make your changes
 3. Run tests and linting
-4. Submit PR with clear description
-5. Ensure CI passes
+4. Submit a pull request
+5. Ensure CI checks pass
 
-### Commit Convention
+## Deployment
+
+### Local Development
+```bash
+npm run dev
 ```
-type(scope): description
 
-feat(automation): add new monitoring script
-fix(ui): resolve button alignment issue
-docs(readme): update installation steps
+### Production Build
+```bash
+npm run build
+npm start
+```
+
+### PM2 Management
+```bash
+# Start all processes
+npm run pm2:start
+
+# Check status
+npm run pm2:status
+
+# View logs
+npm run pm2:logs
+
+# Restart processes
+npm run pm2:restart
 ```
 
 ## Troubleshooting
 
 ### Common Issues
+- **Build failures**: Run `npm run build:heal`
+- **Dependency issues**: Run `npm run deps:maintain`
+- **Process crashes**: Check PM2 logs with `npm run pm2:logs`
 
-#### Build Failures
-```bash
-# Try smart build recovery
-npm run build:recovery
-
-# Check build health
-npm run build:health-check
-```
-
-#### Memory Issues
-```bash
-# Increase Node.js memory
-export NODE_OPTIONS="--max-old-space-size=8192"
-```
-
-#### PM2 Issues
-```bash
-# Restart PM2 processes
-npm run pm2:restart
-
-# Check PM2 status
-npm run pm2:status
-```
-
-### Getting Help
-- Check existing documentation
-- Review automation logs
-- Open GitHub issue with detailed description
-- Include error logs and system information
-
-## Performance Optimization
-
-### Build Optimization
-- Use `npm run build:smart` for intelligent builds
-- Monitor build performance with `npm run build:monitor`
-- Implement incremental builds for large projects
-
-### Runtime Optimization
-- Enable PM2 clustering for Node.js processes
-- Use CDN for static assets
+### Performance Optimization
+- Use Next.js Image component for images
 - Implement proper caching strategies
-
-## Security
-
-### Security Scanning
-```bash
-# Run security audit
-npm run security:scan
-
-# Check dependencies
-npm audit
-```
-
-### Best Practices
-- Keep dependencies updated
-- Use environment variables for secrets
-- Implement proper authentication
-- Regular security audits
-
-## Deployment
-
-### Production Deployment
-```bash
-# Build for production
-npm run build
-
-# Start production server
-npm run start
-
-# Use PM2 for process management
-npm run pm2:start
-```
-
-### Environment Configuration
-- Set `NODE_ENV=production`
-- Configure database connections
-- Set up monitoring and logging
-- Enable HTTPS and security headers
-
-## Monitoring and Maintenance
-
-### Health Checks
-```bash
-# Run health checks
-npm run build:health-check
-
-# Monitor automation systems
-npm run autonomous:status
-```
-
-### Log Management
-- PM2 log rotation is configured
-- Logs stored in `automation/logs/`
-- Monitor log sizes and rotation
-
-## Advanced Features
-
-### Custom Automation
-- Extend automation system in `automation/` directory
-- Create new PM2 ecosystem files
-- Implement custom monitoring scripts
-
-### Integration
-- MCP (Model Context Protocol) integration
-- Google Docs automation
-- LinkedIn marketing automation
-- GitHub Actions workflows
+- Monitor bundle sizes
+- Use dynamic imports for code splitting
 
 ## Resources
 
 ### Documentation
 - [Next.js Documentation](https://nextjs.org/docs)
-- [PM2 Documentation](https://pm2.keymetrics.io/docs/)
 - [TypeScript Handbook](https://www.typescriptlang.org/docs/)
+- [PM2 Documentation](https://pm2.keymetrics.io/docs/)
 
 ### Community
-- GitHub Issues and Discussions
-- Project Wiki
-- Contributing Guidelines
+- GitHub Issues for bug reports
+- GitHub Discussions for questions
+- Pull Requests for contributions
 
----
+## Support
 
-*This guide is maintained by the development team. For questions or improvements, please open an issue or submit a PR.*
+For additional support or questions:
+- Check existing documentation
+- Review GitHub Issues
+- Contact the development team
+- Join community discussions
