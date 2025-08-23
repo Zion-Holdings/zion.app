@@ -29,12 +29,57 @@ interface PerformanceMetrics {
   fid: number; // First Input Delay
   cls: number; // Cumulative Layout Shift
   ttfb: number; // Time to First Byte
-  domLoad: number; // DOM Content Loaded
-  windowLoad: number; // Window Load
-  memoryUsage?: {
-    used: number;
-    total: number;
-    limit: number;
+  fmp: number; // First Meaningful Paint
+  si: number; // Speed Index
+  tti: number; // Time to Interactive
+  tbt: number; // Total Blocking Time
+}
+
+interface PerformanceEntryExtended extends PerformanceEntry {
+  processingStart?: number;
+  value?: number;
+}
+
+interface PerformanceData {
+  timestamp: number;
+  metrics: PerformanceMetrics;
+  score: number;
+  grade: 'A' | 'B' | 'C' | 'D' | 'F';
+}
+
+interface PerformanceMonitorProps {
+  className?: string;
+  showDetails?: boolean;
+  autoRefresh?: boolean;
+  refreshInterval?: number;
+}
+
+const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
+  className = '',
+  showDetails = false,
+  autoRefresh = true,
+  refreshInterval = 30000 // 30 seconds
+}) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(showDetails);
+  const [currentMetrics, setCurrentMetrics] = useState<PerformanceMetrics | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [lastRefresh, setLastRefresh] = useState<Date>(new Date());
+  const [autoRefreshEnabled, setAutoRefreshEnabled] = useState(autoRefresh);
+  
+  const refreshIntervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Performance thresholds for grading
+  const thresholds = {
+    fcp: { good: 1800, poor: 3000 },
+    lcp: { good: 2500, poor: 4000 },
+    fid: { good: 100, poor: 300 },
+    cls: { good: 0.1, poor: 0.25 },
+    ttfb: { good: 800, poor: 1800 },
+    fmp: { good: 2000, poor: 4000 },
+    si: { good: 3400, poor: 5800 },
+    tti: { good: 3800, poor: 7300 },
+    tbt: { good: 300, poor: 600 }
   };
   networkInfo?: {
     effectiveType: string;
@@ -120,9 +165,9 @@ const PerformanceMonitor: React.FC = () => {
         fidObserver.disconnect();
         clsObserver.disconnect();
       };
-         } catch {
-       // Silently handle performance observer errors
-     }
+    } catch {
+      // Silently handle performance observer errors
+    }
   }, []);
 
   // Collect basic performance metrics
