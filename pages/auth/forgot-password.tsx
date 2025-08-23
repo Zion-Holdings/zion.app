@@ -1,20 +1,10 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
 
-const ForgotPassword: NextPage = () => {
-  return (
-    <div>
-      <Head>
-        <title>ForgotPassword - Zion Tech Solutions</title>
-        <meta name="description" content="ForgotPassword page" />
-      </Head>
-      
-      <main>
-        <h1>ForgotPassword</h1>
-        <p>This page is under construction.</p>
-      </main>
-    </div>
-  );
-};
+const ForgotPassword: NextPage = () => (
+  <div className="container mx-auto px-4 py-8">
+    <h1 className="text-2xl font-bold">Forgot Password</h1>
+    <p>Reset flow coming soon.</p>
+  </div>
+);
 
 export default ForgotPassword;

@@ -1,20 +1,10 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
 
-const Verify: NextPage = () => {
-  return (
-    <div>
-      <Head>
-        <title>Verify - Zion Tech Solutions</title>
-        <meta name="description" content="Verify page" />
-      </Head>
-      
-      <main>
-        <h1>Verify</h1>
-        <p>This page is under construction.</p>
-      </main>
-    </div>
-  );
-};
+const Verify: NextPage = () => (
+  <div className="container mx-auto px-4 py-8">
+    <h1 className="text-2xl font-bold">Verify Email</h1>
+    <p>Verification in progress.</p>
+  </div>
+);
 
 export default Verify;

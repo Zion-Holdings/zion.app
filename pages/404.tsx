@@ -1,20 +1,12 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
 
-const NotFound404: NextPage = () => {
+const NotFoundPage: NextPage = () => {
   return (
-    <div>
-      <Head>
-        <title>404 - Zion Tech Solutions</title>
-        <meta name="description" content="404 page" />
-      </Head>
-      
-      <main>
-        <h1>404</h1>
-        <p>This page is under construction.</p>
-      </main>
+    <div className="container mx-auto px-4 py-16">
+      <h1 className="text-3xl font-bold">404 - Page Not Found</h1>
+      <p>Sorry, we couldn’t find that page.</p>
     </div>
   );
 };
 
-export default NotFound404;
+export default NotFoundPage;
