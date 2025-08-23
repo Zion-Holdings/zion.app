@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+<<<<<<< HEAD
+import { motion, AnimatePresence, Variants } from 'framer-motion';
+=======
 import { motion, AnimatePresence } from 'framer-motion';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9ec4
 import { Menu, X, ChevronDown, Sparkles, Zap, Bot, Cloud, Shield, Globe, Cpu, Database, Brain, Atom, Rocket, Star } from 'lucide-react';
 import Button from '../ui/Button';
 
@@ -38,7 +42,11 @@ const EnhancedNavigation: React.FC = () => {
     { name: 'Contact', href: '/contact', icon: <Rocket className="w-4 h-4" /> }
   ];
 
+<<<<<<< HEAD
+  const navVariants: Variants = {
+=======
   const navVariants = {
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9ec4
     hidden: { opacity: 0, y: -20 },
     visible: { 
       opacity: 1, 
@@ -50,19 +58,32 @@ const EnhancedNavigation: React.FC = () => {
     }
   };
 
+<<<<<<< HEAD
+  const itemVariants: Variants = {
+=======
   const itemVariants = {
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9ec4
     hidden: { opacity: 0, y: -10 },
     visible: { opacity: 1, y: 0 }
   };
 
+<<<<<<< HEAD
+  const dropdownVariants: Variants = {
+=======
   const dropdownVariants = {
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9ec4
     hidden: { opacity: 0, y: -10, scale: 0.95 },
     visible: { 
       opacity: 1, 
       y: 0, 
       scale: 1,
       transition: {
+<<<<<<< HEAD
+        duration: 0.2,
+        ease: [0.25, 0.46, 0.45, 0.94]
+=======
         duration: 0.2
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9ec4
       }
     }
   };
@@ -255,4 +276,8 @@ const EnhancedNavigation: React.FC = () => {
   );
 };
 
+<<<<<<< HEAD
 export default EnhancedNavigation;
+=======
+export default EnhancedNavigation;
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9ec4
