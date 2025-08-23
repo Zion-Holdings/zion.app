@@ -221,7 +221,7 @@ export default function UltimateRevolutionaryServicesShowcase() {
         title="2025 Ultimate Revolutionary Services Showcase | Zion Tech Group"
         description="Discover our revolutionary micro SAAS services, AI autonomous ecosystem, quantum computing solutions, and cutting-edge IT infrastructure innovations. Transform your business with next-generation technology."
         keywords={["revolutionary services", "AI autonomous ecosystem", "quantum computing", "micro SAAS", "IT infrastructure", "emerging technology", "Zion Tech Group"]}
-        ogImage="/og-revolutionary-services.jpg"
+        image="/og-revolutionary-services.jpg"
       />
 
       <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">

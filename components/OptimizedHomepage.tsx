@@ -183,17 +183,12 @@ const OptimizedHomepage: React.FC = () => {
   return (
     <>
       <EnhancedSEO
-        seoData={{
-          title: "Zion Tech Group - Optimized Technology Solutions",
-          description: "Discover optimized technology solutions with Zion Tech Group's advanced AI, quantum computing, and IT infrastructure services.",
-          keywords: ["AI services", "quantum computing", "IT infrastructure", "cybersecurity", "micro SAAS", "business automation", "Zion Tech Group", "technology solutions", "artificial intelligence", "machine learning"],
-          ogImage: "https://ziontechgroup.com/og-image.jpg",
-          ogType: "website",
-          twitterCard: "summary_large_image",
-          canonical: "https://ziontechgroup.com"
-        }}
-        pageType="homepage"
-        showAnalytics={false}
+        title="Zion Tech Group - Optimized Technology Solutions"
+        description="Discover optimized technology solutions with Zion Tech Group's advanced AI, quantum computing, and IT infrastructure services."
+        keywords="AI services, quantum computing, IT infrastructure, cybersecurity, micro SAAS, business automation, Zion Tech Group, technology solutions, artificial intelligence, machine learning"
+        ogImage="https://ziontechgroup.com/og-image.jpg"
+        canonicalUrl="https://ziontechgroup.com"
+        twitterCard="summary_large_image"
       />
       
       
