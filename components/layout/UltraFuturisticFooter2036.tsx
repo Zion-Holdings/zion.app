@@ -42,16 +42,16 @@ const footerSections = [
     description: 'Cutting-edge future technology services',
     icon: <Lightbulb className="w-5 h-5 text-yellow-400" />,
     links: [
-      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', featured: true },
-      { name: 'Quantum Neural Networks', href: '/quantum-neural-network-platform', featured: true },
-      { name: 'Autonomous Business Operations', href: '/autonomous-business-operations-platform', featured: true },
-      { name: 'Space Resource Mining', href: '/space-resource-mining-platform', featured: true },
-      { name: 'AI Evaluation Orchestrator', href: '/services/ai-evaluation-orchestrator', featured: true },
-      { name: 'AI Support Triage Router', href: '/services/ai-support-triage-router', featured: true },
-      { name: 'AI Code Review Assistant Pro', href: '/services/ai-code-review-assistant-pro', featured: true },
-      { name: 'AI Revenue Forecasting Copilot', href: '/services/ai-revenue-forecasting-copilot', featured: true },
-      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading', featured: true },
-      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', featured: true }
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-platform', featured: true },
+      { name: 'Quantum Secure Communication', href: '/quantum-secure-communication-hub', featured: true },
+      { name: 'Autonomous DevOps Orchestrator', href: '/autonomous-devops-orchestrator', featured: true },
+      { name: 'AI Autonomous Content Factory', href: '/ai-autonomous-content-factory', featured: true },
+      { name: 'Neural Finance Predictor', href: '/neural-finance-predictor', featured: true },
+      { name: 'Zero Trust Network Automation', href: '/zero-trust-network-automation', featured: true },
+      { name: 'Space Resource Analytics', href: '/space-resource-analytics-platform' },
+      { name: 'Metaverse Development Studio', href: '/metaverse-development-studio-pro' },
+      { name: 'AI Ethics Governance', href: '/ai-ethics-governance-framework' },
+      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' }
     ]
   },
   {
@@ -110,33 +110,50 @@ const footerSections = [
     description: 'Specialized solutions for key industries',
     icon: <Target className="w-5 h-5 text-emerald-400" />,
     links: [
-      { name: 'Healthcare AI Solutions', href: '/healthcare-ai-solutions' },
-      { name: 'Healthcare Technology', href: '/healthcare-solutions' },
-      { name: 'Manufacturing AI Solutions', href: '/manufacturing-ai-solutions' },
-      { name: 'Retail Technology Solutions', href: '/retail-technology-solutions' },
-      { name: 'Government Technology', href: '/government-technology-solutions' },
-      { name: 'Financial Technology', href: '/fintech-solutions' },
-      { name: 'Education Technology', href: '/education-solutions' },
-      { name: 'Energy Technology', href: '/energy-solutions' },
-      { name: 'Transportation Technology', href: '/transportation-solutions' },
-      { name: 'Supply Chain AI', href: '/supply-chain-ai' }
+      { name: 'AI Customer Success Platform', href: '/ai-customer-success-platform' },
+      { name: 'Intelligent Supply Chain Optimization', href: '/intelligent-supply-chain-optimization' },
+      { name: 'AI Financial Planning Platform', href: '/ai-financial-planning-platform' },
+      { name: 'AI HR Analytics Platform', href: '/ai-hr-analytics-platform' },
+      { name: 'AI Sales Intelligence Platform', href: '/ai-sales-intelligence-platform' },
+      { name: 'AI-Powered Decision Engine', href: '/ai-powered-decision-engine' },
+      { name: 'Intelligent Content Automation', href: '/intelligent-content-automation-platform' },
+      { name: 'Smart CRM Intelligence Suite', href: '/smart-crm-intelligence-suite' },
+      { name: 'Automated Financial Analytics', href: '/automated-financial-analytics-platform' },
+      { name: 'Intelligent Project Management', href: '/intelligent-project-management-suite' }
     ]
   },
   {
-    title: 'Business Solutions',
-    description: 'Innovative business solutions for modern enterprises',
-    icon: <Rocket className="w-5 h-5 text-orange-400" />,
+    title: 'Company & Resources',
+    description: 'Learn more about Zion Tech Group',
+    icon: <Target className="w-5 h-5 text-orange-400" />,
     links: [
-      { name: 'Micro SAAS Platform', href: '/micro-saas' },
-      { name: 'Business Intelligence Suite', href: '/ai-business-intelligence' },
-      { name: 'Smart CRM Intelligence', href: '/smart-crm-intelligence-suite' },
-      { name: 'SEO Automation Suite', href: '/seo-automation-suite' },
-      { name: 'Incident Automation Suite', href: '/incident-automation-suite' },
-      { name: 'Incident Response Retainer', href: '/incident-response-retainer' },
-      { name: 'Status Pages & SLO Monitoring', href: '/status-pages-slo' },
-      { name: 'Uptime SLO Monitor', href: '/uptime-slo-monitor' },
-      { name: 'TLS Certificate Monitor', href: '/tls-certificate-monitor' },
-      { name: 'Synthetic Monitor Recorder', href: '/synthetic-monitor-recorder' }
+      { name: 'About Us', href: '/about' },
+      { name: 'Contact', href: '/contact' },
+      { name: 'Partners', href: '/partners' },
+      { name: 'Investors', href: '/investors' },
+      { name: 'Careers', href: '/careers' },
+      { name: 'Blog', href: '/blog' },
+      { name: 'Case Studies', href: '/case-studies' },
+      { name: 'Documentation', href: '/docs' },
+      { name: 'Support', href: '/support' },
+      { name: 'Training', href: '/training' }
+    ]
+  },
+  {
+    title: '2036 Innovations',
+    description: 'Latest cutting-edge innovations and services',
+    icon: <Target className="w-5 h-5 text-pink-400" />,
+    links: [
+      { name: 'AI Autonomous Content Factory', href: '/ai-autonomous-content-factory', featured: true },
+      { name: 'Quantum Secure Communication Hub', href: '/quantum-secure-communication-hub', featured: true },
+      { name: 'Autonomous DevOps Orchestrator', href: '/autonomous-devops-orchestrator', featured: true },
+      { name: 'Space Resource Analytics Platform', href: '/space-resource-analytics-platform' },
+      { name: 'Neural Finance Predictor', href: '/neural-finance-predictor' },
+      { name: 'Metaverse Development Studio Pro', href: '/metaverse-development-studio-pro' },
+      { name: 'AI Ethics Governance Framework', href: '/ai-ethics-governance-framework' },
+      { name: 'Quantum Bio-Computing Platform', href: '/quantum-bio-computing-platform' },
+      { name: 'Zero Trust Network Automation', href: '/zero-trust-network-automation' },
+      { name: 'Autonomous Cloud Cost Optimizer', href: '/autonomous-cloud-cost-optimizer' }
     ]
   }
 ];

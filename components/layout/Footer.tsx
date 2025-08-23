@@ -1,14 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { 
-  Phone, 
-  Mail, 
-  MapPin, 
-  Globe, 
-  Zap, 
-  Sparkles, 
-  Shield, 
-  Rocket,
+  Zap,
   Twitter,
   Linkedin,
   Github,
@@ -18,34 +11,23 @@ import {
 } from 'lucide-react';
 
 const Footer: React.FC = () => {
-  const contactInfo = {
-    mobile: '+1 302 464 0950',
-    email: 'kleber@ziontechgroup.com',
-    address: '364 E Main St STE 1008 Middletown DE 19709',
-    website: 'https://ziontechgroup.com'
-  };
 
   const services = [
     { name: 'AI & Machine Learning', href: '/ai-services' },
-    { name: 'Quantum Technology', href: '/quantum-services' },
+    { name: 'Quantum Computing', href: '/quantum-computing' },
     { name: 'Space Technology', href: '/space-technology' },
     { name: 'IT Solutions', href: '/it-services' },
     { name: 'Cybersecurity', href: '/cybersecurity' },
-    { name: 'Cloud Platform', href: '/cloud-platform' },
     { name: 'View All Services', href: '/services' }
   ];
 
   const solutions = [
-    { name: 'Enterprise Solutions', href: '/solutions/enterprise' },
-    { name: 'Healthcare Solutions', href: '/solutions/healthcare' },
-    { name: 'Financial Solutions', href: '/solutions/financial' },
-    { name: 'Government Solutions', href: '/solutions/government' },
-    { name: 'Manufacturing Solutions', href: '/solutions/manufacturing' },
-    { name: 'Retail Solutions', href: '/solutions/retail' },
-    { name: 'Education Solutions', href: '/solutions/education' },
-    { name: 'Energy Solutions', href: '/solutions/energy' },
-    { name: 'Transportation Solutions', href: '/solutions/transportation' },
-    { name: 'Case Studies', href: '/case-studies' }
+    { name: 'Enterprise Solutions', href: '/enterprise-solutions-showcase' },
+    { name: 'Healthcare Solutions', href: '/healthcare-solutions' },
+    { name: 'Financial Solutions', href: '/financial-solutions' },
+    { name: 'Government Solutions', href: '/government-technology-solutions' },
+    { name: 'Case Studies', href: '/case-studies' },
+    { name: 'Pricing Plans', href: '/pricing' }
   ];
 
   const company = [
@@ -68,9 +50,8 @@ const Footer: React.FC = () => {
     { name: 'Events', href: '/events' },
     { name: 'Training', href: '/training' },
     { name: 'Support Center', href: '/support' },
-    { name: 'White Papers', href: '/white-papers' },
-    { name: 'Press', href: '/press' },
-    { name: 'Media Kit', href: '/media-kit' }
+    { name: 'Training', href: '/training' },
+    { name: 'White Papers', href: '/white-papers' }
   ];
 
   const legal = [

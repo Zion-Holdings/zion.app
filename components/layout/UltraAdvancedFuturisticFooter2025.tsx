@@ -3,8 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Mail, Phone, MapPin, 
   Facebook, Twitter, Linkedin, Github, Youtube,
-  Heart, Zap, Sparkles, Globe, ArrowRight,
-  ExternalLink, ChevronRight, CheckCircle, AlertCircle
+  Heart, Shield, Users, Award, TrendingUp,
+  CheckCircle, Star, Clock, Target
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -110,86 +110,21 @@ const UltraAdvancedFuturisticFooter2025: React.FC = () => {
     { name: 'Contact Support', href: '/contact' }
   ];
 
-  const socialLinks = [
-    { name: 'LinkedIn', href: 'https://www.linkedin.com/company/zion-tech-group', icon: Linkedin, color: 'text-blue-400 hover:text-blue-300' },
-    { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: Github, color: 'text-gray-400 hover:text-gray-300' },
-    { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: Twitter, color: 'text-blue-400 hover:text-blue-300' },
-    { name: 'YouTube', href: 'https://www.youtube.com/@ziontechgroup', icon: Youtube, color: 'text-red-400 hover:text-red-300' },
-    { name: 'Instagram', href: 'https://www.instagram.com/ziontechgroup', icon: Instagram, color: 'text-pink-400 hover:text-pink-300' },
-    { name: 'Facebook', href: 'https://www.facebook.com/ziontechgroup', icon: Facebook, color: 'text-blue-400 hover:text-blue-300' }
-  ];
-
-  const contactInfo = [
-    {
-      icon: Phone,
-      label: 'Phone',
-      value: '+1 302 464 0950',
-      href: 'tel:+13024640950',
-      description: 'Mon-Fri: 9AM-6PM EST'
-    },
-    {
-      icon: Mail,
-      label: 'Email',
-      value: 'kleber@ziontechgroup.com',
-      href: 'mailto:kleber@ziontechgroup.com',
-      description: '24/7 Support Available'
-    },
-    {
-      icon: MapPin,
-      label: 'Address',
-      value: '364 E Main St STE 1008',
-      href: 'https://maps.google.com/?q=364+E+Main+St+STE+1008+Middletown+DE+19709',
-      description: 'Middletown, DE 19709'
-    },
-    {
-      icon: Calendar,
-      label: 'Business Hours',
-      value: '9:00 AM - 6:00 PM EST',
-      href: '#',
-      description: 'Monday - Friday'
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      // Here you would typically make an API call to subscribe
+      setSubscriptionStatus('success');
+      setEmail('');
+      
+      // Reset success message after 3 seconds
+      setTimeout(() => setSubscriptionStatus('idle'), 3000);
+    } catch {
+      setSubscriptionStatus('error');
+    } finally {
+      setIsSubscribing(false);
     }
-  }, [email]);
-
-  const validateEmail = useCallback((email: string) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  }, []);
-
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
-  };
-
-  const floatingButtonVariants = {
-    initial: { scale: 0, rotate: -180 },
-    animate: { 
-      scale: 1, 
-      rotate: 0,
-      transition: { 
-        type: "spring", 
-        stiffness: 260, 
-        damping: 20,
-        delay: 1
-      }
-    },
-    hover: { 
-      scale: 1.1, 
-      rotate: 5,
-      transition: { duration: 0.2 }
-    },
-    tap: { scale: 0.95 }
   };
 
   return (
@@ -209,124 +144,112 @@ const UltraAdvancedFuturisticFooter2025: React.FC = () => {
         <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-purple-500/5 rounded-full blur-3xl"></div>
       </div>
 
-      {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-5 gap-8 lg:gap-12">
-          {/* Company Info & Newsletter */}
-          <motion.div className="lg:col-span-2 xl:col-span-2" variants={itemVariants}>
-            {/* Company Info */}
-            <div className="mb-8">
-              <motion.div 
-                className="flex items-center space-x-3 mb-6"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <div className="relative">
-                  <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center shadow-lg shadow-cyan-500/25">
-                    <Sparkles className="w-7 h-7 text-white" />
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl blur opacity-30 animate-pulse"></div>
-                </div>
-                <div>
-                  <h2 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                    Zion Tech Group
-                  </h2>
-                  <p className="text-xs text-gray-400">Future Technology Solutions</p>
-                </div>
-              </motion.div>
-              
-              <p className="text-gray-300 mb-8 max-w-md leading-relaxed">
-                Pioneering the future of technology with innovative solutions that drive business transformation and unlock human potential.
-              </p>
-              
-              {/* Enhanced Contact Info */}
-              <div className="space-y-4">
-                <motion.a 
-                  href={`tel:${contactInfo.phone}`}
-                  className="flex items-center space-x-3 text-gray-400 hover:text-cyan-400 transition-all duration-300 group p-2 rounded-lg hover:bg-gray-800/30"
-                  whileHover={{ x: 5 }}
-                >
-                  <div className="p-2 bg-cyan-500/20 rounded-lg group-hover:bg-cyan-500/30 transition-colors duration-300">
-                    <Phone className="w-4 h-4 text-cyan-400" />
-                  </div>
-                  <span className="group-hover:text-white transition-colors duration-300">{contactInfo.phone}</span>
-                </motion.a>
-                
-                <motion.a 
-                  href={`mailto:${contactInfo.email}`}
-                  className="flex items-center space-x-3 text-gray-400 hover:text-cyan-400 transition-all duration-300 group p-2 rounded-lg hover:bg-gray-800/30"
-                  whileHover={{ x: 5 }}
-                >
-                  <div className="p-2 bg-cyan-500/20 rounded-lg group-hover:bg-cyan-500/30 transition-colors duration-300">
-                    <Mail className="w-4 h-4 text-cyan-400" />
-                  </div>
-                  <span className="group-hover:text-white transition-colors duration-300">{contactInfo.email}</span>
-                </motion.a>
-                
-                <motion.div 
-                  className="flex items-start space-x-3 text-gray-400 p-2 rounded-lg hover:bg-gray-800/30 transition-colors duration-300"
-                  whileHover={{ x: 5 }}
-                >
-                  <div className="p-2 bg-cyan-500/20 rounded-lg">
-                    <MapPin className="w-4 h-4 text-cyan-400" />
-                  </div>
-                  <address className="not-italic hover:text-white transition-colors duration-300 leading-relaxed">
-                    {contactInfo.address}
-                  </address>
-                </motion.div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12">
+        {/* Enhanced Company Info Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+          <motion.div 
+            className="space-y-6"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="flex items-center space-x-3">
+              <div className="w-12 h-12 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center">
+                <Globe className="w-7 h-7 text-white" />
+              </div>
+              <div>
+                <h2 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                  Zion Tech Group
+                </h2>
+                <p className="text-sm text-gray-400">Pioneering the future of technology</p>
               </div>
             </div>
+            
+            <p className="text-gray-300 text-lg leading-relaxed max-w-md">
+              Empowering businesses with cutting-edge AI, quantum computing, and innovative technology solutions that drive transformation and unlock human potential.
+            </p>
 
-            {/* Enhanced Newsletter Signup */}
-            <motion.div 
-              className="bg-gradient-to-br from-gray-800/50 to-gray-700/50 rounded-2xl p-6 border border-gray-600/50 backdrop-blur-sm shadow-xl"
-              whileHover={{ y: -2 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="flex items-center space-x-2 mb-4">
-                <Globe className="w-5 h-5 text-cyan-400" />
-                <h3 className="text-lg font-semibold text-white">Stay Updated</h3>
-              </div>
-              <p className="text-gray-300 text-sm mb-6 leading-relaxed">
-                Get the latest insights on technology trends, company updates, and exclusive content delivered to your inbox.
-              </p>
-              
-              <form onSubmit={handleNewsletterSubmit} className="space-y-4">
-                <div className="relative">
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your email address"
-                    className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-transparent transition-all duration-300 focus:bg-gray-700/70"
-                    aria-label="Email address for newsletter subscription"
-                    required
-                  />
-                  {email && !validateEmail(email) && (
-                    <motion.p 
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className="text-red-400 text-xs mt-2 flex items-center gap-1"
-                    >
-                      <AlertCircle className="w-3 h-3" />
-                      Please enter a valid email address
-                    </motion.p>
-                  )}
-                </div>
-                
-                <motion.button
-                  type="submit"
-                  disabled={isSubscribing || !validateEmail(email)}
-                  className="w-full px-4 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-xl hover:from-cyan-600 hover:to-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:ring-offset-2 focus:ring-offset-gray-800 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 flex items-center justify-center gap-2"
+            {/* Enhanced Stats */}
+            <div className="grid grid-cols-3 gap-6 pt-6">
+              {[
+                { icon: Users, value: "500+", label: "Clients", color: "cyan" },
+                { icon: Award, value: "98%", label: "Satisfaction", color: "blue" },
+                { icon: TrendingUp, value: "99.9%", label: "Uptime", color: "purple" }
+              ].map((stat, index) => (
+                <motion.div 
+                  key={stat.label}
+                  className="text-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                >
+                  <div className={`w-12 h-12 bg-gray-800/50 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-${stat.color}-500/20 transition-all duration-300`}>
+                    <stat.icon className={`w-6 h-6 text-${stat.color}-400`} />
+                  </div>
+                  <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
+                  <div className="text-sm text-gray-400">{stat.label}</div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Enhanced Newsletter Section */}
+          <motion.div 
+            className="space-y-6"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <div>
+              <h3 className="text-xl font-semibold text-white mb-2">Stay Updated</h3>
+              <p className="text-gray-400">Get the latest insights on AI, quantum computing, and emerging technologies delivered to your inbox.</p>
+            </div>
+
+            {/* Newsletter Benefits */}
+            <div className="space-y-3">
+              {[
+                "Weekly industry insights and trends",
+                "Exclusive access to whitepapers and research",
+                "Early access to new service announcements",
+                "Invitations to exclusive webinars and events"
+              ].map((benefit, index) => (
+                <motion.div 
+                  key={index}
+                  className="flex items-center gap-3 text-sm text-gray-300"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
+                >
+                  <CheckCircle className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                  <span>{benefit}</span>
+                </motion.div>
+              ))}
+            </div>
+
+            <form className="space-y-4" onSubmit={handleNewsletterSubmit}>
+              <div className="relative">
+                <input 
+                  type="email" 
+                  placeholder="Enter your email address" 
+                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-200" 
+                  required 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <button 
+                  type="submit" 
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                  disabled={isSubscribing}
                   aria-label="Subscribe to newsletter"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   {isSubscribing ? (
-                    <>
-                      <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                      Subscribing...
-                    </>
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                   ) : (
                     <>
                       Subscribe
@@ -336,27 +259,25 @@ const UltraAdvancedFuturisticFooter2025: React.FC = () => {
                 </motion.button>
               </form>
 
-              {/* Enhanced Subscription Status */}
+              {/* Subscription Status */}
               <AnimatePresence>
                 {subscriptionStatus === 'success' && (
                   <motion.div
-                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                    className="mt-4 p-4 bg-green-500/20 border border-green-500/30 rounded-xl backdrop-blur-sm"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="text-emerald-400 text-sm flex items-center gap-2"
                   >
-                    <div className="flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-green-400" />
-                      <p className="text-green-400 text-sm font-medium">Successfully subscribed! Welcome to our community.</p>
-                    </div>
+                    <CheckCircle className="w-4 h-4" />
+                    Successfully subscribed! Welcome to the future.
                   </motion.div>
                 )}
                 {subscriptionStatus === 'error' && (
                   <motion.div
-                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                    className="mt-4 p-4 bg-red-500/20 border border-red-500/30 rounded-xl backdrop-blur-sm"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    className="text-red-400 text-sm flex items-center gap-2"
                   >
                     <div className="flex items-center gap-2">
                       <AlertCircle className="w-5 h-5 text-red-400" />
@@ -368,55 +289,36 @@ const UltraAdvancedFuturisticFooter2025: React.FC = () => {
             </motion.div>
           </motion.div>
 
-          {/* Footer Sections */}
-          {footerSections.map((section, index) => (
-            <motion.div key={section.title} className="space-y-4" variants={itemVariants}>
-              {/* Mobile Expandable Section Header */}
-              <button
-                onClick={() => toggleSection(section.title)}
-                className="lg:hidden w-full flex items-center justify-between text-left text-lg font-semibold text-white hover:text-cyan-400 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:ring-offset-2 focus:ring-offset-gray-900 rounded-xl p-3 hover:bg-gray-800/30"
-                aria-expanded={expandedSections.has(section.title)}
-                aria-controls={`footer-section-${section.title}`}
-              >
-                {section.title}
-                <ChevronRight 
-                  className={`w-4 h-4 transition-transform duration-300 ${
-                    expandedSections.has(section.title) ? 'rotate-90' : ''
-                  }`} 
-                />
-              </button>
-
-              {/* Desktop Section Header */}
-              <h3 className="hidden lg:block text-lg font-semibold text-white mb-6 flex items-center gap-2">
-                <div className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"></div>
-                {section.title}
-              </h3>
-
-              {/* Section Links */}
-              <div 
-                id={`footer-section-${section.title}`}
-                className={`lg:block space-y-3 ${
-                  expandedSections.has(section.title) ? 'block' : 'hidden'
-                }`}
-              >
+        {/* Enhanced Footer Links */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          {footerSections.map((section, sectionIndex) => (
+            <motion.div 
+              key={section.title}
+              className="space-y-4"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: sectionIndex * 0.1 }}
+            >
+              <h3 className="text-lg font-semibold text-white">{section.title}</h3>
+              <ul className="space-y-3">
                 {section.links.map((link, linkIndex) => (
-                  <motion.div 
+                  <motion.li 
                     key={link.label}
                     initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 + linkIndex * 0.05 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: sectionIndex * 0.1 + linkIndex * 0.05 }}
                   >
-                    <Link
-                      href={link.href}
-                      className="group flex items-start space-x-2 text-gray-400 hover:text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:ring-offset-2 focus:ring-offset-gray-900 rounded-lg p-2 hover:bg-gray-800/30"
-                      aria-label={link.description || link.label}
+                    <Link 
+                      href={link.href} 
+                      className="text-gray-400 hover:text-cyan-400 transition-colors duration-200 group flex items-start gap-2"
                     >
-                      <span className="text-sm group-hover:text-cyan-400 transition-colors duration-300">
-                        {link.label}
-                      </span>
-                      {link.external && (
-                        <ExternalLink className="w-3 h-3 text-gray-500 group-hover:text-cyan-400 transition-colors duration-300 flex-shrink-0 mt-0.5" />
-                      )}
+                      <ArrowRight className="w-3 h-3 mt-1.5 text-gray-600 group-hover:text-cyan-400 transition-colors duration-200" />
+                      <div>
+                        <span className="block">{link.label}</span>
+                        <span className="text-xs text-gray-500 block mt-1">{link.description}</span>
+                      </div>
                     </Link>
                     {link.description && (
                       <p className="text-xs text-gray-500 ml-0 mt-1 hidden lg:block leading-relaxed">
@@ -425,96 +327,182 @@ const UltraAdvancedFuturisticFooter2025: React.FC = () => {
                     )}
                   </motion.div>
                 ))}
-              </div>
+              </ul>
             </motion.div>
           ))}
         </div>
 
-        {/* Enhanced Bottom Section */}
-        <motion.div 
-          className="mt-16 pt-8 border-t border-gray-700/50"
-          variants={itemVariants}
-        >
-          <div className="flex flex-col lg:flex-row items-center justify-between space-y-6 lg:space-y-0">
-            {/* Copyright & Links */}
-            <div className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-8 text-sm text-gray-400">
-              <motion.p 
-                className="flex items-center space-x-2"
-                whileHover={{ scale: 1.05 }}
-              >
-                <span>© 2024 Zion Tech Group. All rights reserved.</span>
-                <Heart className="w-4 h-4 text-red-400 animate-pulse" />
-              </motion.p>
-              <div className="flex items-center space-x-6">
-                {[
-                  { href: '/privacy', label: 'Privacy Policy' },
-                  { href: '/terms', label: 'Terms of Service' },
-                  { href: '/security', label: 'Security' }
-                ].map((link) => (
-                  <Link 
-                    key={link.href}
-                    href={link.href} 
-                    className="hover:text-cyan-400 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:ring-offset-2 focus:ring-offset-gray-900 rounded"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </div>
+        {/* Enhanced Contact & Social Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 pt-8 border-t border-gray-800/50">
+          <motion.div 
+            className="space-y-4"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <h3 className="text-lg font-semibold text-white">Contact Information</h3>
+            <div className="space-y-3">
+              {[
+                { icon: Phone, text: contactInfo.phone, href: `tel:${contactInfo.phone}`, type: 'phone' },
+                { icon: Mail, text: contactInfo.email, href: `mailto:${contactInfo.email}`, type: 'email' },
+                { icon: MapPin, text: contactInfo.address, href: '#', type: 'address' },
+                { icon: Globe, text: contactInfo.website, href: contactInfo.website, type: 'website' }
+              ].map((contact, index) => (
+                <motion.div 
+                  key={contact.type}
+                  className="flex items-center gap-3 text-gray-400 hover:text-cyan-400 transition-colors duration-200"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
+                >
+                  <contact.icon className="w-4 h-4 text-cyan-400" />
+                  {contact.type === 'address' ? (
+                    <span>{contact.text}</span>
+                  ) : (
+                    <a href={contact.href} className="hover:underline" target={contact.type === 'website' ? '_blank' : undefined} rel={contact.type === 'website' ? 'noopener noreferrer' : undefined}>
+                      {contact.text}
+                    </a>
+                  )}
+                </motion.div>
+              ))}
             </div>
+          </motion.div>
 
-            {/* Enhanced Social Links */}
-            <div className="flex items-center space-x-3">
+          <motion.div 
+            className="space-y-4"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
+            <h3 className="text-lg font-semibold text-white">Follow Us</h3>
+            <div className="flex flex-wrap gap-3">
               {socialLinks.map((social, index) => (
-                <motion.a
+                <motion.a 
                   key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`p-3 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:ring-offset-2 focus:ring-offset-gray-900 ${social.color}`}
+                  href={social.href} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-12 h-12 bg-gray-800/50 hover:bg-cyan-500/20 border border-gray-700/50 hover:border-cyan-500/50 rounded-lg flex items-center justify-center text-gray-400 hover:text-cyan-400 transition-all duration-200 group"
                   aria-label={`Follow us on ${social.label}`}
-                  whileHover={{ y: -3, scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}
+                  whileHover={{ scale: 1.1, rotate: 5 }}
                 >
                   {social.icon}
                 </motion.a>
               ))}
             </div>
+
+            {/* Trust Indicators */}
+            <div className="pt-4 space-y-3">
+              <div className="flex items-center gap-2 text-sm text-gray-400">
+                <Shield className="w-4 h-4 text-emerald-400" />
+                <span>ISO 27001 Certified</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-gray-400">
+                <Star className="w-4 h-4 text-yellow-400" />
+                <span>Gartner Recognized</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-gray-400">
+                <Clock className="w-4 h-4 text-blue-400" />
+                <span>24/7 Support Available</span>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Enhanced Bottom Bar */}
+        <motion.div 
+          className="border-t border-gray-800/50"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <motion.div 
+                className="flex items-center gap-2 text-gray-400 text-sm"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.9 }}
+              >
+                <span>© 2025 Zion Tech Group. All rights reserved.</span>
+                <Heart className="w-4 h-4 text-red-400 animate-pulse" />
+              </motion.div>
+              
+              <motion.div 
+                className="flex items-center gap-6 text-sm"
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 1.0 }}
+              >
+                <Link href="/privacy" className="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
+                  Privacy Policy
+                </Link>
+                <Link href="/terms" className="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
+                  Terms of Service
+                </Link>
+                <Link href="/cookies" className="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
+                  Cookie Policy
+                </Link>
+                <Link href="/accessibility" className="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
+                  Accessibility
+                </Link>
+              </motion.div>
+            </div>
           </div>
         </motion.div>
       </div>
 
-      {/* Enhanced Floating Contact Button */}
-      <motion.div 
-        className="fixed bottom-6 right-6 z-40"
-        variants={floatingButtonVariants}
-        initial="initial"
-        animate="animate"
-        whileHover="hover"
-        whileTap="tap"
+      {/* Enhanced Floating Action Buttons */}
+      <motion.button 
+        className="fixed bottom-6 right-6 w-14 h-14 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-200 z-50 flex items-center justify-center group"
+        aria-label="Contact us"
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 1.2 }}
+        whileHover={{ scale: 1.1, rotate: 5 }}
+        onClick={() => window.location.href = '/contact'}
       >
-        <motion.button
-          className="p-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-2xl shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-500/50 focus:ring-offset-2 focus:ring-offset-gray-900"
-          onClick={() => window.location.href = '/contact'}
-          aria-label="Quick contact Zion Tech Group"
-        >
-          <Phone className="w-6 h-6" />
-        </motion.button>
-        
-        {/* Tooltip */}
-        <motion.div
-          className="absolute right-full mr-3 top-1/2 transform -translate-y-1/2 px-3 py-2 bg-gray-800 text-white text-sm rounded-lg shadow-lg whitespace-nowrap opacity-0 pointer-events-none"
-          initial={{ opacity: 0, x: 10 }}
-          whileHover={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.2 }}
-        >
-          Contact Us
-          <div className="absolute left-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-4 border-l-gray-800 border-t-4 border-t-transparent border-b-4 border-b-transparent"></div>
-        </motion.div>
-      </motion.div>
-    </motion.footer>
+        <Phone className="w-6 h-6 group-hover:animate-pulse" />
+      </motion.button>
+
+      <motion.button 
+        className="fixed bottom-6 left-6 w-14 h-14 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-full shadow-2xl shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-200 z-50 flex items-center justify-center group"
+        aria-label="Accessibility settings"
+        aria-expanded="false"
+        aria-controls="accessibility-panel"
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 1.3 }}
+        whileHover={{ scale: 1.1, rotate: -5 }}
+      >
+        <Target className="w-6 h-6 group-hover:animate-pulse" />
+      </motion.button>
+
+      <motion.button 
+        className="fixed bottom-6 right-24 w-14 h-14 rounded-full shadow-2xl transition-all duration-200 z-50 flex items-center justify-center bg-gradient-to-r from-green-500 to-blue-500 shadow-green-500/25 group"
+        aria-label="Performance monitoring"
+        aria-expanded="false"
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 1.4 }}
+        whileHover={{ scale: 1.1, rotate: 5 }}
+      >
+        <TrendingUp className="w-6 h-6 text-white group-hover:animate-pulse" />
+      </motion.button>
+    </footer>
   );
 };
 

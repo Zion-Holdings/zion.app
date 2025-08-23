@@ -1,15 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import UltraFuturisticNavigation2036 from './UltraFuturisticNavigation2036';
 import UltraFuturisticFooter2036 from './UltraFuturisticFooter2036';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
+import UltraAdvancedFuturisticBackground2036 from '../backgrounds/UltraAdvancedFuturisticBackground2036';
 import TopContactBar from './TopContactBar';
-import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
-import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
-import EnhancedAccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
-import CookieConsentBanner from '../CookieConsentBanner';
-import PerformanceOptimizer from '../PerformanceOptimizer';
 
 interface LayoutProps {
 	children: React.ReactNode;
@@ -79,23 +74,13 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
       {/* Skip to content link for accessibility */}
-      <a 
-        href="#main" 
-        className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 bg-cyan-500 text-black px-4 py-2 rounded-lg font-semibold focus:outline-none focus:ring-4 focus:ring-cyan-500/50"
-        onClick={(e) => {
-          e.preventDefault();
-          const main = document.getElementById('main');
-          if (main) {
-            main.focus();
-            main.scrollIntoView({ behavior: 'smooth' });
-          }
-        }}
-      >
-        Skip to main content
-      </a>
-
-      {/* Futuristic Background */}
-      <UltraFuturisticBackground2045 theme="consciousness" intensity="high" />
+      <a href="#main" className="skip-link">Skip to main content</a>
+      
+      {/* Enhanced Futuristic Background */}
+      <UltraAdvancedFuturisticBackground2036 
+        intensity="medium" 
+        theme="quantum"
+      />
       
       {/* Layout Structure */}
       <div className="relative z-10">
@@ -103,38 +88,16 @@ export default function Layout({ children }: LayoutProps) {
         <TopContactBar />
         
         {/* Navigation */}
-        <UltraFuturisticNavigation2036 
-          onMenuToggle={() => setSidebarOpen(!sidebarOpen)}
-          isMenuOpen={sidebarOpen}
-        />
+        <UltraFuturisticNavigation2036 />
         
         {/* Sidebar and Main Content */}
         <div className="flex">
-          <AnimatePresence>
-            {sidebarOpen && (
-              <motion.div
-                initial={{ x: '-100%' }}
-                animate={{ x: 0 }}
-                exit={{ x: '-100%' }}
-                transition={{ type: 'tween', duration: 0.3 }}
-                className="fixed inset-y-0 left-0 z-40 lg:relative lg:translate-x-0"
-              >
-                <EnhancedSidebar2025 
-                  isOpen={sidebarOpen} 
-                  onClose={() => setSidebarOpen(false)}
-                  data-sidebar
-                />
-              </motion.div>
-            )}
-          </AnimatePresence>
+          <EnhancedSidebar2025 
+            isOpen={sidebarOpen} 
+            onClose={() => setSidebarOpen(false)} 
+          />
           
-          <main 
-            id="main" 
-            role="main" 
-            className="flex-1 pt-24 lg:pt-28 focus:outline-none"
-            tabIndex={-1}
-            aria-label="Main content"
-          >
+          <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
             {children}
           </main>
         </div>
@@ -142,29 +105,6 @@ export default function Layout({ children }: LayoutProps) {
         {/* Footer */}
         <UltraFuturisticFooter2036 />
       </div>
-
-      {/* Focus trap overlay */}
-      {focusTrap && (
-        <div 
-          className="fixed inset-0 bg-black/50 z-30 lg:hidden"
-          onClick={() => setSidebarOpen(false)}
-          aria-hidden="true"
-        />
-      )}
-
-      {/* Back to top button */}
-      <motion.button
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1, duration: 0.5 }}
-        className="fixed bottom-8 right-8 z-50 w-14 h-14 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full shadow-2xl shadow-cyan-500/25 flex items-center justify-center text-white hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-500/50"
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        aria-label="Back to top"
-      >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-        </svg>
-      </motion.button>
     </div>
   );
 }

@@ -88,6 +88,21 @@ import { nextGenITInfrastructureServices } from '../data/next-gen-it-infrastruct
 import { innovativeMicroSaasSolutions2025 } from '../data/innovative-micro-saas-solutions-2025';
 import { specializedIndustrySolutions } from '../data/specialized-industry-solutions';
 
+// Import Q4 2037 cutting-edge services
+import { cuttingEdgeServices } from '../data/real-2037-q4-cutting-edge-services';
+import { itInfrastructureServices } from '../data/real-2037-q4-it-infrastructure-services';
+import { businessSolutionServices } from '../data/real-2037-q4-business-solutions';
+
+// Import new 2036 expansion services
+import { innovativeMicroSaasExpansion } from '../data/innovative-2036-micro-saas-expansion';
+import { innovativeITServicesExpansion } from '../data/innovative-2036-it-services-expansion';
+import { innovativeAIServicesExpansion } from '../data/innovative-2036-ai-services-expansion';
+
+// Import our new 2037 Q1 innovative services
+import { real2037Q1InnovativeAdditions } from '../data/real-2037-q1-innovative-additions';
+import { real2037Q1ITInnovations } from '../data/real-2037-q1-it-innovations';
+import { real2037Q1MicroSaasInnovations } from '../data/real-2037-q1-micro-saas-innovations';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -168,19 +183,13 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
-  // Our new 2025 advanced services
-  ...advanced2025MicroSaasExpansion,
-  ...advanced2025ITSolutionsExpansion,
-  ...advanced2025AIServicesExpansion,
-  // Our new innovative services
   ...innovative2037MicroSaasServices,
   ...innovative2037ITServices,
   ...innovative2037AIServices,
-  // Latest innovative services
-  ...advancedAIAutomationServices,
-  ...nextGenITInfrastructureServices,
-  ...innovativeMicroSaasSolutions2025,
-  ...specializedIndustrySolutions
+  // Add our new 2037 Q1 innovative services
+  ...real2037Q1InnovativeAdditions,
+  ...real2037Q1ITInnovations,
+  ...real2037Q1MicroSaasInnovations
 ];
 
 const categories = [
