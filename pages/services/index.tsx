@@ -17,7 +17,6 @@ import { verified2025Additions } from '../../data/verified-2025-additions';
 import { realServicesQ12025 } from '../../data/real-services-q1-2025';
 import { realEnterpriseServices2025 } from '../../data/real-enterprise-services-2025';
 import { realMarketAugmentations2025 } from '../../data/real-market-augmentations-2025';
-import { verifiedRealServices2025Batch2 } from '../../data/verified-real-services-2025-batch2';
 import { additionalLiveServices2025 } from '../../data/additional-live-services-2025';
 import { real2025Q2Additions } from '../../data/real-2025-q2-additions';
 import { augmentedServicesBatch3 } from '../../data/real-augmented-services-2025-batch3';
@@ -56,6 +55,10 @@ import { real2036ITServicesAdditions } from '../../data/real-2036-it-services-ad
 import { real2036AIServicesAdditions } from '../../data/real-2036-ai-services-additions';
 import { innovative2025MicroSaasBatch } from '../../data/innovative-2025-micro-saas-batch';
 import { innovative2025ITEnterpriseBatch } from '../../data/innovative-2025-it-enterprise-batch';
+// New 2038 Services
+import { innovative2038MicroSaasServices } from '../../data/innovative-2038-micro-saas-services';
+import { innovative2038ITServices } from '../../data/innovative-2038-it-services';
+import { innovative2038AIServices } from '../../data/innovative-2038-ai-services';
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -99,7 +102,6 @@ export default function ServicesIndexPage() {
       realServicesQ12025 as unknown[],
       realEnterpriseServices2025 as unknown[],
       realMarketAugmentations2025 as unknown[],
-      verifiedRealServices2025Batch2 as unknown[],
       additionalLiveServices2025 as unknown[],
       real2025Q2Additions as unknown[],
       augmentedServicesBatch3 as unknown[],
@@ -138,7 +140,11 @@ export default function ServicesIndexPage() {
       real2036AIServicesAdditions as unknown[]
     )
     .concat(innovative2025MicroSaasBatch as unknown[])
-    .concat(innovative2025ITEnterpriseBatch as unknown[]);
+    .concat(innovative2025ITEnterpriseBatch as unknown[])
+    // Add new 2038 services
+    .concat(innovative2038MicroSaasServices as unknown[])
+    .concat(innovative2038ITServices as unknown[])
+    .concat(innovative2038AIServices as unknown[]);
 
   // Filter out services without required properties
   const validServices = all.filter(service => 
