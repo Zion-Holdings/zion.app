@@ -63,11 +63,21 @@
   status = 301
 
 [[redirects]]
+<<<<<<< HEAD
+  from = "/ai-customer-success-automation"
+  to = "/ai-customer-success-platform"
+  status = 301
+
+[[redirects]]
+=======
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-d08b
   from = "/ai-content-marketing-automation"
   to = "/intelligent-content-automation-platform"
   status = 301
 
 [[redirects]]
+<<<<<<< HEAD
+=======
   from = "/ai-autonomous-ecosystem"
   to = "/ai-autonomous-ecosystem-manager"
   status = 301
@@ -78,11 +88,14 @@
   status = 301
 
 [[redirects]]
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-d08b
   from = "/autonomous-it-operations"
   to = "/autonomous-it-operations-center"
   status = 301
 
 [[redirects]]
+<<<<<<< HEAD
+=======
   from = "/quantum-network-security"
   to = "/quantum-internet-security-platform"
   status = 301
@@ -108,11 +121,17 @@
   status = 301
 
 [[redirects]]
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-d08b
   from = "/quantum-internet-security"
   to = "/quantum-internet-security-platform"
   status = 301
 
 [[redirects]]
+<<<<<<< HEAD
+  from = "/browser-automation-cloud/"
+  to = "/browser-automation-cloud"
+  status = 301
+=======
   from = "/autonomous-vehicle-ai"
   to = "/autonomous-vehicle-ai-platform"
   status = 301
@@ -170,3 +189,4 @@
   to = "/:splat/"
   status = 301
   force = true
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-d08b

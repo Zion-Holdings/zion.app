@@ -6,10 +6,19 @@ import {
   ChevronRight, Home, Star, Users, 
   HelpCircle, Mail, Phone, MapPin,
   Brain, Atom, Shield, Rocket, DollarSign,
+<<<<<<< HEAD
+  Zap, Settings, Globe, Heart, Eye, Lock, Cloud,
+  BarChart3, Network, Database, Code, Award, Cpu,
+  TrendingUp, CheckCircle, Clock, Grid, Sparkles,
+  Search, X as CloseIcon,
+  Target, BookOpen, Calendar, Video, FileText,
+  Truck, ShoppingCart, BookOpenCheck, Building, MessageCircle, User
+=======
   Globe, Cpu, Database, Lock, Zap,
   TrendingUp, Award, CheckCircle, Clock,
   ArrowRight, Search, Menu, X as CloseIcon,
   Target, BookOpen, Calendar, Video, MessageSquare
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-d08b
 } from 'lucide-react';
 
 const contactInfo = {
