@@ -1,8 +1,14 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
+<<<<<<< HEAD
+import RevolutionaryNavigation from './RevolutionaryNavigation';
+import NeoFuturisticFooter from './NeoFuturisticFooter';
+import UltraAdvancedFuturisticBackground from '../ui/UltraAdvancedFuturisticBackground';
+=======
 import EnhancedFuturisticNavigation from './EnhancedFuturisticNavigation';
 import EnhancedFuturisticFooter from './EnhancedFuturisticFooter';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-7c3d
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
@@ -40,6 +46,19 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
+<<<<<<< HEAD
+	return (
+		<div className="min-h-screen bg-black text-white">
+			<UltraAdvancedFuturisticBackground variant="quantum-holographic">
+				<RevolutionaryNavigation />
+				<main className="pt-24 lg:pt-28">
+					{children}
+				</main>
+				<NeoFuturisticFooter />
+			</UltraAdvancedFuturisticBackground>
+		</div>
+	);
+=======
   return (
     <div className="min-h-screen bg-black text-white">
       <EnhancedFuturisticNavigation />
@@ -49,6 +68,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <EnhancedFuturisticFooter />
     </div>
   );
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-7c3d
 };
 
 export default Layout;
