@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
 import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
@@ -7,6 +7,9 @@ import TopContactBar from './TopContactBar';
 import PerformanceMonitor from '../PerformanceMonitor';
 import AccessibilityEnhancer from '../AccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
+import ThemeToggle from '../ThemeToggle';
+import LoadingSkeleton from '../LoadingSkeleton';
+import ErrorBoundary from '../ErrorBoundary';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -14,14 +17,46 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+
+  useEffect(() => {
+    // Check for saved theme preference or default to dark
+    const savedTheme = localStorage.getItem('theme') as 'dark' | 'light';
+    if (savedTheme) {
+      setTheme(savedTheme);
+      document.documentElement.classList.toggle('light', savedTheme === 'light');
+    }
+
+    // Simulate loading time for better UX
+    const timer = setTimeout(() => setIsLoading(false), 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleThemeChange = (newTheme: 'dark' | 'light') => {
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+    document.documentElement.classList.toggle('light', newTheme === 'light');
+  };
+
+  // Map theme to background theme
+  const getBackgroundTheme = (theme: 'dark' | 'light') => {
+    return theme === 'dark' ? 'quantum-neon' : 'holographic';
+  };
+
+  if (isLoading) {
+    return <LoadingSkeleton />;
+  }
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
+    <div className={`min-h-screen ${theme === 'dark' ? 'bg-black text-white' : 'bg-gray-50 text-gray-900'} relative overflow-x-hidden transition-colors duration-300`}>
       {/* Skip to content link for accessibility */}
-      <a href="#main" className="skip-link">Skip to main content</a>
+      <a href="#main" className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded focus:outline-none">
+        Skip to main content
+      </a>
       
       {/* Futuristic Background */}
-      <UltraFuturisticBackground2036 />
+      <UltraFuturisticBackground2036 theme={getBackgroundTheme(theme)} />
       
       {/* Layout Structure */}
       <div className="relative z-10">
@@ -31,6 +66,9 @@ export default function Layout({ children }: LayoutProps) {
         {/* Navigation */}
         <UltraFuturisticNavigation2040 />
         
+        {/* Theme Toggle */}
+        <ThemeToggle currentTheme={theme} onThemeChange={handleThemeChange} />
+        
         {/* Sidebar and Main Content */}
         <div className="flex">
           <EnhancedSidebar2025 
@@ -39,7 +77,9 @@ export default function Layout({ children }: LayoutProps) {
           />
           
           <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
-            {children}
+            <ErrorBoundary>
+              {children}
+            </ErrorBoundary>
           </main>
         </div>
         
