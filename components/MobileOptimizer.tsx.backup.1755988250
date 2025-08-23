@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+import React, { useEffect, useState, useCallback } from 'react';
+=======
 import React, { useState, useEffect, useCallback, useRef } from 'react';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-fe8a
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Smartphone, Tablet, Monitor, Wifi, Battery, 
@@ -6,6 +10,121 @@ import {
 } from 'lucide-react';
 
 interface MobileOptimizerProps {
+<<<<<<< HEAD
+  showPanel?: boolean;
+  autoOptimize?: boolean;
+}
+
+interface DeviceInfo {
+  type: 'mobile' | 'tablet' | 'desktop';
+  orientation: 'portrait' | 'landscape';
+  screenSize: { width: number; height: number };
+  pixelRatio: number;
+  touchSupport: boolean;
+  userAgent: string;
+}
+
+interface OptimizationResult {
+  type: string;
+  status: 'success' | 'warning' | 'error';
+  message: string;
+  applied: boolean;
+}
+
+const MobileOptimizer: React.FC<MobileOptimizerProps> = ({ 
+  showPanel = false, 
+  autoOptimize = true 
+}) => {
+  const [deviceInfo, setDeviceInfo] = useState<DeviceInfo | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [optimizations, setOptimizations] = useState<OptimizationResult[]>([]);
+  const [isOptimizing, setIsOptimizing] = useState(false);
+  const [currentOrientation, setCurrentOrientation] = useState<'portrait' | 'landscape'>('portrait');
+
+  // Enhanced device detection
+  const detectDevice = useCallback((): DeviceInfo => {
+    if (typeof window === 'undefined') {
+      return {
+        type: 'desktop',
+        orientation: 'portrait',
+        screenSize: { width: 1920, height: 1080 },
+        pixelRatio: 1,
+        touchSupport: false,
+        userAgent: ''
+      };
+    }
+
+    const { innerWidth, innerHeight, devicePixelRatio } = window;
+    const userAgent = navigator.userAgent.toLowerCase();
+    
+    // Enhanced device type detection
+    let type: 'mobile' | 'tablet' | 'desktop' = 'desktop';
+    if (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent)) {
+      if (innerWidth <= 768) {
+        type = 'mobile';
+      } else if (innerWidth <= 1024) {
+        type = 'tablet';
+      }
+    } else if (innerWidth <= 768) {
+      type = 'mobile';
+    } else if (innerWidth <= 1024) {
+      type = 'tablet';
+    }
+
+    // Enhanced orientation detection
+    const orientation: 'portrait' | 'landscape' = innerWidth > innerHeight ? 'landscape' : 'portrait';
+    
+    // Enhanced touch support detection
+    const touchSupport = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+    return {
+      type,
+      orientation,
+      screenSize: { width: innerWidth, height: innerHeight },
+      pixelRatio: devicePixelRatio || 1,
+      touchSupport,
+      userAgent
+    };
+  }, []);
+
+  // Enhanced optimization analysis
+  const analyzeAndOptimize = useCallback((device: DeviceInfo) => {
+    const newOptimizations: OptimizationResult[] = [];
+    
+    // Touch optimization
+    if (device.touchSupport) {
+      newOptimizations.push({
+        type: 'touch',
+        status: 'success',
+        message: 'Touch gestures enabled and optimized',
+        applied: true
+      });
+    } else {
+      newOptimizations.push({
+        type: 'touch',
+        status: 'warning',
+        message: 'Touch support not detected - consider adding touch gestures',
+        applied: false
+      });
+    };
+
+    // Run after images are loaded
+    if (document.readyState === 'complete') {
+      optimizeImagesForDevice();
+    } else {
+      window.addEventListener('load', optimizeImagesForDevice);
+    }
+
+    // Screen size optimization
+    if (device.type === 'mobile' && device.screenSize.width < 375) {
+      newOptimizations.push({
+        type: 'screen-size',
+        status: 'warning',
+        message: 'Small screen detected - optimizing layout for better mobile experience',
+        applied: true
+      });
+    }
+=======
   children: React.ReactNode;
   showDebugInfo?: boolean;
   enableTouchGestures?: boolean;
@@ -392,6 +511,7 @@ const MobileOptimizer: React.FC<MobileOptimizerProps> = ({
   useEffect(() => {
     optimizeForMobile();
   }, [optimizeForMobile]);
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-fe8a
 
     // Pixel ratio optimization
     if (device.pixelRatio > 2) {
@@ -661,6 +781,133 @@ const MobileOptimizer: React.FC<MobileOptimizerProps> = ({
   };
 
   return (
+<<<<<<< HEAD
+    <AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: 20 }}
+        className="fixed bottom-4 left-4 z-50"
+      >
+        <div className="bg-gray-900/95 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 shadow-2xl max-w-sm">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-lg font-semibold text-white flex items-center gap-2">
+              <Smartphone className="w-5 h-5 text-cyan-400" />
+              Mobile Optimizer
+            </h3>
+            <button
+              onClick={() => setIsVisible(false)}
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              ×
+            </button>
+          </div>
+
+          {deviceInfo && (
+            <div className="space-y-4">
+              {/* Device Info */}
+              <div className="bg-gray-800/50 rounded-xl p-4">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-2">
+                    {getDeviceIcon(deviceInfo.type)}
+                    <span className="text-white font-medium capitalize">
+                      {deviceInfo.type}
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <RotateCw className="w-4 h-4 text-gray-400" />
+                    <span className="text-gray-400 text-sm capitalize">
+                      {currentOrientation}
+                    </span>
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-2 gap-3 text-sm">
+                  <div>
+                    <span className="text-gray-400">Screen:</span>
+                    <div className="text-white">
+                      {deviceInfo.screenSize.width} × {deviceInfo.screenSize.height}
+                    </div>
+                  </div>
+                  <div>
+                    <span className="text-gray-400">DPI:</span>
+                    <div className="text-white">
+                      {deviceInfo.pixelRatio}x
+                    </div>
+                  </div>
+                  <div>
+                    <span className="text-gray-400">Touch:</span>
+                    <div className="text-white">
+                      {deviceInfo.touchSupport ? 'Yes' : 'No'}
+                    </div>
+                  </div>
+                  <div>
+                    <span className="text-gray-400">Agent:</span>
+                    <div className="text-white text-xs truncate">
+                      {deviceInfo.userAgent.substring(0, 20)}...
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Optimizations */}
+              {optimizations.length > 0 && (
+                <div className="space-y-2">
+                  <h4 className="text-sm font-semibold text-white">Optimizations</h4>
+                  {optimizations.map((optimization, index) => (
+                    <div key={index} className="flex items-start gap-2 p-2 bg-gray-800/30 rounded-lg">
+                      {getStatusIcon(optimization.status)}
+                      <div className="flex-1">
+                        <div className="text-sm text-white">{optimization.message}</div>
+                        <div className="text-xs text-gray-400 capitalize">
+                          {optimization.type} • {optimization.applied ? 'Applied' : 'Pending'}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Action Buttons */}
+              <div className="flex gap-2">
+                <button
+                  onClick={triggerOptimization}
+                  disabled={isOptimizing}
+                  className="flex-1 bg-cyan-500 hover:bg-cyan-600 disabled:bg-gray-600 text-white text-sm font-medium py-2 px-3 rounded-lg transition-colors disabled:cursor-not-allowed"
+                >
+                  {isOptimizing ? 'Optimizing...' : 'Optimize Now'}
+                </button>
+                <button
+                  onClick={() => {
+                    const device = detectDevice();
+                    setDeviceInfo(device);
+                    setCurrentOrientation(device.orientation);
+                  }}
+                  className="bg-gray-700 hover:bg-gray-600 text-white text-sm font-medium py-2 px-3 rounded-lg transition-colors"
+                >
+                  Refresh
+                </button>
+              </div>
+              <button
+                onClick={() => setIsDebugOpen(false)}
+                className="text-gray-400 hover:text-white transition-colors"
+                aria-label="Close debug panel"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+          )}
+
+          {!deviceInfo && (
+            <div className="text-center py-8">
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-cyan-400 mx-auto mb-3"></div>
+              <p className="text-gray-400 text-sm">Detecting device...</p>
+            </div>
+          )}
+        </div>
+      </motion.div>
+    </AnimatePresence>
+=======
     <>
       {children}
       
@@ -808,6 +1055,7 @@ const MobileOptimizer: React.FC<MobileOptimizerProps> = ({
         }
       `}</style>
     </>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-fe8a
   );
 };
 
