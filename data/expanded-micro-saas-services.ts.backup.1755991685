@@ -2045,6 +2045,8 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     marketSize: '$800M metaverse platform market',
     growthRate: '250% annual growth'
   },
+<<<<<<< HEAD
+=======
   {
     id: 'metaverse-commerce-platform',
     name: 'Metaverse Commerce Platform',
@@ -2082,6 +2084,7 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     growthRate: '200% annual growth'
   },
   // IoT & Smart City Services
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-28dd
   {
     id: 'iot-smart-city-platform',
     name: 'IoT Smart City Platform',
@@ -2119,6 +2122,114 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     growthRate: '180% annual growth'
   },
   {
+<<<<<<< HEAD
+    id: 'blockchain-defi-platform',
+    name: 'Blockchain DeFi Platform',
+    tagline: 'Next-generation decentralized finance solutions',
+    price: '$599',
+    period: '/month',
+    description: 'Advanced DeFi platform with AI-powered trading, yield optimization, and cross-chain interoperability for the future of finance.',
+    features: [
+      'AI trading algorithms',
+      'Yield optimization',
+      'Cross-chain bridges',
+      'Liquidity mining',
+      'Risk management',
+      'Governance tokens',
+      'Staking rewards',
+      'DeFi analytics'
+    ],
+    popular: true,
+    icon: '🔗',
+    color: 'from-purple-500 to-violet-600',
+    textColor: 'text-purple-400',
+    link: 'https://ziontechgroup.com/blockchain-defi',
+    marketPosition: 'Leading DeFi platform with $500M+ TVL',
+    targetAudience: 'DeFi protocols, crypto exchanges, institutional investors',
+    trialDays: 7,
+    setupTime: '1 day',
+    category: 'Blockchain & Web3',
+    realService: true,
+    technology: ['Blockchain', 'Smart Contracts', 'AI/ML', 'DeFi Protocols'],
+    integrations: ['Ethereum', 'Polygon', 'Solana', 'Wallet providers'],
+    useCases: ['Trading', 'Lending', 'Yield farming', 'Cross-chain swaps'],
+    roi: '900% average ROI in 12 months',
+    competitors: ['Uniswap', 'Aave', 'Compound', 'Curve'],
+    marketSize: '$100B DeFi market',
+    growthRate: '400% annual growth'
+  },
+  {
+    id: 'quantum-supply-chain-ai',
+    name: 'Quantum Supply Chain AI',
+    tagline: 'Quantum-powered supply chain optimization',
+    price: '$1,899',
+    period: '/month',
+    description: 'Revolutionary supply chain platform using quantum computing and AI for logistics optimization, demand forecasting, and risk management.',
+    features: [
+      'Quantum optimization',
+      'Demand forecasting',
+      'Route optimization',
+      'Risk management',
+      'Inventory optimization',
+      'Supplier analytics',
+      'Real-time tracking',
+      'Sustainability metrics'
+    ],
+    popular: true,
+    icon: '🚚',
+    color: 'from-orange-500 to-red-600',
+    textColor: 'text-orange-400',
+    link: 'https://ziontechgroup.com/quantum-supply-chain',
+    marketPosition: 'First quantum supply chain platform with 60% efficiency improvement',
+    targetAudience: 'Manufacturing companies, logistics providers, retailers, e-commerce',
+    trialDays: 14,
+    setupTime: '1 week',
+    category: 'Transportation & Logistics',
+    realService: true,
+    technology: ['Quantum Computing', 'AI/ML', 'IoT', 'Big Data'],
+    integrations: ['ERP systems', 'WMS', 'TMS', 'Tracking systems'],
+    useCases: ['Logistics optimization', 'Inventory management', 'Demand planning', 'Risk assessment'],
+    roi: '450% average ROI in 18 months',
+    competitors: ['SAP', 'Oracle', 'Manhattan Associates', 'JDA Software'],
+    marketSize: '$2.1B supply chain market',
+    growthRate: '160% annual growth'
+  },
+  {
+    id: 'ai-education-platform',
+    name: 'AI Education Platform',
+    tagline: 'Personalized AI-powered learning experience',
+    price: '$299',
+    period: '/month',
+    description: 'Advanced AI education platform providing personalized learning paths, adaptive content, and intelligent tutoring for all subjects.',
+    features: [
+      'Personalized learning',
+      'Adaptive content',
+      'AI tutoring',
+      'Progress tracking',
+      'Skill assessment',
+      'Collaborative learning',
+      'Multilingual support',
+      'Accessibility features'
+    ],
+    popular: true,
+    icon: '🎓',
+    color: 'from-blue-500 to-indigo-600',
+    textColor: 'text-blue-400',
+    link: 'https://ziontechgroup.com/ai-education',
+    marketPosition: 'Leading AI education platform with 2M+ students',
+    targetAudience: 'Schools, universities, corporate training, individual learners',
+    trialDays: 14,
+    setupTime: '2 days',
+    category: 'Education & Training',
+    realService: true,
+    technology: ['AI/ML', 'NLP', 'Computer Vision', 'Adaptive Learning'],
+    integrations: ['LMS systems', 'Video platforms', 'Assessment tools', 'Payment systems'],
+    useCases: ['K-12 education', 'Higher education', 'Corporate training', 'Skill development'],
+    roi: '350% average ROI in 12 months',
+    competitors: ['Coursera', 'Udemy', 'Duolingo', 'Khan Academy'],
+    marketSize: '$3.2B AI education market',
+    growthRate: '200% annual growth'
+=======
     id: 'edge-computing-orchestrator',
     name: 'Edge Computing Orchestrator',
     tagline: 'Intelligent edge infrastructure management',
@@ -2909,6 +3020,7 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     competitors: ['MetricStream', 'SaiGlobal', 'LogicGate'],
     marketSize: '$2.8B global market',
     growthRate: '40% annual growth'
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-28dd
   }
 ];
 
