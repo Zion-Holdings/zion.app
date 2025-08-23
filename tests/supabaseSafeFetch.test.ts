@@ -3,7 +3,7 @@ import * as client from @/integrations/supabase/client';import { vi } from vites
 it('checkOnline returns false when navigator is offline', async () => {'  Object.defineProperty(window, navigator', {'    value: { onLine: false },
     writable: true
   });
-  const result = await checkOnline();
+  const result = await client.checkOnline();
   expect(result).toBe(false);
 });
 

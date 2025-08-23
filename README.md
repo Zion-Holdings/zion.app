@@ -32,11 +32,15 @@ We've expanded our portfolio with **36+ innovative micro SAAS, IT, and AI servic
 - **CI/CD:** GitHub Actions, Netlify (including Lighthouse CI)
 - **Other:** IPFS, OrbitDB, Ethers.js, Elasticsearch
 
-## Environment Configuration
+### **Contact Information:**
+- **Mobile**: +1 302 464 0950
+- **Email**: kleber@ziontechgroup.com
+- **Website**: https://ziontechgroup.com
+- **Address**: 364 E Main St STE 1008 Middletown DE 19709
 
-⚠️ **IMPORTANT**: This project uses **Supabase for authentication** and **Netlify for environment variable management**. Proper configuration is essential for the application to function correctly.
+---
 
-### Authentication Setup
+## 🌟 Featured Services
 
 The application uses Supabase for all authentication functionality:
 
@@ -45,13 +49,22 @@ The application uses Supabase for all authentication functionality:
 - Social authentication (Google, Facebook, GitHub, Microsoft, Twitter)
 - Session management and profile handling
 
-### Required Environment Variables
+### **Cybersecurity & Compliance**
+- Zero Trust Security Orchestrator ($599/month)
+- FinTech Compliance Automation ($799/month)
+- Quantum Cybersecurity Platform ($699/month)
 
-A comprehensive list of environment variables can be found in the `.env.example` file. For local development, copy this file to `.env.local` and populate it with the necessary values. **Do not commit `.env.local` to version control.**
+### **Emerging Technologies**
+- Quantum Computing as a Service ($1,299/month)
+- Enterprise Blockchain Platform ($799/month)
+- Space Data Analytics Platform ($599/month)
 
-For production deployments, all variables are configured directly in Netlify's UI, so the repository no longer contains a `.env.local` file with secrets.
+### **Industry Solutions**
+- Smart Manufacturing Platform ($699/month)
+- Healthcare Analytics Platform ($799/month)
+- Digital Banking Platform ($999/month)
 
-**Key variables include:**
+---
 
 - **Supabase Configuration:**
   - `NEXT_PUBLIC_SUPABASE_URL`
@@ -69,9 +82,11 @@ For production deployments, all variables are configured directly in Netlify's U
 - **Internal Authentication Service:**
   - `INTERNAL_AUTH_SERVICE_URL` (if used for specific flows like registration)
 
-Ensure all variables marked as required in `.env.example` or in specific documentation (like `docs/SUPABASE_AUTHENTICATION_SETUP.md`) are correctly set.
+- **[Complete Services Portfolio](NEW_SERVICES_SUMMARY_2025.md)** - Detailed overview of all 36+ services
+- **[Services Showcase](/innovative-services-showcase-2025)** - Interactive showcase of new services
+- **[Main Services Page](/services)** - Complete portfolio with search and filtering
 
-### 📚 Detailed Setup Guides
+---
 
 - **[Supabase Authentication Setup](docs/SUPABASE_AUTHENTICATION_SETUP.md)** - Complete guide for configuring Supabase authentication
 - **[Netlify Deployment Guide](docs/NETLIFY_DEPLOYMENT_GUIDE.md)** - Step-by-step Netlify deployment with environment variables
@@ -89,24 +104,20 @@ Ensure all variables marked as required in `.env.example` or in specific documen
 - **Missing Key Log** - Any translation keys not found at runtime are appended to `logs/missing-keys.log`
 - **Check for Missing Translations** - `npm run i18n:missing` verifies that all locales contain the same translation keys
 
-### CDN for Static Assets
+1. **Browse Services**: Explore our comprehensive portfolio
+2. **Free Trials**: Most services offer 14-30 day free trials
+3. **Expert Consultation**: Get personalized recommendations
+4. **Implementation**: Dedicated support for deployment and integration
 
-To improve performance, the application can serve static assets from a CDN.
-Set `NEXT_PUBLIC_CDN_URL` to your CDN domain (e.g., `https://cdn.yourdomain.com`).
-When this variable is provided in production builds, Next.js will prefix asset
-URLs so they are loaded from the CDN.
+---
 
-### Quick Setup Verification
+*Transform your business with the cutting edge of technology solutions. All services designed for real ROI and measurable business impact.*
 
-After setting up environment variables, verify your configuration:
+---
 
-```bash
-# Check environment setup
-npx ts-node --transpile-only scripts/check-env.ts
+# bolt.new.zion.app
 
-# Test Supabase connection (in browser console)
-console.log('Supabase configured:', !!window.location.origin.includes('localhost') || !!process.env.NEXT_PUBLIC_SUPABASE_URL)
-```
+Autonomous, cloud‑native app with self‑running automations.
 
 ## 🚀 Quick Start
 
@@ -194,9 +205,16 @@ export GIT_AUTHOR_EMAIL="advanced-self-healing@zion.app"
 
 ## Getting Started
 
-1.  **Prerequisites:** Node.js (v20+), npm, Python, pip, Docker (recommended).
+### Highlights
+- **Autonomous cloud automations**: GitHub Actions run on schedules to maintain, audit, and improve the repo without human intervention.
+- **Rapid sync**: A 1-minute cadence keeps branches synchronized.
+- **Self-healing CI**: Automatic detection and PRs for fixes after failures.
 
-2.  **Clone the repository.**
+### Key Directories
+- `automation/`: Cloud automation scripts (content, SEO, security, sync).
+- `scripts/`: Utility scripts (sitemap, SEO, radar, README generator).
+- `pages/`: Next.js pages.
+- `components/`: Reusable UI components.
 
 3.  **Install project dependencies:** Run the setup script with your preferred
     package manager. Example:
@@ -206,22 +224,245 @@ export GIT_AUTHOR_EMAIL="advanced-self-healing@zion.app"
     - `./setup.sh bun`
       Ensure you have internet connectivity so dependencies can be downloaded.
 
-4.  **Configure environment variables:**
-    - For **local development**: Create `.env.local` based on environment variable requirements above
-    - Set `NEXT_PUBLIC_REOWN_PROJECT_ID` to your Reown AppKit project ID (see `docs/ENVIRONMENT_SAFEGUARDS.md`)
-    - For **production**: Set variables in Netlify UI (see deployment guide)
-    - Ensure `INTERNAL_AUTH_SERVICE_URL` points to your authentication service
-    - **Enable DevTools**: Set `NEXT_PUBLIC_DEVTOOLS=true` in `.env.local` if you want browser DevTools enabled
-    - **Validate configuration**: Run `npx ts-node --transpile-only scripts/check-env.ts`
+### Automations
+- [Accessibility Audit](https://github.com/Zion-Holdings/zion/actions/workflows/accessibility-audit.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/accessibility-audit.yml/badge.svg)
+- [Actionlint](https://github.com/Zion-Holdings/zion/actions/workflows/actionlint.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/actionlint.yml/badge.svg)
+- [Actions Keepalive](https://github.com/Zion-Holdings/zion/actions/workflows/actions-keepalive.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/actions-keepalive.yml/badge.svg)
+- [Agent Agent 1755379731005 0 Full Stack Expert](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379731005-0-full-stack-expert.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379731005-0-full-stack-expert.yml/badge.svg)
+- [Agent Agent 1755379731007 1 Deployment Expert](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379731007-1-deployment-expert.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379731007-1-deployment-expert.yml/badge.svg)
+- [Agent Agent 1755379731008 2 Monitoring Expert](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379731008-2-monitoring-expert.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379731008-2-monitoring-expert.yml/badge.svg)
+- [Agent Agent 1755379759029 0 Optimization Intermediate](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379759029-0-optimization-intermediate.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379759029-0-optimization-intermediate.yml/badge.svg)
+- [Agent Agent 1755379759032 1 Full Stack Intermediate](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379759032-1-full-stack-intermediate.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379759032-1-full-stack-intermediate.yml/badge.svg)
+- [Agent Agent 1755379759033 2 Deployment Expert](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379759033-2-deployment-expert.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379759033-2-deployment-expert.yml/badge.svg)
+- [Agent Agent 1755379759033 3 Frontend Expert](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379759033-3-frontend-expert.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379759033-3-frontend-expert.yml/badge.svg)
+- [Agent Agent 1755379759035 4 Full Stack Intermediate](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379759035-4-full-stack-intermediate.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379759035-4-full-stack-intermediate.yml/badge.svg)
+- [Agent Agent 1755379759035 5 Frontend Basic](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379759035-5-frontend-basic.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379759035-5-frontend-basic.yml/badge.svg)
+- [Agent Agent 1755379759036 6 Monitoring Advanced](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379759036-6-monitoring-advanced.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379759036-6-monitoring-advanced.yml/badge.svg)
+- [Agent Agent 1755379759037 7 Full Stack Intermediate](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379759037-7-full-stack-intermediate.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379759037-7-full-stack-intermediate.yml/badge.svg)
+- [Agent Agent 1755379777746 0 Full Stack Advanced](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379777746-0-full-stack-advanced.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379777746-0-full-stack-advanced.yml/badge.svg)
+- [Agent Agent 1755379777749 1 Full Stack Basic](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379777749-1-full-stack-basic.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379777749-1-full-stack-basic.yml/badge.svg)
+- [Agent Agent 1755379777750 2 Monitoring Intermediate](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379777750-2-monitoring-intermediate.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379777750-2-monitoring-intermediate.yml/badge.svg)
+- [Agent Agent 1755379777751 3 Monitoring Advanced](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379777751-3-monitoring-advanced.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379777751-3-monitoring-advanced.yml/badge.svg)
+- [Agent Agent 1755379777752 5 Testing Expert](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379777752-5-testing-expert.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379777752-5-testing-expert.yml/badge.svg)
+- [Agent Agent 1755379777754 6 Backend Expert](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379777754-6-backend-expert.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379777754-6-backend-expert.yml/badge.svg)
+- [Agent Agent 1755379777755 7 Backend Intermediate](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379777755-7-backend-intermediate.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755379777755-7-backend-intermediate.yml/badge.svg)
+- [Agent Agent 1755381089841 0 Backend Expert](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755381089841-0-backend-expert.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755381089841-0-backend-expert.yml/badge.svg)
+- [Agent Agent 1755381089844 1 Deployment Advanced](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755381089844-1-deployment-advanced.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755381089844-1-deployment-advanced.yml/badge.svg)
+- [Agent Agent 1755381089845 2 Full Stack Advanced](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755381089845-2-full-stack-advanced.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755381089845-2-full-stack-advanced.yml/badge.svg)
+- [Agent Agent 1755381089846 3 Optimization Expert](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755381089846-3-optimization-expert.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755381089846-3-optimization-expert.yml/badge.svg)
+- [Agent Agent 1755381089846 4 Testing Advanced](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755381089846-4-testing-advanced.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755381089846-4-testing-advanced.yml/badge.svg)
+- [Agent Agent 1755381089847 5 Frontend Expert](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755381089847-5-frontend-expert.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755381089847-5-frontend-expert.yml/badge.svg)
+- [Agent Agent 1755381089848 6 Testing Intermediate](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755381089848-6-testing-intermediate.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755381089848-6-testing-intermediate.yml/badge.svg)
+- [Agent Agent 1755381089849 7 Monitoring Intermediate](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755381089849-7-monitoring-intermediate.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/agent-agent-1755381089849-7-monitoring-intermediate.yml/badge.svg)
+- [Agent Factory Automation](https://github.com/Zion-Holdings/zion/actions/workflows/agent-factory-automation.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/agent-factory-automation.yml/badge.svg)
+- [Agent Factory Proliferation](https://github.com/Zion-Holdings/zion/actions/workflows/agent-factory-proliferation.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/agent-factory-proliferation.yml/badge.svg)
+- [Agent Of Agents Trigger](https://github.com/Zion-Holdings/zion/actions/workflows/agent-of-agents-trigger.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/agent-of-agents-trigger.yml/badge.svg)
+- [Ai Changelog](https://github.com/Zion-Holdings/zion/actions/workflows/ai-changelog.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ai-changelog.yml/badge.svg)
+- [Ai Content Autonomy](https://github.com/Zion-Holdings/zion/actions/workflows/ai-content-autonomy.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ai-content-autonomy.yml/badge.svg)
+- [Ai Content Factory](https://github.com/Zion-Holdings/zion/actions/workflows/ai-content-factory.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ai-content-factory.yml/badge.svg)
+- [Ai It Ads Sync](https://github.com/Zion-Holdings/zion/actions/workflows/ai-it-ads-sync.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ai-it-ads-sync.yml/badge.svg)
+- [Ai It Innovations](https://github.com/Zion-Holdings/zion/actions/workflows/ai-it-innovations.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ai-it-innovations.yml/badge.svg)
+- [Ai It Multi Factory](https://github.com/Zion-Holdings/zion/actions/workflows/ai-it-multi-factory.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ai-it-multi-factory.yml/badge.svg)
+- [Ai It Ultrafast Sync](https://github.com/Zion-Holdings/zion/actions/workflows/ai-it-ultrafast-sync.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ai-it-ultrafast-sync.yml/badge.svg)
+- [Ai Research Scout](https://github.com/Zion-Holdings/zion/actions/workflows/ai-research-scout.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ai-research-scout.yml/badge.svg)
+- [Ai Trends Radar](https://github.com/Zion-Holdings/zion/actions/workflows/ai-trends-radar.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ai-trends-radar.yml/badge.svg)
+- [App Automation](https://github.com/Zion-Holdings/zion/actions/workflows/app-automation.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/app-automation.yml/badge.svg)
+- [App Monitoring](https://github.com/Zion-Holdings/zion/actions/workflows/app-monitoring.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/app-monitoring.yml/badge.svg)
+- [Auto Fix Workflows](https://github.com/Zion-Holdings/zion/actions/workflows/auto-fix-workflows.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/auto-fix-workflows.yml/badge.svg)
+- [Auto Fix](https://github.com/Zion-Holdings/zion/actions/workflows/auto-fix.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/auto-fix.yml/badge.svg)
+- [Auto Heal Workflows](https://github.com/Zion-Holdings/zion/actions/workflows/auto-heal-workflows.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/auto-heal-workflows.yml/badge.svg)
+- [Auto Media Release](https://github.com/Zion-Holdings/zion/actions/workflows/auto-media-release.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/auto-media-release.yml/badge.svg)
+- [Auto Pr Automerge](https://github.com/Zion-Holdings/zion/actions/workflows/auto-pr-automerge.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/auto-pr-automerge.yml/badge.svg)
+- [Auto Pr Cursor Branches](https://github.com/Zion-Holdings/zion/actions/workflows/auto-pr-cursor-branches.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/auto-pr-cursor-branches.yml/badge.svg)
+- [Auto Semver Release](https://github.com/Zion-Holdings/zion/actions/workflows/auto-semver-release.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/auto-semver-release.yml/badge.svg)
+- [Auto Update Prs](https://github.com/Zion-Holdings/zion/actions/workflows/auto-update-prs.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/auto-update-prs.yml/badge.svg)
+- [Automation Advertiser](https://github.com/Zion-Holdings/zion/actions/workflows/automation-advertiser.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/automation-advertiser.yml/badge.svg)
+- [Automation Cleanup](https://github.com/Zion-Holdings/zion/actions/workflows/automation-cleanup.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/automation-cleanup.yml/badge.svg)
+- [Automation Dashboard](https://github.com/Zion-Holdings/zion/actions/workflows/automation-dashboard.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/automation-dashboard.yml/badge.svg)
+- [Automation Guardian 10min](https://github.com/Zion-Holdings/zion/actions/workflows/automation-guardian-10min.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/automation-guardian-10min.yml/badge.svg)
+- [Automation Orchestrator](https://github.com/Zion-Holdings/zion/actions/workflows/automation-orchestrator.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/automation-orchestrator.yml/badge.svg)
+- [Automations](https://github.com/Zion-Holdings/zion/actions/workflows/automations.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/automations.yml/badge.svg)
+- [Automerge Main](https://github.com/Zion-Holdings/zion/actions/workflows/automerge-main.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/automerge-main.yml/badge.svg)
+- [Autonomous Agent Orchestrator](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-agent-orchestrator.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-agent-orchestrator.yml/badge.svg)
+- [Autonomous Auto Discovery](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-auto-discovery.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-auto-discovery.yml/badge.svg)
+- [Autonomous Auto Merge To Main](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-auto-merge-to-main.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-auto-merge-to-main.yml/badge.svg)
+- [Autonomous Cloud Automations](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-cloud-automations.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-cloud-automations.yml/badge.svg)
+- [Autonomous Cloud Fast](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-cloud-fast.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-cloud-fast.yml/badge.svg)
+- [Autonomous Cloud Runner](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-cloud-runner.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-cloud-runner.yml/badge.svg)
+- [Autonomous Cloud](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-cloud.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-cloud.yml/badge.svg)
+- [Autonomous Content Curation](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-content-curation.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-content-curation.yml/badge.svg)
+- [Autonomous Content Scanner](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-content-scanner.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-content-scanner.yml/badge.svg)
+- [Autonomous Deep Maintenance](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-deep-maintenance.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-deep-maintenance.yml/badge.svg)
+- [Autonomous Deps Upgrade](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-deps-upgrade.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-deps-upgrade.yml/badge.svg)
+- [Autonomous External Links](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-external-links.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-external-links.yml/badge.svg)
+- [Autonomous Image Optimizer](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-image-optimizer.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-image-optimizer.yml/badge.svg)
+- [Autonomous Intelligence](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-intelligence.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-intelligence.yml/badge.svg)
+- [Autonomous Keepalive](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-keepalive.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-keepalive.yml/badge.svg)
+- [Autonomous Lighthouse](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-lighthouse.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-lighthouse.yml/badge.svg)
+- [Autonomous Marketing Seo](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-marketing-seo.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-marketing-seo.yml/badge.svg)
+- [Autonomous Meta](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-meta.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-meta.yml/badge.svg)
+- [Autonomous Minute Orchestrator](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-minute-orchestrator.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-minute-orchestrator.yml/badge.svg)
+- [Autonomous Quick Fixes](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-quick-fixes.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-quick-fixes.yml/badge.svg)
+- [Autonomous Release](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-release.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-release.yml/badge.svg)
+- [Autonomous Self Tune](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-self-tune.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-self-tune.yml/badge.svg)
+- [Autonomous Ultrafast](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-ultrafast.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-ultrafast.yml/badge.svg)
+- [Autonomous Workflow Cleanup](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-workflow-cleanup.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-workflow-cleanup.yml/badge.svg)
+- [Autonomous Workflow Watchdog](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-workflow-watchdog.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/autonomous-workflow-watchdog.yml/badge.svg)
+- [Branch Cleanup](https://github.com/Zion-Holdings/zion/actions/workflows/branch-cleanup.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/branch-cleanup.yml/badge.svg)
+- [Branch Pruner](https://github.com/Zion-Holdings/zion/actions/workflows/branch-pruner.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/branch-pruner.yml/badge.svg)
+- [Broken Images](https://github.com/Zion-Holdings/zion/actions/workflows/broken-images.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/broken-images.yml/badge.svg)
+- [Ci Auto Heal](https://github.com/Zion-Holdings/zion/actions/workflows/ci-auto-heal.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ci-auto-heal.yml/badge.svg)
+- [Ci Lint Types Build](https://github.com/Zion-Holdings/zion/actions/workflows/ci-lint-types-build.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ci-lint-types-build.yml/badge.svg)
+- [Ci Merge Main](https://github.com/Zion-Holdings/zion/actions/workflows/ci-merge-main.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ci-merge-main.yml/badge.svg)
+- [Ci Quality](https://github.com/Zion-Holdings/zion/actions/workflows/ci-quality.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ci-quality.yml/badge.svg)
+- [Ci Self Heal](https://github.com/Zion-Holdings/zion/actions/workflows/ci-self-heal.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ci-self-heal.yml/badge.svg)
+- [Ci](https://github.com/Zion-Holdings/zion/actions/workflows/ci.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ci.yml/badge.svg)
+- [Cleanup Merged Branches](https://github.com/Zion-Holdings/zion/actions/workflows/cleanup-merged-branches.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/cleanup-merged-branches.yml/badge.svg)
+- [Cleanup](https://github.com/Zion-Holdings/zion/actions/workflows/cleanup.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/cleanup.yml/badge.svg)
+- [Cloud Agents Fast](https://github.com/Zion-Holdings/zion/actions/workflows/cloud-agents-fast.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/cloud-agents-fast.yml/badge.svg)
+- [Cloud Agents](https://github.com/Zion-Holdings/zion/actions/workflows/cloud-agents.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/cloud-agents.yml/badge.svg)
+- [Cloud Autonomous Orchestrator](https://github.com/Zion-Holdings/zion/actions/workflows/cloud-autonomous-orchestrator.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/cloud-autonomous-orchestrator.yml/badge.svg)
+- [Cloud Deep Research](https://github.com/Zion-Holdings/zion/actions/workflows/cloud-deep-research.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/cloud-deep-research.yml/badge.svg)
+- [Cloud Maintenance](https://github.com/Zion-Holdings/zion/actions/workflows/cloud-maintenance.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/cloud-maintenance.yml/badge.svg)
+- [Cloud Marketing](https://github.com/Zion-Holdings/zion/actions/workflows/cloud-marketing.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/cloud-marketing.yml/badge.svg)
+- [Cloud Orchestrator Plus](https://github.com/Zion-Holdings/zion/actions/workflows/cloud-orchestrator-plus.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/cloud-orchestrator-plus.yml/badge.svg)
+- [Codeql Analysis](https://github.com/Zion-Holdings/zion/actions/workflows/codeql-analysis.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/codeql-analysis.yml/badge.svg)
+- [Codeql](https://github.com/Zion-Holdings/zion/actions/workflows/codeql.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/codeql.yml/badge.svg)
+- [Commit Message Lint](https://github.com/Zion-Holdings/zion/actions/workflows/commit-message-lint.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/commit-message-lint.yml/badge.svg)
+- [Commitlint](https://github.com/Zion-Holdings/zion/actions/workflows/commitlint.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/commitlint.yml/badge.svg)
+- [Components Size Report](https://github.com/Zion-Holdings/zion/actions/workflows/components-size-report.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/components-size-report.yml/badge.svg)
+- [Comprehensive Test](https://github.com/Zion-Holdings/zion/actions/workflows/comprehensive-test.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/comprehensive-test.yml/badge.svg)
+- [Content Generation](https://github.com/Zion-Holdings/zion/actions/workflows/content-generation.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/content-generation.yml/badge.svg)
+- [Continuous Deployment](https://github.com/Zion-Holdings/zion/actions/workflows/continuous-deployment.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/continuous-deployment.yml/badge.svg)
+- [Continuous Improvement](https://github.com/Zion-Holdings/zion/actions/workflows/continuous-improvement.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/continuous-improvement.yml/badge.svg)
+- [Crawl Normalize](https://github.com/Zion-Holdings/zion/actions/workflows/crawl-normalize.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/crawl-normalize.yml/badge.svg)
+- [Cursor Chat](https://github.com/Zion-Holdings/zion/actions/workflows/cursor-chat.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/cursor-chat.yml/badge.svg)
+- [Cursor Rules Autoupdate](https://github.com/Zion-Holdings/zion/actions/workflows/cursor-rules-autoupdate.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/cursor-rules-autoupdate.yml/badge.svg)
+- [Dead Code Report](https://github.com/Zion-Holdings/zion/actions/workflows/dead-code-report.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/dead-code-report.yml/badge.svg)
+- [Dependabot Auto Approve](https://github.com/Zion-Holdings/zion/actions/workflows/dependabot-auto-approve.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/dependabot-auto-approve.yml/badge.svg)
+- [Dependencies](https://github.com/Zion-Holdings/zion/actions/workflows/dependencies.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/dependencies.yml/badge.svg)
+- [Dependency Auto Upgrade](https://github.com/Zion-Holdings/zion/actions/workflows/dependency-auto-upgrade.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/dependency-auto-upgrade.yml/badge.svg)
+- [Dependency Maintenance](https://github.com/Zion-Holdings/zion/actions/workflows/dependency-maintenance.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/dependency-maintenance.yml/badge.svg)
+- [Dependency Management](https://github.com/Zion-Holdings/zion/actions/workflows/dependency-management.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/dependency-management.yml/badge.svg)
+- [Diverse Agent Matrix](https://github.com/Zion-Holdings/zion/actions/workflows/diverse-agent-matrix.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/diverse-agent-matrix.yml/badge.svg)
+- [Docs Autogen](https://github.com/Zion-Holdings/zion/actions/workflows/docs-autogen.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/docs-autogen.yml/badge.svg)
+- [Docs Intelligence](https://github.com/Zion-Holdings/zion/actions/workflows/docs-intelligence.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/docs-intelligence.yml/badge.svg)
+- [Emergency Fix](https://github.com/Zion-Holdings/zion/actions/workflows/emergency-fix.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/emergency-fix.yml/badge.svg)
+- [Ephemeral Branch Autorebase](https://github.com/Zion-Holdings/zion/actions/workflows/ephemeral-branch-autorebase.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ephemeral-branch-autorebase.yml/badge.svg)
+- [Exponential Agent Factory Proliferation](https://github.com/Zion-Holdings/zion/actions/workflows/exponential-agent-factory-proliferation.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/exponential-agent-factory-proliferation.yml/badge.svg)
+- [Exponential Ai Delegation](https://github.com/Zion-Holdings/zion/actions/workflows/exponential-ai-delegation.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/exponential-ai-delegation.yml/badge.svg)
+- [External Links](https://github.com/Zion-Holdings/zion/actions/workflows/external-links.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/external-links.yml/badge.svg)
+- [Fast Auto Push To Main](https://github.com/Zion-Holdings/zion/actions/workflows/fast-auto-push-to-main.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/fast-auto-push-to-main.yml/badge.svg)
+- [Fast Lint Sync](https://github.com/Zion-Holdings/zion/actions/workflows/fast-lint-sync.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/fast-lint-sync.yml/badge.svg)
+- [Front Scheduler](https://github.com/Zion-Holdings/zion/actions/workflows/front-scheduler.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/front-scheduler.yml/badge.svg)
+- [Frontend Sync Continuous](https://github.com/Zion-Holdings/zion/actions/workflows/frontend-sync-continuous.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/frontend-sync-continuous.yml/badge.svg)
+- [Git Health](https://github.com/Zion-Holdings/zion/actions/workflows/git-health.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/git-health.yml/badge.svg)
+- [Git Ultrafast Sync](https://github.com/Zion-Holdings/zion/actions/workflows/git-ultrafast-sync.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/git-ultrafast-sync.yml/badge.svg)
+- [Gitleaks](https://github.com/Zion-Holdings/zion/actions/workflows/gitleaks.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/gitleaks.yml/badge.svg)
+- [Guardian Scheduler](https://github.com/Zion-Holdings/zion/actions/workflows/guardian-scheduler.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/guardian-scheduler.yml/badge.svg)
+- [Homepage Auto Advertiser](https://github.com/Zion-Holdings/zion/actions/workflows/homepage-auto-advertiser.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/homepage-auto-advertiser.yml/badge.svg)
+- [Homepage Auto Update](https://github.com/Zion-Holdings/zion/actions/workflows/homepage-auto-update.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/homepage-auto-update.yml/badge.svg)
+- [Infinite Improvement Loop](https://github.com/Zion-Holdings/zion/actions/workflows/infinite-improvement-loop.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/infinite-improvement-loop.yml/badge.svg)
+- [Instagram Marketing](https://github.com/Zion-Holdings/zion/actions/workflows/instagram-marketing.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/instagram-marketing.yml/badge.svg)
+- [Instagram Six Hourly](https://github.com/Zion-Holdings/zion/actions/workflows/instagram-six-hourly.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/instagram-six-hourly.yml/badge.svg)
+- [Intelligent Content Generation](https://github.com/Zion-Holdings/zion/actions/workflows/intelligent-content-generation.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/intelligent-content-generation.yml/badge.svg)
+- [Knowledge Graph Radar](https://github.com/Zion-Holdings/zion/actions/workflows/knowledge-graph-radar.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/knowledge-graph-radar.yml/badge.svg)
+- [Labeler](https://github.com/Zion-Holdings/zion/actions/workflows/labeler.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/labeler.yml/badge.svg)
+- [Lighthouse Budgets](https://github.com/Zion-Holdings/zion/actions/workflows/lighthouse-budgets.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/lighthouse-budgets.yml/badge.svg)
+- [Lighthouse Live](https://github.com/Zion-Holdings/zion/actions/workflows/lighthouse-live.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/lighthouse-live.yml/badge.svg)
+- [Link Auto Fix](https://github.com/Zion-Holdings/zion/actions/workflows/link-auto-fix.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/link-auto-fix.yml/badge.svg)
+- [Link Scan Hourly](https://github.com/Zion-Holdings/zion/actions/workflows/link-scan-hourly.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/link-scan-hourly.yml/badge.svg)
+- [Linkedin Marketing](https://github.com/Zion-Holdings/zion/actions/workflows/linkedin-marketing.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/linkedin-marketing.yml/badge.svg)
+- [Linkedin Pro](https://github.com/Zion-Holdings/zion/actions/workflows/linkedin-pro.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/linkedin-pro.yml/badge.svg)
+- [Maintenance](https://github.com/Zion-Holdings/zion/actions/workflows/maintenance.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/maintenance.yml/badge.svg)
+- [Marketing Daily](https://github.com/Zion-Holdings/zion/actions/workflows/marketing-daily.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/marketing-daily.yml/badge.svg)
+- [Marketing Sync](https://github.com/Zion-Holdings/zion/actions/workflows/marketing-sync.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/marketing-sync.yml/badge.svg)
+- [Media Optimizer](https://github.com/Zion-Holdings/zion/actions/workflows/media-optimizer.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/media-optimizer.yml/badge.svg)
+- [Merge Conflict Guard](https://github.com/Zion-Holdings/zion/actions/workflows/merge-conflict-guard.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/merge-conflict-guard.yml/badge.svg)
+- [Monetization Continuous](https://github.com/Zion-Holdings/zion/actions/workflows/monetization-continuous.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/monetization-continuous.yml/badge.svg)
+- [Monetization Daily](https://github.com/Zion-Holdings/zion/actions/workflows/monetization-daily.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/monetization-daily.yml/badge.svg)
+- [Monetization](https://github.com/Zion-Holdings/zion/actions/workflows/monetization.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/monetization.yml/badge.svg)
+- [Netlify Auto Healer](https://github.com/Zion-Holdings/zion/actions/workflows/netlify-auto-healer.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/netlify-auto-healer.yml/badge.svg)
+- [Netlify Automation](https://github.com/Zion-Holdings/zion/actions/workflows/netlify-automation.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/netlify-automation.yml/badge.svg)
+- [Netlify Config](https://github.com/Zion-Holdings/zion/actions/workflows/netlify-config.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/netlify-config.yml/badge.svg)
+- [Netlify Functions Trigger](https://github.com/Zion-Holdings/zion/actions/workflows/netlify-functions-trigger.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/netlify-functions-trigger.yml/badge.svg)
+- [Netlify Monitor](https://github.com/Zion-Holdings/zion/actions/workflows/netlify-monitor.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/netlify-monitor.yml/badge.svg)
+- [Og Image Refresh](https://github.com/Zion-Holdings/zion/actions/workflows/og-image-refresh.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/og-image-refresh.yml/badge.svg)
+- [Og Image Update](https://github.com/Zion-Holdings/zion/actions/workflows/og-image-update.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/og-image-update.yml/badge.svg)
+- [Optimize Images](https://github.com/Zion-Holdings/zion/actions/workflows/optimize-images.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/optimize-images.yml/badge.svg)
+- [Pa11y](https://github.com/Zion-Holdings/zion/actions/workflows/pa11y.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/pa11y.yml/badge.svg)
+- [Performance Audit](https://github.com/Zion-Holdings/zion/actions/workflows/performance-audit.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/performance-audit.yml/badge.svg)
+- [Performance Monitoring](https://github.com/Zion-Holdings/zion/actions/workflows/performance-monitoring.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/performance-monitoring.yml/badge.svg)
+- [Performance Weekly](https://github.com/Zion-Holdings/zion/actions/workflows/performance-weekly.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/performance-weekly.yml/badge.svg)
+- [Pin Actions Weekly](https://github.com/Zion-Holdings/zion/actions/workflows/pin-actions-weekly.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/pin-actions-weekly.yml/badge.svg)
+- [Playwright Smoke](https://github.com/Zion-Holdings/zion/actions/workflows/playwright-smoke.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/playwright-smoke.yml/badge.svg)
+- [Pr Auto Curator](https://github.com/Zion-Holdings/zion/actions/workflows/pr-auto-curator.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/pr-auto-curator.yml/badge.svg)
+- [Pr Quality Gate](https://github.com/Zion-Holdings/zion/actions/workflows/pr-quality-gate.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/pr-quality-gate.yml/badge.svg)
+- [Pr Size Labeler](https://github.com/Zion-Holdings/zion/actions/workflows/pr-size-labeler.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/pr-size-labeler.yml/badge.svg)
+- [Pr Smoke](https://github.com/Zion-Holdings/zion/actions/workflows/pr-smoke.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/pr-smoke.yml/badge.svg)
+- [Pr Update With Main](https://github.com/Zion-Holdings/zion/actions/workflows/pr-update-with-main.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/pr-update-with-main.yml/badge.svg)
+- [Rapid Git Sync](https://github.com/Zion-Holdings/zion/actions/workflows/rapid-git-sync.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/rapid-git-sync.yml/badge.svg)
+- [Rapid Sync](https://github.com/Zion-Holdings/zion/actions/workflows/rapid-sync.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/rapid-sync.yml/badge.svg)
+- [Readme Auto Advertiser](https://github.com/Zion-Holdings/zion/actions/workflows/readme-auto-advertiser.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/readme-auto-advertiser.yml/badge.svg)
+- [Readme Autogen](https://github.com/Zion-Holdings/zion/actions/workflows/readme-autogen.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/readme-autogen.yml/badge.svg)
+- [Release Deploy](https://github.com/Zion-Holdings/zion/actions/workflows/release-deploy.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/release-deploy.yml/badge.svg)
+- [Release Drafter](https://github.com/Zion-Holdings/zion/actions/workflows/release-drafter.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/release-drafter.yml/badge.svg)
+- [Release](https://github.com/Zion-Holdings/zion/actions/workflows/release.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/release.yml/badge.svg)
+- [Repo Knowledge Graph](https://github.com/Zion-Holdings/zion/actions/workflows/repo-knowledge-graph.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/repo-knowledge-graph.yml/badge.svg)
+- [Repo Radar](https://github.com/Zion-Holdings/zion/actions/workflows/repo-radar.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/repo-radar.yml/badge.svg)
+- [Responsive Content](https://github.com/Zion-Holdings/zion/actions/workflows/responsive-content.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/responsive-content.yml/badge.svg)
+- [Revenue Ideas Daily](https://github.com/Zion-Holdings/zion/actions/workflows/revenue-ideas-daily.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/revenue-ideas-daily.yml/badge.svg)
+- [Search Index Autogen](https://github.com/Zion-Holdings/zion/actions/workflows/search-index-autogen.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/search-index-autogen.yml/badge.svg)
+- [Security Audit](https://github.com/Zion-Holdings/zion/actions/workflows/security-audit.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/security-audit.yml/badge.svg)
+- [Security Auto Heal](https://github.com/Zion-Holdings/zion/actions/workflows/security-auto-heal.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/security-auto-heal.yml/badge.svg)
+- [Security Gates](https://github.com/Zion-Holdings/zion/actions/workflows/security-gates.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/security-gates.yml/badge.svg)
+- [Security Scan](https://github.com/Zion-Holdings/zion/actions/workflows/security-scan.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/security-scan.yml/badge.svg)
+- [Security Weekly](https://github.com/Zion-Holdings/zion/actions/workflows/security-weekly.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/security-weekly.yml/badge.svg)
+- [Security](https://github.com/Zion-Holdings/zion/actions/workflows/security.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/security.yml/badge.svg)
+- [Self Healing Build](https://github.com/Zion-Holdings/zion/actions/workflows/self-healing-build.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/self-healing-build.yml/badge.svg)
+- [Self Replicating Factory Manager](https://github.com/Zion-Holdings/zion/actions/workflows/self-replicating-factory-manager.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/self-replicating-factory-manager.yml/badge.svg)
+- [Seo Audit](https://github.com/Zion-Holdings/zion/actions/workflows/seo-audit.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/seo-audit.yml/badge.svg)
+- [Seo Validator](https://github.com/Zion-Holdings/zion/actions/workflows/seo-validator.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/seo-validator.yml/badge.svg)
+- [Site Health Guardian](https://github.com/Zion-Holdings/zion/actions/workflows/site-health-guardian.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/site-health-guardian.yml/badge.svg)
+- [Site Link](https://github.com/Zion-Holdings/zion/actions/workflows/site-link.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/site-link.yml/badge.svg)
+- [Sitemap And Search](https://github.com/Zion-Holdings/zion/actions/workflows/sitemap-and-search.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/sitemap-and-search.yml/badge.svg)
+- [Sitemap Auto Commit](https://github.com/Zion-Holdings/zion/actions/workflows/sitemap-auto-commit.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/sitemap-auto-commit.yml/badge.svg)
+- [Sitemap Daily](https://github.com/Zion-Holdings/zion/actions/workflows/sitemap-daily.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/sitemap-daily.yml/badge.svg)
+- [Stale](https://github.com/Zion-Holdings/zion/actions/workflows/stale.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/stale.yml/badge.svg)
+- [Sync Health](https://github.com/Zion-Holdings/zion/actions/workflows/sync-health.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/sync-health.yml/badge.svg)
+- [Test Auth](https://github.com/Zion-Holdings/zion/actions/workflows/test-auth.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/test-auth.yml/badge.svg)
+- [Test Suite](https://github.com/Zion-Holdings/zion/actions/workflows/test-suite.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/test-suite.yml/badge.svg)
+- [Test](https://github.com/Zion-Holdings/zion/actions/workflows/test.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/test.yml/badge.svg)
+- [Todo Issue Sync](https://github.com/Zion-Holdings/zion/actions/workflows/todo-issue-sync.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/todo-issue-sync.yml/badge.svg)
+- [Topics And Clusters](https://github.com/Zion-Holdings/zion/actions/workflows/topics-and-clusters.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/topics-and-clusters.yml/badge.svg)
+- [Ui Evolution Schedule](https://github.com/Zion-Holdings/zion/actions/workflows/ui-evolution-schedule.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ui-evolution-schedule.yml/badge.svg)
+- [Ui Evolution Weekly Beautify](https://github.com/Zion-Holdings/zion/actions/workflows/ui-evolution-weekly-beautify.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ui-evolution-weekly-beautify.yml/badge.svg)
+- [Ultra Rapid Sync](https://github.com/Zion-Holdings/zion/actions/workflows/ultra-rapid-sync.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/ultra-rapid-sync.yml/badge.svg)
+- [Unused Deps Cleaner](https://github.com/Zion-Holdings/zion/actions/workflows/unused-deps-cleaner.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/unused-deps-cleaner.yml/badge.svg)
+- [Unused Exports Report](https://github.com/Zion-Holdings/zion/actions/workflows/unused-exports-report.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/unused-exports-report.yml/badge.svg)
+- [Variation](https://github.com/Zion-Holdings/zion/actions/workflows/variation.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/variation.yml/badge.svg)
+- [Venture](https://github.com/Zion-Holdings/zion/actions/workflows/venture.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/venture.yml/badge.svg)
+- [Workflow Auto Healer](https://github.com/Zion-Holdings/zion/actions/workflows/workflow-auto-healer.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/workflow-auto-healer.yml/badge.svg)
+- [Workflow Health Monitor](https://github.com/Zion-Holdings/zion/actions/workflows/workflow-health-monitor.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/workflow-health-monitor.yml/badge.svg)
+- [Workflow Manager](https://github.com/Zion-Holdings/zion/actions/workflows/workflow-manager.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/workflow-manager.yml/badge.svg)
+- [Workflow Radar](https://github.com/Zion-Holdings/zion/actions/workflows/workflow-radar.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/workflow-radar.yml/badge.svg)
+- [Workflow Supervisor](https://github.com/Zion-Holdings/zion/actions/workflows/workflow-supervisor.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/workflow-supervisor.yml/badge.svg)
+- [Workflow Validator](https://github.com/Zion-Holdings/zion/actions/workflows/workflow-validator.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/workflow-validator.yml/badge.svg)
+- [Workflow Watchdog](https://github.com/Zion-Holdings/zion/actions/workflows/workflow-watchdog.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/workflow-watchdog.yml/badge.svg)
+- [Yaml Auto Fixer Simple](https://github.com/Zion-Holdings/zion/actions/workflows/yaml-auto-fixer-simple.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/yaml-auto-fixer-simple.yml/badge.svg)
+- [Yaml Auto Fixer](https://github.com/Zion-Holdings/zion/actions/workflows/yaml-auto-fixer.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/yaml-auto-fixer.yml/badge.svg)
+- [Yaml Validator](https://github.com/Zion-Holdings/zion/actions/workflows/yaml-validator.yml) ![status](https://github.com/Zion-Holdings/zion/actions/workflows/yaml-validator.yml/badge.svg)
 
-5.  **Install backend dependencies:**
-    - **Django backend**: Refer to `backend/README.md` or run `pip install -r backend/requirements.txt`
-    - **Monitoring service**: `cd monitoring && npm install`
+### Local Development
+1. Install Node 20+ and npm 10+.
+2. Install deps: `npm ci`.
+3. Run dev: `npm run dev`.
 
-6.  **Database Setup:**
-    - Run Prisma migrations: `npx prisma migrate dev`
-    - Seed data: `npx prisma db seed`
-    - Set up Django database (see backend documentation)
+### Maintenance Commands
+- `npm run git:sync` – Advanced git sync
+- `npm run automation:cloud` – Run cloud orchestrator locally
+- `npm run sitemap` – Regenerate sitemap
+- `npm run readme:generate` – Refresh this README
 
 7.  **Running the application:**
     - **Next.js frontend**: `npm run dev` _(automatically validates your development environment)_

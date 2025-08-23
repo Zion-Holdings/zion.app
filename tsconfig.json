@@ -26,6 +26,7 @@
     "moduleResolution": "bundler",
     "esModuleInterop": true,
     "module": "esnext",
+    "esModuleInterop": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -41,7 +42,7 @@
     "typeRoots": ["./node_modules/@types", "./types"],
     "types": ["node"],
     "jsx": "preserve",
-    "incremental": true
+    "target": "ES2017"
   },
   "include": [
     "next-env.d.ts",
@@ -49,6 +50,7 @@
     "**/*.tsx"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "zion.app/recovered-content/**"
   ]
 }

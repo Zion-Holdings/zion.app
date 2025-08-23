@@ -57,13 +57,3 @@ declare module '@/components/ProductListingCard' {
     detailBasePath?: string;
   }
 }
-
-// Define global type for the PWA install prompt event
-interface BeforeInstallPromptEvent extends Event {
-  readonly platforms: string[];
-  readonly userChoice: Promise<{
-    outcome: 'accepted' | 'dismissed';
-    platform: string;
-  }>;
-  prompt(): Promise<void>;
-}

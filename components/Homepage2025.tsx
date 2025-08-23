@@ -442,57 +442,11 @@ const Homepage2025: React.FC = () => {
                       />
                     ))}
                   </div>
-                  <blockquote className="text-xl md:text-2xl text-white italic mb-6">
-                    "{testimonials[currentTestimonial].content}"
-                  </blockquote>
-                  <div className="flex items-center justify-center space-x-4">
-                    <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center text-white text-xl font-bold">
-                      {testimonials[currentTestimonial].name.charAt(0)}
-                    </div>
-                    <div>
-                      <div className="text-white font-semibold">
-                        {testimonials[currentTestimonial].name}
-                      </div>
-                      <div className="text-gray-400">
-                        {testimonials[currentTestimonial].role}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Navigation Controls */}
-                <div className="flex justify-center space-x-4">
-                  <button
-                    onClick={prevTestimonial}
-                    className="p-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition-colors"
-                    aria-label="Previous testimonial"
-                  >
-                    <ChevronLeft className="w-5 h-5 text-white" />
-                  </button>
-                  <div className="flex space-x-2">
-                    {testimonials.map((_, index) => (
-                      <button
-                        key={index}
-                        onClick={() => setCurrentTestimonial(index)}
-                        className={`w-3 h-3 rounded-full transition-colors ${
-                          index === currentTestimonial
-                            ? 'bg-cyan-500'
-                            : 'bg-gray-600 hover:bg-gray-500'
-                        }`}
-                        aria-label={`Go to testimonial ${index + 1}`}
-                      />
-                    ))}
-                  </div>
-                  <button
-                    onClick={nextTestimonial}
-                    className="p-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition-colors"
-                    aria-label="Next testimonial"
-                  >
-                    <ChevronRight className="w-5 h-5 text-white" />
-                  </button>
-                </div>
-              </div>
-            </motion.div>
+                  <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
+                  <p className="text-gray-300 leading-relaxed">{feature.description}</p>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 

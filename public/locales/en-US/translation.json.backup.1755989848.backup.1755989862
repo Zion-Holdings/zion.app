@@ -184,7 +184,10 @@
     "saved": "Saved",
     "changes_saved": "Translation changes have been saved"
   },
+<<<<<<< HEAD:src/i18n/locales/en/translation.json
+=======
 <<<<<<< HEAD
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96:public/locales/en-US/translation.json.backup.1755989848.backup.1755989862
   "features": {
     "ai_talent_matching": "AI Talent Matching",
     "ai_talent_matching_desc": "Our AI-powered matching algorithm connects you with the perfect talent or job based on skills, experience, and preferences.",
@@ -469,10 +472,13 @@
   },
   "login": "Login",
   "signup": "Sign Up"
+<<<<<<< HEAD:src/i18n/locales/en/translation.json
+=======
 =======
   "error_boundary": {
     "message": "Something went wrong.",
     "retry": "Retry"
   }
 >>>>>>> origin/3ycx6d-codex/implement-global-error-boundary-with-toasts
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96:public/locales/en-US/translation.json.backup.1755989848.backup.1755989862
 }

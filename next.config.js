@@ -15,3 +15,5 @@ const nextConfig = {
 module.exports = {
   i18n,
 };
+
+module.exports = nextConfig;

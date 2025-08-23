@@ -116,9 +116,42 @@ const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({
     setIsOptimizing(false);
   };
 
-  if (!showMetrics) {
-    return null;
-  }
+    // Run optimizations in sequence
+    await new Promise(resolve => setTimeout(resolve, 500));
+    optimizeImages();
+    
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    optimizeFonts();
+    
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    optimizeCSS();
+    
+    await new Promise(resolve => setTimeout(resolve, 500));
+    setOptimizationStatus('Optimization complete!');
+    
+    setTimeout(() => {
+      setIsOptimizing(false);
+      setOptimizationStatus('');
+    }, 2000);
+  }, [optimizeImages, optimizeFonts, optimizeCSS]);
+
+  // Get performance grade
+  const getPerformanceGrade = useCallback(() => {
+    let score = 100;
+    
+    if (metrics.fcp && metrics.fcp > 1800) score -= 20;
+    if (metrics.lcp && metrics.lcp > 2500) score -= 20;
+    if (metrics.fid && metrics.fid > 100) score -= 20;
+    if (metrics.cls && metrics.cls > 0.1) score -= 20;
+    if (metrics.ttfb && metrics.ttfb > 600) score -= 20;
+
+    if (score >= 90) return { grade: 'A', color: 'text-green-400' };
+    if (score >= 80) return { grade: 'B', color: 'text-yellow-400' };
+    if (score >= 70) return { grade: 'C', color: 'text-orange-400' };
+    return { grade: 'D', color: 'text-red-400' };
+  }, [metrics]);
+
+  const performanceGrade = getPerformanceGrade();
 
   return (
     <div className="fixed bottom-4 right-4 z-50">

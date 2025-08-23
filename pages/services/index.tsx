@@ -66,10 +66,30 @@ import { advancedAIServicesExpansion2025 } from '../../data/2025-advanced-ai-ser
 export default function ServicesPage() {
   const { navigation, isLoading, error } = useNavigation();
 
-// Import our new 2025 innovative services V3
-import { innovativeMicroSaasExpansionV32025 } from '../../data/2025-innovative-micro-saas-expansion-v3';
-import { innovativeITServicesExpansion2025V3 } from '../../data/2025-innovative-it-services-expansion-v3';
-import { innovativeAIServicesExpansion2025V3 } from '../../data/2025-innovative-ai-services-expansion-v3';
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900">
+        <div className="flex">
+          <SmartSidebar pageType="services" className="w-64" />
+          <div className="flex-1 p-8">
+            <div className="animate-pulse space-y-4">
+              <div className="h-8 bg-white/20 rounded w-1/3"></div>
+              <div className="h-4 bg-white/20 rounded w-1/2"></div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[...Array(9)].map((_, i) => (
+                  <div key={i} className="bg-white/10 rounded-2xl p-6 space-y-4">
+                    <div className="h-6 bg-white/20 rounded w-3/4"></div>
+                    <div className="h-4 bg-white/20 rounded w-full"></div>
+                    <div className="h-4 bg-white/20 rounded w-2/3"></div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   if (error) {
     return (
