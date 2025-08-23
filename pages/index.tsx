@@ -3,13 +3,16 @@ import Homepage2025 from '../components/Homepage2025';
 import SEOOptimizer from '../components/SEOOptimizer';
 import AnalyticsTracker from '../components/AnalyticsTracker';
 import ErrorBoundary from '../components/ErrorBoundary';
+import PerformanceOptimizer from '../components/PerformanceOptimizer';
 
 const HomePage: React.FC = () => {
   return (
     <ErrorBoundary>
       <SEOOptimizer />
       <AnalyticsTracker />
-      <Homepage2025 />
+      <PerformanceOptimizer>
+        <Homepage2025 />
+      </PerformanceOptimizer>
     </ErrorBoundary>
   );
 };
