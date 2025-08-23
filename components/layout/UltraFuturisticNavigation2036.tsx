@@ -61,6 +61,14 @@ const navigationItems: NavigationItem[] = [
         featured: true
       },
       { 
+        name: 'Ultimate 2036 Showcase', 
+        href: '/ultimate-2036-futuristic-services-showcase', 
+        description: 'Latest futuristic services',
+        icon: <Sparkles className="w-4 h-4" />,
+        featured: true,
+        badge: 'NEW'
+      },
+      { 
         name: 'AI & Machine Learning', 
         href: '/ai-services', 
         description: 'Advanced AI solutions',
@@ -71,6 +79,12 @@ const navigationItems: NavigationItem[] = [
         href: '/quantum-services', 
         description: 'Quantum computing solutions',
         icon: <AtomIcon className="w-4 h-4" />
+      },
+      { 
+        name: 'Emerging Technology', 
+        href: '/emerging-technology', 
+        description: 'Cutting-edge innovations',
+        icon: <Sparkles className="w-4 h-4" />
       },
       { 
         name: 'Space Technology', 

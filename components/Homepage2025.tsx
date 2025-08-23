@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from './layout/Layout';
 import UltraFuturisticServiceCard2026 from './ui/UltraFuturisticServiceCard2026';
+import { Sparkles, Grid } from 'lucide-react';
 
 const Homepage2025: React.FC = () => {
   return (
@@ -33,7 +34,9 @@ const Homepage2025: React.FC = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
               Our Services
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            {/* Featured Services Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
               <UltraFuturisticServiceCard2026
                 service={{
                   id: 'ai-ml',
@@ -79,6 +82,35 @@ const Homepage2025: React.FC = () => {
                 }}
                 variant="automation"
               />
+            </div>
+
+            {/* New Services CTA */}
+            <div className="text-center">
+              <div className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm rounded-2xl p-8 border border-purple-500/30">
+                <h3 className="text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  🚀 Discover Our Latest 2036 Services
+                </h3>
+                <p className="text-lg text-gray-300 mb-6 max-w-2xl mx-auto">
+                  Explore our cutting-edge collection of futuristic micro SAAS services, including quantum AI orchestration, 
+                  brain-computer interfaces, synthetic biology automation, and advanced robotics platforms.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a
+                    href="/ultimate-2036-futuristic-services-showcase"
+                    className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105"
+                  >
+                    <Sparkles className="w-5 h-5 mr-2" />
+                    View All 2036 Services
+                  </a>
+                  <a
+                    href="/services"
+                    className="inline-flex items-center px-8 py-4 border-2 border-purple-400 text-purple-400 font-semibold rounded-xl hover:bg-purple-400 hover:text-black transition-all duration-300 transform hover:scale-105"
+                  >
+                    <Grid className="w-5 h-5 mr-2" />
+                    Browse All Services
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </section>
