@@ -192,6 +192,10 @@
   schedule = "*/2 * * * *" # every 2 minutes
 
 [[scheduled.functions]]
+<<<<<<< HEAD
+  name = "autonomous-cloud-inventions"
+  schedule = "*/2 * * * *" # every 2 minutes
+=======
   name = "metadata-optimizer-runner"
   schedule = "*/15 * * * *" # every 15 minutes
 
@@ -310,3 +314,4 @@
 [[scheduled.functions]]
   name = "cron-heartbeat"
   schedule = "*/1 * * * *"
+>>>>>>> origin/cursor/automate-cloud-cron-jobs-and-sync-repository-16dc
