@@ -1,11 +1,12 @@
 import React from 'react';
 import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
-import AccessibilityEnhancer from '../AccessibilityEnhancer';
-import PerformanceOptimizer from '../PerformanceOptimizer';
-import SEOOptimizer from '../SEOOptimizer';
-import ErrorBoundary from '../ErrorBoundary';
+import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
+import TopContactBar from './TopContactBar';
+import PerformanceMonitor from '../EnhancedPerformanceMonitor';
+import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
+import CookieConsentBanner from '../CookieConsentBanner';
+
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -58,18 +59,21 @@ export const Layout: React.FC<LayoutProps> = ({
 
         <UltraFuturisticNavigation2040 />
         
-        <div className="flex">
-          <EnhancedSidebar2025 isOpen={false} onClose={() => {}} />
-          
-          <main id="main-content" className="flex-1">
-            <SEOOptimizer
-              title={title}
-              description={description}
-              keywords={keywords}
-              ogImage={ogImage}
-            />
-            {children}
-          </motion.main>
+        {/* Top Contact Bar */}
+        <TopContactBar />
+        
+        {/* Navigation */}
+        <UltraFuturisticNavigation2045 />
+        
+        {/* Sidebar */}
+        <EnhancedSidebar2025 
+          isOpen={sidebarOpen} 
+          onClose={() => setSidebarOpen(false)} 
+        />
+        
+        {/* Main Content */}
+        <div className="relative z-10">
+          {children}
         </div>
         
         <UltraFuturisticFooter2040 />

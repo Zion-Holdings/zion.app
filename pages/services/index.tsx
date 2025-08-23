@@ -67,26 +67,15 @@ import { advanced2025AIServicesExpansion } from '../../data/2025-advanced-ai-ser
 import { innovative2025AdvancedServicesExpansion } from '../../data/innovative-2025-advanced-services-expansion';
 import { innovative2025EnterpriseSolutions } from '../../data/innovative-2025-enterprise-solutions';
 
-// Define a proper interface for services
-interface ServiceItem {
-  id?: string;
-  name: string;
-  tagline?: string;
-  description: string;
-  price?: string;
-  period?: string;
-  features?: string[];
-  icon?: string;
-  pricing?: {
-    starter?: { price: string; period?: string };
-    monthly?: string;
-    [key: string]: { price: string; period?: string } | string;
-  };
-  category: string;
-  popular?: boolean;
-  launchDate?: string;
-  [key: string]: unknown;
-}
+// Import our new 2025 innovative services
+import { innovativeMicroSaasExpansion2025 } from '../../data/2025-innovative-micro-saas-expansion';
+import { innovative2025ITSolutionsExpansion } from '../../data/2025-innovative-it-solutions-expansion';
+import { innovative2025AISolutionsExpansion } from '../../data/2025-innovative-ai-solutions-expansion';
+
+// Import our new 2025 advanced services V2
+import { innovativeMicroSaasServices2025V2 } from '../../data/2025-innovative-micro-saas-expansion-v2';
+import { innovativeITInfrastructureServices2025V2 } from '../../data/2025-innovative-it-infrastructure-services-v2';
+import { innovativeAIServices2025V2 } from '../../data/2025-innovative-ai-services-v2';
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -208,33 +197,41 @@ export default function ServicesIndexPage() {
       real2029Q1Additions as unknown[],
       real2029Q2Additions as unknown[],
       real2029Q3Additions as unknown[],
-      real2029Q4Additions as unknown[]
-    );
-  const byCategory: Record<string, unknown[]> = {};
-  for (const c of categories) byCategory[c] = [];
-  // Normalize various category labels into our main buckets
-  const categoryAliases: Record<string, string> = {
-    'AI & Data': 'AI & Data',
-    'AI & Machine Learning': 'AI & Data',
-    'GenAI': 'AI & Data',
-    'Cloud & FinOps': 'Cloud & FinOps',
-    'Cloud & Data': 'Cloud & FinOps',
-    'Platform Engineering': 'Cloud & FinOps',
-    'Observability': 'Observability',
-    'Observability & Telemetry': 'Observability',
-    'Quality & Monitoring': 'Quality & Monitoring',
-    'Security & Reliability': 'Quality & Monitoring',
-    'Security & Compliance': 'Quality & Monitoring',
-    'Developer Tools': 'Developer Tools',
-    'Growth & Marketing': 'Developer Tools'
-  };
-  for (const s of all) {
-    const service = s as { category?: string | string[] };
-    const rawCatValue = service.category;
-    const rawCat = Array.isArray(rawCatValue) ? (rawCatValue[0] || '') : (rawCatValue || '');
-    const mapped = categoryAliases[rawCat] || (categories.includes(rawCat) ? rawCat : 'Developer Tools');
-    byCategory[mapped].push(s);
-  }
+      real2030Q1Additions as unknown[],
+      real2031MicroSaasAdditions as unknown[],
+      real2031ITServicesAdditions as unknown[],
+      real2031AIServicesAdditions as unknown[],
+      real2030Q2Additions as unknown[],
+      real2027Q3Additions as unknown[],
+      professionalServices as unknown[],
+      real2032ServiceExpansions as unknown[],
+      real2035Q1Additions as unknown[],
+      real2035Q2AdditionsExtra as unknown[],
+      real2025ExtraServices as unknown[],
+      real2026Q4ExpansionsV2 as unknown[],
+      real2026Q4ExpansionsV3 as unknown[],
+      real2036ServiceExpansions as unknown[],
+      real2036MicroSaasAdditions as unknown[],
+      real2036ITServicesAdditions as unknown[],
+      real2036AIServicesAdditions as unknown[]
+    )
+    .concat(innovative2025MicroSaasBatch as unknown[])
+    .concat(innovative2025ITEnterpriseBatch as unknown[])
+    .concat(innovativeMicroSaasServices as unknown[])
+    .concat(innovativeITServices as unknown[])
+    .concat(innovativeAIServices as unknown[])
+    // Our new 2025 advanced services
+    .concat(advanced2025MicroSaasExpansion as unknown[])
+    .concat(advanced2025ITSolutionsExpansion as unknown[])
+    .concat(advanced2025AIServicesExpansion as unknown[])
+    // Our new 2025 innovative services
+    .concat(innovativeMicroSaasExpansion2025 as unknown[])
+    .concat(innovative2025ITSolutionsExpansion as unknown[])
+    .concat(innovative2025AISolutionsExpansion as unknown[])
+    // Our new 2025 advanced services V2
+    .concat(innovativeMicroSaasServices2025V2 as unknown[])
+    .concat(innovativeITInfrastructureServices2025V2 as unknown[])
+    .concat(innovativeAIServices2025V2 as unknown[]);
 
   const anchorMap: Record<string, string> = {
     'AI & Data': 'ai',
