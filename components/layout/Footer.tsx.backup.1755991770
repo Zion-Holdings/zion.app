@@ -100,6 +100,92 @@ const Footer = () => {
                   <p className="text-sm text-gray-400">Revolutionary Technology Solutions</p>
                 </div>
               </div>
+<<<<<<< HEAD
+              
+              <p className="text-gray-300 mb-6 leading-relaxed max-w-md">
+                Transforming business technology with cutting-edge micro SaaS solutions. From Quantum AI to Autonomous Factories, 
+                we deliver real results with proven ROI.
+              </p>
+
+              {/* Contact Info */}
+              <div className="space-y-3 mb-6">
+                <div className="flex items-center space-x-3 text-gray-300">
+                  <Phone className="w-4 h-4 text-cyan-400" />
+                  <span>+1 302 464 0950</span>
+                </div>
+                <div className="flex items-center space-x-3 text-gray-300">
+                  <Mail className="w-4 h-4 text-cyan-400" />
+                  <span>kleber@ziontechgroup.com</span>
+                </div>
+                <div className="flex items-start space-x-3 text-gray-300">
+                  <MapPin className="w-4 h-4 text-cyan-400 mt-1" />
+                  <span>364 E Main St STE 1008<br />Middletown DE 19709</span>
+                </div>
+                <div className="flex items-center space-x-3 text-gray-300">
+                  <Globe className="w-4 h-4 text-cyan-400" />
+                  <span>https://ziontechgroup.com</span>
+                </div>
+              </div>
+
+              {/* Social Links */}
+              <div className="flex space-x-4">
+                {socialLinks.map((social) => (
+                  <motion.a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 bg-gray-800/50 border border-gray-700/50 rounded-lg flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:border-cyan-500/50 hover:bg-gray-700/50 transition-all duration-300 group"
+                    whileHover={{ y: -2, scale: 1.05 }}
+                  >
+                    {social.icon}
+                  </motion.a>
+                ))}
+              </div>
+            </div>
+
+            {/* Footer Links */}
+            {footerSections.map((section, index) => (
+              <div key={section.title}>
+                <h4 className="text-lg font-semibold text-white mb-4">{section.title}</h4>
+                <ul className="space-y-3">
+                  {section.links.map((link) => (
+                    <li key={link.name}>
+                      <Link
+                        href={link.href}
+                        className="text-gray-400 hover:text-cyan-400 transition-colors duration-300 hover:translate-x-1 inline-block"
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          {/* Newsletter Section */}
+          <div className="border-t border-gray-700/50 pt-12 mb-12">
+            <div className="max-w-2xl mx-auto text-center">
+              <h3 className="text-2xl font-bold text-white mb-4">
+                Stay Updated with Revolutionary Technology
+              </h3>
+              <p className="text-gray-300 mb-6">
+                Get the latest insights on quantum computing, AI breakthroughs, and autonomous systems
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-1 px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300"
+                />
+                <Button variant="primary" size="sm" className="px-6">
+                  Subscribe
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </div>
+=======
               <span className="text-2xl font-bold gradient-text-blue group-hover:from-cursor-blue group-hover:to-cursor-accent transition-all duration-300">
                 Zion Tech
               </span>
@@ -142,6 +228,7 @@ const Footer = () => {
                   {social.icon}
                 </a>
               ))}
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-7297
             </div>
           </div>
 
