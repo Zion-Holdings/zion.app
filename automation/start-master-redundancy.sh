@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Master Redundancy System - Comprehensive Coverage for All Automations
-# This script provides complete redundancy for PM2, GitHub Actions, and Netlify Functions
+# Master Redundancy Automation Script
+# Comprehensive redundancy for all automation systems: PM2, GitHub Actions, and Netlify Functions
 
 set -e
 
@@ -54,9 +54,9 @@ check_running() {
     return 1
 }
 
-# Start PM2 Redundancy Systems
+# Start PM2 redundancy systems
 start_pm2_redundancy() {
-    log "INFO" "${CYAN}Starting PM2 Redundancy Systems...${NC}"
+    log "INFO" "🚀 Starting PM2 redundancy systems..."
     
     # Check if PM2 is installed
     if ! command -v pm2 &> /dev/null; then
@@ -70,8 +70,7 @@ start_pm2_redundancy() {
         "ecosystem.redundancy.cjs"
         "ecosystem.comprehensive-redundancy.cjs"
         "ecosystem.ultimate-redundancy.pm2.cjs"
-        "ecosystem-redundancy.pm2.cjs"
-        "ecosystem.comprehensive-redundancy.cjs"
+        "ecosystem-ultimate-redundancy.pm2.cjs"
     )
     
     for ecosystem in "${ecosystems[@]}"; do
@@ -93,61 +92,75 @@ start_pm2_redundancy() {
     # Save PM2 configuration
     pm2 save || log "WARN" "Failed to save PM2 configuration"
     
-    log "INFO" "${GREEN}PM2 Redundancy Systems started successfully${NC}"
+    log "INFO" "✅ PM2 redundancy systems started"
 }
 
-# Start GitHub Actions Redundancy
+# Start GitHub Actions redundancy systems
 start_github_actions_redundancy() {
-    log "INFO" "${CYAN}Starting GitHub Actions Redundancy...${NC}"
+    log "INFO" "🔧 Starting GitHub Actions redundancy systems..."
     
-    # Start GitHub Actions redundancy managers
-    local github_scripts=(
-        "automation/github-actions-redundancy.cjs"
-        "automation/enhanced-github-actions-redundancy.cjs"
-        "automation/comprehensive-github-actions-redundancy.cjs"
-        "automation/github-actions-redundancy-manager.cjs"
-        "automation/enhanced-github-actions-redundancy-manager.cjs"
-    )
-    
-    for script in "${github_scripts[@]}"; do
-        if [ -f "$WORKSPACE_DIR/$script" ]; then
-            log "INFO" "Starting GitHub Actions redundancy: $script"
-            cd "$WORKSPACE_DIR" && node "$script" start || log "WARN" "Failed to start $script"
-        fi
-    done
-    
-    # Start cron-based GitHub Actions monitoring
-    if [ -f "$WORKSPACE_DIR/automation/git-sync-cron.sh" ]; then
-        log "INFO" "Starting GitHub Actions cron monitoring..."
-        cd "$WORKSPACE_DIR" && bash automation/git-sync-cron.sh start || log "WARN" "Failed to start git-sync-cron"
+    # Check if we're in a git repository
+    if [ ! -d "$WORKSPACE_DIR/.git" ]; then
+        log "WARN" "Not in a git repository, skipping GitHub Actions redundancy"
+        return 0
     fi
     
-    log "INFO" "${GREEN}GitHub Actions Redundancy started successfully${NC}"
-}
-
-# Start Netlify Functions Redundancy
-start_netlify_functions_redundancy() {
-    log "INFO" "${CYAN}Starting Netlify Functions Redundancy...${NC}"
-    
-    # Start Netlify functions redundancy managers
-    local netlify_scripts=(
-        "automation/netlify-functions-redundancy.cjs"
-        "automation/enhanced-netlify-functions-redundancy.cjs"
-        "automation/comprehensive-netlify-functions-redundancy.cjs"
-        "automation/netlify-functions-redundancy-manager.cjs"
-        "automation/enhanced-netlify-functions-redundancy-manager.cjs"
+    # Start GitHub Actions redundancy managers
+    local github_managers=(
+        "github-actions-redundancy.cjs"
+        "github-actions-redundancy-manager.cjs"
+        "enhanced-github-actions-redundancy.cjs"
+        "comprehensive-github-actions-redundancy.cjs"
     )
     
-    for script in "${netlify_scripts[@]}"; do
-        if [ -f "$WORKSPACE_DIR/$script" ]; then
-            log "INFO" "Starting Netlify functions redundancy: $script"
-            cd "$WORKSPACE_DIR" && node "$script" start || log "WARN" "Failed to start $script"
+    for manager in "${github_managers[@]}"; do
+        if [ -f "$WORKSPACE_DIR/automation/$manager" ]; then
+            log "INFO" "Starting GitHub Actions manager: $manager"
+            cd "$WORKSPACE_DIR" && node "automation/$manager" start || log "WARN" "Failed to start $manager"
         fi
     done
     
-    # Generate Netlify functions manifest
+    # Trigger GitHub Actions workflows manually as backup
+    log "INFO" "Triggering GitHub Actions workflows as backup..."
+    cd "$WORKSPACE_DIR"
+    
+    # Trigger marketing-sync workflow
+    if [ -f ".github/workflows/marketing-sync.yml" ]; then
+        log "INFO" "Triggering marketing-sync workflow"
+        gh workflow run marketing-sync.yml || log "WARN" "Failed to trigger marketing-sync workflow"
+    fi
+    
+    # Trigger sync-health workflow
+    if [ -f ".github/workflows/sync-health.yml" ]; then
+        log "INFO" "Triggering sync-health workflow"
+        gh workflow run sync-health.yml || log "WARN" "Failed to trigger sync-health workflow"
+    fi
+    
+    log "INFO" "✅ GitHub Actions redundancy systems started"
+}
+
+# Start Netlify Functions redundancy systems
+start_netlify_functions_redundancy() {
+    log "INFO" "🌐 Starting Netlify Functions redundancy systems..."
+    
+    # Start Netlify Functions redundancy managers
+    local netlify_managers=(
+        "netlify-functions-redundancy.cjs"
+        "netlify-functions-redundancy-manager.cjs"
+        "enhanced-netlify-functions-redundancy.cjs"
+        "comprehensive-netlify-functions-redundancy.cjs"
+    )
+    
+    for manager in "${netlify_managers[@]}"; do
+        if [ -f "$WORKSPACE_DIR/automation/$manager" ]; then
+            log "INFO" "Starting Netlify Functions manager: $manager"
+            cd "$WORKSPACE_DIR" && node "automation/$manager" start || log "WARN" "Failed to start $manager"
+        fi
+    done
+    
+    # Generate Netlify Functions manifest
     if [ -f "$WORKSPACE_DIR/scripts/generate-netlify-functions-manifest.cjs" ]; then
-        log "INFO" "Generating Netlify functions manifest..."
+        log "INFO" "Generating Netlify Functions manifest..."
         cd "$WORKSPACE_DIR" && node scripts/generate-netlify-functions-manifest.cjs || log "WARN" "Failed to generate manifest"
     fi
     
@@ -157,272 +170,133 @@ start_netlify_functions_redundancy() {
         cd "$WORKSPACE_DIR" && node automation/enhanced-netlify-healer.cjs start || log "WARN" "Failed to start auto-healer"
     fi
     
-    log "INFO" "${GREEN}Netlify Functions Redundancy started successfully${NC}"
+    log "INFO" "✅ Netlify Functions redundancy systems started"
 }
 
-# Start Master Orchestrators
-start_master_orchestrators() {
-    log "INFO" "${CYAN}Starting Master Orchestrators...${NC}"
+# Start comprehensive redundancy orchestrators
+start_comprehensive_redundancy() {
+    log "INFO" "🎯 Starting comprehensive redundancy orchestrators..."
     
-    # Start master orchestrators
     local orchestrators=(
-        "automation/master-redundancy-orchestrator.cjs"
-        "automation/comprehensive-redundancy-orchestrator.cjs"
-        "automation/ultimate-redundancy-master.cjs"
-        "automation/master-automation-coordinator.js"
-        "automation/intelligent-orchestrator.cjs"
+        "comprehensive-redundancy-orchestrator.cjs"
+        "comprehensive-redundancy-orchestrator-v2.cjs"
+        "master-redundancy-orchestrator.cjs"
+        "ultimate-redundancy-master.cjs"
+        "redundancy-automation-system.cjs"
+        "redundancy-build-monitor.cjs"
+        "redundancy-health-monitor.cjs"
     )
     
     for orchestrator in "${orchestrators[@]}"; do
-        if [ -f "$WORKSPACE_DIR/$orchestrator" ]; then
-            log "INFO" "Starting master orchestrator: $orchestrator"
-            cd "$WORKSPACE_DIR" && node "$orchestrator" start || log "WARN" "Failed to start $orchestrator"
+        if [ -f "$WORKSPACE_DIR/automation/$orchestrator" ]; then
+            log "INFO" "Starting orchestrator: $orchestrator"
+            cd "$WORKSPACE_DIR" && node "automation/$orchestrator" start || log "WARN" "Failed to start $orchestrator"
         fi
     done
     
-    log "INFO" "${GREEN}Master Orchestrators started successfully${NC}"
+    log "INFO" "✅ Comprehensive redundancy orchestrators started"
 }
 
-# Start Continuous Monitoring
-start_continuous_monitoring() {
-    log "INFO" "${CYAN}Starting Continuous Monitoring...${NC}"
+# Start monitoring and health check systems
+start_monitoring_systems() {
+    log "INFO" "📊 Starting monitoring and health check systems..."
     
-    # Start monitoring systems
-    local monitors=(
-        "automation/redundancy-health-monitor.cjs"
-        "automation/continuous-build-monitor.cjs"
-        "automation/redundancy-build-monitor.cjs"
-        "automation/pm2-redundancy-monitor.cjs"
-        "automation/automation-guardian-10min.cjs"
+    local monitoring_systems=(
+        "continuous-build-monitor.cjs"
+        "build-failure-recovery.cjs"
+        "pre-build-health-check.cjs"
+        "nextjs-page-validator.cjs"
+        "comprehensive-monitoring-dashboard.cjs"
     )
     
-    for monitor in "${monitors[@]}"; do
-        if [ -f "$WORKSPACE_DIR/$monitor" ]; then
-            log "INFO" "Starting monitor: $monitor"
-            cd "$WORKSPACE_DIR" && node "$monitor" start || log "WARN" "Failed to start $monitor"
+    for system in "${monitoring_systems[@]}"; do
+        if [ -f "$WORKSPACE_DIR/automation/$system" ]; then
+            log "INFO" "Starting monitoring system: $system"
+            cd "$WORKSPACE_DIR" && node "automation/$system" start || log "WARN" "Failed to start $system"
         fi
     done
     
-    log "INFO" "${GREEN}Continuous Monitoring started successfully${NC}"
+    log "INFO" "✅ Monitoring and health check systems started"
 }
 
-# Start Git Sync and Health Systems
-start_git_sync_health() {
-    log "INFO" "${CYAN}Starting Git Sync and Health Systems...${NC}"
+# Start git sync and automation systems
+start_git_automation_systems() {
+    log "INFO" "🔄 Starting git sync and automation systems..."
     
-    # Start git sync systems
     local git_systems=(
-        "automation/git-sync.cjs"
-        "automation/enhanced-git-sync-orchestrator.cjs"
-        "automation/redundancy-git-sync.cjs"
-        "automation/advanced-git-sync.cjs"
+        "git-sync.cjs"
+        "advanced-git-sync.cjs"
+        "enhanced-git-sync-orchestrator.cjs"
+        "redundancy-git-sync.cjs"
+        "pm2-auto-sync.js"
     )
     
     for system in "${git_systems[@]}"; do
-        if [ -f "$WORKSPACE_DIR/$system" ]; then
-            log "INFO" "Starting git sync system: $system"
-            cd "$WORKSPACE_DIR" && node "$system" start || log "WARN" "Failed to start $system"
+        if [ -f "$WORKSPACE_DIR/automation/$system" ]; then
+            log "INFO" "Starting git system: $system"
+            cd "$WORKSPACE_DIR" && node "automation/$system" || log "WARN" "Failed to start $system"
         fi
     done
     
-    # Start health check systems
-    if [ -f "$WORKSPACE_DIR/automation/redundancy-automation-system.cjs" ]; then
-        log "INFO" "Starting redundancy automation system..."
-        cd "$WORKSPACE_DIR" && node automation/redundancy-automation-system.cjs start || log "WARN" "Failed to start redundancy system"
+    # Start git sync cron
+    if [ -f "$WORKSPACE_DIR/automation/git-sync-cron.sh" ]; then
+        log "INFO" "Starting git sync cron..."
+        cd "$WORKSPACE_DIR/automation" && chmod +x git-sync-cron.sh && ./git-sync-cron.sh start || log "WARN" "Failed to start git sync cron"
     fi
     
-    log "INFO" "${GREEN}Git Sync and Health Systems started successfully${NC}"
+    log "INFO" "✅ Git sync and automation systems started"
 }
 
-# Start Build and Recovery Systems
-start_build_recovery_systems() {
-    log "INFO" "${CYAN}Starting Build and Recovery Systems...${NC}"
+# Start marketing and content automation systems
+start_marketing_automation() {
+    log "INFO" "📢 Starting marketing and content automation systems..."
     
-    # Start build systems
-    local build_systems=(
-        "automation/master-build-orchestrator.cjs"
-        "automation/build-failure-recovery.cjs"
-        "automation/pre-build-health-check.cjs"
-        "automation/nextjs-page-validator.cjs"
-    )
-    
-    for system in "${build_systems[@]}"; do
-        if [ -f "$WORKSPACE_DIR/$system" ]; then
-            log "INFO" "Starting build system: $system"
-            cd "$WORKSPACE_DIR" && node "$system" start || log "WARN" "Failed to start $system"
-        fi
-    done
-    
-    log "INFO" "${GREEN}Build and Recovery Systems started successfully${NC}"
-}
-
-# Start Marketing and Content Systems
-start_marketing_content_systems() {
-    log "INFO" "${CYAN}Starting Marketing and Content Systems...${NC}"
-    
-    # Start marketing systems
     local marketing_systems=(
-        "automation/marketing-sync.js"
-        "automation/linkedin-marketing-orchestrator.cjs"
-        "automation/instagram-marketing-orchestrator.cjs"
-        "automation/homepage-updater.cjs"
-        "automation/front-index-advertiser.cjs"
+        "marketing-sync.js"
+        "homepage-updater.cjs"
+        "front-index-advertiser.cjs"
+        "content-quality-fixer.cjs"
+        "content-quality-analyzer.cjs"
     )
     
     for system in "${marketing_systems[@]}"; do
-        if [ -f "$WORKSPACE_DIR/$system" ]; then
+        if [ -f "$WORKSPACE_DIR/automation/$system" ]; then
             log "INFO" "Starting marketing system: $system"
-            cd "$WORKSPACE_DIR" && node "$system" start || log "WARN" "Failed to start $system"
+            cd "$WORKSPACE_DIR" && node "automation/$system" || log "WARN" "Failed to start $system"
         fi
     done
     
-    log "INFO" "${GREEN}Marketing and Content Systems started successfully${NC}"
+    log "INFO" "✅ Marketing and content automation systems started"
 }
 
-# Start AI and Innovation Systems
-start_ai_innovation_systems() {
-    log "INFO" "${CYAN}Starting AI and Innovation Systems...${NC}"
-    
-    # Start AI systems
-    local ai_systems=(
-        "automation/ai-trends-researcher.cjs"
-        "automation/innovation-orchestrator.cjs"
-        "automation/autonomous-meta-orchestrator.cjs"
-        "automation/ai-content-factory.cjs"
-        "automation/ai-research-scout.cjs"
-    )
-    
-    for system in "${ai_systems[@]}"; do
-        if [ -f "$WORKSPACE_DIR/$system" ]; then
-            log "INFO" "Starting AI system: $system"
-            cd "$WORKSPACE_DIR" && node "$system" start || log "WARN" "Failed to start $system"
-        fi
-    done
-    
-    log "INFO" "${GREEN}AI and Innovation Systems started successfully${NC}"
-}
-
-# Start UI and Design Systems
-start_ui_design_systems() {
-    log "INFO" "${CYAN}Starting UI and Design Systems...${NC}"
-    
-    # Start UI systems
-    local ui_systems=(
-        "automation/ui-evolution-launcher.js"
-        "automation/design-orchestrator.cjs"
-        "automation/beautify-ui.cjs"
-        "automation/responsive-content-orchestrator.cjs"
-        "automation/variation-orchestrator.cjs"
-    )
-    
-    for system in "${ui_systems[@]}"; do
-        if [ -f "$WORKSPACE_DIR/$system" ]; then
-            log "INFO" "Starting UI system: $system"
-            cd "$WORKSPACE_DIR" && node "$system" start || log "WARN" "Failed to start $system"
-        fi
-    done
-    
-    log "INFO" "${GREEN}UI and Design Systems started successfully${NC}"
-}
-
-# Start Autonomous Systems
+# Start autonomous and AI systems
 start_autonomous_systems() {
-    log "INFO" "${CYAN}Starting Autonomous Systems...${NC}"
+    log "INFO" "🤖 Starting autonomous and AI systems..."
     
-    # Start autonomous systems
     local autonomous_systems=(
-        "automation/launch-enhanced-autonomous-system.js"
-        "automation/autonomous-automation-orchestrator.js"
-        "automation/autonomous-error-monitoring-factory.js"
-        "automation/self-healing-orchestrator.cjs"
-        "automation/automation-error-scanner.cjs"
+        "intelligent-orchestrator.cjs"
+        "automation-factory.cjs"
+        "innovation-orchestrator.cjs"
+        "ai-trends-researcher.cjs"
+        "autonomous-meta-orchestrator.cjs"
     )
     
     for system in "${autonomous_systems[@]}"; do
-        if [ -f "$WORKSPACE_DIR/$system" ]; then
+        if [ -f "$WORKSPACE_DIR/automation/$system" ]; then
             log "INFO" "Starting autonomous system: $system"
-            cd "$WORKSPACE_DIR" && node "$system" start || log "WARN" "Failed to start $system"
+            cd "$WORKSPACE_DIR" && node "automation/$system" start || log "WARN" "Failed to start $system"
         fi
     done
     
-    log "INFO" "${GREEN}Autonomous Systems started successfully${NC}"
-}
-
-# Start Linting and Quality Systems
-start_linting_quality_systems() {
-    log "INFO" "${CYAN}Starting Linting and Quality Systems...${NC}"
-    
-    # Start linting systems
-    local linting_systems=(
-        "automation/linting-autonomous-agents-factory.js"
-        "automation/lint-automation-manager.cjs"
-        "automation/syntax-fix-launcher.js"
-        "automation/syntax-error-monitor.js"
-        "automation/content-quality-fixer.cjs"
-    )
-    
-    for system in "${linting_systems[@]}"; do
-        if [ -f "$WORKSPACE_DIR/$system" ]; then
-            log "INFO" "Starting linting system: $system"
-            cd "$WORKSPACE_DIR" && node "$system" start || log "WARN" "Failed to start $system"
-        fi
-    done
-    
-    log "INFO" "${GREEN}Linting and Quality Systems started successfully${NC}"
-}
-
-# Start Venture and Business Systems
-start_venture_business_systems() {
-    log "INFO" "${CYAN}Starting Venture and Business Systems...${NC}"
-    
-    # Start venture systems
-    local venture_systems=(
-        "automation/venture-orchestrator.cjs"
-        "automation/venture-services-analyzer.cjs"
-        "automation/venture-services-factory.cjs"
-        "automation/ads-generator.cjs"
-        "automation/service-sales-agents-factory.cjs"
-    )
-    
-    for system in "${venture_systems[@]}"; do
-        if [ -f "$WORKSPACE_DIR/$system" ]; then
-            log "INFO" "Starting venture system: $system"
-            cd "$WORKSPACE_DIR" && node "$system" start || log "WARN" "Failed to start $system"
-        fi
-    done
-    
-    log "INFO" "${GREEN}Venture and Business Systems started successfully${NC}"
-}
-
-# Start Cloud and Infrastructure Systems
-start_cloud_infrastructure_systems() {
-    log "INFO" "${CYAN}Starting Cloud and Infrastructure Systems...${NC}"
-    
-    # Start cloud systems
-    local cloud_systems=(
-        "automation/cloud-autonomous-orchestrator.cjs"
-        "automation/cloud-autonomous-agents-factory.cjs"
-        "automation/cloud-site-crawler.cjs"
-        "automation/cloud-content-factory.cjs"
-        "automation/cloud-content-advertiser.cjs"
-    )
-    
-    for system in "${cloud_systems[@]}"; do
-        if [ -f "$WORKSPACE_DIR/$system" ]; then
-            log "INFO" "Starting cloud system: $system"
-            cd "$WORKSPACE_DIR" && node "$system" start || log "WARN" "Failed to start $system"
-        fi
-    done
-    
-    log "INFO" "${GREEN}Cloud and Infrastructure Systems started successfully${NC}"
+    log "INFO" "✅ Autonomous and AI systems started"
 }
 
 # Start the master redundancy system
 start() {
-    log "INFO" "${PURPLE}🚀 Starting Master Redundancy System...${NC}"
+    log "INFO" "🚀 Starting Master Redundancy Automation System..."
     
     if check_running; then
-        log "WARN" "Master redundancy system is already running"
+        log "WARN" "System already running"
         return 0
     fi
     
@@ -433,31 +307,58 @@ start() {
     start_pm2_redundancy
     start_github_actions_redundancy
     start_netlify_functions_redundancy
-    start_master_orchestrators
-    start_continuous_monitoring
-    start_git_sync_health
-    start_build_recovery_systems
-    start_marketing_content_systems
-    start_ai_innovation_systems
-    start_ui_design_systems
+    start_comprehensive_redundancy
+    start_monitoring_systems
+    start_git_automation_systems
+    start_marketing_automation
     start_autonomous_systems
-    start_linting_quality_systems
-    start_venture_business_systems
-    start_cloud_infrastructure_systems
     
-    log "INFO" "${GREEN}✅ Master Redundancy System started successfully!${NC}"
-    log "INFO" "PID: $$, Log: $LOG_FILE"
+    log "INFO" "🎉 Master Redundancy Automation System started successfully!"
+    log "INFO" "📝 PID: $$ | Log: $LOG_FILE"
+    
+    # Keep the script running to maintain the system
+    while true; do
+        sleep 300  # Check every 5 minutes
+        log "INFO" "🔄 Master redundancy system heartbeat..."
+        
+        # Check if all systems are still running
+        check_system_health
+    done
+}
+
+# Check system health
+check_system_health() {
+    log "INFO" "🏥 Performing system health check..."
+    
+    # Check PM2 processes
+    if command -v pm2 &> /dev/null; then
+        local pm2_status=$(pm2 status --no-daemon 2>/dev/null || echo "PM2 not accessible")
+        log "INFO" "PM2 Status: $pm2_status"
+    fi
+    
+    # Check disk space
+    local disk_usage=$(df -h . | tail -1 | awk '{print $5}')
+    log "INFO" "Disk usage: $disk_usage"
+    
+    # Check memory usage
+    local memory_usage=$(free -h | grep Mem | awk '{print $3"/"$2}')
+    log "INFO" "Memory usage: $memory_usage"
 }
 
 # Stop the master redundancy system
 stop() {
-    log "INFO" "${YELLOW}🛑 Stopping Master Redundancy System...${NC}"
+    log "INFO" "🛑 Stopping Master Redundancy Automation System..."
     
     if [ -f "$PID_FILE" ]; then
         local pid=$(cat "$PID_FILE")
         if ps -p "$pid" > /dev/null 2>&1; then
-            kill "$pid" 2>/dev/null || true
-            log "INFO" "Stopped process $pid"
+            log "INFO" "Stopping process $pid..."
+            kill "$pid" || true
+            sleep 2
+            if ps -p "$pid" > /dev/null 2>&1; then
+                log "WARN" "Process still running, force killing..."
+                kill -9 "$pid" || true
+            fi
         fi
         rm -f "$PID_FILE"
     fi
@@ -469,86 +370,60 @@ stop() {
         pm2 delete all || true
     fi
     
-    # Stop any running Node.js processes from our automation
-    log "INFO" "Stopping automation processes..."
-    pkill -f "automation/" || true
-    pkill -f "node.*automation" || true
-    
-    log "INFO" "${GREEN}✅ Master Redundancy System stopped successfully!${NC}"
+    log "INFO" "✅ Master Redundancy Automation System stopped"
 }
 
 # Restart the master redundancy system
 restart() {
-    log "INFO" "${BLUE}🔄 Restarting Master Redundancy System...${NC}"
+    log "INFO" "🔄 Restarting Master Redundancy Automation System..."
     stop
     sleep 2
     start
 }
 
-# Check status of the master redundancy system
+# Show system status
 status() {
-    log "INFO" "${CYAN}📊 Master Redundancy System Status${NC}"
+    log "INFO" "📊 Master Redundancy Automation System Status..."
     
-    # Check if running
     if [ -f "$PID_FILE" ]; then
         local pid=$(cat "$PID_FILE")
         if ps -p "$pid" > /dev/null 2>&1; then
-            log "INFO" "✅ Master redundancy system is running (PID: $pid)"
+            log "INFO" "✅ System is RUNNING (PID: $pid)"
         else
-            log "WARN" "❌ Stale PID file found"
-            rm -f "$PID_FILE"
+            log "WARN" "❌ System is NOT RUNNING (stale PID file)"
         fi
     else
-        log "INFO" "❌ Master redundancy system is not running"
+        log "INFO" "❌ System is NOT RUNNING"
     fi
     
-    # Check PM2 status
+    # Show PM2 status
     if command -v pm2 &> /dev/null; then
-        log "INFO" "📋 PM2 Status:"
-        pm2 status --no-daemon || true
+        log "INFO" "PM2 Status:"
+        pm2 status --no-daemon 2>/dev/null || log "WARN" "PM2 not accessible"
     fi
     
-    # Check log file
+    # Show recent logs
     if [ -f "$LOG_FILE" ]; then
-        log "INFO" "📝 Recent logs (last 10 lines):"
-        tail -n 10 "$LOG_FILE" || true
+        log "INFO" "Recent logs (last 10 lines):"
+        tail -10 "$LOG_FILE" | while read -r line; do
+            echo "  $line"
+        done
     fi
 }
 
-# Show health status
+# Show system health
 health() {
-    log "INFO" "${CYAN}🏥 Master Redundancy System Health Check${NC}"
-    
-    # Check system resources
-    log "INFO" "💾 System Resources:"
-    free -h | grep -E "Mem|Swap" || true
-    df -h | grep -E "Filesystem|/" || true
-    
-    # Check running processes
-    log "INFO" "🔄 Running Automation Processes:"
-    ps aux | grep -E "automation|node.*automation" | grep -v grep || true
-    
-    # Check PM2 health
-    if command -v pm2 &> /dev/null; then
-        log "INFO" "📊 PM2 Health:"
-        pm2 ping || log "WARN" "PM2 daemon not responding"
-        pm2 list || true
-    fi
-    
-    # Check log health
-    if [ -f "$LOG_FILE" ]; then
-        local log_size=$(du -h "$LOG_FILE" | cut -f1)
-        log "INFO" "📝 Log file size: $log_size"
-    fi
+    log "INFO" "🏥 Master Redundancy Automation System Health Check..."
+    check_system_health
 }
 
 # Show logs
 logs() {
     if [ -f "$LOG_FILE" ]; then
-        log "INFO" "📝 Master Redundancy System Logs:"
-        cat "$LOG_FILE"
+        log "INFO" "📝 Showing logs from $LOG_FILE:"
+        tail -f "$LOG_FILE"
     else
-        log "INFO" "No log file found"
+        log "WARN" "No log file found"
     fi
 }
 
@@ -574,12 +449,24 @@ case "${1:-start}" in
         ;;
     *)
         echo "Usage: $0 {start|stop|restart|status|health|logs}"
+        echo ""
+        echo "Commands:"
         echo "  start   - Start the master redundancy system"
         echo "  stop    - Stop the master redundancy system"
         echo "  restart - Restart the master redundancy system"
         echo "  status  - Show system status"
-        echo "  health  - Show system health"
-        echo "  logs    - Show system logs"
+        echo "  health  - Perform health check"
+        echo "  logs    - Show live logs"
+        echo ""
+        echo "This script provides comprehensive redundancy for:"
+        echo "  🚀 PM2 automations"
+        echo "  🔧 GitHub Actions automations"
+        echo "  🌐 Netlify Functions automations"
+        echo "  🎯 Comprehensive redundancy orchestrators"
+        echo "  📊 Monitoring and health check systems"
+        echo "  🔄 Git sync and automation systems"
+        echo "  📢 Marketing and content automation"
+        echo "  🤖 Autonomous and AI systems"
         exit 1
         ;;
 esac
