@@ -2,11 +2,9 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Menu, ChevronDown, X, Phone, Mail, ArrowRight,
-  Rocket, Star, Grid, DollarSign, BarChart3, 
-  Building, MessageCircle, Users, BookOpen, FileText, 
-  Award, HelpCircle, Cpu, Search, Brain, Atom, Target,
-  BookOpenCheck, Heart, Shield, ShoppingCart, Settings
+  Menu, ChevronDown, X, Phone, Mail, MapPin, ArrowRight,
+  Rocket, BookOpen, DollarSign, BarChart3, Globe, Star, 
+  Cpu, Grid, Building, MessageCircle, Brain, Atom, Target
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -97,11 +95,17 @@ const navigationItems: NavigationItem[] = [
     featured: true,
     children: [
       { 
-        name: 'Services Showcase', 
-        href: '/comprehensive-services-showcase-2025', 
-        description: 'Complete services overview',
+        name: 'Services Showcase 2027', 
+        href: '/ultimate-2037-futuristic-services-showcase', 
+        description: 'Complete services overview with latest tech',
         icon: <Grid className="w-4 h-4" />,
         featured: true
+      },
+      { 
+        name: 'Services Showcase 2025', 
+        href: '/comprehensive-services-showcase-2025', 
+        description: 'Previous services overview',
+        icon: <Grid className="w-4 h-4" />
       },
       { 
         name: 'Pricing Plans', 
@@ -140,7 +144,7 @@ const navigationItems: NavigationItem[] = [
         name: 'Partners', 
         href: '/partners', 
         description: 'Partnership opportunities',
-        icon: <Users className="w-4 h-4" />
+        icon: <div className="w-4 h-4" />
       },
       { 
         name: 'Investors', 
@@ -167,7 +171,7 @@ const navigationItems: NavigationItem[] = [
         name: 'Documentation', 
         href: '/docs', 
         description: 'Technical documentation',
-        icon: <FileText className="w-4 h-4" />
+        icon: <div className="w-4 h-4" />
       },
       { 
         name: 'Blog', 
@@ -179,58 +183,13 @@ const navigationItems: NavigationItem[] = [
         name: 'Case Studies', 
         href: '/case-studies', 
         description: 'Success stories',
-        icon: <Award className="w-4 h-4" />
+        icon: <div className="w-4 h-4" />
       },
       { 
         name: 'Support', 
         href: '/support', 
         description: 'Technical support',
-        icon: <HelpCircle className="w-4 h-4" />
-      },
-      { 
-        name: 'Training', 
-        href: '/training', 
-        description: 'Learning resources',
-        icon: <BookOpenCheck className="w-4 h-4" />
-      }
-    ]
-  },
-  {
-    name: 'Solutions',
-    href: '/solutions',
-    icon: <Target className="w-5 h-5" />,
-    description: 'Industry solutions',
-    category: 'solutions',
-    children: [
-      { 
-        name: 'Healthcare', 
-        href: '/healthcare-solutions', 
-        description: 'Healthcare technology',
-        icon: <Heart className="w-4 h-4" />
-      },
-      { 
-        name: 'Financial', 
-        href: '/financial-solutions', 
-        description: 'Financial technology',
-        icon: <DollarSign className="w-4 h-4" />
-      },
-      { 
-        name: 'Government', 
-        href: '/government-technology-solutions', 
-        description: 'Government solutions',
-        icon: <Shield className="w-4 h-4" />
-      },
-      { 
-        name: 'Retail', 
-        href: '/retail-technology-solutions', 
-        description: 'Retail technology',
-        icon: <ShoppingCart className="w-4 h-4" />
-      },
-      { 
-        name: 'Manufacturing', 
-        href: '/manufacturing-ai-solutions', 
-        description: 'Manufacturing AI',
-        icon: <Settings className="w-4 h-4" />
+        icon: <div className="w-4 h-4" />
       }
     ]
   }
