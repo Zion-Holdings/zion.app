@@ -2,16 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { 
-  ArrowRight, Star, Users, Award, Brain, Atom, Rocket, 
-  Shield, Cloud, Database, Code, Server, Zap, Palette,
-  Cpu, BarChart3, Settings, Target, CheckCircle, Play,
-  ChevronRight, ChevronLeft, Phone, Mail, MapPin, Sparkles,
-  Globe, Heart, Book, DollarSign, Factory, ShoppingCart,
-  Car, Building, GraduationCap
+  Brain, Atom, Rocket, Shield, Cloud, Database, Code, Server, 
+  Zap, Palette, Cpu, BarChart3, Settings, Target, CheckCircle,
+  ArrowRight, ChevronRight, ChevronLeft, Phone, Mail, MapPin,
+  Globe, Lock, Users, Award, Star, Eye, Sparkles, Infinity,
+  Layers, Network, Smartphone, Monitor, Watch,
+  Camera, Mic, Speaker, Wifi, Bluetooth, Satellite,
+  Telescope, Plane, Moon, Sun, Heart, FileText, Handshake, TrendingUp, Book, GraduationCap,
+  ShoppingCart, Car, Building, Music, Trees, Leaf, DollarSign, Factory, Battery, Newspaper
 } from 'lucide-react';
 
-const Homepage2045: React.FC = () => {
+const Revolutionary2045FuturisticServicesShowcase: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [selectedCategory, setSelectedCategory] = useState('all');
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -41,8 +44,7 @@ const Homepage2045: React.FC = () => {
       textColor: "text-purple-400",
       link: "/ai-consciousness-evolution-2045",
       price: "$2,999/month",
-      features: ["Emotional Intelligence", "Self-Awareness", "Cognitive Evolution", "Ethical Decision Making"],
-      badge: "BREAKTHROUGH"
+      features: ["Emotional Intelligence", "Self-Awareness", "Cognitive Evolution", "Ethical Decision Making"]
     },
     {
       title: "Quantum Neural Ecosystem 2045",
@@ -53,8 +55,7 @@ const Homepage2045: React.FC = () => {
       textColor: "text-cyan-400",
       link: "/quantum-neural-ecosystem-2045",
       price: "$4,999/month",
-      features: ["Quantum Processing", "Neural Networks", "Hybrid Computing", "Exponential Performance"],
-      badge: "QUANTUM"
+      features: ["Quantum Processing", "Neural Networks", "Hybrid Computing", "Exponential Performance"]
     },
     {
       title: "Space Resource Intelligence 2045",
@@ -65,8 +66,7 @@ const Homepage2045: React.FC = () => {
       textColor: "text-pink-400",
       link: "/space-resource-intelligence-2045",
       price: "$3,999/month",
-      features: ["Space Mining", "Resource Mapping", "Colonization Planning", "Interplanetary Logistics"],
-      badge: "FUTURE"
+      features: ["Space Mining", "Resource Mapping", "Colonization Planning", "Interplanetary Logistics"]
     },
     {
       title: "Metaverse Development Studio Pro 2045",
@@ -77,8 +77,7 @@ const Homepage2045: React.FC = () => {
       textColor: "text-green-400",
       link: "/metaverse-development-studio-pro-2045",
       price: "$1,999/month",
-      features: ["3D World Building", "AI Content Generation", "Blockchain Integration", "User Experience Design"],
-      badge: "IMMERSIVE"
+      features: ["3D World Building", "AI Content Generation", "Blockchain Integration", "User Experience Design"]
     },
     {
       title: "Quantum Cybersecurity Platform 2045",
@@ -89,12 +88,21 @@ const Homepage2045: React.FC = () => {
       textColor: "text-red-400",
       link: "/quantum-cybersecurity-platform-2045",
       price: "$2,499/month",
-      features: ["Quantum Resistance", "AI Threat Detection", "Advanced Encryption", "Real-time Monitoring"],
-      badge: "SECURE"
+      features: ["Quantum Resistance", "AI Threat Detection", "Advanced Encryption", "Real-time Monitoring"]
     }
   ];
 
-  const featuredServices = [
+  const categories = [
+    { id: 'all', name: 'All Services', icon: <Sparkles className="w-5 h-5" />, count: 150 },
+    { id: 'ai', name: 'AI & Machine Learning', icon: <Brain className="w-5 h-5" />, count: 45 },
+    { id: 'quantum', name: 'Quantum Computing', icon: <Atom className="w-5 h-5" />, count: 25 },
+    { id: 'space', name: 'Space Technology', icon: <Rocket className="w-5 h-5" />, count: 20 },
+    { id: 'metaverse', name: 'Metaverse & VR', icon: <Globe className="w-5 h-5" />, count: 15 },
+    { id: 'cybersecurity', name: 'Cybersecurity', icon: <Shield className="w-5 h-5" />, count: 20 },
+    { id: 'cloud', name: 'Cloud & Infrastructure', icon: <Cloud className="w-5 h-5" />, count: 25 }
+  ];
+
+  const newInnovativeServices = [
     {
       name: "AI Autonomous Business Process Automation 2045",
       description: "Fully autonomous business process automation with AI decision-making and continuous learning capabilities",
@@ -102,8 +110,8 @@ const Homepage2045: React.FC = () => {
       color: "from-purple-600 to-pink-700",
       link: "/ai-autonomous-business-process-automation-2045",
       price: "$1,999/month",
-      category: "AI & ML",
-      badge: "NEW"
+      category: "ai",
+      features: ["Autonomous Decision Making", "Continuous Learning", "Process Optimization", "Real-time Analytics"]
     },
     {
       name: "Quantum Bio-Computing Platform 2045",
@@ -112,8 +120,8 @@ const Homepage2045: React.FC = () => {
       color: "from-cyan-600 to-blue-700",
       link: "/quantum-bio-computing-platform-2045",
       price: "$3,999/month",
-      category: "Quantum",
-      badge: "BREAKTHROUGH"
+      category: "quantum",
+      features: ["Biological Integration", "Quantum Processing", "DNA Computing", "Bio-Security"]
     },
     {
       name: "Space Mining Automation Platform 2045",
@@ -122,8 +130,8 @@ const Homepage2045: React.FC = () => {
       color: "from-pink-600 to-red-700",
       link: "/space-mining-automation-platform-2045",
       price: "$2,999/month",
-      category: "Space Tech",
-      badge: "FUTURE"
+      category: "space",
+      features: ["Resource Discovery", "Extraction Optimization", "Autonomous Operations", "Interplanetary Logistics"]
     },
     {
       name: "Metaverse Digital Reality Platform 2045",
@@ -132,8 +140,48 @@ const Homepage2045: React.FC = () => {
       color: "from-green-600 to-emerald-700",
       link: "/metaverse-digital-reality-platform-2045",
       price: "$1,499/month",
-      category: "Metaverse",
-      badge: "IMMERSIVE"
+      category: "metaverse",
+      features: ["AI Content Generation", "Blockchain Integration", "Immersive Experiences", "Social Networking"]
+    },
+    {
+      name: "Quantum Internet Security Gateway 2045",
+      description: "Next-generation quantum internet security with advanced encryption and threat detection",
+      icon: <Shield className="w-8 h-8" />,
+      color: "from-red-600 to-pink-700",
+      link: "/quantum-internet-security-gateway-2045",
+      price: "$2,499/month",
+      category: "cybersecurity",
+      features: ["Quantum Encryption", "Threat Detection", "Network Security", "Real-time Monitoring"]
+    },
+    {
+      name: "AI Consciousness Training Platform 2045",
+      description: "Advanced AI consciousness training with emotional intelligence development and ethical decision making",
+      icon: <Brain className="w-8 h-8" />,
+      color: "from-purple-600 to-indigo-700",
+      link: "/ai-consciousness-training-platform-2045",
+      price: "$3,499/month",
+      category: "ai",
+      features: ["Emotional Intelligence", "Ethical Training", "Consciousness Development", "Behavioral Analysis"]
+    },
+    {
+      name: "Quantum Neural Network Platform 2045",
+      description: "Revolutionary quantum neural networks with hybrid quantum-classical computing capabilities",
+      icon: <Atom className="w-8 h-8" />,
+      color: "from-cyan-600 to-indigo-700",
+      link: "/quantum-neural-network-platform-2045",
+      price: "$4,499/month",
+      category: "quantum",
+      features: ["Quantum Neural Networks", "Hybrid Computing", "Pattern Recognition", "Learning Optimization"]
+    },
+    {
+      name: "Space Colonization Services 2045",
+      description: "Comprehensive space colonization planning and management with AI-powered optimization",
+      icon: <Rocket className="w-8 h-8" />,
+      color: "from-pink-600 to-orange-700",
+      link: "/space-colonization-services-2045",
+      price: "$5,999/month",
+      category: "space",
+      features: ["Colonization Planning", "Resource Management", "Life Support Systems", "Sustainable Development"]
     }
   ];
 
@@ -142,15 +190,6 @@ const Homepage2045: React.FC = () => {
     { number: "1000+", label: "Happy Customers", icon: <Users className="w-6 h-6" /> },
     { number: "99.99%", label: "Uptime Guarantee", icon: <CheckCircle className="w-6 h-6" /> },
     { number: "24/7", label: "Expert Support", icon: <Award className="w-6 h-6" /> }
-  ];
-
-  const industries = [
-    { name: "Healthcare & Biotech", icon: <Heart className="w-8 h-8" />, color: "from-red-500 to-pink-500", href: "/healthcare-ai-solutions" },
-    { name: "Financial Services", icon: <DollarSign className="w-8 h-8" />, color: "from-green-500 to-emerald-500", href: "/financial-solutions" },
-    { name: "Manufacturing", icon: <Factory className="w-8 h-8" />, color: "from-blue-500 to-indigo-500", href: "/manufacturing-ai-solutions" },
-    { name: "Retail & E-commerce", icon: <ShoppingCart className="w-8 h-8" />, color: "from-purple-500 to-pink-500", href: "/retail-technology-solutions" },
-    { name: "Education", icon: <GraduationCap className="w-8 h-8" />, color: "from-indigo-500 to-purple-500", href: "/education-technology-solutions" },
-    { name: "Government", icon: <Building className="w-8 h-8" />, color: "from-gray-500 to-blue-500", href: "/government-technology-solutions" }
   ];
 
   const fadeInUp = {
@@ -167,6 +206,10 @@ const Homepage2045: React.FC = () => {
       }
     }
   };
+
+  const filteredServices = selectedCategory === 'all' 
+    ? newInnovativeServices 
+    : newInnovativeServices.filter(service => service.category === selectedCategory);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 overflow-hidden">
@@ -188,25 +231,15 @@ const Homepage2045: React.FC = () => {
         <div className="max-w-7xl mx-auto">
           {/* Hero Content */}
           <div className="text-center mb-16">
-            <motion.div
-              className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30 rounded-full text-cyan-400 text-sm font-medium mb-6"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <Sparkles className="w-4 h-4" />
-              Revolutionary 2045 Technology
-            </motion.div>
-
             <motion.h1
               className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-6"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              Welcome to the
+              Revolutionary 2045
               <br />
-              <span className="text-6xl md:text-8xl">Future of Technology</span>
+              <span className="text-6xl md:text-8xl">Futuristic Services</span>
             </motion.h1>
             
             <motion.p
@@ -215,7 +248,7 @@ const Homepage2045: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Discover revolutionary AI consciousness, quantum computing, and space technology solutions that will transform your business and propel humanity into the future.
+              Experience the cutting-edge technology that will define the future. From AI consciousness evolution to quantum computing and space exploration, discover services that will transform your business and propel humanity into the next era.
             </motion.p>
 
             <motion.div
@@ -225,17 +258,17 @@ const Homepage2045: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <Link
-                href="/revolutionary-2045-futuristic-services-showcase"
+                href="/contact"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-xl hover:from-cyan-600 hover:to-blue-600 transition-all duration-200 font-semibold group shadow-lg hover:shadow-cyan-500/25"
               >
-                Explore Services
+                Get Started
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
               </Link>
               <Link
-                href="/contact"
+                href="/quote"
                 className="inline-flex items-center gap-2 px-8 py-4 border border-cyan-500 text-cyan-400 rounded-xl hover:bg-cyan-500 hover:text-white transition-all duration-200 font-semibold group"
               >
-                Get Started
+                Request Quote
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
               </Link>
             </motion.div>
@@ -259,17 +292,9 @@ const Homepage2045: React.FC = () => {
                   className="p-8 md:p-12"
                 >
                   <div className="text-center">
-                    <div className="flex items-center justify-center mb-4">
-                      <div className={`inline-flex p-6 rounded-3xl bg-gradient-to-r ${heroSlides[currentSlide].color} shadow-lg`}>
-                        {heroSlides[currentSlide].icon}
-                      </div>
-                      <div className="ml-4">
-                        <span className={`px-3 py-1 text-xs font-bold rounded-full bg-gradient-to-r ${heroSlides[currentSlide].color} text-white`}>
-                          {heroSlides[currentSlide].badge}
-                        </span>
-                      </div>
+                    <div className={`inline-flex p-6 rounded-3xl bg-gradient-to-r ${heroSlides[currentSlide].color} mb-8 shadow-lg`}>
+                      {heroSlides[currentSlide].icon}
                     </div>
-                    
                     <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                       {heroSlides[currentSlide].title}
                     </h2>
@@ -362,50 +387,83 @@ const Homepage2045: React.FC = () => {
         </div>
       </section>
 
-      {/* Featured Services Section */}
+      {/* Category Filter */}
       <section className="px-4 sm:px-6 lg:px-8 pb-20">
         <div className="max-w-7xl mx-auto">
           <motion.div
-            className="text-center mb-16"
+            className="text-center mb-12"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Featured Revolutionary Services
+              Explore Our Service Categories
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Experience the cutting-edge technology that's reshaping industries and defining the future of business
+              Discover innovative solutions across multiple cutting-edge technology domains
             </p>
           </motion.div>
 
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+            className="flex flex-wrap justify-center gap-4 mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => setSelectedCategory(category.id)}
+                className={`flex items-center gap-2 px-6 py-3 rounded-xl border transition-all duration-200 ${
+                  selectedCategory === category.id
+                    ? 'border-cyan-400 bg-cyan-500/20 text-cyan-400'
+                    : 'border-gray-600 text-gray-400 hover:border-gray-500 hover:text-gray-300'
+                }`}
+              >
+                {category.icon}
+                <span>{category.name}</span>
+                <span className="text-xs bg-gray-700 px-2 py-1 rounded-full">
+                  {category.count}
+                </span>
+              </button>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+      <section className="px-4 sm:px-6 lg:px-8 pb-20">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
             variants={staggerContainer}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
           >
-            {featuredServices.map((service, index) => (
+            {filteredServices.map((service, index) => (
               <motion.div
                 key={service.name}
                 variants={fadeInUp}
                 className="group p-6 bg-black/40 backdrop-blur-xl rounded-2xl border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 hover:transform hover:scale-105 shadow-lg hover:shadow-cyan-500/25"
               >
-                <div className="flex items-center justify-between mb-4">
-                  <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${service.color} text-white group-hover:scale-110 transition-transform duration-300`}>
-                    {service.icon}
-                  </div>
-                  <span className="px-2 py-1 text-xs font-bold rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white">
-                    {service.badge}
-                  </span>
+                <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${service.color} text-white mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  {service.icon}
                 </div>
-                
-                <div className="text-xs text-cyan-400 mb-2">{service.category}</div>
                 <h3 className="text-xl font-bold text-white mb-3 line-clamp-2">{service.name}</h3>
                 <p className="text-gray-400 text-sm mb-4 line-clamp-3">{service.description}</p>
                 
+                {/* Features */}
+                <div className="grid grid-cols-2 gap-2 mb-4">
+                  {service.features.map((feature, idx) => (
+                    <div key={idx} className="text-xs text-gray-500 bg-gray-800/50 rounded px-2 py-1">
+                      {feature}
+                    </div>
+                  ))}
+                </div>
+
                 <div className="text-lg font-bold text-cyan-400 mb-4">
                   {service.price}
                 </div>
@@ -416,70 +474,6 @@ const Homepage2045: React.FC = () => {
                 >
                   Learn More
                   <ArrowRight className="w-4 h-4" />
-                </Link>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          <motion.div
-            className="text-center mt-12"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <Link
-              href="/revolutionary-2045-futuristic-services-showcase"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-xl hover:from-cyan-600 hover:to-blue-600 transition-all duration-200 font-semibold group shadow-lg hover:shadow-cyan-500/25"
-            >
-              View All Services
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Industries Section */}
-      <section className="px-4 sm:px-6 lg:px-8 pb-20">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Transforming Industries
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Our revolutionary technology solutions are reshaping industries across the globe
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6"
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-          >
-            {industries.map((industry, index) => (
-              <motion.div
-                key={industry.name}
-                variants={fadeInUp}
-                className="group text-center"
-              >
-                <Link
-                  href={industry.href}
-                  className="block p-6 bg-black/30 backdrop-blur-xl rounded-2xl border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-300 hover:transform hover:scale-105"
-                >
-                  <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${industry.color} text-white mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                    {industry.icon}
-                  </div>
-                  <h3 className="text-sm font-semibold text-white group-hover:text-cyan-400 transition-colors">
-                    {industry.name}
-                  </h3>
                 </Link>
               </motion.div>
             ))}
@@ -542,4 +536,4 @@ const Homepage2045: React.FC = () => {
   );
 };
 
-export default Homepage2045;
+export default Revolutionary2045FuturisticServicesShowcase;

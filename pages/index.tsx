@@ -1,6 +1,12 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
-import EnhancedHomepage2025 from '../components/EnhancedHomepage2025';
+import Homepage2045 from '../components/Homepage2045';
+import SEOOptimizer from '../components/SEOOptimizer';
+import AnalyticsTracker from '../components/AnalyticsTracker';
+import ErrorBoundary from '../components/ErrorBoundary';
+import PerformanceOptimizer from '../components/PerformanceOptimizer';
+import AccessibilityEnhancer from '../components/AccessibilityEnhancer';
+import PerformanceMonitor from '../components/PerformanceMonitor';
+import MobileOptimizer from '../components/MobileOptimizer';
 
 const HomePage: React.FC = () => {
   const seoConfig = {
@@ -13,9 +19,14 @@ const HomePage: React.FC = () => {
   };
 
   return (
-    <Layout seo={seoConfig}>
-      <EnhancedHomepage2025 />
-    </Layout>
+    <ErrorBoundary>
+      <SEOOptimizer />
+      <AnalyticsTracker />
+      <Homepage2045 />
+      <PerformanceMonitor showUI={true} />
+      <AccessibilityEnhancer showPanel={true} autoOptimize={true} />
+      <PerformanceOptimizer showMetrics={true} autoOptimize={true} />
+    </ErrorBoundary>
   );
 };
 
