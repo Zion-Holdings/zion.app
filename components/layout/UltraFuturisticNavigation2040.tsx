@@ -31,22 +31,10 @@ const navigationItems: NavigationItem[] = [
         description: 'Advanced AI solutions for enterprise'
       },
       {
-        label: 'Innovative 2040 Services',
-        href: '/innovative-2040-futuristic-services-showcase',
-        icon: <Star className="w-4 h-4" />,
-        description: 'Cutting-edge futuristic technology solutions'
-      },
-      {
         label: 'Quantum Computing',
         href: '/quantum-computing',
         icon: <Zap className="w-4 h-4" />,
         description: 'Next-generation quantum solutions'
-      },
-      {
-        label: 'Space Technology',
-        href: '/space-tech',
-        icon: <Star className="w-4 h-4" />,
-        description: 'Innovative space solutions'
       },
       {
         label: 'Cybersecurity',
@@ -55,10 +43,22 @@ const navigationItems: NavigationItem[] = [
         description: 'Enterprise security solutions'
       },
       {
-        label: 'Cloud Solutions',
+        label: 'Cloud Platform',
         href: '/cloud-platform',
         icon: <Globe className="w-4 h-4" />,
         description: 'Scalable cloud infrastructure'
+      },
+      {
+        label: 'Space Technology',
+        href: '/space-tech',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Innovative space solutions'
+      },
+      {
+        label: 'Innovative 2040 Services',
+        href: '/innovative-2040-futuristic-services-showcase',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Cutting-edge futuristic technology solutions'
       },
       {
         label: 'View All Services',
@@ -69,9 +69,62 @@ const navigationItems: NavigationItem[] = [
     ]
   },
   {
-    label: 'About',
-    href: '/about',
-    icon: <Users className="w-4 h-4" />
+    label: 'Company',
+    children: [
+      {
+        label: 'About Us',
+        href: '/about',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Our mission and team'
+      },
+      {
+        label: 'Case Studies',
+        href: '/case-studies',
+        icon: <Award className="w-4 h-4" />,
+        description: 'Success stories and results'
+      },
+      {
+        label: 'Careers',
+        href: '/careers',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Join our team'
+      },
+      {
+        label: 'News & Updates',
+        href: '/news',
+        icon: <Globe className="w-4 h-4" />,
+        description: 'Latest company news'
+      }
+    ]
+  },
+  {
+    label: 'Resources',
+    children: [
+      {
+        label: 'Blog',
+        href: '/blog',
+        icon: <Globe className="w-4 h-4" />,
+        description: 'Industry insights and articles'
+      },
+      {
+        label: 'Documentation',
+        href: '/docs',
+        icon: <Globe className="w-4 h-4" />,
+        description: 'Technical guides and APIs'
+      },
+      {
+        label: 'Support',
+        href: '/support',
+        icon: <Phone className="w-4 h-4" />,
+        description: 'Help and assistance'
+      },
+      {
+        label: 'Get Started',
+        href: '/get-started',
+        icon: <ArrowRight className="w-4 h-4" />,
+        description: 'Quick start guide'
+      }
+    ]
   },
   {
     label: 'Contact',

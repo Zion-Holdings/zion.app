@@ -20,18 +20,17 @@ interface FooterSection {
 }
 
 const footerSections: FooterSection[] = [
-        {
-        title: 'Services',
-        links: [
-          { label: 'AI & Machine Learning', href: '/ai-services', description: 'Advanced AI solutions' },
-          { label: 'Innovative 2040 Services', href: '/innovative-2040-futuristic-services-showcase', description: 'Cutting-edge futuristic solutions' },
-          { label: 'Quantum Computing', href: '/quantum-computing', description: 'Next-gen quantum tech' },
-          { label: 'Space Technology', href: '/space-tech', description: 'Innovative space solutions' },
-          { label: 'Cybersecurity', href: '/cybersecurity', description: 'Enterprise security' },
-          { label: 'Cloud Solutions', href: '/cloud-platform', description: 'Scalable cloud infrastructure' },
-          { label: 'View All Services', href: '/services', description: 'Complete service portfolio' }
-        ]
-      },
+  {
+    title: 'Core Services',
+    links: [
+      { label: 'AI & Machine Learning', href: '/ai-services', description: 'Advanced AI solutions' },
+      { label: 'Quantum Computing', href: '/quantum-computing', description: 'Next-gen quantum tech' },
+      { label: 'Cybersecurity', href: '/cybersecurity', description: 'Enterprise security' },
+      { label: 'Cloud Platform', href: '/cloud-platform', description: 'Scalable cloud infrastructure' },
+      { label: 'Space Technology', href: '/space-tech', description: 'Innovative space solutions' },
+      { label: 'View All Services', href: '/services', description: 'Complete service portfolio' }
+    ]
+  },
   {
     title: 'Company',
     links: [
@@ -47,32 +46,32 @@ const footerSections: FooterSection[] = [
     title: 'Resources',
     links: [
       { label: 'Blog', href: '/blog', description: 'Industry insights' },
-      { label: 'Whitepapers', href: '/white-papers', description: 'In-depth research' },
-      { label: 'Webinars', href: '/webinars', description: 'Educational content' },
       { label: 'Documentation', href: '/docs', description: 'Technical guides' },
       { label: 'API Reference', href: '/api-documentation', description: 'Developer resources' },
-      { label: 'Support', href: '/support', description: 'Help & assistance' }
+      { label: 'Support', href: '/support', description: 'Help & assistance' },
+      { label: 'Get Started', href: '/get-started', description: 'Quick start guide' },
+      { label: 'Pricing', href: '/pricing', description: 'Service pricing' }
     ]
   },
   {
-    title: 'Industries',
+    title: 'Solutions',
     links: [
       { label: 'Healthcare', href: '/healthcare-solutions', description: 'Medical technology' },
       { label: 'Finance', href: '/financial-solutions', description: 'Fintech solutions' },
       { label: 'Manufacturing', href: '/manufacturing-ai-solutions', description: 'Industry 4.0' },
-      { label: 'Retail', href: '/retail-technology-solutions', description: 'E-commerce tech' },
       { label: 'Government', href: '/government-technology-solutions', description: 'Public sector' },
-      { label: 'Education', href: '/education-technology-solutions', description: 'EdTech solutions' }
+      { label: 'Education', href: '/education-technology-solutions', description: 'EdTech solutions' },
+      { label: 'Innovative 2040 Services', href: '/innovative-2040-futuristic-services-showcase', description: 'Future tech solutions' }
     ]
   }
 ];
 
 const socialLinks = [
-  { icon: <Linkedin className="w-5 h-5" />, href: 'https://linkedin.com/company/ziontechgroup', label: 'LinkedIn' },
+  { icon: <Linkedin className="w-5 h-5" />, href: 'https://www.linkedin.com/company/zion-tech-group', label: 'LinkedIn' },
   { icon: <Twitter className="w-5 h-5" />, href: 'https://twitter.com/ziontechgroup', label: 'Twitter' },
-  { icon: <Github className="w-5 h-5" />, href: 'https://github.com/ziontechgroup', label: 'GitHub' },
+  { icon: <Github className="w-5 h-5" />, href: 'https://github.com/Zion-Holdings', label: 'GitHub' },
   { icon: <Youtube className="w-5 h-5" />, href: 'https://youtube.com/@ziontechgroup', label: 'YouTube' },
-  { icon: <Facebook className="w-5 h-5" />, href: 'https://facebook.com/ziontechgroup', label: 'Facebook' }
+  { icon: <Facebook className="w-5 h-5" />, href: 'https://www.facebook.com/ziontechgroup', label: 'Facebook' }
 ];
 
 const contactInfo = {

@@ -1,196 +1,325 @@
 import React from 'react';
-import Head from 'next/head';
-import { Cloud, Shield, Globe, Server, Database, ArrowRight, Check } from 'lucide-react';
-import Button from '../components/ui/Button';
+import { motion } from 'framer-motion';
+import { Cloud, Server, Database, Network, Zap, Shield, Globe, Cpu, ArrowRight, CheckCircle } from 'lucide-react';
+import Layout from '../components/layout/Layout';
+import SEO from '../components/SEO';
 
-export default function CloudPlatformPage() {
-  const features = [
+export default function CloudPlatform() {
+  const cloudServices = [
     {
-      icon: <Server className="w-8 h-8 text-white" />,
-      title: 'Scalable Infrastructure',
-      description: 'Auto-scaling compute resources that grow with your needs'
+      title: 'Multi-Cloud Infrastructure',
+      description: 'Seamless deployment and management across AWS, Azure, Google Cloud, and more',
+      href: '/multi-cloud-infrastructure',
+      icon: <Cloud className="w-8 h-8" />,
+      features: ['Multi-Cloud Management', 'Cost Optimization', 'Automated Deployment']
     },
     {
-      icon: <Database className="w-8 h-8 text-white" />,
-      title: 'Managed Databases',
-      description: 'Fully managed databases with automated backups and scaling'
+      title: 'Serverless Computing',
+      description: 'Event-driven, auto-scaling serverless functions and applications',
+      href: '/serverless-computing',
+      icon: <Zap className="w-8 h-8" />,
+      features: ['Auto-scaling', 'Pay-per-use', 'Zero Server Management']
     },
     {
-      icon: <Globe className="w-8 h-8 text-white" />,
-      title: 'Global CDN',
-      description: 'Lightning-fast content delivery across the globe'
+      title: 'Cloud Security & Compliance',
+      description: 'Advanced security measures and compliance frameworks for cloud environments',
+      href: '/cloud-security-compliance',
+      icon: <Shield className="w-8 h-8" />,
+      features: ['Zero Trust Architecture', 'Compliance Automation', 'Threat Detection']
     },
     {
-      icon: <Shield className="w-8 h-8 text-white" />,
-      title: 'Enterprise Security',
-      description: 'SOC 2 compliant with advanced threat protection'
+      title: 'Database as a Service',
+      description: 'Managed database solutions with high availability and automatic scaling',
+      href: '/managed-postgres-ha',
+      icon: <Database className="w-8 h-8" />,
+      features: ['High Availability', 'Automatic Backups', 'Performance Optimization']
+    },
+    {
+      title: 'Edge Computing',
+      description: 'Ultra-low latency computing at the edge for real-time applications',
+      href: '/edge-computing-platform',
+      icon: <Network className="w-8 h-8" />,
+      features: ['Global Edge Network', 'Real-time Processing', 'IoT Integration']
+    },
+    {
+      title: 'Container Orchestration',
+      description: 'Kubernetes-based container management and orchestration',
+      href: '/container-orchestration',
+      icon: <Server className="w-8 h-8" />,
+      features: ['Kubernetes Management', 'Auto-scaling', 'Service Mesh']
     }
   ];
 
   const benefits = [
-    '99.99% uptime guarantee',
-    'Global edge locations',
-    'Real-time monitoring',
-    'Automated scaling',
-    'Pay-as-you-go pricing',
-    '24/7 expert support'
+    'Reduced infrastructure costs by up to 40%',
+    '99.99% uptime with global redundancy',
+    'Auto-scaling to handle traffic spikes',
+    'Enterprise-grade security and compliance',
+    'Global content delivery network',
+    '24/7 monitoring and expert support'
+  ];
+
+  const stats = [
+    { value: '99.99%', label: 'Uptime SLA' },
+    { value: '< 50ms', label: 'Global Latency' },
+    { value: '40%', label: 'Cost Reduction' },
+    { value: '150+', label: 'Global Regions' }
   ];
 
   return (
-    <>
-      <Head>
-        <title>Cloud Platform - Zion Tech Group</title>
-        <meta name="description" content="Enterprise-grade cloud infrastructure with global reach, automated scaling, and 99.99% uptime guarantee." />
-      </Head>
+    <Layout>
+      <SEO 
+        title="Cloud Platform Solutions | Zion Tech Group"
+        description="Comprehensive cloud platform services including multi-cloud infrastructure, serverless computing, edge computing, and managed databases. Scale your business with enterprise cloud solutions."
+        keywords={["cloud platform", "multi-cloud", "serverless", "edge computing", "managed databases", "cloud infrastructure"]}
+      />
 
-      <div className="min-h-screen bg-black">
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
         {/* Hero Section */}
-        <section className="pt-32 pb-20 relative overflow-hidden">
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]" />
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(59,130,246,0.08),transparent_50%)]" />
-          </div>
-          
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <div className="mb-8">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
-                <Cloud className="w-4 h-4 mr-2" />
-                Enterprise Cloud Infrastructure
+        <section className="relative py-20 px-4 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-cyan-500/10 to-green-500/10"></div>
+          <div className="container mx-auto max-w-6xl relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center"
+            >
+              <div className="flex justify-center mb-6">
+                <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center">
+                  <Cloud className="w-12 h-12 text-white" />
+                </div>
               </div>
-            </div>
-            
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
-              Cloud Platform
-            </h1>
-            <p className="text-xl sm:text-2xl text-gray-300 max-w-4xl mx-auto mb-12 leading-relaxed">
-              Enterprise-grade cloud infrastructure with global reach, automated scaling, and 99.99% uptime guarantee.
-            </p>
+              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 via-cyan-500 to-green-400 bg-clip-text text-transparent mb-6">
+                Cloud Platform Solutions
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
+                Transform your business with our comprehensive cloud platform. 
+                From multi-cloud infrastructure to edge computing, we provide scalable, secure, and cost-effective solutions.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="/contact"
+                  className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-full hover:from-blue-600 hover:to-cyan-600 transition-all duration-300 transform hover:scale-105"
+                >
+                  Start Cloud Migration
+                </a>
+                <a
+                  href="/get-started"
+                  className="px-8 py-4 border-2 border-blue-500 text-blue-400 font-semibold rounded-full hover:bg-blue-500 hover:text-white transition-all duration-300"
+                >
+                  Get Free Assessment
+                </a>
+              </div>
+            </motion.div>
+          </div>
+        </section>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button
-                href="/contact"
-                size="lg"
-                className="shadow-2xl shadow-blue-500/25"
-              >
-                Deploy Now
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-              <Button
-                href="/contact"
-                variant="outline"
-                size="lg"
-                className="border-white/20 hover:border-white/40"
-              >
-                View Documentation
-              </Button>
+        {/* Cloud Stats */}
+        <section className="py-16 px-4 bg-black/30">
+          <div className="container mx-auto max-w-6xl">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+              {stats.map((stat, index) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="p-6"
+                >
+                  <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">{stat.value}</div>
+                  <div className="text-gray-300">{stat.label}</div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Features Section */}
-        <section className="py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-20">
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-                Cloud Infrastructure Features
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Built for scale, performance, and reliability
-              </p>
-            </div>
+        {/* Cloud Services Grid */}
+        <section className="py-20 px-4">
+          <div className="container mx-auto max-w-6xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-4">Cloud Services Portfolio</h2>
+              <p className="text-xl text-gray-300">Comprehensive cloud solutions for modern businesses</p>
+            </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {features.map((feature, index) => (
-                <div
-                  key={index}
-                  className="p-8 bg-gray-900/50 rounded-2xl border border-gray-800 hover:border-blue-500/30 hover:bg-gray-900/80 transition-all duration-300"
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {cloudServices.map((service, index) => (
+                <motion.div
+                  key={service.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.3 + index * 0.1 }}
+                  className="group"
                 >
-                  <div className="w-16 h-16 mb-6 rounded-2xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-4">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-400 leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
+                  <a
+                    href={service.href}
+                    className="block p-8 bg-black/40 border border-gray-800 rounded-2xl hover:border-blue-500/50 transition-all duration-300 h-full"
+                  >
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="text-blue-400 group-hover:text-cyan-400 transition-colors duration-300">
+                        {service.icon}
+                      </div>
+                      <ArrowRight className="w-5 h-5 text-gray-500 group-hover:text-blue-400 transition-colors duration-300" />
+                    </div>
+                    
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">
+                      {service.title}
+                    </h3>
+                    
+                    <p className="text-gray-300 mb-4 leading-relaxed">
+                      {service.description}
+                    </p>
+                    
+                    <div className="space-y-2">
+                      {service.features.map((feature, featureIndex) => (
+                        <div key={featureIndex} className="flex items-center text-sm text-gray-400">
+                          <CheckCircle className="w-4 h-4 text-cyan-400 mr-2 flex-shrink-0" />
+                          {feature}
+                        </div>
+                      ))}
+                    </div>
+                  </a>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
         {/* Benefits Section */}
-        <section className="py-24 bg-gray-900">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div>
-                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
-                  Why Choose Our Cloud Platform?
-                </h2>
-                <div className="space-y-6">
+        <section className="py-20 px-4 bg-black/30">
+          <div className="container mx-auto max-w-6xl">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                <h2 className="text-4xl font-bold text-white mb-6">Why Choose Our Cloud Platform?</h2>
+                <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+                  Our cloud platform combines the best of multiple cloud providers with 
+                  advanced automation, security, and optimization to deliver unmatched performance.
+                </p>
+                
+                <div className="space-y-4">
                   {benefits.map((benefit, index) => (
-                    <div key={index} className="flex items-start">
-                      <div className="w-6 h-6 rounded-full bg-blue-500/20 flex items-center justify-center mr-4 mt-1">
-                        <Check className="w-4 h-4 text-blue-500" />
-                      </div>
-                      <span className="text-gray-300 text-lg">{benefit}</span>
-                    </div>
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+                      className="flex items-start space-x-3"
+                    >
+                      <CheckCircle className="w-6 h-6 text-cyan-400 mt-1 flex-shrink-0" />
+                      <span className="text-gray-300">{benefit}</span>
+                    </motion.div>
                   ))}
                 </div>
-              </div>
-              
-              <div className="relative">
-                <div className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-3xl p-8 border border-blue-500/20">
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="relative"
+              >
+                <div className="w-full h-80 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-2xl flex items-center justify-center">
                   <div className="text-center">
-                    <Cloud className="w-24 h-24 mx-auto mb-6 text-blue-400" />
-                    <h3 className="text-2xl font-bold text-white mb-4">
-                      Global Infrastructure
-                    </h3>
-                    <p className="text-gray-300 mb-6">
-                      Deploy your applications across multiple regions for optimal performance
-                    </p>
-                    <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/20 text-blue-400 text-sm">
-                      <Globe className="w-4 h-4 mr-2" />
-                      15+ regions worldwide
-                    </div>
+                    <Globe className="w-24 h-24 text-blue-400 mx-auto mb-4" />
+                    <h3 className="text-2xl font-bold text-white mb-2">Global Infrastructure</h3>
+                    <p className="text-gray-300">Worldwide cloud presence</p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-24 bg-gradient-to-r from-blue-600 to-blue-700">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-              Ready to Scale Your Infrastructure?
-            </h2>
-            <p className="text-xl text-blue-100 mb-8">
-              Deploy your applications on enterprise-grade cloud infrastructure
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                href="/contact"
-                variant="secondary"
-                size="lg"
-                className="bg-white text-blue-600 hover:bg-gray-100"
+        {/* Cloud Architecture Diagram */}
+        <section className="py-20 px-4">
+          <div className="container mx-auto max-w-6xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-4">Multi-Cloud Architecture</h2>
+              <p className="text-xl text-gray-300">Seamlessly orchestrated across multiple cloud providers</p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                className="text-center p-8 bg-black/40 border border-gray-800 rounded-2xl"
               >
-                Start Free Trial
-              </Button>
-              <Button
-                href="/contact"
-                variant="outline"
-                size="lg"
-                className="border-white text-white hover:bg-white hover:text-blue-600"
+                <Server className="w-16 h-16 text-blue-400 mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-white mb-2">Compute Layer</h3>
+                <p className="text-gray-300">Auto-scaling serverless and container infrastructure</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.9 }}
+                className="text-center p-8 bg-black/40 border border-gray-800 rounded-2xl"
               >
-                Contact Sales
-              </Button>
+                <Database className="w-16 h-16 text-cyan-400 mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-white mb-2">Data Layer</h3>
+                <p className="text-gray-300">Managed databases with global replication</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.0 }}
+                className="text-center p-8 bg-black/40 border border-gray-800 rounded-2xl"
+              >
+                <Network className="w-16 h-16 text-green-400 mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-white mb-2">Network Layer</h3>
+                <p className="text-gray-300">Global CDN and edge computing network</p>
+              </motion.div>
             </div>
           </div>
         </section>
+
+        {/* Call to Action */}
+        <section className="py-20 px-4">
+          <div className="container mx-auto max-w-4xl text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.1 }}
+            >
+              <h2 className="text-4xl font-bold text-white mb-6">Ready to Scale in the Cloud?</h2>
+              <p className="text-xl text-gray-300 mb-8">
+                Transform your business with our enterprise-grade cloud platform. Start your journey today.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="/contact"
+                  className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-full hover:from-blue-600 hover:to-cyan-600 transition-all duration-300 transform hover:scale-105"
+                >
+                  Start Cloud Migration
+                </a>
+                <a
+                  href="/multi-cloud-infrastructure"
+                  className="px-8 py-4 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-full hover:bg-cyan-500 hover:text-black transition-all duration-300"
+                >
+                  Explore Multi-Cloud
+                </a>
+              </div>
+            </motion.div>
+          </div>
+        </section>
       </div>
-    </>
+    </Layout>
   );
 }
