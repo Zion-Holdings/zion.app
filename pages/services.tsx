@@ -445,28 +445,61 @@ export default function Services() {
           </div>
         </section>
 
-        {/* Filters and Search */}
-        <section className="mb-12">
-          <div className="max-w-6xl mx-auto">
-            {/* Category Tabs */}
-            <div className="flex flex-wrap gap-4 mb-8">
-              {categories.map((category) => (
-                <button
-                  key={category.id}
-                  onClick={() => setSelectedCategory(category.id)}
-                  className={`flex items-center gap-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
-                    selectedCategory === category.id
-                      ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/25'
-                      : 'bg-white/5 text-gray-300 hover:bg-white/10 border border-gray-700'
-                  }`}
-                >
-                  {category.icon}
-                  {category.name}
-                  <span className="ml-2 px-2 py-1 bg-white/10 rounded-full text-xs">
-                    {category.count}
-                  </span>
-                </button>
-              ))}
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
+                <div className="text-4xl mb-4">💡</div>
+                <h3 className="text-2xl font-bold mb-4 text-yellow-400">Technology Consulting</h3>
+                <p className="text-white/70 mb-6">
+                  Strategic technology consulting to help you navigate digital transformation and innovation challenges.
+                </p>
+                <ul className="space-y-2 text-sm text-white/60">
+                  <li>• Digital Strategy</li>
+                  <li>• Technology Roadmap</li>
+                  <li>• Innovation Workshops</li>
+                  <li>• Performance Audits</li>
+                </ul>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
+                <div className="text-4xl mb-4">🔮</div>
+                <h3 className="text-2xl font-bold mb-4 text-indigo-400">Quantum Computing Solutions</h3>
+                <p className="text-white/70 mb-6">
+                  Next-generation quantum computing automation for complex optimization problems and advanced simulations.
+                </p>
+                <ul className="space-y-2 text-sm text-white/60">
+                  <li>• Quantum Algorithm Development</li>
+                  <li>• Hybrid Classical-Quantum Systems</li>
+                  <li>• Optimization Problem Solving</li>
+                  <li>• Quantum Machine Learning</li>
+                </ul>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
+                <div className="text-4xl mb-4">🌐</div>
+                <h3 className="text-2xl font-bold mb-4 text-emerald-400">Edge Computing & IoT</h3>
+                <p className="text-white/70 mb-6">
+                  Distributed computing solutions that bring intelligence closer to data sources for real-time decision making.
+                </p>
+                <ul className="space-y-2 text-sm text-white/60">
+                  <li>• Edge Device Management</li>
+                  <li>• IoT Infrastructure</li>
+                  <li>• Real-time Processing</li>
+                  <li>• Distributed Intelligence</li>
+                </ul>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
+                <div className="text-4xl mb-4">🛡️</div>
+                <h3 className="text-2xl font-bold mb-4 text-red-400">Cybersecurity & Compliance</h3>
+                <p className="text-white/70 mb-6">
+                  Comprehensive security solutions with automated threat detection and compliance management systems.
+                </p>
+                <ul className="space-y-2 text-sm text-white/60">
+                  <li>• Threat Detection & Response</li>
+                  <li>• Compliance Automation</li>
+                  <li>• Security Monitoring</li>
+                  <li>• Zero Trust Architecture</li>
+                </ul>
+              </div>
             </div>
 
             {/* Search and Sort */}

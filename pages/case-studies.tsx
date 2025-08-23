@@ -153,39 +153,46 @@ const CaseStudiesPage: React.FC = () => {
         "20% improvement in quality control",
         "$8M annual cost savings"
       ],
-      duration: "9 months",
-      teamSize: "10 AI engineers",
-      featured: false,
-      metrics: {
-        efficiency: "35%",
-        wasteReduction: "45%",
-        quality: "20%",
-        savings: "$8M"
-      }
+      technologies: ['Big Data', 'Machine Learning', 'Real-time Analytics', 'Predictive Modeling'],
+      duration: '10 months',
+      teamSize: '10 data scientists + 5 engineers',
+      featured: false
     },
     {
-      id: 6,
-      title: "Quantum Cloud Infrastructure",
-      company: "CloudTech Solutions",
-      industry: "technology",
-      service: "quantum",
-      challenge: "Building quantum-ready cloud infrastructure for next-generation computing applications.",
-      solution: "Developed hybrid classical-quantum cloud platform with seamless integration and quantum security.",
+      id: 'quantum-computing-automation',
+      title: 'Quantum Computing Automation Implementation',
+      company: 'Advanced Research Institute',
+      industry: 'Research & Development',
+      challenge: 'Complex optimization problems taking weeks to solve with classical computing methods',
+      solution: 'Implemented hybrid quantum-classical automation systems for research optimization and simulation',
       results: [
-        "Quantum-ready infrastructure",
-        "50x faster quantum simulations",
-        "100% quantum security compliance",
-        "$12M annual revenue growth"
+        '1000x faster optimization solving',
+        '90% reduction in research time',
+        'Breakthrough discoveries accelerated',
+        'New quantum algorithms developed'
       ],
-      duration: "15 months",
-      teamSize: "18 quantum architects",
-      featured: false,
-      metrics: {
-        readiness: "100%",
-        speed: "50x",
-        security: "100%",
-        growth: "$12M"
-      }
+      technologies: ['Quantum Computing', 'Hybrid Algorithms', 'Optimization', 'Research Automation'],
+      duration: '12 months',
+      teamSize: '15 quantum researchers + 8 engineers',
+      featured: false
+    },
+    {
+      id: 'edge-computing-iot',
+      title: 'Edge Computing IoT Automation',
+      company: 'Smart City Initiative',
+      industry: 'Smart Cities',
+      challenge: 'Centralized processing causing delays in critical city management decisions',
+      solution: 'Deployed edge computing infrastructure across city sensors for real-time autonomous decision making',
+      results: [
+        '95% reduction in response time',
+        'Real-time traffic optimization',
+        'Energy consumption reduced by 25%',
+        'Public safety improved by 40%'
+      ],
+      technologies: ['Edge Computing', 'IoT Sensors', 'Real-time Processing', 'Autonomous Systems'],
+      duration: '18 months',
+      teamSize: '12 engineers + 6 city planners',
+      featured: false
     }
   ];
 
