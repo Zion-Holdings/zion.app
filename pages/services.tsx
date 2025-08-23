@@ -77,7 +77,7 @@ const getServicePricing = (service: any) => {
   if (service.pricing?.starter) return service.pricing.starter;
   if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
   if (service.price?.monthly) return `$${service.price.monthly}/month`;
-  if (typeof service.price === 'string') return service.price;
+  if (service.price) return service.price;
   return 'Contact for pricing';
 };
 
