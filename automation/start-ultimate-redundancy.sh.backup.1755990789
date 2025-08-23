@@ -7,10 +7,17 @@ set -e
 
 # Configuration
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+<<<<<<< HEAD
+WORKSPACE_DIR="$(dirname "$SCRIPT_DIR")"
+LOG_DIR="$WORKSPACE_DIR/automation/logs"
+PID_FILE="$WORKSPACE_DIR/automation/ultimate-redundancy.pid"
+CONFIG_FILE="$WORKSPACE_DIR/automation/ultimate-redundancy-config.json"
+=======
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 LOG_DIR="$PROJECT_ROOT/automation/logs"
 PID_FILE="$PROJECT_ROOT/automation/ultimate-redundancy.pid"
 LOCK_FILE="$PROJECT_ROOT/automation/ultimate-redundancy.lock"
+>>>>>>> origin/cursor/automate-redundancy-and-cleanup-d88b
 
 # Colors for output
 RED='\033[0;31m'
@@ -26,7 +33,11 @@ log() {
     local message="$*"
     local timestamp=$(date '+%Y-%m-%d %H:%M:%S')
     
+<<<<<<< HEAD
+    case "$level" in
+=======
     case $level in
+>>>>>>> origin/cursor/automate-redundancy-and-cleanup-d88b
         "INFO")
             echo -e "${GREEN}[$timestamp] [INFO]${NC} $message"
             ;;
@@ -39,15 +50,50 @@ log() {
         "DEBUG")
             echo -e "${BLUE}[$timestamp] [DEBUG]${NC} $message"
             ;;
+<<<<<<< HEAD
+=======
         *)
             echo -e "[$timestamp] [$level] $message"
             ;;
+>>>>>>> origin/cursor/automate-redundancy-and-cleanup-d88b
     esac
     
     # Write to log file
     echo "[$timestamp] [$level] $message" >> "$LOG_DIR/ultimate-redundancy.log"
 }
 
+<<<<<<< HEAD
+# Ensure log directory exists
+ensure_log_directory() {
+    if [[ ! -d "$LOG_DIR" ]]; then
+        mkdir -p "$LOG_DIR"
+        log "INFO" "Created log directory: $LOG_DIR"
+    fi
+}
+
+# Check if system is already running
+check_running() {
+    if [[ -f "$PID_FILE" ]]; then
+        local pid=$(cat "$PID_FILE")
+        if kill -0 "$pid" 2>/dev/null; then
+            return 0
+        else
+            # PID file exists but process is dead
+            rm -f "$PID_FILE"
+            return 1
+        fi
+    fi
+    return 1
+}
+
+# Check if locked
+check_lock() {
+    if [ -f "$LOCK_FILE" ]; then
+        local lock_pid=$(cat "$LOCK_FILE")
+        if ps -p "$lock_pid" > /dev/null 2>&1; then
+            log "ERROR" "System is locked by process $lock_pid"
+            return 1
+=======
 # Check if script is already running
 check_lock() {
     if [ -f "$LOCK_FILE" ]; then
@@ -55,11 +101,16 @@ check_lock() {
         if kill -0 "$pid" 2>/dev/null; then
             log "ERROR" "Ultimate redundancy system is already running with PID $pid"
             exit 1
+>>>>>>> origin/cursor/automate-redundancy-and-cleanup-d88b
         else
             log "WARN" "Removing stale lock file"
             rm -f "$LOCK_FILE"
         fi
     fi
+<<<<<<< HEAD
+    return 0
+=======
+>>>>>>> origin/cursor/automate-redundancy-and-cleanup-d88b
 }
 
 # Create lock file
@@ -74,6 +125,8 @@ remove_lock() {
     log "INFO" "Lock released"
 }
 
+<<<<<<< HEAD
+=======
 # Ensure log directory exists
 ensure_log_directory() {
     if [ ! -d "$LOG_DIR" ]; then
@@ -82,11 +135,40 @@ ensure_log_directory() {
     fi
 }
 
+>>>>>>> origin/cursor/automate-redundancy-and-cleanup-d88b
 # Check system requirements
 check_requirements() {
     log "INFO" "Checking system requirements..."
     
     # Check Node.js
+<<<<<<< HEAD
+    if ! command -v node >/dev/null 2>&1; then
+        error_exit "Node.js is not installed"
+    fi
+    
+    # Check npm
+    if ! command -v npm >/dev/null 2>&1; then
+        error_exit "npm is not installed"
+    fi
+    
+    # Check PM2
+    if ! command -v pm2 >/dev/null 2>&1; then
+        log "WARN" "PM2 is not installed, installing..."
+        npm install -g pm2 || error_exit "Failed to install PM2"
+    fi
+    
+    # Check git
+    if ! command -v git >/dev/null 2>&1; then
+        error_exit "git is not installed"
+    fi
+    
+    log "INFO" "System requirements satisfied"
+}
+
+# Start PM2 redundancy services
+start_pm2_redundancy() {
+    log "INFO" "Starting PM2 redundancy services..."
+=======
     if ! command -v node &> /dev/null; then
         log "ERROR" "Node.js is not installed"
         exit 1
@@ -113,9 +195,32 @@ check_requirements() {
 # Start PM2 redundancy system
 start_pm2_redundancy() {
     log "INFO" "Starting PM2 redundancy system..."
+>>>>>>> origin/cursor/automate-redundancy-and-cleanup-d88b
     
     cd "$PROJECT_ROOT"
     
+<<<<<<< HEAD
+    # Start all PM2 ecosystems
+    local ecosystems=(
+        "ecosystem.pm2.cjs"
+        "ecosystem.redundancy.cjs"
+        "ecosystem.comprehensive-redundancy.cjs"
+        "ecosystem.ultimate-redundancy.pm2.cjs"
+    )
+    
+    for ecosystem in "${ecosystems[@]}"; do
+        if [ -f "$ecosystem" ]; then
+            log "INFO" "Starting PM2 ecosystem: $ecosystem"
+            pm2 start "$ecosystem" --update-env || log "WARN" "Failed to start $ecosystem"
+        fi
+    done
+    
+    # Install PM2 logrotate if not already installed
+    pm2 install pm2-logrotate 2>/dev/null || true
+    pm2 set pm2-logrotate:max_size 10M || true
+    pm2 set pm2-logrotate:retain 30 || true
+    pm2 set pm2-logrotate:compress true || true
+=======
     # Start comprehensive redundancy ecosystem
     if [ -f "ecosystem.comprehensive-redundancy.cjs" ]; then
         log "INFO" "Starting comprehensive redundancy ecosystem..."
@@ -142,10 +247,19 @@ start_pm2_redundancy() {
     pm2 set pm2-logrotate:compress true || true
     pm2 set pm2-logrotate:workerInterval 60 || true
     pm2 set pm2-logrotate:rotateInterval '0 0 * * *' || true
+>>>>>>> origin/cursor/automate-redundancy-and-cleanup-d88b
     
     # Save PM2 configuration
     pm2 save || true
     
+<<<<<<< HEAD
+    log "INFO" "PM2 redundancy services started"
+}
+
+# Start GitHub Actions redundancy
+start_github_redundancy() {
+    log "INFO" "Starting GitHub Actions redundancy..."
+=======
     log "INFO" "PM2 redundancy system started successfully"
     return 0
 }
@@ -153,9 +267,42 @@ start_pm2_redundancy() {
 # Start GitHub Actions redundancy
 start_github_actions_redundancy() {
     log "INFO" "Starting GitHub Actions redundancy system..."
+>>>>>>> origin/cursor/automate-redundancy-and-cleanup-d88b
     
     cd "$PROJECT_ROOT"
     
+<<<<<<< HEAD
+    # Check if workflows directory exists
+    if [ -d ".github/workflows" ]; then
+        # Ensure backup workflows exist
+        local workflows=(
+            "marketing-sync.yml"
+            "sync-health.yml"
+        )
+        
+        for workflow in "${workflows[@]}"; do
+            local workflow_path=".github/workflows/$workflow"
+            local backup_path=".github/workflows/${workflow%.yml}-backup.yml"
+            
+            if [ -f "$workflow_path" ] && [ ! -f "$backup_path" ]; then
+                log "INFO" "Creating backup for $workflow"
+                cp "$workflow_path" "$backup_path"
+            fi
+        done
+        
+        log "INFO" "GitHub Actions redundancy configured"
+    else
+        log "WARN" "GitHub workflows directory not found"
+    fi
+}
+
+# Start Netlify functions redundancy
+start_netlify_redundancy() {
+    log "INFO" "Starting Netlify functions redundancy..."
+    
+    cd "$PROJECT_ROOT"
+    
+=======
 # Start the ultimate redundancy system
 start_system() {
     log "INFO" "Starting Ultimate Redundancy Automation System..."
@@ -522,9 +669,17 @@ stop_all() {
             log "INFO" "Stopping ultimate redundancy master (PID: $pid)..."
             kill "$pid" || true
             rm -f "$PID_FILE"
+>>>>>>> origin/cursor/automate-redundancy-and-cleanup-d88b
         fi
     fi
     
+<<<<<<< HEAD
+    # Kill any remaining node processes from our scripts
+    pkill -f "ultimate-redundancy-master.cjs" 2>/dev/null || true
+    pkill -f "redundancy.*\.cjs" 2>/dev/null || true
+    
+    log "INFO" "All services stopped"
+=======
     # Stop PM2 processes
     cd "$PROJECT_ROOT"
     log "INFO" "Stopping PM2 redundancy processes..."
@@ -533,6 +688,7 @@ stop_all() {
     pm2 stop ecosystem.pm2.cjs || true
     
     log "INFO" "Ultimate redundancy system stopped"
+>>>>>>> origin/cursor/automate-redundancy-and-cleanup-d88b
 }
 
 # Restart all redundancy systems
@@ -545,6 +701,31 @@ restart_all() {
 
 # Show system status
 show_status() {
+<<<<<<< HEAD
+    log "INFO" "Showing system status..."
+    
+    cd "$WORKSPACE_DIR"
+    
+    echo -e "${BLUE}=== ULTIMATE REDUNDANCY SYSTEM STATUS ===${NC}"
+    
+    # PM2 Status
+    if command -v pm2 >/dev/null 2>&1; then
+        echo -e "${YELLOW}PM2 Status:${NC}"
+        pm2 status 2>/dev/null || echo "PM2 not running"
+        echo
+    fi
+    
+    # Process Status
+    if [ -f "$PID_FILE" ]; then
+        local pid=$(cat "$PID_FILE")
+        if ps -p "$pid" > /dev/null 2>&1; then
+            echo -e "${GREEN}Ultimate Redundancy Master: RUNNING (PID: $pid)${NC}"
+        else
+            echo -e "${RED}Ultimate Redundancy Master: NOT RUNNING${NC}"
+        fi
+    else
+        echo -e "${RED}Ultimate Redundancy Master: NOT RUNNING${NC}"
+=======
     log "INFO" "Ultimate redundancy system status:"
     
     cd "$PROJECT_ROOT"
@@ -566,9 +747,23 @@ show_status() {
         fi
     else
         log "WARN" "Ultimate redundancy master: NOT RUNNING (no PID file)"
+>>>>>>> origin/cursor/automate-redundancy-and-cleanup-d88b
     fi
     echo
     
+<<<<<<< HEAD
+    # Log Files
+    echo -e "${YELLOW}Recent Log Files:${NC}"
+    find "$LOG_DIR" -name "*.log" -type f -exec ls -lh {} \; 2>/dev/null | head -10 || echo "No log files found"
+    echo
+    
+    # System Health
+    if health_check >/dev/null 2>&1; then
+        echo -e "${GREEN}System Health: HEALTHY${NC}"
+    else
+        echo -e "${RED}System Health: UNHEALTHY${NC}"
+    fi
+=======
     # File status
     echo ""
     log "INFO" "=== File Status ==="
@@ -588,16 +783,27 @@ show_status() {
             log "WARN" "❌ $file missing"
         fi
     done
+>>>>>>> origin/cursor/automate-redundancy-and-cleanup-d88b
 }
 
 # Show logs
 show_logs() {
+<<<<<<< HEAD
+    local lines="${1:-50}"
+    log "INFO" "Showing last $lines lines of logs..."
+    
+    if [ -f "$LOG_DIR/ultimate-redundancy.log" ]; then
+        tail -n "$lines" "$LOG_DIR/ultimate-redundancy.log"
+    else
+        log "WARN" "No log file found"
+=======
     log "INFO" "Showing recent logs..."
     
     if [ -f "$LOG_DIR/ultimate-redundancy.log" ]; then
         echo ""
         log "INFO" "=== Ultimate Redundancy Logs ==="
         tail -50 "$LOG_DIR/ultimate-redundancy.log"
+>>>>>>> origin/cursor/automate-redundancy-and-cleanup-d88b
     fi
     
     if [ -f "$LOG_DIR/ultimate-redundancy-master.log" ]; then
@@ -611,6 +817,8 @@ show_logs() {
     pm2 logs --lines 20 --nostream || true
 }
 
+<<<<<<< HEAD
+=======
 # Generate health report
 generate_report() {
     log "INFO" "Generating health report..."
@@ -642,10 +850,59 @@ test_systems() {
     log "INFO" "System test completed"
 }
 
+>>>>>>> origin/cursor/automate-redundancy-and-cleanup-d88b
 # Main function
 main() {
     local command="${1:-start}"
     
+<<<<<<< HEAD
+    case "$command" in
+        start)
+            if check_running; then
+                log "INFO" "System already running"
+                exit 0
+            fi
+            
+            if ! check_lock; then
+                error_exit "Cannot acquire lock"
+            fi
+            
+            acquire_lock
+            
+            log "INFO" "Starting Ultimate Redundancy System..."
+            
+            check_requirements
+            start_pm2_redundancy
+            start_github_redundancy
+            start_netlify_redundancy
+            start_automation_redundancy
+            start_ultimate_master
+            
+            # Wait a moment for services to start
+            sleep 5
+            
+            if health_check; then
+                log "INFO" "Ultimate Redundancy System started successfully"
+                echo -e "${GREEN}Ultimate Redundancy System is now running!${NC}"
+            else
+                error_exit "System failed health check"
+            fi
+            
+            release_lock
+            ;;
+            
+        stop)
+            log "INFO" "Stopping Ultimate Redundancy System..."
+            stop_services
+            log "INFO" "System stopped"
+            ;;
+            
+        restart)
+            log "INFO" "Restarting Ultimate Redundancy System..."
+            stop_services
+            sleep 2
+            "$0" start
+=======
     case $command in
         "start")
             check_lock
@@ -662,10 +919,56 @@ main() {
             create_lock
             trap remove_lock EXIT
             restart_all
+>>>>>>> origin/cursor/automate-redundancy-and-cleanup-d88b
             ;;
         "status")
             show_status
             ;;
+<<<<<<< HEAD
+            
+        logs)
+            show_logs "$2"
+            ;;
+            
+        health)
+            if health_check; then
+                echo -e "${GREEN}System is healthy${NC}"
+                exit 0
+            else
+                echo -e "${RED}System is unhealthy${NC}"
+                exit 1
+            fi
+            ;;
+            
+        check)
+            log "INFO" "Running system check..."
+            cd "$WORKSPACE_DIR"
+            if [ -f "automation/ultimate-redundancy-master.cjs" ]; then
+                node automation/ultimate-redundancy-master.cjs check
+            else
+                error_exit "Ultimate redundancy master script not found"
+            fi
+            ;;
+            
+        *)
+            echo -e "${BLUE}Ultimate Redundancy System - Usage:${NC}"
+            echo "  $0 [command]"
+            echo
+            echo "Commands:"
+            echo "  start     - Start the redundancy system"
+            echo "  stop      - Stop the redundancy system"
+            echo "  restart   - Restart the redundancy system"
+            echo "  status    - Show system status"
+            echo "  logs [n]  - Show last n lines of logs (default: 50)"
+            echo "  health    - Check system health"
+            echo "  check     - Run comprehensive system check"
+            echo
+            echo "Examples:"
+            echo "  $0 start"
+            echo "  $0 status"
+            echo "  $0 logs 100"
+            echo "  $0 health"
+=======
 # Show system logs
 show_logs() {
     log "INFO" "Showing Ultimate Redundancy Automation System logs..."
@@ -838,10 +1141,15 @@ main() {
         *)
             log "ERROR" "Unknown command: $command"
             log "INFO" "Use '$0 help' for usage information"
+>>>>>>> origin/cursor/automate-redundancy-and-cleanup-d88b
             exit 1
             ;;
     esac
 }
 
 # Run main function with all arguments
+<<<<<<< HEAD
 main "$@"
+=======
+main "$@"
+>>>>>>> origin/cursor/automate-redundancy-and-cleanup-d88b
