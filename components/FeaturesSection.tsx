@@ -132,9 +132,9 @@ const FeaturesSection: React.FC = () => {
             <h3 className="text-2xl font-bold text-white mb-4">
               Ready to Transform Your Business?
             </h3>
-                           <p className="text-white/80 mb-6 max-w-2xl mx-auto">
-                 Let&apos;s discuss how our innovative solutions can drive your digital transformation journey.
-               </p>
+                         <p className="text-white/80 mb-6 max-w-2xl mx-auto">
+               Let&apos;s discuss how our innovative solutions can drive your digital transformation journey.
+             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/contact"
