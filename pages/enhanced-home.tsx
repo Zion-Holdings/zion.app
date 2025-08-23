@@ -1,1 +1,3 @@
-export default function EnhancedHomePage() { return <div className="py-12">Enhanced home coming soon.</div>; }
+export default function EnhancedHome(){
+  return <div className="max-w-3xl mx-auto p-6">Enhanced Home</div>;
+}

@@ -1,1 +1,3 @@
-export default function AuthIndexPage() { return <div className="py-12">Auth portal coming soon.</div>; }
+export default function Auth(){
+  return <div className="max-w-3xl mx-auto p-6">Auth</div>;
+}

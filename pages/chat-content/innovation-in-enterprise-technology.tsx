@@ -1,1 +1,3 @@
-export default function InnovationEnterpriseTechChat() { return <div className="py-12">Innovation in enterprise technology.</div>; }
+export default function Page(){
+  return <div className="max-w-3xl mx-auto p-6">Innovation in Enterprise Technology</div>;
+}
