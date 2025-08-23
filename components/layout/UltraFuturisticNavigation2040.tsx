@@ -31,14 +31,8 @@ const navigationItems: NavigationItem[] = [
         description: 'Advanced AI solutions for enterprise'
       },
       {
-        label: 'Innovative 2040 Services',
-        href: '/innovative-2040-futuristic-services-showcase',
-        icon: <Star className="w-4 h-4" />,
-        description: 'Cutting-edge futuristic technology solutions'
-      },
-      {
         label: 'Quantum Computing',
-        href: '/quantum-computing',
+        href: '/quantum-services',
         icon: <Zap className="w-4 h-4" />,
         description: 'Next-generation quantum solutions'
       },
@@ -61,6 +55,12 @@ const navigationItems: NavigationItem[] = [
         description: 'Scalable cloud infrastructure'
       },
       {
+        label: 'Micro SaaS',
+        href: '/micro-saas',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Rapid deployment SaaS solutions'
+      },
+      {
         label: 'View All Services',
         href: '/services',
         icon: <ArrowRight className="w-4 h-4" />,
@@ -69,9 +69,97 @@ const navigationItems: NavigationItem[] = [
     ]
   },
   {
-    label: 'About',
-    href: '/about',
-    icon: <Users className="w-4 h-4" />
+    label: 'Solutions',
+    children: [
+      {
+        label: 'Enterprise IT',
+        href: '/enterprise-solutions-showcase',
+        icon: <Globe className="w-4 h-4" />,
+        description: 'Complete enterprise IT solutions'
+      },
+      {
+        label: 'Healthcare',
+        href: '/healthcare-solutions',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Healthcare technology solutions'
+      },
+      {
+        label: 'Financial Services',
+        href: '/financial-solutions',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Fintech and banking solutions'
+      },
+      {
+        label: 'Manufacturing',
+        href: '/manufacturing-ai-solutions',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Smart manufacturing solutions'
+      }
+    ]
+  },
+  {
+    label: 'Resources',
+    children: [
+      {
+        label: 'API Documentation',
+        href: '/api',
+        icon: <Globe className="w-4 h-4" />,
+        description: 'Developer APIs and documentation'
+      },
+      {
+        label: 'Webinars',
+        href: '/webinars',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Technology webinars and events'
+      },
+      {
+        label: 'Case Studies',
+        href: '/case-studies',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Customer success stories'
+      },
+      {
+        label: 'Blog',
+        href: '/blog',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Technology insights and trends'
+      },
+      {
+        label: 'Documentation',
+        href: '/docs',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Technical documentation'
+      }
+    ]
+  },
+  {
+    label: 'Company',
+    children: [
+      {
+        label: 'About Us',
+        href: '/about',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Our story and mission'
+      },
+      {
+        label: 'Careers',
+        href: '/careers',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Join our team'
+      },
+      {
+        label: 'News',
+        href: '/news',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Latest company news'
+      },
+      {
+        label: 'Partners',
+        href: '/partners',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Technology partners'
+      }
+    ]
   },
   {
     label: 'Contact',
