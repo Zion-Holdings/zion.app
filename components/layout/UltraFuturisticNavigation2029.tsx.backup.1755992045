@@ -28,10 +28,18 @@ const serviceCategories = [
     color: 'from-violet-600 to-purple-600',
     description: 'Next-generation artificial intelligence',
     services: [
+<<<<<<< HEAD
+      { name: 'AI Emotional Intelligence Platform', href: '/ai-emotional-intelligence-platform-2029', description: 'Real-time emotion detection and response', price: '$3,999/month' },
+      { name: 'AI Creativity Orchestrator', href: '/ai-creativity-orchestrator-2029', description: 'Multi-model creativity fusion', price: '$5,999/month' },
+      { name: 'AI Predictive Maintenance Platform', href: '/ai-predictive-maintenance-platform-2029', description: 'IoT-powered predictive maintenance', price: '$2,999/month' },
+      { name: 'AI Personalized Learning Platform', href: '/ai-personalized-learning-platform-2029', description: 'Adaptive learning with AI', price: '$1,999/month' },
+      { name: 'AI Healthcare Diagnostic Platform', href: '/ai-healthcare-diagnostic-platform-2029', description: 'Advanced medical AI diagnostics', price: '$4,999/month' }
+=======
       { name: 'AI Consciousness Simulation Platform', href: '/ai-consciousness-simulation-platform', description: 'Simulate human consciousness in AI systems', price: '$12,999/month' },
       { name: 'Autonomous AI Corporation Platform', href: '/autonomous-ai-corporation-platform', description: 'AI systems that run entire corporations', price: '$45,999/month' },
       { name: 'AI Emotional Intelligence Platform', href: '/ai-emotional-intelligence-platform', description: 'AI that understands human emotions', price: '$8,999/month' },
       { name: 'AI Creative Content Studio', href: '/ai-creative-content-studio', description: 'Generate unlimited creative content', price: '$3,999/month' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0ab4
     ]
   },
   {
@@ -49,6 +57,8 @@ const serviceCategories = [
   {
     title: '🌌 2029 Space Innovation Services',
     icon: Rocket,
+<<<<<<< HEAD
+=======
     color: 'from-red-600 to-orange-600',
     description: 'Interplanetary expansion and resource extraction',
     services: [
@@ -126,6 +136,7 @@ const serviceCategories = [
   {
     title: '🏙️ Smart City & Infrastructure',
     icon: Building,
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0ab4
     color: 'from-blue-600 to-cyan-600',
     description: 'Space technology breakthroughs',
     services: [

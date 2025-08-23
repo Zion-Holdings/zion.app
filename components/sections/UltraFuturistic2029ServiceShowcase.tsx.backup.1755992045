@@ -4,6 +4,9 @@ import { ChevronDown, Star, TrendingUp, Zap, Brain, Cpu, Shield, Rocket, Globe, 
 import UltraFuturisticServiceCard from '../ui/UltraFuturisticServiceCard';
 import { CuttingEdgeInnovation2029 } from '../../data/2029-cutting-edge-innovations';
 
+<<<<<<< HEAD
+type Service = CuttingEdgeInnovation2029 | any;
+=======
 interface Service {
   id: string;
   name: string;
@@ -54,6 +57,7 @@ interface Service {
   marketDisruption: string;
   variant: string;
 }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0ab4
 
 interface UltraFuturistic2029ServiceShowcaseProps {
   services: Service[];

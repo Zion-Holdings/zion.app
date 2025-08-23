@@ -48,6 +48,15 @@
   --holographic-wave: 0 0 200px rgba(139, 92, 246, 0.12);
   --cyberpunk-pulse: 0 0 180px rgba(236, 73, 153, 0.1);
   
+<<<<<<< HEAD
+  /* Enhanced color variables */
+  --space-blue: #0ea5e9;
+  --quantum-purple: #7c3aed;
+  --biotech-emerald: #059669;
+  --ai-cyan: #0891b2;
+  --robotics-orange: #ea580c;
+  --cyberpunk-pink: #be185d;
+=======
   /* New Enhanced Variables */
   --quantum-aura: 0 0 300px rgba(0, 255, 255, 0.05);
   --holographic-aura: 0 0 400px rgba(139, 92, 246, 0.08);
@@ -75,6 +84,7 @@
   --biotech-neural-2029: 0 0 2600px rgba(16, 185, 129, 0.02);
   --ai-consciousness-2029: 0 0 3500px rgba(139, 92, 246, 0.02);
   --quantum-space-2029: 0 0 4000px rgba(0, 255, 255, 0.01);
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0ab4
 }
 
 /* Enhanced Scrollbar */
@@ -100,6 +110,9 @@
   box-shadow: var(--holographic-glow);
 }
 
+<<<<<<< HEAD
+/* Focus styles */
+=======
 /* Enhanced Selection */
 ::selection {
   background: rgba(0, 255, 255, 0.35);
@@ -271,6 +284,7 @@
   0% { background-position: 0px 0px; }
   100% { background-position: 60px 60px; }
 }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0ab4
 *:focus {
   outline: 2px solid var(--primary);
   outline-offset: 2px;

@@ -54,6 +54,9 @@ import { nextGenAI2026Services } from '../data/next-gen-ai-2026-services';
 import { innovative2026MicroSaasServicesV3 } from '../data/innovative-2026-micro-saas-v3';
 import { emergingTech2026ServicesV3 } from '../data/emerging-tech-2026-services-v3';
 import { enterpriseIT2026ServicesV3 } from '../data/enterprise-it-2026-services-v3';
+<<<<<<< HEAD
+import { nextGenAI2026ServicesV3 } from '../data/next-gen-ai-2026-services-v3';
+=======
 import { ultimate2026Services } from '../data/ultimate-2026-services';
 import { cuttingEdge2027Innovations } from '../data/2027-cutting-edge-innovations';
 import { practicalMicroSaas2027 } from '../data/2027-practical-micro-saas';
@@ -74,6 +77,7 @@ import { spaceColonization2029Services } from '../data/2029-space-colonization-s
 import { advancedAI2029Services } from '../data/2029-advanced-ai-services';
 import { cybersecurityBlockchain2029Services } from '../data/2029-cybersecurity-blockchain-services';
 import { iotEdgeComputing2029Services } from '../data/2029-iot-edge-computing-services';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0ab4
 
 export default function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);

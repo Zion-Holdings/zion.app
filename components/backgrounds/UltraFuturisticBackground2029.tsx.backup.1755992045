@@ -29,6 +29,20 @@ const UltraFuturisticBackground2029: React.FC<UltraFuturisticBackground2029Props
       alpha: number;
     }> = [];
 
+<<<<<<< HEAD
+    // Create particles
+    for (let i = 0; i < 200; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 2,
+        vy: (Math.random() - 0.5) * 2,
+        size: Math.random() * 3 + 1,
+        color: `hsl(${Math.random() * 360}, 70%, 60%)`,
+        alpha: Math.random() * 0.5 + 0.3,
+      });
+    }
+=======
     // Enhanced quantum particles with advanced physics
     const particles = Array.from({ length: intensity === 'high' ? 400 : intensity === 'medium' ? 250 : 150 }, () => ({
       x: Math.random() * canvas.width,
@@ -59,11 +73,20 @@ const UltraFuturisticBackground2029: React.FC<UltraFuturisticBackground2029Props
 
     // Enhanced neon wave effect
     let waveOffset = 0;
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0ab4
 
     // Animation loop
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+<<<<<<< HEAD
+      // Update and draw particles
+      particles.forEach((particle) => {
+        particle.x += particle.vx;
+        particle.y += particle.vy;
+
+        // Wrap around edges
+=======
       // Update and draw particles with enhanced effects
       particles.forEach((particle, index) => {
         particle.x += particle.vx;
@@ -98,11 +121,45 @@ const UltraFuturisticBackground2029: React.FC<UltraFuturisticBackground2029Props
         }
 
         // Wrap around edges with quantum tunneling effect
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0ab4
         if (particle.x < 0) particle.x = canvas.width;
         if (particle.x > canvas.width) particle.x = 0;
         if (particle.y < 0) particle.y = canvas.height;
         if (particle.y > canvas.height) particle.y = 0;
 
+<<<<<<< HEAD
+        // Draw particle
+        ctx.save();
+        ctx.globalAlpha = particle.alpha;
+        ctx.fillStyle = particle.color;
+        ctx.shadowColor = particle.color;
+        ctx.shadowBlur = 20;
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      });
+
+      // Draw connecting lines
+      particles.forEach((p1, i) => {
+        particles.slice(i + 1).forEach((p2) => {
+          const dx = p1.x - p2.x;
+          const dy = p1.y - p2.y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < 100) {
+            ctx.save();
+            ctx.strokeStyle = `rgba(100, 200, 255, ${0.1 * (1 - distance / 100)})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.stroke();
+            ctx.restore();
+          }
+        });
+      });
+=======
         // Regenerate particles
         if (particle.life <= 0) {
           particle.x = Math.random() * canvas.width;
@@ -249,6 +306,7 @@ const UltraFuturisticBackground2029: React.FC<UltraFuturisticBackground2029Props
         ctx.arc(mousePosition.x, mousePosition.y, mouseRadius, 0, Math.PI * 2);
         ctx.fill();
       }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0ab4
 
       requestAnimationFrame(animate);
     };
@@ -269,6 +327,19 @@ const UltraFuturisticBackground2029: React.FC<UltraFuturisticBackground2029Props
   }, []);
 
   return (
+<<<<<<< HEAD
+    <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+      {/* Animated gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 animate-pulse" />
+        <div className="absolute inset-0 bg-gradient-to-t from-blue-500/5 via-indigo-500/5 to-purple-500/5 animate-pulse" style={{ animationDelay: '1s' }} />
+      </div>
+
+      {/* Canvas particle system */}
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 w-full h-full"
+=======
     <div 
       className={`relative min-h-screen overflow-hidden ${className}`}
       onMouseMove={handleMouseMove}
@@ -279,6 +350,7 @@ const UltraFuturisticBackground2029: React.FC<UltraFuturisticBackground2029Props
       <canvas
         ref={canvasRef}
         className="fixed inset-0 w-full h-full pointer-events-none z-0"
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0ab4
         style={{ filter: 'blur(0.5px)' }}
       />
 
@@ -503,6 +575,10 @@ const UltraFuturisticBackground2029: React.FC<UltraFuturisticBackground2029Props
         />
       </div>
       
+<<<<<<< HEAD
+      {/* Render children */}
+      {children}
+=======
       {/* Enhanced Radial Gradients */}
       <div className="fixed inset-0 pointer-events-none z-0">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-radial from-cyan-500/10 via-transparent to-transparent" />
@@ -556,6 +632,7 @@ const UltraFuturisticBackground2029: React.FC<UltraFuturisticBackground2029Props
       <div className="relative z-10">
         {children}
       </div>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-0ab4
     </div>
   );
 };
