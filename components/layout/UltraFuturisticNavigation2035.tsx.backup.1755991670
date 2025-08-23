@@ -163,12 +163,21 @@ const navigationItems: NavigationItem[] = [
     description: 'Browse by category',
     badge: 'New',
     children: [
+<<<<<<< HEAD
+      { name: 'AI & Data', href: '/services#ai', description: 'AI, data, ML services' },
+      { name: 'Developer Tools', href: '/services#developer-tools', description: 'Dev tools & growth' },
+      { name: 'Cloud & FinOps', href: '/services#cloud', description: 'Cloud, cost, platform' },
+      { name: 'Observability', href: '/services#observability', description: 'Monitoring & telemetry' },
+      { name: 'Quality & Monitoring', href: '/services#quality', description: 'Quality & testing' },
+      { name: 'AI Evaluation Orchestrator', href: '/ai-evaluation-orchestrator', description: 'Automated LLM evals' },
+=======
       { name: 'AI & Consciousness', href: '/services#ai-consciousness', description: 'AI, data, ML services' },
       { name: 'Enterprise IT', href: '/services#enterprise-it', description: 'Cloud, cost, platform' },
       { name: 'Quantum & Emerging', href: '/services#quantum-emerging', description: 'Monitoring & telemetry' },
       { name: 'Micro SAAS', href: '/services#micro-saas', description: 'Business tools and automation' },
       { name: 'Education & Research', href: '/services#education-research', description: 'Learning and R&D' },
       { name: 'AI Evaluation Orchestrator', href: '/services/ai-evaluation-orchestrator', description: 'Automated LLM evals' },
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-ce67
       { name: 'SEO Automation Suite', href: '/seo-automation-suite', description: 'Technical SEO automation' },
       { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent', description: 'Agentless discovery' },
       { name: 'Managed Postgres HA', href: '/managed-postgres-ha', description: 'HA Postgres ops' }
@@ -211,8 +220,11 @@ const navigationItems: NavigationItem[] = [
       { name: 'Intelligent Content Automation', href: '/intelligent-content-automation-platform', description: 'Automate content creation' },
       { name: 'AI HR Analytics', href: '/ai-hr-analytics-platform', description: 'Transform HR with AI insights' },
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', description: 'Emotional intelligence and self-awareness' },
+<<<<<<< HEAD
+=======
       { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network', description: 'Hybrid AI-Quantum computing platform' },
       { name: 'AI Autonomous Business Operations', href: '/ai-autonomous-business-operations', description: 'Fully autonomous business management' },
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-ce67
       { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant', description: 'Self-directed AI research' },
       { name: 'AI Predictive Maintenance', href: '/ai-predictive-maintenance-platform', description: 'Equipment failure prediction' }
     ]

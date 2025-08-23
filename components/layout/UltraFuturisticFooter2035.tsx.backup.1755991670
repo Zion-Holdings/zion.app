@@ -28,16 +28,35 @@ const footerSections = [
       { name: 'AI Decision Engine', href: '/ai-powered-decision-engine' },
       { name: 'Content Automation', href: '/intelligent-content-automation-platform' },
       { name: 'CRM Intelligence Suite', href: '/smart-crm-intelligence-suite' },
+<<<<<<< HEAD
+      { name: 'AI Evaluation Orchestrator', href: '/ai-evaluation-orchestrator', featured: true },
+      { name: 'SEO Automation Suite', href: '/seo-automation-suite' },
+      { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent' },
+      { name: 'Managed Postgres HA', href: '/managed-postgres-ha' },
+      // Newly added
+      { name: 'RAG Evaluation Lab', href: '/services/rag-evaluation-lab', featured: true },
+      { name: 'Browser Automation Cloud', href: '/services/browser-automation-cloud' },
+      { name: 'Secrets Rotation Automation', href: '/services/secrets-rotation-automation' },
+      { name: 'API Performance Testing', href: '/services/api-performance-testing' }
+=======
       { name: 'AI Evaluation Orchestrator', href: '/services/ai-evaluation-orchestrator', featured: true },
              { name: 'SEO Automation Suite', href: '/seo-automation-suite' },
                { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent' },
         { name: 'Managed Postgres HA', href: '/managed-postgres-ha' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-ce67
     ]
   },
   {
     title: 'AI & Consciousness',
     icon: <Brain className="w-5 h-5" />,
     links: [
+<<<<<<< HEAD
+      { name: 'AI Consciousness Evolution', href: '/services/ai-consciousness-evolution-platform' },
+      { name: 'Quantum Emotional Intelligence', href: '/services/quantum-emotional-intelligence-engine' },
+      { name: 'Autonomous Creative AI Studio', href: '/services/autonomous-creative-ai-studio' },
+      { name: 'AI Consciousness Monitoring', href: '/services/ai-consciousness-monitoring-system' },
+      { name: 'View All AI Services', href: '/ai-services' }
+=======
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029' },
       { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network' },
       { name: 'AI Autonomous Business Operations', href: '/ai-autonomous-business-operations' },
@@ -47,12 +66,20 @@ const footerSections = [
       { name: 'AI Content Personalization', href: '/ai-content-personalization-engine' },
       { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem-manager' },
       { name: 'AI Ethics & Governance', href: '/ai-ethics-governance-framework' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-ce67
     ]
   },
   {
     title: 'IT & Infrastructure',
     icon: <Cpu className="w-5 h-5" />,
     links: [
+<<<<<<< HEAD
+      { name: 'Quantum Cloud Infrastructure', href: '/services/quantum-cloud-infrastructure-platform' },
+      { name: 'Autonomous Cybersecurity', href: '/services/autonomous-cybersecurity-orchestrator' },
+      { name: 'Quantum Data Center Solutions', href: '/services/quantum-data-center-solutions' },
+      { name: 'AI-Powered DevOps Automation', href: '/services/ai-powered-devops-automation' },
+      { name: 'View All IT Services', href: '/it-services' }
+=======
       { name: 'Space Resource Mining', href: '/space-resource-mining-platform' },
       { name: 'Quantum Internet Security', href: '/quantum-internet-security-platform' },
       { name: 'Quantum-Secure Cloud Infrastructure', href: '/quantum-secure-cloud-infrastructure' },
@@ -64,6 +91,7 @@ const footerSections = [
       { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' },
       { name: 'Quantum Energy Platform', href: '/quantum-energy-platform' },
       { name: 'Quantum Robotics', href: '/quantum-robotics' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-ce67
     ]
   },
   {
