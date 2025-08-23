@@ -1,8 +1,7 @@
 {
-  "generatedAt": "2025-08-11T22:38:01.879Z",
+  "generatedAt": "2025-08-11T22:37:03.697Z",
   "functions": [
     "ai-changelog-runner",
-    "ai-trends-radar",
     "auto-scheduler",
     "automation-matrix",
     "autonomous-innovation-generator",
@@ -30,6 +29,7 @@
     "front-visionary-expander",
     "frontpage-enhancer",
     "frontpage-scheduler",
+    "functions-directory",
     "home-visionary-expander",
     "homepage-advertiser-scheduler",
     "homepage-enhancer",
@@ -44,7 +44,6 @@
     "maintenance-scheduler",
     "marketing-and-features-promo",
     "marketing-scheduler",
-    "media-auto-release",
     "media-og-and-optimize",
     "netlify-auto-healer-runner",
     "newsroom-auto-publisher",
@@ -54,7 +53,6 @@
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",
-    "revenue-ideas-orchestrator",
     "schedule-content-index",
     "schedule-homepage",
     "schedule-knowledge-graph",

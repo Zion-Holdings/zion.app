@@ -7,8 +7,8 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
 const FRONT_PAGE = path.join(ROOT, 'pages', 'main', 'front', 'index.tsx');
-const START = '{/* AUTO-GENERATED: FRONT_ADS_START */';
-const END = '/* AUTO-GENERATED: FRONT_ADS_END */}';
+const START = '{/* AUTO-GENERATED: FRONT_ADS_START */}';
+const END = '{/* AUTO-GENERATED: FRONT_ADS_END */}';
 
 function log(msg) {
   process.stdout.write(`[front-index-auto-advertiser] ${msg}\n`);
@@ -23,10 +23,7 @@ function buildTiles() {
     { href: '/newsroom', label: 'Newsroom', tagline: 'Autonomous updates & highlights' },
     { href: '/.netlify/functions/docs-index-runner', label: 'Docs', tagline: 'Technical notes & guides' },
     { href: '/newsroom', label: 'AI Changelog', tagline: 'Summarized autonomous changes' },
-    { href: '/.netlify/functions/autonomous-front-home-accelerator', label: 'Front+Home Accelerator', tagline: 'Futurize, advertise, and sync' },
-    { href: '/.netlify/functions/link-healer-committer', label: 'Dead Link Healer', tagline: 'Crawl, fix, and commit' },
-    { href: '/.netlify/functions/newsroom-auto-curator', label: 'Newsroom Curator', tagline: 'Generate updates & changelog' },
-    { href: '/.netlify/functions/trends-to-promos-writer', label: 'Trends → Promos', tagline: 'Turn research into highlights' }
+    { href: '/automation/functions-directory', label: 'Autonomy Directory', tagline: 'Browse all cloud functions' }
   ];
 
   return items.map((it) => {
