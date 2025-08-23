@@ -1,11 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
+<<<<<<< HEAD
+// gtag is already declared in AnalyticsTracker.tsx
+
+interface LayoutShiftEntry extends PerformanceEntry {
+  value: number;
+  hadRecentInput: boolean;
+=======
 // Add browser API types
 declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
   }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3ae9
 }
 
 interface PerformanceMetrics {

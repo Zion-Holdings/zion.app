@@ -1,13 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import UltraFuturisticNavigation2037 from './UltraFuturisticNavigation2037';
-import UltraFuturisticFooter2037 from './UltraFuturisticFooter2037';
-import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraFuturisticBackground2037 from '../backgrounds/UltraFuturisticBackground2037';
-import TopContactBar from './TopContactBar';
-import PerformanceMonitor from '../PerformanceMonitor';
-import AccessibilityEnhancer from '../AccessibilityEnhancer';
-import PerformanceOptimizer from '../PerformanceOptimizer';
+import React, { ReactNode } from 'react';
+import EnhancedNavigation2025 from './EnhancedNavigation2025';
+import EnhancedFooter2025 from './EnhancedFooter2025';
+import UltraFuturisticBackground from '../backgrounds/UltraFuturisticBackground';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -19,39 +13,13 @@ export default function Layout({ children, seo }: LayoutProps) {
   const [showEnhancements, setShowEnhancements] = useState(false);
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
-      {/* Skip to content link for accessibility */}
-      <a href="#main" className="skip-link">Skip to main content</a>
-      
-      {/* Futuristic Background */}
-      <UltraFuturisticBackground2037 intensity="medium" theme="quantum-holographic" />
-      
-      {/* Layout Structure */}
-      <div className="relative z-10">
-        {/* Navigation */}
-        <UltraFuturisticNavigation2037 />
-        
-        {/* Sidebar and Main Content */}
-        <div className="flex">
-          <EnhancedSidebar2025 
-            isOpen={sidebarOpen} 
-            onClose={() => setSidebarOpen(false)} 
-          />
-          
-          <main id="main" role="main" className="flex-1 pt-32 lg:pt-36">
-            {children}
-          </main>
-        </div>
-        
-        {/* Footer */}
-        <UltraFuturisticFooter2037 />
-      </div>
-
-      {/* Performance Tools */}
-      <PerformanceMonitor />
-      
-      {/* Cookie Consent Banner */}
-      <CookieConsentBanner />
+    <div className="min-h-screen bg-black text-white relative">
+      <UltraFuturisticBackground />
+      <EnhancedNavigation2025 />
+      <main className="pt-0 relative z-10">
+        {children}
+      </main>
+      <EnhancedFooter2025 />
     </div>
   );
 };

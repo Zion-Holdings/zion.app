@@ -1,7 +1,25 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import Layout from './layout/Layout';
+<<<<<<< HEAD
+import UltraFuturisticServiceCard2026 from './ui/UltraFuturisticServiceCard2026';
+import Link from 'next/link';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  ArrowRight, Brain, Atom, Shield, Zap, Search, MessageCircle, Phone, Mail, Building, Rocket
+} from 'lucide-react';
+import Link from 'next/link';
+import UltraFuturisticServiceCard2026 from './ui/UltraFuturisticServiceCard2026';
+
+// Import our new revolutionary services
+import { revolutionary2040FuturisticServices } from '../data/revolutionary-2040-futuristic-services';
+import { revolutionary2041AdvancedServices } from '../data/revolutionary-2041-advanced-services';
+import { realPracticalMicroSaas2025 } from '../data/real-practical-micro-saas-2025';
+import { advancedITEnterpriseServices2025 } from '../data/advanced-it-enterprise-services-2025';
+import { specializedAIServices2025 } from '../data/specialized-ai-services-2025';
+=======
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Play, Users, TrendingUp, Brain, Shield, Rocket, Globe, Lock, Cpu, Database, Cloud, BarChart3, Zap } from 'lucide-react';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3ae9
 
 const Homepage2025: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -890,22 +908,46 @@ const Homepage2025: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
+<<<<<<< HEAD
+                { icon: Brain, title: "AI & Machine Learning", description: "Advanced AI solutions for enterprise automation", gradient: "from-purple-500 to-pink-500", href: "/ai-services" },
+                { icon: Cpu, title: "Quantum Computing", description: "Next-generation computational power", gradient: "from-cyan-500 to-blue-500", href: "/quantum-computing" },
+                { icon: Shield, title: "Cybersecurity", description: "Military-grade protection for digital assets", gradient: "from-red-500 to-orange-500", href: "/cybersecurity" },
+                { icon: Cloud, title: "Cloud Infrastructure", description: "Scalable cloud solutions for growth", gradient: "from-emerald-500 to-teal-500", href: "/cloud-platform" },
+                { icon: BarChart3, title: "Data Analytics", description: "Transform data into actionable insights", gradient: "from-indigo-500 to-purple-500", href: "/data-analytics" },
+                { icon: Lock, title: "Blockchain Solutions", description: "Secure, transparent digital infrastructure", gradient: "from-yellow-500 to-orange-500", href: "/blockchain" }
+=======
                 { title: "AI & Machine Learning", description: "Advanced AI solutions for enterprise automation", icon: Brain, color: "from-purple-500 to-pink-500", href: "/ai-services" },
                 { title: "Quantum Computing", description: "Next-generation computational power", icon: Cpu, color: "from-cyan-500 to-blue-500", href: "/quantum-computing" },
                 { title: "Cybersecurity", description: "Military-grade protection for digital assets", icon: Shield, color: "from-red-500 to-orange-500", href: "/cybersecurity" },
                 { title: "Cloud Infrastructure", description: "Scalable cloud solutions for growth", icon: Cloud, color: "from-emerald-500 to-teal-500", href: "/cloud-platform" },
                 { title: "Data Analytics", description: "Transform data into actionable insights", icon: BarChart3, color: "from-indigo-500 to-purple-500", href: "/data-analytics" },
                 { title: "Micro SAAS Solutions", description: "Innovative software-as-a-service platforms", icon: Zap, color: "from-yellow-500 to-orange-500", href: "/micro-saas" }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3ae9
               ].map((service, index) => (
                 <motion.div
                   key={index}
                   className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 cursor-pointer"
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
+<<<<<<< HEAD
+                  transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  whileHover={{ y: -5, scale: 1.02 }}
+                  onClick={() => window.location.href = service.href}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      window.location.href = service.href;
+                    }
+                  }}
+                  aria-label={`Learn more about ${service.title}`}
+=======
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 cursor-pointer"
                   whileHover={{ y: -10, scale: 1.02 }}
                   onClick={() => window.location.href = service.href}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3ae9
                 >
                   <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
                   <div className="relative p-6">
