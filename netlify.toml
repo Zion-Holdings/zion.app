@@ -252,15 +252,19 @@
   name = "content-freshness-score-runner"
   schedule = "7 */12 * * *"
 
-# Newly added auditors
+# Newly added intelligent automations
 [[scheduled.functions]]
-  name = "structured-data-auditor"
-  schedule = "*/30 * * * *"
+  name = "anchor-links-auto-fixer"
+  schedule = "*/5 * * * *"
 
 [[scheduled.functions]]
-  name = "robots-auditor"
-  schedule = "0 */6 * * *"
+  name = "internal-link-graph-runner"
+  schedule = "*/5 * * * *"
 
 [[scheduled.functions]]
-  name = "canonical-auditor"
-  schedule = "*/60 * * * *"
+  name = "routes-map-runner"
+  schedule = "*/5 * * * *"
+
+[[scheduled.functions]]
+  name = "functions-catalog-runner"
+  schedule = "*/5 * * * *"

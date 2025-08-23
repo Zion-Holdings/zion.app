@@ -1,0 +1,38 @@
+{
+  "generatedAt": "2025-08-11T23:58:58.254Z",
+  "total": 8,
+  "routes": [
+    {
+      "route": "/",
+      "file": "pages/index.tsx"
+    },
+    {
+      "route": "/automation",
+      "file": "pages/automation/index.tsx"
+    },
+    {
+      "route": "/front",
+      "file": "pages/front/index.tsx"
+    },
+    {
+      "route": "/main/front",
+      "file": "pages/main/front/index.tsx"
+    },
+    {
+      "route": "/newsroom",
+      "file": "pages/newsroom.tsx"
+    },
+    {
+      "route": "/reports/ai-trends",
+      "file": "pages/reports/ai-trends.tsx"
+    },
+    {
+      "route": "/reports/seo",
+      "file": "pages/reports/seo.tsx"
+    },
+    {
+      "route": "/site-health",
+      "file": "pages/site-health.tsx"
+    }
+  ]
+}

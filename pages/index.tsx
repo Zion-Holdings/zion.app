@@ -227,9 +227,8 @@ export default function Home() {
               { title: 'AI Trends Radar', desc: 'Aggregates trending AI topics into a public report.', href: '/.netlify/functions/ai-trends-radar-runner' },
               { title: 'Dependency Auto‑Upgrade', desc: 'Safely bumps minor/patch deps with build verification.', href: '/.netlify/functions/deps-auto-upgrade-runner' },
               { title: 'Autonomous Invention Orchestrator', desc: 'Discovers opportunities and applies safe, visible changes.', href: '/.netlify/functions/autonomous-invention-orchestrator' },
-              { title: 'Internal Link Opportunities', desc: 'Finds high‑value internal links between related pages and publishes a report.', href: '/.netlify/functions/internal-link-opportunities' },
-              { title: 'Semantic Content Index', desc: 'Generates a lightweight semantic index for improved search and discovery.', href: '/.netlify/functions/semantic-content-index' },
-              { title: 'Cloud Heartbeat', desc: 'Updates a public heartbeat to signal live autonomous operations.', href: '/.netlify/functions/cloud-heartbeat' },
+              { title: 'Routes Map (5m)', desc: 'Scans Next.js pages into a public routes map (JSON + HTML).', href: '/.netlify/functions/routes-map-runner' },
+              { title: 'Functions Catalog (5m)', desc: 'Lists all Netlify functions with schedules and files.', href: '/.netlify/functions/functions-catalog-runner' },
             ].map((tool) => (
               <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
@@ -240,7 +239,6 @@ export default function Home() {
             ))}
           </div>
         </section>
-
 
         {/* New: Autonomous Automations */}
         <section className="mx-auto max-w-7xl px-6 pb-14">
@@ -316,37 +314,31 @@ export default function Home() {
               <p className="mt-1 text-sm text-white/75">Scores pages and docs by last update to spotlight staleness.</p>
               <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
             </a>
+          </div>
+        </section>
 
-            {/* Newly invented intelligent automations */}
-            <a href="/.netlify/functions/internal-link-opportunities" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+        {/* New cloud automations */}
+        <section className="mx-auto max-w-7xl px-6 pb-14">
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">New Autonomous Automations</h2>
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+
+            <a href="/.netlify/functions/anchor-links-auto-fixer" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
               <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <h3 className="text-lg font-semibold">Internal Link Opportunities</h3>
-              <p className="mt-1 text-sm text-white/75">Finds high‑value internal links between related pages and publishes a report.</p>
+              <h3 className="text-lg font-semibold">Anchor Links Auto‑Fixer</h3>
+              <p className="mt-1 text-sm text-white/75">Adds missing ids to headings for deep linking and accessibility; commits to main.</p>
               <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
             </a>
 
-            <a href="/.netlify/functions/semantic-content-index" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+            <a href="/.netlify/functions/internal-link-graph-runner" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
               <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <h3 className="text-lg font-semibold">Semantic Content Index</h3>
-              <p className="mt-1 text-sm text-white/75">Generates a lightweight semantic index for improved search and discovery.</p>
-              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
-            </a>
-
-            <a href="/.netlify/functions/cloud-heartbeat" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
-              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <h3 className="text-lg font-semibold">Cloud Heartbeat</h3>
-              <p className="mt-1 text-sm text-white/75">Updates a public heartbeat to signal live autonomous operations.</p>
+              <h3 className="text-lg font-semibold">Internal Link Graph</h3>
+              <p className="mt-1 text-sm text-white/75">Scans code for internal links and publishes an inbound link graph report.</p>
               <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
             </a>
           </div>
         </section>
 
-<<<<<<< HEAD
-
         {/* AUTO-GENERATED: HOME_UPDATER_START */}
-=======
-        {/* AUTO-GENERATED: HOME_UPDATER_START */
->>>>>>> 8cc7475fdf (feat(automation): autonomous front/home advertisers + schedules cleanup [skip ci])
  <section className="mx-auto max-w-7xl px-6 pb-16">
    <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Explore more</h2>
    <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
@@ -363,9 +355,9 @@ export default function Home() {
   
    </div>
  </section>
- /* AUTO-GENERATED: HOME_UPDATER_END */}
+  {/* AUTO-GENERATED: HOME_UPDATER_END */}
   
-         {/* AUTO-GENERATED: HOME_VISIONARY_START */}
+          {/* AUTO-GENERATED: HOME_VISIONARY_START */}
 
         <section id="home-visionary" className="mx-auto max-w-7xl px-6 pb-20">
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">New Visionary Automations</h2>
