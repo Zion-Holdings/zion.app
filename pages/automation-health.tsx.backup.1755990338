@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import type { GetStaticProps } from 'next';
 import Head from 'next/head';
 import FuturisticLayout from '../components/FuturisticLayout';
+<<<<<<< HEAD
+import fs from 'fs/promises';
+=======
 import fs from 'fs';
+>>>>>>> origin/cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c
 import path from 'path';
 
 interface AutomationHealth {
@@ -464,6 +468,9 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 
   try {
+<<<<<<< HEAD
+    const health = await readJson('reports/automation/health.json', {
+=======
     const readJson = (relPath: string) => {
       const filePath = path.join(process.cwd(), 'public', relPath);
       if (fs.existsSync(filePath)) {
@@ -474,6 +481,7 @@ export const getStaticProps: GetStaticProps = async () => {
     };
 
     const health = readJson(path.join('reports', 'automation', 'health.json')) || {
+>>>>>>> origin/cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c
       version: '1.0.0',
       lastUpdated: new Date().toISOString(),
       functions: {},
@@ -492,7 +500,11 @@ export const getStaticProps: GetStaticProps = async () => {
       }
     });
 
+<<<<<<< HEAD
+    const controlPlane = await readJson('automation/control.json', {
+=======
     const controlPlane = readJson(path.join('automation', 'control.json')) || {
+>>>>>>> origin/cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c
       globalPause: false,
       version: '1.0.0',
       lastUpdated: new Date().toISOString(),
@@ -502,7 +514,11 @@ export const getStaticProps: GetStaticProps = async () => {
       budgets: { openai: { dailyUsd: 2.50, monthlyUsd: 50.00, enabled: true }, github: { dailyActions: 2000, monthlyActions: 50000, enabled: true } }
     });
 
+<<<<<<< HEAD
+    const scheduleHints = await readJson('automation/schedule-hints.json', {
+=======
     const scheduleHints = readJson(path.join('automation', 'schedule-hints.json')) || {
+>>>>>>> origin/cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c
       version: '1.0.0',
       lastUpdated: new Date().toISOString(),
       workflows: {},

@@ -369,3 +369,140 @@ pages/sitemap.tsx[0m
 2025-08-23 23:05:34 - [0;32m✅ Resolved conflicts in netlify/functions/functions-manifest.json[0m
 2025-08-23 23:05:34 - [0;34m🔧 Resolving conflicts in pages/sitemap.tsx for branch cursor/build-and-fix-errors-0ebf...[0m
 2025-08-23 23:05:34 - [0;34mℹ️  No conflicts found in pages/sitemap.tsx[0m
+2025-08-23 23:05:34 - [0;32m✅ Successfully resolved conflicts and merged cursor/build-and-fix-errors-0ebf[0m
+2025-08-23 23:05:34 - [0;32m✅ PR #3894 (cursor/build-and-fix-errors-0ebf) processed successfully[0m
+2025-08-23 23:05:34 - [0;34m🔒 Closing PR #3894 via GitHub API...[0m
+2025-08-23 23:05:34 - [0;34m📊 Progress: 5/100, ✅ 5, ❌ 0[0m
+2025-08-23 23:05:36 - [0;34m📋 Processing PR #3893: Changes from background agent bc-61ed10c3-d6b9-406a-971b-955feec9361a (branch: cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c)[0m
+2025-08-23 23:05:36 - [0;34m🔄 Attempting to merge cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [1;33m⚠️  Merge conflicts detected in cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c (attempt 1/3), resolving...[0m
+2025-08-23 23:05:38 - [0;34m📋 Conflicted files: package.json
+pages/automation-health.tsx
+pages/reports/blueprints/blueprint-2025-08-18-122901.tsx
+pages/reports/blueprints/blueprint-2025-08-18-122931.tsx
+pages/reports/blueprints/blueprint-2025-08-18-122952.tsx
+pages/reports/blueprints/blueprint-2025-08-18-123006.tsx
+pages/reports/guides/guide-2025-08-18-122902.tsx
+pages/reports/guides/guide-2025-08-18-122931.tsx
+pages/reports/guides/guide-2025-08-18-122952.tsx
+pages/reports/guides/guide-2025-08-18-123007.tsx
+pages/reports/innovations/insight-2025-08-14-0930.tsx
+pages/reports/innovations/insight-2025-08-18-1544.tsx
+pages/reports/innovations/insight-2025-08-18T12-29.tsx
+pages/reports/innovations/insight-2025-08-18T12-30.tsx
+pages/reports/playbooks/playbook-2025-08-14-044841.tsx
+pages/reports/playbooks/playbook-2025-08-14-045827.tsx
+pages/reports/playbooks/playbook-2025-08-14-050454.tsx
+pages/reports/playbooks/playbook-2025-08-14-051429.tsx
+pages/reports/updates/update-2025-08-13-1315.tsx
+pages/reports/updates/update-2025-08-14-0629.tsx
+pages/reports/updates/update-2025-08-14-0633.tsx
+pages/reports/updates/update-2025-08-14-0636.tsx
+pages/reports/updates/update-2025-08-14-0637.tsx
+pages/reports/updates/update-2025-08-14-0936.tsx
+pages/reports/updates/update-2025-08-14T09-29.tsx
+pages/reports/updates/update-2025-08-14T09-30.tsx
+pages/reports/updates/update-2025-08-18-0935.tsx
+pages/reports/updates/update-2025-08-18-1019.tsx
+pages/reports/updates/update-2025-08-18-1034.tsx
+pages/reports/updates/update-2025-08-18-1043.tsx
+pages/reports/updates/update-2025-08-18-1123.tsx
+pages/reports/updates/update-2025-08-18-1144.tsx
+pages/reports/updates/update-2025-08-18-1147.tsx
+pages/reports/updates/update-2025-08-18-1154.tsx
+pages/reports/updates/update-2025-08-18-1159.tsx
+pages/reports/updates/update-2025-08-18-1203.tsx
+pages/reports/updates/update-2025-08-18-1223.tsx
+pages/reports/updates/update-2025-08-18-1827.tsx
+pages/sitemap.tsx
+public/reports/build-quality/index.html
+public/reports/build-quality/latest.json
+public/reports/build-quality/report.md[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in package.json for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [1;33m⚠️  Found conflicts in package.json, resolving...[0m
+2025-08-23 23:05:38 - [0;34m📦 Package.json detected, merging dependencies intelligently...[0m
+2025-08-23 23:05:38 - [0;32m✅ Resolved conflicts in package.json[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/automation-health.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [1;33m⚠️  Found conflicts in pages/automation-health.tsx, resolving...[0m
+2025-08-23 23:05:38 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:05:38 - [0;32m✅ Resolved conflicts in pages/automation-health.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/blueprints/blueprint-2025-08-18-122901.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/blueprints/blueprint-2025-08-18-122901.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/blueprints/blueprint-2025-08-18-122931.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/blueprints/blueprint-2025-08-18-122931.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/blueprints/blueprint-2025-08-18-122952.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/blueprints/blueprint-2025-08-18-122952.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/blueprints/blueprint-2025-08-18-123006.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/blueprints/blueprint-2025-08-18-123006.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/guides/guide-2025-08-18-122902.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/guides/guide-2025-08-18-122902.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/guides/guide-2025-08-18-122931.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/guides/guide-2025-08-18-122931.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/guides/guide-2025-08-18-122952.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/guides/guide-2025-08-18-122952.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/guides/guide-2025-08-18-123007.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/guides/guide-2025-08-18-123007.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/innovations/insight-2025-08-14-0930.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/innovations/insight-2025-08-14-0930.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/innovations/insight-2025-08-18-1544.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/innovations/insight-2025-08-18-1544.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/innovations/insight-2025-08-18T12-29.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/innovations/insight-2025-08-18T12-29.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/innovations/insight-2025-08-18T12-30.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/innovations/insight-2025-08-18T12-30.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/playbooks/playbook-2025-08-14-044841.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/playbooks/playbook-2025-08-14-044841.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/playbooks/playbook-2025-08-14-045827.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/playbooks/playbook-2025-08-14-045827.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/playbooks/playbook-2025-08-14-050454.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/playbooks/playbook-2025-08-14-050454.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/playbooks/playbook-2025-08-14-051429.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/playbooks/playbook-2025-08-14-051429.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/updates/update-2025-08-13-1315.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/updates/update-2025-08-13-1315.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/updates/update-2025-08-14-0629.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/updates/update-2025-08-14-0629.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/updates/update-2025-08-14-0633.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/updates/update-2025-08-14-0633.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/updates/update-2025-08-14-0636.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/updates/update-2025-08-14-0636.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/updates/update-2025-08-14-0637.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/updates/update-2025-08-14-0637.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/updates/update-2025-08-14-0936.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/updates/update-2025-08-14-0936.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/updates/update-2025-08-14T09-29.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/updates/update-2025-08-14T09-29.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/updates/update-2025-08-14T09-30.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/updates/update-2025-08-14T09-30.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/updates/update-2025-08-18-0935.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/updates/update-2025-08-18-0935.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/updates/update-2025-08-18-1019.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/updates/update-2025-08-18-1019.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/updates/update-2025-08-18-1034.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/updates/update-2025-08-18-1034.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/updates/update-2025-08-18-1043.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/updates/update-2025-08-18-1043.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/updates/update-2025-08-18-1123.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/updates/update-2025-08-18-1123.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/updates/update-2025-08-18-1144.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/updates/update-2025-08-18-1144.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/updates/update-2025-08-18-1147.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/updates/update-2025-08-18-1147.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/updates/update-2025-08-18-1154.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/updates/update-2025-08-18-1154.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/updates/update-2025-08-18-1159.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/updates/update-2025-08-18-1159.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/updates/update-2025-08-18-1203.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/updates/update-2025-08-18-1203.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/updates/update-2025-08-18-1223.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/updates/update-2025-08-18-1223.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/reports/updates/update-2025-08-18-1827.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/reports/updates/update-2025-08-18-1827.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in pages/sitemap.tsx for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in pages/sitemap.tsx[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in public/reports/build-quality/index.html for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in public/reports/build-quality/index.html[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in public/reports/build-quality/latest.json for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in public/reports/build-quality/latest.json[0m
+2025-08-23 23:05:38 - [0;34m🔧 Resolving conflicts in public/reports/build-quality/report.md for branch cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c...[0m
+2025-08-23 23:05:38 - [0;34mℹ️  No conflicts found in public/reports/build-quality/report.md[0m
