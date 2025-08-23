@@ -1,9 +1,11 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 
-interface PerformanceOptimizerProps {
-  showMetrics?: boolean;
-  autoOptimize?: boolean;
+// Add browser API types
+declare global {
+  interface Window {
+    gtag: (...args: unknown[]) => void;
+  }
 }
 
 const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({ 

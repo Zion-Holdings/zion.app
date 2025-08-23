@@ -1,154 +1,23 @@
 import React from 'react';
-import Head from 'next/head';
-import UltraAdvancedHeroSection2025 from '../components/sections/UltraAdvancedHeroSection2025';
-import dynamic from 'next/dynamic';
-const UltraAdvancedServicesShowcase2025 = dynamic(
-  () => import('../components/sections/UltraAdvancedServicesShowcase2025'),
-  { ssr: false, loading: () => <section className="py-20 text-center text-gray-400">Loading services…</section> }
-);
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { 
-  ArrowRight, Star, Zap, Brain, Rocket, Shield, 
-  Atom, Cpu, Cloud, Target, Users, Award,
-  CheckCircle, TrendingUp, Globe, Sparkles,
-  Phone, Mail, MapPin, ChevronDown,
-  ArrowUpRight, Lightbulb, Code, Database, Server,
-  Network, Palette, GraduationCap, DollarSign, Heart,
-  DollarSign as Finance, Factory as Manufacturing, Scale as Legal
-} from 'lucide-react';
+import Homepage2025 from '../components/Homepage2025';
+import SEOEnhancer from '../components/SEOEnhancer';
+import PerformanceEnhancer from '../components/PerformanceEnhancer';
+import AnalyticsTracker from '../components/AnalyticsTracker';
+import ErrorBoundary from '../components/ErrorBoundary';
+import PerformanceOptimizer from '../components/PerformanceOptimizer';
 
   return (
-    <>
-      <Head>
-        <title>Zion Tech Group - Revolutionary Technology Solutions | AI, Quantum Computing, Micro SAAS</title>
-        <meta name="description" content="Transform your business with Zion Tech Group's revolutionary AI, quantum computing, and micro SAAS solutions. Leading-edge technology for unprecedented growth." />
-        <meta name="keywords" content="AI, quantum computing, micro SAAS, technology solutions, business transformation, Zion Tech Group" />
-        <link rel="canonical" href="https://ziontechgroup.com" />
-      </Head>
-
-      {/* Hero Section */}
-        <UltraAdvancedHeroSection2025 />
-
-        {/* Why Choose Us Section */}
-        <section className="py-20 bg-gradient-to-b from-black to-gray-900">
-          <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl lg:text-6xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  Why Choose Zion Tech Group?
-                </span>
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                We're not just another tech company. We're the architects of tomorrow's digital landscape.
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {whyChooseUs.map((feature, index) => (
-                <motion.div
-                  key={feature.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="text-center group"
-                >
-                  <div className={`w-20 h-20 bg-gradient-to-r ${feature.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-4">{feature.title}</h3>
-                  <p className="text-gray-300 leading-relaxed">{feature.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Industry Solutions Section */}
-        <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
-          <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl lg:text-6xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  Industry Solutions
-                </span>
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Tailored AI and quantum solutions for every industry, designed to solve your most complex challenges 
-                and drive unprecedented growth and efficiency.
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {industrySolutions.map((industry, index) => (
-                <motion.div
-                  key={industry.name}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-gray-600/50 transition-all duration-300 group"
-                >
-                  <div className={`w-16 h-16 bg-gradient-to-r ${industry.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    <div className="text-white">{industry.icon}</div>
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-4">{industry.name}</h3>
-                  <p className="text-gray-300 mb-6 leading-relaxed">{industry.description}</p>
-                  
-                  <div className="space-y-3">
-                    {industry.services.map((service, serviceIndex) => (
-                      <div key={serviceIndex} className="flex items-center gap-3">
-                        <CheckCircle className="w-5 h-5 text-cyan-400 flex-shrink-0" />
-                        <span className="text-sm text-gray-300">{service}</span>
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Contact Info Section */}
-        <section className="py-16 bg-gradient-to-b from-black to-gray-900">
-          <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              {/* Contact Info */}
-              <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 text-gray-400">
-                <a href={`tel:${contactInfo.mobile}`} className="flex items-center hover:text-cyan-400 transition-colors">
-                  <Phone className="w-4 h-4 mr-2" />
-                  {contactInfo.mobile}
-                </a>
-                <a href={`mailto:${contactInfo.email}`} className="flex items-center hover:text-cyan-400 transition-colors">
-                  <Mail className="w-4 h-4 mr-2" />
-                  {contactInfo.email}
-                </a>
-                <div className="flex items-center">
-                  <MapPin className="w-4 h-4 mr-2" />
-                  {contactInfo.address}
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
+    <ErrorBoundary>
+      <SEOEnhancer />
+      <AnalyticsTracker />
+      <PerformanceOptimizer>
+        <PerformanceEnhancer>
+          <Homepage2025 />
+        </PerformanceEnhancer>
+      </PerformanceOptimizer>
+    </ErrorBoundary>
+  );
+};
 
         {/* Featured Services Section */}
         <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
