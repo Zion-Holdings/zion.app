@@ -65,6 +65,10 @@
       "route": "/automation"
     },
     {
+      "file": "pages/reports/patterns/pattern-2025-08-14-130008.tsx",
+      "route": "/reports/patterns/pattern-2025-08-14-130008"
+    },
+    {
       "file": "pages/reports/patterns/pattern-2025-08-14-124019.tsx",
       "route": "/reports/patterns/pattern-2025-08-14-124019"
     },
@@ -607,6 +611,10 @@
     {
       "file": "pages/reports/patterns/pattern-2025-08-13-215625.tsx",
       "route": "/reports/patterns/pattern-2025-08-13-215625"
+    },
+    {
+      "file": "pages/reports/playbooks/playbook-2025-08-14-130009.tsx",
+      "route": "/reports/playbooks/playbook-2025-08-14-130009"
     },
     {
       "file": "pages/reports/playbooks/playbook-2025-08-14-124019.tsx",
@@ -1577,6 +1585,10 @@
       "route": "/reports/playbooks/playbook-2025-08-13-223010"
     },
     {
+      "file": "pages/reports/guides/guide-2025-08-14-130008.tsx",
+      "route": "/reports/guides/guide-2025-08-14-130008"
+    },
+    {
       "file": "pages/reports/guides/guide-2025-08-14-124019.tsx",
       "route": "/reports/guides/guide-2025-08-14-124019"
     },
@@ -2117,6 +2129,10 @@
       "route": "/reports/guides/guide-2025-08-13-215625"
     },
     {
+      "file": "pages/reports/cases/case-2025-08-14-130008.tsx",
+      "route": "/reports/cases/case-2025-08-14-130008"
+    },
+    {
       "file": "pages/reports/cases/case-2025-08-14-124019.tsx",
       "route": "/reports/cases/case-2025-08-14-124019"
     },
@@ -2621,6 +2637,14 @@
       "route": "/reports/cases/case-2025-08-14-040018"
     },
     {
+      "file": "pages/main/front/index.tsx",
+      "route": "/main/front"
+    },
+    {
+      "file": "pages/reports/innovations/insight-2025-08-14T13-00.tsx",
+      "route": "/reports/innovations/insight-2025-08-14T13-00"
+    },
+    {
       "file": "pages/reports/innovations/insight-2025-08-14T12-40.tsx",
       "route": "/reports/innovations/insight-2025-08-14T12-40"
     },
@@ -2967,6 +2991,10 @@
     {
       "file": "pages/reports/innovations/insight-2025-08-14T00-00.tsx",
       "route": "/reports/innovations/insight-2025-08-14T00-00"
+    },
+    {
+      "file": "pages/reports/innovations/insight-2025-08-14-1300.tsx",
+      "route": "/reports/innovations/insight-2025-08-14-1300"
     },
     {
       "file": "pages/reports/innovations/insight-2025-08-14-1240.tsx",
@@ -3675,6 +3703,10 @@
     {
       "file": "pages/reports/innovations/index.tsx",
       "route": "/reports/innovations"
+    },
+    {
+      "file": "pages/reports/blueprints/blueprint-2025-08-14-130008.tsx",
+      "route": "/reports/blueprints/blueprint-2025-08-14-130008"
     },
     {
       "file": "pages/reports/blueprints/blueprint-2025-08-14-124018.tsx",
@@ -4637,6 +4669,10 @@
       "route": "/reports/blueprints/blueprint-2025-08-13-223010"
     },
     {
+      "file": "pages/reports/updates/update-2025-08-14T13-00.tsx",
+      "route": "/reports/updates/update-2025-08-14T13-00"
+    },
+    {
       "file": "pages/reports/updates/update-2025-08-14T12-40.tsx",
       "route": "/reports/updates/update-2025-08-14T12-40"
     },
@@ -4985,6 +5021,10 @@
       "route": "/reports/updates/update-2025-08-14T00-00"
     },
     {
+      "file": "pages/reports/updates/update-2025-08-14-1300.tsx",
+      "route": "/reports/updates/update-2025-08-14-1300"
+    },
+    {
       "file": "pages/reports/updates/update-2025-08-14-1240.tsx",
       "route": "/reports/updates/update-2025-08-14-1240"
     },
@@ -5007,6 +5047,14 @@
     {
       "file": "pages/reports/updates/update-2025-08-14-1020.tsx",
       "route": "/reports/updates/update-2025-08-14-1020"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-14-1002.tsx",
+      "route": "/reports/updates/update-2025-08-14-1002"
+    },
+    {
+      "file": "pages/reports/updates/update-2025-08-14-1001.tsx",
+      "route": "/reports/updates/update-2025-08-14-1001"
     },
     {
       "file": "pages/reports/updates/update-2025-08-14-0949.tsx",
@@ -10895,10 +10943,6 @@
     {
       "file": "pages/reports/updates/update-2025-08-12-1417.tsx",
       "route": "/reports/updates/update-2025-08-12-1417"
-    },
-    {
-      "file": "pages/main/front/index.tsx",
-      "route": "/main/front"
     }
   ],
   "docs": [
@@ -10935,27 +10979,41 @@
       "route": "/docs/reports/unused-exports.md"
     }
   ],
-  "generatedAt": "2025-08-14T13:03:47.658Z",
+  "generatedAt": "2025-08-14T13:02:00.634Z",
   "items": [
     {
-      "title": "Case Study — Autonomous Reports",
-      "href": "/reports/cases/case-2025-08-14-130348",
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-14-130722",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T13:03:48.340Z",
+      "createdAt": "2025-08-14T13:07:22.753Z",
+      "source": "cloud-blueprint-factory"
+    },
+    {
+      "title": "Playbook — Autonomous Delivery",
+      "href": "/reports/playbooks/playbook-2025-08-14-130722",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T13:07:22.720Z",
+      "source": "cloud-playbook-factory"
+    },
+    {
+      "title": "Case Study — Autonomous Reports",
+      "href": "/reports/cases/case-2025-08-14-130722",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T13:07:22.682Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Guide — Techcrunch Pebble Implementation",
-      "href": "/reports/guides/guide-2025-08-14-130348",
+      "href": "/reports/guides/guide-2025-08-14-130722",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T13:03:48.340Z",
+      "createdAt": "2025-08-14T13:07:22.682Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Trigger Homepage Sitemap",
-      "href": "/reports/patterns/pattern-2025-08-14-130348",
+      "href": "/reports/patterns/pattern-2025-08-14-130722",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T13:03:48.340Z",
+      "createdAt": "2025-08-14T13:07:22.682Z",
       "source": "cloud-deep-research-factory"
     }
   ]
