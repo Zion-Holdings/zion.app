@@ -142,10 +142,17 @@ const allServices = [
   ...innovative2025MicroSaasExpansion,
   ...innovative2025ITSolutionsExpansion,
   ...innovative2025AIServicesExpansion,
+<<<<<<< HEAD
+  // Our new 2025 comprehensive service expansions
+  ...advancedEnterpriseSolutions,
+  ...innovativeMicroSaasSolutions2025,
+  ...cuttingEdgeITServices
+=======
   // Our new 2025 cutting-edge innovative services
   ...cuttingEdgeInnovativeServices2025,
   ...emergingTechInnovativeServices2025,
   ...specializedIndustryServices2025
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-2b91
 ];
 
 const categories = [

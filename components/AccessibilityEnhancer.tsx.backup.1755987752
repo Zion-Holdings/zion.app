@@ -168,6 +168,11 @@ const AccessibilityEnhancer: React.FC = () => {
     ));
   }, []);
 
+<<<<<<< HEAD
+  // Run accessibility tests
+  const runTests = useCallback(async () => {
+    setIsRunningTests(true);
+=======
   // Load saved settings
   useEffect(() => {
     const saved = localStorage.getItem('accessibility-settings');
@@ -199,6 +204,7 @@ const AccessibilityEnhancer: React.FC = () => {
   // Announce to screen reader
   const announceToScreenReader = useCallback((message: string) => {
     // setAnnouncements(prev => [...prev, message]); // This line was removed
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-2b91
     
     for (let i = 0; i < tests.length; i++) {
       const test = tests[i];

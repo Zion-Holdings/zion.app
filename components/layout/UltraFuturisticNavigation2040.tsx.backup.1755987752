@@ -51,6 +51,9 @@ const navigationItems: NavigationItem[] = [
     neonColor: 'shadow-cyan-400/50'
   },
   {
+<<<<<<< HEAD
+    label: 'Services',
+=======
     name: 'Quantum Computing',
     href: '/quantum-services',
     icon: <Atom className="w-5 h-5" />,
@@ -127,6 +130,7 @@ const navigationItems: NavigationItem[] = [
   },
   {
     name: 'All Services',
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-2b91
     href: '/services',
     icon: <Briefcase className="w-4 h-4" />,
     description: 'Explore our comprehensive technology solutions',
