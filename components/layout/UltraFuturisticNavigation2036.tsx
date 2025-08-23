@@ -410,7 +410,19 @@ const UltraFuturisticNavigation2036: React.FC = () => {
 
               {/* Mobile Search */}
               <div className="mb-6">
-                <EnhancedSearch />
+                <EnhancedSearch 
+                  onSearch={(query) => {
+                    // Handle search - could navigate to search results page
+                    window.location.href = `/services?search=${encodeURIComponent(query)}`;
+                  }}
+                  onResultSelect={(result) => {
+                    // Handle result selection - navigate to the service page
+                    window.location.href = result.slug;
+                    setMobileMenuOpen(false);
+                  }}
+                  placeholder="Search services..."
+                  showFilters={false}
+                />
               </div>
 
               {/* Mobile Navigation Items */}

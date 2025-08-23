@@ -17,6 +17,7 @@ interface LayoutProps {
   keywords?: string;
   ogImage?: string;
   canonicalUrl?: string;
+  structuredData?: object;
 }
 
 export default function Layout({ 
@@ -25,10 +26,69 @@ export default function Layout({
   description = "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.",
   keywords = "AI consciousness, quantum computing, autonomous solutions, space technology, cybersecurity, business intelligence, Zion Tech Group, 2045 technology",
   ogImage = "/og-image.jpg",
-  canonicalUrl
+  canonicalUrl,
+  structuredData
 }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isOnline, setIsOnline] = useState(true);
+
+  // Default structured data for Zion Tech Group
+  const defaultStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Zion Tech Group",
+    "url": "https://ziontechgroup.com",
+    "logo": "https://ziontechgroup.com/logo.png",
+    "description": "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.",
+    "foundingDate": "2020",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "US"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "email": "contact@ziontechgroup.com"
+    },
+    "sameAs": [
+      "https://linkedin.com/company/zion-tech-group",
+      "https://twitter.com/ziontechgroup",
+      "https://github.com/zion-tech-group"
+    ],
+    "serviceType": [
+      "AI & Machine Learning",
+      "Quantum Computing",
+      "Cybersecurity",
+      "Business Intelligence",
+      "Space Technology",
+      "Autonomous Systems"
+    ],
+    "areaServed": "Worldwide",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Revolutionary Technology Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "AI Consciousness Evolution Platform",
+            "description": "Next-generation AI consciousness with emotional intelligence"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Quantum AI Hybrid Computing",
+            "description": "Quantum-powered AI with consciousness integration"
+          }
+        }
+      ]
+    }
+  };
+
+  const finalStructuredData = structuredData || defaultStructuredData;
 
   useEffect(() => {
     // Check online status
@@ -103,164 +163,154 @@ export default function Layout({
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         
-        {/* Open Graph Meta Tags */}
+        {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalUrl || "https://ziontechgroup.com"} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={ogImage} />
-        <meta property="og:url" content={canonicalUrl || "https://ziontechgroup.com"} />
         <meta property="og:site_name" content="Zion Tech Group" />
         <meta property="og:locale" content="en_US" />
         
-        {/* Twitter Card Meta Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={ogImage} />
-        <meta name="twitter:site" content="@ziontechgroup" />
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={canonicalUrl || "https://ziontechgroup.com"} />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={description} />
+        <meta property="twitter:image" content={ogImage} />
+        <meta property="twitter:site" content="@ziontechgroup" />
         
         {/* Additional SEO Meta Tags */}
         <meta name="application-name" content="Zion Tech Group" />
-        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
         <meta name="format-detection" content="telephone=no" />
         
-        {/* Preload Critical Resources */}
-        <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="/_next/static/css/app.css" as="style" />
+        {/* Preconnect to external domains for performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
         
-        {/* DNS Prefetch */}
+        {/* DNS Prefetch for performance */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
-        
-        {/* Security Headers */}
-        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
-        <meta httpEquiv="X-Frame-Options" content="DENY" />
-        <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
-        <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+        <link rel="dns-prefetch" href="//www.google-analytics.com" />
         
         {/* Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "Zion Tech Group",
-              "url": "https://ziontechgroup.com",
-              "logo": "https://ziontechgroup.com/logo.png",
-              "description": description,
-              "foundingDate": "2024",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "364 E Main St STE 1008",
-                "addressLocality": "Middletown",
-                "addressRegion": "DE",
-                "postalCode": "19709",
-                "addressCountry": "US"
-              },
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+1-302-464-0950",
-                "contactType": "customer service",
-                "email": "kleber@ziontechgroup.com"
-              },
-              "sameAs": [
-                "https://github.com/Zion-Holdings",
-                "https://linkedin.com/company/zion-tech-group"
-              ],
-              "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "Technology Services",
-                "itemListElement": [
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "AI Consciousness Evolution 2045",
-                      "description": "Next-generation AI consciousness with emotional intelligence"
-                    }
-                  }
-                ]
-              }
-            })
+            __html: JSON.stringify(finalStructuredData)
           }}
         />
+        
+        {/* Performance and Security Headers */}
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+        
+        {/* Mobile App Meta */}
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        
+        {/* iOS Meta Tags */}
+        <meta name="apple-touch-fullscreen" content="yes" />
+        <meta name="apple-mobile-web-app-title" content="Zion Tech" />
+        
+        {/* Windows Tiles */}
+        <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
+        <meta name="msapplication-TileColor" content="#06b6d4" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
+        
+        {/* Android Chrome */}
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="theme-color" content="#06b6d4" />
+        <meta name="color-scheme" content="dark light" />
+        
+        {/* Performance Hints */}
+        <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        
+        {/* Critical CSS */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            /* Critical CSS for above-the-fold content */
+            body { margin: 0; font-family: system-ui, -apple-system, sans-serif; }
+            .loading-spinner { animation: spin 1s linear infinite; }
+            @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+          `
+        }} />
       </Head>
 
-      <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
-        {/* Skip to content link for accessibility */}
-        <a href="#main" className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-black focus:text-white focus:px-4 focus:py-2 focus:rounded">
-          Skip to main content
-        </a>
-        
-        {/* Online/Offline Status Indicator */}
-        {!isOnline && (
-          <div className="fixed top-0 left-0 right-0 bg-red-600 text-white text-center py-2 z-50">
-            <span className="flex items-center justify-center gap-2">
-              <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-              You're currently offline. Some features may be limited.
-            </span>
-          </div>
-        )}
-        
-        {/* Futuristic Background */}
+      {/* Performance Monitor */}
+      <PerformanceMonitor />
+
+      {/* Accessibility Enhancer */}
+      <AccessibilityEnhancer />
+
+      {/* Top Contact Bar */}
+      <TopContactBar />
+
+      {/* Main Layout */}
+      <div className={`min-h-screen ${isOnline ? '' : 'offline-mode'}`}>
+        {/* Background Effects */}
         <UltraFuturisticBackground2045 />
         
-        {/* Layout Structure */}
+        {/* Navigation */}
+        <UltraFuturisticNavigation2045 />
+        
+        {/* Sidebar */}
+        <EnhancedSidebar2025 isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+        
+        {/* Main Content */}
         <div className="relative z-10">
-          {/* Top Contact Bar */}
-          <TopContactBar />
-          
-          {/* Navigation */}
-          <UltraFuturisticNavigation2045 />
-          
-          {/* Sidebar and Main Content */}
-          <div className="flex">
-            <EnhancedSidebar2025 
-              isOpen={sidebarOpen} 
-              onClose={() => setSidebarOpen(false)} 
-            />
-            
-            <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
-              {children}
-            </main>
-          </div>
-          
-          {/* Footer */}
-          <UltraFuturisticFooter2045 />
+          {children}
         </div>
+        
+        {/* Footer */}
+        <UltraFuturisticFooter2045 />
       </div>
 
-      {/* Accessibility and Performance Tools */}
-      <AccessibilityEnhancer />
-      <PerformanceMonitor />
-      
       {/* Cookie Consent Banner */}
       <CookieConsentBanner />
-      
-      {/* Service Worker Update Notification */}
-      <div id="sw-update-notification" className="hidden fixed bottom-4 right-4 bg-cyan-600 text-white p-4 rounded-lg shadow-lg z-50 max-w-sm">
-        <div className="flex items-start gap-3">
+
+      {/* Error Boundary */}
+      <EnhancedErrorBoundary>
+        <div>
+          {/* Additional error handling components can go here */}
+        </div>
+      </EnhancedErrorBoundary>
+
+      {/* Offline Indicator */}
+      {!isOnline && (
+        <div className="fixed bottom-4 right-4 bg-red-500 text-white px-4 py-2 rounded-lg shadow-lg z-50">
+          <div className="flex items-center space-x-2">
+            <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+            <span className="text-sm font-medium">You're offline</span>
+          </div>
+        </div>
+      )}
+
+      {/* Install PWA Prompt */}
+      <div id="pwa-install-prompt" className="hidden fixed bottom-4 left-4 bg-gray-800 text-white p-4 rounded-lg shadow-lg z-50 max-w-sm">
+        <div className="flex items-start space-x-3">
           <div className="flex-shrink-0">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
+            <div className="w-8 h-8 bg-cyan-500 rounded-lg flex items-center justify-center">
+              <span className="text-white text-sm font-bold">Z</span>
+            </div>
           </div>
           <div className="flex-1">
-            <h4 className="font-semibold mb-1">Update Available</h4>
-            <p className="text-sm text-cyan-100 mb-3">A new version of Zion Tech Group is available.</p>
-            <div className="flex gap-2">
-              <button 
-                onClick={() => window.location.reload()} 
-                className="bg-white text-cyan-600 px-3 py-1 rounded text-sm font-medium hover:bg-cyan-500 transition-colors"
+            <h3 className="text-sm font-medium">Install Zion Tech Group</h3>
+            <p className="text-xs text-gray-300 mt-1">Add to home screen for quick access</p>
+            <div className="flex space-x-2 mt-3">
+              <button
+                id="pwa-install-accept"
+                className="px-3 py-1 bg-cyan-500 text-white text-xs rounded hover:bg-cyan-600 transition-colors"
               >
-                Update Now
+                Install
               </button>
-              <button 
-                onClick={() => document.getElementById('sw-update-notification')?.classList.add('hidden')} 
-                className="text-cyan-100 hover:text-white text-sm transition-colors"
+              <button
+                id="pwa-install-dismiss"
+                className="px-3 py-1 bg-gray-600 text-white text-xs rounded hover:bg-gray-700 transition-colors"
               >
-                Later
+                Not now
               </button>
             </div>
           </div>

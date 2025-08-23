@@ -1,10 +1,11 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, Suspense, lazy } from 'react';
 import Layout from './layout/Layout';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ArrowRight, Play, TrendingUp, Brain, Shield, Rocket, Globe, Cpu, Database, Atom, Target, Star, Sparkles as SparklesIcon,
   Brain as BrainIcon, Atom as AtomIcon, Shield as ShieldIcon, Rocket as RocketIcon, Zap, Eye, Heart, Infinity,
-  ChevronRight, ChevronLeft, ExternalLink, Users, Award, Clock, CheckCircle, Zap as ZapIcon
+  ChevronRight, ChevronLeft, ExternalLink, Users, Award, Clock, CheckCircle, Zap as ZapIcon,
+  Sun, Moon, Search, Menu, X
 } from 'lucide-react';
 
 // Import our new revolutionary services
@@ -12,15 +13,30 @@ import { revolutionary2045AdvancedRealMicroSaas } from '../data/revolutionary-20
 import { revolutionary2045AdvancedITServices } from '../data/revolutionary-2045-advanced-it-services';
 import { revolutionary2045AdvancedAIServices } from '../data/revolutionary-2045-advanced-ai-services';
 
+// Lazy load heavy components
+const LazyServiceCard = lazy(() => import('./ServiceCard'));
+const LazyTestimonialSection = lazy(() => import('./TestimonialSection'));
+
 const Homepage2045: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [hoveredService, setHoveredService] = useState<string | null>(null);
+  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   
   useEffect(() => {
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('zion-theme');
+    if (savedTheme) {
+      setIsDarkMode(savedTheme === 'dark');
+    }
+    
     setIsVisible(true);
+    setIsLoading(false);
     
     // Auto-rotate featured services
     const interval = setInterval(() => {
@@ -40,6 +56,31 @@ const Homepage2045: React.FC = () => {
     };
   }, []);
 
+  // Theme toggle handler
+  const toggleTheme = useCallback(() => {
+    const newTheme = !isDarkMode;
+    setIsDarkMode(newTheme);
+    localStorage.setItem('zion-theme', newTheme ? 'dark' : 'light');
+    document.documentElement.classList.toggle('dark', newTheme);
+  }, [isDarkMode]);
+
+  // Search functionality
+  const filteredServices = useCallback(() => {
+    const allServices = [
+      ...revolutionary2045AdvancedRealMicroSaas,
+      ...revolutionary2045AdvancedITServices,
+      ...revolutionary2045AdvancedAIServices
+    ];
+    
+    if (!searchQuery) return allServices;
+    
+    return allServices.filter(service => 
+      service.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      service.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      service.category.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  }, [searchQuery]);
+
   // Combine all revolutionary services
   const allRevolutionaryServices = [
     ...revolutionary2045AdvancedRealMicroSaas,
@@ -52,8 +93,9 @@ const Homepage2045: React.FC = () => {
 
   // Filter services by category
   const getFilteredServices = () => {
-    if (selectedCategory === 'all') return allRevolutionaryServices;
-    return allRevolutionaryServices.filter(service => 
+    const services = filteredServices();
+    if (selectedCategory === 'all') return services;
+    return services.filter(service => 
       service.category.toLowerCase().includes(selectedCategory.toLowerCase()) ||
       service.type.toLowerCase().includes(selectedCategory.toLowerCase())
     );
@@ -100,10 +142,118 @@ const Homepage2045: React.FC = () => {
     setSelectedCategory(categoryId);
   }, []);
 
+  // Loading skeleton component
+  const LoadingSkeleton = () => (
+    <div className="animate-pulse">
+      <div className="h-64 bg-gray-700 rounded-lg mb-4"></div>
+      <div className="h-4 bg-gray-700 rounded w-3/4 mb-2"></div>
+      <div className="h-4 bg-gray-700 rounded w-1/2"></div>
+    </div>
+  );
+
+  if (isLoading) {
+    return (
+      <Layout>
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-cyan-400 mx-auto mb-4"></div>
+            <p className="text-cyan-400 text-xl">Loading Zion Tech Group...</p>
+          </div>
+        </div>
+      </Layout>
+    );
+  }
+
   return (
     <Layout>
+      {/* Enhanced Header with Search and Theme Toggle */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-800/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            {/* Logo */}
+            <div className="flex items-center space-x-4">
+              <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+                Zion Tech Group
+              </div>
+            </div>
+
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center space-x-8">
+              <a href="/" className="text-gray-300 hover:text-cyan-400 transition-colors">Home</a>
+              <a href="/services" className="text-gray-300 hover:text-cyan-400 transition-colors">Services</a>
+              <a href="/about" className="text-gray-300 hover:text-cyan-400 transition-colors">About</a>
+              <a href="/contact" className="text-gray-300 hover:text-cyan-400 transition-colors">Contact</a>
+            </nav>
+
+            {/* Search Bar */}
+            <div className="hidden md:flex items-center space-x-4 flex-1 max-w-md mx-8">
+              <div className="relative w-full">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                <input
+                  type="text"
+                  placeholder="Search services..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-10 pr-4 py-2 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent"
+                />
+              </div>
+            </div>
+
+            {/* Theme Toggle and Mobile Menu */}
+            <div className="flex items-center space-x-4">
+              <button
+                onClick={toggleTheme}
+                className="p-2 text-gray-400 hover:text-cyan-400 transition-colors"
+                aria-label="Toggle theme"
+              >
+                {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              </button>
+              
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="md:hidden p-2 text-gray-400 hover:text-cyan-400 transition-colors"
+                aria-label="Toggle mobile menu"
+              >
+                {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              </button>
+            </div>
+          </div>
+
+          {/* Mobile Menu */}
+          <AnimatePresence>
+            {isMobileMenuOpen && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                className="md:hidden border-t border-gray-800/50"
+              >
+                <div className="py-4 space-y-4">
+                  <a href="/" className="block text-gray-300 hover:text-cyan-400 transition-colors">Home</a>
+                  <a href="/services" className="block text-gray-300 hover:text-cyan-400 transition-colors">Services</a>
+                  <a href="/about" className="block text-gray-300 hover:text-cyan-400 transition-colors">About</a>
+                  <a href="/contact" className="block text-gray-300 hover:text-cyan-400 transition-colors">Contact</a>
+                  
+                  {/* Mobile Search */}
+                  <div className="relative">
+                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                    <input
+                      type="text"
+                      placeholder="Search services..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="w-full pl-10 pr-4 py-2 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent"
+                    />
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      </header>
+
       {/* Main Content */}
-      <main className="relative z-10">
+      <main className="relative z-10 pt-16">
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
           {/* Animated Background */}
@@ -201,7 +351,8 @@ const Homepage2045: React.FC = () => {
               >
                 <button
                   onClick={handleGetStarted}
-                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25"
+                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25 focus:outline-none focus:ring-4 focus:ring-cyan-500/50"
+                  aria-label="Get started with Zion Tech Group services"
                 >
                   <span className="flex items-center space-x-2">
                     Get Started Today
@@ -210,7 +361,8 @@ const Homepage2045: React.FC = () => {
                 </button>
                 <button
                   onClick={handleWatchDemo}
-                  className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105"
+                  className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
+                  aria-label="Watch demo of our services"
                 >
                   <span className="flex items-center space-x-2">
                     <Play className="w-5 h-5" />
@@ -274,7 +426,8 @@ const Homepage2045: React.FC = () => {
                       <p className="text-gray-300 mb-6 text-lg">{feature.description}</p>
                       <button
                         onClick={() => window.location.href = feature.href}
-                        className={`px-8 py-4 bg-gradient-to-r ${feature.color} text-white font-medium rounded-xl hover:opacity-90 transition-all duration-300 transform hover:scale-105`}
+                        className={`px-8 py-4 bg-gradient-to-r ${feature.color} text-white font-medium rounded-xl hover:opacity-90 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-opacity-50`}
+                        aria-label={`Explore ${feature.title} service`}
                       >
                         Explore Service
                       </button>
@@ -317,6 +470,7 @@ const Homepage2045: React.FC = () => {
                       ? `bg-gradient-to-r ${category.color} text-white`
                       : 'bg-white/10 text-gray-300 hover:bg-white/20'
                   }`}
+                  aria-label={`Filter services by ${category.name}`}
                 >
                   <category.icon className="w-5 h-5" />
                   {category.name}
@@ -340,6 +494,14 @@ const Homepage2045: React.FC = () => {
                   onClick={() => handleServiceClick(service)}
                   onMouseEnter={() => setHoveredService(service.id)}
                   onMouseLeave={() => setHoveredService(null)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      handleServiceClick(service);
+                    }
+                  }}
+                  aria-label={`Learn more about ${service.name}`}
                 >
                   <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-cyan-400/50 transition-all duration-300 hover:transform hover:scale-105 h-full">
                     <div className="flex items-center justify-between mb-4">
@@ -378,7 +540,7 @@ const Homepage2045: React.FC = () => {
                     </div>
                     
                     <div className="mt-auto">
-                      <button className="w-full px-4 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 group-hover:shadow-lg group-hover:shadow-cyan-500/25">
+                      <button className="w-full px-4 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 group-hover:shadow-lg group-hover:shadow-cyan-500/25 focus:outline-none focus:ring-4 focus:ring-cyan-500/50">
                         <span className="flex items-center justify-center space-x-2">
                           Learn More
                           <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -396,7 +558,8 @@ const Homepage2045: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => window.location.href = '/services'}
-                className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-xl hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-purple-500/25"
+                className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-xl hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-purple-500/25 focus:outline-none focus:ring-4 focus:ring-purple-500/50"
+                aria-label="View all available services"
               >
                 <span className="flex items-center space-x-2">
                   View All Services
@@ -406,6 +569,11 @@ const Homepage2045: React.FC = () => {
             </div>
           </div>
         </section>
+
+        {/* Lazy Loaded Testimonials */}
+        <Suspense fallback={<LoadingSkeleton />}>
+          <LazyTestimonialSection />
+        </Suspense>
 
         {/* Call to Action */}
         <section className="py-24 px-4">
@@ -430,7 +598,8 @@ const Homepage2045: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button
                   onClick={handleGetStarted}
-                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25"
+                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25 focus:outline-none focus:ring-4 focus:ring-cyan-500/50"
+                  aria-label="Get started with Zion Tech Group"
                 >
                   <span className="flex items-center space-x-2">
                     Get Started Today
@@ -439,7 +608,8 @@ const Homepage2045: React.FC = () => {
                 </button>
                 <button
                   onClick={handleWatchDemo}
-                  className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105"
+                  className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
+                  aria-label="View all services"
                 >
                   View All Services
                 </button>
