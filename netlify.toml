@@ -171,6 +171,10 @@
   schedule = "*/30 * * * *"
 
 [[scheduled.functions]]
+  name = "internal-link-map-runner"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
   name = "netlify-auto-healer-runner"
   schedule = "*/20 * * * *"
 
