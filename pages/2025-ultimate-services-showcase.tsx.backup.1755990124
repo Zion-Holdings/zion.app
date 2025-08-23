@@ -98,7 +98,11 @@ const UltimateServicesShowcase2025: React.FC = () => {
       <SEO
         title="2025 Ultimate Services Showcase - Zion Tech Group"
         description="Discover our comprehensive suite of innovative micro SAAS services, IT solutions, and AI services. From enterprise automation to blockchain compliance, we deliver cutting-edge solutions for modern businesses."
+<<<<<<< HEAD
+        keywords="micro SAAS, IT services, AI services, enterprise automation, cybersecurity, data analytics, cloud DevOps, fintech, blockchain"
+=======
         keywords={["micro SAAS", "IT services", "AI services", "enterprise automation", "cybersecurity", "data analytics", "cloud DevOps", "fintech", "blockchain"]}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-9f53
         ogImage="/og-image-2025-services.jpg"
       />
 

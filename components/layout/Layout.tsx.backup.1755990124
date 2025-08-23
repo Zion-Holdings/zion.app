@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
+<<<<<<< HEAD
+import { Sun, Moon } from 'lucide-react';
+import EnhancedNavigation2025 from './EnhancedNavigation2025';
+import EnhancedFooter2025 from './EnhancedFooter2025';
+=======
 import UltraFuturisticNavigation2046 from './UltraFuturisticNavigation2046';
 import UltraFuturisticFooter2046 from './UltraFuturisticFooter2046';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-9f53
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
 import TopContactBar from './TopContactBar';
@@ -24,10 +30,17 @@ interface LayoutProps {
 
 export default function Layout({ 
   children, 
+<<<<<<< HEAD
+  title = "Zion Tech Group - Revolutionary AI, Quantum Computing & Space Technology Solutions",
+  description = "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.",
+  keywords = "AI, artificial intelligence, quantum computing, space technology, cybersecurity, cloud infrastructure, enterprise solutions, autonomous systems, consciousness AI",
+  ogImage = "https://ziontechgroup.com/og-image.jpg",
+=======
   title = "Zion Tech Group - Revolutionary 2046 Technology",
   description = "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.",
   keywords = "AI consciousness, quantum computing, autonomous solutions, space technology, cybersecurity, business intelligence, Zion Tech Group, 2046 technology",
   ogImage = "/og-image.jpg",
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-9f53
   canonicalUrl
 }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -227,6 +240,42 @@ export default function Layout({
         {/* Futuristic Background */}
         <UltraFuturisticBackground2036 />
         
+<<<<<<< HEAD
+        {/* Top Contact Bar */}
+        <TopContactBar />
+        
+        {/* Enhanced Navigation */}
+        <EnhancedNavigation2025 />
+        
+        {/* Enhanced Sidebar */}
+        <EnhancedSidebar2025 isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+        
+        {/* Main Content */}
+        <main className="pt-32 pb-16 relative z-10">
+          <EnhancedErrorBoundary>
+            {children}
+          </EnhancedErrorBoundary>
+        </main>
+        
+        {/* Enhanced Footer */}
+        <EnhancedFooter2025 />
+        
+        {/* Performance Monitor */}
+        <EnhancedPerformanceMonitor />
+        
+        {/* Accessibility Enhancer */}
+        <AccessibilityEnhancer />
+        
+        {/* Cookie Consent Banner */}
+        <CookieConsentBanner />
+        
+        {/* Offline Indicator */}
+        {!isOnline && (
+          <div className="fixed bottom-4 right-4 bg-red-600 text-white px-4 py-2 rounded-lg shadow-lg z-50">
+            <div className="flex items-center space-x-2">
+              <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+              <span className="text-sm">You are offline</span>
+=======
         {/* Layout Structure */}
         <div className="relative z-10">
           {/* Top Contact Bar */}
@@ -283,6 +332,7 @@ export default function Layout({
               >
                 Later
               </button>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-9f53
             </div>
           </div>
         )}

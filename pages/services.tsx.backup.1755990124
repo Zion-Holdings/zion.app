@@ -239,10 +239,18 @@ const allServices = [
   ...cuttingEdgeInnovativeServices2025,
   ...advancedITInfrastructureSolutions2025,
   ...advancedAIAutomationSolutions2025,
+<<<<<<< HEAD
+  
+  // Our new 2025 V3 innovative services
+  ...innovativeMicroSaasServices2025V3,
+  ...innovativeITInfrastructureServices2025V3,
+  ...innovativeAIServices2025V3
+=======
   // Our new revolutionary 2046 services
   ...revolutionary2046AdvancedRealMicroSaas,
   ...revolutionary2046AdvancedITServices,
   ...revolutionary2046AdvancedAIServices
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-9f53
 ];
 
 const categories = [
