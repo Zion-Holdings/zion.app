@@ -1,63 +1,65 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enable React strict mode for better development experience
-  reactStrictMode: true,
-  
-  // Enable experimental features for better performance
+  // Enhanced performance and SEO settings
   experimental: {
-    // Enable modern JavaScript features
-    esmExternals: true,
-    
-    // Enable optimized package imports
-    optimizePackageImports: ['framer-motion', 'lucide-react'],
+    optimizePackageImports: ['lucide-react', 'framer-motion'],
+    optimizeCss: true,
+    turbo: {
+      rules: {
+        '*.svg': {
+          loaders: ['@svgr/webpack'],
+          as: '*.js',
+        },
+      },
+    },
   },
 
   // Image optimization
   images: {
-    domains: ['ziontechgroup.com'],
     formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 60,
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
 
-  // Webpack configuration for performance
+  // Enhanced webpack configuration
   webpack: (config, { dev, isServer }) => {
-    // Optimize bundle splitting
+    // Optimize bundle size
     if (!dev && !isServer) {
-      config.optimization.splitChunks = {
-        chunks: 'all',
-        cacheGroups: {
-          vendor: {
-            test: /[\\/]node_modules[\\/]/,
-            name: 'vendors',
-            chunks: 'all',
-          },
-          common: {
-            name: 'common',
-            minChunks: 2,
-            chunks: 'all',
-            enforce: true,
-          },
+      config.optimization.splitChunks.cacheGroups = {
+        ...config.optimization.splitChunks.cacheGroups,
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+          priority: 10,
+        },
+        common: {
+          name: 'common',
+          minChunks: 2,
+          chunks: 'all',
+          priority: 5,
         },
       };
     }
 
-    // Optimize for production
-    if (!dev) {
-      config.optimization.minimize = true;
-      config.optimization.minimizer = config.optimization.minimizer || [];
-    }
+    // SVG optimization
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
 
     return config;
   },
 
-  // Headers for security and performance
+  // Enhanced headers for security and performance
   async headers() {
     return [
       {
         source: '/(.*)',
         headers: [
-          // Security headers
           {
             key: 'X-Frame-Options',
             value: 'DENY',
@@ -67,22 +69,12 @@ const nextConfig = {
             value: 'nosniff',
           },
           {
-            key: 'X-XSS-Protection',
-            value: '1; mode=block',
-          },
-          {
             key: 'Referrer-Policy',
-            value: 'strict-origin-when-cross-origin',
+            value: 'origin-when-cross-origin',
           },
           {
             key: 'Permissions-Policy',
             value: 'camera=(), microphone=(), geolocation=()',
-          },
-          
-          // Performance headers
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
           },
         ],
       },
@@ -91,12 +83,12 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'no-cache, no-store, must-revalidate',
+            value: 'public, max-age=3600, s-maxage=3600',
           },
         ],
       },
       {
-        source: '/(.*).(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot)',
+        source: '/_next/static/(.*)',
         headers: [
           {
             key: 'Cache-Control',
@@ -107,7 +99,7 @@ const nextConfig = {
     ];
   },
 
-  // Redirects for better SEO
+  // Enhanced redirects for better SEO
   async redirects() {
     return [
       {
@@ -116,49 +108,40 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/index.html',
+        source: '/index',
         destination: '/',
         permanent: true,
       },
     ];
   },
 
-  // Rewrites for API routes
+  // Enhanced rewrites for better routing
   async rewrites() {
     return [
       {
-        source: '/api/analytics',
-        destination: '/api/analytics',
+        source: '/sitemap.xml',
+        destination: '/api/sitemap',
       },
       {
-        source: '/api/error-reporting',
-        destination: '/api/error-reporting',
+        source: '/robots.txt',
+        destination: '/api/robots',
       },
     ];
   },
 
-  // Environment variables
-  env: {
-    CUSTOM_KEY: process.env.CUSTOM_KEY,
+  // Compiler optimization
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+    styledComponents: true,
   },
 
-  // Compression
-  compress: true,
-
-  // Powered by header
-  poweredByHeader: false,
-
-  // Trailing slash
-  trailingSlash: false,
-
-  // Base path
-  basePath: '',
-
-  // Asset prefix
-  assetPrefix: '',
-
-  // Output configuration
+  // Enhanced output configuration
   output: 'standalone',
+  poweredByHeader: false,
+  generateEtags: false,
+  compress: true,
+  reactStrictMode: true,
+  swcMinify: true,
 };
 
 module.exports = nextConfig;

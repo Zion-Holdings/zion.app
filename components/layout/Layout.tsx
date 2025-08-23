@@ -48,8 +48,8 @@ export default function Layout({ children }: LayoutProps) {
       </div>
 
       {/* Accessibility and Performance Tools */}
-      <AccessibilityEnhancer />
-      <PerformanceMonitor />
+      <AccessibilityEnhancer enabled={true} showControls={process.env.NODE_ENV === 'development'} />
+      <PerformanceMonitor enabled={true} showMetrics={process.env.NODE_ENV === 'development'} />
       
       {/* Cookie Consent Banner */}
       <CookieConsentBanner />
