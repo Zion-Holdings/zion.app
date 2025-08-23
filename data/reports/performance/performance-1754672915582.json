@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2025-08-08T17:08:35.582Z",
+  "build": {
+    "ok": false,
+    "code": 1,
+    "stderr": "<w> [webpack.cache.PackFileCacheStrategy] Restoring pack failed from /workspace/.next/cache/webpack/client-production.pack: TypeError: Cannot read properties of undefined (reading 'length')\nnode:internal/fs/promises:852\n  return await PromisePrototypeThen(\n         ^\n\nError: ENOENT: no such file or directory, mkdir '/workspace/.next/traces'\n    at async Object.mkdir (node:internal/fs/promises:852:10)\n    at async /workspace/node_modules/next/dist/telemetry/trace/report/to-json.js:31:17 {\n  errno: -2,\n  code: 'ENOENT',\n  syscall: 'mkdir',\n  path: '/workspace/.next/traces'\n}\n\nNode.js v22.16.0\n"
+  },
+  "metrics": [
+    {
+      "url": "http://localhost:3000/",
+      "statusCode": 404,
+      "ttfbMs": 94,
+      "bytes": 17938
+    },
+    {
+      "url": "http://localhost:3000/enhanced-home",
+      "statusCode": 404,
+      "ttfbMs": 4,
+      "bytes": 17938
+    }
+  ],
+  "thresholds": {
+    "ttfbMs": 800,
+    "bytesHtml": 250000
+  },
+  "alerts": []
+}

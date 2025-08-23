@@ -1,0 +1,27 @@
+steps:
+      - name: "Agent: agent-1755381089845-2-full-stack-advanced"
+        run: echo "Step completed"
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
+
+concurrency:
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
+
+jobs:
+  agent-execution:
+        - name: Checkout code
+        uses: actions/checkout@v4
+        
+        - name: Setup Node.js
+        uses: actions/setup-node@v4
+          node-version: 18
+          
+        - name: Install dependencies
+        run: npm ci
+        
+        - name: Run agent
+        run: node automation/agents/agent-1755381089845-2-full-stack-advanced.cjs

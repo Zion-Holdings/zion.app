@@ -1,16 +1,9 @@
-
-import React from "react";
-import { cn } from "@/lib/utils";
-
-interface SidebarGroupContentProps extends React.HTMLAttributes<HTMLDivElement> {
-  className?: string;
-  children?: React.ReactNode;
-}
-
-export function SidebarGroupContent({ className, children, ...props }: SidebarGroupContentProps) {
+import React from 'react';
+export function SidebarGroupContent() {
   return (
-    <div className={cn("space-y-1", className)} {...props}>
-      {children}
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
     </div>
   );
 }
