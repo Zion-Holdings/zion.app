@@ -5,7 +5,11 @@ import {
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
+<<<<<<< HEAD
+  Building, Cpu, Database, Cloud, Lock, ShoppingCart, Users
+=======
   Building
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-3bf4
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -24,10 +28,16 @@ import { innovative2036MicroSaasServices } from '../data/innovative-2036-micro-s
 import { innovative2036ITServices } from '../data/innovative-2036-it-services';
 
 // Import our new innovative 2025 services
+<<<<<<< HEAD
+import { innovative2025MicroSaasExpansions } from '../data/innovative-2025-micro-saas-expansions';
+import { innovative2025ITServicesExpansions } from '../data/innovative-2025-it-services-expansions';
+import { innovative2025AIServicesExpansions } from '../data/innovative-2025-ai-services-expansions';
+=======
 import { innovativeAIServices2025 } from '../data/innovative-2025-ai-services';
 import { innovativeITInfrastructure2025 } from '../data/innovative-2025-it-infrastructure';
 import { innovativeMicroSaas2025 } from '../data/innovative-2025-micro-saas';
 import { innovativeSpaceTech2025 } from '../data/innovative-2025-space-tech';
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-3bf4
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -113,10 +123,16 @@ const allServices = [
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
   // Add our new innovative 2025 services
+<<<<<<< HEAD
+  ...innovative2025MicroSaasExpansions,
+  ...innovative2025ITServicesExpansions,
+  ...innovative2025AIServicesExpansions
+=======
   ...innovativeAIServices2025,
   ...innovativeITInfrastructure2025,
   ...innovativeMicroSaas2025,
   ...innovativeSpaceTech2025
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-3bf4
 ];
 
 const categories = [

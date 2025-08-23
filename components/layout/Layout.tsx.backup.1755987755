@@ -96,7 +96,11 @@ export default function Layout({ children }: LayoutProps) {
         <TopContactBar />
         
         {/* Navigation */}
+<<<<<<< HEAD
+        <UltraFuturisticNavigation2040 />
+=======
         <UltraFuturisticNavigation2036 />
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-3bf4
         
         {/* Sidebar and Main Content */}
         <div className="flex">
