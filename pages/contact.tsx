@@ -2,17 +2,8 @@ import React, { useState } from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
-  Phone, 
-  Mail, 
-  MapPin, 
-  Clock, 
-  MessageCircle,
-  Send,
-  CheckCircle,
-  Globe,
-  Building,
-  Users,
-  ArrowRight
+  Phone, Mail, MapPin, Clock, MessageSquare, Globe, 
+  Send, CheckCircle, AlertCircle, Brain, Atom, Shield, Rocket
 } from 'lucide-react';
 
 const ContactPage: React.FC = () => {
@@ -25,7 +16,7 @@ const ContactPage: React.FC = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -41,12 +32,12 @@ const ContactPage: React.FC = () => {
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 2000));
     
+    setSubmitStatus('success');
     setIsSubmitting(false);
-    setIsSubmitted(true);
     
     // Reset form after 3 seconds
     setTimeout(() => {
-      setIsSubmitted(false);
+      setSubmitStatus('idle');
       setFormData({
         name: '',
         email: '',
@@ -58,173 +49,171 @@ const ContactPage: React.FC = () => {
     }, 3000);
   };
 
-  const contactMethods = [
-    {
-      icon: Phone,
-      title: 'Phone',
-      details: ['+1 (555) 123-4567', '+1 (555) 987-6543'],
-      color: 'from-blue-500 to-cyan-500'
-    },
-    {
-      icon: Mail,
-      title: 'Email',
-      details: ['hello@ziontechgroup.com', 'support@ziontechgroup.com'],
-      color: 'from-purple-500 to-pink-500'
-    },
-    {
-      icon: MapPin,
-      title: 'Office',
-      details: ['123 Innovation Drive', 'Tech Valley, CA 94000'],
-      color: 'from-green-500 to-emerald-500'
-    },
-    {
-      icon: Clock,
-      title: 'Business Hours',
-      details: ['Mon-Fri: 9AM-6PM PST', '24/7 Support Available'],
-      color: 'from-orange-500 to-red-500'
-    }
-  ];
+  const contactInfo = {
+    phone: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    hours: 'Monday - Friday: 9:00 AM - 6:00 PM EST',
+    website: 'https://ziontechgroup.com'
+  };
 
   const services = [
-    'AI & Machine Learning',
-    'Quantum Computing',
-    'Space Technology',
-    'Cybersecurity',
-    'Cloud Infrastructure',
-    'Edge Computing',
-    'Data & Analytics',
-    'Blockchain & Web3',
-    'Custom Solution',
-    'Other'
+    { value: 'ai-consciousness', label: 'AI Consciousness Evolution' },
+    { value: 'quantum-computing', label: 'Quantum Computing Solutions' },
+    { value: 'cybersecurity', label: 'Cybersecurity & Protection' },
+    { value: 'space-technology', label: 'Space Technology Platforms' },
+    { value: 'business-intelligence', label: 'Business Intelligence & Analytics' },
+    { value: 'it-infrastructure', label: 'IT Infrastructure & DevOps' },
+    { value: 'custom-solution', label: 'Custom Solution Development' },
+    { value: 'consulting', label: 'Technology Consulting' }
   ];
 
-  const offices = [
-    {
-      city: 'San Francisco',
-      country: 'United States',
-      address: '123 Innovation Drive, Tech Valley, CA 94000',
-      phone: '+1 (555) 123-4567',
-      email: 'sf@ziontechgroup.com'
+  const socialLinks = [
+    { 
+      name: 'LinkedIn', 
+      href: 'https://linkedin.com/company/ziontechgroup', 
+      icon: Globe 
     },
-    {
-      city: 'London',
-      country: 'United Kingdom',
-      address: '456 Tech Square, Innovation District, EC1A 1BB',
-      phone: '+44 20 1234 5678',
-      email: 'london@ziontechgroup.com'
+    { 
+      name: 'Twitter', 
+      href: 'https://twitter.com/ziontechgroup', 
+      icon: MessageSquare 
     },
-    {
-      city: 'Tokyo',
-      country: 'Japan',
-      address: '789 Future Street, Shibuya-ku, Tokyo 150-0002',
-      phone: '+81 3 1234 5678',
-      email: 'tokyo@ziontechgroup.com'
-    },
-    {
-      city: 'Singapore',
-      country: 'Singapore',
-      address: '321 Innovation Road, Marina Bay, 018956',
-      phone: '+65 6123 4567',
-      email: 'singapore@ziontechgroup.com'
+    { 
+      name: 'GitHub', 
+      href: 'https://github.com/ziontechgroup', 
+      icon: Globe 
     }
   ];
 
   return (
-    <Layout>
-      <div className="min-h-screen bg-black text-white">
+    <Layout 
+      title="Contact Us - Zion Tech Group"
+      description="Get in touch with Zion Tech Group for revolutionary technology solutions. Contact our experts for AI consciousness, quantum computing, and space technology."
+      keywords="contact Zion Tech Group, technology consulting, AI solutions, quantum computing, cybersecurity, space technology"
+    >
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white">
         {/* Hero Section */}
-        <section className="relative py-20 lg:py-32 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-purple-500/10 to-pink-500/10" />
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative pt-32 pb-20 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20"></div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-center"
             >
-              <h1 className="text-5xl lg:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-6">
+              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-6">
                 Get In Touch
               </h1>
-              <p className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Ready to transform your business with cutting-edge technology? 
-                Let's discuss how we can help you achieve your goals.
+              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                Ready to revolutionize your business with cutting-edge technology? 
+                Our experts are here to help you navigate the future.
               </p>
             </motion.div>
           </div>
         </section>
 
-        {/* Contact Methods Section */}
-        <section className="py-20 bg-gradient-to-b from-black via-gray-900 to-black">
+        {/* Contact Information */}
+        <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-                Multiple Ways to Connect
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Choose the method that works best for you. Our team is ready to help.
-              </p>
-            </motion.div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-r from-cyan-500/10 to-purple-500/10 p-6 rounded-2xl border border-cyan-500/20 text-center"
+              >
+                <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Phone className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Phone</h3>
+                <p className="text-cyan-400 font-medium">{contactInfo.phone}</p>
+              </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {contactMethods.map((method, index) => (
-                <motion.div
-                  key={method.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="text-center p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300"
-                >
-                  <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r ${method.color} flex items-center justify-center`}>
-                    <method.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-3">{method.title}</h3>
-                  {method.details.map((detail, idx) => (
-                    <p key={idx} className="text-gray-300 text-sm mb-1">{detail}</p>
-                  ))}
-                </motion.div>
-              ))}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 p-6 rounded-2xl border border-purple-500/20 text-center"
+              >
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Mail className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Email</h3>
+                <p className="text-purple-400 font-medium">{contactInfo.email}</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-r from-pink-500/10 to-red-500/10 p-6 rounded-2xl border border-pink-500/20 text-center"
+              >
+                <div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-red-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <MapPin className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Address</h3>
+                <p className="text-pink-400 font-medium text-sm">{contactInfo.address}</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="bg-gradient-to-r from-red-500/10 to-orange-500/10 p-6 rounded-2xl border border-red-500/20 text-center"
+              >
+                <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-orange-500 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Clock className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Hours</h3>
+                <p className="text-red-400 font-medium text-sm">{contactInfo.hours}</p>
+              </motion.div>
             </div>
           </div>
         </section>
 
-        {/* Contact Form Section */}
-        <section className="py-20 bg-black">
+        {/* Contact Form & Map */}
+        <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-              {/* Form */}
+            <div className="grid lg:grid-cols-2 gap-12">
+              {/* Contact Form */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-                  Send Us a Message
-                </h2>
-                <p className="text-xl text-gray-300 mb-8">
-                  Tell us about your project and we'll get back to you within 24 hours.
-                </p>
+                <div className="bg-gradient-to-r from-gray-800/50 to-gray-900/50 p-8 rounded-2xl border border-gray-700/50">
+                  <h2 className="text-3xl font-bold text-white mb-6">Send Us a Message</h2>
+                  
+                  {submitStatus === 'success' && (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      className="bg-green-500/20 border border-green-500/30 text-green-400 p-4 rounded-xl mb-6 flex items-center"
+                    >
+                      <CheckCircle className="w-5 h-5 mr-2" />
+                      Thank you! Your message has been sent successfully.
+                    </motion.div>
+                  )}
 
-                {isSubmitted ? (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/50 rounded-2xl p-8 text-center"
-                  >
-                    <CheckCircle className="w-16 h-16 text-green-400 mx-auto mb-4" />
-                    <h3 className="text-2xl font-semibold text-white mb-2">Message Sent!</h3>
-                    <p className="text-gray-300">Thank you for reaching out. We'll get back to you soon.</p>
-                  </motion.div>
-                ) : (
+                  {submitStatus === 'error' && (
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      className="bg-red-500/20 border border-red-500/30 text-red-400 p-4 rounded-xl mb-6 flex items-center"
+                    >
+                      <AlertCircle className="w-5 h-5 mr-2" />
+                      There was an error sending your message. Please try again.
+                    </motion.div>
+                  )}
+
                   <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
                           Full Name *
@@ -233,13 +222,14 @@ const ContactPage: React.FC = () => {
                           type="text"
                           id="name"
                           name="name"
-                          required
                           value={formData.name}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300"
+                          required
+                          className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                           placeholder="Enter your full name"
                         />
                       </div>
+                      
                       <div>
                         <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
                           Email Address *
@@ -248,16 +238,16 @@ const ContactPage: React.FC = () => {
                           type="email"
                           id="email"
                           name="email"
-                          required
                           value={formData.email}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300"
-                          placeholder="Enter your email"
+                          required
+                          className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                          placeholder="Enter your email address"
                         />
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-2">
                           Company
@@ -268,10 +258,11 @@ const ContactPage: React.FC = () => {
                           name="company"
                           value={formData.company}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300"
+                          className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                           placeholder="Enter your company name"
                         />
                       </div>
+                      
                       <div>
                         <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
                           Phone Number
@@ -282,7 +273,7 @@ const ContactPage: React.FC = () => {
                           name="phone"
                           value={formData.phone}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300"
+                          className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                           placeholder="Enter your phone number"
                         />
                       </div>
@@ -297,11 +288,13 @@ const ContactPage: React.FC = () => {
                         name="service"
                         value={formData.service}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300"
+                        className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                       >
                         <option value="">Select a service</option>
                         {services.map((service) => (
-                          <option key={service} value={service}>{service}</option>
+                          <option key={service.value} value={service.value}>
+                            {service.label}
+                          </option>
                         ))}
                       </select>
                     </div>
@@ -313,37 +306,37 @@ const ContactPage: React.FC = () => {
                       <textarea
                         id="message"
                         name="message"
-                        required
-                        rows={6}
                         value={formData.message}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300 resize-none"
-                        placeholder="Tell us about your project, goals, and how we can help..."
+                        required
+                        rows={5}
+                        className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent resize-none"
+                        placeholder="Tell us about your project or inquiry..."
                       />
                     </div>
 
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center"
+                      className="w-full bg-gradient-to-r from-cyan-500 to-purple-500 text-white py-4 px-8 rounded-xl font-semibold hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center"
                     >
                       {isSubmitting ? (
                         <>
-                          <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2" />
+                          <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
                           Sending Message...
                         </>
                       ) : (
                         <>
+                          <Send className="w-5 h-5 mr-2" />
                           Send Message
-                          <Send className="w-5 h-5 ml-2" />
                         </>
                       )}
                     </button>
                   </form>
-                )}
+                </div>
               </motion.div>
 
-              {/* Contact Info */}
+              {/* Map & Additional Info */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -351,50 +344,51 @@ const ContactPage: React.FC = () => {
                 viewport={{ once: true }}
                 className="space-y-8"
               >
-                <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl p-8 border border-gray-700/50">
-                  <h3 className="text-2xl font-semibold text-white mb-6">Why Choose Zion Tech Group?</h3>
-                  <div className="space-y-4">
-                    <div className="flex items-start space-x-3">
-                      <div className="w-6 h-6 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <CheckCircle className="w-4 h-4 text-white" />
-                      </div>
-                      <p className="text-gray-300">15+ years of technology innovation experience</p>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-6 h-6 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <CheckCircle className="w-4 h-4 text-white" />
-                      </div>
-                      <p className="text-gray-300">500+ successful client implementations worldwide</p>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-6 h-6 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <CheckCircle className="w-4 h-4 text-white" />
-                      </div>
-                      <p className="text-gray-300">24/7 technical support and monitoring</p>
-                    </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-6 h-6 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                        <CheckCircle className="w-4 h-4 text-white" />
-                      </div>
-                      <p className="text-gray-300">Cutting-edge AI, quantum, and space technology</p>
+                {/* Map Placeholder */}
+                <div className="bg-gradient-to-r from-gray-800/50 to-gray-900/50 p-8 rounded-2xl border border-gray-700/50">
+                  <h3 className="text-2xl font-bold text-white mb-4">Our Location</h3>
+                  <div className="bg-gray-700/50 h-64 rounded-xl flex items-center justify-center border border-gray-600/50">
+                    <div className="text-center">
+                      <MapPin className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+                      <p className="text-gray-400">Interactive map coming soon</p>
+                      <p className="text-sm text-gray-500 mt-2">{contactInfo.address}</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl p-8 border border-gray-700/50">
-                  <h3 className="text-2xl font-semibold text-white mb-6">Response Time</h3>
-                  <div className="space-y-3">
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-300">Initial Response</span>
-                      <span className="text-cyan-400 font-semibold">Within 24 hours</span>
+                {/* Social Links */}
+                <div className="bg-gradient-to-r from-gray-800/50 to-gray-900/50 p-8 rounded-2xl border border-gray-700/50">
+                  <h3 className="text-2xl font-bold text-white mb-4">Connect With Us</h3>
+                  <div className="flex space-x-4">
+                    {socialLinks.map((social) => (
+                      <a
+                        key={social.name}
+                        href={social.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-xl flex items-center justify-center hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-110"
+                      >
+                        <social.icon className="w-6 h-6 text-white" />
+                      </a>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Quick Contact */}
+                <div className="bg-gradient-to-r from-gray-800/50 to-gray-900/50 p-8 rounded-2xl border border-gray-700/50">
+                  <h3 className="text-2xl font-bold text-white mb-4">Quick Contact</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-center">
+                      <Phone className="w-5 h-5 text-cyan-400 mr-3" />
+                      <span className="text-gray-300">{contactInfo.phone}</span>
                     </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-300">Project Proposal</span>
-                      <span className="text-cyan-400 font-semibold">Within 48 hours</span>
+                    <div className="flex items-center">
+                      <Mail className="w-5 h-5 text-purple-400 mr-3" />
+                      <span className="text-gray-300">{contactInfo.email}</span>
                     </div>
-                    <div className="flex justify-between items-center">
-                      <span className="text-gray-300">Technical Consultation</span>
-                      <span className="text-cyan-400 font-semibold">Within 72 hours</span>
+                    <div className="flex items-center">
+                      <Globe className="w-5 h-5 text-pink-400 mr-3" />
+                      <span className="text-gray-300">{contactInfo.website}</span>
                     </div>
                   </div>
                 </div>
@@ -403,58 +397,8 @@ const ContactPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Global Offices Section */}
-        <section className="py-20 bg-gradient-to-b from-black via-gray-900 to-black">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-                Global Presence
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                We're strategically located around the world to serve our global clients.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {offices.map((office, index) => (
-                <motion.div
-                  key={office.city}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl p-6 border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300"
-                >
-                  <div className="flex items-center mb-4">
-                    <Building className="w-6 h-6 text-cyan-400 mr-2" />
-                    <h3 className="text-xl font-semibold text-white">{office.city}</h3>
-                  </div>
-                  <p className="text-gray-400 text-sm mb-3">{office.country}</p>
-                  <p className="text-gray-300 text-sm mb-3">{office.address}</p>
-                  <div className="space-y-2 text-sm">
-                    <p className="text-gray-300">
-                      <Phone className="w-4 h-4 inline mr-2 text-cyan-400" />
-                      {office.phone}
-                    </p>
-                    <p className="text-gray-300">
-                      <Mail className="w-4 h-4 inline mr-2 text-cyan-400" />
-                      {office.email}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* CTA Section */}
-        <section className="py-20 bg-black">
+        <section className="py-20 bg-gradient-to-r from-gray-900/50 to-black/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -462,26 +406,25 @@ const ContactPage: React.FC = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+              <h2 className="text-4xl font-bold text-white mb-6">
                 Ready to Start Your Project?
               </h2>
-              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-                Let's discuss how our innovative technology solutions can transform your business 
-                and drive unprecedented growth.
+              <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
+                Let's discuss how our revolutionary technology solutions can transform your business 
+                and accelerate your success in the digital age.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/services"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-full hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105"
+                  className="bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-8 py-4 rounded-xl font-semibold hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105"
                 >
-                  Explore Services
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                  Explore Our Services
                 </a>
                 <a
-                  href="/solutions"
-                  className="inline-flex items-center px-8 py-4 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-full hover:bg-cyan-500 hover:text-white transition-all duration-300"
+                  href="tel:+13024640950"
+                  className="border border-cyan-500 text-cyan-400 px-8 py-4 rounded-xl font-semibold hover:bg-cyan-500 hover:text-white transition-all duration-300"
                 >
-                  View Solutions
+                  Call Us Now
                 </a>
               </div>
             </motion.div>

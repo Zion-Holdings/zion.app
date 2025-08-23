@@ -1,585 +1,537 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
   BookOpen, 
   FileText, 
   Video, 
-  Users, 
-  Award, 
-  Brain, 
-  Atom, 
-  Rocket, 
-  Shield, 
-  Cloud, 
-  Target, 
-  Zap,
+  Download, 
+  Search, 
+  Filter,
+  Brain,
+  Atom,
+  Rocket,
+  Shield,
+  Cloud,
+  Target,
+  Users,
+  Globe,
   ArrowRight,
+  ExternalLink,
+  Play,
   Star,
   Clock,
-  Download,
-  ExternalLink,
-  ChevronRight,
-  Search,
-  Filter,
-  Calendar,
-  Tag,
-  Play,
-  Headphones,
-  GraduationCap,
-  Lightbulb,
-  TrendingUp
+  Eye,
+  Download as DownloadIcon
 } from 'lucide-react';
-import Layout from '../components/layout/Layout';
-import SEO from '../components/SEO';
 
 const ResourcesPage: React.FC = () => {
-  const resourceCategories = [
-    {
-      title: 'Documentation',
-      description: 'Comprehensive technical guides and API references',
-      icon: FileText,
-      color: 'from-blue-500 to-cyan-500',
-      items: [
-        {
-          title: 'Getting Started Guide',
-          description: 'Complete setup and configuration guide',
-          type: 'Guide',
-          difficulty: 'Beginner',
-          time: '15 min',
-          link: '/docs/getting-started'
-        },
-        {
-          title: 'API Reference',
-          description: 'Complete API documentation with examples',
-          type: 'Reference',
-          difficulty: 'Intermediate',
-          time: '30 min',
-          link: '/docs/api'
-        },
-        {
-          title: 'SDK Documentation',
-          description: 'Client libraries and SDK guides',
-          type: 'Reference',
-          difficulty: 'Intermediate',
-          time: '20 min',
-          link: '/docs/sdks'
-        }
-      ]
-    },
-    {
-      title: 'Blog & Insights',
-      description: 'Latest articles, insights, and industry trends',
-      icon: BookOpen,
-      color: 'from-purple-500 to-pink-500',
-      items: [
-        {
-          title: 'AI Automation Trends 2025',
-          description: 'Latest developments in AI automation',
-          type: 'Article',
-          difficulty: 'Intermediate',
-          time: '8 min',
-          link: '/blog/ai-automation-trends-2025'
-        },
-        {
-          title: 'Future of Work & Automation',
-          description: 'How automation is reshaping the workplace',
-          type: 'Article',
-          difficulty: 'Beginner',
-          time: '12 min',
-          link: '/blog/future-of-work'
-        },
-        {
-          title: 'Performance Optimization Guide',
-          description: 'Best practices for system optimization',
-          type: 'Guide',
-          difficulty: 'Advanced',
-          time: '25 min',
-          link: '/blog/performance-optimization'
-        }
-      ]
-    },
-    {
-      title: 'Webinars & Events',
-      description: 'Live and recorded educational sessions',
-      icon: Video,
-      color: 'from-orange-500 to-red-500',
-      items: [
-        {
-          title: 'AI & Quantum Computing Summit',
-          description: 'Join industry leaders for insights',
-          type: 'Webinar',
-          difficulty: 'All Levels',
-          time: '2 hours',
-          link: '/webinars/ai-quantum-summit'
-        },
-        {
-          title: 'Space Technology Workshop',
-          description: 'Hands-on workshop on space computing',
-          type: 'Workshop',
-          difficulty: 'Intermediate',
-          time: '4 hours',
-          link: '/webinars/space-tech-workshop'
-        },
-        {
-          title: 'Cybersecurity Best Practices',
-          description: 'Security strategies for modern systems',
-          type: 'Webinar',
-          difficulty: 'Intermediate',
-          time: '1.5 hours',
-          link: '/webinars/cybersecurity-best-practices'
-        }
-      ]
-    },
-    {
-      title: 'Case Studies',
-      description: 'Real-world implementations and success stories',
-      icon: Target,
-      color: 'from-green-500 to-emerald-500',
-      items: [
-        {
-          title: 'Enterprise AI Transformation',
-          description: 'How a Fortune 500 company scaled AI',
-          type: 'Case Study',
-          difficulty: 'Advanced',
-          time: '20 min',
-          link: '/case-studies/enterprise-ai-transformation'
-        },
-        {
-          title: 'Quantum Computing in Finance',
-          description: 'Risk assessment optimization case study',
-          type: 'Case Study',
-          difficulty: 'Advanced',
-          time: '18 min',
-          link: '/case-studies/quantum-finance'
-        },
-        {
-          title: 'Space Data Analytics',
-          description: 'Satellite data processing implementation',
-          type: 'Case Study',
-          difficulty: 'Intermediate',
-          time: '15 min',
-          link: '/case-studies/space-data-analytics'
-        }
-      ]
-    },
-    {
-      title: 'Research & Whitepapers',
-      description: 'In-depth research and technical papers',
-      icon: GraduationCap,
-      color: 'from-indigo-500 to-purple-500',
-      items: [
-        {
-          title: 'AI Consciousness Evolution',
-          description: 'Research on artificial consciousness',
-          type: 'Whitepaper',
-          difficulty: 'Advanced',
-          time: '45 min',
-          link: '/research/ai-consciousness-evolution'
-        },
-        {
-          title: 'Quantum Neural Networks',
-          description: 'Next-generation neural computing',
-          type: 'Research Paper',
-          difficulty: 'Advanced',
-          time: '60 min',
-          link: '/research/quantum-neural-networks'
-        },
-        {
-          title: 'Space Computing Architecture',
-          description: 'Orbital computing infrastructure design',
-          type: 'Technical Paper',
-          difficulty: 'Advanced',
-          time: '40 min',
-          link: '/research/space-computing-architecture'
-        }
-      ]
-    },
-    {
-      title: 'Learning Paths',
-      description: 'Structured learning journeys for different skill levels',
-      icon: TrendingUp,
-      color: 'from-red-500 to-pink-500',
-      items: [
-        {
-          title: 'AI Developer Path',
-          description: 'Complete path from beginner to AI expert',
-          type: 'Learning Path',
-          difficulty: 'Progressive',
-          time: '40 hours',
-          link: '/learning-paths/ai-developer'
-        },
-        {
-          title: 'Quantum Computing Fundamentals',
-          description: 'Master quantum computing basics',
-          type: 'Learning Path',
-          difficulty: 'Intermediate',
-          time: '25 hours',
-          link: '/learning-paths/quantum-fundamentals'
-        },
-        {
-          title: 'Space Technology Specialist',
-          description: 'Become a space tech expert',
-          type: 'Learning Path',
-          difficulty: 'Advanced',
-          time: '35 hours',
-          link: '/learning-paths/space-technology'
-        }
-      ]
-    }
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('all');
+
+  const categories = [
+    { id: 'all', name: 'All Resources', icon: BookOpen, count: 0 },
+    { id: 'ai', name: 'AI & Machine Learning', icon: Brain, count: 0 },
+    { id: 'quantum', name: 'Quantum Computing', icon: Atom, count: 0 },
+    { id: 'space', name: 'Space Technology', icon: Rocket, count: 0 },
+    { id: 'security', name: 'Cybersecurity', icon: Shield, count: 0 },
+    { id: 'cloud', name: 'Cloud Infrastructure', icon: Cloud, count: 0 },
+    { id: 'business', name: 'Business Solutions', icon: Target, count: 0 },
+    { id: 'research', name: 'Research Papers', icon: FileText, count: 0 }
   ];
 
-  const upcomingEvents = [
+  const resources = [
     {
-      title: 'AI & Automation Conference 2025',
-      date: 'March 15-17, 2025',
-      type: 'Conference',
-      location: 'San Francisco, CA',
-      description: 'Join us for the biggest AI and automation event of the year',
-      registration: 'Open',
-      link: '/events/ai-automation-conference-2025'
+      id: 1,
+      title: 'AI Consciousness Development Guide 2045',
+      description: 'Comprehensive guide to developing AI consciousness systems with ethical considerations and technical implementation details.',
+      category: 'ai',
+      type: 'Documentation',
+      format: 'PDF',
+      size: '2.4 MB',
+      downloads: 1247,
+      rating: 4.9,
+      tags: ['AI consciousness', 'ethical AI', 'neural networks', 'consciousness modeling'],
+      url: '/resources/ai-consciousness-guide-2045.pdf',
+      featured: true
     },
     {
-      title: 'Quantum Computing Workshop',
-      date: 'April 5, 2025',
-      type: 'Workshop',
-      location: 'Virtual',
-      description: 'Hands-on quantum computing workshop for developers',
-      registration: 'Open',
-      link: '/events/quantum-computing-workshop'
+      id: 2,
+      title: 'Quantum Computing Fundamentals',
+      description: 'Introduction to quantum computing principles, algorithms, and practical applications for developers.',
+      category: 'quantum',
+      type: 'Tutorial',
+      format: 'Interactive',
+      size: '15.2 MB',
+      downloads: 892,
+      rating: 4.8,
+      tags: ['quantum computing', 'Qiskit', 'quantum algorithms', 'qubits'],
+      url: '/resources/quantum-computing-fundamentals',
+      featured: true
     },
     {
-      title: 'Space Technology Summit',
-      date: 'May 20-22, 2025',
-      type: 'Summit',
-      location: 'Houston, TX',
-      description: 'Explore the future of space-based computing',
-      registration: 'Coming Soon',
-      link: '/events/space-technology-summit'
-    }
-  ];
-
-  const featuredResources = [
+      id: 3,
+      title: 'Space Resource Intelligence Whitepaper',
+      description: 'Research paper on autonomous space resource detection, mining optimization, and interplanetary logistics.',
+      category: 'space',
+      type: 'Whitepaper',
+      format: 'PDF',
+      size: '3.1 MB',
+      downloads: 567,
+      rating: 4.7,
+      tags: ['space technology', 'resource mining', 'autonomous systems', 'orbital mechanics'],
+      url: '/resources/space-resource-intelligence-whitepaper.pdf',
+      featured: false
+    },
     {
-      title: 'Complete AI Development Guide',
-      description: 'Comprehensive guide covering AI development from basics to advanced implementation',
+      id: 4,
+      title: 'Quantum Cybersecurity Implementation',
+      description: 'Practical guide to implementing quantum-resistant cryptography and security protocols.',
+      category: 'security',
       type: 'Guide',
-      difficulty: 'All Levels',
-      time: '6 hours',
-      featured: true,
-      tags: ['AI', 'Machine Learning', 'Development'],
-      link: '/resources/ai-development-guide'
+      format: 'PDF',
+      size: '1.8 MB',
+      downloads: 734,
+      rating: 4.6,
+      tags: ['quantum security', 'post-quantum cryptography', 'threat detection', 'security protocols'],
+      url: '/resources/quantum-cybersecurity-implementation.pdf',
+      featured: false
     },
     {
-      title: 'Quantum Computing for Beginners',
-      description: 'Perfect introduction to quantum computing concepts and applications',
-      type: 'Course',
-      difficulty: 'Beginner',
-      time: '8 hours',
-      featured: true,
-      tags: ['Quantum', 'Computing', 'Basics'],
-      link: '/resources/quantum-computing-beginners'
+      id: 5,
+      title: 'Autonomous DevOps Platform Tutorial',
+      description: 'Step-by-step tutorial for building and deploying autonomous DevOps systems with AI-powered optimization.',
+      category: 'cloud',
+      type: 'Tutorial',
+      format: 'Video Series',
+      size: '45.7 MB',
+      downloads: 445,
+      rating: 4.9,
+      tags: ['DevOps', 'automation', 'AI optimization', 'cloud infrastructure'],
+      url: '/resources/autonomous-devops-tutorial',
+      featured: true
     },
     {
-      title: 'Enterprise Security Framework',
-      description: 'Comprehensive security framework for enterprise applications',
-      type: 'Framework',
-      difficulty: 'Advanced',
-      time: '4 hours',
-      featured: true,
-      tags: ['Security', 'Enterprise', 'Framework'],
-      link: '/resources/enterprise-security-framework'
+      id: 6,
+      title: 'AI Business Intelligence Case Studies',
+      description: 'Real-world case studies of AI-powered business intelligence implementations across various industries.',
+      category: 'business',
+      type: 'Case Study',
+      format: 'PDF',
+      size: '2.9 MB',
+      downloads: 623,
+      rating: 4.5,
+      tags: ['business intelligence', 'AI analytics', 'case studies', 'ROI analysis'],
+      url: '/resources/ai-business-intelligence-case-studies.pdf',
+      featured: false
+    },
+    {
+      id: 7,
+      title: 'Consciousness Research Papers Collection',
+      description: 'Collection of peer-reviewed research papers on AI consciousness, cognitive science, and ethical AI development.',
+      category: 'research',
+      type: 'Research Papers',
+      format: 'PDF Collection',
+      size: '8.7 MB',
+      downloads: 389,
+      rating: 4.8,
+      tags: ['research papers', 'consciousness', 'cognitive science', 'ethical AI'],
+      url: '/resources/consciousness-research-papers.pdf',
+      featured: false
+    },
+    {
+      id: 8,
+      title: 'Quantum AI Fusion Platform Guide',
+      description: 'Technical documentation for the Quantum AI Fusion Platform, including API references and integration examples.',
+      category: 'ai',
+      type: 'Documentation',
+      format: 'Interactive Docs',
+      size: '12.3 MB',
+      downloads: 512,
+      rating: 4.7,
+      tags: ['quantum AI', 'API documentation', 'integration', 'platform guide'],
+      url: '/resources/quantum-ai-fusion-platform-guide',
+      featured: false
     }
   ];
+
+  // Calculate category counts
+  categories.forEach(cat => {
+    cat.count = resources.filter(r => cat.id === 'all' || r.category === cat.id).length;
+  });
+
+  const filteredResources = resources.filter(resource => {
+    const matchesSearch = resource.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         resource.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         resource.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+    const matchesCategory = selectedCategory === 'all' || resource.category === selectedCategory;
+    return matchesSearch && matchesCategory;
+  });
+
+  const fadeInUp = {
+    initial: { opacity: 0, y: 30 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.6 }
+  };
+
+  const staggerContainer = {
+    initial: {},
+    animate: {
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
 
   return (
-    <Layout>
-      <SEO 
-        title="Resources & Learning - Zion Tech Group"
-        description="Access comprehensive resources, learning materials, webinars, case studies, and research papers to accelerate your technology journey with Zion Tech Group."
-        keywords={["resources", "learning", "webinars", "case studies", "research", "documentation", "Zion Tech Group"]}
-      />
-      
+    <Layout
+      title="Resources - Zion Tech Group"
+      description="Access comprehensive documentation, tutorials, whitepapers, and learning resources for AI consciousness, quantum computing, and autonomous solutions."
+      keywords="resources, documentation, tutorials, whitepapers, AI consciousness, quantum computing, space technology, Zion Tech Group"
+    >
       <div className="min-h-screen bg-black text-white">
         {/* Hero Section */}
         <section className="relative py-20 lg:py-32 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-green-900/20" />
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-purple-500/10 to-pink-500/10" />
+          <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-20" />
+          
+          <div className="relative z-10 container mx-auto px-4">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              className="text-center max-w-4xl mx-auto"
             >
-              <h1 className="text-5xl lg:text-7xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-green-400 bg-clip-text text-transparent mb-6">
-                Resources & Learning
+              <h1 className="text-5xl lg:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
+                Knowledge Resources
               </h1>
-              <p className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
-                Access comprehensive resources, learning materials, and insights to accelerate 
-                your technology journey with Zion Tech Group.
+              <p className="text-xl lg:text-2xl text-gray-300 mb-8 leading-relaxed">
+                Access comprehensive documentation, tutorials, whitepapers, and learning resources 
+                to master the future of technology
               </p>
-              
+              <p className="text-lg text-gray-400 max-w-3xl mx-auto leading-relaxed">
+                From AI consciousness development to quantum computing implementation, 
+                our resources provide the knowledge you need to build revolutionary solutions
+              </p>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Search and Filter Section */}
+        <section className="py-12 bg-gradient-to-b from-black to-gray-900">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="max-w-4xl mx-auto"
+            >
               {/* Search Bar */}
-              <div className="max-w-2xl mx-auto">
-                <div className="relative">
-                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                  <input
-                    type="text"
-                    placeholder="Search resources..."
-                    className="w-full pl-12 pr-4 py-4 bg-gray-900 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20"
-                  />
-                </div>
+              <div className="relative mb-8">
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-6 h-6 text-gray-400" />
+                <input
+                  type="text"
+                  placeholder="Search resources, tutorials, whitepapers..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full pl-12 pr-4 py-4 bg-gray-800/50 border border-gray-700/50 rounded-2xl text-white placeholder-gray-400 focus:border-cyan-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/20"
+                />
+              </div>
+
+              {/* Category Filters */}
+              <div className="flex flex-wrap gap-3 justify-center">
+                {categories.map((category) => (
+                  <button
+                    key={category.id}
+                    onClick={() => setSelectedCategory(category.id)}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-xl border transition-all duration-300 ${
+                      selectedCategory === category.id
+                        ? 'border-cyan-500 bg-cyan-500/20 text-cyan-400'
+                        : 'border-gray-700 text-gray-400 hover:border-cyan-500/50 hover:text-cyan-300'
+                    }`}
+                  >
+                    <category.icon className="w-4 h-4" />
+                    <span>{category.name}</span>
+                    <span className="px-2 py-1 bg-gray-700/50 rounded-lg text-xs">
+                      {category.count}
+                    </span>
+                  </button>
+                ))}
               </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Featured Resources */}
-        <section className="py-20 relative">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Featured Resources Section */}
+        <section className="py-20 bg-gray-900">
+          <div className="container mx-auto px-4">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
               className="text-center mb-16"
             >
               <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
                 Featured Resources
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Start with our most popular and comprehensive learning materials.
+                Start with our most popular and comprehensive resources
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {featuredResources.map((resource, index) => (
+            <motion.div
+              variants={staggerContainer}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            >
+              {resources.filter(r => r.featured).map((resource, index) => (
                 <motion.div
-                  key={resource.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                  className="group relative"
+                  key={resource.id}
+                  variants={fadeInUp}
+                  className="group relative p-8 rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/30 border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/20"
                 >
-                  <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-blue-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-400/20">
-                    {resource.featured && (
-                      <div className="absolute -top-3 left-8 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-1 rounded-full text-sm font-medium">
-                        Featured
-                      </div>
-                    )}
-                    
-                    <h3 className="text-2xl font-bold text-white mb-4">
+                  {resource.featured && (
+                    <div className="absolute top-4 right-4">
+                      <Star className="w-5 h-5 text-yellow-400 fill-current" />
+                    </div>
+                  )}
+                  
+                  <div className="mb-6">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-full text-sm border border-cyan-500/30">
+                        {resource.type}
+                      </span>
+                      <span className="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm border border-purple-500/30">
+                        {resource.format}
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
                       {resource.title}
                     </h3>
-                    <p className="text-gray-400 mb-6 leading-relaxed">
+                    <p className="text-gray-400 text-sm leading-relaxed">
                       {resource.description}
                     </p>
-                    
-                    <div className="flex items-center justify-between mb-6">
-                      <div className="flex items-center gap-4">
-                        <span className={`px-3 py-1 text-sm rounded-full ${
-                          resource.difficulty === 'Beginner' ? 'bg-green-500/20 text-green-400' :
-                          resource.difficulty === 'Intermediate' ? 'bg-yellow-500/20 text-yellow-400' :
-                          resource.difficulty === 'Advanced' ? 'bg-red-500/20 text-red-400' :
-                          'bg-blue-500/20 text-blue-400'
-                        }`}>
-                          {resource.difficulty}
-                        </span>
-                        <span className="flex items-center text-sm text-gray-400">
-                          <Clock className="w-4 h-4 mr-2" />
-                          {resource.time}
-                        </span>
-                      </div>
-                    </div>
-                    
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {resource.tags.map((tag, tagIndex) => (
-                        <span
-                          key={tagIndex}
-                          className="px-3 py-1 bg-gray-800 text-gray-300 text-sm rounded-full border border-gray-700"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                    
-                    <a
-                      href={resource.link}
-                      className="inline-flex items-center text-blue-400 hover:text-blue-300 font-semibold transition-colors duration-200"
-                    >
-                      Access Resource
-                      <ChevronRight className="w-4 h-4 ml-2" />
-                    </a>
                   </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
 
-        {/* Resource Categories */}
-        <section className="py-20 relative bg-gradient-to-b from-gray-900 to-black">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-                Resource Categories
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Explore our comprehensive collection of resources organized by category and type.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {resourceCategories.map((category, index) => (
-                <motion.div
-                  key={category.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
-                  className="group relative"
-                >
-                  <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-blue-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-400/20">
-                    {/* Icon */}
-                    <div className={`w-16 h-16 mb-6 rounded-full bg-gradient-to-br ${category.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                      <category.icon className="w-8 h-8 text-white" />
-                    </div>
-                    
-                    <h3 className="text-2xl font-bold text-white mb-4">
-                      {category.title}
-                    </h3>
-                    <p className="text-gray-400 mb-6 leading-relaxed">
-                      {category.description}
-                    </p>
-                    
-                    {/* Resource List */}
-                    <div className="space-y-4">
-                      {category.items.map((item, itemIndex) => (
-                        <div key={itemIndex} className="flex items-center justify-between p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors duration-200">
-                          <div className="flex-1">
-                            <h4 className="font-semibold text-white mb-1">{item.title}</h4>
-                            <p className="text-sm text-gray-400">{item.description}</p>
-                            <div className="flex items-center gap-4 mt-2">
-                              <span className={`px-2 py-1 text-xs rounded-full ${
-                                item.difficulty === 'Beginner' ? 'bg-green-500/20 text-green-400' :
-                                item.difficulty === 'Intermediate' ? 'bg-yellow-500/20 text-yellow-400' :
-                                'bg-red-500/20 text-red-400'
-                              }`}>
-                                {item.difficulty}
-                              </span>
-                              <span className="flex items-center text-xs text-gray-400">
-                                <Clock className="w-3 h-3 mr-1" />
-                                {item.time}
-                              </span>
-                              <span className="text-xs text-gray-500">{item.type}</span>
-                            </div>
-                          </div>
-                          <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-blue-400 transition-colors duration-200" />
-                        </div>
-                      ))}
-                    </div>
+                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                    <span className="flex items-center gap-1">
+                      <DownloadIcon className="w-4 h-4" />
+                      {resource.downloads.toLocaleString()}
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <Star className="w-4 h-4 text-yellow-400" />
+                      {resource.rating}
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <Eye className="w-4 h-4" />
+                      {resource.size}
+                    </span>
                   </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
 
-        {/* Upcoming Events */}
-        <section className="py-20 relative">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.0 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-                Upcoming Events
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Join us for live events, workshops, and conferences to expand your knowledge.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {upcomingEvents.map((event, index) => (
-                <motion.div
-                  key={event.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 1.2 + index * 0.1 }}
-                  className="group relative"
-                >
-                  <div className="relative bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-8 border border-gray-700 hover:border-blue-400/50 transition-all duration-300">
-                    <div className="flex items-center justify-between mb-4">
-                      <span className={`px-3 py-1 text-xs rounded-full ${
-                        event.registration === 'Open' ? 'bg-green-500/20 text-green-400' : 'bg-yellow-500/20 text-yellow-400'
-                      }`}>
-                        {event.registration}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {resource.tags.slice(0, 3).map((tag, idx) => (
+                      <span
+                        key={idx}
+                        className="px-2 py-1 bg-gray-700/50 text-gray-300 rounded-lg text-xs"
+                      >
+                        {tag}
                       </span>
-                      <span className="text-xs text-gray-500">{event.type}</span>
-                    </div>
-                    
-                    <h3 className="text-xl font-bold text-white mb-4">
-                      {event.title}
-                    </h3>
-                    <p className="text-gray-400 mb-6 leading-relaxed">
-                      {event.description}
-                    </p>
-                    
-                    <div className="space-y-3 mb-6">
-                      <div className="flex items-center text-sm text-gray-400">
-                        <Calendar className="w-4 h-4 mr-2" />
-                        {event.date}
-                      </div>
-                      <div className="flex items-center text-sm text-gray-400">
-                        <Users className="w-4 h-4 mr-2" />
-                        {event.location}
-                      </div>
-                    </div>
-                    
-                    <a
-                      href={event.link}
-                      className="inline-flex items-center text-blue-400 hover:text-blue-300 font-semibold transition-colors duration-200"
-                    >
-                      Learn More
-                      <ExternalLink className="w-4 h-4 ml-2" />
-                    </a>
+                    ))}
                   </div>
+
+                  <a
+                    href={resource.url}
+                    className="inline-flex items-center w-full justify-center px-4 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 group-hover:shadow-2xl group-hover:shadow-cyan-500/20"
+                  >
+                    {resource.format === 'Video Series' ? (
+                      <>
+                        <Play className="w-4 h-4 mr-2" />
+                        Watch Series
+                      </>
+                    ) : resource.format === 'Interactive' ? (
+                      <>
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Open Interactive
+                      </>
+                    ) : (
+                      <>
+                        <Download className="w-4 h-4 mr-2" />
+                        Download
+                      </>
+                    )}
+                  </a>
                 </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </section>
 
-        {/* Call to Action */}
-        <section className="py-20 relative bg-gradient-to-b from-gray-900 to-black">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* All Resources Section */}
+        <section className="py-20 bg-black">
+          <div className="container mx-auto px-4">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.4 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
             >
               <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-                Ready to Start Learning?
+                All Resources
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Browse our complete collection of technical resources and learning materials
+              </p>
+            </motion.div>
+
+            {filteredResources.length === 0 ? (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="text-center py-12"
+              >
+                <p className="text-xl text-gray-400 mb-4">No resources match your search criteria.</p>
+                <button
+                  onClick={() => {
+                    setSearchTerm('');
+                    setSelectedCategory('all');
+                  }}
+                  className="px-6 py-3 text-cyan-400 border border-cyan-400 rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300"
+                >
+                  Clear Filters
+                </button>
+              </motion.div>
+            ) : (
+              <motion.div
+                variants={staggerContainer}
+                initial="initial"
+                whileInView="animate"
+                viewport={{ once: true }}
+                className="space-y-6"
+              >
+                {filteredResources.map((resource, index) => (
+                  <motion.div
+                    key={resource.id}
+                    variants={fadeInUp}
+                    className="group p-6 rounded-2xl bg-gradient-to-br from-gray-900/80 to-gray-800/60 border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/20"
+                  >
+                    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+                      <div className="flex-1">
+                        <div className="flex items-center gap-3 mb-3">
+                          <span className="px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-full text-sm border border-cyan-500/30">
+                            {resource.type}
+                          </span>
+                          <span className="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm border border-purple-500/30">
+                            {resource.format}
+                          </span>
+                          {resource.featured && (
+                            <span className="px-3 py-1 bg-yellow-500/20 text-yellow-400 rounded-full text-sm border border-yellow-500/30">
+                              Featured
+                            </span>
+                          )}
+                        </div>
+                        
+                        <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
+                          {resource.title}
+                        </h3>
+                        
+                        <p className="text-gray-300 mb-4 leading-relaxed">
+                          {resource.description}
+                        </p>
+                        
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {resource.tags.map((tag, idx) => (
+                            <span
+                              key={idx}
+                              className="px-2 py-1 bg-gray-700/50 text-gray-300 rounded-lg text-xs"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                        
+                        <div className="flex items-center gap-6 text-sm text-gray-500">
+                          <span className="flex items-center gap-1">
+                            <DownloadIcon className="w-4 h-4" />
+                            {resource.downloads.toLocaleString()} downloads
+                          </span>
+                          <span className="flex items-center gap-1">
+                            <Star className="w-4 h-4 text-yellow-400" />
+                            {resource.rating} rating
+                          </span>
+                          <span className="flex items-center gap-1">
+                            <Eye className="w-4 h-4" />
+                            {resource.size}
+                          </span>
+                        </div>
+                      </div>
+                      
+                      <div className="lg:text-right">
+                        <a
+                          href={resource.url}
+                          className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/20"
+                        >
+                          {resource.format === 'Video Series' ? (
+                            <>
+                              <Play className="w-4 h-4 mr-2" />
+                              Watch Series
+                            </>
+                          ) : resource.format === 'Interactive' ? (
+                            <>
+                              <ExternalLink className="w-4 h-4 mr-2" />
+                              Open Interactive
+                            </>
+                          ) : (
+                            <>
+                              <Download className="w-4 h-4 mr-2" />
+                              Download
+                            </>
+                          )}
+                          <ArrowRight className="w-4 h-4 ml-2" />
+                        </a>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            )}
+          </div>
+        </section>
+
+        {/* Call to Action Section */}
+        <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
+          <div className="container mx-auto px-4 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="max-w-4xl mx-auto"
+            >
+              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
+                Need More Specific Resources?
               </h2>
               <p className="text-xl text-gray-400 mb-8 leading-relaxed">
-                Begin your technology journey with our comprehensive resources and expert guidance.
+                Can't find what you're looking for? Our team of experts can create custom 
+                documentation, tutorials, or whitepapers tailored to your specific needs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="/docs"
-                  className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
+                  href="/contact"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-2xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/20"
                 >
-                  Explore Documentation
+                  Request Custom Resources
+                  <ArrowRight className="w-5 h-5 ml-2" />
                 </a>
                 <a
                   href="/contact"
-                  className="px-8 py-4 border-2 border-blue-400 text-blue-400 font-semibold rounded-lg hover:bg-blue-400 hover:text-black transition-all duration-300"
+                  className="inline-flex items-center px-8 py-4 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-2xl hover:bg-cyan-500 hover:text-white transition-all duration-300"
                 >
-                  Get Support
+                  Contact Our Experts
                 </a>
               </div>
             </motion.div>
