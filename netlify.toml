@@ -187,52 +187,22 @@
   name = "auto-scheduler"
   schedule = "*/15 * * * *" # every 15 minutes
 
-# From main (keep)
 [[scheduled.functions]]
   name = "autonomous-innovation-generator"
   schedule = "*/2 * * * *" # every 2 minutes
 
 [[scheduled.functions]]
-  name = "seo-audit-runner"
+  name = "internal-link-fixer-runner"
+  schedule = "7 */6 * * *"
+
+[[scheduled.functions]]
+  name = "revenue-ideas-agents-runner"
   schedule = "17 */6 * * *"
 
 [[scheduled.functions]]
-  name = "ai-trends-radar-runner"
-  schedule = "0 * * * *"
-
-[[scheduled.functions]]
-  name = "website-search-index-runner"
-  schedule = "29 */4 * * *"
-
-# From feature branch (keep)
-[[scheduled.functions]]
-  name = "automation-guardian-runner"
-  schedule = "*/10 * * * *" # every 10 minutes
-
-[[scheduled.functions]]
-  name = "auto-discovery-runner"
-  schedule = "*/30 * * * *" # every 30 minutes
-
-[[scheduled.functions]]
-  name = "cloud-autonomous-orchestrator-runner"
-  schedule = "*/15 * * * *" # every 15 minutes
-
-[[scheduled.functions]]
   name = "branch-cleanup-runner"
-  schedule = "0 3 * * *" # daily at 03:00 UTC
+  schedule = "0 3 * * *"
 
 [[scheduled.functions]]
-  name = "autonomous-front-home-accelerator"
-  schedule = "*/1 * * * *" # every minute
-
-[[scheduled.functions]]
-  name = "link-healer-committer"
-  schedule = "*/30 * * * *" # every 30 minutes
-
-[[scheduled.functions]]
-  name = "newsroom-auto-curator"
-  schedule = "0 * * * *" # hourly
-
-[[scheduled.functions]]
-  name = "trends-to-promos-writer"
-  schedule = "*/10 * * * *" # every 10 minutes
+  name = "media-release-runner"
+  schedule = "41 */6 * * *"

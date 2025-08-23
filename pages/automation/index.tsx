@@ -83,53 +83,29 @@ export default function AutomationHub() {
             <p className="text-white/70">Finds broken images, optimizes assets, and syncs fixes.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/broken-image-scanner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
+
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Cache Warmer</h2>
-            <p className="text-white/70">Warms critical pages to keep the edge cache hot.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/cache-warmer" target="_blank" rel="noopener">Trigger / View</a>
-          </li>
-          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Anchor Auditor</h2>
-            <p className="text-white/70">Finds broken #anchor links and publishes a report.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/anchor-auditor" target="_blank" rel="noopener">Trigger / View</a>
+            <h2 className="text-xl font-bold">Internal Link Fixer</h2>
+            <p className="text-white/70">Crawls the site, fixes broken internal links, and syncs changes.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/internal-link-fixer-runner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
 
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Structured Data Auditor</h2>
-            <p className="text-white/70">Checks JSON‑LD coverage and publishes a report to /reports/structured-data.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/structured-data-auditor" target="_blank" rel="noopener">Trigger / View</a>
+            <h2 className="text-xl font-bold">Revenue Ideas Lab</h2>
+            <p className="text-white/70">Runs revenue idea agents and commits proposals to the repo.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/revenue-ideas-agents-runner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
 
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Robots Auditor</h2>
-            <p className="text-white/70">Validates robots.txt presence and sitemap linkage.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/robots-auditor" target="_blank" rel="noopener">Trigger / View</a>
+            <h2 className="text-xl font-bold">Branch Cleanup</h2>
+            <p className="text-white/70">Safely deletes merged or stale branches (requires GitHub token).</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/branch-cleanup-runner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
 
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Canonical Auditor</h2>
-            <p className="text-white/70">Scans canonical tags for correctness across key pages.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/canonical-auditor" target="_blank" rel="noopener">Trigger / View</a>
-          </li>
-          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Content Freshness Score</h2>
-            <p className="text-white/70">Scores staleness across pages/components and publishes a live report.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/content-freshness-score-runner" target="_blank" rel="noopener">Trigger / View</a>
-          </li>
-          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Internal Link Graph</h2>
-            <p className="text-white/70">Crawls internal links and highlights broken or orphaned references.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/internal-link-graph-runner" target="_blank" rel="noopener">Trigger / View</a>
-          </li>
-          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Anchor Links Auto‑Fixer</h2>
-            <p className="text-white/70">Scans and suggests fixes for broken anchor/internal links, then syncs.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/anchor-links-auto-fixer" target="_blank" rel="noopener">Trigger / View</a>
-          </li>
-          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
-            <h2 className="text-xl font-bold">Pagespeed Insights Runner</h2>
-            <p className="text-white/70">Measures simple TTFB per key routes and publishes JSON for visibility.</p>
-            <a className="text-cyan-300 underline" href="/.netlify/functions/pagespeed-insights-runner" target="_blank" rel="noopener">Trigger / View</a>
+            <h2 className="text-xl font-bold">Media Release Runner</h2>
+            <p className="text-white/70">Publishes autonomous media updates and syncs changes.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/media-release-runner" target="_blank" rel="noopener">Trigger / View</a>
           </li>
         </ul>
       </main>
