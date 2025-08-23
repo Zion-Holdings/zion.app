@@ -29,11 +29,13 @@ const footerData = {
   },
   quickLinks: [
     { label: 'About Us', href: '/about' },
+    { label: 'Our Mission', href: '/mission' },
     { label: 'Services', href: '/services' },
     { label: 'Solutions', href: '/solutions' },
     { label: 'Case Studies', href: '/case-studies' },
     { label: 'Blog', href: '/blog' },
-    { label: 'Careers', href: '/careers' }
+    { label: 'Careers', href: '/careers' },
+    { label: 'Partners', href: '/partners' }
   ],
   services: [
     { label: 'AI & Machine Learning', href: '/services?category=ai-ml' },
@@ -41,15 +43,37 @@ const footerData = {
     { label: 'Space Technology', href: '/services?category=space-tech' },
     { label: 'Cybersecurity', href: '/services?category=cybersecurity' },
     { label: 'Cloud Infrastructure', href: '/services?category=cloud' },
-    { label: 'Enterprise Solutions', href: '/solutions/enterprise' }
+    { label: 'Enterprise IT', href: '/it-services' },
+    { label: 'Micro SAAS', href: '/micro-saas' },
+    { label: 'AI Services', href: '/ai-services' }
+  ],
+  solutions: [
+    { label: 'Enterprise Solutions', href: '/enterprise-solutions-showcase' },
+    { label: 'Healthcare Solutions', href: '/healthcare-ai-solutions' },
+    { label: 'Financial Solutions', href: '/financial-solutions' },
+    { label: 'Manufacturing Solutions', href: '/manufacturing-ai-solutions' },
+    { label: 'Government Solutions', href: '/government-technology-solutions' },
+    { label: 'Retail Solutions', href: '/retail-technology-solutions' },
+    { label: 'Energy Solutions', href: '/energy-utilities-solutions' },
+    { label: 'Education Solutions', href: '/education-technology-solutions' }
   ],
   resources: [
     { label: 'Documentation', href: '/docs' },
     { label: 'API Reference', href: '/api-documentation' },
     { label: 'Webinars', href: '/webinars' },
     { label: 'White Papers', href: '/white-papers' },
+    { label: 'Training', href: '/training' },
     { label: 'Support', href: '/support' },
-    { label: 'Status', href: '/status' }
+    { label: 'Status', href: '/status' },
+    { label: 'Events', href: '/events' }
+  ],
+  pricing: [
+    { label: 'Service Pricing', href: '/pricing' },
+    { label: 'Market Pricing', href: '/market-pricing' },
+    { label: '2025 Pricing', href: '/2025-comprehensive-pricing' },
+    { label: '2026 Pricing', href: '/pricing-enhanced-2026' },
+    { label: 'Enterprise Pricing', href: '/pricing-2033' },
+    { label: 'Innovative Pricing', href: '/innovative-2038-pricing' }
   ],
   social: [
     { label: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: <Linkedin className="w-5 h-5" /> },
@@ -182,13 +206,41 @@ const UltraFuturisticFooter2040: React.FC = () => {
             </motion.div>
           </div>
 
-          {/* Resources */}
+          {/* Solutions */}
           <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <h3 className="text-lg font-semibold text-white mb-6 flex items-center">
+                <BookOpen className="w-4 h-4 mr-2 text-green-400" />
+                Solutions
+              </h3>
+              <ul className="space-y-3">
+                {footerData.solutions.map((solution) => (
+                  <li key={solution.label}>
+                    <Link
+                      href={solution.href}
+                      className="text-gray-300 hover:text-green-400 transition-colors duration-300 hover:underline focus:outline-none focus:ring-2 focus:ring-green-400/50 rounded"
+                      aria-label={`Learn about ${solution.label} solutions`}
+                    >
+                      {solution.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
             >
               <h3 className="text-lg font-semibold text-white mb-6 flex items-center">
                 <BookOpen className="w-4 h-4 mr-2 text-green-400" />
@@ -209,6 +261,34 @@ const UltraFuturisticFooter2040: React.FC = () => {
               </ul>
             </motion.div>
           </div>
+
+          {/* Pricing */}
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
+              <h3 className="text-lg font-semibold text-white mb-6 flex items-center">
+                <Rocket className="w-4 h-4 mr-2 text-blue-400" />
+                Pricing
+              </h3>
+              <ul className="space-y-3">
+                {footerData.pricing.map((price) => (
+                  <li key={price.label}>
+                    <Link
+                      href={price.href}
+                      className="text-gray-300 hover:text-blue-400 transition-colors duration-300 hover:underline focus:outline-none focus:ring-2 focus:ring-blue-400/50 rounded"
+                      aria-label={`View ${price.label} pricing`}
+                    >
+                      {price.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
         </div>
 
         {/* Technology Highlights */}
@@ -216,7 +296,7 @@ const UltraFuturisticFooter2040: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-16 pt-12 border-t border-gray-700/50"
         >
           <div className="text-center mb-8">
@@ -334,7 +414,7 @@ const UltraFuturisticFooter2040: React.FC = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.5 }}
+        transition={{ duration: 0.6, delay: 0.7 }}
         className="bg-gradient-to-r from-cyan-900/20 to-purple-900/20 border-t border-cyan-400/20"
       >
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
