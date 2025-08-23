@@ -3,28 +3,8 @@ exports.handler = async function(event, context) {
   const githubToken = process.env.GITHUB_TOKEN || '';
   const githubRepo = process.env.GITHUB_REPO || 'Zion-Holdings/zion.app';
   const githubBranch = process.env.GIT_BRANCH || 'main';
-  const requestTimeoutMs = 12000;
-  const priority = [
-    'front-enhancer',
-    'front-index-orchestrator',
-    'front-maximizer',
-    'continuous-front-runner',
-    'fast-front-promoter',
-    'frontpage-enhancer',
-    'homepage_advertiser',
-    'fast-orchestrator',
-    'continuous-orchestrator',
-    'ultrafast-orchestrator',
-    'cloud_orchestrator',
-    'marketing-and-features-promo',
-    'readme-advertiser',
-    'docs-index-runner',
-    'sitemap_runner'
-  ];
-  const exclude = new Set(['autonomous-cloud-brain', 'trigger-all-and-commit']);
-  const concurrency = Number(process.env.CLOUD_BRAIN_CONCURRENCY || 8);
-
-  function log(msg) { console.log(`[cloud-brain] ${msg}`); }
+  const requestTimeoutMs = 8000;
+  const concurrency = Number(process.env.HEALTH_MONITOR_CONCURRENCY || 10);
 
   function loadManifestFunctions() {
     try {
@@ -34,38 +14,32 @@ exports.handler = async function(event, context) {
     return [];
   }
 
-  function buildRunList() {
-    const fromManifest = loadManifestFunctions();
-    const base = Array.from(new Set([...priority, ...fromManifest]));
-    return base.filter((n) => !exclude.has(n));
-  }
+  function log(msg) { console.log(`[fn-health] ${msg}`); }
 
-  async function invoke(name) {
+  async function ping(name) {
     if (!baseUrl) return { name, status: 0, ok: false, ms: 0, error: 'No base URL' };
     const controller = new AbortController();
     const url = `${baseUrl}/.netlify/functions/${name}`;
     const start = Date.now();
     const timeout = setTimeout(() => controller.abort(), requestTimeoutMs);
     try {
-      const res = await fetch(url, { method: 'GET', signal: controller.signal });
+      const res = await fetch(url, { method: 'HEAD', signal: controller.signal });
       clearTimeout(timeout);
-      const ms = Date.now() - start;
-      return { name, status: res.status, ok: res.ok, ms };
+      return { name, status: res.status, ok: res.ok, ms: Date.now() - start };
     } catch (err) {
       clearTimeout(timeout);
-      const ms = Date.now() - start;
-      return { name, status: 0, ok: false, ms, error: err.message };
+      return { name, status: 0, ok: false, ms: Date.now() - start, error: err.message };
     }
   }
 
-  async function invokeAll(functionNames) {
+  async function pingAll(functionNames) {
     const results = [];
     let index = 0;
     async function worker() {
       while (index < functionNames.length) {
         const current = functionNames[index++];
-        if (!current || exclude.has(current)) continue;
-        results.push(await invoke(current));
+        if (!current) continue;
+        results.push(await ping(current));
       }
     }
     const workers = Array.from({ length: Math.min(concurrency, functionNames.length) }, () => worker());
@@ -73,15 +47,15 @@ exports.handler = async function(event, context) {
     return results;
   }
 
-  async function commitStamp(summary) {
+  async function commitReport(report) {
     if (!githubToken) return { ok: false, error: 'No GITHUB_TOKEN provided' };
-    const path = 'automation/cloud-brain-stamp.txt';
-    const contentString = `${JSON.stringify(summary)}\n`;
+    const path = 'public/reports/function-health.json';
+    const contentString = JSON.stringify(report, null, 2) + '\n';
     const content = Buffer.from(contentString).toString('base64');
     const headers = {
       Authorization: `token ${githubToken}`,
       'Content-Type': 'application/json',
-      'User-Agent': 'netlify-autonomous-cloud-brain'
+      'User-Agent': 'netlify-function-health-monitor'
     };
     // Get current SHA if exists
     let sha = undefined;
@@ -93,7 +67,7 @@ exports.handler = async function(event, context) {
       }
     } catch {}
     const body = {
-      message: `chore: cloud brain heartbeat (${new Date().toISOString()})`,
+      message: `chore: update function health report (${new Date().toISOString()})`,
       content,
       branch: githubBranch,
       sha
@@ -113,30 +87,26 @@ exports.handler = async function(event, context) {
   }
 
   try {
-    const functions = buildRunList();
-    const startAt = new Date().toISOString();
-    const invoked = await invokeAll(functions);
-
-    const totals = {
-      attempted: functions.length,
-      ok: invoked.filter(r => r.ok).length,
-      failed: invoked.filter(r => !r.ok).length,
-      medianMs: (() => {
-        const arr = invoked.map(r => r.ms).filter(Boolean).sort((a,b)=>a-b);
-        if (!arr.length) return 0;
-        const mid = Math.floor(arr.length/2);
-        return arr.length % 2 ? arr[mid] : Math.round((arr[mid-1]+arr[mid])/2);
-      })()
+    const functions = loadManifestFunctions().filter((n) => n && n !== 'function-health-monitor');
+    const checkedAt = new Date().toISOString();
+    const results = await pingAll(functions);
+    const summary = {
+      checkedAt,
+      totals: {
+        total: functions.length,
+        ok: results.filter(r => r.ok).length,
+        failed: results.filter(r => !r.ok).length,
+        medianMs: (() => {
+          const arr = results.map(r => r.ms).filter(Boolean).sort((a,b)=>a-b);
+          if (!arr.length) return 0;
+          const mid = Math.floor(arr.length/2);
+          return arr.length % 2 ? arr[mid] : Math.round((arr[mid-1]+arr[mid])/2);
+        })()
+      }
     };
-
-    const heartbeat = { startAt, endAt: new Date().toISOString(), baseUrl, totals };
-    const commitResult = await commitStamp(heartbeat);
-
-    return {
-      statusCode: 200,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ heartbeat, results: invoked, commitResult })
-    };
+    const report = { summary, results };
+    const commitResult = await commitReport(report);
+    return { statusCode: 200, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ report, commitResult }) };
   } catch (err) {
     log(String(err));
     return { statusCode: 500, body: JSON.stringify({ error: String(err) }) };
