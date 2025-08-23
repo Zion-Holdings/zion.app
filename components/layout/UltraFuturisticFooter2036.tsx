@@ -132,10 +132,12 @@ const UltraFuturisticFooter2036: React.FC = () => {
   ];
 
   const quickLinks = [
-    { name: 'About Us', href: '/about' },
-    { name: 'Services', href: '/services' },
-    { name: 'Case Studies', href: '/case-studies' },
-    { name: 'Blog', href: '/blog' },
+            { name: 'About Us', href: '/about' },
+        { name: 'Leadership Team', href: '/leadership' },
+          { name: 'Services', href: '/services' },
+      { name: 'Services Showcase', href: '/showcase' },
+      { name: 'Case Studies', href: '/case-studies' },
+      { name: 'Blog', href: '/blog' },
     { name: 'Careers', href: '/careers' },
     { name: 'Support', href: '/support' }
   ];

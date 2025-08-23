@@ -121,7 +121,7 @@ const ServiceShowcase = () => {
       <SEO 
         title="2037 Innovative Services Showcase - Zion Tech Group"
         description="Discover our revolutionary 2037 innovative services including AI consciousness evolution, quantum cybersecurity, autonomous systems, and cutting-edge micro SAAS solutions."
-        keywords="AI consciousness, quantum computing, autonomous systems, micro SAAS, innovative services, 2037 technology"
+        keywords={["AI consciousness", "quantum computing", "autonomous systems", "micro SAAS", "innovative services", "2037 technology"]}
       />
       
       {/* Hero Section */}

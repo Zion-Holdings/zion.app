@@ -95,11 +95,17 @@ const navigationItems: NavigationItem[] = [
     category: 'showcase',
     children: [
       { 
+        name: 'Services Showcase', 
+        href: '/showcase', 
+        description: 'Complete services overview',
+        icon: <Grid className="w-4 h-4" />,
+        featured: true
+      },
+      { 
         name: '2025 Services Showcase', 
         href: '/services', 
         description: 'Current service portfolio',
-        icon: <Grid className="w-4 h-4" />,
-        featured: true
+        icon: <Calculator className="w-4 h-4" />
       },
       { 
         name: '2037 Innovative Services', 
@@ -130,7 +136,7 @@ const navigationItems: NavigationItem[] = [
       },
       { 
         name: 'Leadership Team', 
-        href: '/team', 
+        href: '/leadership', 
         description: 'Meet our executives',
         icon: <Users className="w-4 h-4" />
       },
