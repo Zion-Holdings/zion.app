@@ -71,6 +71,7 @@ const footerSections = [
     color: 'from-orange-500 to-red-500',
     links: [
       { name: 'About Us', href: '/about' },
+      { name: 'Leadership', href: '/leadership' },
       { name: 'Careers', href: '/careers' },
       { name: 'Contact', href: '/contact' },
       { name: 'Partners', href: '/partners' },

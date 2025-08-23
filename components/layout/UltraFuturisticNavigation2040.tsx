@@ -142,6 +142,12 @@ const navigationItems: NavigationItem[] = [
         description: 'Our story and mission'
       },
       {
+        label: 'Leadership',
+        href: '/leadership',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Meet our leadership team'
+      },
+      {
         label: 'Careers',
         href: '/careers',
         icon: <Users className="w-4 h-4" />,
