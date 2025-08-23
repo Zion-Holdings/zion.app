@@ -1521,3 +1521,15 @@ pages/main/front/index.tsx[0m
 2025-08-23 23:08:00 - [1;33m⚠️  Found conflicts in .github/workflows/guardian-scheduler.yml, resolving...[0m
 2025-08-23 23:08:00 - [0;34m📝 Regular file, removing conflict markers...[0m
 2025-08-23 23:08:00 - [0;32m✅ Resolved conflicts in .github/workflows/guardian-scheduler.yml[0m
+2025-08-23 23:08:01 - [0;32m✅ Successfully resolved conflicts and merged cursor/migrate-pm2-to-github-actions-bbfe[0m
+2025-08-23 23:08:01 - [0;32m✅ PR #3842 (cursor/migrate-pm2-to-github-actions-bbfe) processed successfully[0m
+2025-08-23 23:08:01 - [0;34m🔒 Closing PR #3842 via GitHub API...[0m
+2025-08-23 23:08:01 - [0;34m📊 Progress: 47/100, ✅ 47, ❌ 0[0m
+2025-08-23 23:08:03 - [0;34m📋 Processing PR #3841: Migrate pm2 to GitHub actions (branch: cursor/migrate-pm2-to-github-actions-ce27)[0m
+2025-08-23 23:08:03 - [0;34m🔄 Attempting to merge cursor/migrate-pm2-to-github-actions-ce27...[0m
+2025-08-23 23:08:04 - [1;33m⚠️  Merge conflicts detected in cursor/migrate-pm2-to-github-actions-ce27 (attempt 1/3), resolving...[0m
+2025-08-23 23:08:04 - [0;34m📋 Conflicted files: .github/workflows/guardian-scheduler.yml[0m
+2025-08-23 23:08:04 - [0;34m🔧 Resolving conflicts in .github/workflows/guardian-scheduler.yml for branch cursor/migrate-pm2-to-github-actions-ce27...[0m
+2025-08-23 23:08:04 - [1;33m⚠️  Found conflicts in .github/workflows/guardian-scheduler.yml, resolving...[0m
+2025-08-23 23:08:04 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:08:04 - [0;32m✅ Resolved conflicts in .github/workflows/guardian-scheduler.yml[0m
