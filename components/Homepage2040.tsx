@@ -9,9 +9,10 @@ import {
   Rocket, Award,
   CheckCircle, Play, BookOpen, Phone, Mail, MapPin
 } from 'lucide-react';
-import { innovative2025AdvancedServicesExpansion } from '../data/innovative-2025-advanced-services-expansion';
-import { innovative2025EnterpriseSolutions } from '../data/innovative-2025-enterprise-solutions';
-import { innovative2040FuturisticServices } from '../data/innovative-2040-futuristic-services';
+
+// Import our new revolutionary services
+// import { revolutionary2040FuturisticServices } from '../data/revolutionary-2040-futuristic-services';
+import { revolutionary2041AdvancedServices } from '../data/revolutionary-2041-advanced-services';
 
 const Homepage2040: React.FC = () => {
   // Animation variants
@@ -24,10 +25,8 @@ const Homepage2040: React.FC = () => {
     }
   };
 
-  const fadeInUp = {
-    initial: { opacity: 0, y: 30 },
-    animate: { opacity: 1, y: 0 }
-  };
+  // Combine all revolutionary services
+  const allRevolutionaryServices = [...revolutionary2041AdvancedServices];
 
   // Helper function for color classes
   const getColorClasses = (index: number) => {

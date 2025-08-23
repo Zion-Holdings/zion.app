@@ -389,17 +389,17 @@ const UltraAdvancedFuturisticFooter2025: React.FC = () => {
       </motion.div>
 
       {/* Floating Contact Button */}
-      <motion.button
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-        className="fixed bottom-6 right-6 w-14 h-14 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-200 z-50 flex items-center justify-center"
-        onClick={() => window.location.href = '/contact'}
-        aria-label="Contact us"
-      >
-        <Phone className="w-6 h-6" />
-      </motion.button>
+      <div className="fixed bottom-6 right-6 z-40">
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="p-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+          onClick={() => window.location.href = '/contact'}
+          aria-label="Quick contact Zion Tech Group"
+        >
+          <Phone className="w-6 h-6" />
+        </motion.button>
+      </div>
     </footer>
   );
 };
