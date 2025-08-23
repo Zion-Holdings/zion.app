@@ -42,27 +42,27 @@ export default function UltraFuturisticBackground2036({
       switch (theme) {
         case 'neon':
           return {
-            primary: ['#ff0080', '#00ffff', '#ffff00', '#ff00ff'],
-            secondary: ['#8000ff', '#00ff80', '#ff8000', '#0080ff'],
-            accent: ['#ff4080', '#40ffff', '#ffff40', '#ff40ff']
+            primary: ['#ff0080', '#00ffff', '#ffff00', '#ff00ff', '#ff1493', '#00bfff'],
+            secondary: ['#8000ff', '#00ff80', '#ff8000', '#0080ff', '#ff69b4', '#87ceeb'],
+            accent: ['#ff4080', '#40ffff', '#ffff40', '#ff40ff', '#ffb6c1', '#add8e6']
           };
         case 'holographic':
           return {
-            primary: ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4'],
-            secondary: ['#feca57', '#ff9ff3', '#54a0ff', '#5f27cd'],
-            accent: ['#ff9ff3', '#54a0ff', '#5f27cd', '#ff6b6b']
+            primary: ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#ffa726', '#42a5f5'],
+            secondary: ['#feca57', '#ff9ff3', '#54a0ff', '#5f27cd', '#ff7043', '#7e57c2'],
+            accent: ['#ff9ff3', '#54a0ff', '#5f27cd', '#ff6b6b', '#ffab91', '#90caf9']
           };
         case 'cyberpunk':
           return {
-            primary: ['#ff0055', '#00ffff', '#ffff00', '#ff00ff'],
-            secondary: ['#8000ff', '#00ff80', '#ff8000', '#0080ff'],
-            accent: ['#ff4080', '#40ffff', '#ffff40', '#ff40ff']
+            primary: ['#ff0055', '#00ffff', '#ffff00', '#ff00ff', '#ff1493', '#00bfff'],
+            secondary: ['#8000ff', '#00ff80', '#ff8000', '#0080ff', '#ff69b4', '#87ceeb'],
+            accent: ['#ff4080', '#40ffff', '#ffff40', '#ff40ff', '#ffb6c1', '#add8e6']
           };
         default: // quantum
           return {
-            primary: ['#8b5cf6', '#06b6d4', '#ec4899', '#10b981'],
-            secondary: ['#f59e0b', '#ef4444', '#8b5cf6', '#06b6d4'],
-            accent: ['#ec4899', '#10b981', '#f59e0b', '#ef4444']
+            primary: ['#8b5cf6', '#06b6d4', '#ec4899', '#10b981', '#f97316', '#3b82f6'],
+            secondary: ['#f59e0b', '#ef4444', '#8b5cf6', '#06b6d4', '#f43f5e', '#8b5cf6'],
+            accent: ['#ec4899', '#10b981', '#f59e0b', '#ef4444', '#fbbf24', '#06b6d4']
           };
       }
     };
@@ -78,7 +78,7 @@ export default function UltraFuturisticBackground2036({
       size: number;
       opacity: number;
       color: string;
-      type: 'particle' | 'wave' | 'quantum' | 'neon';
+      type: 'particle' | 'wave' | 'quantum' | 'neon' | 'holographic';
       life: number;
       maxLife: number;
       rotation: number;
@@ -93,9 +93,10 @@ export default function UltraFuturisticBackground2036({
       const particleCount = Math.floor(baseCount * intensityMultiplier);
 
       for (let i = 0; i < particleCount; i++) {
-        const particleType = Math.random() < 0.3 ? 'quantum' : 
-                           Math.random() < 0.5 ? 'wave' : 
-                           Math.random() < 0.7 ? 'neon' : 'particle';
+        const particleType = Math.random() < 0.25 ? 'quantum' : 
+                           Math.random() < 0.45 ? 'wave' : 
+                           Math.random() < 0.65 ? 'neon' : 
+                           Math.random() < 0.8 ? 'holographic' : 'particle';
         
         particles.push({
           x: Math.random() * canvas.width / (window.devicePixelRatio || 1),

@@ -61,9 +61,9 @@ const navigationItems: NavigationItem[] = [
         featured: true
       },
       { 
-        name: 'AI & Machine Learning', 
+        name: 'AI & Consciousness', 
         href: '/ai-services', 
-        description: 'Advanced AI solutions',
+        description: 'Advanced AI consciousness solutions',
         icon: <BrainIcon className="w-4 h-4" />
       },
       { 
@@ -71,6 +71,12 @@ const navigationItems: NavigationItem[] = [
         href: '/quantum-services', 
         description: 'Quantum computing solutions',
         icon: <AtomIcon className="w-4 h-4" />
+      },
+      { 
+        name: 'Autonomous Systems', 
+        href: '/autonomous-systems', 
+        description: 'Self-managing business solutions',
+        icon: <Zap className="w-4 h-4" />
       },
       { 
         name: 'Space Technology', 
@@ -85,14 +91,14 @@ const navigationItems: NavigationItem[] = [
         icon: <Cpu className="w-4 h-4" />
       },
       { 
-        name: 'Specialized Solutions', 
-        href: '/solutions', 
-        description: 'Industry-specific solutions',
+        name: 'Micro SAAS', 
+        href: '/micro-saas', 
+        description: 'Innovative business solutions',
         icon: <TargetIcon className="w-4 h-4" />
       }
     ]
   },
-  {
+          {
     name: 'Showcase & Pricing',
     href: '/comprehensive-services-showcase-2025',
     icon: <Star className="w-5 h-5" />,
@@ -102,10 +108,17 @@ const navigationItems: NavigationItem[] = [
     featured: true,
     children: [
       { 
-        name: 'Services Showcase', 
+        name: '2025 Services Showcase', 
         href: '/comprehensive-services-showcase-2025', 
         description: 'Complete services overview',
         icon: <Grid className="w-4 h-4" />,
+        featured: true
+      },
+      { 
+        name: '2037 Innovative Services', 
+        href: '/2037-innovative-services-showcase', 
+        description: 'Latest innovative services',
+        icon: <Rocket className="w-4 h-4" />,
         featured: true
       },
       { 
