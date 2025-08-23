@@ -37,9 +37,9 @@ const footerSections = [
       { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform', featured: true },
       { name: 'Quantum Financial Trading', href: '/quantum-financial-trading', featured: true },
       { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', featured: true },
-      { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform' },
-      { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform' },
-      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' }
+      { name: 'Healthcare Solutions', href: '/healthcare-solutions' },
+      { name: 'Financial Solutions', href: '/financial-solutions' },
+      { name: 'Case Studies', href: '/case-studies' }
     ]
   },
   {
@@ -113,12 +113,10 @@ const footerSections = [
 ];
 
 const socialLinks = [
-  { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: <Linkedin className="w-5 h-5" />, color: 'hover:text-blue-400' },
   { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: <Github className="w-5 h-5" />, color: 'hover:text-gray-400' },
-  { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: <Twitter className="w-5 h-5" />, color: 'hover:text-blue-400' },
-  { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: <Facebook className="w-5 h-5" />, color: 'hover:text-blue-600' },
-  { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: <Instagram className="w-5 h-5" />, color: 'hover:text-pink-400' },
-  { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: <Youtube className="w-5 h-5" />, color: 'hover:text-red-400' }
+  { name: 'LinkedIn', href: 'https://linkedin.com/in/kleber-santos', icon: <Linkedin className="w-5 h-5" />, color: 'hover:text-blue-400' },
+  { name: 'Contact', href: 'mailto:kleber@ziontechgroup.com', icon: <Mail className="w-5 h-5" />, color: 'hover:text-cyan-400' },
+  { name: 'Phone', href: 'tel:+13024640950', icon: <Phone className="w-5 h-5" />, color: 'hover:text-green-400' }
 ];
 
 const quickLinks = [
