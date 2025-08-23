@@ -1,4 +1,11 @@
 {
+<<<<<<< HEAD
+  "generatedAt": "2025-08-14T11:29:28.456Z",
+  "items": [
+    {
+      "title": "Reference Architecture — Autonomous Content Mesh",
+      "href": "/reports/blueprints/blueprint-2025-08-14-112928",
+=======
   "generatedAt": "2025-08-14T11:35:50.224Z",
   "items": [
     {
@@ -102,6 +109,7 @@
     {
       "title": "Innovation Insight — 2025-08-14 11-30",
       "href": "/reports/innovations/insight-2025-08-14T11-30",
+>>>>>>> origin/automation/git-sync/2025-08-14T11-35-53-919Z
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T11:29:28.425Z",
       "source": "cloud-blueprint-factory"
@@ -124,6 +132,17 @@
       "title": "Guide — Techcrunch Pebble Implementation",
       "href": "/reports/guides/guide-2025-08-14-112928",
       "desc": "New autonomous content",
+<<<<<<< HEAD
+      "createdAt": "2025-08-14T11:29:28.358Z",
+      "source": "cloud-deep-research-factory"
+    },
+    {
+      "title": "Pattern — Trigger Homepage Sitemap",
+      "href": "/reports/patterns/pattern-2025-08-14-112928",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T11:29:28.358Z",
+      "source": "cloud-deep-research-factory"
+=======
       "createdAt": "2025-08-14T11:30:54.314Z",
       "source": "cloud-content-factory"
     },
@@ -131,6 +150,7 @@
       "id": "cursor-chat-2025-08-14T11:30:54.513Z",
       "type": "cursor-chat",
       "timestamp": "2025-08-14T11:30:54.513Z"
+>>>>>>> origin/automation/git-sync/2025-08-14T11-35-53-919Z
     }
   ]
 }

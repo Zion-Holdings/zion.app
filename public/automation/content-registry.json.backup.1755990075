@@ -10647,6 +10647,9 @@
   "items": [
     {
       "title": "Reference Architecture — Autonomous Content Mesh",
+<<<<<<< HEAD
+      "href": "/reports/blueprints/blueprint-2025-08-14-112928",
+=======
       "href": "/reports/blueprints/blueprint-2025-08-14-113550",
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T11:35:50.198Z",
@@ -10683,6 +10686,7 @@
     {
       "title": "Playbook — Autonomous Delivery",
       "href": "/reports/playbooks/playbook-2025-08-14-113054",
+>>>>>>> origin/automation/git-sync/2025-08-14T11-35-53-919Z
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T11:29:28.425Z",
       "source": "cloud-blueprint-factory"
