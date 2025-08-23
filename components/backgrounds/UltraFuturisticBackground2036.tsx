@@ -1,476 +1,214 @@
 import React, { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
 
 const UltraFuturisticBackground2036: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const animationFrameRef = useRef<number | undefined>(undefined);
 
-  // Enhanced particle system with more variety and advanced effects
-  const particles = useRef<Array<{
-    x: number;
-    y: number;
-    vx: number;
-    vy: number;
-    size: number;
-    opacity: number;
-    color: string;
-    life: number;
-    maxLife: number;
-    type: 'particle' | 'wave' | 'quantum' | 'neon' | 'holographic' | 'energy' | 'data' | 'neural' | 'cyberpunk' | 'ultra';
-    rotation: number;
-    rotationSpeed: number;
-    pulse: number;
-    pulseSpeed: number;
-    trail: Array<{ x: number; y: number; opacity: number }>;
-    maxTrailLength: number;
-    energy: number;
-    frequency: number;
-    amplitude: number;
-    phase: number;
-  }>>([]);
-
-  // Enhanced theme-based color schemes with more futuristic colors
-  const getThemeColors = useCallback(() => {
-    switch (theme) {
-      case 'neon':
-        return {
-          primary: ['#ff0080', '#00ffff', '#ffff00', '#ff00ff', '#8000ff', '#00ff80', '#ff6b6b', '#4ecdc4'],
-          secondary: ['#8000ff', '#00ff80', '#ff8000', '#0080ff', '#ff4080', '#40ffff', '#feca57', '#ff9ff3'],
-          accent: ['#ff4080', '#40ffff', '#ffff40', '#ff40ff', '#ff6b6b', '#4ecdc4', '#54a0ff', '#5f27cd'],
-          neon: ['#ff0080', '#00ffff', '#ffff00', '#ff00ff', '#8000ff', '#00ff80', '#ff6b6b', '#4ecdc4'],
-          plasma: ['#ff0080', '#00ffff', '#ffff00', '#ff00ff', '#8000ff', '#00ff80', '#ff6b6b', '#4ecdc4']
-        };
-      case 'holographic':
-        return {
-          primary: ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57', '#ff9ff3', '#54a0ff', '#5f27cd'],
-          secondary: ['#feca57', '#ff9ff3', '#54a0ff', '#5f27cd', '#ff9ff3', '#54a0ff', '#5f27cd', '#ff6b6b'],
-          accent: ['#ff9ff3', '#54a0ff', '#5f27cd', '#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57'],
-          neon: ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57', '#ff9ff3', '#54a0ff', '#5f27cd'],
-          holographic: ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57', '#ff9ff3', '#54a0ff', '#5f27cd']
-        };
-      case 'cyberpunk':
-        return {
-          primary: ['#ff0055', '#00ffff', '#ffff00', '#ff00ff', '#8000ff', '#00ff80', '#ff6b6b', '#4ecdc4'],
-          secondary: ['#8000ff', '#00ff80', '#ff8000', '#0080ff', '#ff4080', '#40ffff', '#ff0055', '#00ffff'],
-          accent: ['#ff4080', '#40ffff', '#ffff40', '#ff40ff', '#ff0055', '#00ffff', '#8000ff', '#00ff80'],
-          neon: ['#ff0055', '#00ffff', '#ffff00', '#ff00ff', '#8000ff', '#00ff80', '#ff6b6b', '#4ecdc4'],
-          cyber: ['#ff0055', '#00ffff', '#ffff00', '#ff00ff', '#8000ff', '#00ff80', '#ff6b6b', '#4ecdc4']
-        };
-      case 'quantum-neon':
-        return {
-          primary: ['#00d4ff', '#8b5cf6', '#ec4899', '#10b981', '#f59e0b', '#ef4444'],
-          secondary: ['#f59e0b', '#ef4444', '#8b5cf6', '#06b6d4', '#ec4899', '#10b981'],
-          accent: ['#ec4899', '#10b981', '#f59e0b', '#ef4444', '#00d4ff', '#8b5cf6'],
-          neon: ['#ff0080', '#00ffff', '#ffff00', '#ff00ff', '#8000ff', '#00ff80'],
-          quantum: ['#00d4ff', '#8b5cf6', '#ec4899', '#10b981', '#f59e0b', '#ef4444'],
-          holographic: ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57', '#ff9ff3'],
-          cyberpunk: ['#ff0055', '#00ffff', '#ffff00', '#ff00ff', '#8000ff', '#00ff80']
-        };
-      default: // quantum
-        return {
-          primary: ['#8b5cf6', '#06b6d4', '#ec4899', '#10b981', '#f59e0b', '#ef4444'],
-          secondary: ['#f59e0b', '#ef4444', '#8b5cf6', '#06b6d4', '#ec4899', '#10b981'],
-          accent: ['#ec4899', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#06b6d4'],
-          neon: ['#ff0080', '#00ffff', '#ffff00', '#ff00ff', '#8000ff', '#00ff80'],
-          ultra: ['#ff1493', '#00bfff', '#32cd32', '#ffd700', '#ff4500', '#8a2be2'],
-          holographic: ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57', '#ff9ff3'],
-          cyberpunk: ['#ff0055', '#00ffff', '#ffff00', '#ff00ff', '#8000ff', '#00ff80']
-        };
-    }
-  }, [theme]);
-
-  // Initialize particles with enhanced variety and advanced effects
-  const initParticles = useCallback(() => {
-    const colors = getThemeColors();
-    const isSmallScreen = window.innerWidth < 768;
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    
-    // Enhanced particle count for better performance
-    const baseCount = prefersReducedMotion ? 20 : (isSmallScreen ? 80 : 150);
-    const particleCount = Math.floor(baseCount * (intensity === 'low' ? 0.6 : intensity === 'medium' ? 1 : 1.8));
-
-    particles.current = [];
-    
-    for (let i = 0; i < particleCount; i++) {
-      const particleTypes = ['particle', 'wave', 'quantum', 'neon', 'holographic', 'energy', 'data', 'neural', 'cyberpunk', 'ultra'] as const;
-      const particleType = particleTypes[Math.floor(Math.random() * particleTypes.length)];
-      
-      // Enhanced particle properties for more dynamic effects
-      const particle = {
-        x: Math.random() * window.innerWidth,
-        y: Math.random() * window.innerHeight,
-        vx: (Math.random() - 0.5) * 0.8,
-        vy: (Math.random() - 0.5) * 0.8,
-        size: Math.random() * 3 + 1,
-        opacity: Math.random() * 0.8 + 0.2,
-        color: colors[particleType] ? colors[particleType][Math.floor(Math.random() * colors[particleType].length)] : colors.primary[0],
-        life: Math.random() * 100 + 50,
-        maxLife: Math.random() * 100 + 50,
-        type: particleType,
-        rotation: Math.random() * Math.PI * 2,
-        rotationSpeed: (Math.random() - 0.5) * 0.02,
-        pulse: Math.random() * Math.PI * 2,
-        pulseSpeed: Math.random() * 0.05 + 0.01,
-        trail: [],
-        maxTrailLength: Math.floor(Math.random() * 10) + 5,
-        energy: Math.random() * 100,
-        frequency: Math.random() * 0.1 + 0.01,
-        amplitude: Math.random() * 20 + 10,
-        phase: Math.random() * Math.PI * 2
-      };
-      
-      particles.current.push(particle);
-    }
-  }, [intensity, getThemeColors]);
-
-  // Enhanced animation loop with more advanced effects
-  const animateParticles = useCallback(() => {
-    if (!canvasRef.current) return;
-    
+  useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Set canvas dimensions
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    // Clear canvas with enhanced background effects
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    // Particle system
+    const particles: Array<{
+      x: number;
+      y: number;
+      vx: number;
+      vy: number;
+      size: number;
+      color: string;
+      alpha: number;
+      life: number;
+    }> = [];
 
-    // Enhanced particle rendering with advanced effects
-    particles.current.forEach((particle) => {
-      // Update particle properties
-      particle.x += particle.vx;
-      particle.y += particle.vy;
-      particle.rotation += particle.rotationSpeed;
-      particle.pulse += particle.pulseSpeed;
-      particle.life += 1;
-      particle.energy = Math.sin(particle.frequency * particle.life + particle.phase) * particle.amplitude + particle.amplitude;
+    // Create initial particles
+    for (let i = 0; i < 100; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+        size: Math.random() * 2 + 1,
+        color: `hsl(${Math.random() * 60 + 180}, 70%, 60%)`,
+        alpha: Math.random() * 0.5 + 0.3,
+        life: Math.random() * 100 + 50
+      });
+    }
 
-      // Add trail effect
-      particle.trail.push({ x: particle.x, y: particle.y, opacity: particle.opacity });
-      if (particle.trail.length > particle.maxTrailLength) {
-        particle.trail.shift();
-      }
+    // Animation loop
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Boundary handling with enhanced wrapping
-      if (particle.x < -50) particle.x = canvas.width + 50;
-      if (particle.x > canvas.width + 50) particle.x = -50;
-      if (particle.y < -50) particle.y = canvas.height + 50;
-      if (particle.y > canvas.height + 50) particle.y = -50;
+      // Update and draw particles
+      particles.forEach((particle, index) => {
+        particle.x += particle.vx;
+        particle.y += particle.vy;
+        particle.life--;
 
-      // Enhanced particle rendering based on type
-      ctx.save();
-      ctx.globalAlpha = particle.opacity * (1 - particle.life / particle.maxLife);
-      
-      switch (particle.type) {
-        case 'quantum':
-          // Quantum particles with wave-like effects
-          ctx.strokeStyle = particle.color;
-          ctx.lineWidth = 2;
-          ctx.beginPath();
-          ctx.arc(particle.x, particle.y, particle.size + Math.sin(particle.pulse) * 3, 0, Math.PI * 2);
-          ctx.stroke();
-          
-          // Quantum field effect
-          ctx.globalAlpha = particle.opacity * 0.3;
-          ctx.beginPath();
-          ctx.arc(particle.x, particle.y, particle.size * 3 + Math.sin(particle.pulse) * 5, 0, Math.PI * 2);
-          ctx.stroke();
-          break;
+        // Wrap around edges
+        if (particle.x < 0) particle.x = canvas.width;
+        if (particle.x > canvas.width) particle.x = 0;
+        if (particle.y < 0) particle.y = canvas.height;
+        if (particle.y > canvas.height) particle.y = 0;
 
-        case 'neon':
-          // Neon particles with glow effects
-          ctx.shadowColor = particle.color;
-          ctx.shadowBlur = 15;
-          ctx.fillStyle = particle.color;
-          ctx.beginPath();
-          ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-          ctx.fill();
-          break;
-
-        case 'holographic': {
-          // Holographic particles with prismatic effects
-          const hue = (particle.life * 0.5) % 360;
-          ctx.fillStyle = `hsl(${hue}, 70%, 60%)`;
-          ctx.beginPath();
-          ctx.arc(particle.x, particle.y, particle.size + Math.sin(particle.pulse) * 2, 0, Math.PI * 2);
-          ctx.fill();
-          break;
-        }
-
-        case 'plasma':
-          // Plasma particles with energy effects
-          ctx.strokeStyle = particle.color;
-          ctx.lineWidth = 3;
-          ctx.beginPath();
-          ctx.moveTo(particle.x - particle.size, particle.y);
-          ctx.lineTo(particle.x + particle.size, particle.y);
-          ctx.moveTo(particle.x, particle.y - particle.size);
-          ctx.lineTo(particle.x, particle.y + particle.size);
-          ctx.stroke();
-          break;
-
-        case 'cosmic':
-          // Cosmic particles with star-like effects
-          ctx.fillStyle = particle.color;
-          ctx.beginPath();
-          for (let i = 0; i < 5; i++) {
-            const angle = (i * Math.PI * 2) / 5 + particle.rotation;
-            const radius = particle.size;
-            const x = particle.x + Math.cos(angle) * radius;
-            const y = particle.y + Math.sin(angle) * radius;
-            if (i === 0) ctx.moveTo(x, y);
-            else ctx.lineTo(x, y);
-          }
-          ctx.closePath();
-          ctx.fill();
-          break;
-          
-        case 'cyberpunk':
-          // Cyberpunk effect
-          ctx.shadowColor = particle.color;
-          ctx.shadowBlur = 15;
-          ctx.fillStyle = particle.color;
-          ctx.globalAlpha = pulseOpacity;
-          ctx.beginPath();
-          ctx.arc(0, 0, particle.size, 0, Math.PI * 2);
-          ctx.fill();
-          break;
-
-        case 'ultra':
-          // Ultra effect
-          ctx.shadowColor = particle.color;
-          ctx.shadowBlur = 20;
-          ctx.fillStyle = particle.color;
-          ctx.globalAlpha = pulseOpacity;
-          ctx.beginPath();
-          ctx.arc(0, 0, particle.size, 0, Math.PI * 2);
-          ctx.fill();
-          break;
-          
-        default:
-          // Standard particle
-          ctx.fillStyle = particle.color;
-          ctx.font = `${particle.size * 2}px monospace`;
-          ctx.fillText('1', particle.x, particle.y);
-          break;
-
-        case 'quantum-field':
-          // Quantum field particles with field effects
-          ctx.strokeStyle = particle.color;
-          ctx.lineWidth = 1;
-          ctx.beginPath();
-          ctx.arc(particle.x, particle.y, particle.size * 2 + Math.sin(particle.pulse) * 4, 0, Math.PI * 2);
-          ctx.stroke();
-          ctx.beginPath();
-          ctx.arc(particle.x, particle.y, particle.size * 4 + Math.sin(particle.pulse) * 6, 0, Math.PI * 2);
-          ctx.stroke();
-          break;
-
-        default:
-          // Standard particles with enhanced effects
-          ctx.fillStyle = particle.color;
-          ctx.beginPath();
-          ctx.arc(particle.x, particle.y, particle.size + Math.sin(particle.pulse) * 2, 0, Math.PI * 2);
-          ctx.fill();
-      }
-
-      // Render trail effect
-      if (particle.trail.length > 1) {
-        ctx.strokeStyle = particle.color;
-        ctx.lineWidth = 1;
-        ctx.globalAlpha = particle.opacity * 0.5;
+        // Draw particle
+        ctx.save();
+        ctx.globalAlpha = particle.alpha;
+        ctx.fillStyle = particle.color;
+        ctx.shadowColor = particle.color;
+        ctx.shadowBlur = 10;
         ctx.beginPath();
-        particle.trail.forEach((trailPoint, trailIndex) => {
-          const alpha = trailIndex / particle.trail.length;
-          ctx.globalAlpha = particle.opacity * alpha * 0.3;
-          if (trailIndex === 0) {
-            ctx.moveTo(trailPoint.x, trailPoint.y);
-          } else {
-            ctx.lineTo(trailPoint.x, trailPoint.y);
+        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+
+        // Remove dead particles and create new ones
+        if (particle.life <= 0) {
+          particles[index] = {
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            vx: (Math.random() - 0.5) * 0.5,
+            vy: (Math.random() - 0.5) * 0.5,
+            size: Math.random() * 2 + 1,
+            color: `hsl(${Math.random() * 60 + 180}, 70%, 60%)`,
+            alpha: Math.random() * 0.5 + 0.3,
+            life: Math.random() * 100 + 50
+          };
+        }
+      });
+
+      // Draw connecting lines between nearby particles
+      ctx.strokeStyle = 'rgba(0, 255, 255, 0.1)';
+      ctx.lineWidth = 0.5;
+      ctx.shadowBlur = 5;
+      ctx.shadowColor = 'rgba(0, 255, 255, 0.5)';
+
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < 100) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
           }
-        });
+        }
+      }
+
+      // Draw grid pattern
+      ctx.strokeStyle = 'rgba(0, 255, 255, 0.05)';
+      ctx.lineWidth = 0.5;
+      ctx.shadowBlur = 0;
+
+      const gridSize = 50;
+      for (let x = 0; x < canvas.width; x += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, canvas.height);
+        ctx.stroke();
+      }
+      for (let y = 0; y < canvas.height; y += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(canvas.width, y);
         ctx.stroke();
       }
 
-      ctx.restore();
+      // Draw floating geometric shapes
+      const time = Date.now() * 0.001;
+      const shapes = [
+        { x: canvas.width * 0.2, y: canvas.height * 0.3, size: 40, rotation: time * 0.5 },
+        { x: canvas.width * 0.8, y: canvas.height * 0.7, size: 60, rotation: time * 0.3 },
+        { x: canvas.width * 0.5, y: canvas.height * 0.8, size: 30, rotation: time * 0.7 }
+      ];
 
-      // Regenerate particles when they expire
-      if (particle.life > particle.maxLife) {
-        const colors = getThemeColors();
-        particle.x = Math.random() * canvas.width;
-        particle.y = Math.random() * canvas.height;
-        particle.life = 0;
-        particle.color = colors.primary[Math.floor(Math.random() * colors.primary.length)];
-        particle.trail = [];
-        particle.energy = Math.random() * 100;
-        particle.phase = Math.random() * Math.PI * 2;
-      }
-    });
-
-    // Enhanced connection lines between nearby particles
-    particles.current.forEach((particle1, i) => {
-      particles.current.slice(i + 1).forEach((particle2) => {
-        const distance = Math.sqrt(
-          Math.pow(particle1.x - particle2.x, 2) + Math.pow(particle1.y - particle2.y, 2)
-        );
+      shapes.forEach(shape => {
+        ctx.save();
+        ctx.translate(shape.x, shape.y);
+        ctx.rotate(shape.rotation);
+        ctx.strokeStyle = 'rgba(255, 0, 255, 0.1)';
+        ctx.lineWidth = 1;
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = 'rgba(255, 0, 255, 0.5)';
         
-        if (distance < 100) {
-          const alpha = (100 - distance) / 100 * 0.3;
-          ctx.strokeStyle = `rgba(255, 255, 255, ${alpha})`;
-          ctx.lineWidth = 1;
-          ctx.beginPath();
-          ctx.moveTo(particle1.x, particle1.y);
-          ctx.lineTo(particle2.x, particle2.y);
-          ctx.stroke();
+        // Draw hexagon
+        ctx.beginPath();
+        for (let i = 0; i < 6; i++) {
+          const angle = (i * Math.PI) / 3;
+          const x = Math.cos(angle) * shape.size;
+          const y = Math.sin(angle) * shape.size;
+          if (i === 0) {
+            ctx.moveTo(x, y);
+          } else {
+            ctx.lineTo(x, y);
+          }
         }
+        ctx.closePath();
+        ctx.stroke();
+        ctx.restore();
       });
-    });
 
-    // Enhanced energy field effects
-    const centerX = canvas.width / 2;
-    const centerY = canvas.height / 2;
-    const time = Date.now() * 0.001;
-    
-    ctx.save();
-    ctx.globalAlpha = 0.1;
-    ctx.strokeStyle = '#00d4ff';
-    ctx.lineWidth = 2;
-    
-    // Create multiple energy rings
-    for (let i = 0; i < 3; i++) {
-      const radius = 100 + i * 50 + Math.sin(time + i) * 20;
-      ctx.beginPath();
-      ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
-      ctx.stroke();
-    }
-    ctx.restore();
-
-    animationFrameRef.current = requestAnimationFrame(animateParticles);
-  }, [getThemeColors]);
-
-  // Enhanced resize handler
-  const handleResize = useCallback(() => {
-    if (canvasRef.current) {
-      canvasRef.current.width = window.innerWidth;
-      canvasRef.current.height = window.innerHeight;
-    }
-  }, []);
-
-  // Enhanced effect initialization
-  useEffect(() => {
-    initParticles();
-    
-    const handleVisibilityChange = () => {
-      if (document.hidden) {
-        if (animationFrameRef.current) {
-          cancelAnimationFrame(animationFrameRef.current);
-        }
-      } else {
-        animateParticles();
-      }
+      requestAnimationFrame(animate);
     };
 
-    document.addEventListener('visibilitychange', handleVisibilityChange);
+    animate();
+
+    // Handle resize
+    const handleResize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+
     window.addEventListener('resize', handleResize);
-    
-    animateParticles();
 
     return () => {
-      if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current);
-      }
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
       window.removeEventListener('resize', handleResize);
     };
-  }, [initParticles, animateParticles, handleResize]);
-
-  // Enhanced theme switching effect
-  useEffect(() => {
-    initParticles();
-  }, [theme, initParticles]);
+  }, []);
 
   return (
-    <div ref={containerRef} className="fixed inset-0 pointer-events-none overflow-hidden">
-      {/* Enhanced Canvas Background */}
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 w-full h-full"
-        style={{
-          background: 'radial-gradient(ellipse at center, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.95) 100%)'
-        }}
-      />
-      
-      {/* Enhanced Overlay Effects */}
-      <div className="absolute inset-0">
-        {/* Quantum Grid Effect */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="w-full h-full" style={{
-            backgroundImage: `
-              linear-gradient(rgba(0, 212, 255, 0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(0, 212, 255, 0.1) 1px, transparent 1px)
-            `,
-            backgroundSize: '50px 50px'
-          }} />
-        </div>
+    <>
+      {/* Enhanced CSS Background */}
+      <div className="fixed inset-0 pointer-events-none">
+        {/* Gradient overlays */}
+        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-blue-500/3 to-purple-500/5"></div>
+        <div className="absolute inset-0 bg-gradient-to-tl from-pink-500/3 via-purple-500/3 to-cyan-500/3"></div>
         
-        {/* Enhanced Glow Effects */}
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-cyan-400 rounded-full opacity-20 blur-3xl animate-pulse" />
-        <div className="absolute top-3/4 right-1/4 w-24 h-24 bg-purple-500 rounded-full opacity-20 blur-2xl animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute bottom-1/4 left-1/3 w-20 h-20 bg-pink-500 rounded-full opacity-20 blur-2xl animate-pulse" style={{ animationDelay: '2s' }} />
+        {/* Animated geometric elements */}
+        <div className="absolute top-20 left-20 w-32 h-32 border border-cyan-400/20 rounded-lg animate-pulse"></div>
+        <div className="absolute top-40 right-32 w-24 h-24 border border-purple-400/20 rounded-full animate-pulse delay-1000"></div>
+        <div className="absolute bottom-32 left-32 w-40 h-40 border border-pink-400/20 transform rotate-45 animate-pulse delay-2000"></div>
+        <div className="absolute top-1/2 left-1/2 w-64 h-64 border border-blue-400/10 rounded-full animate-pulse delay-3000"></div>
         
-        {/* Enhanced Energy Fields */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <div className="w-64 h-64 border border-cyan-400 rounded-full opacity-10 animate-spin" style={{ animationDuration: '20s' }} />
-          <div className="w-48 h-48 border border-purple-500 rounded-full opacity-10 animate-spin absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" style={{ animationDuration: '15s', animationDirection: 'reverse' }} />
-          <div className="w-32 h-32 border border-pink-500 rounded-full opacity-10 animate-spin absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" style={{ animationDuration: '10s' }} />
-        </div>
-      </div>
-      
-      {/* Enhanced Floating Elements */}
-      <div className="absolute inset-0 pointer-events-none">
-        {[...Array(8)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-cyan-400 rounded-full opacity-60"
-            animate={{
-              x: [0, Math.random() * 100 - 50],
-              y: [0, Math.random() * 100 - 50],
-              opacity: [0.3, 0.8, 0.3],
-              scale: [0.5, 1.5, 0.5],
-            }}
-            transition={{
-              duration: Math.random() * 10 + 10,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: i * 0.5
-            }}
-            style={{
-              left: `${20 + (i * 10)}%`,
-              top: `${20 + (i * 15)}%`,
-            }}
-          />
-        ))}
+        {/* Floating orbs */}
+        <div className="absolute top-1/4 left-1/4 w-16 h-16 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full animate-bounce delay-1000"></div>
+        <div className="absolute top-3/4 right-1/4 w-20 h-20 bg-gradient-to-r from-purple-400/20 to-pink-500/20 rounded-full animate-bounce delay-2000"></div>
+        <div className="absolute bottom-1/4 right-1/3 w-12 h-12 bg-gradient-to-r from-green-400/20 to-emerald-500/20 rounded-full animate-bounce delay-3000"></div>
+        
+        {/* Neon lines */}
+        <div className="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-cyan-400/30 to-transparent animate-pulse"></div>
+        <div className="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-400/30 to-transparent animate-pulse delay-1000"></div>
+        
+        {/* Corner accents */}
+        <div className="absolute top-0 left-0 w-20 h-20 border-l-2 border-t-2 border-cyan-400/30"></div>
+        <div className="absolute top-0 right-0 w-20 h-20 border-r-2 border-t-2 border-purple-400/30"></div>
+        <div className="absolute bottom-0 left-0 w-20 h-20 border-l-2 border-b-2 border-pink-400/30"></div>
+        <div className="absolute bottom-0 right-0 w-20 h-20 border-r-2 border-b-2 border-blue-400/30"></div>
       </div>
 
-      {/* CSS for radial gradients */}
-      <style jsx>{`
-        .bg-radial-gradient-cyan {
-          background: radial-gradient(circle, rgba(6, 182, 212, 0.3) 0%, transparent 70%);
-        }
-        .bg-radial-gradient-purple {
-          background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%);
-        }
-        .bg-radial-gradient-blue {
-          background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%);
-        }
-      `}</style>
+      {/* Canvas Background */}
+      <canvas
+        ref={canvasRef}
+        className="fixed inset-0 pointer-events-none opacity-30"
+        style={{ zIndex: -1 }}
+      />
     </>
   );
 };

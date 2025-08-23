@@ -16,6 +16,36 @@ const footerSections = [
     icon: <Star className="w-5 h-5 text-yellow-400" />,
     color: 'from-yellow-500 to-orange-500',
     links: [
+<<<<<<< HEAD
+      { name: '2046 Services Showcase', href: '/services-2046-showcase', featured: true },
+      { name: 'Quantum AI Brain-Computer Interface 2046', href: '/quantum-ai-brain-computer-interface-platform-2046', featured: true },
+      { name: 'Space Resource Intelligence 2046', href: '/space-resource-intelligence-platform-2046', featured: true },
+      { name: 'Quantum Financial Trading Intelligence 2046', href: '/quantum-financial-trading-intelligence-2046', featured: true },
+      { name: 'Quantum Cybersecurity Future 2046', href: '/quantum-cybersecurity-future-platform-2046', featured: true },
+      { name: 'AI Healthcare Diagnostics 2046', href: '/ai-powered-healthcare-diagnostics-platform-2046', featured: true },
+      { name: 'Quantum Energy Optimization 2046', href: '/quantum-energy-optimization-platform-2046' },
+      { name: 'Quantum Supply Chain Intelligence 2046', href: '/quantum-supply-chain-intelligence-2046' },
+      { name: 'Quantum Manufacturing Intelligence 2046', href: '/quantum-manufacturing-intelligence-2046' },
+      { name: 'Quantum Education Intelligence 2046', href: '/quantum-education-intelligence-platform-2046' }
+    ]
+  },
+  {
+    title: 'New Q4 2025 Services',
+    description: 'Latest innovative services and solutions',
+    icon: <Rocket className="w-5 h-5 text-green-400" />,
+    color: 'from-green-500 to-emerald-500',
+    links: [
+      { name: 'AI Autonomous Customer Success', href: '/ai-autonomous-customer-success', featured: true },
+      { name: 'Quantum Cybersecurity Suite', href: '/quantum-cybersecurity-suite', featured: true },
+      { name: 'AI Autonomous Research Platform', href: '/ai-autonomous-research-platform' },
+      { name: 'Space Resource Intelligence Platform', href: '/space-resource-intelligence-platform' },
+      { name: 'Brain-Computer Interface Platform', href: '/brain-computer-interface-platform' },
+      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure' },
+      { name: 'Autonomous DevOps Platform', href: '/autonomous-devops-platform' },
+      { name: 'AI-Powered Data Warehouse', href: '/ai-powered-data-warehouse' },
+      { name: 'Zero Trust Security Platform', href: '/zero-trust-security-platform' },
+      { name: 'Edge Computing Orchestrator', href: '/edge-computing-orchestrator' }
+=======
       { name: '2025 Innovative Services Showcase', href: '/comprehensive-2025-innovative-services-showcase', featured: true },
       { name: 'AI Autonomous Content Factory Pro', href: '/ai-autonomous-content-factory-pro', featured: true },
       { name: 'AI Emotional Intelligence Platform 2040', href: '/ai-emotional-intelligence-platform-2040', featured: true },
@@ -26,6 +56,7 @@ const footerSections = [
       { name: 'AI Consciousness Evolution 2040', href: '/ai-consciousness-evolution-2040' },
       { name: 'Quantum Neural Ecosystem 2040', href: '/quantum-neural-ecosystem-2040' },
       { name: 'Space Resource Intelligence 2040', href: '/space-resource-intelligence-2040' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-8640
     ]
   },
   {
