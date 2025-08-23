@@ -42,6 +42,11 @@ import { innovative2025MicroSaasExpansion } from '../data/innovative-2025-micro-
 import { innovative2025ITSolutionsExpansion } from '../data/innovative-2025-it-solutions-expansion';
 import { innovative2025AIServicesExpansion } from '../data/innovative-2025-ai-services-expansion';
 
+// Import our new 2025 cutting-edge innovative services
+import { innovative2025CuttingEdgeServices } from '../data/innovative-2025-cutting-edge-services';
+import { innovative2025EnterpriseSolutions } from '../data/innovative-2025-enterprise-solutions';
+import { innovative2025IndustrySolutions } from '../data/innovative-2025-industry-solutions';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -65,6 +70,16 @@ const getServicePricing = (service: any) => {
   if (service.pricing?.starter) return service.pricing.starter;
   if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
   if (service.price?.monthly) return `$${service.price.monthly}/month`;
+  if (service.price && service.period) return `${service.price}${service.period}`;
+  if (service.price) return service.price;
+  // Handle case where pricing is just a number
+  if (typeof service.pricing === 'number') return `$${service.pricing}/month`;
+  if (typeof service.pricing === 'object' && service.pricing !== null) {
+    // If pricing is an object but doesn't have expected fields, return a default
+    // Check if it has yearly field and use that as fallback
+    if (service.pricing.yearly) return service.pricing.yearly;
+    return 'Contact for pricing';
+  }
   return 'Contact for pricing';
 };
 
@@ -98,6 +113,10 @@ const allServices = [
   ...industryRealServices,
   ...real2025Q4AugmentedBatch,
   ...real2029Q3Additions,
+  // Add our new 2025 cutting-edge innovative services
+  ...innovative2025CuttingEdgeServices,
+  ...innovative2025EnterpriseSolutions,
+  ...innovative2025IndustrySolutions,
   ...validatedServices2025Q4,
   ...real2035Q2Additions,
   ...real2036ServiceExpansions,
