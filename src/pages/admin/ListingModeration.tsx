@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { SEO } from '@/components/SEO';
 import { Card, CardContent } from '@/components/ui/card';
 import { supabase } from '@/integrations/supabase/client';
-import type { ModerationLog } from '@/types/moderation';
+import { ModerationLog } from '@/types/moderation';
 import { FlaggedListingsTable } from '@/components/admin/moderation/FlaggedListingsTable';
 import AdminLayout from '@/components/admin/AdminLayout';
 import { toast } from '@/hooks/use-toast';
@@ -13,7 +13,6 @@ export default function ListingModeration() {
 
   const fetchLogs = async () => {
     setIsLoading(true);
-    if (!supabase) throw new Error('Supabase client not initialized');
     const { data, error } = await supabase
       .from('moderation_logs')
       .select('*')
@@ -32,7 +31,6 @@ export default function ListingModeration() {
   }, []);
 
   const handleAction = async (id: string, action: 'approved' | 'rejected') => {
-    if (!supabase) throw new Error('Supabase client not initialized');
     const { error } = await supabase
       .from('moderation_logs')
       .update({ status: action, reviewed_at: new Date().toISOString() })

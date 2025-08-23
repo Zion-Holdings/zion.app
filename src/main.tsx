@@ -56,14 +56,46 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
                     <ErrorBoundary>
                       <App />
                       <LanguageDetectionPopup />
-                    </ErrorBoundary>
-                  </LanguageProvider>
-                </AnalyticsProvider>
-              </NotificationProvider>
-            </AuthProvider>
-          </Router>
-        </WhitelabelProvider>
-      </QueryClientProvider>
-    </HelmetProvider>
-  </React.StrictMode>,
+                    </LanguageProvider>
+                  </AnalyticsProvider>
+                </NotificationProvider>
+              </AuthProvider>
+            </Router>
+          </WhitelabelProvider>
+        </QueryClientProvider>
+      </HelmetProvider>
+    </React.StrictMode>,
+  );
+  console.log("main.tsx: After ReactDOM.createRoot");
+} catch (error) {
+  console.error("Global error caught in main.tsx:", error);
+  console.log("main.tsx: Global error caught");
+  const rootElement = document.getElementById('root');
+  if (rootElement) {
+    rootElement.innerHTML = `
+      <div style="padding: 20px; text-align: center; font-family: sans-serif;">
+        <h1>Application Error</h1>
+        <p>A critical error occurred while loading the application.</p>
+        <p>Error: ${(error as Error).message}</p>
+        <pre>${(error as Error).stack}</pre>
+        <p>Please check the console for more details.</p>
+      </div>
+    `;
+  }
+}
+
+registerServiceWorker();
+
+// Global fallback for images that fail to load
+// Replace broken images (e.g., offline Unsplash links) with a local placeholder
+document.addEventListener(
+  'error',
+  (event) => {
+    const target = event.target as HTMLElement;
+    if (target instanceof HTMLImageElement && !target.dataset.fallback) {
+      target.dataset.fallback = 'true';
+      target.src = '/placeholder.svg';
+    }
+  },
+  true,
 );

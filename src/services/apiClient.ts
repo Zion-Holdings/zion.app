@@ -103,30 +103,8 @@ axios.interceptors.response.use(
 
 const API_BASE = axios.defaults.baseURL;
 const apiClient = axios.create({
-  baseURL: `${API_BASE}/api/v1/services`,
-});
-
-apiClient.interceptors.request.use((config: unknown) => {
-  if (typeof config !== 'object' || config === null) {
-    return { headers: { Accept: 'application/json' } };
-  }
-  const headers = 'headers' in config && typeof (config as { headers?: unknown }).headers === 'object' && (config as { headers?: unknown }).headers !== null
-    ? { ...(config as { headers: Record<string, unknown> }).headers, Accept: 'application/json' }
-    : { Accept: 'application/json' };
-  return {
-    ...config,
-    headers,
-  };
-});
-
-axiosRetry(apiClient, {
-  retries: 3,
-  retryCondition: (error) => {
-    return (
-      axiosRetry.isNetworkError(error) ||
-      axiosRetry.isIdempotentRequestError(error)
-    );
-  },
+  baseURL: import.meta.env.VITE_API_URL || '/api',
+  withCredentials: true,
 });
 
 apiClient.interceptors.response.use(

@@ -1,8 +1,5 @@
-
-
-
-
-import Link from 'next/link'; // Changed from react-router-dom
+import { FileText, CheckCircle2, Clock, ShieldAlert } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
 import { useGetOrdersQuery } from '@/hooks/useOrders';
 import { FileText, CheckCircle2, Clock, ShieldAlert } from 'lucide-react';
@@ -12,10 +9,10 @@ import {
   TableCell,
   TableHead,
   TableHeader,
-  TableRow
-} from "@/components/ui/table";
+  TableRow,
+} from '@/components/ui/table';
 import { Badge } from '@/components/ui/badge';
-import Skeleton from '@/components/ui/skeleton';
+import { Skeleton } from '@/components/ui/skeleton';
 import { EmptyState } from '@/components/ui/empty-state';
 
 export default function OrdersPage() {

@@ -5,7 +5,7 @@ import { useAuth } from './useAuth';
 
 export interface FirestoreFavorite {
   id: string;
-  created?: unknown;
+  created?: any;
 }
 
 export function useFirestoreFavorites() {
@@ -20,15 +20,9 @@ export function useFirestoreFavorites() {
         setLoading(false);
         return;
       }
-      const uid = typeof user === 'object' && user !== null && 'uid' in user
-        ? (user as { uid?: string }).uid
-        : (typeof user === 'object' && user !== null && 'id' in user
-          ? (user as { id?: string }).id
-          : undefined);
-      if (!uid) throw new Error('User ID is required for Firestore path');
-      const favCol = collection(db, 'users', uid, 'favorites');
+      const favCol = collection(db, 'users', (user as any).uid || (user as any).id, 'favorites');
       const snapshot = await getDocs(favCol);
-      setFavorites(snapshot.docs.map(doc => ({ id: doc.id, ...(doc.data() as Record<string, unknown>) })));
+      setFavorites(snapshot.docs.map(doc => ({ id: doc.id, ...(doc.data() as any) })));
       setLoading(false);
     };
     fetchFavorites();
@@ -36,12 +30,7 @@ export function useFirestoreFavorites() {
 
   const toggleFavorite = async (listingId: string) => {
     if (!user) return;
-    const uid = typeof user === 'object' && user !== null && 'uid' in user
-      ? (user as { uid?: string }).uid
-      : (typeof user === 'object' && user !== null && 'id' in user
-        ? (user as { id?: string }).id
-        : undefined);
-    if (!uid) throw new Error('User ID is required for Firestore path');
+    const uid = (user as any).uid || (user as any).id;
     const favRef = doc(db, 'users', uid, 'favorites', listingId);
     const exists = (await getDoc(favRef)).exists();
     if (exists) {

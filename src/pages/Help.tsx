@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
 import { GradientHeading } from '@/components/GradientHeading';
 import { Input } from '@/components/ui/input';
 import { Markdown } from '@/components/ui/markdown';
 import { SEO } from '@/components/SEO';
 import { SupportChatbot } from '@/components/SupportChatbot';
-import {logErrorToProduction} from '@/utils/productionLogger';
-
 
 interface Article { slug: string; title: string; content: string; }
 
@@ -14,38 +13,12 @@ export default function Help() {
   const [query, setQuery] = useState('');
   const [articles, setArticles] = useState<Article[]>([]);
   const [selected, setSelected] = useState<Article | null>(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    let active = true;
-    const fetchArticles = async () => {
-      setLoading(true);
-      setError(null);
-      try {
-        const res = await fetch(`/api/help/articles?q=${encodeURIComponent(query)}`);
-        if (!res.ok) {
-          throw new Error(`Request failed: ${res.status}`);
-        }
-        const data = await res.json().catch(() => []);
-        if (active) {
-          setArticles(Array.isArray(data) ? data : []);
-        }
-      } catch (err) {
-        logErrorToProduction('Help article fetch error:', { data: err });
-        if (active) {
-          setArticles([]);
-          setError('Failed to load articles');
-        }
-      } finally {
-        if (active) setLoading(false);
-      }
-    };
-
-    fetchArticles();
-    return () => {
-      active = false;
-    };
+    fetch(`/api/help/articles?q=${encodeURIComponent(query)}`)
+      .then(r => r.json())
+      .then(setArticles)
+      .catch(() => setArticles([]));
   }, [query]);
 
   return (
@@ -66,17 +39,6 @@ export default function Help() {
               className="bg-zion-blue-light text-white"
             />
           </div>
-          {loading && (
-            <p className="text-center text-white my-4">Loading...</p>
-          )}
-          {error && !loading && (
-            <div className="text-center text-red-500 my-4">
-              {error}{' '}
-              <button onClick={() => setQuery(q => q)} className="underline">
-                Try Again
-              </button>
-            </div>
-          )}
           <div className="grid gap-4 max-w-3xl mx-auto">
             {articles.map(a => (
               <button key={a.slug} onClick={() => setSelected(a)} className="text-left p-4 border border-zion-blue-light rounded text-white bg-zion-blue-dark hover:bg-zion-blue-light">
@@ -93,6 +55,7 @@ export default function Help() {
         </div>
       </main>
       <SupportChatbot />
+      <Footer />
     </>
   );
 }

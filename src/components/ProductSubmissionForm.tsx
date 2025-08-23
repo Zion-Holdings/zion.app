@@ -210,31 +210,6 @@ export function ProductSubmissionForm() {
         }
       }
 
-      // Upload model if provided
-      if (values.model) {
-        const modelPath = `product_models/${productRecord.id}/${values.model.name}`;
-        const { error: uploadError } = await supabase.storage
-          .from('products')
-          .upload(modelPath, values.model);
-
-        if (uploadError) {
-          throw new Error(uploadError.message);
-        }
-
-        const { data: publicUrlData } = supabase.storage
-          .from('products')
-          .getPublicUrl(modelPath);
-
-        const { error: updateError } = await supabase
-          .from('product_listings')
-          .update({ model_url: publicUrlData.publicUrl })
-          .eq('id', productRecord.id);
-
-        if (updateError) {
-          throw new Error(updateError.message);
-        }
-      }
-
       // Send listing to moderation service
       try {
         await supabase.functions.invoke('moderate-listing', {
@@ -247,7 +222,7 @@ export function ProductSubmissionForm() {
           }
         });
       } catch (err) {
-        logErrorToProduction('Error invoking moderation:', { data: err });
+        console.error('Error invoking moderation:', err);
       }
       
       // Show success message

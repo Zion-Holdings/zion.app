@@ -21,10 +21,9 @@ export function useTalentDirectory(
   // Fetch talent data
   const {
     talents,
-    total,
     isLoading,
     error,
-  } = useTalentData(page, limit);
+  } = useTalentData();
 
   // Apply filters and sorting
   const {

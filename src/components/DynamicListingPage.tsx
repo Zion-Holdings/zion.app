@@ -442,9 +442,7 @@ export function DynamicListingPage({
                     className="border-zion-blue-light text-zion-slate-light focus-visible:ring-zion-purple"
                   >
                     {ToggleViewIcon}
-                    <span className="sr-only">
-                      {isGrid ? "List view" : "Grid view"}
-                    </span>
+                    <span className="sr-only">{isGrid ? "List view" : "Grid view"}</span>
                   </Button>
                 </div>
               </div>

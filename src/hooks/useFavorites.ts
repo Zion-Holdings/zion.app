@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { useAuth } from './useAuth';
 import { safeFetch } from '@/integrations/supabase/client';
 import { getWishlist, saveWishlist } from '@/lib/db';
-import {logErrorToProduction} from "@/utils/productionLogger";
 
 export interface Favorite {
   item_type: string;
@@ -27,7 +26,7 @@ export function useFavorites() {
       setFavorites(data || []);
       await saveWishlist(data || []);
     } catch (err) {
-      logErrorToProduction('Failed to fetch favorites', { data: err });
+      console.error('Failed to fetch favorites', err);
       const local = await getWishlist();
       setFavorites(local as Favorite[]);
     } finally {

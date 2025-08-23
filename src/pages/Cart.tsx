@@ -1,26 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { safeStorage } from '@/utils/safeStorage';
 import { Button } from '@/components/ui/button';
-import Link from 'next/link';
-import { useSelector, useDispatch } from 'react-redux';
-import { useState } from 'react';
-import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
-import type { RootState, AppDispatch } from '@/store';
-import { ShoppingCart, User, CreditCard, ArrowRight, Package, Shield } from 'lucide-react';
-import {
-  removeItem as removeItemAction,
-  updateQuantity as updateQuantityAction
-} from "@/store/cartSlice";
-import {logErrorToProduction} from '@/utils/productionLogger';
-import GuestCheckoutModal from '@/components/cart/GuestCheckoutModal';
-// CartItemType is already imported via RootState from cartSlice which uses CartItem from @/types/cart
-// import { CartItem as CartItemType } from '@/types/cart';
-// safeStorage is no longer needed here for reading
-// import { safeStorage } from '@/utils/safeStorage';
-import { getStripe } from '@/utils/getStripe';
-import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
+import { toast } from '@/hooks/use-toast';
 
 interface CartItem {
   id: string;
@@ -30,13 +13,29 @@ interface CartItem {
 }
 
 export default function CartPage() {
-  const { t: _t } = useTranslation();
-  const items = useSelector((s: RootState) => s.cart.items);
-  const dispatch = useDispatch<AppDispatch>();
-  const { user, isAuthenticated } = useAuth();
-  const [loading, setLoading] = useState(false);
-  const [guestOpen, setGuestOpen] = useState(false);
-  const { toggle: toggleWishlist, isWishlisted } = useWishlist();
+  const navigate = useNavigate();
+  const { user } = useAuth();
+  const [items, setItems] = useState<CartItem[]>([]);
+
+  if (!user) {
+    toast({
+      title: 'Authentication required',
+      description: 'Please sign in to view your cart.',
+    });
+    navigate('/login');
+    return null;
+  }
+
+  useEffect(() => {
+    const stored = safeStorage.getItem('cart');
+    if (stored) {
+      try {
+        setItems(JSON.parse(stored) as CartItem[]);
+      } catch {
+        setItems([]);
+      }
+    }
+  }, []);
 
   const updateQuantity = (id: string, qty: number) => {
     setItems(prev => {

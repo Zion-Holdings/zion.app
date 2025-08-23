@@ -18,12 +18,10 @@ import {
   FormControl,
   FormMessage,
 } from '@/components/ui/form';
-import { useForm, type Resolver } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
-
-
-import api from '@/services/apiClient';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
+import { Send, Mail } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import { useAuth } from '@/hooks/useAuth';
 import { LoginModal } from '@/components/auth/LoginModal';
@@ -41,18 +39,16 @@ type FormValues = {
   message: string;
 };
 
-const schema: yup.ObjectSchema<FormValues> = yup
-  .object({
-    subject: yup
-      .string()
-      .min(5, 'Subject must be at least 5 characters')
-      .required('Subject is required'),
-    message: yup
-      .string()
-      .min(20, 'Message must be at least 20 characters')
-      .required('Message is required'),
-  })
-  .required();
+const schema = z.object({
+  subject: z
+    .string()
+    .min(5, 'Subject must be at least 5 characters')
+    .nonempty('Subject is required'),
+  message: z
+    .string()
+    .min(20, 'Message must be at least 20 characters')
+    .nonempty('Message is required'),
+});
 
 export function ContactPublisherModal({
   isOpen,
@@ -67,7 +63,7 @@ export function ContactPublisherModal({
   const [loginOpen, setLoginOpen] = React.useState(false);
 
   const form = useForm<FormValues>({
-    resolver: yupResolver(schema) as Resolver<FormValues>,
+    resolver: zodResolver(schema),
     mode: 'onChange',
     defaultValues: { subject: '', message: '' },
   });
