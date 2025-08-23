@@ -91,11 +91,24 @@ import { advancedFintechBlockchainServices2025 } from '../data/2025-advanced-fin
 
 // Import our new 2025 cutting-edge futuristic services
 import { cuttingEdgeFuturisticServices } from '../data/2025-cutting-edge-futuristic-services';
+<<<<<<< HEAD
+// Import our new 2025 innovative services
+import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
+import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
+import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
+import { cuttingEdgeAIServices2025 } from '../data/2025-cutting-edge-ai-services';
+
+// Import our new revolutionary 2045 services
+import { revolutionary2045AdvancedMicroSaas } from '../data/revolutionary-2045-advanced-micro-saas';
+import { revolutionary2045ITServices } from '../data/revolutionary-2045-it-services';
+import { revolutionary2045AIServices } from '../data/revolutionary-2045-ai-services';
+=======
 import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
 import { advancedITInfrastructureServices } from '../data/2025-advanced-it-infrastructure-services';
 import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
 import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
 import { cuttingEdgeAIServices2025 } from '../data/2025-cutting-edge-ai-services';
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-8cfb
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -155,6 +168,8 @@ const allServices = [
   ...enterpriseITSolutions,
   ...innovativeMicroSaasSolutions,
   ...cuttingEdgeAIServices,
+<<<<<<< HEAD
+=======
   ...realMicroSaasServices,
   ...innovativeAIServices,
   ...enterpriseITServices,
@@ -170,6 +185,7 @@ const allServices = [
   ...innovative2025Q4NewServices,
   ...advancedITInfrastructureServices2025,
   ...industryRealServices,
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-8cfb
   ...real2025Q4AugmentedBatch,
   ...real2029Q3Additions,
   ...validatedServices2025Q4,
@@ -189,6 +205,8 @@ const allServices = [
   ...revolutionary2041AdvancedServices,
   ...advanced2041EnterpriseServices,
   ...revolutionary2042MicroSaasServices,
+<<<<<<< HEAD
+=======
   // Our new 2025 ultimate services expansion
   
   // Our new 2025 innovative services
@@ -196,6 +214,7 @@ const allServices = [
   ...innovativeITInfrastructureServices2025,
   ...innovativeMicroSaasSolutions2025,
   ...cuttingEdgeAIServices2025,
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-8cfb
   ...ultimate2025MicroSaasExpansion,
   ...ultimate2025ITServicesExpansion,
   ...ultimate2025AIServicesExpansion,
