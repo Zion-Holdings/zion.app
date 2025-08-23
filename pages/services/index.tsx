@@ -54,6 +54,9 @@ import { real2026Q4ExpansionsV3 } from '../../data/real-2026-q4-expansions-v3';
 import { real2036MicroSaasAdditions } from '../../data/real-2036-micro-saas-additions';
 import { real2036ITServicesAdditions } from '../../data/real-2036-it-services-additions';
 import { real2036AIServicesAdditions } from '../../data/real-2036-ai-services-additions';
+import { real2036InnovativeServicesAdditions } from '../../data/real-2036-innovative-services-additions';
+import { real2036SpaceTechAdditions } from '../../data/real-2036-space-tech-additions';
+import { real2036CybersecurityAdditions } from '../../data/real-2036-cybersecurity-additions';
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -133,7 +136,10 @@ export default function ServicesIndexPage() {
       real2026Q4ExpansionsV3 as unknown[],
       real2036MicroSaasAdditions as unknown[],
       real2036ITServicesAdditions as unknown[],
-      real2036AIServicesAdditions as unknown[]
+      real2036AIServicesAdditions as unknown[],
+      real2036InnovativeServicesAdditions as unknown[],
+      real2036SpaceTechAdditions as unknown[],
+      real2036CybersecurityAdditions as unknown[]
     );
 
   // Filter out services without required properties

@@ -12,14 +12,14 @@ const UltraFuturisticFooter2036: React.FC = () => {
 
   const footerSections = [
     {
-      title: 'Services',
+      title: 'Core Services',
       links: [
         { name: 'AI & Machine Learning', href: '/ai-services' },
         { name: 'Quantum Computing', href: '/quantum-services' },
         { name: 'Space Technology', href: '/space-technology' },
+        { name: 'Cybersecurity', href: '/cybersecurity' },
         { name: 'IT Solutions', href: '/it-services' },
-        { name: 'Process Automation', href: '/automation-services' },
-        { name: 'Cybersecurity', href: '/security' }
+        { name: 'Micro SAAS', href: '/micro-saas' }
       ]
     },
     {
@@ -34,6 +34,17 @@ const UltraFuturisticFooter2036: React.FC = () => {
       ]
     },
     {
+      title: 'Showcases',
+      links: [
+        { name: '2026 Services Showcase', href: '/ultimate-2026-services-showcase' },
+        { name: '2035 Futuristic Services', href: '/ultimate-2035-futuristic-services-showcase' },
+        { name: 'Innovative Services 2036', href: '/innovative-services-showcase-2036' },
+        { name: 'Comprehensive Services', href: '/comprehensive-services-showcase-2025' },
+        { name: 'Revolutionary Services', href: '/revolutionary-2025-services-showcase' },
+        { name: 'Pricing Plans', href: '/pricing' }
+      ]
+    },
+    {
       title: 'Resources',
       links: [
         { name: 'Documentation', href: '/docs' },
@@ -42,6 +53,17 @@ const UltraFuturisticFooter2036: React.FC = () => {
         { name: 'White Papers', href: '/white-papers' },
         { name: 'Webinars', href: '/webinars' },
         { name: 'Support', href: '/support' }
+      ]
+    },
+    {
+      title: 'Innovative Solutions',
+      links: [
+        { name: 'Sustainability & ESG', href: '/sustainability-services' },
+        { name: 'Healthcare & Biotech', href: '/healthcare-innovations' },
+        { name: 'Education & EdTech', href: '/education-innovations' },
+        { name: 'Creative & Marketing', href: '/creative-innovations' },
+        { name: 'Space Mining', href: '/space-mining' },
+        { name: 'Quantum Security', href: '/quantum-security' }
       ]
     },
     {
@@ -95,7 +117,7 @@ const UltraFuturisticFooter2036: React.FC = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
         <div className="py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-8 lg:gap-12">
             {/* Company Info */}
             <div className="lg:col-span-2">
               <motion.div 

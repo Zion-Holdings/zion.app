@@ -13,7 +13,7 @@ import {
   Building, MessageCircle, Sparkles as SparklesIcon, Zap as ZapIcon,
   Target as TargetIcon, Atom as AtomIcon, Brain as BrainIcon,
   Cpu as Quantum, Brain as AI, Code as MicroSaas, Server as ITServices, 
-  Globe as Metaverse, Shield as Cybersecurity
+  Globe as Metaverse, Shield as Cybersecurity, Leaf, Mountain, Plane
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -81,10 +81,22 @@ const navigationItems: NavigationItem[] = [
         icon: <Rocket className="w-4 h-4" />
       },
       { 
+        name: 'Cybersecurity', 
+        href: '/cybersecurity', 
+        description: 'Advanced security solutions',
+        icon: <Shield className="w-4 h-4" />
+      },
+      { 
         name: 'IT Solutions', 
         href: '/it-services', 
         description: 'Enterprise IT infrastructure',
         icon: <Cpu className="w-4 h-4" />
+      },
+      { 
+        name: 'Micro SAAS', 
+        href: '/micro-saas', 
+        description: 'Specialized software solutions',
+        icon: <Code className="w-4 h-4" />
       },
       { 
         name: 'Specialized Solutions', 
@@ -98,33 +110,27 @@ const navigationItems: NavigationItem[] = [
     name: 'Showcase & Pricing',
     href: '/comprehensive-services-showcase-2025',
     icon: <Star className="w-5 h-5" />,
-    description: 'Services portfolio & pricing',
-    badge: 'Showcase',
+    description: 'Service showcases and pricing',
+    badge: 'Featured',
     category: 'showcase',
     children: [
       {
-        name: '2025 Services Showcase',
-        href: '/comprehensive-services-showcase-2025',
-        description: 'Complete 2025 services overview',
-        icon: <Star className="w-4 h-4" />,
-        featured: true
-      },
-      {
         name: '2026 Services Showcase',
         href: '/ultimate-2026-services-showcase',
-        description: 'Advanced 2026 services',
-        icon: <Sparkles className="w-4 h-4" />
+        description: 'Latest 2026 innovations',
+        icon: <Sparkles className="w-4 h-4" />,
+        featured: true
       },
       {
         name: '2035 Futuristic Services',
         href: '/ultimate-2035-futuristic-services-showcase',
-        description: 'Future-ready services',
-        icon: <Zap className="w-4 h-4" />
+        description: 'Future technology preview',
+        icon: <Rocket className="w-4 h-4" />
       },
       {
-        name: 'Revolutionary Pricing',
-        href: '/revolutionary-2025-pricing',
-        description: 'Innovative pricing models',
+        name: 'Pricing Plans',
+        href: '/pricing',
+        description: 'Transparent pricing',
         icon: <DollarSign className="w-4 h-4" />
       }
     ]
@@ -157,10 +163,63 @@ const navigationItems: NavigationItem[] = [
         icon: <Atom className="w-4 h-4" />
       },
       {
+        name: 'Space Tech Micro SAAS',
+        href: '/space-tech-micro-saas',
+        description: 'Space technology solutions',
+        icon: <Rocket className="w-4 h-4" />
+      },
+      {
+        name: 'Cybersecurity Micro SAAS',
+        href: '/cybersecurity-micro-saas',
+        description: 'Security-focused solutions',
+        icon: <Shield className="w-4 h-4" />
+      },
+      {
         name: 'Business Tools',
         href: '/business-tools',
         description: 'Business productivity tools',
         icon: <Building className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Innovative Services',
+    href: '/innovative-services-showcase-2036',
+    icon: <Sparkles className="w-5 h-5" />,
+    description: 'Cutting-edge innovations',
+    badge: 'Hot',
+    category: 'innovative',
+    children: [
+      {
+        name: 'All Innovations',
+        href: '/innovative-services-showcase-2036',
+        description: 'Complete innovations overview',
+        icon: <Grid className="w-4 h-4" />,
+        featured: true
+      },
+      {
+        name: 'Sustainability & ESG',
+        href: '/sustainability-services',
+        description: 'Environmental solutions',
+        icon: <Leaf className="w-4 h-4" />
+      },
+      {
+        name: 'Healthcare & Biotech',
+        href: '/healthcare-innovations',
+        description: 'Medical technology',
+        icon: <Heart className="w-4 h-4" />
+      },
+      {
+        name: 'Education & EdTech',
+        href: '/education-innovations',
+        description: 'Learning technology',
+        icon: <BookOpen className="w-4 h-4" />
+      },
+      {
+        name: 'Creative & Marketing',
+        href: '/creative-innovations',
+        description: 'Creative technology',
+        icon: <Palette className="w-4 h-4" />
       }
     ]
   },
@@ -206,6 +265,47 @@ const navigationItems: NavigationItem[] = [
     ]
   },
   {
+    name: 'Cybersecurity',
+    href: '/cybersecurity',
+    icon: <Shield className="w-5 h-5" />,
+    description: 'Advanced security solutions',
+    badge: 'Secure',
+    category: 'cybersecurity',
+    children: [
+      {
+        name: 'All Security',
+        href: '/cybersecurity',
+        description: 'Complete security overview',
+        icon: <Grid className="w-4 h-4" />,
+        featured: true
+      },
+      {
+        name: 'Threat Detection',
+        href: '/threat-detection',
+        description: 'AI-powered threat hunting',
+        icon: <Eye className="w-4 h-4" />
+      },
+      {
+        name: 'Zero Trust',
+        href: '/zero-trust',
+        description: 'Zero trust architecture',
+        icon: <Lock className="w-4 h-4" />
+      },
+      {
+        name: 'Quantum Security',
+        href: '/quantum-security',
+        description: 'Post-quantum cryptography',
+        icon: <Atom className="w-4 h-4" />
+      },
+      {
+        name: 'Compliance',
+        href: '/compliance',
+        description: 'Security compliance tools',
+        icon: <FileText className="w-4 h-4" />
+      }
+    ]
+  },
+  {
     name: 'IT Services',
     href: '/it-services',
     icon: <ITServices className="w-5 h-5" />,
@@ -243,6 +343,47 @@ const navigationItems: NavigationItem[] = [
         href: '/data-management',
         description: 'Data storage and analytics',
         icon: <Database className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Space Technology',
+    href: '/space-technology',
+    icon: <Rocket className="w-5 h-5" />,
+    description: 'Space exploration solutions',
+    badge: 'Space',
+    category: 'space',
+    children: [
+      {
+        name: 'All Space Tech',
+        href: '/space-technology',
+        description: 'Complete space technology overview',
+        icon: <Grid className="w-4 h-4" />,
+        featured: true
+      },
+      {
+        name: 'Satellite Systems',
+        href: '/satellite-systems',
+        description: 'Satellite technology solutions',
+        icon: <Globe className="w-4 h-4" />
+      },
+      {
+        name: 'Space Mining',
+        href: '/space-mining',
+        description: 'Asteroid mining operations',
+        icon: <Mountain className="w-4 h-4" />
+      },
+      {
+        name: 'Space Tourism',
+        href: '/space-tourism',
+        description: 'Space travel experiences',
+        icon: <Plane className="w-4 h-4" />
+      },
+      {
+        name: 'Space Research',
+        href: '/space-research',
+        description: 'Research collaboration',
+        icon: <Search className="w-4 h-4" />
       }
     ]
   },
