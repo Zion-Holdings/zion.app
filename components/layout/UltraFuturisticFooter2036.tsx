@@ -30,16 +30,16 @@ const footerSections = [
     description: 'Our most popular and innovative solutions',
     icon: <Star className="w-5 h-5 text-yellow-400" />,
     links: [
+      { name: 'AI Holographic Meetings', href: '/innovative-2038-cutting-edge-showcase', featured: true },
+      { name: 'Quantum Drug Discovery', href: '/innovative-2038-cutting-edge-showcase', featured: true },
+      { name: 'Autonomous Legal AI', href: '/innovative-2038-cutting-edge-showcase', featured: true },
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', featured: true },
       { name: 'Quantum Neural Networks', href: '/quantum-neural-network-platform', featured: true },
       { name: 'Autonomous Business Operations', href: '/autonomous-business-operations-platform', featured: true },
       { name: 'Space Resource Mining', href: '/space-resource-mining-platform', featured: true },
       { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform', featured: true },
       { name: 'Quantum Financial Trading', href: '/quantum-financial-trading', featured: true },
-      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', featured: true },
-      { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform' },
-      { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform' },
-      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' }
+      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', featured: true }
     ]
   },
   {
@@ -91,6 +91,23 @@ const footerSections = [
       { name: 'AI-Powered IT Asset Management', href: '/ai-powered-it-asset-management' },
       { name: 'SOC 2 Compliance Automation', href: '/soc2-compliance-automation' },
       { name: 'RAG Evaluation Lab', href: '/rag-evaluation-lab' }
+    ]
+  },
+  {
+    title: '2038 Cutting-Edge Services',
+    description: 'Revolutionary next-generation technology solutions',
+    icon: <Star className="w-5 h-5 text-pink-400" />,
+    links: [
+      { name: 'AI Holographic Meeting Platform', href: '/innovative-2038-cutting-edge-showcase' },
+      { name: 'Quantum AI Drug Discovery', href: '/innovative-2038-cutting-edge-showcase' },
+      { name: 'Autonomous AI Legal Assistant', href: '/innovative-2038-cutting-edge-showcase' },
+      { name: 'Space Colonization Automation', href: '/innovative-2038-cutting-edge-showcase' },
+      { name: 'Quantum Financial AI Trading', href: '/innovative-2038-cutting-edge-showcase' },
+      { name: 'AI Consciousness Evolution Platform', href: '/innovative-2038-cutting-edge-showcase' },
+      { name: 'Quantum Neural Network Platform', href: '/innovative-2038-cutting-edge-showcase' },
+      { name: 'Autonomous AI Robotics Platform', href: '/innovative-2038-cutting-edge-showcase' },
+      { name: 'Quantum Internet Security Platform', href: '/innovative-2038-cutting-edge-showcase' },
+      { name: 'AI Sustainability Optimization', href: '/innovative-2038-cutting-edge-showcase' }
     ]
   },
   {

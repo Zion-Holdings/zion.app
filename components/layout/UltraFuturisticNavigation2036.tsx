@@ -66,6 +66,13 @@ const navigationItems: NavigationItem[] = [
         featured: true
       },
       { 
+        name: '2038 Cutting-Edge Services', 
+        href: '/innovative-2038-cutting-edge-showcase', 
+        description: 'Revolutionary 2038 cutting-edge services',
+        icon: <Star className="w-4 h-4" />,
+        featured: true
+      },
+      { 
         name: 'AI & Machine Learning', 
         href: '/ai-services', 
         description: 'Advanced AI solutions',

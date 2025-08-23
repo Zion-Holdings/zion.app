@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
   ArrowRight, Star, 
-  Brain, Atom, Shield, Zap, TrendingUp, Globe
+  Brain, Atom, Shield, Zap, TrendingUp, Globe, MapPin
 } from 'lucide-react';
 
 const Homepage2025: React.FC = () => {
@@ -204,6 +204,51 @@ const Homepage2025: React.FC = () => {
                 }}
                 variant="automation"
               />
+              <UltraFuturisticServiceCard2026
+                service={{
+                  id: 'ai-holographic-meetings',
+                  name: 'AI Holographic Meetings',
+                  tagline: 'Next-generation holographic collaboration',
+                  description: 'Revolutionary platform for lifelike holographic meetings with AI assistance',
+                  price: '$299',
+                  period: 'month',
+                  features: ['3D Holographic Projections', 'AI Translation', 'Gesture Control', 'Immersive Collaboration'],
+                  popular: true,
+                  category: 'AI & Holographic',
+                  icon: '🌟'
+                }}
+                variant="ai"
+              />
+              <UltraFuturisticServiceCard2026
+                service={{
+                  id: 'quantum-drug-discovery',
+                  name: 'Quantum Drug Discovery',
+                  tagline: 'Accelerate pharmaceutical research',
+                  description: 'Quantum-powered AI platform for accelerated drug discovery and molecular modeling',
+                  price: '$1999',
+                  period: 'month',
+                  features: ['Quantum Molecular Modeling', 'AI Drug Screening', 'Predictive Analytics', 'Clinical Optimization'],
+                  popular: false,
+                  category: 'Quantum Healthcare',
+                  icon: '💊'
+                }}
+                variant="quantum"
+              />
+              <UltraFuturisticServiceCard2026
+                service={{
+                  id: 'autonomous-legal-ai',
+                  name: 'Autonomous Legal AI',
+                  tagline: 'AI-powered legal assistance',
+                  description: 'Intelligent legal assistant for research, analysis, and case preparation',
+                  price: '$199',
+                  period: 'month',
+                  features: ['Autonomous Research', 'Document Analysis', 'Case Law Synthesis', 'Risk Assessment'],
+                  popular: true,
+                  category: 'AI Legal Tech',
+                  icon: '⚖️'
+                }}
+                variant="automation"
+              />
             </div>
             
             <div className="text-center mt-12">
@@ -296,6 +341,95 @@ const Homepage2025: React.FC = () => {
           </div>
         </section>
 
+        {/* 2038 Services Preview */}
+        <section className="py-20 px-4 bg-gradient-to-r from-purple-900/10 to-pink-900/10 relative">
+          <div className="absolute inset-0">
+            <div className="absolute top-20 left-20 w-32 h-32 border border-purple-400/20 rounded-lg animate-pulse"></div>
+            <div className="absolute top-40 right-32 w-24 h-24 border border-pink-400/20 rounded-full animate-pulse delay-1000"></div>
+          </div>
+          <div className="max-w-6xl mx-auto relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-pink-500 to-cyan-400 bg-clip-text text-transparent">
+                2038 Cutting-Edge Services
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Experience the future with our revolutionary 2038 services that push the boundaries of what's possible
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="group bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-400/30 rounded-2xl p-6 hover:border-purple-400/60 transition-all duration-300 hover:transform hover:scale-105"
+              >
+                <div className="text-4xl mb-4">🌟</div>
+                <h3 className="text-xl font-bold text-white mb-2">AI Holographic Meetings</h3>
+                <p className="text-gray-300 text-sm mb-4">Revolutionary holographic collaboration with AI assistance</p>
+                <div className="text-2xl font-bold text-purple-400 mb-2">$299/month</div>
+                <Link href="/innovative-2038-cutting-edge-showcase">
+                  <button className="w-full px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-pink-700 transition-all duration-300">
+                    Learn More
+                  </button>
+                </Link>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="group bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-400/30 rounded-2xl p-6 hover:border-blue-400/60 transition-all duration-300 hover:transform hover:scale-105"
+              >
+                <div className="text-4xl mb-4">💊</div>
+                <h3 className="text-xl font-bold text-white mb-2">Quantum Drug Discovery</h3>
+                <p className="text-gray-300 text-sm mb-4">Quantum-powered AI for accelerated pharmaceutical research</p>
+                <div className="text-2xl font-bold text-blue-400 mb-2">$1999/month</div>
+                <Link href="/innovative-2038-cutting-edge-showcase">
+                  <button className="w-full px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-cyan-700 transition-all duration-300">
+                    Learn More
+                  </button>
+                </Link>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="group bg-gradient-to-br from-green-500/10 to-emerald-500/10 border border-green-400/30 rounded-2xl p-6 hover:border-green-400/60 transition-all duration-300 hover:transform hover:scale-105"
+              >
+                <div className="text-4xl mb-4">⚖️</div>
+                <h3 className="text-xl font-bold text-white mb-2">Autonomous Legal AI</h3>
+                <p className="text-gray-300 text-sm mb-4">AI-powered legal research and document analysis</p>
+                <div className="text-2xl font-bold text-green-400 mb-2">$199/month</div>
+                <Link href="/innovative-2038-cutting-edge-showcase">
+                  <button className="w-full px-4 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all duration-300">
+                    Learn More
+                  </button>
+                </Link>
+              </motion.div>
+            </div>
+            
+            <div className="text-center">
+              <Link href="/innovative-2038-cutting-edge-showcase">
+                <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-purple-500/25 flex items-center gap-2 mx-auto">
+                  Explore All 2038 Services
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
         <section className="py-20 px-4 relative">
           <div className="absolute inset-0 bg-gradient-to-r from-green-500/5 to-teal-500/5"></div>
@@ -312,17 +446,17 @@ const Homepage2025: React.FC = () => {
               <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
                 Join the future of technology with Zion Tech Group. Let's build something extraordinary together.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/contact">
-                  <button className="px-8 py-4 bg-gradient-to-r from-green-500 to-teal-600 text-white font-semibold rounded-lg hover:from-green-600 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-green-500/25">
-                    Get Started Today
-                  </button>
-                </Link>
-                <Link href="/demo">
-                  <button className="px-8 py-4 border-2 border-green-400 text-green-400 font-semibold rounded-lg hover:bg-green-400 hover:text-black transition-all duration-300 transform hover:scale-105">
-                    Request Demo
-                  </button>
-                </Link>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <a href="tel:+1 302 464 0950" className="px-8 py-4 bg-gradient-to-r from-green-500 to-teal-600 text-white font-semibold rounded-lg hover:from-green-600 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-green-500/25">
+                  Call Now: +1 302 464 0950
+                </a>
+                <a href="mailto:kleber@ziontechgroup.com" className="px-8 py-4 border-2 border-green-400 text-green-400 font-semibold rounded-lg hover:bg-green-400 hover:text-black transition-all duration-300 transform hover:scale-105">
+                  Email Us
+                </a>
+              </div>
+              <div className="text-gray-400">
+                <MapPin className="w-5 h-5 inline mr-2" />
+                364 E Main St STE 1008 Middletown DE 19709
               </div>
             </motion.div>
           </div>
