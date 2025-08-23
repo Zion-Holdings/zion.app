@@ -26,7 +26,7 @@ export default function Layout({ children }: LayoutProps) {
         <TopContactBar />
         
         {/* Navigation */}
-        <UltraFuturisticNavigation2040 />
+        <UltraFuturisticNavigation2036 />
         
         {/* Sidebar and Main Content */}
         <div className="flex">

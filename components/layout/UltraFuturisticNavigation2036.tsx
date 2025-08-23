@@ -105,7 +105,15 @@ const navigationItems: NavigationItem[] = [
         name: 'Specialized Solutions', 
         href: '/solutions', 
         description: 'Industry-specific solutions',
-        icon: <Target className="w-4 h-4" />
+        icon: <Play className="w-4 h-4" />
+      },
+      { 
+        name: 'Innovative 2025 Services', 
+        href: '/innovative-2025-services-showcase', 
+        description: 'Cutting-edge 2025 innovations',
+        icon: <Star className="w-4 h-4" />,
+        featured: true,
+        badge: 'New'
       }
     ]
   },
