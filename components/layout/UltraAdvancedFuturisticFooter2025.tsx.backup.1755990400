@@ -14,6 +14,20 @@ interface FooterSection {
 }
 
 const footerSections: FooterSection[] = [
+<<<<<<< HEAD
+        {
+        title: 'Services',
+        links: [
+          { label: 'AI & Machine Learning', href: '/ai-services', description: 'Advanced AI solutions' },
+          { label: 'Cybersecurity', href: '/cybersecurity', description: 'Enterprise security' },
+          { label: 'Cloud Platform', href: '/cloud-platform', description: 'Scalable cloud infrastructure' },
+          { label: 'Quantum Computing', href: '/quantum-computing', description: 'Next-gen quantum tech' },
+          { label: 'Space Technology', href: '/space-tech', description: 'Innovative space solutions' },
+          { label: 'Innovative 2040 Services', href: '/innovative-2040-futuristic-services-showcase', description: 'Cutting-edge futuristic solutions' },
+          { label: 'View All Services', href: '/services', description: 'Complete service portfolio' }
+        ]
+      },
+=======
   {
     title: 'Core Services',
     links: [
@@ -25,6 +39,7 @@ const footerSections: FooterSection[] = [
       { label: 'View All Services', href: '/services', description: 'Complete service portfolio' }
     ]
   },
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-cb9f
   {
     title: 'Company',
     links: [

@@ -35,12 +35,7 @@ const navigationItems: NavigationItem[] = [
         description: 'Advanced AI solutions for enterprise'
       },
       {
-        label: 'Quantum Computing',
-        href: '/quantum-computing',
-        icon: <Atom className="w-4 h-4" />,
-        description: 'Next-generation quantum solutions'
-      },
-      {
+<<<<<<< HEAD
         label: 'Cybersecurity',
         href: '/cybersecurity',
         icon: <Lock className="w-4 h-4" />,
@@ -49,6 +44,43 @@ const navigationItems: NavigationItem[] = [
       {
         label: 'Cloud Platform',
         href: '/cloud-platform',
+        icon: <Globe className="w-4 h-4" />,
+        description: 'Scalable cloud infrastructure'
+      },
+      {
+=======
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-cb9f
+        label: 'Quantum Computing',
+        href: '/quantum-computing',
+        icon: <Atom className="w-4 h-4" />,
+        description: 'Next-generation quantum solutions'
+      },
+      {
+<<<<<<< HEAD
+        label: 'Space Technology',
+        href: '/space-tech',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Innovative space solutions'
+      },
+      {
+        label: 'Innovative 2040 Services',
+        href: '/innovative-2040-futuristic-services-showcase',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Cutting-edge futuristic technology solutions'
+      },
+      {
+        label: 'Space Technology',
+        href: '/space-tech',
+=======
+        label: 'Cybersecurity',
+        href: '/cybersecurity',
+        icon: <Lock className="w-4 h-4" />,
+        description: 'Enterprise security solutions'
+      },
+      {
+        label: 'Cloud Platform',
+        href: '/cloud-platform',
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-cb9f
         icon: <Globe className="w-4 h-4" />,
         description: 'Innovative space solutions'
       },
@@ -211,6 +243,33 @@ const navigationItems: NavigationItem[] = [
     ]
   },
   {
+<<<<<<< HEAD
+    label: 'Solutions',
+    children: [
+      {
+        label: 'Enterprise Solutions',
+        href: '/solutions',
+        icon: <Building className="w-4 h-4" />,
+        description: 'Large-scale enterprise solutions'
+      },
+      {
+        label: 'Startup Solutions',
+        href: '/startup-solutions',
+        icon: <Rocket className="w-4 h-4" />,
+        description: 'Solutions for growing startups'
+      },
+      {
+        label: 'Government Solutions',
+        href: '/government-solutions',
+        icon: <Shield className="w-4 h-4" />,
+        description: 'Secure government solutions'
+      },
+      {
+        label: 'Healthcare Solutions',
+        href: '/healthcare-solutions',
+        icon: <Heart className="w-4 h-4" />,
+        description: 'Healthcare technology solutions'
+=======
     label: 'Company',
     children: [
       {
@@ -265,6 +324,7 @@ const navigationItems: NavigationItem[] = [
         href: '/get-started',
         icon: <ArrowRight className="w-4 h-4" />,
         description: 'Quick start guide'
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-cb9f
       }
     ]
   },
