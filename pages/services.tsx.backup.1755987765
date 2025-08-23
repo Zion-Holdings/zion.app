@@ -111,6 +111,14 @@ const allServices = [
   ...industryRealServices,
   ...real2025Q4AugmentedBatch,
   ...real2029Q3Additions,
+<<<<<<< HEAD
+  ...enterpriseITSolutions2034Additions,
+  ...innovativeMicroSaasSolutions2034Additions,
+  ...cuttingEdgeAIServices2034Additions,
+  ...aiAutonomousEcosystemServices2029Additions,
+  ...emergingTechBreakthroughServices2029Additions,
+  ...practicalBusinessSolutionServices2029Additions
+=======
   ...validatedServices2025Q4,
   ...real2035Q2Additions,
   ...real2036ServiceExpansions,
@@ -124,6 +132,7 @@ const allServices = [
   ...innovativeITInfrastructureServices,
   ...innovativeMicroSaasServices,
   ...quantumSpaceTechServices
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-7152
 ];
 
 const categories = [
