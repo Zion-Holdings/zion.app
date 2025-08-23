@@ -3,7 +3,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, X, Search, ChevronDown, ChevronRight, 
   Home, Briefcase, Users, BookOpen, Phone, 
+<<<<<<< HEAD
+  Globe, Zap, Shield, Brain, Rocket, Bell, User
+=======
   Globe, Zap, Shield, Brain, Rocket, Target, Cpu, TrendingUp
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-05dc
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -69,6 +73,12 @@ const navigationItems: NavigationItem[] = [
         description: 'Enterprise-grade security solutions'
       },
       {
+<<<<<<< HEAD
+        label: 'Cloud Solutions',
+        href: '/cloud-platform',
+        icon: <Globe className="w-4 h-4" />,
+        description: 'Scalable cloud infrastructure'
+=======
         label: 'IT Solutions',
         href: '/it-services',
         icon: <Cpu className="w-4 h-4" />,
@@ -111,6 +121,7 @@ const navigationItems: NavigationItem[] = [
         href: '/government-technology-solutions',
         icon: <Globe className="w-4 h-4" />,
         description: 'Government and public sector technology'
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-05dc
       }
     ]
   },
@@ -205,6 +216,10 @@ const navigationItems: NavigationItem[] = [
   {
     label: 'Resources',
     href: '/resources',
+<<<<<<< HEAD
+    icon: <Globe className="w-4 h-4" />,
+    description: 'Whitepapers, case studies, and insights'
+=======
     icon: <BookOpen className="w-4 h-4" />,
     description: 'Whitepapers, case studies, and insights',
     children: [
@@ -233,6 +248,7 @@ const navigationItems: NavigationItem[] = [
         description: 'Professional development and training programs'
       }
     ]
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-05dc
   },
   {
     label: 'Contact',

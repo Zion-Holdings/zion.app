@@ -18,16 +18,33 @@ const Footer: React.FC = () => {
     { name: 'Space Technology', href: '/space-technology' },
     { name: 'IT Solutions', href: '/it-services' },
     { name: 'Cybersecurity', href: '/cybersecurity' },
+<<<<<<< HEAD
+    { name: 'Cloud Platform', href: '/cloud-platform' },
+=======
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-05dc
     { name: 'View All Services', href: '/services' }
   ];
 
   const solutions = [
+<<<<<<< HEAD
+    { name: 'Enterprise Solutions', href: '/solutions/enterprise' },
+    { name: 'Healthcare Solutions', href: '/solutions/healthcare' },
+    { name: 'Financial Solutions', href: '/solutions/financial' },
+    { name: 'Government Solutions', href: '/solutions/government' },
+    { name: 'Manufacturing Solutions', href: '/solutions/manufacturing' },
+    { name: 'Retail Solutions', href: '/solutions/retail' },
+    { name: 'Education Solutions', href: '/solutions/education' },
+    { name: 'Energy Solutions', href: '/solutions/energy' },
+    { name: 'Transportation Solutions', href: '/solutions/transportation' },
+    { name: 'Case Studies', href: '/case-studies' }
+=======
     { name: 'Enterprise Solutions', href: '/enterprise-solutions-showcase' },
     { name: 'Healthcare Solutions', href: '/healthcare-solutions' },
     { name: 'Financial Solutions', href: '/financial-solutions' },
     { name: 'Government Solutions', href: '/government-technology-solutions' },
     { name: 'Case Studies', href: '/case-studies' },
     { name: 'Pricing Plans', href: '/pricing' }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-05dc
   ];
 
   const company = [
@@ -50,8 +67,14 @@ const Footer: React.FC = () => {
     { name: 'Events', href: '/events' },
     { name: 'Training', href: '/training' },
     { name: 'Support Center', href: '/support' },
+<<<<<<< HEAD
+    { name: 'White Papers', href: '/white-papers' },
+    { name: 'Press', href: '/press' },
+    { name: 'Media Kit', href: '/media-kit' }
+=======
     { name: 'Training', href: '/training' },
     { name: 'White Papers', href: '/white-papers' }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-05dc
   ];
 
   const legal = [
