@@ -1,264 +1,379 @@
 import React from 'react';
-import SEO from '../components/SEO';
+import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
-  BookOpen, FileText, Code, Database, Network, Shield,
-  Brain, Atom, Rocket, Globe, ArrowRight, Search
+  BookOpen, Code, FileText, Search, 
+  ArrowRight, Star, Shield, CheckCircle, TrendingUp,
+  Infinity, Eye, Sparkles, Clock, Zap, Rocket, Brain, Atom
 } from 'lucide-react';
-import Link from 'next/link';
 
 const DocsPage: React.FC = () => {
-  const docCategories = [
+  const categories = [
     {
-      icon: <Brain className="w-8 h-8" />,
-      title: 'AI & Machine Learning',
-      description: 'Documentation for AI consciousness, neural networks, and machine learning services',
-      color: 'from-purple-500 to-pink-500',
-      docs: [
-        { title: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2043', type: 'Guide' },
-        { title: 'Neural Network Implementation', href: '/docs/neural-networks', type: 'API' },
-        { title: 'AI Ethics & Governance', href: '/docs/ai-ethics', type: 'Guide' }
+      title: "Getting Started",
+      description: "Quick start guides and basic setup instructions",
+      icon: Rocket,
+      color: "from-blue-500 to-cyan-500",
+      articles: [
+        { title: "Quick Start Guide", description: "Get up and running in 5 minutes", href: "/docs/quick-start" },
+        { title: "Installation", description: "Step-by-step installation guide", href: "/docs/installation" },
+        { title: "Configuration", description: "Configure your environment", href: "/docs/configuration" }
       ]
     },
     {
-      icon: <Atom className="w-8 h-8" />,
-      title: 'Quantum Computing',
-      description: 'Quantum computing services, algorithms, and implementation guides',
-      color: 'from-blue-500 to-cyan-500',
-      docs: [
-        { title: 'Quantum Neural Networks', href: '/quantum-ai-neural-2043', type: 'Guide' },
-        { title: 'Quantum API Reference', href: '/docs/quantum-api', type: 'API' },
-        { title: 'Quantum Security', href: '/docs/quantum-security', type: 'Guide' }
+      title: "AI & Machine Learning",
+      description: "AI consciousness and machine learning documentation",
+      icon: Brain,
+      color: "from-purple-500 to-pink-500",
+      articles: [
+        { title: "AI Consciousness API", description: "Integrate AI consciousness into your apps", href: "/docs/ai-consciousness-api" },
+        { title: "Neural Networks", description: "Build and train neural networks", href: "/docs/neural-networks" },
+        { title: "Emotional Intelligence", description: "Implement emotional AI systems", href: "/docs/emotional-intelligence" }
       ]
     },
     {
-      icon: <Shield className="w-8 h-8" />,
-      title: 'Cybersecurity',
-      description: 'Security services, best practices, and implementation guides',
-      color: 'from-red-500 to-orange-500',
-      docs: [
-        { title: 'Quantum Cybersecurity', href: '/quantum-cybersecurity-2043', type: 'Guide' },
-        { title: 'Security API Reference', href: '/docs/security-api', type: 'API' },
-        { title: 'Zero Trust Architecture', href: '/docs/zero-trust', type: 'Guide' }
+      title: "Quantum Computing",
+      description: "Quantum algorithms and quantum-resistant solutions",
+      icon: Atom,
+      color: "from-indigo-500 to-purple-500",
+      articles: [
+        { title: "Quantum Algorithms", description: "Implement quantum algorithms", href: "/docs/quantum-algorithms" },
+        { title: "Quantum Security", description: "Quantum-resistant cryptography", href: "/docs/quantum-security" },
+        { title: "Quantum API", description: "Quantum computing API reference", href: "/docs/quantum-api" }
       ]
     },
     {
-      icon: <Rocket className="w-8 h-8" />,
-      title: 'Space Technology',
-      description: 'Space resource management and autonomous space operations',
-      color: 'from-indigo-500 to-purple-500',
-      docs: [
-        { title: 'Space Resource Intelligence', href: '/space-resource-intelligence-2043', type: 'Guide' },
-        { title: 'Space API Reference', href: '/docs/space-api', type: 'API' },
-        { title: 'Autonomous Operations', href: '/docs/autonomous-ops', type: 'Guide' }
+      title: "Space Technology",
+      description: "Space resource intelligence and autonomous systems",
+      icon: Rocket,
+      color: "from-orange-500 to-red-500",
+      articles: [
+        { title: "Space Resource API", description: "Access space resource intelligence", href: "/docs/space-resource-api" },
+        { title: "Satellite Systems", description: "Build autonomous satellite systems", href: "/docs/satellite-systems" },
+        { title: "Mission Control", description: "Manage space missions", href: "/docs/mission-control" }
+      ]
+    },
+    {
+      title: "Cybersecurity",
+      description: "Advanced security and threat detection",
+      icon: Shield,
+      color: "from-green-500 to-emerald-500",
+      articles: [
+        { title: "Zero Trust Security", description: "Implement zero trust architecture", href: "/docs/zero-trust" },
+        { title: "Threat Detection", description: "AI-powered threat detection", href: "/docs/threat-detection" },
+        { title: "Security API", description: "Security and compliance APIs", href: "/docs/security-api" }
+      ]
+    },
+    {
+      title: "API Reference",
+      description: "Complete API documentation and examples",
+      icon: Code,
+      color: "from-yellow-500 to-orange-500",
+      articles: [
+        { title: "REST API", description: "Complete REST API reference", href: "/docs/rest-api" },
+        { title: "GraphQL API", description: "GraphQL API documentation", href: "/docs/graphql-api" },
+        { title: "SDKs & Libraries", description: "Client libraries and SDKs", href: "/docs/sdks" }
       ]
     }
   ];
 
-  const quickStartGuides = [
+  const popularArticles = [
     {
-      title: 'Getting Started with AI Services',
-      description: 'Quick start guide for implementing AI consciousness and neural networks',
-      href: '/docs/ai-quickstart',
-      difficulty: 'Beginner'
+      title: "Getting Started with AI Consciousness",
+      description: "Learn how to integrate AI consciousness into your applications",
+      category: "AI & Machine Learning",
+      readTime: "10 min read",
+      href: "/docs/ai-consciousness-getting-started"
     },
     {
-      title: 'Quantum Computing Basics',
-      description: 'Introduction to quantum computing concepts and our services',
-      href: '/docs/quantum-basics',
-      difficulty: 'Beginner'
+      title: "Quantum Security Implementation",
+      description: "Implement quantum-resistant security in your systems",
+      category: "Cybersecurity",
+      readTime: "15 min read",
+      href: "/docs/quantum-security-implementation"
     },
     {
-      title: 'Security Implementation',
-      description: 'Step-by-step guide to implementing our cybersecurity solutions',
-      href: '/docs/security-implementation',
-      difficulty: 'Intermediate'
+      title: "Space Resource Intelligence API",
+      description: "Access and analyze space resource data",
+      category: "Space Technology",
+      readTime: "12 min read",
+      href: "/docs/space-resource-api-guide"
     }
+  ];
+
+  const searchSuggestions = [
+    "AI consciousness", "Quantum algorithms", "Space technology", "Cybersecurity", "API integration"
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      <SEO 
-        title="Documentation - Zion Tech Group Technical Resources"
-        description="Comprehensive technical documentation for AI services, quantum computing, cybersecurity, and space technology solutions."
-        keywords={["documentation", "API reference", "technical guides", "implementation", "AI services", "quantum computing"]}
-      />
+    <Layout>
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
+        {/* Hero Section */}
+        <section className="relative pt-32 pb-20 px-4">
+          <div className="max-w-7xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="mb-8"
+            >
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30 text-blue-300 text-sm font-medium mb-6">
+                <Sparkles className="w-4 h-4 mr-2" />
+                Technical Documentation
+              </div>
+              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent mb-6">
+                Documentation
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                Comprehensive guides, API references, and tutorials to help you build 
+                with our revolutionary AI consciousness, quantum computing, and space technology platforms.
+              </p>
+            </motion.div>
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-cyan-500/10 to-purple-500/10"></div>
-        <div className="max-w-6xl mx-auto relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
-              Documentation
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-              Comprehensive technical documentation, API references, and implementation guides 
-              for all Zion Tech Group services and solutions.
-            </p>
-            
             {/* Search Bar */}
-            <div className="max-w-2xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="max-w-2xl mx-auto"
+            >
               <div className="relative">
-                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <input
                   type="text"
                   placeholder="Search documentation..."
-                  className="w-full pl-12 pr-4 py-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-200"
+                  className="w-full pl-12 pr-4 py-4 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 focus:outline-none transition-all duration-300"
                 />
               </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+              <div className="flex flex-wrap justify-center gap-2 mt-4">
+                {searchSuggestions.map((suggestion, index) => (
+                  <motion.button
+                    key={suggestion}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.3, delay: 0.3 + index * 0.1 }}
+                    className="px-3 py-1 bg-gray-700/50 hover:bg-gray-600/50 text-gray-300 text-sm rounded-full border border-gray-600/50 hover:border-blue-400/50 transition-all duration-300"
+                  >
+                    {suggestion}
+                  </motion.button>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
 
-      {/* Quick Start Guides */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-              Quick Start Guides
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Get up and running quickly with our step-by-step guides
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-6">
-            {quickStartGuides.map((guide, index) => (
-              <motion.div
-                key={guide.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="group"
-              >
-                <Link href={guide.href}>
-                  <div className="p-8 rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm hover:border-cyan-500/30 transition-all duration-300 hover:scale-105">
-                    <div className="flex items-start justify-between">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-4">
-                          <span className="px-3 py-1 text-sm font-medium bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-full">
-                            {guide.difficulty}
-                          </span>
-                        </div>
-                        <h3 className="text-2xl font-bold mb-3 text-white group-hover:text-cyan-400 transition-colors">
-                          {guide.title}
-                        </h3>
-                        <p className="text-gray-300 text-lg mb-6">{guide.description}</p>
-                        <div className="flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors">
-                          <span className="font-medium">Get Started</span>
-                          <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                        </div>
-                      </div>
-                    </div>
+        {/* Popular Articles */}
+        <section className="py-20 px-4">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-6">Popular Articles</h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Start with these essential guides to get up and running quickly
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {popularArticles.map((article, index) => (
+                <motion.div
+                  key={article.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl p-6 border border-gray-700/50 hover:border-blue-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20"
+                >
+                  <div className="mb-4">
+                    <span className="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm border border-blue-500/30">
+                      {article.category}
+                    </span>
                   </div>
-                </Link>
-              </motion.div>
-            ))}
+                  <h3 className="text-xl font-bold text-white mb-3">{article.title}</h3>
+                  <p className="text-gray-300 mb-4">{article.description}</p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-400">{article.readTime}</span>
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="text-blue-400 hover:text-blue-300 font-medium flex items-center group"
+                    >
+                      Read More
+                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                    </motion.button>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Documentation Categories */}
-      <section className="py-20 px-4 bg-gradient-to-br from-blue-500/5 to-cyan-500/5">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-              Documentation Categories
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Explore comprehensive documentation organized by service category
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-            {docCategories.map((category, index) => (
-              <motion.div
-                key={category.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="p-8 rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm hover:border-cyan-500/30 transition-all duration-300"
-              >
-                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${category.color} p-4 mb-6 flex items-center justify-center`}>
-                  {category.icon}
-                </div>
-                <h3 className="text-2xl font-bold mb-4 text-white">{category.title}</h3>
-                <p className="text-gray-300 text-lg mb-6">{category.description}</p>
-                
-                <div className="space-y-3">
-                  {category.docs.map((doc, docIndex) => (
-                    <Link key={docIndex} href={doc.href}>
-                      <div className="flex items-center justify-between p-3 rounded-lg hover:bg-white/5 transition-all duration-200">
-                        <div className="flex items-center space-x-3">
-                          <span className="text-sm text-gray-400">{doc.type}</span>
-                          <span className="text-white hover:text-cyan-400 transition-colors">{doc.title}</span>
+        {/* Documentation Categories */}
+        <section className="py-20 px-4 bg-gradient-to-b from-gray-900/50 to-black/50">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-6">Documentation Categories</h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Explore our comprehensive documentation organized by technology area
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {categories.map((category, index) => (
+                <motion.div
+                  key={category.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl p-8 border border-gray-700/50 hover:border-blue-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20"
+                >
+                  <div className={`w-16 h-16 bg-gradient-to-r ${category.color} rounded-lg flex items-center justify-center mb-6`}>
+                    <category.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-4">{category.title}</h3>
+                  <p className="text-gray-300 mb-6">{category.description}</p>
+                  
+                  <div className="space-y-3 mb-6">
+                    {category.articles.map((article, articleIndex) => (
+                      <div key={articleIndex} className="flex items-center justify-between p-3 bg-gray-700/30 rounded-lg hover:bg-gray-700/50 transition-colors duration-300">
+                        <div>
+                          <h4 className="text-white font-medium">{article.title}</h4>
+                          <p className="text-gray-400 text-sm">{article.description}</p>
                         </div>
-                        <ArrowRight className="w-4 h-4 text-gray-500" />
+                        <ArrowRight className="w-4 h-4 text-gray-400" />
                       </div>
-                    </Link>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
+                    ))}
+                  </div>
+                  
+                  <motion.button
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center group"
+                  >
+                    View All {category.title}
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                  </motion.button>
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-              Need Help with Implementation?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Our technical team is here to help you succeed
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+        {/* Additional Resources */}
+        <section className="py-20 px-4">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-6">Additional Resources</h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Beyond documentation, discover tools and resources to accelerate your development
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                {
+                  icon: Code,
+                  title: "Code Examples",
+                  description: "Ready-to-use code snippets and examples",
+                  href: "/docs/code-examples",
+                  color: "from-purple-500 to-pink-500"
+                },
+                {
+                  icon: FileText,
+                  title: "Tutorials",
+                  description: "Step-by-step tutorials and guides",
+                  href: "/docs/tutorials",
+                  color: "from-blue-500 to-cyan-500"
+                },
+                {
+                  icon: BookOpen,
+                  title: "Best Practices",
+                  description: "Industry best practices and guidelines",
+                  href: "/docs/best-practices",
+                  color: "from-green-500 to-emerald-500"
+                },
+                {
+                  icon: Search,
+                  title: "API Explorer",
+                  description: "Interactive API testing and exploration",
+                  href: "/docs/api-explorer",
+                  color: "from-orange-500 to-red-500"
+                }
+              ].map((resource, index) => (
+                <motion.div
+                  key={resource.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="text-center p-6"
+                >
+                  <div className={`w-16 h-16 bg-gradient-to-r ${resource.color} rounded-lg flex items-center justify-center mx-auto mb-4`}>
+                    <resource.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-3">{resource.title}</h3>
+                  <p className="text-gray-300 mb-4">{resource.description}</p>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="text-blue-400 hover:text-blue-300 font-medium flex items-center justify-center group mx-auto"
+                  >
+                    Explore
+                    <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                  </motion.button>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Need Help Getting Started?
+              </h2>
+              <p className="text-xl text-gray-300 mb-8">
+                Our team is here to help you succeed with our technology platforms
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 shadow-lg shadow-cyan-500/25"
+                  className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 flex items-center justify-center group"
                 >
                   Contact Support
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                 </motion.button>
-              </Link>
-              <Link href="/resources">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 border border-cyan-500/50 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-500/10 transition-all duration-300"
+                  className="border border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300"
                 >
-                  View Resources
+                  Join Community
                 </motion.button>
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-    </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      </div>
+    </Layout>
   );
 };
 
