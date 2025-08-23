@@ -213,10 +213,8 @@ export default function Layout({
       </div>
 
       {/* Accessibility and Performance Tools */}
-      <AccessibilityEnhancer />
-      <PerformanceOptimizer>
-        {children}
-      </PerformanceOptimizer>
+      <AccessibilityEnhancer enabled={true} showControls={process.env.NODE_ENV === 'development'} />
+      <PerformanceMonitor enabled={true} showMetrics={process.env.NODE_ENV === 'development'} />
       
       {/* Cookie Consent Banner */}
       <CookieConsentBanner />

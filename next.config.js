@@ -1,18 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enable React strict mode for better development experience
-  reactStrictMode: true,
-  
-  // Enable SWC minification for faster builds
-  swcMinify: true,
-  
-  // Enable experimental features for better performance
+  // Enhanced performance and SEO settings
   experimental: {
-    // Enable modern React features
-    optimizeCss: true,
     optimizePackageImports: ['lucide-react', 'framer-motion'],
-    
-    // Enable modern image optimization
+    optimizeCss: true,
     turbo: {
       rules: {
         '*.svg': {
@@ -21,15 +12,6 @@ const nextConfig = {
         },
       },
     },
-
-    // Enable modern bundling
-    esmExternals: true,
-    
-    // Enable modern CSS features
-    cssChunking: true,
-    
-    // Enable modern JavaScript features
-    modernCss: true,
   },
 
   // Image optimization configuration
@@ -42,26 +24,23 @@ const nextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
 
-  // Webpack configuration for better performance
+  // Enhanced webpack configuration
   webpack: (config, { dev, isServer }) => {
-    // Optimize bundle splitting
-    if (!isServer) {
-      config.optimization.splitChunks = {
-        chunks: 'all',
-        cacheGroups: {
-          vendor: {
-            test: /[\\/]node_modules[\\/]/,
-            name: 'vendors',
-            chunks: 'all',
-            priority: 10,
-          },
-          common: {
-            name: 'common',
-            minChunks: 2,
-            chunks: 'all',
-            priority: 5,
-            reuseExistingChunk: true,
-          },
+    // Optimize bundle size
+    if (!dev && !isServer) {
+      config.optimization.splitChunks.cacheGroups = {
+        ...config.optimization.splitChunks.cacheGroups,
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+          priority: 10,
+        },
+        common: {
+          name: 'common',
+          minChunks: 2,
+          chunks: 'all',
+          priority: 5,
         },
       };
     }
@@ -72,16 +51,10 @@ const nextConfig = {
       use: ['@svgr/webpack'],
     });
 
-    // Handle SVG files
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ['@svgr/webpack'],
-    });
-
     return config;
   },
 
-  // Headers for better security and performance
+  // Enhanced headers for security and performance
   async headers() {
     return [
       {
@@ -110,7 +83,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=3600, stale-while-revalidate=86400',
+            value: 'public, max-age=3600, s-maxage=3600',
           },
         ],
       },
@@ -126,7 +99,7 @@ const nextConfig = {
     ];
   },
 
-  // Redirects for better SEO
+  // Enhanced redirects for better SEO
   async redirects() {
     return [
       {
@@ -135,14 +108,14 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/services/index',
-        destination: '/services',
+        source: '/index',
+        destination: '/',
         permanent: true,
       },
     ];
   },
 
-  // Rewrites for better routing
+  // Enhanced rewrites for better routing
   async rewrites() {
     return [
       {
@@ -156,38 +129,19 @@ const nextConfig = {
     ];
   },
 
-  // Environment variables
-  env: {
-    CUSTOM_KEY: process.env.CUSTOM_KEY,
+  // Compiler optimization
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+    styledComponents: true,
   },
 
-  // Enable compression
-  compress: true,
-
-  // Enable powered by header removal
+  // Enhanced output configuration
+  output: 'standalone',
   poweredByHeader: false,
-
-  // Enable trailing slash for better SEO
-  trailingSlash: false,
-
-  // Enable page extensions
-  pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
-
-  // Enable source maps in development
-  productionBrowserSourceMaps: false,
-
-  // Bundle analyzer configuration
-  ...(process.env.ANALYZE === 'true' && {
-    webpack: (config) => {
-      config.plugins.push(
-        new (require('webpack-bundle-analyzer').BundleAnalyzerPlugin)({
-          analyzerMode: 'static',
-          openAnalyzer: false,
-        })
-      );
-      return config;
-    },
-  }),
+  generateEtags: false,
+  compress: true,
+  reactStrictMode: true,
+  swcMinify: true,
 };
 
 module.exports = nextConfig;
