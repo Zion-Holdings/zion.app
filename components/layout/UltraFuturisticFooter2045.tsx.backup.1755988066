@@ -165,11 +165,16 @@ const UltraFuturisticFooter2045: React.FC = () => {
                         href={link.href}
                         className="flex items-center space-x-2 text-gray-400 hover:text-cyan-400 transition-colors group"
                       >
+<<<<<<< HEAD
+                        <span className="group-hover:scale-110 transition-transform duration-200">
+                          {link.icon}
+=======
                         <div className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-200">
                           {React.createElement(link.icon, { size: 20 })}
                         </div>
                         <span className="text-sm group-hover:text-cyan-400 transition-colors duration-200">
                           {link.name}
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-9ac4
                         </span>
                         <span className="hover:underline">{link.name}</span>
                       </Link>

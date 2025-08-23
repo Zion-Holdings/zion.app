@@ -1,5 +1,67 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+<<<<<<< HEAD
+import { 
+  Activity, Zap, Clock, TrendingUp, AlertTriangle, 
+  CheckCircle, XCircle, Info, BarChart3, Gauge
+} from 'lucide-react';
+
+interface PerformanceMetrics {
+  lcp: number;
+  fid: number;
+  cls: number;
+  ttfb: number;
+  fcp: number;
+  fmp: number;
+  tti: number;
+}
+
+interface PerformanceMonitorProps {
+  isVisible?: boolean;
+  onToggle?: (visible: boolean) => void;
+}
+
+const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({ 
+  isVisible = false, 
+  onToggle 
+}) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [metrics, setMetrics] = useState<PerformanceMetrics | null>(null);
+  const [resourceMetrics, setResourceMetrics] = useState<ResourceMetrics | null>(null);
+  const [isMonitoring, setIsMonitoring] = useState(false);
+  const [optimizationSuggestions, setOptimizationSuggestions] = useState<string[]>([]);
+  const [lastUpdate, setLastUpdate] = useState<Date>(new Date());
+  const [autoRefresh, setAutoRefresh] = useState(false);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  const calculateScore = useCallback((metrics: PerformanceMetrics) => {
+    let score = 100;
+    
+    // LCP scoring (0-2500ms, lower is better)
+    if (metrics.lcp > threshold.lcp) {
+      score -= Math.min(30, (metrics.lcp - threshold.lcp) / 100);
+    }
+    
+    // FID scoring (0-100ms, lower is better)
+    if (metrics.fid > threshold.fid) {
+      score -= Math.min(25, (metrics.fid - threshold.fid) / 10);
+    }
+    
+    // CLS scoring (0-0.1, lower is better)
+    if (metrics.cls > threshold.cls) {
+      score -= Math.min(25, (metrics.cls / threshold.cls) * 25);
+    }
+    
+    // TTFB scoring (0-800ms, lower is better)
+    if (metrics.ttfb > threshold.ttfb) {
+      score -= Math.min(20, (metrics.ttfb - threshold.ttfb) / 100);
+    }
+    
+    return Math.max(0, Math.round(score));
+  }, [threshold]);
+
+  const getScoreColor = (score: number) => {
+=======
 import { Activity, Zap, Clock, HardDrive, TrendingUp, AlertTriangle } from 'lucide-react';
 
 interface PerformanceMetrics {
@@ -44,15 +106,23 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({ metrics }) => {
   }, [metrics]);
 
   const getPerformanceColor = (score: number) => {
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-9ac4
     if (score >= 90) return 'text-green-400';
     if (score >= 70) return 'text-yellow-400';
     return 'text-red-400';
   };
 
+<<<<<<< HEAD
+  const getScoreIcon = (score: number) => {
+    if (score >= 90) return <CheckCircle className="w-5 h-5 text-green-400" />;
+    if (score >= 70) return <AlertTriangle className="w-5 h-5 text-yellow-400" />;
+    return <XCircle className="w-5 h-5 text-red-400" />;
+=======
   const getPerformanceIcon = (score: number) => {
     if (score >= 90) return <TrendingUp className="w-4 h-4" />;
     if (score >= 70) return <Zap className="w-4 h-4" />;
     return <AlertTriangle className="w-4 h-4" />;
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-9ac4
   };
 
   const getMetricStatus = (metric: keyof PerformanceMetrics, value: number) => {
@@ -200,6 +270,114 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({ metrics }) => {
   if (!showUI) return null;
 
   return (
+<<<<<<< HEAD
+    <AnimatePresence>
+      {isVisible && (
+        <motion.div
+          initial={{ opacity: 0, y: 20, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: 20, scale: 0.95 }}
+          transition={{ duration: 0.3 }}
+          className="fixed bottom-4 right-4 z-50 max-w-sm w-full"
+        >
+          <div className="bg-black/95 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl overflow-hidden">
+            {/* Header */}
+            <div className="flex items-center justify-between p-4 border-b border-white/10">
+              <div className="flex items-center space-x-2">
+                <Activity className="w-5 h-5 text-cyan-400" />
+                <span className="font-semibold text-white">Performance Monitor</span>
+              </div>
+              <button
+                onClick={() => setIsVisible(false)}
+                className="p-1 text-gray-400 hover:text-white transition-colors"
+              >
+                <XCircle className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* Overall Score */}
+            <div className="p-4 bg-gradient-to-r from-gray-900/50 to-gray-800/50">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-sm text-gray-400">Overall Score</span>
+                {getScoreIcon(overallScore)}
+              </div>
+              <div className="flex items-center space-x-3">
+                <div className={`text-3xl font-bold ${getScoreColor(overallScore)}`}>
+                  {overallScore}
+                </div>
+                <div className="flex-1">
+                  <div className="w-full bg-gray-700 rounded-full h-2">
+                    <div
+                      className={`h-2 rounded-full transition-all duration-500 ${
+                        overallScore >= 90 ? 'bg-green-500' : overallScore >= 70 ? 'bg-yellow-500' : 'bg-red-500'
+                      }`}
+                      style={{ width: `${overallScore}%` }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Metrics Grid */}
+            <div className="p-4 space-y-3">
+              {Object.entries(metrics).map(([key, value]) => {
+                if (key === 'fmp' || key === 'tti') return null; // Skip less important metrics
+                
+                const status = getMetricStatus(key as keyof PerformanceMetrics, value);
+                const color = getMetricColor(status);
+                const icon = getMetricIcon(status);
+                
+                return (
+                  <div key={key} className="flex items-center justify-between">
+                    <div className="flex items-center space-x-2">
+                      {icon}
+                      <span className="text-sm text-gray-300 uppercase">{key}</span>
+                    </div>
+                    <div className={`text-sm font-mono ${color}`}>
+                      {key === 'cls' ? value.toFixed(3) : `${Math.round(value)}ms`}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Alerts */}
+            {alerts.length > 0 && (
+              <div className="p-4 border-t border-white/10 bg-red-500/10">
+                <div className="flex items-center space-x-2 mb-2">
+                  <AlertTriangle className="w-4 h-4 text-red-400" />
+                  <span className="text-sm font-medium text-red-400">Performance Issues</span>
+                </div>
+                <div className="space-y-1">
+                  {alerts.slice(0, 3).map((alert, index) => (
+                    <div key={index} className="text-xs text-red-300">
+                      • {alert}
+                    </div>
+                  ))}
+                  {alerts.length > 3 && (
+                    <div className="text-xs text-red-400">
+                      +{alerts.length - 3} more issues
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* Footer */}
+            <div className="p-3 bg-gray-900/50 border-t border-white/10">
+              <div className="flex items-center justify-between text-xs text-gray-500">
+                <span>Real-time monitoring</span>
+                <div className="flex items-center space-x-1">
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  <span>Live</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+=======
     <motion.div
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
@@ -321,6 +499,7 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({ metrics }) => {
         </div>
       </div>
     </motion.div>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-9ac4
   );
 };
 
