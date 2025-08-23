@@ -1,12 +1,12 @@
-import type { AppProps } from 'next/app';
+import React from 'react';
+import SiteLayout from '../components/layout/Layout';
 import '../styles/globals.css';
 import Navigation from '../components/layout/Navigation';
 
-export default function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <>
-      <Navigation />
-      <Component {...pageProps} />
-    </>
-  );
+export default function App({ Component, pageProps }: any) {
+	return (
+		<SiteLayout>
+			<Component {...pageProps} />
+		</SiteLayout>
+	);
 }

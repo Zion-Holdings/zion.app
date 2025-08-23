@@ -8,6 +8,9 @@ import {
   Gamepad2, Bot, Factory, Car
 } from 'lucide-react';
 
+<<<<<<< HEAD
+const EnhancedNavigation: React.FC = () => {
+=======
 interface NavigationItem {
   name: string;
   href: string;
@@ -106,6 +109,7 @@ const contactInfo = {
 };
 
 export default function EnhancedNavigation() {
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1c54
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);

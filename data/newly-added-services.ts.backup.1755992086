@@ -199,11 +199,19 @@ export const newlyAddedServices: EnhancedRealMicroSaasService[] = [
     setupTime: '1 day',
     category: 'AI & Data',
     realService: true,
+<<<<<<< HEAD
+    technology: ['Next.js, LangChain, Pinecone, OpenAI, Weaviate, PGVector'],
+    integrations: ['Slack, Notion, Google Drive, S3'],
+    useCases: ['Internal KB, Agent assist, Search augmentation'],
+    roi: 'Ship a quality RAG MVP in days, not months',
+    competitors: ['LlamaIndex Cloud, Cognosis, Voyage AI templates'],
+=======
     technology: ['Next.js', 'LangChain', 'Pinecone', 'OpenAI', 'Weaviate', 'PGVector'],
     integrations: ['Slack', 'Notion', 'Google Drive', 'S3'],
     useCases: ['Internal KB', 'Agent assist', 'Search augmentation'],
     roi: 'Ship a quality RAG MVP in days, not months',
     competitors: ['LlamaIndex Cloud', 'Cognosis', 'Voyage AI templates'],
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1c54
     marketSize: '$40B GenAI apps',
     growthRate: '45% CAGR',
     variant: 'quantum-matrix',
@@ -241,11 +249,19 @@ export const newlyAddedServices: EnhancedRealMicroSaasService[] = [
     setupTime: '2 hours',
     category: 'Developer Tools',
     realService: true,
+<<<<<<< HEAD
+    technology: ['Playwright, Chromium, Workers'],
+    integrations: ['Webhook, S3, Slack'],
+    useCases: ['Backoffice automation, Scraping with ethics, QA journeys'],
+    roi: 'Automate repetitive browser work, reduce toil 60–90%',
+    competitors: ['Browserless, Superblocks, UI.Vision'],
+=======
     technology: ['Playwright', 'Chromium', 'Workers'],
     integrations: ['Webhook', 'S3', 'Slack'],
     useCases: ['Backoffice automation', 'Scraping with ethics', 'QA journeys'],
     roi: 'Automate repetitive browser work, reduce toil 60–90%',
     competitors: ['Browserless', 'Superblocks', 'UI.Vision'],
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1c54
     marketSize: '$12B RPA',
     growthRate: '25% CAGR',
     variant: 'network-futuristic',
@@ -283,11 +299,19 @@ export const newlyAddedServices: EnhancedRealMicroSaasService[] = [
     setupTime: '1 hour',
     category: 'Cloud & FinOps',
     realService: true,
+<<<<<<< HEAD
+    technology: ['BigQuery, Athena, Cost Explorer, dbt'],
+    integrations: ['Slack, GitHub, PagerDuty'],
+    useCases: ['Cost visibility, Budget protection, Forecasting'],
+    roi: 'Prevent surprise bills, 10–30% cost reduction potential',
+    competitors: ['Vantage, CloudZero, Anodot'],
+=======
     technology: ['BigQuery', 'Athena', 'Cost Explorer', 'dbt'],
     integrations: ['Slack', 'GitHub', 'PagerDuty'],
     useCases: ['Cost visibility', 'Budget protection', 'Forecasting'],
     roi: 'Prevent surprise bills, 10–30% cost reduction potential',
     competitors: ['Vantage', 'CloudZero', 'Anodot'],
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1c54
     marketSize: '$6B FinOps tooling',
     growthRate: '27% CAGR',
     variant: 'holographic-advanced',
