@@ -3,6 +3,9 @@ import Head from 'next/head';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import fs from 'fs';
 import path from 'path';
+<<<<<<< HEAD
+import Head from 'next/head';
+=======
 import { useRouter } from 'next/router';
 import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
 import Button from '../components/ui/Button';
@@ -34,6 +37,7 @@ import { real2025Q3Additions } from '../data/real-2025-q3-additions';
 import { realQ4Services2025 } from '../data/real-2025-q4-additions';
 import { real2026Q1Additions } from '../data/real-2026-q1-additions';
 import { ultimateFuturisticServices2025 } from '../data/2025-ultimate-futuristic-services';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2867
 
 export default function ServiceFallbackPage() {
   const router = useRouter();
@@ -66,9 +70,13 @@ export default function ServiceFallbackPage() {
         realEnterpriseServices2025 as any,
         augmentedServicesBatch3 as any,
         real2025Q3Additions as any,
+<<<<<<< HEAD
+        realServicesQ42025 as any
+=======
         realQ4Services2025 as any,
         real2026Q1Additions as any,
         ultimateFuturisticServices2025 as any
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2867
       );
     const byLink = all.find(s => {
       try {
@@ -190,6 +198,11 @@ function collectAllServices(): Svc[] {
       emergingTechnologyServices as unknown as Svc[],
       comprehensiveITSolutions as Svc[],
       marketValidatedServices as Svc[],
+<<<<<<< HEAD
+      newRealInnovations as Svc[],
+      realMarketServices as Svc[],
+      augmentedServicesBatch3 as Svc[]
+=======
       curatedMarketServices as Svc[],
       cuttingEdgeITServices as Svc[],
       nextGenerationAIServices as Svc[],
@@ -202,6 +215,7 @@ function collectAllServices(): Svc[] {
       realQ4Services2025 as Svc[],
       real2026Q1Additions as Svc[],
       ultimateFuturisticServices2025 as unknown as Svc[]
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2867
     );
 }
 

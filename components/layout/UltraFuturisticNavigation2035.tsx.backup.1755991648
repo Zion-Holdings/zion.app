@@ -157,6 +157,31 @@ const navigationItems: NavigationItem[] = [
     ]
   },
   {
+<<<<<<< HEAD
+    name: 'IT & Infrastructure',
+    href: '/it-services',
+    icon: <Cpu className="w-5 h-5" />,
+    description: 'Next-generation IT solutions and infrastructure',
+    badge: 'Quantum',
+    category: 'it-infrastructure',
+    children: [
+      { name: 'AI & Data', href: '/services#ai', description: 'AI, data, ML services' },
+      { name: 'Cloud & FinOps', href: '/services#cloud', description: 'Cloud, cost, platform' },
+      { name: 'Observability', href: '/services#observability', description: 'Monitoring & telemetry' },
+      { name: 'Developer Tools', href: '/services#developer-tools', description: 'Developer productivity' },
+      { name: 'Training & Education', href: '/training', description: 'Learning and R&D' },
+      { name: 'SEO Automation Suite', href: '/seo-automation-suite', description: 'Technical SEO automation' },
+      { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent', description: 'Agentless discovery' },
+      { name: 'Managed Postgres HA', href: '/managed-postgres-ha', description: 'HA Postgres ops' },
+      { name: 'Micro SAAS', href: '/micro-saas', description: 'Business tools and automation' },
+      { name: 'New 2034 Services', href: '/services?sort=newest', description: 'Latest additions' },
+      // Newly added real services
+      { name: 'RAG Evaluation Lab', href: '/services/rag-evaluation-lab', description: 'Benchmark and regression test RAG' },
+      { name: 'Browser Automation Cloud', href: '/services/browser-automation-cloud', description: 'Headless browser automation' },
+      { name: 'Secrets Rotation Automation', href: '/services/secrets-rotation-automation', description: 'Rotate keys and passwords' },
+      { name: 'API Performance Testing', href: '/services/api-performance-testing', description: 'Latency SLO and load tests' }
+    ]
+=======
     name: 'Services',
     href: '/services',
     icon: <Grid className="w-5 h-5" />,
@@ -173,6 +198,7 @@ const navigationItems: NavigationItem[] = [
 	      { name: 'IT Asset Discovery Agent', href: '/services/it-asset-discovery-agent', description: 'Agentless discovery' },
 	      { name: 'Managed Postgres HA', href: '/services/managed-postgres-ha', description: 'HA Postgres ops' }
 	    ]
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2867
   },
   {
     name: 'All Services',
