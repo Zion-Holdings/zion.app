@@ -51,6 +51,19 @@ const nextConfig = {
     return config;
   },
 
+  // Disable static generation for problematic pages
+  async exportPathMap() {
+    return {
+      '/': { page: '/' },
+      '/services': { page: '/services' },
+      '/about': { page: '/about' },
+      '/contact': { page: '/contact' },
+      '/privacy': { page: '/privacy' },
+      '/terms': { page: '/terms' },
+      // Add other essential pages here
+    };
+  },
+
   // Headers for security and performance
   async headers() {
     return [

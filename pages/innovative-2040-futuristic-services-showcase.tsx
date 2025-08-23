@@ -24,9 +24,9 @@ interface Service {
   period?: string;
   description: string;
   features: string[];
-  popular: boolean;
-  icon: string;
-  color: string;
+  popular?: boolean;
+  icon?: string;
+  color?: string;
   textColor?: string;
   link: string;
   category: string;
@@ -39,17 +39,19 @@ interface Service {
   marketSize?: string;
   growthRate?: string;
   contactInfo?: {
-    mobile: string;
-    email: string;
-    address: string;
-    website: string;
+    mobile?: string;
+    email?: string;
+    address?: string;
+    website?: string;
+    phone?: string;
   };
-  realImplementation?: boolean;
+  realImplementation?: boolean | string;
   implementationDetails?: string;
   launchDate?: string;
-  customers: number;
+  customers: number | string;
   rating: number;
   reviews: number;
+  benefits?: string[];
 }
 
 const Innovative2040FuturisticServicesShowcase: React.FC = () => {
