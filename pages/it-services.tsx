@@ -1,121 +1,256 @@
 import React from 'react';
-import Head from 'next/head';
-import { Cloud, Cpu, Server, Database, Settings, Shield, Phone, Mail, MapPin, Check } from 'lucide-react';
-import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
-import Button from '../components/ui/Button';
-import ServiceAds from '../components/sections/ServiceAds';
+import Layout from '../components/layout/Layout';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { 
+  Shield, Server, Cloud, Database, Network, Lock, 
+  Zap, Users, BarChart3, ArrowRight, Star, CheckCircle,
+  Globe, Cpu, HardDrive, Wifi
+} from 'lucide-react';
 
-export default function ITServicesPage() {
-  const contactInfo = {
-    mobile: '+1 302 464 0950',
-    email: 'kleber@ziontechgroup.com',
-    address: '364 E Main St STE 1008 Middletown DE 19709',
-    website: 'https://ziontechgroup.com'
-  };
-
-  const offerings = [
-    { icon: <Cloud className="w-6 h-6 text-cyan-400" />, title: 'Cloud Platform Engineering', desc: 'Landing zones, multi-account architectures, and secure-by-default foundations on AWS, Azure, and GCP.' },
-    { icon: <Cpu className="w-6 h-6 text-purple-400" />, title: 'DevOps & Platform Ops', desc: 'CI/CD, IaC (Terraform/Pulumi), GitOps (ArgoCD/Flux), golden images, internal platforms.' },
-    { icon: <Server className="w-6 h-6 text-amber-400" />, title: 'SRE & Reliability', desc: 'SLOs/SLIs, error budgets, incident response, chaos testing, capacity planning and autoscaling.' },
-    { icon: <Database className="w-6 h-6 text-emerald-400" />, title: 'Data & Observability', desc: 'ELK/Opensearch, Prometheus/Grafana, OpenTelemetry, cost-aware logging and tracing.' },
-    { icon: <Settings className="w-6 h-6 text-rose-400" />, title: 'FinOps & Cost Optimization', desc: 'Rightsizing, savings plans, K8s bin-packing, storage lifecycle, multi-cloud egress control.' },
-    { icon: <Shield className="w-6 h-6 text-blue-400" />, title: 'Governance & Compliance', desc: 'SOC 2, ISO 27001, HIPAA baselines, policy-as-code with OPA/Conftest and drift detection.' },
-  ];
-
-  const packages = [
-    { name: 'Kickstart', price: '$4,900 fixed', items: ['Cloud baseline review', 'CI/CD quickstart', 'Observability lite', 'Cost 30-day plan'] },
-    { name: 'Scale', price: '$9,900 fixed', items: ['Secure landing zone', 'GitOps platform', 'SLOs + alerts', 'FinOps automation'] },
-    { name: 'Managed', price: 'From $2,000/month', items: ['Ops on-call 24/7', 'Release & env mgmt', 'Weekly tune-ups', 'Monthly executive report'] },
-  ];
-
-  const featuredITAds = [
+const ITServicesPage: React.FC = () => {
+  const itServices = [
     {
-      title: '💸 Cloud Cost Optimizer Pro',
-      description: 'Rightsizing, storage lifecycle, anomaly detection and K8s bin-packing insights.',
-      price: 'Starting at $99/month',
-      features: ['Rightsizing & schedules', 'Lifecycle policies', 'Anomaly alerts', 'IaC outputs'],
-      link: 'https://ziontechgroup.com/cloud-cost-optimizer',
-      contactInfo
+      category: 'Cloud Infrastructure',
+      services: [
+        {
+          name: 'Quantum-Secure Cloud Infrastructure',
+          description: 'Next-generation cloud platforms with quantum encryption and advanced security',
+          href: '/quantum-secure-cloud-infrastructure',
+          featured: true,
+          icon: <Cloud className="w-6 h-6" />
+        },
+        {
+          name: 'Edge Computing Orchestration',
+          description: 'Distributed edge computing solutions for low-latency applications',
+          href: '/edge-computing-orchestration-platform',
+          featured: true,
+          icon: <Zap className="w-6 h-6" />
+        },
+        {
+          name: 'Multi-Cloud Disaster Recovery',
+          description: 'Comprehensive disaster recovery across multiple cloud providers',
+          href: '/multi-cloud-disaster-recovery',
+          icon: <Server className="w-6 h-6" />
+        }
+      ]
     },
     {
-      title: '🗄️ Database Performance Monitor',
-      description: 'Slow query capture, AI index suggestions, capacity forecasting for Postgres/MySQL.',
-      price: 'Starting at $79/month',
-      features: ['Slow query ranking', 'AI index advice', 'Pool tuning', 'SLA/SLO dashboards'],
-      link: 'https://ziontechgroup.com/database-performance-monitor',
-      contactInfo
+      category: 'Security & Compliance',
+      services: [
+        {
+          name: 'Zero Trust Security Platform',
+          description: 'Advanced security framework with continuous verification',
+          href: '/zero-trust-security-platform',
+          featured: true,
+          icon: <Lock className="w-6 h-6" />
+        },
+        {
+          name: 'SOC 2 Compliance Automation',
+          description: 'Automated compliance management and evidence collection',
+          href: '/soc2-compliance-automation',
+          icon: <Shield className="w-6 h-6" />
+        },
+        {
+          name: 'Vulnerability Assessment & Penetration Testing',
+          description: 'Comprehensive security testing and vulnerability management',
+          href: '/vulnerability-assessment-penetration-testing',
+          icon: <CheckCircle className="w-6 h-6" />
+        }
+      ]
     },
     {
-      title: '🔐 API Security Scanner',
-      description: 'Automated OpenAPI/GraphQL scanning, auth/Z checks, and dependency audit.',
-      price: 'Starting at $59/month',
-      features: ['Auth/Z misconfig checks', 'OWASP top-10 tests', 'CI gate', 'Fix guidance'],
-      link: 'https://ziontechgroup.com/api-security-scanner',
-      contactInfo
+      category: 'DevOps & Automation',
+      services: [
+        {
+          name: 'AI-Powered DevOps Platform',
+          description: 'Intelligent automation for development and operations',
+          href: '/ai-powered-devops-platform',
+          featured: true,
+          icon: <Cpu className="w-6 h-6" />
+        },
+        {
+          name: 'Autonomous IT Operations Center',
+          description: 'Self-managing IT infrastructure with AI-driven operations',
+          href: '/autonomous-it-operations-center',
+          icon: <BarChart3 className="w-6 h-6" />
+        },
+        {
+          name: 'Infrastructure Drift Detector',
+          description: 'Automated detection and remediation of configuration drift',
+          href: '/infrastructure-drift-detector',
+          icon: <HardDrive className="w-6 h-6" />
+        }
+      ]
     },
     {
-      title: '📈 API Observability & SLA Guard',
-      description: 'OpenTelemetry-based tracing, error budgets, and SLO enforcement for services.',
-      price: 'Starting at $69/month',
-      features: ['OTel traces/metrics/logs', 'SLOs & error budgets', 'Alerting', 'Dashboards'],
-      link: 'https://ziontechgroup.com/api-observability',
-      contactInfo
+      category: 'Data & Analytics',
+      services: [
+        {
+          name: 'RAG Evaluation Lab',
+          description: 'Advanced evaluation and testing for RAG systems',
+          href: '/rag-evaluation-lab',
+          featured: true,
+          icon: <Database className="w-6 h-6" />
+        },
+        {
+          name: 'Data Pipeline Health Monitor',
+          description: 'Real-time monitoring and optimization of data pipelines',
+          href: '/data-pipeline-health',
+          icon: <BarChart3 className="w-6 h-6" />
+        },
+        {
+          name: 'Database Performance Monitor',
+          description: 'Comprehensive database performance optimization',
+          href: '/database-performance-monitor',
+          icon: <Server className="w-6 h-6" />
+        }
+      ]
     }
   ];
 
   return (
-    <UltraAdvancedFuturisticBackground>
-      <Head>
-        <title>IT Services | Zion Tech Group</title>
-        <meta name="description" content="Cloud engineering, DevOps, SRE, FinOps, and governance delivered with measurable outcomes and transparent pricing." />
-        <link rel="canonical" href="https://ziontechgroup.com/it-services" />
-      </Head>
-
-      <div className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
-        <ServiceAds heading="Featured IT Services" subheading="Production-grade solutions with clear pricing." items={featuredITAds} />
-        <div className="text-center max-w-4xl mx-auto mb-12">
-          <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-6">Modern IT Services</h1>
-          <p className="text-xl text-gray-300">Outcome-driven cloud, platform, and reliability engineering to accelerate delivery and reduce costs.</p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {offerings.map((o) => (
-            <div key={o.title} className="bg-black/30 border border-gray-700/50 rounded-2xl p-6">
-              <div className="mb-4">{o.icon}</div>
-              <h3 className="text-white font-semibold mb-2">{o.title}</h3>
-              <p className="text-gray-400 text-sm">{o.desc}</p>
+    <Layout>
+      {/* Hero Section */}
+      <section className="relative py-20 px-4 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-7xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <Shield className="w-10 h-10 text-white" />
             </div>
-          ))}
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+              IT Services
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
+              Enterprise-grade IT infrastructure, security, and automation solutions that power modern businesses.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/contact"
+                className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300"
+              >
+                Get Started
+                <ArrowRight className="inline-block ml-2 w-5 h-5" />
+              </Link>
+              <Link
+                href="/demo"
+                className="border border-white/30 hover:border-white/50 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 backdrop-blur-md hover:bg-white/10"
+              >
+                Request Demo
+              </Link>
+            </div>
+          </motion.div>
         </div>
+      </section>
 
-        <div className="max-w-6xl mx-auto mb-20">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {packages.map((p) => (
-              <div key={p.name} className="bg-black/30 border border-gray-700/50 rounded-2xl p-6">
-                <h3 className="text-2xl font-bold text-white mb-2">{p.name}</h3>
-                <div className="text-cyan-400 font-semibold mb-4">{p.price}</div>
-                <ul className="space-y-2 text-gray-300 text-sm">
-                  {p.items.map((i) => (
-                    <li key={i} className="flex items-start gap-2"><Check className="w-4 h-4 mt-0.5 text-emerald-400" /> <span>{i}</span></li>
+      {/* Services Grid */}
+      <section className="py-20 px-4 bg-black">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Enterprise IT Solutions
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              From cloud infrastructure to security automation, our IT services ensure your business operates at peak efficiency.
+            </p>
+          </motion.div>
+
+          <div className="space-y-16">
+            {itServices.map((category, categoryIndex) => (
+              <motion.div
+                key={category.category}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: categoryIndex * 0.2 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-3xl font-bold text-white mb-8 text-center">
+                  {category.category}
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {category.services.map((service, serviceIndex) => (
+                    <motion.div
+                      key={service.name}
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: serviceIndex * 0.1 }}
+                      viewport={{ once: true }}
+                      className={`bg-gradient-to-br from-gray-900/50 to-gray-800/50 border rounded-2xl p-6 backdrop-blur-sm hover:border-blue-500/40 transition-all duration-300 ${
+                        service.featured ? 'border-blue-500/30' : 'border-gray-700/50'
+                      }`}
+                    >
+                      {service.featured && (
+                        <div className="flex items-center mb-4">
+                          <Star className="w-5 h-5 text-yellow-400 mr-2" />
+                          <span className="text-yellow-400 text-sm font-semibold">Featured</span>
+                        </div>
+                      )}
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center mb-4">
+                        {service.icon}
+                      </div>
+                      <h4 className="text-xl font-bold text-white mb-3">{service.name}</h4>
+                      <p className="text-gray-300 mb-4 text-sm">{service.description}</p>
+                      <Link
+                        href={service.href}
+                        className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors text-sm font-medium"
+                      >
+                        Learn More <ArrowRight className="ml-2 w-4 h-4" />
+                      </Link>
+                    </motion.div>
                   ))}
-                </ul>
-              </div>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>
+      </section>
 
-        <div className="max-w-3xl mx-auto bg-black/20 backdrop-blur-xl rounded-2xl p-6 border border-cyan-500/30">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm mb-4">
-            <div className="flex items-center justify-center gap-2 text-cyan-400"><Phone className="w-4 h-4" /><span>{contactInfo.mobile}</span></div>
-            <div className="flex items-center justify-center gap-2 text-purple-400"><Mail className="w-4 h-4" /><span>{contactInfo.email}</span></div>
-            <div className="flex items-center justify-center gap-2 text-green-400"><MapPin className="w-4 h-4" /><span className="text-xs">{contactInfo.address}</span></div>
-          </div>
-          <div className="text-center">
-            <Button href="/contact" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl">Discuss Your Roadmap</Button>
-          </div>
+      {/* CTA Section */}
+      <section className="py-20 px-4 bg-gradient-to-r from-blue-900/20 to-indigo-900/20">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl font-bold text-white mb-6">
+              Ready to Modernize Your IT Infrastructure?
+            </h2>
+            <p className="text-xl text-gray-300 mb-8">
+              Let's discuss how our IT solutions can optimize your operations and enhance security.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/contact"
+                className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:shadow-blue-500/25 transition-all duration-300"
+              >
+                Start Your IT Transformation
+                <ArrowRight className="inline-block ml-2 w-5 h-5" />
+              </Link>
+              <Link
+                href="/solutions"
+                className="border border-white/30 hover:border-white/50 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 backdrop-blur-md hover:bg-white/10"
+              >
+                View Solutions
+              </Link>
+            </div>
+          </motion.div>
         </div>
-      </div>
-    </UltraAdvancedFuturisticBackground>
+      </section>
+    </Layout>
   );
-}
+};
+
+export default ITServicesPage;
 

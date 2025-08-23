@@ -83,7 +83,7 @@ const navigationItems: NavigationItem[] = [
         icon: <Play className="w-4 h-4" />
       },
       { 
-        name: 'Specialized Solutions', 
+        name: 'Industry Solutions', 
         href: '/solutions', 
         description: 'Industry-specific solutions',
         icon: <Play className="w-4 h-4" />
