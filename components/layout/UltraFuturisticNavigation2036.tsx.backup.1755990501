@@ -1,6 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
+<<<<<<< HEAD
+import { 
+  Menu, ChevronDown, X, ArrowRight,
+  BookOpen, DollarSign, BarChart3, Users, Star, 
+  Building, Play, Calculator,
+  Grid, FileText, Code, Video
+=======
 import {
   Menu,
   X,
@@ -15,6 +22,7 @@ import {
   Calculator,
   Play,
   Sparkles
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-a942
 } from 'lucide-react';
 import Link from 'next/link';
 

@@ -133,6 +133,52 @@ const Homepage2025: React.FC = () => {
                   >
                     Search
                   </button>
+<<<<<<< HEAD
+                </div>
+              </form>
+            </motion.div>
+              
+            {/* CTA Section */}
+            <motion.div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <Link href="/get-started">
+                <button className="group px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25">
+                  <span className="flex items-center gap-2">
+                    Get Started
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </button>
+              </Link>
+              <Link href="/services">
+                <button className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105">
+                  Learn More
+                </button>
+              </Link>
+              <Link href="/comprehensive-2025-services-showcase">
+                <button className="px-8 py-4 border-2 border-purple-400 text-purple-400 font-semibold rounded-lg hover:bg-purple-400 hover:text-black transition-all duration-300 transform hover:scale-105">
+                  2025 Services Showcase
+                </button>
+              </Link>
+            </motion.div>
+              
+            {/* Trust Indicators */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="flex items-center justify-center space-x-6 text-sm text-gray-400"
+            >
+              <div className="flex items-center space-x-2">
+                <Shield className="w-4 h-4 text-green-400" />
+                <span>Enterprise Security</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Globe className="w-4 h-4 text-blue-400" />
+                <span>Global Reach</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <TrendingUp className="w-4 h-4 text-purple-400" />
+                <span>Proven Results</span>
+=======
                 </Link>
                 <Link href="/services">
                   <button className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105">
@@ -149,6 +195,7 @@ const Homepage2025: React.FC = () => {
                     2038 Futuristic Services
                   </button>
                 </Link>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-a942
               </div>
             </motion.div>
           </div>
