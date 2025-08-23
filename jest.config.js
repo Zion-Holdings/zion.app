@@ -1,16 +1,25 @@
 module.exports = {
-  preset: 'ts-jest',
   testEnvironment: 'jsdom',
-  setupFilesAfterEnv: ['<rootDir>/tests/jest.setup.ts'],
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1',
+    ^@/(.*)$': <rootDir>/src/$1
   },
-  roots: ['<rootDir>/tests'],
-  coverageThreshold: {
-    global: {
-      lines: 80,
-      functions: 80,
-    },
+  testPathIgnorePatterns: [
+    <rootDir>/.next/',
+    <rootDir>/node_modules/',
+    <rootDir>/out/
+  ],
+  transform: {
+    ^.+\\.(js|jsx|ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }]
   },
+  collectCoverageFrom: [
+    src/**/*.{js,jsx,ts,tsx},
+    pages/**/*.{js,jsx,ts,tsx},
+    !**/*.d.ts',
+    !**/node_modules/**
+  ],
+  testMatch: [
+    **/__tests__/**/*.(ts|tsx|js),
+    **/?(*.)+(spec|test).(ts|tsx|js)
+  ]
 };
-

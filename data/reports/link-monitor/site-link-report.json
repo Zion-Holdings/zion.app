@@ -1,0 +1,32 @@
+{
+  "timestamp": "2025-08-08T17:08:41.611Z",
+  "startUrl": "https://ziontechgroup.com/",
+  "totalVisited": 6,
+  "pages": [
+    {
+      "url": "https://ziontechgroup.com/",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/services",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/about",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/contact",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/products",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.com/blog",
+      "status": 200
+    }
+  ],
+  "broken": []
+}
