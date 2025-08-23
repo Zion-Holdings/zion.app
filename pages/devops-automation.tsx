@@ -2,13 +2,13 @@ import React from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
-  Cloud, Server, Database, Shield, Zap, 
+  Settings, GitBranch, Server, Database, Shield, Zap, 
   Globe, Cpu, Network, ArrowRight, CheckCircle, 
-  Star, TrendingUp, Lock, Users
+  Star, TrendingUp, Lock, Users, Workflow
 } from 'lucide-react';
 import Link from 'next/link';
 
-const CloudPlatform: React.FC = () => {
+const DevOpsAutomation: React.FC = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -32,71 +32,73 @@ const CloudPlatform: React.FC = () => {
     }
   };
 
-  const cloudServices = [
+  const devopsServices = [
     {
-      icon: <Cloud className="w-8 h-8" />,
-      title: 'Cloud Migration',
-      description: 'Seamless migration to cloud infrastructure with zero downtime',
-      features: ['Assessment & Planning', 'Data Migration', 'Application Modernization', 'Performance Optimization'],
-      price: 'From $15,000'
+      icon: <GitBranch className="w-8 h-8" />,
+      title: 'CI/CD Pipelines',
+      description: 'Automated build, test, and deployment workflows',
+      features: ['Automated Testing', 'Code Quality Gates', 'Deployment Automation', 'Rollback Capabilities'],
+      price: 'From $3,500/month'
     },
     {
       icon: <Server className="w-8 h-8" />,
-      title: 'Multi-Cloud Management',
-      description: 'Unified management across AWS, Azure, Google Cloud, and private clouds',
-      features: ['Centralized Control', 'Cost Optimization', 'Security Management', 'Performance Monitoring'],
-      price: 'From $2,500/month'
-    },
-    {
-      icon: <Database className="w-8 h-8" />,
-      title: 'Cloud Database Solutions',
-      description: 'Scalable, secure, and high-performance database services',
-      features: ['Managed Databases', 'Auto-scaling', 'Backup & Recovery', 'Performance Tuning'],
-      price: 'From $1,500/month'
+      title: 'Infrastructure as Code',
+      description: 'Manage infrastructure through code and automation',
+      features: ['Terraform/CloudFormation', 'Configuration Management', 'Environment Provisioning', 'Version Control'],
+      price: 'From $4,000/month'
     },
     {
       icon: <Shield className="w-8 h-8" />,
-      title: 'Cloud Security',
-      description: 'Comprehensive security for cloud environments',
-      features: ['Identity Management', 'Data Encryption', 'Threat Detection', 'Compliance'],
+      title: 'DevSecOps',
+      description: 'Integrate security into your DevOps pipeline',
+      features: ['Security Scanning', 'Vulnerability Management', 'Compliance Automation', 'Security Testing'],
+      price: 'From $4,500/month'
+    },
+    {
+      icon: <Database className="w-8 h-8" />,
+      title: 'Database DevOps',
+      description: 'Automate database deployments and management',
+      features: ['Migration Automation', 'Schema Management', 'Data Versioning', 'Backup Automation'],
       price: 'From $3,000/month'
     },
     {
-      icon: <Network className="w-8 h-8" />,
-      title: 'Cloud Networking',
-      description: 'High-performance networking solutions for cloud applications',
-      features: ['Load Balancing', 'CDN Services', 'VPN Solutions', 'Network Security'],
-      price: 'From $2,000/month'
+      icon: <Workflow className="w-8 h-8" />,
+      title: 'Process Automation',
+      description: 'Automate repetitive tasks and workflows',
+      features: ['Task Automation', 'Workflow Orchestration', 'Integration Automation', 'Monitoring'],
+      price: 'From $2,500/month'
     },
     {
-      icon: <Cpu className="w-8 h-8" />,
-      title: 'Serverless Computing',
-      description: 'Event-driven, scalable computing without server management',
-      features: ['Function as a Service', 'Auto-scaling', 'Pay-per-use', 'Event Processing'],
-      price: 'From $500/month'
+      icon: <TrendingUp className="w-8 h-8" />,
+      title: 'Performance Monitoring',
+      description: 'Real-time monitoring and alerting systems',
+      features: ['Application Monitoring', 'Infrastructure Monitoring', 'Alert Management', 'Performance Analytics'],
+      price: 'From $2,000/month'
     }
   ];
 
-  const cloudProviders = [
-    { name: 'AWS', logo: '☁️', description: 'Amazon Web Services' },
-    { name: 'Azure', logo: '🔷', description: 'Microsoft Azure' },
-    { name: 'Google Cloud', logo: '🔵', description: 'Google Cloud Platform' },
-    { name: 'Private Cloud', logo: '🏢', description: 'On-premises Solutions' }
+  const tools = [
+    { name: 'Jenkins', logo: '🔧', description: 'CI/CD Automation' },
+    { name: 'Docker', logo: '🐳', description: 'Containerization' },
+    { name: 'Kubernetes', logo: '☸️', description: 'Container Orchestration' },
+    { name: 'Terraform', logo: '🏗️', description: 'Infrastructure as Code' },
+    { name: 'Ansible', logo: '⚡', description: 'Configuration Management' },
+    { name: 'Prometheus', logo: '📊', description: 'Monitoring & Alerting' }
   ];
 
   const benefits = [
-    'Scalability & Flexibility',
+    'Faster Deployments',
+    'Reduced Errors',
+    'Improved Collaboration',
     'Cost Optimization',
-    'Global Availability',
-    'Security & Compliance',
-    'Disaster Recovery',
-    '24/7 Monitoring'
+    'Better Security',
+    'Scalable Operations'
   ];
 
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 overflow-hidden">
+      <section className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-orange-600 via-red-600 to-purple-700 overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
           <motion.h1 
@@ -105,15 +107,15 @@ const CloudPlatform: React.FC = () => {
             initial="hidden"
             animate="visible"
           >
-            Cloud Platform Solutions
+            DevOps & Automation
           </motion.h1>
           <motion.p 
-            className="text-xl md:text-2xl text-blue-100 mb-8 max-w-4xl mx-auto"
+            className="text-xl md:text-2xl text-orange-100 mb-8 max-w-4xl mx-auto"
             variants={itemVariants}
             initial="hidden"
             animate="visible"
           >
-            Accelerate your digital transformation with enterprise-grade cloud solutions designed for scale, security, and innovation
+            Streamline your development and operations with intelligent automation that accelerates delivery and improves quality
           </motion.p>
           <motion.div 
             className="flex flex-col sm:flex-row gap-4 justify-center"
@@ -121,17 +123,17 @@ const CloudPlatform: React.FC = () => {
             initial="hidden"
             animate="visible"
           >
-            <Link href="/contact" className="bg-white hover:bg-gray-100 text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2">
-              Start Cloud Journey <ArrowRight className="w-5 h-5" />
+            <Link href="/contact" className="bg-white hover:bg-gray-100 text-orange-600 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2">
+              Start Automation <ArrowRight className="w-5 h-5" />
             </Link>
-            <Link href="/services" className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
-              Explore Services
+            <Link href="/case-studies" className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
+              View Success Stories
             </Link>
           </motion.div>
         </div>
       </section>
 
-      {/* Cloud Services Overview */}
+      {/* DevOps Services Overview */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div 
@@ -141,10 +143,10 @@ const CloudPlatform: React.FC = () => {
             animate="visible"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Comprehensive Cloud Services
+              Comprehensive DevOps Services
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From migration to management, we provide end-to-end cloud solutions that drive business growth
+              From CI/CD to infrastructure automation, we provide end-to-end DevOps solutions that drive efficiency and innovation
             </p>
           </motion.div>
 
@@ -154,14 +156,14 @@ const CloudPlatform: React.FC = () => {
             initial="hidden"
             animate="visible"
           >
-            {cloudServices.map((service, index) => (
+            {devopsServices.map((service, index) => (
               <motion.div
                 key={index}
                 className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
                 variants={itemVariants}
                 whileHover={{ y: -5 }}
               >
-                <div className="text-blue-600 mb-4">{service.icon}</div>
+                <div className="text-orange-600 mb-4">{service.icon}</div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">{service.title}</h3>
                 <p className="text-gray-600 mb-4">{service.description}</p>
                 <ul className="space-y-2 mb-6">
@@ -172,14 +174,14 @@ const CloudPlatform: React.FC = () => {
                     </li>
                   ))}
                 </ul>
-                <div className="text-2xl font-bold text-blue-600">{service.price}</div>
+                <div className="text-2xl font-bold text-orange-600">{service.price}</div>
               </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
 
-      {/* Cloud Providers Section */}
+      {/* Tools Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div 
@@ -189,29 +191,29 @@ const CloudPlatform: React.FC = () => {
             animate="visible"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Multi-Cloud Expertise
+              Industry-Standard Tools
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We work with all major cloud providers to give you the best solutions for your needs
+              We leverage proven tools and technologies to build robust DevOps solutions
             </p>
           </motion.div>
 
           <motion.div 
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
-            {cloudProviders.map((provider, index) => (
+            {tools.map((tool, index) => (
               <motion.div
                 key={index}
-                className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-lg p-8 text-center hover:shadow-lg transition-all duration-300"
+                className="bg-gradient-to-br from-orange-50 to-red-100 rounded-lg p-8 text-center hover:shadow-lg transition-all duration-300"
                 variants={itemVariants}
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="text-6xl mb-4">{provider.logo}</div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">{provider.name}</h3>
-                <p className="text-gray-600">{provider.description}</p>
+                <div className="text-6xl mb-4">{tool.logo}</div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">{tool.name}</h3>
+                <p className="text-gray-600">{tool.description}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -219,7 +221,7 @@ const CloudPlatform: React.FC = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-900 to-purple-900 text-white">
+      <section className="py-20 bg-gradient-to-r from-orange-900 to-red-900 text-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div 
             className="text-center mb-16"
@@ -228,10 +230,10 @@ const CloudPlatform: React.FC = () => {
             animate="visible"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Cloud Benefits
+              DevOps Benefits
             </h2>
-            <p className="text-xl text-blue-200 max-w-3xl mx-auto">
-              Transform your business with the power of cloud computing
+            <p className="text-xl text-orange-200 max-w-3xl mx-auto">
+              Transform your development and operations with automation and best practices
             </p>
           </motion.div>
 
@@ -266,17 +268,17 @@ const CloudPlatform: React.FC = () => {
             animate="visible"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Ready to Scale with Cloud?
+              Ready to Automate Your DevOps?
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              Let's discuss how our cloud solutions can accelerate your business transformation
+              Let's discuss how our DevOps automation can accelerate your development and operations
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2">
-                Get Cloud Consultation <ArrowRight className="w-5 h-5" />
+              <Link href="/contact" className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2">
+                Get DevOps Consultation <ArrowRight className="w-5 h-5" />
               </Link>
-              <Link href="/case-studies" className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
-                View Success Stories
+              <Link href="/services" className="border-2 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
+                Explore All Services
               </Link>
             </div>
           </motion.div>
@@ -286,4 +288,4 @@ const CloudPlatform: React.FC = () => {
   );
 };
 
-export default CloudPlatform;
+export default DevOpsAutomation;

@@ -2,13 +2,13 @@ import React from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
-  Cloud, Server, Database, Shield, Zap, 
-  Globe, Cpu, Network, ArrowRight, CheckCircle, 
-  Star, TrendingUp, Lock, Users
+  Server, Database, Cloud, Shield, Zap, 
+  Users, Building, Globe, Cpu, Network,
+  ArrowRight, CheckCircle, Star, TrendingUp
 } from 'lucide-react';
 import Link from 'next/link';
 
-const CloudPlatform: React.FC = () => {
+const EnterpriseITSolutions: React.FC = () => {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -32,71 +32,68 @@ const CloudPlatform: React.FC = () => {
     }
   };
 
-  const cloudServices = [
-    {
-      icon: <Cloud className="w-8 h-8" />,
-      title: 'Cloud Migration',
-      description: 'Seamless migration to cloud infrastructure with zero downtime',
-      features: ['Assessment & Planning', 'Data Migration', 'Application Modernization', 'Performance Optimization'],
-      price: 'From $15,000'
-    },
+  const enterpriseServices = [
     {
       icon: <Server className="w-8 h-8" />,
-      title: 'Multi-Cloud Management',
-      description: 'Unified management across AWS, Azure, Google Cloud, and private clouds',
-      features: ['Centralized Control', 'Cost Optimization', 'Security Management', 'Performance Monitoring'],
-      price: 'From $2,500/month'
+      title: 'Enterprise Infrastructure',
+      description: 'Scalable, secure, and high-performance infrastructure solutions',
+      features: ['Cloud Migration', 'Data Center Optimization', 'Network Architecture', 'Disaster Recovery'],
+      price: 'Custom Pricing'
     },
     {
       icon: <Database className="w-8 h-8" />,
-      title: 'Cloud Database Solutions',
-      description: 'Scalable, secure, and high-performance database services',
-      features: ['Managed Databases', 'Auto-scaling', 'Backup & Recovery', 'Performance Tuning'],
-      price: 'From $1,500/month'
+      title: 'Data Management & Analytics',
+      description: 'Comprehensive data solutions for enterprise insights',
+      features: ['Big Data Analytics', 'Data Warehousing', 'Business Intelligence', 'Data Governance'],
+      price: 'From $5,000/month'
+    },
+    {
+      icon: <Cloud className="w-8 h-8" />,
+      title: 'Multi-Cloud Solutions',
+      description: 'Hybrid and multi-cloud strategies for optimal performance',
+      features: ['Cloud Strategy', 'Multi-Cloud Management', 'Cost Optimization', 'Security & Compliance'],
+      price: 'From $3,500/month'
     },
     {
       icon: <Shield className="w-8 h-8" />,
-      title: 'Cloud Security',
-      description: 'Comprehensive security for cloud environments',
-      features: ['Identity Management', 'Data Encryption', 'Threat Detection', 'Compliance'],
-      price: 'From $3,000/month'
-    },
-    {
-      icon: <Network className="w-8 h-8" />,
-      title: 'Cloud Networking',
-      description: 'High-performance networking solutions for cloud applications',
-      features: ['Load Balancing', 'CDN Services', 'VPN Solutions', 'Network Security'],
-      price: 'From $2,000/month'
+      title: 'Enterprise Security',
+      description: 'Comprehensive security solutions for modern enterprises',
+      features: ['Zero Trust Architecture', 'Threat Detection', 'Compliance Management', 'Security Audits'],
+      price: 'From $4,500/month'
     },
     {
       icon: <Cpu className="w-8 h-8" />,
-      title: 'Serverless Computing',
-      description: 'Event-driven, scalable computing without server management',
-      features: ['Function as a Service', 'Auto-scaling', 'Pay-per-use', 'Event Processing'],
-      price: 'From $500/month'
+      title: 'AI & Automation',
+      description: 'Intelligent automation for enterprise processes',
+      features: ['Process Automation', 'AI Integration', 'Machine Learning', 'Predictive Analytics'],
+      price: 'From $6,000/month'
+    },
+    {
+      icon: <Network className="w-8 h-8" />,
+      title: 'Digital Transformation',
+      description: 'End-to-end digital transformation consulting',
+      features: ['Strategy Development', 'Technology Roadmap', 'Change Management', 'Implementation Support'],
+      price: 'Custom Pricing'
     }
   ];
 
-  const cloudProviders = [
-    { name: 'AWS', logo: '☁️', description: 'Amazon Web Services' },
-    { name: 'Azure', logo: '🔷', description: 'Microsoft Azure' },
-    { name: 'Google Cloud', logo: '🔵', description: 'Google Cloud Platform' },
-    { name: 'Private Cloud', logo: '🏢', description: 'On-premises Solutions' }
+  const industries = [
+    'Healthcare', 'Finance', 'Manufacturing', 'Retail', 'Government', 'Education', 'Energy', 'Transportation'
   ];
 
   const benefits = [
-    'Scalability & Flexibility',
+    '24/7 Support & Monitoring',
+    'Scalable Solutions',
+    'Compliance & Security',
     'Cost Optimization',
-    'Global Availability',
-    'Security & Compliance',
-    'Disaster Recovery',
-    '24/7 Monitoring'
+    'Performance Optimization',
+    'Future-Proof Technology'
   ];
 
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 overflow-hidden">
+      <section className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
           <motion.h1 
@@ -105,15 +102,15 @@ const CloudPlatform: React.FC = () => {
             initial="hidden"
             animate="visible"
           >
-            Cloud Platform Solutions
+            Enterprise IT Solutions
           </motion.h1>
           <motion.p 
-            className="text-xl md:text-2xl text-blue-100 mb-8 max-w-4xl mx-auto"
+            className="text-xl md:text-2xl text-blue-200 mb-8 max-w-4xl mx-auto"
             variants={itemVariants}
             initial="hidden"
             animate="visible"
           >
-            Accelerate your digital transformation with enterprise-grade cloud solutions designed for scale, security, and innovation
+            Transform your enterprise with cutting-edge technology solutions designed for scale, security, and innovation
           </motion.p>
           <motion.div 
             className="flex flex-col sm:flex-row gap-4 justify-center"
@@ -121,17 +118,17 @@ const CloudPlatform: React.FC = () => {
             initial="hidden"
             animate="visible"
           >
-            <Link href="/contact" className="bg-white hover:bg-gray-100 text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2">
-              Start Cloud Journey <ArrowRight className="w-5 h-5" />
+            <Link href="/contact" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2">
+              Get Started <ArrowRight className="w-5 h-5" />
             </Link>
-            <Link href="/services" className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
-              Explore Services
+            <Link href="/case-studies" className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
+              View Case Studies
             </Link>
           </motion.div>
         </div>
       </section>
 
-      {/* Cloud Services Overview */}
+      {/* Services Overview */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div 
@@ -141,10 +138,10 @@ const CloudPlatform: React.FC = () => {
             animate="visible"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Comprehensive Cloud Services
+              Comprehensive Enterprise Solutions
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From migration to management, we provide end-to-end cloud solutions that drive business growth
+              From infrastructure to innovation, we provide end-to-end solutions that drive business transformation
             </p>
           </motion.div>
 
@@ -154,7 +151,7 @@ const CloudPlatform: React.FC = () => {
             initial="hidden"
             animate="visible"
           >
-            {cloudServices.map((service, index) => (
+            {enterpriseServices.map((service, index) => (
               <motion.div
                 key={index}
                 className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
@@ -179,7 +176,7 @@ const CloudPlatform: React.FC = () => {
         </div>
       </section>
 
-      {/* Cloud Providers Section */}
+      {/* Industries Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div 
@@ -189,29 +186,28 @@ const CloudPlatform: React.FC = () => {
             animate="visible"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Multi-Cloud Expertise
+              Industry Expertise
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We work with all major cloud providers to give you the best solutions for your needs
+              We serve enterprises across diverse industries with tailored solutions and deep domain knowledge
             </p>
           </motion.div>
 
           <motion.div 
-            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-2 md:grid-cols-4 gap-6"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
           >
-            {cloudProviders.map((provider, index) => (
+            {industries.map((industry, index) => (
               <motion.div
                 key={index}
-                className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-lg p-8 text-center hover:shadow-lg transition-all duration-300"
+                className="bg-gradient-to-br from-blue-50 to-indigo-100 rounded-lg p-6 text-center hover:shadow-lg transition-all duration-300"
                 variants={itemVariants}
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="text-6xl mb-4">{provider.logo}</div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">{provider.name}</h3>
-                <p className="text-gray-600">{provider.description}</p>
+                <Building className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+                <h3 className="text-lg font-semibold text-gray-900">{industry}</h3>
               </motion.div>
             ))}
           </motion.div>
@@ -228,10 +224,10 @@ const CloudPlatform: React.FC = () => {
             animate="visible"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Cloud Benefits
+              Why Choose Zion Tech Group?
             </h2>
             <p className="text-xl text-blue-200 max-w-3xl mx-auto">
-              Transform your business with the power of cloud computing
+              We deliver enterprise-grade solutions with the agility and innovation of a startup
             </p>
           </motion.div>
 
@@ -266,17 +262,17 @@ const CloudPlatform: React.FC = () => {
             animate="visible"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Ready to Scale with Cloud?
+              Ready to Transform Your Enterprise?
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              Let's discuss how our cloud solutions can accelerate your business transformation
+              Let's discuss how our enterprise IT solutions can drive innovation and growth for your organization
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2">
-                Get Cloud Consultation <ArrowRight className="w-5 h-5" />
+                Schedule Consultation <ArrowRight className="w-5 h-5" />
               </Link>
-              <Link href="/case-studies" className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
-                View Success Stories
+              <Link href="/services" className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
+                Explore All Services
               </Link>
             </div>
           </motion.div>
@@ -286,4 +282,4 @@ const CloudPlatform: React.FC = () => {
   );
 };
 
-export default CloudPlatform;
+export default EnterpriseITSolutions;

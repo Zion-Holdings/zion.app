@@ -68,11 +68,11 @@ const footerSections: FooterSection[] = [
 ];
 
 const socialLinks = [
-  { icon: <Linkedin className="w-5 h-5" />, href: 'https://linkedin.com/company/ziontechgroup', label: 'LinkedIn' },
+  { icon: <Linkedin className="w-5 h-5" />, href: 'https://www.linkedin.com/company/ziontechgroup', label: 'LinkedIn' },
   { icon: <Twitter className="w-5 h-5" />, href: 'https://twitter.com/ziontechgroup', label: 'Twitter' },
   { icon: <Github className="w-5 h-5" />, href: 'https://github.com/ziontechgroup', label: 'GitHub' },
-  { icon: <Youtube className="w-5 h-5" />, href: 'https://youtube.com/@ziontechgroup', label: 'YouTube' },
-  { icon: <Facebook className="w-5 h-5" />, href: 'https://facebook.com/ziontechgroup', label: 'Facebook' }
+  { icon: <Youtube className="w-5 h-5" />, href: 'https://www.youtube.com/@ziontechgroup', label: 'YouTube' },
+  { icon: <Facebook className="w-5 h-5" />, href: 'https://www.facebook.com/ziontechgroup', label: 'Facebook' }
 ];
 
 const contactInfo = {

@@ -142,9 +142,9 @@ const UltraFuturisticFooter2040: React.FC = () => {
               </h3>
               
               <ul className="space-y-3">
-                {section.items.map((item, itemIndex) => (
+                {section.links.map((item, itemIndex) => (
                   <motion.li
-                    key={item.label}
+                    key={item.name}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: (sectionIndex * 0.1) + (itemIndex * 0.05) }}
@@ -155,10 +155,10 @@ const UltraFuturisticFooter2040: React.FC = () => {
                       className="group flex items-center gap-3 text-gray-400 hover:text-white transition-all duration-200 hover:translate-x-1"
                     >
                       <div className="flex-shrink-0">
-                        {item.icon}
+                        <Star className="w-4 h-4 text-gray-500" />
                       </div>
                       <span className="text-sm group-hover:text-cyan-400 transition-colors duration-200">
-                        {item.label}
+                        {item.name}
                       </span>
                       {item.featured && (
                         <span className="px-2 py-1 text-xs bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-full">
@@ -282,7 +282,7 @@ const UltraFuturisticFooter2040: React.FC = () => {
             >
               {socialLinks.map((social, index) => (
                 <motion.a
-                  key={social.label}
+                  key={social.name}
                   href={social.href}
                   className="p-2 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-lg transition-all duration-200"
                   whileHover={{ scale: 1.1, rotate: 5 }}
@@ -291,6 +291,7 @@ const UltraFuturisticFooter2040: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
+                  aria-label={social.name}
                 >
                   {social.icon}
                 </motion.a>

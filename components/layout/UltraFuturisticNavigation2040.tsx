@@ -19,6 +19,9 @@ interface NavigationItem {
   icon?: React.ReactNode;
   description?: string;
   featured?: boolean;
+  badge?: string;
+  category?: string;
+  color?: string;
 }
 
 const navigationItems: NavigationItem[] = [
@@ -103,55 +106,55 @@ const navigationItems: NavigationItem[] = [
         description: 'Revolutionary AI consciousness platform'
       },
       {
-        name: 'AI Emotional Intelligence 2040',
+        label: 'AI Emotional Intelligence 2040',
         href: '/ai-emotional-intelligence-2040',
         description: 'Advanced emotional AI with consciousness',
         icon: <HeartIcon className="w-4 h-4" />
       },
       {
-        name: 'AI Autonomous Research 2041',
+        label: 'AI Autonomous Research 2041',
         href: '/ai-autonomous-research-2041',
         description: 'Fully autonomous AI research',
         icon: <CodeIcon className="w-4 h-4" />
       },
       {
-        name: 'AI Content Personalization 2041',
+        label: 'AI Content Personalization 2041',
         href: '/ai-content-personalization-2041',
         description: 'Consciousness-based content AI',
         icon: <PaletteIcon className="w-4 h-4" />
       },
       {
-        name: 'AI Ethics & Governance 2041',
+        label: 'AI Ethics & Governance 2041',
         href: '/ai-ethics-governance-2041',
         description: 'Comprehensive AI ethics framework',
         icon: <Shield className="w-4 h-4" />
       },
       {
-        name: 'AI Consciousness Evolution',
+        label: 'AI Consciousness Evolution',
         href: '/ai-consciousness-evolution',
         description: 'AI consciousness research and development',
         icon: <Brain className="w-4 h-4" />
       },
       {
-        name: 'AI Autonomous Ecosystem',
+        label: 'AI Autonomous Ecosystem',
         href: '/ai-autonomous-ecosystem',
         description: 'Self-organizing AI agent networks',
         icon: <Network className="w-4 h-4" />
       },
       {
-        name: 'AI Autonomous Robotics Platform',
+        label: 'AI Autonomous Robotics Platform',
         href: '/ai-autonomous-robotics-platform',
         description: 'Intelligent robotics automation',
         icon: <Rocket className="w-4 h-4" />
       },
       {
-        name: 'AI Content Factory Pro',
+        label: 'AI Content Factory Pro',
         href: '/ai-content-factory-pro',
         description: 'Enterprise content creation platform',
         icon: <FileText className="w-4 h-4" />
       },
       {
-        name: 'AI Autonomous Business Process Automation',
+        label: 'AI Autonomous Business Process Automation',
         href: '/ai-autonomous-business-process-automation',
         description: 'Intelligent process automation',
         icon: <Workflow className="w-4 h-4" />
@@ -159,7 +162,7 @@ const navigationItems: NavigationItem[] = [
     ]
   },
   {
-    name: 'Quantum Technology',
+    label: 'Quantum Technology',
     href: '/quantum-services',
     icon: <Atom className="w-5 h-5" />,
     description: 'Quantum computing solutions',
@@ -168,7 +171,7 @@ const navigationItems: NavigationItem[] = [
     color: 'from-blue-500 to-cyan-500',
     children: [
       {
-        name: 'Quantum Neural Ecosystem 2040',
+        label: 'Quantum Neural Ecosystem 2040',
         href: '/quantum-neural-ecosystem-2040',
         icon: <Atom className="w-4 h-4" />,
         description: 'Hybrid quantum-AI computing'
