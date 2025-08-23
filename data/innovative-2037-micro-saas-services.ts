@@ -1,5 +1,6 @@
 import { ServiceVariant } from '../types/service-variants';
 
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 export interface Innovative2037MicroSaasService {
   id: string;
   name: string;
@@ -17,6 +18,7 @@ export interface Innovative2037MicroSaasService {
   targetAudience: string;
   trialDays: number;
   setupTime: string;
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   category: string;
   realService: boolean;
   technology: string[];
@@ -27,6 +29,7 @@ export interface Innovative2037MicroSaasService {
   marketSize: string;
   growthRate: string;
   variant: ServiceVariant;
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   contactInfo: {
     mobile: string;
     email: string;
@@ -45,6 +48,7 @@ export interface Innovative2037MicroSaasService {
     address: string;
     website: string;
   };
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 }
 
 export const innovative2037MicroSaasServices: Innovative2037MicroSaasService[] = [
@@ -76,6 +80,7 @@ export const innovative2037MicroSaasServices: Innovative2037MicroSaasService[] =
     customers: 1200,
     rating: 4.8,
     reviews: 156,
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -115,6 +120,7 @@ export const innovative2037MicroSaasServices: Innovative2037MicroSaasService[] =
     customers: 450,
     rating: 4.9,
     reviews: 89,
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -286,5 +292,6 @@ export const innovative2037MicroSaasServices: Innovative2037MicroSaasService[] =
     customers: 8,
     rating: 4.6,
     reviews: 5
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   }
 ];

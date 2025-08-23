@@ -1,19 +1,48 @@
-# Zion Tech Group - Innovative Technology Solutions
+## Zion Assistant Monorepo
 
-![Automations: 5](https://img.shields.io/badge/Automations-5-informational) ![Pages: 10](https://img.shields.io/badge/Pages-10-success) ![Components: 1](https://img.shields.io/badge/Components-1-blue)
+Cross-platform assistant for hiring managers and remote workers.
 
-## 🚀 2025 Comprehensive Services Portfolio
+### Apps
+- `apps/api`: Fastify API (OpenAI, jobs, talent, projects, notifications)
+- `apps/slack-bot`: Slack Bolt app with `/zion` slash commands and notifications
+- `apps/extension`: Chrome/Edge MV3 extension with popup and background sync
 
-- Knowledge Pack Runner: `/.netlify/functions/knowledge-pack-runner` — generates `public/automation/knowledge-pack.json` every 10 minutes.
-- Adaptive Orchestrator: `/.netlify/functions/adaptive-orchestrator` — selectively triggers relevant functions based on recent changes, then syncs.
-- Tech Debt Heatmap: `/.netlify/functions/tech-debt-heatmap-runner` — scans repo for debt signals and publishes live reports.
-- Revenue Ideas Runner: `/.netlify/functions/revenue-ideas-runner` — aggregates monetization proposals into public reports.
-- Code Ownership Map: `/.netlify/functions/code-ownership-map-runner` — infers contributors per area and publishes a map.
+### Quickstart
+1. Copy env: `cp .env.example .env`
+2. Start infra: `docker compose up -d`
+3. Install deps: `pnpm i`
+4. Run dev servers: `pnpm dev`
+5. Build extension icons: `pnpm generate:icons`
 
-See the homepage for links and live triggers.
+### Slack
+- Create a Slack app with OAuth scopes: `commands,chat:write,chat:write.public,users:read,app_mentions:read,channels:history`
+- Set Slash commands:
+  - `/zion` (dispatches subcommands)
+  - `/zion-post-job`, `/zion-suggest-talent`, `/zion-track-project`, `/zion-help` (optional aliases)
+- Redirect URL: `${SLACK_APP_REDIRECT_URL}`
 
-## Added automations
+### Google OAuth
+- Create OAuth 2.0 Client (Web) with redirect `${GOOGLE_REDIRECT_URI}`
+- The extension uses `chrome.identity.launchWebAuthFlow` to sign in
 
-- UX Friction Scanner: `/.netlify/functions/ux-friction-runner` — scans UI code for missing alts/dimensions and bad anchors; writes reports and commits.
-- Route Map Builder: `/.netlify/functions/route-map-runner` — generates a live route map (JSON/MD) for all pages.
-- OpenGraph Coverage Auditor: `/.netlify/functions/opengraph-coverage-runner` — audits OG/Twitter meta coverage and publishes reports.
+### Database & RLS
+- Postgres initialized via `infra/db/init.sql` with RLS policies per `user_id`
+
+### **Contact Information:**
+- **Mobile**: +1 302 464 0950
+- **Email**: kleber@ziontechgroup.com
+- **Website**: https://ziontechgroup.com
+- **Address**: 364 E Main St STE 1008 Middletown DE 19709
+
+⚠️ **IMPORTANT**: This project uses **Supabase for authentication** and **Netlify for environment variable management**. Proper configuration is essential for the application to function correctly.
+
+### Authentication Setup
+
+---
+This README is auto-generated. Do not edit manually.
+
+## 🌟 Featured Services
+
+- Intelligent Orchestrator (1m): /.netlify/functions/intelligent-orchestrator
+- Anomaly Watchdog (10m): /.netlify/functions/anomaly-watchdog
+- Pulse Sync (1m): /.netlify/functions/pulse-sync

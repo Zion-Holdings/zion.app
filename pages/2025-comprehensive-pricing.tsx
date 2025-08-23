@@ -8,10 +8,11 @@ import {
 } from 'lucide-react';
 
 // Import our new service data
-import { advancedEnterpriseSolutions2025 } from '../data/2025-advanced-enterprise-solutions';
-import { innovativeAIAutomationServices2025 } from '../data/2025-innovative-ai-automation-services';
-import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
-import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
+import { advancedAIMLServices } from '../data/2025-advanced-ai-ml-services';
+import { advancedCybersecurityServices } from '../data/2025-advanced-cybersecurity-services';
+import { advancedCloudDevOpsServices2025 } from '../data/2025-advanced-cloud-devops-services';
+import { industrySpecificSolutions } from '../data/2025-industry-specific-solutions';
+import { emergingTechnologyServices } from '../data/2025-emerging-technology-services';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -48,12 +49,12 @@ const pricingCategories = [
     services: allServices.filter(s => s.category.toLowerCase().includes('ai') || s.category.toLowerCase().includes('automation') || s.category.toLowerCase().includes('customer service'))
   },
   {
-    name: 'Enterprise Solutions',
-    description: 'Comprehensive platforms for large organizations',
-    priceRange: '$15,000 - $25,000/month',
-    icon: <Building className="w-6 h-6" />,
-    color: 'from-blue-500 to-indigo-600',
-    services: allServices.filter(s => s.category.toLowerCase().includes('enterprise') || s.category.toLowerCase().includes('erp') || s.category.toLowerCase().includes('financial'))
+    id: 'cloud-devops',
+    name: 'Cloud & DevOps',
+    icon: Cloud,
+    description: 'Cloud infrastructure, DevOps automation, and edge computing solutions',
+    services: advancedCloudDevOpsServices2025,
+    color: 'from-blue-600 to-cyan-700'
   },
   {
     name: 'IT Infrastructure',
@@ -130,6 +131,7 @@ const ComprehensivePricing2025: React.FC = () => {
         description="Explore our complete pricing guide for micro SAAS, IT services, and AI solutions. Find the perfect plan for your business needs with transparent pricing and feature comparisons."
         keywords="pricing, micro SAAS pricing, AI services pricing, cybersecurity pricing, cloud services pricing, enterprise solutions pricing"
         ogImage="https://ziontechgroup.com/og-image.jpg"
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
       />
 
       {/* Hero Section */}
@@ -504,3 +506,4 @@ const ComprehensivePricing2025: React.FC = () => {
 };
 
 export default ComprehensivePricing2025;
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96

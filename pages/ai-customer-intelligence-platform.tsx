@@ -1,472 +1,400 @@
 import React from 'react';
-import Head from 'next/head';
-import { Brain, Users, BarChart3, Target, Zap, TrendingUp, Globe, Shield } from 'lucide-react';
+import { Metadata } from 'next';
+import Link from 'next/link';
+import { 
+  Brain, Zap, Target, BarChart3, Users, TrendingUp, 
+  MessageSquare, Mail, Phone, MapPin, ArrowRight,
+  Star, CheckCircle, Rocket, Globe, Shield, Cpu,
+  FileText, Image, Video, Music, Palette, Type,
+  User, Search, Eye, Heart, ShoppingCart
+} from 'lucide-react';
 
-const AICustomerIntelligencePlatformPage: React.FC = () => {
+export const metadata: Metadata = {
+  title: 'AI Customer Intelligence Platform | Zion Tech Group',
+  description: 'Revolutionary AI-powered customer intelligence platform that provides deep insights into customer behavior and preferences.',
+  keywords: 'AI customer intelligence, customer analytics, customer insights, AI analytics, customer behavior, customer data',
+  openGraph: {
+    title: 'AI Customer Intelligence Platform | Zion Tech Group',
+    description: 'Revolutionary AI-powered customer intelligence platform that provides deep insights into customer behavior and preferences.',
+    url: 'https://ziontechgroup.com/ai-customer-intelligence-platform',
+    siteName: 'Zion Tech Group',
+    images: [
+      {
+        url: 'https://ziontechgroup.com/og-image-ai-customer-intelligence-platform.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'AI Customer Intelligence Platform',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'AI Customer Intelligence Platform | Zion Tech Group',
+    description: 'Revolutionary AI-powered customer intelligence platform that provides deep insights into customer behavior and preferences.',
+    images: ['https://ziontechgroup.com/og-image-ai-customer-intelligence-platform.jpg'],
+  },
+  alternates: {
+    canonical: 'https://ziontechgroup.com/ai-customer-intelligence-platform',
+  },
+};
+
+const contactInfo = {
+  mobile: '+1 302 464 0950',
+  email: 'kleber@ziontechgroup.com',
+  address: '364 E Main St STE 1008 Middletown DE 19709',
+  website: 'https://ziontechgroup.com'
+};
+
+export default function AICustomerIntelligencePlatform() {
   return (
-    <>
-      <Head>
-        <title>AI Customer Intelligence Platform - Zion Tech Group</title>
-        <meta name="description" content="Transform customer relationships with Zion Tech Group's AI customer intelligence platform. Advanced analytics, predictive insights, and personalized experiences." />
-        <meta name="keywords" content="AI customer intelligence, customer analytics, predictive insights, personalization, Zion Tech Group" />
-        <link rel="canonical" href="https://ziontechgroup.com/ai-customer-intelligence-platform" />
-      </Head>
-
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-900">
-        {/* Hero Section */}
-        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto text-center">
-            <div className="mb-8">
-              <Brain className="mx-auto h-16 w-16 text-indigo-400" />
+    <div className="min-h-screen bg-black text-white">
+      {/* Hero Section */}
+      <section className="relative py-20 lg:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-teal-900/20 via-cyan-900/20 to-blue-900/20"></div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-teal-500/20 border border-teal-500/30 text-teal-300 text-sm font-medium mb-8">
+              <User className="w-4 h-4 mr-2" />
+              AI-Powered Customer Intelligence
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-teal-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
               AI Customer Intelligence Platform
             </h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Unlock the power of customer data with AI-driven insights. 
-              Understand, predict, and personalize every customer interaction.
+            
+            <p className="text-xl lg:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
+              The world's most advanced AI customer intelligence platform that provides deep insights into 
+              customer behavior, preferences, and lifetime value across all touchpoints.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                href="/contact" 
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-teal-600 to-cyan-600 rounded-xl font-semibold text-white hover:from-teal-700 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105"
+              >
+                Get Started
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Link>
+              <Link 
+                href="#features" 
+                className="inline-flex items-center px-8 py-4 border border-teal-500/30 rounded-xl font-semibold text-teal-300 hover:bg-teal-500/10 transition-all duration-300"
+              >
+                Learn More
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section id="features" className="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+              Revolutionary Customer Intelligence
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Our AI platform handles every aspect of customer intelligence from data collection to insights, 
+              continuously learning and optimizing for maximum customer understanding and engagement.
             </p>
           </div>
-        </section>
 
-        {/* Platform Overview */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Intelligent Customer Understanding
-              </h2>
-              <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-                Our AI platform transforms raw customer data into actionable intelligence, 
-                enabling personalized experiences and predictive business decisions.
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-teal-900/20 to-cyan-900/20 border border-teal-500/20">
+              <div className="w-12 h-12 bg-teal-500/20 rounded-xl flex items-center justify-center mb-4">
+                <Brain className="w-6 h-6 text-teal-400" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">AI Intelligence</h3>
+              <p className="text-gray-400">
+                Advanced AI that understands customer behavior patterns, preferences, and predictive analytics.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
-                <Users className="h-12 w-12 text-indigo-400 mb-4" />
-                <h3 className="text-xl font-semibold text-white mb-3">Customer Profiling</h3>
-                <p className="text-gray-300">
-                  Comprehensive customer segmentation and behavioral 
-                  analysis for targeted marketing and personalization.
-                </p>
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-cyan-900/20 to-blue-900/20 border border-cyan-500/20">
+              <div className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-4">
+                <Eye className="w-6 h-6 text-cyan-400" />
               </div>
+              <h3 className="text-xl font-semibold mb-3">360° Customer View</h3>
+              <p className="text-gray-400">
+                Comprehensive customer profiles across all channels, touchpoints, and interactions.
+              </p>
+            </div>
 
-              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
-                <BarChart3 className="h-12 w-12 text-blue-400 mb-4" />
-                <h3 className="text-xl font-semibold text-white mb-3">Predictive Analytics</h3>
-                <p className="text-gray-300">
-                  AI-powered forecasting of customer behavior, 
-                  churn prediction, and lifetime value optimization.
-                </p>
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-blue-900/20 to-indigo-900/20 border border-blue-500/20">
+              <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4">
+                <TrendingUp className="w-6 h-6 text-blue-400" />
               </div>
+              <h3 className="text-xl font-semibold mb-3">Predictive Analytics</h3>
+              <p className="text-gray-400">
+                Forecasts customer behavior, churn risk, and lifetime value with high accuracy.
+              </p>
+            </div>
 
-              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
-                <Target className="h-12 w-12 text-green-400 mb-4" />
-                <h3 className="text-xl font-semibold text-white mb-3">Personalization Engine</h3>
-                <p className="text-gray-300">
-                  Dynamic content and product recommendations 
-                  based on real-time customer intelligence.
-                </p>
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-indigo-900/20 to-purple-900/20 border border-indigo-500/20">
+              <div className="w-12 h-12 bg-indigo-500/20 rounded-xl flex items-center justify-center mb-4">
+                <Heart className="w-6 h-6 text-indigo-400" />
               </div>
+              <h3 className="text-xl font-semibold mb-3">Sentiment Analysis</h3>
+              <p className="text-gray-400">
+                Real-time analysis of customer emotions, satisfaction, and sentiment across all channels.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-900/20 to-pink-900/20 border border-purple-500/20">
+              <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-4">
+                <ShoppingCart className="w-6 h-6 text-purple-400" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Purchase Behavior</h3>
+              <p className="text-gray-400">
+                Deep insights into buying patterns, preferences, and cross-selling opportunities.
+              </p>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-pink-900/20 to-red-900/20 border border-pink-500/20">
+              <div className="w-12 h-12 bg-pink-500/20 rounded-xl flex items-center justify-center mb-4">
+                <BarChart3 className="w-6 h-6 text-pink-400" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Real-time Insights</h3>
+              <p className="text-gray-400">
+                Instant access to customer intelligence for immediate decision-making and action.
+              </p>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Core Features */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-800/20">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
-              Platform Features
+      {/* Intelligence Capabilities Section */}
+      <section className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+              Customer Intelligence Capabilities
             </h2>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-6">
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Data Integration</h3>
-                  <p className="text-gray-300">
-                    Seamless integration with CRM, e-commerce, 
-                    social media, and customer support platforms.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Real-time Processing</h3>
-                  <p className="text-gray-300">
-                    Instant analysis and insights from customer 
-                    interactions and behavioral data.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Machine Learning Models</h3>
-                  <p className="text-gray-300">
-                    Advanced AI algorithms for pattern recognition, 
-                    clustering, and predictive modeling.
-                  </p>
-                </div>
-              </div>
-
-              <div className="space-y-6">
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Automated Insights</h3>
-                  <p className="text-gray-300">
-                    AI-generated reports and actionable 
-                    recommendations for business optimization.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">A/B Testing</h3>
-                  <p className="text-gray-300">
-                    Intelligent testing and optimization of 
-                    customer experiences and marketing campaigns.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">API & Integrations</h3>
-                  <p className="text-gray-300">
-                    Comprehensive APIs for custom integrations 
-                    and third-party platform connectivity.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Intelligence Capabilities */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
-              Intelligence Capabilities
-            </h2>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                <h3 className="text-xl font-semibold text-white mb-3">Behavioral Analysis</h3>
-                <p className="text-gray-300">
-                  Deep understanding of customer behavior patterns, 
-                  preferences, and interaction history.
-                </p>
-              </div>
-
-              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                <h3 className="text-xl font-semibold text-white mb-3">Sentiment Analysis</h3>
-                <p className="text-gray-300">
-                  Real-time analysis of customer emotions and 
-                  satisfaction levels across all touchpoints.
-                </p>
-              </div>
-
-              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                <h3 className="text-xl font-semibold text-white mb-3">Churn Prediction</h3>
-                <p className="text-gray-300">
-                  Early warning systems for customer retention 
-                  and proactive intervention strategies.
-                </p>
-              </div>
-
-              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                <h3 className="text-xl font-semibold text-white mb-3">Lifetime Value</h3>
-                <p className="text-gray-300">
-                  Predictive modeling of customer lifetime value 
-                  and revenue optimization strategies.
-                </p>
-              </div>
-
-              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                <h3 className="text-xl font-semibold text-white mb-3">Cross-selling</h3>
-                <p className="text-gray-300">
-                  Intelligent product recommendations and 
-                  cross-selling opportunities identification.
-                </p>
-              </div>
-
-              <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                <h3 className="text-xl font-semibold text-white mb-3">Market Trends</h3>
-                <p className="text-gray-300">
-                  Analysis of market trends and competitive 
-                  intelligence for strategic decision making.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Use Cases */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-800/20">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
-              Applications & Use Cases
-            </h2>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-6">
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">E-commerce & Retail</h3>
-                  <p className="text-gray-300">
-                    Personalized shopping experiences, product recommendations, 
-                    and inventory optimization based on customer behavior.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Financial Services</h3>
-                  <p className="text-gray-300">
-                    Risk assessment, fraud detection, and personalized 
-                    financial product recommendations.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Healthcare</h3>
-                  <p className="text-gray-300">
-                    Patient engagement, treatment adherence, and 
-                    personalized healthcare recommendations.
-                  </p>
-                </div>
-              </div>
-
-              <div className="space-y-6">
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Telecommunications</h3>
-                  <p className="text-gray-300">
-                    Customer service optimization, plan recommendations, 
-                    and churn prevention strategies.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Travel & Hospitality</h3>
-                  <p className="text-gray-300">
-                    Personalized travel recommendations, dynamic pricing, 
-                    and loyalty program optimization.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">B2B Services</h3>
-                  <p className="text-gray-300">
-                    Account-based marketing, sales intelligence, 
-                    and customer success optimization.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Technology Stack */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
-              Technology & Architecture
-            </h2>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-6">
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Big Data Processing</h3>
-                  <p className="text-gray-300">
-                    Scalable data processing with Apache Spark, 
-                    Hadoop, and real-time streaming capabilities.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Machine Learning</h3>
-                  <p className="text-gray-300">
-                    TensorFlow, PyTorch, and scikit-learn for 
-                    advanced AI models and predictive analytics.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Cloud Infrastructure</h3>
-                  <p className="text-gray-300">
-                    AWS, Azure, and Google Cloud for scalable 
-                    and reliable platform hosting.
-                  </p>
-                </div>
-              </div>
-
-              <div className="space-y-6">
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Real-time Analytics</h3>
-                  <p className="text-gray-300">
-                    Apache Kafka and Redis for real-time data 
-                    processing and analytics capabilities.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Data Visualization</h3>
-                  <p className="text-gray-300">
-                    Interactive dashboards and reports with 
-                    Tableau, Power BI, and custom solutions.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Security & Privacy</h3>
-                  <p className="text-gray-300">
-                    GDPR compliance, data encryption, and 
-                    secure access controls for customer data.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Benefits */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-800/20">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
-              Business Benefits
-            </h2>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-6">
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Increased Revenue</h3>
-                  <p className="text-gray-300">
-                    Higher conversion rates, increased average order value, 
-                    and improved customer retention through personalization.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Cost Reduction</h3>
-                  <p className="text-gray-300">
-                    Optimized marketing spend, reduced churn, and 
-                    improved operational efficiency through automation.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Customer Satisfaction</h3>
-                  <p className="text-gray-300">
-                    Enhanced customer experiences, personalized interactions, 
-                    and improved brand loyalty through intelligent insights.
-                  </p>
-                </div>
-              </div>
-
-              <div className="space-y-6">
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Competitive Advantage</h3>
-                  <p className="text-gray-300">
-                    Data-driven decision making, market insights, and 
-                    faster response to customer needs and market changes.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Scalability</h3>
-                  <p className="text-gray-300">
-                    Platform grows with your business, handling 
-                    increasing data volumes and user interactions.
-                  </p>
-                </div>
-
-                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
-                  <h3 className="text-xl font-semibold text-white mb-3">Future-Proofing</h3>
-                  <p className="text-gray-300">
-                    Continuous AI model updates and technology 
-                    advancements to stay ahead of market trends.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Implementation Process */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-16">
-              Implementation Process
-            </h2>
-
-            <div className="grid md:grid-cols-4 gap-8">
-              <div className="text-center">
-                <div className="bg-indigo-500/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-indigo-400">1</span>
-                </div>
-                <h3 className="text-lg font-semibold text-white mb-2">Assessment</h3>
-                <p className="text-gray-300">Data audit and business requirements analysis</p>
-              </div>
-
-              <div className="text-center">
-                <div className="bg-blue-500/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-blue-400">2</span>
-                </div>
-                <h3 className="text-lg font-semibold text-white mb-2">Integration</h3>
-                <p className="text-gray-300">Data source connection and platform setup</p>
-              </div>
-
-              <div className="text-center">
-                <div className="bg-green-500/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-green-400">3</span>
-                </div>
-                <h3 className="text-lg font-semibold text-white mb-2">Training</h3>
-                <p className="text-gray-300">AI model training and optimization</p>
-              </div>
-
-              <div className="text-center">
-                <div className="bg-purple-500/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-purple-400">4</span>
-                </div>
-                <h3 className="text-lg font-semibold text-white mb-2">Deployment</h3>
-                <p className="text-gray-300">Live platform launch and ongoing support</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Get Started */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-slate-800/20">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Start Your AI Journey
-            </h2>
-            <p className="text-lg text-gray-300 mb-8">
-              Ready to transform your customer relationships with AI-powered intelligence? 
-              Our platform will help you unlock the full potential of your customer data.
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Our AI platform provides comprehensive customer intelligence across all aspects of the customer journey.
             </p>
-            
-            <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-8 border border-slate-700">
-              <Brain className="mx-auto h-12 w-12 text-indigo-400 mb-4" />
-              <h3 className="text-xl font-semibold text-white mb-4">Getting Started</h3>
-              <div className="grid md:grid-cols-2 gap-6 text-left">
-                <div>
-                  <h4 className="font-semibold text-white mb-2">For Small Businesses</h4>
-                  <ul className="space-y-1 text-gray-300 text-sm">
-                    <li>• Basic analytics dashboard</li>
-                    <li>• Customer segmentation</li>
-                    <li>• Email marketing integration</li>
-                    <li>• Support and training</li>
-                  </ul>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-teal-900/20 to-cyan-900/20 border border-teal-500/20">
+              <div className="w-12 h-12 bg-teal-500/20 rounded-xl flex items-center justify-center mb-4">
+                <Search className="w-6 h-6 text-teal-400" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-teal-400">Customer Discovery</h3>
+              <ul className="text-gray-400 space-y-2">
+                <li>• Customer segmentation</li>
+                <li>• Behavioral analysis</li>
+                <li>• Preference mapping</li>
+                <li>• Demographic insights</li>
+                <li>• Psychographic profiling</li>
+              </ul>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-cyan-900/20 to-blue-900/20 border border-cyan-500/20">
+              <div className="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-4">
+                <TrendingUp className="w-6 h-6 text-cyan-400" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-cyan-400">Journey Mapping</h3>
+              <ul className="text-gray-400 space-y-2">
+                <li>• Touchpoint analysis</li>
+                <li>• Conversion tracking</li>
+                <li>• Friction identification</li>
+                <li>• Path optimization</li>
+                <li>• Experience mapping</li>
+              </ul>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-blue-900/20 to-indigo-900/20 border border-blue-500/20">
+              <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4">
+                <Heart className="w-6 h-6 text-blue-400" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-blue-400">Engagement Analysis</h3>
+              <ul className="text-gray-400 space-y-2">
+                <li>• Interaction patterns</li>
+                <li>• Content preferences</li>
+                <li>• Channel preferences</li>
+                <li>• Response rates</li>
+                <li>• Engagement scoring</li>
+              </ul>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-indigo-900/20 to-purple-900/20 border border-indigo-500/20">
+              <div className="w-12 h-12 bg-indigo-500/20 rounded-xl flex items-center justify-center mb-4">
+                <ShoppingCart className="w-6 h-6 text-indigo-400" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-indigo-400">Purchase Intelligence</h3>
+              <ul className="text-gray-400 space-y-2">
+                <li>• Buying patterns</li>
+                <li>• Product preferences</li>
+                <li>• Price sensitivity</li>
+                <li>• Cross-selling opportunities</li>
+                <li>• Lifetime value</li>
+              </ul>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-purple-900/20 to-pink-900/20 border border-purple-500/20">
+              <div className="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-4">
+                <User className="w-6 h-6 text-purple-400" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-purple-400">Personalization</h3>
+              <ul className="text-gray-400 space-y-2">
+                <li>• Dynamic content</li>
+                <li>• Personalized offers</li>
+                <li>• Custom experiences</li>
+                <li>• Tailored messaging</li>
+                <li>• Individual recommendations</li>
+              </ul>
+            </div>
+
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-pink-900/20 to-red-900/20 border border-pink-500/20">
+              <div className="w-12 h-12 bg-pink-500/20 rounded-xl flex items-center justify-center mb-4">
+                <BarChart3 className="w-6 h-6 text-pink-400" />
+              </div>
+              <h3 className="text-xl font-semibold mb-3 text-pink-400">Predictive Insights</h3>
+              <ul className="text-gray-400 space-y-2">
+                <li>• Churn prediction</li>
+                <li>• Next best action</li>
+                <li>• Demand forecasting</li>
+                <li>• Risk assessment</li>
+                <li>• Opportunity identification</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+              How AI Customer Intelligence Works
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Our AI platform operates in a continuous cycle of learning, analyzing, and providing customer insights.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-teal-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-teal-400">1</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Data Collection</h3>
+              <p className="text-gray-400">
+                AI collects and integrates customer data from all sources, channels, and touchpoints.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-cyan-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-cyan-400">2</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Intelligent Analysis</h3>
+              <p className="text-gray-400">
+                Advanced AI algorithms analyze customer behavior, patterns, and preferences in real-time.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-blue-400">3</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Insight Generation</h3>
+              <p className="text-gray-400">
+                Generates actionable insights and recommendations for customer engagement and growth.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-indigo-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-indigo-400">4</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Continuous Learning</h3>
+              <p className="text-gray-400">
+                Learns from new data and feedback to continuously improve intelligence and accuracy.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-teal-900/20 via-cyan-900/20 to-blue-900/20">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+            Ready to Understand Your Customers Like Never Before?
+          </h2>
+          <p className="text-xl text-gray-300 mb-8">
+            Join the future of customer intelligence where AI provides deep insights while you focus on growth and engagement.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link 
+              href="/contact" 
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-teal-600 to-cyan-600 rounded-xl font-semibold text-white hover:from-teal-700 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105"
+            >
+              Start Your Free Trial
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Link>
+            <a 
+              href={`tel:${contactInfo.mobile}`}
+              className="inline-flex items-center px-8 py-4 border border-teal-500/30 rounded-xl font-semibold text-teal-300 hover:bg-teal-500/10 transition-all duration-300"
+            >
+              <Phone className="mr-2 w-5 h-5" />
+              Call Now
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-20 bg-black">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+              <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
+              <p className="text-gray-400 mb-8">
+                Ready to revolutionize your customer intelligence with AI? Our team is here to help you get started.
+              </p>
+              
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <Phone className="w-5 h-5 text-teal-400" />
+                  <a href={`tel:${contactInfo.mobile}`} className="text-gray-300 hover:text-white transition-colors">
+                    {contactInfo.mobile}
+                  </a>
                 </div>
-                <div>
-                  <h4 className="font-semibold text-white mb-2">For Enterprises</h4>
-                  <ul className="space-y-1 text-gray-300 text-sm">
-                    <li>• Advanced AI models</li>
-                    <li>• Custom integrations</li>
-                    <li>• Dedicated support team</li>
-                    <li>• White-label solutions</li>
-                  </ul>
+                <div className="flex items-center space-x-3">
+                  <Mail className="w-5 h-5 text-teal-400" />
+                  <a href={`mailto:${contactInfo.email}`} className="text-gray-300 hover:text-white transition-colors">
+                    {contactInfo.email}
+                  </a>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <MapPin className="w-5 h-5 text-teal-400" />
+                  <span className="text-gray-300">{contactInfo.address}</span>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-      </div>
-    </>
-  );
-};
 
-export default AICustomerIntelligencePlatformPage;
+            <div className="bg-gradient-to-br from-teal-900/20 to-cyan-900/20 rounded-2xl p-8 border border-teal-500/20">
+              <h3 className="text-xl font-semibold mb-4">Request a Demo</h3>
+              <p className="text-gray-400 mb-6">
+                See our AI Customer Intelligence Platform in action. Schedule a personalized demo today.
+              </p>
+              <Link 
+                href="/contact" 
+                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-teal-600 to-cyan-600 rounded-xl font-semibold text-white hover:from-teal-700 hover:to-cyan-700 transition-all duration-300"
+              >
+                Schedule Demo
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}

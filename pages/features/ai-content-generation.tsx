@@ -1,1 +1,2 @@
-export { default } from '@/pages/features/AIPoweredContent'; 
+import React from 'react';
+import Head from 'next/head';

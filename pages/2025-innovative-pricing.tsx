@@ -7,33 +7,10 @@ import {
 } from 'lucide-react';
 
 // Import our new 2025 services
-import { advancedAIAutomationServices } from '../data/2026-advanced-ai-automation-services';
-import { innovative2025ITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
+import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
+import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
 import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
 import { emergingTechnologyServices } from '../data/2025-emerging-technology-services';
-
-// Unified service interface for pricing display
-interface UnifiedService {
-  id: string;
-  name: string;
-  tagline: string;
-  description: string;
-  category: string;
-  icon?: string;
-  popular?: boolean;
-  link?: string;
-  price?: string | number;
-  pricing?: {
-    starter: string;
-    professional: string;
-    enterprise: string;
-    custom: string;
-  };
-  price_monthly?: number;
-  price_yearly?: number;
-  trialDays?: number;
-  setupTime?: string;
-}
 
 const contact = {
   mobile: '+1 302 464 0950',
@@ -45,18 +22,18 @@ const contact = {
 // Service categories with pricing tiers
 const serviceCategories = [
   {
-    id: 'ai-automation',
-    name: 'AI Automation Services',
+    id: 'enterprise-ai',
+    name: 'Enterprise AI Services',
     icon: <Brain className="w-8 h-8" />,
     color: 'from-purple-500 to-pink-500',
-    services: advancedAIAutomationServices
+    services: advancedAIAutomationServices2025
   },
   {
     id: 'it-infrastructure',
     name: 'IT Infrastructure Services',
     icon: <Building className="w-8 h-8" />,
     color: 'from-blue-500 to-indigo-500',
-    services: innovative2025ITInfrastructureServices
+    services: innovativeITInfrastructureServices2025
   },
   {
     id: 'micro-saas',
@@ -125,9 +102,30 @@ const pricingTiers = [
   }
 ];
 
+// Helper function to get service pricing
+const getServicePricing = (service: any) => {
+  if (service.pricing?.starter) return service.pricing.starter;
+  if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
+  if (service.price?.monthly) return `$${service.price.monthly}/month`;
+  return 'Contact for pricing';
+};
+
+// Helper function to get service pricing display
+const getServicePricingDisplay = (service: any) => {
+  if (service.pricing?.starter) return service.pricing.starter;
+  if (service.pricing?.monthly) return `$${service.pricing.monthly}`;
+  if (service.price?.monthly) return `$${service.price.monthly}`;
+  return 'Contact';
+};
+
+// Helper function to get service period
+const getServicePeriod = (service: any) => {
+  if (service.pricing?.starter || service.pricing?.monthly || service.price?.monthly) return '/month';
+  return '';
+};
+
 export default function InnovativePricing2025() {
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [billingCycle, setBillingCycle] = useState<'monthly' | 'yearly'>('monthly');
 
   // Normalize services to unified format
   const normalizeService = (service: any): UnifiedService => {
@@ -188,24 +186,15 @@ export default function InnovativePricing2025() {
     let allServices: UnifiedService[] = [];
     
     if (selectedCategory === 'all') {
-      allServices = [
-        ...advancedAIAutomationServices.map(normalizeService),
-        ...innovative2025ITInfrastructureServices.map(normalizeService),
-        ...innovativeMicroSaasSolutions2025.map(normalizeService),
-        ...emergingTechnologyServices.map(normalizeService)
+      return [
+        ...advancedAIAutomationServices2025,
+        ...innovativeITInfrastructureServices2025,
+        ...innovativeMicroSaasSolutions2025,
+        ...emergingTechnologyServices
       ];
-    } else {
-      const category = serviceCategories.find(cat => cat.id === selectedCategory);
-      if (category) {
-        allServices = category.services.map(normalizeService);
-      }
     }
     
     return allServices;
-  };
-
-  const getYearlyDiscount = (monthlyPrice: number) => {
-    return Math.round(monthlyPrice * 12 * 0.17); // 17% discount for yearly
   };
 
   return (
@@ -249,22 +238,8 @@ export default function InnovativePricing2025() {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="flex items-center justify-center gap-4 mb-8"
             >
-              <span className={`text-lg ${billingCycle === 'monthly' ? 'text-white' : 'text-gray-400'}`}>
+              <span className={`text-lg text-white`}>
                 Monthly
-              </span>
-              <button
-                onClick={() => setBillingCycle(billingCycle === 'monthly' ? 'yearly' : 'monthly')}
-                className={`relative w-16 h-8 rounded-full transition-all duration-300 ${
-                  billingCycle === 'yearly' ? 'bg-purple-500' : 'bg-gray-600'
-                }`}
-              >
-                <div className={`absolute top-1 w-6 h-6 bg-white rounded-full transition-all duration-300 ${
-                  billingCycle === 'yearly' ? 'left-9' : 'left-1'
-                }`} />
-              </button>
-              <span className={`text-lg ${billingCycle === 'yearly' ? 'text-white' : 'text-gray-400'}`}>
-                Yearly
-                <span className="ml-2 text-sm text-green-400">Save 17%</span>
               </span>
             </motion.div>
           </div>
@@ -372,12 +347,7 @@ export default function InnovativePricing2025() {
               className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 border border-white/20 hover:border-purple-500/50 transition-all duration-300"
             >
               <div className="flex items-start justify-between mb-4">
-                <div className="text-3xl">{service.icon || '🚀'}</div>
-                {service.popular && (
-                  <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-xs font-bold px-2 py-1 rounded-full">
-                    POPULAR
-                  </span>
-                )}
+                <div className="text-3xl">🚀</div>
               </div>
               
               <h3 className="text-xl font-bold text-white mb-2">{service.name}</h3>
@@ -386,23 +356,12 @@ export default function InnovativePricing2025() {
               <div className="mb-4">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-2xl font-bold text-purple-400">
-                    {service.pricing ? 
-                      (billingCycle === 'monthly' ? service.pricing.professional : service.pricing.professional) :
-                      (billingCycle === 'monthly' ? 
-                        (service.price_monthly ? `$${service.price_monthly}` : (service.price || 'Contact')) :
-                        (service.price_yearly ? `$${service.price_yearly}` : (service.price || 'Contact'))
-                      )
-                    }
+                    {getServicePricingDisplay(service)}
                   </span>
                   <span className="text-gray-400">
-                    /{billingCycle === 'monthly' ? 'month' : 'year'}
+                    {getServicePeriod(service)}
                   </span>
                 </div>
-                {billingCycle === 'yearly' && service.price_monthly && (
-                  <div className="text-sm text-green-400">
-                    Save ${getYearlyDiscount(service.price_monthly)} annually
-                  </div>
-                )}
               </div>
 
               <div className="mb-4">
@@ -413,15 +372,15 @@ export default function InnovativePricing2025() {
 
               <div className="space-y-2 mb-6">
                 <div className="text-xs text-gray-400">
-                  <span className="text-gray-500">Setup:</span> {service.setupTime || 'Custom'}
+                  <span className="text-gray-500">Type:</span> {service.type}
                 </div>
                 <div className="text-xs text-gray-400">
-                  <span className="text-gray-500">Trial:</span> {service.trialDays || 14} days
+                  <span className="text-gray-500">Market Size:</span> {service.marketSize}
                 </div>
               </div>
 
               <a
-                href={service.link}
+                href={service.slug || `/services/${service.id}`}
                 className="w-full bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 group"
               >
                 View Details

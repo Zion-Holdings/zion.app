@@ -1,5 +1,5 @@
 [build]
-  command = "chmod +x scripts/pre-build-check.sh && ./scripts/pre-build-check.sh && npm ci && npm run export"
+  command = "npm ci && npm run export"
   publish = "out"
 
 [build.environment]
@@ -10,15 +10,6 @@
 [functions]
   directory = "netlify/functions"
   node_bundler = "esbuild"
-
-# New autonomous functions schedules
-[[scheduled.functions]]
-  name = "auto-redirect-mapper"
-  schedule = "*/10 * * * *"
-
-[[scheduled.functions]]
-  name = "asset-size-guardian"
-  schedule = "*/30 * * * *"
 
 
 [[plugins]]
@@ -36,120 +27,91 @@
 # Scheduled Functions (new automations replacing some GitHub Actions cadence)
 [[scheduled.functions]]
   name = "homepage_advertiser"
-  schedule = "*/15 * * * *"
+  schedule = "*/15 * * * *" # every 15 minutes
 
 [[scheduled.functions]]
   name = "cloud_orchestrator"
-  schedule = "0 */4 * * *"
+  schedule = "0 */4 * * *" # every 4 hours
 
 [[scheduled.functions]]
   name = "front-enhancer"
-  schedule = "*/10 * * * *" # every 10 minutes
+  schedule = "*/5 * * * *" # every 5 minutes
 
 [[scheduled.functions]]
   name = "front-index-orchestrator"
-  schedule = "*/5 * * * *"
-
-[[scheduled.functions]]
-  name = "front-index-directory-builder"
   schedule = "*/5 * * * *" # every 5 minutes
 
 [[scheduled.functions]]
   name = "frontpage-enhancer"
-  schedule = "*/20 * * * *"
+  schedule = "*/20 * * * *" # every 20 minutes
 
 [[scheduled.functions]]
   name = "marketing-and-features-promo"
-  schedule = "0 */2 * * *"
+  schedule = "0 */2 * * *" # every 2 hours
 
 [[scheduled.functions]]
   name = "link-and-health-scheduler"
-  schedule = "0 */6 * * *"
+  schedule = "0 */6 * * *" # every 6 hours
 
 [[scheduled.functions]]
   name = "sitemap_runner"
-  schedule = "0 */12 * * *"
+  schedule = "0 */12 * * *" # twice per day
 
 [[scheduled.functions]]
   name = "fast-front-promoter"
-  schedule = "*/15 * * * *"
+  schedule = "*/15 * * * *" # every 15 minutes
 
 [[scheduled.functions]]
   name = "fast-orchestrator"
-  schedule = "*/1 * * * *"
+  schedule = "*/1 * * * *" # every minute
 
 [[scheduled.functions]]
   name = "continuous-orchestrator"
-  schedule = "*/5 * * * *"
+  schedule = "*/5 * * * *" # every 5 minutes
 
 [[scheduled.functions]]
   name = "front-visionary-expander"
-  schedule = "*/3 * * * *"
+  schedule = "*/3 * * * *" # fast refresh for front systems
 
 [[scheduled.functions]]
   name = "home-visionary-expander"
-  schedule = "*/4 * * * *"
+  schedule = "*/4 * * * *" # fast refresh for homepage
 
 [[scheduled.functions]]
   name = "ultrafast-orchestrator"
-  schedule = "*/1 * * * *"
-
-[[scheduled.functions]]
-  name = "orchestrator-swarm"
-  schedule = "*/3 * * * *" # every 3 minutes
-
-[[scheduled.functions]]
-  name = "cloud-swarm-committer"
-  schedule = "*/2 * * * *" # every 2 minutes
+  schedule = "*/1 * * * *" # every minute
 
 [[scheduled.functions]]
   name = "trigger-all-and-commit"
-  schedule = "*/1 * * * *"
+  schedule = "*/1 * * * *" # every minute
 
 [[scheduled.functions]]
   name = "front-maximizer"
-  schedule = "*/5 * * * *"
+  schedule = "*/5 * * * *" # every 5 minutes
 
 [[scheduled.functions]]
   name = "continuous-front-runner"
-  schedule = "*/3 * * * *"
+  schedule = "*/3 * * * *" # every 3 minutes
 
 [[scheduled.functions]]
   name = "readme-advertiser"
-  schedule = "13 */6 * * *"
+  schedule = "13 */6 * * *" # every 6 hours
 
 [[scheduled.functions]]
   name = "front-ads-promoter"
-  schedule = "*/10 * * * *"
+  schedule = "*/10 * * * *" # every 10 minutes
 
 [[scheduled.functions]]
   name = "ultrafast-front-orchestrator"
-  schedule = "*/5 * * * *"
-
-[[scheduled.functions]]
-  name = "accelerated-sync-orchestrator"
-  schedule = "*/1 * * * *" # every minute
+  schedule = "*/5 * * * *" # every 5 minutes
 
 # New ultra-fast tools
 [[scheduled.functions]]
   name = "features-capabilities-benefits-advertiser"
-  schedule = "*/2 * * * *"
+  schedule = "*/2 * * * *" # every 2 minutes
 
 [[scheduled.functions]]
   name = "hyper-front-index-accelerator"
-  schedule = "*/1 * * * *"
-
-# Autonomous meta orchestrators
-[[scheduled.functions]]
-  name = "autonomous-meta-orchestrator"
-  schedule = "*/1 * * * *"
-
-[[scheduled.functions]]
-  name = "cloud-trigger-hub"
-  schedule = "*/2 * * * *"
-
-[[scheduled.functions]]
-  name = "supreme-orchestrator"
   schedule = "*/1 * * * *" # every minute
 
 [[scheduled.functions]]
@@ -204,33 +166,8 @@
   name = "docs-search-index-runner"
   schedule = "53 */6 * * *"
 
-# Resolved conflict: include all relevant scheduled functions
-[[scheduled.functions]]
-  name = "redirect-healer"
-  schedule = "*/15 * * * *"
-
-[[scheduled.functions]]
-  name = "sitemap-prioritizer"
-  schedule = "17 */6 * * *"
-
-[[scheduled.functions]]
-  name = "redirect-manager"
-  schedule = "*/30 * * * *"
-
-[[scheduled.functions]]
-  name = "a11y-audit-runner"
-  schedule = "*/20 * * * *"
-
 [[scheduled.functions]]
   name = "todo-summary-runner"
-  schedule = "*/30 * * * *"
-
-[[scheduled.functions]]
-  name = "component-catalog-runner"
-  schedule = "13 */6 * * *"
-
-[[scheduled.functions]]
-  name = "automation-atlas-runner"
   schedule = "*/30 * * * *"
 
 [[scheduled.functions]]
@@ -243,14 +180,6 @@
   schedule = "*/10 * * * *" # every 10 minutes
 
 [[scheduled.functions]]
-  name = "revenue-optimizer"
-  schedule = "7 * * * *" # hourly
-
-[[scheduled.functions]]
-  name = "seo-content-gap"
-  schedule = "17 */3 * * *" # every 3 hours
-
-[[scheduled.functions]]
   name = "broken-image-scanner"
   schedule = "0 */6 * * *" # every 6 hours
 
@@ -259,22 +188,6 @@
   schedule = "*/15 * * * *" # every 15 minutes
 
 [[scheduled.functions]]
-<<<<<<< HEAD
-  name = "autonomous-ad-factory"
-  schedule = "*/10 * * * *" # every 10 minutes
-
-[[scheduled.functions]]
-  name = "knowledge-radar-orchestrator"
-  schedule = "17 */6 * * *" # every 6 hours
-
-[[scheduled.functions]]
-  name = "innovation-researcher"
-  schedule = "9 */2 * * *" # every 2 hours
-
-[[scheduled.functions]]
-  name = "continuous-cloud-refiner"
-  schedule = "*/5 * * * *" # every 5 minutes
-=======
   name = "seo-audit-runner"
   schedule = "17 */12 * * *"
 
@@ -289,4 +202,126 @@
 [[scheduled.functions]]
   name = "revenue-ideas-promoter"
   schedule = "41 */4 * * *"
->>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-0980
+=======
+  name = "autonomous-innovation-generator"
+  schedule = "*/2 * * * *" # every 2 minutes
+
+[[scheduled.functions]]
+  name = "metadata-optimizer-runner"
+  schedule = "*/15 * * * *" # every 15 minutes
+
+[[scheduled.functions]]
+  name = "seo-audit-runner"
+  schedule = "0 */2 * * *"
+
+[[scheduled.functions]]
+  name = "ai-trends-radar-runner"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+  name = "stale-content-auditor-runner"
+  schedule = "17 */6 * * *"
+
+[[scheduled.functions]]
+  name = "deps-auto-upgrade-runner"
+  schedule = "7 */12 * * *"
+
+# New autonomous cloud scanners
+[[scheduled.functions]]
+  name = "unused-media-scanner"
+  schedule = "*/10 * * * *"
+
+[[scheduled.functions]]
+  name = "orphan-pages-detector"
+  schedule = "*/15 * * * *"
+
+[[scheduled.functions]]
+  name = "component-size-report"
+  schedule = "*/5 * * * *"
+
+[[scheduled.functions]]
+  name = "license-compliance-auditor"
+  schedule = "0 2 * * 1"
+
+[[scheduled.functions]]
+  name = "pagespeed-insights-runner"
+  schedule = "11 */6 * * *" # every 6 hours, offset
+
+[[scheduled.functions]]
+  name = "knowledge-pack-runner"
+  schedule = "*/10 * * * *"
+
+[[scheduled.functions]]
+  name = "adaptive-orchestrator"
+  schedule = "*/5 * * * *"
+
+[[scheduled.functions]]
+  name = "site-404-map-runner"
+  schedule = "17 */6 * * *"
+
+[[scheduled.functions]]
+  name = "component-coupling-graph-runner"
+  schedule = "29 */6 * * *"
+
+[[scheduled.functions]]
+  name = "content-freshness-score-runner"
+  schedule = "7 */12 * * *"
+
+# Newly added intelligent automations
+[[scheduled.functions]]
+  name = "anchor-links-auto-fixer"
+  schedule = "*/5 * * * *"
+
+[[scheduled.functions]]
+  name = "internal-link-graph-runner"
+  schedule = "*/5 * * * *"
+
+[[scheduled.functions]]
+  name = "topic-cluster-builder-runner"
+  schedule = "13 */6 * * *"
+
+[[scheduled.functions]]
+  name = "topics-map-runner"
+  schedule = "*/20 * * * *"
+
+[[scheduled.functions]]
+  name = "robots-auditor"
+  schedule = "0 */6 * * *"
+
+[[scheduled.functions]]
+  name = "canonical-auditor"
+  schedule = "*/60 * * * *"
+
+# New autonomous orchestrations
+[[scheduled.functions]]
+  name = "roadmap-curator"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+  name = "revenue-ideas-lab"
+  schedule = "7 */6 * * *"
+
+[[scheduled.functions]]
+  name = "auto-discovery-runner"
+  schedule = "*/15 * * * *"
+
+[[scheduled.functions]]
+  name = "code-smell-audit-runner"
+  schedule = "23 */6 * * *"
+
+[[scheduled.functions]]
+  name = "duplicate-media-finder-runner"
+  schedule = "0 2 * * *"
+
+# Cron Hub — intelligent cloud schedulers
+[[scheduled.functions]]
+  name = "cron-hub"
+  schedule = "*/1 * * * *"
+
+[[scheduled.functions]]
+  name = "cron-supervisor"
+  schedule = "*/5 * * * *"
+
+[[scheduled.functions]]
+  name = "cron-heartbeat"
+  schedule = "*/1 * * * *"

@@ -19,6 +19,7 @@ export default function AiHealthcareAnalytics() {
 				"Interoperability and security]}
 			]}
 			industries={["Healthcare", "Hospitals", "Payers", "Providers"]}
+			url="https://ziontechgroup.com/ai-healthcare-analytics"
 		/>
 	);
 }

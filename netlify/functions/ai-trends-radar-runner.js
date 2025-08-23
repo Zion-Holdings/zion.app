@@ -8,7 +8,7 @@ function runNode(relPath, args = []) {
 }
 
 exports.config = {
-  schedule: '29 */6 * * *', // every 6 hours
+  schedule: '*/30 * * * *', // every 30 minutes
 };
 
 exports.handler = async () => {
@@ -22,10 +22,9 @@ exports.handler = async () => {
     return status;
   }
 
-  // Generate AI trends radar data and report
-  logStep('ai:trends:radar', () => runNode('scripts/ai-trends-radar.js'));
+  process.env.CANONICAL_URL = process.env.CANONICAL_URL || process.env.SITE_URL || process.env.URL || 'https://ziontechgroup.com';
 
-  // Attempt to push any changes
+  logStep('ai:trends-radar', () => runNode('scripts/ai-trends-radar.js'));
   logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
 
   return { statusCode: 200, body: logs.join('\n') };

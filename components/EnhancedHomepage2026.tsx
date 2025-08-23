@@ -3,7 +3,7 @@ import Layout from './layout/Layout';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ArrowRight, Play, Star, Users, Award, TrendingUp, Brain, Shield, Rocket, Loader2,
-  Zap, Globe, Cpu, Eye, Atom, ChevronLeft, ChevronRight
+  Zap, Globe, Cpu, Eye, Atom, Heart
 } from 'lucide-react';
 
 // Lazy load heavy components
@@ -74,64 +74,52 @@ const EnhancedHomepage2026: React.FC = () => {
 
   const featuredServices = [
     {
-      id: 'quantum-ai-orchestration',
-      title: "Quantum AI Orchestration Platform",
-      description: "Revolutionary AI orchestration leveraging quantum computing for unprecedented performance",
+      title: "Quantum AI Content Factory",
+      description: "Generate unlimited high-quality content with quantum AI processing",
       icon: Brain,
-      color: "from-purple-600 to-indigo-700",
-      price: "$4,999/month",
-      features: ["Quantum AI coordination", "Zero-latency switching", "Multi-model management"],
-      ariaLabel: "Learn more about Quantum AI Orchestration Platform"
-    },
-    {
-      id: 'autonomous-cybersecurity',
-      title: "Autonomous Cybersecurity Orchestrator",
-      description: "AI-powered cybersecurity automation with autonomous threat response",
-      icon: Shield,
-      color: "from-red-600 to-pink-700",
+      color: "from-purple-600 to-pink-700",
       price: "$1,299/month",
-      features: ["Autonomous threat detection", "Real-time response", "Zero-trust architecture"],
-      ariaLabel: "Learn more about Autonomous Cybersecurity Orchestrator"
+      features: ["Quantum AI content generation", "Unlimited content creation", "Multi-format support"]
     },
     {
-      id: 'quantum-financial-modeling',
-      title: "Quantum Financial Modeling Suite",
-      description: "Quantum-powered financial modeling for superior risk assessment and optimization",
-      icon: Zap,
-      color: "from-yellow-600 to-orange-700",
-      price: "$2,999/month",
-      features: ["Quantum Monte Carlo", "Portfolio optimization", "Risk assessment"],
-      ariaLabel: "Learn more about Quantum Financial Modeling Suite"
-    },
-    {
-      id: 'metaverse-commerce',
-      title: "Metaverse Commerce Platform",
-      description: "Complete e-commerce solution for virtual worlds and digital asset management",
-      icon: Globe,
-      color: "from-purple-600 to-indigo-700",
-      price: "$799/month",
-      features: ["3D storefronts", "NFT management", "Virtual currency"],
-      ariaLabel: "Learn more about Metaverse Commerce Platform"
-    },
-    {
-      id: 'autonomous-devops',
-      title: "Autonomous DevOps Orchestrator",
-      description: "AI-powered DevOps automation with intelligent infrastructure management",
-      icon: Cpu,
-      color: "from-green-600 to-emerald-700",
-      price: "$1,199/month",
-      features: ["Autonomous CI/CD", "Self-healing infrastructure", "Predictive optimization"],
-      ariaLabel: "Learn more about Autonomous DevOps Orchestrator"
-    },
-    {
-      id: 'quantum-computer-vision',
-      title: "Quantum Computer Vision Suite",
-      description: "Quantum-powered computer vision for unprecedented image analysis accuracy",
-      icon: Eye,
+      title: "Autonomous Customer Success Platform",
+      description: "AI-driven customer success automation that never sleeps",
+      icon: Shield,
       color: "from-cyan-600 to-blue-700",
-      price: "$3,499/month",
-      features: ["Quantum image processing", "Real-time analysis", "3D vision"],
-      ariaLabel: "Learn more about Quantum Computer Vision Suite"
+      price: "$899/month",
+      features: ["Autonomous monitoring", "Predictive churn prevention", "AI engagement scoring"]
+    },
+    {
+      title: "Quantum Financial Forecasting Engine",
+      description: "Predict market movements with quantum computing precision",
+      icon: Zap,
+      color: "from-emerald-600 to-teal-700",
+      price: "$2,499/month",
+      features: ["Quantum market analysis", "Real-time forecasting", "Portfolio optimization"]
+    },
+    {
+      title: "Autonomous DevOps Orchestrator",
+      description: "Self-managing infrastructure that scales automatically",
+      icon: Cpu,
+      color: "from-orange-600 to-red-700",
+      price: "$1,599/month",
+      features: ["Autonomous management", "Self-healing systems", "Predictive optimization"]
+    },
+    {
+      title: "Quantum Cybersecurity Monitor",
+      description: "Future-proof security with quantum-resistant encryption",
+      icon: Eye,
+      color: "from-red-600 to-pink-700",
+      price: "$1,799/month",
+      features: ["Quantum-resistant encryption", "AI threat detection", "Zero-trust architecture"]
+    },
+    {
+      title: "Autonomous Marketing AI",
+      description: "Marketing that runs itself with intelligent automation",
+      icon: Globe,
+      color: "from-blue-600 to-indigo-700",
+      price: "$1,099/month",
+      features: ["Autonomous campaigns", "AI optimization", "Predictive targeting"]
     }
   ];
 
@@ -219,7 +207,7 @@ const EnhancedHomepage2026: React.FC = () => {
                 
                 <motion.div variants={fadeInUp}>
                   <p className="text-2xl md:text-3xl lg:text-4xl text-gray-300 mb-10 max-w-4xl mx-auto leading-relaxed font-light">
-                    Pioneering the future of technology with <span className="text-cyan-400 font-semibold">quantum computing</span>, <span className="text-purple-400 font-semibold">autonomous AI</span>, and <span className="text-pink-400 font-semibold">revolutionary solutions</span> that drive business transformation
+                    Leading the <span className="text-cyan-400 font-semibold">quantum revolution</span> with <span className="text-purple-400 font-semibold">autonomous AI</span>, <span className="text-pink-400 font-semibold">consciousness technology</span>, and <span className="text-emerald-400 font-semibold">revolutionary micro SAAS solutions</span> that transform businesses worldwide
                   </p>
                 </motion.div>
 
@@ -264,9 +252,349 @@ const EnhancedHomepage2026: React.FC = () => {
           </AnimatePresence>
         </section>
 
-        {/* Featured Services Section with Lazy Loading */}
-        <section className="py-20 bg-gradient-to-b from-gray-900 to-black" aria-labelledby="services-heading">
-          <div className="container mx-auto px-4">
+        {/* Enhanced Statistics Section with Neon Effects */}
+        <motion.section 
+          className="py-24 px-4 bg-gradient-to-b from-gray-900/80 via-purple-900/40 to-gray-800/80 relative"
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+        >
+          {/* Background Pattern */}
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(147,51,234,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(147,51,234,0.05)_1px,transparent_1px)] bg-[size:100px_100px]"></div>
+          
+          <div className="max-w-7xl mx-auto relative z-10">
+            <motion.h2 
+              className="text-5xl md:text-6xl font-black text-center mb-20 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              Why Choose Zion Tech Group?
+            </motion.h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                { icon: Brain, title: "1500+ Services", description: "Revolutionary technology solutions", color: "cyan", gradient: "from-cyan-500 to-blue-500" },
+                { icon: Shield, title: "99.9% Satisfaction", description: "Exceptional client success rate", color: "blue", gradient: "from-blue-500 to-purple-500" },
+                { icon: Rocket, title: "24/7/365 Support", description: "Round-the-clock global assistance", color: "purple", gradient: "from-purple-500 to-pink-500" },
+                { icon: Star, title: "200+ Industries", description: "Cross-sector quantum expertise", color: "emerald", gradient: "from-emerald-500 to-teal-500" }
+              ].map((stat, index) => (
+                <motion.div
+                  key={stat.title}
+                  className="text-center p-8 rounded-2xl bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 hover:border-cyan-400/50 transition-all duration-300 hover:transform hover:scale-105 group relative overflow-hidden"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  whileHover={{ y: -10 }}
+                >
+                  {/* Background Gradient */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
+                  
+                  <div className="relative z-10">
+                    <div className="relative inline-block mb-6">
+                      <stat.icon className={`w-16 h-16 mx-auto text-${stat.color}-400 group-hover:text-${stat.color}-300 transition-colors`} />
+                      <div className={`absolute inset-0 w-16 h-16 bg-${stat.color}-400/20 rounded-full blur-xl group-hover:bg-${stat.color}-400/30 transition-all`}></div>
+                    </div>
+                    <h3 className="text-3xl font-bold text-white mb-3">{stat.title}</h3>
+                    <p className="text-gray-400 text-lg">{stat.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Enhanced Featured Services Showcase */}
+        <motion.section 
+          className="py-24 px-4 relative overflow-hidden"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+        >
+          {/* Background Elements */}
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.03)_1px,transparent_1px)] bg-[size:80px_80px]"></div>
+          
+          <div className="max-w-7xl mx-auto relative z-10">
+            <motion.h2 
+              className="text-5xl md:text-6xl font-black text-center mb-20 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              Our Revolutionary Services
+            </motion.h2>
+            
+            {/* Featured Service Showcase */}
+            <div className="mb-16">
+              <motion.div
+                className="text-center p-12 rounded-3xl bg-gradient-to-br from-gray-800/40 to-gray-900/40 backdrop-blur-sm border border-gray-700/50 hover:border-cyan-400/50 transition-all duration-500 hover:scale-105 relative overflow-hidden"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                whileHover={{ y: -5 }}
+              >
+                {/* Background Pattern */}
+                <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.05)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
+                
+                <div className="relative z-10">
+                  <div className="flex items-center justify-center mb-8">
+                    <div className={`p-6 rounded-2xl bg-gradient-to-r ${featuredServices[currentServiceIndex].color} shadow-2xl`}>
+                      {React.createElement(featuredServices[currentServiceIndex].icon, { className: "w-16 h-16 text-white" })}
+                    </div>
+                  </div>
+                  
+                  <h3 className="text-4xl font-bold text-white mb-6">{featuredServices[currentServiceIndex].title}</h3>
+                  <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">{featuredServices[currentServiceIndex].description}</p>
+                  
+                  <div className="text-3xl font-bold text-cyan-400 mb-8">{featuredServices[currentServiceIndex].price}</div>
+                  
+                  <div className="flex flex-wrap justify-center gap-4 mb-8">
+                    {featuredServices[currentServiceIndex].features.map((feature, index) => (
+                      <span
+                        key={index}
+                        className="px-4 py-2 bg-gray-700/50 rounded-full text-gray-300 text-sm border border-gray-600/50"
+                      >
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  <button 
+                    className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 focus:outline-none focus:ring-4 focus:ring-cyan-500/50"
+                    onClick={() => window.location.href = '/services'}
+                  >
+                    Explore All Services
+                  </button>
+                </div>
+              </motion.div>
+            </div>
+            
+            {/* Service Categories Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "Quantum AI & Consciousness",
+                  description: "Revolutionary AI consciousness and quantum intelligence solutions",
+                  features: ["Quantum AI", "Consciousness Technology", "Emotional Intelligence"],
+                  icon: Brain,
+                  color: "cyan",
+                  gradient: "from-cyan-500 to-blue-500"
+                },
+                {
+                  title: "Autonomous Systems",
+                  description: "Self-managing intelligent systems that operate independently",
+                  features: ["Autonomous AI", "Self-Healing Infrastructure", "Predictive Systems"],
+                  icon: Atom,
+                  color: "purple",
+                  gradient: "from-purple-500 to-pink-500"
+                },
+                {
+                  title: "Micro SAAS Solutions",
+                  description: "Innovative business solutions that scale from startup to enterprise",
+                  features: ["Business Automation", "Customer Success", "Marketing AI"],
+                  icon: Rocket,
+                  color: "blue",
+                  gradient: "from-blue-500 to-cyan-500"
+                }
+              ].map((service, index) => (
+                <motion.div
+                  key={service.title}
+                  className="p-8 rounded-2xl bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 hover:border-cyan-400/50 transition-all duration-300 group relative overflow-hidden"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  whileHover={{ y: -5, scale: 1.02 }}
+                >
+                  {/* Background Gradient */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
+                  
+                  <div className="relative z-10">
+                    <div className="relative inline-block mb-6">
+                      <service.icon className={`w-14 h-14 mb-4 text-${service.color}-400 group-hover:text-${service.color}-300 transition-colors`} />
+                      <div className={`absolute inset-0 w-14 h-14 bg-${service.color}-400/20 rounded-full blur-lg group-hover:bg-${service.color}-400/30 transition-all`}></div>
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
+                    <p className="text-gray-400 mb-6 text-lg">{service.description}</p>
+                    <ul className="space-y-3">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center gap-3 text-gray-300">
+                          <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.section>
+
+        {/* Advertising & Marketing Services Showcase */}
+        <motion.section 
+          className="py-24 px-4 bg-gradient-to-b from-gray-900/80 via-green-900/40 to-gray-800/80 relative overflow-hidden"
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+        >
+          {/* Background Elements */}
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(34,197,94,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(34,197,94,0.05)_1px,transparent_1px)] bg-[size:80px_80px]"></div>
+          
+          <div className="max-w-7xl mx-auto relative z-10">
+            <motion.h2 
+              className="text-5xl md:text-6xl font-black text-center mb-20 bg-gradient-to-r from-green-400 via-emerald-500 to-teal-500 bg-clip-text text-transparent"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              Revolutionary Advertising & Marketing Solutions
+            </motion.h2>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+              {[
+                {
+                  title: "AI Digital Advertising Platform",
+                  description: "Intelligent advertising automation with AI-powered optimization",
+                  price: "$799/month",
+                  features: ["AI ad creation", "Multi-platform management", "ROI optimization"],
+                  icon: "📢",
+                  color: "from-blue-500 to-cyan-500"
+                },
+                {
+                  title: "Social Media Automation Suite",
+                  description: "Complete social media automation for all major platforms",
+                  price: "$599/month",
+                  features: ["AI content generation", "Multi-platform scheduling", "Engagement automation"],
+                  icon: "📱",
+                  color: "from-purple-500 to-pink-500"
+                },
+                {
+                  title: "Content Marketing Automation",
+                  description: "AI-powered content creation and distribution automation",
+                  price: "$699/month",
+                  features: ["AI content generation", "SEO optimization", "Multi-channel distribution"],
+                  icon: "✍️",
+                  color: "from-green-500 to-emerald-500"
+                },
+                {
+                  title: "Email Marketing Suite",
+                  description: "Advanced email marketing with AI-powered personalization",
+                  price: "$399/month",
+                  features: ["AI personalization", "Automated workflows", "ROI tracking"],
+                  icon: "📧",
+                  color: "from-orange-500 to-red-500"
+                },
+                {
+                  title: "Influencer Marketing Platform",
+                  description: "Complete influencer marketing automation and management",
+                  price: "$899/month",
+                  features: ["AI influencer discovery", "Campaign management", "ROI analytics"],
+                  icon: "🌟",
+                  color: "from-yellow-500 to-orange-500"
+                },
+                {
+                  title: "Marketing Analytics Platform",
+                  description: "Advanced marketing analytics with AI-powered attribution",
+                  price: "$999/month",
+                  features: ["Multi-channel attribution", "Customer journey mapping", "Predictive modeling"],
+                  icon: "📊",
+                  color: "from-cyan-500 to-blue-500"
+                }
+              ].map((service, index) => (
+                <motion.div
+                  key={service.title}
+                  className="p-8 rounded-2xl bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 hover:border-green-400/50 transition-all duration-300 group relative overflow-hidden"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  whileHover={{ y: -5, scale: 1.02 }}
+                >
+                  {/* Background Gradient */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`}></div>
+                  
+                  <div className="relative z-10">
+                    <div className="text-4xl mb-4">{service.icon}</div>
+                    <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
+                    <p className="text-gray-400 mb-6 text-lg">{service.description}</p>
+                    <div className="text-2xl font-bold text-green-400 mb-6">{service.price}</div>
+                    <ul className="space-y-3 mb-8">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center gap-3 text-gray-300">
+                          <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                    <button 
+                      className="w-full px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-xl hover:from-green-600 hover:to-emerald-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-green-500/50"
+                      onClick={() => window.location.href = '/services'}
+                    >
+                      Learn More
+                    </button>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+            
+            <motion.div 
+              className="text-center"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <button 
+                className="px-12 py-6 bg-gradient-to-r from-green-500 via-emerald-600 to-teal-600 text-white font-bold text-xl rounded-2xl hover:from-green-600 hover:via-emerald-700 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-green-500/25 focus:outline-none focus:ring-4 focus:ring-green-500/50"
+                onClick={() => window.location.href = '/services'}
+              >
+                Explore All Marketing Services
+              </button>
+            </motion.div>
+          </div>
+        </motion.section>
+
+        {/* Enhanced CTA Section with Futuristic Design */}
+        <motion.section 
+          className="py-24 px-4 bg-gradient-to-r from-cyan-900/40 via-blue-900/40 to-purple-900/40 relative overflow-hidden"
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+        >
+          {/* Background Elements */}
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(6,182,212,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(6,182,212,0.05)_1px,transparent_1px)] bg-[size:100px_100px]"></div>
+          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-400 to-transparent"></div>
+          <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple-400 to-transparent"></div>
+          
+          <div className="max-w-5xl mx-auto text-center relative z-10">
+            <motion.h2 
+              className="text-5xl md:text-6xl font-black mb-10 text-white"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              Ready to Transform Your Business?
+            </motion.h2>
+            <motion.p 
+              className="text-2xl text-gray-300 mb-16 leading-relaxed"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              Join <span className="text-cyan-400 font-semibold">thousands of companies</span> already transforming their businesses with our revolutionary <span className="text-purple-400 font-semibold">quantum AI</span>, <span className="text-pink-400 font-semibold">consciousness technology</span>, and <span className="text-emerald-400 font-semibold">autonomous solutions</span>
+            </motion.p>
             <motion.div 
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}

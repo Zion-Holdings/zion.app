@@ -1,18 +1,10 @@
 {
-<<<<<<< HEAD
-  "generatedAt": "2025-08-11T23:27:25.385Z",
-=======
   "generatedAt": "2025-08-11T23:27:58.136Z",
->>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-0980
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
     "ai-changelog-runner",
-<<<<<<< HEAD
-    "anchor-integrity-runner",
-=======
     "ai-trends-radar-runner",
->>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-0980
     "auto-scheduler",
     "automation-atlas-runner",
     "automation-matrix",
@@ -40,16 +32,38 @@
     "external-link-check-runner",
     "fast-front-promoter",
     "fast-front-promoter",
+=======
+  "generatedAt": "2025-08-15T03:13:06.770Z",
+=======
+  "generatedAt": "2025-08-12T01:40:00.000Z",
+  "functions": [
+    "ai-changelog-runner",
+    "auto-scheduler",
+    "automation-matrix",
+    "autonomous-cloud-inventions",
+    "autonomous-innovation-generator",
+    "autonomous-invention-orchestrator",
+    "broken-image-scanner",
+    "broken-image-scanner-runner",
+    "cloud_orchestrator",
+    "continuous-front-runner",
+    "continuous-orchestrator",
+    "cron-heartbeat",
+    "cron-hub",
+    "cron-supervisor",
+    "dead-code-audit",
+    "dead-code-report",
+    "docs-index-runner",
+    "docs-search-index-runner",
+    "external-link-check-runner",
+    "fast-front-promoter",
     "fast-orchestrator",
     "feature-advertiser",
     "features-capabilities-benefits-advertiser",
     "front-ads-promoter",
     "front-enhancer",
-<<<<<<< HEAD
-    "front-index-auto-advertiser-runner",
-=======
     "front-index-directory-builder",
->>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-0980
+=======
     "front-index-futurizer",
     "front-index-orchestrator",
     "front-index-scheduler",
@@ -57,7 +71,6 @@
     "front-visionary-expander",
     "frontpage-enhancer",
     "frontpage-scheduler",
-    "function-health-monitor",
     "home-visionary-expander",
     "homepage-advertiser-scheduler",
     "homepage-enhancer",
@@ -65,47 +78,29 @@
     "homepage-updater-scheduler",
     "homepage_advertiser",
     "hyper-front-index-accelerator",
-    "image-dimension-audit-runner",
     "image-optimizer-runner",
     "innovation-lab",
-    "innovation-researcher",
-    "knowledge-radar-orchestrator",
     "link-and-health-scheduler",
     "link-crawler",
-    "link-sentinel-aggregator-runner",
-    "llm-content-curator-runner",
     "maintenance-scheduler",
     "marketing-and-features-promo",
     "marketing-scheduler",
     "media-og-and-optimize",
-    "meta-tags-audit-runner",
     "netlify-auto-healer-runner",
     "newsroom-auto-publisher",
     "newsroom-runner",
     "og-image-update-runner",
-    "perf-budget-runner",
+    "revenue-ideas-promoter",
+=======
     "readme-advertiser",
-    "redirect-manager",
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",
-<<<<<<< HEAD
-    "revenue-ideas-orchestrator",
-=======
-    "revenue-ideas-promoter",
->>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-0980
     "schedule-content-index",
     "schedule-homepage",
     "schedule-knowledge-graph",
     "schedule-site-health",
-    "schema-org-enhancer",
-    "security-audit",
-    "security-audit-runner",
-<<<<<<< HEAD
-    "seo-content-gap",
-=======
     "seo-audit-runner",
->>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-0980
     "site-crawler",
     "sitemap-prioritizer",
     "sitemap_runner",
@@ -124,5 +119,18 @@
     "ultrafast-orchestrator",
     "ux-a11y-auditor",
     "ux-heuristics-runner"
+  ]
+}
+=======
+    "security-audit",
+    "security-audit-runner",
+    "site-crawler",
+    "sitemap_runner",
+    "todo-scanner-runner",
+    "todo-summary-runner",
+    "trigger-all-and-commit",
+    "ui-enhancer",
+    "ultrafast-front-orchestrator",
+    "ultrafast-orchestrator"
   ]
 }

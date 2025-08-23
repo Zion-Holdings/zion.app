@@ -1,469 +1,578 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
-  Check, Star, Zap, Shield, Brain, Atom, 
-  Rocket, ArrowRight, Users, Building, Globe
+  Check, Star, ArrowRight, Zap, Shield, 
+  Brain, Atom, Rocket, Globe, Crown
 } from 'lucide-react';
 import Link from 'next/link';
 
-const Pricing: React.FC = () => {
-  const pricingPlans = [
+export default function Pricing() {
+  const pricingTiers = [
     {
       name: 'Starter',
-      price: '$2,999',
-      period: 'one-time',
       description: 'Perfect for small businesses and startups',
+      price: '$2,500',
+      period: 'per month',
       features: [
-        'Basic AI consultation',
-        'Security assessment',
-        'Cloud migration planning',
-        '24/7 email support',
-        'Monthly progress reports'
+        'AI Consciousness Platform Access',
+        'Basic Quantum Computing APIs',
+        'Autonomous System Templates',
+        'Email Support',
+        '5 User Licenses',
+        'Basic Analytics Dashboard'
       ],
-      popular: false,
-      color: 'from-blue-500 to-cyan-600',
-      icon: <Zap className="w-6 h-6" />
+      icon: <Zap className="w-8 h-8" />,
+      color: 'from-blue-500 to-cyan-500',
+      popular: false
     },
     {
       name: 'Professional',
-      price: '$7,999',
-      period: 'one-time',
-      description: 'Ideal for growing businesses',
+      description: 'Ideal for growing businesses and enterprises',
+      price: '$7,500',
+      period: 'per month',
       features: [
-        'Advanced AI implementation',
-        'Full security audit',
-        'Cloud infrastructure setup',
-        'Priority support',
-        'Weekly progress updates',
-        'Custom integrations',
-        'Training sessions'
+        'Everything in Starter',
+        'Advanced AI Consciousness Features',
+        'Full Quantum Computing Suite',
+        'Custom Autonomous Systems',
+        'Priority Support',
+        '25 User Licenses',
+        'Advanced Analytics & Reporting',
+        'API Rate Limits: 100K/month',
+        'Custom Integrations'
       ],
-      popular: true,
-      color: 'from-purple-500 to-pink-600',
-      icon: <Shield className="w-6 h-6" />
+      icon: <Shield className="w-8 h-8" />,
+      color: 'from-cyan-500 to-purple-500',
+      popular: true
     },
     {
       name: 'Enterprise',
-      price: 'Custom',
-      period: 'tailored',
       description: 'For large organizations with complex needs',
+      price: 'Custom',
+      period: 'contact us',
       features: [
-        'Full AI transformation',
-        'Comprehensive security',
-        'Multi-cloud strategy',
-        'Dedicated support team',
-        'Daily progress updates',
-        'Custom development',
-        'Ongoing maintenance',
-        'Strategic consulting'
+        'Everything in Professional',
+        'Unlimited AI Consciousness Access',
+        'Quantum Computing Infrastructure',
+        'Fully Custom Autonomous Systems',
+        'Dedicated Support Team',
+        'Unlimited User Licenses',
+        'Custom Analytics & AI Models',
+        'Unlimited API Usage',
+        'On-Premise Deployment Options',
+        'Custom Training & Implementation'
       ],
-      popular: false,
-      color: 'from-emerald-500 to-teal-600',
-      icon: <Building className="w-6 h-6" />
-    }
-  ];
-
-  const serviceCategories = [
-    {
-      name: 'AI & Machine Learning',
-      icon: <Brain className="w-8 h-8" />,
-      startingPrice: '$5,000',
-      description: 'Custom AI solutions and machine learning platforms'
-    },
-    {
-      name: 'Quantum Computing',
-      icon: <Atom className="w-8 h-8" />,
-      startingPrice: '$15,000',
-      description: 'Next-generation quantum computing solutions'
-    },
-    {
-      name: 'Cybersecurity',
-      icon: <Shield className="w-8 h-8" />,
-      startingPrice: '$3,000',
-      description: 'Advanced security and compliance solutions'
-    },
-    {
-      name: 'Cloud Infrastructure',
-      icon: <Globe className="w-8 h-8" />,
-      startingPrice: '$2,500',
-      description: 'Scalable cloud solutions and migration'
-    },
-    {
-      name: 'Business Intelligence',
-      icon: <Users className="w-8 h-8" />,
-      startingPrice: '$4,000',
-      description: 'Data analytics and business intelligence'
-    },
-    {
-      name: 'Micro SAAS',
-      icon: <Rocket className="w-8 h-8" />,
-      startingPrice: '$8,000',
-      description: 'Revolutionary micro SAAS platforms'
+      icon: <Crown className="w-8 h-8" />,
+      color: 'from-purple-500 to-pink-500',
+      popular: false
     }
   ];
 
   const addOnServices = [
     {
-      name: '24/7 Support',
-      price: '$299/month',
-      description: 'Round-the-clock technical support and monitoring'
+      name: 'AI Consciousness Training',
+      description: 'Custom training for your team on AI consciousness systems',
+      price: '$15,000',
+      period: 'per session',
+      features: ['2-day intensive training', 'Custom curriculum', 'Hands-on workshops', 'Certification']
     },
     {
-      name: 'Custom Development',
-      price: '$150/hour',
-      description: 'Tailored software development and customization'
+      name: 'Quantum Computing Consultation',
+      description: 'Expert guidance on quantum computing implementation',
+      price: '$25,000',
+      period: 'per project',
+      features: ['Strategy development', 'Technology assessment', 'Implementation roadmap', 'Ongoing support']
     },
     {
-      name: 'Training & Workshops',
-      price: '$2,000/day',
-      description: 'Comprehensive training for your team'
-    },
-    {
-      name: 'Security Audits',
-      price: '$5,000',
-      description: 'Comprehensive security assessments and reports'
+      name: 'Autonomous System Design',
+      description: 'Custom design and development of autonomous business systems',
+      price: '$50,000',
+      period: 'per system',
+      features: ['Custom architecture', 'Development & testing', 'Deployment', 'Maintenance support']
     }
   ];
 
-  const getDiscountedPrice = (price: number) => {
-    return billingPeriod === 'yearly' ? Math.round(price * 0.8) : price;
-  };
+  const comparisonFeatures = [
+    {
+      feature: 'AI Consciousness Platform',
+      starter: 'Basic Access',
+      professional: 'Advanced Features',
+      enterprise: 'Unlimited Access'
+    },
+    {
+      feature: 'Quantum Computing APIs',
+      starter: '5 API Calls/day',
+      professional: '100K API Calls/month',
+      enterprise: 'Unlimited'
+    },
+    {
+      feature: 'User Licenses',
+      starter: '5 Users',
+      professional: '25 Users',
+      enterprise: 'Unlimited'
+    },
+    {
+      feature: 'Support Response Time',
+      starter: '24 hours',
+      professional: '4 hours',
+      enterprise: '1 hour'
+    },
+    {
+      feature: 'Custom Integrations',
+      starter: 'Basic',
+      professional: 'Advanced',
+      enterprise: 'Full Custom'
+    },
+    {
+      feature: 'Analytics & Reporting',
+      starter: 'Basic Dashboard',
+      professional: 'Advanced Analytics',
+      enterprise: 'Custom AI Models'
+    }
+  ];
 
-  const getPeriodText = () => {
-    return billingPeriod === 'yearly' ? 'year' : 'month';
-  };
+  const pricingPlans = [
+    {
+      name: 'Starter',
+      description: 'Perfect for small businesses and startups',
+      icon: <Rocket className="w-8 h-8 text-emerald-400" />,
+      monthlyPrice: 99,
+      yearlyPrice: 990,
+      features: [
+        'AI-powered business insights',
+        'Basic automation workflows',
+        'Email support',
+        '5 user accounts',
+        'Standard security features',
+        'Basic analytics dashboard',
+        'Mobile app access',
+        'API access (1000 calls/month)'
+      ],
+      popular: false,
+      color: 'from-emerald-500 to-teal-600'
+    },
+    {
+      name: 'Professional',
+      description: 'Ideal for growing businesses and teams',
+      icon: <TrendingUp className="w-8 h-8 text-blue-400" />,
+      monthlyPrice: 299,
+      yearlyPrice: 2990,
+      features: [
+        'Everything in Starter',
+        'Advanced AI algorithms',
+        'Custom automation workflows',
+        'Priority support',
+        'Unlimited user accounts',
+        'Advanced security features',
+        'Real-time analytics',
+        'API access (10,000 calls/month)',
+        'Custom integrations',
+        'White-label options'
+      ],
+      popular: true,
+      color: 'from-blue-500 to-indigo-600'
+    },
+    {
+      name: 'Enterprise',
+      description: 'For large organizations with complex needs',
+      icon: <Crown className="w-8 h-8 text-purple-400" />,
+      monthlyPrice: 999,
+      yearlyPrice: 9990,
+      features: [
+        'Everything in Professional',
+        'Custom AI model training',
+        'Quantum computing access',
+        'Dedicated account manager',
+        '24/7 phone support',
+        'Advanced compliance features',
+        'Custom development',
+        'Unlimited API access',
+        'On-premise deployment',
+        'SLA guarantees'
+      ],
+      popular: false,
+      color: 'from-purple-500 to-pink-600'
+    },
+    {
+      name: 'Ultimate',
+      description: 'Cutting-edge solutions for industry leaders',
+      icon: <Sparkles className="w-8 h-8 text-cyan-400" />,
+      monthlyPrice: 2499,
+      yearlyPrice: 24990,
+      features: [
+        'Everything in Enterprise',
+        'AI consciousness evolution',
+        'Quantum AI convergence',
+        'Executive advisory board',
+        'Custom research & development',
+        'Industry-specific solutions',
+        'Global deployment support',
+        'Quantum security protocols',
+        'Future technology access',
+        'Exclusive innovation labs'
+      ],
+      popular: false,
+      color: 'from-cyan-500 to-blue-600'
+    }
+  ];
 
-export default function PricingPage() {
+  const addOns = [
+    {
+      name: 'AI Training & Customization',
+      description: 'Custom AI model training for your specific use case',
+      price: 500,
+      period: 'month'
+    },
+    {
+      name: 'Quantum Computing Access',
+      description: 'Access to our quantum computing infrastructure',
+      price: 1000,
+      period: 'month'
+    },
+    {
+      name: 'Advanced Security Suite',
+      description: 'Enhanced security features and compliance tools',
+      price: 300,
+      period: 'month'
+    },
+    {
+      name: 'Custom Integration',
+      description: 'Custom integration with your existing systems',
+      price: 750,
+      period: 'one-time'
+    },
+    {
+      name: 'Dedicated Support',
+      description: '24/7 dedicated technical support team',
+      price: 400,
+      period: 'month'
+    },
+    {
+      name: 'Training & Certification',
+      description: 'Comprehensive training for your team',
+      price: 200,
+      period: 'person'
+    }
+  ];
+
   return (
-    <Layout
-      title="Pricing - Zion Tech Group"
-      description="Transparent pricing for our comprehensive technology solutions. Choose the plan that fits your business needs."
-      keywords="pricing, technology services, AI solutions, quantum computing, cybersecurity, cloud infrastructure, Zion Tech Group"
-    >
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
-        {/* Hero Section */}
-        <section className="relative overflow-hidden py-20 lg:py-32">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 via-blue-900/20 to-cyan-900/20" />
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center"
+    <div className="min-h-screen bg-black text-white">
+      {/* Hero Section */}
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6"
+          >
+            Pricing Plans
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-12"
+          >
+            Choose the perfect plan for your AI consciousness, quantum computing, 
+            and autonomous systems needs.
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center"
+          >
+            <Link 
+              href="#pricing-tiers"
+              className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
             >
-              <div className="flex items-center justify-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center mr-4">
-                  <Star className="w-8 h-8 text-white" />
+              View Plans
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Link>
+            <Link 
+              href="/contact"
+              className="px-8 py-4 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-full hover:bg-cyan-500 hover:text-black transition-all duration-300"
+            >
+              Get Custom Quote
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Pricing Tiers Section */}
+      <section id="pricing-tiers" className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold text-center mb-16"
+          >
+            Choose Your Plan
+          </motion.h2>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {pricingTiers.map((tier, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className={`relative p-8 rounded-2xl border transition-all duration-300 ${
+                  tier.popular 
+                    ? 'bg-gradient-to-br from-cyan-500/10 to-purple-600/10 border-cyan-500/30 scale-105' 
+                    : 'bg-white/5 border-white/10 hover:border-cyan-500/50'
+                }`}
+              >
+                {tier.popular && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <span className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white text-sm font-semibold rounded-full">
+                      <Star className="w-4 h-4" />
+                      Most Popular
+                    </span>
+                  </div>
+                )}
+                
+                <div className="text-center mb-8">
+                  <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r ${tier.color} rounded-full mb-4`}>
+                    {tier.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold mb-2">
+                    {tier.name}
+                  </h3>
+                  <p className="text-gray-300 mb-6">
+                    {tier.description}
+                  </p>
+                  <div className="mb-6">
+                    <span className="text-4xl font-bold">
+                      {tier.price}
+                    </span>
+                    <span className="text-gray-400 ml-2">
+                      {tier.period}
+                    </span>
+                  </div>
                 </div>
-                <h1 className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                  Pricing
-                </h1>
-              </div>
-              <p className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
-                Transparent pricing for transformative technology solutions
-              </p>
-              <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-                Choose the perfect plan for your business needs. All our pricing is transparent 
-                with no hidden fees. Get started with a free consultation to find the right solution.
-              </p>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Main Pricing Plans */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                Choose Your Plan
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Flexible pricing options designed to scale with your business
-              </p>
-            </motion.div>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {pricingPlans.map((plan, index) => (
-                <motion.div
-                  key={plan.name}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className={`relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-8 rounded-3xl border ${
-                    plan.popular 
-                      ? 'border-purple-500/50 shadow-2xl shadow-purple-500/20' 
-                      : 'border-gray-700/50'
-                  } hover:border-purple-500/50 transition-all duration-300`}
-                >
-                  {plan.popular && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-gradient-to-r from-purple-500 to-pink-600 text-white text-sm font-semibold px-4 py-2 rounded-full">
-                        Most Popular
-                      </span>
-                    </div>
-                  )}
-                  
-                  <div className="text-center mb-8">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${plan.color} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
-                      {plan.icon}
-                    </div>
-                    <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
-                    <div className="mb-2">
-                      <span className="text-4xl font-bold text-white">{plan.price}</span>
-                      <span className="text-gray-400 ml-2">{plan.period}</span>
-                    </div>
-                    <p className="text-gray-300">{plan.description}</p>
-                  </div>
-                  
-                  <ul className="space-y-3 mb-8">
-                    {plan.features.map((feature) => (
-                      <li key={feature} className="flex items-center space-x-3">
-                        <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
-                        <span className="text-gray-300">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <Link
-                    href="/contact"
-                    className={`block w-full text-center py-3 px-6 rounded-2xl font-semibold transition-all duration-300 ${
-                      plan.popular
-                        ? 'bg-gradient-to-r from-purple-500 to-pink-600 text-white hover:from-purple-600 hover:to-pink-700 transform hover:scale-105'
-                        : 'bg-gray-700/50 text-white hover:bg-gray-600/50 border border-gray-600/50 hover:border-purple-500/50'
-                    }`}
-                  >
-                    Get Started
-                    <ArrowRight className="w-4 h-4 ml-2 inline" />
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-        {/* Service Categories */}
-        <section className="py-20 bg-black/50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                Service Categories
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Explore our specialized service areas with transparent starting prices
-              </p>
-            </motion.div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {serviceCategories.map((service, index) => (
-                <motion.div
-                  key={service.name}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 p-6 rounded-2xl border border-gray-700/30 hover:border-purple-500/50 transition-all duration-300"
-                >
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
-                    {service.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-2">{service.name}</h3>
-                  <div className="text-2xl font-bold text-purple-400 mb-3">
-                    Starting at {service.startingPrice}
-                  </div>
-                  <p className="text-gray-300 text-sm mb-4">{service.description}</p>
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center text-purple-400 hover:text-purple-300 text-sm font-semibold"
-                  >
-                    Learn More
-                    <ArrowRight className="w-4 h-4 ml-1" />
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Add-on Services */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                Add-on Services
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Enhance your package with additional services tailored to your needs
-              </p>
-            </motion.div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {addOnServices.map((service, index) => (
-                <motion.div
-                  key={service.name}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6 }}
-                  viewport={{ once: true }}
-                  className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 p-6 rounded-2xl border border-gray-700/30 hover:border-blue-500/50 transition-all duration-300"
-                >
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-xl font-bold text-white">{service.name}</h3>
-                    <div className="text-2xl font-bold text-blue-400">{service.price}</div>
-                  </div>
-                  <p className="text-gray-300 mb-4">{service.description}</p>
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center text-blue-400 hover:text-blue-300 text-sm font-semibold"
-                  >
-                    Add to Package
-                    <ArrowRight className="w-4 h-4 ml-1" />
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Pricing FAQ */}
-        <section className="py-20 bg-black/50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                Frequently Asked Questions
-              </h2>
-              <p className="text-xl text-gray-400">
-                Get answers to common questions about our pricing and services
-              </p>
-            </motion.div>
-            
-            <div className="space-y-6">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 p-6 rounded-2xl border border-gray-700/30"
-              >
-                <h3 className="text-lg font-semibold text-white mb-3">
-                  Do you offer custom pricing for enterprise clients?
-                </h3>
-                <p className="text-gray-300">
-                  Yes, we provide custom pricing for enterprise clients with complex requirements. 
-                  Contact us for a personalized quote based on your specific needs and scale.
-                </p>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                viewport={{ once: true }}
-                className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 p-6 rounded-2xl border border-gray-700/30"
-              >
-                <h3 className="text-lg font-semibold text-white mb-3">
-                  Are there any hidden fees?
-                </h3>
-                <p className="text-gray-300">
-                  No hidden fees. Our pricing is completely transparent. All costs are clearly 
-                  outlined in your proposal, and we'll discuss any additional services before implementation.
-                </p>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-                className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 p-6 rounded-2xl border border-gray-700/30"
-              >
-                <h3 className="text-lg font-semibold text-white mb-3">
-                  Can I upgrade or downgrade my plan?
-                </h3>
-                <p className="text-gray-300">
-                  Yes, you can upgrade or downgrade your plan at any time. We'll work with you 
-                  to ensure a smooth transition and adjust pricing accordingly.
-                </p>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                viewport={{ once: true }}
-                className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 p-6 rounded-2xl border border-gray-700/30"
-              >
-                <h3 className="text-lg font-semibold text-white mb-3">
-                  Do you offer payment plans?
-                </h3>
-                <p className="text-gray-300">
-                  We offer flexible payment options including monthly installments for larger projects. 
-                  Contact us to discuss payment arrangements that work for your business.
-                </p>
-              </motion.div>
-            </div>
-          </section>
-
-        {/* CTA Section */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                Ready to Get Started?
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
-                Contact us for a free consultation and custom quote tailored to your business needs.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
+                
+                <ul className="space-y-4 mb-8">
+                  {tier.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-center gap-3">
+                      <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+                      <span className="text-gray-300">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                
+                <Link 
                   href="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-600 text-white font-semibold rounded-2xl hover:from-purple-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+                  className={`w-full px-6 py-3 rounded-full font-semibold text-center transition-all duration-300 ${
+                    tier.popular
+                      ? 'bg-gradient-to-r from-cyan-500 to-purple-600 text-white hover:from-cyan-600 hover:to-purple-700'
+                      : 'border-2 border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-black'
+                  }`}
                 >
-                  Get Free Consultation
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                  {tier.name === 'Enterprise' ? 'Contact Sales' : 'Get Started'}
                 </Link>
-                <a
-                  href="tel:+13024640950"
-                  className="inline-flex items-center px-8 py-4 border-2 border-purple-500/30 text-purple-400 font-semibold rounded-2xl hover:border-purple-500/50 hover:text-purple-300 transition-all duration-300"
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Add-On Services Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold text-center mb-16"
+          >
+            Additional Services
+          </motion.h2>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {addOnServices.map((service, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-500/50 transition-all duration-300"
+              >
+                <h3 className="text-xl font-bold mb-3">
+                  {service.name}
+                </h3>
+                <p className="text-gray-300 mb-4 leading-relaxed">
+                  {service.description}
+                </p>
+                
+                <div className="mb-4">
+                  <span className="text-2xl font-bold text-cyan-400">
+                    {service.price}
+                  </span>
+                  <span className="text-gray-400 ml-2">
+                    {service.period}
+                  </span>
+                </div>
+                
+                <ul className="space-y-2 mb-6">
+                  {service.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-center gap-2 text-sm text-gray-300">
+                      <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                
+                <Link 
+                  href="/contact"
+                  className="w-full px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 text-center block"
                 >
-                  Call Now: +1 302 464 0950
-                </a>
-              </div>
-              <p className="text-sm text-white/60 mt-4">No credit card required • 14-day free trial • Cancel anytime</p>
+                  Learn More
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Feature Comparison Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold text-center mb-16"
+          >
+            Feature Comparison
+          </motion.h2>
+          
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead>
+                <tr className="border-b border-white/10">
+                  <th className="text-left p-4 font-semibold">Feature</th>
+                  <th className="text-center p-4 font-semibold">Starter</th>
+                  <th className="text-center p-4 font-semibold">Professional</th>
+                  <th className="text-center p-4 font-semibold">Enterprise</th>
+                </tr>
+              </thead>
+              <tbody>
+                {comparisonFeatures.map((row, index) => (
+                  <motion.tr
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="border-b border-white/5 hover:bg-white/5 transition-colors"
+                  >
+                    <td className="p-4 font-medium">{row.feature}</td>
+                    <td className="p-4 text-center text-gray-300">{row.starter}</td>
+                    <td className="p-4 text-center text-cyan-400 font-medium">{row.professional}</td>
+                    <td className="p-4 text-center text-purple-400 font-medium">{row.enterprise}</td>
+                  </motion.tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold text-center mb-16"
+          >
+            Frequently Asked Questions
+          </motion.h2>
+          
+          <div className="space-y-6">
+            {[
+              {
+                question: 'Can I change my plan at any time?',
+                answer: 'Yes, you can upgrade or downgrade your plan at any time. Changes take effect at the start of your next billing cycle.'
+              },
+              {
+                question: 'Do you offer custom pricing for large organizations?',
+                answer: 'Absolutely! Our Enterprise plan is fully customizable to meet your specific needs. Contact our sales team for a custom quote.'
+              },
+              {
+                question: 'What kind of support is included?',
+                answer: 'Starter includes email support, Professional includes priority support with 4-hour response time, and Enterprise includes dedicated support with 1-hour response time.'
+              },
+              {
+                question: 'Are there any setup fees?',
+                answer: 'No setup fees for Starter and Professional plans. Enterprise plans may include implementation costs depending on your requirements.'
+              }
+            ].map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="p-6 rounded-2xl bg-white/5 border border-white/10"
+              >
+                <h3 className="text-lg font-bold mb-3 text-cyan-400">
+                  {faq.question}
+                </h3>
+                <p className="text-gray-300">
+                  {faq.answer}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Ready to Get Started?
+            </h2>
+            <p className="text-xl text-gray-300 mb-8">
+              Choose the perfect plan for your AI consciousness and quantum computing needs, 
+              or contact us for a custom solution.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                href="/contact"
+                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+              >
+                Start Your Free Trial
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Link>
+              <Link 
+                href="/contact"
+                className="px-8 py-4 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-full hover:bg-cyan-500 hover:text-black transition-all duration-300"
+              >
+                Schedule a Demo
+              </Link>
             </div>
-          </section>
-        </main>
-      </div>
-    </>
+          </motion.div>
+        </div>
+      </section>
+    </div>
   );
 };
 

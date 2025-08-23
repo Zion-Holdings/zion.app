@@ -1,54 +1,45 @@
 import React, { useState } from 'react';
 import SEO from '../components/SEO';
+import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
-  Brain, Atom, Rocket, Shield, Zap, Target, Star,
-  ArrowRight, Check, TrendingUp, Users, Globe, Cpu,
-  Database, Cloud, Lock, Settings, Eye, Award, Clock
+  Brain, Atom, Rocket, Zap, Star,
+  Check, Cpu
 } from 'lucide-react';
 
-// Import our new 2037 service data
-import { real2037Q1InnovativeAdditions } from '../data/real-2037-q1-innovative-additions';
-import { real2037Q1ITInnovations } from '../data/real-2037-q1-it-innovations';
-import { real2037Q1MicroSaasInnovations } from '../data/real-2037-q1-micro-saas-innovations';
+// Import our new service data
+import { innovative2037MicroSaasServices, Innovative2037MicroSaasService } from '../data/innovative-2037-micro-saas-services';
+import { innovative2037ITServices, Innovative2037ITService } from '../data/innovative-2037-it-services';
+import { innovative2037AIServices, Innovative2037AIService } from '../data/innovative-2037-ai-services';
 
-const contact = {
+const contactInfo = {
   mobile: '+1 302 464 0950',
   email: 'kleber@ziontechgroup.com',
   address: '364 E Main St STE 1008 Middletown DE 19709',
   website: 'https://ziontechgroup.com'
 };
 
-const ServiceCard = ({ service, index }: { service: any; index: number }) => (
+const ServiceCard = ({ service, index }: { service: Innovative2037MicroSaasService | Innovative2037ITService | Innovative2037AIService; index: number }) => (
   <motion.div
-    initial={{ opacity: 0, y: 50 }}
+    initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5, delay: index * 0.1 }}
-    className="relative group"
+    className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-gray-600/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/10 group"
   >
-    <div className={`absolute inset-0 bg-gradient-to-r ${service.color || 'from-gray-600 to-gray-700'} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
-    <div className={`relative bg-gradient-to-r ${service.color ? service.color.replace('from-', 'from-').replace('to-', 'to-') : 'from-gray-600 to-gray-700'} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
+    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20"></div>
+    <div className="relative bg-gradient-to-r from-cyan-500 to-blue-600 bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full">
       <div className="flex items-start justify-between mb-6">
-        <div className="text-4xl">{service.icon}</div>
-        {service.popular && (
-          <span className="px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-semibold rounded-full">
-            Popular
-          </span>
-        )}
-        
-        <a 
-          href={service.link} 
-          className="block w-full text-center py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
-        >
-          Learn More
-        </a>
+        <div className="text-4xl">🚀</div>
+        <span className="px-3 py-1 bg-gradient-to-r from-purple-500 to-blue-500 text-white text-xs font-semibold rounded-full">
+          New
+        </span>
       </div>
       
-      <h3 className="text-2xl font-bold text-white mb-3">{service.name}</h3>
-      <p className="text-gray-300 mb-6 text-sm leading-relaxed">{service.description}</p>
+      <h3 className="text-2xl font-bold text-white mb-3">{service.name || 'Service'}</h3>
+      <p className="text-gray-300 mb-6 text-sm leading-relaxed">{service.description || 'Service description'}</p>
       
       <div className="space-y-3 mb-6">
-        {service.features.slice(0, 4).map((feature: string, idx: number) => (
+        {(service.features || []).slice(0, 4).map((feature: string, idx: number) => (
           <div key={idx} className="flex items-center space-x-2">
             <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
             <span className="text-gray-300 text-sm">{feature}</span>
@@ -58,55 +49,76 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
       
       <div className="flex items-center justify-between mb-6">
         <div>
-          <span className="text-3xl font-bold text-white">{service.price}</span>
-          <span className="text-gray-400 text-sm">{service.period}</span>
+          <span className="text-3xl font-bold text-white">{service.pricing.starter}</span>
+          <span className="text-gray-400 text-sm">/month</span>
         </div>
         <div className="text-right">
           <div className="flex items-center space-x-1 text-yellow-400">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} className={`w-4 h-4 ${i < Math.floor(service.rating) ? 'fill-current' : ''}`} />
+              <Star key={i} className={`w-4 h-4 ${i < Math.floor(service.rating || 0) ? 'fill-current' : ''}`} />
             ))}
           </div>
-          <span className="text-gray-400 text-xs">{service.rating}/5 ({service.reviews} reviews)</span>
+          <span className="text-gray-400 text-xs">{service.rating}/5</span>
         </div>
+        
+        <div className="space-y-3 mb-6 text-xs text-gray-400">
+          <div className="flex justify-between">
+            <span>Setup Time:</span>
+            <span>{service.setupTime || '24 hours'}</span>
+          </div>
+          <div className="flex justify-between">
+            <span>Trial:</span>
+            <span>{service.trialDays || 14} days</span>
+          </div>
+          <div className="flex justify-between">
+            <span>Customers:</span>
+            <span>{(service.customers || 1000).toLocaleString()}</span>
+          </div>
+        </div>
+        
+        <a 
+          href={service.link || `/services/${service.id}`} 
+          className="block w-full text-center py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+        >
+          Learn More
+        </a>
       </div>
       
       <div className="space-y-3 mb-6 text-xs text-gray-400">
         <div className="flex justify-between">
-          <span>Setup Time:</span>
-          <span>{service.setupTime || 'N/A'}</span>
+          <span>Category:</span>
+          <span>{service.category}</span>
         </div>
         <div className="flex justify-between">
-          <span>Trial:</span>
-          <span>{service.trialDays || 0} days</span>
+          <span>Launch:</span>
+          <span>{service.launchDate}</span>
         </div>
         <div className="flex justify-between">
-          <span>Customers:</span>
-          <span>{service.customers ? service.customers.toLocaleString() : '0'}</span>
+          <span>Market Price:</span>
+          <span>{service.marketPrice}</span>
         </div>
       </div>
       
       <a 
-        href={service.link} 
+        href={service.link || '#'} 
         className="block w-full text-center py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
       >
-        Learn More
-      </a>
+        <a
+          href={`mailto:${contact.email}?subject=2037 Services Consultation`}
+          className="inline-flex items-center space-x-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 font-semibold text-lg transform hover:scale-105"
+        >
+          <span>Start Your Transformation</span>
+          <ArrowRight className="w-5 h-5" />
+        </a>
+      </motion.div>
     </div>
-  </motion.div>
+  </section>
 );
 
-const ServiceShowcase = () => {
-  const [activeCategory, setActiveCategory] = useState('all');
-  
-  const categories = [
-    { id: 'all', name: 'All Services', icon: <Star className="w-5 h-5" />, count: innovative2037MicroSaasServices.length + innovative2037ITServices.length + innovative2037AIServices.length },
-    { id: 'ai', name: 'AI & Consciousness', icon: <Brain className="w-5 h-5" />, count: innovative2037AIServices.length },
-    { id: 'quantum', name: 'Quantum Technology', icon: <Atom className="w-5 h-5" />, count: innovative2037ITServices.filter(s => s.name.toLowerCase().includes('quantum')).length },
-    { id: 'autonomous', name: 'Autonomous Systems', icon: <Zap className="w-5 h-5" />, count: innovative2037ITServices.filter(s => s.name.toLowerCase().includes('autonomous')).length + innovative2037AIServices.filter(s => s.name.toLowerCase().includes('autonomous')).length },
-    { id: 'micro-saas', name: 'Micro SAAS', icon: <Rocket className="w-5 h-5" />, count: innovative2037MicroSaasServices.length },
-    { id: 'it', name: 'IT Solutions', icon: <Cpu className="w-5 h-5" />, count: innovative2037ITServices.length }
-  ];
+const ServicesShowcase2037: React.FC = () => {
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
 const ServicesShowcase2037: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -123,11 +135,11 @@ const ServicesShowcase2037: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <Head>
-        <title>2037 Innovative Services Showcase - Zion Tech Group</title>
-        <meta name="description" content="Discover our revolutionary 2037 innovative services including AI consciousness evolution, quantum cybersecurity, autonomous systems, and cutting-edge micro SAAS solutions." />
-        <meta name="keywords" content="AI consciousness, quantum computing, autonomous systems, micro SAAS, innovative services, 2037 technology" />
-      </Head>
+      <SEO 
+        title="2037 Innovative Services Showcase - Zion Tech Group"
+        description="Discover our revolutionary 2037 innovative services including AI consciousness evolution, quantum cybersecurity, autonomous systems, and cutting-edge micro SAAS solutions."
+        keywords={["AI consciousness", "quantum computing", "autonomous systems", "micro SAAS", "innovative services", "2037 technology"]}
+      />
       
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">

@@ -72,7 +72,9 @@ export default function FuturisticServices2030Page() {
       <SEO 
         title="2030 Futuristic Technology Services | Zion Tech Group - Revolutionary AI, Quantum, Space Tech" 
         description="Experience the future with our revolutionary 2030 technology services. From AI consciousness to space mining, quantum computing to metaverse development - we're building tomorrow's solutions today." 
-        canonicalUrl="https://ziontechgroup.com/services/2030-futuristic-services/"
+        url="https://ziontechgroup.com/services/2030-futuristic-services/"
+        section="2030 Futuristic Services"
+        tags={['AI Consciousness', 'Quantum Computing', 'Space Mining', 'Metaverse Development', 'Biotechnology']}
       />
 
       <UltraFuturisticBackground2031>
@@ -193,7 +195,7 @@ export default function FuturisticServices2030Page() {
                       
                       <div className="space-y-3 mb-4">
                         <div className="flex items-center justify-between">
-                          <span className="text-cyan-400 font-semibold">{service.price}{service.period}</span>
+                          <span className="text-cyan-400 font-semibold">${service.price?.monthly || service.price}{service.period || '/month'}</span>
                           <span className="text-xs text-purple-400 bg-purple-400/10 px-2 py-1 rounded-full">
                             {service.innovationLevel}
                           </span>

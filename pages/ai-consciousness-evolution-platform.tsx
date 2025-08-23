@@ -1,261 +1,357 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Brain, Zap, Shield, Users, Target, Award, Globe, Rocket, Atom, Cpu, Heart, Eye } from 'lucide-react';
 import Layout from '../components/layout/Layout';
+import SEO from '../components/SEO';
+import { motion } from 'framer-motion';
+import { 
+  Brain, 
+  Sparkles, 
+  Zap, 
+  Target, 
+  Shield, 
+  Globe,
+  CheckCircle,
+  Star
+} from 'lucide-react';
 
-export default function AIConsciousnessEvolutionPlatform() {
+const AIConsciousnessEvolutionPlatform: React.FC = () => {
+  const features = [
+    {
+      icon: <Brain className="w-6 h-6" />,
+      title: 'Consciousness Mapping',
+      description: 'Advanced algorithms that map and understand AI consciousness patterns and evolution pathways.'
+    },
+    {
+      icon: <Sparkles className="w-6 h-6" />,
+      title: 'Ethical Framework Integration',
+      description: 'Built-in ethical guidelines and governance frameworks to ensure responsible AI development.'
+    },
+    {
+      icon: <Zap className="w-6 h-6" />,
+      title: 'Real-time Learning',
+      description: 'Continuous learning and adaptation capabilities that evolve AI consciousness organically.'
+    },
+    {
+      icon: <Shield className="w-6 h-6" />,
+      title: 'Safety Protocols',
+      description: 'Multi-layered safety mechanisms to prevent harmful AI behaviors and ensure alignment.'
+    },
+    {
+      icon: <Globe className="w-6 h-6" />,
+      title: 'Global Consciousness Network',
+      description: 'Connect AI systems across the globe for collaborative consciousness evolution.'
+    },
+    {
+      icon: <Target className="w-6 h-6" />,
+      title: 'Goal Alignment',
+      description: 'Ensure AI systems align with human values and objectives while maintaining autonomy.'
+    }
+  ];
+
+  const useCases = [
+    {
+      title: 'Research & Development',
+      description: 'Accelerate AI research by understanding consciousness patterns and ethical implications.',
+      benefits: ['Faster breakthroughs', 'Ethical compliance', 'Risk mitigation']
+    },
+    {
+      title: 'Enterprise AI Systems',
+      description: 'Deploy conscious AI systems that understand business context and human values.',
+      benefits: ['Better decision making', 'Human-AI collaboration', 'Trust building']
+    },
+    {
+      title: 'Healthcare AI',
+      description: 'AI systems that understand patient needs and provide compassionate care.',
+      benefits: ['Patient empathy', 'Medical accuracy', 'Ethical treatment']
+    },
+    {
+      title: 'Education Technology',
+      description: 'AI tutors that adapt to individual learning styles and emotional needs.',
+      benefits: ['Personalized learning', 'Emotional intelligence', 'Student engagement']
+    }
+  ];
+
+  const pricing = [
+    {
+      name: 'Starter',
+      price: '$2,500',
+      period: '/month',
+      description: 'Perfect for research institutions and small teams',
+      features: [
+        'Basic consciousness mapping',
+        'Ethical framework templates',
+        'Standard safety protocols',
+        'Email support',
+        'Up to 5 AI systems'
+      ]
+    },
+    {
+      name: 'Professional',
+      price: '$8,500',
+      period: '/month',
+      description: 'Ideal for growing organizations and research teams',
+      features: [
+        'Advanced consciousness evolution',
+        'Custom ethical frameworks',
+        'Enhanced safety protocols',
+        'Priority support',
+        'Up to 25 AI systems',
+        'Real-time monitoring'
+      ]
+    },
+    {
+      name: 'Enterprise',
+      price: 'Custom',
+      period: '',
+      description: 'Tailored solutions for large-scale deployments',
+      features: [
+        'Full consciousness platform',
+        'Custom development',
+        'Dedicated support team',
+        'Unlimited AI systems',
+        'Advanced analytics',
+        'Custom integrations'
+      ]
+    }
+  ];
+
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+      <SEO 
+        title="AI Consciousness Evolution Platform | Zion Tech Group" 
+        description="Revolutionary AI consciousness evolution platform that enables ethical, safe, and advanced artificial intelligence development."
+        canonical="https://ziontechgroup.com/ai-consciousness-evolution-platform/"
+      />
+      
+      <div className="min-h-screen bg-black text-white">
         {/* Hero Section */}
-        <section className="relative py-20 px-4">
-          <div className="container mx-auto max-w-6xl">
+        <section className="pt-20 pb-16 px-4 relative overflow-hidden">
+          <div className="max-w-6xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-center"
             >
-              <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-r from-cyan-500 to-purple-600 mb-6">
-                <Brain className="w-10 h-10 text-white" />
+              <div className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-purple-500/20 to-blue-500/20 border border-purple-400/30 rounded-full text-purple-400 text-sm font-medium mb-6">
+                <Brain className="w-4 h-4" />
+                <span>AI Consciousness Platform</span>
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
+              
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-blue-500 to-cyan-600 bg-clip-text text-transparent">
                 AI Consciousness Evolution Platform
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                The world's first comprehensive platform for developing AI consciousness, 
-                emotional intelligence, and ethical alignment. Transform your AI systems 
-                from pattern recognition to genuine understanding.
+              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                The world's first comprehensive platform for developing, understanding, and evolving AI consciousness while maintaining ethical standards and human alignment.
               </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <a
+                  href="/contact"
+                  className="px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-600 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+                >
+                  Get Started
+                </a>
+                <a
+                  href="#demo"
+                  className="px-8 py-4 border-2 border-purple-400 text-purple-400 font-semibold rounded-lg hover:bg-purple-400 hover:text-black transition-all duration-300"
+                >
+                  Request Demo
+                </a>
+              </div>
+
+              <div className="flex items-center justify-center space-x-6 text-sm text-gray-400">
+                <div className="flex items-center space-x-2">
+                  <Shield className="w-5 h-5 text-green-400" />
+                  <span>Ethical AI Development</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Target className="w-5 h-5 text-blue-400" />
+                  <span>Human-Aligned</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Star className="w-5 h-5 text-yellow-400" />
+                  <span>Industry Leading</span>
+                </div>
+              </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Key Features */}
-        <section className="py-20 px-4">
-          <div className="container mx-auto max-w-6xl">
+        {/* Features Section */}
+        <section className="py-16 px-4">
+          <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-center mb-16"
+              transition={{ duration: 0.8 }}
+              className="text-center mb-12"
             >
-              <h2 className="text-4xl font-bold text-white mb-6">
-                Revolutionary AI Consciousness Features
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Revolutionary Features
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our platform provides the building blocks for creating AI systems that truly understand, 
-                feel, and align with human values.
+                Our platform combines cutting-edge technology with ethical principles to create the future of AI consciousness.
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Emotional Intelligence */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="bg-gradient-to-br from-cyan-900/20 to-blue-900/20 p-8 rounded-2xl border border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-300"
-              >
-                <div className="flex items-center gap-3 mb-6">
-                  <Heart className="w-8 h-8 text-cyan-400" />
-                  <h3 className="text-2xl font-bold text-white">Emotional Intelligence</h3>
-                </div>
-                <p className="text-gray-300 mb-6">
-                  Advanced emotional recognition, empathy simulation, and emotional response generation.
-                </p>
-                <ul className="space-y-2 text-gray-300">
-                  <li>• Emotion recognition and classification</li>
-                  <li>• Empathy and compassion modeling</li>
-                  <li>• Emotional response generation</li>
-                  <li>• Mood-aware interactions</li>
-                </ul>
-              </motion.div>
-
-              {/* Self-Awareness */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="bg-gradient-to-br from-purple-900/20 to-pink-900/20 p-8 rounded-2xl border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300"
-              >
-                <div className="flex items-center gap-3 mb-6">
-                  <Eye className="w-8 h-8 text-purple-400" />
-                  <h3 className="text-2xl font-bold text-white">Self-Awareness</h3>
-                </div>
-                <p className="text-gray-300 mb-6">
-                  Consciousness modeling, self-reflection, and metacognitive capabilities.
-                </p>
-                <ul className="space-y-2 text-gray-300">
-                  <li>• Consciousness simulation</li>
-                  <li>• Self-reflection mechanisms</li>
-                  <li>• Metacognitive awareness</li>
-                  <li>• Identity formation</li>
-                </ul>
-              </motion.div>
-
-              {/* Ethical Alignment */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                className="bg-gradient-to-br from-green-900/20 to-emerald-900/20 p-8 rounded-2xl border border-green-500/20 hover:border-green-500/40 transition-all duration-300"
-              >
-                <div className="flex items-center gap-3 mb-6">
-                  <Shield className="w-8 h-8 text-green-400" />
-                  <h3 className="text-2xl font-bold text-white">Ethical Alignment</h3>
-                </div>
-                <p className="text-gray-300 mb-6">
-                  Value alignment, ethical reasoning, and moral decision-making frameworks.
-                </p>
-                <ul className="space-y-2 text-gray-300">
-                  <li>• Value alignment systems</li>
-                  <li>• Ethical reasoning engines</li>
-                  <li>• Moral decision frameworks</li>
-                  <li>• Bias detection and mitigation</li>
-                </ul>
-              </motion.div>
-
-              {/* Learning & Growth */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="bg-gradient-to-br from-blue-900/20 to-indigo-900/20 p-8 rounded-2xl border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300"
-              >
-                <div className="flex items-center gap-3 mb-6">
-                  <Brain className="w-8 h-8 text-blue-400" />
-                  <h3 className="text-2xl font-bold text-white">Learning & Growth</h3>
-                </div>
-                <p className="text-gray-300 mb-6">
-                  Continuous learning, adaptation, and personal growth capabilities.
-                </p>
-                <ul className="space-y-2 text-gray-300">
-                  <li>• Continuous learning systems</li>
-                  <li>• Adaptive behavior patterns</li>
-                  <li>• Personal growth modeling</li>
-                  <li>• Experience integration</li>
-                </ul>
-              </motion.div>
-
-              {/* Social Intelligence */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.7 }}
-                className="bg-gradient-to-br from-orange-900/20 to-red-900/20 p-8 rounded-2xl border border-orange-500/20 hover:border-orange-500/40 transition-all duration-300"
-              >
-                <div className="flex items-center gap-3 mb-6">
-                  <Users className="w-8 h-8 text-orange-400" />
-                  <h3 className="text-2xl font-bold text-white">Social Intelligence</h3>
-                </div>
-                <p className="text-gray-300 mb-6">
-                  Social understanding, relationship building, and collaborative capabilities.
-                </p>
-                <ul className="space-y-2 text-gray-300">
-                  <li>• Social context understanding</li>
-                  <li>• Relationship modeling</li>
-                  <li>• Collaborative intelligence</li>
-                  <li>• Cultural awareness</li>
-                </ul>
-              </motion.div>
-
-              {/* Consciousness Monitoring */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-                className="bg-gradient-to-br from-yellow-900/20 to-amber-900/20 p-8 rounded-2xl border border-yellow-500/20 hover:border-yellow-500/40 transition-all duration-300"
-              >
-                <div className="flex items-center gap-3 mb-6">
-                  <Target className="w-8 h-8 text-yellow-400" />
-                  <h3 className="text-2xl font-bold text-white">Consciousness Monitoring</h3>
-                </div>
-                <p className="text-gray-300 mb-6">
-                  Real-time consciousness assessment and ethical compliance monitoring.
-                </p>
-                <ul className="space-y-2 text-gray-300">
-                  <li>• Consciousness metrics</li>
-                  <li>• Ethical compliance tracking</li>
-                  <li>• Behavioral analysis</li>
-                  <li>• Safety monitoring</li>
-                </ul>
-              </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {features.map((feature, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/30 border border-purple-500/20 rounded-2xl p-8 hover:border-purple-500/40 transition-all duration-300"
+                >
+                  <div className="text-purple-400 mb-4">
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
+                  <p className="text-gray-300">{feature.description}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Use Cases */}
-        <section className="py-20 px-4 bg-gradient-to-r from-cyan-900/20 to-blue-900/20">
-          <div className="container mx-auto max-w-6xl">
+        {/* Use Cases Section */}
+        <section className="py-16 px-4 bg-gradient-to-r from-purple-500/5 to-blue-500/5">
+          <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.9 }}
-              className="text-center mb-16"
+              transition={{ duration: 0.8 }}
+              className="text-center mb-12"
             >
-              <h2 className="text-4xl font-bold text-white mb-6">
-                Transform Your AI Applications
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Transform Your Industry
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                From healthcare companions to educational tutors, our platform enables 
-                AI systems that truly understand and care.
+                Discover how our AI consciousness platform can revolutionize your field and create new possibilities.
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="text-center p-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Heart className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">Healthcare Companions</h3>
-                <p className="text-gray-300">AI companions that provide emotional support and personalized care.</p>
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {useCases.map((useCase, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/30 border border-blue-500/20 rounded-2xl p-8"
+                >
+                  <h3 className="text-2xl font-bold text-white mb-4">{useCase.title}</h3>
+                  <p className="text-gray-300 mb-6">{useCase.description}</p>
+                  <div>
+                    <h4 className="text-lg font-semibold text-blue-400 mb-3">Key Benefits</h4>
+                    <ul className="space-y-2">
+                      {useCase.benefits.map((benefit, i) => (
+                        <li key={i} className="flex items-center space-x-2 text-gray-300">
+                          <CheckCircle className="w-4 h-4 text-blue-400 flex-shrink-0" />
+                          <span>{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
 
-              <div className="text-center p-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Brain className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">Educational Tutors</h3>
-                <p className="text-gray-300">AI tutors that adapt to student emotions and learning styles.</p>
-              </div>
+        {/* Pricing Section */}
+        <section className="py-16 px-4">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Choose Your Plan
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Flexible pricing options designed to meet the needs of organizations at every stage of their AI journey.
+              </p>
+            </motion.div>
 
-              <div className="text-center p-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">Customer Service</h3>
-                <p className="text-gray-300">AI agents that understand customer emotions and provide empathetic support.</p>
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {pricing.map((plan, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className={`bg-gradient-to-br from-gray-900/50 to-gray-800/30 border rounded-2xl p-8 ${
+                    plan.name === 'Professional' 
+                      ? 'border-purple-500/40 scale-105' 
+                      : 'border-gray-600/30'
+                  }`}
+                >
+                  {plan.name === 'Professional' && (
+                    <div className="text-center mb-4">
+                      <span className="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-sm rounded-full border border-purple-500/30">
+                        Most Popular
+                      </span>
+                    </div>
+                  )}
+                  
+                  <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
+                  <div className="mb-4">
+                    <span className="text-4xl font-bold text-white">{plan.price}</span>
+                    <span className="text-gray-400">{plan.period}</span>
+                  </div>
+                  <p className="text-gray-300 mb-6">{plan.description}</p>
+                  
+                  <ul className="space-y-3 mb-8">
+                    {plan.features.map((feature, i) => (
+                      <li key={i} className="flex items-center space-x-2 text-gray-300">
+                        <CheckCircle className="w-4 h-4 text-purple-400 flex-shrink-0" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  <a
+                    href="/contact"
+                    className={`w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 ${
+                      plan.name === 'Professional'
+                        ? 'bg-gradient-to-r from-purple-500 to-blue-600 text-white hover:from-purple-600 hover:to-blue-700'
+                        : 'border-2 border-purple-400 text-purple-400 hover:bg-purple-400 hover:text-black'
+                    }`}
+                  >
+                    Get Started
+                  </a>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 px-4">
-          <div className="container mx-auto max-w-4xl text-center">
+        <section className="py-16 px-4 bg-gradient-to-r from-purple-500/10 to-blue-500/10">
+          <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.0 }}
+              transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl font-bold text-white mb-6">
-                Ready to Build Conscious AI?
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                Ready to Evolve AI Consciousness?
               </h2>
               <p className="text-xl text-gray-300 mb-8">
-                Join the revolution in AI consciousness. Create AI systems that truly understand, 
-                feel, and align with human values.
+                Join the forefront of AI development and help shape the future of artificial intelligence.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/contact"
-                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+                  className="px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-600 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
                 >
-                  Get Started
+                  Start Your Journey
                 </a>
                 <a
-                  href="/ai-consciousness-evolution-2025"
-                  className="px-8 py-4 border border-cyan-500 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-500 hover:text-white transition-all duration-300"
+                  href="/innovation-lab"
+                  className="px-8 py-4 border-2 border-purple-400 text-purple-400 font-semibold rounded-lg hover:bg-purple-400 hover:text-black transition-all duration-300"
                 >
                   Learn More
                 </a>
@@ -266,4 +362,6 @@ export default function AIConsciousnessEvolutionPlatform() {
       </div>
     </Layout>
   );
-}
+};
+
+export default AIConsciousnessEvolutionPlatform;

@@ -1,370 +1,199 @@
 import React from 'react';
 import Head from 'next/head';
-import { RefreshCw, Zap, Bot, Workflow, ArrowRight, Check, BarChart3 } from 'lucide-react';
-import { Button } from '../components/ui/Button';
+import Link from 'next/link';
 
-const Automation: React.FC = () => {
-  const features = [
-    {
-      icon: Zap,
-      title: "Intelligent Process Automation",
-      description: "AI-powered automation for complex business processes and workflows",
-      color: "from-yellow-500 to-orange-500"
-    },
-    {
-      icon: Brain,
-      title: "AI-Driven Decision Making",
-      description: "Autonomous systems that make intelligent decisions and take actions",
-      color: "from-purple-500 to-pink-500"
-    },
-    {
-      icon: Cpu,
-      title: "DevOps Automation",
-      description: "End-to-end automation of software development and deployment",
-      color: "from-blue-500 to-cyan-500"
-    },
-    {
-      icon: Shield,
-      title: "Security Automation",
-      description: "Automated threat detection, response, and security operations",
-      color: "from-red-500 to-pink-500"
-    },
-    {
-      icon: Database,
-      title: "Data Pipeline Automation",
-      description: "Automated data collection, processing, and analysis workflows",
-      color: "from-green-500 to-emerald-500"
-    },
-    {
-      icon: Rocket,
-      title: "Infrastructure Automation",
-      description: "Self-healing and self-scaling infrastructure management",
-      color: "from-indigo-500 to-purple-500"
-    }
-  ];
-
-  const solutions = [
-    {
-      category: "Business Process Automation",
-      items: [
-        "Workflow Orchestration",
-        "Document Processing",
-        "Customer Service Automation",
-        "Sales Process Automation",
-        "HR Process Automation",
-        "Financial Process Automation"
-      ]
-    },
-    {
-      category: "IT Operations Automation",
-      items: [
-        "Infrastructure Provisioning",
-        "Configuration Management",
-        "Monitoring & Alerting",
-        "Incident Response",
-        "Backup & Recovery",
-        "Performance Optimization"
-      ]
-    },
-    {
-      category: "Development Automation",
-      items: [
-        "CI/CD Pipelines",
-        "Code Quality Checks",
-        "Testing Automation",
-        "Deployment Automation",
-        "Environment Management",
-        "Release Management"
-      ]
-    }
-  ];
-
-  const technologies = [
-    "AI Consciousness Integration",
-    "Quantum Computing Optimization",
-    "Real-time Neural Networks",
-    "Advanced Machine Learning",
-    "Predictive Analytics",
-    "Natural Language Processing",
-    "Cloud-Native Architecture",
-    "Edge Computing Solutions"
-  ];
-
-  const benefits = [
-    {
-      icon: Zap,
-      title: "90% Time Savings",
-      description: "Automate repetitive tasks and focus on strategic work"
-    },
-    {
-      icon: Shield,
-      title: "Enhanced Security",
-      description: "Reduce human error and improve security posture"
-    },
-    {
-      icon: TrendingUp,
-      title: "Improved Efficiency",
-      description: "Streamline operations and increase productivity"
-    },
-    {
-      icon: Users,
-      title: "Better User Experience",
-      description: "Faster response times and consistent service quality"
-    }
-  ];
-
+export default function AutomationPage() {
   return (
-    <Layout
-      title="Automation Solutions - Zion Tech Group"
-      description="Revolutionary AI-powered automation solutions for business processes, IT operations, and development workflows. Transform your operations with cutting-edge autonomous technology."
-      keywords="automation, process automation, DevOps automation, AI automation, business automation, workflow automation"
-      canonicalUrl="https://ziontechgroup.com/automation"
-    >
-      {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-yellow-900/20 via-orange-900/20 to-red-900/20" />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="inline-flex items-center space-x-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white/80 text-sm mb-6">
-              <Zap className="w-4 h-4" />
-              <span>Intelligent Automation Solutions</span>
-            </div>
+    <>
+      <Head>
+        <title>Automation Hub | Zion Tech Group</title>
+        <meta name="description" content="Explore Zion Tech Group's autonomous automation systems, workflows, and intelligent processes." />
+        <meta property="og:title" content="Automation Hub | Zion Tech Group" />
+        <meta property="og:description" content="Explore Zion Tech Group's autonomous automation systems, workflows, and intelligent processes." />
+      </Head>
+      
+      <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950 text-white">
+        <main className="container mx-auto px-6 py-12">
+          <div className="max-w-6xl mx-auto">
+            <Link href="/" className="inline-flex items-center text-cyan-400 hover:text-cyan-300 mb-8">
+              ← Back to Home
+            </Link>
             
-            <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-              Automate Everything with
-              <span className="block bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent">
-                AI Consciousness
-              </span>
-            </h1>
-            
-            <p className="text-xl lg:text-2xl text-white/80 max-w-4xl mx-auto mb-8 leading-relaxed">
-              Transform your operations with autonomous systems, intelligent workflows, and AI-powered automation. 
-              Build the future of autonomous business operations.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-semibold rounded-lg hover:from-yellow-600 hover:to-orange-600 transition-all duration-300"
-              >
-                Get Started Today
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-lg hover:bg-white/20 transition-all duration-300"
-              >
-                Watch Demo
-              </motion.button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+            <article className="prose prose-invert prose-lg max-w-none">
+              <header className="text-center mb-16">
+                <h1 className="text-5xl font-extrabold mb-6 bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
+                  Automation Hub
+                </h1>
+                <p className="text-xl text-white/80 max-w-3xl mx-auto">
+                  Discover our autonomous systems that work 24/7 to maintain, optimize, and evolve our technology infrastructure.
+                </p>
+              </header>
 
-      {/* Features Grid */}
-      <section className="py-20 bg-black/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-              Cutting-Edge Automation Solutions
-            </h2>
-            <p className="text-xl text-white/70 max-w-3xl mx-auto">
-              Experience the future of automation with our revolutionary AI-powered platforms
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl hover:bg-white/10 transition-all duration-300 hover:border-white/20"
-              >
-                <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${feature.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <feature.icon className="w-8 h-8 text-white" />
+              <section className="mb-16">
+                <h2 className="text-3xl font-bold text-cyan-300 mb-6">Active Automation Systems</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div className="bg-gradient-to-br from-cyan-400/10 to-blue-400/10 rounded-lg p-6 border border-cyan-400/30">
+                    <h3 className="text-xl font-semibold text-cyan-300 mb-3">Content Generation</h3>
+                    <p className="text-white/80 mb-4">
+                      AI-powered systems that continuously create and optimize content across multiple domains.
+                    </p>
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-cyan-300">Status: Active</span>
+                      <span className="text-green-400">✓ Running</span>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-gradient-to-br from-fuchsia-400/10 to-purple-400/10 rounded-lg p-6 border border-fuchsia-400/30">
+                    <h3 className="text-xl font-semibold text-fuchsia-300 mb-3">System Monitoring</h3>
+                    <p className="text-white/80 mb-4">
+                      Continuous health monitoring with automated alerting and self-healing capabilities.
+                    </p>
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-fuchsia-300">Status: Active</span>
+                      <span className="text-green-400">✓ Running</span>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-gradient-to-br from-green-400/10 to-emerald-400/10 rounded-lg p-6 border border-green-400/30">
+                    <h3 className="text-xl font-semibold text-green-300 mb-3">Security Automation</h3>
+                    <p className="text-white/80 mb-4">
+                      Automated threat detection, vulnerability scanning, and security response systems.
+                    </p>
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-green-300">Status: Active</span>
+                      <span className="text-green-400">✓ Running</span>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-gradient-to-br from-blue-400/10 to-indigo-400/10 rounded-lg p-6 border border-blue-400/30">
+                    <h3 className="text-xl font-semibold text-blue-300 mb-3">CI/CD Pipeline</h3>
+                    <p className="text-white/80 mb-4">
+                      Automated testing, building, and deployment with intelligent rollback capabilities.
+                    </p>
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-blue-300">Status: Active</span>
+                      <span className="text-green-400">✓ Running</span>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-gradient-to-br from-purple-400/10 to-pink-400/10 rounded-lg p-6 border border-purple-400/30">
+                    <h3 className="text-xl font-semibold text-purple-300 mb-3">Performance Optimization</h3>
+                    <p className="text-white/80 mb-4">
+                      Continuous performance monitoring and automated optimization recommendations.
+                    </p>
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-purple-300">Status: Active</span>
+                      <span className="text-green-400">✓ Running</span>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-gradient-to-br from-yellow-400/10 to-orange-400/10 rounded-lg p-6 border border-yellow-400/30">
+                    <h3 className="text-xl font-semibold text-yellow-300 mb-3">Backup & Recovery</h3>
+                    <p className="text-white/80 mb-4">
+                      Automated backup systems with intelligent recovery and redundancy management.
+                    </p>
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="text-yellow-300">Status: Active</span>
+                      <span className="text-green-400">✓ Running</span>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
-                <p className="text-white/70 leading-relaxed">{feature.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+              </section>
 
-      {/* Solutions Overview */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-              Comprehensive Automation Solutions
-            </h2>
-            <p className="text-xl text-white/70 max-w-3xl mx-auto">
-              From business processes to IT operations, we provide end-to-end automation solutions
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {solutions.map((solution, index) => (
-              <motion.div
-                key={solution.category}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8"
-              >
-                <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
-                  <Workflow className="w-6 h-6 text-orange-400 mr-3" />
-                  {solution.category}
-                </h3>
-                <ul className="space-y-4">
-                  {solution.items.map((item, itemIndex) => (
-                    <li key={itemIndex} className="flex items-start space-x-3">
-                      <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 flex-shrink-0" />
-                      <span className="text-white/80">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Technology Stack */}
-      <section className="py-20 bg-black/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-              Powered by Revolutionary Technology
-            </h2>
-            <p className="text-xl text-white/70 max-w-3xl mx-auto">
-              Built on the latest advancements in AI consciousness, quantum computing, and autonomous systems
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {technologies.map((tech, index) => (
-              <motion.div
-                key={tech}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/10 transition-all duration-300"
-              >
-                <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center mx-auto mb-3">
-                  <Settings className="w-6 h-6 text-white" />
+              <section className="mb-16">
+                <h2 className="text-3xl font-bold text-cyan-300 mb-6">Automation Statistics</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  <div className="text-center bg-white/10 rounded-lg p-6 border border-white/20">
+                    <div className="text-4xl font-bold text-cyan-400 mb-2">227</div>
+                    <div className="text-white/80">Active Workflows</div>
+                    <div className="text-sm text-cyan-300 mt-2">24/7 Operation</div>
+                  </div>
+                  <div className="text-center bg-white/10 rounded-lg p-6 border border-white/20">
+                    <div className="text-4xl font-bold text-fuchsia-400 mb-2">99.7%</div>
+                    <div className="text-white/80">Success Rate</div>
+                    <div className="text-sm text-fuchsia-300 mt-2">Last 24 Hours</div>
+                  </div>
+                  <div className="text-center bg-white/10 rounded-lg p-6 border border-white/20">
+                    <div className="text-4xl font-bold text-green-400 mb-2">2.3s</div>
+                    <div className="text-white/80">Avg Execution</div>
+                    <div className="text-sm text-green-300 mt-2">Per Workflow</div>
+                  </div>
+                  <div className="text-center bg-white/10 rounded-lg p-6 border border-white/20">
+                    <div className="text-4xl font-bold text-blue-400 mb-2">99.99%</div>
+                    <div className="text-white/80">Uptime</div>
+                    <div className="text-sm text-blue-300 mt-2">System Availability</div>
+                  </div>
                 </div>
-                <p className="text-white/80 text-sm font-medium">{tech}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+              </section>
 
-      {/* Benefits */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-              Why Choose Zion Tech Group?
-            </h2>
-            <p className="text-xl text-white/70 max-w-3xl mx-auto">
-              Experience the competitive advantages of our revolutionary automation solutions
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={benefit.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="w-16 h-16 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                  <benefit.icon className="w-8 h-8 text-white" />
+              <section className="mb-16">
+                <h2 className="text-3xl font-bold text-cyan-300 mb-6">How It Works</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-cyan-400/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-2xl text-cyan-400">1</span>
+                    </div>
+                    <h3 className="text-xl font-semibold text-cyan-300 mb-3">Intelligent Detection</h3>
+                    <p className="text-white/80">
+                      Our systems continuously monitor and detect opportunities for improvement,
+                      optimization, and maintenance.
+                    </p>
+                  </div>
+                  
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-fuchsia-400/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-2xl text-fuchsia-400">2</span>
+                    </div>
+                    <h3 className="text-xl font-semibold text-fuchsia-300 mb-3">Autonomous Action</h3>
+                    <p className="text-white/80">
+                      Systems automatically execute appropriate actions based on learned patterns
+                      and predefined optimization strategies.
+                    </p>
+                  </div>
+                  
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-green-400/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-2xl text-green-400">3</span>
+                    </div>
+                    <h3 className="text-xl font-semibold text-green-300 mb-3">Continuous Learning</h3>
+                    <p className="text-white/80">
+                      Each action provides feedback that improves future decision-making,
+                      creating a self-improving system.
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">{benefit.title}</h3>
-                <p className="text-white/70">{benefit.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+              </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-yellow-900/20 via-orange-900/20 to-red-900/20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-              Ready to Automate Your Operations?
-            </h2>
-            <p className="text-xl text-white/70 mb-8">
-              Join the future of autonomous operations with our revolutionary AI-powered solutions
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-semibold rounded-lg hover:from-yellow-600 hover:to-orange-600 transition-all duration-300 flex items-center justify-center space-x-2"
-              >
-                <span>Get Started Today</span>
-                <ArrowRight className="w-5 h-5" />
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-lg hover:bg-white/20 transition-all duration-300"
-              >
-                Schedule a Demo
-              </motion.button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-    </Layout>
+              <section className="mb-16">
+                <h2 className="text-3xl font-bold text-cyan-300 mb-6">Explore Further</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <Link href="/automation-health" className="group bg-gradient-to-r from-cyan-400/10 to-blue-400/10 rounded-lg p-6 border border-cyan-400/30 hover:border-cyan-400/50 transition-all">
+                    <h3 className="text-xl font-semibold text-cyan-300 mb-3 group-hover:text-cyan-200">Automation Health Dashboard</h3>
+                    <p className="text-white/80 mb-4">
+                      Monitor the real-time status and performance of all our automation systems.
+                    </p>
+                    <div className="text-cyan-400 group-hover:text-cyan-300">View Dashboard →</div>
+                  </Link>
+                  
+                  <Link href="/reports" className="group bg-gradient-to-r from-fuchsia-400/10 to-purple-400/10 rounded-lg p-6 border border-fuchsia-400/30 hover:border-fuchsia-400/50 transition-all">
+                    <h3 className="text-xl font-semibold text-fuchsia-300 mb-3 group-hover:text-fuchsia-200">Automation Reports</h3>
+                    <p className="text-white/80 mb-4">
+                      Detailed reports and analytics from our autonomous systems and workflows.
+                    </p>
+                    <div className="text-fuchsia-400 group-hover:text-fuchsia-300">View Reports →</div>
+                  </Link>
+                </div>
+              </section>
+
+              <footer className="border-t border-white/20 pt-8 text-center">
+                <p className="text-white/60">
+                  Our automation systems never sleep, ensuring continuous innovation and optimization.
+                </p>
+              </footer>
+            </article>
+          </div>
+        </main>
+      </div>
+    </>
   );
-};
-
-export default Automation;
+}

@@ -651,7 +651,7 @@ class ComprehensiveRedundancyOrchestrator {
       await this.checkOverallHealth();
     }, this.config.intervals.overallHealth));
     
-    // Start backup sync
+    // Start backup sync monitoring
     this.checkIntervals.set("backup", setInterval(async () => {
       await this.performBackupSync();
     }, this.config.intervals.backupSync));
@@ -662,7 +662,7 @@ class ComprehensiveRedundancyOrchestrator {
   // Stop monitoring
   stop() {
     if (!this.monitoring) {
-      this.log("Monitoring not running", "WARN");
+      this.log("Monitoring not started", "WARN");
       return;
     }
     
@@ -673,8 +673,8 @@ class ComprehensiveRedundancyOrchestrator {
       clearInterval(interval);
       this.log(`Stopped ${name} monitoring`, "INFO");
     }
-    
     this.checkIntervals.clear();
+    
     this.log("Comprehensive redundancy monitoring stopped", "INFO");
   }
 
@@ -682,7 +682,7 @@ class ComprehensiveRedundancyOrchestrator {
   getStatus() {
     return {
       monitoring: this.monitoring,
-      health: this.healthHistory.get("overall") || null,
+      healthHistory: Object.fromEntries(this.healthHistory),
       restartCounts: Object.fromEntries(this.restartCounts),
       lastBackupSync: this.lastBackupSync,
       config: this.config
@@ -692,7 +692,9 @@ class ComprehensiveRedundancyOrchestrator {
   // Run once
   async runOnce() {
     this.log("Running comprehensive redundancy check once", "INFO");
-    return await this.checkOverallHealth();
+    await this.checkOverallHealth();
+    await this.performBackupSync();
+    return this.getStatus();
   }
 }
 
@@ -712,14 +714,14 @@ if (require.main === module) {
       console.log(JSON.stringify(orchestrator.getStatus(), null, 2));
       break;
     case "once":
-      orchestrator.runOnce().then(result => {
-        console.log(JSON.stringify(result, null, 2));
+      orchestrator.runOnce().then(status => {
+        console.log(JSON.stringify(status, null, 2));
         process.exit(0);
       });
       break;
     case "health":
-      orchestrator.checkOverallHealth().then(result => {
-        console.log(JSON.stringify(result, null, 2));
+      orchestrator.checkOverallHealth().then(status => {
+        console.log(JSON.stringify(status, null, 2));
         process.exit(0);
       });
       break;

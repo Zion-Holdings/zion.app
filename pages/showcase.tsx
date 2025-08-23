@@ -1,8 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Star, Rocket, Brain, Atom, Shield, Zap, Target, Globe, Users, BarChart3, Cpu, Building } from 'lucide-react';
+import { Star, Rocket, Sparkles, Brain, Atom, Cpu, Building, Calculator, DollarSign, Grid, ArrowRight, Play, Target, Zap } from 'lucide-react';
 import Layout from '../components/layout/Layout';
-import Link from 'next/link';
 
 export default function Showcase() {
   return (
@@ -18,11 +17,11 @@ export default function Showcase() {
               className="text-center"
             >
               <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
-                Service Showcase
+                Services Showcase
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Discover our cutting-edge technology solutions through interactive demonstrations, 
-                detailed showcases, and real-world applications that drive innovation.
+                Explore our revolutionary technology solutions through interactive demonstrations, 
+                detailed showcases, and comprehensive pricing information.
               </p>
             </motion.div>
           </div>
@@ -37,104 +36,65 @@ export default function Showcase() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Featured Showcases
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Explore our most innovative and transformative technology solutions
-              </p>
+              <h2 className="text-4xl font-bold text-white mb-4">Featured Showcases</h2>
+              <p className="text-xl text-gray-300">Our most innovative and cutting-edge service demonstrations</p>
             </motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-cyan-900/20 to-blue-900/20 border border-cyan-500/30 hover:border-cyan-400/60 transition-all duration-500"
-              >
-                <div className="p-8">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Star className="w-8 h-8 text-cyan-400" />
-                    <span className="text-sm font-semibold text-cyan-400 bg-cyan-900/30 px-3 py-1 rounded-full">
-                      Featured
-                    </span>
+              {[
+                {
+                  icon: <Star className="w-12 h-12 text-yellow-400" />,
+                  title: "2025 Services Showcase",
+                  description: "Current service portfolio with the latest innovations",
+                  href: "/services",
+                  featured: true,
+                  badge: "Current"
+                },
+                {
+                  icon: <Sparkles className="w-12 h-12 text-purple-400" />,
+                  title: "2037 Innovative Services",
+                  description: "Future technology preview and upcoming solutions",
+                  href: "/2037-innovative-services-showcase",
+                  featured: true,
+                  badge: "Future"
+                },
+                {
+                  icon: <DollarSign className="w-12 h-12 text-green-400" />,
+                  title: "Pricing Plans",
+                  description: "Service pricing and comprehensive packages",
+                  href: "/pricing",
+                  featured: true,
+                  badge: "Pricing"
+                }
+              ].map((showcase, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 + index * 0.1 }}
+                  className="group relative p-8 bg-black/40 border border-gray-800 rounded-2xl hover:border-cyan-500/50 transition-all duration-300 hover:transform hover:scale-105"
+                >
+                  {showcase.badge && (
+                    <div className="absolute top-4 right-4">
+                      <span className="px-3 py-1 text-xs font-semibold bg-cyan-500 text-black rounded-full">
+                        {showcase.badge}
+                      </span>
+                    </div>
+                  )}
+                  <div className="flex justify-center mb-6">{showcase.icon}</div>
+                  <h3 className="text-xl font-bold text-white mb-3 text-center">{showcase.title}</h3>
+                  <p className="text-gray-300 mb-6 text-center leading-relaxed">{showcase.description}</p>
+                  <div className="text-center">
+                    <a
+                      href={showcase.href}
+                      className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 group-hover:scale-105"
+                    >
+                      <span>Explore</span>
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </a>
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-4">
-                    2025 Services Showcase
-                  </h3>
-                  <p className="text-gray-300 mb-6 leading-relaxed">
-                    Our current flagship services portfolio featuring AI consciousness, 
-                    quantum computing, and autonomous systems.
-                  </p>
-                  <Link 
-                    href="/services"
-                    className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors group-hover:gap-3"
-                  >
-                    <span>Explore Services</span>
-                    <Rocket className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-900/20 to-pink-900/20 border border-purple-500/30 hover:border-purple-400/60 transition-all duration-500"
-              >
-                <div className="p-8">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Brain className="w-8 h-8 text-purple-400" />
-                    <span className="text-sm font-semibold text-purple-400 bg-purple-900/30 px-3 py-1 rounded-full">
-                      AI Focus
-                    </span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-4">
-                    2037 Innovative Services
-                  </h3>
-                  <p className="text-gray-300 mb-6 leading-relaxed">
-                    Next-generation AI solutions that push the boundaries of consciousness 
-                    and autonomous decision-making.
-                  </p>
-                  <Link 
-                    href="/2037-innovative-services-showcase"
-                    className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors group-hover:gap-3"
-                  >
-                    <span>View Innovation</span>
-                    <Brain className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-green-900/20 to-emerald-900/20 border border-green-500/30 hover:border-green-400/60 transition-all duration-500"
-              >
-                <div className="p-8">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Atom className="w-8 h-8 text-green-400" />
-                    <span className="text-sm font-semibold text-green-400 bg-green-900/30 px-3 py-1 rounded-full">
-                      Quantum
-                    </span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-4">
-                    Ultimate 2035 Futuristic
-                  </h3>
-                  <p className="text-gray-300 mb-6 leading-relaxed">
-                    Revolutionary quantum technologies and space-age solutions that 
-                    define the future of computing and exploration.
-                  </p>
-                  <Link 
-                    href="/ultimate-2035-futuristic-services-showcase"
-                    className="inline-flex items-center gap-2 text-green-400 hover:text-green-300 transition-colors group-hover:gap-3"
-                  >
-                    <span>Discover Future</span>
-                    <Atom className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </div>
-              </motion.div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
@@ -148,90 +108,86 @@ export default function Showcase() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Service Categories
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Explore our comprehensive range of technology solutions organized by category
-              </p>
+              <h2 className="text-4xl font-bold text-white mb-4">Service Categories</h2>
+              <p className="text-xl text-gray-300">Browse our comprehensive range of technology solutions</p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.7 }}
-                className="group text-center p-6 rounded-xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300"
-              >
-                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Brain className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">AI & Consciousness</h3>
-                <p className="text-gray-400 text-sm">Advanced AI solutions</p>
-                <Link 
-                  href="/ai-services"
-                  className="inline-block mt-4 text-cyan-400 hover:text-cyan-300 transition-colors"
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: <Brain className="w-12 h-12 text-cyan-400" />,
+                  title: "AI & Consciousness",
+                  description: "Advanced AI consciousness solutions and emotional intelligence platforms",
+                  href: "/ai-services",
+                  services: ["AI Consciousness Evolution", "Emotional Intelligence", "Autonomous Systems"]
+                },
+                {
+                  icon: <Atom className="w-12 h-12 text-blue-400" />,
+                  title: "Quantum Technology",
+                  description: "Breakthrough quantum computing and quantum-secure solutions",
+                  href: "/quantum-services",
+                  services: ["Quantum Computing", "Quantum Security", "Quantum Networks"]
+                },
+                {
+                  icon: <Cpu className="w-12 h-12 text-purple-400" />,
+                  title: "Autonomous Systems",
+                  description: "Self-operating intelligent systems and automation platforms",
+                  href: "/autonomous-systems",
+                  services: ["Business Automation", "DevOps Automation", "Content Generation"]
+                },
+                {
+                  icon: <Rocket className="w-12 h-12 text-green-400" />,
+                  title: "Micro SAAS",
+                  description: "Specialized business solutions and innovative applications",
+                  href: "/micro-saas",
+                  services: ["Business Intelligence", "HR Analytics", "Supply Chain"]
+                },
+                {
+                  icon: <Building className="w-12 h-12 text-yellow-400" />,
+                  title: "Enterprise IT",
+                  description: "Corporate infrastructure and enterprise-grade solutions",
+                  href: "/enterprise-it",
+                  services: ["Cloud Infrastructure", "Security Platforms", "Data Management"]
+                },
+                {
+                  icon: <Target className="w-12 h-12 text-pink-400" />,
+                  title: "Industry Solutions",
+                  description: "Specialized solutions for healthcare, finance, and manufacturing",
+                  href: "/solutions",
+                  services: ["Healthcare AI", "Financial Technology", "Manufacturing AI"]
+                }
+              ].map((category, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.8 + index * 0.1 }}
+                  className="group p-6 bg-black/40 border border-gray-800 rounded-2xl hover:border-cyan-500/50 transition-all duration-300"
                 >
-                  Explore →
-                </Link>
-              </motion.div>
+                  <div className="flex justify-center mb-4">{category.icon}</div>
+                  <h3 className="text-xl font-bold text-white mb-3 text-center">{category.title}</h3>
+                  <p className="text-gray-300 mb-4 text-center leading-relaxed">{category.description}</p>
+                  
+                  <div className="mb-6">
+                    <h4 className="text-sm font-semibold text-cyan-400 mb-2">Key Services:</h4>
+                    <ul className="space-y-1">
+                      {category.services.map((service, serviceIndex) => (
+                        <li key={serviceIndex} className="text-gray-300 text-sm">• {service}</li>
+                      ))}
+                    </ul>
+                  </div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-                className="group text-center p-6 rounded-xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300"
-              >
-                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Atom className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">Quantum Technology</h3>
-                <p className="text-gray-400 text-sm">Quantum computing solutions</p>
-                <Link 
-                  href="/quantum-services"
-                  className="inline-block mt-4 text-blue-400 hover:text-blue-300 transition-colors"
-                >
-                  Explore →
-                </Link>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.9 }}
-                className="group text-center p-6 rounded-xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300"
-              >
-                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-purple-500 to-pink-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Cpu className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">Autonomous Systems</h3>
-                <p className="text-gray-400 text-sm">Self-operating solutions</p>
-                <Link 
-                  href="/autonomous-systems"
-                  className="inline-block mt-4 text-purple-400 hover:text-purple-300 transition-colors"
-                >
-                  Explore →
-                </Link>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.0 }}
-                className="group text-center p-6 rounded-xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 hover:border-green-500/50 transition-all duration-300"
-              >
-                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Building className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">Enterprise IT</h3>
-                <p className="text-gray-400 text-sm">Corporate solutions</p>
-                <Link 
-                  href="/enterprise-it"
-                  className="inline-block mt-4 text-green-400 hover:text-green-300 transition-colors"
-                >
-                  Explore →
-                </Link>
-              </motion.div>
+                  <div className="text-center">
+                    <a
+                      href={category.href}
+                      className="inline-flex items-center space-x-2 px-4 py-2 border border-cyan-500 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-500 hover:text-black transition-all duration-300"
+                    >
+                      <span>View Services</span>
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </a>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
@@ -242,111 +198,92 @@ export default function Showcase() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.1 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Interactive Demonstrations
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Experience our technology firsthand through interactive demos and live showcases
-              </p>
+              <h2 className="text-4xl font-bold text-white mb-4">Interactive Demonstrations</h2>
+              <p className="text-xl text-gray-300">Experience our technology firsthand through live demos and simulations</p>
             </motion.div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 1.2 }}
-                className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-8 rounded-2xl border border-gray-700/50"
-              >
-                <h3 className="text-2xl font-bold text-white mb-4">
-                  Live AI Demo
-                </h3>
-                <p className="text-gray-300 mb-6 leading-relaxed">
-                  Watch our AI consciousness platform in action, demonstrating real-time 
-                  learning, decision-making, and ethical reasoning capabilities.
-                </p>
-                <button className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300">
-                  Launch Demo
-                </button>
-              </motion.div>
+              {[
+                {
+                  icon: <Play className="w-12 h-12 text-cyan-400" />,
+                  title: "AI Consciousness Simulator",
+                  description: "Experience our AI consciousness evolution platform in action",
+                  status: "Live Demo Available",
+                  href: "/ai-consciousness-evolution-platform"
+                },
+                {
+                  icon: <Zap className="w-12 h-12 text-blue-400" />,
+                  title: "Quantum Security Demo",
+                  description: "See quantum encryption and security in real-time",
+                  status: "Coming Soon",
+                  href: "/quantum-cybersecurity-sentinel"
+                }
+              ].map((demo, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: index === 0 ? -20 : 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 1.2 + index * 0.2 }}
+                  className="p-8 bg-black/40 border border-gray-800 rounded-2xl hover:border-cyan-500/50 transition-all duration-300"
+                >
+                  <div className="flex justify-center mb-6">{demo.icon}</div>
+                  <h3 className="text-xl font-bold text-white mb-3 text-center">{demo.title}</h3>
+                  <p className="text-gray-300 mb-4 text-center leading-relaxed">{demo.description}</p>
+                  
+                  <div className="text-center mb-6">
+                    <span className={`px-3 py-1 text-sm font-semibold rounded-full ${
+                      demo.status === "Live Demo Available" 
+                        ? "bg-green-500 text-black" 
+                        : "bg-yellow-500 text-black"
+                    }`}>
+                      {demo.status}
+                    </span>
+                  </div>
 
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 1.3 }}
-                className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-8 rounded-2xl border border-gray-700/50"
-              >
-                <h3 className="text-2xl font-bold text-white mb-4">
-                  Quantum Simulator
-                </h3>
-                <p className="text-gray-300 mb-6 leading-relaxed">
-                  Explore quantum computing concepts through our interactive simulator, 
-                  understanding superposition, entanglement, and quantum algorithms.
-                </p>
-                <button className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-bold rounded-lg hover:from-purple-600 hover:to-pink-700 transition-all duration-300">
-                  Start Simulation
-                </button>
-              </motion.div>
+                  <div className="text-center">
+                    <a
+                      href={demo.href}
+                      className="inline-flex items-center space-x-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full hover:from-cyan-600 hover:to-blue-700 transition-all duration-300"
+                    >
+                      <span>Launch Demo</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </a>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Pricing Showcase */}
+        {/* Call to Action */}
         <section className="py-20 px-4 bg-black/30">
-          <div className="container mx-auto max-w-6xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.4 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Pricing & Packages
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Transparent pricing for all our technology solutions and service packages
-              </p>
-            </motion.div>
-
-            <div className="text-center">
-              <Link 
-                href="/pricing"
-                className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
-              >
-                <span>View All Pricing</span>
-                <Target className="w-5 h-5" />
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-20 px-4">
           <div className="container mx-auto max-w-4xl text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.5 }}
+              transition={{ duration: 0.8, delay: 1.4 }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Ready to Experience the Future?
-              </h2>
-              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                Schedule a personalized demo or consultation to see how our technology 
-                solutions can transform your business.
+              <h2 className="text-4xl font-bold text-white mb-6">Ready to Experience the Future?</h2>
+              <p className="text-xl text-gray-300 mb-8">
+                Explore our revolutionary services, view detailed demonstrations, and discover 
+                how our technology can transform your business.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105">
-                  Schedule Demo
-                </button>
-                <Link 
-                  href="/contact"
-                  className="px-8 py-4 border-2 border-cyan-500 text-cyan-400 font-bold rounded-lg hover:bg-cyan-500 hover:text-white transition-all duration-300"
+                <a
+                  href="/services"
+                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
                 >
-                  Contact Us
-                </Link>
+                  View All Services
+                </a>
+                <a
+                  href="/contact"
+                  className="px-8 py-4 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-full hover:bg-cyan-500 hover:text-black transition-all duration-300"
+                >
+                  Schedule a Demo
+                </a>
               </div>
             </motion.div>
           </div>

@@ -1,19 +1,30 @@
 const { execSync } = require('child_process');
 
-function run(cmd) { execSync(cmd, { stdio: 'inherit', shell: true }); }
+function runNode(relPath, args = []) {
+  const abs = path.resolve(__dirname, '..', '..', relPath);
+  const res = spawnSync('node', [abs, ...args], { stdio: 'pipe', encoding: 'utf8' });
+  return { status: res.status || 0, stdout: res.stdout || '', stderr: res.stderr || '' };
+}
 
-exports.config = { schedule: '*/10 * * * *' };
+exports.config = {
+  schedule: '*/20 * * * *', // every 20 minutes
+};
 
 exports.handler = async () => {
-  try {
-    run('node automation/a11y-audit.cjs || true');
-    run('git config user.name "zion-bot"');
-    run('git config user.email "bot@zion.app"');
-    run('git add -A');
-    run('git commit -m "chore(a11y): update a11y report [skip ci]" || true');
-    run('git push origin main || true');
-    return { statusCode: 200, body: JSON.stringify({ ok: true, tool: 'a11y-audit-runner' }) };
-  } catch (e) {
-    return { statusCode: 200, body: JSON.stringify({ ok: false, error: String(e) }) };
+  const logs = [];
+  function logStep(name, fn) {
+    logs.push(`\n=== ${name} ===`);
+    const { status, stdout, stderr } = fn();
+    if (stdout) logs.push(stdout);
+    if (stderr) logs.push(stderr);
+    logs.push(`exit=${status}`);
+    return status;
   }
+
+  process.env.CANONICAL_URL = process.env.CANONICAL_URL || process.env.SITE_URL || process.env.URL || 'https://ziontechgroup.com';
+
+  logStep('a11y:audit', () => runNode('automation/a11y-audit.cjs'));
+  logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
+
+  return { statusCode: 200, body: logs.join('\n') };
 };

@@ -1,45 +1,21 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  // Enable static export for Next.js 14
-  output: 'export',
-  trailingSlash: true,
-  productionBrowserSourceMaps: false,
-  images: { unoptimized: true },
-  // Note: redirects() removed as it's incompatible with output: 'export'
-  // Use Netlify _redirects file instead for redirects
-  eslint: { ignoreDuringBuilds: true },
+const path = require('path');
+
+let withSentryConfig = (cfg) => cfg;
+try {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const sentry = require('@sentry/nextjs');
+  withSentryConfig = (cfg) => sentry.withSentryConfig(cfg, { silent: true });
+} catch {}
+
+const baseConfig = {
+  reactStrictMode: true,
+  images: { domains: ["localhost"] },
   typescript: { ignoreBuildErrors: true },
-  
-  // Enable build caching for faster rebuilds
-  experimental: {
-    isrMemoryCacheSize: 0,
-    // Enable build caching
-    buildCache: true,
-  },
-  
-  // Generate build ID for caching
-  generateBuildId: async () => {
-    return 'build-' + Date.now();
-  },
-  
-  // Optimize build performance
-  swcMinify: true,
-  compress: true,
-  
-  // Enable webpack caching
-  webpack: (config, { dev, isServer }) => {
-    if (!dev && !isServer) {
-      config.cache = {
-        type: 'filesystem',
-        buildDependencies: {
-          config: [__filename],
-        },
-      };
-    }
-    return config;
-  },
+  eslint: { ignoreDuringBuilds: true },
+  async rewrites() { return [{ source: '/webhooks/receive', destination: '/api/webhooks/receive' }]; },
+  exportPathMap: async function (defaultPathMap) { delete defaultPathMap['/developers']; delete defaultPathMap['/dashboard/api-access']; return defaultPathMap; },
+  webpack: (config) => { config.resolve = config.resolve || {}; config.resolve.alias = config.resolve.alias || {}; config.resolve.alias['@'] = path.resolve(__dirname); return config; },
 };
 
-module.exports = {
-  i18n,
-};
+module.exports = withSentryConfig(baseConfig);

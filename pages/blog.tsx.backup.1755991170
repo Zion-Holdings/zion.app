@@ -1,0 +1,442 @@
+import React, { useState } from 'react';
+import Head from 'next/head';
+import Container from '../components/ui/Container';
+import Card from '../components/ui/Card';
+import Button from '../components/ui/Button';
+
+<<<<<<< HEAD
+export default function Blog() {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('all');
+
+  const categories = [
+    { id: 'all', name: 'All Posts', count: 25 },
+    { id: 'ai', name: 'Artificial Intelligence', count: 8 },
+    { id: 'quantum', name: 'Quantum Computing', count: 6 },
+    { id: 'space-tech', name: 'Space Technology', count: 5 },
+    { id: 'cybersecurity', name: 'Cybersecurity', count: 4 },
+    { id: 'industry-insights', name: 'Industry Insights', count: 2 }
+  ];
+
+  const featuredPosts = [
+    {
+      title: 'The Future of Autonomous Technology in 2025',
+      excerpt: 'Explore the cutting-edge developments in autonomous systems and how they\'re reshaping industries worldwide.',
+      author: 'Dr. Sarah Chen',
+      date: 'January 15, 2025',
+      readTime: '8 min read',
+      category: 'Technology Trends',
+      image: '🚀',
+      color: 'bg-gradient-to-br from-blue-400 to-indigo-500',
+      featured: true,
+    },
+    {
+      title: 'AI-Powered Automation: From Theory to Practice',
+      excerpt: 'Real-world implementation strategies for deploying intelligent automation systems in enterprise environments.',
+      author: 'Michael Rodriguez',
+      date: 'January 12, 2025',
+      readTime: '12 min read',
+      category: 'AI & Automation',
+      image: '🤖',
+      color: 'bg-gradient-to-br from-green-400 to-emerald-500',
+      featured: false,
+    },
+    {
+      title: 'Building Resilient Cloud Infrastructure',
+      excerpt: 'Best practices for creating fault-tolerant, scalable cloud systems that can handle any workload.',
+      author: 'Alex Thompson',
+      date: 'January 10, 2025',
+      readTime: '10 min read',
+      category: 'Cloud Computing',
+      image: '☁️',
+      color: 'bg-gradient-to-br from-purple-400 to-pink-500',
+      featured: false,
+    },
+    {
+      title: 'The Rise of Edge Computing in IoT',
+      excerpt: 'How edge computing is revolutionizing IoT deployments and enabling real-time decision making.',
+      author: 'Dr. Emily Watson',
+      date: 'January 8, 2025',
+      readTime: '6 min read',
+      category: 'IoT & Edge',
+      image: '🌐',
+      color: 'bg-gradient-to-br from-yellow-400 to-orange-500',
+      featured: false,
+    },
+    {
+      title: 'Cybersecurity in the Age of AI',
+      excerpt: 'Understanding the evolving threat landscape and how AI is both a weapon and shield in cybersecurity.',
+      author: 'David Kim',
+      date: 'January 5, 2025',
+      readTime: '9 min read',
+      category: 'Security',
+      image: '🔒',
+      color: 'bg-gradient-to-br from-red-400 to-pink-500',
+      featured: false,
+    },
+    {
+      title: 'Data Analytics for Business Intelligence',
+      excerpt: 'Transform your business data into actionable insights with modern analytics and visualization techniques.',
+      author: 'Lisa Chen',
+      date: 'January 3, 2025',
+      readTime: '7 min read',
+      category: 'Data & Analytics',
+      image: '📊',
+      color: 'bg-gradient-to-br from-cyan-400 to-blue-500',
+      featured: false,
+    },
+  ];
+
+  const categories = [
+    { name: 'All', count: '25', active: true },
+    { name: 'Technology Trends', count: '8' },
+    { name: 'AI & Automation', count: '6' },
+    { name: 'Cloud Computing', count: '4' },
+    { name: 'IoT & Edge', count: '3' },
+    { name: 'Security', count: '2' },
+    { name: 'Data & Analytics', count: '2' },
+  ];
+=======
+export default function BlogPage() {
+  const blogPosts = [
+    {
+      id: 1,
+      title: "The Future of Autonomous AI Systems",
+      excerpt: "Exploring how AI systems are evolving to operate independently and make intelligent decisions without human intervention.",
+      date: "2025-01-19",
+      category: "AI Development",
+      readTime: "5 min read",
+      image: "🤖"
+    },
+    {
+      id: 2,
+      title: "Automation in Modern DevOps",
+      excerpt: "How automated CI/CD pipelines and infrastructure management are revolutionizing software development.",
+      date: "2025-01-18",
+      category: "DevOps",
+      readTime: "4 min read",
+      image: "⚡"
+    },
+    {
+      id: 3,
+      title: "Cloud-Native Architecture Trends",
+      excerpt: "The latest developments in cloud infrastructure and how autonomous systems are optimizing performance.",
+      date: "2025-01-17",
+      category: "Cloud",
+      readTime: "6 min read",
+      image: "☁️"
+    },
+    {
+      id: 4,
+      title: "Machine Learning in Production",
+      excerpt: "Best practices for deploying and maintaining ML models in production environments.",
+      date: "2025-01-16",
+      category: "Machine Learning",
+      readTime: "7 min read",
+      image: "🧠"
+    },
+    {
+      id: 5,
+      title: "The Rise of Self-Healing Applications",
+      excerpt: "How modern applications are becoming more resilient through autonomous monitoring and recovery.",
+      date: "2025-01-15",
+      category: "Automation",
+      readTime: "5 min read",
+      image: "🔧"
+    },
+    {
+      id: 6,
+      title: "AI Ethics and Responsible Development",
+      excerpt: "Important considerations for building AI systems that are fair, transparent, and beneficial to society.",
+      date: "2025-01-14",
+      category: "AI Ethics",
+      readTime: "8 min read",
+      image: "⚖️"
+    }
+  ];
+
+  const categories = ["All", "AI Development", "DevOps", "Cloud", "Machine Learning", "Automation", "AI Ethics"];
+>>>>>>> origin/cursor/build-failed-due-to-missing-dotenv-module-c691
+
+  return (
+    <>
+      <Head>
+<<<<<<< HEAD
+        <title>Blog | Zion Tech Group</title>
+        <meta name="description" content="Insights, trends, and expert analysis on autonomous technology, AI automation, and the future of cloud computing." />
+        <meta property="og:title" content="Blog | Zion Tech Group" />
+        <meta property="og:description" content="Latest insights on autonomous technology and AI innovation." />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
+
+      {/* Hero Section */}
+      <section className="py-20 sm:py-24 lg:py-32 bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-100">
+        <Container>
+          <div className="text-center">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6">
+              Insights & Innovation
+            </h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+              Stay ahead of the curve with expert analysis, industry trends, and cutting-edge insights on autonomous technology
+            </p>
+            <Button href="/contact" size="lg">
+              Subscribe to Updates
+            </Button>
+          </div>
+        </Container>
+      </section>
+
+      {/* Categories Filter */}
+      <section className="py-8 bg-white border-b border-gray-200">
+        <Container>
+          <div className="flex flex-wrap gap-4 justify-center">
+            {categories.map((category, index) => (
+              <button
+                key={index}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                  category.active
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                }`}
+              >
+                {category.name} ({category.count})
+              </button>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Featured Post */}
+      {blogPosts.filter(post => post.featured).map((post, index) => (
+        <section key={index} className="py-16 lg:py-24 bg-white">
+          <Container>
+            <div className="text-center mb-12">
+              <span className="px-4 py-2 bg-blue-100 text-blue-600 text-sm font-medium rounded-full">
+                Featured Post
+              </span>
+            </div>
+            
+            <Card className="overflow-hidden max-w-4xl mx-auto">
+              <div className={`w-full h-64 ${post.color} flex items-center justify-center`}>
+                <span className="text-8xl">{post.image}</span>
+              </div>
+              
+              <div className="p-8">
+                <div className="flex items-center gap-4 mb-4 text-sm text-gray-500">
+                  <span>{post.category}</span>
+                  <span>•</span>
+                  <span>{post.date}</span>
+                  <span>•</span>
+                  <span>{post.readTime}</span>
+                </div>
+                
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                  {post.title}
+                </h2>
+                
+                <p className="text-xl text-gray-600 mb-6 leading-relaxed">
+                  {post.excerpt}
+                </p>
+                
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
+                      <span className="text-gray-600 font-medium">
+                        {post.author.split(' ').map(n => n[0]).join('')}
+                      </span>
+                    </div>
+                    <div>
+                      <div className="font-medium text-gray-900">{post.author}</div>
+                      <div className="text-sm text-gray-500">Technology Expert</div>
+                    </div>
+                  </div>
+                  
+                  <Button href="/blog/featured-post" variant="outline">
+                    Read Full Article
+                  </Button>
+                </div>
+              </div>
+            </Card>
+          </Container>
+        </section>
+      ))}
+
+      {/* Blog Posts Grid */}
+      <section className="py-16 lg:py-24 bg-gray-50">
+        <Container>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Latest Articles
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Discover the latest insights and trends in autonomous technology
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {blogPosts.filter(post => !post.featured).map((post, index) => (
+              <Card key={index} className="overflow-hidden">
+                <div className={`w-full h-48 ${post.color} flex items-center justify-center`}>
+                  <span className="text-6xl">{post.image}</span>
+                </div>
+                
+                <div className="p-6">
+                  <div className="flex items-center gap-4 mb-4 text-sm text-gray-500">
+                    <span className="px-2 py-1 bg-gray-100 text-gray-600 rounded-full text-xs">
+                      {post.category}
+                    </span>
+                    <span>{post.readTime}</span>
+                  </div>
+                  
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
+                    {post.title}
+                  </h3>
+                  
+                  <p className="text-gray-600 mb-4 line-clamp-3">
+                    {post.excerpt}
+                  </p>
+                  
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center">
+                        <span className="text-gray-600 text-sm font-medium">
+                          {post.author.split(' ').map(n => n[0]).join('')}
+                        </span>
+                      </div>
+                      <span className="text-sm text-gray-500">{post.author}</span>
+                    </div>
+                    
+                    <span className="text-sm text-gray-400">{post.date}</span>
+                  </div>
+                  
+                  <Button href={`/blog/${post.title.toLowerCase().replace(/ /g, '-')}`} variant="ghost" className="w-full mt-4">
+                    Read More
+                  </Button>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Newsletter Signup */}
+      <section className="py-16 lg:py-24 bg-gradient-to-r from-blue-600 to-purple-600">
+        <Container>
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+              Stay Updated
+            </h2>
+            <p className="text-xl text-blue-100 mb-8">
+              Get the latest insights on autonomous technology delivered to your inbox
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-3 rounded-lg border-0 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600"
+              />
+              <Button variant="secondary" size="md">
+                Subscribe
+              </Button>
+            </div>
+            
+            <p className="text-sm text-blue-200 mt-4">
+              No spam, unsubscribe at any time. We respect your privacy.
+            </p>
+          </div>
+        </Container>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 lg:py-24 bg-white">
+        <Container>
+          <div className="text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+              Ready to Transform Your Business?
+            </h2>
+            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+              Let&apos;s discuss how our autonomous technology can help you achieve your goals
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button href="/contact" size="lg">
+                Get Started
+              </Button>
+              <Button href="/services" variant="outline" size="lg">
+                Explore Services
+              </Button>
+            </div>
+          </div>
+        </Container>
+      </section>
+=======
+        <title>Blog | Zion Tech Group - AI & Technology Insights</title>
+        <meta name="description" content="Stay updated with the latest insights on AI, automation, and technology trends from Zion Tech Group experts." />
+        <meta property="og:title" content="Blog - Zion Tech Group" />
+        <meta property="og:description" content="Latest insights on AI, automation, and technology trends." />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
+      
+      <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950 text-white">
+        <main className="container mx-auto px-6 py-12">
+          <section className="text-center mb-16">
+            <h1 className="text-5xl font-extrabold mb-6 bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
+              Our Blog
+            </h1>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+              Insights, trends, and expert perspectives on AI, automation, and the future of technology
+            </p>
+          </section>
+
+          <section className="mx-auto max-w-6xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {blogPosts.map((post) => (
+                <article key={post.id} className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 hover:bg-white/15 transition-all duration-300 hover:scale-105">
+                  <div className="text-6xl mb-4 text-center">{post.image}</div>
+                  <div className="mb-4">
+                    <span className="inline-block px-3 py-1 bg-cyan-400/20 text-cyan-300 text-sm rounded-full border border-cyan-400/30">
+                      {post.category}
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white hover:text-cyan-400 transition-colors">
+                    {post.title}
+                  </h3>
+                  <p className="text-white/70 mb-4 text-sm leading-relaxed">
+                    {post.excerpt}
+                  </p>
+                  <div className="flex items-center justify-between text-sm text-white/50">
+                    <span>{post.date}</span>
+                    <span>{post.readTime}</span>
+                  </div>
+                  <button className="w-full mt-4 px-4 py-2 bg-gradient-to-r from-cyan-400 to-fuchsia-400 text-white font-semibold rounded-lg hover:from-cyan-500 hover:to-fuchsia-500 transition-all duration-200">
+                    Read More
+                  </button>
+                </article>
+              ))}
+            </div>
+
+            <div className="text-center mt-16">
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8">
+                <h2 className="text-2xl font-bold mb-4 text-cyan-400">Stay Updated</h2>
+                <p className="text-white/70 mb-6">
+                  Get the latest insights delivered to your inbox. No spam, just valuable content.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-cyan-400/50"
+                  />
+                  <button className="px-6 py-3 bg-gradient-to-r from-cyan-400 to-fuchsia-400 text-white font-semibold rounded-lg hover:from-cyan-500 hover:to-fuchsia-500 transition-all duration-200">
+                    Subscribe
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+>>>>>>> origin/cursor/build-failed-due-to-missing-dotenv-module-c691
+    </>
+  );
+}

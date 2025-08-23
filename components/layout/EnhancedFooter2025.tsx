@@ -56,13 +56,14 @@ const EnhancedFooter2025: React.FC = () => {
     {
       title: "Services",
       links: [
-        { name: 'AI & Machine Learning', href: '/ai-services', icon: <Brain className="w-4 h-4" /> },
-        { name: 'Quantum Technology', href: '/quantum-services', icon: <Atom className="w-4 h-4" /> },
-        { name: 'Cybersecurity', href: '/cybersecurity', icon: <Shield className="w-4 h-4" /> },
-        { name: 'Cloud & Infrastructure', href: '/it-services', icon: <Cloud className="w-4 h-4" /> },
-        { name: 'Business Intelligence', href: '/data-analytics', icon: <BarChart className="w-4 h-4" /> },
-        { name: 'DevOps & Automation', href: '/devops-automation', icon: <Code className="w-4 h-4" /> },
-        { name: 'Space Technology', href: '/space-tech', icon: <Rocket className="w-4 h-4" /> }
+        { label: 'Innovative 2025 Showcase', href: '/innovative-2025-services-showcase' },
+        { label: 'AI & Machine Learning', href: '/ai-services' },
+        { label: 'Quantum Computing', href: '/quantum-computing' },
+        { label: 'Cybersecurity', href: '/cybersecurity' },
+        { label: 'Cloud Infrastructure', href: '/cloud-platform' },
+        { label: 'Data Analytics', href: '/data-analytics' },
+        { label: 'Process Automation', href: '/process-automation' },
+        { label: 'Micro SAAS Solutions', href: '/micro-saas' }
       ]
     },
     {
@@ -103,10 +104,12 @@ const EnhancedFooter2025: React.FC = () => {
   ];
 
   const socialLinks = [
-    { name: 'LinkedIn', href: 'https://linkedin.com/company/zion-tech-group', icon: Linkedin },
-    { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: Github },
-    { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: Twitter },
-    { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: Youtube }
+    { icon: Linkedin, href: 'https://linkedin.com/company/ziontechgroup', label: 'LinkedIn' },
+    { icon: Twitter, href: 'https://twitter.com/ziontechgroup', label: 'Twitter' },
+    { icon: Github, href: 'https://github.com/Zion-Holdings', label: 'GitHub' },
+    { icon: Youtube, href: 'https://youtube.com/@ziontechgroup', label: 'YouTube' },
+    { icon: Facebook, href: 'https://facebook.com/ziontechgroup', label: 'Facebook' },
+    { icon: Instagram, href: 'https://instagram.com/ziontechgroup', label: 'Instagram' }
   ];
 
   const quickLinks = [
@@ -124,43 +127,13 @@ const EnhancedFooter2025: React.FC = () => {
     transition: { duration: 0.5 }
   };
 
-  const staggerContainer = {
-    animate: {
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  return (
-    <footer className="bg-black text-gray-300 relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/10 via-black to-blue-900/10" />
-      <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/10 via-black to-blue-900/10 opacity-20" />
-      
-      <div className="relative z-10">
-        {/* Main Footer Content */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8"
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-          >
-            {/* Company Info */}
-            <motion.div className="lg:col-span-1" variants={fadeInUp}>
-              <div className="flex items-center space-x-2 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center">
-                  <Zap className="w-6 h-6 text-white" />
-                </div>
-                <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                  Zion Tech Group
-                </span>
+        {/* Main Footer Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-12">
+          {/* Company Info */}
+          <div className="lg:col-span-2">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-xl flex items-center justify-center">
+                <Rocket className="w-7 h-7 text-white" />
               </div>
               <p className="text-gray-400 mb-6 leading-relaxed">
                 Pioneering the future of technology with revolutionary AI consciousness, 
@@ -224,12 +197,42 @@ const EnhancedFooter2025: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Quick Links */}
               <div>
-                <h4 className="text-white font-semibold text-lg mb-4 flex items-center">
-                  <Zap className="w-5 h-5 text-cyan-400 mr-2" />
-                  Quick Links
-                </h4>
-                <div className="grid grid-cols-2 gap-3">
-                  {quickLinks.map((link) => (
+                <div className="text-xl font-bold text-white">Zion Tech Group</div>
+                <div className="text-sm text-cyan-400">Pioneering the Future</div>
+              </div>
+            </div>
+            <p className="text-gray-300 mb-6 max-w-md">
+              We combine cutting-edge technology with proven expertise to deliver solutions that transform businesses and unlock human potential.
+            </p>
+            
+            {/* Contact Info */}
+            <div className="space-y-3">
+              <div className="flex items-center gap-3 text-gray-300">
+                <Phone className="w-4 h-4 text-cyan-400" />
+                <span>+1 302 464 0950</span>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300">
+                <Mail className="w-4 h-4 text-cyan-400" />
+                <span>kleber@ziontechgroup.com</span>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300">
+                <MapPin className="w-4 h-4 text-cyan-400" />
+                <span>364 E Main St STE 1008<br />Middletown DE 19709</span>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300">
+                <Globe className="w-4 h-4 text-cyan-400" />
+                <span>https://ziontechgroup.com</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Footer Sections */}
+          {footerSections.map((section, index) => (
+            <div key={index}>
+              <h3 className="text-white font-semibold mb-4">{section.title}</h3>
+              <ul className="space-y-3">
+                {section.links.map((link, linkIndex) => (
+                  <li key={linkIndex}>
                     <Link
                       key={link.name}
                       href={link.href}
@@ -290,14 +293,65 @@ const EnhancedFooter2025: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Bottom Bar */}
-        <motion.div 
-          className="border-t border-cyan-500/20 bg-black/50 backdrop-blur-sm"
-          variants={fadeInUp}
-          initial="initial"
-          whileInView="animate"
-          viewport={{ once: true }}
-        >
+        {/* Contact Information Section */}
+        <div className="border-t border-gray-700/50 pt-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                <Phone className="w-5 h-5 text-cyan-400" />
+                Contact Us
+              </h3>
+              <div className="space-y-3 text-gray-300">
+                <div className="flex items-center gap-2">
+                  <Phone className="w-4 h-4 text-cyan-400" />
+                  <span>+1 302 464 0950</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Mail className="w-4 h-4 text-cyan-400" />
+                  <span>kleber@ziontechgroup.com</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-cyan-400" />
+                  <span>364 E Main St STE 1008<br />Middletown DE 19709</span>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                <Globe className="w-5 h-5 text-cyan-400" />
+                Quick Links
+              </h3>
+              <div className="space-y-2">
+                <Link href="/innovative-2025-services-showcase" className="block text-gray-300 hover:text-cyan-400 transition-colors">
+                  View 2025 Services
+                </Link>
+                <Link href="/get-started" className="block text-gray-300 hover:text-cyan-400 transition-colors">
+                  Get Started
+                </Link>
+                <Link href="/support" className="block text-gray-300 hover:text-cyan-400 transition-colors">
+                  Support Center
+                </Link>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                <Shield className="w-5 h-5 text-cyan-400" />
+                Business Hours
+              </h3>
+              <div className="space-y-2 text-gray-300">
+                <div>Monday - Friday: 9:00 AM - 6:00 PM EST</div>
+                <div>Saturday: 10:00 AM - 4:00 PM EST</div>
+                <div>Sunday: Closed</div>
+                <div className="text-cyan-400 font-medium">24/7 Emergency Support Available</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Newsletter Section */}
+        <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-2xl p-8 mb-12 border border-cyan-500/20">
           <div className="text-center max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold text-white mb-4">
               Stay Updated with the Latest Tech Trends

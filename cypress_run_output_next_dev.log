@@ -1,14 +1,4 @@
-
-> project@0.0.0 cypress:run
-> cypress run --browser electron
-
-
-DevTools listening on ws://127.0.0.1:44235/devtools/browser/7428dfdb-1ee1-4004-8e2c-2d34a956f7b2
-Couldn't determine Mocha version
-
-================================================================================
-
-  (Run Starting)
+(Run Starting)
 
   ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
   │ Cypress:        14.4.1                                                                         │

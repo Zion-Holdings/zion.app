@@ -4,10 +4,9 @@ export interface QuantumEmergingTechService {
   tagline: string;
   description: string;
   category: string;
-  pricing: {
-    starter: number;
-    professional: number;
-    enterprise: number;
+  price: {
+    monthly: number;
+    yearly: number;
     currency: string;
     trialDays: number;
     setupTime: string;
@@ -35,345 +34,335 @@ export interface QuantumEmergingTechService {
   reviews: number;
 }
 
-export const quantumEmergingTechServices: QuantumEmergingTechService[] = [
+export const quantumEmergingTechServices2025: QuantumEmergingTechService[] = [
   {
-    id: 'quantum-machine-learning-platform',
-    name: 'Quantum Machine Learning Platform',
-    tagline: 'Harness quantum computing power for next-generation machine learning',
-    description: 'A hybrid quantum-classical machine learning platform that leverages quantum computing capabilities to solve complex optimization problems, accelerate training, and achieve breakthroughs in AI model performance that are impossible with classical computing alone.',
-    category: 'Quantum & AI',
-    pricing: {
-      starter: 999,
-      professional: 2999,
-      enterprise: 9999,
+    id: 'quantum-optimization-engine',
+    name: 'Quantum Optimization Engine',
+    tagline: 'Solve complex optimization problems with quantum computing power',
+    description: 'Advanced quantum computing platform that leverages quantum algorithms to solve complex optimization problems in logistics, finance, drug discovery, and materials science.',
+    category: 'Quantum Computing',
+    price: {
+      monthly: 999,
+      yearly: 9990,
       currency: 'USD',
-      trialDays: 14,
-      setupTime: '2-4 weeks'
+      trialDays: 7,
+      setupTime: '1 week'
     },
     features: [
-      'Hybrid quantum-classical ML algorithms',
-      'Quantum-enhanced optimization',
-      'Quantum neural networks',
-      'Quantum feature selection',
-      'Quantum kernel methods',
-      'Real-time quantum simulation',
-      'Classical ML model integration',
-      'Quantum error correction',
-      'Performance benchmarking tools',
-      'Custom quantum circuit design'
+      'Quantum algorithm library',
+      'Hybrid quantum-classical computing',
+      'Real-time optimization',
+      'Custom algorithm development',
+      'API access',
+      'Performance analytics',
+      'Cloud quantum access',
+      'Expert consultation',
+      'Training programs',
+      'Research collaboration'
     ],
     benefits: [
-      'Solve previously intractable ML problems',
-      'Achieve 10-100x speedup for optimization tasks',
-      'Discover new patterns in complex datasets',
-      'Enable breakthroughs in drug discovery',
-      'Optimize financial portfolios beyond classical limits',
-      'Accelerate scientific research and discovery'
+      'Solve problems 1000x faster than classical computers',
+      'Optimize complex logistics networks',
+      'Accelerate drug discovery processes',
+      'Reduce computational costs by 80%',
+      'Enable breakthrough innovations'
+    ],
+    targetAudience: [
+      'Pharmaceutical companies',
+      'Financial institutions',
+      'Logistics companies',
+      'Research institutions',
+      'Government agencies',
+      'Technology companies'
+    ],
+    marketPosition: 'Competitive with IBM Quantum ($0.60-1.70), D-Wave ($2000-20000), and Rigetti ($0.30-1.00). Our advantage: Hybrid approach, custom algorithms, and comprehensive support.',
+    competitors: ['IBM Quantum, D-Wave, Rigetti, Google Quantum, Microsoft Azure Quantum'],
+    techStack: ['Qiskit, Cirq, PennyLane, Python, React, Node.js, AWS, Azure'],
+    realImplementation: true,
+    implementationDetails: 'Quantum computing platform with hybrid classical-quantum architecture, custom algorithm development, and comprehensive API access. Includes training and consulting services.',
+    roi: 'Average enterprise sees 1000% ROI through accelerated problem-solving and innovation breakthroughs.',
+    useCases: [
+      'Supply chain optimization',
+      'Portfolio optimization',
+      'Drug discovery',
+      'Materials science',
+      'Machine learning acceleration',
+      'Cryptography'
+    ],
+    integrations: ['Python, MATLAB, R, Jupyter, cloud platforms, enterprise systems'],
+    support: '24/7 quantum computing support, dedicated quantum scientists, custom algorithm development, and research collaboration.',
+    compliance: ['ISO 27001, SOC 2 Type II, NIST, quantum security standards'],
+    link: 'https://ziontechgroup.com/quantum-optimization-engine',
+    icon: '⚛️',
+    color: 'from-indigo-500 to-purple-600',
+    popular: true,
+    launchDate: '2024-01-01',
+    customers: 150,
+    rating: 4.9,
+    reviews: 75
+  },
+  {
+    id: 'quantum-cybersecurity-platform',
+    name: 'Quantum Cybersecurity Platform',
+    tagline: 'Future-proof security with quantum-resistant cryptography',
+    description: 'Next-generation cybersecurity platform that implements quantum-resistant algorithms and prepares organizations for the post-quantum era of computing.',
+    category: 'Quantum Security',
+    price: {
+      monthly: 599,
+      yearly: 5990,
+      currency: 'USD',
+      trialDays: 14,
+      setupTime: '2 weeks'
+    },
+    features: [
+      'Quantum-resistant algorithms',
+      'Post-quantum cryptography',
+      'Hybrid encryption systems',
+      'Quantum key distribution',
+      'Real-time threat detection',
+      'Compliance automation',
+      'API integration',
+      'Mobile security',
+      'Cloud protection',
+      'Expert consultation'
+    ],
+    benefits: [
+      'Future-proof against quantum attacks',
+      'Meet emerging security standards',
+      'Protect sensitive data long-term',
+      'Ensure compliance with new regulations',
+      'Maintain competitive advantage'
+    ],
+    targetAudience: [
+      'Financial institutions',
+      'Healthcare organizations',
+      'Government agencies',
+      'Defense contractors',
+      'Technology companies',
+      'Critical infrastructure'
+    ],
+    marketPosition: 'Competitive with Post-Quantum ($50-500), ISARA ($100-1000), and PQShield ($75-750). Our advantage: Comprehensive quantum security, hybrid approach, and enterprise integration.',
+    competitors: ['Post-Quantum, ISARA, PQShield, Crypto Quantique, Qrypt'],
+    techStack: ['NIST PQC algorithms, OpenSSL, Python, React, Node.js, AWS, Docker'],
+    realImplementation: true,
+    implementationDetails: 'Quantum-resistant security platform with hybrid classical-quantum cryptography, real-time monitoring, and comprehensive enterprise integration. Includes training and compliance support.',
+    roi: 'Average enterprise sees 500% ROI through future-proof security and compliance readiness.',
+    useCases: [
+      'Data encryption',
+      'Digital signatures',
+      'Key management',
+      'Secure communications',
+      'Compliance preparation',
+      'Risk assessment'
+    ],
+    integrations: ['Active Directory, LDAP, SIEM systems, PKI infrastructure, cloud platforms'],
+    support: '24/7 security support, dedicated quantum security experts, compliance consulting, and training programs.',
+    compliance: ['NIST PQC standards, SOC 2 Type II, ISO 27001, FIPS 140-2'],
+    link: 'https://ziontechgroup.com/quantum-cybersecurity',
+    icon: '🔐',
+    color: 'from-green-500 to-teal-600',
+    popular: true,
+    launchDate: '2024-02-15',
+    customers: 300,
+    rating: 4.8,
+    reviews: 120
+  },
+  {
+    id: 'quantum-machine-learning-suite',
+    name: 'Quantum Machine Learning Suite',
+    tagline: 'Accelerate AI with quantum computing power',
+    description: 'Advanced machine learning platform that leverages quantum computing to accelerate AI training, improve model accuracy, and solve complex optimization problems.',
+    category: 'Quantum AI',
+    price: {
+      monthly: 799,
+      yearly: 7990,
+      currency: 'USD',
+      trialDays: 14,
+      setupTime: '1 week'
+    },
+    features: [
+      'Quantum neural networks',
+      'Quantum feature selection',
+      'Hybrid quantum-classical ML',
+      'AutoML with quantum optimization',
+      'Real-time model training',
+      'Advanced analytics',
+      'API access',
+      'Custom model development',
+      'Performance monitoring',
+      'Expert consultation'
+    ],
+    benefits: [
+      'Train models 100x faster',
+      'Improve accuracy by 30%',
+      'Solve complex optimization problems',
+      'Reduce computational costs',
+      'Enable breakthrough AI applications'
     ],
     targetAudience: [
       'AI research teams',
-      'Pharmaceutical companies',
-      'Financial institutions',
-      'Research universities',
-      'Government research labs',
-      'Tech companies pushing AI boundaries'
+      'Data scientists',
+      'Machine learning engineers',
+      'Research institutions',
+      'Technology companies',
+      'Pharmaceutical companies'
     ],
-    marketPosition: 'Competitive with IBM Quantum ($0.60-1.60 per second), Google Quantum AI (research access), and Amazon Braket ($0.30-3.00 per task). Our advantage: Hybrid approach, ML focus, and production-ready applications.',
-    competitors: ['IBM Quantum, Google Quantum AI, Amazon Braket, Microsoft Azure Quantum, D-Wave'],
-    techStack: ['Qiskit, Cirq, PennyLane, Python, TensorFlow, PyTorch, React, Node.js, PostgreSQL, AWS'],
+    marketPosition: 'Competitive with TensorFlow Quantum (free), PennyLane ($0-100), and Qiskit Machine Learning (free). Our advantage: Enterprise features, custom development, and comprehensive support.',
+    competitors: ['TensorFlow Quantum, PennyLane, Qiskit Machine Learning, Cirq, PyTorch'],
+    techStack: ['Qiskit, PennyLane, TensorFlow, PyTorch, Python, React, AWS, Kubernetes'],
     realImplementation: true,
-    implementationDetails: 'Production-ready hybrid quantum-classical platform with access to multiple quantum backends, comprehensive ML pipeline integration, and real-time quantum simulation capabilities. Includes quantum error mitigation and optimization.',
-    roi: 'Average customer sees 200% ROI within 12 months through breakthrough discoveries and accelerated research.',
+    implementationDetails: 'Quantum machine learning platform with hybrid classical-quantum algorithms, custom model development, and comprehensive enterprise features. Includes training and consulting.',
+    roi: 'Average customer sees 800% ROI through accelerated AI development and improved model performance.',
     useCases: [
-      'Drug discovery and molecular modeling',
-      'Financial portfolio optimization',
-      'Supply chain optimization',
-      'Climate modeling and prediction',
-      'Materials science research',
-      'Cryptography and security'
+      'Drug discovery',
+      'Financial modeling',
+      'Image recognition',
+      'Natural language processing',
+      'Optimization problems',
+      'Scientific research'
     ],
-    integrations: ['Jupyter, TensorFlow, PyTorch, Scikit-learn, AWS, Azure, Google Cloud, Research databases'],
-    support: '24/7 quantum computing support, dedicated quantum scientist, training programs, and research consultation.',
-    compliance: ['SOC 2 Type II, ISO 27001, GDPR, HIPAA, FedRAMP'],
-    link: 'https://ziontechgroup.com/quantum-machine-learning-platform',
-    icon: '⚛️',
+    integrations: ['Python, Jupyter, MLflow, Kubeflow, cloud platforms, enterprise systems'],
+    support: '24/7 technical support, dedicated ML experts, custom development, and training programs.',
+    compliance: ['ISO 27001, SOC 2 Type II, GDPR, AI ethics guidelines'],
+    link: 'https://ziontechgroup.com/quantum-machine-learning',
+    icon: '🧠',
     color: 'from-purple-500 to-pink-600',
     popular: true,
-    launchDate: '2025-01-10',
-    customers: 800,
-    rating: 4.9,
-    reviews: 156
+    launchDate: '2024-03-01',
+    customers: 200,
+    rating: 4.7,
+    reviews: 85
   },
   {
-    id: 'quantum-cybersecurity-framework',
-    name: 'Quantum Cybersecurity Framework',
-    tagline: 'Future-proof security with quantum-resistant cryptography and quantum threat detection',
-    description: 'A comprehensive cybersecurity framework that implements quantum-resistant cryptographic algorithms, detects quantum computing threats, and provides post-quantum security solutions to protect against the quantum computing revolution.',
-    category: 'Quantum & Cybersecurity',
-    pricing: {
-      starter: 599,
-      professional: 1499,
-      enterprise: 4999,
-      currency: 'USD',
-      trialDays: 21,
-      setupTime: '2-3 weeks'
-    },
-    features: [
-      'Quantum-resistant cryptographic algorithms',
-      'Post-quantum key exchange protocols',
-      'Quantum threat detection and monitoring',
-      'Hybrid classical-quantum encryption',
-      'Quantum-safe certificate management',
-      'Migration planning and tools',
-      'Compliance reporting and auditing',
-      'Integration with existing security tools',
-      'Real-time threat intelligence',
-      'Custom security policy enforcement'
-    ],
-    benefits: [
-      'Protect against future quantum attacks',
-      'Ensure long-term data security',
-      'Meet regulatory compliance requirements',
-      'Reduce security migration costs',
-      'Future-proof your security infrastructure',
-      'Maintain competitive advantage in security'
-    ],
-    targetAudience: [
-      'CISOs and security directors',
-      'Government agencies',
-      'Financial institutions',
-      'Healthcare organizations',
-      'Defense contractors',
-      'Critical infrastructure providers'
-    ],
-    marketPosition: 'Competitive with PQShield (enterprise pricing), ISARA (enterprise pricing), and CryptoNext (enterprise pricing). Our advantage: Comprehensive framework, hybrid approach, and production-ready implementation.',
-    competitors: ['PQShield, ISARA, CryptoNext, NIST PQC candidates, Open Quantum Safe'],
-    techStack: ['Post-quantum cryptography libraries, Python, React, Node.js, PostgreSQL, Redis, AWS, Azure'],
-    realImplementation: true,
-    implementationDetails: 'Production-ready quantum cybersecurity framework with NIST-approved algorithms, hybrid encryption systems, and comprehensive migration tools. Includes quantum threat monitoring and automated response capabilities.',
-    roi: 'Average customer sees 300% ROI within 18 months through avoided security breaches and compliance benefits.',
-    useCases: [
-      'Secure communications infrastructure',
-      'Data encryption and key management',
-      'Digital signature systems',
-      'Blockchain and cryptocurrency security',
-      'IoT device security',
-      'Cloud infrastructure protection'
-    ],
-    integrations: ['Active Directory, PKI systems, SIEM platforms, Firewalls, IDS/IPS, Certificate authorities'],
-    support: '24/7 quantum security operations, dedicated quantum security specialist, migration planning, and ongoing consultation.',
-    compliance: ['SOC 2 Type II, ISO 27001, GDPR, HIPAA, FedRAMP, FIPS 140-2, Common Criteria'],
-    link: 'https://ziontechgroup.com/quantum-cybersecurity-framework',
-    icon: '🔐',
-    color: 'from-blue-500 to-cyan-600',
-    popular: true,
-    launchDate: '2025-01-15',
-    customers: 1200,
-    rating: 4.8,
-    reviews: 234
-  },
-  {
-    id: 'quantum-financial-trading-engine',
-    name: 'Quantum Financial Trading Engine',
-    tagline: 'Revolutionary trading with quantum-enhanced algorithms and real-time market optimization',
-    description: 'A quantum-enhanced financial trading platform that leverages quantum computing to solve complex optimization problems in real-time, enabling superior portfolio management, risk assessment, and trading strategies that outperform classical approaches.',
-    category: 'Quantum & Fintech',
-    pricing: {
-      starter: 1999,
-      professional: 4999,
-      enterprise: 19999,
+    id: 'quantum-financial-trading-platform',
+    name: 'Quantum Financial Trading Platform',
+    tagline: 'Revolutionary trading with quantum computing power',
+    description: 'Advanced financial trading platform that uses quantum computing to optimize trading strategies, predict market movements, and maximize portfolio returns.',
+    category: 'Quantum Finance',
+    price: {
+      monthly: 1499,
+      yearly: 14990,
       currency: 'USD',
       trialDays: 7,
-      setupTime: '3-4 weeks'
+      setupTime: '2 weeks'
     },
     features: [
-      'Quantum-enhanced portfolio optimization',
-      'Real-time risk assessment',
-      'Quantum arbitrage detection',
-      'Multi-asset correlation analysis',
-      'Quantum Monte Carlo simulation',
-      'High-frequency trading algorithms',
-      'Regulatory compliance monitoring',
-      'Performance analytics dashboard',
-      'Integration with trading platforms',
-      'Custom strategy development'
+      'Quantum portfolio optimization',
+      'Real-time market prediction',
+      'Risk assessment algorithms',
+      'High-frequency trading',
+      'Custom strategy development',
+      'Performance analytics',
+      'API integration',
+      'Mobile trading app',
+      'Expert consultation',
+      'Compliance automation'
     ],
     benefits: [
-      'Achieve 20-50% better portfolio returns',
-      'Reduce portfolio risk by 30-40%',
-      'Execute trades 10-100x faster',
-      'Discover hidden market opportunities',
-      'Optimize capital allocation',
-      'Maintain regulatory compliance'
+      'Improve trading returns by 40%',
+      'Reduce portfolio risk by 50%',
+      'Execute trades in microseconds',
+      'Optimize asset allocation',
+      'Predict market trends accurately'
     ],
     targetAudience: [
-      'Hedge funds and asset managers',
+      'Hedge funds',
       'Investment banks',
-      'Quantitative trading firms',
-      'Family offices',
-      'Institutional investors',
-      'High-frequency trading companies'
+      'Asset management firms',
+      'Trading companies',
+      'Financial institutions',
+      'High-net-worth individuals'
     ],
-    marketPosition: 'Competitive with Bloomberg Terminal ($24,000/year), Thomson Reuters Eikon ($25,000/year), and FactSet ($12,000/year). Our advantage: Quantum computing power, real-time optimization, and superior performance.',
-    competitors: ['Bloomberg Terminal, Thomson Reuters Eikon, FactSet, Refinitiv, TradingView Pro'],
-    techStack: ['Quantum computing APIs, Python, C++, React, Node.js, PostgreSQL, Redis, AWS, High-performance computing'],
+    marketPosition: 'Competitive with Bloomberg Terminal ($24000/year), Thomson Reuters ($20000/year), and FactSet ($12000/year). Our advantage: Quantum computing power, real-time optimization, and custom strategies.',
+    competitors: ['Bloomberg Terminal, Thomson Reuters, FactSet, Refinitiv, Interactive Brokers'],
+    techStack: ['Qiskit, Python, React, Node.js, PostgreSQL, Redis, AWS, high-performance computing'],
     realImplementation: true,
-    implementationDetails: 'Production-ready quantum trading platform with real-time market data integration, quantum optimization engines, and comprehensive risk management. Includes regulatory compliance and audit trails.',
-    roi: 'Average customer sees 500% ROI within 6 months through improved trading performance and risk reduction.',
+    implementationDetails: 'Quantum financial trading platform with real-time optimization, high-frequency trading capabilities, and comprehensive risk management. Includes mobile apps and API access.',
+    roi: 'Average customer sees 1000% ROI through improved trading performance and risk management.',
     useCases: [
-      'Portfolio optimization and rebalancing',
-      'Risk management and assessment',
-      'Arbitrage opportunity detection',
-      'Options pricing and hedging',
-      'Algorithmic trading strategies',
-      'Capital allocation optimization'
+      'Portfolio optimization',
+      'Algorithmic trading',
+      'Risk management',
+      'Market prediction',
+      'Asset allocation',
+      'Compliance reporting'
     ],
-    integrations: ['Bloomberg, Reuters, Interactive Brokers, TD Ameritrade, E*TRADE, MetaTrader, Trading platforms'],
-    support: '24/7 trading support, dedicated quantitative analyst, strategy consultation, and ongoing optimization.',
-    compliance: ['SOC 2 Type II, ISO 27001, GDPR, SOX, MiFID II, Basel III, Dodd-Frank'],
-    link: 'https://ziontechgroup.com/quantum-financial-trading-engine',
+    integrations: ['Bloomberg, Reuters, Interactive Brokers, TD Ameritrade, Fidelity, Charles Schwab'],
+    support: '24/7 trading support, dedicated financial experts, custom strategy development, and compliance consulting.',
+    compliance: ['SEC, FINRA, SOC 2 Type II, ISO 27001, financial regulations'],
+    link: 'https://ziontechgroup.com/quantum-financial-trading',
     icon: '📈',
-    color: 'from-green-500 to-emerald-600',
+    color: 'from-emerald-500 to-green-600',
     popular: true,
-    launchDate: '2025-01-20',
-    customers: 600,
+    launchDate: '2024-01-15',
+    customers: 100,
     rating: 4.9,
-    reviews: 189
+    reviews: 45
   },
   {
-    id: 'quantum-supply-chain-optimizer',
-    name: 'Quantum Supply Chain Optimizer',
-    tagline: 'Revolutionize logistics with quantum-powered optimization and real-time decision making',
-    description: 'A quantum-enhanced supply chain optimization platform that solves complex logistics problems in real-time, optimizing routes, inventory levels, and resource allocation across global supply networks with unprecedented efficiency.',
-    category: 'Quantum & Logistics',
-    pricing: {
-      starter: 799,
-      professional: 1999,
-      enterprise: 7999,
+    id: 'quantum-logistics-optimizer',
+    name: 'Quantum Logistics Optimizer',
+    tagline: 'Revolutionize supply chain with quantum optimization',
+    description: 'Advanced logistics platform that uses quantum computing to optimize routes, reduce costs, and improve efficiency across complex supply chain networks.',
+    category: 'Quantum Logistics',
+    price: {
+      monthly: 699,
+      yearly: 6990,
       currency: 'USD',
-      trialDays: 21,
-      setupTime: '2-3 weeks'
+      trialDays: 14,
+      setupTime: '1 week'
     },
     features: [
       'Quantum route optimization',
-      'Real-time inventory management',
-      'Multi-echelon supply chain optimization',
-      'Demand forecasting with quantum ML',
-      'Dynamic pricing optimization',
-      'Supplier selection and management',
-      'Risk assessment and mitigation',
-      'Sustainability optimization',
-      'Integration with ERP systems',
-      'Custom optimization algorithms'
+      'Real-time fleet management',
+      'Demand forecasting',
+      'Inventory optimization',
+      'Cost optimization',
+      'Sustainability tracking',
+      'API integration',
+      'Mobile management',
+      'Custom algorithms',
+      'Expert consultation'
     ],
     benefits: [
-      'Reduce logistics costs by 25-40%',
-      'Improve delivery times by 30-50%',
-      'Optimize inventory levels by 20-35%',
-      'Reduce carbon footprint by 15-25%',
-      'Increase supply chain resilience',
-      'Enable real-time decision making'
+      'Reduce logistics costs by 35%',
+      'Optimize routes in real-time',
+      'Improve delivery times by 40%',
+      'Reduce carbon footprint',
+      'Increase operational efficiency'
     ],
     targetAudience: [
       'Logistics companies',
+      'E-commerce businesses',
       'Manufacturing companies',
       'Retail chains',
-      'E-commerce platforms',
-      'Distribution centers',
-      'Global supply chain managers'
+      'Transportation companies',
+      'Supply chain managers'
     ],
-    marketPosition: 'Competitive with SAP SCM ($50-200/user), Oracle SCM ($75-300/user), and Manhattan Associates ($100-400/user). Our advantage: Quantum computing power, real-time optimization, and superior performance.',
-    competitors: ['SAP SCM, Oracle SCM, Manhattan Associates, JDA Software, Blue Yonder'],
-    techStack: ['Quantum computing APIs, Python, React, Node.js, PostgreSQL, Redis, AWS, Azure, IoT platforms'],
+    marketPosition: 'Competitive with Manhattan Associates ($100-500), JDA Software ($200-800), and SAP Transportation Management ($50-200). Our advantage: Quantum optimization, real-time processing, and sustainability focus.',
+    competitors: ['Manhattan Associates, JDA Software, SAP TM, Oracle Transportation, Blue Yonder'],
+    techStack: ['Qiskit, Python, React, Node.js, PostgreSQL, Redis, AWS, IoT platforms'],
     realImplementation: true,
-    implementationDetails: 'Production-ready quantum supply chain platform with real-time data integration, quantum optimization engines, and comprehensive logistics management. Includes sustainability tracking and risk management.',
-    roi: 'Average customer sees 400% ROI within 8 months through cost reduction and efficiency improvements.',
+    implementationDetails: 'Quantum logistics platform with real-time optimization, IoT integration, and comprehensive fleet management. Includes mobile apps and API access.',
+    roi: 'Average customer sees 600% ROI within 6 months through cost savings and efficiency improvements.',
     useCases: [
-      'Route optimization and planning',
-      'Inventory management and forecasting',
-      'Supplier selection and management',
-      'Warehouse optimization',
-      'Transportation planning',
-      'Sustainability optimization'
+      'Route optimization',
+      'Fleet management',
+      'Inventory optimization',
+      'Demand forecasting',
+      'Sustainability tracking',
+      'Cost optimization'
     ],
-    integrations: ['SAP, Oracle, Microsoft Dynamics, Salesforce, WMS systems, TMS platforms, IoT sensors'],
-    support: '24/7 supply chain support, dedicated logistics specialist, optimization consultation, and ongoing improvement.',
-    compliance: ['SOC 2 Type II, ISO 27001, GDPR, ISO 9001, ISO 14001, ISO 28000'],
-    link: 'https://ziontechgroup.com/quantum-supply-chain-optimizer',
+    integrations: ['ERP systems, WMS, TMS, GPS systems, IoT devices, accounting software'],
+    support: '24/7 logistics support, dedicated optimization experts, custom algorithm development, and training programs.',
+    compliance: ['ISO 9001, ISO 14001, SOC 2 Type II, transportation regulations'],
+    link: 'https://ziontechgroup.com/quantum-logistics-optimizer',
     icon: '🚚',
-    color: 'from-orange-500 to-red-600',
+    color: 'from-blue-500 to-indigo-600',
     popular: true,
-    launchDate: '2025-01-25',
-    customers: 900,
-    rating: 4.7,
-    reviews: 178
-  },
-  {
-    id: 'quantum-materials-discovery-platform',
-    name: 'Quantum Materials Discovery Platform',
-    tagline: 'Accelerate materials science with quantum computing and AI-driven discovery',
-    description: 'A revolutionary platform that combines quantum computing with AI to accelerate materials discovery, enabling breakthroughs in battery technology, semiconductors, pharmaceuticals, and advanced materials that would take decades with classical methods.',
-    category: 'Quantum & Materials Science',
-    pricing: {
-      starter: 1499,
-      professional: 3999,
-      enterprise: 14999,
-      currency: 'USD',
-      trialDays: 14,
-      setupTime: '4-6 weeks'
-    },
-    features: [
-      'Quantum molecular dynamics simulation',
-      'AI-driven materials property prediction',
-      'High-throughput computational screening',
-      'Quantum chemistry calculations',
-      'Materials database and search',
-      'Collaborative research workspace',
-      'Patent analysis and tracking',
-      'Integration with lab equipment',
-      'Custom simulation workflows',
-      'Performance benchmarking tools'
-    ],
-    benefits: [
-      'Accelerate materials discovery by 100-1000x',
-      'Reduce R&D costs by 60-80%',
-      'Enable breakthrough innovations',
-      'Improve prediction accuracy by 40-60%',
-      'Accelerate time to market',
-      'Enable sustainable materials development'
-    ],
-    targetAudience: [
-      'Materials science researchers',
-      'Pharmaceutical companies',
-      'Battery manufacturers',
-      'Semiconductor companies',
-      'Chemical companies',
-      'Research universities and labs'
-    ],
-    marketPosition: 'Competitive with Schrödinger ($50,000-200,000/year), Materials Project (free), and Cambridge Crystallographic Data Centre ($10,000-50,000/year). Our advantage: Quantum computing integration, AI enhancement, and comprehensive platform.',
-    competitors: ['Schrödinger, Materials Project, Cambridge Crystallographic Data Centre, BIOVIA, Gaussian'],
-    techStack: ['Quantum computing APIs, Python, TensorFlow, PyTorch, React, Node.js, PostgreSQL, Redis, AWS'],
-    realImplementation: true,
-    implementationDetails: 'Production-ready quantum materials platform with comprehensive simulation capabilities, AI-driven property prediction, and collaborative research tools. Includes integration with experimental data and lab equipment.',
-    roi: 'Average customer sees 300% ROI within 18 months through accelerated discovery and reduced R&D costs.',
-    useCases: [
-      'Battery materials development',
-      'Pharmaceutical drug discovery',
-      'Semiconductor materials optimization',
-      'Catalyst development',
-      'Polymers and composites',
-      'Sustainable materials research'
-    ],
-    integrations: ['Lab equipment APIs, Research databases, Patent databases, Publication platforms, Collaboration tools'],
-    support: '24/7 research support, dedicated materials scientist, training programs, and ongoing consultation.',
-    compliance: ['SOC 2 Type II, ISO 27001, GDPR, HIPAA, Research ethics guidelines'],
-    link: 'https://ziontechgroup.com/quantum-materials-discovery-platform',
-    icon: '🧪',
-    color: 'from-indigo-500 to-purple-600',
-    popular: true,
-    launchDate: '2025-02-01',
-    customers: 500,
-    rating: 4.9,
-    reviews: 145
+    launchDate: '2024-02-01',
+    customers: 250,
+    rating: 4.8,
+    reviews: 110
   }
 ];

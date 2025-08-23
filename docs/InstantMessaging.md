@@ -5,11 +5,13 @@ initialises a Socket.IO server and bridges to Django Channels. Rooms are keyed b
 the related order or service identifier so participants only receive messages for
 their transaction.
 
-Install the Socket.IO packages:
+Install dependencies:
 
 ```bash
 npm install socket.io socket.io-client
 ```
+
+Minimal API route:
 
 ```ts
 // pages/api/socket.ts
@@ -17,6 +19,7 @@ npm install socket.io socket.io-client
 ```
 
 ## Django Channel Layer
+
 Add the following configuration to `settings.py` on the Django side:
 
 ```python

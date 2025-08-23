@@ -5,19 +5,13 @@
 const fs = require('fs');
 const path = require('path');
 
-const ROOT = process.cwd();
+const ROOT = path.resolve(__dirname, '..');
 const FRONT_PAGE = path.join(ROOT, 'pages', 'main', 'front', 'index.tsx');
-const START_TOKEN = 'AUTO-GENERATED: FRONT_ADS_START';
-const END_TOKEN = 'AUTO-GENERATED: FRONT_ADS_END';
+const START = '{/* AUTO-GENERATED: FRONT_ADS_START */}';
+const END = '{/* AUTO-GENERATED: FRONT_ADS_END */}';
 
-function titleCase(slug) {
-  return slug
-    .replace(/[-_]/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim()
-    .split(' ')
-    .map((w) => (w ? w[0].toUpperCase() + w.slice(1) : w))
-    .join(' ');
+function log(msg) {
+  process.stdout.write(`[front-index-auto-advertiser] ${msg}\n`);
 }
 
 function buildTiles() {
@@ -28,81 +22,49 @@ function buildTiles() {
     { href: '/reports/ai-trends', label: 'AI Trends', tagline: 'Signals for new automations' },
     { href: '/newsroom', label: 'Newsroom', tagline: 'Autonomous updates & highlights' },
     { href: '/.netlify/functions/docs-index-runner', label: 'Docs', tagline: 'Technical notes & guides' },
-    { href: '/reports/capability-map', label: 'Capability Map', tagline: 'Live map of functions and automations' },
-    { href: '/reports/dependency-freshness', label: 'Dependency Freshness', tagline: 'Up-to-date dependency insights' },
-    { href: '/.netlify/functions/automation-status-dashboard', label: 'Automation Dashboard', tagline: 'Overview and quick links' },
-    { href: '/reports/og-meta', label: 'OG Meta Audit', tagline: 'OG/Twitter meta coverage' },
-    { href: '/reports/unused-media', label: 'Unused Media', tagline: 'Find and clean unused assets' },
-    { href: '/reports/orphan-pages', label: 'Orphan Pages', tagline: 'Unlinked pages report' },
-    { href: '/newsroom', label: 'AI Changelog', tagline: 'Summarized autonomous changes' }
+    { href: '/newsroom', label: 'AI Changelog', tagline: 'Summarized autonomous changes' },
+    { href: '/automation/functions-directory', label: 'Autonomy Directory', tagline: 'Browse all cloud functions' }
   ];
-  for (const p of priority) {
-    const check = p.href.startsWith('/reports/')
-      ? path.join(ROOT, 'public', 'reports', p.href.split('/').pop(), 'index.html')
-      : p.href === '/automation'
-      ? path.join(ROOT, 'pages', 'automation', 'index.tsx')
-      : path.join(ROOT, 'pages', p.href.replace(/^\//, '') + '.tsx');
-    if (fs.existsSync(check)) push(p.href, p.label, p.tagline);
-  }
 
-  // Fallback discovery of other top-level pages
-  try {
-    const entries = fs.readdirSync(pagesDir, { withFileTypes: true });
-    for (const entry of entries) {
-      if (entry.name.startsWith('_')) continue;
-      if (entry.isFile() && entry.name.endsWith('.tsx')) {
-        const base = entry.name.replace(/\.tsx$/, '');
-        if (['index', 'front'].includes(base)) continue;
-        push('/' + base, titleCase(base), 'Explore more');
-      }
-      if (entry.isDirectory()) {
-        const indexPath = path.join(pagesDir, entry.name, 'index.tsx');
-        if (fs.existsSync(indexPath)) {
-          push('/' + entry.name, titleCase(entry.name), entry.name === 'automation' ? 'Live agents & workflows' : 'Explore more');
-        }
-      }
+  return items.map((it) => {
+    if (it.external) {
+      return `
+            <a href="${it.href}" target="_blank" rel="noopener" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-5 text-left text-white/80 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <div className="text-base font-semibold text-white/90">${it.label}</div>
+              <div className="mt-0.5 text-xs text-white/70">${it.tagline}</div>
+              <div className="mt-3 inline-flex items-center gap-1 text-[11px] text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>`;
     }
-  } catch {}
+    return `
+            <Link href="${it.href}">
+              <a className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-5 text-left text-white/80 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <div className="text-base font-semibold text-white/90">${it.label}</div>
+                <div className="mt-0.5 text-xs text-white/70">${it.tagline}</div>
+                <div className="mt-3 inline-flex items-center gap-1 text-[11px] text-cyan-300/90">Open <span aria-hidden>→</span></div>
+              </a>
+            </Link>`;
+  }).join('\n');
+}
 
-  // Add anchor deep-links for capabilities and benefits on the same page
-  results.push({ type: 'internal', href: '/main/front#features', label: 'Features', tagline: 'Explore capabilities' });
-  results.push({ type: 'internal', href: '/main/front#capabilities', label: 'Capabilities', tagline: 'What agents can do' });
-  results.push({ type: 'internal', href: '/main/front#benefits', label: 'Benefits', tagline: 'Outcomes & ROI' });
-
-  // Unique by href, limit
-  const seen = new Set();
-  const unique = [];
-  for (const r of results) {
-    if (!seen.has(r.href)) {
-      seen.add(r.href);
-      unique.push(r);
-    }
+function ensureImports(tsx) {
+  if (!tsx.includes("from 'next/link'")) {
+    tsx = tsx.replace(/(import\s+Head\s+from\s+'next\/head';?)/, `$1\nimport Link from 'next/link';`);
   }
-  return unique.slice(0, 16);
+  return tsx;
 }
 
-function discoverExternalLinks() {
-  return [
-    { type: 'internal', href: '/.netlify/functions/supreme-orchestrator', label: 'Supreme Orchestrator', tagline: 'Meta trigger (1m)' },
-    { type: 'internal', href: '/.netlify/functions/docs-index-runner', label: 'Docs — technical notes & guides', tagline: 'Documentation' },
-    { type: 'internal', href: '/newsroom', label: 'AI Changelog — highlights', tagline: 'Summarized updates' },
-    { type: 'internal', href: '/.netlify/functions/robots-and-headers-optimizer', label: 'Robots & Headers Optimizer', tagline: 'SEO + caching guardrails' },
-    { type: 'internal', href: '/.netlify/functions/navigation-directory-builder', label: 'Directory Builder', tagline: 'Auto-generated index of pages' },
-    { type: 'internal', href: '/.netlify/functions/readme-badges-updater', label: 'README Badges Updater', tagline: 'Live automation status' },
-  ];
-}
-
-function buildCard(item) {
-  const common = 'group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo';
-  const inner = `\n  <div className=\"text-base font-semibold\">${item.label}</div>\n  <div className=\"mt-1 text-sm text-white/75\">${item.tagline || ''}</div>\n`;
-  if (item.type === 'external') {
-    return `              <a href=\"${item.href}\" target=\"_blank\" rel=\"noopener\" className=\"${common}\">${inner}  <div className=\"mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90\">Open <span aria-hidden>↗</span></div></a>`;
+function apply() {
+  if (!fs.existsSync(FRONT_PAGE)) {
+    throw new Error(`Front page not found at ${FRONT_PAGE}`);
   }
-  return `              <Link href=\"${item.href}\"><a className=\"${common}\">${inner}  <div className=\"mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90\">Open <span aria-hidden>→</span></div></a></Link>`;
-}
+  let tsx = fs.readFileSync(FRONT_PAGE, 'utf8');
+  tsx = ensureImports(tsx);
 
-  const markerRegex = new RegExp(`(\\{?\\/\\*\\s*${START_TOKEN.replace(/[-/\\^$*+?.()|[\]{}]/g, r => r)}\\s*\\*\\/\\}?)[\\s\\S]*?(\\{?\\/\\*\\s*${END_TOKEN.replace(/[-/\\^$*+?.()|[\]{}]/g, r => r)}\\s*\\*\\/\\}?)`);
-  if (!markerRegex.test(tsx)) {
+  const startIdx = tsx.indexOf(START);
+  const endIdx = tsx.indexOf(END);
+  if (startIdx === -1 || endIdx === -1 || endIdx < startIdx) {
     throw new Error('FRONT_ADS markers not found or misordered');
   }
 
@@ -115,7 +77,9 @@ ${buildTiles()}
   </div>
 </section>`;
 
-  const updated = tsx.replace(markerRegex, `$1\n${replacement}\n$2`);
+  const before = tsx.slice(0, startIdx + START.length);
+  const after = tsx.slice(endIdx);
+  const updated = `${before}\n${replacement}\n${after}`;
 
   if (updated !== tsx) {
     fs.writeFileSync(FRONT_PAGE, updated, 'utf8');
@@ -123,32 +87,11 @@ ${buildTiles()}
   } else {
     log('No changes needed.');
   }
-  const before = source.slice(0, startIdx + startMarker.length);
-  const after = source.slice(endIdx);
-  return `${before}\n${replacement}\n${after}`;
 }
 
-(function main() {
-  if (!fs.existsSync(FRONT_PAGE)) {
-    console.log('Front page not found, skipping');
-    process.exit(0);
-  }
-  const internal = discoverInternalPages();
-  const external = discoverExternalLinks();
-  const combined = [...internal, ...external].slice(0, 16);
-  const block = generateSection(combined);
-  const original = fs.readFileSync(FRONT_PAGE, 'utf8');
-  let updated;
-  try {
-    updated = replaceBetweenMarkers(original, START_MARKER, END_MARKER, block);
-  } catch (e) {
-    console.log('Could not replace between markers:', e.message);
-    process.exit(0);
-  }
-  if (updated !== original) {
-    fs.writeFileSync(FRONT_PAGE, updated);
-    console.log('Front index auto‑promotions updated.');
-  } else {
-    console.log('No updates required.');
-  }
-})();
+try {
+  apply();
+} catch (e) {
+  console.error(e.message || e);
+  process.exitCode = 1;
+}

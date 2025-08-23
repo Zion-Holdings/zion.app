@@ -1,12 +1,9 @@
 import React from 'react';
-
-const OrderConfirmationPage = () => {
+export function OrderConfirmationPage() {
   return (
     <div>
-      <h1>Order Confirmation Page</h1>
-      <p>This is a placeholder for the Order Confirmation page.</p>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
     </div>
   );
-};
-
-export default OrderConfirmationPage;
+}

@@ -75,6 +75,16 @@ export const innovativeITInfrastructureBreakthroughs2025: InnovativeITInfrastruc
     setupTime: '4-6 weeks',
     category: 'Quantum Computing & Cloud',
     realService: true,
+<<<<<<< HEAD
+    technology: ['Quantum Computing, Edge Computing, AI/ML, 5G/6G, Quantum Networks, Edge AI'],
+    integrations: ['AWS, Azure, Google Cloud, Kubernetes, Docker, IoT platforms, 5G networks'],
+    useCases: ['Edge AI processing, IoT optimization, Real-time analytics, Quantum computing, Edge security'],
+    roi: 'Reduce edge processing latency by 80%. Increase edge computing efficiency by 300%.',
+    competitors: ['AWS Edge', 'Azure Edge', 'Google Edge', 'No direct quantum edge competitors'],
+    marketSize: '$200B edge computing market',
+    growthRate: '600% annual growth',
+    variant: 'it-futuristic',
+=======
     technology: ['Quantum processors, Python, Qiskit, Cirq, React, Node.js, Kubernetes, AWS'],
     integrations: ['AWS, Google Cloud, Azure, Research platforms, Scientific software, Development tools'],
     useCases: ['Drug discovery, Financial modeling, Climate simulation, AI training, Cryptography research, Optimization problems'],
@@ -83,6 +93,7 @@ export const innovativeITInfrastructureBreakthroughs2025: InnovativeITInfrastruc
     marketSize: '$1.8B quantum computing market',
     growthRate: '500% annual growth',
     variant: 'quantum-cloud-advanced',
+>>>>>>> origin/main
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
