@@ -270,7 +270,13 @@ export default function ServiceDetailPage({ service }: { service: Service }) {
 					<div className="space-y-6">
 						<Card className="p-6 bg-black/40 border border-gray-700/50">
 							<div className="text-sm text-gray-400 mb-1">Pricing</div>
-							<div className="text-3xl font-bold text-white">{service.price}<span className="text-base font-medium text-gray-400">{service.period}</span></div>
+							<div className="text-3xl font-bold text-white">
+								{typeof service.price === 'string' ? service.price : 
+								 (typeof service.price === 'object' && service.price && 'monthly' in service.price) ? 
+								 `$${(service.price as any).monthly}/month` : 
+								 'Contact for pricing'}
+								<span className="text-base font-medium text-gray-400">{service.period}</span>
+							</div>
 							<div className="text-sm text-gray-400 mt-2">Trial: {service.trialDays || 14} days • Setup: {service.setupTime || 'Fast'} • Competitors: {(service.competitors || []).slice(0,3).join(', ')}</div>
 							<div className="mt-6 flex gap-3">
 								<Button href="/contact" className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Contact Sales</Button>

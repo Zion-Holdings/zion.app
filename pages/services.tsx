@@ -57,11 +57,14 @@ import { innovative2025MicroSaasExpansion } from '../data/innovative-2025-micro-
 import { innovative2025ITSolutionsExpansion } from '../data/innovative-2025-it-solutions-expansion';
 import { innovative2025AIServicesExpansion } from '../data/innovative-2025-ai-services-expansion';
 
-// Import our new Q4 2025 innovative services
-import { innovative2025Q4MicroSaasExpansion } from '../data/innovative-2025-q4-micro-saas-expansion';
-import { innovative2025Q4ITServicesExpansion } from '../data/innovative-2025-q4-it-services-expansion';
-import { innovative2025Q4AIServicesExpansion } from '../data/innovative-2025-q4-ai-services-expansion';
-import { innovative2025Q4EmergingTechExpansion } from '../data/innovative-2025-q4-emerging-tech-expansion';
+// Import our new 2025 innovative services
+import { advancedEnterpriseSolutions } from '../data/2025-advanced-enterprise-solutions';
+import { innovativeAISolutions } from '../data/2025-innovative-ai-solutions';
+import { innovativeMicroSaasSolutions as innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
+import { innovativeITInfrastructureServices } from '../data/2025-innovative-it-infrastructure';
+
+// Import our new innovative 2040 services
+import { innovative2040ITServices } from '../data/innovative-2040-it-services';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -85,29 +88,14 @@ const getServiceCategory = (service: any) => {
 
 // Helper function to get service pricing
 const getServicePricing = (service: any) => {
-  // Handle services with direct price and period fields
-  if (service.price && typeof service.price === 'string') {
-    return `${service.price}${service.period || ''}`;
+  if (service.pricing?.starter) return service.pricing.starter;
+  if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
+  if (service.price?.monthly) return `$${service.price.monthly}/month`;
+  if (typeof service.price === 'string') return service.price;
+  if (service.price && typeof service.price === 'object') {
+    if (service.price.monthly) return `$${service.price.monthly}/month`;
+    if (service.price.starter) return service.price.starter;
   }
-  
-  // Handle services with pricing object
-  if (service.pricing) {
-    if (service.pricing.starter && typeof service.pricing.starter === 'string') {
-      return service.pricing.starter;
-    }
-    if (service.pricing.monthly && typeof service.pricing.monthly === 'string') {
-      return `$${service.pricing.monthly}/month`;
-    }
-    if (service.pricing.monthly && typeof service.pricing.monthly === 'number') {
-      return `$${service.pricing.monthly}/month`;
-    }
-  }
-  
-  // Handle legacy price.monthly structure
-  if (service.price?.monthly) {
-    return `$${service.price.monthly}/month`;
-  }
-  
   return 'Contact for pricing';
 };
 
@@ -171,9 +159,10 @@ const allServices = [
   ...realOperationalServices,
   ...marketReadyServices,
   ...marketValidatedServices,
-  // Our new 2025 Q4 innovative services
-  ...innovative2025Q4NewServices,
-  ...advancedITInfrastructureServices2025,
+  ...advancedEnterpriseSolutions,
+  ...innovativeAISolutions,
+  ...innovativeMicroSaasSolutions2025,
+  ...innovativeITInfrastructureServices,
   ...industryRealServices,
   ...real2025Q4AugmentedBatch,
   ...real2029Q3Additions,

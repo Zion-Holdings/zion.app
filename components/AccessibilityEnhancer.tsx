@@ -132,6 +132,15 @@ const AccessibilityEnhancer: React.FC = () => {
     }
   }, [applySettings]);
 
+  // Focus management
+  const handleFocusChange = useCallback((e: FocusEvent) => {
+    const target = e.target as HTMLElement;
+    if (target) {
+      setCurrentFocus(target);
+      announceToScreenReader(`Focused on ${target.textContent || target.tagName.toLowerCase()}`);
+    }
+  }, []);
+
   // Keyboard navigation enhancements
   const handleKeyDown = useCallback((e: Event) => {
     // Tab navigation detected
