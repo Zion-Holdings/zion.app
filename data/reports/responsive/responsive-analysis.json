@@ -1,7 +1,7 @@
 {
-  "timestamp": "2025-08-08T17:08:45.131Z",
-  "filesAnalyzed": 108,
-  "issuesFound": 102,
+  "timestamp": "2025-08-08T17:26:50.207Z",
+  "filesAnalyzed": 115,
+  "issuesFound": 115,
   "items": [
     {
       "filePath": "/workspace/pages/404.tsx",

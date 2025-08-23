@@ -1,6 +1,12 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import { Html, Head, Main, NextScript } from 'next/document';
 
-export default function MyDocument() {
+export default function Document() {
+  const siteUrl = 'https://ziontechgroup.com';
+  const siteName = 'Zion Tech Group';
+  const siteDescription = 'Zion Tech Group — AI-powered digital solutions, marketplaces, and enterprise innovation.';
+  const themeColorLight = '#ffffff';
+  const themeColorDark = '#0a0a0a';
+
   return (
     <Html lang="en">
       <Head>
@@ -33,7 +39,7 @@ export default function MyDocument() {
 
           <link rel="canonical" href={siteUrl} />
         </Head>
-      <body                                                                                                                                                                                                                                                                                                           className="antialiased bg-neutral-50 text-neutral-800 dark:bg-neutral-950 dark:text-neutral-100">
+      <body className="antialiased bg-neutral-50 text-neutral-800 dark:bg-neutral-950 dark:text-neutral-100">
         <Main />
         <NextScript />
       </body>
