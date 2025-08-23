@@ -143,12 +143,19 @@ const allServices = [
   ...validatedServices2025Q4,
   ...real2035Q2Additions,
   ...real2036ServiceExpansions,
+<<<<<<< HEAD
+  // Add our new innovative services
+  ...innovative2035MicroSaasExpansion,
+  ...advancedAIEnterpriseServices,
+  ...specializedIndustrySolutions
+=======
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
   // New innovative 2025 service expansions
   ...innovative2025MicroSaasExpansions,
   ...innovative2025ITServiceExpansions,
   ...innovative2025AIServiceExpansions
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-98f2
 ];
 
 const categories = [
