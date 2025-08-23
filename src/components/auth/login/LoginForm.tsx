@@ -20,7 +20,8 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { LoadingOverlay } from "@/components/LoadingOverlay";
 
 // Form validation schema
 const loginSchema = z.object({
@@ -50,41 +51,18 @@ export function LoginForm() {
 
     try {
       setIsSubmitting(true);
-      // Pass email and password to the login function
-      const result = await login(data.email, data.password, data.rememberMe);
-      if (result?.error) {
-        let errorMessage = "Login failed. Please try again."; // Default generic error
-        if (
-          typeof result.error === 'object' &&
-          result.error !== null &&
-          'message' in result.error &&
-          typeof (result.error as any).message === 'string'
-        ) {
-          if ((result.error as any).message.toLowerCase().includes("email not confirmed")) {
-            errorMessage = "Your email is not confirmed. Please check your inbox for a confirmation link.";
-          } else {
-            errorMessage = (result.error as any).message;
-          }
-        }
-        form.setError("root", { message: errorMessage });
-      } else {
-        fireEvent('login', { method: 'email' });
+      const { res, data: resData } = await loginUser(data.email, data.password);
+      if (!res.ok) {
+        toast.error(resData?.error || "Invalid credentials");
+        return;
       }
-
-      await login(data.email, data.password);
-
-      const next = searchParams.get('next') || '/';
-      if (next === '/checkout') {
-        const intended = sessionStorage.getItem('intendedProduct');
-        sessionStorage.removeItem('intendedProduct');
-        if (intended) {
-          navigate(`/checkout?product=${intended}`);
-        } else {
-          navigate('/checkout');
-        }
-      } else {
-        navigate(next);
+      toast.success("Logged in successfully");
+      if (resData?.token) {
+        document.cookie = `token=${resData.token}; path=/`;
       }
+      navigate("/");
+    } catch (err) {
+      toast.error("Unable to login. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -188,6 +166,7 @@ export function LoginForm() {
           {isLoading || isSubmitting ? "Logging in..." : "Login"}
         </Button>
       </form>
+      <LoadingOverlay visible={isLoading || isSubmitting} />
     </Form>
   );
 }
