@@ -204,6 +204,17 @@ export type {
 } from './aiDataAnalyticsService';
 
 export type {
+<<<<<<< HEAD
+  SecurityThreat,
+  VulnerabilityAssessment,
+  SecurityIncident,
+  SecurityPolicy,
+  ComplianceReport,
+  SecurityMetrics,
+  SecurityScanRequest,
+  SecurityScanResponse
+} from './aiCybersecurityService';
+=======
   SmartContract,
   NFT,
   NFTMetadata,
@@ -246,3 +257,4 @@ export type { AIAutonomousSystemService } from '../data/2025-advanced-ai-autonom
 export type { FintechBlockchainAutomationService } from '../data/2025-advanced-fintech-blockchain-automation';
 export type { HealthcareBiotechService } from '../data/2025-advanced-healthcare-biotech-services';
 export type { SustainabilityGreenTechService } from '../data/2025-advanced-sustainability-green-tech';
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-9a6d
