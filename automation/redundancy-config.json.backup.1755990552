@@ -1,4 +1,13 @@
 {
+<<<<<<< HEAD
+  "system": {
+    "name": "Ultimate Redundancy Automation System",
+    "version": "2.0.0",
+    "description": "Comprehensive redundancy for all PM2, GitHub Actions, and Netlify functions automations",
+    "author": "Zion Holdings",
+    "created": "2025-01-17",
+    "lastUpdated": "2025-01-17"
+=======
   "version": "2.0.0",
   "description": "Enhanced Redundancy Automation System Configuration",
   "generatedAt": "2025-01-17T00:00:00.000Z",
@@ -82,6 +91,7 @@
         }
       }
     }
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-940b
   },
   "pm2": {
     "ecosystemFiles": [
@@ -255,6 +265,21 @@
       "slack": ""
     }
   },
+<<<<<<< HEAD
+  "logging": {
+    "level": "INFO",
+    "maxSize": "10MB",
+    "maxFiles": 30,
+    "compress": true,
+    "directory": "automation/logs",
+    "files": {
+      "main": "ultimate-redundancy.log",
+      "pm2": "pm2-redundancy.log",
+      "github": "github-redundancy.log",
+      "netlify": "netlify-redundancy.log",
+      "health": "health-monitor.log"
+    }
+=======
   "redundancy": {
     "enabled": true,
     "failoverEnabled": true,
@@ -265,6 +290,7 @@
     "recoveryTimeout": 120000,
     "maxRecoveryAttempts": 3,
     "cooldownPeriod": 300000
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-940b
   },
   "recovery": {
     "autoRestart": true,
