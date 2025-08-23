@@ -55,6 +55,11 @@ import { cuttingEdgeFuturisticServices } from '../data/2025-cutting-edge-futuris
 import { advancedAIAutomationServices } from '../data/2025-advanced-ai-automation-services';
 import { advancedITInfrastructureServices } from '../data/2025-advanced-it-infrastructure-services';
 
+// Import our new revolutionary 2045 services
+import { revolutionary2045AdvancedMicroSaas } from '../data/revolutionary-2045-advanced-micro-saas';
+import { revolutionary2045ITServices } from '../data/revolutionary-2045-it-services';
+import { revolutionary2045AIServices } from '../data/revolutionary-2045-ai-services';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -97,6 +102,12 @@ const getServiceDescription = (service: any) => {
 
 // Create unified services array
 const allServices = [
+  // Revolutionary 2045 Services (Latest & Most Advanced)
+  ...revolutionary2045AdvancedMicroSaas,
+  ...revolutionary2045ITServices,
+  ...revolutionary2045AIServices,
+  
+  // Other services
   ...enterpriseITSolutions,
   ...innovativeMicroSaasSolutions,
   ...cuttingEdgeAIServices,

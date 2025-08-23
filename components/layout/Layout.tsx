@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
-import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
+import UltraFuturisticNavigation2045 from './UltraFuturisticNavigation2045';
+import UltraFuturisticFooter2045 from './UltraFuturisticFooter2045';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
 import TopContactBar from './TopContactBar';
@@ -25,11 +25,8 @@ export default function Layout({ children }: LayoutProps) {
       
       {/* Layout Structure */}
       <div className="relative z-10">
-        {/* Top Contact Bar */}
-        <TopContactBar />
-        
         {/* Navigation */}
-        <UltraFuturisticNavigation2040 />
+        <UltraFuturisticNavigation2045 />
         
         {/* Sidebar and Main Content */}
         <div className="flex">
@@ -38,13 +35,13 @@ export default function Layout({ children }: LayoutProps) {
             onClose={() => setSidebarOpen(false)} 
           />
           
-          <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
+          <main id="main" role="main" className="flex-1 pt-32 lg:pt-36">
             {children}
           </main>
         </div>
         
         {/* Footer */}
-        <UltraFuturisticFooter2040 />
+        <UltraFuturisticFooter2045 />
       </div>
 
       {/* Accessibility and Performance Tools */}
