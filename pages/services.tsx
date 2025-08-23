@@ -5,7 +5,7 @@ import {
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
-  Building, Cpu, Database, Cloud, Lock
+  Building
 } from 'lucide-react';
 
 // Import our new service data
@@ -19,6 +19,12 @@ import { real2035Q2Additions } from '../data/real-2035-q2-additions';
 import { real2036ServiceExpansions } from '../data/real-2036-service-expansions';
 import { innovative2036MicroSaasServices } from '../data/innovative-2036-micro-saas-services';
 import { innovative2036ITServices } from '../data/innovative-2036-it-services';
+
+// Import our new innovative 2025 services
+import { innovativeAIServices2025 } from '../data/innovative-2025-ai-services';
+import { innovativeITInfrastructure2025 } from '../data/innovative-2025-it-infrastructure';
+import { innovativeMicroSaas2025 } from '../data/innovative-2025-micro-saas';
+import { innovativeSpaceTech2025 } from '../data/innovative-2025-space-tech';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -80,7 +86,12 @@ const allServices = [
   ...real2035Q2Additions,
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
-  ...innovative2036ITServices
+  ...innovative2036ITServices,
+  // Add our new innovative 2025 services
+  ...innovativeAIServices2025,
+  ...innovativeITInfrastructure2025,
+  ...innovativeMicroSaas2025,
+  ...innovativeSpaceTech2025
 ];
 
 const categories = [
@@ -291,6 +302,28 @@ export default function Services() {
                 From enterprise IT solutions to cutting-edge AI services and innovative micro SAAS platforms, 
                 we provide the technology you need to succeed in the digital age.
               </p>
+              
+              {/* Innovative 2025 Services CTA */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="mt-8"
+              >
+                <div className="bg-gradient-to-r from-cyan-500/10 to-purple-500/10 backdrop-blur-sm rounded-2xl p-6 border border-cyan-400/20 max-w-2xl mx-auto">
+                  <h3 className="text-lg font-semibold text-cyan-400 mb-3">🚀 New for 2025!</h3>
+                  <p className="text-gray-300 mb-4">
+                    Discover our latest innovative services including quantum computing, AI autonomy, and space technology solutions.
+                  </p>
+                  <a
+                    href="/innovative-2025-services-showcase"
+                    className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
+                  >
+                    <span>View 2025 Services</span>
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </a>
+                </div>
+              </motion.div>
             </motion.div>
 
             {/* Search and Filters */}

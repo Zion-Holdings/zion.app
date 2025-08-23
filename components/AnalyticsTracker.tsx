@@ -134,7 +134,7 @@ const AnalyticsTracker: React.FC = () => {
 
             // Track resource loading performance
             const resources = performance.getEntriesByType('resource');
-            const slowResources = resources.filter((resource) => (resource as PerformanceResourceTiming).duration > 1000);
+            const slowResources = resources.filter((resource) => (resource as any).duration > 1000);
             if (slowResources.length > 0) {
               trackMetric('SlowResources', slowResources.length);
             }
@@ -260,14 +260,14 @@ const AnalyticsTracker: React.FC = () => {
     });
 
     // Track page performance metrics
-    if ('performance' in window) {
-      const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-      if (navigation) {
-        const startTime = navigation.startTime || 0;
-        trackMetric('PageLoadTime', navigation.loadEventEnd - startTime);
-        trackMetric('DOMReadyTime', navigation.domContentLoadedEventEnd - startTime);
+          if ('performance' in window) {
+        const navigation = performance.getEntriesByType('navigation')[0] as any;
+        if (navigation) {
+          const startTime = navigation.startTime || 0;
+          trackMetric('PageLoadTime', navigation.loadEventEnd - startTime);
+          trackMetric('DOMReadyTime', navigation.domContentLoadedEventEnd - startTime);
+        }
       }
-    }
   }, [router.asPath]);
 
   // Helper function to track metrics
@@ -338,7 +338,7 @@ const AnalyticsTracker: React.FC = () => {
 interface PerformanceEventTiming extends PerformanceEntry {
   processingStart: number;
   processingEnd: number;
-  target?: EventTarget;
+  target?: any;
 }
 
 interface LayoutShift extends PerformanceEntry {
@@ -347,15 +347,15 @@ interface LayoutShift extends PerformanceEntry {
 }
 
 interface LayoutShiftSource {
-  node?: Node;
-  currentRect?: DOMRectReadOnly;
-  previousRect?: DOMRectReadOnly;
+  node?: any;
+  currentRect?: any;
+  previousRect?: any;
 }
 
 // Extend Window interface for gtag
 declare global {
   interface Window {
-    gtag: (...args: unknown[]) => void;
+    gtag?: (...args: unknown[]) => void;
   }
 }
 
