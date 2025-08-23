@@ -2,9 +2,36 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
+<<<<<<< HEAD
+  Menu, 
+  X, 
+  Search, 
+  ChevronDown, 
+  Phone, 
+  Linkedin, 
+  Twitter, 
+  Github, 
+  Youtube,
+  Home,
+  Briefcase,
+  Brain,
+  Atom,
+  Rocket,
+  Shield,
+  Cloud,
+  Target,
+  Building,
+  Users,
+  BookOpen,
+  FileText,
+  Video,
+  Code,
+  Star
+=======
   Menu, X, Search, ChevronDown, Zap, Globe, Lock, 
   Mail, ArrowRight, Star, Users, Award,
   Accessibility, Eye
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-8b41
 } from 'lucide-react';
 import EnhancedSearch from '../EnhancedSearch';
 
@@ -178,6 +205,13 @@ const navigationItems: NavigationItem[] = [
         neonColor: 'shadow-purple-400/50'
       },
       {
+<<<<<<< HEAD
+        label: 'Government Solutions',
+        href: '/solutions/government',
+        icon: <Shield className="w-4 h-4" />,
+        description: 'Secure government technology',
+        neonColor: 'shadow-green-400/50'
+=======
         label: 'Financial Services',
         href: '/financial-solutions',
         icon: <Star className="w-4 h-4" />,
@@ -188,10 +222,69 @@ const navigationItems: NavigationItem[] = [
         href: '/manufacturing-ai-solutions',
         icon: <Star className="w-4 h-4" />,
         description: 'Smart manufacturing solutions'
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-8b41
       }
     ]
   },
   {
+<<<<<<< HEAD
+    label: 'Company',
+    children: [
+      {
+        label: 'About Us',
+        href: '/about',
+        icon: <Building className="w-4 h-4" />,
+        description: 'Our story and mission'
+      },
+      {
+        label: 'Careers',
+        href: '/careers',
+        icon: <Briefcase className="w-4 h-4" />,
+        description: 'Join our team'
+      },
+      {
+        label: 'News & Updates',
+        href: '/news',
+        icon: <Bell className="w-4 h-4" />,
+        description: 'Latest company news and insights'
+      },
+      {
+        label: 'Contact',
+        href: '/contact',
+        icon: <Mail className="w-4 h-4" />,
+        description: 'Get in touch with our team'
+      }
+    ]
+  },
+  {
+    label: 'Resources',
+    children: [
+      {
+        label: 'Documentation',
+        href: '/docs',
+        icon: <Database className="w-4 h-4" />,
+        description: 'Technical documentation and guides'
+      },
+      {
+        label: 'Blog',
+        href: '/blog',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Insights and industry trends'
+      },
+      {
+        label: 'Case Studies',
+        href: '/case-studies',
+        icon: <Award className="w-4 h-4" />,
+        description: 'Success stories from our clients'
+      },
+      {
+        label: 'Webinars',
+        href: '/webinars',
+        icon: <Globe className="w-4 h-4" />,
+        description: 'Educational webinars and events'
+      }
+    ]
+=======
     label: 'About',
     href: '/about',
     icon: <Users className="w-4 h-4" />
@@ -200,12 +293,25 @@ const navigationItems: NavigationItem[] = [
     label: 'Contact',
     href: '/contact',
     icon: <Mail className="w-4 h-4" />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-8b41
   }
 ];
 
 const UltraFuturisticNavigation2040: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+<<<<<<< HEAD
+  const [searchQuery, setSearchQuery] = useState('');
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
+  
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const searchRef = useRef<HTMLDivElement>(null);
+  const searchInputRef = useRef<HTMLInputElement>(null);
+  const router = useRouter();
+  const searchRef = useRef<HTMLDivElement>(null);
+
+  // Handle scroll effect with throttling
+=======
   const [isScrolled, setIsScrolled] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -224,6 +330,7 @@ const UltraFuturisticNavigation2040: React.FC = () => {
   }, []);
 
   // Scroll effect
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-8b41
   useEffect(() => {
     let ticking = false;
     const handleScroll = () => {
@@ -240,6 +347,14 @@ const UltraFuturisticNavigation2040: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+<<<<<<< HEAD
+  // Enhanced accessibility: Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setActiveDropdown(null);
+        setIsSearchOpen(false);
+=======
   // Close mobile menu on route change
   useEffect(() => {
     setIsMobileMenuOpen(false);
@@ -251,11 +366,24 @@ const UltraFuturisticNavigation2040: React.FC = () => {
     const handleClickOutside = (event: MouseEvent) => {
       if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
         setIsMobileMenuOpen(false);
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-8b41
       }
     };
 
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
+<<<<<<< HEAD
+  }, []);
+
+  // Enhanced accessibility: Keyboard navigation
+  const handleKeyDown = useCallback((event: KeyboardEvent) => {
+    if (event.key === 'Escape') {
+      setActiveDropdown(null);
+      setIsSearchOpen(false);
+      setIsOpen(false);
+    }
+=======
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-8b41
   }, []);
 
   // Focus management for search
@@ -264,6 +392,22 @@ const UltraFuturisticNavigation2040: React.FC = () => {
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [handleKeyDown]);
 
+<<<<<<< HEAD
+  // Enhanced mobile menu toggle
+  const toggleMobileMenu = useCallback(() => {
+    setIsOpen(!isOpen);
+    if (isOpen) {
+      setActiveDropdown(null);
+      setIsSearchOpen(false);
+    }
+  }, [isOpen]);
+
+  // Enhanced search functionality
+  const handleSearchSubmit = useCallback((e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      // Implement search navigation
+=======
   // Keyboard navigation
   const handleKeyDown = useCallback((event: React.KeyboardEvent, action: () => void) => {
     if (event.key === 'Enter' || event.key === ' ') {
@@ -290,12 +434,72 @@ const UltraFuturisticNavigation2040: React.FC = () => {
   const handleSearch = useCallback((e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-8b41
       router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
       setIsSearchOpen(false);
       setSearchQuery('');
     }
   }, [searchQuery, router]);
 
+<<<<<<< HEAD
+  // Enhanced dropdown management
+  const toggleDropdown = useCallback((label: string) => {
+    setActiveDropdown(activeDropdown === label ? null : label);
+  }, [activeDropdown]);
+
+  // Enhanced mobile dropdown
+  const toggleMobileDropdown = useCallback((label: string) => {
+    setActiveDropdown(activeDropdown === label ? null : label);
+  }, [activeDropdown]);
+
+  // Effects for scroll, click outside, and keyboard navigation
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [handleScroll]);
+
+  // Focus search input when search is opened
+  useEffect(() => {
+    if (isSearchOpen && searchRef.current) {
+      searchRef.current.focus();
+    }
+  }, [isSearchOpen]);
+
+  // Close navigation on route change
+  useEffect(() => {
+    // setActiveDropdown(null); // No longer needed as per new logic
+    // setIsSearchOpen(false); // No longer needed as per new logic
+  }, [router.asPath]);
+
+  // Memoized navigation classes
+  const navClasses = useMemo(() => {
+    const baseClasses = "fixed top-0 left-0 right-0 z-50 transition-all duration-300";
+    const scrolledClasses = isScrolled 
+      ? "bg-black/95 backdrop-blur-xl border-b border-cyan-400/20 shadow-2xl" 
+      : "bg-transparent";
+    return `${baseClasses} ${scrolledClasses}`;
+  }, [isScrolled]);
+
+  // Memoized logo classes
+  const logoClasses = useMemo(() => {
+    return isScrolled ? "text-2xl" : "text-3xl";
+  }, [isScrolled]);
+
+  return (
+    <nav 
+      ref={navRef}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-black/95 backdrop-blur-xl border-b border-cyan-400/20 shadow-2xl' 
+          : 'bg-transparent'
+      }`}
+      role="navigation"
+      aria-label="Main navigation"
+    >
+=======
   const toggleAccessibilityMode = useCallback(() => {
     setIsAccessibilityMode(prev => !prev);
     document.documentElement.classList.toggle('accessibility-mode');
@@ -319,10 +523,26 @@ const UltraFuturisticNavigation2040: React.FC = () => {
 
   return (
     <nav className={navClasses} role="navigation" aria-label="Main navigation">
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-8b41
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
           {/* Logo */}
+<<<<<<< HEAD
+          <div className="flex-shrink-0">
+            <Link href="/" className="flex items-center space-x-3 group" aria-label="Zion Tech Group Home">
+              <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-cyan-400/25 transition-all duration-300">
+                <Star className="w-6 h-6 text-white" />
+              </div>
+              <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent group-hover:from-cyan-300 group-hover:via-purple-300 group-hover:to-pink-300 transition-all duration-300">
+                Zion Tech Group
+              </span>
+            </Link>
+          </div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex lg:items-center lg:space-x-8">
+=======
           <Link 
             href="/" 
             className="flex items-center space-x-3 group"
@@ -344,24 +564,108 @@ const UltraFuturisticNavigation2040: React.FC = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-8b41
             {navigationItems.map((item) => (
               <div key={item.label} className="relative group">
                 {item.children ? (
                   <button
                     onClick={() => toggleDropdown(item.label)}
+<<<<<<< HEAD
+                    onKeyDown={(e) => e.key === 'Enter' && toggleDropdown(item.label)}
+                    className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 rounded-lg"
+=======
                     onKeyDown={(e) => handleKeyDown(e, () => toggleDropdown(item.label))}
                     className="flex items-center space-x-1 px-4 py-2 text-gray-300 hover:text-white transition-colors duration-300 focus:outline-none focus:text-white focus:ring-2 focus:ring-cyan-400 rounded-lg"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-8b41
                     aria-expanded={activeDropdown === item.label}
                     aria-haspopup="true"
                   >
                     {item.icon}
                     <span>{item.label}</span>
+<<<<<<< HEAD
+                    {item.badge && (
+                      <span className="px-2 py-1 text-xs bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full">
+                        {item.badge}
+                      </span>
+                    )}
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+=======
                     <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-8b41
                       activeDropdown === item.label ? 'rotate-180' : ''
                     }`} />
                   </button>
                 ) : (
                   <Link
+<<<<<<< HEAD
+                    href={item.href}
+                    className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 rounded-lg"
+                  >
+                    {item.icon}
+                    <span>{item.label}</span>
+                    {item.badge && (
+                      <span className="px-2 py-1 text-xs bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full">
+                        {item.badge}
+                      </span>
+                    )}
+                  </Link>
+                )}
+
+                {/* Enhanced Dropdown Menu */}
+                {item.children && activeDropdown === item.label && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-full left-0 mt-2 w-80 bg-gray-900/95 backdrop-blur-xl border border-gray-700/50 rounded-2xl shadow-2xl z-50"
+                    role="menu"
+                    aria-orientation="vertical"
+                    aria-labelledby={`${item.label}-button`}
+                  >
+                    <div className="p-4">
+                      <div className="grid grid-cols-1 gap-2">
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.label}
+                            href={child.href}
+                            className={`flex items-start space-x-3 p-3 rounded-xl transition-all duration-200 group ${
+                              child.featured 
+                                ? 'bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-500/20' 
+                                : 'hover:bg-gray-800/50'
+                            }`}
+                            role="menuitem"
+                          >
+                            <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${
+                              child.featured 
+                                ? 'bg-gradient-to-br from-purple-500 to-pink-500' 
+                                : 'bg-gray-700'
+                            }`}>
+                              {child.icon}
+                            </div>
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center space-x-2">
+                                <span className="font-medium text-white group-hover:text-cyan-400 transition-colors duration-200">
+                                  {child.label}
+                                </span>
+                                {child.featured && (
+                                  <span className="px-2 py-1 text-xs bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full">
+                                    Featured
+                                  </span>
+                                )}
+                              </div>
+                              {child.description && (
+                                <p className="text-sm text-gray-400 mt-1 leading-relaxed">
+                                  {child.description}
+                                </p>
+                              )}
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </motion.div>
+=======
                     href={item.href || '#'}
                     className="flex items-center space-x-1 px-4 py-2 text-gray-300 hover:text-white transition-colors duration-300 focus:outline-none focus:text-white focus:ring-2 focus:ring-cyan-400 rounded-lg"
                   >
@@ -412,11 +716,72 @@ const UltraFuturisticNavigation2040: React.FC = () => {
                       </motion.div>
                     )}
                   </AnimatePresence>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-8b41
                 )}
               </div>
             ))}
           </div>
 
+<<<<<<< HEAD
+          {/* Enhanced Search and Actions */}
+          <div className="hidden lg:flex lg:items-center lg:space-x-4">
+            {/* Enhanced Search */}
+            <div className="relative">
+              <button
+                onClick={() => setIsSearchOpen(!isSearchOpen)}
+                className="p-2 text-gray-400 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 rounded-lg"
+                aria-label="Open search"
+                aria-expanded={isSearchOpen}
+              >
+                <Search className="w-5 h-5" />
+              </button>
+              
+              {isSearchOpen && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute top-full right-0 mt-2 w-96 bg-gray-900/95 backdrop-blur-xl border border-gray-700/50 rounded-2xl shadow-2xl"
+                >
+                  <form onSubmit={handleSearchSubmit} className="p-4">
+                    <div className="relative">
+                      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                      <input
+                        ref={searchRef}
+                        type="text"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        placeholder="Search services, solutions, resources..."
+                        className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:border-transparent"
+                        aria-label="Search query"
+                      />
+                    </div>
+                    <div className="mt-3 text-xs text-gray-400">
+                      Press Enter to search or Escape to close
+                    </div>
+                  </form>
+                </motion.div>
+              )}
+            </div>
+
+            {/* Contact Button */}
+            <Link
+              href="/contact"
+              className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-400/25 focus:outline-none focus:ring-2 focus:ring-cyan-400/50"
+            >
+              Get Started
+            </Link>
+          </div>
+
+          {/* Enhanced Mobile Menu Button */}
+          <div className="lg:hidden">
+            <button
+              onClick={toggleMobileMenu}
+              className="p-2 text-gray-400 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 rounded-lg"
+              aria-label="Toggle mobile menu"
+              aria-expanded={isOpen}
+=======
           {/* Right Side Actions */}
           <div className="flex items-center space-x-4">
             {/* Accessibility Controls */}
@@ -473,6 +838,7 @@ const UltraFuturisticNavigation2040: React.FC = () => {
               aria-label="Toggle mobile menu"
               aria-expanded={isMobileMenuOpen}
               aria-controls="mobile-menu"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-8b41
             >
               {isOpen ? (
                 <X className="w-6 h-6" />
@@ -483,6 +849,9 @@ const UltraFuturisticNavigation2040: React.FC = () => {
           </div>
         </div>
 
+<<<<<<< HEAD
+      {/* Enhanced Mobile Menu */}
+=======
         {/* Search Bar */}
         <AnimatePresence>
           {isSearchOpen && (
@@ -517,6 +886,7 @@ const UltraFuturisticNavigation2040: React.FC = () => {
       </div>
 
       {/* Mobile Menu */}
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-8b41
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -524,6 +894,25 @@ const UltraFuturisticNavigation2040: React.FC = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
+<<<<<<< HEAD
+            transition={{ duration: 0.3 }}
+            className="lg:hidden bg-black/95 backdrop-blur-xl border-t border-gray-700/50"
+          >
+            <div className="px-4 py-6 space-y-4">
+              {/* Mobile Search */}
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search..."
+                  className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50"
+                />
+              </div>
+
+              {/* Mobile Navigation Items */}
+=======
             transition={{ duration: isReducedMotion ? 0.1 : 0.3 }}
             id="mobile-menu"
             className="lg:hidden bg-gray-900/95 backdrop-blur-md border-t border-gray-700/50"
@@ -531,11 +920,28 @@ const UltraFuturisticNavigation2040: React.FC = () => {
             aria-orientation="vertical"
           >
             <div className="px-4 py-6 space-y-4">
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-8b41
               {navigationItems.map((item) => (
                 <div key={item.label}>
                   {item.children ? (
                     <div>
                       <button
+<<<<<<< HEAD
+                        onClick={() => toggleMobileDropdown(item.label)}
+                        className="flex items-center justify-between w-full px-4 py-3 text-left text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 rounded-lg"
+                        aria-expanded={activeDropdown === item.label}
+                      >
+                        <div className="flex items-center space-x-3">
+                          {item.icon}
+                          <span>{item.label}</span>
+                          {item.badge && (
+                            <span className="px-2 py-1 text-xs bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full">
+                              {item.badge}
+                            </span>
+                          )}
+                        </div>
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+=======
                         onClick={() => toggleDropdown(item.label)}
                         className="flex items-center justify-between w-full px-4 py-3 text-left text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-lg transition-all duration-300"
                         aria-expanded={activeDropdown === item.label}
@@ -546,10 +952,48 @@ const UltraFuturisticNavigation2040: React.FC = () => {
                           <span className="font-medium">{item.label}</span>
                         </div>
                         <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-8b41
                           activeDropdown === item.label ? 'rotate-180' : ''
                         }`} />
                       </button>
                       
+<<<<<<< HEAD
+                      {activeDropdown === item.label && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="ml-8 mt-2 space-y-2"
+                        >
+                          {item.children.map((child) => (
+                            <Link
+                              key={child.label}
+                              href={child.href}
+                              className="flex items-center space-x-3 px-4 py-2 text-gray-400 hover:text-white transition-colors duration-200 rounded-lg"
+                              onClick={() => setIsOpen(false)}
+                            >
+                              {child.icon}
+                              <span>{child.label}</span>
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </div>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="flex items-center space-x-3 px-4 py-3 text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 rounded-lg"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.icon}
+                      <span>{item.label}</span>
+                      {item.badge && (
+                        <span className="px-2 py-1 text-xs bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full">
+                          {item.badge}
+                        </span>
+                      )}
+=======
                       <AnimatePresence>
                         {activeDropdown === item.label && (
                           <motion.div
@@ -582,16 +1026,27 @@ const UltraFuturisticNavigation2040: React.FC = () => {
                     >
                       {item.icon}
                       <span className="font-medium">{item.label}</span>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-8b41
                     </Link>
                   )}
                 </div>
               ))}
+<<<<<<< HEAD
+
+              {/* Mobile Contact Button */}
+              <div className="pt-4 border-t border-gray-700/50">
+                <Link
+                  href="/contact"
+                  className="block w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium text-center rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300"
+                  onClick={() => setIsOpen(false)}
+=======
               
               {/* Mobile CTA */}
               <div className="pt-4 border-t border-gray-700/50">
                 <Link
                   href="/get-started"
                   className="block w-full text-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-8b41
                 >
                   Get Started
                 </Link>
