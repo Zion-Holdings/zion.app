@@ -540,6 +540,13 @@ export default function MicroSaasPage() {
       color: 'from-red-500 to-pink-600',
       textColor: 'text-red-400',
       link: 'https://ziontechgroup.com/ai-churn-prediction',
+<<<<<<< HEAD
+      marketPosition: 'Competitive with Gainsight ($0-500), Totango ($0-200), and ChurnZero ($0-500)',
+      targetAudience: 'Customer success teams, SaaS companies, and subscription businesses',
+      trialDays: 14,
+      setupTime: '30 minutes',
+      category: 'Customer Experience'
+=======
       marketPosition: 'Competitive with Gainsight ($0-1000+), Totango ($0-1000+), and ChurnZero ($0-1000+)',
       targetAudience: 'Customer success teams, product managers, and subscription businesses'
     },
@@ -1485,6 +1492,7 @@ export default function MicroSaasPage() {
       trialDays: 14,
       setupTime: '30 minutes',
       category: 'Operations & Automation'
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-website-improvements-33cc
     }
   ];
 
@@ -1511,6 +1519,8 @@ export default function MicroSaasPage() {
     }
   ];
 
+<<<<<<< HEAD
+=======
   const categories = [...new Set(microSaasServices.map(service => service.category))];
 
   const competitiveAdvantages = [
@@ -1546,6 +1556,7 @@ export default function MicroSaasPage() {
     }
   ];
 
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-website-improvements-33cc
   return (
     <>
       <Head>

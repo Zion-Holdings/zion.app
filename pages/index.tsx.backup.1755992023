@@ -655,6 +655,15 @@ export default function HomePage() {
             <p className="text-gray-300 mb-6">
               All plans include 99.9% uptime guarantee, enterprise-grade security, and 14-day free trials
             </p>
+<<<<<<< HEAD
+            <a 
+              href="/pricing"
+              className="inline-flex items-center px-8 py-4 bg-white text-gray-900 font-semibold rounded-full hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              View Detailed Pricing
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </a>
+=======
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
@@ -1111,6 +1120,7 @@ export default function HomePage() {
               <h3 className="text-lg font-bold text-white mb-2">Enterprise Security</h3>
               <p className="text-green-200 text-sm">Bank-level security, SOC 2 compliance, and 99.9% uptime guarantee for all services.</p>
             </div>
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-website-improvements-33cc
           </div>
         </div>
       </section>

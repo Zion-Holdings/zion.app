@@ -495,6 +495,114 @@ export default function ServicesPage() {
             </p>
           </div>
 
+<<<<<<< HEAD
+          <div className="space-y-8">
+            {microSaasServices.map((service, index) => (
+              <Card
+                key={index}
+                className="card-hover border-gradient-blue overflow-hidden"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="p-8">
+                  <div className="flex flex-col lg:flex-row gap-8">
+                    {/* Service Icon & Basic Info */}
+                    <div className="lg:w-1/4">
+                      <div className="text-center lg:text-left">
+                        <div className={`w-20 h-20 rounded-2xl flex items-center justify-center text-3xl bg-gradient-to-br ${service.color} shadow-xl mx-auto lg:mx-0 mb-6`}>
+                          {service.icon}
+                        </div>
+                        <h3 className={`text-2xl font-bold mb-3 ${service.textColor}`}>
+                          {service.title}
+                        </h3>
+                        <p className="text-gray-400 mb-4 leading-relaxed">
+                          {service.description}
+                        </p>
+                        
+                        {/* Market Data */}
+                        <div className="space-y-3 text-sm">
+                          <div className="flex items-center justify-between">
+                            <span className="text-gray-400">Market Price:</span>
+                            <span className="text-white font-semibold">{service.marketPrice}</span>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span className="text-gray-400">Target Market:</span>
+                            <span className="text-white">{service.targetMarket}</span>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span className="text-gray-400">ROI Expectation:</span>
+                            <span className="text-green-400 font-semibold">{service.roi}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Features & Use Cases */}
+                    <div className="lg:w-3/4">
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        {/* Features */}
+                        <div>
+                          <h4 className="text-lg font-semibold text-white mb-4 flex items-center">
+                            <Check className="w-5 h-5 mr-2 text-green-400" />
+                            Key Features
+                          </h4>
+                          <ul className="space-y-2">
+                            {service.features.map((feature, featureIndex) => (
+                              <li key={featureIndex} className="flex items-start text-gray-300 text-sm">
+                                <span className="w-2 h-2 bg-cursor-blue rounded-full mr-3 mt-2 flex-shrink-0" />
+                                {feature}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        {/* Use Cases */}
+                        <div>
+                          <h4 className="text-lg font-semibold text-white mb-4 flex items-center">
+                            <Zap className="w-5 h-5 mr-2 text-yellow-400" />
+                            Use Cases
+                          </h4>
+                          <ul className="space-y-2">
+                            {service.useCases.map((useCase, useCaseIndex) => (
+                              <li key={useCaseIndex} className="flex items-start text-gray-300 text-sm">
+                                <span className="w-2 h-2 bg-cursor-blue rounded-full mr-3 mt-2 flex-shrink-0" />
+                                {useCase}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+
+                      {/* Market Analysis */}
+                      <div className="mt-8 pt-6 border-t border-gray-700">
+                        <h4 className="text-lg font-semibold text-white mb-4 flex items-center">
+                          <BarChart3 className="w-5 h-5 mr-2 text-blue-400" />
+                          Market Analysis
+                        </h4>
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                          <div>
+                            <span className="text-gray-400">Competitors:</span>
+                            <div className="text-white mt-1">{service.competitors.join(', ')}</div>
+                          </div>
+                          <div>
+                            <span className="text-gray-400">Market Size:</span>
+                            <div className="text-white mt-1">{service.marketSize}</div>
+                          </div>
+                          <div>
+                            <span className="text-gray-400">Growth Rate:</span>
+                            <div className="text-green-400 mt-1">{service.growthRate}</div>
+                          </div>
+                          <div>
+                            <span className="text-gray-400">Pricing Tier:</span>
+                            <div className="text-white mt-1">{service.marketPrice}</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            ))}
+=======
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
               <div className="text-3xl mb-4">📝</div>
@@ -562,6 +670,7 @@ export default function ServicesPage() {
                 <p className="text-green-200 text-sm">No hidden fees, no enterprise sales calls. Simple monthly pricing that scales</p>
               </div>
             </div>
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-website-improvements-33cc
           </div>
         </div>
       </section>
