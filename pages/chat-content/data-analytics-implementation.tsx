@@ -1,3 +1,1 @@
-export default function Page() {
-  return <div className="py-10">Data Analytics Implementation</div>;
-}
+export default function Page(){return <div className="prose dark:prose-invert"><h1>Data Analytics Implementation</h1><p>Content coming soon.</p></div>}

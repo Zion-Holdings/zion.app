@@ -1,1 +1,1 @@
-export default function AutoPage() { return <div className="py-10">Auto Update</div>; }
+export default function AutoUpdate(){return <div className="prose dark:prose-invert"><h1>Auto Update</h1><p>2025-08-08T17:23:07.688Z</p></div>}

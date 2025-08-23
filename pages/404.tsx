@@ -1,8 +1,8 @@
-export default function NotFound() {
+export default function NotFoundPage() {
   return (
-    <div className="py-20 text-center">
-      <h1 className="text-3xl font-bold">Page not found</h1>
-      <p className="mt-2 text-gray-600 dark:text-gray-300">The page you are looking for does not exist.</p>
+    <div className="text-center py-20">
+      <h1 className="text-4xl font-bold mb-4">404</h1>
+      <p>Page not found.</p>
     </div>
   );
 }

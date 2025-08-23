@@ -1,3 +1,1 @@
-export default function ProductsIndex() {
-  return <div className="py-10">Products</div>;
-}
+export default function Products(){return <div className="prose dark:prose-invert"><h1>Products</h1><p>Coming soon.</p></div>}

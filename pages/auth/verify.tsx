@@ -1,3 +1,1 @@
-export default function Verify() {
-  return <div className="py-10">Verify Email</div>;
-}
+export default function VerifyPage(){return <div className="prose dark:prose-invert"><h1>Verify</h1><p>Verification in progress.</p></div>}
