@@ -56,6 +56,9 @@ import { real2036ITServicesAdditions } from '../../data/real-2036-it-services-ad
 import { real2036AIServicesAdditions } from '../../data/real-2036-ai-services-additions';
 import { innovative2025MicroSaasBatch } from '../../data/innovative-2025-micro-saas-batch';
 import { innovative2025ITEnterpriseBatch } from '../../data/innovative-2025-it-enterprise-batch';
+import { innovative2025Q4Services } from '../../data/innovative-2025-q4-services';
+import { emergingTech2025Services } from '../../data/emerging-tech-2025-services';
+import { specializedBusiness2025Services } from '../../data/specialized-business-2025-services';
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -79,7 +82,11 @@ const categories = [
   'Education',
   'Government',
   'Energy',
-  'Transportation'
+  'Transportation',
+  'Blockchain & Web3',
+  'IoT & Edge Computing',
+  'Enterprise Solutions',
+  'Innovation & Research'
 ];
 
 export default function ServicesIndexPage() {
@@ -138,7 +145,10 @@ export default function ServicesIndexPage() {
       real2036AIServicesAdditions as unknown[]
     )
     .concat(innovative2025MicroSaasBatch as unknown[])
-    .concat(innovative2025ITEnterpriseBatch as unknown[]);
+    .concat(innovative2025ITEnterpriseBatch as unknown[])
+    .concat(innovative2025Q4Services as unknown[])
+    .concat(emergingTech2025Services as unknown[])
+    .concat(specializedBusiness2025Services as unknown[]);
 
   // Filter out services without required properties
   const validServices = all.filter(service => 
