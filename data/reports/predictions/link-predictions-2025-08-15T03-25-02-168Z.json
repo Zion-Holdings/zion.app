@@ -1,0 +1,430 @@
+{
+  "timestamp": "2025-08-15T03:25:02.154Z",
+  "patterns": {
+    "github": {
+      "totalRepositories": 4,
+      "repositories": [
+        "https://github.com/Zion-Holdings/zion.app', title: 'GitHub', desc: 'Repository and actions' },\n  ];\n\n  const contentHubs: Array<{ href: string; title: string; desc: string }> = [\n    { href: '",
+        "https://github.com/Zion-Holdings/zion.app', title: 'GitHub', desc: 'Repository and actions' }\n  ];\n\n  const contentHubs: Array<{ href: string; title: string; desc: string }> = [\n    { href: '",
+        "https://github.com/Zion-Holdings/zion\" target=\"_blank\" rel=\"noopener noreferrer\" className=\"rounded-md border border-white",
+        "https://github.com/${repo.owner}/${repo.repo}"
+      ],
+      "workflowLinks": [
+        "https://github.com/${repo.owner}/${repo.repo}/actions"
+      ],
+      "documentationLinks": [],
+      "issueLinks": []
+    },
+    "externalServices": {
+      "totalServices": 15,
+      "services": {
+        "fonts": [
+          "https://fonts.googleapis.com\"",
+          "https://fonts.gstatic.com\"",
+          "https://fonts.googleapis.com"
+        ],
+        "formspree": [
+          "https://formspree.io"
+        ],
+        "github": [
+          "https://github.com",
+          "https://github.com",
+          "https://github.com"
+        ],
+        "techcrunch": [
+          "https://techcrunch.com",
+          "https://techcrunch.com",
+          "https://techcrunch.com",
+          "https://techcrunch.com",
+          "https://techcrunch.com",
+          "https://techcrunch.com",
+          "https://techcrunch.com",
+          "https://techcrunch.com",
+          "https://techcrunch.com",
+          "https://techcrunch.com",
+          "https://techcrunch.com",
+          "https://techcrunch.com",
+          "https://techcrunch.com",
+          "https://techcrunch.com",
+          "https://techcrunch.com",
+          "https://techcrunch.com",
+          "https://techcrunch.com",
+          "https://techcrunch.com",
+          "https://techcrunch.com",
+          "https://techcrunch.com"
+        ],
+        "www": [
+          "https://www.theverge.com",
+          "https://www.wired.com",
+          "https://www.foldnfly.com",
+          "https://www.foldnfly.com",
+          "https://www.foldnfly.com",
+          "https://www.foldnfly.com",
+          "https://www.wired.com",
+          "https://www.foldnfly.com",
+          "https://www.wired.com",
+          "https://www.foldnfly.com",
+          "https://www.wired.com",
+          "https://www.linkedin.com",
+          "https://www.instagram.com"
+        ],
+        "ian": [
+          "https://ian.sh",
+          "https://ian.sh",
+          "https://ian.sh",
+          "https://ian.sh",
+          "https://ian.sh",
+          "https://ian.sh"
+        ],
+        "explore": [
+          "https://explore.zoom.us",
+          "https://explore.zoom.us",
+          "https://explore.zoom.us",
+          "https://explore.zoom.us"
+        ],
+        "ai": [
+          "https://ai.googleblog.com",
+          "https://ai.googleblog.com",
+          "https://ai.googleblog.com",
+          "https://ai.googleblog.com",
+          "https://ai.googleblog.com",
+          "https://ai.googleblog.com",
+          "https://ai.googleblog.com"
+        ],
+        "about": [
+          "https://about.fb.com",
+          "https://about.fb.com",
+          "https://about.fb.com",
+          "https://about.fb.com",
+          "https://about.fb.com",
+          "https://about.fb.com",
+          "https://about.fb.com",
+          "https://about.fb.com"
+        ],
+        "fly": [
+          "https://fly.io",
+          "https://fly.io",
+          "https://fly.io",
+          "https://fly.io",
+          "https://fly.io"
+        ],
+        "ciechanow": [
+          "https://ciechanow.ski",
+          "https://ciechanow.ski",
+          "https://ciechanow.ski"
+        ],
+        "deepmind": [
+          "https://deepmind.google",
+          "https://deepmind.google",
+          "https://deepmind.google"
+        ],
+        "blog": [
+          "https://blog.hopefullyuseful.com",
+          "https://blog.hopefullyuseful.com",
+          "https://blog.hopefullyuseful.com",
+          "https://blog.hopefullyuseful.com",
+          "https://blog.hopefullyuseful.com"
+        ],
+        "schema": [
+          "https://schema.org\",",
+          "https://schema.org\",",
+          "https://schema.org\",",
+          "https://schema.org\",",
+          "https://schema.org\",",
+          "https://schema.org\",",
+          "https://schema.org\",",
+          "https://schema.org\",",
+          "https://schema.org\",",
+          "https://schema.org\",",
+          "https://schema.org',",
+          "https://schema.org',",
+          "https://schema.org',"
+        ],
+        "git-scm": [
+          "https://git-scm.com",
+          "https://git-scm.com",
+          "https://git-scm.com"
+        ]
+      },
+      "endpoints": [
+        "https://fonts.googleapis.com\"",
+        "https://fonts.gstatic.com\"",
+        "https://fonts.googleapis.com",
+        "https://formspree.io",
+        "https://github.com",
+        "https://techcrunch.com",
+        "https://www.theverge.com",
+        "https://ian.sh",
+        "https://explore.zoom.us",
+        "https://ai.googleblog.com",
+        "https://www.wired.com",
+        "https://about.fb.com",
+        "https://www.foldnfly.com",
+        "https://fly.io",
+        "https://ciechanow.ski",
+        "https://deepmind.google",
+        "https://blog.hopefullyuseful.com",
+        "https://schema.org\",",
+        "https://schema.org',",
+        "https://www.linkedin.com",
+        "https://www.instagram.com",
+        "https://git-scm.com"
+      ],
+      "riskLevel": "medium"
+    },
+    "internalRoutes": {
+      "totalStaticRoutes": 51,
+      "totalDynamicRoutes": 0,
+      "staticRoutes": [
+        "search",
+        "og/zion-tech-group.svg",
+        "manifest.webmanifest",
+        ".netlify/functions/schedule-homepage",
+        ".netlify/functions/schedule-site-health",
+        ".netlify/functions/schedule-content-index",
+        ".netlify/functions/schedule-knowledge-graph",
+        ".netlify/functions/front-enhancer",
+        ".netlify/functions/fast-front-promoter",
+        ".netlify/functions/marketing-and-features-promo",
+        ".netlify/functions/fast-orchestrator",
+        ".netlify/functions/continuous-orchestrator",
+        ".netlify/functions/features-capabilities-benefits-advertiser",
+        ".netlify/functions/hyper-front-index-accelerator",
+        ".netlify/functions/innovation-lab",
+        ".netlify/functions/auto-scheduler",
+        ".netlify/functions/broken-image-scanner",
+        ".netlify/functions/seo-audit-runner",
+        ".netlify/functions/ai-trends-radar-runner",
+        ".netlify/functions/deps-auto-upgrade-runner",
+        ".netlify/functions/component-props-docs-runner",
+        ".netlify/functions/topics-map-runner",
+        ".netlify/functions/roadmap-curator",
+        ".netlify/functions/revenue-ideas-lab",
+        ".netlify/functions/auto-discovery-runner",
+        "services",
+        "reports/updates/update-2025-08-15-0001",
+        "reports/updates/update-2025-08-15T03-00",
+        "reports/updates/update-2025-08-15-0300",
+        "reports/updates/update-2025-08-15-0000",
+        "reports/updates/update-2025-08-14-2359",
+        "reports/updates/update-2025-08-14-2358",
+        "main/front#capabilities",
+        "automation",
+        "site-health",
+        "newsroom",
+        "404",
+        "automation-health",
+        "contact",
+        "explore",
+        "front",
+        "landing",
+        "main/front#features",
+        "main/front#benefits",
+        ".netlify/functions/docs-index-runner",
+        "reports",
+        "sitemap.xml",
+        "services/ai-seo-auditor",
+        "services/customer-support-chatbot",
+        "services/landing-page-generator",
+        "services/price-intelligence-service"
+      ],
+      "dynamicRoutes": [],
+      "potentialIssues": [
+        {
+          "file": "pages/automation-health.tsx",
+          "type": "dynamic-route",
+          "patterns": [
+            "${ms}",
+            "${(ms / 1000).toFixed(1)}",
+            "${(ms / 60000).toFixed(1)}",
+            "${\n                  controlPlane.globalPause ? 'bg-red-500/20 text-red-400' : 'bg-green-500/20 text-green-400'\n                }",
+            "${controlPlane.budgets.openai.dailyUsd}",
+            "${controlPlane.budgets.openai.monthlyUsd}",
+            "${\n                  activeTab === tab\n                    ? 'bg-cyan-500 text-white'\n                    : 'text-gray-400 hover:text-white hover:bg-slate-700/50'\n                }",
+            "${\n                    scheduleHints.recommendations.overallHealth === 'excellent' ? 'bg-green-500/20 text-green-400' :\n                    scheduleHints.recommendations.overallHealth === 'good' ? 'bg-blue-500/20 text-blue-400' :\n                    scheduleHints.recommendations.overallHealth === 'fair' ? 'bg-yellow-500/20 text-yellow-400' :\n                    'bg-red-500/20 text-red-400'\n                  }",
+            "${getStatusColor(func.status)}",
+            "${getStatusColor(workflow.status)}",
+            "${\n                        workflow.recommendations.shouldSpeedUp ? 'bg-green-500/20 text-green-400' :\n                        workflow.recommendations.shouldSlowDown ? 'bg-yellow-500/20 text-yellow-400' :\n                        'bg-blue-500/20 text-blue-400'\n                      }"
+          ]
+        },
+        {
+          "file": "pages/reports/updates/update-2025-08-15-0211.tsx",
+          "type": "dynamic-route",
+          "patterns": [
+            "${title}",
+            "${subtitle}"
+          ]
+        },
+        {
+          "file": "pages/reports/updates/update-2025-08-15-0213.tsx",
+          "type": "dynamic-route",
+          "patterns": [
+            "${title}",
+            "${subtitle}"
+          ]
+        },
+        {
+          "file": "pages/reports/updates/update-2025-08-15-0214.tsx",
+          "type": "dynamic-route",
+          "patterns": [
+            "${title}",
+            "${subtitle}"
+          ]
+        },
+        {
+          "file": "pages/reports/updates/update-2025-08-15-0218.tsx",
+          "type": "dynamic-route",
+          "patterns": [
+            "${title}",
+            "${subtitle}"
+          ]
+        },
+        {
+          "file": "pages/reports/updates/update-2025-08-15-0219.tsx",
+          "type": "dynamic-route",
+          "patterns": [
+            "${title}",
+            "${subtitle}"
+          ]
+        },
+        {
+          "file": "pages/reports/updates/update-2025-08-15-0220.tsx",
+          "type": "dynamic-route",
+          "patterns": [
+            "${title}",
+            "${subtitle}"
+          ]
+        },
+        {
+          "file": "pages/reports/updates/update-2025-08-15-0230.tsx",
+          "type": "dynamic-route",
+          "patterns": [
+            "${title}",
+            "${subtitle}"
+          ]
+        },
+        {
+          "file": "pages/reports/updates/update-2025-08-15-0240.tsx",
+          "type": "dynamic-route",
+          "patterns": [
+            "${title}",
+            "${subtitle}"
+          ]
+        },
+        {
+          "file": "pages/reports/updates/update-2025-08-15-0250.tsx",
+          "type": "dynamic-route",
+          "patterns": [
+            "${title}",
+            "${subtitle}"
+          ]
+        },
+        {
+          "file": "pages/reports/updates/update-2025-08-15-0300.tsx",
+          "type": "dynamic-route",
+          "patterns": [
+            "${title}",
+            "${subtitle}"
+          ]
+        },
+        {
+          "file": "pages/services/index.tsx",
+          "type": "dynamic-route",
+          "patterns": [
+            "${s.slug}"
+          ]
+        },
+        {
+          "file": "components/DefaultSEO.tsx",
+          "type": "dynamic-route",
+          "patterns": [
+            "${asPath}",
+            "${SITE_URL}",
+            "${normalizedPath === '/' ? '' : normalizedPath}",
+            "${SITE_URL}",
+            "${SITE_URL}",
+            "${SITE_URL}",
+            "${SITE_URL}",
+            "${SITE_URL}",
+            "${SITE_URL}",
+            "${SITE_URL}",
+            "${SITE_URL}",
+            "${SITE_URL}",
+            "${SITE_URL}"
+          ]
+        }
+      ]
+    }
+  },
+  "predictions": [
+    {
+      "type": "github-repository-change",
+      "probability": 0.7,
+      "description": "GitHub repository URLs may change, causing 404 errors",
+      "affectedLinks": 4,
+      "recommendation": "Implement repository URL validation and fallback mechanisms"
+    },
+    {
+      "type": "external-service-failure",
+      "probability": 0.6,
+      "description": "High dependency on external services may cause link failures",
+      "affectedLinks": 96,
+      "recommendation": "Implement service health monitoring and fallback URLs"
+    },
+    {
+      "type": "link-decay",
+      "probability": 0.9,
+      "description": "External links naturally decay over time, leading to 404 errors",
+      "affectedLinks": "all external links",
+      "recommendation": "Implement regular link health monitoring and automated fixing"
+    }
+  ],
+  "riskAssessment": {
+    "totalRisk": 53,
+    "riskLevel": "medium",
+    "riskFactors": {
+      "github": 0.8,
+      "externalServices": 4.5
+    },
+    "recommendations": [
+      {
+        "priority": "high",
+        "action": "Set up automated health checks",
+        "description": "Medium-high risk requires automated monitoring and alerting"
+      },
+      {
+        "priority": "medium",
+        "action": "Regular health assessments",
+        "description": "Moderate risk requires regular health checks and maintenance"
+      },
+      {
+        "priority": "low",
+        "action": "Preventive monitoring",
+        "description": "Implement preventive measures to avoid future issues"
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "category": "GitHub",
+      "action": "Implement repository URL validation",
+      "description": "Add validation to ensure GitHub repository URLs are accessible",
+      "priority": "high",
+      "effort": "medium"
+    },
+    {
+      "category": "External Services",
+      "action": "Add service health monitoring",
+      "description": "Monitor external service health and implement fallbacks",
+      "priority": "medium",
+      "effort": "high"
+    },
+    {
+      "category": "Monitoring",
+      "action": "Set up predictive monitoring",
+      "description": "Use pattern analysis to predict and prevent link issues",
+      "priority": "low",
+      "effort": "low"
+    }
+  ]
+}

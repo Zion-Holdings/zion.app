@@ -1,0 +1,213 @@
+{
+  "updatedAt": "2025-08-09T21:25:13.005Z",
+  "topics": {
+    "nextjs": [
+      {
+        "full_name": "vercel/next.js",
+        "stars": 133700,
+        "html_url": "https://github.com/vercel/next.js"
+      },
+      {
+        "full_name": "langgenius/dify",
+        "stars": 110292,
+        "html_url": "https://github.com/langgenius/dify"
+      },
+      {
+        "full_name": "shadcn-ui/ui",
+        "stars": 92605,
+        "html_url": "https://github.com/shadcn-ui/ui"
+      },
+      {
+        "full_name": "supabase/supabase",
+        "stars": 86766,
+        "html_url": "https://github.com/supabase/supabase"
+      },
+      {
+        "full_name": "ChatGPTNextWeb/NextChat",
+        "stars": 85365,
+        "html_url": "https://github.com/ChatGPTNextWeb/NextChat"
+      },
+      {
+        "full_name": "lobehub/lobe-chat",
+        "stars": 64280,
+        "html_url": "https://github.com/lobehub/lobe-chat"
+      },
+      {
+        "full_name": "appwrite/appwrite",
+        "stars": 52211,
+        "html_url": "https://github.com/appwrite/appwrite"
+      },
+      {
+        "full_name": "coollabsio/coolify",
+        "stars": 44111,
+        "html_url": "https://github.com/coollabsio/coolify"
+      },
+      {
+        "full_name": "AykutSarac/jsoncrack.com",
+        "stars": 40703,
+        "html_url": "https://github.com/AykutSarac/jsoncrack.com"
+      },
+      {
+        "full_name": "trpc/trpc",
+        "stars": 38156,
+        "html_url": "https://github.com/trpc/trpc"
+      }
+    ],
+    "react": [
+      {
+        "full_name": "freeCodeCamp/freeCodeCamp",
+        "stars": 425402,
+        "html_url": "https://github.com/freeCodeCamp/freeCodeCamp"
+      },
+      {
+        "full_name": "facebook/react",
+        "stars": 237986,
+        "html_url": "https://github.com/facebook/react"
+      },
+      {
+        "full_name": "vercel/next.js",
+        "stars": 133700,
+        "html_url": "https://github.com/vercel/next.js"
+      },
+      {
+        "full_name": "facebook/react-native",
+        "stars": 123343,
+        "html_url": "https://github.com/facebook/react-native"
+      },
+      {
+        "full_name": "justjavac/free-programming-books-zh_CN",
+        "stars": 114904,
+        "html_url": "https://github.com/justjavac/free-programming-books-zh_CN"
+      },
+      {
+        "full_name": "facebook/create-react-app",
+        "stars": 103413,
+        "html_url": "https://github.com/facebook/create-react-app"
+      },
+      {
+        "full_name": "mui/material-ui",
+        "stars": 96334,
+        "html_url": "https://github.com/mui/material-ui"
+      },
+      {
+        "full_name": "ant-design/ant-design",
+        "stars": 95589,
+        "html_url": "https://github.com/ant-design/ant-design"
+      },
+      {
+        "full_name": "shadcn-ui/ui",
+        "stars": 92605,
+        "html_url": "https://github.com/shadcn-ui/ui"
+      },
+      {
+        "full_name": "storybookjs/storybook",
+        "stars": 87472,
+        "html_url": "https://github.com/storybookjs/storybook"
+      }
+    ],
+    "openai": [
+      {
+        "full_name": "Significant-Gravitas/AutoGPT",
+        "stars": 177631,
+        "html_url": "https://github.com/Significant-Gravitas/AutoGPT"
+      },
+      {
+        "full_name": "langchain-ai/langchain",
+        "stars": 113192,
+        "html_url": "https://github.com/langchain-ai/langchain"
+      },
+      {
+        "full_name": "langgenius/dify",
+        "stars": 110292,
+        "html_url": "https://github.com/langgenius/dify"
+      },
+      {
+        "full_name": "open-webui/open-webui",
+        "stars": 105976,
+        "html_url": "https://github.com/open-webui/open-webui"
+      },
+      {
+        "full_name": "microsoft/generative-ai-for-beginners",
+        "stars": 94268,
+        "html_url": "https://github.com/microsoft/generative-ai-for-beginners"
+      },
+      {
+        "full_name": "microsoft/markitdown",
+        "stars": 70733,
+        "html_url": "https://github.com/microsoft/markitdown"
+      },
+      {
+        "full_name": "openai/openai-cookbook",
+        "stars": 66745,
+        "html_url": "https://github.com/openai/openai-cookbook"
+      },
+      {
+        "full_name": "xtekky/gpt4free",
+        "stars": 64887,
+        "html_url": "https://github.com/xtekky/gpt4free"
+      },
+      {
+        "full_name": "lobehub/lobe-chat",
+        "stars": 64280,
+        "html_url": "https://github.com/lobehub/lobe-chat"
+      },
+      {
+        "full_name": "infiniflow/ragflow",
+        "stars": 62020,
+        "html_url": "https://github.com/infiniflow/ragflow"
+      }
+    ],
+    "tailwindcss": [
+      {
+        "full_name": "shadcn-ui/ui",
+        "stars": 92605,
+        "html_url": "https://github.com/shadcn-ui/ui"
+      },
+      {
+        "full_name": "tailwindlabs/tailwindcss",
+        "stars": 89495,
+        "html_url": "https://github.com/tailwindlabs/tailwindcss"
+      },
+      {
+        "full_name": "saadeghi/daisyui",
+        "stars": 38222,
+        "html_url": "https://github.com/saadeghi/daisyui"
+      },
+      {
+        "full_name": "calcom/cal.com",
+        "stars": 37515,
+        "html_url": "https://github.com/calcom/cal.com"
+      },
+      {
+        "full_name": "AmruthPillai/Reactive-Resume",
+        "stars": 32513,
+        "html_url": "https://github.com/AmruthPillai/Reactive-Resume"
+      },
+      {
+        "full_name": "drawdb-io/drawdb",
+        "stars": 32173,
+        "html_url": "https://github.com/drawdb-io/drawdb"
+      },
+      {
+        "full_name": "heyverse/hey",
+        "stars": 29365,
+        "html_url": "https://github.com/heyverse/hey"
+      },
+      {
+        "full_name": "tailwindlabs/headlessui",
+        "stars": 27769,
+        "html_url": "https://github.com/tailwindlabs/headlessui"
+      },
+      {
+        "full_name": "t3-oss/create-t3-app",
+        "stars": 27746,
+        "html_url": "https://github.com/t3-oss/create-t3-app"
+      },
+      {
+        "full_name": "plausible/analytics",
+        "stars": 23064,
+        "html_url": "https://github.com/plausible/analytics"
+      }
+    ]
+  }
+}

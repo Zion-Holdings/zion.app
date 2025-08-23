@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="13.119" tests="2" failures="2">
+  <testsuite name="Root Suite" timestamp="2025-06-11T01:00:21" tests="0" file="cypress/e2e/blog.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="blog navigation" timestamp="2025-06-11T01:00:21" tests="2" time="13.112" failures="2">
+    <testcase name="blog navigation shows blog page header" time="0.000" classname="shows blog page header">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `h1`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `h1`, but never found it.
+    at Context.eval (webpack://project/./cypress/e2e/blog.cy.ts:4:17)]]></failure>
+    </testcase>
+    <testcase name="blog navigation opens article from list" time="0.000" classname="opens article from list">
+      <failure message="Timed out retrying after 4000ms: Expected to find element: `a`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 4000ms: Expected to find element: `a`, but never found it.
+    at Context.eval (webpack://project/./cypress/e2e/blog.cy.ts:8:7)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

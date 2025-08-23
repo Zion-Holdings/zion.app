@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+export default function CloudComputingStrategies() { return null }
+=======
+export default function Article2() { return <div className="p-6">Article</div>; }
+>>>>>>> origin/cursor/build-developer-api-and-webhook-integration-62ab

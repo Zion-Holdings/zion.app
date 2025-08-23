@@ -1,0 +1,13 @@
+<<<<<<< HEAD
+.next
+node_modules
+.DS_Store
+.env*
+=======
+node_modules
+.DS_Store
+.env
+server/.env
+npm-debug.log*
+yarn-error.log
+>>>>>>> origin/cursor/build-zion-ai-marketplace-chat-assistant-4a2a

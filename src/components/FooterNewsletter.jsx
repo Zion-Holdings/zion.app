@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
+import { apiClient } from '@/utils/apiClient';
 import { Loader2 } from 'lucide-react';
 
 export function FooterNewsletter() {
@@ -15,7 +16,7 @@ export function FooterNewsletter() {
     if (honeypot) return; // ignore bots
     setIsSubmitting(true);
     try {
-      const res = await fetch('/api/subscribe', {
+      const res = await apiClient('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email })
