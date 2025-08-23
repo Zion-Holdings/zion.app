@@ -18,9 +18,8 @@ exports.handler = async () => {
     return status;
   }
 
-  process.env.STALE_THRESHOLD_DAYS = process.env.STALE_THRESHOLD_DAYS || '30';
-  logStep('audit:stale-content', () => runNode('automation/stale-content-auditor.cjs'));
-  logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs', ['public/automation/stale-content.json']))
+  logStep('analyze:internal-links', () => runNode('automation/internal-links-analyzer.cjs'));
+  logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs', ['public/automation/internal-links.json']));
 
   return { statusCode: 200, body: logs.join('\n') };
 };

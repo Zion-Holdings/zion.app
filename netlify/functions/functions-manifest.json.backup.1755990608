@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "generatedAt": "2025-08-11T23:38:49.726Z",
+=======
   "generatedAt": "2025-08-11T23:39:39.828Z",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-b505
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
@@ -57,7 +61,13 @@
     "image-dimension-audit-runner",
     "image-optimizer-runner",
     "innovation-lab",
+<<<<<<< HEAD
+    "internal-anchors-checker",
+    "knowledge-pack-runner",
+    "license-compliance-auditor",
+=======
     "internal-links-runner",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-b505
     "link-and-health-scheduler",
     "link-crawler",
     "link-sentinel-aggregator-runner",

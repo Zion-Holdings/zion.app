@@ -229,6 +229,34 @@
   schedule = "*/15 * * * *"
 
 [[scheduled.functions]]
+<<<<<<< HEAD
+  name = "a11y-alt-text-runner"
+  schedule = "*/10 * * * *"
+
+[[scheduled.functions]]
+  name = "metadata-optimizer-runner"
+  schedule = "*/15 * * * *"
+
+[[scheduled.functions]]
+  name = "seo-audit-runner"
+  schedule = "0 */2 * * *"
+
+[[scheduled.functions]]
+  name = "ai-trends-radar-runner"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+  name = "stale-content-auditor-runner"
+  schedule = "17 */6 * * *"
+
+[[scheduled.functions]]
+  name = "repo-heatmap-runner"
+  schedule = "15 */6 * * *"
+
+[[scheduled.functions]]
+  name = "deps-auto-upgrade-runner"
+  schedule = "0 3 * * *"
+=======
 name = "a11y-alt-text-runner"
 schedule = "*/10 * * * *" # every 10 minutes
 
@@ -250,6 +278,7 @@ schedule = "17 */6 * * *"
 [[scheduled.functions]]
 name = "deps-auto-upgrade-runner"
 schedule = "7 */12 * * *"
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-b505
 
 # New autonomous cloud scanners
 [[scheduled.functions]]
@@ -261,9 +290,14 @@ name = "orphan-pages-detector"
 schedule = "*/15 * * * *"
 
 [[scheduled.functions]]
+<<<<<<< HEAD
+  name = "component-size-report"
+  schedule = "*/5 * * * *"
+=======
 name = "component-size-report"
 schedule = "*/5 * * * *"
 
 [[scheduled.functions]]
 name = "internal-links-runner"
 schedule = "11 */6 * * *" # every 6 hours
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-b505

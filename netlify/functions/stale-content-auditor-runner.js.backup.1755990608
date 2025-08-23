@@ -7,9 +7,17 @@ function runNode(relPath, args = []) {
   return { status: res.status || 0, stdout: res.stdout || '', stderr: res.stderr || '' };
 }
 
+<<<<<<< HEAD
+exports.config = { schedule: '17 */6 * * *' };
+
+exports.handler = async () => {
+  const logs = [];
+  function step(name, fn) {
+=======
 exports.handler = async () => {
   const logs = [];
   function logStep(name, fn) {
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-b505
     logs.push(`\n=== ${name} ===`);
     const { status, stdout, stderr } = fn();
     if (stdout) logs.push(stdout);
@@ -18,9 +26,17 @@ exports.handler = async () => {
     return status;
   }
 
+<<<<<<< HEAD
+  step('stale-content:audit', () => runNode('automation/stale-content-auditor.cjs'));
+  step('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
+
+  return { statusCode: 200, body: logs.join('\n') };
+};
+=======
   process.env.STALE_THRESHOLD_DAYS = process.env.STALE_THRESHOLD_DAYS || '30';
   logStep('audit:stale-content', () => runNode('automation/stale-content-auditor.cjs'));
   logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs', ['public/automation/stale-content.json']))
 
   return { statusCode: 200, body: logs.join('\n') };
 };
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-b505
