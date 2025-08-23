@@ -1,9 +1,14 @@
 #!/bin/bash
 
-# Comprehensive Redundancy Automation V2 Startup Script
-# This script provides redundancy for all PM2, GitHub Actions, Netlify Functions, and automation scripts
+# Comprehensive Redundancy V2 System Startup Script
+# This script provides redundancy for all PM2, GitHub Actions, and Netlify Functions automations
 
 set -e
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+WORKSPACE_DIR="$(dirname "$SCRIPT_DIR")"
+LOG_DIR="$WORKSPACE_DIR/automation/logs"
+PID_FILE="$LOG_DIR/comprehensive-redundancy-v2.pid"
 
 # Colors for output
 RED='\033[0;31m'
@@ -12,258 +17,224 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-# Configuration
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-WORKSPACE_DIR="$(dirname "$SCRIPT_DIR")"
-LOG_DIR="$WORKSPACE_DIR/automation/logs"
-REDUNDANCY_SCRIPT="$WORKSPACE_DIR/automation/comprehensive-redundancy-automation-v2.cjs"
-PID_FILE="$LOG_DIR/comprehensive-redundancy-v2.pid"
-STATUS_FILE="$LOG_DIR/comprehensive-redundancy-v2-status.json"
-
 # Ensure log directory exists
 mkdir -p "$LOG_DIR"
 
-# Function to log messages
 log() {
-    local level="$1"
-    local message="$2"
-    local timestamp=$(date '+%Y-%m-%d %H:%M:%S')
-    
-    case "$level" in
-        "INFO")
-            echo -e "${BLUE}[$timestamp] [INFO]${NC} $message"
-            ;;
-        "SUCCESS")
-            echo -e "${GREEN}[$timestamp] [SUCCESS]${NC} $message"
-            ;;
-        "WARN")
-            echo -e "${YELLOW}[$timestamp] [WARN]${NC} $message"
-            ;;
-        "ERROR")
-            echo -e "${RED}[$timestamp] [ERROR]${NC} $message"
-            ;;
-        *)
-            echo -e "[$timestamp] [$level] $message"
-            ;;
-    esac
-    
-    # Also write to log file
-    echo "[$timestamp] [$level] $message" >> "$LOG_DIR/comprehensive-redundancy-v2-startup.log"
+    echo -e "${BLUE}[$(date '+%Y-%m-%d %H:%M:%S')]${NC} $1"
 }
 
-# Function to check if Node.js is available
-check_node() {
-    if ! command -v node &> /dev/null; then
-        log "ERROR" "Node.js is not installed or not in PATH"
-        exit 1
-    fi
-    
-    local node_version=$(node --version)
-    log "INFO" "Node.js version: $node_version"
+log_success() {
+    echo -e "${GREEN}[$(date '+%Y-%m-%d %H:%M:%S')] SUCCESS:${NC} $1"
 }
 
-# Function to check if npm is available
-check_npm() {
-    if ! command -v npm &> /dev/null; then
-        log "ERROR" "npm is not installed or not in PATH"
-        exit 1
-    fi
-    
-    local npm_version=$(npm --version)
-    log "INFO" "npm version: $npm_version"
+log_warning() {
+    echo -e "${YELLOW}[$(date '+%Y-%m-%d %H:%M:%S')] WARNING:${NC} $1"
 }
 
-# Function to check if PM2 is available
-check_pm2() {
-    if ! command -v pm2 &> /dev/null; then
-        log "WARN" "PM2 is not installed, attempting to install..."
-        npm install -g pm2 || {
-            log "ERROR" "Failed to install PM2"
-            exit 1
-        }
-    fi
-    
-    local pm2_version=$(pm2 --version)
-    log "INFO" "PM2 version: $pm2_version"
+log_error() {
+    echo -e "${RED}[$(date '+%Y-%m-%d %H:%M:%S')] ERROR:${NC} $1"
 }
 
-# Function to check dependencies
 check_dependencies() {
-    log "INFO" "Checking dependencies..."
+    log "Checking dependencies..."
     
-    # Check if package.json exists
-    if [[ ! -f "$WORKSPACE_DIR/package.json" ]]; then
-        log "ERROR" "package.json not found in workspace"
+    # Check Node.js
+    if ! command -v node &> /dev/null; then
+        log_error "Node.js is not installed"
         exit 1
     fi
     
-    # Check if redundancy script exists
-    if [[ ! -f "$REDUNDANCY_SCRIPT" ]]; then
-        log "ERROR" "Redundancy script not found: $REDUNDANCY_SCRIPT"
+    # Check npm
+    if ! command -v npm &> /dev/null; then
+        log_error "npm is not installed"
         exit 1
     fi
     
-    log "SUCCESS" "Dependencies check passed"
+    # Check PM2
+    if ! command -v pm2 &> /dev/null; then
+        log_warning "PM2 is not installed, installing..."
+        npm install -g pm2
+    fi
+    
+    log_success "All dependencies are available"
 }
 
-# Function to start the redundancy system
-start_redundancy() {
-    log "INFO" "Starting Comprehensive Redundancy Automation V2..."
+start_system() {
+    log "Starting Comprehensive Redundancy V2 System..."
     
-    # Check if already running
-    if [[ -f "$PID_FILE" ]]; then
+    if [ -f "$PID_FILE" ]; then
         local pid=$(cat "$PID_FILE")
-        if kill -0 "$pid" 2>/dev/null; then
-            log "WARN" "Redundancy system already running with PID $pid"
-            return 0
+        if ps -p "$pid" > /dev/null 2>&1; then
+            log_warning "System is already running with PID $pid"
+            return
         else
-            log "WARN" "Stale PID file found, removing..."
+            log_warning "Removing stale PID file"
             rm -f "$PID_FILE"
         fi
     fi
     
-    # Start the redundancy system
+    # Change to workspace directory
     cd "$WORKSPACE_DIR"
     
-    # Run the redundancy script in the background
-    nohup node "$REDUNDANCY_SCRIPT" start > "$LOG_DIR/comprehensive-redundancy-v2.out" 2>&1 &
+    # Start the redundancy system
+    nohup node automation/comprehensive-redundancy-v2.cjs start > "$LOG_DIR/comprehensive-redundancy-v2.out" 2>&1 &
     local pid=$!
     
     # Save PID
     echo "$pid" > "$PID_FILE"
     
-    # Wait a moment to see if it starts successfully
-    sleep 3
+    # Wait a moment for startup
+    sleep 2
     
-    if kill -0 "$pid" 2>/dev/null; then
-        log "SUCCESS" "Redundancy system started with PID $pid"
-        
-        # Update status
-        update_status "running" "$pid"
-        
-        return 0
+    # Check if process is running
+    if ps -p "$pid" > /dev/null 2>&1; then
+        log_success "Comprehensive Redundancy V2 System started with PID $pid"
+        log "Logs: $LOG_DIR/comprehensive-redundancy-v2.out"
+        log "PID: $PID_FILE"
     else
-        log "ERROR" "Failed to start redundancy system"
+        log_error "Failed to start system"
         rm -f "$PID_FILE"
-        return 1
+        exit 1
     fi
 }
 
-# Function to stop the redundancy system
-stop_redundancy() {
-    log "INFO" "Stopping Comprehensive Redundancy Automation V2..."
+stop_system() {
+    log "Stopping Comprehensive Redundancy V2 System..."
     
-    if [[ -f "$PID_FILE" ]]; then
+    if [ -f "$PID_FILE" ]; then
         local pid=$(cat "$PID_FILE")
-        
-        if kill -0 "$pid" 2>/dev/null; then
-            log "INFO" "Stopping process with PID $pid..."
+        if ps -p "$pid" > /dev/null 2>&1; then
+            log "Stopping process $pid..."
             kill "$pid"
             
             # Wait for process to stop
             local count=0
-            while kill -0 "$pid" 2>/dev/null && [[ $count -lt 10 ]]; do
+            while ps -p "$pid" > /dev/null 2>&1 && [ $count -lt 10 ]; do
                 sleep 1
-                ((count++))
+                count=$((count + 1))
             done
             
-            if kill -0 "$pid" 2>/dev/null; then
-                log "WARN" "Process did not stop gracefully, force killing..."
-                kill -9 "$pid"
+            if ps -p "$pid" > /dev/null 2>&1; then
+                log_warning "Process did not stop gracefully, forcing termination"
+                kill -9 "$pid" 2>/dev/null || true
             fi
             
-            log "SUCCESS" "Redundancy system stopped"
+            log_success "System stopped"
         else
-            log "WARN" "Process with PID $pid is not running"
+            log_warning "Process $pid is not running"
         fi
         
         rm -f "$PID_FILE"
-        update_status "stopped"
     else
-        log "WARN" "No PID file found, system may not be running"
+        log_warning "No PID file found, system may not be running"
     fi
+    
+    # Stop all PM2 processes
+    log "Stopping all PM2 processes..."
+    pm2 stop all 2>/dev/null || true
+    pm2 delete all 2>/dev/null || true
 }
 
-# Function to restart the redundancy system
-restart_redundancy() {
-    log "INFO" "Restarting Comprehensive Redundancy Automation V2..."
-    stop_redundancy
+restart_system() {
+    log "Restarting Comprehensive Redundancy V2 System..."
+    stop_system
     sleep 2
-    start_redundancy
+    start_system
 }
 
-# Function to check status
-check_status() {
-    if [[ -f "$PID_FILE" ]]; then
+get_status() {
+    log "Getting system status..."
+    
+    if [ -f "$PID_FILE" ]; then
         local pid=$(cat "$PID_FILE")
-        if kill -0 "$pid" 2>/dev/null; then
-            log "SUCCESS" "Redundancy system is running with PID $pid"
+        if ps -p "$pid" > /dev/null 2>&1; then
+            log_success "System is running with PID $pid"
             
-            # Get detailed status from the script
-            if [[ -f "$REDUNDANCY_SCRIPT" ]]; then
+            # Get detailed status
+            if [ -f "$WORKSPACE_DIR/automation/comprehensive-redundancy-v2.cjs" ]; then
                 cd "$WORKSPACE_DIR"
-                node "$REDUNDANCY_SCRIPT" status 2>/dev/null || log "WARN" "Could not get detailed status"
+                node automation/comprehensive-redundancy-v2.cjs status
             fi
-            
-            return 0
         else
-            log "ERROR" "PID file exists but process is not running"
+            log_warning "PID file exists but process is not running"
             rm -f "$PID_FILE"
-            return 1
         fi
     else
-        log "INFO" "Redundancy system is not running"
-        return 1
+        log_warning "System is not running"
+    fi
+    
+    # Show PM2 status
+    log "PM2 Status:"
+    pm2 status 2>/dev/null || log_warning "PM2 not available"
+}
+
+get_health() {
+    log "Getting system health..."
+    
+    if [ -f "$PID_FILE" ]; then
+        local pid=$(cat "$PID_FILE")
+        if ps -p "$pid" > /dev/null 2>&1; then
+            cd "$WORKSPACE_DIR"
+            node automation/comprehensive-redundancy-v2.cjs health
+        else
+            log_error "System is not running"
+        fi
+    else
+        log_error "System is not running"
     fi
 }
 
-# Function to check health
-check_health() {
-    log "INFO" "Checking redundancy system health..."
+get_logs() {
+    log "Getting system logs..."
     
-    if [[ -f "$REDUNDANCY_SCRIPT" ]]; then
+    if [ -f "$LOG_DIR/comprehensive-redundancy-v2.out" ]; then
+        echo "=== Comprehensive Redundancy V2 System Logs ==="
+        tail -n 100 "$LOG_DIR/comprehensive-redundancy-v2.out"
+    else
+        log_warning "No log file found"
+    fi
+    
+    if [ -f "$LOG_DIR/comprehensive-redundancy-v2.log" ]; then
+        echo -e "\n=== Comprehensive Redundancy V2 System Internal Logs ==="
+        tail -n 100 "$LOG_DIR/comprehensive-redundancy-v2.log"
+    fi
+}
+
+test_system() {
+    log "Testing Comprehensive Redundancy V2 System..."
+    
+    # Test PM2
+    log "Testing PM2..."
+    if command -v pm2 &> /dev/null; then
+        pm2 --version
+        log_success "PM2 is working"
+    else
+        log_error "PM2 is not working"
+    fi
+    
+    # Test Node.js
+    log "Testing Node.js..."
+    if command -v node &> /dev/null; then
+        node --version
+        log_success "Node.js is working"
+    else
+        log_error "Node.js is not working"
+    fi
+    
+    # Test the redundancy script
+    log "Testing redundancy script..."
+    if [ -f "$WORKSPACE_DIR/automation/comprehensive-redundancy-v2.cjs" ]; then
         cd "$WORKSPACE_DIR"
-        node "$REDUNDANCY_SCRIPT" health 2>/dev/null || log "WARN" "Could not get health status"
+        node automation/comprehensive-redundancy-v2.cjs status
+        log_success "Redundancy script is working"
     else
-        log "ERROR" "Redundancy script not found"
+        log_error "Redundancy script not found"
     fi
 }
 
-# Function to show logs
-show_logs() {
-    log "INFO" "Showing redundancy system logs..."
-    
-    if [[ -f "$LOG_DIR/comprehensive-redundancy-v2.log" ]]; then
-        tail -n 50 "$LOG_DIR/comprehensive-redundancy-v2.log"
-    else
-        log "WARN" "No log file found"
-    fi
-    
-    if [[ -f "$LOG_DIR/comprehensive-redundancy-v2.out" ]]; then
-        echo ""
-        log "INFO" "Output log:"
-        tail -n 20 "$LOG_DIR/comprehensive-redundancy-v2.out"
-    fi
-}
-
-# Function to update status file
-update_status() {
-    local status="$1"
-    local pid="${2:-}"
-    
-    cat > "$STATUS_FILE" << EOF
-{
-  "status": "$status",
-  "pid": "$pid",
-  "lastUpdated": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
-  "workspace": "$WORKSPACE_DIR"
-}
-EOF
-}
-
-# Function to show help
 show_help() {
-    echo "Comprehensive Redundancy Automation V2 Management Script"
+    echo "Comprehensive Redundancy V2 System Management Script"
     echo ""
     echo "Usage: $0 [COMMAND]"
     echo ""
@@ -271,61 +242,49 @@ show_help() {
     echo "  start     Start the redundancy system"
     echo "  stop      Stop the redundancy system"
     echo "  restart   Restart the redundancy system"
-    echo "  status    Check if the system is running"
-    echo "  health    Check system health"
-    echo "  logs      Show recent logs"
+    echo "  status    Show system status"
+    echo "  health    Show system health"
+    echo "  logs      Show system logs"
+    echo "  test      Test system components"
     echo "  help      Show this help message"
     echo ""
     echo "Examples:"
     echo "  $0 start"
     echo "  $0 status"
-    echo "  $0 health"
+    echo "  $0 logs"
 }
 
-# Main execution
-main() {
-    local command="${1:-start}"
-    
-    log "INFO" "Comprehensive Redundancy Automation V2 Management Script"
-    log "INFO" "Workspace: $WORKSPACE_DIR"
-    
-    case "$command" in
-        "start")
-            check_node
-            check_npm
-            check_pm2
-            check_dependencies
-            start_redundancy
-            ;;
-        "stop")
-            stop_redundancy
-            ;;
-        "restart")
-            check_node
-            check_npm
-            check_pm2
-            check_dependencies
-            restart_redundancy
-            ;;
-        "status")
-            check_status
-            ;;
-        "health")
-            check_health
-            ;;
-        "logs")
-            show_logs
-            ;;
-        "help"|"--help"|"-h")
-            show_help
-            ;;
-        *)
-            log "ERROR" "Unknown command: $command"
-            show_help
-            exit 1
-            ;;
-    esac
-}
-
-# Run main function with all arguments
-main "$@"
+# Main script logic
+case "${1:-help}" in
+    start)
+        check_dependencies
+        start_system
+        ;;
+    stop)
+        stop_system
+        ;;
+    restart)
+        check_dependencies
+        restart_system
+        ;;
+    status)
+        get_status
+        ;;
+    health)
+        get_health
+        ;;
+    logs)
+        get_logs
+        ;;
+    test)
+        test_system
+        ;;
+    help|--help|-h)
+        show_help
+        ;;
+    *)
+        log_error "Unknown command: $1"
+        show_help
+        exit 1
+        ;;
+esac

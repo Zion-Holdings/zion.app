@@ -49,7 +49,6 @@
     "cursor-memory.log": {
       "restarts": 0,
       "started": 0,
->>>>>>> origin/main
       "loopScore": 0
     },
     "design-orchestrator.log": {
@@ -62,8 +61,6 @@
       "started": 0,
       "loopScore": 0
     },
-<<<<<<< HEAD
-=======
     "enhance-all-automation.log": {
       "restarts": 0,
       "started": 0,
@@ -119,17 +116,11 @@
       "started": 0,
       "loopScore": 0
     },
->>>>>>> origin/main
     "intelligent-orchestrator.log": {
       "restarts": 0,
       "started": 3,
       "loopScore": 0
     },
-<<<<<<< HEAD
-    "lint-monitor.log": {
-      "restarts": 0,
-      "started": 1,
-=======
     "launch-autonomous-systems-clean.log": {
       "restarts": 0,
       "started": 0,
@@ -188,7 +179,6 @@
     "mcp-integration.log": {
       "restarts": 0,
       "started": 0,
->>>>>>> origin/main
       "loopScore": 0
     },
     "responsive-content-orchestrator.log": {
@@ -196,8 +186,6 @@
       "started": 0,
       "loopScore": 0
     },
-<<<<<<< HEAD
-=======
     "restart-all-automation.log": {
       "restarts": 0,
       "started": 0,
@@ -208,14 +196,11 @@
       "started": 0,
       "loopScore": 0
     },
->>>>>>> origin/main
     "self-healing.log": {
       "restarts": 0,
       "started": 0,
       "loopScore": 0
     },
-<<<<<<< HEAD
-=======
     "site-link-orchestrator.log": {
       "restarts": 0,
       "started": 0,
@@ -266,7 +251,6 @@
       "started": 0,
       "loopScore": 0
     },
->>>>>>> origin/main
     "variation-orchestrator.log": {
       "restarts": 0,
       "started": 0,

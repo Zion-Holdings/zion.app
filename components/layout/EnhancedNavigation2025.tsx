@@ -39,62 +39,14 @@ const navigationItems: NavigationItem[] = [
     category: 'services',
     color: 'from-emerald-500 to-cyan-500',
     children: [
-      { 
-        name: 'All Services', 
-        href: '/services', 
-        description: 'Complete services overview',
-        icon: <Grid className="w-4 h-4" />,
-        featured: true
-      },
-      { 
-        name: 'AI & Machine Learning', 
-        href: '/ai-services', 
-        description: 'AI-powered solutions',
-        icon: <Brain className="w-4 h-4" />,
-        color: 'from-purple-500 to-pink-500'
-      },
-      { 
-        name: 'Quantum Technology', 
-        href: '/quantum-services', 
-        description: 'Quantum computing solutions',
-        icon: <Atom className="w-4 h-4" />,
-        color: 'from-blue-500 to-cyan-500'
-      },
-      { 
-        name: 'Cybersecurity', 
-        href: '/cybersecurity', 
-        description: 'Security and compliance',
-        icon: <Shield className="w-4 h-4" />,
-        color: 'from-red-500 to-orange-500'
-      },
-      { 
-        name: 'Cloud & Infrastructure', 
-        href: '/it-services', 
-        description: 'Cloud and IT solutions',
-        icon: <Cloud className="w-4 h-4" />,
-        color: 'from-indigo-500 to-purple-500'
-      },
-      { 
-        name: 'Business Intelligence', 
-        href: '/data-analytics', 
-        description: 'Data and analytics',
-        icon: <BarChart3 className="w-4 h-4" />,
-        color: 'from-emerald-500 to-teal-500'
-      },
-      { 
-        name: 'DevOps & Automation', 
-        href: '/devops-automation', 
-        description: 'Automation solutions',
-        icon: <Code className="w-4 h-4" />,
-        color: 'from-yellow-500 to-orange-500'
-      },
-      { 
-        name: 'Space Technology', 
-        href: '/space-tech', 
-        description: 'Space and aerospace solutions',
-        icon: <Rocket className="w-4 h-4" />,
-        color: 'from-purple-500 to-indigo-500'
-      }
+      { label: 'Innovative 2025 Showcase', href: '/innovative-2025-services-showcase', icon: Rocket, badge: 'New' },
+      { label: 'AI & Machine Learning', href: '/ai-services', icon: Brain, badge: 'Hot' },
+      { label: 'Quantum Computing', href: '/quantum-computing', icon: Cpu, badge: 'New' },
+      { label: 'Cybersecurity', href: '/cybersecurity', icon: Shield, badge: 'Popular' },
+      { label: 'Cloud Infrastructure', href: '/cloud-platform', icon: Globe },
+      { label: 'Data Analytics', href: '/data-analytics', icon: BarChart3 },
+      { label: 'Process Automation', href: '/process-automation', icon: Zap },
+      { label: 'Micro SAAS Solutions', href: '/micro-saas', icon: Zap, badge: 'Trending' }
     ]
   },
   {
@@ -103,19 +55,28 @@ const navigationItems: NavigationItem[] = [
     icon: <Target className="w-5 h-5" />,
     description: 'Industry-specific solutions',
     children: [
-      { name: 'Enterprise Solutions', href: '/solutions/enterprise', icon: <Building className="w-4 h-4" /> },
-      { name: 'Healthcare Solutions', href: '/solutions/healthcare', icon: <Heart className="w-4 h-4" /> },
-      { name: 'Financial Solutions', href: '/solutions/financial', icon: <DollarSign className="w-4 h-4" /> },
-      { name: 'Manufacturing Solutions', href: '/solutions/manufacturing', icon: <Cog className="w-4 h-4" /> },
-      { name: 'Retail Solutions', href: '/retail-technology-solutions', icon: <ShoppingCart className="w-4 h-4" /> },
-      { name: 'Government Solutions', href: '/government-technology-solutions', icon: <ShieldCheck className="w-4 h-4" /> }
+      { label: 'Enterprise Solutions', href: '/enterprise-solutions' },
+      { label: 'Startup Solutions', href: '/startup-solutions' },
+      { label: 'Government Solutions', href: '/government-solutions' },
+      { label: 'Healthcare Solutions', href: '/healthcare-solutions' },
+      { label: 'Financial Solutions', href: '/financial-solutions' },
+      { label: 'Manufacturing AI', href: '/manufacturing-ai-solutions' }
     ]
   },
   {
     name: 'Company',
     href: '/about',
-    icon: <Building className="w-5 h-5" />,
-    description: 'About Zion Tech Group',
+    icon: Users,
+    children: [
+      { label: 'About Us', href: '/about' },
+      { label: 'Leadership', href: '/leadership' },
+      { label: 'Careers', href: '/careers' }
+    ]
+  },
+  {
+    label: 'Resources',
+    href: '/resources',
+    icon: FileText,
     children: [
       { name: 'About Us', href: '/about', icon: <Info className="w-4 h-4" /> },
       { name: 'Our Mission', href: '/mission', icon: <Target className="w-4 h-4" /> },
@@ -178,17 +139,17 @@ const EnhancedNavigation2025: React.FC = () => {
         : 'bg-transparent'
     }`}>
       {/* Top Contact Bar */}
-      <div className="bg-gradient-to-r from-cyan-900/80 to-blue-900/80 backdrop-blur-sm border-b border-cyan-500/20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-10 text-xs text-cyan-100">
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-2">
-                <Phone className="w-3 h-3" />
-                <span>{contactInfo.phone}</span>
+      <div className="bg-gradient-to-r from-cyan-600 to-blue-600 text-white py-2">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex items-center justify-between text-sm">
+            <div className="flex items-center gap-6">
+              <div className="flex items-center gap-2">
+                <Phone className="w-4 h-4" />
+                <span>+1 302 464 0950</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <Mail className="w-3 h-3" />
-                <span>{contactInfo.email}</span>
+              <div className="flex items-center gap-2">
+                <Mail className="w-4 h-4" />
+                <span>kleber@ziontechgroup.com</span>
               </div>
             </div>
             <div className="flex items-center space-x-4">
@@ -356,6 +317,103 @@ const EnhancedNavigation2025: React.FC = () => {
       {/* Mobile Navigation */}
       <AnimatePresence>
         {isOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm lg:hidden"
+              onClick={closeMobileMenu}
+            />
+            
+            {/* Mobile Menu Panel */}
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'tween', duration: 0.3 }}
+              className="fixed top-0 right-0 h-full w-80 bg-black/95 backdrop-blur-xl border-l border-cyan-500/20 lg:hidden"
+            >
+              <div className="flex flex-col h-full">
+                {/* Mobile Menu Header */}
+                <div className="flex items-center justify-between p-6 border-b border-cyan-500/20">
+                  <h2 className="text-white font-semibold text-lg">Menu</h2>
+                  <button
+                    onClick={closeMobileMenu}
+                    className="p-2 text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-lg"
+                    aria-label="Close mobile menu"
+                  >
+                    <X className="w-6 h-6" />
+                  </button>
+                </div>
+
+                {/* Mobile Search */}
+                <div className="p-6 border-b border-cyan-500/20">
+                  <form onSubmit={handleSearch}>
+                    <div className="relative">
+                      <input
+                        type="text"
+                        name="search"
+                        placeholder="Search solutions..."
+                        className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                        aria-label="Search solutions"
+                      />
+                      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+                    </div>
+                  </form>
+                </div>
+
+                {/* Mobile Navigation */}
+                <nav className="flex-1 p-6 space-y-4">
+                  {navigationItems.map((item) => (
+                    <div key={item.label}>
+                      {item.label === 'Solutions' || item.label === 'Services' ? (
+                        <div>
+                          <button
+                            onClick={() => toggleDropdown(item.label)}
+                            className="flex items-center justify-between w-full text-left text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-lg px-3 py-2"
+                            aria-expanded={activeDropdown === item.label}
+                            aria-haspopup="true"
+                          >
+                            <span>{item.label}</span>
+                            <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${activeDropdown === item.label ? 'rotate-180' : ''}`} />
+                          </button>
+                          
+                          {activeDropdown === item.label && (
+                            <div className="ml-4 mt-2 space-y-2">
+                              {item.label === 'Solutions' && solutionsDropdown.map((solution) => (
+                                <Link
+                                  key={solution.label}
+                                  href={solution.href}
+                                  onClick={closeMobileMenu}
+                                  className="block text-gray-400 hover:text-cyan-300 transition-colors duration-200 py-2 px-3 rounded-lg hover:bg-cyan-500/10"
+                                >
+                                  {solution.label}
+                                </Link>
+                              ))}
+                              {item.label === 'Services' && servicesDropdown.map((service) => (
+                                <Link
+                                  key={service.label}
+                                  href={service.href}
+                                  onClick={closeMobileMenu}
+                                  className="block text-gray-400 hover:text-cyan-300 transition-colors duration-200 py-2 px-3 rounded-lg hover:bg-cyan-500/10"
+                                >
+                                  {service.label}
+                                </Link>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ) : (
+                        <Link
+                          href={item.href}
+                          onClick={closeMobileMenu}
+                          className="block text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-lg px-3 py-2"
+                        >
+                          {item.label}
+                        </Link>
+=======
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
@@ -393,6 +451,7 @@ const EnhancedNavigation2025: React.FC = () => {
                             </Link>
                           ))}
                         </div>
+>>>>>>> 17df199e451813150094c5ab1fb554b04628cb60
                       )}
                     </div>
                   ) : (

@@ -1,0 +1,36 @@
+name: Frontpage Autonomous Publisher
+
+on:
+  schedule:
+    - cron: '5 3 * * *' # daily at 03:05 UTC
+  workflow_dispatch:
+
+jobs:
+  generate-and-refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run new autonomous pages orchestrator (single cycle)
+        run: npm run autonomous:pages:once | cat
+
+      - name: Upload autonomous reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: autonomous-frontpage-reports
+          path: |
+            data/reports/autonomous-pages/**/*
+            data/reports/homepage-promo/autonomous/**/*
+            public/app-pages.json
+            automation/logs/**/*
+          if-no-files-found: ignore

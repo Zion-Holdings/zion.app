@@ -1,0 +1,29 @@
+echo "🚀 Enhanced Pre-push System Starting..."
+
+# Set environment variables for autonomous operation
+export AUTONOMOUS_MODE=true
+export HUSKY_AUTOMATION=true
+export PRE_PUSH_MODE=true
+
+# Run type check
+echo "🧪 Running TypeScript type check..."
+npm run -s type-check || {
+  echo "❌ TypeScript type check failed. Please fix issues before pushing."
+  exit 1
+}
+
+# Check for sensitive data in staged changes
+echo "🔒 Checking for sensitive data..."
+if git diff --cached | grep -i -E "(password|secret|key|token|api_key)" > /dev/null; then
+  echo "⚠️  Warning: Potential sensitive data detected in staged changes"
+  echo "   Please review before pushing"
+fi
+
+# Check for large files in staged changes (>10MB)
+echo "📦 Checking for large files..."
+if git diff --cached --name-only | xargs -r ls -la 2>/dev/null | awk '{if($5 > 10485760) print "⚠️  Large file detected: " $9 " (" $5 " bytes)"}' | head -5; then
+  echo "⚠️  Large files detected. Consider using .gitignore or git-lfs"
+fi
+
+echo "✅ Pre-push checks completed successfully!"
+echo "🚀 Ready to push to repository!"

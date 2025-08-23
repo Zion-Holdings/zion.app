@@ -1,35 +1,44 @@
-name: Autonomous Cloud
+name: Autonomous Cloud Ops
 
 on:
-  workflow_dispatch: {}
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '*/30 * * * *' # every 30 minutes
+  workflow_dispatch: {}
 
 permissions:
   contents: write
-  actions: read
 
 jobs:
-  main:
-    name: Main Job
+  run-automations:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          persist-credentials: true
 
-      - name: Setup Node.js
+      - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
 
-      - name: Install dependencies
-        run: npm ci --no-audit --no-fund
+      - name: Install deps
+        run: npm ci
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+      - name: Generate sitemap
+        run: npm run sitemap || true
 
+      - name: Community backup
+        run: node scripts/community-backup.mjs || true
+
+      - name: Commit changes
+        run: |
+          git config user.name "zion-autobot"
+          git config user.email "autobot@users.noreply.github.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "chore(auto): sitemap/community backup update [skip ci]"
+            git push
+          else
+            echo "No changes to commit"
+          fi

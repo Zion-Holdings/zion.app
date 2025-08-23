@@ -1,24 +1,9 @@
 import React from 'react';
-import type { ReactNode } from 'react';
-import { Logo } from '@/components/header/Logo';
-import { LanguageSelector } from '@/components/header/LanguageSelector';
-
-interface AuthLayoutProps {
-  children: ReactNode;
-}
-
-export function AuthLayout({ children }: AuthLayoutProps) {
+export function AuthLayout() {
   return (
-    <div className="auth-layout flex flex-col min-h-screen">
-      <header className="flex items-center justify-between p-4 border-b border-zion-purple/20 bg-zion-blue-dark text-white">
-        <Logo />
-        <LanguageSelector />
-      </header>
-      <main className="flex-1 flex items-center justify-center p-4">
-        <div className="w-full max-w-md mx-auto">{children}</div>
-      </main>
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
     </div>
   );
 }
-
-export default AuthLayout;

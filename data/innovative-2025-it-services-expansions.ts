@@ -1,6 +1,7 @@
 import { ServiceVariant } from '../types/service-variants';
 
 export interface InnovativeITService {
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   id: string;
   name: string;
   tagline: string;
@@ -216,6 +217,7 @@ export const innovativeITServices: InnovativeITService[] = [
     contactInfo: contact,
     realImplementation: true,
     implementationDetails: 'Quantum-resistant cybersecurity suite with post-quantum algorithms and security tools.',
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     launchDate: '2025-02-01',
     customers: 23,
     rating: 4.9,
@@ -244,6 +246,7 @@ export const innovativeITServices: InnovativeITService[] = [
     link: 'https://ziontechgroup.com/edge-computing-orchestration-platform',
     marketPosition: 'Specialized edge computing orchestration platform for IoT and edge applications.',
     targetAudience: 'IoT developers, Edge computing teams, Infrastructure engineers',
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     trialDays: 14,
     setupTime: '2-3 weeks',
     category: 'Edge Computing & IoT',
@@ -779,5 +782,6 @@ export const innovativeITServices: InnovativeITService[] = [
     customers: 16,
     rating: 4.9,
     reviews: 12
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   }
 ];

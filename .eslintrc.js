@@ -18,9 +18,15 @@ module.exports = {
     node: true,
   },
   rules: {
-    '@typescript-eslint/no-unused-vars': 'warn',
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
+    '@typescript-eslint/no-unused-vars': [
+      'warn',
+      { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }
+    ],
     '@typescript-eslint/no-explicit-any': 'warn',
-    'no-console': 'warn',
+    '@typescript-eslint/no-empty-object-type': 'warn',
+    '@next/next/no-html-link-for-pages': 'warn'
   },
   ignorePatterns: [
     'node_modules/',

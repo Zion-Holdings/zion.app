@@ -1,19 +1,18 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
+import React from "react";
+import Head from "next/head";
 
-const ProductsPage: NextPage = () => {
+const Page: React.FC = () => {
   return (
     <>
       <Head>
-        <title>Products - Zion</title>
-        <meta name="description" content="Browse our products" />
+        <title>Placeholder Page</title>
+        <meta name="robots" content="noindex" />
       </Head>
-      <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-6">Products</h1>
-        <p className="text-muted-foreground">Products page coming soon...</p>
-      </div>
+      <main>
+        <h1>Coming soon</h1>
+      </main>
     </>
   );
 };
 
-export default ProductsPage;
+export default Page;

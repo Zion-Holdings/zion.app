@@ -1,7 +1,9 @@
-import '../styles/globals.css'
-import '../styles/accessibility.css'
-import type { AppProps } from 'next/app'
+import type { AppProps } from 'next/app';
+import '../styles/enhanced-design-system.css';
+import '../styles/modern-design-system.css';
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+function MyApp({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />;
 }
+
+export default MyApp;

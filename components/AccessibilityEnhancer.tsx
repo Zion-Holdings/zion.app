@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect, useCallback, useRef, FocusEvent } from 'react';
+import { motion } from 'framer-motion';
 import { 
   Eye, EyeOff, Volume2, VolumeX, Type, 
   Contrast, ZoomIn, ZoomOut, RotateCcw,
@@ -33,28 +33,12 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
     lineSpacing: 1.5,
     colorBlindMode: 'none'
   });
-  const [isReading, setIsReading] = useState(false);
-  const [currentText, setCurrentText] = useState('');
-  const [speechRate, setSpeechRate] = useState(1);
-  const settingsRef = useRef<HTMLDivElement>(null);
-
-  // Load settings from localStorage on mount
-  useEffect(() => {
-    const savedSettings = localStorage.getItem('accessibility-settings');
-    if (savedSettings) {
-      try {
-        const parsed = JSON.parse(savedSettings);
-        setSettings(prev => ({ ...prev, ...parsed }));
-      } catch (error) {
-        console.error('Failed to parse accessibility settings:', error);
-      }
-    }
-  }, []);
-
-  // Save settings to localStorage whenever they change
-  useEffect(() => {
-    localStorage.setItem('accessibility-settings', JSON.stringify(settings));
-  }, [settings]);
+  const [currentFocus, setCurrentFocus] = useState<HTMLElement | null>(null);
+  const [isPanelOpen, setIsPanelOpen] = useState(false);
+  const [isKeyboardNavigation, setIsKeyboardNavigation] = useState(false);
+  
+  const focusRef = useRef<HTMLDivElement>(null);
+  const announcementRef = useRef<HTMLDivElement>(null);
 
   // Apply accessibility settings to the document
   useEffect(() => {
@@ -151,6 +135,159 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
         speakText(text.substring(0, 500) + '...'); // Limit text length
       }
     }
+  }, [applySettings]);
+
+  // Focus management
+  const handleFocusChange = useCallback((e: FocusEvent<Element>) => {
+    const target = e.target as HTMLElement;
+    if (target) {
+      setCurrentFocus(target);
+      announceToScreenReader(`Focused on ${target.textContent || target.tagName.toLowerCase()}`);
+    }
+  }, []);
+
+  // Keyboard navigation enhancements
+  const handleKeyDown = useCallback((_e: any) => {
+    // Tab navigation detected
+  }, []);
+
+  // Announce to screen reader
+  const announceToScreenReader = useCallback((message: string) => {
+    // setAnnouncements(prev => [...prev, message]); // This line was removed
+    
+    // Create live region for screen readers
+    if (!announcementRef.current) {
+      const liveRegion = document.createElement('div');
+      liveRegion.setAttribute('aria-live', 'polite');
+      liveRegion.setAttribute('aria-atomic', 'true');
+      liveRegion.className = 'sr-only';
+      document.body.appendChild(liveRegion);
+      announcementRef.current = liveRegion;
+    }
+    
+    if (announcementRef.current) {
+      announcementRef.current.textContent = message;
+    }
+    
+    // Remove announcement after a delay
+    setTimeout(() => {
+      // setAnnouncements(prev => prev.filter(a => a !== message)); // This line was removed
+    }, 5000);
+  }, []);
+
+  // Auto-optimize accessibility
+  useEffect(() => {
+    applySettings(settings);
+  }, [settings, applySettings]);
+
+  // Keyboard navigation enhancement
+  useEffect(() => {
+    if (!settings.keyboardNavigation) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement;
+      
+      // Skip if target is an input, textarea, or select
+      if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT') {
+        return;
+      }
+
+      switch (e.key) {
+        case 'Tab':
+          // Enhanced tab navigation
+          if (e.shiftKey) {
+            // Shift+Tab: navigate backwards
+            const focusableElements = getFocusableElements();
+            const currentIndex = focusableElements.indexOf(target);
+            const prevIndex = currentIndex > 0 ? currentIndex - 1 : focusableElements.length - 1;
+            focusableElements[prevIndex]?.focus();
+            e.preventDefault();
+          }
+          break;
+          
+        case 'Enter':
+        case ' ':
+          // Enter/Space: activate buttons and links
+          if (target.tagName === 'BUTTON' || target.tagName === 'A' || target.getAttribute('role') === 'button') {
+            target.click();
+            e.preventDefault();
+          }
+          break;
+          
+        case 'Escape': {
+          // Escape: close modals and dropdowns
+          const modals = document.querySelectorAll('[role="dialog"], [data-modal]');
+          modals.forEach(modal => {
+            if (modal.getAttribute('aria-hidden') === 'false') {
+              const closeButton = modal.querySelector('[aria-label*="close"], [aria-label*="Close"]');
+              if (closeButton instanceof HTMLElement) {
+                closeButton.click();
+              }
+            }
+          });
+          break;
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [settings.keyboardNavigation]);
+
+  // Focus management
+  useEffect(() => {
+    const handleFocusIn = (e: Event) => {
+      const target = e.target as HTMLElement;
+      
+      // Announce focus changes for screen readers
+      if (settings.screenReader) {
+        const label = target.getAttribute('aria-label') || 
+                     target.getAttribute('title') || 
+                     target.textContent?.trim();
+        if (label) {
+          announceToScreenReader(label);
+        }
+      }
+      
+      // Enhanced focus indicators
+      if (settings.focusIndicators) {
+        target.style.outline = '3px solid #3b82f6';
+        target.style.outlineOffset = '2px';
+      }
+    };
+
+    const handleFocusOut = (e: Event) => {
+      const target = e.target as HTMLElement;
+      if (settings.focusIndicators) {
+        target.style.outline = '';
+        target.style.outlineOffset = '';
+      }
+    };
+
+    document.addEventListener('focusin', handleFocusIn);
+    document.addEventListener('focusout', handleFocusOut);
+    
+    return () => {
+      document.removeEventListener('focusin', handleFocusIn);
+      document.removeEventListener('focusout', handleFocusOut);
+    };
+  }, [settings.screenReader, settings.focusIndicators]);
+
+  // Get all focusable elements
+  const getFocusableElements = (): HTMLElement[] => {
+    const focusableSelectors = [
+      'button:not([disabled])',
+      'input:not([disabled])',
+      'select:not([disabled])',
+      'textarea:not([disabled])',
+      'a[href]',
+      '[tabindex]:not([tabindex="-1"])',
+      '[role="button"]',
+      '[role="tab"]',
+      '[role="menuitem"]'
+    ];
+    
+    return Array.from(document.querySelectorAll(focusableSelectors.join(','))) as HTMLElement[];
   };
 
   // Highlighter mode
@@ -203,7 +340,7 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ children 
         <Accessibility className="w-6 h-6" />
       </motion.button>
 
-      {/* Accessibility Menu */}
+      {/* Accessibility Panel */}
       <AnimatePresence>
         {isVisible && (
           <motion.div

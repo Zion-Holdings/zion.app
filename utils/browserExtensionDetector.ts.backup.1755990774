@@ -1,0 +1,10 @@
+<<<<<<< HEAD
+export const detectBrowserExtension = () => {
+  return { isExtension: false, version: "1.0.0" };
+=======
+export type ExtensionDetection = { isExtension: boolean; version: string };
+
+export const detectBrowserExtension = (): ExtensionDetection => {
+  return { isExtension: false, version: '1.0.0' };
+>>>>>>> origin/cursor/automate-netlify-build-fixes-and-monitoring-43ee
+};

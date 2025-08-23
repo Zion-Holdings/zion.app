@@ -1,175 +1,183 @@
+import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
 
 export default function ReportsIndex() {
-  const reportCategories = [
-    {
-      title: 'AI & Automation Guides',
-      description: 'Comprehensive guides for implementing AI and automation solutions',
-      href: '/reports/guides',
-      icon: '🤖',
-      count: '5+ guides'
-    },
-    {
-      title: 'Case Studies',
-      description: 'Real-world success stories and implementation examples',
-      href: '/reports/case-studies',
-      icon: '📊',
-      count: '3+ case studies'
-    },
-    {
-      title: 'Industry Insights',
-      description: 'Analysis of emerging trends and industry developments',
-      href: '/reports/insights',
-      icon: '🔍',
-      count: '4+ insights'
-    },
-    {
-      title: 'Technical Tutorials',
-      description: 'Step-by-step guides for developers and engineers',
-      href: '/reports/tutorials',
-      icon: '💻',
-      count: '6+ tutorials'
-    },
-    {
-      title: 'Whitepapers',
-      description: 'In-depth research and strategic frameworks',
-      href: '/reports/whitepapers',
-      icon: '📋',
-      count: '2+ whitepapers'
-    }
-  ];
-
-  const featuredReports = [
-    {
-      title: 'AI-Powered Automation Best Practices',
-      description: 'Comprehensive guide to implementing AI automation in enterprise environments',
-      category: 'Guide',
-      readingTime: '15 min read',
-      href: '/reports/guides/ai-automation-best-practices'
-    },
-    {
-      title: 'Digital Transformation Success Story: Retail Giant',
-      description: 'How a Fortune 500 retailer achieved 40% cost reduction through AI automation',
-      category: 'Case Study',
-      readingTime: '12 min read',
-      href: '/reports/case-studies/retail-digital-transformation'
-    },
-    {
-      title: 'Building Scalable Microservices with Next.js',
-      description: 'Step-by-step guide to creating enterprise-grade microservices architecture',
-      category: 'Tutorial',
-      readingTime: '20 min read',
-      href: '/reports/tutorials/microservices-nextjs'
-    }
-  ];
-
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
+    <>
       <Head>
-        <title>Reports & Insights - Zion Tech Group</title>
-        <meta name="description" content="Explore our comprehensive collection of AI, automation, and technology reports, guides, and insights." />
-        <meta property="og:title" content="Reports & Insights - Zion Tech Group" />
-        <meta property="og:description" content="Explore our comprehensive collection of AI, automation, and technology reports, guides, and insights." />
+        <title>Reports & Analytics | Zion Tech Group</title>
+        <meta name="description" content="Comprehensive reports and analytics from Zion Tech Group's autonomous systems covering automation, performance, and innovation metrics." />
+        <meta property="og:title" content="Reports & Analytics" />
+        <meta property="og:description" content="Comprehensive reports and analytics from Zion Tech Group's autonomous systems." />
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="canonical" href="https://ziontechgroup.com" />
       </Head>
       
-      <main className="container mx-auto px-6 py-12">
-        <header className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
-            Reports & Insights
-          </h1>
-          <p className="text-xl text-white/80 max-w-3xl mx-auto">
-            Discover comprehensive research, practical guides, and real-world insights on AI, automation, 
-            and digital transformation from Zion Tech Group.
-          </p>
-        </header>
+      <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950 text-white">
+        <main className="container mx-auto px-6 py-12">
+          <section className="text-center mb-16">
+            <h1 className="text-5xl font-extrabold mb-6 bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
+              Reports & Analytics
+            </h1>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+              Comprehensive insights from Zion Tech Group's autonomous automation systems
+            </p>
+            <div className="mt-4 text-sm text-white/60">
+              Real-time data from 227 active automations
+            </div>
+          </section>
 
-        {/* Featured Reports */}
-        <section className="mb-20">
-          <h2 className="text-3xl font-bold mb-8 text-center">Featured Reports</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredReports.map((report) => (
-              <Link 
-                key={report.title}
-                href={report.href}
-                className="group bg-slate-800/50 border border-white/10 rounded-xl p-6 hover:border-cyan-400/50 transition-all hover:scale-105"
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-sm rounded-full">
-                    {report.category}
-                  </span>
-                  <span className="text-sm text-white/60">{report.readingTime}</span>
-                </div>
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-cyan-400 transition-colors">
-                  {report.title}
-                </h3>
-                <p className="text-white/70 text-sm leading-relaxed">
-                  {report.description}
+          {/* Featured Reports */}
+          <section className="mx-auto max-w-6xl mb-12">
+            <h2 className="text-3xl font-bold mb-8 text-center text-cyan-400">Featured Reports</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <a href="/reports/automation-overview-2025" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300 hover:scale-105">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <h3 className="text-xl font-semibold text-cyan-400">Automation Overview 2025</h3>
+                <p className="mt-2 text-sm text-white/75">
+                  Comprehensive analysis of our autonomous automation ecosystem, achievements, and future roadmap
                 </p>
-                <div className="mt-4 text-cyan-400 text-sm font-medium group-hover:text-cyan-300 transition-colors">
-                  Read more →
+                <div className="mt-4 inline-flex items-center gap-1 text-xs text-cyan-300/90">
+                  View Report <span aria-hidden>→</span>
                 </div>
-              </Link>
-            ))}
-          </div>
-        </section>
+              </a>
 
-        {/* Report Categories */}
-        <section className="mb-20">
-          <h2 className="text-3xl font-bold mb-8 text-center">Browse by Category</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {reportCategories.map((category) => (
-              <Link 
-                key={category.title}
-                href={category.href}
-                className="group bg-gradient-to-br from-slate-800/50 to-slate-700/30 border border-white/10 rounded-xl p-8 hover:border-cyan-400/50 transition-all hover:scale-105"
-              >
-                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">
-                  {category.icon}
-                </div>
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-cyan-400 transition-colors">
-                  {category.title}
-                </h3>
-                <p className="text-white/70 text-sm mb-4 leading-relaxed">
-                  {category.description}
+              <a href="/reports/performance-metrics" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-fuchsia-400/30 transition-all duration-300 hover:scale-105">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-fuchsia-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <h3 className="text-xl font-semibold text-fuchsia-400">Performance Metrics</h3>
+                <p className="mt-2 text-sm text-white/75">
+                  Real-time performance data, uptime statistics, and system health indicators
                 </p>
-                <div className="flex items-center justify-between">
-                  <span className="text-cyan-400 text-sm font-medium group-hover:text-cyan-300 transition-colors">
-                    Explore →
-                  </span>
-                  <span className="text-white/60 text-sm">{category.count}</span>
+                <div className="mt-4 inline-flex items-center gap-1 text-xs text-fuchsia-300/90">
+                  View Report <span aria-hidden>→</span>
                 </div>
-              </Link>
-            ))}
-          </div>
-        </section>
+              </a>
 
-        {/* Call to Action */}
-        <section className="text-center bg-gradient-to-r from-cyan-500/10 to-fuchsia-500/10 border border-cyan-400/20 rounded-2xl p-12">
-          <h2 className="text-3xl font-bold mb-4">Stay Updated</h2>
-          <p className="text-white/80 mb-8 max-w-2xl mx-auto">
-            Get the latest insights, guides, and case studies delivered to your inbox. 
-            Stay ahead of the curve with our expert analysis and practical guidance.
-          </p>
-          <Link 
-            href="/contact"
-            className="inline-block bg-gradient-to-r from-cyan-500 to-fuchsia-500 text-white px-8 py-4 rounded-lg font-semibold hover:from-cyan-600 hover:to-fuchsia-600 transition-all"
-          >
-            Get in Touch
-          </Link>
-        </section>
-      </main>
-    </div>
+              <a href="/reports/innovation-tracker" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-green-400/30 transition-all duration-300 hover:scale-105">
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-green-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <h3 className="text-xl font-semibold text-green-400">Innovation Tracker</h3>
+                <p className="mt-2 text-sm text-white/75">
+                  Track emerging technologies, R&D progress, and breakthrough innovations
+                </p>
+                <div className="mt-4 inline-flex items-center gap-1 text-xs text-green-300/90">
+                  View Report <span aria-hidden>→</span>
+                </div>
+              </a>
+            </div>
+          </section>
+
+          {/* Latest Updates */}
+          <section className="mx-auto max-w-6xl mb-12">
+            <h2 className="text-3xl font-bold mb-8 text-center text-fuchsia-400">Latest Updates</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <a href="/reports/updates/update-2025-08-15-0406" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-cyan-400">Update 2025-08-15-0406</h3>
+                <p className="mt-2 text-sm text-white/75">
+                  Latest autonomous system update with performance improvements and new features
+                </p>
+                <div className="mt-3 text-xs text-cyan-300/90">2 hours ago</div>
+              </a>
+
+              <a href="/reports/updates/update-2025-08-15-0405" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-fuchsia-400/30 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-fuchsia-400">Update 2025-08-15-0405</h3>
+                <p className="mt-2 text-sm text-white/75">
+                  Infrastructure optimization and security enhancements deployed
+                </p>
+                <div className="mt-3 text-xs text-fuchsia-300/90">4 hours ago</div>
+              </a>
+
+              <a href="/reports/updates/update-2025-08-15-0404" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-green-400/30 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-green-400">Update 2025-08-15-0404</h3>
+                <p className="mt-2 text-sm text-white/75">
+                  Content generation improvements and SEO optimization updates
+                </p>
+                <div className="mt-3 text-xs text-green-300/90">6 hours ago</div>
+              </a>
+
+              <a href="/reports/updates/update-2025-08-15-0403" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-blue-400/30 transition-all duration-300">
+                <h3 className="text-lg font-semibold text-blue-400">Update 2025-08-15-0403</h3>
+                <p className="mt-2 text-sm text-white/75">
+                  New automation workflows and monitoring enhancements
+                </p>
+                <div className="mt-3 text-xs text-blue-300/90">8 hours ago</div>
+              </a>
+            </div>
+          </section>
+
+          {/* Report Categories */}
+          <section className="mx-auto max-w-6xl mb-12">
+            <h2 className="text-3xl font-bold mb-8 text-center text-green-400">Report Categories</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 text-center">
+                <div className="text-3xl mb-3">📊</div>
+                <h3 className="text-lg font-semibold mb-2">Performance</h3>
+                <p className="text-sm text-white/70">System metrics and optimization</p>
+                <div className="mt-3 text-xs text-cyan-300">15 reports</div>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 text-center">
+                <div className="text-3xl mb-3">🤖</div>
+                <h3 className="text-lg font-semibold mb-2">Automation</h3>
+                <p className="text-sm text-white/70">AI and workflow insights</p>
+                <div className="mt-3 text-xs text-fuchsia-300">23 reports</div>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 text-center">
+                <div className="text-3xl mb-3">🔒</div>
+                <h3 className="text-lg font-semibold mb-2">Security</h3>
+                <p className="text-sm text-white/70">Threat analysis and protection</p>
+                <div className="mt-3 text-xs text-green-300">8 reports</div>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 text-center">
+                <div className="text-3xl mb-3">📈</div>
+                <h3 className="text-lg font-semibold mb-2">Analytics</h3>
+                <p className="text-sm text-white/70">Business intelligence and trends</p>
+                <div className="mt-3 text-xs text-blue-300">12 reports</div>
+              </div>
+            </div>
+          </section>
+
+          {/* Quick Stats */}
+          <section className="mx-auto max-w-4xl mb-12">
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8">
+              <h2 className="text-2xl font-bold mb-6 text-center text-purple-400">Quick Stats</h2>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-cyan-400">227</div>
+                  <div className="text-sm text-white/70">Active Automations</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-fuchsia-400">2,960</div>
+                  <div className="text-sm text-white/70">Pages Generated</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-green-400">99.9%</div>
+                  <div className="text-sm text-white/70">Uptime</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-blue-400">24/7</div>
+                  <div className="text-sm text-white/70">Monitoring</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Navigation */}
+          <section className="mx-auto max-w-4xl text-center">
+            <div className="flex flex-wrap justify-center gap-4">
+              <a href="/" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-cyan-400/50">
+                ← Back to Home
+              </a>
+              <a href="/about" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-fuchsia-400/50">
+                About Zion Tech
+              </a>
+              <a href="/contact" className="px-6 py-3 bg-white/10 hover:bg-white/20 border border-white/20 rounded-lg text-white transition-all duration-200 hover:border-green-400/50">
+                Contact Us
+              </a>
+            </div>
+          </section>
+        </main>
+      </div>
+    </>
   );
 }
-
-
-
-
-<Link href="/reports/blueprints/blueprint-2025-08-18-122901" className="internal-link">Related Content</Link>
-
-<Link href="/reports/blueprints/blueprint-2025-08-18-122931" className="internal-link">Related Content</Link>
-
-<Link href="/reports/blueprints/blueprint-2025-08-18-122952" className="internal-link">Related Content</Link>

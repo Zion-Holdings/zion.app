@@ -1,5 +1,5 @@
-// Zion Tech Group Service Worker
-// Enhanced caching and offline capabilities
+/* eslint-env serviceworker */
+/* global self, caches, Response */
 
 const CACHE_NAME = 'zion-tech-group-v1.0.0';
 const STATIC_CACHE = 'zion-static-v1.0.0';
@@ -11,23 +11,19 @@ const STATIC_FILES = [
   '/offline',
   '/manifest.json',
   '/favicon.ico',
-  '/_next/static/css/app.css',
-  '/_next/static/js/main.js',
-  '/_next/static/js/chunks/vendors.js',
-  '/_next/static/js/chunks/common.js'
+  '/apple-touch-icon.png'
 ];
 
-// API routes to cache
-const API_ROUTES = [
-  '/api/health',
-  '/api/analytics',
-  '/api/services'
-];
+// API endpoints to cache (commented out for now)
+// const API_CACHE = [
+//   '/api/analytics',
+//   '/api/error-reporting'
+// ];
 
 // Install event - cache static files
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(STATIC_CACHE)
+    caches.open(CACHE_NAME)
       .then((cache) => {
         console.log('Caching static files');
         return cache.addAll(STATIC_FILES);
@@ -37,13 +33,28 @@ self.addEventListener('install', (event) => {
         return self.skipWaiting();
       })
       .catch((error) => {
-        console.error('Error caching static files:', error);
+        console.error('Failed to cache static files:', error);
       })
   );
 });
 
+// Fetch event - serve from cache when offline
+self.addEventListener('fetch', (event) => {
+  event.respondWith(
+    caches.match(event.request)
+      .then((response) => {
+        // Return cached version or fetch from network
+        if (response) {
+          return response;
+        }
+        return fetch(event.request);
+      }
+    )
+  );
+});
+
 // Activate event - clean up old caches
-self.addEventListener('activate', async (event) => {
+self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys()
       .then((cacheNames) => {
@@ -67,7 +78,7 @@ self.addEventListener('activate', async (event) => {
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   const url = new URL(request.url);
-  
+
   // Skip non-GET requests
   if (request.method !== 'GET') {
     return;
@@ -80,24 +91,24 @@ self.addEventListener('fetch', (event) => {
 
   // Handle different types of requests
   if (url.pathname === '/') {
-    // Homepage - cache first, then network
-    event.respondWith(cacheFirst(request, STATIC_CACHE));
-  } else if (url.pathname.startsWith('/_next/static/')) {
-    // Static assets - cache first, then network
+    // Homepage - cache first strategy
     event.respondWith(cacheFirst(request, STATIC_CACHE));
   } else if (url.pathname.startsWith('/api/')) {
-    // API routes - network first, then cache
+    // API requests - network first strategy
     event.respondWith(networkFirst(request, DYNAMIC_CACHE));
-  } else if (url.pathname.startsWith('/services/')) {
-    // Service pages - network first, then cache
-    event.respondWith(networkFirst(request, DYNAMIC_CACHE));
+  } else if (url.pathname.startsWith('/_next/') || url.pathname.startsWith('/static/')) {
+    // Static assets - cache first strategy
+    event.respondWith(cacheFirst(request, STATIC_CACHE));
+  } else if (url.pathname.startsWith('/images/') || url.pathname.startsWith('/icons/')) {
+    // Images - cache first strategy
+    event.respondWith(cacheFirst(request, STATIC_CACHE));
   } else {
-    // Other pages - network first, then cache
+    // Other pages - network first strategy
     event.respondWith(networkFirst(request, DYNAMIC_CACHE));
   }
 });
 
-// Cache first strategy
+// Cache First Strategy
 async function cacheFirst(request, cacheName) {
   try {
     const cachedResponse = await caches.match(request);
@@ -113,11 +124,16 @@ async function cacheFirst(request, cacheName) {
     return networkResponse;
   } catch (error) {
     console.error('Cache first strategy failed:', error);
-    return new Response('Network error', { status: 503 });
+    // Check if Response is available (it should be in service worker context)
+    if (typeof Response !== 'undefined') {
+      return new Response('Network error', { status: 503, statusText: 'Service Unavailable' });
+    }
+    // Fallback for older browsers
+    return { status: 503, statusText: 'Service Unavailable' };
   }
 }
 
-// Network first strategy
+// Network First Strategy
 async function networkFirst(request, cacheName) {
   try {
     const networkResponse = await fetch(request);
@@ -135,12 +151,17 @@ async function networkFirst(request, cacheName) {
       return cachedResponse;
     }
     
-    // Return offline page for navigation requests
-    if (request.mode === 'navigate') {
+    // Return offline page for HTML requests
+    if (request.headers.get('accept')?.includes('text/html')) {
       return caches.match('/offline');
     }
     
-    return new Response('Network error', { status: 503 });
+    // Check if Response is available (it should be in service worker context)
+    if (typeof Response !== 'undefined') {
+      return new Response('Network error', { status: 503, statusText: 'Service Unavailable' });
+    }
+    // Fallback for older browsers
+    return { status: 503, statusText: 'Service Unavailable' };
   }
 }
 
@@ -151,17 +172,45 @@ self.addEventListener('sync', (event) => {
   }
 });
 
-// Background sync function
 async function doBackgroundSync() {
   try {
-    // Sync any pending data
+    // Perform background sync operations
     console.log('Performing background sync');
     
-    // You can implement specific sync logic here
-    // For example, syncing form submissions, analytics data, etc.
+    // Example: sync analytics data
+    const analyticsData = await getStoredAnalytics();
+    if (analyticsData.length > 0) {
+      await syncAnalytics(analyticsData);
+    }
     
+    console.log('Background sync completed');
   } catch (error) {
     console.error('Background sync failed:', error);
+  }
+}
+
+// Get stored analytics data
+async function getStoredAnalytics() {
+  // This would typically get data from IndexedDB
+  return [];
+}
+
+// Sync analytics data
+async function syncAnalytics(data) {
+  try {
+    const response = await fetch('/api/analytics', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data)
+    });
+    
+    if (response.ok) {
+      console.log('Analytics synced successfully');
+    }
+  } catch (error) {
+    console.error('Failed to sync analytics:', error);
   }
 }
 
@@ -171,8 +220,8 @@ self.addEventListener('push', (event) => {
     const data = event.data.json();
     const options = {
       body: data.body,
-      icon: '/favicon.ico',
-      badge: '/favicon.ico',
+      icon: '/icons/icon-192x192.png',
+      badge: '/icons/badge-72x72.png',
       vibrate: [100, 50, 100],
       data: {
         dateOfArrival: Date.now(),
@@ -182,12 +231,12 @@ self.addEventListener('push', (event) => {
         {
           action: 'explore',
           title: 'Explore',
-          icon: '/favicon.ico'
+          icon: '/icons/checkmark.png'
         },
         {
           action: 'close',
           title: 'Close',
-          icon: '/favicon.ico'
+          icon: '/icons/xmark.png'
         }
       ]
     };
@@ -201,12 +250,12 @@ self.addEventListener('push', (event) => {
 // Notification click handling
 self.addEventListener('notificationclick', (event) => {
   event.notification.close();
-  
-  if (event.notification.data?.url) {
-    event.waitUntil(
-      clients.openWindow('/')
-    );
-  }
+
+      if (event.action === 'explore') {
+      event.waitUntil(
+        self.clients.openWindow('/')
+      );
+    }
 });
 
 // Message handling from main thread
@@ -225,7 +274,6 @@ self.addEventListener('error', (event) => {
   console.error('Service worker error:', event.error);
 });
 
-// Unhandled rejection handling
 self.addEventListener('unhandledrejection', (event) => {
   console.error('Service worker unhandled rejection:', event.reason);
 });

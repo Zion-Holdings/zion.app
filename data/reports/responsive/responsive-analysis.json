@@ -1,7 +1,7 @@
 {
-  "timestamp": "2025-08-08T17:08:45.131Z",
-  "filesAnalyzed": 108,
-  "issuesFound": 102,
+  "timestamp": "2025-08-09T17:41:56.775Z",
+  "filesAnalyzed": 122,
+  "issuesFound": 122,
   "items": [
     {
       "filePath": "/workspace/pages/404.tsx",
@@ -27,6 +27,13 @@
     },
     {
       "filePath": "/workspace/pages/about.tsx",
+      "issues": [
+        "missing_viewport",
+        "no_tailwind_responsive_classes"
+      ]
+    },
+    {
+      "filePath": "/workspace/pages/admin/automation-status.tsx",
       "issues": [
         "missing_viewport",
         "no_tailwind_responsive_classes"
@@ -90,6 +97,38 @@
     },
     {
       "filePath": "/workspace/pages/api/analyze-service-request.ts",
+      "issues": [
+        "missing_head",
+        "missing_viewport",
+        "no_tailwind_responsive_classes"
+      ]
+    },
+    {
+      "filePath": "/workspace/pages/api/fundraising/close-round.ts",
+      "issues": [
+        "missing_head",
+        "missing_viewport",
+        "no_tailwind_responsive_classes"
+      ]
+    },
+    {
+      "filePath": "/workspace/pages/api/fundraising/export.ts",
+      "issues": [
+        "missing_head",
+        "missing_viewport",
+        "no_tailwind_responsive_classes"
+      ]
+    },
+    {
+      "filePath": "/workspace/pages/api/fundraising/generate-deck.ts",
+      "issues": [
+        "missing_head",
+        "missing_viewport",
+        "no_tailwind_responsive_classes"
+      ]
+    },
+    {
+      "filePath": "/workspace/pages/api/fundraising/upload.ts",
       "issues": [
         "missing_head",
         "missing_viewport",
@@ -192,6 +231,13 @@
       "issues": [
         "missing_head",
         "missing_viewport"
+      ]
+    },
+    {
+      "filePath": "/workspace/pages/automations/index.tsx",
+      "issues": [
+        "missing_viewport",
+        "no_tailwind_responsive_classes"
       ]
     },
     {
@@ -309,6 +355,14 @@
     {
       "filePath": "/workspace/pages/blog/the-rise-of-edge-computing-in-iot-applications-chat.tsx",
       "issues": [
+        "missing_viewport",
+        "no_tailwind_responsive_classes"
+      ]
+    },
+    {
+      "filePath": "/workspace/pages/capital.tsx",
+      "issues": [
+        "missing_head",
         "missing_viewport",
         "no_tailwind_responsive_classes"
       ]
@@ -503,9 +557,16 @@
       ]
     },
     {
-      "filePath": "/workspace/pages/index.tsx",
+      "filePath": "/workspace/pages/fundraising/index.tsx",
       "issues": [
         "missing_viewport"
+      ]
+    },
+    {
+      "filePath": "/workspace/pages/index.tsx",
+      "issues": [
+        "missing_viewport",
+        "no_tailwind_responsive_classes"
       ]
     },
     {

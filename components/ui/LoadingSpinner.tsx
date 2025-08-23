@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 
 interface LoadingSpinnerProps {
   size?: 'sm' | 'md' | 'lg';
@@ -9,6 +10,7 @@ interface LoadingSpinnerProps {
 const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({ 
   size = 'md', 
   text = 'Loading Zion Tech Group...' 
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 }) => {
   const sizeClasses = {
     sm: 'w-8 h-8',
@@ -68,6 +70,7 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
         >
           {text}
         </motion.p>

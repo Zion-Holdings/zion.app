@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 /**
  * Purge old log files from the logs directory.
  * Deletes .log files older than a configurable number of days to
@@ -8,12 +6,10 @@
 
 const fs = require('fs');
 const path = require('path');
-
 const LOG_DIR = path.join(__dirname, '..', 'logs');
 const RETENTION_DAYS = process.env.LOG_RETENTION_DAYS
   ? parseInt(process.env.LOG_RETENTION_DAYS, 10)
   : 30;
-
 function purgeOldLogs(dir) {
   if (!fs.existsSync(dir)) return;
   const entries = fs.readdirSync(dir);
@@ -27,11 +23,11 @@ function purgeOldLogs(dir) {
       const ageDays = ageMs / (1000 * 60 * 60 * 24);
       if (ageDays > RETENTION_DAYS) {
         fs.unlinkSync(full);
-        console.log(`Deleted old log: ${full}`);
+        console.warn(`Deleted old log: ${full}`);
       }
     }
   }
 }
 
 purgeOldLogs(LOG_DIR);
-console.log(`Old logs older than ${RETENTION_DAYS} days have been purged.`);
+console.warn(`Old logs older than ${RETENTION_DAYS} days have been purged.`);

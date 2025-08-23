@@ -1,0 +1,103 @@
+#!/bin/bash
+
+# Enhanced Cursor Sync Status Script
+# Shows the current status of enhanced cursor sync automation
+
+PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+AUTOMATION_DIR="$PROJECT_DIR/automation"
+
+# Colors
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+RED='\033[0;31m'
+BLUE='\033[0;34m'
+NC='\033[0m'
+
+echo "🔄 Enhanced Cursor Sync Automation Status"
+echo "========================================="
+echo ""
+
+# Check if cron jobs are installed
+echo -e "${BLUE}📋 Cron Jobs:${NC}"
+if crontab -l 2>/dev/null | grep -q "enhanced-cursor-sync"; then
+    echo -e "${GREEN}✅ Enhanced cursor sync cron jobs are installed${NC}"
+    crontab -l 2>/dev/null | grep "enhanced-cursor-sync" | while read -r line; do
+        echo "  $line"
+    done
+else
+    echo -e "${RED}❌ Enhanced cursor sync cron jobs not found${NC}"
+fi
+
+echo ""
+
+# Check last sync time
+echo -e "${BLUE}⏰ Last Sync:${NC}"
+last_sync_file="$AUTOMATION_DIR/logs/last-sync-time.json"
+if [ -f "$last_sync_file" ]; then
+    last_sync=$(jq -r '.lastSync' "$last_sync_file" 2>/dev/null)
+    computer_id=$(jq -r '.computerId' "$last_sync_file" 2>/dev/null)
+    if [ "$last_sync" != "null" ] && [ -n "$last_sync" ]; then
+        echo -e "${GREEN}✅ Last sync: $last_sync${NC}"
+        echo -e "${GREEN}✅ Computer: $computer_id${NC}"
+    else
+        echo -e "${YELLOW}⚠️ No sync time recorded${NC}"
+    fi
+else
+    echo -e "${RED}❌ No sync time file found${NC}"
+fi
+
+echo ""
+
+# Check log files
+echo -e "${BLUE}📄 Log Files:${NC}"
+for log_file in "$AUTOMATION_DIR/logs"/enhanced-cursor-sync*.log; do
+    if [ -f "$log_file" ]; then
+        filename=$(basename "$log_file")
+        last_modified=$(stat -f "%Sm" "$log_file" 2>/dev/null || stat -c "%y" "$log_file" 2>/dev/null)
+        size=$(du -h "$log_file" | cut -f1)
+        echo "  $filename: $size, updated $last_modified"
+    fi
+done
+
+echo ""
+
+# Check metrics
+echo -e "${BLUE}📊 Metrics:${NC}"
+metrics_file="$AUTOMATION_DIR/metrics/enhanced-sync-metrics.json"
+if [ -f "$metrics_file" ]; then
+    total_syncs=$(jq -r '.totalSyncs' "$metrics_file" 2>/dev/null || echo "0")
+    successful_syncs=$(jq -r '.successfulSyncs' "$metrics_file" 2>/dev/null || echo "0")
+    failed_syncs=$(jq -r '.failedSyncs' "$metrics_file" 2>/dev/null || echo "0")
+    avg_duration=$(jq -r '.averageDuration' "$metrics_file" 2>/dev/null || echo "0")
+    
+    if [ "$total_syncs" -gt 0 ]; then
+        success_rate=$(echo "scale=2; $successful_syncs * 100 / $total_syncs" | bc 2>/dev/null || echo "0")
+        echo -e "${GREEN}✅ Total syncs: $total_syncs${NC}"
+        echo -e "${GREEN}✅ Successful: $successful_syncs${NC}"
+        echo -e "${GREEN}✅ Failed: $failed_syncs${NC}"
+        echo -e "${GREEN}✅ Success rate: ${success_rate}%${NC}"
+        echo -e "${GREEN}✅ Average duration: ${avg_duration}ms${NC}"
+    else
+        echo -e "${YELLOW}⚠️ No sync metrics available${NC}"
+    fi
+else
+    echo -e "${YELLOW}⚠️ No metrics file found${NC}"
+fi
+
+echo ""
+
+# Check backups
+echo -e "${BLUE}💾 Backups:${NC}"
+backup_dir="$AUTOMATION_DIR/backups"
+if [ -d "$backup_dir" ]; then
+    backup_count=$(find "$backup_dir" -name "sync-backup-*" -type d | wc -l)
+    echo -e "${GREEN}✅ Backup count: $backup_count${NC}"
+else
+    echo -e "${YELLOW}⚠️ No backup directory found${NC}"
+fi
+
+echo ""
+echo "📁 Log Directory: $AUTOMATION_DIR/logs"
+echo "📊 Metrics Directory: $AUTOMATION_DIR/metrics"
+echo "💾 Backup Directory: $AUTOMATION_DIR/backups"
+echo "⚙️ Config File: $AUTOMATION_DIR/enhanced-cursor-sync-config.json"

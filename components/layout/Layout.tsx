@@ -1,130 +1,40 @@
-import React, { useState, useEffect } from 'react';
-import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
-import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
-import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
-import TopContactBar from './TopContactBar';
-import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
-import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
-import CookieConsentBanner from '../CookieConsentBanner';
-import ServiceWorkerRegistration from '../ServiceWorkerRegistration';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import React from 'react';
 
-interface LayoutProps {
-  children: React.ReactNode;
-  title?: string;
-  description?: string;
-  keywords?: string;
-  ogImage?: string;
-  canonicalUrl?: string;
-}
+export default function DashboardLayout({ children }: { children: React.ReactNode }) {
+  const router = useRouter();
 
-export default function Layout({ 
-  children, 
-  title = "Zion Tech Group - Revolutionary AI, Quantum Computing & Space Technology Solutions",
-  description = "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.",
-  keywords = "AI, artificial intelligence, quantum computing, space technology, cybersecurity, cloud infrastructure, enterprise solutions, autonomous systems, consciousness AI",
-  ogImage = "https://ziontechgroup.com/og-image.jpg",
-  canonicalUrl
-}: LayoutProps) {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
-
-  useEffect(() => {
-    // Check for saved theme preference or default to dark
-    const savedTheme = localStorage.getItem('theme') as 'dark' | 'light';
-    if (savedTheme) {
-      setTheme(savedTheme);
-      document.documentElement.classList.toggle('light', savedTheme === 'light');
-    }
-
-    // Simulate loading time for better UX
-    const timer = setTimeout(() => setIsLoading(false), 1000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  const handleThemeChange = (newTheme: 'dark' | 'light') => {
-    setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-    document.documentElement.classList.toggle('light', newTheme === 'light');
-  };
-
-  // Map theme to background theme
-  const getBackgroundTheme = (theme: 'dark' | 'light') => {
-    return theme === 'dark' ? 'quantum-neon' : 'holographic';
-  };
-
-  if (isLoading) {
-    return <LoadingSkeleton />;
-  }
+  const NavLink = ({ href, label }: { href: string; label: string }) => (
+    <Link href={href}>
+      <a className={`block px-3 py-2 rounded-md text-sm ${router.pathname === href ? 'bg-gray-900 text-white' : 'hover:bg-gray-100 dark:hover:bg-gray-800'}`}>{label}</a>
+    </Link>
+  );
 
   return (
-    <div className={`min-h-screen ${theme === 'dark' ? 'bg-black text-white' : 'bg-gray-50 text-gray-900'} relative overflow-x-hidden transition-colors duration-300`}>
-      {/* Skip to content link for accessibility */}
-      <a href="#main" className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded focus:outline-none">
-        Skip to main content
-      </a>
-      
-      {/* Futuristic Background */}
-      <UltraFuturisticBackground2036 theme={getBackgroundTheme(theme)} />
-      
-      {/* Layout Structure */}
-      <div className="relative z-10">
-        {/* Top Contact Bar */}
-        <TopContactBar />
-        
-        {/* Navigation */}
-        <UltraFuturisticNavigation2045 />
-
-        {/* Theme Toggle */}
-        <ThemeToggle currentTheme={theme} onThemeChange={handleThemeChange} />
-        
-        {/* Sidebar and Main Content */}
-        <div className="flex">
-          <EnhancedSidebar2025 
-            isOpen={sidebarOpen} 
-            onClose={() => setSidebarOpen(false)} 
-          />
-          
-          <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
-            <ErrorBoundary>
-              {children}
-            </ErrorBoundary>
-          </main>
-        </div>
-        
-        {/* Enhanced Footer */}
-        <EnhancedFooter2025 />
-        
-        {/* Performance Monitor */}
-        <EnhancedPerformanceMonitor />
-        
-        {/* Accessibility Enhancer */}
-        <AccessibilityEnhancer />
-        
-        {/* Cookie Consent Banner */}
-        <CookieConsentBanner />
-        
-        {/* Offline Indicator */}
-        {!isOnline && (
-          <div className="fixed bottom-4 right-4 bg-red-600 text-white px-4 py-2 rounded-lg shadow-lg z-50">
-            <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-              <span className="text-sm">You are offline</span>
-            </div>
-          </div>
-        )}
-      </div>
-
-      {/* Accessibility and Performance Tools */}
-      <AccessibilityEnhancer />
-      <PerformanceMonitor />
-      
-      {/* Cookie Consent Banner */}
-      <CookieConsentBanner />
-      
-      {/* Service Worker Registration */}
-      <ServiceWorkerRegistration />
+    <div className="min-h-[70vh] grid grid-cols-12 gap-6">
+      <aside className="col-span-12 md:col-span-3 lg:col-span-2 border border-gray-200 dark:border-gray-800 rounded-lg p-4 h-max sticky top-20">
+        <div className="mb-3 text-xs uppercase tracking-wide text-gray-500">Portals</div>
+        <nav className="space-y-1">
+          <NavLink href="/investors" label="Investor Portal" />
+          <NavLink href="/franchise-portal" label="Franchise Portal" />
+        </nav>
+        <div className="mt-6 text-xs uppercase tracking-wide text-gray-500">Investors</div>
+        <nav className="space-y-1">
+          <NavLink href="/investors#deck" label="Pitch Deck" />
+          <NavLink href="/investors#kpis" label="KPIs" />
+          <NavLink href="/investors#downloads" label="Downloads" />
+        </nav>
+        <div className="mt-6 text-xs uppercase tracking-wide text-gray-500">Franchise</div>
+        <nav className="space-y-1">
+          <NavLink href="/franchise-portal#apply" label="Apply" />
+          <NavLink href="/franchise-portal#toolkit" label="Toolkit" />
+          <NavLink href="/franchise-portal#admin" label="Admin" />
+        </nav>
+      </aside>
+      <main className="col-span-12 md:col-span-9 lg:col-span-10">
+        {children}
+      </main>
     </div>
   );
-};
+}

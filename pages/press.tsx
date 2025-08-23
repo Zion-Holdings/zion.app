@@ -37,6 +37,7 @@ const Press: React.FC = () => {
       date: '2024-12-28',
       excerpt: 'Collaborating with top-tier research institutions to advance AI consciousness research.',
       category: 'Partnerships'
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     }
   ];
 
@@ -82,6 +83,7 @@ const Press: React.FC = () => {
       icon: <File className="w-6 h-6" />,
       formats: ['PDF'],
       downloadUrl: '/press/brochures.zip'
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     }
   ];
 
@@ -135,6 +137,7 @@ const Press: React.FC = () => {
                 Access our latest press releases, media resources, and company information. 
                 We're here to help journalists and media professionals tell our story.
               </p>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </motion.div>
           </div>
         </section>
@@ -146,6 +149,7 @@ const Press: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               viewport={{ once: true }}
               className="text-center mb-16"
             >
@@ -258,6 +262,7 @@ const Press: React.FC = () => {
                       <Calendar className="w-4 h-4 inline mr-1" />
                       {new Date(release.date).toLocaleDateString()}
                     </span>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                   </div>
                   <h3 className="text-xl font-bold text-white mb-3">
                     {release.title}
@@ -281,6 +286,7 @@ const Press: React.FC = () => {
         {/* Press Resources Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/30">
           <div className="max-w-7xl mx-auto">
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -351,6 +357,7 @@ const Press: React.FC = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {mediaResources.map((resource, index) => (
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                 <motion.div
                   key={resource.name}
                   initial={{ opacity: 0, y: 30 }}
@@ -372,6 +379,7 @@ const Press: React.FC = () => {
                           className="bg-gray-800/30 text-gray-400 text-xs px-2 py-1 rounded-full border border-gray-700/30"
                         >
                           {format}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                         </span>
                       ))}
                     </div>
@@ -382,6 +390,7 @@ const Press: React.FC = () => {
                   >
                     <Download className="w-4 h-4 mr-1" />
                     Download
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
                   </a>
                 </motion.div>
               ))}
@@ -394,6 +403,7 @@ const Press: React.FC = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
               className="text-center mb-16"
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             >
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
                 Press Contact
@@ -501,6 +511,7 @@ const Press: React.FC = () => {
                 >
                   Learn More About Us
                 </Link>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </div>
             </motion.div>
           </div>

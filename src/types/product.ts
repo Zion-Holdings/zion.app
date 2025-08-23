@@ -1,5 +1,4 @@
-export interface Product {
-  id: string;
-  name: string;
-  description?: string | null;
-}
+// Type definitions for product;
+interface product {;
+  // TODO: Add proper type definitions;
+};

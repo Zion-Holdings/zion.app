@@ -90,6 +90,7 @@ const DocumentationPage: React.FC = () => {
       description: 'Available in multiple formats for offline use',
       icon: <Download className="w-6 h-6" />
     }
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   ];
 
   const stats = [
@@ -144,6 +145,7 @@ const DocumentationPage: React.FC = () => {
                   <div className="text-sm text-gray-400">{stat.label}</div>
                 </div>
               ))}
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
             </motion.div>
           </div>
         </section>
@@ -152,12 +154,14 @@ const DocumentationPage: React.FC = () => {
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div 
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-4xl font-bold text-white mb-4">Why Choose Our Documentation?</h2>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                 Our documentation is designed to help you quickly find the information you need and get up and running with our solutions efficiently.
               </p>
@@ -177,6 +181,7 @@ const DocumentationPage: React.FC = () => {
                   <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
                   <p className="text-gray-400">{feature.description}</p>
                 </div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               ))}
             </motion.div>
           </div>
@@ -186,12 +191,14 @@ const DocumentationPage: React.FC = () => {
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div 
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               className="text-center mb-16"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-4xl font-bold text-white mb-4">Documentation Categories</h2>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                 Explore our comprehensive documentation organized by category to find exactly what you need.
               </p>
@@ -238,6 +245,7 @@ const DocumentationPage: React.FC = () => {
                 </motion.div>
               ))}
             </motion.div>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
           </div>
         </section>
 
@@ -266,6 +274,7 @@ const DocumentationPage: React.FC = () => {
                 >
                   Contact Us
                 </a>
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
               </div>
             </motion.div>
           </div>

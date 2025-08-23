@@ -1,98 +1,135 @@
-import React, { useState, useCallback, useMemo } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Crown, Building, Rocket } from 'lucide-react';
+import { Star, Check, Zap, TrendingUp, Shield, Brain, Atom, Rocket } from 'lucide-react';
 
 interface Service {
-  id?: string;
+  id: string;
   name: string;
-  tagline?: string;
+  tagline: string;
   description: string;
-  price?: string;
+  price?: string | {
+    monthly?: number;
+    yearly?: number;
+    currency?: string;
+    trialDays?: number;
+    setupTime?: string;
+  };
   period?: string;
-  features?: string[];
+  pricing?: any;
+  features: string[];
   popular?: boolean;
   category: string;
-  icon?: string;
+  icon: string;
+  marketPrice?: string;
+  competitors?: string[];
+  targetMarket?: string;
+  useCases?: string[];
+  integration?: string[];
+  benefits?: string[];
 }
 
-interface UltraFuturisticServiceCard2026Props {
+interface ServiceCardProps {
   service: Service;
-  variant?: 'default' | 'quantum' | 'ai' | 'automation' | 'it' | 'emerging' | 'enterprise' | 'premium';
-  theme?: 'quantum' | 'cyber' | 'neon';
-  className?: string;
-  onClick?: () => void;
+  variant?: 'ai' | 'quantum' | 'space' | 'cybersecurity' | 'enterprise' | 'automation' | 'it' | 'emerging' | 'premium' | 'default';
 }
 
-const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Props> = memo(({
-  service,
-  variant = 'default',
-  className = '',
-  onClick
-}) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  // Get variant-specific styles
-  const variantStyles = useMemo(() => {
-    if (variant === 'premium') {
-      return {
-        container: 'border-cyan-400/50 bg-gradient-to-br from-cyan-900/20 to-blue-900/20',
-        icon: <Crown className="w-5 h-5 text-yellow-400" />,
-        badge: 'bg-gradient-to-r from-yellow-400 to-orange-500 text-black',
-        button: 'bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700',
-        text: 'text-cyan-50',
-        accent: 'bg-cyan-400'
-      };
-    }
-    
-    if (variant === 'enterprise') {
-      return {
-        container: 'border-purple-400/50 bg-gradient-to-br from-purple-900/20 to-pink-900/20',
-        icon: <Building className="w-5 h-5 text-purple-400" />,
-        badge: 'bg-gradient-to-r from-purple-500 to-pink-600',
-        button: 'bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700',
-        text: 'text-purple-50',
-        accent: 'bg-purple-400'
-      };
-    }
-    
-    // Default variant
-    return {
-      container: 'border-gray-600/50 bg-gradient-to-br from-gray-800/20 to-gray-700/20',
-      icon: <Rocket className="w-5 h-5 text-cyan-400" />,
-      badge: 'bg-gradient-to-r from-cyan-500 to-blue-600',
-      button: 'bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700',
-      text: 'text-gray-50',
-      accent: 'bg-cyan-400'
-    };
-  }, [variant]);
-
-  const handleCardClick = useCallback(() => {
-    if (onClick) {
-      onClick();
-    } else {
-      setIsExpanded(!isExpanded);
-    }
-  }, [onClick, isExpanded]);
-
-  const getCategoryIcon = (category: string) => {
-    switch (category.toLowerCase()) {
+const UltraFuturisticServiceCard2026: React.FC<ServiceCardProps> = ({ service, variant = 'default' }) => {
+  const getVariantStyles = () => {
+    switch (variant) {
       case 'ai':
-        return <Brain className="w-5 h-5" />;
+        return {
+          gradient: 'from-purple-600 via-pink-600 to-purple-700',
+          borderColor: 'border-purple-400/30',
+          textColor: 'text-purple-400',
+          iconBg: 'bg-purple-500/20',
+          iconBorder: 'border-purple-400/30'
+        };
       case 'quantum':
-        return <Atom className="w-5 h-5" />;
-      case 'automation':
-        return <Zap className="w-5 h-5" />;
-      case 'it':
-        return <Shield className="w-5 h-5" />;
-      case 'emerging':
-        return <Rocket className="w-5 h-5" />;
+        return {
+          gradient: 'from-cyan-600 via-blue-600 to-cyan-700',
+          borderColor: 'border-cyan-400/30',
+          textColor: 'text-cyan-400',
+          iconBg: 'bg-cyan-500/20',
+          iconBorder: 'border-cyan-400/30'
+        };
+      case 'space':
+        return {
+          gradient: 'from-indigo-600 via-purple-600 to-indigo-700',
+          borderColor: 'border-indigo-400/30',
+          textColor: 'text-indigo-400',
+          iconBg: 'bg-indigo-500/20',
+          iconBorder: 'border-indigo-400/30'
+        };
+      case 'cybersecurity':
+        return {
+          gradient: 'from-red-600 via-orange-600 to-red-700',
+          borderColor: 'border-red-400/30',
+          textColor: 'text-red-400',
+          iconBg: 'bg-red-500/20',
+          iconBorder: 'border-red-400/30'
+        };
       case 'enterprise':
-        return <TrendingUp className="w-5 h-5" />;
+        return {
+          gradient: 'from-indigo-600 via-purple-600 to-indigo-700',
+          borderColor: 'border-indigo-400/30',
+          textColor: 'text-indigo-400',
+          iconBg: 'bg-indigo-500/20',
+          iconBorder: 'border-indigo-400/30'
+        };
+      case 'automation':
+        return {
+          gradient: 'from-green-600 via-emerald-600 to-green-700',
+          borderColor: 'border-green-400/30',
+          textColor: 'text-green-400',
+          iconBg: 'bg-green-500/20',
+          iconBorder: 'border-green-400/30'
+        };
+      case 'it':
+        return {
+          gradient: 'from-blue-600 via-indigo-600 to-blue-700',
+          borderColor: 'border-blue-400/30',
+          textColor: 'text-blue-400',
+          iconBg: 'bg-blue-500/20',
+          iconBorder: 'border-blue-400/30'
+        };
+      case 'emerging':
+        return {
+          gradient: 'from-yellow-600 via-orange-600 to-yellow-700',
+          borderColor: 'border-yellow-400/30',
+          textColor: 'text-yellow-400',
+          iconBg: 'bg-yellow-500/20',
+          iconBorder: 'border-yellow-400/30'
+        };
+      case 'premium':
+        return {
+          gradient: 'from-amber-600 via-yellow-600 to-amber-700',
+          borderColor: 'border-amber-400/30',
+          textColor: 'text-amber-400',
+          iconBg: 'bg-amber-500/20',
+          iconBorder: 'border-amber-400/30'
+        };
       default:
-        return <Award className="w-5 h-5" />;
+        return {
+          gradient: 'from-gray-600 via-gray-700 to-gray-800',
+          borderColor: 'border-gray-400/30',
+          textColor: 'text-gray-400',
+          iconBg: 'bg-gray-500/20',
+          iconBorder: 'border-gray-400/30'
+        };
     }
   };
+
+  const styles = getVariantStyles();
+
+  const getCategoryIcon = (category: string) => {
+    if (category.includes('AI')) return Brain;
+    if (category.includes('Quantum')) return Atom;
+    if (category.includes('Space')) return Rocket;
+    if (category.includes('Cybersecurity')) return Shield;
+    return TrendingUp;
+  };
+
+  const CategoryIcon = getCategoryIcon(service.category);
 
   return (
     <motion.div
@@ -100,126 +137,135 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      whileHover={{ y: -5 }}
-      className={`relative group cursor-pointer transition-all duration-500 ${className}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onClick={handleCardClick}
+      className="group relative"
     >
-      {/* Popular Badge */}
-      {service.popular && (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.3, delay: 0.2 }}
-          className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10"
-        >
-          <div className="px-4 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-semibold rounded-full shadow-lg flex items-center space-x-1">
-            <Star className="w-3 h-3 fill-current" />
-            <span>Most Popular</span>
+      <div className="relative p-8 rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/50 border border-white/10 hover:border-white/20 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl backdrop-blur-sm overflow-hidden">
+        {/* Enhanced Background Glow */}
+        <div className={`absolute inset-0 bg-gradient-to-br ${styles.gradient} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
+        
+        {/* Popular Badge */}
+        {service.popular && (
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+            className="absolute -top-3 left-6 px-4 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-black text-sm font-bold rounded-full shadow-lg"
+          >
+            <Star className="w-4 h-4 inline mr-1" />
+            Popular
+          </motion.div>
+        )}
+        
+        {/* Service Header */}
+        <div className="text-center mb-8 relative z-10">
+          <div className={`w-24 h-24 mx-auto mb-6 rounded-full ${styles.iconBg} flex items-center justify-center border ${styles.iconBorder} text-4xl backdrop-blur-sm`}>
+            {service.icon}
           </div>
-        </motion.div>
-      )}
-
-      {/* Main Card */}
-      <motion.div
-        animate={{
-          scale: isHovered ? 1.02 : 1,
-          rotateY: isHovered ? 2 : 0
-        }}
-        transition={{ duration: 0.3 }}
-        className={`relative overflow-hidden rounded-2xl border-2 ${variantStyles.border} bg-gradient-to-br ${variantStyles.gradient} backdrop-blur-sm transition-all duration-500 ${variantStyles.shadow}`}
-      >
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_50%)]" />
-        </div>
-      )}
-
-        {/* Content */}
-        <div className="relative p-6">
-          {/* Header */}
-          <div className="flex items-start justify-between mb-4">
-            <div className="flex items-center space-x-3">
-              <div className={`w-12 h-12 ${variantStyles.accent} rounded-xl flex items-center justify-center text-2xl`}>
-                {service.icon}
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-white mb-1">{service.name}</h3>
-                <p className="text-sm text-gray-300">{service.tagline}</p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-1 text-yellow-400">
-              {getCategoryIcon(service.category)}
-            </div>
+          
+          <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-gray-100 transition-colors">
+            {service.name}
+          </h3>
+          
+          <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+            {service.tagline}
+          </p>
+          
+          <div className="text-4xl font-bold text-cyan-400 mb-2 group-hover:text-cyan-300 transition-colors">
+            {service.price}
+            <span className="text-lg text-gray-400 font-normal">/{service.period}</span>
           </div>
-
-          {/* Description */}
-          <p className="text-gray-300 mb-6 leading-relaxed">{service.description}</p>
-
-          {/* Price */}
-          <div className="mb-6">
-            <div className="flex items-baseline space-x-2">
-              <span className="text-3xl font-bold text-white">{service.price}</span>
-              <span className="text-gray-400">/{service.period}</span>
-            </div>
+          
+          {/* Category Badge */}
+          <div className="inline-flex items-center space-x-2 px-3 py-1 bg-gray-800/50 border border-gray-600/30 rounded-full text-xs text-gray-300">
+            <CategoryIcon className="w-3 h-3" />
+            <span>{service.category}</span>
           </div>
         </div>
-
-          {/* Features */}
-          <div className="mb-6">
-            <h4 className="text-sm font-semibold text-gray-300 mb-3">Key Features:</h4>
-            <div className="space-y-2">
-              {service.features.slice(0, isExpanded ? service.features.length : 3).map((feature, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                  className="flex items-center space-x-2 text-sm text-gray-300"
-                >
-                  <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                  <span>{feature}</span>
-                </motion.div>
-              ))}
+        
+        {/* Features List */}
+        <div className="space-y-3 mb-8 relative z-10">
+          <h4 className="text-sm font-semibold text-gray-300 mb-4 flex items-center">
+            <Zap className="w-4 h-4 mr-2 text-cyan-400" />
+            Key Features
+          </h4>
+          {service.features.slice(0, 6).map((feature, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: idx * 0.1 }}
+              className="flex items-center space-x-3 text-sm text-gray-300 group-hover:text-gray-200 transition-colors"
+            >
+              <div className="w-2 h-2 bg-cyan-400 rounded-full group-hover:bg-cyan-300 transition-colors"></div>
+              <span>{feature}</span>
+            </motion.div>
+          ))}
+        </div>
+        
+        {/* Enhanced Market Information */}
+        {service.marketPrice && (
+          <div className="border-t border-white/10 pt-4 mb-6 space-y-3 relative z-10">
+            <div className="flex items-center justify-between text-xs">
+              <span className="text-gray-400">Market Price:</span>
+              <span className="text-green-400 font-semibold">{service.marketPrice}</span>
             </div>
             
-            {/* Show More/Less */}
-            {service.features.length > 3 && (
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setIsExpanded(!isExpanded);
-                }}
-                className="mt-3 text-sm text-cyan-400 hover:text-cyan-300 transition-colors duration-200 flex items-center space-x-1"
-              >
-                <span>{isExpanded ? 'Show Less' : `Show ${service.features.length - 3} More`}</span>
-                <motion.div
-                  animate={{ rotate: isExpanded ? 180 : 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <ArrowRight className="w-3 h-3" />
-                </motion.div>
-              </button>
+            {service.competitors && (
+              <div className="text-xs text-gray-500">
+                Competes with: {service.competitors.slice(0, 2).join(', ')}
+              </div>
             )}
           </div>
-
-          {/* CTA Button */}
+        )}
+        
+        {/* Target Market & Use Cases */}
+        {service.targetMarket && (
+          <div className="border-t border-white/10 pt-4 mb-6 space-y-3 relative z-10">
+            <div className="text-xs">
+              <div className="text-gray-400 mb-2">Target Market:</div>
+              <div className="text-gray-300">{service.targetMarket}</div>
+            </div>
+            
+            {service.useCases && (
+              <div className="text-xs mt-3">
+                <div className="text-gray-400 mb-2">Use Cases:</div>
+                <div className="text-gray-300">{service.useCases.slice(0, 3).join(', ')}</div>
+              </div>
+            )}
+          </div>
+        )}
+        
+        {/* Benefits Section */}
+        {service.benefits && (
+          <div className="border-t border-white/10 pt-4 mb-6 relative z-10">
+            <h4 className="text-sm font-semibold text-gray-300 mb-3 flex items-center">
+              <TrendingUp className="w-4 h-4 mr-2 text-green-400" />
+              Key Benefits
+            </h4>
+            <div className="space-y-2">
+              {service.benefits.slice(0, 3).map((benefit, idx) => (
+                <div key={idx} className="text-xs text-gray-400 flex items-start space-x-2">
+                  <Check className="w-3 h-3 text-green-400 mt-0.5 flex-shrink-0" />
+                  <span>{benefit}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+        
+        {/* CTA Button */}
+        <div className="relative z-10">
           <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className={`w-full py-3 px-6 bg-gradient-to-r ${variantStyles.button} text-white font-semibold rounded-xl transition-all duration-300 flex items-center justify-center space-x-2 group/btn`}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            className={`w-full py-3 px-6 rounded-lg bg-gradient-to-r ${styles.gradient} text-white font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-${styles.textColor}/25 border border-white/20 hover:border-white/40`}
           >
-            <span>Get Started</span>
-            <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
+            Get Started
           </motion.button>
         </div>
-
-        {/* Hover Effects */}
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-          initial={false}
-        />
+        
+        {/* Enhanced Hover Effects */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white/0 via-white/0 to-white/0 group-hover:from-white/5 group-hover:via-white/2 group-hover:to-white/5 transition-all duration-500 rounded-2xl"></div>
       </div>
     </motion.div>
   );
