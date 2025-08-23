@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "timestamp": "2025-08-08T17:08:41.514Z",
+=======
   "timestamp": "2025-08-08T17:17:01.965Z",
+>>>>>>> origin/cursor/automate-feature-comparison-and-merge-to-main-24d8
   "pages": [
     {
       "url": "https://ziontechgroup.netlify.app/",
@@ -28,6 +32,8 @@
     {
       "url": "https://ziontechgroup.netlify.app/blog",
       "status": 200
+<<<<<<< HEAD
+=======
     },
     {
       "url": "https://ziontechgroup.netlify.app/talent/ava-chen",
@@ -48,6 +54,7 @@
     {
       "url": "https://ziontechgroup.netlify.app/talent/lena-mueller",
       "status": 200
+>>>>>>> origin/cursor/automate-feature-comparison-and-merge-to-main-24d8
     }
   ],
   "discovered": [
@@ -57,11 +64,15 @@
     "https://ziontechgroup.netlify.app/talent",
     "https://ziontechgroup.netlify.app/contact",
     "https://ziontechgroup.netlify.app/products",
+<<<<<<< HEAD
+    "https://ziontechgroup.netlify.app/blog"
+=======
     "https://ziontechgroup.netlify.app/blog",
     "https://ziontechgroup.netlify.app/talent/ava-chen",
     "https://ziontechgroup.netlify.app/talent/marco-silva",
     "https://ziontechgroup.netlify.app/talent/nina-patel",
     "https://ziontechgroup.netlify.app/talent/kenji-yamada",
     "https://ziontechgroup.netlify.app/talent/lena-mueller"
+>>>>>>> origin/cursor/automate-feature-comparison-and-merge-to-main-24d8
   ]
 }
