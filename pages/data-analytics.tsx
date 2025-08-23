@@ -2,83 +2,83 @@ import React from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
-  Zap, Battery, Wind, Sun, Droplets, Leaf, Gauge, 
-  TrendingUp, Shield, Globe, Users, Award, Clock, CheckCircle, ArrowRight,
-  Smartphone, Monitor, Cloud, Database, Brain, Atom
+  BarChart3, Database, TrendingUp, Brain, Zap, Shield, 
+  Globe, Users, Award, Clock, CheckCircle, ArrowRight,
+  PieChart, LineChart, Activity, Filter, Search, Cpu
 } from 'lucide-react';
 
-const EnergyUtilitiesSolutions: React.FC = () => {
+const DataAnalytics: React.FC = () => {
   const features = [
     {
-      icon: Zap,
-      title: "Smart Grid Management",
-      description: "AI-powered grid optimization and real-time energy distribution",
-      color: "from-yellow-500 to-orange-500"
-    },
-    {
-      icon: Battery,
-      title: "Energy Storage Solutions",
-      description: "Advanced battery technology and grid-scale storage systems",
-      color: "from-green-500 to-emerald-500"
-    },
-    {
-      icon: Wind,
-      title: "Renewable Energy Integration",
-      description: "Seamless integration of wind, solar, and hydro power sources",
+      icon: BarChart3,
+      title: "Advanced Analytics Platform",
+      description: "Comprehensive data analysis with AI-powered insights and visualization",
       color: "from-blue-500 to-cyan-500"
     },
     {
-      icon: Sun,
-      title: "Solar Power Optimization",
-      description: "AI-driven solar panel efficiency and energy harvesting",
-      color: "from-orange-500 to-red-500"
+      icon: Brain,
+      title: "AI-Powered Intelligence",
+      description: "Machine learning algorithms for predictive analytics and pattern recognition",
+      color: "from-purple-500 to-pink-500"
     },
     {
-      icon: Droplets,
-      title: "Water Management Systems",
-      description: "Intelligent water distribution and conservation platforms",
-      color: "from-cyan-500 to-blue-500"
+      icon: Database,
+      title: "Big Data Processing",
+      description: "Scalable data processing for enterprise-level analytics and reporting",
+      color: "from-green-500 to-emerald-500"
     },
     {
-      icon: Leaf,
-      title: "Sustainability Analytics",
-      description: "Comprehensive environmental impact monitoring and reporting",
-      color: "from-emerald-500 to-teal-500"
+      icon: TrendingUp,
+      title: "Real-time Monitoring",
+      description: "Live data streams and instant insights for proactive decision making",
+      color: "from-yellow-500 to-orange-500"
+    },
+    {
+      icon: Shield,
+      title: "Data Security & Privacy",
+      description: "Enterprise-grade security with compliance and governance controls",
+      color: "from-red-500 to-pink-500"
+    },
+    {
+      icon: Globe,
+      title: "Multi-Cloud Analytics",
+      description: "Unified analytics across cloud platforms and hybrid environments",
+      color: "from-indigo-500 to-purple-500"
     }
   ];
 
   const solutions = [
     {
-      category: "Energy Management",
+      category: "Business Intelligence",
       items: [
-        "Real-time Energy Monitoring",
-        "Predictive Load Balancing",
-        "Demand Response Automation",
-        "Energy Efficiency Optimization",
-        "Peak Demand Management",
-        "Grid Stability Control"
+        "Interactive Dashboards",
+        "Custom Reporting",
+        "KPI Monitoring",
+        "Performance Analytics",
+        "Trend Analysis",
+        "Executive Reporting"
       ]
     },
     {
-      category: "Renewable Integration",
+      category: "Predictive Analytics",
       items: [
-        "Solar Farm Management",
-        "Wind Power Optimization",
-        "Hydroelectric Control Systems",
-        "Biomass Energy Processing",
-        "Geothermal Integration",
-        "Energy Storage Management"
+        "Forecasting Models",
+        "Risk Assessment",
+        "Customer Behavior Analysis",
+        "Market Trend Prediction",
+        "Anomaly Detection",
+        "Pattern Recognition"
       ]
     },
     {
-      category: "Utility Operations",
+      category: "Data Operations",
       items: [
-        "Smart Meter Infrastructure",
-        "Billing & Customer Management",
-        "Outage Detection & Response",
-        "Asset Performance Monitoring",
-        "Maintenance Scheduling",
-        "Regulatory Compliance"
+        "ETL Pipeline Management",
+        "Data Quality Monitoring",
+        "Master Data Management",
+        "Data Governance",
+        "Compliance Reporting",
+        "Data Catalog Management"
       ]
     }
   ];
@@ -86,47 +86,47 @@ const EnergyUtilitiesSolutions: React.FC = () => {
   const technologies = [
     "AI Consciousness Integration",
     "Quantum Computing Optimization",
-    "IoT Sensor Networks",
-    "Machine Learning Analytics",
-    "Blockchain Energy Trading",
-    "Predictive Maintenance",
+    "Real-time Neural Networks",
+    "Advanced Machine Learning",
+    "Predictive Analytics",
+    "Natural Language Processing",
     "Cloud-Native Architecture",
     "Edge Computing Solutions"
   ];
 
   const benefits = [
     {
-      icon: TrendingUp,
-      title: "30% Energy Savings",
-      description: "Reduce operational costs with intelligent energy management"
-    },
-    {
-      icon: Shield,
-      title: "Enhanced Reliability",
-      description: "Improve grid stability and reduce outage frequency"
-    },
-    {
-      icon: Globe,
-      title: "Environmental Impact",
-      description: "Reduce carbon footprint with renewable energy integration"
+      icon: Zap,
+      title: "10x Faster Insights",
+      description: "Accelerate decision making with real-time analytics"
     },
     {
       icon: Users,
-      title: "Customer Satisfaction",
-      description: "Provide better service with predictive maintenance"
+      title: "Data Democratization",
+      description: "Make data accessible to all stakeholders"
+    },
+    {
+      icon: TrendingUp,
+      title: "Improved ROI",
+      description: "Drive business value through data-driven decisions"
+    },
+    {
+      icon: Award,
+      title: "Competitive Advantage",
+      description: "Stay ahead with predictive insights"
     }
   ];
 
   return (
     <Layout
-      title="Energy & Utilities Solutions - Zion Tech Group"
-      description="Revolutionary AI-powered energy and utilities solutions for smart grid management, renewable integration, and sustainable operations. Transform your energy infrastructure with cutting-edge technology."
-      keywords="energy technology, utilities solutions, smart grid, renewable energy, energy management, sustainable technology"
-      canonicalUrl="https://ziontechgroup.com/energy-utilities-solutions"
+      title="Data Analytics Solutions - Zion Tech Group"
+      description="Revolutionary AI-powered data analytics solutions for business intelligence, predictive analytics, and data operations. Transform your data into actionable insights with cutting-edge technology."
+      keywords="data analytics, business intelligence, predictive analytics, big data, AI analytics, data science"
+      canonicalUrl="https://ziontechgroup.com/data-analytics"
     >
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-yellow-900/20 via-orange-900/20 to-green-900/20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-cyan-900/20 to-indigo-900/20" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -134,27 +134,27 @@ const EnergyUtilitiesSolutions: React.FC = () => {
             transition={{ duration: 0.8 }}
           >
             <div className="inline-flex items-center space-x-2 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full text-white/80 text-sm mb-6">
-              <Zap className="w-4 h-4" />
-              <span>Sustainable Energy Technology</span>
+              <BarChart3 className="w-4 h-4" />
+              <span>Intelligent Data Solutions</span>
             </div>
             
             <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-              Powering the Future of
-              <span className="block bg-gradient-to-r from-yellow-400 via-orange-400 to-green-400 bg-clip-text text-transparent">
-                Energy & Utilities
+              Transform Data Into
+              <span className="block bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent">
+                Actionable Intelligence
               </span>
             </h1>
             
             <p className="text-xl lg:text-2xl text-white/80 max-w-4xl mx-auto mb-8 leading-relaxed">
-              Transform your energy infrastructure with AI consciousness, quantum computing, and autonomous systems. 
-              Build a sustainable future with intelligent energy management.
+              Unlock the power of your data with AI consciousness, quantum computing, and autonomous analytics. 
+              Build the future of data-driven decision making.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-semibold rounded-lg hover:from-yellow-600 hover:to-orange-600 transition-all duration-300"
+                className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-cyan-600 transition-all duration-300"
               >
                 Get Started Today
               </motion.button>
@@ -181,10 +181,10 @@ const EnergyUtilitiesSolutions: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-              Cutting-Edge Energy Solutions
+              Cutting-Edge Analytics Solutions
             </h2>
             <p className="text-xl text-white/70 max-w-3xl mx-auto">
-              Experience the future of energy technology with our revolutionary AI-powered platforms
+              Experience the future of data analytics with our revolutionary AI-powered platforms
             </p>
           </motion.div>
 
@@ -220,10 +220,10 @@ const EnergyUtilitiesSolutions: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
-              Comprehensive Energy Solutions
+              Comprehensive Analytics Solutions
             </h2>
             <p className="text-xl text-white/70 max-w-3xl mx-auto">
-              From generation to distribution, we provide end-to-end solutions for modern energy companies
+              From data collection to insights delivery, we provide end-to-end analytics solutions
             </p>
           </motion.div>
 
@@ -238,7 +238,7 @@ const EnergyUtilitiesSolutions: React.FC = () => {
                 className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8"
               >
                 <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
-                  <Gauge className="w-6 h-6 text-green-400 mr-3" />
+                  <PieChart className="w-6 h-6 text-cyan-400 mr-3" />
                   {solution.category}
                 </h3>
                 <ul className="space-y-4">
@@ -283,8 +283,8 @@ const EnergyUtilitiesSolutions: React.FC = () => {
                 viewport={{ once: true }}
                 className="text-center p-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl hover:bg-white/10 transition-all duration-300"
               >
-                <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl flex items-center justify-center mx-auto mb-3">
-                  <Zap className="w-6 h-6 text-white" />
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mx-auto mb-3">
+                  <Cpu className="w-6 h-6 text-white" />
                 </div>
                 <p className="text-white/80 text-sm font-medium">{tech}</p>
               </motion.div>
@@ -307,7 +307,7 @@ const EnergyUtilitiesSolutions: React.FC = () => {
               Why Choose Zion Tech Group?
             </h2>
             <p className="text-xl text-white/70 max-w-3xl mx-auto">
-              Experience the competitive advantages of our revolutionary energy technology solutions
+              Experience the competitive advantages of our revolutionary data analytics solutions
             </p>
           </motion.div>
 
@@ -321,7 +321,7 @@ const EnergyUtilitiesSolutions: React.FC = () => {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
                   <benefit.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-3">{benefit.title}</h3>
@@ -333,7 +333,7 @@ const EnergyUtilitiesSolutions: React.FC = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-yellow-900/20 via-orange-900/20 to-green-900/20">
+      <section className="py-20 bg-gradient-to-r from-blue-900/20 via-cyan-900/20 to-indigo-900/20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -342,16 +342,16 @@ const EnergyUtilitiesSolutions: React.FC = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-              Ready to Transform Your Energy Infrastructure?
+              Ready to Transform Your Data Strategy?
             </h2>
             <p className="text-xl text-white/70 mb-8">
-              Join the future of sustainable energy with our revolutionary AI-powered solutions
+              Join the future of data analytics with our revolutionary AI-powered solutions
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-semibold rounded-lg hover:from-yellow-600 hover:to-orange-600 transition-all duration-300 flex items-center justify-center space-x-2"
+                className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-cyan-600 transition-all duration-300 flex items-center justify-center space-x-2"
               >
                 <span>Get Started Today</span>
                 <ArrowRight className="w-5 h-5" />
@@ -371,4 +371,4 @@ const EnergyUtilitiesSolutions: React.FC = () => {
   );
 };
 
-export default EnergyUtilitiesSolutions;
+export default DataAnalytics;
