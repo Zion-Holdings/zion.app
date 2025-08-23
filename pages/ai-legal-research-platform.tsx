@@ -2,80 +2,80 @@ import React from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { 
-  Shield, Zap, Target, Lock, TrendingUp, Globe, 
-  CheckCircle, Star, BarChart3, Smartphone, Monitor, 
+  Scale, Search, TrendingUp, Shield, Zap, Target, 
+  CheckCircle, Star, Globe, Lock, Smartphone, Monitor, 
   Award, MessageCircle, Cpu
 } from 'lucide-react';
 
-export default function QuantumInternetSecurityPlatform() {
+export default function AILegalResearchPlatform() {
   const features = [
     {
-      icon: <Shield className="w-6 h-6" />,
-      title: 'Quantum Encryption',
-      description: 'Advanced quantum encryption with unbreakable security protocols and quantum key distribution.'
+      icon: <Scale className="w-6 h-6" />,
+      title: 'Legal Research Automation',
+      description: 'AI-powered legal research that analyzes case law, statutes, and legal precedents with unprecedented speed and accuracy.'
     },
     {
-      icon: <Zap className="w-6 h-6" />,
-      title: 'Quantum Key Distribution',
-      description: 'Revolutionary quantum key distribution ensuring secure communication across quantum networks.'
+      icon: <Search className="w-6 h-6" />,
+      title: 'Case Analysis',
+      description: 'Intelligent case analysis with AI-powered insights and legal reasoning identification.'
     },
     {
       icon: <Target className="w-6 h-6" />,
-      title: 'Quantum Authentication',
-      description: 'Quantum-powered authentication systems with advanced identity verification and access control.'
+      title: 'Document Review',
+      description: 'Advanced document review with automated contract analysis and legal document classification.'
     },
     {
-      icon: <Lock className="w-6 h-6" />,
-      title: 'Quantum Firewall',
-      description: 'Next-generation quantum firewall with intelligent threat detection and prevention.'
+      icon: <Zap className="w-6 h-6" />,
+      title: 'Legal Document Generation',
+      description: 'AI-powered legal document generation with customizable templates and compliance checking.'
+    },
+    {
+      icon: <Shield className="w-6 h-6" />,
+      title: 'Compliance Monitoring',
+      description: 'Automated compliance monitoring and risk assessment for legal and regulatory requirements.'
     },
     {
       icon: <TrendingUp className="w-6 h-6" />,
-      title: 'Quantum Analytics',
-      description: 'Comprehensive quantum security analytics with real-time monitoring and threat intelligence.'
-    },
-    {
-      icon: <Globe className="w-6 h-6" />,
-      title: 'Global Quantum Network',
-      description: 'Interconnected global quantum network enabling secure communication worldwide.'
+      title: 'Legal Analytics',
+      description: 'Comprehensive legal analytics with trend analysis and outcome prediction for legal strategies.'
     }
   ];
 
   const benefits = [
-    'Unbreakable quantum encryption',
-    'Improve security by 1000%',
-    'Enable quantum internet by 2030',
-    'Create quantum-resistant systems',
-    'Accelerate secure communication by 500%',
-    'Enable global quantum security',
-    'Scale quantum operations globally',
-    'Future-proof security infrastructure'
+    'Reduce research time by 80%',
+    'Improve case outcomes by 60%',
+    'Increase research accuracy by 70%',
+    'Reduce legal costs by 50%',
+    'Accelerate document review by 200%',
+    'Enhance legal strategy by 150%',
+    'Scale legal operations',
+    'Future-proof legal practice'
   ];
 
   const useCases = [
-    'Quantum Encryption', 'Key Distribution', 'Quantum Authentication',
-    'Quantum Firewall', 'Security Analytics', 'Threat Detection',
-    'Network Security', 'Data Protection', 'Communication Security',
-    'Quantum Internet', 'Global Security', 'Future Technology'
+    'Legal Research', 'Case Analysis', 'Document Review',
+    'Contract Analysis', 'Compliance Monitoring', 'Legal Analytics',
+    'Risk Assessment', 'Document Generation', 'Precedent Analysis',
+    'Regulatory Research', 'Litigation Support', 'Legal Intelligence'
   ];
 
   return (
     <>
       <Head>
-        <title>Quantum Internet Security Platform | Zion Tech Group</title>
-        <meta name="description" content="Pioneer quantum internet security with unbreakable encryption, quantum key distribution, and next-generation authentication." />
-        <meta name="keywords" content="quantum internet security platform, quantum encryption, quantum key distribution, quantum authentication, quantum technology, cybersecurity" />
-        <meta property="og:title" content="Quantum Internet Security Platform | Zion Tech Group" />
-        <meta property="og:description" content="Pioneer quantum internet security with unbreakable encryption." />
+        <title>AI Legal Research Platform | Zion Tech Group</title>
+        <meta name="description" content="Transform legal research with AI-powered automation, case analysis, and document review." />
+        <meta name="keywords" content="AI legal research platform, legal research, case analysis, document review, legal automation, legal technology" />
+        <meta property="og:title" content="AI Legal Research Platform | Zion Tech Group" />
+        <meta property="og:description" content="Transform legal research with AI-powered automation." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://ziontechgroup.com/quantum-internet-security-platform" />
-        <link rel="canonical" href="https://ziontechgroup.com/quantum-internet-security-platform" />
+        <meta property="og:url" content="https://ziontechgroup.com/ai-legal-research-platform" />
+        <link rel="canonical" href="https://ziontechgroup.com/ai-legal-research-platform" />
       </Head>
 
       <div className="min-h-screen bg-black text-white">
         {/* Hero Section */}
         <section className="relative pt-32 pb-20 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-teal-900/20 via-cyan-900/20 to-blue-900/20"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-amber-900/20 via-orange-900/20 to-red-900/20"></div>
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -84,29 +84,29 @@ export default function QuantumInternetSecurityPlatform() {
               className="text-center"
             >
               <div className="flex items-center justify-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-4">
-                  <Shield className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-600 rounded-2xl flex items-center justify-center mb-4">
+                  <Scale className="w-8 h-8 text-white" />
                 </div>
               </div>
-              <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-teal-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent mb-6">
-                Quantum Internet Security Platform
+              <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-amber-400 via-orange-400 to-red-400 bg-clip-text text-transparent mb-6">
+                AI Legal Research Platform
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-                Pioneer quantum internet security with unbreakable encryption, 
-                quantum key distribution, and next-generation authentication.
+                Transform legal research with AI-powered automation, case analysis, 
+                and document review that drives legal excellence and efficiency.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-gradient-to-r from-teal-500 to-cyan-600 text-white rounded-xl font-semibold text-lg hover:from-teal-600 hover:to-cyan-700 transition-all duration-200 shadow-lg shadow-teal-500/25"
+                  className="px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-600 text-white rounded-xl font-semibold text-lg hover:from-amber-600 hover:to-orange-700 transition-all duration-200 shadow-lg shadow-amber-500/25"
                 >
-                  Secure Your Future
+                  Start Free Trial
                 </motion.button>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 border-2 border-teal-500/30 text-teal-400 rounded-xl font-semibold text-lg hover:bg-teal-500/10 transition-all duration-200"
+                  className="px-8 py-4 border-2 border-amber-500/30 text-amber-400 rounded-xl font-semibold text-lg hover:bg-amber-500/10 transition-all duration-200"
                 >
                   Watch Demo
                 </motion.button>
@@ -125,11 +125,11 @@ export default function QuantumInternetSecurityPlatform() {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Revolutionary Quantum Security Features
+                Revolutionary Legal Research Features
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Our platform combines cutting-edge quantum technology with advanced cybersecurity to deliver 
-                security solutions that are unbreakable and future-proof.
+                Our platform combines advanced AI with legal expertise to deliver 
+                research solutions that maximize efficiency and accuracy.
               </p>
             </motion.div>
 
@@ -140,10 +140,10 @@ export default function QuantumInternetSecurityPlatform() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-8 hover:border-teal-500/30 transition-all duration-300 group"
+                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-8 hover:border-amber-500/30 transition-all duration-300 group"
                 >
-                  <div className="w-14 h-14 bg-gradient-to-br from-teal-500/20 to-cyan-600/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <div className="text-teal-400">
+                  <div className="w-14 h-14 bg-gradient-to-br from-amber-500/20 to-orange-600/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <div className="text-amber-400">
                       {feature.icon}
                     </div>
                   </div>
@@ -165,11 +165,11 @@ export default function QuantumInternetSecurityPlatform() {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Transform Internet Security
+                Transform Legal Research
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Experience revolutionary improvements in security, encryption strength, and 
-                threat protection with our quantum internet security platform.
+                Experience revolutionary improvements in research efficiency, case outcomes, and 
+                legal strategy with our AI-powered legal research platform.
               </p>
             </motion.div>
 
@@ -180,10 +180,10 @@ export default function QuantumInternetSecurityPlatform() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-xl border border-gray-700/50 rounded-xl p-6 hover:border-teal-500/30 transition-all duration-300 group"
+                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-xl border border-gray-700/50 rounded-xl p-6 hover:border-amber-500/30 transition-all duration-300 group"
                 >
                   <div className="flex items-center space-x-3">
-                    <CheckCircle className="w-5 h-5 text-teal-400" />
+                    <CheckCircle className="w-5 h-5 text-amber-400" />
                     <span className="text-white font-medium text-sm">{benefit}</span>
                   </div>
                 </motion.div>
@@ -202,11 +202,11 @@ export default function QuantumInternetSecurityPlatform() {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Quantum Security Solutions for Every Need
+                Legal Research Solutions for Every Need
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                From quantum encryption to authentication, our platform provides quantum-powered 
-                solutions for every aspect of internet security and communication.
+                From case analysis to document review, our platform provides AI-powered 
+                solutions for every aspect of legal research and practice.
               </p>
             </motion.div>
 
@@ -217,10 +217,10 @@ export default function QuantumInternetSecurityPlatform() {
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-xl border border-gray-700/50 rounded-xl p-6 hover:border-teal-500/30 transition-all duration-300 group text-center"
+                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-xl border border-gray-700/50 rounded-xl p-6 hover:border-amber-500/30 transition-all duration-300 group text-center"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-br from-teal-500/20 to-cyan-600/20 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <Cpu className="w-6 h-6 text-teal-400" />
+                  <div className="w-12 h-12 bg-gradient-to-br from-amber-500/20 to-orange-600/20 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Cpu className="w-6 h-6 text-amber-400" />
                   </div>
                   <span className="text-white font-medium text-sm">{useCase}</span>
                 </motion.div>
@@ -230,7 +230,7 @@ export default function QuantumInternetSecurityPlatform() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-teal-900/20 via-cyan-900/20 to-blue-900/20">
+        <section className="py-20 bg-gradient-to-r from-amber-900/20 via-orange-900/20 to-red-900/20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -238,26 +238,26 @@ export default function QuantumInternetSecurityPlatform() {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Ready to Secure the Quantum Future?
+                Ready to Transform Legal Research?
               </h2>
               <p className="text-xl text-gray-300 mb-8">
-                Join the select group of pioneers leading the future of quantum internet security. 
-                Be part of the unbreakable security revolution.
+                Join thousands of legal professionals that have already revolutionized their 
+                research with AI automation. Start your free trial today.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-gradient-to-r from-teal-500 to-cyan-600 text-white rounded-xl font-semibold text-lg hover:from-teal-600 hover:to-cyan-700 transition-all duration-200 shadow-lg shadow-teal-500/25"
+                  className="px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-600 text-white rounded-xl font-semibold text-lg hover:from-amber-600 hover:to-orange-700 transition-all duration-200 shadow-lg shadow-amber-500/25"
                 >
-                  Secure Your Future
+                  Get Started Now
                 </motion.button>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 border-2 border-teal-500/30 text-teal-400 rounded-xl font-semibold text-lg hover:bg-teal-500/10 transition-all duration-200"
+                  className="px-8 py-4 border-2 border-amber-500/30 text-amber-400 rounded-xl font-semibold text-lg hover:bg-amber-500/10 transition-all duration-200"
                 >
-                  Contact Security Team
+                  Contact Sales
                 </motion.button>
               </div>
             </motion.div>
@@ -267,4 +267,3 @@ export default function QuantumInternetSecurityPlatform() {
     </>
   );
 }
-

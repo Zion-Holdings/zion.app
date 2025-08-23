@@ -1,11 +1,18 @@
 import React from 'react';
 import Head from 'next/head';
+<<<<<<< HEAD
+import { Shield, Phone, Mail, MapPin, Check, ArrowRight, Star } from 'lucide-react';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import { Button } from '../components/ui/Button';
+import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
+=======
 import { motion } from 'framer-motion';
 import { 
   Shield, Zap, Target, Lock, TrendingUp, Globe, 
   CheckCircle, Star, BarChart3, Smartphone, Monitor, 
   Award, MessageCircle, Cpu
 } from 'lucide-react';
+>>>>>>> origin/cursor/website-audit-and-enhancement-fe5e
 
 export default function QuantumInternetSecurityPlatform() {
   const features = [
@@ -88,6 +95,13 @@ export default function QuantumInternetSecurityPlatform() {
                   <Shield className="w-8 h-8 text-white" />
                 </div>
               </div>
+<<<<<<< HEAD
+              <Link href="/contact" variant="quantum" size="lg" className="w-full">Request Security Audit<ArrowRight className="w-5 h-5 ml-2" /></Button>
+              <div className="mt-6 space-y-3 text-sm text-slate-300">
+                <div className="flex items-center space-x-2"><Phone className="w-4 h-4 text-cyan-400" /><span>{service.contactInfo.mobile}</span></div>
+                <div className="flex items-center space-x-2"><Mail className="w-4 h-4 text-purple-400" /><span>{service.contactInfo.email}</span></div>
+                <div className="flex items-center space-x-2"><MapPin className="w-4 h-4 text-green-400" /><span className="text-xs">{service.contactInfo.address}</span></div>
+=======
               <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-teal-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent mb-6">
                 Quantum Internet Security Platform
               </h1>
@@ -110,6 +124,7 @@ export default function QuantumInternetSecurityPlatform() {
                 >
                   Watch Demo
                 </motion.button>
+>>>>>>> origin/cursor/website-audit-and-enhancement-fe5e
               </div>
             </motion.div>
           </div>
