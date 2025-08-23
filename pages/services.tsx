@@ -46,6 +46,9 @@ import { innovative2025AIServicesExpansion } from '../data/innovative-2025-ai-se
 import { innovative2025Q4NewServices } from '../data/innovative-2025-q4-new-services';
 import { emergingTech2025Innovations } from '../data/emerging-tech-2025-innovations';
 
+// Import additional 2038 services
+import { innovative2038ITMicroSaasServices } from '../data/innovative-2038-it-micro-saas-services';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -58,14 +61,14 @@ import { marketValidatedServices } from '../data/market-validated-services';
 import { industryRealServices } from '../data/industry-real-services';
 
 // Helper function to get service category
-const getServiceCategory = (service: any) => {
+const getServiceCategory = (service: { category?: string; type?: string }) => {
   if (service.category) return service.category;
   if (service.type) return service.type;
   return 'Other';
 };
 
 // Helper function to get service pricing
-const getServicePricing = (service: any) => {
+const getServicePricing = (service: { pricing?: { starter?: string; monthly?: number }; price?: { monthly?: number } }) => {
   if (service.pricing?.starter) return service.pricing.starter;
   if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
   if (service.price?.monthly) return `$${service.price.monthly}/month`;
@@ -73,14 +76,14 @@ const getServicePricing = (service: any) => {
 };
 
 // Helper function to get service features
-const getServiceFeatures = (service: any) => {
+const getServiceFeatures = (service: { features?: string[]; keyFeatures?: string[] }) => {
   if (service.features) return service.features;
   if (service.keyFeatures) return service.keyFeatures;
   return [];
 };
 
 // Helper function to get service description
-const getServiceDescription = (service: any) => {
+const getServiceDescription = (service: { description?: string; tagline?: string }) => {
   if (service.description) return service.description;
   if (service.tagline) return service.tagline;
   return 'No description available';
@@ -134,7 +137,9 @@ const allServices = [
   ...innovative2025AIServicesExpansion,
   // Our new 2025 Q4 innovative services
   ...innovative2025Q4NewServices,
-  ...emergingTech2025Innovations
+  ...emergingTech2025Innovations,
+  // Additional 2038 services
+  ...innovative2038ITMicroSaasServices
 ];
 
 const categories = [
@@ -264,10 +269,10 @@ export default function Services() {
         return (parseInt(getServicePricing(b).replace(/[^0-9]/g, '')) || 0) - 
                (parseInt(getServicePricing(a).replace(/[^0-9]/g, '')) || 0);
       case 'newest':
-        return new Date((b as any).launchDate || '2020-01-01').getTime() - 
-               new Date((a as any).launchDate || '2020-01-01').getTime();
+        return new Date((b as { launchDate?: string }).launchDate || '2020-01-01').getTime() - 
+               new Date((a as { launchDate?: string }).launchDate || '2020-01-01').getTime();
       case 'rating':
-        return (((b as any).rating || 0) as number) - (((a as any).rating || 0) as number);
+        return (((b as { rating?: number }).rating || 0) as number) - (((a as { rating?: number }).rating || 0) as number);
       default:
         return 0;
     }
@@ -495,7 +500,7 @@ export default function Services() {
               >
                 {paginatedServices.map((service, index) => (
                   <motion.div
-                    key={(service as any).id || (service as any).slug || (service as any).name}
+                    key={(service as { id?: string; slug?: string; name: string }).id || (service as { id?: string; slug?: string; name: string }).slug || (service as { id?: string; slug?: string; name: string }).name}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -552,7 +557,7 @@ export default function Services() {
                       {/* Action Button */}
                       <div className="flex flex-col space-y-3">
                         <motion.a
-                          href={(service as any).link || `/services/${((service as any).slug || (service as any).name || 'service').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}
+                          href={(service as { link?: string; slug?: string; name: string }).link || `/services/${((service as { link?: string; slug?: string; name: string }).slug || (service as { link?: string; slug?: string; name: string }).name || 'service').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}
                           whileHover={{ scale: 1.02 }}
                           whileTap={{ scale: 0.98 }}
                           className="flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 shadow-lg shadow-cyan-500/25"
