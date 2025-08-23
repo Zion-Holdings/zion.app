@@ -1,5 +1,9 @@
 [
+<<<<<<< HEAD
+  "ai-autonomous-business-operations-platform",
+=======
   "advanced-solutions",
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-62b6
   "ai-autonomous-business-process-automation",
   "ai-autonomous-customer-success",
   "ai-autonomous-ecosystem",
@@ -65,6 +69,12 @@
   "quantum-storage-platform-2045",
   "quantum-supply-chain-optimizer",
   "quantum-threat-detection",
+<<<<<<< HEAD
+  "services/data-contracts-hub",
+  "services/it-infrastructure",
+  "services/quantum-technology",
+  "services/serverless-lakehouse-starter",
+=======
   "real-estate-technology-solutions",
   "services/ai-consciousness-collaboration-platform",
   "services/ai-consciousness-evolution-platform",
@@ -91,6 +101,7 @@
   "services/quantum-memory-consolidation-ai",
   "services/quantum-predictive-analytics-engine",
   "services/quantum-storage-solutions",
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-62b6
   "space-colonization-services",
   "space-communications-network",
   "space-infrastructure-platform",

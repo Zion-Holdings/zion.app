@@ -2,10 +2,18 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
+<<<<<<< HEAD
+  Phone, Mail, MapPin, 
+  Brain, Atom, Shield, Rocket, BookOpen,
+  Star, Sparkles, BarChart3, 
+  Twitter, Linkedin, Facebook, Instagram, Youtube, Github, 
+  ArrowUp, Building
+=======
   Phone, Mail, MapPin, Globe, ArrowRight, Star, Sparkles,
   Brain, Rocket, Shield, Zap, Target, Atom, BookOpen,
   Building, Cpu, Database, Cloud, Lock, Users, Heart,
   Twitter, Linkedin, Facebook, Instagram, Youtube, Github
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-62b6
 } from 'lucide-react';
 
 const contactInfo = {
@@ -20,11 +28,30 @@ const footerSections = [
     title: 'Micro SAAS Services',
     icon: <Rocket className="w-5 h-5" />,
     links: [
+<<<<<<< HEAD
+      { name: 'AI Customer Success Platform', href: '/ai-customer-success-platform', featured: true },
+      { name: 'Supply Chain Optimization', href: '/intelligent-supply-chain-optimization', featured: true },
+      { name: 'AI Financial Planning', href: '/ai-financial-planning-platform', featured: true },
+      { name: 'AI Sales Intelligence', href: '/ai-sales-intelligence-platform', featured: true },
+      { name: 'HR Analytics Platform', href: '/ai-hr-analytics-platform' },
+      { name: 'AI Decision Engine', href: '/ai-powered-decision-engine' },
+      { name: 'Content Automation', href: '/intelligent-content-automation-platform' },
+      { name: 'CRM Intelligence Suite', href: '/smart-crm-intelligence-suite' },
+      { name: 'AI Evaluation Orchestrator', href: '/ai-evaluation-orchestrator', featured: true },
+              { name: 'SEO Automation Suite', href: '/seo-automation-suite' },
+              { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent' },
+              { name: 'Managed Postgres HA', href: '/managed-postgres-ha' },
+              { name: 'DORA Metrics Dashboard', href: '/dora-metrics-dashboard' },
+              { name: 'Kubernetes Cost Guardrails', href: '/kubernetes-cost-guardrails' },
+              { name: 'OpenTelemetry Quickstart', href: '/opentelemetry-quickstart' },
+              { name: 'API Usage Billing Meter', href: '/api-usage-billing-meter' }
+=======
       { name: 'AI-Powered Business Intelligence', href: '/services/ai-powered-business-intelligence-suite' },
       { name: 'Autonomous Customer Service AI', href: '/services/autonomous-customer-service-ai' },
       { name: 'AI-Powered Marketing Automation', href: '/services/ai-powered-marketing-automation' },
       { name: 'Autonomous Logistics Optimization', href: '/services/autonomous-logistics-optimization' },
       { name: 'View All Micro SAAS', href: '/services?category=micro-saas' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-62b6
     ]
   },
   {
@@ -53,11 +80,71 @@ const footerSections = [
     title: 'Advanced Solutions',
     icon: <Zap className="w-5 h-5" />,
     links: [
+<<<<<<< HEAD
+      { name: 'Quantum-Secure Cloud', href: '/quantum-secure-cloud-infrastructure' },
+      { name: 'Autonomous IT Operations', href: '/autonomous-it-operations-center' },
+      { name: 'Edge Computing Orchestration', href: '/edge-computing-orchestration-platform' },
+      { name: 'Blockchain Infrastructure', href: '/blockchain-infrastructure-platform' },
+      { name: 'AI-Powered DevOps', href: '/ai-powered-devops-platform' },
+      { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure-platform' },
+      { name: 'Zero Trust Security', href: '/zero-trust-security-platform' },
+      { name: 'AI-Powered Cybersecurity', href: '/ai-powered-cybersecurity' }
+    ]
+  },
+  {
+    title: 'Micro SAAS',
+    description: 'Innovative business solutions for modern enterprises',
+    icon: <Rocket className="w-5 h-5 text-emerald-400" />,
+    links: [
+      { name: 'AI Content Generator', href: '/ai-content-generator' },
+      { name: 'AI Code Review', href: '/ai-code-review' },
+      { name: 'AI Meeting Transcriber', href: '/ai-meeting-transcriber-pro' },
+      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' },
+      { name: 'AI Market Research', href: '/ai-market-research' },
+      { name: 'AI Sales Automation', href: '/ai-sales-automation' },
+      { name: 'AI HR Recruitment', href: '/ai-hr-recruitment' },
+      { name: 'AI Customer Service', href: '/ai-customer-service' }
+    ]
+  },
+  {
+    title: 'Industry Solutions',
+    description: 'Industry-specific technology solutions',
+    icon: <Building className="w-5 h-5 text-orange-400" />,
+    links: [
+      { name: 'Healthcare Solutions', href: '/healthcare-solutions' },
+      { name: 'Financial Services', href: '/financial-solutions' },
+      { name: 'Manufacturing AI', href: '/manufacturing-ai-solutions' },
+      { name: 'Retail Technology', href: '/retail-technology-solutions' },
+      { name: 'Education Technology', href: '/education-technology-solutions' },
+      { name: 'Government Solutions', href: '/government-technology-solutions' },
+      { name: 'Energy & Utilities', href: '/energy-utilities-solutions' },
+      { name: 'Biotech AI Research', href: '/biotech-ai-research-platform' }
+    ]
+  },
+  {
+    title: 'Resources',
+    description: 'Documentation, support, and learning',
+    icon: <BookOpen className="w-5 h-5 text-cyan-400" />,
+    links: [
+      { name: 'Blog', href: '/blog' },
+      { name: 'Resources Hub', href: '/resources' },
+      { name: 'Case Studies', href: '/case-studies' },
+      { name: 'Support Center', href: '/support' },
+      { name: 'Training & Certification', href: '/training' },
+      { name: 'Market Pricing', href: '/market-pricing' },
+      { name: 'Services Advertising', href: '/services-advertising' },
+      { name: 'RAG Evaluation Lab', href: '/rag-evaluation-lab' },
+      { name: 'SOC 2 Compliance Automation', href: '/soc2-compliance-automation' },
+      { name: 'Browser Automation Cloud', href: '/browser-automation-cloud' },
+      { name: 'Secrets Rotation Automation', href: '/secrets-rotation-automation' },
+      { name: 'API Performance Testing', href: '/api-performance-testing' }
+=======
       { name: 'Quantum Predictive Analytics', href: '/services/quantum-predictive-analytics-engine' },
       { name: 'Autonomous Innovation AI', href: '/services/autonomous-innovation-ai' },
       { name: 'Quantum Emotional Healing AI', href: '/services/quantum-emotional-healing-ai' },
       { name: 'AI Consciousness Collaboration', href: '/services/ai-consciousness-collaboration-platform' },
       { name: 'View All Advanced Solutions', href: '/advanced-solutions' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-62b6
     ]
   },
   {
@@ -81,6 +168,15 @@ const footerSections = [
   }
 ];
 
+<<<<<<< HEAD
+const socialLinks = [
+  { name: 'Twitter', href: '/social/twitter', icon: <Twitter className="w-5 h-5" /> },
+  { name: 'LinkedIn', href: '/social/linkedin', icon: <Linkedin className="w-5 h-5" /> },
+  { name: 'Facebook', href: '/social/facebook', icon: <Facebook className="w-5 h-5" /> },
+  { name: 'Instagram', href: '/social/instagram', icon: <Instagram className="w-5 h-5" /> },
+  { name: 'YouTube', href: '/social/youtube', icon: <Youtube className="w-5 h-5" /> },
+  { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: <Github className="w-5 h-5" /> }
+=======
 const quickLinks = [
   { name: 'All Services', href: '/comprehensive-services-showcase-2025' },
   { name: 'Pricing', href: '/pricing' },
@@ -88,6 +184,7 @@ const quickLinks = [
   { name: 'Training', href: '/training' },
   { name: 'Support', href: '/support' },
   { name: 'Contact', href: '/contact' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-62b6
 ];
 
 const companyLinks = [

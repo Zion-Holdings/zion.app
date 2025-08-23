@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+import React from 'react';
+import Layout from './layout/Layout';
+=======
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -24,6 +28,7 @@ import {
 import { advancedAIAutomationServices } from '../data/2026-advanced-ai-automation-services';
 import { quantumCybersecurityServices } from '../data/2026-quantum-cybersecurity-services';
 import UltraFuturisticBackground2035 from './backgrounds/UltraFuturisticBackground2035';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-62b6
 import UltraFuturisticServiceCard2026 from './ui/UltraFuturisticServiceCard2026';
 import { motion } from 'framer-motion';
 import { real2036InnovativeServices } from '../data/real-2036-innovative-services';
@@ -31,6 +36,33 @@ import { real2036ITServices } from '../data/real-2036-it-services';
 import { real2036AIServices } from '../data/real-2036-ai-services';
 
 const Homepage2025: React.FC = () => {
+<<<<<<< HEAD
+  const featuredServices = [
+    ...real2036InnovativeServices.filter(s => s.popular).slice(0, 3),
+    ...real2036ITServices.filter(s => s.popular).slice(0, 2),
+    ...real2036AIServices.filter(s => s.popular).slice(0, 1)
+  ];
+
+  return (
+    <Layout>
+      {/* Main Content */}
+      <main className="relative z-10">
+        {/* Hero Section */}
+        <section className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
+          {/* Animated Background Elements */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute top-20 left-20 w-72 h-72 bg-cyan-500/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-20 right-20 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-2000"></div>
+          </div>
+          
+          <div className="text-center max-w-6xl mx-auto relative z-10">
+            <motion.h1 
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent"
+=======
   const [activeSection, setActiveSection] = useState('hero');
   const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
@@ -91,6 +123,7 @@ const Homepage2025: React.FC = () => {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               className="flex items-center space-x-2"
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-62b6
             >
               Zion Tech Group
             </motion.h1>
@@ -345,10 +378,46 @@ const Homepage2025: React.FC = () => {
               ))}
             </div>
           </div>
+<<<<<<< HEAD
+        </section>
+
+        {/* Final CTA */}
+        <section className="py-24 px-4 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-5xl md:text-6xl font-bold mb-8 text-white">
+                Ready to Transform Your Business?
+              </h2>
+              <p className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed">
+                Join the future of technology with our revolutionary services. Let's discuss how we can help you achieve your goals and stay ahead of the competition.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <button className="px-12 py-6 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-xl rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-cyan-500/25">
+                  Contact Us Today
+                </button>
+                <button className="px-12 py-6 border-2 border-cyan-400 text-cyan-400 font-bold text-xl rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105">
+                  Schedule Demo
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      </main>
+    </Layout>
+  );
+});
+
+Homepage2025.displayName = 'Homepage2025';
+=======
         </div>
       </footer>
     </UltraFuturisticBackground2035>
   );
 }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-62b6
 
 export default Homepage2025;

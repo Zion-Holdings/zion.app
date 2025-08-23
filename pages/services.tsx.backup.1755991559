@@ -3,13 +3,32 @@ import SEO from '../components/SEO';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
+<<<<<<< HEAD
+  Brain, Atom, Rocket, Shield, Zap, Code, Server, 
+  Database, Network, Globe, Building, Users, Target,
+  Lightbulb, ArrowRight, ChevronRight, CheckCircle,
+  Star, Award, TrendingUp, BarChart3, Cpu, Cloud,
+  Lock, Eye, Heart, Sparkles, Layers, Palette, Clock, DollarSign, ChevronUp, GraduationCap
+=======
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
   Building, Cpu, Database, Cloud, Lock, Zap
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-62b6
 } from 'lucide-react';
 import Link from 'next/link';
 
+<<<<<<< HEAD
+const Services: React.FC = () => {
+// Import our new innovative 2025 services
+import { realInnovativeMicroSaasServices2025 } from '../data/2025-real-innovative-micro-saas-expansion';
+import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services-expansion';
+import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services-expansion';
+
+// Import our new 2025 advanced services
+import { advancedBusinessIntelligenceServices2025 } from '../data/2025-advanced-business-intelligence-services';
+import { advancedITInfrastructureServices2025 } from '../data/2025-advanced-it-infrastructure-services';
+=======
 // Import our new 2035 service data
 import { innovative2035MicroSaasServices } from '../data/innovative-2035-micro-saas-services';
 import { innovative2035AIServices } from '../data/innovative-2035-ai-services';
@@ -33,12 +52,16 @@ import { realOperationalServices } from '../data/real-operational-services';
 import { marketReadyServices } from '../data/market-ready-services';
 import { marketValidatedServices } from '../data/market-validated-services';
 import { industryRealServices } from '../data/industry-real-services';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-62b6
 
 // Import our new real services
 import { realMicroSaas2025Expansion } from '../data/real-micro-saas-2025-expansion';
 import { realITServices2025Expansion } from '../data/real-it-services-2025-expansion';
 import { realAIServices2025Expansion } from '../data/real-ai-services-2025-expansion';
 
+<<<<<<< HEAD
+export default function ServicesPage() {
+=======
 // Helper function to get service pricing
 const getServicePricing = (service: any) => {
   if (service.pricing?.starter) return service.pricing.starter;
@@ -179,6 +202,7 @@ const sortOptions = [
 
 export default function Services() {
   const [searchQuery, setSearchQuery] = useState('');
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-62b6
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [expandedService, setExpandedService] = useState<number | null>(null);
 
