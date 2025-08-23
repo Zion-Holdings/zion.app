@@ -1,0 +1,63 @@
+name: Automation Cleanup
+
+on:
+  schedule:
+    - cron: '0 2 * * *' # Daily at 2 AM
+  workflow_dispatch: {}
+
+
+concurrency:
+  group: "github.workflow-${{ github.ref }}"
+  cancel-in-progress: true
+
+  contents: write
+
+jobs:
+
+  cleanup:
+      - name: Checkout
+        uses: actions/checkout@v4
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Clean up old automation artifacts
+        run: |
+          echo "Cleaning up old automation artifacts..."
+          
+          # Clean up old analytics files (keep last 7 days)
+          find automation/analytics -name "*.html" -mtime +7 -delete 2>/dev/null || true
+          find automation/analytics -name "*.json" -mtime +7 -delete 2>/dev/null || true
+          find automation/analytics -name "*.csv" -mtime +7 -delete 2>/dev/null || true
+          
+          # Clean up old backup directories (keep last 3 days)
+          find automation/backups -type d -mtime +3 -exec rm -rf {} + 2>/dev/null || true
+          
+          # Clean up old optimization reports (keep last 5 days)
+          find automation/optimization -name "*.json" -mtime +5 -delete 2>/dev/null || true
+          
+          # Clean up old deployment reports (keep last 3 days)
+          find automation/reports -name "deployment-report-*.json" -mtime +3 -delete 2>/dev/null || true
+          
+          # Clean up old update pages (keep last 7 days)
+          find pages/reports/updates -name "update-*.tsx" -mtime +7 -delete 2>/dev/null || true
+          
+          echo "Cleanup completed"
+
+      - name: Commit cleanup changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "chore(cleanup): remove old automation artifacts [skip ci]"
+            git push
+          else
+            echo "No cleanup changes to commit"
+          fi

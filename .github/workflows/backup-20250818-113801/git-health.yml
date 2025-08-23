@@ -1,0 +1,30 @@
+---
+name: Git Health
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '0 2 * * *'
+jobs:
+  git-health:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Run git health check
+        run: node automation/git-health-runner.cjs
+    timeout-minutes: 30
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: git-health.yml-${{ github.ref }}
+  cancel-in-progress: true
