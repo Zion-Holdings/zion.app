@@ -3,7 +3,7 @@ import Layout from './layout/Layout';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
-  ArrowRight, Brain, Atom, Shield, Zap, Search, MessageCircle, Phone, Mail
+  ArrowRight, Brain, Atom, Shield, Zap, Search, MessageCircle, Phone, Mail, Building, Rocket
 } from 'lucide-react';
 import { AnimatePresence } from 'framer-motion';
 
@@ -117,7 +117,8 @@ const Homepage2025: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto"
           >
-            Zion Tech Group delivers cutting-edge AI, quantum computing, and space technology solutions that transform businesses and drive innovation.
+            Zion Tech Group delivers cutting-edge AI, quantum computing, micro SAAS, and space technology solutions that transform businesses and drive innovation. 
+            Experience the future with our revolutionary 2038 services.
           </motion.p>
 
           {/* Search Bar */}
@@ -176,16 +177,40 @@ const Homepage2025: React.FC = () => {
               <div className="text-gray-400 text-sm">Projects Delivered</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-purple-400 mb-2">50+</div>
-              <div className="text-gray-400 text-sm">AI Solutions</div>
+              <div className="text-3xl md:text-4xl font-bold text-purple-400 mb-2">100+</div>
+              <div className="text-gray-400 text-sm">AI & Quantum Services</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">25+</div>
-              <div className="text-gray-400 text-sm">Quantum Services</div>
+              <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">50+</div>
+              <div className="text-gray-400 text-sm">Micro SAAS Solutions</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-green-400 mb-2">99.9%</div>
               <div className="text-gray-400 text-sm">Uptime SLA</div>
+            </div>
+          </motion.div>
+
+          {/* Contact Information */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.0 }}
+            className="mt-12 bg-gradient-to-r from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-2xl p-6 max-w-2xl mx-auto border border-white/20"
+          >
+            <h3 className="text-xl font-semibold mb-4 text-cyan-400 text-center">Get Started Today</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+              <div className="flex items-center justify-center">
+                <Phone className="w-4 h-4 mr-2 text-purple-400" />
+                <span>+1 302 464 0950</span>
+              </div>
+              <div className="flex items-center justify-center">
+                <Mail className="w-4 h-4 mr-2 text-purple-400" />
+                <span>kleber@ziontechgroup.com</span>
+              </div>
+              <div className="flex items-center justify-center">
+                <Building className="w-4 h-4 mr-2 text-purple-400" />
+                <span>Middletown DE 19709</span>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -202,10 +227,10 @@ const Homepage2025: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Revolutionary Services
+              Revolutionary 2038 Services
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              From AI consciousness evolution to quantum space technology, we're building the future today.
+              Experience the future with our cutting-edge AI, quantum computing, and micro SAAS solutions that push the boundaries of what's possible in technology.
             </p>
           </motion.div>
 
@@ -221,16 +246,19 @@ const Homepage2025: React.FC = () => {
               <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center mb-6">
                 <Brain className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">AI Consciousness Evolution</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">AI & Machine Learning</h3>
               <p className="text-gray-300 mb-6">
-                Advanced AI systems that evolve and adapt, pushing the boundaries of machine intelligence.
+                Revolutionary AI solutions including quantum AI, computer vision, and predictive analytics.
               </p>
-              <Link
-                href="/ai-services"
-                className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors"
-              >
-                Learn More <ArrowRight className="ml-2 w-4 h-4" />
-              </Link>
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-gray-400">Starting from $79/month</span>
+                <Link
+                  href="/innovative-2038-services-showcase"
+                  className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors"
+                >
+                  Learn More <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </div>
             </motion.div>
 
             {/* Quantum Services */}
@@ -246,36 +274,59 @@ const Homepage2025: React.FC = () => {
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">Quantum Computing</h3>
               <p className="text-gray-300 mb-6">
-                Next-generation quantum systems solving complex problems beyond classical computing limits.
+                Breakthrough quantum solutions for optimization, cryptography, and scientific computing.
               </p>
-              <Link
-                href="/quantum-services"
-                className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors"
-              >
-                Learn More <ArrowRight className="ml-2 w-4 h-4" />
-              </Link>
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-gray-400">Starting from $199/month</span>
+                <Link
+                  href="/innovative-2038-services-showcase"
+                  className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors"
+                >
+                  Learn More <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </div>
             </motion.div>
 
-            {/* Space Technology */}
+            {/* Micro SAAS */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-blue-900/20 to-indigo-900/20 border border-blue-500/20 rounded-2xl p-8 backdrop-blur-sm hover:border-blue-500/40 transition-all duration-300"
+              className="bg-gradient-to-br from-blue-900/20 to-cyan-900/20 border border-blue-500/20 rounded-2xl p-8 backdrop-blur-sm hover:border-blue-500/40 transition-all duration-300"
             >
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mb-6">
-                <Zap className="w-8 h-8 text-white" />
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6">
+                <Rocket className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">Space Technology</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Micro SAAS Solutions</h3>
               <p className="text-gray-300 mb-6">
-                Revolutionary space solutions from satellite networks to interplanetary infrastructure.
+                Innovative micro SAAS platforms for sustainability, legal tech, and business automation.
               </p>
+              <div className="flex items-center justify-between">
+                <span className="text-sm text-gray-400">Starting from $49/month</span>
+                <Link
+                  href="/innovative-2038-services-showcase"
+                  className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
+                >
+                  Learn More <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* CTA for Services */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="text-center mt-16"
+            >
               <Link
-                href="/space-technology"
-                className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
+                href="/innovative-2038-services-showcase"
+                className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 transform hover:scale-105"
               >
-                Learn More <ArrowRight className="ml-2 w-4 h-4" />
+                Explore All Services
+                <ArrowRight className="w-5 h-5" />
               </Link>
             </motion.div>
           </div>
@@ -373,6 +424,12 @@ const Homepage2025: React.FC = () => {
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105"
               >
                 Get Started Today
+              </Link>
+              <Link
+                href="/innovative-2038-services-showcase"
+                className="bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105"
+              >
+                Explore Services
               </Link>
               <Link
                 href="/demo"
