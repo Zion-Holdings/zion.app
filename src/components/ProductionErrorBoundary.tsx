@@ -63,7 +63,7 @@ class ProductionErrorBoundary extends Component<Props, State> {
       Sentry.withScope((scope) => {
         scope.setTag('errorBoundary', 'ProductionErrorBoundary');
         scope.setTag('errorType', this.state.errorType);
-        scope.setTag('retryCount', this.state.retryCount);
+        scope.setTag('retryCount', this.state.retryCount.toString());
         scope.setContext('errorInfo', {
           componentStack: errorInfo.componentStack || 'Unknown'
         });

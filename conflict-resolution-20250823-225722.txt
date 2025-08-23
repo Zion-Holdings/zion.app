@@ -27,3 +27,9 @@
 2025-08-23 22:57:28 - Resolving conflicts in src/main.tsx for branch 3ycx6d-codex/implement-global-error-boundary-with-toasts
 2025-08-23 22:57:28 - Resolving conflicts in src/utils/sentry.ts for branch 3ycx6d-codex/implement-global-error-boundary-with-toasts
 2025-08-23 22:57:28 - Resolving conflicts in tsconfig.json for branch 3ycx6d-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:57:29 - Merge conflicts detected in 42l7l1-codex/check-logs-and-fix-errors
+2025-08-23 22:57:29 - Resolving conflicts in package.json for branch 42l7l1-codex/check-logs-and-fix-errors
+2025-08-23 22:57:29 - Resolving conflicts in pages/404.tsx for branch 42l7l1-codex/check-logs-and-fix-errors
+2025-08-23 22:57:29 - Resolving conflicts in pages/500.tsx for branch 42l7l1-codex/check-logs-and-fix-errors
+2025-08-23 22:57:29 - Resolving conflicts in pages/_document.tsx for branch 42l7l1-codex/check-logs-and-fix-errors
+2025-08-23 22:57:29 - Resolving conflicts in pages/offline.tsx for branch 42l7l1-codex/check-logs-and-fix-errors

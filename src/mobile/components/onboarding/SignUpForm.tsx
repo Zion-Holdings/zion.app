@@ -73,9 +73,9 @@ export function SignUpForm() {
         const result = await signUp(formData.email, formData.password, {
           name: formData.name,
         });
-        
+
         if (result?.error) {
-          throw new Error(result.error as any); // Cast to any if type is AuthError
+          throw new Error(result.error);
         }
 
         if (result?.emailVerificationRequired) {
@@ -93,9 +93,10 @@ export function SignUpForm() {
         
         router.push("/mobile");
       }
-    } catch (err: any) {
+    } catch (err: unknown) {
       logErrorToProduction('Signup/Login error:', { data: err });
-      setError(err.message || 'An unexpected error occurred. Please try again.');
+      const message = err instanceof Error ? err.message : 'An unexpected error occurred. Please try again.';
+      setError(message);
     } finally {
       setIsLoading(false);
     }
@@ -104,8 +105,9 @@ export function SignUpForm() {
   const handleGoogleLogin = async () => {
     try {
       await loginWithGoogle();
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : 'Google login failed';
+      setError(message);
     }
   };
   

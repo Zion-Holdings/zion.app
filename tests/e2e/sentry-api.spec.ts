@@ -32,7 +32,11 @@ async function pollSentryForEvent(request: any) {
   throw new Error('Sentry event not found within 30 seconds');
 }
 
-test('Sentry test error endpoint sends error to Sentry', async ({ request }) => {
+test('Sentry test error endpoint sends error to Sentry', async ({ request }, testInfo) => {
+  if (!SENTRY_API_TOKEN || !SENTRY_PROJECT_SLUG || !SENTRY_ORG_SLUG) {
+    testInfo.skip('Sentry credentials not provided');
+  }
+
   const response = await request.get(
     'https://app.ziontechgroup.com/api/sentry-test-error-api'
   );

@@ -42,25 +42,85 @@ const OfflinePage: React.FC = () => {
               className="w-full px-6 py-3 bg-gradient-to-r from-cyan-400 to-blue-500 text-white font-semibold rounded-xl hover:from-cyan-500 hover:to-blue-600 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 flex items-center justify-center space-x-2"
             >
               <RefreshCw className="w-5 h-5" />
-              <span>Try Again</span>
-            </button>
+              {retryCount > 0 ? `Retry (${retryCount})` : 'Try Again'}
+            </Button>
+            
+          <Button
+            onClick={() => router.push('/')}
+            variant="outline"
+            size="lg"
+            className="flex items-center gap-2"
+          >
+            <Home className="w-5 h-5" />
+            Go to Homepage
+          </Button>
 
-            <div className="grid grid-cols-2 gap-4">
-              <Link
-                href="/"
-                className="px-4 py-3 border-2 border-gray-600 text-gray-300 font-medium rounded-xl hover:border-cyan-400 hover:text-cyan-400 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 flex items-center justify-center space-x-2"
-              >
-                <Home className="w-4 h-4" />
-                <span>Home</span>
-              </Link>
+          <Button
+            onClick={() => router.push('/marketplace')}
+            variant="outline"
+            size="lg"
+            className="flex items-center gap-2"
+          >
+            <ShoppingCart className="w-5 h-5" />
+            Go to Marketplace
+          </Button>
+        </div>
 
-              <Link
-                href="/contact"
-                className="px-4 py-3 border-2 border-gray-600 text-gray-300 font-medium rounded-xl hover:border-cyan-400 hover:text-cyan-400 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 flex items-center justify-center space-x-2"
-              >
-                <Phone className="w-4 h-4" />
-                <span>Contact</span>
-              </Link>
+          {/* Quick Actions */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <h2 className="text-2xl font-bold text-center mb-8">Available Offline Features</h2>
+            
+            <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              {quickActions.map((action, index) => (
+                <motion.div
+                  key={action.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+                >
+                  <Card className={`h-full transition-all duration-300 hover:shadow-lg ${
+                    action.available 
+                      ? 'hover:scale-105 cursor-pointer' 
+                      : 'opacity-60 cursor-not-allowed'
+                  }`}>
+                    <CardHeader className="text-center">
+                      <div className={`mx-auto w-12 h-12 rounded-full flex items-center justify-center mb-3 ${
+                        action.available 
+                          ? 'bg-blue-100 dark:bg-blue-900/20' 
+                          : 'bg-gray-100 dark:bg-gray-800'
+                      }`}>
+                        <action.icon className={`w-6 h-6 ${
+                          action.available 
+                            ? 'text-blue-600 dark:text-blue-400' 
+                            : 'text-gray-400'
+                        }`} />
+                      </div>
+                      <CardTitle className="text-lg">{action.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="text-center">
+                      <p className="text-muted-foreground mb-4">{action.description}</p>
+                      {action.available ? (
+                        <Button 
+                          onClick={() => router.push(action.href)}
+                          variant="outline" 
+                          size="sm" 
+                          className="w-full"
+                        >
+                          Access
+                        </Button>
+                      ) : (
+                        <Button disabled size="sm" className="w-full">
+                          Requires Internet
+                        </Button>
+                      )}
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
             </div>
           </div>
 

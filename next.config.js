@@ -20,8 +20,8 @@ const nextConfig = {
     // Disable profiling for faster builds
     swcTraceProfiling: false,
     // Enable Node.js runtime for middleware to avoid Next.js warnings
-    nodeMiddleware: false, // Explicitly disable, was causing build issues
-    // Removed esmExternals to prevent external module dynamic import issues
+    nodeMiddleware: false, // Explicitly disable, was causing build issues (requires canary)
+    // Removed esmExternals to prevent external module dynamic import issues (already handled by deleting the property below)
   },
 
   // Image optimization configuration
@@ -100,6 +100,7 @@ const nextConfig = {
     'ajv-keywords',
     '@ungap/structured-clone',
     'axios-retry',
+    'react-error-boundary', // Add react-error-boundary
     // i18next and related packages for transpilation
     'i18next',
     'i18next-browser-languagedetector',
@@ -784,16 +785,17 @@ const nextConfig = {
     // Ensure consistent optimization settings in all environments
   config.optimization = {
     ...config.optimization,
+    // Explicitly disable usedExports to prevent cacheUnaffected conflicts
+    usedExports: false,
   };
 
-  // Disable usedExports to avoid cacheUnaffected conflicts
-  if (config.optimization && 'usedExports' in config.optimization) {
-    config.optimization.usedExports = false;
-  }
 
   // Remove cacheUnaffected in case any plugin re-added it
   if (config.cache && config.cache.cacheUnaffected !== undefined) {
     delete config.cache.cacheUnaffected;
+  }
+  if (config.optimization && 'cacheUnaffected' in config.optimization) {
+    delete config.optimization.cacheUnaffected;
   }
   if (config.experiments && 'cacheUnaffected' in config.experiments) {
     config.experiments.cacheUnaffected = false;

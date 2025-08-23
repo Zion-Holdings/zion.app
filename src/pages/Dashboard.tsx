@@ -60,8 +60,9 @@ export default function Dashboard() {
   const { data: orders = [], isLoading: ordersLoading } = useGetOrdersQuery(userId);
   const { favorites } = useFavorites();
 
-  // Type assertion to work around Supabase User type limitations
-  const userWithExtendedProps = user as any;
+  // Type assertion to work around Supabase User type limitations - userWithExtendedProps can remain for now if it accesses non-standard props.
+  // Standard props like user_metadata should resolve correctly on the original 'user' object.
+  const userWithExtendedProps = user as any; // Keep for potential non-standard props like 'displayName' if not on User type
   const userType = userWithExtendedProps?.userType || user?.user_metadata?.userType || 'talent';
   const roleForTour = userType === 'client' || userType === 'admin' ? 'client' : 'talent';
 
@@ -91,7 +92,8 @@ export default function Dashboard() {
   const handleTestNotification = async () => {
     try {
       const { createTestNotification } = await loadNotificationFunctions();
-      const result = await createTestNotification(user?.id ?? "");
+      // Using type assertion as a workaround for persistent TS error.
+      const result = await createTestNotification((user as any)?.id ?? "");
       if (result.success) {
         toast({
           title: "Test notification created",
@@ -192,7 +194,7 @@ export default function Dashboard() {
                         try {
                           const { createOnboardingNotification } = await loadNotificationFunctions();
                           await createOnboardingNotification({
-                            userId: user?.id ?? "",
+                             userId: user?.id ?? "",
                             missingMilestone: 'profile_completed',
                             userRole: roleForTour
                           });
@@ -220,7 +222,7 @@ export default function Dashboard() {
                         try {
                           const { createSystemNotification } = await loadNotificationFunctions();
                           await createSystemNotification({
-                            userId: user?.id ?? "",
+                             userId: user?.id ?? "", // Already correct, no assertion was here in the last error log for this specific one
                             title: "New Feature Available!",
                             message: "We've added a new notification center to help you stay updated with important information.",
                             actionUrl: "/notifications",

@@ -14,6 +14,8 @@ unhandledRejection [TypeError: I.map is not a function]
 ```
 
 These errors indicate dependencies were not installed correctly.
+Starting from July 2025, the build monitor treats this message as a
+**critical error** so it doesn't go unnoticed.
 
 ## 2. Install Dependencies
 Ensure you have internet access, then run:

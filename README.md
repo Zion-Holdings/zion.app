@@ -63,8 +63,13 @@ Ensure all variables marked as required in `.env.example` or in specific documen
 - **[Optional Two-Factor Authentication](TWO_FACTOR_AUTHENTICATION_SUMMARY.md)** - Overview of enabling 2FA in the IPO portal
 - **[Logging Guidelines](docs/LOGGING_GUIDELINES.md)** - Usage instructions for the project logger
 - **Collect Logs** - `npm run logs:collect` bundles recent logs under `logs/archive/`
-  - **Analyze Logs** - `npm run logs:summary` scans collected `.log` and `.txt` files, reports missing translation keys, and flags router context errors like `useNavigate()` without a `<Router>`
+- **Analyze Logs** - `npm run logs:summary` scans collected `.log` and `.txt` files, reports missing translation keys, and flags router context errors like `useNavigate()` without a `<Router>`
+- **Improved Analysis** - The log analyzer now highlights TypeScript compilation issues such as `Cannot find name` errors
 - **Health Check** - `npm run logs:health` prints a quick system status report
+- You can skip external connectivity tests by setting `DISABLE_EXTERNAL_SERVICE_CHECKS=true` when running
+  the health check (useful for offline environments)
+- **Health Summary** - `npm run logs:health:summary` writes a detailed report to `logs/health-summary.json`
+  including an overall project grade
 - **Missing Key Log** - Any translation keys not found at runtime are appended to `logs/missing-keys.log`
 - **Check for Missing Translations** - `npm run i18n:missing` verifies that all locales contain the same translation keys
 
@@ -240,8 +245,12 @@ for errors and reinstall dependencies:
 npm run build && npm run dev
 ```
 
-If you don't have network connectivity, run `./offline-dev.sh` to start a
-minimal offline server until you can reinstall the packages.
+If you don't have network connectivity, run `npm run dev:offline` (which calls
+`./offline-dev.sh`) to start a minimal offline server until you can reinstall
+the packages.
+
+Refer to the more detailed [Blank Screen Troubleshooting Guide](docs/BLANK_SCREEN_FIX_GUIDE.md)
+for additional steps and diagnostics if the issue persists.
 
 ### Self-Maintenance Automation
 The project includes several automations that help it heal itself and stay up to date:
