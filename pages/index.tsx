@@ -17,6 +17,26 @@ export default function HomePage() {
         <meta property="og:title" content="Zion Tech Group — Autonomous Innovation Hub & AI-Powered Cloud Platform" />
         <meta property="og:description" content="Experience autonomous technology with 227+ automations, AI-powered cloud systems, comprehensive redundancy, and zero-downtime operations." />
         <meta name="twitter:card" content="summary_large_image" />
+        <script
+          type="application/ld+json"
+          // Structured data for better SEO
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: 'Zion Tech Group',
+              url: 'https://zion.app',
+              potentialAction: {
+                '@type': 'SearchAction',
+                target: 'https://zion.app/search?q={search_term_string}',
+                'query-input': 'required name=search_term_string',
+              },
+              sameAs: [
+                'https://github.com/Zion-Holdings/zion.app',
+              ],
+            }),
+          }}
+        />
       </Head>
 
       <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950 text-white">
