@@ -12,6 +12,9 @@ import { real2037Q1InnovativeAdditions } from '../data/real-2037-q1-innovative-a
 import { real2037Q1ITInnovations } from '../data/real-2037-q1-it-innovations';
 import { real2037Q1MicroSaasInnovations } from '../data/real-2037-q1-micro-saas-innovations';
 
+<<<<<<< HEAD
+const contact = {
+=======
 interface ServiceCardProps {
   id?: string;
   name: string;
@@ -40,6 +43,7 @@ interface ServiceCardProps {
 }
 
 const contactInfo = {
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-d91d
   mobile: '+1 302 464 0950',
   email: 'kleber@ziontechgroup.com',
   address: '364 E Main St STE 1008 Middletown DE 19709',
@@ -53,8 +57,13 @@ const ServiceCard = ({ service, index }: { service: ServiceCardProps; index: num
     transition={{ duration: 0.5, delay: index * 0.1 }}
     className="relative group"
   >
+<<<<<<< HEAD
+    <div className={`absolute inset-0 bg-gradient-to-r ${service.color || 'from-cyan-500 to-blue-600'} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
+    <div className={`relative bg-gradient-to-r ${service.color ? service.color.replace('from-', 'from-').replace('to-', 'to-') : 'from-cyan-500 to-blue-600'} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
+=======
     <div className={`absolute inset-0 bg-gradient-to-r ${service.color} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
     <div className={`relative bg-gradient-to-r ${service.color ? service.color.replace('from-', 'from-').replace('to-', 'to-') : 'from-gray-600 to-gray-800'} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-d91d
       <div className="flex items-start justify-between mb-6">
         <div className="text-4xl">{service.icon || '🚀'}</div>
         {service.popular && (

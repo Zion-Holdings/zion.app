@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
+<<<<<<< HEAD
+  Phone, Mail, MapPin, 
+=======
   Globe, Phone, Mail, MapPin, 
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-d91d
   Brain, Atom, Target, 
   Star, 
   Twitter, Linkedin, Youtube, Github, 
@@ -135,10 +139,15 @@ const footerSections = [
       { name: 'Services', href: '/services' },
       { name: 'Pricing', href: '/pricing' },
       { name: 'Support', href: '/support' },
+<<<<<<< HEAD
+      { name: 'Privacy Policy', href: '/privacy' },
+      { name: 'Terms of Service', href: '/terms' }
+=======
       { name: 'Training', href: '/training' },
       { name: 'Resources', href: '/resources' },
       { name: 'AI Ethics & Governance', href: '/ai-ethics-governance' },
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution' }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-d91d
     ]
   }
 ];

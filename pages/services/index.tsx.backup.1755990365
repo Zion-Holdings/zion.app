@@ -433,7 +433,11 @@ export default function ServicesIndexPage() {
                   {featuredServices.map((service: ServiceItem, index: number) => (
                     <UltraFuturisticServiceCard2026
                       key={`${service.id || service.name}-${index}`}
+<<<<<<< HEAD
+                      service={service as any}
+=======
                       service={adaptServiceForCard(service)}
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-d91d
                       variant="quantum"
                       theme="quantum"
                     />
@@ -452,7 +456,11 @@ export default function ServicesIndexPage() {
                   {latestServices.map((service: ServiceItem, index: number) => (
                     <UltraFuturisticServiceCard2026
                       key={`${service.id || service.name}-${index}`}
+<<<<<<< HEAD
+                      service={service as any}
+=======
                       service={adaptServiceForCard(service)}
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-d91d
                       variant="ai"
                       theme="neon"
                     />
@@ -503,7 +511,11 @@ export default function ServicesIndexPage() {
                         {categoryServices.slice(0, 6).map((service: ServiceItem, index: number) => (
                           <UltraFuturisticServiceCard2026
                             key={`${service.id || service.name}-${index}`}
+<<<<<<< HEAD
+                            service={service as any}
+=======
                             service={adaptServiceForCard(service)}
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-d91d
                             variant="default"
                             theme="cyber"
                           />
@@ -591,7 +603,11 @@ export default function ServicesIndexPage() {
                 {featuredServices.map((service: ServiceItem, index: number) => (
                   <UltraFuturisticServiceCard2026
                     key={`${service.id || service.name}-${index}`}
+<<<<<<< HEAD
+                    service={service as any}
+=======
                     service={adaptServiceForCard(service)}
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-d91d
                     variant="quantum"
                     theme="quantum"
                   />
@@ -610,7 +626,11 @@ export default function ServicesIndexPage() {
                 {latestServices.map((service: ServiceItem, index: number) => (
                   <UltraFuturisticServiceCard2026
                     key={`${service.id || service.name}-${index}`}
+<<<<<<< HEAD
+                    service={service as any}
+=======
                     service={adaptServiceForCard(service)}
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-d91d
                     variant="ai"
                     theme="neon"
                   />
@@ -665,6 +685,16 @@ export default function ServicesIndexPage() {
                       </span>
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<<<<<<< HEAD
+                                              {categoryServices.slice(0, 6).map((service: ServiceItem, index: number) => (
+                        <UltraFuturisticServiceCard2026
+                          key={`${service.id || service.name}-${index}`}
+                          service={service as any}
+                          variant="default"
+                          theme="cyber"
+                        />
+                      ))}
+=======
                                               {categoryServices.slice(0, 6).map((service: Service, index: number) => (
                           <UltraFuturisticServiceCard2026
                             key={`${service.id || service.name}-${index}`}
@@ -673,6 +703,7 @@ export default function ServicesIndexPage() {
                             theme="cyber"
                           />
                         ))}
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-d91d
                     </div>
                   </Card>
                 );
