@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "generatedAt": "2025-08-11T23:50:51.476Z",
+=======
   "generatedAt": "2025-08-11T23:50:23.822Z",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-a4c6
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
@@ -7,7 +11,11 @@
     "ai-trends-radar-runner",
     "asset-inventory-runner",
     "auto-scheduler",
+<<<<<<< HEAD
+    "automation-heartbeat",
+=======
     "automation-health",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-a4c6
     "automation-matrix",
     "autonomous-git-sync",
     "autonomous-invention-lab",
@@ -72,7 +80,11 @@
     "newsroom-auto-publisher",
     "newsroom-runner",
     "og-image-update-runner",
+<<<<<<< HEAD
+    "opengraph-coverage-runner",
+=======
     "ops-consolidator",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-a4c6
     "orphan-pages-detector",
     "pagespeed-insights-runner",
     "rapid-sync",
@@ -108,6 +120,11 @@
     "ui-evolution-beautify",
     "ultrafast-front-orchestrator",
     "ultrafast-orchestrator",
+<<<<<<< HEAD
+    "unused-exports-runner",
+    "unused-media-scanner",
+    "ux-friction-runner"
+=======
     "unused-media-scanner",
     {
       "name": "ops-consolidator",
@@ -117,5 +134,6 @@
       "name": "automation-health",
       "path": "netlify/functions/automation-health.js"
     }
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-a4c6
   ]
 }

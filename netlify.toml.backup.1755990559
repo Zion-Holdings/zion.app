@@ -248,6 +248,8 @@
 [[scheduled.functions]]
   name = "deps-auto-upgrade-runner"
   schedule = "0 3 * * *"
+<<<<<<< HEAD
+=======
 
 # New autonomous cloud scanners
 [[scheduled.functions]]
@@ -269,6 +271,7 @@
 [[scheduled.functions]]
   name = "pagespeed-insights-runner"
   schedule = "11 */6 * * *" # every 6 hours, offset
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-a4c6
 
 # Content freshness auditor
 [[scheduled.functions]]
@@ -277,6 +280,15 @@
 
 # Docs relative link auditor
 [[scheduled.functions]]
+<<<<<<< HEAD
+  name = "docs-link-audit-runner"
+  schedule = "*/30 * * * *"
+
+# Image dimension auditor
+[[scheduled.functions]]
+  name = "image-dimension-audit-runner"
+  schedule = "*/20 * * * *"
+=======
   name = "adaptive-orchestrator"
   schedule = "*/5 * * * *"
 
@@ -287,3 +299,4 @@
 [[scheduled.functions]]
   name = "automation-health"
   schedule = "*/10 * * * *"
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-a4c6
