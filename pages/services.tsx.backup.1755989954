@@ -27,13 +27,6 @@ import { innovative2025MicroSaasExpansion } from '../data/innovative-2025-micro-
 import { innovative2025ITSolutionsExpansion } from '../data/innovative-2025-it-solutions-expansion';
 import { innovative2025AIServicesExpansion } from '../data/innovative-2025-ai-services-expansion';
 
-<<<<<<< HEAD
-// Import our new Q4 2025 innovative services
-import { innovative2025Q4MicroSaasExpansion } from '../data/innovative-2025-q4-micro-saas-expansion';
-import { innovative2025Q4ITServicesExpansion } from '../data/innovative-2025-q4-it-services-expansion';
-import { innovative2025Q4AIServicesExpansion } from '../data/innovative-2025-q4-ai-services-expansion';
-import { innovative2025Q4EmergingTechExpansion } from '../data/innovative-2025-q4-emerging-tech-expansion';
-=======
 // Import our new 2025 innovative services
 import { advancedEnterpriseSolutions } from '../data/2025-advanced-enterprise-solutions';
 import { innovativeAISolutions } from '../data/2025-innovative-ai-solutions';
@@ -42,7 +35,11 @@ import { innovativeITInfrastructureServices } from '../data/2025-innovative-it-i
 
 // Import our new innovative 2040 services
 import { innovative2040ITServices } from '../data/innovative-2040-it-services';
->>>>>>> origin/cursor/add-and-advertise-new-services-then-build-ab61
+
+// Import 2025 advanced services
+import { real2025AdvancedAIServices } from '../data/real-2025-advanced-ai-services';
+import { real2025ITInfrastructureServices } from '../data/real-2025-it-infrastructure-services';
+import { real2025InnovativeMicroSaas } from '../data/real-2025-innovative-micro-saas';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -114,6 +111,7 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
+<<<<<<< HEAD
   // Our new 2025 advanced services
   ...advanced2025MicroSaasExpansion,
   ...advanced2025ITSolutionsExpansion,
@@ -147,6 +145,12 @@ const allServices = [
   ...innovative2025Q4ITServicesExpansion,
   ...innovative2025Q4AIServicesExpansion,
   ...innovative2025Q4EmergingTechExpansion
+=======
+  // 2025 Advanced Services
+  ...real2025AdvancedAIServices,
+  ...real2025ITInfrastructureServices,
+  ...real2025InnovativeMicroSaas
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-b17c
 ];
 
 const categories = [
