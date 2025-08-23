@@ -4,7 +4,7 @@ import plugin from 'tailwindcss/plugin';
 import animatePlugin from 'tailwindcss-animate';
 
 const config: Config = {
-  darkMode: ['class'],
+  darkMode: "class",
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
@@ -63,7 +63,7 @@ const config: Config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
-        // Custom Zion colors (updated palette)
+        // Custom Zion colors
         'zion-blue': {
           DEFAULT: '#2e73ea',
           light: '#8ab1f3',

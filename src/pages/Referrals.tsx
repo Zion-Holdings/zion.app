@@ -8,8 +8,7 @@ import { ReferralTable } from '@/components/referrals/ReferralTable';
 import { RewardsCard } from '@/components/referrals/RewardsCard';
 import { ReferralGuide } from '@/components/referrals/ReferralGuide';
 import { ReferralLeaderboard } from '@/components/referrals/ReferralLeaderboard';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Tabs, TabsList as _TabsList, TabsContent, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from '@/components/ui/button';
 import { toast } from '@/hooks/use-toast';
 import { Share, Users } from 'lucide-react';
@@ -22,7 +21,7 @@ export default function ReferralsPage() {
   const { isAuthenticated } = useAuth();
   const {
     isLoading,
-    referralCode,
+    referralCode: _referralCode,
     referrals,
     rewards,
     stats,
@@ -70,16 +69,14 @@ export default function ReferralsPage() {
           />
           
           <Tabs defaultValue="referrals" className="w-full">
-            <TabsList className="w-full grid grid-cols-2">
-              <TabsTrigger value="referrals" className="flex items-center gap-2">
-                <Users className="h-4 w-4" />
-                Your Referrals
-              </TabsTrigger>
-              <TabsTrigger value="rewards" className="flex items-center gap-2">
-                <Share className="h-4 w-4" />
-                Rewards
-              </TabsTrigger>
-            </TabsList>
+            <TabsTrigger value="referrals" className="flex items-center gap-2">
+              <Users className="h-4 w-4" />
+              Your Referrals
+            </TabsTrigger>
+            <TabsTrigger value="rewards" className="flex items-center gap-2">
+              <Share className="h-4 w-4" />
+              Rewards
+            </TabsTrigger>
             <TabsContent value="referrals" className="p-0 border rounded-md mt-6">
               <ReferralTable referrals={referrals} isLoading={isLoading} />
             </TabsContent>

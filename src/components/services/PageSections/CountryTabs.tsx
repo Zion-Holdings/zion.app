@@ -13,7 +13,7 @@ import {
 } from '@/components/ui/pagination';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { CountryServiceCard } from '@/components/services/CountryServiceCard';
-import { CountryPricing } from '@/data/onsiteServicePricing';
+import type { CountryPricing } from '@/data/onsiteServicePricing';
 
 interface CountryTabsProps {
   popularCountries: string[];
@@ -76,8 +76,8 @@ export function CountryTabs({
                 key={country.country}
                 country={country}
                 onSelect={handleCountrySelect}
-                onQuote={onQuote}
                 isPopular={true}
+                {...(onQuote ? { onQuote } : {})}
               />
             ))}
         </div>
@@ -103,8 +103,8 @@ export function CountryTabs({
               key={country.country}
               country={country}
               onSelect={handleCountrySelect}
-              onQuote={onQuote}
               isPopular={popularCountries.includes(country.country)}
+              {...(onQuote ? { onQuote } : {})}
             />
           ))}
         </div>

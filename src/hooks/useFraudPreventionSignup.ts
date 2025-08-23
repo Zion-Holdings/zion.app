@@ -3,7 +3,7 @@ import { useState, useCallback } from 'react';
 import { checkSignupPatterns } from '@/services/fraud/signupCheck';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from '@/hooks/use-toast';
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
+import { apiClient } from '@/utils/apiClient';
 
 export function useFraudPreventionSignup() {
 
@@ -12,7 +12,7 @@ export function useFraudPreventionSignup() {
   // Get the user's IP address (in a real app, you'd do this server-side)
   const getIP = async (): Promise<string | undefined> => {
     try {
-      const response = await fetch('https://api.ipify.org?format=json');
+      const response = await apiClient('https://api.ipify.org?format=json');
       const data = await response.json();
       return data.ip;
     } catch (error) {
@@ -31,9 +31,10 @@ export function useFraudPreventionSignup() {
       const fraudCheck = await checkSignupPatterns(email, ipAddress);
       
       if (fraudCheck.isSuspicious) {
-        logInfo('Suspicious signup detected:', { data: fraudCheck.reasons });
+        logInfo('Suspicious signup detected:', { data:  { data: fraudCheck.reasons } });
         
         // Create a fraud flag for admin review
+        if (!supabase) throw new Error('Supabase client not initialized');
         const { error } = await supabase.from('fraud_flags').insert({
           user_email: email,
           content_type: 'signup',

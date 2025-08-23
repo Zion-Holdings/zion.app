@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { useForm, ControllerRenderProps } from "react-hook-form";
+import { useForm } from "react-hook-form";
+import type { ControllerRenderProps } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
@@ -28,10 +29,15 @@ import { toast } from "sonner";
 
 
 const formSchema = z.object({
-  reason_code: z.string()
-    .min(1, { message: "Please select a reason for the dispute" }),
-  description: z.string()
-    .min(20, { message: "Description must be at least 20 characters" }),
+  reason_code: z
+    .string()
+    .nonempty({ message: "Please select a reason for the dispute" }),
+  description: z
+    .string()
+    .nonempty({ message: "Please provide a description of the issue" })
+    .min(20, {
+      message: "Description must be at least 20 characters",
+    }),
   attachments: z.array(z.any()).optional(),
 });
 
@@ -82,7 +88,7 @@ export function DisputeForm({
       
       const dispute = await createDispute({
         project_id: projectId,
-        milestone_id: milestoneId,
+        ...(milestoneId ? { milestone_id: milestoneId } : {}),
         reason_code: values.reason_code,
         description: values.description,
       });

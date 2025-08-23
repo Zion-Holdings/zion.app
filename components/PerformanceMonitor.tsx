@@ -99,45 +99,84 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
     return 'text-red-400';
   };
 
-  const getScoreIcon = (score: number) => {
-    if (score >= 90) return <CheckCircle className="w-5 h-5 text-green-400" />;
-    if (score >= 70) return <AlertTriangle className="w-5 h-5 text-yellow-400" />;
-    return <XCircle className="w-5 h-5 text-red-400" />;
-  };
+  useEffect(() => {
+    if (isVisible) {
+      startMonitoring();
+    }
+  }, [isVisible]);
 
-  const getMetricStatus = (metric: keyof PerformanceMetrics, value: number) => {
-    const thresholds = {
-      lcp: { good: 2500, needsImprovement: 4000 },
-      fid: { good: 100, needsImprovement: 300 },
-      cls: { good: 0.1, needsImprovement: 0.25 },
-      ttfb: { good: 800, needsImprovement: 1800 }
+  useEffect(() => {
+    // Calculate scores when metrics change
+    const newScores: Record<string, PerformanceScore> = {};
+    
+    Object.entries(metrics).forEach(([metric, value]) => {
+      if (value !== null) {
+        newScores[metric] = calculateScore(metric, value);
+      }
+    });
+    
+    setScores(newScores);
+  }, [metrics]);
+
+  const formatMetricValue = (metric: string, value: number | null) => {
+    if (value === null) return 'N/A';
+    
+    switch (metric) {
+      case 'fcp':
+      case 'lcp':
+      case 'fid':
+      case 'ttfb':
+      case 'fmp':
+        return `${Math.round(value)}ms`;
+      case 'cls':
+        return value.toFixed(3);
+      default:
+        return value.toString();
+    }
+  }, [metrics, sendMetricsToAnalytics]);
+
+  const getMetricDescription = (metric: string) => {
+    const descriptions = {
+      fcp: 'First Contentful Paint - Time until first content is rendered',
+      lcp: 'Largest Contentful Paint - Time until largest content is rendered',
+      fid: 'First Input Delay - Time until first user interaction is processed',
+      cls: 'Cumulative Layout Shift - Visual stability measure',
+      ttfb: 'Time to First Byte - Server response time',
+      fmp: 'First Meaningful Paint - Time until meaningful content is rendered'
     };
-    
-    const threshold = thresholds[metric];
-    if (!threshold) return 'unknown';
-    
-    if (value <= threshold.good) return 'good';
-    if (value <= threshold.needsImprovement) return 'needs-improvement';
-    return 'poor';
+    return descriptions[metric as keyof typeof descriptions] || '';
   };
 
-  const getMetricColor = (status: string) => {
-    switch (status) {
-      case 'good': return 'text-green-400';
-      case 'needs-improvement': return 'text-yellow-400';
-      case 'poor': return 'text-red-400';
-      default: return 'text-gray-400';
+  const getOverallScore = () => {
+    const validScores = Object.values(scores).filter(score => score.score > 0);
+    if (validScores.length === 0) return { score: 0, grade: 'F', color: 'text-gray-500' };
+    
+    const averageScore = validScores.reduce((sum, score) => sum + score.score, 0) / validScores.length;
+    
+    let grade: 'A' | 'B' | 'C' | 'D' | 'F';
+    let color: string;
+
+    if (averageScore >= 90) {
+      grade = 'A';
+      color = 'text-green-500';
+    } else if (averageScore >= 80) {
+      grade = 'B';
+      color = 'text-blue-500';
+    } else if (averageScore >= 70) {
+      grade = 'C';
+      color = 'text-yellow-500';
+    } else if (averageScore >= 60) {
+      grade = 'D';
+      color = 'text-orange-500';
+    } else {
+      grade = 'F';
+      color = 'text-red-500';
     }
+
+    return { score: Math.round(averageScore), grade, color };
   };
 
-  const getMetricIcon = (status: string) => {
-    switch (status) {
-      case 'good': return <CheckCircle className="w-4 h-4" />;
-      case 'needs-improvement': return <AlertTriangle className="w-4 h-4" />;
-      case 'poor': return <XCircle className="w-4 h-4" />;
-      default: return <Info className="w-4 h-4" />;
-    }
-  };
+  const overallScore = getOverallScore();
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -358,5 +397,12 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
     </AnimatePresence>
   );
 };
+
+// Missing icon component
+const RefreshCw: React.FC<{ className?: string }> = ({ className }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+  </svg>
+);
 
 export default PerformanceMonitor;

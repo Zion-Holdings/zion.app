@@ -191,27 +191,29 @@ export default function SignupForm({ onSuccess, onError }: SignupFormProps) {
       if (result.error) {
         logErrorToProduction('Signup error:', { data: result.error });
         fireEvent('signup_error', { message: result.error });
-        
         // Handle specific error cases with inline field errors
-        if (result.error.includes('already registered') || result.error.includes('already exists')) {
-          setError('email', { 
-            message: 'An account with this email already exists. Please try logging in instead.' 
-          });
-        } else if (result.error.includes('invalid email')) {
-          setError('email', { 
-            message: 'Please enter a valid email address.' 
-          });
-        } else if (result.error.includes('weak password')) {
-          setError('password', { 
-            message: 'Password is too weak. Please choose a stronger password.' 
-          });
+        if (typeof result.error === 'string') {
+          if (result.error.includes('already registered') || result.error.includes('already exists')) {
+            setError('email', { 
+              message: 'An account with this email already exists. Please try logging in instead.' 
+            });
+          } else if (result.error.includes('invalid email')) {
+            setError('email', { 
+              message: 'Please enter a valid email address.' 
+            });
+          } else if (result.error.includes('weak password')) {
+            setError('password', { 
+              message: 'Password is too weak. Please choose a stronger password.' 
+            });
+          } else {
+            setError('root', { 
+              message: result.error 
+            });
+          }
         } else {
-          setError('root', { 
-            message: result.error 
-          });
+          setError('root', { message: 'Signup failed. Please try again.' });
         }
-        
-        onError?.(result.error);
+        onError?.(typeof result.error === 'string' ? result.error : 'Signup failed. Please try again.');
         return;
       }
 

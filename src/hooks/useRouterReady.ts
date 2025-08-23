@@ -37,11 +37,15 @@ export function useRouteChange(callback?: () => void) {
       callback?.();
     };
 
-    router.events.on('routeChangeComplete', handleRouteChange);
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange);
-    };
-  }, [router.events, callback]);
+    // Only add event listeners if router.events exists
+    if (router.events) {
+      router.events.on('routeChangeComplete', handleRouteChange);
+      return () => {
+        router.events.off('routeChangeComplete', handleRouteChange);
+      };
+    }
+    return undefined;
+  }, [callback]); // Removed router.events from dependencies
 
   return routeKey;
 }

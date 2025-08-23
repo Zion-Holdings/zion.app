@@ -64,10 +64,10 @@ export class ProductionOptimizer {
       navigator.serviceWorker
         .register('/service-worker.js')
         .then((registration) => {
-          logInfo('Service Worker registered:', { data: registration });
+          logInfo('Service Worker registered:', { data:  { data: registration } });
         })
         .catch((error) => {
-          logInfo('Service Worker registration failed:', { data: error });
+          logInfo('Service Worker registration failed:', { data:  { data: error } });
         });
     }
   }
@@ -167,7 +167,14 @@ export class ProductionOptimizer {
       },
       'debug-mode': () => {
         logInfo('🐛 Debug mode enabled');
-        (window as any).__ZION_DEBUG__ = true;
+        function hasZionDebug(obj: unknown): obj is { __ZION_DEBUG__: boolean } {
+          return typeof obj === 'object' && obj !== null && '__ZION_DEBUG__' in obj;
+        }
+        if (hasZionDebug(window)) {
+          (window as { __ZION_DEBUG__?: boolean }).__ZION_DEBUG__ = true;
+        } else {
+          ((window as unknown) as Record<string, unknown>).__ZION_DEBUG__ = true;
+        }
       },
     };
 
@@ -204,6 +211,15 @@ export class ProductionOptimizer {
     const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
     const resources = performance.getEntriesByType('resource');
 
+    interface PerformanceMemory {
+      usedJSHeapSize: number;
+      totalJSHeapSize: number;
+      jsHeapSizeLimit: number;
+    }
+    function getPerformanceMemory(): PerformanceMemory | null {
+      const perf = performance as Performance & { memory?: PerformanceMemory };
+      return perf.memory || null;
+    }
     return {
       timestamp: new Date().toISOString(),
       navigation: {
@@ -217,10 +233,16 @@ export class ProductionOptimizer {
         styles: resources.filter(r => r.name.endsWith('.css')).length,
         images: resources.filter(r => /\.(jpg|jpeg|png|gif|webp|svg)$/i.test(r.name)).length,
       },
-      memory: (performance as any).memory || null,
+      memory: getPerformanceMemory(),
       userAgent: navigator.userAgent,
     };
   }
+}
+
+interface PerformanceMemory {
+  usedJSHeapSize: number;
+  totalJSHeapSize: number;
+  jsHeapSizeLimit: number;
 }
 
 interface PerformanceReport {
@@ -236,7 +258,7 @@ interface PerformanceReport {
     styles: number;
     images: number;
   };
-  memory: any;
+  memory: PerformanceMemory | null;
   userAgent: string;
 }
 

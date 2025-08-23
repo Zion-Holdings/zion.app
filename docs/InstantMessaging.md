@@ -3,7 +3,9 @@
 The application uses **Socket.IO** for real-time negotiations. A minimal API route
 initialises a Socket.IO server and bridges to Django Channels. Rooms are keyed by
 the related order or service identifier so participants only receive messages for
-their transaction. Install the packages first:
+their transaction.
+
+Install the Socket.IO packages:
 
 ```bash
 npm install socket.io socket.io-client

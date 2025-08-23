@@ -36,13 +36,13 @@ function isLocalStorageAvailable(): boolean {
   }
 }
 
-function safeConsoleError(message: string, error?: any) {
+function safeConsoleError(message: string, error?: unknown) {
   // Prevent infinite recursion in console logging
-  if (isLoggingError || process.env.NODE_ENV === 'production') return;
+  if (isLoggingError || (typeof process !== 'undefined' && process.env.NODE_ENV === 'production')) return;
   
   isLoggingError = true;
   try {
-    if (process.env.NODE_ENV === 'development') {
+    if (typeof process !== 'undefined' && process.env.NODE_ENV === 'development') {
       logErrorToProduction(message, error);
     }
   } catch {

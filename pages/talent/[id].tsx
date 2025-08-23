@@ -34,26 +34,9 @@ const TalentPage: React.FC = () => {
   const router = useRouter();
   const { id } = router.query as { id?: string };
 
-  const { data, error, isLoading } = useSWR<TalentProfile | null>(
-    id ? `/api/talent/${id}` : null,
-    async (url: string) => {
-      const result: TalentProfileResponse = await fetch(url).then(handleApiResponse);
-      return result.profile;
-    }
-  );
-
-  if (isLoading || !router.isReady || !id) {
-    return <TalentProfileSkeleton />;
-  }
-
-  // Specific 404 error from API
-  if (error && (error as any).status === 404) {
-    return <NotFound />;
-  }
-
-  // Other errors (non-404)
-  if (error) {
-    const err: any = error;
+  // Next.js router typing in this project doesn't include `isFallback`.
+  // Cast to any to access the property during static builds.
+  if ((router as any).isFallback) {
     return (
       <div className="flex flex-col items-center justify-center py-20 text-center">
         <h2 className="text-2xl font-semibold mb-2">Error</h2>
@@ -75,11 +58,10 @@ const TalentPage: React.FC = () => {
     <>
       <NextSeo
         title={data?.full_name}
-        description={data?.bio ?? undefined}
+        description={data?.bio ?? ''}
         openGraph={{
-          images: undefined,
           title: data?.full_name,
-          description: data?.bio ?? undefined
+          description: data?.bio ?? ''
         }}
       />
       <main className="min-h-screen bg-zion-blue py-8 text-white" data-testid="talent-details">

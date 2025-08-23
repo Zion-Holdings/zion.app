@@ -294,9 +294,9 @@ class LogAnalyzer {
     if (analysis.severity === 'critical' || analysis.impact === 'high') {
       logErrorToProduction('Critical error pattern detected', null, logContext);
     } else if (analysis.severity === 'high' || analysis.occurrences >= 5) {
-      logWarn('High-priority error pattern detected', logContext);
+      logWarn('High-priority error pattern detected', { data: logContext });
     } else {
-      logInfo('Error pattern analyzed', logContext);
+      logInfo('Error pattern analyzed', { data: logContext });
     }
   }
 
@@ -304,13 +304,13 @@ class LogAnalyzer {
     if (!pattern.autoFix) return;
 
     try {
-      logInfo('Attempting automatic fix', { pattern: pattern.id });
+      logInfo('Attempting automatic fix', { data:  { pattern: pattern.id } });
       const success = await pattern.autoFix();
       
       if (success) {
-        logInfo('Automatic fix applied successfully', { pattern: pattern.id });
+        logInfo('Automatic fix applied successfully', { data:  { pattern: pattern.id } });
       } else {
-        logWarn('Automatic fix failed', { pattern: pattern.id });
+        logWarn('Automatic fix failed', { data:  { pattern: pattern.id } });
       }
     } catch (error) {
       logErrorToProduction('Error during automatic fix attempt', error, { pattern: pattern.id });
@@ -419,7 +419,7 @@ class LogAnalyzer {
 
   public addCustomPattern(pattern: LogPattern): void {
     this.patterns.push(pattern);
-    logInfo('Custom error pattern added', { patternId: pattern.id });
+    logInfo('Custom error pattern added', { data:  { patternId: pattern.id } });
   }
 
   public getErrorHistory(): ErrorAnalysis[] {

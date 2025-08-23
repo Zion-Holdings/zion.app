@@ -1,5 +1,5 @@
 declare module 'socket.io' {
-  const anySocket: any;
+  const anySocket: unknown;
   export default anySocket;
 }
 

@@ -5,7 +5,7 @@ import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import PostForm from "@/components/community/PostForm";
 import { useToast } from "@/hooks/use-toast";
-import { ForumPost, ForumCategory } from "@/types/community";
+import type { ForumPost, ForumCategory } from "@/types/community";
 import { useAuth } from "@/hooks/useAuth";
 
 interface PostFormValues {
@@ -15,38 +15,39 @@ interface PostFormValues {
   tags: string;
 }
 
-// Mock post data
-const mockPost: ForumPost = {
-  id: "1",
-  title: "Best practices for AI model fine-tuning",
-  content: "I've been working on fine-tuning models for specific tasks and wanted to share some approaches that have worked well for me...",
-  authorId: "user1",
-  authorName: "Alex Johnson",
-  authorAvatar: "https://i.pravatar.cc/150?img=3",
-  authorRole: "Verified Talent",
-  categoryId: "ai-tools",
-  tags: ["machine-learning", "fine-tuning", "gpt"],
-  createdAt: "2025-04-01T12:00:00Z",
-  updatedAt: "2025-04-01T12:00:00Z",
-  upvotes: 48,
-  downvotes: 2,
-  replyCount: 12,
-  isAnswered: true,
-  isFeatured: true
-};
-
 export default function EditPostPage() {
   const router = useRouter();
   const { postId } = router.query as { postId?: string };
   const { toast } = useToast();
   const { user } = useAuth();
-  const [post, setPost] = useState<ForumPost | null>(mockPost);
+  const [post, _setPost] = useState<ForumPost | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   
   useEffect(() => {
-    // In a real app, we would fetch the post data here
-    // For now, we'll just use the mock data
-    setIsLoading(false);
+    // Reactivate: Use mock data for post API
+    setIsLoading(true);
+    setTimeout(() => {
+      if (!postId) {
+        _setPost(null);
+        setIsLoading(false);
+        return;
+      }
+      _setPost({
+        id: postId,
+        title: 'How to use ZionGPT for project management?',
+        content: 'I am interested in using ZionGPT for managing my project milestones. Any tips or best practices?',
+        authorId: 'user-1',
+        authorName: 'Alice',
+        createdAt: '2024-07-01T10:00:00.000Z',
+        updatedAt: '2024-07-01T10:00:00.000Z',
+        upvotes: 12,
+        downvotes: 0,
+        categoryId: 'project-help',
+        tags: ['ziongpt', 'project-management'],
+        replyCount: 2,
+      });
+      setIsLoading(false);
+    }, 400);
   }, [postId]);
   
   if (isLoading) {
@@ -93,7 +94,7 @@ export default function EditPostPage() {
     tags: post.tags.join(", ")
   };
 
-  const handleSubmit = async (values: PostFormValues) => {
+  const handleSubmit = async (_values: PostFormValues) => {
     try {
       // Here we would normally update the post in the database
       // For now, we'll just simulate a successful update
@@ -105,7 +106,7 @@ export default function EditPostPage() {
       
       // Redirect back to the post
       router.push(`/community/post/${postId}`);
-    } catch (error) {
+    } catch {
       toast({
         title: "Error",
         description: "There was a problem updating your post",

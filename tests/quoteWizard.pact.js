@@ -1,4 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-require-imports
+ 
 import path from 'path';
 import { Pact, Matchers } from '@pact-foundation/pact';
 // Use global fetch to avoid requiring the `node-fetch` package during tests.

@@ -1,5 +1,4 @@
-import React from 'react';
-import Link from 'next/link';
+import React, { useState, useCallback, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Phone, Mail, MapPin, ArrowRight, Globe, Shield, Rocket, Brain, Atom, Cpu,
@@ -72,19 +71,46 @@ const UltraFuturisticFooter2045: React.FC = () => {
     { name: 'GitHub', icon: Github, href: 'https://github.com/ziontechgroup', color: 'from-gray-600 to-gray-700' }
   ];
 
-  const fadeInUp = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.5 }
-  };
+// Quick stats
+const quickStats = [
+  { number: '500+', label: 'Global Clients', icon: Globe, color: 'text-cyan-400' },
+  { number: '99.9%', label: 'Uptime', icon: CheckCircle, color: 'text-green-400' },
+  { number: '24/7', label: 'Support', icon: Clock, color: 'text-blue-400' },
+  { number: '2045', label: 'Technology', icon: Sparkles, color: 'text-purple-400' }
+];
 
-  const staggerContainer = {
-    animate: {
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
+// Newsletter signup component
+const NewsletterSignup: React.FC = () => {
+  const [email, setEmail] = useState('');
+  const [isSubscribed, setIsSubscribed] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = useCallback(async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.trim()) return;
+
+    setIsLoading(true);
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    setIsSubscribed(true);
+    setEmail('');
+    setIsLoading(false);
+  }, [email]);
+
+  if (isSubscribed) {
+    return (
+      <motion.div
+        className="text-center p-6 bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20 rounded-2xl"
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.3 }}
+      >
+        <CheckCircle className="w-12 h-12 text-green-400 mx-auto mb-3" />
+        <h3 className="text-lg font-semibold text-white mb-2">Thank you for subscribing!</h3>
+        <p className="text-green-300">You'll receive our latest insights and updates.</p>
+      </motion.div>
+    );
+  }
 
   return (
     <footer className="bg-black/90 backdrop-blur-xl border-t border-cyan-500/20 relative overflow-hidden">
@@ -93,41 +119,98 @@ const UltraFuturisticFooter2045: React.FC = () => {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(6,182,212,0.1),transparent_50%)]"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(139,92,246,0.1),transparent_50%)]"></div>
       
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="relative">
+          <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-cyan-400" />
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter your email address"
+            className="w-full pl-10 pr-4 py-3 bg-gray-900/50 border border-cyan-500/30 rounded-xl text-white placeholder-cyan-300/50 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-200"
+            required
+            aria-label="Email address for newsletter"
+          />
+        </div>
+        
+        <motion.button
+          type="submit"
+          disabled={isLoading}
+          className="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 disabled:opacity-50 disabled:cursor-not-allowed"
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          aria-label="Subscribe to newsletter"
+        >
+          {isLoading ? (
+            <div className="flex items-center justify-center gap-2">
+              <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+              Subscribing...
+            </div>
+          ) : (
+            <span className="flex items-center justify-center gap-2">
+              Subscribe Now
+              <ArrowRight className="w-4 h-4" />
+            </span>
+          )}
+        </motion.button>
+      </form>
+      
+      <p className="text-xs text-cyan-300/70 text-center mt-3">
+        By subscribing, you agree to our privacy policy and terms of service.
+      </p>
+    </div>
+  );
+};
+
+const UltraFuturisticFooter2045: React.FC = () => {
+  const [expandedSection, setExpandedSection] = useState<string | null>(null);
+
+  const toggleSection = useCallback((title: string) => {
+    setExpandedSection(expandedSection === title ? null : title);
+  }, [expandedSection]);
+
+  // Memoize footer sections to prevent unnecessary re-renders
+  const memoizedFooterSections = useMemo(() => footerSections, []);
+
+  return (
+    <footer className="bg-gradient-to-b from-black via-gray-900 to-black relative overflow-hidden">
+      {/* Background Effects */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-r from-cyan-500/5 to-blue-500/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/5 to-pink-500/5 rounded-full blur-3xl" />
+      </div>
+
       <div className="relative z-10">
         {/* Main Footer Content */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <motion.div
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12"
-          >
+        <div className="max-w-7xl mx-auto px-4 py-16 lg:py-20">
+          {/* Top Section with Newsletter */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
             {/* Company Info */}
-            <motion.div variants={fadeInUp} className="lg:col-span-1">
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="relative">
-                  <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center">
-                    <Zap className="w-7 h-7 text-white" />
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-xl blur-lg opacity-50"></div>
+            <div className="space-y-6">
+              <div className="flex items-center space-x-3">
+                <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
+                  <Brain className="w-7 h-7 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                  <h2 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                     Zion Tech Group
-                  </h3>
-                  <p className="text-sm text-cyan-300 font-medium">Innovation 2045</p>
+                  </h2>
+                  <p className="text-cyan-400/70 text-sm">Revolutionary Technology Solutions</p>
                 </div>
+                <span className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  Zion Tech
+                </span>
               </div>
               
-              <p className="text-gray-400 mb-6 leading-relaxed">
-                Leading the future of technology with cutting-edge AI, quantum computing, and innovative micro SAAS solutions that transform businesses and industries.
+              <p className="text-gray-300 leading-relaxed max-w-md">
+                Pioneering the future of technology with revolutionary AI consciousness, 
+                quantum computing, and autonomous solutions that transform businesses worldwide.
               </p>
               
               <div className="space-y-3">
                 <div className="flex items-center space-x-3 text-gray-400 hover:text-cyan-400 transition-colors duration-200">
                   <Phone className="w-4 h-4 text-cyan-400" />
-                  <span className="text-sm">{contactInfo.mobile}</span>
+                  <span className="text-sm">{contactInfo.phone}</span>
                 </div>
                 <div className="flex items-center space-x-3 text-gray-400 hover:text-cyan-400 transition-colors duration-200">
                   <Mail className="w-4 h-4 text-cyan-400" />

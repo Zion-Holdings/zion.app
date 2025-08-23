@@ -10,7 +10,7 @@ import { Loader2, RefreshCw, Play, CheckCircle, AlertCircle } from 'lucide-react
 
 
 import { supabase } from '@/integrations/supabase/client';
-import { ModelConfig } from '@/utils/zion-gpt';
+import type { ModelConfig } from '@/utils/zion-gpt';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 
@@ -32,6 +32,10 @@ export function ZionGPTModelManager() {
   const fetchModels = async () => {
     try {
       setIsLoading(true);
+      if (!supabase) {
+        throw new Error('Supabase client not available');
+      }
+      
       const { data, error } = await supabase
         .from('model_versions')
         .select('*')
@@ -39,8 +43,9 @@ export function ZionGPTModelManager() {
       
       if (error) throw error;
       
-      // Map the data to our component state
-      setModels(data.map((model: any) => ({
+      // Map the data to our component state. Provide a fallback to avoid
+      // "map is not a function" errors if the query returns null
+      setModels((data ?? []).map((model: any) => ({
         id: model.id,
         version: model.version,
         createdAt: model.created_at,
@@ -59,6 +64,10 @@ export function ZionGPTModelManager() {
 
   const checkTrainingStatus = async (modelId: string) => {
     try {
+      if (!supabase) {
+        throw new Error('Supabase client not available');
+      }
+      
       setActiveJobs(prev => ({ ...prev, [modelId]: true }));
       
       // Call an edge function that checks the OpenAI fine-tuning job status
@@ -97,6 +106,10 @@ export function ZionGPTModelManager() {
 
   const toggleModelActive = async (modelId: string, currentActive: boolean, purpose: string) => {
     try {
+      if (!supabase) {
+        throw new Error('Supabase client not available');
+      }
+      
       // If activating, deactivate all other models with the same purpose
       if (!currentActive) {
         await supabase

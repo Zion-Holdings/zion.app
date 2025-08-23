@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
@@ -203,7 +203,8 @@ const Docs: React.FC = () => {
               </p>
             </motion.div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Search and Filters */}
         <section className="py-12">
@@ -421,11 +422,12 @@ const Docs: React.FC = () => {
                       Try API
                     </div>
                   </div>
-                </motion.div>
-              ))}
-            </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Developer Resources */}
         <section className="py-20 bg-black/50">
@@ -472,7 +474,8 @@ const Docs: React.FC = () => {
               ))}
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Newsletter Signup */}
         <section className="py-20">
@@ -513,7 +516,7 @@ const Docs: React.FC = () => {
         <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}

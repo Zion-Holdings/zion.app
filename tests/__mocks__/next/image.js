@@ -1,4 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-require-imports
+ 
 import React from 'react';
 
 // Mock implementation of Next.js Image component for testing

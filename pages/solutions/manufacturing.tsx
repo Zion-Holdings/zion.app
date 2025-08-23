@@ -2,9 +2,8 @@ import React from 'react';
 import Layout from '../../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
-  Building, Users, Shield, Cpu, Database, Globe, Zap, Target, 
-  TrendingUp, BarChart3, Lock, Cloud, Server, Network, Settings, Brain,
-  Factory, Cog, Wrench, Gauge
+  Cpu, Brain, Shield, Zap, BarChart3, Settings, 
+  CheckCircle, ArrowRight, Star, TrendingUp, Award, Clock
 } from 'lucide-react';
 
 const ManufacturingSolutionsPage: React.FC = () => {
@@ -40,36 +39,8 @@ const ManufacturingSolutionsPage: React.FC = () => {
     }
   ];
 
-  const benefits = [
-    {
-      title: "Efficiency",
-      description: "Optimize production processes",
-      icon: <Gauge className="w-6 h-6" />
-    },
-    {
-      title: "Quality",
-      description: "Improve product quality",
-      icon: <Target className="w-6 h-6" />
-    },
-    {
-      title: "Automation",
-      description: "Reduce manual processes",
-      icon: <Cog className="w-6 h-6" />
-    },
-    {
-      title: "Insights",
-      description: "Data-driven decisions",
-      icon: <BarChart3 className="w-6 h-6" />
-    }
-  ];
-
-  return (
-    <Layout 
-      title="Manufacturing Solutions - Zion Tech Group"
-=======
-      description="Advanced technology solutions for manufacturing. AI, cybersecurity, cloud infrastructure, and analytics designed for the manufacturing sector."
-    >
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
+      <UltraFuturisticBackground>
+        <div className="min-h-screen bg-black text-white relative z-10">
         {/* Hero Section */}
         <section className="relative py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
@@ -122,7 +93,7 @@ const ManufacturingSolutionsPage: React.FC = () => {
             <div className="grid md:grid-cols-2 gap-8">
               {solutions.map((solution, index) => (
                 <motion.div
-                  key={solution.title}
+                  key={solution.name}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.1 * index }}
@@ -175,10 +146,11 @@ const ManufacturingSolutionsPage: React.FC = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {benefits.map((benefit, index) => (
                 <motion.div
-                  key={benefit.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.1 * index }}
+                  key={stat.label}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
                   className="text-center"
                 >
                   <div className="p-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">

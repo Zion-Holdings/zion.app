@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { HireRequestModal } from "./hire-request";
 import { useState } from "react";
-import { TalentProfile } from "@/types/talent";
+import type { TalentProfile } from "@/types/talent";
 
 interface HireNowCTAProps {
   talentProfile: {
@@ -74,7 +74,7 @@ export function HireNowCTA({ talentProfile }: HireNowCTAProps) {
           skills: [],
           availability_type: 'full_time',
           timezone: '',
-          hourly_rate: talentProfile.hourly_rate
+          hourly_rate: talentProfile.hourly_rate ?? 0
         } : null}
       />
     </div>

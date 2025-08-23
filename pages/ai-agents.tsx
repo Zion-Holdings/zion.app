@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
-import Button from '../components/ui/Button';
+import { Button } from '../components/ui/Button';
 import { Bot, ListTree, Check, Phone, Mail, MapPin, Rocket } from 'lucide-react';
 
 export default function AIAgentsPage() {
@@ -31,8 +31,12 @@ export default function AIAgentsPage() {
 					<h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">Multi-Agent Orchestrator</h1>
 					<p className="text-xl text-gray-300">Assign roles, define plans, and execute workflows with reliable, observable multi-agent AI.</p>
 					<div className="mt-6 flex justify-center gap-3">
-						<Button href="/contact" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl"><Rocket className="w-4 h-4 mr-2" />Book a Demo</Button>
-						<Button href="/resources" variant="outline" className="border-gray-600 text-gray-200">Read Docs</Button>
+						<Button variant="primary" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl">
+							<Rocket className="w-4 h-4 mr-2" />Book a Demo
+						</Button>
+						<Button variant="outline" className="border-gray-600 text-gray-200">
+							Read Docs
+						</Button>
 					</div>
 				</div>
 
@@ -57,7 +61,9 @@ export default function AIAgentsPage() {
 						<div className="flex items-center justify-center gap-2 text-green-400"><MapPin className="w-4 h-4" /><span className="text-xs">{contactInfo.address}</span></div>
 					</div>
 					<div className="text-center">
-						<Button href="/contact" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl">Talk to Engineering</Button>
+						<Button variant="primary" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl">
+							Talk to Engineering
+						</Button>
 					</div>
 				</div>
 			</div>

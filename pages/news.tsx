@@ -1,4 +1,12 @@
 import React from 'react';
+  Newspaper, Calendar, User, Tag, ArrowRight, 
+  Star, Zap, Brain, Atom, Rocket, Globe
+} from 'lucide-react';
+import Link from 'next/link';
+
+const News: React.FC = () => {
+  const newsArticles = [
+=======
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
@@ -38,6 +46,48 @@ const NewsPage: React.FC = () => {
       excerpt: 'Strategic collaboration to advance AI-powered threat detection and response systems.',
       author: 'Partnerships Team',
       date: '2025-01-10',
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedYear, setSelectedYear] = useState('all');
+
+  const categories = [
+    { id: 'all', name: 'All News', icon: Newspaper, count: 45 },
+    { id: 'ai', name: 'AI & Technology', icon: Brain, count: 18 },
+    { id: 'quantum', name: 'Quantum Computing', icon: Atom, count: 12 },
+    { id: 'space', name: 'Space Technology', icon: Rocket, count: 8 },
+    { id: 'security', name: 'Cybersecurity', icon: Shield, count: 7 }
+  ];
+
+  const years = [
+    { id: 'all', name: 'All Years' },
+    { id: '2025', name: '2025' },
+    { id: '2024', name: '2024' },
+    { id: '2023', name: '2023' }
+  ];
+
+  const newsArticles = [
+    {
+      id: 1,
+      title: 'Zion Tech Group Launches Revolutionary AI Consciousness Platform',
+      excerpt: 'Our breakthrough AI consciousness platform is now available, marking a new era in artificial intelligence with emotional intelligence and ethical reasoning capabilities.',
+      category: 'AI Innovation',
+      date: '2025-01-15',
+      author: 'Dr. Kleber',
+      featured: true,
+      image: '/api/placeholder/600/400',
+      tags: ['AI Consciousness', 'Breakthrough', 'Innovation']
+    },
+    {
+      id: 2,
+      title: 'Quantum Computing Integration Achieves Major Milestone',
+      excerpt: 'Successfully integrated quantum computing capabilities into our AI platforms, opening unprecedented possibilities for problem-solving and data analysis.',
+      category: 'Quantum Computing',
+      date: '2025-01-10',
+      author: 'Quantum Team',
+      featured: false,
+      image: '/api/placeholder/600/400',
+      tags: ['Quantum Computing', 'AI Integration', 'Technology']
+=======
       author: 'Quantum Team',
       featured: false,
       image: '/api/placeholder/600/400',
@@ -138,10 +188,28 @@ const NewsPage: React.FC = () => {
                 Discover the latest developments in AI consciousness, quantum computing, 
                 and revolutionary technology solutions from Zion Tech Group.
               </p>
+              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
+                Latest News & Updates
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
+                Stay informed about the latest breakthroughs, innovations, and developments 
+                from Zion Tech Group's cutting-edge technology research.
+              </p>
+              <div className="flex justify-center">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-8 py-4 rounded-full font-semibold text-lg"
+                >
+                  <Newspaper className="w-6 h-6" />
+                  Stay Updated
+                </motion.div>
+              </div>
+=======
             </motion.div>
           </div>
         </section>
 
+=======
         {/* Featured Article */}
         {featuredArticle && (
           <section className="py-20">
@@ -235,10 +303,82 @@ const NewsPage: React.FC = () => {
                 </button>
               ))}
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* News Grid */}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                Latest News
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Stay updated with our latest developments and breakthroughs
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {newsArticles.filter(article => !article.featured).map((article, index) => (
+                <motion.article
+                  key={article.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+        {/* CTA Section */}
+        <section className="py-20 relative">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300 overflow-hidden"
+                >
+                  <div className="relative h-48 bg-gradient-to-br from-purple-900/30 to-blue-900/30 flex items-center justify-center">
+                    <Newspaper className="w-16 h-16 text-purple-400" />
+                  </div>
+                  <div className="p-6">
+                    <div className="flex items-center space-x-4 mb-4">
+                      <span className="bg-gray-800/50 text-purple-400 text-xs font-semibold px-2 py-1 rounded-full">
+                        {article.category}
+                      </span>
+                      <span className="text-gray-400 text-xs">
+                        <Calendar className="w-3 h-3 inline mr-1" />
+                        {new Date(article.date).toLocaleDateString()}
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-bold text-white mb-3 line-clamp-2">
+                      {article.title}
+                    </h3>
+                    <p className="text-gray-300 text-sm mb-4 line-clamp-3">
+                      {article.excerpt}
+                    </p>
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center space-x-2">
+                        <User className="w-4 h-4 text-gray-400" />
+                        <span className="text-gray-400 text-sm">{article.author}</span>
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {article.tags.slice(0, 2).map((tag) => (
+                        <span
+                          key={tag}
+                          className="bg-gray-800/30 text-gray-400 text-xs px-2 py-1 rounded-full border border-gray-700/30"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <Link
+                      href={`/news/${article.id}`}
+                      className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors duration-300"
+                    >
+                      Read More
+                      <ArrowRight className="w-4 h-4 ml-1" />
+                    </Link>
+                  </div>
+=======
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -381,6 +521,12 @@ const NewsPage: React.FC = () => {
         </section>
 
         {/* Newsletter Signup */}
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                Stay Updated
+              </h2>
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-8">
+                Subscribe to our newsletter for the latest news, insights, and breakthroughs in AI consciousness and quantum computing.
+=======
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/30">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
@@ -575,3 +721,5 @@ const NewsPage: React.FC = () => {
 };
 
 export default NewsPage;
+export default News;
+=======

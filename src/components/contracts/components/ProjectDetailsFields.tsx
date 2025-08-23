@@ -2,7 +2,7 @@
 import { format } from "date-fns";
 import { CalendarIcon } from 'lucide-react';
 
-import { UseFormReturn, ControllerRenderProps } from "react-hook-form";
+import type { UseFormReturn, ControllerRenderProps } from "react-hook-form";
 import { 
   FormField, 
   FormItem, 
@@ -16,7 +16,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Calendar } from "@/components/ui/calendar";
-import { ContractFormValues } from "./ContractForm";
+import type { ContractFormValues } from "./ContractForm";
 
 interface ProjectDetailsFieldsProps {
   form: UseFormReturn<ContractFormValues>;

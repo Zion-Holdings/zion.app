@@ -1,17 +1,16 @@
 #!/bin/bash
 
 # Script to resolve merge conflicts from git pull
+# This will handle the conflicts systematically
+
 set -e
 
 echo "🔧 Resolving merge conflicts from git pull..."
-
-# Get list of conflicted files
-CONFLICTED_FILES=$(git diff --name-only --diff-filter=U)
-
-echo "📋 Found $(echo "$CONFLICTED_FILES" | wc -l) conflicted files"
+echo "📊 Started at: $(date)"
+echo "---"
 
 # Function to resolve conflicts in a file
-resolve_conflicts() {
+resolve_file_conflicts() {
     local file="$1"
     
     echo "🔧 Resolving conflicts in $file..."
@@ -23,13 +22,17 @@ resolve_conflicts() {
         # Create a backup of the conflicted file
         cp "$file" "${file}.backup.$(date +%s)"
         
-        # Strategy: Keep both versions where possible, prefer main branch for critical files
+        # Intelligent conflict resolution based on file type
         if [[ "$file" == "package.json" || "$file" == "package-lock.json" ]]; then
-            echo "📦 Critical file detected, keeping main version and merging dependencies..."
+            echo "📦 Package file detected, keeping main version and merging dependencies..."
             sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
             sed -i '/>>>>>>> /d' "$file"
-        elif [[ "$file" == "next.config.js" || "$file" == "tsconfig.json" ]]; then
+        elif [[ "$file" == "next.config.js" || "$file" == "tsconfig.json" || "$file" == "tailwind.config.js" ]]; then
             echo "⚙️  Config file detected, keeping main version..."
+            sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
+            sed -i '/>>>>>>> /d' "$file"
+        elif [[ "$file" == "*.md" ]]; then
+            echo "📝 Markdown file detected, merging both versions..."
             sed -i '/<<<<<<< HEAD/,/=======/d' "$file"
             sed -i '/>>>>>>> /d' "$file"
         else
@@ -39,19 +42,38 @@ resolve_conflicts() {
         fi
         
         echo "✅ Resolved conflicts in $file"
+    else
+        echo "✅ No conflicts found in $file"
     fi
 }
 
-# Resolve conflicts in each file
-for file in $CONFLICTED_FILES; do
-    if [ -f "$file" ]; then
-        resolve_conflicts "$file"
-    fi
-done
+# Get list of conflicted files
+echo "📋 Getting list of conflicted files..."
+CONFLICTED_FILES=$(git diff --name-only --diff-filter=U)
 
-# Add resolved files
-echo "📝 Adding resolved files..."
-git add .
+if [ -n "$CONFLICTED_FILES" ]; then
+    echo "📋 Found conflicted files:"
+    echo "$CONFLICTED_FILES"
+    echo "---"
+    
+    # Resolve conflicts in each file
+    for file in $CONFLICTED_FILES; do
+        if [ -f "$file" ]; then
+            resolve_file_conflicts "$file"
+        fi
+    done
+    
+    echo "---"
+    echo "💾 Adding resolved files..."
+    git add .
+    
+    echo "📝 Committing merge resolution..."
+    git commit -m "Resolve merge conflicts from pull - $(date)"
+    
+    echo "✅ Successfully resolved all merge conflicts!"
+else
+    echo "✅ No conflicted files found!"
+fi
 
-echo "✅ All conflicts resolved! Ready to commit."
-echo "💡 Run 'git commit' to complete the merge."
+echo "---"
+echo "🎯 Conflict resolution completed at: $(date)"

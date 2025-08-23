@@ -71,12 +71,14 @@ export const FraudDetectionMiddleware: React.FC<FraudDetectionMiddlewareProps> =
       
       // For suspicious but not dangerous content, log but let it pass through
       if (quickCheck.severity === 'suspicious') {
-        logInfo('Suspicious content detected but allowed:', { data: content });
+        logInfo('Suspicious content detected but allowed:', { data:  { data: content } });
       }
       
       // For more complex analysis (in a real app), we would call the edge function
-      // This is disabled in this example to avoid unnecessary API calls
-      /*
+      if (!supabase) {
+        logErrorToProduction('Supabase client not available for fraud analysis');
+        return { isSafe: true };
+      }
       const { data, error } = await supabase.functions.invoke('analyze-content-fraud', {
         body: { content, contentType: 'message' }
       });
@@ -97,7 +99,6 @@ export const FraudDetectionMiddleware: React.FC<FraudDetectionMiddlewareProps> =
           explanation: data.explanation
         };
       }
-      */
       
       // Message is considered safe
       return { isSafe: true };

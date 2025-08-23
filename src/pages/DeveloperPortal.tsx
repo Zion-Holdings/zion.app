@@ -1,7 +1,8 @@
 
 import { useState } from "react";
 import { useAuth } from "@/hooks/useAuth";
-import { BookOpen, Code, Key, List, LucideIcon, Terminal, Webhook } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
+import { BookOpen, Key, Webhook, List, Terminal } from 'lucide-react';
 
 
 
@@ -23,7 +24,7 @@ interface TabDefinition {
 }
 
 export function DeveloperPortal() {
-  const { user } = useAuth();
+  const { user: _user } = useAuth();
   const [activeTab, setActiveTab] = useState<string>("documentation");
   
   // Define the tabs

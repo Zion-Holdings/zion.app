@@ -1,6 +1,7 @@
 
 import { useState, useMemo } from "react";
-import { onsiteServicePricing, CountryPricing } from "@/data/onsiteServicePricing";
+import { onsiteServicePricing } from "@/data/onsiteServicePricing";
+import type { CountryPricing } from "@/data/onsiteServicePricing";
 import { Input } from "@/components/ui/input";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Globe, Search, ArrowUpDown } from 'lucide-react';

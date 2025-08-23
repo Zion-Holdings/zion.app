@@ -13,7 +13,7 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Textarea } from "@/components/ui/textarea";
 import { useMessaging } from "@/context/MessagingContext";
-import { TalentProfile } from "@/types/talent";
+import type { TalentProfile } from "@/types/talent";
 import { toast } from "@/components/ui/use-toast";
 import { useRouter } from 'next/router';
 

@@ -141,8 +141,10 @@ class EnhancedLogAnalytics {
 
   private getMemoryUsage(): number {
     if (typeof window !== 'undefined' && 'memory' in performance) {
-      const memory = (performance as any).memory;
-      return (memory.usedJSHeapSize / memory.totalJSHeapSize) * 100;
+      const memory = (performance as Performance & { memory?: { usedJSHeapSize: number; totalJSHeapSize: number } }).memory;
+      if (memory) {
+        return (memory.usedJSHeapSize / memory.totalJSHeapSize) * 100;
+      }
     }
     return 0;
   }
@@ -203,7 +205,7 @@ class EnhancedLogAnalytics {
 
     rule.lastTriggered = now;
 
-    const alertData = {
+    const alertData: Record<string, unknown> = {
       rule: rule.name,
       severity: trend.severity,
       metrics: {
@@ -214,7 +216,7 @@ class EnhancedLogAnalytics {
       timestamp: now
     };
 
-    logWarn(`Alert triggered: ${rule.name}`, alertData);
+    logWarn('Alert triggered: ${rule.name}', { data: alertData });
 
     // Execute alert actions
     rule.actions.forEach(action => {
@@ -222,7 +224,7 @@ class EnhancedLogAnalytics {
     });
   }
 
-  private executeAlertAction(action: string, alertData: any): void {
+  private executeAlertAction(action: string, alertData: Record<string, unknown>): void {
     switch (action) {
       case 'dashboard':
         // Update dashboard notification
@@ -239,7 +241,7 @@ class EnhancedLogAnalytics {
     }
   }
 
-  private updateDashboardAlert(alertData: any): void {
+  private updateDashboardAlert(alertData: Record<string, unknown>): void {
     // Store alert in localStorage for dashboard display
     if (typeof window !== 'undefined') {
       const alerts = JSON.parse(localStorage.getItem('dashboard-alerts') || '[]');
@@ -248,7 +250,7 @@ class EnhancedLogAnalytics {
     }
   }
 
-  private sendEmailAlert(alertData: any): void {
+  private sendEmailAlert(alertData: Record<string, unknown>): void {
     // Implement email notification
     fetch('/api/alerts/email', {
       method: 'POST',
@@ -259,7 +261,7 @@ class EnhancedLogAnalytics {
     });
   }
 
-  private sendSlackAlert(alertData: any): void {
+  private sendSlackAlert(alertData: Record<string, unknown>): void {
     // Implement Slack notification
     fetch('/api/alerts/slack', {
       method: 'POST',

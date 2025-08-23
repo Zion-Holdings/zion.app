@@ -1,4 +1,4 @@
-import { Job } from '@/types/jobs';
+import type { Job } from '@/types/jobs';
 
 import { useState, useEffect } from 'react';
 import { supabase } from '@/integrations/supabase/client';
@@ -18,6 +18,7 @@ export function useJobDetails(jobId: string | undefined) {
     
     try {
       setIsLoading(true);
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase
         .from('jobs')
         .select('*')

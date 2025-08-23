@@ -1,6 +1,6 @@
 
 import { createNotification } from './createNotification';
-import { SystemNotificationParams } from './types';
+import type { SystemNotificationParams } from './types';
 
 /**
  * Creates a system notification for a user

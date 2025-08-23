@@ -16,10 +16,17 @@ export default function ZeroTrustSecurityPlatform() {
 				"Service-to-service authentication (mTLS)",
 				"Micro-segmentation and least privilege",
 				"SIEM/SOAR integrations and automated response",
-				"Reference architectures and runbooks"
+				"Reference architectures and runbooks]}
 			]}
 			industries={["Financial Services", "Healthcare", "SaaS", "Government"]}
-			canonical="https://ziontechgroup.com/zero-trust-security-platform"
+			canonical="https://ziontechgroup.com/zero-trust-security-platform]}
 		/>
 	);
+}
+
+// Disable static generation to prevent SSR issues
+export async function getServerSideProps() {
+  return {
+    props: {}
+  };
 }

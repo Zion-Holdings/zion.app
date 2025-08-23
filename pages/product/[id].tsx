@@ -30,10 +30,16 @@ const ProductDetailPage = ({ product }: ProductPageProps) => {
         title={product.name}
         description={product.description || `Details for ${product.name}`}
         type="product"
-        image={product.images ? product.images[0]?.url : undefined}
+        image={
+          product.images && product.images.length > 0
+            ? typeof product.images[0] === 'string'
+              ? product.images[0]
+              : product.images[0]?.url || ''
+            : ''
+        }
         product={{
-          price: product.price || undefined,
-          currency: product.currency || undefined,
+          ...(typeof product.price === 'number' ? { price: product.price } : {}),
+          ...(typeof product.currency === 'string' ? { currency: product.currency } : {}),
           availability: 'in_stock',
           sku: product.id,
         }}

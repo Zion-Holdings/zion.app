@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-require-imports */
+ 
 const dotenv = require('dotenv');
 
 // Load environment variables from .env if present

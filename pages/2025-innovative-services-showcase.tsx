@@ -82,15 +82,8 @@ const InnovativeServicesShowcase2025: React.FC = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <SEO 
         title="2025 Innovative Services Showcase | Zion Tech Group"
-        description="Discover our cutting-edge 2025 innovative services including AI automation, next-gen infrastructure, specialized industry solutions, and revolutionary micro SAAS platforms."
-        keywords={[
-          'innovative services 2025',
-          'AI automation',
-          'next-gen infrastructure',
-          'specialized solutions',
-          'micro SAAS',
-          'Zion Tech Group'
-        ]}
+        description="Discover our cutting-edge 2025 innovative services including AI automation, IT infrastructure, micro SAAS solutions, and emerging technology services."
+        keywords="2025 innovative services, AI automation, IT infrastructure, micro SAAS, emerging technology, Zion Tech Group"
       />
 
       {/* Hero Section */}
@@ -444,4 +437,99 @@ const InnovativeServicesShowcase2025: React.FC = () => {
   );
 };
 
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20">
+          <div className="container mx-auto px-4 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to Transform Your Business?
+              </h2>
+              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                Join the future of technology with our innovative AI consciousness and quantum computing solutions
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-lg hover:shadow-purple-500/25 transition-all"
+                >
+                  Start Free Trial
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="border-2 border-purple-500 text-purple-400 px-8 py-4 rounded-full font-semibold text-lg hover:bg-purple-500 hover:text-white transition-all"
+                >
+                  Schedule Demo
+                </motion.button>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section className="py-20 bg-gradient-to-r from-purple-900/10 to-pink-900/10">
+          <div className="container mx-auto px-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Get in Touch
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Ready to revolutionize your business? Contact our team today
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="text-center"
+              >
+                <Phone className="w-12 h-12 text-purple-400 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-2">Phone</h3>
+                <p className="text-gray-300">+1 302 464 0950</p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-center"
+              >
+                <Mail className="w-12 h-12 text-pink-400 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-2">Email</h3>
+                <p className="text-gray-300">kleber@ziontechgroup.com</p>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="text-center"
+              >
+                <MapPin className="w-12 h-12 text-cyan-400 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-white mb-2">Address</h3>
+                <p className="text-gray-300">364 E Main St STE 1008<br />Middletown DE 19709</p>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </Layout>
+  );
+};
+
+export default Innovative2025ServicesShowcase;
+=======
 export default InnovativeServicesShowcase2025;

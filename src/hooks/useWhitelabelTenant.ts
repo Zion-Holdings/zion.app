@@ -20,7 +20,7 @@ export interface WhitelabelTenant {
   updated_at: string;
   account_manager_id: string | null;
   dns_verified: boolean;
-  email_template_override: Record<string, any> | null;
+  email_template_override: Record<string, unknown> | null;
 }
 
 export function useWhitelabelTenant(externalSubdomain?: string) {
@@ -36,6 +36,7 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
       setError(null);
 
       try {
+        if (!supabase) throw new Error('Supabase client not initialized');
         // Get the current hostname, fallback to localhost if not available
         const hostname = window.location.hostname || 'localhost';
         
@@ -79,15 +80,16 @@ export function useWhitelabelTenant(externalSubdomain?: string) {
           return;
         }
 
-        if ((data as any)?.tenant) {
-          setTenant((data as any).tenant);
+        if (typeof data === 'object' && data !== null && 'tenant' in data) {
+          setTenant((data as { tenant: WhitelabelTenant }).tenant);
           setRetryCount(0); // Reset retry count on success
         } else {
           setTenant(null);
         }
-      } catch (err: any) {
+      } catch (err: unknown) {
+        const message = err instanceof Error ? err.message : String(err);
         logWarn('Error loading tenant:', {
-          error: err,
+          error: message,
           retryCount,
           timestamp: new Date().toISOString(),
         });
@@ -129,9 +131,10 @@ export function useTenantAdminStatus(tenantId?: string) {
       }
 
       try {
+        if (!supabase) throw new Error('Supabase client not initialized');
         const { data: sessionData, error: sessionError } = await supabase.auth.getSession();
         if (sessionError) {
-          logWarn('Session error:', { data: sessionError });
+          logWarn('Session error:', { data:  { data: sessionError } });
           setIsAdmin(false);
           return;
         }
@@ -141,7 +144,8 @@ export function useTenantAdminStatus(tenantId?: string) {
           return;
         }
 
-        const userId = (sessionData as any).session?.user?.id;
+        const userId = typeof sessionData === 'object' && sessionData !== null && 'session' in sessionData && (sessionData as { session?: { user?: { id?: string } } }).session?.user?.id;
+        if (!supabase) throw new Error('Supabase client not initialized');
         const { data, error } = await supabase
           .from('tenant_administrators')
           .select('*')
@@ -150,12 +154,12 @@ export function useTenantAdminStatus(tenantId?: string) {
           .single();
 
         if (error) {
-          logWarn('Error checking admin status:', { data: error });
+          logWarn('Error checking admin status:', { data:  { data: error } });
         }
 
         setIsAdmin(!!data && !error);
       } catch (err) {
-        logWarn('Error checking tenant admin status:', { data: err });
+        logWarn('Error checking tenant admin status:', { data:  { data: err } });
         setIsAdmin(false);
       } finally {
         setIsLoading(false);

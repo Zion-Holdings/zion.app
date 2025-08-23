@@ -1,4 +1,4 @@
-import { Job } from "@/types/jobs";
+import type { Job } from "@/types/jobs";
 
 export const JOB_POSTS: Job[] = [
   {

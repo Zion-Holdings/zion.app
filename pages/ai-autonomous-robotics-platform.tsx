@@ -1,281 +1,303 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { 
-  Bot, 
-  Cpu, 
-  Eye, 
-  Zap, 
-  Shield, 
-  BarChart3,
-  Users,
-  Globe,
-  CheckCircle,
-  ArrowRight,
-  Play,
-  Cog,
-  Target
-} from 'lucide-react';
+import { Bot, Cpu, Zap, Target, Users, Globe, Brain, Rocket, Shield } from 'lucide-react';
 
 const AIAutonomousRoboticsPlatform: React.FC = () => {
-  const platformComponents = [
-    {
-      icon: <Bot className="w-6 h-6" />,
-      title: "Autonomous Robots",
-      description: "Self-navigating robots with advanced AI decision-making capabilities"
-    },
-    {
-      icon: <Cpu className="w-6 h-6" />,
-      title: "AI Control System",
-      description: "Centralized AI brain managing all robotic operations and coordination"
-    },
-    {
-      icon: <Eye className="w-6 h-6" />,
-      title: "Computer Vision",
-      description: "Advanced visual processing for object recognition and navigation"
-    },
-    {
-      icon: <Zap className="w-6 h-6" />,
-      title: "Power Management",
-      description: "Intelligent energy optimization and autonomous charging systems"
-    }
-  ];
-
-  const capabilities = [
-    "Autonomous navigation and pathfinding",
-    "Real-time obstacle detection and avoidance",
-    "Multi-robot coordination and swarm intelligence",
-    "Adaptive learning and behavior modification",
-    "Human-robot collaboration and safety protocols",
-    "Remote monitoring and control systems",
-    "Predictive maintenance and self-diagnostics",
-    "Scalable deployment across multiple environments"
-  ];
-
-  const applications = [
-    {
-      industry: "Manufacturing",
-      useCases: ["Assembly Lines", "Quality Control", "Material Handling", "Warehouse Automation"]
-    },
-    {
-      industry: "Healthcare",
-      useCases: ["Surgical Assistance", "Patient Care", "Medical Supply Delivery", "Sanitization"]
-    },
-    {
-      industry: "Agriculture",
-      useCases: ["Crop Monitoring", "Harvesting", "Soil Analysis", "Pest Control"]
-    },
-    {
-      industry: "Logistics",
-      useCases: ["Package Sorting", "Inventory Management", "Last-Mile Delivery", "Storage Optimization"]
-    }
-  ];
-
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+      <div className="min-h-screen bg-gradient-to-br from-black via-orange-900/20 to-red-900/20">
         {/* Hero Section */}
-        <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8">
-          <div className="absolute inset-0 bg-gradient-to-r from-orange-600/20 to-red-600/20" />
-          <div className="relative max-w-7xl mx-auto text-center">
+        <section className="pt-32 pb-20 px-4">
+          <div className="max-w-7xl mx-auto text-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-orange-400 via-red-500 to-pink-400 bg-clip-text text-transparent">
                 AI Autonomous Robotics Platform
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-                Transform industries with intelligent robots that learn, adapt, and operate 
-                autonomously across complex environments
+              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
+                Next-generation robotics platform powered by advanced AI that enables robots to operate independently, learn continuously, and adapt to dynamic environments
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
-                  <Play className="w-5 h-5 inline mr-2" />
-                  Watch Demo
-                </button>
-                <button className="border-2 border-white/30 text-white hover:bg-white/10 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
-                  Deploy Robots
-                </button>
+              <div className="flex flex-wrap justify-center gap-4">
+                <span className="px-4 py-2 bg-orange-500/20 border border-orange-500/30 rounded-full text-orange-300">
+                  Autonomous Navigation
+                </span>
+                <span className="px-4 py-2 bg-red-500/20 border border-red-500/30 rounded-full text-red-300">
+                  AI Learning
+                </span>
+                <span className="px-4 py-2 bg-pink-500/20 border border-pink-500/30 rounded-full text-pink-300">
+                  Adaptive Behavior
+                </span>
               </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Platform Components */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
+        {/* Core Capabilities */}
+        <section className="py-20 px-4">
           <div className="max-w-7xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
+                Core Capabilities
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Our robotics platform combines cutting-edge AI with advanced robotics hardware for unprecedented autonomy
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: Bot,
+                  title: "Autonomous Navigation",
+                  description: "Advanced SLAM algorithms and path planning for complex environments",
+                  color: "from-orange-500 to-red-500"
+                },
+                {
+                  icon: Brain,
+                  title: "AI Decision Making",
+                  description: "Real-time cognitive processing for intelligent behavior and problem-solving",
+                  color: "from-red-500 to-pink-500"
+                },
+                {
+                  icon: Zap,
+                  title: "Adaptive Learning",
+                  description: "Continuous improvement through experience and environmental interaction",
+                  color: "from-pink-500 to-purple-500"
+                },
+                {
+                  icon: Target,
+                  title: "Precision Control",
+                  description: "High-accuracy motor control and sensor fusion for precise operations",
+                  color: "from-purple-500 to-blue-500"
+                },
+                {
+                  icon: Shield,
+                  title: "Safety Systems",
+                  description: "Built-in safety protocols and collision avoidance mechanisms",
+                  color: "from-blue-500 to-cyan-500"
+                },
+                {
+                  icon: Globe,
+                  title: "Multi-Environment",
+                  description: "Operates seamlessly across indoor, outdoor, and hazardous environments",
+                  color: "from-cyan-500 to-green-500"
+                }
+              ].map((capability, index) => (
+                <motion.div
+                  key={capability.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 * index }}
+                  className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-all duration-300"
+                >
+                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${capability.color} p-4 mb-4`}>
+                    <capability.icon className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3">{capability.title}</h3>
+                  <p className="text-gray-300">{capability.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Platform Architecture */}
+        <section className="py-20 px-4 bg-black/20">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-red-400 to-pink-500 bg-clip-text text-transparent">
                 Platform Architecture
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our robotics platform combines cutting-edge hardware with advanced AI software
+                Understanding the sophisticated architecture that powers our autonomous robotics platform
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {platformComponents.map((component, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 text-center"
-                >
-                  <div className="text-orange-400 mb-4 flex justify-center">{component.icon}</div>
-                  <h3 className="text-xl font-semibold text-white mb-3">{component.title}</h3>
-                  <p className="text-gray-300">{component.description}</p>
-                </motion.div>
-              ))}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                <h3 className="text-3xl font-bold text-white mb-6">System Components</h3>
+                <div className="space-y-6">
+                  {[
+                    {
+                      title: "Perception Layer",
+                      description: "Advanced sensors and computer vision for environmental understanding",
+                      icon: Cpu
+                    },
+                    {
+                      title: "Cognition Engine",
+                      description: "AI-powered decision making and planning algorithms",
+                      icon: Brain
+                    },
+                    {
+                      title: "Control System",
+                      description: "Precise motor control and actuator management",
+                      icon: Zap
+                    },
+                    {
+                      title: "Safety Monitor",
+                      description: "Real-time safety checks and emergency protocols",
+                      icon: Shield
+                    }
+                  ].map((item, index) => (
+                    <div key={item.title} className="flex items-start space-x-4">
+                      <div className="w-12 h-12 rounded-lg bg-gradient-to-r from-orange-500 to-red-500 p-3 flex-shrink-0">
+                        <item.icon className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-semibold text-white mb-2">{item.title}</h4>
+                        <p className="text-gray-300">{item.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8"
+              >
+                <h3 className="text-2xl font-bold text-white mb-6">Technical Specifications</h3>
+                <ul className="space-y-4">
+                  {[
+                    "Multi-modal sensor fusion (LiDAR, cameras, IMU)",
+                    "Real-time AI inference (< 100ms latency)",
+                    "Advanced SLAM with loop closure detection",
+                    "Dynamic obstacle avoidance and path planning",
+                    "Multi-robot coordination and swarm intelligence",
+                    "Cloud-connected learning and updates"
+                  ].map((spec, index) => (
+                    <li key={index} className="flex items-center text-gray-300">
+                      <div className="w-3 h-3 bg-orange-400 rounded-full mr-3"></div>
+                      {spec}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
             </div>
           </div>
         </section>
 
-        {/* Capabilities Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white/5">
+        {/* Applications */}
+        <section className="py-20 px-4">
           <div className="max-w-7xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Advanced Capabilities
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-pink-400 to-orange-500 bg-clip-text text-transparent">
+                Applications
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our autonomous robotics platform delivers enterprise-grade functionality
+                Versatile robotics platform for diverse industrial and commercial applications
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {capabilities.map((capability, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "Manufacturing",
+                  description: "Automated assembly, quality inspection, and material handling",
+                  icon: Cpu,
+                  color: "from-orange-500 to-red-500"
+                },
+                {
+                  title: "Logistics",
+                  description: "Warehouse automation, package sorting, and delivery systems",
+                  icon: Rocket,
+                  color: "from-red-500 to-pink-500"
+                },
+                {
+                  title: "Healthcare",
+                  description: "Surgical assistance, patient care, and medical logistics",
+                  icon: Users,
+                  color: "from-pink-500 to-purple-500"
+                },
+                {
+                  title: "Agriculture",
+                  description: "Precision farming, crop monitoring, and automated harvesting",
+                  icon: Globe,
+                  color: "from-purple-500 to-blue-500"
+                },
+                {
+                  title: "Construction",
+                  description: "Site inspection, material transport, and safety monitoring",
+                  icon: Shield,
+                  color: "from-blue-500 to-cyan-500"
+                },
+                {
+                  title: "Research",
+                  description: "Exploration, data collection, and experimental automation",
+                  icon: Brain,
+                  color: "from-cyan-500 to-green-500"
+                }
+              ].map((application, index) => (
                 <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="flex items-center space-x-3"
+                  key={application.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.2 + 0.1 * index }}
+                  className="bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 text-center"
                 >
-                  <CheckCircle className="w-6 h-6 text-orange-400 flex-shrink-0" />
-                  <span className="text-gray-300 text-lg">{capability}</span>
+                  <div className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${application.color} p-5 mx-auto mb-6`}>
+                    <application.icon className="w-10 h-10 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-4">{application.title}</h3>
+                  <p className="text-gray-300">{application.description}</p>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Applications Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Industry Applications
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our robotics platform is transforming operations across diverse industries
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {applications.map((application, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6"
-                >
-                  <h3 className="text-xl font-semibold text-white mb-4 text-center">{application.industry}</h3>
-                  <ul className="space-y-2">
-                    {application.useCases.map((useCase, useCaseIndex) => (
-                      <li key={useCaseIndex} className="flex items-center text-gray-300">
-                        <ArrowRight className="w-4 h-4 text-orange-400 mr-2 flex-shrink-0" />
-                        {useCase}
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Benefits Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white/5">
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-              >
-                <div className="text-4xl font-bold text-orange-400 mb-2">90%</div>
-                <div className="text-gray-300 text-lg">Efficiency Increase</div>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                viewport={{ once: true }}
-              >
-                <div className="text-4xl font-bold text-red-400 mb-2">24/7</div>
-                <div className="text-gray-300 text-lg">Operation</div>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                viewport={{ once: true }}
-              >
-                <div className="text-4xl font-bold text-purple-400 mb-2">99.9%</div>
-                <div className="text-gray-300 text-lg">Accuracy</div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
+        {/* Call to Action */}
+        <section className="py-20 px-4">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.4 }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Ready to Automate with Robots?
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-orange-400 to-pink-400 bg-clip-text text-transparent">
+                Ready to Deploy Autonomous Robots?
               </h2>
               <p className="text-xl text-gray-300 mb-8">
-                Deploy intelligent autonomous robots to transform your operations
+                Transform your operations with our intelligent robotics platform
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
-                  Deploy Now
-                </button>
-                <button className="border-2 border-white/30 text-white hover:bg-white/10 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
-                  Schedule Demo
-                </button>
+                <a
+                  href="/contact"
+                  className="px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold rounded-xl hover:from-orange-600 hover:to-red-600 transition-all duration-300"
+                >
+                  Get Started
+                </a>
+                <a
+                  href="/ai-autonomous-ecosystem"
+                  className="px-8 py-4 border border-white/30 text-white font-semibold rounded-xl hover:border-white/50 transition-all duration-300"
+                >
+                  Learn More
+                </a>
               </div>
             </motion.div>
           </div>

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import {logErrorToProduction} from '@/utils/productionLogger';
 import {
@@ -14,9 +13,9 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
-import { TalentProfile } from "@/types/talent";
+import type { TalentProfile } from "@/types/talent";
 import { useAuth } from "@/hooks/useAuth";
-import { JobApplication } from "@/types/jobs";
+import type { JobApplication } from "@/types/jobs";
 
 export interface HireConfirmationModalProps {
   isOpen: boolean;
@@ -67,6 +66,15 @@ export function HireConfirmationModal({
       toast({
         title: 'Missing talent data',
         description: 'Talent information is missing.',
+        variant: 'destructive',
+      });
+      return;
+    }
+
+    if (!supabase) {
+      toast({
+        title: 'Database connection error',
+        description: 'Unable to connect to database. Please try again.',
         variant: 'destructive',
       });
       return;

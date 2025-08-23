@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
-import { useEffect, useState, FormEvent } from 'react';
+import { useEffect, useState } from 'react';
+import type { FormEvent } from 'react';
 import Link from 'next/link';
 import { Mail, Clock, RefreshCw } from 'lucide-react';
 
@@ -10,7 +11,7 @@ import Head from 'next/head';
 import { signIn } from 'next-auth/react';
 import { supabase } from '@/utils/supabase/client';
 import { OptimizedImage } from '@/components/ui/OptimizedImage';
-import type { AuthError, User, AuthChangeEvent, Session } from '@supabase/supabase-js';
+import type { User, AuthChangeEvent, Session } from '@supabase/supabase-js';
 import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
@@ -22,7 +23,7 @@ const LoginPage = () => {
   const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState<AuthError | null>(null);
+  const [error, setError] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(false); // For login form submission
   const [user, setUser] = useState<User | null>(null);
   const [isCheckingSession, setIsCheckingSession] = useState(true); // For initial session check
@@ -59,6 +60,11 @@ const LoginPage = () => {
 
       setIsCheckingSession(true);
       try {
+        if (!supabase) {
+          logErrorToProduction('LoginPage: Supabase client not available');
+          return;
+        }
+        
         logInfo('LoginPage: Calling supabase.auth.getSession()');
         const { data: { session }, error: sessionError } = await supabase.auth.getSession();
         clearTimeout(sessionTimeoutId); // Clear timeout once getSession completes
@@ -68,7 +74,7 @@ const LoginPage = () => {
           logErrorToProduction('LoginPage: Error getting session:', { data: sessionError });
           setError(sessionError as any); // Cast to any if type is too strict
         } else {
-          logInfo('LoginPage: getSession returned, user:', { data: session?.user?.id });
+          logInfo('LoginPage: getSession returned, user:', { data:  { data: session?.user?.id } });
           setUser(session?.user ?? null);
         }
       } catch (e) {
@@ -85,8 +91,13 @@ const LoginPage = () => {
       }
 
       // Listener for auth state changes
+      if (!supabase) {
+        logErrorToProduction('LoginPage: Supabase client not available for auth listener');
+        return;
+      }
+      
       logInfo('LoginPage: Setting up onAuthStateChange listener.');
-      const { data: authListener } = supabase.auth.onAuthStateChange((event: AuthChangeEvent, session: Session | null) => {
+      const { data: authListener } = supabase.auth.onAuthStateChange((event: AuthChangeEvent, session: any) => {
         if (!mounted) return;
         logInfo('LoginPage: onAuthStateChange event:', { 
           event, 
@@ -119,7 +130,7 @@ const LoginPage = () => {
 
   // Effect for handling redirection AFTER session is checked and user state is updated
   useEffect(() => {
-    logInfo(`LoginPage: Redirection effect runs. sessionChecked: ${sessionChecked}, isLoading: ${isLoading}, user: ${user?.id}, pathname: ${router.pathname}`);
+    logInfo(`LoginPage: Redirection effect runs. sessionChecked: ${sessionChecked}, isLoading: ${isLoading}, user: ${JSON.stringify(user)}, pathname: ${router.pathname}`);
     
     // Only redirect if the initial session check is complete, not currently submitting login form, and user exists
     if (sessionChecked && !isLoading && user) {
@@ -130,7 +141,7 @@ const LoginPage = () => {
         try {
           returnTo = decodeURIComponent(router.query.returnTo);
         } catch (e) {
-          logWarn('Failed to decode returnTo parameter:', { data: router.query.returnTo });
+          logWarn('Failed to decode returnTo parameter:', { data:  { data: router.query.returnTo } });
           returnTo = '/dashboard';
         }
       }
@@ -166,7 +177,7 @@ const LoginPage = () => {
 
   const handleResendVerification = async () => {
     if (!email) {
-      setError({ name: 'ValidationError', message: 'Please enter your email address first' } as AuthError);
+      setError({ name: 'ValidationError', message: 'Please enter your email address first' });
       return;
     }
     
@@ -183,10 +194,10 @@ const LoginPage = () => {
         setError(null);
       } else {
         const data = await response.json();
-        setError({ name: 'ResendError', message: data.message || 'Failed to resend verification email' } as AuthError);
+        setError({ name: 'ResendError', message: data.message || 'Failed to resend verification email' });
       }
     } catch (err) {
-      setError({ name: 'NetworkError', message: 'Failed to resend verification email. Please try again.' } as AuthError);
+      setError({ name: 'NetworkError', message: 'Failed to resend verification email. Please try again.' });
     } finally {
       setIsResendingVerification(false);
     }
@@ -229,7 +240,13 @@ const LoginPage = () => {
     setVerificationEmailSent(false);
     
     try {
-      logInfo('Attempting Supabase login with email:', { data: email });
+      if (!supabase) {
+        logErrorToProduction('LoginPage: Supabase client not available for login');
+        setError({ name: 'AuthServiceError', message: 'Authentication service unavailable. Please try again later.' });
+        return;
+      }
+      
+      logInfo('Attempting Supabase login with email:', { data:  { data: email } });
       const { data, error: signInError } = await supabase.auth.signInWithPassword({
         email,
         password,
@@ -252,7 +269,7 @@ const LoginPage = () => {
           setError({ 
             name: 'EmailNotVerifiedError', 
             message: 'Please verify your email address before logging in. Check your inbox for a verification link.' 
-          } as AuthError);
+          });
           setShowProactiveResendForm(false); // Hide proactive form if reactive one is triggered
           
           // Auto-resend verification email
@@ -272,16 +289,16 @@ const LoginPage = () => {
               }
               // Add more specific checks here if needed for other Supabase error messages
           }
-          setError({ name: signInError.name || 'AuthApiError', message: displayMessage } as AuthError);
+          setError({ name: signInError.name || 'AuthApiError', message: displayMessage });
         }
       } else if (data.user) {
-        logInfo('Supabase sign-in successful, user:', { data: data.user });
+        logInfo('Supabase sign-in successful, user:', { data:  { data: data.user } });
         setUser(data.user); // setUser to trigger useEffect for redirection
         // Redirection is now handled by the useEffect hook
       } else {
         // Should not happen if signInError is null and data.user is null
         logWarn('Supabase sign-in returned no error but no user.');
-        setError({ name: 'UnknownAuthError', message: 'Login failed due to an unknown error. Please try again.' } as AuthError);
+        setError({ name: 'UnknownAuthError', message: 'Login failed due to an unknown error. Please try again.' });
       }
     } catch (catchedError: any) {
       logErrorToProduction('Exception during Supabase sign-in:', { data: catchedError });
@@ -292,7 +309,7 @@ const LoginPage = () => {
       } else if (catchedError.message) {
         exceptionMessage = catchedError.message;
       }
-      setError({ name: 'ExceptionError', message: exceptionMessage } as AuthError);
+      setError({ name: 'ExceptionError', message: exceptionMessage });
     } finally {
       setIsLoading(false);
     }
@@ -342,7 +359,7 @@ const LoginPage = () => {
 
   // 3. Render Login Form: If session is checked and no user, OR if a login attempt is in progress (isLoading)
   // This also covers the case where a user was present but a login attempt failed, clearing the user.
-  logInfo(`LoginPage: Rendering login form. sessionChecked: ${sessionChecked}, user: ${user?.id}, isLoading: ${isLoading}, pathname: ${router.pathname}`);
+  logInfo(`LoginPage: Rendering login form. sessionChecked: ${sessionChecked}, user: ${JSON.stringify(user)}, isLoading: ${isLoading}, pathname: ${router.pathname}`);
 
   // Defensive check: If router.pathname is not /auth/login, do not render the login form.
   // This is a safeguard against the component's content persisting on other auth routes.

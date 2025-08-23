@@ -36,6 +36,7 @@ export function usePricingSuggestionAnalytics(days = 30) {
   useEffect(() => {
     const fetchAnalytics = async () => {
       try {
+        if (!supabase) throw new Error('Supabase client not initialized');
         const since = new Date(Date.now() - days * 24 * 60 * 60 * 1000).toISOString();
         const { data, error } = await supabase
           .from('pricing_suggestions')
@@ -45,20 +46,35 @@ export function usePricingSuggestionAnalytics(days = 30) {
         if (error) throw error;
 
         const totalSuggestions = data.length;
-        const accepted = data.filter((d: any) => d.accepted).length;
+        const accepted = data.filter((d: unknown) => typeof d === 'object' && d !== null && 'accepted' in d && (d as { accepted: boolean }).accepted).length;
         const acceptanceRate = totalSuggestions ? accepted / totalSuggestions : 0;
 
         const gaps = data
-          .filter((d: any) => d.actual_value !== null && d.actual_value !== undefined)
-          .map((d: any) => Math.abs((d.actual_value as number) - ((d.suggested_min + d.suggested_max) / 2)));
+          .filter((d: unknown) => typeof d === 'object' && d !== null && 'actual_value' in d && (d as { actual_value?: number }).actual_value !== null && (d as { actual_value?: number }).actual_value !== undefined)
+          .map((d: unknown) => {
+            if (typeof d === 'object' && d !== null && 'actual_value' in d && 'suggested_min' in d && 'suggested_max' in d) {
+              return Math.abs(
+                Number((d as { actual_value: number }).actual_value) -
+                ((Number((d as { suggested_min: number }).suggested_min) + Number((d as { suggested_max: number }).suggested_max)) / 2)
+              );
+            }
+            return 0;
+          });
         const averagePriceGap = gaps.length ? gaps.reduce((a: number, b: number) => a + b, 0) / gaps.length : 0;
 
         const categoryMap: Record<string, { count: number; accepted: number }> = {};
-        data.forEach((d: any) => {
-          const cat = (d as any).category || 'other';
-          if (!categoryMap[cat]) categoryMap[cat] = { count: 0, accepted: 0 };
-          categoryMap[cat].count += 1;
-          if (d.accepted) categoryMap[cat].accepted += 1;
+        data.forEach((d: unknown) => {
+          let cat = 'other';
+          if (typeof d === 'object' && d !== null && 'category' in d) {
+            cat = (d as { category?: string }).category || 'other';
+          }
+          if (!Object.prototype.hasOwnProperty.call(categoryMap, cat) || !categoryMap[cat]) {
+            categoryMap[cat] = { count: 0, accepted: 0 };
+          }
+          categoryMap[cat]!.count += 1;
+          if (typeof d === 'object' && d !== null && 'accepted' in d && (d as { accepted: boolean }).accepted) {
+            categoryMap[cat]!.accepted += 1;
+          }
         });
         const suggestionsByCategory = Object.entries(categoryMap).map(([category, val]) => ({
           category,
@@ -67,18 +83,59 @@ export function usePricingSuggestionAnalytics(days = 30) {
         }));
 
         const recentSuggestions = data
-          .sort((a: any, b: any) => (b.created_at as string).localeCompare(a.created_at as string))
+          .sort((a: unknown, b: unknown) => {
+            if (
+              typeof a === 'object' && a !== null && 'created_at' in a &&
+              typeof b === 'object' && b !== null && 'created_at' in b
+            ) {
+              return String((b as { created_at: string }).created_at).localeCompare(String((a as { created_at: string }).created_at));
+            }
+            return 0;
+          })
           .slice(0, 10)
-          .map((d: any) => ({
-            id: d.id as string,
-            userId: d.user_id as string,
-            suggestedMin: d.suggested_min as number,
-            suggestedMax: d.suggested_max as number,
-            actualValue: d.actual_value as number | undefined,
-            accepted: d.accepted as boolean,
-            createdAt: d.created_at as string,
-            type: d.suggestion_type as 'client' | 'talent'
-          }));
+          .map((d: unknown) => {
+            if (typeof d === 'object' && d !== null) {
+              const t = (d as { suggestion_type?: unknown }).suggestion_type;
+              return {
+                id: (d as { id?: string }).id ?? '',
+                userId: (d as { user_id?: string }).user_id ?? '',
+                suggestedMin: (d as { suggested_min?: number }).suggested_min ?? 0,
+                suggestedMax: (d as { suggested_max?: number }).suggested_max ?? 0,
+                actualValue: (d as { actual_value?: number }).actual_value ?? 0,
+                accepted: (d as { accepted?: boolean }).accepted ?? false,
+                createdAt: (d as { created_at?: string }).created_at ?? '',
+                type: toSuggestionType(t),
+              } as {
+                id: string;
+                userId: string;
+                suggestedMin: number;
+                suggestedMax: number;
+                actualValue?: number;
+                accepted: boolean;
+                createdAt: string;
+                type: 'client' | 'talent';
+              };
+            }
+            return {
+              id: '',
+              userId: '',
+              suggestedMin: 0,
+              suggestedMax: 0,
+              actualValue: 0,
+              accepted: false,
+              createdAt: '',
+              type: 'client',
+            } as {
+              id: string;
+              userId: string;
+              suggestedMin: number;
+              suggestedMax: number;
+              actualValue?: number;
+              accepted: boolean;
+              createdAt: string;
+              type: 'client' | 'talent';
+            };
+          });
 
         setAnalytics({
           totalSuggestions,
@@ -103,4 +160,8 @@ export function usePricingSuggestionAnalytics(days = 30) {
   }, [days]);
 
   return analytics;
+}
+
+function toSuggestionType(t: unknown): 'client' | 'talent' {
+  return t === 'client' || t === 'talent' ? t : 'client';
 }

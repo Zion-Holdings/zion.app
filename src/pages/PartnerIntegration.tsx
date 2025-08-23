@@ -23,7 +23,7 @@ import {
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { UseFormRegisterReturn } from "react-hook-form";
+import type { UseFormRegisterReturn } from "react-hook-form";
 
 const schema = z.object({
   name: z.string().min(2, "Required"),
@@ -49,7 +49,7 @@ export default function PartnerIntegration() {
   });
 
   const onSubmit = (values: FormValues) => {
-    logInfo('Partner API request', { data: values });
+    logInfo('Partner API request', { data:  { data: values } });
     setSubmitted(true);
   };
 
@@ -99,7 +99,7 @@ export default function PartnerIntegration() {
                   render={({ field }: { field: UseFormRegisterReturn }) => (
                     <FormItem>
                       <FormLabel>Entity Type</FormLabel>
-                      <Select onValueChange={(value) => field.onChange({ target: { value } } as any)} value={form.watch('entityType')}>
+                      <Select onValueChange={(value) => field.onChange({ target: { value } } as { target: { value: string } })} value={form.watch('entityType')}>
                         <FormControl>
                           <SelectTrigger>
                             <SelectValue placeholder="Select type" />
@@ -137,7 +137,7 @@ export default function PartnerIntegration() {
                   render={({ field }: { field: UseFormRegisterReturn }) => (
                     <FormItem>
                       <FormLabel>Use Case</FormLabel>
-                      <Select onValueChange={(value) => field.onChange({ target: { value } } as any)} value={form.watch('useCase')}>
+                      <Select onValueChange={(value) => field.onChange({ target: { value } } as { target: { value: string } })} value={form.watch('useCase')}>
                         <FormControl>
                           <SelectTrigger>
                             <SelectValue placeholder="Select use case" />

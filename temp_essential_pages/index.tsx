@@ -2,7 +2,6 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import Home from '@/pages/Home';
 import type { GetStaticProps } from 'next';
-import * as Sentry from '@sentry/nextjs';
 import { ErrorBanner } from '@/components/talent/ErrorBanner';
 
 export interface HomePageProps {
@@ -37,7 +36,10 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
     // Log to Sentry if available, but don't block the page
     if (isSentryActive) {
       try {
-        Sentry.captureException(error);
+        if (typeof window === 'undefined') {
+          const Sentry = await import('@sentry/nextjs');
+          Sentry.captureException(error);
+        }
       } catch (sentryError) {
         console.warn('Failed to log to Sentry:', sentryError);
       }
@@ -60,7 +62,13 @@ const ErrorTestButton = () => {
       throw new Error("This is a test error from the homepage button!");
     } catch (error) {
       if (isSentryActive) {
-        Sentry.captureException(error);
+        if (typeof window === 'undefined') {
+          import('@sentry/nextjs').then((Sentry) => {
+            Sentry.captureException(error);
+          }).catch((sentryError) => {
+            console.warn('Failed to log to Sentry:', sentryError);
+          });
+        }
       }
       console.error(error);
     }

@@ -1,9 +1,9 @@
 declare module 'jest' {
-  export const expect: any;
-  export const describe: any;
-  export const it: any;
-  export const beforeAll: any;
-  export const afterAll: any;
-  export const beforeEach: any;
-  export const afterEach: any;
+  export const expect: unknown;
+  export const describe: unknown;
+  export const it: unknown;
+  export const beforeAll: unknown;
+  export const afterAll: unknown;
+  export const beforeEach: unknown;
+  export const afterEach: unknown;
 }

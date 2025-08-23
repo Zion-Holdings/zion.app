@@ -3,17 +3,21 @@ import { useAuth } from "@/hooks/useAuth";
 import {logErrorToProduction} from "@/utils/productionLogger";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "@/hooks/use-toast";
+import api from '@/lib/api';
 
 export type ApiKeyScope = 'jobs:read' | 'jobs:write' | 'talent:read' | 'quotes:write' | 'webhooks:manage';
 
 export interface ApiKey {
   id: string;
   name: string;
-  key_prefix: string;
-  scopes: ApiKeyScope[];
+  key?: string;
+  user_id: string;
   created_at: string;
-  last_used_at: string | null;
-  expires_at: string | null;
+  expires_at?: string;
+  scopes: ApiKeyScope[];
+  last_used_at?: string;
+  revoked: boolean;
+  key_prefix?: string;
   is_active: boolean;
 }
 
@@ -56,27 +60,25 @@ export function useApiKeys() {
     setError(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data: { session } } = await supabase.auth.getSession();
       if (!session) {
         setError("Authentication required");
         return;
       }
 
-      const response = await fetch(`${getApiUrl()}/keys`, {
-        method: 'GET',
+      const response = await api.get(`${getApiUrl()}/keys`, {
         headers: {
-          'Authorization': `Bearer ${(session as any)?.access_token}`,
+          'Authorization': `Bearer ${typeof session === 'object' && session !== null && 'access_token' in session ? (session as { access_token: string }).access_token : ''}`,
           'Content-Type': 'application/json'
         }
       });
 
-      const result = await response.json();
-      
-      if (!response.ok) {
-        throw new Error(result.error || 'Failed to fetch API keys');
+      if (response.status < 200 || response.status >= 300) {
+        throw new Error(response.data.error || 'Failed to fetch API keys');
       }
 
-      setKeys(result.keys || []);
+      setKeys(response.data.keys || []);
     } catch (err) {
       logErrorToProduction('Error fetching API keys:', { data: err });
       setError(err instanceof Error ? err.message : 'An unknown error occurred');
@@ -99,6 +101,7 @@ export function useApiKeys() {
     setNewApiKey(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data: { session } } = await supabase.auth.getSession();
       if (!session) {
         setError("Authentication required");
@@ -108,25 +111,30 @@ export function useApiKeys() {
       const response = await fetch(`${getApiUrl()}/create`, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${(session as any)?.access_token}`,
+          'Authorization': `Bearer ${typeof session === 'object' && session !== null && 'access_token' in session ? (session as { access_token: string }).access_token : ''}`,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
           name,
           scopes,
           expiresAt: expiresAt ? expiresAt.toISOString() : null
-        })
-      });
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${session.access_token}`,
+            'Content-Type': 'application/json'
+          }
+        }
+      );
 
-      const result = await response.json();
-      
-      if (!response.ok) {
-        throw new Error(result.error || 'Failed to create API key');
+      if (response.status < 200 || response.status >= 300) {
+        throw new Error(response.data.error || 'Failed to create API key');
       }
+      const result = response.data;
 
       // Add the new key to the list
       setKeys(prev => [{ ...result, key: undefined }, ...prev]);
-      
+
       // Store the actual key value temporarily so it can be displayed once
       setNewApiKey(result.key);
       
@@ -158,6 +166,7 @@ export function useApiKeys() {
     setNewApiKey(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data: { session } } = await supabase.auth.getSession();
       if (!session) {
         setError("Authentication required");
@@ -167,17 +176,17 @@ export function useApiKeys() {
       const response = await fetch(`${getApiUrl()}/regenerate`, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${(session as any)?.access_token}`,
+          'Authorization': `Bearer ${typeof session === 'object' && session !== null && 'access_token' in session ? (session as { access_token: string }).access_token : ''}`,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ keyId })
       });
 
-      const result = await response.json();
-      
-      if (!response.ok) {
-        throw new Error(result.error || 'Failed to regenerate API key');
+      if (response.status < 200 || response.status >= 300) {
+        throw new Error(response.data.error || 'Failed to regenerate API key');
       }
+
+      const result = response.data;
 
       // Update the key in the list
       setKeys(prev => prev.map(key => 
@@ -214,6 +223,7 @@ export function useApiKeys() {
     setError(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data: { session } } = await supabase.auth.getSession();
       if (!session) {
         setError("Authentication required");
@@ -223,17 +233,17 @@ export function useApiKeys() {
       const response = await fetch(`${getApiUrl()}/revoke`, {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${(session as any)?.access_token}`,
+          'Authorization': `Bearer ${typeof session === 'object' && session !== null && 'access_token' in session ? (session as { access_token: string }).access_token : ''}`,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ keyId })
       });
 
-      const result = await response.json();
-      
-      if (!response.ok) {
-        throw new Error(result.error || 'Failed to revoke API key');
+      if (response.status < 200 || response.status >= 300) {
+        throw new Error(response.data.error || 'Failed to revoke API key');
       }
+
+      const result = response.data;
 
       // Update the key's active status in the list
       setKeys(prev => prev.map(key => 
@@ -267,28 +277,28 @@ export function useApiKeys() {
     setError(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data: { session } } = await supabase.auth.getSession();
       if (!session) {
         setError("Authentication required");
         return;
       }
 
-      const response = await fetch(
-        `${getApiUrl()}/logs?limit=${limit}&offset=${offset}`, 
+      const response = await api.get(
+        `${getApiUrl()}/logs?limit=${limit}&offset=${offset}`,
         {
-          method: 'GET',
           headers: {
-            'Authorization': `Bearer ${(session as any)?.access_token}`,
+            'Authorization': `Bearer ${typeof session === 'object' && session !== null && 'access_token' in session ? (session as { access_token: string }).access_token : ''}`,
             'Content-Type': 'application/json'
           }
         }
       );
 
-      const result = await response.json();
-      
-      if (!response.ok) {
-        throw new Error(result.error || 'Failed to fetch API logs');
+      if (response.status < 200 || response.status >= 300) {
+        throw new Error(response.data.error || 'Failed to fetch API logs');
       }
+
+      const result = response.data;
 
       setLogs(result.logs || []);
       setTotalLogs(result.count || 0);

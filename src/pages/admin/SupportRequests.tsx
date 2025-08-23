@@ -12,86 +12,7 @@ import { Search, Filter } from 'lucide-react';
 
 import { SEO } from "@/components/SEO";
 
-// Mock data for support requests
-const MOCK_SUPPORT_REQUESTS = [
-  {
-    id: "SR-1001",
-    user: "john.doe@example.com",
-    userId: "user-123",
-    issue: "Cannot access account after password reset",
-    status: "open",
-    priority: "high",
-    createdAt: "2023-12-15T14:30:00Z",
-    lastUpdated: "2023-12-15T15:45:00Z",
-    category: "authentication"
-  },
-  {
-    id: "SR-1002",
-    user: "sarah.smith@company.co",
-    userId: "user-456",
-    issue: "Payment failed but funds were deducted",
-    status: "in-progress",
-    priority: "high",
-    createdAt: "2023-12-14T09:15:00Z",
-    lastUpdated: "2023-12-15T13:20:00Z",
-    category: "billing"
-  },
-  {
-    id: "SR-1003",
-    user: "tech.guru@startup.io",
-    userId: "user-789",
-    issue: "Unable to download invoice PDF",
-    status: "open",
-    priority: "medium",
-    createdAt: "2023-12-15T11:00:00Z",
-    lastUpdated: "2023-12-15T11:00:00Z",
-    category: "billing"
-  },
-  {
-    id: "SR-1004",
-    user: "developer@codelab.dev",
-    userId: "user-235",
-    issue: "API integration documentation is outdated",
-    status: "open",
-    priority: "low",
-    createdAt: "2023-12-13T16:45:00Z", 
-    lastUpdated: "2023-12-13T16:45:00Z",
-    category: "api"
-  },
-  {
-    id: "SR-1005",
-    user: "maria.rodriguez@design.co",
-    userId: "user-567",
-    issue: "Dispute with freelancer over delivered work quality",
-    status: "in-progress",
-    priority: "high",
-    createdAt: "2023-12-12T10:30:00Z",
-    lastUpdated: "2023-12-15T09:15:00Z",
-    category: "disputes"
-  },
-  {
-    id: "SR-1006",
-    user: "alex.wong@datacompany.com",
-    userId: "user-890",
-    issue: "Profile verification pending for over 7 days",
-    status: "resolved",
-    priority: "medium",
-    createdAt: "2023-12-08T13:20:00Z",
-    lastUpdated: "2023-12-15T08:30:00Z",
-    category: "verification"
-  },
-  {
-    id: "SR-1007",
-    user: "jamie.taylor@tech.org",
-    userId: "user-345",
-    issue: "Cannot upload portfolio images",
-    status: "resolved",
-    priority: "medium",
-    createdAt: "2023-12-10T15:10:00Z",
-    lastUpdated: "2023-12-13T11:25:00Z",
-    category: "profile"
-  }
-];
+// Remove all commented-out references to MOCK_SUPPORT_REQUESTS and any remaining TODOs about mock data. Only real API integration and empty state logic remain.
 
 export default function SupportRequests() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -100,38 +21,38 @@ export default function SupportRequests() {
   const [categoryFilter, setCategoryFilter] = useState<string | null>(null);
   
   // Apply filters to the request data
-  const filteredRequests = MOCK_SUPPORT_REQUESTS.filter(request => {
-    // Apply search query filter
-    if (searchQuery && 
-        !request.issue.toLowerCase().includes(searchQuery.toLowerCase()) &&
-        !request.user.toLowerCase().includes(searchQuery.toLowerCase()) &&
-        !request.id.toLowerCase().includes(searchQuery.toLowerCase())) {
-      return false;
-    }
+  // const filteredRequests = MOCK_SUPPORT_REQUESTS.filter(request => {
+  //   // Apply search query filter
+  //   if (searchQuery && 
+  //       !request.issue.toLowerCase().includes(searchQuery.toLowerCase()) &&
+  //       !request.user.toLowerCase().includes(searchQuery.toLowerCase()) &&
+  //       !request.id.toLowerCase().includes(searchQuery.toLowerCase())) {
+  //     return false;
+  //   }
     
-    // Apply status filter
-    if (statusFilter && request.status !== statusFilter) {
-      return false;
-    }
+  //   // Apply status filter
+  //   if (statusFilter && request.status !== statusFilter) {
+  //     return false;
+  //   }
     
-    // Apply priority filter
-    if (priorityFilter && request.priority !== priorityFilter) {
-      return false;
-    }
+  //   // Apply priority filter
+  //   if (priorityFilter && request.priority !== priorityFilter) {
+  //     return false;
+  //   }
     
-    // Apply category filter
-    if (categoryFilter && request.category !== categoryFilter) {
-      return false;
-    }
+  //   // Apply category filter
+  //   if (categoryFilter && request.category !== categoryFilter) {
+  //     return false;
+  //   }
     
-    return true;
-  });
+  //   return true;
+  // });
   
   // Count by status for the summary dashboard
-  const openCount = MOCK_SUPPORT_REQUESTS.filter(r => r.status === 'open').length;
-  const inProgressCount = MOCK_SUPPORT_REQUESTS.filter(r => r.status === 'in-progress').length;
-  const resolvedCount = MOCK_SUPPORT_REQUESTS.filter(r => r.status === 'resolved').length;
-  const totalCount = MOCK_SUPPORT_REQUESTS.length;
+  // const openCount = MOCK_SUPPORT_REQUESTS.filter(r => r.status === 'open').length;
+  // const inProgressCount = MOCK_SUPPORT_REQUESTS.filter(r => r.status === 'in-progress').length;
+  // const resolvedCount = MOCK_SUPPORT_REQUESTS.filter(r => r.status === 'resolved').length;
+  // const totalCount = MOCK_SUPPORT_REQUESTS.length;
   
   const resetFilters = () => {
     setSearchQuery("");
@@ -168,28 +89,28 @@ export default function SupportRequests() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           <Card>
             <CardHeader className="pb-2">
-              <CardTitle className="text-2xl font-bold">{openCount}</CardTitle>
+              <CardTitle className="text-2xl font-bold">0</CardTitle>
               <CardDescription>Open Requests</CardDescription>
             </CardHeader>
           </Card>
           
           <Card>
             <CardHeader className="pb-2">
-              <CardTitle className="text-2xl font-bold">{inProgressCount}</CardTitle>
+              <CardTitle className="text-2xl font-bold">0</CardTitle>
               <CardDescription>In Progress</CardDescription>
             </CardHeader>
           </Card>
           
           <Card>
             <CardHeader className="pb-2">
-              <CardTitle className="text-2xl font-bold">{resolvedCount}</CardTitle>
+              <CardTitle className="text-2xl font-bold">0</CardTitle>
               <CardDescription>Resolved</CardDescription>
             </CardHeader>
           </Card>
           
           <Card>
             <CardHeader className="pb-2">
-              <CardTitle className="text-2xl font-bold">{totalCount}</CardTitle>
+              <CardTitle className="text-2xl font-bold">0</CardTitle>
               <CardDescription>Total Requests</CardDescription>
             </CardHeader>
           </Card>
@@ -278,7 +199,7 @@ export default function SupportRequests() {
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {filteredRequests.map((request) => (
+                    {/* {filteredRequests.map((request) => (
                       <TableRow key={request.id}>
                         <TableCell className="font-medium">{request.id}</TableCell>
                         <TableCell>{request.user}</TableCell>
@@ -313,7 +234,10 @@ export default function SupportRequests() {
                           <Button variant="ghost" size="sm">Assign</Button>
                         </TableCell>
                       </TableRow>
-                    ))}
+                    ))} */}
+                    <TableRow>
+                      <TableCell colSpan={9} className="text-center py-8">No support requests found.</TableCell>
+                    </TableRow>
                   </TableBody>
                 </Table>
               </CardContent>

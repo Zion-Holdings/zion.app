@@ -61,13 +61,17 @@ class DeploymentOptimizer {
       );
     }
 
-    // Check for TypeScript errors
-    try {
-      execSync('npx tsc --noEmit', { stdio: 'pipe' });
-      console.log('   ✅ TypeScript check passed');
-    } catch (error) {
-      this.optimizationResults.warnings.push('TypeScript errors detected');
-      console.log('   ⚠️  TypeScript warnings detected (continuing with build)');
+    // Check for TypeScript errors (skip if SKIP_TYPE_CHECK is set)
+    if (process.env.SKIP_TYPE_CHECK === 'true') {
+      console.log('   ⏭️  TypeScript check skipped (SKIP_TYPE_CHECK=true)');
+    } else {
+      try {
+        execSync('npx tsc --noEmit', { stdio: 'pipe' });
+        console.log('   ✅ TypeScript check passed');
+      } catch (error) {
+        this.optimizationResults.warnings.push('TypeScript errors detected');
+        console.log('   ⚠️  TypeScript warnings detected (continuing with build)');
+      }
     }
 
     // Check for security vulnerabilities

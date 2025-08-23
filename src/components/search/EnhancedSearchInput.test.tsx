@@ -3,7 +3,7 @@ import { render, screen, fireEvent, act, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event';
 import { EnhancedSearchInput } from './EnhancedSearchInput';
 import { AutocompleteSuggestions } from './AutocompleteSuggestions';
-import { SearchSuggestion } from '@/types/search';
+import type { SearchSuggestion } from '@/types/search';
 import { vi } from 'vitest';
 
 // Mock AutocompleteSuggestions to check its props and avoid its internal rendering logic

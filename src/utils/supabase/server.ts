@@ -1,4 +1,4 @@
-// @ts-nocheck
+/// <reference types="node" />
 import { createServerClient } from '@supabase/ssr'
 import { type NextApiRequest, type NextApiResponse } from 'next'
 import { type GetServerSidePropsContext } from 'next/types'
@@ -17,7 +17,7 @@ export function createClient(req: NextApiRequest, res: NextApiResponse) {
             value: (cookies as Record<string, string>)[name] || '',
           }))
         },
-        setAll(cookiesToSet) {
+        setAll(cookiesToSet: Array<{ name: string; value: string; options?: Record<string, any> }>) {
           cookiesToSet.forEach(({ name, value, options }) => {
             let cookieString = `${name}=${value}; Path=/`
             if (options?.httpOnly) cookieString += '; HttpOnly'
@@ -47,7 +47,7 @@ export function createServerSideClient(context: GetServerSidePropsContext) {
             value: (cookies as Record<string, string>)[name] || '',
           }))
         },
-        setAll(cookiesToSet) {
+        setAll(cookiesToSet: Array<{ name: string; value: string; options?: Record<string, any> }>) {
           cookiesToSet.forEach(({ name, value, options }) => {
             let cookieString = `${name}=${value}; Path=/`
             if (options?.httpOnly) cookieString += '; HttpOnly'

@@ -6,7 +6,6 @@ import {
   fetchTalent,
   fetchEquipment,
   getMarketplaceErrorMessage,
-  marketplaceClient,
 } from '../marketplace';
 
 // Mock Supabase
@@ -25,112 +24,6 @@ jest.mock('@/integrations/supabase/client', () => ({
   },
 }));
 
-// Mock data
-const mockProducts = [
-  {
-    id: 'prod-1',
-    title: 'AI Development Kit',
-    description: 'Complete AI development toolkit',
-    price: 299,
-    currency: 'USD',
-    category: 'Software',
-    subcategory: 'AI Tools',
-    tags: ['AI', 'Development', 'Toolkit'],
-    author: {
-      name: 'Tech Corp',
-      id: 'tech-corp-1',
-      avatarUrl: 'https://example.com/avatar.jpg',
-    },
-    images: ['https://example.com/product1.jpg'],
-    createdAt: '2024-01-01T00:00:00Z',
-    rating: 4.5,
-    reviewCount: 25,
-    featured: true,
-    location: 'Global',
-    availability: 'Available',
-    brand: 'TechCorp',
-  },
-  {
-    id: 'prod-2',
-    title: 'Machine Learning Framework',
-    description: 'Advanced ML framework for enterprises',
-    price: 599,
-    currency: 'USD',
-    category: 'Software',
-    subcategory: 'ML Tools',
-    tags: ['ML', 'Framework', 'Enterprise'],
-    author: {
-      name: 'ML Solutions',
-      id: 'ml-solutions-1',
-      avatarUrl: 'https://example.com/avatar2.jpg',
-    },
-    images: ['https://example.com/product2.jpg'],
-    createdAt: '2024-01-02T00:00:00Z',
-    rating: 4.8,
-    reviewCount: 42,
-    featured: false,
-    location: 'US',
-    availability: 'Limited',
-    brand: 'MLSolutions',
-  },
-];
-
-const mockCategories = [
-  { id: 'cat-1', name: 'AI Tools', slug: 'ai-tools', icon: 'Brain' },
-  { id: 'cat-2', name: 'Development', slug: 'development', icon: 'Code' },
-  { id: 'cat-3', name: 'Hardware', slug: 'hardware', icon: 'Cpu' },
-];
-
-const mockTalent = [
-  {
-    id: 'talent-1',
-    name: 'John Doe',
-    title: 'Senior AI Engineer',
-    skills: ['Python', 'TensorFlow', 'PyTorch'],
-    hourlyRate: 150,
-    avatar: 'https://example.com/john.jpg',
-    rating: 4.9,
-    reviewCount: 67,
-    availability: 'Available',
-  },
-  {
-    id: 'talent-2',
-    name: 'Jane Smith',
-    title: 'Machine Learning Specialist',
-    skills: ['R', 'Scikit-learn', 'Keras'],
-    hourlyRate: 125,
-    avatar: 'https://example.com/jane.jpg',
-    rating: 4.7,
-    reviewCount: 34,
-    availability: 'Busy',
-  },
-];
-
-const mockEquipment = [
-  {
-    id: 'eq-1',
-    title: 'NVIDIA RTX 4090',
-    description: 'High-performance GPU for AI workloads',
-    price: 1599,
-    category: 'Hardware',
-    brand: 'NVIDIA',
-    specifications: ['24GB GDDR6X', 'Ada Lovelace Architecture'],
-    images: ['https://example.com/gpu.jpg'],
-    availability: 'In Stock',
-  },
-  {
-    id: 'eq-2',
-    title: 'Intel Xeon Processor',
-    description: 'Server-grade processor for enterprise applications',
-    price: 2299,
-    category: 'Hardware',
-    brand: 'Intel',
-    specifications: ['28 Cores', '56 Threads', '3.2GHz Base Clock'],
-    images: ['https://example.com/cpu.jpg'],
-    availability: 'Limited Stock',
-  },
-];
-
 // Setup MSW server
 const server = setupServer(
   // Products endpoint
@@ -140,7 +33,54 @@ const server = setupServer(
     const category = req.url.searchParams.get('category');
     const search = req.url.searchParams.get('search');
 
-    let filteredProducts = [...mockProducts];
+    let filteredProducts = [
+      {
+        id: 'prod-1',
+        title: 'AI Development Kit',
+        description: 'Complete AI development toolkit',
+        price: 299,
+        currency: 'USD',
+        category: 'Software',
+        subcategory: 'AI Tools',
+        tags: ['AI', 'Development', 'Toolkit'],
+        author: {
+          name: 'Tech Corp',
+          id: 'tech-corp-1',
+          avatarUrl: 'https://example.com/avatar.jpg',
+        },
+        images: ['https://example.com/product1.jpg'],
+        createdAt: '2024-01-01T00:00:00Z',
+        rating: 4.5,
+        reviewCount: 25,
+        featured: true,
+        location: 'Global',
+        availability: 'Available',
+        brand: 'TechCorp',
+      },
+      {
+        id: 'prod-2',
+        title: 'Machine Learning Framework',
+        description: 'Advanced ML framework for enterprises',
+        price: 599,
+        currency: 'USD',
+        category: 'Software',
+        subcategory: 'ML Tools',
+        tags: ['ML', 'Framework', 'Enterprise'],
+        author: {
+          name: 'ML Solutions',
+          id: 'ml-solutions-1',
+          avatarUrl: 'https://example.com/avatar2.jpg',
+        },
+        images: ['https://example.com/product2.jpg'],
+        createdAt: '2024-01-02T00:00:00Z',
+        rating: 4.8,
+        reviewCount: 42,
+        featured: false,
+        location: 'US',
+        availability: 'Limited',
+        brand: 'MLSolutions',
+      },
+    ];
 
     if (category) {
       filteredProducts = filteredProducts.filter(p => 
@@ -164,7 +104,11 @@ const server = setupServer(
 
   // Categories endpoint
   rest.get('*/categories', (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(mockCategories));
+    return res(ctx.status(200), ctx.json([
+      { id: 'cat-1', name: 'AI Tools', slug: 'ai-tools', icon: 'Brain' },
+      { id: 'cat-2', name: 'Development', slug: 'development', icon: 'Code' },
+      { id: 'cat-3', name: 'Hardware', slug: 'hardware', icon: 'Cpu' },
+    ]));
   }),
 
   // Talent endpoint
@@ -174,7 +118,30 @@ const server = setupServer(
     const skills = req.url.searchParams.get('skills')?.split(',') || [];
     const search = req.url.searchParams.get('search');
 
-    let filteredTalent = [...mockTalent];
+    let filteredTalent = [
+      {
+        id: 'talent-1',
+        name: 'John Doe',
+        title: 'Senior AI Engineer',
+        skills: ['Python', 'TensorFlow', 'PyTorch'],
+        hourlyRate: 150,
+        avatar: 'https://example.com/john.jpg',
+        rating: 4.9,
+        reviewCount: 67,
+        availability: 'Available',
+      },
+      {
+        id: 'talent-2',
+        name: 'Jane Smith',
+        title: 'Machine Learning Specialist',
+        skills: ['R', 'Scikit-learn', 'Keras'],
+        hourlyRate: 125,
+        avatar: 'https://example.com/jane.jpg',
+        rating: 4.7,
+        reviewCount: 34,
+        availability: 'Busy',
+      },
+    ];
 
     if (skills.length > 0) {
       filteredTalent = filteredTalent.filter(t => 
@@ -203,7 +170,30 @@ const server = setupServer(
     const category = req.url.searchParams.get('category');
     const search = req.url.searchParams.get('search');
 
-    let filteredEquipment = [...mockEquipment];
+    let filteredEquipment = [
+      {
+        id: 'eq-1',
+        title: 'NVIDIA RTX 4090',
+        description: 'High-performance GPU for AI workloads',
+        price: 1599,
+        category: 'Hardware',
+        brand: 'NVIDIA',
+        specifications: ['24GB GDDR6X', 'Ada Lovelace Architecture'],
+        images: ['https://example.com/gpu.jpg'],
+        availability: 'In Stock',
+      },
+      {
+        id: 'eq-2',
+        title: 'Intel Xeon Processor',
+        description: 'Server-grade processor for enterprise applications',
+        price: 2299,
+        category: 'Hardware',
+        brand: 'Intel',
+        specifications: ['28 Cores', '56 Threads', '3.2GHz Base Clock'],
+        images: ['https://example.com/cpu.jpg'],
+        availability: 'Limited Stock',
+      },
+    ];
 
     if (category) {
       filteredEquipment = filteredEquipment.filter(e => 
@@ -464,7 +454,54 @@ describe('Marketplace Service', () => {
           if (requestCount === 1) {
             return res(ctx.status(401), ctx.json({ error: 'Unauthorized' }));
           }
-          return res(ctx.status(200), ctx.json(mockProducts));
+          return res(ctx.status(200), ctx.json([
+            {
+              id: 'prod-1',
+              title: 'AI Development Kit',
+              description: 'Complete AI development toolkit',
+              price: 299,
+              currency: 'USD',
+              category: 'Software',
+              subcategory: 'AI Tools',
+              tags: ['AI', 'Development', 'Toolkit'],
+              author: {
+                name: 'Tech Corp',
+                id: 'tech-corp-1',
+                avatarUrl: 'https://example.com/avatar.jpg',
+              },
+              images: ['https://example.com/product1.jpg'],
+              createdAt: '2024-01-01T00:00:00Z',
+              rating: 4.5,
+              reviewCount: 25,
+              featured: true,
+              location: 'Global',
+              availability: 'Available',
+              brand: 'TechCorp',
+            },
+            {
+              id: 'prod-2',
+              title: 'Machine Learning Framework',
+              description: 'Advanced ML framework for enterprises',
+              price: 599,
+              currency: 'USD',
+              category: 'Software',
+              subcategory: 'ML Tools',
+              tags: ['ML', 'Framework', 'Enterprise'],
+              author: {
+                name: 'ML Solutions',
+                id: 'ml-solutions-1',
+                avatarUrl: 'https://example.com/avatar2.jpg',
+              },
+              images: ['https://example.com/product2.jpg'],
+              createdAt: '2024-01-02T00:00:00Z',
+              rating: 4.8,
+              reviewCount: 42,
+              featured: false,
+              location: 'US',
+              availability: 'Limited',
+              brand: 'MLSolutions',
+            },
+          ]));
         })
       );
 

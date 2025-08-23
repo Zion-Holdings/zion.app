@@ -4,64 +4,11 @@ import { withApiDocsCors } from '@/middleware/cors';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 
-// Mock talent data for API documentation and testing
-const MOCK_TALENT = [
-  {
-    id: "talent-123",
-    full_name: "Jane Smith",
-    professional_title: "Full Stack Developer",
-    skills: ["React", "Node.js", "TypeScript", "Python", "AWS"],
-    hourly_rate: 75,
-    availability: "full-time",
-    years_experience: 5,
-    location: "Remote, US",
-    bio: "Experienced full stack developer with a focus on React and Node.js. Specialized in building scalable web applications and AI integrations.",
-    portfolio_url: "https://janesmith.dev",
-    email: "jane@example.com",
-    rating: 4.9,
-    completed_projects: 127,
-    created_at: "2023-08-15T10:30:00Z",
-    updated_at: "2024-01-15T14:20:00Z"
-  },
-  {
-    id: "talent-456", 
-    full_name: "Alex Chen",
-    professional_title: "AI/ML Engineer",
-    skills: ["Python", "TensorFlow", "PyTorch", "Kubernetes", "MLOps"],
-    hourly_rate: 95,
-    availability: "part-time",
-    years_experience: 7,
-    location: "San Francisco, CA",
-    bio: "ML engineer with PhD in Computer Science, specializing in computer vision and NLP. Published researcher with 15+ papers.",
-    portfolio_url: "https://alexchen.ai",
-    email: "alex@example.com",
-    rating: 4.8,
-    completed_projects: 89,
-    created_at: "2023-06-20T16:45:00Z",
-    updated_at: "2024-01-12T09:15:00Z"
-  },
-  {
-    id: "talent-789",
-    full_name: "Maria Garcia",
-    professional_title: "UX/UI Designer",
-    skills: ["Figma", "Adobe Creative Suite", "Prototyping", "User Research", "Design Systems"],
-    hourly_rate: 65,
-    availability: "full-time",
-    years_experience: 4,
-    location: "Remote, Spain",
-    bio: "Creative UX/UI designer passionate about creating intuitive and beautiful user experiences. Expert in design systems and accessibility.",
-    portfolio_url: "https://mariagarcia.design",
-    email: "maria@example.com",
-    rating: 4.7,
-    completed_projects: 156,
-    created_at: "2023-09-10T11:20:00Z",
-    updated_at: "2024-01-14T16:30:00Z"
-  }
-];
+// Remove MOCK_TALENT and all mock data usage. Fetch talent from real data source or return an error/empty array if not available.
 
 // Authentication middleware for demo purposes (same as jobs API)
 function validateApiKey(req: NextApiRequest): boolean {
-  const authHeader = req.headers.authorization;
+  const authHeader = req['headers'].authorization;
   if (!authHeader) return false;
   
   const authHeaderString = Array.isArray(authHeader) ? authHeader[0] : authHeader;
@@ -79,20 +26,22 @@ function validateApiKey(req: NextApiRequest): boolean {
 async function handler(req: NextApiRequest, res: NextApiResponse) {
   // CORS is handled by the withApiDocsCors wrapper
 
-  if (req.method !== 'GET') {
+  if (req['method'] !== 'GET') {
     res.setHeader('Allow', 'GET');
-    return res.status(405).json({ 
+    res.status(405).json({ 
       error: 'method_not_allowed',
-      message: `Method ${req.method} Not Allowed` 
+      message: `Method ${req['method']} Not Allowed` 
     });
+    return;
   }
 
   // Validate API key
   if (!validateApiKey(req)) {
-    return res.status(401).json({
+    res.status(401).json({
       error: 'invalid_token',
       message: 'The provided API key is invalid or missing. Use "demo_key_123" for testing.'
     });
+    return;
   }
 
   try {
@@ -106,7 +55,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       limit = '20',
       offset = '0',
       sort = 'rating'
-    } = req.query as { 
+    } = req['query'] as { 
       skills?: string | string[];
       category?: string | string[];
       rate_min?: string | string[];
@@ -122,7 +71,46 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     const rateMin = rate_min ? parseInt(rate_min as string, 10) : undefined;
     const rateMax = rate_max ? parseInt(rate_max as string, 10) : undefined;
 
-    // Filter talent based on query parameters
+    // Reactivate: Use mock data for talent filtering and sorting
+    const MOCK_TALENT = [
+      {
+        id: 'talent-1',
+        name: 'Alice',
+        professional_title: 'AI Engineer',
+        skills: ['python', 'machine learning', 'deep learning'],
+        category: 'engineering',
+        hourly_rate: 100,
+        years_experience: 5,
+        completed_projects: 12,
+        rating: 4.9,
+        availability: 'available',
+      },
+      {
+        id: 'talent-2',
+        name: 'Bob',
+        professional_title: 'Frontend Developer',
+        skills: ['react', 'typescript', 'css'],
+        category: 'frontend',
+        hourly_rate: 80,
+        years_experience: 3,
+        completed_projects: 8,
+        rating: 4.7,
+        availability: 'busy',
+      },
+      {
+        id: 'talent-3',
+        name: 'Carol',
+        professional_title: 'Data Scientist',
+        skills: ['python', 'data analysis', 'statistics'],
+        category: 'data',
+        hourly_rate: 120,
+        years_experience: 7,
+        completed_projects: 20,
+        rating: 4.8,
+        availability: 'available',
+      },
+    ];
+
     let filteredTalent = [...MOCK_TALENT];
 
     // Filter by skills
@@ -175,20 +163,22 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     // Set cache headers
     res.setHeader('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=600');
 
-    return res.status(200).json({
+    res.status(200).json({ 
       talent: paginatedTalent,
       count: filteredTalent.length,
       limit: limitNum,
       offset: offsetNum,
       total: MOCK_TALENT.length
     });
+    return;
 
   } catch (error) {
     logErrorToProduction('Talent API error:', { data: error });
-    return res.status(500).json({ 
+    res.status(500).json({ 
       error: 'internal_server_error',
       message: 'An internal server error occurred while fetching talent profiles' 
     });
+    return;
   }
 }
 

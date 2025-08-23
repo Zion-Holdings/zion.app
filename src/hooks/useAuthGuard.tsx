@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { supabase } from '@/utils/supabase/client'
-import type { User } from '@supabase/supabase-js'
+import type { User, AuthChangeEvent, Session } from '@supabase/supabase-js' // Added AuthChangeEvent and Session
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 import { toast } from '@/hooks/use-toast';
 
@@ -41,6 +41,7 @@ export function useAuthGuard(options: AuthGuardOptions = {}): AuthGuardState {
 
     const checkAuth = async () => {
       try {
+        if (!supabase) throw new Error('Supabase client not initialized');
         // Get current session
         const { data: { session }, error: sessionError } = await supabase.auth.getSession()
         
@@ -115,19 +116,25 @@ export function useAuthGuard(options: AuthGuardOptions = {}): AuthGuardState {
     checkAuth()
 
     // Listen for auth state changes
+    if (!supabase) throw new Error('Supabase client not initialized');
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      async (event, session) => {
+      async (event: AuthChangeEvent, session: Session | null) => {
         if (!mounted) return
 
-        logInfo('Auth guard: Auth state changed:', { data: event })
+        logInfo('Auth guard: Auth state changed:', { data:  { data: event } })
         
-        const user = session?.user || null
-        const isAuthenticated = !!user
-        const isEmailVerified = user?.email_confirmed_at != null
+        let userState: User | null = null;
+        if (session) {
+          // Types should now be correctly resolved from node_modules
+          userState = session.user;
+        }
+
+        const isAuthenticated = !!userState;
+        const isEmailVerified = userState?.email_confirmed_at != null;
 
         setState(prev => ({
           ...prev,
-          user,
+          user: userState,
           isAuthenticated,
           isEmailVerified,
           loading: false,
@@ -155,7 +162,7 @@ export function useAuthGuard(options: AuthGuardOptions = {}): AuthGuardState {
         clearTimeout(redirectTimer)
       }
     }
-  }, [router, redirectTo, allowUnauthenticated, requireEmailVerified, supabase.auth])
+  }, [router, redirectTo, allowUnauthenticated, requireEmailVerified, supabase && supabase.auth])
 
   return state
 }

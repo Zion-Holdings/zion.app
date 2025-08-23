@@ -1,48 +1,32 @@
 
 import { SEO } from "@/components/SEO";
-import { ReviewsModerationTable } from "@/components/admin/reviews/ReviewsModerationTable";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Star, AlertTriangle } from 'lucide-react';
+import { Button } from "@/components/ui/button";
 
 
 import { toast } from "@/components/ui/use-toast";
-import { logErrorToProduction } from '@/utils/productionLogger';
 
 function ReviewsModerationContent() {
   const [activeTab, setActiveTab] = useState("pending");
-  const [reviews, setReviews] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  
-  const fetchReviews = async () => {
-    setIsLoading(true);
-    try {
-      // In a real application, you would fetch reviews from an API
-      // For now, let's simulate a delay and return empty data
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      setReviews([]);
-      setIsLoading(false);
-    } catch (error) {
-      logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { message: 'Error fetching reviews' });
-      toast({
-        title: "Error",
-        description: "Failed to load reviews. Please try again later.",
-        variant: "destructive",
-      });
-      setIsLoading(false);
-    }
+  const [reviews, setReviews] = useState([
+    { id: 1, user: "Alice", content: "Great product!", status: "pending" },
+    { id: 2, user: "Bob", content: "Not what I expected.", status: "pending" },
+    { id: 3, user: "Carla", content: "Excellent support.", status: "pending" },
+  ]);
+
+  const handleApprove = (id: number) => {
+    setReviews(reviews => reviews.map(r => r.id === id ? { ...r, status: "approved" } : r));
+    toast({ title: "Review approved" });
+  };
+  const handleReject = (id: number) => {
+    setReviews(reviews => reviews.map(r => r.id === id ? { ...r, status: "rejected" } : r));
+    toast({ title: "Review rejected", variant: "destructive" });
   };
 
-  useEffect(() => {
-    fetchReviews();
-  }, [activeTab]);
-
-  const handleRefresh = () => {
-    fetchReviews();
-  };
-  
   return (
     <>
       <SEO
@@ -56,7 +40,6 @@ function ReviewsModerationContent() {
             <p className="text-muted-foreground mt-1">Manage, approve, or reject reviews</p>
           </div>
         </div>
-        
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
@@ -73,15 +56,26 @@ function ReviewsModerationContent() {
                 <TabsTrigger value="pending">Pending Reviews</TabsTrigger>
                 <TabsTrigger value="reported">Reported Reviews</TabsTrigger>
               </TabsList>
-              
               <TabsContent value="pending" className="mt-0">
-                <ReviewsModerationTable 
-                  reviews={reviews}
-                  isLoading={isLoading}
-                  onRefresh={handleRefresh}
-                />
+                <div className="space-y-4">
+                  {reviews.filter(r => r.status === "pending").length === 0 ? (
+                    <div className="text-center text-muted-foreground">No pending reviews.</div>
+                  ) : (
+                    reviews.filter(r => r.status === "pending").map(r => (
+                      <Card key={r.id} className="p-4 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                        <div>
+                          <div className="font-bold">{r.user}</div>
+                          <div className="text-muted-foreground">{r.content}</div>
+                        </div>
+                        <div className="flex gap-2">
+                          <Button size="sm" variant="success" onClick={() => handleApprove(r.id)}>Approve</Button>
+                          <Button size="sm" variant="destructive" onClick={() => handleReject(r.id)}>Reject</Button>
+                        </div>
+                      </Card>
+                    ))
+                  )}
+                </div>
               </TabsContent>
-              
               <TabsContent value="reported" className="mt-0">
                 <div className="text-center py-12 border rounded-lg">
                   <AlertTriangle className="h-10 w-10 text-amber-500 mx-auto mb-2" />

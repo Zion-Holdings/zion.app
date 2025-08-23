@@ -18,6 +18,7 @@ export const useUploadDeliverable = () => {
     try {
       setIsSubmitting(true);
       
+      if (!supabase) throw new Error('Supabase client not initialized');
       // Get the current milestone
       const { data: milestone, error: fetchError } = await supabase
         .from('project_milestones')
@@ -41,6 +42,7 @@ export const useUploadDeliverable = () => {
       
       const deliverables = [...(milestone.deliverables || []), newDeliverable];
       
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { error } = await supabase
         .from('project_milestones')
         .update({ deliverables })

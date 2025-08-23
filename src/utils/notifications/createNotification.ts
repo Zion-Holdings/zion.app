@@ -1,5 +1,5 @@
 import { supabase } from "@/integrations/supabase/client";
-import { CreateNotificationParams, CreateNotificationResult } from './types';
+import type { CreateNotificationParams, CreateNotificationResult } from './types';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 
@@ -20,6 +20,7 @@ export async function createNotification({
   void actionText;
   try {
     // Call the create_notification database function
+    if (!supabase) throw new Error('Supabase client not initialized');
     const { data, error } = await supabase.rpc('create_notification', {
       _user_id: userId,
       _title: title,
@@ -31,16 +32,17 @@ export async function createNotification({
     if (error) throw error;
     
     // Properly type the data as string (notification ID)
-    const notificationId = Array.isArray(data) && data.length > 0 && data[0] !== undefined ? data[0] as unknown as string : null;
+    const notificationId = Array.isArray(data) && data.length > 0 && data[0] !== undefined ? (data[0] as unknown as string) : null;
     
     // If sendEmail is true, call the edge function to send an email
     if (sendEmail && notificationId != null) {
+      if (!supabase) throw new Error('Supabase client not initialized');
       await supabase.functions.invoke('send-notification-email', {
         body: { user_id: userId, notification_id: notificationId }
       });
     }
     
-    return { success: true, notificationId: notificationId || undefined };
+    return { success: true, notificationId };
   } catch (error) {
     logErrorToProduction('Error creating notification', error);
     return { success: false, error };

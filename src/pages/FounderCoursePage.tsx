@@ -70,10 +70,12 @@ async function fetchWithRetry(
   }
 }
 
+type QuizItem = { question: string; options: string[] };
+
 export default function FounderCoursePage() {
   const [progress, setProgress] = useState(0);
   const [summary, setSummary] = useState('');
-  const [quiz, setQuiz] = useState<any[]>([]);
+  const [quiz, setQuiz] = useState<QuizItem[]>([]);
   const [loadingSummary, setLoadingSummary] = useState(false);
   const [loadingQuiz, setLoadingQuiz] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -95,8 +97,9 @@ export default function FounderCoursePage() {
         500
       );
       setSummary(data.summary);
-    } catch (err: any) {
-      setError(err.message || 'Failed to fetch summary');
+    } catch (err: unknown) {
+      const errorMessage = err instanceof Error ? err.message : 'Failed to fetch summary';
+      setError(errorMessage);
     } finally {
       setLoadingSummary(false);
     }
@@ -117,8 +120,9 @@ export default function FounderCoursePage() {
         500
       );
       setQuiz(data.quiz);
-    } catch (err: any) {
-      setError(err.message || 'Failed to fetch quiz');
+    } catch (err: unknown) {
+      const errorMessage = err instanceof Error ? err.message : 'Failed to fetch quiz';
+      setError(errorMessage);
     } finally {
       setLoadingQuiz(false);
     }

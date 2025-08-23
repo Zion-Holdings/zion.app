@@ -1,7 +1,7 @@
 
 // Email analysis functionality
 import { suspiciousEmailDomains } from './constants';
-import { EmailAnalysisResult } from './types';
+import type { EmailAnalysisResult } from './types';
 
 /**
  * Analyzes email for suspicious patterns

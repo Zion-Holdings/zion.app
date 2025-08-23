@@ -1,4 +1,4 @@
-import { ProductListing } from "@/types/listings";
+import type { ProductListing } from "@/types/listings";
 
 export const NEW_PRODUCTS: ProductListing[] = [
   {
@@ -22,6 +22,7 @@ export const NEW_PRODUCTS: ProductListing[] = [
     location: "Global",
     availability: "Immediate",
     aiScore: 90,
+    stock: 10,
   },
   {
     id: "np-voice-translate",
@@ -44,6 +45,7 @@ export const NEW_PRODUCTS: ProductListing[] = [
     location: "Global",
     availability: "Immediate",
     aiScore: 88,
+    stock: 10,
   },
   {
     id: "np-data-viz-dashboard",
@@ -66,6 +68,7 @@ export const NEW_PRODUCTS: ProductListing[] = [
     location: "North America",
     availability: "1-2 Weeks",
     aiScore: 86,
+    stock: 10,
   },
   {
     id: "np-iot-hub",
@@ -88,6 +91,7 @@ export const NEW_PRODUCTS: ProductListing[] = [
     location: "Europe",
     availability: "2-4 Weeks",
     aiScore: 84,
+    stock: 10,
   },
   {
     id: "np-code-review",
@@ -110,6 +114,7 @@ export const NEW_PRODUCTS: ProductListing[] = [
     location: "Global",
     availability: "Immediate",
     aiScore: 87,
+    stock: 10,
   },
   {
     id: "np-social-sentiment",
@@ -132,6 +137,7 @@ export const NEW_PRODUCTS: ProductListing[] = [
     location: "Global",
     availability: "Immediate",
     aiScore: 85,
+    stock: 10,
   },
   {
     id: "np-video-edit-suite",
@@ -154,6 +160,7 @@ export const NEW_PRODUCTS: ProductListing[] = [
     location: "Global",
     availability: "1-2 Weeks",
     aiScore: 89,
+    stock: 10,
   },
   {
     id: "np-ar-vr-generator",
@@ -176,6 +183,7 @@ export const NEW_PRODUCTS: ProductListing[] = [
     location: "North America",
     availability: "2-4 Weeks",
     aiScore: 83,
+    stock: 10,
   },
   {
     id: "np-ml-experiment",
@@ -198,6 +206,7 @@ export const NEW_PRODUCTS: ProductListing[] = [
     location: "Global",
     availability: "Immediate",
     aiScore: 88,
+    stock: 10,
   },
   {
     id: "np-chatbot-platform",
@@ -220,5 +229,6 @@ export const NEW_PRODUCTS: ProductListing[] = [
     location: "Global",
     availability: "Immediate",
     aiScore: 92,
+    stock: 10,
   }
 ];

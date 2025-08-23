@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { ProductListing } from '@/types/listings';
+import type { ProductListing } from '@/types/listings';
 
 // Mock personalized equipment recommendations
 const mockRecommendations: ProductListing[] = [

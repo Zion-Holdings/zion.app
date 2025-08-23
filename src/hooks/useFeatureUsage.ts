@@ -13,6 +13,6 @@ export function useFeatureUsage(feature: string) {
       trackEvent('feature_usage', { feature });
     }
     // we only want to run this once on mount
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, []);
 }

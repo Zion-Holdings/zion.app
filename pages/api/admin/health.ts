@@ -14,7 +14,7 @@ export default async function handler(
   res: NextApiResponse<HealthApiResponse>
 ) {
   try {
-    if (req.method !== 'GET') {
+    if (req['method'] !== 'GET') {
       return res.status(405).json({
         health: {} as HealthData,
         success: false,

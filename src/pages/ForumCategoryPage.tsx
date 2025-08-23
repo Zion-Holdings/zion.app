@@ -1,22 +1,19 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Suspense } from "react";
 import { Button } from "@/components/ui/button";
 import CreatePostButton from "@/components/community/CreatePostButton";
 import { Input } from "@/components/ui/input";
 import { SEO } from "@/components/SEO";
 import PostCard from "@/components/community/PostCard";
-import { PostListSkeleton } from "@/components/community/PostCardSkeleton";
-import { ForumCategoryInfo, ForumPost } from "@/types/community";
-import { usePostsByCategory } from "@/hooks/usePostsByCategory";
+import type { ForumCategoryInfo } from "@/types/community";
 import NotFound from "./NotFound";
 import { useAuth } from "@/hooks/useAuth";
 import { useCommunity } from "@/context";
 import { useToast } from "@/hooks/use-toast";
 import { useFollowedCategories } from "@/hooks/useFollowedCategories";
 import { logInfo } from '@/utils/productionLogger';
-import { MessageSquare, Briefcase, Code, FileText, Megaphone, Search } from 'lucide-react';
+import { MessageSquare, Briefcase, Code, FileText, Megaphone, Search, type LucideIcon } from 'lucide-react';
 
 
 
@@ -79,8 +76,8 @@ function CategoryContent({
 }: {
   categoryId: string;
   category: ForumCategoryInfo;
-  IconComponent: React.ComponentType<any>;
-  user: any;
+  IconComponent: LucideIcon;
+  user: unknown;
 }) {
   const [searchQuery, setSearchQuery] = useState("");
   const { featuredPosts, recentPosts } = useCommunity();
@@ -94,6 +91,11 @@ function CategoryContent({
     index === self.findIndex(p => p.id === post.id)
   );
 
+  // Type guard for user
+  function isAdminUser(u: unknown): u is { userType?: string; role?: string } {
+    return !!u && (typeof u === 'object') && ('userType' in u || 'role' in u);
+  }
+
   // Apply search filter
   const filteredPosts = searchQuery 
     ? categoryPosts.filter(post => 
@@ -103,7 +105,7 @@ function CategoryContent({
       )
     : categoryPosts;
 
-  const canCreatePost = user && (!category.adminOnly || user.userType === 'admin' || user.role === 'admin');
+  const canCreatePost = Boolean(user && (!category.adminOnly || (isAdminUser(user) && (user.userType === 'admin' || user.role === 'admin'))));
   const { isFollowed, follow, unfollow } = useFollowedCategories();
   const { toast } = useToast();
 
@@ -119,9 +121,9 @@ function CategoryContent({
     }
   };
 
-  logInfo('CategoryContent - categoryId:', { data: categoryId });
-  logInfo('CategoryContent - categoryPosts:', { data: categoryPosts });
-  logInfo('CategoryContent - filteredPosts:', { data: filteredPosts });
+  logInfo('CategoryContent - categoryId:', { data:  { data: categoryId } });
+  logInfo('CategoryContent - categoryPosts:', { data:  { data: categoryPosts } });
+  logInfo('CategoryContent - filteredPosts:', { data:  { data: filteredPosts } });
 
   return (
     <div className="container py-8">
@@ -220,7 +222,7 @@ export default function ForumCategoryPage() {
   useEffect(() => {
     // Add a small delay to ensure router is ready
     if (categoryId && category) {
-      logInfo('ForumCategoryPage - categoryId changed:', { data: categoryId });
+      logInfo('ForumCategoryPage - categoryId changed:', { data:  { data: categoryId } });
     }
   }, [categoryId, category]);
 

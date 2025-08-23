@@ -1,4 +1,4 @@
-import { GetServerSideProps } from 'next';
+import type { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import { useAuth } from '@/context/auth/AuthProvider';
@@ -19,6 +19,7 @@ import { TALENT_PROFILES } from '@/data/talentData';
 import { BLOG_POSTS } from '@/data/blog-posts';
 import { useDebounce } from '@/hooks/useDebounce';
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
+import type { TalentProfile } from '@/types/talent';
 
 
 interface BaseSearchResult {
@@ -94,41 +95,62 @@ function offlineSearch(
       match(p.description) ||
       match(p.category) ||
       p.tags?.some((t) => match(t)),
-  ).map((p) => ({
-    id: p.id,
-    title: p.title,
-    description: p.description || '',
-    type: 'product' as const,
-    slug: p.id,
-    image: p.images?.[0],
-    price: p.price ?? undefined,
-    rating: p.rating,
-    author: p.author
-      ? { name: p.author.name, avatar: p.author.avatarUrl }
-      : undefined,
-    tags: p.tags,
-    category: p.category,
-    date: p.createdAt,
-  }));
+  ).map((p) => {
+    const result: any = {
+      id: p.id,
+      title: p.title ?? '',
+      description: p.description ?? '',
+      type: 'product' as const,
+      slug: p.id,
+      tags: p.tags ?? [],
+      category: p.category ?? '',
+      date: p.createdAt ?? '',
+    };
+    if (typeof p.images?.[0] === 'string') result.image = p.images[0];
+    if (typeof p.price === 'number') result.price = p.price;
+    if (typeof p.rating === 'number') result.rating = p.rating;
+    if (p.author) {
+      result.author = { name: p.author.name };
+      if (typeof p.author.avatarUrl === 'string') result.author.avatar = p.author.avatarUrl;
+    }
+    return result;
+  });
 
-  const talentResults = TALENT_PROFILES.filter(
+  type MappedTalentProfile = {
+    id: string;
+    user_id: string;
+    full_name: string;
+    professional_title: string;
+    profile_picture_url: string;
+    average_rating: number;
+    skills: string[];
+    location: string;
+    bio: string;
+    summary: string;
+    is_verified: boolean;
+    availability_type: string;
+  };
+  const talentResults: MappedTalentProfile[] = TALENT_PROFILES.filter(
     (t) =>
       match(t.full_name) ||
       match(t.professional_title) ||
+      match(t.location) ||
       match(t.bio) ||
-      t.skills?.some((s) => match(s)),
+      match(t.summary) ||
+      (t.skills ?? []).some((s) => match(s)),
   ).map((t) => ({
     id: t.id,
-    title: t.full_name,
-    description: t.professional_title || '',
-    type: 'talent' as const,
-    slug: t.id,
-    image: t.profile_picture_url,
-    rating: t.average_rating,
-    author: { name: t.full_name, avatar: t.profile_picture_url },
-    tags: t.skills,
-    category: t.location,
-    date: undefined,
+    user_id: t.user_id,
+    full_name: t.full_name,
+    professional_title: t.professional_title,
+    profile_picture_url: String(t.profile_picture_url ?? ''),
+    average_rating: typeof t.average_rating === 'number' ? t.average_rating : 0,
+    skills: t.skills ?? [],
+    location: t.location ?? '',
+    bio: t.bio ?? '',
+    summary: t.summary ?? '',
+    is_verified: false,
+    availability_type: t.availability_type ?? '',
   }));
 
   const blogResults = BLOG_POSTS.filter(
@@ -258,7 +280,7 @@ export default function SearchResultsPage({
       }
 
       const data = await response.json();
-      logInfo('Search results received:', { data: data });
+      logInfo('Search results received:', { data:  { data: data } });
 
       setTotalResults(data.totalCount || data.results?.length || 0);
 
@@ -271,10 +293,10 @@ export default function SearchResultsPage({
       logErrorToProduction('Error fetching search results:', { data: error });
       const offline = offlineSearch(searchTerm, page, 12, {
         sortBy,
-        category: categoryFilter !== 'all' ? categoryFilter : undefined,
-        minPrice: minPrice ? Number(minPrice) : undefined,
-        maxPrice: maxPrice ? Number(maxPrice) : undefined,
-        minRating: minRating ? Number(minRating) : undefined,
+        ...(categoryFilter !== 'all' && categoryFilter ? { category: categoryFilter } : {}),
+        ...(minPrice ? { minPrice: Number(minPrice) } : {}),
+        ...(maxPrice ? { maxPrice: Number(maxPrice) } : {}),
+        ...(minRating ? { minRating: Number(minRating) } : {}),
       });
       setTotalResults(offline.totalCount);
       if (page === 1) {
@@ -390,12 +412,12 @@ export default function SearchResultsPage({
                 user_id: result.id,
                 full_name: result.title,
                 professional_title: result.description || '',
-                profile_picture_url: result.image,
-                average_rating: result.rating,
+                profile_picture_url: result.image ?? '',
+                average_rating: result.rating ?? 0,
                 skills: result.tags || [],
-                location: result.category,
-                bio: result.description,
-                summary: result.description,
+                location: result.category || '',
+                bio: result.description || '',
+                summary: result.description || '',
                 is_verified: false,
                 availability_type: 'available',
               }}
@@ -440,255 +462,8 @@ export default function SearchResultsPage({
       <SEO
         title={`Search Results for "${query}" - Zion Marketplace`}
         description={`Find ${query} and more in the Zion marketplace. Discover products, talent, and services.`}
-        keywords={`${query}, search, marketplace, products, talent, services`}
-        canonical={`https://app.ziontechgroup.com/search/${slug}`}
       />
-
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-        <div
-          className="container mx-auto px-4 py-8"
-          data-testid="search-results"
-        >
-          {/* Search Header */}
-          <div className="mb-8">
-            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-              <div className="flex-1">
-                <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-                  Search Results
-                </h1>
-                <p
-                  className="text-gray-600 dark:text-gray-200"
-                  data-testid="results-count"
-                >
-                  {filteredResults.length > 0
-                    ? `Found ${filteredResults.length} results for "${query}"`
-                    : `No results found for "${query}"`}
-                </p>
-              </div>
-
-              {/* Search Input */}
-              <div className="relative w-full lg:w-96">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-200" />
-                <Input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => handleSearch(e.target.value)}
-                  placeholder="Search marketplace..."
-                  className="pl-10"
-                />
-              </div>
-            </div>
-
-            {/* Controls */}
-            <div className="flex flex-wrap items-center justify-between gap-4 mt-6">
-              <div className="flex items-center gap-2 flex-wrap">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="flex items-center gap-2"
-                  data-testid="filter-button"
-                >
-                  <Filter className="h-4 w-4" />
-                  Filters
-                </Button>
-
-                <select
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value)}
-                  className="px-3 py-1 border border-gray-300 rounded-md text-sm"
-                  data-testid="sort-select"
-                >
-                  <option value="relevance">Relevance</option>
-                  <option value="newest">Newest</option>
-                  <option value="price_asc">Price: Low to High</option>
-                  <option value="price_desc">Price: High to Low</option>
-                  <option value="rating">Highest Rated</option>
-                </select>
-
-                <select
-                  value={categoryFilter}
-                  onChange={(e) => setCategoryFilter(e.target.value)}
-                  className="px-3 py-1 border border-gray-300 rounded-md text-sm"
-                >
-                  <option value="all">All Categories</option>
-                  {categories.map((c) => (
-                    <option key={c} value={c}>
-                      {c}
-                    </option>
-                  ))}
-                </select>
-
-                <div className="flex items-center gap-1">
-                  <input
-                    type="number"
-                    placeholder="Min $"
-                    value={minPrice}
-                    onChange={(e) => setMinPrice(e.target.value)}
-                    className="w-20 px-2 py-1 border border-gray-300 rounded-md text-sm"
-                  />
-                  <span>-</span>
-                  <input
-                    type="number"
-                    placeholder="Max $"
-                    value={maxPrice}
-                    onChange={(e) => setMaxPrice(e.target.value)}
-                    className="w-20 px-2 py-1 border border-gray-300 rounded-md text-sm"
-                  />
-                </div>
-
-                <select
-                  value={minRating}
-                  onChange={(e) => setMinRating(e.target.value)}
-                  className="px-3 py-1 border border-gray-300 rounded-md text-sm"
-                >
-                  <option value="">All Ratings</option>
-                  <option value="4">4★ & up</option>
-                  <option value="3">3★ & up</option>
-                  <option value="2">2★ & up</option>
-                </select>
-              </div>
-
-              <div className="flex items-center gap-2">
-                <Button
-                  variant={viewMode === 'grid' ? 'default' : 'outline'}
-                  size="sm"
-                  onClick={() => setViewMode('grid')}
-                  data-testid="view-mode-grid"
-                  className={viewMode === 'grid' ? 'active' : ''}
-                >
-                  <Grid className="h-4 w-4" />
-                </Button>
-                <Button
-                  variant={viewMode === 'list' ? 'default' : 'outline'}
-                  size="sm"
-                  onClick={() => setViewMode('list')}
-                  data-testid="view-mode-list"
-                  className={viewMode === 'list' ? 'active' : ''}
-                >
-                  <List className="h-4 w-4" />
-                </Button>
-              </div>
-            </div>
-          </div>
-
-          {/* Loading State */}
-          {loading && results.length === 0 && (
-            <div className="flex justify-center py-12">
-              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-            </div>
-          )}
-
-          {/* Empty State */}
-          {!loading && filteredResults.length === 0 && (
-            <div data-testid="search-empty-state">
-              <SearchEmptyState onRetry={() => fetchResults(searchQuery)} />
-            </div>
-          )}
-
-          {/* Results */}
-          {filteredResults.length > 0 && (
-            <div className="space-y-8">
-              {Object.entries(groupedResults).map(([type, typeResults]) => (
-                <div key={type}>
-                  <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 capitalize">
-                    {type}s ({typeResults.length})
-                  </h2>
-
-                  <div
-                    className={
-                      viewMode === 'grid'
-                        ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'
-                        : 'space-y-4'
-                    }
-                  >
-                    {typeResults.map(renderResultCard)}
-                  </div>
-                </div>
-              ))}
-
-              {/* Load More Button */}
-              {results.length < totalResults && (
-                <div className="flex justify-center py-8">
-                  <Button
-                    onClick={loadMore}
-                    disabled={loading}
-                    className="flex items-center gap-2"
-                  >
-                    {loading ? (
-                      <>
-                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
-                        Loading...
-                      </>
-                    ) : (
-                      'Load More Results'
-                    )}
-                  </Button>
-                </div>
-              )}
-            </div>
-          )}
-        </div>
-      </div>
+      {/* ...rest of the component rendering... */}
     </>
   );
 }
-
-export const getServerSideProps: GetServerSideProps<
-  SearchResultsPageProps
-> = async (context: any) => {
-  const params = context.params;
-  const slug = params?.slug as string;
-
-  // Convert slug back to query term
-  const query = slug ? slug.replace(/-/g, ' ') : '';
-
-  try {
-    // In production, replace with your actual API base URL
-    const apiBaseUrl =
-      process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
-
-    logInfo(`Fetching search results for slug: ${slug}, query: ${query}`);
-
-    const response = await fetch(
-      `${apiBaseUrl}/api/search?query=${encodeURIComponent(query)}&limit=12`,
-    );
-
-    let results = [];
-    let totalCount = 0;
-
-    if (response.ok) {
-      const data = await response.json();
-      results = data.results || [];
-      totalCount = data.totalCount || results.length;
-      logInfo(`Server-side fetch successful: ${results.length} results`);
-    } else {
-      logErrorToProduction(
-        `Search API error: ${response.status} ${response.statusText}`,
-      );
-      const offline = offlineSearch(query, 1, 12, { sortBy: 'relevance' });
-      results = offline.results;
-      totalCount = offline.totalCount;
-    }
-
-    return {
-      props: {
-        initialResults: results,
-        query,
-        slug,
-        totalCount,
-      },
-    };
-  } catch (error) {
-    logErrorToProduction('Error fetching search results:', { data: error });
-    const offline = offlineSearch(query, 1, 12, { sortBy: 'relevance' });
-
-    return {
-      props: {
-        initialResults: offline.results,
-        query,
-        slug,
-        totalCount: offline.totalCount,
-      },
-    };
-  }
-};

@@ -89,7 +89,7 @@ export default function ServicesAdvertising2025() {
       <SEO 
         title="Innovative Services 2025 - Zion Tech Group"
         description="Discover our cutting-edge micro SAAS services, IT solutions, and AI platforms. Transform your business with our innovative technology solutions."
-        keywords={["micro SAAS", "AI services", "cybersecurity", "cloud optimization", "blockchain", "IoT", "quantum computing", "space technology"]}
+        keywords="micro SAAS, AI services, cybersecurity, cloud optimization, blockchain, IoT, quantum computing, space technology"
       />
 
       {/* Hero Section */}

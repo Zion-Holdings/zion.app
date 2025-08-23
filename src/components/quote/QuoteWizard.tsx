@@ -1,6 +1,7 @@
-import { useState, useMemo, useEffect } from 'react';
-import { useQuoteWizard, ServiceItem } from '@/hooks/useQuoteWizard';
-import { useDelayedError } from '@/hooks/useDelayedError';
+import { useState } from 'react';
+import type { WizardStep } from '@/context/RequestQuoteWizard';
+import useSWR from 'swr';
+import { Loader2 } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
@@ -24,13 +25,25 @@ function StepIndicator({ step }: { step: number }) {
   );
 }
 
-interface QuoteWizardProps {
-  category: 'services' | 'talent' | 'equipment';
+const WIZARD_STEPS: WizardStep[] = ['Services', 'Details', 'Success'];
+
+const fetcher = (url: string) => fetch(url).then(res => {
+  if (!res.ok) throw new Error('Failed');
+  return res.json();
+});
+
+function StepIndicator({ step }: { step: WizardStep }) {
+  const index = WIZARD_STEPS.indexOf(step);
+  return (
+    <div data-testid="step-indicator" className="text-sm text-muted-foreground">
+      Step {index + 1} of {WIZARD_STEPS.length}
+    </div>
+  );
 }
 
-export function QuoteWizard({ category }: QuoteWizardProps) {
-  const [step, setStep] = useState(1);
-  const [selectedItemId, setSelectedItemId] = useState<string | null>(null);
+export function QuoteWizard() {
+  const { step, selectService, submitQuote } = useRequestQuoteWizard();
+  const [selectedItem, setSelectedItem] = useState<string | null>(null);
   const [message, setMessage] = useState('');
   const [selectionError, setSelectionError] = useState('');
   const { data, error, mutate, isLoading } = useQuoteWizard(category);
@@ -93,14 +106,9 @@ export function QuoteWizard({ category }: QuoteWizardProps) {
     return (
       <div className="space-y-6">
         <StepIndicator step={step} />
-        {loading && !delayedError && (
-          <div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
-            data-testid="loading-indicator"
-          >
-            {Array.from({ length: 6 }).map((_, i) => (
-              <Skeleton key={i} className="h-[120px] w-full" />
-            ))}
+        {loading && (
+          <div className="flex justify-center py-12">
+            <Loader2 className="h-6 w-6 animate-spin" />
           </div>
         )}
 
@@ -178,16 +186,6 @@ export function QuoteWizard({ category }: QuoteWizardProps) {
     return (
       <div data-testid="details-step" className="space-y-4">
         <StepIndicator step={step} />
-        {selectedItem && (
-          <div data-testid="selected-item-name" className="text-lg font-semibold text-zion-slate-dark">
-            Selected {category === 'services' ? 'Service' : category === 'talent' ? 'Talent' : 'Item'}: {selectedItem.name}
-          </div>
-        )}
-        {selectedItem && selectedItem.price !== undefined && (
-           <div className="text-md text-muted-foreground">
-             Price: ${selectedItem.price.toFixed(2)}
-           </div>
-        )}
         <Textarea
           value={message}
           onChange={(e) => setMessage(e.target.value)}
@@ -203,21 +201,11 @@ export function QuoteWizard({ category }: QuoteWizardProps) {
     );
   }
 
-  if (step === 3) {
+  if (step === 'Success') {
     return (
-      <div data-testid="success-step" className="space-y-4 text-center py-12">
+      <div data-testid="success-step" className="space-y-4">
         <StepIndicator step={step} />
-        <div className="text-2xl font-semibold text-green-600">Quote Submitted Successfully!</div>
-        <p className="text-muted-foreground">
-          Thank you for your request regarding {selectedItem?.name || 'the selected item'}. We will get back to you shortly.
-        </p>
-        <Button onClick={() => {
-          setStep(1);
-          setSelectedItemId(null);
-          setMessage('');
-        }}>
-          Request Another Quote
-        </Button>
+        <div>Quote Submitted</div>
       </div>
     );
   }

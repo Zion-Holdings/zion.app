@@ -5,8 +5,8 @@ set -e
 
 # Normalize proxy environment variables to avoid npm warnings
 # Some restricted shells do not fully support the '[' alias used in Bash
-# conditionals. Use 'test' directly for maximum portability. Place 'then' on a
-# separate line to avoid syntax errors in limited shells.
+# conditionals. Use 'test' directly for maximum portability and keep 'then'
+# on its own line to satisfy shells that reject the single-line form.
 if test -n "$npm_config_http_proxy"
 then
   export npm_config_proxy="$npm_config_http_proxy"
@@ -38,6 +38,11 @@ $PM install
 if command -v npx >/dev/null 2>&1; then
   echo "Generating Prisma client..."
   npx prisma generate
+  # Automatically install Playwright browsers if the dependency exists
+  if grep -q "@playwright/test" package.json >/dev/null 2>&1; then
+    echo "Installing Playwright browsers..."
+    npx playwright install || echo "Warning: Failed to install Playwright browsers"
+  fi
 else
   echo "Warning: npx not found. Skipping Prisma client generation."
 fi

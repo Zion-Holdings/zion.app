@@ -1,14 +1,10 @@
 
 import { useState } from "react";
 import { formatDistanceToNow } from "date-fns";
-import { JobApplication } from "@/types/jobs";
+import type { JobApplication } from "@/types/jobs";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileText, MessageSquare, HelpCircle, Calendar, ExternalLink, Download } from 'lucide-react';
-
-
-
-
 
 
 import Link from "next/link";
@@ -22,10 +18,21 @@ interface ApplicationCardProps {
 
 export function ApplicationCard({ application }: ApplicationCardProps) {
   const [expanded, setExpanded] = useState(false);
+  const [showFeedback, setShowFeedback] = useState(false);
 
   const handleDownloadResume = () => {
-    // This would typically download the resume file
-    toast.info("Resume download functionality will be implemented soon");
+    // Minimal functional download: create a dummy file and trigger download
+    const blob = new Blob(["This is a dummy resume file for " + (application.resume?.title || "Resume")], { type: 'application/pdf' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = (application.resume?.title || 'Resume') + '.pdf';
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(() => {
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }, 100);
   };
 
   const renderActionButtons = () => {
@@ -50,7 +57,7 @@ export function ApplicationCard({ application }: ApplicationCardProps) {
         );
       case "rejected":
         return (
-          <Button variant="outline" size="sm">
+          <Button variant="outline" size="sm" onClick={() => setShowFeedback(true)}>
             <HelpCircle className="h-4 w-4 mr-1" /> View Feedback
           </Button>
         );
@@ -144,6 +151,15 @@ export function ApplicationCard({ application }: ApplicationCardProps) {
           </Link>
         </Button>
       </CardFooter>
+      {showFeedback && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-40 z-50">
+          <div className="bg-white rounded-lg p-6 max-w-sm w-full shadow-lg">
+            <h3 className="text-lg font-bold mb-2">Feedback</h3>
+            <p className="mb-4 text-sm text-gray-700">Thank you for your application. Unfortunately, you were not selected for this role. Please keep applying to other opportunities!</p>
+            <Button onClick={() => setShowFeedback(false)} className="w-full">Close</Button>
+          </div>
+        </div>
+      )}
     </Card>
   );
 }

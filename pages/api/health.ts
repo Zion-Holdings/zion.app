@@ -1,5 +1,5 @@
 // Health API endpoint for application monitoring
-import { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 interface SystemHealth {
   status: 'healthy' | 'degraded' | 'unhealthy';
@@ -41,8 +41,8 @@ export default async function handler(
       status: overallStatus,
       timestamp: Date.now(),
       uptime: process.uptime() * 1000, // Convert to milliseconds
-      version: process.env.npm_package_version || 'unknown',
-      environment: process.env.NODE_ENV || 'unknown',
+      version: process.env['npm_package_version'] || 'unknown',
+      environment: process.env['NODE_ENV'] || 'unknown',
       checks: healthChecks,
       metrics
     };
@@ -94,12 +94,12 @@ async function performHealthChecks(): Promise<SystemHealth['checks']> {
     const dbStartTime = Date.now();
     
     // For this app, we can check Supabase connectivity
-    if (process.env.NEXT_PUBLIC_SUPABASE_URL) {
-      const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    if (process.env['NEXT_PUBLIC_SUPABASE_URL']) {
+      const supabaseUrl = process.env['NEXT_PUBLIC_SUPABASE_URL'];
       const response = await fetch(`${supabaseUrl}/rest/v1/`, {
         method: 'HEAD',
         headers: {
-          'apikey': process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '',
+          'apikey': process.env['NEXT_PUBLIC_SUPABASE_ANON_KEY'] || '',
         },
         signal: AbortSignal.timeout(5000) // 5 second timeout
       });
@@ -132,7 +132,7 @@ async function performHealthChecks(): Promise<SystemHealth['checks']> {
     const fs = await import('fs');
     const path = await import('path');
     
-    const tmpDir = process.env.TMPDIR || '/tmp';
+    const tmpDir = process.env['TMPDIR'] || '/tmp';
     const testFile = path.join(tmpDir, 'health-check-test');
     
     fs.writeFileSync(testFile, 'test');
@@ -152,24 +152,31 @@ async function performHealthChecks(): Promise<SystemHealth['checks']> {
   }
 
   // Services check (external dependencies)
-  try {
-    const serviceChecks = await Promise.allSettled([
-      // Check if we can reach external services
-      fetch('https://api.github.com', { method: 'HEAD', signal: AbortSignal.timeout(3000) }),
-      // Add other service checks as needed
-    ]);
+  if (process.env['DISABLE_EXTERNAL_SERVICE_CHECKS'] === 'true') {
+    checks.services = {
+      status: 'skipped',
+      message: 'External service checks disabled'
+    };
+  } else {
+    try {
+      const serviceChecks = await Promise.allSettled([
+        // Check if we can reach external services
+        fetch('https://api.github.com', { method: 'HEAD', signal: AbortSignal.timeout(3000) }),
+        // Add other service checks as needed
+      ]);
 
-    const failedServices = serviceChecks.filter(result => result.status === 'rejected').length;
-    
-    checks.services = {
-      status: failedServices === 0 ? 'healthy' : failedServices < serviceChecks.length ? 'degraded' : 'unhealthy',
-      message: `${serviceChecks.length - failedServices}/${serviceChecks.length} external services accessible`
-    };
-  } catch (error) {
-    checks.services = {
-      status: 'unhealthy',
-      message: `Service checks failed: ${error}`
-    };
+      const failedServices = serviceChecks.filter(result => result.status === 'rejected').length;
+
+      checks.services = {
+        status: failedServices === 0 ? 'healthy' : failedServices < serviceChecks.length ? 'degraded' : 'unhealthy',
+        message: `${serviceChecks.length - failedServices}/${serviceChecks.length} external services accessible`
+      };
+    } catch (error) {
+      checks.services = {
+        status: 'unhealthy',
+        message: `Service checks failed: ${error}`
+      };
+    }
   }
 
   return checks;

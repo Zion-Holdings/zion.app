@@ -10,7 +10,7 @@ const prisma = new PrismaClient({
   log: ['error'],
   datasources: {
     db: {
-      url: process.env.DATABASE_URL,
+      url: process.env['DATABASE_URL'] || '',
     },
   },
 });
@@ -41,13 +41,12 @@ async function getCategoriesFromDB() {
   }
 }
 
-async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+// Remove custom ApiHandler type and ensure correct handler signature
+const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
   if (req.method !== 'GET') {
     res.setHeader('Allow', 'GET');
-    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
+    res.status(405).json({ error: `Method ${req.method} Not Allowed` });
+    return;
   }
 
   try {
@@ -56,24 +55,20 @@ async function handler(
       cacheKeys.categories,
       async () => {
         logInfo('Fetching categories from database...');
-        
         try {
           const dbCategories = await getCategoriesFromDB();
-          
           if (dbCategories && dbCategories.length > 0) {
             logInfo(`Successfully fetched ${dbCategories.length} categories from DB`);
             return dbCategories;
           }
         } catch (dbError) {
-          logWarn('Database query failed, using fallback:', { data: dbError });
+          logWarn('Database query failed, using fallback:', { data:  { data: dbError } });
         }
-
         // Fallback to static data if DB fails
         if (CATEGORIES && CATEGORIES.length > 0) {
           logInfo(`Using ${CATEGORIES.length} fallback categories`);
           return CATEGORIES;
         }
-
         // Return empty array if no data available
         logWarn('No categories data available');
         return [];
@@ -81,30 +76,27 @@ async function handler(
       CacheCategory.MEDIUM, // 30 minutes cache
       1800 // 30 minutes TTL
     );
-
     // Apply appropriate cache headers
     applyCacheHeaders(res, CacheCategory.MEDIUM);
-    
     // Add performance headers
     res.setHeader('X-Response-Time', Date.now().toString());
     res.setHeader('X-Data-Source', categories.length > 0 ? 'cached' : 'computed');
-
-    return res.status(200).json(categories);
-
+    res.status(200).json(categories);
+    return;
   } catch (error: any) {
     logErrorToProduction('Categories API error:', { data: error });
-    
     // Return fallback data even on error
     if (CATEGORIES && CATEGORIES.length > 0) {
       applyCacheHeaders(res, CacheCategory.SHORT); // Shorter cache for fallback
       res.setHeader('X-Data-Source', 'fallback');
-      return res.status(200).json(CATEGORIES);
+      res.status(200).json(CATEGORIES);
+      return;
     }
-
-    return res.status(500).json({ 
+    res.status(500).json({ 
       error: 'Categories temporarily unavailable. Please try again later.' 
     });
+    return;
   }
-}
+};
 
 export default withErrorLogging(handler);

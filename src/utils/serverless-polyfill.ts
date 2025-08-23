@@ -1,9 +1,3 @@
-// @ts-nocheck
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/no-this-alias */
-/* eslint-disable @typescript-eslint/no-unused-expressions */
-/* eslint-disable prefer-const */
 /**
  * Serverless Environment Polyfill
  * 
@@ -16,41 +10,43 @@
  * This runs as the VERY FIRST script before any other code loads.
  */
 
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
+
 // Type declarations for global augmentation
 declare global {
-  const webpackChunk_N_E: any[];
-  const __webpack_require__: any;
-  const __webpack_exports__: any;
-  const __non_webpack_require__: any;
-  const __extends: any;
-  const __assign: any;
-  const __rest: any;
-  const __decorate: any;
-  const __awaiter: any;
+  const webpackChunk_N_E: unknown[];
+  const __webpack_require__: unknown;
+  const __webpack_exports__: unknown;
+  const __non_webpack_require__: unknown;
+  const __extends: unknown;
+  const __assign: unknown;
+  const __rest: unknown;
+  const __decorate: unknown;
+  const __awaiter: unknown;
 }
 
 // CRITICAL: Self polyfill - must be first
 if (typeof self === 'undefined') {
   if (typeof global !== 'undefined') {
-    (global as any).self = global;
+    (global as unknown as { self: typeof global }).self = global;
     if (typeof globalThis !== 'undefined') {
-      (globalThis as any).self = global;
+      (globalThis as unknown as { self: typeof global }).self = global;
     }
   } else if (typeof globalThis !== 'undefined') {
-    (globalThis as any).self = globalThis;
+    (globalThis as unknown as { self: typeof globalThis }).self = globalThis;
   } else if (typeof window !== 'undefined') {
-    (window as any).self = window;
+    (window as unknown as { self: typeof window }).self = window;
   } else {
     // Last resort - create minimal self object
-    (globalThis as any).self = {};
+    (globalThis as unknown as { self: object }).self = {};
   }
 }
 
 // Ensure self is properly referenced
-const selfRef: any = typeof self !== 'undefined' ? self : 
-                    typeof global !== 'undefined' ? global :
-                    typeof globalThis !== 'undefined' ? globalThis :
-                    typeof window !== 'undefined' ? window : {};
+const selfRef: Record<string, unknown> = typeof self !== 'undefined' ? self as Record<string, unknown> : 
+                    typeof global !== 'undefined' ? global as Record<string, unknown> :
+                    typeof globalThis !== 'undefined' ? (globalThis as unknown as Record<string, unknown>) :
+                    typeof window !== 'undefined' ? ((window as unknown) as Record<string, unknown>) : {};
 
 // CRITICAL: Webpack chunk array polyfill
 if (!selfRef.webpackChunk_N_E) {
@@ -59,25 +55,24 @@ if (!selfRef.webpackChunk_N_E) {
 
   // Ensure webpack chunk array is properly initialized
   if (typeof webpackChunk_N_E === 'undefined') {
-    // Initialize global webpack chunk array
-    (globalThis as any).webpackChunk_N_E = selfRef.webpackChunk_N_E;
+    (globalThis as any).webpackChunk_N_E = (selfRef as any).webpackChunk_N_E;
   }
 
 // TypeScript helper polyfills for runtime
 const tsHelpers = {
-  __extends: function(d: any, b: any) {
+  __extends: function(d: unknown, b: unknown) {
     if (typeof b !== "function" && b !== null)
       throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
     
-    function __constructor(this: any) { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__constructor.prototype = b.prototype, new (__constructor as any)());
+    function __constructor(this: unknown) { (this as any).constructor = d; }
+    (d as any).prototype = b === null ? Object.create(b) : (__constructor.prototype = (b as any).prototype, new (__constructor as any)());
   },
   
   __assign: function() {
     return Object.assign || function (t: any, ...sources: any[]) {
       for (let i = 0; i < sources.length; i++) {
         const s = sources[i];
-        for (let p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+        for (const p in s) if (Object.prototype.hasOwnProperty.call(s, p))
           t[p] = s[p];
       }
       return t;
@@ -85,8 +80,8 @@ const tsHelpers = {
   }(),
   
   __rest: function (s: any, e: string[]) {
-    let t: any = {};
-    for (let p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+    const t: any = {};
+    for (const p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
       t[p] = s[p];
     if (s != null && typeof Object.getOwnPropertySymbols === "function") {
       const symbols = Object.getOwnPropertySymbols(s);
@@ -101,7 +96,7 @@ const tsHelpers = {
   },
   
   __decorate: function (decorators: any[], target: any, key?: string | symbol, desc?: any) {
-    let c = arguments.length;
+    const c = arguments.length;
     let r = c < 3 ? target : desc === null ? (desc = Object.getOwnPropertyDescriptor(target, key!)) : desc;
     let d: any;
     if (typeof Reflect === "object" && typeof (Reflect as any).decorate === "function") r = (Reflect as any).decorate(decorators, target, key, desc);
@@ -122,30 +117,29 @@ const tsHelpers = {
 
 // Inject TypeScript helpers into global scope
 Object.keys(tsHelpers).forEach(helper => {
-  if (typeof (globalThis as any)[helper] === 'undefined') {
-    (globalThis as any)[helper] = (tsHelpers as any)[helper];
+  if (typeof (globalThis as Record<string, unknown>)[helper] === 'undefined') {
+    (globalThis as Record<string, unknown>)[helper] = (tsHelpers as Record<string, unknown>)[helper];
   }
-  if (typeof (selfRef as any)[helper] === 'undefined') {
-    (selfRef as any)[helper] = (tsHelpers as any)[helper];
+  if (typeof (selfRef as Record<string, unknown>)[helper] === 'undefined') {
+    (selfRef as Record<string, unknown>)[helper] = (tsHelpers as Record<string, unknown>)[helper];
   }
 });
 
 // Error prevention for common webpack issues
 try {
   // Prevent webpack chunk loading errors
-  if (selfRef.webpackChunk_N_E && typeof selfRef.webpackChunk_N_E.push === 'function') {
-    const originalPush = selfRef.webpackChunk_N_E.push;
-    selfRef.webpackChunk_N_E.push = function(chunk: any) {
+  if (selfRef.webpackChunk_N_E && typeof (selfRef.webpackChunk_N_E as unknown[]).push === 'function') {
+    const originalPush = (selfRef.webpackChunk_N_E as unknown[]).push;
+    (selfRef.webpackChunk_N_E as unknown[]).push = function(chunk: unknown) {
       try {
         return originalPush.call(this, chunk);
-      } catch (error) {
-        // eslint-disable-next-line no-console
-        console.warn('Webpack chunk loading error prevented:', error);
+      } catch (error: unknown) {
+        logWarn('Webpack chunk loading error prevented:', { data: error });
         return 0;
       }
     };
   }
-} catch (e) {
+} catch (e: unknown) {
   // Silently handle any errors in error prevention setup
 }
 
@@ -165,8 +159,8 @@ if (typeof window !== 'undefined') {
       
       if (suppressedMessages.some(msg => message.includes(msg))) {
         // Log that we are suppressing an error, for debugging purposes
-        console.warn(`[serverless-polyfill] Suppressing known error: "${message}" from ${source}:${lineno}`);
-        return true; // Suppress error
+        logErrorToProduction(`[serverless-polyfill] Previously suppressed error: "${message}" from ${source}:${lineno}`, error);
+        // return true; // Suppress error -- Now allowing it to propagate
       }
     }
     
@@ -174,7 +168,7 @@ if (typeof window !== 'undefined') {
     if (originalOnError) {
       return originalOnError.call(this as any, message, source, lineno, colno, error);
     }
-    return false;
+    return false; // Allow default browser handling
   };
 
   const originalOnUnhandledRejection = window.onunhandledrejection;
@@ -188,8 +182,9 @@ if (typeof window !== 'undefined') {
       ];
       
       if (suppressedMessages.some(msg => event.reason.message.includes(msg))) {
-        event.preventDefault();
-        return;
+        logErrorToProduction(`[serverless-polyfill] Previously suppressed unhandled rejection:`, event.reason);
+        // event.preventDefault(); // -- Now allowing it to propagate
+        // return;
       }
     }
     
@@ -203,18 +198,18 @@ if (typeof window !== 'undefined') {
 // Node.js environment polyfills (for SSR/build time)
 if (typeof global !== 'undefined' && typeof window === 'undefined') {
   // Ensure Node.js global has necessary polyfills
-  if (typeof (global as any).self === 'undefined') {
-    (global as any).self = global;
+  if (typeof (global as Record<string, unknown>).self === 'undefined') {
+    (global as Record<string, unknown>).self = global;
   }
   
-  if (typeof (global as any).webpackChunk_N_E === 'undefined') {
-    (global as any).webpackChunk_N_E = [];
+  if (typeof (global as Record<string, unknown>).webpackChunk_N_E === 'undefined') {
+    (global as Record<string, unknown>).webpackChunk_N_E = [];
   }
   
   // TypeScript helpers for Node.js
   Object.keys(tsHelpers).forEach(helper => {
-    if (typeof (global as any)[helper] === 'undefined') {
-      (global as any)[helper] = (tsHelpers as any)[helper];
+    if (typeof (global as Record<string, unknown>)[helper] === 'undefined') {
+      (global as Record<string, unknown>)[helper] = (tsHelpers as Record<string, unknown>)[helper];
     }
   });
 }

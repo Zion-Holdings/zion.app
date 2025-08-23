@@ -60,9 +60,10 @@ export default function Dashboard() {
   const { data: orders = [], isLoading: ordersLoading } = useGetOrdersQuery(userId);
   const { favorites } = useFavorites();
 
-  // Type assertion to work around Supabase User type limitations
-  const userWithExtendedProps = user as any;
-  const userType = userWithExtendedProps?.userType || user?.user_metadata?.userType || 'talent';
+  // Type assertion to work around Supabase User type limitations - userWithExtendedProps can remain for now if it accesses non-standard props.
+  // Standard props like user_metadata should resolve correctly on the original 'user' object.
+  const userWithExtendedProps = user as unknown as { displayName?: string; email?: string; userType?: string; user_metadata?: { userType?: string } };
+  const userType = userWithExtendedProps?.userType || userWithExtendedProps?.user_metadata?.userType || 'talent';
   const roleForTour = userType === 'client' || userType === 'admin' ? 'client' : 'talent';
 
   if (loading) {
@@ -91,7 +92,8 @@ export default function Dashboard() {
   const handleTestNotification = async () => {
     try {
       const { createTestNotification } = await loadNotificationFunctions();
-      const result = await createTestNotification(user?.id ?? "");
+      // Using type assertion as a workaround for persistent TS error.
+      const result = await createTestNotification((user as { id?: string })?.id ?? "");
       if (result.success) {
         toast({
           title: "Test notification created",
@@ -104,7 +106,7 @@ export default function Dashboard() {
           variant: "destructive",
         });
       }
-    } catch (error) {
+    } catch {
       toast({
         title: "Error loading notification system",
         description: "Please try again",
@@ -192,7 +194,7 @@ export default function Dashboard() {
                         try {
                           const { createOnboardingNotification } = await loadNotificationFunctions();
                           await createOnboardingNotification({
-                            userId: user?.id ?? "",
+                             userId: user?.id ?? "",
                             missingMilestone: 'profile_completed',
                             userRole: roleForTour
                           });
@@ -200,7 +202,7 @@ export default function Dashboard() {
                             title: "Onboarding notification sent",
                             description: "Check your notification center"
                           });
-                        } catch (error) {
+                        } catch {
                           toast({
                             title: "Error sending notification",
                             description: "Please try again",
@@ -220,7 +222,7 @@ export default function Dashboard() {
                         try {
                           const { createSystemNotification } = await loadNotificationFunctions();
                           await createSystemNotification({
-                            userId: user?.id ?? "",
+                             userId: user?.id ?? "", // Already correct, no assertion was here in the last error log for this specific one
                             title: "New Feature Available!",
                             message: "We've added a new notification center to help you stay updated with important information.",
                             actionUrl: "/notifications",
@@ -230,7 +232,7 @@ export default function Dashboard() {
                             title: "System notification sent",
                             description: "Check your notification center"
                           });
-                        } catch (error) {
+                        } catch {
                           toast({
                             title: "Error sending notification",
                             description: "Please try again",

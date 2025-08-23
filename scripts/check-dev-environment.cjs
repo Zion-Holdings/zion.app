@@ -36,7 +36,8 @@ function checkEnvironment() {
     if (fs.existsSync('node_modules')) {
       console.log('📁 Node modules: ✅ Installed');
     } else {
-      errors.push('node_modules not found - run `npm install`');
+      errors.push('node_modules not found - run `./setup.sh npm` to install dependencies');
+      warnings.push('For limited functionality without internet, run `./offline-dev.sh`');
     }
   } else {
     errors.push('package.json not found');

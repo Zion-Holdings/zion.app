@@ -1,14 +1,13 @@
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { mutate } from 'swr';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { SEO } from "@/components/SEO";
-import { Button } from "@/components/ui/button";
 import PostForm from "@/components/community/PostForm";
 import { useAuth } from "@/hooks/useAuth";
 import { useToast } from "@/hooks/use-toast";
-import { ForumCategory } from "@/types/community";
+import type { ForumCategory } from "@/types/community";
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 
@@ -44,7 +43,7 @@ export default function CreatePostPage() {
       // For now, we'll just simulate a successful post creation
       
       // Parse tags into an array
-      const tagsArray = values.tags.split(",").map(tag => tag.trim());
+      const _tagsArray = values.tags.split(",").map(tag => tag.trim());
       
       toast({
         title: "Post created",
@@ -70,7 +69,7 @@ export default function CreatePostPage() {
       
       // Redirect to the forum category
       router.push(`/community/category/${values.categoryId}`);
-    } catch (error) {
+    } catch {
       toast({
         title: "Error",
         description: "There was a problem creating your post",

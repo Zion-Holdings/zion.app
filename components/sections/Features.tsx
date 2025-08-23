@@ -51,7 +51,7 @@ const Features: React.FC<FeaturesProps> = ({
         {/* Features Grid */}
         <div className={`grid grid-cols-1 gap-6 sm:gap-8 ${gridCols[columns]}`}>
           {features.map((feature, index) => (
-            <Card
+            <div
               key={index}
               className="text-center group bg-gray-900/50 border border-gray-800 hover:border-blue-500/30 hover:bg-gray-900/80 transition-all duration-300 hover:-translate-y-1"
               style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
@@ -72,6 +72,9 @@ const Features: React.FC<FeaturesProps> = ({
           ))}
         </div>
       </div>
+
+      {/* Energy Field Effect */}
+      <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent animate-energy-wave" />
     </section>
   );
 };

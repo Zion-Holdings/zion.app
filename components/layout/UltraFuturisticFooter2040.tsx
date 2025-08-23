@@ -1,22 +1,62 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Globe, Phone, Mail, MapPin, 
-  Brain, Atom, Target, 
-  Star, Rocket, Shield,
-  Twitter, Linkedin, Youtube, Github, 
-  ArrowUp, ArrowRight, ExternalLink
+  Brain, Atom, Shield, Rocket, Cpu, Target, Sparkles, 
+  Heart, DollarSign, GraduationCap, Building, Truck, Zap,
+  Phone, Mail, MapPin, Globe, Linkedin, Twitter, Github, Youtube,
+  ArrowRight, Star, CheckCircle, TrendingUp, Award, Clock
 } from 'lucide-react';
 
 const UltraFuturisticFooter2040: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
-  const contactInfo = {
-    phone: '+1 302 464 0950',
-    email: 'kleber@ziontechgroup.com',
-    address: '364 E Main St STE 1008 Middletown DE 19709',
-    hours: 'Mon-Fri: 9:00 AM - 6:00 PM EST'
-  };
+  const footerSections = [
+    {
+      title: 'Services',
+      links: [
+        { name: 'AI & Machine Learning', href: '/services?category=ai-data' },
+        { name: 'IT Infrastructure', href: '/services?category=cloud-finops' },
+        { name: 'Micro SAAS Solutions', href: '/services?category=developer-tools' },
+        { name: 'Cybersecurity', href: '/services?category=cybersecurity' },
+        { name: 'Observability', href: '/services?category=observability' },
+        { name: 'View All Services', href: '/services' }
+      ]
+    },
+    {
+      title: 'Solutions',
+      links: [
+        { name: 'Enterprise Solutions', href: '/solutions' },
+        { name: 'AI Content Intelligence', href: '/services/ai-content-intelligence-platform' },
+        { name: 'Cloud Cost Optimization', href: '/services/cloud-cost-optimization-platform' },
+        { name: 'No-Code Automation', href: '/services/no-code-automation-platform' },
+        { name: 'DevOps Automation', href: '/services/devops-automation-platform' },
+        { name: 'Custom Development', href: '/contact' }
+      ]
+    },
+    {
+      title: 'Company',
+      links: [
+        { name: 'About Us', href: '/about' },
+        { name: 'Our Mission', href: '/mission' },
+        { name: 'Leadership Team', href: '/team' },
+        { name: 'Careers', href: '/careers' },
+        { name: 'Press & Media', href: '/press' },
+        { name: 'Contact Us', href: '/contact' }
+      ]
+    },
+    {
+      title: 'Resources',
+      links: [
+        { name: 'Documentation', href: '/docs' },
+        { name: 'API Reference', href: '/api' },
+        { name: 'Blog & Insights', href: '/blog' },
+        { name: 'Case Studies', href: '/case-studies' },
+        { name: 'Webinars', href: '/webinars' },
+        { name: 'Support Center', href: '/support' }
+      ]
+    }
+  ], []);
 
   const socialLinks = [
     {
@@ -309,23 +349,20 @@ const UltraFuturisticFooter2040: React.FC = () => {
               </div>
             </div>
           </div>
+        </div>
 
-          {/* Stats Section */}
-          <div className="mt-16 pt-12 border-t border-white/10">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {stats.map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <div className="text-3xl font-bold text-cyan-400 mb-2">{stat.number}</div>
-                  <div className="text-sm text-white/70">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* CTA Section */}
-          <div className="mt-16 pt-12 border-t border-white/10 text-center">
+        {/* Newsletter Signup */}
+        <motion.div
+          className="mt-16 pt-12 border-t border-gray-700/50"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <div className="max-w-2xl mx-auto text-center">
             <h3 className="text-2xl font-bold text-white mb-4">
-              Ready to Transform Your Business?
+              Stay Updated with Revolutionary Tech
             </h3>
             <p className="text-white/70 mb-8 max-w-2xl mx-auto">
               Join the future of technology with our cutting-edge solutions. Let's build something extraordinary together.

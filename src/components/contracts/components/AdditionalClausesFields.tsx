@@ -1,5 +1,5 @@
 
-import { UseFormReturn, ControllerRenderProps } from "react-hook-form";
+import type { UseFormReturn, ControllerRenderProps } from "react-hook-form";
 import {
   FormField,
   FormItem,
@@ -8,7 +8,7 @@ import {
   FormDescription 
 } from "@/components/ui/form";
 import { Checkbox } from "@/components/ui/checkbox";
-import { ContractFormValues } from "./ContractForm";
+import type { ContractFormValues } from "./ContractForm";
 
 interface AdditionalClausesFieldsProps {
   form: UseFormReturn<ContractFormValues>;
@@ -35,14 +35,14 @@ export function AdditionalClausesFields({ form }: AdditionalClausesFieldsProps) 
                 <FormItem className="flex flex-row items-start space-x-3 space-y-0">
                   <FormControl>
                     <Checkbox
-                      checked={field.value?.includes('nda')}
+                      checked={field.value?.includes('nda') ?? false}
                       onCheckedChange={(checked) => {
                         const currentValues = field.value || [];
-                        return checked
-                          ? field.onChange([...currentValues, 'nda'])
-                          : field.onChange(
-                              currentValues.filter((value) => value !== 'nda')
-                            );
+                        if (checked) {
+                          field.onChange([...currentValues, 'nda']);
+                        } else {
+                          field.onChange(currentValues.filter((v: string) => v !== 'nda'));
+                        }
                       }}
                     />
                   </FormControl>
@@ -65,7 +65,7 @@ export function AdditionalClausesFields({ form }: AdditionalClausesFieldsProps) 
                 <FormItem className="flex flex-row items-start space-x-3 space-y-0">
                   <FormControl>
                     <Checkbox
-                      checked={field.value?.includes('ip')}
+                      checked={field.value?.includes('ip') ?? false}
                       onCheckedChange={(checked) => {
                         const currentValues = field.value || [];
                         return checked
@@ -95,7 +95,7 @@ export function AdditionalClausesFields({ form }: AdditionalClausesFieldsProps) 
                 <FormItem className="flex flex-row items-start space-x-3 space-y-0">
                   <FormControl>
                     <Checkbox
-                      checked={field.value?.includes('termination')}
+                      checked={field.value?.includes('termination') ?? false}
                       onCheckedChange={(checked) => {
                         const currentValues = field.value || [];
                         return checked
@@ -125,7 +125,7 @@ export function AdditionalClausesFields({ form }: AdditionalClausesFieldsProps) 
                 <FormItem className="flex flex-row items-start space-x-3 space-y-0">
                   <FormControl>
                     <Checkbox
-                      checked={field.value?.includes('revisions')}
+                      checked={field.value?.includes('revisions') ?? false}
                       onCheckedChange={(checked) => {
                         const currentValues = field.value || [];
                         return checked

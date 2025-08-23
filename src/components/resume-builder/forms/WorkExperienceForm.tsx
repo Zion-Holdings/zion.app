@@ -16,7 +16,7 @@ import {
   FormLabel,
   FormMessage
 } from "@/components/ui/form";
-import { WorkExperience } from '@/types/resume';
+import type { WorkExperience } from '@/types/resume';
 
 
 
@@ -31,7 +31,7 @@ const workExperienceSchema = z.object({
   role_title: z.string().min(1, 'Job title is required'),
   start_date: z.string().min(1, 'Start date is required'),
   end_date: z.string().optional(),
-  is_current: z.boolean().default(false),
+  is_current: z.boolean().optional(), // Make optional, defaultValues will handle initial state
   description: z.string().optional(),
   location: z.string().optional(),
 });
@@ -78,10 +78,10 @@ export function WorkExperienceForm({ resumeId, workExperiences, onComplete, onBa
         company_name: data.company_name, // Required field
         role_title: data.role_title, // Required field
         start_date: data.start_date, // Required field
-        end_date: data.is_current ? undefined : (data.end_date || undefined),
-        is_current: data.is_current,
-        description: data.description,
-        location: data.location,
+        is_current: data.is_current ?? false, // Default undefined to false
+        ...(data.is_current ? {} : { end_date: data.end_date || '' }),
+        ...(data.description && { description: data.description }),
+        ...(data.location && { location: data.location }),
       };
 
       if (editingId) {

@@ -24,11 +24,19 @@ export default function ForgotPassword() {
       } else {
         throw new Error('Request failed')
       }
-    } catch (err: any) {
-      logErrorToProduction(err)
-      const msg = err?.response?.data?.message || err.message || 'Failed to send reset link'
-      setError(msg)
-      toast.error(msg)
+    } catch (err: unknown) {
+      logErrorToProduction('Forgot password error', err);
+      let msg = 'Failed to send reset link';
+      if (typeof err === 'object' && err !== null) {
+        // Check for axios error shape
+        if ('response' in err && typeof (err as { response?: { data?: { message?: string } } }).response?.data?.message === 'string') {
+          msg = (err as { response: { data: { message: string } } }).response.data.message;
+        } else if ('message' in err && typeof (err as { message?: string }).message === 'string') {
+          msg = (err as { message: string }).message;
+        }
+      }
+      setError(msg);
+      toast.error(msg);
     } finally {
       setLoading(false)
     }

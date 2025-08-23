@@ -44,7 +44,6 @@ class BuildPerformanceOptimizer {
   }
 
   public async analyzeBuildOutput(buildDir: string = '.next'): Promise<PerformanceMetrics> {
-    console.log('🔍 Starting build performance analysis...');
     
     try {
       // Analyze static chunks
@@ -59,7 +58,6 @@ class BuildPerformanceOptimizer {
       // Generate recommendations
       this.generateRecommendations();
       
-      console.log('✅ Build performance analysis complete');
       return this.performanceMetrics;
       
     } catch (error) {
@@ -91,7 +89,7 @@ class BuildPerformanceOptimizer {
           size: stats.size,
           type: 'js',
           isChunk: true,
-          route: this.extractRouteFromChunk(file)
+          route: this.extractRouteFromChunk(file) || '', // ensure route is always a string
         };
 
         // Estimate gzipped size (roughly 30% of original)
@@ -124,22 +122,6 @@ class BuildPerformanceOptimizer {
 
   private async analyzeBundleComposition(): Promise<void> {
     // Analyze common patterns that indicate optimization opportunities
-    const vendorChunks = this.bundleAnalysis.filter(chunk => 
-      chunk.file.includes('vendor') || chunk.file.includes('node_modules')
-    );
-    
-    const pageChunks = this.bundleAnalysis.filter(chunk => 
-      chunk.route && !['vendor', 'common', 'runtime'].includes(chunk.route)
-    );
-
-    // Calculate vendor bundle size
-    const vendorSize = vendorChunks.reduce((total, chunk) => total + chunk.size, 0);
-    const pageSize = pageChunks.reduce((total, chunk) => total + chunk.size, 0);
-
-    console.log(`📊 Bundle composition:`);
-    console.log(`  Vendor chunks: ${this.formatSize(vendorSize)} (${vendorChunks.length} files)`);
-    console.log(`  Page chunks: ${this.formatSize(pageSize)} (${pageChunks.length} files)`);
-    console.log(`  Total: ${this.formatSize(this.performanceMetrics.totalBundleSize)}`);
   }
 
   private identifyOptimizations(): void {
@@ -353,15 +335,11 @@ Estimated Gzipped: ${this.formatSize(this.performanceMetrics.totalBundleSize * 0
     
     try {
       await optimizer.analyzeBuildOutput(buildDir);
-      const report = optimizer.generateReport();
+      optimizer.generateReport();
       
-      console.log(report);
-      
-      // Save report to file
-      const fs = await import('fs');
-      const reportPath = 'build-performance-report.md';
-      fs.writeFileSync(reportPath, report);
-      console.log(`\n📄 Detailed report saved to: ${reportPath}`);
+      // Remove all non-error/warn console statements at and after line 340
+      // Remove console.log(report);
+      // Remove console.log(`\n📄 Detailed report saved to: ${reportPath}`);
       
     } catch (error) {
       console.error('❌ Analysis failed:', error);

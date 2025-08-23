@@ -119,4 +119,29 @@ Python utilities are available for manual log inspection. After running `main_ap
 python bug_log_summary.py
 ```
 
+To simply print all recorded entries in the log file, use the `--list` option provided by `bug_logger.py`:
+
+```bash
+python bug_logger.py --list
+```
+
 This script reads `logs/bug/bug_log.json` (or the path set in `BUG_LOG_FILE`) and prints the number of entries per severity along with the most frequent error messages.
+You can filter by severity using the optional `--severity` flag, e.g.:
+
+```bash
+python bug_log_summary.py --severity High
+```
+
+Additional filtering options allow you to only include log entries within a date range:
+
+```bash
+python bug_log_summary.py --since "2025-07-01T00:00:00Z" --until "2025-07-05T23:59:59Z"
+```
+
+Timestamps should be in ISO format. The `--since` and `--until` flags can be combined with `--severity` and `--output` as needed.
+
+To export a CSV summary of counts per severity, use the `--csv` option:
+
+```bash
+python bug_log_summary.py --csv bug_summary.csv
+```

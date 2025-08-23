@@ -43,7 +43,8 @@ export default function WorkFuturesSimulator() {
       const prompt = `Simulate a future of work using the Zion protocol. Scenario lens: ${scenario}. Role: ${role}. Sector: ${sector}. Provide a short timeline of key decisions, describe the network of people/skills/tasks, assign a decentralized work index score from 1-100, and craft a short resume/manifesto snippet for the role.`;
       const result = await callZionGPT({ prompt, purpose: 'support' });
       setOutput(result);
-      setWorkIndex(Math.floor(Math.random() * 60) + 40); // simple placeholder
+      // Reactivate: Mock decentralized work index calculation
+      setWorkIndex(Math.floor(Math.random() * 41) + 60); // 60-100
     } catch (err) {
       logErrorToProduction(err instanceof Error ? err.message : String(err), err instanceof Error ? err : undefined, { context: 'WorkFuturesSimulator.runSimulation' });
       const suggestion = await suggestFix(err instanceof Error ? err : new Error(String(err)));

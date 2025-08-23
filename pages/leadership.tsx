@@ -8,7 +8,7 @@ import {
   Linkedin, Mail, Phone, MapPin, Building, Lightbulb, Cpu
 } from 'lucide-react';
 
-const LeadershipPage: React.FC = () => {
+export default function Leadership() {
   const leadership = [
     {
       name: "Kleber",
@@ -138,7 +138,7 @@ const LeadershipPage: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
               {leadership.map((leader, index) => (
                 <motion.div
-                  key={leader.name}
+                  key={index}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.1 * index }}
@@ -181,21 +181,19 @@ const LeadershipPage: React.FC = () => {
                             <Linkedin className="w-4 h-4" />
                             <span className="text-sm">LinkedIn</span>
                           </a>
-                          <a
-                            href={`mailto:${leader.email}`}
-                            className="flex items-center space-x-2 text-green-400 hover:text-green-300 transition-colors"
-                          >
-                            <Mail className="w-4 h-4" />
-                            <span className="text-sm">Email</span>
+                        )}
+                        {leader.contact.twitter && (
+                          <a href={leader.contact.twitter} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-gray-300 hover:text-blue-400 transition-colors">
+                            <Twitter className="w-4 h-4" />
+                            <span className="text-sm">Twitter</span>
                           </a>
-                          <a
-                            href={`tel:${leader.phone}`}
-                            className="flex items-center space-x-2 text-purple-400 hover:text-purple-300 transition-colors"
-                          >
-                            <Phone className="w-4 h-4" />
-                            <span className="text-sm">Call</span>
+                        )}
+                        {leader.contact.github && (
+                          <a href={leader.contact.github} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-gray-300 hover:text-gray-400 transition-colors">
+                            <Github className="w-4 h-4" />
+                            <span className="text-sm">GitHub</span>
                           </a>
-                        </div>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -231,14 +229,8 @@ const LeadershipPage: React.FC = () => {
                   transition={{ duration: 0.8, delay: 0.1 * index }}
                   className="text-center group"
                 >
-                  <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-blue-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20">
-                    <div className={`w-16 h-16 mx-auto mb-6 rounded-2xl bg-gradient-to-r ${value.color} p-1`}>
-                      <div className="w-full h-full rounded-2xl bg-gray-800 flex items-center justify-center">
-                        <value.icon className="w-8 h-8 text-white" />
-                      </div>
-                    </div>
-                    <h3 className="text-xl font-bold text-white mb-4">{value.title}</h3>
-                    <p className="text-gray-300 leading-relaxed">{value.description}</p>
+                  <div className="w-20 h-20 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <value.icon className="w-10 h-10 text-cyan-400" />
                   </div>
                 </motion.div>
               ))}
@@ -305,14 +297,13 @@ const LeadershipPage: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/careers"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-full hover:from-blue-600 hover:to-cyan-600 transition-all duration-300 transform hover:scale-105"
+                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
                 >
-                  View Open Positions
-                  <ArrowRight className="w-5 h-5 ml-2" />
+                  View Careers
                 </a>
                 <a
                   href="/contact"
-                  className="inline-flex items-center px-8 py-4 border-2 border-blue-500 text-blue-400 font-semibold rounded-full hover:bg-blue-500 hover:text-white transition-all duration-300"
+                  className="px-8 py-4 border border-cyan-500 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-500/10 transition-all duration-300"
                 >
                   Contact Leadership
                   <Mail className="w-5 h-5 ml-2" />

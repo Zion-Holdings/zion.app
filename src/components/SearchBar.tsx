@@ -6,7 +6,7 @@ import { Search, X } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { AutocompleteSuggestions } from '@/components/search/AutocompleteSuggestions';
 import { fireEvent } from '@/lib/analytics';
-import { SearchSuggestion } from '@/types/search';
+import type { SearchSuggestion } from '@/types/search';
 import { slugify } from '@/lib/slugify';
 import { useDebounce } from '@/hooks/useDebounce';
 import { useOnClickOutside } from '@/hooks/useOnClickOutside';

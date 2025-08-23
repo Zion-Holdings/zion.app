@@ -2,8 +2,6 @@ from django.urls import path, include
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 from rest_framework.permissions import AllowAny
-from django.contrib.auth import views as auth_views # Standard auth views
-from ipo_portal import views as ipo_views # Custom views from ipo_portal
 
 schema_view = get_schema_view(
     openapi.Info(title="Public API", default_version='v1'),
@@ -12,18 +10,8 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
-    # Custom login for IPO portal users, potentially overriding admin login if LOGIN_URL is set
-    path('admin/ipo-login/', ipo_views.IPOLoginView.as_view(), name='ipo_admin_login'),
-
-    # Standard Django admin URLs (if you want to keep them separate or for other purposes)
-    # path('admin/', admin.site.urls), # This would typically include the original admin:login
-
-    # App-specific URLs
-    path('auth/', include('authentication.urls')), # Assuming this is for other auth parts like password reset
+    path('auth/', include('authentication.urls')),
     path('api/', include('public_api.urls')),
-    path('api/governance/', include('governance.urls')),
-    path('admin/ipo-portal/', include('ipo_portal.urls')), # App's own features like 2FA setup
-
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='swagger-ui'),
 ]
 

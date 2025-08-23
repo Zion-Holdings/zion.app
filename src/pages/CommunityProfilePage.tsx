@@ -6,103 +6,13 @@ import { SEO } from "@/components/SEO";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { formatDistanceToNow } from "date-fns";
-import { CommunityUser, ForumPost, Badge as BadgeType } from "@/types/community";
+import type { CommunityUser, ForumPost } from "@/types/community";
 import PostCard from "@/components/community/PostCard";
 import UserBadges from "@/components/community/UserBadges";
 import ReputationDisplay from "@/components/community/ReputationDisplay";
-
-// Mock user data
-const mockUser: CommunityUser = {
-  id: "user1",
-  name: "Alex Johnson",
-  avatar: "https://i.pravatar.cc/150?img=3",
-  role: "Verified Talent",
-  reputation: 325,
-  postCount: 14,
-  replyCount: 47,
-  badges: [
-    {
-      id: "badge1",
-      name: "Answer Hero",
-      description: "Provided 10 accepted answers",
-      icon: "Award",
-      color: "#10B981"
-    },
-    {
-      id: "badge2",
-      name: "Top Contributor",
-      description: "Among the top 5% of contributors",
-      icon: "Trophy",
-      color: "#3b82f6"
-    },
-    {
-      id: "badge3",
-      name: "First Post",
-      description: "Created your first forum post",
-      icon: "Star",
-      color: "#6366F1"
-    }
-  ],
-  isVerified: true,
-  isModerator: false
-};
-
-// Mock posts by this user
-const userPosts: ForumPost[] = [
-  {
-    id: "1",
-    title: "Best practices for AI model fine-tuning",
-    content: "I've been working on fine-tuning models for specific tasks and wanted to share some approaches that have worked well for me...",
-    authorId: "user1",
-    authorName: "Alex Johnson",
-    authorAvatar: "https://i.pravatar.cc/150?img=3",
-    authorRole: "Verified Talent",
-    categoryId: "ai-tools",
-    tags: ["machine-learning", "fine-tuning", "gpt"],
-    createdAt: "2025-04-01T12:00:00Z",
-    updatedAt: "2025-04-01T12:00:00Z",
-    upvotes: 48,
-    downvotes: 2,
-    replyCount: 12,
-    isAnswered: true,
-    isFeatured: true
-  },
-  {
-    id: "11",
-    title: "How to structure an AI prompt for best results",
-    content: "After experimenting with different prompt formats, I've found these patterns to work consistently better...",
-    authorId: "user1",
-    authorName: "Alex Johnson",
-    authorAvatar: "https://i.pravatar.cc/150?img=3",
-    authorRole: "Verified Talent",
-    categoryId: "ai-tools",
-    tags: ["prompts", "techniques", "optimization"],
-    createdAt: "2025-03-20T14:25:00Z",
-    updatedAt: "2025-03-20T14:25:00Z",
-    upvotes: 36,
-    downvotes: 1,
-    replyCount: 8
-  },
-  {
-    id: "12",
-    title: "Setting up effective monitoring for AI systems",
-    content: "Here's my approach to monitoring AI systems in production environments...",
-    authorId: "user1",
-    authorName: "Alex Johnson",
-    authorAvatar: "https://i.pravatar.cc/150?img=3",
-    authorRole: "Verified Talent",
-    categoryId: "project-help",
-    tags: ["monitoring", "production", "devops"],
-    createdAt: "2025-03-12T09:30:00Z",
-    updatedAt: "2025-03-12T09:30:00Z",
-    upvotes: 24,
-    downvotes: 0,
-    replyCount: 6
-  }
-];
 
 export default function CommunityProfilePage() {
   const router = useRouter();
@@ -112,11 +22,24 @@ export default function CommunityProfilePage() {
   const [posts, setPosts] = useState<ForumPost[]>([]);
   
   useEffect(() => {
-    // In a real app, we would fetch the user data here
-    // For now, we'll just use the mock data
-    setUser(mockUser);
-    setPosts(userPosts);
-    setIsLoading(false);
+    const fetchUser = async () => {
+      try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/community/users/${userId}`);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data: CommunityUser = await response.json();
+        setUser(data);
+        // setPosts(userPosts); // This line is removed as per the edit hint
+        setIsLoading(false);
+      } catch (error) {
+        console.error("Error fetching user:", error);
+        setIsLoading(false);
+        setUser(null); // Clear user if fetch fails
+      }
+    };
+
+    fetchUser();
   }, [userId]);
   
   if (isLoading) {

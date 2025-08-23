@@ -1,7 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { applyCorsHeaders } from '@/middleware/cors';
 import { withErrorLogging } from '@/utils/withErrorLogging';
-import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 import { TALENT_PROFILES } from '@/data/talentData';
 import { BLOG_POSTS } from '@/data/blog-posts';
 import { cacheOrCompute, CacheCategory, applyCacheHeaders, cacheKeys } from '@/lib/serverCache';
@@ -46,27 +45,6 @@ export function performSearch(query: string, page: number, limit: number, filter
   const searchTerm = query.toLowerCase().trim();
   let allResults: SearchResult[] = [];
 
-  // Search marketplace listings
-  const productResults = MARKETPLACE_LISTINGS.filter(item =>
-    item.title?.toLowerCase().includes(searchTerm) ||
-    item.description?.toLowerCase().includes(searchTerm) ||
-    item.category?.toLowerCase().includes(searchTerm) ||
-    item.tags?.some(tag => tag.toLowerCase().includes(searchTerm))
-  ).map(item => ({
-    id: item.id,
-    title: item.title,
-    description: item.description,
-    type: 'product' as const,
-    category: item.category,
-    url: `/marketplace/products/${item.id}`,
-    image: item.images?.[0],
-    price: item.price ?? undefined,
-    currency: item.currency || 'USD',
-    rating: item.rating,
-    tags: item.tags,
-    date: item.createdAt
-  }));
-
   // Search talent profiles
   const talentResults = TALENT_PROFILES.filter(profile =>
     profile.full_name?.toLowerCase().includes(searchTerm) ||
@@ -76,16 +54,16 @@ export function performSearch(query: string, page: number, limit: number, filter
   ).map(profile => ({
     id: profile.id,
     title: profile.full_name,
-    description: `${profile.professional_title} - ${profile.bio || ''}`,
+    description: profile.professional_title,
     type: 'talent' as const,
     category: 'Talent',
     url: `/marketplace/talent/${profile.id}`,
-    image: profile.profile_picture_url,
-    price: profile.hourly_rate,
+    ...(profile.profile_picture_url !== undefined ? { image: profile.profile_picture_url } : {}),
+    ...(profile.hourly_rate !== undefined ? { price: profile.hourly_rate } : {}),
     currency: 'USD',
-    rating: profile.average_rating,
-    tags: profile.skills,
-    date: undefined
+    ...(profile.average_rating !== undefined ? { rating: profile.average_rating } : {}),
+    tags: profile.skills ?? [],
+    date: ""
   }));
 
   // Search blog posts
@@ -101,13 +79,13 @@ export function performSearch(query: string, page: number, limit: number, filter
     type: 'blog' as const,
     category: 'Blog',
     url: `/blog/${post.slug}`,
-    image: post.featuredImage,
-    tags: post.tags,
-    date: post.publishedDate
+    ...(post.featuredImage !== undefined ? { image: post.featuredImage } : {}),
+    tags: post.tags ?? [],
+    date: post.publishedDate ?? ""
   }));
 
   // Combine all results
-  allResults.push(...productResults, ...talentResults, ...blogResults);
+  allResults.push(...talentResults, ...blogResults);
 
   // Filter by type
   if (filters.types && filters.types.length > 0) {
@@ -169,51 +147,52 @@ export function performSearch(query: string, page: number, limit: number, filter
   };
 }
 
-async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<SearchResponse | { error: string }>,
-) {
+// Ensure correct handler signature and returns
+async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void> {
   // Apply CORS headers first
   applyCorsHeaders(req, res as NextApiResponse<unknown>);
 
-  if (req.method === 'OPTIONS') {
-    return res.status(200).end();
+  if (req['method'] === 'OPTIONS') {
+    res.status(200).end();
+    return;
   }
 
-  if (req.method !== 'GET') {
+  if (req['method'] !== 'GET') {
     res.setHeader('Allow', 'GET');
-    return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
+    res.status(405).json({ error: `Method ${req['method']} Not Allowed` });
+    return;
   }
 
   const startTime = Date.now();
 
   try {
-    const q = String(((req.query as any).query ?? ((req.query as any).q ?? '')))
+    const q = String(((req['query'] as any).query ?? ((req['query'] as any).q ?? '')))
       .toLowerCase()
       .trim();
-    const page = parseInt(String(((req.query as any).page ?? '1')), 10);
-    const limit = Math.min(parseInt(String(((req.query as any).limit ?? '20')), 10), 100); // Cap at 100
+    const page = parseInt(String(((req['query'] as any).page ?? '1')), 10);
+    const limit = Math.min(parseInt(String(((req['query'] as any).limit ?? '20')), 10), 100); // Cap at 100
 
-    const typesParam = String((req.query as any).type ?? '')
+    const typesParam = String((req['query'] as any).type ?? '')
       .split(',')
       .map((t: string) => t.trim())
       .filter(Boolean) as SearchFilters['types'];
-    const category = (req.query as any).category as string | undefined;
-    const minPrice = (req.query as any).minPrice ? parseFloat(String((req.query as any).minPrice)) : undefined;
-    const maxPrice = (req.query as any).maxPrice ? parseFloat(String((req.query as any).maxPrice)) : undefined;
-    const minRating = (req.query as any).minRating ? parseFloat(String((req.query as any).minRating)) : undefined;
-    const sort = (req.query as any).sort as SearchFilters['sort'] | undefined;
+    const category = (req['query'] as any).category as string | undefined;
+    const minPrice = (req['query'] as any).minPrice ? parseFloat(String((req['query'] as any).minPrice)) : undefined;
+    const maxPrice = (req['query'] as any).maxPrice ? parseFloat(String((req['query'] as any).maxPrice)) : undefined;
+    const minRating = (req['query'] as any).minRating ? parseFloat(String((req['query'] as any).minRating)) : undefined;
+    const sort = (req['query'] as any).sort as SearchFilters['sort'] | undefined;
 
     // Return empty results for empty query
     if (!q) {
       applyCacheHeaders(res, CacheCategory.SHORT);
-      return res.status(200).json({
+      res.status(200).json({
         results: [],
         totalCount: 0,
         page,
         limit,
         query: q,
       });
+      return;
     }
 
     // Create cache key
@@ -226,12 +205,12 @@ async function handler(
       async () => {
         logInfo(`Performing search for: "${q}" (page ${page}, limit ${limit})`);
         return performSearch(q, page, limit, {
-          types: (typesParam && typesParam.length) ? typesParam : undefined,
-          category,
-          minPrice,
-          maxPrice,
-          minRating,
-          sort,
+          ...(typesParam && typesParam.length ? { types: typesParam } : {}),
+          ...(category ? { category } : {}),
+          ...(typeof minPrice === 'number' ? { minPrice } : {}),
+          ...(typeof maxPrice === 'number' ? { maxPrice } : {}),
+          ...(typeof minRating === 'number' ? { minRating } : {}),
+          ...(sort ? { sort } : {}),
         });
       },
       CacheCategory.SHORT, // 5 minutes cache for search results
@@ -257,7 +236,8 @@ async function handler(
     res.setHeader('X-Query-Length', q.length.toString());
     res.setHeader('X-Has-More', searchResult.hasMore.toString());
 
-    return res.status(200).json(searchResponse);
+    res.status(200).json(searchResponse);
+    return;
 
   } catch (error) {
     logErrorToProduction('Search query failed:', { data: error });
@@ -266,14 +246,15 @@ async function handler(
     applyCacheHeaders(res, CacheCategory.SHORT);
     res.setHeader('X-Data-Source', 'fallback');
     
-    return res.status(200).json({
+    res.status(200).json({
       results: [],
       totalCount: 0,
       page: 1,
       limit: 20,
-      query: String(((req.query as any).query ?? ((req.query as any).q ?? ''))),
+      query: String(((req['query'] as any).query ?? ((req['query'] as any).q ?? ''))),
       hasMore: false,
     });
+    return;
   }
 }
 

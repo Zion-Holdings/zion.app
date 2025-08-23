@@ -6,6 +6,16 @@
 import { logInfo, logWarn, logErrorToProduction } from './productionLogger';
 import { advancedLogCollector } from './advancedLogCollector';
 
+interface Log {
+  timestamp: string;
+  level: string;
+  message: string;
+  context?: Record<string, unknown>;
+  source?: string;
+  sessionId?: string;
+  userId?: string;
+}
+
 export interface LogDashboardMetrics {
   totalLogs: number;
   errorCount: number;
@@ -59,14 +69,14 @@ class LogDashboard {
 
     try {
       const logs = advancedLogCollector.getCollectedLogs();
-      const last24Hours = logs.filter((log: any) => 
+      const last24Hours = logs.filter((log: Log) => 
         new Date(log.timestamp).getTime() > now - (24 * 60 * 60 * 1000)
       );
 
-      const errorLogs = last24Hours.filter((log: any) => log.level === 'error');
-      const warningLogs = last24Hours.filter((log: any) => log.level === 'warn');
-      const infoLogs = last24Hours.filter((log: any) => log.level === 'info');
-      const debugLogs = last24Hours.filter((log: any) => log.level === 'debug');
+      const errorLogs = last24Hours.filter((log: Log) => log.level === 'error');
+      const warningLogs = last24Hours.filter((log: Log) => log.level === 'warn');
+      const infoLogs = last24Hours.filter((log: Log) => log.level === 'info');
+      const debugLogs = last24Hours.filter((log: Log) => log.level === 'debug');
 
       // Calculate error rate
       const totalLogs = last24Hours.length;
@@ -74,7 +84,7 @@ class LogDashboard {
 
       // Get top errors
       const errorCounts = new Map<string, { count: number; lastSeen: string }>();
-      errorLogs.forEach((log: any) => {
+      errorLogs.forEach((log: Log) => {
         const key = log.message.substring(0, 100); // Truncate for grouping
         const existing = errorCounts.get(key) || { count: 0, lastSeen: log.timestamp };
         existing.count++;
@@ -98,7 +108,7 @@ class LogDashboard {
       const memoryUsage = this.getMemoryUsage();
 
       // Calculate log velocity (logs per minute in last hour)
-      const lastHour = last24Hours.filter((log: any) => 
+      const lastHour = last24Hours.filter((log: Log) => 
         new Date(log.timestamp).getTime() > now - (60 * 60 * 1000)
       );
       const logVelocity = lastHour.length / 60;
@@ -119,7 +129,7 @@ class LogDashboard {
       };
 
       this.lastCacheUpdate = now;
-      logInfo('Dashboard metrics calculated successfully', { metricsCount: totalLogs });
+      logInfo('Dashboard metrics calculated successfully', { data:  { metricsCount: totalLogs } });
       
       return this.metricsCache;
     } catch (error) {
@@ -146,13 +156,13 @@ class LogDashboard {
   /**
    * Get filtered logs based on criteria
    */
-  async getFilteredLogs(filter: LogFilter = {}, limit = 100): Promise<any[]> {
+  async getFilteredLogs(filter: LogFilter = {}, limit = 100): Promise<Log[]> {
     try {
       let logs = advancedLogCollector.getCollectedLogs();
 
       // Apply level filter
       if (filter.level) {
-        logs = logs.filter((log: any) => log.level === filter.level);
+        logs = logs.filter((log: Log) => log.level === filter.level);
       }
 
       // Apply time range filter
@@ -175,18 +185,18 @@ class LogDashboard {
             break;
         }
         
-        logs = logs.filter((log: any) => new Date(log.timestamp).getTime() >= cutoff);
+        logs = logs.filter((log: Log) => new Date(log.timestamp).getTime() >= cutoff);
       }
 
       // Apply source filter
       if (filter.source) {
-        logs = logs.filter((log: any) => log.source?.includes(filter.source!));
+        logs = logs.filter((log: Log) => log.source?.includes(filter.source!));
       }
 
       // Apply search filter
       if (filter.search) {
         const searchLower = filter.search.toLowerCase();
-        logs = logs.filter((log: any) => 
+        logs = logs.filter((log: Log) => 
           log.message.toLowerCase().includes(searchLower) ||
           JSON.stringify(log.context || {}).toLowerCase().includes(searchLower)
         );
@@ -194,16 +204,16 @@ class LogDashboard {
 
       // Apply user/session filters
       if (filter.userId) {
-        logs = logs.filter((log: any) => log.context?.userId === filter.userId);
+        logs = logs.filter((log: Log) => log.context?.userId === filter.userId);
       }
 
       if (filter.sessionId) {
-        logs = logs.filter((log: any) => log.sessionId === filter.sessionId);
+        logs = logs.filter((log: Log) => log.sessionId === filter.sessionId);
       }
 
       // Sort by timestamp (newest first) and limit
       return logs
-        .sort((a: any, b: any) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime())
+        .sort((a: Log, b: Log) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime())
         .slice(0, limit);
     } catch (error) {
       logErrorToProduction('Failed to get filtered logs', error);
@@ -227,7 +237,7 @@ class LogDashboard {
       message,
       timestamp: new Date().toISOString(),
       resolved: false,
-      metadata
+      metadata: metadata ?? {}
     };
 
     this.alerts.unshift(alert);
@@ -254,7 +264,7 @@ class LogDashboard {
     const alert = this.alerts.find(a => a.id === alertId);
     if (alert) {
       alert.resolved = true;
-      logInfo(`Alert resolved: ${alert.message}`, { alertId });
+      logInfo('Alert resolved: ${alert.message}', { data:  { alertId } });
       return true;
     }
     return false;
@@ -400,8 +410,10 @@ ${this.generateRecommendations(metrics, activeAlerts)}
       
       // Browser environment - estimate based on performance API
       if (typeof performance !== 'undefined' && 'memory' in performance) {
-        const memory = (performance as any).memory;
-        return (memory.usedJSHeapSize / memory.totalJSHeapSize) * 100;
+        const memory = (performance as unknown as { memory: { usedJSHeapSize: number; totalJSHeapSize: number } })?.memory;
+        if (memory) {
+          return (memory.usedJSHeapSize / memory.totalJSHeapSize) * 100;
+        }
       }
       
       return 0;
@@ -410,14 +422,14 @@ ${this.generateRecommendations(metrics, activeAlerts)}
     }
   }
 
-  private calculateAvgResponseTime(logs: any[]): number {
-    const performanceLogs = logs.filter((log: any) => 
-      log.context?.duration && typeof log.context.duration === 'number'
+  private calculateAvgResponseTime(logs: Log[]): number {
+    const performanceLogs = logs.filter((log: Log) => 
+      (typeof log.context?.duration === 'number' && log.context.duration > 0)
     );
     
     if (performanceLogs.length === 0) return 0;
     
-    const totalTime = performanceLogs.reduce((sum: number, log: any) => sum + log.context.duration, 0);
+    const totalTime = performanceLogs.reduce((sum: number, log: Log) => sum + (typeof log.context?.duration === 'number' ? log.context.duration : 0), 0);
     return totalTime / performanceLogs.length;
   }
 
@@ -481,7 +493,7 @@ ${this.generateRecommendations(metrics, activeAlerts)}
       });
     }, intervalMinutes * 60 * 1000);
 
-    logInfo('Automated monitoring started', { intervalMinutes });
+    logInfo('Automated monitoring started', { data:  { intervalMinutes } });
   }
 }
 

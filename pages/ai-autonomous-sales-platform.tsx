@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import Layout from '../components/layout/Layout';
+import { Layout } from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
   DollarSign, Brain, Zap, CheckCircle, ArrowRight, 
@@ -288,7 +288,7 @@ const AIAutonomousSalesPlatform: React.FC = () => {
                     "Email automation sequences",
                     "CRM integration",
                     "Standard reporting"
-                  ]
+                  "
                 },
                 {
                   title: "Professional",
@@ -317,7 +317,7 @@ const AIAutonomousSalesPlatform: React.FC = () => {
                     "Advanced analytics",
                     "24/7 dedicated support",
                     "On-premise deployment"
-                  ]
+                  "
                 }
               ].map((plan, index) => (
                 <motion.div

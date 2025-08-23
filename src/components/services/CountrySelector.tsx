@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 import { Globe } from 'lucide-react';
 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { CountryPricing, onsiteServicePricing } from "@/data/onsiteServicePricing";
+import type { CountryPricing } from "@/data/onsiteServicePricing";
+import { onsiteServicePricing } from "@/data/onsiteServicePricing";
 
 interface CountrySelectorProps {
   onCountryChange: (country: CountryPricing | null) => void;
@@ -37,7 +38,7 @@ export function CountrySelector({ onCountryChange, selectedCountry }: CountrySel
       
       <Select 
         onValueChange={handleCountryChange} 
-        value={selectedCountry?.country}
+        value={selectedCountry?.country ?? ""}
       >
         <SelectTrigger className="bg-zion-blue border-zion-blue-light text-white">
           <SelectValue placeholder="Select a country" />

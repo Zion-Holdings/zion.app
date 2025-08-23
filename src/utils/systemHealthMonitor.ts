@@ -1,9 +1,9 @@
-// @ts-nocheck
 /**
  * Advanced System Health Monitor
  * Real-time monitoring, analysis, and automated issue detection
  */
 
+/// <reference types="node" />
 import { logInfo, logWarn, logErrorToProduction } from './productionLogger';
 import { logDashboard } from './logDashboard';
 import { logManagement } from './logManagement';
@@ -38,14 +38,14 @@ export interface SystemAlert {
   message: string;
   timestamp: string;
   resolved: boolean;
-  context?: Record<string, unknown>;
+  context: Record<string, unknown> | undefined;
 }
 
 class SystemHealthMonitor {
   private alerts: SystemAlert[] = [];
   private healthHistory: Array<{ timestamp: string; score: number }> = [];
   private monitoring = false;
-  private monitoringInterval?: NodeJS.Timeout;
+  private monitoringInterval?: NodeJS.Timeout | undefined;
 
   /**
    * Start continuous health monitoring
@@ -60,12 +60,12 @@ class SystemHealthMonitor {
     this.monitoringInterval = setInterval(async () => {
       try {
         await this.performHealthCheck();
-      } catch (error) {
+      } catch (error: unknown) {
         logErrorToProduction('Error during health monitoring', error);
       }
     }, intervalMs);
 
-    logInfo('System health monitoring started', { intervalMs });
+    logInfo('System health monitoring started', { data:  { intervalMs } });
   }
 
   /**
@@ -158,7 +158,7 @@ class SystemHealthMonitor {
       });
 
       return health;
-    } catch (error) {
+    } catch (error: unknown) {
       logErrorToProduction('Failed to perform health check', error);
       throw error;
     }
@@ -221,7 +221,7 @@ class SystemHealthMonitor {
     const alert = this.alerts.find(a => a.id === alertId);
     if (alert) {
       alert.resolved = true;
-      logInfo(`Alert resolved: ${alert.message}`, { alertId });
+      logInfo('Alert resolved: ${alert.message}', { data:  { alertId } });
       return true;
     }
     return false;
@@ -328,7 +328,7 @@ ${trends.slice(-5).map(t =>
           totalLogs: logs.length
         }
       };
-    } catch (error) {
+    } catch (error: unknown) {
       return {
         status: 'critical',
         score: 0,
@@ -362,7 +362,7 @@ ${trends.slice(-5).map(t =>
           avgResponseTime: metrics.avgResponseTime
         }
       };
-    } catch (error) {
+    } catch (error: unknown) {
       return {
         status: 'warning',
         score: 70,
@@ -397,7 +397,7 @@ ${trends.slice(-5).map(t =>
           errorRate: metrics.errorRate
         }
       };
-    } catch (error) {
+    } catch (error: unknown) {
       return {
         status: 'critical',
         score: 0,
@@ -434,7 +434,7 @@ ${trends.slice(-5).map(t =>
           memoryUsage: metrics.memoryUsage
         }
       };
-    } catch (error) {
+    } catch (error: unknown) {
       return {
         status: 'warning',
         score: 75,
@@ -474,7 +474,7 @@ ${trends.slice(-5).map(t =>
         details,
         metrics: {}
       };
-    } catch (error) {
+    } catch (error: unknown) {
       return {
         status: 'warning',
         score: 70,

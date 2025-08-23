@@ -1,6 +1,13 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
+import { 
+  FileText, Shield, CheckCircle, AlertTriangle, 
+  ArrowRight, Users, Globe, Database, 
+  Calendar, Phone, Mail, MapPin
+} from 'lucide-react';
+import Link from 'next/link';
+=======
 =======
 import { FileText, Shield, Users, Globe, Clock, CheckCircle, AlertTriangle, Scale } from 'lucide-react';
 
@@ -37,6 +44,56 @@ const TermsPage: React.FC = () => {
         'Users must not attempt to reverse engineer our AI systems',
         'Data processing follows our privacy policy and data protection standards',
         'Service availability is subject to maintenance and updates'
+      service: 'AI Consciousness Platform',
+      description: 'Advanced AI systems with consciousness capabilities',
+      restrictions: [
+        'No unauthorized access or reverse engineering',
+        'Compliance with AI safety guidelines',
+        'Proper data handling and privacy protection'
+      ],
+      usage: 'Commercial and research applications'
+    },
+    {
+      service: 'Quantum Computing Solutions',
+      description: 'Quantum computing infrastructure and algorithms',
+      restrictions: [
+        'No quantum algorithm theft or copying',
+        'Respect for quantum security protocols',
+        'Proper quantum error handling'
+      ],
+      usage: 'Scientific research and enterprise applications'
+    },
+    {
+      service: 'Cybersecurity Services',
+      description: 'Advanced security and threat protection',
+      restrictions: [
+        'No testing against unauthorized systems',
+        'Compliance with security regulations',
+        'Proper incident reporting procedures'
+      ],
+      usage: 'Enterprise security and compliance'
+    },
+    {
+      service: 'Cloud Infrastructure',
+      description: 'Scalable cloud computing resources',
+      restrictions: [
+        'No resource abuse or unauthorized access',
+        'Compliance with cloud security policies',
+        'Proper cost management and optimization'
+      ],
+      usage: 'Business applications and development'
+    }
+  ];
+
+  const userObligations = [
+    {
+      obligation: 'Legal Compliance',
+      description: 'Use services in accordance with all applicable laws and regulations',
+      examples: [
+        'Data protection and privacy laws',
+        'Export control regulations',
+        'Industry-specific compliance requirements'
+=======
       ]
     },
     {
@@ -121,6 +178,9 @@ const TermsPage: React.FC = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                Key Terms Overview
+=======
 =======
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Key Terms & Conditions
@@ -134,6 +194,8 @@ const TermsPage: React.FC = () => {
               {keyTerms.map((term, index) => (
                 <motion.div
                   key={term.title}
+                  initial={{ opacity: 0, y: 30 }}
+=======
 =======
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -152,6 +214,9 @@ const TermsPage: React.FC = () => {
           </div>
         </section>
 
+        {/* Service Terms */}
+        <section className="py-20 bg-black/50">
+=======
 =======
         {/* Service-Specific Terms Section */}
         <section className="py-20">
@@ -163,6 +228,8 @@ const TermsPage: React.FC = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+=======
 =======
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Service-Specific Terms
@@ -197,6 +264,8 @@ const TermsPage: React.FC = () => {
           </div>
         </section>
 
+        {/* User Obligations */}
+=======
 =======
         {/* Prohibited Activities Section */}
         <section className="py-20">
@@ -292,6 +361,8 @@ const TermsPage: React.FC = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+=======
                 User Obligations
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
@@ -340,6 +411,8 @@ const TermsPage: React.FC = () => {
           </div>
         </section>
 
+        {/* Liability Limitations */}
+=======
 =======
         {/* Intellectual Property Section */}
         <section className="py-20">
@@ -351,6 +424,9 @@ const TermsPage: React.FC = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                Liability & Limitations
+=======
 =======
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Intellectual Property
@@ -412,6 +488,9 @@ const TermsPage: React.FC = () => {
           </div>
         </section>
 
+        {/* Contact Information */}
+        <section className="py-20 bg-black/50">
+=======
 =======
         {/* Limitation of Liability Section */}
         <section className="py-20">
@@ -423,6 +502,9 @@ const TermsPage: React.FC = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                Questions About Terms?
+=======
 =======
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Limitation of Liability
@@ -468,6 +550,8 @@ const TermsPage: React.FC = () => {
           </div>
         </section>
 
+        {/* CTA Section */}
+=======
 =======
         {/* Contact Section */}
         <section className="py-20">
@@ -478,6 +562,9 @@ const TermsPage: React.FC = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                Ready to Get Started?
+=======
 =======
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Questions About These Terms?

@@ -5,8 +5,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Loader2 } from 'lucide-react';
 
-import { ContractFormValues } from "@/components/contracts/components/ContractForm";
-import { ContractTemplate } from "@/types/contracts";
+import type { ContractFormValues } from "@/components/contracts/components/ContractForm";
+import type { ContractTemplate } from "@/types/contracts";
 import { useContractTemplates } from "@/hooks/useContractTemplates";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";

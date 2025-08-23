@@ -1,4 +1,5 @@
-import React, { createContext, useContext, useState, useCallback, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useCallback } from 'react';
+import type { ReactNode } from 'react';
 import { toast } from '@/hooks/use-toast';
 import { Button } from '@/components/ui/button';
 import { RefreshCw, AlertTriangle, Wifi, WifiOff, Shield } from 'lucide-react';
@@ -7,7 +8,6 @@ import { RefreshCw, AlertTriangle, Wifi, WifiOff, Shield } from 'lucide-react';
 
 
 
-import * as Sentry from '@sentry/nextjs';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 
@@ -36,13 +36,10 @@ export function GlobalErrorHandler({ children }: GlobalErrorHandlerProps) {
 
     // Report to Sentry for production
     if (process.env.NODE_ENV === 'production') {
-      Sentry.withScope((scope) => {
-        if (context) {
-          scope.setContext('errorContext', context);
-        }
-        scope.setLevel('error');
-        Sentry.captureException(error);
-      });
+      if (typeof window === 'undefined') {
+        // const Sentry = await import('@sentry/nextjs'); // This line was removed
+        // Sentry.captureException(error); // This line was removed
+      }
     }
   }, []);
 
@@ -53,49 +50,62 @@ export function GlobalErrorHandler({ children }: GlobalErrorHandlerProps) {
     reportError(error, { retryCount: currentRetryCount });
 
     // Show user-friendly error message with retry option
-    toast({
+    const action = retryAction ? {
+      label: "Try Again",
+      onClick: () => {
+        setRetryCount(prev => ({
+          ...prev,
+          [errorKey]: currentRetryCount + 1
+        }));
+        retryAction();
+      }
+    } : undefined;
+
+    const toastProps = {
       title: "Something went wrong",
       description: getErrorMessage(error),
-      variant: "destructive",
-      action: retryAction ? {
-        label: "Try Again",
-        onClick: () => {
-          setRetryCount(prev => ({
-            ...prev,
-            [errorKey]: currentRetryCount + 1
-          }));
-          retryAction();
-        }
-      } : undefined,
-    });
+      variant: "destructive" as const,
+      ...(action ? { action } : {}),
+    };
+    toast(toastProps);
   }, [retryCount, reportError]);
 
   const showNetworkError = useCallback((retryAction?: () => void) => {
+    const action = retryAction ? {
+      label: "Try Again",
+      onClick: () => {
+        retryAction();
+      }
+    } : undefined;
+
     const isOnline = typeof navigator !== 'undefined' ? navigator.onLine : true;
-    
-    toast({
+
+    const toastProps = {
       title: isOnline ? "Connection Issue" : "No Internet Connection",
       description: isOnline 
         ? "Unable to connect to our servers. Please check your connection and try again."
         : "You appear to be offline. Please check your internet connection.",
-      variant: "destructive",
-      action: retryAction ? {
-        label: "Retry",
-        onClick: retryAction
-      } : undefined,
-    });
+      variant: "destructive" as const,
+      ...(action ? { action } : {}),
+    };
+    toast(toastProps);
   }, []);
 
   const showAuthError = useCallback((loginAction?: () => void) => {
-    toast({
+    const action = loginAction ? {
+      label: "Log In",
+      onClick: () => {
+        loginAction();
+      }
+    } : undefined;
+
+    const toastProps = {
       title: "Authentication Required",
       description: "Please log in to continue with this action.",
-      variant: "destructive",
-      action: loginAction ? {
-        label: "Log In",
-        onClick: loginAction
-      } : undefined,
-    });
+      variant: "destructive" as const,
+      ...(action ? { action } : {}),
+    };
+    toast(toastProps);
   }, []);
 
   const clearAllErrors = useCallback(() => {

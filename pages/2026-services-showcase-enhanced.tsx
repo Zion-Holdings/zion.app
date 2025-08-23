@@ -467,7 +467,7 @@ export default function Services2026ShowcaseEnhancedPage() {
                               <ArrowRight className="w-4 h-4 ml-1" />
                             </Button>
                             <Button
-                              variant="outline"
+                              variant="secondary"
                               size="sm"
                               onClick={() => window.open(`mailto:${contactInfo.email}?subject=Inquiry about ${service.name}`)}
                             >

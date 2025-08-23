@@ -1,7 +1,7 @@
 
 // Content analysis functionality
 import { suspiciousPhrases } from './constants';
-import { AnalysisResult } from './types';
+import type { AnalysisResult } from './types';
 
 /**
  * Analyzes text content for suspicious patterns

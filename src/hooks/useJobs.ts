@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { Job, JobStatus } from "@/types/jobs";
+import type { Job, JobStatus } from "@/types/jobs";
 import { toast } from "sonner";
 import { useAuth } from "./useAuth";
 import { createJob, updateJob, getJobById } from "@/services/jobService";
@@ -17,6 +17,7 @@ export const useJobs = (userId?: string, status?: JobStatus) => {
   const clientId = userId || user?.id;
 
   const fetchJobs = async () => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     if (!clientId) {
       setIsLoading(false);
       return;
@@ -41,7 +42,8 @@ export const useJobs = (userId?: string, status?: JobStatus) => {
       
       setJobs(data as Job[]);
       setError(null);
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
       logErrorToProduction('Error fetching jobs:', { data: err });
       setError("Failed to fetch jobs. Please try again.");
       toast.error("Failed to fetch jobs");
@@ -51,6 +53,7 @@ export const useJobs = (userId?: string, status?: JobStatus) => {
   };
   
   const updateJobStatus = async (jobId: string, newStatus: JobStatus) => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     try {
       const { error: updateError } = await supabase
         .from("jobs")
@@ -64,7 +67,8 @@ export const useJobs = (userId?: string, status?: JobStatus) => {
       setJobs(jobs.map(job => job.id === jobId ? {...job, status: newStatus} : job));
       toast.success("Job status updated successfully");
       return true;
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
       logErrorToProduction('Error updating job status:', { data: err });
       toast.error("Failed to update job status");
       return false;
@@ -72,6 +76,7 @@ export const useJobs = (userId?: string, status?: JobStatus) => {
   };
   
   const deleteJob = async (jobId: string) => {
+    if (!supabase) throw new Error('Supabase client not initialized');
     try {
       const { error: deleteError } = await supabase
         .from("jobs")
@@ -85,7 +90,8 @@ export const useJobs = (userId?: string, status?: JobStatus) => {
       setJobs(jobs.filter(job => job.id !== jobId));
       toast.success("Job deleted successfully");
       return true;
-    } catch (err: any) {
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : String(err);
       logErrorToProduction('Error deleting job:', { data: err });
       toast.error("Failed to delete job");
       return false;

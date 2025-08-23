@@ -134,109 +134,68 @@ const CloudPlatformPage: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              className="text-center"
             >
-              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-                Advanced
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-                  {' '}Cloud Platform
-                </span>
-                {' '}Solutions
+              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-400 bg-clip-text text-transparent mb-6">
+                Cloud Platform
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-                Transform your business with cutting-edge cloud infrastructure, 
-                edge computing, and multi-cloud management solutions.
+              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                Enterprise-grade cloud infrastructure and platform services that scale with your business. 
+                From disaster recovery to managed databases and Kubernetes security.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105"
-                >
-                  Get Started
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </a>
-                <a
-                  href="/quantum-cloud-infrastructure-2045"
-                  className="inline-flex items-center px-8 py-4 border-2 border-blue-500 text-blue-400 font-semibold rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-300"
-                >
-                  Explore Quantum Cloud
-                </a>
-              </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Cloud Benefits */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl font-bold text-white mb-4">
-                Why Choose Cloud Computing?
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Cloud computing provides unprecedented flexibility, scalability, 
-                and cost efficiency for modern businesses.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {benefits.map((benefit, index) => (
+        {/* Stats Section */}
+        <section className="py-16 px-4 bg-black/30">
+          <div className="container mx-auto max-w-6xl">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {stats.map((stat, index) => (
                 <motion.div
-                  key={benefit.title}
+                  key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
                   className="text-center"
                 >
-                  <div className="bg-white/10 backdrop-blur-lg rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center border border-white/20">
-                    {benefit.icon}
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500/20 to-indigo-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <stat.icon className="w-8 h-8 text-blue-400" />
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-gray-300 text-sm">
-                    {benefit.description}
-                  </p>
+                  <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
+                  <div className="text-gray-400">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* Services Grid */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
+        <section className="py-20 px-4">
+          <div className="container mx-auto max-w-6xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold text-white mb-4">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Cloud Platform Services
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                From quantum cloud infrastructure to edge computing, our cloud 
-                services cover every aspect of modern cloud computing.
+                Comprehensive cloud solutions designed to optimize performance, security, and scalability
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, index) => (
                 <motion.div
-                  key={service.title}
+                  key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-white/10 backdrop-blur-lg rounded-xl p-6 border border-white/20 hover:border-blue-500/50 transition-all duration-300 hover:transform hover:scale-105"
+                  className="group"
                 >
                   <div className="flex items-center mb-4">
                     {service.icon}
@@ -301,18 +260,13 @@ const CloudPlatformPage: React.FC = () => {
                     <div className="text-blue-400">
                       {useCase.icon}
                     </div>
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">
-                    {useCase.name}
-                  </h3>
-                  <p className="text-gray-300 text-sm">
-                    {useCase.description}
-                  </p>
+                  </a>
                 </motion.div>
               ))}
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
         {/* CTA Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
@@ -321,26 +275,23 @@ const CloudPlatformPage: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
             >
-              <h2 className="text-4xl font-bold text-white mb-6">
-                Ready to Scale with Cloud?
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Scale Your Cloud Infrastructure
               </h2>
               <p className="text-xl text-gray-300 mb-8">
-                Transform your business with our advanced cloud platform solutions 
-                and unlock unlimited scalability and performance.
+                Let our cloud experts help you build a robust and scalable cloud platform
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105"
+                  className="px-8 py-4 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-semibold rounded-xl hover:from-blue-600 hover:to-indigo-700 transition-all duration-300 transform hover:scale-105"
                 >
-                  Start Your Cloud Journey
-                  <ArrowRight className="ml-2 w-5 h-5" />
+                  Get Started
                 </a>
                 <a
-                  href="/case-studies"
-                  className="inline-flex items-center px-8 py-4 border-2 border-blue-500 text-blue-400 font-semibold rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-300"
+                  href="/services"
+                  className="px-8 py-4 border border-blue-500 text-blue-400 font-semibold rounded-xl hover:bg-blue-500/10 transition-all duration-300"
                 >
                   View Cloud Cases
                 </a>
@@ -353,4 +304,4 @@ const CloudPlatformPage: React.FC = () => {
   );
 };
 
-export default CloudPlatformPage;
+export default CloudPlatform;

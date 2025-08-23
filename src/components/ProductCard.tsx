@@ -17,7 +17,7 @@ import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '@/context/auth/AuthProvider';
 import { useRouter } from 'next/router';
-import { Product } from '@/services/marketplace';
+import type { Product } from '@/services/marketplace';
 import { useMediaQuery } from 'usehooks-ts';
 import { toast } from '@/hooks/use-toast';
 import { captureException } from '@/utils/sentry';

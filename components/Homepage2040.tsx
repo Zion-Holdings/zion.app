@@ -106,8 +106,7 @@ const Homepage2040: React.FC = () => {
   const staggerContainer = {
     animate: {
       transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
+        staggerChildren: 0.1
       }
     }
   };

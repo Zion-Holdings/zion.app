@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* eslint-disable @typescript-eslint/no-require-imports */
+ 
 
 /**
  * Auth0 Setup Script for Zion AI Marketplace

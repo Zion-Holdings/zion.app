@@ -3,13 +3,13 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Crown, Building, Rocket } from 'lucide-react';
 
 interface Service {
-  id: string;
+  id?: string;
   name: string;
   tagline?: string;
   description: string;
-  price: string;
-  period: string;
-  features: string[];
+  price?: string;
+  period?: string;
+  features?: string[];
   popular?: boolean;
   category: string;
   icon?: string;
@@ -23,7 +23,7 @@ interface UltraFuturisticServiceCard2026Props {
   onClick?: () => void;
 }
 
-const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Props> = ({
+const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Props> = memo(({
   service,
   variant = 'default',
   className = '',
@@ -70,152 +70,161 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
   const handleCardClick = useCallback(() => {
     if (onClick) {
       onClick();
+    } else {
+      setIsExpanded(!isExpanded);
     }
-  }, [onClick]);
+  }, [onClick, isExpanded]);
 
-  const toggleExpanded = useCallback((e: React.MouseEvent) => {
-    e.stopPropagation();
-    setIsExpanded(!isExpanded);
-  }, [isExpanded]);
+  const getCategoryIcon = (category: string) => {
+    switch (category.toLowerCase()) {
+      case 'ai':
+        return <Brain className="w-5 h-5" />;
+      case 'quantum':
+        return <Atom className="w-5 h-5" />;
+      case 'automation':
+        return <Zap className="w-5 h-5" />;
+      case 'it':
+        return <Shield className="w-5 h-5" />;
+      case 'emerging':
+        return <Rocket className="w-5 h-5" />;
+      case 'enterprise':
+        return <TrendingUp className="w-5 h-5" />;
+      default:
+        return <Award className="w-5 h-5" />;
+    }
+  };
 
   return (
     <motion.div
-      className={`group relative overflow-hidden rounded-2xl transition-all duration-500 transform hover:scale-105 cursor-pointer ${className}`}
-      role="button"
-      tabIndex={0}
-      aria-label={`${service.name} service card`}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      whileHover={{ y: -5 }}
+      className={`relative group cursor-pointer transition-all duration-500 ${className}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={handleCardClick}
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
     >
-      {/* Background Layers */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${variantStyles.container} transition-all duration-500`}></div>
-      <div className={`absolute inset-0 bg-gradient-to-br ${variantStyles.container} opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-xl`}></div>
-      
-      {/* Animated Background Elements */}
-      <motion.div
-        className="absolute inset-0 pointer-events-none"
-        animate={{
-          rotate: isHovered ? 360 : 0,
-        }}
-        transition={{ duration: 20, ease: "linear" }}
-      >
-        <div className="absolute top-4 right-4 w-16 h-16 border border-current opacity-20 rounded-full"></div>
-        <div className="absolute bottom-4 left-4 w-12 h-12 border border-current opacity-20 transform rotate-45"></div>
-      </motion.div>
+      {/* Popular Badge */}
+      {service.popular && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.3, delay: 0.2 }}
+          className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10"
+        >
+          <div className="px-4 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-semibold rounded-full shadow-lg flex items-center space-x-1">
+            <Star className="w-3 h-3 fill-current" />
+            <span>Most Popular</span>
+          </div>
+        </motion.div>
+      )}
 
-      {/* Content */}
-      <div className="relative z-10 p-6 h-full flex flex-col">
-        {/* Header */}
-        <div className="flex items-start justify-between mb-4">
-          <div className="flex items-center gap-3">
-            <div className="text-4xl mb-2" aria-hidden="true">
-              {service.icon || '🚀'}
+      {/* Main Card */}
+      <motion.div
+        animate={{
+          scale: isHovered ? 1.02 : 1,
+          rotateY: isHovered ? 2 : 0
+        }}
+        transition={{ duration: 0.3 }}
+        className={`relative overflow-hidden rounded-2xl border-2 ${variantStyles.border} bg-gradient-to-br ${variantStyles.gradient} backdrop-blur-sm transition-all duration-500 ${variantStyles.shadow}`}
+      >
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_50%)]" />
+        </div>
+      )}
+
+        {/* Content */}
+        <div className="relative p-6">
+          {/* Header */}
+          <div className="flex items-start justify-between mb-4">
+            <div className="flex items-center space-x-3">
+              <div className={`w-12 h-12 ${variantStyles.accent} rounded-xl flex items-center justify-center text-2xl`}>
+                {service.icon}
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white mb-1">{service.name}</h3>
+                <p className="text-sm text-gray-300">{service.tagline}</p>
+              </div>
             </div>
-            <div className="flex items-center gap-2">
-              {variantStyles.icon}
+            <div className="flex items-center space-x-1 text-yellow-400">
+              {getCategoryIcon(service.category)}
             </div>
           </div>
-          {service.popular && (
-            <motion.div 
-              className={`px-3 py-1 rounded-full text-xs font-semibold ${variantStyles.badge}`}
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ delay: 0.3, type: "spring" }}
-            >
-              Popular
-            </motion.div>
-          )}
-        </div>
 
-        {/* Service Info */}
-        <div className="flex-1">
-          <motion.h3 
-            className={`text-xl font-bold mb-2 ${variantStyles.text}`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.1 }}
-          >
-            {service.name}
-          </motion.h3>
-          
-          <motion.p 
-            className="text-gray-300 text-sm mb-3"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-          >
-            {service.tagline || service.description.substring(0, 100) + '...'}
-          </motion.p>
-          
-          <motion.div 
-            className="mb-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-          >
-            <span className="text-2xl font-bold text-white">{service.price}</span>
-            <span className="text-gray-400 text-sm ml-1">{service.period}</span>
-          </motion.div>
+          {/* Description */}
+          <p className="text-gray-300 mb-6 leading-relaxed">{service.description}</p>
+
+          {/* Price */}
+          <div className="mb-6">
+            <div className="flex items-baseline space-x-2">
+              <span className="text-3xl font-bold text-white">{service.price}</span>
+              <span className="text-gray-400">/{service.period}</span>
+            </div>
+          </div>
+        </div>
 
           {/* Features */}
-          <motion.div 
-            className="space-y-2 mb-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-          >
-            {service.features.slice(0, isExpanded ? service.features.length : 3).map((feature, index) => (
-              <motion.div 
-                key={feature}
-                className="flex items-center text-sm text-gray-300"
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.5 + index * 0.1 }}
+          <div className="mb-6">
+            <h4 className="text-sm font-semibold text-gray-300 mb-3">Key Features:</h4>
+            <div className="space-y-2">
+              {service.features.slice(0, isExpanded ? service.features.length : 3).map((feature, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  className="flex items-center space-x-2 text-sm text-gray-300"
+                >
+                  <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                  <span>{feature}</span>
+                </motion.div>
+              ))}
+            </div>
+            
+            {/* Show More/Less */}
+            {service.features.length > 3 && (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsExpanded(!isExpanded);
+                }}
+                className="mt-3 text-sm text-cyan-400 hover:text-cyan-300 transition-colors duration-200 flex items-center space-x-1"
               >
-                <div className={`w-2 h-2 rounded-full mr-3 ${variantStyles.accent}`}></div>
-                {feature}
-              </motion.div>
-            ))}
-          </motion.div>
+                <span>{isExpanded ? 'Show Less' : `Show ${service.features.length - 3} More`}</span>
+                <motion.div
+                  animate={{ rotate: isExpanded ? 180 : 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <ArrowRight className="w-3 h-3" />
+                </motion.div>
+              </button>
+            )}
+          </div>
 
-          {/* Show More/Less Button */}
-          {service.features.length > 3 && (
-            <motion.button 
-              className={`text-sm ${variantStyles.text} hover:underline focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-cyan-400`}
-              onClick={toggleExpanded}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {isExpanded ? 'Show Less' : `Show ${service.features.length - 3} More`}
-            </motion.button>
-          )}
+          {/* CTA Button */}
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className={`w-full py-3 px-6 bg-gradient-to-r ${variantStyles.button} text-white font-semibold rounded-xl transition-all duration-300 flex items-center justify-center space-x-2 group/btn`}
+          >
+            <span>Get Started</span>
+            <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
+          </motion.button>
         </div>
 
-        {/* Action Button */}
-        <motion.button 
-          className={`w-full mt-4 py-3 px-4 rounded-lg font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-cyan-400 ${variantStyles.button} hover:bg-opacity-30 focus:ring-opacity-40 flex items-center justify-center gap-2`}
-          whileHover={{ scale: 1.02 }}
-          whileTap={{ scale: 0.98 }}
-        >
-          Get Started
-          <ArrowRight className="w-4 h-4" />
-        </motion.button>
-
-        {/* Hover Effect Overlay */}
+        {/* Hover Effects */}
         <motion.div
-          className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-          initial={{ opacity: 0 }}
-          whileHover={{ opacity: 1 }}
+          className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          initial={false}
         />
       </div>
     </motion.div>
   );
-};
+});
+
+UltraFuturisticServiceCard2026.displayName = 'UltraFuturisticServiceCard2026';
 
 export default UltraFuturisticServiceCard2026;

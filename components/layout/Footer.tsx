@@ -1,14 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { 
-  Star, Phone, Mail, MapPin, Globe, Twitter, Linkedin, 
-  Github, Youtube, Instagram, Facebook, ArrowUp, Heart,
-  Brain, Atom, Shield, Rocket, Cpu, Target
+  Zap,
+  Twitter,
+  Linkedin,
+  Github,
+  Facebook,
+  Instagram,
+  Youtube
 } from 'lucide-react';
 
 const Footer: React.FC = () => {
-  const currentYear = new Date().getFullYear();
 
   const services = [
     { name: 'AI & Consciousness', href: '/ai-services', icon: Brain },
@@ -41,8 +43,7 @@ const Footer: React.FC = () => {
     { name: 'Privacy Policy', href: '/privacy' },
     { name: 'Terms of Service', href: '/terms' },
     { name: 'Cookie Policy', href: '/cookies' },
-    { name: 'Security', href: '/security' },
-    { name: 'Compliance', href: '/compliance' }
+    { name: 'Security', href: '/security' }
   ];
 
   const social = [
@@ -53,10 +54,6 @@ const Footer: React.FC = () => {
     { name: 'Instagram', href: '#', icon: Instagram },
     { name: 'Facebook', href: '#', icon: Facebook }
   ];
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   return (
     <footer className="bg-gray-950/95 backdrop-blur-xl border-t border-gray-800/20 relative overflow-hidden">
@@ -102,7 +99,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service.name}>
-                  <Link
+                  <a
                     href={service.href}
                     className="text-gray-400 hover:text-blue-500 transition-all duration-200 hover:translate-x-1 inline-block group focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-950 rounded"
                   >
@@ -123,7 +120,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-3">
               {company.map((item) => (
                 <li key={item.name}>
-                  <Link
+                  <a
                     href={item.href}
                     className="text-gray-400 hover:text-blue-500 transition-all duration-200 hover:translate-x-1 inline-block group focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-950 rounded"
                   >

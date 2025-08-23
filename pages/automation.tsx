@@ -1,11 +1,7 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
-import { motion } from 'framer-motion';
-import { 
-  Zap, Cpu, Brain, Shield, Rocket, Database, 
-  Globe, Users, Award, Clock, CheckCircle, ArrowRight,
-  Settings, Workflow, Bot, Play, TrendingUp
-} from 'lucide-react';
+import Head from 'next/head';
+import { RefreshCw, Zap, Bot, Workflow, ArrowRight, Check, BarChart3 } from 'lucide-react';
+import { Button } from '../components/ui/Button';
 
 const Automation: React.FC = () => {
   const features = [

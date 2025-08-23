@@ -1,5 +1,6 @@
 import React from "react";
-import { useForm, ControllerRenderProps } from "react-hook-form";
+import { useForm } from "react-hook-form";
+import type { ControllerRenderProps } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import z from "zod";
 import { supabase } from "@/integrations/supabase/client";
@@ -112,26 +113,31 @@ export function ProductSubmissionForm() {
   const onSubmit = async (values: ProductFormValues) => {
     if (!user) {
       toast({
-        title: "Authentication Required",
-        description: "You must be logged in to publish products",
+        title: "Authentication required",
+        description: "You must be logged in to submit a product.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!supabase) {
+      toast({
+        title: "Database connection error",
+        description: "Unable to connect to the database. Please try again later.",
         variant: "destructive",
       });
       return;
     }
 
     setIsSubmitting(true);
-    
     try {
-      // Create the product listing
       const productData = {
         title: values.title,
         description: values.description,
-        price: parseFloat(values.price),
+        price: values.price,
         category: values.category,
-        currency: "USD", // Default currency
-        tags: values.tags ? values.tags.split(',').map(tag => tag.trim()) : [],
-        author: {
-          name: user.displayName || "Anonymous Creator",
+        tags: values.tags,
+        seller: {
           id: user.id,
         },
         createdAt: new Date().toISOString(),
@@ -204,31 +210,6 @@ export function ProductSubmissionForm() {
         }
       }
 
-      // Upload model if provided
-      if (values.model) {
-        const modelPath = `product_models/${productRecord.id}/${values.model.name}`;
-        const { error: uploadError } = await supabase.storage
-          .from('products')
-          .upload(modelPath, values.model);
-
-        if (uploadError) {
-          throw new Error(uploadError.message);
-        }
-
-        const { data: publicUrlData } = supabase.storage
-          .from('products')
-          .getPublicUrl(modelPath);
-
-        const { error: updateError } = await supabase
-          .from('product_listings')
-          .update({ model_url: publicUrlData.publicUrl })
-          .eq('id', productRecord.id);
-
-        if (updateError) {
-          throw new Error(updateError.message);
-        }
-      }
-
       // Send listing to moderation service
       try {
         await supabase.functions.invoke('moderate-listing', {
@@ -241,7 +222,7 @@ export function ProductSubmissionForm() {
           }
         });
       } catch (err) {
-        logErrorToProduction('Error invoking moderation:', { data: err });
+        console.error('Error invoking moderation:', err);
       }
       
       // Show success message

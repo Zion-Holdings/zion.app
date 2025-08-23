@@ -1,6 +1,6 @@
 import React from 'react';
-import { ErrorBoundary, FallbackProps } from 'react-error-boundary';
-import * as Sentry from '@sentry/nextjs';
+import { ErrorBoundary } from 'react-error-boundary';
+import type { FallbackProps } from 'react-error-boundary';
 import { mutate } from 'swr';
 import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
@@ -20,7 +20,11 @@ function MarketplaceErrorFallback({ error, resetErrorBoundary }: MarketplaceErro
       resetErrorBoundary();
     } catch (retryError) {
       logErrorToProduction('Error during retry:', { data: retryError });
-      Sentry.captureException(retryError);
+      // Report to Sentry only on the server
+      if (typeof window === 'undefined') {
+        const Sentry = await import('@sentry/nextjs');
+        Sentry.captureException(retryError);
+      }
     }
   };
 
@@ -73,18 +77,26 @@ interface MarketplaceErrorBoundaryProps {
 }
 
 export function MarketplaceErrorBoundary({ children }: MarketplaceErrorBoundaryProps) {
-  const handleError = (error: Error, errorInfo: React.ErrorInfo) => {
+  const handleError = async (error: Error, errorInfo: React.ErrorInfo) => {
     // Log boundary errors to Sentry
     logErrorToProduction('MarketplaceErrorBoundary caught an error:', error, { componentStack: errorInfo.componentStack });
     
-    Sentry.withScope((scope) => {
-      scope.setTag('errorBoundary', 'marketplace');
-      scope.setContext('errorInfo', {
-        componentStack: errorInfo.componentStack || undefined,
-      });
-      scope.setLevel('error');
-      Sentry.captureException(error);
-    });
+    // Report to Sentry only on the server
+    if (typeof window === 'undefined') {
+      try {
+        const Sentry = (await import('@sentry/nextjs')).default;
+        Sentry.withScope((scope) => {
+          scope.setTag('errorBoundary', 'marketplace');
+          scope.setContext('errorInfo', {
+            componentStack: errorInfo.componentStack || undefined,
+          });
+          scope.setLevel('error');
+          Sentry.captureException(error);
+        });
+      } catch (sentryError) {
+        logErrorToProduction('Failed to report to Sentry:', { data: sentryError });
+      }
+    }
   };
 
   return (

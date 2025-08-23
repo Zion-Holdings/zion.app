@@ -1,6 +1,6 @@
 
 import { Badge } from "@/components/ui/badge";
-import { QuoteStatus } from "@/types/quotes";
+import type { QuoteStatus } from "@/types/quotes";
 
 const statusConfig: Record<QuoteStatus, { label: string, className: string }> = {
   new: { label: "New", className: "bg-blue-500 hover:bg-blue-600" },
