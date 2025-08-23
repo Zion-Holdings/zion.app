@@ -88,6 +88,18 @@ import { enterpriseITBreakthroughs2030 } from '../data/2030-enterprise-it-breakt
 import { innovativeMicroSaas2030 } from '../data/2030-innovative-micro-saas';
 
 export default function HomePage() {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [activeSection, setActiveSection] = React.useState('hero');
+
+  const heroStats = [
+    { value: '200+', label: 'Revolutionary Micro SaaS Services', color: 'text-cyan-400', icon: <Cpu className="w-6 h-6" /> },
+    { value: '99.99%', label: 'Uptime Guarantee', color: 'text-fuchsia-400', icon: <ShieldCheck className="w-6 h-6" /> },
+    { value: '21', label: 'Day Free Trials', color: 'text-blue-400', icon: <Clock className="w-6 h-6" /> },
+    { value: '24/7', label: 'AI Support', color: 'text-green-400', icon: <Bot className="w-6 h-6" /> },
+    { value: '$50B+', label: 'Market Value', color: 'text-yellow-400', icon: <DollarSign className="w-6 h-6" /> },
+    { value: '300%+', label: 'Average ROI', color: 'text-purple-400', icon: <TrendingUp className="w-6 h-6" /> },
+  ];
+
   const contactInfo = {
     mobile: '+1 302 464 0950',
     email: 'kleber@ziontechgroup.com',

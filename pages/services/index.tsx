@@ -110,7 +110,7 @@ const ServicesPage: NextPage = () => {
   };
 
   return (
-    <EnhancedLayout>
+    <UltraFuturisticBackground variant="quantum" intensity={1.5}>
       <Head>
         <title>Zion AI Marketplace - Services</title>
         <meta name="description" content="Discover curated IT services. Request quotes with AI-assisted summaries." />

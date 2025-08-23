@@ -1,424 +1,290 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 
 interface AdvancedFuturisticCardProps {
   children: React.ReactNode;
   className?: string;
-  variant?: 'quantum' | 'holographic' | 'cyberpunk' | 'neural' | 'space' | 'matrix' | 'quantum-holographic' | 'quantum-advanced' | 'holographic-advanced' | 'neural-quantum' | 'quantum-cyberpunk' | 'holographic-neural' | 'quantum-holographic-advanced' | 'quantum-matrix' | 'neural-cyberpunk' | 'holographic-quantum' | 'quantum-neural-advanced' | 'cyberpunk-holographic' | 'quantum-space' | 'ai-futuristic' | 'quantum-entanglement' | 'holographic-matrix' | 'neural-quantum-cyberpunk';
-  interactive?: boolean;
+  variant?: 'default' | 'premium' | 'enterprise' | 'quantum';
   glow?: boolean;
-  border?: boolean;
-  shadow?: boolean;
+  animated?: boolean;
+  interactive?: boolean;
+  theme?: 'cyberpunk' | 'quantum' | 'holographic' | 'neon';
   onClick?: () => void;
 }
 
 const AdvancedFuturisticCard: React.FC<AdvancedFuturisticCardProps> = ({
   children,
   className = '',
-  variant = 'quantum',
-  interactive = true,
+  variant = 'default',
   glow = true,
-  border = true,
-  shadow = true,
+  animated = true,
+  interactive = true,
+  theme = 'quantum',
   onClick
 }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const [isPressed, setIsPressed] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  // Variant-specific styles
+  // Get variant styles
   const getVariantStyles = () => {
-    const baseStyles = {
-      quantum: {
-        bg: 'bg-gradient-to-br from-cyan-900/20 via-blue-900/20 to-purple-900/20',
-        border: 'border-cyan-500/50',
-        glow: 'shadow-cyan-500/50',
-        text: 'text-cyan-400',
-        accent: 'from-cyan-500 to-blue-500'
-      },
-      holographic: {
-        bg: 'bg-gradient-to-br from-pink-900/20 via-purple-900/20 to-indigo-900/20',
-        border: 'border-pink-500/50',
-        glow: 'shadow-pink-500/50',
-        text: 'text-pink-400',
-        accent: 'from-pink-500 to-purple-500'
-      },
-      cyberpunk: {
-        bg: 'bg-gradient-to-br from-red-900/20 via-orange-900/20 to-yellow-900/20',
-        border: 'border-red-500/50',
-        glow: 'shadow-red-500/50',
-        text: 'text-red-400',
-        accent: 'from-red-500 to-orange-500'
-      },
-      neural: {
-        bg: 'bg-gradient-to-br from-green-900/20 via-emerald-900/20 to-teal-900/20',
-        border: 'border-green-500/50',
-        glow: 'shadow-green-500/50',
-        text: 'text-green-400',
-        accent: 'from-green-500 to-emerald-500'
-      },
-      space: {
-        bg: 'bg-gradient-to-br from-slate-900/20 via-gray-900/20 to-zinc-900/20',
-        border: 'border-slate-500/50',
-        glow: 'shadow-slate-500/50',
-        text: 'text-slate-400',
-        accent: 'from-slate-500 to-gray-500'
-      },
-      matrix: {
-        bg: 'bg-gradient-to-br from-green-900/20 via-emerald-900/20 to-green-800/20',
-        border: 'border-green-500/50',
-        glow: 'shadow-green-500/50',
-        text: 'text-green-400',
-        accent: 'from-green-500 to-emerald-500'
-      },
-      'quantum-holographic': {
-        bg: 'bg-gradient-to-br from-cyan-900/20 via-pink-900/20 to-purple-900/20',
-        border: 'border-cyan-500/50',
-        glow: 'shadow-cyan-500/50',
-        text: 'text-cyan-400',
-        accent: 'from-cyan-500 to-pink-500'
-      },
-      'quantum-advanced': {
-        bg: 'bg-gradient-to-br from-cyan-900/20 via-blue-900/20 to-indigo-900/20',
-        border: 'border-cyan-500/50',
-        glow: 'shadow-cyan-500/50',
-        text: 'text-cyan-400',
-        accent: 'from-cyan-500 to-indigo-500'
-      },
-      'holographic-advanced': {
-        bg: 'bg-gradient-to-br from-pink-900/20 via-purple-900/20 to-violet-900/20',
-        border: 'border-pink-500/50',
-        glow: 'shadow-pink-500/50',
-        text: 'text-pink-400',
-        accent: 'from-pink-500 to-violet-500'
-      },
-      'neural-quantum': {
-        bg: 'bg-gradient-to-br from-green-900/20 via-cyan-900/20 to-blue-900/20',
-        border: 'border-green-500/50',
-        glow: 'shadow-green-500/50',
-        text: 'text-green-400',
-        accent: 'from-green-500 to-blue-500'
-      },
-      'quantum-cyberpunk': {
-        bg: 'bg-gradient-to-br from-cyan-900/20 via-red-900/20 to-orange-900/20',
-        border: 'border-cyan-500/50',
-        glow: 'shadow-cyan-500/50',
-        text: 'text-cyan-400',
-        accent: 'from-cyan-500 to-red-500'
-      },
-      'holographic-neural': {
-        bg: 'bg-gradient-to-br from-pink-900/20 via-green-900/20 to-emerald-900/20',
-        border: 'border-pink-500/50',
-        glow: 'shadow-pink-500/50',
-        text: 'text-pink-400',
-        accent: 'from-pink-500 to-emerald-500'
-      },
-      'quantum-holographic-advanced': {
-        bg: 'bg-gradient-to-br from-cyan-900/20 via-pink-900/20 to-violet-900/20',
-        border: 'border-cyan-500/50',
-        glow: 'shadow-cyan-500/50',
-        text: 'text-cyan-400',
-        accent: 'from-cyan-500 to-violet-500'
-      },
-      'quantum-matrix': {
-        bg: 'bg-gradient-to-br from-cyan-900/20 via-green-900/20 to-emerald-900/20',
-        border: 'border-cyan-500/50',
-        glow: 'shadow-cyan-500/50',
-        text: 'text-cyan-400',
-        accent: 'from-cyan-500 to-emerald-500'
-      },
-      'neural-cyberpunk': {
-        bg: 'bg-gradient-to-br from-green-900/20 via-red-900/20 to-orange-900/20',
-        border: 'border-green-500/50',
-        glow: 'shadow-green-500/50',
-        text: 'text-green-400',
-        accent: 'from-green-500 to-red-500'
-      },
-      'holographic-quantum': {
-        bg: 'bg-gradient-to-br from-pink-900/20 via-cyan-900/20 to-blue-900/20',
-        border: 'border-pink-500/50',
-        glow: 'shadow-pink-500/50',
-        text: 'text-pink-400',
-        accent: 'from-pink-500 to-blue-500'
-      },
-      'quantum-neural-advanced': {
-        bg: 'bg-gradient-to-br from-cyan-900/20 via-green-900/20 to-teal-900/20',
-        border: 'border-cyan-500/50',
-        glow: 'shadow-cyan-500/50',
-        text: 'text-cyan-400',
-        accent: 'from-cyan-500 to-teal-500'
-      },
-      'cyberpunk-holographic': {
-        bg: 'bg-gradient-to-br from-red-900/20 via-pink-900/20 to-purple-900/20',
-        border: 'border-red-500/50',
-        glow: 'shadow-red-500/50',
-        text: 'text-red-400',
-        accent: 'from-red-500 to-purple-500'
-      },
-      'quantum-space': {
-        bg: 'bg-gradient-to-br from-cyan-900/20 via-slate-900/20 to-gray-900/20',
-        border: 'border-cyan-500/50',
-        glow: 'shadow-cyan-500/50',
-        text: 'text-cyan-400',
-        accent: 'from-cyan-500 to-gray-500'
-      },
-      'ai-futuristic': {
-        bg: 'bg-gradient-to-br from-purple-900/20 via-indigo-900/20 to-blue-900/20',
-        border: 'border-purple-500/50',
-        glow: 'shadow-purple-500/50',
-        text: 'text-purple-400',
-        accent: 'from-purple-500 to-blue-500'
-      },
-      'quantum-entanglement': {
-        bg: 'bg-gradient-to-br from-cyan-900/20 via-blue-900/20 to-indigo-900/20',
-        border: 'border-cyan-500/50',
-        glow: 'shadow-cyan-500/50',
-        text: 'text-cyan-400',
-        accent: 'from-cyan-500 to-indigo-500'
-      },
-      'holographic-matrix': {
-        bg: 'bg-gradient-to-br from-pink-900/20 via-green-900/20 to-emerald-900/20',
-        border: 'border-pink-500/50',
-        glow: 'shadow-pink-500/50',
-        text: 'text-pink-400',
-        accent: 'from-pink-500 to-emerald-500'
-      },
-      'neural-quantum-cyberpunk': {
-        bg: 'bg-gradient-to-br from-green-900/20 via-cyan-900/20 to-red-900/20',
-        border: 'border-green-500/50',
-        glow: 'shadow-green-500/50',
-        text: 'text-green-400',
-        accent: 'from-green-500 to-red-500'
-      }
-    };
+    switch (variant) {
+      case 'premium':
+        return {
+          background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%)',
+          border: '1px solid rgba(139, 92, 246, 0.3)',
+          shadow: '0 0 30px rgba(139, 92, 246, 0.3)',
+          glow: 'rgba(139, 92, 246, 0.5)'
+        };
+      case 'enterprise':
+        return {
+          background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%)',
+          border: '1px solid rgba(59, 130, 246, 0.3)',
+          shadow: '0 0 30px rgba(59, 130, 246, 0.3)',
+          glow: 'rgba(59, 130, 246, 0.5)'
+        };
+      case 'quantum':
+        return {
+          background: 'linear-gradient(135deg, rgba(6, 182, 212, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%)',
+          border: '1px solid rgba(6, 182, 212, 0.3)',
+          shadow: '0 0 30px rgba(6, 182, 212, 0.3)',
+          glow: 'rgba(6, 182, 212, 0.5)'
+        };
+      default:
+        return {
+          background: 'linear-gradient(135deg, rgba(75, 85, 99, 0.1) 0%, rgba(31, 41, 55, 0.1) 100%)',
+          border: '1px solid rgba(75, 85, 99, 0.3)',
+          shadow: '0 0 20px rgba(75, 85, 99, 0.2)',
+          glow: 'rgba(75, 85, 99, 0.3)'
+        };
+    }
+  };
+
+  // Get theme styles
+  const getThemeStyles = () => {
+    switch (theme) {
+      case 'cyberpunk':
+        return {
+          accent: 'rgba(239, 68, 68, 0.8)',
+          highlight: 'rgba(245, 158, 11, 0.8)',
+          pattern: 'repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(239, 68, 68, 0.1) 2px, rgba(239, 68, 68, 0.1) 4px)'
+        };
+      case 'quantum':
+        return {
+          accent: 'rgba(6, 182, 212, 0.8)',
+          highlight: 'rgba(168, 85, 247, 0.8)',
+          pattern: 'radial-gradient(circle at 20% 80%, rgba(6, 182, 212, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.1) 0%, transparent 50%)'
+        };
+      case 'holographic':
+        return {
+          accent: 'rgba(236, 72, 153, 0.8)',
+          highlight: 'rgba(139, 92, 246, 0.8)',
+          pattern: 'linear-gradient(45deg, rgba(236, 72, 153, 0.1) 25%, transparent 25%), linear-gradient(-45deg, rgba(139, 92, 246, 0.1) 25%, transparent 25%)'
+        };
+      case 'neon':
+        return {
+          accent: 'rgba(34, 197, 94, 0.8)',
+          highlight: 'rgba(239, 68, 68, 0.8)',
+          pattern: 'linear-gradient(90deg, rgba(34, 197, 94, 0.1) 0%, rgba(239, 68, 68, 0.1) 100%)'
+        };
+      default:
+        return {
+          accent: 'rgba(59, 130, 246, 0.8)',
+          highlight: 'rgba(16, 185, 129, 0.8)',
+          pattern: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%)'
+        };
+    }
+  };
+
+  const variantStyles = getVariantStyles();
+  const themeStyles = getThemeStyles();
+
+  // Mouse move handler for 3D effect
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!interactive || !cardRef.current) return;
     
-    return baseStyles[variant as keyof typeof baseStyles] || baseStyles.quantum;
+    const rect = cardRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    setMousePosition({ x, y });
   };
 
-  const styles = getVariantStyles();
-
-  // Hover effects
-  const handleMouseEnter = () => {
-    if (interactive) {
-      setIsHovered(true);
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (interactive) {
-      setIsHovered(false);
-    }
-  };
-
-  const handleMouseDown = () => {
-    if (interactive) {
-      setIsPressed(true);
-    }
-  };
-
-  const handleMouseUp = () => {
-    if (interactive) {
-      setIsPressed(false);
-    }
-  };
-
-  // Click handler
-  const handleClick = () => {
-    if (onClick) {
-      onClick();
-    }
+  // Calculate 3D transform
+  const get3DTransform = () => {
+    if (!interactive) return {};
+    
+    const centerX = cardRef.current?.offsetWidth / 2 || 0;
+    const centerY = cardRef.current?.offsetHeight / 2 || 0;
+    
+    const rotateX = (mousePosition.y - centerY) / 20;
+    const rotateY = (mousePosition.x - centerX) / 20;
+    
+    return {
+      transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`,
+      transition: 'transform 0.1s ease-out'
+    };
   };
 
   // Animation variants
-  const cardVariants = {
-    initial: {
+  const cardVariants: Variants = {
+    initial: { 
+      opacity: 0, 
+      y: 50, 
+      scale: 0.95
+    },
+    animate: { 
+      opacity: 1, 
+      y: 0, 
       scale: 1,
-      rotateX: 0,
-      rotateY: 0,
-      z: 0
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
     },
     hover: {
+      y: -10,
       scale: 1.02,
-      rotateX: 2,
-      rotateY: 2,
-      z: 20
+      transition: {
+        duration: 0.3,
+        ease: "easeOut"
+      }
     },
-    pressed: {
-      scale: 0.98,
-      rotateX: 0,
-      rotateY: 0,
-      z: 10
+    focus: {
+      scale: 1.01,
+      transition: {
+        duration: 0.2
+      }
     }
   };
 
-  const glowVariants = {
-    initial: {
-      opacity: 0.3,
-      scale: 1
+  // Glow effect variants
+  const glowVariants: Variants = {
+    initial: { opacity: 0, scale: 0.8 },
+    animate: { 
+      opacity: 1, 
+      scale: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut"
+      }
     },
-    hover: {
-      opacity: 0.8,
-      scale: 1.1
-    }
-  };
-
-  const borderVariants = {
-    initial: {
-      opacity: 0.5,
-      scale: 1
-    },
-    hover: {
-      opacity: 1,
-      scale: 1.05
+    hover: { 
+      opacity: 0.8, 
+      scale: 1.1,
+      transition: {
+        duration: 0.3
+      }
     }
   };
 
   return (
     <motion.div
       ref={cardRef}
-      className={`relative group cursor-pointer select-none ${className}`}
-      variants={cardVariants}
-      initial="initial"
-      animate={isPressed ? "pressed" : isHovered ? "hover" : "initial"}
-      transition={{
-        type: "spring",
-        stiffness: 300,
-        damping: 20
-      }}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      onMouseDown={handleMouseDown}
-      onMouseUp={handleMouseUp}
-      onClick={handleClick}
+      className={`relative group ${className}`}
+      variants={animated ? cardVariants : undefined}
+      initial={animated ? "initial" : undefined}
+      animate={animated ? "animate" : undefined}
+      whileHover={interactive && animated ? "hover" : undefined}
+      whileFocus={interactive && animated ? "focus" : undefined}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onFocus={() => setIsFocused(true)}
+      onBlur={() => setIsFocused(false)}
+      onClick={onClick}
       style={{
-        perspective: "1000px",
-        transformStyle: "preserve-3d"
+        ...get3DTransform(),
+        background: variantStyles.background,
+        border: variantStyles.border,
+        boxShadow: isHovered ? variantStyles.shadow : variantStyles.shadow.replace('0.3', '0.2'),
       }}
     >
-      {/* Background */}
-      <div className={`absolute inset-0 rounded-2xl ${styles.bg} backdrop-blur-xl`} />
+      {/* Background pattern */}
+      <div 
+        className="absolute inset-0 opacity-30 pointer-events-none"
+        style={{ background: themeStyles.pattern }}
+      />
       
       {/* Glow effect */}
       {glow && (
         <motion.div
-          className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${styles.accent} opacity-0 blur-2xl`}
-          variants={glowVariants}
-          initial="initial"
-          animate={isHovered ? "hover" : "initial"}
-          transition={{ duration: 0.3 }}
-        />
-      )}
-
-      {/* Border effect */}
-      {border && (
-        <motion.div
-          className={`absolute inset-0 rounded-2xl border ${styles.border}`}
-          variants={borderVariants}
-          initial="initial"
-          animate={isHovered ? "hover" : "initial"}
-          transition={{ duration: 0.3 }}
-        />
-      )}
-
-      {/* Animated border gradient */}
-      {border && (
-        <div className="absolute inset-0 rounded-2xl p-[1px]">
-          <div className={`w-full h-full rounded-2xl bg-gradient-to-br ${styles.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-        </div>
-      )}
-
-      {/* Shadow effect */}
-      {shadow && (
-        <motion.div
-          className={`absolute inset-0 rounded-2xl ${styles.glow}`}
+          className="absolute inset-0 rounded-xl pointer-events-none"
+          variants={animated ? glowVariants : undefined}
+          initial={animated ? "initial" : undefined}
+          animate={animated ? "animate" : undefined}
+          whileHover={animated ? "hover" : undefined}
           style={{
-            filter: `blur(${isHovered ? '20px' : '10px'})`,
-            opacity: isHovered ? 0.6 : 0.3
+            background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, ${variantStyles.glow} 0%, transparent 70%)`,
+            filter: 'blur(20px)',
+            opacity: isHovered ? 0.8 : 0.3
           }}
-          transition={{ duration: 0.3 }}
         />
       )}
-
-      {/* Content */}
-      <div className="relative z-10 p-6 rounded-2xl">
-        {/* Quantum particles effect */}
-        {variant.includes('quantum') && (
-          <div className="absolute inset-0 overflow-hidden rounded-2xl">
-            <div className="absolute top-2 right-2 w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
-            <div className="absolute bottom-4 left-4 w-1 h-1 bg-blue-400 rounded-full animate-ping" />
-            <div className="absolute top-1/2 left-2 w-1.5 h-1.5 bg-purple-400 rounded-full animate-bounce" />
-          </div>
-        )}
-
-        {/* Holographic grid effect */}
-        {variant.includes('holographic') && (
-          <div className="absolute inset-0 overflow-hidden rounded-2xl">
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-pink-500/10 to-transparent animate-pulse" />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-500/10 to-transparent animate-pulse" style={{ animationDelay: '0.5s' }} />
-          </div>
-        )}
-
-        {/* Cyberpunk energy effect */}
-        {variant.includes('cyberpunk') && (
-          <div className="absolute inset-0 overflow-hidden rounded-2xl">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent animate-pulse" />
-            <div className="absolute bottom-0 right-0 w-full h-1 bg-gradient-to-l from-transparent via-orange-500 to-transparent animate-pulse" style={{ animationDelay: '0.3s' }} />
-          </div>
-        )}
-
-        {/* Neural network effect */}
-        {variant.includes('neural') && (
-          <div className="absolute inset-0 overflow-hidden rounded-2xl">
-            <div className="absolute top-2 left-2 w-3 h-0.5 bg-green-400 rounded-full animate-pulse" />
-            <div className="absolute top-2 right-2 w-0.5 h-3 bg-emerald-400 rounded-full animate-pulse" style={{ animationDelay: '0.2s' }} />
-            <div className="absolute bottom-2 left-2 w-2 h-0.5 bg-teal-400 rounded-full animate-pulse" style={{ animationDelay: '0.4s' }} />
-          </div>
-        )}
-
-        {/* Space nebula effect */}
-        {variant.includes('space') && (
-          <div className="absolute inset-0 overflow-hidden rounded-2xl">
-            <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-slate-400 rounded-full animate-pulse" />
-            <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-gray-400 rounded-full animate-ping" />
-            <div className="absolute bottom-1/4 right-1/4 w-1.5 h-1.5 bg-zinc-400 rounded-full animate-bounce" />
-          </div>
-        )}
-
-        {/* Matrix effect */}
-        {variant.includes('matrix') && (
-          <div className="absolute inset-0 overflow-hidden rounded-2xl">
-            <div className="absolute top-1 left-1 text-xs text-green-400 font-mono animate-pulse">01</div>
-            <div className="absolute bottom-1 right-1 text-xs text-green-400 font-mono animate-pulse" style={{ animationDelay: '0.5s' }}>10</div>
-            <div className="absolute top-1/2 left-1/2 text-xs text-green-400 font-mono animate-pulse" style={{ animationDelay: '0.3s' }}>11</div>
-          </div>
-        )}
-
-        {/* Main content */}
-        <div className="relative z-20">
-          {children}
+      
+      {/* Border glow */}
+      <div 
+        className="absolute inset-0 rounded-xl pointer-events-none"
+        style={{
+          background: `linear-gradient(45deg, ${themeStyles.accent}, ${themeStyles.highlight})`,
+          padding: '1px',
+          mask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+          maskComposite: 'exclude'
+        }}
+      />
+      
+      {/* Animated border */}
+      {animated && (
+        <div className="absolute inset-0 rounded-xl overflow-hidden">
+          <div 
+            className="absolute inset-0"
+            style={{
+              background: `linear-gradient(90deg, transparent, ${themeStyles.accent}, transparent)`,
+              transform: `translateX(${isHovered ? '100%' : '-100%'})`,
+              transition: 'transform 0.6s ease-in-out'
+            }}
+          />
         </div>
-
-        {/* Interactive feedback */}
-        {interactive && (
-          <AnimatePresence>
-            {isHovered && (
-              <motion.div
-                className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${styles.accent} opacity-5`}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 0.05 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}
-              />
-            )}
-          </AnimatePresence>
-        )}
+      )}
+      
+      {/* Content */}
+      <div className="relative z-10 p-6">
+        {children}
       </div>
-
+      
       {/* Corner accents */}
-      <div className="absolute top-0 left-0 w-4 h-4 border-l-2 border-t-2 border-cyan-500/50 rounded-tl-2xl" />
-      <div className="absolute top-0 right-0 w-4 h-4 border-r-2 border-t-2 border-cyan-500/50 rounded-tr-2xl" />
-      <div className="absolute bottom-0 left-0 w-4 h-4 border-l-2 border-b-2 border-cyan-500/50 rounded-bl-2xl" />
-      <div className="absolute bottom-0 right-0 w-4 h-4 border-r-2 border-b-2 border-cyan-500/50 rounded-br-2xl" />
+      <div className="absolute top-0 left-0 w-2 h-2 bg-gradient-to-br from-transparent to-current opacity-50" />
+      <div className="absolute top-0 right-0 w-2 h-2 bg-gradient-to-bl from-transparent to-current opacity-50" />
+      <div className="absolute bottom-0 left-0 w-2 h-2 bg-gradient-to-tr from-transparent to-current opacity-50" />
+      <div className="absolute bottom-0 right-0 w-2 h-2 bg-gradient-to-tl from-transparent to-current opacity-50" />
+      
+      {/* Floating particles effect */}
+      {animated && (
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          {[...Array(5)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1 bg-current opacity-30 rounded-full"
+              style={{
+                left: `${20 + i * 15}%`,
+                top: `${30 + i * 10}%`,
+              }}
+              animate={{
+                y: [0, -20, 0],
+                opacity: [0.3, 0.8, 0.3],
+                scale: [1, 1.2, 1]
+              }}
+              transition={{
+                duration: 3 + i * 0.5,
+                repeat: Infinity,
+                delay: i * 0.2,
+                ease: "easeInOut"
+              }}
+            />
+          ))}
+        </div>
+      )}
     </motion.div>
   );
 };

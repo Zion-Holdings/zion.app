@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Zap, Globe, Bot, Cloud, Shield, Sparkles, Rocket, Cpu, Database, Brain, Atom, Eye, Lock, BarChart3, Users, Target, TrendingUp, Star, Award, ZapIcon, CloudIcon, BotIcon, ShieldIcon, GlobeIcon, CpuIcon, DatabaseIcon, BrainIcon, AtomIcon, EyeIcon, LockIcon, BarChart3Icon, UsersIcon, TargetIcon, TrendingUpIcon, StarIcon, AwardIcon } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu as HeadlessMenu, X as HeadlessX, Zap as HeadlessZap, Sparkles as HeadlessSparkles, ChevronDown, Globe as HeadlessGlobe, Shield as HeadlessShield, Cpu as HeadlessCpu, Brain as HeadlessBrain } from 'lucide-react';
+import { Menu, X, Zap, Globe, Bot, Cloud, Shield, Brain, Atom } from 'lucide-react';
 
 const FuturisticNavbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,64 +24,14 @@ const FuturisticNavbar: React.FC = () => {
   }, [isClient]);
 
   const navItems = [
-    { 
-      name: 'Home', 
-      href: '/', 
-      icon: <Zap className="w-4 h-4" />,
-      description: 'Welcome to the future'
-    },
-    { 
-      name: 'Services', 
-      href: '/services', 
-      icon: <Cloud className="w-4 h-4" />,
-      description: '150+ Micro SaaS Solutions',
-      dropdown: [
-        { name: 'AI & Machine Learning', href: '/services?category=AI%20%26%20Machine%20Learning', icon: <Brain className="w-4 h-4" /> },
-        { name: 'Quantum Computing', href: '/services?category=Quantum%20Computing', icon: <Atom className="w-4 h-4" /> },
-        { name: 'IoT & Smart Cities', href: '/services?category=IoT%20%26%20Smart%20Cities', icon: <Cpu className="w-4 h-4" /> },
-        { name: 'Robotics & Automation', href: '/services?category=Robotics%20%26%20Automation', icon: <Bot className="w-4 h-4" /> },
-        { name: 'Biotechnology & Healthcare', href: '/services?category=Biotechnology%20%26%20Healthcare', icon: <Eye className="w-4 h-4" /> },
-        { name: 'Cybersecurity', href: '/services?category=Cybersecurity', icon: <Lock className="w-4 h-4" /> },
-        { name: 'Analytics & Business Intelligence', href: '/services?category=Analytics%20%26%20Business%20Intelligence', icon: <BarChart3 className="w-4 h-4" /> },
-        { name: 'Cloud & Infrastructure', href: '/services?category=Cloud%20%26%20Infrastructure', icon: <Sparkles className="w-4 h-4" /> }
-      ]
-    },
-    { 
-      name: 'IT Services', 
-      href: '/it-services', 
-      icon: <Globe className="w-4 h-4" />,
-      description: 'Cloud, DevOps, SRE, FinOps'
-    },
-    { 
-      name: 'AI Services', 
-      href: '/ai-services', 
-      icon: <Brain className="w-4 h-4" />,
-      description: 'LLM, RAG, MLOps'
-    },
-    { 
-      name: 'Micro SaaS', 
-      href: '/micro-saas', 
-      icon: <Bot className="w-4 h-4" />,
-      description: 'Innovative Solutions'
-    },
-    { 
-      name: 'Pricing', 
-      href: '/pricing', 
-      icon: <Globe className="w-4 h-4" />,
-      description: 'Transparent Plans'
-    },
-    { 
-      name: 'About', 
-      href: '/about', 
-      icon: <Shield className="w-4 h-4" />,
-      description: 'Our Mission'
-    },
-    { 
-      name: 'Contact', 
-      href: '/contact', 
-      icon: <Zap className="w-4 h-4" />,
-      description: 'Get in Touch'
-    },
+    { name: 'Home', href: '/', icon: <Zap className="w-4 h-4" /> },
+    { name: 'Services', href: '/services', icon: <Cloud className="w-4 h-4" /> },
+    { name: 'Micro SaaS', href: '/micro-saas', icon: <Bot className="w-4 h-4" /> },
+    { name: 'AI Solutions', href: '/ai-solutions', icon: <Brain className="w-4 h-4" /> },
+    { name: 'Quantum Tech', href: '/quantum-tech', icon: <Atom className="w-4 h-4" /> },
+    { name: 'Pricing', href: '/pricing', icon: <Globe className="w-4 h-4" /> },
+    { name: 'About', href: '/about', icon: <Shield className="w-4 h-4" /> },
+    { name: 'Contact', href: '/contact', icon: <Zap className="w-4 h-4" /> },
   ];
 
   const handleDropdownEnter = (name: string) => {

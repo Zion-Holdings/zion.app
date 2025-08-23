@@ -1,34 +1,72 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
-export type FuturisticCardProps = {
-  title: string;
-  description: string;
-  action?: React.ReactNode;
+interface FuturisticCardProps {
+  children: React.ReactNode;
+  className?: string;
+  hoverEffect?: boolean;
+  gradient?: string;
   icon?: React.ReactNode;
-};
+  title?: string;
+  description?: string;
+  onClick?: () => void;
+}
 
-export default function FuturisticCard({ title, description, action, icon }: FuturisticCardProps) {
+export default function FuturisticCard({
+  children,
+  className = '',
+  hoverEffect = true,
+  gradient = 'from-blue-500/20 via-purple-500/20 to-pink-500/20',
+  icon,
+  title,
+  description,
+  onClick
+}: FuturisticCardProps) {
   return (
-    <div className="relative rounded-2xl border border-white/10 dark:border-white/10 bg-white/60 dark:bg-white/[0.04] backdrop-blur-md p-6 overflow-hidden group">
-      <div className="absolute inset-px rounded-[1rem] pointer-events-none" style={{ boxShadow: 'inset 0 0 0 1px rgba(99,102,241,0.25)' }} />
-      <div className="absolute -inset-40 opacity-0 group-hover:opacity-100 transition-opacity duration-700" aria-hidden>
-        <div className="h-full w-full bg-gradient-to-tr from-indigo-500/10 via-purple-500/10 to-teal-400/10 blur-2xl" />
+    <motion.div
+      className={`
+        relative overflow-hidden rounded-2xl
+        bg-gradient-to-br ${gradient}
+        border border-white/10 backdrop-blur-sm
+        ${onClick ? 'cursor-pointer' : ''}
+        ${className}
+      `}
+      whileHover={hoverEffect ? {
+        scale: 1.02,
+        y: -5,
+        transition: { duration: 0.2 }
+      } : {}}
+      whileTap={onClick ? { scale: 0.98 } : {}}
+      onClick={onClick}
+    >
+      {/* Animated border gradient */}
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 opacity-0 hover:opacity-100 transition-opacity duration-300" />
+      
+      {/* Content */}
+      <div className="relative z-10 p-6">
+        {icon && (
+          <div className="mb-4 text-4xl">
+            {icon}
+          </div>
+        )}
+        
+        {title && (
+          <h3 className="text-xl font-bold text-white mb-2">
+            {title}
+          </h3>
+        )}
+        
+        {description && (
+          <p className="text-gray-300 mb-4">
+            {description}
+          </p>
+        )}
+        
+        {children}
       </div>
-      <div className="relative z-10">
-        <div className="flex items-center gap-3">
-          {icon && <div className="text-indigo-400">{icon}</div>}
-          <h3 className="text-lg font-semibold">{title}</h3>
-        </div>
-        <p className="mt-2 text-sm text-gray-700 dark:text-gray-300 leading-6">{description}</p>
-        {action && <div className="mt-4">{action}</div>}
-      </div>
-    </div>
+      
+      {/* Glow effect */}
+      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 opacity-0 hover:opacity-100 transition-opacity duration-300" />
+    </motion.div>
   );
-
-  if (href) {
-    return (
-      <a href={href} className="group block">{inner}</a>
-    );
-  }
-  return inner;
 }

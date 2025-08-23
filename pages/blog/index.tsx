@@ -25,7 +25,7 @@ const BlogHome: NextPage<Props> = ({ posts, authors, topics, tags }) => {
   const rest = filtered.slice(1);
 
   return (
-    <div>
+    <UltraFuturisticBackground variant="quantum" intensity={1}>
       <Head>
         <title>Blog - Zion AI Marketplace</title>
         <meta name="description" content="Insights on AI, DevOps, and digital transformation." />
