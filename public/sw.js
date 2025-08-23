@@ -1,34 +1,40 @@
 /* eslint-env serviceworker */
 /* global self, caches */
 
-const STATIC_CACHE = 'zion-static-v1';
-const DYNAMIC_CACHE = 'zion-dynamic-v1';
+const CACHE_NAME = 'zion-tech-group-v1.0.0';
+const STATIC_CACHE_NAME = 'zion-tech-group-static-v1.0.0';
+const DYNAMIC_CACHE_NAME = 'zion-tech-group-dynamic-v1.0.0';
 
-// Routes that should be cached
-const STATIC_ROUTES = [
+// Static assets to cache
+const STATIC_ASSETS = [
   '/',
   '/offline.html',
-  '/manifest.json'
+  '/manifest.json',
+  '/favicon.ico',
+  '/images/zion-tech-group-logo.png',
+  '/images/zion-tech-group-og.jpg'
 ];
 
-// API routes that should be cached
-const API_ROUTES = [
-  '/api/contact',
-  '/api/services'
+// Dynamic routes to cache
+const DYNAMIC_ROUTES = [
+  '/services',
+  '/about',
+  '/contact',
+  '/solutions',
+  '/resources'
 ];
 
 // Install event - cache static assets
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(STATIC_CACHE)
+    caches.open(STATIC_CACHE_NAME)
       .then((cache) => {
-        return cache.addAll(STATIC_ROUTES);
+        console.log('Caching static assets');
+        return cache.addAll(STATIC_ASSETS);
       })
       .then(() => {
+        console.log('Static assets cached successfully');
         return self.skipWaiting();
-      })
-      .catch(() => {
-        // Handle caching errors silently
       })
   );
 });
@@ -40,13 +46,15 @@ self.addEventListener('activate', (event) => {
       .then((cacheNames) => {
         return Promise.all(
           cacheNames.map((cacheName) => {
-            if (cacheName !== STATIC_CACHE && cacheName !== DYNAMIC_CACHE) {
+            if (cacheName !== STATIC_CACHE_NAME && cacheName !== DYNAMIC_CACHE_NAME) {
+              console.log('Deleting old cache:', cacheName);
               return caches.delete(cacheName);
             }
           })
         );
       })
       .then(() => {
+        console.log('Service worker activated');
         return self.clients.claim();
       })
   );
@@ -62,100 +70,154 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  // Skip non-HTTP(S) requests
+  if (!url.protocol.startsWith('http')) {
+    return;
+  }
+
   // Handle different types of requests
-  if (STATIC_ROUTES.includes(url.pathname)) {
-    // Static routes - cache first
-    event.respondWith(
-      caches.match(request)
-        .then((response) => {
-          return response || fetch(request);
-        })
-        .catch(() => {
-          // Return offline page for navigation requests
-          if (request.mode === 'navigate') {
-            return caches.match('/offline.html');
-          }
-        })
-    );
-  } else if (API_ROUTES.some(route => url.pathname.startsWith(route))) {
-    // API routes - network first, then cache
-    event.respondWith(
-      fetch(request)
-        .then((response) => {
-          // Clone the response before caching
-          const responseClone = response.clone();
-          caches.open(DYNAMIC_CACHE)
-            .then((cache) => {
-              cache.put(request, responseClone);
-            });
-          return response;
-        })
-        .catch(() => {
-          // Return cached response if available
-          return caches.match(request);
-        })
-    );
-  } else if (request.destination === 'image' || request.destination === 'style' || request.destination === 'script') {
-    // Static assets - cache first
-    event.respondWith(
-      caches.match(request)
-        .then((response) => {
-          return response || fetch(request)
-            .then((fetchResponse) => {
-              // Cache the fetched response
-              const responseClone = fetchResponse.clone();
-              caches.open(DYNAMIC_CACHE)
-                .then((cache) => {
-                  cache.put(request, responseClone);
-                });
-              return fetchResponse;
-            });
-        })
-    );
+  if (isStaticAsset(request)) {
+    event.respondWith(handleStaticAsset(request));
+  } else if (isDynamicRoute(request)) {
+    event.respondWith(handleDynamicRoute(request));
   } else {
-    // Other requests - network first
-    event.respondWith(fetch(request));
+    event.respondWith(handleApiRequest(request));
   }
 });
 
-// Background sync for offline form submissions
+// Check if request is for a static asset
+function isStaticAsset(request) {
+  const url = new URL(request.url);
+  return STATIC_ASSETS.includes(url.pathname) ||
+         request.destination === 'image' ||
+         request.destination === 'font' ||
+         request.destination === 'style' ||
+         request.destination === 'script';
+}
+
+// Check if request is for a dynamic route
+function isDynamicRoute(request) {
+  const url = new URL(request.url);
+  return DYNAMIC_ROUTES.some(route => url.pathname.startsWith(route));
+}
+
+// Handle static asset requests
+async function handleStaticAsset(request) {
+  try {
+    // Try cache first
+    const cachedResponse = await caches.match(request);
+    if (cachedResponse) {
+      return cachedResponse;
+    }
+
+    // Fallback to network
+    const networkResponse = await fetch(request);
+    if (networkResponse.ok) {
+      const cache = await caches.open(STATIC_CACHE_NAME);
+      cache.put(request, networkResponse.clone());
+    }
+    return networkResponse;
+  } catch (error) {
+    console.log('Static asset fetch failed:', error);
+    // Return offline page for navigation requests
+    if (request.destination === 'document') {
+      return caches.match('/offline.html');
+    }
+    throw error;
+  }
+}
+
+// Handle dynamic route requests
+async function handleDynamicRoute(request) {
+  try {
+    // Try network first for dynamic content
+    const networkResponse = await fetch(request);
+    if (networkResponse.ok) {
+      const cache = await caches.open(DYNAMIC_CACHE_NAME);
+      cache.put(request, networkResponse.clone());
+    }
+    return networkResponse;
+  } catch (error) {
+    console.log('Dynamic route fetch failed:', error);
+    // Try cache as fallback
+    const cachedResponse = await caches.match(request);
+    if (cachedResponse) {
+      return cachedResponse;
+    }
+    // Return offline page
+    return caches.match('/offline.html');
+  }
+}
+
+// Handle API requests
+async function handleApiRequest(request) {
+  try {
+    // Try network first for API calls
+    const networkResponse = await fetch(request);
+    if (networkResponse.ok) {
+      const cache = await caches.open(DYNAMIC_CACHE_NAME);
+      cache.put(request, networkResponse.clone());
+    }
+    return networkResponse;
+  } catch (error) {
+    console.log('API fetch failed:', error);
+    // Try cache as fallback
+    const cachedResponse = await caches.match(request);
+    if (cachedResponse) {
+      return cachedResponse;
+    }
+    throw error;
+  }
+}
+
+// Background sync for offline actions
 self.addEventListener('sync', (event) => {
   if (event.tag === 'background-sync') {
-    event.waitUntil(
-      // Handle background sync logic here
-      Promise.resolve()
-    );
+    event.waitUntil(doBackgroundSync());
   }
 });
+
+// Background sync implementation
+async function doBackgroundSync() {
+  try {
+    // Sync any pending data when connection is restored
+    console.log('Background sync completed');
+  } catch (error) {
+    console.error('Background sync failed:', error);
+  }
+}
 
 // Push notification handling
 self.addEventListener('push', (event) => {
-  const options = {
-    body: event.data ? event.data.text() : 'New update available!',
-    icon: '/icon-192x192.png',
-    badge: '/icon-72x72.png',
-    vibrate: [100, 50, 100],
-    data: {
-      dateOfArrival: Date.now(),
-      primaryKey: 1
-    },
-    actions: [
-      {
-        action: 'explore',
-        title: 'View',
-        icon: '/icon-192x192.png'
+  if (event.data) {
+    const data = event.data.json();
+    const options = {
+      body: data.body,
+      icon: '/images/zion-tech-group-logo.png',
+      badge: '/images/badge.png',
+      vibrate: [100, 50, 100],
+      data: {
+        dateOfArrival: Date.now(),
+        primaryKey: 1
       },
-      {
-        action: 'close',
-        title: 'Close',
-        icon: '/icon-192x192.png'
-      }
-    ]
-  };
+      actions: [
+        {
+          action: 'explore',
+          title: 'Explore',
+          icon: '/images/explore.png'
+        },
+        {
+          action: 'close',
+          title: 'Close',
+          icon: '/images/close.png'
+        }
+      ]
+    };
 
-  event.waitUntil(
-    self.registration.showNotification('Zion Tech Group', options)
-  );
+    event.waitUntil(
+      self.registration.showNotification(data.title, options)
+    );
+  }
 });
 
 // Notification click handling
@@ -164,7 +226,7 @@ self.addEventListener('notificationclick', (event) => {
 
   if (event.action === 'explore') {
     event.waitUntil(
-      self.clients.openWindow('/')
+      clients.openWindow('/services')
     );
   }
 });

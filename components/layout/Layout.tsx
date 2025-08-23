@@ -7,6 +7,9 @@ import TopContactBar from './TopContactBar';
 import PerformanceMonitor from '../PerformanceMonitor';
 import AccessibilityEnhancer from '../AccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
+import SEOHead from '../SEOHead';
+import ServiceWorkerRegistration from '../ServiceWorkerRegistration';
+import PerformanceOptimizer from '../PerformanceOptimizer';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -17,6 +20,9 @@ export default function Layout({ children }: LayoutProps) {
 
   return (
     <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
+      {/* SEO Head */}
+      <SEOHead />
+      
       {/* Skip to content link for accessibility */}
       <a href="#main" className="skip-link">Skip to main content</a>
       
@@ -50,6 +56,12 @@ export default function Layout({ children }: LayoutProps) {
       {/* Accessibility and Performance Tools */}
       <AccessibilityEnhancer />
       <PerformanceMonitor />
+      
+      {/* Service Worker Registration */}
+      <ServiceWorkerRegistration />
+      
+      {/* Performance Optimizer */}
+      <PerformanceOptimizer showMetrics={process.env.NODE_ENV === 'development'} />
       
       {/* Cookie Consent Banner */}
       <CookieConsentBanner />
