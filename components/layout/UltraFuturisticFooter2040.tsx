@@ -33,7 +33,8 @@ const footerData = {
     { label: 'Solutions', href: '/solutions' },
     { label: 'Case Studies', href: '/case-studies' },
     { label: 'Blog', href: '/blog' },
-    { label: 'Careers', href: '/careers' }
+    { label: 'Careers', href: '/careers' },
+    { label: 'Documentation', href: '/docs' }
   ],
   services: [
     { label: 'AI & Machine Learning', href: '/services?category=ai-ml' },
@@ -45,11 +46,12 @@ const footerData = {
   ],
   resources: [
     { label: 'Documentation', href: '/docs' },
-    { label: 'API Reference', href: '/api-documentation' },
+    { label: 'API Reference', href: '/docs' },
     { label: 'Webinars', href: '/webinars' },
     { label: 'White Papers', href: '/white-papers' },
     { label: 'Support', href: '/support' },
-    { label: 'Status', href: '/status' }
+    { label: 'Status', href: '/status' },
+    { label: 'Blog', href: '/blog' }
   ],
   social: [
     { label: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: <Linkedin className="w-5 h-5" /> },
