@@ -1,5 +1,5 @@
 import React from 'react';
-import Homepage2044 from '../components/Homepage2044';
+import Homepage2045 from '../components/Homepage2045';
 import SEOOptimizer from '../components/SEOOptimizer';
 import AnalyticsTracker from '../components/AnalyticsTracker';
 import ErrorBoundary from '../components/ErrorBoundary';
@@ -16,7 +16,7 @@ const HomePage: React.FC = () => {
       <PerformanceOptimizer showMetrics={true} autoOptimize={true} />
       <AccessibilityEnhancer showPanel={true} autoOptimize={true} />
       <MobileOptimizer showDebugInfo={false}>
-        <Homepage2044 />
+        <Homepage2045 />
         <PerformanceMonitor showUI={true} />
       </MobileOptimizer>
     </ErrorBoundary>

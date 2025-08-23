@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import UltraFuturisticNavigation2044 from './UltraFuturisticNavigation2044';
 import UltraFuturisticFooter2044 from './UltraFuturisticFooter2044';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraFuturisticBackground2043 from '../backgrounds/UltraFuturisticBackground2043';
+import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
 import TopContactBar from './TopContactBar';
 import PerformanceMonitor from '../PerformanceMonitor';
 import AccessibilityEnhancer from '../AccessibilityEnhancer';
@@ -21,7 +21,7 @@ export default function Layout({ children }: LayoutProps) {
       <a href="#main" className="skip-link">Skip to main content</a>
       
       {/* Futuristic Background */}
-      <UltraFuturisticBackground2043 theme="consciousness" intensity="high" />
+      <UltraFuturisticBackground2045 theme="consciousness" intensity="high" />
       
       {/* Layout Structure */}
       <div className="relative z-10">
