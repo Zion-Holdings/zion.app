@@ -355,7 +355,11 @@ interface LayoutShiftSource {
 // Extend Window interface for gtag
 declare global {
   interface Window {
-    gtag?: (...args: unknown[]) => void;
+    gtag?: (
+      command: string,
+      action: string,
+      params?: Record<string, unknown>
+    ) => void;
   }
 }
 

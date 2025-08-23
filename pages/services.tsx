@@ -5,7 +5,7 @@ import {
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
-  Building
+  Building, Cpu, Database, Cloud, Lock, Globe
 } from 'lucide-react';
 
 // Import our new service data
@@ -22,6 +22,11 @@ import { innovative2036ITServices } from '../data/innovative-2036-it-services';
 import { innovative2037MicroSaasServices } from '../data/innovative-2037-micro-saas-services';
 import { innovative2037ITServices } from '../data/innovative-2037-it-services';
 import { innovative2037AIServices } from '../data/innovative-2037-ai-services';
+
+// Import our new innovative services
+import { innovative2037Services } from '../data/innovative-2037-services';
+import { advanced2038Services } from '../data/advanced-2038-services';
+import { revolutionary2039Services } from '../data/revolutionary-2039-services';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -84,9 +89,10 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
-  ...innovative2037MicroSaasServices,
-  ...innovative2037ITServices,
-  ...innovative2037AIServices
+  // Our new innovative services
+  ...innovative2037Services,
+  ...advanced2038Services,
+  ...revolutionary2039Services
 ];
 
 const categories = [
@@ -159,6 +165,41 @@ const categories = [
     icon: <GraduationCap className="w-6 h-6" />,
     color: 'from-yellow-500 to-orange-500',
     description: 'Learning and research platforms'
+  },
+  {
+    id: 'ai-emotional',
+    name: 'AI & Emotional Intelligence',
+    icon: <Brain className="w-6 h-6" />,
+    color: 'from-pink-500 to-purple-600',
+    description: 'AI-powered emotional intelligence and consciousness'
+  },
+  {
+    id: 'quantum-security',
+    name: 'Quantum Security',
+    icon: <Shield className="w-6 h-6" />,
+    color: 'from-indigo-600 to-purple-700',
+    description: 'Quantum-resistant security and communication'
+  },
+  {
+    id: 'autonomous-systems',
+    name: 'Autonomous Systems',
+    icon: <Cpu className="w-6 h-6" />,
+    color: 'from-green-600 to-teal-700',
+    description: 'AI-powered autonomous decision-making systems'
+  },
+  {
+    id: 'metaverse-business',
+    name: 'Metaverse Business',
+    icon: <Globe className="w-6 h-6" />,
+    color: 'from-blue-500 to-cyan-600',
+    description: 'Business infrastructure for the metaverse'
+  },
+  {
+    id: 'neural-quantum',
+    name: 'Neural & Quantum',
+    icon: <Atom className="w-6 h-6" />,
+    color: 'from-purple-600 to-pink-700',
+    description: 'Neural networks and quantum computing fusion'
   }
 ];
 
