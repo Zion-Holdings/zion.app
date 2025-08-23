@@ -43,6 +43,15 @@ export default function HomePage() {
         </div>
       </section>
 
+<<<<<<< HEAD
+      <section className="rounded-2xl p-8 bg-gradient-to-br from-blue-600 to-cyan-500 text-white">
+        <h2 className="text-2xl font-bold">Zero-maintenance, Cloud-native</h2>
+        <p className="mt-2 text-white/90 max-w-2xl">Agents run on schedules in GitHub Actions and Netlify—fetching data, updating the site, and committing changes automatically.</p>
+        <div className="mt-4">
+          <Link href="https://github.com/Zion-Holdings/zion.app"><a className="underline" target="_blank" rel="noreferrer">View repo →</a></Link>
+        </div>
+      </section>
+=======
         {/* Features */}
         <section className="mx-auto max-w-7xl px-6 pb-14">
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Features</h2>
@@ -347,6 +356,7 @@ export default function HomePage() {
           </div>
         </section>
 </main>
+>>>>>>> origin/cursor/develop-and-deploy-continuous-github-action-innovations-1374
     </div>
   );
 }
