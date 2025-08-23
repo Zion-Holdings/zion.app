@@ -6,6 +6,12 @@ type EnhancedLayoutProps = {
 
 export default function EnhancedLayout({ children }: EnhancedLayoutProps) {
   return (
+<<<<<<< HEAD
+    <div className="min-h-screen flex flex-col">
+      <header className="p-4 border-b">Zion App</header>
+      <main className="flex-1 p-4">{children}</main>
+      <footer className="p-4 border-t">© {new Date().getFullYear()}</footer>
+=======
     <div className="min-h-screen flex flex-col bg-white dark:bg-black text-gray-900 dark:text-gray-100">
       <header>
         <EnhancedNavigation />
@@ -14,6 +20,7 @@ export default function EnhancedLayout({ children }: EnhancedLayoutProps) {
       <footer>
         <EnhancedFooter />
       </footer>
+>>>>>>> origin/cursor/build-ai-powered-project-teams-dcf8
     </div>
   );
 }
