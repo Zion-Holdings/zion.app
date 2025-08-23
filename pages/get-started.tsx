@@ -1,280 +1,281 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Brain, Rocket, Shield, Zap, Target, Award, Globe, Users, CheckCircle, ArrowRight, BookOpen, Code, Video, Headphones, Mail, Phone, MapPin, Clock, Star, Download, ExternalLink } from 'lucide-react';
 import Layout from '../components/layout/Layout';
+import { motion } from 'framer-motion';
+import { 
+  Users, Award, Target, Globe, Brain, Atom, Shield, Rocket, 
+  Star, TrendingUp, CheckCircle, Phone, Mail, MapPin,
+  ArrowRight, Zap, Cpu, Database, Cloud, Palette,
+  Play, FileText, Video, Download, Calendar, Clock,
+  CheckCircle as Success, ArrowRight as Next, ArrowLeft as Previous, Code
+} from 'lucide-react';
+import Link from 'next/link';
 
-const onboardingSteps = [
-  {
-    id: 1,
-    title: 'Assessment & Discovery',
-    description: 'We analyze your current technology landscape and identify opportunities for transformation',
-    duration: '1-2 weeks',
-    deliverables: [
-      'Technology audit report',
-      'Transformation roadmap',
-      'ROI projections',
-      'Risk assessment'
-    ],
-    icon: <Target className="w-8 h-8" />,
-    color: 'text-cyan-400',
-    bgColor: 'bg-cyan-400/10'
-  },
-  {
-    id: 2,
-    title: 'Proof of Concept',
-    description: 'Build and test a small-scale version of your solution to validate the approach',
-    duration: '2-4 weeks',
-    deliverables: [
-      'Working prototype',
-      'Performance metrics',
-      'User feedback',
-      'Technical validation'
-    ],
-    icon: <Rocket className="w-8 h-8" />,
-    color: 'text-blue-400',
-    bgColor: 'bg-blue-400/10'
-  },
-  {
-    id: 3,
-    title: 'Pilot Implementation',
-    description: 'Deploy the solution in a controlled environment with real users and data',
-    duration: '4-8 weeks',
-    deliverables: [
-      'Pilot deployment',
-      'User training materials',
-      'Performance monitoring',
-      'Feedback collection'
-    ],
-    icon: <Shield className="w-8 h-8" />,
-    color: 'text-purple-400',
-    bgColor: 'bg-purple-400/10'
-  },
-  {
-    id: 4,
-    title: 'Full Deployment',
-    description: 'Scale the solution across your organization with full support and optimization',
-    duration: '8-16 weeks',
-    deliverables: [
-      'Production deployment',
-      'Comprehensive training',
-      'Ongoing support',
-      'Performance optimization'
-    ],
-    icon: <Zap className="w-8 h-8" />,
-    color: 'text-green-400',
-    bgColor: 'bg-green-400/10'
-  }
-];
+const GetStartedPage: React.FC = () => {
+  const [currentStep, setCurrentStep] = useState(1);
+  const [selectedPath, setSelectedPath] = useState('');
 
-const quickStartOptions = [
-  {
-    title: 'AI Consciousness Platform',
-    description: 'Get started with AI emotional intelligence and consciousness systems',
-    difficulty: 'Intermediate',
-    timeToValue: '2-4 weeks',
-    icon: <Brain className="w-8 h-8" />,
-    color: 'text-cyan-400',
-    bgColor: 'bg-cyan-400/10',
-    steps: [
-      'Install SDK and dependencies',
-      'Configure API credentials',
-      'Run sample applications',
-      'Integrate with your systems'
-    ]
-  },
-  {
-    title: 'Quantum Security Suite',
-    description: 'Implement quantum-resistant cybersecurity for your infrastructure',
-    difficulty: 'Advanced',
-    timeToValue: '4-6 weeks',
-    icon: <Shield className="w-8 h-8" />,
-    color: 'text-blue-400',
-    bgColor: 'bg-blue-400/10',
-    steps: [
-      'Security assessment',
-      'Quantum key distribution setup',
-      'Encryption migration',
-      'Security testing and validation'
-    ]
-  },
-  {
-    title: 'Autonomous Operations',
-    description: 'Deploy self-managing IT infrastructure and automation',
-    difficulty: 'Intermediate',
-    timeToValue: '3-5 weeks',
-    icon: <Rocket className="w-8 h-8" />,
-    color: 'text-purple-400',
-    bgColor: 'bg-purple-400/10',
-    steps: [
-      'Infrastructure audit',
-      'Automation framework setup',
-      'Policy configuration',
-      'Monitoring and alerting'
-    ]
-  }
-];
+  const paths = [
+    {
+      id: 'ai',
+      name: 'AI & Machine Learning',
+      description: 'Get started with our AI consciousness and machine learning platforms',
+      icon: <Brain className="w-8 h-8" />,
+      color: 'from-cyan-500 to-blue-500',
+      steps: [
+        'Schedule AI consultation call',
+        'Review current AI infrastructure',
+        'Define AI implementation goals',
+        'Receive customized AI roadmap',
+        'Begin AI platform deployment'
+      ]
+    },
+    {
+      id: 'quantum',
+      name: 'Quantum Computing',
+      description: 'Explore quantum computing solutions for your organization',
+      icon: <Atom className="w-8 h-8" />,
+      color: 'from-purple-500 to-pink-500',
+      steps: [
+        'Quantum readiness assessment',
+        'Identify quantum use cases',
+        'Quantum infrastructure planning',
+        'Quantum algorithm development',
+        'Quantum solution deployment'
+      ]
+    },
+    {
+      id: 'space',
+      name: 'Space Technology',
+      description: 'Leverage space technology for resource intelligence and exploration',
+      icon: <Rocket className="w-8 h-8" />,
+      color: 'from-blue-500 to-cyan-500',
+      steps: [
+        'Space technology consultation',
+        'Resource intelligence assessment',
+        'Satellite system planning',
+        'Space data integration',
+        'Space platform deployment'
+      ]
+    },
+    {
+      id: 'enterprise',
+      name: 'Enterprise IT Solutions',
+      description: 'Transform your enterprise IT infrastructure and operations',
+      icon: <Shield className="w-8 h-8" />,
+      color: 'from-green-500 to-emerald-500',
+      steps: [
+        'IT infrastructure audit',
+        'Digital transformation planning',
+        'Technology stack modernization',
+        'Security implementation',
+        'Full deployment and training'
+      ]
+    }
+  ];
 
-const resources = [
-  {
-    title: 'Getting Started Guide',
-    description: 'Comprehensive onboarding documentation for new users',
-    type: 'Documentation',
-    link: '/docs/getting-started',
-    icon: <BookOpen className="w-6 h-6" />,
-    color: 'text-cyan-400'
-  },
-  {
-    title: 'Video Tutorials',
-    description: 'Step-by-step video guides for common use cases',
-    type: 'Videos',
-    link: '/resources/videos',
-    icon: <Video className="w-6 h-6" />,
-    color: 'text-blue-400'
-  },
-  {
-    title: 'API Playground',
-    description: 'Interactive environment to test our APIs',
-    type: 'Tool',
-    link: '/tools/api-playground',
-    icon: <Code className="w-6 h-6" />,
-    color: 'text-purple-400'
-  },
-  {
-    title: 'Community Forum',
-    description: 'Connect with other developers and get help',
-    type: 'Community',
-    link: '/community',
-    icon: <Users className="w-6 h-6" />,
-    color: 'text-green-400'
-  }
-];
+  const onboardingSteps = [
+    {
+      step: 1,
+      title: 'Initial Consultation',
+      description: 'Schedule a free consultation with our technology experts to discuss your needs and goals.',
+      duration: '30 minutes',
+      icon: <Phone className="w-6 h-6" />,
+      actions: [
+        'Book consultation call',
+        'Prepare questions and goals',
+        'Review current technology stack'
+      ]
+    },
+    {
+      step: 2,
+      title: 'Assessment & Planning',
+      description: 'We conduct a comprehensive assessment of your current infrastructure and create a customized implementation plan.',
+      duration: '1-2 weeks',
+      icon: <Target className="w-6 h-6" />,
+      actions: [
+        'Infrastructure review',
+        'Requirements gathering',
+        'Custom roadmap creation'
+      ]
+    },
+    {
+      step: 3,
+      title: 'Solution Design',
+      description: 'Our team designs a tailored solution architecture that meets your specific business requirements.',
+      duration: '2-3 weeks',
+      icon: <Cpu className="w-6 h-6" />,
+      actions: [
+        'Architecture design',
+        'Technology selection',
+        'Integration planning'
+      ]
+    },
+    {
+      step: 4,
+      title: 'Implementation',
+      description: 'We deploy your solution with minimal disruption to your operations, ensuring a smooth transition.',
+      duration: '4-8 weeks',
+      icon: <Rocket className="w-6 h-6" />,
+      actions: [
+        'Phased deployment',
+        'Testing and validation',
+        'Performance optimization'
+      ]
+    },
+    {
+      step: 5,
+      title: 'Training & Support',
+      description: 'Comprehensive training for your team and ongoing support to ensure long-term success.',
+      duration: '1-2 weeks',
+      icon: <Users className="w-6 h-6" />,
+      actions: [
+        'Team training sessions',
+        'Documentation delivery',
+        'Ongoing support setup'
+      ]
+    }
+  ];
 
-const supportOptions = [
-  {
-    title: '24/7 Technical Support',
-    description: 'Round-the-clock assistance for critical issues',
-    responseTime: '< 1 hour',
-    icon: <Clock className="w-6 h-6" />,
-    color: 'text-cyan-400'
-  },
-  {
-    title: 'Dedicated Success Manager',
-    description: 'Personal guidance throughout your journey',
-    responseTime: '< 4 hours',
-    icon: <Users className="w-6 h-6" />,
-    color: 'text-blue-400'
-  },
-  {
-    title: 'Expert Consultation',
-    description: 'Strategic advice from industry experts',
-    responseTime: '< 24 hours',
-    icon: <Star className="w-6 h-6" />,
-    color: 'text-purple-400'
-  },
-  {
-    title: 'Training & Workshops',
-    description: 'Customized training for your team',
-    responseTime: 'Scheduled',
-    icon: <BookOpen className="w-6 h-6" />,
-    color: 'text-green-400'
-  }
-];
+  const resources = [
+    {
+      title: 'Getting Started Guide',
+      description: 'Comprehensive guide to implementing Zion Tech Group solutions',
+      type: 'PDF',
+      icon: <FileText className="w-6 h-6" />,
+      download: true
+    },
+    {
+      title: 'Video Tutorials',
+      description: 'Step-by-step video guides for common implementation tasks',
+      type: 'Video Series',
+      icon: <Video className="w-6 h-6" />,
+      download: false
+    },
+    {
+      title: 'API Documentation',
+      description: 'Complete API reference and integration guides',
+      type: 'Web',
+      icon: <Code className="w-6 h-6" />,
+      download: false
+    },
+    {
+      title: 'Best Practices',
+      description: 'Industry best practices and implementation recommendations',
+      type: 'Guide',
+      icon: <Star className="w-6 h-6" />,
+      download: true
+    }
+  ];
 
-export default function GetStarted() {
-  const [selectedOption, setSelectedOption] = useState<string | null>(null);
+  const nextStep = () => {
+    if (currentStep < 5) setCurrentStep(currentStep + 1);
+  };
+
+  const prevStep = () => {
+    if (currentStep > 1) setCurrentStep(currentStep - 1);
+  };
 
   return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+    <Layout seo={{
+      title: 'Get Started - Zion Tech Group | Begin Your Technology Journey',
+      description: 'Start your journey with Zion Tech Group. Get step-by-step guidance, resources, and support to implement our AI, quantum, and space technology solutions.',
+      keywords: 'get started, onboarding, implementation, Zion Tech Group, AI implementation, quantum computing setup',
+      url: 'https://ziontechgroup.com/get-started'
+    }}>
+      <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="relative py-20 px-4">
-          <div className="container mx-auto max-w-6xl">
+        <section className="relative py-20 lg:py-32 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-cyan-900/20"></div>
+          <div className="relative z-10 container mx-auto px-4">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-center"
+              className="text-center max-w-4xl mx-auto"
             >
-              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
+              <h1 className="text-5xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
                 Get Started Today
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Begin your transformation journey with revolutionary AI consciousness, quantum computing, 
-                and autonomous systems. We'll guide you every step of the way.
+              <p className="text-xl lg:text-2xl text-gray-300 mb-8 leading-relaxed">
+                Begin your transformation journey with Zion Tech Group. We'll guide you through 
+                every step of implementing our revolutionary AI, quantum, and space technology solutions.
               </p>
+              <div className="flex flex-wrap justify-center gap-4">
+                <Link href="#paths" className="btn-primary">
+                  <Play className="w-5 h-5 mr-2" />
+                  Choose Your Path
+                </Link>
+                <Link href="/contact" className="btn-secondary">
+                  <Phone className="w-5 h-5 mr-2" />
+                  Talk to an Expert
+                </Link>
+              </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Quick Start Options */}
-        <section className="py-20 px-4">
-          <div className="container mx-auto max-w-6xl">
+        {/* Technology Paths */}
+        <section id="paths" className="py-20 bg-gradient-to-b from-gray-900 to-black">
+          <div className="container mx-auto px-4">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold text-white mb-4">Choose Your Path</h2>
-              <p className="text-xl text-gray-300">Select the solution that best fits your needs and get started immediately</p>
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                Choose Your Technology Path
+              </h2>
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                Select the technology area that aligns with your business goals and objectives
+              </p>
             </motion.div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {quickStartOptions.map((option, index) => (
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              {paths.map((path, index) => (
                 <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.4 + index * 0.1 }}
-                  className="group"
+                  key={path.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className={`p-8 bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300 cursor-pointer ${
+                    selectedPath === path.id ? 'border-cyan-500/50 bg-cyan-500/10' : ''
+                  }`}
+                  onClick={() => setSelectedPath(path.id)}
                 >
-                  <div
-                    onClick={() => setSelectedOption(selectedOption === option.title ? null : option.title)}
-                    className={`p-8 rounded-2xl border border-gray-800 bg-black/40 hover:bg-black/60 transition-all duration-300 cursor-pointer ${
-                      selectedOption === option.title ? 'border-cyan-500/50 bg-cyan-500/10' : 'hover:border-cyan-500/50'
-                    }`}
-                  >
-                    <div className="flex items-center gap-4 mb-6">
-                      <div className={`${option.bgColor} w-16 h-16 rounded-2xl flex items-center justify-center`}>
-                        <div className={option.color}>{option.icon}</div>
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold text-white">{option.title}</h3>
-                        <p className="text-sm text-gray-400">{option.description}</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center gap-4 mb-4 text-sm">
-                      <span className="text-cyan-400">Difficulty: {option.difficulty}</span>
-                      <span className="text-blue-400">Time to Value: {option.timeToValue}</span>
-                    </div>
-
-                    {selectedOption === option.title && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        transition={{ duration: 0.3 }}
-                        className="space-y-3"
-                      >
-                        <p className="text-sm text-gray-300 font-medium">Implementation Steps:</p>
-                        {option.steps.map((step, stepIndex) => (
-                          <div key={stepIndex} className="flex items-center gap-2 text-sm text-gray-300">
-                            <CheckCircle className="w-4 h-4 text-cyan-400 flex-shrink-0" />
-                            <span>{step}</span>
-                          </div>
-                        ))}
-                      </motion.div>
-                    )}
-
-                    <div className="mt-6 flex items-center justify-between">
-                      <span className="text-xs text-gray-400">
-                        Click to {selectedOption === option.title ? 'collapse' : 'expand'}
-                      </span>
-                      <ArrowRight className={`w-4 h-4 text-gray-400 transition-transform duration-300 ${
-                        selectedOption === option.title ? 'rotate-90' : ''
-                      }`} />
-                    </div>
+                  <div className={`w-16 h-16 mx-auto mb-6 bg-gradient-to-r ${path.color} rounded-xl flex items-center justify-center text-white`}>
+                    {path.icon}
                   </div>
+                  
+                  <h3 className="text-2xl font-bold text-white mb-3 text-center">{path.name}</h3>
+                  <p className="text-gray-300 text-center mb-6">{path.description}</p>
+                  
+                  <div className="space-y-3">
+                    <h4 className="text-sm font-semibold text-white mb-3">Implementation Steps:</h4>
+                    {path.steps.map((step, stepIndex) => (
+                      <div key={stepIndex} className="flex items-start gap-3">
+                        <div className="w-5 h-5 bg-cyan-500/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <span className="text-cyan-400 text-xs font-bold">{stepIndex + 1}</span>
+                        </div>
+                        <span className="text-gray-300 text-sm">{step}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {selectedPath === path.id && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="mt-6 pt-6 border-t border-gray-700/50"
+                    >
+                      <Link href="/contact" className="btn-primary w-full">
+                        Start {path.name} Journey
+                        <ArrowRight className="w-5 h-5 ml-2" />
+                      </Link>
+                    </motion.div>
+                  )}
                 </motion.div>
               ))}
             </div>
@@ -282,199 +283,256 @@ export default function GetStarted() {
         </section>
 
         {/* Onboarding Process */}
-        <section className="py-20 px-4 bg-black/30">
-          <div className="container mx-auto max-w-6xl">
+        <section className="py-20 bg-black">
+          <div className="container mx-auto px-4">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold text-white mb-4">Our Onboarding Process</h2>
-              <p className="text-xl text-gray-300">A structured approach to ensure your success</p>
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                Your Onboarding Journey
+              </h2>
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                A structured 5-step process to ensure successful implementation and adoption
+              </p>
             </motion.div>
-
-            <div className="relative">
-              {/* Connection Line */}
-              <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 transform -translate-y-1/2 hidden lg:block" />
-
-              <div className="grid lg:grid-cols-4 gap-8">
-                {onboardingSteps.map((step, index) => (
-                  <motion.div
-                    key={step.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.8 + index * 0.1 }}
-                    className="relative"
-                  >
-                    <div className="text-center">
-                      <div className={`${step.bgColor} w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-4 relative z-10`}>
-                        <div className={step.color}>{step.icon}</div>
-                      </div>
-                      
-                      <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
-                      <p className="text-gray-300 mb-4 leading-relaxed">{step.description}</p>
-                      
-                      <div className="inline-flex items-center gap-2 px-3 py-1 bg-gray-800/50 rounded-full text-sm text-cyan-400 mb-4">
-                        <Clock className="w-4 h-4" />
-                        {step.duration}
-                      </div>
-
-                      <div className="space-y-2">
-                        {step.deliverables.map((deliverable, idx) => (
-                          <div key={idx} className="flex items-center gap-2 text-sm text-gray-300">
-                            <CheckCircle className="w-4 h-4 text-cyan-400 flex-shrink-0" />
-                            <span>{deliverable}</span>
+            
+            {/* Step Navigation */}
+            <div className="flex justify-center mb-12">
+              <div className="flex items-center gap-4">
+                <button
+                  onClick={prevStep}
+                  disabled={currentStep === 1}
+                  className="p-2 rounded-lg bg-gray-800/50 border border-gray-700/50 text-gray-400 hover:text-white hover:border-cyan-500/50 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  <Previous className="w-5 h-5" />
+                </button>
+                
+                <div className="flex gap-2">
+                  {onboardingSteps.map((step) => (
+                    <button
+                      key={step.step}
+                      onClick={() => setCurrentStep(step.step)}
+                      className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                        currentStep === step.step
+                          ? 'bg-cyan-400 scale-125'
+                          : 'bg-gray-600 hover:bg-gray-500'
+                      }`}
+                    />
+                  ))}
+                </div>
+                
+                <button
+                  onClick={nextStep}
+                  disabled={currentStep === 5}
+                  className="p-2 rounded-lg bg-gray-800/50 border border-gray-700/50 text-gray-400 hover:text-white hover:border-cyan-500/50 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  <Next className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+            
+            {/* Current Step Display */}
+            <motion.div
+              key={currentStep}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className="max-w-4xl mx-auto"
+            >
+              {onboardingSteps.map((step) => (
+                step.step === currentStep && (
+                  <div key={step.step} className="text-center">
+                    <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center text-white">
+                      {step.icon}
+                    </div>
+                    
+                    <h3 className="text-3xl font-bold text-white mb-4">
+                      Step {step.step}: {step.title}
+                    </h3>
+                    
+                    <p className="text-xl text-gray-300 mb-6 max-w-2xl mx-auto">
+                      {step.description}
+                    </p>
+                    
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/20 text-cyan-400 rounded-full border border-cyan-500/30 mb-8">
+                      <Clock className="w-4 h-4" />
+                      Duration: {step.duration}
+                    </div>
+                    
+                    <div className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 p-8 rounded-2xl border border-gray-700/30">
+                      <h4 className="text-lg font-semibold text-white mb-4">What You'll Do:</h4>
+                      <div className="grid md:grid-cols-3 gap-4">
+                        {step.actions.map((action, actionIndex) => (
+                          <div key={actionIndex} className="flex items-start gap-3">
+                            <CheckCircle className="w-5 h-5 text-cyan-400 mt-0.5 flex-shrink-0" />
+                            <span className="text-gray-300 text-sm">{action}</span>
                           </div>
                         ))}
                       </div>
                     </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+                  </div>
+                )
+              ))}
+            </motion.div>
           </div>
         </section>
 
-        {/* Resources */}
-        <section className="py-20 px-4">
-          <div className="container mx-auto max-w-6xl">
+        {/* Resources & Downloads */}
+        <section className="py-20 bg-gradient-to-b from-black to-gray-900">
+          <div className="container mx-auto px-4">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold text-white mb-4">Essential Resources</h2>
-              <p className="text-xl text-gray-300">Everything you need to succeed with our platform</p>
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                Resources & Downloads
+              </h2>
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                Access comprehensive resources to help you get started and succeed
+              </p>
             </motion.div>
-
+            
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {resources.map((resource, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 1.2 + index * 0.1 }}
-                  className="group"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="p-6 bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-xl border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300"
                 >
-                  <a href={resource.link}>
-                    <div className="p-6 bg-black/40 border border-gray-800 rounded-xl hover:border-cyan-500/50 transition-all duration-300 group-hover:bg-black/60">
-                      <div className={`${resource.color} mb-4`}>{resource.icon}</div>
-                      <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
-                        {resource.title}
-                      </h3>
-                      <p className="text-gray-300 text-sm mb-4 leading-relaxed">
-                        {resource.description}
-                      </p>
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs text-cyan-400 font-medium">{resource.type}</span>
-                        <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-cyan-400 transition-colors duration-300" />
-                      </div>
-                    </div>
-                  </a>
+                  <div className="text-cyan-400 mb-4 flex justify-center">
+                    {resource.icon}
+                  </div>
+                  
+                  <h3 className="text-lg font-bold text-white mb-2 text-center">{resource.title}</h3>
+                  <p className="text-gray-400 text-sm text-center mb-4">{resource.description}</p>
+                  
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-xs text-gray-500 bg-gray-800/50 px-2 py-1 rounded">
+                      {resource.type}
+                    </span>
+                    {resource.download && (
+                      <Download className="w-4 h-4 text-cyan-400" />
+                    )}
+                  </div>
+                  
+                  <button className="w-full btn-primary text-sm">
+                    {resource.download ? 'Download' : 'Access'}
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </button>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Support Options */}
-        <section className="py-20 px-4 bg-black/30">
-          <div className="container mx-auto max-w-6xl">
+        {/* Quick Start Options */}
+        <section className="py-20 bg-gray-900">
+          <div className="container mx-auto px-4">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.4 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold text-white mb-4">Support & Guidance</h2>
-              <p className="text-xl text-gray-300">We're here to help you succeed at every step</p>
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                Quick Start Options
+              </h2>
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                Choose the approach that works best for your timeline and needs
+              </p>
             </motion.div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {supportOptions.map((option, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 1.6 + index * 0.1 }}
-                  className="p-6 bg-black/40 border border-gray-800 rounded-xl hover:border-cyan-500/50 transition-all duration-300"
-                >
-                  <div className={`${option.color} mb-4`}>{option.icon}</div>
-                  <h3 className="text-lg font-bold text-white mb-2">{option.title}</h3>
-                  <p className="text-gray-300 text-sm mb-4 leading-relaxed">
-                    {option.description}
-                  </p>
-                  <div className="flex items-center gap-2 text-sm text-cyan-400">
-                    <Clock className="w-4 h-4" />
-                    {option.responseTime}
-                  </div>
-                </motion.div>
-              ))}
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="text-center p-8 bg-gradient-to-br from-gray-800/30 to-gray-900/30 rounded-2xl border border-gray-700/30"
+              >
+                <Clock className="w-16 h-16 text-cyan-400 mx-auto mb-6" />
+                <h3 className="text-2xl font-bold text-white mb-4">Express Start</h3>
+                <p className="text-gray-300 mb-6">
+                  Get up and running in 2-4 weeks with our rapid deployment option for urgent needs.
+                </p>
+                <Link href="/contact" className="btn-primary">
+                  Start Express
+                </Link>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="text-center p-8 bg-gradient-to-br from-gray-800/30 to-gray-900/30 rounded-2xl border border-gray-700/30"
+              >
+                <Target className="w-16 h-16 text-purple-400 mx-auto mb-6" />
+                <h3 className="text-2xl font-bold text-white mb-4">Standard Implementation</h3>
+                <p className="text-gray-300 mb-6">
+                  Comprehensive implementation over 8-12 weeks with full customization and training.
+                </p>
+                <Link href="/contact" className="btn-primary">
+                  Start Standard
+                </Link>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="text-center p-8 bg-gradient-to-br from-gray-800/30 to-gray-900/30 rounded-2xl border border-gray-700/30"
+              >
+                <Users className="w-16 h-16 text-blue-400 mx-auto mb-6" />
+                <h3 className="text-2xl font-bold text-white mb-4">Enterprise Scale</h3>
+                <p className="text-gray-300 mb-6">
+                  Large-scale deployment over 12-16 weeks with dedicated team and custom development.
+                </p>
+                <Link href="/contact" className="btn-primary">
+                  Start Enterprise
+                </Link>
+              </motion.div>
             </div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 px-4">
-          <div className="container mx-auto max-w-4xl text-center">
+        <section className="py-20 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-cyan-900/20">
+          <div className="container mx-auto px-4 text-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.8 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
             >
-              <h2 className="text-4xl font-bold text-white mb-6">Ready to Begin?</h2>
-              <p className="text-xl text-gray-300 mb-8">
-                Start your transformation journey today with our revolutionary technology solutions.
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                Ready to Begin Your Journey?
+              </h2>
+              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Let's start transforming your business with cutting-edge technology. 
+                Our experts are ready to guide you every step of the way.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="/contact"
-                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
-                >
-                  Contact Our Team
+              <div className="flex flex-wrap justify-center gap-4">
+                <Link href="/contact" className="btn-primary">
+                  <Calendar className="w-5 h-5 mr-2" />
+                  Schedule Consultation
+                </Link>
+                <a href="tel:+13024640950" className="btn-secondary">
+                  <Phone className="w-5 h-5 mr-2" />
+                  Call Now
                 </a>
-                <a
-                  href="/quote"
-                  className="px-8 py-4 border-2 border-cyan-500 text-cyan-400 font-semibold rounded-full hover:bg-cyan-500 hover:text-black transition-all duration-300"
-                >
-                  Get a Quote
-                </a>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Contact Info */}
-        <section className="py-20 px-4 bg-black/30">
-          <div className="container mx-auto max-w-4xl text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 2.0 }}
-            >
-              <h2 className="text-4xl font-bold text-white mb-6">Get in Touch</h2>
-              <p className="text-xl text-gray-300 mb-8">
-                Have questions? Our team is ready to help you get started.
-              </p>
-              
-              <div className="grid md:grid-cols-3 gap-8">
-                <div className="flex flex-col items-center">
-                  <Phone className="w-8 h-8 text-cyan-400 mb-3" />
-                  <h3 className="text-lg font-semibold text-white mb-2">Call Us</h3>
-                  <p className="text-gray-300">+1 302 464 0950</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <Mail className="w-8 h-8 text-blue-400 mb-3" />
-                  <h3 className="text-lg font-semibold text-white mb-2">Email Us</h3>
-                  <p className="text-gray-300">kleber@ziontechgroup.com</p>
-                </div>
-                <div className="flex flex-col items-center">
-                  <MapPin className="w-8 h-8 text-purple-400 mb-3" />
-                  <h3 className="text-lg font-semibold text-white mb-2">Visit Us</h3>
-                  <p className="text-gray-300">364 E Main St STE 1008<br />Middletown DE 19709</p>
-                </div>
               </div>
             </motion.div>
           </div>
@@ -482,4 +540,6 @@ export default function GetStarted() {
       </div>
     </Layout>
   );
-}
+};
+
+export default GetStartedPage;
