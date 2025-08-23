@@ -264,7 +264,7 @@ import axios from 'axios';
 // NOTE: When the test suite is fully migrated to Vitest this shim can be removed together
 // with the associated `moduleNameMapper` entry in `jest.config.cjs`.
 // ---------------------------------------------------------------------------
-// eslint-disable-next-line @typescript-eslint/no-require-imports
+ 
 jest.mock('vitest', () => {
   const jestFn = (...args: unknown[]) => jest.fn(...(args as []));
   return {
@@ -278,7 +278,7 @@ jest.mock('vitest', () => {
       // Provide a simple implementation of `import.meta` mocking helpers
       // frequently used in Vitest examples
       // (no-op implementations because Jest already handles env vars via `process.env`).
-      // eslint-disable-next-line @typescript-eslint/no-require-imports
+       
       importActual: jest.requireActual,
       mockResolvedValue: <T = unknown>(value: T) => jest.fn().mockResolvedValue(value),
       mockRejectedValue: <T = unknown>(value: T) => jest.fn().mockRejectedValue(value),
@@ -368,7 +368,7 @@ jest.mock('@/context/FeedbackContext', () => {
 
 // react-redux hooks
 jest.mock('react-redux', () => {
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
+   
   const actualRedux = jest.requireActual('react-redux');
   return {
     ...actualRedux,

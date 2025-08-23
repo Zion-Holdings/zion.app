@@ -3,7 +3,6 @@ import ApiDocsLayout from '@/components/developers/ApiDocsLayout';
 import { CodeBlock } from '@/components/developers/CodeBlock';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Link from 'next/link';
-import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
 export function ApiSampleCode() {
 
@@ -26,7 +25,7 @@ async function getJobs(filters = {}) {
     const response = await api.get('/api/jobs', { params: filters });
     return response.data;
   } catch (error) {
-    logErrorToProduction('Error fetching jobs:', { data: error.response?.data || error.message });
+    // logErrorToProduction('Error fetching jobs:', { data: error.response?.data || error.message });
     throw error;
   }
 }
@@ -37,7 +36,7 @@ async function createJob(jobData) {
     const response = await api.post('/api/jobs', jobData);
     return response.data;
   } catch (error) {
-    logErrorToProduction('Error creating job:', { data: error.response?.data || error.message });
+    // logErrorToProduction('Error creating job:', { data: error.response?.data || error.message });
     throw error;
   }
 }
@@ -48,7 +47,7 @@ async function searchTalent(filters = {}) {
     const response = await api.get('/api/talent', { params: filters });
     return response.data;
   } catch (error) {
-    logErrorToProduction('Error searching talent:', { data: error.response?.data || error.message });
+    // logErrorToProduction('Error searching talent:', { data: error.response?.data || error.message });
     throw error;
   }
 }
@@ -58,7 +57,7 @@ async function main() {
   try {
     // Get all open jobs
     const jobs = await getJobs({ status: 'open', limit: 5 });
-    logInfo('Jobs:', { data: jobs });
+    // logInfo('Jobs:', { data: jobs });
     
     // Create a new job
     const newJob = await createJob({
@@ -72,13 +71,13 @@ async function main() {
       },
       skills: ['React', 'TypeScript', 'Tailwind CSS']
     });
-    logInfo('New job created:', { data: newJob });
+    // logInfo('New job created:', { data: newJob });
     
     // Search for talent with React skills
     const talent = await searchTalent({ skills: 'React', limit: 10 });
-    logInfo('Talent:', { data: talent });
+    // logInfo('Talent:', { data: talent });
   } catch (error) {
-    logErrorToProduction('Something went wrong:', { data: error });
+    // logErrorToProduction('Something went wrong:', { data: error });
   }
 }
 
@@ -217,7 +216,7 @@ async function main() {
   try {
     // Get all open jobs
     const jobs = await getJobs({ status: 'open', limit: 5 });
-    logInfo('Jobs:', { data: jobs });
+    // logInfo('Jobs:', { data: jobs });
     
     // Create a new job
     const newJob = await createJob({
@@ -231,13 +230,13 @@ async function main() {
       },
       skills: ['Node.js', 'Express', 'MongoDB']
     });
-    logInfo('New job created:', { data: newJob });
+    // logInfo('New job created:', { data: newJob });
     
     // Search for talent with Node.js skills
     const talent = await searchTalent({ skills: 'Node.js', limit: 10 });
-    logInfo('Talent:', { data: talent });
+    // logInfo('Talent:', { data: talent });
   } catch (error) {
-    logErrorToProduction('Something went wrong:', { data: error });
+    // logErrorToProduction('Something went wrong:', { data: error });
   }
 }
 

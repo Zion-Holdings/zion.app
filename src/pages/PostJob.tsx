@@ -4,11 +4,10 @@ import { JobPostingForm } from "@/components/jobs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { SEO } from "@/components/SEO";
 import { useAuth } from "@/hooks/useAuth";
-import { useRouter } from "next/router"; // Changed to named import
 import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function PostJob() {
-  const { isAuthenticated, isLoading } = useAuth();
+  const { isAuthenticated: _isAuthenticated, isLoading } = useAuth();
   const isMobile = useIsMobile();
   
   if (isLoading) {
@@ -35,7 +34,7 @@ export default function PostJob() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <JobPostingForm />
+            <JobPostingForm jobId={''} onSuccess={() => {}} />
           </CardContent>
         </Card>
       </main>

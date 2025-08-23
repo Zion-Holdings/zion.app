@@ -10,11 +10,14 @@ export type ApiKeyScope = 'jobs:read' | 'jobs:write' | 'talent:read' | 'quotes:w
 export interface ApiKey {
   id: string;
   name: string;
-  key_prefix: string;
-  scopes: ApiKeyScope[];
+  key?: string;
+  user_id: string;
   created_at: string;
-  last_used_at: string | null;
-  expires_at: string | null;
+  expires_at?: string;
+  scopes: ApiKeyScope[];
+  last_used_at?: string;
+  revoked: boolean;
+  key_prefix?: string;
   is_active: boolean;
 }
 
@@ -57,6 +60,7 @@ export function useApiKeys() {
     setError(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data: { session } } = await supabase.auth.getSession();
       if (!session) {
         setError("Authentication required");
@@ -65,7 +69,7 @@ export function useApiKeys() {
 
       const response = await api.get(`${getApiUrl()}/keys`, {
         headers: {
-          Authorization: `Bearer ${session.access_token}`,
+          'Authorization': `Bearer ${typeof session === 'object' && session !== null && 'access_token' in session ? (session as { access_token: string }).access_token : ''}`,
           'Content-Type': 'application/json'
         }
       });
@@ -97,15 +101,20 @@ export function useApiKeys() {
     setNewApiKey(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data: { session } } = await supabase.auth.getSession();
       if (!session) {
         setError("Authentication required");
         return;
       }
 
-      const response = await api.post(
-        `${getApiUrl()}/create`,
-        {
+      const response = await fetch(`${getApiUrl()}/create`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${typeof session === 'object' && session !== null && 'access_token' in session ? (session as { access_token: string }).access_token : ''}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
           name,
           scopes,
           expiresAt: expiresAt ? expiresAt.toISOString() : null
@@ -157,22 +166,21 @@ export function useApiKeys() {
     setNewApiKey(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data: { session } } = await supabase.auth.getSession();
       if (!session) {
         setError("Authentication required");
         return;
       }
 
-      const response = await api.post(
-        `${getApiUrl()}/regenerate`,
-        { keyId },
-        {
-          headers: {
-            Authorization: `Bearer ${session.access_token}`,
-            'Content-Type': 'application/json'
-          }
-        }
-      );
+      const response = await fetch(`${getApiUrl()}/regenerate`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${typeof session === 'object' && session !== null && 'access_token' in session ? (session as { access_token: string }).access_token : ''}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ keyId })
+      });
 
       if (response.status < 200 || response.status >= 300) {
         throw new Error(response.data.error || 'Failed to regenerate API key');
@@ -215,22 +223,21 @@ export function useApiKeys() {
     setError(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data: { session } } = await supabase.auth.getSession();
       if (!session) {
         setError("Authentication required");
         return;
       }
 
-      const response = await api.post(
-        `${getApiUrl()}/revoke`,
-        { keyId },
-        {
-          headers: {
-            Authorization: `Bearer ${session.access_token}`,
-            'Content-Type': 'application/json'
-          }
-        }
-      );
+      const response = await fetch(`${getApiUrl()}/revoke`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${typeof session === 'object' && session !== null && 'access_token' in session ? (session as { access_token: string }).access_token : ''}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ keyId })
+      });
 
       if (response.status < 200 || response.status >= 300) {
         throw new Error(response.data.error || 'Failed to revoke API key');
@@ -270,6 +277,7 @@ export function useApiKeys() {
     setError(null);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data: { session } } = await supabase.auth.getSession();
       if (!session) {
         setError("Authentication required");
@@ -280,7 +288,7 @@ export function useApiKeys() {
         `${getApiUrl()}/logs?limit=${limit}&offset=${offset}`,
         {
           headers: {
-            Authorization: `Bearer ${session.access_token}`,
+            'Authorization': `Bearer ${typeof session === 'object' && session !== null && 'access_token' in session ? (session as { access_token: string }).access_token : ''}`,
             'Content-Type': 'application/json'
           }
         }

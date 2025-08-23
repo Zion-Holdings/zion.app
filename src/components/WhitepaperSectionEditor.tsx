@@ -28,6 +28,8 @@ const WhitepaperSectionEditor: React.FC<WhitepaperSectionEditorProps> = ({ title
     setSuggestions(null);
     setShowSuggestions(false);
 
+    if (!supabase) throw new Error('Supabase client not initialized');
+
     try {
       const { data, error: funcError } = await supabase.functions.invoke('get-whitepaper-section-suggestions', {
         body: {

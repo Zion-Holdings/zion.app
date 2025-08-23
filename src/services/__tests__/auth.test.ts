@@ -1,4 +1,4 @@
-import { resetPassword, register } from '../auth'; // Assuming register is also in this file
+import { resetPassword } from '../auth';
 
 // Mock global fetch
 global.fetch = jest.fn();

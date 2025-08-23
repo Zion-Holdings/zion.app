@@ -2,8 +2,8 @@
 import React from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { HireRequestForm } from "./HireRequestForm";
-import { TalentProfile } from "@/types/talent";
-import { UserProfile } from "@/types/auth";
+import type { TalentProfile } from "@/types/talent";
+import type { UserProfile } from "@/types/auth";
 
 interface HireRequestModalProps {
   talent: TalentProfile | null;
@@ -31,7 +31,7 @@ export function HireRequestModal({ talent, isOpen, onClose, userDetails }: HireR
         <HireRequestForm 
           talent={talent}
           onClose={handleClose}
-          userDetails={userDetails}
+          {...(userDetails ? { userDetails: { name: userDetails.name, email: userDetails.email, id: userDetails.id } } : {})}
         />
       </DialogContent>
     </Dialog>

@@ -1,10 +1,8 @@
-
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { CalendarIcon, Loader2 } from 'lucide-react';
-
 
 import { format } from 'date-fns';
 
@@ -26,7 +24,7 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover';
 import { AIMilestoneGenerator } from './AIMilestoneGenerator';
-import { GeneratedMilestone } from '@/hooks/useMilestoneGenerator';
+import type { GeneratedMilestone } from '@/hooks/useMilestoneGenerator';
 
 const formSchema = z.object({
   title: z.string().min(1, 'Title is required'),
@@ -35,16 +33,16 @@ const formSchema = z.object({
   amount: z.coerce.number().min(0, 'Amount must be greater than or equal to 0'),
 });
 
-type MilestoneFormValues = z.infer<typeof formSchema>;
+export type MilestoneFormValues = z.infer<typeof formSchema>;
 
 interface AddMilestoneFormProps {
   onSubmit: (data: MilestoneFormValues) => void;
   isSubmitting: boolean;
   onCancel?: () => void;
-  projectScope?: string;
-  projectStartDate?: string;
-  projectEndDate?: string;
-  projectType?: string;
+  projectScope?: string | undefined;
+  projectStartDate?: string | undefined;
+  projectEndDate?: string | undefined;
+  projectType?: string | undefined;
 }
 
 export function AddMilestoneForm({
@@ -54,7 +52,7 @@ export function AddMilestoneForm({
   projectScope = '',
   projectStartDate = '',
   projectEndDate = '',
-  projectType = 'Other'
+  projectType = 'Other',
 }: AddMilestoneFormProps) {
   const form = useForm<MilestoneFormValues>({
     resolver: zodResolver(formSchema),
@@ -77,7 +75,7 @@ export function AddMilestoneForm({
       if (milestone) {
         onSubmit({
           title: milestone.title,
-          description: milestone.description,
+          description: milestone.description || '',
           due_date: milestone.dueDate ? new Date(milestone.dueDate) : undefined,
           amount: milestone.estimatedHours * 10, // Convert hours to a default payment amount
         });
@@ -86,10 +84,10 @@ export function AddMilestoneForm({
     }
 
     // If there are multiple milestones, submit them one by one
-    milestones.forEach(milestone => {
+    milestones.forEach((milestone) => {
       onSubmit({
         title: milestone.title,
-        description: milestone.description,
+        description: milestone.description || '',
         due_date: milestone.dueDate ? new Date(milestone.dueDate) : undefined,
         amount: milestone.estimatedHours * 10, // Convert hours to a default payment amount
       });
@@ -99,7 +97,7 @@ export function AddMilestoneForm({
   const handleAddMilestone = (milestone: GeneratedMilestone) => {
     onSubmit({
       title: milestone.title,
-      description: milestone.description,
+      description: milestone.description || '',
       due_date: milestone.dueDate ? new Date(milestone.dueDate) : undefined,
       amount: milestone.estimatedHours * 10, // Convert hours to a default payment amount
     });
@@ -124,93 +122,117 @@ export function AddMilestoneForm({
           <FormField
             control={form.control}
             name="title"
-            render={({ field }: { field: any }) => (
-              <FormItem>
-                <FormLabel>Title</FormLabel>
-                <FormControl>
-                  <Input placeholder="Milestone title" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
+            render={({ field }: { field: unknown }) => {
+              if (typeof field !== 'object' || field === null) return null;
+              return (
+                <FormItem>
+                  <FormLabel>Title</FormLabel>
+                  <FormControl>
+                    <Input
+                      placeholder="Milestone title"
+                      {...(field as object)}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              );
+            }}
           />
 
           <FormField
             control={form.control}
             name="description"
-            render={({ field }: { field: any }) => (
-              <FormItem>
-                <FormLabel>Description (optional)</FormLabel>
-                <FormControl>
-                  <Textarea
-                    placeholder="Describe what needs to be delivered"
-                    className="min-h-[100px]"
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
+            render={({ field }: { field: unknown }) => {
+              if (typeof field !== 'object' || field === null) return null;
+              return (
+                <FormItem>
+                  <FormLabel>Description (optional)</FormLabel>
+                  <FormControl>
+                    <Textarea
+                      placeholder="Describe what needs to be delivered"
+                      className="min-h-[100px]"
+                      {...(field as object)}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              );
+            }}
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <FormField
               control={form.control}
               name="due_date"
-              render={({ field }: { field: any }) => (
-                <FormItem className="flex flex-col">
-                  <FormLabel>Due Date (optional)</FormLabel>
-                  <Popover>
-                    <PopoverTrigger asChild>
-                      <FormControl>
-                        <Button
-                          variant="outline"
-                          className="w-full pl-3 text-left font-normal"
-                        >
-                          {field.value ? (
-                            format(field.value, "PPP")
-                          ) : (
-                            <span className="text-muted-foreground">
-                              Pick a date
-                            </span>
-                          )}
-                          <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                        </Button>
-                      </FormControl>
-                    </PopoverTrigger>
-                    <PopoverContent className="w-auto p-0" align="start">
-                      <Calendar
-                        mode="single"
-                        selected={field.value}
-                        onSelect={field.onChange}
-                        disabled={(date) => date < new Date()}
-                        initialFocus
-                      />
-                    </PopoverContent>
-                  </Popover>
-                  <FormMessage />
-                </FormItem>
-              )}
+              render={({ field }: { field: unknown }) => {
+                if (typeof field !== 'object' || field === null) return null;
+                return (
+                  <FormItem className="flex flex-col">
+                    <FormLabel>Due Date (optional)</FormLabel>
+                    <Popover>
+                      <PopoverTrigger asChild>
+                        <FormControl>
+                          <Button
+                            variant="outline"
+                            className="w-full pl-3 text-left font-normal"
+                          >
+                            {(field as { value?: unknown }).value ? (
+                              format((field as { value: Date }).value, 'PPP')
+                            ) : (
+                              <span className="text-muted-foreground">
+                                Pick a date
+                              </span>
+                            )}
+                            <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                          </Button>
+                        </FormControl>
+                      </PopoverTrigger>
+                      <PopoverContent className="w-auto p-0" align="start">
+                        <Calendar
+                          mode="single"
+                          selected={
+                            (field as { value?: Date }).value || undefined
+                          }
+                          onSelect={
+                            (
+                              field as {
+                                onChange?: (date: Date | undefined) => void;
+                              }
+                            ).onChange || (() => {})
+                          }
+                          disabled={(date) => date < new Date()}
+                          initialFocus
+                          required={false}
+                        />
+                      </PopoverContent>
+                    </Popover>
+                    <FormMessage />
+                  </FormItem>
+                );
+              }}
             />
 
             <FormField
               control={form.control}
               name="amount"
-              render={({ field }: { field: any }) => (
-                <FormItem>
-                  <FormLabel>Amount ($)</FormLabel>
-                  <FormControl>
-                    <Input
-                      type="number"
-                      min="0"
-                      step="0.01"
-                      placeholder="0.00"
-                      {...field}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
+              render={({ field }: { field: unknown }) => {
+                if (typeof field !== 'object' || field === null) return null;
+                return (
+                  <FormItem>
+                    <FormLabel>Amount ($)</FormLabel>
+                    <FormControl>
+                      <Input
+                        type="number"
+                        min="0"
+                        step="0.01"
+                        placeholder="0.00"
+                        {...(field as object)}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                );
+              }}
             />
           </div>
 
@@ -232,7 +254,7 @@ export function AddMilestoneForm({
                   Saving...
                 </>
               ) : (
-                "Add Milestone"
+                'Add Milestone'
               )}
             </Button>
           </div>

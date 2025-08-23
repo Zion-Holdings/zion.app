@@ -44,6 +44,7 @@ export function ServiceDescriptionForm({ onDescriptionGenerated }: ServiceDescri
     setIsLoading(true);
     
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data: response, error } = await supabase.functions.invoke('generate-service-description', {
         body: { 
           title: data.title, 
@@ -56,11 +57,13 @@ export function ServiceDescriptionForm({ onDescriptionGenerated }: ServiceDescri
         throw new Error(error.message);
       }
       
-      if (response && (response as any).error) {
-        throw new Error((response as any).error);
+      if (response && typeof response === 'object' && response !== null && 'error' in response) {
+        throw new Error((response as { error: string }).error);
       }
 
-      const description = response ? (response as any).description : "Professional service with expert knowledge and proven results. We deliver high-quality solutions tailored to your specific needs.";
+      const description = response && typeof response === 'object' && response !== null && 'description' in response
+        ? (response as { description: string }).description
+        : "Professional service with expert knowledge and proven results. We deliver high-quality solutions tailored to your specific needs.";
       
       onDescriptionGenerated(description);
       
@@ -97,58 +100,67 @@ export function ServiceDescriptionForm({ onDescriptionGenerated }: ServiceDescri
             <FormField
               control={form.control}
               name="title"
-              render={({ field }: { field: any }) => (
-                <FormItem>
-                  <FormLabel className="text-zion-slate-light">Service Title</FormLabel>
-                  <FormControl>
-                    <Input
-                      {...field}
-                      placeholder="e.g. Professional Web Design Services"
-                      className="bg-zion-blue border border-zion-blue-light text-white"
-                      disabled={isLoading}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
+              render={({ field }: { field: unknown }) => {
+                if (typeof field !== 'object' || field === null) return null;
+                return (
+                  <FormItem>
+                    <FormLabel className="text-zion-slate-light">Service Title</FormLabel>
+                    <FormControl>
+                      <Input
+                        {...(field as object)}
+                        placeholder="e.g. Professional Web Design Services"
+                        className="bg-zion-blue border border-zion-blue-light text-white"
+                        disabled={isLoading}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                );
+              }}
             />
             
             <FormField
               control={form.control}
               name="keyFeatures"
-              render={({ field }: { field: any }) => (
-                <FormItem>
-                  <FormLabel className="text-zion-slate-light">Key Features</FormLabel>
-                  <FormControl>
-                    <Textarea
-                      {...field}
-                      placeholder="Enter key features, separated by commas"
-                      className="bg-zion-blue border border-zion-blue-light text-white min-h-20"
-                      disabled={isLoading}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
+              render={({ field }: { field: unknown }) => {
+                if (typeof field !== 'object' || field === null) return null;
+                return (
+                  <FormItem>
+                    <FormLabel className="text-zion-slate-light">Key Features</FormLabel>
+                    <FormControl>
+                      <Textarea
+                        {...(field as object)}
+                        placeholder="Enter key features, separated by commas"
+                        className="bg-zion-blue border border-zion-blue-light text-white min-h-20"
+                        disabled={isLoading}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                );
+              }}
             />
             
             <FormField
               control={form.control}
               name="targetAudience"
-              render={({ field }: { field: any }) => (
-                <FormItem>
-                  <FormLabel className="text-zion-slate-light">Target Audience</FormLabel>
-                  <FormControl>
-                    <Input
-                      {...field}
-                      placeholder="e.g. Small businesses, Startups, E-commerce brands"
-                      className="bg-zion-blue border border-zion-blue-light text-white"
-                      disabled={isLoading}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
+              render={({ field }: { field: unknown }) => {
+                if (typeof field !== 'object' || field === null) return null;
+                return (
+                  <FormItem>
+                    <FormLabel className="text-zion-slate-light">Target Audience</FormLabel>
+                    <FormControl>
+                      <Input
+                        {...(field as object)}
+                        placeholder="e.g. Small businesses, Startups, E-commerce brands"
+                        className="bg-zion-blue border border-zion-blue-light text-white"
+                        disabled={isLoading}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                );
+              }}
             />
             
             <Button 

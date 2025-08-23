@@ -1,4 +1,4 @@
-import React, { useEffect, useState, FormEvent } from 'react';
+import React, { useEffect, useState, type FormEvent } from 'react';
 import Link from 'next/link';
 // import { Review } from '@/types/reviews'; // Assuming this path is correct from earlier exploration
 // For the purpose of this subtask, let's define a local Review type if the import path is uncertain or to ensure self-containment
@@ -102,8 +102,8 @@ const ProductReviews: React.FC<ProductReviewsProps> = ({ productId }) => {
       }
       const data: Review[] = await response.json();
       setReviews(data);
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'An unknown error occurred');
     } finally {
       setIsLoading(false);
     }
@@ -146,8 +146,8 @@ const ProductReviews: React.FC<ProductReviewsProps> = ({ productId }) => {
       setNewRating(0);
       setNewComment('');
       fetchReviews(); // Refresh reviews list
-    } catch (err: any) {
-      setSubmitError(err.message);
+    } catch (err: unknown) {
+      setSubmitError(err instanceof Error ? err.message : 'An unknown error occurred');
     } finally {
       setIsSubmitting(false);
     }

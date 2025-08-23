@@ -72,9 +72,9 @@ export default function ProductPage() {
   return (
     <>
       <SEO
-        title={product.title}
-        description={product.description}
-        ogImage={product.images?.[0]}
+        title={product?.title || 'Product'}
+        description={product?.description || 'Product details on Zion'}
+        ogImage={product?.images?.[0] ?? ''}
       />
       <div className="min-h-screen bg-zion-blue p-6 text-white">
         <h1 className="text-2xl font-bold mb-4">{product.title}</h1>

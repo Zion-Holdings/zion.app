@@ -1,4 +1,5 @@
-import { useState, FormEvent } from 'react';
+import { useState } from 'react';
+import type { FormEvent } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { supabase } from '@/utils/supabase/client'; // Assuming supabase client is configured
@@ -34,6 +35,10 @@ export function SignUpForm({ onSignInClick }: SignUpFormProps) {
     setIsLoading(true);
 
     try {
+      if (!supabase) {
+        throw new Error('Supabase client not available');
+      }
+      
       const { data, error: signUpError } = await supabase.auth.signUp({
         email,
         password,
@@ -47,7 +52,7 @@ export function SignUpForm({ onSignInClick }: SignUpFormProps) {
         logErrorToProduction('Supabase sign-up error:', { data: signUpError });
         setError(signUpError.message || "An error occurred during sign up.");
       } else if (data.user) {
-        logInfo('Supabase sign-up successful, user pending confirmation:', { data: data.user });
+        logInfo('Supabase sign-up successful, user pending confirmation:', { data:  { data: data.user } });
         // Check if user needs confirmation
         const firstIdentity = data.user.identities?.[0];
         if (data.user.identities && data.user.identities.length > 0 && firstIdentity && !firstIdentity.identity_data?.email_verified && !data.user.email_confirmed_at) {

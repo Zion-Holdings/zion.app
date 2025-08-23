@@ -20,7 +20,7 @@ const Switch = React.forwardRef<
         className
       )}
       ref={ref}
-      onCheckedChange={onCheckedChange}
+      onCheckedChange={onCheckedChange ?? (() => {})}
       onKeyDown={handleKeyDown}
       {...props}
     >

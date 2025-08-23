@@ -12,7 +12,7 @@ export default function Custom404() {
       user: user ? { id: user.id, email: user.email } : undefined,
       extra: { path: window.location.pathname },
     });
-    logInfo('Reported 404 error', { data:  { errorId: eventId } });
+    logInfo('Reported 404 error', { data:  { data:  { errorId: eventId } } });
   }, [user]);
 
   const handleGoBack = () => {

@@ -1,5 +1,5 @@
 // Auto-generated API type helpers
-import type { NextApiRequest, NextApiResponse } from 'next';
+import type { NextApiRequest } from 'next';
 
 export function safeQueryParam<T = string>(query: NextApiRequest['query'], key: string): T | undefined {
   const value = (query as Record<string, unknown>)[key];

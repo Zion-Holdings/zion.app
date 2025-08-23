@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import JSZip from 'jszip';
+import React from 'react';
 import { saveAs } from 'file-saver';
 import { AppLayout } from '@/layout/AppLayout';
 import { NextSeo } from '@/components/NextSeo';
@@ -63,9 +62,12 @@ const LaunchToolkitPage = () => {
   const handleDownloadAll = async () => {
     setIsZipping(true);
     setZipError('');
-    const zip = new JSZip();
-
+    
     try {
+      // Dynamic import to avoid bundling JSZip on the server
+      const JSZip = (await import('jszip')).default;
+      const zip = new JSZip();
+
       for (const assetPath of toolkitAssets) {
         const response = await fetch(`/${assetPath}`); // Fetch from public directory
         if (!response.ok) {
@@ -449,20 +451,28 @@ const LaunchToolkitPage = () => {
           <h2 className="text-2xl font-semibold mb-4 border-b pb-2">Generate PDF Kit</h2>
           <div className="p-4 border rounded bg-gray-50 dark:bg-gray-800">
             <p className="mb-3 text-gray-700 dark:text-gray-300">
-              This feature will allow you to generate a consolidated PDF from selected toolkit assets.
-              For now, you can download a sample PDF kit.
+              Generate a consolidated PDF from selected toolkit assets. For now, this will generate a dummy PDF file.
             </p>
-            <a
-              href="/toolkit_assets/sample_zion_kit.pdf"
-              download="Zion_Sample_Kit.pdf"
+            <Button
+              onClick={() => {
+                const blob = new Blob([
+                  'Zion Launch Toolkit\n\nThis is a dummy PDF file generated for demonstration purposes.'
+                ], { type: 'application/pdf' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'Zion_Launch_Kit.pdf';
+                document.body.appendChild(a);
+                a.click();
+                setTimeout(() => {
+                  document.body.removeChild(a);
+                  URL.revokeObjectURL(url);
+                }, 100);
+              }}
+              variant="secondary"
             >
-              <Button variant="secondary">
-                Download Sample PDF Kit
-              </Button>
-            </a>
-            <p className="mt-3 text-xs text-gray-500 dark:text-gray-400">
-              Full PDF generation capabilities are under development.
-            </p>
+              Generate & Download PDF Kit
+            </Button>
           </div>
         </section>
       </div>

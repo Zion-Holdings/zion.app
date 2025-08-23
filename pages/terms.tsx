@@ -555,6 +555,5 @@ const Terms: React.FC = () => {
       </div>
     </Layout>
   );
-};
-
-export default Terms;
+}
+Terms.displayName = "Terms";

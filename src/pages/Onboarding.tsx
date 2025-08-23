@@ -19,7 +19,7 @@ export default function Onboarding() {
   const [currentStep, setCurrentStep] = useState(0);
   const [userType, setUserType] = useState<"serviceProvider" | "talent" | "client" | null>(null);
   const [interests, setInterests] = useState<string[]>([]);
-  const [categories, setCategories] = useState<string[]>([]);
+  const [_categories, setCategories] = useState<string[]>([]);
   const router = useRouter();
 
   useEffect(() => {
@@ -29,17 +29,15 @@ export default function Onboarding() {
     }
   }, [user, isLoading, router]);
 
-  // Convert our user types to match what's expected in the database
-  const mapUserTypeToDatabase = (type: "serviceProvider" | "talent" | "client") => {
+  // Convert our user types to match what's expected in the UserProfile type
+  const mapUserTypeToDatabase = (type: "serviceProvider" | "talent" | "client"): "talent" | "client" | "admin" => {
     switch (type) {
       case "serviceProvider":
-        return "creator";
+        return "admin";
       case "talent":
-        return "jobSeeker";
+        return "talent";
       case "client":
-        return "employer";
-      default:
-        return "buyer";
+        return "client";
     }
   };
 
@@ -77,18 +75,19 @@ export default function Onboarding() {
         id: user.id,
         displayName: data.displayName,
         bio: data.bio, // This is now valid since we added bio to UserDetails
-        userType: dbUserType as any,
+        userType: dbUserType,
         headline: data.headline,
         profileComplete: true
       });
-      
+
+      if (!supabase) throw new Error('Supabase client not initialized');
       // Update onboarding milestone
       await supabase.rpc('update_onboarding_milestone', {
         _user_id: user.id,
         _milestone: 'profile_completed',
         _status: true
       });
-      
+
       toast({
         title: 'Profile completed!',
         description: 'Your profile has been set up successfully.',
@@ -141,6 +140,8 @@ export default function Onboarding() {
     // You can return a loader here, or null, or a basic skeleton
     return <div>Loading...</div>;
   }
+
+  if (!supabase) throw new Error('Supabase client not initialized');
 
   return (
     <>

@@ -12,6 +12,7 @@ export const useDeleteMilestone = () => {
   
   const deleteMilestone = async (milestoneId: string) => {
     if (!user) return false;
+    if (!supabase) throw new Error('Supabase client not initialized');
     
     try {
       setIsSubmitting(true);

@@ -1,4 +1,4 @@
-import { CartItem as CartItemType } from '@/types/cart';
+import type { CartItem as CartItemType } from '@/types/cart';
 import { Button } from '@/components/ui/button';
 
 interface CartItemProps {

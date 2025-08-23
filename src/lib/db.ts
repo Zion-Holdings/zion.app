@@ -20,7 +20,7 @@ function openDB(): Promise<IDBDatabase | null> {
     try {
       request = indexedDB.open(DB_NAME, DB_VERSION);
     } catch (err) {
-      logWarn('IndexedDB not available. Falling back to in-memory store.', { data: err });
+      logWarn('IndexedDB not available. Falling back to in-memory store.', { data:  { data: err } });
       indexedDBAvailable = false;
       return resolve(null);
     }
@@ -35,7 +35,7 @@ function openDB(): Promise<IDBDatabase | null> {
     };
     request.onsuccess = () => resolve(request.result);
     request.onerror = () => {
-      logWarn('IndexedDB open error. Falling back to in-memory store.', { data: request.error });
+      logWarn('IndexedDB open error. Falling back to in-memory store.', { data:  { data: request.error } });
       indexedDBAvailable = false;
       resolve(null);
     };

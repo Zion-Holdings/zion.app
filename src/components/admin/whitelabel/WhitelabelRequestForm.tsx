@@ -1,6 +1,6 @@
-
 import React from 'react';
-import { useForm, ControllerRenderProps } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
+import type { ControllerRenderProps } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Input } from '@/components/ui/input';
@@ -45,7 +45,6 @@ export function WhitelabelRequestForm() {
   
   const onSubmit = async (values: FormValues) => {
     try {
-      // Prepare the data
       const tenantData = {
         brand_name: values.brand_name,
         subdomain: values.subdomain,
@@ -58,6 +57,10 @@ export function WhitelabelRequestForm() {
           cta: values.cta,
         }
       };
+      
+      if (!supabase) {
+        throw new Error('Supabase client not available');
+      }
       
       // Submit to Supabase
       const { error } = await supabase

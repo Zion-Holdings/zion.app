@@ -3,7 +3,6 @@ import { useRouter } from 'next/router';
 import { NextSeo } from '@/components/NextSeo';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ShoppingCart, Star, Truck, Shield, RotateCcw, Clock, AlertTriangle, ArrowLeft } from 'lucide-react';
 
@@ -16,11 +15,10 @@ import { ShoppingCart, Star, Truck, Shield, RotateCcw, Clock, AlertTriangle, Arr
 
 import { toast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
-import { getStripe } from "@/utils/getStripe";
 import { useCart } from '@/context/CartContext';
 import { ImageWithRetry } from '@/components/ui/ImageWithRetry';
 import { equipmentListings } from '@/data/equipmentData';
-import { ProductListing } from '@/types/listings';
+import type { ProductListing } from '@/types/listings';
 import { motion } from 'framer-motion';
 import { useCurrency } from '@/hooks/useCurrency';
 import {logErrorToProduction} from '@/utils/productionLogger';
@@ -59,12 +57,12 @@ function convertProductListingToEquipmentDetails(item: ProductListing): Equipmen
     description: item.description,
     brand: item.brand || 'Unknown',
     category: item.category,
-    subcategory: item.subcategory,
+    subcategory: item.subcategory ?? '',
     images: item.images || ['https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&h=500'],
     price: item.price || 0,
     currency: item.currency || '$',
-    rating: item.rating,
-    reviewCount: item.reviewCount,
+    rating: typeof item.rating === 'number' ? item.rating : 0,
+    reviewCount: typeof item.reviewCount === 'number' ? item.reviewCount : 0,
     inStock: item.availability === 'In Stock' || !item.availability,
     expectedShipping: item.availability || 'In Stock',
     specifications: (item.specifications || []).map((spec) => ({ 
@@ -87,7 +85,7 @@ export const SAMPLE_EQUIPMENT: { [key: string]: EquipmentDetails } =
 export default function EquipmentDetail() {
   const router = useRouter();
   const { id } = router.query as { id?: string };
-  const { isAuthenticated, user } = useAuth();
+  const { isAuthenticated, user: _user } = useAuth();
   const { items, dispatch } = useCart();
   const { formatPrice } = useCurrency();
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -147,8 +145,8 @@ export default function EquipmentDetail() {
         // If not found anywhere, set error
         setError('Equipment not found');
         setLoading(false);
-      } catch (error) {
-        logErrorToProduction('Error loading equipment:', { data: error });
+      } catch (_error) {
+        logErrorToProduction('Error loading equipment:', { data: _error });
         setError('Failed to load equipment details');
         setLoading(false);
       }
@@ -168,30 +166,21 @@ export default function EquipmentDetail() {
     }
 
     setIsAdding(true);
-    try {
-      dispatch({
-        type: 'ADD_ITEM',
-        payload: {
-          id: equipment.id,
-          name: equipment.name,
-          price: equipment.price,
-          quantity,
-        },
-      });
+    dispatch({
+      type: 'ADD_ITEM',
+      payload: {
+        id: equipment.id,
+        name: equipment.name,
+        price: equipment.price,
+        quantity,
+      },
+    });
 
-      toast({
-        title: "Added to Cart",
-        description: `${equipment.name} has been added to your cart.`,
-      });
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to add item to cart. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsAdding(false);
-    }
+    toast({
+      title: "Added to Cart",
+      description: `${equipment.name} has been added to your cart.`,
+    });
+    setIsAdding(false);
   };
 
   const inCart = items.some(item => item.id === equipment?.id);
@@ -267,9 +256,9 @@ export default function EquipmentDetail() {
         title={`${equipment.name} - Zion Marketplace`}
         description={equipment.description}
         openGraph={{
-          title: `${equipment.name} - Zion Marketplace`,
+          title: equipment.name,
           description: equipment.description,
-          images: equipment.images.length > 0 && equipment.images[0] ? [{ url: equipment.images[0] }] : undefined
+          images: equipment.images ? equipment.images.map((url) => ({ url })) : [],
         }}
       />
       <div className="min-h-screen bg-zion-blue py-8 px-4">

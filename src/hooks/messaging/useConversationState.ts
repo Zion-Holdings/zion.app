@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Conversation, Message } from '@/types/messaging';
+import type { Conversation, Message } from '@/types/messaging';
 
 /**
  * Hook to manage messaging state

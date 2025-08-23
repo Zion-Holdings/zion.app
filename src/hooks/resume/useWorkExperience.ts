@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
-import { WorkExperience } from '@/types/resume';
+import type { WorkExperience } from '@/types/resume';
 import { useAuth } from '@/hooks/useAuth';
 import { formatDateForDB, handleResumeError, showSuccessToast } from './useResumeUtils';
 
@@ -15,6 +15,7 @@ export function useWorkExperience() {
       setError('You must be logged in to update work experience');
       return false;
     }
+    if (!supabase) throw new Error('Supabase client not initialized');
     
     setIsLoading(true);
     setError(null);
@@ -49,6 +50,7 @@ export function useWorkExperience() {
       setError('You must be logged in to update work experience');
       return false;
     }
+    if (!supabase) throw new Error('Supabase client not initialized');
     
     setIsLoading(true);
     setError(null);
@@ -83,6 +85,7 @@ export function useWorkExperience() {
       setError('You must be logged in to delete work experience');
       return false;
     }
+    if (!supabase) throw new Error('Supabase client not initialized');
     
     setIsLoading(true);
     setError(null);

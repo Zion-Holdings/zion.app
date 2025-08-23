@@ -37,11 +37,11 @@ export function observeCLS(callback: (cls: number) => void): void {
 
   const observer = new PerformanceObserver((entryList) => {
     for (const entry of entryList.getEntries()) {
-      const layoutShiftEntry = entry as any;
+      const layoutShiftEntry = entry as unknown;
       // Only count layout shifts without recent user input
-      if (layoutShiftEntry.hadRecentInput) continue;
+      if ((layoutShiftEntry as CLSEntry).hadRecentInput) continue;
 
-      clsValue += layoutShiftEntry.value;
+      clsValue += (layoutShiftEntry as CLSEntry).value;
       clsEntries.push(entry);
     }
     
@@ -101,7 +101,10 @@ export function observeFID(callback: (fid: number) => void): void {
   const observer = new PerformanceObserver((entryList) => {
     for (const entry of entryList.getEntries()) {
       // Only report FID for the first input
-      callback((entry as any).processingStart - entry.startTime);
+      // Use type guard for PerformanceEventTiming
+      if ('processingStart' in entry) {
+        callback((entry as PerformanceEventTiming).processingStart - entry.startTime);
+      }
       observer.disconnect();
     }
   });
@@ -184,7 +187,7 @@ export function initPerformanceMonitoring(): void {
     setTimeout(() => {
       if (process.env.NODE_ENV === 'development' || 
           localStorage.getItem('performance-monitoring') === 'true') {
-        logInfo('📊 Performance Metrics Summary:', { data: metrics });
+        logInfo('📊 Performance Metrics Summary:', { data:  { data: metrics } });
       }
     }, 5000); // Wait 5 seconds for metrics to stabilize
   });
@@ -199,7 +202,7 @@ export function reportPerformanceMetrics(metrics: Partial<PerformanceMetrics>): 
 
   // Report to your analytics service
   if (typeof window !== 'undefined' && 'gtag' in window) {
-    (window as any).gtag('event', 'web_vitals', {
+    (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag?.('event', 'web_vitals', {
       custom_parameter_cls: metrics.cls,
       custom_parameter_fcp: metrics.fcp,
       custom_parameter_lcp: metrics.lcp,
@@ -225,15 +228,19 @@ export function observeFontLoading(): void {
 
   // Monitor font loading
   document.fonts.addEventListener('loadingstart', (event) => {
-    logInfo(`🔤 Font loading started: ${(event as any).fontface.family}`);
+    // Some browsers may not support event.fontface, fallback to (event as any)['fontface']
+    const fontface = (event as { fontface?: { family?: string } }).fontface;
+    logInfo(`🔤 Font loading started: ${fontface ? fontface.family : 'unknown'}`);
   });
 
   document.fonts.addEventListener('loadingdone', (event) => {
-    logInfo(`✅ Font loaded: ${(event as any).fontface.family}`);
+    const fontface = (event as { fontface?: { family?: string } }).fontface;
+    logInfo(`✅ Font loaded: ${fontface ? fontface.family : 'unknown'}`);
   });
 
   document.fonts.addEventListener('loadingerror', (event) => {
-    logErrorToProduction(`❌ Font loading error: ${(event as any).fontface.family}`);
+    const fontface = (event as { fontface?: { family?: string } }).fontface;
+    logErrorToProduction(`❌ Font loading error: ${fontface ? fontface.family : 'unknown'}`);
   });
 
   // Check if fonts are ready
@@ -338,8 +345,8 @@ export class PerformanceMonitor {
 
   private sendToAnalytics(name: string, value: number): void {
     // Send to your analytics service
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', name, {
+    if (typeof window !== 'undefined' && (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag) {
+      (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag!('event', name, {
         event_category: 'Web Vitals',
         value: Math.round(value),
         non_interaction: true,
@@ -455,7 +462,7 @@ export const bundleOptimization = {
 // Memory optimization utilities
 export const memoryOptimization = {
   // Debounce function calls
-  debounce<T extends (...args: any[]) => any>(
+  debounce<T extends (...args: unknown[]) => unknown>(
     func: T,
     wait: number
   ): (...args: Parameters<T>) => void {
@@ -467,7 +474,7 @@ export const memoryOptimization = {
   },
 
   // Throttle function calls
-  throttle<T extends (...args: any[]) => any>(
+  throttle<T extends (...args: unknown[]) => unknown>(
     func: T,
     limit: number
   ): (...args: Parameters<T>) => void {

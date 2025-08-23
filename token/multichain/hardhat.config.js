@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-require-imports */
+ 
 require("@nomicfoundation/hardhat-toolbox");
 
 module.exports = {

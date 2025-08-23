@@ -1,6 +1,6 @@
 import { TalentCard } from "@/components/talent/TalentCard";
 import { TalentSkeleton } from "@/components/talent/TalentSkeleton";
-import { TalentProfile } from "@/types/talent";
+import type { TalentProfile } from "@/types/talent";
 import { logInfo } from '@/utils/productionLogger';
 
 export interface TalentGridProps {
@@ -27,7 +27,7 @@ export function TalentGrid({
       handleRequestHire(talent);
     } else {
       // Default implementation
-      logInfo('Request to hire:', { data: talent.id });
+      logInfo('Request to hire:', { data:  { data: talent.id } });
     }
   };
 

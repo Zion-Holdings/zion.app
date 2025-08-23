@@ -3,7 +3,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { SkillsFilterProps } from "@/types/filters";
+import type { SkillsFilterProps } from "@/types/filters";
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
 // Common skills in AI and tech

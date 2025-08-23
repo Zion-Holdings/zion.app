@@ -38,6 +38,11 @@ $PM install
 if command -v npx >/dev/null 2>&1; then
   echo "Generating Prisma client..."
   npx prisma generate
+  # Automatically install Playwright browsers if the dependency exists
+  if grep -q "@playwright/test" package.json >/dev/null 2>&1; then
+    echo "Installing Playwright browsers..."
+    npx playwright install || echo "Warning: Failed to install Playwright browsers"
+  fi
 else
   echo "Warning: npx not found. Skipping Prisma client generation."
 fi

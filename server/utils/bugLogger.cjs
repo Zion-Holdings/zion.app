@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const LOG_FILE = path.resolve(__dirname, '..', 'logs', 'bug_log.json');
+// Store bug logs under logs/bug/bug_log.json to keep files organized
+const LOG_FILE = path.resolve(__dirname, '..', 'logs', 'bug', 'bug_log.json');
 
 function logBug({
   errorMessage,

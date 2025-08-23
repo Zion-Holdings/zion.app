@@ -1,6 +1,5 @@
-import { format } from 'date-fns';
 import { safeStorage } from './safeStorage';
-import {logErrorToProduction} from '@/utils/productionLogger';
+import { logErrorToProduction } from '@/utils/productionLogger';
 
 
 /**
@@ -11,10 +10,12 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 export function formatDate(date: Date | string | undefined): string {
   if (!date) return '-';
   try {
-    if (typeof date === 'string') {
-      return format(new Date(date), 'MMM d, yyyy');
-    }
-    return format(date, 'MMM d, yyyy');
+    const d = typeof date === 'string' ? new Date(date) : date;
+    return new Intl.DateTimeFormat('en-US', {
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric',
+    }).format(d);
   } catch (e) {
     logErrorToProduction('Error formatting date:', { data:  e });
     return '-';

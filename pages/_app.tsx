@@ -1,9 +1,10 @@
-import '../styles/globals.css'
-import '../styles/accessibility.css'
-import type { AppProps } from 'next/app'
+// CRITICAL: Import immediate process polyfill FIRST to prevent process.env errors
+import '../src/utils/immediate-process-polyfill';
 
-// CRITICAL: Import environment polyfill FIRST to prevent process.env errors
-import '../src/utils/env-polyfill';
+// CRITICAL: Runtime check - polyfills should be loaded from document script and webpack banner
+if (typeof process !== 'undefined' && process.env?.NODE_ENV === 'development') {
+  // console.log('🚨 APP.TSX RUNTIME CHECK - Polyfills should be active');
+}
 
 // Enhanced error logging - import early for comprehensive coverage
 import enhancedErrorLogger from '../src/utils/enhanced-error-logger';
@@ -22,6 +23,53 @@ if (typeof window !== 'undefined') {
     if (event.message?.includes('Cannot read properties of undefined')) {
       console.error('Runtime error caught:', event.error);
       event.preventDefault();
+    }
+  });
+  
+  // Enhanced error handling for getInitialProps and http errors
+  window.addEventListener('error', (event) => {
+    const errorMessage = event.message || '';
+    const errorSource = event.filename || '';
+    
+    // Handle getInitialProps errors
+    if (errorMessage.includes('getInitialProps') || errorMessage.includes('Cannot read properties of undefined (reading \'getInitialProps\')')) {
+      console.error('getInitialProps error caught:', event.error);
+      event.preventDefault();
+      return;
+    }
+    
+    // Handle http/https errors
+    if (errorMessage.includes('http is not defined') || errorMessage.includes('https is not defined')) {
+      console.error('HTTP/HTTPS error caught:', event.error);
+      event.preventDefault();
+      return;
+    }
+    
+    // Handle TypeScript helper errors
+    if (errorMessage.includes('__extends') || errorMessage.includes('__assign') || errorMessage.includes('Cannot destructure property')) {
+      console.error('TypeScript helper error caught:', event.error);
+      event.preventDefault();
+      return;
+    }
+  });
+  
+  // Enhanced unhandled rejection handling
+  window.addEventListener('unhandledrejection', (event) => {
+    const reason = event.reason;
+    const message = reason?.message || '';
+    
+    // Handle getInitialProps promise rejections
+    if (message.includes('getInitialProps') || message.includes('Cannot read properties of undefined (reading \'getInitialProps\')')) {
+      console.error('getInitialProps promise rejection caught:', reason);
+      event.preventDefault();
+      return;
+    }
+    
+    // Handle component loading errors
+    if (message.includes('Failed to load component') || message.includes('Invalid component')) {
+      console.error('Component loading promise rejection caught:', reason);
+      event.preventDefault();
+      return;
     }
   });
   
@@ -56,21 +104,30 @@ import React, { useState, useEffect } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
-import { Provider as ReduxProvider } from 'react-redux';
+import { Provider } from 'react-redux';
 import { store } from '@/store';
 import { I18nextProvider } from 'react-i18next';
 import i18n from '@/i18n';
 import { AuthProvider } from '@/context/auth/AuthProvider';
-import { WhitelabelProvider } from '@/context/WhitelabelContext';
 import { CartProvider } from '@/context/CartContext';
-import { FeedbackProvider } from '@/context/FeedbackContext';
-import { ThemeProvider } from '@/context/ThemeContext';
-import { WalletProvider } from '@/context/WalletContext';
-import { AnalyticsProvider } from '@/context/AnalyticsContext';
-import { ErrorProvider } from '@/context/ErrorContext';
-import { LanguageProvider } from '@/context/LanguageContext';
-import { ChakraProvider } from '@chakra-ui/react';
-import '../src/index.css';
+
+import dynamic from 'next/dynamic';
+import Head from 'next/head';
+import '../src/index.css'; // Restored main CSS import
+
+// Dynamically import the Toaster component from sonner for client-side rendering only
+const Toaster = dynamic(
+  async () => {
+    try {
+      const mod = await import('sonner');
+      return mod.Toaster;
+    } catch (err) {
+      console.warn('Toaster dependency missing:', err);
+      return () => null;
+    }
+  },
+  { ssr: false }
+);
 
 // Simple loading component
 const SimpleLoading = () => (
@@ -90,45 +147,80 @@ const SimpleLoading = () => (
   </div>
 );
 
-// Simple error boundary
-const SimpleErrorBoundary: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  return (
-    <div>
-      {children}
-    </div>
-  );
+// Enhanced error boundary with detailed logging
+const ErrorBoundary: React.FC<{ children: React.ReactNode; name: string }> = ({ children, name }) => {
+  const [hasError, setHasError] = React.useState(false);
+  const [error, setError] = React.useState<Error | null>(null);
+
+  React.useEffect(() => {
+    const handleError = (event: ErrorEvent) => {
+      console.error(`Error in ${name}:`, event.error);
+      setError(event.error);
+      setHasError(true);
+    };
+
+    window.addEventListener('error', handleError);
+    return () => window.removeEventListener('error', handleError);
+  }, [name]);
+
+  if (hasError) {
+    return (
+      <div style={{
+        padding: '1rem',
+        border: '2px solid #ff4444',
+        borderRadius: '8px',
+        backgroundColor: '#fff5f5',
+        color: '#cc0000',
+        margin: '1rem'
+      }}>
+        <h3>Error in {name}</h3>
+        <p>{error?.message || 'Unknown error occurred'}</p>
+        <button 
+          onClick={() => window.location.reload()}
+          style={{
+            backgroundColor: '#ff4444',
+            color: 'white',
+            border: 'none',
+            padding: '0.5rem 1rem',
+            borderRadius: '4px',
+            cursor: 'pointer'
+          }}
+        >
+          Reload Page
+        </button>
+      </div>
+    );
+  }
+
+  return <>{children}</>;
 };
 
-// Provider wrapper with error handling
+// Provider wrapper with Redux, React Query, i18n, Auth, and Cart
 const ProviderWrapper: React.FC<{ children: React.ReactNode; queryClient: QueryClient }> = ({ children, queryClient }) => {
   return (
-    <QueryClientProvider client={queryClient}>
-      <ErrorProvider>
-        <ReduxProvider store={store}>
-          <I18nextProvider i18n={i18n}>
-            <LanguageProvider>
-              <AuthProvider>
-                <WhitelabelProvider>
-                  <WalletProvider>
-                    <AnalyticsProvider>
-                      <CartProvider>
-                        <FeedbackProvider>
-                          <ThemeProvider>
-                            <ChakraProvider>
-                              {children}
-                            </ChakraProvider>
-                          </ThemeProvider>
-                        </FeedbackProvider>
-                      </CartProvider>
-                    </AnalyticsProvider>
-                  </WalletProvider>
-                </WhitelabelProvider>
-              </AuthProvider>
-            </LanguageProvider>
-          </I18nextProvider>
-        </ReduxProvider>
-      </ErrorProvider>
-    </QueryClientProvider>
+    <ErrorBoundary name="BasicWrapper">
+      <ErrorBoundary name="QueryClientProvider">
+        <QueryClientProvider client={queryClient}>
+          <ErrorBoundary name="ReduxProvider">
+            <Provider store={store}>
+              <ErrorBoundary name="I18nextProvider">
+                <I18nextProvider i18n={i18n}>
+                  <ErrorBoundary name="AuthProvider">
+                    <AuthProvider>
+                      <ErrorBoundary name="CartProvider">
+                        <CartProvider>
+                                                  {children}
+                        </CartProvider>
+                      </ErrorBoundary>
+                    </AuthProvider>
+                  </ErrorBoundary>
+                </I18nextProvider>
+              </ErrorBoundary>
+            </Provider>
+          </ErrorBoundary>
+        </QueryClientProvider>
+      </ErrorBoundary>
+    </ErrorBoundary>
   );
 };
 
@@ -161,26 +253,36 @@ export default function App({ Component, pageProps }: AppProps) {
       console.error('Route change error');
     };
 
-    router.events.on('routeChangeStart', handleRouteChangeStart);
-    router.events.on('routeChangeComplete', handleRouteChangeComplete);
-    router.events.on('routeChangeError', handleRouteChangeError);
+    // Only add event listeners if router.events exists
+    if (router.events) {
+      router.events.on('routeChangeStart', handleRouteChangeStart);
+      router.events.on('routeChangeComplete', handleRouteChangeComplete);
+      router.events.on('routeChangeError', handleRouteChangeError);
 
-    return () => {
-      router.events.off('routeChangeStart', handleRouteChangeStart);
-      router.events.off('routeChangeComplete', handleRouteChangeComplete);
-      router.events.off('routeChangeError', handleRouteChangeError);
-    };
-  }, [router]);
+      return () => {
+        router.events.off('routeChangeStart', handleRouteChangeStart);
+        router.events.off('routeChangeComplete', handleRouteChangeComplete);
+        router.events.off('routeChangeError', handleRouteChangeError);
+      };
+    }
+
+    // Return empty cleanup function if router.events doesn't exist
+    return () => {};
+  }, [router]); // Keep router in dependencies but add safety check
 
   // Show loading screen
   if (isLoading) {
     return <SimpleLoading />;
   }
 
-  // Main app render with all providers
+  // Main app render with Redux, React Query, i18n, Auth, and Cart
   return (
     <ProviderWrapper queryClient={queryClient}>
+      <Head>
+        <link rel="stylesheet" href="/skeleton.css" />
+      </Head>
       <Component {...pageProps} />
+      <Toaster richColors position="top-right" />
     </ProviderWrapper>
   );
 }

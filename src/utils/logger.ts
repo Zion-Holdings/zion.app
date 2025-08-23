@@ -23,18 +23,18 @@ class Logger {
 
   debug(message: string, context?: Record<string, unknown>): void {
     if (this.isDebugEnabled) {
-      logInfo(`[DEBUG] ${message}`, context);
+      logInfo('[DEBUG] ${message}', { data: context });
     }
   }
 
   info(message: string, context?: Record<string, unknown>): void {
     if (this.isDevelopment) {
-      logInfo(`[INFO] ${message}`, context);
+      logInfo('[INFO] ${message}', { data: context });
     }
   }
 
   warn(message: string, context?: Record<string, unknown>): void {
-    logWarn(`[WARN] ${message}`, context);
+    logWarn('[WARN] ${message}', { data: context });
   }
 
   error(message: string, error?: Error | unknown, context?: Record<string, unknown>): void {
@@ -58,7 +58,7 @@ class Logger {
   // Conditional development logging
   devLog(message: string, context?: Record<string, unknown>): void {
     if (this.isDevelopment) {
-      logInfo(`[DEV] ${message}`, context);
+      logInfo('[DEV] ${message}', { data: context });
     }
   }
 

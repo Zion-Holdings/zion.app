@@ -1,6 +1,6 @@
 
-import { UserDetails } from '@/types/auth';
-import { Message, Conversation, ConversationContextData } from '@/types/messaging';
+import type { UserDetails } from '@/types/auth';
+import type { Conversation, ConversationContextData } from '@/types/messaging';
 import { useConversationState } from './useConversationState';
 import { useConversations } from './useConversations';
 import { useMessages } from './useMessages';

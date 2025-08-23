@@ -1,4 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-require-imports
+ 
 // tests/__mocks__/next-auth/react.js
 const mockSession = {
   data: {

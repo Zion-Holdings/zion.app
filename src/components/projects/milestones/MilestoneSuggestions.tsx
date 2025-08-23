@@ -1,11 +1,12 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { GeneratedMilestone, MilestoneInput, useMilestoneGenerator } from '@/hooks/useMilestoneGenerator';
+import type {
+  GeneratedMilestone,
+  MilestoneInput,
+} from '@/hooks/useMilestoneGenerator';
+import { useMilestoneGenerator } from '@/hooks/useMilestoneGenerator';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Loader2, Sparkles, Check } from 'lucide-react';
-
-
 
 import { Badge } from '@/components/ui/badge';
 import { format, parseISO } from 'date-fns';
@@ -25,9 +26,10 @@ export function MilestoneSuggestions({
   startDate,
   endDate,
   projectType,
-  onMilestonesGenerated
+  onMilestonesGenerated,
 }: MilestoneSuggestionsProps) {
-  const { generateMilestones, generatedMilestones, isGenerating } = useMilestoneGenerator();
+  const { generateMilestones, generatedMilestones, isGenerating } =
+    useMilestoneGenerator();
   const [showSuggestions, setShowSuggestions] = useState(false);
 
   const handleGenerateMilestones = async () => {
@@ -35,11 +37,11 @@ export function MilestoneSuggestions({
       scope: `${projectName}: ${scopeSummary}`,
       startDate: startDate.toISOString(),
       endDate: endDate ? endDate.toISOString() : null,
-      projectType: projectType || "Other"
+      projectType: projectType || 'Other',
     };
 
     const milestones = await generateMilestones(input);
-    
+
     if (milestones.length > 0) {
       setShowSuggestions(true);
       if (onMilestonesGenerated) {
@@ -51,7 +53,7 @@ export function MilestoneSuggestions({
   const formatDate = (dateString: string) => {
     try {
       return format(parseISO(dateString), 'MMM dd, yyyy');
-    } catch (error) {
+    } catch {
       return dateString;
     }
   };
@@ -102,7 +104,9 @@ export function MilestoneSuggestions({
                       Due: {formatDate(milestone.dueDate)}
                     </div>
                   </div>
-                  <p className="text-sm text-muted-foreground">{milestone.description}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {milestone.description}
+                  </p>
                   <div className="flex justify-between items-center mt-2 text-sm">
                     <span>Estimated: {milestone.estimatedHours} hours</span>
                   </div>

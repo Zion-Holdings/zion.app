@@ -4,7 +4,7 @@ import path from 'path';
 import { PrismaClient, ErrorAnalysisStatus } from '@prisma/client';
 import { captureException } from '../../src/utils/sentry'; // Adjusted path
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { withErrorLogging } from '@/utils/withErrorLogging';
+import { withErrorLogging } from '../../src/utils/withErrorLogging';
 
 const prisma = new PrismaClient();
 const CODEX_SCRIPT_PATH = path.resolve(process.cwd(), 'scripts/codex-bug-fix.js');
@@ -76,7 +76,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
   }
 
   console.log('Received error report request');
-  const errorDetails = req.body as ErrorDetails; // Type assertion for req.body
+  const errorDetails = req['body'] as ErrorDetails; // Type assertion for req.body
 
   if (!errorDetails || typeof errorDetails !== 'object' || !errorDetails.message || !errorDetails.stack) {
     console.error('Invalid error report: Missing body, message, or stack.', errorDetails);
@@ -164,8 +164,12 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
           let scriptErrorOutput = { error: "Unknown error from script stderr." };
           try {
             scriptErrorOutput = JSON.parse(stderr);
-          } catch (parseError: any) {
-            console.error(`Failed to parse stderr JSON from Codex script (ID: ${dbRecordId}): ${parseError.message}`);
+          } catch (parseError) {
+            let parseErrorMessage = 'Unknown error';
+            if (parseError && typeof parseError === 'object' && 'message' in parseError && typeof (parseError as { message?: unknown }).message === 'string') {
+              parseErrorMessage = (parseError as { message: string }).message;
+            }
+            console.error(`Failed to parse stderr JSON from Codex script (ID: ${dbRecordId}): ${parseErrorMessage}`);
             scriptErrorOutput.error = `Non-JSON stderr: ${stderr.substring(0,1000)}`;
           }
           await prisma.errorAnalysisSuggestion.update({
@@ -222,8 +226,16 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       }
     });
 
-  } catch (error: any) {
-    console.error('log-error API critical error during initial processing:', error.message, error.stack);
+  } catch (error) {
+    let message = 'Unknown error';
+    let stack: string | undefined = undefined;
+    if (error && typeof error === 'object' && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
+      message = (error as { message: string }).message;
+    }
+    if (error && typeof error === 'object' && 'stack' in error && typeof (error as { stack?: unknown }).stack === 'string') {
+      stack = (error as { stack: string }).stack;
+    }
+    console.error('log-error API critical error during initial processing:', message, stack);
     const resWithHeaders = res as NextApiResponse & { headersSent?: boolean };
     if (!resWithHeaders.headersSent) {
       resWithHeaders.status(500).json({ error: 'Server error during error processing.' });

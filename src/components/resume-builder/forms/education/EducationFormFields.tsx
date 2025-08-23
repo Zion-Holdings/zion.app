@@ -19,8 +19,8 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { useState } from 'react';
-import { EducationFormFieldsProps } from './types';
-import { Education } from '@/types/resume';
+import type { EducationFormFieldsProps } from './types';
+import type { Education } from '@/types/resume';
 
 // Define schema for form validation
 const educationSchema = z.object({

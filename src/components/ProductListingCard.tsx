@@ -3,7 +3,7 @@ import { logDebug, logErrorToProduction } from '@/utils/productionLogger';
 import { useRouter } from 'next/router';
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ProductListing } from "@/types/listings";
+import type { ProductListing } from "@/types/listings";
 import { DollarSign } from 'lucide-react';
 
 import { RatingStars } from "@/components/RatingStars";
@@ -73,9 +73,9 @@ const ProductListingCardComponent = ({
   const handleViewListing = () => {
     // Debug logging for development
     if (process.env.NODE_ENV === 'development') {
-      logDebug('[ProductCard] Navigating to:', { path: `${detailBasePath}/${listing.id}` });
-      logDebug('[ProductCard] Listing ID:', { id: listing.id });
-      logDebug('[ProductCard] Listing Title:', { title: listing.title });
+      logDebug('[ProductCard] Navigating to:', { data:  { path: `${detailBasePath}/${listing.id}` } });
+      logDebug('[ProductCard] Listing ID:', { data:  { id: listing.id } });
+      logDebug('[ProductCard] Listing Title:', { data:  { title: listing.title } });
     }
     
     // Validate listing ID exists before navigation
@@ -186,7 +186,7 @@ const ProductListingCardComponent = ({
               {listing.category}
             </Badge>
             {listing.rating && (
-              <RatingStars value={listing.rating} count={listing.reviewCount} />
+              <RatingStars value={listing.rating} count={listing.reviewCount ?? 0} />
             )}
           </div>
           

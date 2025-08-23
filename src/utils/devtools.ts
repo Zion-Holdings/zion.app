@@ -1,20 +1,21 @@
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
-export async function enableDevToolsInStaging() {
+function hasEnv(obj: unknown): obj is { env: Record<string, unknown> } {
+  return typeof obj === 'object' && obj !== null && 'env' in obj;
+}
 
+export async function enableDevToolsInStaging() {
   // Only attempt to load in development, or if explicitly enabled via NEXT_PUBLIC_DEVTOOLS
-  const isDev =
-    (typeof import.meta !== 'undefined' &&
-      (import.meta as any).env &&
-      (import.meta as any).env.DEV) ||
-    process.env.NEXT_PUBLIC_DEVTOOLS === 'true';
+  let isDev = false;
+  if (typeof import.meta !== 'undefined' && hasEnv(import.meta)) {
+    const env = import.meta.env as Record<string, unknown>;
+    isDev = Boolean(env.DEV) || env.REACT_APP_DEVTOOLS === 'true';
+  }
+  isDev = isDev || process.env.NEXT_PUBLIC_DEVTOOLS === 'true';
   if (isDev) {
     try {
-      // The /* @vite-ignore */ comment might still be useful if we want to avoid
-      // Vite trying to be too clever with this dynamic import even in dev.
-      // await import(/* @vite-ignore */ 'react-devtools');
-      // logInfo('DevTools enabled');
-      logInfo('React DevTools import temporarily commented out for build troubleshooting.');
+      await import(/* @vite-ignore */ 'react-devtools');
+      logInfo('DevTools enabled');
     } catch (err) {
       logErrorToProduction('Failed to load react-devtools (import is commented out)', { data: err });
     }

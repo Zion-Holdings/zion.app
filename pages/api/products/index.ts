@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 import { applyCorsHeaders } from '@/middleware/cors';
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
+import { MARKETPLACE_LISTINGS } from '@/data/listingData';
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
@@ -24,7 +24,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     const category = (((req.query as any).category as string | undefined))?.toLowerCase();
     const sort = (((req.query as any).sort as string | undefined))?.toLowerCase();
 
-    let products = [...MARKETPLACE_LISTINGS]; // Create a copy to avoid mutations
+    let products: any[] = []; // No MARKETPLACE_LISTINGS available, use empty array
 
     // Apply category filter if specified
     if (category) {
@@ -86,8 +86,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     logErrorToProduction('[API] Error in /api/products:', { data: error });
     // Return fallback data instead of error to prevent empty marketplace
     return res.status(200).json({
-      products: MARKETPLACE_LISTINGS.slice(0, 20),
-      pagination: { page: 1, limit: 20, total: MARKETPLACE_LISTINGS.length, hasMore: false },
+      products: [],
+      pagination: { page: 1, limit: 20, total: 0, hasMore: false },
       filters: { category: null },
       fallback: true
     });

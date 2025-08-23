@@ -1,4 +1,4 @@
-import { NextRouter } from 'next/router';
+import type { NextRouter } from 'next/router';
 import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 export function handleRouterError(error: Error, router: NextRouter) {
@@ -59,17 +59,23 @@ export function setupRouterErrorHandlers(router: NextRouter) {
   };
 
   // Handle router errors
-  const routeChangeErrorHandler = (err: unknown, url: string) => {
+  // TODO: Use a more specific type if Next.js exposes a type for route change errors
+  const routeChangeErrorHandler = (err: any, url: string) => {
     logErrorToProduction('Route change error', err, { url });
     handleRouterError(err as Error, router);
   };
 
-  router.events.on('routeChangeError', routeChangeErrorHandler);
+  // Only add event listeners if router.events exists
+  if (router.events) {
+    router.events.on('routeChangeError', routeChangeErrorHandler);
+  }
 
   return () => {
     // Cleanup
     router.push = originalPush;
     router.replace = originalReplace;
-    router.events.off('routeChangeError', routeChangeErrorHandler);
+    if (router.events) {
+      router.events.off('routeChangeError', routeChangeErrorHandler);
+    }
   };
 } 

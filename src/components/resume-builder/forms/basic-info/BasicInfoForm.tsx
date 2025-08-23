@@ -6,7 +6,8 @@ import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { Card } from "@/components/ui/card";
 import { RateOptimizationSection } from "../RateOptimizationSection";
-import { basicInfoSchema, BasicInfoFormData } from "./schema";
+import { basicInfoSchema } from "./schema";
+import type { BasicInfoFormData } from "./schema";
 import { PersonalInfoFields } from "./PersonalInfoFields";
 import { ContactFields } from "./ContactFields";
 
@@ -74,7 +75,7 @@ export function BasicInfoForm({
               setValue={form.setValue}
               skills={skills}
               yearsExperience={yearsExperience || 0}
-              location={form.getValues("location")}
+              location={form.getValues("location") || ""}
               rateType="hourly"
             />
           </div>

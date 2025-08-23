@@ -1,6 +1,6 @@
 'use client'
 
-import { SearchSuggestion } from "@/types/search";
+import type { SearchSuggestion } from "@/types/search";
 import React, { useState } from "react";
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';

@@ -1,28 +1,19 @@
-export type ApiHandler = (req: any, res: any) => any;
-
+import type { NextApiRequest, NextApiResponse } from 'next';
 import { logErrorToProduction } from '@/utils/productionLogger';
 
+export type ApiHandler = (req: NextApiRequest, res: NextApiResponse) => Promise<void> | void;
+
 export function withErrorLogging(handler: ApiHandler): ApiHandler {
-  return async (req, res) => {
+  return async (req: NextApiRequest, res: NextApiResponse) => {
     try {
-      return await handler(req, res);
-    } catch (err: any) {
+      await handler(req, res);
+    } catch (err) {
+      const reqUrl = req.url;
       logErrorToProduction(err instanceof Error ? err.message : String(err), err instanceof Error ? err : undefined, {
-        route: req.url,
-        method: req.method,
-        errorSourceContext: 'withErrorLogging',
+        route: reqUrl,
       });
-      if (res && !res.headersSent) {
-        if (typeof res.status === 'function') {
-          res.status(500);
-        } else {
-          res.statusCode = 500;
-        }
-        if (typeof res.json === 'function') {
-          res.json({ error: 'Internal server error' });
-        } else if (typeof res.end === 'function') {
-          res.end('Internal server error');
-        }
+      if (!res.hasHeader("content-type")) {
+        res.status(500).json({ error: 'Internal Server Error' });
       }
     }
   };

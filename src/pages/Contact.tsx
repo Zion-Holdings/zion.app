@@ -1,18 +1,27 @@
-import { useState } from "react";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { SEO } from "@/components/SEO";
-import { GradientHeading } from "@/components/GradientHeading";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Card } from "@/components/ui/card";
-import { toast } from "@/components/ui/use-toast";
-import z from "zod";
-import { ChatAssistant } from "@/components/ChatAssistant";
-import { Mail, MessageSquare, MapPin, Phone } from "lucide-react";
-import { AppLayout } from "@/layout/AppLayout";
-import api from '@/lib/api';
+import { useState } from 'react';
+import { SEO } from '@/components/SEO';
+import { GradientHeading } from '@/components/GradientHeading';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Card } from '@/components/ui/card';
+import { toast } from '@/components/ui/use-toast';
+import { logInfo, logWarn, logErrorToProduction } from '@/utils/productionLogger';
+import { Mail, MessageSquare, MapPin, Phone } from 'lucide-react';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger
+} from "@/components/ui/tooltip";
+import z from 'zod';
+import { ChatAssistant } from '@/components/ChatAssistant';
+
+
+
+
+import Link from 'next/link';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -40,7 +49,7 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     logInfo('[ContactForm] handleSubmit triggered.');
-    logInfo('[ContactForm] formData:', { data: formData });
+    logInfo('[ContactForm] formData:', { data:  { data: formData } });
 
     const schema = z.object({
       name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -49,7 +58,7 @@ export default function Contact() {
     });
 
     const result = schema.safeParse(formData);
-    logInfo('[ContactForm] Zod validation result:', { data: result });
+    logInfo('[ContactForm] Zod validation result:', { data:  { data: result } });
 
     if (!result.success) {
       const fieldErrors: Record<string, string> = {};
@@ -80,9 +89,9 @@ export default function Contact() {
         body: JSON.stringify(formData),
       })
         .then(async (res) => {
-          logInfo('[ContactForm] API response status:', { data: res.status });
+          logInfo('[ContactForm] API response status:', { data:  { data: res.status } });
           const responseBody = await res.text(); // Read as text first to avoid JSON parse error if not JSON
-          logInfo('[ContactForm] API response body:', { data: responseBody });
+          logInfo('[ContactForm] API response body:', { data:  { data: responseBody } });
 
           // Note: setIsSubmitting(false) is called within then/catch of the promise.
           // If fetch itself or .then/.catch structure has a synchronous error,
@@ -93,7 +102,7 @@ export default function Contact() {
             try {
               errorData = JSON.parse(responseBody);
             } catch (parseError) {
-              logWarn('[ContactForm] Could not parse error response as JSON.', { data: parseError });
+              logWarn('[ContactForm] Could not parse error response as JSON.', { data:  { data: parseError } });
             }
             logErrorToProduction('[ContactForm] API error response:', { data: errorData });
             // This throw will be caught by the .catch block below

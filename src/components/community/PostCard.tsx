@@ -14,7 +14,7 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { ForumPost } from "@/types/community";
+import type { ForumPost } from "@/types/community";
 import { logInfo } from '@/utils/productionLogger';
 
 
@@ -24,7 +24,7 @@ interface PostCardProps {
 }
 
 const PostCardComponent = ({ post, compact = false }: PostCardProps) => {
-  logInfo('PostCardComponent rendering with post:', { data: post ? post.id : 'NO POST' });
+  logInfo('PostCardComponent rendering with post:', { data:  { data: post ? post.id : 'NO POST' } });
   const timeAgo = formatDistanceToNow(new Date(post.createdAt), { addSuffix: true });
 
   return (

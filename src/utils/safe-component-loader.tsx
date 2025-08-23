@@ -5,47 +5,39 @@
  * to prevent getInitialProps and other runtime errors.
  */
 
-import React, { Component } from 'react';
+import React from 'react';
 import dynamic from 'next/dynamic';
 
 // Error boundary for component loading
 interface BoundaryProps {
+  fallback: React.ComponentType<object>;
   children: React.ReactNode;
-  fallback?: React.ComponentType;
 }
 
 interface BoundaryState {
   hasError: boolean;
 }
 
-class ComponentErrorBoundary extends Component<BoundaryProps, BoundaryState> {
-  declare props: Readonly<BoundaryProps>;
-  state: BoundaryState = { hasError: false };
-
-  constructor(props: BoundaryProps) {
-    super(props);
-  }
-
-  static getDerivedStateFromError(): { hasError: boolean } {
+class ComponentErrorBoundary extends React.Component<BoundaryProps, BoundaryState> {
+  static getDerivedStateFromError(error: Error): BoundaryState {
     return { hasError: true };
   }
-
-  componentDidCatch(error: Error) {
+  
+  override componentDidCatch(error: Error, info: React.ErrorInfo) {
     console.error('Component loading error:', error);
   }
-
-  render() {
+  
+  override render() {
     if (this.state.hasError) {
-      const Fallback = this.props.fallback || DefaultFallback;
+      const Fallback = this.props.fallback;
       return React.createElement(Fallback);
     }
-
     return this.props.children;
   }
 }
 
 // Default fallback component
-const DefaultFallback: React.FC = () => {
+const DefaultFallback: React.FC<object> = () => {
   return React.createElement('div', {
     style: {
       padding: '2rem',
@@ -81,6 +73,17 @@ const DefaultFallback: React.FC = () => {
   ]);
 };
 
+// Default loading component
+const DefaultLoading: React.FC = () => {
+  return React.createElement('div', {
+    style: { 
+      padding: '2rem', 
+      textAlign: 'center',
+      color: '#6c757d'
+    }
+  }, 'Loading...');
+};
+
 // Safe dynamic component loader
 export function createSafeComponent(
   importPath: string,
@@ -101,7 +104,7 @@ export function createSafeComponent(
           }
           
           // Wrap component to ensure it has proper structure
-          const WrappedComponent: React.FC<any> = (props) => {
+          const WrappedComponent: React.FC<Record<string, unknown>> = (props: Record<string, unknown>) => {
             try {
               return React.createElement(Component, props);
             } catch (error) {
@@ -111,13 +114,14 @@ export function createSafeComponent(
             }
           };
           
-          // Ensure getInitialProps is safe
-          if ((Component as any).getInitialProps) {
-            (WrappedComponent as any).getInitialProps = async (ctx: any) => {
+          // Ensure getInitialProps is safe and doesn't cause errors
+          if ((Component as unknown as { getInitialProps?: (ctx: unknown) => Promise<unknown> }).getInitialProps) {
+            (WrappedComponent as unknown as { getInitialProps?: (ctx: unknown) => Promise<unknown> }).getInitialProps = async (ctx: unknown) => {
               try {
-                return await (Component as any).getInitialProps(ctx);
+                return await (Component as unknown as { getInitialProps: (ctx: unknown) => Promise<unknown> }).getInitialProps(ctx);
               } catch (error) {
                 console.error(`Error in getInitialProps for ${importPath}:`, error);
+                // Return empty props to prevent the error from crashing the app
                 return {};
               }
             };
@@ -125,34 +129,40 @@ export function createSafeComponent(
           
           return { default: WrappedComponent };
         })
-        .catch(error => {
+        .catch((error) => {
           console.error(`Failed to load component from ${importPath}:`, error);
-          const Fallback = fallbackComponent || DefaultFallback;
-          return { default: Fallback };
+          
+          // Create a safe fallback component that handles getInitialProps
+          const SafeFallback: React.FC<Record<string, unknown>> = (props: Record<string, unknown>) => {
+            const Fallback = fallbackComponent || DefaultFallback;
+            return React.createElement(Fallback, props);
+          };
+          
+          // Ensure the fallback component has a safe getInitialProps
+          (SafeFallback as unknown as { getInitialProps?: (ctx: unknown) => Promise<unknown> }).getInitialProps = async (ctx: unknown) => {
+            try {
+              // Try to call getInitialProps on the original component if it exists
+              const originalModule = await import(importPath).catch(() => null);
+              if (originalModule?.default?.getInitialProps) {
+                return await originalModule.default.getInitialProps(ctx);
+              }
+            } catch (error) {
+              console.error(`Error in fallback getInitialProps for ${importPath}:`, error);
+            }
+            // Return empty props as final fallback
+            return {};
+          };
+          
+          return { default: SafeFallback };
         });
     },
     {
-      loading: options?.loading || (() => React.createElement('div', {
-        style: { 
-          padding: '2rem', 
-          textAlign: 'center',
-          color: '#6c757d'
-        }
-      }, 'Loading...')) as any,
-      ssr: options?.ssr ?? false
+      loading: options?.loading ? () => React.createElement(options.loading!) : () => <DefaultLoading />, 
+      ssr: options?.ssr !== false, // Default to true for SSR
     }
   );
 
-  // Return component wrapped in error boundary
-  const BoundedComponent: React.FC<any> = (props) => {
-    return React.createElement(
-      ComponentErrorBoundary,
-      { fallback: fallbackComponent },
-      React.createElement(SafeComponent, props)
-    );
-  };
-
-  return BoundedComponent;
+  return SafeComponent;
 }
 
 // Pre-configured safe components for common pages
@@ -160,3 +170,17 @@ export const SafeWalletComponent = createSafeComponent('../pages/Wallet');
 export const SafeWishlistComponent = createSafeComponent('../pages/Wishlist');
 export const SafeTeamComponent = createSafeComponent('../pages/OrgChart');
 export const SafeTalentsComponent = createSafeComponent('../pages/TalentsPage');
+
+interface SafeComponentLoaderProps {
+  loader: () => Promise<{ default: React.ComponentType<object> }>;
+  fallback?: React.ReactNode;
+}
+
+export function SafeComponentLoader({ loader, fallback }: SafeComponentLoaderProps) {
+  const LazyComponent = React.lazy(loader) as React.ComponentType<object>;
+  return (
+    <React.Suspense fallback={fallback || null}>
+      <LazyComponent />
+    </React.Suspense>
+  );
+}

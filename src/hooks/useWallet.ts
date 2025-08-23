@@ -22,6 +22,7 @@ export function useWallet() {
 
     try {
       setLoading(true);
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase
         .from('wallets')
         .select('*')
@@ -33,9 +34,9 @@ export function useWallet() {
       }
 
       setWallet(data);
-    } catch (err: any) {
+    } catch (err: unknown) {
       logErrorToProduction('Error fetching wallet:', { data: err });
-      setError(err.message);
+      setError(err instanceof Error ? err.message : String(err));
     } finally {
       setLoading(false);
     }
@@ -47,6 +48,7 @@ export function useWallet() {
       return;
     }
     try {
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase
         .from('token_transactions')
         .select('*')
@@ -55,7 +57,7 @@ export function useWallet() {
 
       if (error) throw error;
       setTransactions((data || []) as TokenTransaction[]);
-    } catch (err: any) {
+    } catch (err: unknown) {
       logErrorToProduction('Error fetching transactions:', { data: err });
     }
   }

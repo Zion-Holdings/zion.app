@@ -24,8 +24,12 @@ export interface ModelConfig {
   active: boolean;
 }
 
+// Add null checks for 'supabase' before usage
+// if (!supabase) throw new Error('Supabase client is not initialized');
+
 // Get the latest active model ID for a specific purpose
 export async function getActiveModelId(purpose: 'job' | 'resume' | 'support'): Promise<ModelVersion> {
+  if (!supabase) throw new Error('Supabase client is not initialized');
   try {
     const { data, error } = await supabase
       .from('model_versions')
@@ -38,7 +42,7 @@ export async function getActiveModelId(purpose: 'job' | 'resume' | 'support'): P
     
     if (error || !data) {
       logErrorToProduction(error?.message || 'No model data returned', error || undefined, { context: 'getActiveModelId' });
-      logWarn('Failed to fetch active model, falling back to default', { data: error });
+      logWarn('Failed to fetch active model, falling back to default', { data:  { data: error } });
       // Fallback to default models
       switch(purpose) {
         case 'job': return 'zion-job-generator-v1';
@@ -62,6 +66,7 @@ export async function logModelUsage(
   feature: string,
   userId?: string
 ): Promise<void> {
+  if (!supabase) throw new Error('Supabase client is not initialized');
   try {
     const cost = calculateCost(modelId, tokensUsed);
     
@@ -103,6 +108,7 @@ export async function callZionGPT({
   temperature?: number;
   userId?: string;
 }): Promise<string> {
+  if (!supabase) throw new Error('Supabase client is not initialized');
   try {
     // Dynamically get the proper model ID based on purpose
     const modelId = await getActiveModelId(purpose);
@@ -120,16 +126,15 @@ export async function callZionGPT({
     if (error) throw error;
     
     // Log usage for analytics
-    if (data && (data as any).tokensUsed) {
+    if (data && typeof data === 'object' && 'tokensUsed' in data) {
       await logModelUsage(
         modelId, 
-        (data as any).tokensUsed,
+        (data as { tokensUsed: number }).tokensUsed,
         `${purpose}-generation`,
         userId
       );
     }
-    
-    return (data as any)?.completion || '';
+    return (typeof data === 'object' && data && 'completion' in data) ? (data as { completion: string }).completion : '';
   } catch (error) {
     logErrorToProduction(error instanceof Error ? error.message : String(error), error instanceof Error ? error : undefined, { context: 'callZionGPT' });
     throw error;

@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { toast } from "@/hooks/use-toast";
@@ -47,7 +47,7 @@ export default function PartnerManager() {
   const [isDetailsOpen, setIsDetailsOpen] = useState(false);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [commissionRate, setCommissionRate] = useState(25);
-  const { user, isAuthenticated } = useAuth();
+  const { user: _user, isAuthenticated } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
@@ -64,6 +64,7 @@ export default function PartnerManager() {
       setIsLoading(true);
       // In a real application, check admin permissions here
       
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase
         .from('partner_profiles')
         .select('*')
@@ -73,86 +74,9 @@ export default function PartnerManager() {
       
       // If no data is returned, use mock data
       if (!data || data.length === 0) {
-        const mockData: PartnerProfile[] = [
-          {
-            id: '1',
-            user_id: 'user1',
-            name: 'AI Bytes',
-            status: 'pending',
-            created_at: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000).toISOString(),
-            niche: 'AI Tutorials',
-            audience_size: '10k-50k',
-            social_media: { twitter: '@aibytes', youtube: 'AI Bytes' },
-            website: 'aibytes.com',
-            bio: 'We create AI tutorials and insights for developers.',
-            payout_method: 'paypal',
-            fraud_flags: 0,
-            commission_rate: 25
-          },
-          {
-            id: '2',
-            user_id: 'user2',
-            name: 'ML Academy',
-            status: 'approved',
-            created_at: new Date(Date.now() - 15 * 24 * 60 * 60 * 1000).toISOString(),
-            niche: 'Machine Learning Education',
-            audience_size: 'over100k',
-            social_media: { twitter: '@mlacademy', youtube: 'ML Academy' },
-            website: 'mlacademy.edu',
-            bio: 'Premiere online academy for machine learning enthusiasts.',
-            payout_method: 'bank',
-            fraud_flags: 0,
-            commission_rate: 30
-          },
-          {
-            id: '3',
-            user_id: 'user3',
-            name: 'Tech Insights',
-            status: 'rejected',
-            created_at: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString(),
-            niche: 'Technology News',
-            audience_size: '1k-10k',
-            social_media: { twitter: '@techinsights' },
-            website: 'techinsights.io',
-            bio: 'We share insights about the latest in tech.',
-            payout_method: 'crypto',
-            fraud_flags: 2,
-            commission_rate: 20
-          },
-          {
-            id: '4',
-            user_id: 'user4',
-            name: 'CodeMaster',
-            status: 'approved',
-            created_at: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString(),
-            niche: 'Coding Tutorials',
-            audience_size: '50k-100k',
-            social_media: { youtube: 'CodeMaster', linkedin: 'codemaster' },
-            website: 'codemaster.dev',
-            bio: 'Learn to code with our expert tutorials.',
-            payout_method: 'paypal',
-            fraud_flags: 0,
-            commission_rate: 25
-          },
-          {
-            id: '5',
-            user_id: 'user5',
-            name: 'AI Daily',
-            status: 'pending',
-            created_at: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000).toISOString(),
-            niche: 'AI News',
-            audience_size: '10k-50k',
-            social_media: { twitter: '@aidaily', instagram: '@aidailynews' },
-            website: 'aidaily.news',
-            bio: 'Daily updates on the world of artificial intelligence.',
-            payout_method: 'platform_credit',
-            fraud_flags: 1,
-            commission_rate: 20
-          }
-        ];
-        
-        setPartners(mockData);
-        filterPartners(mockData, activeTab, searchQuery);
+        // No partners found, show empty state or message
+        setPartners([]);
+        filterPartners([], activeTab, searchQuery);
       } else {
         setPartners(data as PartnerProfile[]);
         filterPartners(data as PartnerProfile[], activeTab, searchQuery);

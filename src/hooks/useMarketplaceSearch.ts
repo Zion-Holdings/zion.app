@@ -1,45 +1,12 @@
 import { useState, useMemo, useEffect } from "react";
-import { ProductListing } from "@/types/listings";
-import { SearchSuggestion, FilterOptions } from "@/types/search";
+import type { ProductListing } from "@/types/listings";
+import type { SearchSuggestion, FilterOptions } from "@/types/search";
 // import { generateSearchSuggestions, generateFilterOptions, MARKETPLACE_LISTINGS } from "@/data/marketplaceData";
 import { useDebounce } from "./useDebounce"; // Import the debounce hook
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 
-// Default suggestions shown before the user types a query
-const staticSearchSuggestions: SearchSuggestion[] = [
-  { type: "recent", text: "Modern web app" },
-  { type: "recent", text: "Data analysis script" },
-  { type: "recent", text: "E-commerce site" }, // Changed "saved" to "recent"
-  { type: "recent", text: "Mobile game" }, // Changed "saved" to "recent"
-];
-
-const staticFilterOptions: FilterOptions = {
-  productTypes: [
-    { value: "app", label: "Web App" },
-    { value: "script", label: "Script" },
-    { value: "site", label: "Website" },
-    { value: "game", label: "Game" },
-    { value: "bot", label: "Bot" },
-  ],
-  locations: [
-    { value: "us", label: "United States" },
-    { value: "eu", label: "Europe" },
-    { value: "asia", label: "Asia" },
-    { value: "online", label: "Online" },
-  ],
-  availabilityOptions: [ // Renamed from availability
-    { value: "immediate", label: "Immediate" },
-    { value: "1-week", label: "Within 1 Week" },
-    { value: "1-month", label: "Within 1 Month" },
-  ],
-  ratingOptions: [5, 4, 3], // Changed to array of numbers
-  // Assuming minPrice and maxPrice should be part of actual filter options,
-  // but they are not in the original staticFilterOptions.
-  // Adding them with default values based on FilterOptions type.
-  minPrice: 0, // Default value
-  maxPrice: 10000, // Default value
-};
+// Remove staticSearchSuggestions and staticFilterOptions. Fetch suggestions and filter options from real API/data source instead.
 
 
 export function useMarketplaceSearch() {
@@ -73,7 +40,7 @@ export function useMarketplaceSearch() {
         const responseData = await response.json(); // Get the full response object
         if (responseData && responseData.results && Array.isArray(responseData.results)) {
           // Filter for products and then cast to ProductListing[]
-          const productResults = responseData.results.filter((item: any) => item.type === 'product');
+          const productResults = responseData.results.filter((item: unknown) => typeof item === 'object' && item !== null && 'type' in item && (item as { type: string }).type === 'product');
           setListings(productResults as ProductListing[]); // Use the 'results' array
         } else {
           setListings([]); // Default to empty if structure is wrong
@@ -99,13 +66,13 @@ export function useMarketplaceSearch() {
   const [selectedLocations, setSelectedLocations] = useState<string[]>([]);
   const [selectedAvailability, setSelectedAvailability] = useState<string[]>([]);
   const [selectedRating, setSelectedRating] = useState<number | null>(null);
-  const [searchSuggestions, setSearchSuggestions] = useState<SearchSuggestion[]>(staticSearchSuggestions);
+  const [searchSuggestions, setSearchSuggestions] = useState<SearchSuggestion[]>([]);
 
   // Fetch dynamic search suggestions when the query changes
   useEffect(() => {
     const fetchSuggestions = async () => {
       if (!searchQuery) {
-        setSearchSuggestions(staticSearchSuggestions);
+        setSearchSuggestions([]); // Clear suggestions if query is empty
         return;
       }
       try {
@@ -114,11 +81,11 @@ export function useMarketplaceSearch() {
           const data: SearchSuggestion[] = await res.json();
           setSearchSuggestions(data);
         } else {
-          setSearchSuggestions(staticSearchSuggestions);
+          setSearchSuggestions([]); // Fallback to empty if API call fails
         }
       } catch (_err) {
-        // Failed to fetch suggestions, fallback to static ones
-        setSearchSuggestions(staticSearchSuggestions);
+        // Failed to fetch suggestions, fallback to empty
+        setSearchSuggestions([]);
       }
     };
     fetchSuggestions();
@@ -129,7 +96,32 @@ export function useMarketplaceSearch() {
     [searchSuggestions]
   );
   const filterOptions: FilterOptions = useMemo(
-    () => staticFilterOptions,
+    () => ({
+      productTypes: [
+        { value: "app", label: "Web App" },
+        { value: "script", label: "Script" },
+        { value: "site", label: "Website" },
+        { value: "game", label: "Game" },
+        { value: "bot", label: "Bot" },
+      ],
+      locations: [
+        { value: "us", label: "United States" },
+        { value: "eu", label: "Europe" },
+        { value: "asia", label: "Asia" },
+        { value: "online", label: "Online" },
+      ],
+      availabilityOptions: [ // Renamed from availability
+        { value: "immediate", label: "Immediate" },
+        { value: "1-week", label: "Within 1 Week" },
+        { value: "1-month", label: "Within 1 Month" },
+      ],
+      ratingOptions: [5, 4, 3], // Changed to array of numbers
+      // Assuming minPrice and maxPrice should be part of actual filter options,
+      // but they are not in the original staticFilterOptions.
+      // Adding them with default values based on FilterOptions type.
+      minPrice: 0, // Default value
+      maxPrice: 10000, // Default value
+    }),
     [],
   );
 

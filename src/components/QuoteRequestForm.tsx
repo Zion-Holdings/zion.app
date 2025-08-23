@@ -13,7 +13,7 @@ import { TimelineStep } from "@/components/QuoteRequestForm/TimelineStep";
 import { BudgetStep } from "@/components/QuoteRequestForm/BudgetStep";
 import { SummaryStep } from "@/components/QuoteRequestForm/SummaryStep";
 import { AutoFillModal } from "@/components/QuoteRequestForm/AutoFillModal";
-import { QuoteFormData } from "@/types/quotes";
+import type { QuoteFormData } from "@/types/quotes";
 import { Sparkles, Loader2 } from 'lucide-react';
 
 
@@ -118,7 +118,7 @@ export function QuoteRequestForm() {
     
     try {
       // In a real application, you would send the data to your backend
-      logDebug("Submitting form data:", { data: formData });
+      logDebug('Submitting form data:', { data:  { data: formData } });
       
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1500));

@@ -98,14 +98,14 @@ export const useEmailAuth = (
       
       // Attempt to sign out any existing session first to prevent conflicts
       try {
-        await supabase.auth.signOut({ scope: 'global' });
+        await supabase!.auth.signOut({ scope: 'global' });
       } catch (err) {
         // Continue even if signout fails
-        logInfo('Sign out before signup failed:', { data: err });
+        logInfo('Sign out before signup failed:', { data:  { data: err } });
       }
       
       // Create a proper options object
-      const { data, error } = await supabase.auth.signUp({
+      const { data, error } = await supabase!.auth.signUp({
         email,
         password,
         options: {
@@ -148,7 +148,7 @@ export const useEmailAuth = (
   const resetPassword = async (email: string) => {
     try {
       setIsLoading(true);
-      const { error } = await supabase.auth.resetPasswordForEmail(email, {
+      const { error } = await supabase!.auth.resetPasswordForEmail(email, {
         redirectTo: `${window.location.origin}/update-password`,
       });
 

@@ -9,20 +9,19 @@ import { useJobForm } from './useJobForm';
 import { BasicInfoFields } from './BasicInfoFields';
 import { DateFields } from './DateFields';
 import { DescriptionFields } from './DescriptionFields';
-import { useJobs } from "@/hooks/useJobs";
-import { JobSchemaType } from './validation';
+import { useJobPostings } from "@/hooks/useJobPostings";
+import type { JobSchemaType } from './validation';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 interface JobPostingFormProps {
-  jobId?: string;
-  
-  onSuccess?: () => void;
+  jobId: string | undefined;
+  onSuccess: (() => void) | undefined;
 }
 
 export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
   // const router = useRouter(); // Available for navigation if needed // Changed from useNavigate
-  const { createJob, updateJob, getJobById } = useJobs();
+  const { createJob, updateJob, getJobById } = useJobPostings();
   const [isFormLoading, setIsFormLoading] = useState(false);
   const [editorContent, setEditorContent] = useState("");
   
@@ -86,8 +85,13 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
 
     try {
       const jobData = await submitJob(values);
-      
+      if (!jobData) {
+        toast.error("Failed to process job data");
+        setIsFormLoading(false);
+        return;
+      }
       if (jobId) {
+        // For updates, we only need to pass the form data since the service handles the update
         await updateJob(jobId, jobData);
         toast.success("Job updated successfully!");
       } else {
@@ -157,3 +161,5 @@ export function JobPostingForm({ jobId, onSuccess }: JobPostingFormProps) {
     </Form>
   );
 }
+
+

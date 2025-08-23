@@ -29,7 +29,8 @@ type CarouselContextProps = {
   canScrollPrev: boolean
   canScrollNext: boolean
   orientation: "horizontal" | "vertical"
-} & Omit<CarouselProps, "orientation">
+  opts: CarouselOptions // Make opts required here
+} & Omit<CarouselProps, "orientation" | "opts"> // Remove opts from Omit, as it's now required
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null)
 
@@ -126,7 +127,7 @@ const Carousel = React.forwardRef<
         value={{
           carouselRef,
           api: api,
-          opts,
+          opts: opts ?? {}, // Always provide an object
           orientation:
             orientation || (opts && opts.axis === "y" ? "vertical" : "horizontal"),
           scrollPrev,

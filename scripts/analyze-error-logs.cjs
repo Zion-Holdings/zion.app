@@ -80,6 +80,12 @@ const PATTERNS = [
   /Uncaught Exception/i,
   /CreatePlatformSocket\(\).*Address family not supported by protocol/i
 ];
+// Patterns that should be ignored as they stem from known environment
+// limitations (e.g. IPv6 socket errors in headless browsers). These are not
+// actionable for developers and simply add noise to the log output.
+const SKIP_PATTERNS = [
+  /CreatePlatformSocket\(\).*Address family not supported by protocol/i
+];
 const LEVELS = ['debug', 'info', 'warn', 'error'];
 const DEDUPE = args.includes('--dedupe');
 const SUMMARY = args.includes('--summary');
@@ -121,6 +127,10 @@ function checkFile(filePath) {
 
     if (parsed.level && counts[parsed.level] !== undefined) {
       counts[parsed.level] += 1;
+    }
+
+    if (SKIP_PATTERNS.some(p => p.test(parsed.message))) {
+      continue; // Skip known environment noise
     }
 
     if (PATTERNS.some(p => p.test(parsed.message))) {

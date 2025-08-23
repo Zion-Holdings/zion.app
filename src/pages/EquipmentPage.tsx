@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUp, Filter, SortAsc, Zap, TrendingUp, Star, ShoppingCart, MapPin, Package, AlertTriangle, RefreshCw } from 'lucide-react';
+import { ArrowUp, Filter, SortAsc, TrendingUp, Star, ShoppingCart, AlertTriangle, RefreshCw } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import apiClient from '@/services/apiClient';
 
@@ -16,12 +16,11 @@ import apiClient from '@/services/apiClient';
 
 
 import { useInfiniteScrollPagination } from '@/hooks/useInfiniteScroll';
-import { generateDatacenterEquipment, getEquipmentMarketStats, getRecommendedEquipment } from '@/utils/equipmentAutoFeedAlgorithm';
-import { ProductListing } from '@/types/listings';
+import type { ProductListing } from '@/types/listings';
 import { SkeletonCard } from '@/components/ui/skeleton';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import Spinner from '@/components/ui/spinner';
 import { EquipmentErrorBoundary } from '@/components/EquipmentErrorBoundary';
 import { useCurrency } from '@/hooks/useCurrency';
@@ -29,119 +28,28 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 
 
 // Enhanced initial equipment with more variety
-const INITIAL_EQUIPMENT: ProductListing[] = [
-  {
-    id: "nvidia-a100-server",
-    title: "NVIDIA A100 GPU Training Server",
-    description: "High-performance AI training server with 8x A100 GPUs, designed for demanding machine learning workloads.",
-    category: "AI Hardware",
-    price: 85000,
-    currency: "$",
-    brand: "NVIDIA",
-    specifications: ["8x A100 GPUs", "2TB HBM2e", "NVLink"],
-    tags: ["AI", "Machine Learning", "GPU"],
-    author: { name: "NVIDIA", id: "nvidia" },
-    images: ["https://images.unsplash.com/photo-1618599515406-3e5fd8cd9a27?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-15T10:30:00.000Z",
-    rating: 4.9,
-    reviewCount: 27,
-    location: "Santa Clara, CA",
-    availability: "In Stock"
-  },
-  {
-    id: "dell-poweredge-r750",
-    title: "Dell PowerEdge R750 Server",
-    description: "2U rack server with dual Intel Xeon processors, enterprise-grade performance for virtualization workloads.",
-    category: "Servers & Compute",
-    price: 12500,
-    currency: "$",
-    brand: "Dell",
-    specifications: ["2U Rack", "Dual Xeon", "128GB RAM", "2TB SSD"],
-    tags: ["Server", "Enterprise", "Virtualization"],
-    author: { name: "Dell", id: "dell" },
-    images: ["https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-12T14:20:00.000Z",
-    rating: 4.7,
-    reviewCount: 34,
-    location: "Austin, TX",
-    availability: "In Stock"
-  },
-  {
-    id: "cisco-nexus-9k",
-    title: "Cisco Nexus 9000 Switch",
-    description: "High-performance datacenter switch with 100GbE ports for modern cloud infrastructure.",
-    category: "Networking",
-    price: 18500,
-    currency: "$",
-    brand: "Cisco",
-    specifications: ["48x 100GbE", "QSFP28", "Line Rate"],
-    tags: ["Switch", "100GbE", "Datacenter"],
-    author: { name: "Cisco", id: "cisco" },
-    images: ["https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-10T09:15:00.000Z",
-    rating: 4.8,
-    reviewCount: 19,
-    location: "San Jose, CA",
-    availability: "In Stock"
-  },
-  {
-    id: "hpe-proliant-dl380",
-    title: "HPE ProLiant DL380 Gen10",
-    description: "Versatile 2U server optimized for compute-intensive workloads.",
-    category: "Servers & Compute",
-    price: 14500,
-    currency: "$",
-    brand: "HPE",
-    specifications: ["2U Rack", "Dual Xeon", "256GB RAM", "4TB SSD"],
-    tags: ["Server", "Enterprise", "Compute"],
-    author: { name: "HPE", id: "hpe" },
-    images: ["https://images.unsplash.com/photo-1555617981-dac388a08846?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-18T11:00:00.000Z",
-    rating: 4.6,
-    reviewCount: 21,
-    location: "Houston, TX",
-    availability: "In Stock"
-  },
-  {
-    id: "netapp-aff-a250",
-    title: "NetApp AFF A250 All-Flash Array",
-    description: "Enterprise all-flash storage system for demanding workloads.",
-    category: "Storage Systems",
-    price: 42000,
-    currency: "$",
-    brand: "NetApp",
-    specifications: ["24TB Flash", "NVMe", "Active-Active"],
-    tags: ["Storage", "Flash", "NVMe"],
-    author: { name: "NetApp", id: "netapp" },
-    images: ["https://images.unsplash.com/photo-1597852074816-d933c7d2b988?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-18T09:45:00.000Z",
-    rating: 4.7,
-    reviewCount: 18,
-    location: "Chicago, IL",
-    availability: "2-3 Weeks"
-  },
-  {
-    id: "arista-7050x",
-    title: "Arista 7050X Series Switch",
-    description: "High-density 10/40GbE switch for modern datacenter networks.",
-    category: "Networking",
-    price: 23000,
-    currency: "$",
-    brand: "Arista",
-    specifications: ["48x10GbE", "6x40GbE", "Wire Speed"],
-    tags: ["Switch", "10GbE", "Datacenter"],
-    author: { name: "Arista", id: "arista" },
-    images: ["https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&h=500"],
-    createdAt: "2024-01-17T12:10:00.000Z",
-    rating: 4.5,
-    reviewCount: 16,
-    location: "Sunnyvale, CA",
-    availability: "In Stock"
-  }
-];
+// Remove all INITIAL_EQUIPMENT and any other hardcoded/sample/mock equipment data. Fetch equipment from real API/data source or show empty/error state if unavailable.
+
+interface EquipmentStats {
+  averagePrice: number;
+  averageRating: number;
+  totalProducts: number;
+  availableCount: number;
+}
+
+interface EquipmentFilterControlsProps {
+  sortBy: string;
+  setSortBy: (value: string) => void;
+  filterCategory: string;
+  setFilterCategory: (value: string) => void;
+  categories: string[];
+  showRecommended: boolean;
+  setShowRecommended: (value: boolean) => void;
+  loading: boolean;
+}
 
 // Market insights component
-const EquipmentMarketInsights = ({ stats }: { stats: any }) => (
+const EquipmentMarketInsights = ({ stats }: { stats: EquipmentStats }) => (
   <Card className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 border-blue-700/30 mb-6">
     <CardContent className="p-6">
       <div className="flex items-center gap-2 mb-4">
@@ -158,11 +66,11 @@ const EquipmentMarketInsights = ({ stats }: { stats: any }) => (
           <div className="text-sm text-muted-foreground">Avg Rating</div>
         </div>
         <div className="text-center">
-          <div className="text-2xl font-bold text-purple-400">{stats.totalEquipment}</div>
+          <div className="text-2xl font-bold text-purple-400">{stats.totalProducts}</div>
           <div className="text-sm text-muted-foreground">Total Items</div>
         </div>
         <div className="text-center">
-          <div className="text-2xl font-bold text-orange-400">{stats.inStockCount}</div>
+          <div className="text-2xl font-bold text-orange-400">{stats.availableCount}</div>
           <div className="text-sm text-muted-foreground">In Stock</div>
         </div>
       </div>
@@ -173,7 +81,7 @@ const EquipmentMarketInsights = ({ stats }: { stats: any }) => (
 // Filter controls
 const EquipmentFilterControls = ({
   sortBy, setSortBy, filterCategory, setFilterCategory, categories, showRecommended, setShowRecommended, loading
-}: any) => (
+}: EquipmentFilterControlsProps) => (
   <div className="flex flex-wrap gap-4 mb-6 p-4 bg-muted/30 rounded-lg relative">
     {loading && <Spinner className="absolute right-4 top-4 h-4 w-4 text-primary" />}
     <div className="flex items-center gap-2">
@@ -250,7 +158,7 @@ const EquipmentLoadingGrid = ({ count = 8 }: { count?: number }) => (
 );
 
 // Error fallback component
-function EquipmentErrorFallback({ error, resetErrorBoundary }: { error: Error; resetErrorBoundary: () => void }) {
+function _EquipmentErrorFallback({ error: _error, resetErrorBoundary }: { error: Error; resetErrorBoundary: () => void }) {
   return (
     <main className="container py-8">
       <Card className="border-red-200 bg-red-50">
@@ -282,94 +190,37 @@ function EquipmentPageContent() {
   const [filterCategory, setFilterCategory] = useState('');
   const [showRecommended, setShowRecommended] = useState(false);
 
-  // Generate a consistent seed based on current filters for deterministic data
-  const dataSeed = useMemo(() => {
-    return `equipment-${filterCategory}-${showRecommended}`;
-  }, [filterCategory, showRecommended]);
+  // Remove dataSeed and artificial API delay
+  // const dataSeed = useMemo(() => {
+  //   return `equipment-${filterCategory}-${showRecommended}`;
+  // }, [filterCategory, showRecommended]);
 
   const fetchEquipment = useCallback(async (page: number, limit: number) => {
-    // Simulate realistic API delay
-    await new Promise(resolve => setTimeout(resolve, 300));
-
+    // Only fetch real data from the API
     try {
-      // Prefer real API if stubbed/mocked in tests
-      if (page === 1) {
-        try {
-          const res = await apiClient.get('/equipment');
-          if (Array.isArray(res?.data)) {
-            return {
-              items: res.data,
-              hasMore: false,
-              total: res.data.length,
-            };
-          }
-        } catch (apiErr: any) {
-          // Bubble up so error state can render
-          throw apiErr;
-        }
+      const res = await apiClient.get('/equipment');
+      if (Array.isArray(res?.data)) {
+        return {
+          items: res.data,
+          hasMore: false,
+          total: res.data.length,
+        };
       }
-
-      // Generate consistent virtual dataset using the seed
-      const VIRTUAL_DATASET_SIZE = 150;
-      const baseVirtualEquipment = generateDatacenterEquipment(
-        VIRTUAL_DATASET_SIZE,
-        INITIAL_EQUIPMENT.length,
-        dataSeed
-      );
-      let fullVirtualDataset: ProductListing[] = [
-        ...INITIAL_EQUIPMENT,
-        ...baseVirtualEquipment
-      ];
-
-      // Deduplicate by ID in case of overlaps
-      const dedupMap = new Map<string, ProductListing>();
-      for (const item of fullVirtualDataset) {
-        if (!dedupMap.has(item.id)) {
-          dedupMap.set(item.id, item);
-        }
+    } catch (apiErr: unknown) {
+      if (apiErr instanceof Error) {
+        logErrorToProduction('Error in fetchEquipment:', { data: apiErr.message });
+      } else {
+        logErrorToProduction('Error in fetchEquipment:', { data: String(apiErr) });
       }
-      fullVirtualDataset = Array.from(dedupMap.values());
-
-      // Apply category filtering
-      let processedDataset = fullVirtualDataset;
-      if (filterCategory) {
-        processedDataset = processedDataset.filter(e => e.category === filterCategory);
-      }
-
-      // Apply recommended filtering
-      if (showRecommended) {
-        processedDataset = getRecommendedEquipment(processedDataset);
-      }
-
-      // Sort the processed dataset
-      processedDataset.sort((a, b) => {
-        switch (sortBy) {
-          case 'price-low':
-            return (a.price || 0) - (b.price || 0);
-          case 'price-high':
-            return (b.price || 0) - (a.price || 0);
-          case 'rating':
-            return (b.rating || 0) - (a.rating || 0);
-          default: // 'newest'
-            return new Date(b.createdAt || '').getTime() - new Date(a.createdAt || '').getTime();
-        }
-      });
-
-      // Slice for pagination
-      const startIndex = (page - 1) * limit;
-      const endIndex = startIndex + limit;
-      const items = processedDataset.slice(startIndex, endIndex);
-
-      return {
-        items,
-        hasMore: endIndex < processedDataset.length,
-        total: processedDataset.length
-      };
-    } catch (error) {
-      logErrorToProduction('Error in fetchEquipment:', { data: error });
-      throw error;
+      throw apiErr;
     }
-  }, [sortBy, filterCategory, showRecommended, dataSeed]);
+    // If no data, return empty
+    return {
+      items: [],
+      hasMore: false,
+      total: 0,
+    };
+  }, [sortBy, filterCategory, showRecommended]);
 
   const {
     items: equipment,
@@ -393,10 +244,16 @@ function EquipmentPageContent() {
     return () => clearTimeout(timeoutId);
   }, [sortBy, filterCategory, showRecommended, refresh]);
 
-  const marketStats = useMemo(() => {
-    if (equipment.length === 0) return null;
-    return getEquipmentMarketStats(equipment);
-  }, [equipment]);
+  const stats: EquipmentStats = useMemo(() => ({
+    averagePrice: Math.round(
+      (equipment.reduce((sum, e) => sum + (e.price || 0), 0) / (equipment.length || 1))
+    ),
+    averageRating: equipment.length ? (
+      equipment.reduce((sum, e) => sum + (e.rating || 0), 0) / equipment.length
+    ) : 0,
+    totalProducts: equipment.length,
+    availableCount: equipment.filter(e => e.availability === 'In Stock').length,
+  }), [equipment]);
 
   const categories = useMemo(() => {
     // Use all possible categories, not just from current items
@@ -427,7 +284,14 @@ function EquipmentPageContent() {
 
   // Error state
   if (error && equipment.length === 0) {
-    const errorMessage = typeof error === 'string' ? error : (error as any)?.message || String(error);
+    let errorMessage: string;
+    if (typeof error === 'string') {
+      errorMessage = error;
+    } else if (typeof error === 'object' && error && 'message' in error && typeof (error as { message?: unknown }).message === 'string') {
+      errorMessage = (error as { message: string }).message;
+    } else {
+      errorMessage = String(error);
+    }
     // Notify toast once for visibility (supports unit tests expectations)
     toast({ title: errorMessage, variant: 'destructive' });
     return (
@@ -469,9 +333,9 @@ function EquipmentPageContent() {
         <p className="text-muted-foreground text-lg">Professional hardware for modern IT infrastructure and AI workloads</p>
       </motion.div>
 
-      {marketStats && (
+      {stats && (
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
-          <EquipmentMarketInsights stats={marketStats} />
+          <EquipmentMarketInsights stats={stats} />
         </motion.div>
       )}
 
@@ -484,7 +348,7 @@ function EquipmentPageContent() {
           categories={categories}
           showRecommended={showRecommended}
           setShowRecommended={setShowRecommended}
-          loading={isFetching}
+          loading={loading}
         />
       </motion.div>
 

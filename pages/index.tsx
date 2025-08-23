@@ -1,10 +1,10 @@
 import React from 'react';
-import Homepage2045 from '../components/Homepage2045';
-import SEOOptimizer from '../components/SEOOptimizer';
-import Analytics from '../components/Analytics';
-import ErrorBoundary from '../components/ErrorBoundary';
-import AccessibilityEnhancer from '../components/AccessibilityEnhancer';
-import PerformanceMonitor from '../components/PerformanceMonitor';
+import { useRouter } from 'next/router';
+// Import Home directly to avoid dynamic import issues that can lead to a blank screen
+import Home from '../src/pages/Home';
+import type { GetStaticProps } from 'next';
+import { ErrorBanner } from '@/components/talent/ErrorBanner';
+import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 const HomePage: React.FC = () => {
   return (
@@ -52,52 +52,59 @@ const HomePage: React.FC = () => {
               Pioneering the future with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-cyan-500/25"
-              >
-                Get Started Today
-              </motion.button>
-              
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="border-2 border-cyan-500/50 text-cyan-400 px-8 py-4 rounded-full text-lg font-semibold hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-300"
-              >
-                <div className="flex items-center gap-2">
-                  <Play className="w-5 h-5" />
-                  Watch Demo
-                </div>
-              </motion.button>
-            </div>
+// Use getStaticProps instead of getServerSideProps for better reliability and caching
+export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
+  try {
+    await fetchHomeData();
+    return { 
+      props: {
+        timestamp: Date.now()
+      },
+      // Revalidate every 5 minutes in production for fresh content
+      revalidate: 300
+    };
+  } catch (error) {
+    logErrorToProduction('Error in getStaticProps for home page:', { data: error });
+    
+    // Log to Sentry if available, but don't block the page
+    if (isSentryActive) {
+      try {
+        if (typeof window === 'undefined') {
+          const Sentry = (await import('@sentry/nextjs')).default;
+          Sentry.captureException(error);
+        }
+      } catch (sentryError) {
+        logWarn('Failed to log to Sentry:', { data:  { data: sentryError } });
+      }
+    }
+    
+    // Return fallback props instead of crashing
+    return {
+      props: {
+        hasError: false, // Don't show error on home page, show fallback content
+        timestamp: Date.now()
+      },
+      revalidate: 60 // Retry more frequently if there was an error
+    };
+  }
+};
 
-            {/* Hero Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
-              {heroStats.map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="text-center"
-                >
-                  <div className="flex items-center justify-center mb-2 text-cyan-400">
-                    {stat.icon}
-                  </div>
-                  <div className="text-2xl md:text-3xl font-bold text-white mb-1">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-gray-400">
-                    {stat.label}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
+const ErrorTestButton = () => {
+  const handleClick = () => {
+    try {
+      throw new Error("This is a test error from the homepage button!");
+    } catch (error) {
+      if (isSentryActive) {
+        if (typeof window === 'undefined') {
+          import('@sentry/nextjs').then(mod => {
+            const Sentry = mod.default;
+            Sentry.captureException(error);
+          });
+        }
+      }
+      logErrorToProduction('Button error test:', { error });
+    }
+  };
 
       {/* Service Categories Section */}
       <section className="py-20 bg-gradient-to-b from-gray-900 to-black">

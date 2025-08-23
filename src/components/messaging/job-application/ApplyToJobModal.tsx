@@ -8,7 +8,7 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 import { ApplyForm } from './ApplyForm';
-import { ApplyToJobModalProps } from './types';
+import type { ApplyToJobModalProps } from './types';
 
 export function ApplyToJobModal({ job, isOpen, onClose, onApplySuccess }: ApplyToJobModalProps) {
   return (
@@ -24,7 +24,7 @@ export function ApplyToJobModal({ job, isOpen, onClose, onApplySuccess }: ApplyT
         <ApplyForm 
           job={job}
           onClose={onClose}
-          onApplySuccess={onApplySuccess}
+          {...(onApplySuccess ? { onApplySuccess } : {})}
         />
       </DialogContent>
     </Dialog>

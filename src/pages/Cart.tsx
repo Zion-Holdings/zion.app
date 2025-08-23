@@ -1,31 +1,45 @@
 import React, { useEffect, useState } from 'react';
 import { safeStorage } from '@/utils/safeStorage';
 import { Button } from '@/components/ui/button';
-import { useNavigate } from 'react-router-dom';
-import { useCurrency } from '@/context/CurrencyContext';
+import Link from 'next/link';
+import { useSelector, useDispatch } from 'react-redux';
+import { useState } from 'react';
+import axios from 'axios';
+import { useAuth } from '@/hooks/useAuth';
+import type { RootState, AppDispatch } from '@/store';
+import { ShoppingCart, User, CreditCard, ArrowRight, Package, Shield } from 'lucide-react';
+import {
+  removeItem as removeItemAction,
+  updateQuantity as updateQuantityAction
+} from "@/store/cartSlice";
+import {logErrorToProduction} from '@/utils/productionLogger';
+import GuestCheckoutModal from '@/components/cart/GuestCheckoutModal';
+// CartItemType is already imported via RootState from cartSlice which uses CartItem from @/types/cart
+// import { CartItem as CartItemType } from '@/types/cart';
+// safeStorage is no longer needed here for reading
+// import { safeStorage } from '@/utils/safeStorage';
+import { getStripe } from '@/utils/getStripe';
+import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
 
-interface CartItem {
-  id: string;
-  name: string;
-  price: number;
-  quantity: number;
-}
+
+
+
+
+
+import { useWishlist } from '@/hooks/useWishlist';
+import { toast } from '@/hooks/use-toast';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 
 export default function CartPage() {
-  const navigate = useNavigate();
-  const { currency } = useCurrency();
-  const [items, setItems] = useState<CartItem[]>([]);
-
-  useEffect(() => {
-    const stored = safeStorage.getItem('cart');
-    if (stored) {
-      try {
-        setItems(JSON.parse(stored) as CartItem[]);
-      } catch {
-        setItems([]);
-      }
-    }
-  }, []);
+  const { t: _t } = useTranslation();
+  const items = useSelector((s: RootState) => s.cart.items);
+  const dispatch = useDispatch<AppDispatch>();
+  const { user, isAuthenticated } = useAuth();
+  const [loading, setLoading] = useState(false);
+  const [guestOpen, setGuestOpen] = useState(false);
+  const { toggle: toggleWishlist, isWishlisted } = useWishlist();
 
   const updateQuantity = (id: string, qty: number) => {
     setItems(prev => {
@@ -41,6 +55,43 @@ export default function CartPage() {
       safeStorage.setItem('cart', JSON.stringify(updated));
       return updated;
     });
+  };
+
+  const handleCheckout = async (details?: { email?: string; address?: string }) => {
+    setLoading(true);
+    try {
+      const stripe = await getStripe();
+      if (!stripe) throw new Error('Stripe.js failed to load');
+
+      const { data } = await axios.post('/api/checkout-session', {
+        cartItems: items,
+        customer_email: details?.email || user?.email,
+        shipping_address: details?.address,
+      });
+
+      const sessionId = data.sessionId as string | undefined;
+      if (!sessionId) throw new Error('Session ID missing in response');
+
+      const { error } = await stripe.redirectToCheckout({ sessionId });
+      if (error) logErrorToProduction('Stripe redirect error:', { data: error.message });
+    } catch (err) {
+      logErrorToProduction('Checkout error:', { data: err });
+      let message = 'Checkout failed';
+      if (err && typeof err === 'object' && 'message' in err && typeof (err as { message?: unknown }).message === 'string') {
+        message = (err as { message: string }).message;
+      }
+      alert(message);
+    } finally {
+      setLoading(false);
+    }
+  }; 
+
+  const startCheckout = () => {
+    if (!isAuthenticated) {
+      setGuestOpen(true);
+    } else {
+      handleCheckout();
+    }
   };
 
   const subtotal = items.reduce((sum, i) => sum + i.price * i.quantity, 0);

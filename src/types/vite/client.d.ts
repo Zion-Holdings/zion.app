@@ -1,4 +1,4 @@
 declare module 'vite/client' {
-  const viteClient: any;
+  const viteClient: unknown;
   export default viteClient;
 }

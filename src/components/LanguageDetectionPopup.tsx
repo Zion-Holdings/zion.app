@@ -11,7 +11,8 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from '../components/ui/alert-dialog';
-import { useLanguage, SupportedLanguage, LanguageContextType } from '../context/LanguageContext';
+import { useLanguage } from '../context/LanguageContext';
+import type { SupportedLanguage, LanguageContextType } from '../context/LanguageContext';
 
 export function LanguageDetectionPopup() {
   const [open, setOpen] = useState(false);

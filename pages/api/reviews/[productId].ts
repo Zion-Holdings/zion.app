@@ -4,21 +4,24 @@ import { withErrorLogging } from '@/utils/withErrorLogging';
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 
-async function handler(req: NextApiRequest, res: NextApiResponse) {
+async function handler(req: NextApiRequest, res: NextApiResponse): Promise<void> {
   if (!supabase) {
-    return res.status(503).json({ error: 'Supabase not configured' });
+    res.status(503).json({ error: 'Supabase not configured' });
+    return;
   }
 
   if (req.method !== 'GET') {
     res.setHeader('Allow', 'GET');
-    return res.status(405).end(`Method ${req.method} Not Allowed`);
+    res.status(405).end(`Method ${req.method} Not Allowed`);
+    return;
   }
 
   const { productId } = req.query as { productId: string | string[] };
   if (!productId || typeof productId !== 'string') {
-    return res.status(400).json({
+    res.status(400).json({
       error: 'productId is required in the URL path and must be a string.',
     });
+    return;
   }
 
   try {
@@ -30,16 +33,19 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
     if (error) {
       logErrorToProduction('Error fetching reviews:', { data: error });
-      return res.status(500).json({ error: 'Failed to fetch reviews' });
+      res.status(500).json({ error: 'Failed to fetch reviews' });
+      return;
     }
 
-    return res.status(200).json(data || []);
+    res.status(200).json(data || []);
+    return;
   } catch (error) {
     logErrorToProduction('Error fetching reviews:', { data: error });
-    return res.status(500).json({
+    res.status(500).json({
       error: 'Internal server error while fetching reviews.',
       details: error instanceof Error ? error.message : 'Unknown error'
     });
+    return;
   }
 }
 

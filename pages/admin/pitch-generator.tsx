@@ -75,14 +75,18 @@ const PitchGeneratorPage: React.FC = () => {
     setIsSavingVersion(true);
     setError(null);
     try {
-      // Since Supabase is disabled, use Auth0 for authentication instead
-      // For now, we'll simulate the save operation without requiring a token
       let token = null;
       
       try {
-        const sessionResult = await supabase.auth.getSession();
-        // Handle mock client response where session is always null - use type assertion
-        token = (sessionResult?.data?.session as any)?.access_token || null;
+        if (supabase) {
+          const sessionResult = await supabase.auth.getSession();
+          // Handle mock client response where session is always null - use type assertion
+          token = (sessionResult?.data?.session as any)?.access_token || null;
+        } else {
+          logWarn('Supabase client is null, using Auth0 fallback for admin operations');
+          // In a real scenario, we'd get the Auth0 token here
+          // For now, we'll proceed without a token since this is an admin operation
+        }
       } catch (authError) {
         logWarn('Supabase auth disabled, using Auth0 fallback for admin operations');
         // In a real scenario, we'd get the Auth0 token here
@@ -90,22 +94,21 @@ const PitchGeneratorPage: React.FC = () => {
       }
 
       logInfo('Simulating API call to /api/admin/pitch-decks/save with slides data.');
-      // const response = await fetch('/api/admin/pitch-decks/save', {
-      //   method: 'POST',
-      //   headers: { 
-      //     'Content-Type': 'application/json', 
-      //     ...(token && { 'Authorization': `Bearer ${token}` })
-      //   },
-      //   body: JSON.stringify({ slides: generatedSlides, parentVersion: deckVersion }),
-      // });
-      // if (!response.ok) {
-      //   const errorData = await response.json();
-      //   throw new Error(errorData.message || 'Failed to save version');
-      // }
-      // const savedVersionData = await response.json();
+      const response = await fetch('/api/admin/pitch-decks/save', {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json', 
+          ...(token && { 'Authorization': `Bearer ${token}` })
+        },
+        body: JSON.stringify({ slides: generatedSlides, parentVersion: deckVersion }),
+      });
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Failed to save version');
+      }
+      const savedVersionData = await response.json();
 
-      await new Promise(resolve => setTimeout(resolve, 700));
-      const newVersionNumber = deckVersion; // Current version is saved, next one will be +1
+      const newVersionNumber = savedVersionData.version || deckVersion;
       const newVersionEntry = {
         version: newVersionNumber,
         savedAt: new Date().toISOString(),
@@ -188,54 +191,18 @@ const PitchGeneratorPage: React.FC = () => {
     setError(null);
 
     try {
-      // Handle mock Supabase client - session is always null
-      const sessionResult = await supabase.auth.getSession();
-      const token = (sessionResult?.data?.session as any)?.access_token || null;
+      let token = null;
+      if (supabase) {
+        const sessionResult = await supabase.auth.getSession();
+        token = (sessionResult?.data?.session as any)?.access_token || null;
+      }
 
       if (!token) {
-        // Since Supabase is disabled, generate mock slides instead of making API calls
-        logWarn('Supabase auth disabled - generating mock pitch deck slides');
-        
-        // Generate mock slides for demonstration
-        const mockSlides: Slide[] = [
-          {
-            id: '1',
-            title: 'Problem Statement',
-            content: 'Businesses struggle to find reliable AI talent and services in a fragmented marketplace.',
-            type: 'text'
-          },
-          {
-            id: '2', 
-            title: 'Solution',
-            content: 'Zion.app provides a unified AI services marketplace connecting businesses with verified AI professionals.',
-            type: 'text'
-          },
-          {
-            id: '3',
-            title: 'Market Opportunity',
-            content: 'The global AI services market is valued at $150B and growing at 25% annually.',
-            type: 'text'
-          },
-          {
-            id: '4',
-            title: 'Traction',
-            content: `Active Users: ${syncedData.activeUsers30d}\nGMV: ${syncedData.gmv}\nMRR: ${syncedData.mrr}\nYoY Growth: ${syncedData.yoyGrowth}`,
-            type: 'text'
-          },
-          {
-            id: '5',
-            title: 'Business Model',
-            content: 'Revenue streams: marketplace fees (3%), subscription plans ($99-$999/mo), and premium services.',
-            type: 'text'
-          }
-        ];
-
-        await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate API delay
-        setGeneratedSlides(mockSlides);
+        setError('Authentication token missing. Please log in again.');
         setIsGenerating(false);
         return;
       }
-
+      
       const response = await fetch('/api/admin/generate-pitch-deck', {
         method: 'POST',
         headers: {
@@ -260,10 +227,8 @@ const PitchGeneratorPage: React.FC = () => {
       // alert(`New deck generated for Version ${deckVersion}. Save if you want to keep it.`);
 
     } catch (e: any) {
-      logErrorToProduction('Failed to generate pitch deck:', { data:  e });
-      setError(e.message || 'Failed to generate pitch deck. Check console for details.');
-      setGeneratedSlides([]);
-    } finally {
+      logErrorToProduction('Failed to generate deck:', { data: e });
+      setError(e.message || 'Failed to generate deck.');
       setIsGenerating(false);
     }
   };

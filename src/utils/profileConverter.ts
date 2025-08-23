@@ -1,37 +1,37 @@
 
-import { ProfileData } from "@/types/profile";
-import { TalentProfile } from "@/types/talent";
+import type { ProfileData } from "@/types/profile";
+import type { TalentProfile } from "@/types/talent";
 
-export function convertProfileToTalentProfile(profile: ProfileData | any): TalentProfile {
+function isTalentProfile(profile: unknown): profile is TalentProfile {
+  return (
+    typeof profile === 'object' &&
+    profile !== null &&
+    'professional_title' in profile
+  );
+}
+
+export function convertProfileToTalentProfile(profile: ProfileData | unknown): TalentProfile {
   // Handle both ProfileData and existing TalentProfile inputs
-  
-  // If this is already a TalentProfile, just return it
-  if (profile.professional_title !== undefined) {
-    return {
-      ...profile,
-      name: profile.name ?? profile.full_name,
-      title: profile.title ?? profile.professional_title,
-    } as TalentProfile;
+  if (isTalentProfile(profile)) {
+    return profile;
   }
-  
   // Convert ProfileData to TalentProfile
+  const p = profile as ProfileData;
   return {
-    id: profile.id,
-    user_id: profile.id,
-    full_name: profile.name,
-    professional_title: profile.title,
-    name: profile.name,
-    title: profile.title,
-    bio: profile.bio || '',
-    summary: profile.bio?.substring(0, 150),
-    profile_picture_url: profile.avatarUrl,
+    id: p.id,
+    user_id: p.id,
+    full_name: p.name,
+    professional_title: p.title,
+    bio: p.bio || '',
+    summary: p.bio?.substring(0, 150),
+    profile_picture_url: p.avatarUrl,
     years_experience: 3, // Default value
-    skills: profile.skills?.map((skill: { name: string }) => skill.name) || [],
-    availability_type: profile.availability?.status === 'available' ? 'full_time' :
-                      profile.availability?.status === 'limited' ? 'part_time' : 'unavailable',
+    skills: p.skills?.map((skill: { name: string }) => skill.name) || [],
+    availability_type: p.availability?.status === 'available' ? 'full_time' :
+                      p.availability?.status === 'limited' ? 'part_time' : 'unavailable',
     timezone: 'UTC',
-    hourly_rate: profile.hourlyRate || 0,
-    rating_count: profile.reviewCount || 0,
-    average_rating: profile.rating || 0
+    hourly_rate: p.hourlyRate || 0,
+    rating_count: p.reviewCount || 0,
+    average_rating: p.rating || 0
   };
 }

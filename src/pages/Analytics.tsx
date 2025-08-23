@@ -23,6 +23,7 @@ export default function Analytics() {
       const startDate = new Date();
       startDate.setDate(startDate.getDate() - days);
       
+      if (!supabase) throw new Error('Supabase client is not initialized');
       const { data, error } = await supabase
         .from('analytics_events')
         .select('created_at, path')
@@ -33,10 +34,12 @@ export default function Analytics() {
       
       // Group by date
       const viewsByDate: Record<string, { date: string; views: number }> = {};
-      data?.forEach((item: any) => {
-        const date = new Date(item.created_at).toISOString().split('T')[0] || 'unknown';
-        if (!viewsByDate[date]) viewsByDate[date] = { date: date, views: 0 };
-        viewsByDate[date].views++;
+      (data ?? []).forEach((item: unknown) => {
+        if (typeof item === 'object' && item !== null && 'created_at' in item) {
+          const date = new Date((item as { created_at: string }).created_at).toISOString().split('T')[0] || 'unknown';
+          if (!viewsByDate[date]) viewsByDate[date] = { date: date, views: 0 };
+          viewsByDate[date].views += 1;
+        }
       });
       
       // Fill in missing dates
@@ -64,6 +67,7 @@ export default function Analytics() {
       const startDate = new Date();
       startDate.setDate(startDate.getDate() - days);
       
+      if (!supabase) throw new Error('Supabase client is not initialized');
       const { data, error } = await supabase
         .from('analytics_events')
         .select('created_at, metadata')
@@ -74,19 +78,33 @@ export default function Analytics() {
       
       // Group by conversion type and date
       const conversionsByType: Record<string, Record<string, number>> = {};
-      data?.forEach((item: any) => {
-        const date = new Date(item.created_at).toISOString().split('T')[0] || 'unknown';
-        const conversionType = item.metadata?.conversionType || 'unknown';
-        
-        if (!conversionsByType[conversionType]) {
-          conversionsByType[conversionType] = {};
+      data?.forEach((item: unknown) => {
+        if (typeof item === 'object' && item !== null && 'created_at' in item) {
+          const date = new Date((item as { created_at: string }).created_at).toISOString().split('T')[0] || 'unknown';
+          let conversionType = 'unknown';
+          if (
+            typeof item === 'object' &&
+            item !== null &&
+            'metadata' in item &&
+            typeof (item as { metadata?: unknown }).metadata === 'object' &&
+            (item as { metadata?: { conversionType?: unknown } }).metadata &&
+            'conversionType' in (item as { metadata: { conversionType?: unknown } }).metadata
+          ) {
+            const meta = (item as { metadata: { conversionType?: unknown } }).metadata;
+            if (typeof meta.conversionType === 'string') {
+              conversionType = meta.conversionType;
+            }
+          }
+          
+          if (!conversionsByType[conversionType]) {
+            conversionsByType[conversionType] = {};
+          }
+          const typeMap = conversionsByType[conversionType] as Record<string, number>;
+          if (!typeMap[date]) {
+            typeMap[date] = 0;
+          }
+          typeMap[date] += 1;
         }
-        
-        if (!conversionsByType[conversionType][date]) {
-          conversionsByType[conversionType][date] = 0;
-        }
-        
-        conversionsByType[conversionType][date]++;
       });
       
       // Get all dates in range
@@ -100,10 +118,10 @@ export default function Analytics() {
       
       // Format data for chart
       return dates.map(date => {
-        const result: Record<string, any> = { date };
+        const result: Record<string, unknown> = { date };
         
         Object.keys(conversionsByType).forEach(type => {
-          result[type] = conversionsByType[type]?.[date] || 0;
+          result[type] = conversionsByType[type] && conversionsByType[type][date] ? conversionsByType[type][date] : 0;
         });
         
         return result;
@@ -115,6 +133,7 @@ export default function Analytics() {
     queryKey: ['feature-usage-data', timeRange],
     queryFn: async () => {
       const days = parseInt(timeRange.replace('d', ''));
+      if (!supabase) throw new Error('Supabase client is not initialized');
       const { data, error } = await supabase.rpc('get_feature_usage_stats', {
         days_back: days,
       });
@@ -133,15 +152,31 @@ export default function Analytics() {
         if (manualError) throw manualError;
 
         const usageByDate: Record<string, Record<string, number>> = {};
-        manual?.forEach((ev: any) => {
-          const date = new Date(ev.created_at).toISOString().split('T')[0] || 'unknown';
-          const feature = ev.metadata?.feature || 'unknown';
-          if (!usageByDate[date]) usageByDate[date] = {};
-          if (!usageByDate[date][feature]) usageByDate[date][feature] = 0;
-          usageByDate[date][feature]++;
+        (manual ?? []).forEach((ev: unknown) => {
+          if (typeof ev === 'object' && ev !== null && 'created_at' in ev) {
+            const date = new Date((ev as { created_at: string }).created_at).toISOString().split('T')[0] || 'unknown';
+            let feature = 'unknown';
+            if (
+              typeof ev === 'object' &&
+              ev !== null &&
+              'metadata' in ev &&
+              typeof (ev as { metadata?: unknown }).metadata === 'object' &&
+              (ev as { metadata?: { feature?: unknown } }).metadata &&
+              'feature' in (ev as { metadata: { feature?: unknown } }).metadata
+            ) {
+              const meta = (ev as { metadata: { feature?: unknown } }).metadata;
+              if (typeof meta.feature === 'string') {
+                feature = meta.feature;
+              }
+            }
+            if (!usageByDate[date]) usageByDate[date] = {};
+            const featureMap = usageByDate[date] as Record<string, number>;
+            if (!featureMap[feature]) featureMap[feature] = 0;
+            featureMap[feature] = (featureMap[feature] || 0) + 1;
+          }
         });
 
-        return Object.entries(usageByDate).map(([date, feats]) => ({
+        return Object.entries(usageByDate ?? {}).map(([date, feats]) => ({
           date,
           ...feats,
         }));
@@ -157,7 +192,7 @@ export default function Analytics() {
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
         <PageViewsChart
-          data={pageViewTrends || []}
+          data={pageViewTrends ?? []}
           timeRange={timeRange}
           onTimeRangeChange={setTimeRange}
         />
@@ -170,12 +205,12 @@ export default function Analytics() {
       
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
         <ConversionAnalysisChart
-          data={conversionData || []}
+          data={conversionData ?? []}
           timeRange={timeRange}
           onTimeRangeChange={setTimeRange}
         />
         <FeatureUsageChart
-          data={featureUsageData || []}
+          data={featureUsageData ?? []}
           timeRange={timeRange}
           onTimeRangeChange={setTimeRange}
         />

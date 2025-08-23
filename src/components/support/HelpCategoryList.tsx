@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { HelpCategory } from "./types";
+import type { HelpCategory } from "./types";
 
 interface HelpCategoryListProps {
   categories: HelpCategory[];

@@ -5,7 +5,8 @@ import { PlusCircle, SendIcon, InboxIcon } from 'lucide-react';
 
 
 
-import { OnboardingTracker, OnboardingStep } from "./OnboardingTracker";
+import { OnboardingTracker } from "./OnboardingTracker";
+import type { OnboardingStep } from "./OnboardingTracker";
 
 export function ClientOnboardingSteps() {
   const onboardingStatus = useOnboardingStatus();

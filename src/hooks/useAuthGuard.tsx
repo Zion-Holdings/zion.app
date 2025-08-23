@@ -41,6 +41,7 @@ export function useAuthGuard(options: AuthGuardOptions = {}): AuthGuardState {
 
     const checkAuth = async () => {
       try {
+        if (!supabase) throw new Error('Supabase client not initialized');
         // Get current session
         const { data: { session }, error: sessionError } = await supabase.auth.getSession()
         
@@ -115,11 +116,12 @@ export function useAuthGuard(options: AuthGuardOptions = {}): AuthGuardState {
     checkAuth()
 
     // Listen for auth state changes
+    if (!supabase) throw new Error('Supabase client not initialized');
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (event: AuthChangeEvent, session: Session | null) => {
         if (!mounted) return
 
-        logInfo('Auth guard: Auth state changed:', { data: event })
+        logInfo('Auth guard: Auth state changed:', { data:  { data: event } })
         
         let userState: User | null = null;
         if (session) {
@@ -160,7 +162,7 @@ export function useAuthGuard(options: AuthGuardOptions = {}): AuthGuardState {
         clearTimeout(redirectTimer)
       }
     }
-  }, [router, redirectTo, allowUnauthenticated, requireEmailVerified, supabase.auth])
+  }, [router, redirectTo, allowUnauthenticated, requireEmailVerified, supabase && supabase.auth])
 
   return state
 }

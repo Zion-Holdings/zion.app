@@ -15,7 +15,8 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import { useRouter } from 'next/router';
-import { Notification, NotificationType } from '@/context/notifications';
+import type { Notification } from '@/context/notifications';
+import type { NotificationType } from '@/context/notifications';
 
 export const getTypeIcon = (type: NotificationType) => {
   switch (type) {

@@ -1,18 +1,27 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { withErrorLogging } from '@/utils/withErrorLogging';
-import { MARKETPLACE_LISTINGS } from '@/data/listingData';
-import { SERVICES } from '@/data/servicesData';
+import { SERVICES as RAW_SERVICES } from '@/data/servicesData';
 import { TALENT_PROFILES } from '@/data/talentData';
 import { BLOG_POSTS } from '@/data/blog-posts';
 import { DOCS_SEARCH_ITEMS } from '@/data/docsSearchData';
 
+type ServiceSuggestion = { id?: string; title: string; description?: string; image?: string; category?: string };
+// Fix the type casting to ensure SERVICES has the correct type
+const SERVICES: ServiceSuggestion[] = RAW_SERVICES.map(service => ({
+  id: service.id,
+  title: service.title || '',
+  description: service.description || '',
+  image: (service as any).image,
+  category: service.category || ''
+}));
+
 interface SearchSuggestion {
-  id?: string;
+  id?: string | undefined;
   text: string;
   slug: string;
   type: 'product' | 'service' | 'talent' | 'category' | 'skill' | 'recent' | 'doc' | 'blog';
-  iconUrl?: string;
-  category?: string;
+  iconUrl?: string | undefined;
+  category?: string | undefined;
 }
 
 function handler(
@@ -21,14 +30,16 @@ function handler(
 ) {
   if (req.method !== 'GET') {
     res.setHeader('Allow', 'GET');
-    return res.status(405).end(`Method ${req.method} Not Allowed`);
+    res.status(405).end(`Method ${req.method} Not Allowed`);
+    return;
   }
 
   const q = String(((req.query as any).q ?? '')).toLowerCase().trim();
   const limit = parseInt(String(((req.query as any).limit ?? '5')), 10);
 
   if (!q) {
-    return res.status(200).json([]);
+    res.status(200).json([]);
+    return;
   }
 
   // Helper function to create slug from title
@@ -40,31 +51,20 @@ function handler(
   const suggestions: SearchSuggestion[] = [];
 
   // Add product suggestions
-  const productSuggestions = MARKETPLACE_LISTINGS
-    .filter((p) => match(p.title) || match(p.description))
-    .slice(0, 2) // Limit to 2 product suggestions
-    .map((p) => ({
-      id: p.id,
-      text: p.title,
-      slug: createSlug(p.title),
-      type: 'product' as const,
-      iconUrl: (p as any).image,
-      category: p.category
-    }));
-
+  const productSuggestions: SearchSuggestion[] = [];
   suggestions.push(...productSuggestions);
 
   // Add service suggestions
-  const serviceSuggestions = SERVICES
+  const serviceSuggestions = RAW_SERVICES
     .filter((s) => match(s.title) || match(s.description))
-    .slice(0, 2) // Limit to 2 service suggestions
+    .slice(0, 2)
     .map((s) => ({
-      id: s.id,
+      id: s.id ? String(s.id) : 'unknown',
       text: s.title,
       slug: createSlug(s.title),
       type: 'service' as const,
-      iconUrl: (s as any).image,
-      category: s.category
+      iconUrl: s.image,
+      category: s.category || 'Uncategorized',
     }));
 
   suggestions.push(...serviceSuggestions);
@@ -141,7 +141,7 @@ function handler(
   });
 
   // Return limited and sorted suggestions
-  return res.status(200).json(
+  res.status(200).json(
     suggestions
       .slice(0, limit)
       .sort((a, b) => {
@@ -155,6 +155,7 @@ function handler(
         return a.text.length - b.text.length;
       })
   );
+  return;
 }
 
 export default withErrorLogging(handler); 

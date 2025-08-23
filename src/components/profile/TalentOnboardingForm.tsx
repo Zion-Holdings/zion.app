@@ -149,6 +149,10 @@ export function TalentOnboardingForm() {
 
   // Handle CV upload
   const handleCvUpload = async (file: File) => {
+    if (!supabase) {
+      throw new Error("Supabase client not initialized");
+    }
+    
     const fileName = `cv-${user?.id}-${Date.now()}`;
     const { error: cvError } = await supabase.storage
       .from('resumes')

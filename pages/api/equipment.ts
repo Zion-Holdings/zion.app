@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { ProductListing } from '@/types/listings';
+import type { ProductListing } from '@/types/listings';
 import { equipmentListings, DEFAULT_EQUIPMENT_IMAGE } from '@/data/equipmentData';
 import { logInfo, logErrorToProduction } from '@/utils/productionLogger';
 
@@ -27,15 +27,15 @@ export default async function handler(
   }, 5000);
 
   try {
-    if (req.method !== 'GET') {
+    if (req['method'] !== 'GET') {
       res.setHeader('Allow', 'GET');
       clearTimeout(timeout);
-      return res.status(405).json({ error: `Method ${req.method} Not Allowed` });
+      return res.status(405).json({ error: `Method ${req['method']} Not Allowed` });
     }
 
     // Handle pagination params - default limit to 12 as requested
-    const page = parseInt((req.query as any).page as string, 10) || 1;
-    const limit = Math.min(parseInt((req.query as any).limit as string, 10) || 12, 50); // Cap at 50 for performance
+    const page = parseInt((req['query'] as any).page as string, 10) || 1;
+    const limit = Math.min(parseInt((req['query'] as any).limit as string, 10) || 12, 50); // Cap at 50 for performance
     const skip = (page - 1) * limit;
 
     logInfo(`Equipment API: page=${page}, limit=${limit}, skip=${skip}, total=${mockEquipment.length}`);

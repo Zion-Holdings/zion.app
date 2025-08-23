@@ -1,6 +1,8 @@
 
 import { useState } from "react";
+import { useRouter } from 'next/router';
 import { useForm } from "react-hook-form";
+import type { ControllerRenderProps } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { LogIn, User, Eye, EyeOff } from "lucide-react";
@@ -48,11 +50,25 @@ export function LoginForm() {
 
     try {
       setIsSubmitting(true);
-      const { res, data: resData } = await loginUser(data.email, data.password);
-      if (res.status !== 200) {
-        const message = resData?.error || "Invalid credentials";
-        form.setError("root", { message });
-        return;
+      // Pass email and password to the login function
+      const result = await login(data.email, data.password, data.rememberMe);
+      if (result?.error) {
+        let errorMessage = "Login failed. Please try again."; // Default generic error
+        if (
+          typeof result.error === 'object' &&
+          result.error !== null &&
+          'message' in result.error &&
+          typeof (result.error as any).message === 'string'
+        ) {
+          if ((result.error as any).message.toLowerCase().includes("email not confirmed")) {
+            errorMessage = "Your email is not confirmed. Please check your inbox for a confirmation link.";
+          } else {
+            errorMessage = (result.error as any).message;
+          }
+        }
+        form.setError("root", { message: errorMessage });
+      } else {
+        fireEvent('login', { method: 'email' });
       }
 
       await login(data.email, data.password);

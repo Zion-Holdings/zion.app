@@ -14,7 +14,7 @@ export interface Milestone {
   created_at: string;
   updated_at: string;
   created_by: string;
-  deliverables?: any[];
+  deliverables?: unknown[];
 }
 
 export interface MilestoneActivity {

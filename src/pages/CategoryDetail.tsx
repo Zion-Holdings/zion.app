@@ -11,7 +11,7 @@ import { Brain, PenLine, BarChart, Eye, Bot, Mic, Code, Briefcase } from 'lucide
 
 
 import { MARKETPLACE_LISTINGS } from "@/data/listingData";
-import { ProductListing } from "@/types/listings";
+import type { ProductListing } from "@/types/listings";
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { toast } from "@/hooks/use-toast";
@@ -19,6 +19,7 @@ import { NextSeo } from '@/components/NextSeo';
 import { Header } from "@/components/Header";
 import ListingGridSkeleton from '@/components/skeletons/ListingGridSkeleton';
 import {logErrorToProduction} from '@/utils/productionLogger';
+import apiClient from '@/services/apiClient';
 
 
 const AUTO_SERVICE_TITLES = [
@@ -32,33 +33,7 @@ const AUTO_SERVICE_TITLES = [
   "Blockchain Data Solutions"
 ];
 
-function generateInnovationListing(index: number): ProductListing {
-  const title = AUTO_SERVICE_TITLES[index % AUTO_SERVICE_TITLES.length] || 'AI Service';
-  const price = Math.floor(Math.random() * 9500) + 500; // $500 - $10,000
-  const rating = Math.floor(Math.random() * 2) + 4; // 4-5 stars
-  const reviewCount = Math.floor(Math.random() * 50) + 10;
-
-  return {
-    id: `innovation-auto-${index}`,
-    title,
-    description: `Professional ${title} package with expert support and global delivery. Ideal for businesses seeking modern IT and AI solutions at competitive market rates.`,
-    category: "Innovation",
-    price,
-    currency: "$",
-    tags: ["innovation", "ai", "service"],
-    author: {
-      name: "AutoGen Solutions",
-      id: "autogen"
-    },
-    images: ["https://source.unsplash.com/random/800x500?technology"],
-    createdAt: new Date().toISOString(),
-    rating,
-    reviewCount,
-    location: "Global",
-    availability: "Immediate",
-    aiScore: Math.floor(Math.random() * 20) + 80
-  };
-}
+// Remove the generateInnovationListing function entirely. Only real API data should be used.
 
 interface CategoryDetailProps {
   slug?: string;
@@ -70,13 +45,8 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
   const params = router.query as { slug?: string };
   const slug = slugProp ?? params.slug;
 
-  // Redirect to categories list if slug is missing
-  if (!slug) {
-    router.push('/categories');
-    return null;
-  }
-  const [isLoading, setIsLoading] = useState(true);
-  const [listings, setListings] = useState(MARKETPLACE_LISTINGS);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [listings, setListings] = useState<ProductListing[]>([]);
   const [category, setCategory] = useState<{title: string, description: string, icon: React.JSX.Element}>({
     title: "",
     description: "",
@@ -165,38 +135,11 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
         setCategory(currentCategory);
         innovationCounterRef.current = 0;
 
-        // Filter listings by category
-        const categoryTitle = currentCategory.title;
-        const filteredListings = MARKETPLACE_LISTINGS.filter(
-          (listing) => listing.category.toLowerCase() === categoryTitle.toLowerCase()
-        );
+        // Fetch real listings for this category from API
+        const response = await apiClient.get('/products', { params: { category: currentCategory.title } });
+        const filteredListings = response.data?.items || [];
 
-        // If we don't have real listings for this category, generate placeholder listings
-        const listingsToShow =
-          filteredListings.length > 0
-            ? filteredListings
-            : Array(4)
-                .fill(null)
-                .map((_, index) => ({
-                  id: `${slug}-${index}`,
-                  title: `${currentCategory.title} Product ${index + 1}`,
-                  description: `A great ${currentCategory.title.toLowerCase()} solution for your needs.`,
-                  category: currentCategory.title,
-                  price: Math.floor(Math.random() * 500) + 50,
-                  currency: '$',
-                  tags: [`${slug}`, 'ai', 'tool'],
-                  author: {
-                    name: `Provider ${index + 1}`,
-                    id: `author-${index + 1}`,
-                    avatarUrl: undefined,
-                  },
-                  images: [`/placeholder.svg`],
-                  createdAt: new Date().toISOString(),
-                  rating: Math.floor(Math.random() * 5) + 1,
-                  reviewCount: Math.floor(Math.random() * 100),
-                }));
-
-        setListings(listingsToShow);
+        setListings(filteredListings);
       } catch (err) {
         logErrorToProduction('Category load error:', { data: err });
         toast({ title: 'Error', description: 'Failed to load category' });
@@ -210,17 +153,14 @@ export default function CategoryDetail({ slug: slugProp }: CategoryDetailProps =
 
   useEffect(() => {
     if (slug !== 'innovation') return;
-
-    const interval = setInterval(() => {
-      innovationCounterRef.current += 1;
-      setListings((prev) => [
-        generateInnovationListing(innovationCounterRef.current),
-        ...prev,
-      ]);
-    }, 120000); // every 2 minutes
-
-    return () => clearInterval(interval);
+    // No-op
+    return undefined;
   }, [slug]);
+
+  if (!slug) {
+    router.push('/categories');
+    return null;
+  }
 
   // Handle requesting a quote
   const handleRequestQuote = (listingId: string) => {

@@ -3,8 +3,8 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { useAuth } from "@/hooks/useAuth";
-import { ContractTemplate } from "@/types/contracts";
-import { ContractFormValues } from "@/components/contracts/components/ContractForm";
+import type { ContractTemplate } from "@/types/contracts";
+import type { ContractFormValues } from "@/components/contracts/components/ContractForm";
 import {logErrorToProduction} from '@/utils/productionLogger';
 
 export function useContractTemplates() {
@@ -22,6 +22,7 @@ export function useContractTemplates() {
   } = useQuery({
     queryKey: ['contractTemplates', user?.id],
     queryFn: async () => {
+      if (!supabase) throw new Error('Supabase client not initialized');
       if (!isAuthenticated || !user) {
         return [];
       }
@@ -53,6 +54,7 @@ export function useContractTemplates() {
       isDefault?: boolean;
     }) => {
       if (!user) throw new Error("User not authenticated");
+      if (!supabase) throw new Error('Supabase client not initialized');
       
       setIsLoading(true);
       
@@ -115,6 +117,7 @@ export function useContractTemplates() {
       isDefault?: boolean;
     }) => {
       if (!user) throw new Error("User not authenticated");
+      if (!supabase) throw new Error('Supabase client not initialized');
       
       setIsLoading(true);
       
@@ -170,7 +173,7 @@ export function useContractTemplates() {
   const deleteTemplate = useMutation({
     mutationFn: async (templateId: string) => {
       if (!user) throw new Error("User not authenticated");
-      
+      if (!supabase) throw new Error('Supabase client not initialized');
       setIsLoading(true);
       
       try {
@@ -206,7 +209,7 @@ export function useContractTemplates() {
   const setDefaultTemplate = useMutation({
     mutationFn: async (templateId: string) => {
       if (!user) throw new Error("User not authenticated");
-      
+      if (!supabase) throw new Error('Supabase client not initialized');
       setIsLoading(true);
       
       try {
@@ -216,7 +219,6 @@ export function useContractTemplates() {
           .update({ is_default: false })
           .eq('user_id', user.id)
           .eq('is_default', true);
-        
         // Then set the new default
         const { error } = await supabase
           .from('contract_templates')

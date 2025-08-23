@@ -3,7 +3,6 @@ import React from "react";
 import { Header } from "@/components/Header";
 import { AdminDashboard } from "@/components/enterprise/admin/AdminDashboard";
 import { useAuth } from "@/hooks/useAuth";
-import { useRouter } from "next/router"; // Changed to named import
 import { SEO } from "@/components/SEO";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
 

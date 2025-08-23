@@ -20,7 +20,7 @@ import {
 
 
 
-import { PortfolioProject } from '@/types/resume';
+import type { PortfolioProject } from '@/types/resume';
 import { usePortfolio } from '@/hooks/usePortfolio';
 import { useAuth } from '@/hooks/useAuth';
 
@@ -74,13 +74,13 @@ export function ProjectForm({ project, onSuccess, onCancel }: ProjectFormProps) 
     try {
       const projectData: PortfolioProject = {
         title: data.title,
-        description: data.description,
+        ...(data.description && { description: data.description }),
         technologies: data.technologies ? 
           data.technologies.split(',').map(tech => tech.trim()) : [],
-        image_url: data.image_url,
-        github_url: data.github_url || undefined,
-        demo_url: data.demo_url || undefined,
-        pdf_url: data.pdf_url,
+        ...(data.image_url && { image_url: data.image_url }),
+        ...(data.github_url && { github_url: data.github_url }),
+        ...(data.demo_url && { demo_url: data.demo_url }),
+        ...(data.pdf_url && { pdf_url: data.pdf_url }),
       };
       
       let success = false;

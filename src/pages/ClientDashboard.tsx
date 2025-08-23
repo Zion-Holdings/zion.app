@@ -3,9 +3,9 @@ import { JobsList } from "@/components/jobs/JobsList";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Link from "next/link";
-import { JobStatus } from "@/types/jobs";
+import type { JobStatus } from "@/types/jobs";
 import { SEO } from "@/components/SEO";
-import { BriefcaseIcon, UserIcon, MessageSquare, Star, PlusCircle, Kanban, Video } from 'lucide-react';
+import { BriefcaseIcon, PlusCircle, Kanban } from 'lucide-react';
 
 
 
@@ -24,10 +24,10 @@ import { UpcomingInterviewsCard } from "@/components/interviews/UpcomingIntervie
 import { useIsMobile } from "@/hooks/use-mobile";
 
 function ClientDashboardContent() {
-  const [activeTab, setActiveTab] = useState<JobStatus | "all">("all");
-  const { jobs, isLoading } = useJobs();
+  const [_activeTab, setActiveTab] = useState<JobStatus | "all">("all");
+  const { jobs, isLoading: _isLoading } = useJobs();
   const [selectedJobId, setSelectedJobId] = useState<string | null>(null);
-  const [selectedJobTitle, setSelectedJobTitle] = useState<string>("");
+  const [_selectedJobTitle, setSelectedJobTitle] = useState<string>("");
   const isMobile = useIsMobile();
   const onboardingStatus = useOnboardingStatus();
   const showAdvanced =

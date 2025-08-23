@@ -1,7 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import fs from 'fs';
 import path from 'path';
-import * as Sentry from '@sentry/nextjs';
 import { logWarn, logErrorToProduction } from '@/utils/productionLogger';
 
 
@@ -32,12 +31,12 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse,
 ) {
-  if (req.method !== 'POST') {
+  if (req['method'] !== 'POST') {
     res.setHeader('Allow', 'POST');
     return res.status(405).json({ message: 'Method Not Allowed' });
   }
 
-  const { entries } = req.body as { entries?: ClientLogEntry[] };
+  const { entries } = req['body'] as { entries?: ClientLogEntry[] };
 
   if (!Array.isArray(entries) || entries.length === 0) {
     return res.status(400).json({ message: 'Invalid payload – expected { entries: ClientLogEntry[] }' });
@@ -62,38 +61,38 @@ export default async function handler(
     }
 
     // 2. Forward errors/warnings to Sentry if configured
-    if (process.env.NEXT_PUBLIC_SENTRY_DSN) {
+    if (process.env['NEXT_PUBLIC_SENTRY_DSN']) {
       entries.forEach((entry) => {
         if (entry.level === 'error' || entry.level === 'warn') {
           // Map our log levels to Sentry's SeverityLevel
           const sentryLevel = entry.level === 'warn' ? 'warning' : entry.level;
-          Sentry.withScope(scope => {
-            scope.setLevel(sentryLevel);
-            scope.setExtra('level', entry.level);
-            scope.setExtra('context', entry.context);
-            scope.setExtra('timestamp', entry.timestamp);
-            scope.setExtra('sessionId', entry.sessionId);
-            scope.setExtra('url', entry.url);
-            scope.setExtra('userAgent', entry.userAgent);
-            scope.setExtra('userId', entry.userId);
-            Sentry.captureMessage(entry.message);
-          });
+          // Sentry.withScope(scope => {
+          //   scope.setLevel(sentryLevel);
+          //   scope.setExtra('level', entry.level);
+          //   scope.setExtra('context', entry.context);
+          //   scope.setExtra('timestamp', entry.timestamp);
+          //   scope.setExtra('sessionId', entry.sessionId);
+          //   scope.setExtra('url', entry.url);
+          //   scope.setExtra('userAgent', entry.userAgent);
+          //   scope.setExtra('userId', entry.userId);
+          //   Sentry.captureMessage(entry.message);
+          // });
         }
       });
     }
 
     // 3. Optional: Forward to external webhook if configured via env
-    if (process.env.NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL) {
+    if (process.env['NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL']) {
       try {
         const doFetch = typeof fetch !== 'undefined' ? fetch : ((await import('node-fetch')).default as any as typeof fetch);
-        await doFetch(process.env.NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL, {
+        await doFetch(process.env['NEXT_PUBLIC_AUTOFIX_WEBHOOK_URL'], {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ entries }),
         });
       } catch (err) {
         // swallow – do not break client logging on webhook failure
-        logWarn('Failed to forward logs to webhook:', { error: err });
+        logWarn('Failed to forward logs to webhook:', { data:  { error: err } });
       }
     }
 
@@ -101,7 +100,7 @@ export default async function handler(
   } catch (error) {
     // Log server-side failure
     logErrorToProduction('Error in /api/logs:', error);
-    Sentry.captureException(error);
+    // Sentry.captureException(error);
     return res.status(500).json({ message: 'Internal Server Error' });
   }
 } 

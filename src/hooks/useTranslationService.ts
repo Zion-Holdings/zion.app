@@ -5,7 +5,8 @@ import {logErrorToProduction} from '@/utils/productionLogger';
 
 // Only use the public client-side OpenAI key - never reference server-side secrets
 const openAiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
-import { useLanguage, SupportedLanguage } from '@/context/LanguageContext';
+import { useLanguage } from '@/context/LanguageContext';
+import type { SupportedLanguage } from '@/context/LanguageContext';
 
 type ContentType = 'job' | 'profile' | 'service' | 'general';
 
@@ -75,6 +76,7 @@ export function useTranslationService() {
         return { translations };
       }
 
+      if (!supabase) throw new Error('Supabase client not initialized');
       const { data, error } = await supabase.functions.invoke('translate-content', {
         body: {
           content,
@@ -100,7 +102,7 @@ export function useTranslationService() {
       }
       
       // Handle mock response with fallback
-      if (!data || !(data as any)?.translations) {
+      if (!data || typeof data !== 'object' || !('translations' in data)) {
         const initialTranslations: Record<SupportedLanguage, string> = {
           en: content,
           es: '',
@@ -111,8 +113,28 @@ export function useTranslationService() {
         initialTranslations[sourceLanguage] = content;
         return { translations: initialTranslations };
       }
-      
-      return { translations: (data as any).translations };
+
+      // Type guard for translations
+      const maybeTranslations = (data as { translations: unknown }).translations;
+      if (
+        maybeTranslations &&
+        typeof maybeTranslations === 'object' &&
+        ['en', 'es', 'fr', 'pt', 'ar'].every(
+          lang => typeof (maybeTranslations as Record<string, unknown>)[lang] === 'string'
+        )
+      ) {
+        return { translations: maybeTranslations as Record<SupportedLanguage, string> };
+      } else {
+        const initialTranslations: Record<SupportedLanguage, string> = {
+          en: content,
+          es: '',
+          fr: '',
+          pt: '',
+          ar: ''
+        };
+        initialTranslations[sourceLanguage] = content;
+        return { translations: initialTranslations };
+      }
     } catch (err) {
       setIsTranslating(false);
       logErrorToProduction('Translation service error:', { data: err });

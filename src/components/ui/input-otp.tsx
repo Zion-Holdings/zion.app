@@ -33,15 +33,29 @@ const InputOTPSlot = React.forwardRef<
   React.ElementRef<"div">,
   React.ComponentPropsWithoutRef<"div"> & { index: number }
 >(({ index, className, ...props }, ref) => {
-  const inputOTPContext = React.useContext(OTPInputContext) as any
-  const { char, hasFakeCaret, isActive } = inputOTPContext.slots[index]
+  const inputOTPContext = React.useContext(OTPInputContext) as unknown;
+  let char: string | undefined = undefined, hasFakeCaret: boolean = false, isActive: boolean = false;
+  if (
+    inputOTPContext &&
+    typeof inputOTPContext === 'object' &&
+    'slots' in inputOTPContext &&
+    Array.isArray((inputOTPContext as { slots: unknown[] }).slots) &&
+    (inputOTPContext as { slots: unknown[] }).slots.length > index
+  ) {
+    const slot = (inputOTPContext as { slots: unknown[] }).slots[index];
+    if (slot && typeof slot === 'object') {
+      char = (slot as { char?: unknown }).char as string | undefined;
+      hasFakeCaret = Boolean((slot as { hasFakeCaret?: unknown }).hasFakeCaret);
+      isActive = Boolean((slot as { isActive?: unknown }).isActive);
+    }
+  }
 
   return (
     <div
       ref={ref}
       className={cn(
         "relative flex h-10 w-10 items-center justify-center border-y border-r border-input text-sm transition-all first:rounded-l-md first:border-l last:rounded-r-md",
-        isActive && "z-10 ring-2 ring-ring ring-offset-background",
+        !!isActive && "z-10 ring-2 ring-ring ring-offset-background",
         className
       )}
       {...props}
@@ -53,7 +67,7 @@ const InputOTPSlot = React.forwardRef<
         </div>
       )}
     </div>
-  )
+  );
 })
 InputOTPSlot.displayName = "InputOTPSlot"
 

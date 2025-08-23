@@ -2,11 +2,10 @@ import { useMemo, useState } from 'react';
 import { Header } from '@/components/Header';
 import { SEO } from '@/components/SEO';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Switch } from '@/components/ui/switch';
 import { orgMembers } from '@/data/orgMembers';
-import { OrgMember, RoleType } from '@/types/org';
+import type { OrgMember, RoleType } from '@/types/org';
 
 const sections = ['Founders', 'Core Team', 'Contributors', 'DAO Delegates'] as const;
 
@@ -55,7 +54,7 @@ export default function OrgChart() {
       <main className="container mx-auto py-8 space-y-6">
         <h1 className="text-3xl font-bold">Organization Chart</h1>
         <div className="flex flex-wrap gap-4 items-center">
-          <Select value={role} onValueChange={v => setRole(v as any)}>
+          <Select value={role} onValueChange={v => setRole(v as RoleType | "ALL")}>
             <SelectTrigger className="w-36">
               <SelectValue placeholder="Role" />
             </SelectTrigger>

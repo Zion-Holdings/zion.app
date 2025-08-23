@@ -1,4 +1,5 @@
-import React, { ReactNode, useState } from "react"; // Added useState
+import React, { useState } from "react";
+import type { ReactNode } from "react";
 import { useRouter } from 'next/router';
 // Assume useAuth hook exists and provides user object with emailVerified status and email
 import { useAuth } from '@/hooks/useAuth';
@@ -15,6 +16,7 @@ import { SkipLink } from "@/components/SkipLink";
 import { Container } from '@/components/Container';
 import { useGlobalLoader } from '@/context/GlobalLoaderContext';
 import LoaderOverlay from '@/components/LoaderOverlay';
+import type { ReactElement } from 'react';
 import ErrorOverlay from '@/components/ErrorOverlay';
 import {logErrorToProduction} from '@/utils/productionLogger';
 import { useSessionDuration } from '@/hooks/useSessionDuration';
@@ -42,7 +44,8 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
   useNavigationGestures();
   const [isResendingEmail, setIsResendingEmail] = useState(false);
   const [resendStatusMessage, setResendStatusMessage] = useState('');
-  const { loading, error, setError } = useGlobalLoader();
+  const { loading: rawLoading, error, setError } = useGlobalLoader();
+  const loading: boolean = Boolean(rawLoading);
   const pathname = useSafePathname();
   const isAuthPage = /^\/auth|\/login|\/register|\/signup|\/forgot-password|\/reset-password|\/update-password/.test(pathname);
 
@@ -105,8 +108,13 @@ export function AppLayout({ children, hideFooter = false }: AppLayoutProps) {
       {!isAuthPage && <PrimaryNav />}
       <ScrollProgressBar />
       <ScrollToTop />
-      {loading && <LoaderOverlay />}
-      {error && <ErrorOverlay error={error} onClose={() => setError(null)} />}
+      {Boolean(loading) && <LoaderOverlay />}
+      {(typeof error === 'string' || error instanceof Error) && (
+        <ErrorOverlay
+          error={typeof error === 'string' ? error : error.message}
+          onClose={() => setError(null)}
+        />
+      )}
       <main
         id="main-content"
         role="main"

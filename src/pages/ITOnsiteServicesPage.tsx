@@ -5,7 +5,8 @@ import { ITServicePricingTable } from "@/components/services/ITServicePricingTab
 import { GlobalServiceSection } from "@/components/GlobalServiceSection";
 import { QuoteFormSection } from "@/components/QuoteFormSection";
 import { TrustedBySection } from "@/components/TrustedBySection";
-import { CountryPricing, onsiteServicePricing } from "@/data/onsiteServicePricing";
+import { onsiteServicePricing } from "@/data/onsiteServicePricing";
+import type { CountryPricing } from "@/data/onsiteServicePricing";
 import { toast } from "@/hooks/use-toast";
 import { OnsiteQuoteModal } from "@/components/services/OnsiteQuoteModal";
 import { slugify } from "@/lib/slugify";

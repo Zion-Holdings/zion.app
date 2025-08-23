@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { useForm, ControllerRenderProps } from "react-hook-form";
+import { useForm } from "react-hook-form";
+import type { ControllerRenderProps } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
@@ -82,7 +83,7 @@ export function DisputeForm({
       
       const dispute = await createDispute({
         project_id: projectId,
-        milestone_id: milestoneId,
+        ...(milestoneId ? { milestone_id: milestoneId } : {}),
         reason_code: values.reason_code,
         description: values.description,
       });

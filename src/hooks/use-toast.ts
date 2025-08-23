@@ -1,5 +1,6 @@
 import React from 'react';
-import { useSnackbar, VariantType, OptionsObject } from 'notistack';
+// Remove direct import of sonnerToast, rely on globalToastManager
+import { globalToastManager, showToast, ToastType, ToastPriority } from '@/utils/globalToastManager';
 
 export type ToastOptions = OptionsObject & { variant?: VariantType };
 
@@ -15,7 +16,72 @@ export function useToast() {
   return { toast } as { toast: typeof toast };
 }
 
-let globalEnqueue: (msg: string, opts?: OptionsObject) => void;
+const shouldShow = (key: string): boolean => {
+  const now = Date.now();
+  if (key === lastKey && (now - lastShown) < DEDUPE_DELAY) {
+    return false;
+  }
+  lastKey = key;
+  lastShown = now;
+  return true;
+};
+
+/**
+ * Enhanced toast adapter that uses the global toast manager
+ */
+const toastAdapter = (props: ToastProps | string) => {
+  if (typeof props === 'string') {
+    return globalToastManager.showToast({
+      message: props,
+      type: ToastType.INFO,
+    });
+  }
+
+  const { 
+    title, 
+    description, 
+    variant = 'default', 
+    action, 
+    onRetry, 
+    duration,
+    priority,
+    persistent = false 
+  } = props;
+
+  // Map variant to toast type
+  let type: ToastType;
+  switch (variant) {
+    case 'destructive':
+      type = ToastType.ERROR;
+      break;
+    case 'success':
+      type = ToastType.SUCCESS;
+      break;
+    default:
+      type = ToastType.INFO;
+      break;
+  }
+
+  // Use title as message if no description, otherwise use description
+  const message = description || title || '';
+  const toastTitle = title && description ? title : undefined;
+
+  return globalToastManager.showToast({
+    message,
+    ...(toastTitle && { title: toastTitle }),
+    type,
+    ...(priority && { priority }),
+    ...(duration && { duration }),
+    persistent,
+    ...(action && { action }),
+    ...(onRetry && { onRetry }),
+  });
+};
+
+// Convenience methods that use the global toast manager
+toastAdapter.success = (message: string, options?: { id?: string; duration?: number } & Record<string, any>) => {
+  return showToast.success(message, options);
+};
 
 export function ToastInitializer() {
   const { enqueueSnackbar } = useSnackbar();

@@ -1,12 +1,10 @@
 // import { AxiosResponse } from 'axios';
-import apiClient from './apiClient';
 
-export async function apiHelper<T>(request: () => Promise<any>): Promise<{ data: T | null; error: string | null }> {
+export async function apiHelper<T>(request: () => Promise<T>): Promise<{ data: T | null; error: string | null }> {
   try {
-    const res = await request();
-    return { data: res.data, error: null };
-  } catch (err: any) {
-    const message = err?.response?.data?.message || err.message || 'Unexpected error';
-    return { data: null, error: message };
+    const data = await request();
+    return { data, error: null };
+  } catch (err: unknown) {
+    return { data: null, error: err instanceof Error ? err.message : String(err) };
   }
 }
