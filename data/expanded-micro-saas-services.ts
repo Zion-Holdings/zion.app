@@ -2081,6 +2081,42 @@ export const expandedMicroSaasServices: MicroSaasService[] = [
     marketSize: '$800M growing market',
     growthRate: '200% annual growth'
   },
+  {
+    id: 'metaverse-commerce-platform',
+    name: 'Metaverse Commerce Platform',
+    tagline: 'Complete metaverse business solution',
+    price: '$199',
+    period: '/month',
+    description: 'Build, launch, and monetize your business in the metaverse with our comprehensive platform including virtual stores, NFT marketplaces, and VR experiences.',
+    features: [
+      '3D virtual store builder',
+      'NFT marketplace integration',
+      'VR/AR experience creator',
+      'Cryptocurrency payment processing',
+      'Virtual event hosting',
+      'Social commerce features',
+      'Analytics and insights',
+      'Multi-platform deployment'
+    ],
+    popular: true,
+    icon: '🌐',
+    color: 'from-emerald-500 to-teal-600',
+    textColor: 'text-emerald-400',
+    link: 'https://ziontechgroup.com/metaverse-commerce',
+    marketPosition: 'Leading metaverse commerce platform',
+    targetAudience: 'E-commerce businesses, brands, creators, event organizers',
+    trialDays: 14,
+    setupTime: '30 minutes',
+    category: 'Emerging Technologies',
+    realService: true,
+    technology: ['Web3', 'VR/AR', 'Blockchain', '3D Graphics'],
+    integrations: ['Meta Quest', 'VR Chat', 'Decentraland', 'Roblox'],
+    useCases: ['Virtual retail', 'Digital events', 'NFT sales', 'Brand experiences'],
+    roi: '800% average ROI in 18 months',
+    competitors: ['Spatial', 'VRChat', 'AltspaceVR'],
+    marketSize: '$800M growing market',
+    growthRate: '200% annual growth'
+  },
   // IoT & Smart City Services
   {
     id: 'iot-smart-city-platform',
