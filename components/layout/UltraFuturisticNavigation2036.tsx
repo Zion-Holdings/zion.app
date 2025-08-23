@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import EnhancedSearch from '../EnhancedSearch';
+import ThemeToggle from '../ThemeToggle';
 
 interface NavigationItem {
   name: string;
@@ -28,8 +29,6 @@ interface NavigationItem {
   featured?: boolean;
   category?: string;
 }
-
-
 
 function normalizeHref(href: string): string {
   if (!href) return href;
@@ -100,101 +99,41 @@ const navigationItems: NavigationItem[] = [
     featured: true,
     children: [
       { 
-        name: 'Services Showcase', 
+        name: '2025 Services Showcase', 
         href: '/comprehensive-services-showcase-2025', 
-        description: 'Complete services overview',
-        icon: <Calculator className="w-4 h-4" />,
+        description: 'Complete 2025 services portfolio',
+        icon: <Star className="w-4 h-4" />,
         featured: true
       },
       { 
-        name: 'Pricing Plans', 
-        href: '/pricing', 
-        description: 'Service pricing information',
-        icon: <Play className="w-4 h-4" />
+        name: '2026 Services Showcase', 
+        href: '/revolutionary-2026-services', 
+        description: 'Advanced 2026 services portfolio',
+        icon: <Star className="w-4 h-4" />
       },
       { 
-        name: 'Market Pricing', 
-        href: '/market-pricing', 
-        description: 'Market price references',
-        icon: <Play className="w-4 h-4" />
-      }
-    ]
-  },
-  {
-    name: 'Company',
-    href: '/about',
-    icon: <Play className="w-5 h-5" />,
-    description: 'About Zion Tech Group',
-    category: 'company',
-    children: [
-      { 
-        name: 'About Us', 
-        href: '/about', 
-        description: 'Company information',
-        icon: <Play className="w-4 h-4" />
+        name: '2027 Services Showcase', 
+        href: '/revolutionary-2027-services-showcase', 
+        description: 'Future 2027 services portfolio',
+        icon: <Star className="w-4 h-4" />
       },
       { 
-        name: 'Contact', 
-        href: '/contact', 
-        description: 'Get in touch',
-        icon: <MessageCircle className="w-4 h-4" />
+        name: '2028 Services Showcase', 
+        href: '/revolutionary-2028-services-showcase', 
+        description: 'Innovative 2028 services portfolio',
+        icon: <Star className="w-4 h-4" />
       },
       { 
-        name: 'Partners', 
-        href: '/partners', 
-        description: 'Partnership opportunities',
-        icon: <Play className="w-4 h-4" />
+        name: '2029 Services Showcase', 
+        href: '/2029-innovative-services-showcase', 
+        description: 'Cutting-edge 2029 services portfolio',
+        icon: <Star className="w-4 h-4" />
       },
       { 
-        name: 'Investors', 
-        href: '/investors', 
-        description: 'Investment information',
-        icon: <Play className="w-4 h-4" />
-      },
-      { 
-        name: 'Careers', 
-        href: '/careers', 
-        description: 'Join our team',
-        icon: <Play className="w-4 h-4" />
-      }
-    ]
-  },
-  {
-    name: 'Resources',
-    href: '/resources',
-    icon: <Play className="w-5 h-5" />,
-    description: 'Knowledge & support',
-    category: 'resources',
-    children: [
-      { 
-        name: 'Documentation', 
-        href: '/docs', 
-        description: 'Technical documentation',
-        icon: <Play className="w-4 h-4" />
-      },
-      { 
-        name: 'Blog', 
-        href: '/blog', 
-        description: 'Latest insights',
-        icon: <Play className="w-4 h-4" />
-      },
-      { 
-        name: 'Case Studies', 
-        href: '/case-studies', 
-        description: 'Success stories',
-        icon: <Play className="w-4 h-4" />
-      },
-      { 
-        name: 'Support', 
-        href: '/support', 
-        description: 'Technical support',
-        icon: <Play className="w-4 h-4" />
-      },
-      { 
-        name: 'Training', 
-        href: '/training', 
-        description: 'Learning resources',
-        icon: <Play className="w-4 h-4" />
+        name: '2030+ Services Showcase', 
+        href: '/2030-futuristic-services-showcase', 
+        description: 'Futuristic 2030+ services portfolio',
+        icon: <Star className="w-4 h-4" />
       }
     ]
   },
@@ -374,74 +313,76 @@ export default function UltraFuturisticNavigation2036() {
               </div>
 
               {/* Desktop Navigation */}
-              <div className="hidden lg:flex space-x-1">
-                {navigationItems.map((item) => (
-                  <div key={item.name} className="relative group">
-                    <button
-                      className="flex items-center space-x-2 px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg text-gray-300 hover:text-cyan-400 hover:bg-white/5"
-                      onClick={() => toggleDropdown(item.name)}
-                      aria-expanded={activeDropdown === item.name}
-                      aria-haspopup="true"
-                    >
-                      {item.icon}
-                      <span>{item.name}</span>
-                      {item.badge && (
-                        <span className="px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-full">
-                          {item.badge}
-                        </span>
-                      )}
-                      <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === item.name ? 'rotate-180' : ''}`} />
-                    </button>
+              <div className="hidden lg:flex items-center space-x-4">
+                <div className="flex space-x-1">
+                  {navigationItems.map((item) => (
+                    <div key={item.name} className="relative group">
+                      <button
+                        className="flex items-center space-x-2 px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg text-gray-300 hover:text-cyan-400 hover:bg-white/5"
+                        onClick={() => toggleDropdown(item.name)}
+                        aria-expanded={activeDropdown === item.name}
+                        aria-haspopup="true"
+                      >
+                        {item.icon}
+                        <span>{item.name}</span>
+                        {item.badge && (
+                          <span className="px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-full">
+                            {item.badge}
+                          </span>
+                        )}
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${activeDropdown === item.name ? 'rotate-180' : ''}`} />
+                      </button>
 
-                    {/* Dropdown Menu */}
-                    <AnimatePresence>
-                      {activeDropdown === item.name && (
-                        <motion.div
-                          initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                          animate={{ opacity: 1, y: 0, scale: 1 }}
-                          exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                          transition={{ duration: 0.2 }}
-                          className="absolute top-full left-0 mt-2 w-80 bg-black/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl shadow-cyan-500/25 z-50"
-                        >
-                          <div className="p-4">
-                            <div className="mb-4">
-                              <h3 className="text-white font-semibold text-lg mb-2">{item.name}</h3>
-                              <p className="text-gray-400 text-sm">{item.description}</p>
-                            </div>
-                            <div className="space-y-2">
-                              {item.children?.map((child) => (
-                                <Link
-                                  key={child.name}
-                                  href={normalizeHref(child.href)}
-                                  className="flex items-center space-x-3 p-3 rounded-lg hover:bg-white/5 transition-all duration-200 group"
-                                  onClick={closeAllDropdowns}
-                                >
-                                  <div className="w-8 h-8 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
-                                    {child.icon}
-                                  </div>
-                                  <div className="flex-1">
-                                    <div className="flex items-center space-x-2">
-                                      <span className="text-white font-medium group-hover:text-cyan-400 transition-colors">
-                                        {child.name}
-                                      </span>
-                                      {child.featured && (
-                                        <span className="px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-full">
-                                          Featured
-                                        </span>
-                                      )}
+                      {/* Dropdown Menu */}
+                      <AnimatePresence>
+                        {activeDropdown === item.name && (
+                          <motion.div
+                            initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                            transition={{ duration: 0.2 }}
+                            className="absolute top-full left-0 mt-2 w-80 bg-black/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl shadow-cyan-500/25 z-50"
+                          >
+                            <div className="p-4">
+                              <div className="mb-4">
+                                <h3 className="text-white font-semibold text-lg mb-2">{item.name}</h3>
+                                <p className="text-gray-400 text-sm">{item.description}</p>
+                              </div>
+                              <div className="space-y-2">
+                                {item.children?.map((child) => (
+                                  <Link
+                                    key={child.name}
+                                    href={normalizeHref(child.href)}
+                                    className="flex items-center space-x-3 p-3 rounded-lg hover:bg-white/5 transition-all duration-200 group"
+                                    onClick={closeAllDropdowns}
+                                  >
+                                    <div className="w-8 h-8 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                                      {child.icon}
                                     </div>
-                                    <p className="text-gray-400 text-sm">{child.description}</p>
-                                  </div>
-                                  <Play className="w-4 h-4 text-gray-500 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all" />
-                                </Link>
-                              ))}
+                                    <div className="flex-1">
+                                      <div className="flex items-center space-x-2">
+                                        <span className="text-white font-medium group-hover:text-cyan-400 transition-colors">
+                                          {child.name}
+                                        </span>
+                                        {child.featured && (
+                                          <span className="px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-full">
+                                            Featured
+                                          </span>
+                                        )}
+                                      </div>
+                                      <p className="text-gray-400 text-sm">{child.description}</p>
+                                    </div>
+                                    <Play className="w-4 h-4 text-gray-500 group-hover:text-cyan-400 group-hover:translate-x-1 transition-all" />
+                                  </Link>
+                                ))}
+                              </div>
                             </div>
-                          </div>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ))}
+                </div>
               </div>
 
               {/* Right Side Actions */}
@@ -454,6 +395,9 @@ export default function UltraFuturisticNavigation2036() {
                 >
                   <Search className="w-5 h-5" />
                 </button>
+
+                {/* Theme Toggle */}
+                <ThemeToggle />
                 
                 {/* CTA Button */}
                 <Link href="/contact">
