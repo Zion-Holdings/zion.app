@@ -74,7 +74,7 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
         </div>
         <div className="flex justify-between">
           <span>Customers:</span>
-          <span>1000+</span>
+          <span>{service.customers ? service.customers.toLocaleString() : '0'}</span>
         </div>
       </div>
       

@@ -1,5 +1,4 @@
-
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, 
@@ -287,8 +286,9 @@ const EnhancedNavigation: React.FC = () => {
   // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (navRef.current && !navRef.current.contains(event.target as Node)) {
-        setActiveDropdown(null);
+              const target = event.target as any;
+      if (!target.closest('.navigation-dropdown')) {
+        closeDropdown();
       }
     };
 
