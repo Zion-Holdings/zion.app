@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
-import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
+import UltraAdvancedFuturisticNavigation2025 from './UltraAdvancedFuturisticNavigation2025';
+import UltraAdvancedFuturisticFooter2025 from './UltraAdvancedFuturisticFooter2025';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
+import UltraAdvancedFuturisticBackground2025 from '../backgrounds/UltraAdvancedFuturisticBackground2025';
 import TopContactBar from './TopContactBar';
 import PerformanceMonitor from '../PerformanceMonitor';
 import AccessibilityEnhancer from '../AccessibilityEnhancer';
@@ -27,7 +27,7 @@ export default function Layout({ children }: LayoutProps) {
           <a href="#main" className="skip-link">Skip to main content</a>
           
           {/* Futuristic Background */}
-          <UltraFuturisticBackground2036 />
+          <UltraAdvancedFuturisticBackground2025 theme="quantum-neon" intensity="medium" />
           
           {/* Layout Structure */}
           <div className="relative z-10">
@@ -35,7 +35,7 @@ export default function Layout({ children }: LayoutProps) {
             <TopContactBar />
             
             {/* Navigation */}
-            <UltraFuturisticNavigation2040 />
+            <UltraAdvancedFuturisticNavigation2025 />
             
             {/* Sidebar and Main Content */}
             <div className="flex">
@@ -50,7 +50,7 @@ export default function Layout({ children }: LayoutProps) {
             </div>
             
             {/* Footer */}
-            <UltraFuturisticFooter2040 />
+            <UltraAdvancedFuturisticFooter2025 />
           </div>
 
           {/* Enhancement Toggle */}
