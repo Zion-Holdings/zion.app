@@ -1,1 +1,2 @@
-export default function TalentSlugPage() { return null }
+import { useRouter } from 'next/router';
+export default function TalentDetail() { const { query } = useRouter(); return <main className="p-10"><h1 className="text-2xl font-bold">Talent: {String(query.slug || '')}</h1></main>; }

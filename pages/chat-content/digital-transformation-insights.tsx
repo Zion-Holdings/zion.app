@@ -1,1 +1,1 @@
-export default function Page() { return null }
+export default function ChatContentDigital() { return <main className="p-10"><h1 className="text-2xl font-bold">Digital Transformation Insights</h1></main>; }

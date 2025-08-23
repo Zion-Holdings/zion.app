@@ -1,1 +1,1 @@
-export default function EnhancedHomePage() { return null }
+export default function EnhancedHome() { return <main className="p-10"><h1 className="text-2xl font-bold">Enhanced Home</h1></main>; }

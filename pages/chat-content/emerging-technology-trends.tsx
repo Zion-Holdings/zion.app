@@ -1,1 +1,1 @@
-export default function Page() { return null }
+export default function ChatContentEmerging() { return <main className="p-10"><h1 className="text-2xl font-bold">Emerging Technology Trends</h1></main>; }
