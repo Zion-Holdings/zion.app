@@ -138,8 +138,8 @@ const EnhancedPerformanceMonitor: React.FC = () => {
         setMetrics(prev => ({
           ...prev,
           ttfb: navigation.responseStart - navigation.requestStart,
-          fmp: navigation.domContentLoadedEventEnd - navigation.navigationStart,
-          tti: navigation.domInteractive - navigation.navigationStart
+          fmp: navigation.domContentLoadedEventEnd - navigation.fetchStart,
+          tti: navigation.domInteractive - navigation.fetchStart
         }));
       }
     }

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
+import UltraFuturisticNavigation2046 from '../components/layout/UltraFuturisticNavigation2046';
+import UltraFuturisticFooter2046 from '../components/layout/UltraFuturisticFooter2046';
 import { 
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
@@ -62,6 +64,16 @@ import { cuttingEdgeITInfrastructureServices } from '../data/2025-cutting-edge-i
 import { cuttingEdgeFuturisticServices } from '../data/2025-cutting-edge-futuristic-services';
 import { advancedAIAutomationServices } from '../data/2026-advanced-ai-automation-services';
 import { advancedITInfrastructureServices } from '../data/2025-advanced-it-infrastructure-services';
+
+// Import our new 2025 cutting-edge innovative services expansion
+import { cuttingEdgeInnovativeServices2025 } from '../data/2025-cutting-edge-innovative-services-expansion';
+import { advancedITInfrastructureSolutions2025 } from '../data/2025-advanced-it-infrastructure-solutions';
+import { advancedAIAutomationSolutions2025 } from '../data/2025-advanced-ai-automation-solutions';
+
+// Import our new revolutionary 2046 services
+import { revolutionary2046AdvancedMicroSaasServices } from '../data/revolutionary-2046-advanced-micro-saas-services';
+import { revolutionary2046AdvancedITServices } from '../data/revolutionary-2046-advanced-it-services';
+import { revolutionary2046AdvancedAIServices } from '../data/revolutionary-2046-advanced-ai-services';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -168,7 +180,17 @@ const allServices = [
   ...ultimate2025AIServicesExpansion,
   // Our new 2025 advanced enterprise services
   ...advancedEnterpriseServices,
-  ...cuttingEdgeITInfrastructureServices
+  ...cuttingEdgeITInfrastructureServices,
+  
+  // Our new 2025 cutting-edge innovative services expansion
+  ...cuttingEdgeInnovativeServices2025,
+  ...advancedITInfrastructureSolutions2025,
+  ...advancedAIAutomationSolutions2025,
+  
+  // Our new revolutionary 2046 services
+  ...revolutionary2046AdvancedMicroSaasServices,
+  ...revolutionary2046AdvancedITServices,
+  ...revolutionary2046AdvancedAIServices
 ];
 
 const categories = [
@@ -220,6 +242,14 @@ const categories = [
     icon: <Brain className="w-6 h-6" />,
     color: 'from-cyan-500 to-blue-500',
     description: 'Revolutionary AI consciousness and emotional intelligence'
+  },
+  {
+    id: 'revolutionary-2046',
+    name: 'Revolutionary 2046',
+    icon: <Rocket className="w-6 h-6" />,
+    color: 'from-emerald-500 to-cyan-500',
+    description: 'Future-defining 2046 technology solutions',
+    badge: 'New'
   },
   {
     id: 'quantum-emerging',
@@ -388,6 +418,7 @@ export default function Services() {
     <>
       <SEO title="Services | Zion Tech Group - Enterprise IT, AI, Micro SAAS Solutions" description="Discover our comprehensive portfolio of enterprise IT solutions, AI services, and innovative micro SAAS platforms. Transform your business with cutting-edge technology." canonical="https://ziontechgroup.com/services/" />
 
+      <UltraFuturisticNavigation2046 />
       <div className="min-h-screen bg-black text-white pt-24">
         {/* Loading State */}
         <AnimatePresence>
@@ -747,6 +778,7 @@ export default function Services() {
             </motion.div>
           </div>
         </section>
+        <UltraFuturisticFooter2046 />
       </div>
     </>
   );
