@@ -1,21 +1,30 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, Suspense, lazy } from 'react';
 import Layout from './layout/Layout';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ArrowRight, Play, TrendingUp, Brain, Shield, Rocket, Globe, Cpu, Database, Atom, Target, Star, Sparkles as SparklesIcon,
   Brain as BrainIcon, Atom as AtomIcon, Shield as ShieldIcon, Rocket as RocketIcon, Zap, Eye, Heart, Infinity
 } from 'lucide-react';
+import Head from 'next/head';
 
 // Import our new revolutionary services
 import { revolutionary2044AdvancedMicroSaas } from '../data/revolutionary-2044-advanced-micro-saas';
 import { revolutionary2044ITServices } from '../data/revolutionary-2044-it-services';
 import { revolutionary2044AIServices } from '../data/revolutionary-2044-ai-services';
 
+// Lazy load new components for better performance
+const ServiceCard = lazy(() => import('./ServiceCard'));
+const PerformanceMetrics = lazy(() => import('./PerformanceMetrics'));
+const InteractiveDemo = lazy(() => import('./InteractiveDemo'));
+const PerformanceOptimizer = lazy(() => import('./PerformanceOptimizer'));
+
 const Homepage2044: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isLoading, setIsLoading] = useState(false);
+  const [userInteraction, setUserInteraction] = useState(false);
   
   useEffect(() => {
     setIsVisible(true);
@@ -94,10 +103,72 @@ const Homepage2044: React.FC = () => {
     window.location.href = service.slug;
   }, []);
 
+  const handleCategoryChange = useCallback((category: string) => {
+    setSelectedCategory(category);
+    setUserInteraction(true);
+  }, []);
+
   return (
-    <Layout>
-      {/* Main Content */}
-      <main className="relative z-10">
+    <>
+      <Head>
+        <title>Zion Tech Group - Revolutionary 2044 Technology Solutions | AI, Quantum Computing, Space Tech</title>
+        <meta name="description" content="Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions. Transform your business with cutting-edge 2044 technology." />
+        <meta name="keywords" content="AI consciousness, quantum computing, space technology, cybersecurity, autonomous solutions, business intelligence, Zion Tech Group" />
+        <meta name="author" content="Zion Tech Group" />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Zion Tech Group - Revolutionary 2044 Technology Solutions" />
+        <meta property="og:description" content="Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ziontechgroup.com" />
+        <meta property="og:image" content="https://ziontechgroup.com/og-image.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Zion Tech Group - Revolutionary 2044 Technology" />
+        <meta name="twitter:description" content="Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions." />
+        <link rel="canonical" href="https://ziontechgroup.com" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Zion Tech Group",
+            "description": "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions",
+            "url": "https://ziontechgroup.com",
+            "logo": "https://ziontechgroup.com/logo.png",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+1-302-464-0950",
+              "contactType": "customer service",
+              "email": "kleber@ziontechgroup.com"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "364 E Main St STE 1008",
+              "addressLocality": "Middletown",
+              "addressRegion": "DE",
+              "postalCode": "19709",
+              "addressCountry": "US"
+            },
+            "sameAs": [
+              "https://linkedin.com/company/ziontechgroup",
+              "https://twitter.com/ziontechgroup",
+              "https://github.com/ziontechgroup"
+            ]
+          })}
+        </script>
+      </Head>
+      
+      {/* Loading Overlay */}
+      {isLoading && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-6 flex items-center space-x-3">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+            <span className="text-gray-700">Loading revolutionary technology...</span>
+          </div>
+        </div>
+      )}
+      
+      <Layout>
+        {/* Main Content */}
+        <main className="relative z-10">
         {/* Hero Section */}
         <section 
           className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
@@ -424,8 +495,175 @@ const Homepage2044: React.FC = () => {
             </motion.div>
           </div>
         </section>
+
+        {/* Enhanced Category Filter */}
+        <section className="py-16 px-4 relative">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Explore Our Revolutionary Services
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Filter and discover cutting-edge technology solutions across all categories
+              </p>
+            </motion.div>
+
+            {/* Category Filter Buttons */}
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
+              {categories.map((category) => (
+                <button
+                  key={category.id}
+                  onClick={() => handleCategoryChange(category.id)}
+                  className={`px-6 py-3 rounded-2xl font-medium transition-all duration-300 transform hover:scale-105 ${
+                    selectedCategory === category.id
+                      ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-[0_0_30px_rgba(6,182,212,0.4)]'
+                      : 'bg-gray-800/60 text-gray-300 hover:bg-gray-700/60 border border-gray-600/30'
+                  }`}
+                >
+                  <div className="flex items-center space-x-2">
+                    <category.icon className="w-5 h-5" />
+                    <span>{category.name}</span>
+                  </div>
+                </button>
+              ))}
+            </div>
+
+            {/* Filtered Services Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {getFilteredServices().slice(0, 9).map((service, index) => (
+                <motion.div
+                  key={service.slug}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group cursor-pointer"
+                  onClick={() => handleServiceClick(service)}
+                >
+                  <div className="relative p-6 bg-gradient-to-br from-gray-900/60 to-gray-800/60 border border-gray-700/30 rounded-2xl backdrop-blur-xl hover:border-cyan-500/50 transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(6,182,212,0.2)]">
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    
+                    <div className="relative z-10">
+                      <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 shadow-[0_0_20px_rgba(6,182,212,0.3)]">
+                        <Star className="w-6 h-6 text-white" />
+                      </div>
+                      
+                      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
+                        {service.name}
+                      </h3>
+                      
+                      <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                        {service.description}
+                      </p>
+                      
+                      <div className="flex items-center justify-between">
+                        <span className="text-cyan-400 text-sm font-medium">
+                          {service.category}
+                        </span>
+                        <span className="text-gray-500 text-sm">
+                          {service.type}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Performance Metrics Section */}
+        <section className="py-16 px-4 relative">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Real-Time Performance Metrics
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Monitor and optimize your technology infrastructure with our advanced analytics
+              </p>
+            </motion.div>
+            
+            <Suspense fallback={
+              <div className="flex justify-center">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-500"></div>
+              </div>
+            }>
+              <PerformanceMetrics />
+            </Suspense>
+          </div>
+        </section>
+
+        {/* Interactive Demo Section */}
+        <section className="py-16 px-4 relative">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Interactive Technology Demo
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Experience our revolutionary solutions through an interactive demonstration
+              </p>
+            </motion.div>
+            
+            <Suspense fallback={
+              <div className="flex justify-center">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-500"></div>
+              </div>
+            }>
+              <InteractiveDemo />
+            </Suspense>
+          </div>
+        </section>
+
+        {/* Performance Optimizer Section */}
+        <section className="py-16 px-4 relative">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-4xl font-bold text-white mb-6">
+                Performance Optimization
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Get real-time insights and optimization suggestions for your technology stack
+              </p>
+            </motion.div>
+            
+            <Suspense fallback={
+              <div className="flex justify-center">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-cyan-500"></div>
+              </div>
+            }>
+              <PerformanceOptimizer />
+            </Suspense>
+          </div>
+        </section>
       </main>
     </Layout>
+    </>
   );
 };
 
