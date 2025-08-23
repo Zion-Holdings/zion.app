@@ -96,6 +96,17 @@ const Homepage2045: React.FC = () => {
     window.location.href = service.slug;
   }, []);
 
+  const floatingVariants = {
+    animate: {
+      y: [-10, 10, -10],
+      transition: {
+        duration: 3,
+        repeat: Infinity as any,
+        ease: "easeInOut" as const
+      }
+    }
+  };
+
   const handleCategoryChange = useCallback((categoryId: string) => {
     setSelectedCategory(categoryId);
   }, []);
