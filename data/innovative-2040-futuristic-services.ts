@@ -5,13 +5,14 @@ export interface Innovative2040FuturisticService {
   description: string;
   category: string;
   price: string;
+  period?: string;
   features: string[];
   benefits: string[];
   link: string;
-  popular: boolean;
-  icon: string;
-  color: string;
+  icon?: string;
+  color?: string;
   textColor?: string;
+  popular?: boolean;
   contactInfo: {
     mobile: string;
     email: string;
@@ -32,7 +33,12 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     tagline: 'Revolutionary brain-computer interface powered by quantum AI',
     description: 'Advanced neural interface technology that enables direct communication between human consciousness and quantum AI systems, opening new frontiers in human-computer interaction.',
     category: 'AI & Consciousness',
-    price: '$15,000/month',
+    price: '$15,000',
+    period: '/month',
+    icon: '🧠',
+    color: 'from-purple-600 to-indigo-700',
+    textColor: 'text-purple-400',
+    popular: true,
     features: [
       'Quantum-enhanced neural signal processing',
       'Real-time consciousness-AI synchronization',
@@ -69,7 +75,12 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     tagline: 'Immersive 3D workspace powered by quantum computing',
     description: 'Next-generation collaborative workspace that combines holographic displays with quantum computing power for unprecedented productivity and creativity.',
     category: 'Quantum & Emerging Tech',
-    price: '$8,500/month',
+    price: '$8,500',
+    period: '/month',
+    icon: '🌐',
+    color: 'from-cyan-600 to-blue-700',
+    textColor: 'text-cyan-400',
+    popular: false,
     features: [
       'True 3D holographic displays',
       'Quantum-powered real-time rendering',
