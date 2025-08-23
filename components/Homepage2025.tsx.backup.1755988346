@@ -1,5 +1,23 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import Layout from './layout/Layout';
+<<<<<<< HEAD
+import { motion } from 'framer-motion';
+import { 
+  ArrowRight, 
+  Star, 
+  Search,
+  Shield,
+  Globe,
+  TrendingUp,
+  Brain,
+  Atom,
+  Zap,
+  Cpu,
+  Cloud,
+  BarChart3,
+  Lock,
+  Rocket
+=======
 import UltraFuturisticServiceCard2026 from './ui/UltraFuturisticServiceCard2026';
 import EnhancedSearch from './EnhancedSearch';
 import AIChatbot from './AIChatbot';
@@ -9,6 +27,7 @@ import { motion } from 'framer-motion';
 import { 
   ArrowRight, Star, 
   Brain, Atom, Shield, Zap, TrendingUp, Globe, MapPin, Search, MessageCircle, BarChart3
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-ebbc
 } from 'lucide-react';
 import Link from 'next/link';
 import UltraFuturisticServiceCard2026 from './ui/UltraFuturisticServiceCard2026';
@@ -595,6 +614,9 @@ const Homepage2025: React.FC = () => {
           </div>
         </section>
 
+<<<<<<< HEAD
+        {/* Testimonials Section */}
+=======
         {/* Interactive Tools Section */}
         <section className="py-20 px-4">
           <div className="max-w-6xl mx-auto">
@@ -696,6 +718,7 @@ const Homepage2025: React.FC = () => {
         </section>
 
         {/* Services Preview */}
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-ebbc
         <section className="py-20 px-4">
           <div className="max-w-7xl mx-auto">
             <motion.div 
@@ -712,6 +735,8 @@ const Homepage2025: React.FC = () => {
                 See how leading companies are transforming their businesses with our revolutionary technology solutions.
               </p>
             </motion.div>
+<<<<<<< HEAD
+=======
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <UltraFuturisticServiceCard2026
@@ -771,6 +796,7 @@ const Homepage2025: React.FC = () => {
             </div>
           </div>
         </section>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-ebbc
 
             <motion.div 
               className="grid grid-cols-1 md:grid-cols-3 gap-8"
