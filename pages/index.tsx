@@ -1,23 +1,19 @@
 import React from 'react';
-import EnhancedHomepage2026 from '../components/EnhancedHomepage2026';
+import Homepage2025 from '../components/Homepage2025';
 import SEOOptimizer from '../components/SEOOptimizer';
 import AnalyticsTracker from '../components/AnalyticsTracker';
-import ErrorBoundary from '../components/ErrorBoundary';
-import PerformanceMonitor from '../components/PerformanceMonitor';
-import AccessibilityEnhancer from '../components/AccessibilityEnhancer';
+import EnhancedErrorBoundary from '../components/EnhancedErrorBoundary';
 import PerformanceOptimizer from '../components/PerformanceOptimizer';
 
 const HomePage: React.FC = () => {
   return (
-    <ErrorBoundary>
+    <EnhancedErrorBoundary>
       <SEOOptimizer />
       <AnalyticsTracker />
       <PerformanceOptimizer>
-        <EnhancedHomepage2026 />
+        <Homepage2025 />
       </PerformanceOptimizer>
-      <PerformanceMonitor />
-      <AccessibilityEnhancer />
-    </ErrorBoundary>
+    </EnhancedErrorBoundary>
   );
 };
 

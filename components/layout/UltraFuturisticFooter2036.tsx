@@ -33,16 +33,16 @@ const UltraFuturisticFooter2036: React.FC = () => {
       description: 'Our most popular and innovative solutions',
       icon: <Star className="w-5 h-5 text-yellow-400" />,
       links: [
-        { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-platform', featured: true },
-        { name: 'Quantum Cybersecurity Sentinel', href: '/quantum-cybersecurity-sentinel', featured: true },
-        { name: 'AI Autonomous Content Factory', href: '/ai-autonomous-content-factory', featured: true },
-        { name: 'Autonomous Business Intelligence', href: '/autonomous-business-intelligence', featured: true },
-        { name: 'Quantum Supply Chain Optimizer', href: '/quantum-supply-chain-optimizer', featured: true },
-        { name: 'AI Autonomous Customer Success', href: '/ai-autonomous-customer-success', featured: true },
-        { name: 'AI Autonomous DevOps Platform', href: '/ai-autonomous-devops-platform', featured: true },
-        { name: 'Autonomous Cloud Orchestrator', href: '/autonomous-cloud-orchestrator' },
-        { name: 'Quantum Edge Computing Platform', href: '/quantum-edge-computing-platform' },
-        { name: 'AI-Powered Enterprise Architecture', href: '/ai-powered-enterprise-architecture' }
+        { name: 'AI Consciousness Evolution', href: '/services', featured: true },
+        { name: 'Quantum Cybersecurity Sentinel', href: '/services', featured: true },
+        { name: 'AI Autonomous Content Factory', href: '/services', featured: true },
+        { name: 'Autonomous Business Intelligence', href: '/services', featured: true },
+        { name: 'Quantum Supply Chain Optimizer', href: '/services', featured: true },
+        { name: 'AI Autonomous Customer Success', href: '/services', featured: true },
+        { name: 'AI Autonomous DevOps Platform', href: '/services', featured: true },
+        { name: 'Autonomous Cloud Orchestrator', href: '/services' },
+        { name: 'Quantum Edge Computing Platform', href: '/services' },
+        { name: 'AI-Powered Enterprise Architecture', href: '/services' }
       ]
     },
     {
