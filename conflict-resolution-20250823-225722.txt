@@ -188,3 +188,17 @@
 2025-08-23 22:57:44 - Resolving conflicts in tests/Accessibility.test.tsx for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
 2025-08-23 22:57:44 - Resolving conflicts in tests/QuoteWizard.test.tsx for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
 2025-08-23 22:57:44 - Resolving conflicts in workbox-config.js for branch 5lqy80-codex/fix-npm-ci-errors-and-missing-dependencies
+2025-08-23 22:57:45 - Merge conflicts detected in 5s5bm5-codex/introduce-automated-testing-with-jest-and-cypress
+2025-08-23 22:57:45 - Resolving conflicts in .github/workflows/test.yml for branch 5s5bm5-codex/introduce-automated-testing-with-jest-and-cypress
+2025-08-23 22:57:45 - Resolving conflicts in README.md for branch 5s5bm5-codex/introduce-automated-testing-with-jest-and-cypress
+2025-08-23 22:57:46 - Resolving conflicts in cypress.config.ts for branch 5s5bm5-codex/introduce-automated-testing-with-jest-and-cypress
+2025-08-23 22:57:46 - Resolving conflicts in cypress/e2e/criticalPaths.cy.ts for branch 5s5bm5-codex/introduce-automated-testing-with-jest-and-cypress
+2025-08-23 22:57:46 - Resolving conflicts in cypress/support/e2e.ts for branch 5s5bm5-codex/introduce-automated-testing-with-jest-and-cypress
+2025-08-23 22:57:46 - Resolving conflicts in jest.config.js for branch 5s5bm5-codex/introduce-automated-testing-with-jest-and-cypress
+2025-08-23 22:57:46 - Resolving conflicts in package.json for branch 5s5bm5-codex/introduce-automated-testing-with-jest-and-cypress
+2025-08-23 22:57:46 - Resolving conflicts in tests/EquipmentDetail.test.tsx for branch 5s5bm5-codex/introduce-automated-testing-with-jest-and-cypress
+2025-08-23 22:57:46 - Resolving conflicts in tests/LoginForm.test.tsx for branch 5s5bm5-codex/introduce-automated-testing-with-jest-and-cypress
+2025-08-23 22:57:46 - Resolving conflicts in tests/MarketplaceCard.test.tsx for branch 5s5bm5-codex/introduce-automated-testing-with-jest-and-cypress
+2025-08-23 22:57:46 - Resolving conflicts in tests/RegistrationForm.test.tsx for branch 5s5bm5-codex/introduce-automated-testing-with-jest-and-cypress
+2025-08-23 22:57:46 - Resolving conflicts in tests/__mocks__/server.ts for branch 5s5bm5-codex/introduce-automated-testing-with-jest-and-cypress
+2025-08-23 22:57:46 - Resolving conflicts in tests/jest.setup.ts for branch 5s5bm5-codex/introduce-automated-testing-with-jest-and-cypress
