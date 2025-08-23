@@ -1,23 +1,21 @@
 import React from 'react';
-import Homepage2040 from '../components/Homepage2040';
-import SEOOptimizer from '../components/SEOOptimizer';
-import AnalyticsTracker from '../components/AnalyticsTracker';
-import ErrorBoundary from '../components/ErrorBoundary';
-import PerformanceOptimizer from '../components/PerformanceOptimizer';
-import AccessibilityEnhancer from '../components/AccessibilityEnhancer';
-import PerformanceMonitor from '../components/PerformanceMonitor';
-import MobileOptimizer from '../components/MobileOptimizer';
+import Layout from '../components/layout/Layout';
+import Homepage2025 from '../components/Homepage2025';
 
 const HomePage: React.FC = () => {
+  const seoConfig = {
+    title: "Zion Tech Group - Revolutionary AI & Quantum Technology Solutions",
+    description: "Pioneering the future of technology with innovative AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide. Leading-edge 2040-2041 technology.",
+    keywords: "AI, artificial intelligence, quantum computing, autonomous systems, technology solutions, business transformation, Zion Tech Group, 2040 technology, consciousness AI",
+    image: "/og-image.svg",
+    url: "https://ziontechgroup.com",
+    type: "website"
+  };
+
   return (
-    <ErrorBoundary>
-      <SEOOptimizer />
-      <AnalyticsTracker />
-      <Homepage2040 />
-      <PerformanceMonitor showUI={true} />
-      <AccessibilityEnhancer showPanel={true} autoOptimize={true} />
-      <PerformanceOptimizer showMetrics={true} autoOptimize={true} />
-    </ErrorBoundary>
+    <Layout seo={seoConfig}>
+      <Homepage2025 />
+    </Layout>
   );
 };
 
