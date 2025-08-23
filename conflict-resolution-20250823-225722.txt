@@ -16,3 +16,14 @@
 2025-08-23 22:57:27 - Resolving conflicts in src/index.css for branch 306l03-codex/fix-blank-screen-issue
 2025-08-23 22:57:27 - Resolving conflicts in src/layout/AppHeader.tsx for branch 306l03-codex/fix-blank-screen-issue
 2025-08-23 22:57:27 - Resolving conflicts in tailwind.config.js for branch 306l03-codex/fix-blank-screen-issue
+2025-08-23 22:57:28 - Merge conflicts detected in 3ycx6d-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:57:28 - Resolving conflicts in jest.config.js for branch 3ycx6d-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:57:28 - Resolving conflicts in package.json for branch 3ycx6d-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:57:28 - Resolving conflicts in src/hooks/use-toast.ts for branch 3ycx6d-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:57:28 - Resolving conflicts in src/i18n/locales/ar/translation.json for branch 3ycx6d-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:57:28 - Resolving conflicts in src/i18n/locales/en/translation.json for branch 3ycx6d-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:57:28 - Resolving conflicts in src/i18n/locales/es/translation.json for branch 3ycx6d-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:57:28 - Resolving conflicts in src/i18n/locales/pt/translation.json for branch 3ycx6d-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:57:28 - Resolving conflicts in src/main.tsx for branch 3ycx6d-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:57:28 - Resolving conflicts in src/utils/sentry.ts for branch 3ycx6d-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:57:28 - Resolving conflicts in tsconfig.json for branch 3ycx6d-codex/implement-global-error-boundary-with-toasts
