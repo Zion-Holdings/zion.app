@@ -123,7 +123,12 @@ export default function ServicesPage() {
       color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
       textColor: 'text-fuchsia-400',
       gradient: 'from-fuchsia-400 to-purple-500',
+<<<<<<< HEAD
+      link: '/ai-content-generator',
+      cta: 'Try AI Content Generator'
+=======
       href: '/automation'
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-5442
     },
     {
       icon: '☁️',
@@ -139,6 +144,10 @@ export default function ServicesPage() {
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       textColor: 'text-cyan-400',
       gradient: 'from-cyan-400 to-blue-500',
+<<<<<<< HEAD
+      link: '/cloud-monitoring',
+      cta: 'Explore Cloud Monitoring'
+=======
       href: '/cloud-platform'
     },
     {
@@ -188,6 +197,7 @@ export default function ServicesPage() {
       textColor: 'text-blue-400',
       gradient: 'from-blue-400 to-cyan-500',
       href: '/ai-seo-suite'
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-5442
     },
     {
       id: 'qr-generator',
@@ -275,11 +285,84 @@ export default function ServicesPage() {
         'Multiple time windows',
         'Developer-friendly API'
       ],
+<<<<<<< HEAD
+      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      gradient: 'from-green-400 to-emerald-500',
+      href: '/api-rate-limiter'
+    },
+    {
+      icon: '📧',
+      title: 'Email Validator',
+      description: 'Validate email addresses with advanced checks for deliverability and security.',
+      features: [
+        'Syntax validation',
+        'Disposable email detection',
+        'Typo detection',
+        'Bulk validation',
+        'Deliverability scoring'
+      ],
+      color: 'bg-gradient-to-br from-blue-500 to-indigo-600',
+      textColor: 'text-blue-400',
+      gradient: 'from-blue-400 to-indigo-500',
+      href: '/email-validator'
+    },
+    {
+      icon: '🔗',
+      title: 'URL Shortener',
+      description: 'Create professional, trackable short URLs with analytics and QR code generation.',
+      features: [
+        'Custom aliases',
+        'Click tracking',
+        'QR code generation',
+        'Bulk URL management',
+        'Analytics dashboard'
+      ],
+      color: 'bg-gradient-to-br from-orange-500 to-red-600',
+      textColor: 'text-orange-400',
+      gradient: 'from-orange-400 to-red-500',
+      href: '/url-shortener'
+    },
+    {
+      icon: '🔐',
+      title: 'Password Checker',
+      description: 'Analyze password strength with comprehensive security checks and suggestions.',
+      features: [
+        'Real-time analysis',
+        'Multiple security criteria',
+        'Strength scoring',
+        'Password generation',
+        'Security tips'
+      ],
+      color: 'bg-gradient-to-br from-indigo-500 to-purple-600',
+      textColor: 'text-indigo-400',
+      gradient: 'from-indigo-400 to-purple-500',
+      link: '/devops-automation',
+      cta: 'Try DevOps Automation'
+    },
+    {
+      icon: '📄',
+      title: 'JSON Formatter',
+      description: 'Format, validate, and beautify JSON data with professional tools and options.',
+      features: [
+        'Smart formatting',
+        'Real-time validation',
+        'Minification',
+        'Line numbering',
+        'Export options'
+      ],
+      color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
+      textColor: 'text-teal-400',
+      gradient: 'from-teal-400 to-cyan-500',
+      href: '/json-formatter'
+    },
+=======
       color: 'bg-gradient-to-br from-red-500 to-pink-600',
       textColor: 'text-red-400',
       gradient: 'from-red-400 to-pink-500',
       href: '/security'
     }
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-5442
   ];
 
   const technologies = [
@@ -1370,11 +1453,23 @@ export default function ServicesPage() {
                         </li>
                       ))}
                     </ul>
+<<<<<<< HEAD
+                    {service.link && service.cta && (
+                      <Button
+                        href={service.link}
+                        variant="outline"
+                        size="sm"
+                        className="border-cursor-blue text-cursor-blue hover:bg-cursor-blue hover:text-white"
+                      >
+                        {service.cta}
+                      </Button>
+=======
                     {service.href && (
                       <div className="mt-6 flex items-center text-cursor-blue group-hover:text-white transition-colors duration-300">
                         <span className="text-sm font-medium">Learn More</span>
                         <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                       </div>
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-5442
                     )}
                   </div>
                 </div>
