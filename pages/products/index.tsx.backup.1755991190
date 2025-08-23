@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+import EnhancedLayout from '../../components/layout/EnhancedLayout';
+
+export default function Products() {
+  return (
+    <EnhancedLayout>
+      <div className="py-10">Products</div>
+    </EnhancedLayout>
+  );
+}
+=======
 import React, { useMemo, useState } from 'react';
 import Head from 'next/head';
 import { products as allProducts, Product } from '../../data/it-equipment';
@@ -209,3 +220,4 @@ export default function ProductsPage() {
     </>
   );
 }
+>>>>>>> origin/cursor/build-it-equipment-product-listing-page-a901

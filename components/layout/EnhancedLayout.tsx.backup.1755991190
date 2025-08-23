@@ -1,8 +1,16 @@
+<<<<<<< HEAD
+import React from 'react';
+
+type EnhancedLayoutProps = {
+  children?: React.ReactNode;
+};
+=======
 import React, { ReactNode } from 'react';
 
 interface EnhancedLayoutProps {
   children: ReactNode;
 }
+>>>>>>> origin/cursor/build-it-equipment-product-listing-page-a901
 
 export default function EnhancedLayout({ children }: EnhancedLayoutProps) {
   return (
@@ -17,6 +25,11 @@ export default function EnhancedLayout({ children }: EnhancedLayoutProps) {
           </nav>
         </div>
       </header>
+<<<<<<< HEAD
+      <main className="flex-1 container mx-auto px-4 py-6">{children}</main>
+      <footer className="mt-10">
+        <EnhancedFooter />
+=======
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {children}
       </main>
@@ -24,6 +37,7 @@ export default function EnhancedLayout({ children }: EnhancedLayoutProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-sm text-gray-600">
           © {new Date().getFullYear()} IT Equipment Marketplace
         </div>
+>>>>>>> origin/cursor/build-it-equipment-product-listing-page-a901
       </footer>
     </div>
   );
