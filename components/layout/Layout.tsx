@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import UltraFuturisticNavigation2036 from './UltraFuturisticNavigation2036';
+import EnhancedNavigation from './EnhancedNavigation';
 import UltraFuturisticFooter2036 from './UltraFuturisticFooter2036';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
@@ -96,65 +96,23 @@ export default function Layout({ children }: LayoutProps) {
         {/* Top Contact Bar */}
         <TopContactBar />
         
-        {/* Navigation */}
-        <UltraFuturisticNavigation2036 />
+        {/* Enhanced Navigation */}
+        <EnhancedNavigation />
         
-        {/* Sidebar and Main Content */}
-        <div className="flex">
-          <EnhancedSidebar2025 
-            isOpen={sidebarOpen} 
-            onClose={() => setSidebarOpen(false)}
-            aria-hidden={!sidebarOpen}
-            aria-label="Main navigation menu"
-          />
-          
-          <main 
-            id="main" 
-            role="main" 
-            className="flex-1 pt-24 lg:pt-28 min-h-screen"
-            aria-label="Main content"
-          >
-            {/* Announcement for screen readers when sidebar opens/closes */}
-            <div 
-              aria-live="polite" 
-              aria-atomic="true" 
-              className="sr-only"
-            >
-              {sidebarOpen ? 'Sidebar opened' : 'Sidebar closed'}
-            </div>
-            
-            {children}
-          </main>
-        </div>
+        {/* Sidebar */}
+        <EnhancedSidebar2025 
+          isOpen={sidebarOpen} 
+          onClose={() => setSidebarOpen(false)} 
+        />
+        
+        {/* Main Content */}
+        <main id="main" className="pt-16">
+          {children}
+        </main>
         
         {/* Footer */}
         <UltraFuturisticFooter2036 />
       </div>
-
-      {/* Back to top button */}
-      <motion.button
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1 }}
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-8 right-8 z-40 p-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full shadow-2xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-cyan-300/50"
-        aria-label="Back to top"
-      >
-        <svg 
-          className="w-6 h-6" 
-          fill="none" 
-          stroke="currentColor" 
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <path 
-            strokeLinecap="round" 
-            strokeLinejoin="round" 
-            strokeWidth={2} 
-            d="M5 10l7-7m0 0l7 7m-7-7v18" 
-          />
-        </svg>
-      </motion.button>
     </div>
   );
 }

@@ -8,110 +8,60 @@ interface SEOOptimizerProps {
   image?: string;
   url?: string;
   type?: string;
+  structuredData?: object;
 }
 
-const defaultSEO = {
-  title: 'Zion Tech Group - Pioneering the Future of Technology with AI, Quantum Computing & Space Solutions',
-  description: 'Transform your business with Zion Tech Group\'s cutting-edge AI, quantum computing, and space technology solutions. 50+ AI services, 100+ quantum solutions, and 24/7 autonomous operations.',
-  keywords: 'AI services, quantum computing, space technology, machine learning, autonomous operations, enterprise solutions, technology consulting, innovation, digital transformation',
-  image: '/og-image.jpg',
-  url: 'https://ziontechgroup.com',
-  type: 'website'
-};
-
-export default function SEOOptimizer({
-  title = defaultSEO.title,
-  description = defaultSEO.description,
-  keywords = defaultSEO.keywords,
-  image = defaultSEO.image,
-  url = defaultSEO.url,
-  type = defaultSEO.type
-}: SEOOptimizerProps) {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Zion Tech Group",
-    "url": "https://ziontechgroup.com",
-    "logo": "https://ziontechgroup.com/logo.png",
-    "description": "Pioneering the future of technology with innovative solutions that drive business transformation",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "364 E Main St STE 1008",
-      "addressLocality": "Middletown",
-      "addressRegion": "DE",
-      "postalCode": "19709",
-      "addressCountry": "US"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+1-302-464-0950",
-      "contactType": "customer service",
-      "availableLanguage": "English"
-    },
-    "sameAs": [
-      "https://linkedin.com/company/ziontechgroup",
-      "https://github.com/Zion-Holdings",
-      "https://twitter.com/ziontechgroup"
+const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
+  title = 'Zion Tech Group - Pioneering the Future of Technology',
+  description = 'Leading technology solutions provider specializing in AI, quantum computing, and autonomous systems. Transform your business with cutting-edge innovation.',
+  keywords = 'AI, artificial intelligence, quantum computing, autonomous systems, technology solutions, business transformation, innovation, Zion Tech Group',
+  image = '/og-image.jpg',
+  url = 'https://ziontechgroup.com',
+  type = 'website',
+  structuredData
+}) => {
+  const defaultStructuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Zion Tech Group',
+    url: 'https://ziontechgroup.com',
+    logo: 'https://ziontechgroup.com/logo.png',
+    description: 'Pioneering the future of technology with innovative solutions that drive business transformation',
+    sameAs: [
+      'https://linkedin.com/company/ziontechgroup',
+      'https://twitter.com/ziontechgroup',
+      'https://github.com/Zion-Holdings'
     ],
-    "foundingDate": "2020",
-    "numberOfEmployees": "50-100",
-    "serviceArea": "Worldwide",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Technology Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "AI & Machine Learning Solutions",
-            "description": "Advanced artificial intelligence solutions for modern businesses"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Quantum Computing Solutions",
-            "description": "Next-generation quantum computing and security solutions"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Space Technology Solutions",
-            "description": "Innovative space exploration and resource mining solutions"
-          }
-        }
-      ]
-    }
-  };
-
-  const breadcrumbStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://ziontechgroup.com"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Services",
-        "item": "https://ziontechgroup.com/services"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "AI Solutions",
-        "item": "https://ziontechgroup.com/ai-services"
-      }
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+1-800-ZION-TECH',
+      contactType: 'customer service',
+      areaServed: 'Worldwide',
+      availableLanguage: 'English'
+    },
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'US',
+      addressLocality: 'San Francisco',
+      addressRegion: 'CA'
+    },
+    founder: {
+      '@type': 'Person',
+      name: 'Zion Tech Group Team'
+    },
+    foundingDate: '2020',
+    numberOfEmployees: '100+',
+    industry: 'Technology',
+    serviceType: [
+      'AI Services',
+      'Quantum Computing',
+      'Autonomous Systems',
+      'Enterprise Solutions',
+      'Cloud Infrastructure'
     ]
   };
+
+  const finalStructuredData = structuredData || defaultStructuredData;
 
   return (
     <Head>
@@ -139,80 +89,67 @@ export default function SEOOptimizer({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
       <meta name="twitter:site" content="@ziontechgroup" />
-      <meta name="twitter:creator" content="@ziontechgroup" />
       
-      {/* Additional Meta Tags */}
+      {/* Additional SEO Meta Tags */}
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="theme-color" content="#0ea5e9" />
-      <meta name="msapplication-TileColor" content="#0ea5e9" />
+      <meta name="theme-color" content="#06b6d4" />
+      <meta name="msapplication-TileColor" content="#06b6d4" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+      <meta name="apple-mobile-web-app-title" content="Zion Tech Group" />
       
       {/* Canonical URL */}
       <link rel="canonical" href={url} />
       
-      {/* Favicon and Icons */}
+      {/* Favicon and App Icons */}
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
       <link rel="manifest" href="/site.webmanifest" />
       
-      {/* Preconnect to External Domains */}
+      {/* Preconnect to external domains for performance */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       <link rel="preconnect" href="https://www.google-analytics.com" />
       
-      {/* DNS Prefetch */}
+      {/* DNS Prefetch for performance */}
       <link rel="dns-prefetch" href="//www.google-analytics.com" />
-      <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+      <link rel="dns-prefetch" href="//fonts.googleapis.com" />
       
       {/* Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(structuredData)
+          __html: JSON.stringify(finalStructuredData)
         }}
       />
       
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbStructuredData)
-        }}
-      />
+      {/* Additional Meta Tags for Business */}
+      <meta name="business:contact_data:street_address" content="123 Innovation Drive" />
+      <meta name="business:contact_data:locality" content="San Francisco" />
+      <meta name="business:contact_data:region" content="CA" />
+      <meta name="business:contact_data:postal_code" content="94105" />
+      <meta name="business:contact_data:country_name" content="United States" />
+      <meta name="business:contact_data:phone_number" content="+1-800-ZION-TECH" />
+      <meta name="business:contact_data:email" content="info@ziontechgroup.com" />
       
-      {/* Additional SEO Meta Tags */}
-      <meta name="application-name" content="Zion Tech Group" />
-      <meta name="mobile-web-app-capable" content="yes" />
+      {/* Security Headers */}
+      <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
+      <meta httpEquiv="X-Frame-Options" content="DENY" />
+      <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
+      <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+      
+      {/* Performance Optimizations */}
       <meta name="format-detection" content="telephone=no" />
-      <meta name="msapplication-tap-highlight" content="no" />
-      
-      {/* Performance and Security */}
-      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="referrer" content="strict-origin-when-cross-origin" />
+      <meta name="mobile-web-app-capable" content="yes" />
       
       {/* Social Media Verification */}
       <meta name="google-site-verification" content="your-verification-code" />
       <meta name="msvalidate.01" content="your-verification-code" />
-      
-      {/* Additional Open Graph Tags */}
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
-      <meta property="og:image:alt" content="Zion Tech Group - Future Technology Solutions" />
-      
-      {/* Business Information */}
-      <meta property="business:contact_data:street_address" content="364 E Main St STE 1008" />
-      <meta property="business:contact_data:locality" content="Middletown" />
-      <meta property="business:contact_data:region" content="DE" />
-      <meta property="business:contact_data:postal_code" content="19709" />
-      <meta property="business:contact_data:country_name" content="United States" />
-      <meta property="business:contact_data:phone_number" content="+1-302-464-0950" />
-      
-      {/* Service Information */}
-      <meta property="og:see_also" content="https://ziontechgroup.com/services" />
-      <meta property="og:see_also" content="https://ziontechgroup.com/about" />
-      <meta property="og:see_also" content="https://ziontechgroup.com/contact" />
+      <meta name="yandex-verification" content="your-verification-code" />
     </Head>
   );
-}
+};
+
+export default SEOOptimizer;
