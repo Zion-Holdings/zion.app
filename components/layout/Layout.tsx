@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import UltraFuturisticNavigation2036 from './UltraFuturisticNavigation2036';
 import UltraFuturisticFooter2036 from './UltraFuturisticFooter2036';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
 import TopContactBar from './TopContactBar';
+import PerformanceMonitor from '../PerformanceMonitor';
+import AccessibilityEnhancer from '../AccessibilityEnhancer';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -17,6 +18,7 @@ export default function Layout({ children }: LayoutProps) {
     <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
       {/* Skip to content link for accessibility */}
       <a href="#main" className="skip-link">Skip to main content</a>
+      
       {/* Futuristic Background */}
       <UltraFuturisticBackground2036 />
       
@@ -43,6 +45,10 @@ export default function Layout({ children }: LayoutProps) {
         {/* Footer */}
         <UltraFuturisticFooter2036 />
       </div>
+
+      {/* Accessibility and Performance Tools */}
+      <AccessibilityEnhancer />
+      <PerformanceMonitor />
     </div>
   );
 }
