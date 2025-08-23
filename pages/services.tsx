@@ -13,12 +13,16 @@ import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-autom
 import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
 import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
 import { cuttingEdgeAIServices2025 } from '../data/2025-cutting-edge-ai-services';
-import { realEnterpriseMicroSaas2025 } from '../data/2025-real-enterprise-micro-saas';
-import { innovativeAIAutonomousServices2025 } from '../data/2025-innovative-ai-autonomous-services';
+import { innovativeAIAutonomousServices } from '../data/2025-innovative-ai-autonomous-services';
 
 // Import our new practical and specialized services
 import { realPracticalMicroSaasServices2025 } from '../data/2025-real-practical-micro-saas-services';
 import { advancedAIITSpecializedServices2025 } from '../data/2025-advanced-ai-it-specialized-services';
+
+// Import our new real services
+import { realMicroSaas2025Expansion } from '../data/real-micro-saas-2025-expansion';
+import { realITServices2025Expansion } from '../data/real-it-services-2025-expansion';
+import { realAIServices2025Expansion } from '../data/real-ai-services-2025-expansion';
 
 // Import our new service data
 import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
@@ -113,10 +117,12 @@ const allServices = [
   ...realPracticalMicroSaasServices2025,
   ...advancedAIITSpecializedServices2025,
   
+  // Our new real services 2025
+  ...realMicroSaas2025Expansion,
+  ...realITServices2025Expansion,
+  ...realAIServices2025Expansion,
+  
   // Existing services
-  ...realEnterpriseMicroSaas2025,
-  ...innovativeITInfrastructureServices2025,
-  ...innovativeAIAutonomousServices2025,
   ...advancedAIAutomationServices2025,
   ...cuttingEdgeAIServices2025,
   ...innovativeMicroSaasSolutions2025,

@@ -12,9 +12,6 @@ import Head from 'next/head';
 import { revolutionary2044AdvancedMicroSaas } from '../data/revolutionary-2044-advanced-micro-saas';
 import { revolutionary2044ITServices } from '../data/revolutionary-2044-it-services';
 import { revolutionary2044AIServices } from '../data/revolutionary-2044-ai-services';
-import { realEnterpriseMicroSaas2025 } from '../data/2025-real-enterprise-micro-saas';
-import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
-import { innovativeAIAutonomousServices2025 } from '../data/2025-innovative-ai-autonomous-services';
 import { realPracticalMicroSaasServices2025 } from '../data/2025-real-practical-micro-saas-services';
 import { advancedAIITSpecializedServices2025 } from '../data/2025-advanced-ai-it-specialized-services';
 
@@ -39,9 +36,6 @@ const EnhancedHomepage2045: React.FC = () => {
     ...revolutionary2044AdvancedMicroSaas,
     ...revolutionary2044ITServices,
     ...revolutionary2044AIServices,
-    ...realEnterpriseMicroSaas2025,
-    ...innovativeITInfrastructureServices2025,
-    ...innovativeAIAutonomousServices2025,
     ...realPracticalMicroSaasServices2025,
     ...advancedAIITSpecializedServices2025
   ];
