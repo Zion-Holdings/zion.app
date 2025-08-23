@@ -1,4 +1,4 @@
-export const revolutionary2046AdvancedAIServices = [
+export const revolutionary2046AdvancedMicroSaas = [
   // AI-Powered Autonomous Business Intelligence
   {
     id: 'ai-autonomous-business-intelligence-2046',
