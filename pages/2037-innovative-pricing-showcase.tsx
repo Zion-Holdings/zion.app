@@ -3,13 +3,10 @@ import SEO from '../components/SEO';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
-  Search, Grid, List, Filter,
-  Brain, Atom, Shield, Target, Rocket,
-  ArrowRight, Check, Star, TrendingUp,
-  Building, Cpu, Database, Cloud, Lock,
-  Globe, Zap, Users, BarChart3
+  Search, Grid, List, Filter, Star, Check, ArrowRight,
+  Brain, Shield, Rocket, Globe, BarChart3, Target, Zap,
+  TrendingUp, Users, Award, Clock, DollarSign, Zap as Lightning
 } from 'lucide-react';
-import SEO from '../components/SEO';
 
 // Import our new 2037 service data
 import { real2037Q1InnovativeAdditions } from '../data/real-2037-q1-innovative-additions';
@@ -28,6 +25,36 @@ const all2037Services = [
   ...real2037Q1InnovativeAdditions,
   ...real2037Q1ITInnovations,
   ...real2037Q1MicroSaasInnovations
+];
+
+const pricingTiers = [
+  {
+    name: 'Starter',
+    price: '$59',
+    period: '/month',
+    description: 'Perfect for small businesses and startups',
+    features: ['Basic features', 'Email support', 'Standard integrations', 'Community forum'],
+    color: 'from-blue-500 to-cyan-600',
+    popular: false
+  },
+  {
+    name: 'Professional',
+    price: '$199',
+    period: '/month',
+    description: 'Ideal for growing businesses and teams',
+    features: ['Advanced features', 'Priority support', 'Custom integrations', 'Advanced analytics', 'API access'],
+    color: 'from-purple-500 to-pink-600',
+    popular: true
+  },
+  {
+    name: 'Enterprise',
+    price: '$599',
+    period: '/month',
+    description: 'For large organizations with complex needs',
+    features: ['All features', '24/7 dedicated support', 'Custom development', 'White-label options', 'SLA guarantee'],
+    color: 'from-emerald-500 to-teal-600',
+    popular: false
+  }
 ];
 
 const categories = [
@@ -119,34 +146,28 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index
     {/* Tagline */}
     <p className="text-gray-300 mb-4 leading-relaxed">{service.tagline}</p>
 
-    {/* Features */}
+    {/* Pricing */}
+    <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 rounded-lg p-4 mb-4">
+      <div className="text-center">
+        <div className="text-3xl font-bold text-white mb-1">
+          {service.price}
+          <span className="text-lg text-gray-400 font-normal">{service.period}</span>
+        </div>
+        <div className="text-sm text-gray-400">
+          {service.trialDays} days free trial • Setup: {service.setupTime}
+        </div>
+      </div>
+    </div>
+
+    {/* Key Features */}
     <div className="space-y-2 mb-4">
-      {service.features.slice(0, 3).map((feature: string, idx: number) => (
+      <div className="text-sm font-medium text-gray-300 mb-2">Key Features:</div>
+      {service.features.slice(0, 4).map((feature: string, idx: number) => (
         <div key={idx} className="flex items-center space-x-2 text-sm text-gray-400">
           <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
           <span>{feature}</span>
         </div>
       ))}
-      {service.features.length > 3 && (
-        <div className="text-sm text-gray-500">
-          +{service.features.length - 3} more features
-        </div>
-      )}
-    </div>
-
-    {/* Pricing & Stats */}
-    <div className="flex items-center justify-between mb-4">
-      <div className="text-2xl font-bold text-white">
-        {service.price}
-        <span className="text-lg text-gray-400 font-normal">{service.period}</span>
-      </div>
-      <div className="text-right">
-        <div className="flex items-center space-x-1 text-yellow-400">
-          <Star className="w-4 h-4 fill-current" />
-          <span className="text-sm font-medium">{service.rating}</span>
-        </div>
-        <div className="text-xs text-gray-500">{service.reviews} reviews</div>
-      </div>
     </div>
 
     {/* Market Info */}
@@ -178,12 +199,65 @@ const ServiceCard: React.FC<{ service: any; index: number }> = ({ service, index
         Learn More
       </a>
       <a
-        href={`mailto:${contact.email}?subject=Inquiry about ${service.name}`}
+        href={`mailto:${contact.email}?subject=Pricing Inquiry for ${service.name}`}
         className="bg-gray-700 text-gray-300 py-2 px-4 rounded-lg hover:bg-gray-600 transition-colors duration-300 text-sm"
       >
-        Contact
+        Get Quote
       </a>
     </div>
+  </motion.div>
+);
+
+const PricingTierCard: React.FC<{ tier: any; index: number }> = ({ tier, index }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5, delay: index * 0.1 }}
+    className={`relative bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-sm border rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 ${
+      tier.popular 
+        ? 'border-purple-500/50 shadow-purple-500/20' 
+        : 'border-gray-700/50 hover:border-gray-600/50'
+    }`}
+  >
+    {tier.popular && (
+      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+        <div className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 py-2 rounded-full text-sm font-bold">
+          MOST POPULAR
+        </div>
+      </div>
+    )}
+
+    <div className="text-center mb-8">
+      <h3 className="text-2xl font-bold text-white mb-2">{tier.name}</h3>
+      <p className="text-gray-400">{tier.description}</p>
+    </div>
+
+    <div className="text-center mb-8">
+      <div className="text-4xl font-bold text-white mb-2">
+        {tier.price}
+        <span className="text-xl text-gray-400 font-normal">{tier.period}</span>
+      </div>
+    </div>
+
+    <div className="space-y-4 mb-8">
+      {tier.features.map((feature: string, idx: number) => (
+        <div key={idx} className="flex items-center space-x-3">
+          <Check className="w-5 h-5 text-green-400 flex-shrink-0" />
+          <span className="text-gray-300">{feature}</span>
+        </div>
+      ))}
+    </div>
+
+    <a
+      href={`mailto:${contact.email}?subject=${tier.name} Plan Inquiry`}
+      className={`block w-full text-center py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
+        tier.popular
+          ? 'bg-gradient-to-r from-purple-500 to-pink-600 text-white hover:from-purple-600 hover:to-pink-700'
+          : 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white hover:from-cyan-600 hover:to-blue-700'
+      }`}
+    >
+      Get Started
+    </a>
   </motion.div>
 );
 
@@ -198,58 +272,51 @@ const ContactSection: React.FC = () => (
         className="text-center mb-16"
       >
         <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-          Ready to Transform Your Business?
+          Ready to Get Started?
         </h2>
         <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-          Our innovative 2037 services are designed to give you a competitive edge in the rapidly evolving technology landscape.
+          Contact us today to discuss your specific needs and get a customized quote for our innovative 2037 services.
         </p>
       </motion.div>
 
-      <div className="grid md:grid-cols-2 gap-8 mb-16">
+      <div className="grid md:grid-cols-3 gap-8 mb-16">
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-500/20 rounded-2xl p-8"
+          className="text-center"
         >
-          <h3 className="text-2xl font-bold text-white mb-4">Get Started Today</h3>
-          <div className="space-y-4 text-gray-300">
-            <div className="flex items-center space-x-3">
-              <Check className="w-5 h-5 text-green-400" />
-              <span>Free consultation and assessment</span>
-            </div>
-            <div className="flex items-center space-x-3">
-              <Check className="w-5 h-5 text-green-400" />
-              <span>Custom implementation plan</span>
-            </div>
-            <div className="flex items-center space-x-3">
-              <Check className="w-5 h-5 text-green-400" />
-              <span>Ongoing support and optimization</span>
-            </div>
+          <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Clock className="w-8 h-8 text-white" />
           </div>
+          <h3 className="text-xl font-bold text-white mb-2">Quick Setup</h3>
+          <p className="text-gray-400">Most services can be deployed in 1-7 days with our expert assistance</p>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-2xl p-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="text-center"
         >
-          <h3 className="text-2xl font-bold text-white mb-4">Contact Information</h3>
-          <div className="space-y-4 text-gray-300">
-            <div className="flex items-center space-x-3">
-              <div className="w-5 h-5 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"></div>
-              <span>{contact.mobile}</span>
-            </div>
-            <div className="flex items-center space-x-3">
-              <div className="w-5 h-5 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full"></div>
-              <span>{contact.email}</span>
-            </div>
-            <div className="flex items-center space-x-3">
-              <div className="w-5 h-5 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full"></div>
-              <span>{contact.address}</span>
-            </div>
+          <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Users className="w-8 h-8 text-white" />
           </div>
+          <h3 className="text-xl font-bold text-white mb-2">Expert Support</h3>
+          <p className="text-gray-400">24/7 technical support and ongoing optimization services</p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-center"
+        >
+          <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Award className="w-8 h-8 text-white" />
+          </div>
+          <h3 className="text-xl font-bold text-white mb-2">Proven Results</h3>
+          <p className="text-gray-400">Track record of delivering measurable business impact and ROI</p>
         </motion.div>
       </div>
 
@@ -260,10 +327,10 @@ const ContactSection: React.FC = () => (
         className="text-center"
       >
         <a
-          href={`mailto:${contact.email}?subject=2037 Services Consultation`}
+          href={`mailto:${contact.email}?subject=2037 Services Pricing Consultation`}
           className="inline-flex items-center space-x-2 bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 font-semibold text-lg transform hover:scale-105"
         >
-          <span>Start Your Transformation</span>
+          <span>Get Your Custom Quote</span>
           <ArrowRight className="w-5 h-5" />
         </a>
       </motion.div>
@@ -271,7 +338,7 @@ const ContactSection: React.FC = () => (
   </section>
 );
 
-const ServicesShowcase2037: React.FC = () => {
+const PricingShowcase2037: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
@@ -287,10 +354,10 @@ const ServicesShowcase2037: React.FC = () => {
   return (
     <Layout>
       <SEO
-        title="2037 Innovative Services Showcase | Zion Tech Group"
-        description="Discover our cutting-edge 2037 services portfolio featuring AI governance, quantum security, edge computing, and innovative micro SAAS solutions. Transform your business with next-generation technology."
-        keywords={["2037 services", "AI governance", "quantum security", "edge computing", "micro SAAS", "innovative technology", "Zion Tech Group"]}
-        canonical="https://ziontechgroup.com/2037-innovative-services-showcase"
+        title="2037 Innovative Services Pricing | Zion Tech Group"
+        description="Explore competitive pricing for our cutting-edge 2037 services including AI governance, quantum security, edge computing, and innovative micro SAAS solutions. Get transparent pricing and value-driven solutions."
+        keywords={["2037 services pricing", "AI governance pricing", "quantum security pricing", "edge computing pricing", "micro SAAS pricing", "Zion Tech Group pricing"]}
+        canonical="https://ziontechgroup.com/2037-innovative-pricing-showcase"
       />
 
       {/* Hero Section */}
@@ -312,28 +379,28 @@ const ServicesShowcase2037: React.FC = () => {
               className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-400/30 rounded-full text-cyan-400 text-sm font-medium"
             >
               <TrendingUp className="w-4 h-4" />
-              <span>Innovation Leader 2037</span>
+              <span>Competitive Pricing 2037</span>
             </motion.div>
             
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
-              2037 Services Showcase
+              2037 Pricing Showcase
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Experience the future of technology with our comprehensive portfolio of innovative AI, IT, and micro SAAS solutions designed to transform your business
+              Transparent, competitive pricing for our comprehensive portfolio of innovative AI, IT, and micro SAAS solutions
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <a href="#services">
+              <a href="#pricing">
                 <button className="group px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25">
                   <span className="flex items-center gap-2">
-                    Explore Services
+                    View Pricing
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </button>
               </a>
-              <a href={`mailto:${contact.email}?subject=2037 Services Consultation`}>
+              <a href={`mailto:${contact.email}?subject=2037 Services Pricing Consultation`}>
                 <button className="px-8 py-4 border-2 border-purple-400 text-purple-400 font-semibold rounded-lg hover:bg-purple-400 hover:text-black transition-all duration-300 transform hover:scale-105">
-                  Get Consultation
+                  Get Custom Quote
                 </button>
               </a>
             </div>
@@ -341,10 +408,9 @@ const ServicesShowcase2037: React.FC = () => {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section id="services" className="py-20 px-4 bg-black relative">
-        <div className="max-w-7xl mx-auto">
-          {/* Header */}
+      {/* Pricing Tiers Section */}
+      <section id="pricing" className="py-20 px-4 bg-black relative">
+        <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -352,10 +418,35 @@ const ServicesShowcase2037: React.FC = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-              Revolutionary 2037 Services
+              Flexible Pricing Plans
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Discover our cutting-edge portfolio featuring {all2037Services.length} innovative services across AI governance, quantum security, edge computing, and specialized micro SAAS solutions
+              Choose the plan that best fits your business needs and scale as you grow
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {pricingTiers.map((tier, index) => (
+              <PricingTierCard key={tier.name} tier={tier} index={index} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20 px-4 bg-gray-900 relative">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+              Service-Specific Pricing
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Detailed pricing for each of our {all2037Services.length} innovative 2037 services with transparent feature breakdowns
             </p>
           </motion.div>
 
@@ -451,4 +542,4 @@ const ServicesShowcase2037: React.FC = () => {
   );
 };
 
-export default ServicesShowcase2037;
+export default PricingShowcase2037;
