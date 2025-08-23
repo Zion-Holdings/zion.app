@@ -14,6 +14,7 @@ const EnhancedFooter2025: React.FC = () => {
     {
       title: 'Services',
       links: [
+        { label: 'Innovative 2025 Showcase', href: '/innovative-2025-services-showcase' },
         { label: 'AI & Machine Learning', href: '/ai-services' },
         { label: 'Quantum Computing', href: '/quantum-computing' },
         { label: 'Cybersecurity', href: '/cybersecurity' },
@@ -97,7 +98,7 @@ const EnhancedFooter2025: React.FC = () => {
         </div>
 
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-12">
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
@@ -148,6 +149,63 @@ const EnhancedFooter2025: React.FC = () => {
               </ul>
             </div>
           ))}
+        </div>
+
+        {/* Contact Information Section */}
+        <div className="border-t border-gray-700/50 pt-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                <Phone className="w-5 h-5 text-cyan-400" />
+                Contact Us
+              </h3>
+              <div className="space-y-3 text-gray-300">
+                <div className="flex items-center gap-2">
+                  <Phone className="w-4 h-4 text-cyan-400" />
+                  <span>+1 302 464 0950</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Mail className="w-4 h-4 text-cyan-400" />
+                  <span>kleber@ziontechgroup.com</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-cyan-400" />
+                  <span>364 E Main St STE 1008<br />Middletown DE 19709</span>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                <Globe className="w-5 h-5 text-cyan-400" />
+                Quick Links
+              </h3>
+              <div className="space-y-2">
+                <Link href="/innovative-2025-services-showcase" className="block text-gray-300 hover:text-cyan-400 transition-colors">
+                  View 2025 Services
+                </Link>
+                <Link href="/get-started" className="block text-gray-300 hover:text-cyan-400 transition-colors">
+                  Get Started
+                </Link>
+                <Link href="/support" className="block text-gray-300 hover:text-cyan-400 transition-colors">
+                  Support Center
+                </Link>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                <Shield className="w-5 h-5 text-cyan-400" />
+                Business Hours
+              </h3>
+              <div className="space-y-2 text-gray-300">
+                <div>Monday - Friday: 9:00 AM - 6:00 PM EST</div>
+                <div>Saturday: 10:00 AM - 4:00 PM EST</div>
+                <div>Sunday: Closed</div>
+                <div className="text-cyan-400 font-medium">24/7 Emergency Support Available</div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Newsletter Section */}

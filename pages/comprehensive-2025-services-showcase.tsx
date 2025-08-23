@@ -1,7 +1,7 @@
 import React from 'react';
 import SEO from '../components/SEO';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
-import { innovative2025MicroSaasBatch } from '../data/innovative-2025-micro-saas-batch';
+import { innovative2025MicroSaasServices } from '../data/innovative-2025-micro-saas-batch';
 import { innovative2025ITEnterpriseBatch } from '../data/innovative-2025-it-enterprise-batch';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -17,7 +17,7 @@ import {
 } from 'lucide-react';
 
 const Comprehensive2025ServicesShowcase: React.FC = () => {
-  const allServices = [...innovative2025MicroSaasBatch, ...innovative2025ITEnterpriseBatch];
+  const allServices = [...innovative2025MicroSaasServices, ...innovative2025ITEnterpriseBatch];
   
   const categories = [
     'AI & Machine Learning',

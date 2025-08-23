@@ -202,21 +202,21 @@ const Homepage2025: React.FC = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Our Revolutionary Services
+                Our Revolutionary 2025 Services
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                From AI-powered automation to quantum computing solutions, we're building the future today
+                From AI-powered autonomous systems to quantum computing solutions, we're building the future today
               </p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
-                { title: "AI & Machine Learning", description: "Advanced AI solutions for enterprise automation", icon: Brain, color: "from-purple-500 to-pink-500" },
-                { title: "Quantum Computing", description: "Next-generation computational power", icon: Cpu, color: "from-cyan-500 to-blue-500" },
-                { title: "Cybersecurity", description: "Military-grade protection for digital assets", icon: Shield, color: "from-red-500 to-orange-500" },
-                { title: "Cloud Infrastructure", description: "Scalable cloud solutions for growth", icon: Cloud, color: "from-emerald-500 to-teal-500" },
-                { title: "Data Analytics", description: "Transform data into actionable insights", icon: BarChart3, color: "from-indigo-500 to-purple-500" },
-                { title: "Blockchain Solutions", description: "Secure, transparent digital infrastructure", icon: Lock, color: "from-yellow-500 to-orange-500" }
+                { title: "AI Content Autonomy", description: "Fully autonomous content creation and management", icon: Brain, color: "from-purple-500 to-pink-500", link: "/innovative-2025-services-showcase" },
+                { title: "Quantum Cloud Hybrid", description: "Seamless quantum-classical computing integration", icon: Cpu, color: "from-cyan-500 to-blue-500", link: "/innovative-2025-services-showcase" },
+                { title: "Cyber Immune Security", description: "Self-defending systems that adapt to threats", icon: Shield, color: "from-red-500 to-orange-500", link: "/innovative-2025-services-showcase" },
+                { title: "Edge Intelligence", description: "Distributed AI processing at the edge", icon: Cloud, color: "from-emerald-500 to-teal-500", link: "/innovative-2025-services-showcase" },
+                { title: "AI Research Scout", description: "Intelligent research automation and discovery", icon: BarChart3, color: "from-indigo-500 to-purple-500", link: "/innovative-2025-services-showcase" },
+                { title: "Autonomous DevOps", description: "Self-healing infrastructure with zero downtime", icon: Lock, color: "from-yellow-500 to-orange-500", link: "/innovative-2025-services-showcase" }
               ].map((service, index) => (
                 <motion.div
                   key={index}
@@ -233,14 +233,32 @@ const Homepage2025: React.FC = () => {
                     </div>
                     <h3 className="text-xl font-semibold text-white mb-3">{service.title}</h3>
                     <p className="text-gray-300 leading-relaxed mb-4">{service.description}</p>
-                    <div className="flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors">
-                      <span className="text-sm font-medium">Learn More</span>
+                    <a href={service.link} className="flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors">
+                      <span className="text-sm font-medium">Explore Service</span>
                       <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </div>
+                    </a>
                   </div>
                 </motion.div>
               ))}
             </div>
+
+            {/* Call to Action for Services Showcase */}
+            <motion.div
+              className="text-center mt-16"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <a
+                href="/innovative-2025-services-showcase"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-xl hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-purple-500/25"
+              >
+                <Rocket className="w-5 h-5 mr-2" />
+                View All 2025 Services
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </a>
+            </motion.div>
           </div>
         </section>
 

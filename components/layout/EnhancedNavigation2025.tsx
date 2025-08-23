@@ -26,6 +26,7 @@ const navigationItems: NavigationItem[] = [
     href: '/services',
     icon: Briefcase,
     children: [
+      { label: 'Innovative 2025 Showcase', href: '/innovative-2025-services-showcase', icon: Rocket, badge: 'New' },
       { label: 'AI & Machine Learning', href: '/ai-services', icon: Brain, badge: 'Hot' },
       { label: 'Quantum Computing', href: '/quantum-computing', icon: Cpu, badge: 'New' },
       { label: 'Cybersecurity', href: '/cybersecurity', icon: Shield, badge: 'Popular' },
