@@ -3,6 +3,16 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, ChevronDown, X, Phone, Mail, MapPin, ArrowRight,
+<<<<<<< HEAD
+  Rocket, Shield, Target, BookOpen,
+  DollarSign, BarChart3, Users, Star,
+  Cpu, Settings, Heart,
+  Grid,
+  ShoppingCart, HelpCircle, FileText,
+  BookOpenCheck,
+  Building, MessageCircle,
+  Target as TargetIcon, Brain as BrainIcon
+=======
   Brain, Rocket, Shield, Zap, Target, Atom, BookOpen,
   Truck, DollarSign, BarChart3, Globe, Users, Star, Sparkles, 
   Cpu, Lock, Cloud, Settings, Eye, Award, Clock, Heart, Lightbulb,
@@ -14,6 +24,7 @@ import {
   Target as TargetIcon, Atom as AtomIcon, Brain as BrainIcon,
   Home, Info, Users as UsersIcon, FileText as FileTextIcon, 
   Briefcase, GraduationCap, Handshake, Globe as GlobeIcon2, Calendar
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-097e
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -49,6 +60,13 @@ function normalizeHref(href: string): string {
 
 const navigationItems: NavigationItem[] = [
   {
+<<<<<<< HEAD
+    name: 'Services',
+    href: '/services',
+    icon: <Rocket className="w-5 h-5" />,
+    description: 'Complete technology solutions',
+    badge: 'Main',
+=======
     name: 'Home',
     href: '/',
     icon: <Home className="w-5 h-5" />,
@@ -68,14 +86,22 @@ const navigationItems: NavigationItem[] = [
     icon: <Briefcase className="w-5 h-5" />,
     description: 'Our comprehensive service portfolio',
     badge: 'Featured',
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-097e
     category: 'services',
     featured: true,
     children: [
       { 
+<<<<<<< HEAD
+        name: 'All Services', 
+        href: '/services', 
+        description: 'Complete services overview',
+        icon: <Grid className="w-4 h-4" />,
+=======
         name: 'AI & Machine Learning', 
         href: '/ai-services', 
         description: 'Advanced AI and ML solutions',
         icon: <BrainIcon className="w-4 h-4" />,
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-097e
         featured: true
       },
       { 
@@ -87,13 +113,21 @@ const navigationItems: NavigationItem[] = [
       { 
         name: 'Quantum Technology', 
         href: '/quantum-services', 
+<<<<<<< HEAD
+        description: 'Quantum computing solutions',
+=======
         description: 'Quantum computing and security',
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-097e
         icon: <AtomIcon className="w-4 h-4" />
       },
       { 
         name: 'Space Technology', 
         href: '/space-technology', 
+<<<<<<< HEAD
+        description: 'Space exploration solutions',
+=======
         description: 'Space exploration and resource mining',
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-097e
         icon: <Rocket className="w-4 h-4" />
       },
       { 
@@ -103,6 +137,12 @@ const navigationItems: NavigationItem[] = [
         icon: <Cpu className="w-4 h-4" />
       },
       { 
+<<<<<<< HEAD
+        name: 'Specialized Solutions', 
+        href: '/solutions', 
+        description: 'Industry-specific solutions',
+        icon: <TargetIcon className="w-4 h-4" />
+=======
         name: 'Cybersecurity', 
         href: '/security', 
         description: 'Advanced security solutions',
@@ -119,10 +159,104 @@ const navigationItems: NavigationItem[] = [
         href: '/services', 
         description: 'Complete service catalog',
         icon: <Grid className="w-4 h-4" />
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-097e
       }
     ]
   },
   {
+<<<<<<< HEAD
+    name: 'Showcase & Pricing',
+    href: '/pricing',
+    icon: <Star className="w-5 h-5" />,
+    description: 'Services portfolio & pricing',
+    badge: 'Showcase',
+    category: 'showcase',
+    children: [
+      { 
+        name: 'Services Showcase', 
+        href: '/comprehensive-services-showcase-2025', 
+        description: 'Complete services overview',
+        icon: <Grid className="w-4 h-4" />,
+        featured: true
+      },
+      { 
+        name: 'Pricing Plans', 
+        href: '/pricing', 
+        description: 'Service pricing information',
+        icon: <DollarSign className="w-4 h-4" />
+      },
+      { 
+        name: 'Market Pricing', 
+        href: '/market-pricing', 
+        description: 'Market price references',
+        icon: <BarChart3 className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Company',
+    href: '/about',
+    icon: <Building className="w-5 h-5" />,
+    description: 'About Zion Tech Group',
+    category: 'company',
+    children: [
+      { 
+        name: 'About Us', 
+        href: '/about', 
+        description: 'Company information',
+        icon: <Building className="w-4 h-4" />
+      },
+      { 
+        name: 'Contact', 
+        href: '/contact', 
+        description: 'Get in touch',
+        icon: <MessageCircle className="w-4 h-4" />
+      },
+      { 
+        name: 'Partners', 
+        href: '/partners', 
+        description: 'Partnership opportunities',
+        icon: <Users className="w-4 h-4" />
+      },
+      { 
+        name: 'Investors', 
+        href: '/investors', 
+        description: 'Investment information',
+        icon: <DollarSign className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Resources',
+    href: '/resources',
+    icon: <BookOpen className="w-5 h-5" />,
+    description: 'Knowledge & support',
+    category: 'resources',
+    children: [
+      { 
+        name: 'Documentation', 
+        href: '/docs', 
+        description: 'Technical documentation',
+        icon: <FileText className="w-4 h-4" />
+      },
+      { 
+        name: 'Blog', 
+        href: '/blog', 
+        description: 'Latest insights',
+        icon: <BookOpen className="w-4 h-4" />
+      },
+      { 
+        name: 'Case Studies', 
+        href: '/case-studies', 
+        description: 'Success stories',
+        icon: <Award className="w-4 h-4" />
+      },
+      { 
+        name: 'Support', 
+        href: '/support', 
+        description: 'Technical support',
+        icon: <HelpCircle className="w-4 h-4" />
+=======
     name: 'Solutions',
     href: '/solutions',
     icon: <Target className="w-5 h-5" />,
@@ -339,6 +473,7 @@ const navigationItems: NavigationItem[] = [
         href: '/api-docs', 
         description: 'Developer resources',
         icon: <Code className="w-4 h-4" />
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-097e
       }
     ]
   }
