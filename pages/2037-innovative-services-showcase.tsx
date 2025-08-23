@@ -21,35 +21,12 @@ const contact = {
   website: 'https://ziontechgroup.com'
 };
 
-// Helper function to get icon based on category
-const getIconForCategory = (category: string) => {
-  const categoryLower = category.toLowerCase();
-  if (categoryLower.includes('ai') || categoryLower.includes('consciousness')) return Brain;
-  if (categoryLower.includes('quantum')) return Atom;
-  if (categoryLower.includes('autonomous')) return Zap;
-  if (categoryLower.includes('cloud') || categoryLower.includes('infrastructure')) return Cloud;
-  if (categoryLower.includes('security') || categoryLower.includes('cyber')) return Shield;
-  if (categoryLower.includes('operations')) return Settings;
-  if (categoryLower.includes('neural') || categoryLower.includes('network')) return Cpu;
-  return Rocket;
-};
-
-// Helper function to get color based on category
-const getColorForCategory = (category: string) => {
-  const categoryLower = category.toLowerCase();
-  if (categoryLower.includes('ai') || categoryLower.includes('consciousness')) return 'from-purple-500 to-pink-500';
-  if (categoryLower.includes('quantum')) return 'from-blue-500 to-cyan-500';
-  if (categoryLower.includes('autonomous')) return 'from-green-500 to-emerald-500';
-  if (categoryLower.includes('cloud') || categoryLower.includes('infrastructure')) return 'from-indigo-500 to-blue-500';
-  if (categoryLower.includes('security') || categoryLower.includes('cyber')) return 'from-red-500 to-orange-500';
-  if (categoryLower.includes('operations')) return 'from-yellow-500 to-orange-500';
-  if (categoryLower.includes('neural') || categoryLower.includes('network')) return 'from-violet-500 to-purple-500';
-  return 'from-cyan-500 to-blue-500';
-};
-
 const ServiceCard = ({ service, index }: { service: any; index: number }) => {
-  const IconComponent = getIconForCategory(service.category);
-  const colorClass = getColorForCategory(service.category);
+  // Default values for missing properties
+  const defaultColor = 'from-cyan-500 to-blue-600';
+  const defaultIcon = '🚀';
+  const color = service.color || defaultColor;
+  const icon = service.icon || defaultIcon;
   
   return (
     <motion.div
@@ -58,11 +35,43 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => {
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="relative group"
     >
-      <div className={`absolute inset-0 bg-gradient-to-r ${colorClass} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
-      <div className={`relative bg-gradient-to-r ${colorClass} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
+      <div className={`absolute inset-0 bg-gradient-to-r ${color} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
+      <div className={`relative bg-gradient-to-r ${color.replace('from-', 'from-').replace('to-', 'to-')} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
         <div className="flex items-start justify-between mb-6">
-          <div className="text-4xl">
-            <IconComponent className="w-12 h-12 text-white" />
+          <div className="text-4xl">{icon}</div>
+          {service.popular && (
+            <span className="px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-semibold rounded-full">
+              Popular
+            </span>
+          )}
+        </div>
+      
+      <h3 className="text-2xl font-bold text-white mb-3">{service.name}</h3>
+      <p className="text-gray-300 mb-6 text-sm leading-relaxed">{service.description}</p>
+      
+      <div className="space-y-3 mb-6">
+        {service.features.slice(0, 4).map((feature: string, idx: number) => (
+          <div key={idx} className="flex items-center space-x-2">
+            <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
+            <span className="text-gray-300 text-sm">{feature}</span>
+          </div>
+        ))}
+      </div>
+      
+      <div className="flex items-center justify-between mb-6">
+        <div>
+          <span className="text-3xl font-bold text-white">
+            {service.pricing ? service.pricing.starter : service.price || 'Contact for pricing'}
+          </span>
+          <span className="text-gray-400 text-sm">
+            {service.pricing ? '/month' : service.period || ''}
+          </span>
+        </div>
+        <div className="text-right">
+          <div className="flex items-center space-x-1 text-yellow-400">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} className="w-4 h-4" />
+            ))}
           </div>
           {service.rating >= 4.8 && (
             <span className="px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-semibold rounded-full">
@@ -120,9 +129,29 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => {
           Learn More
         </a>
       </div>
-    </motion.div>
+      
+      <a 
+        href={service.link} 
+        className="block w-full text-center py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+      >
+        Learn More
+      </a>
+    </div>
+  </motion.div>
   );
 };
+
+const ServiceShowcase = () => {
+  const [activeCategory, setActiveCategory] = React.useState('all');
+  
+  const categories = [
+    { id: 'all', name: 'All Services', icon: <Star className="w-5 h-5" />, count: innovative2037MicroSaasServices.length + innovative2037ITServices.length + innovative2037AIServices.length },
+    { id: 'ai', name: 'AI & Consciousness', icon: <Brain className="w-5 h-5" />, count: innovative2037AIServices.length },
+    { id: 'quantum', name: 'Quantum Technology', icon: <Atom className="w-5 h-5" />, count: innovative2037ITServices.filter(s => s.name.toLowerCase().includes('quantum')).length },
+    { id: 'autonomous', name: 'Autonomous Systems', icon: <Zap className="w-5 h-5" />, count: innovative2037ITServices.filter(s => s.name.toLowerCase().includes('autonomous')).length + innovative2037AIServices.filter(s => s.name.toLowerCase().includes('autonomous')).length },
+    { id: 'micro-saas', name: 'Micro SAAS', icon: <Rocket className="w-5 h-5" />, count: innovative2037MicroSaasServices.length },
+    { id: 'it', name: 'IT Solutions', icon: <Cpu className="w-5 h-5" />, count: innovative2037ITServices.length }
+  ];
 
 const ServicesShowcase2037: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');

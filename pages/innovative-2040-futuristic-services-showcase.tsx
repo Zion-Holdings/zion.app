@@ -39,6 +39,7 @@ interface Service {
   growthRate?: string;
   contactInfo?: {
     mobile?: string;
+    phone?: string;
     email: string;
     address?: string;
     website: string;
@@ -51,57 +52,6 @@ interface Service {
   rating: number;
   reviews: number;
   benefits?: string[];
-  targetAudience?: string[] | string;
-  marketPosition?: string;
-  techStack?: string[];
-  support?: string;
-  compliance?: string[];
-  trialDays?: number;
-  setupTime?: string;
-  variant?: string;
-}
-
-// Type guard to check if service has color property
-function hasColor(service: any): service is Service & { color: string } {
-  return 'color' in service && typeof service.color === 'string';
-}
-
-// Type guard to check if service has icon property
-function hasIcon(service: any): service is Service & { icon: string } {
-  return 'icon' in service && typeof service.icon === 'string';
-}
-
-// Helper function to get service icon or default
-function getServiceIcon(service: any): string {
-  if (hasIcon(service)) {
-    return service.icon;
-  }
-  // Return default icon based on category
-  if (service.category?.toLowerCase().includes('ai')) return '🤖';
-  if (service.category?.toLowerCase().includes('quantum')) return '⚛️';
-  if (service.category?.toLowerCase().includes('cyber')) return '🔒';
-  if (service.category?.toLowerCase().includes('space')) return '🚀';
-  if (service.category?.toLowerCase().includes('business')) return '💼';
-  return '💡';
-}
-
-// Helper function to get service period or default
-function getServicePeriod(service: any): string {
-  if ('period' in service && service.period) {
-    return service.period;
-  }
-  return '/month';
-}
-
-// Helper function to get service tagline or description
-function getServiceTagline(service: any): string {
-  if ('tagline' in service && service.tagline) {
-    return service.tagline;
-  }
-  if ('description' in service && service.description) {
-    return service.description.substring(0, 100) + (service.description.length > 100 ? '...' : '');
-  }
-  return 'Revolutionary service';
 }
 
 const Innovative2040FuturisticServicesShowcase: React.FC = () => {
@@ -186,7 +136,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
           return aPrice - bPrice;
         }
         case 'popularity':
-          return b.rating - a.rating;
+          return (b.popular ? 1 : 0) - (a.popular ? 1 : 0) || b.rating - a.rating;
         case 'category':
           return a.category.localeCompare(b.category);
         default:
