@@ -5,10 +5,15 @@ const Index: NextPage = () => {
   return (
     <div>
       <Head>
+<<<<<<< HEAD
+        <title>Index - Zion Tech Solutions</title>
+        <meta name="description" content="Index page" />
+=======
         <title>Zion App — Next Generation Platform</title>
         <meta name="description" content="Experience the future with our AI-powered marketplace, cloud architecture, and digital transformation solutions." />
       <link rel="preload" as="fetch" href="/trends.json" crossOrigin="anonymous" />
         <link rel="preload" as="fetch" href="/health.json" crossOrigin="anonymous" />
+>>>>>>> origin/cursor/autonomous-cloud-automations
       </Head>
 
       {/* Futuristic animated background */}
@@ -60,6 +65,8 @@ const Index: NextPage = () => {
               <Link href="/automation"><a className="rounded-xl bg-gradient-to-r from-fuchsia-500 to-cyan-500 px-6 py-3 font-semibold shadow-[0_0_30px_rgba(34,211,238,0.35)] hover:shadow-[0_0_40px_rgba(34,211,238,0.6)] transition-shadow">Explore Automations</a></Link>
               <Link href="/site-health"><a className="rounded-xl border border-white/20 bg-white/5 px-6 py-3 font-semibold backdrop-blur-md hover:bg-white/10">Live Meta Factory</a></Link>
             </div>
+<<<<<<< HEAD
+=======
             <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-cyan-400/30 transition">
               <h3 className="text-xl font-semibold mb-4">Digital Transformation</h3>
               <p>End-to-end digital transformation services to modernize your business.</p>
@@ -10765,6 +10772,7 @@ const Index: NextPage = () => {
         <section className="mt-16">
           <h2 className="text-2xl font-semibold mb-4">Explore more</h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+>>>>>>> origin/cursor/autonomous-cloud-automations
 
             {/* Futuristic info strip */}
             <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
