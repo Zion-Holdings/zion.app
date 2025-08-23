@@ -1,34 +1,41 @@
 /* eslint-env serviceworker */
 /* global self, caches */
 
-const STATIC_CACHE = 'zion-static-v1';
-const DYNAMIC_CACHE = 'zion-dynamic-v1';
+const CACHE_NAME = 'zion-tech-group-v1.0.0';
+const STATIC_CACHE = 'zion-static-v1.0.0';
+const DYNAMIC_CACHE = 'zion-dynamic-v1.0.0';
 
-// Routes that should be cached
-const STATIC_ROUTES = [
+// Files to cache immediately
+const STATIC_FILES = [
   '/',
   '/offline.html',
-  '/manifest.json'
+  '/manifest.json',
+  '/favicon.ico',
+  '/images/logo.png',
+  '/fonts/inter-var.woff2'
 ];
 
-// API routes that should be cached
-const API_ROUTES = [
-  '/api/contact',
-  '/api/services'
+// API endpoints to cache
+const API_CACHE = [
+  '/api/services',
+  '/api/health',
+  '/api/analytics'
 ];
 
-// Install event - cache static assets
+// Install event - cache static files
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(STATIC_CACHE)
       .then((cache) => {
-        return cache.addAll(STATIC_ROUTES);
+        console.log('Caching static files');
+        return cache.addAll(STATIC_FILES);
       })
       .then(() => {
+        console.log('Static files cached successfully');
         return self.skipWaiting();
       })
-      .catch(() => {
-        // Handle caching errors silently
+      .catch((error) => {
+        console.error('Error caching static files:', error);
       })
   );
 });
@@ -41,12 +48,14 @@ self.addEventListener('activate', (event) => {
         return Promise.all(
           cacheNames.map((cacheName) => {
             if (cacheName !== STATIC_CACHE && cacheName !== DYNAMIC_CACHE) {
+              console.log('Deleting old cache:', cacheName);
               return caches.delete(cacheName);
             }
           })
         );
       })
       .then(() => {
+        console.log('Service worker activated');
         return self.clients.claim();
       })
   );
@@ -63,67 +72,93 @@ self.addEventListener('fetch', (event) => {
   }
 
   // Handle different types of requests
-  if (STATIC_ROUTES.includes(url.pathname)) {
-    // Static routes - cache first
+  if (request.destination === 'document') {
+    // HTML pages - try cache first, then network
+    event.respondWith(
+      caches.match(request)
+        .then((response) => {
+          if (response) {
+            // Return cached version and update in background
+            fetch(request).then((freshResponse) => {
+              if (freshResponse.status === 200) {
+                caches.open(DYNAMIC_CACHE).then((cache) => {
+                  cache.put(request, freshResponse);
+                });
+              }
+            });
+            return response;
+          }
+          return fetch(request)
+            .then((response) => {
+              if (response.status === 200) {
+                const responseClone = response.clone();
+                caches.open(DYNAMIC_CACHE).then((cache) => {
+                  cache.put(request, responseClone);
+                });
+              }
+              return response;
+            })
+            .catch(() => {
+              // Return offline page if network fails
+              return caches.match('/offline.html');
+            });
+        })
+    );
+  } else if (request.destination === 'image' || request.destination === 'font') {
+    // Images and fonts - cache first strategy
+    event.respondWith(
+      caches.match(request)
+        .then((response) => {
+          if (response) {
+            return response;
+          }
+          return fetch(request)
+            .then((response) => {
+              if (response.status === 200) {
+                const responseClone = response.clone();
+                caches.open(DYNAMIC_CACHE).then((cache) => {
+                  cache.put(request, responseClone);
+                });
+              }
+              return response;
+            });
+        })
+    );
+  } else if (url.pathname.startsWith('/api/')) {
+    // API requests - network first, then cache
+    event.respondWith(
+      fetch(request)
+        .then((response) => {
+          if (response.status === 200) {
+            const responseClone = response.clone();
+            caches.open(DYNAMIC_CACHE).then((cache) => {
+              cache.put(request, responseClone);
+            });
+          }
+          return response;
+        })
+        .catch(() => {
+          // Return cached version if network fails
+          return caches.match(request);
+        })
+    );
+  } else {
+    // Other resources - try cache first, then network
     event.respondWith(
       caches.match(request)
         .then((response) => {
           return response || fetch(request);
         })
-        .catch(() => {
-          // Return offline page for navigation requests
-          if (request.mode === 'navigate') {
-            return caches.match('/offline.html');
-          }
-        })
     );
-  } else if (API_ROUTES.some(route => url.pathname.startsWith(route))) {
-    // API routes - network first, then cache
-    event.respondWith(
-      fetch(request)
-        .then((response) => {
-          // Clone the response before caching
-          const responseClone = response.clone();
-          caches.open(DYNAMIC_CACHE)
-            .then((cache) => {
-              cache.put(request, responseClone);
-            });
-          return response;
-        })
-        .catch(() => {
-          // Return cached response if available
-          return caches.match(request);
-        })
-    );
-  } else if (request.destination === 'image' || request.destination === 'style' || request.destination === 'script') {
-    // Static assets - cache first
-    event.respondWith(
-      caches.match(request)
-        .then((response) => {
-          return response || fetch(request)
-            .then((fetchResponse) => {
-              // Cache the fetched response
-              const responseClone = fetchResponse.clone();
-              caches.open(DYNAMIC_CACHE)
-                .then((cache) => {
-                  cache.put(request, responseClone);
-                });
-              return fetchResponse;
-            });
-        })
-    );
-  } else {
-    // Other requests - network first
-    event.respondWith(fetch(request));
   }
 });
 
-// Background sync for offline form submissions
+// Background sync for offline actions
 self.addEventListener('sync', (event) => {
   if (event.tag === 'background-sync') {
     event.waitUntil(
-      // Handle background sync logic here
-      Promise.resolve()
+      // Perform background sync tasks
+      console.log('Background sync triggered')
     );
   }
 });
@@ -131,9 +166,9 @@ self.addEventListener('sync', (event) => {
 // Push notification handling
 self.addEventListener('push', (event) => {
   const options = {
-    body: event.data ? event.data.text() : 'New update available!',
-    icon: '/icon-192x192.png',
-    badge: '/icon-72x72.png',
+    body: event.data ? event.data.text() : 'New update available',
+    icon: '/images/logo.png',
+    badge: '/images/badge.png',
     vibrate: [100, 50, 100],
     data: {
       dateOfArrival: Date.now(),
@@ -142,13 +177,13 @@ self.addEventListener('push', (event) => {
     actions: [
       {
         action: 'explore',
-        title: 'View',
-        icon: '/icon-192x192.png'
+        title: 'Explore',
+        icon: '/images/explore.png'
       },
       {
         action: 'close',
         title: 'Close',
-        icon: '/icon-192x192.png'
+        icon: '/images/close.png'
       }
     ]
   };
@@ -164,7 +199,7 @@ self.addEventListener('notificationclick', (event) => {
 
   if (event.action === 'explore') {
     event.waitUntil(
-      self.clients.openWindow('/')
+      clients.openWindow('/')
     );
   }
 });
@@ -174,4 +209,18 @@ self.addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
     self.skipWaiting();
   }
+  
+  if (event.data && event.data.type === 'GET_VERSION') {
+    event.ports[0].postMessage({ version: CACHE_NAME });
+  }
+});
+
+// Error handling
+self.addEventListener('error', (event) => {
+  console.error('Service worker error:', event.error);
+});
+
+// Unhandled rejection handling
+self.addEventListener('unhandledrejection', (event) => {
+  console.error('Service worker unhandled rejection:', event.reason);
 });
