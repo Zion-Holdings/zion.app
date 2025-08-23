@@ -71,7 +71,7 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => {
         <div className="flex items-center justify-between mb-6">
           <div>
             <span className="text-3xl font-bold text-white">
-              {service.pricing?.starter || service.price || '$99'}
+              {service.price || '$99'}
             </span>
             <span className="text-gray-400 text-sm">/month</span>
           </div>
