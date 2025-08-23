@@ -2,16 +2,39 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
+<<<<<<< HEAD
+  Menu, 
+  X, 
+  ChevronDown, 
+  Search, 
+  User, 
+  Settings, 
+  LogOut,
+  Rocket,
+  Brain,
+  Shield,
+  Cloud,
+  Zap,
+  Star,
+  Globe,
+  Phone,
+  Mail,
+  MapPin
+=======
   Menu, X, ChevronDown, Search, Phone, Mail, MapPin, 
   Rocket, Brain, Atom, Globe, Zap, Sparkles, Shield, 
   Microscope, DollarSign, Home, Users, Briefcase, 
   BookOpen, MessageCircle 
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5c61
 } from 'lucide-react';
 
 interface UltraAdvancedNavigation2026Props {
   className?: string;
 }
 
+<<<<<<< HEAD
+const UltraAdvancedNavigation2026: React.FC<UltraAdvancedNavigation2026Props> = ({ className = '' }) => {
+=======
 const serviceCategories = [
   {
     title: 'AI & Machine Learning 2026',
@@ -100,6 +123,7 @@ const companyLinks = [
 ];
 
 const UltraAdvancedNavigation2026 = () => {
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5c61
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);

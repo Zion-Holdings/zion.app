@@ -3,6 +3,12 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, Brain, Sparkles } from 'lucide-react';
 import Button from '../components/ui/Button';
+<<<<<<< HEAD
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceCard';
+import ServiceAds from '../components/sections/ServiceAds';
+import Card from '../components/ui/Card';
+=======
 import UltraQuantumHolographicBackground from '../components/ui/UltraQuantumHolographicBackground';
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import UltraAdvancedNavigation2026V2 from '../components/layout/UltraAdvancedNavigation2026V2';
@@ -11,6 +17,7 @@ import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026Ser
 import Revolutionary2026ServiceShowcase from '../components/sections/Revolutionary2026ServiceShowcase';
 import UltraAdvancedHero2026V2 from '../components/sections/UltraAdvancedHero2026V2';
 import UltraAdvancedFooter2026V2 from '../components/layout/UltraAdvancedFooter2026V2';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5c61
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
@@ -21,6 +28,10 @@ import { quantumAdvancedServices } from '../data/quantum-advanced-services';
 import { emergingTechServices } from '../data/emerging-tech-services';
 import { spaceTechServices } from '../data/space-tech-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
+<<<<<<< HEAD
+import { emergingTechAdvancedServices } from '../data/emerging-tech-advanced-services';
+import { itInfrastructureServices } from '../data/it-infrastructure-services';
+=======
 import { quantumSpaceServices } from '../data/quantum-space-services';
 import { quantumAIServices2025 } from '../data/quantum-ai-services-2025';
 import { enterpriseITServices } from '../data/enterprise-it-services';
@@ -57,6 +68,7 @@ import { enterpriseIT2026ServicesV3 } from '../data/enterprise-it-2026-services-
 import { ultimate2026Services } from '../data/ultimate-2026-services';
 import { revolutionary2026MicroSaasV2 } from '../data/revolutionary-2026-micro-saas-v2';
 import { ultimate2026AIServicesV2 } from '../data/ultimate-2026-ai-services-v2';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5c61
 
 export default function HomePage() {
   const heroStats = [
@@ -114,8 +126,14 @@ export default function HomePage() {
     ...emergingTech2026ServicesV3,
     ...enterpriseIT2026ServicesV3,
     ...ultimate2026Services,
+<<<<<<< HEAD
+    ...innovative2026MicroSaasV4Services,
+    ...emergingTech2026ServicesV4,
+    ...enterpriseIT2026ServicesV4
+=======
     ...revolutionary2026MicroSaasV2,
     ...ultimate2026AIServicesV2
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5c61
   ];
 
 const featuredServices = [
@@ -287,10 +305,17 @@ export default function HomePage() {
       </Head>
 
         {/* Ultra Advanced Navigation */}
+<<<<<<< HEAD
+        <UltraAdvancedNavigation2026V4 />
+
+        {/* Enhanced Hero Section 2026 */}
+        <EnhancedHero2026V4 />
+=======
         <UltraAdvancedNavigation2026V2 />
 
         {/* Enhanced Hero Section 2026 */}
         <UltraAdvancedHero2026V2 />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5c61
 
         {/* Revolutionary 2026 Services Showcase */}
         <Revolutionary2026ServiceShowcase />

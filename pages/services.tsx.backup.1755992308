@@ -138,6 +138,15 @@ import { innovativeAIServices } from '../data/innovative-ai-services';
 import { quantumSpaceServices } from '../data/quantum-space-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
+<<<<<<< HEAD
+import { advancedAIServices } from '../data/advanced-ai-services';
+import { quantumAdvancedServices } from '../data/quantum-advanced-services';
+import { emergingTechServices } from '../data/emerging-tech-services';
+import { spaceTechServices } from '../data/space-tech-services';
+import { innovativeAIServices } from '../data/innovative-ai-services';
+import { emergingTechAdvancedServices } from '../data/emerging-tech-advanced-services';
+import { itInfrastructureServices } from '../data/it-infrastructure-services';
+=======
 import { additionalEnhancedServices } from '../data/additional-real-services';
 import { newRealServices } from '../data/new-real-services';
 import { industryRealServices } from '../data/industry-real-services';
@@ -174,6 +183,7 @@ import { ultimate2026Services } from '../data/ultimate-2026-services';
 import { revolutionary2026Innovations } from '../data/revolutionary-2026-innovations';
 import { revolutionary2026MicroSaasV2 } from '../data/revolutionary-2026-micro-saas-v2';
 import { ultimate2026AIServicesV2 } from '../data/ultimate-2026-ai-services-v2';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5c61
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -209,6 +219,9 @@ export default function ServicesPage() {
     ...verified2025Additions,
     ...newRealInnovations,
     ...serviceExpansions2025,
+<<<<<<< HEAD
+    ...additional2025RealServices
+=======
     ...quantumAdvancedServices,
     ...emergingTechServices,
     ...spaceTechServices,
@@ -233,6 +246,7 @@ export default function ServicesPage() {
     ...revolutionary2026Innovations,
     ...revolutionary2026MicroSaasV2,
     ...ultimate2026AIServicesV2
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5c61
   ];
 
   // Categories for filtering
@@ -268,6 +282,28 @@ export default function ServicesPage() {
     .filter(service => {
       const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+<<<<<<< HEAD
+                           service.tagline.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesCategory = selectedCategory === 'All' || 
+                             (Array.isArray(service.category) ? 
+                               service.category.includes(selectedCategory) : 
+                               service.category === selectedCategory);
+      return matchesSearch && matchesCategory;
+    })
+    .sort((a, b) => {
+      switch (sortBy) {
+        case 'name':
+          return a.name.localeCompare(b.name);
+        case 'price':
+          return parseFloat(a.price.replace(/[^0-9.]/g, '')) - parseFloat(b.price.replace(/[^0-9.]/g, ''));
+        case 'popularity':
+          return (b.popular ? 1 : 0) - (a.popular ? 1 : 0);
+        case 'rating':
+          return (b.rating || 0) - (a.rating || 0);
+        default:
+          return 0;
+      }
+=======
                            (Array.isArray(service.category) 
                              ? service.category.some(cat => cat.toLowerCase().includes(searchTerm.toLowerCase()))
                              : service.category.toLowerCase().includes(searchTerm.toLowerCase()));
@@ -293,6 +329,7 @@ export default function ServicesPage() {
                           (selectedPriceRange === 'premium' && numericPrice >= 20000);
       
       return matchesSearch && matchesCategory && matchesPrice;
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5c61
     });
 
     // Sort services
@@ -495,6 +532,14 @@ export default function ServicesPage() {
                   variants={itemVariants}
                   layout
                 >
+<<<<<<< HEAD
+                  <div className="relative bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 hover:border-gray-600/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20 group-hover:scale-105">
+                    {/* Popular Badge */}
+                    {service.popular && (
+                      <div className="absolute -top-3 -right-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
+                        <Star className="w-3 h-3" />
+                        Popular
+=======
                   <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/80 backdrop-blur-xl rounded-3xl p-8 border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-500 hover:shadow-2xl hover:shadow-cyan-500/30 h-full relative overflow-hidden">
                     {/* Background Glow Effect */}
                     <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -503,6 +548,7 @@ export default function ServicesPage() {
                       {/* Service Icon */}
                       <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
                         {(service as any).icon || '🚀'}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5c61
                       </div>
                     )}
 
@@ -546,6 +592,10 @@ export default function ServicesPage() {
                             />
                           ))}
                         </div>
+<<<<<<< HEAD
+                        <span className="text-sm text-gray-400">
+                          {service.rating} ({service.reviews} reviews)
+=======
                       </div>
 
                       {/* Stats */}
@@ -572,6 +622,7 @@ export default function ServicesPage() {
                         <span className="flex items-center">
                           Learn More
                           <ArrowRight className="inline-block ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5c61
                         </span>
                       </div>
                     )}
