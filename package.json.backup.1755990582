@@ -148,6 +148,14 @@
     "prebuild": "npm run build:health-check && npm run netlify:manifest",
     "export": "rm -rf .next out tsconfig.tsbuildinfo && mkdir -p .temp && mv pages/reports .temp/ 2>/dev/null || true && NODE_OPTIONS=\"--max-old-space-size=6144 --openssl-legacy-provider\" next build --no-lint && mv .temp/reports pages/ 2>/dev/null || true && rm -rf .temp",
     "start": "next start",
+<<<<<<< HEAD
+    "postbuild": "node automation/footer-injector.cjs || true",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "type-check": "tsc --noEmit",
+    "prepare": "git config core.hooksPath .husky || true",
+    "fix:all": "npm run lint -- --fix || true",
+    "build:heal": "npm run build || (npm run fix:all && npm run search:index || true && npm run build)",
+=======
     "postbuild": "next export",
           "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
       "type-check": "tsc --noEmit",
@@ -156,6 +164,7 @@
       "prepare": "husky install",
     "fix:all": "npm run lint -- --fix || true && node fix_typescript_syntax_errors.cjs || true && node fix_all_typescript_errors.cjs || true && node final_fix.cjs || true",
     "build:heal": "npm run build || (npm run fix:all && npm run build)",
+>>>>>>> origin/cursor/automate-continuous-development-processes-4d04
     "ci:heal": "npm run fix:all && (npm run type-check || true) && npm run build:heal",
     "build:health-check": "node automation/pre-build-health-check.cjs",
     "build:validate": "node automation/nextjs-page-validator.cjs",
@@ -517,6 +526,15 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "husky": "^9.1.7",
+<<<<<<< HEAD
+    "lint-staged": "^16.1.5",
+    "postcss": "^8.4.32",
+    "sharp": "^0.34.3",
+    "tailwindcss": "^4.1.12",
+    "ts-node": "^10.9.2",
+    "typescript": "5.9.2"
+  },
+=======
     "lint-staged": "^16.1.4",
           "postcss": "^8.4.32",
       "sharp": "^0.33.4",
@@ -528,6 +546,7 @@
       "jest-environment-jsdom": "^29.7.0",
       "identity-obj-proxy": "^3.0.0"
     },
+>>>>>>> origin/cursor/automate-continuous-development-processes-4d04
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
       "eslint --fix"

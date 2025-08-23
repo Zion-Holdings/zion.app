@@ -1,35 +1,21 @@
 name: Release Drafter
 
 on:
-  workflow_dispatch: {}
-  schedule:
-    - cron: '*/10 * * * *'
+  push:
+    branches: [ main ]
+  pull_request:
+    types: [closed]
 
 permissions:
   contents: write
-  actions: read
 
 jobs:
-  main:
-    name: Main Job
+  update_release_draft:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
     runs-on: ubuntu-latest
-    timeout-minutes: 20
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: release-drafter/release-drafter@v6
         with:
-          fetch-depth: 0
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci --no-audit --no-fund
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
-
+          config-name: release-drafter.yml
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

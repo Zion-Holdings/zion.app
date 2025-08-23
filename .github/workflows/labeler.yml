@@ -1,35 +1,19 @@
-name: Labeler
+name: Pull Request Labeler
 
 on:
-  workflow_dispatch: {}
-  schedule:
-    - cron: '*/10 * * * *'
+  pull_request_target:
+    types: [opened, synchronize, reopened]
 
 permissions:
-  contents: write
-  actions: read
+  contents: read
+  pull-requests: write
 
 jobs:
-  main:
-    name: Main Job
+  triage:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/labeler@v5
         with:
-          fetch-depth: 0
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci --no-audit --no-fund
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
-
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          configuration-path: .github/labeler.yml
+          sync-labels: true
