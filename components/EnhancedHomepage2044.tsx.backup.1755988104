@@ -23,7 +23,11 @@ const InteractiveDemo = lazy(() => import('./InteractiveDemo'));
 const PerformanceOptimizer = lazy(() => import('./PerformanceOptimizer'));
 const TestimonialSection = lazy(() => import('./TestimonialSection'));
 
+<<<<<<< HEAD
+// Enhanced loading component with skeleton
+=======
 // Enhanced loading component with better accessibility
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-87e8
 const EnhancedLoadingSpinner = () => (
   <div className="flex items-center justify-center p-8" role="status" aria-live="polite">
     <div className="relative">
@@ -34,6 +38,17 @@ const EnhancedLoadingSpinner = () => (
   </div>
 );
 
+<<<<<<< HEAD
+// Skeleton loading component
+const SkeletonCard = () => (
+  <div className="animate-pulse">
+    <div className="w-16 h-16 bg-gray-300 rounded-2xl mb-6"></div>
+    <div className="h-6 bg-gray-300 rounded mb-4"></div>
+    <div className="h-4 bg-gray-300 rounded mb-6"></div>
+    <div className="h-4 bg-gray-300 rounded w-3/4"></div>
+  </div>
+);
+=======
 // Performance-optimized background component
 const OptimizedBackground = React.memo(() => {
   const [isReducedMotion, setIsReducedMotion] = useState(false);
@@ -90,6 +105,7 @@ const OptimizedBackground = React.memo(() => {
 });
 
 OptimizedBackground.displayName = 'OptimizedBackground';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-87e8
 
 const EnhancedHomepage2044: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -99,8 +115,12 @@ const EnhancedHomepage2044: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [userInteraction, setUserInteraction] = useState(false);
   const [isReducedMotion, setIsReducedMotion] = useState(false);
+<<<<<<< HEAD
+  const [isIntersectionObserverSupported, setIsIntersectionObserverSupported] = useState(true);
+=======
   const [isMobile, setIsMobile] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-87e8
   
   useEffect(() => {
     setIsVisible(true);
@@ -109,6 +129,13 @@ const EnhancedHomepage2044: React.FC = () => {
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     setIsReducedMotion(mediaQuery.matches);
     
+<<<<<<< HEAD
+    // Check for Intersection Observer support
+    setIsIntersectionObserverSupported('IntersectionObserver' in window);
+    
+    // Auto-rotate featured services (only if no reduced motion)
+    if (!mediaQuery.matches) {
+=======
     // Check for mobile device
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
@@ -118,6 +145,7 @@ const EnhancedHomepage2044: React.FC = () => {
     
     // Auto-rotate featured services (only if no reduced motion and not mobile)
     if (!mediaQuery.matches && !isMobile) {
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-87e8
       const interval = setInterval(() => {
         setCurrentServiceIndex((prev) => (prev + 1) % 6);
       }, 6000);
@@ -303,15 +331,27 @@ const EnhancedHomepage2044: React.FC = () => {
                 >
                   Zion Tech Group
                 </h1>
+<<<<<<< HEAD
+                
+                <p className="text-xl md:text-2xl lg:text-3xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+                  Pioneering the Future with Revolutionary 2044 Technology Solutions
+=======
                 <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
                   Pioneering the future of technology with revolutionary AI consciousness, 
                   quantum computing, and autonomous solutions that transform businesses.
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-87e8
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
                   <button 
                     className="px-12 py-6 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-3xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-[0_0_50px_rgba(6,182,212,0.4)] focus:outline-none focus:ring-4 focus:ring-cyan-500/50 text-xl"
                     onClick={handleGetStarted}
+<<<<<<< HEAD
+                    aria-label="Get started with Zion Tech Group services"
+                  >
+                    Get Started Today
+                    <ArrowRight className="w-6 h-6 ml-3 inline" />
+=======
                     className="group relative px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full text-base md:text-lg transition-all duration-300 hover:from-cyan-600 hover:to-blue-700 hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-cyan-500/50 focus:scale-105"
                     aria-label="Get started with Zion Tech Group services"
                   >
@@ -319,11 +359,26 @@ const EnhancedHomepage2044: React.FC = () => {
                       Get Started
                       <ArrowRight className="w-4 h-5 group-hover:translate-x-1 transition-transform" />
                     </span>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-87e8
                   </button>
                   
                   <button 
                     className="px-12 py-6 border-2 border-cyan-400 text-cyan-400 font-bold rounded-3xl hover:bg-cyan-400 hover:text-black transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 text-xl"
                     onClick={handleWatchDemo}
+<<<<<<< HEAD
+                    aria-label="Schedule a demo of our services"
+                  >
+                    Schedule Demo
+                    <Play className="w-6 h-6 ml-3 inline" />
+                  </button>
+                </div>
+              </motion.div>
+            </div>
+          </section>
+
+          {/* Features Section */}
+          <section className="py-24 px-4 relative" aria-labelledby="features-heading">
+=======
                     className="group px-6 md:px-8 py-3 md:py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-full text-base md:text-lg transition-all duration-300 hover:bg-cyan-400 hover:text-black hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 focus:scale-105"
                     aria-label="Watch demo of our services"
                   >
@@ -419,6 +474,7 @@ const EnhancedHomepage2044: React.FC = () => {
 
           {/* Enhanced Features Section */}
           <section className="py-20 px-4 bg-gradient-to-b from-gray-900 to-black" aria-labelledby="features-heading">
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-87e8
             <div className="max-w-7xl mx-auto">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -430,6 +486,14 @@ const EnhancedHomepage2044: React.FC = () => {
                 <h2 id="features-heading" className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
                   Revolutionary 2044 Technology
                 </h2>
+<<<<<<< HEAD
+                <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                  Experience the cutting-edge solutions that are reshaping the future of technology
+                </p>
+              </motion.div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+=======
                 <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
                   Experience the future with our cutting-edge AI consciousness, quantum computing, 
                   and autonomous solutions that redefine what's possible.
@@ -443,6 +507,7 @@ const EnhancedHomepage2044: React.FC = () => {
                 viewport={{ once: true }}
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
               >
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-87e8
                 {features.map((feature, index) => (
                   <motion.div
                     key={feature.title}
@@ -452,6 +517,10 @@ const EnhancedHomepage2044: React.FC = () => {
                     transition={{ duration: 0.8, delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
+<<<<<<< HEAD
+                    <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 shadow-[0_0_30px_rgba(6,182,212,0.3)] group-hover:shadow-[0_0_50px_rgba(6,182,212,0.5)] transition-all duration-300">
+                      <feature.icon className="w-8 h-8 text-white" />
+=======
                     <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-3xl p-6 md:p-8 border border-white/20 hover:border-cyan-400/50 transition-all duration-300 hover:scale-105 h-full">
                       <div className={`w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r ${feature.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
                         <feature.icon className="w-6 h-6 md:w-8 md:h-8 text-white" />
@@ -470,6 +539,7 @@ const EnhancedHomepage2044: React.FC = () => {
                         Learn More
                         <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                       </a>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-87e8
                     </div>
                     
                     <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-300">
@@ -497,6 +567,11 @@ const EnhancedHomepage2044: React.FC = () => {
           {/* Stats Section */}
           <section className="py-24 px-4 relative" aria-labelledby="stats-heading">
             <div className="max-w-7xl mx-auto">
+<<<<<<< HEAD
+              <h2 id="stats-heading" className="sr-only">Company Statistics</h2>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                {stats.map((stat, index) => (
+=======
               <motion.div
                 initial={fadeInUp.initial}
                 whileInView={fadeInUp.animate}
@@ -554,6 +629,7 @@ const EnhancedHomepage2044: React.FC = () => {
                 aria-labelledby={`services-${selectedCategory}`}
               >
                 {getFilteredServices().slice(0, 9).map((service, index) => (
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-87e8
                   <motion.div
                     key={stat.label}
                     className="text-center group"
@@ -562,6 +638,22 @@ const EnhancedHomepage2044: React.FC = () => {
                     transition={{ duration: 0.8, delay: index * 0.1 }}
                     viewport={{ once: true }}
                   >
+<<<<<<< HEAD
+                    <div className="w-20 h-20 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-[0_0_40px_rgba(6,182,212,0.3)] group-hover:shadow-[0_0_60px_rgba(6,182,212,0.5)] transition-all duration-300">
+                      <stat.icon className="w-10 h-10 text-white" />
+                    </div>
+                    
+                    <div className="text-4xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
+                      {stat.number}
+                    </div>
+                    
+                    <div className="text-gray-400 font-medium">
+                      {stat.label}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+=======
                     <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm rounded-3xl p-4 md:p-6 border border-white/20 hover:border-cyan-400/50 transition-all duration-300 hover:scale-105 h-full">
                       <div className="flex items-start justify-between mb-4">
                         <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center">
@@ -607,6 +699,7 @@ const EnhancedHomepage2044: React.FC = () => {
                   </span>
                 </a>
               </motion.div>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-87e8
             </div>
           </section>
 
@@ -624,18 +717,39 @@ const EnhancedHomepage2044: React.FC = () => {
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
+<<<<<<< HEAD
+                <h2 id="cta-heading" className="text-5xl font-bold text-white mb-8">
+                  Ready to Experience the Future?
+                </h2>
+                
+                <p className="text-xl text-gray-400 mb-12 max-w-4xl mx-auto">
+                  Join thousands of businesses already transforming their operations with our revolutionary 2044 technology solutions.
+=======
                 <h2 id="cta-heading" className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
                   Ready to Transform Your Business?
                 </h2>
                 <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
                   Join thousands of forward-thinking companies already leveraging our 
                   revolutionary 2044 technology solutions.
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-87e8
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                   <button 
                     className="px-12 py-6 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-3xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-[0_0_50px_rgba(6,182,212,0.4)] focus:outline-none focus:ring-4 focus:ring-cyan-500/50 text-xl"
                     onClick={handleGetStarted}
+<<<<<<< HEAD
+                    aria-label="Get started with Zion Tech Group services"
+                  >
+                    Get Started Today
+                    <ArrowRight className="w-6 h-6 ml-3 inline" />
+                  </button>
+                  
+                  <button 
+                    className="px-12 py-6 border-2 border-cyan-400 text-cyan-400 font-bold rounded-3xl hover:bg-cyan-400 hover:text-black transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 text-xl"
+                    onClick={handleWatchDemo}
+                    aria-label="Schedule a demo of our services"
+=======
                     className="group relative px-6 md:px-8 py-3 md:py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full text-base md:text-lg transition-all duration-300 hover:from-cyan-600 hover:to-blue-700 hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-cyan-500/50 focus:scale-105"
                     aria-label="Start your transformation journey"
                   >
@@ -649,6 +763,7 @@ const EnhancedHomepage2044: React.FC = () => {
                     href="/contact"
                     className="px-6 md:px-8 py-3 md:py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-full text-base md:text-lg transition-all duration-300 hover:bg-cyan-400 hover:text-black hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyan-400/50 focus:scale-105"
                     aria-label="Contact our team"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-87e8
                   >
                     Schedule Demo
                     <Play className="w-6 h-6 ml-3 inline" />
