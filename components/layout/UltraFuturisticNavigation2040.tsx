@@ -93,6 +93,21 @@ const navigationItems: NavigationItem[] = [
     ]
   },
   {
+    name: 'Innovative Services',
+    href: '/innovative-services-showcase-2025',
+    icon: <Star className="w-5 h-5" />,
+    description: 'Cutting-edge AI, quantum, and emerging technology services',
+    badge: '2025',
+    featured: true,
+    children: [
+      { name: 'AI-Powered Solutions', href: '/innovative-services-showcase-2025?category=ai', description: 'Advanced AI and machine learning services', featured: true },
+      { name: 'Quantum Computing', href: '/innovative-services-showcase-2025?category=quantum', description: 'Quantum computing and emerging tech solutions' },
+      { name: 'Industry Solutions', href: '/innovative-services-showcase-2025?category=industry', description: 'Specialized industry-focused services' },
+      { name: 'Cybersecurity', href: '/innovative-services-showcase-2025?category=cybersecurity', description: 'AI-powered security and threat intelligence' },
+      { name: 'Emerging Technologies', href: '/innovative-services-showcase-2025?category=emerging', description: 'Blockchain, IoT, and metaverse solutions' }
+    ]
+  },
+  {
     name: 'Micro SAAS',
     href: '/micro-saas',
     icon: <Zap className="w-5 h-5" />,
