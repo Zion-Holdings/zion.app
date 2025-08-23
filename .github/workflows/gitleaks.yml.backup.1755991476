@@ -1,3 +1,24 @@
+<<<<<<< HEAD
+name: Gitleaks
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: '*/10 * * * *'
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: read
+
+jobs:
+  main:
+    name: Main Job
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout repository
+=======
 name: Secret scan (Gitleaks)
 
 on:
@@ -21,10 +42,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
+>>>>>>> origin/cursor/deploy-autonomous-cloud-automations-and-sync-c342
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
+<<<<<<< HEAD
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+=======
       - name: Run Gitleaks
         uses: zricethezav/gitleaks-action@v2
         with:
@@ -42,3 +79,4 @@ jobs:
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: gitleaks.sarif
+>>>>>>> origin/cursor/deploy-autonomous-cloud-automations-and-sync-c342
