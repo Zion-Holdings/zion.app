@@ -1,8 +1,8 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Bot, CheckCircle, Zap, Shield, Network, Workflow, DollarSign, ExternalLink, Phone, Mail, MapPin, ArrowRight, Brain, Users, Globe, Clock, Star, Award } from 'lucide-react';
-import Layout from '../components/layout/Layout';
-import SEO from '../components/SEO';
+import Head from 'next/head';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import { Button } from '../components/ui/Button';
+import { Bot, CheckCircle, Zap, Shield, Network, Workflow, DollarSign, ExternalLink, Phone, Mail, MapPin } from 'lucide-react';
 
 export default function AIAssistantPage() {
   const contact = {
@@ -99,26 +99,15 @@ export default function AIAssistantPage() {
             <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-r from-cyan-500 to-purple-600 mb-6">
               <Bot className="w-10 h-10 text-white" />
             </div>
-            <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6">
-              AI Agent Orchestrator
-            </h1>
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Design, evaluate, and operate reliable AI assistants with enterprise guardrails, HITL, and full observability.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <a
-                href="/contact"
-                className="flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-700 text-white rounded-lg hover:from-cyan-700 hover:to-blue-800 transition-all duration-300 font-semibold"
-              >
+            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">AI Agent Orchestrator</h1>
+            <p className="text-gray-300 text-lg max-w-3xl mx-auto">Design, evaluate, and operate reliable AI assistants with enterprise guardrails, HITL, and full observability.</p>
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button variant="primary" className="px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-700 text-white">
                 Talk to Sales
-                <ArrowRight className="w-5 h-5" />
-              </a>
-              <a
-                href="/pricing"
-                className="flex items-center gap-2 px-8 py-4 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-all duration-300 border border-white/20 font-semibold"
-              >
-                See Pricing
-              </a>
+              </Button>
+              <Button variant="outline" className="px-8 py-4 border border-gray-600 text-gray-200">
+                See Market Pricing
+              </Button>
             </div>
           </motion.div>
         </div>
@@ -204,35 +193,24 @@ export default function AIAssistantPage() {
         </div>
       </section>
 
-      {/* Plans Section */}
-      <section className="py-12">
-        <div className="container mx-auto px-4">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="text-3xl font-bold text-white mb-8 text-center"
-          >
-            Plans & Pricing
-          </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {plans.map((plan, index) => (
-              <motion.div
-                key={plan.name}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.9 + index * 0.1 }}
-                className={`p-6 rounded-2xl border transition-all duration-300 ${
-                  plan.popular 
-                    ? 'bg-gradient-to-r from-purple-500/10 to-pink-500/10 border-purple-500/50' 
-                    : 'bg-white/5 border-white/10 hover:border-cyan-500/50'
-                }`}
-              >
-                {plan.popular && (
-                  <div className="text-center mb-4">
-                    <span className="px-3 py-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm font-medium rounded-full">
-                      Most Popular
-                    </span>
+          {/* Plans */}
+          <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Plans & Pricing</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {plans.map((p) => (
+                <div key={p.name} className="p-6 rounded-2xl bg-black/40 border border-gray-700/60">
+                  <div className="text-gray-400 text-sm mb-1">{p.name}</div>
+                  <div className="text-3xl font-bold text-white">{p.price}<span className="text-base text-gray-400">{p.period}</span></div>
+                  <ul className="mt-4 space-y-2 text-gray-300 text-sm">
+                    {p.includes.map((i) => <li key={i} className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-emerald-400 mt-0.5" />{i}</li>)}
+                  </ul>
+                  <div className="mt-6 flex gap-3">
+                    <Button variant="primary" className="flex-1">
+                      Contact Sales
+                    </Button>
+                    <Button variant="outline" className="flex-1">
+                      Explore More
+                    </Button>
                   </div>
                 )}
                 <div className="text-gray-400 text-sm mb-2">{plan.name}</div>

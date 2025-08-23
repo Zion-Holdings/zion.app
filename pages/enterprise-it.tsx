@@ -1,12 +1,8 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
-import { motion } from 'framer-motion';
-import { 
-  Building, Server, Database, Shield, Network, 
-  Cloud, Users, Lock, Zap, Target,
-  CheckCircle, ArrowRight, Star, Cpu
-} from 'lucide-react';
-import Link from 'next/link';
+import Head from 'next/head';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import { Button } from '../components/ui/Button';
+import { Server, CheckCircle, Database, Cloud } from 'lucide-react';
 
 export default function EnterpriseITPage() {
   const solutions = [
@@ -58,42 +54,25 @@ export default function EnterpriseITPage() {
   ];
 
   return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
-        {/* Hero Section */}
-        <section className="relative py-20 px-4">
-          <div className="container mx-auto max-w-6xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center"
-            >
-              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 via-cyan-500 to-green-600 bg-clip-text text-transparent mb-6">
-                Enterprise IT Solutions
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Transform your enterprise IT infrastructure with cutting-edge technology solutions. 
-                From cloud migration to cybersecurity, we've got you covered.
-              </p>
-              <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/contact"
-                  className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-cyan-700 transition-all duration-200 transform hover:scale-105"
-                >
-                  Get Started
-                  <ArrowRight className="w-5 h-5 ml-2 inline" />
-                </Link>
-                <Link
-                  href="/solutions"
-                  className="px-8 py-4 border border-blue-500 text-blue-400 font-semibold rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-200"
-                >
-                  View Solutions
-                </Link>
-              </div>
-            </motion.div>
-          </div>
-        </section>
+    <UltraAdvancedFuturisticBackground>
+      <Head>
+        <title>Enterprise IT | Zion Tech Group</title>
+        <meta name="description" content="Cloud, DevOps, data platforms, and SRE with cost, performance, and reliability in focus." />
+        <link rel="canonical" href="https://ziontechgroup.com/enterprise-it" />
+      </Head>
+      <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto space-y-12">
+          <header className="text-center">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r from-cyan-500 to-purple-600 mb-4">
+              <Server className="w-8 h-8 text-white" />
+            </div>
+            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">Enterprise IT</h1>
+            <p className="text-gray-300 text-lg max-w-3xl mx-auto">Ship secure, reliable platforms with measurable business outcomes.</p>
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link href="/contact" className="px-8 py-4">Get a Roadmap</Button>
+              <Link href="/market-pricing" variant="outline" className="px-8 py-4">See Market Pricing</Button>
+            </div>
+          </header>
 
         {/* Solutions Overview */}
         <section className="py-20 px-4">

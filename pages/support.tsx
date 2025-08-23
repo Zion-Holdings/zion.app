@@ -1,10 +1,7 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
-import { motion } from 'framer-motion';
-import { 
-  Headphones, MessageCircle, BookOpen, Video, FileText, 
-  Search, Clock, Star, Users, Globe, Zap, Shield 
-} from 'lucide-react';
+import Head from 'next/head';
+import Card from '../components/ui/Card';
+import { Button } from '../components/ui/Button';
 
 const SupportPage: React.FC = () => {
   const supportChannels = [

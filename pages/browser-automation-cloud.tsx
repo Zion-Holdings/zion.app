@@ -1,6 +1,6 @@
 import React from 'react';
-import SEO from '../components/SEO';
-import { Check, ExternalLink } from 'lucide-react';
+import { Layout } from '../components/layout/Layout';
+import { Globe, Zap, Shield, Cpu, Database, Network, Server, Monitor, Cloud, Settings, Eye, Award, Clock, Heart, Lightbulb, TrendingUp, ArrowRight, BarChart3, FileText, CheckCircle, AlertCircle, Play, Square, RotateCcw } from 'lucide-react';
 
 const BrowserAutomationCloud: React.FC = () => {
   const features = [

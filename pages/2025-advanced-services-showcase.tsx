@@ -137,8 +137,8 @@ const AdvancedServicesShowcase: React.FC = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <SEO 
         title="2025 Advanced Services Showcase - Zion Tech Group"
-        description="Discover our cutting-edge AI services, IT infrastructure solutions, and innovative micro SAAS platforms. Transform your business with Zion Tech Group's advanced technology solutions."
-        keywords="AI services, IT infrastructure, micro SAAS, cloud solutions, automation, cybersecurity, data analytics"
+        description="Discover our comprehensive portfolio of advanced AI services, micro SAAS solutions, and cutting-edge IT infrastructure. Real, innovative, and market-ready solutions for modern businesses."
+        keywords="AI services, micro SAAS, IT infrastructure, quantum computing, enterprise solutions, Zion Tech Group"
       />
       
       {/* Hero Section */}

@@ -1,83 +1,22 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
-import { motion } from 'framer-motion';
-import { Shield, Lock, Eye, Users, CheckCircle, AlertTriangle, Server, Globe } from 'lucide-react';
+import Head from 'next/head';
+import { Shield, Lock, ShieldAlert, Check, Phone, Mail, MapPin, ExternalLink } from 'lucide-react';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import { Button } from '../components/ui/Button';
 
-const SecurityPage: React.FC = () => {
-  const securityFeatures = [
-    {
-      title: "Zero-Trust Architecture",
-      description: "Implementing comprehensive zero-trust security principles across all systems",
-      icon: <Shield className="w-8 h-8" />,
-      benefits: ["Continuous verification", "Least privilege access", "Micro-segmentation", "Identity-based security"]
-    },
-    {
-      title: "Quantum-Resistant Encryption",
-      description: "Advanced encryption algorithms resistant to quantum computing attacks",
-      icon: <Lock className="w-8 h-8" />,
-      benefits: ["Post-quantum cryptography", "Future-proof security", "Advanced algorithms", "Compliance ready"]
-    },
-    {
-      title: "24/7 Security Monitoring",
-      description: "Round-the-clock security operations center with AI-powered threat detection",
-      icon: <Eye className="w-8 h-6" />,
-      benefits: ["Real-time monitoring", "AI threat detection", "Incident response", "Proactive defense"]
-    },
-    {
-      title: "Compliance & Certifications",
-      description: "Meeting and exceeding industry security standards and regulations",
-      icon: <CheckCircle className="w-8 h-8" />,
-      benefits: ["SOC 2 Type II", "ISO 27001", "GDPR compliance", "Industry standards"]
-    }
-  ];
+export default function SecurityPage() {
+  const contactInfo = {
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com'
+  };
 
-  const securityIncidents = [
-    {
-      year: '2024',
-      incidents: 0,
-      description: 'Zero security breaches or data compromises',
-      status: 'Excellent'
-    },
-    {
-      year: '2023',
-      incidents: 0,
-      description: 'Zero security breaches or data compromises',
-      status: 'Excellent'
-    },
-    {
-      year: '2022',
-      incidents: 0,
-      description: 'Zero security breaches or data compromises',
-      status: 'Excellent'
-=======
-import { Shield, Lock, Eye, Users, CheckCircle, AlertTriangle, Server, Globe } from 'lucide-react';
-
-const SecurityPage: React.FC = () => {
-  const securityFeatures = [
-    {
-      title: "Zero-Trust Architecture",
-      description: "Implementing comprehensive zero-trust security principles across all systems",
-      icon: <Shield className="w-8 h-8" />,
-      benefits: ["Continuous verification", "Least privilege access", "Micro-segmentation", "Identity-based security"]
-    },
-    {
-      title: "Quantum-Resistant Encryption",
-      description: "Advanced encryption algorithms resistant to quantum computing attacks",
-      icon: <Lock className="w-8 h-8" />,
-      benefits: ["Post-quantum cryptography", "Future-proof security", "Advanced algorithms", "Compliance ready"]
-    },
-    {
-      title: "24/7 Security Monitoring",
-      description: "Round-the-clock security operations center with AI-powered threat detection",
-      icon: <Eye className="w-8 h-8" />,
-      benefits: ["Real-time monitoring", "AI threat detection", "Incident response", "Proactive defense"]
-    },
-    {
-      title: "Compliance & Certifications",
-      description: "Meeting and exceeding industry security standards and regulations",
-      icon: <CheckCircle className="w-8 h-8" />,
-      benefits: ["SOC 2 Type II", "ISO 27001", "GDPR compliance", "Industry standards"]
-    }
+  const features = [
+    { title: 'Post-Quantum Cryptography', desc: 'Implement NIST PQC standards (CRYSTALS-Kyber/Dilithium) and hybrid TLS for future-proof security.', icon: <Shield className="w-6 h-6 text-cyan-400" /> },
+    { title: 'AI Threat Detection', desc: 'Behavioral analytics and anomaly detection with real-time response playbooks and SOAR integrations.', icon: <ShieldAlert className="w-6 h-6 text-purple-400" /> },
+    { title: 'Zero-Trust Architecture', desc: 'Identity-first, continuous verification across users, devices, and workloads (ZTA blueprints).', icon: <Lock className="w-6 h-6 text-pink-400" /> },
+    { title: 'Cloud Security Hardening', desc: 'CSPM, CIEM, and IaC scanning; guardrails for AWS, Azure, and GCP with policy-as-code.', icon: <Check className="w-6 h-6 text-emerald-400" /> },
   ];
 
   const securityLayers = [
@@ -583,42 +522,9 @@ const SecurityPage: React.FC = () => {
               ))}
             </div>
           </div>
-        </section>
-
-        {/* Security Layers Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/30">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl font-bold mb-4">Multi-Layer Security</h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Defense in depth approach with multiple security layers protecting your assets
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {securityLayers.map((layer, index) => (
-                <motion.div
-                  key={layer.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.1 * index }}
-                  className="text-center"
-                >
-                  <div className="p-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                    <div className="text-cyan-400">
-                      {layer.icon}
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">{layer.title}</h3>
-                  <p className="text-gray-400">{layer.description}</p>
-                </motion.div>
-              ))}
-            </div>
+          <div className="flex items-center justify-center gap-4">
+            <Link href="/contact" className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl">Talk to Security</Button>
+            <a href="https://ziontechgroup.com/quantum-cybersecurity" className="text-cyan-400 hover:text-white inline-flex items-center gap-2"><ExternalLink className="w-4 h-4" /> Learn more</a>
           </div>
         </section>
 

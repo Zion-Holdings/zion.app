@@ -1,8 +1,16 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
-import { motion } from 'framer-motion';
-import { Brain, Atom, Rocket, Shield, Zap, Target, Star } from 'lucide-react';
-import Link from 'next/link';
+import { Layout } from '../components/layout/Layout';
+import { 
+  Brain, Rocket, Shield, Zap, Target, Atom, BookOpen, ArrowRight,
+  Truck, DollarSign, BarChart3, Globe, Users, Star, Sparkles, 
+  Cpu, Lock, Cloud, Settings, Eye, Award, Clock, Heart, Lightbulb,
+  Search, Grid, List, TrendingUp, Shield as ShieldIcon, Globe as GlobeIcon,
+  User, ShoppingCart, Bell, HelpCircle, FileText, Video, Headphones, 
+  Code, Database, Network, Server, Monitor, Smartphone,
+  Camera, Gamepad2, Palette, Music, Film, BookOpenCheck,
+  Building, MessageCircle, Sparkles as SparklesIcon, Zap as ZapIcon,
+  Target as TargetIcon, Atom as AtomIcon, Brain as BrainIcon
+} from 'lucide-react';
 
 const ComprehensiveServicesShowcase: React.FC = () => {
   const serviceCategories = [

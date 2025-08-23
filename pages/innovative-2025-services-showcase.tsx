@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import SEO from '../components/SEO';
-import { motion, AnimatePresence } from 'framer-motion';
+import { Layout } from '../components/layout/Layout';
+import UltraFuturisticServiceCard2040 from '../components/ui/UltraFuturisticServiceCard2040';
+import { motion } from 'framer-motion';
 import { 
   Search, Grid, List, Filter,
   Brain, Atom, Shield, Target, Rocket,
@@ -99,8 +101,8 @@ const Innovative2025ServicesShowcase: React.FC = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
       <SEO 
         title="Innovative 2025 Services Showcase - Zion Tech Group"
-        description="Discover our cutting-edge micro SAAS services, IT solutions, and AI innovations. From AI automation to quantum security, we deliver real, market-ready solutions."
-        keywords={["AI automation", "IT infrastructure", "cybersecurity", "data analytics", "business automation", "micro SAAS", "Zion Tech Group"]}
+        description="Explore our comprehensive showcase of innovative 2025 technology services including AI, quantum computing, space technology, and enterprise solutions."
+        keywords="innovative services, 2025 technology, AI solutions, quantum computing, space technology, enterprise solutions, Zion Tech Group"
       />
 
       {/* Hero Section */}

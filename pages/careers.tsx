@@ -1,23 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Users, 
-  Rocket, 
-  Brain, 
-  Atom, 
-  Shield, 
-  Globe,
-  Award,
-  Zap,
-  Star,
-  CheckCircle,
-  TrendingUp,
-  Heart,
-  Lightbulb,
-  Target,
-  BookOpen,
-  Coffee
-} from 'lucide-react';
+import { Brain, Rocket, Shield, Users, Target, Award, Globe, Zap, ArrowRight, Mail, MapPin, Clock, DollarSign, Heart, Lightbulb, Code, Database, Network, Server, Monitor, Smartphone, Camera, Gamepad2, Palette, Music, Film, BookOpenCheck, Building, MessageCircle } from 'lucide-react';
+import { Layout } from '../components/layout/Layout';
 
 export default function CareersPage() {
   const openPositions = [

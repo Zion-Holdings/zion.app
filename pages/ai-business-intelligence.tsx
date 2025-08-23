@@ -2,9 +2,9 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, BarChart3, Brain, Database, Users, Target, TrendingUp as TrendingUpIcon } from 'lucide-react';
-import Button from '../components/ui/Button';
+import { Button } from '../components/ui/Button';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
-import Layout from '../components/layout/Layout';
+import { Layout } from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 
 export default function AIBusinessIntelligencePage() {
@@ -263,11 +263,11 @@ export default function AIBusinessIntelligencePage() {
                   </div>
                   
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button href="/contact" variant="primary" size="lg" className="group">
+                    <Link href="/contact" variant="primary" size="lg" className="group">
                       <Phone className="mr-2 h-5 w-5" />
                       Start Free Trial
                     </Button>
-                    <Button href="/contact" variant="secondary" size="lg" className="group">
+                    <Link href="/contact" variant="secondary" size="lg" className="group">
                       <Mail className="mr-2 h-5 w-5" />
                       Contact Sales
                     </Button>
@@ -451,11 +451,11 @@ export default function AIBusinessIntelligencePage() {
                 </p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                  <Button href="/contact" variant="primary" size="lg" className="group">
+                  <Link href="/contact" variant="primary" size="lg" className="group">
                     <Phone className="mr-2 h-5 w-5" />
                     Free Consultation
                   </Button>
-                  <Button href="/contact" variant="secondary" size="lg" className="group">
+                  <Link href="/contact" variant="secondary" size="lg" className="group">
                     <Mail className="mr-2 h-5 w-5" />
                     Contact Sales
                   </Button>

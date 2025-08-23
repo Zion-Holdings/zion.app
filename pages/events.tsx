@@ -1,6 +1,10 @@
-import React, { useState } from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
+import React from 'react';
+import { Layout } from '../components/layout/Layout';
+import { motion } from 'framer-motion';
+import { 
+  Calendar, Clock, MapPin, Users, Video, Globe, 
+  Star, Award, Zap, Target, Building, ExternalLink
+} from 'lucide-react';
 
 export default function EventsPage() {
   const [activeFilter, setActiveFilter] = useState('All');

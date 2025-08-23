@@ -1,7 +1,7 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Cloud, Zap, Shield, Globe } from 'lucide-react';
-import Link from 'next/link';
+import Head from 'next/head';
+import { Cloud, Shield, Globe, Server, Database, ArrowRight, Check } from 'lucide-react';
+import { Button } from '../components/ui/Button';
 
 const CloudPlatform: React.FC = () => {
   const features = [

@@ -111,15 +111,13 @@ export default function ContactPage() {
     }
   ];
 
-  const getColorClasses = (color: string) => {
-    const colorMap: { [key: string]: string } = {
-      cyan: 'from-cyan-400 to-blue-500',
-      fuchsia: 'from-fuchsia-400 to-purple-500',
-      green: 'from-green-400 to-emerald-500',
-      blue: 'from-blue-400 to-indigo-500'
-    };
-    return colorMap[color] || 'from-gray-400 to-gray-500';
-  };
+  return (
+    <div className="min-h-screen bg-black text-white">
+      <SEO 
+        title="Contact Zion Tech Group - Get in Touch for Innovative Technology Solutions"
+        description="Get in touch with Zion Tech Group for innovative technology solutions. Contact our experts for AI, quantum computing, space technology, and IT services."
+        keywords="contact, Zion Tech Group, AI services, quantum computing, IT solutions, technology consulting"
+      />
 
   return (
     <>

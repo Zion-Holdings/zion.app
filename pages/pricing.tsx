@@ -1,6 +1,127 @@
-import React from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
+import React, { useState } from 'react';
+import SEO from '../components/SEO';
+import { motion } from 'framer-motion';
+import { Check, Zap, Shield, Rocket, Brain, Atom, Target } from 'lucide-react';
+import { Layout } from '../components/layout/Layout';
+import { realMicroSaasServices2025 } from '../data/2025-real-micro-saas-services';
+import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services';
+import { innovativeITServices2025 } from '../data/2025-innovative-it-services';
+import { emergingTechServices2025 } from '../data/2025-emerging-tech-services';
+
+interface PricingTier {
+  name: string;
+  price: number;
+  period: string;
+  description: string;
+  features: string[];
+  popular?: boolean;
+  icon: React.ReactNode;
+  color: string;
+  cta: string;
+  ctaLink: string;
+}
+
+const pricingTiers: PricingTier[] = [
+  {
+    name: 'Starter',
+    price: 99,
+    period: 'month',
+    description: 'Perfect for small businesses and startups',
+    features: [
+      'Up to 5 team members',
+      'Basic AI content generation',
+      'Standard support',
+      'Core integrations',
+      'Basic analytics',
+      'Email support'
+    ],
+    icon: <Target className="w-6 h-6" />,
+    color: 'from-blue-500 to-cyan-500',
+    cta: 'Start Free Trial',
+    ctaLink: '/contact'
+  },
+  {
+    name: 'Professional',
+    price: 299,
+    period: 'month',
+    description: 'Ideal for growing businesses and teams',
+    features: [
+      'Up to 25 team members',
+      'Advanced AI features',
+      'Priority support',
+      'Advanced integrations',
+      'Advanced analytics',
+      'Phone & email support',
+      'Custom branding',
+      'API access'
+    ],
+    popular: true,
+    icon: <Zap className="w-6 h-6" />,
+    color: 'from-purple-500 to-pink-500',
+    cta: 'Start Free Trial',
+    ctaLink: '/contact'
+  },
+  {
+    name: 'Enterprise',
+    price: 999,
+    period: 'month',
+    description: 'For large organizations with complex needs',
+    features: [
+      'Unlimited team members',
+      'Full AI suite access',
+      '24/7 dedicated support',
+      'Custom integrations',
+      'Advanced analytics & reporting',
+      'Dedicated account manager',
+      'Custom development',
+      'SLA guarantees',
+      'On-premise options',
+      'Compliance certifications'
+    ],
+    icon: <Shield className="w-6 h-6" />,
+    color: 'from-green-500 to-emerald-500',
+    cta: 'Contact Sales',
+    ctaLink: '/contact'
+  }
+];
+
+const serviceCategories = [
+  {
+    name: 'AI & Consciousness Services',
+    icon: <Brain className="w-8 h-8" />,
+    color: 'from-cyan-500 to-blue-500',
+    services: innovativeAIServices2025.slice(0, 6)
+  },
+  {
+    name: 'Quantum & Emerging Tech',
+    icon: <Atom className="w-8 h-8" />,
+    color: 'from-purple-500 to-pink-500',
+    services: emergingTechServices2025.slice(0, 6)
+  },
+  {
+    name: 'Enterprise IT Solutions',
+    icon: <Shield className="w-8 h-8" />,
+    color: 'from-green-500 to-emerald-500',
+    services: innovativeITServices2025.slice(0, 6)
+  },
+  {
+    name: 'Micro SAAS Solutions',
+    icon: <Target className="w-8 h-8" />,
+    color: 'from-orange-500 to-red-500',
+    services: realMicroSaasServices2025.slice(0, 6)
+  }
+];
+
+export default function Pricing() {
+  const [billingPeriod, setBillingPeriod] = useState<'monthly' | 'yearly'>('monthly');
+
+  const getDiscountedPrice = (price: number) => {
+    return billingPeriod === 'yearly' ? Math.round(price * 0.8) : price;
+  };
+
+  const getPeriodText = () => {
+    return billingPeriod === 'yearly' ? 'year' : 'month';
+  };
 
 export default function PricingPage() {
   return (

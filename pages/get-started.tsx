@@ -1,18 +1,7 @@
 import React, { useState } from 'react';
-import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { 
-  Users, Award, Target, Globe, Brain, Atom, Shield, Rocket, 
-  Star, TrendingUp, CheckCircle, Phone, Mail, MapPin,
-  ArrowRight, Zap, Cpu, Database, Cloud, Palette,
-  Play, FileText, Video, Download, Calendar, Clock,
-  Code
-} from 'lucide-react';
-import Link from 'next/link';
-
-const GetStarted: React.FC = () => {
-  const [currentStep, setCurrentStep] = useState(1);
-  const [selectedPath, setSelectedPath] = useState('');
+import { Brain, Rocket, Shield, Zap, Target, Award, Globe, Users, CheckCircle, ArrowRight, BookOpen, Code, Video, Headphones, Mail, Phone, MapPin, Clock, Star, Download, ExternalLink } from 'lucide-react';
+import { Layout } from '../components/layout/Layout';
 
   const paths = [
     {

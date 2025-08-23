@@ -1,21 +1,23 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Loader2, Zap, Brain, Atom, Rocket } from 'lucide-react';
 
 interface LoadingSpinnerProps {
   size?: 'sm' | 'md' | 'lg' | 'xl';
-  variant?: 'default' | 'pulse' | 'bounce' | 'spin' | 'quantum' | 'ai';
+  variant?: 'default' | 'pulse' | 'dots' | 'bars';
+  color?: 'primary' | 'secondary' | 'white' | 'custom';
+  customColor?: string;
   text?: string;
-  showText?: boolean;
   className?: string;
+  'aria-label'?: string;
 }
 
-const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
+export const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
   size = 'md',
   variant = 'default',
-  text = 'Loading...',
-  showText = true,
-  className = ''
+  color = 'primary',
+  customColor,
+  text,
+  className = '',
+  'aria-label': ariaLabel
 }) => {
   const sizeClasses = {
     sm: 'w-4 h-4',
@@ -24,179 +26,163 @@ const LoadingSpinner: React.FC<LoadingSpinnerProps> = ({
     xl: 'w-16 h-16'
   };
 
-  const textSizeClasses = {
-    sm: 'text-xs',
-    md: 'text-sm',
-    lg: 'text-base',
-    xl: 'text-lg'
+  const colorClasses = {
+    primary: 'text-cyan-500',
+    secondary: 'text-purple-500',
+    white: 'text-white',
+    custom: customColor ? `text-[${customColor}]` : 'text-cyan-500'
   };
 
   const renderSpinner = () => {
     switch (variant) {
       case 'pulse':
         return (
-          <motion.div
-            className={`${sizeClasses[size]} bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full`}
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [1, 0.7, 1]
-            }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
+          <div className={`animate-pulse rounded-full bg-current ${sizeClasses[size]} ${colorClasses[color]}`} />
         );
-
-      case 'bounce':
+      
+      case 'dots':
         return (
-          <motion.div
-            className={`${sizeClasses[size]} bg-gradient-to-r from-green-400 to-blue-500 rounded-full`}
-            animate={{
-              y: [0, -20, 0],
-              scale: [1, 1.1, 1]
-            }}
-            transition={{
-              duration: 1,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
-        );
-
-      case 'spin':
-        return (
-          <motion.div
-            className={`${sizeClasses[size]} border-4 border-cyan-400 border-t-transparent rounded-full`}
-            animate={{ rotate: 360 }}
-            transition={{
-              duration: 1,
-              repeat: Infinity,
-              ease: "linear"
-            }}
-          />
-        );
-
-      case 'quantum':
-        return (
-          <div className={`${sizeClasses[size]} relative`}>
-            <motion.div
-              className="absolute inset-0 border-2 border-cyan-400 rounded-full"
-              animate={{
-                rotate: 360,
-                scale: [1, 1.2, 1]
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-            <motion.div
-              className="absolute inset-2 border-2 border-purple-400 rounded-full"
-              animate={{
-                rotate: -360,
-                scale: [1, 0.8, 1]
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
-            <motion.div
-              className="absolute inset-4 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full"
-              animate={{
-                scale: [1, 1.1, 1],
-                opacity: [1, 0.8, 1]
-              }}
-              transition={{
-                duration: 1,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            />
+          <div className="flex space-x-1">
+            {[0, 1, 2].map((i) => (
+              <div
+                key={i}
+                className={`animate-bounce rounded-full bg-current ${colorClasses[color]}`}
+                style={{
+                  width: size === 'sm' ? '4px' : size === 'md' ? '6px' : size === 'lg' ? '8px' : '12px',
+                  height: size === 'sm' ? '4px' : size === 'md' ? '6px' : size === 'lg' ? '8px' : '12px',
+                  animationDelay: `${i * 0.1}s`
+                }}
+              />
+            ))}
           </div>
         );
-
-      case 'ai':
+      
+      case 'bars':
         return (
-          <div className={`${sizeClasses[size]} relative`}>
-            <motion.div
-              className="absolute inset-0"
-              animate={{
-                rotate: 360
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-            >
-              <Brain className={`${sizeClasses[size]} text-cyan-400`} />
-            </motion.div>
-            <motion.div
-              className="absolute inset-0"
-              animate={{
-                rotate: -360,
-                scale: [1, 1.2, 1]
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            >
-              <Atom className={`${sizeClasses[size]} text-purple-400 opacity-50`} />
-            </motion.div>
-            <motion.div
-              className="absolute inset-0"
-              animate={{
-                scale: [1, 0.8, 1],
-                opacity: [1, 0.7, 1]
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            >
-              <Rocket className={`${sizeClasses[size]} text-pink-400 opacity-30`} />
-            </motion.div>
+          <div className="flex space-x-1">
+            {[0, 1, 2, 3].map((i) => (
+              <div
+                key={i}
+                className={`animate-pulse bg-current ${colorClasses[color]}`}
+                style={{
+                  width: size === 'sm' ? '2px' : size === 'md' ? '3px' : size === 'lg' ? '4px' : '6px',
+                  height: size === 'sm' ? '12px' : size === 'md' ? '16px' : size === 'lg' ? '20px' : '24px',
+                  animationDelay: `${i * 0.1}s`
+                }}
+              />
+            ))}
           </div>
         );
-
+      
       default:
         return (
-          <motion.div
-            className={`${sizeClasses[size]} border-2 border-cyan-400 border-t-transparent rounded-full`}
-            animate={{ rotate: 360 }}
-            transition={{
-              duration: 1,
-              repeat: Infinity,
-              ease: "linear"
-            }}
-          />
+          <svg
+            className={`animate-spin ${sizeClasses[size]} ${colorClasses[color]}`}
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <circle
+              className="opacity-25"
+              cx="12"
+              cy="12"
+              r="10"
+              stroke="currentColor"
+              strokeWidth="4"
+            />
+            <path
+              className="opacity-75"
+              fill="currentColor"
+              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+            />
+          </svg>
         );
     }
   };
 
+  const defaultAriaLabel = ariaLabel || `Loading${text ? ` ${text}` : ''}`;
+
   return (
-    <div className={`flex flex-col items-center justify-center gap-3 ${className}`}>
+    <div
+      className={`flex flex-col items-center justify-center space-y-3 ${className}`}
+      role="status"
+      aria-label={defaultAriaLabel}
+    >
       {renderSpinner()}
-      {showText && (
-        <motion.p
-          className={`text-gray-300 ${textSizeClasses[size]} font-medium`}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-        >
+      {text && (
+        <p className="text-sm text-gray-400 animate-pulse">
           {text}
-        </motion.p>
+        </p>
       )}
+      <span className="sr-only">{defaultAriaLabel}</span>
     </div>
   );
 };
 
-export default LoadingSpinner;
+// Skeleton loading component for content
+export const LoadingSkeleton: React.FC<{
+  className?: string;
+  lines?: number;
+  height?: string;
+}> = ({ className = '', lines = 3, height = 'h-4' }) => {
+  return (
+    <div className={`space-y-3 ${className}`}>
+      {Array.from({ length: lines }).map((_, i) => (
+        <div
+          key={i}
+          className={`animate-pulse bg-gray-700 rounded ${height} ${
+            i === lines - 1 ? 'w-3/4' : 'w-full'
+          }`}
+        />
+      ))}
+    </div>
+  );
+};
+
+// Page loading component
+export const PageLoader: React.FC<{
+  text?: string;
+  className?: string;
+}> = ({ text = 'Loading page...', className = '' }) => {
+  return (
+    <div className={`min-h-screen flex items-center justify-center ${className}`}>
+      <LoadingSpinner
+        size="xl"
+        variant="default"
+        color="primary"
+        text={text}
+      />
+    </div>
+  );
+};
+
+// Inline loading component
+export const InlineLoader: React.FC<{
+  text?: string;
+  size?: 'sm' | 'md' | 'lg';
+  className?: string;
+}> = ({ text, size = 'sm', className = '' }) => {
+  return (
+    <div className={`inline-flex items-center space-x-2 ${className}`}>
+      <LoadingSpinner size={size} variant="dots" color="primary" />
+      {text && <span className="text-sm text-gray-400">{text}</span>}
+    </div>
+  );
+};
+
+// Button loading state
+export const ButtonLoader: React.FC<{
+  size?: 'sm' | 'md' | 'lg';
+  color?: 'primary' | 'secondary' | 'white';
+  className?: string;
+}> = ({ size = 'sm', color = 'white', className = '' }) => {
+  return (
+    <LoadingSpinner
+      size={size}
+      variant="default"
+      color={color}
+      className={className}
+    />
+  );
+};

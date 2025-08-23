@@ -1,5 +1,5 @@
-import React, { Suspense, lazy, useState, useEffect } from 'react';
-import Layout from './layout/Layout';
+import React, { Suspense, lazy } from 'react';
+import { Layout } from './layout/Layout';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 

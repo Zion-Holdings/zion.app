@@ -2,8 +2,8 @@ import React from 'react';
 import Head from 'next/head';
 import { Database, Check, Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
-import Button from '../components/ui/Button';
-import { real2029Q3Additions } from '../data/real-2029-q3-additions';
+import { Button } from '../components/ui/Button';
+import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 
 export default function DataQualityMonitorPage() {
 	const service = real2029Q3Additions.find(s => s.id === 'data-quality-monitor');
@@ -40,7 +40,7 @@ export default function DataQualityMonitorPage() {
                 </div>
                 <div className="flex items-center text-yellow-400"><Star className="w-4 h-4 mr-1" />{service.rating.toFixed(1)}</div>
               </div>
-              <Button href="/contact" variant="primary" size="lg" className="w-full">Start Now<ArrowRight className="w-5 h-5 ml-2" /></Button>
+              <Link href="/contact" variant="quantum" size="lg" className="w-full">Start Now<ArrowRight className="w-5 h-5 ml-2" /></Button>
               <div className="mt-6 space-y-3 text-sm text-slate-300">
                 <div className="flex items-center space-x-2"><Phone className="w-4 h-4 text-cyan-400" /><span>{service.contactInfo.mobile}</span></div>
                 <div className="flex items-center space-x-2"><Mail className="w-4 h-4 text-purple-400" /><span>{service.contactInfo.email}</span></div>

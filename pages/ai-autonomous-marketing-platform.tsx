@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import Layout from '../components/layout/Layout';
+import { Layout } from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
   Target, Brain, Zap, CheckCircle, ArrowRight, 

@@ -40,10 +40,10 @@ interface Service {
   growthRate?: string;
   contactInfo?: {
     mobile?: string;
-    phone?: string;
     email: string;
     address?: string;
     website: string;
+    phone?: string;
   };
   realImplementation?: boolean | string;
   implementationDetails?: string;
@@ -52,6 +52,14 @@ interface Service {
   rating: number;
   reviews: number;
   benefits?: string[];
+  targetAudience?: string[] | string;
+  marketPosition?: string;
+  techStack?: string[];
+  support?: string;
+  compliance?: string[];
+  trialDays?: number;
+  setupTime?: string;
+  variant?: string;
 }
 
 const Innovative2040FuturisticServicesShowcase: React.FC = () => {
@@ -190,7 +198,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
       <SEO 
         title="Innovative 2040 Futuristic Services Showcase | Zion Tech Group"
         description="Explore our comprehensive collection of innovative 2040 futuristic services including quantum computing, AI-powered solutions, and cutting-edge technology offerings. Contact us at +1 302 464 0950 or kleber@ziontechgroup.com"
-        keywords={["innovative services", "futuristic technology", "quantum computing", "AI services", "IT solutions", "micro SaaS", "Zion Tech Group"]}
+        keywords="innovative services, futuristic technology, quantum computing, AI services, IT solutions, micro SaaS, Zion Tech Group"
 
       />
 

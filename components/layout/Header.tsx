@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, Zap, Sparkles, ChevronDown } from 'lucide-react';
+import { Button } from '../ui/Button';
+import { motion } from 'framer-motion';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -135,19 +136,28 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Buttons */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <Link
-              href="/contact"
-              className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black rounded"
-            >
-              Sign In
-            </Link>
-            <Link
-              href="/contact"
-              className="px-4 py-3 text-sm font-medium bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black"
-            >
-              Get Started
+          {/* Contact Info & CTA */}
+          <div className="hidden lg:flex items-center space-x-6">
+            <div className="flex items-center space-x-4 text-sm">
+              <a
+                href={`tel:${contactInfo.mobile}`}
+                className="text-cyan-400 hover:text-cyan-300 transition-colors flex items-center"
+              >
+                <span className="hidden xl:inline">{contactInfo.mobile}</span>
+                <span className="xl:hidden">Call</span>
+              </a>
+              <a
+                href={`mailto:${contactInfo.email}`}
+                className="text-purple-400 hover:text-purple-300 transition-colors flex items-center"
+              >
+                <span className="hidden xl:inline">{contactInfo.email}</span>
+                <span className="xl:hidden">Email</span>
+              </a>
+            </div>
+            <Link href="/contact">
+              <Button variant="primary" size="sm">
+                Get Started
+              </Button>
             </Link>
           </div>
 
@@ -215,7 +225,12 @@ const Header = () => {
                   className="block px-4 py-3 text-base font-medium bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 text-center focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Get Started
+                  {contactInfo.email}
+                </a>
+                <Link href="/contact">
+                  <Button variant="primary" size="sm" className="w-full">
+                    Get Started
+                  </Button>
                 </Link>
               </div>
             </div>

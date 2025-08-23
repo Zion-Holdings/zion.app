@@ -1,7 +1,9 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
-import { motion } from 'framer-motion';
-import { Globe, Atom, Zap, Target, Award, Clock, CheckCircle, Shield, Database, Server, Layers, FileText } from 'lucide-react';
+import Head from 'next/head';
+import { Phone, Mail, MapPin, Check, ArrowRight, Eye, Star } from 'lucide-react';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import { Button } from '../components/ui/Button';
+import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 
 const QuantumMetaverse: React.FC = () => {
   const features = [
@@ -69,7 +71,7 @@ const QuantumMetaverse: React.FC = () => {
                   <Globe className="w-10 h-10 text-white" />
                 </div>
               </div>
-              <Button href="/contact" variant="primary" size="lg" className="w-full">Request Demo<ArrowRight className="w-5 h-5 ml-2" /></Button>
+              <Link href="/contact" variant="quantum" size="lg" className="w-full">Request Demo<ArrowRight className="w-5 h-5 ml-2" /></Button>
               <div className="mt-6 space-y-3 text-sm text-slate-300">
                 <div className="flex items-center space-x-2"><Phone className="w-4 h-4 text-cyan-400" /><span>{service.contactInfo.mobile}</span></div>
                 <div className="flex items-center space-x-2"><Mail className="w-4 h-4 text-purple-400" /><span>{service.contactInfo.email}</span></div>

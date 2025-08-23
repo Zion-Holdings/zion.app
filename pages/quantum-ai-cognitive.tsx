@@ -1,7 +1,9 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
-import { motion } from 'framer-motion';
-import { Brain, Atom, Zap, Target, Award, Clock, CheckCircle, Shield, Database, Server, Layers, FileText } from 'lucide-react';
+import Head from 'next/head';
+import { Phone, Mail, MapPin, Check, ArrowRight, Star } from 'lucide-react';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import { Button } from '../components/ui/Button';
+import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 
 const QuantumAICognitive: React.FC = () => {
   const features = [
@@ -70,7 +72,7 @@ const QuantumAICognitive: React.FC = () => {
                 </div>
               </div>
               <div className="text-slate-300 text-sm mb-4">Market: {service.marketSize}, Growth: {service.growthRate}</div>
-              <Button href="/contact" variant="primary" size="lg" className="w-full">
+              <Link href="/contact" variant="quantum" size="lg" className="w-full">
                 Start Free Trial
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>

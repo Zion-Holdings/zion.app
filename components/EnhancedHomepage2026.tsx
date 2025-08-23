@@ -1,6 +1,6 @@
-import React, { useState, useEffect, lazy, Suspense } from 'react';
-import Layout from './layout/Layout';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
+import { motion } from 'framer-motion';
+import { Layout } from './layout/Layout';
 import { 
   ArrowRight, Play, Star, Users, Award, TrendingUp, Brain, Shield, Rocket, Loader2,
   Zap, Globe, Cpu, Eye, Atom, ChevronLeft, ChevronRight

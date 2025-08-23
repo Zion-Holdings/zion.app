@@ -1,22 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Trophy, 
-  TrendingUp, 
-  Users, 
-  Clock, 
-  Target, 
-  ArrowRight,
-  Brain,
-  Atom,
-  Rocket,
-  Shield,
-  DollarSign,
-  CheckCircle,
-  Star,
-  Globe,
-  Zap
-} from 'lucide-react';
+import { motion as motion2 } from 'framer-motion';
+import { Brain, Rocket, Shield, Zap, Target, Award, Users, TrendingUp, CheckCircle, Star } from 'lucide-react';
+import { Layout } from '../components/layout/Layout';
 
 export default function CaseStudiesPage() {
   const featuredCaseStudies = [

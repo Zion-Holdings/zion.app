@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { BookOpen, FileText, Video, Headphones, Download, ExternalLink, ArrowRight, Brain, Rocket, Shield, Zap, Target, Award, Globe, Users, Code, Database, Network, Server, Monitor, Smartphone, Camera, Gamepad2, Palette, Music, Film, BookOpenCheck, Building, MessageCircle, Github, Globe as GlobeIcon, BookOpen as BookOpenIcon, Video as VideoIcon, Headphones as HeadphonesIcon } from 'lucide-react';
+import { Layout } from '../components/layout/Layout';
 
 export default function ResourcesPage() {
   const [activeTab, setActiveTab] = useState('tools');
