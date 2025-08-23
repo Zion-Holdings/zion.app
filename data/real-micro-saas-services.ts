@@ -11,6 +11,7 @@ export interface MicroSaasService {
     trialDays: number;
     setupTime: string;
   };
+  period?: string;
   features: string[];
   benefits: string[];
   targetAudience: string[];
@@ -95,6 +96,7 @@ export const realMicroSaasServices: MicroSaasService[] = [
     link: 'https://ziontechgroup.com/ai-content-generator',
     icon: '📝',
     color: 'from-pink-500 to-rose-600',
+    period: '/month',
     popular: true,
     launchDate: '2024-01-15',
     customers: 2500,
@@ -160,6 +162,7 @@ export const realMicroSaasServices: MicroSaasService[] = [
     link: 'https://ziontechgroup.com/cloud-cost-optimizer',
     icon: '☁️',
     color: 'from-cyan-500 to-blue-600',
+    period: '/month',
     popular: true,
     launchDate: '2024-02-01',
     customers: 1800,
@@ -226,6 +229,7 @@ export const realMicroSaasServices: MicroSaasService[] = [
     link: 'https://ziontechgroup.com/ai-sales-assistant',
     icon: '💼',
     color: 'from-green-500 to-emerald-600',
+    period: '/month',
     popular: true,
     launchDate: '2024-01-20',
     customers: 3200,
