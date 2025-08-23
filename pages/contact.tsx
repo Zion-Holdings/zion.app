@@ -1,12 +1,3 @@
-export default function ContactPage() {
-  return (
-    <div className="prose dark:prose-invert">
-      <h1>Contact</h1>
-      <p>Email us at founders@zion.example.com</p>
-    </div>
-  );
-}
-=======
 import EnhancedLayout from '../components/layout/EnhancedLayout';
 
 export default function Contact() {
@@ -25,3 +16,22 @@ export default function Contact() {
     </div>
   );
 }
+=======
+import React from "react";
+import Head from "next/head";
+
+const Page: React.FC = () => {
+  return (
+    <>
+      <Head>
+        <title>Placeholder Page</title>
+        <meta name="robots" content="noindex" />
+      </Head>
+      <main>
+        <h1>Coming soon</h1>
+      </main>
+    </>
+  );
+};
+
+export default Page;

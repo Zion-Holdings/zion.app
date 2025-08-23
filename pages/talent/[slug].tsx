@@ -1,6 +1,18 @@
-import { useRouter } from 'next/router';
+import React from "react";
+import Head from "next/head";
 
-export default function TalentProfile() {
-  const { query } = useRouter();
-  return <div>Talent Profile: {String(query.slug || '')}</div>;
-}
+const Page: React.FC = () => {
+  return (
+    <>
+      <Head>
+        <title>Placeholder Page</title>
+        <meta name="robots" content="noindex" />
+      </Head>
+      <main>
+        <h1>Coming soon</h1>
+      </main>
+    </>
+  );
+};
+
+export default Page;
