@@ -1,247 +1,241 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Loader2, CheckCircle, AlertCircle, 
-  Clock, Brain, Atom, Rocket
-} from 'lucide-react';
+import { Brain, Atom, Shield, Rocket, Zap, Sparkles } from 'lucide-react';
 
-interface LoadingStateProps {
-  isLoading: boolean;
-  progress?: number;
-  status?: 'loading' | 'success' | 'error' | 'idle';
-  message?: string;
-  showProgress?: boolean;
-  variant?: 'default' | 'futuristic' | 'quantum' | 'ai';
-  size?: 'sm' | 'md' | 'lg';
-}
+const LoadingState: React.FC = () => {
+  const [progress, setProgress] = useState(0);
+  const [currentStep, setCurrentStep] = useState(0);
+  const [showContent, setShowContent] = useState(false);
 
-const LoadingState: React.FC<LoadingStateProps> = ({
-  isLoading,
-  progress = 0,
-  status = 'idle',
-  message = 'Loading...',
-  showProgress = true,
-  variant = 'default',
-  size = 'md'
-}) => {
-  const [dots, setDots] = useState('');
+  const loadingSteps = [
+    { icon: Brain, text: 'Initializing AI Consciousness', color: 'from-purple-500 to-pink-500' },
+    { icon: Atom, text: 'Loading Quantum Systems', color: 'from-blue-500 to-cyan-500' },
+    { icon: Shield, text: 'Activating Security Protocols', color: 'from-red-500 to-orange-500' },
+    { icon: Rocket, text: 'Launching Revolutionary Services', color: 'from-emerald-500 to-teal-500' },
+    { icon: Zap, text: 'Optimizing Performance', color: 'from-yellow-500 to-orange-500' },
+    { icon: Sparkles, text: 'Finalizing Experience', color: 'from-indigo-500 to-purple-500' }
+  ];
 
-
-  // Animated dots effect
   useEffect(() => {
-    if (!isLoading) return;
-    
+    // Simulate loading progress
     const interval = setInterval(() => {
-      setDots(prev => prev.length >= 3 ? '' : prev + '.');
-    }, 500);
+      setProgress(prev => {
+        if (prev >= 100) {
+          clearInterval(interval);
+          setTimeout(() => setShowContent(true), 500);
+          return 100;
+        }
+        return prev + Math.random() * 15;
+      });
+    }, 200);
 
-    return () => clearInterval(interval);
-  }, [isLoading]);
+    // Update current step based on progress
+    const stepInterval = setInterval(() => {
+      setCurrentStep(prev => {
+        const newStep = Math.floor((progress / 100) * loadingSteps.length);
+        return Math.min(newStep, loadingSteps.length - 1);
+      });
+    }, 100);
 
+    return () => {
+      clearInterval(interval);
+      clearInterval(stepInterval);
+    };
+  }, [progress, loadingSteps.length]);
 
-
-  // Get variant-specific content
-  const getVariantContent = () => {
-    switch (variant) {
-      case 'futuristic':
-        return {
-          icon: <Rocket className="w-full h-full" />,
-          colors: 'from-cyan-500 to-blue-600',
-          bgColors: 'from-cyan-500/20 to-blue-500/20',
-          borderColors: 'border-cyan-400/30'
-        };
-      case 'quantum':
-        return {
-          icon: <Atom className="w-full h-full" />,
-          colors: 'from-purple-500 to-pink-600',
-          bgColors: 'from-purple-500/20 to-pink-500/20',
-          borderColors: 'border-purple-400/30'
-        };
-      case 'ai':
-        return {
-          icon: <Brain className="w-full h-full" />,
-          colors: 'from-green-500 to-emerald-600',
-          bgColors: 'from-green-500/20 to-emerald-500/20',
-          borderColors: 'border-green-400/30'
-        };
-      default:
-        return {
-          icon: <Loader2 className="w-full h-full" />,
-          colors: 'from-gray-500 to-gray-600',
-          bgColors: 'from-gray-500/20 to-gray-600/20',
-          borderColors: 'border-gray-400/30'
-        };
-    }
-  };
-
-  // Get size classes
-  const getSizeClasses = () => {
-    switch (size) {
-      case 'sm':
-        return {
-          container: 'w-16 h-16',
-          icon: 'w-8 h-8',
-          text: 'text-sm'
-        };
-      case 'lg':
-        return {
-          container: 'w-32 h-32',
-          icon: 'w-16 h-16',
-          text: 'text-lg'
-        };
-      default:
-        return {
-          container: 'w-24 h-24',
-          icon: 'w-12 h-12',
-          text: 'text-base'
-        };
-    }
-  };
-
-  // Get status icon
-  const getStatusIcon = () => {
-    switch (status) {
-      case 'success':
-        return <CheckCircle className="w-full h-full text-green-400" />;
-      case 'error':
-        return <AlertCircle className="w-full h-full text-red-400" />;
-      case 'loading':
-        return getVariantContent().icon;
-      default:
-        return <Clock className="w-full h-full text-gray-400" />;
-    }
-  };
-
-
-
-  const variantContent = getVariantContent();
-  const sizeClasses = getSizeClasses();
-
-  if (!isLoading && status === 'idle') return null;
-
-  return (
-    <AnimatePresence>
+  if (showContent) {
+    return (
       <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
+        initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        exit={{ opacity: 0, scale: 0.8 }}
-        transition={{ duration: 0.3 }}
-        className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
+        className="min-h-screen bg-black flex items-center justify-center"
       >
-        <div className="relative">
-          {/* Main Loading Container */}
+        <div className="text-center">
           <motion.div
-            animate={isLoading ? { rotate: 360 } : {}}
-            transition={{ duration: 2, repeat: isLoading ? Infinity : 0, ease: "linear" }}
-            className={`${sizeClasses.container} relative rounded-full bg-gradient-to-r ${variantContent.bgColors} border ${variantContent.borderColors} flex items-center justify-center`}
+            initial={{ rotate: 0 }}
+            animate={{ rotate: 360 }}
+            transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+            className="w-20 h-20 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6"
           >
-            {/* Background Glow */}
-            <div className={`absolute inset-0 rounded-full bg-gradient-to-r ${variantContent.colors} opacity-20 blur-xl`} />
-            
-            {/* Icon Container */}
-            <div className={`${sizeClasses.icon} relative z-10 text-white`}>
-              {getStatusIcon()}
-            </div>
-
-            {/* Animated Ring */}
-            {isLoading && variant !== 'default' && (
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 rounded-full border-2 border-transparent border-t-white/30"
-              />
-            )}
-
-            {/* Pulse Effect */}
-            {isLoading && variant !== 'default' && (
-              <motion.div
-                animate={{ 
-                  scale: [1, 1.2, 1],
-                  opacity: [0.5, 0.8, 0.5]
-                }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="absolute inset-0 rounded-full bg-gradient-to-r from-white/20 to-transparent"
-              />
-            )}
+            <Sparkles className="w-10 h-10 text-white" />
           </motion.div>
-
-          {/* Progress Bar */}
-          {showProgress && isLoading && (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="mt-6 w-48 bg-gray-800/50 rounded-full h-2 border border-gray-700 overflow-hidden"
-            >
-              <motion.div
-                initial={{ width: 0 }}
-                animate={{ width: `${progress}%` }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                className={`h-full bg-gradient-to-r ${variantContent.colors} rounded-full relative`}
-              >
-                {/* Progress Glow */}
-                <div className="absolute inset-0 bg-white/20 rounded-full blur-sm" />
-              </motion.div>
-            </motion.div>
-          )}
-
-          {/* Status Message */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="mt-4 text-center"
-          >
-            <div className={`text-white font-medium ${sizeClasses.text}`}>
-              {message}
-              {isLoading && dots}
-            </div>
-            
-            {/* Progress Percentage */}
-            {showProgress && isLoading && (
-              <div className="text-gray-400 text-sm mt-1">
-                {Math.round(progress)}%
-              </div>
-            )}
-
-            {/* Status Indicator */}
-            {status !== 'loading' && (
-              <div className="mt-2 text-xs text-gray-500 capitalize">
-                {status}
-              </div>
-            )}
-          </motion.div>
-
-          {/* Background Particles for Futuristic Variants */}
-          {isLoading && variant !== 'default' && (
-            <div className="absolute inset-0 pointer-events-none">
-              {[...Array(6)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  animate={{
-                    x: [0, Math.cos(i * 60 * Math.PI / 180) * 100],
-                    y: [0, Math.sin(i * 60 * Math.PI / 180) * 100],
-                    opacity: [0, 1, 0],
-                    scale: [0, 1, 0]
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    delay: i * 0.5,
-                    ease: "easeInOut"
-                  }}
-                  className="absolute w-2 h-2 bg-white/30 rounded-full"
-                  style={{
-                    left: '50%',
-                    top: '50%',
-                    transform: 'translate(-50%, -50%)'
-                  }}
-                />
-              ))}
-            </div>
-          )}
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">
+            Zion Tech Group 2046
+          </h1>
+          <p className="text-xl text-gray-300">Ready to revolutionize your future</p>
         </div>
       </motion.div>
-    </AnimatePresence>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-black flex items-center justify-center relative overflow-hidden">
+      {/* Animated Background */}
+      <div className="absolute inset-0">
+        <motion.div
+          className="absolute top-1/4 left-1/4 w-32 h-32 bg-cyan-500/20 rounded-full blur-3xl"
+          animate={{
+            scale: [1, 1.5, 1],
+            opacity: [0.2, 0.5, 0.2],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div
+          className="absolute bottom-1/4 right-1/4 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl"
+          animate={{
+            scale: [1.5, 1, 1.5],
+            opacity: [0.3, 0.6, 0.3],
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+      </div>
+
+      <div className="relative z-10 text-center max-w-2xl mx-auto px-4">
+        {/* Logo and Title */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="mb-8"
+        >
+          <motion.div
+            animate={{ rotate: [0, 360] }}
+            transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+            className="w-24 h-24 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6"
+          >
+            <Brain className="w-12 h-12 text-white" />
+          </motion.div>
+          <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">
+            Zion Tech Group 2046
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-300">
+            Revolutionary AI Consciousness & Quantum Technology
+          </p>
+        </motion.div>
+
+        {/* Loading Progress */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="mb-8"
+        >
+          <div className="relative">
+            {/* Progress Bar */}
+            <div className="w-full bg-gray-800/50 rounded-full h-3 mb-4 overflow-hidden">
+              <motion.div
+                className="h-full bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full"
+                initial={{ width: 0 }}
+                animate={{ width: `${progress}%` }}
+                transition={{ duration: 0.3 }}
+              />
+            </div>
+            
+            {/* Progress Text */}
+            <div className="text-center">
+              <span className="text-2xl font-bold text-white">{Math.round(progress)}%</span>
+              <span className="text-gray-400 ml-2">Complete</span>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Current Step */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mb-8"
+        >
+          <AnimatePresence mode="wait">
+                         <motion.div
+               key={currentStep}
+               initial={{ opacity: 0, x: 20 }}
+               animate={{ opacity: 1, x: 0 }}
+               exit={{ opacity: 0, x: -20 }}
+               transition={{ duration: 0.3 }}
+               className="flex items-center justify-center gap-3"
+             >
+               <div className={`w-12 h-12 bg-gradient-to-r ${loadingSteps[currentStep].color} rounded-full flex items-center justify-center`}>
+                 {React.createElement(loadingSteps[currentStep].icon, { className: "w-6 h-6 text-white" })}
+               </div>
+               <span className="text-lg text-gray-300">{loadingSteps[currentStep].text}</span>
+             </motion.div>
+          </AnimatePresence>
+        </motion.div>
+
+        {/* Loading Animation */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.9 }}
+          className="flex justify-center gap-2"
+        >
+          {[0, 1, 2].map((i) => (
+            <motion.div
+              key={i}
+              className="w-3 h-3 bg-cyan-400 rounded-full"
+              animate={{
+                scale: [1, 1.5, 1],
+                opacity: [0.5, 1, 0.5],
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                delay: i * 0.2,
+                ease: "easeInOut"
+              }}
+            />
+          ))}
+        </motion.div>
+
+        {/* Status Message */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
+          className="mt-8 text-center"
+        >
+          <p className="text-gray-400 text-sm">
+            Preparing the future of technology...
+          </p>
+          <p className="text-gray-500 text-xs mt-2">
+            This may take a few moments while we initialize our revolutionary systems
+          </p>
+        </motion.div>
+      </div>
+
+      {/* Floating Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 bg-cyan-400/40 rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              y: [0, -20, 0],
+              opacity: [0.4, 0.8, 0.4],
+            }}
+            transition={{
+              duration: 3 + Math.random() * 2,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+              ease: "easeInOut"
+            }}
+          />
+        ))}
+      </div>
+    </div>
   );
 };
 
