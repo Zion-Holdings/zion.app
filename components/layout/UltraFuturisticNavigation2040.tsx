@@ -5,7 +5,7 @@ import {
   Menu, X, ChevronDown, ChevronRight, Search, User, ShoppingCart, 
   Brain, Atom, Shield, Rocket, Cpu, Database, Target, Sparkles,
   Home, Briefcase, Users, FileText, Phone, Mail, MapPin, Globe,
-  Zap, Star, TrendingUp, Award, Clock, CheckCircle, ExternalLink
+  Zap, Star, TrendingUp, Award, Clock, CheckCircle, ExternalLink, Code
 } from 'lucide-react';
 
 const UltraFuturisticNavigation2040: React.FC = () => {
@@ -162,6 +162,35 @@ const UltraFuturisticNavigation2040: React.FC = () => {
       href: '/case-studies',
       icon: TrendingUp,
       description: 'Client success stories'
+    },
+    {
+      name: 'Resources',
+      href: '/resources',
+      icon: FileText,
+      description: 'Technical resources and documentation',
+      dropdown: [
+        {
+          name: 'Whitepapers',
+          href: '/resources/whitepapers',
+          icon: FileText,
+          description: 'Technical research and insights',
+          color: 'from-blue-500 to-cyan-500'
+        },
+        {
+          name: 'Documentation',
+          href: '/resources/documentation',
+          icon: Code,
+          description: 'Technical guides and APIs',
+          color: 'from-green-500 to-emerald-500'
+        },
+        {
+          name: 'Case Studies',
+          href: '/resources/case-studies',
+          icon: TrendingUp,
+          description: 'Client success stories',
+          color: 'from-purple-500 to-pink-500'
+        }
+      ]
     },
     {
       name: 'Contact',

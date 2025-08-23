@@ -1,65 +1,65 @@
 import React from 'react';
 import Layout from '../../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { Heart, Brain, Shield, Users, Target, Star, CheckCircle, Activity, Microscope, Pill, Stethoscope, Hospital } from 'lucide-react';
+import { Cpu, Zap, Target, Users, Shield, Rocket, Star, CheckCircle, Cloud, Server, Database, Network, Monitor, Settings } from 'lucide-react';
 
-const HealthcarePage: React.FC = () => {
+const ITInfrastructurePage: React.FC = () => {
   const features = [
     {
-      icon: Heart,
-      title: 'Patient Care',
-      description: 'Advanced patient monitoring and care management systems'
+      icon: Cloud,
+      title: 'Cloud Solutions',
+      description: 'Scalable cloud infrastructure and migration services'
     },
     {
-      icon: Brain,
-      title: 'AI Diagnostics',
-      description: 'Machine learning-powered diagnostic tools and analysis'
+      icon: Server,
+      title: 'Server Management',
+      description: 'Comprehensive server administration and optimization'
     },
     {
-      icon: Shield,
-      title: 'Data Security',
-      description: 'HIPAA-compliant data protection and privacy solutions'
+      icon: Database,
+      title: 'Database Systems',
+      description: 'High-performance database design and management'
     },
     {
-      icon: Users,
-      title: 'Care Coordination',
-      description: 'Seamless communication between healthcare providers'
+      icon: Network,
+      title: 'Network Infrastructure',
+      description: 'Robust networking solutions and security'
     },
     {
-      icon: Activity,
-      title: 'Remote Monitoring',
-      description: 'IoT-enabled health monitoring and telehealth solutions'
+      icon: Monitor,
+      title: 'Monitoring & Analytics',
+      description: 'Real-time system monitoring and performance insights'
     },
     {
-      icon: Microscope,
-      title: 'Research Tools',
-      description: 'Advanced research and development platforms'
+      icon: Settings,
+      title: 'Automation & DevOps',
+      description: 'Streamlined deployment and operational processes'
     }
   ];
 
-  const solutions = [
-    'Electronic Health Records (EHR) systems',
-    'Telemedicine and remote patient monitoring',
-    'AI-powered diagnostic imaging analysis',
-    'Clinical trial management platforms',
-    'Healthcare analytics and insights',
-    'Medical device integration and IoT'
+  const services = [
+    'Cloud migration and optimization',
+    'Infrastructure as Code (IaC)',
+    'Container orchestration and management',
+    'High availability and disaster recovery',
+    'Performance optimization and scaling',
+    'Security hardening and compliance'
   ];
 
   const benefits = [
-    'Improved patient outcomes and care quality',
-    'Enhanced operational efficiency and cost reduction',
-    'Better data security and compliance',
-    'Streamlined workflows and communication',
-    'Advanced research and development capabilities',
-    'Increased accessibility to healthcare services'
+    'Improved system reliability and uptime',
+    'Enhanced performance and scalability',
+    'Reduced operational costs and complexity',
+    'Faster deployment and time to market',
+    'Better security and compliance posture',
+    '24/7 monitoring and support'
   ];
 
   return (
     <Layout
-      title="Healthcare & Biotech Solutions - Zion Tech Group"
-      description="Revolutionary healthcare and biotech technology solutions that improve patient care, enhance research capabilities, and streamline healthcare operations."
-      keywords="healthcare technology, biotech solutions, medical AI, patient care, healthcare analytics, Zion Tech Group"
+      title="IT Infrastructure Solutions - Zion Tech Group"
+      description="Comprehensive IT infrastructure solutions including cloud services, server management, and DevOps automation to optimize your technology operations."
+      keywords="IT infrastructure, cloud solutions, server management, DevOps, automation, Zion Tech Group"
     >
       <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white">
         {/* Hero Section */}
@@ -71,22 +71,22 @@ const HealthcarePage: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 text-white text-sm font-medium mb-6">
-                <Heart className="w-4 h-4 mr-2" />
-                Healthcare Technology Platform
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-sm font-medium mb-6">
+                <Cpu className="w-4 h-4 mr-2" />
+                IT Infrastructure Platform
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 bg-clip-text text-transparent mb-6">
-                Healthcare & Biotech Solutions
+              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent mb-6">
+                IT Infrastructure Solutions
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
-                Transform healthcare delivery with our revolutionary technology solutions including AI diagnostics, patient care systems, and biotech research platforms.
+                Build and optimize your technology foundation with our comprehensive IT infrastructure solutions including cloud services, server management, and DevOps automation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-semibold rounded-lg hover:from-green-600 hover:to-emerald-600 transition-all duration-300 transform hover:scale-105">
-                  Explore Healthcare Solutions
+                <button className="px-8 py-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-semibold rounded-lg hover:from-yellow-600 hover:to-orange-600 transition-all duration-300 transform hover:scale-105">
+                  Explore Infrastructure
                 </button>
-                <button className="px-8 py-4 border border-gray-600 text-white font-semibold rounded-lg hover:border-green-500 hover:bg-green-500/10 transition-all duration-300">
-                  Healthcare Consultation
+                <button className="px-8 py-4 border border-gray-600 text-white font-semibold rounded-lg hover:border-yellow-500 hover:bg-yellow-500/10 transition-all duration-300">
+                  Infrastructure Assessment
                 </button>
               </div>
             </motion.div>
@@ -103,10 +103,10 @@ const HealthcarePage: React.FC = () => {
               className="text-center mb-16"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Comprehensive Healthcare Features
+                Comprehensive Infrastructure Features
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Our healthcare platform provides cutting-edge solutions for modern healthcare delivery and biotech research.
+                Our IT infrastructure platform provides enterprise-grade solutions for modern technology operations.
               </p>
             </motion.div>
 
@@ -117,9 +117,9 @@ const HealthcarePage: React.FC = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/60 hover:border-green-500/50 transition-all duration-300"
+                  className="p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/60 hover:border-yellow-500/50 transition-all duration-300"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg flex items-center justify-center mb-4">
                     <feature.icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
@@ -130,7 +130,7 @@ const HealthcarePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Solutions Section */}
+        {/* Services Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-gray-900/50 to-black/50">
           <div className="max-w-7xl mx-auto">
             <motion.div
@@ -140,10 +140,10 @@ const HealthcarePage: React.FC = () => {
               className="text-center mb-16"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Healthcare Solutions We Offer
+                IT Infrastructure Services
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Tailored solutions designed to address the unique challenges of healthcare and biotech industries.
+                Professional services designed to optimize your technology infrastructure and operations.
               </p>
             </motion.div>
 
@@ -154,10 +154,10 @@ const HealthcarePage: React.FC = () => {
                 transition={{ duration: 0.8 }}
                 className="space-y-6"
               >
-                {solutions.slice(0, 3).map((solution, index) => (
+                {services.slice(0, 3).map((service, index) => (
                   <div key={index} className="flex items-start space-x-4">
                     <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
-                    <p className="text-gray-300 text-lg">{solution}</p>
+                    <p className="text-gray-300 text-lg">{service}</p>
                   </div>
                 ))}
               </motion.div>
@@ -167,10 +167,10 @@ const HealthcarePage: React.FC = () => {
                 transition={{ duration: 0.8 }}
                 className="space-y-6"
               >
-                {solutions.slice(3).map((solution, index) => (
+                {services.slice(3).map((service, index) => (
                   <div key={index} className="flex items-start space-x-4">
                     <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
-                    <p className="text-gray-300 text-lg">{solution}</p>
+                    <p className="text-gray-300 text-lg">{service}</p>
                   </div>
                 ))}
               </motion.div>
@@ -188,10 +188,10 @@ const HealthcarePage: React.FC = () => {
               className="text-center mb-16"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Why Choose Our Healthcare Solutions?
+                Why Choose Our IT Infrastructure?
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Experience transformative healthcare technology that improves patient care and research outcomes.
+                Experience enterprise-grade infrastructure solutions that drive efficiency and reliability.
               </p>
             </motion.div>
 
@@ -202,10 +202,10 @@ const HealthcarePage: React.FC = () => {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="p-6 rounded-xl bg-gradient-to-br from-gray-800/30 to-gray-900/30 border border-gray-700/40 hover:border-green-500/50 transition-all duration-300"
+                  className="p-6 rounded-xl bg-gradient-to-br from-gray-800/30 to-gray-900/30 border border-gray-700/40 hover:border-yellow-500/50 transition-all duration-300"
                 >
                   <div className="flex items-center space-x-3">
-                    <Star className="w-5 h-5 text-green-400 flex-shrink-0" />
+                    <Star className="w-5 h-5 text-yellow-400 flex-shrink-0" />
                     <p className="text-gray-300">{benefit}</p>
                   </div>
                 </motion.div>
@@ -223,17 +223,17 @@ const HealthcarePage: React.FC = () => {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Ready to Transform Healthcare?
+                Ready to Optimize Your Infrastructure?
               </h2>
               <p className="text-xl text-gray-400 mb-8">
-                Let us help you improve patient care, enhance research capabilities, and streamline healthcare operations.
+                Let us help you build a robust, scalable, and efficient technology foundation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-semibold rounded-lg hover:from-green-600 hover:to-emerald-600 transition-all duration-300 transform hover:scale-105">
-                  Start Healthcare Transformation
+                <button className="px-8 py-4 bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-semibold rounded-lg hover:from-yellow-600 hover:to-orange-600 transition-all duration-300 transform hover:scale-105">
+                  Start Optimization
                 </button>
-                <button className="px-8 py-4 border border-gray-600 text-white font-semibold rounded-lg hover:border-green-500 hover:bg-green-500/10 transition-all duration-300">
-                  Schedule Healthcare Demo
+                <button className="px-8 py-4 border border-gray-600 text-white font-semibold rounded-lg hover:border-yellow-500 hover:bg-yellow-500/10 transition-all duration-300">
+                  Contact Infrastructure Team
                 </button>
               </div>
             </motion.div>
@@ -244,4 +244,4 @@ const HealthcarePage: React.FC = () => {
   );
 };
 
-export default HealthcarePage;
+export default ITInfrastructurePage;

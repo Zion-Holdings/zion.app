@@ -10,7 +10,7 @@ import {
 
 // Import our new innovative 2025 services
 import { realInnovativeMicroSaasServices2025 } from '../data/2025-real-innovative-micro-saas-expansion';
-import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services-expansion';
+import { innovative2025ITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
 import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services-expansion';
 
 // Import our new 2025 advanced services
@@ -116,7 +116,7 @@ const getServiceDescription = (service: any) => {
 const allServices = [
   // Our new 2025 services
   ...realInnovativeMicroSaasServices2025,
-  ...innovativeITInfrastructureServices2025,
+      ...innovative2025ITInfrastructureServices,
   ...innovativeAIServices2025,
   
   // Our new 2025 advanced services

@@ -51,10 +51,10 @@ const UltraFuturisticFooter2040: React.FC = () => {
       icon: Brain,
       color: 'from-purple-500 to-pink-500',
       services: [
-        { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-platform-2045' },
-        { name: 'Emotional Intelligence AI', href: '/emotional-intelligence-ai-platform-2045' },
-        { name: 'Autonomous Decision Making', href: '/autonomous-decision-making-ai-2045' },
-        { name: 'AI Ethics & Governance', href: '/ai-ethics-governance-platform-2045' }
+        { name: 'AI Consciousness Evolution', href: '/services/ai-consciousness' },
+        { name: 'Emotional Intelligence AI', href: '/services/ai-consciousness' },
+        { name: 'Autonomous Decision Making', href: '/services/ai-consciousness' },
+        { name: 'AI Ethics & Governance', href: '/services/ai-consciousness' }
       ]
     },
     {
@@ -62,10 +62,10 @@ const UltraFuturisticFooter2040: React.FC = () => {
       icon: Atom,
       color: 'from-cyan-500 to-blue-500',
       services: [
-        { name: 'Quantum AI Hybrid Computing', href: '/quantum-ai-hybrid-computing-platform-2045' },
-        { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure-platform-2045' },
-        { name: 'Quantum Neural Networks', href: '/quantum-neural-networks-platform-2045' },
-        { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform-2045' }
+        { name: 'Quantum AI Hybrid Computing', href: '/services/quantum-technology' },
+        { name: 'Quantum Cloud Infrastructure', href: '/services/quantum-technology' },
+        { name: 'Quantum Neural Networks', href: '/services/quantum-technology' },
+        { name: 'Quantum Bio-Computing', href: '/services/quantum-technology' }
       ]
     },
     {
@@ -73,10 +73,10 @@ const UltraFuturisticFooter2040: React.FC = () => {
       icon: Shield,
       color: 'from-red-500 to-orange-500',
       services: [
-        { name: 'Quantum Cybersecurity Intelligence', href: '/quantum-cybersecurity-intelligence-2045' },
-        { name: 'AI Threat Detection', href: '/ai-threat-detection-platform-2045' },
-        { name: 'Zero-Trust Security', href: '/zero-trust-security-platform-2045' },
-        { name: 'Quantum Encryption', href: '/quantum-encryption-platform-2045' }
+        { name: 'Quantum Cybersecurity Intelligence', href: '/services/cybersecurity' },
+        { name: 'AI Threat Detection', href: '/services/cybersecurity' },
+        { name: 'Zero-Trust Security', href: '/services/cybersecurity' },
+        { name: 'Quantum Encryption', href: '/services/cybersecurity' }
       ]
     },
     {
@@ -84,10 +84,32 @@ const UltraFuturisticFooter2040: React.FC = () => {
       icon: Target,
       color: 'from-emerald-500 to-teal-500',
       services: [
-        { name: 'Autonomous AI Business Intelligence', href: '/autonomous-ai-business-intelligence-2045' },
-        { name: 'AI Content Intelligence', href: '/ai-content-intelligence-platform-2045' },
-        { name: 'Predictive Analytics Platform', href: '/predictive-analytics-platform-2045' },
-        { name: 'Business Process Automation', href: '/business-process-automation-2045' }
+        { name: 'Autonomous AI Business Intelligence', href: '/services/business-solutions' },
+        { name: 'AI Content Intelligence', href: '/services/business-solutions' },
+        { name: 'Predictive Analytics Platform', href: '/services/business-solutions' },
+        { name: 'Business Process Automation', href: '/services/business-solutions' }
+      ]
+    },
+    {
+      title: 'IT Infrastructure',
+      icon: Cpu,
+      color: 'from-yellow-500 to-orange-500',
+      services: [
+        { name: 'Cloud Migration', href: '/services/it-infrastructure' },
+        { name: 'DevOps Automation', href: '/services/it-infrastructure' },
+        { name: 'Server Management', href: '/services/it-infrastructure' },
+        { name: 'Database Optimization', href: '/services/it-infrastructure' }
+      ]
+    },
+    {
+      title: 'Space Technology',
+      icon: Rocket,
+      color: 'from-pink-500 to-red-500',
+      services: [
+        { name: 'Satellite Systems', href: '/services/space-technology' },
+        { name: 'Space Exploration', href: '/services/space-technology' },
+        { name: 'Orbital Mechanics', href: '/services/space-technology' },
+        { name: 'Space Resources', href: '/services/space-technology' }
       ]
     }
   ];
