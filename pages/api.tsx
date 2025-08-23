@@ -103,7 +103,7 @@ const APIPage: React.FC = () => {
   };
 
   return (
-    <Layout seo={seoConfig}>
+    <Layout>
       <div className="min-h-screen bg-gray-900 text-white py-20">
         {/* Hero Section */}
         <section className="relative py-20 px-4 sm:px-6 lg:px-8">
