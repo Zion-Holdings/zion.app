@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-import { Shield, Clock, DollarSign, TrendingUp, Brain, Rocket, ArrowRight, ExternalLink, Search, Filter, Grid, List, Phone, Mail, MapPin, Star } from 'lucide-react';
+import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Mail, MessageCircle, Kanban, Headphones, Brain, Code, Server, Shield as ShieldIcon, Zap as ZapIcon2, Globe as GlobeIcon, Users as UsersIcon, Bot, Database as DatabaseIcon, Network, Key, Eye, Fingerprint, Lock as LockIcon, Globe as GlobeIcon2, Zap as ZapIcon3, Shield as ShieldIcon2, Users as UsersIcon2, Rocket as RocketIcon, Target as TargetIcon, TrendingUp as TrendingUpIcon, Clock as ClockIcon, Award as AwardIcon, DollarSign as DollarSignIcon, ChartBar as ChartBarIcon, Lock as LockIcon2, Cpu as CpuIcon, Database as DatabaseIcon2, Cloud as CloudIcon, Smartphone as SmartphoneIcon, Palette as PaletteIcon, Search as SearchIcon, MessageSquare as MessageSquareIcon, FileText as FileTextIcon, Calendar as CalendarIcon, CreditCard as CreditCardIcon, BarChart3 as BarChart3Icon, Settings as SettingsIcon, Zap as ZapIcon4, Mail as MailIcon, MessageCircle as MessageCircleIcon, Kanban as KanbanIcon, Headphones as HeadphonesIcon, Brain as BrainIcon, Code as CodeIcon, Server as ServerIcon, Shield as ShieldIcon3, Zap as ZapIcon5, Globe as GlobeIcon3, Users as UsersIcon3 } from 'lucide-react';
 import Button from '../components/ui/Button';
-import Card from '../components/ui/Card';
-import { realMicroSaasServices, getServicesByCategory } from '../data/real-micro-saas-services';
+import AnimatedBackground from '../components/ui/AnimatedBackground';
+import GradientText from '../components/ui/GradientText';
+import FuturisticCard from '../components/ui/FuturisticCard';
 
 export default function MicroSaasPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -55,8 +56,7 @@ export default function MicroSaasPage() {
       title: 'Focused Solutions',
       description: 'Specialized tools that do one thing exceptionally well, without enterprise complexity. Each service solves a specific business problem with precision.',
       color: 'from-rose-500 to-pink-600',
-      bgColor: 'from-rose-500/10 to-rose-500/10',
-      marketData: 'Specialized expertise vs. jack-of-all-trades approach'
+      bgColor: 'from-rose-500/10 to-rose-500/10'
     }
   ];
 
@@ -183,7 +183,8 @@ export default function MicroSaasPage() {
       trialDays: 14,
       setupTime: '5 minutes',
       category: 'Content & Marketing',
-      realService: true
+      realImplementation: true,
+      techStack: ['OpenAI GPT-4', 'React', 'Node.js', 'PostgreSQL']
     },
     {
       name: 'Cloud Cost Optimizer',
@@ -209,41 +210,159 @@ export default function MicroSaasPage() {
       marketPosition: 'Competitive with CloudHealth ($20-500), CloudCheckr ($50-200), and AWS Cost Explorer (included)',
       targetAudience: 'DevOps teams, cloud architects, and businesses with significant cloud spending',
       trialDays: 14,
-      setupTime: '10 minutes',
-      category: 'Cloud & DevOps',
-      realService: true
+      setupTime: '20 minutes',
+      category: 'Development & DevOps',
+      realImplementation: true,
+      techStack: ['AWS SDK', 'Azure API', 'GCP API', 'React', 'Node.js']
     },
     {
-      name: 'AI Market Research Pro',
-      tagline: 'Real-time market intelligence & competitive analysis',
+      name: 'AI Marketing Automation',
+      tagline: 'Intelligent marketing campaigns that convert',
       price: '$79',
       period: '/month',
-      description: 'AI-powered market research platform providing real-time insights, competitor analysis, and market trends to drive strategic decisions.',
+      description: 'AI-powered marketing automation platform with email campaigns, social media management, and intelligent audience segmentation.',
       features: [
-        'Real-time market trend analysis',
-        'Competitor intelligence & SWOT analysis',
-        'Market segmentation & targeting',
-        'AI-generated market reports',
-        'Custom research requests',
-        'Export to PDF/Excel/CSV',
-        'Scheduled reporting',
-        'API access for integrations'
+        'AI-powered email campaigns',
+        'Smart audience segmentation',
+        'Social media automation',
+        'Marketing funnel optimization',
+        'Real-time analytics & reporting',
+        'A/B testing automation',
+        'CRM integration',
+        'Multi-channel campaign management'
       ],
       popular: false,
-      icon: '🔍',
+      icon: '📧',
+      color: 'from-purple-500 to-indigo-600',
+      textColor: 'text-purple-400',
+      link: 'https://ziontechgroup.com/ai-marketing-automation',
+      marketPosition: 'Competitive with Mailchimp ($13-350), ActiveCampaign ($9-49), and HubSpot ($45-4500)',
+      targetAudience: 'Marketing teams, small businesses, and digital agencies',
+      trialDays: 14,
+      setupTime: '15 minutes',
+      category: 'Content & Marketing',
+      realImplementation: true,
+      techStack: ['React', 'Node.js', 'SendGrid API', 'Social Media APIs']
+    },
+    {
+      name: 'AI Project Management',
+      tagline: 'Smart project planning and team collaboration',
+      price: '$89',
+      period: '/month',
+      description: 'AI-powered project management platform with intelligent task prioritization, resource allocation, and risk management.',
+      features: [
+        'AI task prioritization',
+        'Smart resource allocation',
+        'Risk assessment & mitigation',
+        'Team productivity analytics',
+        'Project timeline optimization',
+        'Real-time collaboration',
+        'Integration with popular tools',
+        'Mobile project management'
+      ],
+      popular: false,
+      icon: '📋',
+      color: 'from-emerald-500 to-teal-600',
+      textColor: 'text-emerald-400',
+      link: 'https://ziontechgroup.com/ai-project-management',
+      marketPosition: 'Competitive with Asana ($10.99-24.99), Monday.com ($8-16), and ClickUp ($5-12)',
+      targetAudience: 'Project managers, development teams, and business leaders',
+      trialDays: 14,
+      setupTime: '25 minutes',
+      category: 'Productivity & Collaboration',
+      realImplementation: true,
+      techStack: ['React', 'Node.js', 'PostgreSQL', 'Redis', 'WebSocket']
+    },
+    {
+      name: 'AI Customer Support',
+      tagline: '24/7 intelligent customer service',
+      price: '$69',
+      period: '/month',
+      description: 'AI-powered customer support platform with intelligent chatbots, ticket management, and knowledge base automation.',
+      features: [
+        'AI chatbot with intent recognition',
+        'Smart ticket routing',
+        'Knowledge base automation',
+        'Customer satisfaction analytics',
+        'Multi-channel support',
+        'Agent performance tracking',
+        'Integration with popular CRMs',
+        'Mobile support app'
+      ],
+      popular: false,
+      icon: '🎧',
+      color: 'from-orange-500 to-red-600',
+      textColor: 'text-orange-400',
+      link: 'https://ziontechgroup.com/ai-customer-support',
+      marketPosition: 'Competitive with Zendesk ($19-99), Intercom ($74-499), and Freshdesk ($15-79)',
+      targetAudience: 'Customer support teams, e-commerce businesses, and SaaS companies',
+      trialDays: 14,
+      setupTime: '30 minutes',
+      category: 'Customer Service',
+      realImplementation: true,
+      techStack: ['React', 'Node.js', 'OpenAI API', 'PostgreSQL', 'WebSocket']
+    },
+    {
+      name: 'AI Sales Assistant',
+      tagline: 'Boost sales with intelligent automation',
+      price: '$89',
+      period: '/month',
+      description: 'AI-powered sales automation that helps close more deals. Lead scoring, follow-up automation, and sales intelligence.',
+      features: [
+        'Intelligent lead scoring',
+        'Automated follow-up sequences',
+        'Sales conversation analysis',
+        'Pipeline optimization',
+        'Revenue forecasting',
+        'CRM integration',
+        'Sales performance analytics',
+        'Mobile sales app'
+      ],
+      popular: false,
+      icon: '💼',
       color: 'from-emerald-500 to-teal-600',
       textColor: 'text-emerald-400',
       link: 'https://ziontechgroup.com/ai-market-research',
       marketPosition: 'Competitive with SimilarWeb ($199-599), SEMrush ($119-449), and Ahrefs ($99-399)',
       targetAudience: 'Marketing teams, business analysts, startups, and strategic planners',
       trialDays: 14,
-      setupTime: '5 minutes',
-      category: 'Business Intelligence',
-      realService: true
+      setupTime: '25 minutes',
+      category: 'Sales & CRM',
+      realImplementation: true,
+      techStack: ['React', 'Node.js', 'OpenAI API', 'PostgreSQL']
     },
     {
-      name: 'AI Customer Support Suite',
-      tagline: 'Intelligent ticket routing & automated responses',
+      name: 'AI Legal Assistant',
+      tagline: 'Legal document automation',
+      price: '$149',
+      period: '/month',
+      description: 'Generate legal documents, contracts, and agreements with AI assistance. Reduce legal costs and streamline processes.',
+      features: [
+        'Contract template library',
+        'AI-powered document review',
+        'Legal compliance checking',
+        'Electronic signature integration',
+        'Document version control',
+        'Legal research assistance',
+        'Client portal access',
+        'Integration with legal software'
+      ],
+      popular: false,
+      icon: '⚖️',
+      color: 'from-gray-500 to-slate-600',
+      textColor: 'text-gray-400',
+      link: 'https://ziontechgroup.com/ai-legal-assistant',
+      marketPosition: 'Competitive with DocuSign ($10-25), LegalZoom ($0-299), and Rocket Lawyer ($39.99-99.99)',
+      targetAudience: 'Law firms, legal professionals, and businesses',
+      trialDays: 14,
+      setupTime: '30 minutes',
+      category: 'Legal & Compliance',
+      realImplementation: true,
+      techStack: ['React', 'Node.js', 'OpenAI API', 'PostgreSQL', 'DocuSign API']
+    },
+    {
+      name: 'AI HR Assistant',
+      tagline: 'Streamline HR operations',
       price: '$69',
       period: '/month',
       description: 'AI-powered customer support platform with intelligent ticket routing, sentiment analysis, and automated response generation.',
@@ -321,1244 +440,521 @@ export default function MicroSaasPage() {
       marketPosition: 'Competitive with BambooHR ($6.19-8.95), Workday ($45-100), and ADP ($59-199)',
       targetAudience: 'HR professionals, recruiters, and growing businesses',
       trialDays: 14,
-      setupTime: '20 minutes',
+      setupTime: '30 minutes',
       category: 'Human Resources',
-      realService: true
+      realImplementation: true,
+      techStack: ['React', 'Node.js', 'OpenAI API', 'PostgreSQL', 'Calendar APIs']
     },
     {
-      name: 'AI Legal Assistant Pro',
-      tagline: 'Intelligent legal document generation & review',
+      name: 'Business Intelligence Hub',
+      tagline: 'Data-driven insights platform',
+      price: '$99',
+      period: '/month',
+      description: 'Transform your data into actionable insights with advanced analytics and automated reporting. Make data-driven decisions faster.',
+      features: [
+        'Data visualization tools',
+        'Automated reporting',
+        'KPI dashboards',
+        'Predictive analytics',
+        'Data integration',
+        'Real-time data processing',
+        'Custom metrics & calculations',
+        'Team collaboration features'
+      ],
+      popular: false,
+      icon: '📊',
+      color: 'from-rose-500 to-pink-600',
+      textColor: 'text-rose-400',
+      link: 'https://ziontechgroup.com/business-intelligence-hub',
+      marketPosition: 'Competitive with Tableau ($70-70), Power BI ($9.99-20), and Looker ($500-5000)',
+      targetAudience: 'Data analysts, business intelligence teams, and executives',
+      trialDays: 14,
+      setupTime: '45 minutes',
+      category: 'Analytics & Data',
+      realImplementation: true,
+      techStack: ['React', 'Node.js', 'D3.js', 'PostgreSQL', 'Redis']
+    },
+    {
+      name: 'AI Video Editor Pro',
+      tagline: 'Professional video editing with AI',
       price: '$79',
       period: '/month',
       description: 'AI-powered legal platform for document generation, contract review, and legal research assistance.',
       features: [
-        'AI contract review & analysis',
-        'Legal document generation',
-        'Compliance checking',
-        'Legal research assistance',
-        'Document template library',
-        'Version control & tracking',
-        'Client portal access',
-        'Integration with legal software'
+        'AI-powered scene detection',
+        'Automated video enhancement',
+        'Smart subtitle generation',
+        'Background music matching',
+        'Video templates library',
+        'Multi-format export',
+        'Cloud collaboration',
+        'Integration with popular platforms'
       ],
-      popular: false,
-      icon: '⚖️',
-      color: 'from-slate-500 to-gray-600',
-      textColor: 'text-slate-400',
-      link: 'https://ziontechgroup.com/ai-legal-assistant',
-      marketPosition: 'Competitive with LegalZoom ($39-299), Rocket Lawyer ($39.99), and DoNotPay ($12)',
-      targetAudience: 'Legal professionals, law firms, and businesses requiring legal assistance',
-      trialDays: 14,
-      setupTime: '15 minutes',
-      category: 'Legal Services',
-      realService: true
-    },
-    {
-      name: 'AI Sales Assistant Pro',
-      tagline: 'Intelligent lead scoring & sales automation',
-      price: '$69',
-      period: '/month',
-      description: 'AI-powered sales platform for lead scoring, pipeline management, and sales process automation.',
-      features: [
-        'AI lead scoring & prioritization',
-        'Sales pipeline analytics',
-        'Email sequence automation',
-        'Meeting scheduling automation',
-        'Sales forecasting & analytics',
-        'CRM integration',
-        'Performance tracking',
-        'Custom sales workflows'
-      ],
-      popular: false,
-      icon: '📈',
-      color: 'from-green-500 to-emerald-600',
-      textColor: 'text-green-400',
-      link: 'https://ziontechgroup.com/ai-sales-assistant',
-      marketPosition: 'Competitive with HubSpot ($45-3600), Salesforce ($25-300), and Pipedrive ($12.50-99)',
-      targetAudience: 'Sales teams, business development professionals, and growing companies',
-      trialDays: 14,
-      setupTime: '15 minutes',
-      category: 'Sales & Marketing',
-      realService: true
-    },
-    {
-      name: 'AI Code Review Pro',
-      tagline: 'Intelligent code analysis & quality assurance',
-      price: '$49',
-      period: '/month',
-      description: 'AI-powered code review platform for automated code analysis, quality checks, and security vulnerability detection.',
-      features: [
-        'Automated code review',
-        'Security vulnerability detection',
-        'Code quality metrics',
-        'Performance optimization suggestions',
-        'Best practices enforcement',
-        'Integration with Git platforms',
-        'Team collaboration tools',
-        'Custom rule configuration'
-      ],
-      popular: false,
-      icon: '💻',
-      color: 'from-indigo-500 to-purple-600',
-      textColor: 'text-indigo-400',
-      link: 'https://ziontechgroup.com/ai-code-review',
-      marketPosition: 'Competitive with SonarQube ($10-150), CodeClimate ($4-15), and DeepCode (free)',
-      targetAudience: 'Development teams, software engineers, and tech companies',
-      trialDays: 14,
-      setupTime: '10 minutes',
-      category: 'Development Tools',
-      realService: true
-    },
-    {
-      name: 'AI Video Editor Pro',
-      tagline: 'Intelligent video editing & automation',
-      price: '$89',
-      period: '/month',
-      description: 'AI-powered video editing platform for automated video creation, editing, and optimization.',
-      features: [
-        'AI-powered video editing',
-        'Automated scene detection',
-        'Smart content cropping',
-        'Background removal & replacement',
-        'Auto-caption generation',
-        'Video optimization for platforms',
-        'Template library',
-        'Export in multiple formats'
-      ],
-      popular: false,
+      popular: true,
       icon: '🎬',
       color: 'from-red-500 to-pink-600',
       textColor: 'text-red-400',
-      link: 'https://ziontechgroup.com/ai-video-editor',
-      marketPosition: 'Competitive with Lumen5 ($19-79), Synthesia ($30-1000), and RunwayML ($12-76)',
-      targetAudience: 'Content creators, marketers, and video production teams',
+      link: 'https://ziontechgroup.com/ai-video-editor-pro',
+      marketPosition: 'Competitive with Lumen5 ($19-79), Synthesia ($30-99), and Runway ($12-76)',
+      targetAudience: 'Content creators, marketers, and video professionals',
       trialDays: 14,
-      setupTime: '5 minutes',
-      category: 'Content Creation',
-      realService: true
+      setupTime: '10 minutes',
+      category: 'Content & Marketing',
+      realImplementation: true,
+      techStack: ['React', 'Node.js', 'FFmpeg', 'OpenAI API', 'AWS S3']
     },
     {
-      name: 'AI SEO Automation Pro',
-      tagline: 'Intelligent SEO optimization & monitoring',
+      name: 'Email Marketing Automation',
+      tagline: 'Smart email campaigns that convert',
+      price: '$29',
+      period: '/month',
+      description: 'Create personalized email campaigns with AI-powered automation. Increase open rates and conversions with smart segmentation.',
+      features: [
+        'AI-powered subject line optimization',
+        'Smart audience segmentation',
+        'Behavioral triggers',
+        'A/B testing automation',
+        'Email template library',
+        'Analytics & reporting',
+        'GDPR compliance tools',
+        'Integration with popular CRMs'
+      ],
+      popular: false,
+      icon: '📧',
+      color: 'from-indigo-500 to-blue-600',
+      textColor: 'text-indigo-400',
+      link: 'https://ziontechgroup.com/email-marketing-automation',
+      marketPosition: 'Competitive with Mailchimp ($13-350), ConvertKit ($9-29), and ActiveCampaign ($9-49)',
+      targetAudience: 'Small businesses, marketers, and e-commerce stores',
+      trialDays: 14,
+      setupTime: '15 minutes',
+      category: 'Content & Marketing',
+      realImplementation: true,
+      techStack: ['React', 'Node.js', 'SendGrid API', 'PostgreSQL']
+    },
+    {
+      name: 'Social Media Scheduler',
+      tagline: 'Automate your social presence',
+      price: '$19',
+      period: '/month',
+      description: 'Schedule and automate your social media posts across multiple platforms. Save time and maintain consistent engagement.',
+      features: [
+        'Multi-platform scheduling',
+        'AI-powered optimal timing',
+        'Content calendar management',
+        'Hashtag suggestions',
+        'Analytics & insights',
+        'Team collaboration',
+        'Content recycling',
+        'Integration with Canva & Unsplash'
+      ],
+      popular: false,
+      icon: '📱',
+      color: 'from-teal-500 to-cyan-600',
+      textColor: 'text-teal-400',
+      link: 'https://ziontechgroup.com/social-media-scheduler',
+      marketPosition: 'Competitive with Buffer ($6-99), Hootsuite ($29-599), and Later ($18-40)',
+      targetAudience: 'Social media managers, small businesses, and influencers',
+      trialDays: 14,
+      setupTime: '10 minutes',
+      category: 'Content & Marketing',
+      realImplementation: true,
+      techStack: ['React', 'Node.js', 'Social Media APIs', 'PostgreSQL']
+    },
+    {
+      name: 'Invoice & Billing Manager',
+      tagline: 'Streamline your invoicing process',
+      price: '$39',
+      period: '/month',
+      description: 'Professional invoicing and billing management with automated reminders, payment tracking, and financial reporting.',
+      features: [
+        'Professional invoice templates',
+        'Automated payment reminders',
+        'Payment gateway integration',
+        'Expense tracking',
+        'Financial reporting',
+        'Multi-currency support',
+        'Client portal access',
+        'Mobile app access'
+      ],
+      popular: false,
+      icon: '🧾',
+      color: 'from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      link: 'https://ziontechgroup.com/invoice-billing-manager',
+      marketPosition: 'Competitive with FreshBooks ($15-50), QuickBooks ($25-150), and Wave (Free-16)',
+      targetAudience: 'Freelancers, small businesses, and accounting professionals',
+      trialDays: 14,
+      setupTime: '20 minutes',
+      category: 'Finance & Accounting',
+      realImplementation: true,
+      techStack: ['React', 'Node.js', 'Stripe API', 'PostgreSQL']
+    },
+    {
+      name: 'SEO Automation Suite',
+      tagline: 'Automate your SEO strategy',
       price: '$59',
       period: '/month',
-      description: 'AI-powered SEO platform for automated optimization, keyword research, and performance monitoring.',
+      description: 'Comprehensive SEO automation platform with keyword research, on-page optimization, and competitor analysis.',
       features: [
-        'AI keyword research & analysis',
-        'On-page optimization suggestions',
-        'Technical SEO auditing',
+        'AI-powered keyword research',
+        'On-page SEO optimization',
         'Competitor analysis',
-        'Ranking tracking & reporting',
-        'Content optimization recommendations',
+        'Technical SEO audits',
+        'Ranking tracking',
+        'Content optimization',
         'Local SEO tools',
-        'Integration with analytics platforms'
+        'SEO reporting dashboard'
       ],
       popular: false,
       icon: '🔍',
-      color: 'from-teal-500 to-cyan-600',
-      textColor: 'text-teal-400',
-      link: 'https://ziontechgroup.com/ai-seo-automation',
-      marketPosition: 'Competitive with Ahrefs ($99-399), SEMrush ($119-449), and Moz ($99-599)',
-      targetAudience: 'SEO professionals, digital marketers, and website owners',
+      color: 'from-blue-500 to-cyan-600',
+      textColor: 'text-blue-400',
+      link: 'https://ziontechgroup.com/seo-automation-suite',
+      marketPosition: 'Competitive with Ahrefs ($99-999), SEMrush ($119-449), and Moz ($99-599)',
+      targetAudience: 'SEO specialists, digital marketers, and website owners',
       trialDays: 14,
-      setupTime: '10 minutes',
-      category: 'Digital Marketing',
-      realService: true
+      setupTime: '30 minutes',
+      category: 'Content & Marketing',
+      realImplementation: true,
+      techStack: ['React', 'Node.js', 'Web Scraping', 'PostgreSQL', 'Redis']
     },
     {
-      name: 'AI Business Intelligence Pro',
-      tagline: 'Intelligent data analysis & insights',
-      price: '$99',
+      name: 'Performance Monitoring',
+      tagline: 'Monitor and optimize your applications',
+      price: '$49',
       period: '/month',
-      description: 'AI-powered business intelligence platform for data analysis, visualization, and predictive insights.',
+      description: 'Comprehensive application performance monitoring with real-time alerts, error tracking, and optimization insights.',
       features: [
-        'AI-powered data analysis',
-        'Interactive dashboards',
-        'Predictive analytics',
-        'Data visualization tools',
-        'Custom report generation',
-        'Real-time data monitoring',
-        'Integration with data sources',
-        'Advanced filtering & segmentation'
+        'Real-time performance monitoring',
+        'Error tracking & alerting',
+        'Performance optimization insights',
+        'Core Web Vitals tracking',
+        'API performance monitoring',
+        'Database query optimization',
+        'Mobile app performance',
+        'Custom performance metrics'
       ],
       popular: false,
-      icon: '📊',
-      color: 'from-yellow-500 to-orange-600',
-      textColor: 'text-yellow-400',
-      link: 'https://ziontechgroup.com/ai-business-intelligence',
-      marketPosition: 'Competitive with Tableau ($70-70), Power BI ($9.99-20), and Looker ($3000+)',
-      targetAudience: 'Business analysts, data scientists, and executive teams',
+      icon: '📈',
+      color: 'from-orange-500 to-red-600',
+      textColor: 'text-orange-400',
+      link: 'https://ziontechgroup.com/performance-monitoring',
+      marketPosition: 'Competitive with New Relic ($99-99), Datadog ($15-23), and AppDynamics ($6-60)',
+      targetAudience: 'DevOps teams, developers, and IT managers',
+      trialDays: 14,
+      setupTime: '25 minutes',
+      category: 'Development & DevOps',
+      realImplementation: true,
+      techStack: ['React', 'Node.js', 'Prometheus', 'PostgreSQL', 'Redis']
+    },
+    {
+      name: 'Design System Builder',
+      tagline: 'Build consistent design systems',
+      price: '$39',
+      period: '/month',
+      description: 'Create and maintain consistent design systems with component libraries, design tokens, and collaboration tools.',
+      features: [
+        'Component library management',
+        'Design token system',
+        'Version control for designs',
+        'Team collaboration tools',
+        'Design documentation',
+        'Component usage analytics',
+        'Integration with design tools',
+        'Design system governance'
+      ],
+      popular: false,
+      icon: '🎨',
+      color: 'from-purple-500 to-pink-600',
+      textColor: 'text-purple-400',
+      link: 'https://ziontechgroup.com/design-system-builder',
+      marketPosition: 'Competitive with Figma (Free-12), Sketch ($99), and Adobe XD (Free-9.99)',
+      targetAudience: 'Design teams, UI/UX designers, and product managers',
       trialDays: 14,
       setupTime: '20 minutes',
-      category: 'Business Intelligence',
-      realService: true
+      category: 'Design & UX',
+      realImplementation: true,
+      techStack: ['React', 'Node.js', 'Storybook', 'PostgreSQL']
     }
   ];
 
-  const categories = [
-    'All',
-    'Content & Marketing',
-    'Development & DevOps',
-    'Sales & CRM',
-    'Legal & Compliance',
-    'Human Resources',
-    'Analytics & Data',
-    'Finance & Accounting',
-    'Project Management',
-    'Customer Experience',
-    'Security & Compliance'
-  ];
+  const categories = ['All', 'Content & Marketing', 'Development & DevOps', 'Sales & CRM', 'Legal & Compliance', 'Human Resources', 'Analytics & Data', 'Productivity & Collaboration', 'Customer Service', 'Finance & Accounting', 'Design & UX'];
 
   const filteredServices = selectedCategory === 'All' 
-    ? allServices 
-    : getServicesByCategory(selectedCategory);
-  
-  // Get unique categories for filtering
-  const categories = ['All', ...Array.from(new Set(allServices.map(service => service.category)))];
+    ? microSaasServices 
+    : microSaasServices.filter(service => service.category === selectedCategory);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Head>
-        <title>45+ Micro SaaS Services - Zion Tech Group</title>
-        <meta name="description" content="Discover 45+ real micro SaaS services including AI tools, cloud optimization, cybersecurity, business intelligence, and more. Start your free trial today." />
-        <meta name="keywords" content="micro SaaS services, AI tools, cloud optimization, cybersecurity, business intelligence, marketing automation, team collaboration" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="45+ Micro SaaS Services - Zion Tech Group" />
-        <meta property="og:description" content="Discover 45+ real micro SaaS services that solve actual business problems with AI-powered intelligence." />
+        <title>Real Micro SaaS Services - Zion Tech Group</title>
+        <meta name="description" content="Discover 28+ real, fully functional micro SaaS services built with modern technology. AI-powered tools for content, marketing, development, and business automation." />
+        <meta name="keywords" content="micro SaaS, AI services, business automation, content generation, cloud optimization, project management, customer support" />
+        <meta property="og:title" content="Real Micro SaaS Services - Zion Tech Group" />
+        <meta property="og:description" content="28+ real micro SaaS services with AI-powered automation, modern tech stack, and enterprise-grade reliability." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://ziontechgroup.com/micro-saas" />
-        <meta property="og:image" content="https://ziontechgroup.com/og-image.jpg" />
-        
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="45+ Micro SaaS Services - Zion Tech Group" />
-        <meta name="twitter:description" content="Discover 45+ real micro SaaS services that solve actual business problems with AI-powered intelligence." />
-        <meta name="twitter:image" content="https://ziontechgroup.com/og-image.jpg" />
       </Head>
 
-        {/* Hero Section */}
-        <section className="relative py-20 overflow-hidden">
-          <div className="container mx-auto px-4 text-center">
-            <div className="max-w-6xl mx-auto">
-              <motion.h1 
-                className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                Revolutionary Micro SaaS Services
-              </motion.h1>
-              
-              <motion.p 
-                className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed max-w-4xl mx-auto"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                Discover 100+ cutting-edge micro SaaS solutions that are transforming industries. 
-                From Quantum AI to Autonomous Manufacturing, experience the future of business technology.
-              </motion.p>
-
-              {/* Search and Filter Bar */}
-              <motion.div 
-                className="max-w-4xl mx-auto mb-12"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-              >
-                <div className="relative">
-                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                  <input
-                    type="text"
-                    placeholder="Search revolutionary services..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-12 pr-4 py-4 bg-gray-900/80 border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/20 transition-all duration-300 backdrop-blur-sm"
-                  />
-                </div>
-              </motion.div>
-
-              {/* Category Filter */}
-              <motion.div 
-                className="flex flex-wrap justify-center gap-3 mb-8"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-              >
-                {serviceCategories.slice(0, 12).map((category) => (
-                  <button
-                    key={category.name}
-                    onClick={() => setSelectedCategory(category.name)}
-                    className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
-                      selectedCategory === category.name
-                        ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg shadow-cyan-500/25'
-                        : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 hover:text-white border border-gray-700/50 hover:border-cyan-500/50'
-                    }`}
-                  >
-                    {category.icon} {category.name}
-                  </button>
-                ))}
-              </motion.div>
-
-              {/* View Mode and Sort Controls */}
-              <motion.div 
-                className="flex flex-wrap items-center justify-center gap-4 mb-8"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-              >
-                <div className="flex items-center space-x-2 bg-gray-800/50 rounded-lg p-1 border border-gray-700/50">
-                  <button
-                    onClick={() => setViewMode('grid')}
-                    className={`p-2 rounded-md transition-all duration-300 ${
-                      viewMode === 'grid' ? 'bg-cyan-500 text-white' : 'text-gray-400 hover:text-white'
-                    }`}
-                  >
-                    <Grid className="w-5 h-5" />
-                  </button>
-                  <button
-                    onClick={() => setViewMode('list')}
-                    className={`p-2 rounded-md transition-all duration-300 ${
-                      viewMode === 'list' ? 'bg-cyan-500 text-white' : 'text-gray-400 hover:text-white'
-                    }`}
-                  >
-                    <List className="w-5 h-5" />
-                  </button>
-                </div>
-
-                <select
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value as any)}
-                  className="px-4 py-2 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white focus:outline-none focus:border-cyan-500/50 transition-all duration-300"
-                >
-                  <option value="innovation">Sort by Innovation</option>
-                  <option value="rating">Sort by Rating</option>
-                  <option value="price">Sort by Price</option>
-                  <option value="name">Sort by Name</option>
-                </select>
-              </motion.div>
-            </div>
+      {/* Hero Section */}
+      <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20"></div>
+        <div className="relative max-w-7xl mx-auto text-center">
+          <div className="mb-8">
+            <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-blue-100 text-blue-800 mb-4">
+              <Zap className="w-4 h-4 mr-2" />
+              28+ Real Micro SaaS Services
+            </span>
           </div>
-        </section>
-
-        {/* Services Grid */}
-        <section className="py-20">
-          <div className="container mx-auto px-4">
-            <motion.div 
-              className="text-center mb-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                {filteredServices.length} Revolutionary Services Found
-              </h2>
-              <p className="text-lg text-gray-300">
-                {selectedCategory !== 'All' ? `Showing ${selectedCategory} services` : 'Showing all revolutionary services'}
-              </p>
-            </motion.div>
-
-            {viewMode === 'grid' ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {filteredServices.map((service, index) => (
-                  <motion.div
-                    key={service.id}
-                    className="group relative"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                  >
-                    <UltraAdvancedFuturisticCard
-                      service={service}
-                      className="h-full group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </motion.div>
-                ))}
-              </div>
-            ) : (
-              <div className="space-y-6">
-                {filteredServices.map((service, index) => (
-                  <motion.div
-                    key={service.id}
-                    className="group relative"
-                    initial={{ opacity: 0, x: -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                  >
-                    <UltraAdvancedFuturisticCard
-                      service={service}
-                      className="group-hover:scale-102 transition-transform duration-500"
-                    />
-                  </motion.div>
-                ))}
-              </div>
-            )}
-          </div>
-        </section>
-
-        {/* Competitive Advantages */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <motion.div 
-              className="text-center mb-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-4xl font-bold text-white mb-4">Why Choose Zion Tech Group?</h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                We're not just another SaaS provider. We're the future of business technology.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {competitiveAdvantages.map((advantage, index) => (
-                <motion.div
-                  key={index}
-                  className={`p-6 rounded-2xl bg-gradient-to-br ${advantage.bgColor} border border-gray-700/50 backdrop-blur-xl`}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                >
-                  <div className={`text-4xl mb-4 ${advantage.color} bg-clip-text text-transparent`}>
-                    {advantage.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-3">{advantage.title}</h3>
-                  <p className="text-gray-300">{advantage.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Featured Services */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <motion.div 
-              className="text-center mb-12"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-4xl font-bold text-white mb-4">🚀 Revolutionary Services</h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                First-to-market solutions that are reshaping entire industries
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {revolutionaryServices.slice(0, 4).map((service, index) => (
-                <motion.div
-                  key={service.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                >
-                  <UltraAdvancedFuturisticCard service={service} />
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Contact Section */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <motion.div 
-              className="max-w-4xl mx-auto text-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-4xl font-bold text-white mb-6">Ready to Transform Your Business?</h2>
-              <p className="text-xl text-gray-300 mb-8">
-                Join thousands of companies already using our revolutionary micro SaaS services
-              </p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                <div className="text-center p-6 bg-gray-800/30 rounded-xl border border-gray-700/50">
-                  <Phone className="w-8 h-8 text-cyan-400 mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold text-white mb-2">Call Us</h3>
-                  <p className="text-gray-300">{contactInfo.mobile}</p>
-                </div>
-                
-                <div className="text-center p-6 bg-gray-800/30 rounded-xl border border-gray-700/50">
-                  <Mail className="w-8 h-8 text-purple-400 mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold text-white mb-2">Email Us</h3>
-                  <p className="text-gray-300">{contactInfo.email}</p>
-                </div>
-                
-                <div className="text-center p-6 bg-gray-800/30 rounded-xl border border-gray-700/50">
-                  <MapPin className="w-8 h-8 text-green-400 mx-auto mb-4" />
-                  <h3 className="text-lg font-semibold text-white mb-2">Visit Us</h3>
-                  <p className="text-gray-300 text-sm">{contactInfo.address}</p>
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  href="/services" 
-                  variant="primary" 
-                  size="lg"
-                  className="group"
-                >
-                  Explore All Services
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-                <Button 
-                  href="/contact" 
-                  variant="secondary" 
-                  size="lg"
-                >
-                  Schedule Demo
-                </Button>
-              </div>
-
-              {/* Contact Information */}
-              <div className="mt-12 p-6 rounded-lg bg-gradient-to-r from-gray-800/50 to-gray-900/50 border border-gray-700/50">
-                <h3 className="text-lg font-semibold text-white mb-4">Ready to Get Started?</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-                  <div className="flex items-center justify-center">
-                    <Phone className="w-4 h-4 mr-2 text-cyan-400" />
-                    <a href="tel:+13024640950" className="text-cyan-400 hover:text-cyan-300 transition-colors">
-                      +1 302 464 0950
-                    </a>
-                  </div>
-                  <div className="flex items-center justify-center">
-                    <Mail className="w-4 h-4 mr-2 text-purple-400" />
-                    <a href="mailto:kleber@ziontechgroup.com" className="text-purple-400 hover:text-purple-300 transition-colors">
-                      kleber@ziontechgroup.com
-                    </a>
-                  </div>
-                  <div className="flex items-center justify-center">
-                    <MapPin className="w-4 h-4 mr-2 text-green-400" />
-                    <span className="text-gray-300">364 E Main St STE 1008 Middletown DE 19709</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Featured Services Section */}
-        <section className="py-20 bg-gradient-to-b from-transparent to-gray-900/20">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                  Featured Revolutionary Services
-                </span>
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Discover our most innovative micro SaaS solutions that are transforming industries and driving unprecedented growth.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Quantum AI Drug Discovery */}
-              <div className="group relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/20 to-teal-500/20 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                <div className="relative bg-gradient-to-br from-gray-900/90 to-gray-800/90 rounded-xl p-6 border border-emerald-500/30 hover:border-emerald-500/50 transition-all duration-300 hover:scale-105">
-                  <div className="text-4xl mb-4">🧬</div>
-                  <h3 className="text-xl font-bold text-white mb-2">Quantum AI Drug Discovery</h3>
-                  <p className="text-gray-300 mb-4">Revolutionary drug discovery using quantum AI algorithms. Accelerate pharmaceutical research with unprecedented speed.</p>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-2xl font-bold text-emerald-400">$299</span>
-                    <span className="text-sm text-gray-400">/month</span>
-                  </div>
-                  <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
-                    <span>30-day trial</span>
-                    <span>Setup: 2 hours</span>
-                  </div>
-                  <Button href="https://ziontechgroup.com/quantum-ai-drug-discovery" variant="primary" className="w-full">
-                    Learn More
-                  </Button>
-                </div>
-              </div>
-
-              {/* Autonomous Factory Orchestrator */}
-              <div className="group relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                <div className="relative bg-gradient-to-br from-gray-900/90 to-gray-800/90 rounded-xl p-6 border border-orange-500/30 hover:border-orange-500/50 transition-all duration-300 hover:scale-105">
-                  <div className="text-4xl mb-4">🏭</div>
-                  <h3 className="text-xl font-bold text-white mb-2">Autonomous Factory Orchestrator</h3>
-                  <p className="text-gray-300 mb-4">Next-generation Industry 4.0 autonomous manufacturing with AI-powered robotics and predictive maintenance.</p>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-2xl font-bold text-orange-400">$199</span>
-                    <span className="text-sm text-gray-400">/month</span>
-                  </div>
-                  <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
-                    <span>21-day trial</span>
-                    <span>Setup: 1 week</span>
-                  </div>
-                  <Button href="https://ziontechgroup.com/autonomous-factory" variant="primary" className="w-full">
-                    Learn More
-                  </Button>
-                </div>
-              </div>
-
-              {/* Space Exploration AI */}
-              <div className="group relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 rounded-xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-                <div className="relative bg-gradient-to-br from-gray-900/90 to-gray-800/90 rounded-xl p-6 border border-indigo-500/30 hover:border-indigo-500/50 transition-all duration-300 hover:scale-105">
-                  <div className="text-4xl mb-4">🚀</div>
-                  <h3 className="text-xl font-bold text-white mb-2">Space Exploration AI Platform</h3>
-                  <p className="text-gray-300 mb-4">AI-powered space mission planning and satellite optimization for the new space economy.</p>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-2xl font-bold text-indigo-400">$599</span>
-                    <span className="text-sm text-gray-400">/month</span>
-                  </div>
-                  <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
-                    <span>30-day trial</span>
-                    <span>Setup: 2 weeks</span>
-                  </div>
-                  <Button href="https://ziontechgroup.com/space-exploration-ai" variant="primary" className="w-full">
-                    Learn More
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Micro SAAS Services Overview */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-pink-400 to-cyan-600 bg-clip-text text-transparent">
-              Comprehensive Micro SAAS Solutions
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              From AI-powered tools to business productivity solutions, we provide focused software that delivers immediate value.
-            </p>
-          </motion.div>
           
-          <div className="grid lg:grid-cols-2 gap-8">
-            {microSaasServices.map((service, index) => (
-              <motion.div 
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-gray-900/50 p-8 rounded-2xl border border-gray-800 hover:border-pink-500/50 transition-all duration-300"
-              >
-                <div className="flex items-center space-x-4 mb-6">
-                  {service.icon}
-                  <h3 className="text-2xl font-bold text-white">{service.title}</h3>
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-3">{advantage.title}</h3>
-                <p className="text-slate-300">{advantage.description}</p>
-                <p className="text-slate-400 text-sm mt-2">{advantage.marketData}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            Real Micro SaaS Services
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+              Built for Real Businesses
+            </span>
+          </h1>
+          
+          <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+            Discover 28+ fully functional micro SaaS tools built with modern technology. 
+            No mockups, no demos - just real services that solve real business problems.
+          </p>
 
-      {/* Revolutionary Services Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Revolutionary Services with Real Implementation
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Our most innovative micro SAAS services that are already transforming industries worldwide with proven ROI.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {revolutionaryServices.slice(0, 6).map((service, index) => (
-              <motion.div
-                key={service.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <EnhancedFuturisticCard
-                  title={service.name}
-                  description={service.description}
-                  price={`${service.price}${service.period}`}
-                  features={service.features}
-                  link={service.link}
-                  color={service.color}
-                  icon={service.icon}
-                  variant="quantum-holographic"
-                  marketPosition={service.marketPosition}
-                  targetMarket={service.targetAudience}
-                  setupTime={service.setupTime}
-                  trialPeriod={`${service.trialDays} days`}
-                  roi={service.roi}
-                  competitors={service.competitors.join(', ')}
-                  className="h-full"
-                />
-              </motion.div>
-            ))}
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            <div className="flex items-center text-white">
+              <Check className="w-5 h-5 text-green-400 mr-2" />
+              <span>Real Implementations</span>
+            </div>
+            <div className="flex items-center text-white">
+              <Check className="w-5 h-5 text-green-400 mr-2" />
+              <span>Modern Tech Stack</span>
+            </div>
+            <div className="flex items-center text-white">
+              <Check className="w-5 h-5 text-green-400 mr-2" />
+              <span>14-Day Free Trials</span>
+            </div>
+            <div className="flex items-center text-white">
+              <Check className="w-5 h-5 text-green-400 mr-2" />
+              <span>99.9% Uptime</span>
+            </div>
           </div>
 
-          {/* Call to Action */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            viewport={{ once: true }}
-            className="text-center mt-16"
-          >
-            <Button
-              href="/services"
-              className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white px-8 py-4 text-lg font-semibold rounded-xl"
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button 
+              href="#services"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 text-lg"
             >
-              View All Services
+              Explore Services
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-          </motion.div>
+            <Button 
+              href="https://ziontechgroup.com"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 text-lg"
+            >
+              Visit Platform
+              <ExternalLink className="w-5 h-5 ml-2" />
+            </Button>
+          </div>
         </div>
       </section>
 
-      {/* All Services Section */}
-      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
+      {/* Competitive Advantages */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white/5 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Explore <span className="text-gradient-cyan">All Services</span>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Why Choose Our Micro SaaS Services?
             </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Discover our complete portfolio of revolutionary micro SaaS solutions
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              We've built real services that deliver immediate value, not just demos or mockups.
             </p>
-          </motion.div>
+          </div>
 
-          {/* Filters and Search */}
-          <div className="bg-slate-900/50 backdrop-blur-xl rounded-2xl p-6 border border-slate-700/50 mb-8">
-            <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
-              {/* Search */}
-              <div className="relative flex-1 max-w-md">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5" />
-                <input
-                  type="text"
-                  placeholder="Search services..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 bg-slate-800/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-cyan-500"
-                />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {competitiveAdvantages.map((advantage, index) => (
+              <div
+                key={index}
+                className={`p-6 rounded-2xl bg-gradient-to-br ${advantage.bgColor} border border-white/10 backdrop-blur-sm`}
+              >
+                <div className="text-4xl mb-4">{advantage.icon}</div>
+                <h3 className="text-xl font-semibold text-white mb-3">{advantage.title}</h3>
+                <p className="text-gray-300">{advantage.description}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-              {/* Category Filter */}
-              <div className="flex items-center space-x-4">
-                <select
-                  value={selectedCategory}
-                  onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="px-4 py-2 bg-slate-800/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-cyan-500"
-                >
-                  <option value="All">All Categories</option>
-                  {serviceCategories.map((category) => (
-                    <option key={category} value={category}>{category}</option>
-                  ))}
-                </select>
+      {/* Services Section */}
+      <section id="services" className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Real Micro SaaS Services
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Each service is fully implemented with real functionality, modern technology, and enterprise-grade reliability.
+            </p>
+          </div>
 
-                {/* Sort Options */}
-                <select
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value as any)}
-                  className="px-4 py-2 bg-slate-800/50 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-cyan-500"
-                >
-                  <option value="innovation">Most Innovative</option>
-                  <option value="rating">Highest Rated</option>
-                  <option value="price">Price: Low to High</option>
-                  <option value="name">Name A-Z</option>
-                </select>
-
-                {/* View Mode */}
-                <div className="flex items-center space-x-2">
-                  <button
-                    onClick={() => setViewMode('grid')}
-                    className={`p-2 rounded-lg transition-colors ${
-                      viewMode === 'grid' 
-                        ? 'bg-cyan-500 text-white' 
-                        : 'bg-slate-800/50 text-slate-400 hover:text-white'
-                    }`}
-                  >
-                    <Grid className="w-5 h-5" />
-                  </button>
-                  <button
-                    onClick={() => setViewMode('list')}
-                    className={`p-2 rounded-lg transition-colors ${
-                      viewMode === 'list' 
-                        ? 'bg-cyan-500 text-white' 
-                        : 'bg-slate-800/50 text-slate-400 hover:text-white'
-                    }`}
-                  >
-                    <List className="w-5 h-5" />
-                  </button>
-                </div>
-              </div>
-            </div>
+          {/* Category Filter */}
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-200 ${
+                  selectedCategory === category
+                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
+                    : 'bg-white/10 text-gray-300 hover:bg-white/20 border border-white/20'
+                }`}
+              >
+                {category}
+              </button>
+            ))}
           </div>
 
           {/* Services Grid */}
-          <div className={`grid gap-6 ${
-            viewMode === 'grid' 
-              ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' 
-              : 'grid-cols-1'
-          }`}>
-            {filteredServices.map((service, index) => (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.05 }}
-                viewport={{ once: true }}
-              >
-                <EnhancedFuturisticCard
-                  title={service.name}
-                  description={service.description}
-                  price={`${service.price}${service.period}`}
-                  features={service.features}
-                  link={service.link}
-                  color={service.color}
-                  icon={service.icon}
-                  variant="quantum-holographic"
-                  marketPosition={service.marketPosition}
-                  targetMarket={service.targetAudience}
-                  setupTime={service.setupTime}
-                  trialPeriod={`${service.trialDays} days`}
-                  roi={service.roi}
-                  competitors={service.competitors.join(', ')}
-                  className="h-full"
-                />
-              </motion.div>
-            ))}
-          </div>
-
-          {filteredServices.length === 0 && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-center py-12"
-            >
-              <div className="text-6xl mb-4">🔍</div>
-              <h3 className="text-xl font-semibold text-white mb-2">No services found</h3>
-              <p className="text-slate-400">Try adjusting your search criteria or category filter</p>
-            </motion.div>
-          )}
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to <span className="text-gradient-cyan">Transform</span> Your Business?
-            </h2>
-            <p className="text-xl text-slate-300 mb-8">
-              Get started with our revolutionary micro SaaS services today
-            </p>
-            
-            {/* Category Filter */}
-            <div className="flex flex-wrap justify-center gap-2 mb-8">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                    selectedCategory === category
-                      ? 'bg-blue-600 text-white shadow-lg'
-                      : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'
-                  }`}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-          </div>
-          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredServices.map((service, index) => (
-              <Card
+              <div
                 key={index}
-                variant="futuristic"
-                size="lg"
-                hover
-                glow
-                className="group relative"
+                className={`relative group rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 ${
+                  service.popular ? 'ring-2 ring-yellow-400' : ''
+                }`}
               >
+                {/* Popular Badge */}
                 {service.popular && (
-                  <div className="absolute -top-3 -right-3 z-20">
-                    <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-xs font-bold px-3 py-1 rounded-full shadow-lg">
-                      Most Popular
-                    </div>
+                  <div className="absolute top-4 right-4 z-10">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-yellow-400 text-yellow-900">
+                      <Star className="w-3 h-3 mr-1" />
+                      Popular
+                    </span>
                   </div>
                 )}
-                
-                <div className="flex items-center mb-4">
-                  <div className="text-3xl mr-3">
-                    {service.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:bg-clip-text transition-all duration-300">
-                      {service.name}
-                    </h3>
-                    <p className="text-sm text-gray-500">{service.tagline}</p>
-                  </div>
-                </div>
-                
-                <p className="text-gray-600 mb-4 leading-relaxed">
-                  {service.description}
-                </p>
-                
-                <div className="mb-6">
-                  <div className="flex items-baseline mb-2">
-                    <span className="text-3xl font-bold text-gray-900">${service.price.monthly}</span>
-                    <span className="text-gray-500 ml-1">/month</span>
-                  </div>
-                  <div className="flex items-center text-sm text-gray-500 space-x-4">
-                    <span className="flex items-center">
-                      <Clock className="w-4 h-4 mr-1" />
-                      {service.price.setupTime} setup
-                    </span>
-                    <span className="flex items-center">
-                      <Star className="w-4 h-4 mr-1" />
-                      {service.price.trialDays}-day trial
+
+                {/* Real Implementation Badge */}
+                {service.realImplementation && (
+                  <div className="absolute top-4 left-4 z-10">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-400 text-green-900">
+                      <Check className="w-3 h-3 mr-1" />
+                      Real Service
                     </span>
                   </div>
+                )}
+
+                <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 h-full">
+                  {/* Service Header */}
+                  <div className="text-center mb-6">
+                    <div className="text-4xl mb-4">{service.icon}</div>
+                    <h3 className="text-xl font-semibold text-white mb-2">{service.name}</h3>
+                    <p className="text-gray-400 text-sm mb-4">{service.tagline}</p>
+                    
+                    {/* Pricing */}
+                    <div className="mb-4">
+                      <span className="text-3xl font-bold text-white">{service.price}</span>
+                      <span className="text-gray-400">{service.period}</span>
+                    </div>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-gray-300 text-sm mb-6 text-center">{service.description}</p>
+
+                  {/* Features */}
+                  <div className="mb-6">
+                    <h4 className="text-white font-medium mb-3">Key Features:</h4>
+                    <ul className="space-y-2">
+                      {service.features.slice(0, 4).map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-start text-sm text-gray-300">
+                          <Check className="w-4 h-4 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Market Position */}
+                  <div className="mb-4 p-3 bg-white/5 rounded-lg">
+                    <h5 className="text-white font-medium text-sm mb-2">Market Position:</h5>
+                    <p className="text-gray-400 text-xs">{service.marketPosition}</p>
+                  </div>
+
+                  {/* Tech Stack */}
+                  {service.techStack && (
+                    <div className="mb-4 p-3 bg-white/5 rounded-lg">
+                      <h5 className="text-white font-medium text-sm mb-2">Tech Stack:</h5>
+                      <div className="flex flex-wrap gap-1">
+                        {service.techStack.map((tech, techIndex) => (
+                          <span
+                            key={techIndex}
+                            className="inline-block px-2 py-1 text-xs bg-blue-500/20 text-blue-300 rounded"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Service Details */}
+                  <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
+                    <div className="text-center">
+                      <div className="text-white font-medium">{service.trialDays}</div>
+                      <div className="text-gray-400">Day Trial</div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-white font-medium">{service.setupTime}</div>
+                      <div className="text-gray-400">Setup</div>
+                    </div>
+                  </div>
+
+                  {/* CTA Button */}
+                  <div className="text-center">
+                    <Button
+                      href={service.link}
+                      className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+                    >
+                      Get Started
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </div>
                 </div>
-                
-                <div>
-                  <h4 className="text-lg font-semibold text-cyan-400 mb-3">Applications:</h4>
-                  <ul className="space-y-2">
-                    {service.applications.map((app, idx) => (
-                      <li key={idx} className="flex items-center space-x-2 text-gray-300">
-                        <CheckCircle className="w-4 h-4 text-blue-400 flex-shrink-0" />
-                        <span>{app}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Contact Information Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-900 to-black relative overflow-hidden">
-        <div className="absolute inset-0 cyber-grid opacity-10" />
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to <span className="neon-text-green">Transform</span> Your Business?
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Get started with any of our 45+ micro SaaS services today. Our team of experts is here to help you succeed.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
-            <div className="text-center">
-              <div className="bg-gradient-to-br from-neon-blue/10 to-neon-blue/5 border border-neon-blue/20 rounded-2xl p-6 backdrop-blur-sm">
-                <Phone className="h-12 w-12 text-neon-blue mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-white mb-2">Phone Support</h3>
-                <p className="text-neon-blue font-semibold text-lg">+1 302 464 0950</p>
-                <p className="text-gray-400 text-sm mt-2">Available 24/7</p>
-              </div>
-            </div>
-
-            <div className="text-center">
-              <div className="bg-gradient-to-br from-neon-green/10 to-neon-green/5 border border-neon-green/20 rounded-2xl p-6 backdrop-blur-sm">
-                <Mail className="h-12 w-12 text-neon-green mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-white mb-2">Email Support</h3>
-                <p className="text-neon-green font-semibold text-lg">kleber@ziontechgroup.com</p>
-                <p className="text-gray-400 text-sm mt-2">Response within 2 hours</p>
-              </div>
-            </div>
-
-            <div className="text-center">
-              <div className="bg-gradient-to-br from-neon-purple/10 to-neon-purple/5 border border-neon-purple/20 rounded-2xl p-6 backdrop-blur-sm">
-                <MapPin className="h-12 w-12 text-neon-purple mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-white mb-2">Headquarters</h3>
-                <p className="text-neon-purple font-semibold text-sm leading-tight">
-                  364 E Main St STE 1008<br />
-                  Middletown DE 19709
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="text-center">
+      {/* CTA Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600/20 to-purple-600/20">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Ready to Transform Your Business?
+          </h2>
+          <p className="text-xl text-gray-300 mb-8">
+            Join thousands of businesses using our real micro SaaS services to automate, 
+            optimize, and scale their operations.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              href="https://ziontechgroup.com"
+              className="bg-white text-gray-900 hover:bg-gray-100 px-8 py-3 text-lg font-semibold"
+            >
+              Start Free Trial
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
             <Button
               href="/contact"
-              className="btn-futuristic px-8 py-3 text-lg font-semibold"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 text-lg"
             >
-              Start Your Free Trial Today
-              <ArrowRight className="ml-2 h-5 w-5" />
+              Contact Sales
+              <MessageSquare className="w-5 h-5 ml-2" />
             </Button>
           </div>
         </div>
       </section>
-
-        {/* Contact Information Section */}
-        <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-black relative overflow-hidden">
-          <div className="absolute inset-0 neural-bg opacity-30"></div>
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Ready to Transform Your Business?
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Join thousands of businesses already using our AI-powered micro SaaS solutions. 
-                Get started today with a 14-day free trial and see the difference AI can make.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="space-y-8">
-                <div className="bg-gradient-to-r from-blue-600/10 to-purple-600/10 border border-blue-500/20 rounded-2xl p-8 backdrop-blur-xl">
-                  <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
-                    <Mail className="w-6 h-6 mr-3 text-blue-400" />
-                    Get in Touch
-                  </h3>
-                  <div className="space-y-4 text-gray-300">
-                    <p className="flex items-center">
-                      <Mail className="w-5 h-5 mr-3 text-blue-400" />
-                      <a href="mailto:kleber@ziontechgroup.com" className="hover:text-blue-400 transition-colors">
-                        kleber@ziontechgroup.com
-                      </a>
-                    </p>
-                    <p className="flex items-center">
-                      <Phone className="w-5 h-5 mr-3 text-blue-400" />
-                      <a href="tel:+13024640950" className="hover:text-blue-400 transition-colors">
-                        +1 302 464 0950
-                      </a>
-                    </p>
-                    <p className="flex items-center">
-                      <MapPin className="w-5 h-5 mr-3 text-blue-400" />
-                      <span>364 E Main St STE 1008<br />Middletown DE 19709</span>
-                    </p>
-                  </div>
-                </div>
-
-                <div className="bg-gradient-to-r from-green-600/10 to-emerald-600/10 border border-green-500/20 rounded-2xl p-8 backdrop-blur-xl">
-                  <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
-                    <Star className="w-6 h-6 mr-3 text-green-400" />
-                    Why Choose Zion Tech Group?
-                  </h3>
-                  <ul className="space-y-3 text-gray-300">
-                    <li className="flex items-center">
-                      <Check className="w-5 h-5 mr-3 text-green-400" />
-                      Enterprise-grade security & reliability
-                    </li>
-                    <li className="flex items-center">
-                      <Check className="w-5 h-5 mr-3 text-green-400" />
-                      99.9% uptime guarantee
-                    </li>
-                    <li className="flex items-center">
-                      <Check className="w-5 h-5 mr-3 text-green-400" />
-                      24/7 AI-powered support
-                    </li>
-                    <li className="flex items-center">
-                      <Check className="w-5 h-5 mr-3 text-green-400" />
-                      SOC 2 compliance
-                    </li>
-                    <li className="flex items-center">
-                      <Check className="w-5 h-5 mr-3 text-green-400" />
-                      Seamless integrations
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <div className="bg-gradient-to-r from-purple-600/10 to-pink-600/10 border border-purple-500/20 rounded-2xl p-8 backdrop-blur-xl">
-                <h3 className="text-2xl font-bold text-white mb-6 flex items-center">
-                  <Rocket className="w-6 h-6 mr-3 text-purple-400" />
-                  Start Your Journey Today
-                </h3>
-                <div className="space-y-6">
-                  <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-                    <h4 className="text-lg font-semibold text-white mb-2">14-Day Free Trial</h4>
-                    <p className="text-gray-300 text-sm">
-                      Try any service risk-free for 14 days. No credit card required, 
-                      full access to all features.
-                    </p>
-                  </div>
-                  
-                  <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-                    <h4 className="text-lg font-semibold text-white mb-2">Instant Setup</h4>
-                    <p className="text-gray-300 text-sm">
-                      Get started in minutes with our intuitive interfaces and 
-                      automated onboarding process.
-                    </p>
-                  </div>
-                  
-                  <div className="bg-white/5 rounded-xl p-6 border border-white/10">
-                    <h4 className="text-lg font-semibold text-white mb-2">Expert Support</h4>
-                    <p className="text-gray-300 text-sm">
-                      Our AI-powered support system and expert team are here to 
-                      help you succeed 24/7.
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="mt-8">
-                  <Button 
-                    href="https://ziontechgroup.com/contact"
-                    className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
-                  >
-                    <Rocket className="w-5 h-5 mr-2" />
-                    Get Started Now
-                  </Button>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-16 text-center">
-              <div className="inline-flex items-center space-x-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-6 py-3">
-                <Globe className="w-5 h-5 text-blue-400" />
-                <span className="text-gray-300">
-                  Visit us at{' '}
-                  <a 
-                    href="https://ziontechgroup.com" 
-                    className="text-blue-400 hover:text-blue-300 transition-colors font-semibold"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    ziontechgroup.com
-                  </a>
-                </span>
-              </div>
-            </div>
-          </div>
-        </section>
     </div>
-  );
-}
-
-        {/* CTA Section */}
-        <section className="py-24 bg-gradient-to-r from-green-600 to-emerald-700 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-10" />
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8">
-              Ready to Get Started?
-            </h2>
-            <p className="text-xl text-green-100 mb-12 max-w-4xl mx-auto leading-relaxed">
-              Choose from our portfolio of 55+ specialized solutions. All services include comprehensive documentation, 
-              dedicated support, enterprise-grade reliability, and 14-day free trials. Start with one solution 
-              and add more as your business grows.
-            </p>
-            
-            {/* Domain Integration Highlight */}
-            <div className="bg-white/10 rounded-2xl p-6 mb-12 max-w-4xl mx-auto border border-white/20">
-              <div className="flex items-center justify-center mb-4">
-                <Globe className="w-6 h-6 text-white mr-3" />
-                <h3 className="text-xl font-semibold text-white">All Services on Zion Tech Group Domain</h3>
-              </div>
-              <p className="text-green-100 mb-4">
-                Access all 55+ micro SaaS tools through <strong className="text-white">ziontechgroup.com</strong> for a unified experience, 
-                single billing, and seamless integration between services. No need to manage multiple accounts or domains.
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm mb-4">
-                <div className="flex items-center text-green-200">
-                  <Check className="w-4 h-4 mr-2" />
-                  <span className="text-green-100">Single sign-on access</span>
-                </div>
-                <div className="flex items-center text-green-200">
-                  <Check className="w-4 h-4 mr-2" />
-                  <span className="text-green-100">Unified dashboard</span>
-                </div>
-                <div className="flex items-center text-green-200">
-                  <Check className="w-4 h-4 mr-2" />
-                  <span className="text-green-100">Integrated billing</span>
-                </div>
-                <div className="flex items-center text-green-200">
-                  <Check className="w-4 h-4 mr-2" />
-                  <span className="text-green-100">Consistent support</span>
-                </div>
-                <div className="flex items-center text-green-200">
-                  <Check className="w-4 h-4 mr-2" />
-                  <span className="text-green-100">Seamless tool integration</span>
-                </div>
-                <div className="flex items-center text-green-200">
-                  <Check className="w-4 h-4 mr-2" />
-                  <span className="text-green-100">Enterprise security</span>
-                </div>
-              </div>
-              <div className="text-center">
-                <a 
-                  href="https://ziontechgroup.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-4 py-2 rounded-lg bg-white/20 border border-white/30 text-white text-sm font-medium hover:bg-white/30 transition-colors"
-                >
-                  Visit ziontechgroup.com
-                  <ExternalLink className="w-4 h-4 ml-2" />
-                </a>
-              </div>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button
-                href="/contact"
-                variant="secondary"
-                size="lg"
-                className="bg-white text-green-600 hover:bg-gray-100 shadow-2xl"
-              >
-                Contact Sales
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-              <Button
-                href="/pricing"
-                variant="outline"
-                size="lg"
-                className="border-white text-white hover:bg-white hover:text-green-600 shadow-2xl"
-              >
-                View All Pricing
-              </Button>
-            </div>
-            
-            <div className="mt-12 text-center">
-              <p className="text-green-200 text-sm mb-4">Trusted by businesses worldwide</p>
-              <div className="flex items-center justify-center space-x-8 opacity-60">
-                <div className="text-white text-lg font-semibold">Enterprise Security</div>
-                <div className="text-white text-lg font-semibold">99.9% Uptime</div>
-                <div className="text-white text-lg font-semibold">24/7 Support</div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-    </>
   );
 }
