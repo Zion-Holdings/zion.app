@@ -1,4 +1,10 @@
+<<<<<<< HEAD
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import Layout from './layout/Layout';
+import Link from 'next/link';
+=======
 import React, { useState, useEffect, useMemo } from 'react';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-a909
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ArrowRight, Star, 
@@ -26,9 +32,13 @@ const Homepage2025: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [showFloatingActions, setShowFloatingActions] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
+<<<<<<< HEAD
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
+=======
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-a909
 
   // Memoized animation variants for better performance
   const fadeInUp = useMemo(() => ({
@@ -47,12 +57,33 @@ const Homepage2025: React.FC = () => {
 
   // Intersection Observer for animations and section tracking
   useEffect(() => {
+<<<<<<< HEAD
+    const observer = new IntersectionObserver(
+      (entries: IntersectionObserverEntry[]) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const sectionId = entry.target.getAttribute('data-section');
+            if (sectionId) {
+              setActiveSection(sectionId);
+            }
+          }
+        });
+      },
+      { threshold: 0.3, rootMargin: '-50px' }
+    );
+
+    const sections = document.querySelectorAll('[data-section]');
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+=======
     const interval = setInterval(() => {
       // This interval was for currentServiceIndex, which is removed.
       // Keeping it for now as it might be re-introduced or removed later.
       // setCurrentServiceIndex((prev) => (prev + 1) % innovativeRealMicroSaasServices2025.length);
     }, 5000);
     return () => clearInterval(interval);
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-a909
   }, []);
 
   // Simulate loading state with better UX
@@ -98,6 +129,81 @@ const Homepage2025: React.FC = () => {
     }
   }, [searchQuery]);
 
+<<<<<<< HEAD
+  // Enhanced loading component
+  if (isLoading) {
+    return (
+      <Layout>
+        <div className="min-h-screen flex items-center justify-center bg-black">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="text-center"
+          >
+            <div className="relative">
+              <div className="w-24 h-24 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 rounded-full mx-auto mb-6 animate-pulse"></div>
+              <div className="absolute inset-0 w-24 h-24 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 rounded-full animate-ping opacity-20"></div>
+            </div>
+            <motion.h2 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="text-3xl font-bold text-white mb-3"
+            >
+              Loading Zion Tech Group
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="text-gray-400 text-lg"
+            >
+              Preparing the future of technology...
+            </motion.p>
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.6 }}
+              className="mt-6 flex justify-center space-x-2"
+            >
+              {[0, 1, 2].map((i) => (
+                <div
+                  key={i}
+                  className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce"
+                  style={{ animationDelay: `${i * 0.1}s` }}
+                />
+              ))}
+            </motion.div>
+          </motion.div>
+        </div>
+      </Layout>
+    );
+  }
+
+  return (
+    <Layout>
+      {/* SEO Enhancement */}
+      <SEOEnhancer 
+        title="Zion Tech Group - Future Technology Solutions"
+        description="Zion Tech Group delivers cutting-edge AI, quantum computing, and space technology solutions that transform businesses and drive innovation across industries."
+        keywords={[
+          'AI Technology',
+          'Quantum Computing', 
+          'Space Technology',
+          'Machine Learning',
+          'Artificial Intelligence',
+          'Technology Solutions',
+          'Enterprise IT',
+          'Digital Transformation',
+          'Innovation',
+          'Future Technology'
+        ]}
+        image="/og-image.jpg"
+        url="https://ziontechgroup.com"
+        type="website"
+      />
+=======
   // Convert services to unified format
   const allServices: UnifiedService[] = [
     ...innovativeRealMicroSaasServices2025.map(service => ({
@@ -261,6 +367,7 @@ const Homepage2025: React.FC = () => {
                 <span>All Services</span>
               </a>
             </div>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-a909
 
       {/* Hero Section */}
       <section 
@@ -329,6 +436,38 @@ const Homepage2025: React.FC = () => {
                 variants={staggerContainer}
                 exit={{ opacity: 0, y: -50 }}
               >
+<<<<<<< HEAD
+                <Award className="w-4 h-4" />
+                <span>Innovation Leader 2025</span>
+              </motion.div>
+              
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+                Zion Tech Group
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+                Pioneering the future of technology with innovative solutions that drive business transformation and unlock unlimited potential
+              </p>
+              
+              {/* Enhanced Value Proposition */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="mb-8"
+              >
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+                  <div className="flex items-center space-x-2 text-sm text-cyan-400">
+                    <CheckCircle className="w-4 h-4" />
+                    <span>AI-First Solutions</span>
+                  </div>
+                  <div className="flex items-center space-x-2 text-sm text-blue-400">
+                    <CheckCircle className="w-4 h-4" />
+                    <span>Quantum Innovation</span>
+                  </div>
+                  <div className="flex items-center space-x-2 text-sm text-purple-400">
+                    <CheckCircle className="w-4 h-4" />
+                    <span>24/7 Support</span>
+=======
                 <div className="py-4 space-y-2">
                   {navigationSections.map((section) => (
                     <button
@@ -367,6 +506,7 @@ const Homepage2025: React.FC = () => {
                       <span>✉️</span>
                       <span>kleber@ziontechgroup.com</span>
                     </a>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-a909
                   </div>
                 </div>
               </motion.div>
@@ -430,6 +570,26 @@ const Homepage2025: React.FC = () => {
           </AnimatePresence>
         </section>
 
+<<<<<<< HEAD
+        {/* Enhanced Statistics Section */}
+        <motion.section 
+          id="statistics"
+          className="py-16 sm:py-20 px-4 bg-gradient-to-b from-gray-900/50 to-gray-800/50"
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          aria-labelledby="statistics-heading"
+        >
+          <div className="max-w-7xl mx-auto">
+            <motion.h2 
+              id="statistics-heading"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+=======
       {/* Hero Section */}
       <section id="hero" className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16">
         <div className="text-center z-10 max-w-6xl mx-auto">
@@ -504,6 +664,7 @@ const Homepage2025: React.FC = () => {
             <button
               onClick={() => scrollToSection('services')}
               className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/25"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-a909
             >
               The Future of
               <span className="block bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
@@ -519,6 +680,29 @@ const Homepage2025: React.FC = () => {
               Zion Tech Group delivers cutting-edge AI, quantum computing, and space technology solutions that transform businesses and drive innovation across industries.
             </motion.p>
 
+<<<<<<< HEAD
+            {/* Enhanced Search Bar */}
+            <motion.div
+              variants={fadeInUp}
+              className="relative max-w-2xl mx-auto mb-8"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                Our Services
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Discover our comprehensive range of cutting-edge technology solutions designed to transform your business and accelerate growth
+              </p>
+            </motion.div>
+
+            {/* Enhanced CTA Buttons */}
+            <motion.div
+              variants={fadeInUp}
+              className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+            >
+              <Link
+                href="/contact"
+                className="group bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
+=======
           {/* Search Results or Featured Services */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -533,6 +717,7 @@ const Homepage2025: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 + index * 0.2 }}
                 className="bg-black/40 backdrop-blur-xl border border-white/20 rounded-2xl p-6 hover:border-cyan-400/50 transition-all duration-300 transform hover:scale-105"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-a909
               >
                 <span>Get Started Today</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
@@ -802,6 +987,8 @@ const Homepage2025: React.FC = () => {
               </motion.div>
             ))}
           </div>
+<<<<<<< HEAD
+=======
           
           {/* View All Services Link */}
           <motion.div
@@ -821,6 +1008,7 @@ const Homepage2025: React.FC = () => {
           </motion.div>
         </div>
       </section>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-a909
 
       {/* New Interactive Features Section */}
       <section 
@@ -841,6 +1029,41 @@ const Homepage2025: React.FC = () => {
                 Technology Showcase
               </span>
             </h2>
+<<<<<<< HEAD
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Experience our cutting-edge solutions through interactive demonstrations and real-time analytics.
+            </p>
+          </motion.div>
+
+          {/* Interactive Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-green-400 to-teal-500 bg-clip-text text-transparent">
+                Ready to Transform Your Business?
+              </h2>
+              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                Join the future of technology with Zion Tech Group. Let's build something extraordinary together and unlock your business potential.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/contact">
+                  <button className="px-8 py-4 bg-gradient-to-r from-green-500 to-teal-600 text-white font-semibold rounded-lg hover:from-green-600 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-green-500/25">
+                    Start Your Journey
+                  </button>
+                </Link>
+                <Link href="/demo">
+                  <button className="px-8 py-4 border-2 border-green-400 text-green-400 font-semibold rounded-lg hover:bg-green-400 hover:text-black transition-all duration-300 transform hover:scale-105">
+                    Schedule Free Demo
+                  </button>
+                </Link>
+              </div>
+            </motion.div>
+=======
             <p className="text-xl text-gray-300 max-w-4xl mx-auto">
               Leverage the power of artificial intelligence with our comprehensive suite of AI solutions designed for modern enterprises.
             </p>
@@ -862,6 +1085,7 @@ const Homepage2025: React.FC = () => {
                 />
               </motion.div>
             ))}
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-a909
           </div>
         </div>
       </section>
@@ -887,6 +1111,24 @@ const Homepage2025: React.FC = () => {
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               Join the future of technology with Zion Tech Group. Our AI-powered solutions are designed to scale with your business and drive unprecedented growth.
             </p>
+<<<<<<< HEAD
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/contact"
+                className="group bg-gradient-to-r from-cyan-500 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 transform hover:scale-105 flex items-center justify-center space-x-2"
+              >
+                <span>Start Your Journey</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </Link>
+              <Link
+                href="/demo"
+                className="group border border-white/30 hover:border-white/50 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 backdrop-blur-md hover:bg-white/10 flex items-center justify-center space-x-2"
+              >
+                <span>Schedule Demo</span>
+                <Rocket className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+              </Link>
+            </div>
+=======
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
               <div className="bg-black/40 backdrop-blur-xl border border-white/20 rounded-2xl p-6">
@@ -1037,10 +1279,57 @@ const Homepage2025: React.FC = () => {
                 </div>
               </form>
             </motion.div>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-a909
           </motion.div>
         </div>
       </section>
 
+<<<<<<< HEAD
+      {/* Floating Action Buttons */}
+      <AnimatePresence>
+        {showFloatingActions && (
+          <>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, x: -100 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              exit={{ opacity: 0, scale: 0.8, x: -100 }}
+              className="fixed bottom-24 left-4 z-50"
+            >
+              <Link
+                href="/contact"
+                className="bg-gradient-to-r from-cyan-500 to-purple-600 text-white p-4 rounded-full shadow-2xl shadow-cyan-500/25 hover:scale-110 transition-all duration-300 flex items-center justify-center"
+                aria-label="Quick Contact"
+              >
+                <MessageCircle className="w-6 h-6" />
+              </Link>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, x: 100 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              exit={{ opacity: 0, scale: 0.8, x: 100 }}
+              className="fixed bottom-24 right-4 z-50"
+            >
+              <Link
+                href="/demo"
+                className="bg-gradient-to-r from-purple-500 to-pink-600 text-white p-4 rounded-full shadow-2xl shadow-purple-500/25 hover:scale-110 transition-all duration-300 flex items-center justify-center"
+                aria-label="Quick Demo"
+              >
+                <Rocket className="w-6 h-6" />
+              </Link>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+
+      {/* Performance Optimizer */}
+      <PerformanceOptimizer 
+        onOptimizationComplete={(metrics) => {
+          console.log('Performance optimization completed:', metrics);
+        }}
+      />
+    </Layout>
+=======
       {/* Footer */}
       <footer className="bg-black/40 backdrop-blur-xl border-t border-white/10 py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -1106,6 +1395,7 @@ const Homepage2025: React.FC = () => {
         </div>
       </footer>
     </UltraFuturisticBackground2026>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-a909
   );
 };
 
