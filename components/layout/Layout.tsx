@@ -1,7 +1,6 @@
 import React from 'react';
-import FuturisticNav from './FuturisticNav';
-import FuturisticFooter from './FuturisticFooter';
-import AnimatedBackground from '../ui/AnimatedBackground';
+import EnhancedNavigation from './EnhancedNavigation';
+import EnhancedFooter from './EnhancedFooter';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -14,13 +13,11 @@ export default function Layout({ children, seo }: LayoutProps) {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <EnhancedFuturisticBackground variant="quantum" intensity="medium">
-        <NeoFuturisticNavigation />
-        <main className="pt-24 lg:pt-28">
-          {children}
-        </main>
-        <NeoFuturisticFooter />
-      </EnhancedFuturisticBackground>
+      <EnhancedNavigation />
+      <main className="pt-24 lg:pt-28">
+        {children}
+      </main>
+      <EnhancedFooter />
     </div>
   );
 };

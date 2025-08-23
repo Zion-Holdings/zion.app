@@ -4,7 +4,13 @@ import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, Trend
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
+<<<<<<< HEAD
+import UltraFuturisticCard from '../components/ui/UltraFuturisticCard';
+import { enhancedRealMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/enhanced-real-micro-saas-services';
+import { motion } from 'framer-motion';
+=======
 import { enhancedMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/enhanced-micro-saas-services';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-e0c7
 
 export default function ServicesPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -242,6 +248,19 @@ export default function ServicesPage() {
   };
 
   return (
+<<<<<<< HEAD
+    <div className="min-h-screen bg-black text-white overflow-hidden">
+      <Head>
+        <title>Micro SaaS Services - Zion Tech Group | 500+ Revolutionary Solutions</title>
+        <meta name="description" content="Explore 500+ revolutionary micro SaaS services powered by AI, quantum computing, and cutting-edge technology. Transform your business with our innovative solutions." />
+        <meta name="keywords" content="micro SaaS services, AI services, quantum computing, cybersecurity, healthcare AI, fintech, logistics AI, space technology" />
+        <meta property="og:title" content="Micro SaaS Services - Zion Tech Group" />
+        <meta property="og:description" content="500+ revolutionary micro SaaS services powered by AI and quantum computing" />
+        <meta property="og:url" content="https://ziontechgroup.com/services" />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://ziontechgroup.com/services" />
+      </Head>
+=======
     <UltraFuturisticBackground variant="neural" intensity="high">
       <div className="min-h-screen">
         <Head>
@@ -255,6 +274,7 @@ export default function ServicesPage() {
           <meta property="og:type" content="website" />
           <link rel="canonical" href="https://ziontechgroup.com/services" />
         </Head>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-e0c7
 
       <UltraFuturisticBackground>
         {/* Hero Section */}
@@ -572,6 +592,15 @@ export default function ServicesPage() {
                   </select>
                 </div>
 
+<<<<<<< HEAD
+                {/* Sort By Filter */}
+                <div>
+                  <label className="block text-sm font-medium text-white mb-2">Sort By</label>
+                  <select
+                    value={sortBy}
+                    onChange={(e) => setSortBy(e.target.value)}
+                    className="w-full px-3 py-2 bg-black/30 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
+=======
             {/* Results Count */}
             <div className="text-center mb-8">
               <p className="text-gray-300">
@@ -586,6 +615,7 @@ export default function ServicesPage() {
                   <Card
                     key={service.id}
                     className="futuristic-card hover:scale-105 transition-all duration-300"
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-e0c7
                   >
                     {sortOptions.map(option => (
                       <option key={option.value} value={option.value}>{option.label}</option>
@@ -967,10 +997,17 @@ export default function ServicesPage() {
                 </div>
               </div>
             </div>
+<<<<<<< HEAD
+          </motion.div>
+        </div>
+      </section>
+    </UltraAdvancedFuturisticBackground>
+=======
           </div>
         </section>
       </div>
     </UltraFuturisticBackground>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-e0c7
   );
 };
 
