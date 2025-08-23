@@ -9,6 +9,7 @@ declare global {
       action: string,
       params?: Record<string, unknown>
     ) => void;
+    dataLayer?: unknown[];
   }
 }
 

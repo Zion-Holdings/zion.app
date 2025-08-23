@@ -293,12 +293,6 @@ const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
   return null; // This component doesn't render anything
 };
 
-// Extend Window interface for gtag
-declare global {
-  interface Window {
-    gtag: (...args: unknown[]) => void;
-    dataLayer: unknown[];
-  }
-}
+// Note: gtag and dataLayer are declared globally in PerformanceOptimizer.tsx
 
 export default AnalyticsTracker;
