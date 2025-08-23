@@ -1,5 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+<<<<<<< HEAD
+import { Menu, X, Zap, Brain, Cloud, Shield, Rocket, Atom, Bot, Globe, BarChart3, Phone, Mail, MapPin, DollarSign } from 'lucide-react';
+
+const navLinks: { name: string; href: string }[] = [
+  { name: 'Home', href: '/' },
+  { name: 'Services', href: '/services' },
+  { name: 'Solutions', href: '/solutions' },
+  { name: 'Pricing', href: '/pricing' },
+  { name: 'AI Services', href: '/ai-services' },
+  { name: 'IT Services', href: '/it-services' },
+  { name: 'Resources', href: '/resources' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Contact', href: '/contact' }
+];
+=======
 import { useRouter } from 'next/router';
 import { 
   Menu, 
@@ -53,6 +68,7 @@ import {
   GraduationCap
 } from 'lucide-react';
 import Button from '../ui/Button';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-4aaf
 
 export default function NeoFuturisticNavigation() {
   const [open, setOpen] = useState(false);
@@ -88,6 +104,8 @@ export default function NeoFuturisticNavigation() {
     address: '364 E Main St STE 1008 Middletown DE 19709'
   };
 
+<<<<<<< HEAD
+=======
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -276,6 +294,7 @@ export default function NeoFuturisticNavigation() {
     }
   ];
 
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-4aaf
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       {/* Top contact bar */}
