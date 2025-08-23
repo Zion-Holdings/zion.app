@@ -1,1 +1,3 @@
-export default function DataAnalyticsImplementationChat() { return <div className="py-12">Data analytics implementation.</div>; }
+export default function Page(){
+  return <div className="max-w-3xl mx-auto p-6">Data Analytics Implementation</div>;
+}

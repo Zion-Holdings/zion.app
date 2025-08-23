@@ -1,1 +1,3 @@
-export default function ForgotPasswordPage() { return <div className="py-12">Forgot password flow coming soon.</div>; }
+export default function ForgotPassword(){
+  return <div className="max-w-3xl mx-auto p-6">Forgot Password</div>;
+}

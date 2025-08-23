@@ -1,1 +1,3 @@
-export default function AutomationStatusPage() { return <div className="py-12">Automation status coming soon.</div>; }
+export default function AutomationStatus(){
+  return <div className="max-w-3xl mx-auto p-6">Automation Status</div>;
+}

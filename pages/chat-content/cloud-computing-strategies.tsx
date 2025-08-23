@@ -1,1 +1,3 @@
-export default function CloudComputingStrategiesChat() { return <div className="py-12">Cloud computing strategies content.</div>; }
+export default function Page(){
+  return <div className="max-w-3xl mx-auto p-6">Cloud Computing Strategies</div>;
+}
