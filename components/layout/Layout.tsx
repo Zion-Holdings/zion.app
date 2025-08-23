@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import UltraFuturisticNavigation2025 from './UltraFuturisticNavigation2025';
+import UltraFuturisticNavigation2045 from './UltraFuturisticNavigation2045';
 import UltraFuturisticFooter2025 from './UltraFuturisticFooter2025';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
@@ -80,7 +80,7 @@ export default function Layout({ children }: LayoutProps) {
         {/* Layout Structure */}
         <div className="relative z-10">
           {/* Navigation */}
-          <UltraFuturisticNavigation2025 />
+          <UltraFuturisticNavigation2045 />
           
           {/* Sidebar and Main Content */}
           <div className="flex">

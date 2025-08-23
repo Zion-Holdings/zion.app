@@ -12,6 +12,9 @@ import EnhancedSEO from './EnhancedSEO';
 import { revolutionary2044AdvancedMicroSaas } from '../data/revolutionary-2044-advanced-micro-saas';
 import { revolutionary2044ITServices } from '../data/revolutionary-2044-it-services';
 import { revolutionary2044AIServices } from '../data/revolutionary-2044-ai-services';
+import { revolutionary2045AdvancedMicroSaas } from '../data/revolutionary-2045-advanced-micro-saas';
+import { revolutionary2045ITServices } from '../data/revolutionary-2045-it-services';
+import { revolutionary2045AIServices } from '../data/revolutionary-2045-ai-services';
 
 // Lazy load components for better performance
 const ServiceCard = lazy(() => import('./ServiceCard'));
@@ -60,7 +63,10 @@ const EnhancedHomepage2044: React.FC = () => {
   const allRevolutionaryServices = useMemo(() => [
     ...revolutionary2044AdvancedMicroSaas,
     ...revolutionary2044ITServices,
-    ...revolutionary2044AIServices
+    ...revolutionary2044AIServices,
+    ...revolutionary2045AdvancedMicroSaas,
+    ...revolutionary2045ITServices,
+    ...revolutionary2045AIServices
   ], []);
 
   // Get featured services for rotation
