@@ -1,12 +1,13 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import Layout from './layout/Layout';
+import UltraFuturisticServiceCard2026 from './ui/UltraFuturisticServiceCard2026';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
   ArrowRight, Play, Users, TrendingUp, Brain, Shield, Rocket, Globe, Lock, Cpu, Database, Cloud, BarChart3,
   Atom, Target, Zap, Infinity, Sparkles, Star, Eye, Heart, Code, Palette, Layers, CheckCircle,
   DollarSign, Clock, Award, Shield as ShieldIcon, Zap as ZapIcon, Globe as GlobeIcon, Phone
 } from 'lucide-react';
-import Link from 'next/link';
 
 // Import our new revolutionary services
 import { revolutionary2040FuturisticServices } from '../data/revolutionary-2040-futuristic-services';
@@ -139,7 +140,7 @@ const Homepage2025: React.FC = () => {
           {/* Hero Content */}
           <div className="max-w-7xl mx-auto text-center relative z-10">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               className="space-y-8"

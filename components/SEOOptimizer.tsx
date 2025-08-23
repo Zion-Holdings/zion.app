@@ -1,33 +1,29 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 
 interface SEOOptimizerProps {
   title?: string;
   description?: string;
   keywords?: string;
-  image?: string;
-  type?: string;
-  structuredData?: any;
+  ogImage?: string;
+  canonicalUrl?: string;
+  structuredData?: object;
 }
 
 const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
-  title = 'Zion Tech Group - Pioneering the Future of Technology',
-  description = 'Leading-edge AI, quantum computing, and autonomous technology solutions. Transform your business with Zion Tech Group\'s innovative services.',
-  keywords = 'AI, artificial intelligence, quantum computing, autonomous systems, technology solutions, business transformation, Zion Tech Group',
-  image = '/og-image.svg',
-  type = 'website',
+  title = "Zion Tech Group - Pioneering the Future of Technology with AI, Quantum Computing & Space Technology",
+  description = "Transform your business with Zion Tech Group's cutting-edge AI, quantum computing, and space technology solutions. Enterprise-grade security, 24/7 autonomous operations, and proven results.",
+  keywords = "AI, artificial intelligence, quantum computing, space technology, enterprise IT, cybersecurity, automation, machine learning, blockchain, cloud infrastructure",
+  ogImage = "https://ziontechgroup.com/og-image.jpg",
+  canonicalUrl = "https://ziontechgroup.com",
   structuredData
 }) => {
-  const router = useRouter();
-  const canonicalUrl = `https://ziontechgroup.com${router.asPath}`;
-  
   const defaultStructuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Zion Tech Group",
     "url": "https://ziontechgroup.com",
-    "logo": "https://ziontechgroup.com/logo.svg",
+    "logo": "https://ziontechgroup.com/logo.png",
     "description": "Pioneering the future of technology with innovative solutions that drive business transformation",
     "address": {
       "@type": "PostalAddress",
@@ -44,40 +40,23 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       "email": "kleber@ziontechgroup.com"
     },
     "sameAs": [
-      "https://linkedin.com/company/zion-tech-group",
+      "https://linkedin.com/company/ziontechgroup",
+      "https://github.com/Zion-Holdings",
       "https://twitter.com/ziontechgroup",
-      "https://github.com/Zion-Holdings"
+      "https://facebook.com/ziontechgroup",
+      "https://instagram.com/ziontechgroup",
+      "https://youtube.com/@ziontechgroup"
     ],
     "foundingDate": "2020",
     "numberOfEmployees": "50+",
-    "serviceArea": "Worldwide",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Technology Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "AI & Machine Learning Solutions"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Quantum Computing Services"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Autonomous Systems"
-          }
-        }
-      ]
-    }
+    "serviceType": [
+      "AI & Machine Learning",
+      "Quantum Computing",
+      "Space Technology",
+      "Enterprise IT Solutions",
+      "Cybersecurity",
+      "Process Automation"
+    ]
   };
 
   const finalStructuredData = structuredData || defaultStructuredData;
@@ -89,42 +68,50 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
       <meta name="author" content="Zion Tech Group" />
-      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
       
       {/* Canonical URL */}
       <link rel="canonical" href={canonicalUrl} />
       
       {/* Open Graph Meta Tags */}
+      <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:type" content={type} />
+      <meta property="og:image" content={ogImage} />
       <meta property="og:url" content={canonicalUrl} />
-      <meta property="og:image" content={image} />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
       <meta property="og:site_name" content="Zion Tech Group" />
       <meta property="og:locale" content="en_US" />
       
-      {/* Twitter Meta Tags */}
+      {/* Twitter Card Meta Tags */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content={ogImage} />
       <meta name="twitter:site" content="@ziontechgroup" />
+      <meta name="twitter:creator" content="@ziontechgroup" />
       
       {/* Additional Meta Tags */}
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-      <meta name="theme-color" content="#000000" />
-      <meta name="msapplication-TileColor" content="#000000" />
+      <meta name="theme-color" content="#00d4ff" />
+      <meta name="msapplication-TileColor" content="#00d4ff" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       
-      {/* Preconnect to external domains for performance */}
+      {/* Favicon and App Icons */}
+      <link rel="icon" href="/favicon.ico" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+      <link rel="manifest" href="/site.webmanifest" />
+      
+      {/* Preconnect to External Domains */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       <link rel="preconnect" href="https://www.google-analytics.com" />
+      <link rel="preconnect" href="https://www.googletagmanager.com" />
       
-      {/* DNS Prefetch for performance */}
+      {/* DNS Prefetch */}
+      <link rel="dns-prefetch" href="//fonts.googleapis.com" />
       <link rel="dns-prefetch" href="//www.google-analytics.com" />
       <link rel="dns-prefetch" href="//www.googletagmanager.com" />
       
@@ -136,14 +123,27 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
         }}
       />
       
-      {/* Performance Hints */}
-      <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+      {/* Additional Performance Optimizations */}
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="mobile-web-app-capable" content="yes" />
       
       {/* Security Headers */}
       <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
       <meta httpEquiv="X-Frame-Options" content="DENY" />
       <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
-      <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+      
+      {/* PWA Meta Tags */}
+      <meta name="application-name" content="Zion Tech Group" />
+      <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
+      <meta name="msapplication-config" content="/browserconfig.xml" />
+      
+      {/* Language and Region */}
+      <meta name="language" content="English" />
+      <meta name="geo.region" content="US-DE" />
+      <meta name="geo.placename" content="Middletown, Delaware" />
+      <meta name="geo.position" content="39.4496;-75.7163" />
+      <meta name="ICBM" content="39.4496, -75.7163" />
     </Head>
   );
 };

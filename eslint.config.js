@@ -55,11 +55,28 @@ export default [
         HTMLDivElement: 'readonly',
         HTMLAnchorElement: 'readonly',
         HTMLCanvasElement: 'readonly',
+        HTMLImageElement: 'readonly',
         // Event types
         Event: 'readonly',
         MouseEvent: 'readonly',
         KeyboardEvent: 'readonly',
         MediaQueryListEvent: 'readonly',
+        TouchEvent: 'readonly',
+        // DOM types
+        Node: 'readonly',
+        NodeList: 'readonly',
+        Element: 'readonly',
+        EventTarget: 'readonly',
+        DOMRectReadOnly: 'readonly',
+        DOMRect: 'readonly',
+        DOMStringMap: 'readonly',
+        DOMTokenList: 'readonly',
+        // Intersection Observer
+        IntersectionObserver: 'readonly',
+        IntersectionObserverEntry: 'readonly',
+        // Touch types
+        Touch: 'readonly',
+        TouchList: 'readonly',
         // Form types
         FormData: 'readonly',
         // Canvas and animation globals
