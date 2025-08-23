@@ -33,16 +33,16 @@ const UltraFuturisticFooter2036: React.FC = () => {
       description: 'Our most popular and innovative solutions',
       icon: <Star className="w-5 h-5 text-yellow-400" />,
       links: [
-        { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-platform', featured: true },
-        { name: 'Quantum Cybersecurity Sentinel', href: '/quantum-cybersecurity-sentinel', featured: true },
-        { name: 'AI Autonomous Content Factory', href: '/ai-autonomous-content-factory', featured: true },
-        { name: 'Autonomous Business Intelligence', href: '/autonomous-business-intelligence', featured: true },
+        { name: 'AI Consciousness Evolution Platform', href: '/ai-consciousness-evolution-platform', featured: true },
+        { name: 'Quantum-Enhanced Cybersecurity Sentinel', href: '/quantum-enhanced-cybersecurity-sentinel', featured: true },
+        { name: 'AI Autonomous Customer Success Platform', href: '/ai-autonomous-customer-success-platform', featured: true },
+        { name: 'Autonomous Business Intelligence Engine', href: '/autonomous-business-intelligence-engine', featured: true },
+        { name: 'AI-Powered DevOps Automation Platform', href: '/ai-powered-devops-automation-platform', featured: true },
         { name: 'Quantum Supply Chain Optimizer', href: '/quantum-supply-chain-optimizer', featured: true },
-        { name: 'AI Autonomous Customer Success', href: '/ai-autonomous-customer-success', featured: true },
-        { name: 'AI Autonomous DevOps Platform', href: '/ai-autonomous-devops-platform', featured: true },
         { name: 'Autonomous Cloud Orchestrator', href: '/autonomous-cloud-orchestrator' },
-        { name: 'Quantum Edge Computing Platform', href: '/quantum-edge-computing-platform' },
-        { name: 'AI-Powered Enterprise Architecture', href: '/ai-powered-enterprise-architecture' }
+        { name: 'AI-Powered Enterprise Architecture Platform', href: '/autonomous-enterprise-architecture-platform' },
+        { name: 'AI-Powered Disaster Recovery Platform', href: '/ai-powered-disaster-recovery-platform' },
+        { name: 'Autonomous Network Operations Center', href: '/autonomous-network-operations-center' }
       ]
     },
     {
@@ -67,7 +67,7 @@ const UltraFuturisticFooter2036: React.FC = () => {
       description: 'Breakthrough quantum and space technologies',
       icon: <Atom className="w-5 h-5 text-blue-400" />,
       links: [
-        { name: 'Quantum Cybersecurity Sentinel', href: '/quantum-cybersecurity-sentinel' },
+        { name: 'Quantum-Enhanced Cybersecurity Sentinel', href: '/quantum-enhanced-cybersecurity-sentinel' },
         { name: 'Quantum Supply Chain Optimizer', href: '/quantum-supply-chain-optimizer' },
         { name: 'Quantum Financial Risk Manager', href: '/quantum-financial-risk-manager' },
         { name: 'Quantum Materials Discovery Platform', href: '/quantum-materials-discovery' },
@@ -85,7 +85,7 @@ const UltraFuturisticFooter2036: React.FC = () => {
       icon: <Shield className="w-5 h-5 text-purple-400" />,
       links: [
         { name: 'Autonomous Cloud Orchestrator', href: '/autonomous-cloud-orchestrator' },
-        { name: 'AI-Powered Enterprise Architecture', href: '/ai-powered-enterprise-architecture' },
+        { name: 'AI-Powered Enterprise Architecture Platform', href: '/autonomous-enterprise-architecture-platform' },
         { name: 'Autonomous Data Governance Platform', href: '/autonomous-data-governance' },
         { name: 'AI-Powered IT Service Management', href: '/ai-powered-it-service-management' },
         { name: 'Autonomous Network Operations Center', href: '/autonomous-network-operations' },
@@ -101,9 +101,8 @@ const UltraFuturisticFooter2036: React.FC = () => {
       description: 'Innovative business solutions for modern enterprises',
       icon: <Rocket className="w-5 h-5 text-emerald-400" />,
       links: [
-        { name: 'AI Autonomous Content Factory', href: '/ai-autonomous-content-factory' },
-        { name: 'AI Autonomous Customer Success', href: '/ai-autonomous-customer-success' },
-        { name: 'AI Autonomous DevOps Platform', href: '/ai-autonomous-devops-platform' },
+        { name: 'AI Autonomous Customer Success Platform', href: '/ai-autonomous-customer-success-platform' },
+        { name: 'AI-Powered DevOps Automation Platform', href: '/ai-powered-devops-automation-platform' },
         { name: 'AI Autonomous Marketing Orchestrator', href: '/ai-autonomous-marketing-orchestrator' },
         { name: 'AI Content Personalization Engine', href: '/ai-content-personalization-engine' },
         { name: 'AI Autonomous Ecosystem Manager', href: '/ai-autonomous-ecosystem-manager' },

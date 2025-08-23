@@ -30,68 +30,98 @@ export default function UltraFuturisticBackground2036({
     type: 'particle' | 'wave' | 'quantum' | 'neon' | 'holographic';
   }>>([]);
 
-  // Theme-based color schemes
+  // Enhanced theme-based color schemes with more vibrant colors
   const getThemeColors = useCallback(() => {
     switch (theme) {
       case 'neon':
         return {
-          primary: ['#ff0080', '#00ffff', '#ffff00', '#ff00ff'],
-          secondary: ['#8000ff', '#00ff80', '#ff8000', '#0080ff'],
-          accent: ['#ff4080', '#40ffff', '#ffff40', '#ff40ff']
+          primary: ['#ff0080', '#00ffff', '#ffff00', '#ff00ff', '#ff6b35'],
+          secondary: ['#8000ff', '#00ff80', '#ff8000', '#0080ff', '#ff1493'],
+          accent: ['#ff4080', '#40ffff', '#ffff40', '#ff40ff', '#00ff7f'],
+          neon: ['#ff0080', '#00ffff', '#ffff00', '#ff00ff', '#ff6b35']
         };
       case 'holographic':
         return {
-          primary: ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4'],
-          secondary: ['#feca57', '#ff9ff3', '#54a0ff', '#5f27cd'],
-          accent: ['#ff9ff3', '#54a0ff', '#5f27cd', '#ff6b6b']
+          primary: ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#ffa726'],
+          secondary: ['#feca57', '#ff9ff3', '#54a0ff', '#5f27cd', '#ff7043'],
+          accent: ['#ff9ff3', '#54a0ff', '#5f27cd', '#ff6b6b', '#26c6da'],
+          neon: ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#ffa726']
         };
       case 'cyberpunk':
         return {
-          primary: ['#ff0055', '#00ffff', '#ffff00', '#ff00ff'],
-          secondary: ['#8000ff', '#00ff80', '#ff8000', '#0080ff'],
-          accent: ['#ff4080', '#40ffff', '#ffff40', '#ff40ff']
+          primary: ['#ff0055', '#00ffff', '#ffff00', '#ff00ff', '#ff6b35'],
+          secondary: ['#8000ff', '#00ff80', '#ff8000', '#0080ff', '#ff1493'],
+          accent: ['#ff4080', '#40ffff', '#ffff40', '#ff40ff', '#00ff7f'],
+          neon: ['#ff0055', '#00ffff', '#ffff00', '#ff00ff', '#ff6b35']
         };
       case 'quantum-neon':
         return {
-          primary: ['#00d4ff', '#8b5cf6', '#ec4899', '#10b981'],
-          secondary: ['#f59e0b', '#ef4444', '#8b5cf6', '#06b6d4'],
-          accent: ['#ec4899', '#10b981', '#f59e0b', '#ef4444'],
-          neon: ['#ff0080', '#00ffff', '#ffff00', '#ff00ff']
+          primary: ['#00d4ff', '#8b5cf6', '#ec4899', '#10b981', '#f59e0b'],
+          secondary: ['#f59e0b', '#ef4444', '#8b5cf6', '#06b6d4', '#ec4899'],
+          accent: ['#ec4899', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'],
+          neon: ['#ff0080', '#00ffff', '#ffff00', '#ff00ff', '#ff6b35']
         };
       default: // quantum
         return {
-          primary: ['#8b5cf6', '#06b6d4', '#ec4899', '#10b981'],
-          secondary: ['#f59e0b', '#ef4444', '#8b5cf6', '#06b6d4'],
-          accent: ['#ec4899', '#10b981', '#f59e0b', '#ef4444']
+          primary: ['#8b5cf6', '#06b6d4', '#ec4899', '#10b981', '#f59e0b'],
+          secondary: ['#f59e0b', '#ef4444', '#8b5cf6', '#06b6d4', '#ec4899'],
+          accent: ['#ec4899', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'],
+          neon: ['#00d4ff', '#8b5cf6', '#ec4899', '#10b981', '#f59e0b']
         };
     }
   }, [theme]);
 
-  // Initialize particles with performance optimization
+  // Initialize particles with enhanced performance optimization and dynamic effects
   const initParticles = useCallback(() => {
     const colors = getThemeColors();
     const isSmallScreen = window.innerWidth < 768;
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     
-    // Reduce particle count for better performance
-    const baseCount = prefersReducedMotion ? 15 : (isSmallScreen ? 40 : 80);
-    const particleCount = Math.floor(baseCount * (intensity === 'low' ? 0.5 : intensity === 'medium' ? 1 : 1.5));
+    // Enhanced particle count with better performance
+    const baseCount = prefersReducedMotion ? 20 : (isSmallScreen ? 60 : 120);
+    const particleCount = Math.floor(baseCount * (intensity === 'low' ? 0.6 : intensity === 'medium' ? 1 : 1.8));
 
     particles.current = [];
     
     for (let i = 0; i < particleCount; i++) {
       const particleTypes = ['particle', 'wave', 'quantum', 'neon', 'holographic'];
+      const type = particleTypes[Math.floor(Math.random() * particleTypes.length)] as 'particle' | 'wave' | 'quantum' | 'neon' | 'holographic';
+      
+      // Enhanced particle properties based on type
+      let size, speed, opacity;
+      switch (type) {
+        case 'quantum':
+          size = Math.random() * 3 + 1.5;
+          speed = 0.8;
+          opacity = Math.random() * 0.7 + 0.4;
+          break;
+        case 'neon':
+          size = Math.random() * 2.5 + 1;
+          speed = 1.2;
+          opacity = Math.random() * 0.8 + 0.5;
+          break;
+        case 'holographic':
+          size = Math.random() * 2 + 0.8;
+          speed = 0.6;
+          opacity = Math.random() * 0.6 + 0.3;
+          break;
+        default:
+          size = Math.random() * 2 + 1;
+          speed = 0.5;
+          opacity = Math.random() * 0.5 + 0.3;
+      }
+      
       particles.current.push({
         x: Math.random() * window.innerWidth,
         y: Math.random() * window.innerHeight,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
-        size: Math.random() * 2 + 1,
-        opacity: Math.random() * 0.5 + 0.3,
+        vx: (Math.random() - 0.5) * speed,
+        vy: (Math.random() - 0.5) * speed,
+        size,
+        opacity,
         color: colors.primary[Math.floor(Math.random() * colors.primary.length)],
         life: Math.random() * 100,
         maxLife: 100,
-        type: particleTypes[Math.floor(Math.random() * particleTypes.length)] as 'particle' | 'wave' | 'quantum' | 'neon' | 'holographic'
+        type
       });
     }
   }, [intensity, getThemeColors]);

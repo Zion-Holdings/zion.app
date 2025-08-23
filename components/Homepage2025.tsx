@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Layout from './layout/Layout';
 import { motion } from 'framer-motion';
-import { 
+import {
   ArrowRight, 
   Star, 
   Search,
@@ -14,7 +14,10 @@ import {
   Cpu,
   Cloud,
   BarChart3,
-  Lock
+  Lock,
+  Phone,
+  Mail,
+  MapPin
 } from 'lucide-react';
 import Link from 'next/link';
 import UltraFuturisticServiceCard2026 from './ui/UltraFuturisticServiceCard2026';
@@ -253,24 +256,24 @@ const Homepage2025: React.FC = () => {
         </section>
 
         {/* Services Preview */}
-        <section className="py-20 px-4">
+        <section className="py-24 px-4 bg-gradient-to-b from-black/20 to-black/40">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-20 text-center bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
               Our Revolutionary Services
             </h2>
-            <p className="text-xl text-gray-300 mb-16 text-center max-w-3xl mx-auto">
-              Discover cutting-edge AI, quantum computing, and autonomous solutions that transform businesses and industries
+            <p className="text-xl text-gray-300 mb-20 text-center max-w-4xl mx-auto leading-relaxed">
+              Discover cutting-edge AI, quantum computing, and autonomous solutions that transform businesses and industries worldwide
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
               <UltraFuturisticServiceCard2026
                 service={{
-                  id: 'ai-consciousness',
-                  name: 'AI Consciousness Evolution',
-                  tagline: 'Advanced AI consciousness development',
-                  description: 'Revolutionary platform for developing AI systems with advanced consciousness capabilities',
+                  id: 'ai-consciousness-evolution-platform',
+                  name: 'AI Consciousness Evolution Platform',
+                  tagline: 'Revolutionary AI consciousness development',
+                  description: 'Breakthrough platform for developing AI systems with advanced consciousness capabilities. Features ethical training, safety protocols, and consciousness measurement tools.',
                   price: '$8,999',
                   period: '/month',
-                  features: ['Consciousness Development', 'Ethical Training', 'Safety Protocols'],
+                  features: ['Consciousness Development', 'Ethical Training', 'Safety Protocols', 'Responsible AI Guidelines'],
                   popular: true,
                   category: 'AI & Consciousness',
                   icon: '🧠'
@@ -279,13 +282,13 @@ const Homepage2025: React.FC = () => {
               />
               <UltraFuturisticServiceCard2026
                 service={{
-                  id: 'quantum-cybersecurity',
-                  name: 'Quantum Cybersecurity',
-                  tagline: 'Quantum-resistant security platform',
-                  description: 'Advanced cybersecurity with quantum-resistant encryption and AI threat detection',
-                  price: '$2,499',
+                  id: 'quantum-enhanced-cybersecurity-sentinel',
+                  name: 'Quantum-Enhanced Cybersecurity Sentinel',
+                  tagline: 'Quantum-resistant security with AI threat detection',
+                  description: 'Next-generation cybersecurity platform combining quantum-resistant encryption, AI-powered threat detection, and autonomous incident response.',
+                  price: '$4,499',
                   period: '/month',
-                  features: ['Quantum Encryption', 'AI Threat Detection', 'Zero Trust'],
+                  features: ['Quantum Encryption', 'AI Threat Detection', 'Zero Trust', 'Autonomous Response'],
                   popular: true,
                   category: 'Quantum & Security',
                   icon: '🛡️'
@@ -294,54 +297,54 @@ const Homepage2025: React.FC = () => {
               />
               <UltraFuturisticServiceCard2026
                 service={{
-                  id: 'autonomous-content',
-                  name: 'AI Content Factory',
-                  tagline: 'Fully automated content creation',
-                  description: 'End-to-end autonomous content creation, optimization, and distribution platform',
-                  price: '$1,299',
+                  id: 'ai-autonomous-customer-success-platform',
+                  name: 'AI Autonomous Customer Success Platform',
+                  tagline: 'Fully autonomous customer success management',
+                  description: 'AI-powered platform that autonomously manages customer success, onboarding, and retention without human intervention.',
+                  price: '$2,999',
                   period: '/month',
-                  features: ['Content Automation', 'AI Writing', 'Multi-platform Publishing'],
+                  features: ['Autonomous Onboarding', 'Churn Prevention', 'Journey Optimization', 'Success Metrics'],
                   popular: true,
-                  category: 'AI & Content',
-                  icon: '🏭'
+                  category: 'AI & Customer Success',
+                  icon: '🎯'
                 }}
                 variant="automation"
               />
               <UltraFuturisticServiceCard2026
                 service={{
-                  id: 'quantum-computing',
-                  name: 'Quantum Computing Platform',
-                  tagline: 'Next-generation computational power',
-                  description: 'Enterprise quantum computing platform with AI optimization and cloud integration',
-                  price: '$5,999',
+                  id: 'autonomous-business-intelligence-engine',
+                  name: 'Autonomous Business Intelligence Engine',
+                  tagline: 'Self-driving business analytics and insights',
+                  description: 'AI-powered business intelligence platform that autonomously discovers insights, generates reports, and provides actionable recommendations.',
+                  price: '$3,299',
                   period: '/month',
-                  features: ['Quantum Processing', 'AI Optimization', 'Cloud Integration'],
-                  popular: false,
-                  category: 'Quantum Computing',
-                  icon: '⚛️'
+                  features: ['Autonomous Insights', 'Report Generation', 'Predictive Analytics', 'Business Optimization'],
+                  popular: true,
+                  category: 'AI & Analytics',
+                  icon: '📊'
                 }}
-                variant="quantum"
+                variant="ai"
               />
             </div>
           </div>
         </section>
 
         {/* Innovation Showcase */}
-        <section className="py-20 px-4 bg-black/20 relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-cyan-500/5"></div>
+        <section className="py-24 px-4 bg-gradient-to-b from-black/40 to-black/20 relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-cyan-500/10"></div>
           <div className="max-w-6xl mx-auto relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="text-center mb-16"
+              className="text-center mb-20"
             >
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-purple-400 via-pink-500 to-cyan-600 bg-clip-text text-transparent">
+              <h2 className="text-4xl md:text-5xl font-bold mb-10 bg-gradient-to-r from-purple-400 via-pink-500 to-cyan-600 bg-clip-text text-transparent">
                 Innovation at Every Level
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                From AI consciousness to quantum supremacy, we're pushing the boundaries of what's possible
+              <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                From AI consciousness to quantum supremacy, we're pushing the boundaries of what's possible in technology
               </p>
             </motion.div>
 
@@ -419,19 +422,19 @@ const Homepage2025: React.FC = () => {
         </section>
 
         {/* Testimonials */}
-        <section className="py-20 px-4">
+        <section className="py-24 px-4 bg-gradient-to-b from-black/20 to-black/40">
           <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="text-center mb-16"
+              className="text-center mb-20"
             >
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+              <h2 className="text-4xl md:text-5xl font-bold mb-10 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
                 What Our Clients Say
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
                 Real results from real companies using our cutting-edge technology solutions
               </p>
             </motion.div>
@@ -470,20 +473,20 @@ const Homepage2025: React.FC = () => {
         </section>
 
         {/* Why Choose Us */}
-        <section className="py-20 px-4 bg-black/20 relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-cyan-500/5"></div>
+        <section className="py-24 px-4 bg-gradient-to-b from-black/40 to-black/20 relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-cyan-500/10"></div>
           <div className="max-w-6xl mx-auto relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="text-center mb-16"
+              className="text-center mb-20"
             >
-              <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-blue-400 via-cyan-500 to-teal-600 bg-clip-text text-transparent">
+              <h2 className="text-4xl md:text-5xl font-bold mb-10 bg-gradient-to-r from-blue-400 via-cyan-500 to-teal-600 bg-clip-text text-transparent">
                 Why Choose Zion Tech Group?
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
                 We combine cutting-edge technology with proven expertise to deliver results that exceed expectations
               </p>
             </motion.div>
@@ -537,6 +540,87 @@ const Homepage2025: React.FC = () => {
                 </p>
               </motion.div>
             </div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section className="py-24 px-4 bg-gradient-to-b from-black/20 to-black/40 relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-teal-500/10"></div>
+          <div className="max-w-6xl mx-auto relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-20"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-10 bg-gradient-to-r from-emerald-400 via-teal-500 to-cyan-600 bg-clip-text text-transparent">
+                Ready to Transform Your Business?
+              </h2>
+              <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-12">
+                Get in touch with our team of experts to discuss how our cutting-edge solutions can drive your business forward
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                  viewport={{ once: true }}
+                  className="text-center p-6 group hover:bg-white/5 rounded-2xl transition-all duration-300"
+                >
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-500 p-4 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Phone className="w-full h-full text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-2">Call Us</h3>
+                  <p className="text-emerald-400 font-medium">+1 302 464 0950</p>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="text-center p-6 group hover:bg-white/5 rounded-2xl transition-all duration-300"
+                >
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-teal-500 to-cyan-500 p-4 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Mail className="w-full h-full text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-2">Email Us</h3>
+                  <p className="text-teal-400 font-medium">kleber@ziontechgroup.com</p>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  viewport={{ once: true }}
+                  className="text-center p-6 group hover:bg-white/5 rounded-2xl transition-all duration-300"
+                >
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-500 p-4 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <MapPin className="w-full h-full text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-2">Visit Us</h3>
+                  <p className="text-cyan-400 font-medium text-sm">364 E Main St STE 1008<br />Middletown DE 19709</p>
+                </motion.div>
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="mt-12"
+              >
+                <button 
+                  className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold rounded-xl hover:from-emerald-600 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-emerald-500"
+                  onClick={() => window.location.href = '/contact'}
+                  aria-label="Contact Zion Tech Group"
+                >
+                  Get Started Today
+                </button>
+              </motion.div>
+            </motion.div>
           </div>
         </section>
 
