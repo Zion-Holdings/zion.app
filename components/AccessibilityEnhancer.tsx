@@ -123,7 +123,7 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
   }, []);
 
   // Keyboard navigation enhancements
-  const handleKeyDown = useCallback(() => {
+  const handleKeyDown = useCallback((e: React.KeyboardEvent) => {
     // Tab navigation detected
   }, []);
 
