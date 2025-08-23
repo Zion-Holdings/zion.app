@@ -1,213 +1,187 @@
 import React from 'react';
 import Layout from '../../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { Shield, Zap, Target, Users, Lock, Rocket, Star, CheckCircle, Eye, AlertTriangle, Key, Globe } from 'lucide-react';
+import { 
+  Shield, Sparkles, Zap, Target, Star, ArrowRight, 
+  CheckCircle, Users, Award, Clock, TrendingUp, Lock
+} from 'lucide-react';
+import Link from 'next/link';
 
-const CybersecurityPage: React.FC = () => {
-  const features = [
+const CybersecurityServices: React.FC = () => {
+  const services = [
     {
-      icon: Shield,
-      title: 'Advanced Threat Protection',
-      description: 'Multi-layered security systems that detect and neutralize sophisticated cyber threats'
+      title: "Quantum Cybersecurity Intelligence",
+      description: "Advanced quantum-resistant cybersecurity with AI consciousness and threat detection",
+      href: "/quantum-cybersecurity-intelligence-2045",
+      features: ["Quantum-Resistant Security", "AI Threat Detection", "Consciousness Integration", "Advanced Analytics"],
+      price: "$24,999/month",
+      badge: "Featured"
     },
     {
-      icon: Eye,
-      title: '24/7 Monitoring',
-      description: 'Continuous surveillance and real-time threat detection across all systems'
+      title: "AI Threat Detection Platform",
+      description: "Revolutionary AI-powered threat detection with consciousness and autonomous response",
+      href: "/ai-threat-detection-platform-2045",
+      features: ["AI Threat Detection", "Autonomous Response", "Consciousness Integration", "Real-time Monitoring"],
+      price: "$19,999/month",
+      badge: "Popular"
     },
     {
-      icon: Lock,
-      title: 'Zero-Trust Security',
-      description: 'Comprehensive access control and identity verification systems'
+      title: "Zero-Trust Security Platform",
+      description: "Comprehensive zero-trust security architecture with AI consciousness",
+      href: "/zero-trust-security-platform",
+      features: ["Zero-Trust Architecture", "AI Consciousness", "Continuous Verification", "Advanced Authentication"],
+      price: "$14,999/month",
+      badge: "Essential"
     },
     {
-      icon: Key,
-      title: 'Encryption & Privacy',
-      description: 'State-of-the-art encryption and data protection protocols'
-    },
-    {
-      icon: AlertTriangle,
-      title: 'Incident Response',
-      description: 'Rapid response teams and automated threat mitigation systems'
-    },
-    {
-      icon: Globe,
-      title: 'Global Security Network',
-      description: 'Worldwide security infrastructure and threat intelligence sharing'
+      title: "Quantum Encryption Platform",
+      description: "Next-generation quantum encryption with consciousness and security",
+      href: "/quantum-encryption-platform-2045",
+      features: ["Quantum Encryption", "Consciousness Security", "Advanced Algorithms", "Future-Proof Protection"],
+      price: "$29,999/month",
+      badge: "Premium"
     }
   ];
 
-  const services = [
-    'Penetration testing and vulnerability assessment',
-    'Security architecture design and implementation',
-    'Compliance and regulatory adherence',
-    'Security awareness training and education',
-    'Incident response and disaster recovery',
-    'Cloud security and infrastructure protection'
-  ];
-
-  const benefits = [
-    'Comprehensive protection against all threat vectors',
-    'Real-time threat detection and response',
-    'Compliance with industry standards and regulations',
-    'Reduced risk of data breaches and cyber attacks',
-    'Enhanced customer trust and brand reputation',
-    'Cost-effective security solutions and ROI'
+  const stats = [
+    { number: "1000+", label: "Security Projects", icon: Shield },
+    { number: "99.99%", label: "Threat Detection", icon: CheckCircle },
+    { number: "200+", label: "Security Partners", icon: Users },
+    { number: "24/7", label: "Security Monitoring", icon: Clock }
   ];
 
   return (
-    <Layout
-      title="Cybersecurity Solutions - Zion Tech Group"
-      description="Advanced cybersecurity and protection services that safeguard your digital assets with cutting-edge security technology and 24/7 monitoring."
-      keywords="cybersecurity, threat protection, zero-trust security, encryption, incident response, Zion Tech Group"
+    <Layout 
+      title="Cybersecurity Services - Zion Tech Group"
+      description="Revolutionary cybersecurity services including quantum security, AI threat detection, and zero-trust architecture. Protect your digital assets with cutting-edge security."
+      keywords="cybersecurity, quantum security, AI threat detection, zero-trust security, Zion Tech Group"
     >
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white">
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-red-900 to-gray-900">
         {/* Hero Section */}
         <section className="relative py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
+          <div className="max-w-7xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-center"
             >
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-red-500 to-orange-500 text-white text-sm font-medium mb-6">
-                <Shield className="w-4 h-4 mr-2" />
-                Cybersecurity Platform
+              <div className="inline-flex items-center space-x-2 bg-red-500/20 border border-red-500/30 rounded-full px-4 py-2 mb-6">
+                <Shield className="w-5 h-5 text-red-400" />
+                <span className="text-red-300 text-sm font-medium">Cybersecurity Services</span>
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-red-400 via-orange-400 to-yellow-400 bg-clip-text text-transparent mb-6">
-                Advanced Cybersecurity Solutions
+              
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                Revolutionary
+                <span className="bg-gradient-to-r from-red-400 via-orange-400 to-yellow-400 bg-clip-text text-transparent">
+                  {" "}Cybersecurity
+                </span>
+                <br />
+                Solutions
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
-                Protect your digital assets with our comprehensive cybersecurity solutions featuring advanced threat detection, zero-trust security, and 24/7 monitoring.
+              
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                Protect your digital future with quantum-resistant cybersecurity, AI consciousness, 
+                and zero-trust architecture that evolves with emerging threats.
               </p>
+              
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-gradient-to-r from-red-500 to-orange-500 text-white font-semibold rounded-lg hover:from-red-600 hover:to-orange-600 transition-all duration-300 transform hover:scale-105">
-                  Secure Your Systems
-                </button>
-                <button className="px-8 py-4 border border-gray-600 text-white font-semibold rounded-lg hover:border-red-500 hover:bg-red-500/10 transition-all duration-300">
-                  Security Assessment
-                </button>
+                <Link 
+                  href="/contact"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-red-500 to-orange-500 text-white font-semibold rounded-full hover:from-red-600 hover:to-orange-600 transition-all duration-300 shadow-lg hover:shadow-red-500/25"
+                >
+                  Secure Your Assets
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
+                <Link 
+                  href="/solutions"
+                  className="inline-flex items-center px-8 py-4 border-2 border-red-500 text-red-400 font-semibold rounded-full hover:bg-red-500 hover:text-white transition-all duration-300"
+                >
+                  Explore Solutions
+                </Link>
               </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Features Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
+        {/* Stats Section */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Comprehensive Security Features
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Our cybersecurity platform provides enterprise-grade protection with cutting-edge technology and expert security professionals.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {features.map((feature, index) => (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {stats.map((stat, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="p-6 rounded-2xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/60 hover:border-red-500/50 transition-all duration-300"
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  className="text-center"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-orange-500 rounded-lg flex items-center justify-center mb-4">
-                    <feature.icon className="w-6 h-6 text-white" />
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-red-500/20 rounded-full mb-4">
+                    <stat.icon className="w-8 h-8 text-red-400" />
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
-                  <p className="text-gray-400">{feature.description}</p>
+                  <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
+                  <div className="text-gray-400">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Services Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-gray-900/50 to-black/50">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Cybersecurity Services
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Comprehensive security services designed to protect your organization from evolving cyber threats.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                className="space-y-6"
-              >
-                {services.slice(0, 3).map((service, index) => (
-                  <div key={index} className="flex items-start space-x-4">
-                    <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
-                    <p className="text-gray-300 text-lg">{service}</p>
-                  </div>
-                ))}
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                className="space-y-6"
-              >
-                {services.slice(3).map((service, index) => (
-                  <div key={index} className="flex items-start space-x-4">
-                    <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
-                    <p className="text-gray-300 text-lg">{service}</p>
-                  </div>
-                ))}
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Benefits Section */}
+        {/* Services Grid */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Why Choose Our Cybersecurity?
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                Cybersecurity Services
               </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Experience enterprise-grade security with our comprehensive cybersecurity solutions.
+              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+                Choose from our comprehensive suite of cybersecurity and protection services
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {benefits.map((benefit, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+              {services.map((service, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="p-6 rounded-xl bg-gradient-to-br from-gray-800/30 to-gray-900/30 border border-gray-700/40 hover:border-red-500/50 transition-all duration-300"
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-red-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-red-500/10"
                 >
-                  <div className="flex items-center space-x-3">
-                    <Star className="w-5 h-5 text-red-400 flex-shrink-0" />
-                    <p className="text-gray-300">{benefit}</p>
+                  {service.badge && (
+                    <div className="inline-flex items-center px-3 py-1 bg-red-500/20 border border-red-500/30 rounded-full text-xs font-medium text-red-300 mb-4">
+                      {service.badge}
+                    </div>
+                  )}
+                  
+                  <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
+                  <p className="text-gray-300 mb-6">{service.description}</p>
+                  
+                  <div className="space-y-3 mb-6">
+                    {service.features.map((feature, featureIndex) => (
+                      <div key={featureIndex} className="flex items-center space-x-3">
+                        <CheckCircle className="w-5 h-5 text-red-400 flex-shrink-0" />
+                        <span className="text-gray-300">{feature}</span>
+                      </div>
+                    ))}
                   </div>
+                  
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="text-2xl font-bold text-red-400">{service.price}</div>
+                    <Star className="w-5 h-5 text-yellow-400" />
+                  </div>
+                  
+                  <Link 
+                    href={service.href}
+                    className="inline-flex items-center justify-center w-full px-6 py-3 bg-gradient-to-r from-red-500 to-orange-500 text-white font-semibold rounded-lg hover:from-red-600 hover:to-orange-600 transition-all duration-300"
+                  >
+                    Learn More
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Link>
                 </motion.div>
               ))}
             </div>
@@ -215,26 +189,35 @@ const CybersecurityPage: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-gray-900/50 to-black/50">
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
                 Ready to Secure Your Future?
               </h2>
-              <p className="text-xl text-gray-400 mb-8">
-                Protect your organization with our comprehensive cybersecurity solutions and expert security professionals.
+              <p className="text-xl text-gray-300 mb-8">
+                Don't wait for a breach to happen. Protect your digital assets with our 
+                revolutionary cybersecurity solutions that evolve with emerging threats.
               </p>
+              
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-gradient-to-r from-red-500 to-orange-500 text-white font-semibold rounded-lg hover:from-red-600 hover:to-orange-600 transition-all duration-300 transform hover:scale-105">
+                <Link 
+                  href="/contact"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-red-500 to-orange-500 text-white font-semibold rounded-full hover:from-red-600 hover:to-orange-600 transition-all duration-300 shadow-lg hover:shadow-red-500/25"
+                >
                   Get Security Assessment
-                </button>
-                <button className="px-8 py-4 border border-gray-600 text-white font-semibold rounded-lg hover:border-red-500 hover:bg-red-500/10 transition-all duration-300">
-                  Contact Security Team
-                </button>
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
+                <Link 
+                  href="/team"
+                  className="inline-flex items-center px-8 py-4 border-2 border-red-500 text-red-400 font-semibold rounded-full hover:bg-red-500 hover:text-white transition-all duration-300"
+                >
+                  Meet Our Team
+                </Link>
               </div>
             </motion.div>
           </div>
@@ -244,4 +227,4 @@ const CybersecurityPage: React.FC = () => {
   );
 };
 
-export default CybersecurityPage;
+export default CybersecurityServices;
