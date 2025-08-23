@@ -5,6 +5,16 @@ import Features from '../components/sections/Features';
 import MicroSaasServices from '../components/sections/MicroSaasServices';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
+<<<<<<< HEAD
+import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Target, TrendingUp } from 'lucide-react';
+
+export default function HomePage() {
+  const heroStats = [
+    { value: '8+', label: 'Micro SaaS Services', color: 'text-cyan-400' },
+    { value: '100%', label: 'Production Ready', color: 'text-fuchsia-400' },
+    { value: 'Free', label: 'Tier Available', color: 'text-blue-400' },
+    { value: '24/7', label: 'Support', color: 'text-green-400' },
+=======
 import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, TrendingUp, DollarSign, Users } from 'lucide-react';
 
 export default function HomePage() {
@@ -13,6 +23,7 @@ export default function HomePage() {
     { value: '14-Day', label: 'Free Trial', color: 'text-fuchsia-400' },
     { value: 'AI-Powered', label: 'Solutions', color: 'text-blue-400' },
     { value: 'Competitive', label: 'Pricing', color: 'text-green-400' },
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-b680
   ];
 
   const heroStats = marketStats;
@@ -27,9 +38,15 @@ export default function HomePage() {
   // Enhanced service advertising content with real market data and competitive advantages
   const serviceHighlights = [
     {
+<<<<<<< HEAD
+      icon: <Cloud className="w-8 h-8 text-white" />,
+      title: 'Real Micro SaaS Services',
+      description: '48+ fully functional micro SaaS tools with real implementations, not just mockups.',
+=======
       icon: <TrendingUp className="w-8 h-8 text-white" />,
       title: 'Market-Driven Solutions',
       description: 'Real micro SaaS services with competitive pricing, market analysis, and proven business models.',
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-b680
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       gradient: 'from-cyan-400 to-blue-500',
       price: 'Starting at $49/month',
@@ -38,8 +55,13 @@ export default function HomePage() {
     },
     {
       icon: <Bot className="w-8 h-8 text-white" />,
+<<<<<<< HEAD
+      title: 'AI-Powered Solutions',
+      description: 'Advanced AI content generation, quantum AI training, biomedical research, legal contract analysis, and quantum computing platforms. Market-leading technology with 1000%+ average ROI.',
+=======
       title: 'AI-Powered Automation',
       description: 'Intelligent automation for social media, SEO, email marketing, and business intelligence.',
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-b680
       color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
       gradient: 'from-fuchsia-400 to-purple-500',
       price: 'Starting at $199/month',
@@ -47,9 +69,15 @@ export default function HomePage() {
       competitors: 'OpenAI, Google AI, Microsoft AI'
     },
     {
+<<<<<<< HEAD
+      icon: <RefreshCw className="w-8 h-8 text-white" />,
+      title: 'Enterprise Reliability',
+      description: '99.9% uptime guarantee, automated scaling, and intelligent resource management. Trusted by Fortune 500 companies worldwide.',
+=======
       icon: <DollarSign className="w-8 h-8 text-white" />,
       title: 'Transparent Pricing',
       description: 'Clear pricing tiers with competitive rates, feature comparisons, and market positioning.',
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-b680
       color: 'bg-gradient-to-br from-green-500 to-emerald-600',
       gradient: 'from-green-400 to-emerald-500',
       price: 'Starting at $299/month',
@@ -57,9 +85,15 @@ export default function HomePage() {
       competitors: 'AWS, Azure, Google Cloud'
     },
     {
+<<<<<<< HEAD
+      icon: <Zap className="w-8 h-8 text-white" />,
+      title: 'Lightning Fast Setup',
+      description: 'Get started in minutes with our intuitive interfaces and automated onboarding. No technical expertise required.',
+=======
       icon: <Users className="w-8 h-8 text-white" />,
       title: 'Targeted Use Cases',
       description: 'Specific solutions for marketing agencies, e-commerce, SaaS companies, and content creators.',
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-b680
       color: 'bg-gradient-to-br from-orange-500 to-red-600',
       gradient: 'from-orange-400 to-red-500',
       price: 'Starting at $99/month',
@@ -68,8 +102,13 @@ export default function HomePage() {
     },
     {
       icon: <Shield className="w-8 h-8 text-white" />,
+<<<<<<< HEAD
+      title: 'Bank-Level Security',
+      description: 'SOC 2 compliance, quantum-resistant encryption, and automated security monitoring. Future-proof protection against quantum threats.',
+=======
       title: 'Enterprise Features',
       description: 'Advanced security, compliance, white-label solutions, and SLA guarantees for large organizations.',
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-b680
       color: 'bg-gradient-to-br from-indigo-500 to-purple-600',
       gradient: 'from-indigo-400 to-purple-500',
       price: 'Starting at $399/month',
@@ -78,8 +117,13 @@ export default function HomePage() {
     },
     {
       icon: <BarChart3 className="w-8 h-8 text-white" />,
+<<<<<<< HEAD
+      title: 'Transparent Pricing',
+      description: 'No hidden fees, simple monthly pricing that scales with your business needs. Competitive rates starting at $49/month.',
+=======
       title: 'Market Intelligence',
       description: 'Comprehensive market analysis, competitive positioning, and growth opportunity insights.',
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-b680
       color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
       gradient: 'from-teal-400 to-cyan-500',
       price: 'Starting at $49/month',
@@ -268,16 +312,32 @@ export default function HomePage() {
   return (
     <>
       <Head>
+<<<<<<< HEAD
+        <title>Zion Tech Group — Professional Micro SaaS Services for Developers & Businesses</title>
+        <meta name="description" content="Discover our suite of production-ready micro SaaS services including code review, rate limiting, email validation, password security, URL shortening, JSON processing, QR codes, and file analysis. Start with free tiers." />
+        <meta property="og:title" content="Zion Tech Group — Professional Micro SaaS Services for Developers & Businesses" />
+        <meta property="og:description" content="Production-ready micro SaaS services with free tiers. Code review, security tools, utilities, and more for developers and businesses." />
+=======
         <title>Zion Tech Group — AI-Powered Micro SaaS Services with Competitive Pricing</title>
         <meta name="description" content="Discover real micro SaaS services: AI-powered social media analytics, SEO optimization, email marketing automation, and more. Competitive pricing with 14-day free trials." />
         <meta property="og:title" content="Zion Tech Group — AI-Powered Micro SaaS Services with Competitive Pricing" />
         <meta property="og:description" content="Real micro SaaS solutions with competitive pricing. AI-powered tools for social media, SEO, email marketing, and business intelligence." />
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-b680
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
       {/* Hero Section */}
       <Hero
         title="Zion Tech Group"
+<<<<<<< HEAD
+        subtitle="Professional micro SaaS services built for developers and businesses. Start with free tiers and scale as you grow."
+        primaryAction={{
+          text: "Explore Services",
+          href: "/services"
+        }}
+        secondaryAction={{
+          text: "View Pricing",
+=======
         subtitle="Real micro SaaS services with AI-powered automation, competitive pricing, and proven business models. Start your 14-day free trial today."
         primaryAction={{
           text: "View Services",
@@ -285,6 +345,7 @@ export default function HomePage() {
         }}
         secondaryAction={{
           text: "See Pricing",
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-b680
           href: "/pricing"
         }}
         stats={heroStats}
@@ -306,8 +367,13 @@ export default function HomePage() {
 
       {/* Platform Capabilities */}
       <Features
+<<<<<<< HEAD
+        title="Our Micro SaaS Services"
+        subtitle="Each service is built with production-ready code, comprehensive testing, and real-world use cases in mind."
+=======
         title="Why Choose Our Micro SaaS Services"
         subtitle="Real solutions with competitive pricing, market analysis, and enterprise-grade features designed for modern businesses."
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-b680
         features={platformFeatures}
         columns={2}
       />
@@ -643,7 +709,11 @@ export default function HomePage() {
             Ready to Get Started?
           </h2>
           <p className="text-xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed">
+<<<<<<< HEAD
+            Start with our free tiers and experience the power of our micro SaaS services. No credit card required.
+=======
             Start your 14-day free trial today. No credit card required. Experience the power of AI-powered micro SaaS services.
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-b680
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Button
@@ -652,16 +722,28 @@ export default function HomePage() {
               size="lg"
               className="bg-white text-blue-600 hover:bg-gray-100 shadow-2xl"
             >
+<<<<<<< HEAD
+              Explore Services
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+            <Button
+              href="/services"
+=======
               View All Services
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
             <Button
               href="/pricing"
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-b680
               variant="outline"
               size="lg"
               className="border-white text-white hover:bg-white hover:text-blue-600 shadow-2xl"
             >
+<<<<<<< HEAD
+              View Our Services
+=======
               See Pricing
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-b680
             </Button>
           </div>
         </div>

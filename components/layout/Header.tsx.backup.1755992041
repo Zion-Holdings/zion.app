@@ -41,8 +41,13 @@ const Header = () => {
 
   const navigation = [
     { name: 'Product', href: '#', hasDropdown: true },
+<<<<<<< HEAD
+    { name: 'Solutions', href: '/services' },
+    { name: 'Market Research', href: '/market-research' },
+=======
     { name: 'Services', href: '/services' },
     { name: 'Micro SaaS', href: '/micro-saas' },
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-b680
     { name: 'Resources', href: '/resources' },
     { name: 'Company', href: '/about' },
     { name: 'Pricing', href: '/pricing' },
@@ -50,12 +55,30 @@ const Header = () => {
   ];
 
   const productDropdown = [
+<<<<<<< HEAD
+    { name: 'AI Content Generator', href: '/ai-content-generator', description: 'AI-powered content creation in 50+ languages' },
+    { name: 'Cloud Monitoring', href: '/cloud-monitoring', description: 'Real-time infrastructure monitoring & analytics' },
+    { name: 'AI SEO Suite', href: '/ai-seo-suite', description: 'Comprehensive SEO tools with AI optimization' },
+    { name: 'AI Code Assistant', href: '/ai-assistant', description: 'Intelligent code completion and suggestions' },
+    { name: 'Cloud Platform', href: '/cloud-platform', description: 'Scalable cloud infrastructure' },
+    { name: 'Automation Hub', href: '/automation', description: 'AI-powered workflow automation' },
+    { name: 'Analytics', href: '/analytics', description: 'Real-time insights and reporting' },
+    { name: 'Micro SaaS Services', href: '/micro-saas', description: 'AI-powered micro SaaS solutions' },
+  ];
+
+  const solutionsDropdown = [
+    { name: 'All Services', href: '/services', description: 'Complete service portfolio' },
+    { name: 'Micro SaaS', href: '/micro-saas', description: 'AI-powered micro SaaS solutions' },
+    { name: 'AI & Automation', href: '/automation', description: 'Intelligent automation systems' },
+    { name: 'Cloud Infrastructure', href: '/cloud-platform', description: 'Scalable cloud solutions' },
+=======
     { name: 'Social Media Analytics', href: '/services', description: 'AI-powered social media performance tracking' },
     { name: 'SEO Content Optimization', href: '/services', description: 'AI-driven content optimization for better rankings' },
     { name: 'Email Marketing Automation', href: '/services', description: 'Intelligent email automation with AI segmentation' },
     { name: 'Customer Feedback Platform', href: '/services', description: 'AI-powered feedback collection and analysis' },
     { name: 'Business Intelligence', href: '/services', description: 'Real-time BI dashboards and reporting' },
     { name: 'AI Chatbot Builder', href: '/services', description: 'No-code AI chatbot platform' },
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-b680
   ];
 
   const isActive = (href: string) => router.pathname === href;
