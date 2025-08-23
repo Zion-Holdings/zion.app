@@ -8,6 +8,8 @@ import {
   Building
 } from 'lucide-react';
 
+<<<<<<< HEAD
+=======
 // Import our new innovative 2025 services
 import { realInnovativeMicroSaasServices2025 } from '../data/2025-real-innovative-micro-saas-expansion';
 import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services-expansion';
@@ -27,6 +29,7 @@ import { realMicroSaas2025Expansion } from '../data/real-micro-saas-2025-expansi
 import { realITServices2025Expansion } from '../data/real-it-services-2025-expansion';
 import { realAIServices2025Expansion } from '../data/real-ai-services-2025-expansion';
 
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-ad46
 // Import our new service data
 import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
 import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas-solutions';
@@ -151,6 +154,12 @@ const allServices = [
   ...realInnovativeMicroSaasServices2025,
   ...innovativeITInfrastructureServices2025,
   ...innovativeAIServices2025,
+<<<<<<< HEAD
+  ...innovativeITServices2025,
+  ...emergingTechServices2025,
+  ...additionalRealServices2025,
+  ...newInnovativeAIServices
+=======
 =======
   
   // Our new comprehensive 2025 services expansion
@@ -167,6 +176,7 @@ const allServices = [
   ...realITServices2025Expansion,
   ...realAIServices2025Expansion,
   
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-ad46
   ...enterpriseITSolutions,
   ...innovativeMicroSaasSolutions,
   ...cuttingEdgeAIServices,
