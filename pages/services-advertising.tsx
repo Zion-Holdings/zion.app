@@ -205,6 +205,10 @@ export default function ServicesAdvertisingPage() {
 						<li>Typical SMB budget: $20–$200/mo</li>
 						<li>References: {ext('https://www.atlassian.com/software/statuspage/pricing')}, {ext('https://www.checklyhq.com/pricing/')}</li>
 					</ul>
+					<div className="flex gap-3">
+						<a href="/status-pages-slo" className="px-3 py-1.5 rounded-md bg-cyan-600 text-white">View Service</a>
+						<a href="/pricing" className="px-3 py-1.5 rounded-md border border-cyan-500/40 text-cyan-300">Pricing</a>
+					</div>
 				</section>
 
 				<section className="space-y-6">
@@ -295,6 +299,10 @@ export default function ServicesAdvertisingPage() {
 						<li>Typical SMB budget: $9–$50/mo</li>
 						<li>References: {ext('https://plausible.io/pricing')}, {ext('https://usefathom.com/pricing')}</li>
 					</ul>
+					<div className="flex gap-3">
+						<a href="/website-analytics" className="px-3 py-1.5 rounded-md bg-cyan-600 text-white">View Service</a>
+						<a href="/pricing" className="px-3 py-1.5 rounded-md border border-cyan-500/40 text-cyan-300">Pricing</a>
+					</div>
 				</section>
 
 				<section className="space-y-6">
@@ -304,6 +312,10 @@ export default function ServicesAdvertisingPage() {
 						<li>Typical SMB budget: $20–$100/mo</li>
 						<li>References: {ext('https://mailshake.com/pricing')}, {ext('https://www.gmass.co/pricing')}</li>
 					</ul>
+					<div className="flex gap-3">
+						<a href="/email-followups" className="px-3 py-1.5 rounded-md bg-cyan-600 text-white">View Service</a>
+						<a href="/pricing" className="px-3 py-1.5 rounded-md border border-cyan-500/40 text-cyan-300">Pricing</a>
+					</div>
 				</section>
 				
 				<section className="space-y-6">
