@@ -1,6 +1,7 @@
 name: Cloud Orchestrator Plus
 
 on:
+<<<<<<< HEAD
   workflow_dispatch: {}
   schedule:
     - cron: '*/10 * * * *'
@@ -16,10 +17,25 @@ jobs:
     timeout-minutes: 20
     steps:
       - name: Checkout repository
+=======
+  schedule:
+    - cron: "*/3 * * * *"
+  workflow_dispatch: {}
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout
+>>>>>>> origin/automation/git-sync/2025-08-13T22-22-32-390Z
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
+<<<<<<< HEAD
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -32,4 +48,33 @@ jobs:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
+=======
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install
+        run: npm ci
+
+      - name: Extended Cloud Content Orchestration
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          CANONICAL_URL: https://ziontechgroup.com
+        run: |
+          node automation/cloud-orchestrator-plus.cjs || true
+          node automation/front-index-directory-builder.cjs || true
+          node automation/front-index-advertiser.cjs || true
+          node automation/homepage-updater.cjs || true
+
+      - name: Advanced git sync
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: node automation/advanced-git-sync.cjs || node automation/git-sync.cjs
+
+>>>>>>> origin/automation/git-sync/2025-08-13T22-22-32-390Z
 
