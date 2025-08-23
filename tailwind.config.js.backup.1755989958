@@ -22,6 +22,9 @@ module.exports = {
           800: '#1e40af',
           900: '#1e3a8a',
         },
+<<<<<<< HEAD
+        secondary: {
+=======
         // Extended color palette
         gray: {
           50: '#f9fafb',
@@ -142,6 +145,7 @@ module.exports = {
           950: '#450a0a',
         },
         fuchsia: {
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-bdcb
           50: '#fdf4ff',
           100: '#fae8ff',
           200: '#f5d0fe',
