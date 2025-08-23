@@ -246,6 +246,13 @@ export default function Layout({ children, seo }: LayoutProps) {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen bg-black text-white">
+<<<<<<< HEAD
+      <EnhancedNavigation />
+      <main className="pt-24 lg:pt-28">
+        {children}
+      </main>
+      <EnhancedFooter />
+=======
       <EnhancedFuturisticBackground variant="quantum" intensity="high">
         <NeoFuturisticNavigation />
         <main className="pt-24 lg:pt-28">
@@ -253,6 +260,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </main>
         <NeoFuturisticFooter />
       </EnhancedFuturisticBackground>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9431
     </div>
   );
 };
