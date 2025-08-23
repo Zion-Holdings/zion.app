@@ -1,16 +1,469 @@
 #!/usr/bin/env node
+<<<<<<< HEAD
+
+/**
+ * Comprehensive Redundancy System
+ * Provides complete backup automation for all systems:
+ * - PM2 automations
+ * - GitHub Actions automations  
+ * - Netlify functions automations
+ */
+
+const { execSync, spawn } = require('child_process');
+const fs = require('fs');
+const path = require('path');
+=======
 "use strict";
 
 const { spawnSync, execSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-1200
 
 class ComprehensiveRedundancySystem {
   constructor() {
     this.config = {
       pm2: {
         ecosystemFiles: [
+<<<<<<< HEAD
+          'ecosystem.pm2.cjs',
+          'ecosystem-redundancy.pm2.cjs',
+          'ecosystem.redundancy.cjs'
+        ],
+        processes: [
+          'zion-auto-sync',
+          'zion-auto-sync-cron',
+          'zion-auto-sync-backup',
+          'zion-auto-sync-cron-backup',
+          'redundancy-master-orchestrator',
+          'redundancy-pm2-manager',
+          'redundancy-github-manager',
+          'redundancy-netlify-manager',
+          'build-monitor-backup',
+          'git-sync-backup',
+          'netlify-healer-backup'
+        ]
+      },
+      github: {
+        workflows: [
+          'marketing-sync.yml',
+          'sync-health.yml',
+          'marketing-sync-backup.yml',
+          'sync-health-backup.yml'
+        ],
+        schedules: {
+          'marketing-sync': '0 */12 * * *',
+          'sync-health': '*/15 * * * *',
+          'marketing-sync-backup': '30 */12 * * *',
+          'sync-health-backup': '*/20 * * * *'
+        }
+      },
+      netlify: {
+        functions: [
+          'a11y-alt-text-runner',
+          'adaptive-orchestrator',
+          'ai-changelog-runner',
+          'ai-trends-radar-runner',
+          'anchor-links-auto-fixer',
+          'auto-discovery-runner',
+          'auto-scheduler',
+          'automation-matrix',
+          'autonomous-invention-orchestrator',
+          'autonomous-meta-orchestrator',
+          'broken-image-scanner',
+          'broken-image-scanner-runner',
+          'canonical-auditor',
+          'cloud_deep_research',
+          'cloud_orchestrator',
+          'code-smell-audit-runner',
+          'component-coupling-graph-runner',
+          'component-props-docs-runner',
+          'component-size-report',
+          'content-freshness-score-runner',
+          'continuous-front-runner',
+          'continuous-orchestrator',
+          'dead-code-audit',
+          'dead-code-report',
+          'deps-auto-upgrade-runner',
+          'docs-index-runner',
+          'docs-search-index-runner',
+          'duplicate-media-finder-runner',
+          'external-link-check-runner',
+          'fast-front-promoter',
+          'fast-orchestrator',
+          'feature-advertiser',
+          'features-capabilities-benefits-advertiser',
+          'front-ads-promoter',
+          'front-enhancer',
+          'front-index-futurizer',
+          'front-index-orchestrator',
+          'front-index-scheduler',
+          'front-maximizer',
+          'front-visionary-expander',
+          'frontpage-enhancer',
+          'frontpage-scheduler',
+          'headers-enforcer',
+          'home-visionary-expander',
+          'homepage-advertiser-scheduler',
+          'homepage-enhancer',
+          'homepage-updater',
+          'homepage-updater-scheduler',
+          'homepage_advertiser',
+          'hyper-front-index-accelerator',
+          'image-optimizer-runner',
+          'innovation-lab',
+          'innovations-promoter',
+          'intelligent-meta-orchestrator',
+          'internal-link-graph-runner',
+          'knowledge-pack-runner',
+          'license-compliance-auditor',
+          'link-and-health-scheduler',
+          'link-crawler',
+          'maintenance-scheduler',
+          'marketing-and-features-promo',
+          'marketing-scheduler',
+          'media-og-and-optimize',
+          'metadata-optimizer-runner',
+          'netlify-auto-healer-runner',
+          'newsroom-auto-publisher',
+          'newsroom-runner',
+          'og-image-update-runner',
+          'orphan-pages-detector',
+          'pagespeed-insights-runner',
+          'readme-advertiser',
+          'repo-knowledge-graph-runner',
+          'repo-radar-and-graph',
+          'repo-radar-runner',
+          'revenue-ideas-lab',
+          'roadmap-curator',
+          'robots-auditor',
+          'schedule-content-index',
+          'schedule-homepage',
+          'schedule-knowledge-graph',
+          'schedule-site-health',
+          'security-audit',
+          'security-audit-runner',
+          'seo-audit-runner',
+          'site-404-map-runner',
+          'site-crawler',
+          'sitemap_runner',
+          'stale-content-auditor-runner',
+          'todo-scanner-runner',
+          'todo-summary-runner',
+          'topic-cluster-builder-runner',
+          'topics-map-runner',
+          'trigger-all-and-commit',
+          'ui-enhancer',
+          'ultrafast-front-orchestrator',
+          'ultrafast-orchestrator',
+          'unused-media-scanner'
+        ]
+      }
+    };
+    
+    this.status = {
+      pm2: { running: false, processes: [] },
+      github: { workflows: [], lastRun: null },
+      netlify: { functions: [], lastDeploy: null }
+    };
+  }
+
+  async start() {
+    console.log('🚀 Starting Comprehensive Redundancy System...');
+    
+    try {
+      // Start PM2 redundancy
+      await this.startPM2Redundancy();
+      
+      // Start GitHub Actions redundancy
+      await this.startGitHubActionsRedundancy();
+      
+      // Start Netlify Functions redundancy
+      await this.startNetlifyFunctionsRedundancy();
+      
+      // Start monitoring
+      this.startMonitoring();
+      
+      console.log('✅ Comprehensive Redundancy System started successfully');
+    } catch (error) {
+      console.error('❌ Failed to start Comprehensive Redundancy System:', error);
+      throw error;
+    }
+  }
+
+  async startPM2Redundancy() {
+    console.log('📱 Starting PM2 Redundancy...');
+    
+    try {
+      // Ensure logs directory exists
+      execSync('mkdir -p automation/logs', { stdio: 'inherit' });
+      
+      // Start redundancy ecosystem
+      execSync('pm2 start ecosystem-redundancy.pm2.cjs --update-env', { stdio: 'inherit' });
+      
+      // Wait for processes to start
+      await this.sleep(3000);
+      
+      // Verify processes are running
+      const status = execSync('pm2 status --no-daemon', { encoding: 'utf8' });
+      this.status.pm2.running = true;
+      this.status.pm2.processes = this.parsePM2Status(status);
+      
+      console.log(`✅ PM2 Redundancy started with ${this.status.pm2.processes.length} processes`);
+    } catch (error) {
+      console.error('❌ Failed to start PM2 Redundancy:', error);
+      throw error;
+    }
+  }
+
+  async startGitHubActionsRedundancy() {
+    console.log('🐙 Starting GitHub Actions Redundancy...');
+    
+    try {
+      // Create backup workflows with different schedules
+      await this.createGitHubActionsBackups();
+      
+      // Verify workflows exist
+      this.status.github.workflows = await this.getGitHubWorkflows();
+      
+      console.log(`✅ GitHub Actions Redundancy configured with ${this.status.github.workflows.length} workflows`);
+    } catch (error) {
+      console.error('❌ Failed to start GitHub Actions Redundancy:', error);
+      throw error;
+    }
+  }
+
+  async startNetlifyFunctionsRedundancy() {
+    console.log('☁️ Starting Netlify Functions Redundancy...');
+    
+    try {
+      // Create backup function runners
+      await this.createNetlifyFunctionsBackups();
+      
+      // Verify functions exist
+      this.status.netlify.functions = await this.getNetlifyFunctions();
+      
+      console.log(`✅ Netlify Functions Redundancy configured with ${this.status.netlify.functions.length} functions`);
+    } catch (error) {
+      console.error('❌ Failed to start Netlify Functions Redundancy:', error);
+      throw error;
+    }
+  }
+
+  async createGitHubActionsBackups() {
+    const workflowsDir = '.github/workflows';
+    
+    // Create backup workflows with different schedules
+    const backupWorkflows = [
+      {
+        name: 'marketing-sync-backup.yml',
+        schedule: '30 */12 * * *', // 30 minutes offset from primary
+        jobName: 'run-marketing-sync-backup'
+      },
+      {
+        name: 'sync-health-backup.yml',
+        schedule: '*/20 * * * *', // Every 20 minutes instead of 15
+        jobName: 'check-sync-backup'
+      }
+    ];
+
+    for (const workflow of backupWorkflows) {
+      const workflowPath = path.join(workflowsDir, workflow.name);
+      if (!fs.existsSync(workflowPath)) {
+        await this.createBackupWorkflow(workflow);
+      }
+    }
+  }
+
+  async createBackupWorkflow(workflow) {
+    const template = this.getWorkflowTemplate(workflow);
+    const workflowPath = path.join('.github/workflows', workflow.name);
+    
+    fs.writeFileSync(workflowPath, template);
+    console.log(`📝 Created backup workflow: ${workflow.name}`);
+  }
+
+  getWorkflowTemplate(workflow) {
+    if (workflow.name.includes('marketing-sync')) {
+      return `name: Marketing Sync Backup
+
+on:
+  schedule:
+    - cron: '${workflow.schedule}'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  ${workflow.jobName}:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run marketing-sync backup
+        env:
+          LINKEDIN_ACCESS_TOKEN: \${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_URN: \${{ secrets.LINKEDIN_URN }}
+          IG_USER_ID: \${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: \${{ secrets.IG_ACCESS_TOKEN }}
+        run: node automation/marketing-sync.js
+
+      - name: Commit report if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "\$(git status --porcelain)" ]; then
+            git add -A
+            git commit -m "chore(marketing): update marketing-sync backup report"
+            git push origin HEAD:main
+          else
+            echo "No changes to commit."
+          fi`;
+    } else {
+      return `name: Sync Health Backup
+
+on:
+  schedule:
+    - cron: '${workflow.schedule}'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  ${workflow.jobName}:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run pm2-auto-sync backup (safe mode)
+        env:
+          AUTO_SYNC_STRATEGY: hardreset
+          AUTO_SYNC_CLEAN: '0'
+        run: node automation/pm2-auto-sync.js || true
+
+      - name: Push if repository is ahead
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Only push if we have local commits not on origin
+          AHEAD=\$(git rev-list --left-right --count HEAD...origin/main | awk '{print \$1}')
+          if [ "\$AHEAD" != "0" ]; then
+            git push origin HEAD:main
+          else
+            echo "No push needed."
+          fi`;
+Timestamp: ${results.timestamp}
+Overall Status: ${overallHealth}
+
+🔧 PM2 Processes: ${status.pm2}
+🔄 GitHub Actions: ${status.githubActions}
+☁️ Netlify Functions: ${status.netlifyFunctions}
+
+${results.pm2 && results.githubActions && results.netlifyFunctions ? 
+  "🎉 All automation systems are operating normally!" : 
+  "⚠️ Some automation systems require attention. Check logs for details."}
+`;
+  }
+
+  saveHealthReport(results) {
+    try {
+      const reportPath = path.join(this.config.logging.logDir, `health-report-${new Date().toISOString().split('T')[0]}.json`);
+      const reportData = {
+        ...results,
+        summary: {
+          totalSystems: 3,
+          healthySystems: Object.values(results).filter(Boolean).length,
+          unhealthySystems: Object.values(results).filter(Boolean).length - 3
+        }
+      };
+      
+      fs.writeFileSync(reportPath, JSON.stringify(reportData, null, 2));
+      this.log(`📝 Health report saved to ${reportPath}`);
+    } catch (error) {
+      this.log(`❌ Failed to save health report: ${error.message}`, "ERROR");
+    }
+  }
+
+  async startComprehensiveMonitoring() {
+    this.log("🚀 Starting comprehensive monitoring system...");
+    
+    // Initial health check
+    await this.performComprehensiveHealthCheck();
+    
+    // Set up periodic monitoring
+    setInterval(async () => {
+      await this.performComprehensiveHealthCheck();
+    }, 5 * 60 * 1000); // Every 5 minutes
+
+    // Set up PM2 monitoring
+    setInterval(async () => {
+      await this.checkPM2ComprehensiveHealth();
+    }, this.config.pm2.healthCheckInterval);
+
+    // Set up GitHub Actions monitoring
+    setInterval(async () => {
+      await this.checkGitHubActionsComprehensive();
+    }, this.config.githubActions.healthCheckInterval);
+
+    // Set up Netlify functions monitoring
+    setInterval(async () => {
+      await this.checkNetlifyFunctionsComprehensive();
+    }, this.config.netlifyFunctions.healthCheckInterval);
+
+    this.log("✅ Comprehensive monitoring system started successfully");
+  }
+
+  initializeMonitoring() {
+    this.log("🔧 Initializing comprehensive redundancy monitoring...");
+    
+    // Ensure all required directories exist
+    const requiredDirs = [
+      this.config.logging.logDir,
+      ".github/workflows",
+      "netlify/functions"
+    ];
+
+    requiredDirs.forEach(dir => {
+      if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+        this.log(`📁 Created directory: ${dir}`);
+      }
+    });
+  }
+}
+
+// Start the comprehensive redundancy system
+if (require.main === module) {
+  const redundancySystem = new ComprehensiveRedundancySystem();
+  
+  // Handle graceful shutdown
+  process.on('SIGINT', () => {
+    console.log('\n🛑 Shutting down comprehensive redundancy system...');
+    process.exit(0);
+  });
+  
+  process.on('SIGTERM', () => {
+    console.log('\n🛑 Terminating comprehensive redundancy system...');
+    process.exit(0);
+  });
+=======
     }
   }
 
@@ -653,22 +1106,37 @@ async function executeBackupLogic() {
       this.log("Received SIGTERM, shutting down gracefully...");
       await this.stopMonitoring();
     });
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-1200
   }
 }
 
 // CLI interface
 if (require.main === module) {
   const system = new ComprehensiveRedundancySystem();
+<<<<<<< HEAD
+=======
   
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-1200
   const command = process.argv[2] || 'start';
   
   switch (command) {
     case 'start':
+<<<<<<< HEAD
+      system.start();
+      break;
+    case 'stop':
+      system.stop();
+=======
       system.startMonitoring();
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-1200
       break;
     case 'status':
       console.log(JSON.stringify(system.getStatus(), null, 2));
       break;
+<<<<<<< HEAD
+    default:
+      console.log('Usage: node comprehensive-redundancy-system.cjs [start|stop|status]');
+=======
     case 'health':
       system.runComprehensiveHealthCheck();
       break;
@@ -678,6 +1146,7 @@ if (require.main === module) {
     default:
       console.log('Usage: node comprehensive-redundancy-system.cjs [start|status|health|recover]');
       process.exit(1);
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-1200
   }
 }
 
