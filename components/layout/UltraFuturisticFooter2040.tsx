@@ -29,10 +29,10 @@ const footerData = {
   },
   quickLinks: [
     { label: 'About Us', href: '/about' },
+    { label: 'Mission', href: '/mission' },
     { label: 'Services', href: '/services' },
     { label: 'Solutions', href: '/solutions' },
     { label: 'Case Studies', href: '/case-studies' },
-    { label: 'Blog', href: '/blog' },
     { label: 'Careers', href: '/careers' }
   ],
   services: [
@@ -46,16 +46,16 @@ const footerData = {
   resources: [
     { label: 'Documentation', href: '/docs' },
     { label: 'API Reference', href: '/api-documentation' },
+    { label: 'Blog', href: '/blog' },
     { label: 'Webinars', href: '/webinars' },
     { label: 'White Papers', href: '/white-papers' },
-    { label: 'Support', href: '/support' },
-    { label: 'Status', href: '/status' }
+    { label: 'Support', href: '/support' }
   ],
   social: [
-    { label: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: <Linkedin className="w-5 h-5" /> },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/company/zion-tech-group', icon: <Linkedin className="w-5 h-5" /> },
     { label: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: <Twitter className="w-5 h-5" /> },
-    { label: 'GitHub', href: 'https://github.com/ziontechgroup', icon: <Github className="w-5 h-5" /> },
-    { label: 'YouTube', href: 'https://youtube.com/ziontechgroup', icon: <Youtube className="w-5 h-5" /> }
+    { label: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: <Github className="w-5 h-5" /> },
+    { label: 'YouTube', href: 'https://www.youtube.com/@ziontechgroup', icon: <Youtube className="w-5 h-5" /> }
   ]
 };
 

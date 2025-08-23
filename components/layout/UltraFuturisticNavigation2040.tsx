@@ -95,6 +95,13 @@ const navigationItems: NavigationItem[] = [
         icon: <Cloud className="w-4 h-4" />,
         description: 'Scalable cloud solutions',
         neonColor: 'shadow-indigo-400/50'
+      },
+      {
+        label: 'Enterprise Solutions',
+        href: '/solutions/enterprise',
+        icon: <Building className="w-4 h-4" />,
+        description: 'Large-scale enterprise solutions',
+        neonColor: 'shadow-emerald-400/50'
       }
     ]
   },
@@ -129,11 +136,41 @@ const navigationItems: NavigationItem[] = [
     ]
   },
   {
-    label: 'About',
+    label: 'Company',
     href: '/about',
     icon: <Users className="w-4 h-4" />,
     description: 'Learn about our company and mission',
-    neonColor: 'shadow-yellow-400/50'
+    neonColor: 'shadow-yellow-400/50',
+    children: [
+      {
+        label: 'About Us',
+        href: '/about',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Our story and mission',
+        neonColor: 'shadow-blue-400/50'
+      },
+      {
+        label: 'Mission',
+        href: '/mission',
+        icon: <Target className="w-4 h-4" />,
+        description: 'Our vision and goals',
+        neonColor: 'shadow-green-400/50'
+      },
+      {
+        label: 'Careers',
+        href: '/careers',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Join our team',
+        neonColor: 'shadow-purple-400/50'
+      },
+      {
+        label: 'Contact',
+        href: '/contact',
+        icon: <Phone className="w-4 h-4" />,
+        description: 'Get in touch',
+        neonColor: 'shadow-red-400/50'
+      }
+    ]
   },
   {
     label: 'Resources',
@@ -162,24 +199,32 @@ const navigationItems: NavigationItem[] = [
         icon: <Code className="w-4 h-4" />,
         description: 'Technical documentation',
         neonColor: 'shadow-green-400/50'
+      },
+      {
+        label: 'API Reference',
+        href: '/api-documentation',
+        icon: <Code className="w-4 h-4" />,
+        description: 'Complete API documentation',
+        neonColor: 'shadow-cyan-400/50'
+      },
+      {
+        label: 'Case Studies',
+        href: '/case-studies',
+        icon: <FileText className="w-4 h-4" />,
+        description: 'Customer success stories',
+        neonColor: 'shadow-yellow-400/50'
       }
     ]
   },
-  {
-    label: 'Contact',
-    href: '/contact',
-    icon: <Phone className="w-4 h-4" />,
-    description: 'Get in touch with our team',
-    neonColor: 'shadow-red-400/50'
-  }
+
 ];
 
 // Memoized social links
 const socialLinks = [
-  { href: 'https://linkedin.com/company/ziontechgroup', icon: <Linkedin className="w-5 h-5" />, label: 'LinkedIn' },
+  { href: 'https://www.linkedin.com/company/zion-tech-group', icon: <Linkedin className="w-5 h-5" />, label: 'LinkedIn' },
   { href: 'https://twitter.com/ziontechgroup', icon: <Twitter className="w-5 h-5" />, label: 'Twitter' },
-  { href: 'https://github.com/ziontechgroup', icon: <Github className="w-5 h-5" />, label: 'GitHub' },
-  { href: 'https://youtube.com/ziontechgroup', icon: <Youtube className="w-5 h-5" />, label: 'YouTube' }
+  { href: 'https://github.com/Zion-Holdings', icon: <Github className="w-5 h-5" />, label: 'GitHub' },
+  { href: 'https://www.youtube.com/@ziontechgroup', icon: <Youtube className="w-5 h-5" />, label: 'YouTube' }
 ];
 
 const UltraFuturisticNavigation2040: React.FC = () => {
