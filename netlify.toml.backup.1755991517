@@ -79,8 +79,22 @@
   schedule = "*/1 * * * *" # every minute
 
 [[scheduled.functions]]
+<<<<<<< HEAD
+  name = "automation-heartbeat"
+  schedule = "*/1 * * * *" # every minute
+
+[[scheduled.functions]]
+  name = "cloud-brain-orchestrator"
+  schedule = "*/2 * * * *" # every 2 minutes
+
+[[scheduled.functions]]
+  name = "repo-fast-sync"
+  schedule = "*/1 * * * *" # every minute
+
+=======
   name = "autonomous-meta-orchestrator"
   schedule = "*/1 * * * *" # every minute
+>>>>>>> origin/cursor/develop-autonomous-cloud-agents-for-automation-orchestration-a23d
 [[scheduled.functions]]
   name = "trigger-all-and-commit"
   schedule = "*/1 * * * *" # every minute
