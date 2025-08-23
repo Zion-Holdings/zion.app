@@ -216,6 +216,12 @@ import SEO from '../components/SEO';
 
 export default function NewsPage() {
   return (
+<<<<<<< HEAD
+        <section className="relative py-20 px-4">
+          <div className="container mx-auto max-w-6xl">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+=======
     <UltraFuturisticBackground>
       <div className="min-h-screen">
         <Head>
@@ -229,6 +235,7 @@ export default function NewsPage() {
             <motion.h1 
               className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6"
               initial={{ opacity: 0, y: 30 }}
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-ec1e
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               className="text-center"

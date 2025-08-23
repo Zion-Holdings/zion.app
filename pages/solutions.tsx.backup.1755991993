@@ -111,6 +111,16 @@ const SolutionsPage: React.FC = () => {
   ];
 
   return (
+<<<<<<< HEAD
+    <Layout>
+      <SEO 
+        title="Industry Solutions - Zion Tech Group"
+        description="Specialized technology solutions for every industry. From healthcare to finance, we deliver tailored solutions that drive business success."
+        keywords="industry solutions, healthcare solutions, financial technology, manufacturing solutions, retail solutions, government technology"
+      />
+      
+      <main className="relative z-10">
+=======
     <UltraFuturisticBackground>
       <div className="min-h-screen">
         <Head>
@@ -118,6 +128,7 @@ const SolutionsPage: React.FC = () => {
           <meta name="description" content="Discover Zion Tech Group's comprehensive solutions portfolio including Micro SaaS platforms, AI-powered tools, Business Intelligence, Process Automation, and Cloud platforms." />
         </Head>
 
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-ec1e
         {/* Hero Section */}
         <section className="min-h-[60vh] flex items-center justify-center px-4 py-20">
           <div className="text-center max-w-4xl mx-auto">
