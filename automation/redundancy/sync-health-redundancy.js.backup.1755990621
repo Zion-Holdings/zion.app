@@ -13,7 +13,11 @@ function nowIso() {
 }
 
 function log(message) {
+<<<<<<< HEAD
+  const line = `[${nowIso()}] [REDUNDANCY-SYNC-HEALTH] ${message}`;
+=======
   const line = `[${nowIso()}] [REDUNDANCY] ${message}`;
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-8421
   console.log(line);
 }
 
@@ -66,7 +70,11 @@ function repairIndexIfNeeded() {
 }
 
 function stashAll() {
+<<<<<<< HEAD
+  const message = `redundancy-sync-health stash ${nowIso()}`;
+=======
   const message = `sync-health-redundancy stash ${nowIso()}`;
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-8421
   const res = runGit(["stash", "push", "-u", "-m", message]);
   if (res.status !== 0) {
     log(`Stash skipped or failed (status ${res.status}): ${res.stderr}`);
@@ -100,28 +108,78 @@ function backupUntracked(backupRoot) {
     const files = list.stdout.split("\0").filter(Boolean);
     if (files.length === 0) return 0;
     
+<<<<<<< HEAD
+    const backupDir = path.join(backupRoot, `untracked_${Date.now()}`);
+    fs.mkdirSync(backupDir, { recursive: true });
+    
+=======
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-8421
     let backedUp = 0;
     for (const file of files) {
       try {
         const sourcePath = path.join(process.cwd(), file);
+<<<<<<< HEAD
+        const destPath = path.join(backupDir, file);
+        const destDir = path.dirname(destPath);
+        fs.mkdirSync(destDir, { recursive: true });
+        fs.copyFileSync(sourcePath, destPath);
+=======
         const backupPath = path.join(backupRoot, file);
         const backupDir = path.dirname(backupPath);
         if (!fs.existsSync(backupDir)) {
           fs.mkdirSync(backupDir, { recursive: true });
         }
         fs.copyFileSync(sourcePath, backupPath);
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-8421
         backedUp++;
       } catch (err) {
         log(`Failed to backup ${file}: ${String(err)}`);
       }
     }
+<<<<<<< HEAD
+    log(`Backed up ${backedUp} untracked files to ${backupDir}`);
+    return backedUp;
+  } catch (err) {
+    log(`Backup failed: ${String(err)}`);
+=======
     return backedUp;
   } catch (err) {
     log(`Backup process failed: ${String(err)}`);
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-8421
     return 0;
   }
 }
 
+<<<<<<< HEAD
+function runSafePm2AutoSync() {
+  log("Running pm2-auto-sync in safe mode...");
+  
+  try {
+    // Set safe environment variables
+    const env = {
+      ...process.env,
+      AUTO_SYNC_STRATEGY: "hardreset",
+      AUTO_SYNC_CLEAN: "0"
+    };
+    
+    const result = spawnSync("node", ["automation/pm2-auto-sync.js"], {
+      cwd: process.cwd(),
+      env: env,
+      encoding: "utf8",
+      maxBuffer: 1024 * 1024 * 10
+    });
+    
+    if (result.status === 0) {
+      log("pm2-auto-sync completed successfully");
+      return true;
+    } else {
+      log(`pm2-auto-sync failed with status ${result.status}: ${result.stderr}`);
+      return false;
+    }
+  } catch (err) {
+    log(`pm2-auto-sync execution error: ${String(err)}`);
+    return false;
+=======
 function safeSync() {
   log("Starting safe sync process");
   
@@ -170,11 +228,147 @@ function safeSync() {
   } catch (error) {
     log(`Safe sync failed: ${String(error)}`);
     return { success: false, error: String(error) };
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-8421
   }
 }
 
 function pushIfAhead() {
   try {
+<<<<<<< HEAD
+    // Check if we have local commits not on origin
+    const aheadCheck = runGit(["rev-list", "--left-right", "--count", `HEAD...${GIT_REMOTE}/${GIT_BRANCH}`]);
+    if (aheadCheck.status !== 0) {
+      log(`Ahead check failed: ${aheadCheck.stderr}`);
+      return false;
+    }
+    
+    const { ahead } = parseDivergence(aheadCheck.stdout);
+    if (ahead > 0) {
+      log(`Repository is ${ahead} commits ahead of origin, pushing...`);
+      
+      // Configure git user
+      runGit(["config", "user.name", "pm2-redundancy[bot]"]);
+      runGit(["config", "user.email", "redundancy@ziontechgroup.com"]);
+      
+      const pushResult = runGit(["push", "origin", "HEAD:main"]);
+      if (pushResult.status === 0) {
+        log("Successfully pushed to origin/main");
+        return true;
+      } else {
+        log(`Push failed: ${pushResult.stderr}`);
+        return false;
+      }
+    } else {
+      log("No push needed - repository is not ahead of origin");
+      return true;
+    }
+  } catch (err) {
+    log(`Push error: ${String(err)}`);
+    return false;
+  }
+}
+
+function generateHealthReport(syncResult, pushResult) {
+  const report = {
+    timestamp: nowIso(),
+    redundancyMode: "sync-health",
+    syncResult: syncResult,
+    pushResult: pushResult,
+    summary: {
+      syncSuccessful: syncResult,
+      pushSuccessful: pushResult,
+      overallHealth: syncResult && pushResult ? "healthy" : "degraded"
+    }
+  };
+
+  const reportPath = path.join(process.cwd(), "sync-health-redundancy-report.md");
+  const reportContent = `# Sync Health Redundancy Report
+
+Generated: ${report.timestamp}
+
+## Summary
+- **Overall Health**: ${report.summary.overallHealth === 'healthy' ? '🟢 Healthy' : '🟡 Degraded'}
+- **Sync Status**: ${report.syncResult ? '✅ Successful' : '❌ Failed'}
+- **Push Status**: ${report.pushResult ? '✅ Successful' : '❌ Failed'}
+
+## Details
+- **Sync Operation**: pm2-auto-sync executed in safe mode
+- **Push Operation**: Repository checked for local commits and pushed if ahead
+- **Git Remote**: ${GIT_REMOTE}
+- **Git Branch**: ${GIT_BRANCH}
+
+## Redundancy Status
+This report was generated by the PM2 redundancy system, providing backup for GitHub Actions sync-health workflow.
+
+## Next Steps
+- Monitor logs for any errors
+- Check repository sync status
+- Verify all processes are running correctly
+`;
+
+  fs.writeFileSync(reportPath, reportContent);
+  log(`Health report generated: ${reportPath}`);
+  return reportPath;
+}
+
+async function commitHealthReport(reportPath) {
+  try {
+    // Check if there are changes to commit
+    const status = runGit(["status", "--porcelain"]);
+    if (status.stdout.trim()) {
+      // Configure git user
+      runGit(["config", "user.name", "pm2-redundancy[bot]"]);
+      runGit(["config", "user.email", "redundancy@ziontechgroup.com"]);
+      
+      // Add and commit
+      runGit(["add", reportPath]);
+      runGit(["commit", "-m", "chore(redundancy): update sync-health redundancy report"]);
+      
+      log("Health report committed successfully");
+      return true;
+    } else {
+      log("No changes to commit");
+      return true;
+    }
+  } catch (err) {
+    log(`Commit error: ${String(err)}`);
+    return false;
+  }
+}
+
+async function main() {
+  log("Starting Sync Health Redundancy Process");
+  
+  try {
+    ensureRepoRoot();
+    
+    // Run safe pm2-auto-sync
+    const syncResult = runSafePm2AutoSync();
+    
+    // Push if repository is ahead
+    const pushResult = pushIfAhead();
+    
+    // Generate health report
+    log("Generating health report...");
+    const reportPath = generateHealthReport(syncResult, pushResult);
+    
+    // Commit report if changed
+    log("Committing health report if changed...");
+    await commitHealthReport(reportPath);
+    
+    log("Sync Health Redundancy Process completed");
+    log(`Results: Sync=${syncResult ? 'OK' : 'FAILED'}, Push=${pushResult ? 'OK' : 'FAILED'}`);
+    
+    // Exit with appropriate code
+    if (syncResult && pushResult) {
+      process.exit(0);
+    } else {
+      process.exit(1);
+    }
+    
+  } catch (error) {
+    log(`Fatal error: ${String(error)}`);
+=======
     const divergence = getDivergence();
     if (divergence.ahead > 0) {
       log(`Repository is ${divergence.ahead} commits ahead, pushing to origin`);
@@ -265,12 +459,25 @@ function main() {
     process.exit(0);
   } catch (error) {
     log(`Sync health redundancy failed: ${String(error)}`);
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-8421
     process.exit(1);
   }
 }
 
+<<<<<<< HEAD
+// Run if called directly
+if (require.main === module) {
+  main().catch(error => {
+    log(`Unhandled error: ${String(error)}`);
+    process.exit(1);
+  });
+}
+
+module.exports = { main, runSafePm2AutoSync, pushIfAhead, generateHealthReport };
+=======
 if (require.main === module) {
   main();
 }
 
 module.exports = { safeSync, pushIfAhead, generateHealthReport };
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-8421
