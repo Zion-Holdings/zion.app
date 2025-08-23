@@ -37,6 +37,7 @@ import { real2028ServiceExpansions } from '../../data/real-2028-service-expansio
 import { real2029Q1Additions } from '../../data/real-2029-q1-additions';
 import { real2029Q2Additions } from '../../data/real-2029-q2-additions';
 import { real2029Q3Additions } from '../../data/real-2029-q3-additions';
+import { real2029Q4Additions } from '../../data/real-2029-q4-additions';
 import { real2030Q1Additions } from '../../data/real-2030-q1-additions';
 import { real2031MicroSaasAdditions } from '../../data/real-2031-micro-saas-additions';
 import { real2031ITServicesAdditions } from '../../data/real-2031-it-services-additions';
@@ -139,64 +140,8 @@ export default function ServicesIndexPage() {
       real2029Q1Additions as unknown[],
       real2029Q2Additions as unknown[],
       real2029Q3Additions as unknown[],
-      real2030Q1Additions as unknown[],
-      real2031MicroSaasAdditions as unknown[],
-      real2031ITServicesAdditions as unknown[],
-      real2031AIServicesAdditions as unknown[],
-      real2030Q2Additions as unknown[],
-      real2027Q3Additions as unknown[],
-      professionalServices as unknown[],
-      real2032ServiceExpansions as unknown[],
-      real2035Q1Additions as unknown[],
-      real2035Q2AdditionsExtra as unknown[],
-      real2025ExtraServices as unknown[],
-      real2026Q4ExpansionsV2 as unknown[],
-      real2026Q4ExpansionsV3 as unknown[],
-      real2036ServiceExpansions as unknown[],
-      real2036MicroSaasAdditions as unknown[],
-      real2036ITServicesAdditions as unknown[],
-      real2036AIServicesAdditions as unknown[]
-    )
-    .concat(innovative2025MicroSaasBatch as unknown[])
-    .concat(innovative2025ITEnterpriseBatch as unknown[])
-    .concat(innovativeMicroSaasServices as unknown[])
-    .concat(innovativeITServices as unknown[])
-    .concat(innovativeAIServices as unknown[])
-    // Our new 2025 advanced services
-    .concat(advanced2025MicroSaasExpansion as unknown[])
-    .concat(advanced2025ITSolutionsExpansion as unknown[])
-    .concat(advanced2025AIServicesExpansion as unknown[])
-    // Our new 2025 innovative services
-    .concat(innovativeMicroSaasExpansion2025 as unknown[])
-    .concat(innovative2025ITSolutionsExpansion as unknown[])
-    .concat(innovative2025AISolutionsExpansion as unknown[])
-    // Our new 2025 advanced services V2
-    // .concat(advancedMicroSaasExpansion2025V2 as unknown[])
-    // .concat(advancedITInfrastructureExpansion2025V2 as unknown[])
-<<<<<<< HEAD
-    // .concat(advancedAIServicesExpansion2025V2 as unknown[])
-    // Our new 2025 innovative services V3
-    .concat(innovativeMicroSaasExpansionV32025 as unknown[])
-    .concat(innovativeITServicesExpansion2025V3 as unknown[])
-    .concat(innovativeAIServicesExpansion2025V3 as unknown[])
-    ;
-=======
-    // .concat(advancedAIServicesExpansion2025V2 as unknown[]);
->>>>>>> origin/clean-website-enhancement
-
-  // Filter out services without required properties
-  const validServices = all.filter(service => 
-    service && 
-    typeof service === 'object' && 
-    'name' in service && 
-    'description' in service &&
-    'price' in service
-  );
-
-  // Group services by category
-  const servicesByCategory = categories.reduce((acc, category) => {
-    acc[category] = validServices.filter((service: any) => 
-      service.category && service.category.toLowerCase().includes(category.toLowerCase().replace(/\s+/g, ''))
+      real2029Q4Additions as unknown[],
+      real2030Q1Additions as unknown[]
     );
     return acc;
   }, {} as Record<string, any[]>);
