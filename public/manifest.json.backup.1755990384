@@ -1,4 +1,13 @@
 {
+<<<<<<< HEAD
+  "name": "Zion Tech Group",
+  "short_name": "Zion Tech",
+  "description": "Revolutionary AI & Quantum Technology Solutions",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+=======
   "name": "Zion Tech Group - Revolutionary 2044 Technology Solutions",
   "short_name": "Zion Tech",
   "description": "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions",
@@ -6,6 +15,7 @@
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#06b6d4",
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-ffbd
   "orientation": "portrait-primary",
   "scope": "/",
   "lang": "en-US",
@@ -68,7 +78,11 @@
       "url": "/services",
       "icons": [
         {
+<<<<<<< HEAD
+          "src": "/icons/services-96x96.png",
+=======
           "src": "/icons/services-icon.png",
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-ffbd
           "sizes": "96x96"
         }
       ]
@@ -80,7 +94,23 @@
       "url": "/contact",
       "icons": [
         {
+<<<<<<< HEAD
+          "src": "/icons/contact-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "About",
+      "short_name": "About",
+      "description": "Learn about Zion Tech Group",
+      "url": "/about",
+      "icons": [
+        {
+          "src": "/icons/about-96x96.png",
+=======
           "src": "/icons/contact-icon.png",
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-ffbd
           "sizes": "96x96"
         }
       ]
@@ -88,23 +118,54 @@
   ],
   "screenshots": [
     {
+<<<<<<< HEAD
+      "src": "/screenshots/desktop-1.png",
+=======
       "src": "/screenshots/desktop-home.png",
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-ffbd
       "sizes": "1280x720",
       "type": "image/png",
       "form_factor": "wide",
       "label": "Homepage - Revolutionary Technology Solutions"
     },
     {
+<<<<<<< HEAD
+      "src": "/screenshots/mobile-1.png",
+=======
       "src": "/screenshots/mobile-home.png",
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-ffbd
       "sizes": "390x844",
       "type": "image/png",
       "form_factor": "narrow",
       "label": "Mobile - AI & Quantum Services"
     }
   ],
+<<<<<<< HEAD
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://ziontechgroup.com"
+    }
+  ],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "handle_links": "preferred",
+  "protocol_handlers": [
+    {
+      "protocol": "web+zion",
+      "url": "/?protocol=%s"
+    }
+  ]
+=======
   "related_applications": [],
   "prefer_related_applications": false,
   "edge_side_panel": {
     "preferred_width": 400
   }
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-ffbd
 }

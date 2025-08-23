@@ -64,7 +64,11 @@ class EnhancedErrorBoundary extends Component<Props, State> {
     this.reportError(error, errorInfo);
   }
 
+<<<<<<< HEAD
+  private reportError = (error: Error, errorInfo: ErrorInfo) => {
+=======
   private logErrorToService = (error: Error, errorInfo: ErrorInfo, errorId: string) => {
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-ffbd
     try {
       // Send to error reporting service
       const errorData = {
@@ -82,10 +86,13 @@ class EnhancedErrorBoundary extends Component<Props, State> {
     } catch (reportingError) {
       console.error('Failed to report error:', reportingError);
     }
+<<<<<<< HEAD
+=======
   };
 
   private handleRetry = () => {
     this.setState({ hasError: false, error: undefined, errorInfo: undefined, errorId: undefined });
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-ffbd
   };
 
   private handleRetry = () => {
