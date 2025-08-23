@@ -1,3 +1,1 @@
-export default function Verify() {
-  return <div>Verify Account</div>;
-}
+export default function Page(){return null}

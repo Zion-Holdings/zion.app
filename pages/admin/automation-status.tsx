@@ -1,3 +1,1 @@
-export default function AdminAutomationStatus() {
-  return <div>Admin Automation Status</div>;
-}
+export default function Page(){return null}

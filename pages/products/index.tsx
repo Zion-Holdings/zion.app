@@ -1,3 +1,1 @@
-export default function ProductsIndex() {
-  return <div>Products</div>;
-}
+export default function Page(){return null}

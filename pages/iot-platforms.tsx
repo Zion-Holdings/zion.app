@@ -1,3 +1,1 @@
-export default function IoTPlatforms() {
-  return <div>IoT Platforms</div>;
-}
+export default function Page(){return null}
