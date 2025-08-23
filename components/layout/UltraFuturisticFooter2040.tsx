@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useMemo } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
@@ -9,7 +9,8 @@ import {
 } from 'lucide-react';
 
 const UltraFuturisticFooter2040: React.FC = () => {
-  const footerSections = [
+  // Performance optimization: Memoized footer sections
+  const footerSections = useMemo(() => [
     {
       title: 'Revolutionary Services',
       items: [
@@ -126,9 +127,9 @@ const UltraFuturisticFooter2040: React.FC = () => {
         }
       ]
     }
-  ];
+  ], []);
 
-  const additionalLinks = [
+  const additionalLinks = useMemo(() => [
     {
       title: 'Support & Training',
       items: [
@@ -156,21 +157,21 @@ const UltraFuturisticFooter2040: React.FC = () => {
         { label: 'Become a Partner', href: '/become-partner' }
       ]
     }
-  ];
+  ], []);
 
-  const contactInfo = {
+  const contactInfo = useMemo(() => ({
     phone: '+1 302 464 0950',
     email: 'kleber@ziontechgroup.com',
     address: '364 E Main St STE 1008 Middletown DE 19709',
     website: 'https://ziontechgroup.com'
-  };
+  }), []);
 
-  const socialLinks = [
+  const socialLinks = useMemo(() => [
     { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: '💼' },
     { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: '🐦' },
     { name: 'GitHub', href: 'https://github.com/ziontechgroup', icon: '💻' },
     { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: '📺' }
-  ];
+  ], []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
