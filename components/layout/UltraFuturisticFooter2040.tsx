@@ -98,19 +98,19 @@ const footerSections = [
   {
     title: 'Company & Resources',
     description: 'About Zion Tech Group and resources',
-    icon: <Target className="w-5 h-5 text-purple-400" />,
-    color: 'from-orange-500 to-red-500',
+    icon: <Globe className="w-5 h-5 text-purple-400" />,
+    color: 'from-purple-500 to-indigo-500',
     links: [
       { name: 'About Us', href: '/about' },
       { name: 'Careers', href: '/careers' },
-      { name: 'Contact', href: '/contact' },
-      { name: 'Partners', href: '/partners' },
-      { name: 'News', href: '/news' },
-      { name: 'Blog', href: '/blog' },
+      { name: 'News & Updates', href: '/news' },
       { name: 'Case Studies', href: '/case-studies' },
+      { name: 'Partners', href: '/partners' },
+      { name: 'Blog', href: '/blog' },
       { name: 'Support', href: '/support' },
-      { name: 'Training', href: '/training' },
-      { name: 'Resources', href: '/resources' }
+      { name: 'Privacy Policy', href: '/privacy' },
+      { name: 'Terms of Service', href: '/terms' },
+      { name: 'Contact Us', href: '/contact' }
     ]
   }
 ];
@@ -129,256 +129,174 @@ const socialLinks = [
   { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: <Github className="w-5 h-5" /> }
 ];
 
-const UltraFuturisticFooter2040: React.FC = () => {
+export default function UltraFuturisticFooter2040() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <footer className="relative bg-gradient-to-br from-gray-900 via-black to-gray-900 border-t border-white/10">
-      {/* Background Effects */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 left-1/4 w-72 h-72 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-3xl"></div>
+    <footer className="relative bg-black/90 border-t border-cyan-500/20 overflow-hidden">
+      {/* Enhanced Background Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 opacity-50"></div>
+        <div className="absolute top-20 left-20 w-32 h-32 border border-cyan-400/10 rounded-lg animate-pulse"></div>
+        <div className="absolute top-40 right-32 w-24 h-24 border border-purple-400/10 rounded-full animate-pulse delay-1000"></div>
+        <div className="absolute bottom-32 left-32 w-40 h-40 border border-pink-400/10 transform rotate-45 animate-pulse delay-2000"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 py-16">
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 mb-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Enhanced Contact Section */}
+        <div className="mb-16 p-8 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10 border border-cyan-400/20 rounded-2xl">
+          <div className="text-center mb-8">
+            <h3 className="text-3xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+              Ready to Transform Your Business?
+            </h3>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Join the future of technology with our cutting-edge solutions. Contact us today to get started.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Phone className="w-8 h-8 text-white" />
+              </div>
+              <h4 className="text-lg font-semibold text-white mb-2">Call Us</h4>
+              <a href="tel:+13024640950" className="text-cyan-400 hover:text-cyan-300 transition-colors text-lg">
+                +1 302 464 0950
+              </a>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Mail className="w-8 h-8 text-white" />
+              </div>
+              <h4 className="text-lg font-semibold text-white mb-2">Email Us</h4>
+              <a href="mailto:kleber@ziontechgroup.com" className="text-purple-400 hover:text-purple-300 transition-colors text-lg">
+                kleber@ziontechgroup.com
+              </a>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <MapPin className="w-8 h-8 text-white" />
+              </div>
+              <h4 className="text-lg font-semibold text-white mb-2">Visit Us</h4>
+              <p className="text-green-400 text-lg">
+                364 E Main St STE 1008<br />
+                Middletown DE 19709
+              </p>
+            </div>
+          </div>
+          
+          <div className="text-center">
+            <Link href="/contact">
+              <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25">
+                <span className="flex items-center gap-2 justify-center">
+                  Get Started Today
+                  <ArrowRight className="w-5 h-5" />
+                </span>
+              </button>
+            </Link>
+          </div>
+        </div>
+
+        {/* Enhanced Footer Sections */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {footerSections.map((section, index) => (
             <motion.div
               key={section.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true, margin: "-50px" }}
-              className="space-y-6"
+              viewport={{ once: true }}
+              className="group"
             >
-              <div className="flex items-center gap-3">
-                <div className={`w-10 h-10 rounded-xl bg-gradient-to-r ${section.color} p-2`}>
+              <div className="flex items-center space-x-3 mb-4">
+                <div className={`w-10 h-10 bg-gradient-to-r ${section.color} rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                   {section.icon}
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-white">{section.title}</h3>
+                  <h3 className="text-lg font-semibold text-white group-hover:text-cyan-300 transition-colors">
+                    {section.title}
+                  </h3>
                   <p className="text-sm text-gray-400">{section.description}</p>
                 </div>
               </div>
-
-              <div className="space-y-3">
+              
+              <ul className="space-y-2">
                 {section.links.map((link) => (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    className={`block text-sm transition-colors duration-200 group ${
-                      link.featured 
-                        ? 'text-cyan-400 hover:text-cyan-300' 
-                        : 'text-gray-300 hover:text-white'
-                    }`}
-                  >
-                    <div className="flex items-center gap-2">
+                  <li key={link.name}>
+                    <Link
+                      href={link.href}
+                      className={`flex items-center space-x-2 text-sm transition-all duration-300 group/link ${
+                        link.featured 
+                          ? 'text-cyan-400 hover:text-cyan-300 font-medium' 
+                          : 'text-gray-400 hover:text-white'
+                      }`}
+                    >
                       <span>{link.name}</span>
                       {link.featured && (
-                        <span className="px-2 py-1 text-xs bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full">
+                        <span className="px-2 py-1 text-xs bg-cyan-500/20 text-cyan-300 rounded-full">
                           Featured
                         </span>
                       )}
-                      <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-200" />
-                    </div>
-                  </Link>
+                      <ArrowRight className="w-3 h-3 opacity-0 group-hover/link:opacity-100 transition-opacity" />
+                    </Link>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </motion.div>
           ))}
         </div>
 
-        {/* Contact & Company Info */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-          {/* Company Info */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true, margin: "-50px" }}
-            className="space-y-6"
-          >
-            <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 p-3">
-                <Brain className="w-full h-full text-white" />
-              </div>
-              <div>
-                <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+        {/* Enhanced Bottom Section */}
+        <div className="border-t border-cyan-500/20 pt-8">
+          <div className="flex flex-col lg:flex-row items-center justify-between space-y-4 lg:space-y-0">
+            <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center">
+                  <Brain className="w-5 h-5 text-white" />
+                </div>
+                <span className="text-lg font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                   Zion Tech Group
-                </div>
-                <div className="text-sm text-gray-400">Revolutionary 2040-2041 Technology</div>
+                </span>
               </div>
-            </div>
-
-            <p className="text-gray-300 leading-relaxed max-w-md">
-              Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.
-            </p>
-
-            <div className="flex space-x-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-cyan-400 hover:bg-cyan-500/10 hover:border-cyan-500/30 transition-all duration-300"
-                  aria-label={social.name}
-                >
-                  {social.icon}
-                </a>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Contact Information */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true, margin: "-50px" }}
-            className="space-y-6"
-          >
-            <h3 className="text-xl font-semibold text-white">Get In Touch</h3>
-            
-            <div className="space-y-4">
-              <a 
-                href={`tel:${contactInfo.mobile}`}
-                className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-cyan-500/10 hover:border-cyan-500/30 transition-all duration-300 group"
-              >
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-green-500 to-emerald-500 p-2">
-                  <Phone className="w-full h-full text-white" />
-                </div>
-                <div>
-                  <div className="text-sm text-gray-400">Phone</div>
-                  <div className="text-white font-medium group-hover:text-cyan-400 transition-colors">
-                    {contactInfo.mobile}
-                  </div>
-                </div>
-              </a>
-
-              <a 
-                href={`mailto:${contactInfo.email}`}
-                className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-cyan-500/10 hover:border-cyan-500/30 transition-all duration-300 group"
-              >
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 p-2">
-                  <Mail className="w-full h-full text-white" />
-                </div>
-                <div>
-                  <div className="text-sm text-gray-400">Email</div>
-                  <div className="text-white font-medium group-hover:text-cyan-400 transition-colors">
-                    {contactInfo.email}
-                  </div>
-                </div>
-              </a>
-
-              <a 
-                href={contactInfo.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-cyan-500/10 hover:border-cyan-500/30 transition-all duration-300 group"
-              >
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 p-2">
-                  <Globe className="w-full h-full text-white" />
-                </div>
-                <div>
-                  <div className="text-sm text-gray-400">Website</div>
-                  <div className="text-white font-medium group-hover:text-cyan-400 transition-colors flex items-center gap-2">
-                    {contactInfo.website.replace('https://', '')}
-                    <ExternalLink className="w-4 h-4" />
-                  </div>
-                </div>
-              </a>
-
-              <div className="flex items-center gap-4 p-4 rounded-xl bg-white/5 border border-white/10">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-r from-orange-500 to-red-500 p-2">
-                  <MapPin className="w-full h-full text-white" />
-                </div>
-                <div>
-                  <div className="text-sm text-gray-400">Address</div>
-                  <div className="text-white font-medium">
-                    {contactInfo.address}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Quick Links */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
-        >
-          <div className="space-y-3">
-            <h4 className="text-sm font-semibold text-gray-400 uppercase tracking-wider">Services</h4>
-            <div className="space-y-2">
-              <Link href="/services" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">All Services</Link>
-              <Link href="/ai-services" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">AI Services</Link>
-              <Link href="/quantum-services" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">Quantum Services</Link>
-              <Link href="/it-services" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">IT Services</Link>
-            </div>
-          </div>
-
-          <div className="space-y-3">
-            <h4 className="text-sm font-semibold text-gray-400 uppercase tracking-wider">Solutions</h4>
-            <div className="space-y-2">
-              <Link href="/solutions" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">Business Solutions</Link>
-              <Link href="/enterprise-solutions" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">Enterprise</Link>
-              <Link href="/emerging-tech" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">Emerging Tech</Link>
-              <Link href="/space-technology" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">Space Tech</Link>
-            </div>
-          </div>
-
-          <div className="space-y-3">
-            <h4 className="text-sm font-semibold text-gray-400 uppercase tracking-wider">Company</h4>
-            <div className="space-y-2">
-              <Link href="/about" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">About Us</Link>
-              <Link href="/contact" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">Contact</Link>
-              <Link href="/careers" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">Careers</Link>
-              <Link href="/news" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">News</Link>
-            </div>
-          </div>
-
-          <div className="space-y-3">
-            <h4 className="text-sm font-semibold text-gray-400 uppercase tracking-wider">Resources</h4>
-            <div className="space-y-2">
-              <Link href="/blog" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">Blog</Link>
-              <Link href="/whitepapers" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">Whitepapers</Link>
-              <Link href="/webinars" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">Webinars</Link>
-              <Link href="/support" className="block text-sm text-gray-300 hover:text-cyan-400 transition-colors">Support</Link>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/10">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-sm text-gray-400">
-              © 2024 Zion Tech Group. All rights reserved. Revolutionary 2040-2041 Technology.
+              <span className="text-gray-400">|</span>
+              <span className="text-gray-400">Innovation Leader 2025</span>
             </div>
             
-            <div className="flex items-center gap-6 text-sm">
-              <Link href="/privacy" className="text-gray-400 hover:text-cyan-400 transition-colors">Privacy Policy</Link>
-              <Link href="/terms" className="text-gray-400 hover:text-cyan-400 transition-colors">Terms of Service</Link>
-              <Link href="/cookies" className="text-gray-400 hover:text-cyan-400 transition-colors">Cookie Policy</Link>
+            <div className="flex items-center space-x-6">
+              <a href="https://twitter.com/ziontechgroup" className="text-gray-400 hover:text-cyan-400 transition-colors">
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a href="https://linkedin.com/company/ziontechgroup" className="text-gray-400 hover:text-blue-400 transition-colors">
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a href="https://youtube.com/@ziontechgroup" className="text-gray-400 hover:text-red-400 transition-colors">
+                <Youtube className="w-5 h-5" />
+              </a>
+              <a href="https://github.com/ziontechgroup" className="text-gray-400 hover:text-white transition-colors">
+                <Github className="w-5 h-5" />
+              </a>
             </div>
-
-            <button
-              onClick={scrollToTop}
-              className="w-10 h-10 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 p-2 text-white hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-110 shadow-lg shadow-cyan-500/25"
-              aria-label="Scroll to top"
-            >
-              <ArrowUp className="w-full h-full" />
-            </button>
+          </div>
+          
+          <div className="mt-6 text-center text-sm text-gray-400">
+            <p>&copy; 2025 Zion Tech Group. All rights reserved. | <a href="/privacy" className="hover:text-cyan-400 transition-colors">Privacy Policy</a> | <a href="/terms" className="hover:text-cyan-400 transition-colors">Terms of Service</a></p>
           </div>
         </div>
       </div>
+
+      {/* Enhanced Scroll to Top Button */}
+      <motion.button
+        onClick={scrollToTop}
+        className="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full flex items-center justify-center shadow-lg shadow-cyan-500/25 hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-110 z-50"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+      >
+        <ArrowUp className="w-6 h-6" />
+      </motion.button>
     </footer>
   );
-};
-
-export default UltraFuturisticFooter2040;
+}

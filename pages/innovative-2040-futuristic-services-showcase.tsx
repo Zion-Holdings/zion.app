@@ -317,7 +317,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                       <div className="text-2xl font-bold text-cyan-400">
                         {typeof service.price === 'string' ? service.price : `$${service.price.monthly}/${service.price.currency}`}
                         <span className="text-sm text-gray-400">
-                          {typeof service.price === 'string' ? service.period : '/month'}
+                          {typeof service.price === 'string' ? (service as any).period || '/month' : '/month'}
                         </span>
                       </div>
                       <div className="flex items-center space-x-1 text-yellow-400">
@@ -419,7 +419,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                                                        <div className="text-3xl font-bold text-cyan-400 mb-1">
                              {typeof service.price === 'string' ? service.price : `$${service.price.monthly}/${service.price.currency}`}
                              <span className="text-lg text-gray-400">
-                               {typeof service.price === 'string' ? service.period : '/month'}
+                               {typeof service.price === 'string' ? (service as any).period || '/month' : '/month'}
                              </span>
                            </div>
                             <div className="flex items-center justify-end space-x-1 text-yellow-400 mb-2">

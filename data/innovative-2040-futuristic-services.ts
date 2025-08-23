@@ -5,9 +5,13 @@ export interface Innovative2040FuturisticService {
   description: string;
   category: string;
   price: string;
+  period: string;
   features: string[];
   benefits: string[];
   link: string;
+  color: string;
+  icon: string;
+  popular: boolean;
   contactInfo: {
     phone: string;
     email: string;
@@ -27,7 +31,8 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     tagline: 'Revolutionary brain-computer interface powered by quantum AI',
     description: 'Advanced neural interface technology that enables direct communication between human consciousness and quantum AI systems, opening new frontiers in human-computer interaction.',
     category: 'AI & Consciousness',
-    price: '$15,000/month',
+    price: '$15,000',
+    period: '/month',
     features: [
       'Quantum-enhanced neural signal processing',
       'Real-time consciousness-AI synchronization',
@@ -42,6 +47,9 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
       'Breakthrough in accessibility technology'
     ],
     link: 'https://ziontechgroup.com/quantum-ai-neural-interface',
+    color: 'from-purple-500 to-pink-600',
+    icon: '🧠⚛️',
+    popular: true,
     contactInfo: {
       phone: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -59,7 +67,8 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     tagline: 'Immersive 3D workspace powered by quantum computing',
     description: 'Next-generation collaborative workspace that combines holographic displays with quantum computing power for unprecedented productivity and creativity.',
     category: 'Quantum & Emerging Tech',
-    price: '$8,500/month',
+    price: '$8,500',
+    period: '/month',
     features: [
       'True 3D holographic displays',
       'Quantum-powered real-time rendering',
@@ -74,6 +83,9 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
       'Future-proof technology platform'
     ],
     link: 'https://ziontechgroup.com/holographic-quantum-workspace',
+    color: 'from-blue-500 to-cyan-600',
+    icon: '🌟⚛️',
+    popular: false,
     contactInfo: {
       phone: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -91,7 +103,8 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     tagline: 'Predict the future with unprecedented accuracy',
     description: 'Advanced AI system that analyzes temporal patterns and predicts future events with remarkable precision across multiple domains.',
     category: 'AI & Machine Learning',
-    price: '$12,000/month',
+    price: '$12,000',
+    period: '/month',
     features: [
       'Multi-dimensional time analysis',
       'Quantum-enhanced prediction algorithms',
@@ -106,6 +119,9 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
       'Operational efficiency optimization'
     ],
     link: 'https://ziontechgroup.com/ai-time-series-prediction',
+    color: 'from-green-500 to-emerald-600',
+    icon: '🔮🤖',
+    popular: true,
     contactInfo: {
       phone: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -123,7 +139,8 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     tagline: 'Unbreakable blockchain security for the quantum era',
     description: 'Quantum-resistant blockchain technology that provides unprecedented security for digital assets and transactions in the post-quantum world.',
     category: 'Cybersecurity',
-    price: '$18,000/month',
+    price: '$18,000',
+    period: '/month',
     features: [
       'Quantum-resistant cryptography',
       'Multi-layer security architecture',
@@ -138,6 +155,9 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
       'Enhanced trust and credibility'
     ],
     link: 'https://ziontechgroup.com/quantum-blockchain-security',
+    color: 'from-orange-500 to-red-600',
+    icon: '⛓️🔒',
+    popular: true,
     contactInfo: {
       phone: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -155,7 +175,8 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     tagline: 'Design life with artificial intelligence',
     description: 'Revolutionary platform that combines AI with synthetic biology to design and engineer biological systems for medical, industrial, and environmental applications.',
     category: 'Healthcare & Biotech',
-    price: '$25,000/month',
+    price: '$25,000',
+    period: '/month',
     features: [
       'AI-driven DNA design',
       'Automated lab protocols',
@@ -170,6 +191,9 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
       'Medical breakthrough potential'
     ],
     link: 'https://ziontechgroup.com/ai-synthetic-biology',
+    color: 'from-teal-500 to-green-600',
+    icon: '🧬🤖',
+    popular: false,
     contactInfo: {
       phone: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -187,7 +211,8 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     tagline: 'Secure the quantum internet of tomorrow',
     description: 'Advanced security gateway designed to protect quantum internet communications and ensure secure data transmission in the quantum era.',
     category: 'Quantum & Emerging Tech',
-    price: '$22,000/month',
+    price: '$22,000',
+    period: '/month',
     features: [
       'Quantum key distribution',
       'Entanglement-based security',
@@ -202,6 +227,9 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
       'Global security standards'
     ],
     link: 'https://ziontechgroup.com/quantum-internet-security',
+    color: 'from-indigo-500 to-purple-600',
+    icon: '🌐🔒',
+    popular: true,
     contactInfo: {
       phone: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -219,7 +247,8 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     tagline: 'Predict and mitigate climate change with AI',
     description: 'Sophisticated climate modeling system that uses AI to predict climate patterns, assess risks, and recommend mitigation strategies.',
     category: 'Sustainability & Environment',
-    price: '$16,000/month',
+    price: '$16,000',
+    period: '/month',
     features: [
       'High-resolution climate models',
       'AI-driven scenario analysis',
@@ -234,6 +263,9 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
       'Sustainable development support'
     ],
     link: 'https://ziontechgroup.com/ai-climate-modeling',
+    color: 'from-blue-500 to-teal-600',
+    icon: '🌍🤖',
+    popular: false,
     contactInfo: {
       phone: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -251,7 +283,8 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     tagline: 'Quantum-powered trading for maximum returns',
     description: 'Advanced trading platform that leverages quantum computing to analyze market patterns and execute trades with unprecedented speed and accuracy.',
     category: 'Financial Technology',
-    price: '$30,000/month',
+    price: '$30,000',
+    period: '/month',
     features: [
       'Quantum market analysis',
       'Ultra-fast trade execution',
@@ -266,6 +299,9 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
       'Competitive advantage'
     ],
     link: 'https://ziontechgroup.com/quantum-financial-trading',
+    color: 'from-yellow-500 to-orange-600',
+    icon: '💰⚛️',
+    popular: true,
     contactInfo: {
       phone: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -283,7 +319,8 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
     tagline: 'Optimize space operations with artificial intelligence',
     description: 'Intelligent system for managing space resources, optimizing satellite operations, and planning space missions with maximum efficiency.',
     category: 'Space Technology',
-    price: '$35,000/month',
+    price: '$35,000',
+    period: '/month',
     features: [
       'Satellite constellation optimization',
       'Resource allocation algorithms',
@@ -298,6 +335,9 @@ export const innovative2040FuturisticServices: Innovative2040FuturisticService[]
       'Sustainable space exploration'
     ],
     link: 'https://ziontechgroup.com/ai-space-resource-management',
+    color: 'from-purple-500 to-indigo-600',
+    icon: '🚀🌌',
+    popular: false,
     contactInfo: {
       phone: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',

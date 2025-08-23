@@ -27,7 +27,7 @@ export default function UltraFuturisticBackground2036({
     color: string;
     life: number;
     maxLife: number;
-    type: 'particle' | 'wave' | 'quantum' | 'neon' | 'holographic' | 'energy' | 'data' | 'neural';
+    type: 'particle' | 'wave' | 'quantum' | 'neon' | 'holographic' | 'energy' | 'data' | 'neural' | 'cyberpunk' | 'ultra';
     rotation: number;
     rotationSpeed: number;
     pulse: number;
@@ -65,7 +65,9 @@ export default function UltraFuturisticBackground2036({
           accent: ['#ec4899', '#10b981', '#f59e0b', '#ef4444', '#00d4ff', '#8b5cf6'],
           neon: ['#ff0080', '#00ffff', '#ffff00', '#ff00ff', '#8000ff', '#00ff80'],
           quantum: ['#00d4ff', '#8b5cf6', '#ec4899', '#10b981', '#f59e0b', '#ef4444'],
-          ultra: ['#ff1493', '#00bfff', '#32cd32', '#ffd700', '#ff4500', '#8a2be2']
+          ultra: ['#ff1493', '#00bfff', '#32cd32', '#ffd700', '#ff4500', '#8a2be2'],
+          holographic: ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57', '#ff9ff3'],
+          cyberpunk: ['#ff0055', '#00ffff', '#ffff00', '#ff00ff', '#8000ff', '#00ff80']
         };
       default: // quantum
         return {
@@ -73,7 +75,9 @@ export default function UltraFuturisticBackground2036({
           secondary: ['#f59e0b', '#ef4444', '#8b5cf6', '#06b6d4', '#ec4899', '#10b981'],
           accent: ['#ec4899', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6', '#06b6d4'],
           neon: ['#ff0080', '#00ffff', '#ffff00', '#ff00ff', '#8000ff', '#00ff80'],
-          ultra: ['#ff1493', '#00bfff', '#32cd32', '#ffd700', '#ff4500', '#8a2be2']
+          ultra: ['#ff1493', '#00bfff', '#32cd32', '#ffd700', '#ff4500', '#8a2be2'],
+          holographic: ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4', '#feca57', '#ff9ff3'],
+          cyberpunk: ['#ff0055', '#00ffff', '#ffff00', '#ff00ff', '#8000ff', '#00ff80']
         };
     }
   }, [theme]);
@@ -85,13 +89,13 @@ export default function UltraFuturisticBackground2036({
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     
     // Enhanced particle count for better performance
-    const baseCount = prefersReducedMotion ? 20 : (isSmallScreen ? 60 : 120);
+    const baseCount = prefersReducedMotion ? 20 : (isSmallScreen ? 80 : 150);
     const particleCount = Math.floor(baseCount * (intensity === 'low' ? 0.6 : intensity === 'medium' ? 1 : 1.8));
 
     particles.current = [];
     
     for (let i = 0; i < particleCount; i++) {
-      const particleTypes = ['particle', 'wave', 'quantum', 'neon', 'holographic', 'energy', 'data', 'neural'];
+      const particleTypes = ['particle', 'wave', 'quantum', 'neon', 'holographic', 'energy', 'data', 'neural', 'cyberpunk', 'ultra'] as const;
       const particleType = particleTypes[Math.floor(Math.random() * particleTypes.length)];
       
       particles.current.push({
@@ -100,13 +104,13 @@ export default function UltraFuturisticBackground2036({
         vx: (Math.random() - 0.5) * 0.8,
         vy: (Math.random() - 0.5) * 0.8,
         size: Math.random() * 3 + 1,
-        opacity: Math.random() * 0.7 + 0.3,
-        color: colors.primary[Math.floor(Math.random() * colors.primary.length)],
-        life: Math.random() * 100,
-        maxLife: 100,
-        type: particleType as any,
+        opacity: Math.random() * 0.8 + 0.2,
+        color: colors[particleType] ? colors[particleType][Math.floor(Math.random() * colors[particleType].length)] : colors.primary[0],
+        life: Math.random() * 100 + 50,
+        maxLife: Math.random() * 100 + 50,
+        type: particleType,
         rotation: Math.random() * Math.PI * 2,
-        rotationSpeed: (Math.random() - 0.5) * 0.1,
+        rotationSpeed: (Math.random() - 0.5) * 0.02,
         pulse: Math.random() * Math.PI * 2,
         pulseSpeed: Math.random() * 0.05 + 0.02
       });
@@ -278,6 +282,28 @@ export default function UltraFuturisticBackground2036({
           ctx.arc(particle.size, particle.size, 2, 0, Math.PI * 2);
           ctx.arc(particle.size, -particle.size, 2, 0, Math.PI * 2);
           ctx.arc(-particle.size, particle.size, 2, 0, Math.PI * 2);
+          ctx.fill();
+          break;
+          
+        case 'cyberpunk':
+          // Cyberpunk effect
+          ctx.shadowColor = particle.color;
+          ctx.shadowBlur = 15;
+          ctx.fillStyle = particle.color;
+          ctx.globalAlpha = pulseOpacity;
+          ctx.beginPath();
+          ctx.arc(0, 0, particle.size, 0, Math.PI * 2);
+          ctx.fill();
+          break;
+
+        case 'ultra':
+          // Ultra effect
+          ctx.shadowColor = particle.color;
+          ctx.shadowBlur = 20;
+          ctx.fillStyle = particle.color;
+          ctx.globalAlpha = pulseOpacity;
+          ctx.beginPath();
+          ctx.arc(0, 0, particle.size, 0, Math.PI * 2);
           ctx.fill();
           break;
           

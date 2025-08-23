@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
   ArrowRight, Star, 
-  Brain, Atom, Shield, Zap, TrendingUp, Globe, MapPin
+  Brain, Atom, Shield, Zap, TrendingUp, Globe, MapPin, Rocket
 } from 'lucide-react';
 
 const Homepage2025: React.FC = () => {
@@ -151,146 +151,112 @@ const Homepage2025: React.FC = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                Our Services
+                Our Revolutionary Services
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                 Discover our comprehensive range of cutting-edge technology solutions designed to transform your business
               </p>
+              <div className="mt-8 flex flex-wrap justify-center gap-4">
+                <span className="px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-400/30 rounded-full text-cyan-300">
+                  AI Consciousness
+                </span>
+                <span className="px-4 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-400/30 rounded-full text-purple-300">
+                  Quantum Computing
+                </span>
+                <span className="px-4 py-2 bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-400/30 rounded-full text-green-300">
+                  Autonomous Systems
+                </span>
+              </div>
             </motion.div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <UltraFuturisticServiceCard2026
                 service={{
-                  id: 'ai-ml',
-                  name: 'AI & Machine Learning',
-                  tagline: 'Advanced artificial intelligence solutions',
-                  description: 'Advanced artificial intelligence solutions for modern businesses',
-                  price: '$999',
+                  id: 'ai-consciousness-evolution',
+                  name: 'AI Consciousness Evolution 2040',
+                  tagline: 'Next-generation AI consciousness',
+                  description: 'Revolutionary AI platform that evolves consciousness through emotional intelligence, self-awareness, and autonomous learning',
+                  price: '$1299',
                   period: 'month',
-                  features: ['Machine Learning', 'Deep Learning', 'NLP', 'Computer Vision'],
+                  features: ['Emotional Intelligence', 'Self-Awareness', 'Autonomous Learning', 'Consciousness Metrics', 'Ethical Decision Making'],
                   popular: true,
-                  category: 'AI',
-                  icon: '🧠'
+                  category: 'AI Consciousness',
+                  icon: '🧠🌟'
                 }}
                 variant="ai"
               />
               <UltraFuturisticServiceCard2026
                 service={{
-                  id: 'quantum-computing',
-                  name: 'Quantum Computing',
-                  tagline: 'Next-generation computing solutions',
-                  description: 'Next-generation computing solutions for complex problems',
+                  id: 'quantum-neural-ecosystem',
+                  name: 'Quantum Neural Ecosystem 2040',
+                  tagline: 'Quantum-powered neural networks',
+                  description: 'Next-generation quantum computing platform that combines quantum algorithms with neural networks for unprecedented AI capabilities',
                   price: '$1999',
                   period: 'month',
-                  features: ['Quantum Algorithms', 'Quantum Security', 'Quantum Simulation'],
-                  popular: false,
-                  category: 'Quantum',
-                  icon: '⚛️'
+                  features: ['Quantum Algorithms', 'Neural Networks', 'Quantum Advantage', 'Real-time Processing', 'Hybrid Computing'],
+                  popular: true,
+                  category: 'Quantum AI',
+                  icon: '⚛️🧠'
                 }}
                 variant="quantum"
               />
               <UltraFuturisticServiceCard2026
                 service={{
-                  id: 'process-automation',
-                  name: 'Process Automation',
-                  tagline: 'Intelligent automation solutions',
-                  description: 'Intelligent automation to streamline your operations',
+                  id: 'autonomous-business-intelligence',
+                  name: 'Autonomous Business Intelligence 2040',
+                  tagline: 'Self-managing business insights',
+                  description: 'Revolutionary BI platform that autonomously analyzes data, generates insights, and drives business decisions',
+                  price: '$899',
+                  period: 'month',
+                  features: ['Autonomous Analysis', 'Predictive Insights', 'Real-time Monitoring', 'Decision Automation', 'Performance Optimization'],
+                  popular: true,
+                  category: 'Business Intelligence',
+                  icon: '📊🤖'
+                }}
+                variant="automation"
+              />
+              <UltraFuturisticServiceCard2026
+                service={{
+                  id: 'quantum-cybersecurity-future',
+                  name: 'Quantum Cybersecurity Future 2040',
+                  tagline: 'Future-proof security with quantum resistance',
+                  description: 'Next-generation cybersecurity platform with quantum-resistant encryption and AI-powered threat detection',
                   price: '$799',
                   period: 'month',
-                  features: ['Workflow Automation', 'RPA', 'AI Integration', 'Analytics'],
-                  popular: true,
-                  category: 'Automation',
-                  icon: '⚡'
-                }}
-                variant="automation"
-              />
-              <UltraFuturisticServiceCard2026
-                service={{
-                  id: 'ai-holographic-meetings',
-                  name: 'AI Holographic Meetings',
-                  tagline: 'Next-generation holographic collaboration',
-                  description: 'Revolutionary platform for lifelike holographic meetings with AI assistance',
-                  price: '$299',
-                  period: 'month',
-                  features: ['3D Holographic Projections', 'AI Translation', 'Gesture Control', 'Immersive Collaboration'],
-                  popular: true,
-                  category: 'AI & Holographic',
-                  icon: '🌟'
-                }}
-                variant="ai"
-              />
-              <UltraFuturisticServiceCard2026
-                service={{
-                  id: 'quantum-drug-discovery',
-                  name: 'Quantum Drug Discovery',
-                  tagline: 'Accelerate pharmaceutical research',
-                  description: 'Quantum-powered AI platform for accelerated drug discovery and molecular modeling',
-                  price: '$1999',
-                  period: 'month',
-                  features: ['Quantum Molecular Modeling', 'AI Drug Screening', 'Predictive Analytics', 'Clinical Optimization'],
-                  popular: false,
-                  category: 'Quantum Healthcare',
-                  icon: '💊'
-                }}
-                variant="quantum"
-              />
-              <UltraFuturisticServiceCard2026
-                service={{
-                  id: 'autonomous-legal-ai',
-                  name: 'Autonomous Legal AI',
-                  tagline: 'AI-powered legal assistance',
-                  description: 'Intelligent legal assistant for research, analysis, and case preparation',
-                  price: '$199',
-                  period: 'month',
-                  features: ['Autonomous Research', 'Document Analysis', 'Case Law Synthesis', 'Risk Assessment'],
-                  popular: true,
-                  category: 'AI Legal Tech',
-                  icon: '⚖️'
-                }}
-                variant="automation"
-              />
-              <UltraFuturisticServiceCard2026
-                service={{
-                  id: 'quantum-cybersecurity-suite',
-                  name: 'Quantum Cybersecurity Suite',
-                  tagline: 'Future-proof security with quantum-resistant encryption',
-                  description: 'Next-generation cybersecurity platform with quantum-resistant algorithms and AI threat detection',
-                  price: '$899',
-                  period: 'month',
-                  features: ['Quantum-Resistant Encryption', 'AI Threat Detection', 'Real-time Monitoring', 'Zero-Trust Security'],
+                  features: ['Quantum-Resistant Encryption', 'AI Threat Detection', 'Real-time Monitoring', 'Zero-Trust Security', 'Compliance Automation'],
                   popular: true,
                   category: 'Quantum Security',
-                  icon: '🔒⚛️🛡️'
+                  icon: '🔒⚛️'
                 }}
                 variant="quantum"
               />
               <UltraFuturisticServiceCard2026
                 service={{
-                  id: 'autonomous-content-creation',
-                  name: 'Autonomous Content Creation',
-                  tagline: 'Self-generating content with AI creativity',
-                  description: 'Intelligent content creation platform that autonomously generates high-quality, brand-consistent content',
-                  price: '$599',
+                  id: 'space-resource-intelligence',
+                  name: 'Space Resource Intelligence 2040',
+                  tagline: 'AI-powered space exploration',
+                  description: 'Revolutionary platform that uses AI consciousness to analyze space data and discover valuable resources',
+                  price: '$1499',
                   period: 'month',
-                  features: ['AI Content Generation', 'Brand Voice Consistency', 'Multi-format Support', 'SEO Optimization'],
-                  popular: true,
-                  category: 'AI Content',
-                  icon: '✍️🤖🎨'
+                  features: ['Space Data Analysis', 'Resource Discovery', 'AI Consciousness', 'Real-time Monitoring', 'Predictive Analytics'],
+                  popular: false,
+                  category: 'Space Technology',
+                  icon: '🚀🌌'
                 }}
                 variant="ai"
               />
               <UltraFuturisticServiceCard2026
                 service={{
-                  id: 'edge-ai-computing',
-                  name: 'Edge AI Computing Platform',
-                  tagline: 'Intelligent computing at the edge',
-                  description: 'Advanced edge computing platform with real-time AI processing and optimization',
-                  price: '$899',
+                  id: 'brain-computer-interface',
+                  name: 'Brain-Computer Interface 2040',
+                  tagline: 'Neural interface technology',
+                  description: 'Next-generation BCI platform that enables direct communication between the human brain and computers',
+                  price: '$2499',
                   period: 'month',
-                  features: ['Edge AI Deployment', 'Real-time Processing', 'IoT Integration', 'Privacy-Preserving Computing'],
-                  popular: false,
-                  category: 'Edge Computing',
-                  icon: '🌐🤖💻'
+                  features: ['Neural Interface', 'Brain Communication', 'AI Integration', 'Real-time Processing', 'Safety Protocols'],
+                  popular: true,
+                  category: 'Neural Technology',
+                  icon: '🧠💻'
                 }}
                 variant="ai"
               />
@@ -298,11 +264,96 @@ const Homepage2025: React.FC = () => {
             
             <div className="text-center mt-12">
               <Link href="/services">
-                <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 flex items-center gap-2 mx-auto shadow-lg shadow-purple-500/25">
-                  View All Services
-                  <ArrowRight className="w-5 h-5" />
+                <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-purple-500/25">
+                  <span className="flex items-center gap-2 justify-center">
+                    View All Services
+                    <ArrowRight className="w-5 h-5" />
+                  </span>
                 </button>
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Enhanced Technology Showcase */}
+        <section className="py-20 px-4 bg-black/30 relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-purple-500/5"></div>
+          <div className="max-w-6xl mx-auto relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+                Revolutionary Technologies
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Experience the future with our cutting-edge technology stack and innovative solutions
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <motion.div 
+                className="p-6 group hover:bg-white/5 rounded-xl transition-all duration-300 border border-cyan-400/20 hover:border-cyan-400/40"
+                whileHover={{ scale: 1.05 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+              >
+                <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                  <Brain className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-cyan-300 transition-colors">AI Consciousness</h3>
+                <p className="text-gray-400 text-sm">Advanced AI with emotional intelligence and self-awareness capabilities</p>
+              </motion.div>
+              
+              <motion.div 
+                className="p-6 group hover:bg-white/5 rounded-xl transition-all duration-300 border border-purple-400/20 hover:border-purple-400/40"
+                whileHover={{ scale: 1.05 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                  <Atom className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-purple-300 transition-colors">Quantum Computing</h3>
+                <p className="text-gray-400 text-sm">Next-generation quantum algorithms and hybrid computing solutions</p>
+              </motion.div>
+              
+              <motion.div 
+                className="p-6 group hover:bg-white/5 rounded-xl transition-all duration-300 border border-green-400/20 hover:border-green-400/40"
+                whileHover={{ scale: 1.05 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                viewport={{ once: true }}
+              >
+                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                  <Rocket className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-green-300 transition-colors">Space Technology</h3>
+                <p className="text-gray-400 text-sm">AI-powered space exploration and resource intelligence platforms</p>
+              </motion.div>
+              
+              <motion.div 
+                className="p-6 group hover:bg-white/5 rounded-xl transition-all duration-300 border border-red-400/20 hover:border-red-400/40"
+                whileHover={{ scale: 1.05 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-orange-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                  <Shield className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-red-300 transition-colors">Cybersecurity</h3>
+                <p className="text-gray-400 text-sm">Quantum-resistant security with AI-powered threat detection</p>
+              </motion.div>
             </div>
           </div>
         </section>
