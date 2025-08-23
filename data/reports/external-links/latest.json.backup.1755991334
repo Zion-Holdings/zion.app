@@ -1,7 +1,13 @@
 {
+<<<<<<< HEAD
+  "generatedAt": "2025-08-11T11:19:54.752Z",
+  "total": 26,
+  "bad": 0,
+=======
   "generatedAt": "2025-08-11T11:15:15.143Z",
   "total": 31,
   "bad": 5,
+>>>>>>> origin/cursor/crawl-and-fix-site-links-and-pages-c7eb
   "results": [
     {
       "url": "https://techcrunch.com/2025/08/08/sam-altman-addresses-bumpy-gpt-5-rollout-bringing-4o-back-and-the-chart-crime/",
@@ -9,17 +15,24 @@
       "ok": true
     },
     {
+<<<<<<< HEAD
+=======
       "url": "https://techcrunch.com/2025/08/08/how-to-use-instagram-map-and-protect-your-privacy/",
       "statusCode": 200,
       "ok": true
     },
     {
+>>>>>>> origin/cursor/crawl-and-fix-site-links-and-pages-c7eb
       "url": "https://techcrunch.com/2025/08/08/former-googlers-ai-startup-openart-now-creates-brainrot-videos-in-just-one-click/",
       "statusCode": 200,
       "ok": true
     },
     {
+<<<<<<< HEAD
+      "url": "https://techcrunch.com/2025/08/08/how-to-use-instagram-map-and-protect-your-privacy/",
+=======
       "url": "https://techcrunch.com/2025/08/08/softbank-reportedly-bought-foxconns-ohio-factory-for-the-stargate-ai-project/",
+>>>>>>> origin/cursor/crawl-and-fix-site-links-and-pages-c7eb
       "statusCode": 200,
       "ok": true
     },
@@ -34,7 +47,11 @@
       "ok": true
     },
     {
+<<<<<<< HEAD
+      "url": "https://techcrunch.com/2025/08/08/softbank-reportedly-bought-foxconns-ohio-factory-for-the-stargate-ai-project/",
+=======
       "url": "https://techcrunch.com/2025/08/08/rip-microsoft-lens-a-simple-little-app-thats-getting-replaced-by-ai/",
+>>>>>>> origin/cursor/crawl-and-fix-site-links-and-pages-c7eb
       "statusCode": 200,
       "ok": true
     },
@@ -44,7 +61,11 @@
       "ok": true
     },
     {
+<<<<<<< HEAD
+      "url": "https://techcrunch.com/2025/08/08/rip-microsoft-lens-a-simple-little-app-thats-getting-replaced-by-ai/",
+=======
       "url": "https://techcrunch.com/2025/08/08/dont-let-your-competitor-steal-the-brand-spotlight-secure-your-exhibit-table-at-techcrunch-disrupt-2025/",
+>>>>>>> origin/cursor/crawl-and-fix-site-links-and-pages-c7eb
       "statusCode": 200,
       "ok": true
     },
@@ -54,7 +75,11 @@
       "ok": true
     },
     {
+<<<<<<< HEAD
+      "url": "https://techcrunch.com/2025/08/08/dont-let-your-competitor-steal-the-brand-spotlight-secure-your-exhibit-table-at-techcrunch-disrupt-2025/",
+=======
       "url": "https://techcrunch.com/2025/08/08/nasa-and-google-are-building-an-ai-medical-assistant-to-keep-mars-bound-astronauts-healthy/",
+>>>>>>> origin/cursor/crawl-and-fix-site-links-and-pages-c7eb
       "statusCode": 200,
       "ok": true
     },
@@ -64,17 +89,33 @@
       "ok": true
     },
     {
+<<<<<<< HEAD
+      "url": "https://techcrunch.com/2025/08/08/nasa-and-google-are-building-an-ai-medical-assistant-to-keep-mars-bound-astronauts-healthy/",
+      "statusCode": 200,
+      "ok": true
+    },
+    {
+=======
+>>>>>>> origin/cursor/crawl-and-fix-site-links-and-pages-c7eb
       "url": "https://techcrunch.com/2025/08/07/tesla-shuts-down-dojo-the-ai-training-supercomputer-that-musk-said-would-be-key-to-full-self-driving/",
       "statusCode": 200,
       "ok": true
     },
     {
+<<<<<<< HEAD
+      "url": "https://techcrunch.com/2025/08/06/google-says-hackers-stole-its-customers-data-in-a-breach-of-its-salesforce-database/",
+=======
       "url": "https://techcrunch.com/2025/08/06/instagram-takes-on-snapchat-with-new-instagram-map/",
+>>>>>>> origin/cursor/crawl-and-fix-site-links-and-pages-c7eb
       "statusCode": 200,
       "ok": true
     },
     {
+<<<<<<< HEAD
+      "url": "https://techcrunch.com/2025/08/06/instagram-takes-on-snapchat-with-new-instagram-map/",
+=======
       "url": "https://techcrunch.com/2025/08/06/google-says-hackers-stole-its-customers-data-in-a-breach-of-its-salesforce-database/",
+>>>>>>> origin/cursor/crawl-and-fix-site-links-and-pages-c7eb
       "statusCode": 200,
       "ok": true
     },
@@ -124,16 +165,24 @@
       "ok": true
     },
     {
+<<<<<<< HEAD
+=======
       "url": "https://www.framer.com/motion/",
       "statusCode": 308,
       "ok": true
     },
     {
+>>>>>>> origin/cursor/crawl-and-fix-site-links-and-pages-c7eb
       "url": "https://ziontechgroup.com",
       "statusCode": 200,
       "ok": true
     },
     {
+<<<<<<< HEAD
+      "url": "https://www.framer.com/motion/",
+      "statusCode": 308,
+      "ok": true
+=======
       "url": "https://github.com/Zion-Holdings/zion.app/actions",
       "statusCode": 404,
       "ok": false
@@ -157,6 +206,7 @@
       "url": "https://github.com/Zion-Holdings/zion.app/tree/main/docs",
       "statusCode": 404,
       "ok": false
+>>>>>>> origin/cursor/crawl-and-fix-site-links-and-pages-c7eb
     }
   ]
 }
