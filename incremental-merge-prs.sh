@@ -200,10 +200,10 @@ TOTAL_BATCHES=$(( (TOTAL_BRANCHES + BATCH_SIZE - 1) / BATCH_SIZE ))
 echo "📊 Total branches: $TOTAL_BRANCHES, Total batches: $TOTAL_BATCHES"
 echo "---"
 
-# Process branches in batches
-for ((batch_start=0; batch_start<TOTAL_BRANCHES; batch_start+=BATCH_SIZE)); do
-    CURRENT_BATCH=$((CURRENT_BATCH + 1))
-    local batch_end=$((batch_start + BATCH_SIZE))
+    # Process branches in batches
+    for ((batch_start=0; batch_start<TOTAL_BRANCHES; batch_start+=BATCH_SIZE)); do
+        CURRENT_BATCH=$((CURRENT_BATCH + 1))
+        batch_end=$((batch_start + BATCH_SIZE))
     
     echo "🚀 Starting batch $CURRENT_BATCH/$TOTAL_BATCHES"
     

@@ -1,5 +1,12 @@
 [
+<<<<<<< HEAD
+  "accessibility",
+<<<<<<< HEAD
+  "ai-autonomous-vehicle-ai-platform",
 =======
+>>>>>>> ef267d731aed572a16d33348da4bc2ee8cd3772a
+=======
+>>>>>>> origin/main
   "ai-consciousness-evolution",
   "ai-content-marketing-automation",
   "ai-creativity-orchestrator",
@@ -9,6 +16,9 @@
   "ai-ethics-governance",
   "ai-financial-fraud-detection",
   "ai-powered-enterprise-security",
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
   "ai-marketing-automation",
   "automated-financial-analytics-platform",
   "fintech-solutions",
@@ -16,12 +26,22 @@
   "intelligent-project-management-suite",
   "quantum-cloud-migration",
   "real-estate-technology-solutions",
+>>>>>>> ef267d731aed572a16d33348da4bc2ee8cd3772a
 =======
   "ai-threat-detection",
+>>>>>>> origin/main
   "autonomous-devops-platform",
   "autonomous-it-operations",
   "autonomous-vehicle-ai",
   "blockchain-enterprise-platform",
+<<<<<<< HEAD
+  "compliance",
+  "metaverse-digital-reality-platform",
+  "quantum-compliance-automation",
+  "quantum-creativity-studio",
+  "quantum-data-center",
+  "quantum-encryption-gateway",
+=======
   "brain-computer-interface",
   "customer-intelligence-platform",
   "industrial-automation-ai",
@@ -37,6 +57,7 @@
   "quantum-data-center",
   "quantum-encryption-gateway",
   "quantum-energy-optimization",
+>>>>>>> origin/main
   "quantum-identity-verification",
   "quantum-internet-security",
   "quantum-internet-security-gateway",
@@ -44,6 +65,14 @@
   "quantum-materials-discovery",
   "quantum-network-security",
   "quantum-networking",
+<<<<<<< HEAD
+  "quantum-threat-detection",
+  "services/data-contracts-hub",
+  "services/serverless-lakehouse-starter",
+<<<<<<< HEAD
+  "space-data-analytics",
+  "space-mining-automation-platform"
+=======
   "services/ai-customer-success-platform",
   "services/ai-evaluation-orchestrator",
   "services/ai-financial-planning-platform",
@@ -56,9 +85,15 @@
   "services/smart-crm-intelligence-suite",
   "space-mining-automation-platform",
   "transportation-logistics-solutions"
+>>>>>>> ef267d731aed572a16d33348da4bc2ee8cd3772a
 =======
   "quantum-risk-financial-manager",
   "quantum-supply-chain-optimizer",
+<<<<<<< HEAD
+  "quantum-threat-detection",
+  "services/data-contracts-hub",
+  "services/serverless-lakehouse-starter",
+=======
   "real-estate-technology-solutions",
   "services/ai-knowledge-graph-studio",
   "services/ai-sales-sequence-personalizer",
@@ -71,8 +106,10 @@
   "services/postgres-performance-tuner",
   "services/serverless-lakehouse-starter",
   "services/zero-trust-sso-mesh",
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-06aa
   "space-colonization-services",
   "space-data-analytics",
   "space-mining-automation-platform",
   "space-mining-platform"
+>>>>>>> origin/main
 ]
