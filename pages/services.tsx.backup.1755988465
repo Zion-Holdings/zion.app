@@ -12,6 +12,107 @@ import { innovative2025ITServicesExpansionV2 } from '../data/innovative-2025-it-
 import { innovative2025AIServicesExpansionV2 } from '../data/innovative-2025-ai-services-expansion-v2';
 import Link from 'next/link';
 
+<<<<<<< HEAD
+interface Service {
+  id: string;
+  name: string;
+  tagline: string;
+  description: string;
+  category: string;
+  price: {
+    monthly: number;
+    yearly: number;
+    currency: string;
+    trialDays: number;
+    setupTime: string;
+  };
+  features: string[];
+  benefits: string[];
+  targetAudience: string[];
+  marketPosition: string;
+  competitors: string[];
+  techStack: string[];
+  realImplementation: boolean;
+  implementationDetails: string;
+  roi: string;
+  useCases: string[];
+  integrations: string[];
+  support: string;
+  compliance: string[];
+  link: string;
+  icon: string;
+  color: string;
+  popular: boolean;
+  launchDate: string;
+  customers: number;
+  rating: number;
+  reviews: number;
+}
+
+// Import our new 2025 advanced services
+import { advanced2025MicroSaasExpansion } from '../data/2025-advanced-micro-saas-expansion';
+import { advanced2025ITSolutionsExpansion } from '../data/2025-advanced-it-solutions-expansion';
+import { advanced2025AIServicesExpansion } from '../data/2025-advanced-ai-services-expansion';
+// Import our new 2025 innovative services expansion
+import { innovative2025MicroSaasExpansion } from '../data/innovative-2025-micro-saas-expansion';
+import { innovative2025ITSolutionsExpansion } from '../data/innovative-2025-it-solutions-expansion';
+import { innovative2025AIServicesExpansion } from '../data/innovative-2025-ai-services-expansion';
+
+// Import our new 2025 cutting-edge innovative services
+import { innovative2025CuttingEdgeServices } from '../data/innovative-2025-cutting-edge-services';
+import { innovative2025EnterpriseSolutions } from '../data/innovative-2025-enterprise-solutions';
+import { innovative2025IndustrySolutions } from '../data/innovative-2025-industry-solutions';
+
+// Import our new innovative 2040 services
+import { innovative2039FuturisticServices } from '../data/innovative-2039-futuristic-services';
+import { innovative2040AdvancedSolutions } from '../data/innovative-2040-advanced-solutions';
+import { innovative2040ITSolutions } from '../data/innovative-2040-it-solutions';
+import { innovative2040MicroSaasSolutions } from '../data/innovative-2040-micro-saas-solutions';
+
+// Import our latest innovative services
+import { innovative2040FuturisticServices } from '../data/innovative-2040-futuristic-services';
+import { advanced2041EnterpriseServices } from '../data/advanced-2041-enterprise-services';
+import { revolutionary2042MicroSaasServices } from '../data/revolutionary-2042-micro-saas-services';
+
+// Import our latest innovative services
+import { advancedAIAutomationServices } from '../data/advanced-ai-automation-services';
+import { nextGenITInfrastructureServices } from '../data/next-gen-it-infrastructure-services';
+import { innovativeMicroSaasSolutions2025 } from '../data/innovative-micro-saas-solutions-2025';
+import { specializedIndustrySolutions } from '../data/specialized-industry-solutions';
+
+// Import Q4 2037 cutting-edge services
+import { cuttingEdgeServices } from '../data/real-2037-q4-cutting-edge-services';
+import { itInfrastructureServices } from '../data/real-2037-q4-it-infrastructure-services';
+import { businessSolutionServices } from '../data/real-2037-q4-business-solutions';
+
+// Import new 2036 expansion services
+import { innovativeMicroSaasExpansion } from '../data/innovative-2036-micro-saas-expansion';
+import { innovativeITServicesExpansion } from '../data/innovative-2036-it-services-expansion';
+import { innovativeAIServicesExpansion } from '../data/innovative-2036-ai-services-expansion';
+
+// Import our new 2037 Q1 innovative services
+import { real2037Q1InnovativeAdditions } from '../data/real-2037-q1-innovative-additions';
+import { real2037Q1ITInnovations } from '../data/real-2037-q1-it-innovations';
+import { real2037Q1MicroSaasInnovations } from '../data/real-2037-q1-micro-saas-innovations';
+
+// Import 2026 innovative services
+import { innovative2026AIServicesAdditions } from '../data/innovative-2026-ai-services-additions';
+import { innovative2026ITServicesAdditions } from '../data/innovative-2026-it-services-additions';
+import { innovative2026MicroSaasAdditions } from '../data/innovative-2026-micro-saas-additions';
+import { innovative2026IndustryAIServices } from '../data/innovative-2026-industry-ai-services';
+import { innovative2026EmergingTechServices } from '../data/innovative-2026-emerging-tech-services';
+
+// Import our new innovative 2027 services
+import { innovative2027AIBusinessIntelligenceServices } from '../data/innovative-2027-ai-business-intelligence';
+import { innovative2027CybersecurityComplianceServices } from '../data/innovative-2027-cybersecurity-compliance';
+import { innovative2027CloudDevOpsServices } from '../data/innovative-2027-cloud-devops';
+import { innovative2027IndustrySolutions } from '../data/innovative-2027-industry-solutions';
+
+// Import our new 2026 advanced services
+import { real2026AdvancedServices } from '../data/real-2026-advanced-services';
+import { real2026InnovativeSolutions } from '../data/real-2026-innovative-solutions';
+import { real2026SpecializedServices } from '../data/real-2026-specialized-services';
+=======
 // Import our new service data
 import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
 import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas-solutions';
@@ -24,6 +125,7 @@ import { real2036ServiceExpansions } from '../data/real-2036-service-expansions'
 import { innovative2036MicroSaasServices } from '../data/innovative-2036-micro-saas-services';
 import { innovative2036ITServices } from '../data/innovative-2036-it-services';
 import { innovative2025Services } from '../data/innovative-2025-2026-services';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-18dd
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -105,7 +207,14 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
+<<<<<<< HEAD
+  // Add our new 2026 advanced services
+  ...real2026AdvancedServices,
+  ...real2026InnovativeSolutions,
+  ...real2026SpecializedServices
+=======
   ...innovative2025Services
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-18dd
 ];
 
 const categories = [
