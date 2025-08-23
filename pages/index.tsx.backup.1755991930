@@ -5,7 +5,11 @@ import Features from '../components/sections/Features';
 import MicroSaasServices from '../components/sections/MicroSaasServices';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
+<<<<<<< HEAD
+import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Code, Lock, Link, QrCode, FileText, Database } from 'lucide-react';
+=======
 import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Target, TrendingUp } from 'lucide-react';
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-b249
 
 export default function HomePage() {
   const heroStats = [
@@ -567,12 +571,20 @@ export default function HomePage() {
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
             <Button
+<<<<<<< HEAD
+              href="/pricing"
+=======
               href="/services"
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-b249
               variant="outline"
               size="lg"
               className="border-white text-white hover:bg-white hover:text-blue-600 shadow-2xl"
             >
+<<<<<<< HEAD
+              View Pricing
+=======
               View Our Services
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-b249
             </Button>
           </div>
         </div>

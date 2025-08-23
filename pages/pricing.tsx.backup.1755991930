@@ -1,10 +1,203 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
+<<<<<<< HEAD
+import { Check, Star, Zap, Shield, Users, Globe, ArrowRight } from 'lucide-react';
+=======
 import { Check, Star, Zap, Shield, Users, Globe, TrendingUp, BarChart3, DollarSign, Target, Clock, Award } from 'lucide-react';
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-b249
 import Button from '../components/ui/Button';
 import { microSaasServices, serviceCategories, getServicesByCategory } from '../data/micro-saas-services';
 
 export default function PricingPage() {
+<<<<<<< HEAD
+  const microSaasServices = [
+    {
+      name: 'AI Content Generator',
+      icon: '📝',
+      description: 'AI-powered content creation with 50+ language support',
+      plans: [
+        {
+          name: 'Starter',
+          price: '$29',
+          period: '/month',
+          description: 'Perfect for individuals and small blogs',
+          features: [
+            '1,000 words per month',
+            '5 content templates',
+            'Basic SEO optimization',
+            'Email support',
+            'API access (100 calls/month)',
+            'Content analytics dashboard'
+          ],
+          popular: false,
+          color: 'border-gray-600',
+          buttonColor: 'bg-gray-600 hover:bg-gray-700'
+        },
+        {
+          name: 'Professional',
+          price: '$99',
+          period: '/month',
+          description: 'Ideal for growing businesses and agencies',
+          features: [
+            '10,000 words per month',
+            '25+ content templates',
+            'Advanced SEO tools',
+            'Priority support',
+            'API access (1,000 calls/month)',
+            'Advanced analytics',
+            'Team collaboration',
+            'Custom branding'
+          ],
+          popular: true,
+          color: 'border-purple-500',
+          buttonColor: 'bg-purple-600 hover:bg-purple-700'
+        },
+        {
+          name: 'Enterprise',
+          price: '$299',
+          period: '/month',
+          description: 'For large organizations and enterprises',
+          features: [
+            'Unlimited words',
+            'All templates + custom',
+            'Full SEO suite',
+            'Dedicated support',
+            'Unlimited API access',
+            'Advanced analytics',
+            'White-label solution',
+            'Custom integrations',
+            'SLA guarantee'
+          ],
+          popular: false,
+          color: 'border-purple-600',
+          buttonColor: 'bg-purple-600 hover:bg-purple-700'
+        }
+      ]
+    },
+    {
+      name: 'Cloud Monitoring & Analytics',
+      icon: '👁️',
+      description: 'Real-time infrastructure monitoring with AI-powered insights',
+      plans: [
+        {
+          name: 'Starter',
+          price: '$49',
+          period: '/month',
+          description: 'Perfect for small teams and startups',
+          features: [
+            'Up to 10 servers',
+            'Basic monitoring',
+            'Email alerts',
+            '7-day data retention',
+            'Community support',
+            'Mobile app access'
+          ],
+          popular: false,
+          color: 'border-gray-600',
+          buttonColor: 'bg-gray-600 hover:bg-gray-700'
+        },
+        {
+          name: 'Professional',
+          price: '$199',
+          period: '/month',
+          description: 'Ideal for growing businesses',
+          features: [
+            'Up to 100 servers',
+            'Advanced monitoring',
+            'SMS & Slack alerts',
+            '30-day data retention',
+            'Priority support',
+            'Custom dashboards',
+            'API access',
+            'Team collaboration'
+          ],
+          popular: true,
+          color: 'border-green-500',
+          buttonColor: 'bg-green-600 hover:bg-green-700'
+        },
+        {
+          name: 'Enterprise',
+          price: '$599',
+          period: '/month',
+          description: 'For large organizations',
+          features: [
+            'Unlimited servers',
+            'Full monitoring suite',
+            'Custom integrations',
+            '1-year data retention',
+            'Dedicated support',
+            'White-label solution',
+            'SLA guarantee',
+            'On-premise option'
+          ],
+          popular: false,
+          color: 'border-green-600',
+          buttonColor: 'bg-green-600 hover:bg-green-700'
+        }
+      ]
+    },
+    {
+      name: 'AI-Powered SEO Suite',
+      icon: '🔍',
+      description: 'Comprehensive SEO tools with AI-powered optimization',
+      plans: [
+        {
+          name: 'Starter',
+          price: '$39',
+          period: '/month',
+          description: 'Perfect for small websites and blogs',
+          features: [
+            'Up to 5 websites',
+            'Basic keyword research',
+            'Monthly site audits',
+            'Email support',
+            'Basic reporting',
+            'Mobile app access'
+          ],
+          popular: false,
+          color: 'border-gray-600',
+          buttonColor: 'bg-gray-600 hover:bg-gray-700'
+        },
+        {
+          name: 'Professional',
+          price: '$129',
+          period: '/month',
+          description: 'Ideal for growing businesses and agencies',
+          features: [
+            'Up to 25 websites',
+            'Advanced keyword research',
+            'Weekly site audits',
+            'Priority support',
+            'Advanced reporting',
+            'Competitor analysis',
+            'API access',
+            'White-label reports'
+          ],
+          popular: true,
+          color: 'border-blue-500',
+          buttonColor: 'bg-blue-600 hover:bg-blue-700'
+        },
+        {
+          name: 'Enterprise',
+          price: '$399',
+          period: '/month',
+          description: 'For large organizations and enterprises',
+          features: [
+            'Unlimited websites',
+            'Full SEO suite',
+            'Daily site audits',
+            'Dedicated support',
+            'Custom reporting',
+            'Advanced analytics',
+            'SLA guarantee',
+            'On-premise option'
+          ],
+          popular: false,
+          color: 'border-blue-600',
+          buttonColor: 'bg-blue-600 hover:bg-blue-700'
+        }
+      ]
+=======
   const microSaasPlans = [
     {
       name: 'AI Content Automation',
@@ -150,6 +343,7 @@ export default function PricingPage() {
       title: 'Quality Assurance',
       description: 'Premium pricing reflects enterprise-grade quality and support',
       details: '99.9% uptime guarantee with 24/7 support and dedicated account managers'
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-b249
     }
   ];
 
@@ -166,9 +360,15 @@ export default function PricingPage() {
 
   const faqs = [
     {
+<<<<<<< HEAD
+      icon: <Users className="w-6 h-6 text-blue-400" />,
+      title: 'Dedicated Support',
+      description: '24/7 dedicated support team with SLA guarantees and priority response times.'
+=======
       icon: <Users className="w-8 h-8" />,
       title: 'Enterprise Support',
       description: 'Dedicated account managers and 24/7 priority support'
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-b249
     },
     {
       icon: <Shield className="w-6 h-6 text-green-400" />,
@@ -178,12 +378,21 @@ export default function PricingPage() {
     {
       icon: <Globe className="w-6 h-6 text-purple-400" />,
       title: 'Global Infrastructure',
+<<<<<<< HEAD
+      description: 'Multi-region deployment with CDN, load balancing, and disaster recovery capabilities.'
+    },
+    {
+      icon: <TrendingUp className="w-6 h-6 text-orange-400" />,
+      title: 'Custom Integrations',
+      description: 'Custom API development, webhook support, and integration with your existing systems.'
+=======
       description: 'Multi-region deployment with local compliance support'
     },
     {
       icon: <Shield className="w-8 h-8" />,
       title: 'Custom Security',
       description: 'Tailored security policies and compliance frameworks'
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-b249
     }
   ];
 
@@ -237,6 +446,25 @@ export default function PricingPage() {
   return (
     <>
       <Head>
+<<<<<<< HEAD
+        <title>Pricing | Zion Tech Group - Transparent Pricing for All Services</title>
+        <meta name="description" content="Simple, transparent pricing for all our micro SaaS services. Choose the plan that fits your needs with no hidden fees." />
+        <meta property="og:title" content="Pricing | Zion Tech Group" />
+        <meta property="og:description" content="Transparent pricing for AI Content Generator, Cloud Monitoring, SEO Suite, and more." />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
+
+      {/* Hero Section */}
+      <section className="relative section-padding bg-gradient-cursor overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(59,130,246,0.08),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(147,51,234,0.06),transparent_50%)]" />
+        <div className="absolute inset-0 bg-grid opacity-10" />
+        
+        <div className="relative z-10 container-cursor text-center">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-cursor-blue/10 border border-cursor-blue/20 text-cursor-blue text-sm font-medium mb-6">
+            <span className="w-2 h-2 bg-cursor-blue rounded-full mr-2 animate-pulse" />
+            Simple, Transparent Pricing
+=======
         <title>Micro SaaS Pricing - Zion Tech Group | Market-Research Based Pricing</title>
         <meta name="description" content="Real micro SaaS pricing based on market research, competitive analysis, and proven ROI. See actual market rates and value-based pricing for enterprise solutions." />
         <meta property="og:title" content="Micro SaaS Pricing - Zion Tech Group" />
@@ -260,6 +488,7 @@ export default function PricingPage() {
             <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
               Our pricing is based on extensive market research, competitive analysis, and proven ROI. No generic plans - just real solutions with market-validated pricing.
             </p>
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-b249
           </div>
           <h1 className="text-responsive-xl font-black mb-8 gradient-text text-shadow-lg">
             Choose Your Plan
@@ -270,6 +499,19 @@ export default function PricingPage() {
         </div>
       </section>
 
+<<<<<<< HEAD
+      {/* Micro SaaS Services Pricing */}
+      {microSaasServices.map((service, serviceIndex) => (
+        <section key={serviceIndex} className="section-padding bg-gradient-cursor-accent">
+          <div className="container-cursor">
+            <div className="text-center mb-20">
+              <div className="text-6xl mb-6">{service.icon}</div>
+              <h2 className="text-responsive-lg font-bold mb-8 gradient-text text-shadow">
+                {service.name}
+              </h2>
+              <p className="text-responsive-md text-gray-400 max-w-4xl mx-auto leading-relaxed">
+                {service.description}
+=======
         {/* Market Analysis */}
         <section className="py-20 bg-gray-900/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -479,10 +721,52 @@ export default function PricingPage() {
               </h2>
               <p className="text-lg text-gray-400 max-w-3xl mx-auto">
                 Additional capabilities for large organizations with custom requirements
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-b249
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+<<<<<<< HEAD
+              {service.plans.map((plan, planIndex) => (
+                <Card
+                  key={planIndex}
+                  className={`relative group ${plan.popular ? 'ring-2 ring-cursor-blue scale-105' : ''} border ${plan.color} hover:border-cursor-blue/50 transition-all duration-300`}
+                >
+                  {plan.popular && (
+                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                      <span className="bg-cursor-blue text-white px-4 py-2 rounded-full text-sm font-semibold">
+                        Most Popular
+                      </span>
+                    </div>
+                  )}
+                  
+                  <div className="text-center mb-8">
+                    <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
+                    <div className="text-4xl font-bold text-white mb-2">
+                      {plan.price}<span className="text-lg text-gray-400">{plan.period}</span>
+                    </div>
+                    <p className="text-gray-400">{plan.description}</p>
+                  </div>
+
+                  <ul className="space-y-4 mb-8">
+                    {plan.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center text-gray-300">
+                        <CheckCircle className="w-5 h-5 text-cursor-blue mr-3 flex-shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <Button
+                    href="/contact"
+                    className={`w-full ${plan.buttonColor} text-white`}
+                    size="lg"
+                  >
+                    Get Started
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Button>
+                </Card>
+=======
               {enterpriseFeatures.map((feature, index) => (
                 <div
                   key={index}
@@ -494,12 +778,148 @@ export default function PricingPage() {
                   <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
                   <p className="text-gray-400">{feature.description}</p>
                 </div>
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-b249
               ))}
             </div>
           </div>
         </section>
       ))}
 
+<<<<<<< HEAD
+      {/* Enterprise Features */}
+      <section className="section-padding bg-gradient-cursor">
+        <div className="container-cursor">
+          <div className="text-center mb-20">
+            <h2 className="text-responsive-lg font-bold mb-8 gradient-text text-shadow">
+              Enterprise Features
+            </h2>
+            <p className="text-responsive-md text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Advanced features and capabilities for large organizations and enterprises
+            </p>
+          </div>
+        </section>
+
+        {/* Micro SaaS Services Pricing */}
+        <section className="py-24 bg-gray-900">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-20">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
+                <span className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse" />
+                Micro SaaS Services
+              </div>
+              <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
+                Individual Service Pricing
+              </h2>
+              <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+                Choose from our portfolio of specialized micro SaaS services. Each service is designed to solve specific business problems with transparent, competitive pricing.
+              </p>
+            </div>
+
+            {/* Service Categories */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+              {serviceCategories.map((category, index) => {
+                const categoryServices = getServicesByCategory(category);
+                const avgPrice = categoryServices.length > 0 
+                  ? Math.round(categoryServices.reduce((sum, service) => sum + parseInt(service.pricing.starter), 0) / categoryServices.length)
+                  : 0;
+                
+                return (
+                  <div key={category} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-blue-500/30 transition-all duration-300">
+                    <h3 className="text-xl font-bold text-white mb-4">{category}</h3>
+                    <div className="text-3xl font-bold text-blue-400 mb-2">${avgPrice}</div>
+                    <div className="text-gray-400 text-sm mb-4">Average starting price</div>
+                    <div className="text-gray-300 text-sm mb-4">
+                      {categoryServices.length} service{categoryServices.length !== 1 ? 's' : ''} available
+                    </div>
+                    <Button
+                      href={`/services?category=${encodeURIComponent(category)}`}
+                      variant="outline"
+                      size="sm"
+                      className="w-full"
+                    >
+                      View Services
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Button>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Featured Services */}
+            <div className="text-center mb-16">
+              <h3 className="text-2xl font-bold text-white mb-8">Popular Services</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {microSaasServices.slice(0, 6).map((service, index) => (
+                  <div key={service.id} className="bg-gray-800/50 rounded-xl p-6 border border-gray-700 hover:border-blue-500/30 transition-all duration-300">
+                    <div className="text-center mb-4">
+                      <h4 className="text-lg font-semibold text-white mb-2">{service.name}</h4>
+                      <div className="text-2xl font-bold text-blue-400">${service.pricing.starter}</div>
+                      <div className="text-gray-400 text-sm">per month</div>
+                    </div>
+                    <p className="text-gray-300 text-sm mb-4 line-clamp-3">{service.description}</p>
+                    <div className="space-y-2 mb-4">
+                      {service.features.slice(0, 3).map((feature, featureIndex) => (
+                        <div key={featureIndex} className="flex items-center text-xs text-gray-400">
+                          <Check className="w-3 h-3 text-green-400 mr-2 flex-shrink-0" />
+                          {feature}
+                        </div>
+                      ))}
+                    </div>
+                    <div className="flex gap-2">
+                      <Button
+                        href={service.website}
+                        variant="primary"
+                        size="sm"
+                        className="flex-1"
+                      >
+                        Visit Service
+                      </Button>
+                      <Button
+                        href={`/services/${service.id}`}
+                        variant="outline"
+                        size="sm"
+                        className="flex-1"
+                      >
+                        Details
+                      </Button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* CTA Section */}
+            <div className="text-center">
+              <div className="inline-flex items-center px-6 py-3 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
+                <Star className="w-4 h-4 mr-2" />
+                Ready to explore?
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4">
+                Find the Perfect Service for Your Business
+              </h3>
+              <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
+                Browse our complete portfolio of micro SaaS services and discover solutions that can transform your business operations.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button
+                  href="/services"
+                  variant="primary"
+                  size="lg"
+                  className="shadow-2xl shadow-blue-500/25"
+                >
+                  View All Services
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+                <Button
+                  href="/contact"
+                  variant="outline"
+                  size="lg"
+                  className="border-white/20 text-white hover:border-white/40"
+                >
+                  Get Custom Quote
+                </Button>
+              </div>
+=======
         {/* CTA Section */}
         <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-700 relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-10" />
@@ -527,6 +947,7 @@ export default function PricingPage() {
               >
                 View All Services
               </Button>
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-b249
             </div>
           </div>
         </section>
