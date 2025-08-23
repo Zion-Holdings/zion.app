@@ -234,13 +234,11 @@ import { marketReadyServices } from '../data/market-ready-services';
 import { marketValidatedServices } from '../data/market-validated-services';
 import { industryRealServices } from '../data/industry-real-services';
 
-// Import our new 2025 innovative services
-import { advancedCybersecurityAutomationServices } from '../data/2025-advanced-cybersecurity-automation';
-import { aiPoweredBusinessAutomationServices } from '../data/2025-ai-powered-business-automation';
-import { advancedCloudDevOpsSolutions } from '../data/2025-advanced-cloud-devops-solutions';
-import { advancedDataAnalyticsSolutions } from '../data/2025-advanced-data-analytics-solutions';
-import { fintechBlockchainInnovations } from '../data/2025-fintech-blockchain-innovations';
-import { healthcareBiotechInnovations } from '../data/2025-healthcare-biotech-innovations';
+// Import our new 2025 advanced services
+import { advancedCybersecurityMicroSaasServices } from '../data/2025-advanced-cybersecurity-micro-saas';
+import { advancedAIMLMicroSaasServices } from '../data/2025-advanced-ai-ml-micro-saas';
+import { fintechBlockchainMicroSaasServices } from '../data/2025-fintech-blockchain-micro-saas';
+import { healthcareBiotechMicroSaasServices } from '../data/2025-healthcare-biotech-micro-saas';
 
 // Helper function to get service category
 const getServiceCategory = (service: any) => {
@@ -408,11 +406,20 @@ const allServices = [
   // Our new 2025 advanced enterprise services
   ...advancedEnterpriseServices,
   ...cuttingEdgeITInfrastructureServices,
+<<<<<<< HEAD
   // Our new 2025 advanced real micro SAAS expansion
   ...advancedRealMicroSaasExpansion2025,
   ...emergingTechBreakthroughServices2025,
   ...practicalBusinessSolutions2025
 >>>>>>> 0d3d59dc48bc65c272e3c7f2106b07881fc97407
+=======
+  
+  // Our new 2025 advanced specialized services
+  ...advancedCybersecurityMicroSaasServices,
+  ...advancedAIMLMicroSaasServices,
+  ...fintechBlockchainMicroSaasServices,
+  ...healthcareBiotechMicroSaasServices
+>>>>>>> b158c850e5918955c6b05df28208d70c32592a79
 ];
 
 const categories = [
@@ -633,12 +640,27 @@ const categories = [
     description: 'Advanced security and threat protection'
   },
   {
+<<<<<<< HEAD
     id: 'data-analytics',
     name: 'Data Analytics',
     icon: <Cpu className="w-6 h-6" />,
     color: 'from-cyan-500 to-blue-500',
     description: 'Intelligent data analysis and insights'
 >>>>>>> 0d3d59dc48bc65c272e3c7f2106b07881fc97407
+=======
+    id: 'ai-ml',
+    name: 'AI & Machine Learning',
+    icon: <Brain className="w-6 h-6" />,
+    color: 'from-purple-500 to-pink-600',
+    description: 'Intelligent automation and analytics'
+  },
+  {
+    id: 'fintech-blockchain',
+    name: 'Fintech & Blockchain',
+    icon: <Target className="w-6 h-6" />,
+    color: 'from-green-500 to-emerald-600',
+    description: 'Financial technology and blockchain solutions'
+>>>>>>> b158c850e5918955c6b05df28208d70c32592a79
   }
 ];
 
@@ -678,29 +700,52 @@ export default function Services() {
     
     if (selectedCategory === 'all') return matchesSearch;
     
-    const serviceCategory = getServiceCategory(service).toLowerCase();
+    const serviceCategory = getServiceDescription(service).toLowerCase();
+    const categoryName = categories.find(cat => cat.id === selectedCategory)?.name.toLowerCase();
     
-    // Handle new category mappings
-    const categoryMappings: { [key: string]: string[] } = {
-      'ai-business-intelligence': ['AI Services', 'AI & Business Intelligence'],
-      'cybersecurity-compliance': ['Cybersecurity', 'Compliance'],
-      'cloud-devops': ['Cloud & DevOps', 'IT Infrastructure'],
-      'digital-transformation': ['Digital Transformation'],
-      'healthcare-biotech': ['Healthcare & Biotech'],
-      'fintech': ['Fintech'],
-      'sustainability-green-tech': ['Sustainability & Green Tech'],
-      'space-tech-aerospace': ['Space Technology', 'Aerospace'],
-      'quantum-computing': ['Quantum Computing']
-    };
-    
-    if (categoryMappings[selectedCategory]) {
-      const matchesCategory = categoryMappings[selectedCategory].some(cat => 
-        serviceCategory.includes(cat.toLowerCase())
+    // Handle specialized category filtering
+    if (selectedCategory === 'cybersecurity') {
+      return matchesSearch && (
+        serviceCategory.includes('cybersecurity') || 
+        serviceCategory.includes('security') || 
+        serviceCategory.includes('threat') ||
+        serviceCategory.includes('vulnerability') ||
+        serviceCategory.includes('compliance')
       );
-      return matchesSearch && matchesCategory;
     }
     
-    const categoryName = categories.find(cat => cat.id === selectedCategory)?.name.toLowerCase();
+    if (selectedCategory === 'ai-ml') {
+      return matchesSearch && (
+        serviceCategory.includes('ai') || 
+        serviceCategory.includes('machine learning') || 
+        serviceCategory.includes('artificial intelligence') ||
+        serviceCategory.includes('neural') ||
+        serviceCategory.includes('automation')
+      );
+    }
+    
+    if (selectedCategory === 'fintech-blockchain') {
+      return matchesSearch && (
+        serviceCategory.includes('fintech') || 
+        serviceCategory.includes('blockchain') || 
+        serviceCategory.includes('crypto') ||
+        serviceCategory.includes('defi') ||
+        serviceCategory.includes('nft') ||
+        serviceCategory.includes('payment')
+      );
+    }
+    
+    if (selectedCategory === 'healthcare-biotech') {
+      return matchesSearch && (
+        serviceCategory.includes('healthcare') || 
+        serviceCategory.includes('biotech') || 
+        serviceCategory.includes('medical') ||
+        serviceCategory.includes('pharmaceutical') ||
+        serviceCategory.includes('clinical')
+      );
+    }
+    
+    // Default category matching
     return matchesSearch && serviceCategory.includes(categoryName || '');
   });
 
@@ -772,11 +817,13 @@ export default function Services() {
       case 'devops & automation':
       case 'data & analytics':
       case 'cloud services':
-      case 'cybersecurity':
         return <Building className="w-6 h-6 text-blue-400" />;
+      case 'cybersecurity':
+        return <Shield className="w-6 h-6 text-red-400" />;
       case 'ai & consciousness':
       case 'ai services':
       case 'artificial intelligence':
+      case 'ai & machine learning':
         return <Brain className="w-6 h-6 text-cyan-400" />;
       case 'quantum':
       case 'quantum & emerging tech':
@@ -796,6 +843,7 @@ export default function Services() {
       case 'education':
       case 'education & research':
         return <GraduationCap className="w-6 h-6 text-yellow-400" />;
+<<<<<<< HEAD
       case 'manufacturing':
       case 'manufacturing & industry':
         return <Building className="w-6 h-6 text-gray-400" />;
@@ -805,6 +853,11 @@ export default function Services() {
       case 'consulting':
       case 'consulting & strategy':
         return <Lightbulb className="w-6 h-6 text-indigo-400" />;
+=======
+      case 'fintech':
+      case 'fintech & blockchain':
+        return <Target className="w-6 h-6 text-green-400" />;
+>>>>>>> b158c850e5918955c6b05df28208d70c32592a79
       default:
         return <Shield className="w-6 h-6 text-gray-400" />;
     }
@@ -1109,6 +1162,7 @@ export default function Services() {
                   </ul>
                 </div>
 
+<<<<<<< HEAD
                 <div className="bg-white/5 rounded-xl p-6 border border-white/10">
                   <div className="text-3xl mb-3">🔍</div>
                   <h3 className="text-xl font-bold mb-3 text-fuchsia-400">Computer Vision</h3>
@@ -1178,6 +1232,55 @@ export default function Services() {
                     <li>• Threat Detection</li>
                   </ul>
                 </div>
+=======
+        {/* CTA Section */}
+        <section className="py-20 relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10 border border-cyan-500/30 rounded-3xl p-12 text-center"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to Transform Your <span className="bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">Business</span>?
+              </h2>
+              <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                Join leading businesses that trust Zion Tech Group for their digital transformation. 
+                Our expert team is ready to guide you through your technology journey.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <motion.a
+                  href="/contact"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-lg rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 shadow-2xl shadow-cyan-500/25"
+                >
+                  <span>Get Started Today</span>
+                  <ArrowRight className="w-6 h-6" />
+                </motion.a>
+                
+                <motion.a
+                  href="/2025-comprehensive-services-showcase"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-bold text-lg rounded-xl hover:from-purple-600 hover:to-pink-700 transition-all duration-200 shadow-2xl shadow-purple-500/25"
+                >
+                  <Rocket className="w-6 h-6" />
+                  <span>View All Services</span>
+                </motion.a>
+                
+                <motion.a
+                  href="/enterprise-solutions-showcase"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-flex items-center space-x-3 px-8 py-4 bg-black/50 border-2 border-cyan-500/50 text-cyan-300 font-bold text-lg rounded-xl hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-200"
+                >
+                  <Building className="w-6 h-6" />
+                  <span>Enterprise Solutions</span>
+                </motion.a>
+>>>>>>> b158c850e5918955c6b05df28208d70c32592a79
               </div>
             </div>
 
