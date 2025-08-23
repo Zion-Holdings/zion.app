@@ -152,39 +152,31 @@ export default function ResourcesPage() {
       description: 'How to calculate and maximize return on investment for automation initiatives.',
       downloadUrl: '#',
       pages: '28',
-      category: 'Business',
-      lastUpdated: 'November 2024',
-      author: 'Lisa Thompson, Business Strategy Consultant'
+      category: 'Business'
     },
     {
-      id: 'cybersecurity-ai-implementation',
-      title: 'Cybersecurity Best Practices for AI Systems',
-      description: 'Comprehensive security guidelines for implementing and maintaining AI systems in enterprise environments.',
+      id: 'edge-computing-implementation',
+      title: 'Edge Computing Implementation Guide',
+      description: 'Step-by-step guide to implementing edge computing solutions for real-time AI applications.',
       downloadUrl: '#',
       pages: '38',
-      category: 'Security',
-      lastUpdated: 'January 2025',
-      author: 'David Kim, Cybersecurity Expert'
+      category: 'Technology'
     },
     {
-      id: 'machine-learning-production',
-      title: 'Machine Learning in Production: A Practical Guide',
-      description: 'Best practices for deploying, monitoring, and maintaining machine learning models in production environments.',
-      downloadUrl: '#',
-      pages: '52',
-      category: 'Technology',
-      lastUpdated: 'December 2024',
-      author: 'Dr. Emily Watson, ML Engineering Lead'
-    },
-    {
-      id: 'ai-transformation-roadmap',
-      title: 'AI Transformation Roadmap for Enterprises',
-      description: 'A step-by-step guide to planning and executing successful AI transformation initiatives.',
+      id: 'ai-security-best-practices',
+      title: 'AI Security Best Practices',
+      description: 'Comprehensive security guidelines for protecting AI systems and data in enterprise environments.',
       downloadUrl: '#',
       pages: '41',
-      category: 'Strategy',
-      lastUpdated: 'January 2025',
-      author: 'James Wilson, Digital Transformation Advisor'
+      category: 'Security'
+    },
+    {
+      id: 'automation-governance-framework',
+      title: 'Automation Governance Framework',
+      description: 'Establishing governance structures and policies for enterprise automation initiatives.',
+      downloadUrl: '#',
+      pages: '35',
+      category: 'Governance'
     }
   ];
 
@@ -220,18 +212,25 @@ export default function ResourcesPage() {
       estimatedTime: '20 minutes'
     },
     {
-      id: 'sustainability-calculator',
-      title: 'AI Sustainability Calculator',
-      description: 'Measure the environmental impact of your AI systems and identify optimization opportunities.',
-      type: 'Environmental Tool',
+      id: 'edge-computing-calculator',
+      title: 'Edge Computing ROI Calculator',
+      description: 'Calculate the return on investment for edge computing implementations.',
+      type: 'Financial Tool',
       estimatedTime: '25 minutes'
     },
     {
-      id: 'edge-computing-optimizer',
-      title: 'Edge Computing Optimizer',
-      description: 'Optimize your edge AI deployment for maximum performance and efficiency.',
-      type: 'Optimization Tool',
-      estimatedTime: '35 minutes'
+      id: 'ai-ethics-checklist',
+      title: 'AI Ethics Implementation Checklist',
+      description: 'Ensure your AI systems meet ethical standards and compliance requirements.',
+      type: 'Compliance Tool',
+      estimatedTime: '45 minutes'
+    },
+    {
+      id: 'automation-workflow-builder',
+      title: 'Automation Workflow Builder',
+      description: 'Design and prototype automation workflows for your business processes.',
+      type: 'Design Tool',
+      estimatedTime: '60 minutes'
     }
   ];
 
