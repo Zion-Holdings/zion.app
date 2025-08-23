@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
+import ImprovedNavigation from './ImprovedNavigation';
 import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2043 from '../backgrounds/UltraFuturisticBackground2043';
@@ -29,7 +29,7 @@ export default function Layout({ children }: LayoutProps) {
         <TopContactBar />
         
         {/* Navigation */}
-        <UltraFuturisticNavigation2040 />
+        <ImprovedNavigation />
         
         {/* Sidebar and Main Content */}
         <div className="flex">
