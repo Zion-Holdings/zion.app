@@ -522,6 +522,15 @@ export const enhancedRealMicroSaasServices: MicroSaasService[] = [
     setupTime: '6 hours',
     category: 'IoT & Smart Cities',
     realService: true,
+<<<<<<< HEAD
+    technology: ['IoT Sensors', 'AI/ML', 'Big Data', 'Cloud Computing', 'Edge Computing'],
+    integrations: ['Traffic Systems', 'Weather APIs', 'Government Systems', 'Utility Networks', 'Mobile Apps'],
+    useCases: ['Traffic optimization', 'Environmental monitoring', 'Public safety', 'Energy management', 'Citizen services'],
+    roi: '600% average ROI in 18 months',
+    competitors: ['Cisco Smart Cities', 'Siemens City Performance', 'IBM Smarter Cities', 'Microsoft CityNext'],
+    marketSize: '$2.8B smart city market',
+    growthRate: '220% annual growth'
+=======
     technology: ['IoT Sensors', 'Edge Computing', 'Machine Learning', 'Data Analytics', 'React', 'Node.js', 'PostgreSQL'],
     integrations: ['Traffic Systems', 'Energy Grids', 'Water Systems', 'Public Safety Systems', 'Transportation Networks'],
     useCases: ['Traffic management', 'Environmental monitoring', 'Energy optimization', 'Public safety', 'Infrastructure management', 'Citizen services'],
@@ -985,6 +994,7 @@ export const enhancedRealMicroSaasServices: MicroSaasService[] = [
     customers: 95,
     rating: 4.8,
     reviews: 134
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-7563
   }
 ];
 
