@@ -3711,6 +3711,9 @@ export const innovativeMicroSaasServices: EnhancedRealMicroSaasService[] = [
     launchDate: '2024-02-20',
     customers: 45,
     rating: 4.8,
+<<<<<<< HEAD
+    reviews: 123
+=======
     reviews: 98
   },
   // Add more real micro SAAS services
@@ -4154,6 +4157,7 @@ export const innovativeMicroSaasServices: EnhancedRealMicroSaasService[] = [
     customers: 3500,
     rating: 4.8,
     reviews: 1750
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-ae10
   }
 ];
 
@@ -4213,9 +4217,17 @@ export const serviceCategories = [
   'IoT & Smart Cities',
   'Climate Technology',
   'Robotics & Automation',
+<<<<<<< HEAD
+  'Advanced AI & ML',
+  'Quantum Technologies',
+  'Futuristic Computing',
+  'Next-Gen Automation',
+  'Emerging Technologies'
+=======
   'Space Technology & Aerospace',
   'Legal Technology',
   'Marketing & Automation'
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-ae10
 ];
 
 export const getServicesByCategory = (category: string) => {
