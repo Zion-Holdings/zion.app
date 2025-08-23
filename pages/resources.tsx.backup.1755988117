@@ -10,6 +10,110 @@ import Link from 'next/link';
 export default function ResourcesPage() {
   const resources = [
     {
+<<<<<<< HEAD
+      category: 'Whitepapers',
+      items: [
+        {
+          title: 'The Future of Autonomous Systems: A Comprehensive Guide',
+          description: 'Deep dive into emerging trends, technologies, and implementation strategies for autonomous systems.',
+          downloadUrl: '#',
+          fileSize: '2.4 MB',
+          type: 'PDF'
+        },
+        {
+          title: 'AI Automation ROI Calculator: Measuring Business Impact',
+          description: 'Framework and tools for calculating return on investment from AI automation initiatives.',
+          downloadUrl: '#',
+          fileSize: '1.8 MB',
+          type: 'Excel'
+        },
+        {
+          title: 'Cybersecurity Best Practices for Autonomous Systems',
+          description: 'Comprehensive security guidelines and implementation checklist for protecting autonomous infrastructure.',
+          downloadUrl: '#',
+          fileSize: '3.1 MB',
+          type: 'PDF'
+        }
+      ]
+    },
+    {
+      category: 'Case Studies',
+      items: [
+        {
+          title: 'Manufacturing Automation: 40% Efficiency Increase',
+          description: 'How a leading manufacturer transformed operations with autonomous systems and AI optimization.',
+          downloadUrl: '#',
+          fileSize: '1.2 MB',
+          type: 'PDF'
+        },
+        {
+          title: 'Healthcare AI: Improving Patient Outcomes',
+          description: 'Real-world implementation of autonomous systems in healthcare delivery and patient monitoring.',
+          downloadUrl: '#',
+          fileSize: '2.7 MB',
+          type: 'PDF'
+        },
+        {
+          title: 'Smart City Infrastructure: Sustainable Urban Development',
+          description: 'Case study of autonomous systems integration in modern city planning and management.',
+          downloadUrl: '#',
+          fileSize: '1.9 MB',
+          type: 'PDF'
+        }
+      ]
+    },
+    {
+      category: 'Templates & Tools',
+      items: [
+        {
+          title: 'AI Project Planning Template',
+          description: 'Comprehensive project planning framework for AI automation initiatives.',
+          downloadUrl: '#',
+          fileSize: '856 KB',
+          type: 'Word'
+        },
+        {
+          title: 'Automation Assessment Checklist',
+          description: 'Step-by-step checklist for evaluating automation opportunities in your organization.',
+          downloadUrl: '#',
+          fileSize: '324 KB',
+          type: 'PDF'
+        },
+        {
+          title: 'ROI Calculation Spreadsheet',
+          description: 'Excel template for calculating and tracking automation project returns.',
+          downloadUrl: '#',
+          fileSize: '1.1 MB',
+          type: 'Excel'
+        }
+      ]
+    },
+    {
+      category: 'Educational Content',
+      items: [
+        {
+          title: 'AI Fundamentals: Understanding Machine Learning',
+          description: 'Beginner-friendly guide to machine learning concepts and applications.',
+          downloadUrl: '#',
+          fileSize: '4.2 MB',
+          type: 'PDF'
+        },
+        {
+          title: 'Automation Strategy Workshop Guide',
+          description: 'Facilitator guide for conducting automation strategy workshops with your team.',
+          downloadUrl: '#',
+          fileSize: '2.8 MB',
+          type: 'PDF'
+        },
+        {
+          title: 'Technology Stack Selection Guide',
+          description: 'Framework for choosing the right technologies for your automation projects.',
+          downloadUrl: '#',
+          fileSize: '1.5 MB',
+          type: 'PDF'
+        }
+      ]
+=======
       id: 'ai-automation-manufacturing',
       title: 'AI-Powered Manufacturing Automation',
       company: 'Global Manufacturing Corp',
@@ -74,11 +178,26 @@ export default function ResourcesPage() {
       duration: '5 months',
       teamSize: '6 analysts',
       technologies: ['Predictive Analytics', 'Demand Forecasting', 'Supply Chain Optimization', 'Real-time Monitoring']
+>>>>>>> origin/cursor/add-more-project-content-3d4b
     }
   ];
 
   const upcomingEvents = [
     {
+<<<<<<< HEAD
+      title: 'AI Automation Summit 2025',
+      date: 'February 15-17, 2025',
+      location: 'Virtual Event',
+      description: 'Join industry leaders and experts for three days of insights into the future of autonomous systems.',
+      registrationUrl: '#'
+    },
+    {
+      title: 'Cybersecurity in Autonomous Systems Workshop',
+      date: 'February 28, 2025',
+      location: 'San Francisco, CA',
+      description: 'Hands-on workshop covering security best practices for autonomous infrastructure.',
+      registrationUrl: '#'
+=======
       id: 'autonomous-systems-guide',
       title: 'The Complete Guide to Autonomous Systems',
       description: 'A comprehensive overview of autonomous technology, implementation strategies, and best practices.',
@@ -97,6 +216,7 @@ export default function ResourcesPage() {
       category: 'Ethics',
       lastUpdated: 'December 2024',
       author: 'Prof. Michael Rodriguez, Ethics & AI Specialist'
+>>>>>>> origin/cursor/add-more-project-content-3d4b
     },
     {
       id: 'automation-roi-calculator',
@@ -104,6 +224,25 @@ export default function ResourcesPage() {
       description: 'How to calculate and maximize return on investment for automation initiatives.',
       downloadUrl: '#',
       pages: '28',
+<<<<<<< HEAD
+      category: 'Business'
+    },
+    {
+      id: 'quantum-computing-automation',
+      title: 'Quantum Computing in Automation: A Practical Guide',
+      description: 'Understanding how quantum computing will revolutionize automation and optimization systems.',
+      downloadUrl: '#',
+      pages: '52',
+      category: 'Technology'
+    },
+    {
+      id: 'edge-computing-implementation',
+      title: 'Edge Computing Implementation Strategy',
+      description: 'Comprehensive guide to implementing edge computing for real-time automation and IoT systems.',
+      downloadUrl: '#',
+      pages: '38',
+      category: 'Technology'
+=======
       category: 'Business',
       lastUpdated: 'November 2024',
       author: 'Lisa Thompson, Business Strategy Consultant'
@@ -137,11 +276,24 @@ export default function ResourcesPage() {
       category: 'Strategy',
       lastUpdated: 'January 2025',
       author: 'James Wilson, Digital Transformation Advisor'
+>>>>>>> origin/cursor/add-more-project-content-3d4b
     }
   ];
 
   const researchAreas = [
     {
+<<<<<<< HEAD
+      title: 'Quantum AI Integration',
+      description: 'Exploring the intersection of quantum computing and artificial intelligence for next-generation autonomous systems.',
+      status: 'Active Research',
+      timeline: '2025-2027'
+    },
+    {
+      title: 'Edge Computing Optimization',
+      description: 'Developing efficient edge computing solutions for autonomous systems in resource-constrained environments.',
+      status: 'In Progress',
+      timeline: '2025-2026'
+=======
       id: 'automation-assessment',
       title: 'Automation Readiness Assessment',
       description: 'Evaluate your organization\'s readiness for AI automation implementation.',
@@ -156,12 +308,37 @@ export default function ResourcesPage() {
       type: 'Framework',
       estimatedTime: '30 minutes',
       features: ['5-level maturity assessment', 'Capability mapping', 'Gap analysis', 'Roadmap planning']
+>>>>>>> origin/cursor/add-more-project-content-3d4b
     },
     {
       id: 'performance-benchmark',
       title: 'Performance Benchmarking Tool',
       description: 'Compare your automation performance against industry standards.',
       type: 'Analytics Tool',
+<<<<<<< HEAD
+      estimatedTime: '20 minutes'
+    },
+    {
+      id: 'quantum-readiness-assessment',
+      title: 'Quantum Computing Readiness Assessment',
+      description: 'Evaluate your organization\'s preparedness for quantum computing integration.',
+      type: 'Assessment Tool',
+      estimatedTime: '25 minutes'
+    },
+    {
+      id: 'edge-computing-calculator',
+      title: 'Edge Computing ROI Calculator',
+      description: 'Calculate the return on investment for edge computing implementation projects.',
+      type: 'Financial Tool',
+      estimatedTime: '20 minutes'
+    },
+    {
+      id: 'security-compliance-checker',
+      title: 'Security & Compliance Checker',
+      description: 'Assess your current security posture and compliance with industry standards.',
+      type: 'Security Tool',
+      estimatedTime: '35 minutes'
+=======
       estimatedTime: '20 minutes',
       features: ['Real-time metrics', 'Industry comparisons', 'Performance trends', 'Optimization suggestions']
     },
@@ -188,6 +365,7 @@ export default function ResourcesPage() {
       type: 'Assessment Tool',
       estimatedTime: '35 minutes',
       features: ['Skill evaluation', 'Gap analysis', 'Training recommendations', 'Team development planning']
+>>>>>>> origin/cursor/add-more-project-content-3d4b
     }
   ];
 
@@ -229,6 +407,56 @@ export default function ResourcesPage() {
                     </span>
                     <span className="text-white/60 text-sm">PDF</span>
                   </div>
+<<<<<<< HEAD
+                  <h3 className="text-xl font-bold mb-3 text-white">The Future of Autonomous Systems</h3>
+                  <p className="text-white/80 mb-4">
+                    Comprehensive guide covering emerging trends, technologies, and implementation strategies.
+                  </p>
+                  <Link 
+                    href="#" 
+                    className="inline-block px-4 py-2 bg-cyan-400 text-white font-semibold rounded-lg hover:bg-cyan-500 transition-colors"
+                  >
+                    Download Now
+                  </Link>
+                </div>
+
+                <div className="bg-gradient-to-br from-purple-400/10 to-fuchsia-400/10 rounded-xl p-6 border border-purple-400/20">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="px-3 py-1 bg-purple-400/20 text-purple-400 text-sm rounded-full border border-purple-400/30">
+                      New
+                    </span>
+                    <span className="text-white/60 text-sm">Excel</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">AI Automation ROI Calculator</h3>
+                  <p className="text-white/80 mb-4">
+                    Framework and tools for calculating return on investment from AI automation initiatives.
+                  </p>
+                  <Link 
+                    href="#" 
+                    className="inline-block px-4 py-2 bg-purple-400 text-white font-semibold rounded-lg hover:bg-purple-500 transition-colors"
+                  >
+                    Download Now
+                  </Link>
+                </div>
+
+                <div className="bg-gradient-to-br from-green-400/10 to-emerald-400/10 rounded-xl p-6 border border-green-400/20">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="px-3 py-1 bg-green-400/20 text-green-400 text-sm rounded-full border border-green-400/30">
+                      Popular
+                    </span>
+                    <span className="text-white/60 text-sm">PDF</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white">Cybersecurity Best Practices</h3>
+                  <p className="text-white/80 mb-4">
+                    Security guidelines and implementation checklist for protecting autonomous infrastructure.
+                  </p>
+                  <Link 
+                    href="#" 
+                    className="inline-block px-4 py-2 bg-green-400 text-white font-semibold rounded-lg hover:bg-green-500 transition-colors"
+                  >
+                    Download Now
+                  </Link>
+=======
                 ))}
               </div>
             </section>
@@ -435,6 +663,7 @@ export default function ResourcesPage() {
                   <button className="bg-gradient-to-r from-cyan-400 to-fuchsia-400 text-white px-6 py-3 rounded-lg font-semibold hover:from-cyan-500 hover:to-fuchsia-500 transition-all duration-300">
                     Subscribe
                   </button>
+>>>>>>> origin/cursor/add-more-project-content-3d4b
                 </div>
               </div>
             </section>
