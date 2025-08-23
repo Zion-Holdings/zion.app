@@ -1,32 +1,18 @@
 {
-  "generatedAt": "2025-08-14T15:37:32.881Z",
+  "generatedAt": "2025-08-14T15:39:00.735Z",
   "items": [
     {
-      "title": "Reference Architecture — Autonomous Content Mesh",
-      "href": "/reports/blueprints/blueprint-2025-08-14-153732",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T15:37:32.850Z",
-      "source": "cloud-blueprint-factory"
-    },
-    {
-      "title": "Playbook — Autonomous Delivery",
-      "href": "/reports/playbooks/playbook-2025-08-14-153732",
-      "desc": "New autonomous content",
-      "createdAt": "2025-08-14T15:37:32.819Z",
-      "source": "cloud-playbook-factory"
-    },
-    {
       "title": "Guide —  Implementation",
-      "href": "/reports/guides/guide-2025-08-14-153732",
+      "href": "/reports/guides/guide-2025-08-14-153900",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T15:37:32.780Z",
+      "createdAt": "2025-08-14T15:39:00.697Z",
       "source": "cloud-deep-research-factory"
     },
     {
       "title": "Pattern — Cloud Intelligence",
-      "href": "/reports/patterns/pattern-2025-08-14-153732",
+      "href": "/reports/patterns/pattern-2025-08-14-153900",
       "desc": "New autonomous content",
-      "createdAt": "2025-08-14T15:37:32.780Z",
+      "createdAt": "2025-08-14T15:39:00.697Z",
       "source": "cloud-deep-research-factory"
     }
   ]
