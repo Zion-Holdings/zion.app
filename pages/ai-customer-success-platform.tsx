@@ -1,149 +1,228 @@
 import React from 'react';
 import Head from 'next/head';
-import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
-  Brain, TrendingUp, Shield, Zap, 
-  ArrowRight, DollarSign,
-  Phone, MessageCircle, BarChart3,
-  Heart, Rocket
+  Users, Zap, Target, Shield, TrendingUp, Globe, 
+  CheckCircle, Star, BarChart3, Lock, Smartphone, Monitor, 
+  Award, MessageCircle, Cpu
 } from 'lucide-react';
 
-// const contactInfo = {
-//   mobile: '+1 302 464 0950',
-//   email: 'kleber@ziontechgroup.com',
-//   address: '364 E Main St STE 1008 Middletown DE 19709',
-//   website: 'https://ziontechgroup.com'
-// };
+export default function AICustomerSuccessPlatform() {
+  const features = [
+    {
+      icon: <Users className="w-6 h-6" />,
+      title: 'Customer Behavior Analysis',
+      description: 'Advanced AI-powered customer behavior analysis with real-time insights and predictive modeling.'
+    },
+    {
+      icon: <Zap className="w-6 h-6" />,
+      title: 'Predictive Churn Prevention',
+      description: 'Revolutionary predictive churn prevention with AI algorithms that identify at-risk customers.'
+    },
+    {
+      icon: <Target className="w-6 h-6" />,
+      title: 'Personalized Engagement',
+      description: 'Intelligent personalized engagement with AI-driven customer journey optimization.'
+    },
+    {
+      icon: <Shield className="w-6 h-6" />,
+      title: 'Customer Health Monitoring',
+      description: 'Advanced customer health monitoring with automated risk assessment and intervention.'
+    },
+    {
+      icon: <TrendingUp className="w-6 h-6" />,
+      title: 'Success Metrics Analytics',
+      description: 'Comprehensive success metrics analytics with AI-powered insights and optimization.'
+    },
+    {
+      icon: <Globe className="w-6 h-6" />,
+      title: 'Global Customer Support',
+      description: '24/7 global customer support with AI-powered automation and human-like interactions.'
+    }
+  ];
 
-const AICustomerSuccessPlatform: React.FC = () => {
+  const benefits = [
+    'Reduce customer churn by 80%',
+    'Improve customer satisfaction by 90%',
+    'Increase retention rates by 200%',
+    'Accelerate customer success by 300%',
+    'Enable proactive customer care',
+    'Optimize customer journeys',
+    'Scale customer success globally',
+    'Future-proof customer relationships'
+  ];
+
+  const useCases = [
+    'Customer Analytics', 'Churn Prevention', 'Engagement Optimization',
+    'Health Monitoring', 'Success Metrics', 'Journey Mapping',
+    'Proactive Support', 'Personalization', 'Customer Care',
+    'Retention Strategies', 'Success Planning', 'Relationship Management'
+  ];
+
   return (
-    <Layout>
+    <>
       <Head>
         <title>AI Customer Success Platform | Zion Tech Group</title>
-        <meta name="description" content="Revolutionary AI-powered customer success platform that predicts and prevents churn with advanced machine learning and emotional intelligence." />
-        <meta name="keywords" content="AI customer success, churn prevention, customer retention, machine learning, predictive analytics" />
+        <meta name="description" content="Revolutionize customer success with AI-powered behavior analysis, churn prevention, and personalized engagement for optimal customer relationships." />
+        <meta name="keywords" content="AI customer success platform, customer behavior analysis, churn prevention, customer engagement, customer success, AI technology" />
+        <meta property="og:title" content="AI Customer Success Platform | Zion Tech Group" />
+        <meta property="og:description" content="Revolutionize customer success with AI-powered behavior analysis." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ziontechgroup.com/ai-customer-success-platform" />
         <link rel="canonical" href="https://ziontechgroup.com/ai-customer-success-platform" />
       </Head>
 
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+      <div className="min-h-screen bg-black text-white">
         {/* Hero Section */}
-        <section className="relative py-20 px-4 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10" />
-          <div className="relative z-10 max-w-7xl mx-auto text-center">
+        <section className="relative pt-32 pb-20 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-sky-900/20 via-blue-900/20 to-indigo-900/20"></div>
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="mb-8"
+              className="text-center"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full border border-cyan-500/30 mb-6">
-                <Brain className="w-5 h-5 text-cyan-400" />
-                <span className="text-cyan-400 font-medium">AI-Powered Platform</span>
+              <div className="flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-sky-500 to-blue-600 rounded-2xl flex items-center justify-center mb-4">
+                  <Users className="w-8 h-8 text-white" />
+                </div>
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent mb-6">
+              <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-sky-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent mb-6">
                 AI Customer Success Platform
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Revolutionary AI-powered customer success platform that predicts and prevents churn with advanced machine learning and emotional intelligence.
+              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
+                Revolutionize customer success with AI-powered behavior analysis, 
+                churn prevention, and personalized engagement for optimal customer relationships.
               </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-            >
-              <a
-                href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-600 transition-all duration-300 transform hover:scale-105"
-              >
-                <Rocket className="w-5 h-5" />
-                Get Started
-                <ArrowRight className="w-5 h-5" />
-              </a>
-              <a
-                href="/demo"
-                className="inline-flex items-center gap-2 px-8 py-4 border border-cyan-500/30 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-500/10 transition-all duration-300"
-              >
-                <MessageCircle className="w-5 h-5" />
-                Book Demo
-              </a>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-4 bg-gradient-to-r from-sky-500 to-blue-600 text-white rounded-xl font-semibold text-lg hover:from-sky-600 hover:to-blue-700 transition-all duration-200 shadow-lg shadow-sky-500/25"
+                >
+                  Transform Success
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-4 border-2 border-sky-500/30 text-sky-400 rounded-xl font-semibold text-lg hover:bg-sky-500/10 transition-all duration-200"
+                >
+                  Watch Demo
+                </motion.button>
+              </div>
             </motion.div>
           </div>
         </section>
 
         {/* Features Section */}
-        <section className="py-20 px-4">
-          <div className="max-w-7xl mx-auto">
+        <section className="py-20 bg-gradient-to-b from-black to-gray-900">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Revolutionary Features
+                Revolutionary Customer Success Features
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our AI platform combines cutting-edge technology with deep customer insights to deliver unprecedented customer success outcomes.
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Our platform combines cutting-edge AI with customer success expertise to deliver 
+                solutions that maximize customer satisfaction and retention.
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: <Brain className="w-8 h-8" />,
-                  title: "Predictive Churn Analysis",
-                  description: "Advanced ML algorithms predict customer churn before it happens with 95%+ accuracy",
-                  color: "from-purple-500 to-pink-500"
-                },
-                {
-                  icon: <Heart className="w-8 h-8" />,
-                  title: "Emotional Intelligence",
-                  description: "AI-powered sentiment analysis and emotional response generation for human-like interactions",
-                  color: "from-red-500 to-pink-500"
-                },
-                {
-                  icon: <TrendingUp className="w-8 h-8" />,
-                  title: "Proactive Engagement",
-                  description: "Automated outreach and engagement strategies based on customer behavior patterns",
-                  color: "from-green-500 to-emerald-500"
-                },
-                {
-                  icon: <Shield className="w-8 h-8" />,
-                  title: "Risk Assessment",
-                  description: "Real-time customer health scoring and risk stratification for targeted interventions",
-                  color: "from-blue-500 to-indigo-500"
-                },
-                {
-                  icon: <Zap className="w-8 h-8" />,
-                  title: "Automated Workflows",
-                  description: "Intelligent automation of customer success processes and follow-up sequences",
-                  color: "from-yellow-500 to-orange-500"
-                },
-                {
-                  icon: <BarChart3 className="w-8 h-8" />,
-                  title: "Advanced Analytics",
-                  description: "Comprehensive reporting and insights for data-driven customer success strategies",
-                  color: "from-cyan-500 to-blue-500"
-                }
-              ].map((feature, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {features.map((feature, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="group p-8 rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/50 border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300 hover:transform hover:scale-105"
+                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-8 hover:border-sky-500/30 transition-all duration-300 group"
                 >
-                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${feature.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    {feature.icon}
+                  <div className="w-14 h-14 bg-gradient-to-br from-sky-500/20 to-blue-600/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <div className="text-sky-400">
+                      {feature.icon}
+                    </div>
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-4">{feature.title}</h3>
-                  <p className="text-gray-300 leading-relaxed">{feature.description}</p>
+                  <p className="text-gray-400 leading-relaxed">{feature.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Benefits Section */}
+        <section className="py-20 bg-black">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Transform Customer Success
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Experience revolutionary improvements in customer retention, satisfaction, and 
+                engagement with our AI customer success platform.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {benefits.map((benefit, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-xl border border-gray-700/50 rounded-xl p-6 hover:border-sky-500/30 transition-all duration-300 group"
+                >
+                  <div className="flex items-center space-x-3">
+                    <CheckCircle className="w-5 h-5 text-sky-400" />
+                    <span className="text-white font-medium text-sm">{benefit}</span>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Use Cases Section */}
+        <section className="py-20 bg-gradient-to-b from-black to-gray-900">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Customer Success Solutions for Every Need
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                From customer analytics to churn prevention, our platform provides AI-powered 
+                solutions for every aspect of customer success and relationship management.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+              {useCases.map((useCase, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-xl border border-gray-700/50 rounded-xl p-6 hover:border-sky-500/30 transition-all duration-300 group text-center"
+                >
+                  <div className="w-12 h-12 bg-gradient-to-br from-sky-500/20 to-blue-600/20 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <Cpu className="w-6 h-6 text-sky-400" />
+                  </div>
+                  <span className="text-white font-medium text-sm">{useCase}</span>
                 </motion.div>
               ))}
             </div>
@@ -151,42 +230,40 @@ const AICustomerSuccessPlatform: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 px-4">
-          <div className="max-w-4xl mx-auto text-center">
+        <section className="py-20 bg-gradient-to-r from-sky-900/20 via-blue-900/20 to-indigo-900/20">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Ready to Transform Your Customer Success?
+                Ready to Transform Customer Success?
               </h2>
               <p className="text-xl text-gray-300 mb-8">
-                Join the future of customer success with AI-powered insights and automation.
+                Join the select group of companies leading the future of AI-powered customer success. 
+                Experience unprecedented customer satisfaction and retention.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="/contact"
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-600 transition-all duration-300"
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-4 bg-gradient-to-r from-sky-500 to-blue-600 text-white rounded-xl font-semibold text-lg hover:from-sky-600 hover:to-blue-700 transition-all duration-200 shadow-lg shadow-sky-500/25"
                 >
-                  <Phone className="w-5 h-5" />
-                  Contact Us
-                </a>
-                <a
-                  href="/pricing"
-                  className="inline-flex items-center gap-2 px-8 py-4 border border-cyan-500/30 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-500/10 transition-all duration-300"
+                  Transform Success Now
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-4 border-2 border-sky-500/30 text-sky-400 rounded-xl font-semibold text-lg hover:bg-sky-500/10 transition-all duration-200"
                 >
-                  <DollarSign className="w-5 h-5" />
-                  View Pricing
-                </a>
+                  Contact Success Team
+                </motion.button>
               </div>
             </motion.div>
           </div>
         </section>
       </div>
-    </Layout>
+    </>
   );
-};
-
-export default AICustomerSuccessPlatform;
+}
