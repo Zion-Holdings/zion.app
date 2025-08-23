@@ -131,6 +131,7 @@ const Homepage2045: React.FC = () => {
     window.addEventListener('mousemove', handleMouseMove);
     
     return () => {
+      clearTimeout(timer);
       clearInterval(interval);
       window.removeEventListener('mousemove', handleMouseMove);
     };
@@ -237,7 +238,7 @@ const Homepage2045: React.FC = () => {
   if (isLoading) {
     return (
       <Layout>
-        <div className="min-h-screen flex items-center justify-center">
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-black">
           <div className="text-center">
             <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-cyan-400 mx-auto mb-4"></div>
             <p className="text-cyan-400 text-xl">Loading Zion Tech Group...</p>
@@ -818,7 +819,7 @@ const Homepage2045: React.FC = () => {
         <section className="py-24 px-4">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
               viewport={{ once: true }}

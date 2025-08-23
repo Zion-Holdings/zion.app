@@ -16,10 +16,10 @@ export default function IntelligentContentAutomationPlatform() {
 				"Entity coverage and SEO suggestions",
 				"Multi-channel exports (blog, ads, social)",
 				"Plagiarism, toxicity, and bias checks",
-				"CMS integrations and scheduling"
+				"CMS integrations and scheduling]}
 			]}
 			industries={["Marketing", "Agencies", "E-commerce", "Media"]}
-			canonical="https://ziontechgroup.com/intelligent-content-automation-platform"
+			canonical="https://ziontechgroup.com/intelligent-content-automation-platform]}
 		/>
 	);
 }

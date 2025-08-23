@@ -304,7 +304,6 @@ const PerformanceOptimizer: React.FC<{
             </div>
             <div className="text-xs text-gray-400">Performance Score</div>
           </div>
-        </div>
 
         {/* Metrics */}
         <div className="p-4 space-y-3">

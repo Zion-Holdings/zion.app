@@ -90,7 +90,10 @@ const SEO: React.FC<SEOProps> = ({
     "sameAs": [
       "https://www.linkedin.com/company/zion-tech-group",
       "https://twitter.com/ziontechgroup",
-      "https://github.com/Zion-Holdings"
+      "https://linkedin.com/company/ziontechgroup",
+      "https://instagram.com/ziontechgroup",
+      "https://youtube.com/@ziontechgroup",
+      "https://github.com/ziontechgroup"
     ],
     "foundingDate": "2020",
     "numberOfEmployees": "50+",
@@ -335,6 +338,7 @@ const SEO: React.FC<SEOProps> = ({
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       <link rel="preconnect" href="https://www.google-analytics.com" />
+      <link rel="preconnect" href="https://www.googletagmanager.com" />
       
       {/* DNS prefetch for performance */}
       <link rel="dns-prefetch" href="//ziontechgroup.com" />

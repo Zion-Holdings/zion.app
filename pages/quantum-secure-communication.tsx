@@ -134,7 +134,7 @@ export default function QuantumSecureCommunication() {
                       <div className="text-purple-200 text-lg mb-4">per month</div>
                       <div className="text-gray-300 mb-6">30-day free trial</div>
                       <Button 
-                        href="/contact" 
+                        href="/contact"
                         variant="primary"
                         className="w-full bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 text-white font-bold py-3 px-6 rounded-xl"
                       >
@@ -150,7 +150,7 @@ export default function QuantumSecureCommunication() {
                   transition={{ duration: 0.2, delay: 0.1 }}
                 >
                   <Button 
-                    href="/contact" 
+                    href="/contact"
                     variant="secondary"
                     className="text-lg px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 shadow-2xl hover:shadow-green-500/25"
                   >
@@ -441,7 +441,7 @@ export default function QuantumSecureCommunication() {
                   transition={{ duration: 0.2 }}
                 >
                   <Button 
-                    href="/contact" 
+                    href="/contact"
                     variant="primary"
                     className="text-lg px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700 shadow-2xl hover:shadow-purple-500/25"
                   >
@@ -459,7 +459,7 @@ export default function QuantumSecureCommunication() {
                   transition={{ duration: 0.2, delay: 0.1 }}
                 >
                   <Button 
-                    href="/contact" 
+                    href="/contact"
                     variant="secondary"
                     className="text-lg px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 shadow-2xl hover:shadow-green-500/25"
                   >

@@ -363,8 +363,8 @@ export default function Revolutionary2027ServicesShowcase() {
                             Learn More
                           </Button>
                           <Button 
-                            href="/contact" 
-                            variant="outline" 
+                            href="/contact"
+                            variant="outline"
                             className="px-4 py-2 border border-gray-600 text-gray-200 hover:bg-gray-700 hover:border-gray-500 transform hover:scale-105 transition-all duration-300"
                           >
                             <MessageSquare className="w-4 h-4" />
