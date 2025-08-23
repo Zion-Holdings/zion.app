@@ -256,7 +256,7 @@ const ComprehensiveServicesShowcase2025: React.FC = () => {
       <SEO 
         title="Comprehensive Services Showcase 2025 | Zion Tech Group"
         description="Explore our complete portfolio of revolutionary AI, quantum computing, and enterprise solutions. Transform your business with cutting-edge technology."
-        keywords="AI services, quantum computing, enterprise IT, micro SAAS, technology solutions, business transformation"
+        keywords={["AI services", "quantum computing", "enterprise IT", "micro SAAS", "technology solutions", "business transformation"]}
       />
       
       <main className="relative z-10 pt-8">
