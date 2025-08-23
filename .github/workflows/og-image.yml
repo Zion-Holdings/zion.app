@@ -1,0 +1,57 @@
+name: OG Image Generator
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Playwright
+        run: |
+          npm -y init -f >/dev/null 2>&1 || true
+          npm i -D @playwright/test@1.x http-server
+          npx playwright install --with-deps
+
+      - name: Start server
+        run: |
+          nohup npx http-server -p 8080 -c-1 . >/dev/null 2>&1 &
+          sleep 2
+
+      - name: Render OG image
+        run: |
+          node -e "
+          const { chromium } = require('@playwright/test');
+          (async () => {
+            const browser = await chromium.launch();
+            const page = await browser.newPage({ viewport: { width: 1200, height: 630 } });
+            await page.goto('http://localhost:8080/');
+            await page.waitForLoadState('networkidle');
+            await page.screenshot({ path: 'og-image.png' });
+            await browser.close();
+          })();
+          "
+
+      - name: Commit image
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore(og): update social share image'
+          file_pattern: og-image.png
+          branch: main
+          commit_user_name: zion-bot
+          commit_user_email: bot@users.noreply.github.com
+          commit_author: zion-bot <bot@users.noreply.github.com>

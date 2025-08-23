@@ -1,6 +1,14 @@
 name: Lighthouse CI
 
 on:
+<<<<<<< HEAD
+  schedule:
+    - cron: '0 */12 * * *' # twice daily
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+=======
   push:
     branches: [ main ]
   schedule:
@@ -10,11 +18,34 @@ on:
 permissions:
   contents: write
   issues: write
+>>>>>>> origin/cursor/build-zion-marketplace-landing-page-edf0
 
 jobs:
   lhci:
     runs-on: ubuntu-latest
     steps:
+<<<<<<< HEAD
+      - uses: actions/checkout@v4
+      - name: Install Lighthouse CI
+        run: npm i -g @lhci/cli
+      - name: Run Lighthouse
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p data/reports/lighthouse
+          lhci autorun --collect.url=https://ziontechgroup.com --collect.url=https://ziontechgroup.com/community --collect.numberOfRuns=1 || true
+      - name: Commit Lighthouse artifacts
+        run: |
+          git config user.name "zion-autobot"
+          git config user.email "autobot@users.noreply.github.com"
+          if [ -d ".lighthouseci" ]; then
+            mkdir -p data/reports/lighthouse
+            cp -r .lighthouseci/* data/reports/lighthouse/ || true
+          fi
+          git add -A
+          git commit -m "chore(auto): lighthouse ci artifacts [skip ci]" || true
+          git push || true
+=======
       - name: Checkout
         uses: actions/checkout@v4
 
@@ -61,3 +92,4 @@ jobs:
             } catch (e) {
               core.warning('Failed to create issue: ' + e.message);
             }
+>>>>>>> origin/cursor/build-zion-marketplace-landing-page-edf0
