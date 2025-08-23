@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2025-08-14T09:37:48.596Z",
+  "generatedAt": "2025-08-14T23:10:05.983Z",
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
@@ -23,14 +23,12 @@
     "content-freshness-score-runner",
     "continuous-front-runner",
     "continuous-orchestrator",
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     "dead-code-audit",
     "dead-code-report",
     "deps-auto-upgrade-runner",
     "docs-index-runner",
     "docs-search-index-runner",
     "duplicate-media-finder-runner",
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     "external-link-check-runner",
     "fast-front-promoter",
     "fast-orchestrator",
@@ -46,7 +44,6 @@
     "frontpage-enhancer",
     "frontpage-scheduler",
     "headers-enforcer",
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     "home-visionary-expander",
     "homepage-advertiser-scheduler",
     "homepage-enhancer",
@@ -61,7 +58,6 @@
     "internal-link-graph-runner",
     "knowledge-pack-runner",
     "license-compliance-auditor",
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     "link-and-health-scheduler",
     "link-crawler",
     "maintenance-scheduler",
@@ -69,7 +65,6 @@
     "marketing-scheduler",
     "media-og-and-optimize",
     "metadata-optimizer-runner",
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     "netlify-auto-healer-runner",
     "newsroom-auto-publisher",
     "newsroom-runner",
@@ -83,7 +78,6 @@
     "revenue-ideas-lab",
     "roadmap-curator",
     "robots-auditor",
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     "schedule-content-index",
     "schedule-homepage",
     "schedule-knowledge-graph",
@@ -93,7 +87,6 @@
     "seo-audit-runner",
     "site-404-map-runner",
     "site-crawler",
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
     "sitemap_runner",
     "stale-content-auditor-runner",
     "todo-scanner-runner",
@@ -105,6 +98,5 @@
     "ultrafast-front-orchestrator",
     "ultrafast-orchestrator",
     "unused-media-scanner"
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96
   ]
 }
