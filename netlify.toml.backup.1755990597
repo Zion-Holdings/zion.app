@@ -266,9 +266,18 @@
   schedule = "*/5 * * * *"
 
 [[scheduled.functions]]
+<<<<<<< HEAD
+  name = "roadmap-generator-runner"
+  schedule = "*/15 * * * *" # every 15 minutes
+
+[[scheduled.functions]]
+  name = "redirects-audit-runner"
+  schedule = "*/30 * * * *" # every 30 minutes
+=======
   name = "automation-guardian-runner"
   schedule = "*/10 * * * *"
 
 [[scheduled.functions]]
   name = "components-docs-runner"
   schedule = "*/30 * * * *"
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-4202
