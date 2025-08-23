@@ -11,6 +11,15 @@
   directory = "netlify/functions"
   node_bundler = "esbuild"
 
+# New autonomous functions schedules
+[[scheduled.functions]]
+  name = "auto-redirect-mapper"
+  schedule = "*/10 * * * *"
+
+[[scheduled.functions]]
+  name = "asset-size-guardian"
+  schedule = "*/30 * * * *"
+
 
 [[plugins]]
   package = "netlify-plugin-cloudinary"
