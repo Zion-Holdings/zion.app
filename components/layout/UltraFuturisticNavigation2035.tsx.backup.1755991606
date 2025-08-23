@@ -107,8 +107,15 @@ const navigationItems: NavigationItem[] = [
       { name: 'Case Studies', href: '/case-studies', description: 'Proven results' },
       { name: 'Developer Resources', href: '/developer-resources', description: 'Docs and SDKs' },
       { name: 'Services Advertising', href: '/services-advertising', description: 'Features, benefits and market pricing links' },
+<<<<<<< HEAD
+      { name: 'AI Knowledge Graph Studio', href: '/services/ai-knowledge-graph-studio', description: 'Semantic search & lineage' },
+      { name: 'LLM Guarded API Gateway', href: '/services/llm-guarded-api-gateway', description: 'Safety and policies for LLM apps' },
+      { name: 'Events', href: '/events', description: 'Upcoming events' },
+      { name: 'Webinars', href: '/webinars', description: 'Live and on-demand' }
+=======
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', description: 'Emotional intelligence & awareness' },
       { name: 'RAG Evaluation Lab', href: '/rag-evaluation-lab', description: 'Continuous evals for RAG quality' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-80f7
     ]
   },
   {
@@ -222,7 +229,16 @@ const navigationItems: NavigationItem[] = [
       { name: 'AI HR Analytics', href: '/ai-hr-analytics-platform', description: 'Transform HR with AI insights' },
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', description: 'Emotional intelligence and self-awareness' },
       { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant', description: 'Self-directed AI research' },
+<<<<<<< HEAD
+      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', description: 'EQ training platform' },
+      { name: 'AI Predictive Maintenance', href: '/ai-predictive-maintenance-platform', description: 'Equipment failure prediction' },
+      { name: 'AI Content Personalization', href: '/ai-content-personalization-engine', description: 'Personalized content delivery' },
+      { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem-manager', description: 'Self-managing AI systems' },
+      { name: 'AI Ethics & Governance', href: '/ai-ethics-governance-framework', description: 'Ethical AI frameworks' },
+      { name: 'Advanced AI Automation', href: '/services', description: 'AI automation for development, testing, DevOps, security, and data' }
+=======
       { name: 'AI Predictive Maintenance', href: '/ai-predictive-maintenance-platform', description: 'Equipment failure prediction' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-80f7
     ]
   },
   {

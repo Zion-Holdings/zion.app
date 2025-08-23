@@ -112,7 +112,7 @@ export default function UltraQuantumMatrixBackground({
         ctx.globalAlpha = this.opacity;
 
         switch (this.type) {
-          case 'matrix':
+          case 'matrix': {
             // Matrix-style characters
             ctx.fillStyle = this.color;
             ctx.font = `${this.size * 2}px monospace`;
@@ -120,8 +120,9 @@ export default function UltraQuantumMatrixBackground({
             const char = chars[Math.floor(Math.random() * chars.length)];
             ctx.fillText(char, this.x, this.y);
             break;
+          }
 
-          case 'quantum':
+          case 'quantum': {
             // Quantum wave function
             ctx.strokeStyle = this.color;
             ctx.lineWidth = this.size * 0.5;
@@ -139,6 +140,7 @@ export default function UltraQuantumMatrixBackground({
             }
             ctx.stroke();
             break;
+          }
 
           case 'energy':
             // Energy particles
@@ -153,6 +155,10 @@ export default function UltraQuantumMatrixBackground({
             ctx.fill();
             ctx.shadowBlur = 0;
             break;
+
+          default: {
+            break;
+          }
         }
 
         ctx.restore();
