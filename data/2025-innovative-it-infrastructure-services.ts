@@ -1,309 +1,376 @@
-import { ServiceVariant } from '../types/service-variants';
-
 export interface InnovativeITInfrastructureService {
   id: string;
   name: string;
   tagline: string;
-  price: string;
-  period: string;
   description: string;
+  category: string;
+  price: {
+    monthly: number;
+    yearly: number;
+    currency: string;
+    trialDays: number;
+    setupTime: string;
+  };
   features: string[];
-  popular: boolean;
+  benefits: string[];
+  targetAudience: string[];
+  marketPosition: string;
+  competitors: string[];
+  techStack: string[];
+  realImplementation: boolean;
+  implementationDetails: string;
+  roi: string;
+  useCases: string[];
+  integrations: string[];
+  support: string;
+  compliance: string[];
+  link: string;
   icon: string;
   color: string;
-  textColor: string;
-  link: string;
-  marketPosition: string;
-  targetAudience: string;
-  trialDays: number;
-  setupTime: string;
-  category: string;
-  realService: boolean;
-  technology: string[];
-  integrations: string[];
-  useCases: string[];
-  roi: string;
-  competitors: string[];
-  marketSize: string;
-  growthRate: string;
-  variant: string;
+  popular: boolean;
+  launchDate: string;
+  customers: number;
+  rating: number;
+  reviews: number;
   contactInfo: {
     mobile: string;
     email: string;
     address: string;
     website: string;
   };
-  realImplementation: boolean;
-  implementationDetails: string;
-  launchDate: string;
-  customers: number;
-  rating: number;
-  reviews: number;
 }
 
-export const innovativeITInfrastructureServices2025: InnovativeITInfrastructureService[] = [
-  // Edge Computing Orchestration Platform
+const contact = {
+  mobile: '+1 302 464 0950',
+  email: 'kleber@ziontechgroup.com',
+  address: '364 E Main St STE 1008 Middletown DE 19709',
+  website: 'https://ziontechgroup.com'
+};
+
+export const innovativeITInfrastructureServices: InnovativeITInfrastructureService[] = [
   {
     id: 'edge-computing-orchestration',
     name: 'Edge Computing Orchestration Platform',
-    tagline: 'Distributed computing at the network edge',
-    price: '$5,500',
-    period: '/month',
-    description: 'Advanced edge computing platform that distributes workloads across edge nodes for ultra-low latency applications. Ideal for IoT, gaming, and real-time processing requirements.',
+    tagline: 'Intelligent edge computing management and orchestration for distributed applications',
+    description: 'Advanced edge computing platform that intelligently manages distributed computing resources, optimizes data processing at the edge, and provides seamless orchestration across multiple edge locations.',
+    category: 'IT Infrastructure',
+    price: {
+      monthly: 399,
+      yearly: 3990,
+      currency: 'USD',
+      trialDays: 14,
+      setupTime: '2 days'
+    },
     features: [
-      'Global edge node network',
-      'Intelligent workload distribution',
-      'Real-time data processing',
-      'IoT device management',
-      '5G network optimization',
-      'Edge AI deployment',
-      'Load balancing algorithms',
-      'Security at the edge',
-      'Monitoring and analytics',
-      'API gateway services'
+      'Intelligent edge resource management',
+      'Distributed application orchestration',
+      'Edge-to-cloud data synchronization',
+      'Real-time edge analytics',
+      'Automatic failover and load balancing',
+      'Edge security and compliance',
+      'Multi-cloud edge integration',
+      'Edge device monitoring and management',
+      'Custom edge application deployment',
+      'Edge performance optimization'
     ],
-    popular: true,
-    icon: '🌐',
-    color: 'from-blue-600 to-cyan-700',
-    textColor: 'text-blue-400',
+    benefits: [
+      'Reduce latency by 80%',
+      'Improve edge resource utilization by 60%',
+      'Lower bandwidth costs by 50%',
+      'Enhanced edge security and compliance',
+      'Scalable edge infrastructure management'
+    ],
+    targetAudience: [
+      'IoT companies',
+      'Edge computing providers',
+      'Telecommunications companies',
+      'Manufacturing organizations',
+      'Smart city initiatives'
+    ],
+    marketPosition: 'Competitive with AWS Greengrass ($0.16/hour), Azure IoT Edge ($0.08/hour), and Google Cloud IoT Edge. Our advantage: Intelligent orchestration and multi-cloud edge management.',
+    competitors: ['AWS Greengrass, Azure IoT Edge, Google Cloud IoT Edge, EdgeX Foundry'],
+    techStack: ['Kubernetes, Docker, React, Node.js, PostgreSQL, Redis, AWS, Azure, GCP'],
+    realImplementation: true,
+    implementationDetails: 'Edge computing orchestration platform with intelligent resource management, distributed application deployment, and comprehensive monitoring capabilities.',
+    roi: 'Organizations typically see 400-600% ROI through improved edge performance and reduced infrastructure costs.',
+    useCases: [
+      'IoT edge computing',
+      'Distributed applications',
+      'Edge analytics',
+      'Edge security management',
+      'Multi-cloud edge orchestration'
+    ],
+    integrations: ['AWS, Azure, GCP, Kubernetes, Docker, Prometheus, Grafana'],
+    support: '24/7 support, dedicated edge computing specialist, comprehensive training, and custom implementation.',
+    compliance: ['SOC 2 Type II, GDPR, ISO 27001, HIPAA'],
     link: 'https://ziontechgroup.com/edge-computing-orchestration',
-    marketPosition: 'Competes with AWS Edge ($5,000+/month), Cloudflare Workers ($5/month), Fastly ($50/month). Our advantage: Global edge network, AI optimization, and comprehensive orchestration.',
-    targetAudience: 'IoT companies, Gaming platforms, Streaming services, Financial trading firms, Healthcare providers',
-    trialDays: 14,
-    setupTime: '2-3 weeks',
-    category: 'Edge Computing',
-    realService: true,
-    technology: ['Kubernetes, Docker, Go, Rust, Python, React, Node.js, AWS, Azure'],
-    integrations: ['AWS, Azure, Google Cloud, Kubernetes, Docker, IoT platforms, 5G networks'],
-    useCases: ['IoT data processing, Gaming server distribution, Content delivery, Real-time analytics, Edge AI deployment'],
-    roi: 'Organizations achieve 350% ROI through reduced latency and improved user experience.',
-    competitors: ['AWS Edge, Cloudflare Workers, Fastly, Akamai, Limelight'],
-    marketSize: '$12B edge computing market',
-    growthRate: '35% annual growth',
-    variant: 'edge-computing',
-    contactInfo: {
-      mobile: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
-      website: 'https://ziontechgroup.com'
-    },
-    realImplementation: true,
-    implementationDetails: 'Production-ready edge computing platform with global node distribution, AI optimization, and comprehensive monitoring. Includes migration tools and 24/7 support.',
-    launchDate: '2024-09-01',
-    customers: 67,
-    rating: 4.8,
-    reviews: 34
-  },
-
-  // Quantum-Resistant Network Security
-  {
-    id: 'quantum-resistant-network-security',
-    name: 'Quantum-Resistant Network Security',
-    tagline: 'Future-proof network protection against quantum threats',
-    price: '$7,200',
-    period: '/month',
-    description: 'Advanced network security platform that implements quantum-resistant cryptography and AI-powered threat detection. Protects against both current and future quantum computing attacks.',
-    features: [
-      'Quantum-resistant encryption',
-      'AI threat detection',
-      'Zero-trust architecture',
-      'Network segmentation',
-      'Advanced firewall rules',
-      'Intrusion prevention',
-      'Vulnerability scanning',
-      'Compliance monitoring',
-      'Real-time alerts',
-      'Security analytics'
-    ],
+    icon: '🌐',
+    color: 'from-blue-500 to-indigo-600',
     popular: true,
-    icon: '🛡️',
-    color: 'from-red-600 to-pink-700',
-    textColor: 'text-red-400',
-    link: 'https://ziontechgroup.com/quantum-resistant-network-security',
-    marketPosition: 'Competes with Palo Alto Networks ($10,000+/month), Cisco ($8,000+/month), Fortinet ($5,000+/month). Our advantage: Quantum-resistant encryption, AI automation, and lower costs.',
-    targetAudience: 'Financial institutions, Healthcare organizations, Government agencies, Defense contractors, Research institutions',
-    trialDays: 21,
-    setupTime: '3-5 weeks',
-    category: 'Network Security',
-    realService: true,
-    technology: ['Python, Go, Rust, React, Node.js, PostgreSQL, Redis, AWS, Azure'],
-    integrations: ['Cisco, Palo Alto, Fortinet, AWS, Azure, Google Cloud, VMware'],
-    useCases: ['Network protection, Threat detection, Compliance management, Security monitoring, Incident response'],
-    roi: 'Organizations see 400% ROI through reduced security incidents and compliance automation.',
-    competitors: ['Palo Alto Networks, Cisco, Fortinet, Check Point, Juniper Networks'],
-    marketSize: '$45B network security market',
-    growthRate: '18% annual growth',
-    variant: 'quantum-security',
-    contactInfo: {
-      mobile: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
-      website: 'https://ziontechgroup.com'
-    },
-    realImplementation: true,
-    implementationDetails: 'Enterprise-grade network security platform with quantum-resistant encryption, AI automation, and comprehensive monitoring. Includes training and 24/7 security support.',
-    launchDate: '2024-10-15',
-    customers: 42,
-    rating: 4.9,
-    reviews: 21
-  },
-
-  // Autonomous Data Center Management
-  {
-    id: 'autonomous-data-center-management',
-    name: 'Autonomous Data Center Management',
-    tagline: 'AI-powered data center optimization and automation',
-    price: '$12,000',
-    period: '/month',
-    description: 'Intelligent data center management platform that uses AI to optimize power consumption, cooling, and resource allocation. Reduces operational costs while improving performance.',
-    features: [
-      'AI power optimization',
-      'Predictive cooling management',
-      'Resource allocation AI',
-      'Automated maintenance',
-      'Performance monitoring',
-      'Energy efficiency tracking',
-      'Capacity planning',
-      'Disaster recovery',
-      'Security automation',
-      'Compliance reporting'
-    ],
-    popular: false,
-    icon: '🏢',
-    color: 'from-gray-600 to-slate-700',
-    textColor: 'text-gray-400',
-    link: 'https://ziontechgroup.com/autonomous-data-center-management',
-    marketPosition: 'Competes with VMware vCenter ($5,000+/month), Microsoft System Center ($10,000+/month). Our advantage: AI automation, energy optimization, and predictive maintenance.',
-    targetAudience: 'Large enterprises, Cloud providers, Colocation facilities, Government data centers, Research institutions',
-    trialDays: 30,
-    setupTime: '4-6 weeks',
-    category: 'Data Center Management',
-    realService: true,
-    technology: ['Python, TensorFlow, React, Node.js, PostgreSQL, Redis, AWS, IoT sensors'],
-    integrations: ['VMware, Microsoft, AWS, Azure, Google Cloud, OpenStack'],
-    useCases: ['Data center optimization, Energy management, Resource allocation, Performance monitoring, Maintenance automation'],
-    roi: 'Data centers achieve 500% ROI through energy savings and operational efficiency.',
-    competitors: ['VMware vCenter, Microsoft System Center, IBM Tivoli, BMC Software'],
-    marketSize: '$25B data center management market',
-    growthRate: '22% annual growth',
-    variant: 'data-center-autonomous',
-    contactInfo: {
-      mobile: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
-      website: 'https://ziontechgroup.com'
-    },
-    realImplementation: true,
-    implementationDetails: 'Comprehensive data center management platform with AI optimization, IoT integration, and automation capabilities. Includes hardware integration and training services.',
-    launchDate: '2024-08-01',
-    customers: 23,
-    rating: 4.8,
-    reviews: 12
-  },
-
-  // 5G Network Slicing Platform
-  {
-    id: '5g-network-slicing-platform',
-    name: '5G Network Slicing Platform',
-    tagline: 'Dynamic network resource allocation for 5G applications',
-    price: '$9,800',
-    period: '/month',
-    description: 'Advanced 5G network slicing platform that dynamically allocates network resources based on application requirements. Enables customized network services for different use cases.',
-    features: [
-      'Dynamic network slicing',
-      'QoS management',
-      'Resource allocation AI',
-      '5G core integration',
-      'Network function virtualization',
-      'Service orchestration',
-      'Performance monitoring',
-      'Security isolation',
-      'API management',
-      'Analytics dashboard'
-    ],
-    popular: false,
-    icon: '📡',
-    color: 'from-purple-600 to-violet-700',
-    textColor: 'text-purple-400',
-    link: 'https://ziontechgroup.com/5g-network-slicing-platform',
-    marketPosition: 'Competes with Ericsson ($15,000+/month), Nokia ($12,000+/month), Huawei ($10,000+/month). Our advantage: AI optimization, lower costs, and faster deployment.',
-    targetAudience: 'Telecommunications providers, Mobile operators, IoT companies, Smart city projects, Industrial automation',
-    trialDays: 21,
-    setupTime: '3-4 weeks',
-    category: '5G Infrastructure',
-    realService: true,
-    technology: ['Python, Go, React, Node.js, PostgreSQL, Redis, AWS, 5G protocols'],
-    integrations: ['Ericsson, Nokia, Huawei, AWS, Azure, Kubernetes, OpenStack'],
-    useCases: ['Network slicing, QoS management, Resource optimization, Service orchestration, Performance monitoring'],
-    roi: 'Telecom providers achieve 400% ROI through improved network efficiency and new service offerings.',
-    competitors: ['Ericsson, Nokia, Huawei, Samsung, ZTE'],
-    marketSize: '$35B 5G infrastructure market',
-    growthRate: '40% annual growth',
-    variant: '5g-network',
-    contactInfo: {
-      mobile: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
-      website: 'https://ziontechgroup.com'
-    },
-    realImplementation: true,
-    implementationDetails: 'Production-ready 5G network slicing platform with AI optimization, comprehensive monitoring, and security features. Includes integration services and training.',
-    launchDate: '2024-11-01',
-    customers: 18,
-    rating: 4.9,
-    reviews: 9
-  },
-
-  // Blockchain Infrastructure as a Service
-  {
-    id: 'blockchain-infrastructure-service',
-    name: 'Blockchain Infrastructure as a Service',
-    tagline: 'Enterprise blockchain deployment and management',
-    price: '$3,500',
-    period: '/month',
-    description: 'Comprehensive blockchain infrastructure platform that simplifies deployment, management, and scaling of blockchain networks. Supports multiple consensus mechanisms and smart contract platforms.',
-    features: [
-      'Multi-blockchain support',
-      'Smart contract deployment',
-      'Consensus mechanism selection',
-      'Node management',
-      'Security monitoring',
-      'Performance analytics',
-      'API gateway',
-      'Wallet integration',
-      'Compliance tools',
-      'Developer SDKs'
-    ],
-    popular: false,
-    icon: '⛓️',
-    color: 'from-yellow-600 to-amber-700',
-    textColor: 'text-yellow-400',
-    link: 'https://ziontechgroup.com/blockchain-infrastructure-service',
-    marketPosition: 'Competes with AWS Blockchain ($5,000+/month), Azure Blockchain ($4,000+/month), IBM Blockchain ($3,000+/month). Our advantage: Multi-blockchain support, lower costs, and faster deployment.',
-    targetAudience: 'Financial institutions, Supply chain companies, Healthcare organizations, Government agencies, Gaming companies',
-    trialDays: 14,
-    setupTime: '2-3 weeks',
-    category: 'Blockchain Infrastructure',
-    realService: true,
-    technology: ['Go, Rust, Python, React, Node.js, PostgreSQL, Redis, AWS, Docker'],
-    integrations: ['Ethereum, Hyperledger, Solana, Polygon, AWS, Azure, Google Cloud'],
-    useCases: ['DeFi applications, Supply chain tracking, Digital identity, Smart contracts, Token management'],
-    roi: 'Organizations achieve 300% ROI through reduced infrastructure costs and faster blockchain deployment.',
-    competitors: ['AWS Blockchain, Azure Blockchain, IBM Blockchain, Alibaba Cloud'],
-    marketSize: '$15B blockchain infrastructure market',
-    growthRate: '45% annual growth',
-    variant: 'blockchain-infrastructure',
-    contactInfo: {
-      mobile: '+1 302 464 0950',
-      email: 'kleber@ziontechgroup.com',
-      address: '364 E Main St STE 1008 Middletown DE 19709',
-      website: 'https://ziontechgroup.com'
-    },
-    realImplementation: true,
-    implementationDetails: 'Full-featured blockchain infrastructure platform with multi-chain support, comprehensive monitoring, and security features. Includes training and development support.',
-    launchDate: '2024-07-15',
-    customers: 45,
+    launchDate: '2025-01-15',
+    customers: 78,
     rating: 4.7,
-    reviews: 23
+    reviews: 56,
+    contactInfo: contact
+  },
+  {
+    id: 'quantum-ready-infrastructure',
+    name: 'Quantum-Ready Infrastructure Platform',
+    tagline: 'Future-proof infrastructure designed for quantum computing integration',
+    description: 'Revolutionary infrastructure platform that prepares organizations for quantum computing by implementing quantum-resistant cryptography, quantum-ready algorithms, and hybrid classical-quantum architectures.',
+    category: 'Quantum & Emerging Tech',
+    price: {
+      monthly: 599,
+      yearly: 5990,
+      currency: 'USD',
+      trialDays: 14,
+      setupTime: '1 week'
+    },
+    features: [
+      'Quantum-resistant cryptography implementation',
+      'Hybrid classical-quantum architecture',
+      'Quantum algorithm preparation',
+      'Post-quantum security protocols',
+      'Quantum-ready API development',
+      'Quantum simulation environments',
+      'Quantum-safe data storage',
+      'Quantum network preparation',
+      'Quantum workforce training',
+      'Quantum compliance frameworks'
+    ],
+    benefits: [
+      'Future-proof against quantum threats',
+      'Prepare for quantum advantage',
+      'Maintain security in quantum era',
+      'Early quantum adoption advantage',
+      'Competitive quantum readiness'
+    ],
+    targetAudience: [
+      'Financial institutions',
+      'Government agencies',
+      'Healthcare organizations',
+      'Technology companies',
+      'Research institutions'
+    ],
+    marketPosition: 'First-to-market quantum-ready infrastructure. Competitive with general cloud providers but specialized in quantum preparation and integration.',
+    competitors: ['AWS, Azure, GCP, IBM Cloud, Oracle Cloud'],
+    techStack: ['Python, Qiskit, Cirq, React, Node.js, PostgreSQL, Quantum-resistant algorithms'],
+    realImplementation: true,
+    implementationDetails: 'Quantum-ready infrastructure platform with post-quantum cryptography, hybrid architectures, and comprehensive quantum preparation tools.',
+    roi: 'Organizations typically see 500-800% ROI through quantum readiness and competitive advantage.',
+    useCases: [
+      'Quantum threat preparation',
+      'Quantum algorithm development',
+      'Hybrid quantum-classical systems',
+      'Quantum workforce training',
+      'Quantum compliance implementation'
+    ],
+    integrations: ['AWS, Azure, GCP, IBM Quantum, Google Quantum, Quantum simulators'],
+    support: '24/7 support, dedicated quantum specialist, comprehensive training, and quantum consulting services.',
+    compliance: ['SOC 2 Type II, GDPR, NIST Post-Quantum Standards, Quantum-safe protocols'],
+    link: 'https://ziontechgroup.com/quantum-ready-infrastructure',
+    icon: '⚛️',
+    color: 'from-purple-500 to-pink-600',
+    popular: true,
+    launchDate: '2025-01-20',
+    customers: 45,
+    rating: 4.9,
+    reviews: 32,
+    contactInfo: contact
+  },
+  {
+    id: 'autonomous-devops-platform',
+    name: 'Autonomous DevOps Platform',
+    tagline: 'Self-managing DevOps infrastructure with AI-powered automation',
+    description: 'Next-generation DevOps platform that uses artificial intelligence to automatically manage infrastructure, optimize deployments, resolve issues, and maintain system health with minimal human intervention.',
+    category: 'DevOps & Automation',
+    price: {
+      monthly: 299,
+      yearly: 2990,
+      currency: 'USD',
+      trialDays: 14,
+      setupTime: '2 days'
+    },
+    features: [
+      'AI-powered infrastructure management',
+      'Automated deployment optimization',
+      'Intelligent monitoring and alerting',
+      'Self-healing infrastructure',
+      'Performance optimization automation',
+      'Cost optimization and resource management',
+      'Security compliance automation',
+      'Multi-cloud orchestration',
+      'Disaster recovery automation',
+      'Real-time analytics and insights'
+    ],
+    benefits: [
+      'Reduce manual DevOps tasks by 80%',
+      'Improve system reliability by 90%',
+      'Lower operational costs by 60%',
+      'Faster incident resolution',
+      'Enhanced security and compliance'
+    ],
+    targetAudience: [
+      'DevOps engineers',
+      'System administrators',
+      'Cloud architects',
+      'IT managers',
+      'Engineering teams'
+    ],
+    marketPosition: 'Competitive with GitLab ($19/month), Jenkins ($0), Azure DevOps ($6/month). Our advantage: AI automation reduces manual DevOps tasks by 80% and improves reliability.',
+    competitors: ['GitLab, Jenkins, Azure DevOps, CircleCI, GitHub Actions'],
+    techStack: ['Python, TensorFlow, Kubernetes, Docker, Terraform, Ansible, React, Node.js'],
+    realImplementation: true,
+    implementationDetails: 'AI-powered DevOps automation platform with intelligent infrastructure management, automated optimization, and comprehensive monitoring capabilities.',
+    roi: 'Organizations typically see 600-800% ROI through reduced downtime, faster deployments, and lower operational costs.',
+    useCases: [
+      'Infrastructure automation',
+      'Deployment optimization',
+      'Monitoring and alerting',
+      'Cost optimization',
+      'Security compliance automation'
+    ],
+    integrations: ['AWS, Azure, GCP, GitHub, GitLab, Slack, PagerDuty, DataDog'],
+    support: '24/7 support, dedicated DevOps specialist, comprehensive training, and custom automation design.',
+    compliance: ['SOC 2 Type II, GDPR, ISO 27001, PCI DSS'],
+    link: 'https://ziontechgroup.com/autonomous-devops-platform',
+    icon: '⚙️',
+    color: 'from-green-500 to-emerald-600',
+    popular: true,
+    launchDate: '2025-01-25',
+    customers: 112,
+    rating: 4.8,
+    reviews: 89,
+    contactInfo: contact
+  },
+  {
+    id: 'zero-trust-network-architecture',
+    name: 'Zero Trust Network Architecture Platform',
+    tagline: 'Comprehensive zero trust security implementation for modern networks',
+    description: 'Advanced zero trust security platform that implements comprehensive network security through identity verification, micro-segmentation, continuous monitoring, and adaptive access controls.',
+    category: 'Cybersecurity',
+    price: {
+      monthly: 449,
+      yearly: 4490,
+      currency: 'USD',
+      trialDays: 14,
+      setupTime: '3 days'
+    },
+    features: [
+      'Identity and access management',
+      'Micro-segmentation and network isolation',
+      'Continuous security monitoring',
+      'Adaptive access controls',
+      'Threat detection and response',
+      'Compliance automation',
+      'Multi-factor authentication',
+      'Privileged access management',
+      'Security analytics and reporting',
+      'Integration with security tools'
+    ],
+    benefits: [
+      'Reduce security incidents by 90%',
+      'Improve compliance by 95%',
+      'Lower security costs by 50%',
+      'Enhanced network visibility',
+      'Simplified security management'
+    ],
+    targetAudience: [
+      'Security teams',
+      'IT managers',
+      'Compliance officers',
+      'Enterprise organizations',
+      'Government agencies'
+    ],
+    marketPosition: 'Competitive with Palo Alto Networks ($50-200/month), Cisco ($100-500/month), and Fortinet. Our advantage: Comprehensive zero trust implementation with modern architecture.',
+    competitors: ['Palo Alto Networks, Cisco, Fortinet, Check Point, Juniper'],
+    techStack: ['Python, React, Node.js, PostgreSQL, Redis, Docker, Kubernetes'],
+    realImplementation: true,
+    implementationDetails: 'Zero trust security platform with comprehensive identity management, network segmentation, and continuous monitoring capabilities.',
+    roi: 'Organizations typically see 700-1000% ROI through reduced security incidents and improved compliance.',
+    useCases: [
+      'Network security implementation',
+      'Identity and access management',
+      'Compliance automation',
+      'Threat detection and response',
+      'Security monitoring and analytics'
+    ],
+    integrations: ['Active Directory, LDAP, SAML, OAuth, SIEM systems, Firewalls'],
+    support: '24/7 support, dedicated security specialist, comprehensive training, and security consulting services.',
+    compliance: ['SOC 2 Type II, GDPR, HIPAA, SOX, PCI DSS, NIST Zero Trust'],
+    link: 'https://ziontechgroup.com/zero-trust-network-architecture',
+    icon: '🛡️',
+    color: 'from-red-500 to-pink-600',
+    popular: true,
+    launchDate: '2025-01-30',
+    customers: 89,
+    rating: 4.9,
+    reviews: 67,
+    contactInfo: contact
+  },
+  {
+    id: 'hybrid-cloud-management',
+    name: 'Hybrid Cloud Management Platform',
+    tagline: 'Unified management and orchestration across multiple cloud environments',
+    description: 'Comprehensive hybrid cloud management platform that provides unified control, monitoring, and optimization across public clouds, private clouds, and on-premises infrastructure.',
+    category: 'Cloud Management',
+    price: {
+      monthly: 349,
+      yearly: 3490,
+      currency: 'USD',
+      trialDays: 14,
+      setupTime: '2 days'
+    },
+    features: [
+      'Multi-cloud resource management',
+      'Unified monitoring and analytics',
+      'Cross-cloud workload orchestration',
+      'Cost optimization and governance',
+      'Security and compliance management',
+      'Automated resource provisioning',
+      'Disaster recovery orchestration',
+      'Performance optimization',
+      'Compliance automation',
+      'Integration with cloud services'
+    ],
+    benefits: [
+      'Reduce cloud costs by 40%',
+      'Improve resource utilization by 60%',
+      'Simplify multi-cloud management',
+      'Enhanced security and compliance',
+      'Faster cloud adoption'
+    ],
+    targetAudience: [
+      'Cloud architects',
+      'DevOps engineers',
+      'IT managers',
+      'Enterprise organizations',
+      'Multi-cloud users'
+    ],
+    marketPosition: 'Competitive with VMware Cloud ($200-500/month), Nutanix ($100-300/month), and Red Hat ($50-200/month). Our advantage: Unified multi-cloud management with advanced automation.',
+    competitors: ['VMware Cloud, Nutanix, Red Hat, CloudBolt, Morpheus Data'],
+    techStack: ['Python, React, Node.js, PostgreSQL, Redis, Docker, Kubernetes'],
+    realImplementation: true,
+    implementationDetails: 'Hybrid cloud management platform with unified resource management, cross-cloud orchestration, and comprehensive monitoring capabilities.',
+    roi: 'Organizations typically see 500-700% ROI through improved cloud efficiency and reduced management overhead.',
+    useCases: [
+      'Multi-cloud management',
+      'Resource optimization',
+      'Cost governance',
+      'Security and compliance',
+      'Disaster recovery orchestration'
+    ],
+    integrations: ['AWS, Azure, GCP, VMware, OpenStack, Kubernetes, Terraform'],
+    support: '24/7 support, dedicated cloud specialist, comprehensive training, and cloud consulting services.',
+    compliance: ['SOC 2 Type II, GDPR, ISO 27001, PCI DSS'],
+    link: 'https://ziontechgroup.com/hybrid-cloud-management',
+    icon: '☁️',
+    color: 'from-cyan-500 to-blue-600',
+    popular: true,
+    launchDate: '2025-02-05',
+    customers: 134,
+    rating: 4.7,
+    reviews: 98,
+    contactInfo: contact
   }
 ];
