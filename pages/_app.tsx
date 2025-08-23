@@ -1,13 +1,11 @@
 import type { AppProps } from 'next/app';
-import { DefaultSeo } from 'next-seo';
-import SEO from '../next-seo.config';
-import '../src/index.css';
+import '../styles/globals.css';
+import Layout from '../components/layout/Layout';
 
-export default function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <>
-      <DefaultSeo {...SEO} />
-      <Component {...pageProps} />
-    </>
-  );
+export default function App({ Component, pageProps }: AppProps) {
+	return (
+		<Layout>
+			<Component {...pageProps} />
+		</Layout>
+	);
 }
