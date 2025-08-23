@@ -89,7 +89,24 @@ const Homepage2044: React.FC = () => {
     window.location.href = service.slug;
   }, []);
 
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
 
+  if (error) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-2xl font-bold text-red-400 mb-4">Error</h1>
+          <p className="text-gray-400">{error}</p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <Layout>
+      <main className="relative">
         {/* Hero Section */}
         <section 
           className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
