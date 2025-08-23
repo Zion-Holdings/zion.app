@@ -12,8 +12,13 @@ const HomePage: React.FC = () => {
       <SEOOptimizer />
       <AnalyticsTracker />
       <PerformanceOptimizer />
+<<<<<<< HEAD
+      <AccessibilityEnhancer />
+      <MobileOptimizer showDebugInfo={false}>
+=======
       <MobileOptimizer showDebugInfo={false}>
         <AccessibilityEnhancer />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-18d2
         <Homepage2025 />
         <PerformanceMonitor showUI={true} />
       </MobileOptimizer>

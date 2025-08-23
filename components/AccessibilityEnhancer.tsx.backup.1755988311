@@ -384,7 +384,11 @@ const AccessibilityEnhancer: React.FC<{
   }, [settings.keyboardNavigation, isVisible, lastFocused, announceToScreenReader]);
 
   // Focus management
+<<<<<<< HEAD
+  const handleFocusChange = useCallback((e: FocusEvent) => {
+=======
   const handleFocusChange = useCallback((e: Event) => {
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-18d2
     const target = e.target as HTMLElement;
     if (target) {
       setCurrentFocus(target);
@@ -396,7 +400,11 @@ const AccessibilityEnhancer: React.FC<{
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
     // Tab navigation detected
     if (e.key === 'Tab') {
+<<<<<<< HEAD
+      announceToScreenReader('Tab navigation detected');
+=======
       // Handle tab navigation
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-18d2
     }
   }, []);
 
