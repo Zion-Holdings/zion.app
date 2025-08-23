@@ -4,7 +4,7 @@ import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
 import TopContactBar from './TopContactBar';
-import PerformanceMonitor from '../PerformanceMonitor';
+import PerformanceOptimizer from '../PerformanceOptimizer';
 import AccessibilityEnhancer from '../AccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
 
@@ -49,7 +49,9 @@ export default function Layout({ children }: LayoutProps) {
 
       {/* Accessibility and Performance Tools */}
       <AccessibilityEnhancer />
-      <PerformanceMonitor />
+      <PerformanceOptimizer>
+        {children}
+      </PerformanceOptimizer>
       
       {/* Cookie Consent Banner */}
       <CookieConsentBanner />
