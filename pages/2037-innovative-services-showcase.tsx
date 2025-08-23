@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { 
-  Brain, Atom, Rocket, Shield, Zap, Target, Star,
-  ArrowRight, Check, TrendingUp, Users, Globe, Cpu,
-  Database, Cloud, Lock, Settings, Eye, Award, Clock
+  Check, Star, Brain, Atom, Zap, Rocket, Cpu
 } from 'lucide-react';
 
 // Import our new service data
@@ -19,75 +17,104 @@ const contactInfo = {
   website: 'https://ziontechgroup.com'
 };
 
-const ServiceCard = ({ service, index }: { service: any; index: number }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 50 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay: index * 0.1 }}
-    className="relative group"
-  >
-    <div className={`absolute inset-0 bg-gradient-to-r ${service.color} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
-    <div className={`relative bg-gradient-to-r ${service.color.replace('from-', 'from-').replace('to-', 'to-')} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
-      <div className="flex items-start justify-between mb-6">
-        <div className="text-4xl">{service.icon}</div>
-        {service.popular && (
-          <span className="px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-semibold rounded-full">
-            Popular
-          </span>
+interface ServiceData {
+  id: string;
+  name: string;
+  description: string;
+  icon: string;
+  color?: string;
+  popular?: boolean;
+  features?: string[];
+  pricing?: {
+    starter: string;
+  };
+  price?: string;
+  period?: string;
+  rating?: number;
+  reviews?: number;
+  setupTime?: string;
+  trialDays?: number;
+  customers?: number;
+  link: string;
+}
+
+const ServiceCard = ({ service, index }: { service: ServiceData; index: number }) => {
+  // Default color scheme if service.color is not defined
+  const defaultColor = 'from-cyan-500 to-blue-600';
+  const serviceColor = service.color || defaultColor;
+  
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="relative group"
+    >
+      <div className={`absolute inset-0 bg-gradient-to-r ${serviceColor} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
+      <div className={`relative bg-gradient-to-r ${serviceColor} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
+        <div className="flex items-start justify-between mb-6">
+          <div className="text-4xl">{service.icon}</div>
+          {service.popular && (
+            <span className="px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-semibold rounded-full">
+              Popular
+            </span>
+          )}
+        </div>
+        
+        <h3 className="text-2xl font-bold text-white mb-3">{service.name}</h3>
+        <p className="text-gray-300 mb-6 text-sm leading-relaxed">{service.description}</p>
+        
+        <div className="space-y-3 mb-6">
+          {service.features?.slice(0, 4).map((feature: string, idx: number) => (
+            <div key={idx} className="flex items-center space-x-2">
+              <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
+              <span className="text-gray-300 text-sm">{feature}</span>
+            </div>
+          ))}
+        </div>
+        
+        <div className="flex items-center justify-between mb-6">
+          <div>
+            <span className="text-3xl font-bold text-white">{service.pricing?.starter || service.price || 'Contact Us'}</span>
+            <span className="text-gray-400 text-sm">{service.pricing ? '/month' : (service.period || '')}</span>
+          </div>
+          <div className="text-right">
+            <div className="flex items-center space-x-1 text-yellow-400">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className={`w-4 h-4 ${i < Math.floor(service.rating || 0) ? 'fill-current' : ''}`} />
+              ))}
+            </div>
+            <span className="text-gray-400 text-xs">{service.rating || 0}/5 ({service.reviews || 0} reviews)</span>
+          </div>
+        </div>
+        
+        {service.setupTime && service.trialDays && service.customers && (
+          <div className="space-y-3 mb-6 text-xs text-gray-400">
+            <div className="flex justify-between">
+              <span>Setup Time:</span>
+              <span>{service.setupTime}</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Trial:</span>
+              <span>{service.trialDays} days</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Customers:</span>
+              <span>{service.customers.toLocaleString()}</span>
+            </div>
+          </div>
         )}
+        
+        <a 
+          href={service.link} 
+          className="block w-full text-center py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+        >
+          Learn More
+        </a>
       </div>
-      
-      <h3 className="text-2xl font-bold text-white mb-3">{service.name}</h3>
-      <p className="text-gray-300 mb-6 text-sm leading-relaxed">{service.description}</p>
-      
-      <div className="space-y-3 mb-6">
-        {service.features.slice(0, 4).map((feature: string, idx: number) => (
-          <div key={idx} className="flex items-center space-x-2">
-            <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
-            <span className="text-gray-300 text-sm">{feature}</span>
-          </div>
-        ))}
-      </div>
-      
-      <div className="flex items-center justify-between mb-6">
-        <div>
-          <span className="text-3xl font-bold text-white">{service.price}</span>
-          <span className="text-gray-400 text-sm">{service.period}</span>
-        </div>
-        <div className="text-right">
-          <div className="flex items-center space-x-1 text-yellow-400">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className={`w-4 h-4 ${i < Math.floor(service.rating) ? 'fill-current' : ''}`} />
-            ))}
-          </div>
-          <span className="text-gray-400 text-xs">{service.rating}/5 ({service.reviews} reviews)</span>
-        </div>
-      </div>
-      
-      <div className="space-y-3 mb-6 text-xs text-gray-400">
-        <div className="flex justify-between">
-          <span>Setup Time:</span>
-          <span>{service.setupTime}</span>
-        </div>
-        <div className="flex justify-between">
-          <span>Trial:</span>
-          <span>{service.trialDays} days</span>
-        </div>
-        <div className="flex justify-between">
-          <span>Customers:</span>
-          <span>{service.customers.toLocaleString()}</span>
-        </div>
-      </div>
-      
-      <a 
-        href={service.link} 
-        className="block w-full text-center py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
-      >
-        Learn More
-      </a>
-    </div>
-  </motion.div>
-);
+    </motion.div>
+  );
+};
 
 const ServiceShowcase = () => {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -172,14 +199,12 @@ const ServiceShowcase = () => {
                 className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
                   activeCategory === category.id
                     ? 'bg-gradient-to-r from-cyan-500 to-purple-600 text-white shadow-lg'
-                    : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 border border-gray-700/50'
+                    : 'bg-white/5 border border-white/10 text-gray-300 hover:bg-white/10 hover:border-cyan-400/30'
                 }`}
               >
                 {category.icon}
                 <span>{category.name}</span>
-                <span className="ml-2 px-2 py-1 bg-white/20 rounded-full text-xs">
-                  {category.count}
-                </span>
+                <span className="text-xs bg-white/20 px-2 py-1 rounded-full">{category.count}</span>
               </button>
             ))}
           </div>
@@ -189,38 +214,31 @@ const ServiceShowcase = () => {
       {/* Services Grid */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredServices.map((service, index) => (
               <ServiceCard key={service.id} service={service} index={index} />
             ))}
-          </motion.div>
-          
-          {filteredServices.length === 0 && (
-            <div className="text-center py-20">
-              <div className="text-6xl mb-4">🔍</div>
-              <h3 className="text-2xl font-bold text-white mb-4">No services found</h3>
-              <p className="text-gray-400">Try selecting a different category or contact us for custom solutions.</p>
-            </div>
-          )}
+          </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-black via-gray-900/50 to-black">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">
+      {/* Impact & Results */}
+      <section className="py-20 px-4 bg-black/20">
+        <div className="max-w-6xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
               Impact & Results
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Our innovative services deliver measurable results and transform businesses across industries
             </p>
-          </div>
+          </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <motion.div 

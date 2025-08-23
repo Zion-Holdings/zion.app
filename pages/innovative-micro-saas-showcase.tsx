@@ -1,28 +1,37 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
   Star, ArrowRight, CheckCircle, 
-  Brain, Atom, Rocket, Shield, 
-  Target, Microscope, Zap, Globe,
-  Phone, Mail, ExternalLink, Search,
-  Sparkles, TrendingUp, Users, Award,
-  Cpu, Database, Cloud, Lock, ShieldCheck,
-  Earth, Factory, Car, Building, GraduationCap,
-  Scale, Palette, Camera, Video, Music, Gamepad2,
-  Heart, Leaf, Sun, Moon, Wind, Droplets,
-  Mountain, Code, Wrench, Smartphone, BarChart3,
-  Eye, Network, Server, HardDrive, Monitor,
-  Laptop, Watch, Headphones, Speaker, Mic,
-  Keyboard, Mouse, CircuitBoard, Satellite, Dna,
-  Microchip, Telescope, Beaker, TestTube, Syringe,
-  Pill, Stethoscope, HeartPulse, Activity, Lightbulb,
-  Flame, Battery, Power, Wifi, Bluetooth, Radio,
-  Antenna, Signal, Compass, Navigation, Map, Globe2,
-  DollarSign, CreditCard, Package, MessageCircle
+  Brain, Atom, Globe,
+  Users, Award,
+  Building, Palette, TrendingUp,
+  Heart, DollarSign, CreditCard, Package, MessageCircle,
+  Stethoscope, Dna, Zap, Search, ExternalLink, Mail, Phone
 } from 'lucide-react';
 import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas-solutions';
 import { cuttingEdgeAIServices } from '../data/2034-cutting-edge-ai-services';
+
+interface ServiceData {
+  id?: string;
+  slug?: string;
+  name: string;
+  category: string;
+  description: string;
+  features: string[];
+  tagline?: string;
+  rating?: string | number;
+  pricing?: {
+    starter?: string;
+    monthly?: number;
+    professional?: string;
+    enterprise?: string;
+  };
+  status?: string;
+  customerCount?: number;
+  demo?: string;
+  contact?: string;
+}
 
 const contactInfo = {
   mobile: '+1 302 464 0950',
@@ -63,7 +72,7 @@ const InnovativeMicroSaasShowcase: React.FC = () => {
     const matchesCategory = selectedCategory === 'all' || service.category === selectedCategory;
     const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         (typeof (service as any).tagline === 'string' && (service as any).tagline.toLowerCase().includes(searchTerm.toLowerCase()));
+                         (service.tagline && typeof service.tagline === 'string' && service.tagline.toLowerCase().includes(searchTerm.toLowerCase()));
     return matchesCategory && matchesSearch;
   });
 
@@ -253,7 +262,7 @@ const InnovativeMicroSaasShowcase: React.FC = () => {
                   placeholder="Search innovative solutions, AI services, and micro SAAS..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-12 pr-4 py-4 bg-white/5 border border-cyan-500/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-300"
+                  className="w-full pl-12 pr-4 py-4 bg-white/5 border border-cyan-500/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500/50 transition-all duration-300"
                 />
               </div>
 
@@ -331,9 +340,9 @@ const InnovativeMicroSaasShowcase: React.FC = () => {
               </div>
             ) : (
               <div className={viewMode === 'grid' ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' : 'space-y-6'}>
-                {filteredServices.map((service, index) => (
+                {filteredServices.map((service: ServiceData, index) => (
                   <motion.div
-                    key={(service as any).id || (service as any).slug || (service as any).name}
+                    key={service.id || service.slug || service.name}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -357,12 +366,12 @@ const InnovativeMicroSaasShowcase: React.FC = () => {
                         </div>
                         <div className="flex items-center space-x-2">
                           <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                          <span className="text-sm text-gray-400">{(service as any).rating ?? '4.8'}</span>
+                          <span className="text-sm text-gray-400">{service.rating ?? '4.8'}</span>
                         </div>
                       </div>
 
                       <p className="text-gray-300 mb-4 leading-relaxed">
-                        {(service as any).tagline || service.description}
+                        {service.tagline || service.description}
                       </p>
 
                       <p className="text-gray-400 mb-6 text-sm">
@@ -391,10 +400,10 @@ const InnovativeMicroSaasShowcase: React.FC = () => {
                       <div className="mb-6">
                         <h4 className="text-sm font-semibold text-purple-400 mb-2">Starting From</h4>
                         <div className="text-2xl font-bold text-white">
-                          {(service as any).pricing?.starter || ((service as any).pricing?.monthly ? `$${(service as any).pricing.monthly}/mo` : 'Contact for pricing')}
+                          {service.pricing?.starter || (service.pricing?.monthly ? `$${service.pricing.monthly}/mo` : 'Contact for pricing')}
                         </div>
                         <p className="text-sm text-gray-400">
-                          {((service as any).pricing?.professional || '') + (((service as any).pricing?.professional && (service as any).pricing?.enterprise) ? ' • ' : '') + ((service as any).pricing?.enterprise || '')}
+                          {(service.pricing?.professional || '') + ((service.pricing?.professional && service.pricing?.enterprise) ? ' • ' : '') + (service.pricing?.enterprise || '')}
                         </p>
                       </div>
 
@@ -402,22 +411,22 @@ const InnovativeMicroSaasShowcase: React.FC = () => {
                       <div className="flex items-center justify-between mb-6 text-sm">
                         <div className="flex items-center space-x-2">
                           <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                            ((service as any).status === 'Live') ? 'bg-green-500/20 text-green-400' :
-                            ((service as any).status === 'Beta') ? 'bg-yellow-500/20 text-yellow-400' :
+                            (service.status === 'Live') ? 'bg-green-500/20 text-green-400' :
+                            (service.status === 'Beta') ? 'bg-yellow-500/20 text-yellow-400' :
                             'bg-blue-500/20 text-blue-400'
                           }`}>
-                            {(service as any).status || 'Available'}
+                            {service.status || 'Available'}
                           </span>
                         </div>
                         <div className="text-gray-400">
-                          {(((service as any).customerCount ?? 0) as number).toLocaleString()} customers
+                          {(service.customerCount ?? 0).toLocaleString()} customers
                         </div>
                       </div>
 
                       {/* Action Buttons */}
                       <div className="flex items-center space-x-3">
                         <a
-                          href={(service as any).demo || '/demo'}
+                          href={service.demo || '/demo'}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="flex-1 flex items-center justify-center space-x-2 px-4 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 group-hover:scale-105"
@@ -427,7 +436,7 @@ const InnovativeMicroSaasShowcase: React.FC = () => {
                         </a>
                         
                         <a
-                          href={`mailto:${(service as any).contact || 'kleber@ziontechgroup.com'}?subject=Inquiry about ${service.name}`}
+                          href={`mailto:${service.contact || 'kleber@ziontechgroup.com'}?subject=Inquiry about ${service.name}`}
                           className="flex items-center justify-center w-12 h-12 bg-white/10 border border-cyan-500/30 rounded-lg text-cyan-400 hover:bg-cyan-500/20 hover:border-cyan-500/50 transition-all duration-300 group-hover:scale-105"
                         >
                           <Mail className="w-5 h-5" />

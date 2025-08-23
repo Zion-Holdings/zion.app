@@ -55,18 +55,7 @@ const servicesDropdown: DropdownItem[] = [
 const EnhancedNavigation2025: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
-
-  // Handle scroll effect
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  // Removed unused isScrolled state and duplicate scroll handler
 
   const toggleDropdown = useCallback((label: string) => {
     setActiveDropdown(activeDropdown === label ? null : label);
@@ -172,7 +161,7 @@ const EnhancedNavigation2025: React.FC = () => {
                 {item.label === 'Solutions' || item.label === 'Services' ? (
                   <button
                     onClick={() => toggleDropdown(item.label)}
-                    className="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 rounded-lg px-3 py-2"
+                    className="flex items-center space-x-1 text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-lg px-3 py-2"
                     aria-expanded={activeDropdown === item.label}
                     aria-haspopup="true"
                   >
@@ -183,7 +172,7 @@ const EnhancedNavigation2025: React.FC = () => {
                   <Link
                     href={item.href}
                     onClick={closeMobileMenu}
-                    className="text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 rounded-lg px-3 py-2"
+                    className="text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-lg px-3 py-2"
                   >
                     {item.label}
                   </Link>
@@ -259,7 +248,7 @@ const EnhancedNavigation2025: React.FC = () => {
                   type="text"
                   name="search"
                   placeholder="Search solutions..."
-                  className="w-64 pl-10 pr-4 py-2 bg-gray-800/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-transparent"
+                  className="w-64 pl-10 pr-4 py-2 bg-gray-800/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                   aria-label="Search solutions"
                 />
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
@@ -269,7 +258,7 @@ const EnhancedNavigation2025: React.FC = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 rounded-lg"
+              className="lg:hidden p-2 text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-lg"
               aria-label="Toggle mobile menu"
               aria-expanded={isOpen}
             >
@@ -306,7 +295,7 @@ const EnhancedNavigation2025: React.FC = () => {
                   <h2 className="text-white font-semibold text-lg">Menu</h2>
                   <button
                     onClick={closeMobileMenu}
-                    className="p-2 text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 rounded-lg"
+                    className="p-2 text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-lg"
                     aria-label="Close mobile menu"
                   >
                     <X className="w-6 h-6" />
@@ -321,7 +310,7 @@ const EnhancedNavigation2025: React.FC = () => {
                         type="text"
                         name="search"
                         placeholder="Search solutions..."
-                        className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-transparent"
+                        className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                         aria-label="Search solutions"
                       />
                       <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
@@ -337,7 +326,7 @@ const EnhancedNavigation2025: React.FC = () => {
                         <div>
                           <button
                             onClick={() => toggleDropdown(item.label)}
-                            className="flex items-center justify-between w-full text-left text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 rounded-lg px-3 py-2"
+                            className="flex items-center justify-between w-full text-left text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-lg px-3 py-2"
                             aria-expanded={activeDropdown === item.label}
                             aria-haspopup="true"
                           >
@@ -374,7 +363,7 @@ const EnhancedNavigation2025: React.FC = () => {
                         <Link
                           href={item.href}
                           onClick={closeMobileMenu}
-                          className="block text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 rounded-lg px-3 py-2"
+                          className="block text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-lg px-3 py-2"
                         >
                           {item.label}
                         </Link>

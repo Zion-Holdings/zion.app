@@ -96,11 +96,11 @@ const UltraAdvancedFuturisticNavigation2025: React.FC = () => {
 
   // Handle click outside search
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
-        setIsSearchOpen(false);
-      }
-    };
+      const handleClickOutside = (event: MouseEvent) => {
+    if (searchRef.current && !searchRef.current.contains(event.target as HTMLElement)) {
+      setIsSearchOpen(false);
+    }
+  };
 
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
@@ -109,7 +109,7 @@ const UltraAdvancedFuturisticNavigation2025: React.FC = () => {
   // Handle click outside mobile menu
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as HTMLElement)) {
         setIsMobileMenuOpen(false);
       }
     };
@@ -324,7 +324,7 @@ const UltraAdvancedFuturisticNavigation2025: React.FC = () => {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search for services, solutions, or insights..."
-                  className="w-full px-6 py-4 bg-gray-800/95 backdrop-blur-xl border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-200"
+                  className="w-full px-6 py-4 bg-gray-800/95 backdrop-blur-xl border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500/50 transition-all duration-200"
                   autoFocus
                 />
                 <button
