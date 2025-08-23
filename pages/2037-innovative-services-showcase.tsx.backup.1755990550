@@ -6,10 +6,44 @@ import {
   Check, Cpu
 } from 'lucide-react';
 
+<<<<<<< HEAD
+// Import our new 2037 service data
+import { real2037Q1InnovativeAdditions } from '../data/real-2037-q1-innovative-additions';
+import { real2037Q1ITInnovations } from '../data/real-2037-q1-it-innovations';
+import { real2037Q1MicroSaasInnovations } from '../data/real-2037-q1-micro-saas-innovations';
+
+interface ServiceCardProps {
+  id?: string;
+  name: string;
+  description: string;
+  category: string;
+  pricing?: {
+    starter: string;
+    pro: string;
+    enterprise: string;
+  };
+  features: string[];
+  benefits: string[];
+  useCases: string[];
+  marketPrice: string;
+  link: string;
+  launchDate: string;
+  rating: number;
+  technology: string[];
+  integrations: string[];
+  compliance: string[];
+  color?: string;
+  icon?: string;
+  popular?: boolean;
+  price?: string;
+  period?: string;
+}
+=======
 // Import our new service data
 import { innovative2037MicroSaasServices, Innovative2037MicroSaasService } from '../data/innovative-2037-micro-saas-services';
 import { innovative2037ITServices, Innovative2037ITService } from '../data/innovative-2037-it-services';
 import { innovative2037AIServices, Innovative2037AIService } from '../data/innovative-2037-ai-services';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-dbd9
 
 const contactInfo = {
   mobile: '+1 302 464 0950',
@@ -135,11 +169,19 @@ const ServicesShowcase2037: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-black text-white">
+<<<<<<< HEAD
+      <Head>
+        <title>2037 Innovative Services Showcase - Zion Tech Group</title>
+        <meta name="description" content="Discover our revolutionary 2037 innovative services including AI consciousness evolution, quantum cybersecurity, autonomous systems, and cutting-edge micro SAAS solutions." />
+        <meta name="keywords" content="AI consciousness, quantum computing, autonomous systems, micro SAAS, innovative services, 2037 technology" />
+      </Head>
+=======
       <SEO 
         title="2037 Innovative Services Showcase - Zion Tech Group"
         description="Discover our revolutionary 2037 innovative services including AI consciousness evolution, quantum cybersecurity, autonomous systems, and cutting-edge micro SAAS solutions."
         keywords={["AI consciousness", "quantum computing", "autonomous systems", "micro SAAS", "innovative services", "2037 technology"]}
       />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-dbd9
       
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">

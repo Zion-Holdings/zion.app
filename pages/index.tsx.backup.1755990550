@@ -1,5 +1,9 @@
 import React from 'react';
+<<<<<<< HEAD
+import Homepage2038 from '../components/Homepage2038';
+=======
 import Homepage2037 from '../components/Homepage2037';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-dbd9
 import SEOOptimizer from '../components/SEOOptimizer';
 import AnalyticsTracker from '../components/AnalyticsTracker';
 import ErrorBoundary from '../components/ErrorBoundary';
@@ -23,9 +27,17 @@ export default function Home() {
     <ErrorBoundary>
       <SEOOptimizer />
       <AnalyticsTracker />
+<<<<<<< HEAD
+      <Homepage2038 />
+      <PerformanceMonitor />
+      <AccessibilityEnhancer>
+        <div></div>
+      </AccessibilityEnhancer>
+=======
       <PerformanceOptimizer>
         <Homepage2037 />
       </PerformanceOptimizer>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-dbd9
     </ErrorBoundary>
   );
 };
