@@ -57,30 +57,10 @@ import { innovative2025MicroSaasExpansion } from '../data/innovative-2025-micro-
 import { innovative2025ITSolutionsExpansion } from '../data/innovative-2025-it-solutions-expansion';
 import { innovative2025AIServicesExpansion } from '../data/innovative-2025-ai-services-expansion';
 
-// Import our new 2025 innovative services
-import { advancedEnterpriseSolutions } from '../data/2025-advanced-enterprise-solutions';
-import { innovativeAISolutions } from '../data/2025-innovative-ai-solutions';
-import { innovativeMicroSaasSolutions as innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
-import { innovativeITInfrastructureServices } from '../data/2025-innovative-it-infrastructure';
-
-// Import our new innovative 2040 services
-import { innovative2040ITServices } from '../data/innovative-2040-it-services';
-
-// Import 2025 advanced services
-import { real2025AdvancedAIServices } from '../data/real-2025-advanced-ai-services';
-import { real2025ITInfrastructureServices } from '../data/real-2025-it-infrastructure-services';
-import { real2025InnovativeMicroSaas } from '../data/real-2025-innovative-micro-saas';
-
-// Import our latest innovative services
-import { advancedAIAutomationServices } from '../data/advanced-ai-automation-services';
-import { nextGenITInfrastructureServices } from '../data/next-gen-it-infrastructure-services';
-import { innovativeMicroSaasSolutions2025 } from '../data/innovative-micro-saas-solutions-2025';
-import { specializedIndustrySolutions } from '../data/specialized-industry-solutions';
-
-// Import our new 2037 Q1 innovative services
-import { real2037Q1InnovativeAdditions } from '../data/real-2037-q1-innovative-additions';
-import { real2037Q1ITInnovations } from '../data/real-2037-q1-it-innovations';
-import { real2037Q1MicroSaasInnovations } from '../data/real-2037-q1-micro-saas-innovations';
+// Import our new 2025 cutting-edge innovative services
+import { innovative2025CuttingEdgeServices } from '../data/innovative-2025-cutting-edge-services';
+import { innovative2025EnterpriseSolutions } from '../data/innovative-2025-enterprise-solutions';
+import { innovative2025IndustrySolutions } from '../data/innovative-2025-industry-solutions';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -107,10 +87,15 @@ const getServicePricing = (service: any) => {
   if (service.pricing?.starter) return service.pricing.starter;
   if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
   if (service.price?.monthly) return `$${service.price.monthly}/month`;
-  if (typeof service.price === 'string') return service.price;
-  if (service.price && typeof service.price === 'object') {
-    if (service.price.monthly) return `$${service.price.monthly}/month`;
-    if (service.price.starter) return service.price.starter;
+  if (service.price && service.period) return `${service.price}${service.period}`;
+  if (service.price) return service.price;
+  // Handle case where pricing is just a number
+  if (typeof service.pricing === 'number') return `$${service.pricing}/month`;
+  if (typeof service.pricing === 'object' && service.pricing !== null) {
+    // If pricing is an object but doesn't have expected fields, return a default
+    // Check if it has yearly field and use that as fallback
+    if (service.pricing.yearly) return service.pricing.yearly;
+    return 'Contact for pricing';
   }
   return 'Contact for pricing';
 };
@@ -182,6 +167,10 @@ const allServices = [
   ...industryRealServices,
   ...real2025Q4AugmentedBatch,
   ...real2029Q3Additions,
+  // Add our new 2025 cutting-edge innovative services
+  ...innovative2025CuttingEdgeServices,
+  ...innovative2025EnterpriseSolutions,
+  ...innovative2025IndustrySolutions,
   ...validatedServices2025Q4,
   ...real2035Q2Additions,
   ...real2036ServiceExpansions,
