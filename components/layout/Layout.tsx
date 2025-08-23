@@ -211,12 +211,7 @@ export default function Layout({
         <TopContactBar />
 
         {/* Navigation */}
-        <UltraFuturisticNavigation2045 
-          sidebarOpen={sidebarOpen} 
-          setSidebarOpen={setSidebarOpen}
-          theme={theme}
-          onThemeToggle={toggleTheme}
-        />
+        <UltraFuturisticNavigation2045 />
 
         {/* Theme Toggle */}
         <div className="fixed top-24 right-4 z-50">

@@ -62,25 +62,25 @@ const ContactPage: React.FC = () => {
     {
       icon: Phone,
       title: 'Phone',
-      details: ['+1 (555) 123-4567', '+1 (555) 987-6543'],
+      details: ['+1 302 464 0950'],
       color: 'from-blue-500 to-cyan-500'
     },
     {
       icon: Mail,
       title: 'Email',
-      details: ['hello@ziontechgroup.com', 'support@ziontechgroup.com'],
+      details: ['kleber@ziontechgroup.com'],
       color: 'from-purple-500 to-pink-500'
     },
     {
       icon: MapPin,
       title: 'Office',
-      details: ['123 Innovation Drive', 'Tech Valley, CA 94000'],
+      details: ['364 E Main St STE 1008', 'Middletown DE 19709'],
       color: 'from-green-500 to-emerald-500'
     },
     {
       icon: Clock,
       title: 'Business Hours',
-      details: ['Mon-Fri: 9AM-6PM PST', '24/7 Support Available'],
+      details: ['Mon-Fri: 9AM-6PM EST', '24/7 Support Available'],
       color: 'from-orange-500 to-red-500'
     }
   ];
