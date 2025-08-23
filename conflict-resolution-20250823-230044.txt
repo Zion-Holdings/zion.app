@@ -265,3 +265,6 @@
 2025-08-23 23:02:13 - Resolving conflicts in public/automation/new-content-registry.json for branch automation/git-sync/2025-08-14T13-03-53-266Z
 2025-08-23 23:02:15 - Merge conflicts detected in automation/git-sync/2025-08-14T13-04-04-349Z
 2025-08-23 23:02:15 - Resolving conflicts in pages/main/front/index.tsx for branch automation/git-sync/2025-08-14T13-04-04-349Z
+2025-08-23 23:02:17 - Merge conflicts detected in automation/git-sync/2025-08-14T13-07-26-498Z
+2025-08-23 23:02:17 - Resolving conflicts in public/automation/content-registry.json for branch automation/git-sync/2025-08-14T13-07-26-498Z
+2025-08-23 23:02:17 - Resolving conflicts in public/automation/new-content-registry.json for branch automation/git-sync/2025-08-14T13-07-26-498Z
