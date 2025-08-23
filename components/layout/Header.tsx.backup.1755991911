@@ -21,7 +21,11 @@ export default function Header() {
   const navigation = [
     { name: 'Services', href: '/micro-saas', hasDropdown: true },
     { name: 'Solutions', href: '/services' },
+<<<<<<< HEAD
+    { name: 'SaaS Tools', href: '#', hasDropdown: true },
+=======
     { name: 'Micro SaaS', href: '/micro-saas' },
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-advertising-b762
     { name: 'Resources', href: '/resources' },
     { name: 'Contact', href: '/contact' },
   ];

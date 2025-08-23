@@ -8,6 +8,174 @@ import { ArrowRight, Check, Star, Zap, Shield, Database, Code, Lock, Link, QrCod
 export default function ServicesPage() {
   const services = [
     {
+<<<<<<< HEAD
+      id: 'code-review',
+      name: 'Code Review Assistant',
+      description: 'AI-powered code analysis with security, performance, and maintainability insights.',
+      icon: <Code className="w-8 h-8 text-white" />,
+      color: 'bg-gradient-to-br from-fuchsia-500 to-purple-600',
+      features: [
+        'Multi-language support (JavaScript, Python, TypeScript)',
+        'Security vulnerability detection',
+        'Performance optimization suggestions',
+        'Code quality metrics',
+        'Integration with Git workflows',
+        'Custom rule configuration'
+      ],
+      pricing: {
+        free: {
+          price: 'Free',
+          requests: '100 reviews/month',
+          features: ['Basic code analysis', 'Security scanning', 'Performance tips']
+        },
+        pro: {
+          price: '$29/month',
+          requests: 'Unlimited reviews',
+          features: ['Advanced AI analysis', 'Custom rules', 'Team collaboration', 'Priority support']
+        }
+      },
+      useCases: ['Development teams', 'Code quality assurance', 'Security compliance', 'Performance optimization']
+    },
+    {
+      id: 'rate-limiter',
+      name: 'API Rate Limiter',
+      description: 'Intelligent rate limiting with configurable policies, real-time analytics, and Express.js middleware support.',
+      icon: <Shield className="w-8 h-8 text-white" />,
+      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      features: [
+        'Configurable rate limiting policies',
+        'Real-time analytics dashboard',
+        'Express.js middleware support',
+        'IP-based and user-based limiting',
+        'Automatic scaling',
+        'Webhook notifications'
+      ],
+      pricing: {
+        free: {
+          price: 'Free',
+          requests: '10,000 requests/month',
+          features: ['Basic rate limiting', 'Standard policies', 'Email support']
+        },
+        enterprise: {
+          price: '$99/month',
+          requests: 'Unlimited requests',
+          features: ['Advanced policies', 'Custom rules', 'Priority support', 'SLA guarantee']
+        }
+      },
+      useCases: ['API protection', 'DDoS prevention', 'Fair usage enforcement', 'Cost control']
+    },
+    {
+      id: 'email-validator',
+      name: 'Email Validator',
+      description: 'Comprehensive email validation with security risk assessment, disposable email detection, and MX record validation.',
+      icon: <Mail className="w-8 h-8 text-white" />,
+      color: 'bg-gradient-to-br from-blue-500 to-cyan-600',
+      features: [
+        'Syntax validation',
+        'MX record verification',
+        'Disposable email detection',
+        'Security risk assessment',
+        'Bulk validation support',
+        'Real-time validation'
+      ],
+      pricing: {
+        free: {
+          price: 'Free',
+          requests: '1,000 validations/month',
+          features: ['Basic validation', 'MX record check', 'Email support']
+        },
+        pro: {
+          price: '$19/month',
+          requests: '100,000 validations/month',
+          features: ['Security scanning', 'Bulk validation', 'API access', 'Priority support']
+        }
+      },
+      useCases: ['User registration', 'Email marketing', 'Lead validation', 'Fraud prevention']
+    },
+    {
+      id: 'password-checker',
+      name: 'Password Strength Checker',
+      description: 'Advanced password analysis with security recommendations, policy enforcement, and strong password generation.',
+      icon: <Key className="w-8 h-8 text-white" />,
+      color: 'bg-gradient-to-br from-orange-500 to-red-600',
+      features: [
+        'Multi-factor strength analysis',
+        'Security recommendations',
+        'Policy enforcement',
+        'Strong password generation',
+        'Breach database checking',
+        'Custom policy rules'
+      ],
+      pricing: {
+        free: {
+          price: 'Free',
+          requests: '500 checks/month',
+          features: ['Basic strength checking', 'Security tips', 'Email support']
+        },
+        pro: {
+          price: '$15/month',
+          requests: 'Unlimited checks',
+          features: ['Advanced analysis', 'Custom policies', 'API access', 'Priority support']
+        }
+      },
+      useCases: ['User registration', 'Password policies', 'Security compliance', 'Employee onboarding']
+    },
+    {
+      id: 'url-shortener',
+      name: 'URL Shortener',
+      description: 'Professional URL shortening with analytics, custom aliases, password protection, and expiration dates.',
+      icon: <Link className="w-8 h-8 text-white" />,
+      color: 'bg-gradient-to-br from-indigo-500 to-purple-600',
+      features: [
+        'Custom URL aliases',
+        'Click analytics',
+        'Password protection',
+        'Expiration dates',
+        'Geographic tracking',
+        'QR code generation'
+      ],
+      pricing: {
+        free: {
+          price: 'Free',
+          requests: '100 URLs/month',
+          features: ['Basic shortening', 'Click tracking', 'Email support']
+        },
+        pro: {
+          price: '$25/month',
+          requests: 'Unlimited URLs',
+          features: ['Custom aliases', 'Advanced analytics', 'API access', 'Priority support']
+        }
+      },
+      useCases: ['Marketing campaigns', 'Social media', 'Link tracking', 'Brand awareness']
+    },
+    {
+      id: 'json-formatter',
+      name: 'JSON Formatter',
+      description: 'Advanced JSON processing with validation, transformation, schema generation, and performance optimization.',
+      icon: <FileText className="w-8 h-8 text-white" />,
+      color: 'bg-gradient-to-br from-teal-500 to-cyan-600',
+      features: [
+        'JSON validation',
+        'Formatting and minification',
+        'Schema generation',
+        'Data transformation',
+        'Performance optimization',
+        'Bulk processing'
+      ],
+      pricing: {
+        free: {
+          price: 'Free',
+          requests: '500 operations/month',
+          features: ['Basic formatting', 'Validation', 'Email support']
+        },
+        pro: {
+          price: '$20/month',
+          requests: 'Unlimited operations',
+          features: ['Advanced features', 'Bulk processing', 'API access', 'Priority support']
+        }
+      },
+      useCases: ['API development', 'Data processing', 'Debugging', 'Documentation']
+=======
       icon: '🛡️',
       title: 'API Rate Limiting Service',
       description: 'Protect your APIs from abuse with intelligent rate limiting and traffic control.',
@@ -142,6 +310,7 @@ export default function ServicesPage() {
       gradient: 'from-cyan-400 to-blue-500',
       pricing: 'Pay-as-you-use model, starting from $50/month',
       category: 'Infrastructure'
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-advertising-b762
     },
     {
       id: 'qr-generator',
@@ -557,6 +726,81 @@ export default function ServicesPage() {
                       <p className="text-white/90 leading-relaxed">{service.description}</p>
                     </div>
                   </div>
+<<<<<<< HEAD
+
+                  {/* Service Details */}
+                  <div className="lg:col-span-2 space-y-8">
+                    {/* Features */}
+                    <div>
+                      <h4 className="text-lg font-semibold text-white mb-4 flex items-center">
+                        <Zap className="w-5 h-5 text-blue-400 mr-2" />
+                        Key Features
+                      </h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        {service.features.map((feature, featureIndex) => (
+                          <div key={featureIndex} className="flex items-center text-gray-300">
+                            <Check className="w-4 h-4 text-green-400 mr-3 flex-shrink-0" />
+                            {feature}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Use Cases */}
+                    <div>
+                      <h4 className="text-lg font-semibold text-white mb-4 flex items-center">
+                        <Globe className="w-5 h-5 text-blue-400 mr-2" />
+                        Use Cases
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {service.useCases.map((useCase, useCaseIndex) => (
+                          <span
+                            key={useCaseIndex}
+                            className="px-3 py-1 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm rounded-full"
+                          >
+                            {useCase}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Pricing */}
+                    <div>
+                      <h4 className="text-lg font-semibold text-white mb-4 flex items-center">
+                        <BarChart3 className="w-5 h-5 text-blue-400 mr-2" />
+                        Pricing Plans
+                      </h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {Object.entries(service.pricing).map(([plan, details]) => (
+                          <div
+                            key={plan}
+                            className={`p-6 rounded-xl border ${
+                              plan === 'pro' || plan === 'enterprise'
+                                ? 'border-blue-500/30 bg-blue-500/5'
+                                : 'border-gray-700 bg-gray-800/50'
+                            }`}
+                          >
+                            <div className="flex items-center justify-between mb-4">
+                              <h5 className="text-lg font-semibold text-white capitalize">
+                                {plan === 'free' ? 'Free Tier' : plan === 'pro' ? 'Pro Plan' : 'Enterprise'}
+                              </h5>
+                              {plan === 'pro' || plan === 'enterprise' ? (
+                                <Star className="w-5 h-5 text-yellow-400" />
+                              ) : null}
+                            </div>
+                            <div className="text-2xl font-bold text-white mb-2">{details.price}</div>
+                            <div className="text-sm text-gray-400 mb-4">{details.requests}</div>
+                            <ul className="space-y-2">
+                              {details.features.map((feature, featureIndex) => (
+                                <li key={featureIndex} className="flex items-center text-sm text-gray-300">
+                                  <Check className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
+                                  {feature}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+=======
                   <div className="flex-1">
                     <h3 className={`text-2xl font-bold mb-4 ${service.textColor}`}>
                       {service.title}
@@ -580,6 +824,7 @@ export default function ServicesPage() {
                       </div>
                       <div className="text-sm text-gray-400">
                         {service.pricing}
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-advertising-b762
                       </div>
                     </div>
                   </div>
