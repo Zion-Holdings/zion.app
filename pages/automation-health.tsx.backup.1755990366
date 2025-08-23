@@ -464,9 +464,25 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 
   try {
+<<<<<<< HEAD
+    const baseDir = process.cwd();
+
+    const readJsonIfExists = (filePath: string) => {
+      try {
+        if (fs.existsSync(filePath)) {
+          const raw = fs.readFileSync(filePath, 'utf8');
+          return JSON.parse(raw);
+        }
+      } catch { /* noop */ }
+      return null;
+    };
+
+    const defaultHealth = {
+=======
     // During build time, we can't fetch from localhost, so we'll use fallback data
     // In production, these will be fetched client-side
     const health = {
+>>>>>>> origin/cursor/bc-1772f1c0-da62-42ef-9572-bdbe32120470-042f
       version: '1.0.0',
       lastUpdated: new Date().toISOString(),
       functions: {},
@@ -485,7 +501,11 @@ export const getStaticProps: GetStaticProps = async () => {
       }
     });
 
+<<<<<<< HEAD
+    const defaultControl = {
+=======
     const controlPlane = {
+>>>>>>> origin/cursor/bc-1772f1c0-da62-42ef-9572-bdbe32120470-042f
       globalPause: false,
       version: '1.0.0',
       lastUpdated: new Date().toISOString(),
@@ -495,7 +515,11 @@ export const getStaticProps: GetStaticProps = async () => {
       budgets: { openai: { dailyUsd: 2.50, monthlyUsd: 50.00, enabled: true }, github: { dailyActions: 2000, monthlyActions: 50000, enabled: true } }
     });
 
+<<<<<<< HEAD
+    const defaultHints = {
+=======
     const scheduleHints = {
+>>>>>>> origin/cursor/bc-1772f1c0-da62-42ef-9572-bdbe32120470-042f
       version: '1.0.0',
       lastUpdated: new Date().toISOString(),
       workflows: {},
