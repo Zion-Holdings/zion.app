@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "timestamp": "2025-08-08T17:08:44.006Z",
+=======
   "timestamp": "2025-08-08T16:47:51.884Z",
+>>>>>>> origin/cursor/automated-project-automation-health-monitor-40af
   "counts": {
     "actions": 1,
     "pages": 9

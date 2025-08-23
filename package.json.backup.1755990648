@@ -395,11 +395,20 @@
     "postautomation": "npm run automation:git-sync",
     "lint:staged": "lint-staged",
     "performance:audit": "node automation/performance-audit.cjs",
+<<<<<<< HEAD
+    "auto-ops:scan": "node automation/auto-ops/detector.cjs",
+    "auto-ops:factory": "node automation/auto-ops/factory.cjs",
+    "auto-ops:orchestrator": "node automation/auto-ops/orchestrator.cjs",
+    "auto-ops:cron:start": "bash automation/auto-ops/cron.sh start",
+    "auto-ops:cron:stop": "bash automation/auto-ops/cron.sh stop",
+    "auto-ops:cron:status": "bash automation/auto-ops/cron.sh status"
+=======
     "supervisor:start": "bash automation/supervisor/supervisor-cron.sh start",
     "supervisor:stop": "bash automation/supervisor/supervisor-cron.sh stop",
     "supervisor:status": "bash automation/supervisor/supervisor-cron.sh status",
     "supervisor:run-once": "node automation/supervisor/supervisor-orchestrator.cjs run-once",
     "supervisor:discover": "node automation/supervisor-agents-factory.cjs"
+>>>>>>> origin/cursor/automated-project-automation-health-monitor-40af
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
