@@ -17,6 +17,10 @@ import { innovativeAIServices } from '../data/innovative-ai-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
 import { RealMarketService } from '../data/real-market-services';
 
+<<<<<<< HEAD
+// Use the unified service type
+type Service = UnifiedService;
+=======
 interface Service {
   id: string;
   name: string;
@@ -53,6 +57,7 @@ interface Service {
   rating: number;
   reviews: number;
 }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-b38d
 
 const Innovative2040FuturisticServicesShowcase: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');

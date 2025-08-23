@@ -266,9 +266,12 @@ const Homepage2040: React.FC = () => {
                   <Star className="w-5 h-5 text-yellow-400" />
                   <span>4.9/5 Rating</span>
                 </div>
+<<<<<<< HEAD
+=======
 
                 {/* SVG Pattern Background */}
                 <div className="absolute inset-0 bg-gray-800/20"></div>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-b38d
               </motion.div>
             </motion.div>
           </div>
@@ -421,6 +424,15 @@ const Homepage2040: React.FC = () => {
                         <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
                         <span className="text-sm">{feature}</span>
                       </div>
+<<<<<<< HEAD
+                    ))}
+                  </div>
+                  
+                  <Link href={service.link}>
+                    <button className="w-full py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105">
+                      Learn More
+                    </button>
+=======
 
                       {/* Service Price */}
                       <div className="mb-6">
@@ -455,6 +467,7 @@ const Homepage2040: React.FC = () => {
                   >
                     View All 2040 Services
                     <ArrowRight className="w-6 h-6 ml-3" />
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-b38d
                   </Link>
                 </motion.div>
               ))}
