@@ -52,12 +52,10 @@ import { real2027Q3Additions } from '../../data/real-2027-q3-additions';
 import { aiAutonomousEcosystemServices2029 } from '../../data/2029-ai-autonomous-ecosystem';
 import { emergingTechBreakthroughServices2029 } from '../../data/2029-emerging-tech-breakthroughs';
 import { practicalBusinessSolutionServices2029 } from '../../data/2029-practical-business-solutions';
-import { professionalServices } from '../../data/professional-services';
-import { real2032ServiceExpansions } from '../../data/real-2032-service-expansions';
-import { real2035Q1Additions } from '../../data/real-2035-q1-additions';
-import { real2035Q2Additions } from '../../data/real-2035-q2-additions';
-import { real2025ExtraServices } from '../../data/real-2025-extra-services';
-import { real2025ExtraServicesBatch2 } from '../../data/real-2025-extra-services-batch2';
+import { enterpriseITSolutions2034Additions } from '../../data/augment-2034-enterprise-it-additions';
+import { innovativeMicroSaasSolutions2034Additions } from '../../data/augment-2034-micro-saas-additions';
+import { cuttingEdgeAIServices2034Additions } from '../../data/augment-2034-ai-services-additions';
+import { aiAutonomousEcosystemServices2029Additions, emergingTechBreakthroughServices2029Additions, practicalBusinessSolutionServices2029Additions } from '../../data/augment-2029-ecosystem-additions';
 
 type Service = typeof enhancedRealMicroSaasServices[number];
 
@@ -113,12 +111,13 @@ function getAllServices(): Service[] {
 		.concat(aiAutonomousEcosystemServices2029 as unknown as Service[])
 		.concat(emergingTechBreakthroughServices2029 as unknown as Service[])
 		.concat(practicalBusinessSolutionServices2029 as unknown as Service[])
-		.concat(professionalServices as unknown as Service[])
-		.concat(real2032ServiceExpansions as unknown as Service[])
-		.concat(real2035Q1Additions as unknown as Service[])
-		.concat(real2035Q2Additions as unknown as Service[])
-		.concat(real2025ExtraServices as unknown as Service[])
-		.concat(real2025ExtraServicesBatch2 as unknown as Service[]);
+		// Additive 2034 and 2029 datasets
+		.concat(enterpriseITSolutions2034Additions as unknown as Service[])
+		.concat(innovativeMicroSaasSolutions2034Additions as unknown as Service[])
+		.concat(cuttingEdgeAIServices2034Additions as unknown as Service[])
+		.concat(aiAutonomousEcosystemServices2029Additions as unknown as Service[])
+		.concat(emergingTechBreakthroughServices2029Additions as unknown as Service[])
+		.concat(practicalBusinessSolutionServices2029Additions as unknown as Service[]);
 }
 
 function toSlug(value: string): string {
