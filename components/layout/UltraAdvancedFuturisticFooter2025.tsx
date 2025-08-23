@@ -3,8 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Mail, Phone, MapPin, 
   Facebook, Twitter, Linkedin, Github, Youtube,
-  Heart, Shield, Users, Award, TrendingUp,
-  ExternalLink, ChevronRight, Globe, ArrowUp
+  Heart, Shield, Users, Award, TrendingUp
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -256,9 +255,16 @@ const UltraAdvancedFuturisticFooter2025: React.FC = () => {
               </div>
             </div>
 
-            {/* Footer Sections */}
-            {footerSections.map((section) => (
-              <div key={section.title} className="space-y-4">
+            <form onSubmit={handleNewsletterSubmit} className="space-y-4">
+              <div className="relative">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email address"
+                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500/50 transition-all duration-200"
+                  required
+                />
                 <button
                   onClick={() => toggleSection(section.title)}
                   onKeyDown={(e) => handleKeyDown(e, () => toggleSection(section.title))}

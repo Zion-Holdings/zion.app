@@ -2,11 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import { 
-  Search, Grid, List, Filter,
-  Brain, Atom, Shield, Target, Rocket,
-  ArrowRight, Check, Star, TrendingUp,
-  Building, Cpu, Database, Cloud, Lock,
-  Globe, Zap, Users, BarChart3
+  Check, Star, Brain, Atom, Zap, Rocket, Cpu
 } from 'lucide-react';
 
 // Import our new 2037 service data
@@ -21,12 +17,31 @@ const contact = {
   website: 'https://ziontechgroup.com'
 };
 
-const ServiceCard = ({ service, index }: { service: any; index: number }) => {
-  // Default values for missing properties
+interface ServiceData {
+  id: string;
+  name: string;
+  description: string;
+  icon: string;
+  color?: string;
+  popular?: boolean;
+  features?: string[];
+  pricing?: {
+    starter: string;
+  };
+  price?: string;
+  period?: string;
+  rating?: number;
+  reviews?: number;
+  setupTime?: string;
+  trialDays?: number;
+  customers?: number;
+  link: string;
+}
+
+const ServiceCard = ({ service, index }: { service: ServiceData; index: number }) => {
+  // Default color scheme if service.color is not defined
   const defaultColor = 'from-cyan-500 to-blue-600';
-  const defaultIcon = '🚀';
-  const color = service.color || defaultColor;
-  const icon = service.icon || defaultIcon;
+  const serviceColor = service.color || defaultColor;
   
   return (
     <motion.div
@@ -35,47 +50,13 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => {
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="relative group"
     >
-      <div className={`absolute inset-0 bg-gradient-to-r ${color} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
-      <div className={`relative bg-gradient-to-r ${color.replace('from-', 'from-').replace('to-', 'to-')} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
+      <div className={`absolute inset-0 bg-gradient-to-r ${serviceColor} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
+      <div className={`relative bg-gradient-to-r ${serviceColor} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
         <div className="flex items-start justify-between mb-6">
-          <div className="text-4xl">{icon}</div>
+          <div className="text-4xl">{service.icon}</div>
           {service.popular && (
             <span className="px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-semibold rounded-full">
               Popular
-            </span>
-          )}
-        </div>
-      
-      <h3 className="text-2xl font-bold text-white mb-3">{service.name}</h3>
-      <p className="text-gray-300 mb-6 text-sm leading-relaxed">{service.description}</p>
-      
-      <div className="space-y-3 mb-6">
-        {service.features.slice(0, 4).map((feature: string, idx: number) => (
-          <div key={idx} className="flex items-center space-x-2">
-            <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
-            <span className="text-gray-300 text-sm">{feature}</span>
-          </div>
-        ))}
-      </div>
-      
-      <div className="flex items-center justify-between mb-6">
-        <div>
-          <span className="text-3xl font-bold text-white">
-            {service.pricing ? service.pricing.starter : service.price || 'Contact for pricing'}
-          </span>
-          <span className="text-gray-400 text-sm">
-            {service.pricing ? '/month' : service.period || ''}
-          </span>
-        </div>
-        <div className="text-right">
-          <div className="flex items-center space-x-1 text-yellow-400">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-4 h-4" />
-            ))}
-          </div>
-          {service.rating >= 4.8 && (
-            <span className="px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-semibold rounded-full">
-              Top Rated
             </span>
           )}
         </div>
@@ -84,7 +65,7 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => {
         <p className="text-gray-300 mb-6 text-sm leading-relaxed">{service.description}</p>
         
         <div className="space-y-3 mb-6">
-          {service.features.slice(0, 4).map((feature: string, idx: number) => (
+          {service.features?.slice(0, 4).map((feature: string, idx: number) => (
             <div key={idx} className="flex items-center space-x-2">
               <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
               <span className="text-gray-300 text-sm">{feature}</span>
@@ -94,35 +75,35 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => {
         
         <div className="flex items-center justify-between mb-6">
           <div>
-            <span className="text-3xl font-bold text-white">
-              {service.price || '$99'}
-            </span>
-            <span className="text-gray-400 text-sm">/month</span>
+            <span className="text-3xl font-bold text-white">{service.pricing?.starter || service.price || 'Contact Us'}</span>
+            <span className="text-gray-400 text-sm">{service.pricing ? '/month' : (service.period || '')}</span>
           </div>
           <div className="text-right">
             <div className="flex items-center space-x-1 text-yellow-400">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className={`w-4 h-4 ${i < Math.floor(service.rating) ? 'fill-current' : ''}`} />
+                <Star key={i} className={`w-4 h-4 ${i < Math.floor(service.rating || 0) ? 'fill-current' : ''}`} />
               ))}
             </div>
-            <span className="text-gray-400 text-xs">{service.rating}/5</span>
+            <span className="text-gray-400 text-xs">{service.rating || 0}/5 ({service.reviews || 0} reviews)</span>
           </div>
         </div>
         
-        <div className="space-y-3 mb-6 text-xs text-gray-400">
-          <div className="flex justify-between">
-            <span>Category:</span>
-            <span>{service.category}</span>
+        {service.setupTime && service.trialDays && service.customers && (
+          <div className="space-y-3 mb-6 text-xs text-gray-400">
+            <div className="flex justify-between">
+              <span>Setup Time:</span>
+              <span>{service.setupTime}</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Trial:</span>
+              <span>{service.trialDays} days</span>
+            </div>
+            <div className="flex justify-between">
+              <span>Customers:</span>
+              <span>{service.customers.toLocaleString()}</span>
+            </div>
           </div>
-          <div className="flex justify-between">
-            <span>Launch:</span>
-            <span>{service.launchDate}</span>
-          </div>
-          <div className="flex justify-between">
-            <span>Market Price:</span>
-            <span>{service.marketPrice}</span>
-          </div>
-        </div>
+        )}
         
         <a 
           href={service.link} 
@@ -131,15 +112,7 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => {
           Learn More
         </a>
       </div>
-      
-      <a 
-        href={service.link} 
-        className="block w-full text-center py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
-      >
-        Learn More
-      </a>
-    </div>
-  </motion.div>
+    </motion.div>
   );
 };
 
@@ -227,20 +200,98 @@ const ServicesShowcase2037: React.FC = () => {
       {/* Services Section */}
       <section id="services" className="py-20 px-4 bg-black relative">
         <div className="max-w-7xl mx-auto">
-          {/* Header */}
+          <div className="flex flex-wrap justify-center gap-4">
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => setActiveCategory(category.id)}
+                className={`flex items-center space-x-2 px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
+                  activeCategory === category.id
+                    ? 'bg-gradient-to-r from-cyan-500 to-purple-600 text-white shadow-lg'
+                    : 'bg-white/5 border border-white/10 text-gray-300 hover:bg-white/10 hover:border-cyan-400/30'
+                }`}
+              >
+                {category.icon}
+                <span>{category.name}</span>
+                <span className="text-xs bg-white/20 px-2 py-1 rounded-full">{category.count}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+      <section className="py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredServices.map((service, index) => (
+              <ServiceCard key={service.id} service={service} index={index} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Impact & Results */}
+      <section className="py-20 px-4 bg-black/20">
+        <div className="max-w-6xl mx-auto text-center">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            viewport={{ once: true }}
+            className="mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-              Revolutionary 2037 Services
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+              Impact & Results
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Discover our cutting-edge portfolio featuring {all2037Services.length} innovative services across AI governance, quantum security, edge computing, and specialized micro SAAS solutions
             </p>
           </motion.div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="text-center"
+            >
+              <div className="text-4xl font-bold text-cyan-400 mb-2">500+</div>
+              <div className="text-gray-300">Active Customers</div>
+            </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="text-center"
+            >
+              <div className="text-4xl font-bold text-purple-400 mb-2">4.8/5</div>
+              <div className="text-gray-300">Average Rating</div>
+            </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-center"
+            >
+              <div className="text-4xl font-bold text-blue-400 mb-2">60%</div>
+              <div className="text-gray-300">Cost Reduction</div>
+            </motion.div>
+            
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-center"
+            >
+              <div className="text-4xl font-bold text-green-400 mb-2">5x</div>
+              <div className="text-gray-300">Efficiency Gain</div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
           {/* Filters and Search */}
           <div className="mb-8 space-y-4">

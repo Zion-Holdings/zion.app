@@ -236,26 +236,18 @@ body {
   animation: glow 2s ease-in-out infinite alternate;
 }
 
-.animate-pulse-slow {
-  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+/* Focus Styles */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-black;
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
+.focus-ring-cyan {
+  @apply focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-black;
 }
 
-@keyframes glow {
-  from {
-    box-shadow: 0 0 20px var(--primary-cyan);
-  }
-  to {
-    box-shadow: 0 0 30px var(--primary-cyan), 0 0 40px var(--primary-blue);
-  }
+/* Button Styles */
+.btn-primary {
+  @apply px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-black;
 }
 
 /* Responsive Typography */
@@ -273,9 +265,8 @@ body {
   }
 }
 
-/* Loading States */
-.loading-skeleton {
-  @apply animate-pulse bg-gray-800/50 rounded;
+.btn-ghost {
+  @apply px-6 py-3 text-gray-300 hover:text-white transition-colors duration-200 font-medium focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-black rounded-lg;
 }
 
 .loading-dots {
@@ -286,9 +277,9 @@ body {
   @apply w-2 h-2 bg-cyan-400 rounded-full animate-bounce;
 }
 
-/* Enhanced Form Styles */
-.form-input {
-  @apply w-full px-4 py-3 bg-white/5 border border-cyan-400/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all duration-200;
+/* Input Styles */
+.input-primary {
+  @apply px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500/50 transition-all duration-200;
 }
 
 .form-input:focus {
