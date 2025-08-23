@@ -698,6 +698,8 @@ body::before {
     color: black !important;
   }
 }
+<<<<<<< HEAD
+=======
 
 /* Neon glow utilities */
 .glow {
@@ -879,3 +881,4 @@ main > * {
     margin-right: 5rem;
   }
 }
+>>>>>>> origin/cursor/add-lateral-margins-for-zoom-animation-0c88
