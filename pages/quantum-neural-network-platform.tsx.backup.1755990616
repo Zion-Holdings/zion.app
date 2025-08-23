@@ -1,7 +1,12 @@
 import React from 'react';
+<<<<<<< HEAD
+import { Layout } from '../components/layout/Layout';
+import { Brain, Atom, Zap, Shield, Cpu, Database, Network, Server, Monitor, Globe, Lock, Cloud, Settings, Eye, Award, Clock, Heart, Lightbulb, Search, Grid, List, TrendingUp, ArrowRight } from 'lucide-react';
+=======
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { Atom, Brain, Zap, Target, Cpu, Shield, TrendingUp, Users } from 'lucide-react';
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-a0fc
 
 const QuantumNeuralNetworkPlatform: React.FC = () => {
   return (

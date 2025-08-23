@@ -1,10 +1,21 @@
 import React, { useState, useMemo } from 'react';
 import Layout from '../components/layout/Layout';
+<<<<<<< HEAD
+import SEO from '../components/SEO';
+import { motion } from 'framer-motion';
+import { 
+  Search, Grid, List, Filter, Star, TrendingUp,
+  Brain, Atom, Shield, Rocket, Zap, Target,
+  ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
+  Building, Cpu, Database, Cloud, Lock, Globe,
+  Sparkles, Award, Users, Clock, DollarSign
+=======
 import { motion } from 'framer-motion';
 import { 
   Rocket, Brain, Atom, Shield, Zap, Target, Users, Star, 
   TrendingUp, Award, Clock, Heart, Lightbulb, Globe, Cpu,
   Database, Lock, Cloud, Settings, Eye, BookOpen, CheckCircle
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-a0fc
 } from 'lucide-react';
 
 // Import all service data
@@ -40,6 +51,56 @@ interface Service {
 }
 
 const ComprehensiveServicesShowcase2025: React.FC = () => {
+<<<<<<< HEAD
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const [sortBy, setSortBy] = useState<'name' | 'price' | 'rating' | 'popularity'>('popularity');
+
+  // Combine all services
+  const allServices: Service[] = useMemo(() => {
+    const services = [
+      ...realMicroSaasServices2025.map(s => ({ ...s, source: 'micro-saas' })),
+      ...realITServices2025.map(s => ({ ...s, source: 'it' })),
+      ...realAIServices2025.map(s => ({ ...s, source: 'ai' }))
+    ];
+
+    // Sort services
+    return services.sort((a, b) => {
+      switch (sortBy) {
+        case 'name':
+          return a.name.localeCompare(b.name);
+        case 'price':
+          return parseFloat(a.price.replace('$', '').replace(',', '')) - parseFloat(b.price.replace('$', '').replace(',', ''));
+        case 'rating':
+          return b.rating - a.rating;
+        case 'popularity':
+        default:
+          return (b.popular ? 1 : 0) - (a.popular ? 1 : 0);
+      }
+    });
+  }, [sortBy]);
+
+  // Filter services
+  const filteredServices = useMemo(() => {
+    return allServices.filter(service => {
+      const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                           service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                           service.tagline.toLowerCase().includes(searchTerm.toLowerCase());
+      
+      const matchesCategory = selectedCategory === 'all' || service.category.toLowerCase().includes(selectedCategory.toLowerCase());
+      
+      return matchesSearch && matchesCategory;
+    });
+  }, [allServices, searchTerm, selectedCategory]);
+
+  const categories = [
+    { id: 'all', name: 'All Services', icon: <Globe className="w-5 h-5" />, count: allServices.length },
+    { id: 'ai', name: 'AI & Consciousness', icon: <Brain className="w-5 h-5" />, count: realAIServices2025.length },
+    { id: 'it', name: 'Enterprise IT', icon: <Shield className="w-5 h-5" />, count: realITServices2025.length },
+    { id: 'saas', name: 'Micro SAAS', icon: <Rocket className="w-5 h-5" />, count: realMicroSaasServices2025.length },
+    { id: 'quantum', name: 'Quantum Tech', icon: <Atom className="w-5 h-5" />, count: allServices.filter(s => s.category.toLowerCase().includes('quantum')).length }
+=======
   const serviceCategories = [
     {
       title: "AI & Consciousness",
@@ -123,6 +184,7 @@ const ComprehensiveServicesShowcase2025: React.FC = () => {
         { name: "Education Technology", href: "/education-technology-solutions" }
       ]
     }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-a0fc
   ];
 
   const ServiceCard: React.FC<{ service: Service }> = ({ service }) => (
@@ -285,6 +347,124 @@ const ComprehensiveServicesShowcase2025: React.FC = () => {
 
   return (
     <Layout>
+<<<<<<< HEAD
+      <SEO 
+        title="Comprehensive Services Showcase 2025 | Zion Tech Group"
+        description="Explore our complete portfolio of revolutionary AI, quantum computing, and enterprise solutions. Transform your business with cutting-edge technology."
+        keywords={["AI services", "quantum computing", "enterprise IT", "micro SAAS", "technology solutions", "business transformation"]}
+      />
+      
+      <main className="relative z-10 pt-8">
+        {/* Hero Section */}
+        <section className="text-center py-16 px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+              Comprehensive Services Showcase 2025
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
+              Discover our complete portfolio of revolutionary technology solutions designed to transform your business and shape the future
+            </p>
+            
+            {/* Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-cyan-400">{allServices.length}+</div>
+                <div className="text-gray-400">Total Services</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-blue-400">{allServices.filter(s => s.popular).length}</div>
+                <div className="text-gray-400">Popular Solutions</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-purple-400">{categories.length}</div>
+                <div className="text-gray-400">Categories</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-green-400">4.8</div>
+                <div className="text-gray-400">Avg Rating</div>
+              </div>
+            </div>
+          </motion.div>
+        </section>
+
+        {/* Filters and Search */}
+        <section className="px-4 mb-12">
+          <div className="max-w-7xl mx-auto">
+            <div className="bg-gradient-to-r from-gray-900/80 to-black/80 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-6">
+              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0">
+                {/* Search */}
+                <div className="flex-1 max-w-md">
+                  <div className="relative">
+                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                    <input
+                      type="text"
+                      placeholder="Search services..."
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                      className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/20"
+                    />
+                  </div>
+                </div>
+
+                {/* Category Filter */}
+                <div className="flex flex-wrap gap-2">
+                  {categories.map((category) => (
+                    <button
+                      key={category.id}
+                      onClick={() => setSelectedCategory(category.id)}
+                      className={`flex items-center space-x-2 px-4 py-2 rounded-xl border transition-all duration-300 ${
+                        selectedCategory === category.id
+                          ? 'border-cyan-500 bg-cyan-500/20 text-cyan-400'
+                          : 'border-gray-600 text-gray-300 hover:border-gray-500 hover:text-white'
+                      }`}
+                    >
+                      {category.icon}
+                      <span>{category.name}</span>
+                      <span className="bg-gray-700 text-gray-300 px-2 py-1 rounded-full text-xs">
+                        {category.count}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+
+                {/* View Mode and Sort */}
+                <div className="flex items-center space-x-4">
+                  <select
+                    value={sortBy}
+                    onChange={(e) => setSortBy(e.target.value as any)}
+                    className="px-4 py-2 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:border-cyan-500/50"
+                  >
+                    <option value="popularity">Sort by Popularity</option>
+                    <option value="name">Sort by Name</option>
+                    <option value="price">Sort by Price</option>
+                    <option value="rating">Sort by Rating</option>
+                  </select>
+
+                  <div className="flex items-center space-x-2 bg-gray-800/50 rounded-xl p-1">
+                    <button
+                      onClick={() => setViewMode('grid')}
+                      className={`p-2 rounded-lg transition-all duration-300 ${
+                        viewMode === 'grid' ? 'bg-cyan-500 text-white' : 'text-gray-400 hover:text-white'
+                      }`}
+                    >
+                      <Grid className="w-5 h-5" />
+                    </button>
+                    <button
+                      onClick={() => setViewMode('list')}
+                      className={`p-2 rounded-lg transition-all duration-300 ${
+                        viewMode === 'list' ? 'bg-cyan-500 text-white' : 'text-gray-400 hover:text-white'
+                      }`}
+                    >
+                      <List className="w-5 h-5" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+=======
       <div className="min-h-screen bg-gradient-to-br from-black via-gray-900/20 to-black">
         {/* Hero Section */}
         <section className="relative py-20 px-4 sm:px-6 lg:px-8">
@@ -373,10 +553,33 @@ const ComprehensiveServicesShowcase2025: React.FC = () => {
                   </div>
                 </motion.div>
               ))}
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-a0fc
             </div>
           </div>
         </section>
 
+<<<<<<< HEAD
+        {/* Services Grid/List */}
+        <section className="px-4 pb-16">
+          <div className="max-w-7xl mx-auto">
+            {filteredServices.length === 0 ? (
+              <div className="text-center py-16">
+                <Search className="w-16 h-16 text-gray-600 mx-auto mb-4" />
+                <h3 className="text-2xl font-bold text-gray-400 mb-2">No services found</h3>
+                <p className="text-gray-500">Try adjusting your search or filter criteria</p>
+              </div>
+            ) : (
+              <div className={viewMode === 'grid' ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8' : 'space-y-6'}>
+                {filteredServices.map((service) => (
+                  viewMode === 'grid' ? (
+                    <ServiceCard key={service.id} service={service} />
+                  ) : (
+                    <ServiceList key={service.id} service={service} />
+                  )
+                ))}
+              </div>
+            )}
+=======
         {/* CTA Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
@@ -402,6 +605,7 @@ const ComprehensiveServicesShowcase2025: React.FC = () => {
                 </button>
               </div>
             </motion.div>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-a0fc
           </div>
         </section>
 
