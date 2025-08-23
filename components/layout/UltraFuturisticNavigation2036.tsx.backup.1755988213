@@ -213,9 +213,19 @@ export default function UltraFuturisticNavigation2036() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+<<<<<<< HEAD
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (activeDropdown && !(event.target as HTMLElement).closest('.dropdown-container')) {
+        setActiveDropdown(null);
+      }
+    };
+=======
   const handleDropdownToggle = (name: string) => {
     setActiveDropdown(activeDropdown === name ? null : name);
   };
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-7797
 
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
@@ -400,7 +410,11 @@ export default function UltraFuturisticNavigation2036() {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full px-4 py-3 pl-10 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50"
                 />
+<<<<<<< HEAD
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+=======
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-7797
               </div>
 
               {/* Mobile Navigation Items */}
