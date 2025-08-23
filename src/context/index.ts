@@ -8,4 +8,4 @@ export {
 } from './RequestQuoteWizard';
 export { ViewModeProvider, useViewMode } from './ViewModeContext';
 export { CartProvider, useCart } from './CartContext';
-export { CommunityProvider, useCommunity } from './CommunityContext';
+export { UnitProvider, useUnitSystem } from './UnitContext';

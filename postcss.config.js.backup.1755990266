@@ -1,0 +1,13 @@
+default {
+  plugins: {
+<<<<<<< HEAD
+    @tailwindcss/postcss': {},    autoprefixer: {}
+  }
+}; 
+=======
+    '@tailwindcss/postcss': {},
+    autoprefixer: {},
+  },
+}; 
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
+>>>>>>> 2b8bbbb18a09713bdeef09b7c3a1ee123e0bd7d0

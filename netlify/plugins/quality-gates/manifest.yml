@@ -1,0 +1,6 @@
+name: quality-gates
+inputs:
+  - name: maxWarnings
+    description: Maximum allowed ESLint warnings (fail if exceeded). 0 to only fail on errors.
+  - name: sizeBudgetKb
+    description: Fails build if total bundle size exceeds this value in KB.
