@@ -24,7 +24,7 @@ import { realEnterpriseMicroSaas2025 } from '../data/2025-real-enterprise-micro-
 // Import our new innovative 2025 services
 import { realInnovativeMicroSaasServices2025 } from '../data/2025-real-innovative-micro-saas-expansion';
 import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services-expansion';
-import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services-expansion';
+import { innovativeAIServices2025Expansion } from '../data/2025-innovative-ai-services-expansion';
 
 // Import our new 2025 advanced services
 import { advancedBusinessIntelligenceServices2025 } from '../data/2025-advanced-business-intelligence-services';
@@ -140,7 +140,7 @@ const allServices = [
   // Our new 2025 services
   ...realInnovativeMicroSaasServices2025,
   ...innovativeITInfrastructureServices2025,
-  ...innovativeAIServices2025,
+      ...innovativeAIServices2025Expansion,
   ...innovativeMicroSaasSolutions2025,
   ...cuttingEdgeAIServices2025,
   ...realEnterpriseMicroSaas2025,
