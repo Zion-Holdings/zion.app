@@ -3,17 +3,20 @@ import Layout from './layout/Layout';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
-  ArrowRight, Brain, Atom, Shield, Zap, Search
+  ArrowRight, Brain, Atom, Shield, Zap, Search, MessageCircle, Phone, Mail
 } from 'lucide-react';
+import { AnimatePresence } from 'framer-motion';
 
 /* eslint-disable no-undef */
 const Homepage2025: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
+  const [showFloatingActions, setShowFloatingActions] = useState(false);
 
   // Intersection Observer for animations
   useEffect(() => {
-    const observer = new (window as any).IntersectionObserver(
-      (entries: any[]) => {
+    const observer = new IntersectionObserver(
+      (entries: IntersectionObserverEntry[]) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             // Animation logic can be added here
@@ -29,6 +32,23 @@ const Homepage2025: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
+  // Simulate loading state
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Show floating actions after scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowFloatingActions(window.scrollY > 300);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
@@ -37,11 +57,58 @@ const Homepage2025: React.FC = () => {
     }
   };
 
+  if (isLoading) {
+    return (
+      <Layout>
+        <div className="min-h-screen flex items-center justify-center bg-black">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="text-center"
+          >
+            <div className="w-20 h-20 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full mx-auto mb-6 animate-pulse"></div>
+            <h2 className="text-2xl font-bold text-white mb-2">Loading Zion Tech Group</h2>
+            <p className="text-gray-400">Preparing the future of technology...</p>
+          </motion.div>
+        </div>
+      </Layout>
+    );
+  }
+
   return (
     <Layout>
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-black z-0" />
+        
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <motion.div
+            animate={{
+              rotate: 360,
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+            className="absolute top-20 right-20 w-32 h-32 border border-cyan-400/20 rounded-full"
+          />
+          <motion.div
+            animate={{
+              rotate: -360,
+              scale: [1.2, 1, 1.2],
+            }}
+            transition={{
+              duration: 25,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+            className="absolute bottom-20 left-20 w-24 h-24 border border-purple-400/20 transform rotate-45"
+          />
+        </div>
         
         <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
           <motion.h1
@@ -112,6 +179,26 @@ const Homepage2025: React.FC = () => {
               Get Started
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
+          </motion.div>
+
+          {/* Quick Stats */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
+          >
+            {[
+              { number: "500+", label: "Projects Delivered" },
+              { number: "50+", label: "AI Solutions" },
+              { number: "25+", label: "Quantum Services" },
+              { number: "99.9%", label: "Uptime SLA" }
+            ].map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="text-2xl md:text-3xl font-bold text-cyan-400 mb-1">{stat.number}</div>
+                <div className="text-sm text-gray-400">{stat.label}</div>
+              </div>
+            ))}
           </motion.div>
         </div>
       </section>
@@ -300,6 +387,64 @@ const Homepage2025: React.FC = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Floating Action Buttons */}
+      <AnimatePresence>
+        {showFloatingActions && (
+          <>
+            {/* Contact Button */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, x: 100 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              exit={{ opacity: 0, scale: 0.8, x: 100 }}
+              transition={{ duration: 0.3 }}
+              className="fixed bottom-24 right-6 z-50"
+            >
+              <Link
+                href="/contact"
+                className="flex items-center justify-center w-14 h-14 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-full shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 hover:scale-110 group"
+                aria-label="Contact Us"
+              >
+                <MessageCircle className="w-6 h-6 group-hover:rotate-12 transition-transform" />
+              </Link>
+            </motion.div>
+
+            {/* Phone Button */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, x: 100 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              exit={{ opacity: 0, scale: 0.8, x: 100 }}
+              transition={{ duration: 0.3, delay: 0.1 }}
+              className="fixed bottom-36 right-6 z-50"
+            >
+              <a
+                href="tel:+1-302-464-0950"
+                className="flex items-center justify-center w-14 h-14 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-full shadow-2xl hover:shadow-green-500/25 transition-all duration-300 hover:scale-110 group"
+                aria-label="Call Us"
+              >
+                <Phone className="w-6 h-6 group-hover:rotate-12 transition-transform" />
+              </a>
+            </motion.div>
+
+            {/* Email Button */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, x: 100 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              exit={{ opacity: 0, scale: 0.8, x: 100 }}
+              transition={{ duration: 0.3, delay: 0.2 }}
+              className="fixed bottom-48 right-6 z-50"
+            >
+              <a
+                href="mailto:kleber@ziontechgroup.com"
+                className="flex items-center justify-center w-14 h-14 bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-full shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 hover:scale-110 group"
+                aria-label="Email Us"
+              >
+                <Mail className="w-6 h-6 group-hover:rotate-12 transition-transform" />
+              </a>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </Layout>
   );
 };

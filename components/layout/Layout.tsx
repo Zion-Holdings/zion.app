@@ -6,6 +6,7 @@ import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackgro
 import TopContactBar from './TopContactBar';
 import PerformanceMonitor from '../PerformanceMonitor';
 import AccessibilityEnhancer from '../AccessibilityEnhancer';
+import CookieConsentBanner from '../CookieConsentBanner';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -49,6 +50,9 @@ export default function Layout({ children }: LayoutProps) {
       {/* Accessibility and Performance Tools */}
       <AccessibilityEnhancer />
       <PerformanceMonitor />
+      
+      {/* Cookie Consent Banner */}
+      <CookieConsentBanner />
     </div>
   );
 }

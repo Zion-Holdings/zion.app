@@ -15,6 +15,7 @@ import {
   Play
 } from 'lucide-react';
 import Link from 'next/link';
+import EnhancedSearch from '../EnhancedSearch';
 
 interface NavigationItem {
   name: string;
@@ -242,7 +243,6 @@ export default function UltraFuturisticNavigation2036() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   useEffect(() => {
@@ -271,11 +271,8 @@ export default function UltraFuturisticNavigation2036() {
     setIsOpen(false);
   };
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      window.location.href = `/search?q=${encodeURIComponent(searchQuery.trim())}`;
-    }
+  const toggleSearch = () => {
+    setIsSearchOpen(!isSearchOpen);
   };
 
   return (
@@ -451,7 +448,7 @@ export default function UltraFuturisticNavigation2036() {
               <div className="hidden lg:flex items-center space-x-4">
                 {/* Search Button */}
                 <button
-                  onClick={() => setIsSearchOpen(!isSearchOpen)}
+                  onClick={toggleSearch}
                   className="p-2 text-gray-300 hover:text-cyan-400 transition-colors rounded-lg hover:bg-white/5"
                   aria-label="Search"
                 >
@@ -489,22 +486,7 @@ export default function UltraFuturisticNavigation2036() {
               className="bg-black/95 border-b border-white/10 overflow-hidden"
             >
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-                <form onSubmit={handleSearch} className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                  <input
-                    type="text"
-                    placeholder="Search services, solutions, or resources..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent"
-                  />
-                  <button
-                    type="submit"
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 px-4 py-1 bg-cyan-500 text-white rounded-md hover:bg-cyan-600 transition-colors"
-                  >
-                    Search
-                  </button>
-                </form>
+                <EnhancedSearch />
               </div>
             </motion.div>
           )}
@@ -539,16 +521,7 @@ export default function UltraFuturisticNavigation2036() {
 
               {/* Mobile Search */}
               <div className="mb-6">
-                <form onSubmit={handleSearch} className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-                  <input
-                    type="text"
-                    placeholder="Search..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-10 pr-4 py-2 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400"
-                  />
-                </form>
+                <EnhancedSearch />
               </div>
 
               {/* Mobile Navigation Items */}

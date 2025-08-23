@@ -104,7 +104,7 @@ export default function FuturisticServicesShowcase2037() {
       <SEO 
         title="2037 Futuristic Services Showcase | Zion Tech Group"
         description="Explore our revolutionary 2037 services including AI consciousness evolution, quantum computing, space technology, and enterprise solutions. Transform your business with cutting-edge technology."
-        keywords="2037 services, AI consciousness, quantum computing, space technology, enterprise IT, micro SAAS, Zion Tech Group"
+        keywords={["2037 services", "AI consciousness", "quantum computing", "space technology", "enterprise IT", "micro SAAS", "Zion Tech Group"]}
       />
 
       <div className="min-h-screen bg-black text-white">
