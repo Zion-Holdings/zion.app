@@ -221,6 +221,57 @@
   name = "metadata-optimizer-runner"
   schedule = "*/15 * * * *" # every 15 minutes
 
+<<<<<<< HEAD
+[[scheduled.functions]]
+  name = "seo-audit-runner"
+  schedule = "0 */2 * * *"
+
+[[scheduled.functions]]
+  name = "ai-trends-radar-runner"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+  name = "stale-content-auditor-runner"
+  schedule = "17 */6 * * *"
+
+[[scheduled.functions]]
+  name = "deps-auto-upgrade-runner"
+  schedule = "0 3 * * *" # daily at 3 AM UTC
+
+# Autonomous cloud scanners
+[[scheduled.functions]]
+  name = "unused-media-scanner"
+  schedule = "*/10 * * * *"
+
+[[scheduled.functions]]
+  name = "orphan-pages-detector"
+  schedule = "*/15 * * * *"
+
+[[scheduled.functions]]
+  name = "component-size-report"
+  schedule = "*/5 * * * *"
+
+# Newly added intelligent automations (invented)
+[[scheduled.functions]]
+  name = "internal-link-graph-runner"
+  schedule = "*/10 * * * *"
+
+[[scheduled.functions]]
+  name = "anchor-links-auto-fixer"
+  schedule = "*/20 * * * *"
+
+[[scheduled.functions]]
+  name = "site-404-map-runner"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+  name = "content-freshness-score-runner"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+  name = "component-coupling-graph-runner"
+  schedule = "*/20 * * * *"
+=======
 # New intelligent cloud automations (added)
 [[scheduled.functions]]
   name = "ai-trends-radar"
@@ -257,3 +308,4 @@
 [[scheduled.functions]]
   name = "innovation-sprint"
   schedule = "*/3 * * * *" # every 3 minutes
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-9757
