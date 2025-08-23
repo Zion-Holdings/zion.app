@@ -1,8 +1,33 @@
 import React from 'react';
 import Head from 'next/head';
+<<<<<<< HEAD
+import { 
+  Clock, DollarSign, TrendingUp, Brain, 
+  Mail, Phone, MapPin, 
+  ArrowRight, Rocket, Star, Users,
+  CheckCircle, Shield, Zap, Globe
+} from 'lucide-react';
+import Button from '../components/ui/Button';
+import UltraFuturisticBackground2030 from '../components/ui/UltraFuturisticBackground2030';
+import UltraFuturisticBackground2031 from '../components/ui/UltraFuturisticBackground2031';
+import UltraFuturisticBackground2034 from '../components/backgrounds/UltraFuturisticBackground2034';
+import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
+import UltraAdvancedNavigation2026 from '../components/layout/UltraAdvancedNavigation2026';
+import UltraFuturisticNavigation2034 from '../components/layout/UltraFuturisticNavigation2034';
+import UltraFuturisticFooter2034 from '../components/layout/UltraFuturisticFooter2034';
+import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
+import ServicesShowcase2029 from '../components/sections/2029ServicesShowcase';
+import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
+import Revolutionary2026ServiceShowcase from '../components/sections/Revolutionary2026ServiceShowcase';
+import Revolutionary2027ServicesShowcase from '../components/sections/Revolutionary2027ServicesShowcase';
+import Revolutionary2027Hero from '../components/sections/Revolutionary2027Hero';
+import EnhancedHero2026 from '../components/sections/EnhancedHero2026';
+import UltraFuturisticHero2029 from '../components/sections/UltraFuturisticHero2029';
+=======
 import Link from 'next/link';
 import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, Brain, Sparkles, Atom, Dna, Users, Globe, Cpu, Target, Microscope, Lock, Cloud, BarChart3, Settings, Eye, Award, Clock, Heart, Lightbulb, Target as TargetIcon, Zap as ZapIcon, Shield as ShieldIcon, Globe as GlobeIcon, ChevronRight, Play, ExternalLink } from 'lucide-react';
 import Layout from '../components/layout/Layout';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4d36
 import { motion } from 'framer-motion';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
@@ -85,6 +110,19 @@ import { innovativeITServices2033 } from '../data/2033-innovative-it-services';
 import { realMicroSaasServices2024 } from '../data/2024-real-micro-saas-services';
 import { innovativeITServices2024 } from '../data/2024-innovative-it-services';
 
+<<<<<<< HEAD
+// Type adapter function to convert different service types to the expected Service interface
+function adaptServiceToEnhancedShowcase(service: any) {
+  // Ensure category is always a string
+  const safeCategory = typeof service.category === 'string' ? service.category : 'Technology';
+  
+  // Check if service already has the required properties
+  if (service.tagline && service.period && service.popular !== undefined && service.icon && service.color) {
+    return {
+      ...service,
+      category: safeCategory
+    };
+=======
 const contactInfo = {
   mobile: '+1 302 464 0950',
   email: 'kleber@ziontechgroup.com',
@@ -146,6 +184,7 @@ const serviceCategories = [
     href: '/micro-saas',
     features: ['Content Automation', 'CRM Intelligence', 'Decision Engine'],
     gradient: 'bg-gradient-to-br from-teal-500/20 to-emerald-600/20'
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4d36
   }
 
   // Create a default adapted service
@@ -349,6 +388,9 @@ const heroFeatures = [
   }
 ];
 
+<<<<<<< HEAD
+const featuredServices = [
+=======
 const testimonials = [
   {
     name: 'Dr. Sarah Chen',
@@ -380,23 +422,35 @@ const testimonials = [
 ];
 
 const latestInnovations = [
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4d36
   {
     title: 'AI Consciousness Evolution Platform',
     description: 'Revolutionary AI with genuine emotional intelligence and self-awareness',
     price: '$50,000/month',
     icon: '🧠',
     color: 'from-violet-500 to-purple-600',
+<<<<<<< HEAD
+    href: '/ai-consciousness-evolution',
+    badge: 'New'
+=======
     href: '/ai-consciousness-evolution-2025',
     delay: 0.1
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4d36
   },
   {
     title: 'Space Mining & Resource Extraction',
     description: 'Breakthrough space resource extraction and asteroid mining technology',
     price: '$150,000/month',
     icon: '🚀',
+<<<<<<< HEAD
+    color: 'from-indigo-500 to-purple-600',
+    href: '/space-mining-platform',
+    badge: 'Revolutionary'
+=======
     color: 'from-purple-500 to-indigo-600',
     href: '/space-mining-platform',
     delay: 0.2
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4d36
   },
   {
     title: 'Quantum Cloud Infrastructure',
@@ -413,8 +467,13 @@ const latestInnovations = [
     price: '$8,500/month',
     icon: '✍️',
     color: 'from-blue-500 to-indigo-600',
+<<<<<<< HEAD
+    href: '/ai-content-automation-platform',
+    badge: 'Popular'
+=======
     href: '/quantum-cloud-infrastructure-platform',
     delay: 0.3
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4d36
   }
 ];
 
@@ -452,6 +511,44 @@ export default function Home() {
         <link rel="canonical" href="https://ziontechgroup.com" />
       </Head>
 
+<<<<<<< HEAD
+      {/* Navigation */}
+      <UltraFuturisticNavigation2034 />
+
+      {/* Hero Section with Enhanced Background */}
+      <UltraFuturisticBackground2034 intensity="high" theme="quantum">
+        <UltraFuturisticHero2032 />
+      </UltraFuturisticBackground2034>
+
+        {/* Floating Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          {[...Array(20)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-2 h-2 bg-cyan-400/30 rounded-full"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 5}s`
+              }}
+              animate={{
+                y: [0, -20, 0],
+                opacity: [0.3, 0.8, 0.3],
+              }}
+              transition={{
+                duration: 3 + Math.random() * 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+          ))}
+        </div>
+
+      {/* Enhanced Service Showcase with New 2024 Services */}
+      <EnhancedServiceShowcase services={adaptedServices} />
+
+          {/* Hero Stats */}
+=======
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Animated Background */}
@@ -487,18 +584,37 @@ export default function Home() {
 
         {/* Hero Content */}
         <div className="relative z-10 text-center px-4 max-w-7xl mx-auto">
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4d36
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 max-w-4xl mx-auto"
           >
+<<<<<<< HEAD
+            {heroStats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                className="text-center"
+              >
+                <div className="flex items-center justify-center mb-2 text-cyan-400">
+                  {stat.icon}
+                </div>
+                <div className="text-2xl md:text-3xl font-bold text-white mb-1">{stat.value}</div>
+                <div className="text-sm text-gray-400">{stat.label}</div>
+              </motion.div>
+            ))}
+=======
             <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-6">
               The Future of Technology
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               Experience revolutionary AI consciousness, quantum computing, and emerging technologies that will transform your business and accelerate innovation.
             </p>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4d36
           </motion.div>
 
           {/* Hero Stats */}
@@ -528,6 +644,21 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
+<<<<<<< HEAD
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          >
+            <Link href="/comprehensive-services-showcase-2025">
+              <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 hover:scale-105 shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40">
+                Explore All Services
+              </button>
+            </Link>
+            <Link href="/contact">
+              <button className="px-8 py-4 border-2 border-cyan-500/50 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-300 hover:scale-105">
+                Get Started Today
+              </button>
+            </Link>
+=======
             transition={{ duration: 0.8, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
@@ -549,10 +680,39 @@ export default function Home() {
                 </span>
               </button>
             </Link>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4d36
           </motion.div>
 
           {/* Contact Info */}
           <motion.div
+<<<<<<< HEAD
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="mt-12 p-6 bg-black/40 backdrop-blur-xl rounded-2xl border border-cyan-500/20 max-w-2xl mx-auto"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+              <div className="flex items-center justify-center space-x-2 text-cyan-300">
+                <Phone className="w-4 h-4" />
+                <span>{contactInfo.mobile}</span>
+              </div>
+              <div className="flex items-center justify-center space-x-2 text-cyan-300">
+                <Mail className="w-4 h-4" />
+                <span>{contactInfo.email}</span>
+              </div>
+              <div className="flex items-center justify-center space-x-2 text-cyan-300">
+                <MapPin className="w-4 h-4" />
+                <span className="text-center">{contactInfo.address}</span>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Featured Services Section */}
+      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+=======
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -653,6 +813,7 @@ export default function Home() {
       {/* Hero Features Section */}
       <section className="py-20 px-4 relative">
         <div className="max-w-7xl mx-auto">
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4d36
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -663,6 +824,16 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Featured <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Revolutionary Services</span>
             </h2>
+<<<<<<< HEAD
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Experience the future of technology with our most innovative and groundbreaking solutions
+            </p>
+          </motion.div>
+
+      {/* Footer */}
+      <UltraFuturisticFooter2034 />
+    </>
+=======
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
               We combine cutting-edge technology with human expertise to deliver exceptional results
             </p>
@@ -857,5 +1028,6 @@ export default function Home() {
         </div>
       </section>
     </Layout>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4d36
   );
 }
