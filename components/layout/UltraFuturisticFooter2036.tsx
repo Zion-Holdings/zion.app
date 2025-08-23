@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Zap, Globe, Phone, Mail, MapPin, ArrowRight, 
   Brain, Atom, Shield, Rocket, Target, BookOpen, Users,
@@ -8,7 +8,8 @@ import {
   Twitter, Linkedin, Facebook, Instagram, Youtube, Github, MessageCircle, MessageSquare,
   ArrowUp, ExternalLink, Building, Code, Database, Network, Server, Monitor, Smartphone, Camera, Gamepad2,
   Palette, Music, Film, BookOpenCheck, HelpCircle, FileText, Video, Headphones,
-  Sparkles as SparklesIcon, Zap as ZapIcon, Target as TargetIcon, Atom as AtomIcon, Brain as BrainIcon
+  Sparkles as SparklesIcon, Zap as ZapIcon, Target as TargetIcon, Atom as AtomIcon, Brain as BrainIcon,
+  ChevronUp, ChevronDown
 } from 'lucide-react';
 
 const contactInfo = {
@@ -98,42 +99,12 @@ const footerSections = [
       { name: 'AI Financial Planning Platform', href: '/ai-financial-planning-platform' },
       { name: 'Supply Chain Optimization', href: '/intelligent-supply-chain-optimization' },
       { name: 'Content Automation Platform', href: '/intelligent-content-automation-platform' },
-      { name: 'CRM Intelligence Suite', href: '/smart-crm-intelligence-suite' },
-      { name: 'SEO Automation Suite', href: '/seo-automation-suite' },
-      { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent' },
-      { name: 'Managed Postgres HA', href: '/managed-postgres-ha' }
-    ]
-  },
-  {
-    title: 'Specialized Solutions',
-    description: 'Industry-specific and specialized services',
-    icon: <Target className="w-5 h-5 text-pink-400" />,
-    links: [
-      { name: 'Browser Automation Cloud', href: '/browser-automation-cloud' },
-      { name: 'Secrets Rotation Automation', href: '/secrets-rotation-automation' },
-      { name: 'API Performance Testing', href: '/api-performance-testing' },
-      { name: 'Sales Copilot', href: '/sales-copilot' },
-      { name: 'Serverless Cron Manager', href: '/serverless-cron-manager' },
-      { name: 'SSO in a Box', href: '/sso-in-a-box' },
-      { name: 'Status Pages & SLO Monitor', href: '/status-pages-slo' },
-      { name: 'Synthetic Monitor Recorder', href: '/synthetic-monitor-recorder' },
-      { name: 'TLS Certificate Monitor', href: '/tls-certificate-monitor' },
-      { name: 'Uptime SLO Monitor', href: '/uptime-slo-monitor' }
+      { name: 'AI Marketing Automation', href: '/ai-marketing-automation' },
+      { name: 'AI Sales Intelligence', href: '/ai-sales-intelligence' },
+      { name: 'AI Customer Support', href: '/ai-customer-support' },
+      { name: 'AI Business Intelligence', href: '/ai-business-intelligence' }
     ]
   }
-];
-
-const quickLinks = [
-  { name: 'All Services', href: '/comprehensive-services-showcase-2025' },
-  { name: 'Pricing', href: '/pricing' },
-  { name: 'Market Pricing', href: '/market-pricing' },
-  { name: 'About Us', href: '/about' },
-  { name: 'Contact', href: '/contact' },
-  { name: 'Support', href: '/support' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'Careers', href: '/careers' },
-  { name: 'Partners', href: '/partners' },
-  { name: 'Investors', href: '/investors' }
 ];
 
 const socialLinks = [
@@ -144,222 +115,210 @@ const socialLinks = [
 ];
 
 export default function UltraFuturisticFooter2036() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set());
+
+  const toggleSection = (title: string) => {
+    const newExpanded = new Set(expandedSections);
+    if (newExpanded.has(title)) {
+      newExpanded.delete(title);
+    } else {
+      newExpanded.add(title);
+    }
+    setExpandedSections(newExpanded);
   };
 
-  return (
-    <footer className="relative bg-black/95 backdrop-blur-xl border-t border-white/10 overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/5 to-cyan-900/5"></div>
-      
-      {/* Main Footer Content */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* Top Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-8 mb-12">
-          {footerSections.map((section, index) => (
-            <motion.div
-              key={section.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              className="space-y-4"
-            >
-              <div className="flex items-center space-x-2">
-                {section.icon}
-                <h3 className="text-white font-semibold text-lg">{section.title}</h3>
-              </div>
-              <p className="text-white/60 text-sm">{section.description}</p>
-              <ul className="space-y-2">
-                {section.links.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      className={`text-sm transition-colors hover:text-cyan-400 ${
-                        link.featured ? 'text-cyan-300 font-medium' : 'text-white/70'
-                      }`}
-                    >
-                      {link.name}
-                      {link.featured && (
-                        <span className="ml-2 text-xs bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-2 py-1 rounded-full">
-                          Featured
-                        </span>
-                      )}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
-        </div>
+  const isSectionExpanded = (title: string) => expandedSections.has(title);
 
-        {/* Middle Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          {/* Contact Information */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.6 }}
-            className="space-y-6"
-          >
-            <div>
-              <h3 className="text-white font-semibold text-xl mb-4">Get in Touch</h3>
-              <p className="text-white/60 text-sm mb-6">
-                Ready to transform your business with cutting-edge technology? 
-                Let's discuss how our innovative solutions can drive your success.
-              </p>
+  return (
+    <footer className="bg-gray-900/95 backdrop-blur-md border-t border-gray-700/50 relative z-10" role="contentinfo">
+      {/* Main Footer Content */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Top Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-12 mb-16">
+          {/* Company Info */}
+          <div className="lg:col-span-1 xl:col-span-1">
+            <div className="flex items-center space-x-3 mb-6">
+              <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-xl flex items-center justify-center">
+                <Brain className="w-7 h-7 text-white" />
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">
+                  Zion Tech Group
+                </h3>
+                <p className="text-sm text-gray-400">Future Technology Solutions</p>
+              </div>
             </div>
             
-            <div className="space-y-4">
-              <a
+            <p className="text-gray-300 mb-6 leading-relaxed">
+              Pioneering the future of technology with innovative solutions that drive business transformation and unlock human potential.
+            </p>
+
+            {/* Contact Info */}
+            <div className="space-y-3">
+              <a 
                 href={`tel:${contactInfo.mobile}`}
-                className="flex items-center space-x-3 text-white/80 hover:text-cyan-400 transition-colors"
+                className="flex items-center space-x-3 text-gray-300 hover:text-cyan-400 transition-colors duration-200"
+                aria-label={`Call us at ${contactInfo.mobile}`}
               >
-                <Phone className="w-5 h-5" />
+                <Phone className="w-4 h-4" />
                 <span>{contactInfo.mobile}</span>
               </a>
-              
-              <a
+              <a 
                 href={`mailto:${contactInfo.email}`}
-                className="flex items-center space-x-3 text-white/80 hover:text-cyan-400 transition-colors"
+                className="flex items-center space-x-3 text-gray-300 hover:text-cyan-400 transition-colors duration-200"
+                aria-label={`Email us at ${contactInfo.email}`}
               >
-                <Mail className="w-5 h-5" />
+                <Mail className="w-4 h-4" />
                 <span>{contactInfo.email}</span>
               </a>
-              
-              <div className="flex items-start space-x-3 text-white/80">
-                <MapPin className="w-5 h-5 mt-0.5" />
+              <div className="flex items-start space-x-3 text-gray-300">
+                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
                 <span className="text-sm">{contactInfo.address}</span>
               </div>
-              
-              <a
-                href={contactInfo.website}
-                className="flex items-center space-x-3 text-white/80 hover:text-cyan-400 transition-colors"
-              >
-                <Globe className="w-5 h-5" />
-                <span>{contactInfo.website.replace('https://', '')}</span>
-              </a>
             </div>
-          </motion.div>
 
-          {/* Quick Links & Social */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.7 }}
-            className="space-y-6"
-          >
-            <div>
-              <h3 className="text-white font-semibold text-xl mb-4">Quick Links</h3>
-              <div className="grid grid-cols-2 gap-2">
-                {quickLinks.map((link) => (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    className="text-sm text-white/70 hover:text-cyan-400 transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-              </div>
+            {/* Social Links */}
+            <div className="flex space-x-4 mt-6">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 bg-gray-800/50 hover:bg-cyan-500/20 text-gray-400 hover:text-cyan-400 rounded-lg transition-all duration-200 hover:scale-110"
+                  aria-label={`Follow us on ${social.name}`}
+                >
+                  {social.icon}
+                </a>
+              ))}
             </div>
-            
-            <div>
-              <h3 className="text-white font-semibold text-lg mb-4">Follow Us</h3>
-              <div className="flex space-x-4">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 bg-white/5 hover:bg-white/10 rounded-lg text-white/70 hover:text-cyan-400 transition-all duration-300 hover:scale-110"
+          </div>
+
+          {/* Services Sections */}
+          <div className="lg:col-span-1 xl:col-span-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {footerSections.map((section) => (
+                <div key={section.title} className="space-y-4">
+                  {/* Mobile Expandable Header */}
+                  <button
+                    onClick={() => toggleSection(section.title)}
+                    className="flex items-center justify-between w-full md:hidden text-left"
+                    aria-expanded={isSectionExpanded(section.title)}
+                    aria-controls={`footer-section-${section.title}`}
                   >
-                    {social.icon}
-                  </a>
-                ))}
-              </div>
+                    <div className="flex items-center space-x-2">
+                      {section.icon}
+                      <h4 className="font-semibold text-white">{section.title}</h4>
+                    </div>
+                    {isSectionExpanded(section.title) ? (
+                      <ChevronUp className="w-4 h-4 text-gray-400" />
+                    ) : (
+                      <ChevronDown className="w-4 h-4 text-gray-400" />
+                    )}
+                  </button>
+
+                  {/* Desktop Header */}
+                  <div className="hidden md:block">
+                    <div className="flex items-center space-x-2 mb-4">
+                      {section.icon}
+                      <h4 className="font-semibold text-white">{section.title}</h4>
+                    </div>
+                    <p className="text-sm text-gray-400 mb-4">{section.description}</p>
+                  </div>
+
+                  {/* Links */}
+                  <AnimatePresence>
+                    <motion.div
+                      id={`footer-section-${section.title}`}
+                      initial={false}
+                      animate={{ 
+                        height: isSectionExpanded(section.title) || window.innerWidth >= 768 ? 'auto' : 0,
+                        opacity: isSectionExpanded(section.title) || window.innerWidth >= 768 ? 1 : 0
+                      }}
+                      transition={{ duration: 0.3, ease: 'easeInOut' }}
+                      className="overflow-hidden"
+                    >
+                      <ul className="space-y-2">
+                        {section.links.slice(0, 6).map((link) => (
+                          <li key={link.name}>
+                            <Link
+                              href={link.href}
+                              className={`flex items-center space-x-2 text-sm text-gray-300 hover:text-cyan-400 transition-colors duration-200 group ${
+                                link.featured ? 'font-medium' : ''
+                              }`}
+                            >
+                              {link.featured && (
+                                <Star className="w-3 h-3 text-yellow-400 fill-current" />
+                              )}
+                              <span className="group-hover:translate-x-1 transition-transform duration-200">
+                                {link.name}
+                              </span>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </motion.div>
+                  </AnimatePresence>
+                </div>
+              ))}
             </div>
-          </motion.div>
+          </div>
+        </div>
+
+        {/* Newsletter Section */}
+        <div className="border-t border-gray-700/50 pt-12 mb-12">
+          <div className="max-w-2xl mx-auto text-center">
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Stay Updated with Future Tech
+            </h3>
+            <p className="text-gray-300 mb-6">
+              Get the latest insights on AI, quantum computing, and emerging technologies delivered to your inbox.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-transparent"
+                aria-label="Email address for newsletter"
+              />
+              <button className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25">
+                Subscribe
+              </button>
+            </div>
+          </div>
         </div>
 
         {/* Bottom Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
-          className="border-t border-white/10 pt-8"
-        >
+        <div className="border-t border-gray-700/50 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-lg"></div>
-              <div>
-                <span className="text-white font-bold text-lg">ZionTech Group</span>
-                <p className="text-white/60 text-sm">Future Technology Solutions</p>
-              </div>
+            <div className="text-gray-400 text-sm">
+              © {new Date().getFullYear()} Zion Tech Group. All rights reserved.
             </div>
-            
-            <div className="flex items-center space-x-6 text-sm text-white/60">
-              <Link href="/privacy" className="hover:text-cyan-400 transition-colors">
+            <div className="flex space-x-6 text-sm">
+              <Link href="/privacy" className="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="hover:text-cyan-400 transition-colors">
+              <Link href="/terms" className="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
                 Terms of Service
               </Link>
-              <Link href="/security" className="hover:text-cyan-400 transition-colors">
-                Security
-              </Link>
-              <Link href="/accessibility" className="hover:text-cyan-400 transition-colors">
-                Accessibility
+              <Link href="/cookies" className="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
+                Cookie Policy
               </Link>
             </div>
-            
-            <button
-              onClick={scrollToTop}
-              className="p-3 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-400/30 rounded-lg text-cyan-400 hover:from-cyan-500/30 hover:to-purple-500/30 transition-all duration-300 hover:scale-110"
-            >
-              <ArrowUp className="w-5 h-5" />
-            </button>
           </div>
-          
-          <div className="mt-6 text-center">
-            <p className="text-white/50 text-sm">
-              © {new Date().getFullYear()} ZionTech Group. All rights reserved. 
-              Pioneering the future of technology with AI, quantum computing, and space technology.
-            </p>
-          </div>
-        </motion.div>
+        </div>
       </div>
 
-      {/* Floating Elements */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <motion.div
-          className="absolute top-20 right-20 w-32 h-32 border border-cyan-400/10 rounded-full"
-          animate={{
-            rotate: [0, 360],
-            scale: [1, 1.2, 1],
-            opacity: [0.1, 0.3, 0.1]
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
-        
-        <motion.div
-          className="absolute bottom-20 left-20 w-24 h-24 border border-purple-400/10 transform rotate-45"
-          animate={{
-            rotate: [45, 405],
-            scale: [1, 1.1, 1],
-            opacity: [0.1, 0.2, 0.1]
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
+      {/* Back to Top Button */}
+      <div className="text-center pb-6">
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="inline-flex items-center space-x-2 px-4 py-2 text-gray-400 hover:text-cyan-400 transition-colors duration-200 group"
+          aria-label="Back to top"
+        >
+          <ArrowUp className="w-4 h-4 group-hover:-translate-y-1 transition-transform duration-200" />
+          <span>Back to Top</span>
+        </button>
       </div>
     </footer>
   );

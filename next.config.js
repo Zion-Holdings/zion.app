@@ -3,6 +3,10 @@ const nextConfig = {
   // Enable React strict mode for better development experience
   reactStrictMode: true,
   
+  // Disable static generation to prevent SSR issues
+  output: 'export',
+  trailingSlash: true,
+  
   // Enable experimental features for better performance
   experimental: {
     // Enable modern JavaScript features
@@ -14,6 +18,7 @@ const nextConfig = {
 
   // Image optimization
   images: {
+    unoptimized: true, // Required for static export
     domains: ['ziontechgroup.com'],
     formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
@@ -148,17 +153,11 @@ const nextConfig = {
   // Powered by header
   poweredByHeader: false,
 
-  // Trailing slash
-  trailingSlash: false,
-
   // Base path
   basePath: '',
 
   // Asset prefix
   assetPrefix: '',
-
-  // Output configuration
-  output: 'standalone',
 };
 
 module.exports = nextConfig;

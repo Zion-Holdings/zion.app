@@ -23,3 +23,10 @@ export default function ZeroTrustSecurityPlatform() {
 		/>
 	);
 }
+
+// Disable static generation to prevent SSR issues
+export async function getServerSideProps() {
+  return {
+    props: {}
+  };
+}

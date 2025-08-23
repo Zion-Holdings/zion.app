@@ -1,0 +1,440 @@
+/* Accessibility Styles for Zion Tech Group */
+
+/* High Contrast Mode */
+.high-contrast {
+  --text-primary: #ffffff !important;
+  --text-secondary: #ffff00 !important;
+  --bg-primary: #000000 !important;
+  --bg-secondary: #000080 !important;
+  --accent-primary: #ffff00 !important;
+  --accent-secondary: #00ff00 !important;
+  --border-primary: #ffffff !important;
+  --border-secondary: #ffff00 !important;
+}
+
+.high-contrast * {
+  color: var(--text-primary) !important;
+  background-color: var(--bg-primary) !important;
+  border-color: var(--border-primary) !important;
+}
+
+.high-contrast .bg-gradient-to-r,
+.high-contrast .bg-gradient-to-br,
+.high-contrast .bg-gradient-to-tr {
+  background: var(--accent-primary) !important;
+  color: var(--bg-primary) !important;
+}
+
+.high-contrast button,
+.high-contrast .btn {
+  background: var(--accent-primary) !important;
+  color: var(--bg-primary) !important;
+  border: 2px solid var(--border-primary) !important;
+}
+
+/* Large Text Mode */
+.large-text {
+  --font-size-base: 1.25rem;
+  --font-size-lg: 1.5rem;
+  --font-size-xl: 1.875rem;
+  --font-size-2xl: 2.25rem;
+  --font-size-3xl: 3rem;
+  --font-size-4xl: 3.75rem;
+  --font-size-5xl: 4.5rem;
+  --font-size-6xl: 6rem;
+  --font-size-7xl: 7.5rem;
+  --font-size-8xl: 9rem;
+}
+
+.large-text body {
+  font-size: var(--font-size-base) !important;
+  line-height: 1.6 !important;
+}
+
+.large-text h1 { font-size: var(--font-size-6xl) !important; }
+.large-text h2 { font-size: var(--font-size-5xl) !important; }
+.large-text h3 { font-size: var(--font-size-4xl) !important; }
+.large-text h4 { font-size: var(--font-size-3xl) !important; }
+.large-text h5 { font-size: var(--font-size-2xl) !important; }
+.large-text h6 { font-size: var(--font-size-xl) !important; }
+
+.large-text p, .large-text span, .large-text div {
+  font-size: var(--font-size-base) !important;
+}
+
+.large-text button, .large-text .btn {
+  font-size: var(--font-size-lg) !important;
+  padding: 1rem 2rem !important;
+}
+
+/* Reduced Motion Mode */
+.reduced-motion *,
+.reduced-motion *::before,
+.reduced-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+.reduced-motion .animate-pulse,
+.reduced-motion .animate-spin,
+.reduced-motion .animate-bounce {
+  animation: none !important;
+}
+
+.reduced-motion .hover\:scale-105:hover,
+.reduced-motion .hover\:scale-110:hover,
+.reduced-motion .hover\:scale-125:hover {
+  transform: none !important;
+}
+
+/* High Saturation Mode */
+.high-saturation {
+  filter: saturate(1.5) contrast(1.2) brightness(1.1) !important;
+}
+
+.high-saturation img,
+.high-saturation video,
+.high-saturation canvas {
+  filter: saturate(1.8) contrast(1.3) brightness(1.2) !important;
+}
+
+/* Focus Indicator Mode */
+.focus-indicator *:focus {
+  outline: 3px solid #ffff00 !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 3px rgba(255, 255, 0, 0.5) !important;
+}
+
+.focus-indicator button:focus,
+.focus-indicator a:focus,
+.focus-indicator input:focus,
+.focus-indicator select:focus,
+.focus-indicator textarea:focus {
+  outline: 4px solid #ffff00 !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 0 4px rgba(255, 255, 0, 0.6) !important;
+}
+
+/* Color Blindness Support */
+.protanopia {
+  filter: url('#protanopia-filter') !important;
+}
+
+.deuteranopia {
+  filter: url('#deuteranopia-filter') !important;
+}
+
+.tritanopia {
+  filter: url('#tritanopia-filter') !important;
+}
+
+/* Font Size Classes */
+.text-small {
+  font-size: 0.875rem !important;
+  line-height: 1.25rem !important;
+}
+
+.text-medium {
+  font-size: 1rem !important;
+  line-height: 1.5rem !important;
+}
+
+.text-large {
+  font-size: 1.125rem !important;
+  line-height: 1.75rem !important;
+}
+
+.text-extra-large {
+  font-size: 1.25rem !important;
+  line-height: 1.75rem !important;
+}
+
+/* Theme Support */
+.theme-light {
+  --bg-primary: #ffffff !important;
+  --bg-secondary: #f3f4f6 !important;
+  --text-primary: #111827 !important;
+  --text-secondary: #4b5563 !important;
+  --border-primary: #d1d5db !important;
+  --accent-primary: #3b82f6 !important;
+}
+
+.theme-dark {
+  --bg-primary: #111827 !important;
+  --bg-secondary: #1f2937 !important;
+  --text-primary: #f9fafb !important;
+  --text-secondary: #d1d5db !important;
+  --border-primary: #374151 !important;
+  --accent-primary: #60a5fa !important;
+}
+
+/* Screen Reader Only */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Skip Links */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #000000;
+  color: #ffffff;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 10000;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Enhanced Focus Styles */
+*:focus-visible {
+  outline: 2px solid #3b82f6 !important;
+  outline-offset: 2px !important;
+}
+
+/* High Contrast Focus */
+.high-contrast *:focus-visible {
+  outline: 3px solid #ffff00 !important;
+  outline-offset: 3px !important;
+}
+
+/* Button and Link Focus States */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #3b82f6 !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3) !important;
+}
+
+.high-contrast button:focus-visible,
+.high-contrast a:focus-visible,
+.high-contrast input:focus-visible,
+.high-contrast select:focus-visible,
+.high-contrast textarea:focus-visible {
+  outline: 4px solid #ffff00 !important;
+  outline-offset: 4px !important;
+  box-shadow: 0 0 0 4px rgba(255, 255, 0, 0.5) !important;
+}
+
+/* Form Element Enhancements */
+input, select, textarea {
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+
+.large-text input,
+.large-text select,
+.large-text textarea {
+  font-size: var(--font-size-base) !important;
+  padding: 0.75rem 1rem !important;
+}
+
+/* Enhanced Button Styles */
+button, .btn {
+  min-height: 44px !important;
+  min-width: 44px !important;
+}
+
+.large-text button,
+.large-text .btn {
+  min-height: 48px !important;
+  min-width: 48px !important;
+}
+
+/* Link Underlines for High Contrast */
+.high-contrast a:not(.btn):not(button) {
+  text-decoration: underline !important;
+  text-underline-offset: 2px !important;
+}
+
+/* Enhanced Navigation */
+nav a:focus-visible,
+nav button:focus-visible {
+  background: rgba(59, 130, 246, 0.2) !important;
+  outline: 3px solid #3b82f6 !important;
+  outline-offset: 2px !important;
+}
+
+.high-contrast nav a:focus-visible,
+.high-contrast nav button:focus-visible {
+  background: rgba(255, 255, 0, 0.3) !important;
+  outline: 4px solid #ffff00 !important;
+  outline-offset: 3px !important;
+}
+
+/* Table Enhancements */
+table {
+  border-collapse: collapse !important;
+}
+
+th, td {
+  border: 1px solid var(--border-primary, #d1d5db) !important;
+  padding: 0.5rem !important;
+}
+
+.high-contrast th,
+.high-contrast td {
+  border: 2px solid var(--border-primary, #ffffff) !important;
+}
+
+/* List Enhancements */
+ul, ol {
+  padding-left: 1.5rem !important;
+}
+
+.large-text ul,
+.large-text ol {
+  padding-left: 2rem !important;
+}
+
+/* Image Alt Text Enhancement */
+img[alt] {
+  border: 1px solid transparent !important;
+}
+
+img[alt]:focus {
+  border-color: #3b82f6 !important;
+  outline: 2px solid #3b82f6 !important;
+  outline-offset: 2px !important;
+}
+
+.high-contrast img[alt]:focus {
+  border-color: #ffff00 !important;
+  outline: 3px solid #ffff00 !important;
+  outline-offset: 3px !important;
+}
+
+/* Print Styles */
+@media print {
+  .sr-only,
+  .skip-link,
+  button,
+  .btn {
+    display: none !important;
+  }
+  
+  * {
+    background: transparent !important;
+    color: #000000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  a[href]:after {
+    content: " (" attr(href) ")" !important;
+  }
+  
+  abbr[title]:after {
+    content: " (" attr(title) ")" !important;
+  }
+}
+
+/* High Contrast Print */
+@media print {
+  .high-contrast * {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #000000 !important;
+  }
+}
+
+/* Responsive Accessibility */
+@media (max-width: 768px) {
+  .large-text {
+    --font-size-base: 1.125rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 1.875rem;
+    --font-size-3xl: 2.25rem;
+    --font-size-4xl: 3rem;
+    --font-size-5xl: 3.75rem;
+    --font-size-6xl: 4.5rem;
+    --font-size-7xl: 6rem;
+    --font-size-8xl: 7.5rem;
+  }
+  
+  .focus-indicator *:focus {
+    outline-width: 4px !important;
+    outline-offset: 3px !important;
+  }
+  
+  button, .btn {
+    min-height: 48px !important;
+    min-width: 48px !important;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .theme-auto {
+    --bg-primary: #111827;
+    --bg-secondary: #1f2937;
+    --text-primary: #f9fafb;
+    --text-secondary: #d1d5db;
+    --border-primary: #374151;
+    --accent-primary: #60a5fa;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .theme-auto {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f3f4f6;
+    --text-primary: #111827;
+    --text-secondary: #4b5563;
+    --border-primary: #d1d5db;
+    --accent-primary: #3b82f6;
+  }
+}
+
+/* Reduced Motion Media Query */
+@media (prefers-reduced-motion: reduce) {
+  .reduced-motion *,
+  .reduced-motion *::before,
+  .reduced-motion *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High Contrast Media Query */
+@media (prefers-contrast: high) {
+  .high-contrast {
+    --text-primary: #ffffff;
+    --text-secondary: #ffff00;
+    --bg-primary: #000000;
+    --bg-secondary: #000080;
+    --accent-primary: #ffff00;
+    --accent-secondary: #00ff00;
+    --border-primary: #ffffff;
+    --border-secondary: #ffff00;
+  }
+}
+
+/* Print Media Query */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+}
