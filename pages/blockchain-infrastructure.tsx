@@ -1,55 +1,55 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { Zap, Brain, Target, Search, Award, Clock, CheckCircle, Shield, Database, Server, Layers, FileText } from 'lucide-react';
+import { Link, Target, Zap, Users, Award, Clock, CheckCircle, Shield, Database, Server, Globe, Lock } from 'lucide-react';
 
-const AIAutonomousResearch: React.FC = () => {
+const BlockchainInfrastructure: React.FC = () => {
   const features = [
     {
-      icon: Zap,
-      title: "Autonomous Discovery",
-      description: "AI-driven research and discovery processes"
+      icon: Link,
+      title: "Distributed Networks",
+      description: "Robust blockchain infrastructure with high availability"
     },
     {
-      icon: Brain,
-      title: "Intelligent Analysis",
-      description: "Advanced AI analysis and pattern recognition"
+      icon: Shield,
+      title: "Security First",
+      description: "Enterprise-grade security and encryption protocols"
+    },
+    {
+      icon: Zap,
+      title: "High Performance",
+      description: "Scalable blockchain solutions for enterprise use"
     },
     {
       icon: Target,
-      title: "Research Automation",
-      description: "Automated research workflows and processes"
-    },
-    {
-      icon: Search,
-      title: "Data Mining",
-      description: "Intelligent data extraction and analysis"
+      title: "Smart Contracts",
+      description: "Advanced smart contract development and deployment"
     }
   ];
 
   const capabilities = [
-    "Autonomous research workflows",
-    "Intelligent data analysis",
-    "Pattern recognition algorithms",
-    "Automated hypothesis generation",
-    "Research process optimization",
-    "Cross-domain knowledge synthesis"
+    "Blockchain network deployment",
+    "Smart contract development",
+    "Consensus mechanism implementation",
+    "Cross-chain interoperability",
+    "Security auditing and testing",
+    "Performance optimization"
   ];
 
   const applications = [
-    "Scientific research",
-    "Market analysis",
-    "Technology development",
-    "Medical research",
-    "Academic studies",
-    "Innovation discovery"
+    "Supply chain management",
+    "Financial services",
+    "Digital identity",
+    "Asset tokenization",
+    "Decentralized finance",
+    "Voting systems"
   ];
 
   return (
     <Layout
-      title="AI Autonomous Research - Zion Tech Group"
-      description="Revolutionary AI autonomous research platform that automates research processes, discovers patterns, and generates insights across multiple domains."
-      keywords="AI research, autonomous research, AI discovery, research automation, Zion Tech Group"
+      title="Blockchain Infrastructure - Zion Tech Group"
+      description="Advanced blockchain infrastructure platform providing enterprise-grade distributed ledger technology and smart contract solutions."
+      keywords="blockchain infrastructure, distributed ledger, smart contracts, enterprise blockchain, Zion Tech Group"
     >
       <div className="min-h-screen bg-black text-white">
         {/* Hero Section */}
@@ -66,22 +66,22 @@ const AIAutonomousResearch: React.FC = () => {
             >
               <div className="flex justify-center mb-6">
                 <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center">
-                  <Zap className="w-10 h-10 text-white" />
+                  <Link className="w-10 h-10 text-white" />
                 </div>
               </div>
               
               <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 bg-clip-text text-transparent">
-                AI Autonomous Research
+                Blockchain Infrastructure
               </h1>
               
               <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Transform research with our AI autonomous research platform, 
-                automating discovery processes and generating breakthrough insights.
+                Build the future with our enterprise-grade blockchain infrastructure platform, 
+                featuring distributed networks, smart contracts, and advanced security protocols.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button className="px-8 py-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-semibold rounded-lg hover:from-green-600 hover:to-emerald-600 transition-all duration-200 transform hover:scale-105">
-                  Start Research
+                  Build Now
                 </button>
                 <button className="px-8 py-3 border border-green-500 text-green-400 font-semibold rounded-lg hover:bg-green-500 hover:text-white transition-all duration-200">
                   Request Demo
@@ -105,7 +105,7 @@ const AIAutonomousResearch: React.FC = () => {
                 Revolutionary Features
               </h2>
               <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-                Our AI autonomous research platform delivers breakthrough capabilities
+                Our blockchain infrastructure platform delivers enterprise-grade capabilities
               </p>
             </motion.div>
 
@@ -144,7 +144,7 @@ const AIAutonomousResearch: React.FC = () => {
                 Core Capabilities
               </h2>
               <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-                Advanced AI research capabilities that revolutionize discovery
+                Advanced blockchain infrastructure capabilities that transform industries
               </p>
             </motion.div>
 
@@ -179,10 +179,10 @@ const AIAutonomousResearch: React.FC = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
-                Research Applications
+                Real-World Applications
               </h2>
               <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-                Transform research across multiple domains
+                Transform industries with blockchain infrastructure
               </p>
             </motion.div>
 
@@ -217,13 +217,13 @@ const AIAutonomousResearch: React.FC = () => {
               className="text-center"
             >
               <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
-                Ready for AI Research?
+                Ready to Build on Blockchain?
               </h2>
               <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-                Automate your research with AI intelligence
+                Create the future with enterprise blockchain infrastructure
               </p>
               <button className="px-10 py-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-semibold text-lg rounded-lg hover:from-green-600 hover:to-emerald-600 transition-all duration-200 transform hover:scale-105">
-                Start AI Research
+                Start Blockchain Development
               </button>
             </motion.div>
           </div>
@@ -233,4 +233,4 @@ const AIAutonomousResearch: React.FC = () => {
   );
 };
 
-export default AIAutonomousResearch;
+export default BlockchainInfrastructure;

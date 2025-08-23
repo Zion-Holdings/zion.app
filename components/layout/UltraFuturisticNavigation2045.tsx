@@ -239,7 +239,7 @@ const navigationItems: NavigationItem[] = [
   },
   {
     label: 'Company',
-    href: '/company',
+    href: '/about',
     icon: <Building className="w-4 h-4" />,
     description: 'About Zion Tech Group',
     neonColor: 'shadow-cyan-400/50',
