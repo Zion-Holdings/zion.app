@@ -1,289 +1,256 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
-import { motion } from 'framer-motion';
-import { 
-  FileText, Star, Zap, BookOpen, Users, Calendar, 
-  ArrowRight, Play, TrendingUp, Globe, Database, Brain, Rocket,
-  Lock, Cloud, Network, GraduationCap, DollarSign, Clock, Target, Code, Handshake
-} from 'lucide-react';
+import Head from 'next/head';
+import Link from 'next/link';
 
-const ResourcesPage: React.FC = () => {
-  const resourceCategories = [
+export default function ResourcesPage() {
+  const caseStudies = [
     {
-      title: "Knowledge Base",
-      description: "Comprehensive guides and tutorials for our technologies",
-      icon: BookOpen,
-      color: "from-blue-500 to-cyan-500",
-      resources: [
-        { name: "Getting Started Guide", href: "/docs/getting-started", description: "Quick start guide for new users" },
-        { name: "API Documentation", href: "/docs/api", description: "Complete API reference and examples" },
-        { name: "Best Practices", href: "/docs/best-practices", description: "Industry best practices and guidelines" },
-        { name: "Troubleshooting", href: "/docs/troubleshooting", description: "Common issues and solutions" }
-      ]
+      id: 'ai-automation-manufacturing',
+      title: 'AI-Powered Manufacturing Automation',
+      company: 'Global Manufacturing Corp',
+      industry: 'Manufacturing',
+      results: '40% increase in production efficiency, 60% reduction in downtime',
+      description: 'How we implemented autonomous AI systems to revolutionize manufacturing processes.'
     },
     {
-      title: "Blog & Insights",
-      description: "Latest industry insights and company updates",
-      icon: FileText,
-      color: "from-purple-500 to-pink-500",
-      resources: [
-        { name: "Latest Posts", href: "/blog", description: "Recent articles and insights" },
-        { name: "Industry Trends", href: "/blog/trends", description: "Analysis of emerging technology trends" },
-        { name: "Company News", href: "/blog/news", description: "Updates about Zion Tech Group" },
-        { name: "Expert Opinions", href: "/blog/experts", description: "Insights from our technology experts" }
-      ]
+      id: 'content-generation-scale',
+      title: 'Scaling Content Generation 10x',
+      company: 'Digital Marketing Agency',
+      industry: 'Marketing',
+      results: '10x increase in content output, 85% improvement in engagement',
+      description: 'Transforming content creation through autonomous AI systems.'
     },
     {
-      title: "Case Studies",
-      description: "Real-world success stories and implementations",
-      icon: Star,
-      color: "from-green-500 to-emerald-500",
-      resources: [
-        { name: "Success Stories", href: "/case-studies", description: "Client success stories and results" },
-        { name: "Implementation Guides", href: "/case-studies/implementations", description: "Step-by-step implementation examples" },
-        { name: "ROI Analysis", href: "/case-studies/roi", description: "Return on investment case studies" },
-        { name: "Industry Solutions", href: "/case-studies/industries", description: "Industry-specific solutions" }
-      ]
-    },
-    {
-      title: "Webinars & Events",
-      description: "Educational content and live events",
-      icon: Zap,
-      color: "from-yellow-500 to-orange-500",
-      resources: [
-        { name: "Upcoming Webinars", href: "/webinars", description: "Register for upcoming live events" },
-        { name: "On-Demand Content", href: "/webinars/on-demand", description: "Recorded webinars and presentations" },
-        { name: "Event Calendar", href: "/events", description: "Complete calendar of events" },
-        { name: "Speaker Series", href: "/webinars/speakers", description: "Featured speakers and topics" }
-      ]
+      id: 'cloud-infrastructure-optimization',
+      title: 'Cloud Infrastructure Optimization',
+      company: 'E-commerce Platform',
+      industry: 'Technology',
+      results: '50% reduction in cloud costs, 99.9% uptime achieved',
+      description: 'Building self-healing, auto-scaling cloud infrastructure.'
     }
   ];
 
-  const featuredResources = [
+  const whitepapers = [
     {
-      title: "AI Consciousness Development Guide",
-      description: "Complete guide to developing AI systems with consciousness-like properties",
-      href: "/docs/ai-consciousness-guide",
-      icon: Brain,
-      color: "from-purple-500 to-pink-500"
+      id: 'autonomous-systems-guide',
+      title: 'The Complete Guide to Autonomous Systems',
+      description: 'A comprehensive overview of autonomous technology, implementation strategies, and best practices.',
+      downloadUrl: '/contact?resource=autonomous-systems-guide',
+      pages: '45',
+      category: 'Technology'
     },
     {
-      title: "Quantum Computing Primer",
-      description: "Introduction to quantum computing and its business applications",
-      href: "/docs/quantum-computing-primer",
-      icon: Target,
-      color: "from-cyan-500 to-blue-500"
+      id: 'ai-ethics-framework',
+      title: 'AI Ethics Framework for Business',
+      description: 'Establishing ethical guidelines for AI implementation in enterprise environments.',
+      downloadUrl: '/contact?resource=ai-ethics-framework',
+      pages: '32',
+      category: 'Ethics'
     },
     {
-      title: "Cybersecurity Best Practices",
-      description: "Essential cybersecurity practices for modern businesses",
-      href: "/docs/cybersecurity-best-practices",
-      icon: Lock,
-      color: "from-red-500 to-orange-500"
+      id: 'automation-roi-calculator',
+      title: 'Automation ROI Calculator Guide',
+      description: 'How to calculate and maximize return on investment for automation initiatives.',
+      downloadUrl: '/contact?resource=automation-roi-calculator',
+      pages: '28',
+      category: 'Business'
     }
   ];
 
-  const quickLinks = [
-    { name: "Documentation", href: "/docs", icon: BookOpen },
-    { name: "Support Center", href: "/support", icon: Users },
-    { name: "Training Programs", href: "/training", icon: GraduationCap },
-    { name: "Developer Portal", href: "/developers", icon: Code },
-    { name: "Partner Resources", href: "/partners", icon: Handshake },
-    { name: "Research Papers", href: "/research", icon: FileText }
+  const tools = [
+    {
+      id: 'automation-assessment',
+      title: 'Automation Readiness Assessment',
+      description: 'Evaluate your organization\'s readiness for AI automation implementation.',
+      type: 'Interactive Tool',
+      estimatedTime: '15 minutes'
+    },
+    {
+      id: 'ai-maturity-model',
+      title: 'AI Maturity Model',
+      description: 'Assess your current AI capabilities and plan your transformation journey.',
+      type: 'Framework',
+      estimatedTime: '30 minutes'
+    },
+    {
+      id: 'performance-benchmark',
+      title: 'Performance Benchmarking Tool',
+      description: 'Compare your automation performance against industry standards.',
+      type: 'Analytics Tool',
+      estimatedTime: '20 minutes'
+    }
   ];
 
   return (
-    <Layout 
-      title="Resources - Zion Tech Group"
-      description="Access our comprehensive knowledge base, case studies, webinars, and documentation to accelerate your technology journey."
-      keywords="resources, documentation, case studies, webinars, knowledge base, Zion Tech Group"
-      canonicalUrl="https://ziontechgroup.com/resources"
-    >
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
-        {/* Hero Section */}
-        <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8">
+    <>
+      <Head>
+        <title>Resources | Zion Tech Group - AI & Automation Resources</title>
+        <meta name="description" content="Access case studies, whitepapers, tools, and resources to help you understand and implement AI automation solutions." />
+        <meta property="og:title" content="Resources | Zion Tech Group" />
+        <meta property="og:description" content="Access case studies, whitepapers, tools, and resources for AI automation." />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
+      
+      <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950 text-white">
+        <main className="container mx-auto px-6 py-12">
           <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center"
-            >
-              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-                <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Resources</span> Hub
+            <nav className="mb-8">
+              <Link href="/" className="text-cyan-400 hover:text-cyan-300 transition-colors">
+                ← Back to Home
+              </Link>
+            </nav>
+            
+            <header className="text-center mb-16">
+              <h1 className="text-5xl font-extrabold mb-6 bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
+                Resources & Tools
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-                Access our comprehensive knowledge base, case studies, webinars, and documentation 
-                to accelerate your technology journey and maximize your success.
+              <p className="text-xl text-white/80 max-w-3xl mx-auto">
+                Access our comprehensive collection of case studies, whitepapers, tools, and resources 
+                to accelerate your AI automation journey.
               </p>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Featured Resources */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Featured Resources
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Start your journey with these essential guides and resources.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {featuredResources.map((resource, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-slate-800 to-slate-700 p-8 rounded-xl border border-slate-600 hover:border-blue-500 transition-all duration-300"
-                >
-                  <div className={`w-16 h-16 bg-gradient-to-r ${resource.color} rounded-lg flex items-center justify-center mb-6`}>
-                    <resource.icon className="w-8 h-8 text-white" />
+            </header>
+            
+            {/* Case Studies Section */}
+            <section className="mb-20">
+              <h2 className="text-3xl font-bold mb-8 text-center text-white">Success Stories</h2>
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                {caseStudies.map((study) => (
+                  <div key={study.id} className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-cyan-400/30 transition-all duration-300">
+                    <div className="mb-4">
+                      <span className="px-3 py-1 bg-cyan-400/20 text-cyan-400 text-sm rounded-full border border-cyan-400/30">
+                        {study.industry}
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-bold mb-3 text-white">{study.title}</h3>
+                    <p className="text-cyan-400 font-semibold mb-2">{study.company}</p>
+                    <p className="text-white/80 text-sm mb-4">{study.description}</p>
+                    <div className="bg-white/5 rounded-lg p-4 mb-4">
+                      <h4 className="font-semibold text-green-400 mb-2">Results</h4>
+                      <p className="text-white/70 text-sm">{study.results}</p>
+                    </div>
+                    <Link 
+                      href={`/resources/case-studies/${study.id}`}
+                      className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors font-semibold"
+                    >
+                      Read Full Case Study
+                      <span aria-hidden>→</span>
+                    </Link>
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-4">{resource.title}</h3>
-                  <p className="text-gray-300 mb-6">{resource.description}</p>
-                  <a 
-                    href={resource.href}
-                    className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-300"
-                  >
-                    Read More <ArrowRight className="ml-2 w-4 h-4" />
-                  </a>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Resource Categories */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-800 to-slate-900">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Resource Categories
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Organized resources to help you find exactly what you need.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {resourceCategories.map((category, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-slate-700 to-slate-600 p-8 rounded-xl border border-slate-500"
-                >
-                  <div className={`w-16 h-16 bg-gradient-to-r ${category.color} rounded-lg flex items-center justify-center mb-6`}>
-                    <category.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-4">{category.title}</h3>
-                  <p className="text-gray-300 mb-6">{category.description}</p>
-                  
-                  <div className="space-y-3">
-                    {category.resources.map((resource, resourceIndex) => (
-                      <a
-                        key={resourceIndex}
-                        href={resource.href}
-                        className="block p-3 rounded-lg bg-slate-600 hover:bg-slate-500 transition-colors duration-300"
-                      >
-                        <div className="font-semibold text-white">{resource.name}</div>
-                        <div className="text-sm text-gray-400">{resource.description}</div>
-                      </a>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Quick Links */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Quick Access
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Fast access to frequently used resources and tools.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-              {quickLinks.map((link, index) => (
-                <motion.a
-                  key={index}
-                  href={link.href}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-slate-800 to-slate-700 p-6 rounded-xl border border-slate-600 hover:border-blue-500 transition-all duration-300 text-center group"
-                >
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <link.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <div className="text-white font-semibold">{link.name}</div>
-                </motion.a>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-cyan-600">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Need More Help?
-              </h2>
-              <p className="text-xl text-white/90 mb-8">
-                Can't find what you're looking for? Our team is here to help.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a 
-                  href="/contact"
-                  className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 text-lg"
-                >
-                  Contact Support
-                </a>
-                <a 
-                  href="/support"
-                  className="border border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300 text-lg"
-                >
-                  Visit Support Center
-                </a>
+                ))}
               </div>
-            </motion.div>
+            </section>
+            
+            {/* Whitepapers Section */}
+            <section className="mb-20">
+              <h2 className="text-3xl font-bold mb-8 text-center text-white">Whitepapers & Guides</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {whitepapers.map((paper) => (
+                  <div key={paper.id} className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-fuchsia-400/30 transition-all duration-300">
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="px-3 py-1 bg-fuchsia-400/20 text-fuchsia-400 text-sm rounded-full border border-fuchsia-400/30">
+                        {paper.category}
+                      </span>
+                      <span className="text-white/60 text-sm">{paper.pages} pages</span>
+                    </div>
+                    <h3 className="text-xl font-bold mb-3 text-white">{paper.title}</h3>
+                    <p className="text-white/80 text-sm mb-6">{paper.description}</p>
+                    <a 
+                      href={paper.downloadUrl}
+                      className="inline-flex items-center gap-2 bg-gradient-to-r from-fuchsia-400 to-purple-400 text-white px-6 py-3 rounded-lg font-semibold hover:from-fuchsia-500 hover:to-purple-500 transition-all duration-300"
+                    >
+                      Download Whitepaper
+                      <span aria-hidden>↓</span>
+                    </a>
+                  </div>
+                ))}
+              </div>
+            </section>
+            
+            {/* Tools Section */}
+            <section className="mb-20">
+              <h2 className="text-3xl font-bold mb-8 text-center text-white">Interactive Tools</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {tools.map((tool) => (
+                  <div key={tool.id} className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-green-400/30 transition-all duration-300 text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4">
+                      <span className="text-2xl">🔧</span>
+                    </div>
+                    <h3 className="text-xl font-bold mb-3 text-white">{tool.title}</h3>
+                    <p className="text-white/80 text-sm mb-4">{tool.description}</p>
+                    <div className="space-y-2 mb-6">
+                      <span className="inline-block px-3 py-1 bg-green-400/20 text-green-400 text-xs rounded-full border border-green-400/30">
+                        {tool.type}
+                      </span>
+                      <span className="block text-white/60 text-xs">Est. time: {tool.estimatedTime}</span>
+                    </div>
+                    <Link 
+                      href={`/resources/tools/${tool.id}`}
+                      className="inline-flex items-center gap-2 bg-gradient-to-r from-green-400 to-blue-400 text-white px-6 py-3 rounded-lg font-semibold hover:from-green-500 hover:to-blue-500 transition-all duration-300"
+                    >
+                      Launch Tool
+                      <span aria-hidden>→</span>
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </section>
+            
+            {/* Newsletter Signup */}
+            <section className="text-center">
+              <div className="bg-gradient-to-r from-cyan-500/10 to-fuchsia-500/10 rounded-2xl p-8 border border-cyan-500/20">
+                <h2 className="text-2xl font-bold mb-4 text-white">Stay Updated with New Resources</h2>
+                <p className="text-white/80 mb-6 max-w-2xl mx-auto">
+                  Get notified when we release new case studies, whitepapers, and tools. 
+                  Be the first to access our latest AI automation insights and resources.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                  <input
+                    type="email"
+                    placeholder="Enter your email address"
+                    className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-cyan-400/50 focus:ring-1 focus:ring-cyan-400/50 transition-all duration-300"
+                  />
+                  <button className="bg-gradient-to-r from-cyan-400 to-fuchsia-400 text-white px-6 py-3 rounded-lg font-semibold hover:from-cyan-500 hover:to-fuchsia-500 transition-all duration-300">
+                    Subscribe
+                  </button>
+                </div>
+                <p className="text-white/60 text-sm mt-4">
+                  No spam, unsubscribe at any time. We respect your privacy.
+                </p>
+              </div>
+            </section>
+            
+            {/* Related Pages */}
+            <section className="mt-16">
+              <h2 className="text-2xl font-bold mb-8 text-center text-white">Explore More</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <Link href="/services" className="bg-white/10 rounded-xl p-6 border border-white/20 hover:border-cyan-400/30 transition-all duration-300 text-center group">
+                  <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-2xl">🚀</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-cyan-400 mb-2">Our Services</h3>
+                  <p className="text-white/80 text-sm">Discover our comprehensive AI automation solutions</p>
+                </Link>
+                
+                <Link href="/blog" className="bg-white/10 rounded-xl p-6 border border-white/20 hover:border-fuchsia-400/30 transition-all duration-300 text-center group">
+                  <div className="w-16 h-16 bg-gradient-to-br from-fuchsia-400 to-purple-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-2xl">📚</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-fuchsia-400 mb-2">Blog & Insights</h3>
+                  <p className="text-white/80 text-sm">Read our latest thoughts on AI and automation</p>
+                </Link>
+                
+                <Link href="/contact" className="bg-white/10 rounded-xl p-6 border border-white/20 hover:border-green-400/30 transition-all duration-300 text-center group">
+                  <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-teal-500 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-2xl">💬</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-green-400 mb-2">Get in Touch</h3>
+                  <p className="text-white/80 text-sm">Have questions about our resources?</p>
+                </Link>
+              </div>
+            </section>
           </div>
-        </section>
+        </main>
       </div>
-    </Layout>
+    </>
   );
-};
-
-export default ResourcesPage;
+}
