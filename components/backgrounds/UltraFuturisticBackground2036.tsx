@@ -32,6 +32,7 @@ export default function UltraFuturisticBackground2036({
     rotationSpeed: number;
     pulse: number;
     pulseSpeed: number;
+    hue: number;
     trail: Array<{x: number, y: number, opacity: number}>;
   }>>([]);
 
@@ -108,6 +109,7 @@ export default function UltraFuturisticBackground2036({
         rotationSpeed: (Math.random() - 0.5) * 0.02,
         pulse: Math.random() * Math.PI * 2,
         pulseSpeed: Math.random() * 0.05 + 0.02,
+        hue: Math.random() * 360,
         trail: []
       });
     }

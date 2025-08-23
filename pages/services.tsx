@@ -34,9 +34,9 @@ import {
 
 // Import service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
-import { innovativeMicroSaasServices } from '../data/innovative-2025-micro-saas-expansion-v2';
-import { innovativeITServices } from '../data/innovative-2025-it-services-expansion-v2';
-import { innovativeAIServices } from '../data/innovative-2025-ai-services-expansion-v2';
+import { innovative2025MicroSaasExpansionV2 } from '../data/innovative-2025-micro-saas-expansion-v2';
+import { innovative2025ITServicesExpansionV2 } from '../data/innovative-2025-it-services-expansion-v2';
+import { innovative2025AIServicesExpansionV2 } from '../data/innovative-2025-ai-services-expansion-v2';
 
 // Define a unified Service interface
 interface Service {
@@ -80,9 +80,9 @@ const ServicesPage: React.FC = () => {
   // Consolidate all services
   const allServices: Service[] = [
     ...realMicroSaasServices,
-    ...innovativeMicroSaasServices,
-    ...innovativeITServices,
-    ...innovativeAIServices
+    ...innovative2025MicroSaasExpansionV2,
+    ...innovative2025ITServicesExpansionV2,
+    ...innovative2025AIServicesExpansionV2
   ];
 
   // State management
