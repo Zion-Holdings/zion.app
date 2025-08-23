@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import UltraFuturisticNavigation2045 from './UltraFuturisticNavigation2045';
-import UltraFuturisticFooter2045 from './UltraFuturisticFooter2045';
+import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
+import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
-import TopContactBar from './TopContactBar';
-import PerformanceMonitor from '../EnhancedPerformanceMonitor';
-import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
+import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
+import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
+import EnhancedAccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
-import EnhancedErrorBoundary from '../EnhancedErrorBoundary';
+import TopContactBar from './TopContactBar';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -104,31 +103,27 @@ export default function Layout({
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         
         {/* Open Graph Meta Tags */}
-        <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={ogImage} />
-        <meta property="og:url" content={canonicalUrl || "https://ziontechgroup.com"} />
+        <meta property="og:url" content={canonicalUrl || 'https://ziontechgroup.com'} />
+        <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Zion Tech Group" />
-        <meta property="og:locale" content="en_US" />
         
         {/* Twitter Card Meta Tags */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={ogImage} />
-        <meta name="twitter:site" content="@ziontechgroup" />
         
-        {/* Additional SEO Meta Tags */}
-        <meta name="application-name" content="Zion Tech Group" />
-        <meta name="mobile-web-app-capable" content="yes" />
+        {/* Additional Meta Tags */}
         <meta name="format-detection" content="telephone=no" />
+        <meta name="theme-color" content="#06b6d4" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
         
-        {/* Preload Critical Resources */}
-        <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="/_next/static/css/app.css" as="style" />
-        
-        {/* DNS Prefetch */}
+        {/* Preconnect to external domains for performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
         
@@ -137,54 +132,7 @@ export default function Layout({
         <meta httpEquiv="X-Frame-Options" content="DENY" />
         <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
         <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
-        
-        {/* Structured Data */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "Zion Tech Group",
-              "url": "https://ziontechgroup.com",
-              "logo": "https://ziontechgroup.com/logo.png",
-              "description": description,
-              "foundingDate": "2024",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "364 E Main St STE 1008",
-                "addressLocality": "Middletown",
-                "addressRegion": "DE",
-                "postalCode": "19709",
-                "addressCountry": "US"
-              },
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+1-302-464-0950",
-                "contactType": "customer service",
-                "email": "kleber@ziontechgroup.com"
-              },
-              "sameAs": [
-                "https://github.com/Zion-Holdings",
-                "https://linkedin.com/company/zion-tech-group"
-              ],
-              "hasOfferCatalog": {
-                "@type": "OfferCatalog",
-                "name": "Technology Services",
-                "itemListElement": [
-                  {
-                    "@type": "Offer",
-                    "itemOffered": {
-                      "@type": "Service",
-                      "name": "AI Consciousness Evolution 2045",
-                      "description": "Next-generation AI consciousness with emotional intelligence"
-                    }
-                  }
-                ]
-              }
-            })
-          }}
-        />
+
       </Head>
 
       <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
@@ -204,7 +152,7 @@ export default function Layout({
         )}
         
         {/* Futuristic Background */}
-        <UltraFuturisticBackground2045 />
+        <UltraFuturisticBackground2036 />
         
         {/* Layout Structure */}
         <div className="relative z-10">
@@ -212,7 +160,7 @@ export default function Layout({
           <TopContactBar />
           
           {/* Navigation */}
-          <UltraFuturisticNavigation2045 />
+          <UltraFuturisticNavigation2040 />
           
           {/* Sidebar and Main Content */}
           <div className="flex">
@@ -227,13 +175,13 @@ export default function Layout({
           </div>
           
           {/* Footer */}
-          <UltraFuturisticFooter2045 />
+          <UltraFuturisticFooter2040 />
         </div>
       </div>
 
       {/* Accessibility and Performance Tools */}
-      <AccessibilityEnhancer />
-      <PerformanceMonitor />
+      <EnhancedAccessibilityEnhancer />
+      <EnhancedPerformanceMonitor />
       
       {/* Cookie Consent Banner */}
       <CookieConsentBanner />
