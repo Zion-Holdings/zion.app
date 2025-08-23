@@ -10,8 +10,8 @@ const HomePage: React.FC = () => {
       <SEOOptimizer />
       <AnalyticsTracker />
       <PerformanceOptimizer />
+      <AccessibilityEnhancer />
       <MobileOptimizer showDebugInfo={false}>
-        <AccessibilityEnhancer />
         <Homepage2025 />
         <PerformanceMonitor showUI={true} />
       </MobileOptimizer>
