@@ -16,6 +16,15 @@ function normalizeId(value: string): string {
   return value;
 }
 
+function normalizeId(value: string): string {
+  const slugMatch = value.match(/^talent-(\d+)$/);
+  if (slugMatch) {
+    // Convert talent-001 -> t-001
+    return `t-${slugMatch[1].padStart(3, "0")}`;
+  }
+  return value;
+}
+
 export function useTalentProfile(id: string | undefined) {
 
   const [profile, setProfile] = useState<TalentProfileType | null>(null);
