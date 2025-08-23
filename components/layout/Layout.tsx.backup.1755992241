@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+      {/* Skip to content link for accessibility */}
+      <a 
+        href="#main" 
+        className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-cyan-500 focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-300"
+      >
+        Skip to main content
+      </a>
+=======
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import UltraFuturisticNavigation2036 from './UltraFuturisticNavigation2036';
@@ -5,10 +14,29 @@ import UltraFuturisticFooter2036 from './UltraFuturisticFooter2036';
 import UltraFuturisticSidebar2036 from './UltraFuturisticSidebar2036';
 import UltraAdvancedFuturisticBackground2036 from '../backgrounds/UltraAdvancedFuturisticBackground2036';
 import TopContactBar from './TopContactBar';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3e7c
 
       {/* Enhanced Futuristic Background */}
       <UltraFuturisticBackground2038 intensity="medium" theme="quantum-neon" />
 
+<<<<<<< HEAD
+      {/* Loading State */}
+      <AnimatePresence>
+        {isLoading && (
+          <motion.div
+            initial={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black"
+          >
+            <div className="text-center">
+              <div className="w-16 h-16 border-4 border-cyan-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+              <p className="text-cyan-400 text-lg font-semibold">Loading Zion Tech Group</p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+=======
 export default function Layout({ children }: React.PropsWithChildren<LayoutProps>) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -17,13 +45,18 @@ export default function Layout({ children }: React.PropsWithChildren<LayoutProps
       {/* Futuristic Background */}
       <UltraAdvancedFuturisticBackground2036 />
       
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3e7c
       {/* Layout Structure */}
       <div className="relative z-10">
         {/* Top Contact Bar */}
         <TopContactBar />
         
         {/* Navigation */}
+<<<<<<< HEAD
+        <UltraAdvancedNavigation2035 />
+=======
         <UltraFuturisticNavigation2036 />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3e7c
         
         {/* Sidebar and Main Content */}
         <div className="flex">
@@ -54,6 +87,9 @@ export default function Layout({ children }: React.PropsWithChildren<LayoutProps
         </div>
         
         {/* Footer */}
+<<<<<<< HEAD
+        <UltraAdvancedFooter2035 />
+=======
 'use client';
 
 import { ReactNode } from 'react';
@@ -116,6 +152,7 @@ export default function Layout({
         </main>
 =======
         <UltraFuturisticFooter2036 />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3e7c
       </div>
 
       {/* Footer */}
