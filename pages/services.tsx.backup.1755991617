@@ -10,8 +10,20 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 
+<<<<<<< HEAD
+// Import our new 2035 service data
+import { innovative2035MicroSaasServices } from '../data/innovative-2035-micro-saas-services';
+import { innovative2035AIServices } from '../data/innovative-2035-ai-services';
+import { innovative2035ITServices } from '../data/innovative-2035-it-services';
+
+// Import existing service data
+import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
+import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas-solutions';
+import { cuttingEdgeAIServices } from '../data/2034-cutting-edge-ai-services';
+=======
 // Import our new service data
 // Note: Removed non-existent data imports (2034 datasets) to prevent build errors.
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-a54a
 import { real2025Q4AugmentedBatch } from '../data/real-2025-q4-augmented-batch';
 import { real2029Q3Additions } from '../data/real-2029-q3-additions';
 import { validatedServices2025Q4 } from '../data/real-validated-2025-q4-additions';
@@ -56,6 +68,18 @@ const getServiceDescription = (service: any) => {
 
 // Create unified services array with new 2035 services
 const allServices = [
+<<<<<<< HEAD
+  // New 2035 services (featured first)
+  ...innovative2035MicroSaasServices,
+  ...innovative2035AIServices,
+  ...innovative2035ITServices,
+  
+  // Existing services
+  ...enterpriseITSolutions,
+  ...innovativeMicroSaasSolutions,
+  ...cuttingEdgeAIServices,
+=======
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-a54a
   ...realMicroSaasServices,
   ...innovativeAIServices,
   ...enterpriseITServices,
