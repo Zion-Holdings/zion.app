@@ -5,7 +5,8 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
   ArrowRight, Star, 
-  Brain, Atom, Shield, Zap, TrendingUp, Globe
+  Brain, Atom, Shield, Zap, TrendingUp, Globe,
+  CheckCircle, Users, Award, Rocket
 } from 'lucide-react';
 
 const Homepage2025: React.FC = () => {
@@ -36,7 +37,7 @@ const Homepage2025: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-400/30 rounded-full text-cyan-400 text-sm font-medium"
               >
-                <Star className="w-4 h-4" />
+                <Award className="w-4 h-4" />
                 <span>Innovation Leader 2025</span>
               </motion.div>
               
@@ -44,22 +45,45 @@ const Homepage2025: React.FC = () => {
                 Zion Tech Group
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-                Pioneering the future of technology with innovative solutions that drive business transformation
+                Pioneering the future of technology with innovative solutions that drive business transformation and unlock unlimited potential
               </p>
+              
+              {/* Enhanced Value Proposition */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="mb-8"
+              >
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+                  <div className="flex items-center space-x-2 text-sm text-cyan-400">
+                    <CheckCircle className="w-4 h-4" />
+                    <span>AI-First Solutions</span>
+                  </div>
+                  <div className="flex items-center space-x-2 text-sm text-blue-400">
+                    <CheckCircle className="w-4 h-4" />
+                    <span>Quantum Innovation</span>
+                  </div>
+                  <div className="flex items-center space-x-2 text-sm text-purple-400">
+                    <CheckCircle className="w-4 h-4" />
+                    <span>24/7 Support</span>
+                  </div>
+                </div>
+              </motion.div>
               
               {/* Enhanced CTA Section */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
                 <Link href="/get-started">
                   <button className="group px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25">
                     <span className="flex items-center gap-2">
-                      Get Started
+                      Start Your Transformation
                       <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </span>
                   </button>
                 </Link>
-                <Link href="/services">
+                <Link href="/demo">
                   <button className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105">
-                    Learn More
+                    Book Free Demo
                   </button>
                 </Link>
               </div>
@@ -149,7 +173,7 @@ const Homepage2025: React.FC = () => {
                 Our Services
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Discover our comprehensive range of cutting-edge technology solutions designed to transform your business
+                Discover our comprehensive range of cutting-edge technology solutions designed to transform your business and accelerate growth
               </p>
             </motion.div>
             
@@ -233,7 +257,7 @@ const Homepage2025: React.FC = () => {
                 Why Choose Zion Tech Group?
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                We combine cutting-edge technology with proven expertise to deliver exceptional results
+                We combine cutting-edge technology with proven expertise to deliver exceptional results that drive real business value
               </p>
             </motion.div>
             
@@ -250,7 +274,7 @@ const Homepage2025: React.FC = () => {
                   <Brain className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">AI-First Approach</h3>
-                <p className="text-gray-300">Leading-edge artificial intelligence solutions that adapt and evolve</p>
+                <p className="text-gray-300">Leading-edge artificial intelligence solutions that adapt and evolve with your business needs</p>
               </motion.div>
               
               <motion.div
@@ -265,7 +289,7 @@ const Homepage2025: React.FC = () => {
                   <Atom className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">Quantum Innovation</h3>
-                <p className="text-gray-300">Next-generation quantum computing and security solutions</p>
+                <p className="text-gray-300">Next-generation quantum computing and security solutions for tomorrow's challenges</p>
               </motion.div>
               
               <motion.div
@@ -280,7 +304,7 @@ const Homepage2025: React.FC = () => {
                   <Shield className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">Enterprise Security</h3>
-                <p className="text-gray-300">Military-grade security and compliance solutions</p>
+                <p className="text-gray-300">Military-grade security and compliance solutions that protect your most valuable assets</p>
               </motion.div>
               
               <motion.div
@@ -295,7 +319,108 @@ const Homepage2025: React.FC = () => {
                   <Zap className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">Rapid Deployment</h3>
-                <p className="text-gray-300">Fast implementation and continuous optimization</p>
+                <p className="text-gray-300">Fast implementation and continuous optimization to get you results quickly</p>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section className="py-20 px-4 relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-blue-500/5"></div>
+          <div className="max-w-6xl mx-auto relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                What Our Clients Say
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Don't just take our word for it - hear from the businesses we've transformed
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300"
+              >
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full flex items-center justify-center mr-4">
+                    <Users className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-semibold">Sarah Chen</h4>
+                    <p className="text-gray-400 text-sm">CTO, TechFlow Inc.</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  "Zion Tech Group's AI solutions transformed our operations. We saw a 300% increase in efficiency within 6 months."
+                </p>
+                <div className="flex items-center mt-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300"
+              >
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full flex items-center justify-center mr-4">
+                    <Rocket className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-semibold">Marcus Rodriguez</h4>
+                    <p className="text-gray-400 text-sm">CEO, Quantum Solutions</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  "Their quantum computing expertise gave us a competitive edge we never thought possible. Game-changing technology."
+                </p>
+                <div className="flex items-center mt-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-all duration-300"
+              >
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-teal-600 rounded-full flex items-center justify-center mr-4">
+                    <TrendingUp className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-semibold">Dr. Emily Watson</h4>
+                    <p className="text-gray-400 text-sm">Research Director, BioTech Labs</p>
+                  </div>
+                </div>
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  "The autonomous systems they built for us accelerated our research by 5x. Incredible ROI and support."
+                </p>
+                <div className="flex items-center mt-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                  ))}
+                </div>
               </motion.div>
             </div>
           </div>
@@ -315,17 +440,17 @@ const Homepage2025: React.FC = () => {
                 Ready to Transform Your Business?
               </h2>
               <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                Join the future of technology with Zion Tech Group. Let's build something extraordinary together.
+                Join the future of technology with Zion Tech Group. Let's build something extraordinary together and unlock your business potential.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/contact">
                   <button className="px-8 py-4 bg-gradient-to-r from-green-500 to-teal-600 text-white font-semibold rounded-lg hover:from-green-600 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-green-500/25">
-                    Get Started Today
+                    Start Your Journey
                   </button>
                 </Link>
                 <Link href="/demo">
                   <button className="px-8 py-4 border-2 border-green-400 text-green-400 font-semibold rounded-lg hover:bg-green-400 hover:text-black transition-all duration-300 transform hover:scale-105">
-                    Request Demo
+                    Schedule Free Demo
                   </button>
                 </Link>
               </div>
