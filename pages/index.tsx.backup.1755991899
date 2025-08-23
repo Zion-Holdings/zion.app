@@ -38,6 +38,8 @@ export default function HomePage() {
         <meta property="og:url" content="https://ziontechgroup.com" />
         <meta property="og:type" content="website" />
       </Head>
+<<<<<<< HEAD
+=======
       {/* Reusable Service Ads Strip */}
       <ServiceAds
         heading="Featured Micro SaaS, IT and AI Services"
@@ -103,6 +105,7 @@ export default function HomePage() {
           }
         ]}
       />
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-fee2
 
       {/* Hero Section */}
       <section className="relative py-20 px-4 overflow-hidden">
