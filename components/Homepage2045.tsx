@@ -123,7 +123,7 @@ const Homepage2045: React.FC = () => {
       y: [-10, 10, -10],
       transition: {
         duration: 3,
-        repeat: Infinity,
+        repeat: Infinity as any,
         ease: "easeInOut" as const
       }
     }

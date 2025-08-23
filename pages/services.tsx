@@ -63,6 +63,14 @@ import { cuttingEdgeFuturisticServices } from '../data/2025-cutting-edge-futuris
 import { advancedAIAutomationServices } from '../data/2026-advanced-ai-automation-services';
 import { advancedITInfrastructureServices } from '../data/2025-advanced-it-infrastructure-services';
 
+// Import our new 2025 advanced services
+import { advancedEnterpriseAutomationServices2025 } from '../data/2025-advanced-enterprise-automation-services';
+import { advancedAIMLEnterpriseServices2025 } from '../data/2025-advanced-ai-ml-enterprise-services';
+import { advancedCybersecurityComplianceServices2025 } from '../data/2025-advanced-cybersecurity-compliance-services';
+import { advancedCloudDevOpsEnterpriseServices2025 } from '../data/2025-advanced-cloud-devops-enterprise-services';
+import { innovativeMicroSaasSMBServices2025 } from '../data/2025-innovative-micro-saas-smb-services';
+import { advancedDigitalMarketingAnalyticsServices2025 } from '../data/2025-advanced-digital-marketing-analytics-services';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -105,6 +113,14 @@ const getServiceDescription = (service: any) => {
 
 // Create unified services array
 const allServices = [
+  // Our new 2025 advanced services
+  ...advancedEnterpriseAutomationServices2025,
+  ...advancedAIMLEnterpriseServices2025,
+  ...advancedCybersecurityComplianceServices2025,
+  ...advancedCloudDevOpsEnterpriseServices2025,
+  ...innovativeMicroSaasSMBServices2025,
+  ...advancedDigitalMarketingAnalyticsServices2025,
+  
   // Our new 2025 services
   ...advancedAIAutomationServices2025,
   ...innovativeITInfrastructureServices2025,
@@ -261,7 +277,42 @@ const categories = [
     name: 'Education & Research',
     icon: <GraduationCap className="w-6 h-6" />,
     color: 'from-yellow-500 to-orange-500',
-    description: 'Learning and research platforms'
+    description: 'Educational technology and research solutions'
+  },
+  {
+    id: 'enterprise-automation',
+    name: 'Enterprise Automation',
+    icon: <Brain className="w-6 h-6" />,
+    color: 'from-green-500 to-teal-500',
+    description: 'AI-powered enterprise process automation'
+  },
+  {
+    id: 'cybersecurity-compliance',
+    name: 'Cybersecurity & Compliance',
+    icon: <Shield className="w-6 h-6" />,
+    color: 'from-red-500 to-orange-500',
+    description: 'Advanced security and compliance solutions'
+  },
+  {
+    id: 'cloud-devops',
+    name: 'Cloud & DevOps',
+    icon: <Cpu className="w-6 h-6" />,
+    color: 'from-blue-500 to-indigo-500',
+    description: 'Cloud optimization and DevOps automation'
+  },
+  {
+    id: 'digital-marketing',
+    name: 'Digital Marketing',
+    icon: <Target className="w-6 h-6" />,
+    color: 'from-purple-500 to-pink-500',
+    description: 'AI-powered marketing and analytics solutions'
+  },
+  {
+    id: 'smb-solutions',
+    name: 'SMB Solutions',
+    icon: <Building className="w-6 h-6" />,
+    color: 'from-emerald-500 to-green-500',
+    description: 'Affordable solutions for small to medium businesses'
   }
 ];
 
