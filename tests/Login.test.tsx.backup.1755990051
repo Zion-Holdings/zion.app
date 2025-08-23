@@ -1,7 +1,15 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+<<<<<<< HEAD
+import { MemoryRouter, Routes, Route } from 'react-router-dom';
+import { vi } from 'vitest';
+import { LoginForm } from '@/components/auth/login';
+import { Toaster } from '@/components/ui/toaster';
+import * as authService from '@/services/authService';
+=======
 import { MemoryRouter } from 'react-router-dom';
 import { vi } from 'vitest';
 import { LoginForm } from '@/components/auth/login';
+>>>>>>> origin/aivbk0-codex/fix-login-form-submission-issues
 import * as authHook from '@/hooks/useAuth';
 import axios from 'axios';
 
@@ -16,10 +24,18 @@ vi.mock('@/services/auth');
 const mockedAxios: any = (axios as any).create();
 
 describe('LoginForm', () => {
+<<<<<<< HEAD
+  it('shows error toast on 401 response', async () => {
+    vi.spyOn(authService, 'loginUser').mockResolvedValue({
+      res: { status: 401, ok: false } as Response,
+      data: { error: 'Invalid credentials' },
+    });
+=======
   it('redirects to dashboard on successful login', async () => {
     mockedAxios.post.mockResolvedValue({ status: 200, data: { token: 'abc' } });
     const navigateMock = vi.fn();
     vi.spyOn(require('react-router-dom'), 'useNavigate').mockReturnValue(navigateMock);
+>>>>>>> origin/aivbk0-codex/fix-login-form-submission-issues
 
     render(
       <MemoryRouter>
@@ -34,8 +50,15 @@ describe('LoginForm', () => {
     fireEvent.input(screen.getByLabelText(/password/i), { target: { value: 'secret' } });
     fireEvent.click(screen.getByRole('button', { name: /login/i }));
 
+<<<<<<< HEAD
+    // wait for toast call and confirm message appears
+    await screen.findByText('Invalid credentials');
+
+    expect(await screen.findByText(/invalid credentials/i)).toBeInTheDocument();
+=======
     await waitFor(() => {
       expect(navigateMock).toHaveBeenCalledWith('/dashboard');
     });
+>>>>>>> origin/aivbk0-codex/fix-login-form-submission-issues
   });
 });

@@ -7,3 +7,9 @@
 2025-08-23 23:00:48 - Resolving conflicts in src/index.css for branch a7jyue-codex/disable-theme-toggle-and-set-default-dark-theme
 2025-08-23 23:00:49 - Merge conflicts detected in adis18-codex/fix-ts2614-error-with-suspense-import
 2025-08-23 23:00:49 - Resolving conflicts in src/App.tsx for branch adis18-codex/fix-ts2614-error-with-suspense-import
+2025-08-23 23:00:51 - Merge conflicts detected in aivbk0-codex/fix-login-form-submission-issues
+2025-08-23 23:00:51 - Resolving conflicts in package.json for branch aivbk0-codex/fix-login-form-submission-issues
+2025-08-23 23:00:51 - Resolving conflicts in src/components/auth/login/LoginForm.tsx for branch aivbk0-codex/fix-login-form-submission-issues
+2025-08-23 23:00:51 - Resolving conflicts in src/services/auth.ts for branch aivbk0-codex/fix-login-form-submission-issues
+2025-08-23 23:00:51 - Resolving conflicts in src/services/authService.ts for branch aivbk0-codex/fix-login-form-submission-issues
+2025-08-23 23:00:51 - Resolving conflicts in tests/Login.test.tsx for branch aivbk0-codex/fix-login-form-submission-issues
