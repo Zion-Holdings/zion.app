@@ -176,6 +176,24 @@ const allServices = [
   ...innovative2037Services,
   ...advanced2038Services,
   ...revolutionary2039Services,
+<<<<<<< HEAD
+  // Our revolutionary 2040-2041 services
+  ...revolutionary2040FuturisticServices,
+  ...comprehensiveAdvertisingMarketingServices,
+  // Our new innovative 2040 services
+  ...innovative2039FuturisticServices,
+  ...innovative2040AdvancedSolutions,
+  ...innovative2040ITSolutions,
+  ...innovative2040MicroSaasSolutions
+];
+
+const categories = [
+  { id: 'all', name: 'All Services', icon: <MapPin className="w-5 h-5" />, count: allServices.length, color: 'from-gray-500 to-slate-600' },
+  { id: 'ai', name: 'AI & Consciousness', icon: <Users className="w-5 h-5" />, count: innovative2025AIServicesExpansionV2.length, color: 'from-purple-500 to-pink-600' },
+  { id: 'quantum', name: 'Quantum Technology', icon: <Filter className="w-5 h-5" />, count: allServices.filter(s => s.name.toLowerCase().includes('quantum')).length, color: 'from-blue-500 to-cyan-600' },
+  { id: 'it', name: 'Enterprise IT', icon: <ArrowRight className="w-5 h-5" />, count: innovative2025ITServicesExpansionV2.length, color: 'from-orange-500 to-red-600' },
+  { id: 'saas', name: 'Micro SAAS', icon: <Award className="w-5 h-5" />, count: innovative2025MicroSaasExpansionV2.length, color: 'from-green-500 to-emerald-600' }
+=======
   
   // Our latest innovative services
   ...innovative2040FuturisticServices,
@@ -317,6 +335,7 @@ const categories = [
     color: 'from-emerald-600 to-green-700',
     description: 'AI-powered biotechnology and research acceleration'
   }
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-f13c
 ];
 
 const ServicesPage: React.FC = () => {
