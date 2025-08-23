@@ -286,3 +286,21 @@
 2025-08-23 22:58:07 - Resolving conflicts in src/pages/NewProductsPage.tsx for branch 8aozst-codex/implement-cart-functionality-with-react-context
 2025-08-23 22:58:07 - Resolving conflicts in src/pages/ProductPage.tsx for branch 8aozst-codex/implement-cart-functionality-with-react-context
 2025-08-23 22:58:07 - Resolving conflicts in src/types/cart.ts for branch 8aozst-codex/implement-cart-functionality-with-react-context
+2025-08-23 22:58:08 - Merge conflicts detected in 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in package.json for branch 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in src/components/ChatAssistantTrigger.tsx for branch 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in src/components/ErrorBoundary.tsx for branch 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in src/components/FooterNewsletter.jsx for branch 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in src/components/support/ChatBotPanel.tsx for branch 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in src/hooks/useAISearch.ts for branch 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in src/hooks/useFraudPreventionSignup.ts for branch 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in src/hooks/useWebhooks.ts for branch 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in src/layout/AppLayout.tsx for branch 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in src/pages/Checkout.tsx for branch 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in src/pages/Contact.tsx for branch 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in src/pages/EquipmentDetail.tsx for branch 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in src/pages/admin/TokenManager.tsx for branch 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in src/services/auth.ts for branch 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in src/services/authService.ts for branch 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in src/utils/referralUtils.ts for branch 8arrdw-codex/centralize-fetch-error-handling
+2025-08-23 22:58:08 - Resolving conflicts in src/utils/tokenRewards.ts for branch 8arrdw-codex/centralize-fetch-error-handling

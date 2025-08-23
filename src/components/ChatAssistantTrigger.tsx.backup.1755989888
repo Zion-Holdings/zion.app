@@ -4,7 +4,11 @@ import { MessageSquare } from 'lucide-react';
 
 import { Button } from "@/components/ui/button";
 import { ChatAssistant } from "@/components/ChatAssistant";
+<<<<<<< HEAD
+import api from '@/lib/api';
+=======
 import { apiClient } from "@/utils/apiClient";
+>>>>>>> origin/8arrdw-codex/centralize-fetch-error-handling
 
 export function ChatAssistantTrigger() {
 
@@ -13,6 +17,16 @@ export function ChatAssistantTrigger() {
   // Handle sending messages to the AI chat assistant
   const handleSendMessage = async (message: string): Promise<void> => {
     try {
+<<<<<<< HEAD
+      const response = await api.post(
+        "https://ziontechgroup.functions.supabase.co/functions/v1/ai-chat",
+        {
+          messages: [{ role: "user", content: message }]
+        }
+      );
+
+      if (response.status < 200 || response.status >= 300) {
+=======
       const response = await apiClient("https://ziontechgroup.functions.supabase.co/functions/v1/ai-chat", {
         method: "POST",
         headers: {
@@ -24,6 +38,7 @@ export function ChatAssistantTrigger() {
       });
       
       if (!response.ok) {
+>>>>>>> origin/8arrdw-codex/centralize-fetch-error-handling
         throw new Error("Failed to get response from AI assistant");
       }
       

@@ -1,5 +1,11 @@
+<<<<<<< HEAD
+import { safeStorage } from './safeStorage';
+import { logErrorToProduction } from '@/utils/productionLogger';
+
+=======
 import { format } from 'date-fns';
 import { apiClient } from './apiClient';
+>>>>>>> origin/8arrdw-codex/centralize-fetch-error-handling
 
 /**
  * Formats a date for display in the referral system
@@ -52,6 +58,13 @@ export async function trackReferral(userId: string, email: string) {
     if (!refCode) return false;
     
     // Call API to record the referral
+<<<<<<< HEAD
+    const response = await api.post('/api/track-referral', {
+      refCode,
+      userId,
+      email,
+      ipAddress: '', // This will be captured by the server
+=======
     const response = await apiClient('/api/track-referral', {
       method: 'POST',
       headers: {
@@ -63,6 +76,7 @@ export async function trackReferral(userId: string, email: string) {
         email,
         ipAddress: '', // This will be captured by the server
       }),
+>>>>>>> origin/8arrdw-codex/centralize-fetch-error-handling
     });
 
     if (response.status >= 200 && response.status < 300) {

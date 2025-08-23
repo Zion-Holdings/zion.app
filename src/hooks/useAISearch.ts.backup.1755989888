@@ -3,7 +3,11 @@ import { useState } from "react";
 import { TALENT_PROFILES } from "@/data/talentData";
 import { JOB_POSTS } from "@/data/jobsData";
 import { PROJECTS } from "@/data/projectsData";
+<<<<<<< HEAD
+import api from '@/lib/api';
+=======
 import { apiClient } from "@/utils/apiClient";
+>>>>>>> origin/8arrdw-codex/centralize-fetch-error-handling
 
 export interface SearchResult {
   id: string;
@@ -27,7 +31,11 @@ export function useAISearch() {
   const search = async (query: string) => {
     setLoading(true);
     try {
+<<<<<<< HEAD
+      const response = await api.post(
+=======
       const response = await apiClient(
+>>>>>>> origin/8arrdw-codex/centralize-fetch-error-handling
         "https://ziontechgroup.functions.supabase.co/functions/v1/ai-search",
         { query }
       );
