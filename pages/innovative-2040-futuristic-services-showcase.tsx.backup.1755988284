@@ -16,6 +16,15 @@ import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
 
+<<<<<<< HEAD
+// Union type for all service types
+type Service = 
+  | typeof innovative2040FuturisticServices[0]
+  | typeof innovative2040ITServices[0]
+  | typeof realMicroSaasServices[0]
+  | typeof innovativeAIServices[0]
+  | typeof enterpriseITServices[0];
+=======
 interface Service {
   id: string;
   name: string;
@@ -53,6 +62,7 @@ interface Service {
   reviews: number;
   benefits?: string[];
 }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6d41
 
 const Innovative2040FuturisticServicesShowcase: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
