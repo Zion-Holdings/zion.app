@@ -15,7 +15,7 @@
       "notistack": ["./src/stubs/notistack.tsx"],
       "@sentry/browser": ["./src/stubs/sentry.ts"]
     },
-    "types": ["vite/client", "react", "react-router-dom", "socket.io", "socket.io-client"],
+    "typeRoots": ["./src/types"],
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -27,13 +27,6 @@
     "jsx": "preserve",
     "target": "ES2017"
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules",
-    "zion.app/recovered-content/**"
-  ]
+  "include": ["src", "src/types/offline-shims.d.ts"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }
