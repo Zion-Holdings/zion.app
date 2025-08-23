@@ -1,5 +1,9 @@
 import React from 'react';
+<<<<<<< HEAD
+import Homepage2043 from '../components/Homepage2043';
+=======
 import Homepage2038 from '../components/Homepage2038';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6f74
 import SEOOptimizer from '../components/SEOOptimizer';
 import AnalyticsTracker from '../components/AnalyticsTracker';
 import ErrorBoundary from '../components/ErrorBoundary';
@@ -21,11 +25,20 @@ const HomePage: React.FC = () => {
 export default function Home() {
   return (
     <ErrorBoundary>
+<<<<<<< HEAD
+      <AccessibilityEnhancer>
+        <SEOOptimizer />
+        <AnalyticsTracker />
+        <EnhancedHomepage2026 />
+        <PerformanceMonitor />
+      </AccessibilityEnhancer>
+=======
       <SEOOptimizer />
       <AnalyticsTracker />
       <Homepage2038 />
       <PerformanceMonitor />
       <AccessibilityEnhancer />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6f74
     </ErrorBoundary>
   );
 };

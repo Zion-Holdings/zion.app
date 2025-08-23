@@ -1,10 +1,6 @@
-import React, { useState } from 'react';
-import UltraFuturisticNavigation2043 from './UltraFuturisticNavigation2043';
-import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
-import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraFuturisticBackground2043 from '../backgrounds/UltraFuturisticBackground2043';
-import TopContactBar from './TopContactBar';
-import PerformanceMonitor from '../PerformanceMonitor';
+import React, { ReactNode } from 'react';
+import UltraFuturisticNavigation2038 from './UltraFuturisticNavigation2038';
+import UltraFuturisticFooter2038 from './UltraFuturisticFooter2038';
 import AccessibilityEnhancer from '../AccessibilityEnhancer';
 import PerformanceOptimizer from '../PerformanceOptimizer';
 
@@ -18,15 +14,14 @@ export default function Layout({ children, seo }: LayoutProps) {
   const [showEnhancements, setShowEnhancements] = useState(false);
 
   return (
-    <AccessibilityEnhancer>
-      <div className="min-h-screen bg-gray-900 text-white">
-        <UltraAdvancedFuturisticNavigation2025 />
-        <main className="relative z-10">
-          {children}
-        </main>
-        <UltraAdvancedFuturisticFooter2025 />
-        <PerformanceOptimizer showMetrics={true} autoOptimize={true} />
-      </div>
-    </AccessibilityEnhancer>
+    <div className="min-h-screen bg-gray-900 text-white">
+      <UltraFuturisticNavigation2038 />
+      <main className="relative z-10 pt-32">
+        {children}
+      </main>
+      <UltraFuturisticFooter2038 />
+      <AccessibilityEnhancer />
+      <PerformanceOptimizer showMetrics={true} autoOptimize={true} />
+    </div>
   );
 };
