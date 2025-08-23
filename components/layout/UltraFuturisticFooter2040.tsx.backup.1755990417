@@ -9,6 +9,8 @@ import {
   GraduationCap, Building, Handshake, Heart
 } from 'lucide-react';
 
+<<<<<<< HEAD
+=======
 const footerSections = [
   {
     title: 'Featured Revolutionary Services',
@@ -98,6 +100,7 @@ const socialLinks = [
   { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: <Github className="w-5 h-5" /> }
 ];
 
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-aabb
 const UltraFuturisticFooter2040: React.FC = () => {
   const currentYear = new Date().getFullYear();
 

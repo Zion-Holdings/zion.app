@@ -364,6 +364,24 @@ const navigationItems: NavigationItem[] = [
         featured: true
       },
       {
+<<<<<<< HEAD
+        name: 'Financial Technology & Fintech',
+        href: '/services#financial-technology-fintech',
+        description: 'Innovative financial solutions',
+        icon: <DollarSign className="w-4 h-4" />
+      },
+      {
+        name: 'Healthcare Technology & Healthtech',
+        href: '/services#healthcare-technology-healthtech',
+        description: 'Advanced healthcare solutions',
+        icon: <Heart className="w-4 h-4" />
+      },
+      {
+        name: 'Supply Chain & Logistics',
+        href: '/services#supply-chain-logistics',
+        description: 'Intelligent supply chain solutions',
+        icon: <Network className="w-4 h-4" />
+=======
         name: 'AI Emotional Intelligence 2040',
         href: '/ai-emotional-intelligence-2040',
         description: 'Advanced emotional AI with consciousness',
@@ -383,6 +401,7 @@ const navigationItems: NavigationItem[] = [
         description: 'Consciousness-based content AI',
         icon: <PaletteIcon className="w-4 h-4" />,
         featured: true
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-aabb
       },
       {
         name: 'AI Ethics & Governance 2041',
@@ -456,10 +475,17 @@ const navigationItems: NavigationItem[] = [
         featured: true
       },
       {
+<<<<<<< HEAD
+        label: 'Cloud Solutions',
+        href: '/cloud-platform',
+        icon: <Cloud className="w-4 h-4" />,
+        description: 'Scalable cloud infrastructure',
+=======
         name: 'Quantum Internet Security 2041',
         href: '/quantum-internet-security-2041',
         description: 'Quantum internet protection',
         icon: <Network className="w-4 h-4" />,
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-aabb
         featured: true
       },
       {
