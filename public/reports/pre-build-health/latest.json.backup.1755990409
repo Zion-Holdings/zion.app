@@ -5,13 +5,21 @@
     "failedChecks": 0,
     "criticalFailures": 0,
     "canBuild": true,
+<<<<<<< HEAD
+    "timestamp": "2025-08-19T17:38:36.891Z"
+=======
     "timestamp": "2025-08-19T18:00:43.621Z"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-89ab
   },
   "results": [
     {
       "name": "Page Structure Validation",
       "status": "PASS",
+<<<<<<< HEAD
+      "result": "All 2 pages are properly structured",
+=======
       "result": "All 3 pages are properly structured",
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-89ab
       "critical": true
     },
     {
