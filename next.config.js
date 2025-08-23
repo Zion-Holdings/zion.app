@@ -12,6 +12,8 @@ const nextConfig = {
     optimizePackageImports: ['framer-motion', 'lucide-react'],
   },
 
+
+
   // Image optimization
   images: {
     domains: ['ziontechgroup.com'],

@@ -31,10 +31,16 @@ const navigationItems: NavigationItem[] = [
         description: 'Advanced AI solutions for enterprise'
       },
       {
-        label: 'Innovative 2040 Services',
-        href: '/innovative-2040-futuristic-services-showcase',
-        icon: <Star className="w-4 h-4" />,
-        description: 'Cutting-edge futuristic technology solutions'
+        label: 'Cybersecurity',
+        href: '/cybersecurity',
+        icon: <Lock className="w-4 h-4" />,
+        description: 'Enterprise security solutions'
+      },
+      {
+        label: 'Cloud Platform',
+        href: '/cloud-platform',
+        icon: <Globe className="w-4 h-4" />,
+        description: 'Scalable cloud infrastructure'
       },
       {
         label: 'Quantum Computing',
@@ -49,16 +55,10 @@ const navigationItems: NavigationItem[] = [
         description: 'Innovative space solutions'
       },
       {
-        label: 'Cybersecurity',
-        href: '/cybersecurity',
-        icon: <Lock className="w-4 h-4" />,
-        description: 'Enterprise security solutions'
-      },
-      {
-        label: 'Cloud Solutions',
-        href: '/cloud-platform',
-        icon: <Globe className="w-4 h-4" />,
-        description: 'Scalable cloud infrastructure'
+        label: 'Innovative 2040 Services',
+        href: '/innovative-2040-futuristic-services-showcase',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Cutting-edge futuristic technology solutions'
       },
       {
         label: 'View All Services',

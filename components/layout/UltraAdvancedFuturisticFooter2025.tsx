@@ -24,11 +24,11 @@ const footerSections: FooterSection[] = [
         title: 'Services',
         links: [
           { label: 'AI & Machine Learning', href: '/ai-services', description: 'Advanced AI solutions' },
-          { label: 'Innovative 2040 Services', href: '/innovative-2040-futuristic-services-showcase', description: 'Cutting-edge futuristic solutions' },
+          { label: 'Cybersecurity', href: '/cybersecurity', description: 'Enterprise security' },
+          { label: 'Cloud Platform', href: '/cloud-platform', description: 'Scalable cloud infrastructure' },
           { label: 'Quantum Computing', href: '/quantum-computing', description: 'Next-gen quantum tech' },
           { label: 'Space Technology', href: '/space-tech', description: 'Innovative space solutions' },
-          { label: 'Cybersecurity', href: '/cybersecurity', description: 'Enterprise security' },
-          { label: 'Cloud Solutions', href: '/cloud-platform', description: 'Scalable cloud infrastructure' },
+          { label: 'Innovative 2040 Services', href: '/innovative-2040-futuristic-services-showcase', description: 'Cutting-edge futuristic solutions' },
           { label: 'View All Services', href: '/services', description: 'Complete service portfolio' }
         ]
       },

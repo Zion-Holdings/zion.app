@@ -24,9 +24,9 @@ interface Service {
   period?: string;
   description: string;
   features: string[];
-  popular: boolean;
-  icon: string;
-  color: string;
+  popular?: boolean;
+  icon?: string;
+  color?: string;
   textColor?: string;
   link: string;
   category: string;
@@ -39,15 +39,16 @@ interface Service {
   marketSize?: string;
   growthRate?: string;
   contactInfo?: {
-    mobile: string;
+    phone?: string;
+    mobile?: string;
     email: string;
-    address: string;
+    address?: string;
     website: string;
   };
-  realImplementation?: boolean;
+  realImplementation?: boolean | string;
   implementationDetails?: string;
   launchDate?: string;
-  customers: number;
+  customers: number | string;
   rating: number;
   reviews: number;
 }
@@ -83,8 +84,8 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
     .sort((a, b) => {
       switch (sortBy) {
         case 'price': {
-          const aPrice = typeof a.price === 'string' ? parseFloat(a.price.replace(/[^0-9.]/g, '')) : a.price.monthly;
-          const bPrice = typeof b.price === 'string' ? parseFloat(b.price.replace(/[^0-9.]/g, '')) : b.price.monthly;
+          const aPrice = typeof a.price === 'string' && a.price ? parseFloat(a.price.replace(/[^0-9.]/g, '')) : (a.price && typeof a.price === 'object' ? a.price.monthly : 0);
+          const bPrice = typeof b.price === 'string' && b.price ? parseFloat(b.price.replace(/[^0-9.]/g, '')) : (b.price && typeof b.price === 'object' ? b.price.monthly : 0);
           return aPrice - bPrice;
         }
         case 'popularity':
