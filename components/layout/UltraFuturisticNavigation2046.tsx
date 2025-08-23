@@ -36,54 +36,54 @@ function normalizeHref(href: string): string {
 
 const navigationItems: NavigationItem[] = [
   {
-    name: 'Revolutionary Services 2046',
-    href: '/services',
+    name: 'Revolutionary Services 2047',
+    href: '/revolutionary-2047-services-showcase',
     icon: <Rocket className="w-5 h-5" />,
     description: 'Future-defining technology solutions',
-    badge: 'New 2046',
+    badge: 'New 2047',
     category: 'services',
     color: 'from-emerald-500 to-cyan-500',
     children: [
       { 
-        name: 'All Services', 
-        href: '/services', 
+        name: 'All Services 2047', 
+        href: '/revolutionary-2047-services-showcase', 
         description: 'Complete revolutionary services overview',
         icon: <Grid className="w-4 h-4" />,
         featured: true
       },
       { 
-        name: 'AI Consciousness Evolution 2046', 
-        href: '/ai-consciousness-evolution-platform-2046', 
+        name: 'AI Consciousness Evolution 2047', 
+        href: '/quantum-ai-consciousness-evolution-2047', 
         description: 'Next-generation AI consciousness',
         icon: <Brain className="w-4 h-4" />,
         color: 'from-purple-500 to-pink-500',
         featured: true
       },
       { 
-        name: 'Quantum AI Neural Networks 2046', 
-        href: '/quantum-ai-neural-network-platform-2046', 
+        name: 'Quantum AI Neural Networks 2047', 
+        href: '/autonomous-quantum-ai-neural-network-2047', 
         description: 'Quantum-powered AI neural networks',
         icon: <Atom className="w-4 h-4" />,
         color: 'from-blue-500 to-cyan-500',
         featured: true
       },
       { 
-        name: 'AI Autonomous Business Intelligence 2046', 
-        href: '/autonomous-ai-business-intelligence-platform-2046', 
+        name: 'AI Autonomous Business Intelligence 2047', 
+        href: '/quantum-ai-autonomous-business-intelligence-2047', 
         description: 'AI-powered business intelligence',
         icon: <BarChart3 className="w-4 h-4" />,
         color: 'from-emerald-500 to-teal-500'
       },
       { 
-        name: 'Quantum Cybersecurity Intelligence 2046', 
-        href: '/quantum-cybersecurity-intelligence-platform-2046', 
+        name: 'Quantum Cybersecurity Intelligence 2047', 
+        href: '/autonomous-quantum-cybersecurity-intelligence-2047', 
         description: 'Quantum-resistant security',
         icon: <Shield className="w-4 h-4" />,
         color: 'from-red-500 to-orange-500'
       },
       { 
-        name: 'Autonomous Healthcare AI 2046', 
-        href: '/autonomous-healthcare-ai-platform-2046', 
+        name: 'Autonomous Healthcare AI 2047', 
+        href: '/autonomous-quantum-ai-healthcare-intelligence-2047', 
         description: 'AI-powered healthcare',
         icon: <Heart className="w-4 h-4" />,
         color: 'from-pink-500 to-purple-500'
