@@ -26,6 +26,15 @@ export { AIAgentOrchestratorService } from './aiAgentOrchestratorService';
 export { AIGuardrailsService } from './aiGuardrailsService';
 export { AgenticRAGService } from './agenticRAGService';
 
+// Advanced futuristic micro SAAS services
+export { advancedFuturisticMicroSaasServices } from '../data/2025-advanced-futuristic-micro-saas-expansion';
+
+// Advanced IT infrastructure services
+export { advancedITInfrastructureServices } from '../data/2025-advanced-it-infrastructure-services';
+
+// Advanced AI automation services
+export { advancedAIAutomationServices } from '../data/2025-advanced-ai-automation-services';
+
 // Export types
 export type {
   ContentTemplate,

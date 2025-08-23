@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Brain, Rocket, Shield, Atom, Cpu, Cloud, Target,
+  Brain, Rocket, Atom, Cpu, Target,
   ArrowRight, Star, Zap, Users, Award, Globe, Search,
   Filter, ChevronDown, ExternalLink, Sparkles, Eye,
-  Lock, Clock, CheckCircle, TrendingUp, DollarSign, Phone
+  Clock, CheckCircle, TrendingUp, DollarSign, Phone
 } from 'lucide-react';
 
 // Import service data
@@ -14,8 +14,8 @@ import { innovativeRealMicroSaasServices2025 } from '../../data/2025-innovative-
 import { innovativeAIServicesEnhanced2025 } from '../../data/2025-innovative-ai-services-enhanced';
 import { innovativeITServicesEnhanced2025 } from '../../data/2025-innovative-it-services-enhanced';
 import { emergingTechServicesEnhanced2025 } from '../../data/2025-emerging-tech-services-enhanced';
-import { advancedAIAutomationServices2025 } from '../../data/2025-advanced-ai-automation-services';
-import { advancedITInfrastructureServices2025 } from '../../data/2025-advanced-it-infrastructure-services';
+import { advancedAIAutomationServices } from '../../data/2025-advanced-ai-automation-services';
+import { advancedITInfrastructureServices } from '../../data/2025-advanced-it-infrastructure-services';
 import { innovativeBusinessSolutions2025 } from '../../data/2025-innovative-business-solutions';
 
 const UltraAdvancedServicesShowcase2025: React.FC = () => {
@@ -32,8 +32,8 @@ const UltraAdvancedServicesShowcase2025: React.FC = () => {
     ...innovativeAIServicesEnhanced2025,
     ...innovativeITServicesEnhanced2025,
     ...emergingTechServicesEnhanced2025,
-    ...advancedAIAutomationServices2025,
-    ...advancedITInfrastructureServices2025,
+    ...advancedAIAutomationServices,
+    ...advancedITInfrastructureServices,
     ...innovativeBusinessSolutions2025
   ];
 
@@ -62,10 +62,16 @@ const UltraAdvancedServicesShowcase2025: React.FC = () => {
       switch (sortBy) {
         case 'popularity':
           return (b.popular ? 1 : 0) - (a.popular ? 1 : 0);
-        case 'price-low':
-          return parseFloat(a.price.replace(/[^0-9.]/g, '')) - parseFloat(b.price.replace(/[^0-9.]/g, ''));
-        case 'price-high':
-          return parseFloat(b.price.replace(/[^0-9.]/g, '')) - parseFloat(a.price.replace(/[^0-9.]/g, ''));
+        case 'price-low': {
+          const aPrice = typeof a.price === 'string' ? parseFloat(a.price.replace(/[^0-9.]/g, '')) : a.price.monthly;
+          const bPrice = typeof b.price === 'string' ? parseFloat(b.price.replace(/[^0-9.]/g, '')) : b.price.monthly;
+          return aPrice - bPrice;
+        }
+        case 'price-high': {
+          const aPriceHigh = typeof a.price === 'string' ? parseFloat(a.price.replace(/[^0-9.]/g, '')) : a.price.monthly;
+          const bPriceHigh = typeof b.price === 'string' ? parseFloat(b.price.replace(/[^0-9.]/g, '')) : b.price.monthly;
+          return bPriceHigh - aPriceHigh;
+        }
         case 'name':
           return a.name.localeCompare(b.name);
         default:
@@ -332,8 +338,10 @@ const UltraAdvancedServicesShowcase2025: React.FC = () => {
                   {/* Pricing and Actions */}
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-2">
-                      <span className="text-2xl font-bold text-white">{service.price}</span>
-                      <span className="text-gray-400 text-sm">/{service.period}</span>
+                      <span className="text-2xl font-bold text-white">
+                        ${typeof service.price === 'string' ? service.price : service.price.monthly}
+                      </span>
+                      <span className="text-gray-400 text-sm">/month</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <motion.button
@@ -361,7 +369,7 @@ const UltraAdvancedServicesShowcase2025: React.FC = () => {
                       <div className="flex items-center space-x-4">
                         <span className="flex items-center space-x-1">
                           <Clock className="w-3 h-3" />
-                          <span>{service.setupTime}</span>
+                          <span>{typeof service.price === 'string' ? 'Contact us' : service.price.setupTime}</span>
                         </span>
                         <span className="flex items-center space-x-1">
                           <DollarSign className="w-3 h-3" />
