@@ -45,6 +45,10 @@ import { innovative2025AIServicesExpansion } from '../data/innovative-2025-ai-se
 // Import our new innovative 2040 services
 import { innovative2040ITServices } from '../data/innovative-2040-it-services';
 
+// Import our new revolutionary 2043 and 2044 services
+import { revolutionary2043AdvancedServices } from '../data/revolutionary-2043-advanced-services';
+import { revolutionary2044FuturisticServices } from '../data/revolutionary-2044-futuristic-services';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -65,10 +69,23 @@ const getServiceCategory = (service: any) => {
 
 // Helper function to get service pricing
 const getServicePricing = (service: any) => {
-  if (service.pricing?.starter) return service.pricing.starter;
-  if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
-  if (service.price?.monthly) return `$${service.price.monthly}/month`;
-  return 'Contact for pricing';
+  try {
+    if (service.pricing?.starter) return service.pricing.starter;
+    if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
+    if (service.price?.monthly) return `$${service.price.monthly}/month`;
+    if (typeof service.price === 'string') return service.price;
+    if (service.price?.yearly) return `$${service.price.yearly}/year`;
+    if (service.price && typeof service.price === 'object') {
+      // Handle case where price is an object but doesn't have expected properties
+      if (service.price.monthly) return `$${service.price.monthly}/month`;
+      if (service.price.yearly) return `$${service.price.yearly}/year`;
+      return 'Contact for pricing';
+    }
+    return 'Contact for pricing';
+  } catch (error) {
+    console.warn('Error getting service pricing:', error, service);
+    return 'Contact for pricing';
+  }
 };
 
 // Helper function to get service features
@@ -98,6 +115,8 @@ const allServices = [
   ...realOperationalServices,
   ...marketReadyServices,
   ...marketValidatedServices,
+  ...revolutionary2043AdvancedServices,
+  ...revolutionary2044FuturisticServices,
   ...industryRealServices,
   ...real2025Q4AugmentedBatch,
   ...real2029Q3Additions,
@@ -134,7 +153,16 @@ const allServices = [
   ...innovative2025MicroSaasExpansion,
   ...innovative2025ITSolutionsExpansion,
   ...innovative2025AIServicesExpansion
-];
+].filter(service => {
+  // Filter out services with invalid price structures
+  if (!service) return false;
+  const serviceAny = service as any;
+  if (serviceAny?.price && typeof serviceAny.price === 'object' && !serviceAny.price?.monthly && !serviceAny.price?.yearly) {
+    console.warn('Filtering out service with invalid price structure:', serviceAny.id, serviceAny.price);
+    return false;
+  }
+  return true;
+});
 
 const categories = [
   {
