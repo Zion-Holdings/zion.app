@@ -1,15 +1,36 @@
 #!/bin/bash
 
+<<<<<<< HEAD
+# Stop Comprehensive Redundancy System Script
+# This script stops all redundancy automation managers including the comprehensive manager
+
+set -e
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(dirname "$(dirname "$SCRIPT_DIR")")"
+LOG_DIR="$PROJECT_ROOT/automation/logs"
+
+=======
 # Comprehensive Redundancy System Stop Script
 # This script stops the comprehensive redundancy system and cleans up all backup processes
 
 set -e
 
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-fd72
 # Colors for output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
+<<<<<<< HEAD
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0m' # No Color
+
+# Function to print colored output
+print_status() {
+    echo -e "${BLUE}[$(date '+%Y-%m-%d %H:%M:%S')]${NC} $1"
+=======
 NC='\033[0m' # No Color
 
 # Script configuration
@@ -20,6 +41,7 @@ PID_FILE="$SCRIPT_DIR/comprehensive-redundancy.pid"
 # Function to print colored output
 print_info() {
     echo -e "${BLUE}[INFO]${NC} $1"
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-fd72
 }
 
 print_success() {
@@ -34,6 +56,13 @@ print_error() {
     echo -e "${RED}[ERROR]${NC} $1"
 }
 
+<<<<<<< HEAD
+print_info() {
+    echo -e "${CYAN}[INFO]${NC} $1"
+}
+
+print_header() {
+    echo -e "${PURPLE}================================${NC}"
     echo -e "${PURPLE}$1${NC}"
     echo -e "${PURPLE}================================${NC}"
 }
@@ -481,11 +510,50 @@ confirm_shutdown() {
             print_info "Shutdown cancelled"
             exit 0
         fi
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-fd72
     fi
 }
 
 # Main script logic
 main() {
+<<<<<<< HEAD
+    local command="${1:-stop}"
+    
+    case "$command" in
+        stop)
+            stop_all_managers
+            ;;
+        force)
+            force_stop_all_managers
+            ;;
+        status)
+            show_system_status
+            ;;
+        cleanup)
+            cleanup_logs
+            ;;
+        *)
+            show_usage
+            exit 1
+            ;;
+    esac
+    
+    # Final status check
+    if [ "$command" = "stop" ] || [ "$command" = "force" ]; then
+        echo ""
+        check_running_managers
+        
+        if [ $? -eq 0 ]; then
+            echo ""
+            print_success "Comprehensive redundancy system stopped successfully!"
+            print_info "Use './start-comprehensive-redundancy.sh' to restart the system"
+        else
+            echo ""
+            print_warning "Some managers may still be running"
+            print_info "Use '$0 force' to force stop all remaining processes"
+        fi
+    fi
+=======
     local force_stop=false
     local cleanup_files=false
     
@@ -535,6 +603,7 @@ main() {
     
     # Show cleanup summary
     show_cleanup_summary
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-fd72
 }
 
 # Run main function with all arguments
