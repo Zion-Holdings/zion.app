@@ -3,6 +3,7 @@ import UltraAdvancedFuturisticNavigation2025 from './UltraAdvancedFuturisticNavi
 import UltraAdvancedFuturisticFooter2025 from './UltraAdvancedFuturisticFooter2025';
 import AccessibilityEnhancer from '../AccessibilityEnhancer';
 import PerformanceMonitor from '../PerformanceMonitor';
+import FloatingActionMenu from '../FloatingActionMenu';
 
 interface LayoutProps {
   children: ReactNode;
@@ -18,6 +19,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <UltraAdvancedFuturisticFooter2025 />
       <AccessibilityEnhancer />
       <PerformanceMonitor />
+      <FloatingActionMenu />
     </div>
   );
 };

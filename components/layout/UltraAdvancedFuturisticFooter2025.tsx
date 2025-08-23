@@ -3,7 +3,8 @@ import { motion } from 'framer-motion';
 import { 
   Mail, Phone, MapPin, Globe, ArrowRight, 
   Facebook, Twitter, Linkedin, Github, Youtube,
-  Heart, Shield, Zap, Users, Award, TrendingUp
+  Heart, Shield, Users, Award, TrendingUp,
+  CheckCircle, Star, Clock, Target
 } from 'lucide-react';
 import Link from 'next/link';
 import { AnimatePresence } from 'framer-motion';
@@ -98,28 +99,17 @@ const UltraAdvancedFuturisticFooter2025: React.FC = () => {
       await new Promise(resolve => setTimeout(resolve, 1000));
       
       // Here you would typically make an API call to subscribe
-      // await fetch('/api/newsletter/subscribe', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({ email: email.trim() })
-      // });
-
       setSubscriptionStatus('success');
       setEmail('');
       
       // Reset success message after 3 seconds
       setTimeout(() => setSubscriptionStatus('idle'), 3000);
-    } catch (error) {
+    } catch {
       setSubscriptionStatus('error');
-      
-      // Reset error message after 3 seconds
-      setTimeout(() => setSubscriptionStatus('idle'), 3000);
     } finally {
       setIsSubscribing(false);
     }
   };
-
-  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-gray-900 relative overflow-hidden">
@@ -129,17 +119,15 @@ const UltraAdvancedFuturisticFooter2025: React.FC = () => {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
       </div>
 
-      {/* Main Footer Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12">
-        {/* Top Section */}
+        {/* Enhanced Company Info Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-          {/* Company Info */}
-          <motion.div
+          <motion.div 
+            className="space-y-6"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-6"
           >
             <div className="flex items-center space-x-3">
               <div className="w-12 h-12 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center">
@@ -157,23 +145,23 @@ const UltraAdvancedFuturisticFooter2025: React.FC = () => {
               Empowering businesses with cutting-edge AI, quantum computing, and innovative technology solutions that drive transformation and unlock human potential.
             </p>
 
-            {/* Stats */}
+            {/* Enhanced Stats */}
             <div className="grid grid-cols-3 gap-6 pt-6">
               {[
-                { icon: Users, value: '500+', label: 'Clients' },
-                { icon: Award, value: '98%', label: 'Satisfaction' },
-                { icon: TrendingUp, value: '99.9%', label: 'Uptime' }
+                { icon: Users, value: "500+", label: "Clients", color: "cyan" },
+                { icon: Award, value: "98%", label: "Satisfaction", color: "blue" },
+                { icon: TrendingUp, value: "99.9%", label: "Uptime", color: "purple" }
               ].map((stat, index) => (
-                <motion.div
+                <motion.div 
                   key={stat.label}
+                  className="text-center"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="text-center"
                 >
-                  <div className="w-12 h-12 bg-gray-800/50 rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <stat.icon className="w-6 h-6 text-cyan-400" />
+                  <div className={`w-12 h-12 bg-gray-800/50 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:bg-${stat.color}-500/20 transition-all duration-300`}>
+                    <stat.icon className={`w-6 h-6 text-${stat.color}-400`} />
                   </div>
                   <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
                   <div className="text-sm text-gray-400">{stat.label}</div>
@@ -182,61 +170,81 @@ const UltraAdvancedFuturisticFooter2025: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Newsletter Signup */}
-          <motion.div
+          {/* Enhanced Newsletter Section */}
+          <motion.div 
+            className="space-y-6"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-6"
           >
             <div>
               <h3 className="text-xl font-semibold text-white mb-2">Stay Updated</h3>
-              <p className="text-gray-400">
-                Get the latest insights on AI, quantum computing, and emerging technologies delivered to your inbox.
-              </p>
+              <p className="text-gray-400">Get the latest insights on AI, quantum computing, and emerging technologies delivered to your inbox.</p>
             </div>
 
-            <form onSubmit={handleNewsletterSubmit} className="space-y-4">
+            {/* Newsletter Benefits */}
+            <div className="space-y-3">
+              {[
+                "Weekly industry insights and trends",
+                "Exclusive access to whitepapers and research",
+                "Early access to new service announcements",
+                "Invitations to exclusive webinars and events"
+              ].map((benefit, index) => (
+                <motion.div 
+                  key={index}
+                  className="flex items-center gap-3 text-sm text-gray-300"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
+                >
+                  <CheckCircle className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                  <span>{benefit}</span>
+                </motion.div>
+              ))}
+            </div>
+
+            <form className="space-y-4" onSubmit={handleNewsletterSubmit}>
               <div className="relative">
-                <input
-                  type="email"
+                <input 
+                  type="email" 
+                  placeholder="Enter your email address" 
+                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-200" 
+                  required 
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email address"
-                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-200"
-                  required
                 />
-                <button
-                  type="submit"
-                  disabled={isSubscribing}
+                <button 
+                  type="submit" 
                   className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                  disabled={isSubscribing}
                   aria-label="Subscribe to newsletter"
                 >
                   {isSubscribing ? (
-                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                   ) : (
                     <ArrowRight className="w-5 h-5" />
                   )}
                 </button>
               </div>
 
-              {/* Status Messages */}
+              {/* Subscription Status */}
               <AnimatePresence>
                 {subscriptionStatus === 'success' && (
                   <motion.div
-                    initial={{ opacity: 0, y: -10 }}
+                    initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
-                    className="text-green-400 text-sm flex items-center gap-2"
+                    className="text-emerald-400 text-sm flex items-center gap-2"
                   >
-                    <Shield className="w-4 h-4" />
-                    Successfully subscribed! Welcome to our community.
+                    <CheckCircle className="w-4 h-4" />
+                    Successfully subscribed! Welcome to the future.
                   </motion.div>
                 )}
                 {subscriptionStatus === 'error' && (
                   <motion.div
-                    initial={{ opacity: 0, y: -10 }}
+                    initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     className="text-red-400 text-sm flex items-center gap-2"
@@ -254,150 +262,213 @@ const UltraAdvancedFuturisticFooter2025: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Navigation Sections */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
-        >
+        {/* Enhanced Footer Links */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {footerSections.map((section, sectionIndex) => (
-            <div key={section.title} className="space-y-4">
+            <motion.div 
+              key={section.title}
+              className="space-y-4"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: sectionIndex * 0.1 }}
+            >
               <h3 className="text-lg font-semibold text-white">{section.title}</h3>
               <ul className="space-y-3">
                 {section.links.map((link, linkIndex) => (
-                  <motion.li
-                    key={link.href}
+                  <motion.li 
+                    key={link.label}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: (sectionIndex * 0.1) + (linkIndex * 0.05) }}
+                    transition={{ duration: 0.4, delay: sectionIndex * 0.1 + linkIndex * 0.05 }}
                   >
-                    <Link
-                      href={link.href}
+                    <Link 
+                      href={link.href} 
                       className="text-gray-400 hover:text-cyan-400 transition-colors duration-200 group flex items-start gap-2"
                     >
                       <ArrowRight className="w-3 h-3 mt-1.5 text-gray-600 group-hover:text-cyan-400 transition-colors duration-200" />
                       <div>
                         <span className="block">{link.label}</span>
-                        {link.description && (
-                          <span className="text-xs text-gray-500 block mt-1">{link.description}</span>
-                        )}
+                        <span className="text-xs text-gray-500 block mt-1">{link.description}</span>
                       </div>
                     </Link>
                   </motion.li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
-        </motion.div>
+        </div>
 
-        {/* Contact & Social Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 pt-8 border-t border-gray-800/50"
-        >
-          {/* Contact Information */}
-          <div className="space-y-4">
+        {/* Enhanced Contact & Social Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 pt-8 border-t border-gray-800/50">
+          <motion.div 
+            className="space-y-4"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
             <h3 className="text-lg font-semibold text-white">Contact Information</h3>
             <div className="space-y-3">
-              <div className="flex items-center gap-3 text-gray-400 hover:text-cyan-400 transition-colors duration-200">
-                <Phone className="w-4 h-4 text-cyan-400" />
-                <a href={`tel:${contactInfo.phone}`} className="hover:underline">
-                  {contactInfo.phone}
-                </a>
-              </div>
-              <div className="flex items-center gap-3 text-gray-400 hover:text-cyan-400 transition-colors duration-200">
-                <Mail className="w-4 h-4 text-cyan-400" />
-                <a href={`mailto:${contactInfo.email}`} className="hover:underline">
-                  {contactInfo.email}
-                </a>
-              </div>
-              <div className="flex items-start gap-3 text-gray-400">
-                <MapPin className="w-4 h-4 text-cyan-400 mt-0.5" />
-                <span>{contactInfo.address}</span>
-              </div>
-              <div className="flex items-center gap-3 text-gray-400 hover:text-cyan-400 transition-colors duration-200">
-                <Globe className="w-4 h-4 text-cyan-400" />
-                <a href={contactInfo.website} target="_blank" rel="noopener noreferrer" className="hover:underline">
-                  {contactInfo.website}
-                </a>
-              </div>
+              {[
+                { icon: Phone, text: contactInfo.phone, href: `tel:${contactInfo.phone}`, type: 'phone' },
+                { icon: Mail, text: contactInfo.email, href: `mailto:${contactInfo.email}`, type: 'email' },
+                { icon: MapPin, text: contactInfo.address, href: '#', type: 'address' },
+                { icon: Globe, text: contactInfo.website, href: contactInfo.website, type: 'website' }
+              ].map((contact, index) => (
+                <motion.div 
+                  key={contact.type}
+                  className="flex items-center gap-3 text-gray-400 hover:text-cyan-400 transition-colors duration-200"
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
+                >
+                  <contact.icon className="w-4 h-4 text-cyan-400" />
+                  {contact.type === 'address' ? (
+                    <span>{contact.text}</span>
+                  ) : (
+                    <a href={contact.href} className="hover:underline" target={contact.type === 'website' ? '_blank' : undefined} rel={contact.type === 'website' ? 'noopener noreferrer' : undefined}>
+                      {contact.text}
+                    </a>
+                  )}
+                </motion.div>
+              ))}
             </div>
-          </div>
+          </motion.div>
 
-          {/* Social Links */}
-          <div className="space-y-4">
+          <motion.div 
+            className="space-y-4"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+          >
             <h3 className="text-lg font-semibold text-white">Follow Us</h3>
             <div className="flex flex-wrap gap-3">
               {socialLinks.map((social, index) => (
-                <motion.a
+                <motion.a 
                   key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={social.href} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="w-12 h-12 bg-gray-800/50 hover:bg-cyan-500/20 border border-gray-700/50 hover:border-cyan-500/50 rounded-lg flex items-center justify-center text-gray-400 hover:text-cyan-400 transition-all duration-200 group"
+                  aria-label={`Follow us on ${social.label}`}
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-12 h-12 bg-gray-800/50 hover:bg-cyan-500/20 border border-gray-700/50 hover:border-cyan-500/50 rounded-lg flex items-center justify-center text-gray-400 hover:text-cyan-400 transition-all duration-200"
-                  aria-label={`Follow us on ${social.label}`}
+                  transition={{ duration: 0.4, delay: 0.7 + index * 0.1 }}
+                  whileHover={{ scale: 1.1, rotate: 5 }}
                 >
                   {social.icon}
                 </motion.a>
               ))}
             </div>
+
+            {/* Trust Indicators */}
+            <div className="pt-4 space-y-3">
+              <div className="flex items-center gap-2 text-sm text-gray-400">
+                <Shield className="w-4 h-4 text-emerald-400" />
+                <span>ISO 27001 Certified</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-gray-400">
+                <Star className="w-4 h-4 text-yellow-400" />
+                <span>Gartner Recognized</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-gray-400">
+                <Clock className="w-4 h-4 text-blue-400" />
+                <span>24/7 Support Available</span>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Enhanced Bottom Bar */}
+        <motion.div 
+          className="border-t border-gray-800/50"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <motion.div 
+                className="flex items-center gap-2 text-gray-400 text-sm"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.9 }}
+              >
+                <span>© 2025 Zion Tech Group. All rights reserved.</span>
+                <Heart className="w-4 h-4 text-red-400 animate-pulse" />
+              </motion.div>
+              
+              <motion.div 
+                className="flex items-center gap-6 text-sm"
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 1.0 }}
+              >
+                <Link href="/privacy" className="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
+                  Privacy Policy
+                </Link>
+                <Link href="/terms" className="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
+                  Terms of Service
+                </Link>
+                <Link href="/cookies" className="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
+                  Cookie Policy
+                </Link>
+                <Link href="/accessibility" className="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
+                  Accessibility
+                </Link>
+              </motion.div>
+            </div>
           </div>
         </motion.div>
       </div>
 
-      {/* Bottom Bar */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.5 }}
-        className="border-t border-gray-800/50"
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-2 text-gray-400 text-sm">
-              <span>© {currentYear} Zion Tech Group. All rights reserved.</span>
-              <Heart className="w-4 h-4 text-red-400" />
-            </div>
-            
-            <div className="flex items-center gap-6 text-sm">
-              <Link href="/privacy" className="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
-                Privacy Policy
-              </Link>
-              <Link href="/terms" className="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
-                Terms of Service
-              </Link>
-              <Link href="/cookies" className="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
-                Cookie Policy
-              </Link>
-            </div>
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Floating Contact Button */}
-      <motion.button
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-        className="fixed bottom-6 right-6 w-14 h-14 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-200 z-50 flex items-center justify-center"
-        onClick={() => window.location.href = '/contact'}
+      {/* Enhanced Floating Action Buttons */}
+      <motion.button 
+        className="fixed bottom-6 right-6 w-14 h-14 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-200 z-50 flex items-center justify-center group"
         aria-label="Contact us"
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 1.2 }}
+        whileHover={{ scale: 1.1, rotate: 5 }}
+        onClick={() => window.location.href = '/contact'}
       >
-        <Phone className="w-6 h-6" />
+        <Phone className="w-6 h-6 group-hover:animate-pulse" />
+      </motion.button>
+
+      <motion.button 
+        className="fixed bottom-6 left-6 w-14 h-14 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-full shadow-2xl shadow-purple-500/25 hover:shadow-purple-500/40 transition-all duration-200 z-50 flex items-center justify-center group"
+        aria-label="Accessibility settings"
+        aria-expanded="false"
+        aria-controls="accessibility-panel"
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 1.3 }}
+        whileHover={{ scale: 1.1, rotate: -5 }}
+      >
+        <Target className="w-6 h-6 group-hover:animate-pulse" />
+      </motion.button>
+
+      <motion.button 
+        className="fixed bottom-6 right-24 w-14 h-14 rounded-full shadow-2xl transition-all duration-200 z-50 flex items-center justify-center bg-gradient-to-r from-green-500 to-blue-500 shadow-green-500/25 group"
+        aria-label="Performance monitoring"
+        aria-expanded="false"
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 1.4 }}
+        whileHover={{ scale: 1.1, rotate: 5 }}
+      >
+        <TrendingUp className="w-6 h-6 text-white group-hover:animate-pulse" />
       </motion.button>
     </footer>
   );
