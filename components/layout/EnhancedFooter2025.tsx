@@ -14,12 +14,14 @@ const EnhancedFooter2025: React.FC = () => {
     {
       title: 'Services',
       links: [
+        { label: 'All Services Showcase', href: '/comprehensive-2025-services-showcase' },
         { label: 'AI & Machine Learning', href: '/ai-services' },
         { label: 'Quantum Computing', href: '/quantum-computing' },
         { label: 'Cybersecurity', href: '/cybersecurity' },
         { label: 'Cloud Infrastructure', href: '/cloud-platform' },
         { label: 'Data Analytics', href: '/data-analytics' },
-        { label: 'Process Automation', href: '/process-automation' }
+        { label: 'Process Automation', href: '/process-automation' },
+        { label: 'Micro SAAS Solutions', href: '/micro-saas' }
       ]
     },
     {
@@ -117,15 +119,19 @@ const EnhancedFooter2025: React.FC = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-gray-300">
                 <Phone className="w-4 h-4 text-cyan-400" />
-                <span>+1 (800) ZION-TECH</span>
+                <span>+1 302 464 0950</span>
               </div>
               <div className="flex items-center gap-3 text-gray-300">
                 <Mail className="w-4 h-4 text-cyan-400" />
-                <span>info@ziontechgroup.com</span>
+                <span>kleber@ziontechgroup.com</span>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300">
+                <MapPin className="w-4 h-4 text-cyan-400" />
+                <span>364 E Main St STE 1008<br />Middletown DE 19709</span>
               </div>
               <div className="flex items-center gap-3 text-gray-300">
                 <Globe className="w-4 h-4 text-cyan-400" />
-                <span>ziontechgroup.com</span>
+                <span>https://ziontechgroup.com</span>
               </div>
             </div>
           </div>

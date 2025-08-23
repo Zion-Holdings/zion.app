@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Layout from './layout/Layout';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, Play, Users, TrendingUp, Brain, Shield, Rocket, Globe, Lock, Cpu, Database, Cloud, BarChart3 } from 'lucide-react';
+import { ArrowRight, Play, Users, TrendingUp, Brain, Shield, Rocket, Globe, Lock, Cpu, Database, Cloud, BarChart3, Zap } from 'lucide-react';
 
 const Homepage2025: React.FC = () => {
   const { scrollYProgress } = useScroll();
@@ -211,20 +211,21 @@ const Homepage2025: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
-                { title: "AI & Machine Learning", description: "Advanced AI solutions for enterprise automation", icon: Brain, color: "from-purple-500 to-pink-500" },
-                { title: "Quantum Computing", description: "Next-generation computational power", icon: Cpu, color: "from-cyan-500 to-blue-500" },
-                { title: "Cybersecurity", description: "Military-grade protection for digital assets", icon: Shield, color: "from-red-500 to-orange-500" },
-                { title: "Cloud Infrastructure", description: "Scalable cloud solutions for growth", icon: Cloud, color: "from-emerald-500 to-teal-500" },
-                { title: "Data Analytics", description: "Transform data into actionable insights", icon: BarChart3, color: "from-indigo-500 to-purple-500" },
-                { title: "Blockchain Solutions", description: "Secure, transparent digital infrastructure", icon: Lock, color: "from-yellow-500 to-orange-500" }
+                { title: "AI & Machine Learning", description: "Advanced AI solutions for enterprise automation", icon: Brain, color: "from-purple-500 to-pink-500", href: "/ai-services" },
+                { title: "Quantum Computing", description: "Next-generation computational power", icon: Cpu, color: "from-cyan-500 to-blue-500", href: "/quantum-computing" },
+                { title: "Cybersecurity", description: "Military-grade protection for digital assets", icon: Shield, color: "from-red-500 to-orange-500", href: "/cybersecurity" },
+                { title: "Cloud Infrastructure", description: "Scalable cloud solutions for growth", icon: Cloud, color: "from-emerald-500 to-teal-500", href: "/cloud-platform" },
+                { title: "Data Analytics", description: "Transform data into actionable insights", icon: BarChart3, color: "from-indigo-500 to-purple-500", href: "/data-analytics" },
+                { title: "Micro SAAS Solutions", description: "Innovative software-as-a-service platforms", icon: Zap, color: "from-yellow-500 to-orange-500", href: "/micro-saas" }
               ].map((service, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10"
+                  className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm border border-white/10 cursor-pointer"
                   whileHover={{ y: -10, scale: 1.02 }}
+                  onClick={() => window.location.href = service.href}
                 >
                   <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
                   <div className="relative p-6">
@@ -241,6 +242,24 @@ const Homepage2025: React.FC = () => {
                 </motion.div>
               ))}
             </div>
+
+            {/* View All Services CTA */}
+            <motion.div
+              className="text-center mt-16"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <a
+                href="/comprehensive-2025-services-showcase"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25"
+              >
+                <Rocket className="w-5 h-5" />
+                View All 30+ Services
+                <ArrowRight className="w-5 h-5" />
+              </a>
+            </motion.div>
           </div>
         </section>
 

@@ -26,12 +26,14 @@ const navigationItems: NavigationItem[] = [
     href: '/services',
     icon: Briefcase,
     children: [
+      { label: 'All Services Showcase', href: '/comprehensive-2025-services-showcase', icon: Rocket, badge: 'New' },
       { label: 'AI & Machine Learning', href: '/ai-services', icon: Brain, badge: 'Hot' },
       { label: 'Quantum Computing', href: '/quantum-computing', icon: Cpu, badge: 'New' },
       { label: 'Cybersecurity', href: '/cybersecurity', icon: Shield, badge: 'Popular' },
       { label: 'Cloud Infrastructure', href: '/cloud-platform', icon: Globe },
       { label: 'Data Analytics', href: '/data-analytics', icon: BarChart3 },
-      { label: 'Process Automation', href: '/process-automation', icon: Zap }
+      { label: 'Process Automation', href: '/process-automation', icon: Zap },
+      { label: 'Micro SAAS Solutions', href: '/micro-saas', icon: Zap, badge: 'Trending' }
     ]
   },
   {
@@ -113,11 +115,11 @@ const EnhancedNavigation2025: React.FC = () => {
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
-                <span>+1 (800) ZION-TECH</span>
+                <span>+1 302 464 0950</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />
-                <span>info@ziontechgroup.com</span>
+                <span>kleber@ziontechgroup.com</span>
               </div>
             </div>
             <div className="flex items-center gap-4">
