@@ -1,0 +1,486 @@
+
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+/**
+ * Post-Build Healer
+ * Runs after each build to automatically fix issues and trigger new builds
+ * This script is designed to be called from CI/CD pipelines or build hooks
+ */
+
+const fs = require('fs')
+const path = require('path')
+const { execSync, spawn } = require('child_process')
+const AutoFixSystem = require('./auto-fix-errors')
+class PostBuildHealer {
+  constructor() {
+    this.logFile = logs/post-build-healer.log';    this.ensureLogDirectory();
+    this.fixesApplied = [];
+    this.maxRetries = 3;
+    this.currentRetry = 0;
+  }
+
+  ensureLogDirectory() {
+    const logDir = path.dirname(this.logFile);
+    if (!fs.existsSync(logDir)) {
+      fs.mkdirSync(logDir, { recursive: true });
+    }
+  }
+
+  log(message, level = 'INFO') {'    const timestamp = new Date().toISOString()
+const logMessage = `[${timestamp}] [${level}] ${message}`;
+    logger.info(logMessage);
+    fs.appendFileSync(this.logFile, logMessage + \n');  }
+
+  async runBuild() {
+    this.log('Running build...');    
+    return new Promise((resolve) => {
+      const buildProcess = spawn('npm', ['run', build'], {'        stdio: ['pipe', pipe', pipe'],        timeout: 300000 // 5 minutes
+      });
+
+      let output = ;      let errorOutput = ;
+      buildProcess.stdout.on('data', (data) => {'        output += data.toString();
+        process.stdout.write(data);
+      });
+
+      buildProcess.stderr.on('data', (data) => {'        errorOutput += data.toString();
+        process.stderr.write(data);
+      });
+
+      buildProcess.on('close', (code) => {'        const fullOutput = output + errorOutput;
+        
+        if (code === 0) {
+          this.log('Build completed successfully');          resolve({ success: true, output: fullOutput });
+        } else {
+          this.log(`Build failed with code ${code}`, ERROR');          resolve({ success: false, output: fullOutput, code });
+        }
+      });
+
+      buildProcess.on('error', (error) => {'        this.log(`Build process error: ${error.message}`, ERROR');        resolve({ success: false, output: error.message, code: -1 });
+      });
+    });
+  }
+
+  async runLinting() {
+    try {
+      this.log('Running ESLint...');      execSync('npm run lint', { stdio: 'inherit' });      this.log('ESLint passed');      return true;
+    } catch (error) {
+      this.log('ESLint failed, running auto-fix...', WARN');      try {
+        execSync('npm run lint: 'fix', { stdio: 'inherit' });        this.log('ESLint auto-fix applied');        this.fixesApplied.push('ESLint fixes');        return true;
+      } catch (fixError) {
+        this.log(`ESLint auto-fix failed: ${fixError.message}`, ERROR');        return false;
+      }
+    }
+  }
+
+  async runTypeCheck() {
+    try {
+      this.log('Running TypeScript type check...');      execSync('npm run type-check', { stdio: 'inherit' });      this.log('TypeScript type check passed');      return true;
+    } catch (error) {
+      this.log('TypeScript type check failed', WARN');      return false;
+    }
+  }
+
+  async runTests() {
+    try {
+      this.log('Running tests...');      execSync('npm test', { stdio: 'inherit' });      this.log('Tests passed');      return true;
+    } catch (error) {
+      this.log('Tests failed', ERROR');      return false;
+    }
+  }
+
+  async applyAutoFixes() {
+    try {
+      this.log('Applying comprehensive auto-fixes...')
+const autoFix = new AutoFixSystem();
+      await autoFix.run();
+      
+      // Get fixes applied from the auto-fix system
+      if (autoFix.fixesApplied && autoFix.fixesApplied.length > 0) {
+        this.fixesApplied.push(...autoFix.fixesApplied);
+      }
+      
+      this.log('Auto-fixes applied successfully');      return true;
+    } catch (error) {
+      this.log(`Auto-fix failed: ${error.message}`, ERROR');      return false;
+    }
+  }
+
+  async fixCommonIssues() {
+    this.log('Fixing common build issues...')
+const fixes = [
+      this.fixMissingDependencies(),
+      this.fixImportIssues(),
+      this.fixTypeIssues(),
+      this.fixBuildConfigIssues(),
+      this.fixEnvironmentIssues()
+    ]
+const results = await Promise.allSettled(fixes);
+    
+    results.forEach((result, index) => {
+      if (result.status === fulfilled' && result.value) {        this.log(`Applied fix ${index + 1}`);
+        this.fixesApplied.push(`Fix ${index + 1}`);
+      }
+    });
+  }
+
+  async fixMissingDependencies() {
+    try {
+      // Check for missing dependencies in package.json
+      const packageJson = JSON.parse(fs.readFileSync('package.json', 'utf8'));      const allDeps = { ...packageJson.dependencies, ...packageJson.devDependencies };
+      
+      // Common missing dependencies that might cause build issues
+      const commonDeps = [
+        @types/node', @types/react', @types/react-dom',typescript', eslint', prettier''      ]
+const missingDeps = commonDeps.filter(dep => !allDeps[dep]);
+      
+      if (missingDeps.length > 0) {
+        this.log(`Installing missing dependencies: ${missingDeps.join(', )}`);        execSync(`npm install --save-dev ${missingDeps.join('')}`, { stdio: 'inherit' });        return true;
+      }
+      
+      return false;
+    } catch (error) {
+      this.log(`Failed to fix missing dependencies: ${error.message}`, ERROR');      return false;
+    }
+  }
+
+  async fixImportIssues() {
+    try {
+      // Fix common import issues
+const tsFiles = this.findTypeScriptFiles();
+      
+      for (const file of tsFiles.slice(0, 10)) { // Limit to first 10 files
+        const content = fs.readFileSync(file, 'utf8');        let modified = false;
+        
+        // Fix relative imports
+        const relativeImportRegex = /import.*from ['"]\.\.?\/[^'"]*['"]/g;"        const matches = content.match(relativeImportRegex);"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+        
+        if (matches) {
+          for (const match of matches) {
+            const newImport = this.fixRelativeImport(match, file);
+            if (newImport !== match) {
+              content.replace(match, newImport);
+              modified = true;
+            }
+          }
+        }
+        
+        if (modified) {
+          fs.writeFileSync(file, content);
+          this.log(`Fixed imports in ${file}`);
+        }
+      }
+      
+      return true;
+    } catch (error) {
+      this.log(`Failed to fix import issues: ${error.message}`, ERROR');      return false;
+    }
+  }
+
+  async fixTypeIssues() {
+    try {
+      // Fix common TypeScript issues
+      const tsFiles = this.findTypeScriptFiles();
+      
+      for (const file of tsFiles.slice(0, 10)) { // Limit to first 10 files
+        const content = fs.readFileSync(file, 'utf8');        let modified = false;
+        
+        // Fix any types
+        if (content.includes(': any')) {'          const newContent = content.replace(/: any/g, : unknown');          if (newContent !== content) {
+            fs.writeFileSync(file, newContent);
+            modified = true;
+          }
+        }
+        
+        // Fix null checks
+        if (content.includes('Object is possibly')) {'          const newContent = content.replace(/\.(\w+)/g, ?.$1');          if (newContent !== content) {
+            fs.writeFileSync(file, newContent);
+            modified = true;
+          }
+        }
+        
+        if (modified) {
+          this.log(`Fixed type issues in ${file}`);
+        }
+      }
+      
+      return true;
+    } catch (error) {
+      this.log(`Failed to fix type issues: ${error.message}`, ERROR');      return false;
+    }
+  }
+
+  async fixBuildConfigIssues() {
+    try {
+      // Fix common build configuration issues
+      
+      // Check and fix tsconfig.json
+      if (fs.existsSync('tsconfig.json')) {'        const tsConfig = JSON.parse(fs.readFileSync('tsconfig.json', 'utf8'));        let modified = false;
+        
+        if (!tsConfig.compilerOptions) {
+          tsConfig.compilerOptions = {};
+          modified = true;
+        }
+        
+        if (!tsConfig.compilerOptions.strict) {
+          tsConfig.compilerOptions.strict = true;
+          modified = true;
+        }
+        
+        if (!tsConfig.compilerOptions.esModuleInterop) {
+          tsConfig.compilerOptions.esModuleInterop = true;
+          modified = true;
+        }
+        
+        if (modified) {
+          fs.writeFileSync('tsconfig.json', JSON.stringify(tsConfig, null, 2));          this.log('Fixed tsconfig.json');          return true;
+        }
+      }
+      
+      return false;
+    } catch (error) {
+      this.log(`Failed to fix build config issues: ${error.message}`, ERROR');      return false;
+    }
+  }
+
+  async fixEnvironmentIssues() {
+    try {
+      // Check for environment variable issues
+      const envFile = .env.local';      
+      if (!fs.existsSync(envFile)) {
+        // Create a basic .env.local file
+        const envContent = `# Auto-generated environment file
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url_here
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key_here
+NEXT_PUBLIC_REOWN_PROJECT_ID=your_reown_project_id_here
+`;
+        fs.writeFileSync(envFile, envContent);
+        this.log('Created .env.local file with placeholder values');        return true;
+      }
+      
+      return false;
+    } catch (error) {
+      this.log(`Failed to fix environment issues: ${error.message}`, ERROR');      return false;
+    }
+  }
+
+  findTypeScriptFiles() {
+    const glob = require('glob');    return glob.sync('src/**/*.{ts,tsx}, { cwd: process.cwd() });  }
+
+  fixRelativeImport(importStatement, filePath) {
+    // Simple relative import fix - in a real implementation, this would be more sophisticated;    return importStatement;
+  }
+
+  async commitChanges() {
+    if (this.fixesApplied.length > 0) {
+      try {
+        const commitMessage = `Auto-heal: Applied ${this.fixesApplied.length} fixes\n\n${this.fixesApplied.map(fix => `- ${fix}`).join('\n')}`;        
+        execSync('git add .', { stdio: 'inherit' });        execSync(`git commit -m "${commitMessage}"`, { stdio: 'inherit' });        execSync('git push', { stdio: 'inherit' });        
+        this.log('Changes committed and pushed successfully');        return true;
+      } catch (error) {
+        this.log(`Failed to commit changes: ${error.message}`, ERROR');        return false;
+      }
+    }
+    return false;
+  }
+
+  async triggerNetlifyBuild() {
+    try {
+      this.log('Triggering Netlify build...');      
+      // Try Netlify CLI first
+      try {
+        execSync('netlify --version', { stdio: 'pipe' });        execSync('netlify build', { stdio: 'inherit' });        this.log('Netlify build triggered via CLI');        return true;
+      } catch (netlifyError) {
+        // Fallback to git push
+        this.log('Netlify CLI not available, using git push fallback');        execSync('git push', { stdio: 'inherit' });        this.log('Git push completed, Netlify build should trigger');        return true;
+      }
+    } catch (error) {
+      this.log(`Failed to trigger Netlify build: ${error.message}`, ERROR');      return false;
+    }
+  }
+
+  async run() {
+    this.log('Starting post-build healing process...');    
+    while (this.currentRetry < this.maxRetries) {
+      this.currentRetry++;
+      this.log(`Healing attempt ${this.currentRetry}/${this.maxRetries}`);
+      
+      // Run initial checks
+      const linting = await this.runLinting()
+const typeCheck = await this.runTypeCheck()
+const tests = await this.runTests();
+      
+      // Run build
+      const buildResult = await this.runBuild();
+      
+      if (buildResult.success) {
+        this.log('Build successful! Healing complete.');        
+        // Trigger Netlify build if everything is working
+        await this.triggerNetlifyBuild();
+        break;
+      }
+      
+      // Apply fixes
+      this.log('Build failed, applying fixes...');      await this.applyAutoFixes();
+      await this.fixCommonIssues();
+      
+      // Commit changes if any fixes were applied
+      const committed = await this.commitChanges();
+      
+      if (committed) {
+        this.log('Waiting for build to trigger...');        await new Promise(resolve => 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = 
+const timeoutId = setTimeout(resolve,                                   10000);
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+;
+// Store timeoutId for cleanup if needed
+); // Wait 10 seconds
+      }
+    }
+    
+    if (this.currentRetry >= this.maxRetries) {
+      this.log('Maximum healing attempts reached', ERROR');    }
+    
+    this.log('Post-build healing process finished.');    this.log(`Total fixes applied: ${this.fixesApplied.length}`);
+  }
+}
+
+// Run the post-build healer
+if (require.main === module) {
+  const healer = new PostBuildHealer();
+  healer.run().catch(error => {
+    logger.error('Post-build healer failed:', error);    process.exit(1);
+  });
+}
+
+module.exports = PostBuildHealer; 
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

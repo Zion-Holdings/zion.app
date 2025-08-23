@@ -1,0 +1,15 @@
+<<<<<<< HEAD
+import EnhancedLayout from '../../components/layout/EnhancedLayout';
+
+export default function Verify() {
+  return (
+    <EnhancedLayout>
+      <div className="py-10">Verify</div>
+    </EnhancedLayout>
+  );
+}
+=======
+export default function Verify() {
+  return <div>Verify Account</div>;
+}
+>>>>>>> origin/cursor/build-it-service-provider-directory-page-d0d3

@@ -1,0 +1,170 @@
+name: Link Crawler Factory
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+    inputs:
+      max_shards:
+        description: Max number of parallel agents
+        default: '16'
+        required: true
+      max_depth:
+        description: Crawl depth
+        default: '3'
+        required: true
+
+permissions:
+  contents: write
+  actions: read
+  issues: write
+
+concurrency:
+  group: link-crawler-factory
+  cancel-in-progress: false
+
+jobs:
+  generate-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.mk.outputs.matrix }}
+      depth: ${{ steps.depth.outputs.depth }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: queue
+        name: Read queue length
+        run: |
+          file="state/queue.json"
+          if [ ! -f "$file" ]; then mkdir -p state && echo '[]' > "$file"; fi
+          echo "len=$(jq 'length' "$file")" >> "$GITHUB_OUTPUT"
+      - id: mk
+        name: Compute shard matrix
+        env:
+          LEN: ${{ steps.queue.outputs.len }}
+          MAX: ${{ github.event.inputs.max_shards || '16' }}
+        run: |
+          python - <<'PY' | tee matrix.json
+import json, os, math
+length = int(os.environ.get('LEN','0'))
+cap = int(os.environ.get('MAX','8'))
+# Exponential-ish scaling: shards = min(cap, max(1, 2^k)) where k grows with backlog
+k = 0 if length < 50 else 1 if length < 200 else 2 if length < 800 else 3 if length < 2000 else 4
+shards = min(cap, max(1, 2 ** k))
+matrix = {"include":[{"shard":i,"num_shards":shards} for i in range(shards)]}
+print(json.dumps(matrix))
+PY
+          echo "matrix=$(cat matrix.json)" >> "$GITHUB_OUTPUT"
+      - id: depth
+        run: echo "depth=${{ github.event.inputs.max_depth || '3' }}" >> "$GITHUB_OUTPUT"
+
+  agent:
+    needs: [generate-matrix]
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 16
+      matrix: ${{ fromJson(needs.generate-matrix.outputs.matrix).include }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Partition queue for this shard
+        id: part
+        env:
+          SHARD: ${{ matrix.shard }}
+          NUM_SHARDS: ${{ matrix.num_shards }}
+        run: |
+          file="state/queue.json"
+          if [ ! -f "$file" ]; then mkdir -p state && echo '[]' > "$file"; fi
+          jq -r --argjson s "$SHARD" --argjson n "$NUM_SHARDS" '
+            to_entries | map(select(.key % $n == $s)) | map(.value) | .[]
+          ' "$file" > shard_urls.txt || true
+          wc -l shard_urls.txt
+          if [ ! -s shard_urls.txt ]; then echo "No URLs for this shard"; fi
+
+      - uses: actions/setup-node@v4
+      - name: Run crawler (linkinator) on shard
+        run: |
+          set -e
+          urls=$(paste -sd' ' shard_urls.txt || true)
+          if [ -z "$urls" ]; then echo '{}' > report.json; exit 0; fi
+          npx --yes linkinator $urls --recurse --concurrency 20 --skip '.*(logout|signout).*' --format json > report.json || true
+
+      - name: Upload shard report
+        uses: actions/upload-artifact@v4
+        with:
+          name: shard-${{ matrix.shard }}-report
+          path: report.json
+
+  aggregate:
+    needs: [agent, generate-matrix]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download all shard reports
+        uses: actions/download-artifact@v4
+        with:
+          path: reports
+
+      - name: Merge reports and summarize
+        id: merge
+        run: |
+          set -e
+          find reports -name 'report.json' -maxdepth 2 -type f -print0 | xargs -0 jq -s '
+            reduce .[] as $r ({"links":[]};
+              .links += ($r.links // [])
+            )
+          ' > merged.json
+
+          # Broken links summary
+          jq '
+            [.links[] | select(.state=="BROKEN") |
+              {source:.parent, target:.url, status:(.status // "unknown")}
+            ] | sort_by(.source, .target)
+          ' merged.json > broken.json
+
+          # Next queue (new seeds from successes, bounded)
+          jq '
+            [.links[] | select(.state!="BROKEN") | .url] |
+            unique | .[:5000]
+          ' merged.json > next_queue.json
+
+          # Markdown summary
+          {
+            broken: (input | length),
+            sample: (input | .[:50])
+          } as $meta
+          | "Broken links: \($meta.broken)\n\n" +
+            (if $meta.broken>0 then
+              "| Source | Target | Status |\n|---|---|---|\n" +
+              ([$meta.sample[] | "| " + .source + " | " + .target + " | " + (.status|tostring) + " |"] | join("\n"))
+             else "No broken links found."
+            )
+        ' broken.json > BROKEN_SUMMARY.md
+
+      - name: Upload merged artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: merged
+          path: |
+            merged.json
+            broken.json
+            BROKEN_SUMMARY.md
+            next_queue.json
+
+      - name: Open/Update issue with summary
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: "Broken links report"
+          content-filepath: BROKEN_SUMMARY.md
+          labels: link-check, automated
+          assignees: ''
+
+      - name: Update queue
+        run: |
+          mkdir -p state
+          cp next_queue.json state/queue.json
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add state/queue.json
+          git commit -m "chore(crawler): update queue" || echo "No queue changes"
+          git push || true

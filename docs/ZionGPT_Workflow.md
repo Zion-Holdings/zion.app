@@ -45,3 +45,13 @@ This document outlines the process for building and deploying a private fine-tun
   script now strips emails, phone numbers and basic name patterns before
   uploading.
 - Offer users a training opt‑out setting in the application so their content is skipped during dataset generation.
+
+## 7. Specialized Content Generation Models
+
+Beyond the general ZionGPT model, specialized models can be fine-tuned for specific content generation tasks, such as creating SEO-optimized content.
+
+### SEO Content Generation
+
+A dedicated workflow and fine-tuned model are utilized for generating various types of SEO-focused content, including blog posts, service descriptions, and FAQs. This model is trained on specific datasets relevant to these content types to ensure high quality and relevance.
+
+For more details, see [SEO Content Generation](./SeoContentLoadedGeneration.md).
