@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+<<<<<<< HEAD
+=======
 import { 
   Menu, 
   X, 
@@ -27,6 +29,7 @@ import {
   Cpu,
   Star
 } from 'lucide-react';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-c804
 import Link from 'next/link';
 import { 
   Menu, X, ChevronDown, Search, Globe, Brain, Rocket, Shield, 

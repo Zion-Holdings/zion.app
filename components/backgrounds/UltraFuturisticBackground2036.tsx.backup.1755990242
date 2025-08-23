@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 
 const UltraFuturisticBackground2036: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+<<<<<<< HEAD
+=======
   const containerRef = useRef<HTMLDivElement>(null);
   const animationFrameRef = useRef<number | undefined>(undefined);
 
@@ -109,6 +111,7 @@ const UltraFuturisticBackground2036: React.FC = () => {
   // Enhanced animation loop with more effects
   const animate = useCallback(() => {
     if (!canvasRef.current) return;
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-c804
 
   useEffect(() => {
     const canvas = canvasRef.current;
