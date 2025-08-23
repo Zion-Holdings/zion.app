@@ -85,6 +85,18 @@ const navigationItems: NavigationItem[] = [
         icon: <Cpu className="w-4 h-4" />
       },
       { 
+        name: 'Cybersecurity', 
+        href: '/cybersecurity', 
+        description: 'Security & compliance solutions',
+        icon: <Shield className="w-4 h-4" />
+      },
+      { 
+        name: 'Cloud Solutions', 
+        href: '/cloud-platform', 
+        description: 'Cloud infrastructure & services',
+        icon: <Cloud className="w-4 h-4" />
+      },
+      { 
         name: 'Specialized Solutions', 
         href: '/solutions', 
         description: 'Industry-specific solutions',
@@ -119,6 +131,18 @@ const navigationItems: NavigationItem[] = [
         href: '/market-pricing', 
         description: 'Market price references',
         icon: <BarChart3 className="w-4 h-4" />
+      },
+      { 
+        name: 'Revolutionary Pricing 2025', 
+        href: '/revolutionary-2025-pricing', 
+        description: '2025 pricing innovations',
+        icon: <TrendingUp className="w-4 h-4" />
+      },
+      { 
+        name: 'Revolutionary Pricing 2026', 
+        href: '/revolutionary-2026-pricing', 
+        description: '2026 pricing innovations',
+        icon: <TrendingUp className="w-4 h-4" />
       }
     ]
   },
@@ -152,6 +176,18 @@ const navigationItems: NavigationItem[] = [
         href: '/investors', 
         description: 'Investment information',
         icon: <DollarSign className="w-4 h-4" />
+      },
+      { 
+        name: 'Careers', 
+        href: '/careers', 
+        description: 'Join our team',
+        icon: <User className="w-4 h-4" />
+      },
+      { 
+        name: 'News', 
+        href: '/news', 
+        description: 'Company updates',
+        icon: <FileText className="w-4 h-4" />
       }
     ]
   },
@@ -185,6 +221,69 @@ const navigationItems: NavigationItem[] = [
         href: '/support', 
         description: 'Technical support',
         icon: <HelpCircle className="w-4 h-4" />
+      },
+      { 
+        name: 'Training', 
+        href: '/training', 
+        description: 'Learning resources',
+        icon: <BookOpenCheck className="w-4 h-4" />
+      },
+      { 
+        name: 'Webinars', 
+        href: '/webinars', 
+        description: 'Educational sessions',
+        icon: <Video className="w-4 h-4" />
+      },
+      { 
+        name: 'White Papers', 
+        href: '/white-papers', 
+        description: 'In-depth research',
+        icon: <FileText className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Solutions',
+    href: '/solutions',
+    icon: <Target className="w-5 h-5" />,
+    description: 'Industry solutions',
+    category: 'solutions',
+    children: [
+      { 
+        name: 'Healthcare', 
+        href: '/healthcare-ai-solutions', 
+        description: 'Healthcare technology',
+        icon: <Heart className="w-4 h-4" />
+      },
+      { 
+        name: 'Financial Services', 
+        href: '/financial-solutions', 
+        description: 'Fintech solutions',
+        icon: <DollarSign className="w-4 h-4" />
+      },
+      { 
+        name: 'Manufacturing', 
+        href: '/manufacturing-ai-solutions', 
+        description: 'Industrial automation',
+        icon: <Settings className="w-4 h-4" />
+      },
+      { 
+        name: 'Retail', 
+        href: '/retail-technology-solutions', 
+        description: 'Retail technology',
+        icon: <ShoppingCart className="w-4 h-4" />
+      },
+      { 
+        name: 'Government', 
+        href: '/government-technology-solutions', 
+        description: 'Public sector solutions',
+        icon: <Building className="w-4 h-4" />
+      },
+      { 
+        name: 'Education', 
+        href: '/education-technology-solutions', 
+        description: 'EdTech solutions',
+        icon: <BookOpen className="w-4 h-4" />
       }
     ]
   }

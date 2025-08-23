@@ -20,20 +20,18 @@ const contactInfo = {
 
 const footerSections = [
   {
-    title: 'Featured Services',
-    description: 'Our most popular and innovative solutions',
+    title: 'Core Services',
+    description: 'Our flagship technology solutions',
     icon: <Star className="w-5 h-5 text-yellow-400" />,
     links: [
-      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', featured: true },
-      { name: 'Quantum Neural Networks', href: '/quantum-neural-network-platform', featured: true },
-      { name: 'Autonomous Business Operations', href: '/autonomous-business-operations-platform', featured: true },
-      { name: 'Space Resource Mining', href: '/space-resource-mining-platform', featured: true },
-      { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform', featured: true },
-      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading-platform', featured: true },
-      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', featured: true },
-      { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform' },
-      { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform' },
-      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' }
+      { name: 'AI & Machine Learning', href: '/ai-services', featured: true },
+      { name: 'Quantum Technology', href: '/quantum-services', featured: true },
+      { name: 'Space Technology', href: '/space-technology', featured: true },
+      { name: 'IT Infrastructure', href: '/it-services', featured: true },
+      { name: 'Cybersecurity', href: '/cybersecurity', featured: true },
+      { name: 'Cloud Solutions', href: '/cloud-platform' },
+      { name: 'Edge Computing', href: '/edge-computing-orchestration-platform' },
+      { name: 'Blockchain Solutions', href: '/blockchain-infrastructure-platform' }
     ]
   },
   {
@@ -43,7 +41,7 @@ const footerSections = [
     links: [
       { name: 'AI Consciousness Evolution 2029', href: '/ai-consciousness-evolution-2029' },
       { name: 'AI Emotional Intelligence Training', href: '/ai-emotional-intelligence-training' },
-      { name: 'AI Autonomous Business Operations', href: '/autonomous-business-operations-platform' },
+      { name: 'AI Autonomous Business Operations', href: '/ai-autonomous-business-operations-platform' },
       { name: 'AI Autonomous Research Assistant', href: '/ai-autonomous-research-assistant' },
       { name: 'AI Predictive Maintenance Platform', href: '/ai-predictive-maintenance-platform' },
       { name: 'AI Content Personalization Engine', href: '/ai-content-personalization-engine' },
@@ -71,7 +69,7 @@ const footerSections = [
     ]
   },
   {
-    title: 'Enterprise IT Solutions',
+    title: 'Enterprise Solutions',
     description: 'Advanced enterprise infrastructure solutions',
     icon: <Shield className="w-5 h-5 text-purple-400" />,
     links: [
@@ -88,59 +86,53 @@ const footerSections = [
     ]
   },
   {
-    title: 'Micro SAAS Solutions',
-    description: 'Innovative business solutions for modern enterprises',
-    icon: <Rocket className="w-5 h-5 text-emerald-400" />,
+    title: 'Industry Solutions',
+    description: 'Specialized solutions for key industries',
+    icon: <Target className="w-5 h-5 text-emerald-400" />,
     links: [
-      { name: 'AI Content Generator', href: '/ai-content-generator' },
-      { name: 'AI Code Review', href: '/ai-code-review' },
-      { name: 'AI HR Analytics Platform', href: '/intelligent-hr-analytics-platform' },
-      { name: 'AI Financial Planning Platform', href: '/ai-financial-planning-platform' },
-      { name: 'Supply Chain Optimization', href: '/intelligent-supply-chain-optimization' },
-      { name: 'Content Automation Platform', href: '/intelligent-content-automation-platform' },
-      { name: 'CRM Intelligence Suite', href: '/smart-crm-intelligence-suite' },
-      { name: 'SEO Automation Suite', href: '/seo-automation-suite' },
-      { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent' },
-      { name: 'Managed Postgres HA', href: '/managed-postgres-ha' }
+      { name: 'Healthcare AI Solutions', href: '/healthcare-ai-solutions' },
+      { name: 'Financial Technology Solutions', href: '/financial-solutions' },
+      { name: 'Manufacturing AI Solutions', href: '/manufacturing-ai-solutions' },
+      { name: 'Retail Technology Solutions', href: '/retail-technology-solutions' },
+      { name: 'Government Technology Solutions', href: '/government-technology-solutions' },
+      { name: 'Education Technology Solutions', href: '/education-technology-solutions' },
+      { name: 'Energy & Utilities Solutions', href: '/energy-utilities-solutions' },
+      { name: 'Entertainment & Media Solutions', href: '/entertainment-media-solutions' }
     ]
   },
   {
-    title: 'Specialized Solutions',
-    description: 'Industry-specific and specialized services',
-    icon: <Target className="w-5 h-5 text-pink-400" />,
+    title: 'Resources & Support',
+    description: 'Knowledge, support, and learning resources',
+    icon: <BookOpen className="w-5 h-5 text-orange-400" />,
     links: [
-      { name: 'Browser Automation Cloud', href: '/browser-automation-cloud' },
-      { name: 'Secrets Rotation Automation', href: '/secrets-rotation-automation' },
-      { name: 'API Performance Testing', href: '/api-performance-testing' },
-      { name: 'Sales Copilot', href: '/sales-copilot' },
-      { name: 'Serverless Cron Manager', href: '/serverless-cron-manager' },
-      { name: 'SSO in a Box', href: '/sso-in-a-box' },
-      { name: 'Status Pages & SLO Monitor', href: '/status-pages-slo' },
-      { name: 'Synthetic Monitor Recorder', href: '/synthetic-monitor-recorder' },
-      { name: 'TLS Certificate Monitor', href: '/tls-certificate-monitor' },
-      { name: 'Uptime SLO Monitor', href: '/uptime-slo-monitor' }
+      { name: 'Documentation', href: '/docs' },
+      { name: 'Blog & Insights', href: '/blog' },
+      { name: 'Case Studies', href: '/case-studies' },
+      { name: 'Support Center', href: '/support' },
+      { name: 'Training Programs', href: '/training' },
+      { name: 'Webinars', href: '/webinars' },
+      { name: 'White Papers', href: '/white-papers' },
+      { name: 'Developer Resources', href: '/developer-resources' }
     ]
   }
-];
-
-const quickLinks = [
-  { name: 'All Services', href: '/comprehensive-services-showcase-2025' },
-  { name: 'Pricing', href: '/pricing' },
-  { name: 'Market Pricing', href: '/market-pricing' },
-  { name: 'About Us', href: '/about' },
-  { name: 'Contact', href: '/contact' },
-  { name: 'Support', href: '/support' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'Careers', href: '/careers' },
-  { name: 'Partners', href: '/partners' },
-  { name: 'Investors', href: '/investors' }
 ];
 
 const socialLinks = [
   { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: <Linkedin className="w-5 h-5" /> },
   { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: <Twitter className="w-5 h-5" /> },
-  { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: <Github className="w-5 h-5" /> },
+  { name: 'GitHub', href: 'https://github.com/ziontechgroup', icon: <Github className="w-5 h-5" /> },
   { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: <Youtube className="w-5 h-5" /> }
+];
+
+const quickLinks = [
+  { name: 'About Us', href: '/about' },
+  { name: 'Contact', href: '/contact' },
+  { name: 'Careers', href: '/careers' },
+  { name: 'Partners', href: '/partners' },
+  { name: 'Investors', href: '/investors' },
+  { name: 'Privacy Policy', href: '/privacy' },
+  { name: 'Terms of Service', href: '/terms' },
+  { name: 'Cookie Policy', href: '/cookies' }
 ];
 
 export default function UltraFuturisticFooter2036() {
