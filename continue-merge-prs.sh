@@ -11,7 +11,7 @@ echo "---"
 # Configuration
 BATCH_SIZE=100
 MAX_RETRIES=3
-START_FROM_BRANCH=161  # We've already processed 161 branches
+START_FROM_BRANCH=373  # We've already processed 373 branches
 
 # Verify we're on the merge branch
 if [[ ! $(git branch --show-current) =~ "merge-all-prs" ]]; then
