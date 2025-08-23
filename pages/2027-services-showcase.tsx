@@ -19,6 +19,13 @@ export default function ServicesShowcase2027() {
   const [selectedPriceRange, setSelectedPriceRange] = useState<string>('all');
   const [sortBy, setSortBy] = useState<string>('name');
 
+  // Sort options
+  const sortOptions = [
+    { value: 'name', label: 'Sort by Name' },
+    { value: 'price', label: 'Sort by Price' },
+    { value: 'roi', label: 'Sort by ROI' }
+  ];
+
   const allServices = [
     ...cuttingEdge2027Innovations,
     ...practicalMicroSaas2027
@@ -47,10 +54,8 @@ export default function ServicesShowcase2027() {
         return a.name.localeCompare(b.name);
       case 'price':
         return parseInt(a.price.replace(/[^0-9]/g, '')) - parseInt(b.price.replace(/[^0-9]/g, ''));
-      case 'rating':
-        return b.rating - a.rating;
-      case 'popularity':
-        return b.customers - a.customers;
+      case 'roi':
+        return parseInt(a.roi.replace(/[^0-9]/g, '')) - parseInt(b.roi.replace(/[^0-9]/g, ''));
       default:
         return 0;
     }

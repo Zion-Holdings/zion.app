@@ -6,8 +6,12 @@ import Button from '../components/ui/Button';
 import UltraFuturisticBackground2028 from '../components/ui/UltraFuturisticBackground2028';
 import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
 import UltraAdvancedNavigation2026 from '../components/layout/UltraAdvancedNavigation2026';
+<<<<<<< HEAD
+import UltraFuturisticNavigation2028 from '../components/layout/UltraFuturisticNavigation2028';
+=======
 import UltraFuturisticNavigation2027 from '../components/layout/UltraFuturisticNavigation2027';
 import EnhancedFooter from '../components/layout/EnhancedFooter';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-260d
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
 import Revolutionary2026ServiceShowcase from '../components/sections/Revolutionary2026ServiceShowcase';
@@ -349,10 +353,14 @@ export default function HomePage() {
             </motion.div>
           </div>
         </section>
+<<<<<<< HEAD
+      </UltraFuturisticBackground2028>
+=======
       </UltraQuantumHolographicBackground>
       
       {/* Enhanced Footer */}
       <EnhancedFooter />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-260d
     </>
   );
 }
