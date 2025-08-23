@@ -91,7 +91,30 @@ const navigationItems: NavigationItem[] = [
           description: 'Advanced AI solutions for enterprise',
           featured: true,
           neonColor: 'shadow-purple-400/50',
-          category: 'ai'
+          category: 'ai',
+          children: [
+            {
+              label: 'AI Content Creation Suite',
+              href: '/ai-content-creation-suite',
+              icon: <Code className="w-4 h-4" />,
+              description: 'AI-powered content generation and marketing',
+              neonColor: 'shadow-cyan-400/50'
+            },
+            {
+              label: 'Intelligent Customer Support',
+              href: '/intelligent-customer-support-automation',
+              icon: <MessageCircle className="w-4 h-4" />,
+              description: 'AI-powered customer support automation',
+              neonColor: 'shadow-green-400/50'
+            },
+            {
+              label: 'Predictive Analytics',
+              href: '/predictive-analytics-forecasting',
+              icon: <TrendingUp className="w-4 h-4" />,
+              description: 'Advanced predictive insights and forecasting',
+              neonColor: 'shadow-blue-400/50'
+            }
+          ]
         },
         {
           label: 'Quantum Computing',
@@ -117,7 +140,30 @@ const navigationItems: NavigationItem[] = [
           icon: <Shield className="w-4 h-4" />,
           description: 'Advanced security solutions',
           neonColor: 'shadow-red-400/50',
-          category: 'security'
+          category: 'security',
+          children: [
+            {
+              label: 'Zero-Trust Security',
+              href: '/zero-trust-security-architecture',
+              icon: <Shield className="w-4 h-4" />,
+              description: 'Comprehensive zero-trust security framework',
+              neonColor: 'shadow-orange-400/50'
+            },
+            {
+              label: 'Threat Intelligence',
+              href: '/cybersecurity-threat-intelligence',
+              icon: <Eye className="w-4 h-4" />,
+              description: 'AI-powered threat detection and response',
+              neonColor: 'shadow-red-400/50'
+            },
+            {
+              label: 'Fraud Detection',
+              href: '/intelligent-fraud-detection',
+              icon: <Target className="w-4 h-4" />,
+              description: 'Advanced fraud detection and prevention',
+              neonColor: 'shadow-pink-400/50'
+            }
+          ]
         },
         {
           label: 'Cloud Infrastructure',
@@ -125,16 +171,70 @@ const navigationItems: NavigationItem[] = [
           icon: <Cloud className="w-4 h-4" />,
           description: 'Scalable cloud solutions',
           neonColor: 'shadow-indigo-400/50',
-          category: 'cloud'
+          category: 'cloud',
+          children: [
+            {
+              label: 'Cloud-Native Platform',
+              href: '/cloud-native-application-platform',
+              icon: <Cloud className="w-4 h-4" />,
+              description: 'Build and deploy cloud-native applications',
+              neonColor: 'shadow-cyan-400/50'
+            },
+            {
+              label: 'Hybrid Cloud Management',
+              href: '/hybrid-cloud-management-platform',
+              icon: <Layers className="w-4 h-4" />,
+              description: 'Unified multi-cloud and on-premises management',
+              neonColor: 'shadow-blue-400/50'
+            },
+            {
+              label: 'Edge Computing',
+              href: '/edge-computing-infrastructure',
+              icon: <Cpu className="w-4 h-4" />,
+              description: 'Distributed computing infrastructure',
+              neonColor: 'shadow-purple-400/50'
+            }
+          ]
         },
-      {
-        label: 'Edge Computing',
-        href: '/services?category=edge',
-        icon: <Cpu className="w-4 h-4" />,
-        description: 'Next-generation edge solutions',
-        neonColor: 'shadow-green-400/50',
-        category: 'edge'
-      }
+              {
+          label: 'Edge Computing',
+          href: '/services?category=edge',
+          icon: <Cpu className="w-4 h-4" />,
+          description: 'Next-generation edge solutions',
+          neonColor: 'shadow-green-400/50',
+          category: 'edge'
+        },
+        {
+          label: 'Business Solutions',
+          href: '/services?category=business',
+          icon: <Building className="w-4 h-4" />,
+          description: 'Comprehensive business automation',
+          neonColor: 'shadow-emerald-400/50',
+          category: 'business',
+          children: [
+            {
+              label: 'Smart Inventory Management',
+              href: '/smart-inventory-management-system',
+              icon: <Database className="w-4 h-4" />,
+              description: 'AI-powered inventory optimization',
+              neonColor: 'shadow-green-400/50'
+            },
+            {
+              label: 'Financial Analytics',
+              href: '/financial-analytics-planning-platform',
+              icon: <TrendingUp className="w-4 h-4" />,
+              description: 'AI financial insights and planning',
+              neonColor: 'shadow-blue-400/50'
+            },
+            {
+              label: 'HR Analytics',
+              href: '/hr-analytics-talent-management',
+              icon: <Users className="w-4 h-4" />,
+              description: 'Data-driven HR decisions',
+              neonColor: 'shadow-purple-400/50'
+            }
+          ]
+        }
     ]
   },
   {
