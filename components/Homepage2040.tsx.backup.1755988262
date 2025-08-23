@@ -461,6 +461,12 @@ const Homepage2040: React.FC = () => {
                       href={heroSlides[currentSlide].link}
                       className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg hover:from-cyan-600 hover:to-blue-600 transition-all duration-200 shadow-lg hover:shadow-cyan-500/25"
                     >
+<<<<<<< HEAD
+                      Learn More
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+=======
                       {/* Service Icon */}
                       <div className={`w-16 h-16 bg-gradient-to-r ${getColorClasses(index)} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                         <Rocket className="w-8 h-8 text-white" />
@@ -501,6 +507,7 @@ const Homepage2040: React.FC = () => {
                       </Link>
                     </motion.div>
                   ))}
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-07b8
                 </motion.div>
               </AnimatePresence>
 

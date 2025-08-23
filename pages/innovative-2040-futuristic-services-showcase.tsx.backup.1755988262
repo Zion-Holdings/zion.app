@@ -23,7 +23,11 @@ interface Service {
   price: string | { monthly: number; yearly: number; currency: string; trialDays: number; setupTime: string };
   period?: string;
   description: string;
+<<<<<<< HEAD
+  features?: string[];
+=======
   features: string[];
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-07b8
   popular?: boolean;
   icon?: string;
   color?: string;
@@ -39,15 +43,24 @@ interface Service {
   marketSize?: string;
   growthRate?: string;
   contactInfo?: {
+<<<<<<< HEAD
+    mobile?: string;
+    phone?: string;
+=======
     phone?: string;
     mobile?: string;
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-07b8
     email: string;
     address?: string;
     website: string;
   };
   realImplementation?: boolean | string;
   implementationDetails?: string;
+<<<<<<< HEAD
+  launchDate: string;
+=======
   launchDate?: string;
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-07b8
   customers: number | string;
   rating: number;
   reviews: number;
