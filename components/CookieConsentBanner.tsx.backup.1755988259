@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+<<<<<<< HEAD
+import { X, Settings, Shield, Cookie, Info } from 'lucide-react';
+=======
 import { 
   Shield, X, Settings, Check, AlertTriangle, 
   Info, Cookie, Lock, Eye, EyeOff
@@ -12,6 +15,7 @@ declare global {
     fbq?: (...args: any[]) => void;
   }
 }
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-52f1
 
 interface CookiePreferences {
   necessary: boolean;
@@ -30,9 +34,15 @@ const CookieConsentBanner: React.FC<CookieConsentBannerProps> = ({
   showUI = false
 }) => {
   const [isVisible, setIsVisible] = useState(false);
+<<<<<<< HEAD
+  const [showSettings, setShowSettings] = useState(false);
+  const [preferences, setPreferences] = useState<CookiePreferences>({
+    necessary: true,
+=======
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [preferences, setPreferences] = useState<CookiePreferences>({
     necessary: true, // Always required
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-52f1
     analytics: false,
     marketing: false,
     preferences: false
@@ -42,6 +52,22 @@ const CookieConsentBanner: React.FC<CookieConsentBannerProps> = ({
 
   // Performance optimization: Check consent status
   useEffect(() => {
+<<<<<<< HEAD
+    // Check if user has already made a choice
+    const consent = localStorage.getItem('cookie-consent');
+    if (!consent) {
+      // Show banner after a short delay
+      const timer = setTimeout(() => setIsVisible(true), 2000);
+      return () => clearTimeout(timer);
+    } else {
+      // Load saved preferences
+      try {
+        const savedPreferences = JSON.parse(consent);
+        setPreferences(savedPreferences);
+      } catch (error) {
+        console.warn('Failed to load cookie preferences:', error);
+      }
+=======
     if (!enabled) return;
 
     const consentStatus = localStorage.getItem('cookie-consent');
@@ -57,6 +83,7 @@ const CookieConsentBanner: React.FC<CookieConsentBannerProps> = ({
       }
     } else {
       showBanner();
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-52f1
     }
   }, [enabled]);
 
@@ -71,6 +98,9 @@ const CookieConsentBanner: React.FC<CookieConsentBannerProps> = ({
     }, 2000); // Show after 2 seconds
   }, []);
 
+<<<<<<< HEAD
+  const handleAcceptAll = () => {
+=======
   // Performance optimization: Apply cookie preferences
   const applyCookiePreferences = useCallback((prefs: CookiePreferences) => {
     if (!enabled) return;
@@ -105,12 +135,25 @@ const CookieConsentBanner: React.FC<CookieConsentBannerProps> = ({
 
   // Performance optimization: Accept all cookies
   const acceptAll = useCallback(() => {
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-52f1
     const allAccepted: CookiePreferences = {
       necessary: true,
       analytics: true,
       marketing: true,
       preferences: true
     };
+<<<<<<< HEAD
+    
+    setPreferences(allAccepted);
+    savePreferences(allAccepted);
+    setIsVisible(false);
+    
+    // Announce to screen readers
+    announceToScreenReader('All cookies accepted');
+  };
+
+  const handleAcceptNecessary = () => {
+=======
 
     setPreferences(allAccepted);
     setHasConsented(true);
@@ -130,12 +173,236 @@ const CookieConsentBanner: React.FC<CookieConsentBannerProps> = ({
 
   // Performance optimization: Accept necessary only
   const acceptNecessary = useCallback(() => {
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-52f1
     const necessaryOnly: CookiePreferences = {
       necessary: true,
       analytics: false,
       marketing: false,
       preferences: false
     };
+<<<<<<< HEAD
+    
+    setPreferences(necessaryOnly);
+    savePreferences(necessaryOnly);
+    setIsVisible(false);
+    
+    // Announce to screen readers
+    announceToScreenReader('Only necessary cookies accepted');
+  };
+
+  const handleSavePreferences = () => {
+    savePreferences(preferences);
+    setShowSettings(false);
+    setIsVisible(false);
+    
+    // Announce to screen readers
+    announceToScreenReader('Cookie preferences saved');
+  };
+
+  const savePreferences = (prefs: CookiePreferences) => {
+    localStorage.setItem('cookie-consent', JSON.stringify(prefs));
+    
+    // Apply preferences
+    if (prefs.analytics) {
+      enableAnalytics();
+    } else {
+      disableAnalytics();
+    }
+    
+    if (prefs.marketing) {
+      enableMarketing();
+    } else {
+      disableMarketing();
+    }
+    
+    if (prefs.functional) {
+      enableFunctional();
+    } else {
+      disableFunctional();
+    }
+  };
+
+  const enableAnalytics = () => {
+    // Enable Google Analytics
+    if (typeof window !== 'undefined' && 'gtag' in window) {
+      (window as any).gtag('consent', 'update', {
+        analytics_storage: 'granted'
+      });
+    }
+  };
+
+  const disableAnalytics = () => {
+    // Disable Google Analytics
+    if (typeof window !== 'undefined' && 'gtag' in window) {
+      (window as any).gtag('consent', 'update', {
+        analytics_storage: 'denied'
+      });
+    }
+  };
+
+  const enableMarketing = () => {
+    // Enable marketing cookies
+    if (typeof window !== 'undefined' && 'gtag' in window) {
+      (window as any).gtag('consent', 'update', {
+        ad_storage: 'granted'
+      });
+    }
+  };
+
+  const disableMarketing = () => {
+    // Disable marketing cookies
+    if (typeof window !== 'undefined' && 'gtag' in window) {
+      (window as any).gtag('consent', 'update', {
+        ad_storage: 'denied'
+      });
+    }
+  };
+
+  const enableFunctional = () => {
+    // Enable functional cookies
+    console.log('Functional cookies enabled');
+  };
+
+  const disableFunctional = () => {
+    // Disable functional cookies
+    console.log('Functional cookies disabled');
+  };
+
+  const announceToScreenReader = (message: string) => {
+    const announcement = document.createElement('div');
+    announcement.setAttribute('aria-live', 'polite');
+    announcement.setAttribute('aria-atomic', 'true');
+    announcement.className = 'sr-only';
+    announcement.textContent = message;
+    document.body.appendChild(announcement);
+    
+    setTimeout(() => {
+      document.body.removeChild(announcement);
+    }, 1000);
+  };
+
+  const cookieTypes = [
+    {
+      key: 'necessary' as keyof CookiePreferences,
+      title: 'Necessary Cookies',
+      description: 'Essential for the website to function properly. These cannot be disabled.',
+      icon: Shield,
+      required: true
+    },
+    {
+      key: 'analytics' as keyof CookiePreferences,
+      title: 'Analytics Cookies',
+      description: 'Help us understand how visitors interact with our website by collecting and reporting information anonymously.',
+      icon: Info,
+      required: false
+    },
+    {
+      key: 'marketing' as keyof CookiePreferences,
+      title: 'Marketing Cookies',
+      description: 'Used to track visitors across websites to display relevant and engaging advertisements.',
+      icon: Cookie,
+      required: false
+    },
+    {
+      key: 'functional' as keyof CookiePreferences,
+      title: 'Functional Cookies',
+      description: 'Enable enhanced functionality and personalization, such as live chat support and language preferences.',
+      icon: Settings,
+      required: false
+    }
+  ];
+
+  if (!isVisible) return null;
+
+  return (
+    <>
+      {/* Main Banner */}
+      <AnimatePresence>
+        {isVisible && !showSettings && (
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 100, opacity: 0 }}
+            className="fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 shadow-2xl"
+            role="banner"
+            aria-labelledby="cookie-banner-title"
+          >
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+              <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4">
+                {/* Content */}
+                <div className="flex-1">
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 mt-1">
+                      <Cookie className="w-6 h-6 text-cyan-600 dark:text-cyan-400" />
+                    </div>
+                    <div>
+                      <h2 id="cookie-banner-title" className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                        We use cookies to enhance your experience
+                      </h2>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 max-w-2xl">
+                        We use cookies and similar technologies to help personalize content, tailor and measure ads, 
+                        and provide a better experience. By clicking "Accept All", you consent to our use of cookies. 
+                        You can customize your preferences in our cookie settings.
+                      </p>
+                      <div className="mt-3 flex flex-wrap gap-2 text-xs text-gray-500 dark:text-gray-400">
+                        <a 
+                          href="/privacy" 
+                          className="text-cyan-600 dark:text-cyan-400 hover:underline"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Privacy Policy
+                        </a>
+                        <span>•</span>
+                        <a 
+                          href="/cookies" 
+                          className="text-cyan-600 dark:text-cyan-400 hover:underline"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Cookie Policy
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Actions */}
+                <div className="flex flex-col sm:flex-row gap-3 w-full lg:w-auto">
+                  <button
+                    onClick={() => setShowSettings(true)}
+                    className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
+                    aria-label="Customize cookie preferences"
+                  >
+                    <span className="flex items-center gap-2">
+                      <Settings className="w-4 h-4" />
+                      Customize
+                    </span>
+                  </button>
+                  
+                  <button
+                    onClick={handleAcceptNecessary}
+                    className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
+                    aria-label="Accept only necessary cookies"
+                  >
+                    Necessary Only
+                  </button>
+                  
+                  <button
+                    onClick={handleAcceptAll}
+                    className="px-6 py-2 text-sm font-medium text-white bg-gradient-to-r from-cyan-600 to-blue-600 rounded-lg hover:from-cyan-700 hover:to-blue-700 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 shadow-lg hover:shadow-xl"
+                    aria-label="Accept all cookies"
+                  >
+                    Accept All
+                  </button>
+                </div>
+
+                {/* Close Button */}
+                <button
+                  onClick={() => setIsVisible(false)}
+                  className="absolute top-4 right-4 p-1 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-full"
+                  aria-label="Close cookie banner"
+=======
 
     setPreferences(necessaryOnly);
     setHasConsented(true);
@@ -260,10 +527,13 @@ const CookieConsentBanner: React.FC<CookieConsentBannerProps> = ({
                   onClick={() => setIsSettingsOpen(false)}
                   className="text-gray-400 hover:text-white transition-colors"
                   aria-label="Close settings"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-52f1
                 >
                   <X className="w-5 h-5" />
                 </button>
               </div>
+<<<<<<< HEAD
+=======
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {/* Necessary Cookies */}
@@ -391,6 +661,7 @@ const CookieConsentBanner: React.FC<CookieConsentBannerProps> = ({
                   Save Preferences
                 </button>
               </div>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-52f1
             </div>
           </motion.div>
         )}
