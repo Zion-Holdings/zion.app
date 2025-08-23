@@ -19,7 +19,7 @@ import { enterpriseITServices } from '../data/enterprise-it-services';
 interface Service {
   id: string;
   name: string;
-  tagline?: string;
+  tagline: string;
   price: string | { monthly: number; yearly: number; currency: string; trialDays: number; setupTime: string };
   period?: string;
   description: string;
@@ -51,7 +51,6 @@ interface Service {
   customers: number | string;
   rating: number;
   reviews: number;
-  benefits?: string[];
 }
 
 const Innovative2040FuturisticServicesShowcase: React.FC = () => {
@@ -60,50 +59,6 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [sortBy, setSortBy] = useState<'name' | 'price' | 'popularity' | 'category'>('name');
   const [isLoading, setIsLoading] = useState(true);
-
-  // Helper function to get service color with fallback
-  const getServiceColor = (service: Service, index: number) => {
-    if (service.color) return service.color;
-    
-    // Default color scheme based on index
-    const defaultColors = [
-      'from-cyan-500 to-blue-600',
-      'from-purple-500 to-pink-600',
-      'from-green-500 to-emerald-600',
-      'from-orange-500 to-red-600',
-      'from-indigo-500 to-purple-600',
-      'from-teal-500 to-cyan-600'
-    ];
-    return defaultColors[index % defaultColors.length];
-  };
-
-  // Helper function to get service icon with fallback
-  const getServiceIcon = (service: Service) => {
-    if (service.icon) return service.icon;
-    
-    // Default icon based on category
-    const category = service.category.toLowerCase();
-    if (category.includes('ai') || category.includes('artificial')) return '🤖';
-    if (category.includes('quantum')) return '⚛️';
-    if (category.includes('space')) return '🚀';
-    if (category.includes('security')) return '🛡️';
-    if (category.includes('automation')) return '⚙️';
-    if (category.includes('cloud')) return '☁️';
-    if (category.includes('mobile')) return '📱';
-    if (category.includes('web')) return '🌐';
-    return '💡'; // Default icon
-  };
-
-  // Helper function to get service period with fallback
-  const getServicePeriod = (service: Service) => {
-    if (service.period) return service.period;
-    return '/month'; // Default period
-  };
-
-  // Helper function to check if service is popular
-  const isServicePopular = (service: Service) => {
-    return service.popular === true;
-  };
 
   // Combine all services
   const allServices = [
@@ -345,8 +300,8 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                     )}
 
                     {/* Service Icon */}
-                    <div className={`w-16 h-16 bg-gradient-to-r ${getServiceColor(service, index)} rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                      {getServiceIcon(service)}
+                    <div className={`w-16 h-16 bg-gradient-to-r ${(service as any).color || 'from-cyan-500 to-blue-500'} rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                      {(service as any).icon || '🚀'}
                     </div>
 
                     {/* Service Info */}
@@ -362,7 +317,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                       <div className="text-2xl font-bold text-cyan-400">
                         {typeof service.price === 'string' ? service.price : `$${service.price.monthly}/${service.price.currency}`}
                         <span className="text-sm text-gray-400">
-                          {typeof service.price === 'string' ? getServicePeriod(service) : '/month'}
+                          {typeof service.price === 'string' ? (service as any).period || '/month' : '/month'}
                         </span>
                       </div>
                       <div className="flex items-center space-x-1 text-yellow-400">
@@ -435,8 +390,8 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                   >
                     <div className="flex items-start space-x-6">
                       {/* Service Icon */}
-                      <div className={`w-20 h-20 bg-gradient-to-r ${getServiceColor(service, index)} rounded-2xl flex items-center justify-center text-4xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
-                        {getServiceIcon(service)}
+                      <div className={`w-20 h-20 bg-gradient-to-r ${(service as any).color || 'from-cyan-500 to-blue-500'} rounded-2xl flex items-center justify-center text-4xl group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
+                        {(service as any).icon || '🚀'}
                       </div>
 
                       {/* Service Details */}
@@ -453,7 +408,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                               <span className="inline-block px-3 py-1 bg-gray-700 text-cyan-400 text-sm font-medium rounded-full">
                                 {service.category}
                               </span>
-                              {isServicePopular(service) && (
+                              {(service as any).popular && (
                                 <span className="inline-block px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-sm font-bold rounded-full">
                                   Popular
                                 </span>
@@ -464,7 +419,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                                                        <div className="text-3xl font-bold text-cyan-400 mb-1">
                              {typeof service.price === 'string' ? service.price : `$${service.price.monthly}/${service.price.currency}`}
                                                            <span className="text-lg text-gray-400">
-                                {typeof service.price === 'string' ? getServicePeriod(service) : '/month'}
+                                {typeof service.price === 'string' ? (service as any).period || '/month' : '/month'}
                               </span>
                            </div>
                             <div className="flex items-center justify-end space-x-1 text-yellow-400 mb-2">

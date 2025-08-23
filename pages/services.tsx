@@ -5,41 +5,8 @@ import {
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
-  Building, Cpu
+  Building
 } from 'lucide-react';
-
-// Import our new 2025 service data
-import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
-import { innovative2025ITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
-import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
-import { cuttingEdgeAIServices2025 } from '../data/2025-cutting-edge-ai-services';
-import { innovative2025AIAutonomousServices } from '../data/2025-innovative-ai-autonomous-services';
-
-// Import our new practical and specialized services
-import { realPracticalMicroSaasServices2025 } from '../data/2025-real-practical-micro-saas-services';
-import { advancedAIITSpecializedServices2025 } from '../data/2025-advanced-ai-it-specialized-services';
-
-// Import our new 2025 enterprise services
-import { realEnterpriseMicroSaas2025 } from '../data/2025-real-enterprise-micro-saas';
-
-// Import our new innovative 2025 services
-import { realInnovativeMicroSaasServices2025 } from '../data/2025-real-innovative-micro-saas-expansion';
-import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services-expansion';
-import { innovativeAIServices2025Expansion } from '../data/2025-innovative-ai-services-expansion';
-
-// Import our new 2025 advanced services
-import { advancedBusinessIntelligenceServices2025 } from '../data/2025-advanced-business-intelligence-services';
-import { advancedITInfrastructureServices2025 } from '../data/2025-advanced-it-infrastructure-services';
-
-// Import our new real services
-import { realMicroSaas2025Expansion } from '../data/real-micro-saas-2025-expansion';
-import { realITServices2025Expansion } from '../data/real-it-services-2025-expansion';
-import { realAIServices2025Expansion } from '../data/real-ai-services-2025-expansion';
-
-// Import our new innovative 2025 services
-import { innovativeAIAutonomousEcosystemServices2025 } from '../data/2025-innovative-ai-autonomous-ecosystem';
-import { cuttingEdgeITInfrastructureInnovations2025 } from '../data/2025-cutting-edge-it-infrastructure-innovations';
-import { innovativeMicroSaasBreakthroughs2025 } from '../data/2025-innovative-micro-saas-breakthroughs';
 
 // Import our new service data
 import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
@@ -62,46 +29,25 @@ import { advanced2038Services } from '../data/advanced-2038-services';
 import { revolutionary2039Services } from '../data/revolutionary-2039-services';
 import { revolutionary2040FuturisticServices } from '../data/revolutionary-2040-futuristic-services';
 import { revolutionary2041AdvancedServices } from '../data/revolutionary-2041-advanced-services';
+import { innovative2040FuturisticServices } from '../data/innovative-2040-futuristic-services';
 import { advanced2041EnterpriseServices } from '../data/advanced-2041-enterprise-services';
 import { revolutionary2042MicroSaasServices } from '../data/revolutionary-2042-micro-saas-services';
 
-// Import our new 2025 ultimate services expansion
-import { ultimate2025MicroSaasExpansion } from '../data/2025-ultimate-micro-saas-expansion';
-import { ultimate2025ITServicesExpansion } from '../data/2025-ultimate-it-services-expansion';
-import { ultimate2025AIServicesExpansion } from '../data/2025-ultimate-ai-services-expansion';
-
-// Import our new 2025 Q4 innovative services
-import { innovative2025Q4NewServices } from '../data/innovative-2025-q4-new-services';
-
-// Import our new 2025 ultimate innovative services
-import { ultimateInnovativeServices2025 } from '../data/2025-ultimate-innovative-services-expansion';
-import { cuttingEdgeEnterpriseSolutions2025 } from '../data/2025-cutting-edge-enterprise-solutions';
-import { innovativeMicroSaasSolutionsV2 } from '../data/2025-innovative-micro-saas-solutions-v2';
-
+// Import our new 2025 advanced services
+import { advanced2025MicroSaasExpansion } from '../data/2025-advanced-micro-saas-expansion';
+import { advanced2025ITSolutionsExpansion } from '../data/2025-advanced-it-solutions-expansion';
+import { advanced2025AIServicesExpansion } from '../data/2025-advanced-ai-services-expansion';
+// Import our new 2025 innovative services expansion
+import { innovative2025MicroSaasExpansion } from '../data/innovative-2025-micro-saas-expansion';
+import { innovative2025ITSolutionsExpansion } from '../data/innovative-2025-it-solutions-expansion';
+import { innovative2025AIServicesExpansion } from '../data/innovative-2025-ai-services-expansion';
 
 // Import our new innovative 2040 services
 import { innovative2040ITServices } from '../data/innovative-2040-it-services';
-import { innovative2040FuturisticServices } from '../data/innovative-2040-futuristic-services';
-
 // Import our new 2025 advanced enterprise services
 import { advancedEnterpriseServices } from '../data/2025-advanced-enterprise-services-expansion';
+import { innovative2025MicroSaasExpansion as innovativeMicroSaasServices } from '../data/2025-innovative-micro-saas-expansion';
 import { cuttingEdgeITInfrastructureServices } from '../data/2025-cutting-edge-it-infrastructure';
-
-// Import our new 2025 cutting-edge futuristic services
-import { cuttingEdgeFuturisticServices } from '../data/2025-cutting-edge-futuristic-services';
-import { advancedAIAutomationServices } from '../data/2026-advanced-ai-automation-services';
-
-// Import our new 2025 cutting-edge innovative services expansion
-import { cuttingEdgeInnovativeServices2025 } from '../data/2025-cutting-edge-innovative-services-expansion';
-import { advancedITInfrastructureSolutions2025 } from '../data/2025-advanced-it-infrastructure-solutions';
-import { advancedAIAutomationSolutions2025 } from '../data/2025-advanced-ai-automation-solutions';
-
-
-
-// Import our new 2025 innovative services
-import { advancedInnovativeServices2025 } from '../data/2025-advanced-innovative-services-expansion';
-import { cuttingEdgeEnterpriseServices2025 } from '../data/2025-cutting-edge-enterprise-services';
-import { specializedIndustrySolutions2025 } from '../data/2025-specialized-industry-solutions';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -145,48 +91,17 @@ const getServiceDescription = (service: any) => {
 
 // Create unified services array
 const allServices = [
-  // Our new 2025 services
-  ...advancedAIAutomationServices2025,
-  ...innovative2025ITInfrastructureServices,
-  ...realInnovativeMicroSaasServices2025,
-  ...innovativeITInfrastructureServices2025,
-  ...innovativeAIServices2025Expansion,
-  ...innovativeMicroSaasSolutions2025,
-  ...cuttingEdgeAIServices2025,
-  ...realEnterpriseMicroSaas2025,
-  ...innovative2025AIAutonomousServices,
-  
-  // Our new 2025 advanced services
-  ...advancedBusinessIntelligenceServices2025,
-  ...advancedITInfrastructureServices2025,
-  
-  // Our new real services 2025
-  ...realMicroSaas2025Expansion,
-  ...realITServices2025Expansion,
-  ...realAIServices2025Expansion,
-  
-  // Our new innovative 2025 services
-  ...innovativeAIAutonomousEcosystemServices2025,
-  ...cuttingEdgeITInfrastructureInnovations2025,
-  ...innovativeMicroSaasBreakthroughs2025,
-  
-  // Existing services
   ...enterpriseITSolutions,
   ...innovativeMicroSaasSolutions,
   ...cuttingEdgeAIServices,
   ...realMicroSaasServices,
   ...innovativeAIServices,
   ...enterpriseITServices,
-  ...cuttingEdgeFuturisticServices,
-  ...advancedAIAutomationServices,
   ...emergingTechServices,
   ...newRealServices,
   ...realOperationalServices,
   ...marketReadyServices,
   ...marketValidatedServices,
-  // Our new 2025 Q4 innovative services
-  ...innovative2025Q4NewServices,
-  ...advancedITInfrastructureServices2025,
   ...industryRealServices,
   ...real2025Q4AugmentedBatch,
   ...real2029Q3Additions,
@@ -196,9 +111,9 @@ const allServices = [
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
   // Our new 2025 advanced services
-  ...ultimate2025MicroSaasExpansion,
-  ...ultimate2025ITServicesExpansion,
-  ...ultimate2025AIServicesExpansion,
+  ...advanced2025MicroSaasExpansion,
+  ...advanced2025ITSolutionsExpansion,
+  ...advanced2025AIServicesExpansion,
   // Our new innovative services
   ...innovative2037MicroSaasServices,
   ...innovative2037ITServices,
@@ -219,41 +134,14 @@ const allServices = [
   // Our latest innovative services
   ...advanced2041EnterpriseServices,
   ...revolutionary2042MicroSaasServices,
-  // Our new 2025 ultimate services expansion
-  ...ultimate2025MicroSaasExpansion,
-  ...ultimate2025ITServicesExpansion,
-  ...ultimate2025AIServicesExpansion,
+  // Our new 2025 innovative services expansion
+  ...innovative2025MicroSaasExpansion,
+  ...innovative2025ITSolutionsExpansion,
+  ...innovative2025AIServicesExpansion,
   // Our new 2025 advanced enterprise services
   ...advancedEnterpriseServices,
-  ...cuttingEdgeITInfrastructureServices,
-  
-  // Our new 2025 cutting-edge innovative services expansion
-  ...cuttingEdgeInnovativeServices2025,
-  ...advancedITInfrastructureSolutions2025,
-  
-  // Our new 2025 innovative AI services expansion
-  ...innovativeAIServices2025Expansion,
-  
-  // Our new 2025 innovative services
-  ...advancedInnovativeServices2025,
-  ...cuttingEdgeEnterpriseServices2025,
-  ...specializedIndustrySolutions2025,
-  
-  // Our new 2025 ultimate innovative services
-  ...ultimateInnovativeServices2025,
-  ...cuttingEdgeEnterpriseSolutions2025,
-  ...innovativeMicroSaasSolutionsV2,
-  
-  // Our new 2025 service data
-  ...advancedAIAutomationServices2025,
-  ...innovativeMicroSaasSolutions2025,
-  ...cuttingEdgeAIServices2025,
-  ...innovative2025AIAutonomousServices,
-  ...realPracticalMicroSaasServices2025,
-  ...advancedAIITSpecializedServices2025,
-  ...realEnterpriseMicroSaas2025,
-  
-  ...advancedAIAutomationSolutions2025
+  ...innovativeMicroSaasServices,
+  ...cuttingEdgeITInfrastructureServices
 ];
 
 const categories = [
@@ -263,41 +151,6 @@ const categories = [
     icon: <Grid className="w-6 h-6" />,
     color: 'from-gray-500 to-slate-500',
     description: 'Complete portfolio of all services'
-  },
-  {
-    id: 'ai-automation',
-    name: 'AI Automation',
-    icon: <Brain className="w-6 h-6" />,
-    color: 'from-blue-500 to-purple-500',
-    description: 'AI-powered automation solutions'
-  },
-  {
-    id: 'it-infrastructure',
-    name: 'IT Infrastructure',
-    icon: <Building className="w-6 h-6" />,
-    color: 'from-indigo-500 to-purple-500',
-    description: 'Enterprise infrastructure and cloud solutions'
-  },
-  {
-    id: 'micro-saas',
-    name: 'Micro SAAS',
-    icon: <Target className="w-6 h-6" />,
-    color: 'from-green-500 to-emerald-500',
-    description: 'Innovative business solutions'
-  },
-  {
-    id: 'ai-services',
-    name: 'AI Services',
-    icon: <Cpu className="w-6 h-6" />,
-    color: 'from-purple-500 to-pink-500',
-    description: 'Cutting-edge AI and machine learning services'
-  },
-  {
-    id: 'business-intelligence',
-    name: 'Business Intelligence',
-    icon: <Target className="w-6 h-6" />,
-    color: 'from-emerald-500 to-teal-500',
-    description: 'Advanced analytics and business intelligence solutions'
   },
   {
     id: 'enterprise-it',
@@ -326,6 +179,13 @@ const categories = [
     icon: <Rocket className="w-6 h-6" />,
     color: 'from-pink-500 to-rose-500',
     description: 'Space exploration and virtual worlds'
+  },
+  {
+    id: 'micro-saas',
+    name: 'Micro SAAS',
+    icon: <Target className="w-6 h-6" />,
+    color: 'from-orange-500 to-red-500',
+    description: 'Innovative business solutions'
   },
   {
     id: 'creative-media',
@@ -435,14 +295,6 @@ export default function Services() {
 
   const getCategoryIcon = (category: string) => {
     switch (category.toLowerCase()) {
-      case 'ai automation':
-        return <Brain className="w-6 h-6 text-blue-400" />;
-      case 'it infrastructure':
-        return <Building className="w-6 h-6 text-indigo-400" />;
-      case 'micro saas':
-        return <Target className="w-6 h-6 text-green-400" />;
-      case 'ai services':
-        return <Cpu className="w-6 h-6 text-purple-400" />;
       case 'enterprise it':
       case 'enterprise security':
       case 'devops & automation':
@@ -451,6 +303,7 @@ export default function Services() {
       case 'cybersecurity':
         return <Building className="w-6 h-6 text-blue-400" />;
       case 'ai & consciousness':
+      case 'ai services':
       case 'artificial intelligence':
         return <Brain className="w-6 h-6 text-cyan-400" />;
       case 'quantum':
@@ -459,6 +312,9 @@ export default function Services() {
       case 'space':
       case 'space & metaverse':
         return <Rocket className="w-6 h-6 text-pink-400" />;
+      case 'micro saas':
+      case 'micro saas solutions':
+        return <Target className="w-6 h-6 text-orange-400" />;
       case 'creative':
       case 'creative & media':
         return <Palette className="w-6 h-6 text-indigo-400" />;
