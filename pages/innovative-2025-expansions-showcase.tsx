@@ -28,11 +28,11 @@ const categories = [
 ];
 
 export default function Innovative2025ExpansionsShowcase() {
-  const allServices = [
-    ...innovativeMicroSaasServices,
-    ...innovativeITServices,
-    ...innovativeAIServices
-  ];
+      const allServices = [
+      ...innovativeMicroSaasServices,
+      ...innovativeITServices,
+      ...innovativeAIServices
+    ];
 
   // Group services by category
   const servicesByCategory = categories.reduce((acc, category) => {

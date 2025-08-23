@@ -1,4 +1,14 @@
 [
+  "ai-autonomous-vehicle-platform",
+  "interplanetary-communication",
+  "mobile-web-solutions",
+  "orbital-computing",
+  "quantum-workload-orchestration",
+  "satellite-technology",
   "services/data-contracts-hub",
-  "services/serverless-lakehouse-starter"
+  "services/serverless-lakehouse-starter",
+  "space-colonization-services",
+  "space-cybersecurity",
+  "space-data-analytics",
+  "space-mining-platform"
 ]

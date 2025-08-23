@@ -6,7 +6,8 @@ import {
   Brain, Atom, Shield, Rocket, Cpu, Database, Target, Sparkles,
   Home, Briefcase, Users, FileText, Phone, Mail, MapPin, Globe,
   Zap, Star, TrendingUp, Award, Clock, CheckCircle, ExternalLink,
-  GraduationCap, Building, Truck, Zap as ZapIcon, Heart, DollarSign
+  Building, GraduationCap, Heart, Palette, BarChart3, Cloud, Lock,
+  Handshake, Video, BookOpen
 } from 'lucide-react';
 
 const UltraFuturisticNavigation2040: React.FC = () => {
@@ -113,7 +114,7 @@ const UltraFuturisticNavigation2040: React.FC = () => {
         {
           name: 'Financial Services',
           href: '/solutions/financial',
-          icon: DollarSign,
+          icon: TrendingUp,
           description: 'Fintech and banking solutions',
           color: 'from-green-500 to-emerald-500'
         },
@@ -146,18 +147,18 @@ const UltraFuturisticNavigation2040: React.FC = () => {
           color: 'from-gray-500 to-blue-500'
         },
         {
-          name: 'Energy & Utilities',
-          href: '/solutions/energy',
-          icon: ZapIcon,
-          description: 'Smart energy and grid solutions',
-          color: 'from-yellow-500 to-orange-500'
+          name: 'Entertainment & Media',
+          href: '/entertainment-media-solutions',
+          icon: Palette,
+          description: 'Creative technology solutions',
+          color: 'from-pink-500 to-rose-500'
         },
         {
-          name: 'Transportation',
-          href: '/solutions/transportation',
-          icon: Truck,
-          description: 'Smart transportation and logistics',
-          color: 'from-blue-500 to-cyan-500'
+          name: 'Energy & Utilities',
+          href: '/energy-utilities-solutions',
+          icon: Zap,
+          description: 'Smart energy management',
+          color: 'from-yellow-500 to-orange-500'
         }
       ]
     },
@@ -168,40 +169,22 @@ const UltraFuturisticNavigation2040: React.FC = () => {
       description: 'Learn about our mission and team'
     },
     {
-      name: 'Resources',
-      href: '/resources',
+      name: 'Careers',
+      href: '/careers',
+      icon: Users,
+      description: 'Join our revolutionary team'
+    },
+    {
+      name: 'Blog',
+      href: '/blog',
       icon: FileText,
-      description: 'Knowledge base and insights',
-      dropdown: [
-        {
-          name: 'Blog',
-          href: '/blog',
-          icon: FileText,
-          description: 'Latest insights and updates',
-          color: 'from-blue-500 to-cyan-500'
-        },
-        {
-          name: 'Case Studies',
-          href: '/case-studies',
-          icon: Star,
-          description: 'Success stories and results',
-          color: 'from-green-500 to-emerald-500'
-        },
-        {
-          name: 'Webinars',
-          href: '/webinars',
-          icon: Zap,
-          description: 'Educational content and events',
-          color: 'from-purple-500 to-pink-500'
-        },
-        {
-          name: 'Documentation',
-          href: '/docs',
-          icon: FileText,
-          description: 'Technical guides and API docs',
-          color: 'from-indigo-500 to-blue-500'
-        }
-      ]
+      description: 'Insights and thought leadership'
+    },
+    {
+      name: 'Case Studies',
+      href: '/case-studies',
+      icon: TrendingUp,
+      description: 'Client success stories'
     },
     {
       name: 'Contact',

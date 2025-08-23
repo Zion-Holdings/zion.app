@@ -53,9 +53,9 @@ export default function DynamicPage({ title, slug, description }: PageProps) {
 	return (
 		<>
 			<SEO 
-				title={`${title} | Zion Tech Group`} 
-				description={description} 
-				canonical={canonical}
+				title={`${title} | Zion Tech Group`}
+				description={description}
+				keywords={[title, 'Services', 'Technology']}
 			/>
 			<div className="container mx-auto px-4 py-16">
 				<nav className="text-sm text-gray-400 mb-6">
