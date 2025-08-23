@@ -5,7 +5,7 @@ import {
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
-  Building
+  Building, Network, Zap
 } from 'lucide-react';
 
 // Import our new service data
@@ -41,6 +41,14 @@ import { advanced2025AIServicesExpansion } from '../data/2025-advanced-ai-servic
 import { innovative2025MicroSaasExpansion } from '../data/innovative-2025-micro-saas-expansion';
 import { innovative2025ITSolutionsExpansion } from '../data/innovative-2025-it-solutions-expansion';
 import { innovative2025AIServicesExpansion } from '../data/innovative-2025-ai-services-expansion';
+// Import our new 2025 innovative AI automation services
+import { innovativeAIAutomationServices2025 } from '../data/2025-innovative-ai-automation-services';
+// Import our new 2025 quantum and emerging tech services
+import { quantumEmergingTechServices2025 } from '../data/2025-quantum-emerging-tech-services';
+// Import our new 2025 innovative IT infrastructure services
+import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
+// Import our new 2025 innovative business automation services
+import { innovativeBusinessAutomationServices2025 } from '../data/2025-innovative-business-automation-services';
 
 // Import our new 2025 Q4 innovative services
 import { innovative2025Q4NewServices } from '../data/innovative-2025-q4-new-services';
@@ -149,7 +157,15 @@ const allServices = [
   // Our new 2025 advanced enterprise services
   ...advancedEnterpriseServices,
   ...innovativeMicroSaasServices,
-  ...cuttingEdgeITInfrastructureServices
+  ...cuttingEdgeITInfrastructureServices,
+  // Our new 2025 innovative AI automation services
+  ...innovativeAIAutomationServices2025,
+  // Our new 2025 quantum and emerging tech services
+  ...quantumEmergingTechServices2025,
+  // Our new 2025 innovative IT infrastructure services
+  ...innovativeITInfrastructureServices2025,
+  // Our new 2025 innovative business automation services
+  ...innovativeBusinessAutomationServices2025
 ];
 
 const categories = [
@@ -222,6 +238,34 @@ const categories = [
     icon: <GraduationCap className="w-6 h-6" />,
     color: 'from-yellow-500 to-orange-500',
     description: 'Learning and research platforms'
+  },
+  {
+    id: 'ai-automation',
+    name: 'AI Automation',
+    icon: <Brain className="w-6 h-6" />,
+    color: 'from-purple-500 to-indigo-600',
+    description: 'Intelligent automation solutions'
+  },
+  {
+    id: 'quantum-tech',
+    name: 'Quantum Technology',
+    icon: <Atom className="w-6 h-6" />,
+    color: 'from-indigo-500 to-purple-600',
+    description: 'Quantum computing and security'
+  },
+  {
+    id: 'it-infrastructure',
+    name: 'IT Infrastructure',
+    icon: <Network className="w-6 h-6" />,
+    color: 'from-blue-500 to-cyan-600',
+    description: 'Advanced infrastructure solutions'
+  },
+  {
+    id: 'business-automation',
+    name: 'Business Automation',
+    icon: <Zap className="w-6 h-6" />,
+    color: 'from-yellow-500 to-orange-600',
+    description: 'Business process automation'
   }
 ];
 
@@ -263,6 +307,46 @@ export default function Services() {
     
     const serviceCategory = getServiceCategory(service).toLowerCase();
     const categoryName = categories.find(cat => cat.id === selectedCategory)?.name.toLowerCase();
+    
+    // Enhanced category matching for new service types
+    if (selectedCategory === 'ai-automation') {
+      return matchesSearch && (
+        serviceCategory.includes('ai automation') ||
+        serviceCategory.includes('ai automation') ||
+        serviceCategory.includes('workflow automation') ||
+        serviceCategory.includes('process automation')
+      );
+    }
+    
+    if (selectedCategory === 'quantum-tech') {
+      return matchesSearch && (
+        serviceCategory.includes('quantum') ||
+        serviceCategory.includes('quantum computing') ||
+        serviceCategory.includes('quantum security')
+      );
+    }
+    
+    if (selectedCategory === 'it-infrastructure') {
+      return matchesSearch && (
+        serviceCategory.includes('it infrastructure') ||
+        serviceCategory.includes('network security') ||
+        serviceCategory.includes('devops') ||
+        serviceCategory.includes('cloud management') ||
+        serviceCategory.includes('edge computing') ||
+        serviceCategory.includes('infrastructure monitoring')
+      );
+    }
+    
+    if (selectedCategory === 'business-automation') {
+      return matchesSearch && (
+        serviceCategory.includes('business process automation') ||
+        serviceCategory.includes('invoice processing') ||
+        serviceCategory.includes('customer service automation') ||
+        serviceCategory.includes('hr automation') ||
+        serviceCategory.includes('sales automation') ||
+        serviceCategory.includes('marketing automation')
+      );
+    }
     
     return matchesSearch && serviceCategory.includes(categoryName || '');
   });
@@ -316,6 +400,7 @@ export default function Services() {
         return <Brain className="w-6 h-6 text-cyan-400" />;
       case 'quantum':
       case 'quantum & emerging tech':
+      case 'quantum technology':
         return <Atom className="w-6 h-6 text-purple-400" />;
       case 'space':
       case 'space & metaverse':
@@ -335,6 +420,22 @@ export default function Services() {
       case 'education':
       case 'education & research':
         return <GraduationCap className="w-6 h-6 text-yellow-400" />;
+      case 'ai automation':
+        return <Brain className="w-6 h-6 text-purple-400" />;
+      case 'it infrastructure':
+      case 'network security':
+      case 'devops automation':
+      case 'cloud management':
+      case 'edge computing':
+      case 'infrastructure monitoring':
+        return <Network className="w-6 h-6 text-blue-400" />;
+      case 'business process automation':
+      case 'invoice processing':
+      case 'customer service automation':
+      case 'hr automation':
+      case 'sales automation':
+      case 'marketing automation':
+        return <Zap className="w-6 h-6 text-yellow-400" />;
       default:
         return <Shield className="w-6 h-6 text-gray-400" />;
     }
