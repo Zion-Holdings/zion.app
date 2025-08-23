@@ -1,7 +1,11 @@
 {
   "name": "codex-scripts",
   "version": "1.0.0",
+<<<<<<< HEAD
+  "description": "Scripts for Codex integration",
+=======
   "description": "Helper scripts for the project",
+>>>>>>> origin/9kvoyx-codex/fix-client-side-rendering-and-javascript-errors
   "type": "module",
   "private": true,
   "type": "module",

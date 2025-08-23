@@ -339,3 +339,7 @@
 2025-08-23 22:58:16 - Resolving conflicts in src/pages/features/Internationalization.tsx for branch 96xhsm-codex/fix-accessibility-issues
 2025-08-23 22:58:16 - Resolving conflicts in src/pages/features/Search.tsx for branch 96xhsm-codex/fix-accessibility-issues
 2025-08-23 22:58:16 - Resolving conflicts in src/pages/features/TalentMarketplace.tsx for branch 96xhsm-codex/fix-accessibility-issues
+2025-08-23 22:58:17 - Merge conflicts detected in 9kvoyx-codex/fix-client-side-rendering-and-javascript-errors
+2025-08-23 22:58:17 - Resolving conflicts in scripts/package.json for branch 9kvoyx-codex/fix-client-side-rendering-and-javascript-errors
+2025-08-23 22:58:17 - Resolving conflicts in scripts/prerender.js for branch 9kvoyx-codex/fix-client-side-rendering-and-javascript-errors
+2025-08-23 22:58:17 - Resolving conflicts in src/main.tsx for branch 9kvoyx-codex/fix-client-side-rendering-and-javascript-errors
