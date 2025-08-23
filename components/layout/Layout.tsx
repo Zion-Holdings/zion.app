@@ -20,9 +20,9 @@ interface LayoutProps {
 
 export default function Layout({ 
   children, 
-  title = "Zion Tech Group - Revolutionary 2044 Technology",
+  title = "Zion Tech Group - Revolutionary 2045 Technology",
   description = "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.",
-  keywords = "AI consciousness, quantum computing, autonomous solutions, space technology, cybersecurity, business intelligence, Zion Tech Group, 2044 technology",
+  keywords = "AI consciousness, quantum computing, autonomous solutions, space technology, cybersecurity, business intelligence, Zion Tech Group, 2045 technology",
   ogImage = "/og-image.jpg",
   canonicalUrl
 }: LayoutProps) {
@@ -77,20 +77,20 @@ export default function Layout({
   return (
     <>
       <Head>
-        {/* Basic Meta Tags */}
         <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="keywords" content={keywords} />
-        <meta name="author" content="Zion Tech Group" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta charSet="utf-8" />
         <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="Zion Tech Group" />
+        <meta name="theme-color" content="#06b6d4" />
         
         {/* Canonical URL */}
         {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
         
         {/* PWA Manifest */}
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#06b6d4" />
         <meta name="msapplication-TileColor" content="#06b6d4" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -132,6 +132,7 @@ export default function Layout({
         <meta httpEquiv="X-Frame-Options" content="DENY" />
         <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
         <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+
       </Head>
 
       <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
@@ -176,16 +177,9 @@ export default function Layout({
           {/* Footer */}
           <UltraFuturisticFooter2040 />
         </div>
-
-        {/* Accessibility and Performance Tools */}
-        <EnhancedAccessibilityEnhancer />
-        <EnhancedPerformanceMonitor />
-        
-        {/* Cookie Consent Banner */}
-        <CookieConsentBanner />
       </div>
 
-      {/* Enhanced Accessibility and Performance Tools */}
+      {/* Accessibility and Performance Tools */}
       <EnhancedAccessibilityEnhancer />
       <EnhancedPerformanceMonitor />
       

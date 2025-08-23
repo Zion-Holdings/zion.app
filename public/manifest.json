@@ -1,7 +1,7 @@
 {
-  "name": "Zion Tech Group - Revolutionary 2044 Technology",
+  "name": "Zion Tech Group - Revolutionary Technology Solutions",
   "short_name": "Zion Tech",
-  "description": "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.",
+  "description": "Experience the future of technology with cutting-edge AI consciousness, quantum computing, and autonomous systems. Transform your business with revolutionary micro SAAS solutions.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
@@ -9,7 +9,7 @@
   "orientation": "portrait-primary",
   "scope": "/",
   "lang": "en-US",
-  "categories": ["business", "technology", "productivity"],
+  "categories": ["business", "productivity", "technology", "utilities"],
   "icons": [
     {
       "src": "/icons/icon-72x72.png",
@@ -64,11 +64,11 @@
     {
       "name": "Services",
       "short_name": "Services",
-      "description": "Explore our revolutionary technology services",
+      "description": "Explore our revolutionary technology solutions",
       "url": "/services",
       "icons": [
         {
-          "src": "/icons/services-icon.png",
+          "src": "/icons/services-icon-96x96.png",
           "sizes": "96x96"
         }
       ]
@@ -80,7 +80,19 @@
       "url": "/contact",
       "icons": [
         {
-          "src": "/icons/contact-icon.png",
+          "src": "/icons/contact-icon-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "About",
+      "short_name": "About",
+      "description": "Learn about Zion Tech Group",
+      "url": "/about",
+      "icons": [
+        {
+          "src": "/icons/about-icon-96x96.png",
           "sizes": "96x96"
         }
       ]
@@ -88,16 +100,73 @@
   ],
   "screenshots": [
     {
-      "src": "/screenshots/desktop.png",
+      "src": "/screenshots/desktop-homepage.png",
       "sizes": "1280x720",
       "type": "image/png",
-      "form_factor": "wide"
+      "form_factor": "wide",
+      "label": "Zion Tech Group Homepage - Revolutionary Technology Solutions"
     },
     {
-      "src": "/screenshots/mobile.png",
+      "src": "/screenshots/mobile-homepage.png",
       "sizes": "390x844",
       "type": "image/png",
-      "form_factor": "narrow"
+      "form_factor": "narrow",
+      "label": "Zion Tech Group Mobile Experience - Optimized for Mobile Devices"
     }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "handle_links": "preferred",
+  "protocol_handlers": [
+    {
+      "protocol": "web+zion",
+      "url": "/?protocol=%s"
+    }
+  ],
+  "file_handlers": [
+    {
+      "action": "/file-handler",
+      "accept": {
+        "text/*": [".txt", ".md", ".json"],
+        "application/json": [".json"],
+        "image/*": [".png", ".jpg", ".jpeg", ".gif", ".webp"]
+      }
+    }
+  ],
+  "share_target": {
+    "action": "/share",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url",
+      "files": [
+        {
+          "name": "files",
+          "accept": ["image/*", "text/*", "application/*"]
+        }
+      ]
+    }
+  },
+  "permissions": [
+    "notifications",
+    "geolocation",
+    "camera",
+    "microphone"
+  ],
+  "features": [
+    "Cross Platform",
+    "fast",
+    "simple",
+    "Offline Support",
+    "Push Notifications",
+    "Background Sync"
   ]
 }
