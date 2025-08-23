@@ -5,7 +5,6 @@ import UltraFuturisticFooter2045 from './UltraFuturisticFooter2045';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
 import TopContactBar from './TopContactBar';
-import PerformanceMonitor from '../PerformanceMonitor';
 import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
 import EnhancedErrorBoundary from '../EnhancedErrorBoundary';
@@ -233,7 +232,6 @@ export default function Layout({
 
       {/* Accessibility and Performance Tools */}
       <AccessibilityEnhancer />
-      <PerformanceMonitor />
       
       {/* Cookie Consent Banner */}
       <CookieConsentBanner />
