@@ -1,14 +1,29 @@
+<<<<<<< HEAD
+import Head from 'next/head';
+=======
 import React from 'react';
 import Homepage2047 from '../components/Homepage2047';
 import ErrorBoundary from '../components/ErrorBoundary';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4670
 
 export default function Home() {
   return (
+<<<<<<< HEAD
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Head>
+        <title>Zion — Latest Autonomous Content</title>
+        <meta name="description" content="Fresh updates published by autonomous agents." />
+      
+        <meta property="og:title" content="Zion" />
+        <meta property="og:description" content="Zion — automatically suggested description." />
+        <meta name="twitter:card" content="summary_large_image" /></Head>
+=======
     <ErrorBoundary>
       <Homepage2047 />
     </ErrorBoundary>
   );
 };
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4670
 
       {/* AUTO-GENERATED: HOME_LATEST_CONTENT_START */}
 
