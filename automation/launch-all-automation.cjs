@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 "use strict";
 
-const { spawnSync } = require("child_process");
-const fs = require("fs");
-const path = require("path");
+const fs = require('fs');
+const path = require('path');
+const { spawn, spawnSync } = require('child_process');
 
 class ComprehensiveAutomationLauncher {
   constructor() {
@@ -191,13 +191,39 @@ class ComprehensiveAutomationLauncher {
   async restartAllSystems() {
     this.log("🔄 Restarting all automation systems...");
     
-    await this.stopAllSystems();
-    
-    // Wait before restarting
-    this.log("⏳ Waiting 5 seconds before restarting...");
-    await new Promise(resolve => setTimeout(resolve, 5000));
-    
-    await this.startAllSystems();
+    this.log(`📊 Status: ${status.running} systems running`);
+    this.log(`📊 Systems: ${status.systems.join(', ')}`);
+
+    // If no processes are tracked in this instance (e.g., fresh CLI call),
+    // attempt a best-effort scan of OS processes to report running automation scripts
+    if (status.running === 0) {
+      try {
+        const ps = spawnSync('bash', ['-lc', "ps -eo pid,command | grep -E 'node .*automation/.*\\.(cjs|js)($| )' | grep -v grep"], { encoding: 'utf8' });
+        const lines = (ps.stdout || '').split('\n').map(s => s.trim()).filter(Boolean);
+        const detected = [];
+        for (const line of lines) {
+          const parts = line.split(/\s+/, 2);
+          const cmd = parts[1] || '';
+          const match = cmd.match(/node\s+([^\s]+automation\/([^\s]+))([^\n]*)/);
+          if (match) {
+            const fullPath = match[1];
+            const fileName = match[2];
+            const name = fileName.replace(/\.(cjs|js)$/,'');
+            detected.push(name);
+          }
+        }
+        if (detected.length > 0) {
+          status.running = detected.length;
+          status.systems = Array.from(new Set(detected));
+          status.totalSystems = detected.length;
+          this.log(`📊 Detected (OS): ${status.systems.join(', ')}`);
+        }
+      } catch (e) {
+        this.log(`⚠️ Status process scan failed: ${e.message}`);
+      }
+    }
+
+    return status;
   }
 
   async checkSystemHealth() {

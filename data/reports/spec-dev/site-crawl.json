@@ -1,0 +1,37 @@
+{
+  "timestamp": "2025-08-08T17:08:41.514Z",
+  "pages": [
+    {
+      "url": "https://ziontechgroup.netlify.app/",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/services",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/about",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/contact",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/products",
+      "status": 200
+    },
+    {
+      "url": "https://ziontechgroup.netlify.app/blog",
+      "status": 200
+    }
+  ],
+  "discovered": [
+    "https://ziontechgroup.netlify.app/",
+    "https://ziontechgroup.netlify.app/services",
+    "https://ziontechgroup.netlify.app/about",
+    "https://ziontechgroup.netlify.app/contact",
+    "https://ziontechgroup.netlify.app/products",
+    "https://ziontechgroup.netlify.app/blog"
+  ]
+}
