@@ -1,12 +1,3 @@
-export default function Contact() {
-  return (
-    <div className="py-10">
-      <h1 className="text-2xl font-bold">Contact</h1>
-      <p className="mt-2 text-gray-600 dark:text-gray-300">Reach us at hello@zion.app</p>
-    </div>
-  );
-}
-=======
 export default function ContactPage() {
   return (
     <div className="prose dark:prose-invert">
@@ -17,3 +8,16 @@ export default function ContactPage() {
 }
 =======
 export default function Contact() { return <div className="p-8">Contact</div>; }
+=======
+import React from 'react';
+
+const Component = () => {
+  return (
+    <div>
+      <h1>Page Content</h1>
+      <p>This page is under construction.</p>
+    </div>
+  );
+};
+
+export default Component;

@@ -1,8 +1,14 @@
-    <div className="prose dark:prose-invert">
-      <h1>About Zion</h1>
-      <p>Zion accelerates sovereign innovation across nations, DAOs, and the global talent economy.</p>
+export default function About() { return <div className="p-8">About</div>; }
+=======
+import React from 'react';
+
+const Component = () => {
+  return (
+    <div>
+      <h1>Page Content</h1>
+      <p>This page is under construction.</p>
     </div>
   );
-}
-=======
-export default function About() { return <div className="p-8">About</div>; }
+};
+
+export default Component;

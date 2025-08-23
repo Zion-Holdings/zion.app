@@ -1,15 +1,12 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import React from 'react';
 
-export default class MyDocument extends Document {
-  render() {
-    return (
-      <Html>
-        <Head />
-        <body>
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    );
-  }
-}
+const Component = () => {
+  return (
+    <div>
+      <h1>Page Content</h1>
+      <p>This page is under construction.</p>
+    </div>
+  );
+};
+
+export default Component;

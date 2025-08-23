@@ -1,1 +1,12 @@
-export default function ResetPassword() { return <div className="p-8">Reset Password</div>; }
+import React from 'react';
+
+const Component = () => {
+  return (
+    <div>
+      <h1>Page Content</h1>
+      <p>This page is under construction.</p>
+    </div>
+  );
+};
+
+export default Component;
