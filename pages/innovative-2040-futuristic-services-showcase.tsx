@@ -59,13 +59,52 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
   const [sortBy, setSortBy] = useState<'name' | 'price' | 'popularity' | 'category'>('name');
   const [isLoading, setIsLoading] = useState(true);
 
-  // Combine all services
+  // Helper function to convert services to unified Service interface
+  const convertToService = (service: any): Service => {
+    return {
+      id: service.id,
+      name: service.name,
+      tagline: service.tagline || service.description,
+      price: service.price,
+      period: service.period || '/month',
+      description: service.description,
+      features: service.features || [],
+      popular: service.popular || false,
+      icon: service.icon || '🚀',
+      color: service.color || 'from-blue-600 to-purple-700',
+      textColor: service.textColor || 'text-blue-300',
+      link: service.link,
+      category: service.category,
+      realService: service.realService || true,
+      technology: service.technology || [],
+      integrations: service.integrations || [],
+      useCases: service.useCases || [],
+      roi: service.roi || '',
+      competitors: service.competitors || [],
+      marketSize: service.marketSize || '',
+      growthRate: service.growthRate || '',
+      contactInfo: service.contactInfo || {
+        mobile: '+1 302 464 0950',
+        email: 'kleber@ziontechgroup.com',
+        address: '364 E Main St STE 1008 Middletown DE 19709',
+        website: 'https://ziontechgroup.com'
+      },
+      realImplementation: service.realImplementation || true,
+      implementationDetails: service.implementationDetails || service.realImplementation || '',
+      launchDate: service.launchDate || '',
+      customers: typeof service.customers === 'string' ? parseInt(service.customers) || 0 : service.customers || 0,
+      rating: service.rating || 4.5,
+      reviews: service.reviews || 0
+    };
+  };
+
+  // Combine all services and convert to unified Service interface
   const allServices: Service[] = [
-    ...innovative2040FuturisticServices,
-    ...innovative2040ITServices,
-    ...realMicroSaasServices,
-    ...innovativeAIServices,
-    ...enterpriseITServices
+    ...innovative2040FuturisticServices.map(convertToService),
+    ...innovative2040ITServices.map(convertToService),
+    ...realMicroSaasServices.map(convertToService),
+    ...innovativeAIServices.map(convertToService),
+    ...enterpriseITServices.map(convertToService)
   ];
 
   // Get unique categories

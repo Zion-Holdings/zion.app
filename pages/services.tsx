@@ -7,6 +7,7 @@ import {
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
   Building
 } from 'lucide-react';
+import { formatServicePrice, getPriceForSorting } from '../utils/priceFormatter';
 
 // Import our new service data
 import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
@@ -32,6 +33,8 @@ import { revolutionary2041AdvancedServices } from '../data/revolutionary-2041-ad
 import { innovative2040FuturisticServices } from '../data/innovative-2040-futuristic-services';
 import { advanced2041EnterpriseServices } from '../data/advanced-2041-enterprise-services';
 import { revolutionary2042MicroSaasServices } from '../data/revolutionary-2042-micro-saas-services';
+import { revolutionary2043AdvancedServices } from '../data/revolutionary-2043-advanced-services';
+import { revolutionary2044FuturisticServices } from '../data/revolutionary-2044-futuristic-services';
 
 // Import our new 2025 advanced services
 import { advanced2025MicroSaasExpansion } from '../data/2025-advanced-micro-saas-expansion';
@@ -65,10 +68,7 @@ const getServiceCategory = (service: any) => {
 
 // Helper function to get service pricing
 const getServicePricing = (service: any) => {
-  if (service.pricing?.starter) return service.pricing.starter;
-  if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
-  if (service.price?.monthly) return `$${service.price.monthly}/month`;
-  return 'Contact for pricing';
+  return formatServicePrice(service.price);
 };
 
 // Helper function to get service features
@@ -98,6 +98,8 @@ const allServices = [
   ...realOperationalServices,
   ...marketReadyServices,
   ...marketValidatedServices,
+  ...revolutionary2043AdvancedServices,
+  ...revolutionary2044FuturisticServices,
   ...industryRealServices,
   ...real2025Q4AugmentedBatch,
   ...real2029Q3Additions,
@@ -257,11 +259,9 @@ export default function Services() {
       case 'name':
         return a.name.localeCompare(b.name);
       case 'price-low':
-        return (parseInt(getServicePricing(a).replace(/[^0-9]/g, '')) || 0) - 
-               (parseInt(getServicePricing(b).replace(/[^0-9]/g, '')) || 0);
+        return getPriceForSorting(a) - getPriceForSorting(b);
       case 'price-high':
-        return (parseInt(getServicePricing(b).replace(/[^0-9]/g, '')) || 0) - 
-               (parseInt(getServicePricing(a).replace(/[^0-9]/g, '')) || 0);
+        return getPriceForSorting(b) - getPriceForSorting(a);
       case 'newest':
         return new Date((b as any).launchDate || '2020-01-01').getTime() - 
                new Date((a as any).launchDate || '2020-01-01').getTime();

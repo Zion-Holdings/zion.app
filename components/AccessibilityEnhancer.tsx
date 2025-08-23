@@ -37,6 +37,7 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
   });
   const [currentFocus, setCurrentFocus] = useState<HTMLElement | null>(null);
   const [isPanelOpen, setIsPanelOpen] = useState(false);
+  const [isKeyboardNavigation, setIsKeyboardNavigation] = useState(false);
   
   const focusRef = useRef<HTMLDivElement>(null);
   const announcementRef = useRef<HTMLDivElement>(null);
@@ -114,7 +115,7 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
   }, [applySettings]);
 
   // Focus management
-  const handleFocusChange = useCallback((e: React.FocusEvent) => {
+  const handleFocusChange = useCallback((e: FocusEvent) => {
     const target = e.target as HTMLElement;
     if (target) {
       setCurrentFocus(target);
@@ -123,8 +124,10 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
   }, []);
 
   // Keyboard navigation enhancements
-  const handleKeyDown = useCallback(() => {
-    // Tab navigation detected
+  const handleKeyDown = useCallback((e: KeyboardEvent) => {
+    if (e.key === 'Tab') {
+      setIsKeyboardNavigation(true);
+    }
   }, []);
 
   // Announce to screen reader
