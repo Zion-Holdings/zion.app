@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 'use strict';
 
 const fs = require('fs');
@@ -28,7 +27,6 @@ function discoverInternalPages() {
     results.push({ type: 'internal', href, label, tagline });
   }
 
-  // Priority pages
   const priority = [
     { href: '/automation', label: 'Automation Hub', tagline: 'Live agents & workflows' },
     { href: '/site-health', label: 'Site Health', tagline: 'A11y, performance, links' },
@@ -45,7 +43,6 @@ function discoverInternalPages() {
     if (fs.existsSync(check)) push(p.href, p.label, p.tagline);
   }
 
-  // Fallback discovery of other top-level pages
   try {
     const entries = fs.readdirSync(pagesDir, { withFileTypes: true });
     for (const entry of entries) {
@@ -64,12 +61,6 @@ function discoverInternalPages() {
     }
   } catch {}
 
-  // Add anchor deep-links for capabilities and benefits on the same page
-  results.push({ type: 'internal', href: '/main/front#features', label: 'Features', tagline: 'Explore capabilities' });
-  results.push({ type: 'internal', href: '/main/front#capabilities', label: 'Capabilities', tagline: 'What agents can do' });
-  results.push({ type: 'internal', href: '/main/front#benefits', label: 'Benefits', tagline: 'Outcomes & ROI' });
-
-  // Unique by href, limit
   const seen = new Set();
   const unique = [];
   for (const r of results) {
@@ -78,22 +69,19 @@ function discoverInternalPages() {
       unique.push(r);
     }
   }
-  return unique.slice(0, 16);
+  return unique.slice(0, 12);
 }
 
 function discoverExternalLinks() {
+  const repoUrl = 'https://github.com/Zion-Holdings/zion.app';
   return [
-    { type: 'internal', href: '/.netlify/functions/docs-index-runner', label: 'Docs — technical notes & guides', tagline: 'Documentation' },
-    { type: 'internal', href: '/newsroom', label: 'AI Changelog — highlights', tagline: 'Summarized updates' },
-    { type: 'internal', href: '/.netlify/functions/autonomous-innovation-generator', label: 'Autonomous Innovation Generator', tagline: 'Front promos + homepage refresh' },
-    { type: 'internal', href: '/.netlify/functions/unused-media-scanner', label: 'Unused Media Scanner', tagline: 'Find and report unreferenced assets' },
-    { type: 'internal', href: '/.netlify/functions/orphan-pages-detector', label: 'Orphan Pages Detector', tagline: 'Discover pages with no inbound links' },
-    { type: 'internal', href: '/.netlify/functions/component-size-report', label: 'Component Size Report', tagline: 'Largest components by lines and bytes' },
+    { type: 'external', href: repoUrl + '/tree/main/docs', label: 'Docs — technical notes & guides', tagline: 'Documentation' },
+    { type: 'external', href: repoUrl + '/blob/main/README.md', label: 'README', tagline: 'Overview & links' },
   ];
 }
 
 function buildCard(item) {
-  const common = 'group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo';
+  const common = 'group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo neon-ring';
   const inner = `\n  <div className=\"text-base font-semibold\">${item.label}</div>\n  <div className=\"mt-1 text-sm text-white/75\">${item.tagline || ''}</div>\n`;
   if (item.type === 'external') {
     return `              <a href=\"${item.href}\" target=\"_blank\" rel=\"noopener\" className=\"${common}\">${inner}  <div className=\"mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90\">Open <span aria-hidden>↗</span></div></a>`;
@@ -131,7 +119,7 @@ function replaceBetweenMarkers(source, startMarker, endMarker, replacement) {
   }
   const internal = discoverInternalPages();
   const external = discoverExternalLinks();
-  const combined = [...internal, ...external].slice(0, 16);
+  const combined = [...internal, ...external].slice(0, 12);
   const block = generateSection(combined);
   const original = fs.readFileSync(FRONT_PAGE, 'utf8');
   let updated;
