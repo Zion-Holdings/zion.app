@@ -46,7 +46,8 @@ import {
   Lightbulb,
   Play,
   DollarSign,
-  GraduationCap
+  GraduationCap,
+  ShoppingCart
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -84,106 +85,97 @@ const navigationItems: NavigationItem[] = [
     neonColor: 'shadow-blue-400/50',
     category: 'main',
     children: [
-              {
-          label: 'AI & Machine Learning',
-          href: '/services?category=ai-ml',
-          icon: <Brain className="w-4 h-4" />,
-          description: 'Advanced AI solutions for enterprise',
-          featured: true,
-          neonColor: 'shadow-purple-400/50',
-          category: 'ai'
-        },
-        {
-          label: 'Quantum Computing',
-          href: '/services?category=quantum',
-          icon: <Atom className="w-4 h-4" />,
-          description: 'Next-generation quantum solutions',
-          featured: true,
-          neonColor: 'shadow-blue-400/50',
-          category: 'quantum'
-        },
-        {
-          label: 'Space Technology',
-          href: '/services?category=space-tech',
-          icon: <Rocket className="w-4 h-4" />,
-          description: 'Innovative space tech applications',
-          featured: true,
-          neonColor: 'shadow-pink-400/50',
-          category: 'space'
-        },
-        {
-          label: 'Cybersecurity',
-          href: '/services?category=cybersecurity',
-          icon: <Shield className="w-4 h-4" />,
-          description: 'Advanced security solutions',
-          neonColor: 'shadow-red-400/50',
-          category: 'security'
-        },
-        {
-          label: 'Cloud Infrastructure',
-          href: '/services?category=cloud',
-          icon: <Cloud className="w-4 h-4" />,
-          description: 'Scalable cloud solutions',
-          neonColor: 'shadow-indigo-400/50',
-          category: 'cloud'
-        },
       {
-        label: 'Edge Computing',
-        href: '/services?category=edge',
-        icon: <Cpu className="w-4 h-4" />,
-        description: 'Next-generation edge solutions',
-        neonColor: 'shadow-green-400/50',
-        category: 'edge'
+        label: 'AI & Machine Learning',
+        href: '/services?category=ai-ml',
+        icon: <Brain className="w-4 h-4" />,
+        description: 'Advanced AI solutions for enterprise',
+        featured: true,
+        neonColor: 'shadow-purple-400/50',
+        category: 'ai'
+      },
+      {
+        label: 'Quantum Computing',
+        href: '/services?category=quantum',
+        icon: <Atom className="w-4 h-4" />,
+        description: 'Next-generation quantum solutions',
+        featured: true,
+        neonColor: 'shadow-blue-400/50',
+        category: 'quantum'
+      },
+      {
+        label: 'Cybersecurity',
+        href: '/services?category=security',
+        icon: <Shield className="w-4 h-4" />,
+        description: 'Advanced security solutions',
+        neonColor: 'shadow-red-400/50',
+        category: 'security'
+      },
+      {
+        label: 'Cloud & Infrastructure',
+        href: '/services?category=cloud',
+        icon: <Cloud className="w-4 h-4" />,
+        description: 'Scalable cloud solutions',
+        neonColor: 'shadow-cyan-400/50',
+        category: 'cloud'
+      },
+      {
+        label: 'Business Solutions',
+        href: '/services?category=business',
+        icon: <Target className="w-4 h-4" />,
+        description: 'Enterprise business solutions',
+        neonColor: 'shadow-emerald-400/50',
+        category: 'business'
+      },
+      {
+        label: 'Space Technology',
+        href: '/services?category=space',
+        icon: <Rocket className="w-4 h-4" />,
+        description: 'Space exploration technology',
+        neonColor: 'shadow-violet-400/50',
+        category: 'space'
       }
     ]
   },
   {
     label: 'Solutions',
     href: '/solutions',
-    icon: <Target className="w-4 h-4" />,
-    description: 'Industry-specific solutions and use cases',
+    icon: <Layers className="w-4 h-4" />,
+    description: 'Industry-specific solutions',
     neonColor: 'shadow-emerald-400/50',
     category: 'main',
     children: [
       {
-        label: 'Enterprise Solutions',
-        href: '/solutions/enterprise',
-        icon: <Building className="w-4 h-4" />,
-        description: 'Large-scale enterprise implementations',
-        neonColor: 'shadow-blue-400/50',
-        category: 'enterprise'
-      },
-      {
-        label: 'Startup Solutions',
-        href: '/solutions/startup',
-        icon: <Rocket className="w-4 h-4" />,
-        description: 'Scalable solutions for startups',
+        label: 'Financial Services',
+        href: '/solutions?industry=finance',
+        icon: <DollarSign className="w-4 h-4" />,
+        description: 'Banking and financial solutions',
         neonColor: 'shadow-green-400/50',
-        category: 'startup'
+        category: 'finance'
       },
       {
-        label: 'Government Solutions',
-        href: '/solutions/government',
-        icon: <Shield className="w-4 h-4" />,
-        description: 'Secure government implementations',
-        neonColor: 'shadow-purple-400/50',
-        category: 'government'
-      },
-      {
-        label: 'Healthcare Solutions',
-        href: '/solutions/healthcare',
+        label: 'Healthcare',
+        href: '/solutions?industry=healthcare',
         icon: <Heart className="w-4 h-4" />,
-        description: 'AI-powered healthcare solutions',
+        description: 'Healthcare technology solutions',
         neonColor: 'shadow-red-400/50',
         category: 'healthcare'
       },
       {
-        label: 'Financial Solutions',
-        href: '/solutions/financial',
-        icon: <TrendingUp className="w-4 h-4" />,
-        description: 'Fintech and financial services',
-        neonColor: 'shadow-yellow-400/50',
-        category: 'financial'
+        label: 'Manufacturing',
+        href: '/solutions?industry=manufacturing',
+        icon: <Cpu className="w-4 h-4" />,
+        description: 'Industrial automation solutions',
+        neonColor: 'shadow-blue-400/50',
+        category: 'manufacturing'
+      },
+      {
+        label: 'Retail & E-commerce',
+        href: '/solutions?industry=retail',
+        icon: <ShoppingCart className="w-4 h-4" />,
+        description: 'Digital commerce solutions',
+        neonColor: 'shadow-purple-400/50',
+        category: 'retail'
       }
     ]
   },
@@ -191,58 +183,50 @@ const navigationItems: NavigationItem[] = [
     label: 'Resources',
     href: '/resources',
     icon: <BookOpen className="w-4 h-4" />,
-    description: 'Knowledge base and learning resources',
-    neonColor: 'shadow-orange-400/50',
+    description: 'Knowledge and insights',
+    neonColor: 'shadow-yellow-400/50',
     category: 'main',
     children: [
       {
-        label: 'Documentation',
-        href: '/resources/documentation',
+        label: 'White Papers',
+        href: '/white-papers',
         icon: <FileText className="w-4 h-4" />,
-        description: 'Technical documentation and guides',
+        description: 'In-depth research and insights',
         neonColor: 'shadow-blue-400/50',
-        category: 'docs'
+        category: 'resources'
       },
       {
         label: 'Webinars',
         href: '/webinars',
         icon: <Video className="w-4 h-4" />,
-        description: 'Live and recorded webinars',
+        description: 'Expert-led sessions',
         neonColor: 'shadow-purple-400/50',
-        category: 'webinars'
-      },
-      {
-        label: 'Case Studies',
-        href: '/resources/case-studies',
-        icon: <BarChart3 className="w-4 h-4" />,
-        description: 'Success stories and implementations',
-        neonColor: 'shadow-green-400/50',
-        category: 'case-studies'
-      },
-      {
-        label: 'API Reference',
-        href: '/resources/api',
-        icon: <Code className="w-4 h-4" />,
-        description: 'Developer API documentation',
-        neonColor: 'shadow-indigo-400/50',
-        category: 'api'
+        category: 'resources'
       },
       {
         label: 'Training',
         href: '/training',
         icon: <GraduationCap className="w-4 h-4" />,
-        description: 'Training programs and certifications',
-        neonColor: 'shadow-yellow-400/50',
-        category: 'training'
+        description: 'Professional development',
+        neonColor: 'shadow-emerald-400/50',
+        category: 'resources'
+      },
+      {
+        label: 'Research & Development',
+        href: '/research-development',
+        icon: <Lightbulb className="w-4 h-4" />,
+        description: 'Innovation and research',
+        neonColor: 'shadow-orange-400/50',
+        category: 'resources'
       }
     ]
   },
   {
     label: 'Company',
-    href: '/company',
+    href: '/about',
     icon: <Building className="w-4 h-4" />,
     description: 'About Zion Tech Group',
-    neonColor: 'shadow-cyan-400/50',
+    neonColor: 'shadow-indigo-400/50',
     category: 'main',
     children: [
       {
@@ -251,81 +235,31 @@ const navigationItems: NavigationItem[] = [
         icon: <Users className="w-4 h-4" />,
         description: 'Our story and mission',
         neonColor: 'shadow-blue-400/50',
-        category: 'about'
-      },
-      {
-        label: 'Mission',
-        href: '/mission',
-        icon: <Target className="w-4 h-4" />,
-        description: 'Our vision and goals',
-        neonColor: 'shadow-green-400/50',
-        category: 'mission'
+        category: 'company'
       },
       {
         label: 'Team',
         href: '/team',
         icon: <Users className="w-4 h-4" />,
-        description: 'Meet our team',
+        description: 'Meet our experts',
         neonColor: 'shadow-purple-400/50',
-        category: 'team'
+        category: 'company'
       },
       {
         label: 'Careers',
         href: '/careers',
-        icon: <Award className="w-4 h-4" />,
+        icon: <Briefcase className="w-4 h-4" />,
         description: 'Join our team',
-        neonColor: 'shadow-orange-400/50',
-        category: 'careers'
+        neonColor: 'shadow-emerald-400/50',
+        category: 'company'
       },
       {
-        label: 'News',
-        href: '/news',
-        icon: <FileText className="w-4 h-4" />,
-        description: 'Latest company news',
-        neonColor: 'shadow-indigo-400/50',
-        category: 'news'
-      }
-    ]
-  },
-  {
-    label: 'Support',
-    href: '/support',
-    icon: <HelpCircle className="w-4 h-4" />,
-    description: 'Get help and support',
-    neonColor: 'shadow-red-400/50',
-    category: 'main',
-    children: [
-      {
-        label: 'Help Center',
-        href: '/support/help',
-        icon: <HelpCircle className="w-4 h-4" />,
-        description: 'Self-service help and guides',
-        neonColor: 'shadow-blue-400/50',
-        category: 'help'
-      },
-      {
-        label: 'Contact Us',
+        label: 'Contact',
         href: '/contact',
         icon: <MessageCircle className="w-4 h-4" />,
-        description: 'Get in touch with our team',
-        neonColor: 'shadow-green-400/50',
-        category: 'contact'
-      },
-      {
-        label: 'Status',
-        href: '/status',
-        icon: <BarChart3 className="w-4 h-4" />,
-        description: 'Service status and uptime',
-        neonColor: 'shadow-orange-400/50',
-        category: 'status'
-      },
-      {
-        label: 'Support Portal',
-        href: '/support/portal',
-        icon: <Settings className="w-4 h-4" />,
-        description: 'Customer support portal',
-        neonColor: 'shadow-purple-400/50',
-        category: 'portal'
+        description: 'Get in touch',
+        neonColor: 'shadow-cyan-400/50',
+        category: 'company'
       }
     ]
   }
