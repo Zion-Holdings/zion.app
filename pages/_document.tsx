@@ -1,13 +1,16 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
 
 class MyDocument extends Document {
+  static async getInitialProps(ctx: DocumentContext) {
+    const initialProps = await Document.getInitialProps(ctx);
+    return { ...initialProps };
+  }
+
   render() {
     return (
       <Html lang="en">
-        <Head>
-          <meta name="theme-color" content="#1f2937" />
-        </Head>
-        <body>
+        <Head />
+        <body className="bg-high-contrast-primary text-high-contrast">
           <Main />
           <NextScript />
         </body>

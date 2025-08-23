@@ -1,10 +1,20 @@
-import React from "react";
+import type { NextPage } from 'next';
+import Head from 'next/head';
 
-export default function AuthCallbackPage() {
+const Callback: NextPage = () => {
   return (
-    <main className="p-6">
-      <h1 className="text-2xl font-bold">Auth Callback</h1>
-      <p className="text-gray-600">Processing authentication...</p>
-    </main>
+    <div>
+      <Head>
+        <title>Callback - Zion Tech Solutions</title>
+        <meta name="description" content="Callback page" />
+      </Head>
+      
+      <main>
+        <h1>Callback</h1>
+        <p>This page is under construction.</p>
+      </main>
+    </div>
   );
-}
+};
+
+export default Callback;

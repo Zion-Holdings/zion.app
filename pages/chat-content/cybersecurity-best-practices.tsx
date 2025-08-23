@@ -1,10 +1,20 @@
-import React from "react";
+import type { NextPage } from 'next';
+import Head from 'next/head';
 
-export default function CybersecurityBestPractices() {
+const CybersecurityBestPractices: NextPage = () => {
   return (
-    <main className="p-6">
-      <h1 className="text-xl font-semibold">Cybersecurity Best Practices</h1>
-      <p className="text-gray-600">Content coming soon.</p>
-    </main>
+    <div>
+      <Head>
+        <title>CybersecurityBestPractices - Zion Tech Solutions</title>
+        <meta name="description" content="CybersecurityBestPractices page" />
+      </Head>
+      
+      <main>
+        <h1>CybersecurityBestPractices</h1>
+        <p>This page is under construction.</p>
+      </main>
+    </div>
   );
-}
+};
+
+export default CybersecurityBestPractices;
