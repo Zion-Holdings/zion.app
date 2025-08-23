@@ -16,7 +16,7 @@ import { realITServices2025Expansion } from '../data/real-it-services-2025-expan
 import { realAIServices2025Expansion } from '../data/real-ai-services-2025-expansion';
 import { innovativeMicroSaas2025ExpansionV2 } from '../data/2025-innovative-micro-saas-expansion-v2';
 import { innovativeITServices2025ExpansionV2 } from '../data/2025-innovative-it-services-expansion-v2';
-import { innovativeAIServices2025ExpansionV2 } from '../data/2025-innovative-ai-services-expansion-v2';
+import { innovativeAIServicesExpansionV22025 } from '../data/2025-innovative-ai-services-expansion-v2';
 
 // Lazy load components for better performance
 const ServiceCard = lazy(() => import('./ServiceCard'));
@@ -69,7 +69,7 @@ const EnhancedHomepage2046: React.FC = () => {
     ...realAIServices2025Expansion,
     ...innovativeMicroSaas2025ExpansionV2,
     ...innovativeITServices2025ExpansionV2,
-    ...innovativeAIServices2025ExpansionV2
+    ...innovativeAIServicesExpansionV22025
   ], []);
 
   // Get featured services for rotation
@@ -93,7 +93,7 @@ const EnhancedHomepage2046: React.FC = () => {
       service.name.toLowerCase().includes(query) ||
       service.description.toLowerCase().includes(query) ||
       service.category.toLowerCase().includes(query) ||
-      service.tagline.toLowerCase().includes(query)
+      (service as any).tagline?.toLowerCase().includes(query)
     );
   }, [searchQuery, getFilteredServices]);
 
