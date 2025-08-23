@@ -1,3 +1,136 @@
+<<<<<<< HEAD
+import React, { useEffect, useState, useCallback } from 'react';
+
+interface AccessibilityEnhancerProps {
+  enabled?: boolean;
+  showControls?: boolean;
+  autoHide?: boolean;
+}
+
+const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({
+  enabled = true,
+  showControls = false,
+  autoHide = true,
+}) => {
+  const [isVisible, setIsVisible] = useState(showControls);
+  const [fontSize, setFontSize] = useState(16);
+  const [highContrast, setHighContrast] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(false);
+  const [focusVisible, setFocusVisible] = useState(false);
+  const [isKeyboardUser, setIsKeyboardUser] = useState(false);
+
+  // Detect keyboard user
+  useEffect(() => {
+    const handleKeyDown = () => setIsKeyboardUser(true);
+    const handleMouseDown = () => setIsKeyboardUser(false);
+    
+    document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('mousedown', handleMouseDown);
+    
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('mousedown', handleMouseDown);
+    };
+  }, []);
+
+  // Apply accessibility features
+  useEffect(() => {
+    if (!enabled) return;
+
+    // Apply font size
+    document.documentElement.style.fontSize = `${fontSize}px`;
+    
+    // Apply high contrast
+    if (highContrast) {
+      document.documentElement.classList.add('high-contrast');
+    } else {
+      document.documentElement.classList.remove('high-contrast');
+    }
+    
+    // Apply reduced motion
+    if (reducedMotion) {
+      document.documentElement.classList.add('reduced-motion');
+    } else {
+      document.documentElement.classList.remove('reduced-motion');
+    }
+    
+    // Apply focus visible
+    if (focusVisible) {
+      document.documentElement.classList.add('focus-visible');
+    } else {
+      document.documentElement.classList.remove('focus-visible');
+    }
+  }, [enabled, fontSize, highContrast, reducedMotion, focusVisible]);
+
+  // Enhanced keyboard navigation
+  useEffect(() => {
+    if (!enabled) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Skip if user is typing in input fields
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
+        return;
+      }
+
+      // Navigation shortcuts
+      if (e.altKey) {
+        switch (e.key) {
+          case 'h':
+            e.preventDefault();
+            document.querySelector('main')?.focus();
+            break;
+          case 'n':
+            e.preventDefault();
+            document.querySelector('nav')?.focus();
+            break;
+          case 'f':
+            e.preventDefault();
+            document.querySelector('footer')?.focus();
+            break;
+          case 's':
+            e.preventDefault();
+            const searchInput = document.querySelector('input[type="search"], .search-input') as HTMLElement;
+            if (searchInput) searchInput.focus();
+            break;
+        }
+      }
+
+      // Skip to content
+      if (e.key === 'Tab' && e.shiftKey && document.activeElement === document.body) {
+        e.preventDefault();
+        const skipLink = document.querySelector('.skip-link') as HTMLElement;
+        if (skipLink) {
+          skipLink.focus();
+        }
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [enabled]);
+
+  // Enhanced focus management
+  useEffect(() => {
+    if (!enabled) return;
+
+    // Add focus indicators
+    const addFocusIndicators = () => {
+      const style = document.createElement('style');
+      style.textContent = `
+        .focus-visible *:focus {
+          outline: 3px solid #3b82f6 !important;
+          outline-offset: 2px !important;
+          border-radius: 4px !important;
+        }
+        
+        .high-contrast {
+          filter: contrast(1.5) brightness(1.2) !important;
+        }
+        
+        .high-contrast * {
+          border-color: #ffffff !important;
+        }
+=======
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -327,6 +460,7 @@ const AccessibilityEnhancer: React.FC = () => {
           --bg-secondary: #1f2937;
           --accent: #06b6d4;
         }
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b1f5
         
         .reduced-motion * {
           animation-duration: 0.01ms !important;
@@ -334,6 +468,66 @@ const AccessibilityEnhancer: React.FC = () => {
           transition-duration: 0.01ms !important;
         }
         
+<<<<<<< HEAD
+        .skip-link {
+          position: absolute;
+          top: -40px;
+          left: 6px;
+          background: #000000;
+          color: #ffffff;
+          padding: 8px;
+          text-decoration: none;
+          border-radius: 4px;
+          z-index: 10000;
+          transition: top 0.3s;
+        }
+        
+        .skip-link:focus {
+          top: 6px;
+        }
+        
+        .sr-only {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          white-space: nowrap;
+          border: 0;
+        }
+      `;
+      document.head.appendChild(style);
+    };
+
+    addFocusIndicators();
+
+    // Add skip links
+    const addSkipLinks = () => {
+      const main = document.querySelector('main');
+      if (main && !document.querySelector('.skip-link')) {
+        const skipLink = document.createElement('a');
+        skipLink.href = '#main';
+        skipLink.className = 'skip-link';
+        skipLink.textContent = 'Skip to main content';
+        document.body.insertBefore(skipLink, document.body.firstChild);
+      }
+    };
+
+    addSkipLinks();
+
+    // Add ARIA labels to interactive elements
+    const enhanceARIA = () => {
+      // Add labels to buttons without text
+      document.querySelectorAll('button:not([aria-label]):not([aria-labelledby])').forEach(button => {
+        if (!button.textContent?.trim()) {
+          const icon = button.querySelector('svg, img');
+          if (icon) {
+            const iconText = icon.getAttribute('aria-label') || icon.getAttribute('alt') || 'Button';
+            button.setAttribute('aria-label', iconText);
+          }
+=======
         .enhanced-focus *:focus {
           outline: 3px solid #06b6d4 !important;
           outline-offset: 2px !important;
@@ -341,6 +535,7 @@ const AccessibilityEnhancer: React.FC = () => {
         
         body {
           font-size: calc(1rem * var(--font-size-multiplier));
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-b1f5
         }
       });
 
