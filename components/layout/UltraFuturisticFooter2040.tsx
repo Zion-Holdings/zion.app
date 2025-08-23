@@ -74,14 +74,10 @@ const footerSections = [
       { name: 'Careers', href: '/careers' },
       { name: 'Contact', href: '/contact' },
       { name: 'Partners', href: '/partners' },
-      { name: 'News', href: '/news' },
       { name: 'Blog', href: '/blog' },
       { name: 'Case Studies', href: '/case-studies' },
-      { name: 'API Documentation', href: '/api' },
-      { name: 'Webinars', href: '/webinars' },
-      { name: 'Support', href: '/support' },
-      { name: 'Training', href: '/training' },
-      { name: 'Resources', href: '/resources' }
+      { name: 'Resources', href: '/resources' },
+      { name: 'Webinars', href: '/webinars' }
     ]
   }
 ];

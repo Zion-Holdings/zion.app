@@ -8,7 +8,7 @@ import {
   Zap,
   TrendingUp, Award, CheckCircle, Clock,
   Search, X as CloseIcon,
-  Target, BookOpen, Calendar, Video, FileText
+  Target, BookOpen, Calendar, Video, FileText, Handshake
 } from 'lucide-react';
 
 const contactInfo = {
@@ -127,19 +127,15 @@ const sidebarSections = [
     icon: <BookOpen className="w-5 h-5" />,
     color: 'text-cyan-400',
     items: [
-      { name: 'Documentation', href: '/docs' },
-      { name: 'API Reference', href: '/api-documentation' },
       { name: 'Case Studies', href: '/case-studies' },
       { name: 'Blog & News', href: '/blog' },
-      { name: 'Support Center', href: '/support' },
+      { name: 'Resources Hub', href: '/resources' },
+      { name: 'Webinars', href: '/webinars' },
       { name: 'Training & Certification', href: '/training' },
-      { name: 'Community Forum', href: '/community' },
       { name: 'Developer Resources', href: '/developer-resources' },
       { name: 'Research & Development', href: '/research-development' },
       { name: 'White Papers', href: '/white-papers' },
-      { name: 'Performance Reports', href: '/reports' },
-      { name: 'Market Analysis', href: '/market-pricing' },
-      { name: 'Services Advertising', href: '/services-advertising' }
+      { name: 'Performance Reports', href: '/reports' }
     ]
   },
   {
@@ -148,17 +144,12 @@ const sidebarSections = [
     color: 'text-pink-400',
     items: [
       { name: 'About Us', href: '/about' },
-      { name: 'Leadership Team', href: '/leadership' },
       { name: 'Careers', href: '/careers' },
-      { name: 'News & Press', href: '/news' },
       { name: 'Partners', href: '/partners' },
-      { name: 'Investors', href: '/investors' },
       { name: 'Contact Us', href: '/contact' },
-      { name: 'Locations', href: '/locations' },
-      { name: 'Sustainability', href: '/sustainability' },
-      { name: 'Diversity & Inclusion', href: '/diversity-inclusion' },
-      { name: 'Terms of Service', href: '/terms' },
-      { name: 'Privacy Policy', href: '/privacy' }
+      { name: 'Case Studies', href: '/case-studies' },
+      { name: 'Blog', href: '/blog' },
+      { name: 'Resources', href: '/resources' }
     ]
   }
 ];
@@ -167,35 +158,29 @@ const quickLinks = [
   { name: 'Home', href: '/', icon: <Home className="w-4 h-4" /> },
   { name: 'All Services', href: '/comprehensive-services-showcase-2025', icon: <Star className="w-4 h-4" /> },
   { name: 'Pricing', href: '/pricing', icon: <DollarSign className="w-4 h-4" /> },
-  { name: 'Market Pricing', href: '/market-pricing', icon: <DollarSign className="w-4 h-4" /> },
-  { name: 'Services Advertising', href: '/services-advertising', icon: <BookOpen className="w-4 h-4" /> },
-  { name: 'Get Quote', href: '/quote', icon: <DollarSign className="w-4 h-4" /> },
-  { name: 'Book Demo', href: '/demo', icon: <Video className="w-4 h-4" /> },
   { name: 'Blog', href: '/blog', icon: <FileText className="w-4 h-4" /> },
   { name: 'Resources', href: '/resources', icon: <BookOpen className="w-4 h-4" /> },
-  { name: 'Events', href: '/events', icon: <Calendar className="w-4 h-4" /> },
-  { name: 'Webinars', href: '/webinars', icon: <Video className="w-4 h-4" /> },
+  { name: 'Case Studies', href: '/case-studies', icon: <FileText className="w-4 h-4" /> },
   { name: 'About Us', href: '/about', icon: <Users className="w-4 h-4" /> },
   { name: 'Contact', href: '/contact', icon: <Mail className="w-4 h-4" /> },
-  { name: 'Support', href: '/support', icon: <HelpCircle className="w-4 h-4" /> }
+  { name: 'Careers', href: '/careers', icon: <Users className="w-4 h-4" /> },
+  { name: 'Partners', href: '/partners', icon: <Handshake className="w-4 h-4" /> }
 ];
 
 const companyLinks = [
   { name: 'About Us', href: '/about', description: 'Our mission and vision' },
   { name: 'Careers', href: '/careers', description: 'Join our team' },
-  { name: 'News & Updates', href: '/news', description: 'Latest company news' },
+  { name: 'Partners', href: '/partners', description: 'Technology partnerships' },
   { name: 'Case Studies', href: '/case-studies', description: 'Success stories' },
-  { name: 'Resources', href: '/resources', description: 'Whitepapers and guides' },
+  { name: 'Resources', href: '/resources', description: 'Documentation and tools' },
   { name: 'Blog', href: '/blog', description: 'Industry insights' }
 ];
 
 const supportLinks = [
-  { name: 'Contact Support', href: '/support', description: 'Get help from our team' },
-  { name: 'Documentation', href: '/docs', description: 'Technical guides' },
-  { name: 'API Reference', href: '/api-documentation', description: 'Developer documentation' },
-  { name: 'Status Page', href: '/status-pages-slo', description: 'Service status' },
-  { name: 'Training', href: '/training', description: 'Learn our platforms' },
-  { name: 'Community', href: '/community', description: 'Connect with users' }
+  { name: 'Contact Us', href: '/contact', description: 'Get in touch with our team' },
+  { name: 'Resources', href: '/resources', description: 'Documentation and guides' },
+  { name: 'Webinars', href: '/webinars', description: 'Educational content' },
+  { name: 'Status Page', href: '/status-pages-slo', description: 'Service status' }
 ];
 
 const stats = [

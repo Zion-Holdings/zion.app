@@ -101,16 +101,10 @@ const navigationItems: NavigationItem[] = [
     label: 'Resources',
     children: [
       {
-        label: 'API Documentation',
-        href: '/api',
+        label: 'Resources Hub',
+        href: '/resources',
         icon: <Globe className="w-4 h-4" />,
-        description: 'Developer APIs and documentation'
-      },
-      {
-        label: 'Webinars',
-        href: '/webinars',
-        icon: <Star className="w-4 h-4" />,
-        description: 'Technology webinars and events'
+        description: 'Documentation, tools & learning materials'
       },
       {
         label: 'Case Studies',
@@ -125,10 +119,10 @@ const navigationItems: NavigationItem[] = [
         description: 'Technology insights and trends'
       },
       {
-        label: 'Documentation',
-        href: '/docs',
+        label: 'Webinars',
+        href: '/webinars',
         icon: <Star className="w-4 h-4" />,
-        description: 'Technical documentation'
+        description: 'Technology webinars and events'
       }
     ]
   },
@@ -148,24 +142,20 @@ const navigationItems: NavigationItem[] = [
         description: 'Join our team'
       },
       {
-        label: 'News',
-        href: '/news',
-        icon: <Star className="w-4 h-4" />,
-        description: 'Latest company news'
-      },
-      {
         label: 'Partners',
         href: '/partners',
         icon: <Star className="w-4 h-4" />,
         description: 'Technology partners'
+      },
+      {
+        label: 'Contact',
+        href: '/contact',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Get in touch with us'
       }
     ]
   },
-  {
-    label: 'Contact',
-    href: '/contact',
-    icon: <Phone className="w-4 h-4" />
-  }
+
 ];
 
 const UltraFuturisticNavigation2040: React.FC = () => {
