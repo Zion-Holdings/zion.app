@@ -4,6 +4,48 @@ import Head from 'next/head';
 interface SEOOptimizerProps {
   title?: string;
   description?: string;
+<<<<<<< HEAD
+  keywords?: string;
+  image?: string;
+  url?: string;
+  type?: string;
+}
+
+const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
+  title = "Zion Tech Group - The Future of Technology | AI, Quantum Computing & Autonomous Solutions",
+  description = "Pioneering AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide. Discover cutting-edge technology solutions.",
+  keywords = "AI consciousness, quantum computing, autonomous systems, technology solutions, artificial intelligence, machine learning, cybersecurity, space technology",
+  image = "/images/zion-tech-group-og.jpg",
+  url = "https://ziontechgroup.com",
+  type = "website"
+}) => {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Zion Tech Group",
+    "url": "https://ziontechgroup.com",
+    "logo": "https://ziontechgroup.com/images/zion-tech-group-logo.png",
+    "description": "Pioneering AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.",
+    "foundingDate": "2020",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "US"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "email": "contact@ziontechgroup.com"
+    },
+    "sameAs": [
+      "https://linkedin.com/company/zion-tech-group",
+      "https://twitter.com/ziontechgroup",
+      "https://github.com/Zion-Holdings"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "category": "Technology Services",
+      "description": "AI, Quantum Computing, and Autonomous Solutions"
+=======
   keywords?: string[];
   type?: 'website' | 'article' | 'product' | 'service';
   image?: string;
@@ -99,6 +141,7 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
           }
         }
       ]
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-c75d
     }
   };
 
@@ -114,8 +157,14 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       {/* Canonical URL */}
       <link rel="canonical" href={url} />
       
+<<<<<<< HEAD
+      {/* Open Graph / Facebook */}
+      <meta property="og:type" content={type} />
+      <meta property="og:url" content={url} />
+=======
       {/* Open Graph Meta Tags */}
       <meta property="og:type" content={type} />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-c75d
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />

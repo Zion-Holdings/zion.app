@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+import React from 'react';
+=======
 import React, { Suspense } from 'react';
 import Homepage2025 from '../components/Homepage2025';
 import SEOOptimizer from '../components/SEOOptimizer';
@@ -7,6 +10,7 @@ import PerformanceOptimizer from '../components/PerformanceOptimizer';
 import { AccessibilityProvider } from '../components/AccessibilityEnhancer';
 import { SkipLink } from '../components/AccessibilityEnhancer';
 
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-c75d
 const HomePage: React.FC = () => {
   // Structured data for better SEO
   const structuredData = {
@@ -40,6 +44,15 @@ const HomePage: React.FC = () => {
 
   return (
     <ErrorBoundary>
+<<<<<<< HEAD
+      <SEOEnhancer />
+      <AnalyticsTracker />
+      <PerformanceOptimizer>
+        <PerformanceEnhancer>
+          <Homepage2025 />
+        </PerformanceEnhancer>
+      </PerformanceOptimizer>
+=======
       <AccessibilityProvider>
         <SEOOptimizer 
           title="Zion Tech Group - Pioneering Future Technology Solutions"
@@ -77,6 +90,7 @@ const HomePage: React.FC = () => {
           </main>
         </PerformanceOptimizer>
       </AccessibilityProvider>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-c75d
     </ErrorBoundary>
   );
 };
