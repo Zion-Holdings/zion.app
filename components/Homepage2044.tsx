@@ -89,7 +89,22 @@ const Homepage2044: React.FC = () => {
     window.location.href = service.slug;
   }, []);
 
+  if (error) {
+    return (
+      <Layout>
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <h1 className="text-2xl text-red-400 mb-4">Error Loading Page</h1>
+            <p className="text-gray-400">{error}</p>
+          </div>
+        </div>
+      </Layout>
+    );
+  }
 
+  return (
+    <Layout>
+      <main className="relative z-10" role="main" aria-label="Zion Tech Group Homepage">
         {/* Hero Section */}
         <section 
           className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
