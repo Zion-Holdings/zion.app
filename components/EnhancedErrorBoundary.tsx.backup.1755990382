@@ -1,7 +1,11 @@
 import React, { Component, ErrorInfo, ReactNode } from 'react';
 import { motion } from 'framer-motion';
+<<<<<<< HEAD
+import { AlertTriangle, RefreshCw, Home, ArrowLeft, Bug } from 'lucide-react';
+=======
 import { AlertTriangle, RefreshCw, Home, Bug, X, Copy, Check } from 'lucide-react';
 import { AnimatePresence } from 'framer-motion';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-eb99
 
 interface Props {
   children: ReactNode;
@@ -13,8 +17,12 @@ interface State {
   hasError: boolean;
   error: Error | null;
   errorInfo: ErrorInfo | null;
+<<<<<<< HEAD
+  errorId: string;
+=======
   showDetails: boolean;
   copied: boolean;
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-eb99
 }
 
 class EnhancedErrorBoundary extends Component<Props, State> {
@@ -24,8 +32,12 @@ class EnhancedErrorBoundary extends Component<Props, State> {
       hasError: false,
       error: null,
       errorInfo: null,
+<<<<<<< HEAD
+      errorId: ''
+=======
       showDetails: false,
       copied: false
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-eb99
     };
   }
 
@@ -34,8 +46,12 @@ class EnhancedErrorBoundary extends Component<Props, State> {
       hasError: true,
       error,
       errorInfo: null,
+<<<<<<< HEAD
+      errorId: `error_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`
+=======
       showDetails: false,
       copied: false
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-eb99
     };
   }
 
@@ -53,11 +69,14 @@ class EnhancedErrorBoundary extends Component<Props, State> {
     // Call custom error handler if provided
     if (this.props.onError) {
       this.props.onError(error, errorInfo);
+<<<<<<< HEAD
+=======
     }
 
     // Send error to monitoring service in production
     if (process.env.NODE_ENV === 'production') {
       this.reportError(error, errorInfo);
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-eb99
     }
 
     // Send error to error reporting service (if configured)
@@ -65,6 +84,17 @@ class EnhancedErrorBoundary extends Component<Props, State> {
   }
 
   private reportError = (error: Error, errorInfo: ErrorInfo) => {
+<<<<<<< HEAD
+    // In a real application, you would send this to your error reporting service
+    // For now, we'll just log it
+    console.error('Error Report:', {
+      errorId: this.state.errorId,
+      message: error.message,
+      stack: error.stack,
+      componentStack: errorInfo.componentStack,
+      timestamp: new Date().toISOString()
+    });
+=======
     try {
       // Send to error reporting service
       const errorData = {
@@ -82,6 +112,7 @@ class EnhancedErrorBoundary extends Component<Props, State> {
     } catch (reportingError) {
       console.error('Failed to report error:', reportingError);
     }
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-eb99
   };
 
   private handleRetry = () => {
@@ -89,8 +120,12 @@ class EnhancedErrorBoundary extends Component<Props, State> {
       hasError: false,
       error: null,
       errorInfo: null,
+<<<<<<< HEAD
+      errorId: ''
+=======
       showDetails: false,
       copied: false
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-eb99
     });
   };
 
@@ -98,6 +133,28 @@ class EnhancedErrorBoundary extends Component<Props, State> {
     window.location.href = '/';
   };
 
+<<<<<<< HEAD
+  private handleGoBack = () => {
+    window.history.back();
+  };
+
+  private handleReportBug = () => {
+    const errorDetails = {
+      errorId: this.state.errorId,
+      message: this.state.error?.message,
+      stack: this.state.error?.stack,
+      componentStack: this.state.errorInfo?.componentStack,
+      url: window.location.href,
+      userAgent: navigator.userAgent,
+      timestamp: new Date().toISOString()
+    };
+
+    // In a real application, you would send this to your bug reporting system
+    console.log('Bug Report:', errorDetails);
+    
+    // For now, we'll open the contact page
+    window.location.href = '/contact';
+=======
   private handleCopyError = async () => {
     if (this.state.error && this.state.errorInfo) {
       const errorText = `
@@ -116,6 +173,7 @@ Timestamp: ${new Date().toISOString()}
         console.error('Failed to copy error:', err);
       }
     }
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-eb99
   };
 
   private toggleDetails = () => {
@@ -132,6 +190,61 @@ Timestamp: ${new Date().toISOString()}
       return (
         <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 flex items-center justify-center p-4">
           <motion.div
+<<<<<<< HEAD
+            className="max-w-2xl mx-auto text-center"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            {/* Error Icon */}
+            <motion.div
+              className="w-24 h-24 mx-auto mb-8 bg-red-500/20 rounded-full flex items-center justify-center"
+              animate={{ 
+                scale: [1, 1.1, 1],
+                rotate: [0, 5, -5, 0]
+              }}
+              transition={{ 
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            >
+              <AlertTriangle className="w-12 h-12 text-red-400" />
+            </motion.div>
+
+            {/* Error Message */}
+            <h1 className="text-4xl font-bold text-red-400 mb-4">
+              Oops! Something went wrong
+            </h1>
+            
+            <p className="text-xl text-gray-300 mb-6">
+              We're sorry, but something unexpected happened. Our team has been notified.
+            </p>
+
+            {/* Error Details (Development Only) */}
+            {process.env.NODE_ENV === 'development' && this.state.error && (
+              <motion.div
+                className="bg-gray-900/50 border border-gray-700 rounded-lg p-4 mb-6 text-left"
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                transition={{ delay: 0.3 }}
+              >
+                <h3 className="text-lg font-semibold text-red-400 mb-2">Error Details:</h3>
+                <p className="text-sm text-gray-400 mb-2">
+                  <strong>Message:</strong> {this.state.error.message}
+                </p>
+                <p className="text-sm text-gray-400 mb-2">
+                  <strong>Error ID:</strong> {this.state.errorId}
+                </p>
+                {this.state.error.stack && (
+                  <details className="text-sm text-gray-400">
+                    <summary className="cursor-pointer hover:text-gray-300">Stack Trace</summary>
+                    <pre className="mt-2 text-xs bg-gray-800 p-2 rounded overflow-x-auto">
+                      {this.state.error.stack}
+                    </pre>
+                  </details>
+                )}
+=======
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
@@ -146,6 +259,7 @@ Timestamp: ${new Date().toISOString()}
                 className="w-20 h-20 mx-auto bg-red-100 dark:bg-red-900/20 rounded-full flex items-center justify-center mb-4"
               >
                 <AlertTriangle className="w-10 h-10 text-red-500" />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-eb99
               </motion.div>
               <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
                 Oops! Something went wrong
@@ -155,6 +269,60 @@ Timestamp: ${new Date().toISOString()}
               </p>
             </div>
 
+<<<<<<< HEAD
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <motion.button
+                className="px-6 py-3 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
+                onClick={this.handleRetry}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <RefreshCw className="w-5 h-5" />
+                Try Again
+              </motion.button>
+
+              <motion.button
+                className="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
+                onClick={this.handleGoBack}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <ArrowLeft className="w-5 h-5" />
+                Go Back
+              </motion.button>
+
+              <motion.button
+                className="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
+                onClick={this.handleGoHome}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Home className="w-5 h-5" />
+                Go Home
+              </motion.button>
+
+              <motion.button
+                className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
+                onClick={this.handleReportBug}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Bug className="w-5 h-5" />
+                Report Bug
+              </motion.button>
+            </div>
+
+            {/* Contact Information */}
+            <div className="mt-8 text-gray-400">
+              <p>Need help? Contact our support team at</p>
+              <a 
+                href="mailto:support@ziontechgroup.com" 
+                className="text-cyan-400 hover:text-cyan-300 underline"
+              >
+                support@ziontechgroup.com
+              </a>
+=======
             {/* Error Details */}
             {this.state.error && (
               <div className="mb-6">
@@ -256,6 +424,7 @@ Timestamp: ${new Date().toISOString()}
                 <br />
                 Error ID: {this.state.error?.message?.substring(0, 8) || 'UNKNOWN'}
               </p>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-eb99
             </div>
 
             {/* Footer */}
