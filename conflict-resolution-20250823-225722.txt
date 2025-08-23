@@ -211,3 +211,5 @@
 2025-08-23 22:57:49 - Resolving conflicts in pages/talent/[id].tsx for branch 5usi8s-codex/debug-persistent-login-failure
 2025-08-23 22:57:49 - Resolving conflicts in src/lib/axios.ts for branch 5usi8s-codex/debug-persistent-login-failure
 2025-08-23 22:57:49 - Resolving conflicts in src/services/authService.ts for branch 5usi8s-codex/debug-persistent-login-failure
+2025-08-23 22:57:50 - Merge conflicts detected in 5xrg7t-codex/fix-app-loading-blank-screen
+2025-08-23 22:57:50 - Resolving conflicts in next.config.js for branch 5xrg7t-codex/fix-app-loading-blank-screen
