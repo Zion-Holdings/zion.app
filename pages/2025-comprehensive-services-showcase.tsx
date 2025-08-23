@@ -3,8 +3,8 @@ import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { 
   Brain, Building, Target, Cpu, Shield, 
-  ArrowRight, Check, Star, Phone, Mail, MapPin,
-  TrendingUp, Users, Zap, Globe, Lock
+  Check, Phone, Mail, MapPin,
+  TrendingUp, Zap, Globe
 } from 'lucide-react';
 
 // Import our new service data
@@ -40,8 +40,8 @@ const ComprehensiveServicesShowcase2025 = () => {
         if (activeTab === 'business-intelligence') return service.category?.includes('Business Intelligence') || service.category?.includes('Analytics');
         if (activeTab === 'ai-automation') return service.category?.includes('AI Automation');
         if (activeTab === 'it-infrastructure') return service.category?.includes('IT Infrastructure');
-        if (activeTab === 'micro-saas') return service.category?.includes('Micro SAAS') || service.type === 'Micro SAAS';
-        if (activeTab === 'ai-services') return service.category?.includes('AI Services') || service.type === 'AI Service';
+        if (activeTab === 'micro-saas') return service.category?.includes('Micro SAAS');
+        if (activeTab === 'ai-services') return service.category?.includes('AI Services');
         return true;
       });
 
@@ -159,7 +159,7 @@ const ComprehensiveServicesShowcase2025 = () => {
                           {service.category}
                         </span>
                         <span className="px-2 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium">
-                          {service.type}
+                          Micro SAAS
                         </span>
                       </div>
                     </div>
@@ -176,24 +176,15 @@ const ComprehensiveServicesShowcase2025 = () => {
                   <div className="mb-4">
                     <h4 className="text-sm font-semibold text-gray-900 mb-2">Pricing</h4>
                     <div className="space-y-1">
-                      {service.pricing?.starter && (
-                        <div className="flex justify-between text-sm">
-                          <span className="text-gray-600">Starter:</span>
-                          <span className="font-semibold text-green-600">{service.pricing.starter}</span>
-                        </div>
-                      )}
-                      {service.pricing?.professional && (
-                        <div className="flex justify-between text-sm">
-                          <span className="text-gray-600">Professional:</span>
-                          <span className="font-semibold text-blue-600">{service.pricing.professional}</span>
-                        </div>
-                      )}
-                      {service.pricing?.enterprise && (
-                        <div className="flex justify-between text-sm">
-                          <span className="text-gray-600">Enterprise:</span>
-                          <span className="font-semibold text-purple-600">{service.pricing.enterprise}</span>
-                        </div>
-                      )}
+                      <div className="flex justify-between text-sm">
+                        <span className="text-gray-600">Starting at:</span>
+                        <span className="font-semibold text-green-600">
+                          {service.pricing ? service.pricing.starter : `${(service as any).price}${(service as any).period}`}
+                        </span>
+                      </div>
+                      <div className="text-xs text-gray-500">
+                        {(service as any).trialDays ? `${(service as any).trialDays} days free trial` : ''} • {(service as any).setupTime ? `${(service as any).setupTime} setup` : 'Custom setup'}
+                      </div>
                     </div>
                   </div>
 
@@ -222,30 +213,19 @@ const ComprehensiveServicesShowcase2025 = () => {
                     </div>
                   </div>
 
-                  {/* Benefits */}
-                  <div className="mb-6">
-                    <h4 className="text-sm font-semibold text-gray-900 mb-2">Key Benefits</h4>
-                    <div className="space-y-1">
-                      {service.benefits?.slice(0, 4).map((benefit, idx) => (
-                        <div key={idx} className="flex items-center gap-2 text-sm text-gray-600">
-                          <Star className="w-3 h-3 text-yellow-500 flex-shrink-0" />
-                          <span>{benefit}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+
 
                   {/* CTA Button */}
                   <div className="flex flex-col gap-2">
                     <a
-                      href={`mailto:${service.contact}?subject=Inquiry about ${service.name}`}
+                      href={`mailto:${(service as any).contact || 'kleber@ziontechgroup.com'}?subject=Inquiry about ${service.name}`}
                       className="w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-2 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
                     >
                       <Mail className="w-4 h-4" />
                       Get Started
                     </a>
                     <a
-                      href={`tel:${service.mobile}`}
+                      href={`tel:${(service as any).mobile || '+1 302 464 0950'}`}
                       className="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 text-center py-2 px-4 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
                     >
                       <Phone className="w-4 h-4" />
