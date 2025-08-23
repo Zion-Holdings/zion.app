@@ -310,6 +310,16 @@
 name = "duplicate-media-finder-runner"
   schedule = "0 2 * * *"
 
+<<<<<<< HEAD
+# Autonomous brain and health monitor
+[[scheduled.functions]]
+  name = "autonomous-cloud-brain"
+  schedule = "*/1 * * * *"
+
+[[scheduled.functions]]
+  name = "function-health-monitor"
+  schedule = "*/5 * * * *"
+=======
 [[scheduled.functions]]
   name = "intelligent-orchestrator"
   schedule = "*/1 * * * *" # every minute
@@ -321,3 +331,4 @@ name = "duplicate-media-finder-runner"
 [[scheduled.functions]]
   name = "pulse-sync"
   schedule = "*/1 * * * *" # every minute
+>>>>>>> origin/cursor/automate-cloud-cron-jobs-and-sync-repository-8cc5

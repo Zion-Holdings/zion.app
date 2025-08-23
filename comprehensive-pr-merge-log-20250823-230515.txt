@@ -1314,3 +1314,25 @@ netlify/functions/functions-manifest.json[0m
 2025-08-23 23:07:29 - [1;33m⚠️  Found conflicts in netlify/functions/functions-manifest.json, resolving...[0m
 2025-08-23 23:07:29 - [0;34m📝 Regular file, removing conflict markers...[0m
 2025-08-23 23:07:29 - [0;32m✅ Resolved conflicts in netlify/functions/functions-manifest.json[0m
+2025-08-23 23:07:29 - [0;32m✅ Successfully resolved conflicts and merged cursor/autonomous-cloud-automation-and-sync-7157[0m
+2025-08-23 23:07:29 - [0;32m✅ PR #3851 (cursor/autonomous-cloud-automation-and-sync-7157) processed successfully[0m
+2025-08-23 23:07:29 - [0;34m🔒 Closing PR #3851 via GitHub API...[0m
+2025-08-23 23:07:29 - [0;34m📊 Progress: 38/100, ✅ 38, ❌ 0[0m
+2025-08-23 23:07:31 - [0;34m📋 Processing PR #3850: Automate cloud cron jobs and sync repository (branch: cursor/automate-cloud-cron-jobs-and-sync-repository-8cc5)[0m
+2025-08-23 23:07:32 - [0;34m🔄 Attempting to merge cursor/automate-cloud-cron-jobs-and-sync-repository-8cc5...[0m
+2025-08-23 23:07:33 - [1;33m⚠️  Merge conflicts detected in cursor/automate-cloud-cron-jobs-and-sync-repository-8cc5 (attempt 1/3), resolving...[0m
+2025-08-23 23:07:33 - [0;34m📋 Conflicted files: README.md
+netlify.toml
+pages/index.tsx[0m
+2025-08-23 23:07:33 - [0;34m🔧 Resolving conflicts in README.md for branch cursor/automate-cloud-cron-jobs-and-sync-repository-8cc5...[0m
+2025-08-23 23:07:33 - [1;33m⚠️  Found conflicts in README.md, resolving...[0m
+2025-08-23 23:07:33 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:07:33 - [0;32m✅ Resolved conflicts in README.md[0m
+2025-08-23 23:07:33 - [0;34m🔧 Resolving conflicts in netlify.toml for branch cursor/automate-cloud-cron-jobs-and-sync-repository-8cc5...[0m
+2025-08-23 23:07:33 - [1;33m⚠️  Found conflicts in netlify.toml, resolving...[0m
+2025-08-23 23:07:33 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:07:33 - [0;32m✅ Resolved conflicts in netlify.toml[0m
+2025-08-23 23:07:33 - [0;34m🔧 Resolving conflicts in pages/index.tsx for branch cursor/automate-cloud-cron-jobs-and-sync-repository-8cc5...[0m
+2025-08-23 23:07:33 - [1;33m⚠️  Found conflicts in pages/index.tsx, resolving...[0m
+2025-08-23 23:07:33 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:07:33 - [0;32m✅ Resolved conflicts in pages/index.tsx[0m
