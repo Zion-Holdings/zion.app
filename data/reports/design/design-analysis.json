@@ -446,6 +446,22 @@
       }
     },
     {
+      "file": "/workspace/pages/auto/auto-update-2025-08-08t17-09-38-113z.tsx",
+      "issues": [
+        "missing_enhanced_layout"
+      ],
+      "details": {
+        "filePath": "/workspace/pages/auto/auto-update-2025-08-08t17-09-38-113z.tsx",
+        "hasHead": true,
+        "usesTailwind": true,
+        "usesEnhancedLayout": false,
+        "usesEnhancedNav": false,
+        "usesEnhancedFooter": false,
+        "hasMetaTitle": true,
+        "hasMetaDesc": true
+      }
+    },
+    {
       "file": "/workspace/pages/automation/index.tsx",
       "issues": [
         "missing_head_import",
