@@ -5,7 +5,8 @@ import {
   Menu, X, ChevronDown, ChevronRight, Search, User, ShoppingCart, 
   Brain, Atom, Shield, Rocket, Cpu, Database, Target, Sparkles,
   Home, Briefcase, Users, FileText, Phone, Mail, MapPin, Globe,
-  Zap, Star, TrendingUp, Award, Clock, CheckCircle, ExternalLink
+  Zap, Star, TrendingUp, Award, Clock, CheckCircle, ExternalLink,
+  GraduationCap, Building, Truck, Zap as ZapIcon, Heart, DollarSign
 } from 'lucide-react';
 
 const UltraFuturisticNavigation2040: React.FC = () => {
@@ -98,14 +99,14 @@ const UltraFuturisticNavigation2040: React.FC = () => {
         {
           name: 'Healthcare & Biotech',
           href: '/solutions/healthcare',
-          icon: Brain,
+          icon: Heart,
           description: 'AI-powered healthcare solutions',
           color: 'from-red-500 to-pink-500'
         },
         {
           name: 'Financial Services',
           href: '/solutions/financial',
-          icon: TrendingUp,
+          icon: DollarSign,
           description: 'Fintech and banking solutions',
           color: 'from-green-500 to-emerald-500'
         },
@@ -126,16 +127,30 @@ const UltraFuturisticNavigation2040: React.FC = () => {
         {
           name: 'Education',
           href: '/solutions/education',
-          icon: Users,
+          icon: GraduationCap,
           description: 'Edtech and learning platforms',
           color: 'from-indigo-500 to-purple-500'
         },
         {
           name: 'Government',
           href: '/solutions/government',
-          icon: Shield,
+          icon: Building,
           description: 'Public sector technology',
           color: 'from-gray-500 to-blue-500'
+        },
+        {
+          name: 'Energy & Utilities',
+          href: '/solutions/energy',
+          icon: ZapIcon,
+          description: 'Smart energy and grid solutions',
+          color: 'from-yellow-500 to-orange-500'
+        },
+        {
+          name: 'Transportation',
+          href: '/solutions/transportation',
+          icon: Truck,
+          description: 'Smart transportation and logistics',
+          color: 'from-blue-500 to-cyan-500'
         }
       ]
     },
@@ -146,22 +161,40 @@ const UltraFuturisticNavigation2040: React.FC = () => {
       description: 'Learn about our mission and team'
     },
     {
-      name: 'Careers',
-      href: '/careers',
-      icon: Users,
-      description: 'Join our revolutionary team'
-    },
-    {
-      name: 'Blog',
-      href: '/blog',
+      name: 'Resources',
+      href: '/resources',
       icon: FileText,
-      description: 'Insights and thought leadership'
-    },
-    {
-      name: 'Case Studies',
-      href: '/case-studies',
-      icon: TrendingUp,
-      description: 'Client success stories'
+      description: 'Knowledge base and insights',
+      dropdown: [
+        {
+          name: 'Blog',
+          href: '/blog',
+          icon: FileText,
+          description: 'Latest insights and updates',
+          color: 'from-blue-500 to-cyan-500'
+        },
+        {
+          name: 'Case Studies',
+          href: '/case-studies',
+          icon: Star,
+          description: 'Success stories and results',
+          color: 'from-green-500 to-emerald-500'
+        },
+        {
+          name: 'Webinars',
+          href: '/webinars',
+          icon: Zap,
+          description: 'Educational content and events',
+          color: 'from-purple-500 to-pink-500'
+        },
+        {
+          name: 'Documentation',
+          href: '/docs',
+          icon: FileText,
+          description: 'Technical guides and API docs',
+          color: 'from-indigo-500 to-blue-500'
+        }
+      ]
     },
     {
       name: 'Contact',
