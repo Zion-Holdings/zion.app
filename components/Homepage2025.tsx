@@ -1,11 +1,14 @@
 import React from 'react';
 import Layout from './layout/Layout';
 import UltraFuturisticServiceCard2026 from './ui/UltraFuturisticServiceCard2026';
+import EnhancedSearch from './EnhancedSearch';
+import AIChatbot from './AIChatbot';
+import ServiceComparisonTool from './ServiceComparisonTool';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
   ArrowRight, Star, 
-  Brain, Atom, Shield, Zap, TrendingUp, Globe, MapPin
+  Brain, Atom, Shield, Zap, TrendingUp, Globe, MapPin, Search, MessageCircle, BarChart3
 } from 'lucide-react';
 
 const Homepage2025: React.FC = () => {
@@ -140,6 +143,106 @@ const Homepage2025: React.FC = () => {
           </div>
         </section>
 
+        {/* Interactive Tools Section */}
+        <section className="py-20 px-4">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                Interactive Tools & AI Assistant
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Experience our cutting-edge technology firsthand with our AI-powered tools and intelligent assistant
+              </p>
+            </motion.div>
+
+            {/* Tools Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+              {/* Enhanced Search */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="bg-gray-900/50 backdrop-blur-xl border border-white/20 rounded-2xl p-6"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl p-2">
+                    <Search className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-white font-semibold text-lg">AI-Powered Search</h3>
+                    <p className="text-gray-400 text-sm">Find services with intelligent suggestions</p>
+                  </div>
+                </div>
+                <EnhancedSearch 
+                  placeholder="Search AI, quantum, or autonomous solutions..."
+                  className="w-full"
+                />
+              </motion.div>
+
+              {/* Service Comparison */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="bg-gray-900/50 backdrop-blur-xl border border-white/20 rounded-2xl p-6"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl p-2">
+                    <BarChart3 className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-white font-semibold text-lg">Service Comparison</h3>
+                    <p className="text-gray-400 text-sm">Compare features, pricing & performance</p>
+                  </div>
+                </div>
+                <ServiceComparisonTool />
+              </motion.div>
+            </div>
+
+            {/* AI Assistant Banner */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-400/30 rounded-2xl p-8 text-center"
+            >
+              <div className="flex items-center justify-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl p-3">
+                  <MessageCircle className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="text-white font-semibold text-xl">Need Help? Chat with Zion AI</h3>
+              </div>
+              <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+                Our intelligent AI assistant is here to help you find the perfect solution, 
+                answer questions about our services, and guide you through your technology journey.
+              </p>
+              <div className="flex items-center justify-center gap-4 text-sm text-gray-400">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  <span>24/7 Available</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                  <span>AI-Powered</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+                  <span>Instant Support</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Services Preview */}
         <section className="py-20 px-4">
           <div className="max-w-6xl mx-auto">
@@ -198,54 +301,9 @@ const Homepage2025: React.FC = () => {
                   price: '$799',
                   period: 'month',
                   features: ['Workflow Automation', 'RPA', 'AI Integration', 'Analytics'],
-                  popular: true,
+                  popular: false,
                   category: 'Automation',
                   icon: '⚡'
-                }}
-                variant="automation"
-              />
-              <UltraFuturisticServiceCard2026
-                service={{
-                  id: 'ai-holographic-meetings',
-                  name: 'AI Holographic Meetings',
-                  tagline: 'Next-generation holographic collaboration',
-                  description: 'Revolutionary platform for lifelike holographic meetings with AI assistance',
-                  price: '$299',
-                  period: 'month',
-                  features: ['3D Holographic Projections', 'AI Translation', 'Gesture Control', 'Immersive Collaboration'],
-                  popular: true,
-                  category: 'AI & Holographic',
-                  icon: '🌟'
-                }}
-                variant="ai"
-              />
-              <UltraFuturisticServiceCard2026
-                service={{
-                  id: 'quantum-drug-discovery',
-                  name: 'Quantum Drug Discovery',
-                  tagline: 'Accelerate pharmaceutical research',
-                  description: 'Quantum-powered AI platform for accelerated drug discovery and molecular modeling',
-                  price: '$1999',
-                  period: 'month',
-                  features: ['Quantum Molecular Modeling', 'AI Drug Screening', 'Predictive Analytics', 'Clinical Optimization'],
-                  popular: false,
-                  category: 'Quantum Healthcare',
-                  icon: '💊'
-                }}
-                variant="quantum"
-              />
-              <UltraFuturisticServiceCard2026
-                service={{
-                  id: 'autonomous-legal-ai',
-                  name: 'Autonomous Legal AI',
-                  tagline: 'AI-powered legal assistance',
-                  description: 'Intelligent legal assistant for research, analysis, and case preparation',
-                  price: '$199',
-                  period: 'month',
-                  features: ['Autonomous Research', 'Document Analysis', 'Case Law Synthesis', 'Risk Assessment'],
-                  popular: true,
-                  category: 'AI Legal Tech',
-                  icon: '⚖️'
                 }}
                 variant="automation"
               />
@@ -462,6 +520,9 @@ const Homepage2025: React.FC = () => {
           </div>
         </section>
       </main>
+
+      {/* AI Chatbot */}
+      <AIChatbot />
     </Layout>
   );
 };
