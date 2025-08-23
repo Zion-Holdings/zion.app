@@ -19,6 +19,16 @@
     "auto:generate:and-commit": "node scripts/generate-auto-content.mjs && git config user.email 'bot@zion.app' && git config user.name 'Zion Bot' && git add -A && git commit -m 'chore(auto): generate auto content [skip ci]' || true && git push || true",
     "deps:maintain": "node automation/dependency-update-orchestrator.cjs",
     "deps:cron:start": "bash automation/dependency-maintenance-cron.sh",
+<<<<<<< HEAD
+    "sitemap": "node scripts/generate-sitemap.mjs",
+    "trends:generate": "node scripts/generate-tech-trends.mjs",
+    "health:links": "node scripts/check-links.mjs",
+    "pulse:github": "node scripts/github-pulse.mjs",
+    "changelog:roll": "node scripts/rolling-changelog.mjs",
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider next build",
+    "export": "NODE_OPTIONS=--openssl-legacy-provider next build && next export",
+=======
     "sitemap": "node scripts/generate-sitemap.js",
     "netlify:manifest": "node scripts/generate-netlify-functions-manifest.cjs",
     "netlify:trigger": "node scripts/trigger-netlify-automations.cjs",
@@ -29,6 +39,7 @@
     "build": "NODE_OPTIONS=\"--max-old-space-size=6144 --openssl-legacy-provider\" next build",
     "prebuild": "npm run netlify:manifest",
     "export": "rm -rf .next out tsconfig.tsbuildinfo && NODE_OPTIONS=\"--max-old-space-size=6144 --openssl-legacy-provider\" next build --no-lint && if [ -f _redirects ]; then cp -f _redirects out/_redirects; fi && if [ -f public/_headers ]; then cp -f public/_headers out/_headers; elif [ -f _headers ]; then cp -f _headers out/_headers; fi",
+>>>>>>> origin/cursor/bc-48461f9b-0a4a-4201-97e1-9dcf030b601c-eb8c
     "start": "next start",
     "postbuild": "node automation/footer-injector.cjs || true",
     "lint": "eslint .",
