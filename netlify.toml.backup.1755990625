@@ -238,6 +238,30 @@
   schedule = "*/15 * * * *"
 
 [[scheduled.functions]]
+<<<<<<< HEAD
+  name = "a11y-alt-text-runner"
+  schedule = "*/10 * * * *" # every 10 minutes
+
+[[scheduled.functions]]
+  name = "metadata-optimizer-runner"
+  schedule = "*/15 * * * *" # every 15 minutes
+
+[[scheduled.functions]]
+  name = "seo-audit-runner"
+  schedule = "0 */2 * * *"
+
+[[scheduled.functions]]
+  name = "ai-trends-radar-runner"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+  name = "stale-content-auditor-runner"
+  schedule = "17 */6 * * *"
+
+[[scheduled.functions]]
+  name = "deps-auto-upgrade-runner"
+  schedule = "0 3 * * *"
+=======
 name = "a11y-alt-text-runner"
 schedule = "*/10 * * * *" # every 10 minutes
 
@@ -259,8 +283,21 @@ schedule = "17 */6 * * *"
 [[scheduled.functions]]
 name = "deps-auto-upgrade-runner"
 schedule = "7 */12 * * *"
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-2631
 
 [[scheduled.functions]]
+<<<<<<< HEAD
+  name = "autonomous-code-insights"
+  schedule = "*/5 * * * *"
+
+[[scheduled.functions]]
+  name = "autonomous-commit-digest"
+  schedule = "*/10 * * * *"
+
+[[scheduled.functions]]
+  name = "autonomous-roadmap-synthesizer"
+  schedule = "*/15 * * * *"
+=======
 name = "unused-media-scanner"
 schedule = "*/10 * * * *"
 
@@ -283,3 +320,4 @@ schedule = "41 */12 * * *"
 [[scheduled.functions]]
 name = "route-map-generator"
 schedule = "*/30 * * * *"
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-2631
