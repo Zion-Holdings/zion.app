@@ -7,7 +7,10 @@ on:
 permissions:
   contents: write
   actions: read
-  pull-requests: write
+concurrency:
+  group: "agent-agent-1755379777752-5-testing-expert-${{ github.ref }}"
+  cancel-in-progress: true
+
 jobs:
   main:
     name: Main Job

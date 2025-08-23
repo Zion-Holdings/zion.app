@@ -8,6 +8,9 @@ on:
 permissions:
   contents: write
   actions: read
+concurrency:
+  group: "fast-auto-push-to-main-${{ github.ref }}"
+  cancel-in-progress: true
 
 jobs:
   main:
