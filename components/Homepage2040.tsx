@@ -10,7 +10,7 @@ import {
 } from 'lucide-react';
 
 // Import the new service data
-import { ultimate2025MicroSaasExpansion } from '../data/2025-ultimate-micro-saas-expansion';
+import { ultimate2025RealMicroSaasExpansion as ultimate2025MicroSaasExpansion } from '../data/2025-ultimate-real-micro-saas-expansion';
 import { ultimate2025ITServicesExpansion } from '../data/2025-ultimate-it-services-expansion';
 import { ultimate2025AIServicesExpansion } from '../data/2025-ultimate-ai-services-expansion';
 

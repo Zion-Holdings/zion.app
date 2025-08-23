@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+import React, { useEffect, useState, useCallback, Suspense, lazy, useMemo } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  ArrowRight, Play, TrendingUp, Brain, Shield, Rocket, Globe, Cpu, Database, Atom, Target, Star, Sparkles as SparklesIcon,
+  Brain as BrainIcon, Atom as AtomIcon, Shield as ShieldIcon, Rocket as RocketIcon, Zap, Eye, Heart,
+  Users, Building, Cloud, Code, Palette, Lightbulb, Award, Clock, CheckCircle, ArrowUpRight
+=======
 import React, { useState, useEffect, useCallback, Suspense } from 'react';
 import Layout from './layout/Layout';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -5,6 +13,7 @@ import {
   ArrowRight, Play, TrendingUp, Brain, Shield, Rocket, Globe, Cpu, Database, Atom, Target, Star, Sparkles as SparklesIcon,
   Brain as BrainIcon, Atom as AtomIcon, Shield as ShieldIcon, Rocket as RocketIcon, Zap, Eye, Heart, Infinity,
   CheckCircle, Users, Award, Clock, Loader2
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-73be
 } from 'lucide-react';
 import EnhancedServiceCard from './ui/EnhancedServiceCard';
 import { ServiceCardSkeleton } from './ui/LoadingSkeleton';
@@ -21,6 +30,15 @@ import { realInnovativeMicroSaas2025V2 } from '../data/2025-real-innovative-micr
 import { innovativeITInfrastructureServices2025V2 } from '../data/2025-innovative-it-infrastructure-services-v2';
 import { innovativeAIAutonomousServices2025V2 } from '../data/2025-innovative-ai-autonomous-services-v2';
 
+<<<<<<< HEAD
+// Lazy load new components for better performance
+const ServiceCard = lazy(() => import('./ServiceCard'));
+const PerformanceMetrics = lazy(() => import('./PerformanceMetrics'));
+const InteractiveDemo = lazy(() => import('./InteractiveDemo'));
+const PerformanceOptimizer = lazy(() => import('./PerformanceOptimizer'));
+
+// Performance optimization: Memoize expensive computations
+=======
 // Lazy load components for better performance
 const TestimonialSection = React.lazy(() => import('./TestimonialSection'));
 
@@ -35,13 +53,21 @@ const LoadingSpinner = () => (
   </div>
 );
 
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-73be
 const Homepage2045: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+<<<<<<< HEAD
+  const [isLoading, setIsLoading] = useState(false);
+  const [userInteraction, setUserInteraction] = useState(false);
+  const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
+  const [isIntersecting, setIsIntersecting] = useState(false);
+=======
   const [hoveredService, setHoveredService] = useState<string | null>(null);
   const [isClient, setIsClient] = useState(false);
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-73be
   
   // Memoize expensive computations
   const allRevolutionaryServices = useMemo(() => [
@@ -56,6 +82,30 @@ const Homepage2045: React.FC = () => {
     ...innovativeAIAutonomousServices2025V2
   ];
 
+<<<<<<< HEAD
+  const categories = useMemo(() => [
+    { id: 'all', name: 'All Services', icon: SparklesIcon, color: 'from-purple-500 to-pink-500' },
+    { id: 'ai', name: 'AI & Consciousness', icon: BrainIcon, color: 'from-cyan-500 to-blue-500' },
+    { id: 'quantum', name: 'Quantum Technology', icon: AtomIcon, color: 'from-blue-500 to-indigo-500' },
+    { id: 'cybersecurity', name: 'Cybersecurity', icon: ShieldIcon, color: 'from-red-500 to-orange-500' },
+    { id: 'space', name: 'Space Technology', icon: RocketIcon, color: 'from-indigo-500 to-purple-500' },
+    { id: 'enterprise', name: 'Enterprise Solutions', icon: Building, color: 'from-green-500 to-teal-500' }
+  ], []);
+
+  // Performance optimization: Debounced mouse move handler
+  const handleMouseMove = useCallback((e: MouseEvent) => {
+    setMousePosition({ x: e.clientX, y: e.clientY });
+  }, []);
+
+  // Performance optimization: Intersection Observer for animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsIntersecting(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+=======
   // Get featured services for rotation
   const featuredServices = allRevolutionaryServices.slice(0, 6);
 
@@ -76,12 +126,164 @@ const Homepage2045: React.FC = () => {
     { id: 'business', name: 'Business Solutions', icon: Target, color: 'from-emerald-500 to-teal-500', count: allRevolutionaryServices.filter(s => s.type === 'Micro SAAS').length },
     { id: 'it', name: 'IT Infrastructure', icon: Cpu, color: 'from-yellow-500 to-orange-500', count: revolutionary2045AdvancedITServices.length }
   ];
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-73be
 
     const heroSection = document.querySelector('[data-hero-section]');
     if (heroSection) {
       observer.observe(heroSection);
     }
 
+<<<<<<< HEAD
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    setIsVisible(true);
+    
+    // Auto-rotate featured services with performance optimization
+    const interval = setInterval(() => {
+      setCurrentServiceIndex((prev) => (prev + 1) % 6);
+    }, 6000);
+    
+    // Track mouse movement for parallax effects with throttling
+    let ticking = false;
+    const throttledMouseMove = (e: MouseEvent) => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleMouseMove(e);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    
+    window.addEventListener('mousemove', throttledMouseMove, { passive: true });
+    
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('mousemove', throttledMouseMove);
+    };
+  }, [handleMouseMove]);
+
+  // Filter services by category with memoization
+  const getFilteredServices = useCallback(() => {
+    if (selectedCategory === 'all') return allRevolutionaryServices;
+    return allRevolutionaryServices.filter(service => 
+      service.category.toLowerCase().includes(selectedCategory.toLowerCase()) ||
+      service.type.toLowerCase().includes(selectedCategory.toLowerCase())
+    );
+  }, [selectedCategory, allRevolutionaryServices]);
+
+  // Get featured services for rotation
+  const featuredServices = useMemo(() => allRevolutionaryServices.slice(0, 6), [allRevolutionaryServices]);
+
+  // Enhanced animation variants with better performance
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        staggerChildren: 0.1,
+        ease: "easeOut" as const
+      }
+    }
+  };
+
+  const handleGetStarted = useCallback(() => {
+    window.location.href = '/contact';
+  }, []);
+
+
+
+  // Parallax effect for mouse movement with performance optimization
+  const getParallaxStyle = useCallback((depth: number) => ({
+    transform: `translate(${mousePosition.x * depth * 0.005}px, ${mousePosition.y * depth * 0.005}px)`
+  }), [mousePosition]);
+
+  // Enhanced loading state
+  const LoadingFallback = () => (
+    <div className="flex items-center justify-center min-h-[400px]">
+      <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-cyan-500"></div>
+    </div>
+  );
+
+  return (
+    <>
+      <Head>
+        <title>Zion Tech Group - Revolutionary 2045 Technology Solutions | AI Consciousness & Quantum Computing</title>
+        <meta name="description" content="Experience the future of technology with Zion Tech Group's revolutionary AI consciousness, quantum computing, and autonomous solutions. Transform your business with cutting-edge innovation." />
+        <meta name="keywords" content="AI consciousness, quantum computing, autonomous solutions, space technology, cybersecurity, business intelligence, Zion Tech Group, 2045 technology, enterprise solutions" />
+        <meta name="author" content="Zion Tech Group" />
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        {/* Enhanced Open Graph */}
+        <meta property="og:title" content="Zion Tech Group - Revolutionary 2045 Technology" />
+        <meta property="og:description" content="Pioneering the future of technology with revolutionary AI consciousness and quantum computing solutions." />
+        <meta property="og:url" content="https://ziontechgroup.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://ziontechgroup.com/og-image.jpg" />
+        <meta property="og:site_name" content="Zion Tech Group" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Zion Tech Group - Revolutionary 2045 Technology" />
+        <meta name="twitter:description" content="Pioneering the future of technology with revolutionary AI consciousness and quantum computing solutions." />
+        <meta name="twitter:image" content="https://ziontechgroup.com/og-image.jpg" />
+        
+        <link rel="canonical" href="https://ziontechgroup.com" />
+        
+        {/* Preload critical resources */}
+        <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Zion Tech Group",
+              "url": "https://ziontechgroup.com",
+              "logo": "https://ziontechgroup.com/logo.png",
+              "description": "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions.",
+              "sameAs": [
+                "https://linkedin.com/company/ziontechgroup",
+                "https://twitter.com/ziontechgroup"
+              ]
+            })
+          }}
+        />
+      </Head>
+
+      <div className="min-h-screen bg-black text-white relative overflow-hidden" role="main">
+        {/* Hero Section */}
+        <motion.section 
+          className="relative min-h-screen flex items-center justify-center px-4 lg:px-8"
+          variants={heroVariants}
+          initial="hidden"
+          animate={isIntersecting ? "visible" : "hidden"}
+          data-hero-section
+          aria-label="Hero section"
+        >
+          {/* Enhanced Animated Background Elements */}
+          <div className="absolute inset-0 overflow-hidden">
+            <motion.div
+              className="absolute top-20 left-20 w-32 h-32 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl"
+              animate={{ y: [-10, 10, -10] }}
+              transition={{ duration: 3, repeat: 999, ease: "easeInOut" }}
+            />
+            <motion.div
+              className="absolute top-40 right-32 w-24 h-24 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-full blur-3xl"
+              animate={{ y: [-10, 10, -10] }}
+              transition={{ duration: 3, repeat: 999, ease: "easeInOut", delay: 1 }}
+            />
+            <motion.div
+              className="absolute bottom-32 left-1/3 w-40 h-40 bg-gradient-to-r from-green-500/20 to-teal-500/20 rounded-full blur-3xl"
+              animate={{ y: [-10, 10, -10] }}
+              transition={{ duration: 3, repeat: 999, ease: "easeInOut", delay: 2 }}
+=======
   const stats = [
     { number: "3000+", label: "Revolutionary Services", icon: Star },
     { number: "99.99%", label: "Uptime Guarantee", icon: TrendingUp },
@@ -187,6 +389,7 @@ const Homepage2045: React.FC = () => {
                 ease: "easeInOut"
               }}
               aria-hidden="true"
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-73be
             />
           </div>
 
@@ -199,6 +402,106 @@ const Homepage2045: React.FC = () => {
               Zion Tech Group
             </motion.h1>
             
+<<<<<<< HEAD
+            {/* Floating Elements */}
+            <motion.div
+              key={i}
+              className="absolute w-2 h-2 bg-purple-400 rounded-full opacity-30"
+              animate={{
+                x: [0, 100, 0],
+                y: [0, -100, 0],
+                opacity: [0.3, 0.8, 0.3],
+              }}
+              transition={{
+                duration: 10 + i * 2,
+                repeat: Infinity as any,
+                delay: i * 0.5,
+              }}
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+              }}
+            />
+          ))}
+        </div>
+
+            {/* Enhanced Subtitle */}
+            <motion.div 
+              className="mb-8"
+              variants={itemVariants}
+            >
+              <p className="text-lg md:text-xl text-cyan-300 mb-4">
+                🚀 25+ Revolutionary Micro SAAS Services • 🔒 Enterprise-Grade Security • 🌐 Global Infrastructure
+              </p>
+              <p className="text-base md:text-lg text-gray-400">
+                From AI Content Creation to Quantum Cybersecurity • Trusted by 500+ Enterprises Worldwide
+              </p>
+            </motion.div>
+
+            {/* CTA Buttons */}
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12"
+              variants={itemVariants}
+            >
+              <Link href="/services" aria-label="Explore our services">
+                <motion.button 
+                  className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full text-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/25 glow-cyan"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  aria-describedby="explore-services-description"
+                >
+                  <span className="flex items-center gap-2">
+                    🚀 Explore 25+ Services
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-xl -z-10" />
+                </motion.button>
+                <div id="explore-services-description" className="sr-only">
+                  Navigate to our comprehensive services page to discover all available solutions
+                </div>
+              </Link>
+              
+              <Link href="/contact" aria-label="Get started with Zion Tech Group">
+                <motion.button 
+                  className="px-8 py-4 border-2 border-purple-500/50 text-purple-400 font-semibold rounded-full text-lg hover:bg-purple-500/10 hover:border-purple-400 transition-all duration-300 transform hover:scale-105 glow-purple"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  aria-describedby="get-started-description"
+                >
+                  💎 Get Started Today
+                </motion.button>
+              </Link>
+
+              <Link href="/pricing">
+                <motion.button 
+                  className="px-8 py-4 border-2 border-pink-500/50 text-pink-400 font-semibold rounded-full text-lg hover:bg-pink-500/10 hover:border-pink-400 transition-all duration-300 transform hover:scale-105 glow-pink"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  💰 View Pricing
+                </motion.button>
+                <div id="get-started-description" className="sr-only">
+                  Contact us to begin your journey with Zion Tech Group
+                </div>
+              </Link>
+            </motion.div>
+
+            {/* Enhanced Stats */}
+            <motion.div 
+              className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto"
+              variants={itemVariants}
+              role="region"
+              aria-label="Company statistics"
+            >
+              {[
+                { number: '500+', label: 'Global Clients', icon: '🌍', color: 'text-cyan-400' },
+                { number: '99.9%', label: 'Uptime SLA', icon: '⚡', color: 'text-green-400' },
+                { number: '24/7', label: 'Expert Support', icon: '🛡️', color: 'text-purple-400' },
+                { number: '25+', label: 'Micro SAAS', icon: '🚀', color: 'text-pink-400' }
+              ].map((stat, index) => (
+                <motion.div
+                  key={index}
+=======
             <motion.p
               className="text-3xl md:text-4xl text-gray-300 mb-16 max-w-6xl mx-auto leading-relaxed font-light"
               initial={{ opacity: 0, y: 30 }}
@@ -376,6 +679,7 @@ const Homepage2045: React.FC = () => {
               {stats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-73be
                   className="text-center group"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -534,6 +838,21 @@ const Homepage2045: React.FC = () => {
           </div>
         </section>
 
+<<<<<<< HEAD
+        {/* Enhanced Interactive Demo Section */}
+        <motion.section 
+          className="py-20 px-4 lg:px-8 relative"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          aria-label="Interactive technology demonstration"
+        >
+          <div className="max-w-7xl mx-auto">
+            <motion.div className="text-center mb-16" variants={itemVariants}>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Experience Our Technology
+=======
         {/* Testimonials Section - Lazy Loaded */}
         <Suspense fallback={<LoadingSpinner />}>
           <TestimonialSection />
@@ -550,10 +869,19 @@ const Homepage2045: React.FC = () => {
             >
               <h2 id="cta-heading" className="text-5xl font-bold text-white mb-8">
                 Ready to Experience the Future?
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-73be
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                 Interact with our revolutionary AI and quantum computing solutions in real-time.
               </p>
+<<<<<<< HEAD
+            </motion.div>
+
+            <motion.div variants={itemVariants}>
+              <Suspense fallback={<LoadingFallback />}>
+                <InteractiveDemo />
+              </Suspense>
+=======
               
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
                 <button 
@@ -574,6 +902,7 @@ const Homepage2045: React.FC = () => {
                   <Play className="w-6 h-6 ml-3 inline" />
                 </button>
               </div>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-73be
             </motion.div>
           </div>
         </motion.section>
