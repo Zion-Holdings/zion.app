@@ -129,6 +129,12 @@ export type ServiceVariant =
   | 'multiversal-tech'
   | 'autonomous-ai'
   | 'quantum-reality-fusion'
+<<<<<<< HEAD
+  | 'ai-automation'
+  | 'it-infrastructure'
+  | 'micro-saas'
+  | 'ai-services';
+=======
   | 'agriculture-futuristic'
   | 'retail-futuristic'
   | 'entertainment-futuristic'
@@ -156,3 +162,4 @@ export type ServiceVariant =
   | 'education-futuristic'
   | 'government-futuristic'
   | 'transportation-futuristic';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6271

@@ -262,6 +262,15 @@ export default function ServicesIndexPage() {
     .concat(advanced2025ITSolutionsExpansion as unknown[])
     .concat(advanced2025AIServicesExpansion as unknown[])
     // Our new 2025 innovative services
+<<<<<<< HEAD
+    .concat(innovativeMicroSaasExpansion2025 as unknown[])
+    .concat(innovative2025ITSolutionsExpansion as unknown[])
+    .concat(innovative2025AISolutionsExpansion as unknown[])
+    // Our new 2025 advanced services
+    .concat(advanced2025MicroSaasExpansion as unknown[])
+    .concat(advancedITInfrastructureServices2025 as unknown[])
+    .concat(advanced2025AIServicesExpansion as unknown[]);
+=======
     .concat(innovativeRetailServices as unknown[])
     .concat(innovativeEntertainmentServices as unknown[])
     .concat(innovativeGamingServices as unknown[])
@@ -290,6 +299,7 @@ export default function ServicesIndexPage() {
     .concat(innovativeEducationServices as unknown[])
     .concat(innovativeGovernmentServices as unknown[])
     .concat(innovativeTransportationServices as unknown[]);
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-6271
 
   const anchorMap: Record<string, string> = {
     'AI & Data': 'ai',
