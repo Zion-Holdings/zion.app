@@ -1,0 +1,28 @@
+<<<<<<< HEAD
+import type { AppProps } from 'next/app';
+import EnhancedLayout from '../components/layout/EnhancedLayout';
+import '../styles/enhanced-design-system.css';
+import '../styles/modern-design-system.css';
+
+export default function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <EnhancedLayout>
+      <Component {...pageProps} />
+    </EnhancedLayout>
+  );
+=======
+import '../styles/globals.css'
+import type { AppProps } from 'next/app'
+import dynamic from 'next/dynamic'
+
+const ChatbotWidget = dynamic(() => import('../components/ui/ChatbotWidget'), { ssr: false })
+
+export default function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <>
+      <Component {...pageProps} />
+      <ChatbotWidget />
+    </>
+  )
+>>>>>>> origin/cursor/build-ai-powered-smart-contract-generator-b22e
+}

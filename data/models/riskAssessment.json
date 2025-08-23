@@ -1,0 +1,14 @@
+{
+  "type": "risk-assessment",
+  "weights": {
+    "linkAge": 0.2,
+    "failureRate": 0.4,
+    "responseTime": 0.2,
+    "domainReliability": -0.3,
+    "contentType": 0.1,
+    "updateFrequency": 0.1
+  },
+  "bias": 30,
+  "scale": 70,
+  "accuracy": 0.24090909090909096
+}
