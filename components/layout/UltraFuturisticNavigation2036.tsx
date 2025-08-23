@@ -1,19 +1,29 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Menu, ChevronDown, X, Phone, Mail, MapPin, ArrowRight,
-  Brain, Rocket, Shield, Zap, Target, Atom, BookOpen,
-  Truck, DollarSign, BarChart3, Globe, Users, Star, Sparkles, 
-  Cpu, Lock, Cloud, Settings, Eye, Award, Clock, Heart, Lightbulb,
-  Search, Grid, List, TrendingUp, Shield as ShieldIcon, Globe as GlobeIcon,
-  User, ShoppingCart, Bell, HelpCircle, FileText, Video, Headphones, 
-  Code, Database, Network, Server, Monitor, Smartphone,
-  Camera, Gamepad2, Palette, Music, Film, BookOpenCheck,
-  Building, MessageCircle, Sparkles as SparklesIcon, Zap as ZapIcon,
-  Target as TargetIcon, Atom as AtomIcon, Brain as BrainIcon,
-  Briefcase, Layers, ShieldCheck, Zap as ZapIcon2, Globe2, 
-  Cpu as CpuIcon, Database as DatabaseIcon, Network as NetworkIcon,
-  GraduationCap, Handshake
+import {
+  Menu,
+  X,
+  ChevronDown,
+  Search,
+  Phone,
+  Mail,
+  MapPin,
+  Star,
+  Clock,
+  MessageCircle,
+  Calculator,
+  Play,
+  Brain,
+  Shield,
+  Rocket,
+  Globe,
+  Cpu,
+  Database,
+  Cloud,
+  Lock,
+  BarChart3,
+  Zap,
+  Target
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -35,18 +45,6 @@ interface NavigationItem {
   featured?: boolean;
   category?: string;
 }
-
-interface UltraFuturisticNavigation2036Props {
-  onMenuToggle?: () => void;
-  isMenuOpen?: boolean;
-}
-
-const contactInfo = {
-  mobile: '+1 302 464 0950',
-  email: 'kleber@ziontechgroup.com',
-  address: '364 E Main St STE 1008 Middletown DE 19709',
-  website: 'https://ziontechgroup.com'
-};
 
 function normalizeHref(href: string): string {
   if (!href) return href;
@@ -93,67 +91,19 @@ const navigationItems: NavigationItem[] = [
         name: 'Quantum Technology', 
         href: '/quantum-services', 
         description: 'Quantum computing solutions',
-        icon: <Atom className="w-4 h-4" />
-      },
-      { 
-        name: 'Emerging Technology', 
-        href: '/emerging-technology', 
-        description: 'Cutting-edge innovations',
-        icon: <Sparkles className="w-4 h-4" />
+        icon: <Cpu className="w-4 h-4" />
       },
       { 
         name: 'Space Technology', 
         href: '/space-technology', 
         description: 'Space exploration solutions',
-        icon: <Rocket className="w-4 h-4" />
-      },
-      { 
-        name: 'Cybersecurity', 
-        href: '/cybersecurity', 
-        description: 'Advanced security solutions',
-        icon: <Shield className="w-4 h-4" />
+        icon: <Globe className="w-4 h-4" />
       },
       { 
         name: 'IT Solutions', 
         href: '/it-services', 
         description: 'Enterprise IT infrastructure',
-        icon: <Shield className="w-4 h-4" />
-      },
-      { 
-        name: 'Healthcare AI', 
-        href: '/healthcare-ai-solutions', 
-        description: 'AI-powered healthcare',
-        icon: <Heart className="w-4 h-4" />
-      },
-      { 
-        name: 'Financial Technology', 
-        href: '/fintech-solutions', 
-        description: 'Fintech and banking solutions',
-        icon: <DollarSign className="w-4 h-4" />
-      },
-      { 
-        name: 'Supply Chain AI', 
-        href: '/supply-chain-ai', 
-        description: 'AI-powered logistics',
-        icon: <Truck className="w-4 h-4" />
-      },
-      { 
-        name: 'Environmental Tech', 
-        href: '/environmental-technology', 
-        description: 'Green technology solutions',
-        icon: <Cloud className="w-4 h-4" />
-      },
-      { 
-        name: 'Education AI', 
-        href: '/education-ai', 
-        description: 'AI-powered education',
-        icon: <GraduationCap className="w-4 h-4" />
-      },
-      { 
-        name: 'Micro SAAS', 
-        href: '/micro-saas', 
-        description: 'Innovative micro SAAS solutions',
-        icon: <Play className="w-4 h-4" />
+        icon: <Database className="w-4 h-4" />
       },
       { 
         name: 'Micro SAAS', 
@@ -177,25 +127,7 @@ const navigationItems: NavigationItem[] = [
         name: 'Specialized Solutions', 
         href: '/solutions', 
         description: 'Industry-specific solutions',
-        icon: <TargetIcon className="w-4 h-4" />
-      },
-      {
-        name: 'Micro SAAS',
-        href: '/micro-saas',
-        description: 'Innovative micro SaaS solutions',
-        icon: <Layers className="w-4 h-4" />
-      },
-      {
-        name: 'Fintech Solutions',
-        href: '/fintech-solutions',
-        description: 'Financial technology innovations',
-        icon: <DollarSign className="w-4 h-4" />
-      },
-      {
-        name: 'Healthtech',
-        href: '/healthtech-solutions',
-        description: 'Healthcare technology solutions',
-        icon: <Heart className="w-4 h-4" />
+        icon: <Target className="w-4 h-4" />
       }
     ]
   },
