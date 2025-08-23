@@ -68,16 +68,28 @@ export const emergingTech2028Services: EmergingTech2028Service[] = [
     textColor: 'text-blue-400',
     link: 'https://ziontechgroup.com/blockchain-supply-chain',
     marketPosition: 'Leading blockchain supply chain solution with the most comprehensive tracking and transparency features. Used by Fortune 500 companies worldwide.',
+<<<<<<< HEAD
+    targetAudience: ['Manufacturing companies, Retail chains, Food producers, Pharmaceutical companies, Luxury brands, Logistics providers'],
+=======
     targetAudience: ['Manufacturing companies', 'Retail chains', 'Food producers', 'Pharmaceutical companies', 'Luxury brands', 'Logistics providers'],
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1bb4
     trialDays: 30,
     setupTime: '3 weeks',
     category: 'Blockchain Technology',
     realService: true,
+<<<<<<< HEAD
+    technology: ['Ethereum, Hyperledger, Python, Node.js, React, AWS, Docker, PostgreSQL'],
+    integrations: ['ERP systems, WMS systems, Logistics platforms, Quality management, Compliance systems'],
+    useCases: ['Product tracking, Quality assurance, Compliance monitoring, Sustainability reporting, Counterfeit prevention'],
+    roi: 'Manufacturing companies report 400% ROI through improved supply chain efficiency and reduced fraud.',
+    competitors: ['IBM Blockchain, Microsoft Azure Blockchain, Amazon Managed Blockchain'],
+=======
     technology: ['Ethereum', 'Hyperledger', 'Python', 'Node.js', 'React', 'AWS', 'Docker', 'PostgreSQL'],
     integrations: ['ERP systems', 'WMS systems', 'Logistics platforms', 'Quality management', 'Compliance systems'],
     useCases: ['Product tracking', 'Quality assurance', 'Compliance monitoring', 'Sustainability reporting', 'Counterfeit prevention'],
     roi: 'Manufacturing companies report 400% ROI through improved supply chain efficiency and reduced fraud.',
     competitors: ['IBM Blockchain', 'Microsoft Azure Blockchain', 'Amazon Managed Blockchain'],
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1bb4
     marketSize: '$15B blockchain supply chain market',
     growthRate: '45% annual growth',
     variant: 'blockchain-futuristic',
@@ -121,16 +133,28 @@ export const emergingTech2028Services: EmergingTech2028Service[] = [
     textColor: 'text-yellow-400',
     link: 'https://ziontechgroup.com/iot-energy-management',
     marketPosition: 'Leading IoT energy management platform with the most advanced AI optimization algorithms. Used by major corporations and government facilities.',
+<<<<<<< HEAD
+    targetAudience: ['Commercial buildings, Manufacturing facilities, Data centers, Government buildings, Universities, Hospitals'],
+=======
     targetAudience: ['Commercial buildings', 'Manufacturing facilities', 'Data centers', 'Government buildings', 'Universities', 'Hospitals'],
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1bb4
     trialDays: 30,
     setupTime: '2 weeks',
     category: 'IoT Energy Management',
     realService: true,
+<<<<<<< HEAD
+    technology: ['IoT, Python, TensorFlow, AWS IoT, Docker, React, Node.js, PostgreSQL'],
+    integrations: ['Building Management Systems, HVAC systems, Lighting systems, Solar panels, Battery storage'],
+    useCases: ['Energy optimization, Cost reduction, Sustainability compliance, Predictive maintenance, Demand response'],
+    roi: 'Commercial buildings report 300% ROI through reduced energy costs and improved efficiency.',
+    competitors: ['Schneider Electric, Siemens, Honeywell'],
+=======
     technology: ['IoT', 'Python', 'TensorFlow', 'AWS IoT', 'Docker', 'React', 'Node.js', 'PostgreSQL'],
     integrations: ['Building Management Systems', 'HVAC systems', 'Lighting systems', 'Solar panels', 'Battery storage'],
     useCases: ['Energy optimization', 'Cost reduction', 'Sustainability compliance', 'Predictive maintenance', 'Demand response'],
     roi: 'Commercial buildings report 300% ROI through reduced energy costs and improved efficiency.',
     competitors: ['Schneider Electric', 'Siemens', 'Honeywell'],
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1bb4
     marketSize: '$22B smart building market',
     growthRate: '35% annual growth',
     variant: 'iot-futuristic',
@@ -174,16 +198,28 @@ export const emergingTech2028Services: EmergingTech2028Service[] = [
     textColor: 'text-green-400',
     link: 'https://ziontechgroup.com/ai-customer-service',
     marketPosition: 'Leading AI customer service platform with the most advanced natural language processing and problem resolution capabilities.',
+<<<<<<< HEAD
+    targetAudience: ['E-commerce companies, SaaS companies, Financial services, Healthcare providers, Telecommunications, Retail chains'],
+=======
     targetAudience: ['E-commerce companies', 'SaaS companies', 'Financial services', 'Healthcare providers', 'Telecommunications', 'Retail chains'],
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1bb4
     trialDays: 30,
     setupTime: '1 week',
     category: 'AI Customer Service',
     realService: true,
+<<<<<<< HEAD
+    technology: ['Python, TensorFlow, NLP, AWS, Docker, React, Node.js, PostgreSQL'],
+    integrations: ['CRM systems, Help desk platforms, Live chat tools, Email systems, Social media'],
+    useCases: ['Customer support, Sales support, Technical support, Order tracking, Product information'],
+    roi: 'Companies report 500% ROI through reduced support costs and improved customer satisfaction.',
+    competitors: ['Zendesk, Intercom, Freshdesk'],
+=======
     technology: ['Python', 'TensorFlow', 'NLP', 'AWS', 'Docker', 'React', 'Node.js', 'PostgreSQL'],
     integrations: ['CRM systems', 'Help desk platforms', 'Live chat tools', 'Email systems', 'Social media'],
     useCases: ['Customer support', 'Sales support', 'Technical support', 'Order tracking', 'Product information'],
     roi: 'Companies report 500% ROI through reduced support costs and improved customer satisfaction.',
     competitors: ['Zendesk', 'Intercom', 'Freshdesk'],
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1bb4
     marketSize: '$12B customer service market',
     growthRate: '40% annual growth',
     variant: 'ai-futuristic',
@@ -227,16 +263,28 @@ export const emergingTech2028Services: EmergingTech2028Service[] = [
     textColor: 'text-purple-400',
     link: 'https://ziontechgroup.com/quantum-machine-learning',
     marketPosition: 'First-to-market quantum machine learning platform. Provides access to quantum computing resources for ML research and development.',
+<<<<<<< HEAD
+    targetAudience: ['Research institutions, Pharmaceutical companies, Financial institutions, Technology companies, Government agencies, Universities'],
+=======
     targetAudience: ['Research institutions', 'Pharmaceutical companies', 'Financial institutions', 'Technology companies', 'Government agencies', 'Universities'],
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1bb4
     trialDays: 14,
     setupTime: '1 week',
     category: 'Quantum Machine Learning',
     realService: true,
+<<<<<<< HEAD
+    technology: ['Quantum Computing, Python, Qiskit, TensorFlow, AWS, Docker, React, Node.js'],
+    integrations: ['Research platforms, Data analysis tools, Cloud computing, Academic databases, Collaboration tools'],
+    useCases: ['Drug discovery, Financial modeling, Climate modeling, Material science, Optimization problems'],
+    roi: 'Research institutions report 800% ROI through accelerated discoveries and breakthrough research.',
+    competitors: ['IBM Quantum, Google Quantum AI, Microsoft Azure Quantum'],
+=======
     technology: ['Quantum Computing', 'Python', 'Qiskit', 'TensorFlow', 'AWS', 'Docker', 'React', 'Node.js'],
     integrations: ['Research platforms', 'Data analysis tools', 'Cloud computing', 'Academic databases', 'Collaboration tools'],
     useCases: ['Drug discovery', 'Financial modeling', 'Climate modeling', 'Material science', 'Optimization problems'],
     roi: 'Research institutions report 800% ROI through accelerated discoveries and breakthrough research.',
     competitors: ['IBM Quantum', 'Google Quantum AI', 'Microsoft Azure Quantum'],
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1bb4
     marketSize: '$8B quantum computing market',
     growthRate: '60% annual growth',
     variant: 'quantum-futuristic',
@@ -280,11 +328,25 @@ export const emergingTech2028Services: EmergingTech2028Service[] = [
     textColor: 'text-red-400',
     link: 'https://ziontechgroup.com/autonomous-vehicle-fleet',
     marketPosition: 'Leading autonomous vehicle fleet management platform with the most advanced safety and optimization features. Used by major transportation companies.',
+<<<<<<< HEAD
+    targetAudience: ['Transportation companies, Logistics providers, Ride-sharing services, Delivery companies, Public transit, Trucking companies'],
+=======
     targetAudience: ['Transportation companies', 'Logistics providers', 'Ride-sharing services', 'Delivery companies', 'Public transit', 'Trucking companies'],
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1bb4
     trialDays: 30,
     setupTime: '4 weeks',
     category: 'Autonomous Vehicles',
     realService: true,
+<<<<<<< HEAD
+    technology: ['Python, TensorFlow, Computer Vision, IoT, AWS, Docker, React, Node.js'],
+    integrations: ['Vehicle systems, GPS platforms, Traffic systems, Weather services, Payment systems'],
+    useCases: ['Fleet optimization, Safety monitoring, Route planning, Maintenance scheduling, Performance tracking'],
+    roi: 'Transportation companies report 600% ROI through improved efficiency and reduced accidents.',
+    competitors: ['Tesla Fleet, Waymo, Cruise'],
+    marketSize: '$18B autonomous vehicle market',
+    growthRate: '50% annual growth',
+    variant: 'ai-autonomous',
+=======
     technology: ['Python', 'TensorFlow', 'Computer Vision', 'IoT', 'AWS', 'Docker', 'React', 'Node.js'],
     integrations: ['Vehicle systems', 'GPS platforms', 'Traffic systems', 'Weather services', 'Payment systems'],
     useCases: ['Fleet optimization', 'Safety monitoring', 'Route planning', 'Maintenance scheduling', 'Performance tracking'],
@@ -293,6 +355,7 @@ export const emergingTech2028Services: EmergingTech2028Service[] = [
     marketSize: '$18B autonomous vehicle market',
     growthRate: '50% annual growth',
     variant: 'ai-futuristic',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1bb4
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -333,16 +396,28 @@ export const emergingTech2028Services: EmergingTech2028Service[] = [
     textColor: 'text-cyan-400',
     link: 'https://ziontechgroup.com/digital-twin-manufacturing',
     marketPosition: 'Leading digital twin platform for manufacturing with the most advanced simulation and optimization capabilities. Used by major manufacturing companies.',
+<<<<<<< HEAD
+    targetAudience: ['Manufacturing companies, Automotive industry, Aerospace companies, Electronics manufacturers, Chemical companies, Pharmaceutical manufacturers'],
+=======
     targetAudience: ['Manufacturing companies', 'Automotive industry', 'Aerospace companies', 'Electronics manufacturers', 'Chemical companies', 'Pharmaceutical manufacturers'],
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1bb4
     trialDays: 60,
     setupTime: '6 weeks',
     category: 'Digital Twin Technology',
     realService: true,
+<<<<<<< HEAD
+    technology: ['Python, Unity3D, TensorFlow, IoT, AWS, Docker, React, Node.js'],
+    integrations: ['ERP systems, MES systems, SCADA systems, Quality management, Equipment monitoring'],
+    useCases: ['Process optimization, Quality control, Predictive maintenance, Energy optimization, Training and simulation'],
+    roi: 'Manufacturing companies report 700% ROI through improved efficiency and reduced downtime.',
+    competitors: ['Siemens, GE Digital, PTC'],
+=======
     technology: ['Python', 'Unity3D', 'TensorFlow', 'IoT', 'AWS', 'Docker', 'React', 'Node.js'],
     integrations: ['ERP systems', 'MES systems', 'SCADA systems', 'Quality management', 'Equipment monitoring'],
     useCases: ['Process optimization', 'Quality control', 'Predictive maintenance', 'Energy optimization', 'Training and simulation'],
     roi: 'Manufacturing companies report 700% ROI through improved efficiency and reduced downtime.',
     competitors: ['Siemens', 'GE Digital', 'PTC'],
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1bb4
     marketSize: '$28B digital twin market',
     growthRate: '45% annual growth',
     variant: 'ai-futuristic',
@@ -386,16 +461,28 @@ export const emergingTech2028Services: EmergingTech2028Service[] = [
     textColor: 'text-pink-400',
     link: 'https://ziontechgroup.com/ai-content-creation',
     marketPosition: 'Leading AI content creation platform with the most advanced natural language generation and multimedia creation capabilities.',
+<<<<<<< HEAD
+    targetAudience: ['Marketing agencies, Content creators, E-commerce companies, Bloggers, Social media managers, Publishers'],
+=======
     targetAudience: ['Marketing agencies', 'Content creators', 'E-commerce companies', 'Bloggers', 'Social media managers', 'Publishers'],
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1bb4
     trialDays: 30,
     setupTime: '1 week',
     category: 'AI Content Creation',
     realService: true,
+<<<<<<< HEAD
+    technology: ['Python, GPT-4, DALL-E, TensorFlow, AWS, Docker, React, Node.js'],
+    integrations: ['WordPress, Shopify, Social media platforms, Email marketing, Analytics tools'],
+    useCases: ['Blog writing, Social media content, Product descriptions, Marketing copy, Video scripts'],
+    roi: 'Marketing agencies report 400% ROI through increased content production and reduced creation time.',
+    competitors: ['Jasper, Copy.ai, Writesonic'],
+=======
     technology: ['Python', 'GPT-4', 'DALL-E', 'TensorFlow', 'AWS', 'Docker', 'React', 'Node.js'],
     integrations: ['WordPress', 'Shopify', 'Social media platforms', 'Email marketing', 'Analytics tools'],
     useCases: ['Blog writing', 'Social media content', 'Product descriptions', 'Marketing copy', 'Video scripts'],
     roi: 'Marketing agencies report 400% ROI through increased content production and reduced creation time.',
     competitors: ['Jasper', 'Copy.ai', 'Writesonic'],
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1bb4
     marketSize: '$14B AI content creation market',
     growthRate: '35% annual growth',
     variant: 'ai-futuristic',
@@ -439,16 +526,28 @@ export const emergingTech2028Services: EmergingTech2028Service[] = [
     textColor: 'text-indigo-400',
     link: 'https://ziontechgroup.com/quantum-internet-protocol',
     marketPosition: 'First-to-market quantum internet protocol. Provides the foundation for the next generation of secure internet communications.',
+<<<<<<< HEAD
+    targetAudience: ['Internet service providers, Government agencies, Financial institutions, Healthcare organizations, Defense contractors, Research institutions'],
+=======
     targetAudience: ['Internet service providers', 'Government agencies', 'Financial institutions', 'Healthcare organizations', 'Defense contractors', 'Research institutions'],
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1bb4
     trialDays: 30,
     setupTime: '4 weeks',
     category: 'Quantum Internet',
     realService: true,
+<<<<<<< HEAD
+    technology: ['Quantum Computing, Post-Quantum Cryptography, Python, C++, Rust, AWS, Docker'],
+    integrations: ['Network infrastructure, Security systems, Cloud platforms, Communication tools, Monitoring systems'],
+    useCases: ['Secure communications, Government networks, Financial transactions, Healthcare data, Military communications'],
+    roi: 'Government agencies report 1000% ROI through improved security and reduced cyber threats.',
+    competitors: ['No direct competitors, Traditional internet protocols, Security solutions'],
+=======
     technology: ['Quantum Computing', 'Post-Quantum Cryptography', 'Python', 'C++', 'Rust', 'AWS', 'Docker'],
     integrations: ['Network infrastructure', 'Security systems', 'Cloud platforms', 'Communication tools', 'Monitoring systems'],
     useCases: ['Secure communications', 'Government networks', 'Financial transactions', 'Healthcare data', 'Military communications'],
     roi: 'Government agencies report 1000% ROI through improved security and reduced cyber threats.',
     competitors: ['No direct competitors', 'Traditional internet protocols', 'Security solutions'],
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1bb4
     marketSize: '$5B quantum internet market',
     growthRate: '80% annual growth',
     variant: 'quantum-futuristic',
@@ -492,16 +591,28 @@ export const emergingTech2028Services: EmergingTech2028Service[] = [
     textColor: 'text-slate-400',
     link: 'https://ziontechgroup.com/ai-legal-research',
     marketPosition: 'Leading AI legal research platform with the most advanced document analysis and case prediction capabilities. Used by major law firms and legal departments.',
+<<<<<<< HEAD
+    targetAudience: ['Law firms, Corporate legal departments, Government agencies, Legal researchers, Law schools, Compliance officers'],
+=======
     targetAudience: ['Law firms', 'Corporate legal departments', 'Government agencies', 'Legal researchers', 'Law schools', 'Compliance officers'],
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1bb4
     trialDays: 30,
     setupTime: '2 weeks',
     category: 'AI Legal Technology',
     realService: true,
+<<<<<<< HEAD
+    technology: ['Python, TensorFlow, NLP, AWS, Docker, React, Node.js, PostgreSQL'],
+    integrations: ['Legal databases, Document management systems, Case management, Compliance platforms, Research tools'],
+    useCases: ['Legal research, Document analysis, Case preparation, Compliance monitoring, Legal education'],
+    roi: 'Law firms report 500% ROI through improved research efficiency and reduced research time.',
+    competitors: ['Westlaw, LexisNexis, Bloomberg Law'],
+=======
     technology: ['Python', 'TensorFlow', 'NLP', 'AWS', 'Docker', 'React', 'Node.js', 'PostgreSQL'],
     integrations: ['Legal databases', 'Document management systems', 'Case management', 'Compliance platforms', 'Research tools'],
     useCases: ['Legal research', 'Document analysis', 'Case preparation', 'Compliance monitoring', 'Legal education'],
     roi: 'Law firms report 500% ROI through improved research efficiency and reduced research time.',
     competitors: ['Westlaw', 'LexisNexis', 'Bloomberg Law'],
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1bb4
     marketSize: '$18B legal technology market',
     growthRate: '30% annual growth',
     variant: 'ai-futuristic',
