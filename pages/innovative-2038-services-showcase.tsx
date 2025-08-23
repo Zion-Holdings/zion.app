@@ -2,11 +2,8 @@ import React, { useState } from 'react';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { 
-  Search, Grid, List, Filter,
-  Brain, Atom, Shield, Target, Rocket,
-  ArrowRight, Check, Star, Zap, TrendingUp,
-  Building, Cpu, Database, Cloud, Lock,
-  DollarSign, Users, Globe, Clock, Award,
+  Search, Grid, List,
+  ArrowRight, Star, Zap, TrendingUp,
   Phone, Mail, MapPin
 } from 'lucide-react';
 import Link from 'next/link';

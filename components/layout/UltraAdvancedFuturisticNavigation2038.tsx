@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Menu, ChevronDown, X, Phone, Mail, MapPin, ArrowRight,
+  Menu, ChevronDown, X, ArrowRight,
   Brain, Rocket, Target, Atom, BookOpen,
-  DollarSign, BarChart3, Users, Star, Sparkles, 
-  Cpu, Building, MessageCircle, Play, Calculator,
-  Grid, FileText, Code, Video, Shield, Zap, Globe,
-  TrendingUp, Lightbulb, Settings, HelpCircle, Search
+  DollarSign, Users, Star, Sparkles, 
+  Cpu, Building, Play, Calculator,
+  FileText, Video, Shield, Zap,
+  TrendingUp, Lightbulb, Search
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -237,7 +237,7 @@ const UltraAdvancedFuturisticNavigation2038: React.FC = () => {
   // Close mobile menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (isOpen && !(event.target as Element).closest('.mobile-menu')) {
+      if (isOpen && !(event.target as HTMLElement).closest('.mobile-menu')) {
         setIsOpen(false);
       }
     };
