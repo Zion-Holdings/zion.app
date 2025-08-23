@@ -1237,6 +1237,13 @@ export const enhancedRealMicroSaasServices: MicroSaasService[] = [
       website: 'https://ziontechgroup.com'
     },
     realImplementation: true,
+<<<<<<< HEAD
+    implementationDetails: 'Operational quantum materials platform with real quantum simulations, AI-powered discovery, and materials property prediction.',
+    launchDate: '2024-01-22',
+    customers: 95,
+    rating: 4.9,
+    reviews: 68
+=======
     implementationDetails: 'Embedded analytics with AI assist and semantic models.',
     launchDate: '2025-01-20',
     customers: 65,
@@ -1898,6 +1905,7 @@ export const enhancedRealMicroSaasServices: MicroSaasService[] = [
     customers: 55,
     rating: 4.5,
     reviews: 21
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-9861
   }
 ];
 
