@@ -6,7 +6,7 @@ import {
   Brain, Rocket, Target, Atom, Shield,
   DollarSign, BarChart3, Globe, Grid, Heart, Database,
   Cpu, Palette, Cloud, Network, TrendingUp, ShoppingCart, Settings, Building, Monitor,
-  Search, User, Lock, Zap
+  Search, User, Lock, Zap, Users, BookOpen, FileText, Video
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -35,190 +35,156 @@ function normalizeHref(href: string): string {
 
 const navigationItems: NavigationItem[] = [
   {
-    name: 'Revolutionary Services 2043',
+    name: 'Services',
     href: '/services',
     icon: <Rocket className="w-5 h-5" />,
-    description: 'Future-defining technology solutions',
-    badge: 'New 2043',
+    description: 'Comprehensive technology solutions',
     category: 'services',
     color: 'from-emerald-500 to-cyan-500',
     children: [
       { 
         name: 'All Services', 
         href: '/services', 
-        description: 'Complete revolutionary services overview',
+        description: 'Complete services overview',
         icon: <Grid className="w-4 h-4" />,
         featured: true
       },
       { 
-        name: 'AI Consciousness Evolution 2043', 
-        href: '/ai-consciousness-evolution-2043', 
-        description: 'Next-generation AI consciousness',
+        name: 'AI & Machine Learning', 
+        href: '/ai-services', 
+        description: 'AI-powered solutions and platforms',
         icon: <Brain className="w-4 h-4" />,
         color: 'from-purple-500 to-pink-500',
         featured: true
       },
       { 
-        name: 'Quantum Neural Network 2043', 
-        href: '/quantum-ai-neural-2043', 
-        description: 'Quantum-powered AI neural networks',
+        name: 'Quantum Computing', 
+        href: '/quantum-services', 
+        description: 'Quantum-powered solutions',
         icon: <Atom className="w-4 h-4" />,
         color: 'from-blue-500 to-cyan-500',
         featured: true
       },
       { 
-        name: 'AI Business Intelligence 2043', 
-        href: '/ai-business-intelligence-2043', 
-        description: 'AI-powered business intelligence',
-        icon: <BarChart3 className="w-4 h-4" />,
-        color: 'from-emerald-500 to-teal-500'
-      },
-      { 
-        name: 'Quantum Cybersecurity 2043', 
-        href: '/quantum-cybersecurity-2043', 
-        description: 'Quantum-resistant security',
+        name: 'Cybersecurity', 
+        href: '/cybersecurity', 
+        description: 'Advanced security solutions',
         icon: <Shield className="w-4 h-4" />,
         color: 'from-red-500 to-orange-500'
       },
       { 
-        name: 'Autonomous Customer Success 2043', 
-        href: '/autonomous-customer-success-2043', 
-        description: 'AI-powered customer success',
-        icon: <Heart className="w-4 h-4" />,
-        color: 'from-pink-500 to-purple-500'
+        name: 'Space Technology', 
+        href: '/space-technology', 
+        description: 'Space exploration solutions',
+        icon: <Rocket className="w-4 h-4" />,
+        color: 'from-indigo-500 to-purple-500'
+      },
+      { 
+        name: 'Cloud & Infrastructure', 
+        href: '/cloud-infrastructure', 
+        description: 'Cloud and infrastructure services',
+        icon: <Cloud className="w-4 h-4" />,
+        color: 'from-green-500 to-emerald-500'
       }
     ]
   },
   {
-    name: 'AI & Consciousness',
-    href: '/ai-services',
-    icon: <Brain className="w-5 h-5" />,
-    description: 'Revolutionary AI consciousness platforms',
-    badge: 'Featured',
-    category: 'ai',
+    name: 'Solutions',
+    href: '/solutions',
+    icon: <Target className="w-5 h-5" />,
+    description: 'Industry-specific solutions',
+    category: 'solutions',
+    color: 'from-blue-500 to-indigo-500',
+    children: [
+      { 
+        name: 'Enterprise Solutions', 
+        href: '/enterprise-solutions', 
+        description: 'Large enterprise technology solutions',
+        icon: <Building className="w-4 h-4" />,
+        featured: true
+      },
+      { 
+        name: 'Startup Solutions', 
+        href: '/startup-solutions', 
+        description: 'Technology solutions for startups',
+        icon: <Zap className="w-4 h-4" />,
+        color: 'from-yellow-500 to-orange-500'
+      },
+      { 
+        name: 'Government Solutions', 
+        href: '/government-solutions', 
+        description: 'Government and public sector solutions',
+        icon: <Shield className="w-4 h-4" />,
+        color: 'from-blue-500 to-cyan-500'
+      }
+    ]
+  },
+  {
+    name: 'Company',
+    href: '/about',
+    icon: <Users className="w-5 h-5" />,
+    description: 'About Zion Tech Group',
+    category: 'company',
     color: 'from-purple-500 to-pink-500',
     children: [
       { 
-        name: 'AI Consciousness Evolution 2043', 
-        href: '/ai-consciousness-evolution-2043', 
-        description: 'Next-generation AI consciousness',
-        icon: <Brain className="w-4 h-4" />,
+        name: 'About Us', 
+        href: '/about', 
+        description: 'Learn about our company',
+        icon: <Target className="w-4 h-4" />,
         featured: true
       },
       { 
-        name: 'Quantum AI Neural Network 2043', 
-        href: '/quantum-ai-neural-2043', 
-        description: 'Quantum-powered AI neural networks',
-        icon: <Atom className="w-4 h-4" />,
-        featured: true
+        name: 'Careers', 
+        href: '/careers', 
+        description: 'Join our team',
+        icon: <Users className="w-4 h-4" />,
+        color: 'from-green-500 to-emerald-500'
       },
       { 
-        name: 'Autonomous AI Research 2043', 
-        href: '/autonomous-ai-research-2043', 
-        description: 'Fully autonomous AI research',
-        icon: <Cpu className="w-4 h-4" />
-      },
-      { 
-        name: 'AI Content Personalization 2043', 
-        href: '/ai-content-personalization-2043', 
-        description: 'Intelligent content personalization',
-        icon: <Palette className="w-4 h-4" />
-      },
-      { 
-        name: 'AI Ethics & Governance 2043', 
-        href: '/ai-ethics-governance-2043', 
-        description: 'AI ethics and governance',
-        icon: <Shield className="w-4 h-4" />
-      }
-    ]
-  },
-  {
-    name: 'Quantum Technology',
-    href: '/quantum-services',
-    icon: <Atom className="w-5 h-5" />,
-    description: 'Breakthrough quantum computing solutions',
-    badge: 'Quantum',
-    category: 'quantum',
-    color: 'from-blue-500 to-cyan-500',
-    children: [
-      { 
-        name: 'Quantum Cloud Infrastructure 2043', 
-        href: '/quantum-cloud-infrastructure-2043', 
-        description: 'Quantum-powered cloud infrastructure',
-        icon: <Cloud className="w-4 h-4" />,
-        featured: true
-      },
-      { 
-        name: 'Quantum Database Platform 2043', 
-        href: '/quantum-database-2043', 
-        description: 'Quantum-powered database',
-        icon: <Database className="w-4 h-4" />
-      },
-      { 
-        name: 'Quantum Edge Computing 2043', 
-        href: '/quantum-edge-computing-2043', 
-        description: 'Quantum-powered edge computing',
-        icon: <Cpu className="w-4 h-4" />
-      },
-      { 
-        name: 'Quantum API Gateway 2043', 
-        href: '/quantum-api-gateway-2043', 
-        description: 'Quantum-powered API gateway',
-        icon: <Network className="w-4 h-4" />
-      }
-    ]
-  },
-  {
-    name: 'Cybersecurity',
-    href: '/cybersecurity',
-    icon: <Shield className="w-5 h-5" />,
-    description: 'Advanced security solutions',
-    badge: 'Secure',
-    category: 'security',
-    color: 'from-red-500 to-orange-500',
-    children: [
-      { 
-        name: 'Quantum Cybersecurity 2043', 
-        href: '/quantum-cybersecurity-2043', 
-        description: 'Quantum-resistant cybersecurity',
-        icon: <Shield className="w-4 h-4" />,
-        featured: true
-      },
-      { 
-        name: 'AI Network Security 2043', 
-        href: '/ai-network-security-2043', 
-        description: 'AI-powered network security',
-        icon: <Network className="w-4 h-4" />
-      },
-      { 
-        name: 'Quantum Internet Security 2043', 
-        href: '/quantum-internet-security-2043', 
-        description: 'Quantum internet security',
-        icon: <Globe className="w-4 h-4" />
-      }
-    ]
-  },
-  {
-    name: 'Space Technology',
-    href: '/space-technology',
-    icon: <Rocket className="w-5 h-5" />,
-    description: 'Revolutionary space solutions',
-    badge: 'Space',
-    category: 'space',
-    color: 'from-indigo-500 to-purple-500',
-    children: [
-      { 
-        name: 'Space Resource Intelligence 2043', 
-        href: '/space-resource-intelligence-2043', 
-        description: 'AI-powered space resource management',
+        name: 'News', 
+        href: '/news', 
+        description: 'Latest company news',
         icon: <Globe className="w-4 h-4" />,
+        color: 'from-blue-500 to-cyan-500'
+      },
+      { 
+        name: 'Case Studies', 
+        href: '/case-studies', 
+        description: 'Success stories',
+        icon: <BarChart3 className="w-4 h-4" />,
+        color: 'from-orange-500 to-red-500'
+      }
+    ]
+  },
+  {
+    name: 'Resources',
+    href: '/resources',
+    icon: <BookOpen className="w-5 h-5" />,
+    description: 'Knowledge and resources',
+    category: 'resources',
+    color: 'from-green-500 to-emerald-500',
+    children: [
+      { 
+        name: 'Blog', 
+        href: '/blog', 
+        description: 'Technology insights and updates',
+        icon: <FileText className="w-4 h-4" />,
         featured: true
       },
       { 
-        name: 'Autonomous Space Operations 2043', 
-        href: '/autonomous-space-operations-2043', 
-        description: 'Fully autonomous space operations',
-        icon: <Rocket className="w-4 h-4" />
+        name: 'Documentation', 
+        href: '/docs', 
+        description: 'Technical documentation',
+        icon: <BookOpen className="w-4 h-4" />,
+        color: 'from-blue-500 to-cyan-500'
+      },
+      { 
+        name: 'Webinars', 
+        href: '/webinars', 
+        description: 'Educational webinars',
+        icon: <Video className="w-4 h-4" />,
+        color: 'from-purple-500 to-pink-500'
       }
     ]
   },
@@ -231,12 +197,12 @@ const navigationItems: NavigationItem[] = [
     color: 'from-green-500 to-emerald-500'
   },
   {
-    name: 'About',
-    href: '/about',
-    icon: <Target className="w-5 h-5" />,
-    description: 'Learn about Zion Tech Group',
-    category: 'about',
-    color: 'from-blue-500 to-indigo-500'
+    name: 'Contact',
+    href: '/contact',
+    icon: <Mail className="w-5 h-5" />,
+    description: 'Get in touch with us',
+    category: 'contact',
+    color: 'from-cyan-500 to-blue-500'
   }
 ];
 
@@ -246,7 +212,7 @@ const contactInfo = {
   address: '364 E Main St STE 1008 Middletown DE 19709'
 };
 
-const UltraFuturisticNavigation2040: React.FC = () => {
+const ImprovedNavigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -496,7 +462,7 @@ const UltraFuturisticNavigation2040: React.FC = () => {
                   <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
                   <input
                     type="text"
-                    placeholder="Search revolutionary services, technologies, and solutions..."
+                    placeholder="Search services, solutions, and resources..."
                     value={searchQuery}
                     onChange={(e) => handleSearch(e.target.value)}
                     onKeyPress={handleKeyPress}
@@ -680,4 +646,4 @@ const UltraFuturisticNavigation2040: React.FC = () => {
   );
 };
 
-export default UltraFuturisticNavigation2040;
+export default ImprovedNavigation;

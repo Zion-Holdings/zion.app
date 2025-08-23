@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import UltraFuturisticNavigation2037 from './UltraFuturisticNavigation2037';
-import UltraFuturisticFooter2037 from './UltraFuturisticFooter2037';
+import ImprovedNavigation from './ImprovedNavigation';
+import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraFuturisticBackground2037 from '../backgrounds/UltraFuturisticBackground2037';
+import UltraFuturisticBackground2043 from '../backgrounds/UltraFuturisticBackground2043';
 import TopContactBar from './TopContactBar';
+import PerformanceMonitor from '../PerformanceMonitor';
+import AccessibilityEnhancer from '../AccessibilityEnhancer';
+import CookieConsentBanner from '../CookieConsentBanner';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -19,7 +21,7 @@ export default function Layout({ children }: LayoutProps) {
       <a href="#main" className="skip-link">Skip to main content</a>
       
       {/* Futuristic Background */}
-      <UltraFuturisticBackground2037 />
+      <UltraFuturisticBackground2043 theme="consciousness" intensity="high" />
       
       {/* Layout Structure */}
       <div className="relative z-10">
@@ -27,7 +29,7 @@ export default function Layout({ children }: LayoutProps) {
         <TopContactBar />
         
         {/* Navigation */}
-        <UltraFuturisticNavigation2037 />
+        <ImprovedNavigation />
         
         {/* Sidebar and Main Content */}
         <div className="flex">
@@ -42,8 +44,14 @@ export default function Layout({ children }: LayoutProps) {
         </div>
         
         {/* Footer */}
-        <UltraFuturisticFooter2037 />
+        <UltraFuturisticFooter2040 />
       </div>
+
+      {/* Performance Tools */}
+      <PerformanceMonitor />
+      
+      {/* Cookie Consent Banner */}
+      <CookieConsentBanner />
     </div>
   );
 }
