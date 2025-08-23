@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "timestamp": "2025-08-08T17:17:01.965Z",
+=======
   "timestamp": "2025-08-08T17:14:35.168Z",
+>>>>>>> origin/cursor/automate-website-analysis-and-improvement-fe83
   "pages": [
     {
       "url": "https://ziontechgroup.netlify.app/",
