@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+import React, { ReactNode } from 'react';
+import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
+import UltraAdvancedFuturisticFooter2025 from './UltraAdvancedFuturisticFooter2025';
+import AccessibilityEnhancer from '../AccessibilityEnhancer';
+import PerformanceOptimizer from '../PerformanceOptimizer';
+import ServiceWorkerRegistration from '../ServiceWorkerRegistration';
+=======
 import React, { useState, useEffect } from 'react';
 import UltraFuturisticNavigation2036 from './UltraFuturisticNavigation2036';
 import UltraFuturisticFooter2036 from './UltraFuturisticFooter2036';
@@ -8,11 +16,15 @@ import PerformanceMonitor from '../PerformanceMonitor';
 import AccessibilityEnhancer from '../AccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
 import { Moon, Sun } from 'lucide-react';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-ff45
 
 interface LayoutProps {
 	children: React.ReactNode;
 }
 
+<<<<<<< HEAD
+const Layout: React.FC<LayoutProps> = ({ children }) => {
+=======
 export default function Layout({ children }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(true);
@@ -40,6 +52,7 @@ export default function Layout({ children }: LayoutProps) {
     }
   };
 
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-ff45
   return (
     <div className={`min-h-screen ${darkMode ? 'bg-black text-white' : 'bg-white text-black'} relative overflow-x-hidden transition-colors duration-300`}>
       {/* Skip to content link for accessibility */}

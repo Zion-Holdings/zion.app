@@ -148,11 +148,19 @@ const UltraAdvancedFuturisticNavigation2025: React.FC = () => {
 
   // Handle click outside search
   useEffect(() => {
+<<<<<<< HEAD
+    const handleClickOutside = (event: MouseEvent) => {
+      if (searchRef.current && !searchRef.current.contains(event.target as HTMLElement)) {
+        setIsSearchOpen(false);
+      }
+    };
+=======
       const handleClickOutside = (event: MouseEvent) => {
     if (searchRef.current && !searchRef.current.contains(event.target as HTMLElement)) {
       setIsSearchOpen(false);
     }
   };
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-ff45
 
   // Handle click outside to close dropdowns
   const handleClickOutside = useCallback((event: MouseEvent) => {
@@ -361,8 +369,12 @@ const UltraAdvancedFuturisticNavigation2025: React.FC = () => {
                   placeholder="Search for services, solutions, or insights..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
+<<<<<<< HEAD
+                  className="w-full pl-12 pr-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-200"
+=======
                   placeholder="Search for services, solutions, or insights..."
                   className="w-full px-6 py-4 bg-gray-800/95 backdrop-blur-xl border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500/50 transition-all duration-200"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-ff45
                   autoFocus
                 />
                 <button

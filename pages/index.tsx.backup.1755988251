@@ -4,7 +4,13 @@ import SEOOptimizer from '../components/SEOOptimizer';
 import AnalyticsTracker from '../components/AnalyticsTracker';
 import ErrorBoundary from '../components/ErrorBoundary';
 import AccessibilityEnhancer from '../components/AccessibilityEnhancer';
+<<<<<<< HEAD
+import PerformanceMonitor from '../components/PerformanceMonitor';
+import MobileOptimizer from '../components/MobileOptimizer';
+import PerformanceDashboard from '../components/PerformanceDashboard';
+=======
 import PerformanceOptimizer from '../components/PerformanceOptimizer';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-ff45
 
 const HomePage: React.FC = () => {
   // Structured data for better SEO
@@ -41,11 +47,21 @@ const HomePage: React.FC = () => {
     <ErrorBoundary>
       <SEOOptimizer />
       <AnalyticsTracker />
+<<<<<<< HEAD
+      <PerformanceOptimizer />
+      <MobileOptimizer showDebugInfo={false}>
+        <AccessibilityEnhancer />
+        <Homepage2025 />
+        <PerformanceMonitor showUI={true} />
+        <PerformanceDashboard />
+      </MobileOptimizer>
+=======
       <PerformanceOptimizer>
         <Homepage2025 />
       </PerformanceOptimizer>
       <PerformanceMonitor />
       <AccessibilityEnhancer />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-ff45
     </ErrorBoundary>
   );
 };

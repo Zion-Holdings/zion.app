@@ -3,7 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Mail, Phone, MapPin, Globe, ArrowRight, 
   Facebook, Twitter, Linkedin, Github, Youtube,
+<<<<<<< HEAD
+  Heart, Shield, Users, Award, TrendingUp,
+  CheckCircle, Star, Clock, Target
+=======
   Heart, Shield, Users, Award, TrendingUp
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-ff45
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -251,9 +256,12 @@ const UltraAdvancedFuturisticFooter2025: React.FC = () => {
                   required 
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+<<<<<<< HEAD
+=======
                   placeholder="Enter your email address"
                   className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500/50 transition-all duration-200"
                   required
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-ff45
                 />
                 <button 
                   type="submit" 
