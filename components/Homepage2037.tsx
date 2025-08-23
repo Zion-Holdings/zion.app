@@ -7,13 +7,22 @@ import {
 } from 'lucide-react';
 import { real2036Q1Additions } from '../data/real-2036-q1-additions';
 import { real2036Q2Additions } from '../data/real-2036-q2-additions';
+import { innovative2027Q4Additions } from '../data/innovative-2027-q4-additions';
+import { revolutionary2028AIServices } from '../data/revolutionary-2028-ai-services';
+import { nextGenITInfrastructure2028 } from '../data/next-gen-it-infrastructure-2028';
 
 const Homepage2037: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState('');
 
 
-  const allServices = [...real2036Q1Additions, ...real2036Q2Additions];
+  const allServices = [
+    ...real2036Q1Additions, 
+    ...real2036Q2Additions,
+    ...innovative2027Q4Additions,
+    ...revolutionary2028AIServices,
+    ...nextGenITInfrastructure2028
+  ];
   
   const categories = [
     { id: 'all', name: 'All Services', icon: <Globe className="w-5 h-5" />, count: allServices.length },
@@ -22,7 +31,12 @@ const Homepage2037: React.FC = () => {
     { id: 'automation', name: 'Automation', icon: <Zap className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('Automation')).length },
     { id: 'cybersecurity', name: 'Security', icon: <Shield className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('Security') || s.category.includes('Cybersecurity')).length },
     { id: 'edge', name: 'Edge AI', icon: <Cpu className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('Edge')).length },
-    { id: 'neuromorphic', name: 'Neuromorphic', icon: <Brain className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('Neuromorphic')).length }
+    { id: 'neuromorphic', name: 'Neuromorphic', icon: <Brain className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('Neuromorphic')).length },
+    { id: 'blockchain', name: 'Blockchain', icon: <Shield className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('Blockchain')).length },
+    { id: 'iot', name: 'IoT', icon: <Cpu className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('IoT')).length },
+    { id: 'metaverse', name: 'Metaverse', icon: <Globe className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('Metaverse')).length },
+    { id: 'healthcare', name: 'Healthcare', icon: <Brain className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('Healthcare')).length },
+    { id: 'energy', name: 'Energy', icon: <Zap className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('Energy')).length }
   ];
 
   const filteredServices = allServices.filter(service => {
@@ -44,6 +58,11 @@ const Homepage2037: React.FC = () => {
     if (service.category.includes('Security') || service.category.includes('Cybersecurity')) return 'cybersecurity';
     if (service.category.includes('Edge')) return 'edge';
     if (service.category.includes('Neuromorphic')) return 'neuromorphic';
+    if (service.category.includes('Blockchain')) return 'blockchain-futuristic';
+    if (service.category.includes('IoT')) return 'iot-futuristic';
+    if (service.category.includes('Metaverse')) return 'metaverse-futuristic';
+    if (service.category.includes('Healthcare')) return 'ai-futuristic';
+    if (service.category.includes('Energy')) return 'iot-futuristic';
     return 'ai';
   };
 
@@ -105,20 +124,22 @@ const Homepage2037: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
             >
-              <motion.button 
-                className="px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-cyan-500/25"
+              <motion.a
+                href="/comprehensive-services-showcase-2028"
+                className="px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-cyan-500/25 inline-block"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Explore Services
-              </motion.button>
-              <motion.button 
-                className="px-10 py-5 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 backdrop-blur-sm"
+              </motion.a>
+              <motion.a
+                href="mailto:kleber@ziontechgroup.com?subject=Service Inquiry"
+                className="px-10 py-5 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 backdrop-blur-sm inline-block"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Contact Us
-              </motion.button>
+              </motion.a>
             </motion.div>
 
             {/* Stats Row */}
@@ -133,7 +154,7 @@ const Homepage2037: React.FC = () => {
                 <div className="text-gray-400">Services</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-white mb-2">500+</div>
+                <div className="text-3xl md:text-4xl font-bold text-white mb-2">2,500+</div>
                 <div className="text-gray-400">Customers</div>
               </div>
               <div className="text-center">
@@ -289,20 +310,22 @@ const Homepage2037: React.FC = () => {
                 Join hundreds of companies already leveraging our cutting-edge technology solutions
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <motion.button 
-                  className="px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+                <motion.a
+                  href="mailto:kleber@ziontechgroup.com?subject=Get Started Inquiry"
+                  className="px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 inline-block"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   Get Started Today
-                </motion.button>
-                <motion.button 
-                  className="px-10 py-5 border-2 border-purple-400 text-purple-400 font-semibold rounded-xl hover:bg-purple-400 hover:text-black transition-all duration-300 transform hover:scale-105"
+                </motion.a>
+                <motion.a
+                  href="tel:+13024640950"
+                  className="px-10 py-5 border-2 border-purple-400 text-purple-400 font-semibold rounded-xl hover:bg-purple-400 hover:text-black transition-all duration-300 transform hover:scale-105 inline-block"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Schedule Demo
-                </motion.button>
+                  Call Us Now
+                </motion.a>
               </div>
             </motion.div>
           </div>

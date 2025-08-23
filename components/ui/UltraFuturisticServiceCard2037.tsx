@@ -45,7 +45,7 @@ interface Service {
 
 interface UltraFuturisticServiceCard2037Props {
   service: Service;
-  variant?: 'ai' | 'quantum' | 'automation' | 'cybersecurity' | 'edge' | 'neuromorphic';
+  variant?: 'ai' | 'quantum' | 'automation' | 'cybersecurity' | 'edge' | 'neuromorphic' | 'ai-futuristic' | 'blockchain-futuristic' | 'metaverse-futuristic' | 'iot-futuristic' | 'quantum-futuristic' | 'automation-futuristic' | 'cybersecurity-futuristic' | 'edge-futuristic' | 'neuromorphic-futuristic';
 }
 
 export default function UltraFuturisticServiceCard2037({ 
@@ -58,6 +58,7 @@ export default function UltraFuturisticServiceCard2037({
   const getVariantStyles = () => {
     switch (variant) {
       case 'quantum':
+      case 'quantum-futuristic':
         return {
           gradient: 'from-purple-600 via-indigo-600 to-cyan-600',
           border: 'border-purple-500/50',
@@ -65,6 +66,7 @@ export default function UltraFuturisticServiceCard2037({
           accent: 'text-purple-400'
         };
       case 'automation':
+      case 'automation-futuristic':
         return {
           gradient: 'from-blue-600 via-cyan-600 to-teal-600',
           border: 'border-blue-500/50',
@@ -72,6 +74,7 @@ export default function UltraFuturisticServiceCard2037({
           accent: 'text-blue-400'
         };
       case 'cybersecurity':
+      case 'cybersecurity-futuristic':
         return {
           gradient: 'from-red-600 via-orange-600 to-yellow-600',
           border: 'border-red-500/50',
@@ -79,6 +82,7 @@ export default function UltraFuturisticServiceCard2037({
           accent: 'text-red-400'
         };
       case 'edge':
+      case 'edge-futuristic':
         return {
           gradient: 'from-green-600 via-emerald-600 to-teal-600',
           border: 'border-green-500/50',
@@ -86,13 +90,37 @@ export default function UltraFuturisticServiceCard2037({
           accent: 'text-green-400'
         };
       case 'neuromorphic':
+      case 'neuromorphic-futuristic':
         return {
           gradient: 'from-pink-600 via-rose-600 to-purple-600',
           border: 'border-pink-500/50',
           glow: 'shadow-pink-500/30',
           accent: 'text-pink-400'
         };
-      default: // ai
+      case 'blockchain-futuristic':
+        return {
+          gradient: 'from-blue-600 via-indigo-600 to-purple-600',
+          border: 'border-blue-500/50',
+          glow: 'shadow-blue-500/30',
+          accent: 'text-blue-400'
+        };
+      case 'metaverse-futuristic':
+        return {
+          gradient: 'from-cyan-600 via-blue-600 to-purple-600',
+          border: 'border-cyan-500/50',
+          glow: 'shadow-cyan-500/30',
+          accent: 'text-cyan-400'
+        };
+      case 'iot-futuristic':
+        return {
+          gradient: 'from-green-600 via-emerald-600 to-teal-600',
+          border: 'border-green-500/50',
+          glow: 'shadow-green-500/30',
+          accent: 'text-green-400'
+        };
+      case 'ai':
+      case 'ai-futuristic':
+      default:
         return {
           gradient: 'from-cyan-600 via-blue-600 to-indigo-600',
           border: 'border-cyan-500/50',
