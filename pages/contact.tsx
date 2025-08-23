@@ -1,4 +1,3 @@
-=======
 import React from 'react';
 
 export default function ContactPage() {
@@ -19,6 +18,15 @@ const Contact: NextPage = () => (
 export default Contact;
 =======
       <p className="mt-2 text-gray-600 dark:text-gray-300">Get in touch with us.</p>
+    </div>
+  );
+}
+=======
+export default function ContactPage() {
+  return (
+    <div className="py-8">
+      <h1 className="text-2xl font-semibold text-white">Contact</h1>
+      <p className="text-slate-300 mt-2">Reach out to Zion.</p>
     </div>
   );
 }
