@@ -44,7 +44,11 @@ import { innovative2026MicroSaasServicesV2 } from '../../data/innovative-2026-mi
 import { ultimateRealMicroSaasServices2025 } from '../../data/2025-ultimate-real-micro-saas-services';
 import { innovativeRealMicroSaasServices2025 } from '../../data/2025-innovative-real-micro-saas-services';
 import { real2029Q3Additions } from '../../data/real-2029-q3-additions';
+<<<<<<< HEAD
+import { ultimateRealMicroSaasServices2025 } from '../../data/2025-ultimate-real-micro-saas-services';
+=======
 import { real2029Q4Additions } from '../../data/real-2029-q4-additions';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-bbf4
 
 type Service = typeof enhancedRealMicroSaasServices[number] | {
   id: string;
@@ -133,7 +137,11 @@ function getAllServices(): Service[] {
 		.concat(realMarketServices as unknown as Service[])
 		.concat(real2029Q2Additions as unknown as Service[])
 		.concat(real2029Q3Additions as unknown as Service[])
+<<<<<<< HEAD
+		.concat(ultimateRealMicroSaasServices2025 as unknown as Service[]);
+=======
 		.concat(real2029Q4Additions as unknown as Service[]);
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-bbf4
 }
 
 function toSlug(value: string): string {
