@@ -8,6 +8,8 @@ import {
   CheckCircle, Users, Award, Clock, DollarSign, BarChart3, Palette, Layers, Code, Server, Cloud, Lock
 } from 'lucide-react';
 import EnhancedSEO from './EnhancedSEO';
+import PerformanceOptimizer from './PerformanceOptimizer';
+import EnhancedAccessibilityEnhancer from './EnhancedAccessibilityEnhancer';
 
 // Import our new real services
 import { realMicroSaas2025Expansion } from '../data/real-micro-saas-2025-expansion';
@@ -18,7 +20,6 @@ import { realAIServices2025Expansion } from '../data/real-ai-services-2025-expan
 const ServiceCard = lazy(() => import('./ServiceCard'));
 const PerformanceMetrics = lazy(() => import('./PerformanceMetrics'));
 const InteractiveDemo = lazy(() => import('./InteractiveDemo'));
-const PerformanceOptimizer = lazy(() => import('./PerformanceOptimizer'));
 
 // Enhanced loading component
 const EnhancedLoadingSpinner = () => (
@@ -29,7 +30,7 @@ const EnhancedLoadingSpinner = () => (
     </div>
     <span className="ml-3 text-lg font-medium text-gray-700">Loading revolutionary technology...</span>
   </div>
-);
+ );
 
 const EnhancedHomepage2045: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -39,6 +40,7 @@ const EnhancedHomepage2045: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [userInteraction, setUserInteraction] = useState(false);
   const [isReducedMotion, setIsReducedMotion] = useState(false);
+  const [showPerformanceOptimizer, setShowPerformanceOptimizer] = useState(false);
   
   useEffect(() => {
     setIsVisible(true);
@@ -138,6 +140,7 @@ const EnhancedHomepage2045: React.FC = () => {
   return (
     <Layout>
       <EnhancedSEO />
+      <EnhancedAccessibilityEnhancer />
       
       <div className="min-h-screen relative overflow-hidden" onMouseMove={handleMouseMove}>
         {/* Hero Section */}
@@ -191,15 +194,46 @@ const EnhancedHomepage2045: React.FC = () => {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  onClick={() => setShowPerformanceOptimizer(!showPerformanceOptimizer)}
                   className="border border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/10 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300"
                 >
-                  <Play className="w-5 h-5 inline mr-2" />
-                  Watch Demo
+                  <Zap className="w-5 h-5 inline mr-2" />
+                  Performance Tools
                 </motion.button>
               </div>
             </motion.div>
           </div>
         </section>
+
+        {/* Performance Optimizer Section */}
+        <AnimatePresence>
+          {showPerformanceOptimizer && (
+            <motion.section
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="py-20 relative"
+            >
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                  className="text-center mb-16"
+                >
+                  <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                    Performance Optimization
+                  </h2>
+                  <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Advanced tools to analyze and optimize your website performance
+                  </p>
+                </motion.div>
+                
+                <PerformanceOptimizer />
+              </div>
+            </motion.section>
+          )}
+        </AnimatePresence>
 
         {/* Featured Services Section */}
         <section className="py-20 relative">
@@ -460,6 +494,7 @@ const EnhancedHomepage2045: React.FC = () => {
                     whileTap={{ scale: 0.95 }}
                     className="border border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/10 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300"
                   >
+                    <Play className="w-5 h-5 inline mr-2" />
                     Schedule Demo
                   </motion.button>
                 </div>
