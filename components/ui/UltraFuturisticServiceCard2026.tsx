@@ -26,7 +26,6 @@ interface UltraFuturisticServiceCard2026Props {
 const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Props> = ({
   service,
   variant = 'default',
-  theme = 'quantum',
   className = '',
   onClick
 }) => {
@@ -195,7 +194,9 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            <span className="text-2xl font-bold text-white">{service.price}</span>
+            <span className="text-2xl font-bold text-white">
+              {typeof service.price === 'object' ? 'Contact for pricing' : service.price}
+            </span>
             <span className="text-gray-400 text-sm ml-1">{service.period}</span>
           </motion.div>
 

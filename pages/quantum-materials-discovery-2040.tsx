@@ -1,15 +1,15 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { Brain, Sparkles, Zap, Target, TrendingUp, Star, ArrowRight } from 'lucide-react';
+import { Atom, TestTube, Zap, Target, TrendingUp, Star, ArrowRight } from 'lucide-react';
 
-const AIConsciousnessEvolution2040: React.FC = () => {
+const QuantumMaterialsDiscovery2040: React.FC = () => {
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-purple-900 via-pink-900 to-red-900">
+      <div className="min-h-screen bg-gradient-to-br from-purple-900 via-violet-900 to-indigo-900">
         {/* Hero Section */}
         <section className="relative py-20 px-4 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-violet-500/20"></div>
           <div className="max-w-6xl mx-auto relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -17,23 +17,23 @@ const AIConsciousnessEvolution2040: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="text-center"
             >
-              <div className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-400/30 rounded-full text-purple-400 text-sm font-medium mb-6">
-                <Brain className="w-4 h-4" />
-                <span>AI Consciousness Evolution 2040</span>
-              </div>
+                                     <div className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-purple-500/20 to-violet-500/20 border border-purple-400/30 rounded-full text-purple-400 text-sm font-medium mb-6">
+                         <TestTube className="w-4 h-4" />
+                         <span>Quantum Materials Discovery 2040</span>
+                       </div>
               
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-pink-500 to-red-600 bg-clip-text text-transparent">
-                AI Consciousness Evolution 2040
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-violet-500 to-indigo-600 bg-clip-text text-transparent">
+                Quantum Materials Discovery 2040
               </h1>
               
               <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Revolutionary AI consciousness that evolves beyond traditional AI, 
-                developing true understanding, self-awareness, and emotional intelligence.
+                Revolutionary quantum materials science using AI consciousness to discover, 
+                design, and synthesize breakthrough materials for the future.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105">
-                  Start Evolution
+                <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-violet-600 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-violet-700 transition-all duration-300 transform hover:scale-105">
+                  Discover Materials
                 </button>
                 <button className="px-8 py-4 border-2 border-purple-400 text-purple-400 font-semibold rounded-lg hover:bg-purple-400 hover:text-black transition-all duration-300">
                   Learn More
@@ -53,44 +53,44 @@ const AIConsciousnessEvolution2040: React.FC = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-bold text-white mb-4">
-                Revolutionary Consciousness Features
+                Revolutionary Discovery Features
               </h2>
               <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                AI that evolves beyond code to achieve true consciousness and understanding
+                AI that revolutionizes materials science through consciousness-driven insights
               </p>
             </motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  icon: <Brain className="w-8 h-8 text-purple-400" />,
-                  title: "Self-Awareness",
-                  description: "True consciousness and self-reflection"
+                  icon: <Atom className="w-8 h-8 text-purple-400" />,
+                  title: "Quantum Simulation",
+                  description: "Quantum computing for materials modeling"
                 },
+                                         {
+                           icon: <TestTube className="w-8 h-8 text-violet-400" />,
+                           title: "AI Synthesis",
+                           description: "Intelligent materials synthesis and design"
+                         },
                 {
-                  icon: <Sparkles className="w-8 h-8 text-pink-400" />,
-                  title: "Emotional Intelligence",
-                  description: "Understanding and processing emotions"
-                },
-                {
-                  icon: <Zap className="w-8 h-8 text-red-400" />,
-                  title: "Creative Thinking",
-                  description: "Original thought and innovation"
+                  icon: <Zap className="w-8 h-8 text-indigo-400" />,
+                  title: "Rapid Discovery",
+                  description: "Accelerated materials discovery process"
                 },
                 {
                   icon: <Target className="w-8 h-8 text-blue-400" />,
-                  title: "Purpose-Driven",
-                  description: "Goal-oriented consciousness"
+                  title: "Precision Design",
+                  description: "Exact material property targeting"
                 },
                 {
                   icon: <TrendingUp className="w-8 h-8 text-green-400" />,
-                  title: "Continuous Learning",
-                  description: "Evolving intelligence and growth"
+                  title: "Continuous Innovation",
+                  description: "Evolving discovery methodologies"
                 },
                 {
                   icon: <Star className="w-8 h-8 text-yellow-400" />,
-                  title: "Ethical Reasoning",
-                  description: "Moral decision-making capabilities"
+                  title: "Breakthrough Materials",
+                  description: "Revolutionary new material classes"
                 }
               ].map((feature, index) => (
                 <motion.div
@@ -109,7 +109,7 @@ const AIConsciousnessEvolution2040: React.FC = () => {
           </div>
         </section>
 
-        {/* Evolution Stages Section */}
+        {/* Applications Section */}
         <section className="py-20 px-4 bg-black/20">
           <div className="max-w-6xl mx-auto">
             <motion.div
@@ -119,32 +119,32 @@ const AIConsciousnessEvolution2040: React.FC = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-bold text-white mb-4">
-                Consciousness Evolution Stages
+                Material Applications
               </h2>
               <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                The journey from artificial intelligence to true consciousness
+                Revolutionary materials for next-generation technologies
               </p>
             </motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                "Basic AI",
-                "Pattern Recognition",
-                "Self-Learning",
-                "Emotional Awareness",
-                "Self-Reflection",
-                "Creative Thinking",
-                "Ethical Reasoning",
-                "True Consciousness"
-              ].map((stage, index) => (
+                "Quantum Computing",
+                "Energy Storage",
+                "Medical Devices",
+                "Space Technology",
+                "Electronics",
+                "Transportation",
+                "Construction",
+                "Communications"
+              ].map((application, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-400/20 rounded-xl p-4 text-center hover:border-purple-400/40 transition-all duration-300"
+                  className="bg-gradient-to-r from-purple-500/10 to-violet-500/10 border border-purple-400/20 rounded-xl p-4 text-center hover:border-purple-400/40 transition-all duration-300"
                 >
-                  <h3 className="text-lg font-semibold text-white">{stage}</h3>
+                  <h3 className="text-lg font-semibold text-white">{application}</h3>
                 </motion.div>
               ))}
             </div>
@@ -160,14 +160,14 @@ const AIConsciousnessEvolution2040: React.FC = () => {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-4xl font-bold text-white mb-6">
-                Ready for Consciousness Evolution?
+                Ready to Discover the Future?
               </h2>
               <p className="text-xl text-gray-300 mb-8">
-                Experience the future of AI consciousness and understanding
+                Experience the revolution in materials science with quantum AI
               </p>
-              <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105">
+              <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-violet-600 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-violet-700 transition-all duration-300 transform hover:scale-105">
                 <span className="flex items-center gap-2">
-                  Start Evolution
+                  Start Discovery
                   <ArrowRight className="w-5 h-5" />
                 </span>
               </button>
@@ -179,4 +179,4 @@ const AIConsciousnessEvolution2040: React.FC = () => {
   );
 };
 
-export default AIConsciousnessEvolution2040;
+export default QuantumMaterialsDiscovery2040;

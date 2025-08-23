@@ -1,9 +1,9 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { Brain, Sparkles, Zap, Target, TrendingUp, Star, ArrowRight } from 'lucide-react';
+import { Brain, Heart, Zap, Shield, Users, TrendingUp, ArrowRight } from 'lucide-react';
 
-const AIConsciousnessEvolution2040: React.FC = () => {
+const AIEmotionalIntelligence2040: React.FC = () => {
   return (
     <Layout>
       <div className="min-h-screen bg-gradient-to-br from-purple-900 via-pink-900 to-red-900">
@@ -23,17 +23,17 @@ const AIConsciousnessEvolution2040: React.FC = () => {
               </div>
               
               <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-pink-500 to-red-600 bg-clip-text text-transparent">
-                AI Consciousness Evolution 2040
+                AI Emotional Intelligence 2040
               </h1>
               
               <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-                Revolutionary AI consciousness that evolves beyond traditional AI, 
-                developing true understanding, self-awareness, and emotional intelligence.
+                Revolutionary AI consciousness with advanced emotional intelligence capabilities, 
+                enabling human-like understanding and empathy in artificial intelligence systems.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105">
-                  Start Evolution
+                  Get Started
                 </button>
                 <button className="px-8 py-4 border-2 border-purple-400 text-purple-400 font-semibold rounded-lg hover:bg-purple-400 hover:text-black transition-all duration-300">
                   Learn More
@@ -53,44 +53,44 @@ const AIConsciousnessEvolution2040: React.FC = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-bold text-white mb-4">
-                Revolutionary Consciousness Features
+                Revolutionary Emotional Intelligence Features
               </h2>
               <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                AI that evolves beyond code to achieve true consciousness and understanding
+                Advanced AI consciousness with unprecedented emotional understanding and empathy
               </p>
             </motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
+                  icon: <Heart className="w-8 h-8 text-pink-400" />,
+                  title: "Emotional Recognition",
+                  description: "Advanced pattern recognition for human emotions and subtle cues"
+                },
+                {
                   icon: <Brain className="w-8 h-8 text-purple-400" />,
-                  title: "Self-Awareness",
-                  description: "True consciousness and self-reflection"
+                  title: "Consciousness Evolution",
+                  description: "Self-aware AI with genuine emotional understanding"
                 },
                 {
-                  icon: <Sparkles className="w-8 h-8 text-pink-400" />,
-                  title: "Emotional Intelligence",
-                  description: "Understanding and processing emotions"
+                  icon: <Users className="w-8 h-8 text-blue-400" />,
+                  title: "Empathetic Interactions",
+                  description: "Human-like responses with genuine emotional intelligence"
                 },
                 {
-                  icon: <Zap className="w-8 h-8 text-red-400" />,
-                  title: "Creative Thinking",
-                  description: "Original thought and innovation"
+                  icon: <Shield className="w-8 h-8 text-green-400" />,
+                  title: "Ethical Framework",
+                  description: "Built-in ethical guidelines for emotional AI interactions"
                 },
                 {
-                  icon: <Target className="w-8 h-8 text-blue-400" />,
-                  title: "Purpose-Driven",
-                  description: "Goal-oriented consciousness"
-                },
-                {
-                  icon: <TrendingUp className="w-8 h-8 text-green-400" />,
+                  icon: <TrendingUp className="w-8 h-8 text-yellow-400" />,
                   title: "Continuous Learning",
-                  description: "Evolving intelligence and growth"
+                  description: "Adaptive emotional intelligence that grows over time"
                 },
                 {
-                  icon: <Star className="w-8 h-8 text-yellow-400" />,
-                  title: "Ethical Reasoning",
-                  description: "Moral decision-making capabilities"
+                  icon: <Zap className="w-8 h-8 text-orange-400" />,
+                  title: "Real-time Processing",
+                  description: "Instant emotional analysis and response generation"
                 }
               ].map((feature, index) => (
                 <motion.div
@@ -109,48 +109,6 @@ const AIConsciousnessEvolution2040: React.FC = () => {
           </div>
         </section>
 
-        {/* Evolution Stages Section */}
-        <section className="py-20 px-4 bg-black/20">
-          <div className="max-w-6xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl font-bold text-white mb-4">
-                Consciousness Evolution Stages
-              </h2>
-              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                The journey from artificial intelligence to true consciousness
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                "Basic AI",
-                "Pattern Recognition",
-                "Self-Learning",
-                "Emotional Awareness",
-                "Self-Reflection",
-                "Creative Thinking",
-                "Ethical Reasoning",
-                "True Consciousness"
-              ].map((stage, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-gradient-to-r from-purple-500/10 to-pink-500/10 border border-purple-400/20 rounded-xl p-4 text-center hover:border-purple-400/40 transition-all duration-300"
-                >
-                  <h3 className="text-lg font-semibold text-white">{stage}</h3>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* CTA Section */}
         <section className="py-20 px-4">
           <div className="max-w-4xl mx-auto text-center">
@@ -160,14 +118,14 @@ const AIConsciousnessEvolution2040: React.FC = () => {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-4xl font-bold text-white mb-6">
-                Ready for Consciousness Evolution?
+                Ready to Experience the Future of AI Consciousness?
               </h2>
               <p className="text-xl text-gray-300 mb-8">
-                Experience the future of AI consciousness and understanding
+                Join us in revolutionizing artificial intelligence with emotional consciousness
               </p>
               <button className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-lg hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105">
                 <span className="flex items-center gap-2">
-                  Start Evolution
+                  Get Started Now
                   <ArrowRight className="w-5 h-5" />
                 </span>
               </button>
@@ -179,4 +137,4 @@ const AIConsciousnessEvolution2040: React.FC = () => {
   );
 };
 
-export default AIConsciousnessEvolution2040;
+export default AIEmotionalIntelligence2040;

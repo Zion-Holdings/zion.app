@@ -55,31 +55,50 @@ import { industryRealServices } from '../data/industry-real-services';
 
 // Helper function to get service category
 const getServiceCategory = (service: any) => {
-  if (service.category) return service.category;
-  if (service.type) return service.type;
-  return 'Other';
+  try {
+    if (service.category) return String(service.category);
+    if (service.type) return String(service.type);
+    return 'Other';
+  } catch (error) {
+    return 'Other';
+  }
 };
 
 // Helper function to get service pricing
 const getServicePricing = (service: any) => {
-  if (service.pricing?.starter) return service.pricing.starter;
-  if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
-  if (service.price?.monthly) return `$${service.price.monthly}/month`;
-  return 'Contact for pricing';
+  try {
+    if (service.pricing?.starter) return String(service.pricing.starter);
+    if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
+    if (service.price?.monthly) return `$${service.price.monthly}/month`;
+    if (typeof service.pricing === 'object') return 'Contact for pricing';
+    if (typeof service.price === 'object') return 'Contact for pricing';
+    return 'Contact for pricing';
+  } catch (error) {
+    console.warn('Error getting service pricing:', error, service);
+    return 'Contact for pricing';
+  }
 };
 
 // Helper function to get service features
 const getServiceFeatures = (service: any) => {
-  if (service.features) return service.features;
-  if (service.keyFeatures) return service.keyFeatures;
-  return [];
+  try {
+    if (service.features) return Array.isArray(service.features) ? service.features : [];
+    if (service.keyFeatures) return Array.isArray(service.keyFeatures) ? service.keyFeatures : [];
+    return [];
+  } catch (error) {
+    return [];
+  }
 };
 
 // Helper function to get service description
 const getServiceDescription = (service: any) => {
-  if (service.description) return service.description;
-  if (service.tagline) return service.tagline;
-  return 'No description available';
+  try {
+    if (service.description) return String(service.description);
+    if (service.tagline) return String(service.tagline);
+    return 'No description available';
+  } catch (error) {
+    return 'No description available';
+  }
 };
 
 // Create unified services array
@@ -250,12 +269,20 @@ export default function Services() {
     switch (sortBy) {
       case 'name':
         return a.name.localeCompare(b.name);
-      case 'price-low':
-        return (parseInt(getServicePricing(a).replace(/[^0-9]/g, '')) || 0) - 
-               (parseInt(getServicePricing(b).replace(/[^0-9]/g, '')) || 0);
-      case 'price-high':
-        return (parseInt(getServicePricing(b).replace(/[^0-9]/g, '')) || 0) - 
-               (parseInt(getServicePricing(a).replace(/[^0-9]/g, '')) || 0);
+              case 'price-low':
+          try {
+            return (parseInt(getServicePricing(a).replace(/[^0-9]/g, '')) || 0) -
+                   (parseInt(getServicePricing(b).replace(/[^0-9]/g, '')) || 0);
+          } catch (error) {
+            return 0;
+          }
+        case 'price-high':
+          try {
+            return (parseInt(getServicePricing(b).replace(/[^0-9]/g, '')) || 0) -
+                   (parseInt(getServicePricing(a).replace(/[^0-9]/g, '')) || 0);
+          } catch (error) {
+            return 0;
+          }
       case 'newest':
         return new Date((b as any).launchDate || '2020-01-01').getTime() - 
                new Date((a as any).launchDate || '2020-01-01').getTime();
@@ -509,7 +536,7 @@ export default function Services() {
                       {/* Service Header */}
                       <div className="mb-6">
                         <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
-                          {service.name}
+                          {String(service.name || 'Unnamed Service')}
                         </h3>
                         <p className="text-gray-300 text-sm leading-relaxed">
                           {getServiceDescription(service)}
