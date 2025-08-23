@@ -1,1 +1,1 @@
-export default function ResetPassword() { return <div>Reset password…</div>; }
+export default function ResetPasswordPage() { return <div className="py-12">Reset password coming soon.</div>; }

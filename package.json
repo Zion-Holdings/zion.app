@@ -719,8 +719,9 @@
     "conflicts:cron:start": "bash automation/merge-conflict-cron.sh start",
     "conflicts:cron:stop": "bash automation/merge-conflict-cron.sh stop",
     "conflicts:cron:status": "bash automation/merge-conflict-cron.sh status",
-    "cloud:auto": "node scripts/cloud-autonomous-run.mjs",
-    "cloud:auto:cron": "node -e \"setInterval(()=>{require('./scripts/cloud-autonomous-run.mjs')}, 1000*60*30)\""
+    "auto:intel": "node automation/auto-market-intel.cjs",
+    "auto:talent": "node automation/auto-talent-highlights.cjs",
+    "auto:all": "npm run auto:intel && npm run auto:talent"
   },
 =======
           "postautomation": "npm run automation:git-sync",

@@ -1,3 +1,1 @@
-export default function ProductsPage() {
-  return <div className="py-10">Products</div>;
-}
+export default function ProductsIndexPage() { return <div className="py-12">Products directory coming soon.</div>; }

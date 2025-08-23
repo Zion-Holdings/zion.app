@@ -1,3 +1,1 @@
-export default function ChatContentPage() {
-  return <div className="py-10">Chat Content</div>;
-}
+export default function InnovationEnterpriseTechChat() { return <div className="py-12">Innovation in enterprise technology.</div>; }
