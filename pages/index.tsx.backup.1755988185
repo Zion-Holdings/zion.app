@@ -1,6 +1,10 @@
 import React from 'react';
+<<<<<<< HEAD
+import Homepage2047 from '../components/Homepage2047';
+=======
 import Head from 'next/head';
 import Homepage2044 from '../components/Homepage2044';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-d874
 import ErrorBoundary from '../components/ErrorBoundary';
 import SEOHead from '../components/SEOHead';
 
@@ -119,6 +123,11 @@ const testimonials = [
 export default function Home() {
   return (
     <>
+<<<<<<< HEAD
+      <SEOHead />
+      <ErrorBoundary>
+        <EnhancedHomepage2025 />
+=======
       <Head>
         <title>Zion Tech Group - Revolutionary 2044 Technology Solutions | AI Consciousness, Quantum Computing</title>
         <meta name="description" content="Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions. Transform your business with cutting-edge 2044 technology." />
@@ -209,6 +218,7 @@ export default function Home() {
       
       <ErrorBoundary>
         <Homepage2044 />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-d874
       </ErrorBoundary>
     </>
   );
