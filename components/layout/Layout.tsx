@@ -7,6 +7,7 @@ import PerformanceMonitor from '../PerformanceMonitor';
 import AccessibilityEnhancer from '../AccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
 import EnhancedErrorBoundary from '../EnhancedErrorBoundary';
+import ThemeToggle from '../ThemeToggle';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -16,6 +17,7 @@ export default function Layout({ children }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isOnline, setIsOnline] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
 
   useEffect(() => {
     // Handle online/offline status
@@ -24,6 +26,14 @@ export default function Layout({ children }: LayoutProps) {
 
     window.addEventListener('online', handleOnline);
     window.addEventListener('offline', handleOffline);
+
+    // Check for saved theme preference or default to dark
+    const savedTheme = localStorage.getItem('theme') as 'dark' | 'light' | null;
+    if (savedTheme) {
+      setTheme(savedTheme);
+    } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+      setTheme('light');
+    }
 
     // Simulate initial loading
     const timer = setTimeout(() => {
@@ -36,6 +46,17 @@ export default function Layout({ children }: LayoutProps) {
       clearTimeout(timer);
     };
   }, []);
+
+  // Update theme in localStorage and document
+  useEffect(() => {
+    localStorage.setItem('theme', theme);
+    document.documentElement.classList.toggle('light', theme === 'light');
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  };
 
   // Show offline indicator
   if (!isOnline) {
@@ -56,7 +77,9 @@ export default function Layout({ children }: LayoutProps) {
 
   return (
     <EnhancedErrorBoundary>
-      <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
+      <div className={`min-h-screen relative overflow-x-hidden transition-colors duration-300 ${
+        theme === 'dark' ? 'bg-black text-white' : 'bg-gray-50 text-gray-900'
+      }`}>
         {/* Skip to content link for accessibility */}
         <a 
           href="#main" 
@@ -72,6 +95,11 @@ export default function Layout({ children }: LayoutProps) {
             : 'bg-red-500 text-white'
         }`}>
           {isOnline ? 'Online' : 'Offline'}
+        </div>
+
+        {/* Theme Toggle */}
+        <div className="fixed top-4 left-4 z-50">
+          <ThemeToggle theme={theme} onToggle={toggleTheme} />
         </div>
         
         {/* Futuristic Background */}
@@ -98,8 +126,10 @@ export default function Layout({ children }: LayoutProps) {
               {isLoading ? (
                 <div className="min-h-screen flex items-center justify-center">
                   <div className="text-center space-y-4">
-                    <div className="w-16 h-16 mx-auto border-4 border-cyan-500 border-t-transparent rounded-full animate-spin"></div>
-                    <p className="text-white/70">Loading Zion Tech Group...</p>
+                    <div className="w-16 h-16 mx-auto bg-cyan-500 rounded-full flex items-center justify-center">
+                      <div className="w-8 h-8 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
+                    </div>
+                    <p className="text-lg">Loading Zion Tech Group...</p>
                   </div>
                 </div>
               ) : (
@@ -111,45 +141,15 @@ export default function Layout({ children }: LayoutProps) {
           {/* Footer */}
           <UltraFuturisticFooter2025 />
         </div>
-
-        {/* Accessibility and Performance Tools */}
-        <AccessibilityEnhancer />
+        
+        {/* Performance Monitor */}
         <PerformanceMonitor />
+        
+        {/* Accessibility Enhancer */}
+        <AccessibilityEnhancer />
         
         {/* Cookie Consent Banner */}
         <CookieConsentBanner />
-
-        {/* PWA Install Prompt */}
-        <div id="pwa-install-prompt" className="hidden fixed bottom-4 left-4 right-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white p-4 rounded-xl shadow-lg z-50">
-          <div className="flex items-center justify-between">
-            <div>
-              <h3 className="font-semibold">Install Zion Tech Group</h3>
-              <p className="text-sm opacity-90">Get the app for a better experience</p>
-            </div>
-            <div className="flex gap-2">
-              <button 
-                id="pwa-install-accept"
-                className="px-4 py-2 bg-white text-cyan-600 rounded-lg font-medium hover:bg-gray-100 transition-colors"
-              >
-                Install
-              </button>
-              <button 
-                id="pwa-install-dismiss"
-                className="px-4 py-2 border border-white/30 text-white rounded-lg font-medium hover:bg-white/10 transition-colors"
-              >
-                Dismiss
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Performance Metrics Display (Development Only) */}
-        {process.env.NODE_ENV === 'development' && (
-          <div className="fixed bottom-4 right-4 bg-black/80 text-white p-3 rounded-lg text-xs font-mono z-50">
-            <div>FPS: <span id="fps-counter">--</span></div>
-            <div>Memory: <span id="memory-usage">--</span></div>
-          </div>
-        )}
       </div>
     </EnhancedErrorBoundary>
   );
