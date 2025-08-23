@@ -1,30 +1,42 @@
 import React, { useState } from 'react';
-import Layout from '../components/layout/Layout';
-import UltraFuturisticServiceCard2037 from '../components/ui/UltraFuturisticServiceCard2037';
+import Layout from './layout/Layout';
+import UltraFuturisticServiceCard2037 from './ui/UltraFuturisticServiceCard2037';
 import { motion } from 'framer-motion';
 import { 
-  Brain, Shield, Zap, Target, Atom, Star, 
-  Globe, Cpu, Lock, Cloud,
-  Search, Filter
+  Brain, Shield, Zap, Atom, Globe, Cpu
 } from 'lucide-react';
 import { real2036Q1Additions } from '../data/real-2036-q1-additions';
 import { real2036Q2Additions } from '../data/real-2036-q2-additions';
+import { innovative2027Q4Additions } from '../data/innovative-2027-q4-additions';
+import { revolutionary2028AIServices } from '../data/revolutionary-2028-ai-services';
+import { nextGenITInfrastructure2028 } from '../data/next-gen-it-infrastructure-2028';
 
-const Ultimate2037FuturisticServicesShowcase: React.FC = () => {
+const Homepage2037: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState('');
-  const [sortBy, setSortBy] = useState<'name' | 'price' | 'rating' | 'popularity'>('popularity');
 
-  const allServices = [...real2036Q1Additions, ...real2036Q2Additions];
+
+  const allServices = [
+    ...real2036Q1Additions, 
+    ...real2036Q2Additions,
+    ...innovative2027Q4Additions,
+    ...revolutionary2028AIServices,
+    ...nextGenITInfrastructure2028
+  ];
   
   const categories = [
-    { id: 'all', name: 'All Services', icon: <Globe className="w-5 h-5" />, count: allServices.length, color: 'from-cyan-500 to-blue-500' },
-    { id: 'ai', name: 'AI & ML', icon: <Brain className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('AI')).length, color: 'from-purple-500 to-pink-500' },
-    { id: 'quantum', name: 'Quantum', icon: <Atom className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('Quantum')).length, color: 'from-indigo-500 to-purple-500' },
-    { id: 'automation', name: 'Automation', icon: <Zap className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('Automation')).length, color: 'from-blue-500 to-cyan-500' },
-    { id: 'cybersecurity', name: 'Security', icon: <Shield className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('Security') || s.category.includes('Cybersecurity')).length, color: 'from-red-500 to-orange-500' },
-    { id: 'edge', name: 'Edge AI', icon: <Cpu className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('Edge')).length, color: 'from-green-500 to-emerald-500' },
-    { id: 'neuromorphic', name: 'Neuromorphic',         icon: <Brain className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('Neuromorphic')).length, color: 'from-pink-500 to-rose-500' }
+    { id: 'all', name: 'All Services', icon: <Globe className="w-5 h-5" />, count: allServices.length },
+    { id: 'ai', name: 'AI & ML', icon: <Brain className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('AI')).length },
+    { id: 'quantum', name: 'Quantum', icon: <Atom className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('Quantum')).length },
+    { id: 'automation', name: 'Automation', icon: <Zap className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('Automation')).length },
+    { id: 'cybersecurity', name: 'Security', icon: <Shield className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('Security') || s.category.includes('Cybersecurity')).length },
+    { id: 'edge', name: 'Edge AI', icon: <Cpu className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('Edge')).length },
+    { id: 'neuromorphic', name: 'Neuromorphic', icon: <Brain className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('Neuromorphic')).length },
+    { id: 'blockchain', name: 'Blockchain', icon: <Shield className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('Blockchain')).length },
+    { id: 'iot', name: 'IoT', icon: <Cpu className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('IoT')).length },
+    { id: 'metaverse', name: 'Metaverse', icon: <Globe className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('Metaverse')).length },
+    { id: 'healthcare', name: 'Healthcare', icon: <Brain className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('Healthcare')).length },
+    { id: 'energy', name: 'Energy', icon: <Zap className="w-5 h-5" />, count: allServices.filter(s => s.category.includes('Energy')).length }
   ];
 
   const filteredServices = allServices.filter(service => {
@@ -40,33 +52,21 @@ const Ultimate2037FuturisticServicesShowcase: React.FC = () => {
     return matchesCategory && matchesSearch;
   });
 
-  // Sort services
-  const sortedServices = [...filteredServices].sort((a, b) => {
-    switch (sortBy) {
-      case 'name':
-        return a.name.localeCompare(b.name);
-      case 'price':
-        return parseFloat(a.price.replace('$', '').replace(',', '')) - parseFloat(b.price.replace('$', '').replace(',', ''));
-      case 'rating':
-        return b.rating - a.rating;
-      case 'popularity':
-        return (b.popular ? 1 : 0) - (a.popular ? 1 : 0) || b.customers - a.customers;
-      default:
-        return 0;
-    }
-  });
-
   const getServiceVariant = (service: { category: string }) => {
     if (service.category.includes('Quantum')) return 'quantum';
     if (service.category.includes('Automation')) return 'automation';
     if (service.category.includes('Security') || service.category.includes('Cybersecurity')) return 'cybersecurity';
     if (service.category.includes('Edge')) return 'edge';
     if (service.category.includes('Neuromorphic')) return 'neuromorphic';
+    if (service.category.includes('Blockchain')) return 'blockchain-futuristic';
+    if (service.category.includes('IoT')) return 'iot-futuristic';
+    if (service.category.includes('Metaverse')) return 'metaverse-futuristic';
+    if (service.category.includes('Healthcare')) return 'ai-futuristic';
+    if (service.category.includes('Energy')) return 'iot-futuristic';
     return 'ai';
   };
 
   const featuredServices = allServices.filter(service => service.popular).slice(0, 6);
-  const latestServices = allServices.sort((a, b) => new Date(b.launchDate).getTime() - new Date(a.launchDate).getTime()).slice(0, 6);
 
   return (
     <Layout>
@@ -99,33 +99,23 @@ const Ultimate2037FuturisticServicesShowcase: React.FC = () => {
           </div>
 
           <div className="text-center max-w-6xl mx-auto relative z-10">
-            <motion.div
-              className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-full text-cyan-400 text-sm font-medium mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="w-4 h-4" />
-              <span>2027 Edition - Cutting Edge Technology</span>
-            </motion.div>
-
             <motion.h1 
               className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: "easeOut" }}
             >
-              Ultimate Services Showcase
+              Zion Tech Group
             </motion.h1>
             
             <motion.p 
-              className="text-2xl md:text-3xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed"
+              className="text-2xl md:text-3xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
             >
-              Discover our comprehensive portfolio of {allServices.length}+ cutting-edge micro SAAS services, 
-              from quantum computing and neuromorphic AI to autonomous automation and edge intelligence
+              Pioneering the future of technology with cutting-edge quantum computing, 
+              AI innovations, and revolutionary micro SAAS solutions that drive business transformation
             </motion.p>
             
             <motion.div 
@@ -134,22 +124,22 @@ const Ultimate2037FuturisticServicesShowcase: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
             >
-              <motion.button 
-                className="px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-cyan-500/25"
+              <motion.a
+                href="/comprehensive-services-showcase-2028"
+                className="px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-cyan-500/25 inline-block"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => document.getElementById('services-grid')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Explore All Services
-              </motion.button>
-              <motion.button 
-                className="px-10 py-5 border-2 border-purple-400 text-purple-400 font-semibold rounded-xl hover:bg-purple-400 hover:text-black transition-all duration-300 transform hover:scale-105 backdrop-blur-sm"
+                Explore Services
+              </motion.a>
+              <motion.a
+                href="mailto:kleber@ziontechgroup.com?subject=Service Inquiry"
+                className="px-10 py-5 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 backdrop-blur-sm inline-block"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => window.open('mailto:kleber@ziontechgroup.com?subject=Services Showcase Inquiry', '_blank')}
               >
-                Contact Sales
-              </motion.button>
+                Contact Us
+              </motion.a>
             </motion.div>
 
             {/* Stats Row */}
@@ -164,16 +154,16 @@ const Ultimate2037FuturisticServicesShowcase: React.FC = () => {
                 <div className="text-gray-400">Services</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-white mb-2">7</div>
-                <div className="text-gray-400">Categories</div>
+                <div className="text-3xl md:text-4xl font-bold text-white mb-2">2,500+</div>
+                <div className="text-gray-400">Customers</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-white mb-2">2027</div>
-                <div className="text-gray-400">Latest Tech</div>
+                <div className="text-3xl md:text-4xl font-bold text-white mb-2">99.9%</div>
+                <div className="text-gray-400">Uptime</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-white mb-2">∞</div>
-                <div className="text-gray-400">Possibilities</div>
+                <div className="text-3xl md:text-4xl font-bold text-white mb-2">24/7</div>
+                <div className="text-gray-400">Support</div>
               </div>
             </motion.div>
           </div>
@@ -193,7 +183,7 @@ const Ultimate2037FuturisticServicesShowcase: React.FC = () => {
                 Featured Services
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our most popular and innovative solutions that are transforming industries worldwide
+                Discover our most popular and innovative solutions that are transforming industries worldwide
               </p>
             </motion.div>
 
@@ -216,7 +206,7 @@ const Ultimate2037FuturisticServicesShowcase: React.FC = () => {
           </div>
         </section>
 
-        {/* Latest Services Section */}
+        {/* Services Showcase Section */}
         <section className="py-20 px-4 bg-gradient-to-b from-transparent to-black/20">
           <div className="max-w-7xl mx-auto">
             <motion.div 
@@ -227,43 +217,6 @@ const Ultimate2037FuturisticServicesShowcase: React.FC = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
-                Latest Releases
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Fresh off the development line - our newest cutting-edge solutions
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {latestServices.map((service, index) => (
-                <motion.div
-                  key={service.id}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <UltraFuturisticServiceCard2037
-                    service={service}
-                    variant={getServiceVariant(service)}
-                  />
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Complete Services Portfolio */}
-        <section id="services-grid" className="py-20 px-4">
-          <div className="max-w-7xl mx-auto">
-            <motion.div 
-              className="text-center mb-16"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">
                 Complete Service Portfolio
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -271,32 +224,28 @@ const Ultimate2037FuturisticServicesShowcase: React.FC = () => {
               </p>
             </motion.div>
 
-            {/* Search, Filter, and Sort */}
-            <div className="mb-12 space-y-6">
-              {/* Search Bar */}
-              <div className="flex justify-center">
-                <div className="relative max-w-md w-full">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+            {/* Search and Filter */}
+            <div className="mb-12">
+              <div className="flex flex-col md:flex-row gap-4 items-center justify-center">
+                <div className="relative flex-1 max-w-md">
+                  <div className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                   <input
                     type="text"
-                    placeholder="Search services by name, description, or features..."
+                    placeholder="Search services..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     className="w-full pl-10 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent backdrop-blur-sm"
                   />
                 </div>
-              </div>
-              
-              {/* Category Filters */}
-              <div className="flex justify-center">
-                <div className="flex gap-2 overflow-x-auto pb-2 max-w-full">
+                
+                <div className="flex gap-2 overflow-x-auto pb-2">
                   {categories.map((category) => (
                     <motion.button
                       key={category.id}
                       onClick={() => setSelectedCategory(category.id)}
                       className={`flex items-center space-x-2 px-4 py-2 rounded-lg border transition-all duration-300 whitespace-nowrap ${
                         selectedCategory === category.id
-                          ? `bg-gradient-to-r ${category.color} border-transparent text-black`
+                          ? 'bg-cyan-500 border-cyan-500 text-black'
                           : 'bg-white/10 border-white/20 text-white hover:bg-white/20'
                       }`}
                       whileHover={{ scale: 1.05 }}
@@ -311,48 +260,11 @@ const Ultimate2037FuturisticServicesShowcase: React.FC = () => {
                   ))}
                 </div>
               </div>
-
-              {/* Sort Options */}
-              <div className="flex justify-center">
-                <div className="flex items-center space-x-4">
-                  <span className="text-gray-300">Sort by:</span>
-                  <div className="flex gap-2">
-                    {[
-                      { key: 'popularity', label: 'Popularity', icon: <Star className="w-4 h-4" /> },
-                      { key: 'rating', label: 'Rating', icon: <div className="w-4 h-4" /> },
-                      { key: 'price', label: 'Price', icon: <div className="w-4 h-4" /> },
-                      { key: 'name', label: 'Name', icon: <Globe className="w-4 h-4" /> }
-                    ].map((option) => (
-                      <motion.button
-                        key={option.key}
-                        onClick={() => setSortBy(option.key as 'name' | 'price' | 'rating' | 'popularity')}
-                        className={`flex items-center space-x-2 px-3 py-2 rounded-lg border transition-all duration-300 ${
-                          sortBy === option.key
-                            ? 'bg-cyan-500 border-cyan-500 text-black'
-                            : 'bg-white/10 border-white/20 text-white hover:bg-white/20'
-                        }`}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        {option.icon}
-                        <span className="text-sm">{option.label}</span>
-                      </motion.button>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Results Count */}
-            <div className="text-center mb-8">
-              <p className="text-gray-300">
-                Showing <span className="text-white font-semibold">{filteredServices.length}</span> of <span className="text-white font-semibold">{allServices.length}</span> services
-              </p>
             </div>
 
             {/* Services Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {sortedServices.map((service, index) => (
+              {filteredServices.map((service, index) => (
                 <motion.div
                   key={service.id}
                   initial={{ opacity: 0, y: 50 }}
@@ -398,22 +310,22 @@ const Ultimate2037FuturisticServicesShowcase: React.FC = () => {
                 Join hundreds of companies already leveraging our cutting-edge technology solutions
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <motion.button 
-                  className="px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+                <motion.a
+                  href="mailto:kleber@ziontechgroup.com?subject=Get Started Inquiry"
+                  className="px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 inline-block"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => window.open('mailto:kleber@ziontechgroup.com?subject=Services Showcase - Get Started', '_blank')}
                 >
                   Get Started Today
-                </motion.button>
-                <motion.button 
-                  className="px-10 py-5 border-2 border-purple-400 text-purple-400 font-semibold rounded-xl hover:bg-purple-400 hover:text-black transition-all duration-300 transform hover:scale-105"
+                </motion.a>
+                <motion.a
+                  href="tel:+13024640950"
+                  className="px-10 py-5 border-2 border-purple-400 text-purple-400 font-semibold rounded-xl hover:bg-purple-400 hover:text-black transition-all duration-300 transform hover:scale-105 inline-block"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  onClick={() => window.open('tel:+13024640950', '_blank')}
                 >
-                  Call +1 302 464 0950
-                </motion.button>
+                  Call Us Now
+                </motion.a>
               </div>
             </motion.div>
           </div>
@@ -423,4 +335,4 @@ const Ultimate2037FuturisticServicesShowcase: React.FC = () => {
   );
 };
 
-export default Ultimate2037FuturisticServicesShowcase;
+export default Homepage2037;

@@ -7,579 +7,294 @@ import {
   Settings
 } from 'lucide-react';
 
-interface SEOIssue {
-  id: string;
-  type: 'error' | 'warning' | 'info';
-  category: 'meta' | 'content' | 'performance' | 'accessibility' | 'technical';
-  message: string;
-  element?: HTMLElement;
-  severity: 'low' | 'medium' | 'high';
-  fix?: string;
-  impact: number; // 0-100
+interface SEOOptimizerProps {
+  title?: string;
+  description?: string;
+  keywords?: string;
+  image?: string;
+  url?: string;
+  type?: string;
+  author?: string;
+  publishedTime?: string;
+  modifiedTime?: string;
+  section?: string;
+  tags?: string[];
 }
 
-interface SEOMetrics {
-  title: {
-    length: number;
-    hasKeywords: boolean;
-    hasBrand: boolean;
-    score: number;
-  };
-  description: {
-    length: number;
-    hasKeywords: boolean;
-    hasCallToAction: boolean;
-    score: number;
-  };
-  headings: {
-    h1Count: number;
-    h2Count: number;
-    h3Count: number;
-    hasKeywords: boolean;
-    score: number;
-  };
-  images: {
-    total: number;
-    withAlt: number;
-    optimized: number;
-    score: number;
-  };
-  links: {
-    internal: number;
-    external: number;
-    broken: number;
-    score: number;
-  };
-  content: {
-    wordCount: number;
-    keywordDensity: number;
-    readability: number;
-    score: number;
-  };
-  overall: number;
-}
+const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
+  title = 'Zion Tech Group - Pioneering Future Technology Solutions',
+  description = 'Leading technology company specializing in AI, quantum computing, space technology, and enterprise IT solutions. Transform your business with cutting-edge innovation.',
+  keywords = 'AI, artificial intelligence, quantum computing, space technology, enterprise IT, machine learning, automation, cybersecurity, cloud computing, digital transformation',
+  image = '/og-image.jpg',
+  url = 'https://ziontechgroup.com',
+  type = 'website',
+  author = 'Zion Tech Group',
+  publishedTime,
+  modifiedTime,
+  section = 'Technology',
+  tags = ['AI', 'Quantum Computing', 'Space Technology', 'Enterprise IT']
+}) => {
+  const siteName = 'Zion Tech Group';
+  const twitterHandle = '@ziontechgroup';
+  const siteUrl = 'https://ziontechgroup.com';
 
-const SEOOptimizer: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(false);
-  const [isAnalyzing, setIsAnalyzing] = useState(false);
-  const [metrics, setMetrics] = useState<SEOMetrics | null>(null);
-  const [issues, setIssues] = useState<SEOIssue[]>([]);
-
-  const [currentUrl, setCurrentUrl] = useState<string>('');
-  const [analysisHistory, setAnalysisHistory] = useState<{ url: string; score: number; date: Date }[]>([]);
-
-  // Common SEO keywords for tech companies
-  const defaultKeywords = [
-    'technology', 'innovation', 'digital transformation', 'AI', 'machine learning',
-    'cloud computing', 'cybersecurity', 'software development', 'IT services',
-    'digital solutions', 'enterprise software', 'web development', 'mobile apps'
-  ];
-
-  // Load analysis history from localStorage
-  useEffect(() => {
-    const saved = localStorage.getItem('seo-analysis-history');
-    if (saved) {
-      try {
-        const parsed = JSON.parse(saved);
-        setAnalysisHistory(parsed.map((item: { url: string; score: number; date: string }) => ({
-          ...item,
-          date: new Date(item.date)
-        })));
-      } catch {
-        // Silently handle parsing errors
-      }
-    }
-  }, []);
-
-  // Save analysis history to localStorage
-  useEffect(() => {
-    if (analysisHistory.length > 0) {
-      localStorage.setItem('seo-analysis-history', JSON.stringify(analysisHistory));
-    }
-  }, [analysisHistory]);
-
-  // Get current page URL
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setCurrentUrl(window.location.href);
-    }
-  }, []);
-
-  // Analyze current page
-  const analyzePage = useCallback(async () => {
-    if (isAnalyzing) return;
-    
-    setIsAnalyzing(true);
-    
-    try {
-      // Simulate analysis delay
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      const newMetrics: SEOMetrics = {
-        title: {
-          length: document.title.length,
-          hasKeywords: defaultKeywords.some(keyword => 
-            document.title.toLowerCase().includes(keyword.toLowerCase())
-          ),
-          hasBrand: document.title.toLowerCase().includes('zion'),
-          score: 0
+  // Structured data for organization
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: siteName,
+    url: siteUrl,
+    logo: `${siteUrl}/logo.png`,
+    description: 'Pioneering the future of technology with innovative solutions that drive business transformation',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '364 E Main St STE 1008',
+      addressLocality: 'Middletown',
+      addressRegion: 'DE',
+      postalCode: '19709',
+      addressCountry: 'US'
+    },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+1-302-464-0950',
+      contactType: 'customer service',
+      email: 'kleber@ziontechgroup.com'
+    },
+    sameAs: [
+      'https://twitter.com/ziontechgroup',
+      'https://linkedin.com/company/ziontechgroup',
+      'https://github.com/ziontechgroup',
+      'https://youtube.com/ziontechgroup'
+    ],
+    founder: {
+      '@type': 'Person',
+      name: 'Kleber',
+      jobTitle: 'CEO & Founder',
+      email: 'kleber@ziontechgroup.com'
+    },
+    foundingDate: '2020',
+    industry: 'Technology',
+    numberOfEmployees: '50-200',
+    serviceArea: 'Worldwide',
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Technology Services',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'AI & Machine Learning Solutions',
+            description: 'Advanced artificial intelligence and machine learning services'
+          }
         },
-        description: {
-          length: 0,
-          hasKeywords: false,
-          hasCallToAction: false,
-          score: 0
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Quantum Computing Services',
+            description: 'Next-generation quantum technology solutions'
+          }
         },
-        headings: {
-          h1Count: document.querySelectorAll('h1').length,
-          h2Count: document.querySelectorAll('h2').length,
-          h3Count: document.querySelectorAll('h3').length,
-          hasKeywords: false,
-          score: 0
-        },
-        images: {
-          total: document.querySelectorAll('img').length,
-          withAlt: document.querySelectorAll('img[alt]').length,
-          optimized: 0,
-          score: 0
-        },
-        links: {
-          internal: document.querySelectorAll('a[href^="/"]').length,
-          external: document.querySelectorAll('a[href^="http"]').length,
-          broken: 0,
-          score: 0
-        },
-        content: {
-          wordCount: document.body.textContent?.split(/\s+/).length || 0,
-          keywordDensity: 0,
-          readability: 0,
-          score: 0
-        },
-        overall: 0
-      };
-
-      // Calculate scores
-      newMetrics.title.score = Math.min(100, 
-        (newMetrics.title.length >= 30 && newMetrics.title.length <= 60 ? 40 : 20) +
-        (newMetrics.title.hasKeywords ? 30 : 0) +
-        (newMetrics.title.hasBrand ? 30 : 0)
-      );
-
-      newMetrics.description.score = Math.min(100,
-        (newMetrics.description.length >= 120 && newMetrics.description.length <= 160 ? 40 : 20) +
-        (newMetrics.description.hasKeywords ? 30 : 0) +
-        (newMetrics.description.hasCallToAction ? 30 : 0)
-      );
-
-      newMetrics.headings.score = Math.min(100,
-        (newMetrics.headings.h1Count === 1 ? 30 : 0) +
-        (newMetrics.headings.h2Count >= 2 ? 30 : 0) +
-        (newMetrics.headings.h3Count >= 3 ? 20 : 0) +
-        (newMetrics.headings.hasKeywords ? 20 : 0)
-      );
-
-      newMetrics.images.score = Math.min(100,
-        (newMetrics.images.withAlt / Math.max(newMetrics.images.total, 1)) * 100
-      );
-
-      newMetrics.links.score = Math.min(100,
-        (newMetrics.links.internal / Math.max(newMetrics.links.internal + newMetrics.links.external, 1)) * 100
-      );
-
-      newMetrics.content.score = Math.min(100,
-        (newMetrics.content.wordCount >= 300 ? 40 : newMetrics.content.wordCount / 7.5) +
-        (newMetrics.content.keywordDensity >= 1 && newMetrics.content.keywordDensity <= 3 ? 30 : 0) +
-        (newMetrics.content.readability >= 60 ? 30 : newMetrics.content.readability / 2)
-      );
-
-      // Calculate overall score
-      const scores = [
-        newMetrics.title.score,
-        newMetrics.description.score,
-        newMetrics.headings.score,
-        newMetrics.images.score,
-        newMetrics.links.score,
-        newMetrics.content.score
-      ];
-      newMetrics.overall = Math.round(scores.reduce((a, b) => a + b, 0) / scores.length);
-
-      setMetrics(newMetrics);
-
-      // Add to history
-      setAnalysisHistory(prev => [
-        { url: currentUrl, score: newMetrics.overall, date: new Date() },
-        ...prev.slice(0, 9)
-      ]);
-
-      // Generate issues
-      const newIssues: SEOIssue[] = [];
-      
-      if (newMetrics.title.length < 30) {
-        newIssues.push({
-          id: 'title-too-short',
-          type: 'warning',
-          category: 'meta',
-          message: 'Title is too short. Aim for 30-60 characters.',
-          severity: 'medium',
-          fix: 'Add more descriptive words to your title',
-          impact: 15
-        });
-      }
-
-      if (newMetrics.title.length > 60) {
-        newIssues.push({
-          id: 'title-too-long',
-          type: 'warning',
-          category: 'meta',
-          message: 'Title is too long. Keep it under 60 characters.',
-          severity: 'medium',
-          fix: 'Shorten your title to be more concise',
-          impact: 10
-        });
-      }
-
-      if (newMetrics.headings.h1Count === 0) {
-        newIssues.push({
-          id: 'no-h1',
-          type: 'error',
-          category: 'content',
-          message: 'No H1 heading found. Every page should have one main heading.',
-          severity: 'high',
-          fix: 'Add an H1 heading to your page',
-          impact: 25
-        });
-      }
-
-      if (newMetrics.headings.h1Count > 1) {
-        newIssues.push({
-          id: 'multiple-h1',
-          type: 'error',
-          category: 'content',
-          message: 'Multiple H1 headings found. Use only one per page.',
-          severity: 'high',
-          fix: 'Convert additional H1 headings to H2 or H3',
-          impact: 20
-        });
-      }
-
-      if (newMetrics.images.total > 0 && newMetrics.images.withAlt === 0) {
-        newIssues.push({
-          id: 'no-alt-text',
-          type: 'error',
-          category: 'accessibility',
-          message: 'Images found without alt text. This affects accessibility and SEO.',
-          severity: 'high',
-          fix: 'Add descriptive alt text to all images',
-          impact: 20
-        });
-      }
-
-      if (newMetrics.content.wordCount < 300) {
-        newIssues.push({
-          id: 'content-too-short',
-          type: 'warning',
-          category: 'content',
-          message: 'Content is too short. Aim for at least 300 words.',
-          severity: 'medium',
-          fix: 'Add more relevant content to your page',
-          impact: 15
-        });
-      }
-
-      setIssues(newIssues);
-
-    } catch {
-      // Silently handle errors
-    } finally {
-      setIsAnalyzing(false);
-    }
-  }, [currentUrl, isAnalyzing]);
-
-  // Toggle visibility
-  const toggleVisibility = useCallback(() => {
-    setIsVisible(prev => !prev);
-    if (isVisible) {
-      setIsExpanded(false);
-    }
-  }, [isVisible]);
-
-  // Toggle expansion
-  const toggleExpansion = useCallback(() => {
-    setIsExpanded(prev => !prev);
-  }, []);
-
-  // Get severity color
-  const getSeverityColor = (severity: string) => {
-    switch (severity) {
-      case 'high': return 'text-red-600 dark:text-red-400';
-      case 'medium': return 'text-yellow-600 dark:text-yellow-400';
-      case 'low': return 'text-blue-600 dark:text-blue-400';
-      default: return 'text-gray-600 dark:text-gray-400';
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Space Technology Solutions',
+            description: 'Innovative space exploration and mining solutions'
+          }
+        }
+      ]
     }
   };
 
-  // Get severity background
-  const getSeverityBg = (severity: string) => {
-    switch (severity) {
-      case 'high': return 'bg-red-100 dark:bg-red-900/30';
-      case 'medium': return 'bg-yellow-100 dark:bg-yellow-900/30';
-      case 'low': return 'bg-blue-100 dark:bg-blue-900/30';
-      default: return 'bg-gray-100 dark:bg-gray-900/30';
+  // Structured data for website
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: siteName,
+    url: siteUrl,
+    description: description,
+    publisher: {
+      '@type': 'Organization',
+      name: siteName,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteUrl}/logo.png`
+      }
+    },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: `${siteUrl}/search?q={search_term_string}`,
+      'query-input': 'required name=search_term_string'
     }
   };
 
-  if (!isVisible) {
-    return (
-      <motion.button
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-        onClick={toggleVisibility}
-        className="fixed bottom-6 left-6 w-14 h-14 bg-green-600 hover:bg-green-700 text-white rounded-full shadow-lg z-50 flex items-center justify-center transition-all duration-200 hover:shadow-xl"
-        aria-label="Open SEO optimizer"
-      >
-        <Search className="w-6 h-6" />
-      </motion.button>
-    );
-  }
+  // Breadcrumb structured data
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: siteUrl
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: section,
+        item: `${siteUrl}/${section.toLowerCase().replace(/\s+/g, '-')}`
+      }
+    ]
+  };
 
   return (
-    <AnimatePresence>
-      <motion.div
-        initial={{ opacity: 0, x: 300 }}
-        animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0, x: 300 }}
-        className="fixed top-0 right-0 h-full w-96 bg-white dark:bg-gray-900 text-gray-900 dark:text-white p-6 shadow-2xl z-40 overflow-y-auto"
-      >
-        {/* Header */}
-        <div className="flex justify-between items-center mb-6">
-          <div>
-            <h2 className="text-xl font-bold">SEO Optimizer</h2>
-            <p className="text-sm text-gray-600 dark:text-gray-400">Real-time SEO analysis</p>
-          </div>
-          <button
-            onClick={toggleVisibility}
-            className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
-            aria-label="Close SEO optimizer"
-          >
-            <X className="w-5 h-5" />
-          </button>
-        </div>
-
-        {/* Current URL */}
-        <div className="mb-6 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
-          <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Current Page</p>
-          <p className="text-sm font-mono break-all">{currentUrl}</p>
-        </div>
-
-        {/* Analysis Button */}
-        <div className="mb-6">
-          <button
-            onClick={analyzePage}
-            disabled={isAnalyzing}
-            className="w-full px-4 py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
-            aria-label="Analyze current page"
-          >
-            {isAnalyzing ? (
-              <>
-                <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                <span>Analyzing...</span>
-              </>
-            ) : (
-              <>
-                <Search className="w-4 h-4" />
-                <span>Analyze Page</span>
-              </>
-            )}
-          </button>
-        </div>
-
-        {/* Metrics Display */}
-        {metrics && (
-          <div className="mb-6">
-            <h3 className="text-lg font-semibold mb-4">SEO Score: {metrics.overall}/100</h3>
-            
-            <div className="space-y-4">
-              {/* Title */}
-              <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-sm font-medium">Title</span>
-                  <span className={`text-sm font-bold ${metrics.title.score >= 80 ? 'text-green-600' : metrics.title.score >= 60 ? 'text-yellow-600' : 'text-red-600'}`}>
-                    {metrics.title.score}/100
-                  </span>
-                </div>
-                <div className="text-xs text-gray-600 dark:text-gray-400 space-y-1">
-                  <p>Length: {metrics.title.length} characters</p>
-                  <p>Keywords: {metrics.title.hasKeywords ? '✓' : '✗'}</p>
-                  <p>Brand: {metrics.title.hasBrand ? '✓' : '✗'}</p>
-                </div>
-              </div>
-
-              {/* Headings */}
-              <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-sm font-medium">Headings</span>
-                  <span className={`text-sm font-bold ${metrics.headings.score >= 80 ? 'text-green-600' : metrics.headings.score >= 60 ? 'text-yellow-600' : 'text-red-600'}`}>
-                    {metrics.headings.score}/100
-                  </span>
-                </div>
-                <div className="text-xs text-gray-600 dark:text-gray-400 space-y-1">
-                  <p>H1: {metrics.headings.h1Count}</p>
-                  <p>H2: {metrics.headings.h2Count}</p>
-                  <p>H3: {metrics.headings.h3Count}</p>
-                </div>
-              </div>
-
-              {/* Images */}
-              <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-sm font-medium">Images</span>
-                  <span className={`text-sm font-bold ${metrics.images.score >= 80 ? 'text-green-600' : metrics.images.score >= 60 ? 'text-yellow-600' : 'text-red-600'}`}>
-                    {metrics.images.score}/100
-                  </span>
-                </div>
-                <div className="text-xs text-gray-600 dark:text-gray-400 space-y-1">
-                  <p>Total: {metrics.images.total}</p>
-                  <p>With Alt: {metrics.images.withAlt}</p>
-                </div>
-              </div>
-
-              {/* Content */}
-              <div className="p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                <div className="flex justify-between items-center mb-2">
-                  <span className="text-sm font-medium">Content</span>
-                  <span className={`text-sm font-bold ${metrics.content.score >= 80 ? 'text-green-600' : metrics.content.score >= 60 ? 'text-yellow-600' : 'text-red-600'}`}>
-                    {metrics.content.score}/100
-                  </span>
-                </div>
-                <div className="text-xs text-gray-600 dark:text-gray-400 space-y-1">
-                  <p>Words: {metrics.content.wordCount}</p>
-                  <p>Keyword Density: {metrics.content.keywordDensity}%</p>
-                  <p>Readability: {metrics.content.readability}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Issues List */}
-        {issues.length > 0 && (
-          <div className="mb-6">
-            <h3 className="text-lg font-semibold mb-4">Issues Found ({issues.length})</h3>
-            <div className="space-y-3">
-              {issues.map((issue) => (
-                <div
-                  key={issue.id}
-                  className={`p-3 rounded-lg border-l-4 ${getSeverityBg(issue.severity)} border-l-${issue.severity === 'high' ? 'red' : issue.severity === 'medium' ? 'yellow' : 'blue'}-500`}
-                >
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <AlertTriangle className={`w-4 h-4 ${getSeverityColor(issue.severity)}`} />
-                        <span className={`text-sm font-medium ${getSeverityColor(issue.severity)} capitalize`}>
-                          {issue.severity} {issue.type}
-                        </span>
-                      </div>
-                      <p className="text-sm text-gray-700 dark:text-gray-300 mb-2">{issue.message}</p>
-                      {issue.fix && (
-                        <p className="text-xs text-gray-600 dark:text-gray-400">
-                          <strong>Fix:</strong> {issue.fix}
-                        </p>
-                      )}
-                    </div>
-                    <span className="text-xs text-gray-500 dark:text-gray-400">
-                      -{issue.impact} pts
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Analysis History */}
-        {analysisHistory.length > 0 && (
-          <div className="mb-6">
-            <h3 className="text-lg font-semibold mb-4">Recent Analysis</h3>
-            <div className="space-y-2">
-              {analysisHistory.slice(0, 5).map((item, index) => (
-                <div key={index} className="flex items-center justify-between p-2 bg-gray-50 dark:bg-gray-800 rounded">
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium truncate">{item.url}</p>
-                    <p className="text-xs text-gray-500 dark:text-gray-400">
-                      {item.date.toLocaleDateString()}
-                    </p>
-                  </div>
-                  <span className={`text-sm font-bold ${
-                    item.score >= 80 ? 'text-green-600' : 
-                    item.score >= 60 ? 'text-yellow-600' : 'text-red-600'
-                  }`}>
-                    {item.score}/100
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Expandable Details */}
-        <AnimatePresence>
-          {isExpanded && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 'auto', opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              className="border-t border-gray-200 dark:border-gray-700 overflow-hidden"
-            >
-              <div className="pt-4 space-y-4">
-                <h4 className="text-gray-900 dark:text-white font-medium text-sm">Advanced SEO Tips</h4>
-                
-                <div className="space-y-3 text-sm text-gray-600 dark:text-gray-400">
-                  <div>
-                    <h5 className="font-medium text-gray-700 dark:text-gray-300 mb-1">Title Optimization</h5>
-                    <p>Keep titles between 30-60 characters. Include primary keywords near the beginning.</p>
-                  </div>
-                  
-                  <div>
-                    <h5 className="font-medium text-gray-700 dark:text-gray-300 mb-1">Meta Description</h5>
-                    <p>Write compelling descriptions between 120-160 characters. Include a call-to-action.</p>
-                  </div>
-                  
-                  <div>
-                    <h5 className="font-medium text-gray-700 dark:text-gray-300 mb-1">Heading Structure</h5>
-                    <p>Use one H1 per page, followed by H2s and H3s. Include keywords naturally.</p>
-                  </div>
-                  
-                  <div>
-                    <h5 className="font-medium text-gray-700 dark:text-gray-300 mb-1">Image Optimization</h5>
-                    <p>Always add descriptive alt text. Use relevant filenames and compress images.</p>
-                  </div>
-                  
-                  <div>
-                    <h5 className="font-medium text-gray-700 dark:text-gray-300 mb-1">Content Quality</h5>
-                    <p>Aim for at least 300 words. Use keywords naturally and provide value to readers.</p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        {/* Expand/Collapse Button */}
-        <button
-          onClick={toggleExpansion}
-          className="mt-6 w-full px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 flex items-center justify-center gap-2"
-          aria-label={`${isExpanded ? 'Collapse' : 'Expand'} advanced tips`}
-        >
-          <Settings className="w-4 h-4" />
-          <span className="text-sm font-medium">
-            {isExpanded ? 'Show Less' : 'Show More'}
-          </span>
-        </button>
-      </motion.div>
-    </AnimatePresence>
+    <Head>
+      {/* Basic Meta Tags */}
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <meta name="keywords" content={keywords} />
+      <meta name="author" content={author} />
+      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+      <meta name="googlebot" content="index, follow" />
+      
+      {/* Canonical URL */}
+      <link rel="canonical" href={url} />
+      
+      {/* Open Graph Meta Tags */}
+      <meta property="og:type" content={type} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:image" content={image} />
+      <meta property="og:url" content={url} />
+      <meta property="og:site_name" content={siteName} />
+      <meta property="og:locale" content="en_US" />
+      {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+      {modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+      {section && <meta property="article:section" content={section} />}
+      {tags.map((tag, index) => (
+        <meta key={index} property="article:tag" content={tag} />
+      ))}
+      
+      {/* Twitter Card Meta Tags */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content={twitterHandle} />
+      <meta name="twitter:creator" content={twitterHandle} />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={image} />
+      
+      {/* Additional Meta Tags */}
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+      <meta name="theme-color" content="#06b6d4" />
+      <meta name="msapplication-TileColor" content="#06b6d4" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      <meta name="apple-mobile-web-app-title" content={siteName} />
+      
+      {/* Favicon and App Icons */}
+      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+      <link rel="manifest" href="/site.webmanifest" />
+      
+      {/* Preconnect to external domains for performance */}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link rel="preconnect" href="https://www.google-analytics.com" />
+      <link rel="preconnect" href="https://www.googletagmanager.com" />
+      
+      {/* DNS Prefetch for performance */}
+      <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+      <link rel="dns-prefetch" href="//www.google-analytics.com" />
+      <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+      
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(organizationSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(websiteSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema)
+        }}
+      />
+      
+      {/* Additional SEO Meta Tags */}
+      <meta name="application-name" content={siteName} />
+      <meta name="mobile-web-app-capable" content="yes" />
+      <meta name="msapplication-config" content="/browserconfig.xml" />
+      
+      {/* Security Meta Tags */}
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="referrer" content="strict-origin-when-cross-origin" />
+      
+      {/* Performance Meta Tags */}
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="format-detection" content="date=no" />
+      <meta name="format-detection" content="address=no" />
+      <meta name="format-detection" content="email=no" />
+      
+      {/* Social Media Meta Tags */}
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content={`${siteName} - ${description}`} />
+      
+      {/* Additional Open Graph Tags */}
+      <meta property="og:image:type" content="image/jpeg" />
+      <meta property="og:image:secure_url" content={image} />
+      
+      {/* Twitter Additional Tags */}
+      <meta name="twitter:image:alt" content={`${siteName} - ${description}`} />
+      <meta name="twitter:domain" content="ziontechgroup.com" />
+      
+      {/* Business Information */}
+      <meta name="business:contact_data:street_address" content="364 E Main St STE 1008" />
+      <meta name="business:contact_data:locality" content="Middletown" />
+      <meta name="business:contact_data:region" content="DE" />
+      <meta name="business:contact_data:postal_code" content="19709" />
+      <meta name="business:contact_data:country_name" content="United States" />
+      <meta name="business:contact_data:phone_number" content="+1-302-464-0950" />
+      <meta name="business:contact_data:email" content="kleber@ziontechgroup.com" />
+      
+      {/* Verification Meta Tags */}
+      <meta name="google-site-verification" content="your-verification-code" />
+      <meta name="msvalidate.01" content="your-verification-code" />
+      <meta name="yandex-verification" content="your-verification-code" />
+      
+      {/* Additional Performance Optimizations */}
+      <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+      <link rel="modulepreload" href="/_next/static/chunks/pages/_app.js" />
+      
+      {/* PWA Meta Tags */}
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+      <meta name="apple-mobile-web-app-title" content={siteName} />
+      <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
+      <meta name="msapplication-TileColor" content="#06b6d4" />
+      <meta name="msapplication-config" content="/browserconfig.xml" />
+      
+      {/* Accessibility Meta Tags */}
+      <meta name="accessibility-control" content="full" />
+      <meta name="accessibility-feature" content="high-contrast, large-text, screen-reader" />
+      <meta name="accessibility-hazard" content="none" />
+      <meta name="accessibility-mode" content="full" />
+      <meta name="accessibility-requirement" content="WCAG2.1" />
+      <meta name="accessibility-standard" content="WCAG2.1" />
+      <meta name="accessibility-support" content="full" />
+    </Head>
   );
 };
 

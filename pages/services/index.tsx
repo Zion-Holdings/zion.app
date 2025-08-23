@@ -44,7 +44,16 @@ import { real2031ITServicesAdditions } from '../../data/real-2031-it-services-ad
 import { real2031AIServicesAdditions } from '../../data/real-2031-ai-services-additions';
 import { real2030Q2Additions } from '../../data/real-2030-q2-additions';
 import { real2027Q3Additions } from '../../data/real-2027-q3-additions';
-import { real2032Q1Additions } from '../../data/real-2032-q1-additions';
+import { professionalServices } from '../../data/professional-services';
+import { real2032ServiceExpansions } from '../../data/real-2032-service-expansions';
+import { real2035Q1Additions } from '../../data/real-2035-q1-additions';
+import { real2035Q2AdditionsExtra } from '../../data/real-2035-q2-additions-extra';
+import { real2025ExtraServices } from '../../data/real-2025-extra-services';
+import { real2026Q4ExpansionsV2 } from '../../data/real-2026-q4-expansions-v2';
+import { real2036ServiceExpansions } from '../../data/real-2036-service-expansions';
+import { real2026Q4ExpansionsV3 } from '../../data/real-2026-q4-expansions-v3';
+import { real2036Q1Additions } from '../../data/real-2036-q1-additions';
+import { real2036Q2Additions } from '../../data/real-2036-q2-additions';
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -57,22 +66,10 @@ const categories = [
   'Observability',
   'Quality & Monitoring',
   'Quantum Computing',
-  'Space Technology',
-  'Metaverse',
+  'Neuromorphic AI',
+  'Edge Computing',
   'Cybersecurity',
-  'Supply Chain',
-  'Financial Services',
-  'Healthcare',
-  'Manufacturing',
-  'Retail',
-  'Education',
-  'Government',
-  'Energy',
-  'Transportation',
-  'Biotechnology',
-  'Neurotechnology',
-  'Advanced Robotics',
-  'Renewable Energy'
+  'Automation',
 ];
 
 export default function ServicesIndexPage() {
@@ -120,7 +117,17 @@ export default function ServicesIndexPage() {
       real2031MicroSaasAdditions as unknown[],
       real2031ITServicesAdditions as unknown[],
       real2031AIServicesAdditions as unknown[],
-      real2032Q1Additions as unknown[]
+      real2027Q3Additions as unknown[],
+      professionalServices as unknown[],
+      real2032ServiceExpansions as unknown[],
+      real2035Q1Additions as unknown[],
+      real2035Q2AdditionsExtra as unknown[],
+      real2025ExtraServices as unknown[],
+      real2026Q4ExpansionsV2 as unknown[],
+      real2036ServiceExpansions as unknown[],
+      real2026Q4ExpansionsV3 as unknown[],
+      real2036Q1Additions as unknown[],
+      real2036Q2Additions as unknown[]
     );
   const byCategory: Record<string, unknown[]> = {};
   for (const c of categories) byCategory[c] = [];
@@ -158,56 +165,9 @@ export default function ServicesIndexPage() {
 
   const [shownCounts, setShownCounts] = React.useState<Record<string, number>>(() => Object.fromEntries(categories.map(c => [c, 12])));
 
-  return (
-    <div className="min-h-screen bg-black text-white">
-      <SEO 
-        title="Services - Zion Tech Group"
-        description="Discover our comprehensive suite of cutting-edge technology solutions including AI, Quantum Computing, Space Technology, and more."
-        keywords={["AI services", "quantum computing", "space technology", "metaverse", "cybersecurity", "IT services", "micro SAAS"]}
-      />
-      
-      <UltraFuturisticBackground>
-        <div className="relative z-10 pt-32 pb-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            {/* Header */}
-            <div className="text-center mb-20">
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
-                Our Services
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto">
-                Discover our comprehensive suite of cutting-edge technology solutions designed to transform your business and drive innovation
-              </p>
-              <div className="mt-8 flex flex-wrap justify-center gap-4">
-                <span className="px-4 py-2 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-full text-cyan-300">
-                  {validServices.length}+ Services
-                </span>
-                <span className="px-4 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 rounded-full text-purple-300">
-                  {categories.length} Categories
-                </span>
-                <span className="px-4 py-2 bg-gradient-to-r from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-full text-green-300">
-                  Latest 2024-2025 Tech
-                </span>
-              </div>
-            </div>
 
-            {/* Featured Services */}
-            {featuredServices.length > 0 && (
-              <section className="mb-20">
-                <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                  Featured Services
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {featuredServices.map((service: any, index: number) => (
-                    <UltraFuturisticServiceCard2026
-                      key={`${service.id || service.name}-${index}`}
-                      service={service}
-                      variant="quantum"
-                      theme="quantum"
-                    />
-                  ))}
-                </div>
-              </section>
-            )}
+
+
 
             {/* Latest Services */}
             {latestServices.length > 0 && (
