@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense, lazy } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { 
@@ -7,6 +7,7 @@ import {
   X, Menu, Linkedin, Twitter, Github
 } from 'lucide-react';
 import Head from 'next/head';
+import dynamic from 'next/dynamic';
 
 // Import our new revolutionary services
 import { revolutionary2044AdvancedMicroSaas } from '../data/revolutionary-2044-advanced-micro-saas';
@@ -15,8 +16,30 @@ import { revolutionary2044AIServices } from '../data/revolutionary-2044-ai-servi
 import { realPracticalMicroSaasServices2025 } from '../data/2025-real-practical-micro-saas-services';
 import { advancedAIITSpecializedServices2025 } from '../data/2025-advanced-ai-it-specialized-services';
 
+// Lazy load heavy components for better performance
+const ServiceCard = dynamic(() => import('./ServiceCard'), { 
+  loading: () => <div className="animate-pulse bg-gray-800 rounded-lg h-64"></div>,
+  ssr: false 
+});
+
+const AccessibilityEnhancer = dynamic(() => import('./AccessibilityEnhancer'), {
+  loading: () => <div className="fixed bottom-6 right-6 z-50 w-12 h-12 bg-gray-800 rounded-full animate-pulse"></div>,
+  ssr: false
+});
+
+const PerformanceMonitor = dynamic(() => import('./PerformanceMonitor'), {
+  loading: () => <div className="fixed top-6 right-6 z-50 w-12 h-12 bg-gray-800 rounded-full animate-pulse"></div>,
+  ssr: false
+});
+
+const EnhancedSEO = dynamic(() => import('./EnhancedSEO'), {
+  loading: () => null,
+  ssr: true
+});
+
 const EnhancedHomepage2045: React.FC = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
   
   useEffect(() => {
     // Track mouse movement for parallax effects
@@ -24,10 +47,14 @@ const EnhancedHomepage2045: React.FC = () => {
       // Mouse tracking for future parallax effects
     };
     
+    // Set loaded state for better performance
+    const timer = setTimeout(() => setIsLoaded(true), 100);
+    
     window.addEventListener('mousemove', handleMouseMove);
     
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
+      clearTimeout(timer);
     };
   }, []);
 
@@ -81,13 +108,19 @@ const EnhancedHomepage2045: React.FC = () => {
 
   return (
     <>
-      <Head>
-        <title>Zion Tech Group - Revolutionary AI & IT Services 2045</title>
-        <meta name="description" content="Discover the future of technology with Zion Tech Group's revolutionary AI, quantum computing, and IT infrastructure services. Transform your business with cutting-edge solutions." />
-        <meta name="keywords" content="AI services, quantum computing, IT infrastructure, cybersecurity, micro SAAS, business automation, Zion Tech Group" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="canonical" href="https://ziontechgroup.com" />
-      </Head>
+      <EnhancedSEO
+        seoData={{
+          title: "Zion Tech Group - Revolutionary AI & IT Services 2045",
+          description: "Discover the future of technology with Zion Tech Group's revolutionary AI, quantum computing, and IT infrastructure services. Transform your business with cutting-edge solutions.",
+          keywords: ["AI services", "quantum computing", "IT infrastructure", "cybersecurity", "micro SAAS", "business automation", "Zion Tech Group", "2045 technology", "artificial intelligence", "machine learning"],
+          ogImage: "https://ziontechgroup.com/og-image.jpg",
+          ogType: "website",
+          twitterCard: "summary_large_image",
+          canonical: "https://ziontechgroup.com"
+        }}
+        pageType="homepage"
+        showAnalytics={false}
+      />
 
       <div className="min-h-screen bg-black text-white overflow-hidden">
         {/* Animated Background */}
@@ -97,28 +130,30 @@ const EnhancedHomepage2045: React.FC = () => {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,119,198,0.3),transparent_50%)]"></div>
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_40%_80%,rgba(120,219,255,0.3),transparent_50%)]"></div>
           
-          {/* Floating Particles */}
-          <div className="absolute inset-0 overflow-hidden">
-            {[...Array(50)].map((_, i) => (
-              <motion.div
-                key={i}
-                className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-20"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                }}
-                animate={{
-                  y: [0, -100, 0],
-                  opacity: [0.2, 0.8, 0.2],
-                }}
-                transition={{
-                  duration: Math.random() * 10 + 10,
-                  repeat: 999999,
-                  ease: "linear"
-                }}
-              />
-            ))}
-          </div>
+          {/* Floating Particles - Optimized with reduced count for better performance */}
+          {isLoaded && (
+            <div className="absolute inset-0 overflow-hidden">
+              {[...Array(25)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute w-1 h-1 bg-cyan-400 rounded-full opacity-20"
+                  style={{
+                    left: `${Math.random() * 100}%`,
+                    top: `${Math.random() * 100}%`,
+                  }}
+                  animate={{
+                    y: [0, -100, 0],
+                    opacity: [0.2, 0.8, 0.2],
+                  }}
+                  transition={{
+                    duration: Math.random() * 10 + 10,
+                    repeat: 999999,
+                    ease: "linear"
+                  }}
+                />
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Navigation */}
@@ -170,7 +205,7 @@ const EnhancedHomepage2045: React.FC = () => {
               >
                 <Link href="/contact">
                   <motion.button
-                    className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-medium hover:from-cyan-600 hover:to-blue-600 transition-all duration-200 shadow-lg hover:shadow-cyan-500/25"
+                    className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-medium hover:from-cyan-600 hover:to-blue-600 transition-all duration-200 shadow-lg hover:shadow-cyan-500/25 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-black"
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -181,8 +216,9 @@ const EnhancedHomepage2045: React.FC = () => {
 
               {/* Mobile Menu Button */}
               <button
-                className="md:hidden text-gray-300 hover:text-cyan-400"
+                className="md:hidden text-gray-300 hover:text-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-black rounded"
                 onClick={() => setShowMobileMenu(!showMobileMenu)}
+                aria-label="Toggle mobile menu"
               >
                 {showMobileMenu ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
@@ -517,6 +553,8 @@ const EnhancedHomepage2045: React.FC = () => {
           </div>
         </footer>
       </div>
+      <AccessibilityEnhancer />
+      <PerformanceMonitor />
     </>
   );
 };
