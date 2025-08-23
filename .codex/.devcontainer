@@ -1,0 +1,8 @@
+{
+  "mounts": [
+    "source=/dev/pts,target=/dev/pts,type=bind"
+  ],
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash"
+  }
+}
