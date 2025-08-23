@@ -8,7 +8,7 @@ import {
   Grid, List, TrendingUp, 
   Calendar, Calculator, GraduationCap,
   Cpu, Cloud, Settings, Monitor, Palette, Network, Layers, Code, Heart, ShoppingCart, Clock, MessageCircle, HelpCircle, Building,
-  Zap, Infinity, Eye, Heart as HeartIcon, Code as CodeIcon, Palette as PaletteIcon
+  Zap, Infinity, Eye, Heart as HeartIcon, Code as CodeIcon, Palette as PaletteIcon, Search
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -53,167 +53,167 @@ const navigationItems: NavigationItem[] = [
         featured: true
       },
       { 
-        name: 'AI Consciousness Evolution', 
-        href: '/ai-consciousness-evolution-2040', 
-        description: 'Next-generation AI consciousness',
+        name: 'AI & Machine Learning', 
+        href: '/services?category=ai-data', 
+        description: 'Advanced AI and ML solutions',
         icon: <Brain className="w-4 h-4" />,
         color: 'from-purple-500 to-pink-500',
         featured: true
       },
       { 
-        name: 'Quantum Neural Ecosystem', 
-        href: '/quantum-neural-ecosystem-2040', 
-        description: 'Quantum-powered AI systems',
-        icon: <Atom className="w-4 h-4" />,
+        name: 'IT Infrastructure', 
+        href: '/services?category=cloud-finops', 
+        description: 'Enterprise infrastructure solutions',
+        icon: <Cpu className="w-4 h-4" />,
         color: 'from-blue-500 to-cyan-500',
         featured: true
       },
       { 
-        name: 'Space Resource Intelligence', 
-        href: '/space-resource-intelligence-2040', 
-        description: 'AI-powered space exploration',
-        icon: <Rocket className="w-4 h-4" />,
-        color: 'from-indigo-500 to-purple-500'
-      },
-      { 
-        name: 'Autonomous Business Intelligence', 
-        href: '/autonomous-business-intelligence-2040', 
-        description: 'Consciousness-driven insights',
-        icon: <BarChart3 className="w-4 h-4" />,
+        name: 'Micro SAAS Solutions', 
+        href: '/services?category=developer-tools', 
+        description: 'Innovative micro SAAS platforms',
+        icon: <Code className="w-4 h-4" />,
         color: 'from-emerald-500 to-teal-500'
       },
       { 
-        name: 'Quantum Cybersecurity Future', 
-        href: '/quantum-cybersecurity-future-2040', 
-        description: 'Future-proof security',
+        name: 'Cybersecurity', 
+        href: '/services?category=cybersecurity', 
+        description: 'Advanced security solutions',
         icon: <Shield className="w-4 h-4" />,
         color: 'from-red-500 to-orange-500'
+      },
+      { 
+        name: 'Observability', 
+        href: '/services?category=observability', 
+        description: 'Monitoring and analytics',
+        icon: <Eye className="w-4 h-4" />,
+        color: 'from-indigo-500 to-purple-500'
       }
     ]
   },
   {
-    name: 'AI & Consciousness',
-    href: '/ai-services',
+    name: 'AI & Machine Learning',
+    href: '/services?category=ai-data',
     icon: <Brain className="w-5 h-5" />,
-    description: 'Revolutionary AI consciousness platforms',
+    description: 'Advanced AI and ML solutions',
     badge: 'Featured',
     category: 'ai',
     color: 'from-purple-500 to-pink-500',
     children: [
       {
-        name: 'AI Consciousness Evolution 2040',
-        href: '/ai-consciousness-evolution-2040',
-        description: 'Next-generation AI consciousness',
+        name: 'AI Content Intelligence',
+        href: '/services/ai-content-intelligence-platform',
+        description: 'AI-powered content optimization',
         icon: <Brain className="w-4 h-4" />,
         featured: true
       },
       {
-        name: 'AI Emotional Intelligence 2040',
-        href: '/ai-emotional-intelligence-2040',
-        description: 'Advanced emotional AI with consciousness',
+        name: 'AI Customer Success',
+        href: '/services/ai-customer-success-automation',
+        description: 'Intelligent customer success automation',
         icon: <HeartIcon className="w-4 h-4" />
       },
       {
-        name: 'AI Autonomous Research 2041',
-        href: '/ai-autonomous-research-2041',
-        description: 'Fully autonomous AI research',
-        icon: <CodeIcon className="w-4 h-4" />
-      },
-      {
-        name: 'AI Content Personalization 2041',
-        href: '/ai-content-personalization-2041',
-        description: 'Consciousness-based content AI',
-        icon: <PaletteIcon className="w-4 h-4" />
-      },
-      {
-        name: 'AI Ethics & Governance 2041',
-        href: '/ai-ethics-governance-2041',
-        description: 'Comprehensive AI ethics framework',
-        icon: <Shield className="w-4 h-4" />
-      }
-    ]
-  },
-  {
-    name: 'Quantum Technology',
-    href: '/quantum-services',
-    icon: <Atom className="w-5 h-5" />,
-    description: 'Quantum computing solutions',
-    badge: 'Quantum',
-    category: 'quantum',
-    color: 'from-blue-500 to-cyan-500',
-    children: [
-      {
-        name: 'Quantum Neural Ecosystem 2040',
-        href: '/quantum-neural-ecosystem-2040',
-        description: 'Quantum-powered neural networks',
-        icon: <Atom className="w-4 h-4" />,
-        featured: true
-      },
-      {
-        name: 'Quantum Cybersecurity Future 2040',
-        href: '/quantum-cybersecurity-future-2040',
-        description: 'Future-proof quantum security',
-        icon: <Shield className="w-4 h-4" />
-      },
-      {
-        name: 'Quantum Internet Security 2041',
-        href: '/quantum-internet-security-2041',
-        description: 'Quantum internet protection',
-        icon: <Network className="w-4 h-4" />
-      },
-      {
-        name: 'Quantum Cloud Infrastructure 2041',
-        href: '/quantum-cloud-infrastructure-2041',
-        description: 'Quantum cloud computing',
-        icon: <Cloud className="w-4 h-4" />
-      },
-      {
-        name: 'Quantum Bio-Computing 2041',
-        href: '/quantum-bio-computing-2041',
-        description: 'Quantum biological computing',
-        icon: <Atom className="w-4 h-4" />
-      }
-    ]
-  },
-  {
-    name: 'Enterprise Solutions',
-    href: '/it-services',
-    icon: <Cpu className="w-5 h-5" />,
-    description: 'Advanced enterprise infrastructure',
-    badge: 'Enterprise',
-    category: 'it',
-    color: 'from-orange-500 to-red-500',
-    children: [
-      {
-        name: 'Autonomous Business Intelligence 2040',
-        href: '/autonomous-business-intelligence-2040',
-        description: 'Consciousness-driven BI',
-        icon: <BarChart3 className="w-4 h-4" />,
-        featured: true
-      },
-      {
-        name: 'AI Customer Success 2041',
-        href: '/ai-customer-success-2041',
-        description: 'Autonomous customer management',
-        icon: <Heart className="w-4 h-4" />
-      },
-      {
-        name: 'AI Sales Intelligence 2041',
-        href: '/ai-sales-intelligence-2041',
-        description: 'Consciousness-based sales AI',
+        name: 'AI Sales Intelligence',
+        href: '/services/ai-sales-intelligence-suite',
+        description: 'AI-powered sales optimization',
         icon: <TrendingUp className="w-4 h-4" />
       },
       {
-        name: 'AI Autonomous Ecosystem 2041',
-        href: '/ai-autonomous-ecosystem-2041',
-        description: 'Multi-AI coordination',
-        icon: <Network className="w-4 h-4" />
+        name: 'AI Product Analytics',
+        href: '/services/ai-product-analytics-platform',
+        description: 'AI-driven product insights',
+        icon: <BarChart3 className="w-4 h-4" />
       },
       {
-        name: 'AI Predictive Maintenance 2041',
-        href: '/ai-predictive-maintenance-2041',
-        description: 'Consciousness-based maintenance',
-        icon: <Monitor className="w-4 h-4" />
+        name: 'AI Cybersecurity',
+        href: '/services/ai-cybersecurity-threat-intelligence',
+        description: 'AI-powered threat detection',
+        icon: <Shield className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'IT Infrastructure',
+    href: '/services?category=cloud-finops',
+    icon: <Cpu className="w-5 h-5" />,
+    description: 'Enterprise infrastructure solutions',
+    badge: 'Enterprise',
+    category: 'infrastructure',
+    color: 'from-blue-500 to-cyan-500',
+    children: [
+      {
+        name: 'Cloud Cost Optimization',
+        href: '/services/cloud-cost-optimization-platform',
+        description: 'AI-powered cloud cost management',
+        icon: <Cloud className="w-4 h-4" />,
+        featured: true
+      },
+      {
+        name: 'DevOps Automation',
+        href: '/services/devops-automation-platform',
+        description: 'Intelligent DevOps automation',
+        icon: <Settings className="w-4 h-4" />
+      },
+      {
+        name: 'Kubernetes Management',
+        href: '/services/kubernetes-management-platform',
+        description: 'Enterprise K8s management',
+        icon: <Layers className="w-4 h-4" />
+      },
+      {
+        name: 'Observability Platform',
+        href: '/services/observability-platform',
+        description: 'Unified monitoring and analytics',
+        icon: <Eye className="w-4 h-4" />
+      },
+      {
+        name: 'API Gateway Management',
+        href: '/services/api-gateway-management',
+        description: 'Centralized API management',
+        icon: <Network className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Micro SAAS Solutions',
+    href: '/services?category=developer-tools',
+    icon: <Code className="w-5 h-5" />,
+    description: 'Innovative micro SAAS platforms',
+    badge: 'Innovative',
+    category: 'micro-saas',
+    color: 'from-orange-500 to-red-500',
+    children: [
+      {
+        name: 'No-Code Automation',
+        href: '/services/no-code-automation-platform',
+        description: 'Visual workflow automation',
+        icon: <Code className="w-4 h-4" />,
+        featured: true
+      },
+      {
+        name: 'AI Email Marketing',
+        href: '/services/ai-powered-email-marketing',
+        description: 'Intelligent email optimization',
+        icon: <Mail className="w-4 h-4" />
+      },
+      {
+        name: 'Social Media Automation',
+        href: '/services/social-media-automation-suite',
+        description: 'Multi-platform social management',
+        icon: <MessageCircle className="w-4 h-4" />
+      },
+      {
+        name: 'AI Customer Support',
+        href: '/services/ai-powered-customer-support',
+        description: 'Intelligent support automation',
+        icon: <HelpCircle className="w-4 h-4" />
+      },
+      {
+        name: 'AI SEO Optimization',
+        href: '/services/ai-powered-seo-optimization',
+        description: 'AI-driven SEO insights',
+        icon: <Search className="w-4 h-4" />
       }
     ]
   },

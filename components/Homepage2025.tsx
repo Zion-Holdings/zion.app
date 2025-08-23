@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
   ArrowRight, Star, 
-  Brain, Atom, Shield, Zap, TrendingUp, Globe, MapPin
+  Brain, Atom, Shield, Zap, TrendingUp, Globe, MapPin, Phone, Mail
 } from 'lucide-react';
 
 const Homepage2025: React.FC = () => {
@@ -89,6 +89,39 @@ const Homepage2025: React.FC = () => {
                   <span>Proven Results</span>
                 </div>
               </motion.div>
+
+              {/* Contact Information */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="mt-8 p-6 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-400/20 rounded-xl backdrop-blur-sm"
+              >
+                <div className="text-center space-y-4">
+                  <h3 className="text-xl font-semibold text-cyan-400">Ready to Transform Your Business?</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                    <div className="flex items-center justify-center space-x-2">
+                      <Phone className="w-4 h-4 text-cyan-400" />
+                      <a href="tel:+13024640950" className="text-gray-300 hover:text-cyan-400 transition-colors">
+                        +1 302 464 0950
+                      </a>
+                    </div>
+                    <div className="flex items-center justify-center space-x-2">
+                      <Mail className="w-4 h-4 text-purple-400" />
+                      <a href="mailto:kleber@ziontechgroup.com" className="text-gray-300 hover:text-purple-400 transition-colors">
+                        kleber@ziontechgroup.com
+                      </a>
+                    </div>
+                    <div className="flex items-center justify-center space-x-2">
+                      <MapPin className="w-4 h-4 text-blue-400" />
+                      <span className="text-gray-300">364 E Main St STE 1008, Middletown DE 19709</span>
+                    </div>
+                  </div>
+                  <div className="text-xs text-gray-400">
+                    <p>Starting from $199/month • 14-day free trial • Enterprise solutions available</p>
+                  </div>
+                </div>
+              </motion.div>
             </motion.div>
           </div>
         </section>
@@ -161,46 +194,46 @@ const Homepage2025: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <UltraFuturisticServiceCard2026
                 service={{
-                  id: 'ai-ml',
-                  name: 'AI & Machine Learning',
-                  tagline: 'Advanced artificial intelligence solutions',
-                  description: 'Advanced artificial intelligence solutions for modern businesses',
-                  price: '$999',
+                  id: 'ai-content-intelligence',
+                  name: 'AI Content Intelligence',
+                  tagline: 'Transform content with AI-powered insights',
+                  description: 'Advanced AI platform for content optimization, performance tracking, and predictive analytics',
+                  price: '$499',
                   period: 'month',
-                  features: ['Machine Learning', 'Deep Learning', 'NLP', 'Computer Vision'],
+                  features: ['AI Content Analysis', 'Performance Tracking', 'SEO Optimization', 'A/B Testing'],
                   popular: true,
-                  category: 'AI',
+                  category: 'AI & Data',
                   icon: '🧠'
                 }}
                 variant="ai"
               />
               <UltraFuturisticServiceCard2026
                 service={{
-                  id: 'quantum-computing',
-                  name: 'Quantum Computing',
-                  tagline: 'Next-generation computing solutions',
-                  description: 'Next-generation computing solutions for complex problems',
-                  price: '$1999',
+                  id: 'cloud-cost-optimization',
+                  name: 'Cloud Cost Optimization',
+                  tagline: 'Maximize cloud efficiency and savings',
+                  description: 'AI-powered cloud cost management across AWS, Azure, and Google Cloud',
+                  price: '$399',
                   period: 'month',
-                  features: ['Quantum Algorithms', 'Quantum Security', 'Quantum Simulation'],
+                  features: ['Multi-cloud Management', 'Cost Analysis', 'Resource Optimization', 'Automated Recommendations'],
                   popular: false,
-                  category: 'Quantum',
-                  icon: '⚛️'
+                  category: 'Cloud & FinOps',
+                  icon: '☁️'
                 }}
-                variant="quantum"
+                variant="it"
               />
               <UltraFuturisticServiceCard2026
                 service={{
-                  id: 'process-automation',
-                  name: 'Process Automation',
-                  tagline: 'Intelligent automation solutions',
-                  description: 'Intelligent automation to streamline your operations',
-                  price: '$799',
+                  id: 'no-code-automation',
+                  name: 'No-Code Automation',
+                  tagline: 'Build powerful automations visually',
+                  description: 'Visual workflow builder with AI-powered suggestions and 500+ integrations',
+                  price: '$299',
                   period: 'month',
-                  features: ['Workflow Automation', 'RPA', 'AI Integration', 'Analytics'],
+                  features: ['Visual Workflow Builder', '500+ Integrations', 'AI Suggestions', 'Team Collaboration'],
                   popular: true,
-                  category: 'Automation',
-                  icon: '⚡'
+                  category: 'Developer Tools',
+                  icon: '🎯'
                 }}
                 variant="automation"
               />
