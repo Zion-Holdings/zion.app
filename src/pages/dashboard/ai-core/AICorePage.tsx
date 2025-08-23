@@ -1,12 +1,9 @@
 import React from 'react';
-
-const AICorePage = () => {
+export function AICorePage() {
   return (
     <div>
-      <h1>AI Core Page</h1>
-      <p>This is a placeholder for the AI Core page.</p>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
     </div>
   );
-};
-
-export default AICorePage;
+}

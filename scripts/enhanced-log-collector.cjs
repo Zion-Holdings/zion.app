@@ -1,4 +1,26 @@
-#!/usr/bin/env node
+const winston = require('winston');
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json(),
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' }),
+  ],
+});
+
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(
+    new winston.transports.Console({
+      format: winston.format.simple(),
+    }),
+  );
+}
 
 /**
  * Enhanced Log Collector for Zion.App
@@ -8,11 +30,9 @@
 
 const fs = require('fs');
 const path = require('path');
-const { exec } = require('child_process');
-const { promisify } = require('util');
-
+const { _exec } = require('child_process');
+const { _promisify } = require('util');
 const execAsync = promisify(exec);
-
 class EnhancedLogCollector {
   constructor() {
     this.config = {
@@ -20,26 +40,26 @@ class EnhancedLogCollector {
       sources: {
         nextjs: {
           buildLogs: '.next/build.log',
-          devLogs: 'logs/dev.log'
+          devLogs: 'logs/dev.log',
         },
         application: {
           errorLogs: 'logs/errors.log',
-          performanceLogs: 'logs/performance.log'
+          performanceLogs: 'logs/performance.log',
         },
         system: {
           npmLogs: '~/.npm/_logs/',
-          gitLogs: '.git/logs/'
+          gitLogs: '.git/logs/',
         },
         tests: {
           jestLogs: 'coverage/logs/',
           playwrightLogs: 'playwright-logs/',
-          cypressLogs: 'cypress/logs/'
-        }
+          cypressLogs: 'cypress/logs/',
+        },
       },
       retention: {
         days: 30,
-        maxSizeMB: 100
-      }
+        maxSizeMB: 100,
+      },
     };
   }
 
@@ -63,8 +83,8 @@ class EnhancedLogCollector {
       }
 
       return true;
-    } catch (error) {
-      console.error('❌ Failed to initialize log collector:', error.message);
+    } catch (_error) {
+      logger.error('❌ Failed to initialize log collector:', error.message);
       return false;
     }
   }
@@ -81,27 +101,27 @@ class EnhancedLogCollector {
         totalFiles: 0,
         totalSize: 0,
         errorCount: 0,
-        warningCount: 0
-      }
+        warningCount: 0,
+      },
     };
 
-    console.log('🔍 Collecting logs from all sources...\n');
+    logger.warn('🔍 Collecting logs from all sources...\n');
 
     // Collect build logs
     await this.collectBuildLogs(report);
-    
+
     // Collect application logs
     await this.collectApplicationLogs(report);
-    
+
     // Collect test logs
     await this.collectTestLogs(report);
-    
+
     // Collect system logs
     await this.collectSystemLogs(report);
-    
+
     // Collect git logs
     await this.collectGitLogs(report);
-    
+
     // Generate consolidated report
     await this.generateConsolidatedReport(report);
 
@@ -112,8 +132,8 @@ class EnhancedLogCollector {
    * Collect Next.js build logs
    */
   async collectBuildLogs(report) {
-    console.log('📦 Collecting build logs...');
-    
+    logger.warn('📦 Collecting build logs...');
+
     try {
       // Check for .next directory
       if (fs.existsSync('.next')) {
@@ -121,49 +141,58 @@ class EnhancedLogCollector {
           timestamp: new Date().toISOString(),
           buildExists: true,
           size: 0,
-          files: []
+          files: [],
         };
 
         // Get build info
         try {
-          const { stdout } = await execAsync('du -sh .next 2>/dev/null || echo "0B"');
+          const { _stdout } = await execAsync(
+            'du -sh .next 2>/dev/null || echo "0B"',
+          );
           buildInfo.size = stdout.trim();
-        } catch (error) {
+        } catch (_error) {
           buildInfo.size = 'Unknown';
         }
 
         // Check for build errors in Next.js logs
         try {
-          const { stdout: buildOutput } = await execAsync('npm run build --silent 2>&1 | tail -20');
+          const { stdout: buildOutput } = await execAsync(
+            'npm run build --silent 2>&1 | tail -20',
+          );
           const buildLog = {
             timestamp: new Date().toISOString(),
             output: buildOutput,
             hasErrors: buildOutput.toLowerCase().includes('error'),
-            hasWarnings: buildOutput.toLowerCase().includes('warning')
+            hasWarnings: buildOutput.toLowerCase().includes('warning'),
           };
-          
-          const logPath = path.join(this.config.outputDir, 'builds', `build-${Date.now()}.log`);
+          const logPath = path.join(
+            this.config.outputDir,
+            'builds',
+            `build-${Date.now()}.log`,
+          );
           fs.writeFileSync(logPath, JSON.stringify(buildLog, null, 2));
           buildInfo.files.push(logPath);
-          
+
           if (buildLog.hasErrors) {
             report.summary.errorCount++;
           }
           if (buildLog.hasWarnings) {
             report.summary.warningCount++;
           }
-        } catch (error) {
-          console.warn('  ⚠️  Could not capture build output');
+        } catch (_error) {
+          logger.warn('  ⚠️  Could not capture build output');
         }
 
         report.sources.build = buildInfo;
         report.summary.totalFiles += buildInfo.files.length;
-        console.log(`  ✅ Build logs collected (${buildInfo.files.length} files)`);
+        logger.warn(
+          `  ✅ Build logs collected (${buildInfo.files.length} files)`,
+        );
       } else {
-        console.log('  ℹ️  No .next directory found');
+        logger.warn('  ℹ️  No .next directory found');
       }
-    } catch (error) {
-      console.warn('  ⚠️  Error collecting build logs:', error.message);
+    } catch (_error) {
+      logger.warn('  ⚠️  Error collecting build logs:', error.message);
     }
   }
 
@@ -171,13 +200,12 @@ class EnhancedLogCollector {
    * Collect application runtime logs
    */
   async collectApplicationLogs(report) {
-    console.log('🏃 Collecting application logs...');
-    
+    logger.warn('🏃 Collecting application logs...');
     const appInfo = {
       timestamp: new Date().toISOString(),
       files: [],
       errors: [],
-      warnings: []
+      warnings: [],
     };
 
     try {
@@ -189,29 +217,30 @@ class EnhancedLogCollector {
         'logs/perf',
         'logs/security',
       ];
-      
+
       for (const logDir of logDirs) {
         if (fs.existsSync(logDir)) {
-          const files = fs.readdirSync(logDir).filter(f => f.endsWith('.log'));
-          
+          const files = fs
+            .readdirSync(logDir)
+            .filter((f) => f.endsWith('.log'));
+
           for (const file of files) {
             const filePath = path.join(logDir, file);
             const stats = fs.statSync(filePath);
-            
+
             appInfo.files.push({
               path: filePath,
               size: stats.size,
-              modified: stats.mtime
+              modified: stats.mtime,
             });
-            
+
             // Analyze log content for errors/warnings
             try {
               const content = fs.readFileSync(filePath, 'utf-8');
               const lines = content.split('\n');
-              
+
               lines.forEach((line, index) => {
                 const lower = line.toLowerCase();
-
                 const errorFalsePositives = [
                   'no error',
                   'no errors',
@@ -221,16 +250,14 @@ class EnhancedLogCollector {
                   'error monitoring',
                   'error-monitor',
                   'error count',
-                  'errors:'
+                  'errors:',
                 ];
-
                 const isError =
                   lower.includes('error') &&
-                  !errorFalsePositives.some(p => lower.includes(p)) &&
+                  !errorFalsePositives.some((p) => lower.includes(p)) &&
                   !lower.includes('errors: 0') &&
                   !line.includes('✅') &&
                   !lower.startsWith('- ');
-
                 const isWarning =
                   lower.includes('warn') &&
                   !lower.includes('no warnings') &&
@@ -240,19 +267,19 @@ class EnhancedLogCollector {
                   appInfo.errors.push({
                     file: filePath,
                     line: index + 1,
-                    content: line.trim()
+                    content: line.trim(),
                   });
                 }
                 if (isWarning) {
                   appInfo.warnings.push({
                     file: filePath,
                     line: index + 1,
-                    content: line.trim()
+                    content: line.trim(),
                   });
                 }
               });
-            } catch (readError) {
-              console.warn(`    ⚠️  Could not read ${filePath}`);
+            } catch (_readError) {
+              logger.warn(`    ⚠️  Could not read ${filePath}`);
             }
           }
         }
@@ -262,10 +289,12 @@ class EnhancedLogCollector {
       report.summary.totalFiles += appInfo.files.length;
       report.summary.errorCount += appInfo.errors.length;
       report.summary.warningCount += appInfo.warnings.length;
-      
-      console.log(`  ✅ Application logs collected (${appInfo.files.length} files, ${appInfo.errors.length} errors, ${appInfo.warnings.length} warnings)`);
-    } catch (error) {
-      console.warn('  ⚠️  Error collecting application logs:', error.message);
+
+      logger.warn(
+        `  ✅ Application logs collected (${appInfo.files.length} files, ${appInfo.errors.length} errors, ${appInfo.warnings.length} warnings)`,
+      );
+    } catch (_error) {
+      logger.warn('  ⚠️  Error collecting application logs:', error.message);
     }
   }
 
@@ -273,27 +302,32 @@ class EnhancedLogCollector {
    * Collect test logs
    */
   async collectTestLogs(report) {
-    console.log('🧪 Collecting test logs...');
-    
+    logger.warn('🧪 Collecting test logs...');
     const testInfo = {
       timestamp: new Date().toISOString(),
       jest: { files: [], lastRun: null },
       playwright: { files: [], lastRun: null },
-      cypress: { files: [], lastRun: null }
+      cypress: { files: [], lastRun: null },
     };
 
     try {
       // Jest logs
       if (fs.existsSync('coverage')) {
-        const coverageFiles = fs.readdirSync('coverage').filter(f => f.endsWith('.json'));
-        testInfo.jest.files = coverageFiles.map(f => path.join('coverage', f));
+        const coverageFiles = fs
+          .readdirSync('coverage')
+          .filter((f) => f.endsWith('.json'));
+        testInfo.jest.files = coverageFiles.map((f) =>
+          path.join('coverage', f),
+        );
       }
 
       // Playwright logs
       if (fs.existsSync('playwright-logs')) {
         const playwrightFiles = fs.readdirSync('playwright-logs');
-        testInfo.playwright.files = playwrightFiles.map(f => path.join('playwright-logs', f));
-        
+        testInfo.playwright.files = playwrightFiles.map((f) =>
+          path.join('playwright-logs', f),
+        );
+
         // Check for test results
         const resultsFile = path.join('playwright-logs', 'test-results.json');
         if (fs.existsSync(resultsFile)) {
@@ -302,13 +336,17 @@ class EnhancedLogCollector {
             testInfo.playwright.lastRun = {
               timestamp: new Date().toISOString(),
               stats: results.stats || {},
-              failures: results.suites?.reduce((acc, suite) => {
-                const failures = suite.specs?.filter(spec => spec.tests.some(test => test.status === 'failed')) || [];
-                return acc.concat(failures);
-              }, []) || []
+              failures:
+                results.suites?.reduce((acc, suite) => {
+                  const failures =
+                    suite.specs?.filter((spec) =>
+                      spec.tests.some((test) => test.status === 'failed'),
+                    ) || [];
+                  return acc.concat(failures);
+                }, []) || [],
             };
-          } catch (parseError) {
-            console.warn('    ⚠️  Could not parse Playwright results');
+          } catch (_parseError) {
+            logger.warn('    ⚠️  Could not parse Playwright results');
           }
         }
       }
@@ -316,16 +354,21 @@ class EnhancedLogCollector {
       // Cypress logs
       if (fs.existsSync('cypress/logs')) {
         const cypressFiles = fs.readdirSync('cypress/logs');
-        testInfo.cypress.files = cypressFiles.map(f => path.join('cypress/logs', f));
+        testInfo.cypress.files = cypressFiles.map((f) =>
+          path.join('cypress/logs', f),
+        );
       }
 
       report.sources.tests = testInfo;
-      const totalTestFiles = testInfo.jest.files.length + testInfo.playwright.files.length + testInfo.cypress.files.length;
+      const totalTestFiles =
+        testInfo.jest.files.length +
+        testInfo.playwright.files.length +
+        testInfo.cypress.files.length;
       report.summary.totalFiles += totalTestFiles;
-      
-      console.log(`  ✅ Test logs collected (${totalTestFiles} files)`);
-    } catch (error) {
-      console.warn('  ⚠️  Error collecting test logs:', error.message);
+
+      logger.warn(`  ✅ Test logs collected (${totalTestFiles} files)`);
+    } catch (_error) {
+      logger.warn('  ⚠️  Error collecting test logs:', error.message);
     }
   }
 
@@ -333,13 +376,12 @@ class EnhancedLogCollector {
    * Collect system logs
    */
   async collectSystemLogs(report) {
-    console.log('🖥️  Collecting system logs...');
-    
+    logger.warn('🖥️  Collecting system logs...');
     const systemInfo = {
       timestamp: new Date().toISOString(),
       nodejs: {},
       npm: {},
-      system: {}
+      system: {},
     };
 
     try {
@@ -353,11 +395,12 @@ class EnhancedLogCollector {
       try {
         const { stdout: npmVersion } = await execAsync('npm --version');
         systemInfo.npm.version = npmVersion.trim();
-        
-        const { stdout: npmConfig } = await execAsync('npm config list --json 2>/dev/null || echo "{}"');
+        const { stdout: npmConfig } = await execAsync(
+          'npm config list --json 2>/dev/null || echo "{}"',
+        );
         systemInfo.npm.config = JSON.parse(npmConfig || '{}');
-      } catch (npmError) {
-        console.warn('    ⚠️  Could not get NPM info');
+      } catch (_npmError) {
+        logger.warn('    ⚠️  Could not get NPM info');
       }
 
       // System resources
@@ -369,14 +412,14 @@ class EnhancedLogCollector {
           const { stdout: memInfo } = await execAsync('free -h');
           systemInfo.system.memory = memInfo;
         }
-      } catch (sysError) {
-        console.warn('    ⚠️  Could not get system info');
+      } catch (_sysError) {
+        logger.warn('    ⚠️  Could not get system info');
       }
 
       report.sources.system = systemInfo;
-      console.log('  ✅ System logs collected');
-    } catch (error) {
-      console.warn('  ⚠️  Error collecting system logs:', error.message);
+      logger.warn('  ✅ System logs collected');
+    } catch (_error) {
+      logger.warn('  ⚠️  Error collecting system logs:', error.message);
     }
   }
 
@@ -384,35 +427,51 @@ class EnhancedLogCollector {
    * Collect Git logs
    */
   async collectGitLogs(report) {
-    console.log('🔀 Collecting Git logs...');
-    
+    logger.warn('🔀 Collecting Git logs...');
     const gitInfo = {
       timestamp: new Date().toISOString(),
       commits: [],
       branches: [],
-      status: {}
+      status: {},
     };
 
     try {
       // Recent commits
-      const { stdout: commits } = await execAsync('git log --oneline -10 2>/dev/null || echo "No git history"');
-      gitInfo.commits = commits.trim().split('\n').filter(line => line.length > 0);
+      const { stdout: commits } = await execAsync(
+        'git log --oneline -10 2>/dev/null || echo "No git history"',
+      );
+      gitInfo.commits = commits
+        .trim()
+        .split('\n')
+        .filter((line) => line.length > 0);
 
       // Branches
-      const { stdout: branches } = await execAsync('git branch -a 2>/dev/null || echo "No branches"');
-      gitInfo.branches = branches.trim().split('\n').filter(line => line.length > 0);
+      const { stdout: branches } = await execAsync(
+        'git branch -a 2>/dev/null || echo "No branches"',
+      );
+      gitInfo.branches = branches
+        .trim()
+        .split('\n')
+        .filter((line) => line.length > 0);
 
       // Git status
-      const { stdout: status } = await execAsync('git status --porcelain 2>/dev/null || echo "Not a git repository"');
+      const { stdout: status } = await execAsync(
+        'git status --porcelain 2>/dev/null || echo "Not a git repository"',
+      );
       gitInfo.status = {
         clean: status.trim().length === 0,
-        changes: status.trim().split('\n').filter(line => line.length > 0)
+        changes: status
+          .trim()
+          .split('\n')
+          .filter((line) => line.length > 0),
       };
 
       report.sources.git = gitInfo;
-      console.log(`  ✅ Git logs collected (${gitInfo.commits.length} recent commits)`);
-    } catch (error) {
-      console.warn('  ⚠️  Error collecting Git logs:', error.message);
+      logger.warn(
+        `  ✅ Git logs collected (${gitInfo.commits.length} recent commits)`,
+      );
+    } catch (_error) {
+      logger.warn('  ⚠️  Error collecting Git logs:', error.message);
     }
   }
 
@@ -420,28 +479,30 @@ class EnhancedLogCollector {
    * Generate consolidated report
    */
   async generateConsolidatedReport(report) {
-    console.log('\n📊 Generating consolidated report...');
-    
-    const reportPath = path.join(this.config.outputDir, `consolidated-report-${Date.now()}.json`);
+    logger.warn('\n📊 Generating consolidated report...');
+    const reportPath = path.join(
+      this.config.outputDir,
+      `consolidated-report-${Date.now()}.json`,
+    );
     fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
-    
+
     // Generate summary
     const summaryPath = path.join(this.config.outputDir, 'latest-summary.txt');
     const summary = this.generateTextSummary(report);
     fs.writeFileSync(summaryPath, summary);
-    
-    console.log(`  ✅ Report saved to: ${reportPath}`);
-    console.log(`  ✅ Summary saved to: ${summaryPath}`);
-    
+
+    logger.warn(`  ✅ Report saved to: ${reportPath}`);
+    logger.warn(`  ✅ Summary saved to: ${summaryPath}`);
+
     // Display key metrics
-    console.log('\n📈 Key Metrics:');
-    console.log(`  Total files analyzed: ${report.summary.totalFiles}`);
-    console.log(`  Errors found: ${report.summary.errorCount}`);
-    console.log(`  Warnings found: ${report.summary.warningCount}`);
-    
+    logger.warn('\n📈 Key Metrics:');
+    logger.warn(`  Total files analyzed: ${report.summary.totalFiles}`);
+    logger.warn(`  Errors found: ${report.summary.errorCount}`);
+    logger.warn(`  Warnings found: ${report.summary.warningCount}`);
+
     if (report.sources.tests?.playwright?.lastRun?.stats) {
       const stats = report.sources.tests.playwright.lastRun.stats;
-      console.log(`  Test failures: ${stats.unexpected || 0}`);
+      logger.warn(`  Test failures: ${stats.unexpected || 0}`);
     }
   }
 
@@ -451,20 +512,22 @@ class EnhancedLogCollector {
   generateTextSummary(report) {
     const lines = [
       'ZION.APP LOG COLLECTION SUMMARY',
-      '=' .repeat(40),
+      '='.repeat(40),
       `Generated: ${report.timestamp}`,
       '',
       'OVERVIEW:',
       `- Total files: ${report.summary.totalFiles}`,
       `- Errors: ${report.summary.errorCount}`,
       `- Warnings: ${report.summary.warningCount}`,
-      ''
+      '',
     ];
 
     // Build status
     if (report.sources.build) {
       lines.push('BUILD STATUS:');
-      lines.push(`- Build directory exists: ${report.sources.build.buildExists}`);
+      lines.push(
+        `- Build directory exists: ${report.sources.build.buildExists}`,
+      );
       lines.push(`- Build size: ${report.sources.build.size}`);
       lines.push('');
     }
@@ -473,9 +536,13 @@ class EnhancedLogCollector {
     if (report.sources.tests) {
       lines.push('TEST STATUS:');
       lines.push(`- Jest files: ${report.sources.tests.jest.files.length}`);
-      lines.push(`- Playwright files: ${report.sources.tests.playwright.files.length}`);
-      lines.push(`- Cypress files: ${report.sources.tests.cypress.files.length}`);
-      
+      lines.push(
+        `- Playwright files: ${report.sources.tests.playwright.files.length}`,
+      );
+      lines.push(
+        `- Cypress files: ${report.sources.tests.cypress.files.length}`,
+      );
+
       if (report.sources.tests.playwright.lastRun?.stats) {
         const stats = report.sources.tests.playwright.lastRun.stats;
         lines.push(`- Test failures: ${stats.unexpected || 0}`);
@@ -496,7 +563,9 @@ class EnhancedLogCollector {
     if (report.sources.git) {
       lines.push('GIT STATUS:');
       lines.push(`- Recent commits: ${report.sources.git.commits.length}`);
-      lines.push(`- Working directory clean: ${report.sources.git.status.clean}`);
+      lines.push(
+        `- Working directory clean: ${report.sources.git.status.clean}`,
+      );
       lines.push('');
     }
 
@@ -516,22 +585,20 @@ class EnhancedLogCollector {
    * Clean old logs based on retention policy
    */
   async cleanOldLogs() {
-    console.log('🧹 Cleaning old logs...');
-    
+    logger.warn('🧹 Cleaning old logs...');
     const cutoffDate = new Date();
     cutoffDate.setDate(cutoffDate.getDate() - this.config.retention.days);
-    
+
     let deletedCount = 0;
-    
+
     try {
       const walkDir = (dir) => {
         if (!fs.existsSync(dir)) return;
-        
         const files = fs.readdirSync(dir);
         for (const file of files) {
           const filePath = path.join(dir, file);
           const stats = fs.statSync(filePath);
-          
+
           if (stats.isDirectory()) {
             walkDir(filePath);
           } else if (stats.mtime < cutoffDate) {
@@ -540,25 +607,24 @@ class EnhancedLogCollector {
           }
         }
       };
-      
+
       walkDir(this.config.outputDir);
-      console.log(`  ✅ Cleaned ${deletedCount} old log files`);
-    } catch (error) {
-      console.warn('  ⚠️  Error cleaning logs:', error.message);
+      logger.warn(`  ✅ Cleaned ${deletedCount} old log files`);
+    } catch (_error) {
+      logger.warn('  ⚠️  Error cleaning logs:', error.message);
     }
   }
 }
 
 // Main execution
 async function main() {
-  console.log('🚀 Enhanced Log Collector\n');
-  
+  logger.warn('🚀 Enhanced Log Collector\n');
   const collector = new EnhancedLogCollector();
-  
+
   if (!(await collector.init())) {
     process.exit(1);
   }
-  
+
   // Collect logs
   const report = await collector.collectAllLogs();
 
@@ -569,7 +635,7 @@ async function main() {
 
   // Run error monitoring if requested
   if (process.argv.includes('--analyze')) {
-    const { ErrorMonitor } = require('./error-monitor.cjs');
+    const { _ErrorMonitor } = require('./error-monitor.cjs');
     const monitor = new ErrorMonitor();
     if (monitor.init()) {
       await monitor.readLogs();
@@ -580,22 +646,35 @@ async function main() {
       }
     }
   }
-  
-  console.log('\n✅ Log collection completed!');
-  
+
+  logger.warn('\n✅ Log collection completed!');
+
   // Exit with error code if significant issues found
   if (report.summary.errorCount > 5) {
-    console.log('⚠️  High error count detected');
+    logger.warn('⚠️  High error count detected');
     process.exit(1);
   }
 }
 
 // Run if called directly
 if (require.main === module) {
-  main().catch(error => {
-    console.error('❌ Log collector failed:', error);
+  main().catch((error) => {
+    logger.error('❌ Log collector failed:', error);
     process.exit(1);
   });
 }
 
-module.exports = { EnhancedLogCollector }; 
+module.exports = { EnhancedLogCollector };
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  logger.info('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  logger.info('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});

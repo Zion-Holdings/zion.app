@@ -1,12 +1,9 @@
 import React from 'react';
-
-const GenesisDeployPage = () => {
+export function GenesisDeployPage() {
   return (
     <div>
-      <h1>Genesis Deploy Page</h1>
-      <p>This is a placeholder for the Genesis Deploy page.</p>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
     </div>
   );
-};
-
-export default GenesisDeployPage;
+}

@@ -15,7 +15,7 @@ if (SENTRY_DSN && !SENTRY_DSN.includes('dummy') && !SENTRY_DSN.startsWith('YOUR_
   });
 }
 
-export function captureException(error: unknown, context?: any): string { // Added context capability
+export function captureException(error: unknown, context?: any): void { // Added context capability
   // The @sentry/nextjs SDK handles initialization.
   // We can directly call captureException.
   if (context) {

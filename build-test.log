@@ -1,22 +1,3 @@
-
-> project@0.0.0 build
-> NODE_OPTIONS='--no-deprecation --require ./scripts/fix-self-global.js' node scripts/pre-build-check.cjs && NODE_OPTIONS='--no-deprecation --require ./scripts/fix-self-global.js' npx next build --no-lint
-
-🔧 Applying webpack runtime polyfills...
-  ✅ self -> global
-  ✅ webpackChunk_N_E -> []
-🔧 Webpack runtime polyfills applied successfully
-🚀 Pre-build Environment Check
-================================
-
-🔍 Checking dependencies...
-✅ All required dependencies found.
-
-🔍 Validating environment configuration...
-
-💡 RECOMMENDATIONS:
-===================
-
 • NEXT_PUBLIC_REOWN_PROJECT_ID
   Reown project ID for wallet functionality
   Current: undefined

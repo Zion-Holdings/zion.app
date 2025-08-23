@@ -34,7 +34,7 @@ Each deployment can opt in or pause syncing. The `scope` parameter controls whet
 
 ## 4. Governance Usage
 
-The sync layer enables a *Zion Global Vote* spanning multiple deployments and keeps treasury metrics aligned. It also coordinates multiverse milestones like **Manifesto Day**.
+The sync layer enables a _Zion Global Vote_ spanning multiple deployments and keeps treasury metrics aligned. It also coordinates multiverse milestones like **Manifesto Day**.
 
 ## 5. API Routes
 

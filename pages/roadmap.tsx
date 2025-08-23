@@ -1,1 +1,2 @@
-export { default } from '@/pages/Roadmap';
+import RoadmapPage from './roadmap/index';
+export default RoadmapPage;

@@ -1,5 +1,3 @@
 {
-  "allowed_origins": [
-    "https://app.ziontechgroup.com"
-  ]
+  "allowed_origins": ["https://app.ziontechgroup.com"]
 }

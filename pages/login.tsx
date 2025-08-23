@@ -1,40 +1,7 @@
-import { useEffect } from 'react';
-import { useRouter } from 'next/router';
+import React from 'react';
 import Head from 'next/head';
-
-export default function LoginRedirect() {
-  const router = useRouter();
-
-  useEffect(() => {
-    // Preserve any query parameters from the original URL
-    const { query } = router;
-    const queryString = Object.keys(query).length > 0 
-      ? '?' + new URLSearchParams(query as Record<string, string>).toString()
-      : '';
-    
-    // Redirect to Auth0-based login page
-    router.replace(`/auth/login${queryString}`);
-  }, [router]);
-
   return (
     <>
-      <Head>
-        <title>Redirecting to Login - Zion Tech Marketplace</title>
-        <meta name="description" content="Redirecting to login page" />
-      </Head>
-      
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">Redirecting to login...</p>
-          <p className="text-sm text-gray-500 mt-2">
-            If you're not redirected automatically,{' '}
-            <a href="/auth/login" className="text-blue-600 hover:underline">
-              click here
-            </a>
-          </p>
-        </div>
-      </div>
-    </>
+      <Head><title>login - Zion App</title><meta name="description" content="login page" /></Head><div className="container mx-auto px-4 py-8"><h1 className="text-3xl font-bold mb-6">login</h1><p className="text-lg mb-4">This page is under construction.</p><div className="mt-4"><a href="/" className="text-blue-600 hover:underline">;
+            ← Back to Home</a></div></div></>;
   );
-}
