@@ -1,6 +1,11 @@
 [build]
+<<<<<<< HEAD
+  command = "npm ci && npm run export"
+  publish = "out"
+=======
   command = "npm ci && npm run sitemap && npm run build"
   publish = ".next"
+>>>>>>> origin/cursor/autonomous-cloud-automations
 
 [build.environment]
   NODE_VERSION = "20"
