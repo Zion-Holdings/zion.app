@@ -13,6 +13,9 @@ import EnhancedSEO from './EnhancedSEO';
 import { realMicroSaas2025Expansion } from '../data/real-micro-saas-2025-expansion';
 import { realITServices2025Expansion } from '../data/real-it-services-2025-expansion';
 import { realAIServices2025Expansion } from '../data/real-ai-services-2025-expansion';
+import { innovativeMicroSaas2025ExpansionV2 } from '../data/2025-innovative-micro-saas-expansion-v2';
+import { innovativeITServices2025ExpansionV2 } from '../data/2025-innovative-it-services-expansion-v2';
+import { innovativeAIServices2025ExpansionV2 } from '../data/2025-innovative-ai-services-expansion-v2';
 
 // Lazy load components for better performance
 const ServiceCard = lazy(() => import('./ServiceCard'));
@@ -61,7 +64,10 @@ const EnhancedHomepage2045: React.FC = () => {
   const allRealServices = useMemo(() => [
     ...realMicroSaas2025Expansion,
     ...realITServices2025Expansion,
-    ...realAIServices2025Expansion
+    ...realAIServices2025Expansion,
+    ...innovativeMicroSaas2025ExpansionV2,
+    ...innovativeITServices2025ExpansionV2,
+    ...innovativeAIServices2025ExpansionV2
   ], []);
 
   // Get featured services for rotation
@@ -96,10 +102,10 @@ const EnhancedHomepage2045: React.FC = () => {
   ];
 
   const stats = [
-    { number: "2000+", label: "Revolutionary Services", icon: Star, description: "Cutting-edge solutions" },
+    { number: "2500+", label: "Revolutionary Services", icon: Star, description: "Cutting-edge solutions" },
     { number: "99.99%", label: "Uptime Guarantee", icon: TrendingUp, description: "Reliable performance" },
     { number: "24/7", label: "Expert Support", icon: Users, description: "Always available" },
-    { number: "50+", label: "Industry Solutions", icon: Award, description: "Proven track record" }
+    { number: "75+", label: "Industry Solutions", icon: Award, description: "Proven track record" }
   ];
 
   const testimonials = [

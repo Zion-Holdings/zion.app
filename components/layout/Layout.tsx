@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import UltraFuturisticNavigation2045 from './UltraFuturisticNavigation2045';
-import UltraFuturisticFooter2045 from './UltraFuturisticFooter2045';
+import UltraFuturisticNavigation2046 from './UltraFuturisticNavigation2046';
+import UltraFuturisticFooter2046 from './UltraFuturisticFooter2046';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import TopContactBar from './TopContactBar';
 import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
@@ -211,12 +211,7 @@ export default function Layout({
         <TopContactBar />
 
         {/* Navigation */}
-        <UltraFuturisticNavigation2045 
-          sidebarOpen={sidebarOpen} 
-          setSidebarOpen={setSidebarOpen}
-          theme={theme}
-          onThemeToggle={toggleTheme}
-        />
+        <UltraFuturisticNavigation2046 />
 
         {/* Theme Toggle */}
         <div className="fixed top-24 right-4 z-50">
@@ -229,7 +224,7 @@ export default function Layout({
         </main>
 
         {/* Footer */}
-        <UltraFuturisticFooter2045 />
+        <UltraFuturisticFooter2046 />
 
         {/* Sidebar */}
         <EnhancedSidebar2025 

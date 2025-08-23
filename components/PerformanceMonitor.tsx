@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Activity, 
   Zap, 
@@ -9,7 +9,10 @@ import {
   CheckCircle, 
   X,
   BarChart3,
-  Wifi
+  Wifi,
+  RefreshCw,
+  Minimize2,
+  Maximize2
 } from 'lucide-react';
 
 interface PerformanceMetrics {
@@ -39,13 +42,38 @@ interface PerformanceEventTiming extends PerformanceEntry {
   target?: EventTarget;
 }
 
+interface LayoutShiftEntry extends PerformanceEntry {
+  value: number;
+  hadRecentInput: boolean;
+  lastInputTime: number;
+  sources: Array<{
+    node: Node;
+    currentRect: DOMRectReadOnly;
+    previousRect: DOMRectReadOnly;
+  }>;
+}
 
-const PerformanceMonitor: React.FC = () => {
+interface LargestContentfulPaintEntry extends PerformanceEntry {
+  size: number;
+  id: string;
+  url: string;
+  element: Element;
+}
+
+interface PerformanceMonitorProps {
+  onToggle?: (visible: boolean) => void;
+}
+
+const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({ onToggle }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [metrics, setMetrics] = useState<PerformanceMetrics | null>(null);
   const [score, setScore] = useState<PerformanceScore | null>(null);
   const [showDetails, setShowDetails] = useState(false);
   const [optimizationTips, setOptimizationTips] = useState<string[]>([]);
+  const [autoRefresh, setAutoRefresh] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [isMonitoring, setIsMonitoring] = useState(false);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   // Calculate performance scores
   const calculateScores = useCallback((metrics: PerformanceMetrics): PerformanceScore => {
@@ -70,85 +98,136 @@ const PerformanceMonitor: React.FC = () => {
   // Get optimization tips based on performance scores
   const getOptimizationTips = useCallback((score: PerformanceScore): string[] => {
     const tips: string[] = [];
-
-    if (score.fcp < 70) {
-      tips.push('Optimize critical rendering path and reduce server response time');
-    }
-    if (score.lcp < 70) {
-      tips.push('Optimize images and implement lazy loading for better LCP');
-    }
-    if (score.fid < 70) {
-      tips.push('Reduce JavaScript execution time and optimize event handlers');
-    }
-    if (score.cls < 70) {
-      tips.push('Set explicit dimensions for images and avoid layout shifts');
-    }
-    if (score.ttfb < 70) {
-      tips.push('Optimize server response time and implement caching strategies');
-    }
-
-    if (tips.length === 0) {
-      tips.push('Great performance! Keep monitoring for any regressions');
-    }
-
-    return tips;
+    
+    if (score.fcp < 70) tips.push('Optimize First Contentful Paint by reducing render-blocking resources');
+    if (score.lcp < 70) tips.push('Improve Largest Contentful Paint with image optimization and lazy loading');
+    if (score.fid < 70) tips.push('Reduce First Input Delay by optimizing JavaScript execution');
+    if (score.cls < 70) tips.push('Fix Cumulative Layout Shift by setting explicit dimensions');
+    if (score.ttfb < 70) tips.push('Improve Time to First Byte with server optimization');
+    
+    return tips.slice(0, 3);
   }, []);
 
-  // Monitor Core Web Vitals
+  // Measure performance metrics
+  const measurePerformance = useCallback(async () => {
+    setIsMonitoring(true);
+    
+    try {
+      // Get FCP
+      const fcp = performance.getEntriesByName('first-contentful-paint')[0]?.startTime || 0;
+      
+      // Get LCP
+      const lcp = performance.getEntriesByName('largest-contentful-paint')[0]?.startTime || 0;
+      
+      // Get FID
+      const fid = await getFID();
+      
+      // Get CLS
+      const cls = await getCLS();
+      
+      // Get TTFB
+      const navigationEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+      const ttfb = navigationEntry?.responseStart || 0;
+      
+      const newMetrics: PerformanceMetrics = {
+        fcp,
+        lcp,
+        fid,
+        cls,
+        ttfb,
+        fmp: 0,
+        si: 0,
+        tti: 0
+      };
+      
+      setMetrics(newMetrics);
+    } catch (error) {
+      console.error('Error measuring performance:', error);
+    } finally {
+      setIsMonitoring(false);
+    }
+  }, []);
+
+  // Get First Input Delay
+  const getFID = async (): Promise<number> => {
+    if ('PerformanceObserver' in window) {
+      return new Promise((resolve) => {
+        const observer = new PerformanceObserver((list) => {
+          const entries = list.getEntries();
+          const firstEntry = entries[0] as any;
+          resolve(firstEntry.processingStart - firstEntry.startTime);
+        });
+        observer.observe({ entryTypes: ['first-input'] });
+        
+        // Fallback timeout
+        setTimeout(() => resolve(0), 5000);
+      });
+    }
+    return 0;
+  };
+
+  // Get Cumulative Layout Shift
+  const getCLS = async (): Promise<number> => {
+    if ('PerformanceObserver' in window) {
+      return new Promise((resolve) => {
+        let clsValue = 0;
+        const observer = new PerformanceObserver((list) => {
+          for (const entry of list.getEntries()) {
+            if (!(entry as any).hadRecentInput) {
+              clsValue += (entry as any).value;
+            }
+          }
+        });
+        observer.observe({ entryTypes: ['layout-shift'] });
+        
+        // Fallback timeout
+        setTimeout(() => resolve(clsValue), 5000);
+      });
+    }
+    return 0;
+  };
+
+  // Monitor performance continuously
   const monitorPerformance = useCallback(() => {
     if (!('PerformanceObserver' in window)) return;
 
-    // Monitor Largest Contentful Paint
-    const lcpObserver = new PerformanceObserver((entryList) => {
-      const entries = entryList.getEntries();
-      const lastEntry = entries[entries.length - 1];
-      if (lastEntry) {
-        setMetrics(prev => prev ? { ...prev, lcp: lastEntry.startTime } : null);
-      }
-    });
-    lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
-
-    // Monitor First Input Delay
-    const fidObserver = new PerformanceObserver((entryList) => {
-      const entries = entryList.getEntries();
-      entries.forEach(entry => {
-        if (entry.entryType === 'first-input') {
-          const eventEntry = entry as PerformanceEventTiming;
-          setMetrics(prev => prev ? { ...prev, fid: eventEntry.processingStart - eventEntry.startTime } : null);
-        }
-      });
-    });
-    fidObserver.observe({ entryTypes: ['first-input'] });
-
-    // Monitor Cumulative Layout Shift
-    const clsObserver = new PerformanceObserver((entryList) => {
-      let clsValue = 0;
-      entryList.getEntries().forEach((entry) => {
-        const layoutEntry = entry as LayoutShiftEntry;
-        if (!layoutEntry.hadRecentInput) {
-          clsValue += layoutEntry.value;
-        }
-      });
-      setMetrics(prev => prev ? { ...prev, cls: clsValue } : null);
-    });
-    clsObserver.observe({ entryTypes: ['layout-shift'] });
-
-    // Get other metrics
-    const navigationEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-    if (navigationEntry) {
-      const fcp = navigationEntry.domContentLoadedEventEnd - navigationEntry.fetchStart;
-      const ttfb = navigationEntry.responseStart - navigationEntry.requestStart;
-      
+    const lcpObserver = new PerformanceObserver((list) => {
+      const entries = list.getEntries();
+      const lastEntry = entries[entries.length - 1] as any;
       setMetrics(prev => ({
-        fcp: prev?.fcp || fcp,
-        lcp: prev?.lcp || 0,
-        fid: prev?.fid || 0,
-        cls: prev?.cls || 0,
-        ttfb: prev?.ttfb || ttfb,
-        fmp: prev?.fmp || 0,
-        si: prev?.si || 0,
-        tti: prev?.tti || 0
+        ...prev!,
+        lcp: lastEntry.startTime
       }));
+    });
+
+    const fidObserver = new PerformanceObserver((list) => {
+      const entries = list.getEntries();
+      const firstEntry = entries[0] as any;
+      setMetrics(prev => ({
+        ...prev!,
+        fid: firstEntry.processingStart - firstEntry.startTime
+      }));
+    });
+
+    const clsObserver = new PerformanceObserver((list) => {
+      let clsValue = 0;
+      for (const entry of list.getEntries()) {
+        if (!(entry as any).hadRecentInput) {
+          clsValue += (entry as any).value;
+        }
+      }
+      setMetrics(prev => ({
+        ...prev!,
+        cls: clsValue
+      }));
+    });
+
+    try {
+      lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
+      fidObserver.observe({ entryTypes: ['first-input'] });
+      clsObserver.observe({ entryTypes: ['layout-shift'] });
+    } catch (error) {
+      console.error('Error setting up performance observers:', error);
     }
 
     return () => {
@@ -192,116 +271,6 @@ const PerformanceMonitor: React.FC = () => {
     if (score >= 90) return <CheckCircle className="w-5 h-5 text-green-400" />;
     if (score >= 70) return <AlertTriangle className="w-5 h-5 text-yellow-400" />;
     return <AlertTriangle className="w-5 h-5 text-red-400" />;
-  };
-
-  // Get First Input Delay
-  const getFID = async (): Promise<number> => {
-    if ('PerformanceObserver' in window) {
-      return new Promise((resolve) => {
-        const observer = new PerformanceObserver((list) => {
-          const entries = list.getEntries();
-          const firstEntry = entries[0] as any;
-          resolve(firstEntry.processingStart - firstEntry.startTime);
-        });
-        observer.observe({ entryTypes: ['first-input'] });
-        
-        // Fallback timeout
-        setTimeout(() => resolve(0), 5000);
-      });
-    }
-    return 0;
-  };
-
-  // Get Cumulative Layout Shift
-  const getCLS = async (): Promise<number> => {
-    if ('PerformanceObserver' in window) {
-      return new Promise((resolve) => {
-        let clsValue = 0;
-        const observer = new PerformanceObserver((list) => {
-          for (const entry of list.getEntries()) {
-            if (!(entry as any).hadRecentInput) {
-              clsValue += (entry as any).value;
-            }
-          }
-        });
-        observer.observe({ entryTypes: ['layout-shift'] });
-        
-        // Fallback timeout
-        setTimeout(() => resolve(clsValue), 5000);
-      });
-    }
-    return 0;
-  };
-
-  // Score calculations
-  const getFCPScore = (fcp: number): string => {
-    if (fcp < 1800) return 'Good';
-    if (fcp < 3000) return 'Needs Improvement';
-    return 'Poor';
-  };
-
-  const getLCPScore = (lcp: number): string => {
-    if (lcp < 2500) return 'Good';
-    if (lcp < 4000) return 'Needs Improvement';
-    return 'Poor';
-  };
-
-  const getFIDScore = (fid: number): string => {
-    if (fid < 100) return 'Good';
-    if (fid < 300) return 'Needs Improvement';
-    return 'Poor';
-  };
-
-  const getCLSScore = (cls: number): string => {
-    if (cls < 0.1) return 'Good';
-    if (cls < 0.25) return 'Needs Improvement';
-    return 'Poor';
-  };
-
-  const getTTFBScore = (ttfb: number): string => {
-    if (ttfb < 800) return 'Good';
-    if (ttfb < 1800) return 'Needs Improvement';
-    return 'Poor';
-  };
-
-  const calculateOverallScore = (scores: string[]): string => {
-    const goodCount = scores.filter(s => s === 'Good').length;
-    const total = scores.length;
-    const percentage = (goodCount / total) * 100;
-    
-    if (percentage >= 80) return 'Excellent';
-    if (percentage >= 60) return 'Good';
-    if (percentage >= 40) return 'Needs Improvement';
-    return 'Poor';
-  };
-
-  // Generate optimization suggestions
-  const generateOptimizationSuggestions = (data: any): string[] => {
-    const suggestions: string[] = [];
-
-    if (data.lcp > 4000) {
-      suggestions.push('Optimize images and reduce render-blocking resources for better LCP');
-    }
-    if (data.fid > 300) {
-      suggestions.push('Reduce JavaScript execution time and optimize event handlers');
-    }
-    if (data.cls > 0.25) {
-      suggestions.push('Fix layout shifts by setting explicit dimensions for images and ads');
-    }
-    if (data.ttfb > 1800) {
-      suggestions.push('Improve server response time and optimize database queries');
-    }
-    if (data.jsSize > 500000) {
-      suggestions.push('Implement code splitting and lazy loading for JavaScript bundles');
-    }
-    if (data.imageSize > 1000000) {
-      suggestions.push('Use WebP format and implement responsive images');
-    }
-    if (data.requests > 50) {
-      suggestions.push('Consolidate HTTP requests and implement resource bundling');
-    }
-
-    return suggestions.slice(0, 5); // Limit to top 5 suggestions
   };
 
   // Auto-refresh functionality
@@ -357,7 +326,9 @@ const PerformanceMonitor: React.FC = () => {
               <X className="w-5 h-5" />
             </button>
           </div>
-          <div className="flex items-center gap-2">
+
+          {/* Action Buttons */}
+          <div className="flex items-center gap-2 p-4 border-b border-gray-700/50">
             <button
               onClick={toggleAutoRefresh}
               className={`p-1.5 rounded-lg transition-colors ${
@@ -384,7 +355,6 @@ const PerformanceMonitor: React.FC = () => {
               <X className="w-4 h-4" />
             </button>
           </div>
-        </div>
 
           {/* Overall Score */}
           {score && (
@@ -492,7 +462,8 @@ const PerformanceMonitor: React.FC = () => {
                   </div>
                 ))}
               </div>
-            )}
+            </div>
+          )}
 
           {/* Actions */}
           <div className="p-4">
@@ -556,46 +527,31 @@ const PerformanceMonitor: React.FC = () => {
               </motion.div>
             )}
           </AnimatePresence>
-        </div>
 
-        {/* Footer Actions */}
-        <div className="p-3 border-t border-cyan-500/20 bg-white/5">
-          <button
-            onClick={measurePerformance}
-            disabled={isMonitoring}
-            className="w-full flex items-center justify-center gap-2 px-3 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white text-sm font-medium rounded-lg transition-all duration-300 hover:from-cyan-600 hover:to-purple-600 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {isMonitoring ? (
-              <>
-                <RefreshCw className="w-4 h-4 animate-spin" />
-                Measuring...
-              </>
-            ) : (
-              <>
-                <Activity className="w-4 h-4" />
-                Measure Performance
-              </>
-            )}
-          </button>
+          {/* Footer Actions */}
+          <div className="p-3 border-t border-cyan-500/20 bg-white/5">
+            <button
+              onClick={measurePerformance}
+              disabled={isMonitoring}
+              className="w-full flex items-center justify-center gap-2 px-3 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white text-sm font-medium rounded-lg transition-all duration-300 hover:from-cyan-600 hover:to-purple-600 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {isMonitoring ? (
+                <>
+                  <RefreshCw className="w-4 h-4 animate-spin" />
+                  Measuring...
+                </>
+              ) : (
+                <>
+                  <Activity className="w-4 h-4" />
+                  Measure Performance
+                </>
+              )}
+            </button>
+          </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </AnimatePresence>
   );
-};
-
-// Helper function to get score colors
-const getScoreColor = (score: string): string => {
-  switch (score) {
-    case 'Good':
-    case 'Excellent':
-      return 'text-green-400';
-    case 'Needs Improvement':
-      return 'text-yellow-400';
-    case 'Poor':
-      return 'text-red-400';
-    default:
-      return 'text-white/60';
-  }
 };
 
 export default PerformanceMonitor;
