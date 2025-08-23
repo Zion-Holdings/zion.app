@@ -343,3 +343,5 @@ declare module 'next' {
 }
 declare module 'next-themes';
 declare module 'tailwind-merge';
+declare module 'react-cookie-consent';
+declare module 'js-cookie';

@@ -8,4 +8,8 @@ export {
 } from './RequestQuoteWizard';
 export { ViewModeProvider, useViewMode } from './ViewModeContext';
 export { CartProvider, useCart } from './CartContext';
+<<<<<<< HEAD
+export { CurrencyProvider, useCurrency } from './CurrencyContext';
+=======
 export { ConsentProvider, useConsent } from './ConsentContext';
+>>>>>>> origin/51ryr1-codex/implement-eprivacy-directive-consent-banner

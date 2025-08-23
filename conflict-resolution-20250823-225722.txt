@@ -99,3 +99,7 @@
 2025-08-23 22:57:36 - Resolving conflicts in src/layout/AppHeader.tsx for branch 4pkscj-codex/disable-theme-toggle-and-set-default-dark-theme
 2025-08-23 22:57:37 - Merge conflicts detected in 4xe4ab-codex/fix--settheme--not-found-in-usetheme
 2025-08-23 22:57:37 - Resolving conflicts in src/hooks/useTheme.tsx for branch 4xe4ab-codex/fix--settheme--not-found-in-usetheme
+2025-08-23 22:57:38 - Merge conflicts detected in 51ryr1-codex/implement-eprivacy-directive-consent-banner
+2025-08-23 22:57:38 - Resolving conflicts in pages/privacy-settings.tsx for branch 51ryr1-codex/implement-eprivacy-directive-consent-banner
+2025-08-23 22:57:38 - Resolving conflicts in src/App.tsx for branch 51ryr1-codex/implement-eprivacy-directive-consent-banner
+2025-08-23 22:57:39 - Resolving conflicts in src/context/index.ts for branch 51ryr1-codex/implement-eprivacy-directive-consent-banner
