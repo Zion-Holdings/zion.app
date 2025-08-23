@@ -145,6 +145,9 @@ export default function Layout({
         <meta name="description" content={description} />
         <meta name="keywords" content={keywords} />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<<<<<<< HEAD
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+=======
         <meta charSet="utf-8" />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
         <meta name="author" content="Zion Tech Group" />
@@ -156,6 +159,7 @@ export default function Layout({
         <meta name="apple-mobile-web-app-title" content="Zion Tech Group" />
         <meta name="msapplication-TileColor" content="#06b6d4" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-eb99
         
         {/* Canonical URL */}
         {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
@@ -165,23 +169,49 @@ export default function Layout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         
+<<<<<<< HEAD
+        {/* Favicons */}
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        
+        {/* Open Graph */}
+=======
         {/* Enhanced Open Graph */}
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-eb99
         <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={ogImage} />
+<<<<<<< HEAD
+=======
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="Zion Tech Group - Revolutionary Technology Solutions" />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-eb99
         <meta property="og:url" content={canonicalUrl || 'https://ziontechgroup.com'} />
         <meta property="og:site_name" content="Zion Tech Group" />
         
+<<<<<<< HEAD
+        {/* Twitter Card */}
+=======
         {/* Enhanced Twitter Card */}
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-eb99
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={ogImage} />
+<<<<<<< HEAD
+        <meta name="twitter:site" content="@ziontechgroup" />
+        
+        {/* Additional Meta Tags */}
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="application-name" content="Zion Tech Group" />
+=======
         <meta name="twitter:image:alt" content="Zion Tech Group - Revolutionary Technology Solutions" />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-eb99
         
         {/* Structured Data */}
         <script
@@ -194,18 +224,35 @@ export default function Layout({
               "url": "https://ziontechgroup.com",
               "logo": "https://ziontechgroup.com/logo.png",
               "description": description,
+<<<<<<< HEAD
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "364 E Main St STE 1008",
+                "addressLocality": "Middletown",
+                "addressRegion": "DE",
+                "postalCode": "19709",
+                "addressCountry": "US"
+              },
+=======
               "foundingDate": "2020",
               "sameAs": [
                 "https://www.linkedin.com/company/zion-tech-group",
                 "https://twitter.com/ziontechgroup",
                 "https://github.com/Zion-Holdings"
               ],
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-eb99
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+1-555-0123",
                 "contactType": "customer service",
                 "email": "contact@ziontechgroup.com"
               },
+<<<<<<< HEAD
+              "sameAs": [
+                "https://linkedin.com/company/zion-tech-group",
+                "https://github.com/Zion-Holdings",
+                "https://twitter.com/ziontechgroup"
+=======
               "address": {
                 "@type": "PostalAddress",
                 "addressCountry": "US",
@@ -218,6 +265,7 @@ export default function Layout({
                 "Cybersecurity",
                 "Cloud Infrastructure",
                 "Business Intelligence"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-eb99
               ]
             })
           }}
