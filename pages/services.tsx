@@ -32,6 +32,11 @@ import { revolutionary2039Services } from '../data/revolutionary-2039-services';
 import { revolutionary2040FuturisticServices } from '../data/revolutionary-2040-futuristic-services';
 import { revolutionary2041AdvancedServices } from '../data/revolutionary-2041-advanced-services';
 
+// Import our latest innovative services
+import { innovative2040FuturisticServices } from '../data/innovative-2040-futuristic-services';
+import { advanced2041EnterpriseServices } from '../data/advanced-2041-enterprise-services';
+import { revolutionary2042MicroSaasServices } from '../data/revolutionary-2042-micro-saas-services';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -99,7 +104,12 @@ const allServices = [
   ...revolutionary2039Services,
   // Our revolutionary 2040-2041 services
   ...revolutionary2040FuturisticServices,
-  ...revolutionary2041AdvancedServices
+  ...revolutionary2041AdvancedServices,
+  
+  // Our latest innovative services
+  ...innovative2040FuturisticServices,
+  ...advanced2041EnterpriseServices,
+  ...revolutionary2042MicroSaasServices
 ];
 
 const categories = [
@@ -207,6 +217,34 @@ const categories = [
     icon: <Atom className="w-6 h-6" />,
     color: 'from-purple-600 to-pink-700',
     description: 'Neural networks and quantum computing fusion'
+  },
+  {
+    id: 'space-technology',
+    name: 'Space & Technology',
+    icon: <Rocket className="w-6 h-6" />,
+    color: 'from-indigo-600 to-purple-700',
+    description: 'Space exploration and advanced technology solutions'
+  },
+  {
+    id: 'climate-sustainability',
+    name: 'Climate & Sustainability',
+    icon: <Globe className="w-6 h-6" />,
+    color: 'from-teal-600 to-green-700',
+    description: 'Climate change mitigation and environmental optimization'
+  },
+  {
+    id: 'digital-twin-iot',
+    name: 'Digital Twin & IoT',
+    icon: <Cpu className="w-6 h-6" />,
+    color: 'from-violet-600 to-purple-700',
+    description: 'Digital twin technology and IoT integration'
+  },
+  {
+    id: 'biotech-ai',
+    name: 'Biotech & AI',
+    icon: <Heart className="w-6 h-6" />,
+    color: 'from-emerald-600 to-green-700',
+    description: 'AI-powered biotechnology and research acceleration'
   }
 ];
 
