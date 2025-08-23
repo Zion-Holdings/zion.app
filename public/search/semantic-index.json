@@ -1,0 +1,581 @@
+{
+  "generatedAt": "2025-08-11T23:59:19.835Z",
+  "documents": [
+    {
+      "slug": "/_app",
+      "file": "pages/_app.tsx",
+      "keywords": [
+        {
+          "term": "type",
+          "score": 1.5041
+        },
+        {
+          "term": "styles",
+          "score": 1.5041
+        },
+        {
+          "term": "globals",
+          "score": 1.5041
+        },
+        {
+          "term": "css",
+          "score": 1.5041
+        },
+        {
+          "term": "zionapp",
+          "score": 1.5041
+        },
+        {
+          "term": "appprops",
+          "score": 1.5041
+        },
+        {
+          "term": "app",
+          "score": 0.8109
+        },
+        {
+          "term": "next",
+          "score": 0.2513
+        },
+        {
+          "term": "import",
+          "score": 0
+        },
+        {
+          "term": "export",
+          "score": 0
+        },
+        {
+          "term": "default",
+          "score": 0
+        },
+        {
+          "term": "function",
+          "score": 0
+        }
+      ]
+    },
+    {
+      "slug": "/front/",
+      "file": "pages/front/index.tsx",
+      "keywords": [
+        {
+          "term": "router",
+          "score": 3.0082
+        },
+        {
+          "term": "frontindexredirect",
+          "score": 1.5041
+        },
+        {
+          "term": "null",
+          "score": 0.8109
+        },
+        {
+          "term": "react",
+          "score": 0.5878
+        },
+        {
+          "term": "return",
+          "score": 0.5878
+        },
+        {
+          "term": "next",
+          "score": 0.2513
+        },
+        {
+          "term": "import",
+          "score": 0
+        },
+        {
+          "term": "export",
+          "score": 0
+        },
+        {
+          "term": "default",
+          "score": 0
+        },
+        {
+          "term": "function",
+          "score": 0
+        }
+      ]
+    },
+    {
+      "slug": "/",
+      "file": "pages/index.tsx",
+      "keywords": [
+        {
+          "term": "open",
+          "score": 21.9722
+        },
+        {
+          "term": "pages",
+          "score": 9.0245
+        },
+        {
+          "term": "live",
+          "score": 8.7889
+        },
+        {
+          "term": "automations",
+          "score": 6.5917
+        },
+        {
+          "term": "cloud",
+          "score": 6.5917
+        },
+        {
+          "term": "report",
+          "score": 6.5917
+        },
+        {
+          "term": "auto",
+          "score": 6.0163
+        },
+        {
+          "term": "visionary",
+          "score": 6.0163
+        },
+        {
+          "term": "autonomous",
+          "score": 5.4931
+        },
+        {
+          "term": "automation",
+          "score": 5.4931
+        },
+        {
+          "term": "front",
+          "score": 5.4931
+        },
+        {
+          "term": "links",
+          "score": 5.4931
+        },
+        {
+          "term": "animated",
+          "score": 4.5122
+        },
+        {
+          "term": "components",
+          "score": 4.5122
+        },
+        {
+          "term": "publishes",
+          "score": 4.5122
+        },
+        {
+          "term": "public",
+          "score": 4.5122
+        },
+        {
+          "term": "insights",
+          "score": 4.5122
+        },
+        {
+          "term": "internal",
+          "score": 4.5122
+        },
+        {
+          "term": "link",
+          "score": 4.3944
+        },
+        {
+          "term": "agents",
+          "score": 4.3944
+        },
+        {
+          "term": "new",
+          "score": 4.3944
+        },
+        {
+          "term": "explore",
+          "score": 4.3944
+        },
+        {
+          "term": "map",
+          "score": 4.3944
+        },
+        {
+          "term": "content",
+          "score": 4.3944
+        },
+        {
+          "term": "health",
+          "score": 4.3944
+        },
+        {
+          "term": "home",
+          "score": 3.2958
+        },
+        {
+          "term": "capabilities",
+          "score": 3.2958
+        },
+        {
+          "term": "templates",
+          "score": 3.2958
+        },
+        {
+          "term": "hub",
+          "score": 3.2958
+        },
+        {
+          "term": "updates",
+          "score": 3.2958
+        },
+        {
+          "term": "docs",
+          "score": 3.2958
+        },
+        {
+          "term": "reports",
+          "score": 3.2958
+        },
+        {
+          "term": "site",
+          "score": 3.2958
+        },
+        {
+          "term": "continuously",
+          "score": 3.0082
+        },
+        {
+          "term": "layouts",
+          "score": 3.0082
+        },
+        {
+          "term": "promos",
+          "score": 3.0082
+        },
+        {
+          "term": "curated",
+          "score": 3.0082
+        },
+        {
+          "term": "homepage",
+          "score": 3.0082
+        },
+        {
+          "term": "tool",
+          "score": 3.0082
+        },
+        {
+          "term": "stale",
+          "score": 3.0082
+        }
+      ]
+    },
+    {
+      "slug": "/main/front/",
+      "file": "pages/main/front/index.tsx",
+      "keywords": [
+        {
+          "term": "open",
+          "score": 41.7473
+        },
+        {
+          "term": "map",
+          "score": 30.7611
+        },
+        {
+          "term": "item",
+          "score": 19.553
+        },
+        {
+          "term": "white",
+          "score": 16.5449
+        },
+        {
+          "term": "autonomous",
+          "score": 15.3806
+        },
+        {
+          "term": "capabilities",
+          "score": 15.3806
+        },
+        {
+          "term": "benefits",
+          "score": 13.1833
+        },
+        {
+          "term": "explore",
+          "score": 13.1833
+        },
+        {
+          "term": "links",
+          "score": 13.1833
+        },
+        {
+          "term": "live",
+          "score": 13.1833
+        },
+        {
+          "term": "hub",
+          "score": 12.0847
+        },
+        {
+          "term": "automations",
+          "score": 12.0847
+        },
+        {
+          "term": "border",
+          "score": 12.0326
+        },
+        {
+          "term": "cloud",
+          "score": 10.9861
+        },
+        {
+          "term": "feature",
+          "score": 10.5285
+        },
+        {
+          "term": "card",
+          "score": 10.5285
+        },
+        {
+          "term": "agents",
+          "score": 9.8875
+        },
+        {
+          "term": "classname",
+          "score": 9.0245
+        },
+        {
+          "term": "rounded",
+          "score": 9.0245
+        },
+        {
+          "term": "external",
+          "score": 9.0245
+        },
+        {
+          "term": "zion",
+          "score": 8.7889
+        },
+        {
+          "term": "systems",
+          "score": 7.6903
+        },
+        {
+          "term": "features",
+          "score": 7.6903
+        },
+        {
+          "term": "site",
+          "score": 7.6903
+        },
+        {
+          "term": "false",
+          "score": 7.5204
+        },
+        {
+          "term": "setmobileopen",
+          "score": 7.5204
+        },
+        {
+          "term": "text",
+          "score": 7.5204
+        },
+        {
+          "term": "every",
+          "score": 7.5204
+        },
+        {
+          "term": "seo",
+          "score": 7.5204
+        },
+        {
+          "term": "a11y",
+          "score": 7.5204
+        },
+        {
+          "term": "performance",
+          "score": 7.5204
+        },
+        {
+          "term": "automation",
+          "score": 6.5917
+        },
+        {
+          "term": "view",
+          "score": 6.0163
+        },
+        {
+          "term": "jump",
+          "score": 6.0163
+        },
+        {
+          "term": "platform",
+          "score": 6.0163
+        },
+        {
+          "term": "quick",
+          "score": 6.0163
+        },
+        {
+          "term": "workflows",
+          "score": 6.0163
+        },
+        {
+          "term": "ops",
+          "score": 6.0163
+        },
+        {
+          "term": "artifacts",
+          "score": 6.0163
+        },
+        {
+          "term": "front",
+          "score": 5.4931
+        }
+      ]
+    },
+    {
+      "slug": "/newsroom",
+      "file": "pages/newsroom.tsx",
+      "keywords": [
+        {
+          "term": "head",
+          "score": 1.1756
+        },
+        {
+          "term": "newsroom",
+          "score": 0.8109
+        },
+        {
+          "term": "next",
+          "score": 0.2513
+        },
+        {
+          "term": "import",
+          "score": 0
+        },
+        {
+          "term": "export",
+          "score": 0
+        },
+        {
+          "term": "default",
+          "score": 0
+        },
+        {
+          "term": "function",
+          "score": 0
+        }
+      ]
+    },
+    {
+      "slug": "/reports/ai-trends",
+      "file": "pages/reports/ai-trends.tsx",
+      "keywords": [
+        {
+          "term": "aitrendsredirect",
+          "score": 1.5041
+        },
+        {
+          "term": "null",
+          "score": 0.8109
+        },
+        {
+          "term": "react",
+          "score": 0.5878
+        },
+        {
+          "term": "return",
+          "score": 0.5878
+        },
+        {
+          "term": "import",
+          "score": 0
+        },
+        {
+          "term": "export",
+          "score": 0
+        },
+        {
+          "term": "default",
+          "score": 0
+        },
+        {
+          "term": "function",
+          "score": 0
+        }
+      ]
+    },
+    {
+      "slug": "/reports/seo",
+      "file": "pages/reports/seo.tsx",
+      "keywords": [
+        {
+          "term": "seoreportredirect",
+          "score": 1.5041
+        },
+        {
+          "term": "null",
+          "score": 0.8109
+        },
+        {
+          "term": "react",
+          "score": 0.5878
+        },
+        {
+          "term": "return",
+          "score": 0.5878
+        },
+        {
+          "term": "import",
+          "score": 0
+        },
+        {
+          "term": "export",
+          "score": 0
+        },
+        {
+          "term": "default",
+          "score": 0
+        },
+        {
+          "term": "function",
+          "score": 0
+        }
+      ]
+    },
+    {
+      "slug": "/site-health",
+      "file": "pages/site-health.tsx",
+      "keywords": [
+        {
+          "term": "sitehealth",
+          "score": 1.5041
+        },
+        {
+          "term": "head",
+          "score": 1.1756
+        },
+        {
+          "term": "next",
+          "score": 0.2513
+        },
+        {
+          "term": "import",
+          "score": 0
+        },
+        {
+          "term": "export",
+          "score": 0
+        },
+        {
+          "term": "default",
+          "score": 0
+        },
+        {
+          "term": "function",
+          "score": 0
+        }
+      ]
+    }
+  ]
+}

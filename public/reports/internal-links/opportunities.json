@@ -1,0 +1,185 @@
+{
+  "generatedAt": "2025-08-11T23:59:19.825Z",
+  "pages": [
+    {
+      "from": "/_app",
+      "suggestions": [
+        {
+          "from": "/_app",
+          "to": "/newsroom",
+          "score": 0.385
+        },
+        {
+          "from": "/_app",
+          "to": "/site-health",
+          "score": 0.385
+        },
+        {
+          "from": "/_app",
+          "to": "/front/",
+          "score": 0.313
+        },
+        {
+          "from": "/_app",
+          "to": "/reports/ai-trends",
+          "score": 0.267
+        },
+        {
+          "from": "/_app",
+          "to": "/reports/seo",
+          "score": 0.267
+        }
+      ]
+    },
+    {
+      "from": "/front/",
+      "suggestions": [
+        {
+          "from": "/front/",
+          "to": "/reports/ai-trends",
+          "score": 0.636
+        },
+        {
+          "from": "/front/",
+          "to": "/reports/seo",
+          "score": 0.636
+        },
+        {
+          "from": "/front/",
+          "to": "/newsroom",
+          "score": 0.417
+        },
+        {
+          "from": "/front/",
+          "to": "/site-health",
+          "score": 0.417
+        },
+        {
+          "from": "/front/",
+          "to": "/_app",
+          "score": 0.313
+        }
+      ]
+    },
+    {
+      "from": "/newsroom",
+      "suggestions": [
+        {
+          "from": "/newsroom",
+          "to": "/site-health",
+          "score": 0.75
+        },
+        {
+          "from": "/newsroom",
+          "to": "/front/",
+          "score": 0.417
+        },
+        {
+          "from": "/newsroom",
+          "to": "/_app",
+          "score": 0.385
+        },
+        {
+          "from": "/newsroom",
+          "to": "/reports/ai-trends",
+          "score": 0.364
+        },
+        {
+          "from": "/newsroom",
+          "to": "/reports/seo",
+          "score": 0.364
+        }
+      ]
+    },
+    {
+      "from": "/reports/ai-trends",
+      "suggestions": [
+        {
+          "from": "/reports/ai-trends",
+          "to": "/reports/seo",
+          "score": 0.778
+        },
+        {
+          "from": "/reports/ai-trends",
+          "to": "/front/",
+          "score": 0.636
+        },
+        {
+          "from": "/reports/ai-trends",
+          "to": "/newsroom",
+          "score": 0.364
+        },
+        {
+          "from": "/reports/ai-trends",
+          "to": "/site-health",
+          "score": 0.364
+        },
+        {
+          "from": "/reports/ai-trends",
+          "to": "/_app",
+          "score": 0.267
+        }
+      ]
+    },
+    {
+      "from": "/reports/seo",
+      "suggestions": [
+        {
+          "from": "/reports/seo",
+          "to": "/reports/ai-trends",
+          "score": 0.778
+        },
+        {
+          "from": "/reports/seo",
+          "to": "/front/",
+          "score": 0.636
+        },
+        {
+          "from": "/reports/seo",
+          "to": "/newsroom",
+          "score": 0.364
+        },
+        {
+          "from": "/reports/seo",
+          "to": "/site-health",
+          "score": 0.364
+        },
+        {
+          "from": "/reports/seo",
+          "to": "/_app",
+          "score": 0.267
+        }
+      ]
+    },
+    {
+      "from": "/site-health",
+      "suggestions": [
+        {
+          "from": "/site-health",
+          "to": "/newsroom",
+          "score": 0.75
+        },
+        {
+          "from": "/site-health",
+          "to": "/front/",
+          "score": 0.417
+        },
+        {
+          "from": "/site-health",
+          "to": "/_app",
+          "score": 0.385
+        },
+        {
+          "from": "/site-health",
+          "to": "/reports/ai-trends",
+          "score": 0.364
+        },
+        {
+          "from": "/site-health",
+          "to": "/reports/seo",
+          "score": 0.364
+        }
+      ]
+    }
+  ]
+}
