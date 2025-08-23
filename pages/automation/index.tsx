@@ -200,6 +200,16 @@ export default function AutomationHub() {
             <p className="text-white/70">Scans public assets, writes reports, and syncs changes.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/asset-size-guardian" target="_blank" rel="noopener">Trigger / View</a>
           </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Content Freshness Auditor</h2>
+            <p className="text-white/70">Finds stale pages and docs; publishes a freshness report.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/content-freshness-auditor" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Repo Insights Digest</h2>
+            <p className="text-white/70">Compiles a daily repo health digest across automations.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/repo-insights-digest" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
         </ul>
         
         <RelatedContent currentPage="automation" />

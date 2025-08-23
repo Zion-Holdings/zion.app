@@ -7,7 +7,7 @@ function runNode(relativePath, args = []) {
   return { status: res.status || 0, stdout: res.stdout || '', stderr: res.stderr || '' };
 }
 
-exports.config = { schedule: '*/10 * * * *' };
+exports.config = { schedule: '*/15 * * * *' };
 
 exports.handler = async () => {
   const logs = [];
@@ -20,7 +20,7 @@ exports.handler = async () => {
     return status;
   };
 
-  step('content-freshness-auditor', () => runNode('automation/content-freshness-auditor.cjs'));
+  step('repo-insights-digest', () => runNode('automation/repo-insights-digest.cjs'));
   step('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
 
   return { statusCode: 200, headers: { 'content-type': 'text/plain' }, body: logs.join('\n') };
