@@ -1,7 +1,13 @@
 import React from 'react';
+<<<<<<< HEAD
+import FuturisticNav from './FuturisticNav';
+import FuturisticFooter from './FuturisticFooter';
+import AnimatedBackground from '../ui/AnimatedBackground';
+=======
 import EnhancedNavigation from './EnhancedNavigation';
 import EnhancedFooter from './EnhancedFooter';
 import UltraAdvancedFuturisticBackground from '../ui/UltraAdvancedFuturisticBackground';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-15d4
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -241,6 +247,25 @@ export default function Layout({ children, seo }: LayoutProps) {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
+<<<<<<< HEAD
+  return (
+    <div className="min-h-screen bg-black text-white relative">
+      {/* Animated background */}
+      <AnimatedBackground variant="stars" intensity="low" />
+      
+      {/* Navigation */}
+      <FuturisticNav />
+      
+      {/* Main content */}
+      <main className="relative z-10">
+        {children}
+      </main>
+      
+      {/* Footer */}
+      <FuturisticFooter />
+    </div>
+  );
+=======
 	return (
 		<div className="min-h-screen bg-black text-white">
 			<UltraAdvancedFuturisticBackground variant="quantum-holographic">
@@ -252,6 +277,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 			</UltraAdvancedFuturisticBackground>
 		</div>
 	);
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-15d4
 };
 
 export default Layout;

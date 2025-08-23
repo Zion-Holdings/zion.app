@@ -117,12 +117,64 @@ import {
   Package, Bot, Car, Building2, Monitor, Cpu, 
   Zap, Atom, Database, Cloud, Lock, Code
 } from 'lucide-react';
+<<<<<<< HEAD
+
+// Import our new service data
+import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
+import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas-solutions';
+import { cuttingEdgeAIServices } from '../data/2034-cutting-edge-ai-services';
+import { real2025Q4AugmentedBatch } from '../data/real-2025-q4-augmented-batch';
+import { real2029Q3Additions } from '../data/real-2029-q3-additions';
+import { newServices2026 } from '../data/2026-new-services';
+
+// Import existing service data
+import { realMicroSaasServices } from '../data/real-micro-saas-services';
+import { innovativeAIServices } from '../data/innovative-ai-services';
+import { quantumSpaceServices } from '../data/quantum-space-services';
+import { enterpriseITServices } from '../data/enterprise-it-services';
+=======
 import UltraAdvancedQuantumBackground from '../components/ui/UltraAdvancedQuantumBackground';
 import UltraFuturisticServiceCard from '../components/ui/UltraFuturisticServiceCard';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-15d4
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { additionalEnhancedServices } from '../data/additional-real-services';
+<<<<<<< HEAD
+import { newRealServices } from '../data/new-real-services';
+import { industryRealServices } from '../data/industry-real-services';
+import { professionalServices } from '../data/professional-services';
+import { nextGenerationAIServices } from '../data/next-generation-ai-services';
+import { cuttingEdgeITServices } from '../data/cutting-edge-it-services';
+import { innovativeMicroSaasV2Services } from '../data/innovative-micro-saas-v2';
+import { marketValidatedServices } from '../data/market-validated-services';
+import { emergingTechnologyServices } from '../data/emerging-technology-services';
+import { comprehensiveITSolutions } from '../data/comprehensive-it-solutions';
+import { curatedMarketServices } from '../data/curated-market-services';
+import { realMarketServices } from '../data/real-market-services';
+import { new2025Services } from '../data/new-2025-services';
+import { newRealInnovations } from '../data/new-real-innovations';
+import { serviceExpansions2025 } from '../data/service-expansions-2025';
+import { newOperationalServices2025 } from '../data/new-operational-services-2025';
+import { verifiedRealServices2025Batch2 } from '../data/verified-real-services-2025-batch2';
+import { innovative2025Services } from '../data/innovative-2025-services';
+import { emergingTech2025Services } from '../data/emerging-tech-2025-services';
+import { extraServices } from '../data/extra-services';
+import { newlyAddedServices } from '../data/newly-added-services';
+import { moreRealServices2025 } from '../data/more-real-services-2025';
+import { verified2025Additions } from '../data/verified-2025-additions';
+import { realServicesQ12025 } from '../data/real-services-q1-2025';
+import { realEnterpriseServices2025 } from '../data/real-enterprise-services-2025';
+import { realMarketAugmentations2025 } from '../data/real-market-augmentations-2025';
+import { innovative2026MicroSaasServicesV2 } from '../data/innovative-2026-micro-saas-v2';
+import { emergingTech2026ServicesV2 } from '../data/emerging-tech-2026-services-v2';
+import { enterpriseIT2026ServicesV2 } from '../data/enterprise-it-2026-services-v2';
+import { innovative2026MicroSaasServicesV3 } from '../data/innovative-2026-micro-saas-v3';
+import { emergingTech2026ServicesV3 } from '../data/emerging-tech-2026-services-v3';
+import { enterpriseIT2026ServicesV3 } from '../data/enterprise-it-2026-services-v3';
+import { nextGenAI2026ServicesV3 } from '../data/next-gen-ai-2026-services-v3';
+=======
 import { nextGenInnovativeServices } from '../data/next-gen-innovative-services';
 import { advancedAIServices } from '../data/advanced-ai-services';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-15d4
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -135,11 +187,44 @@ export default function ServicesPage() {
     ...quantumSpaceServices,
     ...enterpriseITServices,
     ...enhancedRealMicroSaasServices,
+<<<<<<< HEAD
+    ...additionalEnhancedServices,
+    ...newRealServices,
+    ...industryRealServices,
+    ...professionalServices,
+    ...nextGenerationAIServices,
+    ...cuttingEdgeITServices,
+    ...innovativeMicroSaasV2Services,
+    ...marketValidatedServices,
+    ...emergingTechnologyServices,
+    ...comprehensiveITSolutions,
+    ...curatedMarketServices,
+    ...realMarketServices,
+    ...new2025Services,
+    ...verified2025Additions,
+    ...newRealInnovations,
+    ...serviceExpansions2025,
+    ...newOperationalServices2025,
+    ...realServicesQ12025,
+    ...realEnterpriseServices2025,
+    ...verifiedRealServices2025Batch2,
+    ...innovative2025Services,
+    ...emergingTech2025Services,
+    ...realMarketAugmentations2025,
+    ...innovative2026MicroSaasServicesV2,
+    ...emergingTech2026ServicesV2,
+    ...enterpriseIT2026ServicesV2,
+    ...innovative2026MicroSaasServicesV3,
+    ...emergingTech2026ServicesV3,
+    ...enterpriseIT2026ServicesV3,
+    ...nextGenAI2026ServicesV3
+=======
     ...innovativeMicroSaasServices,
     ...extraServices,
     ...additionalEnhancedServices,
     ...nextGenInnovativeServices,
     ...advancedAIServices
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-15d4
   ];
 
 // Helper function to get service features
@@ -328,6 +413,16 @@ export default function Services() {
   ];
 
   return (
+<<<<<<< HEAD
+    <>
+      <Head>
+        <title>Micro SaaS Services | Zion Tech Group - Real Solutions with Market Pricing</title>
+        <meta name="description" content="Discover our real micro SaaS services: AI-powered social media analytics, SEO optimization, email marketing automation, and more. Competitive pricing with enterprise features." />
+        <meta property="og:title" content="Micro SaaS Services | Zion Tech Group" />
+        <meta property="og:description" content="Real micro SaaS solutions with competitive pricing. AI-powered tools for social media, SEO, email marketing, and business intelligence." />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
+=======
     <UltraAdvancedQuantumBackground intensity={1.3} variant="quantum">
       <div className="min-h-screen">
         <Head>
@@ -340,6 +435,7 @@ export default function Services() {
           <meta property="og:type" content="website" />
           <link rel="canonical" href="https://ziontechgroup.com/services" />
         </Head>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-15d4
 
       {/* Hero Section */}
       <section className="relative section-padding bg-gradient-cursor overflow-hidden">
@@ -711,6 +807,9 @@ export default function Services() {
           </div>
         </section>
       </div>
+<<<<<<< HEAD
+    </AdvancedFuturisticBackground>
+=======
         {/* CTA Section */}
         <section className="py-24 bg-gradient-to-r from-blue-600 to-cyan-700 relative overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-10" />
@@ -747,5 +846,6 @@ export default function Services() {
     </>
 =======
     </UltraAdvancedQuantumBackground>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-15d4
   );
 }
