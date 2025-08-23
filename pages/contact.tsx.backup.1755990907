@@ -1,9 +1,22 @@
+<<<<<<< HEAD
+=======
 import React, { useState } from 'react';
+>>>>>>> origin/cursor/bc-3b39ce21-390e-4be8-b543-94ce23e119f2-8ade
 import Head from 'next/head';
 import Container from '../components/ui/Container';
 import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 
+<<<<<<< HEAD
+export default function Contact() {
+  return (
+    <>
+      <Head><title>Contact | Zion</title></Head>
+      <div className="py-12">
+        <h1 className="text-2xl font-semibold">Contact</h1>
+        <p className="text-gray-600 mt-2">Reach us at founders@zion.ai</p>
+      </div>
+=======
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
@@ -241,6 +254,7 @@ export default function ContactPage() {
           </div>
         </Container>
       </section>
+>>>>>>> origin/cursor/bc-3b39ce21-390e-4be8-b543-94ce23e119f2-8ade
     </>
   );
 }
