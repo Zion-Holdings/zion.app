@@ -1,0 +1,28 @@
+{
+  "updatedAt": "2025-08-09T17:24:48.684Z",
+  "metrics": {
+    "npmDownloads": [
+      {
+        "package": "next",
+        "downloads": 16890313
+      },
+      {
+        "package": "react",
+        "downloads": 42041642
+      },
+      {
+        "package": "tailwindcss",
+        "downloads": 22341552
+      },
+      {
+        "package": "axios",
+        "downloads": 64276977
+      },
+      {
+        "package": "openai",
+        "downloads": 5935839
+      }
+    ],
+    "githubTrending": []
+  }
+}

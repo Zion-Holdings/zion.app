@@ -1,0 +1,260 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RequestQuote page renders header 1`] = `
+<DocumentFragment>
+  <div
+    class="min-h-screen bg-zion-blue"
+  >
+    <div
+      class="container mx-auto px-4 py-12"
+    >
+      <div
+        class="max-w-3xl mx-auto"
+      >
+        <div
+          class="text-center mb-8 space-y-3"
+        >
+          <h2
+            class="text-4xl font-bold tracking-tight bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text font-heading leading-tight text-transparent supports-[not(background-clip:text)]:text-foreground"
+            style="min-height: 1.2em; contain: layout style; will-change: auto;"
+          >
+            Request a Quote
+          </h2>
+          <p
+            class="text-zion-slate-light mt-4"
+          >
+            Tell us about your project and we'll create a customized quote for you
+          </p>
+          <div
+            class="inline-flex items-center bg-zion-blue-dark py-1 px-3 rounded-full mt-3 border border-zion-purple/20"
+          >
+            <svg
+              aria-hidden="true"
+              class="lucide lucide-sparkles h-4 w-4 text-zion-cyan mr-1"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"
+              />
+              <path
+                d="M20 3v4"
+              />
+              <path
+                d="M22 5h-4"
+              />
+              <path
+                d="M4 17v2"
+              />
+              <path
+                d="M5 18H3"
+              />
+            </svg>
+            <span
+              class="text-sm text-white"
+            >
+              AI-powered matching
+            </span>
+          </div>
+          <button
+            class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 mt-2"
+          >
+            Auto Fill with AI
+          </button>
+        </div>
+        <div
+          class="rounded-lg text-card-foreground shadow-sm bg-zion-blue-dark border border-zion-blue-light mb-8"
+        >
+          <div
+            class="p-6 px-6 py-8"
+          >
+            <div
+              class="relative"
+            >
+              <div
+                class="absolute top-4 left-0 right-0 h-0.5 bg-zion-blue-light"
+              >
+                <div
+                  class="absolute h-full bg-zion-purple transition-all duration-500"
+                  style="width: 0%;"
+                />
+              </div>
+              <div
+                class="flex justify-between relative"
+              >
+                <div
+                  class="flex flex-col items-center relative"
+                >
+                  <div
+                    class="w-8 h-8 rounded-full flex items-center justify-center z-10 transition-colors bg-zion-cyan border-2 border-zion-purple"
+                  >
+                    <span
+                      class="text-xs"
+                    >
+                      1
+                    </span>
+                  </div>
+                  <span
+                    class="text-xs mt-2 font-medium text-white"
+                  >
+                    Service
+                  </span>
+                </div>
+                <div
+                  class="flex flex-col items-center relative"
+                >
+                  <div
+                    class="w-8 h-8 rounded-full flex items-center justify-center z-10 transition-colors bg-zion-blue-light text-zion-slate-light"
+                  >
+                    <span
+                      class="text-xs"
+                    >
+                      2
+                    </span>
+                  </div>
+                  <span
+                    class="text-xs mt-2 font-medium text-zion-slate-light"
+                  >
+                    Details
+                  </span>
+                </div>
+                <div
+                  class="flex flex-col items-center relative"
+                >
+                  <div
+                    class="w-8 h-8 rounded-full flex items-center justify-center z-10 transition-colors bg-zion-blue-light text-zion-slate-light"
+                  >
+                    <span
+                      class="text-xs"
+                    >
+                      3
+                    </span>
+                  </div>
+                  <span
+                    class="text-xs mt-2 font-medium text-zion-slate-light"
+                  >
+                    Timeline
+                  </span>
+                </div>
+                <div
+                  class="flex flex-col items-center relative"
+                >
+                  <div
+                    class="w-8 h-8 rounded-full flex items-center justify-center z-10 transition-colors bg-zion-blue-light text-zion-slate-light"
+                  >
+                    <span
+                      class="text-xs"
+                    >
+                      4
+                    </span>
+                  </div>
+                  <span
+                    class="text-xs mt-2 font-medium text-zion-slate-light"
+                  >
+                    Budget
+                  </span>
+                </div>
+                <div
+                  class="flex flex-col items-center relative"
+                >
+                  <div
+                    class="w-8 h-8 rounded-full flex items-center justify-center z-10 transition-colors bg-zion-blue-light text-zion-slate-light"
+                  >
+                    <span
+                      class="text-xs"
+                    >
+                      5
+                    </span>
+                  </div>
+                  <span
+                    class="text-xs mt-2 font-medium text-zion-slate-light"
+                  >
+                    Summary
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="mt-8"
+            >
+              <div
+                class="space-y-6"
+              >
+                <div>
+                  <h3
+                    class="text-xl font-semibold text-white mb-4"
+                  >
+                    What are you looking for?
+                  </h3>
+                  <div
+                    class="grid grid-cols-1 md:grid-cols-3 gap-4"
+                  >
+                    <div
+                      class="rounded-lg text-card-foreground shadow-sm p-4 cursor-pointer border-2 transition-colors bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50"
+                    >
+                      <h4
+                        class="font-medium text-white"
+                      >
+                        Services
+                      </h4>
+                      <p
+                        class="text-sm text-zion-slate-light"
+                      >
+                        AI solutions, consulting, development
+                      </p>
+                    </div>
+                    <div
+                      class="rounded-lg text-card-foreground shadow-sm p-4 cursor-pointer border-2 transition-colors bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50"
+                    >
+                      <h4
+                        class="font-medium text-white"
+                      >
+                        Talent
+                      </h4>
+                      <p
+                        class="text-sm text-zion-slate-light"
+                      >
+                        AI specialists, developers, consultants
+                      </p>
+                    </div>
+                    <div
+                      class="rounded-lg text-card-foreground shadow-sm p-4 cursor-pointer border-2 transition-colors bg-zion-blue-light/20 border-zion-blue-light hover:border-zion-purple/50"
+                    >
+                      <h4
+                        class="font-medium text-white"
+                      >
+                        Equipment
+                      </h4>
+                      <p
+                        class="text-sm text-zion-slate-light"
+                      >
+                        Servers, workstations, specialized hardware
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex justify-between mt-8"
+            >
+              <button
+                class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-primary/90 h-10 px-4 py-2 ml-auto bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white"
+              >
+                Continue
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
