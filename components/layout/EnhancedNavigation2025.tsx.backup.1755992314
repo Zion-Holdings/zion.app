@@ -10,6 +10,40 @@ import {
 
 const navigationItems = [
   {
+<<<<<<< HEAD
+    name: 'Services',
+    href: '/services',
+    icon: Globe,
+    submenu: [
+      {
+        name: 'AI & Consciousness',
+        href: '/services/ai-consciousness',
+        icon: Brain,
+        description: 'Advanced AI solutions for business transformation',
+        services: ['AI Content Factory Pro', 'AI Healthcare Diagnostics', 'AI Legal Contract Analyzer']
+      },
+      {
+        name: 'Quantum & Emerging Tech',
+        href: '/services/quantum-emerging-tech',
+        icon: Atom,
+        description: 'Next-generation quantum computing solutions',
+        services: ['Quantum Financial Trading', 'Quantum Logistics', 'Space Technology AI']
+      },
+      {
+        name: 'Enterprise IT',
+        href: '/services/enterprise-it',
+        icon: Shield,
+        description: 'Enterprise-grade IT infrastructure and security',
+        services: ['Cyber Threat Intelligence', 'Quantum Data Analytics', 'Autonomous DevOps']
+      },
+      {
+        name: 'Micro SAAS',
+        href: '/services/micro-saas',
+        icon: Rocket,
+        description: 'Innovative micro SAAS solutions',
+        services: ['AI Project Management', 'Smart Inventory', 'Intelligent Customer Support']
+      }
+=======
     name: 'All Services',
     href: '/comprehensive-services-showcase-2025',
     icon: <Globe className="w-5 h-5" />,
@@ -161,6 +195,7 @@ const navigationItems = [
       { name: 'Satellite Technology', href: '/satellite-technology-platform', description: 'Satellite solutions' },
       { name: 'Space Research', href: '/space-research-platform', description: 'Space exploration tools' },
       { name: 'Space Mining Analytics', href: '/space-mining-analytics', description: 'Mining data analysis' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5ee0
     ]
   },
   {

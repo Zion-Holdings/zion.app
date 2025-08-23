@@ -77,6 +77,12 @@
   --quantum-space-2029: 0 0 4000px rgba(0, 255, 255, 0.01);
 }
 
+<<<<<<< HEAD
+/* Enhanced Animations */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+=======
 * {
   box-sizing: border-box;
   padding: 0;
@@ -217,6 +223,7 @@ body {
 @keyframes neonGlow {
   0%, 100% { 
     box-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5ee0
   }
   to {
     transform: rotate(360deg);
@@ -1048,6 +1055,8 @@ h3 {
     animation: none;
   }
 }
+<<<<<<< HEAD
+=======
 
 /* Futuristic utility classes */
 .neon-glow {
@@ -1150,3 +1159,4 @@ h3 {
     animation: hologram 5s ease-in-out infinite;
   }
 }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-5ee0
