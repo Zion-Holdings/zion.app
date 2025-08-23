@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import EnhancedNavigation2025 from './EnhancedNavigation2025';
 import EnhancedFooter2025 from './EnhancedFooter2025';
+import LiveChatWidget from '../LiveChatWidget';
 
 interface LayoutProps {
   children: ReactNode;
@@ -14,6 +15,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         {children}
       </main>
       <EnhancedFooter2025 />
+      <LiveChatWidget />
     </div>
   );
 };

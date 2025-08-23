@@ -2,10 +2,12 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Menu, X, ChevronDown, Search, User, Phone, Mail, 
+  Menu, X, ChevronDown, Phone, Mail, 
   Globe, Shield, Cpu, Brain, Rocket, Zap, BarChart3,
-  Home, Briefcase, Users, FileText, MessageCircle, Settings
+  Home, Briefcase, Users, FileText, MessageCircle
 } from 'lucide-react';
+import SearchComponent from '../SearchComponent';
+import ThemeToggle from '../ThemeToggle';
 
 interface NavigationItem {
   label: string;
@@ -72,7 +74,7 @@ const EnhancedNavigation2025: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
+
 
   // Handle scroll effect
   useEffect(() => {
@@ -95,14 +97,7 @@ const EnhancedNavigation2025: React.FC = () => {
     setActiveDropdown(activeDropdown === label ? null : label);
   };
 
-  // Handle search
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      // Implement search functionality
-      console.log('Searching for:', searchQuery);
-    }
-  };
+
 
   return (
     <>
@@ -217,17 +212,11 @@ const EnhancedNavigation2025: React.FC = () => {
 
             {/* Search and Actions */}
             <div className="hidden lg:flex items-center gap-4">
-              {/* Search */}
-              <form onSubmit={handleSearch} className="relative">
-                <input
-                  type="text"
-                  placeholder="Search services..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-64 px-4 py-2 pl-10 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50 transition-all duration-200"
-                />
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400" />
-              </form>
+              {/* Search Component */}
+              <SearchComponent />
+
+              {/* Theme Toggle */}
+              <ThemeToggle />
 
               {/* CTA Buttons */}
               <div className="flex items-center gap-3">
@@ -269,16 +258,14 @@ const EnhancedNavigation2025: React.FC = () => {
           >
             <div className="max-w-7xl mx-auto px-4 py-6">
               {/* Mobile Search */}
-              <form onSubmit={handleSearch} className="relative mb-6">
-                <input
-                  type="text"
-                  placeholder="Search services..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full px-4 py-3 pl-10 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500/50"
-                />
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-              </form>
+              <div className="mb-6">
+                <SearchComponent />
+              </div>
+              
+              {/* Mobile Theme Toggle */}
+              <div className="mb-6">
+                <ThemeToggle />
+              </div>
 
               {/* Mobile Navigation Items */}
               <div className="space-y-4">
