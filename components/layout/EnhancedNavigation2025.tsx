@@ -2,14 +2,12 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Menu, ChevronDown, X, Phone, Mail, ArrowRight,
-  Brain, Rocket, Target, Atom, Shield,
-  DollarSign, BarChart3, Globe, Grid, Heart, Database,
-  Cpu, Palette, Cloud, Network, TrendingUp, ShoppingCart, Settings, Building, Monitor,
-  Zap, Eye, Infinity, Sparkles, Users, Lock, Code, Server, Layers, Globe2, Truck,
-  Home, Info, FileText, Briefcase, BookOpen, Calendar, MessageCircle, ShieldCheck,
-  Zap as ZapIcon, Star, Award, Lightbulb, Wrench, Cog, BarChart, PieChart
+  Menu, X, ChevronDown, Phone, Mail, 
+  Globe, Shield, Cpu, Brain, Rocket, Zap, BarChart3,
+  Home, Briefcase, Users, FileText, MessageCircle
 } from 'lucide-react';
+import SearchComponent from '../SearchComponent';
+import ThemeToggle from '../ThemeToggle';
 
 interface NavigationItem {
   name: string;
@@ -163,6 +161,7 @@ const EnhancedNavigation2025: React.FC = () => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
 
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -180,11 +179,7 @@ const EnhancedNavigation2025: React.FC = () => {
     setActiveDropdown(null);
   };
 
-  const contactInfo = {
-    phone: '+1 302 464 0950',
-    email: 'kleber@ziontechgroup.com',
-    address: '364 E Main St STE 1008 Middletown DE 19709'
-  };
+
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -299,11 +294,36 @@ const EnhancedNavigation2025: React.FC = () => {
                               </Link>
                             ))}
                           </div>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                )}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Search and Actions */}
+            <div className="hidden lg:flex items-center gap-4">
+              {/* Search Component */}
+              <SearchComponent />
+
+              {/* Theme Toggle */}
+              <ThemeToggle />
+
+              {/* CTA Buttons */}
+              <div className="flex items-center gap-3">
+                <Link
+                  href="/contact"
+                  className="px-6 py-2 border border-cyan-400 text-cyan-400 rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-200 font-medium"
+                >
+                  Get Quote
+                </Link>
+                <Link
+                  href="/get-started"
+                  className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 font-medium"
+                >
+                  Get Started
+                </Link>
               </div>
             ))}
           </div>
@@ -350,14 +370,69 @@ const EnhancedNavigation2025: React.FC = () => {
             transition={{ duration: 0.3 }}
             className="lg:hidden bg-black/95 backdrop-blur-md border-t border-cyan-500/20"
           >
-            <div className="px-4 py-6 space-y-4">
-              {navigationItems.map((item) => (
-                <div key={item.name}>
-                  {item.children ? (
-                    <div>
-                      <button
-                        onClick={() => toggleDropdown(item.name)}
-                        className="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-gray-300 hover:text-white transition-colors duration-200"
+            <div className="max-w-7xl mx-auto px-4 py-6">
+              {/* Mobile Search */}
+              <div className="mb-6">
+                <SearchComponent />
+              </div>
+              
+              {/* Mobile Theme Toggle */}
+              <div className="mb-6">
+                <ThemeToggle />
+              </div>
+
+              {/* Mobile Navigation Items */}
+              <div className="space-y-4">
+                {navigationItems.map((item) => (
+                  <div key={item.label}>
+                    {item.children ? (
+                      <div>
+                        <button
+                          onClick={() => toggleDropdown(item.label)}
+                          className="flex items-center justify-between w-full px-4 py-3 text-left text-gray-300 hover:text-white transition-colors duration-200 font-medium"
+                        >
+                          <div className="flex items-center gap-3">
+                            {item.icon && <item.icon className="w-5 h-5" />}
+                            {item.label}
+                          </div>
+                          <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
+                            activeDropdown === item.label ? 'rotate-180' : ''
+                          }`} />
+                        </button>
+                        
+                        <AnimatePresence>
+                          {activeDropdown === item.label && (
+                            <motion.div
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: 'auto' }}
+                              exit={{ opacity: 0, height: 0 }}
+                              className="ml-8 mt-2 space-y-2"
+                            >
+                              {item.children.map((child) => (
+                                <Link
+                                  key={child.href}
+                                  href={child.href}
+                                  onClick={closeMobileMenu}
+                                  className="flex items-center gap-3 px-4 py-2 text-gray-400 hover:text-white transition-colors duration-200"
+                                >
+                                  {child.icon && <child.icon className="w-4 h-4" />}
+                                  <span>{child.label}</span>
+                                  {child.badge && (
+                                    <span className="px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-full">
+                                      {child.badge}
+                                    </span>
+                                  )}
+                                </Link>
+                              ))}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        onClick={closeMobileMenu}
+                        className="flex items-center gap-3 px-4 py-3 text-gray-300 hover:text-white transition-colors duration-200 font-medium"
                       >
                         <div className="flex items-center space-x-2">
                           {item.icon}
