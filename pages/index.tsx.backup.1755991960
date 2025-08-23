@@ -287,6 +287,21 @@ export default function HomePage() {
       </Head>
 
       {/* Hero Section */}
+<<<<<<< HEAD
+      <Hero
+        title="Zion Tech Group"
+        subtitle="The world&apos;s most advanced autonomous innovation hub delivering cutting-edge technology solutions, intelligent automation systems, and the future of cloud-native AI infrastructure."
+        primaryAction={{
+          text: "Explore Micro SaaS",
+          href: "/micro-saas"
+        }}
+        secondaryAction={{
+          text: "View All Services",
+          href: "/services"
+        }}
+        stats={heroStats}
+      />
+=======
       <section className="relative z-10 pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
@@ -305,6 +320,7 @@ export default function HomePage() {
               AI, autonomous systems, and space technology. Experience the future of business automation.
             </p>
           </motion.div>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-d7ba
 
       {/* Stats Section */}
       <section className="py-20 bg-gray-800/50">
@@ -668,6 +684,9 @@ export default function HomePage() {
               size="lg"
               className="bg-white text-blue-600 hover:bg-gray-100 shadow-2xl"
             >
+<<<<<<< HEAD
+              Start Your Journey
+=======
               Get Started
             </Button>
           </motion.div>
@@ -802,6 +821,7 @@ export default function HomePage() {
               className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-4 text-lg font-semibold rounded-xl"
             >
               View All Services
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-d7ba
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
             <Button
