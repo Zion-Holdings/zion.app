@@ -1,4 +1,14 @@
 {
+<<<<<<< HEAD
+  "generatedAt": "2025-08-11T23:25:03.830Z",
+  "functions": [
+    "a11y-alt-text-runner",
+    "accelerated-sync-orchestrator",
+    "adaptive-orchestrator",
+    "agent-swarm-orchestrator",
+    "ai-changelog-runner",
+    "alt-text-indexer-runner",
+=======
   "generatedAt": "2025-08-12T00:08:38.293Z",
   "functions": [
     "a11y-alt-text-runner",
@@ -6,6 +16,7 @@
     "ai-changelog-runner",
     "ai-trends-radar-runner",
     "anchor-links-auto-fixer",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-6146
     "auto-scheduler",
     "automation-heartbeat",
     "automation-matrix",
@@ -17,10 +28,14 @@
     "canonical-auditor",
     "cloud-swarm-committer",
     "cloud_orchestrator",
+<<<<<<< HEAD
+    "content-registry-runner",
+=======
     "component-coupling-graph-runner",
     "component-props-docs-runner",
     "component-size-report",
     "content-freshness-score-runner",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-6146
     "continuous-front-runner",
     "continuous-orchestrator",
     "cron-heartbeat",
@@ -58,8 +73,11 @@
     "image-optimizer-runner",
     "innovation-lab",
     "internal-link-graph-runner",
+<<<<<<< HEAD
+=======
     "knowledge-pack-runner",
     "license-compliance-auditor",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-6146
     "link-and-health-scheduler",
     "link-crawler",
     "maintenance-scheduler",
