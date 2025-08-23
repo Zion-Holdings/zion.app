@@ -34,27 +34,10 @@ import { advancedAIAutomationServices } from '../data/2025-advanced-ai-automatio
 import { innovativeITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
 import { real2025Q4AugmentedBatch } from '../data/real-2025-q4-augmented-batch';
 import { real2029Q3Additions } from '../data/real-2029-q3-additions';
-import { validatedServices2025Q4 } from '../data/real-validated-2025-q4-additions';
-import { real2035Q2Additions } from '../data/real-2035-q2-additions';
-import { real2036ServiceExpansions } from '../data/real-2036-service-expansions';
-import { innovative2036MicroSaasServices } from '../data/innovative-2036-micro-saas-services';
-import { innovative2036ITServices } from '../data/innovative-2036-it-services';
-import { innovative2037MicroSaasServices } from '../data/innovative-2037-micro-saas-services';
-import { innovative2037ITServices } from '../data/innovative-2037-it-services';
-import { innovative2037AIServices } from '../data/innovative-2037-ai-services';
-import { innovative2038CuttingEdgeServices } from '../data/innovative-2038-cutting-edge-services';
-import { innovative2038ITInfrastructureServices } from '../data/innovative-2038-it-infrastructure-services';
-import { innovative2037Services } from '../data/innovative-2037-services';
-import { advanced2038Services } from '../data/advanced-2038-services';
-import { revolutionary2039Services } from '../data/revolutionary-2039-services';
-import { innovative2038AdvancedServices } from '../data/innovative-2038-advanced-services';
-import { revolutionary2040FuturisticServices } from '../data/revolutionary-2040-futuristic-services';
-import { practicalBusinessITServices2038 } from '../data/practical-business-it-services-2038';
-
-// Import new innovative service data
-import { innovative2025MicroSaasExpansions } from '../data/innovative-2025-micro-saas-expansions';
-import { innovative2025ITServiceExpansions } from '../data/innovative-2025-it-services-expansions';
-import { innovative2025AIServiceExpansions } from '../data/innovative-2025-ai-services-expansions';
+import { enterpriseITSolutions2034Additions } from '../data/augment-2034-enterprise-it-additions';
+import { innovativeMicroSaasSolutions2034Additions } from '../data/augment-2034-micro-saas-additions';
+import { cuttingEdgeAIServices2034Additions } from '../data/augment-2034-ai-services-additions';
+import { aiAutonomousEcosystemServices2029Additions, emergingTechBreakthroughServices2029Additions, practicalBusinessSolutionServices2029Additions } from '../data/augment-2029-ecosystem-additions';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -69,8 +52,10 @@ import { industryRealServices } from '../data/industry-real-services';
 
 // Helper function to get service category
 const getServiceCategory = (service: any) => {
-  if (service.category) return service.category;
-  if (service.type) return service.type;
+  if (Array.isArray(service?.category)) return service.category[0] || 'Other';
+  if (service?.category) return service.category;
+  if (Array.isArray(service?.type)) return service.type[0] || 'Other';
+  if (service?.type) return service.type;
   return 'Other';
 };
 
@@ -155,16 +140,13 @@ const allServices = [
   ...advancedITInfrastructureServices2025,
   ...industryRealServices,
   ...real2025Q4AugmentedBatch,
-  // ...real2029Q3Additions,
-  // ...validatedServices2025Q4,
-  ...real2035Q2Additions,
-  ...real2036ServiceExpansions,
-  ...innovative2036MicroSaasServices,
-  ...innovative2036ITServices,
-  // New innovative services
-  ...innovative2025MicroSaasExpansions,
-  ...innovative2025ITServiceExpansions,
-  ...innovative2025AIServiceExpansions
+  ...real2029Q3Additions,
+  ...enterpriseITSolutions2034Additions,
+  ...innovativeMicroSaasSolutions2034Additions,
+  ...cuttingEdgeAIServices2034Additions,
+  ...aiAutonomousEcosystemServices2029Additions,
+  ...emergingTechBreakthroughServices2029Additions,
+  ...practicalBusinessSolutionServices2029Additions
 ];
 
 const categories = [
