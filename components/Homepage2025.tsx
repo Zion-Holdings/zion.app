@@ -225,12 +225,12 @@ const Homepage2025: React.FC = () => {
               <p className="text-gray-300 mb-6">
                 Advanced AI systems that evolve and adapt, pushing the boundaries of machine intelligence.
               </p>
-              <Link
-                href="/ai-services"
-                className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors"
-              >
-                Learn More <ArrowRight className="ml-2 w-4 h-4" />
-              </Link>
+                          <Link
+              href="/comprehensive-2038-services-showcase"
+              className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors"
+            >
+              Learn More <ArrowRight className="ml-2 w-4 h-4" />
+            </Link>
             </motion.div>
 
             {/* Quantum Services */}
@@ -249,7 +249,7 @@ const Homepage2025: React.FC = () => {
                 Next-generation quantum systems solving complex problems beyond classical computing limits.
               </p>
               <Link
-                href="/quantum-services"
+                href="/comprehensive-2038-services-showcase"
                 className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors"
               >
                 Learn More <ArrowRight className="ml-2 w-4 h-4" />
@@ -272,7 +272,7 @@ const Homepage2025: React.FC = () => {
                 Revolutionary space solutions from satellite networks to interplanetary infrastructure.
               </p>
               <Link
-                href="/space-technology"
+                href="/comprehensive-2038-services-showcase"
                 className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
               >
                 Learn More <ArrowRight className="ml-2 w-4 h-4" />
