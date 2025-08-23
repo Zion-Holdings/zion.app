@@ -24,5 +24,9 @@
     }
   ],
   "buildBreakingFiles": [],
+<<<<<<< HEAD
+  "generatedAt": "2025-08-19T17:38:00.458Z"
+=======
   "generatedAt": "2025-08-19T18:36:05.933Z"
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-1200
 }

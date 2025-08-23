@@ -422,6 +422,14 @@
     "git:cron:start": "bash automation/git-sync-cron.sh start",
     "git:cron:stop": "bash automation/git-sync-cron.sh stop",
     "git:cron:status": "bash automation/git-sync-cron.sh status",
+<<<<<<< HEAD
+    "husky:check": "bash scripts/husky-health-check.sh",
+    "husky:repair": "bash scripts/husky-repair.sh",
+    "husky:cron:start": "bash automation/husky-cron.sh start",
+    "husky:cron:stop": "bash automation/husky-cron.sh stop",
+    "husky:cron:status": "bash automation/husky-cron.sh status",
+    "husky:cron:run": "bash automation/husky-cron.sh run"
+=======
     "homepage:update": "node automation/homepage-updater.cjs",
     "front:futurize": "node automation/front-futurizer.cjs",
     "front:futurize:cron": "node -e \"const cp=require('child_process'); setInterval(()=>cp.exec('node automation/front-futurizer.cjs',()=>{}), 1000*60*60*6)\"",
@@ -467,6 +475,7 @@
     "redundancy:comprehensive:health:check": "node automation/comprehensive-redundancy-system.cjs health",
     "redundancy:comprehensive:recover": "node automation/comprehensive-redundancy-system.cjs recover",
     "redundancy:pm2:comprehensive": "pm2 start ecosystem-comprehensive-redundancy.pm2.cjs --update-env"
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-1200
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
