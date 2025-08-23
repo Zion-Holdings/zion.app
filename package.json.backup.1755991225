@@ -2,6 +2,8 @@
   "name": "bolt.new.zion.app",
   "version": "0.1.0",
   "private": true,
+<<<<<<< HEAD
+=======
   "version": "0.0.0",
   "type": "module",
   "bin": {
@@ -423,6 +425,7 @@
     "doc": "docs",
     "test": "tests"
   },
+>>>>>>> origin/cursor/build-project-with-netlify-9d19
   "repository": {
     "type": "git",
     "url": "https://github.com/Zion-Holdings/zion.app.git"
