@@ -24,9 +24,9 @@ interface Service {
   period?: string;
   description: string;
   features: string[];
-  popular: boolean;
-  icon: string;
-  color: string;
+  popular?: boolean;
+  icon?: string;
+  color?: string;
   textColor?: string;
   link: string;
   category: string;
@@ -39,17 +39,19 @@ interface Service {
   marketSize?: string;
   growthRate?: string;
   contactInfo?: {
-    mobile: string;
+    mobile?: string;
+    phone?: string;
     email: string;
-    address: string;
+    address?: string;
     website: string;
   };
-  realImplementation?: boolean;
+  realImplementation?: string | boolean;
   implementationDetails?: string;
   launchDate?: string;
-  customers: number;
+  customers: string | number;
   rating: number;
   reviews: number;
+  benefits?: string[];
 }
 
 const Innovative2040FuturisticServicesShowcase: React.FC = () => {
@@ -58,6 +60,15 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [sortBy, setSortBy] = useState<'name' | 'price' | 'popularity' | 'category'>('name');
   const [isLoading, setIsLoading] = useState(true);
+
+  // Helper function to safely render prices
+  const renderPrice = (price: any) => {
+    if (typeof price === 'string') return price;
+    if (typeof price === 'object' && price.monthly) {
+      return `$${price.monthly}/${price.currency || 'month'}`;
+    }
+    return 'Contact for pricing';
+  };
 
   // Combine all services
   const allServices: Service[] = [
@@ -314,7 +325,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                     {/* Price */}
                     <div className="flex items-center justify-between mb-4">
                       <div className="text-2xl font-bold text-cyan-400">
-                        {typeof service.price === 'string' ? service.price : `$${service.price.monthly}/${service.price.currency}`}
+                        {renderPrice(service.price)}
                         <span className="text-sm text-gray-400">
                           {typeof service.price === 'string' ? service.period : '/month'}
                         </span>
@@ -416,7 +427,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                           </div>
                           <div className="text-right">
                                                        <div className="text-3xl font-bold text-cyan-400 mb-1">
-                             {typeof service.price === 'string' ? service.price : `$${service.price.monthly}/${service.price.currency}`}
+                             {renderPrice(service.price)}
                              <span className="text-lg text-gray-400">
                                {typeof service.price === 'string' ? service.period : '/month'}
                              </span>

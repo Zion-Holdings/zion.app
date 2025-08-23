@@ -20,18 +20,32 @@ interface FooterSection {
 }
 
 const footerSections: FooterSection[] = [
-        {
-        title: 'Services',
-        links: [
-          { label: 'AI & Machine Learning', href: '/ai-services', description: 'Advanced AI solutions' },
-          { label: 'Innovative 2040 Services', href: '/innovative-2040-futuristic-services-showcase', description: 'Cutting-edge futuristic solutions' },
-          { label: 'Quantum Computing', href: '/quantum-computing', description: 'Next-gen quantum tech' },
-          { label: 'Space Technology', href: '/space-tech', description: 'Innovative space solutions' },
-          { label: 'Cybersecurity', href: '/cybersecurity', description: 'Enterprise security' },
-          { label: 'Cloud Solutions', href: '/cloud-platform', description: 'Scalable cloud infrastructure' },
-          { label: 'View All Services', href: '/services', description: 'Complete service portfolio' }
-        ]
-      },
+  {
+    title: 'Services',
+    links: [
+      { label: 'AI & Machine Learning', href: '/ai-services', description: 'Advanced AI solutions' },
+      { label: 'Innovative 2040 Services', href: '/innovative-2040-futuristic-services-showcase', description: 'Cutting-edge futuristic solutions' },
+      { label: 'Quantum Computing', href: '/quantum-computing', description: 'Next-gen quantum tech' },
+      { label: 'Space Technology', href: '/space-tech', description: 'Innovative space solutions' },
+      { label: 'Cybersecurity', href: '/cybersecurity', description: 'Enterprise security' },
+      { label: 'Cloud Solutions', href: '/cloud-platform', description: 'Scalable cloud infrastructure' },
+      { label: 'Healthcare Solutions', href: '/healthcare-solutions', description: 'Medical technology' },
+      { label: 'Financial Solutions', href: '/financial-solutions', description: 'Fintech solutions' },
+      { label: 'Manufacturing AI', href: '/manufacturing-ai-solutions', description: 'Industry 4.0' },
+      { label: 'View All Services', href: '/services', description: 'Complete service portfolio' }
+    ]
+  },
+  {
+    title: 'Solutions',
+    links: [
+      { label: 'Enterprise Solutions', href: '/solutions', description: 'Comprehensive enterprise solutions' },
+      { label: 'Government Technology', href: '/government-technology-solutions', description: 'Public sector solutions' },
+      { label: 'Education Technology', href: '/education-technology-solutions', description: 'EdTech solutions' },
+      { label: 'Retail Technology', href: '/retail-technology-solutions', description: 'E-commerce tech' },
+      { label: 'Healthcare Technology', href: '/healthcare-solutions', description: 'Medical technology' },
+      { label: 'Financial Technology', href: '/financial-solutions', description: 'Fintech solutions' }
+    ]
+  },
   {
     title: 'Company',
     links: [
@@ -40,29 +54,19 @@ const footerSections: FooterSection[] = [
       { label: 'Careers', href: '/careers', description: 'Join our team' },
       { label: 'News & Updates', href: '/news', description: 'Latest company news' },
       { label: 'Case Studies', href: '/case-studies', description: 'Success stories' },
+      { label: 'Partners', href: '/partners', description: 'Strategic partnerships' },
       { label: 'Contact', href: '/contact', description: 'Get in touch' }
     ]
   },
   {
     title: 'Resources',
     links: [
-      { label: 'Blog', href: '/blog', description: 'Industry insights' },
+      { label: 'Blog & Insights', href: '/blog', description: 'Industry insights' },
       { label: 'Whitepapers', href: '/white-papers', description: 'In-depth research' },
       { label: 'Webinars', href: '/webinars', description: 'Educational content' },
       { label: 'Documentation', href: '/docs', description: 'Technical guides' },
       { label: 'API Reference', href: '/api-documentation', description: 'Developer resources' },
-      { label: 'Support', href: '/support', description: 'Help & assistance' }
-    ]
-  },
-  {
-    title: 'Industries',
-    links: [
-      { label: 'Healthcare', href: '/healthcare-solutions', description: 'Medical technology' },
-      { label: 'Finance', href: '/financial-solutions', description: 'Fintech solutions' },
-      { label: 'Manufacturing', href: '/manufacturing-ai-solutions', description: 'Industry 4.0' },
-      { label: 'Retail', href: '/retail-technology-solutions', description: 'E-commerce tech' },
-      { label: 'Government', href: '/government-technology-solutions', description: 'Public sector' },
-      { label: 'Education', href: '/education-technology-solutions', description: 'EdTech solutions' }
+      { label: 'Support Center', href: '/support', description: 'Help & assistance' }
     ]
   }
 ];

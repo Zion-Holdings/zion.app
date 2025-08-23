@@ -4,7 +4,9 @@ import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, X, Search, ChevronDown, Zap, Globe, Lock, 
-  Phone, Mail, MapPin, ArrowRight, Star, Users, Award
+  Phone, Mail, MapPin, ArrowRight, Star, Users, Award,
+  Heart, TrendingUp, Cpu, Building, Shield, ShoppingCart,
+  FileText, BookOpen, Code, HelpCircle, Briefcase, Newspaper, Handshake
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -61,6 +63,24 @@ const navigationItems: NavigationItem[] = [
         description: 'Scalable cloud infrastructure'
       },
       {
+        label: 'Healthcare Solutions',
+        href: '/healthcare-solutions',
+        icon: <Heart className="w-4 h-4" />,
+        description: 'Medical technology and AI diagnostics'
+      },
+      {
+        label: 'Financial Solutions',
+        href: '/financial-solutions',
+        icon: <TrendingUp className="w-4 h-4" />,
+        description: 'Fintech and financial technology'
+      },
+      {
+        label: 'Manufacturing AI',
+        href: '/manufacturing-ai-solutions',
+        icon: <Cpu className="w-4 h-4" />,
+        description: 'Industry 4.0 and smart manufacturing'
+      },
+      {
         label: 'View All Services',
         href: '/services',
         icon: <ArrowRight className="w-4 h-4" />,
@@ -69,9 +89,103 @@ const navigationItems: NavigationItem[] = [
     ]
   },
   {
-    label: 'About',
-    href: '/about',
-    icon: <Users className="w-4 h-4" />
+    label: 'Solutions',
+    children: [
+      {
+        label: 'Enterprise Solutions',
+        href: '/solutions',
+        icon: <Building className="w-4 h-4" />,
+        description: 'Comprehensive enterprise technology solutions'
+      },
+      {
+        label: 'Government Technology',
+        href: '/government-technology-solutions',
+        icon: <Shield className="w-4 h-4" />,
+        description: 'Public sector technology solutions'
+      },
+      {
+        label: 'Education Technology',
+        href: '/education-technology-solutions',
+        icon: <Users className="w-4 h-4" />,
+        description: 'EdTech and educational solutions'
+      },
+      {
+        label: 'Retail Technology',
+        href: '/retail-technology-solutions',
+        icon: <ShoppingCart className="w-4 h-4" />,
+        description: 'E-commerce and retail technology'
+      }
+    ]
+  },
+  {
+    label: 'Resources',
+    children: [
+      {
+        label: 'Blog & Insights',
+        href: '/blog',
+        icon: <FileText className="w-4 h-4" />,
+        description: 'Industry insights and thought leadership'
+      },
+      {
+        label: 'Case Studies',
+        href: '/case-studies',
+        icon: <Award className="w-4 h-4" />,
+        description: 'Success stories and client results'
+      },
+      {
+        label: 'Documentation',
+        href: '/docs',
+        icon: <BookOpen className="w-4 h-4" />,
+        description: 'Technical guides and documentation'
+      },
+      {
+        label: 'API Reference',
+        href: '/api-documentation',
+        icon: <Code className="w-4 h-4" />,
+        description: 'Developer resources and APIs'
+      },
+      {
+        label: 'Support Center',
+        href: '/support',
+        icon: <HelpCircle className="w-4 h-4" />,
+        description: 'Help, assistance, and support'
+      }
+    ]
+  },
+  {
+    label: 'Company',
+    children: [
+      {
+        label: 'About Us',
+        href: '/about',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Our mission, vision, and values'
+      },
+      {
+        label: 'Leadership Team',
+        href: '/about#leadership',
+        icon: <Award className="w-4 h-4" />,
+        description: 'Meet our executive team'
+      },
+      {
+        label: 'Careers',
+        href: '/careers',
+        icon: <Briefcase className="w-4 h-4" />,
+        description: 'Join our innovative team'
+      },
+      {
+        label: 'News & Updates',
+        href: '/news',
+        icon: <Newspaper className="w-4 h-4" />,
+        description: 'Latest company news and updates'
+      },
+      {
+        label: 'Partners',
+        href: '/partners',
+        icon: <Handshake className="w-4 h-4" />,
+        description: 'Strategic partnerships and alliances'
+      }
+    ]
   },
   {
     label: 'Contact',
