@@ -125,7 +125,12 @@ function getAllServices(): Service[] {
 		.concat(real2027Q1Additions as unknown as Service[])
 		.concat(real2027Q2Additions as unknown as Service[])
 		.concat(real2028ServiceExpansions as unknown as Service[])
+<<<<<<< HEAD
+		.concat(real2029Q1Additions as unknown as Service[])
+		.concat(realMarketServices as unknown as Service[]);
+=======
 		.concat(real2029Q1Additions as unknown as Service[]);
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-e274
 }
 
 function toSlug(value: string): string {
