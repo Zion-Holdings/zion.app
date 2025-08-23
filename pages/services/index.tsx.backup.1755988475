@@ -189,7 +189,11 @@ export default function ServicesIndexPage() {
       real2026Q4ExpansionsV2 as unknown[],
       real2026Q4ExpansionsV3 as unknown[],
       real2036InnovativeServices as unknown[],
+<<<<<<< HEAD
+      real2036EmergingTechServices as unknown[]
+=======
       real2036SpecializedServices as unknown[]
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-c532
     )
     .concat(real2036ServiceExpansions as unknown[]);
   const byCategory: Record<string, unknown[]> = {};

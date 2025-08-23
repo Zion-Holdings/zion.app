@@ -1,17 +1,39 @@
+<<<<<<< HEAD
+import React from 'react';
+import Layout from '../components/layout/Layout';
+import React, { useState } from 'react';
+import SEO from '../components/SEO';
+import { motion } from 'framer-motion';
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from 'lucide-react';
+
+const Contact: React.FC = () => {
+=======
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import SEO from '../components/SEO';
 import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
 
 const ContactPage: React.FC = () => {
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-c532
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     company: '',
+<<<<<<< HEAD
+    message: '',
+      <Head>
+        <title>Contact Us | Zion Tech Group - Get Started Today</title>
+        <meta name="description" content="Get in touch with Zion Tech Group to discuss your AI and automation needs. Our experts are ready to help transform your business." />
+        <meta property="og:title" content="Contact Us | Zion Tech Group" />
+        <meta property="og:description" content="Get in touch to discuss your AI and automation needs." />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
+=======
     phone: '',
     service: '',
     message: ''
   });
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-c532
 
       {/* Hero Section */}
       <section className="relative section-padding bg-gradient-cursor overflow-hidden">
@@ -174,7 +196,28 @@ const ContactPage: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
+<<<<<<< HEAD
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    setIsSubmitting(false);
+    setIsSubmitted(true);
+    
+    // Reset form after 3 seconds
+    setTimeout(() => {
+      setIsSubmitted(false);
+      setFormData({ name: '', email: '', company: '', message: '', service: '' });
+    }, 3000);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+=======
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-c532
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -244,6 +287,33 @@ const ContactPage: React.FC = () => {
   ];
 
   return (
+<<<<<<< HEAD
+    <div className="min-h-screen bg-black text-white">
+      <SEO 
+        title="Contact Us | Zion Tech Group"
+        description="Get in touch with Zion Tech Group. Contact us for AI, quantum computing, cybersecurity, and IT solutions. We're here to help transform your business."
+        keywords={["contact", "Zion Tech Group", "AI solutions", "quantum computing", "cybersecurity", "IT services"]}
+      />
+      
+      {/* Hero Section */}
+      <section className="relative py-20 px-4 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
+          >
+            <h1 className="text-5xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+              Get In Touch
+            </h1>
+            
+            <p className="text-xl lg:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
+              Ready to transform your business with cutting-edge technology? 
+              Let's discuss how we can help you achieve your goals.
+            </p>
+          </motion.div>
+=======
 import { motion } from 'framer-motion';
 import { 
   Phone, 
@@ -911,6 +981,7 @@ const ContactPage: React.FC = () => {
         </motion.div>
       </div>
     </UltraFuturisticBackground>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-c532
   );
 };
 
