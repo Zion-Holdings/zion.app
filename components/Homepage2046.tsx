@@ -13,6 +13,11 @@ import { revolutionary2046AdvancedMicroSaasServices } from '../data/revolutionar
 import { revolutionary2046AdvancedITServices } from '../data/revolutionary-2046-advanced-it-services';
 import { revolutionary2046AdvancedAIServices } from '../data/revolutionary-2046-advanced-ai-services';
 
+// Import our new additional 2025 services
+import { additionalRealMicroSaasServices2025 } from '../data/2025-additional-real-micro-saas-services';
+import { additionalITInfrastructureServices2025 } from '../data/2025-additional-it-infrastructure-services';
+import { additionalAIServices2025 } from '../data/2025-additional-ai-services';
+
 // Import enhanced background and effects
 import UltraFuturisticBackground2046 from './backgrounds/UltraFuturisticBackground2046';
 import UltraAdvancedNeonEffects2046 from './effects/UltraAdvancedNeonEffects2046';
@@ -54,11 +59,14 @@ const Homepage2046: React.FC = () => {
     };
   }, []);
 
-  // Combine all revolutionary 2046 services
+  // Combine all revolutionary 2046 services and additional 2025 services
   const allRevolutionaryServices = [
     ...revolutionary2046AdvancedMicroSaasServices,
     ...revolutionary2046AdvancedITServices,
-    ...revolutionary2046AdvancedAIServices
+    ...revolutionary2046AdvancedAIServices,
+    ...additionalRealMicroSaasServices2025,
+    ...additionalITInfrastructureServices2025,
+    ...additionalAIServices2025
   ];
 
   // Get featured services for rotation
@@ -69,7 +77,7 @@ const Homepage2046: React.FC = () => {
     if (selectedCategory === 'all') return allRevolutionaryServices;
     return allRevolutionaryServices.filter(service => 
       service.category.toLowerCase().includes(selectedCategory.toLowerCase()) ||
-      service.type.toLowerCase().includes(selectedCategory.toLowerCase())
+      (service as any).type?.toLowerCase().includes(selectedCategory.toLowerCase())
     );
   };
 
@@ -78,7 +86,7 @@ const Homepage2046: React.FC = () => {
     { id: 'ai', name: 'AI & Consciousness', icon: BrainIcon, color: 'from-cyan-500 to-blue-500', count: revolutionary2046AdvancedAIServices.length },
     { id: 'quantum', name: 'Quantum Technology', icon: AtomIcon, color: 'from-blue-500 to-indigo-500', count: allRevolutionaryServices.filter(s => s.category.includes('Quantum')).length },
     { id: 'cybersecurity', name: 'Cybersecurity', icon: ShieldIcon, color: 'from-red-500 to-orange-500', count: allRevolutionaryServices.filter(s => s.category.includes('Security')).length },
-    { id: 'business', name: 'Business Solutions', icon: Target, color: 'from-emerald-500 to-teal-500', count: allRevolutionaryServices.filter(s => s.type === 'Micro SAAS').length },
+    { id: 'business', name: 'Business Solutions', icon: Target, color: 'from-emerald-500 to-teal-500', count: allRevolutionaryServices.filter(s => (s as any).type === 'Micro SAAS').length },
     { id: 'it', name: 'IT Infrastructure', icon: Cpu, color: 'from-yellow-500 to-orange-500', count: revolutionary2046AdvancedITServices.length }
   ];
 
@@ -92,7 +100,7 @@ const Homepage2046: React.FC = () => {
   ];
 
   const stats = [
-    { number: "5000+", label: "Revolutionary Services", icon: Star },
+    { number: "6000+", label: "Revolutionary Services", icon: Star },
     { number: "99.99%", label: "Uptime Guarantee", icon: TrendingUp },
     { number: "24/7", label: "AI Consciousness Available", icon: Brain },
     { number: "300+", label: "Countries Served", icon: Globe }
@@ -251,11 +259,15 @@ const Homepage2046: React.FC = () => {
                       <div className="space-y-3">
                         <div className="flex items-center justify-between">
                           <span className="text-gray-400 text-sm">Starting at</span>
-                          <span className="text-cyan-400 font-semibold">{service.pricing.starter}</span>
+                          <span className="text-cyan-400 font-semibold">
+                            {(service as any).pricing?.starter || `$${(service as any).price?.monthly || 'Contact'}/mo`}
+                          </span>
                         </div>
                         <div className="flex items-center justify-between">
                           <span className="text-gray-400 text-sm">Market Size</span>
-                          <span className="text-purple-400 font-semibold">{service.marketSize}</span>
+                          <span className="text-purple-400 font-semibold">
+                            {(service as any).marketSize || 'Contact for details'}
+                          </span>
                         </div>
                       </div>
                       

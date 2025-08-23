@@ -73,6 +73,11 @@ import { revolutionary2046AdvancedMicroSaasServices } from '../data/revolutionar
 import { revolutionary2046AdvancedITServices } from '../data/revolutionary-2046-advanced-it-services';
 import { revolutionary2046AdvancedAIServices } from '../data/revolutionary-2046-advanced-ai-services';
 
+// Import our new additional 2025 services
+import { additionalRealMicroSaasServices2025 } from '../data/2025-additional-real-micro-saas-services';
+import { additionalITInfrastructureServices2025 } from '../data/2025-additional-it-infrastructure-services';
+import { additionalAIServices2025 } from '../data/2025-additional-ai-services';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -186,7 +191,12 @@ const allServices = [
   // Our new revolutionary 2046 services
   ...revolutionary2046AdvancedMicroSaasServices,
   ...revolutionary2046AdvancedITServices,
-  ...revolutionary2046AdvancedAIServices
+  ...revolutionary2046AdvancedAIServices,
+  
+  // Our new additional 2025 services
+  ...additionalRealMicroSaasServices2025,
+  ...additionalITInfrastructureServices2025,
+  ...additionalAIServices2025
 ];
 
 const categories = [
