@@ -80,6 +80,16 @@ const UltraFuturisticFooter2044: React.FC = () => {
     }
   ], []);
 
+<<<<<<< HEAD
+  const socialLinks = [
+    { name: 'Facebook', icon: Facebook, href: 'https://facebook.com', color: 'from-blue-500 to-blue-600' },
+    { name: 'Twitter', icon: Twitter, href: 'https://twitter.com', color: 'from-cyan-400 to-blue-500' },
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com', color: 'from-blue-600 to-blue-700' },
+    { name: 'Instagram', icon: Instagram, href: 'https://instagram.com', color: 'from-purple-500 to-pink-500' },
+    { name: 'YouTube', icon: Youtube, href: 'https://youtube.com', color: 'from-red-500 to-red-600' },
+    { name: 'GitHub', icon: Github, href: 'https://github.com', color: 'from-gray-600 to-gray-700' }
+  ];
+=======
   const socialLinks = useMemo(() => [
     { name: 'Facebook', icon: Facebook, href: 'https://facebook.com/ziontechgroup', color: 'from-blue-500 to-blue-600', ariaLabel: 'Follow us on Facebook' },
     { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/ziontechgroup', color: 'from-cyan-400 to-blue-500', ariaLabel: 'Follow us on Twitter' },
@@ -130,6 +140,7 @@ const UltraFuturisticFooter2044: React.FC = () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isClient]);
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a2aa
 
   return (
     <footer className="relative bg-gray-900/95 backdrop-blur-xl border-t border-gray-800/50" role="contentinfo">

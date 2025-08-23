@@ -1,4 +1,6 @@
 [
+<<<<<<< HEAD
+=======
   "ai-autonomous-business-process-automation",
   "ai-autonomous-content-factory",
   "ai-autonomous-ecosystem",
@@ -70,6 +72,8 @@
   "quantum-threat-detection",
   "quantum-workload-orchestration",
   "satellite-technology",
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-a2aa
   "services/data-contracts-hub",
   "services/serverless-lakehouse-starter"
+>>>>>>> 916d02471c24718d698d51219f240472f9d52b96
 ]
