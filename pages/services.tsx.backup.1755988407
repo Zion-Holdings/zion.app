@@ -1,5 +1,56 @@
 import React from 'react';
 import SEO from '../components/SEO';
+<<<<<<< HEAD
+  
+  // Our new comprehensive 2025 services expansion
+  ...comprehensiveRealServicesExpansion2025,
+  ...advancedITAISpecializedServices2025,
+  ...emergingTechInnovativeServices2025,
+  
+  // Our new 2025 advanced services
+  ...advancedBusinessIntelligenceServices2025,
+  ...advancedITInfrastructureServices2025,
+  
+  // Our new real services 2025
+  ...realMicroSaas2025Expansion,
+  ...realITServices2025Expansion,
+  ...realAIServices2025Expansion,
+  
+  // Our new comprehensive 2025 service platforms
+  ...advancedAIAutomationPlatforms2025,
+  ...emergingTechBreakthroughServices2025,
+  ...advancedITInfrastructurePlatforms2025,
+  ...advancedBusinessIntelligencePlatforms2025,
+  
+  // Our new 2025 advanced specialized services
+  ...advancedFinancialTechServices2025,
+  ...advancedHealthcareTechServices2025,
+  ...advancedLogisticsSupplyChainServices2025,
+  ...advancedCybersecurityServices2025,
+  
+  // Our new 2025 innovative services
+  ...advancedCybersecurityAutomationServices,
+  ...aiPoweredBusinessAutomationServices,
+  ...advancedCloudDevOpsSolutions,
+  ...advancedDataAnalyticsSolutions,
+  ...fintechBlockchainInnovations,
+  ...healthcareBiotechInnovations,
+  
+  // Our new innovative 2025 enterprise services
+  ...innovativeAIEnterpriseServices2025,
+  ...innovativeITInfrastructureEnterpriseServices2025,
+  ...innovativeMicroSaasEnterpriseServices2025,
+  ...innovativeCybersecurityServices2025,
+  ...innovativeDataAnalyticsServices2025,
+  
+  // Our new innovative 2025 enterprise services
+  ...innovativeAIEnterpriseServices2025,
+  ...innovativeITInfrastructureEnterpriseServices2025,
+  ...innovativeMicroSaasEnterpriseServices2025,
+  ...innovativeCybersecurityServices2025,
+  ...innovativeDataAnalyticsServices2025,
+  
+=======
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Search, Grid, List,
@@ -98,6 +149,7 @@ const getServiceDescription = (service: any) => {
 
 // Create unified services array
 const allServices = [
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-ab61
   ...enterpriseITSolutions,
   ...innovativeMicroSaasSolutions,
   ...cuttingEdgeAIServices,
@@ -112,10 +164,16 @@ const allServices = [
   ...realOperationalServices,
   ...marketReadyServices,
   ...marketValidatedServices,
+<<<<<<< HEAD
+  // Our new 2025 Q4 innovative services
+  ...innovative2025Q4NewServices,
+  ...advancedITInfrastructureServices,
+=======
   ...advancedEnterpriseSolutions,
   ...innovativeAISolutions,
   ...innovativeMicroSaasSolutions2025,
   ...innovativeITInfrastructureServices,
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-ab61
   ...industryRealServices,
   ...real2025Q4AugmentedBatch,
   ...real2029Q3Additions,
