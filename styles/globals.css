@@ -2,7 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Enhanced Futuristic Global Styles with Improved Visibility */
+/* Import accessibility enhancements */
+@import './accessibility.css';
+
+/* Custom CSS Variables */
 :root {
   --primary-color: #06b6d4;
   --secondary-color: #8b5cf6;
