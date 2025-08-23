@@ -1,3 +1,22 @@
+<<<<<<< HEAD
+# Enhanced Redundancy Automation System
+
+```bash
+# Check PM2 status
+pm2 status
+
+# Restart specific backup process
+pm2 restart zion-auto-sync-backup
+```
+
+#### GitHub Workflow Issues
+```bash
+# Re-run failed workflow
+gh run rerun <run-id>
+```
+
+Your automation infrastructure is now **bulletproof** and will continue operating even when primary systems fail! 🚀
+=======
 # 🚀 Enhanced Redundancy Automation System
 
 This directory contains a **comprehensive enhanced redundancy automation system** that provides **100% backup coverage** for all PM2, GitHub Actions, and Netlify Functions automations in your project.
@@ -501,3 +520,4 @@ The Enhanced Redundancy Automation System provides **comprehensive, intelligent,
 **Last Updated**: $(date)  
 **Maintainer**: Enhanced Redundancy Automation System  
 **License**: Project License
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-a700
