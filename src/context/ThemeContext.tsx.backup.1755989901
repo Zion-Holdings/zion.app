@@ -54,6 +54,15 @@ export function ThemeProvider({
   );
 }
 
+<<<<<<< HEAD
+export function useTheme(): ThemeContextState {
+  const ctx = useContext(ThemeContext);
+  if (!ctx) {
+    throw new Error('useTheme must be used within ThemeProvider');
+  }
+  return ctx;
+}
+=======
 export const useTheme = (): ThemeContextState => {
   const context = useContext(ThemeContext);
   if (!context) {
@@ -61,3 +70,4 @@ export const useTheme = (): ThemeContextState => {
   }
   return context;
 };
+>>>>>>> origin/9qozr5-codex/implement-light/dark-theme-with-persistence
