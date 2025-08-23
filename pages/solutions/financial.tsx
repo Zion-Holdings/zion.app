@@ -14,25 +14,24 @@ const FinancialSolutionsPage: React.FC = () => {
       color: 'from-green-500 to-emerald-500'
     },
     {
-      name: 'Quantum Financial Trading Platform 2045',
-      description: 'Quantum-powered financial trading with consciousness and AI integration',
-      href: '/quantum-financial-trading-platform-2045',
-      icon: TrendingUp,
-      color: 'from-emerald-500 to-teal-500'
+      icon: <Zap className="w-6 h-6" />,
+      title: 'Quantum Financial Trading',
+      description: 'Quantum computing-powered trading algorithms and risk management'
     },
     {
-      name: 'Autonomous Investment Intelligence 2045',
-      description: 'Fully autonomous AI investment management with consciousness',
-      href: '/autonomous-investment-intelligence-2045',
-      icon: DollarSign,
-      color: 'from-teal-500 to-cyan-500'
+      icon: <BarChart3 className="w-6 h-6" />,
+      title: 'Financial Analytics Platform',
+      description: 'Comprehensive data analytics for financial institutions'
     },
     {
-      name: 'Blockchain Financial Intelligence 2045',
-      description: 'AI-powered blockchain financial services with consciousness',
-      href: '/blockchain-financial-intelligence-2045',
-      icon: Sparkles,
-      color: 'from-cyan-500 to-blue-500'
+      icon: <Shield className="w-6 h-6" />,
+      title: 'Blockchain Infrastructure',
+      description: 'Secure blockchain solutions for financial transactions'
+    },
+    {
+      icon: <Cpu className="w-6 h-6" />,
+      title: 'RegTech Solutions',
+      description: 'Automated regulatory compliance and reporting systems'
     }
   ];
 
@@ -91,9 +90,16 @@ const FinancialSolutionsPage: React.FC = () => {
                   Explore All Solutions
                 </Link>
               </div>
-            </motion.div>
-          </div>
-        </section>
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 bg-clip-text text-transparent">
+              Revolutionizing Finance with AI & Quantum
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-4xl mx-auto leading-relaxed">
+              Transform financial services with cutting-edge AI algorithms, quantum computing, and blockchain technology. 
+              Join the future of fintech innovation.
+            </p>
 
         {/* Features Section */}
         <section className="py-20">
@@ -136,22 +142,49 @@ const FinancialSolutionsPage: React.FC = () => {
         </section>
 
         {/* Solutions Grid */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
                 Our Financial Solutions
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
                 Discover our comprehensive suite of AI-powered financial and investment solutions.
               </p>
-            </motion.div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {solutions.map((solution, index) => (
+                <div
+                  key={index}
+                  className="group p-8 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all duration-300 hover:border-green-500/30"
+                >
+                  <div className="w-16 h-16 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    {solution.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4 text-white group-hover:text-green-400 transition-colors duration-300">
+                    {solution.title}
+                  </h3>
+                  <p className="text-white/70 leading-relaxed">
+                    {solution.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Features Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white/5">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                Why Choose Our Solutions?
+              </h2>
+              <p className="text-xl text-white/70 max-w-3xl mx-auto">
+                Built with financial professionals in mind, our solutions prioritize security, compliance, and performance.
+              </p>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {solutions.map((solution, index) => (

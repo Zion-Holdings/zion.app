@@ -54,27 +54,27 @@ const UltraFuturisticNavigation2026: React.FC<UltraFuturisticNavigation2026Props
       description: 'Revolutionary AI systems that operate independently',
       children: [
         { 
-          label: 'AI Legal Research Assistant', 
-          href: '/ai-autonomous-legal-research-assistant',
-          description: 'Autonomous legal research and case analysis'
+          label: 'AI Autonomous Content Factory Pro', 
+          href: '/ai-autonomous-content-factory-pro',
+          description: 'Autonomous content creation and distribution'
         },
         { 
-          label: 'AI Financial Risk Manager', 
-          href: '/ai-autonomous-financial-risk-manager',
-          description: 'Real-time financial risk monitoring and management'
+          label: 'AI Autonomous HR Platform', 
+          href: '/ai-autonomous-hr-platform',
+          description: 'Intelligent HR management and automation'
         },
         { 
-          label: 'AI Healthcare Diagnostics Pro', 
-          href: '/ai-autonomous-healthcare-diagnostics-pro',
-          description: 'Advanced medical diagnostics and treatment planning'
+          label: 'AI Autonomous Education Platform', 
+          href: '/ai-autonomous-education-platform',
+          description: 'Personalized learning and adaptive education'
         },
         { 
-          label: 'AI Supply Chain Optimizer', 
-          href: '/ai-autonomous-supply-chain-optimizer',
-          description: 'Intelligent supply chain optimization and disruption prediction'
+          label: 'AI Autonomous Project Management', 
+          href: '/ai-autonomous-project-management',
+          description: 'Intelligent project planning and optimization'
         },
         { 
-          label: 'AI Cybersecurity Sentinel', 
+          label: 'AI Autonomous Cybersecurity Sentinel', 
           href: '/ai-autonomous-cybersecurity-sentinel',
           description: 'Autonomous threat detection and response'
         }
@@ -87,17 +87,17 @@ const UltraFuturisticNavigation2026: React.FC<UltraFuturisticNavigation2026Props
       description: 'Next-generation quantum computing solutions',
       children: [
         { 
-          label: 'Quantum Edge Computing', 
+          label: 'Quantum Edge Computing Platform', 
           href: '/quantum-edge-computing-platform',
           description: 'Quantum-enhanced edge processing platform'
         },
         { 
-          label: 'Neuromorphic Computing', 
+          label: 'Neuromorphic Computing Infrastructure', 
           href: '/neuromorphic-computing-infrastructure',
           description: 'Brain-inspired computing infrastructure'
         },
         { 
-          label: 'Holographic Data Center', 
+          label: 'Holographic Data Center Platform', 
           href: '/holographic-data-center-platform',
           description: '3D holographic storage and processing'
         },
@@ -138,6 +138,21 @@ const UltraFuturisticNavigation2026: React.FC<UltraFuturisticNavigation2026Props
           label: 'Data Center Optimization', 
           href: '/data-center-optimization',
           description: 'Performance and efficiency optimization'
+        },
+        { 
+          label: '5G Private Network Solutions', 
+          href: '/5g-private-network-solutions',
+          description: 'Enterprise-grade 5G private networks'
+        },
+        { 
+          label: 'Autonomous DevOps Platform 2044', 
+          href: '/autonomous-devops-platform-2044',
+          description: 'AI-powered DevOps automation'
+        },
+        { 
+          label: 'Quantum Data Center Management 2044', 
+          href: '/quantum-data-center-management-2044',
+          description: 'Quantum-optimized data center management'
         }
       ]
     },
@@ -171,6 +186,21 @@ const UltraFuturisticNavigation2026: React.FC<UltraFuturisticNavigation2026Props
           label: 'AI Education Platform', 
           href: '/ai-autonomous-education-platform',
           description: 'Personalized learning experiences'
+        },
+        { 
+          label: 'Quantum Supply Chain Optimizer', 
+          href: '/quantum-supply-chain-optimizer',
+          description: 'Quantum-powered supply chain optimization'
+        },
+        { 
+          label: 'Quantum Data Analytics Platform', 
+          href: '/quantum-data-analytics-platform',
+          description: 'Quantum-enhanced data analytics'
+        },
+        { 
+          label: 'Quantum Customer Intelligence Platform', 
+          href: '/quantum-customer-intelligence-platform',
+          description: 'Advanced customer behavior analysis'
         }
       ]
     },
@@ -194,6 +224,16 @@ const UltraFuturisticNavigation2026: React.FC<UltraFuturisticNavigation2026Props
           label: 'Compliance Automation', 
           href: '/compliance-automation',
           description: 'Automated regulatory compliance'
+        },
+        { 
+          label: 'Quantum Cybersecurity Platform 2044', 
+          href: '/quantum-cybersecurity-platform-2044',
+          description: 'Quantum-powered security platform'
+        },
+        { 
+          label: 'AI Autonomous Cybersecurity Sentinel', 
+          href: '/ai-autonomous-cybersecurity-sentinel',
+          description: 'Autonomous threat detection and response'
         }
       ]
     },

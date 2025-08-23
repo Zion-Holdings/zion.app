@@ -80,9 +80,11 @@ export default function Innovative2038Pricing() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <SEO 
-        title="Innovative 2038 Services Pricing - Zion Tech Group"
-        description="Comprehensive pricing for revolutionary micro SAAS, IT infrastructure, and AI consciousness services. Transparent pricing with enterprise-grade solutions."
-        keywords={["pricing", "micro SAAS pricing", "AI services pricing", "IT infrastructure pricing", "enterprise solutions"]}
+        data={{
+          pageTitle: "Innovative 2038 Services Pricing - Zion Tech Group",
+          pageDescription: "Comprehensive pricing for revolutionary micro SAAS, IT infrastructure, and AI consciousness services. Transparent pricing with enterprise-grade solutions.",
+          pageKeywords: ["pricing", "micro SAAS pricing", "AI services pricing", "IT infrastructure pricing", "enterprise solutions"]
+        }}
       />
 
       {/* Hero Section */}

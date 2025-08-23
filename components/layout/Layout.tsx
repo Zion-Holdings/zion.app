@@ -3,7 +3,7 @@ import Head from 'next/head';
 import EnhancedNavigation2025 from './EnhancedNavigation2025';
 import EnhancedFooter2025 from './EnhancedFooter2025';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
-import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
+import UltraFuturisticBackground2037 from '../backgrounds/UltraFuturisticBackground2037';
 import TopContactBar from './TopContactBar';
 import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
 import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
@@ -14,22 +14,10 @@ import LoadingSpinner from '../LoadingSpinner';
 import ServiceWorkerRegistration from '../ServiceWorkerRegistration';
 
 interface LayoutProps {
-  children: React.ReactNode;
-  title?: string;
-  description?: string;
-  keywords?: string;
-  ogImage?: string;
-  canonicalUrl?: string;
+	children: React.ReactNode;
 }
 
-export default function Layout({ 
-  children, 
-  title = "Zion Tech Group - Revolutionary 2045 Technology",
-  description = "Pioneering the future of technology with revolutionary AI consciousness, quantum computing, and autonomous solutions that transform businesses worldwide.",
-  keywords = "AI consciousness, quantum computing, autonomous solutions, space technology, cybersecurity, business intelligence, Zion Tech Group, 2045 technology",
-  ogImage = "/og-image.jpg",
-  canonicalUrl
-}: LayoutProps) {
+export default function Layout({ children }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isOnline, setIsOnline] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
@@ -50,37 +38,12 @@ export default function Layout({
       setIsOnline(navigator.onLine);
     };
 
-    window.addEventListener('online', updateOnlineStatus);
-    window.addEventListener('offline', updateOnlineStatus);
-    updateOnlineStatus();
-
-    // Register service worker
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js')
-        .then((registration) => {
-          // Check for updates
-          registration.addEventListener('updatefound', () => {
-            const newWorker = registration.installing;
-            if (newWorker) {
-              newWorker.addEventListener('statechange', () => {
-                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                  // New version available
-                  if (typeof window !== 'undefined' && window.confirm) {
-                    if (window.confirm('A new version is available! Would you like to update?')) {
-                      newWorker.postMessage({ type: 'SKIP_WAITING' });
-                      window.location.reload();
-                    }
-                  }
-                }
-              });
-            }
-          });
-        })
-        .catch((error) => {
-          // Silently handle service worker registration errors
-          // eslint-disable-next-line no-console
-          console.error('Service Worker registration failed:', error);
-        });
+    if (sidebarOpen) {
+      document.addEventListener('keydown', handleEscape);
+      // Prevent body scroll when sidebar is open
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
     }
 
     return () => {
@@ -88,7 +51,18 @@ export default function Layout({
       window.removeEventListener('online', updateOnlineStatus);
       window.removeEventListener('offline', updateOnlineStatus);
     };
-  }, []);
+  }, [sidebarOpen]);
+
+  // Handle focus management for accessibility
+  useEffect(() => {
+    if (sidebarOpen) {
+      // Focus the first focusable element in the sidebar
+      const firstFocusable = document.querySelector('.sidebar-focusable') as HTMLElement;
+      if (firstFocusable) {
+        firstFocusable.focus();
+      }
+    }
+  }, [sidebarOpen]);
 
   useEffect(() => {
     // Apply theme to document

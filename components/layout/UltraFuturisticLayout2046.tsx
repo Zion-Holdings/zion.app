@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { motion } from 'framer-motion';
 import UltraFuturisticNavigation2046 from './UltraFuturisticNavigation2046';
 import UltraFuturisticFooter2046 from './UltraFuturisticFooter2046';
+import UltraFuturisticBackground2046 from '../backgrounds/UltraFuturisticBackground2046';
 
 interface UltraFuturisticLayout2046Props {
   children: React.ReactNode;
@@ -106,8 +107,11 @@ const UltraFuturisticLayout2046: React.FC<UltraFuturisticLayout2046Props> = ({
       </Head>
 
       <div className="min-h-screen bg-black text-white relative overflow-hidden">
+        {/* Ultra Futuristic Background */}
+        <UltraFuturisticBackground2046 />
+        
         {/* Global Background Effects */}
-        <div className="fixed inset-0 -z-10">
+        <div className="fixed inset-0 -z-20">
           {/* Animated gradient background */}
           <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
           

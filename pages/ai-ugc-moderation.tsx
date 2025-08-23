@@ -29,7 +29,7 @@ export default function AIUGCModeration() {
 							<ul className="list-disc list-inside text-slate-300 space-y-1">
 								<li>Starter: $50–$300/mo + usage</li>
 								<li>Scale: $300–$2,000/mo</li>
-								<li>References: <a className="text-cyan-400 underline" href="https://openai.com/api/pricing" target="_blank" rel="noreferrer">openai.com/api/pricing</a>, <a className="text-cyan-400 underline" href="https://www.moderationapi.com/pricing" target="_blank" rel="noreferrer">moderationapi.com/pricing</a></li>
+								<li>References: <a className="text-cyan-400 underline" href="https://platform.openai.com/pricing" target="_blank" rel="noreferrer">OpenAI Pricing</a>, <a className="text-cyan-400 underline" href="https://www.moderationapi.com/pricing" target="_blank" rel="noreferrer">moderationapi.com/pricing</a></li>
 							</ul>
 						</div>
 						<div className="p-6 rounded-2xl bg-black/50 border border-gray-800">

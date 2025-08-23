@@ -34,73 +34,19 @@ const Careers: React.FC = () => {
       ]
     },
     {
-      title: 'Quantum Computing Specialist',
-      department: 'Quantum Technologies',
-      location: 'Remote / Middletown, DE',
-      type: 'Full-time',
-      experience: '3+ years',
-      salary: '$100,000 - $150,000',
-      description: 'Develop and implement quantum computing solutions for enterprise clients.',
-      requirements: [
-        'PhD in Physics, Computer Science, or related field',
-        'Experience with quantum algorithms and quantum circuits',
-        'Proficiency in Qiskit, Cirq, or similar frameworks',
-        'Knowledge of quantum error correction',
-        'Strong mathematical and analytical skills'
-      ],
-      benefits: [
-        'Competitive salary and equity',
-        'Flexible remote work options',
-        'Health, dental, and vision insurance',
-        'Professional development budget',
-        'Unlimited PTO'
-      ]
+      icon: Shield,
+      title: "Integrity",
+      description: "Honest, transparent, and ethical in all interactions"
     },
     {
-      title: 'Cybersecurity Engineer',
-      department: 'Security',
-      location: 'Remote / Middletown, DE',
-      type: 'Full-time',
-      experience: '4+ years',
-      salary: '$110,000 - $160,000',
-      description: 'Design and implement advanced cybersecurity solutions for enterprise clients.',
-      requirements: [
-        'Bachelor\'s degree in Cybersecurity, Computer Science, or related field',
-        'Experience with penetration testing and security assessments',
-        'Knowledge of SOC 2, ISO 27001, and other compliance frameworks',
-        'Proficiency in security tools and technologies',
-        'Strong understanding of threat intelligence and incident response'
-      ],
-      benefits: [
-        'Competitive salary and equity',
-        'Flexible remote work options',
-        'Health, dental, and vision insurance',
-        'Professional development budget',
-        'Unlimited PTO'
-      ]
+      icon: Brain,
+      title: "Innovation",
+      description: "Constantly pushing boundaries and exploring new possibilities"
     },
     {
-      title: 'Full Stack Developer',
-      department: 'Engineering',
-      location: 'Remote / Middletown, DE',
-      type: 'Full-time',
-      experience: '3+ years',
-      salary: '$90,000 - $140,000',
-      description: 'Build scalable web applications and microservices for our platform.',
-      requirements: [
-        'Bachelor\'s degree in Computer Science or related field',
-        'Experience with React, Node.js, and TypeScript',
-        'Knowledge of cloud platforms (AWS, Azure, GCP)',
-        'Experience with microservices architecture',
-        'Strong problem-solving and communication skills'
-      ],
-      benefits: [
-        'Competitive salary and equity',
-        'Flexible remote work options',
-        'Health, dental, and vision insurance',
-        'Professional development budget',
-        'Unlimited PTO'
-      ]
+      icon: Users,
+      title: "Collaboration",
+      description: "Working together to achieve extraordinary results"
     }
   ];
 
@@ -197,10 +143,10 @@ const Careers: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 via-blue-900/20 to-cyan-900/20" />
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-center"
+              className="mb-8"
             >
               <div className="flex items-center justify-center mb-6">
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center mr-4">
@@ -288,63 +234,67 @@ const Careers: React.FC = () => {
                   viewport={{ once: true }}
                   className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-8 rounded-3xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300"
                 >
-                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
-                    <div>
-                      <h3 className="text-2xl font-bold text-white mb-2">{position.title}</h3>
-                      <p className="text-gray-300 mb-4">{position.description}</p>
-                      <div className="flex flex-wrap gap-4 text-sm">
-                        <div className="flex items-center space-x-2">
-                          <Briefcase className="w-4 h-4 text-purple-400" />
-                          <span className="text-gray-300">{position.department}</span>
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    {/* Position Info */}
+                    <div className="lg:col-span-2">
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className={`w-12 h-12 bg-gradient-to-r ${position.color} rounded-lg flex items-center justify-center`}>
+                          <Rocket className="w-6 h-6 text-white" />
                         </div>
-                        <div className="flex items-center space-x-2">
-                          <MapPin className="w-4 h-4 text-blue-400" />
-                          <span className="text-gray-300">{position.location}</span>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <Clock className="w-4 h-4 text-green-400" />
-                          <span className="text-gray-300">{position.type}</span>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <GraduationCap className="w-4 h-4 text-orange-400" />
-                          <span className="text-gray-300">{position.experience}</span>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <DollarSign className="w-4 h-4 text-emerald-400" />
-                          <span className="text-gray-300">{position.salary}</span>
+                        <div>
+                          <h3 className="text-2xl font-bold text-white">{position.title}</h3>
+                          <p className="text-blue-400">{position.department}</p>
                         </div>
                       </div>
+                      
+                      <p className="text-gray-300 mb-6 text-lg">{position.description}</p>
+                      
+                      <div className="flex flex-wrap gap-4 mb-6">
+                        <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">
+                          📍 {position.location}
+                        </span>
+                        <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">
+                          ⏰ {position.type}
+                        </span>
+                        <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm">
+                          🎯 {position.experience}
+                        </span>
+                      </div>
                     </div>
-                    <div className="mt-6 lg:mt-0">
-                      <Link
-                        href="/contact"
-                        className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500 to-blue-600 text-white font-semibold rounded-2xl hover:from-purple-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+                    
+                    {/* Apply Button */}
+                    <div className="flex items-center justify-center">
+                      <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 flex items-center group"
                       >
                         Apply Now
-                        <ArrowRight className="w-4 h-4 ml-2" />
-                      </Link>
+                        <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                      </motion.button>
                     </div>
                   </div>
                   
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  {/* Requirements and Responsibilities */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 pt-8 border-t border-gray-700/50">
                     <div>
-                      <h4 className="text-lg font-semibold text-white mb-3">Requirements</h4>
+                      <h4 className="text-lg font-semibold text-white mb-4">Requirements</h4>
                       <ul className="space-y-2">
-                        {position.requirements.map((req, reqIndex) => (
-                          <li key={reqIndex} className="flex items-start space-x-2 text-sm">
-                            <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
-                            <span className="text-gray-300">{req}</span>
+                        {position.requirements.map((req, idx) => (
+                          <li key={idx} className="flex items-start text-gray-300">
+                            <CheckCircle className="w-4 h-4 text-green-400 mr-3 flex-shrink-0 mt-0.5" />
+                            {req}
                           </li>
                         ))}
                       </ul>
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold text-white mb-3">Benefits</h4>
+                      <h4 className="text-lg font-semibold text-white mb-4">Responsibilities</h4>
                       <ul className="space-y-2">
-                        {position.benefits.map((benefit, benefitIndex) => (
-                          <li key={benefitIndex} className="flex items-start space-x-2 text-sm">
-                            <CheckCircle className="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" />
-                            <span className="text-gray-300">{benefit}</span>
+                        {position.responsibilities.map((resp, idx) => (
+                          <li key={idx} className="flex items-start text-gray-300">
+                            <CheckCircle className="w-4 h-4 text-blue-400 mr-3 flex-shrink-0 mt-0.5" />
+                            {resp}
                           </li>
                         ))}
                       </ul>
@@ -436,13 +386,12 @@ const Careers: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="py-20 px-4">
+          <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
             >
               <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
                 Ready to Join Our Team?
@@ -474,4 +423,4 @@ const Careers: React.FC = () => {
   );
 };
 
-export default Careers;
+export default CareersPage;

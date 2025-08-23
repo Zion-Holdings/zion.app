@@ -15,9 +15,12 @@ import {
   RotateCcw
 } from 'lucide-react';
 
+interface AccessibilityEnhancerProps {
+  onAccessibilityChange?: (settings: AccessibilitySettings) => void;
+}
+
 interface AccessibilitySettings {
   highContrast: boolean;
-  largeText: boolean;
   reducedMotion: boolean;
   screenReader: boolean;
   keyboardNavigation: boolean;
@@ -42,7 +45,6 @@ const EnhancedAccessibilityEnhancer: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [settings, setSettings] = useState<AccessibilitySettings>({
     highContrast: false,
-    largeText: false,
     reducedMotion: false,
     screenReader: false,
     keyboardNavigation: false,
@@ -369,10 +371,21 @@ const EnhancedAccessibilityEnhancer: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         aria-label="Accessibility settings"
       >
-        <Accessibility className="w-6 h-6" />
-      </motion.button>
+        Skip to main content
+      </a>
 
-      {/* Accessibility Panel */}
+      {/* Accessibility toggle button */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="fixed bottom-6 right-6 w-14 h-14 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 z-50 focus:outline-none focus:ring-4 focus:ring-cyan-300"
+        aria-label="Open accessibility settings"
+        aria-expanded={isOpen}
+        aria-controls="accessibility-panel"
+      >
+        <Accessibility className="w-7 h-7 mx-auto" />
+      </button>
+
+      {/* Accessibility panel */}
       <AnimatePresence>
         {isVisible && (
           <motion.div

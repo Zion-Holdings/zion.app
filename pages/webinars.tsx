@@ -589,4 +589,4 @@ const Webinars: React.FC = () => {
   );
 };
 
-export default Webinars;
+export default WebinarsPage;

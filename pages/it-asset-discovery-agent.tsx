@@ -31,7 +31,11 @@ export default function ITAssetDiscoveryAgentPage() {
 
 	return (
 		<>
-			<SEO title={title} description={description} />
+			<SEO data={{
+			pageTitle: title,
+			pageDescription: description,
+			pageKeywords: ["IT asset discovery", "IT management", "asset tracking", "Zion Tech Group"]
+		}} />
 			<section className="relative pt-28 pb-16 md:pt-36 md:pb-24">
 				<div className="container mx-auto px-4">
 					<h1 className="text-3xl md:text-5xl font-extrabold tracking-tight gradient-text-cyan-purple">IT Asset Discovery Agent</h1>

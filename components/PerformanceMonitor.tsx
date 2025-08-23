@@ -16,56 +16,22 @@ interface PerformanceMetrics {
 }
 
 interface PerformanceMonitorProps {
-  showUI?: boolean;
-  autoHide?: boolean;
-  threshold?: {
-    lcp: number;
-    fid: number;
-    cls: number;
-    ttfb: number;
-  };
+  isVisible?: boolean;
+  onToggle?: (visible: boolean) => void;
 }
 
-// Type definitions for PerformanceObserver entries
-interface FirstInputEntry extends PerformanceEntry {
-  processingStart: number;
-  processingEnd: number;
-  target?: EventTarget;
-}
-
-interface LayoutShiftEntry extends PerformanceEntry {
-  value: number;
-  hadRecentInput: boolean;
-}
-
-interface PerformanceResourceTiming extends PerformanceEntry {
-  initiatorType: string;
-  duration: number;
-  name: string;
-}
-
-const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
-  showUI = false,
-  autoHide = true,
-  threshold = {
-    lcp: 2500,
-    fid: 100,
-    cls: 0.1,
-    ttfb: 800
-  }
+const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({ 
+  isVisible = false, 
+  onToggle 
 }) => {
-  const [metrics, setMetrics] = useState<PerformanceMetrics>({
-    lcp: 0,
-    fid: 0,
-    cls: 0,
-    ttfb: 0,
-    fcp: 0,
-    fmp: 0,
-    tti: 0
-  });
-  const [isVisible, setIsVisible] = useState(showUI);
-  const [alerts, setAlerts] = useState<string[]>([]);
-  const [overallScore, setOverallScore] = useState(0);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [metrics, setMetrics] = useState<PerformanceMetrics | null>(null);
+  const [resourceMetrics, setResourceMetrics] = useState<ResourceMetrics | null>(null);
+  const [isMonitoring, setIsMonitoring] = useState(false);
+  const [optimizationSuggestions, setOptimizationSuggestions] = useState<string[]>([]);
+  const [lastUpdate, setLastUpdate] = useState<Date>(new Date());
+  const [autoRefresh, setAutoRefresh] = useState(false);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   const calculateScore = useCallback((metrics: PerformanceMetrics) => {
     let score = 100;
@@ -357,6 +323,21 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
       )}
     </AnimatePresence>
   );
+};
+
+// Helper function to get score colors
+const getScoreColor = (score: string): string => {
+  switch (score) {
+    case 'Good':
+    case 'Excellent':
+      return 'text-green-400';
+    case 'Needs Improvement':
+      return 'text-yellow-400';
+    case 'Poor':
+      return 'text-red-400';
+    default:
+      return 'text-white/60';
+  }
 };
 
 export default PerformanceMonitor;

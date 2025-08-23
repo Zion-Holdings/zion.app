@@ -1,9 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
 
-interface SEOData {
-  title: string;
-  description: string;
+interface SEOOptimizerProps {
+  title?: string;
+  description?: string;
   keywords?: string;
   canonical?: string;
   ogImage?: string;
@@ -89,7 +89,47 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({ data, children }) => {
     ]
   };
 
-  const finalStructuredData = structuredData || defaultStructuredData;
+  // Structured data for website
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: siteName,
+    url: siteUrl,
+    description: description,
+    publisher: {
+      '@type': 'Organization',
+      name: siteName,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteUrl}/logo.png`
+      }
+    },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: `${siteUrl}/search?q={search_term_string}`,
+      'query-input': 'required name=search_term_string'
+    }
+  };
+
+  // Breadcrumb structured data
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: siteUrl
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: section,
+        item: `${siteUrl}/${section.toLowerCase().replace(/\s+/g, '-')}`
+      }
+    ]
+  };
 
   return (
     <>

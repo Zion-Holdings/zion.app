@@ -191,8 +191,11 @@ export default function ComprehensiveServicesShowcase2036() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
       <SEO 
-        title="Comprehensive Services Showcase 2036 - ZionTech Group"
-        description="Explore our complete portfolio of innovative micro SAAS services, AI solutions, IT infrastructure, and emerging technologies. Discover cutting-edge solutions for your business needs."
+        data={{
+          pageTitle: "Comprehensive Services Showcase 2036 - ZionTech Group",
+          pageDescription: "Explore our complete portfolio of innovative micro SAAS services, AI solutions, IT infrastructure, and emerging technologies. Discover cutting-edge solutions for your business needs.",
+          pageKeywords: ["micro SAAS", "AI solutions", "IT infrastructure", "emerging technologies", "ZionTech Group"]
+        }}
       />
 
       {/* Hero Section */}
