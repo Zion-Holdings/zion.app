@@ -56,6 +56,9 @@ import { real2036ITServicesAdditions } from '../../data/real-2036-it-services-ad
 import { real2036AIServicesAdditions } from '../../data/real-2036-ai-services-additions';
 import { innovative2025MicroSaasBatch } from '../../data/innovative-2025-micro-saas-batch';
 import { innovative2025ITEnterpriseBatch } from '../../data/innovative-2025-it-enterprise-batch';
+import { innovativeMicroSaasExpansions } from '../../data/innovative-2025-micro-saas-expansions';
+import { innovativeITServicesExpansions } from '../../data/innovative-2025-it-services-expansions';
+import { innovativeAIServicesExpansions } from '../../data/innovative-2025-ai-services-expansions';
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -138,7 +141,10 @@ export default function ServicesIndexPage() {
       real2036AIServicesAdditions as unknown[]
     )
     .concat(innovative2025MicroSaasBatch as unknown[])
-    .concat(innovative2025ITEnterpriseBatch as unknown[]);
+    .concat(innovative2025ITEnterpriseBatch as unknown[])
+    .concat(innovativeMicroSaasExpansions as unknown[])
+    .concat(innovativeITServicesExpansions as unknown[])
+    .concat(innovativeAIServicesExpansions as unknown[]);
 
   // Filter out services without required properties
   const validServices = all.filter(service => 
