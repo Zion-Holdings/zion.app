@@ -960,6 +960,62 @@ h3 {
   .particle-bg::before {
     display: none;
   }
+<<<<<<< HEAD
+  
+  .text-gradient-cyan,
+  .text-gradient-purple,
+  .text-gradient-rainbow {
+    color: black !important;
+    background: none !important;
+    -webkit-text-fill-color: black !important;
+  }
+}
+
+/* High Performance Mode */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  body::before,
+  body::after {
+    animation: none;
+  }
+}
+
+/* Dark Mode Enhancements */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --neon-cyan: #00ffff;
+    --neon-purple: #a855f7;
+    --neon-pink: #ec4899;
+    --neon-green: #10b981;
+    --neon-blue: #3b82f6;
+    --neon-yellow: #f59e0b;
+    --neon-red: #ef4444;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .quantum-matrix,
+  .holographic-scan,
+  .quantum-entanglement,
+  .neural-network,
+  .cyberpunk-glitch {
+    display: none;
+  }
+  
+  body::before,
+  body::after {
+    display: none;
+  }
+}
+=======
 }
 
 /* Additional Futuristic Styles */
@@ -1334,3 +1390,4 @@ h3 {
     animation: none;
   }
 }
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-5df1
