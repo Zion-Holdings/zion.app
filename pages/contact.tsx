@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 import Layout from '../components/layout/Layout';
+import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { 
-  Phone, Mail, MapPin, MessageCircle, Clock, Globe, 
-  Send, CheckCircle, AlertCircle, Building, Users, 
-  Target, Brain, Atom, Rocket, Shield
+  Phone, 
+  Mail, 
+  MapPin, 
+  Clock, 
+  MessageCircle, 
+  Send,
+  CheckCircle,
+  AlertCircle
 } from 'lucide-react';
 
 const ContactPage: React.FC = () => {
@@ -19,55 +25,21 @@ const ContactPage: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const fadeInUp = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.6 }
-  };
-
-  const staggerContainer = {
-    animate: {
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const contactInfo = {
-    phone: '+1-302-464-0950',
-    email: 'kleber@ziontechgroup.com',
-    address: '364 E Main St STE 1008, Middletown, DE 19709',
-    hours: 'Monday - Friday: 9:00 AM - 6:00 PM EST',
-    website: 'https://ziontechgroup.com'
-  };
-
-  const services = [
-    { value: 'ai-consciousness', label: 'AI Consciousness Evolution', icon: Brain },
-    { value: 'quantum-computing', label: 'Quantum Computing Solutions', icon: Atom },
-    { value: 'space-technology', label: 'Space Technology & Intelligence', icon: Rocket },
-    { value: 'cybersecurity', label: 'Cybersecurity & Zero Trust', icon: Shield },
-    { value: 'enterprise-it', label: 'Enterprise IT Solutions', icon: Building },
-    { value: 'consulting', label: 'Technology Consulting', icon: Users },
-    { value: 'other', label: 'Other Services', icon: Target }
-  ];
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setSubmitStatus('idle');
-
-    try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 2000));
+    
+    // Simulate form submission
+    setTimeout(() => {
       setSubmitStatus('success');
+      setIsSubmitting(false);
       setFormData({
         name: '',
         email: '',
@@ -76,379 +48,405 @@ const ContactPage: React.FC = () => {
         service: '',
         message: ''
       });
-    } catch (error) {
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
-    }
+    }, 2000);
   };
 
+  const contactMethods = [
+    {
+      icon: <Phone className="w-6 h-6" />,
+      title: 'Phone',
+      details: '+1 302 464 0950',
+      description: 'Call us directly for immediate assistance',
+      action: 'tel:+13024640950',
+      color: 'from-blue-500 to-cyan-500'
+    },
+    {
+      icon: <Mail className="w-6 h-6" />,
+      title: 'Email',
+      details: 'kleber@ziontechgroup.com',
+      description: 'Send us a detailed message',
+      action: 'mailto:kleber@ziontechgroup.com',
+      color: 'from-purple-500 to-pink-500'
+    },
+    {
+      icon: <MapPin className="w-6 h-6" />,
+      title: 'Office',
+      details: '364 E Main St STE 1008, Middletown DE 19709',
+      description: 'Visit our headquarters',
+      action: 'https://maps.google.com/?q=364+E+Main+St+STE+1008,+Middletown+DE+19709',
+      color: 'from-green-500 to-emerald-500'
+    },
+    {
+      icon: <Clock className="w-6 h-6" />,
+      title: 'Business Hours',
+      details: 'Monday - Friday: 9:00 AM - 6:00 PM EST',
+      description: 'Available during business hours',
+      action: null,
+      color: 'from-orange-500 to-red-500'
+    }
+  ];
+
+  const services = [
+    'AI & Machine Learning',
+    'Quantum Computing',
+    'Space Technology',
+    'Cybersecurity',
+    'Cloud Infrastructure',
+    'Enterprise Solutions',
+    'Custom Development',
+    'Consulting',
+    'Other'
+  ];
+
   return (
-    <Layout 
-      title="Contact Us - Zion Tech Group"
-      description="Get in touch with Zion Tech Group for revolutionary AI consciousness, quantum computing, and space technology solutions."
-      canonicalUrl="https://ziontechgroup.com/contact"
-    >
-      <div className="min-h-screen bg-black text-white">
+    <Layout>
+      <SEO 
+        title="Contact Us | Zion Tech Group" 
+        description="Get in touch with Zion Tech Group. Contact our team for AI consciousness, quantum computing, and space technology solutions."
+        canonical="https://ziontechgroup.com/contact/"
+      />
+      
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
         {/* Hero Section */}
         <section className="relative py-20 lg:py-32 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-cyan-900/20 to-green-900/20"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(6,182,212,0.1),transparent_50%)]"></div>
-          
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10"></div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-              className="text-center"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
             >
-              <motion.div 
-                variants={fadeInUp}
-                className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30 text-blue-300 text-sm font-medium mb-6"
-              >
-                <MessageCircle className="w-4 h-4 mr-2" />
-                Get in Touch
-              </motion.div>
-              
-              <motion.h1 
-                variants={fadeInUp}
-                className="text-5xl lg:text-7xl font-bold mb-6"
-              >
-                <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-green-400 bg-clip-text text-transparent">
-                  Let's Build the Future
-                </span>
-                <br />
-                <span className="text-white">Together</span>
-              </motion.h1>
-              
-              <motion.p 
-                variants={fadeInUp}
-                className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed"
-              >
-                Ready to revolutionize your business with AI consciousness, quantum computing, or space technology? 
-                Our team of experts is here to help you transform your vision into reality.
-              </motion.p>
+              <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6">
+                Get in <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Touch</span>
+              </h1>
+              <p className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                Ready to transform your business with cutting-edge technology? Let's discuss how our 
+                AI consciousness, quantum computing, and space technology solutions can drive your success.
+              </p>
             </motion.div>
           </div>
         </section>
 
-        {/* Contact Information */}
-        <section className="py-20 relative">
+        {/* Contact Methods Section */}
+        <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
-              initial="initial"
-              whileInView="animate"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              variants={staggerContainer}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
             >
-              <motion.div variants={fadeInUp} className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                  <Phone className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-3">Phone</h3>
-                <p className="text-gray-300 mb-2">{contactInfo.phone}</p>
-                <p className="text-sm text-gray-400">{contactInfo.hours}</p>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-green-500 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                  <Mail className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-3">Email</h3>
-                <p className="text-gray-300 mb-2">{contactInfo.email}</p>
-                <p className="text-sm text-gray-400">24/7 Support Available</p>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                  <MapPin className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-3">Address</h3>
-                <p className="text-gray-300 mb-2">{contactInfo.address}</p>
-                <p className="text-sm text-gray-400">Headquarters</p>
-              </motion.div>
-
-              <motion.div variants={fadeInUp} className="text-center">
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-6 mx-auto">
-                  <Globe className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-3">Website</h3>
-                <p className="text-gray-300 mb-2">{contactInfo.website}</p>
-                <p className="text-sm text-gray-400">Always Online</p>
-              </motion.div>
+              <h2 className="text-4xl font-bold text-white mb-6">Multiple Ways to Connect</h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Choose the method that works best for you. Our team is ready to help with your technology needs.
+              </p>
             </motion.div>
-          </div>
-        </section>
 
-        {/* Contact Form & Map */}
-        <section className="py-20 relative bg-gradient-to-br from-gray-900/50 to-black">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial="initial"
-              whileInView="animate"
-              viewport={{ once: true }}
-              variants={staggerContainer}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20"
-            >
-              {/* Contact Form */}
-              <motion.div variants={fadeInUp}>
-                <div className="mb-8">
-                  <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">Send Us a Message</h2>
-                  <p className="text-gray-300 leading-relaxed">
-                    Tell us about your project, and our team will get back to you within 24 hours 
-                    with a personalized solution tailored to your needs.
-                  </p>
-                </div>
-
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                        Full Name *
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300"
-                        placeholder="Enter your full name"
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                        Email Address *
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300"
-                        placeholder="Enter your email"
-                      />
-                    </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {contactMethods.map((method, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  className="bg-gray-800/50 p-6 rounded-xl border border-gray-700 hover:border-cyan-400/50 transition-all duration-300"
+                >
+                  <div className={`w-12 h-12 bg-gradient-to-r ${method.color} rounded-lg flex items-center justify-center mb-4`}>
+                    <div className="text-white">{method.icon}</div>
                   </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-2">
-                        Company
-                      </label>
-                      <input
-                        type="text"
-                        id="company"
-                        name="company"
-                        value={formData.company}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300"
-                        placeholder="Enter company name"
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
-                        Phone Number
-                      </label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300"
-                        placeholder="Enter phone number"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="service" className="block text-sm font-medium text-gray-300 mb-2">
-                      Service Interest *
-                    </label>
-                    <select
-                      id="service"
-                      name="service"
-                      value={formData.service}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300"
+                  <h3 className="text-xl font-semibold text-white mb-2">{method.title}</h3>
+                  <p className="text-cyan-400 font-medium mb-2">{method.details}</p>
+                  <p className="text-gray-300 text-sm mb-4">{method.description}</p>
+                  {method.action && (
+                    <a
+                      href={method.action}
+                      className={`inline-flex items-center px-4 py-2 bg-gradient-to-r ${method.color} text-white text-sm font-medium rounded-lg hover:opacity-90 transition-opacity duration-300`}
                     >
-                      <option value="">Select a service</option>
-                      {services.map((service) => (
-                        <option key={service.value} value={service.value}>
-                          {service.label}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
+                      {method.title === 'Phone' ? 'Call Now' : method.title === 'Email' ? 'Send Email' : 'Get Directions'}
+                    </a>
+                  )}
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
 
+        {/* Contact Form Section */}
+        <section className="py-20 bg-gray-900/50">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-4xl font-bold text-white mb-6">Send Us a Message</h2>
+              <p className="text-xl text-gray-300">
+                Fill out the form below and we'll get back to you within 24 hours.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="bg-gray-800/50 p-8 rounded-xl border border-gray-700"
+            >
+              {submitStatus === 'success' && (
+                <div className="mb-6 p-4 bg-green-500/20 border border-green-500/30 rounded-lg flex items-center">
+                  <CheckCircle className="w-5 h-5 text-green-400 mr-3" />
+                  <span className="text-green-400">Thank you! Your message has been sent successfully.</span>
+                </div>
+              )}
+
+              {submitStatus === 'error' && (
+                <div className="mb-6 p-4 bg-red-500/20 border border-red-500/30 rounded-lg flex items-center">
+                  <AlertCircle className="w-5 h-5 text-red-400 mr-3" />
+                  <span className="text-red-400">There was an error sending your message. Please try again.</span>
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                      Project Details *
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                      Full Name *
                     </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
                       onChange={handleInputChange}
                       required
-                      rows={6}
-                      className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 resize-none"
-                      placeholder="Tell us about your project, goals, and how we can help..."
+                      className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent"
+                      placeholder="Enter your full name"
                     />
                   </div>
 
-                  {/* Submit Status */}
-                  {submitStatus === 'success' && (
-                    <div className="flex items-center space-x-3 p-4 bg-green-900/20 border border-green-500/30 rounded-xl text-green-300">
-                      <CheckCircle className="w-5 h-5" />
-                      <span>Message sent successfully! We'll get back to you within 24 hours.</span>
-                    </div>
-                  )}
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent"
+                      placeholder="Enter your email address"
+                    />
+                  </div>
+                </div>
 
-                  {submitStatus === 'error' && (
-                    <div className="flex items-center space-x-3 p-4 bg-red-900/20 border border-red-500/30 rounded-xl text-red-300">
-                      <AlertCircle className="w-5 h-5" />
-                      <span>Something went wrong. Please try again or contact us directly.</span>
-                    </div>
-                  )}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="company" className="block text-sm font-medium text-gray-300 mb-2">
+                      Company
+                    </label>
+                    <input
+                      type="text"
+                      id="company"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent"
+                      placeholder="Enter your company name"
+                    />
+                  </div>
 
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-2">
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent"
+                      placeholder="Enter your phone number"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="service" className="block text-sm font-medium text-gray-300 mb-2">
+                    Service of Interest
+                  </label>
+                  <select
+                    id="service"
+                    name="service"
+                    value={formData.service}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent"
+                  >
+                    <option value="">Select a service</option>
+                    {services.map((service, index) => (
+                      <option key={index} value={service}>{service}</option>
+                    ))}
+                  </select>
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                    Message *
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
+                    rows={6}
+                    className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent resize-none"
+                    placeholder="Tell us about your project or how we can help..."
+                  />
+                </div>
+
+                <div className="text-center">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-2xl hover:from-blue-600 hover:to-cyan-600 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center space-x-2"
+                    className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-cyan-400 to-purple-600 text-white font-semibold rounded-lg hover:from-cyan-500 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? (
                       <>
-                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                        <span>Sending Message...</span>
+                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-3"></div>
+                        Sending...
                       </>
                     ) : (
                       <>
-                        <Send className="w-5 h-5" />
-                        <span>Send Message</span>
+                        <Send className="w-5 h-5 mr-3" />
+                        Send Message
                       </>
                     )}
                   </button>
-                </form>
-              </motion.div>
-
-              {/* Contact Details & Map */}
-              <motion.div variants={fadeInUp}>
-                <div className="mb-8">
-                  <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">Get in Touch</h2>
-                  <p className="text-gray-300 leading-relaxed">
-                    Whether you have a specific project in mind or just want to explore possibilities, 
-                    we're here to help you navigate the future of technology.
-                  </p>
                 </div>
-
-                <div className="space-y-6">
-                  <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-blue-500/20 rounded-2xl p-6">
-                    <h3 className="text-xl font-semibold text-white mb-4">Why Choose Zion Tech Group?</h3>
-                    <ul className="space-y-3">
-                      <li className="flex items-start space-x-3">
-                        <CheckCircle className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-300">Cutting-edge AI consciousness technology</span>
-                      </li>
-                      <li className="flex items-start space-x-3">
-                        <CheckCircle className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-300">Quantum computing expertise</span>
-                      </li>
-                      <li className="flex items-start space-x-3">
-                        <CheckCircle className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-300">Space technology innovation</span>
-                      </li>
-                      <li className="flex items-start space-x-3">
-                        <CheckCircle className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-300">24/7 expert support</span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-cyan-500/20 rounded-2xl p-6">
-                    <h3 className="text-xl font-semibold text-white mb-4">Response Time</h3>
-                    <div className="space-y-3">
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-300">Initial Response</span>
-                        <span className="text-cyan-400 font-semibold">Within 24 hours</span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-300">Project Proposal</span>
-                        <span className="text-cyan-400 font-semibold">Within 3-5 days</span>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <span className="text-gray-300">Project Start</span>
-                        <span className="text-cyan-400 font-semibold">Within 1-2 weeks</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-green-500/20 rounded-2xl p-6">
-                    <h3 className="text-xl font-semibold text-white mb-4">Emergency Support</h3>
-                    <p className="text-gray-300 mb-3">
-                      For urgent technical issues or critical support needs:
-                    </p>
-                    <div className="flex items-center space-x-3 text-green-400">
-                      <Phone className="w-5 h-5" />
-                      <span className="font-semibold">{contactInfo.phone}</span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
+              </form>
             </motion.div>
           </div>
         </section>
 
-        {/* Call to Action */}
-        <section className="py-20 relative">
+        {/* Office Location Section */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-6">Visit Our Office</h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Located in the heart of Delaware, our headquarters is easily accessible and ready to welcome you.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="bg-gray-800/50 p-8 rounded-xl border border-gray-700"
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-4">Zion Tech Group Headquarters</h3>
+                  <div className="space-y-4 text-gray-300">
+                    <div className="flex items-start space-x-3">
+                      <MapPin className="w-5 h-5 text-cyan-400 mt-1 flex-shrink-0" />
+                      <div>
+                        <p className="font-medium">Address</p>
+                        <p>364 E Main St STE 1008</p>
+                        <p>Middletown, DE 19709</p>
+                        <p>United States</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <Clock className="w-5 h-5 text-cyan-400 mt-1 flex-shrink-0" />
+                      <div>
+                        <p className="font-medium">Business Hours</p>
+                        <p>Monday - Friday: 9:00 AM - 6:00 PM EST</p>
+                        <p>Saturday: 10:00 AM - 2:00 PM EST</p>
+                        <p>Sunday: Closed</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <Phone className="w-5 h-5 text-cyan-400 mt-1 flex-shrink-0" />
+                      <div>
+                        <p className="font-medium">Phone</p>
+                        <p>+1 302 464 0950</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-gray-700/50 p-6 rounded-lg">
+                  <div className="aspect-video bg-gray-600 rounded-lg flex items-center justify-center">
+                    <div className="text-center text-gray-400">
+                      <MapPin className="w-16 h-16 mx-auto mb-4" />
+                      <p>Interactive Map</p>
+                      <p className="text-sm">Click to view on Google Maps</p>
+                    </div>
+                  </div>
+                  <div className="mt-4 text-center">
+                    <a
+                      href="https://maps.google.com/?q=364+E+Main+St+STE+1008,+Middletown+DE+19709"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-400 to-purple-600 text-white font-medium rounded-lg hover:from-cyan-500 hover:to-purple-700 transition-all duration-300"
+                    >
+                      <MapPin className="w-4 h-4 mr-2" />
+                      View on Google Maps
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
-              initial="initial"
-              whileInView="animate"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              variants={staggerContainer}
+              transition={{ duration: 0.8 }}
             >
-              <motion.h2 
-                variants={fadeInUp}
-                className="text-4xl lg:text-5xl font-bold text-white mb-6"
-              >
-                Ready to Transform Your Business?
-              </motion.h2>
-              <motion.p 
-                variants={fadeInUp}
-                className="text-xl text-gray-300 mb-8 leading-relaxed"
-              >
-                Join the revolution and discover how our cutting-edge technology solutions 
-                can accelerate your success and future-proof your organization.
-              </motion.p>
-              <motion.div 
-                variants={fadeInUp}
-                className="flex flex-col sm:flex-row gap-4 justify-center"
-              >
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                Ready to Start Your Project?
+              </h2>
+              <p className="text-xl text-gray-300 mb-8">
+                Don't wait to transform your business. Contact us today and let's discuss how our 
+                innovative technology solutions can drive your success.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="/services"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-2xl hover:from-blue-600 hover:to-cyan-600 transition-all duration-300 transform hover:scale-105"
+                  href="tel:+13024640950"
+                  className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-cyan-400 to-purple-600 text-white font-semibold rounded-lg hover:from-cyan-500 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
                 >
-                  <Target className="w-5 h-5 mr-2" />
-                  Explore Our Services
+                  <Phone className="w-5 h-5 mr-3" />
+                  Call Now
                 </a>
                 <a
-                  href="/demo"
-                  className="inline-flex items-center justify-center px-8 py-4 border-2 border-blue-500 text-blue-400 font-semibold rounded-2xl hover:bg-blue-500 hover:text-white transition-all duration-300"
+                  href="mailto:kleber@ziontechgroup.com"
+                  className="inline-flex items-center px-8 py-3 border border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-white transition-all duration-300"
                 >
-                  <Brain className="w-5 h-5 mr-2" />
-                  Request Demo
+                  <Mail className="w-5 h-5 mr-3" />
+                  Send Email
                 </a>
-              </motion.div>
+              </div>
             </motion.div>
           </div>
         </section>
