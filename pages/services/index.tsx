@@ -66,6 +66,8 @@ import { advanced2025AIServicesExpansion } from '../../data/2025-advanced-ai-ser
 // Import our new innovative 2025 services
 import { innovative2025AdvancedServicesExpansion } from '../../data/innovative-2025-advanced-services-expansion';
 import { innovative2025EnterpriseSolutions } from '../../data/innovative-2025-enterprise-solutions';
+// Import our new cutting-edge 2025 innovative services
+import { cuttingEdgeInnovativeServices2025, innovativeITServices2025, innovativeAIServices2025 } from '../../data/2025-cutting-edge-innovative-services';
 
 // Define a proper interface for services
 interface Service {
@@ -83,6 +85,20 @@ interface Service {
   launchDate?: string;
   [key: string]: unknown;
 }
+
+// Transform service to match UltraFuturisticServiceCard2026 requirements
+const transformServiceForCard = (service: Service) => ({
+  id: service.id || service.name,
+  name: service.name,
+  tagline: service.description.substring(0, 100) + (service.description.length > 100 ? '...' : ''),
+  description: service.description,
+  price: service.price || service.pricing?.monthly || service.pricing?.starter?.price || '$99',
+  period: service.pricing?.starter?.period || '/month',
+  features: [service.description.substring(0, 50) + '...'],
+  popular: service.popular || false,
+  category: service.category,
+  icon: '🚀'
+});
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -181,7 +197,11 @@ export default function ServicesIndexPage() {
     // Our new 2025 advanced services
     .concat(advanced2025MicroSaasExpansion as unknown[])
     .concat(advanced2025ITSolutionsExpansion as unknown[])
-    .concat(advanced2025AIServicesExpansion as unknown[]);
+    .concat(advanced2025AIServicesExpansion as unknown[])
+    // Our new cutting-edge 2025 innovative services
+    .concat(cuttingEdgeInnovativeServices2025 as unknown[])
+    .concat(innovativeITServices2025 as unknown[])
+    .concat(innovativeAIServices2025 as unknown[]);
 
   // Filter out services without required properties and normalize pricing
   const validServices = all.filter(service => 
@@ -280,7 +300,7 @@ export default function ServicesIndexPage() {
                   {featuredServices.map((service: Service, index: number) => (
                     <UltraFuturisticServiceCard2026
                       key={`${service.id || service.name}-${index}`}
-                      service={service}
+                      service={transformServiceForCard(service)}
                       variant="quantum"
                       theme="quantum"
                     />
@@ -299,7 +319,7 @@ export default function ServicesIndexPage() {
                   {latestServices.map((service: Service, index: number) => (
                     <UltraFuturisticServiceCard2026
                       key={`${service.id || service.name}-${index}`}
-                      service={service}
+                      service={transformServiceForCard(service)}
                       variant="ai"
                       theme="neon"
                     />
@@ -350,7 +370,7 @@ export default function ServicesIndexPage() {
                         {categoryServices.slice(0, 6).map((service: Service, index: number) => (
                           <UltraFuturisticServiceCard2026
                             key={`${service.id || service.name}-${index}`}
-                            service={service}
+                            service={transformServiceForCard(service)}
                             variant="default"
                             theme="cyber"
                           />
@@ -438,7 +458,7 @@ export default function ServicesIndexPage() {
                 {featuredServices.map((service: Service, index: number) => (
                   <UltraFuturisticServiceCard2026
                     key={`${service.id || service.name}-${index}`}
-                    service={service}
+                    service={transformServiceForCard(service)}
                     variant="quantum"
                     theme="quantum"
                   />
@@ -457,7 +477,7 @@ export default function ServicesIndexPage() {
                 {latestServices.map((service: Service, index: number) => (
                   <UltraFuturisticServiceCard2026
                     key={`${service.id || service.name}-${index}`}
-                    service={service}
+                    service={transformServiceForCard(service)}
                     variant="ai"
                     theme="neon"
                   />
@@ -508,7 +528,7 @@ export default function ServicesIndexPage() {
                       {categoryServices.slice(0, 6).map((service: Service, index: number) => (
                         <UltraFuturisticServiceCard2026
                           key={`${service.id || service.name}-${index}`}
-                          service={service}
+                          service={transformServiceForCard(service)}
                           variant="default"
                           theme="cyber"
                         />
