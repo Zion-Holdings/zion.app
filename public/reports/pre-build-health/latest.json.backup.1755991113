@@ -5,7 +5,11 @@
     "failedChecks": 1,
     "criticalFailures": 0,
     "canBuild": true,
+<<<<<<< HEAD
+    "timestamp": "2025-08-19T20:21:51.128Z"
+=======
     "timestamp": "2025-08-19T20:30:39.878Z"
+>>>>>>> origin/cursor/build-and-fix-errors-c928
   },
   "results": [
     {
