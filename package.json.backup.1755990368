@@ -28,8 +28,12 @@
     "dev": "NODE_OPTIONS=\"--max-old-space-size=4096 --openssl-legacy-provider\" next dev",
     "build": "NODE_OPTIONS=\"--max-old-space-size=6144 --openssl-legacy-provider\" next build",
     "prebuild": "npm run netlify:manifest",
+<<<<<<< HEAD
+    "export": "rm -rf .next out tsconfig.tsbuildinfo && DYN=pages/reports/blueprints && if [ -d $DYN ]; then mv $DYN ${DYN}.bak; fi && NODE_OPTIONS=\"--max-old-space-size=6144 --openssl-legacy-provider\" next build && if [ -f _redirects ]; then cp -f _redirects out/_redirects; fi && if [ -f public/_headers ]; then cp -f public/_headers out/_headers; elif [ -f _headers ]; then cp -f _headers out/_headers; fi && if [ -d ${DYN}.bak ]; then mv ${DYN}.bak $DYN; fi",
+=======
     "preexport": "npm run sitemap",
     "export": "rm -rf .next out tsconfig.tsbuildinfo && mkdir -p .temp && mv pages/reports .temp/ 2>/dev/null || true && NODE_OPTIONS=\"--max-old-space-size=6144 --openssl-legacy-provider\" next build --no-lint && mv .temp/reports pages/ 2>/dev/null || true && rm -rf .temp",
+>>>>>>> origin/cursor/bc-51f07a8d-4b14-47f7-af65-e76188b38c99-87a6
     "start": "next start",
     "postbuild": "node automation/footer-injector.cjs || true",
     "lint": "eslint .",
@@ -90,6 +94,8 @@
     "cursor:memory:dev": "nodemon run-cursor-memory-automation.js",
     "cursor:memory:config": "node -e \"console.log(JSON.stringify(require('./cursor-memory-config.json'), null, 2))\"",
     "cursor:memory:status": "node -e \"const fs = require('fs'); const path = './cursor-memory/memory-summary.json'; try { const data = JSON.parse(fs.readFileSync(path, 'utf8')); console.log('Memory Status:'); console.log('- Total entries:', data.totalEntries); console.log('- Categories:', Object.keys(data.categories).length); console.log('- High confidence:', data.confidenceDistribution.high); } catch(e) { console.log('No memory data found'); }\"",
+<<<<<<< HEAD
+=======
     "autonomous:start": "node automation/launch-autonomous-systems-clean.js start",
     "autonomous:analyze": "node automation/autonomous-system-orchestrator.cjs analyze",
     "autonomous:generate": "node automation/autonomous-system-orchestrator.cjs generate",
@@ -117,6 +123,7 @@
     "frontend:core": "node automation/frontend-automation-orchestrator.cjs core",
     "frontend:showcase": "node automation/frontend-automation-orchestrator.cjs showcase",
     "frontend:dashboard": "node automation/frontend-automation-orchestrator.cjs dashboard",
+>>>>>>> origin/cursor/bc-51f07a8d-4b14-47f7-af65-e76188b38c99-87a6
     "automation:factory": "node automation/automation-factory.cjs generate",
     "automation:factory:dev": "nodemon automation/ultimate-automation-factory-system.js",
     "automation:orchestrator": "node automation/intelligent-orchestrator.cjs continuous",
@@ -313,7 +320,12 @@
     "node-cron": "^4.2.1",
     "openai": "^5.11.0",
     "path": "^0.12.7",
+<<<<<<< HEAD
+    "postcss": "^8.4.32",
+    "react": "^19.1.1",
+=======
     "react": "18.2.0",
+>>>>>>> origin/cursor/bc-51f07a8d-4b14-47f7-af65-e76188b38c99-87a6
     "react-datepicker": "^8.4.0",
     "react-dom": "^17.0.2",
     "resend": "^4.0.0",
@@ -333,7 +345,12 @@
     "@typescript-eslint/eslint-plugin": "^8.39.0",
     "@typescript-eslint/parser": "^8.39.0",
     "autoprefixer": "^10.4.21",
+<<<<<<< HEAD
+    "dotenv": "^17.2.1",
+    "eslint": "^8.57.1",
+=======
     "eslint": "^8.57.0",
+>>>>>>> origin/cursor/bc-51f07a8d-4b14-47f7-af65-e76188b38c99-87a6
     "eslint-config-next": "^15.0.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
