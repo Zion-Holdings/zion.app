@@ -45,10 +45,17 @@ interface Service {
     address?: string;
     website: string;
   };
+<<<<<<< HEAD
+  realImplementation?: string | boolean;
+  implementationDetails?: string;
+  launchDate?: string;
+  customers: string | number;
+=======
   realImplementation?: boolean | string;
   implementationDetails?: string;
   launchDate?: string;
   customers: number | string;
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-84ee
   rating: number;
   reviews: number;
   benefits?: string[];
@@ -158,8 +165,13 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
     .sort((a, b) => {
       switch (sortBy) {
         case 'price': {
+<<<<<<< HEAD
+          const aPrice = typeof a.price === 'string' ? parseFloat(a.price.replace(/[^0-9.]/g, '')) : 0;
+          const bPrice = typeof b.price === 'string' ? parseFloat(b.price.replace(/[^0-9.]/g, '')) : 0;
+=======
           const aPrice = typeof a.price === 'string' ? parseFloat(a.price.replace(/[^0-9.]/g, '')) : (a.price as any)?.monthly || 0;
           const bPrice = typeof b.price === 'string' ? parseFloat(b.price.replace(/[^0-9.]/g, '')) : (b.price as any)?.monthly || 0;
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-84ee
           return aPrice - bPrice;
         }
         case 'popularity':
