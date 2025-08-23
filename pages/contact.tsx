@@ -17,8 +17,6 @@ const Contact: NextPage = () => {
   );
 };
 
-export default Contact;
-=======
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
@@ -37,3 +35,5 @@ const Contact: NextPage = () => (
 export default Contact;
 =======
 export default function Contact() { return <main className="p-8">Contact page coming soon.</main>; }
+=======
+export default Contact;
