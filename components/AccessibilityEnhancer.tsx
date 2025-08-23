@@ -117,16 +117,39 @@ const AccessibilityEnhancer: React.FC = () => {
     root.style.setProperty('--line-height', newSettings.lineHeight.toString());
     root.style.setProperty('--letter-spacing', `${newSettings.letterSpacing}px`);
 
-    // Save to localStorage
-    localStorage.setItem('accessibility-settings', JSON.stringify(newSettings));
-  }, [settings]);
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [settings.keyboardNavigation]);
 
-  // Update settings and apply them
-  const updateSetting = useCallback((key: keyof AccessibilitySettings, value: any) => {
-    const newSettings = { ...settings, [key]: value };
-    setSettings(newSettings);
-    applySettings(newSettings);
-  }, [settings, applySettings]);
+  // Focus management
+  useEffect(() => {
+    const handleFocusIn = (e: Event) => {
+      const target = e.target as HTMLElement;
+      
+      // Announce focus changes for screen readers
+      if (settings.screenReader) {
+        const label = target.getAttribute('aria-label') || 
+                     target.getAttribute('title') || 
+                     target.textContent?.trim();
+        if (label) {
+          announceToScreenReader(label);
+        }
+      }
+      
+      // Enhanced focus indicators
+      if (settings.focusIndicators) {
+        target.style.outline = '3px solid #3b82f6';
+        target.style.outlineOffset = '2px';
+      }
+    };
+
+    const handleFocusOut = (e: Event) => {
+      const target = e.target as HTMLElement;
+      if (settings.focusIndicators) {
+        target.style.outline = '';
+        target.style.outlineOffset = '';
+      }
+    };
 
   // Reset to default settings
   const resetSettings = useCallback(() => {

@@ -61,86 +61,59 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
   const [sortBy, setSortBy] = useState<'name' | 'price' | 'popularity' | 'category'>('name');
   const [isLoading, setIsLoading] = useState(true);
 
-  // Helper function to safely render prices
-  const renderPrice = (price: any) => {
-    if (typeof price === 'string') return price;
-    if (typeof price === 'object' && price.monthly) {
-      return `$${price.monthly}/${price.currency || 'month'}`;
-    }
-    return 'Contact for pricing';
-  };
-
-  // Combine all services
+  // Combine all services and ensure they have required properties
   const allServices: Service[] = [
     ...innovative2040FuturisticServices.map(service => ({
-      id: service.id,
-      name: service.name,
-      tagline: service.tagline,
-      price: service.price,
-      description: service.description,
-      features: service.features,
-      category: service.category,
-      link: service.link,
-      customers: service.reviews,
-      rating: service.rating,
-      reviews: service.reviews,
+      ...service,
       popular: service.rating >= 4.5,
       icon: '🚀',
-      color: 'from-cyan-400 to-blue-500',
-      textColor: 'text-white',
-      period: 'monthly',
+      color: 'from-blue-600 to-purple-700',
+      period: '/month',
       realService: true,
-      technology: ['AI', 'Quantum Computing', 'Neural Networks'],
-      integrations: ['API', 'SDK', 'Web Interface'],
-      useCases: ['Research', 'Enterprise', 'Healthcare'],
-      roi: '300% within 6 months',
-      competitors: ['Leading AI companies'],
-      marketSize: '$50B+',
-      growthRate: '150% YoY',
-      implementationDetails: service.realImplementation ? 'Currently deployed and operational' : 'In development phase',
+      customers: typeof service.customers === 'string' ? parseInt(service.customers) || 0 : service.customers,
       contactInfo: {
+        ...service.contactInfo,
         mobile: service.contactInfo.phone,
-        email: service.contactInfo.email,
-        address: 'Global',
-        website: service.contactInfo.website
+        address: '364 E Main St STE 1008 Middletown DE 19709'
       }
     })),
     ...innovative2040ITServices.map(service => ({
-      id: service.id,
-      name: service.name,
-      tagline: service.tagline,
-      price: service.price,
-      description: service.description,
-      features: service.features,
-      category: service.category,
-      link: service.link,
-      customers: service.reviews,
-      rating: service.rating,
-      reviews: service.reviews,
+      ...service,
       popular: service.rating >= 4.5,
-      icon: '⚡',
-      color: 'from-purple-400 to-pink-500',
-      textColor: 'text-white',
-      period: 'monthly',
+      icon: '💻',
+      color: 'from-green-600 to-blue-700',
+      period: '/month',
       realService: true,
-      technology: ['IT Infrastructure', 'Cloud Computing', 'DevOps'],
-      integrations: ['API', 'SDK', 'CLI'],
-      useCases: ['Enterprise', 'Startups', 'Government'],
-      roi: '250% within 8 months',
-      competitors: ['Major IT service providers'],
-      marketSize: '$100B+',
-      growthRate: '120% YoY',
-      implementationDetails: service.realImplementation ? 'Currently deployed and operational' : 'In development phase',
+      customers: typeof service.customers === 'string' ? parseInt(service.customers) || 0 : service.customers,
       contactInfo: {
-        mobile: service.contactInfo.mobile,
-        email: service.contactInfo.email,
-        address: 'Global',
-        website: service.contactInfo.website
+        ...service.contactInfo,
+        phone: service.contactInfo.mobile,
+        address: '364 E Main St STE 1008 Middletown DE 19709'
       }
     })),
     ...realMicroSaasServices,
-    ...innovativeAIServices,
-    ...enterpriseITServices
+    ...innovativeAIServices.map(service => ({
+      ...service,
+      customers: typeof service.customers === 'string' ? parseInt(service.customers) || 0 : service.customers,
+      contactInfo: {
+        ...service.contactInfo,
+        phone: service.contactInfo.mobile
+      }
+    })),
+    ...enterpriseITServices.map(service => ({
+      ...service,
+      popular: service.rating >= 4.5,
+      icon: '🏢',
+      color: 'from-indigo-600 to-cyan-700',
+      period: '/month',
+      realService: true,
+      customers: typeof service.customers === 'string' ? parseInt(service.customers) || 0 : service.customers,
+      contactInfo: {
+        ...service.contactInfo,
+        phone: service.contactInfo.mobile,
+        address: '364 E Main St STE 1008 Middletown DE 19709'
+      }
+    }))
   ];
 
   // Get unique categories
