@@ -46,7 +46,16 @@ import {
   Lightbulb,
   Play,
   DollarSign,
-  GraduationCap
+  GraduationCap,
+  Mail,
+  ArrowRight,
+  Network,
+  ShoppingCart,
+  Monitor,
+  Lock,
+  Server,
+  Globe2,
+  Newspaper
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -326,6 +335,52 @@ const navigationItems: NavigationItem[] = [
         description: 'Customer support portal',
         neonColor: 'shadow-purple-400/50',
         category: 'portal'
+      }
+    ]
+  },
+  {
+    name: 'Company',
+    href: '/about',
+    icon: <Building className="w-5 h-5" />,
+    description: 'About Zion Tech Group',
+    badge: '2045',
+    category: 'company',
+    color: 'from-gray-500 to-slate-500',
+    children: [
+      { 
+        name: 'About Us', 
+        href: '/about', 
+        description: 'Learn about our mission and values',
+        icon: <Users className="w-4 h-4" />,
+        featured: true
+      },
+      { 
+        name: 'Our Team', 
+        href: '/team', 
+        description: 'Meet our leadership team',
+        icon: <Users className="w-4 h-4" />,
+        color: 'from-blue-500 to-cyan-500'
+      },
+      { 
+        name: 'Careers', 
+        href: '/careers', 
+        description: 'Join our innovative team',
+        icon: <Briefcase className="w-4 h-4" />,
+        color: 'from-emerald-500 to-teal-500'
+      },
+      { 
+        name: 'News & Blog', 
+        href: '/blog', 
+        description: 'Latest insights and updates',
+        icon: <Newspaper className="w-4 h-4" />,
+        color: 'from-purple-500 to-pink-500'
+      },
+      { 
+        name: 'Case Studies', 
+        href: '/case-studies', 
+        description: 'Success stories from our clients',
+        icon: <FileText className="w-4 h-4" />,
+        color: 'from-orange-500 to-red-500'
       }
     ]
   }
