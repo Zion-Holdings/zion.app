@@ -1,169 +1,112 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Star, Check, ArrowRight, Eye, Heart, Infinity } from 'lucide-react';
+import { ArrowRight, Star, Zap, Shield, Brain, Atom } from 'lucide-react';
 
 interface ServiceCardProps {
-  service: {
-    name: string;
-    description: string;
-    category: string;
-    type: string;
-    slug: string;
-    features?: string[];
-    pricing?: {
-      monthly?: number;
-      yearly?: number;
-      custom?: boolean;
-    };
-    rating?: number;
-    reviewCount?: number;
-  };
-  onClick?: () => void;
+  service: any;
+  onClick: () => void;
+  isHovered: boolean;
+  onHover: () => void;
+  onLeave: () => void;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ service, onClick }) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const [showFeatures, setShowFeatures] = useState(false);
+const ServiceCard: React.FC<ServiceCardProps> = ({
+  service,
+  onClick,
+  isHovered,
+  onHover,
+  onLeave
+}) => {
+  const getCategoryIcon = (category: string) => {
+    if (category.toLowerCase().includes('ai')) return <Brain className="w-4 h-4" />;
+    if (category.toLowerCase().includes('quantum')) return <Atom className="w-4 h-4" />;
+    if (category.toLowerCase().includes('security')) return <Shield className="w-4 h-4" />;
+    return <Zap className="w-4 h-4" />;
+  };
 
-  const handleClick = () => {
-    if (onClick) {
-      onClick();
-    } else {
-      window.location.href = service.slug;
-    }
+  const getCategoryColor = (category: string) => {
+    if (category.toLowerCase().includes('ai')) return 'from-purple-500 to-pink-500';
+    if (category.toLowerCase().includes('quantum')) return 'from-blue-500 to-cyan-500';
+    if (category.toLowerCase().includes('security')) return 'from-red-500 to-orange-500';
+    return 'from-emerald-500 to-teal-500';
   };
 
   return (
     <motion.div
-      className="group cursor-pointer"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onClick={handleClick}
-      whileHover={{ y: -5 }}
+      className="group cursor-pointer h-full"
+      onClick={onClick}
+      onMouseEnter={onHover}
+      onMouseLeave={onLeave}
+      whileHover={{ y: -8 }}
       transition={{ duration: 0.3 }}
     >
-      <div className="relative p-6 bg-gradient-to-br from-gray-900/60 to-gray-800/60 border border-gray-700/30 rounded-2xl backdrop-blur-xl hover:border-cyan-500/50 transition-all duration-300 group-hover:shadow-[0_0_30px_rgba(6,182,212,0.2)] h-full">
-        {/* Background Glow Effect */}
-        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <div className="relative h-full bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-purple-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/25 overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         
         {/* Header */}
-        <div className="relative z-10 mb-4">
-          <div className="flex items-center justify-between mb-3">
-            <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center shadow-[0_0_20px_rgba(6,182,212,0.3)]">
-              <Star className="w-6 h-6 text-white" />
+        <div className="relative z-10 flex items-center justify-between mb-4">
+          <div className="flex items-center space-x-2">
+            <div className={`w-8 h-8 bg-gradient-to-br ${getCategoryColor(service.category)} rounded-lg flex items-center justify-center`}>
+              {getCategoryIcon(service.category)}
             </div>
-            
-            {/* Rating */}
-            {service.rating && (
-              <div className="flex items-center space-x-1">
-                <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                <span className="text-sm text-gray-300">{service.rating}</span>
-                {service.reviewCount && (
-                  <span className="text-xs text-gray-500">({service.reviewCount})</span>
-                )}
-              </div>
-            )}
+            <span className="text-sm text-purple-300 font-medium">{service.category}</span>
           </div>
-          
-          <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
-            {service.name}
-          </h3>
-          
-          <p className="text-gray-400 text-sm leading-relaxed">
-            {service.description}
-          </p>
-        </div>
-
-        {/* Category and Type */}
-        <div className="relative z-10 mb-4">
-          <div className="flex items-center justify-between">
-            <span className="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-xs font-medium rounded-full border border-cyan-500/30">
-              {service.category}
+          {service.pricing?.enterprise && (
+            <span className="px-2 py-1 bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-xs font-bold rounded-full">
+              ENTERPRISE
             </span>
-            <span className="text-gray-500 text-xs">
-              {service.type}
-            </span>
-          </div>
+          )}
         </div>
-
-        {/* Features Preview */}
-        {service.features && service.features.length > 0 && (
-          <div className="relative z-10 mb-4">
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setShowFeatures(!showFeatures);
-              }}
-              className="text-cyan-400 text-sm font-medium hover:text-cyan-300 transition-colors duration-200 flex items-center space-x-1"
-            >
-              <Eye className="w-4 h-4" />
-              <span>{showFeatures ? 'Hide' : 'Show'} Features</span>
-            </button>
-            
-            {showFeatures && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.3 }}
-                className="mt-3 space-y-2"
-              >
-                {service.features.slice(0, 3).map((feature, index) => (
-                  <div key={index} className="flex items-center space-x-2 text-sm text-gray-300">
-                    <Check className="w-3 h-3 text-cyan-400 flex-shrink-0" />
-                    <span>{feature}</span>
-                  </div>
-                ))}
-                {service.features.length > 3 && (
-                  <div className="text-xs text-gray-500 text-center pt-2">
-                    +{service.features.length - 3} more features
-                  </div>
-                )}
-              </motion.div>
-            )}
-          </div>
-        )}
-
+        
+        {/* Title */}
+        <h3 className="relative z-10 text-xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors duration-300 line-clamp-2">
+          {service.name}
+        </h3>
+        
+        {/* Description */}
+        <p className="relative z-10 text-gray-300 mb-4 leading-relaxed line-clamp-3">
+          {service.description}
+        </p>
+        
         {/* Pricing */}
-        {service.pricing && (
-          <div className="relative z-10 mb-4">
-            <div className="bg-gray-800/40 rounded-lg p-3">
-              <div className="text-center">
-                {service.pricing.custom ? (
-                  <div className="text-cyan-400 font-medium">Custom Pricing</div>
-                ) : (
-                  <div className="space-y-1">
-                    {service.pricing.monthly && (
-                      <div className="text-white font-bold">
-                        ${service.pricing.monthly}
-                        <span className="text-gray-400 text-sm font-normal">/month</span>
-                      </div>
-                    )}
-                    {service.pricing.yearly && (
-                      <div className="text-gray-400 text-sm">
-                        ${service.pricing.yearly}/year
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
-            </div>
+        <div className="relative z-10 flex items-center space-x-2 mb-4">
+          <div className="text-2xl font-bold text-purple-400">
+            {service.pricing?.starter || 'Contact for pricing'}
           </div>
-        )}
-
-        {/* Action Button */}
-        <div className="relative z-10">
-          <button className="w-full px-4 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-[0_0_20px_rgba(6,182,212,0.3)] flex items-center justify-center space-x-2">
-            <span>Learn More</span>
-            <ArrowRight className="w-4 h-4" />
+          {service.pricing?.starter && (
+            <span className="text-sm text-gray-400">/month</span>
+          )}
+        </div>
+        
+        {/* Features */}
+        <div className="relative z-10 flex flex-wrap gap-2 mb-6">
+          {service.features?.slice(0, 3).map((feature: string, featureIndex: number) => (
+            <span
+              key={featureIndex}
+              className="px-2 py-1 bg-purple-500/20 border border-purple-400/30 rounded-full text-purple-300 text-xs"
+            >
+              {feature}
+            </span>
+          ))}
+        </div>
+        
+        {/* CTA Button */}
+        <div className="relative z-10 mt-auto">
+          <button className="w-full px-4 py-3 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-medium rounded-lg hover:from-purple-600 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 group-hover:shadow-lg group-hover:shadow-purple-500/25">
+            <span className="flex items-center justify-center space-x-2">
+              Learn More
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </span>
           </button>
         </div>
-
-        {/* Hover Effects */}
+        
+        {/* Hover Effect Overlay */}
         <motion.div
-          className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-          initial={false}
+          className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-2xl"
+          initial={{ opacity: 0 }}
           animate={{ opacity: isHovered ? 1 : 0 }}
+          transition={{ duration: 0.3 }}
         />
       </div>
     </motion.div>
