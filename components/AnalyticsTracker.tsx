@@ -4,6 +4,66 @@ import { useRouter } from 'next/router';
 const AnalyticsTracker: React.FC = () => {
   const router = useRouter();
 
+  // Helper function to track metrics
+  const trackMetric = (name: string, value: number | string) => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'custom_metric', {
+        metric_name: name,
+        metric_value: value,
+        timestamp: Date.now()
+      });
+    }
+
+    // Send to custom analytics endpoint
+    if (process.env.NODE_ENV === 'production') {
+      fetch('/api/analytics/metrics', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          value,
+          timestamp: Date.now(),
+          url: window.location.href,
+          userAgent: navigator.userAgent
+        })
+      }).catch(() => {
+        // Silently handle fetch errors
+      });
+    }
+  };
+
+  // Helper function to track events
+  const trackEvent = (action: string, parameters: Record<string, unknown>) => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', action, {
+        ...parameters,
+        timestamp: Date.now(),
+        page_url: window.location.href
+      });
+    }
+
+    // Send to custom analytics endpoint
+    if (process.env.NODE_ENV === 'production') {
+      fetch('/api/analytics/events', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          action,
+          parameters,
+          timestamp: Date.now(),
+          url: window.location.href,
+          userAgent: navigator.userAgent
+        })
+      }).catch(() => {
+        // Silently handle fetch errors
+      });
+    }
+  };
+
   useEffect(() => {
     // User interaction tracking
     let interactionCount = 0;
@@ -19,66 +79,6 @@ const AnalyticsTracker: React.FC = () => {
       trackMetric('ViewportWidth', window.innerWidth);
       trackMetric('ViewportHeight', window.innerHeight);
       trackMetric('PixelRatio', window.devicePixelRatio || 1);
-    };
-
-    // Helper function to track metrics
-    const trackMetric = (name: string, value: number | string) => {
-      if (typeof window !== 'undefined' && window.gtag) {
-        window.gtag('event', 'custom_metric', {
-          metric_name: name,
-          metric_value: value,
-          timestamp: Date.now()
-        });
-      }
-
-      // Send to custom analytics endpoint
-      if (process.env.NODE_ENV === 'production') {
-        fetch('/api/analytics/metrics', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            name,
-            value,
-            timestamp: Date.now(),
-            url: window.location.href,
-            userAgent: navigator.userAgent
-          })
-        }).catch(() => {
-          // Silently handle fetch errors
-        });
-      }
-    };
-
-    // Helper function to track events
-    const trackEvent = (action: string, parameters: Record<string, unknown>) => {
-      if (typeof window !== 'undefined' && window.gtag) {
-        window.gtag('event', action, {
-          ...parameters,
-          timestamp: Date.now(),
-          page_url: window.location.href
-        });
-      }
-
-      // Send to custom analytics endpoint
-      if (process.env.NODE_ENV === 'production') {
-        fetch('/api/analytics/events', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            action,
-            parameters,
-            timestamp: Date.now(),
-            url: window.location.href,
-            userAgent: navigator.userAgent
-          })
-        }).catch(() => {
-          // Silently handle fetch errors
-        });
-      }
     };
 
     // Initialize analytics and performance monitoring
@@ -134,7 +134,7 @@ const AnalyticsTracker: React.FC = () => {
 
             // Track resource loading performance
             const resources = performance.getEntriesByType('resource');
-            const slowResources = resources.filter((resource) => (resource as PerformanceResourceTiming).duration > 1000);
+            const slowResources = resources.filter((resource) => (resource as any).duration > 1000);
             if (slowResources.length > 0) {
               trackMetric('SlowResources', slowResources.length);
             }
@@ -270,66 +270,6 @@ const AnalyticsTracker: React.FC = () => {
     }
   }, [router.asPath]);
 
-  // Helper function to track metrics
-  const trackMetric = (name: string, value: number | string) => {
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'custom_metric', {
-        metric_name: name,
-        metric_value: value,
-        timestamp: Date.now()
-      });
-    }
-
-    // Send to custom analytics endpoint
-    if (process.env.NODE_ENV === 'production') {
-      fetch('/api/analytics/metrics', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name,
-          value,
-          timestamp: Date.now(),
-          url: window.location.href,
-          userAgent: navigator.userAgent
-        })
-      }).catch(() => {
-        // Silently handle fetch errors
-      });
-    }
-  };
-
-  // Helper function to track events
-  const trackEvent = (action: string, parameters: Record<string, unknown>) => {
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', action, {
-        ...parameters,
-        timestamp: Date.now(),
-        page_url: window.location.href
-      });
-    }
-
-    // Send to custom analytics endpoint
-    if (process.env.NODE_ENV === 'production') {
-      fetch('/api/analytics/events', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          action,
-          parameters,
-          timestamp: Date.now(),
-          url: window.location.href,
-          userAgent: navigator.userAgent
-        })
-      }).catch(() => {
-        // Silently handle fetch errors
-      });
-    }
-  };
-
   // Component doesn't render anything
   return null;
 };
@@ -338,7 +278,7 @@ const AnalyticsTracker: React.FC = () => {
 interface PerformanceEventTiming extends PerformanceEntry {
   processingStart: number;
   processingEnd: number;
-  target?: EventTarget;
+  target?: any;
 }
 
 interface LayoutShift extends PerformanceEntry {
@@ -347,15 +287,19 @@ interface LayoutShift extends PerformanceEntry {
 }
 
 interface LayoutShiftSource {
-  node?: Node;
-  currentRect?: DOMRectReadOnly;
-  previousRect?: DOMRectReadOnly;
+  node?: any;
+  currentRect?: any;
+  previousRect?: any;
 }
 
 // Extend Window interface for gtag
 declare global {
   interface Window {
-    gtag: (...args: unknown[]) => void;
+    gtag?: (
+      command: string,
+      action: string,
+      params?: Record<string, unknown>
+    ) => void;
   }
 }
 

@@ -5,7 +5,7 @@ import {
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
-  Building, Cpu, Database, Cloud, Lock
+  Building, Lock, Database
 } from 'lucide-react';
 
 // Import our new service data
@@ -19,6 +19,13 @@ import { real2035Q2Additions } from '../data/real-2035-q2-additions';
 import { real2036ServiceExpansions } from '../data/real-2036-service-expansions';
 import { innovative2036MicroSaasServices } from '../data/innovative-2036-micro-saas-services';
 import { innovative2036ITServices } from '../data/innovative-2036-it-services';
+
+// Import 2026 innovative services
+import { innovative2026AIServicesAdditions } from '../data/innovative-2026-ai-services-additions';
+import { innovative2026ITServicesAdditions } from '../data/innovative-2026-it-services-additions';
+import { innovative2026MicroSaasAdditions } from '../data/innovative-2026-micro-saas-additions';
+import { innovative2026IndustryAIServices } from '../data/innovative-2026-industry-ai-services';
+import { innovative2026EmergingTechServices } from '../data/innovative-2026-emerging-tech-services';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -80,7 +87,13 @@ const allServices = [
   ...real2035Q2Additions,
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
-  ...innovative2036ITServices
+  ...innovative2036ITServices,
+  // 2026 Innovative Services
+  ...innovative2026AIServicesAdditions,
+  ...innovative2026ITServicesAdditions,
+  ...innovative2026MicroSaasAdditions,
+  ...innovative2026IndustryAIServices,
+  ...innovative2026EmergingTechServices
 ];
 
 const categories = [
@@ -153,6 +166,27 @@ const categories = [
     icon: <GraduationCap className="w-6 h-6" />,
     color: 'from-yellow-500 to-orange-500',
     description: 'Learning and research platforms'
+  },
+  {
+    id: 'cybersecurity',
+    name: 'Cybersecurity & Security',
+    icon: <Shield className="w-6 h-6" />,
+    color: 'from-red-500 to-orange-500',
+    description: 'Advanced security and compliance solutions'
+  },
+  {
+    id: 'blockchain-defi',
+    name: 'Blockchain & DeFi',
+    icon: <Database className="w-6 h-6" />,
+    color: 'from-yellow-500 to-green-500',
+    description: 'Blockchain and decentralized finance solutions'
+  },
+  {
+    id: 'biometric-identity',
+    name: 'Biometric & Identity',
+    icon: <Lock className="w-6 h-6" />,
+    color: 'from-purple-500 to-indigo-500',
+    description: 'Biometric authentication and identity management'
   }
 ];
 
