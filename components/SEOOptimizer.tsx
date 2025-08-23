@@ -6,34 +6,18 @@ interface SEOOptimizerProps {
   description?: string;
   keywords?: string;
   ogImage?: string;
-  ogUrl?: string;
   canonicalUrl?: string;
   structuredData?: object;
 }
 
 const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
-  title = 'Zion Tech Group - Future of Technology | AI, Quantum Security, Micro SAAS',
-  description = 'Revolutionary micro SAAS services, cutting-edge AI solutions, quantum cybersecurity, and emerging technologies that transform businesses. 98+ innovative services for the modern enterprise.',
-  keywords = 'AI services, quantum cybersecurity, micro SAAS, automation, IT solutions, emerging technologies, Zion Tech Group, Delaware technology company',
+  title = 'Zion Tech Group - Pioneering the Future of Technology',
+  description = 'Zion Tech Group delivers innovative AI, quantum computing, and process automation solutions that drive business transformation. Expert technology consulting and implementation services.',
+  keywords = 'AI, Machine Learning, Quantum Computing, Process Automation, Technology Consulting, Business Transformation, Zion Tech Group',
   ogImage = '/og-image.jpg',
-  ogUrl = 'https://ziontechgroup.com',
   canonicalUrl = 'https://ziontechgroup.com',
-  structuredData = {}
+  structuredData
 }) => {
-  useEffect(() => {
-    // Add structured data to page
-    if (structuredData && Object.keys(structuredData).length > 0) {
-      const script = document.createElement('script');
-      script.type = 'application/ld+json';
-      script.text = JSON.stringify(structuredData);
-      document.head.appendChild(script);
-
-      return () => {
-        document.head.removeChild(script);
-      };
-    }
-  }, [structuredData]);
-
   // Default structured data for Zion Tech Group
   const defaultStructuredData = {
     '@context': 'https://schema.org',
@@ -41,62 +25,94 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
     name: 'Zion Tech Group',
     url: 'https://ziontechgroup.com',
     logo: 'https://ziontechgroup.com/logo.png',
-    description: 'Revolutionary technology solutions including AI, quantum cybersecurity, and micro SAAS services.',
+    description: 'Pioneering the future of technology with innovative solutions that drive business transformation',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '364 E Main St STE 1008',
-      addressLocality: 'Middletown',
-      addressRegion: 'DE',
-      postalCode: '19709',
       addressCountry: 'US'
     },
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+1-302-464-0950',
       contactType: 'customer service',
-      email: 'kleber@ziontechgroup.com'
+      email: 'info@ziontechgroup.com'
     },
     sameAs: [
-      'https://ziontechgroup.com',
-      'https://linkedin.com/company/ziontechgroup'
+      'https://linkedin.com/company/zion-tech-group',
+      'https://twitter.com/ziontechgroup'
     ],
-    serviceArea: {
-      '@type': 'Country',
-      name: 'United States'
-    },
-    hasOfferCatalog: {
-      '@type': 'OfferCatalog',
-      name: 'Technology Services',
-      itemListElement: [
+    offers: {
+      '@type': 'AggregateOffer',
+      offers: [
         {
           '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'AI Services',
-            description: 'Cutting-edge artificial intelligence solutions'
+          name: 'AI & Machine Learning Solutions',
+          description: 'Advanced artificial intelligence solutions for modern businesses',
+          price: '999',
+          priceCurrency: 'USD',
+          priceSpecification: {
+            '@type': 'UnitPriceSpecification',
+            price: '999',
+            priceCurrency: 'USD',
+            billingIncrement: 'P1M'
           }
         },
         {
           '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Quantum Cybersecurity',
-            description: 'Next-generation quantum-resistant security'
+          name: 'Quantum Computing Solutions',
+          description: 'Next-generation computing solutions for complex problems',
+          price: '1999',
+          priceCurrency: 'USD',
+          priceSpecification: {
+            '@type': 'UnitPriceSpecification',
+            price: '1999',
+            priceCurrency: 'USD',
+            billingIncrement: 'P1M'
           }
         },
         {
           '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Micro SAAS Services',
-            description: 'Revolutionary micro software-as-a-service solutions'
+          name: 'Process Automation Solutions',
+          description: 'Intelligent automation to streamline your operations',
+          price: '799',
+          priceCurrency: 'USD',
+          priceSpecification: {
+            '@type': 'UnitPriceSpecification',
+            price: '799',
+            priceCurrency: 'USD',
+            billingIncrement: 'P1M'
           }
         }
       ]
     }
   };
 
-  const finalStructuredData = Object.keys(structuredData).length > 0 ? structuredData : defaultStructuredData;
+  // Merge custom structured data with default
+  const finalStructuredData = structuredData || defaultStructuredData;
+
+  // Add page-specific structured data
+  useEffect(() => {
+    // Add WebPage structured data
+    const webPageData = {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: title,
+      description: description,
+      url: canonicalUrl,
+      mainEntity: {
+        '@type': 'Organization',
+        name: 'Zion Tech Group'
+      }
+    };
+
+    // Inject structured data
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(webPageData);
+    document.head.appendChild(script);
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, [title, description, canonicalUrl]);
 
   return (
     <Head>
@@ -116,8 +132,10 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       <meta property="og:type" content="website" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
+      <meta property="og:url" content={canonicalUrl} />
       <meta property="og:image" content={ogImage} />
-      <meta property="og:url" content={ogUrl} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:site_name" content="Zion Tech Group" />
       <meta property="og:locale" content="en_US" />
       
@@ -130,21 +148,20 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       
       {/* Additional Meta Tags */}
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="theme-color" content="#0891b2" />
-      <meta name="msapplication-TileColor" content="#0891b2" />
-      
-      {/* Preconnect to external domains for performance */}
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <meta name="theme-color" content="#06b6d4" />
+      <meta name="msapplication-TileColor" content="#06b6d4" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       
       {/* Favicon */}
-      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+      <link rel="icon" href="/favicon.ico" />
+      <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       
-      {/* Manifest */}
-      <link rel="manifest" href="/site.webmanifest" />
+      {/* Preconnect to external domains */}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       
       {/* Structured Data */}
       <script
@@ -156,17 +173,16 @@ const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
       
       {/* Additional SEO Meta Tags */}
       <meta name="application-name" content="Zion Tech Group" />
-      <meta name="apple-mobile-web-app-title" content="Zion Tech Group" />
-      <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+      <meta name="mobile-web-app-capable" content="yes" />
+      <meta name="format-detection" content="telephone=no" />
       
-      {/* Security Headers */}
+      {/* Security Meta Tags */}
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       <meta name="referrer" content="strict-origin-when-cross-origin" />
       
-      {/* Performance Hints */}
-      <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-      <link rel="dns-prefetch" href="//www.google-analytics.com" />
+      {/* Performance Meta Tags */}
+      <meta name="renderer" content="webkit" />
+      <meta name="force-rendering" content="webkit" />
     </Head>
   );
 };
