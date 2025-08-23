@@ -1101,159 +1101,102 @@ export default function ServicesAdvertisingPage() {
 					</ul>
 				</section>
 
-				<section id="api-security-fuzzing-copilot" className="space-y-6">
-					<h3 className="text-2xl font-semibold text-white">API Security Fuzzing Copilot</h3>
-					<p className="text-slate-300">Adaptive fuzzing for REST/GraphQL with CI gates and reproducible repro steps for developers.</p>
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">API Schema Diff & Registry</h2>
+					<p className="text-slate-300">Versioned OpenAPI registry with CI diffs, docs, and SDK hooks.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $99–$2,000/mo</li>
-						<li>References: {ext('https://www.stackhawk.com/pricing/')}, {ext('https://brightsec.com/pricing/')}, {ext('https://www.zaproxy.org/')}</li>
+						<li>Typical SMB budget: $20–$100/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/api-schema-diff-registry">/services/api-schema-diff-registry</a></li>
+						<li>References: https://swagger.io/tools/swaggerhub/pricing/, https://stoplight.io/pricing</li>
 					</ul>
 				</section>
 
-				<section id="warehouse-governance-catalog" className="space-y-6">
-					<h3 className="text-2xl font-semibold text-white">Warehouse Governance Catalog</h3>
-					<p className="text-slate-300">Ownership, PII tags, lineage, and access workflows that fit modern data teams.</p>
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">GitOps Drift Auto‑Remediator</h2>
+					<p className="text-slate-300">Detect infra drift and open PRs with policy‑guided fixes and evidence.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $99–$1,000+/mo</li>
-						<li>References: {ext('https://www.secoda.co/pricing')}, {ext('https://launch.atlan.com/pricing')}, {ext('https://openmetadata.org/')}</li>
+						<li>Typical SMB budget: $49–$199/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/gitops-drift-auto-remediator">/services/gitops-drift-auto-remediator</a></li>
+						<li>References: https://www.openpolicyagent.org/, https://www.spacelift.io/pricing</li>
 					</ul>
 				</section>
 
-				<section id="browser-performance-guardrails" className="space-y-6">
-					<h3 className="text-2xl font-semibold text-white">Browser Performance Guardrails</h3>
-					<p className="text-slate-300">Keep Core Web Vitals on budget with PR checks, budgets, and route-level insights.</p>
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Synthetic Journey Monitor</h2>
+					<p className="text-slate-300">Record, replay, and alert on critical flows with screenshots and HARs.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $20–$300/mo</li>
-						<li>References: {ext('https://calibreapp.com/pricing')}, {ext('https://www.speedcurve.com/pricing/')}</li>
+						<li>Typical SMB budget: $20–$100/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/synthetic-journey-monitor">/services/synthetic-journey-monitor</a></li>
+						<li>References: https://playwright.dev, https://www.checklyhq.com/pricing/</li>
 					</ul>
 				</section>
 
-				<section id="ml-feature-quality-monitor" className="space-y-6">
-					<h3 className="text-2xl font-semibold text-white">ML Feature Quality Monitor</h3>
-					<p className="text-slate-300">Detect drift, leakage, and anomalies across online/offline features with alerts and dashboards.</p>
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Postgres Index Advisor Pro</h2>
+					<p className="text-slate-300">Query‑aware index suggestions with safe rollout PRs and rollback.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $99–$1,000+/mo</li>
-						<li>References: {ext('https://whylabs.ai/pricing')}, {ext('https://www.evidentlyai.com/')}</li>
+						<li>Typical SMB budget: $29–$149/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/postgres-index-advisor-pro">/services/postgres-index-advisor-pro</a></li>
+						<li>References: https://pganalyze.com/pricing, https://www.postgresql.org/docs/current/auto-explain.html</li>
 					</ul>
 				</section>
 
-				<section id="edge-personalization-orchestrator" className="space-y-6">
-					<h3 className="text-2xl font-semibold text-white">Edge Personalization Orchestrator</h3>
-					<p className="text-slate-300">Real-time content and pricing at the edge using geo, audiences, and telemetry—no backend changes required.</p>
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">S3 Lifecycle Optimizer</h2>
+					<p className="text-slate-300">Access‑aware transitions to IA/Glacier and retention guardrails.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $20–$500/mo + usage</li>
-						<li>References: {ext('https://developers.cloudflare.com/workers/platform/pricing/')}, {ext('https://vercel.com/pricing')}, {ext('https://launchdarkly.com/pricing')}</li>
+						<li>Typical SMB budget: $15–$99/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/s3-lifecycle-optimizer">/services/s3-lifecycle-optimizer</a></li>
+						<li>References: https://aws.amazon.com/s3/pricing/, https://aws.amazon.com/s3/storage-classes/</li>
 					</ul>
 				</section>
 
-				<section id="sso-user-lifecycle-orchestrator" className="space-y-6">
-					<h3 className="text-2xl font-semibold text-white">SSO User Lifecycle Orchestrator</h3>
-					<p className="text-slate-300">Automate joiner-mover-leaver flows with SCIM, access review campaigns, and audit-ready logs.</p>
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">PII Redaction Proxy</h2>
+					<p className="text-slate-300">Lossless masking for logs, prompts, and event streams with audit.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $99–$2,000/mo</li>
-						<li>References: {ext('https://www.okta.com/pricing/')}, {ext('https://workos.com/pricing')}</li>
+						<li>Typical SMB budget: $29–$149/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/pii-redaction-proxy">/services/pii-redaction-proxy</a></li>
+						<li>References: https://www.skyflow.com/pricing, https://www.verygoodsecurity.com/pricing</li>
 					</ul>
 				</section>
 
-				<section id="warehouse-change-data-capture-kit" className="space-y-6">
-					<h3 className="text-2xl font-semibold text-white">Warehouse Change Data Capture (CDC) Kit</h3>
-					<p className="text-slate-300">Turnkey CDC from operational DBs to your warehouse with schema evolution, ordering, and replay tools.</p>
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">API Breaking Change Watcher</h2>
+					<p className="text-slate-300">Continuous OpenAPI/GraphQL diffs with CI gates and changelogs.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $99–$1,500/mo</li>
-						<li>References: {ext('https://www.fivetran.com/pricing')}, {ext('https://airbyte.com/pricing')}, {ext('https://debezium.io/')}</li>
+						<li>Typical SMB budget: $20–$100/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/api-breaking-change-watcher">/services/api-breaking-change-watcher</a></li>
+						<li>References: https://www.openapis.org/, https://graphql.org/learn/best-practices/</li>
 					</ul>
 				</section>
 
-				{/* Contact footer */}
-				<section className="space-y-3">
-					<h3 className="text-xl font-semibold text-white">Talk to an expert</h3>
-					<p className="text-slate-300 text-sm">Call <a className="text-cyan-400 underline" href="tel:+13024640950">+1 302 464 0950</a> · Email <a className="text-cyan-400 underline" href="mailto:kleber@ziontechgroup.com">kleber@ziontechgroup.com</a> · Visit <a className="text-cyan-400 underline" href="https://ziontechgroup.com" target="_blank" rel="noopener noreferrer">ziontechgroup.com</a></p>
-					<p className="text-slate-400 text-xs">Address: 364 E Main St STE 1008 Middletown DE 19709</p>
-				</section>
-
-			</div>
-
-			{/* Newly advertised sections */}
-			<div className="max-w-6xl mx-auto space-y-8 mt-8">
-				<section id="terraform-drift-policy-guard" className="space-y-2">
-					<h3 className="text-xl font-semibold text-white">Terraform Drift & Policy Guard</h3>
-					<p className="text-slate-300">Continuously detect Terraform drift and enforce policies in CI with OPA/Rego gates.</p>
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">API Security Scanner Pro</h2>
+					<p className="text-slate-300">OWASP API Top 10 detection with CI checks and remediation tips.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $49–$299/mo</li>
-						<li>References: {ext('https://www.hashicorp.com/products/terraform/pricing')}, {ext('https://www.openpolicyagent.org/')}</li>
+						<li>Typical SMB budget: $59–$299/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/api-security-scanner-pro">/services/api-security-scanner-pro</a></li>
+						<li>References: https://owasp.org/www-project-api-security/, https://www.fastly.com/pricing</li>
 					</ul>
-					<div><a className="text-cyan-400 underline" href="/services/terraform-drift-policy-guard">Learn more</a></div>
 				</section>
 
-				<section id="dbt-monorepo-starter" className="space-y-2">
-					<h3 className="text-xl font-semibold text-white">dbt Monorepo Starter</h3>
-					<p className="text-slate-300">Governed dbt monorepo with environments, tests, docs, and ready CI templates.</p>
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">Vendor Security Questionnaire AI</h2>
+					<p className="text-slate-300">Auto‑fill SIG/CAIQ with mapped controls, citations, and review flows.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $79–$499/mo</li>
-						<li>References: {ext('https://www.getdbt.com/pricing/')}, {ext('https://docs.getdbt.com/docs/best-practices/git-workflow')}</li>
+						<li>Typical SMB budget: $39–$149/mo</li>
+						<li>Learn more: <a className="text-cyan-400 underline" href="/services/vendor-security-questionnaire-ai">/services/vendor-security-questionnaire-ai</a></li>
+						<li>References: https://sharedassessments.org/resources/sig/, https://cloudsecurityalliance.org/research/caiq</li>
 					</ul>
-					<div><a className="text-cyan-400 underline" href="/services/dbt-monorepo-starter">Learn more</a></div>
 				</section>
 
-				<section id="incident-runbook-copilot" className="space-y-2">
-					<h3 className="text-xl font-semibold text-white">Incident Runbook Copilot</h3>
-					<p className="text-slate-300">Suggest runbook steps from history and automate incident communications and status updates.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $39–$299/mo</li>
-						<li>References: {ext('https://www.pagerduty.com/pricing/')}, {ext('https://www.atlassian.com/software/statuspage/pricing')}</li>
-					</ul>
-					<div><a className="text-cyan-400 underline" href="/services/incident-runbook-copilot">Learn more</a></div>
-				</section>
-
-				<section id="api-contract-mock-cloud" className="space-y-2">
-					<h3 className="text-xl font-semibold text-white">API Contract Mock Cloud</h3>
-					<p className="text-slate-300">Spin up mock servers from OpenAPI, diff schemas in CI, and unblock frontend teams.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $19–$149/mo</li>
-						<li>References: {ext('https://stoplight.io/pricing')}, {ext('https://swagger.io/tools/swaggerhub/pricing/')}</li>
-					</ul>
-					<div><a className="text-cyan-400 underline" href="/services/api-contract-mock-cloud">Learn more</a></div>
-				</section>
-
-				<section id="data-quality-monitor-warehouse" className="space-y-2">
-					<h3 className="text-xl font-semibold text-white">Data Quality Monitor for Warehouse</h3>
-					<p className="text-slate-300">Rules, anomalies, and freshness SLAs with alerting and exports for your warehouse.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $39–$299/mo</li>
-						<li>References: {ext('https://www.soda.io/pricing')}, {ext('https://www.metaplane.dev/pricing')}</li>
-					</ul>
-					<div><a className="text-cyan-400 underline" href="/services/data-quality-monitor-warehouse">Learn more</a></div>
-				</section>
-
-				<section id="cookie-consent-compliance-scanner" className="space-y-2">
-					<h3 className="text-xl font-semibold text-white">Cookie Consent & Compliance Scanner</h3>
-					<p className="text-slate-300">Scan sites, classify trackers, and export policies and consent records.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $9–$99/mo</li>
-						<li>References: {ext('https://www.osano.com/pricing')}, {ext('https://www.onetrust.com/platform/cookie-consent/')}, {ext('https://www.termsfeed.com/blog/cookies-consent-requirements-laws/')}</li>
-					</ul>
-					<div><a className="text-cyan-400 underline" href="/services/cookie-consent-compliance-scanner">Learn more</a></div>
-				</section>
-
-				<section id="github-actions-cost-optimizer" className="space-y-2">
-					<h3 className="text-xl font-semibold text-white">GitHub Actions Cost Optimizer</h3>
-					<p className="text-slate-300">Analyze workflows and caching to safely reduce CI minutes and costs.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $9–$99/mo</li>
-						<li>References: {ext('https://docs.github.com/billing/managing-billing-for-github-actions/about-billing-for-github-actions')}, {ext('https://docs.github.com/actions/using-workflows/caching-dependencies-to-speed-up-workflows')}</li>
-					</ul>
-					<div><a className="text-cyan-400 underline" href="/services/github-actions-cost-optimizer">Learn more</a></div>
-				</section>
-
-				<section id="ai-meeting-notes-action-items" className="space-y-2">
-					<h3 className="text-xl font-semibold text-white">AI Meeting Notes & Action Items Hub</h3>
-					<p className="text-slate-300">Transcribe meetings, summarize topics, extract action items, and sync with calendars.</p>
-					<ul className="list-disc list-inside text-slate-300 space-y-1">
-						<li>Typical SMB budget: $9–$49/mo + usage</li>
-						<li>References: {ext('https://otter.ai/pricing')}, {ext('https://fireflies.ai/pricing')}</li>
-					</ul>
-					<div><a className="text-cyan-400 underline" href="/services/ai-meeting-notes-action-items">Learn more</a></div>
-				</section>
+				{/* Contact CTA */}
+				<div className="flex flex-col md:flex-row items-center gap-4 p-4 rounded-xl bg-black/30 border border-gray-800">
+					<a href="tel:+13024640950" className="px-4 py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Call +1 302 464 0950</a>
+					<a href="mailto:kleber@ziontechgroup.com" className="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-600 text-white">Email kleber@ziontechgroup.com</a>
+					<a href="/pricing" className="px-4 py-2 rounded-lg border border-cyan-500/40 text-cyan-300">View Pricing</a>
+				</div>
 			</div>
 		</div>
 	);
