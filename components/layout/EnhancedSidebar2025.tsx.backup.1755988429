@@ -107,6 +107,8 @@ const sidebarItems: SidebarItem[] = [
   }
 ];
 
+<<<<<<< HEAD
+=======
 const quickLinks = [
   { name: 'Home', href: '/', icon: <Home className="w-4 h-4" /> },
   { name: 'All Services', href: '/comprehensive-2025-services-showcase', icon: <Star className="w-4 h-4" /> },
@@ -150,6 +152,7 @@ const stats = [
   { label: 'Awards Won', value: '25+', icon: <Award className="w-5 h-5" /> }
 ];
 
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-4bbd
 interface EnhancedSidebar2025Props {
   isOpen: boolean;
   onClose: () => void;
