@@ -1,1 +1,3 @@
-export default function EmergingTechnologyTrendsChat() { return <div className="py-12">Emerging technology trends.</div>; }
+export default function Page(){
+  return <div className="max-w-3xl mx-auto p-6">Emerging Technology Trends</div>;
+}

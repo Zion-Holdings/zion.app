@@ -1,1 +1,3 @@
-export default function VerifyEmailPage() { return <div className="py-12">Verify email coming soon.</div>; }
+export default function Verify(){
+  return <div className="max-w-3xl mx-auto p-6">Verify</div>;
+}

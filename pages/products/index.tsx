@@ -1,1 +1,3 @@
-export default function ProductsIndexPage() { return <div className="py-12">Products directory coming soon.</div>; }
+export default function Products(){
+  return <div className="max-w-3xl mx-auto p-6">Products</div>;
+}

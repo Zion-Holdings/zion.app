@@ -1,1 +1,3 @@
-export default function AutoUpdate_172307688z() { return <div className="py-12">Automated update page.</div>; }
+export default function Auto(){
+  return <div className="max-w-3xl mx-auto p-6">Auto Update</div>;
+}

@@ -1,1 +1,3 @@
-export default function CybersecurityBestPracticesChat() { return <div className="py-12">Cybersecurity best practices.</div>; }
+export default function Page(){
+  return <div className="max-w-3xl mx-auto p-6">Cybersecurity Best Practices</div>;
+}
