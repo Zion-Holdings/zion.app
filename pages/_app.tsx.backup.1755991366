@@ -1,0 +1,24 @@
+import type { AppProps } from 'next/app';
+<<<<<<< HEAD
+import '../styles/globals.css';
+import '../styles/enhanced-design-system.css';
+import '../styles/modern-design-system.css';
+
+function ZionApp({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />;
+}
+
+export default ZionApp;
+=======
+import EnhancedLayout from '../components/layout/EnhancedLayout';
+import '../styles/enhanced-design-system.css';
+import '../styles/modern-design-system.css';
+
+export default function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <EnhancedLayout>
+      <Component {...pageProps} />
+    </EnhancedLayout>
+  );
+}
+>>>>>>> origin/cursor/create-zion-ai-dashboard-interfaces-6fb9

@@ -1,0 +1,9 @@
+/// <reference types="next" />
+/// <reference types="next/image-types/global" />
+
+// NOTE: This file should not be edited
+<<<<<<< HEAD
+// see https://nextjs.org/docs/pages/api-reference/config/typescript for more information.
+=======
+// see https://nextjs.org/docs/pages/building-your-application/configuring/typescript for more information.
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-43c0

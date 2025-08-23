@@ -1,16 +1,9 @@
-import { SkeletonCard } from "@/components/ui";
-
-export function ListingGridSkeleton({ count = 8 }: { count?: number }) {
+import React from 'react';
+export function ListingGridSkeleton() {
   return (
-    <div
-      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-      data-testid="listing-grid-skeleton"
-    >
-      {Array.from({ length: count }).map((_, i) => (
-        <SkeletonCard key={i} />
-      ))}
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
     </div>
   );
 }
-
-export default ListingGridSkeleton;

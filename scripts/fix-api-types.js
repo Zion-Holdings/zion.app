@@ -1,53 +1,74 @@
-#!/usr/bin/env node
 
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+const winston = require('winston');
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
 
-console.log('🔧 Fixing API TypeScript errors...');
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
 
+
+class Script {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    logger.info('Starting Script...');
+    
+    try {
+      #!/usr/bin/env node
+;
+import fs from fs';import path from path';import { fileURLToPath as _fileURLToPath } from url';
+logger.warn('🔧 Fixing API TypeScript errors...');
 // Common patterns to fix
 const fixes = [
   // Fix req.query destructuring
   {
     pattern: /const { ([^}]+) } = req\.query;/g,
     replacement: (match, params) => {
-      const paramList = params.split(',').map(p => p.trim()).join(': string | string[], ') + ': string | string[]';
-      return `const { ${params} } = req.query as { ${paramList} };`;
+      const paramList = params.split(',).map(p => p.trim()).join(': string | string[], ) + : string | string[];      return `const { ${params} } = req.query as { ${paramList} };`;
     }
   },
   // Fix req.body destructuring
   {
     pattern: /const { ([^}]+) } = req\.body;/g,
     replacement: (match, params) => {
-      const paramList = params.split(',').map(p => p.trim() + '?: unknown').join(', ');
-      return `const { ${params} } = req.body as { ${paramList} };`;
+      const paramList = params.split(',).map(p => p.trim() + ?: unknown').join(', );      return `const { ${params} } = req.body as { ${paramList} };`;
     }
   },
   // Fix req.headers access
   {
     pattern: /req\.headers\[([^\]]+)\]/g,
-    replacement: '(req.headers as Record<string, string | string[] | undefined>)[$1]'
-  },
+    replacement: (req.headers as Record<string, string | string[] | undefined>)[$1]  },
   // Fix req.connection access
   {
     pattern: /req\.connection/g,
-    replacement: '(req as any).connection'
-  }
+    replacement: (req as any).connection'  }
 ];
 
 // Function to process a file
 function processFile(filePath) {
   try {
-    let content = fs.readFileSync(filePath, 'utf8');
-    let modified = false;
+    let content = fs.readFileSync(filePath, 'utf8');    let modified = false;
 
     fixes.forEach(fix => {
-      if (typeof fix.replacement === 'function') {
-        const newContent = content.replace(fix.pattern, fix.replacement);
+      if (typeof fix.replacement === 'function') {        const newContent = content.replace(fix.pattern, fix.replacement);
         if (newContent !== content) {
           content = newContent;
           modified = true;
@@ -63,13 +84,12 @@ function processFile(filePath) {
 
     if (modified) {
       fs.writeFileSync(filePath, content);
-      console.log(`✅ Fixed: ${path.relative(process.cwd(), filePath)}`);
+      logger.warn(`✅ Fixed: ${path.relative(process.cwd(), filePath)}`);
       return true;
     }
     return false;
-  } catch (error) {
-    console.error(`❌ Error processing ${filePath}:`, error.message);
-    return false;
+  } catch {
+    console.'Error occurred'(`❌ Error processing ${filePath}:`, _error.message);    return false;
   }
 }
 
@@ -81,35 +101,29 @@ function findApiFiles(dir) {
     const items = fs.readdirSync(dir);
     
     for (const item of items) {
-      const fullPath = path.join(dir, item);
-      const stat = fs.statSync(fullPath);
+      const fullPath = path.join(dir, item)
+const stat = fs.statSync(fullPath);
       
       if (stat.isDirectory()) {
         files.push(...findApiFiles(fullPath));
-      } else if (stat.isFile() && (item.endsWith('.ts') || item.endsWith('.js'))) {
-        files.push(fullPath);
+      } else if (stat.isFile() && (item.endsWith('.ts') || item.endsWith('.js'))) {'        files.push(fullPath);
       }
     }
-  } catch (error) {
-    // Skip directories that can't be read
-  }
+  } catch {
+    // Skip directories that can't be read'  }
   
   return files;
 }
 
 // Main execution
 const apiDirs = [
-  path.join(process.cwd(), 'pages/api'),
-  path.join(process.cwd(), 'temp_essential_pages/api'),
-  path.join(process.cwd(), 'api')
-];
-
+  path.join(process.cwd(), pages/api'),  path.join(process.cwd(), temp_essential_pages/api'),  path.join(process.cwd(), api')];
 let totalFixed = 0;
 
 apiDirs.forEach(apiDir => {
   if (fs.existsSync(apiDir)) {
-    console.log(`\n🔍 Processing ${apiDir}...`);
-    const apiFiles = findApiFiles(apiDir);
+    logger.warn(`\n🔍 Processing ${apiDir}...`)
+const apiFiles = findApiFiles(apiDir);
     
     apiFiles.forEach(file => {
       if (processFile(file)) {
@@ -119,29 +133,60 @@ apiDirs.forEach(apiDir => {
   }
 });
 
-console.log(`\n🎯 Summary: Fixed ${totalFixed} API files`);
+logger.warn(`\n🎯 Summary: Fixed ${totalFixed} API files`);
 
 // Also create a types import helper
-const helperContent = `// Auto-generated API type helpers
-import type { NextApiRequest, NextApiResponse } from 'next';
-
-export function safeQueryParam<T = string>(query: NextApiRequest['query'], key: string): T | undefined {
-  const value = (query as Record<string, unknown>)[key];
+const helperContent = `// Auto-generated API type helpers;
+import type { NextApiRequest, NextApiResponse } from next';;
+function safeQueryParam<T = string>(query: NextApiRequest['query'], key: string): T | undefined {'  const value = (query as Record<string, unknown>)[key];
   return value as T;
 }
-
-export function safeBodyParam<T = unknown>(body: NextApiRequest['body'], key: string): T | undefined {
-  const safeBody = body as Record<string, unknown>;
+;
+function safeBodyParam<T = unknown>(body: NextApiRequest['body'], key: string): T | undefined {'  const safeBody = body as Record<string, unknown>;
   return safeBody[key] as T;
 }
-
-export function safeHeader(headers: NextApiRequest['headers'], key: string): string | string[] | undefined {
-  const safeHeaders = headers as Record<string, string | string[] | undefined>;
+;
+function safeHeader(headers: NextApiRequest['headers'], key: string): string | string[] | undefined {'  const safeHeaders = headers as Record<string, string | string[] | undefined>;
   return safeHeaders[key];
 }
 `;
 
-fs.writeFileSync(path.join(process.cwd(), 'src/utils/api-helpers.ts'), helperContent);
-console.log('✅ Created API helper utilities');
+fs.writeFileSync(path.join(process.cwd(), src/utils/api-helpers.ts'), helperContent);logger.warn('✅ Created API helper utilities');
+default {};
+    } catch (error) {
+      logger.error('Error in Script:', error);
+      throw error;
+    }
+  }
 
-export default {}; 
+  stop() {
+    this.isRunning = false;
+    logger.info('Stopping Script...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new Script();
+  script.start().catch(error => {
+    logger.error('Failed to start Script:', error);
+    process.exit(1);
+  });
+}
+
+module.exports = Script;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

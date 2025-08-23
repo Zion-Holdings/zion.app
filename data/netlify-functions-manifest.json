@@ -1,0 +1,455 @@
+{
+  "generatedAt": "2025-08-11T17:53:30.656Z",
+  "directory": "netlify/functions",
+  "total": 64,
+  "functions": [
+    {
+      "name": "ai-changelog-runner",
+      "file": "ai-changelog-runner.js",
+      "scheduled": true,
+      "schedule": "29 */6 * * *",
+      "endpoint": "/.netlify/functions/ai-changelog-runner"
+    },
+    {
+      "name": "auto-scheduler",
+      "file": "auto-scheduler.js",
+      "scheduled": true,
+      "schedule": "*/15 * * * *",
+      "endpoint": "/.netlify/functions/auto-scheduler"
+    },
+    {
+      "name": "automation-matrix",
+      "file": "automation-matrix.js",
+      "scheduled": false,
+      "schedule": null,
+      "endpoint": "/.netlify/functions/automation-matrix"
+    },
+    {
+      "name": "autonomous-invention-orchestrator",
+      "file": "autonomous-invention-orchestrator.js",
+      "scheduled": false,
+      "schedule": null,
+      "endpoint": "/.netlify/functions/autonomous-invention-orchestrator"
+    },
+    {
+      "name": "broken-image-scanner-runner",
+      "file": "broken-image-scanner-runner.js",
+      "scheduled": true,
+      "schedule": "13 */6 * * *",
+      "endpoint": "/.netlify/functions/broken-image-scanner-runner"
+    },
+    {
+      "name": "broken-image-scanner",
+      "file": "broken-image-scanner.js",
+      "scheduled": true,
+      "schedule": "*/10 * * * *",
+      "endpoint": "/.netlify/functions/broken-image-scanner"
+    },
+    {
+      "name": "cloud_orchestrator",
+      "file": "cloud_orchestrator.js",
+      "scheduled": true,
+      "schedule": "*/15 * * * *",
+      "endpoint": "/.netlify/functions/cloud_orchestrator"
+    },
+    {
+      "name": "continuous-front-runner",
+      "file": "continuous-front-runner.js",
+      "scheduled": true,
+      "schedule": "*/5 * * * *",
+      "endpoint": "/.netlify/functions/continuous-front-runner"
+    },
+    {
+      "name": "continuous-orchestrator",
+      "file": "continuous-orchestrator.js",
+      "scheduled": true,
+      "schedule": "*/1 * * * *",
+      "endpoint": "/.netlify/functions/continuous-orchestrator"
+    },
+    {
+      "name": "dead-code-audit",
+      "file": "dead-code-audit.js",
+      "scheduled": false,
+      "schedule": null,
+      "endpoint": "/.netlify/functions/dead-code-audit"
+    },
+    {
+      "name": "dead-code-report",
+      "file": "dead-code-report.js",
+      "scheduled": true,
+      "schedule": "*/1 * * * *",
+      "endpoint": "/.netlify/functions/dead-code-report"
+    },
+    {
+      "name": "docs-index-runner",
+      "file": "docs-index-runner.js",
+      "scheduled": true,
+      "schedule": "19 */6 * * *",
+      "endpoint": "/.netlify/functions/docs-index-runner"
+    },
+    {
+      "name": "docs-search-index-runner",
+      "file": "docs-search-index-runner.js",
+      "scheduled": true,
+      "schedule": "47 */6 * * *",
+      "endpoint": "/.netlify/functions/docs-search-index-runner"
+    },
+    {
+      "name": "external-link-check-runner",
+      "file": "external-link-check-runner.js",
+      "scheduled": true,
+      "schedule": "17 */6 * * *",
+      "endpoint": "/.netlify/functions/external-link-check-runner"
+    },
+    {
+      "name": "fast-front-promoter",
+      "file": "fast-front-promoter.js",
+      "scheduled": true,
+      "schedule": "0 */12 * * *",
+      "endpoint": "/.netlify/functions/fast-front-promoter"
+    },
+    {
+      "name": "fast-orchestrator",
+      "file": "fast-orchestrator.js",
+      "scheduled": true,
+      "schedule": "*/15 * * * *",
+      "endpoint": "/.netlify/functions/fast-orchestrator"
+    },
+    {
+      "name": "feature-advertiser",
+      "file": "feature-advertiser.js",
+      "scheduled": false,
+      "schedule": null,
+      "endpoint": "/.netlify/functions/feature-advertiser"
+    },
+    {
+      "name": "features-capabilities-benefits-advertiser",
+      "file": "features-capabilities-benefits-advertiser.js",
+      "scheduled": false,
+      "schedule": null,
+      "endpoint": "/.netlify/functions/features-capabilities-benefits-advertiser"
+    },
+    {
+      "name": "front-ads-promoter",
+      "file": "front-ads-promoter.js",
+      "scheduled": true,
+      "schedule": "13 */6 * * *",
+      "endpoint": "/.netlify/functions/front-ads-promoter"
+    },
+    {
+      "name": "front-enhancer",
+      "file": "front-enhancer.js",
+      "scheduled": true,
+      "schedule": "0 */4 * * *",
+      "endpoint": "/.netlify/functions/front-enhancer"
+    },
+    {
+      "name": "front-index-futurizer",
+      "file": "front-index-futurizer.js",
+      "scheduled": false,
+      "schedule": null,
+      "endpoint": "/.netlify/functions/front-index-futurizer"
+    },
+    {
+      "name": "front-index-orchestrator",
+      "file": "front-index-orchestrator.js",
+      "scheduled": true,
+      "schedule": "*/5 * * * *",
+      "endpoint": "/.netlify/functions/front-index-orchestrator"
+    },
+    {
+      "name": "front-index-scheduler",
+      "file": "front-index-scheduler.js",
+      "scheduled": false,
+      "schedule": null,
+      "endpoint": "/.netlify/functions/front-index-scheduler"
+    },
+    {
+      "name": "front-maximizer",
+      "file": "front-maximizer.js",
+      "scheduled": true,
+      "schedule": "*/1 * * * *",
+      "endpoint": "/.netlify/functions/front-maximizer"
+    },
+    {
+      "name": "front-visionary-expander",
+      "file": "front-visionary-expander.js",
+      "scheduled": true,
+      "schedule": "*/5 * * * *",
+      "endpoint": "/.netlify/functions/front-visionary-expander"
+    },
+    {
+      "name": "frontpage-enhancer",
+      "file": "frontpage-enhancer.js",
+      "scheduled": true,
+      "schedule": "*/5 * * * *",
+      "endpoint": "/.netlify/functions/frontpage-enhancer"
+    },
+    {
+      "name": "frontpage-scheduler",
+      "file": "frontpage-scheduler.js",
+      "scheduled": false,
+      "schedule": null,
+      "endpoint": "/.netlify/functions/frontpage-scheduler"
+    },
+    {
+      "name": "home-visionary-expander",
+      "file": "home-visionary-expander.js",
+      "scheduled": true,
+      "schedule": "*/3 * * * *",
+      "endpoint": "/.netlify/functions/home-visionary-expander"
+    },
+    {
+      "name": "homepage-advertiser-scheduler",
+      "file": "homepage-advertiser-scheduler.js",
+      "scheduled": false,
+      "schedule": null,
+      "endpoint": "/.netlify/functions/homepage-advertiser-scheduler"
+    },
+    {
+      "name": "homepage-enhancer",
+      "file": "homepage-enhancer.js",
+      "scheduled": false,
+      "schedule": null,
+      "endpoint": "/.netlify/functions/homepage-enhancer"
+    },
+    {
+      "name": "homepage-updater-scheduler",
+      "file": "homepage-updater-scheduler.js",
+      "scheduled": false,
+      "schedule": null,
+      "endpoint": "/.netlify/functions/homepage-updater-scheduler"
+    },
+    {
+      "name": "homepage-updater",
+      "file": "homepage-updater.js",
+      "scheduled": false,
+      "schedule": null,
+      "endpoint": "/.netlify/functions/homepage-updater"
+    },
+    {
+      "name": "homepage_advertiser",
+      "file": "homepage_advertiser.js",
+      "scheduled": false,
+      "schedule": null,
+      "endpoint": "/.netlify/functions/homepage_advertiser"
+    },
+    {
+      "name": "hyper-front-index-accelerator",
+      "file": "hyper-front-index-accelerator.js",
+      "scheduled": true,
+      "schedule": "*/2 * * * *",
+      "endpoint": "/.netlify/functions/hyper-front-index-accelerator"
+    },
+    {
+      "name": "image-optimizer-runner",
+      "file": "image-optimizer-runner.js",
+      "scheduled": true,
+      "schedule": "23 */6 * * *",
+      "endpoint": "/.netlify/functions/image-optimizer-runner"
+    },
+    {
+      "name": "innovation-lab",
+      "file": "innovation-lab.js",
+      "scheduled": false,
+      "schedule": null,
+      "endpoint": "/.netlify/functions/innovation-lab"
+    },
+    {
+      "name": "link-and-health-scheduler",
+      "file": "link-and-health-scheduler.js",
+      "scheduled": true,
+      "schedule": "0 */2 * * *",
+      "endpoint": "/.netlify/functions/link-and-health-scheduler"
+    },
+    {
+      "name": "link-crawler",
+      "file": "link-crawler.js",
+      "scheduled": false,
+      "schedule": null,
+      "endpoint": "/.netlify/functions/link-crawler"
+    },
+    {
+      "name": "maintenance-scheduler",
+      "file": "maintenance-scheduler.js",
+      "scheduled": false,
+      "schedule": null,
+      "endpoint": "/.netlify/functions/maintenance-scheduler"
+    },
+    {
+      "name": "marketing-and-features-promo",
+      "file": "marketing-and-features-promo.js",
+      "scheduled": true,
+      "schedule": "*/20 * * * *",
+      "endpoint": "/.netlify/functions/marketing-and-features-promo"
+    },
+    {
+      "name": "marketing-scheduler",
+      "file": "marketing-scheduler.js",
+      "scheduled": false,
+      "schedule": null,
+      "endpoint": "/.netlify/functions/marketing-scheduler"
+    },
+    {
+      "name": "media-og-and-optimize",
+      "file": "media-og-and-optimize.js",
+      "scheduled": false,
+      "schedule": null,
+      "endpoint": "/.netlify/functions/media-og-and-optimize"
+    },
+    {
+      "name": "netlify-auto-healer-runner",
+      "file": "netlify-auto-healer-runner.js",
+      "scheduled": true,
+      "schedule": "*/20 * * * *",
+      "endpoint": "/.netlify/functions/netlify-auto-healer-runner"
+    },
+    {
+      "name": "newsroom-auto-publisher",
+      "file": "newsroom-auto-publisher.js",
+      "scheduled": false,
+      "schedule": null,
+      "endpoint": "/.netlify/functions/newsroom-auto-publisher"
+    },
+    {
+      "name": "newsroom-runner",
+      "file": "newsroom-runner.js",
+      "scheduled": true,
+      "schedule": "41 */6 * * *",
+      "endpoint": "/.netlify/functions/newsroom-runner"
+    },
+    {
+      "name": "og-image-update-runner",
+      "file": "og-image-update-runner.js",
+      "scheduled": true,
+      "schedule": "43 */6 * * *",
+      "endpoint": "/.netlify/functions/og-image-update-runner"
+    },
+    {
+      "name": "readme-advertiser",
+      "file": "readme-advertiser.js",
+      "scheduled": true,
+      "schedule": "*/3 * * * *",
+      "endpoint": "/.netlify/functions/readme-advertiser"
+    },
+    {
+      "name": "repo-knowledge-graph-runner",
+      "file": "repo-knowledge-graph-runner.js",
+      "scheduled": true,
+      "schedule": "11 */4 * * *",
+      "endpoint": "/.netlify/functions/repo-knowledge-graph-runner"
+    },
+    {
+      "name": "repo-radar-and-graph",
+      "file": "repo-radar-and-graph.js",
+      "scheduled": false,
+      "schedule": null,
+      "endpoint": "/.netlify/functions/repo-radar-and-graph"
+    },
+    {
+      "name": "repo-radar-runner",
+      "file": "repo-radar-runner.js",
+      "scheduled": true,
+      "schedule": "31 */6 * * *",
+      "endpoint": "/.netlify/functions/repo-radar-runner"
+    },
+    {
+      "name": "schedule-content-index",
+      "file": "schedule-content-index.js",
+      "scheduled": false,
+      "schedule": null,
+      "endpoint": "/.netlify/functions/schedule-content-index"
+    },
+    {
+      "name": "schedule-homepage",
+      "file": "schedule-homepage.js",
+      "scheduled": false,
+      "schedule": null,
+      "endpoint": "/.netlify/functions/schedule-homepage"
+    },
+    {
+      "name": "schedule-knowledge-graph",
+      "file": "schedule-knowledge-graph.js",
+      "scheduled": false,
+      "schedule": null,
+      "endpoint": "/.netlify/functions/schedule-knowledge-graph"
+    },
+    {
+      "name": "schedule-site-health",
+      "file": "schedule-site-health.js",
+      "scheduled": false,
+      "schedule": null,
+      "endpoint": "/.netlify/functions/schedule-site-health"
+    },
+    {
+      "name": "security-audit-runner",
+      "file": "security-audit-runner.js",
+      "scheduled": true,
+      "schedule": "7 */6 * * *",
+      "endpoint": "/.netlify/functions/security-audit-runner"
+    },
+    {
+      "name": "security-audit",
+      "file": "security-audit.js",
+      "scheduled": false,
+      "schedule": null,
+      "endpoint": "/.netlify/functions/security-audit"
+    },
+    {
+      "name": "site-crawler",
+      "file": "site-crawler.js",
+      "scheduled": false,
+      "schedule": null,
+      "endpoint": "/.netlify/functions/site-crawler"
+    },
+    {
+      "name": "sitemap_runner",
+      "file": "sitemap_runner.js",
+      "scheduled": true,
+      "schedule": "0 */6 * * *",
+      "endpoint": "/.netlify/functions/sitemap_runner"
+    },
+    {
+      "name": "todo-scanner-runner",
+      "file": "todo-scanner-runner.js",
+      "scheduled": true,
+      "schedule": "37 */6 * * *",
+      "endpoint": "/.netlify/functions/todo-scanner-runner"
+    },
+    {
+      "name": "todo-summary-runner",
+      "file": "todo-summary-runner.js",
+      "scheduled": true,
+      "schedule": "53 */6 * * *",
+      "endpoint": "/.netlify/functions/todo-summary-runner"
+    },
+    {
+      "name": "trigger-all-and-commit",
+      "file": "trigger-all-and-commit.js",
+      "scheduled": true,
+      "schedule": "*/1 * * * *",
+      "endpoint": "/.netlify/functions/trigger-all-and-commit"
+    },
+    {
+      "name": "ui-enhancer",
+      "file": "ui-enhancer.js",
+      "scheduled": false,
+      "schedule": null,
+      "endpoint": "/.netlify/functions/ui-enhancer"
+    },
+    {
+      "name": "ultrafast-front-orchestrator",
+      "file": "ultrafast-front-orchestrator.js",
+      "scheduled": true,
+      "schedule": "*/5 * * * *",
+      "endpoint": "/.netlify/functions/ultrafast-front-orchestrator"
+    },
+    {
+      "name": "ultrafast-orchestrator",
+      "file": "ultrafast-orchestrator.js",
+      "scheduled": true,
+      "schedule": "*/4 * * * *",
+      "endpoint": "/.netlify/functions/ultrafast-orchestrator"
+    }
+  ]
+}

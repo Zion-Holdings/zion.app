@@ -1,105 +1,140 @@
-#!/usr/bin/env node
 
-/**
- * Search Functionality Test Script
- * Tests the search API and basic functionality after bug fixes
- */
+const winston = require('winston');
 
-const { spawn } = require('child_process');
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.combine(
+    winston.format.timestamp(),
+    winston.format.errors({ stack: true }),
+    winston.format.json()
+  ),
+  defaultMeta: { service: 'automation-script' },
+  transports: [
+    new winston.transports.File({ filename: 'logs/error.log', level: 'error' }),
+    new winston.transports.File({ filename: 'logs/combined.log' })
+  ]
+});
 
-console.log('🔍 Testing Search Functionality After Bug Fixes\n');
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple()
+  }));
+}
+
+
+class  {
+  constructor() {
+    this.isRunning = false;
+  }
+
+  async start() {
+    this.isRunning = true;
+    logger.info('Starting ...');
+    
+    try {
+      #!/usr/bin/env node
+
+
+
+const { _spawn } = require('child_process');
+
+logger.warn('🔍 Testing Search Functionality After Bug Fixes\n');
 
 // Test the search API endpoint
 async function testSearchAPI() {
-  console.log('1. Testing Search API...');
-  
+  logger.warn('1. Testing Search API...');
+
   try {
-    const response = await fetch('http://localhost:3000/api/search?query=AI');
-    const data = await response.json();
-    
+    const response = await fetch('http://localhost:3000/api/search?query='AI')
+const data = await response.json();
+
     if (response.ok && data.results) {
-      console.log('   ✅ Search API responds correctly');
-      console.log(`   📊 Found ${data.results.length} results for "AI"`);
+      logger.warn('   ✅ Search API responds correctly');
+      logger.warn(`   📊 Found ${data.results.length} results for "AI"`);
     } else {
-      console.log('   ❌ Search API error:', data.error || 'Unknown error');
+      logger.warn('   ❌ Search API error:', data.error || 'Unknown error');
     }
-  } catch (error) {
-    console.log('   ❌ Search API failed:', error.message);
-    console.log('   💡 Make sure the development server is running: npm run dev');
+  } catch (_error) {
+    logger.warn('   ❌ Search API failed:', error.message);
+    logger.warn(
+      '   💡 Make sure the development server is running: npm run dev',
+    );
   }
 }
 
 // Test search suggestions API
 async function testSuggestionsAPI() {
-  console.log('\n2. Testing Search Suggestions API...');
-  
+  logger.warn('\n2. Testing Search Suggestions API...');
+
   try {
-    const response = await fetch('http://localhost:3000/api/search/suggest?q=GPU');
-    const data = await response.json();
-    
+    const response = await fetch(
+      'http://localhost:3000/api/search/suggest?q='GPU',
+    )
+const data = await response.json();
+
     if (response.ok && Array.isArray(data)) {
-      console.log('   ✅ Suggestions API responds correctly');
-      console.log(`   💡 Found ${data.length} suggestions for "GPU"`);
+      logger.warn('   ✅ Suggestions API responds correctly');
+      logger.warn(`   💡 Found ${data.length} suggestions for "GPU"`);
     } else {
-      console.log('   ❌ Suggestions API error');
+      logger.warn('   ❌ Suggestions API error');
     }
-  } catch (error) {
-    console.log('   ❌ Suggestions API failed:', error.message);
+  } catch (_error) {
+    logger.warn('   ❌ Suggestions API failed:', error.message);
   }
 }
 
 // Test instructions for manual verification
 function showManualTestInstructions() {
-  console.log('\n3. Manual Testing Instructions:');
-  console.log('   🌐 Open http://localhost:3000 in your browser');
-  console.log('   🔍 Find the search bar and test these scenarios:');
-  console.log('');
-  console.log('   📝 Test 1: Initial Input');
-  console.log('      • Click on the search bar');
-  console.log('      • Type "AI" immediately');
-  console.log('      • ✅ EXPECTED: All keystrokes should be captured');
-  console.log('');
-  console.log('   🖱️  Test 2: Suggestion Clicks');
-  console.log('      • Type "GPU" in search bar');
-  console.log('      • Wait for suggestions to appear');
-  console.log('      • Click on any suggestion');
-  console.log('      • ✅ EXPECTED: Navigation to search results page');
-  console.log('');
-  console.log('   ⌨️  Test 3: Enter Key Search');
-  console.log('      • Type "machine learning" in search bar');
-  console.log('      • Press Enter key');
-  console.log('      • ✅ EXPECTED: Search results appear immediately');
-  console.log('      • ❌ SHOULD NOT: Show "No results found" initially');
-  console.log('');
-  console.log('   🔄 Test 4: State Consistency');
-  console.log('      • Perform a search');
-  console.log('      • Use browser back/forward buttons');
-  console.log('      • ✅ EXPECTED: Search state stays consistent');
+  logger.warn('\n3. Manual Testing Instructions:');
+  logger.warn('   🌐 Open http://localhost:3000 in your browser');
+  logger.warn('   🔍 Find the search bar and test these scenarios:');
+  logger.warn('');
+  logger.warn('   📝 Test 1: Initial Input');
+  logger.warn('      • Click on the search bar');
+  logger.warn('      • Type "AI" immediately');
+  logger.warn('      • ✅ EXPECTED: All keystrokes should be captured');
+  logger.warn('');
+  logger.warn('   🖱️  Test 2: Suggestion Clicks');
+  logger.warn('      • Type "GPU" in search bar');
+  logger.warn('      • Wait for suggestions to appear');
+  logger.warn('      • Click on any suggestion');
+  logger.warn('      • ✅ EXPECTED: Navigation to search results page');
+  logger.warn('');
+  logger.warn('   ⌨️  Test 3: Enter Key Search');
+  logger.warn('      • Type "machine learning" in search bar');
+  logger.warn('      • Press Enter key');
+  logger.warn('      • ✅ EXPECTED: Search results appear immediately');
+  logger.warn('      • ❌ SHOULD NOT: Show "No results found" initially');
+  logger.warn('');
+  logger.warn('   🔄 Test 4: State Consistency');
+  logger.warn('      • Perform a search');
+  logger.warn('      • Use browser back/forward buttons');
+  logger.warn('      • ✅ EXPECTED: Search state stays consistent');
 }
 
 // Check if development server is running
 function checkDevServer() {
-  console.log('\n🚀 Checking Development Server...');
-  
+  logger.warn('\n🚀 Checking Development Server...');
+
   return new Promise((resolve) => {
     const testServer = spawn('curl', ['-s', 'http://localhost:3000'], {
-      stdio: 'pipe'
+      stdio: 'pipe',
     });
-    
+
     testServer.on('close', (code) => {
       if (code === 0) {
-        console.log('   ✅ Development server is running');
+        logger.warn('   ✅ Development server is running');
         resolve(true);
       } else {
-        console.log('   ❌ Development server not responding');
-        console.log('   💡 Start it with: npm run dev');
+        logger.warn('   ❌ Development server not responding');
+        logger.warn('   💡 Start it with: npm run dev');
         resolve(false);
       }
     });
-    
+
     testServer.on('error', () => {
-      console.log('   ❌ Cannot connect to development server');
-      console.log('   💡 Start it with: npm run dev');
+      logger.warn('   ❌ Cannot connect to development server');
+      logger.warn('   💡 Start it with: npm run dev');
       resolve(false);
     });
   });
@@ -108,28 +143,69 @@ function checkDevServer() {
 // Main test function
 async function runTests() {
   const serverRunning = await checkDevServer();
-  
+
   if (serverRunning) {
     await testSearchAPI();
     await testSuggestionsAPI();
   }
-  
+
   showManualTestInstructions();
-  
-  console.log('\n🎯 Bug Fixes Applied:');
-  console.log('   ✅ Fixed suggestion click handling (onClick instead of onMouseDown)');
-  console.log('   ✅ Improved input focus management');
-  console.log('   ✅ Fixed state synchronization in SearchPage');
-  console.log('   ✅ Enhanced debounce hook for initial values');
-  console.log('   ✅ Added proper blur/focus event handling');
-  
-  console.log('\n📋 Summary of Changes:');
-  console.log('   📁 Modified: src/components/search/AutocompleteSuggestions.tsx');
-  console.log('   📁 Modified: src/components/SearchBar.tsx');
-  console.log('   📁 Modified: src/components/search/EnhancedSearchInput.tsx');
-  console.log('   📁 Modified: src/pages/SearchPage.tsx');
-  console.log('   📁 Modified: src/hooks/useDebounce.ts');
+
+  logger.warn('\n�� Bug Fixes Applied:');
+  logger.warn(
+    '   ✅ Fixed suggestion click handling (onClick instead of onMouseDown)',
+  );
+  logger.warn('   ✅ Improved input focus management');
+  logger.warn('   ✅ Fixed state synchronization in SearchPage');
+  logger.warn('   ✅ Enhanced debounce hook for initial values');
+  logger.warn('   ✅ Added proper blur/focus event handling');
+
+  logger.warn('\n📋 Summary of Changes:');
+  logger.warn(
+    '   📁 Modified: 'src/components/search/AutocompleteSuggestions.tsx',
+  );
+  logger.warn('   📁 Modified: src/components/SearchBar.tsx');
+  logger.warn('   📁 Modified: src/components/search/EnhancedSearchInput.tsx');
+  logger.warn('   📁 Modified: src/pages/SearchPage.tsx');
+  logger.warn('   📁 Modified: src/hooks/useDebounce.ts');
 }
 
 // Run the tests
-runTests().catch(console.error); 
+runTests().catch(console.error);
+    } catch (error) {
+      logger.error('Error in :', error);
+      throw error;
+    }
+  }
+
+  stop() {
+    this.isRunning = false;
+    logger.info('Stopping ...');
+  }
+}
+
+// Start the script
+if (require.main === module) {
+  const script = new ();
+  script.start().catch(error => {
+    logger.error('Failed to start :', error);
+    process.exit(1);
+  });
+}
+
+module.exports = ;
+
+
+// Graceful shutdown handling
+process.on('SIGINT', () => {
+  console.log('\n🛑 Received SIGINT, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+
+process.on('SIGTERM', () => {
+  console.log('\n🛑 Received SIGTERM, shutting down gracefully...');
+  // Add cleanup logic here
+  process.exit(0);
+});
+

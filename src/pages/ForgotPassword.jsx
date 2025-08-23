@@ -1,46 +1,10 @@
-import React, { useState } from 'react';
-import Link from 'next/link'; // Changed from react-router-dom
-import { forgotPassword } from '@/services/auth';
+import React from 'react';
 
-const ForgotPassword = () => {
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setMessage('');
-    try {
-      await forgotPassword(email);
-      setMessage(
-        'Password reset instructions sent to your email if it exists in our system.'
-      );
-    } catch (err) {
-      setMessage(err.message || 'Failed to send reset instructions.');
-    }
-  };
-
+export export export default function ForgotPassword()      {
   return (
     <div>
-      <h2>Forgot Password</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="email">Email Address</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit">Send Reset Link</button>
-      </form>
-      {message && <p>{message}</p>}
-      <p>
-        Remember your password? <Link href="/login">Login</Link>
-      </p>
+      <h1>ForgotPassword</h1>
+      <p>Component placeholder - needs implementation</p>
     </div>
   );
-};
-
-export default ForgotPassword;
+}

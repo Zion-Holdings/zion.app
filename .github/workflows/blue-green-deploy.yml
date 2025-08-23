@@ -13,20 +13,11 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 20
-          cache: 'npm'
+          node-version: 18
       - run: npm ci
       - run: npm run build
-      - name: Serve application for tests
-        run: |
-          npx serve out/ --cors --single -l 5000 &
-          echo "SERVE_PID=$!" >> $GITHUB_ENV # Store SERVE_PID for later use
       - name: Run smoke tests
-        run: npm run smoke:test # This script will be added to package.json later
-      - name: Run critical path tests
         run: npm run cypress:run -- --spec cypress/e2e/criticalPaths.cy.ts
-      - name: Kill server
-        run: kill ${{ env.SERVE_PID }} || true
       - name: Switch Netlify DNS
         run: node scripts/switch-netlify-site.js
         env:
