@@ -36,12 +36,11 @@ const footerData = {
     { label: 'Careers', href: '/careers' }
   ],
   services: [
-    { label: 'AI & Machine Learning', href: '/services?category=ai-ml' },
-    { label: 'Quantum Computing', href: '/services?category=quantum' },
-    { label: 'Space Technology', href: '/services?category=space-tech' },
-    { label: 'Cybersecurity', href: '/services?category=cybersecurity' },
-    { label: 'Cloud Infrastructure', href: '/services?category=cloud' },
-    { label: 'Enterprise Solutions', href: '/solutions/enterprise' }
+    { label: 'AI & Machine Learning', href: '/services/ai-machine-learning' },
+    { label: 'Quantum Computing', href: '/services/quantum-computing' },
+    { label: 'Space Technology', href: '/services/space-technology' },
+    { label: 'Cybersecurity', href: '/services/cybersecurity' },
+    { label: 'Cloud Infrastructure', href: '/services/cloud-infrastructure' }
   ],
   resources: [
     { label: 'Documentation', href: '/docs' },
