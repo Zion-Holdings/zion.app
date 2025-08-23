@@ -1,9 +1,16 @@
 import js from '@eslint/js';
+<<<<<<< HEAD
+import typescript from '@typescript-eslint/eslint-plugin';
+import typescriptParser from '@typescript-eslint/parser';
+=======
 import globals from 'globals';
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-005b
 
 export default [
   js.configs.recommended,
   {
+<<<<<<< HEAD
+=======
     files: ['**/*.{js,jsx,ts,tsx}'],
     languageOptions: {
       ecmaVersion: 2020,
@@ -36,6 +43,7 @@ export default [
     }
   },
   {
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-005b
     ignores: [
       'node_modules/',
       '.next/',
@@ -49,7 +57,14 @@ export default [
       'public/reports/**',
       'netlify/',
       'ecosystem*.cjs',
+<<<<<<< HEAD
+      '**/*.cjs',
+      'components/**',
+      'pages/**',
+      'services/**'
+=======
       '**/*.cjs'
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-005b
     ]
   }
 ];
