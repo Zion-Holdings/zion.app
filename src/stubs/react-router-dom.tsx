@@ -1,11 +1,40 @@
+import React, { createContext, useContext, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
-export const BrowserRouter = ({ children }: { children: any }) => children;
+// Minimal router context so React Router hooks don't throw errors
+const RouterContext = createContext<{ navigate: (url: string) => void }>({
+  navigate: () => {},
+});
+
+export const BrowserRouter = ({ children }: { children: any }) => {
+  const nextRouter = useRouter();
+  const navigate = (url: string) => {
+    if (url) nextRouter.push(url);
+  };
+  return (
+    <RouterContext.Provider value={{ navigate }}>
+      {children}
+    </RouterContext.Provider>
+  );
+};
 export const Routes = ({ children }: { children: any }) => children;
 export const Route = ({ element }: { element: any }) => element;
-export const Link = (props: any) => { return <a {...props} />; };
+export interface LinkProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  to?: string;
+}
+
+export const Link = ({ to, href, ...props }: LinkProps) => {
+  return <a href={href ?? to} {...props} />;
+};
 export const NavLink = Link;
-export const Navigate = ({ to }: { to: string }) => null;
+export const Navigate = ({ to }: { to: string }) => {
+  const nextRouter = useRouter();
+  useEffect(() => {
+    if (to) nextRouter.push(to);
+  }, [to, nextRouter]);
+  return null;
+};
 export const MemoryRouter = BrowserRouter;
 export const Outlet = () => null;
 
@@ -13,17 +42,8 @@ export const Outlet = () => null;
 // "useNavigate() may be used only in the context of a <Router>" errors when
 // components relying on React Router are used in the Next.js environment.
 export const useNavigate = () => {
-  // Return a simple navigation function that delegates to Next.js router
-  // when available. In test environments where `useRouter` isn't mounted,
-  // fall back to a no-op to avoid context errors.
-  try {
-    const router = useRouter();
-    return (url: string) => {
-      if (url) router.push(url);
-    };
-  } catch {
-    return () => {};
-  }
+  const context = useContext(RouterContext);
+  return context.navigate;
 };
 export const useLocation = () => ({ pathname: '/' });
 export const useParams = () => ({ });

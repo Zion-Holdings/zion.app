@@ -69,9 +69,9 @@ const talentSchema = z.object({
     hourlyRate: z.string().optional(),
     portfolioLinks: z.array(
       z.object({
-        url: z.string().url("Must be a valid URL").min(5, "URL is required"),
+        url: z.string().url("Must be a valid URL").min(5, "URL isrequired"),
       })
-    ).optional().default([]),
+    ).optional(), // Field can be undefined; defaultValues in useForm will provide initial array
     cv: z.any().optional(),
   }),
 });

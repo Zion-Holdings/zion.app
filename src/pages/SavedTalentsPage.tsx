@@ -63,8 +63,9 @@ export default function SavedTalentsPage() {
         }
 
         if (data) {
-          // Extract talent profiles and convert to TalentProfile type
-          const talentProfiles = data.map(
+          // Extract talent profiles and convert to TalentProfile type.
+          // Use an empty array as fallback to avoid runtime errors
+          const talentProfiles = (data ?? []).map(
             (item: any) => item.talent_profile as unknown as TalentProfile
           );
           setSavedTalents(talentProfiles);

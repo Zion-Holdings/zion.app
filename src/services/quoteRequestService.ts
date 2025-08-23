@@ -18,7 +18,9 @@ export const quoteRequestService = {
     if (error) throw error;
     
     // Format the data to include talent_name
-    return data.map((item: any) => ({
+    // Ensure `data` is an array to avoid runtime errors like "map is not a function"
+    // when the Supabase response is null
+    return (data ?? []).map((item: any) => ({
       ...item,
       talent_name: item.talent?.display_name || 'Unknown Talent',
     })) as QuoteRequest[];

@@ -1,3 +1,5 @@
+"""Utility to summarize bug log entries."""
+
 import json
 import os
 from collections import Counter
@@ -6,7 +8,10 @@ import argparse
 LOG_FILE = os.environ.get("BUG_LOG_FILE", os.path.join("logs", "bug", "bug_log.json"))
 
 
-def summarize_bug_log(log_file: str = LOG_FILE, top_n: int = 5, output: str | None = None) -> None:
+def summarize_bug_log(log_file: str = LOG_FILE,
+                      top_n: int = 5,
+                      output: str | None = None,
+                      severity: str | None = None) -> None:
     if not os.path.exists(log_file):
         print(f"No bug log found at {log_file}")
         return
@@ -21,6 +26,9 @@ def summarize_bug_log(log_file: str = LOG_FILE, top_n: int = 5, output: str | No
     if not isinstance(logs, list):
         print(f"Unexpected log format in {log_file}")
         return
+
+    if severity:
+        logs = [entry for entry in logs if entry.get("severity") == severity]
 
     severities = Counter(entry.get("severity", "Unknown") for entry in logs)
     total = len(logs)
@@ -48,6 +56,7 @@ if __name__ == "__main__":
     parser.add_argument("log_file", nargs="?", default=LOG_FILE, help="Path to bug log JSON file")
     parser.add_argument("--top", type=int, default=5, help="Number of top errors to display")
     parser.add_argument("--output", help="Optional output file to save JSON summary")
+    parser.add_argument("--severity", help="Filter results by severity level")
     args = parser.parse_args()
 
-    summarize_bug_log(args.log_file, args.top, args.output)
+    summarize_bug_log(args.log_file, args.top, args.output, args.severity)
