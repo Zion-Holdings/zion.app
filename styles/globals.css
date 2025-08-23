@@ -571,3 +571,256 @@ body {
     background: none !important;
   }
 }
+
+/* Enhanced Futuristic Effects */
+.neon-text {
+  text-shadow: 
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 15px currentColor,
+    0 0 20px currentColor;
+}
+
+.neon-text-cyan {
+  color: var(--neon-cyan);
+  text-shadow: 
+    0 0 5px var(--neon-cyan),
+    0 0 10px var(--neon-cyan),
+    0 0 15px var(--neon-cyan),
+    0 0 20px var(--neon-cyan);
+}
+
+.neon-text-purple {
+  color: var(--neon-purple);
+  text-shadow: 
+    0 0 5px var(--neon-purple),
+    0 0 10px var(--neon-purple),
+    0 0 15px var(--neon-purple),
+    0 0 20px var(--neon-purple);
+}
+
+.neon-text-pink {
+  color: var(--neon-pink);
+  text-shadow: 
+    0 0 5px var(--neon-pink),
+    0 0 10px var(--neon-pink),
+    0 0 15px var(--neon-pink),
+    0 0 20px var(--neon-pink);
+}
+
+/* Holographic Effects */
+.holographic {
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 70%
+  );
+  background-size: 200% 200%;
+  animation: holographic 3s ease-in-out infinite;
+}
+
+@keyframes holographic {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Matrix Rain Effect */
+.matrix-rain {
+  position: relative;
+  overflow: hidden;
+}
+
+.matrix-rain::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 255, 0, 0.1) 50%,
+    transparent 100%
+  );
+  animation: matrixRain 2s linear infinite;
+}
+
+@keyframes matrixRain {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* Quantum Particle Effects */
+.quantum-particles {
+  position: relative;
+}
+
+.quantum-particles::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(0, 212, 255, 0.3) 2px, transparent 2px),
+    radial-gradient(circle at 75% 75%, rgba(168, 85, 247, 0.3) 2px, transparent 2px),
+    radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.3) 2px, transparent 2px);
+  background-size: 100px 100px, 150px 150px, 200px 200px;
+  animation: quantumFloat 15s ease-in-out infinite;
+}
+
+@keyframes quantumFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-20px) rotate(120deg);
+  }
+  66% {
+    transform: translateY(20px) rotate(240deg);
+  }
+}
+
+/* Consciousness Glow Effect */
+.consciousness-glow {
+  position: relative;
+}
+
+.consciousness-glow::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: radial-gradient(
+    circle at center,
+    rgba(168, 85, 247, 0.3) 0%,
+    rgba(236, 72, 153, 0.2) 30%,
+    transparent 70%
+  );
+  border-radius: inherit;
+  z-index: -1;
+  animation: consciousnessPulse 4s ease-in-out infinite;
+}
+
+@keyframes consciousnessPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+/* Space Technology Effects */
+.space-tech {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(30, 30, 60, 0.8) 50%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.space-tech::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.2) 1px, transparent 1px),
+    radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.2) 1px, transparent 1px),
+    radial-gradient(circle at 40% 40%, rgba(236, 72, 153, 0.2) 1px, transparent 1px);
+  background-size: 200px 200px, 300px 300px, 400px 400px;
+  animation: spaceFloat 25s linear infinite;
+}
+
+@keyframes spaceFloat {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-200px) rotate(360deg);
+  }
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 1024px) {
+  .neon-text {
+    text-shadow: 
+      0 0 3px currentColor,
+      0 0 6px currentColor,
+      0 0 9px currentColor;
+  }
+  
+  .quantum-particles::before {
+    background-size: 80px 80px, 120px 120px, 160px 160px;
+  }
+}
+
+@media (max-width: 640px) {
+  .neon-text {
+    text-shadow: 
+      0 0 2px currentColor,
+      0 0 4px currentColor;
+  }
+  
+  .consciousness-glow::before {
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+  }
+}
+
+/* Accessibility Enhancements */
+@media (prefers-reduced-motion: reduce) {
+  .holographic,
+  .matrix-rain,
+  .quantum-particles,
+  .consciousness-glow,
+  .space-tech {
+    animation: none;
+  }
+  
+  .neon-text,
+  .neon-text-cyan,
+  .neon-text-purple,
+  .neon-text-pink {
+    text-shadow: none;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  .glass,
+  .glass-dark {
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    border: 2px solid black;
+  }
+  
+  .btn-futuristic {
+    background: black;
+    color: white;
+    border: 2px solid white;
+  }
+}

@@ -47,9 +47,20 @@ const UltraFuturisticFooter2040: React.FC = () => {
 
   const serviceCategories = [
     {
+      title: 'Revolutionary 2046 Services',
+      icon: Sparkles,
+      color: 'from-purple-500 to-pink-500',
+      services: [
+        { name: 'AI Consciousness Evolution 2046', href: '/ai-consciousness-evolution-2046' },
+        { name: 'Quantum Neural Networks 2046', href: '/quantum-neural-network-platform-2046' },
+        { name: 'Space Resource Intelligence 2046', href: '/space-resource-intelligence-2046' },
+        { name: 'Quantum Cybersecurity 2046', href: '/quantum-cybersecurity-platform-2046' }
+      ]
+    },
+    {
       title: 'AI & Consciousness',
       icon: Brain,
-      color: 'from-purple-500 to-pink-500',
+      color: 'from-cyan-500 to-blue-500',
       services: [
         { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-platform-2045' },
         { name: 'Emotional Intelligence AI', href: '/emotional-intelligence-ai-platform-2045' },
@@ -60,7 +71,7 @@ const UltraFuturisticFooter2040: React.FC = () => {
     {
       title: 'Quantum Technology',
       icon: Atom,
-      color: 'from-cyan-500 to-blue-500',
+      color: 'from-blue-500 to-indigo-500',
       services: [
         { name: 'Quantum AI Hybrid Computing', href: '/quantum-ai-hybrid-computing-platform-2045' },
         { name: 'Quantum Cloud Infrastructure', href: '/quantum-cloud-infrastructure-platform-2045' },
@@ -93,6 +104,7 @@ const UltraFuturisticFooter2040: React.FC = () => {
   ];
 
   const quickLinks = [
+    { name: 'Revolutionary 2046 Services', href: '/revolutionary-2046-services-showcase' },
     { name: 'About Us', href: '/about' },
     { name: 'Our Team', href: '/team' },
     { name: 'Careers', href: '/careers' },
