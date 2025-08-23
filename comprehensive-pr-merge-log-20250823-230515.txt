@@ -1101,3 +1101,37 @@ pages/index.tsx[0m
 2025-08-23 23:07:01 - [1;33m⚠️  Found conflicts in pages/index.tsx, resolving...[0m
 2025-08-23 23:07:01 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
 2025-08-23 23:07:01 - [0;32m✅ Resolved conflicts in pages/index.tsx[0m
+2025-08-23 23:07:01 - [0;32m✅ Successfully resolved conflicts and merged cursor/develop-autonomous-cloud-agents-for-automation-orchestration-2dcc[0m
+2025-08-23 23:07:01 - [0;32m✅ PR #3859 (cursor/develop-autonomous-cloud-agents-for-automation-orchestration-2dcc) processed successfully[0m
+2025-08-23 23:07:01 - [0;34m🔒 Closing PR #3859 via GitHub API...[0m
+2025-08-23 23:07:01 - [0;34m📊 Progress: 30/100, ✅ 30, ❌ 0[0m
+2025-08-23 23:07:01 - [0;34m💾 Pushing batch changes to remote...[0m
+2025-08-23 23:07:02 - [1;33m⚠️  Failed to push changes, continuing...[0m
+2025-08-23 23:07:04 - [0;34m📋 Processing PR #3858: Develop autonomous cloud agents for automation orchestration (branch: cursor/develop-autonomous-cloud-agents-for-automation-orchestration-a23d)[0m
+2025-08-23 23:07:04 - [0;34m🔄 Attempting to merge cursor/develop-autonomous-cloud-agents-for-automation-orchestration-a23d...[0m
+2025-08-23 23:07:05 - [1;33m⚠️  Merge conflicts detected in cursor/develop-autonomous-cloud-agents-for-automation-orchestration-a23d (attempt 1/3), resolving...[0m
+2025-08-23 23:07:05 - [0;34m📋 Conflicted files: netlify.toml
+netlify/functions/autonomous-meta-orchestrator.js
+netlify/functions/functions-manifest.json
+pages/index.tsx
+pages/main/front/index.tsx[0m
+2025-08-23 23:07:05 - [0;34m🔧 Resolving conflicts in netlify.toml for branch cursor/develop-autonomous-cloud-agents-for-automation-orchestration-a23d...[0m
+2025-08-23 23:07:05 - [1;33m⚠️  Found conflicts in netlify.toml, resolving...[0m
+2025-08-23 23:07:05 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:07:05 - [0;32m✅ Resolved conflicts in netlify.toml[0m
+2025-08-23 23:07:05 - [0;34m🔧 Resolving conflicts in netlify/functions/autonomous-meta-orchestrator.js for branch cursor/develop-autonomous-cloud-agents-for-automation-orchestration-a23d...[0m
+2025-08-23 23:07:05 - [1;33m⚠️  Found conflicts in netlify/functions/autonomous-meta-orchestrator.js, resolving...[0m
+2025-08-23 23:07:05 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:07:05 - [0;32m✅ Resolved conflicts in netlify/functions/autonomous-meta-orchestrator.js[0m
+2025-08-23 23:07:05 - [0;34m🔧 Resolving conflicts in netlify/functions/functions-manifest.json for branch cursor/develop-autonomous-cloud-agents-for-automation-orchestration-a23d...[0m
+2025-08-23 23:07:05 - [1;33m⚠️  Found conflicts in netlify/functions/functions-manifest.json, resolving...[0m
+2025-08-23 23:07:05 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:07:05 - [0;32m✅ Resolved conflicts in netlify/functions/functions-manifest.json[0m
+2025-08-23 23:07:05 - [0;34m🔧 Resolving conflicts in pages/index.tsx for branch cursor/develop-autonomous-cloud-agents-for-automation-orchestration-a23d...[0m
+2025-08-23 23:07:05 - [1;33m⚠️  Found conflicts in pages/index.tsx, resolving...[0m
+2025-08-23 23:07:05 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:07:05 - [0;32m✅ Resolved conflicts in pages/index.tsx[0m
+2025-08-23 23:07:05 - [0;34m🔧 Resolving conflicts in pages/main/front/index.tsx for branch cursor/develop-autonomous-cloud-agents-for-automation-orchestration-a23d...[0m
+2025-08-23 23:07:05 - [1;33m⚠️  Found conflicts in pages/main/front/index.tsx, resolving...[0m
+2025-08-23 23:07:05 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:07:05 - [0;32m✅ Resolved conflicts in pages/main/front/index.tsx[0m

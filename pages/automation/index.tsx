@@ -29,6 +29,11 @@ export default function AutomationHub() {
         <QuickNavigation />
         <ul className="space-y-4">
           <li className="rounded-lg bg-white/5 border border-white/10 p-5">
+            <h2 className="text-xl font-bold">Autonomous Meta Orchestrator</h2>
+            <p className="text-white/70">Intelligently triggers prioritized cloud functions and commits results every minute.</p>
+            <a className="text-cyan-300 underline" href="/.netlify/functions/autonomous-meta-orchestrator" target="_blank" rel="noopener">Trigger / View</a>
+          </li>
+          <li className="rounded-lg bg-white/5 border border-white/10 p-5">
             <h2 className="text-xl font-bold">Homepage Updates</h2>
             <p className="text-white/70">Keeps the homepage fresh and the sitemap up to date.</p>
             <a className="text-cyan-300 underline" href="/.netlify/functions/schedule-homepage" target="_blank" rel="noopener">Trigger / View</a>
