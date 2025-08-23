@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+export default function TalentProfile(){return <div className="p-6">Talent Profile</div>;}
+=======
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -38,3 +41,4 @@ export default function TalentPublicProfile() {
     </div>
   );
 }
+>>>>>>> origin/cursor/build-interactive-talent-resume-and-portfolio-39e4
