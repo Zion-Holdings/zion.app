@@ -1,8 +1,8 @@
-export default function AuthIndexPage() {
+export default function AuthIndex() {
   return (
-    <div className="container mx-auto px-4 py-10">
-      <h1 className="text-2xl font-semibold">Sign in to Zion</h1>
-      <p className="mt-2 text-gray-600">Authentication UI coming soon.</p>
+    <div className="py-10">
+      <h1 className="text-2xl font-semibold text-white">Auth</h1>
+      <p className="text-white/80 mt-2">Sign in and sign up coming soon.</p>
     </div>
   );
 }

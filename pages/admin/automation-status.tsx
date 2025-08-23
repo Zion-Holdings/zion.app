@@ -1,8 +1,10 @@
-export default function AutomationStatusPage() {
-  return (
-    <div className="container mx-auto px-4 py-10">
-      <h1 className="text-2xl font-semibold">Automation Status</h1>
-      <p className="mt-2 text-gray-600">Admin dashboard coming soon.</p>
-    </div>
-  );
-}
+import type { NextPage } from 'next';
+
+const AutomationStatus: NextPage = () => (
+  <div className="py-10">
+    <h1 className="text-2xl font-semibold text-white">Automation Status</h1>
+    <p className="text-white/80 mt-2">Status dashboard coming soon.</p>
+  </div>
+);
+
+export default AutomationStatus;

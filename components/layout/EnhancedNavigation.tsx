@@ -13,7 +13,7 @@ const NotificationBell = dynamic(() => import('../ui/NotificationBell'), { ssr: 
           <a className="font-semibold">Zion</a>
         </Link>
         <div className="flex items-center gap-4 text-sm">
-          <Link href="/developers/docs"><a>Docs</a></Link>
+          <Link href="/services"><a>Marketplace</a></Link>
           <Link href="/about"><a>About</a></Link>
           <Link href="/blog"><a>Blog</a></Link>
           <Link href="/salary-insights"><a>Salary Insights</a></Link>
