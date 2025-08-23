@@ -130,6 +130,9 @@ class ComprehensiveAutomationLauncher {
   async startAllSystems() {
     this.log("🚀 Starting all automation systems...");
     
+<<<<<<< HEAD
+    const results = [];
+=======
     // Seed known long-running or important jobs
     const seedSystems = [
       { name: 'intelligent-orchestrator', script: 'intelligent-orchestrator.cjs', args: ['continuous'] },
@@ -157,6 +160,7 @@ class ComprehensiveAutomationLauncher {
       { name: 'test-generator', script: 'test-generator.cjs', args: [] },
       { name: 'app-intelligence', script: 'app-intelligence-enhancer.cjs', args: ['continuous'] }
     ];
+>>>>>>> origin/cursor/automate-app-intelligence-and-deploy-90c6
     
     for (const system of this.config.systems) {
       const success = await this.startSystem(system);
