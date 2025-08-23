@@ -42,10 +42,16 @@
     "postbuild": "node automation/footer-injector.cjs || true",
     "lint": "eslint .",
     "type-check": "tsc --noEmit",
+<<<<<<< HEAD
+    "prepare": "git config core.hooksPath .husky || true",
+    "fix:all": "npm run lint -- --fix || true",
+    "build:heal": "npm run build || (npm run fix:all && npm run search:index || true && npm run build)",
+=======
     "prepare": "husky install",
     "homepage:update": "node automation/homepage-autonomous-updater.cjs",
     "fix:all": "npm run lint -- --fix || true && node fix_typescript_syntax_errors.cjs || true && node fix_all_typescript_errors.cjs || true && node final_fix.cjs || true",
     "build:heal": "npm run build || (npm run fix:all && npm run build)",
+>>>>>>> origin/cursor/autonomous-cloud-page-enhancer-and-advertiser-493e
     "ci:heal": "npm run fix:all && (npm run type-check || true) && npm run build:heal",
     "build:health-check": "node automation/pre-build-health-check.cjs",
     "build:validate": "node automation/nextjs-page-validator.cjs",

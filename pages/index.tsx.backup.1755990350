@@ -11383,6 +11383,13 @@ export default function HomePage() {
           </div>
         </section>
       
+<<<<<<< HEAD
+{/* AUTO-GENERATED: HOME_UPDATER_START */
+<section className="mx-auto max-w-7xl px-6 pb-20">
+  <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Autonomous Highlights</h2>
+  <div className="mt-4 flex flex-wrap justify-center gap-2">
+    <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-white/70 backdrop-blur">36+ CI workflows</span><span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-white/70 backdrop-blur">20+ automation modules</span><span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs text-white/70 backdrop-blur">3+ utility scripts</span>
+=======
 {/* AUTO-GENERATED: HOME_UPDATER_START */}
 <section className="mx-auto max-w-7xl px-6 pb-16">
   <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Explore more</h2>
@@ -11411,6 +11418,7 @@ export default function HomePage() {
             <a href="https://github.com/Zion-Holdings/zion.app/actions" target="_blank" rel="noopener" className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">CI Activity — autonomous workflows</span></a>
   
 
+>>>>>>> origin/cursor/autonomous-cloud-page-enhancer-and-advertiser-493e
   </div>
   <div className="mt-2 text-xs text-white/60">Repo knowledge graph</div>
 
