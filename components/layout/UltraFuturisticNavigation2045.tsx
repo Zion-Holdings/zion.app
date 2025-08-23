@@ -84,52 +84,52 @@ const navigationItems: NavigationItem[] = [
     neonColor: 'shadow-blue-400/50',
     category: 'main',
     children: [
-              {
-          label: 'AI & Machine Learning',
-          href: '/services?category=ai-ml',
-          icon: <Brain className="w-4 h-4" />,
-          description: 'Advanced AI solutions for enterprise',
-          featured: true,
-          neonColor: 'shadow-purple-400/50',
-          category: 'ai'
-        },
-        {
-          label: 'Quantum Computing',
-          href: '/services?category=quantum',
-          icon: <Atom className="w-4 h-4" />,
-          description: 'Next-generation quantum solutions',
-          featured: true,
-          neonColor: 'shadow-blue-400/50',
-          category: 'quantum'
-        },
-        {
-          label: 'Space Technology',
-          href: '/services?category=space-tech',
-          icon: <Rocket className="w-4 h-4" />,
-          description: 'Innovative space tech applications',
-          featured: true,
-          neonColor: 'shadow-pink-400/50',
-          category: 'space'
-        },
-        {
-          label: 'Cybersecurity',
-          href: '/services?category=cybersecurity',
-          icon: <Shield className="w-4 h-4" />,
-          description: 'Advanced security solutions',
-          neonColor: 'shadow-red-400/50',
-          category: 'security'
-        },
-        {
-          label: 'Cloud Infrastructure',
-          href: '/services?category=cloud',
-          icon: <Cloud className="w-4 h-4" />,
-          description: 'Scalable cloud solutions',
-          neonColor: 'shadow-indigo-400/50',
-          category: 'cloud'
-        },
+      {
+        label: 'AI & Machine Learning',
+        href: '/ai-services',
+        icon: <Brain className="w-4 h-4" />,
+        description: 'Advanced AI solutions for enterprise',
+        featured: true,
+        neonColor: 'shadow-purple-400/50',
+        category: 'ai'
+      },
+      {
+        label: 'Quantum Computing',
+        href: '/quantum-services',
+        icon: <Atom className="w-4 h-4" />,
+        description: 'Next-generation quantum solutions',
+        featured: true,
+        neonColor: 'shadow-blue-400/50',
+        category: 'quantum'
+      },
+      {
+        label: 'Space Technology',
+        href: '/space-technology',
+        icon: <Rocket className="w-4 h-4" />,
+        description: 'Innovative space tech applications',
+        featured: true,
+        neonColor: 'shadow-pink-400/50',
+        category: 'space'
+      },
+      {
+        label: 'Cybersecurity',
+        href: '/cybersecurity',
+        icon: <Shield className="w-4 h-4" />,
+        description: 'Advanced security solutions',
+        neonColor: 'shadow-red-400/50',
+        category: 'security'
+      },
+      {
+        label: 'Cloud Infrastructure',
+        href: '/cloud-platform',
+        icon: <Cloud className="w-4 h-4" />,
+        description: 'Scalable cloud solutions',
+        neonColor: 'shadow-indigo-400/50',
+        category: 'cloud'
+      },
       {
         label: 'Edge Computing',
-        href: '/services?category=edge',
+        href: '/edge-computing-orchestration',
         icon: <Cpu className="w-4 h-4" />,
         description: 'Next-generation edge solutions',
         neonColor: 'shadow-green-400/50',
@@ -147,31 +147,15 @@ const navigationItems: NavigationItem[] = [
     children: [
       {
         label: 'Enterprise Solutions',
-        href: '/solutions/enterprise',
+        href: '/enterprise-solutions-showcase',
         icon: <Building className="w-4 h-4" />,
         description: 'Large-scale enterprise implementations',
         neonColor: 'shadow-blue-400/50',
         category: 'enterprise'
       },
       {
-        label: 'Startup Solutions',
-        href: '/solutions/startup',
-        icon: <Rocket className="w-4 h-4" />,
-        description: 'Scalable solutions for startups',
-        neonColor: 'shadow-green-400/50',
-        category: 'startup'
-      },
-      {
-        label: 'Government Solutions',
-        href: '/solutions/government',
-        icon: <Shield className="w-4 h-4" />,
-        description: 'Secure government implementations',
-        neonColor: 'shadow-purple-400/50',
-        category: 'government'
-      },
-      {
         label: 'Healthcare Solutions',
-        href: '/solutions/healthcare',
+        href: '/healthcare-ai-solutions',
         icon: <Heart className="w-4 h-4" />,
         description: 'AI-powered healthcare solutions',
         neonColor: 'shadow-red-400/50',
@@ -179,11 +163,27 @@ const navigationItems: NavigationItem[] = [
       },
       {
         label: 'Financial Solutions',
-        href: '/solutions/financial',
+        href: '/financial-solutions',
         icon: <TrendingUp className="w-4 h-4" />,
         description: 'Fintech and financial services',
         neonColor: 'shadow-yellow-400/50',
         category: 'financial'
+      },
+      {
+        label: 'Manufacturing Solutions',
+        href: '/manufacturing-ai-solutions',
+        icon: <Settings className="w-4 h-4" />,
+        description: 'AI-powered manufacturing optimization',
+        neonColor: 'shadow-orange-400/50',
+        category: 'manufacturing'
+      },
+      {
+        label: 'Government Solutions',
+        href: '/government-technology-solutions',
+        icon: <Shield className="w-4 h-4" />,
+        description: 'Secure government implementations',
+        neonColor: 'shadow-purple-400/50',
+        category: 'government'
       }
     ]
   },
@@ -234,6 +234,14 @@ const navigationItems: NavigationItem[] = [
         description: 'Training programs and certifications',
         neonColor: 'shadow-yellow-400/50',
         category: 'training'
+      },
+      {
+        label: 'Blog',
+        href: '/blog',
+        icon: <FileText className="w-4 h-4" />,
+        description: 'Latest insights and updates',
+        neonColor: 'shadow-cyan-400/50',
+        category: 'blog'
       }
     ]
   },
@@ -284,6 +292,22 @@ const navigationItems: NavigationItem[] = [
         description: 'Latest company news',
         neonColor: 'shadow-indigo-400/50',
         category: 'news'
+      },
+      {
+        label: 'Press',
+        href: '/press',
+        icon: <FileText className="w-4 h-4" />,
+        description: 'Press releases and media kit',
+        neonColor: 'shadow-cyan-400/50',
+        category: 'press'
+      },
+      {
+        label: 'Media Kit',
+        href: '/media-kit',
+        icon: <FileText className="w-4 h-4" />,
+        description: 'Brand assets and resources',
+        neonColor: 'shadow-blue-400/50',
+        category: 'media'
       }
     ]
   },
@@ -297,7 +321,7 @@ const navigationItems: NavigationItem[] = [
     children: [
       {
         label: 'Help Center',
-        href: '/support/help',
+        href: '/support',
         icon: <HelpCircle className="w-4 h-4" />,
         description: 'Self-service help and guides',
         neonColor: 'shadow-blue-400/50',
@@ -320,12 +344,12 @@ const navigationItems: NavigationItem[] = [
         category: 'status'
       },
       {
-        label: 'Support Portal',
-        href: '/support/portal',
-        icon: <Settings className="w-4 h-4" />,
-        description: 'Customer support portal',
+        label: 'Developer Resources',
+        href: '/developer-resources',
+        icon: <Code className="w-4 h-4" />,
+        description: 'Developer tools and resources',
         neonColor: 'shadow-purple-400/50',
-        category: 'portal'
+        category: 'dev'
       }
     ]
   }
