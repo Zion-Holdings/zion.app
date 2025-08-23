@@ -17,9 +17,15 @@ import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-
 import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
 
 // Import our new 2025 service data
+<<<<<<< HEAD
+import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
+import { innovativeITInfrastructureServices2025 as existingITInfrastructure } from '../data/2025-innovative-it-infrastructure-services';
+import { innovativeMicroSaasSolutions2025 as existingMicroSaas } from '../data/2025-innovative-micro-saas-solutions';
+=======
 import { enterpriseAIAutomationServices2025 } from '../data/2025-enterprise-ai-automation-services';
 import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
 import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-dd04
 import { cuttingEdgeAIServices2025 } from '../data/2025-cutting-edge-ai-services';
 import { innovative2025AIAutonomousServices } from '../data/2025-innovative-ai-autonomous-services';
 
@@ -146,8 +152,14 @@ const getServiceDescription = (service: any) => {
 
 // Combine all services with new ones first
 const allServices = [
+<<<<<<< HEAD
+  // New 2025 Real Enterprise AI Services
+  ...realEnterpriseAIServices2025,
+  // New 2025 Innovative IT Infrastructure Services
+=======
   // Our new 2025 services
   ...enterpriseAIAutomationServices2025,
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-dd04
   ...innovativeITInfrastructureServices2025,
   // New 2025 Innovative Micro SAAS Solutions
   ...innovativeMicroSaasSolutions2025,
