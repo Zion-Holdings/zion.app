@@ -225,6 +225,20 @@ export { emergingTechnologyServices } from '../data/2025-emerging-technology-ser
 
 // Export new 2025 advanced services
 export { advancedEdgeComputingServices } from '../data/2025-advanced-edge-computing-services';
+<<<<<<< HEAD
+export { advancedCybersecurityAutomationServices } from '../data/2025-advanced-cybersecurity-automation';
+export { advancedAIAutonomousSystemServices } from '../data/2025-advanced-ai-autonomous-systems';
+export { advancedFintechBlockchainAutomationServices } from '../data/2025-advanced-fintech-blockchain-automation';
+export { advancedHealthcareBiotechServices } from '../data/2025-advanced-healthcare-biotech-services';
+export { advancedSustainabilityGreenTechServices } from '../data/2025-advanced-sustainability-green-tech';
+
+// Export new service types
+export type { AdvancedAIMLService } from '../data/2025-advanced-ai-ml-services';
+export type { CybersecurityService } from '../data/2025-advanced-cybersecurity-services';
+export type { AdvancedCloudDevOpsService } from '../data/2025-advanced-cloud-devops-services';
+export type { IndustrySpecificSolution } from '../data/2025-industry-specific-solutions';
+export type { EmergingTechnologyService } from '../data/2025-emerging-technology-services';
+=======
 export { advancedIoTSmartCityServices } from '../data/2025-advanced-iot-smart-city-services';
 export { advancedFintechBlockchainServicesExpanded } from '../data/2025-advanced-fintech-blockchain-services-expanded';
 export { advancedHealthcareBiotechServices } from '../data/2025-advanced-healthcare-biotech-services';
@@ -244,3 +258,4 @@ export type { IoTSmartCityService } from '../data/2025-advanced-iot-smart-city-s
 export type { AdvancedFintechBlockchainService } from '../data/2025-advanced-fintech-blockchain-services-expanded';
 export type { HealthcareBiotechService } from '../data/2025-advanced-healthcare-biotech-services';
 export type { SpaceAerospaceService } from '../data/2025-advanced-space-aerospace-services';
+>>>>>>> origin/cursor/expand-services-and-deploy-updates-6121
