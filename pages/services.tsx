@@ -5,7 +5,7 @@ import {
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
-  Building, Cpu, Database, Cloud, Lock, Sparkles
+  Building, Cpu, Database, Cloud, Lock, ShoppingCart, Lightbulb
 } from 'lucide-react';
 
 // Import our new 2025 service data
@@ -92,6 +92,13 @@ import { innovative2040FuturisticServices } from '../data/innovative-2040-futuri
 import { advanced2041EnterpriseServices } from '../data/advanced-2041-enterprise-services';
 import { revolutionary2042MicroSaasServices } from '../data/revolutionary-2042-micro-saas-services';
 
+// Import 2038 innovative services
+import { innovative2038AIServices } from '../data/innovative-2038-ai-services';
+import { innovative2038ITServices } from '../data/innovative-2038-it-services';
+import { innovative2038MicroSaasServices } from '../data/innovative-2038-micro-saas-services';
+import { innovative2038IndustryServices } from '../data/innovative-2038-industry-services';
+import { innovative2038ConsultingServices } from '../data/innovative-2038-consulting-services';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -160,15 +167,15 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
-  // Our new innovative services
-  ...innovative2037Services,
-  ...advanced2038Services,
-  ...revolutionary2039Services,
-  
-  // Our latest innovative services
-  ...innovative2040FuturisticServices,
-  ...advanced2041EnterpriseServices,
-  ...revolutionary2042MicroSaasServices
+  ...innovative2037MicroSaasServices,
+  ...innovative2037ITServices,
+  ...innovative2037AIServices,
+  // 2038 innovative services
+  ...innovative2038AIServices,
+  ...innovative2038ITServices,
+  ...innovative2038MicroSaasServices,
+  ...innovative2038IndustryServices,
+  ...innovative2038ConsultingServices
 ];
 
 const categories = [
@@ -271,67 +278,25 @@ const categories = [
     description: 'Learning and research platforms'
   },
   {
-    id: 'ai-emotional',
-    name: 'AI & Emotional Intelligence',
-    icon: <Brain className="w-6 h-6" />,
-    color: 'from-pink-500 to-purple-600',
-    description: 'AI-powered emotional intelligence and consciousness'
+    id: 'manufacturing-industry',
+    name: 'Manufacturing & Industry',
+    icon: <Building className="w-6 h-6" />,
+    color: 'from-gray-500 to-slate-500',
+    description: 'Industrial automation and smart manufacturing'
   },
   {
-    id: 'quantum-security',
-    name: 'Quantum Security',
-    icon: <Shield className="w-6 h-6" />,
-    color: 'from-indigo-600 to-purple-700',
-    description: 'Quantum-resistant security and communication'
+    id: 'retail-ecommerce',
+    name: 'Retail & E-commerce',
+    icon: <ShoppingCart className="w-6 h-6" />,
+    color: 'from-pink-500 to-rose-500',
+    description: 'Retail technology and e-commerce solutions'
   },
   {
-    id: 'autonomous-systems',
-    name: 'Autonomous Systems',
-    icon: <Cpu className="w-6 h-6" />,
-    color: 'from-green-600 to-teal-700',
-    description: 'AI-powered autonomous decision-making systems'
-  },
-  {
-    id: 'metaverse-business',
-    name: 'Metaverse Business',
-    icon: <Globe className="w-6 h-6" />,
-    color: 'from-blue-500 to-cyan-600',
-    description: 'Business infrastructure for the metaverse'
-  },
-  {
-    id: 'neural-quantum',
-    name: 'Neural & Quantum',
-    icon: <Atom className="w-6 h-6" />,
-    color: 'from-purple-600 to-pink-700',
-    description: 'Neural networks and quantum computing fusion'
-  },
-  {
-    id: 'space-technology',
-    name: 'Space & Technology',
-    icon: <Rocket className="w-6 h-6" />,
-    color: 'from-indigo-600 to-purple-700',
-    description: 'Space exploration and advanced technology solutions'
-  },
-  {
-    id: 'climate-sustainability',
-    name: 'Climate & Sustainability',
-    icon: <Globe className="w-6 h-6" />,
-    color: 'from-teal-600 to-green-700',
-    description: 'Climate change mitigation and environmental optimization'
-  },
-  {
-    id: 'digital-twin-iot',
-    name: 'Digital Twin & IoT',
-    icon: <Cpu className="w-6 h-6" />,
-    color: 'from-violet-600 to-purple-700',
-    description: 'Digital twin technology and IoT integration'
-  },
-  {
-    id: 'biotech-ai',
-    name: 'Biotech & AI',
-    icon: <Heart className="w-6 h-6" />,
-    color: 'from-emerald-600 to-green-700',
-    description: 'AI-powered biotechnology and research acceleration'
+    id: 'consulting-strategy',
+    name: 'Consulting & Strategy',
+    icon: <Lightbulb className="w-6 h-6" />,
+    color: 'from-indigo-500 to-purple-500',
+    description: 'Strategic consulting and advisory services'
   }
 ];
 
@@ -481,10 +446,15 @@ export default function Services() {
       case 'education':
       case 'education & research':
         return <GraduationCap className="w-6 h-6 text-yellow-400" />;
-      case 'enterprise ai':
-        return <Building className="w-6 h-6 text-blue-400" />;
-      case 'industry solutions':
-        return <Cpu className="w-6 h-6 text-emerald-400" />;
+      case 'manufacturing':
+      case 'manufacturing & industry':
+        return <Building className="w-6 h-6 text-gray-400" />;
+      case 'retail':
+      case 'retail & e-commerce':
+        return <ShoppingCart className="w-6 h-6 text-pink-400" />;
+      case 'consulting':
+      case 'consulting & strategy':
+        return <Lightbulb className="w-6 h-6 text-indigo-400" />;
       default:
         return <Shield className="w-6 h-6 text-gray-400" />;
     }

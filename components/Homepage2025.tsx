@@ -116,9 +116,59 @@ const Homepage2025: React.FC = () => {
               
               <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
                 Zion Tech Group
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
-                Pioneering the future of technology with innovative solutions that drive business transformation
+              </span>
+            </motion.h1>
+            
+            <motion.p
+              className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              Pioneering the future of technology with cutting-edge AI, quantum computing, and autonomous solutions that transform businesses worldwide.
+            </motion.p>
+
+                          <motion.div
+                className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                <motion.a
+                  href="/innovative-2038-services-showcase"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-bold text-lg rounded-xl hover:from-purple-600 hover:to-pink-700 transition-all duration-200 shadow-2xl shadow-purple-500/25 mb-4 sm:mb-0"
+                >
+                  <span>Explore 2038 Services</span>
+                  <ArrowRight className="w-6 h-6" />
+                </motion.a>
+              <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25">
+                Get Started Today
+              </button>
+              <button className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300">
+                Watch Demo
+                <Play className="w-5 h-5 ml-2 inline" />
+              </button>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Enhanced Social Proof Section */}
+        <section className="py-20 px-4">
+          <div className="max-w-6xl mx-auto">
+            <motion.div
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Trusted by Industry Leaders
+              </h2>
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                Join hundreds of companies already transforming their business with our solutions
               </p>
               
               {/* Enhanced CTA Section */}
