@@ -56,8 +56,14 @@ import { practicalBusinessSolutionServices2029 } from '../../data/2029-practical
 import { professionalServices } from '../../data/professional-services';
 import { real2032ServiceExpansions } from '../../data/real-2032-service-expansions';
 import { real2035Q1Additions } from '../../data/real-2035-q1-additions';
+<<<<<<< HEAD
+import { real2035Q2AdditionsExtra } from '../../data/real-2035-q2-additions-extra';
+import { real2036ServiceExpansions } from '../../data/real-2036-service-expansions';
+import { real2026Q4ExpansionsV3 } from '../../data/real-2026-q4-expansions-v3';
+=======
 import { real2035Q2Additions } from '../../data/real-2035-q2-additions';
 import { newRealServices2026 } from '../../data/2025-2026-new-real-services';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1fa4
 
 type Service = typeof enhancedRealMicroSaasServices[number] | {
   id: string;
@@ -113,6 +119,63 @@ function getPriceValue(price: Service['price']): string {
 }
 
 function getAllServices(): Service[] {
+<<<<<<< HEAD
+	const allServices: Service[] = [];
+	
+	// Add all service arrays to the main array
+	allServices.push(...enhancedRealMicroSaasServices);
+	allServices.push(...(extraServices as Service[]));
+	allServices.push(...(additionalEnhancedServices as Service[]));
+	allServices.push(...(newlyAddedServices as unknown as Service[]));
+	allServices.push(...(curatedMarketServices as Service[]));
+	allServices.push(...(new2025Services as unknown as Service[]));
+	allServices.push(...(marketValidatedServices as unknown as Service[]));
+	allServices.push(...(moreRealServices2025 as unknown as Service[]));
+	allServices.push(...(verified2025Additions as unknown as Service[]));
+	allServices.push(...(realServicesQ12025 as unknown as Service[]));
+	allServices.push(...(realEnterpriseServices2025 as unknown as Service[]));
+	allServices.push(...(verifiedRealServices2025Batch2 as unknown as Service[]));
+	allServices.push(...(realMarketAugmentations2025 as unknown as Service[]));
+	allServices.push(...(additionalLiveServices2025 as unknown as Service[]));
+	allServices.push(...(real2025Q2Additions as unknown as Service[]));
+	allServices.push(...(augmentedServicesBatch3 as unknown as Service[]));
+	allServices.push(...(realServicesQ22025 as unknown as Service[]));
+	allServices.push(...(realServicesQ32025 as unknown as Service[]));
+	allServices.push(...(realQ4Services2025 as unknown as Service[]));
+	allServices.push(...(real2025Q4Additions as unknown as Service[]));
+	allServices.push(...(realMarketServicesExtended as unknown as Service[]));
+	allServices.push(...(real2026Q1Additions as unknown as Service[]));
+	allServices.push(...(real2026Additions as unknown as Service[]));
+	allServices.push(...(added2026Q2Services as unknown as Service[]));
+	allServices.push(...(real2026Q3Additions as unknown as Service[]));
+	allServices.push(...(real2026Q4Additions as unknown as Service[]));
+	allServices.push(...(real2026Q4NewServices as unknown as Service[]));
+	allServices.push(...(real2027Q1Additions as unknown as Service[]));
+	allServices.push(...(real2027Q2Additions as unknown as Service[]));
+	allServices.push(...(real2028ServiceExpansions as unknown as Service[]));
+	allServices.push(...(real2029Q1Additions as unknown as Service[]));
+	allServices.push(...(realMarketServices as unknown as Service[]));
+	allServices.push(...(real2029Q2Additions as unknown as Service[]));
+	allServices.push(...(real2029Q3Additions as unknown as Service[]));
+	allServices.push(...(real2030Q1Additions as unknown as Service[]));
+	allServices.push(...(real2030Q2Additions as unknown as Service[]));
+	allServices.push(...(real2031MicroSaasAdditions as unknown as Service[]));
+	allServices.push(...(real2031ITServicesAdditions as unknown as Service[]));
+	allServices.push(...(real2031AIServicesAdditions as unknown as Service[]));
+	allServices.push(...(real2027Q3Additions as unknown as Service[]));
+	// 2029 showcase/pricing arrays to ensure matching /services/* pages are generated
+	allServices.push(...(aiAutonomousEcosystemServices2029 as unknown as Service[]));
+	allServices.push(...(emergingTechBreakthroughServices2029 as unknown as Service[]));
+	allServices.push(...(practicalBusinessSolutionServices2029 as unknown as Service[]));
+	allServices.push(...(professionalServices as unknown as Service[]));
+	allServices.push(...(real2032ServiceExpansions as unknown as Service[]));
+	allServices.push(...(real2035Q1Additions as unknown as Service[]));
+	allServices.push(...(real2035Q2AdditionsExtra as unknown as Service[]));
+	allServices.push(...(real2026Q4ExpansionsV3 as unknown as Service[]));
+	allServices.push(...(real2036ServiceExpansions as unknown as Service[]));
+	
+	return allServices;
+=======
 	return enhancedRealMicroSaasServices
 		.concat(extraServices as Service[], additionalEnhancedServices as Service[])
 		.concat(newlyAddedServices as unknown as Service[])
@@ -161,6 +224,7 @@ function getAllServices(): Service[] {
 		.concat(real2035Q1Additions as unknown as Service[])
 		.concat(real2035Q2Additions as unknown as Service[])
 		.concat(newRealServices2026 as unknown as Service[]);
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1fa4
 }
 
 function toSlug(value: string): string {

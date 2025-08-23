@@ -265,7 +265,7 @@ export default function ServicesAdvertisingPage() {
 					<h2 className="text-2xl font-semibold text-white">Latest Real Additions</h2>
 					<ul className="list-disc list-inside text-slate-300 space-y-2">
 						<li>
-							<strong className="text-white">Postgres Index Advisor Pro</strong> — $79/mo. Auto index insights, PR rollouts. Learn: <a className="text-cyan-400 underline" href="/services/postgres-index-advisor-pro">/services/postgres-index-advisor-pro</a>. Benchmarks: {ext('https://www.postgresql.org/docs/current/auto-explain.html')}{', '}{ext('https://pganalyze.com/blog/postgres-index-tuning')}
+							<strong className="text-white">Postgres Index Advisor Pro</strong> — $79/mo. Auto index insights, PR rollouts. Learn: <a className="text-cyan-400 underline" href="/services/postgres-index-advisor-pro">/services/postgres-index-advisor-pro</a>. Benchmarks: {ext('https://www.postgresql.org/docs/current/auto-explain.html')}{', '}{ext('https://pganalyze.com/blog')}
 						</li>
 						<li>
 							<strong className="text-white">S3 Lifecycle Optimizer</strong> — $59/mo. Smart storage class moves. Learn: <a className="text-cyan-400 underline" href="/services/s3-lifecycle-optimizer">/services/s3-lifecycle-optimizer</a>. References: {ext('https://aws.amazon.com/s3/pricing/')}{', '}{ext('https://aws.amazon.com/s3/storage-classes/')}
@@ -389,7 +389,7 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">Freshness SLAs, schema drift detection, and anomaly alerts for your warehouse and lakes.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $100–$500/mo</li>
-						<li>References: {ext('https://www.montecarlodata.com/')}, {ext('https://www.bigeye.com/pricing')}, {ext('https://soda.io/')}</li>
+						<li>References: {ext('https://www.montecarlodata.com/')}, {ext('https://www.bigeye.com/')}, {ext('https://soda.io/')}</li>
 					</ul>
 				</section>
 
@@ -497,7 +497,7 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">Calibrated forecasts, scenarios, and risk bands on CRM pipeline with executive dashboards.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $100–$600/mo</li>
-						<li>References: {ext('https://www.pigment.com/pricing')}, {ext('https://www.anaplan.com/platform/overview')}</li>
+						<li>References: {ext('https://www.pigment.com/')}, {ext('https://www.anaplan.com/platform/overview')}</li>
 					</ul>
 				</section>
 
@@ -634,7 +634,7 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">Automated WCAG checks with CI annotations and remediation guidance.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $20–$150/mo</li>
-						<li>References: {ext('https://www.deque.com/axe/')}, {ext('https://pagespeed.web.dev/pricing')}</li>
+						<li>References: {ext('https://www.deque.com/axe/')}, {ext('https://pagespeed.web.dev/')}</li>
 					</ul>
 					<div><a className="text-cyan-400 underline" href="/accessibility-scanner">Learn more</a></div>
 				</section>
@@ -692,7 +692,7 @@ export default function ServicesAdvertisingPage() {
 					<p className="text-slate-300">Freshness forecasts, schema drift detection, and anomaly alerts for warehouses and lakes.</p>
 					<ul className="list-disc list-inside text-slate-300 space-y-1">
 						<li>Typical SMB budget: $100–$400/mo</li>
-						<li>References: {ext('https://www.montecarlodata.com/')}, {ext('https://www.bigeye.com/pricing')}, {ext('https://soda.io/')}</li>
+						<li>References: {ext('https://www.montecarlodata.com/')}, {ext('https://www.bigeye.com/')}, {ext('https://soda.io/')}</li>
 					</ul>
 				</section>
 
@@ -1284,7 +1284,7 @@ export default function ServicesAdvertisingPage() {
 						<p className="text-slate-300">Weekly SKU forecasts with confidence bands and purchase order suggestions.</p>
 						<ul className="list-disc list-inside text-slate-300 space-y-1">
 							<li>Typical SMB budget: $99–$699/mo</li>
-							<li>References: {ext('https://aws.amazon.com/forecast/pricing/')}, {ext('https://www.pigment.com/pricing')}</li>
+							<li>References: {ext('https://aws.amazon.com/forecast/pricing/')}, {ext('https://www.pigment.com/')}</li>
 						</ul>
 						<div><a className="text-cyan-400 underline" href="/services/sku-demand-forecast">Learn more</a></div>
 					</section>

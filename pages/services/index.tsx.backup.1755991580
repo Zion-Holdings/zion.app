@@ -48,8 +48,18 @@ import { real2027Q3Additions } from '../../data/real-2027-q3-additions';
 import { professionalServices } from '../../data/professional-services';
 import { real2032ServiceExpansions } from '../../data/real-2032-service-expansions';
 import { real2035Q1Additions } from '../../data/real-2035-q1-additions';
+<<<<<<< HEAD
+import { real2035Q2AdditionsExtra } from '../../data/real-2035-q2-additions-extra';
+import { real2025ExtraServices } from '../../data/real-2025-extra-services';
+import { real2026Q4ExpansionsV2 } from '../../data/real-2026-q4-expansions-v2';
+import { real2036ServiceExpansions } from '../../data/real-2036-service-expansions';
+import { real2026Q4ExpansionsV3 } from '../../data/real-2026-q4-expansions-v3';
+import { real2036InnovativeServices } from '../../data/real-2036-innovative-services';
+import { real2036SpecializedServices } from '../../data/real-2036-specialized-services';
+=======
 import { real2035Q2Additions } from '../../data/real-2035-q2-additions';
 import { newRealServices2026 } from '../../data/2025-2026-new-real-services';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1fa4
 
 // Define a common service interface
 interface Service {
@@ -183,8 +193,41 @@ export default function ServicesIndexPage() {
       professionalServices as unknown[],
       real2032ServiceExpansions as unknown[],
       real2035Q1Additions as unknown[],
+<<<<<<< HEAD
+      real2035Q2AdditionsExtra as unknown[],
+      real2025ExtraServices as unknown[],
+      real2026Q4ExpansionsV2 as unknown[],
+      real2026Q4ExpansionsV3 as unknown[],
+      real2036InnovativeServices as unknown[],
+      real2036SpecializedServices as unknown[]
+    )
+          .concat(innovative2025MicroSaasServices as unknown[])
+    .concat(innovative2025ITEnterpriseBatch as unknown[]);
+
+  // Filter out services without required properties
+  const validServices = all.filter((service: any) => {
+    if (!service || typeof service !== 'object') return false;
+    if (!('name' in service) || !('description' in service) || !('features' in service)) return false;
+    
+    // Check if service has either price or pricing
+    if (!('price' in service) && !('pricing' in service)) return false;
+    
+    // Ensure services have the properties needed by UltraFuturisticServiceCard2026
+    const hasValidPrice = 'price' in service && service.price;
+    const hasValidPricing = 'pricing' in service && service.pricing && 
+      (service.pricing.starter || service.pricing.monthly);
+    
+    return hasValidPrice || hasValidPricing;
+  });
+
+  // Group services by category
+  const servicesByCategory = categories.reduce((acc, category) => {
+    acc[category] = validServices.filter((service: Service) => 
+      service.category && service.category.toLowerCase().includes(category.toLowerCase().replace(/\s+/g, ''))
+=======
       real2035Q2Additions as unknown[],
       newRealServices2026 as unknown[]
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1fa4
     );
     return acc;
   }, {} as Record<string, Service[]>);
