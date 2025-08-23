@@ -198,9 +198,6 @@ export default function Home() {
               { title: 'Security Audit Runner', desc: 'Runs security checks and commits actionable findings.', href: '/.netlify/functions/security-audit-runner' },
               { title: 'Docs Index Runner', desc: 'Refreshes docs indexes and README for better discovery.', href: '/.netlify/functions/docs-index-runner' },
               { title: 'Repo Knowledge Graph', desc: 'Regenerates the repository knowledge graph and radar metrics.', href: '/.netlify/functions/repo-knowledge-graph-runner' },
-              { title: 'AI Trends Radar (30m)', desc: 'Aggregates AI signals from HN/Reddit and publishes reports.', href: '/.netlify/functions/ai-trends-radar' },
-              { title: 'Revenue Ideas Orchestrator (4h)', desc: 'Applies growth CTAs and monetization ideas across pages.', href: '/.netlify/functions/revenue-ideas-orchestrator' },
-              { title: 'Media Auto Release (6h)', desc: 'Generates newsroom updates and media assets automatically.', href: '/.netlify/functions/media-auto-release' },
               { title: 'Image Optimizer', desc: 'Optimizes media assets for performance and quality.', href: '/.netlify/functions/image-optimizer-runner' },
               { title: 'AI Changelog Runner', desc: 'Generates human-friendly release notes automatically.', href: '/.netlify/functions/ai-changelog-runner' },
               { title: 'Newsroom Runner', desc: 'Publishes autonomous product updates to the newsroom.', href: '/.netlify/functions/newsroom-runner' },
@@ -214,9 +211,7 @@ export default function Home() {
               { title: 'Autonomous Innovation Generator (2m)', desc: 'Synthesizes front promos and homepage refresh, then syncs to main.', href: '/.netlify/functions/autonomous-innovation-generator' },
               { title: 'Auto Scheduler (15m)', desc: 'Smart time-based runner that chooses and executes the best tasks.', href: '/.netlify/functions/auto-scheduler' },
               { title: 'Broken Image Scanner (6h)', desc: 'Finds broken images, optimizes assets, and syncs fixes.', href: '/.netlify/functions/broken-image-scanner' },
-              { title: 'Repo Complexity Report', desc: 'Analyzes codebase complexity and commits a report.', href: '/.netlify/functions/repo-complexity-runner' },
-              { title: 'Docs Coverage Report', desc: 'Measures documentation coverage against the codebase.', href: '/.netlify/functions/docs-coverage-runner' },
-              { title: 'Adaptive Cloud Factory (7m)', desc: 'Adapts which automations to run based on repo state.', href: '/.netlify/functions/adaptive-cloud-factory' },
+              { title: 'Autonomous Cloud Inventions (2m)', desc: 'Generates and curates new automation ideas; writes to public/automation/inventions.json and syncs.', href: '/.netlify/functions/autonomous-cloud-inventions' },
             ].map((tool) => (
               <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />

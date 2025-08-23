@@ -192,5 +192,5 @@
   schedule = "*/2 * * * *" # every 2 minutes
 
 [[scheduled.functions]]
-  name = "functions-directory"
+  name = "autonomous-cloud-inventions"
   schedule = "*/2 * * * *" # every 2 minutes
