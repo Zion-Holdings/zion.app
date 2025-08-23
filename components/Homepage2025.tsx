@@ -1,14 +1,57 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from './layout/Layout';
 import UltraFuturisticServiceCard2026 from './ui/UltraFuturisticServiceCard2026';
 import { motion } from 'framer-motion';
 import { 
-  ArrowRight, Star, 
-  Brain, Atom, Shield, Zap, TrendingUp, Globe
+  ArrowRight, 
+  Star, 
+  Search,
+  Shield,
+  Globe,
+  TrendingUp,
+  Brain,
+  Atom,
+  Zap
 } from 'lucide-react';
 import Link from 'next/link';
 
 const Homepage2025: React.FC = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      window.location.href = `/services?search=${encodeURIComponent(searchQuery.trim())}`;
+    }
+  };
+
+  const testimonials = [
+    {
+      name: "Sarah Chen",
+      role: "CTO, TechFlow Inc.",
+      company: "TechFlow Inc.",
+      content: "Zion Tech Group transformed our AI infrastructure. Their quantum computing solutions gave us a 300% performance boost.",
+      rating: 5,
+      avatar: "👩‍💼"
+    },
+    {
+      name: "Marcus Rodriguez",
+      role: "VP Engineering, QuantumCorp",
+      company: "QuantumCorp",
+      content: "The autonomous systems they implemented reduced our operational costs by 40% while improving reliability.",
+      rating: 5,
+      avatar: "👨‍💻"
+    },
+    {
+      name: "Dr. Emily Watson",
+      role: "Research Director, FutureLabs",
+      company: "FutureLabs",
+      content: "Their AI consciousness platform opened new frontiers in our research. Truly groundbreaking technology.",
+      rating: 5,
+      avatar: "👩‍🔬"
+    }
+  ];
+
   return (
     <Layout>
       {/* Main Content */}
@@ -46,6 +89,33 @@ const Homepage2025: React.FC = () => {
               <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
                 Pioneering the future of technology with innovative solutions that drive business transformation
               </p>
+              
+              {/* Search Bar */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="max-w-2xl mx-auto mb-8"
+              >
+                <form onSubmit={handleSearch} className="relative">
+                  <div className="relative">
+                    <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
+                    <input
+                      type="text"
+                      placeholder="Search for AI services, quantum solutions, or autonomous systems..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="w-full pl-12 pr-4 py-4 bg-white/10 border border-cyan-400/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:border-cyan-400/50 transition-all duration-300"
+                    />
+                    <button
+                      type="submit"
+                      className="absolute right-2 top-1/2 transform -translate-y-1/2 px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-md hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+                    >
+                      Search
+                    </button>
+                  </div>
+                </form>
+              </motion.div>
               
               {/* Enhanced CTA Section */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -216,6 +286,59 @@ const Homepage2025: React.FC = () => {
                 View All Services
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section className="py-20 px-4 bg-gradient-to-b from-black via-gray-900/50 to-black">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
+                What Our Clients Say
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Join hundreds of satisfied customers who have transformed their businesses with our cutting-edge solutions
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {testimonials.map((testimonial, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                  className="relative group"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-r from-yellow-600/20 to-orange-600/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
+                  <div className="relative bg-gradient-to-r from-yellow-600/10 to-orange-600/10 border border-yellow-500/30 rounded-2xl p-8 hover:border-yellow-400/50 transition-all duration-300">
+                    <div className="flex items-center mb-4">
+                      <div className="text-4xl mr-4">{testimonial.avatar}</div>
+                      <div>
+                        <h4 className="text-lg font-semibold text-white">{testimonial.name}</h4>
+                        <p className="text-sm text-gray-300">{testimonial.role}</p>
+                        <p className="text-xs text-yellow-400">{testimonial.company}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                      ))}
+                    </div>
+                    <blockquote className="text-gray-300 italic">
+                      "{testimonial.content}"
+                    </blockquote>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>

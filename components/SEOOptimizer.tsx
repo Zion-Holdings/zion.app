@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/head';
 
 interface SEOOptimizerProps {
@@ -10,108 +10,153 @@ interface SEOOptimizerProps {
   type?: string;
 }
 
-const defaultSEO = {
-  title: 'Zion Tech Group - Pioneering the Future of Technology with AI, Quantum Computing & Space Solutions',
-  description: 'Transform your business with Zion Tech Group\'s cutting-edge AI, quantum computing, and space technology solutions. 50+ AI services, 100+ quantum solutions, and 24/7 autonomous operations.',
-  keywords: 'AI services, quantum computing, space technology, machine learning, autonomous operations, enterprise solutions, technology consulting, innovation, digital transformation',
-  image: '/og-image.jpg',
-  url: 'https://ziontechgroup.com',
-  type: 'website'
-};
-
-export default function SEOOptimizer({
-  title = defaultSEO.title,
-  description = defaultSEO.description,
-  keywords = defaultSEO.keywords,
-  image = defaultSEO.image,
-  url = defaultSEO.url,
-  type = defaultSEO.type
-}: SEOOptimizerProps) {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Zion Tech Group",
-    "url": "https://ziontechgroup.com",
-    "logo": "https://ziontechgroup.com/logo.png",
-    "description": "Pioneering the future of technology with innovative solutions that drive business transformation",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "364 E Main St STE 1008",
-      "addressLocality": "Middletown",
-      "addressRegion": "DE",
-      "postalCode": "19709",
-      "addressCountry": "US"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+1-302-464-0950",
-      "contactType": "customer service",
-      "availableLanguage": "English"
-    },
-    "sameAs": [
-      "https://linkedin.com/company/ziontechgroup",
-      "https://github.com/Zion-Holdings",
-      "https://twitter.com/ziontechgroup"
-    ],
-    "foundingDate": "2020",
-    "numberOfEmployees": "50-100",
-    "serviceArea": "Worldwide",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Technology Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "AI & Machine Learning Solutions",
-            "description": "Advanced artificial intelligence solutions for modern businesses"
-          }
+const SEOOptimizer: React.FC<SEOOptimizerProps> = ({
+  title = "Zion Tech Group - Pioneering the Future of Technology with AI, Quantum Computing & Autonomous Solutions",
+  description = "Transform your business with cutting-edge AI consciousness, quantum cybersecurity, and autonomous systems. Leading innovation in technology solutions for 2025 and beyond.",
+  keywords = "AI, artificial intelligence, quantum computing, autonomous systems, cybersecurity, technology solutions, business transformation, AI consciousness, quantum security, space technology",
+  image = "/og-image.jpg",
+  url = "https://ziontechgroup.com",
+  type = "website"
+}) => {
+  useEffect(() => {
+    // Add structured data for better SEO
+    const addStructuredData = () => {
+      const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Zion Tech Group",
+        "url": "https://ziontechgroup.com",
+        "logo": "https://ziontechgroup.com/logo.png",
+        "description": description,
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "364 E Main St STE 1008",
+          "addressLocality": "Middletown",
+          "addressRegion": "DE",
+          "postalCode": "19709",
+          "addressCountry": "US"
         },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Quantum Computing Solutions",
-            "description": "Next-generation quantum computing and security solutions"
-          }
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+1-302-464-0950",
+          "contactType": "customer service",
+          "email": "kleber@ziontechgroup.com"
         },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Space Technology Solutions",
-            "description": "Innovative space exploration and resource mining solutions"
-          }
-        }
-      ]
-    }
-  };
+        "sameAs": [
+          "https://linkedin.com/company/ziontechgroup",
+          "https://twitter.com/ziontechgroup",
+          "https://facebook.com/ziontechgroup",
+          "https://instagram.com/ziontechgroup",
+          "https://youtube.com/@ziontechgroup",
+          "https://github.com/ziontechgroup"
+        ],
+        "foundingDate": "2020",
+        "numberOfEmployees": "50-100",
+        "serviceType": [
+          "AI Services",
+          "Quantum Computing",
+          "Autonomous Systems",
+          "Cybersecurity",
+          "Space Technology"
+        ]
+      };
 
-  const breadcrumbStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://ziontechgroup.com"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Services",
-        "item": "https://ziontechgroup.com/services"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "AI Solutions",
-        "item": "https://ziontechgroup.com/ai-services"
+      // Remove existing structured data
+      const existingScript = document.querySelector('script[type="application/ld+json"]');
+      if (existingScript) {
+        existingScript.remove();
       }
-    ]
-  };
+
+      // Add new structured data
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify(structuredData);
+      document.head.appendChild(script);
+    };
+
+    // Add FAQ structured data
+    const addFAQStructuredData = () => {
+      const faqData = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What services does Zion Tech Group offer?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Zion Tech Group offers cutting-edge AI consciousness evolution, quantum cybersecurity, autonomous content creation, quantum supply chain optimization, and space technology solutions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can AI consciousness benefit my business?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "AI consciousness can provide advanced decision-making capabilities, emotional intelligence in customer interactions, and ethical reasoning for complex business scenarios."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What makes quantum computing different from traditional computing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Quantum computing uses quantum bits (qubits) that can exist in multiple states simultaneously, enabling exponentially faster processing for complex problems like cryptography, optimization, and AI training."
+            }
+          }
+        ]
+      };
+
+      const faqScript = document.createElement('script');
+      faqScript.type = 'application/ld+json';
+      faqScript.text = JSON.stringify(faqData);
+      document.head.appendChild(faqScript);
+    };
+
+    // Add breadcrumb structured data
+    const addBreadcrumbData = () => {
+      const breadcrumbData = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://ziontechgroup.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Services",
+            "item": "https://ziontechgroup.com/services"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "AI & Consciousness",
+            "item": "https://ziontechgroup.com/ai-services"
+          }
+        ]
+      };
+
+      const breadcrumbScript = document.createElement('script');
+      breadcrumbScript.type = 'application/ld+json';
+      breadcrumbScript.text = JSON.stringify(breadcrumbData);
+      document.head.appendChild(breadcrumbScript);
+    };
+
+    // Initialize structured data
+    addStructuredData();
+    addFAQStructuredData();
+    addBreadcrumbData();
+
+    // Cleanup function
+    return () => {
+      const scripts = document.querySelectorAll('script[type="application/ld+json"]');
+      scripts.forEach(script => script.remove());
+    };
+  }, [description]);
 
   return (
     <Head>
@@ -135,84 +180,93 @@ export default function SEOOptimizer({
       
       {/* Twitter Card Meta Tags */}
       <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@ziontechgroup" />
+      <meta name="twitter:creator" content="@ziontechgroup" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
-      <meta name="twitter:site" content="@ziontechgroup" />
-      <meta name="twitter:creator" content="@ziontechgroup" />
       
-      {/* Additional Meta Tags */}
+      {/* Additional SEO Meta Tags */}
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="theme-color" content="#0ea5e9" />
-      <meta name="msapplication-TileColor" content="#0ea5e9" />
+      <meta name="theme-color" content="#00d4ff" />
+      <meta name="msapplication-TileColor" content="#00d4ff" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       
       {/* Canonical URL */}
       <link rel="canonical" href={url} />
       
-      {/* Favicon and Icons */}
+      {/* Favicon and App Icons */}
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
       <link rel="manifest" href="/site.webmanifest" />
       
-      {/* Preconnect to External Domains */}
+      {/* Preconnect to external domains for performance */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       <link rel="preconnect" href="https://www.google-analytics.com" />
+      <link rel="preconnect" href="https://www.googletagmanager.com" />
       
-      {/* DNS Prefetch */}
+      {/* DNS prefetch for performance */}
       <link rel="dns-prefetch" href="//www.google-analytics.com" />
       <link rel="dns-prefetch" href="//www.googletagmanager.com" />
       
-      {/* Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(structuredData)
-        }}
-      />
+      {/* Additional meta tags for business */}
+      <meta name="business:contact_data:street_address" content="364 E Main St STE 1008" />
+      <meta name="business:contact_data:locality" content="Middletown" />
+      <meta name="business:contact_data:region" content="DE" />
+      <meta name="business:contact_data:postal_code" content="19709" />
+      <meta name="business:contact_data:country_name" content="United States" />
+      <meta name="business:contact_data:phone_number" content="+1-302-464-0950" />
+      <meta name="business:contact_data:email" content="kleber@ziontechgroup.com" />
       
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbStructuredData)
-        }}
-      />
-      
-      {/* Additional SEO Meta Tags */}
-      <meta name="application-name" content="Zion Tech Group" />
-      <meta name="mobile-web-app-capable" content="yes" />
-      <meta name="format-detection" content="telephone=no" />
-      <meta name="msapplication-tap-highlight" content="no" />
-      
-      {/* Performance and Security */}
-      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="referrer" content="strict-origin-when-cross-origin" />
-      
-      {/* Social Media Verification */}
+      {/* Verification tags */}
       <meta name="google-site-verification" content="your-verification-code" />
       <meta name="msvalidate.01" content="your-verification-code" />
+      <meta name="yandex-verification" content="your-verification-code" />
       
-      {/* Additional Open Graph Tags */}
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
-      <meta property="og:image:alt" content="Zion Tech Group - Future Technology Solutions" />
-      
-      {/* Business Information */}
-      <meta property="business:contact_data:street_address" content="364 E Main St STE 1008" />
-      <meta property="business:contact_data:locality" content="Middletown" />
-      <meta property="business:contact_data:region" content="DE" />
-      <meta property="business:contact_data:postal_code" content="19709" />
-      <meta property="business:contact_data:country_name" content="United States" />
-      <meta property="business:contact_data:phone_number" content="+1-302-464-0950" />
-      
-      {/* Service Information */}
-      <meta property="og:see_also" content="https://ziontechgroup.com/services" />
-      <meta property="og:see_also" content="https://ziontechgroup.com/about" />
-      <meta property="og:see_also" content="https://ziontechgroup.com/contact" />
+      {/* Additional structured data for business */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Zion Tech Group",
+            "image": "https://ziontechgroup.com/logo.png",
+            "priceRange": "$$$",
+            "currenciesAccepted": "USD",
+            "paymentAccepted": "Credit Card, Bank Transfer, PayPal",
+            "areaServed": "Worldwide",
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Technology Services",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "AI Consciousness Evolution",
+                    "description": "Advanced AI consciousness development platform"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Quantum Cybersecurity",
+                    "description": "Quantum-resistant security solutions"
+                  }
+                }
+              ]
+            }
+          })
+        }}
+      />
     </Head>
   );
-}
+};
+
+export default SEOOptimizer;
