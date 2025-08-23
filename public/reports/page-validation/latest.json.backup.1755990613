@@ -7,6 +7,8 @@
     "buildBreakingFiles": 0,
     "canBuild": true
   },
+<<<<<<< HEAD
+=======
   "results": [
     {
       "file": "pages/_app.tsx",
@@ -28,4 +30,5 @@
   "results": [],
   "buildBreakingFiles": [],
   "generatedAt": "2025-08-19T18:00:18.033Z"
+>>>>>>> origin/cursor/automate-automation-redundancy-and-build-improvement-2064
 }
