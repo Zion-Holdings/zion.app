@@ -10,6 +10,13 @@ import {
 const UltraFuturisticFooter2045: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
+  const contactInfo = {
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com'
+  };
+
   const footerSections = [
     {
       title: 'Revolutionary Services 2045',
@@ -56,13 +63,6 @@ const UltraFuturisticFooter2045: React.FC = () => {
       ]
     }
   ];
-
-  const contactInfo = {
-    mobile: '+1 302 464 0950',
-    email: 'kleber@ziontechgroup.com',
-    address: '364 E Main St STE 1008 Middletown DE 19709',
-    website: 'https://ziontechgroup.com'
-  };
 
   const socialLinks = [
     { name: 'Facebook', icon: <Facebook className="w-5 h-5" />, href: 'https://facebook.com/ziontechgroup', color: 'from-blue-500 to-blue-600' },
