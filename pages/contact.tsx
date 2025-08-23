@@ -1,12 +1,3 @@
-export default function ContactPage() {
-  return (
-    <div className="prose dark:prose-invert">
-      <h1>Contact</h1>
-      <p>For partnerships and media, email contact@zion.global</p>
-    </div>
-  );
-}
-=======
 export default function Contact() { return <div className="p-8">Contact</div>; }
 =======
 import React from 'react';
@@ -21,3 +12,7 @@ const Component = () => {
 };
 
 export default Component;
+=======
+export default function Contact() {
+  return <div>Contact</div>;
+}
