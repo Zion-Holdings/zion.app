@@ -9,6 +9,9 @@ import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
 import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
 import EnhancedErrorBoundary from '../EnhancedErrorBoundary';
+import ThemeToggle from '../ThemeToggle';
+import LoadingSpinner from '../LoadingSpinner';
+import ServiceWorkerRegistration from '../ServiceWorkerRegistration';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -29,8 +32,19 @@ export default function Layout({
 }: LayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isOnline, setIsOnline] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
 
   useEffect(() => {
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme') as 'dark' | 'light';
+    if (savedTheme) {
+      setTheme(savedTheme);
+    }
+
+    // Simulate loading time for better UX
+    const timer = setTimeout(() => setIsLoading(false), 1000);
+
     // Check online status
     const updateOnlineStatus = () => {
       setIsOnline(navigator.onLine);
@@ -70,10 +84,25 @@ export default function Layout({
     }
 
     return () => {
+      clearTimeout(timer);
       window.removeEventListener('online', updateOnlineStatus);
       window.removeEventListener('offline', updateOnlineStatus);
     };
   }, []);
+
+  useEffect(() => {
+    // Apply theme to document
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const handleThemeToggle = () => {
+    setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+  };
+
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
 
   return (
     <>
@@ -158,47 +187,61 @@ export default function Layout({
         />
       </Head>
 
-      <div className="min-h-screen bg-black text-white relative overflow-hidden">
+      <div className={`min-h-screen ${theme === 'dark' ? 'bg-black text-white' : 'bg-gray-50 text-gray-900'} relative overflow-hidden transition-colors duration-300`}>
+        {/* Skip to content link for accessibility */}
+        <a href="#main" className="skip-link sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded">
+          Skip to main content
+        </a>
+        
         {/* Background Effects */}
-        <UltraFuturisticBackground2045 />
+        <UltraFuturisticBackground2045 theme={theme === 'dark' ? 'quantum-neon' : 'holographic'} />
         
-        {/* Top Contact Bar */}
-        <TopContactBar />
-        
-        {/* Enhanced Navigation */}
-        <EnhancedNavigation2025 />
-        
-        {/* Enhanced Sidebar */}
-        <EnhancedSidebar2025 isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
-        
-        {/* Main Content */}
-        <main className="pt-32 pb-16 relative z-10">
-          <EnhancedErrorBoundary>
-            {children}
-          </EnhancedErrorBoundary>
-        </main>
-        
-        {/* Enhanced Footer */}
-        <EnhancedFooter2025 />
-        
-        {/* Performance Monitor */}
-        <EnhancedPerformanceMonitor />
-        
-        {/* Accessibility Enhancer */}
-        <AccessibilityEnhancer />
-        
-        {/* Cookie Consent Banner */}
-        <CookieConsentBanner />
-        
-        {/* Offline Indicator */}
-        {!isOnline && (
-          <div className="fixed bottom-4 right-4 bg-red-600 text-white px-4 py-2 rounded-lg shadow-lg z-50">
-            <div className="flex items-center space-x-2">
-              <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-              <span className="text-sm">You are offline</span>
+        {/* Layout Structure */}
+        <div className="relative z-10">
+          {/* Top Contact Bar */}
+          <TopContactBar />
+          
+          {/* Enhanced Navigation */}
+          <EnhancedNavigation2025 />
+          
+          {/* Enhanced Sidebar */}
+          <EnhancedSidebar2025 isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+          
+          {/* Main Content */}
+          <main id="main" role="main" className="pt-32 pb-16 relative z-10">
+            <EnhancedErrorBoundary>
+              {children}
+            </EnhancedErrorBoundary>
+          </main>
+          
+          {/* Enhanced Footer */}
+          <EnhancedFooter2025 />
+          
+          {/* Performance Monitor */}
+          <EnhancedPerformanceMonitor />
+          
+          {/* Accessibility Enhancer */}
+          <AccessibilityEnhancer />
+          
+          {/* Cookie Consent Banner */}
+          <CookieConsentBanner />
+          
+          {/* Offline Indicator */}
+          {!isOnline && (
+            <div className="fixed bottom-4 right-4 bg-red-600 text-white px-4 py-2 rounded-lg shadow-lg z-50">
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                <span className="text-sm">You are offline</span>
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
+
+        {/* Theme Toggle Floating Button */}
+        <ThemeToggle theme={theme} onToggle={handleThemeToggle} />
+        
+        {/* Service Worker Registration */}
+        <ServiceWorkerRegistration />
       </div>
     </>
   );
