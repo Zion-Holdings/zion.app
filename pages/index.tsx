@@ -1,128 +1,19 @@
 import React from 'react';
-import Homepage2047 from '../components/Homepage2047';
+import Homepage2026 from '../components/Homepage2026';
+import SEOOptimizer from '../components/SEOOptimizer';
+import AnalyticsTracker from '../components/AnalyticsTracker';
 import ErrorBoundary from '../components/ErrorBoundary';
-import SEOHead from '../components/SEOHead';
+import EnhancedPerformanceOptimizer from '../components/EnhancedPerformanceOptimizer';
+import EnhancedAccessibilityEnhancer from '../components/EnhancedAccessibilityEnhancer';
+import SecurityEnhancer from '../components/SecurityEnhancer';
 
-const heroStats = [
-  { label: 'Revolutionary Services', value: '800+', icon: <Star className="w-5 h-5" /> },
-  { label: 'Happy Clients', value: '1500+', icon: <Users className="w-5 h-5" /> },
-  { label: 'Success Rate', value: '99.9%', icon: <Award className="w-5 h-5" /> },
-  { label: 'ROI Average', value: '400%', icon: <TrendingUp className="w-5 h-5" /> }
-];
-
-const serviceCategories = [
-  {
-    name: 'AI & Consciousness',
-    icon: <Brain className="w-8 h-8" />,
-    color: 'from-cyan-500 to-blue-500',
-    description: 'Revolutionary AI consciousness and emotional intelligence',
-    services: [...innovativeAIServices2025, ...newInnovativeAIServices.filter(s => s.category.includes('AI'))].slice(0, 3),
-    link: '/services#ai-consciousness'
-  },
-  {
-    name: 'Quantum & Emerging Tech',
-    icon: <Atom className="w-8 h-8" />,
-    color: 'from-purple-500 to-pink-500',
-    description: 'Quantum computing and breakthrough technologies',
-    services: [...emergingTechServices2025, ...newInnovativeAIServices.filter(s => s.category.includes('Quantum'))].slice(0, 3),
-    link: '/services#quantum-emerging'
-  },
-  {
-    name: 'Enterprise IT',
-    icon: <Shield className="w-8 h-8" />,
-    color: 'from-green-500 to-emerald-500',
-    description: 'Enterprise solutions and infrastructure',
-    services: [...innovativeITServices2025, ...additionalRealServices2025.filter(s => s.category.includes('Enterprise') || s.category.includes('DevOps'))].slice(0, 3),
-    link: '/services#enterprise-it'
-  },
-  {
-    name: 'Micro SAAS',
-    icon: <Target className="w-8 h-8" />,
-    color: 'from-orange-500 to-red-500',
-    description: 'Innovative business solutions',
-    services: [...realMicroSaasServices2025, ...additionalRealServices2025.filter(s => s.category.includes('Sales') || s.category.includes('Customer'))].slice(0, 3),
-    link: '/services#micro-saas'
-  },
-  {
-    name: 'Financial Technology',
-    icon: <TrendingUp className="w-8 h-8" />,
-    color: 'from-green-500 to-emerald-600',
-    description: 'Quantum and AI-powered financial solutions',
-    services: additionalRealServices2025.filter(s => s.category.includes('Financial')).slice(0, 3),
-    link: '/services#financial-technology'
-  },
-  {
-    name: 'Cybersecurity',
-    icon: <Shield className="w-8 h-8" />,
-    color: 'from-red-500 to-pink-600',
-    description: 'Quantum-resistant security solutions',
-    services: additionalRealServices2025.filter(s => s.category.includes('Cybersecurity')).slice(0, 3),
-    link: '/services#cybersecurity'
-  }
-];
-
-const features = [
-  {
-    title: 'Cutting-Edge Technology',
-    description: 'Access to the latest AI, quantum computing, and emerging technologies',
-    icon: <Zap className="w-6 h-6" />,
-    color: 'from-cyan-500 to-blue-500'
-  },
-  {
-    title: 'Rapid Implementation',
-    description: 'Get up and running in under 24 hours with our streamlined setup process',
-    icon: <Rocket className="w-6 h-6" />,
-    color: 'from-purple-500 to-pink-500'
-  },
-  {
-    title: 'Global Infrastructure',
-    description: 'Enterprise-grade infrastructure available in 150+ countries worldwide',
-    icon: <Globe className="w-6 h-6" />,
-    color: 'from-green-500 to-emerald-500'
-  },
-  {
-    title: '24/7 Support',
-    description: 'Round-the-clock technical support and monitoring for all services',
-    icon: <Shield className="w-6 h-6" />,
-    color: 'from-orange-500 to-red-500'
-  }
-];
-
-const testimonials = [
-  {
-    name: 'Sarah Chen',
-    role: 'CTO, TechFlow Inc.',
-    company: 'TechFlow Inc.',
-    content: 'Zion Tech Group transformed our operations with their AI consciousness platform. The ROI was incredible - we saw a 400% increase in efficiency within 6 months.',
-    rating: 5,
-    avatar: 'SC'
-  },
-  {
-    name: 'Michael Rodriguez',
-    role: 'VP Engineering, QuantumCorp',
-    company: 'QuantumCorp',
-    content: 'Their quantum computing solutions gave us a competitive edge we never thought possible. The implementation was seamless and the results exceeded expectations.',
-    rating: 5,
-    avatar: 'MR'
-  },
-  {
-    name: 'Dr. Emily Watson',
-    role: 'Research Director, BioTech Solutions',
-    company: 'BioTech Solutions',
-    content: 'The AI-powered research automation tools accelerated our drug discovery process by 10x. This is the future of biotechnology research.',
-    rating: 5,
-    avatar: 'EW'
-  }
-];
-
-export default function Home() {
+const HomePage: React.FC = () => {
   return (
-    <>
-      <SEOHead />
-      <ErrorBoundary>
-        <EnhancedHomepage2025 />
-      </ErrorBoundary>
-    </>
+    <ErrorBoundary>
+      <SEOOptimizer />
+      <AnalyticsTracker />
+      <Homepage2026 />
+    </ErrorBoundary>
   );
 };
 

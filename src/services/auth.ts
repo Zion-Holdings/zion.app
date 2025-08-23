@@ -1,35 +1,23 @@
 import axios from 'axios';
-import {logErrorToProduction} from '@/utils/productionLogger';
 
-export async function register(name: string, email: string, password: string) {
+// Axios instance used for API calls
+export const api = axios.create({ baseURL: '/api' });
 
-  try {
-    const res = await axios.post('/api/auth/register', { name, email, password });
-    return { res, data: res.data };
-  } catch (err: any) {
-    logErrorToProduction('Register error:', { data: err });
-    throw err;
+// Attach Authorization header if token stored
+api.interceptors.request.use((config) => {
+  const token = localStorage.getItem('token');
+  if (token && config.headers) {
+    config.headers['Authorization'] = `Bearer ${token}`;
   }
-}
+  return config;
+});
 
-export async function forgotPassword(email: string) {
-  const API_URL = process.env.NEXT_PUBLIC_API_URL || '';
-  try {
-    const res = await axios.post(`${API_URL}/auth/forgot`, { email });
-    return { res, data: res.data };
-  } catch (err: any) {
-    logErrorToProduction('Forgot password error:', { data: err });
-    throw err;
+export async function login(email: string, password: string) {
+  const response = await api.post('/auth/login', { email, password });
+  const token = response.data?.token;
+  if (response.status === 200 && token) {
+    localStorage.setItem('token', token);
+    api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
   }
-}
-
-export async function resetPassword(token: string, newPassword: string) {
-  const API_URL = process.env.NEXT_PUBLIC_API_URL || '';
-  try {
-    const res = await axios.post(`${API_URL}/auth/reset-password`, { token, newPassword });
-    return { res, data: res.data };
-  } catch (err: any) {
-    logErrorToProduction('Reset password error:', { data: err });
-    throw err;
-  }
+  return response;
 }

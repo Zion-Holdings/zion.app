@@ -6,17 +6,17 @@
   :root {
     --font-sans: 'Orbitron', system-ui, sans-serif;
 
-    --background: 0 0% 7%;
-    --foreground: 142 71% 45%;
+    --background: 0 0% 10%;
+    --foreground: 0 0% 100%;
 
     --card: 0 0% 7%;
-    --card-foreground: 142 71% 45%;
+    --card-foreground: 0 0% 100%;
 
     --popover: 0 0% 7%;
-    --popover-foreground: 142 71% 45%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 216 84% 50%;
-    --primary-foreground: 142 71% 45%;
+    --primary: 146 70% 40%;
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 68%;
     --secondary-foreground: 0 0% 7%;
@@ -28,11 +28,11 @@
     --accent-foreground: 0 0% 7%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 142 71% 45%;
+    --destructive-foreground: 0 0% 100%;
 
     --border: 0 0% 68%;
     --input: 0 0% 68%;
-    --ring: 216 84% 53%;
+    --ring: 146 70% 40%;
 
     --radius: 0.5rem;
 
@@ -42,7 +42,7 @@
 
     --sidebar-primary: 216 84% 53%;
 
-    --sidebar-primary-foreground: 142 71% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
 
     --sidebar-accent: 0 0% 68%;
 
@@ -54,17 +54,17 @@
   }
 
   .dark {
-    --background: 0 0% 7%;
-    --foreground: 142 71% 45%;
+    --background: 0 0% 10%;
+    --foreground: 0 0% 100%;
 
     --card: 0 0% 7%;
-    --card-foreground: 142 71% 45%;
+    --card-foreground: 0 0% 100%;
 
     --popover: 0 0% 7%;
-    --popover-foreground: 142 71% 45%;
+    --popover-foreground: 0 0% 100%;
 
-    --primary: 216 84% 50%;
-    --primary-foreground: 142 71% 45%;
+    --primary: 146 70% 40%;
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 68%;
     --secondary-foreground: 0 0% 7%;
@@ -76,15 +76,15 @@
     --accent-foreground: 0 0% 7%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 142 71% 45%;
+    --destructive-foreground: 0 0% 100%;
 
     --border: 0 0% 68%;
     --input: 0 0% 68%;
-    --ring: 216 84% 53%;
+    --ring: 146 70% 40%;
     --sidebar-background: 228 12% 92%;
     --sidebar-foreground: 0 0% 7%;
     --sidebar-primary: 216 84% 53%;
-    --sidebar-primary-foreground: 142 71% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 0 0% 68%;
     --sidebar-accent-foreground: 0 0% 7%;
     --sidebar-border: 0 0% 68%;
@@ -186,35 +186,4 @@
     --lk-bg1: #0B1120;
     --lk-bg2: #0F172A;
   }
-
-  /* Skip link styles */
-  .skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: #ffffff;
-    color: #000000;
-    padding: 0.5rem 1rem;
-    z-index: 1000;
-    transition: top 0.3s;
-  }
-
-  .skip-link:focus {
-    top: 0;
-  }
-
-  /* Improved placeholder contrast */
-  input::placeholder,
-  textarea::placeholder {
-    color: #b3b3b3;
-    opacity: 1;
-  }
 }
-  @keyframes slide-up {
-    from { transform: translateY(100%); }
-    to { transform: translateY(0); }
-  }
-
-  .animate-slide-up {
-    animation: slide-up 0.3s ease-out;
-  }

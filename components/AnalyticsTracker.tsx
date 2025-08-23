@@ -6,28 +6,73 @@ interface AnalyticsTrackerProps {
   enableConversionTracking?: boolean;
 }
 
-// Performance entry types for Core Web Vitals
-interface PerformanceEventTiming extends PerformanceEntry {
-  processingStart: number;
-  processingEnd: number;
-  target?: any;
-}
+  // Helper function to track metrics
+  const trackMetric = (name: string, value: number | string) => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'custom_metric', {
+        metric_name: name,
+        metric_value: value,
+        timestamp: Date.now()
+      });
+    }
 
-const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
-  pageTitle,
-  pagePath,
-  customEvents = []
-}) => {
-  // Track page view
-  const trackPageView = useCallback((title: string, path: string) => {
-    if (typeof window !== 'undefined') {
-      // Google Analytics 4
-      if ((window as any).gtag) {
-        (window as any).gtag('config', 'G-XXXXXXXXXX', {
-          page_title: title,
-          page_location: window.location.href,
-          page_path: path
-        });
+    // Send to custom analytics endpoint
+    if (process.env.NODE_ENV === 'production') {
+      fetch('/api/analytics/metrics', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          value,
+          timestamp: Date.now(),
+          url: window.location.href,
+          userAgent: navigator.userAgent
+        })
+      }).catch(() => {
+        // Silently handle fetch errors
+      });
+    }
+  };
+
+  // Helper function to track events
+  const trackEvent = (action: string, parameters: Record<string, unknown>) => {
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', action, {
+        ...parameters,
+        timestamp: Date.now(),
+        page_url: window.location.href
+      });
+    }
+
+    // Send to custom analytics endpoint
+    if (process.env.NODE_ENV === 'production') {
+      fetch('/api/analytics/events', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          action,
+          parameters,
+          timestamp: Date.now(),
+          url: window.location.href,
+          userAgent: navigator.userAgent
+        })
+      }).catch(() => {
+        // Silently handle fetch errors
+      });
+    }
+  };
+
+  useEffect(() => {
+    // User interaction tracking
+    let interactionCount = 0;
+    const trackInteraction = () => {
+      interactionCount++;
+      if (interactionCount === 1) {
+        trackMetric('FirstInteraction', Date.now() - (performance.timing?.navigationStart || Date.now()));
       }
     };
 
@@ -36,66 +81,6 @@ const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
       trackMetric('ViewportWidth', window.innerWidth);
       trackMetric('ViewportHeight', window.innerHeight);
       trackMetric('PixelRatio', window.devicePixelRatio || 1);
-    };
-
-    // Helper function to track metrics
-    const trackMetric = (name: string, value: number | string) => {
-      if (typeof window !== 'undefined' && window.gtag) {
-        window.gtag('event', 'custom_metric', {
-          metric_name: name,
-          metric_value: value,
-          timestamp: Date.now()
-        });
-      }
-
-      // Send to custom analytics endpoint
-      if (process.env.NODE_ENV === 'production') {
-        fetch('/api/analytics/metrics', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            name,
-            value,
-            timestamp: Date.now(),
-            url: window.location.href,
-            userAgent: navigator.userAgent
-          })
-        }).catch(() => {
-          // Silently handle fetch errors
-        });
-      }
-    };
-
-    // Helper function to track events
-    const trackEvent = (action: string, parameters: Record<string, unknown>) => {
-      if (typeof window !== 'undefined' && window.gtag) {
-        window.gtag('event', action, {
-          ...parameters,
-          timestamp: Date.now(),
-          page_url: window.location.href
-        });
-      }
-
-      // Send to custom analytics endpoint
-      if (process.env.NODE_ENV === 'production') {
-        fetch('/api/analytics/events', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            action,
-            parameters,
-            timestamp: Date.now(),
-            url: window.location.href,
-            userAgent: navigator.userAgent
-          })
-        }).catch(() => {
-          // Silently handle fetch errors
-        });
-      }
     };
 
     // Initialize analytics and performance monitoring
@@ -151,7 +136,7 @@ const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
 
             // Track resource loading performance
             const resources = performance.getEntriesByType('resource');
-            const slowResources = resources.filter((resource) => (resource as any).duration > 1000);
+            const slowResources = resources.filter((resource: any) => resource.duration > 1000);
             if (slowResources.length > 0) {
               trackMetric('SlowResources', slowResources.length);
             }
@@ -165,7 +150,7 @@ const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
       document.addEventListener('keydown', trackInteraction);
 
       // Error tracking
-      window.addEventListener('error', (event) => {
+      window.addEventListener('error', (event: any) => {
         trackEvent('Error', {
           message: event.message,
           filename: event.filename,
@@ -176,7 +161,7 @@ const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
       });
 
       // Unhandled promise rejection tracking
-      window.addEventListener('unhandledrejection', (event) => {
+      window.addEventListener('unhandledrejection', (event: any) => {
         trackEvent('UnhandledRejection', {
           reason: event.reason,
           promise: event.promise
@@ -287,80 +272,20 @@ const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({
       }
   }, [router.asPath]);
 
-  // Helper function to track metrics
-  const trackMetric = (name: string, value: number | string) => {
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', 'custom_metric', {
-        metric_name: name,
-        metric_value: value,
-        timestamp: Date.now()
-      });
-    }
-
-    // Send to custom analytics endpoint
-    if (process.env.NODE_ENV === 'production') {
-      fetch('/api/analytics/metrics', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name,
-          value,
-          timestamp: Date.now(),
-          url: window.location.href,
-          userAgent: navigator.userAgent
-        })
-      }).catch(() => {
-        // Silently handle fetch errors
-      });
-    }
-  };
-
-  // Helper function to track events
-  const trackEvent = (action: string, parameters: Record<string, unknown>) => {
-    if (typeof window !== 'undefined' && window.gtag) {
-      window.gtag('event', action, {
-        ...parameters,
-        timestamp: Date.now(),
-        page_url: window.location.href
-      });
-    }
-
-    // Send to custom analytics endpoint
-    if (process.env.NODE_ENV === 'production') {
-      fetch('/api/analytics/events', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          action,
-          parameters,
-          timestamp: Date.now(),
-          url: window.location.href,
-          userAgent: navigator.userAgent
-        })
-      }).catch(() => {
-        // Silently handle fetch errors
-      });
-    }
-  };
-
   // Component doesn't render anything
   return null;
 };
 
-// Type definitions for performance entries
-interface FirstInputEntry extends PerformanceEntry {
+// Performance entry types
+interface PerformanceEventTiming extends PerformanceEntry {
   processingStart: number;
   processingEnd: number;
   target?: any;
 }
 
-interface LayoutShiftEntry extends PerformanceEntry {
-  hadRecentInput: boolean;
+interface LayoutShift extends PerformanceEntry {
   value: number;
+  sources?: LayoutShiftSource[];
 }
 
 interface LayoutShiftSource {
@@ -372,7 +297,7 @@ interface LayoutShiftSource {
 // Extend Window interface for gtag
 declare global {
   interface Window {
-    gtag?: (...args: unknown[]) => void;
+    gtag: (...args: unknown[]) => void;
   }
 }
 

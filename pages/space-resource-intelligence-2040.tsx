@@ -1,189 +1,256 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
-import { Rocket, Satellite, Globe, Target, Users, Award, Clock, CheckCircle, Zap, Brain } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Rocket, Globe, Target, Star, CheckCircle, Satellite, Database, Shield, Zap, Atom, Brain, Users } from 'lucide-react';
 
-export default function SpaceResourceIntelligence2040() {
+const SpaceResourceIntelligence2040: React.FC = () => {
+  const features = [
+    {
+      icon: <Rocket className="w-8 h-8 text-indigo-400" />,
+      title: 'Space Mining Intelligence',
+      description: 'AI-powered systems for identifying and extracting valuable resources from asteroids and celestial bodies'
+    },
+    {
+      icon: <Satellite className="w-8 h-8 text-blue-400" />,
+      title: 'Orbital Resource Mapping',
+      description: 'Comprehensive mapping and analysis of resources across the solar system'
+    },
+    {
+      icon: <Brain className="w-8 h-8 text-purple-400" />,
+      title: 'Autonomous Space Operations',
+      description: 'Self-directed space missions with advanced decision-making capabilities'
+    },
+    {
+      icon: <Target className="w-8 h-8 text-green-400" />,
+      title: 'Resource Optimization',
+      description: 'Intelligent resource allocation and utilization for space missions'
+    }
+  ];
+
+  const benefits = [
+    'Unlimited resource access beyond Earth',
+    'Revolutionary space exploration capabilities',
+    'Sustainable resource extraction methods',
+    'Advanced autonomous space technology',
+    'Economic opportunities in space economy',
+    'Scientific discovery acceleration'
+  ];
+
+  const applications = [
+    {
+      title: 'Asteroid Mining',
+      description: 'Automated extraction of precious metals and rare elements from near-Earth asteroids',
+      icon: <Rocket className="w-6 h-6" />
+    },
+    {
+      title: 'Lunar Resource Development',
+      description: 'Establishing sustainable resource operations on the Moon for future colonization',
+      icon: <Globe className="w-6 h-6" />
+    },
+    {
+      title: 'Mars Resource Planning',
+      description: 'Strategic planning for resource utilization in Mars exploration missions',
+      icon: <Target className="w-6 h-6" />
+    },
+    {
+      title: 'Space Manufacturing',
+      description: 'In-space manufacturing using locally sourced materials and resources',
+      icon: <Atom className="w-6 h-6" />
+    }
+  ];
+
+  const technologyStack = [
+    'Advanced AI Space Navigation',
+    'Autonomous Resource Extraction Systems',
+    'Quantum Communication Networks',
+    'Space Resource Mapping AI',
+    'Sustainable Mining Technologies',
+    'Interplanetary Logistics Systems'
+  ];
+
   return (
     <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
+      <div className="min-h-screen bg-gradient-to-br from-black via-indigo-900/20 to-black">
         {/* Hero Section */}
-        <section className="relative py-20 px-4 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 via-purple-500/10 to-indigo-500/10"></div>
-          <div className="relative z-10 max-w-7xl mx-auto text-center">
-            <div className="mb-8">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 border border-indigo-500/30 rounded-full text-indigo-300 text-sm mb-6">
-                <Rocket className="w-4 h-4" />
-                Revolutionary 2040 Technology
+        <section className="relative pt-32 pb-20 px-4">
+          <div className="max-w-7xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-sm font-medium mb-6">
+                <Rocket className="w-4 h-4 mr-2" />
+                Revolutionary Space Technology
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
-                  Space Resource Intelligence
+              
+              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+                Space Resource Intelligence
+                <span className="block bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">
+                  2040
                 </span>
-                <br />
-                <span className="text-white">2040</span>
               </h1>
+              
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
-                Revolutionize space exploration and resource management with our AI-powered space intelligence platform, 
-                enabling sustainable space colonization and resource extraction.
+                Explore the final frontier with AI-powered space resource intelligence, 
+                enabling sustainable resource extraction and space exploration beyond imagination.
               </p>
+              
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold rounded-xl hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
-                  Explore Space Intelligence
-                </button>
-                <button className="px-8 py-4 border-2 border-indigo-400 text-indigo-400 font-semibold rounded-xl hover:bg-indigo-400 hover:text-black transition-all duration-300">
+                <a
+                  href="/contact"
+                  className="px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold rounded-xl hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-indigo-500/25"
+                >
+                  Get Started
+                </a>
+                <a
+                  href="/space-tech"
+                  className="px-8 py-4 border-2 border-indigo-400 text-indigo-400 font-semibold rounded-xl hover:bg-indigo-400 hover:text-black transition-all duration-300"
+                >
                   Learn More
-                </button>
+                </a>
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
 
-        {/* Features Grid */}
+        {/* Features Section */}
         <section className="py-20 px-4">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Revolutionary Space Intelligence Features
+                Revolutionary Features
               </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Our space resource intelligence platform combines cutting-edge AI with advanced space technology, 
-                creating unprecedented capabilities for space exploration and resource management.
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Our space resource intelligence platform delivers unprecedented capabilities 
+                that redefine what's possible in space exploration and resource utilization.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: <Rocket className="w-8 h-8" />,
-                  title: "Autonomous Space Exploration",
-                  description: "AI-driven spacecraft and probes that autonomously explore and map celestial bodies.",
-                  color: "from-indigo-500 to-purple-500"
-                },
-                {
-                  icon: <Satellite className="w-8 h-8" />,
-                  title: "Resource Mapping & Analysis",
-                  description: "Advanced scanning and analysis of space resources for optimal extraction planning.",
-                  color: "from-blue-500 to-cyan-500"
-                },
-                {
-                  icon: <Brain className="w-8 h-8" />,
-                  title: "AI Resource Optimization",
-                  description: "Intelligent algorithms for maximizing resource extraction efficiency and sustainability.",
-                  color: "from-green-500 to-emerald-500"
-                },
-                {
-                  icon: <Globe className="w-8 h-8" />,
-                  title: "Space Colony Planning",
-                  description: "Comprehensive planning and management systems for sustainable space colonization.",
-                  color: "from-yellow-500 to-orange-500"
-                },
-                {
-                  icon: <Zap className="w-8 h-8" />,
-                  title: "Real-time Monitoring",
-                  description: "Continuous monitoring and control of space operations and resource extraction.",
-                  color: "from-red-500 to-pink-500"
-                },
-                {
-                  icon: <Target className="w-8 h-8" />,
-                  title: "Precision Resource Extraction",
-                  description: "Advanced robotics and AI systems for precise and safe resource extraction.",
-                  color: "from-teal-500 to-blue-500"
-                }
-              ].map((feature, index) => (
-                <div key={index} className="group p-8 bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 rounded-2xl hover:border-indigo-500/50 transition-all duration-300 hover:transform hover:scale-105">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${feature.color} p-4 mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                    {feature.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-4">{feature.title}</h3>
-                  <p className="text-gray-400">{feature.description}</p>
-                </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {features.map((feature, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300"
+                >
+                  <div className="mb-4">{feature.icon}</div>
+                  <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
+                  <p className="text-gray-300">{feature.description}</p>
+                </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Technology Stack */}
-        <section className="py-20 px-4 bg-gradient-to-r from-gray-900/50 to-black/50">
+        {/* Benefits Section */}
+        <section className="py-20 px-4 bg-gradient-to-r from-indigo-900/20 to-purple-900/20">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Advanced Space Technology Stack
+                Why Choose Space Resource Intelligence?
               </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Built on the most advanced space technologies available in 2040, ensuring reliable and efficient space operations.
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Experience the transformative power of AI-driven space technology that 
+                opens up unlimited possibilities for resource exploration and utilization.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                "Quantum Space Communications",
-                "AI-Powered Navigation Systems",
-                "Advanced Propulsion Technology",
-                "Resource Detection Sensors",
-                "Autonomous Robotics Systems",
-                "Space Weather Monitoring",
-                "Sustainable Life Support",
-                "Resource Processing Units"
-              ].map((tech, index) => (
-                <div key={index} className="flex items-center gap-3 p-4 bg-gray-800/30 border border-gray-700/30 rounded-xl">
-                  <CheckCircle className="w-5 h-5 text-green-400" />
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {benefits.map((benefit, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  className="flex items-start space-x-4"
+                >
+                  <CheckCircle className="w-6 h-6 text-green-400 mt-1 flex-shrink-0" />
+                  <span className="text-lg text-white">{benefit}</span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Applications Section */}
+        <section className="py-20 px-4">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Real-World Applications
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Discover how space resource intelligence is revolutionizing space exploration 
+                and creating new economic opportunities beyond Earth.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {applications.map((application, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300"
+                >
+                  <div className="mb-4 text-indigo-400">{application.icon}</div>
+                  <h3 className="text-xl font-semibold text-white mb-3">{application.title}</h3>
+                  <p className="text-gray-300">{application.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Technology Stack Section */}
+        <section className="py-20 px-4 bg-gradient-to-r from-purple-900/20 to-indigo-900/20">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Advanced Technology Stack
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Built on the most cutting-edge space technologies available in 2040, 
+                ensuring unparalleled space exploration and resource utilization capabilities.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {technologyStack.map((tech, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  className="flex items-center gap-3 p-4 bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl"
+                >
+                  <CheckCircle className="w-5 h-5 text-indigo-400" />
                   <span className="text-gray-300">{tech}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Use Cases */}
-        <section className="py-20 px-4">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Revolutionary Space Applications
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Our space resource intelligence platform enables breakthrough applications across space exploration and colonization.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "Asteroid Mining",
-                  description: "Intelligent extraction of valuable minerals and resources from near-Earth asteroids.",
-                  icon: "☄️"
-                },
-                {
-                  title: "Lunar Colonization",
-                  description: "Comprehensive planning and management of sustainable lunar settlements.",
-                  icon: "🌙"
-                },
-                {
-                  title: "Mars Exploration",
-                  description: "Advanced AI systems for Mars resource mapping and colony planning.",
-                  icon: "🔴"
-                },
-                {
-                  title: "Space Manufacturing",
-                  description: "In-space production facilities using local resources and AI optimization.",
-                  icon: "🏭"
-                },
-                {
-                  title: "Resource Transportation",
-                  description: "Efficient logistics systems for moving resources between space locations.",
-                  icon: "🚀"
-                },
-                {
-                  title: "Space Tourism",
-                  description: "AI-enhanced experiences for space tourism and exploration missions.",
-                  icon: "👨‍🚀"
-                }
-              ].map((useCase, index) => (
-                <div key={index} className="p-8 bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 rounded-2xl hover:border-indigo-500/50 transition-all duration-300">
-                  <div className="text-4xl mb-4">{useCase.icon}</div>
-                  <h3 className="text-xl font-semibold text-white mb-4">{useCase.title}</h3>
-                  <p className="text-gray-400">{useCase.description}</p>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -192,23 +259,39 @@ export default function SpaceResourceIntelligence2040() {
         {/* CTA Section */}
         <section className="py-20 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Explore Space Intelligence?
-            </h2>
-            <p className="text-xl text-gray-400 mb-8">
-              Join us in the space exploration revolution and experience the future of space resource management.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold rounded-xl hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
-                Get Started Today
-              </button>
-              <button className="px-8 py-4 border-2 border-indigo-400 text-indigo-400 font-semibold rounded-xl hover:bg-indigo-400 hover:text-black transition-all duration-300">
-                Schedule Demo
-              </button>
-            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to Explore Space?
+              </h2>
+              <p className="text-xl text-gray-300 mb-8">
+                Join the space revolution and discover what's possible when 
+                AI meets space exploration and resource intelligence.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="/contact"
+                  className="px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold rounded-xl hover:from-indigo-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-indigo-500/25"
+                >
+                  Start Your Journey
+                </a>
+                <a
+                  href="/space-tech"
+                  className="px-8 py-4 border-2 border-indigo-400 text-indigo-400 font-semibold rounded-xl hover:bg-indigo-400 hover:text-black transition-all duration-300"
+                >
+                  Explore All Space Services
+                </a>
+              </div>
+            </motion.div>
           </div>
         </section>
       </div>
     </Layout>
   );
-}
+};
+
+export default SpaceResourceIntelligence2040;

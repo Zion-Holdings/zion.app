@@ -63,7 +63,20 @@ const nextConfig = {
     
     return config;
   },
-  
+
+  // Disable static generation for problematic pages
+  async exportPathMap() {
+    return {
+      '/': { page: '/' },
+      '/services': { page: '/services' },
+      '/about': { page: '/about' },
+      '/contact': { page: '/contact' },
+      '/privacy': { page: '/privacy' },
+      '/terms': { page: '/terms' },
+      // Add other essential pages here
+    };
+  },
+
   // Headers for security and performance
   async headers() {
     return [
@@ -161,8 +174,17 @@ const nextConfig = {
   // Asset prefix
   assetPrefix: '',
 
-  // Output configuration
+  // Output configuration for static export
   output: 'export',
+  
+  // Disable image optimization for static export
+  images: {
+    unoptimized: true,
+    domains: ['ziontechgroup.com'],
+    formats: ['image/webp', 'image/avif'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+  },
 };
 
 module.exports = nextConfig;

@@ -10,10 +10,16 @@ const STATIC_FILES = [
   '/',
   '/offline.html',
   '/manifest.json',
-  '/icons/icon-192x192.png',
-  '/icons/icon-512x512.png',
-  '/css/main.css',
-  '/js/main.js'
+  '/favicon.ico',
+  '/images/logo.png',
+  '/fonts/inter-var.woff2'
+];
+
+// API endpoints to cache
+const API_CACHE = [
+  '/api/services',
+  '/api/health',
+  '/api/analytics'
 ];
 
 // Install event - cache static files
@@ -53,7 +59,7 @@ self.addEventListener('activate', (event) => {
         );
       })
       .then(() => {
-        console.log('Service Worker activated');
+        console.log('Service worker activated');
         return self.clients.claim();
       })
   );
@@ -76,97 +82,92 @@ self.addEventListener('fetch', (event) => {
   
   // Handle different types of requests
   if (request.destination === 'document') {
-    // HTML pages - try network first, fallback to cache
+    // HTML pages - try cache first, then network
     event.respondWith(
-      fetch(request)
+      caches.match(request)
         .then((response) => {
-          // Clone the response before caching
-          const responseClone = response.clone();
-          
-          // Cache successful responses
-          if (response.status === 200) {
-            caches.open(DYNAMIC_CACHE)
-              .then((cache) => {
-                cache.put(request, responseClone);
-              });
-          }
-          
-          return response;
-        })
-        .catch(() => {
-          // Network failed, try cache
-          return caches.match(request)
-            .then((cachedResponse) => {
-              if (cachedResponse) {
-                return cachedResponse;
+          if (response) {
+            // Return cached version and update in background
+            fetch(request).then((freshResponse) => {
+              if (freshResponse.status === 200) {
+                caches.open(DYNAMIC_CACHE).then((cache) => {
+                  cache.put(request, freshResponse);
+                });
               }
-              
-              // If no cached version, return offline page
+            });
+            return response;
+          }
+          return fetch(request)
+            .then((response) => {
+              if (response.status === 200) {
+                const responseClone = response.clone();
+                caches.open(DYNAMIC_CACHE).then((cache) => {
+                  cache.put(request, responseClone);
+                });
+              }
+              return response;
+            })
+            .catch(() => {
+              // Return offline page if network fails
               return caches.match('/offline.html');
             });
         })
     );
-  } else if (request.destination === 'image') {
-    // Images - cache first, then network
+  } else if (request.destination === 'image' || request.destination === 'font') {
+    // Images and fonts - cache first strategy
     event.respondWith(
       caches.match(request)
-        .then((cachedResponse) => {
-          if (cachedResponse) {
-            return cachedResponse;
+        .then((response) => {
+          if (response) {
+            return response;
           }
-          
           return fetch(request)
             .then((response) => {
               if (response.status === 200) {
                 const responseClone = response.clone();
-                caches.open(DYNAMIC_CACHE)
-                  .then((cache) => {
-                    cache.put(request, responseClone);
-                  });
+                caches.open(DYNAMIC_CACHE).then((cache) => {
+                  cache.put(request, responseClone);
+                });
               }
               return response;
             });
         })
     );
-  } else if (request.destination === 'style' || request.destination === 'script') {
-    // CSS and JS - cache first, then network
-    event.respondWith(
-      caches.match(request)
-        .then((cachedResponse) => {
-          if (cachedResponse) {
-            return cachedResponse;
-          }
-          
-          return fetch(request)
-            .then((response) => {
-              if (response.status === 200) {
-                const responseClone = response.clone();
-                caches.open(DYNAMIC_CACHE)
-                  .then((cache) => {
-                    cache.put(request, responseClone);
-                  });
-              }
-              return response;
-            });
-        })
-    );
-  } else {
-    // Other resources - network first, fallback to cache
+  } else if (url.pathname.startsWith('/api/')) {
+    // API requests - network first, then cache
     event.respondWith(
       fetch(request)
         .then((response) => {
           if (response.status === 200) {
             const responseClone = response.clone();
-            caches.open(DYNAMIC_CACHE)
-              .then((cache) => {
-                cache.put(request, responseClone);
-              });
+            caches.open(DYNAMIC_CACHE).then((cache) => {
+              cache.put(request, responseClone);
+            });
           }
           return response;
         })
         .catch(() => {
+          // Return cached version if network fails
           return caches.match(request);
         })
+    );
+  } else {
+    // Other resources - try cache first, then network
+    event.respondWith(
+      caches.match(request)
+        .then((response) => {
+          return response || fetch(request);
+        })
+    );
+  }
+});
+
+// Background sync for offline actions
+self.addEventListener('sync', (event) => {
+  if (event.tag === 'background-sync') {
+    event.waitUntil(
+      // Perform background sync tasks
+      console.log('Background sync triggered')
     );
   }
 });
@@ -205,9 +206,9 @@ self.addEventListener('push', (event) => {
   console.log('Push notification received');
   
   const options = {
-    body: event.data ? event.data.text() : 'New notification from Zion Tech Group',
-    icon: '/icons/icon-192x192.png',
-    badge: '/icons/icon-192x192.png',
+    body: event.data ? event.data.text() : 'New update available',
+    icon: '/images/logo.png',
+    badge: '/images/badge.png',
     vibrate: [100, 50, 100],
     data: {
       dateOfArrival: Date.now(),
@@ -217,12 +218,12 @@ self.addEventListener('push', (event) => {
       {
         action: 'explore',
         title: 'Explore',
-        icon: '/icons/icon-192x192.png'
+        icon: '/images/explore.png'
       },
       {
         action: 'close',
         title: 'Close',
-        icon: '/icons/icon-192x192.png'
+        icon: '/images/close.png'
       }
     ]
   };
@@ -239,13 +240,6 @@ self.addEventListener('notificationclick', (event) => {
   event.notification.close();
   
   if (event.action === 'explore') {
-    event.waitUntil(
-      clients.openWindow('/')
-    );
-  } else if (event.action === 'close') {
-    // Just close the notification
-  } else {
-    // Default action - open the app
     event.waitUntil(
       clients.openWindow('/')
     );
@@ -304,11 +298,10 @@ self.addEventListener('message', (event) => {
 
 // Error handling
 self.addEventListener('error', (event) => {
-  console.error('Service Worker error:', event.error);
+  console.error('Service worker error:', event.error);
 });
 
+// Unhandled rejection handling
 self.addEventListener('unhandledrejection', (event) => {
-  console.error('Service Worker unhandled rejection:', event.reason);
+  console.error('Service worker unhandled rejection:', event.reason);
 });
-
-console.log('Service Worker loaded successfully');

@@ -7,6 +7,7 @@
     "buildBreakingFiles": 1,
     "canBuild": false
   },
+<<<<<<< HEAD
   "results": [
     {
       "file": "pages/services-enhanced.tsx",
@@ -48,4 +49,9 @@
     "pages/services-enhanced.tsx"
   ],
   "generatedAt": "2025-08-21T00:58:31.338Z"
+=======
+  "results": [],
+  "buildBreakingFiles": [],
+  "generatedAt": "2025-08-21T03:41:49.504Z"
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-4bf6
 }

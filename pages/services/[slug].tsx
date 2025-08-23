@@ -139,16 +139,31 @@ export async function getStaticPaths() {
 	const services = getAllServices();
 	const slugs = new Set<string>();
 
+	// Define static service slugs that should not be handled by this dynamic route
+	const staticServiceSlugs = [
+		'ai-evaluation-orchestrator',
+		'ai-support-triage-router', 
+		'ai-code-review-assistant-pro',
+		'ai-revenue-forecasting-copilot'
+	];
+
 	for (const s of services) {
 		// Prefer explicit link under /services/* when available
 		const fromLink = s.link ? extractServiceSlugFromLink(s.link) : null;
-		if (fromLink) {
+		if (fromLink && !staticServiceSlugs.includes(fromLink)) {
 			slugs.add(fromLink);
 			continue;
 		}
 		// Fall back to normalized id or name to provide a stable URL under /services/*
-		if (s.id) slugs.add(toSlug(s.id));
-		else if (s.name) slugs.add(toSlug(s.name));
+		const idSlug = s.id ? toSlug(s.id) : '';
+		const nameSlug = s.name ? toSlug(s.name) : '';
+		
+		if (idSlug && !staticServiceSlugs.includes(idSlug)) {
+			slugs.add(idSlug);
+		}
+		if (nameSlug && !staticServiceSlugs.includes(nameSlug)) {
+			slugs.add(nameSlug);
+		}
 	}
 
 	return {
@@ -270,7 +285,13 @@ export default function ServiceDetailPage({ service }: { service: Service }) {
 					<div className="space-y-6">
 						<Card className="p-6 bg-black/40 border border-gray-700/50">
 							<div className="text-sm text-gray-400 mb-1">Pricing</div>
-							<div className="text-3xl font-bold text-white">{service.price}<span className="text-base font-medium text-gray-400">{service.period}</span></div>
+							<div className="text-3xl font-bold text-white">
+								{typeof service.price === 'string' ? service.price : 
+								 (typeof service.price === 'object' && service.price && 'monthly' in service.price) ? 
+								 `$${(service.price as any).monthly}/month` : 
+								 'Contact for pricing'}
+								<span className="text-base font-medium text-gray-400">{service.period}</span>
+							</div>
 							<div className="text-sm text-gray-400 mt-2">Trial: {service.trialDays || 14} days • Setup: {service.setupTime || 'Fast'} • Competitors: {(service.competitors || []).slice(0,3).join(', ')}</div>
 							<div className="mt-6 flex gap-3">
 								<Button href="/contact" className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-600 text-white">Contact Sales</Button>

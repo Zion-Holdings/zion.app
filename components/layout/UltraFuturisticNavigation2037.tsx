@@ -46,7 +46,68 @@ function normalizeHref(href: string): string {
 
 const navigationItems: NavigationItem[] = [
   {
-    name: 'AI & Machine Learning',
+    name: 'Micro SAAS Services',
+    href: '/services',
+    icon: <Rocket className="w-5 h-5" />,
+    description: 'Innovative business solutions',
+    badge: 'New',
+    category: 'services',
+    color: 'from-emerald-500 to-cyan-500',
+    children: [
+      { 
+        name: 'All Services', 
+        href: '/services', 
+        description: 'Complete services overview',
+        icon: <Grid className="w-4 h-4" />,
+        featured: true
+      },
+      { 
+        name: '2041 Futuristic Services', 
+        href: '/2041-futuristic-services-showcase', 
+        description: 'Revolutionary 2041 technology',
+        icon: <Rocket className="w-4 h-4" />,
+        color: 'from-cyan-500 to-purple-500',
+        featured: true
+      },
+      { 
+        name: 'AI & Consciousness', 
+        href: '/ai-services', 
+        description: 'Advanced AI solutions',
+        icon: <Brain className="w-4 h-4" />,
+        color: 'from-purple-500 to-pink-500'
+      },
+      { 
+        name: 'Quantum Technology', 
+        href: '/quantum-services', 
+        description: 'Quantum computing solutions',
+        icon: <Atom className="w-4 h-4" />,
+        color: 'from-blue-500 to-cyan-500'
+      },
+      { 
+        name: 'Space Technology', 
+        href: '/space-technology', 
+        description: 'Space exploration solutions',
+        icon: <Rocket className="w-4 h-4" />,
+        color: 'from-indigo-500 to-purple-500'
+      },
+      { 
+        name: 'IT Solutions', 
+        href: '/it-services', 
+        description: 'Enterprise IT infrastructure',
+        icon: <Cpu className="w-4 h-4" />,
+        color: 'from-orange-500 to-red-500'
+      },
+      { 
+        name: 'Specialized Solutions', 
+        href: '/solutions', 
+        description: 'Industry-specific solutions',
+        icon: <Target className="w-4 h-4" />,
+        color: 'from-green-500 to-emerald-500'
+      }
+    ]
+  },
+  {
+    name: 'AI Services',
     href: '/ai-services',
     icon: <BrainIcon className="w-5 h-5" />,
     description: 'Advanced AI solutions',
