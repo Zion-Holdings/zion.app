@@ -11,6 +11,8 @@
 
 [[plugins]]
   package = "netlify-plugin-cloudinary"
+<<<<<<< HEAD
+=======
 
 [[plugins]]
   package = "./netlify/plugins/run-functions-and-rerun"
@@ -298,3 +300,4 @@
 [[scheduled.functions]]
   name = "autonomous-master-orchestrator"
   schedule = "*/1 * * * *"
+>>>>>>> origin/cursor/develop-autonomous-cloud-agents-for-automation-orchestration-2dcc
