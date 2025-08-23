@@ -1,65 +1,65 @@
 import React from 'react';
 import Layout from '../../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { Cpu, Sparkles, Zap, Target, Users, Award, Clock, CheckCircle, Settings, Factory } from 'lucide-react';
+import { Users, Sparkles, Zap, Target, Award, Clock, CheckCircle, BookOpen, GraduationCap } from 'lucide-react';
 import Link from 'next/link';
 
-const ManufacturingSolutionsPage: React.FC = () => {
+const EducationSolutionsPage: React.FC = () => {
   const solutions = [
     {
-      name: 'AI-Powered Manufacturing Intelligence 2045',
-      description: 'Advanced AI manufacturing optimization with consciousness and predictive analytics',
-      href: '/ai-powered-manufacturing-intelligence-2045',
-      icon: Factory,
-      color: 'from-blue-500 to-indigo-500'
-    },
-    {
-      name: 'Quantum Manufacturing Platform 2045',
-      description: 'Quantum-powered manufacturing with consciousness and AI integration',
-      href: '/quantum-manufacturing-platform-2045',
-      icon: Cpu,
+      name: 'AI-Powered Learning Intelligence 2045',
+      description: 'Advanced AI learning optimization with consciousness and personalized education',
+      href: '/ai-powered-learning-intelligence-2045',
+      icon: BookOpen,
       color: 'from-indigo-500 to-purple-500'
     },
     {
-      name: 'Autonomous Production AI 2045',
-      description: 'Fully autonomous AI production management with consciousness',
-      href: '/autonomous-production-ai-2045',
-      icon: Settings,
-      color: 'from-purple-500 to-blue-500'
+      name: 'Quantum Education Platform 2045',
+      description: 'Quantum-powered education with consciousness and AI integration',
+      href: '/quantum-education-platform-2045',
+      icon: GraduationCap,
+      color: 'from-purple-500 to-pink-500'
     },
     {
-      name: 'Smart Factory Intelligence 2045',
-      description: 'AI-powered smart factory with consciousness and IoT integration',
-      href: '/smart-factory-intelligence-2045',
+      name: 'Autonomous Learning AI 2045',
+      description: 'Fully autonomous AI learning management with consciousness',
+      href: '/autonomous-learning-ai-2045',
+      icon: Users,
+      color: 'from-pink-500 to-red-500'
+    },
+    {
+      name: 'Personalized Education Intelligence 2045',
+      description: 'AI-powered personalized learning with consciousness and student insights',
+      href: '/personalized-education-intelligence-2045',
       icon: Sparkles,
-      color: 'from-blue-500 to-cyan-500'
+      color: 'from-red-500 to-orange-500'
     }
   ];
 
   const features = [
-    { icon: Factory, title: "Smart Manufacturing", description: "Intelligent production systems" },
-    { icon: Cpu, title: "Quantum Computing", description: "Quantum-powered optimization" },
-    { icon: Settings, title: "Autonomous AI", description: "Self-governing production" },
-    { icon: Zap, title: "IoT Integration", description: "Connected factory systems" }
+    { icon: BookOpen, title: "Smart Learning", description: "Intelligent education systems" },
+    { icon: GraduationCap, title: "Quantum Education", description: "Quantum-powered learning" },
+    { icon: Users, title: "Autonomous AI", description: "Self-managing education" },
+    { icon: Zap, title: "Personalization", description: "Individualized learning experiences" }
   ];
 
   const stats = [
-    { number: "500%", label: "Efficiency Gain", icon: Zap },
-    { number: "99.9%", label: "Quality Rate", icon: CheckCircle },
-    { number: "24/7", label: "Operation", icon: Clock },
-    { number: "100+", label: "Factories", icon: Factory }
+    { number: "400%", label: "Learning Efficiency", icon: Zap },
+    { number: "99.9%", label: "Student Success", icon: CheckCircle },
+    { number: "24/7", label: "Availability", icon: Clock },
+    { number: "500+", label: "Educational Partners", icon: Users }
   ];
 
   return (
     <Layout 
-      title="Manufacturing Solutions - Zion Tech Group"
-      description="Revolutionary manufacturing solutions with AI consciousness, quantum computing, and autonomous production intelligence. Leading the future of smart manufacturing."
-      keywords="manufacturing solutions, AI manufacturing, quantum manufacturing, autonomous production, smart factory, Zion Tech Group"
+      title="Education Solutions - Zion Tech Group"
+      description="Revolutionary education solutions with AI consciousness, quantum learning, and autonomous education intelligence. Leading the future of edtech innovation."
+      keywords="education solutions, edtech, AI learning, quantum education, autonomous learning, personalized education, Zion Tech Group"
     >
       <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
         {/* Hero Section */}
         <section className="relative pt-32 pb-20 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-indigo-900/20"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/20 to-purple-900/20"></div>
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -67,26 +67,26 @@ const ManufacturingSolutionsPage: React.FC = () => {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-                Manufacturing
-                <span className="block bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+                Education
+                <span className="block bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
                   Revolution Platform
                 </span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-                Pioneering the future of manufacturing with AI consciousness, quantum computing, 
-                and autonomous production intelligence for unprecedented efficiency.
+                Pioneering the future of education with AI consciousness, quantum learning, 
+                and autonomous education intelligence for unprecedented student success.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link 
                   href="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-semibold rounded-full hover:from-blue-600 hover:to-indigo-600 transition-all duration-300 transform hover:scale-105"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold rounded-full hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105"
                 >
-                  Transform Manufacturing
-                  <Factory className="w-5 h-5 ml-2" />
+                  Transform Education
+                  <GraduationCap className="w-5 h-5 ml-2" />
                 </Link>
                 <Link 
                   href="/solutions"
-                  className="inline-flex items-center px-8 py-4 border-2 border-blue-500 text-blue-400 font-semibold rounded-full hover:bg-blue-500 hover:text-white transition-all duration-300"
+                  className="inline-flex items-center px-8 py-4 border-2 border-indigo-500 text-indigo-400 font-semibold rounded-full hover:bg-indigo-500 hover:text-white transition-all duration-300"
                 >
                   Explore All Solutions
                 </Link>
@@ -106,11 +106,11 @@ const ManufacturingSolutionsPage: React.FC = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Revolutionary Manufacturing Capabilities
+                Revolutionary Education Capabilities
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Our manufacturing platform delivers unprecedented capabilities with AI consciousness, 
-                quantum computing, and autonomous production management.
+                Our education platform delivers unprecedented capabilities with AI consciousness, 
+                quantum learning, and autonomous education management.
               </p>
             </motion.div>
 
@@ -122,9 +122,9 @@ const ManufacturingSolutionsPage: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl rounded-2xl p-6 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300"
+                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl rounded-2xl p-6 border border-gray-700/50 hover:border-indigo-500/50 transition-all duration-300"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center mb-4">
+                  <div className="w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center mb-4">
                     <feature.icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
@@ -146,10 +146,10 @@ const ManufacturingSolutionsPage: React.FC = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Our Manufacturing Solutions
+                Our Education Solutions
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Discover our comprehensive suite of AI-powered manufacturing and production solutions.
+                Discover our comprehensive suite of AI-powered education and learning solutions.
               </p>
             </motion.div>
 
@@ -164,19 +164,19 @@ const ManufacturingSolutionsPage: React.FC = () => {
                   className="group"
                 >
                   <Link href={solution.href}>
-                    <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl rounded-2xl p-8 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 group-hover:scale-105">
+                    <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl rounded-2xl p-8 border border-gray-700/50 hover:border-indigo-500/50 transition-all duration-300 group-hover:scale-105">
                       <div className={`w-20 h-20 bg-gradient-to-r ${solution.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                         <solution.icon className="w-10 h-10 text-white" />
                       </div>
-                      <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors duration-300">
+                      <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-indigo-400 transition-colors duration-300">
                         {solution.name}
                       </h3>
                       <p className="text-gray-400 text-lg leading-relaxed">
                         {solution.description}
                       </p>
-                      <div className="mt-6 flex items-center text-blue-400 group-hover:text-blue-300 transition-colors duration-300">
+                      <div className="mt-6 flex items-center text-indigo-400 group-hover:text-indigo-300 transition-colors duration-300">
                         <span className="font-semibold">Learn More</span>
-                        <Factory className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                        <GraduationCap className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                       </div>
                     </div>
                   </Link>
@@ -199,7 +199,7 @@ const ManufacturingSolutionsPage: React.FC = () => {
                   viewport={{ once: true }}
                   className="text-center"
                 >
-                  <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <div className="w-20 h-20 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
                     <stat.icon className="w-10 h-10 text-white" />
                   </div>
                   <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.number}</div>
@@ -220,23 +220,23 @@ const ManufacturingSolutionsPage: React.FC = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Ready to Transform Manufacturing?
+                Ready to Transform Education?
               </h2>
               <p className="text-xl text-gray-400 mb-8">
-                Join the manufacturing revolution with AI consciousness and quantum computing. 
-                Transform your production with the future of smart manufacturing.
+                Join the education revolution with AI consciousness and quantum learning. 
+                Transform learning with the future of edtech innovation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link 
                   href="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-semibold rounded-full hover:from-blue-600 hover:to-indigo-600 transition-all duration-300 transform hover:scale-105"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-500 text-white font-semibold rounded-full hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105"
                 >
-                  Transform Manufacturing
-                  <Factory className="w-5 h-5 ml-2" />
+                  Transform Education
+                  <GraduationCap className="w-5 h-5 ml-2" />
                 </Link>
                 <Link 
                   href="/solutions"
-                  className="inline-flex items-center px-8 py-4 border-2 border-blue-500 text-blue-400 font-semibold rounded-full hover:bg-blue-500 hover:text-white transition-all duration-300"
+                  className="inline-flex items-center px-8 py-4 border-2 border-indigo-500 text-indigo-400 font-semibold rounded-full hover:bg-indigo-500 hover:text-white transition-all duration-300"
                 >
                   Explore All Solutions
                 </Link>
@@ -249,4 +249,4 @@ const ManufacturingSolutionsPage: React.FC = () => {
   );
 };
 
-export default ManufacturingSolutionsPage;
+export default EducationSolutionsPage;
