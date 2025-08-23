@@ -19,7 +19,7 @@ export default function ZeroTrustSecurityPlatform() {
 				"Reference architectures and runbooks"
 			]}
 			industries={["Financial Services", "Healthcare", "SaaS", "Government"]}
-			canonical="https://ziontechgroup.com/zero-trust-security-platform"
+			url="https://ziontechgroup.com/zero-trust-security-platform"
 		/>
 	);
 }

@@ -19,7 +19,7 @@ export default function AiSupplyChainOptimization() {
 				"What-if simulations"
 			]}
 			industries={["Retail", "Manufacturing", "CPG", "Logistics"]}
-			canonical="https://ziontechgroup.com/ai-supply-chain-optimization"
+			url="https://ziontechgroup.com/ai-supply-chain-optimization"
 		/>
 	);
 }

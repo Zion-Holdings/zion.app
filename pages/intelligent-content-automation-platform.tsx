@@ -19,7 +19,7 @@ export default function IntelligentContentAutomationPlatform() {
 				"CMS integrations and scheduling"
 			]}
 			industries={["Marketing", "Agencies", "E-commerce", "Media"]}
-			canonical="https://ziontechgroup.com/intelligent-content-automation-platform"
+			url="https://ziontechgroup.com/intelligent-content-automation-platform"
 		/>
 	);
 }

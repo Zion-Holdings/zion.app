@@ -19,7 +19,7 @@ export default function IntelligentHrAnalyticsPlatform() {
 				"Privacy-preserving data pipelines"
 			]}
 			industries={["Enterprise", "Mid-market", "Healthcare", "Financial Services", "Manufacturing"]}
-			canonical="https://ziontechgroup.com/intelligent-hr-analytics-platform"
+			url="https://ziontechgroup.com/intelligent-hr-analytics-platform"
 		/>
 	);
 }

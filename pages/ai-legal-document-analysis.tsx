@@ -19,7 +19,7 @@ export default function AiLegalDocumentAnalysis() {
 				"Audit trails and redlines"
 			]}
 			industries={["Legal", "Enterprise", "Procurement", "Compliance"]}
-			canonical="https://ziontechgroup.com/ai-legal-document-analysis"
+			url="https://ziontechgroup.com/ai-legal-document-analysis"
 		/>
 	);
 }

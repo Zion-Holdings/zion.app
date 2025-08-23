@@ -19,7 +19,7 @@ export default function SeoAutomationSuite() {
 				"Weekly reports with prioritized fixes"
 			]}
 			industries={["E-commerce", "B2B SaaS", "Publishers"]}
-			canonical="https://ziontechgroup.com/seo-automation-suite"
+			url="https://ziontechgroup.com/seo-automation-suite"
 		/>
 	);
 }

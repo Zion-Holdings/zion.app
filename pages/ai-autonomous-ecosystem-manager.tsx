@@ -19,7 +19,7 @@ export default function AiAutonomousEcosystemManager() {
 				"Secure secrets and environment isolation"
 			]}
 			industries={["Operations", "R&D", "Customer Service"]}
-			canonical="https://ziontechgroup.com/ai-autonomous-ecosystem-manager"
+			url="https://ziontechgroup.com/ai-autonomous-ecosystem-manager"
 		/>
 	);
 }

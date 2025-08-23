@@ -19,7 +19,7 @@ export default function AiManufacturingOptimization() {
 				"Factory analytics dashboards"
 			]}
 			industries={["Manufacturing", "Industrial", "Automotive", "Electronics"]}
-			canonical="https://ziontechgroup.com/ai-manufacturing-optimization"
+			url="https://ziontechgroup.com/ai-manufacturing-optimization"
 		/>
 	);
 }

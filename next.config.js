@@ -3,24 +3,26 @@ const nextConfig = {
   // Enable React strict mode for better development experience
   reactStrictMode: true,
   
-  // Enable experimental features for better performance
-  experimental: {
-    // Enable modern JavaScript features
-    esmExternals: true,
-    
-    // Enable optimized package imports
-    optimizePackageImports: ['framer-motion', 'lucide-react'],
-  },
-
-  // Image optimization
+  // Optimize images with modern formats
   images: {
-    domains: ['ziontechgroup.com'],
     formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 60,
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
-
-  // Webpack configuration for performance
+  
+  // Enable experimental features for better performance
+  experimental: {
+    optimizeCss: true,
+    optimizePackageImports: ['lucide-react', 'framer-motion'],
+    serverActions: {
+      allowedOrigins: ['ziontechgroup.com', 'localhost:3000'],
+    },
+  },
+  
+  // Webpack optimizations
   webpack: (config, { dev, isServer }) => {
     // Optimize bundle splitting
     if (!dev && !isServer) {
@@ -41,30 +43,48 @@ const nextConfig = {
         },
       };
     }
-
-    // Optimize for production
-    if (!dev) {
-      config.optimization.minimize = true;
-      config.optimization.minimizer = config.optimization.minimizer || [];
-    }
-
+    
+    // Optimize SVG handling
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+    
     return config;
   },
-
-  // Headers for security and performance
+  
+  // Enable compression
+  compress: true,
+  
+  // Enable powered by header removal
+  poweredByHeader: false,
+  
+  // Optimize bundle analyzer
+  ...(process.env.ANALYZE === 'true' && {
+    webpack: (config) => {
+      config.plugins.push(
+        new (require('webpack-bundle-analyzer').BundleAnalyzerPlugin)({
+          analyzerMode: 'static',
+          openAnalyzer: false,
+        })
+      );
+      return config;
+    },
+  }),
+  
+  // Enable PWA features
   async headers() {
     return [
       {
         source: '/(.*)',
         headers: [
-          // Security headers
-          {
-            key: 'X-Frame-Options',
-            value: 'DENY',
-          },
           {
             key: 'X-Content-Type-Options',
             value: 'nosniff',
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'DENY',
           },
           {
             key: 'X-XSS-Protection',
@@ -78,12 +98,6 @@ const nextConfig = {
             key: 'Permissions-Policy',
             value: 'camera=(), microphone=(), geolocation=()',
           },
-          
-          // Performance headers
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
         ],
       },
       {
@@ -91,23 +105,14 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'no-cache, no-store, must-revalidate',
-          },
-        ],
-      },
-      {
-        source: '/(.*).(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot)',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
+            value: 'public, max-age=3600, stale-while-revalidate=86400',
           },
         ],
       },
     ];
   },
-
-  // Redirects for better SEO
+  
+  // Enable redirects for better SEO
   async redirects() {
     return [
       {
@@ -116,49 +121,31 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: '/index.html',
-        destination: '/',
+        source: '/about-us',
+        destination: '/mission',
         permanent: true,
       },
     ];
   },
-
-  // Rewrites for API routes
+  
+  // Enable rewrites for dynamic routes
   async rewrites() {
     return [
       {
-        source: '/api/analytics',
-        destination: '/api/analytics',
-      },
-      {
-        source: '/api/error-reporting',
-        destination: '/api/error-reporting',
+        source: '/services/:category',
+        destination: '/services?category=:category',
       },
     ];
   },
-
-  // Environment variables
-  env: {
-    CUSTOM_KEY: process.env.CUSTOM_KEY,
-  },
-
-  // Compression
-  compress: true,
-
-  // Powered by header
-  poweredByHeader: false,
-
-  // Trailing slash
+  
+  // Enable trailing slash for better SEO
   trailingSlash: false,
-
-  // Base path
-  basePath: '',
-
-  // Asset prefix
-  assetPrefix: '',
-
-  // Output configuration
-  output: 'standalone',
+  
+  // Enable i18n for internationalization
+  i18n: {
+    locales: ['en'],
+    defaultLocale: 'en',
+  },
 };
 
 module.exports = nextConfig;

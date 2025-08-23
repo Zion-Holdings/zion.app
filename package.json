@@ -374,7 +374,12 @@
     "master:health": "node automation/master-automation-launcher.cjs health",
     "master:status": "node automation/master-automation-launcher.cjs status",
     "master:report": "node automation/master-automation-launcher.cjs report",
-    "seo:health": "node scripts/seo-health-check.cjs"
+    "seo:health": "node scripts/seo-health-check.cjs",
+    "perf:analyze": "node scripts/performance-optimizer.js",
+    "perf:lighthouse": "lighthouse http://localhost:3000 --output html --output-path ./performance-reports/lighthouse-report.html --chrome-flags=\"--headless --no-sandbox\"",
+    "perf:budget": "node scripts/performance-budget-checker.js",
+    "perf:monitor": "node scripts/performance-monitor.js",
+    "perf:report": "npm run perf:analyze && npm run perf:lighthouse"
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",

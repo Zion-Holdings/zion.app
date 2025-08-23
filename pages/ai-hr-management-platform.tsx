@@ -21,7 +21,7 @@ export default function AiHrManagementPlatform() {
 				"Headcount planning and attrition alerts"
 			]}
 			industries={["SMB", "Mid-Market", "Enterprise"]}
-			canonical="https://ziontechgroup.com/ai-hr-management-platform"
+			url="https://ziontechgroup.com/ai-hr-management-platform"
 		/>
 	);
 }

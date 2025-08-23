@@ -19,7 +19,7 @@ export default function SmartCrmIntelligenceSuite() {
 				"Salesforce/HubSpot/Pipedrive integrations"
 			]}
 			industries={["Sales", "RevOps", "B2B SaaS"]}
-			canonical="https://ziontechgroup.com/smart-crm-intelligence-suite"
+			url="https://ziontechgroup.com/smart-crm-intelligence-suite"
 		/>
 	);
 }

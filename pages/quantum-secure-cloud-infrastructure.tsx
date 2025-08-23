@@ -19,7 +19,7 @@ export default function QuantumSecureCloudInfrastructure() {
 				"NIST PQC roadmap alignment"
 			]}
 			industries={["Financial Services", "Healthcare", "Government"]}
-			canonical="https://ziontechgroup.com/quantum-secure-cloud-infrastructure"
+			url="https://ziontechgroup.com/quantum-secure-cloud-infrastructure"
 		/>
 	);
 }

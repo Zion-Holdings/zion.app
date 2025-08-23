@@ -19,7 +19,7 @@ export default function AIAutonomousDecisionEnginePage() {
 				roiNote="Reduce manual decisions by 70% with 10x faster cycle time"
 				features={["Policy graph with constraints","Counterfactual simulation and shadow mode","Confidence thresholds and risk scoring","Approval routing and escalation","Rollback and idempotent actions","Continuous learning from outcomes","Observability and explainability","SOC2-ready audit logging"]}
 				industries={["Fintech", "SaaS", "Logistics", "Support"]}
-				canonical="https://ziontechgroup.com/ai-autonomous-decision-engine"
+				url="https://ziontechgroup.com/ai-autonomous-decision-engine"
 			/>
 		</>
 	);

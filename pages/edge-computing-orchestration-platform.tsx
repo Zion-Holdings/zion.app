@@ -19,7 +19,7 @@ export default function EdgeComputingOrchestrationPlatform() {
 				"Cloudflare Workers, Fly.io, K3s support"
 			]}
 			industries={["Retail", "Manufacturing", "Telecom", "Media"]}
-			canonical="https://ziontechgroup.com/edge-computing-orchestration-platform"
+			url="https://ziontechgroup.com/edge-computing-orchestration-platform"
 		/>
 	);
 }

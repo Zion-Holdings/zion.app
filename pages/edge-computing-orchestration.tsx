@@ -19,7 +19,7 @@ export default function EdgeOrchestrationPage() {
 				roiNote="Reduce latency and bandwidth costs while improving reliability"
 				features={["Fleet provisioning and zero-touch onboarding","Policy-driven placement and rollouts","Local-first processing with cloud sync","Resilient messaging and data replication","Observability and remote diagnostics","Security with TPM/attestation and secrets"]}
 				industries={["Retail", "Manufacturing", "Energy", "Telco"]}
-				canonical="https://ziontechgroup.com/edge-computing-orchestration"
+				url="https://ziontechgroup.com/edge-computing-orchestration"
 			/>
 		</>
 	);

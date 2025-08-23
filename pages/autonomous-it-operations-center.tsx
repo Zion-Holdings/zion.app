@@ -19,7 +19,7 @@ export default function AutonomousItOperationsCenter() {
 				"Compliance and audit trails"
 			]}
 			industries={["Enterprise IT", "SRE/Platform", "Managed Services"]}
-			canonical="https://ziontechgroup.com/autonomous-it-operations-center"
+			url="https://ziontechgroup.com/autonomous-it-operations-center"
 		/>
 	);
 }

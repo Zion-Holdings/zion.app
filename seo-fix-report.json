@@ -1,0 +1,233 @@
+{
+  "timestamp": "2025-08-23T05:36:30.279Z",
+  "summary": {
+    "totalFiles": 37,
+    "fixedFiles": 37,
+    "errors": 0
+  },
+  "fixedFiles": [
+    {
+      "file": "pages/5g-private-network-solutions.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/ai-autonomous-decision-engine.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/ai-autonomous-ecosystem-manager.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/ai-brand-personality-generator.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/ai-consciousness-evolution-2025.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/ai-customer-service-platform.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/ai-emotional-intelligence-platform.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/ai-healthcare-analytics.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/ai-hr-management-platform.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/ai-legal-document-analysis.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/ai-manufacturing-optimization.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/ai-mental-health-companion.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/ai-multimodal-fusion-platform.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/ai-quantum-hybrid-computing.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/ai-supply-chain-optimization.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/autonomous-it-operations-center.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/edge-computing-orchestration-platform.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/edge-computing-orchestration.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/intelligent-content-automation-platform.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/intelligent-hr-analytics-platform.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/market-pricing.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/new-services.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/privacy.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/quantum-secure-cloud-infrastructure.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/seo-automation-suite.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/services/2030-futuristic-services.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/services-advertising.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/services.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/smart-crm-intelligence-suite.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/solutions.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/terms.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/thank-you.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/uptime-slo-monitor.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/virtual-event-hologram-platform.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/zero-trust-network-architecture.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "pages/zero-trust-security-platform.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    },
+    {
+      "file": "components/layout/UltraFuturisticLayout2045.tsx",
+      "changes": [
+        "canonical -> url"
+      ]
+    }
+  ],
+  "errors": []
+}

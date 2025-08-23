@@ -19,7 +19,7 @@ export default function MentalHealthCompanionPage() {
 				roiNote="Improve engagement and outcomes while reducing clinician workload"
 				features={["CBT and mindfulness exercises","Mood tracking and journaling","Clinician collaboration portal","Crisis detection and hotline routing","PHI minimization and encryption","Mobile-first with offline support"]}
 				industries={["Healthcare", "Employers", "Universities"]}
-				canonical="https://ziontechgroup.com/ai-mental-health-companion"
+				url="https://ziontechgroup.com/ai-mental-health-companion"
 			/>
 		</>
 	);
