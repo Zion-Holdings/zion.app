@@ -37,7 +37,6 @@ const footerSections: FooterSection[] = [
     title: 'Company',
     links: [
       { label: 'About Us', href: '/about', description: 'Our mission and values' },
-      { label: 'Leadership', href: '/about#leadership', description: 'Meet our team' },
       { label: 'Careers', href: '/careers', description: 'Join our team' },
       { label: 'News & Updates', href: '/news', description: 'Latest company news' },
       { label: 'Case Studies', href: '/case-studies', description: 'Success stories' },
@@ -61,7 +60,6 @@ const footerSections: FooterSection[] = [
       { label: 'Healthcare', href: '/healthcare-solutions', description: 'Medical technology' },
       { label: 'Finance', href: '/financial-solutions', description: 'Fintech solutions' },
       { label: 'Manufacturing', href: '/manufacturing-ai-solutions', description: 'Industry 4.0' },
-      { label: 'Retail', href: '/retail-technology-solutions', description: 'E-commerce tech' },
       { label: 'Government', href: '/government-technology-solutions', description: 'Public sector' },
       { label: 'Education', href: '/education-technology-solutions', description: 'EdTech solutions' }
     ]
@@ -71,9 +69,7 @@ const footerSections: FooterSection[] = [
 const socialLinks = [
   { icon: <Linkedin className="w-5 h-5" />, href: 'https://linkedin.com/company/ziontechgroup', label: 'LinkedIn', external: true },
   { icon: <Twitter className="w-5 h-5" />, href: 'https://twitter.com/ziontechgroup', label: 'Twitter', external: true },
-  { icon: <Github className="w-5 h-5" />, href: 'https://github.com/ziontechgroup', label: 'GitHub', external: true },
-  { icon: <Youtube className="w-5 h-5" />, href: 'https://youtube.com/@ziontechgroup', label: 'YouTube', external: true },
-  { icon: <Facebook className="w-5 h-5" />, href: 'https://facebook.com/ziontechgroup', label: 'Facebook', external: true }
+  { icon: <Github className="w-5 h-5" />, href: 'https://github.com/ziontechgroup', label: 'GitHub', external: true }
 ];
 
 const contactInfo = {

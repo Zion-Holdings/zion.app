@@ -1,30 +1,118 @@
 import React from 'react';
-import Head from 'next/head';
-import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
+import { motion } from 'framer-motion';
+import { Brain, Zap, Shield, Rocket, Cpu, Database, Globe, Lock } from 'lucide-react';
+import Link from 'next/link';
 
-export default function AIServicesLanding() {
-	return (
-		<UltraFuturisticBackground variant="quantum" intensity="high">
-			<Head>
-				<title>AI Services | Zion Tech Group</title>
-				<meta name="description" content="Explore our AI platforms and solutions including evals, guardrails, agents, and personalization." />
-				<link rel="canonical" href="https://ziontechgroup.com/ai-services" />
-			</Head>
-			<div className="container mx-auto px-4 py-24 space-y-6 text-white">
-				<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">AI Services</h1>
-				<p className="text-gray-300 max-w-3xl">Production-ready AI services: evals, safety guardrails, RAG agents, personalization, and analytics. Average pricing in Market Pricing. Contact: +1 302 464 0950 • kleber@ziontechgroup.com.</p>
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-cyan-500/50" href="/services/ai-evaluation-orchestrator">AI Evaluation Orchestrator</a>
-					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-cyan-500/50" href="/ai-guardrails">AI Guardrails Suite</a>
-					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-cyan-500/50" href="/agentic-rag">Agentic RAG Platform</a>
-					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-cyan-500/50" href="/ai-content-personalization-engine">AI Content Personalization</a>
-					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-cyan-500/50" href="/ai-powered-decision-engine">AI Decision Engine</a>
-					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-cyan-500/50" href="/ai-autonomous-business-operations">AI Autonomous Business Operations</a>
-					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-cyan-500/50" href="/services/ai-support-triage-router">AI Support Triage Router</a>
-					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-cyan-500/50" href="/services/ai-code-review-assistant-pro">AI Code Review Assistant Pro</a>
-					<a className="p-6 rounded-2xl bg-black/50 border border-gray-700/60 hover:border-cyan-500/50" href="/services/ai-revenue-forecasting-copilot">AI Revenue Forecasting Copilot</a>
-				</div>
-			</div>
-		</UltraFuturisticBackground>
-	);
-}
+const AIServicesPage: React.FC = () => {
+  const services = [
+    {
+      title: 'Machine Learning Solutions',
+      description: 'Custom ML models and algorithms for enterprise applications',
+      icon: <Brain className="w-8 h-8 text-blue-400" />,
+      features: ['Predictive Analytics', 'Natural Language Processing', 'Computer Vision', 'Recommendation Systems']
+    },
+    {
+      title: 'AI-Powered Automation',
+      description: 'Intelligent process automation and workflow optimization',
+      icon: <Zap className="w-8 h-8 text-yellow-400" />,
+      features: ['RPA Integration', 'Smart Document Processing', 'Workflow Automation', 'Decision Support Systems']
+    },
+    {
+      title: 'AI Security & Compliance',
+      description: 'AI-driven cybersecurity and regulatory compliance solutions',
+      icon: <Shield className="w-8 h-8 text-green-400" />,
+      features: ['Threat Detection', 'Fraud Prevention', 'Compliance Monitoring', 'Risk Assessment']
+    },
+    {
+      title: 'AI Infrastructure',
+      description: 'Scalable AI infrastructure and deployment solutions',
+      icon: <Cpu className="w-8 h-8 text-purple-400" />,
+      features: ['GPU Clusters', 'Model Serving', 'Data Pipelines', 'MLOps Platforms']
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
+      <div className="container mx-auto px-4 py-16">
+        {/* Hero Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+            AI & Machine Learning
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+              Solutions
+            </span>
+          </h1>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Transform your business with cutting-edge artificial intelligence and machine learning solutions. 
+            From predictive analytics to intelligent automation, we deliver AI that drives real business value.
+          </p>
+        </motion.div>
+
+        {/* Services Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 mb-16">
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+              className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-white/20 hover:border-white/40 transition-all duration-300"
+            >
+              <div className="flex items-center mb-6">
+                {service.icon}
+                <h3 className="text-2xl font-bold text-white ml-4">{service.title}</h3>
+              </div>
+              <p className="text-gray-300 mb-6">{service.description}</p>
+              <ul className="space-y-2">
+                {service.features.map((feature, featureIndex) => (
+                  <li key={featureIndex} className="flex items-center text-gray-300">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full mr-3"></div>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* CTA Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="text-center"
+        >
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Ready to Transform Your Business with AI?
+            </h2>
+            <p className="text-xl text-blue-100 mb-8">
+              Let's discuss how our AI solutions can drive innovation and growth for your organization.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                href="/contact"
+                className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300"
+              >
+                Get Started
+              </Link>
+              <Link 
+                href="/services"
+                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-300"
+              >
+                View All Services
+              </Link>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  );
+};
+
+export default AIServicesPage;

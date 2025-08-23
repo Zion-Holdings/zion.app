@@ -3,7 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, X, Search, ChevronDown, ChevronRight, 
   Home, Briefcase, Users, BookOpen, Phone, 
-  Zap, Shield, Brain, Rocket
+  Zap, Shield, Brain, Rocket, Cpu, Building, 
+  Heart, DollarSign, Factory, GraduationCap, 
+  TrendingUp, Newspaper, FileText, Video, HelpCircle
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -44,30 +46,126 @@ const navigationItems: NavigationItem[] = [
         description: 'Next-generation quantum solutions'
       },
       {
-        label: 'Space Technology',
-        href: '/space-tech',
-        icon: <Rocket className="w-4 h-4" />,
-        description: 'Innovative space tech applications'
-      },
-      {
         label: 'Cybersecurity',
         href: '/cybersecurity',
         icon: <Shield className="w-4 h-4" />,
         description: 'Enterprise-grade security solutions'
+      },
+      {
+        label: 'Cloud Platform',
+        href: '/cloud-platform',
+        icon: <Cpu className="w-4 h-4" />,
+        description: 'Scalable cloud infrastructure'
+      },
+      {
+        label: 'Space Technology',
+        href: '/space-tech',
+        icon: <Rocket className="w-4 h-4" />,
+        description: 'Innovative space tech applications'
       }
     ]
   },
   {
-    label: 'About',
-    href: '/about',
+    label: 'Industries',
+    href: '#',
+    icon: <Building className="w-4 h-4" />,
+    description: 'Solutions for specific industries',
+    children: [
+      {
+        label: 'Healthcare',
+        href: '/healthcare-solutions',
+        icon: <Heart className="w-4 h-4" />,
+        description: 'Medical technology solutions'
+      },
+      {
+        label: 'Financial Services',
+        href: '/financial-solutions',
+        icon: <DollarSign className="w-4 h-4" />,
+        description: 'Fintech and banking solutions'
+      },
+      {
+        label: 'Manufacturing',
+        href: '/manufacturing-ai-solutions',
+        icon: <Factory className="w-4 h-4" />,
+        description: 'Industry 4.0 AI solutions'
+      },
+      {
+        label: 'Government',
+        href: '/government-technology-solutions',
+        icon: <Building className="w-4 h-4" />,
+        description: 'Public sector technology'
+      },
+      {
+        label: 'Education',
+        href: '/education-technology-solutions',
+        icon: <GraduationCap className="w-4 h-4" />,
+        description: 'EdTech solutions'
+      }
+    ]
+  },
+  {
+    label: 'Company',
+    href: '#',
     icon: <Users className="w-4 h-4" />,
-    description: 'Learn about our mission and team'
+    description: 'Learn about our mission and team',
+    children: [
+      {
+        label: 'About Us',
+        href: '/about',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Our mission and values'
+      },
+      {
+        label: 'Case Studies',
+        href: '/case-studies',
+        icon: <TrendingUp className="w-4 h-4" />,
+        description: 'Success stories and results'
+      },
+      {
+        label: 'Careers',
+        href: '/careers',
+        icon: <Users className="w-4 h-4" />,
+        description: 'Join our team'
+      },
+      {
+        label: 'News',
+        href: '/news',
+        icon: <Newspaper className="w-4 h-4" />,
+        description: 'Latest company updates'
+      }
+    ]
   },
   {
     label: 'Resources',
     href: '/resources',
     icon: <BookOpen className="w-4 h-4" />,
-    description: 'Whitepapers, case studies, and insights'
+    description: 'Whitepapers, case studies, and insights',
+    children: [
+      {
+        label: 'Blog',
+        href: '/blog',
+        icon: <FileText className="w-4 h-4" />,
+        description: 'Industry insights and updates'
+      },
+      {
+        label: 'Whitepapers',
+        href: '/white-papers',
+        icon: <FileText className="w-4 h-4" />,
+        description: 'In-depth research papers'
+      },
+      {
+        label: 'Webinars',
+        href: '/webinars',
+        icon: <Video className="w-4 h-4" />,
+        description: 'Educational content'
+      },
+      {
+        label: 'Support',
+        href: '/support',
+        icon: <HelpCircle className="w-4 h-4" />,
+        description: 'Help and assistance'
+      }
+    ]
   },
   {
     label: 'Contact',
