@@ -5,7 +5,7 @@ import {
   Phone, Mail, MapPin, ArrowRight, Globe, Shield, Rocket, Brain, Atom, Cpu,
   Facebook, Twitter, Linkedin, Instagram, Youtube, Github, Zap, Heart, Star,
   Users, Lock, Cloud, Code, Server, Database, Network, Settings, Target, Play,
-  FileText, Video, BarChart3, GraduationCap, HelpCircle, MessageCircle, TrendingUp
+  FileText, TrendingUp
 } from 'lucide-react';
 
 const UltraFuturisticFooter2045: React.FC = () => {
@@ -14,77 +14,52 @@ const UltraFuturisticFooter2045: React.FC = () => {
   const contactInfo = {
     mobile: '+1 302 464 0950',
     email: 'kleber@ziontechgroup.com',
-    address: '364 E Main St STE 1008 Middletown DE 19709',
-    website: 'https://ziontechgroup.com'
+    address: '364 E Main St STE 1008 Middletown DE 19709'
   };
 
   const footerSections = [
     {
       title: 'Revolutionary Services 2045',
       links: [
-        { name: 'AI Consciousness Evolution 2045', href: '/ai-consciousness-evolution-2045', icon: <Brain className="w-5 h-5" /> },
-        { name: 'Quantum Neural Networks 2045', href: '/quantum-neural-network-platform-2045', icon: <Atom className="w-5 h-5" /> },
-        { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence-2045', icon: <Target className="w-5 h-5" /> },
-        { name: 'Quantum Cybersecurity 2045', href: '/quantum-cybersecurity-platform-2045', icon: <Shield className="w-5 h-5" /> },
-        { name: 'Space Resource Intelligence 2045', href: '/space-resource-intelligence-2045', icon: <Rocket className="w-5 h-5" /> },
-        { name: 'Autonomous Customer Success 2045', href: '/autonomous-customer-success-2045', icon: <Users className="w-5 h-5" /> }
+        { name: 'AI Consciousness Evolution 2045', href: '/ai-consciousness-evolution-2045', icon: Brain },
+        { name: 'Quantum Neural Networks 2045', href: '/quantum-neural-network-platform-2045', icon: Atom },
+        { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence-2045', icon: Brain },
+        { name: 'Quantum Cybersecurity 2045', href: '/quantum-cybersecurity-platform-2045', icon: Shield },
+        { name: 'Space Resource Intelligence 2045', href: '/space-resource-intelligence-2045', icon: Rocket },
+        { name: 'Autonomous Customer Success 2045', href: '/autonomous-customer-success-2045', icon: Users }
       ]
     },
     {
       title: 'Technology Solutions',
       links: [
-        { name: 'Quantum Cloud Infrastructure 2045', href: '/quantum-cloud-infrastructure-2045', icon: <Cloud className="w-5 h-5" /> },
-        { name: 'Autonomous DevOps Platform 2045', href: '/autonomous-devops-platform-2045', icon: <Code className="w-5 h-5" /> },
-        { name: 'Quantum Data Center Management 2045', href: '/quantum-data-center-management-2045', icon: <Server className="w-5 h-5" /> },
-        { name: 'Autonomous Network Management 2045', href: '/autonomous-network-management-2045', icon: <Network className="w-5 h-5" /> },
-        { name: 'Autonomous IT Service Management 2045', href: '/autonomous-it-service-management-2045', icon: <Settings className="w-5 h-5" /> },
-        { name: 'Autonomous Security Operations Center 2045', href: '/autonomous-security-operations-center-2045', icon: <Lock className="w-5 h-5" /> }
+        { name: 'Quantum Cloud Infrastructure 2045', href: '/quantum-cloud-infrastructure-2045', icon: Cloud },
+        { name: 'Autonomous DevOps Platform 2045', href: '/autonomous-devops-platform-2045', icon: Code },
+        { name: 'Quantum Data Center Management 2045', href: '/quantum-data-center-management-2045', icon: Server },
+        { name: 'Autonomous Network Management 2045', href: '/autonomous-network-management-2045', icon: Network },
+        { name: 'Autonomous IT Service Management 2045', href: '/autonomous-it-service-management-2045', icon: Settings },
+        { name: 'Autonomous Security Operations Center 2045', href: '/autonomous-security-operations-center-2045', icon: Shield }
       ]
     },
     {
       title: 'AI & Consciousness',
       links: [
-        { name: 'AI Consciousness Evolution 2045', href: '/ai-consciousness-evolution-2045', icon: <Brain className="w-5 h-5" /> },
-        { name: 'Quantum AI Cognitive 2045', href: '/quantum-ai-cognitive-2045', icon: <Atom className="w-5 h-5" /> },
-        { name: 'Autonomous AI Research 2045', href: '/autonomous-ai-research-2045', icon: <Zap className="w-5 h-5" /> },
-        { name: 'Emotional AI Intelligence 2045', href: '/emotional-ai-intelligence-2045', icon: <Heart className="w-5 h-5" /> },
-        { name: 'Quantum AI Metaverse 2045', href: '/quantum-ai-metaverse-2045', icon: <Globe className="w-5 h-5" /> },
-        { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence-2045', icon: <Target className="w-5 h-5" /> }
+        { name: 'AI Consciousness Evolution 2045', href: '/ai-consciousness-evolution-2045', icon: Brain },
+        { name: 'Quantum AI Cognitive 2045', href: '/quantum-ai-cognitive-2045', icon: Atom },
+        { name: 'Autonomous AI Research 2045', href: '/autonomous-ai-research-2045', icon: Brain },
+        { name: 'Emotional AI Intelligence 2045', href: '/emotional-ai-intelligence-2045', icon: Heart },
+        { name: 'Quantum AI Metaverse 2045', href: '/quantum-ai-metaverse-2045', icon: Globe },
+        { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence-2045', icon: Target }
       ]
     },
     {
       title: 'Company',
       links: [
-        { name: 'About Us', href: '/about', icon: <Users className="w-5 h-5" /> },
-        { name: 'Our Mission', href: '/mission', icon: <Target className="w-5 h-5" /> },
-        { name: 'Leadership Team', href: '/team', icon: <Star className="w-5 h-5" /> },
-        { name: 'Careers', href: '/careers', icon: <Zap className="w-5 h-5" /> },
-        { name: 'News & Updates', href: '/news', icon: <Globe className="w-5 h-5" /> },
-        { name: 'Press Kit', href: '/press', icon: <Play className="w-5 h-5" /> },
-        { name: 'Partners', href: '/partners', icon: <Users className="w-5 h-5" /> },
-        { name: 'Investors', href: '/investors', icon: <TrendingUp className="w-5 h-5" /> }
-      ]
-    },
-    {
-      title: 'Resources',
-      links: [
-        { name: 'Documentation', href: '/docs', icon: <FileText className="w-5 h-5" /> },
-        { name: 'Webinars', href: '/webinars', icon: <Video className="w-5 h-5" /> },
-        { name: 'Case Studies', href: '/case-studies', icon: <BarChart3 className="w-5 h-5" /> },
-        { name: 'Blog', href: '/blog', icon: <FileText className="w-5 h-5" /> },
-        { name: 'Training', href: '/training', icon: <GraduationCap className="w-5 h-5" /> },
-        { name: 'API Reference', href: '/docs', icon: <Code className="w-5 h-5" /> }
-      ]
-    },
-    {
-      title: 'Support',
-      links: [
-        { name: 'Help Center', href: '/support/help', icon: <HelpCircle className="w-5 h-5" /> },
-        { name: 'Contact Support', href: '/contact', icon: <MessageCircle className="w-5 h-5" /> },
-        { name: 'System Status', href: '/status', icon: <BarChart3 className="w-5 h-5" /> },
-        { name: 'Support Portal', href: '/support', icon: <Settings className="w-5 h-5" /> },
-        { name: 'Community', href: '/community', icon: <Users className="w-5 h-5" /> },
-        { name: 'FAQ', href: '/support/help', icon: <HelpCircle className="w-5 h-5" /> }
+        { name: 'About Us', href: '/about', icon: Users },
+        { name: 'Our Mission', href: '/mission', icon: Target },
+        { name: 'Leadership Team', href: '/team', icon: Users },
+        { name: 'Careers', href: '/careers', icon: Users },
+        { name: 'News & Updates', href: '/news', icon: Star },
+        { name: 'Press Kit', href: '/press', icon: FileText }
       ]
     }
   ];
@@ -181,7 +156,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
                         className="flex items-center space-x-3 text-gray-400 hover:text-cyan-400 transition-all duration-200 group hover:translate-x-1"
                       >
                         <div className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-200">
-                          <ArrowRight className="w-4 h-4" />
+                          {React.createElement(link.icon, { className: "w-5 h-5" })}
                         </div>
                         <span className="text-sm group-hover:text-cyan-400 transition-colors duration-200">
                           {link.name}
@@ -242,7 +217,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
                     className={`p-2 rounded-lg bg-gray-900/50 border border-cyan-500/20 text-gray-400 ${social.color} transition-all duration-200 hover:scale-110 hover:border-cyan-500/50`}
                     aria-label={social.name}
                   >
-                    <social.icon className="w-5 h-5" />
+                    {React.createElement(social.icon, { className: "w-5 h-5" })}
                   </Link>
                 ))}
               </div>
