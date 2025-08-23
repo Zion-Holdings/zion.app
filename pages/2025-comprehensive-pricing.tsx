@@ -241,11 +241,16 @@ const ComprehensivePricing: React.FC = () => {
                   <div className="mb-6">
                     <div className="flex items-baseline gap-2">
                       <span className="text-4xl font-bold text-gray-900">
-                        ${service.price.monthly.toLocaleString()}
+                        {typeof service.price === 'string' 
+                          ? service.price 
+                          : `$${service.price.monthly.toLocaleString()}`
+                        }
                       </span>
-                      <span className="text-gray-500">/month</span>
+                      <span className="text-gray-500">
+                        {typeof service.price === 'string' ? '' : '/month'}
+                      </span>
                     </div>
-                    {billingCycle === 'yearly' && (
+                    {billingCycle === 'yearly' && typeof service.price === 'object' && (
                       <div className="text-sm text-green-600 font-medium">
                         Save ${Math.round(service.price.monthly * 12 * 0.2).toLocaleString()} with yearly billing
                       </div>

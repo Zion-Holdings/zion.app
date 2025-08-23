@@ -265,9 +265,14 @@ const ComprehensiveServicesShowcase: React.FC = () => {
                       {/* Price */}
                       <div className="mt-4">
                         <span className="text-2xl font-bold">
-                          ${service.price.monthly.toLocaleString()}
+                          {typeof service.price === 'string' 
+                            ? service.price 
+                            : `$${service.price.monthly.toLocaleString()}`
+                          }
                         </span>
-                        <span className="text-blue-100">/month</span>
+                        <span className="text-blue-100">
+                          {typeof service.price === 'string' ? '' : '/month'}
+                        </span>
                       </div>
                     </div>
 
@@ -299,10 +304,18 @@ const ComprehensiveServicesShowcase: React.FC = () => {
                       {/* Service Info */}
                       <div className="grid grid-cols-2 gap-4 mb-4 text-sm text-gray-600">
                         <div>
-                          <span className="font-medium">Setup:</span> {service.setupTime}
+                          <span className="font-medium">Setup:</span> {
+                            'setupTime' in service 
+                              ? (typeof service.setupTime === 'string' ? service.setupTime : service.setupTime)
+                              : (service.price && typeof service.price === 'object' ? service.price.setupTime : 'N/A')
+                          }
                         </div>
                         <div>
-                          <span className="font-medium">Trial:</span> {service.trialDays} days
+                          <span className="font-medium">Trial:</span> {
+                            'trialDays' in service 
+                              ? service.trialDays 
+                              : (service.price && typeof service.price === 'object' ? service.price.trialDays : 'N/A')
+                          } days
                         </div>
                       </div>
 
