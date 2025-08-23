@@ -264,7 +264,7 @@ const Innovative2038CuttingEdgeShowcase: React.FC = () => {
                       </a>
                       <div className="flex gap-2">
                         <a
-                          href={`tel:${'phone' in service.contactInfo ? service.contactInfo.phone : service.contactInfo.mobile}`}
+                          href={`tel:${'contactInfo' in service && 'mobile' in service.contactInfo ? service.contactInfo.mobile : (service.contactInfo as any).phone}`}
                           className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-white/10 text-gray-300 text-sm rounded-lg hover:bg-white/20 transition-colors"
                         >
                           <Phone className="w-4 h-4" />
@@ -325,12 +325,12 @@ const Innovative2038CuttingEdgeShowcase: React.FC = () => {
                       {/* Pricing and Actions */}
                       <div className="lg:w-64 space-y-4">
                         <div className="text-center">
-                                                  <div className="text-3xl font-bold text-purple-400 mb-1">
-                          {'pricing' in service ? service.pricing.starter : service.price}
-                        </div>
+                                                                            <div className="text-3xl font-bold text-purple-400 mb-1">
+                            {'pricing' in service ? service.pricing.starter : service.price}
+                          </div>
                           <div className="text-sm text-gray-400 mb-2">Starting price</div>
                           <div className="text-xs text-gray-500">
-                            {'pricing' in service ? `${service.pricing.starter} | ${service.pricing.enterprise}` : `${service.price} ${service.period}`}
+                            {'pricing' in service ? `${service.pricing.pro} | ${service.pricing.enterprise}` : 'Contact for pricing'}
                           </div>
                         </div>
 
@@ -344,7 +344,7 @@ const Innovative2038CuttingEdgeShowcase: React.FC = () => {
                           
                           <div className="grid grid-cols-2 gap-2">
                             <a
-                              href={`tel:${'phone' in service.contactInfo ? service.contactInfo.phone : service.contactInfo.mobile}`}
+                              href={`tel:${'mobile' in service.contactInfo ? service.contactInfo.mobile : (service.contactInfo as any).phone}`}
                               className="flex items-center justify-center gap-2 px-3 py-2 bg-white/10 text-gray-300 text-sm rounded-lg hover:bg-white/20 transition-colors"
                             >
                               <Phone className="w-4 h-4" />

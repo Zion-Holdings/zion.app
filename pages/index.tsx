@@ -12,7 +12,12 @@ const HomePage: React.FC = () => {
     <ErrorBoundary>
       <SEOOptimizer />
       <AnalyticsTracker />
-      <Homepage2026 />
+      <PerformanceOptimizer />
+      <AccessibilityEnhancer />
+      <MobileOptimizer showDebugInfo={false}>
+        <Homepage2025 />
+        <PerformanceMonitor showUI={true} />
+      </MobileOptimizer>
     </ErrorBoundary>
   );
 };
