@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
+import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { 
   Target, 
@@ -116,12 +117,14 @@ const AgenticRAG: React.FC = () => {
   ];
 
   return (
-    <Layout 
-      title="Agentic RAG Platform | Zion Tech Group"
-      description="Intelligent retrieval-augmented generation system that provides context-aware, accurate responses with continuous learning capabilities."
-      keywords="agentic RAG, retrieval augmented generation, AI agents, knowledge base, context-aware AI, Zion Tech Group"
-      canonicalUrl="https://ziontechgroup.com/agentic-rag"
-    >
+    <>
+      <SEO 
+        title="Agentic RAG Platform | Zion Tech Group"
+        description="Intelligent retrieval-augmented generation system that provides context-aware, accurate responses with continuous learning capabilities."
+        keywords="agentic RAG, retrieval augmented generation, AI agents, knowledge base, context-aware AI, Zion Tech Group"
+        canonical="https://ziontechgroup.com/agentic-rag"
+      />
+      <Layout>
       {/* Hero Section */}
       <section className="relative py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-indigo-900/20 to-purple-900/20" />
@@ -447,7 +450,8 @@ const AgenticRAG: React.FC = () => {
           </div>
         </div>
       </section>
-    </Layout>
+      </Layout>
+    </>
   );
 };
 

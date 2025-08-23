@@ -183,7 +183,7 @@ function collectAllServices(): Svc[] {
       newRealServices as Svc[],
       marketReadyServices as Svc[],
       nextGenerationAIServices as Svc[],
-      emergingTechnologyServices as Svc[],
+      emergingTechnologyServices as unknown as Svc[],
       comprehensiveITSolutions as Svc[],
       marketValidatedServices as Svc[],
       newRealInnovations as Svc[],
