@@ -220,6 +220,13 @@ const navigationItems: NavigationItem[] = [
         description: 'Transparent pricing structure',
         icon: <DollarSign className="w-4 h-4" />
       },
+<<<<<<< HEAD
+      {
+        name: 'Market Pricing',
+        href: '/market-pricing',
+        description: 'Competitive market analysis',
+        icon: <BarChart3 className="w-4 h-4" />
+=======
       { 
         name: 'Market Pricing', 
         href: '/market-pricing', 
@@ -237,6 +244,7 @@ const navigationItems: NavigationItem[] = [
         href: '/ultimate-2035-futuristic-services-showcase', 
         description: 'Future technology preview',
         icon: <ZapIcon className="w-4 h-4" />
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-e3a6
       }
     ]
   },
@@ -370,6 +378,25 @@ const navigationItems: NavigationItem[] = [
         description: 'Comprehensive help resources',
         icon: <HelpCircle className="w-4 h-4" />
       },
+<<<<<<< HEAD
+      {
+        name: 'Contact Us',
+        href: '/contact',
+        description: 'Get in touch',
+        icon: <MessageCircle className="w-4 h-4" />
+      },
+      {
+        name: 'Status Page',
+        href: '/status',
+        description: 'Service status updates',
+        icon: <Monitor className="w-4 h-4" />
+      },
+      {
+        name: 'API Status',
+        href: '/api-status',
+        description: 'API performance metrics',
+        icon: <DatabaseIcon className="w-4 h-4" />
+=======
       { 
         name: 'Training', 
         href: '/training', 
@@ -472,6 +499,7 @@ const navigationItems: NavigationItem[] = [
         href: '/contact', 
         description: 'Talk to our team',
         icon: <MessageCircle className="w-4 h-4" />
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-e3a6
       }
     ]
   }

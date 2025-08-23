@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
+<<<<<<< HEAD
+  Phone, Mail, MapPin, Globe, ArrowRight, 
+  Facebook, Twitter, Linkedin, Instagram, Youtube,
+  Github, MessageCircle, Clock,
+  Shield, Award, Users, Rocket, Brain, Atom
+=======
   Zap, Globe, Phone, Mail, MapPin, ArrowRight, 
   Brain, Atom, Shield, Rocket, Target, BookOpen, Users,
   Star, Sparkles, Cpu, Lock, Cloud, BarChart3, Settings, Eye, Award, Clock, Heart, Lightbulb,
@@ -8,6 +14,7 @@ import {
   ArrowUp, ExternalLink, Building, Code, Database, Network, Server, Monitor, Smartphone, Camera, Gamepad2,
   Palette, Music, Film, BookOpenCheck, HelpCircle, FileText, Video, Headphones,
   Sparkles as SparklesIcon, Zap as ZapIcon, Target as TargetIcon, Atom as AtomIcon, Brain as BrainIcon
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-e3a6
 } from 'lucide-react';
 
 const contactInfo = {
@@ -125,11 +132,67 @@ const footerSections = [
 const UltraFuturisticFooter2036: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
+<<<<<<< HEAD
+  const footerSections = [
+    {
+      title: 'Services',
+      links: [
+        { name: 'AI & Machine Learning', href: '/ai-services' },
+        { name: 'Quantum Computing', href: '/quantum-services' },
+        { name: 'Space Technology', href: '/space-technology' },
+        { name: 'IT Solutions', href: '/it-services' },
+        { name: 'Micro SAAS', href: '/micro-saas' },
+        { name: 'Fintech Solutions', href: '/fintech-solutions' },
+        { name: 'Healthtech', href: '/healthtech-solutions' },
+        { name: 'View All Services', href: '/services' }
+      ]
+    },
+    {
+      title: 'Solutions',
+      links: [
+        { name: 'Enterprise Solutions', href: '/enterprise-solutions' },
+        { name: 'Startup Solutions', href: '/startup-solutions' },
+        { name: 'Government Solutions', href: '/government-solutions' },
+        { name: 'Healthcare Solutions', href: '/healthcare-solutions' },
+        { name: 'Financial Solutions', href: '/financial-solutions' },
+        { name: 'Retail Solutions', href: '/retail-technology-solutions' },
+        { name: 'Manufacturing AI', href: '/manufacturing-ai-solutions' },
+        { name: 'Custom Solutions', href: '/solutions' }
+      ]
+    },
+    {
+      title: 'Resources',
+      links: [
+        { name: 'Blog & Insights', href: '/blog' },
+        { name: 'White Papers', href: '/white-papers' },
+        { name: 'Webinars', href: '/webinars' },
+        { name: 'Training', href: '/training' },
+        { name: 'Documentation', href: '/api-documentation' },
+        { name: 'Case Studies', href: '/case-studies' },
+        { name: 'Research', href: '/research' },
+        { name: 'Knowledge Base', href: '/knowledge-base' }
+      ]
+    },
+    {
+      title: 'Company',
+      links: [
+        { name: 'About Us', href: '/about' },
+        { name: 'Team', href: '/team' },
+        { name: 'Careers', href: '/careers' },
+        { name: 'Partners', href: '/partners' },
+        { name: 'Investors', href: '/investors' },
+        { name: 'News', href: '/news' },
+        { name: 'Press Kit', href: '/press' },
+        { name: 'Contact', href: '/contact' }
+      ]
+    }
+=======
   const legalLinks = [
     { name: 'Privacy Policy', href: '/privacy' },
     { name: 'Terms of Service', href: '/terms' },
     { name: 'Cookie Policy', href: '/cookies' },
     { name: 'Accessibility', href: '/accessibility-scanner' }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-e3a6
   ];
 
   const socialLinks = [
@@ -201,6 +264,22 @@ const UltraFuturisticFooter2036: React.FC = () => {
                   </div>
                 </div>
 
+<<<<<<< HEAD
+                {/* Social Links */}
+                <div className="flex gap-4">
+                  {socialLinks.map((social) => (
+                    <a
+                      key={social.name}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`p-2 bg-gray-800/50 border border-gray-700/50 rounded-lg text-gray-400 transition-all duration-300 hover:border-cyan-400/50 hover:bg-cyan-400/10 ${social.color}`}
+                      aria-label={social.name}
+                    >
+                      <social.icon className="w-5 h-5" />
+                    </a>
+                  ))}
+=======
               <motion.p 
                 className="text-gray-300 mb-6 leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
@@ -238,6 +317,7 @@ const UltraFuturisticFooter2036: React.FC = () => {
                 <div className="flex items-center space-x-3 text-gray-300">
                   <Clock className="w-4 h-4 text-cyan-400" />
                   <span>Mon-Fri: 9:00 AM - 6:00 PM EST</span>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-e3a6
                 </div>
               </motion.div>
             </div>

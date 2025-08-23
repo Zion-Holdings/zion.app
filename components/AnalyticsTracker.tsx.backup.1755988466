@@ -136,7 +136,11 @@ interface AnalyticsTrackerProps {
 
             // Track resource loading performance
             const resources = performance.getEntriesByType('resource');
+<<<<<<< HEAD
+            const slowResources = resources.filter((resource) => (resource as any).duration > 1000);
+=======
             const slowResources = resources.filter((resource: any) => resource.duration > 1000);
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-e3a6
             if (slowResources.length > 0) {
               trackMetric('SlowResources', slowResources.length);
             }
@@ -276,6 +280,9 @@ interface AnalyticsTrackerProps {
   return null;
 };
 
+<<<<<<< HEAD
+// Note: gtag and dataLayer are declared globally in PerformanceOptimizer.tsx
+=======
 // Performance entry types
 interface PerformanceEventTiming extends PerformanceEntry {
   processingStart: number;
@@ -300,5 +307,6 @@ declare global {
     gtag: (...args: unknown[]) => void;
   }
 }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-e3a6
 
 export default AnalyticsTracker;

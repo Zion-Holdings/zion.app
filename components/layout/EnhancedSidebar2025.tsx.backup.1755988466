@@ -3,6 +3,15 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
+<<<<<<< HEAD
+  X, ChevronDown, ChevronRight, Search, Settings, User, 
+  Brain, Atom, Rocket, Shield, Cpu, Database, Cloud, 
+  BarChart3, Code, Smartphone, Server, Users, Award, 
+  TrendingUp, BookOpen, FileText, GraduationCap, Headphones,
+  Zap, Globe, Lock, Phone, Mail, MapPin, Star, MessageCircle,
+  ExternalLink, Home, Briefcase, Info, HelpCircle, Shield as ShieldIcon, Play, Building,
+  Heart, Palette, Target, Sparkles, Download
+=======
   ChevronRight, Home, Star, Users, 
   HelpCircle, Mail, Phone, MapPin,
   Brain, Atom, Shield, Rocket, DollarSign,
@@ -10,6 +19,7 @@ import {
   TrendingUp, Award, CheckCircle, Clock,
   Search, X as CloseIcon,
   Target, BookOpen, Calendar, Video, FileText, Building
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-e3a6
 } from 'lucide-react';
 
 interface SidebarItem {
@@ -76,6 +86,35 @@ const sidebarItems: SidebarItem[] = [
     icon: <Target className="w-5 h-5" />,
     color: 'text-orange-400',
     items: [
+<<<<<<< HEAD
+      { name: 'Healthcare Solutions', href: '/healthcare-solutions' },
+      { name: 'Financial Solutions', href: '/financial-solutions' },
+      { name: 'Manufacturing AI', href: '/manufacturing-ai-solutions' },
+      { name: 'Retail Technology', href: '/retail-technology-solutions' },
+      { name: 'Government Tech', href: '/government-technology-solutions' },
+      { name: 'Education Technology', href: '/education-technology-solutions' },
+      { name: 'Entertainment & Media', href: '/entertainment-media-solutions' },
+      { name: 'Energy & Utilities', href: '/energy-utilities-solutions' },
+      { name: 'Biotech AI', href: '/biotech-ai' },
+      { name: 'Space Technology', href: '/space-technology' }
+    ]
+  },
+  {
+    title: 'Quick Links',
+    icon: <Zap className="w-5 h-5" />,
+    color: 'text-yellow-400',
+    items: [
+      { name: 'Get Started', href: '/get-started' },
+      { name: 'Pricing', href: '/pricing' },
+      { name: 'Contact', href: '/contact' },
+      { name: 'Support', href: '/support' },
+      { name: 'Blog', href: '/blog' },
+      { name: 'Case Studies', href: '/case-studies' },
+      { name: 'Documentation', href: '/docs' },
+      { name: 'Training', href: '/training' },
+      { name: 'Webinars', href: '/webinars' },
+      { name: 'White Papers', href: '/white-papers' }
+=======
       { name: 'Healthcare Solutions', href: '/healthcare-solutions', badge: 'New' },
       { name: 'Financial Solutions', href: '/financial-solutions', badge: 'New' },
       { name: 'Government Solutions', href: '/government-technology-solutions', badge: 'New' },
@@ -120,6 +159,7 @@ const sidebarItems: SidebarItem[] = [
       { name: 'Privacy Policy', href: '/privacy' },
       { name: 'Terms of Service', href: '/terms' },
       { name: 'Cookie Policy', href: '/cookies' }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-e3a6
     ]
   }
 ];
