@@ -1,16 +1,16 @@
-import Document, { Html, Head, Main, NextScript, DocumentContext, DocumentInitialProps } from "next/document";
+import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
 
-export default class MyDocument extends Document {
-  static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
+class MyDocument extends Document {
+  static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx);
     return { ...initialProps };
-  }
+    }
 
   render() {
     return (
-      <Html lang="en">
+      <Html lang="en" className="h-full">
         <Head />
-        <body>
+        <body className="h-full bg-transparent text-gray-900 dark:text-gray-100">
           <Main />
           <NextScript />
         </body>
@@ -18,3 +18,5 @@ export default class MyDocument extends Document {
     );
   }
 }
+
+export default MyDocument;

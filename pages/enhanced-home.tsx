@@ -1,1 +1,3 @@
-export default function EnhancedHome() { return null; }
+export default function EnhancedHome() {
+  return <div className="py-10">Enhanced Home Placeholder</div>;
+}
