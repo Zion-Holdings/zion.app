@@ -2,15 +2,14 @@ import React, { useState } from 'react';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { 
-  Brain, Atom, Rocket, Shield, Zap, Target, Star,
-  ArrowRight, Check, TrendingUp, Users, Globe, Cpu,
-  Database, Cloud, Lock, Settings, Eye, Award, Clock
+  Brain, Atom, Rocket, Zap, Star,
+  Check, Cpu
 } from 'lucide-react';
 
 // Import our new service data
-import { innovative2037MicroSaasServices } from '../data/innovative-2037-micro-saas-services';
-import { innovative2037ITServices } from '../data/innovative-2037-it-services';
-import { innovative2037AIServices } from '../data/innovative-2037-ai-services';
+import { innovative2037MicroSaasServices, Innovative2037MicroSaasService } from '../data/innovative-2037-micro-saas-services';
+import { innovative2037ITServices, Innovative2037ITService } from '../data/innovative-2037-it-services';
+import { innovative2037AIServices, Innovative2037AIService } from '../data/innovative-2037-ai-services';
 
 const contactInfo = {
   mobile: '+1 302 464 0950',
@@ -19,7 +18,7 @@ const contactInfo = {
   website: 'https://ziontechgroup.com'
 };
 
-const ServiceCard = ({ service, index }: { service: any; index: number }) => (
+const ServiceCard = ({ service, index }: { service: Innovative2037MicroSaasService | Innovative2037ITService | Innovative2037AIService; index: number }) => (
   <motion.div
     initial={{ opacity: 0, y: 50 }}
     animate={{ opacity: 1, y: 0 }}
@@ -121,7 +120,7 @@ const ServiceShowcase = () => {
       <SEO 
         title="2037 Innovative Services Showcase - Zion Tech Group"
         description="Discover our revolutionary 2037 innovative services including AI consciousness evolution, quantum cybersecurity, autonomous systems, and cutting-edge micro SAAS solutions."
-        keywords="AI consciousness, quantum computing, autonomous systems, micro SAAS, innovative services, 2037 technology"
+        keywords={["AI consciousness", "quantum computing", "autonomous systems", "micro SAAS", "innovative services", "2037 technology"]}
       />
       
       {/* Hero Section */}
