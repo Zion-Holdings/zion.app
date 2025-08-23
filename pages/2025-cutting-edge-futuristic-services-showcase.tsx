@@ -96,7 +96,7 @@ const CuttingEdgeFuturisticServicesShowcase: React.FC = () => {
           'cutting-edge services', 'futuristic technology', 'quantum AI', 'autonomous systems', 
           'holographic technology', 'AI automation', 'quantum computing', 'neural interfaces'
         ]}
-        image="/og-cutting-edge-services.jpg"
+        ogImage="/og-cutting-edge-services.jpg"
       />
 
       {/* Hero Section */}
