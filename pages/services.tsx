@@ -74,6 +74,11 @@ import { advancedEnterpriseServices } from '../data/2025-advanced-enterprise-ser
 import { innovativeMicroSaasServices } from '../data/innovative-2025-micro-saas-expansions';
 import { cuttingEdgeITInfrastructureServices } from '../data/2025-cutting-edge-it-infrastructure';
 
+// Import Q4 2037 cutting-edge services
+import { cuttingEdgeServices } from '../data/real-2037-q4-cutting-edge-services';
+import { itInfrastructureServices } from '../data/real-2037-q4-it-infrastructure-services';
+import { businessSolutionServices } from '../data/real-2037-q4-business-solutions';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -191,30 +196,83 @@ const allServices = [
   ...innovative2037MicroSaasServices,
   ...innovative2037ITServices,
   ...innovative2037AIServices,
-  ...innovative2038CuttingEdgeServices,
-  ...innovative2038ITInfrastructureServices,
-  // Our additional innovative services
-  ...innovative2037Services,
-  ...advanced2038Services,
-  ...revolutionary2039Services,
-  
-  // Our new innovative 2040 services
-  ...innovative2040FuturisticServices,
-  ...innovative2040ITServices,
-  // Our new comprehensive services
-  ...revolutionary2040FuturisticServices,
-  ...revolutionary2041AdvancedServices,
-  // Our latest innovative services
-  ...advanced2041EnterpriseServices,
-  ...revolutionary2042MicroSaasServices,
-  // Our new 2025 innovative services expansion
-  ...innovative2025MicroSaasExpansion,
-  ...innovative2025ITSolutionsExpansion,
-  ...innovative2025AIServicesExpansion,
-  // Our new 2025 advanced enterprise services
-  ...advancedEnterpriseServices,
-  ...innovativeMicroSaasServices,
-  ...cuttingEdgeITInfrastructureServices
+  // Q4 2037 cutting-edge services
+  ...cuttingEdgeServices,
+  ...itInfrastructureServices,
+  ...businessSolutionServices
+];
+
+const categories = [
+  {
+    id: 'all',
+    name: 'All Services',
+    icon: <Grid className="w-6 h-6" />,
+    color: 'from-gray-500 to-slate-500',
+    description: 'Complete portfolio of all services'
+  },
+  {
+    id: 'enterprise-it',
+    name: 'Enterprise IT',
+    icon: <Building className="w-6 h-6" />,
+    color: 'from-blue-500 to-purple-500',
+    description: 'Enterprise solutions and infrastructure'
+  },
+  {
+    id: 'ai-consciousness',
+    name: 'AI & Consciousness',
+    icon: <Brain className="w-6 h-6" />,
+    color: 'from-cyan-500 to-blue-500',
+    description: 'Revolutionary AI consciousness and emotional intelligence'
+  },
+  {
+    id: 'quantum-emerging',
+    name: 'Quantum & Emerging Tech',
+    icon: <Atom className="w-6 h-6" />,
+    color: 'from-purple-500 to-pink-500',
+    description: 'Quantum computing and breakthrough technologies'
+  },
+  {
+    id: 'space-metaverse',
+    name: 'Space & Metaverse',
+    icon: <Rocket className="w-6 h-6" />,
+    color: 'from-pink-500 to-rose-500',
+    description: 'Space exploration and virtual worlds'
+  },
+  {
+    id: 'micro-saas',
+    name: 'Micro SAAS',
+    icon: <Target className="w-6 h-6" />,
+    color: 'from-orange-500 to-red-500',
+    description: 'Innovative business solutions'
+  },
+  {
+    id: 'creative-media',
+    name: 'Creative & Media',
+    icon: <Palette className="w-6 h-6" />,
+    color: 'from-indigo-500 to-purple-500',
+    description: 'AI-powered creative solutions'
+  },
+  {
+    id: 'healthcare-biotech',
+    name: 'Healthcare & Biotech',
+    icon: <Heart className="w-6 h-6" />,
+    color: 'from-red-500 to-pink-500',
+    description: 'Advanced healthcare solutions'
+  },
+  {
+    id: 'transportation-logistics',
+    name: 'Transportation & Logistics',
+    icon: <Truck className="w-6 h-6" />,
+    color: 'from-blue-500 to-cyan-500',
+    description: 'Smart transportation solutions'
+  },
+  {
+    id: 'education-research',
+    name: 'Education & Research',
+    icon: <GraduationCap className="w-6 h-6" />,
+    color: 'from-yellow-500 to-orange-500',
+    description: 'Learning and research platforms'
+  }
 ];
 
 const sortOptions = [
