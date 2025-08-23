@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
-import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
+import UltraFuturisticNavigation2046 from './UltraFuturisticNavigation2046';
+import UltraFuturisticFooter2046 from './UltraFuturisticFooter2046';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
 import TopContactBar from './TopContactBar';
@@ -49,7 +49,7 @@ export default function Layout({ children, seo }: LayoutProps) {
           <TopContactBar />
           
           {/* Navigation */}
-          <UltraFuturisticNavigation2040 />
+          <UltraFuturisticNavigation2046 />
           
           {/* Sidebar and Main Content */}
           <div className="flex">
@@ -58,7 +58,7 @@ export default function Layout({ children, seo }: LayoutProps) {
               onClose={() => setSidebarOpen(false)} 
             />
             
-            <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
+            <main id="main" role="main" className="flex-1 pt-32 lg:pt-36">
               <MobileOptimizer>
                 {children}
               </MobileOptimizer>
@@ -66,7 +66,7 @@ export default function Layout({ children, seo }: LayoutProps) {
           </div>
           
           {/* Footer */}
-          <UltraFuturisticFooter2040 />
+          <UltraFuturisticFooter2046 />
         </div>
 
         {/* Enhanced Components */}
