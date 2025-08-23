@@ -8,16 +8,12 @@ export default function SOC2ComplianceAutomationPage() {
 
 	return (
 		<>
-			<SEO data={{
-			pageTitle: title,
-			pageDescription: description,
-			pageKeywords: ["SOC 2", "compliance", "automation", "audit", "security", "Zion Tech Group"]
-		}} />
+			<SEO title="SOC 2 Compliance Automation — Zion Tech Group" description="Automate SOC 2 readiness with continuous controls, evidence pipelines, vendor risk, and auditor workflows." />
 			<div className="relative isolate">
-				<section className="px-6 lg:px-10 pt-28 pb-16 md:pt-36 md:pb-24">
+				<section className="px-6 lg:px-10 py-16 lg:py-24">
 					<div className="max-w-6xl mx-auto">
 						<h1 className="text-3xl lg:text-5xl font-bold tracking-tight bg-gradient-to-r from-pink-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">SOC 2 Compliance Automation</h1>
-						<p className="mt-4 text-gray-300 max-w-3xl">Automate SOC 2 readiness with continuous controls, evidence pipelines, and prebuilt auditor workflows. Integrates with cloud providers and ticketing systems.</p>
+						<p className="mt-4 text-gray-300 max-w-3xl">Automate SOC 2 readiness with continuous controls monitoring, evidence collection, asset inventory, vendor risk, and audit workspace. Reduce audit time and cost dramatically.</p>
 
 						<div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 							{[

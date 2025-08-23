@@ -155,158 +155,81 @@ export default function SEO({
     }
   };
 
-  return (
-    <Head>
-      {/* Basic Meta Tags */}
-      <title>{seo.title}</title>
-      <meta name="description" content={seo.description} />
-      <meta name="keywords" content={seo.keywords} />
-      <meta name="author" content={seo.author} />
-      <meta name="robots" content={noindex ? 'noindex' : nofollow ? 'nofollow' : 'index, follow'} />
-      
-      {/* Canonical URL */}
-      <link rel="canonical" href={seo.canonical} />
-      
-      {/* Open Graph Meta Tags */}
-      <meta property="og:title" content={seo.title} />
-      <meta property="og:description" content={seo.description} />
-      <meta property="og:type" content={seo.type} />
-      <meta property="og:url" content={seo.url} />
-      <meta property="og:image" content={seo.image} />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
-      <meta property="og:site_name" content="Zion Tech Group" />
-      <meta property="og:locale" content="en_US" />
-      
-      {/* Twitter Card Meta Tags */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={seo.title} />
-      <meta name="twitter:description" content={seo.description} />
-      <meta name="twitter:image" content={seo.image} />
-      <meta name="twitter:site" content="@ziontechgroup" />
-      <meta name="twitter:creator" content="@ziontechgroup" />
-      
-      {/* Additional Meta Tags */}
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-      <meta name="theme-color" content="#06b6d4" />
-      <meta name="msapplication-TileColor" content="#06b6d4" />
-      <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-      <meta name="apple-mobile-web-app-title" content="Zion Tech Group" />
-      
-      {/* Favicon and App Icons */}
-      <link rel="icon" href="/favicon.ico" />
-      <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-      <link rel="manifest" href="/site.webmanifest" />
-      
-      {/* Preconnect to external domains for performance */}
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      <link rel="preconnect" href="https://www.google-analytics.com" />
-      <link rel="preconnect" href="https://www.googletagmanager.com" />
-      
-      {/* DNS Prefetch for performance */}
-      <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-      <link rel="dns-prefetch" href="//www.google-analytics.com" />
-      <link rel="dns-prefetch" href="//www.googletagmanager.com" />
-      
-      {/* Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(organizationSchema)
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(websiteSchema)
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(serviceSchema)
-        }}
-      />
-      
-      {/* Additional structured data for articles */}
-      {type === 'article' && publishedTime && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Article",
-              "headline": seo.title,
-              "description": seo.description,
-              "image": seo.image,
-              "author": {
-                "@type": "Organization",
-                "name": seo.author
-              },
-              "publisher": {
-                "@type": "Organization",
-                "name": "Zion Tech Group",
-                "logo": {
-                  "@type": "ImageObject",
-                  "url": "https://ziontechgroup.com/images/zion-tech-group-logo.png"
-                }
-              },
-              "datePublished": publishedTime,
-              "dateModified": modifiedTime || publishedTime,
-              "mainEntityOfPage": {
-                "@type": "WebPage",
-                "@id": seo.url
-              }
-            })
-          }}
-        />
-      )}
-      
-      {/* Additional structured data for products/services */}
-      {type === 'product' || type === 'service' ? (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": type === 'product' ? 'Product' : 'Service',
-              "name": seo.title,
-              "description": seo.description,
-              "image": seo.image,
-              "offeredBy": {
-                "@type": "Organization",
-                "name": "Zion Tech Group"
-              },
-              "category": seo.section,
-              "keywords": seo.tags.join(', ')
-            })
-          }}
-        />
-      ) : null}
-      
-      {/* Performance and Security Headers */}
-      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-      <meta httpEquiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com;" />
-      <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
-      <meta httpEquiv="X-Frame-Options" content="DENY" />
-      <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
-      <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
-      
-      {/* Additional SEO Meta Tags */}
-      <meta name="application-name" content="Zion Tech Group" />
-      <meta name="generator" content="Next.js" />
-      <meta name="rating" content="General" />
-      <meta name="revisit-after" content="7 days" />
-      <meta name="language" content="English" />
-      <meta name="distribution" content="Global" />
-      <meta name="coverage" content="Worldwide" />
-      <meta name="target" content="all" />
-      <meta name="HandheldFriendly" content="true" />
-      <meta name="format-detection" content="telephone=no" />
-    </Head>
-  );
+	// Default JSON-LD if none provided (removed SearchAction because no /search route exists)
+	const defaultJsonLd = [
+		{
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "Zion Tech Group",
+			"url": baseUrl,
+			"logo": `${baseUrl.replace(/\/$/, '')}/favicon.svg`,
+			"sameAs": [
+				"https://www.linkedin.com/company/ziontechgroup",
+				"https://github.com/Zion-Holdings",
+				"https://www.instagram.com/ziontechgroup",
+				"https://www.youtube.com/@ziontechgroup"
+			],
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "364 E Main St STE 1008",
+				"addressLocality": "Middletown",
+				"addressRegion": "DE",
+				"postalCode": "19709",
+				"addressCountry": "US"
+			},
+			"contactPoint": [{
+				"@type": "ContactPoint",
+				"telephone": "+1-302-464-0950",
+				"contactType": "customer support",
+				"email": "kleber@ziontechgroup.com",
+				"areaServed": "US",
+				"availableLanguage": ["English"]
+			}]
+		},
+		{
+			"@context": "https://schema.org",
+			"@type": "WebSite",
+			"url": baseUrl,
+			"name": "Zion Tech Group"
+		}
+	];
+
+	// Derive Twitter meta from env if not provided
+	const envTwitterSite = process.env.NEXT_PUBLIC_TWITTER_SITE;
+	const envTwitterCreator = process.env.NEXT_PUBLIC_TWITTER_CREATOR;
+	const finalTwitterSite = twitterSite || envTwitterSite;
+	const finalTwitterCreator = twitterCreator || envTwitterCreator;
+
+	return (
+		<Head>
+			<title>{pageTitle}</title>
+			<meta name="description" content={pageDescription} />
+			<meta name="robots" content={robotsContent} />
+			<link rel="canonical" href={canonicalUrl} />
+			{/* Optional sitemap link for crawlers */}
+			<link rel="sitemap" type="application/xml" href={`${baseUrl.replace(/\/$/, '')}/sitemap.xml`} />
+			<meta property="og:title" content={pageTitle} />
+			<meta property="og:description" content={pageDescription} />
+			<meta property="og:url" content={canonicalUrl} />
+			<meta property="og:type" content="website" />
+			<meta property="og:site_name" content="Zion Tech Group" />
+			<meta property="og:locale" content="en_US" />
+			<meta property="og:image" content={imageUrl} />
+			<meta property="og:image:alt" content={imageAlt} />
+			<meta property="og:image:width" content="1200" />
+			<meta property="og:image:height" content="630" />
+			{imageType ? <meta property="og:image:type" content={imageType} /> : null}
+			<meta name="twitter:card" content="summary_large_image" />
+			<meta name="twitter:title" content={pageTitle} />
+			<meta name="twitter:description" content={pageDescription} />
+			<meta name="twitter:image" content={imageUrl} />
+			<meta name="twitter:image:alt" content={imageAlt} />
+			{imageType ? <meta name="twitter:image:type" content={imageType} /> : null}
+			{finalTwitterSite ? <meta name="twitter:site" content={finalTwitterSite} /> : null}
+			{finalTwitterCreator ? <meta name="twitter:creator" content={finalTwitterCreator} /> : null}
+			{(jsonLd || defaultJsonLd) ? (
+				<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd || defaultJsonLd) }} />
+			) : null}
+		</Head>
+	);
 }
