@@ -632,40 +632,34 @@ export default function Services() {
                 <h3 className="text-2xl font-bold text-white mb-2">No services found</h3>
                 <p className="text-gray-400">Try adjusting your search or filter criteria</p>
               </div>
-            )}
-          </div>
-        </section>
 
-        {/* Contact Section */}
-        <section className="text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="max-w-4xl mx-auto"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Ready to Transform Your Business?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Get in touch with our team to discuss how our revolutionary services can drive your success
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="tel:+13024640950"
-                className="flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25"
-              >
-                <Phone className="w-5 h-5" />
-                Call +1 302 464 0950
-              </a>
-              <a
-                href="mailto:kleber@ziontechgroup.com"
-                className="flex items-center justify-center gap-2 px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105"
-              >
-                <Mail className="w-5 h-5" />
-                Email Us
-              </a>
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
+                <div className="text-4xl mb-4">🔒</div>
+                <h3 className="text-2xl font-bold mb-4 text-red-400">AI Security & Compliance</h3>
+                <p className="text-white/70 mb-6">
+                  Comprehensive security solutions and compliance frameworks for AI systems and automation platforms.
+                </p>
+                <ul className="space-y-2 text-sm text-white/60">
+                  <li>• AI Model Security</li>
+                  <li>• Data Privacy Protection</li>
+                  <li>• Compliance Auditing</li>
+                  <li>• Threat Detection</li>
+                </ul>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
+                <div className="text-4xl mb-4">🚀</div>
+                <h3 className="text-2xl font-bold mb-4 text-orange-400">Edge Computing Solutions</h3>
+                <p className="text-white/70 mb-6">
+                  Edge AI deployment and optimization for real-time processing and reduced latency applications.
+                </p>
+                <ul className="space-y-2 text-sm text-white/60">
+                  <li>• Edge AI Deployment</li>
+                  <li>• IoT Integration</li>
+                  <li>• Real-time Processing</li>
+                  <li>• Edge-Cloud Orchestration</li>
+                </ul>
+              </div>
             </div>
 
             {/* Advanced AI Services Section */}
