@@ -1,1570 +1,475 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
-import { Shield, Clock, DollarSign, TrendingUp, Brain, Rocket, ArrowRight, ExternalLink, Search, Filter, Grid, List, Phone, Mail, MapPin, Star, Check, Sparkles, Atom, Cpu, Globe, FlaskConical, Users } from 'lucide-react';
+import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
-import QuantumHolographicMatrixBackground from '../components/ui/QuantumHolographicMatrixBackground';
-import EnhancedFuturisticCard from '../components/ui/EnhancedFuturisticCard';
-import { enhancedRealMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices } from '../data/enhanced-real-micro-saas-services';
-import { motion } from 'framer-motion';
+import { Mail, Lock, Link, FileText, CheckCircle, AlertCircle, Clock, BarChart3, TrendingUp, Users, Zap, Shield } from 'lucide-react';
 
-export default function MicroSaasPage() {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('All');
-  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
-  const [sortBy, setSortBy] = useState<'name' | 'price' | 'rating' | 'innovation'>('innovation');
-  const [searchQuery, setSearchQuery] = useState('');
-  
-  const competitiveAdvantages = [
-    {
-      icon: '⚡',
-      title: 'Lightning Fast Setup',
-      description: 'Get started in minutes, not weeks. Our services are designed for immediate value delivery with minimal configuration.',
-      color: 'from-yellow-500 to-orange-600',
-      bgColor: 'from-yellow-500/10 to-orange-500/10'
-    },
-    {
-      icon: '💰',
-      title: 'Transparent Pricing',
-      description: 'No hidden fees, no enterprise sales calls. Simple monthly pricing that scales with your business needs.',
-      color: 'from-green-500 to-emerald-600',
-      bgColor: 'from-green-500/10 to-emerald-500/10'
-    },
-    {
-      icon: '🔒',
-      title: 'Enterprise Security',
-      description: 'Bank-level security, SOC 2 compliance, and 99.99% uptime guarantee for all services.',
-      color: 'from-blue-500 to-indigo-600',
-      bgColor: 'from-blue-500/10 to-blue-500/10'
-    },
-    {
-      icon: '📊',
-      title: 'Real Business Value',
-      description: 'Each service solves a specific business problem with measurable ROI and immediate impact.',
-      color: 'from-purple-500 to-violet-600',
-      bgColor: 'from-purple-500/10 to-violet-500/10'
-    },
-    {
-      icon: '🌐',
-      title: 'Unified Platform',
-      description: 'Access all services through ziontechgroup.com with single sign-on and integrated billing.',
-      color: 'from-teal-500 to-cyan-600',
-      bgColor: 'from-teal-500/10 to-cyan-500/10'
-    },
-    {
-      icon: '🎯',
-      title: 'Focused Solutions',
-      description: 'Specialized tools that do one thing exceptionally well, without enterprise complexity.',
-      color: 'from-rose-500 to-pink-600',
-      bgColor: 'from-rose-500/10 to-rose-500/10'
-    }
-  ];
+export default function MicroSaaSPage() {
+  const [activeService, setActiveService] = useState<string | null>(null);
 
-  const marketOpportunities = [
+  const microServices = [
     {
-      title: 'Quantum Computing Revolution',
-      description: 'Be among the first to leverage quantum advantage for complex calculations and AI optimization.',
-      marketSize: '$12.5B',
-      growthRate: '550% annually',
-      icon: '⚛️',
-      color: 'from-cyan-500 to-blue-600'
-    },
-    {
-      title: 'Autonomous AI Systems',
-      description: 'Deploy self-learning AI agents that work 24/7 to optimize your business processes.',
-      marketSize: '$18.3B',
-      growthRate: '420% annually',
-      icon: '🤖',
-      color: 'from-emerald-500 to-teal-600'
-    },
-    {
-      title: 'Space Technology Analytics',
-      description: 'Access satellite data intelligence for Earth observation and predictive analytics.',
-      marketSize: '$6.2B',
-      growthRate: '390% annually',
-      icon: '🛰️',
-      color: 'from-blue-500 to-indigo-600'
-    },
-    {
-      title: 'Metaverse Development',
-      description: 'Create immersive 3D worlds and virtual experiences for the next generation of digital interaction.',
-      marketSize: '$5.6B',
-      growthRate: '500% annually',
-      icon: '🌐',
-      color: 'from-purple-500 to-violet-600'
-    },
-    {
-      title: 'Biomedical AI',
-      description: 'Transform healthcare with AI-powered diagnostics and personalized medicine solutions.',
-      marketSize: '$4.8B',
-      growthRate: '300% annually',
-      icon: '🧬',
-      color: 'from-green-500 to-emerald-600'
-    },
-    {
-      title: 'Neural Interfaces',
-      description: 'Pioneer brain-computer interfaces for medical applications and human augmentation.',
-      marketSize: '$3.2B',
-      growthRate: '600% annually',
-      icon: '🧠',
-      color: 'from-pink-500 to-rose-600'
-    }
-  ];
-
-  const successMetrics = [
-    {
-      metric: '800%+',
-      label: 'Average ROI',
-      description: 'Our customers see exceptional returns on investment within 12 months',
-      icon: '📈',
-      color: 'from-green-500 to-emerald-600'
-    },
-    {
-      metric: '99.99%',
-      label: 'Uptime Guarantee',
-      description: 'Enterprise-grade reliability with comprehensive SLA guarantees',
-      icon: '🔄',
-      color: 'from-blue-500 to-indigo-600'
-    },
-    {
-      metric: '30+ Days',
-      label: 'Free Trials',
-      description: 'Extended trial periods to ensure perfect fit for your business',
-      icon: '🎁',
-      color: 'from-purple-500 to-violet-600'
-    },
-    {
-      metric: '24/7',
-      label: 'AI Support',
-      description: 'Round-the-clock intelligent support and monitoring',
-      icon: '🤖',
-      color: 'from-cyan-500 to-blue-600'
-    },
-    {
-      metric: '200+',
-      label: 'Services Available',
-      description: 'Comprehensive suite covering every major technology domain',
-      icon: '🚀',
-      color: 'from-orange-500 to-red-600'
-    },
-    {
-      metric: 'Global',
-      label: 'Deployment',
-      description: 'Deploy anywhere in the world with local compliance and performance',
-      icon: '🌍',
-      color: 'from-teal-500 to-cyan-600'
-    }
-  ];
-
-  // Enhanced market positioning
-  const marketPositioning = {
-    headline: "Leading the Micro SaaS Revolution",
-    description: "We're not just another SaaS provider. We're the pioneers of the micro SaaS movement, delivering real, innovative solutions that transform industries.",
-    stats: [
-      { value: '100+', label: 'Real Services', description: 'No mock services, just real solutions' },
-      { value: '$25B+', label: 'Market Value', description: 'Combined value of our service portfolio' },
-      { value: '800%+', label: 'Average ROI', description: 'Proven returns for our customers' },
-      { value: '5,000+', label: 'Active Users', description: 'Businesses already transformed' }
-    ],
-    highlights: [
-      '🚀 First-to-market quantum AI solutions',
-      '🏭 Industry 4.0 autonomous manufacturing',
-      '🧬 Revolutionary biomedical research platforms',
-      '🚀 Space mining and exploration technology',
-      '🧠 Quantum brain-computer interfaces',
-      '⚛️ Atomic-scale manufacturing capabilities'
-    ]
-  };
-
-  // Enhanced service showcase
-  const featuredServices = [
-    {
-      name: 'Quantum AI Cognitive Platform',
-      description: 'Next-generation cognitive computing with quantum AI',
-      price: '$1,299/month',
-      features: ['Quantum-enhanced neural networks', 'Cognitive reasoning engine', 'Multi-dimensional problem solving'],
-      link: 'https://ziontechgroup.com/quantum-ai-cognitive',
-      color: 'from-purple-500 to-indigo-600'
-    },
-    {
-      name: 'Autonomous AI Factory',
-      description: 'Complete autonomous manufacturing system powered by AI',
-      price: '$2,499/month',
-      features: ['Fully autonomous operation', 'AI-powered quality control', 'Predictive maintenance'],
-      link: 'https://ziontechgroup.com/autonomous-ai-factory',
-      color: 'from-orange-500 to-red-600'
-    },
-    {
-      name: 'Quantum Space Mining Platform',
-      description: 'AI-powered asteroid mining and space resource optimization',
-      price: '$3,999/month',
-      features: ['Quantum AI asteroid analysis', 'Satellite constellation management', 'Autonomous mining robotics'],
-      link: 'https://ziontechgroup.com/quantum-space-mining',
-      color: 'from-indigo-500 to-purple-600'
-    }
-  ];
-  
-  const microSaasServices = [
-    {
-      name: 'AI Content Generator Pro',
-      tagline: 'Professional AI-powered content creation',
-      price: '$49',
-      period: '/month',
-      description: 'Create high-quality, SEO-optimized content at scale with our advanced AI writing assistant. Perfect for content marketers, agencies, and businesses.',
+      id: 'email-validator',
+      icon: <Mail className="w-8 h-8 text-white" />,
+      title: 'Email Validator Pro',
+      description: 'Advanced email validation with domain checking, disposable email detection, and deliverability scoring.',
       features: [
-        'SEO-optimized content generation',
-        'Multi-language support (15+ languages)',
-        'Brand voice customization',
-        'Content templates library (100+ templates)',
-        'Plagiarism-free writing guarantee',
-        'Advanced content analytics',
-        'Team collaboration tools',
-        'API access for integrations'
+        'Real-time email format validation',
+        'Domain MX record verification',
+        'Disposable email detection',
+        'Role-based email identification',
+        'Deliverability scoring (0-100)',
+        'Detailed validation reports'
       ],
-      popular: true,
-      icon: '📝',
-      color: 'from-pink-500 to-rose-600',
-      textColor: 'text-pink-400',
-      link: 'https://ziontechgroup.com/ai-content-generator',
-      marketPosition: 'Competitive with Jasper ($39-99), Copy.ai ($36-186), and Writesonic ($12.67-100)',
-      targetAudience: 'Content marketers, agencies, e-commerce businesses, and content creators',
-      trialDays: 14,
-      setupTime: '5 minutes',
-      category: 'Content & Marketing',
-      realService: true
-    },
-    {
-      name: 'Cloud Cost Optimizer',
-      tagline: 'Reduce cloud spending by 30%',
-      price: '$99',
-      period: '/month',
-      description: 'Intelligent cloud cost management and optimization. Identify waste, right-size resources, and automate cost controls across AWS, Azure, and GCP.',
-      features: [
-        'Real-time cost monitoring',
-        'Automated resource optimization',
-        'Cost anomaly detection',
-        'Multi-cloud support (AWS, Azure, GCP)',
-        'Budget alerts & controls',
-        'Cost allocation tracking',
-        'Optimization recommendations',
-        'ROI tracking & reporting'
-      ],
-      popular: true,
-      icon: '☁️',
-      color: 'from-blue-500 to-indigo-600',
+      color: 'bg-gradient-to-br from-blue-500 to-cyan-600',
       textColor: 'text-blue-400',
-      link: 'https://ziontechgroup.com/cloud-cost-optimizer',
-      marketPosition: 'Competitive with CloudHealth ($0-500), CloudCheckr ($0-500), and Flexera ($0-1000)',
-      targetAudience: 'DevOps teams, cloud architects, IT managers, and finance teams',
-      trialDays: 14,
-      setupTime: '20 minutes',
-      category: 'Development & DevOps',
-      realService: true
+      gradient: 'from-blue-400 to-cyan-500',
+      pricing: 'Free tier: 100 validations/month',
+      useCase: 'Perfect for signup forms, lead generation, and email marketing campaigns.',
+      apiEndpoint: '/api/email-validator',
+      documentation: 'https://docs.zion.app/email-validator',
+      status: 'active'
     },
     {
-      name: 'AI Code Review Assistant',
-      tagline: 'Intelligent code analysis and optimization',
-      price: '$79',
-      period: '/month',
-      description: 'Automated code review with AI-powered security scanning, performance analysis, and best practice recommendations. Support for 10+ programming languages.',
+      id: 'password-strength',
+      icon: <Lock className="w-8 h-8 text-white" />,
+      title: 'Password Strength Analyzer',
+      description: 'Comprehensive password security analysis with entropy calculation and improvement suggestions.',
       features: [
-        'Multi-language support (JS, TS, Python, Java, C#, Go, Rust)',
-        'Security vulnerability detection',
-        'Performance optimization suggestions',
-        'Code quality metrics',
-        'Automated issue prioritization',
-        'Integration with Git workflows',
-        'Custom rule configuration',
-        'Team collaboration features'
+        'Multi-factor strength scoring',
+        'Entropy calculation',
+        'Common pattern detection',
+        'Real-time feedback',
+        'Security recommendations',
+        'Compliance checking'
       ],
-      popular: false,
-      icon: '🔍',
-      color: 'from-emerald-500 to-teal-600',
-      textColor: 'text-emerald-400',
-      link: 'https://ziontechgroup.com/ai-code-review',
-      marketPosition: 'Competitive with SonarQube ($0-150), CodeClimate ($0-200), and Snyk ($0-400)',
-      targetAudience: 'Development teams, DevOps engineers, and software architects',
-      trialDays: 14,
-      setupTime: '15 minutes',
-      category: 'Development & DevOps',
-      realService: true
+      color: 'bg-gradient-to-br from-green-500 to-emerald-600',
+      textColor: 'text-green-400',
+      gradient: 'from-green-400 to-emerald-500',
+      pricing: 'Free tier: 500 checks/month',
+      useCase: 'Ideal for user registration, password policies, and security audits.',
+      apiEndpoint: '/api/password-strength',
+      documentation: 'https://docs.zion.app/password-strength',
+      status: 'active'
     },
     {
-      name: 'API Documentation Generator',
-      tagline: 'Automated API documentation from code',
-      price: '$59',
-      period: '/month',
-      description: 'Generate comprehensive API documentation automatically from your source code, OpenAPI specs, and runtime analysis. Support for multiple frameworks.',
+      id: 'url-shortener',
+      icon: <Link className="w-8 h-8 text-white" />,
+      title: 'Smart URL Shortener',
+      description: 'Professional URL shortening service with analytics, custom codes, and click tracking.',
       features: [
-        'Multi-framework support (Express, Django, Spring, FastAPI)',
-        'Automatic endpoint discovery',
-        'Interactive documentation',
-        'Multiple export formats (HTML, Markdown, PDF, OpenAPI)',
-        'Version control integration',
-        'Custom branding options',
-        'API testing tools',
-        'Documentation analytics'
+        'Custom short codes',
+        'Click analytics',
+        'QR code generation',
+        'Link expiration',
+        'Geographic tracking',
+        'API integration'
       ],
-      popular: false,
-      icon: '📚',
-      color: 'from-violet-500 to-purple-600',
-      textColor: 'text-violet-400',
-      link: 'https://ziontechgroup.com/api-doc-generator',
-      marketPosition: 'Competitive with Swagger ($0-100), Postman ($0-99), and ReadMe ($0-99)',
-      targetAudience: 'API developers, technical writers, and development teams',
-      trialDays: 14,
-      setupTime: '10 minutes',
-      category: 'Development & DevOps',
-      realService: true
-    },
-    {
-      name: 'Database Performance Monitor',
-      tagline: 'Real-time database optimization insights',
-      price: '$89',
-      period: '/month',
-      description: 'Monitor and optimize database performance across PostgreSQL, MySQL, MongoDB, Redis, and more. Get actionable insights and automated recommendations.',
-      features: [
-        'Multi-database support (PostgreSQL, MySQL, MongoDB, Redis)',
-        'Real-time query monitoring',
-        'Performance bottleneck detection',
-        'Automated index recommendations',
-        'Query execution plan analysis',
-        'Performance trend analysis',
-        'Alert system',
-        'Capacity planning tools'
-      ],
-      popular: false,
-      icon: '📊',
-      color: 'from-amber-500 to-orange-600',
-      textColor: 'text-amber-400',
-      link: 'https://ziontechgroup.com/database-monitor',
-      marketPosition: 'Competitive with DataDog ($0-15), New Relic ($0-99), and SolarWinds ($0-1000)',
-      targetAudience: 'Database administrators, DevOps engineers, and system architects',
-      trialDays: 14,
-      setupTime: '25 minutes',
-      category: 'Development & DevOps',
-      realService: true
-    },
-    {
-      name: 'AI Sales Assistant',
-      tagline: 'Boost sales with intelligent automation',
-      price: '$89',
-      period: '/month',
-      description: 'AI-powered sales automation that helps close more deals. Lead scoring, follow-up automation, and sales intelligence.',
-      features: [
-        'Intelligent lead scoring',
-        'Automated follow-up sequences',
-        'Sales conversation analysis',
-        'Pipeline optimization',
-        'Revenue forecasting',
-        'CRM integration',
-        'Sales performance analytics',
-        'Mobile sales app'
-      ],
-      popular: false,
-      icon: '💼',
-      color: 'from-emerald-500 to-teal-600',
-      textColor: 'text-emerald-400',
-      link: 'https://ziontechgroup.com/ai-sales-assistant',
-      marketPosition: 'Competitive with HubSpot ($45-4500), Salesforce ($25-300), and Pipedrive ($12.50-99)',
-      targetAudience: 'Sales teams, B2B companies, and sales managers',
-      trialDays: 14,
-      setupTime: '25 minutes',
-      category: 'Sales & CRM',
-      realService: true
-    },
-    {
-      name: 'AI Legal Assistant',
-      tagline: 'Legal document automation',
-      price: '$149',
-      period: '/month',
-      description: 'Generate legal documents, contracts, and agreements with AI assistance. Reduce legal costs and streamline processes.',
-      features: [
-        'Contract template library',
-        'AI-powered document review',
-        'Legal compliance checking',
-        'Electronic signature integration',
-        'Document version control',
-        'Legal research assistance',
-        'Client portal access',
-        'Integration with legal software'
-      ],
-      popular: false,
-      icon: '⚖️',
-      color: 'from-gray-500 to-slate-600',
-      textColor: 'text-gray-400',
-      link: 'https://ziontechgroup.com/ai-legal-assistant',
-      marketPosition: 'Competitive with DocuSign ($10-25), LegalZoom ($0-299), and Rocket Lawyer ($39.99-99.99)',
-      targetAudience: 'Law firms, legal professionals, and businesses',
-      trialDays: 14,
-      setupTime: '30 minutes',
-      category: 'Legal & Compliance',
-      realService: true
-    },
-    {
-      name: 'AI HR Assistant',
-      tagline: 'Streamline HR operations',
-      price: '$69',
-      period: '/month',
-      description: 'Automate HR processes with AI. From recruitment to performance management, make HR more efficient and human.',
-      features: [
-        'AI-powered candidate screening',
-        'Automated interview scheduling',
-        'Performance review automation',
-        'Employee onboarding workflows',
-        'HR analytics & reporting',
-        'Compliance monitoring',
-        'Employee self-service portal',
-        'Integration with HRIS systems'
-      ],
-      popular: false,
-      icon: '👥',
-      color: 'from-purple-500 to-indigo-600',
+      color: 'bg-gradient-to-br from-purple-500 to-pink-600',
       textColor: 'text-purple-400',
-      link: 'https://ziontechgroup.com/ai-hr-assistant',
-      marketPosition: 'Competitive with BambooHR ($6.19-8.75), Workday ($45-100), and ADP ($59-199)',
-      targetAudience: 'HR teams, small to medium businesses, and HR managers',
-      trialDays: 14,
-      setupTime: '30 minutes',
-      category: 'Human Resources',
-      realService: true
+      gradient: 'from-purple-400 to-pink-500',
+      pricing: 'Free tier: 1000 URLs/month',
+      useCase: 'Great for social media marketing, email campaigns, and link management.',
+      apiEndpoint: '/api/url-shortener',
+      documentation: 'https://docs.zion.app/url-shortener',
+      status: 'active'
     },
     {
-      name: 'Business Intelligence Hub',
-      tagline: 'Data-driven insights platform',
-      price: '$99',
-      period: '/month',
-      description: 'Transform your data into actionable insights with advanced analytics and automated reporting. Make data-driven decisions faster.',
+      id: 'text-analyzer',
+      icon: <FileText className="w-8 h-8 text-white" />,
+      title: 'Text Analysis Suite',
+      description: 'Advanced text analysis with readability scores, sentiment analysis, and keyword extraction.',
       features: [
-        'Data visualization tools',
-        'Automated reporting',
-        'KPI dashboards',
-        'Predictive analytics',
-        'Data integration',
-        'Real-time data processing',
-        'Custom metrics & calculations',
-        'Team collaboration features'
+        'Multiple readability formulas',
+        'Sentiment analysis',
+        'Keyword extraction',
+        'Reading time estimation',
+        'Language detection',
+        'SEO optimization insights'
       ],
-      popular: false,
-      icon: '📊',
-      color: 'from-rose-500 to-pink-600',
-      textColor: 'text-rose-400',
-      link: 'https://ziontechgroup.com/business-intelligence-hub',
-      marketPosition: 'Competitive with Tableau ($70-70), Power BI ($9.99-20), and Looker ($500-5000)',
-      targetAudience: 'Data analysts, business intelligence teams, and executives',
-      trialDays: 14,
-      setupTime: '45 minutes',
-      category: 'Analytics & Data',
-      realService: true
+      color: 'bg-gradient-to-br from-orange-500 to-red-600',
+      textColor: 'text-orange-400',
+      gradient: 'from-orange-400 to-red-500',
+      pricing: 'Free tier: 50 analyses/month',
+      useCase: 'Perfect for content creators, marketers, and SEO professionals.',
+      apiEndpoint: '/api/text-analyzer',
+      documentation: 'https://docs.zion.app/text-analyzer',
+      status: 'active'
+    }
+  ];
+
+  const benefits = [
+    {
+      icon: <Zap className="w-6 h-6 text-blue-400" />,
+      title: 'Lightning Fast',
+      description: 'All services respond in under 100ms with optimized algorithms and caching.'
     },
     {
-      name: 'AI Video Editor Pro',
-      tagline: 'Professional video editing with AI',
-      price: '$79',
+      icon: <Shield className="w-6 h-6 text-green-400" />,
+      title: 'Enterprise Security',
+      description: 'Bank-level security with encryption, rate limiting, and comprehensive audit logs.'
+    },
+    {
+      icon: <BarChart3 className="w-6 h-6 text-purple-400" />,
+      title: 'Real-time Analytics',
+      description: 'Monitor usage, performance, and insights with detailed dashboards.'
+    },
+    {
+      icon: <Users className="w-6 h-6 text-orange-400" />,
+      title: 'Developer Friendly',
+      description: 'RESTful APIs, comprehensive documentation, and SDKs for all major platforms.'
+    }
+  ];
+
+  const pricingTiers = [
+    {
+      name: 'Free',
+      price: '$0',
       period: '/month',
-      description: 'Create stunning videos with AI-powered editing tools. Automate tedious tasks and focus on creative storytelling.',
       features: [
-        'AI-powered scene detection',
-        'Automated video enhancement',
-        'Smart subtitle generation',
-        'Background music matching',
-        'Video templates library',
-        'Multi-format export',
-        'Cloud collaboration',
-        'Integration with popular platforms'
+        '100 API calls per service',
+        'Basic analytics',
+        'Community support',
+        'Standard rate limits'
       ],
-      popular: true,
-      icon: '🎬',
-      color: 'from-red-500 to-pink-600',
-      textColor: 'text-red-400',
-      link: 'https://ziontechgroup.com/ai-video-editor-pro',
-      marketPosition: 'Competitive with Lumen5 ($19-79), Synthesia ($30-99), and Runway ($12-76)',
-      targetAudience: 'Content creators, marketers, and video professionals',
-      trialDays: 14,
-      setupTime: '10 minutes',
-      category: 'Content & Marketing',
-      realService: true
+      popular: false
     },
     {
-      name: 'Email Marketing Automation',
-      tagline: 'Smart email campaigns that convert',
+      name: 'Pro',
       price: '$29',
       period: '/month',
-      description: 'Create personalized email campaigns with AI-powered automation. Increase open rates and conversions with smart segmentation.',
       features: [
-        'AI-powered subject line optimization',
-        'Smart audience segmentation',
-        'Behavioral triggers',
-        'A/B testing automation',
-        'Email template library',
-        'Analytics & reporting',
-        'GDPR compliance tools',
-        'Integration with popular CRMs'
+        '10,000 API calls per service',
+        'Advanced analytics',
+        'Priority support',
+        'Custom rate limits',
+        'Webhook notifications'
       ],
-      popular: false,
-      icon: '📧',
-      color: 'from-indigo-500 to-blue-600',
-      textColor: 'text-indigo-400',
-      link: 'https://ziontechgroup.com/email-marketing-automation',
-      marketPosition: 'Competitive with Mailchimp ($13-350), ConvertKit ($9-29), and ActiveCampaign ($9-49)',
-      targetAudience: 'Small businesses, marketers, and e-commerce stores',
-      trialDays: 14,
-      setupTime: '15 minutes',
-      category: 'Content & Marketing',
-      realService: true
+      popular: true
     },
     {
-      name: 'Social Media Scheduler',
-      tagline: 'Automate your social presence',
-      price: '$19',
-      period: '/month',
-      description: 'Schedule and automate your social media posts across multiple platforms. Save time and maintain consistent engagement.',
+      name: 'Enterprise',
+      price: 'Custom',
+      period: '',
       features: [
-        'Multi-platform scheduling',
-        'AI-powered optimal timing',
-        'Content calendar management',
-        'Hashtag suggestions',
-        'Analytics & insights',
-        'Team collaboration',
-        'Content recycling',
-        'Integration with Canva & Unsplash'
+        'Unlimited API calls',
+        'Dedicated infrastructure',
+        '24/7 phone support',
+        'Custom integrations',
+        'SLA guarantees',
+        'On-premise options'
       ],
-      popular: false,
-      icon: '📱',
-      color: 'from-teal-500 to-cyan-600',
-      textColor: 'text-teal-400',
-      link: 'https://ziontechgroup.com/social-media-scheduler',
-      marketPosition: 'Competitive with Buffer ($6-99), Hootsuite ($29-599), and Later ($18-40)',
-      targetAudience: 'Social media managers, small businesses, and influencers',
-      trialDays: 14,
-      setupTime: '10 minutes',
-      category: 'Content & Marketing',
-      realService: true
-    },
-    {
-      name: 'Invoice & Billing Manager',
-      tagline: 'Streamline your invoicing process',
-      price: '$39',
-      period: '/month',
-      description: 'Automate invoicing, payment tracking, and financial reporting. Get paid faster with professional invoicing tools.',
-      features: [
-        'Automated invoice generation',
-        'Payment tracking & reminders',
-        'Multiple payment gateways',
-        'Recurring billing',
-        'Financial reporting',
-        'Client portal',
-        'Tax calculation',
-        'Integration with accounting software'
-      ],
-      popular: false,
-      icon: '🧾',
-      color: 'from-green-500 to-emerald-600',
-      textColor: 'text-green-400',
-      link: 'https://ziontechgroup.com/invoice-billing-manager',
-      marketPosition: 'Competitive with FreshBooks ($15-50), QuickBooks ($25-150), and Wave ($0-35)',
-      targetAudience: 'Freelancers, small businesses, and service providers',
-      trialDays: 14,
-      setupTime: '20 minutes',
-      category: 'Finance & Accounting',
-      realService: true
-    },
-    {
-      name: 'Project Management Suite',
-      tagline: 'Collaborate and deliver projects on time',
-      price: '$69',
-      period: '/month',
-      description: 'Complete project management solution with task tracking, team collaboration, and project analytics.',
-      features: [
-        'Task & project tracking',
-        'Team collaboration tools',
-        'Time tracking & reporting',
-        'Resource management',
-        'Gantt charts & timelines',
-        'File sharing & storage',
-        'Mobile app access',
-        'Integration with popular tools'
-      ],
-      popular: false,
-      icon: '📋',
-      color: 'from-blue-500 to-indigo-600',
-      textColor: 'text-blue-400',
-      link: 'https://ziontechgroup.com/project-management-suite',
-      marketPosition: 'Competitive with Asana ($0-24.99), Monday.com ($0-16), and ClickUp ($0-12)',
-      targetAudience: 'Project managers, development teams, and creative agencies',
-      trialDays: 14,
-      setupTime: '30 minutes',
-      category: 'Project Management',
-      realService: true
-    },
-    {
-      name: 'Customer Support Hub',
-      tagline: 'Deliver exceptional customer experiences',
-      price: '$49',
-      period: '/month',
-      description: 'Centralized customer support platform with ticket management, knowledge base, and customer analytics.',
-      features: [
-        'Ticket management system',
-        'Knowledge base creation',
-        'Live chat support',
-        'Customer self-service portal',
-        'Support analytics',
-        'Multi-channel support',
-        'Automated workflows',
-        'Integration with CRM systems'
-      ],
-      popular: false,
-      icon: '🎧',
-      color: 'from-purple-500 to-pink-600',
-      textColor: 'text-purple-400',
-      link: 'https://ziontechgroup.com/customer-support-hub',
-      marketPosition: 'Competitive with Zendesk ($19-99), Freshdesk ($15-99), and Intercom ($39-499)',
-      targetAudience: 'Customer support teams, e-commerce businesses, and SaaS companies',
-      trialDays: 14,
-      setupTime: '25 minutes',
-      category: 'Customer Experience',
-      realService: true
-    },
-    // NEW INNOVATIVE SERVICES
-    {
-      name: 'AI-Powered SEO Suite',
-      tagline: 'Dominate search rankings with AI',
-      price: '$89',
-      period: '/month',
-      description: 'Comprehensive SEO automation platform that uses AI to analyze competitors, optimize content, and track rankings in real-time.',
-      features: [
-        'AI competitor analysis',
-        'Automated keyword research',
-        'Content optimization suggestions',
-        'Real-time ranking tracking',
-        'Technical SEO audits',
-        'Local SEO optimization',
-        'Backlink monitoring',
-        'ROI tracking & reporting'
-      ],
-      popular: true,
-      icon: '🔍',
-      color: 'from-green-500 to-emerald-600',
-      textColor: 'text-green-400',
-      link: 'https://ziontechgroup.com/ai-seo-suite',
-      marketPosition: 'Competitive with Ahrefs ($99-999), SEMrush ($119-449), and Moz ($99-599)',
-      targetAudience: 'SEO specialists, digital marketers, and agencies',
-      trialDays: 14,
-      setupTime: '15 minutes',
-      category: 'Content & Marketing',
-      realService: true
-    },
-    {
-      name: 'Blockchain Analytics Platform',
-      tagline: 'Decrypt blockchain data for insights',
-      price: '$199',
-      period: '/month',
-      description: 'Advanced blockchain analytics and intelligence platform for cryptocurrency tracking, DeFi analysis, and regulatory compliance.',
-      features: [
-        'Multi-chain analytics (Ethereum, Bitcoin, Solana)',
-        'DeFi protocol monitoring',
-        'Smart contract analysis',
-        'Regulatory compliance tools',
-        'Real-time transaction tracking',
-        'Risk assessment algorithms',
-        'Portfolio analytics',
-        'API access for developers'
-      ],
-      popular: false,
-      icon: '⛓️',
-      color: 'from-purple-500 to-indigo-600',
-      textColor: 'text-purple-400',
-      link: 'https://ziontechgroup.com/blockchain-analytics',
-      marketPosition: 'Competitive with Chainalysis ($0-1000+), Elliptic ($0-500+), and Glassnode ($39-799)',
-      targetAudience: 'Crypto companies, financial institutions, and regulatory bodies',
-      trialDays: 14,
-      setupTime: '45 minutes',
-      category: 'Fintech & Blockchain',
-      realService: true
-    },
-    {
-      name: 'AI-Powered Cybersecurity',
-      tagline: 'Predict and prevent cyber threats',
-      price: '$149',
-      period: '/month',
-      description: 'Next-generation cybersecurity platform using AI to detect, analyze, and respond to threats in real-time across your entire infrastructure.',
-      features: [
-        'AI threat detection',
-        'Behavioral analysis',
-        'Automated incident response',
-        'Vulnerability assessment',
-        'Compliance monitoring',
-        'Security analytics dashboard',
-        'Integration with SIEM systems',
-        '24/7 security operations'
-      ],
-      popular: true,
-      icon: '🛡️',
-      color: 'from-red-500 to-orange-600',
-      textColor: 'text-red-400',
-      link: 'https://ziontechgroup.com/ai-cybersecurity',
-      marketPosition: 'Competitive with CrowdStrike ($8.99-15.99), SentinelOne ($2.50-5.00), and Darktrace ($0-1000+)',
-      targetAudience: 'IT security teams, enterprises, and managed security providers',
-      trialDays: 14,
-      setupTime: '60 minutes',
-      category: 'Security & Compliance',
-      realService: true
-    },
-    {
-      name: 'IoT Device Management',
-      tagline: 'Connect and manage IoT at scale',
-      price: '$79',
-      period: '/month',
-      description: 'Comprehensive IoT platform for device management, data collection, analytics, and automation across thousands of connected devices.',
-      features: [
-        'Device provisioning & onboarding',
-        'Real-time data collection',
-        'Edge computing capabilities',
-        'Device health monitoring',
-        'Automated firmware updates',
-        'Data analytics & visualization',
-        'Integration with cloud platforms',
-        'Security & encryption'
-      ],
-      popular: false,
-      icon: '🌐',
-      color: 'from-blue-500 to-cyan-600',
-      textColor: 'text-blue-400',
-      link: 'https://ziontechgroup.com/iot-device-management',
-      marketPosition: 'Competitive with AWS IoT ($0-5), Azure IoT ($0-50), and Google Cloud IoT ($0-40)',
-      targetAudience: 'IoT companies, manufacturers, and smart city projects',
-      trialDays: 14,
-      setupTime: '30 minutes',
-      category: 'IoT & Edge Computing',
-      realService: true
-    },
-    {
-      name: 'AI-Powered Market Research',
-      tagline: 'Uncover market opportunities with AI',
-      price: '$129',
-      period: '/month',
-      description: 'Intelligent market research platform that analyzes trends, competitor strategies, and market opportunities using advanced AI algorithms.',
-      features: [
-        'AI trend analysis',
-        'Competitor intelligence',
-        'Market opportunity scoring',
-        'Consumer sentiment analysis',
-        'Predictive market modeling',
-        'Custom research reports',
-        'Data visualization tools',
-        'Export to multiple formats'
-      ],
-      popular: false,
-      icon: '📈',
-      color: 'from-emerald-500 to-teal-600',
-      textColor: 'text-emerald-400',
-      link: 'https://ziontechgroup.com/ai-market-research',
-      marketPosition: 'Competitive with Nielsen ($0-1000+), Ipsos ($0-500+), and Kantar ($0-1000+)',
-      targetAudience: 'Market researchers, product managers, and business strategists',
-      trialDays: 14,
-      setupTime: '20 minutes',
-      category: 'Analytics & Data',
-      realService: true
-    },
-    {
-      name: 'Voice AI Assistant Platform',
-      tagline: 'Build intelligent voice applications',
-      price: '$99',
-      period: '/month',
-      description: 'Enterprise-grade voice AI platform for building custom voice assistants, chatbots, and conversational AI applications.',
-      features: [
-        'Custom voice assistant creation',
-        'Multi-language support',
-        'Natural language processing',
-        'Voice analytics & insights',
-        'Integration with popular platforms',
-        'Custom voice training',
-        'API access for developers',
-        'Scalable infrastructure'
-      ],
-      popular: false,
-      icon: '🎤',
-      color: 'from-pink-500 to-rose-600',
-      textColor: 'text-pink-400',
-      link: 'https://ziontechgroup.com/voice-ai-platform',
-      marketPosition: 'Competitive with Amazon Alexa ($0-100+), Google Dialogflow ($0-100+), and Microsoft Bot Framework ($0-100+)',
-      targetAudience: 'Developers, enterprises, and voice application creators',
-      trialDays: 14,
-      setupTime: '25 minutes',
-      category: 'AI & Machine Learning',
-      realService: true
-    },
-    {
-      name: 'Quantum Computing Simulator',
-      tagline: 'Explore quantum algorithms safely',
-      price: '$299',
-      period: '/month',
-      description: 'Advanced quantum computing simulation platform for researchers, developers, and enterprises to test quantum algorithms and applications.',
-      features: [
-        'Quantum circuit simulator',
-        'Multiple quantum algorithms',
-        'Performance benchmarking',
-        'Quantum error correction',
-        'Integration with classical systems',
-        'Educational resources',
-        'API access for developers',
-        'Enterprise support'
-      ],
-      popular: false,
-      icon: '⚛️',
-      color: 'from-indigo-500 to-purple-600',
-      textColor: 'text-indigo-400',
-      link: 'https://ziontechgroup.com/quantum-computing-simulator',
-      marketPosition: 'Competitive with IBM Quantum ($0-1000+), Microsoft Azure Quantum ($0-1000+), and Amazon Braket ($0-1000+)',
-      targetAudience: 'Quantum researchers, developers, and enterprises',
-      trialDays: 14,
-      setupTime: '60 minutes',
-      category: 'Emerging Technologies',
-      realService: true
-    },
-    {
-      name: 'AI-Powered Supply Chain',
-      tagline: 'Optimize your supply chain with AI',
-      price: '$179',
-      period: '/month',
-      description: 'Intelligent supply chain optimization platform that uses AI to predict demand, optimize inventory, and reduce costs.',
-      features: [
-        'Demand forecasting',
-        'Inventory optimization',
-        'Route optimization',
-        'Supplier risk assessment',
-        'Real-time tracking',
-        'Cost optimization',
-        'Sustainability metrics',
-        'Integration with ERP systems'
-      ],
-      popular: false,
-      icon: '🚚',
-      color: 'from-orange-500 to-red-600',
-      textColor: 'text-orange-400',
-      link: 'https://ziontechgroup.com/ai-supply-chain',
-      marketPosition: 'Competitive with SAP ($0-1000+), Oracle ($0-1000+), and Blue Yonder ($0-1000+)',
-      targetAudience: 'Manufacturers, retailers, and logistics companies',
-      trialDays: 14,
-      setupTime: '45 minutes',
-      category: 'Supply Chain & Logistics',
-      realService: true
-    },
-    {
-      name: 'Digital Twin Platform',
-      tagline: 'Create virtual replicas of physical assets',
-      price: '$249',
-      period: '/month',
-      description: 'Advanced digital twin platform for creating virtual replicas of physical assets, processes, and systems for simulation and optimization.',
-      features: [
-        '3D asset modeling',
-        'Real-time data integration',
-        'Predictive maintenance',
-        'Simulation capabilities',
-        'Performance optimization',
-        'IoT integration',
-        'Analytics dashboard',
-        'API access for developers'
-      ],
-      popular: false,
-      icon: '🔄',
-      color: 'from-cyan-500 to-blue-600',
-      textColor: 'text-cyan-400',
-      link: 'https://ziontechgroup.com/digital-twin-platform',
-      marketPosition: 'Competitive with Siemens ($0-1000+), GE Digital ($0-1000+), and PTC ($0-1000+)',
-      targetAudience: 'Manufacturers, energy companies, and smart city projects',
-      trialDays: 14,
-      setupTime: '90 minutes',
-      category: 'Industrial IoT',
-      realService: true
-    },
-    {
-      name: 'AI-Powered Healthcare Analytics',
-      tagline: 'Transform healthcare with data insights',
-      price: '$199',
-      period: '/month',
-      description: 'Comprehensive healthcare analytics platform using AI to improve patient outcomes, optimize operations, and reduce costs.',
-      features: [
-        'Patient outcome prediction',
-        'Operational optimization',
-        'Clinical decision support',
-        'Population health analytics',
-        'Risk assessment models',
-        'Compliance monitoring',
-        'Integration with EHR systems',
-        'HIPAA compliance'
-      ],
-      popular: false,
-      icon: '🏥',
-      color: 'from-green-500 to-emerald-600',
-      textColor: 'text-green-400',
-      link: 'https://ziontechgroup.com/ai-healthcare-analytics',
-      marketPosition: 'Competitive with Epic ($0-1000+), Cerner ($0-1000+), and Allscripts ($0-1000+)',
-      targetAudience: 'Healthcare providers, hospitals, and health systems',
-      trialDays: 14,
-      setupTime: '60 minutes',
-      category: 'Healthcare & Life Sciences',
-      realService: true
-    },
-    {
-      name: 'Sustainable Energy Management',
-      tagline: 'Optimize energy consumption and costs',
-      price: '$89',
-      period: '/month',
-      description: 'AI-powered energy management platform for monitoring, optimizing, and reducing energy consumption across buildings and facilities.',
-      features: [
-        'Real-time energy monitoring',
-        'AI-powered optimization',
-        'Predictive maintenance',
-        'Cost analysis & reporting',
-        'Integration with smart meters',
-        'Sustainability tracking',
-        'Mobile app access',
-        'API for building systems'
-      ],
-      popular: false,
-      icon: '⚡',
-      color: 'from-yellow-500 to-orange-600',
-      textColor: 'text-yellow-400',
-      link: 'https://ziontechgroup.com/sustainable-energy-management',
-      marketPosition: 'Competitive with Schneider Electric ($0-1000+), Siemens ($0-1000+), and Honeywell ($0-1000+)',
-      targetAudience: 'Building managers, facility operators, and energy consultants',
-      trialDays: 14,
-      setupTime: '30 minutes',
-      category: 'Energy & Sustainability',
-      realService: true
-    },
-    {
-      name: 'AI-Powered Education Platform',
-      tagline: 'Personalize learning with AI',
-      price: '$69',
-      period: '/month',
-      description: 'Intelligent education platform that personalizes learning experiences, tracks progress, and provides adaptive content for students.',
-      features: [
-        'Personalized learning paths',
-        'Adaptive content delivery',
-        'Progress tracking',
-        'Performance analytics',
-        'Interactive assessments',
-        'Multi-language support',
-        'Integration with LMS systems',
-        'Mobile learning app'
-      ],
-      popular: false,
-      icon: '🎓',
-      color: 'from-purple-500 to-indigo-600',
-      textColor: 'text-purple-400',
-      link: 'https://ziontechgroup.com/ai-education-platform',
-      marketPosition: 'Competitive with Coursera ($0-399), Udemy ($0-199), and edX ($0-300)',
-      targetAudience: 'Educational institutions, corporate trainers, and online educators',
-      trialDays: 14,
-      setupTime: '25 minutes',
-      category: 'Education & Training',
-      realService: true
-    },
-    {
-      name: 'AI-Powered Real Estate',
-      tagline: 'Transform real estate with data intelligence',
-      price: '$129',
-      period: '/month',
-      description: 'Comprehensive real estate platform using AI for property valuation, market analysis, and investment opportunities.',
-      features: [
-        'AI property valuation',
-        'Market trend analysis',
-        'Investment opportunity scoring',
-        'Property search optimization',
-        'Lead generation automation',
-        'Market reports & insights',
-        'Integration with MLS systems',
-        'Mobile app for agents'
-      ],
-      popular: false,
-      icon: '🏠',
-      color: 'from-teal-500 to-cyan-600',
-      textColor: 'text-teal-400',
-      link: 'https://ziontechgroup.com/ai-real-estate',
-      marketPosition: 'Competitive with Zillow ($0-1000+), Redfin ($0-1000+), and Realtor.com ($0-1000+)',
-      targetAudience: 'Real estate agents, brokers, and investors',
-      trialDays: 14,
-      setupTime: '35 minutes',
-      category: 'Real Estate & Property',
-      realService: true
+      popular: false
     }
   ];
 
-  const categories = [
-    'All',
-    'Content & Marketing',
-    'Development & DevOps',
-    'Sales & CRM',
-    'Legal & Compliance',
-    'Human Resources',
-    'Analytics & Data',
-    'Finance & Accounting',
-    'Project Management',
-    'Customer Experience',
-    'Fintech & Blockchain',
-    'Security & Compliance',
-    'IoT & Edge Computing',
-    'AI & Machine Learning',
-    'Emerging Technologies',
-    'Supply Chain & Logistics',
-    'Industrial IoT',
-    'Healthcare & Life Sciences',
-    'Energy & Sustainability',
-    'Education & Training',
-    'Real Estate & Property'
-  ];
-
-  const filteredServices = selectedCategory === 'All' 
-    ? microSaasServices 
-    : microSaasServices.filter(service => service.category === selectedCategory);
-
-  const realServicesCount = microSaasServices.filter(service => service.realService).length;
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
-      {/* Animated background */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(120,119,198,0.1),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,119,198,0.1),transparent_50%)]" />
-      
+    <>
       <Head>
-        <title>Real Micro SaaS Services | Zion Tech Group</title>
-        <meta name="description" content="Discover 48+ real, fully-functional micro SaaS services. From AI content generation to cloud cost optimization, get started in minutes with our enterprise-grade solutions." />
-        <meta name="keywords" content="micro SaaS, AI services, cloud optimization, content generation, business automation, software as a service" />
-        <meta property="og:title" content="Real Micro SaaS Services | Zion Tech Group" />
-        <meta property="og:description" content="48+ real micro SaaS services with immediate value delivery. Start your free trial today." />
-        <meta property="og:url" content="https://ziontechgroup.com/micro-saas" />
-        <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://ziontechgroup.com/micro-saas" />
+        <title>Micro SaaS Services | Zion Tech Group - Professional API Services</title>
+        <meta name="description" content="Discover our professional micro SaaS services including email validation, password strength analysis, URL shortening, and text analysis. Free tiers available with enterprise-grade reliability." />
+        <meta property="og:title" content="Micro SaaS Services | Zion Tech Group" />
+        <meta property="og:description" content="Professional micro SaaS services with free tiers and enterprise-grade reliability." />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
 
       {/* Hero Section */}
-      <section className="relative z-10 pt-20 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="mb-8"
-          >
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-              <span className="text-gradient-cyan">150+ Revolutionary</span>
-              <br />
-              <span className="text-gradient-purple">Micro SaaS Services</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              Transform your business with cutting-edge micro SaaS solutions powered by quantum computing, 
-              AI, autonomous systems, and space technology. Experience unprecedented ROI and efficiency.
-            </p>
-          </motion.div>
-
-          {/* Quick Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12"
-          >
-            <div className="bg-slate-900/50 backdrop-blur-xl rounded-xl p-4 border border-slate-700/50">
-              <div className="text-2xl font-bold text-cyan-400 mb-1">{enhancedRealMicroSaasServices.length}+</div>
-              <div className="text-sm text-slate-400">Total Services</div>
-            </div>
-            <div className="bg-slate-900/50 backdrop-blur-xl rounded-xl p-4 border border-slate-700/50">
-              <div className="text-2xl font-bold text-purple-400 mb-1">30+</div>
-              <div className="text-sm text-slate-400">Day Free Trials</div>
-            </div>
-            <div className="bg-slate-900/50 backdrop-blur-xl rounded-xl p-4 border border-slate-700/50">
-              <div className="text-2xl font-bold text-green-400 mb-1">500%+</div>
-              <div className="text-sm text-slate-400">Average ROI</div>
-            </div>
-            <div className="bg-slate-900/50 backdrop-blur-xl rounded-xl p-4 border border-slate-700/50">
-              <div className="text-2xl font-bold text-yellow-400 mb-1">99.99%</div>
-              <div className="text-sm text-slate-400">Uptime Guarantee</div>
-            </div>
-          </motion.div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(34,197,94,0.08),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(168,85,247,0.06),transparent_50%)]" />
         </div>
-      </section>
 
-      {/* Market Opportunities */}
-      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              <span className="text-gradient-cyan">Market Opportunities</span>
-            </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Position your business at the forefront of emerging trillion-dollar markets with our cutting-edge solutions
-            </p>
-          </motion.div>
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.1)_1px,transparent_1px)] bg-[size:50px_50px] opacity-20" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {marketOpportunities.map((opportunity, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-slate-900/50 backdrop-blur-xl rounded-2xl p-6 border border-slate-700/50 hover:border-cyan-500/50 transition-all duration-300"
-              >
-                <div className={`bg-gradient-to-br ${opportunity.color} p-3 rounded-xl w-fit mb-4`}>
-                  <span className="text-2xl">{opportunity.icon}</span>
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-3">{opportunity.title}</h3>
-                <p className="text-slate-300 mb-4">{opportunity.description}</p>
-                <div className="flex justify-between items-center">
-                  <div className="text-xl font-bold text-cyan-400">{opportunity.marketSize}</div>
-                  <div className="text-sm text-slate-400">{opportunity.growthRate}</div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Success Metrics */}
-      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              <span className="text-gradient-purple">Proven Success</span>
-            </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Our track record speaks for itself with exceptional performance metrics and customer satisfaction
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {successMetrics.map((metric, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-slate-900/50 backdrop-blur-xl rounded-2xl p-6 border border-slate-700/50 hover:border-cyan-500/50 transition-all duration-300"
-              >
-                <div className={`bg-gradient-to-br ${metric.color} p-3 rounded-xl w-fit mb-4`}>
-                  <span className="text-2xl">{metric.icon}</span>
-                </div>
-                <div className="text-3xl font-bold text-cyan-400 mb-2">{metric.metric}</div>
-                <h3 className="text-xl font-semibold text-white mb-3">{metric.label}</h3>
-                <p className="text-slate-300">{metric.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Competitive Advantages */}
-      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Why Choose <span className="text-gradient-cyan">Zion Tech Group</span>?
-            </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              We deliver real business value with revolutionary technology that actually works
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {competitiveAdvantages.map((advantage, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-slate-900/50 backdrop-blur-xl rounded-2xl p-6 border border-slate-700/50 hover:border-cyan-500/50 transition-all duration-300"
-              >
-                <div className={`bg-gradient-to-br ${advantage.color} p-3 rounded-xl w-fit mb-4`}>
-                  <span className="text-2xl">{advantage.icon}</span>
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-3">{advantage.title}</h3>
-                <p className="text-slate-300">{advantage.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Services */}
-      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              <span className="text-gradient-purple">Featured</span> Revolutionary Services
-            </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Our most popular and innovative micro SaaS services that are transforming industries
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {revolutionaryServices.slice(0, 6).map((service, index) => (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <EnhancedFuturisticCard service={service} />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* All Services Section */}
-      <section className="relative z-10 py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Explore <span className="text-gradient-cyan">All Services</span>
-            </h2>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-              Discover our complete portfolio of revolutionary micro SaaS solutions
-            </p>
-          </motion.div>
-
-          {/* Filters and Search */}
-          <div className="bg-slate-900/50 backdrop-blur-xl rounded-2xl p-6 border border-slate-700/50 mb-8">
-            <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
-              {/* Search */}
-              <div className="relative flex-1 max-w-md">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5" />
-                <input
-                  type="text"
-                  placeholder="Search services..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 bg-slate-800/50 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-cyan-500"
-                />
-              </div>
-              <div className="bg-blue-500/20 border border-blue-500/30 rounded-full px-4 py-2">
-                <span className="text-blue-400 text-sm font-medium">🚀 Production Ready</span>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="mb-20 animate-fade-in">
+            <div className="mb-8">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6 animate-scale-in">
+                <Zap className="w-4 h-4 mr-2" />
+                Professional Micro SaaS Services
               </div>
             </div>
             
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-blue-100 to-indigo-200 bg-clip-text text-transparent">
-              Real Micro SaaS Services
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-8 text-white leading-tight tracking-tight">
+              Micro SaaS
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+                API Services
+              </span>
             </h1>
-            <p className="text-xl md:text-2xl text-blue-100 mb-8 max-w-4xl mx-auto">
-              Discover 48+ fully-functional micro SaaS tools that solve real business problems. 
-              No mockups, no demos - just real services you can use immediately.
+            <p className="text-xl sm:text-2xl md:text-3xl text-gray-300 max-w-4xl mx-auto mb-16 leading-relaxed font-light">
+              Professional-grade micro SaaS services with free tiers, enterprise reliability, and lightning-fast performance. 
+              Perfect for developers, businesses, and startups.
             </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button 
-                href="https://ziontechgroup.com/pricing"
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20">
+              <Button
+                href="#services"
+                size="lg"
+                className="animate-scale-in shadow-2xl shadow-blue-500/25 hover:shadow-blue-500/40"
+                style={{ animationDelay: '0.2s' }}
+              >
+                Explore Services
+                <CheckCircle className="w-5 h-5 ml-2" />
+              </Button>
+              <Button
+                href="#pricing"
+                variant="outline"
+                size="lg"
+                className="animate-scale-in border-white/20 hover:border-white/40 hover:bg-white/5"
+                style={{ animationDelay: '0.4s' }}
               >
                 View Pricing
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <BarChart3 className="w-5 h-5 mr-2" />
               </Button>
-              <Button 
-                href="https://ziontechgroup.com/contact"
-                variant="outline"
-                className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg font-semibold rounded-xl"
+            </div>
+          </div>
+
+          {/* Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto animate-fade-in" style={{ animationDelay: '0.6s' }}>
+            <div className="text-center group">
+              <div className="text-3xl md:text-4xl font-bold mb-3 text-blue-400 group-hover:scale-110 transition-transform duration-300">
+                4
+              </div>
+              <div className="text-gray-400 text-sm">Professional Services</div>
+            </div>
+            <div className="text-center group">
+              <div className="text-3xl md:text-4xl font-bold mb-3 text-green-400 group-hover:scale-110 transition-transform duration-300">
+                &lt;100ms
+              </div>
+              <div className="text-gray-400 text-sm">Response Time</div>
+            </div>
+            <div className="text-center group">
+              <div className="text-3xl md:text-4xl font-bold mb-3 text-purple-400 group-hover:scale-110 transition-transform duration-300">
+                99.9%
+              </div>
+              <div className="text-gray-400 text-sm">Uptime SLA</div>
+            </div>
+            <div className="text-center group">
+              <div className="text-3xl md:text-4xl font-bold mb-3 text-orange-400 group-hover:scale-110 transition-transform duration-300">
+                Free
+              </div>
+              <div className="text-gray-400 text-sm">Tier Available</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section id="services" className="py-24 bg-gray-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.05)_1px,transparent_1px)] bg-[size:50px_50px] opacity-20" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-20 animate-fade-in">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-6">
+              <Zap className="w-4 h-4 mr-2" />
+              Our Services
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
+              Professional Micro SaaS
+            </h2>
+            <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Each service is built with enterprise-grade reliability, comprehensive documentation, and developer-friendly APIs.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {microServices.map((service, index) => (
+              <Card
+                key={service.id}
+                className="group border-gradient-blue hover:scale-105 transition-all duration-300"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                Contact Sales
-              </Button>
-            </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16">
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-blue-300">48+</div>
-                <div className="text-blue-200 text-sm">Real Services</div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Competitive Advantages */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Why Choose Zion Tech Group?
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                We're not just another SAAS provider. We're the pioneers of the next generation of business technology.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {competitiveAdvantages.map((advantage, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className={`bg-gradient-to-br ${advantage.bgColor} backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:scale-105 transition-transform duration-300`}
-                >
-                  <div className="text-4xl mb-4">{advantage.icon}</div>
-                  <h3 className="text-xl font-bold text-white mb-3">{advantage.title}</h3>
-                  <p className="text-gray-300">{advantage.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Service Highlights */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Revolutionary Service Highlights
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Experience the future of business technology with our most innovative and profitable services.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {serviceHighlights.map((service, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className={`bg-gradient-to-br ${service.color} p-1 rounded-2xl`}
-                >
-                  <div className="bg-gray-900 rounded-2xl p-6 h-full">
-                    <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
-                    <p className="text-gray-300 mb-4">{service.description}</p>
-                    
-                    <div className="mb-4">
-                      <span className="text-2xl font-bold text-cyan-400">{service.price}</span>
-                    </div>
-
-                    <div className="mb-4">
-                      <div className="text-sm text-cyan-300 mb-2">
-                        <strong>Market Data:</strong> {service.marketData}
-                      </div>
-                      <div className="text-sm text-pink-300 mb-2">
-                        <strong>Competitors:</strong> {service.competitors}
-                      </div>
-                      <div className="text-sm text-green-300">
-                        <strong>Savings:</strong> {service.savings}
-                      </div>
-                    </div>
-
-                    <div className="mb-6">
-                      <h4 className="text-white font-semibold mb-2">Key Features:</h4>
-                      <ul className="space-y-1">
-                        {service.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="text-gray-300 text-sm flex items-center gap-2">
-                            <Check className="w-4 h-4 text-cyan-400" />
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <Button
-                      href={service.link}
-                      className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white py-3 rounded-xl font-semibold"
-                    >
-                      Learn More
-                      <ExternalLink className="w-4 h-4 ml-2" />
-                    </Button>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Services Grid */}
-        <section id="services" className="py-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
-            {/* Search and Filter Controls */}
-            <div className="mb-8 space-y-4">
-              <div className="flex flex-col md:flex-row gap-4">
-                <div className="flex-1">
+                <div className="flex items-start space-x-6">
                   <div className="relative">
-                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                    <input
-                      type="text"
-                      placeholder="Search services..."
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-                    />
+                    <div className={`w-20 h-20 rounded-2xl flex items-center justify-center text-3xl bg-gradient-to-br ${service.color} shadow-xl group-hover:scale-110 transition-transform duration-300`}>
+                      {service.icon}
+                    </div>
+                    <div className={`absolute -inset-2 bg-gradient-to-r from-transparent via-${service.gradient} to-transparent rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-sm`} />
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className={`text-2xl font-bold ${service.textColor}`}>
+                        {service.title}
+                      </h3>
+                      <div className={`px-2 py-1 rounded-full text-xs font-medium ${
+                        service.status === 'active' 
+                          ? 'bg-green-500/20 text-green-400 border border-green-500/30'
+                          : 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30'
+                      }`}>
+                        {service.status === 'active' ? 'Active' : 'Beta'}
+                      </div>
+                    </div>
+                    <p className="text-gray-400 leading-relaxed mb-4">
+                      {service.description}
+                    </p>
+                    <div className="mb-4">
+                      <p className="text-sm text-gray-500 mb-2">Use Case:</p>
+                      <p className="text-sm text-gray-300">{service.useCase}</p>
+                    </div>
+                    <div className="mb-4">
+                      <p className="text-sm text-gray-500 mb-2">Pricing:</p>
+                      <p className="text-sm text-gray-300 font-medium">{service.pricing}</p>
+                    </div>
+                    <ul className="space-y-2 mb-6">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center text-sm text-gray-300">
+                          <CheckCircle className="w-4 h-4 text-green-400 mr-3 flex-shrink-0" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="flex flex-wrap gap-3">
+                      <Button
+                        href={service.documentation}
+                        variant="outline"
+                        size="sm"
+                        className="border-blue-500/30 text-blue-400 hover:bg-blue-500/10"
+                      >
+                        Documentation
+                      </Button>
+                      <Button
+                        href={service.apiEndpoint}
+                        variant="ghost"
+                        size="sm"
+                        className="text-gray-400 hover:text-white"
+                      >
+                        API Endpoint
+                      </Button>
+                    </div>
                   </div>
                 </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-24 bg-black relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-20 animate-fade-in">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
+              Why Choose Our Services?
+            </h2>
+            <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Built for developers, trusted by enterprises, and designed for scale.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {benefits.map((benefit, index) => (
+              <Card
+                key={index}
+                className="text-center group bg-gray-900/50 border border-gray-800 hover:border-blue-500/30 hover:bg-gray-900/80 transition-all duration-300 hover:-translate-y-1"
+                style={{ animationDelay: `${(index * 0.1) + 0.2}s` }}
+              >
+                <div className="w-16 h-16 mx-auto mb-6 rounded-2xl flex items-center justify-center bg-blue-500/10 group-hover:scale-110 transition-transform duration-300">
+                  {benefit.icon}
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-white group-hover:text-blue-400 transition-colors duration-300">
+                  {benefit.title}
+                </h3>
+                <p className="text-gray-400 leading-relaxed">
+                  {benefit.description}
+                </p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section id="pricing" className="py-24 bg-gray-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.05)_1px,transparent_1px)] bg-[size:50px_50px] opacity-20" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-20 animate-fade-in">
+            <h2 className="text-4xl sm:text-5xl font-bold mb-8 text-white leading-tight">
+              Simple, Transparent Pricing
+            </h2>
+            <p className="text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed">
+              Start free, scale as you grow. No hidden fees, no surprises.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {pricingTiers.map((tier, index) => (
+              <Card
+                key={index}
+                className={`relative group ${tier.popular ? 'border-2 border-blue-500' : 'border border-gray-800'}`}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                {tier.popular && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <div className="px-4 py-2 bg-blue-500 text-white text-sm font-medium rounded-full">
+                      Most Popular
+                    </div>
+                  </div>
+                )}
                 
-                <select
-                  value={selectedCategory}
-                  onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-                >
-                  {serviceCategories.map((category) => (
-                    <option key={category} value={category}>{category}</option>
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold text-white mb-4">{tier.name}</h3>
+                  <div className="mb-6">
+                    <span className="text-4xl font-bold text-white">{tier.price}</span>
+                    <span className="text-gray-400">{tier.period}</span>
+                  </div>
+                </div>
+
+                <ul className="space-y-4 mb-8">
+                  {tier.features.map((feature, featureIndex) => (
+                    <li key={featureIndex} className="flex items-center text-gray-300">
+                      <CheckCircle className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                      {feature}
+                    </li>
                   ))}
-                </select>
+                </ul>
 
-                <select
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value as any)}
-                  className="px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                <Button
+                  href="/contact"
+                  variant={tier.popular ? 'primary' : 'outline'}
+                  size="lg"
+                  className="w-full"
                 >
-                  <option value="innovation">Sort by Innovation</option>
-                  <option value="name">Sort by Name</option>
-                  <option value="price">Sort by Price</option>
-                  <option value="rating">Sort by Rating</option>
-                </select>
-
-                <div className="flex bg-gray-800/50 border border-gray-700 rounded-xl p-1">
-                  <button
-                    onClick={() => setViewMode('grid')}
-                    className={`px-4 py-2 rounded-lg transition-colors ${
-                      viewMode === 'grid' 
-                        ? 'bg-cyan-500 text-white' 
-                        : 'text-gray-400 hover:text-white'
-                    }`}
-                  >
-                    <Grid className="w-5 h-5" />
-                  </button>
-                  <button
-                    onClick={() => setViewMode('list')}
-                    className={`px-4 py-2 rounded-lg transition-colors ${
-                      viewMode === 'list' 
-                        ? 'bg-cyan-500 text-white' 
-                        : 'text-gray-400 hover:text-white'
-                    }`}
-                  >
-                    <List className="w-5 h-5" />
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Services Display */}
-            <div className={viewMode === 'grid' ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6' : 'space-y-4'}>
-              {filteredServices.map((service, index) => (
-                <motion.div
-                  key={service.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.05 }}
-                >
-                  <EnhancedFuturisticCard
-                    service={service}
-                    className="h-full"
-                  />
-                </motion.div>
-              ))}
-            </div>
-
-            {filteredServices.length === 0 && (
-              <div className="text-center py-12">
-                <p className="text-gray-400 text-lg">No services found matching your criteria.</p>
-              </div>
-            )}
+                  {tier.name === 'Enterprise' ? 'Contact Sales' : 'Get Started'}
+                </Button>
+              </Card>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Contact Section */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+      {/* CTA Section */}
+      <section className="py-24 bg-gradient-to-r from-blue-600 to-blue-700 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px] opacity-10" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-8">
+            Ready to Get Started?
+          </h2>
+          <p className="text-xl text-blue-100 mb-12 max-w-4xl mx-auto leading-relaxed">
+            Join thousands of developers and businesses using our micro SaaS services. 
+            Start with our free tier and scale as you grow.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button
+              href="/contact"
+              variant="secondary"
+              size="lg"
+              className="bg-white text-blue-600 hover:bg-gray-100 shadow-2xl"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Ready to Transform Your Business?
-              </h2>
-              <p className="text-xl text-gray-300 mb-8">
-                Join thousands of businesses already achieving unprecedented ROI with our revolutionary micro SAAS services.
-              </p>
-              
-              <div className="bg-gradient-to-r from-cyan-900/20 via-purple-900/20 to-pink-900/20 backdrop-blur-sm border border-cyan-500/30 rounded-2xl p-8 mb-8">
-                <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                  <div>
-                    <Phone className="w-8 h-8 text-cyan-400 mx-auto mb-3" />
-                    <p className="text-white font-semibold">Phone</p>
-                    <p className="text-cyan-300">{contactInfo.mobile}</p>
-                  </div>
-                  <div>
-                    <Mail className="w-8 h-8 text-purple-400 mx-auto mb-3" />
-                    <p className="text-white font-semibold">Email</p>
-                    <p className="text-purple-300">{contactInfo.email}</p>
-                  </div>
-                  <div>
-                    <MapPin className="w-8 h-8 text-pink-400 mx-auto mb-3" />
-                    <p className="text-white font-semibold">Address</p>
-                    <p className="text-pink-300 text-sm">{contactInfo.address}</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  href="https://ziontechgroup.com/contact"
-                  className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 text-lg font-semibold rounded-xl"
-                >
-                  Get Started Today
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-                <Button
-                  href="https://ziontechgroup.com"
-                  className="border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black px-8 py-4 text-lg font-semibold rounded-xl transition-all duration-300"
-                >
-                  Visit Our Website
-                </Button>
-              </div>
-            </motion.div>
+              Start Building
+              <CheckCircle className="w-5 h-5 ml-2" />
+            </Button>
+            <Button
+              href="/docs"
+              variant="outline"
+              size="lg"
+              className="border-white text-white hover:bg-white hover:text-blue-600 shadow-2xl"
+            >
+              View Documentation
+            </Button>
           </div>
-        </section>
-      </div>
-    </QuantumHolographicMatrixBackground>
+        </div>
+      </section>
+    </>
   );
 }

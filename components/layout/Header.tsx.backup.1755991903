@@ -27,12 +27,27 @@ export default function Header() {
   ];
 
   const productDropdown = [
+<<<<<<< HEAD
+    { name: 'AI Code Assistant', href: '/ai-assistant', description: 'Intelligent code completion and suggestions', icon: '🤖' },
+    { name: 'Cloud Platform', href: '/cloud-platform', description: 'Scalable cloud infrastructure', icon: '☁️' },
+    { name: 'Automation Hub', href: '/automation', description: 'AI-powered workflow automation', icon: '⚡' },
+    { name: 'Analytics', href: '/analytics', description: 'Real-time insights and reporting', icon: '📊' },
+    { name: 'Micro SaaS Services', href: '/micro-saas', description: 'Specialized business solutions', icon: '🚀' },
+  ];
+
+  const saasToolsDropdown = [
+    { name: 'SaaS Marketplace', href: '/saas-marketplace', description: 'Curated selection of business tools' },
+    { name: 'AI Business Tools', href: '/ai-business-tools', description: 'AI-powered productivity solutions' },
+    { name: 'Startup Tools', href: '/startup-tools', description: 'Essential tools for entrepreneurs' },
+    { name: 'Tool Comparison', href: '/tool-comparison', description: 'Compare tools and make informed decisions' },
+=======
     { name: 'AI Code Assistant', href: '/ai-assistant', description: 'Intelligent code completion and suggestions' },
     { name: 'Cloud Platform', href: '/cloud-platform', description: 'Scalable cloud infrastructure' },
     { name: 'Automation Hub', href: '/automation', description: 'AI-powered workflow automation' },
     { name: 'Analytics', href: '/analytics', description: 'Real-time insights and reporting' },
     { name: 'Micro SaaS Services', href: '/micro-saas', description: 'Professional API services with free tiers' },
     { name: 'Interactive Demos', href: '/demos', description: 'Test our services in real-time' },
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-advertising-5f5b
   ];
 
   const isActive = (href: string) => router.pathname === href;

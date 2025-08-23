@@ -1,5 +1,46 @@
 {
   "summary": {
+<<<<<<< HEAD
+    "totalFiles": 1,
+    "filesWithIssues": 1,
+    "totalIssues": 3,
+    "totalWarnings": 1,
+    "buildBreakingFiles": 1,
+    "canBuild": false
+  },
+  "results": [
+    {
+      "file": "pages/enhanced-services.tsx",
+      "issues": [
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_EXPORT_DEFAULT",
+          "message": "Missing export default statement",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_COMPONENT_DECLARATION",
+          "message": "Missing component function/class declaration",
+          "line": 0,
+          "severity": "error"
+        },
+        {
+          "type": "CRITICAL",
+          "code": "MISSING_RETURN_STATEMENT",
+          "message": "Missing return statement or JSX",
+          "line": 0,
+          "severity": "error"
+        }
+      ],
+      "warnings": [
+        {
+          "type": "WARNING",
+          "code": "PAGE_TOO_SHORT",
+          "message": "Page content seems too short, may be incomplete",
+          "line": 0,
+=======
     "totalFiles": 4,
     "filesWithIssues": 4,
     "totalIssues": 0,
@@ -56,15 +97,23 @@
           "code": "INCOMPLETE_HTML",
           "message": "Incomplete HTML tags detected",
           "line": 31,
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-advertising-5f5b
           "severity": "warning"
         }
       ]
     }
   ],
+<<<<<<< HEAD
+  "buildBreakingFiles": [
+    "pages/enhanced-services.tsx"
+  ],
+  "generatedAt": "2025-08-21T00:33:41.084Z"
+=======
   "results": [],
   "buildBreakingFiles": [],
   "generatedAt": "2025-08-20T18:46:27.992Z"
 =======
   "buildBreakingFiles": [],
   "generatedAt": "2025-08-20T18:46:21.467Z"
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-advertising-5f5b
 }
