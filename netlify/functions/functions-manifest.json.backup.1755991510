@@ -1,4 +1,15 @@
 {
+<<<<<<< HEAD
+  "generatedAt": "2025-08-12T01:33:59.547Z",
+  "functions": [
+    "a11y-alt-text-runner",
+    "accelerated-sync-orchestrator",
+    "adaptive-orchestrator",
+    "ai-changelog-runner",
+    "auto-scheduler",
+    "automation-matrix",
+    "autonomous-cloud-brain",
+=======
   "generatedAt": "2025-08-12T01:34:55.479Z",
   "functions": [
     "a11y-alt-text-runner",
@@ -8,14 +19,21 @@
     "auto-scheduler",
     "automation-matrix",
     "autonomous-cloud-meta-orchestrator",
+>>>>>>> origin/cursor/develop-autonomous-cloud-agents-for-automation-orchestration-7783
     "autonomous-invention-orchestrator",
     "autonomous-master-orchestrator",
     "broken-image-scanner",
     "broken-image-scanner-runner",
+<<<<<<< HEAD
+    "canonical-auditor",
+    "cloud-swarm-committer",
+    "cloud_orchestrator",
+=======
     "cloud_orchestrator",
     "code-smell-audit-runner",
     "component-props-docs-runner",
     "component-size-report",
+>>>>>>> origin/cursor/develop-autonomous-cloud-agents-for-automation-orchestration-7783
     "continuous-front-runner",
     "continuous-orchestrator",
     "cron-heartbeat",
@@ -64,19 +82,30 @@
     "og-image-update-runner",
     "orchestrator-swarm",
     "orphan-pages-detector",
+<<<<<<< HEAD
+    "pagespeed-insights-runner",
+    "pm2-automation-redundancy",
+=======
+>>>>>>> origin/cursor/develop-autonomous-cloud-agents-for-automation-orchestration-7783
     "readme-advertiser",
     "repo-knowledge-graph-runner",
     "repo-radar-and-graph",
     "repo-radar-runner",
+<<<<<<< HEAD
+=======
     "revenue-ideas-lab",
     "roadmap-curator",
+>>>>>>> origin/cursor/develop-autonomous-cloud-agents-for-automation-orchestration-7783
     "schedule-content-index",
     "schedule-homepage",
     "schedule-knowledge-graph",
     "schedule-site-health",
     "security-audit",
     "security-audit-runner",
+<<<<<<< HEAD
+=======
     "seo-audit-runner",
+>>>>>>> origin/cursor/develop-autonomous-cloud-agents-for-automation-orchestration-7783
     "site-crawler",
     "sitemap_runner",
     "todo-scanner-runner",
