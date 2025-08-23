@@ -1,15 +1,15 @@
 {
-  "name": "Zion Tech Group - Revolutionary Technology Solutions",
-  "short_name": "Zion Tech",
-  "description": "Pioneering the future of technology with innovative AI, quantum computing, and enterprise solutions that drive business transformation",
+  "name": "Zion Tech Group - Pioneering the Future of Technology",
+  "short_name": "Zion Tech Group",
+  "description": "Leading technology company specializing in AI, quantum computing, space technology, and enterprise solutions. Transform your business with cutting-edge innovation.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#000000",
+  "background_color": "#111827",
   "theme_color": "#06b6d4",
   "orientation": "portrait-primary",
   "scope": "/",
   "lang": "en-US",
-  "categories": ["business", "productivity", "technology", "utilities"],
+  "categories": ["business", "productivity", "technology"],
   "icons": [
     {
       "src": "/images/icon-72x72.png",
@@ -30,31 +30,13 @@
       "purpose": "maskable any"
     },
     {
-      "src": "/images/icon-144x144.png",
-      "sizes": "144x144",
-      "type": "image/png",
-      "purpose": "maskable any"
-    },
-    {
-      "src": "/images/icon-152x152.png",
-      "sizes": "152x152",
-      "type": "image/png",
-      "purpose": "maskable any"
-    },
-    {
-      "src": "/images/icon-192x192.png",
+      "src": "/logo192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable any"
     },
     {
-      "src": "/images/icon-384x384.png",
-      "sizes": "384x384",
-      "type": "image/png",
-      "purpose": "maskable any"
-    },
-    {
-      "src": "/images/icon-512x512.png",
+      "src": "/logo512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable any"
@@ -84,8 +66,8 @@
       "url": "/services",
       "icons": [
         {
-          "src": "/images/icon-services.png",
-          "sizes": "96x96"
+          "src": "/logo192.png",
+          "sizes": "192x192"
         }
       ]
     },
@@ -96,8 +78,8 @@
       "url": "/contact",
       "icons": [
         {
-          "src": "/images/icon-contact.png",
-          "sizes": "96x96"
+          "src": "/logo192.png",
+          "sizes": "192x192"
         }
       ]
     },
@@ -108,22 +90,26 @@
       "url": "/ai-consciousness-evolution-2040",
       "icons": [
         {
-          "src": "/images/icon-ai.png",
-          "sizes": "96x96"
+          "src": "/logo192.png",
+          "sizes": "192x192"
         }
       ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Zion Tech Group Homepage"
     },
     {
-      "name": "Quantum Solutions",
-      "short_name": "Quantum",
-      "description": "Discover quantum computing solutions",
-      "url": "/quantum-neural-ecosystem-2040",
-      "icons": [
-        {
-          "src": "/images/icon-quantum.png",
-          "sizes": "96x96"
-        }
-      ]
+      "src": "/screenshot-narrow.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Zion Tech Group Mobile View"
     }
   ],
   "related_applications": [],
@@ -135,54 +121,10 @@
     "client_mode": "navigate-existing"
   },
   "handle_links": "preferred",
-  "capture_links": "new-client-navigate",
-  "file_handlers": [
-    {
-      "action": "/",
-      "accept": {
-        "text/*": [".txt", ".md", ".html"],
-        "application/pdf": [".pdf"],
-        "image/*": [".png", ".jpg", ".jpeg", ".gif", ".svg"]
-      }
-    }
-  ],
   "protocol_handlers": [
     {
       "protocol": "web+zion",
       "url": "/?protocol=%s"
     }
-  ],
-  "share_target": {
-    "action": "/share",
-    "method": "POST",
-    "enctype": "multipart/form-data",
-    "params": {
-      "title": "title",
-      "text": "text",
-      "url": "url",
-      "files": [
-        {
-          "name": "files",
-          "accept": ["image/*", "text/*", "application/pdf"]
-        }
-      ]
-    }
-  },
-  "permissions": [
-    "notifications",
-    "geolocation",
-    "camera",
-    "microphone"
-  ],
-  "features": [
-    "Cross Platform",
-    "fast",
-    "simple",
-    "responsive",
-    "offline-capable"
-  ],
-  "developer": {
-    "name": "Zion Tech Group",
-    "url": "https://ziontechgroup.com"
-  }
+  ]
 }
