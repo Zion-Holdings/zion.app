@@ -9,7 +9,11 @@
   },
   "scripts": {
     "dev": "vite",
+<<<<<<< HEAD
+    "build": "tsc && vite build",
+=======
     "build": "NODE_ENV=production tsc && NODE_ENV=production vite build && node scripts/prerender.js",
+>>>>>>> origin/7fnoko-codex/fix-client-side-rendering-and-javascript-errors
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "jest",

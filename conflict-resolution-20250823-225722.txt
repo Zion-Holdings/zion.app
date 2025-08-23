@@ -242,3 +242,8 @@
 2025-08-23 22:57:58 - Resolving conflicts in pages/api/products/index.ts for branch 7dxqey-codex/fix-missing-product-export-from-@prisma/client
 2025-08-23 22:57:58 - Resolving conflicts in pages/marketplace/listing/[slug].tsx for branch 7dxqey-codex/fix-missing-product-export-from-@prisma/client
 2025-08-23 22:57:58 - Resolving conflicts in src/types/product.ts for branch 7dxqey-codex/fix-missing-product-export-from-@prisma/client
+2025-08-23 22:57:59 - Merge conflicts detected in 7fnoko-codex/fix-client-side-rendering-and-javascript-errors
+2025-08-23 22:57:59 - Resolving conflicts in index.html for branch 7fnoko-codex/fix-client-side-rendering-and-javascript-errors
+2025-08-23 22:57:59 - Resolving conflicts in package.json for branch 7fnoko-codex/fix-client-side-rendering-and-javascript-errors
+2025-08-23 22:57:59 - Resolving conflicts in scripts/prerender.js for branch 7fnoko-codex/fix-client-side-rendering-and-javascript-errors
+2025-08-23 22:57:59 - Resolving conflicts in src/main.tsx for branch 7fnoko-codex/fix-client-side-rendering-and-javascript-errors
