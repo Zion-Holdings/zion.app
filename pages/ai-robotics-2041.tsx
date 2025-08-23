@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
-import { Bot, Sparkles, Zap, Target, Shield, Clock, CheckCircle, Cpu, Database, Network, Brain, Arm, Eye } from 'lucide-react';
+import { Bot, Sparkles, Zap, Target, Shield, Clock, Check, Cpu, Database, Network, Brain, Hand, Eye } from 'lucide-react';
 
 export default function AIRobotics2041() {
   return (
@@ -66,7 +66,7 @@ export default function AIRobotics2041() {
                   color: "from-blue-500 to-cyan-500"
                 },
                 {
-                  icon: <Arm className="w-8 h-8" />,
+                  icon: <Hand className="w-8 h-8" />,
                   title: "Precision Control",
                   description: "AI-optimized motor control and manipulation for precise and delicate robotic operations.",
                   color: "from-green-500 to-emerald-500"
@@ -186,7 +186,7 @@ export default function AIRobotics2041() {
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                       {phase.features.map((feature, featureIndex) => (
                         <div key={featureIndex} className="flex items-center gap-3 p-4 bg-white/5 border border-white/10 rounded-lg">
-                          <CheckCircle className="w-5 h-5 text-orange-400 flex-shrink-0" />
+                          <Check className="w-5 h-5 text-orange-400 flex-shrink-0" />
                           <span className="text-gray-300 text-sm">{feature}</span>
                         </div>
                       ))}
@@ -230,7 +230,7 @@ export default function AIRobotics2041() {
                 {
                   category: "Agricultural Robots",
                   description: "Specialized robots for farming, harvesting, and crop management.",
-                  types: ["Harvesting robots", "Weeding robots", "Monitoring robots", "Irrigation robots"]
+                  applications: ["Harvesting robots", "Weeding robots", "Monitoring robots", "Irrigation robots"]
                 },
                 {
                   category: "Service Robots",
@@ -249,7 +249,7 @@ export default function AIRobotics2041() {
                   <div className="space-y-2">
                     {category.applications.map((app, appIndex) => (
                       <div key={appIndex} className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-orange-400 flex-shrink-0" />
+                        <Check className="w-4 h-4 text-orange-400 flex-shrink-0" />
                         <span className="text-gray-300 text-sm">{app}</span>
                       </div>
                     ))}
@@ -311,7 +311,7 @@ export default function AIRobotics2041() {
                   <div className="space-y-2">
                     {industry.benefits.map((benefit, benefitIndex) => (
                       <div key={benefitIndex} className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-orange-400 flex-shrink-0" />
+                        <Check className="w-4 h-4 text-orange-400 flex-shrink-0" />
                         <span className="text-gray-300 text-sm">{benefit}</span>
                       </div>
                     ))}

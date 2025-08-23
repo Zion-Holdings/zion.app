@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
-import { Wifi, Sparkles, Zap, Target, Shield, Clock, CheckCircle, Cpu, Database, Network, Brain, Sensor } from 'lucide-react';
+import { Wifi, Sparkles, Zap, Target, Shield, Clock, CheckCircle, Cpu, Database, Network, Brain, Activity } from 'lucide-react';
 
 export default function AIIoT2041() {
   return (
@@ -66,7 +66,7 @@ export default function AIIoT2041() {
                   color: "from-blue-500 to-indigo-500"
                 },
                 {
-                  icon: <Sensor className="w-8 h-8" />,
+                  icon: <Activity className="w-8 h-8" />,
                   title: "Smart Sensors",
                   description: "Advanced sensors with AI processing that provide real-time insights and predictions.",
                   color: "from-green-500 to-emerald-500"
@@ -357,7 +357,7 @@ export default function AIIoT2041() {
                 {
                   title: "Predictive Capabilities",
                   description: "AI-powered predictions that prevent issues and optimize IoT performance proactively.",
-                  icon: <Sensor className="w-8 h-8" />,
+                  icon: <Activity className="w-8 h-8" />,
                   color: "from-purple-500 to-pink-500"
                 }
               ].map((benefit, index) => (

@@ -9,7 +9,7 @@ import {
 
 // Import our new 2025 service data
 import { enterpriseAIAutomationServices2025 } from '../data/2025-enterprise-ai-automation-services';
-import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
+import { innovative2025ITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
 import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
 import { cuttingEdgeAIServices2025 } from '../data/2025-cutting-edge-ai-services';
 
@@ -25,7 +25,7 @@ const ComprehensivePricingShowcase2025 = () => {
   // Combine all services
   const allServices = [
     ...enterpriseAIAutomationServices2025,
-    ...innovativeITInfrastructureServices2025,
+    ...innovative2025ITInfrastructureServices,
     ...innovativeMicroSaasSolutions2025,
     ...cuttingEdgeAIServices2025,
     ...advancedAIAutomationServices2025
@@ -77,18 +77,100 @@ const ComprehensivePricingShowcase2025 = () => {
     { id: 'premium', name: 'Premium', range: '$5,000+' }
   ];
 
+  // Helper functions
+  const getServicePrice = (service: any) => {
+    if (service.price) {
+      return service.price;
+    }
+    if (service.pricing?.starter) {
+      return service.pricing.starter;
+    }
+    if (service.pricing?.monthly) {
+      return service.pricing.monthly;
+    }
+    return '$0';
+  };
+
+  const getServiceRating = (service: any) => {
+    return service.rating || 0;
+  };
+
+  const getServicePopular = (service: any) => {
+    return service.popular || false;
+  };
+
+  const getServiceCustomers = (service: any) => {
+    return service.customers || 0;
+  };
+
+  const getServicePeriod = (service: any) => {
+    return service.period || '';
+  };
+
+  const getServiceReviews = (service: any) => {
+    return service.reviews || 0;
+  };
+
+  const getServiceGrowthRate = (service: any) => {
+    return service.growthRate || 'N/A';
+  };
+
+  const getServiceMarketSize = (service: any) => {
+    return service.marketSize || 'N/A';
+  };
+
+  const getServiceROI = (service: any) => {
+    return service.roi || 'N/A';
+  };
+
+  const getServiceTechnology = (service: any) => {
+    return service.technology || [];
+  };
+
+  const getServiceSetupTime = (service: any) => {
+    return service.setupTime || 'Immediate';
+  };
+
+  const getServiceLink = (service: any) => {
+    return service.link || service.slug || `/services/${service.id}`;
+  };
+
+  const getServiceContactMobile = (service: any) => {
+    return service.contactInfo?.mobile || service.mobile || '+1 302 464 0950';
+  };
+
+  const getServiceContactEmail = (service: any) => {
+    return service.contactInfo?.email || service.contact || 'kleber@ziontechgroup.com';
+  };
+
+  const getServiceContactAddress = (service: any) => {
+    return service.contactInfo?.address || service.address || '364 E Main St STE 1008 Middletown DE 19709';
+  };
+
+  const getServiceIcon = (service: any) => {
+    return service.icon || '🚀';
+  };
+
+  const getPriceRange = (price: string) => {
+    const numPrice = parseFloat(price.replace('$', '').replace(',', ''));
+    if (numPrice <= 500) return 'budget';
+    if (numPrice <= 2000) return 'mid-range';
+    if (numPrice <= 5000) return 'enterprise';
+    return 'premium';
+  };
+
   // Filter and sort services
   const filteredServices = allServices
     .filter(service => {
       const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           service.tagline.toLowerCase().includes(searchTerm.toLowerCase());
+                           (service as any).tagline?.toLowerCase().includes(searchTerm.toLowerCase());
       
       const matchesCategory = selectedCategory === 'all' || 
                              service.category.toLowerCase().includes(selectedCategory.replace('-', ' '));
       
       const matchesPrice = priceRange === 'all' || (() => {
-        const price = parseFloat(service.price.replace('$', '').replace(',', ''));
+        const price = parseFloat(getServicePrice(service).replace('$', '').replace(',', ''));
         switch (priceRange) {
           case 'budget': return price <= 500;
           case 'mid-range': return price > 500 && price <= 2000;
@@ -103,15 +185,15 @@ const ComprehensivePricingShowcase2025 = () => {
     .sort((a, b) => {
       switch (sortBy) {
         case 'price-low':
-          return parseFloat(a.price.replace('$', '').replace(',', '')) - parseFloat(b.price.replace('$', '').replace(',', ''));
+          return parseFloat(getServicePrice(a).replace('$', '').replace(',', '')) - parseFloat(getServicePrice(b).replace('$', '').replace(',', ''));
         case 'price-high':
-          return parseFloat(b.price.replace('$', '').replace(',', '')) - parseFloat(a.price.replace('$', '').replace(',', ''));
+          return parseFloat(getServicePrice(b).replace('$', '').replace(',', '')) - parseFloat(getServicePrice(a).replace('$', '').replace(',', ''));
         case 'rating':
-          return (b.rating || 0) - (a.rating || 0);
+          return getServiceRating(b) - getServiceRating(a);
         case 'popularity':
-          return (b.popular ? 1 : 0) - (a.popular ? 1 : 0);
+          return (getServicePopular(b) ? 1 : 0) - (getServicePopular(a) ? 1 : 0);
         case 'customers':
-          return (b.customers || 0) - (a.customers || 0);
+          return getServiceCustomers(b) - getServiceCustomers(a);
         default:
           return 0;
       }
@@ -136,14 +218,6 @@ const ComprehensivePricingShowcase2025 = () => {
         duration: 0.5
       }
     }
-  };
-
-  const getPriceRange = (price: string) => {
-    const numPrice = parseFloat(price.replace('$', '').replace(',', ''));
-    if (numPrice <= 500) return 'budget';
-    if (numPrice <= 2000) return 'mid-range';
-    if (numPrice <= 5000) return 'enterprise';
-    return 'premium';
   };
 
   return (
@@ -292,20 +366,20 @@ const ComprehensivePricingShowcase2025 = () => {
                 {/* Service Header */}
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-4">
-                    <div className="text-4xl">{service.icon}</div>
+                    <div className="text-4xl">{getServiceIcon(service)}</div>
                     <div className="flex items-center space-x-2">
-                      {service.popular && (
+                      {getServicePopular(service) && (
                         <span className="px-3 py-1 bg-gradient-to-r from-yellow-400 to-orange-400 text-black text-xs font-bold rounded-full">
                           Popular
                         </span>
                       )}
                       <span className={`px-3 py-1 text-xs font-bold rounded-full ${
-                        getPriceRange(service.price) === 'budget' ? 'bg-green-500/20 text-green-400 border border-green-500/30' :
-                        getPriceRange(service.price) === 'mid-range' ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' :
-                        getPriceRange(service.price) === 'enterprise' ? 'bg-purple-500/20 text-purple-400 border border-purple-500/30' :
+                        getPriceRange(getServicePrice(service)) === 'budget' ? 'bg-green-500/20 text-green-400 border border-green-500/30' :
+                        getPriceRange(getServicePrice(service)) === 'mid-range' ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' :
+                        getPriceRange(getServicePrice(service)) === 'enterprise' ? 'bg-purple-500/20 text-purple-400 border border-purple-500/30' :
                         'bg-pink-500/20 text-pink-400 border border-pink-500/30'
                       }`}>
-                        {getPriceRange(service.price).charAt(0).toUpperCase() + getPriceRange(service.price).slice(1)}
+                        {getPriceRange(getServicePrice(service)).charAt(0).toUpperCase() + getPriceRange(getServicePrice(service)).slice(1)}
                       </span>
                     </div>
                   </div>
@@ -316,13 +390,13 @@ const ComprehensivePricingShowcase2025 = () => {
                   {/* Price and Rating */}
                   <div className="flex items-center justify-between mb-6">
                     <div className="text-3xl font-bold text-white">
-                      {service.price}
-                      <span className="text-gray-400 text-xl">{service.period}</span>
+                      {getServicePrice(service)}
+                      <span className="text-gray-400 text-xl">{getServicePeriod(service)}</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <Star className="w-5 h-5 text-yellow-400 fill-current" />
-                      <span className="text-white font-semibold">{service.rating}</span>
-                      <span className="text-gray-400">({service.reviews})</span>
+                      <span className="text-white font-semibold">{getServiceRating(service)}</span>
+                      <span className="text-gray-400">({getServiceReviews(service)})</span>
                     </div>
                   </div>
 
@@ -348,40 +422,40 @@ const ComprehensivePricingShowcase2025 = () => {
                   <div className="grid grid-cols-2 gap-4 mb-6">
                     <div className="bg-white/5 p-3 rounded-lg">
                       <div className="text-gray-400 text-sm">Market Size</div>
-                      <div className="text-white font-semibold">{service.marketSize}</div>
+                      <div className="text-white font-semibold">{getServiceMarketSize(service)}</div>
                     </div>
                     <div className="bg-white/5 p-3 rounded-lg">
                       <div className="text-gray-400 text-sm">Growth Rate</div>
-                      <div className="text-green-400 font-semibold">{service.growthRate}</div>
+                      <div className="text-green-400 font-semibold">{getServiceGrowthRate(service)}</div>
                     </div>
                     <div className="bg-white/5 p-3 rounded-lg">
                       <div className="text-gray-400 text-sm">Customers</div>
-                      <div className="text-white font-semibold">{service.customers.toLocaleString()}</div>
+                      <div className="text-white font-semibold">{getServiceCustomers(service).toLocaleString()}</div>
                     </div>
                     <div className="bg-white/5 p-3 rounded-lg">
                       <div className="text-gray-400 text-sm">Setup Time</div>
-                      <div className="text-white font-semibold">{service.setupTime}</div>
+                      <div className="text-white font-semibold">{getServiceSetupTime(service)}</div>
                     </div>
                   </div>
 
                   {/* ROI Benefits */}
                   <div className="bg-gradient-to-r from-green-500/20 to-blue-500/20 p-4 rounded-lg mb-6">
                     <h4 className="text-white font-semibold mb-2">ROI Benefits</h4>
-                    <p className="text-gray-300">{service.roi}</p>
+                    <p className="text-gray-300">{getServiceROI(service)}</p>
                   </div>
 
                   {/* Technology Stack */}
                   <div className="mb-6">
                     <h4 className="text-white font-semibold mb-2">Technology Stack:</h4>
                     <div className="flex flex-wrap gap-2">
-                      {service.technology.slice(0, 3).map((tech, index) => (
+                      {getServiceTechnology(service).slice(0, 3).map((tech, index) => (
                         <span key={index} className="px-2 py-1 bg-white/10 text-gray-300 text-xs rounded">
                           {tech}
                         </span>
                       ))}
-                      {service.technology.length > 3 && (
+                      {getServiceTechnology(service).length > 3 && (
                         <span className="px-2 py-1 bg-white/10 text-gray-400 text-xs rounded">
-                          +{service.technology.length - 3} more
+                          +{getServiceTechnology(service).length - 3} more
                         </span>
                       )}
                     </div>
@@ -392,7 +466,7 @@ const ComprehensivePricingShowcase2025 = () => {
                 <div className="bg-white/5 p-6 border-t border-white/10">
                   <div className="flex flex-col space-y-4">
                     <a
-                      href={service.link}
+                      href={getServiceLink(service)}
                       className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-3 px-6 rounded-xl font-semibold text-center hover:from-purple-600 hover:to-pink-600 transition-all duration-200 flex items-center justify-center space-x-2"
                     >
                       <span>Learn More & Get Started</span>
@@ -402,9 +476,9 @@ const ComprehensivePricingShowcase2025 = () => {
                     <div className="text-center">
                       <p className="text-gray-400 text-sm mb-2">Contact Information</p>
                       <div className="space-y-1 text-xs text-gray-300">
-                        <p>📱 {service.contactInfo.mobile}</p>
-                        <p>✉️ {service.contactInfo.email}</p>
-                        <p>📍 {service.contactInfo.address}</p>
+                        <p>📱 {getServiceContactMobile(service)}</p>
+                        <p>✉️ {getServiceContactEmail(service)}</p>
+                        <p>📍 {getServiceContactAddress(service)}</p>
                       </div>
                     </div>
                   </div>

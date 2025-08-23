@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
-import { Network, Sparkles, Zap, Target, Cpu, Clock, CheckCircle, Wifi, Sensor, Cloud, Brain } from 'lucide-react';
+import { Network, Sparkles, Zap, Target, Cpu, Clock, CheckCircle, Wifi, Activity, Cloud, Brain } from 'lucide-react';
 
 export default function AIInternetOfThings2041() {
   return (
@@ -60,7 +60,7 @@ export default function AIInternetOfThings2041() {
                   color: "from-orange-500 to-amber-500"
                 },
                 {
-                  icon: <Sensor className="w-8 h-8" />,
+                  icon: <Activity className="w-8 h-8" />,
                   title: "Smart Sensors",
                   description: "Advanced sensors with embedded AI that process data locally and make intelligent decisions.",
                   color: "from-blue-500 to-cyan-500"

@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
-import { Atom, Sparkles, Zap, Target, Shield, Clock, CheckCircle, Cpu, Database, Network, Brain, Quantum } from 'lucide-react';
+import { Atom, Sparkles, Zap, Target, Shield, Clock, CheckCircle, Cpu, Database, Network, Brain } from 'lucide-react';
 
 export default function AIQuantumComputing2041() {
   return (
@@ -84,7 +84,7 @@ export default function AIQuantumComputing2041() {
                   color: "from-red-500 to-pink-500"
                 },
                 {
-                  icon: <Quantum className="w-8 h-8" />,
+                  icon: <Atom className="w-8 h-8" />,
                   title: "Quantum Simulation",
                   description: "Accurate simulation of complex quantum systems for scientific discovery.",
                   color: "from-indigo-500 to-purple-500"
