@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+import React from 'react';
+=======
 import React, { useEffect, useState, useMemo } from 'react';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-90c4
 import Head from 'next/head';
 import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles, Filter as FilterIcon } from 'lucide-react';
 import Button from '../components/ui/Button';
@@ -31,6 +35,75 @@ export default function ServicesPage() {
     { value: 'category', label: 'Category' }
   ];
 
+<<<<<<< HEAD
+  // Filter and sort services
+  let filteredServices = realMicroSaasServices;
+
+  // Category filter
+  if (selectedCategory !== 'All') {
+    filteredServices = enhancedRealMicroSaasServices.filter(service => 
+      service.category === selectedCategory
+    );
+  }
+
+  // Price range filter
+  if (priceRange !== 'All') {
+    const [min, max] = priceRange.split('-').map(p => p === '+' ? Infinity : parseInt(p));
+    filteredServices = filteredServices.filter(service => {
+      const price = parseInt(service.price.replace('$', ''));
+      return price >= min && (max === Infinity ? true : price <= max);
+    });
+  }
+
+  // Search filter
+  if (searchQuery) {
+    filteredServices = filteredServices.filter(service =>
+      service.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      service.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      service.tagline.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      service.category.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  }
+
+  // Sort services
+  filteredServices.sort((a, b) => {
+    switch (sortBy) {
+      case 'price':
+        return parseFloat(a.price.replace('$', '').replace(',', '')) - parseFloat(b.price.replace('$', '').replace(',', ''));
+      case 'popularity':
+        return (b.popular ? 1 : 0) - (a.popular ? 1 : 0);
+      case 'category':
+        return a.category.localeCompare(b.category);
+      default:
+        return a.name.localeCompare(b.name);
+    }
+
+    // Apply category filter
+    if (selectedCategory !== 'all') {
+      filtered = filtered.filter(service => service.category === selectedCategory);
+    }
+
+    // Apply sorting
+    filtered.sort((a, b) => {
+      switch (sortBy) {
+        case 'name':
+          return a.name.localeCompare(b.name);
+        case 'price':
+          return parseFloat(a.price.replace('$', '').replace(',', '')) - parseFloat(b.price.replace('$', '').replace(',', ''));
+        case 'popularity':
+          return (b.popular ? 1 : 0) - (a.popular ? 1 : 0);
+        case 'category':
+          return a.category.localeCompare(b.category);
+        case 'roi': {
+          const aRoi = parseFloat(a.roi.match(/\d+/)?.[0] || '0');
+          const bRoi = parseFloat(b.roi.match(/\d+/)?.[0] || '0');
+          return bRoi - aRoi;
+        }
+        default:
+          return a.name.localeCompare(b.name);
+      }
+    });
+=======
   const contactInfo = {
     mobile: '+1 302 464 0950',
     email: 'kleber@ziontechgroup.com',
@@ -67,10 +140,17 @@ export default function ServicesPage() {
       default:
         filtered.sort((a, b) => a.name.localeCompare(b.name));
     }
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-90c4
 
     return filtered;
   }, [searchTerm, selectedCategory, sortBy]);
 
+<<<<<<< HEAD
+  // Get popular services
+  const getPopularServices = () => {
+    return enhancedRealMicroSaasServices.filter(service => service.popular).slice(0, 6);
+  };
+=======
 import { motion } from 'framer-motion';
 import { 
   Star, 
@@ -159,6 +239,7 @@ export default function ServicesPage() {
     { value: '99.99%', label: 'Uptime Guarantee', color: 'text-fuchsia-400', icon: <ShieldCheck className="w-6 h-6" /> },
     { value: '30+', label: 'Day Free Trials', color: 'text-blue-400', icon: <Clock className="w-6 h-6" /> },
     { value: '800%+', label: 'Average ROI', color: 'text-green-400', icon: <TrendingUp className="w-6 h-6" /> },
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-90c4
   ];
 
   return (
@@ -245,6 +326,8 @@ export default function ServicesPage() {
                 </div>
               </div>
             ))}
+<<<<<<< HEAD
+=======
           </motion.div>
 
           {/* Contact Information */}
@@ -346,6 +429,7 @@ export default function ServicesPage() {
                 </button>
               </div>
             </div>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-90c4
           </div>
         </div>
       </section>
