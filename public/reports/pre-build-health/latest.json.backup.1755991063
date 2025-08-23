@@ -5,7 +5,11 @@
     "failedChecks": 1,
     "criticalFailures": 0,
     "canBuild": true,
+<<<<<<< HEAD
+    "timestamp": "2025-08-19T20:30:33.704Z"
+=======
     "timestamp": "2025-08-19T20:29:06.337Z"
+>>>>>>> origin/cursor/build-and-fix-errors-d3be
   },
   "results": [
     {
