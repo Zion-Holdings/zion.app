@@ -1,14 +1,3 @@
-import React from "react";
-
-export default function ContactPage() {
-  return (
-    <main className="p-6">
-      <h1 className="text-2xl font-bold">Contact</h1>
-      <p className="text-gray-600">Reach us at support@zion.ai</p>
-    </main>
-  );
-}
-=======
 export default Contact;
 =======
 export default function ContactPage() {
@@ -18,4 +7,10 @@ export default function ContactPage() {
       <p className="text-gray-600 dark:text-gray-300">Reach us at contact@zion.ai</p>
     </div>
   );
+}
+=======
+import React from 'react';
+
+export default function ContactPage() {
+  return <div>Contact Zion</div>;
 }

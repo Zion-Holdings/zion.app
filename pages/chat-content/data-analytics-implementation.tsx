@@ -1,1 +1,5 @@
-export default function ArticlePage() { return <div className="py-8">Data analytics implementation</div>; }
+import React from 'react';
+
+export default function DataAnalyticsImplementationPage() {
+  return <div>Data Analytics Implementation</div>;
+}

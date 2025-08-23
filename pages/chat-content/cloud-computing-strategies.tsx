@@ -1,1 +1,5 @@
-export default function ArticlePage() { return <div className="py-8">Cloud computing strategies</div>; }
+import React from 'react';
+
+export default function CloudComputingStrategiesPage() {
+  return <div>Cloud Computing Strategies</div>;
+}
