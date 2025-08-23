@@ -626,6 +626,9 @@ const ServicesAdvertising: React.FC = () => {
   );
 };
 
+<<<<<<< HEAD
+export default ServicesAdvertising;
+=======
 				<section className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">LMS Starter</h2>
 					<p className="text-slate-300">Courses, quizzes, certificates, and progress tracking in days.</p>
@@ -1090,3 +1093,4 @@ const ServicesAdvertising: React.FC = () => {
 		</div>
 	);
 }
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-a284
