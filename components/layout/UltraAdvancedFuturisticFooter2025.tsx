@@ -1,404 +1,336 @@
-import React, { useState } from 'react';
+import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
-  Mail, Phone, MapPin, Globe, ArrowRight, 
-  Facebook, Twitter, Linkedin, Github, Youtube,
-  Heart, Shield, Zap, Users, Award, TrendingUp
+  Brain, Rocket, Shield, Cpu, Database, Cloud, Code, 
+  Phone, Mail, MapPin, Globe, Twitter, Linkedin, 
+  Facebook, Instagram, Youtube, ArrowRight, Sparkles,
+  Users, Award, TrendingUp, Star, Zap, Lock, Server,
+  Network, ShieldCheck, BrainCircuit, Atom, Satellite
 } from 'lucide-react';
-import Link from 'next/link';
-import { AnimatePresence } from 'framer-motion';
-
-interface FooterLink {
-  label: string;
-  href: string;
-  description?: string;
-}
-
-interface FooterSection {
-  title: string;
-  links: FooterLink[];
-}
-
-const footerSections: FooterSection[] = [
-  {
-    title: 'Services',
-    links: [
-      { label: 'AI & Machine Learning', href: '/ai-services', description: 'Advanced AI solutions' },
-      { label: 'Quantum Computing', href: '/quantum-computing', description: 'Next-gen quantum tech' },
-      { label: 'Space Technology', href: '/space-tech', description: 'Innovative space solutions' },
-      { label: 'Cybersecurity', href: '/cybersecurity', description: 'Enterprise security' },
-      { label: 'Cloud Solutions', href: '/cloud-platform', description: 'Scalable cloud infrastructure' },
-      { label: 'View All Services', href: '/services', description: 'Complete service portfolio' }
-    ]
-  },
-  {
-    title: 'Company',
-    links: [
-      { label: 'About Us', href: '/about', description: 'Our mission and values' },
-      { label: 'Leadership', href: '/about#leadership', description: 'Meet our team' },
-      { label: 'Careers', href: '/careers', description: 'Join our team' },
-      { label: 'News & Updates', href: '/news', description: 'Latest company news' },
-      { label: 'Case Studies', href: '/case-studies', description: 'Success stories' },
-      { label: 'Contact', href: '/contact', description: 'Get in touch' }
-    ]
-  },
-  {
-    title: 'Resources',
-    links: [
-      { label: 'Blog', href: '/blog', description: 'Industry insights' },
-      { label: 'Whitepapers', href: '/white-papers', description: 'In-depth research' },
-      { label: 'Webinars', href: '/webinars', description: 'Educational content' },
-      { label: 'Documentation', href: '/docs', description: 'Technical guides' },
-      { label: 'API Reference', href: '/api-documentation', description: 'Developer resources' },
-      { label: 'Support', href: '/support', description: 'Help & assistance' }
-    ]
-  },
-  {
-    title: 'Industries',
-    links: [
-      { label: 'Healthcare', href: '/healthcare-solutions', description: 'Medical technology' },
-      { label: 'Finance', href: '/financial-solutions', description: 'Fintech solutions' },
-      { label: 'Manufacturing', href: '/manufacturing-ai-solutions', description: 'Industry 4.0' },
-      { label: 'Retail', href: '/retail-technology-solutions', description: 'E-commerce tech' },
-      { label: 'Government', href: '/government-technology-solutions', description: 'Public sector' },
-      { label: 'Education', href: '/education-technology-solutions', description: 'EdTech solutions' }
-    ]
-  }
-];
-
-const socialLinks = [
-  { icon: <Linkedin className="w-5 h-5" />, href: 'https://linkedin.com/company/ziontechgroup', label: 'LinkedIn' },
-  { icon: <Twitter className="w-5 h-5" />, href: 'https://twitter.com/ziontechgroup', label: 'Twitter' },
-  { icon: <Github className="w-5 h-5" />, href: 'https://github.com/ziontechgroup', label: 'GitHub' },
-  { icon: <Youtube className="w-5 h-5" />, href: 'https://youtube.com/@ziontechgroup', label: 'YouTube' },
-  { icon: <Facebook className="w-5 h-5" />, href: 'https://facebook.com/ziontechgroup', label: 'Facebook' }
-];
-
-const contactInfo = {
-  phone: '+1 (302) 464-0950',
-  email: 'contact@ziontechgroup.com',
-  address: '364 E Main St STE 1008, Middletown, DE 19709',
-  website: 'https://ziontechgroup.com'
-};
 
 const UltraAdvancedFuturisticFooter2025: React.FC = () => {
-  const [email, setEmail] = useState('');
-  const [isSubscribing, setIsSubscribing] = useState(false);
-  const [subscriptionStatus, setSubscriptionStatus] = useState<'idle' | 'success' | 'error'>('idle');
-
-  const handleNewsletterSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email.trim()) return;
-
-    setIsSubscribing(true);
-    setSubscriptionStatus('idle');
-
-    try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Here you would typically make an API call to subscribe
-      // await fetch('/api/newsletter/subscribe', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({ email: email.trim() })
-      // });
-
-      setSubscriptionStatus('success');
-      setEmail('');
-      
-      // Reset success message after 3 seconds
-      setTimeout(() => setSubscriptionStatus('idle'), 3000);
-    } catch (error) {
-      setSubscriptionStatus('error');
-      
-      // Reset error message after 3 seconds
-      setTimeout(() => setSubscriptionStatus('idle'), 3000);
-    } finally {
-      setIsSubscribing(false);
-    }
-  };
-
   const currentYear = new Date().getFullYear();
 
+  const footerSections = [
+    {
+      title: 'Services',
+      links: [
+        { label: 'AI & Machine Learning', href: '/ai-services' },
+        { label: 'Quantum Computing', href: '/quantum-computing' },
+        { label: 'Space Technology', href: '/space-tech' },
+        { label: 'Cybersecurity', href: '/cybersecurity' },
+        { label: 'Cloud Solutions', href: '/cloud-platform' },
+        { label: 'Micro SAAS', href: '/micro-saas' },
+        { label: 'Innovative 2045 Services', href: '/innovative-2045-futuristic-services-showcase' },
+        { label: 'View All Services', href: '/services' }
+      ]
+    },
+    {
+      title: 'Solutions',
+      links: [
+        { label: 'Enterprise Solutions', href: '/enterprise-solutions' },
+        { label: 'Startup Solutions', href: '/startup-solutions' },
+        { label: 'Government Solutions', href: '/government-solutions' },
+        { label: 'Healthcare Solutions', href: '/healthcare-solutions' },
+        { label: 'Financial Solutions', href: '/financial-solutions' },
+        { label: 'Education Solutions', href: '/education-solutions' }
+      ]
+    },
+    {
+      title: 'Company',
+      links: [
+        { label: 'About Us', href: '/about' },
+        { label: 'Our Team', href: '/team' },
+        { label: 'Careers', href: '/careers' },
+        { label: 'News & Updates', href: '/news' },
+        { label: 'Case Studies', href: '/case-studies' },
+        { label: 'Partners', href: '/partners' }
+      ]
+    },
+    {
+      title: 'Resources',
+      links: [
+        { label: 'Documentation', href: '/docs' },
+        { label: 'API Reference', href: '/api' },
+        { label: 'Developer Tools', href: '/dev-tools' },
+        { label: 'Blog', href: '/blog' },
+        { label: 'White Papers', href: '/white-papers' },
+        { label: 'Support Center', href: '/support' }
+      ]
+    }
+  ];
+
+  const socialLinks = [
+    { icon: Twitter, href: 'https://twitter.com/ziontechgroup', label: 'Twitter' },
+    { icon: Linkedin, href: 'https://linkedin.com/company/ziontechgroup', label: 'LinkedIn' },
+    { icon: Facebook, href: 'https://facebook.com/ziontechgroup', label: 'Facebook' },
+    { icon: Instagram, href: 'https://instagram.com/ziontechgroup', label: 'Instagram' },
+    { icon: Youtube, href: 'https://youtube.com/ziontechgroup', label: 'YouTube' }
+  ];
+
+  const stats = [
+    { icon: Users, value: '2,500+', label: 'Enterprise Clients' },
+    { icon: Award, value: '99.9%', label: 'Uptime SLA' },
+    { icon: TrendingUp, value: '500%', label: 'Performance Boost' },
+    { icon: Star, value: '4.9/5', label: 'Customer Rating' }
+  ];
+
   return (
-    <footer className="bg-gray-900 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+    <footer className="relative bg-gray-900 border-t border-cyan-400/20 overflow-hidden">
+      {/* Animated Background */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900"></div>
+        
+        {/* Floating geometric shapes */}
+        {[...Array(15)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-24 h-24 border border-cyan-400/10 rounded-lg"
+            animate={{
+              x: [0, Math.random() * 100 - 50],
+              y: [0, Math.random() * 100 - 50],
+              rotate: [0, 360],
+              opacity: [0.05, 0.15, 0.05],
+            }}
+            transition={{
+              duration: Math.random() * 15 + 15,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+            style={{
+              left: Math.random() * 100 + '%',
+              top: Math.random() * 100 + '%',
+            }}
+          />
+        ))}
       </div>
 
-      {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12">
-        {/* Top Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-16">
           {/* Company Info */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="space-y-6"
-          >
-            <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center">
-                <Globe className="w-7 h-7 text-white" />
-              </div>
-              <div>
-                <h2 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-                  Zion Tech Group
-                </h2>
-                <p className="text-sm text-gray-400">Pioneering the future of technology</p>
-              </div>
-            </div>
-            
-            <p className="text-gray-300 text-lg leading-relaxed max-w-md">
-              Empowering businesses with cutting-edge AI, quantum computing, and innovative technology solutions that drive transformation and unlock human potential.
-            </p>
-
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 pt-6">
-              {[
-                { icon: Users, value: '500+', label: 'Clients' },
-                { icon: Award, value: '98%', label: 'Satisfaction' },
-                { icon: TrendingUp, value: '99.9%', label: 'Uptime' }
-              ].map((stat, index) => (
+          <div className="lg:col-span-2">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="mb-6"
+            >
+              <Link href="/" className="flex items-center space-x-3 group mb-6">
                 <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="text-center"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  className="relative"
                 >
-                  <div className="w-12 h-12 bg-gray-800/50 rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <stat.icon className="w-6 h-6 text-cyan-400" />
+                  <div className="w-12 h-12 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl flex items-center justify-center shadow-lg shadow-cyan-500/25">
+                    <Brain className="w-7 h-7 text-white" />
                   </div>
-                  <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
-                  <div className="text-sm text-gray-400">{stat.label}</div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
                 </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Newsletter Signup */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-6"
-          >
-            <div>
-              <h3 className="text-xl font-semibold text-white mb-2">Stay Updated</h3>
-              <p className="text-gray-400">
-                Get the latest insights on AI, quantum computing, and emerging technologies delivered to your inbox.
+                <div>
+                  <div className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                    Zion Tech Group
+                  </div>
+                  <div className="text-sm text-gray-400 font-medium">Pioneering the Future</div>
+                </div>
+              </Link>
+              
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                Leading the digital transformation revolution with cutting-edge AI, quantum computing, 
+                and space technology solutions that define tomorrow's possibilities.
               </p>
-            </div>
 
-            <form onSubmit={handleNewsletterSubmit} className="space-y-4">
-              <div className="relative">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email address"
-                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-cyan-500 transition-all duration-200"
-                  required
-                />
-                <button
-                  type="submit"
-                  disabled={isSubscribing}
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-                  aria-label="Subscribe to newsletter"
-                >
-                  {isSubscribing ? (
-                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                  ) : (
-                    <ArrowRight className="w-5 h-5" />
-                  )}
-                </button>
+              {/* Stats Grid */}
+              <div className="grid grid-cols-2 gap-4">
+                {stats.map((stat, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="text-center p-3 rounded-lg bg-gradient-to-br from-white/5 to-white/10 border border-white/10"
+                  >
+                    <div className="inline-block p-2 rounded-lg bg-gradient-to-r from-cyan-400/20 to-blue-500/20 mb-2">
+                      <stat.icon className="w-4 h-4 text-cyan-400" />
+                    </div>
+                    <div className="text-lg font-bold text-white">{stat.value}</div>
+                    <div className="text-xs text-gray-400">{stat.label}</div>
+                  </motion.div>
+                ))}
               </div>
+            </motion.div>
+          </div>
 
-              {/* Status Messages */}
-              <AnimatePresence>
-                {subscriptionStatus === 'success' && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    className="text-green-400 text-sm flex items-center gap-2"
-                  >
-                    <Shield className="w-4 h-4" />
-                    Successfully subscribed! Welcome to our community.
-                  </motion.div>
-                )}
-                {subscriptionStatus === 'error' && (
-                  <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    className="text-red-400 text-sm flex items-center gap-2"
-                  >
-                    <Shield className="w-4 h-4" />
-                    Something went wrong. Please try again.
-                  </motion.div>
-                )}
-              </AnimatePresence>
-
-              <p className="text-xs text-gray-500">
-                By subscribing, you agree to our privacy policy and consent to receive updates about our services.
-              </p>
-            </form>
-          </motion.div>
-        </div>
-
-        {/* Navigation Sections */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16"
-        >
+          {/* Footer Links */}
           {footerSections.map((section, sectionIndex) => (
-            <div key={section.title} className="space-y-4">
-              <h3 className="text-lg font-semibold text-white">{section.title}</h3>
+            <motion.div
+              key={section.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: sectionIndex * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-cyan-400" />
+                {section.title}
+              </h3>
               <ul className="space-y-3">
                 {section.links.map((link, linkIndex) => (
                   <motion.li
-                    key={link.href}
-                    initial={{ opacity: 0, x: -20 }}
+                    key={link.label}
+                    initial={{ opacity: 0, x: -10 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: (sectionIndex * 0.1) + (linkIndex * 0.05) }}
+                    viewport={{ once: true }}
                   >
                     <Link
                       href={link.href}
-                      className="text-gray-400 hover:text-cyan-400 transition-colors duration-200 group flex items-start gap-2"
+                      className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 flex items-center gap-2 group"
                     >
-                      <ArrowRight className="w-3 h-3 mt-1.5 text-gray-600 group-hover:text-cyan-400 transition-colors duration-200" />
-                      <div>
-                        <span className="block">{link.label}</span>
-                        {link.description && (
-                          <span className="text-xs text-gray-500 block mt-1">{link.description}</span>
-                        )}
-                      </div>
+                      <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
+                      {link.label}
                     </Link>
                   </motion.li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
-        </motion.div>
+        </div>
 
         {/* Contact & Social Section */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 pt-8 border-t border-gray-800/50"
+          className="border-t border-gray-700 pt-12 mb-12"
         >
-          {/* Contact Information */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white">Contact Information</h3>
-            <div className="space-y-3">
-              <div className="flex items-center gap-3 text-gray-400 hover:text-cyan-400 transition-colors duration-200">
-                <Phone className="w-4 h-4 text-cyan-400" />
-                <a href={`tel:${contactInfo.phone}`} className="hover:underline">
-                  {contactInfo.phone}
-                </a>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Contact Information */}
+            <div>
+              <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
+                <Phone className="w-5 h-5 text-cyan-400" />
+                Get In Touch
+              </h3>
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3 text-gray-300">
+                  <Phone className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                  <div>
+                    <div className="font-medium">Phone</div>
+                    <div className="text-cyan-400">+1 302 464 0950</div>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3 text-gray-300">
+                  <Mail className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                  <div>
+                    <div className="font-medium">Email</div>
+                    <div className="text-cyan-400">kleber@ziontechgroup.com</div>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3 text-gray-300">
+                  <MapPin className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-1" />
+                  <div>
+                    <div className="font-medium">Address</div>
+                    <div className="text-cyan-400">364 E Main St STE 1008<br />Middletown DE 19709</div>
+                  </div>
+                </div>
               </div>
-              <div className="flex items-center gap-3 text-gray-400 hover:text-cyan-400 transition-colors duration-200">
-                <Mail className="w-4 h-4 text-cyan-400" />
-                <a href={`mailto:${contactInfo.email}`} className="hover:underline">
-                  {contactInfo.email}
-                </a>
+            </div>
+
+            {/* Social Links & Newsletter */}
+            <div>
+              <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
+                <Globe className="w-5 h-5 text-cyan-400" />
+                Connect With Us
+              </h3>
+              
+              {/* Social Links */}
+              <div className="flex space-x-4 mb-6">
+                {socialLinks.map((social, index) => (
+                  <motion.a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-10 h-10 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 border border-cyan-400/30 rounded-lg flex items-center justify-center text-cyan-400 hover:bg-gradient-to-r hover:from-cyan-400/30 hover:to-blue-500/30 transition-all duration-300"
+                  >
+                    <social.icon className="w-5 h-5" />
+                  </motion.a>
+                ))}
               </div>
-              <div className="flex items-start gap-3 text-gray-400">
-                <MapPin className="w-4 h-4 text-cyan-400 mt-0.5" />
-                <span>{contactInfo.address}</span>
-              </div>
-              <div className="flex items-center gap-3 text-gray-400 hover:text-cyan-400 transition-colors duration-200">
-                <Globe className="w-4 h-4 text-cyan-400" />
-                <a href={contactInfo.website} target="_blank" rel="noopener noreferrer" className="hover:underline">
-                  {contactInfo.website}
-                </a>
+
+              {/* Newsletter Signup */}
+              <div className="bg-gradient-to-r from-cyan-400/10 to-blue-500/10 border border-cyan-400/20 rounded-xl p-6">
+                <h4 className="text-lg font-semibold text-white mb-3">Stay Updated</h4>
+                <p className="text-gray-300 text-sm mb-4">
+                  Get the latest insights on AI, quantum computing, and space technology.
+                </p>
+                <div className="flex space-x-2">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    className="flex-1 px-4 py-2 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 transition-colors duration-300"
+                  />
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:shadow-lg hover:shadow-cyan-500/25 transition-all duration-300"
+                  >
+                    Subscribe
+                  </motion.button>
+                </div>
               </div>
             </div>
           </div>
+        </motion.div>
 
-          {/* Social Links */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white">Follow Us</h3>
-            <div className="flex flex-wrap gap-3">
-              {socialLinks.map((social, index) => (
-                <motion.a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-12 h-12 bg-gray-800/50 hover:bg-cyan-500/20 border border-gray-700/50 hover:border-cyan-500/50 rounded-lg flex items-center justify-center text-gray-400 hover:text-cyan-400 transition-all duration-200"
-                  aria-label={`Follow us on ${social.label}`}
-                >
-                  {social.icon}
-                </motion.a>
-              ))}
+        {/* Bottom Bar */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="border-t border-gray-700 pt-8"
+        >
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div className="text-gray-400 text-sm">
+              © {currentYear} Zion Tech Group. All rights reserved. Pioneering the future of technology.
+            </div>
+            <div className="flex space-x-6 text-sm">
+              <Link href="/privacy" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300">
+                Terms of Service
+              </Link>
+              <Link href="/cookies" className="text-gray-400 hover:text-cyan-400 transition-colors duration-300">
+                Cookie Policy
+              </Link>
             </div>
           </div>
         </motion.div>
       </div>
 
-      {/* Bottom Bar */}
+      {/* Floating CTA */}
       <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.5 }}
-        className="border-t border-gray-800/50"
+        className="absolute bottom-8 right-8 z-20"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-2 text-gray-400 text-sm">
-              <span>© {currentYear} Zion Tech Group. All rights reserved.</span>
-              <Heart className="w-4 h-4 text-red-400" />
-            </div>
-            
-            <div className="flex items-center gap-6 text-sm">
-              <Link href="/privacy" className="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
-                Privacy Policy
-              </Link>
-              <Link href="/terms" className="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
-                Terms of Service
-              </Link>
-              <Link href="/cookies" className="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
-                Cookie Policy
-              </Link>
-            </div>
-          </div>
-        </div>
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full shadow-2xl shadow-cyan-500/50 flex items-center justify-center text-white hover:shadow-cyan-500/75 transition-all duration-300"
+        >
+          <Rocket className="w-6 h-6" />
+        </motion.button>
       </motion.div>
-
-      {/* Floating Contact Button */}
-      <motion.button
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-        className="fixed bottom-6 right-6 w-14 h-14 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-full shadow-2xl shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-200 z-50 flex items-center justify-center"
-        onClick={() => window.location.href = '/contact'}
-        aria-label="Contact us"
-      >
-        <Phone className="w-6 h-6" />
-      </motion.button>
     </footer>
   );
 };
