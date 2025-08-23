@@ -4,19 +4,35 @@ import Head from 'next/head';
 export default function YouTubeRedirect() {
 	useEffect(() => {
 		if (typeof window !== 'undefined') {
+<<<<<<< HEAD
+			window.location.replace('https://www.youtube.com/@ziontechgroup');
+		}
+	}, []);
+
+=======
 			window.location.replace('https://youtube.com/@ziontechgroup');
 		}
 	}, []);
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-4a15
 	return (
 		<>
 			<Head>
 				<title>YouTube | Zion Tech Group</title>
+<<<<<<< HEAD
+				<link rel="canonical" href="https://www.youtube.com/@ziontechgroup" />
+				<meta httpEquiv="refresh" content="0;url=https://www.youtube.com/@ziontechgroup" />
+				<meta name="robots" content="index, follow" />
+			</Head>
+			<div className="min-h-screen bg-black text-white flex items-center justify-center p-8">
+				<a href="https://www.youtube.com/@ziontechgroup" className="text-cyan-400 underline">
+=======
 				<link rel="canonical" href="https://youtube.com/@ziontechgroup" />
 				<meta httpEquiv="refresh" content="0;url=https://youtube.com/@ziontechgroup" />
 				<meta name="robots" content="noindex, nofollow" />
 			</Head>
 			<div className="min-h-screen bg-black text-white flex items-center justify-center p-8">
 				<a href="https://youtube.com/@ziontechgroup" className="text-cyan-400 underline">
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-4a15
 					Continue to YouTube
 				</a>
 			</div>

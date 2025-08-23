@@ -216,6 +216,63 @@ const Homepage2025: React.FC = () => {
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto">
                 Our expertise spans the most advanced and innovative technology domains, designed to transform businesses and drive the future forward
               </p>
+<<<<<<< HEAD
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                {
+                  title: 'AI & Machine Learning',
+                  description: 'Advanced artificial intelligence solutions including autonomous systems, emotional AI, and consciousness evolution',
+                  icon: '🧠',
+                  color: 'from-cyan-500 to-blue-600',
+                  count: real2036AIServices.length
+                },
+                {
+                  title: 'Quantum Technology',
+                  description: 'Revolutionary quantum computing, quantum security, and quantum-AI fusion platforms',
+                  icon: '⚛️',
+                  color: 'from-purple-500 to-pink-600',
+                  count: real2036InnovativeServices.filter(s => s.category.includes('Quantum')).length
+                },
+                {
+                  title: 'Space Technology',
+                  description: 'Cutting-edge space exploration, mining automation, and interplanetary resource management',
+                  icon: '🚀',
+                  color: 'from-blue-500 to-cyan-600',
+                  count: real2036InnovativeServices.filter(s => s.category.includes('Space')).length
+                },
+                {
+                  title: 'IT Infrastructure',
+                  description: 'Next-generation IT solutions including quantum cloud, edge computing, and autonomous operations',
+                  icon: '💻',
+                  color: 'from-green-500 to-emerald-600',
+                  count: real2036ITServices.length
+                }
+              ].map((domain, index) => (
+                <motion.div
+                  key={domain.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 hover:border-cyan-400 transition-all duration-300 hover:transform hover:scale-105 group"
+                >
+                  <div className={`w-16 h-16 bg-gradient-to-r ${domain.color} rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    {domain.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-cyan-400 transition-colors">
+                    {domain.title}
+                  </h3>
+                  <p className="text-gray-300 mb-6 leading-relaxed">
+                    {domain.description}
+                  </p>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-gray-400">{domain.count} services</span>
+                    <span className="text-cyan-400 font-semibold">Explore →</span>
+                  </div>
+                </motion.div>
+              ))}
+=======
             </div>
             <div>
               <h4 className="text-white font-semibold mb-4">Services</h4>
@@ -247,6 +304,7 @@ const Homepage2025: React.FC = () => {
                 <li><a href="/social/linkedin" className="hover:text-cyan-400 transition-colors">LinkedIn</a></li>
                 <li><a href="/social/twitter" className="hover:text-cyan-400 transition-colors">Twitter</a></li>
               </ul>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-4a15
             </div>
           </div>
         </section>

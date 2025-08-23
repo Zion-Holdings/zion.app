@@ -49,6 +49,45 @@
     Content-Security-Policy = "default-src 'self'; object-src 'none'; upgrade-insecure-requests; script-src 'self' 'unsafe-inline' https://plausible.io; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://plausible.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
 
 [[redirects]]
+<<<<<<< HEAD
+  from = "/og-image.jpg"
+  to = "/og-image.svg"
+  status = 301
+
+[[redirects]]
+  from = "/twitter-image.jpg"
+  to = "/og-image.svg"
+  status = 301
+
+[[redirects]]
+  from = "/api"
+  to = "/api-documentation"
+  status = 301
+
+[[redirects]]
+  from = "/webinars"
+  to = "/news"
+  status = 301
+
+[[redirects]]
+  from = "/events"
+  to = "/news"
+  status = 301
+
+[[redirects]]
+  from = "/team"
+  to = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/press"
+  to = "/news"
+  status = 301
+
+[[redirects]]
+  from = "/legal"
+  to = "/terms"
+=======
   from = "/ai-customer-success-automation"
   to = "/ai-customer-success-platform"
   status = 301
@@ -146,4 +185,5 @@
 [[redirects]]
   from = "/quantum-internet-security"
   to = "/quantum-internet-security-platform"
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-4a15
   status = 301

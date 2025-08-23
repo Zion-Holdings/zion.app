@@ -197,7 +197,7 @@ export default function Pricing2033Page() {
         <meta property="og:description" content="Competitive pricing for revolutionary AI consciousness, quantum DNA computing, and space mining automation solutions." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://ziontechgroup.com/pricing-2033" />
-        <meta property="og:image" content="https://ziontechgroup.com/og-image.jpg" />
+        <meta property="og:image" content="https://ziontechgroup.com/og-image.svg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="2033 Revolutionary Technology Pricing | Zion Tech Group" />
         <meta name="twitter:description" content="Competitive pricing for revolutionary AI consciousness, quantum DNA computing, and space mining automation solutions." />
