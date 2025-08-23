@@ -1,9 +1,25 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+<<<<<<< HEAD
+  // Enable React strict mode for better development experience
+  reactStrictMode: true,
+  
+  // Enable SWC minification for faster builds
+  swcMinify: true,
+  
+  // Enable experimental features for better performance
+  experimental: {
+    // Enable modern React features
+    optimizeCss: true,
+    optimizePackageImports: ['lucide-react', 'framer-motion'],
+    
+    // Enable modern image optimization
+=======
   // Enhanced performance and SEO settings
   experimental: {
     optimizePackageImports: ['lucide-react', 'framer-motion'],
     optimizeCss: true,
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-7c50
     turbo: {
       rules: {
         '*.svg': {
@@ -12,6 +28,18 @@ const nextConfig = {
         },
       },
     },
+<<<<<<< HEAD
+
+    // Enable modern bundling
+    esmExternals: true,
+    
+    // Enable modern CSS features
+    cssChunking: true,
+    
+    // Enable modern JavaScript features
+    modernCss: true,
+=======
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-7c50
   },
 
   // Image optimization configuration
@@ -24,6 +52,28 @@ const nextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
 
+<<<<<<< HEAD
+  // Webpack configuration for better performance
+  webpack: (config, { dev, isServer }) => {
+    // Optimize bundle splitting
+    if (!isServer) {
+      config.optimization.splitChunks = {
+        chunks: 'all',
+        cacheGroups: {
+          vendor: {
+            test: /[\\/]node_modules[\\/]/,
+            name: 'vendors',
+            chunks: 'all',
+            priority: 10,
+          },
+          common: {
+            name: 'common',
+            minChunks: 2,
+            chunks: 'all',
+            priority: 5,
+            reuseExistingChunk: true,
+          },
+=======
   // Enhanced webpack configuration
   webpack: (config, { dev, isServer }) => {
     // Optimize bundle size
@@ -41,6 +91,7 @@ const nextConfig = {
           minChunks: 2,
           chunks: 'all',
           priority: 5,
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-7c50
         },
       };
     }
@@ -60,7 +111,11 @@ const nextConfig = {
     return config;
   },
 
+<<<<<<< HEAD
+  // Headers for better security and performance
+=======
   // Enhanced headers for security and performance
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-7c50
   async headers() {
     return [
       {
@@ -89,7 +144,11 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
+<<<<<<< HEAD
+            value: 'public, max-age=3600, stale-while-revalidate=86400',
+=======
             value: 'public, max-age=3600, s-maxage=3600',
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-7c50
           },
         ],
       },
@@ -121,7 +180,11 @@ const nextConfig = {
     ];
   },
 
+<<<<<<< HEAD
+  // Rewrites for better routing
+=======
   // Enhanced rewrites for better routing
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-7c50
   async rewrites() {
     return [
       {
@@ -141,6 +204,35 @@ const nextConfig = {
     styledComponents: true,
   },
 
+<<<<<<< HEAD
+  // Enable compression
+  compress: true,
+
+  // Enable powered by header removal
+  poweredByHeader: false,
+
+  // Enable trailing slash for better SEO
+  trailingSlash: false,
+
+  // Enable page extensions
+  pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
+
+  // Enable source maps in development
+  productionBrowserSourceMaps: false,
+
+  // Bundle analyzer configuration
+  ...(process.env.ANALYZE === 'true' && {
+    webpack: (config) => {
+      config.plugins.push(
+        new (require('webpack-bundle-analyzer').BundleAnalyzerPlugin)({
+          analyzerMode: 'static',
+          openAnalyzer: false,
+        })
+      );
+      return config;
+    },
+  }),
+=======
   // Enhanced output configuration
   output: 'standalone',
   poweredByHeader: false,
@@ -148,6 +240,7 @@ const nextConfig = {
   compress: true,
   reactStrictMode: true,
   swcMinify: true,
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-7c50
 };
 
 module.exports = nextConfig;

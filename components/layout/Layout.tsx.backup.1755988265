@@ -100,8 +100,15 @@ export default function Layout({
       </div>
 
       {/* Accessibility and Performance Tools */}
+<<<<<<< HEAD
+      <AccessibilityEnhancer />
+      <PerformanceOptimizer>
+        {children}
+      </PerformanceOptimizer>
+=======
       <AccessibilityEnhancer enabled={true} showControls={process.env.NODE_ENV === 'development'} />
       <PerformanceMonitor enabled={true} showMetrics={process.env.NODE_ENV === 'development'} />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-7c50
       
       {/* Cookie Consent Banner */}
       <CookieConsentBanner 
