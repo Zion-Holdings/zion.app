@@ -1,3 +1,149 @@
+<<<<<<< HEAD
+import React, { useState } from 'react';
+import UltraFuturisticNavigation2035 from './UltraFuturisticNavigation2035';
+import UltraFuturisticFooter2035 from './UltraFuturisticFooter2035';
+import EnhancedSidebar2025 from './EnhancedSidebar2025';
+import UltraAdvancedFuturisticBackground2035 from './UltraAdvancedFuturisticBackground2035';
+import TopContactBar from './TopContactBar';
+import Head from 'next/head';
+
+interface LayoutProps {
+  children: React.ReactNode;
+  seo?: {
+    title?: string;
+    description?: string;
+    keywords?: string;
+    canonicalUrl?: string;
+    ogImage?: string;
+  };
+}
+
+export default function Layout({ children, seo }: LayoutProps) {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [showEnhancements, setShowEnhancements] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Escape' && sidebarOpen) {
+      setSidebarOpen(false);
+    }
+  };
+
+  const title = seo?.title || 'Zion Tech Group - Revolutionary Technology Solutions';
+  const description = seo?.description || 'Leading provider of innovative AI, quantum computing, and enterprise technology solutions. Transform your business with cutting-edge innovations.';
+  const keywords = seo?.keywords || 'AI, quantum computing, enterprise technology, innovation, Zion Tech Group';
+  const canonicalUrl = seo?.canonicalUrl;
+  const ogImage = seo?.ogImage || 'https://ziontechgroup.com/og-image.jpg';
+
+  return (
+    <div 
+      className="min-h-screen bg-black text-white relative overflow-x-hidden"
+      onKeyDown={handleKeyDown}
+      role="application"
+      aria-label="Zion Tech Group Application"
+    >
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta name="keywords" content={keywords} />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta charSet="utf-8" />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="Zion Tech Group" />
+        <meta name="theme-color" content="#06b6d4" />
+        
+        {/* Canonical URL */}
+        {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+        
+        {/* PWA Manifest */}
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="msapplication-TileColor" content="#06b6d4" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="Zion Tech Group" />
+        
+        {/* Favicons */}
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        
+        {/* Open Graph Meta Tags */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:url" content={canonicalUrl || "https://ziontechgroup.com"} />
+        <meta property="og:site_name" content="Zion Tech Group" />
+        <meta property="og:locale" content="en_US" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={ogImage} />
+        <meta name="twitter:site" content="@ziontechgroup" />
+        
+        {/* Additional SEO Meta Tags */}
+        <meta name="application-name" content="Zion Tech Group" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="format-detection" content="telephone=no" />
+        
+        {/* Preload Critical Resources */}
+        <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/_next/static/css/app.css" as="style" />
+        
+        {/* DNS Prefetch */}
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+        
+        {/* Security Headers */}
+        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
+        <meta httpEquiv="X-Frame-Options" content="DENY" />
+        <meta httpEquiv="X-XSS-Protection" content="1; mode=block" />
+        <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+        
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Zion Tech Group",
+              "url": "https://ziontechgroup.com",
+              "logo": "https://ziontechgroup.com/logo.png",
+              "description": description,
+              "foundingDate": "2024",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "364 E Main St STE 1008",
+                "addressLocality": "Middletown",
+                "addressRegion": "DE",
+                "postalCode": "19709",
+                "addressCountry": "US"
+              },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+1-302-464-0950",
+                "contactType": "customer service",
+                "email": "kleber@ziontechgroup.com"
+              }
+            })
+          }}
+        />
+      </Head>
+
+export default function Layout({ children, seo }: LayoutProps) {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [showEnhancements, setShowEnhancements] = useState(false);
+
+  return (
+    <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
+      {/* Futuristic Background */}
+      <UltraAdvancedFuturisticBackground2035 />
+      
+=======
       {/* Skip to content link for accessibility */}
       <a 
         href="#main" 
@@ -151,6 +297,7 @@ export default function Layout({
       {/* Page Loading Indicator */}
       <div className="fixed top-0 left-0 right-0 z-50 h-1 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 opacity-0 animate-pulse">
         <div className="h-full bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 animate-pulse"></div>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3808
       </div>
 
       {/* Back to top button */}

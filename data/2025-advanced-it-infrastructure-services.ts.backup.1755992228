@@ -29,6 +29,13 @@ export interface AdvancedITInfrastructureService {
   link: string;
   icon: string;
   color: string;
+<<<<<<< HEAD
+  popular: boolean;
+  launchDate: string;
+  customers: number;
+  rating: number;
+  reviews: number;
+=======
   textColor: string;
   link: string;
   marketPosition: string;
@@ -45,6 +52,7 @@ export interface AdvancedITInfrastructureService {
   marketSize: string;
   growthRate: string;
   variant: string;
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3808
   contactInfo: {
     mobile: string;
     email: string;
@@ -82,6 +90,34 @@ export const advancedITInfrastructureServices2025 = [
       'Custom quantum algorithm development',
       'Comprehensive documentation and support'
     ],
+<<<<<<< HEAD
+    benefits: [
+      'Improve computational performance by 1000x for specific algorithms',
+      'Enhance security with quantum-resistant encryption',
+      'Reduce infrastructure costs by 40% through optimization',
+      'Enable previously impossible computations',
+      'Future-proof your infrastructure',
+      'Global scalability and performance'
+    ],
+    useCases: [
+      'Financial modeling and risk assessment',
+      'Drug discovery and molecular simulation',
+      'Climate modeling and prediction',
+      'Cryptography and cybersecurity',
+      'Machine learning and AI training',
+      'Scientific research and simulations',
+      'Logistics optimization',
+      'Cryptocurrency mining and validation'
+    ],
+    marketSize: '$25.8B by 2025',
+    targetAudience: 'Technology companies, research institutions, financial institutions, healthcare organizations, government agencies',
+    competitiveAdvantage: 'First commercial quantum-enhanced cloud platform with hybrid classical-quantum architecture and global edge network',
+    contact: 'kleber@ziontechgroup.com',
+    mobile: '+1 302 464 0950',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com',
+    slug: '/quantum-enhanced-cloud-infrastructure'
+=======
     popular: true,
     icon: '☁️',
     color: 'from-indigo-600 to-purple-600',
@@ -113,10 +149,17 @@ export const advancedITInfrastructureServices2025 = [
     customers: 23,
     rating: 4.9,
     reviews: 15
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3808
   },
 
   // AI-Powered Edge Computing & IoT Management Platform
   {
+<<<<<<< HEAD
+    id: 'ai-powered-edge-computing-iot-management',
+    name: 'AI-Powered Edge Computing & IoT Management Platform',
+    tagline: 'Intelligent edge computing with AI-driven IoT device management and real-time analytics',
+    description: 'Advanced edge computing platform that brings AI processing closer to IoT devices, enabling real-time decision making, reduced latency, and intelligent device management.',
+=======
     id: 'autonomous-edge-computing-network',
     name: 'Autonomous Edge Computing Network',
     tagline: 'Self-managing edge infrastructure with intelligent optimization',
@@ -144,6 +187,7 @@ export const advancedITInfrastructureServices2025 = [
     targetAudience: ['IoT companies', 'Telecommunications', 'Manufacturing', 'Healthcare', 'Smart cities'],
     trialDays: 14,
     setupTime: '3-5 days',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3808
     category: 'Edge Computing & IoT',
     type: 'IT Service',
     pricing: {
@@ -196,6 +240,19 @@ export const advancedITInfrastructureServices2025 = [
 
   // Zero-Trust Network Security & Access Management Platform
   {
+<<<<<<< HEAD
+    id: 'zero-trust-network-security-access-management',
+    name: 'Zero-Trust Network Security & Access Management Platform',
+    tagline: 'Comprehensive zero-trust security with AI-powered threat detection and automated access control',
+    description: 'Advanced zero-trust security platform that provides comprehensive network protection, intelligent threat detection, and automated access management for modern enterprise environments.',
+    category: 'Cybersecurity & Network Security',
+    type: 'IT Service',
+    pricing: {
+      starter: '$399/month',
+      professional: '$1,199/month',
+      enterprise: '$3,499/month',
+      custom: 'Contact for pricing'
+=======
     id: 'zero-trust-security-architecture',
     name: 'Zero-Trust Security Architecture',
     tagline: 'Comprehensive security framework with continuous verification',
@@ -238,6 +295,7 @@ export const advancedITInfrastructureServices2025 = [
       email: 'kleber@ziontechgroup.com',
       address: '364 E Main St STE 1008 Middletown DE 19709',
       website: 'https://ziontechgroup.com'
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3808
     },
     features: [
       'Zero-trust network architecture',
@@ -283,6 +341,19 @@ export const advancedITInfrastructureServices2025 = [
 
   // AI-Powered DevOps & CI/CD Automation Platform
   {
+<<<<<<< HEAD
+    id: 'ai-powered-devops-cicd-automation',
+    name: 'AI-Powered DevOps & CI/CD Automation Platform',
+    tagline: 'Intelligent DevOps automation with AI-driven optimization and predictive deployment',
+    description: 'Advanced DevOps platform that uses AI to automate CI/CD pipelines, optimize deployments, predict failures, and improve development team productivity.',
+    category: 'DevOps & Development',
+    type: 'IT Service',
+    pricing: {
+      starter: '$199/month',
+      professional: '$599/month',
+      enterprise: '$1,999/month',
+      custom: 'Contact for pricing'
+=======
     id: 'autonomous-data-center-platform',
     name: 'Autonomous Data Center Platform',
     tagline: 'Self-managing data center infrastructure with AI optimization',
@@ -325,6 +396,7 @@ export const advancedITInfrastructureServices2025 = [
       email: 'kleber@ziontechgroup.com',
       address: '364 E Main St STE 1008 Middletown DE 19709',
       website: 'https://ziontechgroup.com'
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3808
     },
     features: [
       'AI-powered CI/CD pipeline optimization',
@@ -370,6 +442,60 @@ export const advancedITInfrastructureServices2025 = [
 
   // Quantum-Safe Cryptography & Post-Quantum Security Platform
   {
+<<<<<<< HEAD
+    id: 'quantum-safe-cryptography-post-quantum-security',
+    name: 'Quantum-Safe Cryptography & Post-Quantum Security Platform',
+    tagline: 'Future-proof security with quantum-resistant cryptography and advanced threat protection',
+    description: 'Revolutionary security platform that implements quantum-safe cryptography algorithms and provides protection against both current and future quantum computing threats.',
+    category: 'Cybersecurity & Cryptography',
+    type: 'IT Service',
+    pricing: {
+      starter: '$599/month',
+      professional: '$1,499/month',
+      enterprise: '$4,499/month',
+      custom: 'Contact for pricing'
+    },
+    features: [
+      'Quantum-resistant cryptographic algorithms',
+      'Post-quantum key exchange',
+      'Quantum-safe digital signatures',
+      'Hybrid encryption systems',
+      'Quantum threat assessment',
+      'Migration planning tools',
+      'Compliance and certification',
+      'Integration with existing systems',
+      'Custom security implementations',
+      'Advanced threat intelligence',
+      'Real-time security monitoring',
+      'Comprehensive audit trails'
+    ],
+    benefits: [
+      'Protect against future quantum threats',
+      'Ensure long-term data security',
+      'Meet regulatory requirements',
+      'Future-proof your security infrastructure',
+      'Maintain competitive advantage',
+      'Reduce security risks'
+    ],
+    useCases: [
+      'Financial institutions and banks',
+      'Government and defense agencies',
+      'Healthcare organizations',
+      'Technology companies',
+      'Cryptocurrency and blockchain',
+      'Critical infrastructure',
+      'Legal and compliance',
+      'Research institutions'
+    ],
+    marketSize: '$8.9B by 2025',
+    targetAudience: 'CISOs, security architects, compliance officers, government agencies, financial institutions',
+    competitiveAdvantage: 'First commercial quantum-safe cryptography platform with comprehensive post-quantum security solutions',
+    contact: 'kleber@ziontechgroup.com',
+    mobile: '+1 302 464 0950',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com',
+    slug: '/quantum-safe-cryptography-post-quantum-security'
+=======
     id: 'quantum-networking-platform',
     name: 'Quantum Networking Platform',
     tagline: 'Next-generation networking with quantum encryption and optimization',
@@ -790,5 +916,6 @@ export const advancedITInfrastructureServices2025 = [
     customers: 32,
     rating: 4.7,
     reviews: 24
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3808
   }
 ];
