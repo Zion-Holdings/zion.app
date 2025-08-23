@@ -237,6 +237,10 @@ const UltraAdvancedFuturisticBackground: React.FC<UltraAdvancedFuturisticBackgro
 
       // Update and draw particles
       particles = particles.filter(particle => {
+<<<<<<< HEAD
+        if (particle.life >= particle.maxLife) {
+          return false;
+=======
         particle.life++;
         particle.rotation += particle.rotationSpeed;
         particle.pulse += particle.pulseSpeed;
@@ -323,6 +327,7 @@ const UltraAdvancedFuturisticBackground: React.FC<UltraAdvancedFuturisticBackgro
             ctx.stroke();
             break;
           }
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-530a
         }
 
         updateParticle(particle);

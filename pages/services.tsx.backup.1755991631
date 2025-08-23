@@ -745,6 +745,22 @@ export default function ServicesPage() {
                   className="h-full cursor-pointer"
                   onClick={() => window.open(service.link, '_blank')}
                 >
+<<<<<<< HEAD
+                  <UltraAdvancedFuturisticCard
+                    title={service.name}
+                    description={service.description}
+                    price={`${service.price}${service.period}`}
+                    features={service.features}
+                    link={service.link}
+                    color={service.color}
+                    marketData={`${service.marketSize}, ${service.growthRate}`}
+                    competitors={service.competitors.join(', ')}
+                    savings={`Save ${service.roi.match(/(\d+)%/)?.[1] || '50'}% vs. competitors`}
+                    contactInfo={`Contact: ${service.contactInfo.mobile} | ${service.contactInfo.email}`}
+                    icon={service.icon}
+                    variant={service.variant as any}
+                  />
+=======
                   <Card
                     variant="futuristic"
                     size="lg"
@@ -829,6 +845,7 @@ export default function ServicesPage() {
                       </div>
                     </div>
                   </Card>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-530a
                 </motion.div>
               ))}
             </div>
@@ -858,6 +875,15 @@ export default function ServicesPage() {
         </section>
 
         {/* Popular Services Section */}
+<<<<<<< HEAD
+        <section className="py-20 bg-black/20">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+                  Most Popular Services
+                </span>
+=======
         {popularServices.length > 0 && (
           <motion.div 
             className="mt-20"
@@ -981,6 +1007,7 @@ export default function ServicesPage() {
                 <span className="quantum-text">Revolutionary</span>{' '}
                 <span className="holographic-text">Services</span>{' '}
                 <span className="cyberpunk-text">Showcase</span>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-530a
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                 These are our most requested and highest-rated services based on customer feedback and usage.
@@ -996,6 +1023,22 @@ export default function ServicesPage() {
                   className="h-full cursor-pointer"
                   onClick={() => window.open(service.link, '_blank')}
                 >
+<<<<<<< HEAD
+                  <UltraAdvancedFuturisticCard
+                    title={service.name}
+                    description={service.description}
+                    price={`${service.price}${service.period}`}
+                    features={service.features}
+                    link={service.link}
+                    color={service.color}
+                    marketData={`${service.marketSize}, ${service.growthRate}`}
+                    competitors={service.competitors.join(', ')}
+                    savings={`Save ${service.roi.match(/(\d+)%/)?.[1] || '50'}% vs. competitors`}
+                    contactInfo={`Contact: ${service.contactInfo.mobile} | ${service.contactInfo.email}`}
+                    icon={service.icon}
+                    variant={service.variant as any}
+                  />
+=======
                   <Card
                     variant="futuristic"
                     size="lg"
@@ -1080,6 +1123,7 @@ export default function ServicesPage() {
                       </div>
                     </div>
                   </Card>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-530a
                 </motion.div>
               ))}
             </div>

@@ -1,5 +1,27 @@
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
 
+<<<<<<< HEAD
+class MyDocument extends Document {
+  static async getInitialProps(ctx: DocumentContext) {
+    const initialProps = await Document.getInitialProps(ctx);
+    return { ...initialProps };
+  }
+
+  render() {
+    return (
+      <Html lang="en">
+        <Head />
+        <body className="bg-white dark:bg-black text-gray-900 dark:text-gray-100">
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
+}
+
+export default MyDocument;
+=======
 export default function Document() {
   return (
     <Html lang="en">
@@ -18,3 +40,4 @@ export default function Document() {
     </Html>
   )
 }
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-530a
