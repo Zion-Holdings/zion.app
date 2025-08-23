@@ -21,12 +21,36 @@ import { innovative2025AIAutonomousEcosystemV3 } from '../data/2025-innovative-a
 import { emerging2025TechBreakthroughsV4 } from '../data/2025-emerging-tech-breakthroughs-v4';
 import { advanced2025ITInfrastructureServicesV2 } from '../data/2025-advanced-it-infrastructure-services-v2';
 
+<<<<<<< HEAD
+// Lazy load components for better performance
+const TestimonialSection = React.lazy(() => import('./TestimonialSection'));
+
+// Enhanced loading component
+const LoadingSpinner = () => (
+  <div className="flex items-center justify-center p-8">
+    <div className="relative">
+      <div className="w-12 h-12 border-4 border-blue-200 rounded-full animate-spin"></div>
+      <div className="absolute top-0 left-0 w-12 h-12 border-4 border-blue-600 rounded-full animate-ping opacity-75"></div>
+    </div>
+    <span className="ml-3 text-lg font-medium text-gray-700">Loading revolutionary technology...</span>
+  </div>
+);
+
+// Import new enhanced components
+const ThemeToggle = lazy(() => import('./ThemeToggle'));
+const ServiceComparisonTool = lazy(() => import('./ServiceComparisonTool'));
+const RealTimeChatSupport = lazy(() => import('./RealTimeChatSupport'));
+const EnhancedPerformanceMonitor = lazy(() => import('./EnhancedPerformanceMonitor'));
+
+// Lazy load heavy components for better performance
+=======
 // Import our new 2025 real enterprise AI services
 import { realEnterpriseAIServices2025 } from '../data/2025-real-enterprise-ai-services';
 import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
 import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
 
 // Lazy load new components for better performance
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4385
 const ServiceCard = lazy(() => import('./ServiceCard'));
 const TestimonialsSection = lazy(() => import('./TestimonialsSection'));
 const LiveChatWidget = lazy(() => import('./LiveChatWidget'));
@@ -78,6 +102,10 @@ const Homepage2044: React.FC = () => {
     };
   }, []);
 
+<<<<<<< HEAD
+  // Combine all revolutionary services
+  const allRevolutionaryServices: Service[] = [
+=======
   // Combine all revolutionary services with new ones first
   const allRevolutionaryServices = [
     // New 2025 Real Enterprise AI Services
@@ -87,6 +115,7 @@ const Homepage2044: React.FC = () => {
     // New 2025 Innovative Micro SAAS Solutions
     ...innovativeMicroSaasSolutions2025,
     // Existing revolutionary services
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4385
     ...revolutionary2044AdvancedMicroSaas,
     ...revolutionary2044ITServices,
     ...revolutionary2044AIServices

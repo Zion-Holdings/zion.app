@@ -9,11 +9,18 @@ import {
 } from 'lucide-react';
 
 // Import our new service data
+<<<<<<< HEAD
+import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
+import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
+import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
+import { cuttingEdgeAIServices2025 } from '../data/2025-cutting-edge-ai-services';
+=======
 import { realEnterpriseAIServices2025 } from '../data/2025-real-enterprise-ai-services';
 import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
 import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
 
 
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4385
 
 const Comprehensive2025ServicesShowcase: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -23,9 +30,16 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
 
   // Combine all services
   const allServices = [
+<<<<<<< HEAD
+    ...advancedAIAutomationServices2025,
+    ...innovativeITInfrastructureServices2025,
+    ...innovativeMicroSaasSolutions2025,
+    ...cuttingEdgeAIServices2025
+=======
     ...realEnterpriseAIServices2025.map(service => ({ ...service, category: 'AI Automation' })),
     ...innovativeITInfrastructureServices2025.map(service => ({ ...service, category: 'IT Infrastructure' })),
     ...innovativeMicroSaasSolutions2025.map(service => ({ ...service, category: 'Micro SAAS' }))
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4385
   ];
 
   // Filter and sort services
@@ -41,6 +55,14 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
       switch (sortBy) {
         case 'name':
           return a.name.localeCompare(b.name);
+<<<<<<< HEAD
+        case 'price':
+          return parseFloat(a.price.replace('$', '')) - parseFloat(b.price.replace('$', ''));
+        case 'rating':
+          return b.rating - a.rating;
+        case 'popularity':
+          return b.customers - a.customers;
+=======
         case 'price': {
           const priceA = parseFloat((a.pricing?.starter || '0').replace(/[^0-9.]/g, ''));
           const priceB = parseFloat((b.pricing?.starter || '0').replace(/[^0-9.]/g, ''));
@@ -50,6 +72,7 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
           return 0; // Default sorting since rating not available
         case 'popularity':
           return 0; // Default sorting since popularity not available
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4385
         default:
           return 0;
       }
@@ -58,6 +81,8 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
   const categories = ['all', 'AI Automation', 'IT Infrastructure', 'Micro SAAS', 'AI Services'];
 
 
+<<<<<<< HEAD
+=======
   const ServiceCard = ({ service }: { service: any }) => (
     <motion.div
       variants={fadeInUp}
@@ -256,6 +281,7 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
       </div>
     </motion.div>
   );
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4385
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white">
