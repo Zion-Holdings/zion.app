@@ -42,8 +42,8 @@ function createChildProcessMocks() {
     console.log(`[MOCK exec] ${cmd}`);
     const fake = {
       pid: Math.floor(10000 + Math.random() * 90000),
-      stdout: { on: () => {} },
-      stderr: { on: () => {} },
+      stdout: { on: () => {}, pipe: () => {} },
+      stderr: { on: () => {}, pipe: () => {} },
       on: (ev, fn) => { if (ev === 'close' || ev === 'exit') setImmediate(() => fn(0)); },
       kill: () => true,
     };
@@ -59,8 +59,8 @@ function createChildProcessMocks() {
     console.log(`[MOCK spawn] ${cmd} ${(args || []).join(' ')}`);
     return {
       pid: Math.floor(10000 + Math.random() * 90000),
-      stdout: { on: () => {} },
-      stderr: { on: () => {} },
+      stdout: { on: () => {}, pipe: () => {} },
+      stderr: { on: () => {}, pipe: () => {} },
       on: () => {},
       kill: () => true,
     };
