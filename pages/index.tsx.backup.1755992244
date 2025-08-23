@@ -3,15 +3,36 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, Brain, Sparkles } from 'lucide-react';
 import Button from '../components/ui/Button';
+<<<<<<< HEAD
+import UltraFuturisticBackground2030 from '../components/ui/UltraFuturisticBackground2030';
+import UltraFuturisticBackground2031 from '../components/ui/UltraFuturisticBackground2031';
+import UltraAdvancedNavigation from '../components/layout/UltraAdvancedNavigation';
+import UltraAdvancedNavigation2026 from '../components/layout/UltraAdvancedNavigation2026';
+import UltraFuturisticNavigation2031 from '../components/layout/UltraFuturisticNavigation2031';
+import UltraFuturisticFooter2030 from '../components/layout/UltraFuturisticFooter2030';
+import UltraFuturisticFooter2031 from '../components/layout/UltraFuturisticFooter2031';
+=======
 import UltraFuturisticBackground2032 from '../components/ui/UltraFuturisticBackground2032';
 import UltraFuturisticNavigation2034 from '../components/layout/UltraFuturisticNavigation2034';
 import UltraFuturisticFooter2034 from '../components/layout/UltraFuturisticFooter2034';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3f13
 import EnhancedServiceShowcase from '../components/sections/EnhancedServiceShowcase';
 import Enhanced2026ServicesShowcase from '../components/sections/Enhanced2026ServicesShowcase';
 import UltraAdvancedHero2026 from '../components/sections/UltraAdvancedHero2026';
 import Revolutionary2026ServicesShowcase from '../components/sections/Revolutionary2026ServicesShowcase';
 import Revolutionary2026ServicesShowcaseNew from '../components/sections/Revolutionary2026ServicesShowcase';
 import { motion } from 'framer-motion';
+<<<<<<< HEAD
+import { innovativeRealMicroSaasServices2025 } from '../data/2025-innovative-real-micro-saas-services';
+import { innovativeAIServicesEnhanced2025 } from '../data/2025-innovative-ai-services-enhanced';
+import { innovativeITServicesEnhanced2025 } from '../data/2025-innovative-it-services-enhanced';
+import { emergingTechServicesEnhanced2025 } from '../data/2025-emerging-tech-services-enhanced';
+import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
+import { advancedITInfrastructureServices2025 } from '../data/2025-advanced-it-infrastructure-services';
+import { innovativeBusinessSolutions2025 } from '../data/2025-innovative-business-solutions';
+import { ultimateInnovativeServices2025 } from '../data/2025-ultimate-innovative-services';
+import { ultimateRealMicroSaasServices2025 } from '../data/2025-ultimate-real-micro-saas-services';
+=======
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
 import { additionalEnhancedServices } from '../data/additional-real-services';
@@ -90,6 +111,7 @@ import { enterpriseInnovations2032 } from '../data/2032-enterprise-innovations';
 import { healthcareInnovations2032 } from '../data/2032-healthcare-innovations';
 import { cuttingEdgeInnovations2034 } from '../data/2034-cutting-edge-innovations';
 import { enterpriseInnovations2034 } from '../data/2034-enterprise-innovations';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3f13
 
 const contactInfo = {
   mobile: '+1 302 464 0950',
@@ -283,9 +305,12 @@ export default function Home() {
         </script>
       </Head>
 
+<<<<<<< HEAD
+=======
       {/* Navigation */}
               <UltraFuturisticNavigation2034 />
 
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3f13
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Animated Background Elements */}
