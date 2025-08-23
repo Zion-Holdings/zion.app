@@ -1,20 +1,10 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
 
-const Callback: NextPage = () => {
-  return (
-    <div>
-      <Head>
-        <title>Callback - Zion Tech Solutions</title>
-        <meta name="description" content="Callback page" />
-      </Head>
-      
-      <main>
-        <h1>Callback</h1>
-        <p>This page is under construction.</p>
-      </main>
-    </div>
-  );
-};
+const AuthCallback: NextPage = () => (
+  <div className="container mx-auto px-4 py-8">
+    <h1 className="text-2xl font-bold">Auth Callback</h1>
+    <p>Processing your authentication...</p>
+  </div>
+);
 
-export default Callback;
+export default AuthCallback;

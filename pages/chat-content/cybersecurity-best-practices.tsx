@@ -1,20 +1,10 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
 
-const CybersecurityBestPractices: NextPage = () => {
-  return (
-    <div>
-      <Head>
-        <title>CybersecurityBestPractices - Zion Tech Solutions</title>
-        <meta name="description" content="CybersecurityBestPractices page" />
-      </Head>
-      
-      <main>
-        <h1>CybersecurityBestPractices</h1>
-        <p>This page is under construction.</p>
-      </main>
-    </div>
-  );
-};
+const Page: NextPage = () => (
+  <div className="container mx-auto px-4 py-8">
+    <h1 className="text-2xl font-bold">Cybersecurity Best Practices</h1>
+    <p>Content coming soon.</p>
+  </div>
+);
 
-export default CybersecurityBestPractices;
+export default Page;
