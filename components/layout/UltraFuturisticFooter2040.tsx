@@ -9,6 +9,97 @@ import {
   Github, ExternalLink
 } from 'lucide-react';
 
+const footerSections = [
+  {
+    title: 'Featured Revolutionary Services',
+    description: 'Our most innovative and cutting-edge solutions',
+    icon: <Star className="w-5 h-5 text-yellow-400" />,
+    color: 'from-yellow-500 to-orange-500',
+    links: [
+      { name: 'AI Consciousness Evolution 2040', href: '/ai-consciousness-evolution-2040', featured: true },
+      { name: 'Quantum Neural Ecosystem 2040', href: '/quantum-neural-ecosystem-2040', featured: true },
+      { name: 'Space Resource Intelligence 2040', href: '/space-resource-intelligence-2040', featured: true },
+      { name: 'Autonomous Business Intelligence 2040', href: '/autonomous-business-intelligence-2040', featured: true },
+      { name: 'Quantum Cybersecurity Future 2040', href: '/quantum-cybersecurity-future-2040', featured: true },
+      { name: 'Brain-Computer Interface 2040', href: '/brain-computer-interface-2040', featured: true },
+      { name: 'AI Autonomous Research 2041', href: '/ai-autonomous-research-2041' },
+      { name: 'Quantum Internet Security 2041', href: '/quantum-internet-security-2041' },
+      { name: 'AI Customer Success 2041', href: '/ai-customer-success-2041' },
+      { name: 'AI Sales Intelligence 2041', href: '/ai-sales-intelligence-2041' }
+    ]
+  },
+  {
+    title: 'AI & Consciousness',
+    description: 'Revolutionary AI consciousness platforms',
+    icon: <Brain className="w-5 h-5 text-cyan-400" />,
+    color: 'from-purple-500 to-pink-500',
+    links: [
+      { name: 'AI Consciousness Evolution 2040', href: '/ai-consciousness-evolution-2040' },
+      { name: 'AI Emotional Intelligence 2040', href: '/ai-emotional-intelligence-2040' },
+      { name: 'AI Autonomous Research 2041', href: '/ai-autonomous-research-2041' },
+      { name: 'AI Content Personalization 2041', href: '/ai-content-personalization-2041' },
+      { name: 'AI Ethics & Governance 2041', href: '/ai-ethics-governance-2041' },
+      { name: 'AI Autonomous Ecosystem 2041', href: '/ai-autonomous-ecosystem-2041' },
+      { name: 'AI Predictive Maintenance 2041', href: '/ai-predictive-maintenance-2041' },
+      { name: 'AI Customer Success 2041', href: '/ai-customer-success-2041' },
+      { name: 'AI Sales Intelligence 2041', href: '/ai-sales-intelligence-2041' },
+      { name: 'Autonomous Business Intelligence 2040', href: '/autonomous-business-intelligence-2040' }
+    ]
+  },
+  {
+    title: 'Quantum & Emerging Tech',
+    description: 'Breakthrough quantum and space technologies',
+    icon: <Atom className="w-5 h-5 text-blue-400" />,
+    color: 'from-blue-500 to-cyan-500',
+    links: [
+      { name: 'Quantum Neural Ecosystem 2040', href: '/quantum-neural-ecosystem-2040' },
+      { name: 'Quantum Cybersecurity Future 2040', href: '/quantum-cybersecurity-future-2040' },
+      { name: 'Quantum Internet Security 2041', href: '/quantum-internet-security-2041' },
+      { name: 'Quantum Cloud Infrastructure 2041', href: '/quantum-cloud-infrastructure-2041' },
+      { name: 'Quantum Bio-Computing 2041', href: '/quantum-bio-computing-2041' },
+      { name: 'Space Resource Intelligence 2040', href: '/space-resource-intelligence-2040' },
+      { name: 'Brain-Computer Interface 2040', href: '/brain-computer-interface-2040' },
+      { name: 'Autonomous Vehicle AI 2040', href: '/autonomous-vehicle-ai-2040' },
+      { name: 'Quantum Materials Discovery 2040', href: '/quantum-materials-discovery-2040' },
+      { name: 'Quantum Financial Intelligence 2040', href: '/quantum-financial-intelligence-2040' }
+    ]
+  },
+  {
+    title: 'Company & Resources',
+    description: 'About Zion Tech Group and resources',
+    icon: <Target className="w-5 h-5 text-purple-400" />,
+    color: 'from-orange-500 to-red-500',
+    links: [
+      { name: 'About Us', href: '/about' },
+      { name: 'Contact', href: '/contact' },
+      { name: 'Partners', href: '/partners' },
+      { name: 'News', href: '/news' },
+      { name: 'Blog', href: '/blog' },
+      { name: 'Case Studies', href: '/case-studies' },
+      { name: 'API Documentation', href: '/api' },
+      { name: 'Webinars', href: '/webinars' },
+      { name: 'Support', href: '/support' },
+      { name: 'Training', href: '/training' },
+      { name: 'Resources', href: '/resources' }
+    ]
+  }
+];
+
+const contactInfo = {
+  mobile: '+1 302 464 0950',
+  email: 'kleber@ziontechgroup.com',
+  address: '364 E Main St STE 1008 Middletown DE 19709',
+  website: 'https://ziontechgroup.com'
+};
+
+const socialLinks = [
+  { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: <Twitter className="w-5 h-5" /> },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/company/ziontechgroup', icon: <Linkedin className="w-5 h-5" /> },
+  { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: <Youtube className="w-5 h-5" /> },
+  { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: <Github className="w-5 h-5" /> }
+];
+
+
 const UltraFuturisticFooter2040: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
