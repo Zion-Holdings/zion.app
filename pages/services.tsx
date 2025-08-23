@@ -70,6 +70,12 @@ import { marketReadyServices } from '../data/market-ready-services';
 import { marketValidatedServices } from '../data/market-validated-services';
 import { industryRealServices } from '../data/industry-real-services';
 
+// Import our new 2025 advanced services
+import { advancedCybersecurityMicroSaasServices } from '../data/2025-advanced-cybersecurity-micro-saas';
+import { advancedAIMLMicroSaasServices } from '../data/2025-advanced-ai-ml-micro-saas';
+import { fintechBlockchainMicroSaasServices } from '../data/2025-fintech-blockchain-micro-saas';
+import { healthcareBiotechMicroSaasServices } from '../data/2025-healthcare-biotech-micro-saas';
+
 // Helper function to get service category
 const getServiceCategory = (service: any) => {
   if (service.category) return service.category;
@@ -162,7 +168,13 @@ const allServices = [
   ...ultimate2025AIServicesExpansion,
   // Our new 2025 advanced enterprise services
   ...advancedEnterpriseServices,
-  ...cuttingEdgeITInfrastructureServices
+  ...cuttingEdgeITInfrastructureServices,
+  
+  // Our new 2025 advanced specialized services
+  ...advancedCybersecurityMicroSaasServices,
+  ...advancedAIMLMicroSaasServices,
+  ...fintechBlockchainMicroSaasServices,
+  ...healthcareBiotechMicroSaasServices
 ];
 
 const categories = [
@@ -235,6 +247,27 @@ const categories = [
     icon: <GraduationCap className="w-6 h-6" />,
     color: 'from-yellow-500 to-orange-500',
     description: 'Learning and research platforms'
+  },
+  {
+    id: 'cybersecurity',
+    name: 'Cybersecurity',
+    icon: <Shield className="w-6 h-6" />,
+    color: 'from-red-500 to-orange-500',
+    description: 'Advanced security and threat protection'
+  },
+  {
+    id: 'ai-ml',
+    name: 'AI & Machine Learning',
+    icon: <Brain className="w-6 h-6" />,
+    color: 'from-purple-500 to-pink-600',
+    description: 'Intelligent automation and analytics'
+  },
+  {
+    id: 'fintech-blockchain',
+    name: 'Fintech & Blockchain',
+    icon: <Target className="w-6 h-6" />,
+    color: 'from-green-500 to-emerald-600',
+    description: 'Financial technology and blockchain solutions'
   }
 ];
 
@@ -274,9 +307,52 @@ export default function Services() {
     
     if (selectedCategory === 'all') return matchesSearch;
     
-    const serviceCategory = getServiceCategory(service).toLowerCase();
+    const serviceCategory = getServiceDescription(service).toLowerCase();
     const categoryName = categories.find(cat => cat.id === selectedCategory)?.name.toLowerCase();
     
+    // Handle specialized category filtering
+    if (selectedCategory === 'cybersecurity') {
+      return matchesSearch && (
+        serviceCategory.includes('cybersecurity') || 
+        serviceCategory.includes('security') || 
+        serviceCategory.includes('threat') ||
+        serviceCategory.includes('vulnerability') ||
+        serviceCategory.includes('compliance')
+      );
+    }
+    
+    if (selectedCategory === 'ai-ml') {
+      return matchesSearch && (
+        serviceCategory.includes('ai') || 
+        serviceCategory.includes('machine learning') || 
+        serviceCategory.includes('artificial intelligence') ||
+        serviceCategory.includes('neural') ||
+        serviceCategory.includes('automation')
+      );
+    }
+    
+    if (selectedCategory === 'fintech-blockchain') {
+      return matchesSearch && (
+        serviceCategory.includes('fintech') || 
+        serviceCategory.includes('blockchain') || 
+        serviceCategory.includes('crypto') ||
+        serviceCategory.includes('defi') ||
+        serviceCategory.includes('nft') ||
+        serviceCategory.includes('payment')
+      );
+    }
+    
+    if (selectedCategory === 'healthcare-biotech') {
+      return matchesSearch && (
+        serviceCategory.includes('healthcare') || 
+        serviceCategory.includes('biotech') || 
+        serviceCategory.includes('medical') ||
+        serviceCategory.includes('pharmaceutical') ||
+        serviceCategory.includes('clinical')
+      );
+    }
+    
+    // Default category matching
     return matchesSearch && serviceCategory.includes(categoryName || '');
   });
 
@@ -321,11 +397,13 @@ export default function Services() {
       case 'devops & automation':
       case 'data & analytics':
       case 'cloud services':
-      case 'cybersecurity':
         return <Building className="w-6 h-6 text-blue-400" />;
+      case 'cybersecurity':
+        return <Shield className="w-6 h-6 text-red-400" />;
       case 'ai & consciousness':
       case 'ai services':
       case 'artificial intelligence':
+      case 'ai & machine learning':
         return <Brain className="w-6 h-6 text-cyan-400" />;
       case 'quantum':
       case 'quantum & emerging tech':
@@ -348,6 +426,9 @@ export default function Services() {
       case 'education':
       case 'education & research':
         return <GraduationCap className="w-6 h-6 text-yellow-400" />;
+      case 'fintech':
+      case 'fintech & blockchain':
+        return <Target className="w-6 h-6 text-green-400" />;
       default:
         return <Shield className="w-6 h-6 text-gray-400" />;
     }
