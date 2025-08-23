@@ -12,12 +12,16 @@ const HomePage: React.FC = () => {
     <ErrorBoundary>
       <SEOOptimizer />
       <AnalyticsTracker />
+<<<<<<< HEAD
+      <Homepage2026 />
+=======
       <PerformanceOptimizer />
       <AccessibilityEnhancer />
       <MobileOptimizer showDebugInfo={false}>
         <Homepage2025 />
         <PerformanceMonitor showUI={true} />
       </MobileOptimizer>
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-e6ba
     </ErrorBoundary>
   );
 };

@@ -30,6 +30,12 @@ import { revolutionary20252026MicroSaasServices } from '../data/revolutionary-20
 import { revolutionary20252026AIServices } from '../data/revolutionary-2025-2026-ai-services';
 import { revolutionary20252026ITInfrastructureServices } from '../data/revolutionary-2025-2026-it-infrastructure-services';
 
+<<<<<<< HEAD
+// Import new expanded services
+import { innovativeMicroSaasServicesExpanded } from '../data/innovative-2025-micro-saas-expanded';
+import { innovativeITServicesExpanded } from '../data/innovative-2025-it-services-expanded';
+import { innovativeAIServicesExpanded } from '../data/innovative-2025-ai-services-expanded';
+=======
 // Import our new 2025 comprehensive services
 import { advancedEnterpriseSolutions2025 } from '../data/2025-advanced-enterprise-solutions';
 import { innovativeAIAutomationServices2025 } from '../data/2025-innovative-ai-automation-services';
@@ -39,6 +45,7 @@ import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-
 // Import our new 2025 Q4 innovative services
 import { innovative2025Q4NewServices } from '../data/innovative-2025-q4-new-services';
 import { emergingTech2025Innovations } from '../data/emerging-tech-2025-innovations';
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-e6ba
 
 // Import 2025 advanced services
 import { real2025AdvancedAIServices } from '../data/real-2025-advanced-ai-services';
@@ -67,10 +74,25 @@ const getServiceCategory = (service: any) => {
 
 // Helper function to get service pricing
 const getServicePricing = (service: any) => {
+<<<<<<< HEAD
+  // Handle pricing object structure
+  if (service.pricing?.starter) return service.pricing.starter;
+  if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
+  if (service.price?.monthly) return `$${service.price.monthly}/month`;
+  if (service.pricing && typeof service.pricing === 'object') {
+    // Handle complex pricing objects
+    if (service.pricing.starter) return service.pricing.starter;
+    if (service.pricing.monthly) return `$${service.pricing.monthly}/month`;
+    if (service.pricing.yearly) return `$${service.pricing.yearly}/year`;
+    // If it's a complex object, return a default message
+    return 'Contact for pricing';
+  }
+=======
   if (service.pricing?.starter) return service.pricing.starter;
   if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
   if (service.price?.monthly) return `$${service.price.monthly}/month`;
   if (typeof service.price === 'string') return service.price;
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-e6ba
   return 'Contact for pricing';
 };
 
