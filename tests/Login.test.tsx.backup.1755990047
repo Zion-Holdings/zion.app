@@ -11,7 +11,11 @@ vi.mock('@/services/auth');
 describe('LoginForm', () => {
   it('shows error toast on 401 response', async () => {
     vi.spyOn(authService, 'loginUser').mockResolvedValue({
+<<<<<<< HEAD
+      res: { ok: false, status: 401 } as Response,
+=======
       res: { status: 401, ok: false } as Response,
+>>>>>>> origin/a1b34d-codex/add-test-for-failed-login-toast
       data: { error: 'Invalid credentials' },
     });
 
@@ -28,8 +32,13 @@ describe('LoginForm', () => {
     fireEvent.input(screen.getByLabelText(/password/i), { target: { value: 'secret' } });
     fireEvent.click(screen.getByRole('button', { name: /login/i }));
 
+<<<<<<< HEAD
+    // wait for login submission to resolve
+    await screen.findByRole('button', { name: /login/i });
+=======
     // wait for toast call and confirm message appears
     await screen.findByText('Invalid credentials');
+>>>>>>> origin/a1b34d-codex/add-test-for-failed-login-toast
 
     expect(await screen.findByText(/invalid credentials/i)).toBeInTheDocument();
   });

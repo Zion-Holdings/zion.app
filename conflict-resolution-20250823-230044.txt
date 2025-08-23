@@ -1,0 +1,4 @@
+2025-08-23 23:00:47 - Merge conflicts detected in a1b34d-codex/add-test-for-failed-login-toast
+2025-08-23 23:00:47 - Resolving conflicts in src/hooks/use-toast.ts for branch a1b34d-codex/add-test-for-failed-login-toast
+2025-08-23 23:00:47 - Resolving conflicts in src/services/authService.ts for branch a1b34d-codex/add-test-for-failed-login-toast
+2025-08-23 23:00:47 - Resolving conflicts in tests/Login.test.tsx for branch a1b34d-codex/add-test-for-failed-login-toast
