@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ArrowRight, Play, TrendingUp, Brain, Shield, Rocket, Globe, Cpu, Database, Atom, Target, Star, Sparkles as SparklesIcon,
   Brain as BrainIcon, Atom as AtomIcon, Shield as ShieldIcon, Rocket as RocketIcon, Zap, Eye, Heart, Infinity,
-  Users, Code, Cloud, Lock, BarChart3, Lightbulb, Award, Clock, CheckCircle, ArrowUpRight, Phone, Mail, MapPin
+  Users, Code, Cloud, Lock, BarChart3, Lightbulb, Award, Clock, CheckCircle, ArrowUpRight, Phone, Mail, MapPin, BookOpen
 } from 'lucide-react';
 
 // Import our new services
@@ -175,6 +175,33 @@ const EnhancedHomepage2025: React.FC = () => {
                 <Play className="inline-block w-5 h-5 mr-2 group-hover:scale-110 transition-transform duration-300" />
                 Explore Services
               </button>
+            </motion.div>
+
+            {/* Trust Indicators */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="mt-12"
+            >
+              <div className="flex flex-wrap justify-center items-center gap-8 text-gray-400 text-sm">
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-4 h-4 text-green-400" />
+                  <span>ISO 27001 Certified</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Shield className="w-4 h-4 text-blue-400" />
+                  <span>SOC 2 Type II Compliant</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Award className="w-4 h-4 text-yellow-400" />
+                  <span>Microsoft Gold Partner</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Users className="w-4 h-4 text-purple-400" />
+                  <span>500+ Enterprise Clients</span>
+                </div>
+              </div>
             </motion.div>
 
             {/* Contact Information */}
@@ -451,6 +478,182 @@ const EnhancedHomepage2025: React.FC = () => {
                   Contact Our Experts
                 </a>
               </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-black">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+                What Our Clients Say
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Discover how Zion Tech Group has transformed businesses across industries with our innovative solutions.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  name: "Sarah Chen",
+                  role: "CTO, TechFlow Inc.",
+                  company: "TechFlow Inc.",
+                  content: "Zion Tech Group's AI solutions revolutionized our customer service operations. The implementation was seamless and the results exceeded our expectations.",
+                  rating: 5,
+                  avatar: "SC"
+                },
+                {
+                  name: "Marcus Rodriguez",
+                  role: "VP Engineering, QuantumCorp",
+                  company: "QuantumCorp",
+                  content: "Their quantum computing expertise helped us achieve breakthroughs in our research that we never thought possible. Truly cutting-edge technology.",
+                  rating: 5,
+                  avatar: "MR"
+                },
+                {
+                  name: "Dr. Emily Watson",
+                  role: "Research Director, SpaceTech Labs",
+                  company: "SpaceTech Labs",
+                  content: "The space technology solutions from Zion Tech Group have accelerated our satellite deployment by 300%. Outstanding innovation and support.",
+                  rating: 5,
+                  avatar: "EW"
+                }
+              ].map((testimonial, index) => (
+                <motion.div
+                  key={testimonial.name}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.1 * index }}
+                  viewport={{ once: true }}
+                  className="group p-6 bg-gradient-to-br from-gray-900/50 to-gray-800/30 border border-gray-700/50 rounded-2xl hover:border-cyan-400/50 transition-all duration-300 hover:scale-105"
+                >
+                  <div className="flex items-center gap-2 mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-gray-300 mb-6 italic">"{testimonial.content}"</p>
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-purple-600 rounded-full flex items-center justify-center text-white font-semibold">
+                      {testimonial.avatar}
+                    </div>
+                    <div>
+                      <div className="font-semibold text-white">{testimonial.name}</div>
+                      <div className="text-sm text-gray-400">{testimonial.role}</div>
+                      <div className="text-sm text-cyan-400">{testimonial.company}</div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Latest News & Updates Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+                Latest News & Innovations
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Stay updated with the latest breakthroughs in AI, quantum computing, and space technology from Zion Tech Group.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "Breakthrough in Quantum AI Fusion",
+                  excerpt: "Our latest research demonstrates unprecedented efficiency in quantum-classical hybrid computing systems.",
+                  date: "August 2025",
+                  category: "Research",
+                  image: "quantum-ai"
+                },
+                {
+                  title: "New Space Resource Intelligence Platform",
+                  excerpt: "Revolutionary platform for autonomous space resource discovery and optimization launched successfully.",
+                  date: "July 2025",
+                  category: "Product Launch",
+                  image: "space-tech"
+                },
+                {
+                  title: "AI Ethics Framework Released",
+                  excerpt: "Comprehensive framework for responsible AI development and deployment in enterprise environments.",
+                  date: "June 2025",
+                  category: "Innovation",
+                  image: "ai-ethics"
+                }
+              ].map((news, index) => (
+                <motion.div
+                  key={news.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.1 * index }}
+                  viewport={{ once: true }}
+                  className="group cursor-pointer"
+                >
+                  <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900/50 to-gray-800/30 border border-gray-700/50 hover:border-cyan-400/50 transition-all duration-300">
+                    <div className="h-48 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 flex items-center justify-center">
+                      <div className="text-center">
+                        <div className="w-16 h-16 mx-auto mb-3 bg-gradient-to-br from-cyan-500 to-purple-600 rounded-2xl p-4">
+                          <SparklesIcon className="w-full h-full text-white" />
+                        </div>
+                        <p className="text-cyan-400 font-semibold text-sm">{news.image}</p>
+                      </div>
+                    </div>
+                    <div className="p-6">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="px-3 py-1 bg-cyan-400/20 text-cyan-400 rounded-full text-xs font-medium">
+                          {news.category}
+                        </span>
+                        <span className="text-gray-400 text-sm">{news.date}</span>
+                      </div>
+                      <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
+                        {news.title}
+                      </h3>
+                      <p className="text-gray-400 mb-4 leading-relaxed">
+                        {news.excerpt}
+                      </p>
+                      <div className="flex items-center gap-2 text-cyan-400 group-hover:gap-3 transition-all duration-300">
+                        <span className="text-sm font-medium">Read More</span>
+                        <ArrowUpRight className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="text-center mt-12"
+            >
+              <a
+                href="/news"
+                className="inline-flex items-center gap-3 px-8 py-4 border-2 border-cyan-400/50 text-cyan-400 font-semibold rounded-full text-lg transition-all duration-300 hover:bg-cyan-400/10 hover:border-cyan-400 hover:shadow-lg hover:shadow-cyan-400/25"
+              >
+                <BookOpen className="w-5 h-5" />
+                View All News
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </a>
             </motion.div>
           </div>
         </section>

@@ -1,12 +1,16 @@
 import React from 'react';
 import EnhancedHomepage2025 from '../components/EnhancedHomepage2025';
 import ErrorBoundary from '../components/ErrorBoundary';
+import SEOHead from '../components/SEOHead';
 
 const HomePage: React.FC = () => {
   return (
-    <ErrorBoundary>
-      <EnhancedHomepage2025 />
-    </ErrorBoundary>
+    <>
+      <SEOHead />
+      <ErrorBoundary>
+        <EnhancedHomepage2025 />
+      </ErrorBoundary>
+    </>
   );
 };
 
