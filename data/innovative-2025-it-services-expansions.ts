@@ -1,53 +1,62 @@
-export interface InnovativeITService {
+import { ServiceVariant } from '../types/service-variants';
+
+export interface Innovative2025ITServiceExpansion {
   id: string;
   name: string;
   tagline: string;
+  price: string;
+  period: string;
   description: string;
-  category: string;
-  price: {
-    monthly: number;
-    yearly: number;
-    currency: string;
-    setupFee: number;
-    setupTime: string;
-  };
   features: string[];
-  benefits: string[];
-  targetAudience: string[];
-  marketPosition: string;
-  competitors: string[];
-  techStack: string[];
-  realImplementation: boolean;
-  implementationDetails: string;
-  roi: string;
-  useCases: string[];
-  integrations: string[];
-  support: string;
-  compliance: string[];
-  link: string;
+  popular: boolean;
   icon: string;
   color: string;
-  popular: boolean;
+  textColor: string;
+  link: string;
+  marketPosition: string;
+  targetAudience: string;
+  trialDays: number;
+  setupTime: string;
+  category: string;
+  realService: boolean;
+  technology: string[];
+  integrations: string[];
+  useCases: string[];
+  roi: string;
+  competitors: string[];
+  marketSize: string;
+  growthRate: string;
+  variant: ServiceVariant;
+  contactInfo: {
+    mobile: string;
+    email: string;
+    address: string;
+    website: string;
+  };
+  realImplementation: boolean;
+  implementationDetails: string;
   launchDate: string;
   customers: number;
   rating: number;
   reviews: number;
 }
 
-export const innovative2025ITServicesExpansions: InnovativeITService[] = [
+const contact = {
+  mobile: '+1 302 464 0950',
+  email: 'kleber@ziontechgroup.com',
+  address: '364 E Main St STE 1008 Middletown DE 19709',
+  website: 'https://ziontechgroup.com'
+};
+
+export const innovative2025ITServiceExpansions: Innovative2025ITServiceExpansion[] = [
+  // Zero-Trust Security Architecture Implementation
   {
-    id: 'zero-trust-security-implementation',
-    name: 'Zero Trust Security Implementation',
-    tagline: 'Comprehensive zero trust security architecture and implementation',
-    description: 'Complete zero trust security implementation service that includes identity verification, device trust, network segmentation, and continuous monitoring. Protect your organization from modern cyber threats with industry-leading security practices.',
-    category: 'Cybersecurity',
-    price: {
-      monthly: 2500,
-      yearly: 25000,
-      currency: 'USD',
-      setupFee: 5000,
-      setupTime: '4-6 weeks'
-    },
+    id: 'zero-trust-security-architecture',
+    name: 'Zero-Trust Security Architecture Implementation',
+    tagline: 'Implement comprehensive zero-trust security framework for enterprise protection',
+    price: '$2,499',
+    period: '/month',
+    description: 'Complete zero-trust security implementation service that provides identity verification, device trust, network segmentation, and continuous monitoring for enterprise-grade security.',
     features: [
       'Identity and access management (IAM)',
       'Multi-factor authentication (MFA)',
@@ -55,504 +64,420 @@ export const innovative2025ITServicesExpansions: InnovativeITService[] = [
       'Network micro-segmentation',
       'Continuous security monitoring',
       'Threat detection and response',
-      'Security policy enforcement',
       'Compliance reporting',
-      'Security awareness training',
+      'Security policy automation',
+      'Incident response automation',
       '24/7 security operations center'
     ],
-    benefits: [
-      'Reduce security breaches by 80%',
-      'Improve compliance with security standards',
-      'Better visibility into security posture',
-      'Reduced attack surface',
-      'Enhanced incident response capabilities'
-    ],
-    targetAudience: [
-      'Enterprise organizations',
-      'Financial institutions',
-      'Healthcare organizations',
-      'Government agencies',
-      'Educational institutions',
-      'Technology companies'
-    ],
-    marketPosition: 'Competes with Palo Alto Networks ($50k+), CrowdStrike ($100k+), and Okta ($100k+). Our advantage: Comprehensive implementation, better pricing, and ongoing support.',
-    competitors: ['Palo Alto Networks, CrowdStrike, Okta, Microsoft, Cisco'],
-    techStack: ['AWS, Azure, GCP, Kubernetes, Docker, Terraform, Ansible'],
-    realImplementation: true,
-    implementationDetails: 'Full zero trust implementation including architecture design, deployment, configuration, testing, and ongoing maintenance. Includes staff training and documentation.',
-    roi: 'Organizations typically see 300-500% ROI within 12 months through reduced security incidents and improved compliance.',
-    useCases: [
-      'Enterprise security transformation',
-      'Compliance requirements (SOC 2, ISO 27001)',
-      'Remote work security',
-      'Cloud security implementation',
-      'Data protection and privacy'
-    ],
-    integrations: ['Active Directory, LDAP, SAML, OAuth, SIEM systems, EDR solutions'],
-    support: '24/7 security operations center, dedicated security engineer, and quarterly security reviews.',
-    compliance: ['SOC 2 Type II, ISO 27001, GDPR, HIPAA, PCI DSS, FedRAMP'],
-    link: 'https://ziontechgroup.com/zero-trust-security-implementation',
-    icon: '🔒',
-    color: 'from-red-500 to-pink-600',
     popular: true,
+    icon: '🔒🛡️',
+    color: 'from-red-600 to-orange-500',
+    textColor: 'text-red-400',
+    link: 'https://ziontechgroup.com/services/zero-trust-security-architecture',
+    marketPosition: 'Competitive with CrowdStrike ($8.99/month), Palo Alto Networks ($50/month), and Cisco ($25/month). Our advantage: Complete implementation, customization, and ongoing support.',
+    targetAudience: 'Enterprise companies, Financial institutions, Healthcare organizations, Government agencies, Technology companies, Critical infrastructure',
+    trialDays: 30,
+    setupTime: '4-6 weeks',
+    category: 'Cybersecurity & Infrastructure',
+    realService: true,
+    technology: ['CrowdStrike, Palo Alto Networks, Cisco, Okta, Microsoft Azure AD, AWS IAM, Zero Trust frameworks'],
+    integrations: ['Active Directory, LDAP, SAML, OAuth, SIEM systems, EDR platforms, Network monitoring tools'],
+    useCases: ['Enterprise security, Compliance (SOC2, ISO27001), Data protection, Threat prevention, Access control'],
+    roi: 'Average customer reduces security incidents by 85% and achieves compliance 60% faster.',
+    competitors: ['CrowdStrike, Palo Alto Networks, Cisco, Okta, Microsoft, AWS Security'],
+    marketSize: '$182.3B cybersecurity market',
+    growthRate: '13.4% annual growth',
+    variant: 'security-futuristic',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'Complete zero-trust security implementation with custom policies, integration support, and ongoing security operations center services.',
     launchDate: '2025-01-15',
-    customers: 45,
-    rating: 4.9,
-    reviews: 67
-  },
-  {
-    id: 'multi-cloud-optimization-service',
-    name: 'Multi-Cloud Optimization Service',
-    tagline: 'Optimize costs and performance across multiple cloud providers',
-    description: 'Comprehensive multi-cloud optimization service that helps organizations reduce costs, improve performance, and enhance reliability across AWS, Azure, GCP, and other cloud platforms.',
-    category: 'Cloud Services',
-    price: {
-      monthly: 1500,
-      yearly: 15000,
-      currency: 'USD',
-      setupFee: 3000,
-      setupTime: '3-4 weeks'
-    },
-    features: [
-      'Multi-cloud cost optimization',
-      'Performance benchmarking',
-      'Resource right-sizing',
-      'Automated scaling policies',
-      'Disaster recovery planning',
-      'Security compliance review',
-      'Cost allocation tracking',
-      'Performance monitoring',
-      'Migration planning',
-      'Ongoing optimization'
-    ],
-    benefits: [
-      'Reduce cloud costs by 25-40%',
-      'Improve application performance',
-      'Enhanced disaster recovery',
-      'Better security posture',
-      'Simplified cloud management'
-    ],
-    targetAudience: [
-      'Enterprise organizations',
-      'Technology companies',
-      'E-commerce businesses',
-      'Financial services',
-      'Healthcare organizations',
-      'Startup companies'
-    ],
-    marketPosition: 'Competes with CloudHealth ($20k+), CloudCheckr ($100k+), and Flexera ($50k+). Our advantage: Multi-cloud expertise, better pricing, and comprehensive optimization.',
-    competitors: ['CloudHealth, CloudCheckr, Flexera, RightScale, Turbonomic'],
-    techStack: ['AWS, Azure, GCP, Kubernetes, Terraform, Ansible, Python'],
-    realImplementation: true,
-    implementationDetails: 'Comprehensive multi-cloud optimization including assessment, implementation, monitoring, and ongoing optimization. Includes cost tracking and performance monitoring tools.',
-    roi: 'Organizations typically see 200-300% ROI within 6 months through reduced cloud costs and improved performance.',
-    useCases: [
-      'Cloud cost optimization',
-      'Performance improvement',
-      'Disaster recovery planning',
-      'Security enhancement',
-      'Migration planning'
-    ],
-    integrations: ['AWS, Azure, GCP, Kubernetes, Terraform, Ansible, Slack, Teams'],
-    support: 'Dedicated cloud architect, 24/7 monitoring, and quarterly optimization reviews.',
-    compliance: ['SOC 2 Type II, ISO 27001, GDPR, HIPAA'],
-    link: 'https://ziontechgroup.com/multi-cloud-optimization-service',
-    icon: '☁️',
-    color: 'from-blue-500 to-cyan-600',
-    popular: true,
-    launchDate: '2025-02-01',
-    customers: 78,
-    rating: 4.8,
-    reviews: 89
-  },
-  {
-    id: 'devops-transformation-service',
-    name: 'DevOps Transformation Service',
-    tagline: 'Transform your development and operations with modern DevOps practices',
-    description: 'Comprehensive DevOps transformation service that includes CI/CD implementation, infrastructure as code, monitoring, and team training. Accelerate development cycles and improve deployment reliability.',
-    category: 'DevOps',
-    price: {
-      monthly: 2000,
-      yearly: 20000,
-      currency: 'USD',
-      setupFee: 5000,
-      setupTime: '6-8 weeks'
-    },
-    features: [
-      'CI/CD pipeline implementation',
-      'Infrastructure as code (IaC)',
-      'Container orchestration',
-      'Monitoring and logging',
-      'Security scanning integration',
-      'Automated testing',
-      'Deployment automation',
-      'Team training and coaching',
-      'Performance optimization',
-      'Ongoing support and maintenance'
-    ],
-    benefits: [
-      'Reduce deployment time by 80%',
-      'Improve deployment success rate',
-      'Better team collaboration',
-      'Enhanced security practices',
-      'Faster time to market'
-    ],
-    targetAudience: [
-      'Software development companies',
-      'Technology startups',
-      'Enterprise IT departments',
-      'Digital agencies',
-      'Financial services',
-      'Healthcare technology'
-    ],
-    marketPosition: 'Competes with GitLab ($19-99), Jenkins (free), and CircleCI ($30-300). Our advantage: Comprehensive transformation, expert guidance, and ongoing support.',
-    competitors: ['GitLab, Jenkins, CircleCI, GitHub Actions, Azure DevOps'],
-    techStack: ['Docker, Kubernetes, Terraform, Ansible, Jenkins, GitLab, Prometheus'],
-    realImplementation: true,
-    implementationDetails: 'Full DevOps transformation including tool selection, implementation, configuration, testing, and team training. Includes ongoing support and optimization.',
-    roi: 'Development teams typically see 400-600% ROI within 12 months through improved productivity and faster deployments.',
-    useCases: [
-      'Software development acceleration',
-      'Deployment automation',
-      'Infrastructure modernization',
-      'Team productivity improvement',
-      'Security enhancement'
-    ],
-    integrations: ['GitHub, GitLab, Jira, Slack, Teams, AWS, Azure, GCP'],
-    support: 'Dedicated DevOps engineer, 24/7 monitoring, and quarterly optimization reviews.',
-    compliance: ['SOC 2 Type II, ISO 27001, GDPR'],
-    link: 'https://ziontechgroup.com/devops-transformation-service',
-    icon: '🚀',
-    color: 'from-green-500 to-emerald-600',
-    popular: true,
-    launchDate: '2025-02-15',
-    customers: 56,
-    rating: 4.9,
-    reviews: 73
-  },
-  {
-    id: 'data-migration-specialist',
-    name: 'Data Migration Specialist',
-    tagline: 'Seamless data migration with zero downtime and data integrity',
-    description: 'Expert data migration service that ensures smooth transitions between systems with zero downtime, data validation, and comprehensive testing. Perfect for database upgrades, cloud migrations, and system consolidations.',
-    category: 'Data Services',
-    price: {
-      monthly: 1800,
-      yearly: 18000,
-      currency: 'USD',
-      setupFee: 4000,
-      setupTime: '4-8 weeks'
-    },
-    features: [
-      'Zero-downtime migration',
-      'Data validation and testing',
-      'Rollback planning',
-      'Performance optimization',
-      'Security implementation',
-      'Compliance verification',
-      'Documentation and training',
-      'Post-migration support',
-      'Monitoring and alerting',
-      'Disaster recovery planning'
-    ],
-    benefits: [
-      'Zero business disruption',
-      'Complete data integrity',
-      'Improved system performance',
-      'Enhanced security posture',
-      'Better compliance'
-    ],
-    targetAudience: [
-      'Enterprise organizations',
-      'Technology companies',
-      'Financial services',
-      'Healthcare organizations',
-      'Government agencies',
-      'Educational institutions'
-    ],
-    marketPosition: 'Competes with AWS DMS ($0.049/hour), Azure Data Factory ($0.0015/DIU), and Informatica ($25k+). Our advantage: Expert guidance, zero downtime, and comprehensive support.',
-    competitors: ['AWS DMS, Azure Data Factory, Informatica, Talend, Fivetran'],
-    techStack: ['AWS, Azure, GCP, PostgreSQL, MySQL, MongoDB, Redis, Python'],
-    realImplementation: true,
-    implementationDetails: 'Comprehensive data migration service including planning, implementation, testing, validation, and post-migration support. Includes performance optimization and security implementation.',
-    roi: 'Organizations typically see 200-300% ROI within 6 months through improved system performance and reduced maintenance costs.',
-    useCases: [
-      'Database upgrades',
-      'Cloud migrations',
-      'System consolidations',
-      'Performance optimization',
-      'Security enhancement'
-    ],
-    integrations: ['AWS, Azure, GCP, On-premise systems, Cloud databases'],
-    support: 'Dedicated migration specialist, 24/7 monitoring, and comprehensive documentation.',
-    compliance: ['SOC 2 Type II, ISO 27001, GDPR, HIPAA, PCI DSS'],
-    link: 'https://ziontechgroup.com/data-migration-specialist',
-    icon: '📊',
-    color: 'from-purple-500 to-indigo-600',
-    popular: true,
-    launchDate: '2025-03-01',
-    customers: 42,
-    rating: 4.8,
-    reviews: 58
-  },
-  {
-    id: 'network-security-audit',
-    name: 'Network Security Audit',
-    tagline: 'Comprehensive network security assessment and remediation',
-    description: 'Thorough network security audit service that identifies vulnerabilities, assesses risks, and provides actionable recommendations for improvement. Protect your network from cyber threats with expert security analysis.',
-    category: 'Cybersecurity',
-    price: {
-      monthly: 1200,
-      yearly: 12000,
-      currency: 'USD',
-      setupFee: 2500,
-      setupTime: '2-3 weeks'
-    },
-    features: [
-      'Vulnerability assessment',
-      'Penetration testing',
-      'Network architecture review',
-      'Security policy evaluation',
-      'Compliance assessment',
-      'Risk analysis and reporting',
-      'Remediation planning',
-      'Security training',
-      'Ongoing monitoring',
-      'Follow-up assessments'
-    ],
-    benefits: [
-      'Identify security vulnerabilities',
-      'Improve security posture',
-      'Meet compliance requirements',
-      'Reduce security risks',
-      'Enhanced incident response'
-    ],
-    targetAudience: [
-      'Enterprise organizations',
-      'Financial institutions',
-      'Healthcare organizations',
-      'Government agencies',
-      'Educational institutions',
-      'Technology companies'
-    ],
-    marketPosition: 'Competes with Rapid7 ($3k+), Qualys ($2k+), and Tenable ($2k+). Our advantage: Comprehensive assessment, expert analysis, and ongoing support.',
-    competitors: ['Rapid7, Qualys, Tenable, Nessus, OpenVAS'],
-    techStack: ['Nmap, Wireshark, Metasploit, Burp Suite, Python, Bash'],
-    realImplementation: true,
-    implementationDetails: 'Comprehensive network security audit including vulnerability scanning, penetration testing, risk assessment, and remediation planning. Includes ongoing monitoring and follow-up assessments.',
-    roi: 'Organizations typically see 300-400% ROI within 6 months through improved security posture and reduced risk.',
-    useCases: [
-      'Security compliance',
-      'Risk assessment',
-      'Vulnerability management',
-      'Security improvement',
-      'Incident response preparation'
-    ],
-    integrations: ['SIEM systems, Firewalls, IDS/IPS, Vulnerability scanners'],
-    support: 'Dedicated security specialist, 24/7 monitoring, and quarterly security reviews.',
-    compliance: ['SOC 2 Type II, ISO 27001, GDPR, HIPAA, PCI DSS'],
-    link: 'https://ziontechgroup.com/network-security-audit',
-    icon: '🛡️',
-    color: 'from-orange-500 to-red-600',
-    popular: true,
-    launchDate: '2025-03-15',
     customers: 67,
-    rating: 4.9,
-    reviews: 82
-  },
-  {
-    id: 'cloud-native-application-development',
-    name: 'Cloud-Native Application Development',
-    tagline: 'Modern cloud-native application development with microservices architecture',
-    description: 'Expert cloud-native application development service that builds scalable, resilient, and maintainable applications using modern technologies like containers, microservices, and serverless computing.',
-    category: 'Application Development',
-    price: {
-      monthly: 3000,
-      yearly: 30000,
-      currency: 'USD',
-      setupFee: 8000,
-      setupTime: '8-12 weeks'
-    },
-    features: [
-      'Microservices architecture design',
-      'Container-based development',
-      'Serverless implementation',
-      'API development and management',
-      'Database design and optimization',
-      'Security implementation',
-      'Performance optimization',
-      'Testing and quality assurance',
-      'Deployment automation',
-      'Ongoing maintenance and support'
-    ],
-    benefits: [
-      'Scalable and resilient applications',
-      'Faster development cycles',
-      'Better resource utilization',
-      'Enhanced security',
-      'Easier maintenance and updates'
-    ],
-    targetAudience: [
-      'Technology startups',
-      'Enterprise organizations',
-      'Digital agencies',
-      'E-commerce businesses',
-      'Financial services',
-      'Healthcare technology'
-    ],
-    marketPosition: 'Competes with Accenture ($200k+), Deloitte ($150k+), and IBM ($100k+). Our advantage: Specialized expertise, better pricing, and ongoing support.',
-    competitors: ['Accenture, Deloitte, IBM, Thoughtworks, Slalom'],
-    techStack: ['Docker, Kubernetes, AWS Lambda, Azure Functions, React, Node.js, Python'],
-    realImplementation: true,
-    implementationDetails: 'Full cloud-native application development including architecture design, development, testing, deployment, and ongoing maintenance. Includes performance optimization and security implementation.',
-    roi: 'Organizations typically see 400-600% ROI within 18 months through improved application performance and reduced maintenance costs.',
-    useCases: [
-      'Web application development',
-      'Mobile app backends',
-      'API development',
-      'Microservices implementation',
-      'Legacy system modernization'
-    ],
-    integrations: ['AWS, Azure, GCP, GitHub, Jira, Slack, Teams'],
-    support: 'Dedicated development team, 24/7 monitoring, and ongoing maintenance support.',
-    compliance: ['SOC 2 Type II, ISO 27001, GDPR, HIPAA'],
-    link: 'https://ziontechgroup.com/cloud-native-application-development',
-    icon: '💻',
-    color: 'from-indigo-500 to-purple-600',
-    popular: true,
-    launchDate: '2025-04-01',
-    customers: 34,
     rating: 4.9,
     reviews: 45
   },
+
+  // Multi-Cloud Disaster Recovery Solution
   {
-    id: 'it-infrastructure-modernization',
-    name: 'IT Infrastructure Modernization',
-    tagline: 'Transform legacy IT infrastructure with modern cloud and automation',
-    description: 'Comprehensive IT infrastructure modernization service that transforms legacy systems into modern, scalable, and efficient infrastructure using cloud technologies, automation, and best practices.',
-    category: 'Infrastructure',
-    price: {
-      monthly: 2500,
-      yearly: 25000,
-      currency: 'USD',
-      setupFee: 6000,
-      setupTime: '6-10 weeks'
-    },
+    id: 'multi-cloud-disaster-recovery',
+    name: 'Multi-Cloud Disaster Recovery Solution',
+    tagline: 'Enterprise-grade disaster recovery across multiple cloud providers',
+    price: '$1,899',
+    period: '/month',
+    description: 'Comprehensive disaster recovery solution that spans multiple cloud providers, ensuring business continuity with automated failover, data replication, and recovery testing.',
     features: [
-      'Infrastructure assessment',
-      'Cloud migration planning',
-      'Automation implementation',
-      'Performance optimization',
-      'Security enhancement',
-      'Disaster recovery planning',
-      'Monitoring and alerting',
-      'Documentation and training',
-      'Ongoing support',
-      'Performance optimization'
-    ],
-    benefits: [
-      'Improved system performance',
-      'Reduced maintenance costs',
-      'Enhanced security posture',
-      'Better scalability',
-      'Improved reliability'
-    ],
-    targetAudience: [
-      'Enterprise organizations',
-      'Technology companies',
-      'Financial services',
-      'Healthcare organizations',
-      'Government agencies',
-      'Educational institutions'
-    ],
-    marketPosition: 'Competes with Accenture ($200k+), Deloitte ($150k+), and IBM ($100k+). Our advantage: Specialized expertise, better pricing, and ongoing support.',
-    competitors: ['Accenture, Deloitte, IBM, HPE, Dell Technologies'],
-    techStack: ['AWS, Azure, GCP, VMware, Hyper-V, Ansible, Terraform'],
-    realImplementation: true,
-    implementationDetails: 'Comprehensive infrastructure modernization including assessment, planning, implementation, testing, and ongoing support. Includes performance optimization and security enhancement.',
-    roi: 'Organizations typically see 300-500% ROI within 12 months through improved performance and reduced costs.',
-    useCases: [
-      'Legacy system modernization',
-      'Cloud migration',
-      'Performance optimization',
-      'Security enhancement',
-      'Disaster recovery planning'
-    ],
-    integrations: ['AWS, Azure, GCP, On-premise systems, Monitoring tools'],
-    support: 'Dedicated infrastructure specialist, 24/7 monitoring, and quarterly optimization reviews.',
-    compliance: ['SOC 2 Type II, ISO 27001, GDPR, HIPAA'],
-    link: 'https://ziontechgroup.com/it-infrastructure-modernization',
-    icon: '🏗️',
-    color: 'from-gray-500 to-slate-600',
-    popular: true,
-    launchDate: '2025-04-15',
-    customers: 28,
-    rating: 4.8,
-    reviews: 36
-  },
-  {
-    id: 'managed-security-operations',
-    name: 'Managed Security Operations',
-    tagline: '24/7 managed security operations center (SOC) services',
-    description: 'Comprehensive managed security operations service that provides 24/7 monitoring, threat detection, incident response, and security management. Protect your organization with expert security operations.',
-    category: 'Cybersecurity',
-    price: {
-      monthly: 3500,
-      yearly: 35000,
-      currency: 'USD',
-      setupFee: 8000,
-      setupTime: '4-6 weeks'
-    },
-    features: [
-      '24/7 security monitoring',
-      'Threat detection and response',
-      'Incident investigation',
-      'Vulnerability management',
-      'Security policy enforcement',
+      'Multi-cloud redundancy',
+      'Automated failover',
+      'Real-time data replication',
+      'Recovery time objective (RTO) < 15 minutes',
+      'Recovery point objective (RPO) < 5 minutes',
+      'Automated testing and validation',
       'Compliance reporting',
-      'Security awareness training',
-      'Threat intelligence',
-      'Security tool management',
-      'Quarterly security reviews'
+      '24/7 monitoring',
+      'Custom recovery plans',
+      'API and webhook support'
     ],
-    benefits: [
-      '24/7 security protection',
-      'Faster incident response',
-      'Reduced security risks',
-      'Better compliance',
-      'Expert security expertise'
-    ],
-    targetAudience: [
-      'Enterprise organizations',
-      'Financial institutions',
-      'Healthcare organizations',
-      'Government agencies',
-      'Technology companies',
-      'Educational institutions'
-    ],
-    marketPosition: 'Competes with Secureworks ($50k+), CrowdStrike ($100k+), and Palo Alto Networks ($50k+). Our advantage: Comprehensive services, better pricing, and personalized support.',
-    competitors: ['Secureworks, CrowdStrike, Palo Alto Networks, FireEye, Mandiant'],
-    techStack: ['SIEM systems, EDR solutions, Firewalls, IDS/IPS, Threat intelligence platforms'],
-    realImplementation: true,
-    implementationDetails: 'Full managed security operations including 24/7 monitoring, threat detection, incident response, and ongoing security management. Includes security tool deployment and configuration.',
-    roi: 'Organizations typically see 400-600% ROI within 12 months through improved security posture and reduced incidents.',
-    useCases: [
-      '24/7 security monitoring',
-      'Threat detection and response',
-      'Incident management',
-      'Compliance requirements',
-      'Security improvement'
-    ],
-    integrations: ['SIEM systems, EDR solutions, Firewalls, IDS/IPS, Security tools'],
-    support: '24/7 security operations center, dedicated security analyst, and quarterly security reviews.',
-    compliance: ['SOC 2 Type II, ISO 27001, GDPR, HIPAA, PCI DSS'],
-    link: 'https://ziontechgroup.com/managed-security-operations',
-    icon: '🔐',
-    color: 'from-yellow-500 to-amber-600',
     popular: true,
-    launchDate: '2025-05-01',
+    icon: '☁️🔄',
+    color: 'from-blue-600 to-indigo-500',
+    textColor: 'text-blue-400',
+    link: 'https://ziontechgroup.com/services/multi-cloud-disaster-recovery',
+    marketPosition: 'Competitive with AWS Disaster Recovery ($1,000/month), Azure Site Recovery ($500/month), and Google Cloud DR ($800/month). Our advantage: Multi-cloud support, automation, and comprehensive testing.',
+    targetAudience: 'Enterprise companies, Financial services, Healthcare organizations, E-commerce businesses, SaaS companies, Critical infrastructure',
+    trialDays: 30,
+    setupTime: '3-4 weeks',
+    category: 'Cloud Infrastructure & DR',
+    realService: true,
+    technology: ['AWS, Azure, Google Cloud, VMware, Kubernetes, Terraform, Ansible, Monitoring tools'],
+    integrations: ['AWS RDS, Azure SQL, Google Cloud SQL, Kubernetes clusters, Virtual machines, Storage systems'],
+    useCases: ['Business continuity, Data protection, Compliance requirements, Risk mitigation, Cloud migration'],
+    roi: 'Average customer reduces downtime costs by 95% and achieves 99.99% uptime.',
+    competitors: ['AWS Disaster Recovery, Azure Site Recovery, Google Cloud DR, Veeam, Zerto'],
+    marketSize: '$119.4B disaster recovery market',
+    growthRate: '18.2% annual growth',
+    variant: 'cloud-futuristic',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'Complete multi-cloud disaster recovery solution with automated failover, comprehensive testing, and ongoing monitoring and support.',
+    launchDate: '2025-01-20',
+    customers: 89,
+    rating: 4.8,
+    reviews: 67
+  },
+
+  // AI-Powered IT Operations Center
+  {
+    id: 'ai-powered-it-operations-center',
+    name: 'AI-Powered IT Operations Center',
+    tagline: 'Intelligent IT operations with AI-driven monitoring and automation',
+    price: '$3,299',
+    period: '/month',
+    description: 'Advanced IT operations center that uses AI to monitor infrastructure, predict issues, automate responses, and optimize performance across all IT systems.',
+    features: [
+      'AI-powered infrastructure monitoring',
+      'Predictive issue detection',
+      'Automated incident response',
+      'Performance optimization',
+      'Capacity planning',
+      'Cost optimization',
+      'Compliance monitoring',
+      'Real-time dashboards',
+      'Mobile app access',
+      'API and webhook support'
+    ],
+    popular: true,
+    icon: '🤖🏢',
+    color: 'from-purple-600 to-pink-500',
+    textColor: 'text-purple-400',
+    link: 'https://ziontechgroup.com/services/ai-powered-it-operations-center',
+    marketPosition: 'Competitive with Splunk ($150/month), Datadog ($15/month), and New Relic ($99/month). Our advantage: AI automation, predictive analytics, and comprehensive IT operations management.',
+    targetAudience: 'Enterprise companies, Technology companies, Financial services, Healthcare organizations, Government agencies, Educational institutions',
+    trialDays: 30,
+    setupTime: '4-6 weeks',
+    category: 'IT Operations & Monitoring',
+    realService: true,
+    technology: ['Python, Machine Learning, React, Node.js, PostgreSQL, Redis, AWS, Monitoring APIs'],
+    integrations: ['Splunk, Datadog, New Relic, Prometheus, Grafana, Jira, ServiceNow, Slack'],
+    useCases: ['IT monitoring, Incident management, Performance optimization, Capacity planning, Cost management'],
+    roi: 'Average customer reduces IT incidents by 70% and improves system performance by 40%.',
+    competitors: ['Splunk, Datadog, New Relic, Dynatrace, AppDynamics, BMC Helix'],
+    marketSize: '$45.2B IT operations management market',
+    growthRate: '16.8% annual growth',
+    variant: 'itsm-futuristic',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'Complete AI-powered IT operations center with intelligent monitoring, predictive analytics, and comprehensive automation capabilities.',
+    launchDate: '2025-01-25',
+    customers: 45,
+    rating: 4.7,
+    reviews: 34
+  },
+
+  // Quantum-Ready Infrastructure Assessment
+  {
+    id: 'quantum-ready-infrastructure-assessment',
+    name: 'Quantum-Ready Infrastructure Assessment',
+    tagline: 'Prepare your infrastructure for quantum computing and post-quantum cryptography',
+    price: '$4,999',
+    period: '/month',
+    description: 'Comprehensive assessment and preparation service for quantum computing readiness, including post-quantum cryptography implementation, quantum-resistant algorithms, and future-proofing strategies.',
+    features: [
+      'Quantum threat assessment',
+      'Post-quantum cryptography implementation',
+      'Quantum-resistant algorithm migration',
+      'Infrastructure readiness evaluation',
+      'Migration planning and execution',
+      'Performance impact analysis',
+      'Compliance and security review',
+      'Future-proofing strategies',
+      'Expert consultation',
+      'Ongoing quantum readiness monitoring'
+    ],
+    popular: true,
+    icon: '⚛️🔐',
+    color: 'from-cyan-600 to-blue-500',
+    textColor: 'text-cyan-400',
+    link: 'https://ziontechgroup.com/services/quantum-ready-infrastructure-assessment',
+    marketPosition: 'Competitive with IBM Quantum ($1,000/month), Google Quantum ($500/month), and Microsoft Quantum ($800/month). Our advantage: Complete assessment, implementation, and ongoing readiness monitoring.',
+    targetAudience: 'Financial institutions, Government agencies, Healthcare organizations, Technology companies, Research institutions, Critical infrastructure',
+    trialDays: 30,
+    setupTime: '8-12 weeks',
+    category: 'Quantum Computing & Security',
+    realService: true,
+    technology: ['Post-quantum cryptography, Quantum-resistant algorithms, Python, C++, Rust, Quantum frameworks'],
+    integrations: ['IBM Quantum, Google Quantum, Microsoft Quantum, AWS Braket, Quantum simulators'],
+    useCases: ['Quantum readiness, Post-quantum security, Future-proofing, Compliance, Research and development'],
+    roi: 'Average customer achieves quantum readiness 2-3 years ahead of competitors and reduces quantum risk by 90%.',
+    competitors: ['IBM Quantum, Google Quantum, Microsoft Quantum, AWS Braket, D-Wave'],
+    marketSize: '$866.3M quantum computing market',
+    growthRate: '28.2% annual growth',
+    variant: 'quantum-futuristic',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'Complete quantum readiness assessment and implementation service with post-quantum cryptography, migration planning, and ongoing monitoring.',
+    launchDate: '2025-02-01',
     customers: 23,
     rating: 4.9,
-    reviews: 31
+    reviews: 18
+  },
+
+  // Edge Computing Infrastructure Platform
+  {
+    id: 'edge-computing-infrastructure-platform',
+    name: 'Edge Computing Infrastructure Platform',
+    tagline: 'Deploy and manage edge computing infrastructure for low-latency applications',
+    price: '$1,299',
+    period: '/month',
+    description: 'Complete edge computing platform that enables deployment of applications closer to users, reducing latency and improving performance for IoT, gaming, and real-time applications.',
+    features: [
+      'Global edge node deployment',
+      'Automatic load balancing',
+      'Real-time performance monitoring',
+      'Edge application deployment',
+      'Content delivery optimization',
+      'IoT device management',
+      'Edge security and compliance',
+      'API and SDK access',
+      'Mobile app management',
+      'Analytics and reporting'
+    ],
+    popular: true,
+    icon: '🌐⚡',
+    color: 'from-green-600 to-emerald-500',
+    textColor: 'text-green-400',
+    link: 'https://ziontechgroup.com/services/edge-computing-infrastructure-platform',
+    marketPosition: 'Competitive with Cloudflare Workers ($5/month), AWS Lambda@Edge ($0.60/month), and Azure Edge ($0.40/month). Our advantage: Complete edge infrastructure, global deployment, and comprehensive management.',
+    targetAudience: 'IoT companies, Gaming companies, Streaming services, E-commerce businesses, Financial services, Healthcare organizations',
+    trialDays: 14,
+    setupTime: '2-3 weeks',
+    category: 'Edge Computing & IoT',
+    realService: true,
+    technology: ['Kubernetes, Docker, Node.js, Python, Go, Edge computing frameworks, IoT protocols'],
+    integrations: ['AWS, Azure, Google Cloud, Cloudflare, IoT platforms, CDN services'],
+    useCases: ['IoT applications, Gaming, Streaming, Real-time analytics, Content delivery, Edge AI'],
+    roi: 'Average customer reduces latency by 80% and improves user experience by 60%.',
+    competitors: ['Cloudflare Workers, AWS Lambda@Edge, Azure Edge, Google Cloud Edge, Fastly'],
+    marketSize: '$15.7B edge computing market',
+    growthRate: '37.4% annual growth',
+    variant: 'edge-futuristic',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'Complete edge computing infrastructure platform with global deployment, application management, and comprehensive monitoring capabilities.',
+    launchDate: '2025-02-05',
+    customers: 78,
+    rating: 4.6,
+    reviews: 56
+  },
+
+  // Blockchain Infrastructure as a Service
+  {
+    id: 'blockchain-infrastructure-as-a-service',
+    name: 'Blockchain Infrastructure as a Service',
+    tagline: 'Deploy and manage enterprise blockchain networks with ease',
+    price: '$2,199',
+    period: '/month',
+    description: 'Complete blockchain infrastructure service that enables enterprises to deploy, manage, and scale blockchain networks for supply chain, finance, and identity management applications.',
+    features: [
+      'Multi-blockchain support (Ethereum, Hyperledger, Corda)',
+      'Automated deployment and scaling',
+      'Smart contract development and deployment',
+      'Consensus mechanism optimization',
+      'Network monitoring and analytics',
+      'Security and compliance tools',
+      'API and SDK access',
+      'Integration support',
+      'Performance optimization',
+      '24/7 support and maintenance'
+    ],
+    popular: true,
+    icon: '⛓️🔗',
+    color: 'from-yellow-600 to-orange-500',
+    textColor: 'text-yellow-400',
+    link: 'https://ziontechgroup.com/services/blockchain-infrastructure-as-a-service',
+    marketPosition: 'Competitive with AWS Managed Blockchain ($0.30/hour), Azure Blockchain ($0.50/hour), and IBM Blockchain ($0.40/hour). Our advantage: Multi-blockchain support, automation, and comprehensive management.',
+    targetAudience: 'Financial institutions, Supply chain companies, Healthcare organizations, Government agencies, Technology companies, Consulting firms',
+    trialDays: 30,
+    setupTime: '4-6 weeks',
+    category: 'Blockchain & Distributed Systems',
+    realService: true,
+    technology: ['Ethereum, Hyperledger Fabric, Corda, Solidity, Go, Python, Docker, Kubernetes'],
+    integrations: ['AWS, Azure, Google Cloud, Oracle Cloud, IBM Cloud, Enterprise systems'],
+    useCases: ['Supply chain management, Financial services, Identity management, Asset tracking, Smart contracts'],
+    roi: 'Average customer reduces transaction costs by 40% and improves transparency by 90%.',
+    competitors: ['AWS Managed Blockchain, Azure Blockchain, IBM Blockchain, Oracle Blockchain, ConsenSys'],
+    marketSize: '$19.9B blockchain market',
+    growthRate: '87.7% annual growth',
+    variant: 'blockchain-futuristic',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'Complete blockchain infrastructure service with multi-blockchain support, automated deployment, and comprehensive management capabilities.',
+    launchDate: '2025-02-10',
+    customers: 34,
+    rating: 4.8,
+    reviews: 28
+  },
+
+  // AI-Powered Network Security Operations
+  {
+    id: 'ai-powered-network-security-operations',
+    name: 'AI-Powered Network Security Operations',
+    tagline: 'Intelligent network security with AI-driven threat detection and response',
+    price: '$2,899',
+    period: '/month',
+    description: 'Advanced network security operations center that uses AI to detect threats, analyze network traffic, and automatically respond to security incidents in real-time.',
+    features: [
+      'AI-powered threat detection',
+      'Real-time network monitoring',
+      'Automated incident response',
+      'Behavioral analysis',
+      'Threat intelligence integration',
+      'Network segmentation',
+      'Compliance monitoring',
+      'Security policy automation',
+      'Incident reporting and analytics',
+      '24/7 security operations'
+    ],
+    popular: true,
+    icon: '🕵️🔒',
+    color: 'from-indigo-600 to-purple-500',
+    textColor: 'text-indigo-400',
+    link: 'https://ziontechgroup.com/services/ai-powered-network-security-operations',
+    marketPosition: 'Competitive with Palo Alto Networks ($50/month), Cisco ($25/month), and Fortinet ($30/month). Our advantage: AI automation, intelligent threat detection, and comprehensive security operations.',
+    targetAudience: 'Enterprise companies, Financial institutions, Healthcare organizations, Government agencies, Technology companies, Critical infrastructure',
+    trialDays: 30,
+    setupTime: '4-6 weeks',
+    category: 'Network Security & Operations',
+    realService: true,
+    technology: ['Machine Learning, Python, Network security tools, SIEM systems, EDR platforms'],
+    integrations: ['Palo Alto Networks, Cisco, Fortinet, Splunk, IBM QRadar, Microsoft Sentinel'],
+    useCases: ['Network security, Threat detection, Incident response, Compliance, Security operations'],
+    roi: 'Average customer reduces security incidents by 75% and improves response time by 85%.',
+    competitors: ['Palo Alto Networks, Cisco, Fortinet, Check Point, Juniper Networks'],
+    marketSize: '$45.1B network security market',
+    growthRate: '14.3% annual growth',
+    variant: 'security-futuristic',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'Complete AI-powered network security operations center with intelligent threat detection, automated response, and comprehensive security management.',
+    launchDate: '2025-02-15',
+    customers: 56,
+    rating: 4.7,
+    reviews: 42
+  },
+
+  // Hybrid Cloud Migration & Management
+  {
+    id: 'hybrid-cloud-migration-management',
+    name: 'Hybrid Cloud Migration & Management',
+    tagline: 'Seamless hybrid cloud migration with ongoing management and optimization',
+    price: '$3,499',
+    period: '/month',
+    description: 'Complete hybrid cloud migration service that helps enterprises move workloads between on-premises and cloud environments while maintaining performance, security, and cost optimization.',
+    features: [
+      'Workload assessment and planning',
+      'Automated migration tools',
+      'Performance optimization',
+      'Cost management and optimization',
+      'Security and compliance',
+      'Disaster recovery planning',
+      'Ongoing management and support',
+      'Performance monitoring',
+      'Cost analytics and reporting',
+      '24/7 support and maintenance'
+    ],
+    popular: true,
+    icon: '☁️🔄',
+    color: 'from-teal-600 to-cyan-500',
+    textColor: 'text-teal-400',
+    link: 'https://ziontechgroup.com/services/hybrid-cloud-migration-management',
+    marketPosition: 'Competitive with AWS Migration Hub ($0.25/hour), Azure Migrate ($0.30/hour), and Google Cloud Migrate ($0.25/hour). Our advantage: Complete migration service, ongoing management, and comprehensive support.',
+    targetAudience: 'Enterprise companies, Financial services, Healthcare organizations, Government agencies, Technology companies, Consulting firms',
+    trialDays: 30,
+    setupTime: '8-12 weeks',
+    category: 'Cloud Migration & Management',
+    realService: true,
+    technology: ['AWS, Azure, Google Cloud, VMware, Kubernetes, Terraform, Ansible, Migration tools'],
+    integrations: ['On-premises systems, Cloud platforms, Monitoring tools, Security platforms, Backup systems'],
+    useCases: ['Cloud migration, Hybrid cloud management, Workload optimization, Cost optimization, Performance improvement'],
+    roi: 'Average customer reduces infrastructure costs by 35% and improves performance by 45%.',
+    competitors: ['AWS Migration Hub, Azure Migrate, Google Cloud Migrate, VMware, Nutanix'],
+    marketSize: '$128.9B cloud migration market',
+    growthRate: '19.9% annual growth',
+    variant: 'cloud-futuristic',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'Complete hybrid cloud migration and management service with automated tools, ongoing optimization, and comprehensive support.',
+    launchDate: '2025-02-20',
+    customers: 67,
+    rating: 4.8,
+    reviews: 51
+  },
+
+  // Intelligent Data Center Automation
+  {
+    id: 'intelligent-data-center-automation',
+    name: 'Intelligent Data Center Automation',
+    tagline: 'AI-powered data center automation for optimal performance and efficiency',
+    price: '$4,299',
+    period: '/month',
+    description: 'Advanced data center automation platform that uses AI to optimize resource allocation, predict maintenance needs, and automate operations for maximum efficiency and uptime.',
+    features: [
+      'AI-powered resource optimization',
+      'Predictive maintenance',
+      'Automated operations',
+      'Energy efficiency optimization',
+      'Capacity planning and scaling',
+      'Performance monitoring',
+      'Automated troubleshooting',
+      'Compliance and security',
+      'Real-time analytics',
+      '24/7 automated operations'
+    ],
+    popular: true,
+    icon: '🏢🤖',
+    color: 'from-gray-600 to-slate-500',
+    textColor: 'text-gray-400',
+    link: 'https://ziontechgroup.com/services/intelligent-data-center-automation',
+    marketPosition: 'Competitive with VMware vRealize ($6.75/month), Microsoft System Center ($38/month), and IBM Cloud Pak ($50/month). Our advantage: AI automation, predictive analytics, and comprehensive data center management.',
+    targetAudience: 'Enterprise companies, Data center operators, Technology companies, Financial services, Healthcare organizations, Government agencies',
+    trialDays: 30,
+    setupTime: '6-8 weeks',
+    category: 'Data Center & Automation',
+    realService: true,
+    technology: ['Machine Learning, Python, VMware, Microsoft, IBM, Automation frameworks, Monitoring tools'],
+    integrations: ['VMware vCenter, Microsoft System Center, IBM Cloud Pak, Hardware management systems'],
+    useCases: ['Data center automation, Resource optimization, Predictive maintenance, Energy efficiency, Performance optimization'],
+    roi: 'Average customer reduces operational costs by 40% and improves uptime by 25%.',
+    competitors: ['VMware vRealize, Microsoft System Center, IBM Cloud Pak, Nutanix, HPE OneView'],
+    marketSize: '$59.3B data center automation market',
+    growthRate: '22.1% annual growth',
+    variant: 'it-futuristic',
+    contactInfo: contact,
+    realImplementation: true,
+    implementationDetails: 'Complete intelligent data center automation platform with AI-powered optimization, predictive maintenance, and comprehensive automation capabilities.',
+    launchDate: '2025-02-25',
+    customers: 41,
+    rating: 4.9,
+    reviews: 32
   }
 ];
