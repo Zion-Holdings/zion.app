@@ -1,11 +1,23 @@
+<<<<<<< HEAD
+import type { NextPage } from 'next';
+=======
 import React from 'react';
 import { NextPage } from 'next';
+>>>>>>> origin/cursor/automate-app-link-and-sublink-fixes-055b
 import Head from 'next/head';
 
 const ProductsPage: NextPage = () => {
   return (
     <>
       <Head>
+<<<<<<< HEAD
+        <title>Products - Zion</title>
+        <meta name="description" content="Browse our products" />
+      </Head>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-3xl font-bold mb-6">Products</h1>
+        <p className="text-muted-foreground">Products page coming soon...</p>
+=======
         <title>Products - Zion Tech Group</title>
         <meta name="description" content="Innovative technology products and solutions from Zion Tech Group" />
       </Head>
@@ -46,9 +58,14 @@ const ProductsPage: NextPage = () => {
             This page is automatically generated. Content will be populated by automation systems.
           </p>
         </div>
+>>>>>>> origin/cursor/automate-app-link-and-sublink-fixes-055b
       </div>
     </>
   );
 };
 
+<<<<<<< HEAD
 export default ProductsPage;
+=======
+export default ProductsPage;
+>>>>>>> origin/cursor/automate-app-link-and-sublink-fixes-055b

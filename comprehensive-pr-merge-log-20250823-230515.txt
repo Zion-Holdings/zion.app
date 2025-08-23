@@ -548,3 +548,36 @@ pages/services/index.tsx[0m
 2025-08-23 23:05:45 - [1;33m⚠️  Found conflicts in pages/services/index.tsx, resolving...[0m
 2025-08-23 23:05:45 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
 2025-08-23 23:05:45 - [0;32m✅ Resolved conflicts in pages/services/index.tsx[0m
+2025-08-23 23:05:45 - [0;32m✅ Successfully resolved conflicts and merged cursor/analyze-website-for-navigation-automation-1ae1[0m
+2025-08-23 23:05:45 - [0;32m✅ PR #3890 (cursor/analyze-website-for-navigation-automation-1ae1) processed successfully[0m
+2025-08-23 23:05:45 - [0;34m🔒 Closing PR #3890 via GitHub API...[0m
+2025-08-23 23:05:45 - [0;34m📊 Progress: 8/100, ✅ 8, ❌ 0[0m
+2025-08-23 23:05:47 - [0;34m📋 Processing PR #3886: Automate site navigation enhancement (branch: cursor/automate-site-navigation-enhancement-285c)[0m
+2025-08-23 23:05:48 - [0;34m🔄 Attempting to merge cursor/automate-site-navigation-enhancement-285c...[0m
+2025-08-23 23:05:48 - [0;32m✅ Successfully merged cursor/automate-site-navigation-enhancement-285c[0m
+2025-08-23 23:05:48 - [0;32m✅ PR #3886 (cursor/automate-site-navigation-enhancement-285c) processed successfully[0m
+2025-08-23 23:05:48 - [0;34m🔒 Closing PR #3886 via GitHub API...[0m
+2025-08-23 23:05:49 - [0;34m📊 Progress: 9/100, ✅ 9, ❌ 0[0m
+2025-08-23 23:05:51 - [0;34m📋 Processing PR #3885: Automate app link and sublink fixes (branch: cursor/automate-app-link-and-sublink-fixes-055b)[0m
+2025-08-23 23:05:51 - [0;34m🔄 Attempting to merge cursor/automate-app-link-and-sublink-fixes-055b...[0m
+2025-08-23 23:05:52 - [1;33m⚠️  Merge conflicts detected in cursor/automate-app-link-and-sublink-fixes-055b (attempt 1/3), resolving...[0m
+2025-08-23 23:05:52 - [0;34m📋 Conflicted files: README.md
+netlify/functions/functions-manifest.json
+package.json
+pages/products/index.tsx[0m
+2025-08-23 23:05:52 - [0;34m🔧 Resolving conflicts in README.md for branch cursor/automate-app-link-and-sublink-fixes-055b...[0m
+2025-08-23 23:05:52 - [1;33m⚠️  Found conflicts in README.md, resolving...[0m
+2025-08-23 23:05:52 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:52 - [0;32m✅ Resolved conflicts in README.md[0m
+2025-08-23 23:05:52 - [0;34m🔧 Resolving conflicts in netlify/functions/functions-manifest.json for branch cursor/automate-app-link-and-sublink-fixes-055b...[0m
+2025-08-23 23:05:52 - [1;33m⚠️  Found conflicts in netlify/functions/functions-manifest.json, resolving...[0m
+2025-08-23 23:05:52 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:52 - [0;32m✅ Resolved conflicts in netlify/functions/functions-manifest.json[0m
+2025-08-23 23:05:52 - [0;34m🔧 Resolving conflicts in package.json for branch cursor/automate-app-link-and-sublink-fixes-055b...[0m
+2025-08-23 23:05:52 - [1;33m⚠️  Found conflicts in package.json, resolving...[0m
+2025-08-23 23:05:52 - [0;34m📦 Package.json detected, merging dependencies intelligently...[0m
+2025-08-23 23:05:52 - [0;32m✅ Resolved conflicts in package.json[0m
+2025-08-23 23:05:52 - [0;34m🔧 Resolving conflicts in pages/products/index.tsx for branch cursor/automate-app-link-and-sublink-fixes-055b...[0m
+2025-08-23 23:05:52 - [1;33m⚠️  Found conflicts in pages/products/index.tsx, resolving...[0m
+2025-08-23 23:05:52 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:05:52 - [0;32m✅ Resolved conflicts in pages/products/index.tsx[0m

@@ -418,6 +418,19 @@
     "git:cleanup": "node automation/enhanced-git-sync-orchestrator.cjs cleanup-locks",
     "git:status": "node automation/enhanced-git-sync-orchestrator.cjs status",
     "git:report": "node automation/enhanced-git-sync-orchestrator.cjs report",
+<<<<<<< HEAD
+    "navigation:ai": "node automation/ai-navigation-optimizer.cjs",
+    "navigation:ml": "node automation/ml-navigation-predictor.cjs",
+    "navigation:neural": "node automation/neural-navigation-network.cjs",
+    "navigation:ai:all": "npm run navigation:ai && npm run navigation:ml && npm run navigation:neural",
+    "navigation:autonomous": "node automation/autonomous-navigation-launcher.cjs",
+    "navigation:cron": "bash automation/navigation-cron-system.sh",
+    "navigation:cron:start": "bash automation/navigation-cron-system.sh start",
+    "navigation:cron:stop": "bash automation/navigation-cron-system.sh stop",
+    "navigation:cron:restart": "bash automation/navigation-cron-system.sh restart",
+    "navigation:cron:status": "bash automation/navigation-cron-system.sh status",
+    "navigation:launch": "npm run navigation:autonomous & npm run navigation:cron:start",
+=======
     "links:monitor": "node automation/enhanced-link-health-monitor.cjs",
     "links:fix": "node automation/intelligent-link-auto-fixer.cjs",
     "routes:validate": "node automation/route-validation-system.cjs",
@@ -452,6 +465,7 @@
     "autonomous:docker-stop": "docker-compose -f docker-compose.autonomous.yml down",
     "autonomous:docker-logs": "docker-compose -f docker-compose.autonomous.yml logs -f",
     "autonomous:full": "npm run autonomous:start && npm run autonomous:deploy && npm run autonomous:docker",
+>>>>>>> origin/cursor/automate-app-link-and-sublink-fixes-055b
     "automation:improvement": "node automation/continuous-automation-improvement-system.js",
     "automation:guardian": "node automation/automation-guardian-10min.cjs",
     "automation:cloud": "node automation/cloud-autonomous-orchestrator.cjs",
@@ -462,8 +476,12 @@
     "automation:restart": "node automation/restart-all-automation.js",
     "automation:enhance": "node automation/enhance-all-automation.js",
     "automation:beautify": "node automation/beautify-ui.cjs",
+<<<<<<< HEAD
+    "autonomous:stop": "node automation/launch-autonomous-systems-clean.js stop",
+=======
     "autonomous:start": "node automation/autonomous-system-manager.cjs start",
     "autonomous:stop": "node automation/autonomous-system-manager.cjs stop",
+>>>>>>> origin/cursor/automate-app-link-and-sublink-fixes-055b
     "autonomous:restart": "node automation/launch-autonomous-systems-clean.js restart",
     "autonomous:factory": "node automation/autonomous-error-monitoring-factory.js",
     "autonomous:orchestrator": "node automation/autonomous-automation-orchestrator.js",
