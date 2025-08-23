@@ -65,6 +65,11 @@ import { emergingTech2025Innovations } from '../data/emerging-tech-2025-innovati
 // Import additional 2038 services
 import { innovative2038ITMicroSaasServices } from '../data/innovative-2038-it-micro-saas-services';
 
+// Import our new Q4 2025 innovative services
+import { innovative2025Q4MicroSaasExpansion } from '../data/innovative-2025-q4-micro-saas-expansion';
+import { innovative2025Q4ITServicesExpansion } from '../data/innovative-2025-q4-it-services-expansion';
+import { innovative2025Q4AIServicesExpansion } from '../data/innovative-2025-q4-ai-services-expansion';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -124,6 +129,9 @@ const allServices = [
   ...innovativeAIServices,
   ...enterpriseITServices,
   ...emergingTechServices,
+  ...innovative2025Q4MicroSaasExpansion,
+  ...innovative2025Q4ITServicesExpansion,
+  ...innovative2025Q4AIServicesExpansion,
   ...newRealServices,
   ...realOperationalServices,
   ...marketReadyServices,

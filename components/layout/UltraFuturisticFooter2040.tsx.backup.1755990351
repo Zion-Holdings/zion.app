@@ -29,6 +29,10 @@ const footerSections = [
     ]
   },
   {
+<<<<<<< HEAD
+    title: 'AI & Machine Learning',
+    description: 'Revolutionary AI and consciousness platforms',
+=======
     title: 'New Q4 2025 Services',
     description: 'Latest innovative services and solutions',
     icon: <Rocket className="w-5 h-5 text-green-400" />,
@@ -49,6 +53,7 @@ const footerSections = [
   {
     title: 'AI & Consciousness',
     description: 'Revolutionary AI consciousness platforms',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1aec
     icon: <Brain className="w-5 h-5 text-cyan-400" />,
     color: 'from-purple-500 to-pink-500',
     links: [

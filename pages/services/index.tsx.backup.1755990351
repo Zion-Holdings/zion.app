@@ -68,6 +68,10 @@ import { innovative2025AdvancedServicesExpansion } from '../../data/innovative-2
 import { innovative2025EnterpriseSolutions } from '../../data/innovative-2025-enterprise-solutions';
 import { UnifiedService } from '../../types/unified-service-types';
 
+<<<<<<< HEAD
+// Use the unified service type
+type Service = UnifiedService;
+=======
 // Define a proper interface for services
 interface Service {
   id: string;
@@ -88,6 +92,7 @@ interface Service {
   icon: string;
   [key: string]: unknown;
 }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1aec
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');

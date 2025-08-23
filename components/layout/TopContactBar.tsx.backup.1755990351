@@ -14,6 +14,28 @@ const contactInfo = {
   email: 'kleber@ziontechgroup.com',
   address: '364 E Main St STE 1008 Middletown DE 19709',
   website: 'https://ziontechgroup.com',
+<<<<<<< HEAD
+  hours: 'Mon-Fri: 9AM-6PM EST',
+  rating: '4.9/5 (500+ Reviews)',
+  founded: '2020',
+  employees: '50+',
+  countries: '25+',
+  customers: '1000+'
+};
+
+const quickActions = [
+  { name: 'Get Quote', href: '/contact', icon: <MessageCircle className="w-4 h-4" />, color: 'from-cyan-500 to-blue-600' },
+  { name: 'Book Demo', href: '/demo', icon: <Calendar className="w-4 h-4" />, color: 'from-purple-500 to-pink-600' },
+  { name: 'Live Chat', href: '/support', icon: <MessageCircle className="w-4 h-4" />, color: 'from-green-500 to-emerald-600' },
+  { name: 'Technical Support', href: '/support', icon: <MessageCircle className="w-4 h-4" />, color: 'from-orange-500 to-red-600' }
+];
+
+const socialLinks = [
+  { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: '🐦', color: 'hover:text-blue-400' },
+  { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: '💼', color: 'hover:text-blue-600' },
+  { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: '📺', color: 'hover:text-red-500' },
+  { name: 'GitHub', href: 'https://github.com/Zion-Holdings', icon: '💻', color: 'hover:text-gray-400' }
+=======
   hours: '24/7 AI Support Available',
   rating: '4.9/5 (500+ Reviews)'
 };
@@ -23,6 +45,7 @@ const quickActions = [
   { name: 'Book Demo', href: '/contact', icon: <Calendar className="w-4 h-4" /> },
   { name: 'Q4 2025 Services', href: '/q4-2025-innovative-services-showcase', icon: <Star className="w-4 h-4" /> },
   { name: 'Live Chat', href: '/support', icon: <MessageCircle className="w-4 h-4" /> }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1aec
 ];
 
 export default function TopContactBar() {

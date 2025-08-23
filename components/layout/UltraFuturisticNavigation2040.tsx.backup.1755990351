@@ -4,7 +4,12 @@ import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, X, Search, ChevronDown, Zap, Globe, Lock, 
+<<<<<<< HEAD
+  Phone, Mail, MapPin, ArrowRight, Star, Users, Award,
+  Sun, Moon, Bell, User
+=======
   Phone, Mail, MapPin, ArrowRight, Star, Users, Award, Building, Cpu, Rocket, Shield, Heart
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1aec
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -68,6 +73,18 @@ const navigationItems: NavigationItem[] = [
         description: 'Scalable cloud infrastructure'
       },
       {
+<<<<<<< HEAD
+        label: 'Micro SaaS',
+        href: '/micro-saas',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Rapid deployment SaaS solutions'
+      },
+      {
+        label: '2046 Services Showcase',
+        href: '/services-2046-showcase',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Revolutionary 2046 technology showcase'
+=======
         label: 'Micro SAAS Solutions',
         href: '/micro-saas',
         icon: <Building className="w-4 h-4" />,
@@ -78,6 +95,7 @@ const navigationItems: NavigationItem[] = [
         href: '/it-services',
         icon: <Cpu className="w-4 h-4" />,
         description: 'Enterprise IT solutions'
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1aec
       },
       {
         label: 'View All Services',
@@ -226,6 +244,44 @@ const navigationItems: NavigationItem[] = [
     ]
   },
   {
+<<<<<<< HEAD
+    label: 'AI Services',
+    children: [
+      {
+        label: 'AI Consciousness',
+        href: '/ai-consciousness-evolution-2029',
+        icon: <Brain className="w-4 h-4" />,
+        description: 'Revolutionary AI consciousness development',
+        badge: 'Hot'
+      },
+      {
+        label: 'AI & Machine Learning',
+        href: '/ai-services',
+        icon: <Brain className="w-4 h-4" />,
+        description: 'Advanced AI solutions for enterprise',
+        featured: true,
+        badge: 'Hot'
+      },
+      {
+        name: 'AI Autonomous Research 2041',
+        href: '/ai-autonomous-research-2041',
+        description: 'Fully autonomous AI research',
+        icon: <CodeIcon className="w-4 h-4" />
+      },
+      {
+        name: 'AI Content Personalization 2041',
+        href: '/ai-content-personalization-2041',
+        description: 'Consciousness-based content AI',
+        icon: <PaletteIcon className="w-4 h-4" />
+      },
+      {
+        name: 'AI Ethics & Governance 2041',
+        href: '/ai-ethics-governance-2041',
+        description: 'Comprehensive AI ethics framework',
+        icon: <Shield className="w-4 h-4" />
+      }
+    ]
+=======
     label: 'Solutions',
     children: [
       {
@@ -258,6 +314,7 @@ const navigationItems: NavigationItem[] = [
     label: 'About',
     href: '/about',
     icon: <Users className="w-4 h-4" />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1aec
   },
   {
     name: 'Innovative Services 2025',
