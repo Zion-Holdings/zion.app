@@ -1,0 +1,30 @@
+<<<<<<< HEAD
+export default function ContactPage() {
+  return (
+    <div className="py-8">
+      <h1 className="text-2xl font-semibold text-white">Contact</h1>
+      <p className="text-slate-300 mt-2">Reach out to Zion.</p>
+    </div>
+  );
+}
+=======
+export default function Contact() {
+  return (
+    <div className="py-10">
+      <h1 className="text-2xl font-bold">Contact</h1>
+      <p className="mt-2 text-gray-600 dark:text-gray-300">Reach us at hello@zion.app</p>
+    </div>
+  );
+}
+=======
+export default function ContactPage() {
+  return (
+    <div className="prose dark:prose-invert">
+      <h1>Contact</h1>
+      <p>For partnerships and media, email contact@zion.global</p>
+    </div>
+  );
+}
+=======
+export default function Contact() { return <div className="p-8">Contact</div>; }
+>>>>>>> origin/cursor/build-zion-ipo-readiness-portal-e565
