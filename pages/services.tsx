@@ -39,7 +39,7 @@ import { advanced2041EnterpriseServices } from '../data/advanced-2041-enterprise
 import { revolutionary2042MicroSaasServices } from '../data/revolutionary-2042-micro-saas-services';
 
 // Import our new 2025 ultimate services expansion
-import { ultimate2025MicroSaasExpansion } from '../data/2025-ultimate-micro-saas-expansion';
+import { ultimate2025RealMicroSaasExpansion as ultimate2025MicroSaasExpansion } from '../data/2025-ultimate-real-micro-saas-expansion';
 import { ultimate2025ITServicesExpansion } from '../data/2025-ultimate-it-services-expansion';
 import { ultimate2025AIServicesExpansion } from '../data/2025-ultimate-ai-services-expansion';
 

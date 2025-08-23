@@ -1,24 +1,28 @@
-import React, { useEffect, useState, useCallback, Suspense, lazy } from 'react';
+import React, { useState, useEffect, useCallback, Suspense } from 'react';
 import Layout from './layout/Layout';
 import { motion } from 'framer-motion';
 import { 
-  ArrowRight, Play, TrendingUp, Brain, Shield, Rocket, Globe, Cpu, Database, Atom, Star, Loader2
+  ArrowRight, Play, TrendingUp, Brain, Shield, Rocket, Globe, Cpu, Database, Atom, Target, Star, Sparkles as SparklesIcon,
+  Brain as BrainIcon, Atom as AtomIcon, Shield as ShieldIcon, Rocket as RocketIcon, Zap, Eye, Heart, Infinity,
+  CheckCircle, Users, Award, Clock, Loader2
 } from 'lucide-react';
-import Head from 'next/head';
-
-// Lazy load components for better performance
-const TestimonialSection = lazy(() => import('./TestimonialSection'));
 
 // Import our new revolutionary services
 import { revolutionary2044AdvancedMicroSaas } from '../data/revolutionary-2044-advanced-micro-saas';
 import { revolutionary2044ITServices } from '../data/revolutionary-2044-it-services';
 import { revolutionary2044AIServices } from '../data/revolutionary-2044-ai-services';
 
-// Loading component for better UX
+// Lazy load components for better performance
+const TestimonialSection = React.lazy(() => import('./TestimonialSection'));
+
+// Enhanced loading component
 const LoadingSpinner = () => (
   <div className="flex items-center justify-center p-8">
-    <Loader2 className="w-8 h-8 animate-spin text-cyan-400" />
-    <span className="ml-2 text-cyan-400">Loading...</span>
+    <div className="relative">
+      <div className="w-12 h-12 border-4 border-blue-200 rounded-full animate-spin"></div>
+      <div className="absolute top-0 left-0 w-12 h-12 border-4 border-blue-600 rounded-full animate-ping opacity-75"></div>
+    </div>
+    <span className="ml-3 text-lg font-medium text-gray-700">Loading revolutionary technology...</span>
   </div>
 );
 
@@ -89,7 +93,26 @@ const Homepage2044: React.FC = () => {
     window.location.href = service.slug;
   }, []);
 
+  if (isLoading) {
+    return <LoadingSpinner />;
+  }
 
+  if (error) {
+    return (
+      <Layout>
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <h1 className="text-2xl font-bold text-red-400 mb-4">Error Loading Page</h1>
+            <p className="text-gray-400">{error}</p>
+          </div>
+        </div>
+      </Layout>
+    );
+  }
+
+  return (
+    <Layout>
+      <main className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white relative overflow-hidden">
         {/* Hero Section */}
         <section 
           className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
@@ -314,7 +337,7 @@ const Homepage2044: React.FC = () => {
                 Revolutionary Technology Features
               </h2>
               <p className="text-xl text-gray-400 max-w-4xl mx-auto">
-                Discover the cutting-edge features that make our 2044 technology revolutionary
+                Experience the cutting-edge features that set our 2044 technology apart from everything else
               </p>
             </motion.div>
 
@@ -328,19 +351,19 @@ const Homepage2044: React.FC = () => {
                   transition={{ duration: 0.8, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="relative p-8 bg-gradient-to-br from-gray-900/60 to-gray-800/60 border border-gray-700/30 rounded-3xl backdrop-blur-xl hover:border-cyan-500/50 transition-all duration-300 group-hover:shadow-[0_0_50px_rgba(6,182,212,0.2)]">
+                  <div className="relative p-8 bg-gradient-to-br from-gray-900/80 to-gray-800/80 border border-gray-700/50 rounded-3xl backdrop-blur-xl shadow-[0_0_50px_rgba(0,0,0,0.5)] hover:shadow-[0_0_80px_rgba(6,182,212,0.3)] transition-all duration-300 group-hover:border-cyan-500/50 group-hover:scale-105">
                     <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     
                     <div className="relative z-10">
-                      <div className={`w-16 h-16 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center mb-6 shadow-[0_0_30px_rgba(6,182,212,0.3)]`}>
+                      <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 shadow-[0_0_30px_rgba(6,182,212,0.3)] group-hover:shadow-[0_0_50px_rgba(6,182,212,0.5)] transition-all duration-300">
                         <feature.icon className="w-8 h-8 text-white" />
                       </div>
                       
-                      <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-300">
+                      <h3 className="text-xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-300">
                         {feature.title}
                       </h3>
                       
-                      <p className="text-gray-400 leading-relaxed mb-6">
+                      <p className="text-gray-400 text-sm leading-relaxed mb-6">
                         {feature.description}
                       </p>
                       

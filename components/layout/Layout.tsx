@@ -3,6 +3,7 @@ import Head from 'next/head';
 import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
 import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
+import TopContactBar from './TopContactBar';
 import UltraFuturisticBackground2036 from '../backgrounds/UltraFuturisticBackground2036';
 import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
 import EnhancedAccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
