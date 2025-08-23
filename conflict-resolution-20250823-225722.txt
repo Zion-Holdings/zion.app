@@ -326,3 +326,6 @@
 2025-08-23 22:58:13 - Resolving conflicts in src/i18n/locales/ar/translation.json for branch 8ztzgg-codex/add-i18n-support-with-next-i18next
 2025-08-23 22:58:13 - Resolving conflicts in src/i18n/locales/pt/translation.json for branch 8ztzgg-codex/add-i18n-support-with-next-i18next
 2025-08-23 22:58:13 - Resolving conflicts in src/pages/Marketplace.tsx for branch 8ztzgg-codex/add-i18n-support-with-next-i18next
+2025-08-23 22:58:14 - Merge conflicts detected in 92kxb3-codex/populate-forum-category-with-posts
+2025-08-23 22:58:14 - Resolving conflicts in pages/community/[slug].tsx for branch 92kxb3-codex/populate-forum-category-with-posts
+2025-08-23 22:58:15 - Resolving conflicts in src/types/external-modules.d.ts for branch 92kxb3-codex/populate-forum-category-with-posts
