@@ -32,22 +32,6 @@ import { revolutionary2041AdvancedServices } from '../data/revolutionary-2041-ad
 import { advanced2041EnterpriseServices } from '../data/advanced-2041-enterprise-services';
 import { revolutionary2042MicroSaasServices } from '../data/revolutionary-2042-micro-saas-services';
 
-<<<<<<< HEAD
-// Import our new 2025 ultimate services expansion
-import { ultimate2025MicroSaasExpansion } from '../data/2025-ultimate-micro-saas-expansion';
-import { ultimate2025ITServicesExpansion } from '../data/2025-ultimate-it-services-expansion';
-import { ultimate2025AIServicesExpansion } from '../data/2025-ultimate-ai-services-expansion';
-
-// Import our new 2025 Q4 innovative services
-import { innovative2025Q4NewServices } from '../data/innovative-2025-q4-new-services';
-import { comprehensiveServicesAdvertising2025 } from '../data/comprehensive-services-advertising-2025';
-
-// Import our new 2025 innovative services
-import { advancedEnterpriseSolutions } from '../data/2025-advanced-enterprise-solutions';
-import { innovativeAISolutions } from '../data/2025-innovative-ai-solutions';
-import { innovativeMicroSaasSolutions as innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
-import { innovativeITInfrastructureServices } from '../data/2025-innovative-it-infrastructure';
-=======
 // Import our new 2025 advanced services
 import { advanced2025MicroSaasExpansion } from '../data/2025-advanced-micro-saas-expansion';
 import { advanced2025ITSolutionsExpansion } from '../data/2025-advanced-it-solutions-expansion';
@@ -63,7 +47,6 @@ import { advancedHealthcareBiotech2025 } from '../data/2025-advanced-healthcare-
 import { innovative2025MicroSaasExpansion } from '../data/innovative-2025-micro-saas-expansion';
 import { innovative2025ITSolutionsExpansion } from '../data/innovative-2025-it-solutions-expansion';
 import { innovative2025AIServicesExpansion } from '../data/innovative-2025-ai-services-expansion';
->>>>>>> origin/cursor/add-and-advertise-new-services-then-build-d192
 
 // Import our new innovative 2040 services
 import { innovative2040ITServices } from '../data/innovative-2040-it-services';
@@ -71,10 +54,7 @@ import { innovative2040FuturisticServices } from '../data/innovative-2040-futuri
 
 // Import our new 2025 advanced enterprise services
 import { advancedEnterpriseServices } from '../data/2025-advanced-enterprise-services-expansion';
-<<<<<<< HEAD
-=======
 import { innovativeMicroSaasServices } from '../data/innovative-2025-micro-saas-expansions';
->>>>>>> origin/cursor/add-and-advertise-new-services-then-build-d192
 import { cuttingEdgeITInfrastructureServices } from '../data/2025-cutting-edge-it-infrastructure';
 
 // Import our new 2025 cutting-edge futuristic services
@@ -133,6 +113,11 @@ import { innovative2027AIBusinessIntelligenceServices } from '../data/innovative
 import { innovative2027CybersecurityComplianceServices } from '../data/innovative-2027-cybersecurity-compliance';
 import { innovative2027CloudDevOpsServices } from '../data/innovative-2027-cloud-devops';
 import { innovative2027IndustrySolutions } from '../data/innovative-2027-industry-solutions';
+
+// Import Q4 2037 cutting-edge services
+import { cuttingEdgeServices } from '../data/real-2037-q4-cutting-edge-services';
+import { itInfrastructureServices } from '../data/real-2037-q4-it-infrastructure-services';
+import { businessSolutionServices } from '../data/real-2037-q4-business-solutions';
 
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
@@ -216,13 +201,6 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
-<<<<<<< HEAD
-  // Add our new innovative 2027 services
-  ...innovative2027AIBusinessIntelligenceServices,
-  ...innovative2027CybersecurityComplianceServices,
-  ...innovative2027CloudDevOpsServices,
-  ...innovative2027IndustrySolutions
-=======
   // Our new 2025 advanced services
   ...advanced2025MicroSaasExpansion,
   ...advanced2025ITSolutionsExpansion,
@@ -238,6 +216,7 @@ const allServices = [
   ...innovative2037MicroSaasServices,
   ...innovative2037ITServices,
   ...innovative2037AIServices,
+<<<<<<< HEAD
   ...innovative2038CuttingEdgeServices,
   ...innovative2038ITInfrastructureServices,
   // Our additional innovative services
@@ -262,7 +241,12 @@ const allServices = [
   ...advancedEnterpriseServices,
   ...innovativeMicroSaasServices,
   ...cuttingEdgeITInfrastructureServices
->>>>>>> origin/cursor/add-and-advertise-new-services-then-build-d192
+=======
+  // Q4 2037 cutting-edge services
+  ...cuttingEdgeServices,
+  ...itInfrastructureServices,
+  ...businessSolutionServices
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-d68c
 ];
 
 const categories = [
