@@ -883,6 +883,10 @@ const Homepage2025: React.FC = () => {
               <h2 id="features-heading" className="text-3xl md:text-4xl font-bold text-white mb-4">
                 Cutting-Edge Technology Stack
               </h2>
+<<<<<<< HEAD
+              <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+                Built on the latest advancements in AI, quantum computing, and autonomous systems
+=======
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
                 Our comprehensive suite of cutting-edge technologies and services sets us apart in the industry
               </p>
@@ -928,17 +932,27 @@ const Homepage2025: React.FC = () => {
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
                 From AI-powered autonomous systems to quantum computing solutions, we're building the future today
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-19ed
               </p>
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
+<<<<<<< HEAD
+                { title: "AI & Machine Learning", description: "Advanced AI solutions for enterprise automation", icon: Brain, color: "from-purple-500 to-pink-500", href: "/ai-services" },
+                { title: "Quantum Computing", description: "Next-generation computational power", icon: Cpu, color: "from-cyan-500 to-blue-500", href: "/quantum-computing" },
+                { title: "Cybersecurity", description: "Military-grade protection for digital assets", icon: Shield, color: "from-red-500 to-orange-500", href: "/cybersecurity" },
+                { title: "Cloud Infrastructure", description: "Scalable cloud solutions for growth", icon: Cloud, color: "from-emerald-500 to-teal-500", href: "/cloud-platform" },
+                { title: "Data Analytics", description: "Transform data into actionable insights", icon: BarChart3, color: "from-indigo-500 to-purple-500", href: "/data-analytics" },
+                { title: "Micro SAAS Solutions", description: "Innovative software-as-a-service platforms", icon: Zap, color: "from-yellow-500 to-orange-500", href: "/micro-saas" }
+=======
                 { title: "AI Content Autonomy", description: "Fully autonomous content creation and management", icon: Brain, color: "from-purple-500 to-pink-500", link: "/innovative-2025-services-showcase" },
                 { title: "Quantum Cloud Hybrid", description: "Seamless quantum-classical computing integration", icon: Cpu, color: "from-cyan-500 to-blue-500", link: "/innovative-2025-services-showcase" },
                 { title: "Cyber Immune Security", description: "Self-defending systems that adapt to threats", icon: Shield, color: "from-red-500 to-orange-500", link: "/innovative-2025-services-showcase" },
                 { title: "Edge Intelligence", description: "Distributed AI processing at the edge", icon: Cloud, color: "from-emerald-500 to-teal-500", link: "/innovative-2025-services-showcase" },
                 { title: "AI Research Scout", description: "Intelligent research automation and discovery", icon: BarChart3, color: "from-indigo-500 to-purple-500", link: "/innovative-2025-services-showcase" },
                 { title: "Autonomous DevOps", description: "Self-healing infrastructure with zero downtime", icon: Lock, color: "from-yellow-500 to-orange-500", link: "/innovative-2025-services-showcase" }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-19ed
               ].map((service, index) => (
                 <motion.div
                   key={index}
@@ -966,11 +980,27 @@ const Homepage2025: React.FC = () => {
               ))}
             </div>
 
+<<<<<<< HEAD
+            {/* View All Services CTA */}
+=======
             {/* Call to Action for Services Showcase */}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-19ed
             <motion.div
               className="text-center mt-16"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
+<<<<<<< HEAD
+              transition={{ duration: 0.6, delay: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <a
+                href="/comprehensive-2025-services-showcase"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/25"
+              >
+                <Rocket className="w-5 h-5" />
+                View All 30+ Services
+                <ArrowRight className="w-5 h-5" />
+=======
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
             >
@@ -981,6 +1011,7 @@ const Homepage2025: React.FC = () => {
                 <Rocket className="w-5 h-5 mr-2" />
                 View All 2025 Services
                 <ArrowRight className="w-5 h-5 ml-2" />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-19ed
               </a>
             </motion.div>
           </div>

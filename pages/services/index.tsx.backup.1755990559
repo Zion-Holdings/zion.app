@@ -186,8 +186,17 @@ export default function ServicesIndexPage() {
       real2036ITServicesAdditions as unknown[],
       real2036AIServicesAdditions as unknown[]
     )
+<<<<<<< HEAD
+    .concat(innovative2025MicroSaasBatch as unknown[])
+    .concat(innovative2025ITEnterpriseBatch as unknown[])
+    // Add new 2038 services
+    .concat(innovative2038MicroSaasServices as unknown[])
+    .concat(innovative2038ITServices as unknown[])
+    .concat(innovative2038AIServices as unknown[]);
+=======
           .concat(innovative2025MicroSaasServices as unknown[])
     .concat(innovative2025ITEnterpriseBatch as unknown[]);
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-19ed
 
   // Filter out services without required properties
   const validServices = all.filter((service: any) => {

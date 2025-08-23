@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+import React, { useState, useEffect } from 'react';
+import Layout from '../components/layout/Layout';
+import { motion, useScroll, useTransform } from 'framer-motion';
+=======
 import React from 'react';
 import SEO from '../components/SEO';
 import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
@@ -5,6 +10,7 @@ import { innovative2025MicroSaasServices } from '../data/innovative-2025-micro-s
 import { innovative2025ITEnterpriseBatch } from '../data/innovative-2025-it-enterprise-batch';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-19ed
 import { 
   Search, Filter, Star, Users, TrendingUp, Brain, Shield, Rocket, 
   Globe, Cpu, Database, Cloud, BarChart3, Zap, Lock, Palette,
@@ -14,6 +20,23 @@ import { innovativeMicroSAASServices } from '../data/innovative-2025-micro-saas-
 import { innovativeITServices } from '../data/innovative-2025-it-services-expanded';
 import { innovativeAIServices } from '../data/innovative-2025-ai-services-expanded';
 
+<<<<<<< HEAD
+const ComprehensiveServicesShowcase: React.FC = () => {
+  const { scrollYProgress } = useScroll();
+  const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedVariant, setSelectedVariant] = useState('all');
+  const [sortBy, setSortBy] = useState('popular');
+
+  // Combine all services
+  const allServices = [
+    ...innovativeMicroSAASServices.map(service => ({ ...service, source: 'micro-saas' })),
+    ...innovativeITServices.map(service => ({ ...service, source: 'it-services' })),
+    ...innovativeAIServices.map(service => ({ ...service, source: 'ai-services' }))
+=======
 const Comprehensive2025ServicesShowcase: React.FC = () => {
   const allServices = [...innovative2025MicroSaasServices, ...innovative2025ITEnterpriseBatch];
   
@@ -25,6 +48,7 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
     'Cloud & FinOps',
     'Developer Tools',
     'Enterprise Security'
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-19ed
   ];
 
   // Filter and sort services
