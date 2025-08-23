@@ -34,8 +34,12 @@
   "autonomous-vehicle-ai-2040",
   "blockchain-enterprise-platform",
   "customer-intelligence-platform",
+<<<<<<< HEAD
+  "docs/api-rest",
+=======
   "energy-technology-solutions",
   "entertainment-media-solutions",
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-b7a7
   "industrial-automation-ai",
   "intelligent-project-management-suite",
   "marketing-ai-platform",
@@ -69,16 +73,27 @@
   "quantum-storage-platform-2045",
   "quantum-supply-chain-optimizer",
   "quantum-threat-detection",
+<<<<<<< HEAD
+=======
   "real-estate-technology-solutions",
   "satellite-technology-solutions",
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-b7a7
   "services/data-contracts-hub",
   "services/it-infrastructure",
   "services/quantum-technology",
   "services/serverless-lakehouse-starter",
   "space-colonization-services",
+<<<<<<< HEAD
+  "space-cybersecurity",
+  "space-data-analytics",
+  "space-mining-automation-platform",
+  "space-mining-platform",
+  "space-resource-intelligence-platform"
+=======
   "space-communications-network",
   "space-infrastructure-platform",
   "space-mining-automation-platform",
   "space-mining-platform",
   "space-robotics-platform"
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-b7a7
 ]

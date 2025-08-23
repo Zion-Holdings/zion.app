@@ -21,6 +21,14 @@ const contactInfo = {
 
 const sidebarSections = [
   {
+<<<<<<< HEAD
+    title: 'Featured Revolutionary Services',
+    icon: <Star className="w-5 h-5" />,
+    color: 'from-yellow-500 to-orange-500',
+    items: [
+      { name: 'AI Services Overview', href: '/ai-services', badge: 'Main' },
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', badge: 'New' },
+=======
     title: 'AI & Machine Learning',
     icon: <Brain className="w-5 h-5" />,
     color: 'text-violet-400',
@@ -28,11 +36,20 @@ const sidebarSections = [
       { name: 'AI Services Overview', href: '/ai-services', badge: 'Main' },
       { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', badge: 'New' },
       { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant', badge: 'New' },
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-b7a7
       { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', badge: 'Popular' },
       { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant', badge: 'New' },
       { name: 'AI Predictive Maintenance', href: '/ai-predictive-maintenance-platform', badge: 'New' },
       { name: 'AI Content Personalization', href: '/ai-content-personalization-engine', badge: 'New' },
+<<<<<<< HEAD
+      { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem-manager' },
+      { name: 'AI Ethics & Governance', href: '/ai-ethics-governance-framework' },
+      { name: 'AI Customer Success', href: '/ai-customer-success-platform' },
+      { name: 'AI Sales Intelligence', href: '/ai-sales-intelligence-platform' },
+      { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics' },
+=======
       { name: 'AI Healthcare Diagnostics', href: '/healthcare-solutions' },
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-b7a7
       { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence' },
       { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' }
     ]
@@ -43,11 +60,29 @@ const sidebarSections = [
     color: 'from-blue-500 to-cyan-500',
     items: [
       { name: 'Quantum Services Overview', href: '/quantum-services', badge: 'Main' },
+<<<<<<< HEAD
+      { name: 'Space Technology Overview', href: '/space-technology', badge: 'Main' },
+=======
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-b7a7
       { name: 'Quantum Neural Networks', href: '/quantum-neural-network-platform', badge: 'Hot' },
       { name: 'Quantum Internet Security', href: '/quantum-internet-security-platform', badge: 'New' },
       { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform', badge: 'New' },
       { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' },
       { name: 'Quantum Energy Platform', href: '/quantum-energy-platform' },
+<<<<<<< HEAD
+      { name: 'Quantum Robotics', href: '/quantum-robotics' },
+      { name: 'Quantum Metaverse', href: '/quantum-metaverse' },
+      { name: 'Quantum IoT Platform', href: '/quantum-iot' },
+      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading' },
+      { name: 'Space Resource Mining', href: '/space-resource-mining-platform' },
+      { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform' }
+    ]
+  },
+  {
+    title: 'IT & Infrastructure',
+    icon: <Server className="w-5 h-5" />,
+    color: 'from-green-500 to-emerald-500',
+=======
       { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity-platform' },
       { name: 'Quantum Financial Trading', href: '/quantum-financial-trading' }
     ]
@@ -70,6 +105,7 @@ const sidebarSections = [
     title: 'Enterprise IT',
     icon: <Shield className="w-5 h-5" />,
     color: 'text-blue-400',
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-b7a7
     items: [
       { name: 'IT Services Overview', href: '/it-services', badge: 'Main' },
       { name: 'Quantum-Secure Cloud', href: '/quantum-secure-cloud-infrastructure', badge: 'New' },
@@ -79,6 +115,11 @@ const sidebarSections = [
       { name: 'AI-Powered DevOps', href: '/ai-powered-devops-platform', badge: 'New' },
       { name: 'Zero Trust Security', href: '/zero-trust-security-platform' },
       { name: 'Browser Automation Cloud', href: '/browser-automation-cloud/' },
+<<<<<<< HEAD
+      { name: 'Secrets Rotation Automation', href: '/secrets-rotation-automation/' },
+      { name: 'SOC 2 Compliance', href: '/soc2-compliance-automation' },
+      { name: 'RAG Evaluation Lab', href: '/rag-evaluation-lab' }
+=======
       { name: 'Secrets Rotation Automation', href: '/secrets-rotation-automation/' }
     ]
   },
@@ -94,6 +135,7 @@ const sidebarSections = [
       { name: 'Retail Technology', href: '/retail-technology-solutions' },
       { name: 'Education Technology', href: '/education-technology-solutions' },
       { name: 'Energy Technology', href: '/energy-technology-solutions' }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-b7a7
     ]
   },
   {
