@@ -123,10 +123,17 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
+<<<<<<< HEAD
+  // Add revolutionary 2025-2026 services
+  ...revolutionary20252026MicroSaasServices,
+  ...revolutionary20252026AIServices,
+  ...revolutionary20252026ITInfrastructureServices
+=======
   // Add our new 2026 advanced services
   ...real2026AdvancedServices,
   ...real2026InnovativeSolutions,
   ...real2026SpecializedServices
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-ea8f
 ];
 
 const categories = [
