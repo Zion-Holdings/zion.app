@@ -28,6 +28,12 @@ const Blog: React.FC = () => {
       category: 'AI & Automation'
     },
     {
+<<<<<<< HEAD
+      id: 'sustainable-ai-green-computing-2025',
+      title: 'Sustainable AI: Green Computing Practices for 2025',
+      excerpt: 'Discover how Zion Tech Group is leading the charge in sustainable AI development and green computing practices.',
+      date: 'January 22, 2025',
+=======
       id: 'quantum-ai-revolution',
       title: 'Quantum AI Revolution: The Next Frontier of Autonomous Systems',
       excerpt: 'Discover how quantum computing is revolutionizing AI automation and creating unprecedented opportunities for autonomous systems.',
@@ -67,6 +73,7 @@ const Blog: React.FC = () => {
       title: 'Building Cloud-Native Automation Infrastructure',
       excerpt: 'A deep dive into our cloud-native approach to building scalable, reliable automation systems.',
       date: 'January 12, 2025',
+>>>>>>> origin/cursor/add-more-project-content-2d2a
       readTime: '10 min read',
       category: 'Sustainability'
     },
@@ -94,7 +101,11 @@ const Blog: React.FC = () => {
     }
   ];
 
+<<<<<<< HEAD
+  const categories = ['All', 'Quantum Computing', 'AI & Automation', 'Sustainability', 'Content & AI', 'Infrastructure', 'AI Ethics', 'Performance', 'Future of Work'];
+=======
   const categories = ['All', 'AI & Automation', 'Quantum AI', 'Cybersecurity', 'Sustainability', 'Content & AI', 'Infrastructure', 'AI Ethics', 'Performance', 'Future of Work'];
+>>>>>>> origin/cursor/add-more-project-content-2d2a
 
   return (
     <Layout 
