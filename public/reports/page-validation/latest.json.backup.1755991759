@@ -9,7 +9,11 @@
   },
   "results": [],
   "buildBreakingFiles": [],
+<<<<<<< HEAD
+  "generatedAt": "2025-08-21T00:50:13.709Z"
+=======
   "generatedAt": "2025-08-21T03:34:32.514Z"
 =======
   "generatedAt": "2025-08-21T02:07:34.264Z"
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-695e
 }
