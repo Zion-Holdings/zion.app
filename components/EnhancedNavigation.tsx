@@ -21,12 +21,12 @@ const EnhancedNavigation: React.FC = () => {
   }, []);
 
   const services = [
-    { name: 'AI & Machine Learning', href: '/services/ai-ml', icon: Brain, description: 'Custom AI solutions and neural networks' },
-    { name: 'Quantum Computing', href: '/services/quantum', icon: Atom, description: 'Quantum algorithms and cryptography' },
-    { name: 'Cybersecurity', href: '/services/cybersecurity', icon: Shield, description: 'Advanced threat detection and encryption' },
-    { name: 'Cloud Infrastructure', href: '/services/cloud', icon: Cpu, description: 'Scalable cloud solutions and DevOps' },
-    { name: 'Data Analytics', href: '/services/analytics', icon: Database, description: 'Big data processing and insights' },
-    { name: 'Digital Transformation', href: '/services/transformation', icon: Rocket, description: 'End-to-end modernization' }
+    { name: 'All Services', href: '/comprehensive-2025-services-showcase', icon: Globe, description: 'Complete collection of innovative services' },
+    { name: 'AI Business Intelligence', href: 'https://ziontechgroup.com/ai-business-intelligence', icon: Brain, description: 'AI-powered analytics and insights' },
+    { name: 'Quantum Cybersecurity', href: 'https://ziontechgroup.com/quantum-cybersecurity', icon: Shield, description: 'Quantum-resistant security solutions' },
+    { name: 'Edge Computing', href: 'https://ziontechgroup.com/edge-computing-orchestration', icon: Cpu, description: 'Edge orchestration and IoT management' },
+    { name: 'Space Technology', href: 'https://ziontechgroup.com/space-technology', icon: Rocket, description: 'Space exploration and satellite tech' },
+    { name: 'Pricing', href: '/pricing-2025', icon: Award, description: 'Transparent pricing for all services' }
   ];
 
   const company = [

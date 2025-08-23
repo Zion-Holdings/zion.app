@@ -66,40 +66,58 @@ export default function HomePage() {
 
   const services = [
     {
-      title: "AI & Machine Learning",
-      description: "Custom AI solutions, neural networks, and autonomous systems",
+      title: "AI Business Intelligence",
+      description: "Transform data into actionable insights with AI-powered analytics",
       icon: Brain,
-      color: "from-purple-500 to-pink-500"
+      color: "from-purple-500 to-pink-500",
+      link: "https://ziontechgroup.com/ai-business-intelligence",
+      price: "$499/month",
+      features: ["AI-powered dashboards", "Predictive analytics", "Real-time insights"]
     },
     {
-      title: "Quantum Computing",
-      description: "Quantum algorithms, cryptography, and quantum AI integration",
-      icon: Atom,
-      color: "from-blue-500 to-cyan-500"
-    },
-    {
-      title: "Cybersecurity",
-      description: "Advanced threat detection, quantum-resistant encryption",
+      title: "Quantum Cybersecurity",
+      description: "Future-proof security with quantum-resistant encryption and AI threat detection",
       icon: Shield,
-      color: "from-red-500 to-orange-500"
+      color: "from-red-500 to-orange-500",
+      link: "https://ziontechgroup.com/quantum-cybersecurity",
+      price: "$799/month",
+      features: ["Quantum-resistant encryption", "AI threat detection", "Zero-trust architecture"]
     },
     {
-      title: "Cloud Infrastructure",
-      description: "Scalable cloud solutions, edge computing, and DevOps",
-      icon: Cloud,
-      color: "from-emerald-500 to-teal-500"
+      title: "AI Customer Experience",
+      description: "Deliver personalized customer experiences at scale with AI",
+      icon: Users,
+      color: "from-green-500 to-teal-500",
+      link: "https://ziontechgroup.com/ai-customer-experience",
+      price: "$399/month",
+      features: ["Customer journey mapping", "AI personalization", "Sentiment analysis"]
     },
     {
-      title: "Data Analytics",
-      description: "Big data processing, predictive analytics, and insights",
-      icon: BarChart3,
-      color: "from-indigo-500 to-purple-500"
+      title: "Edge Computing Orchestration",
+      description: "Deploy and manage applications at the edge with intelligent orchestration",
+      icon: Network,
+      color: "from-purple-500 to-pink-500",
+      link: "https://ziontechgroup.com/edge-computing-orchestration",
+      price: "$349/month",
+      features: ["Edge node management", "IoT device management", "Real-time monitoring"]
     },
     {
-      title: "Digital Transformation",
-      description: "End-to-end digital transformation and modernization",
+      title: "Space Technology Innovation",
+      description: "Accelerate space exploration with cutting-edge technology solutions",
       icon: Rocket,
-      color: "from-yellow-500 to-orange-500"
+      color: "from-violet-500 to-purple-500",
+      link: "https://ziontechgroup.com/space-technology",
+      price: "$2,499/month",
+      features: ["Satellite management", "AI mission planning", "Quantum communication"]
+    },
+    {
+      title: "Neural Interface Development",
+      description: "Build the future of human-computer interaction with neural interfaces",
+      icon: Brain,
+      color: "from-pink-500 to-rose-500",
+      link: "https://ziontechgroup.com/neural-interface",
+      price: "$899/month",
+      features: ["BCI development tools", "Neural signal processing", "AI pattern recognition"]
     }
   ];
 
@@ -223,10 +241,42 @@ export default function HomePage() {
                     <service.icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold mb-4 text-white">{service.title}</h3>
-                  <p className="text-white/70 leading-relaxed">{service.description}</p>
-                  <div className="mt-6 flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300">
-                    <span className="text-sm font-medium">Learn More</span>
-                    <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                  <p className="text-white/70 leading-relaxed mb-4">{service.description}</p>
+                  
+                  {/* Price */}
+                  <div className="mb-4">
+                    <span className="text-2xl font-bold text-cyan-400">{service.price}</span>
+                  </div>
+                  
+                  {/* Features */}
+                  <div className="mb-6">
+                    <h4 className="text-white font-semibold mb-2 text-sm">Key Features:</h4>
+                    <div className="space-y-1">
+                      {service.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-center gap-2 text-xs text-white/70">
+                          <CheckCircle className="w-3 h-3 text-cyan-400 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <div className="mt-6 flex items-center justify-between">
+                    <a
+                      href={service.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300"
+                    >
+                      <span className="text-sm font-medium">Learn More</span>
+                      <ExternalLink className="w-4 h-4 ml-2" />
+                    </a>
+                    <a
+                      href="mailto:kleber@ziontechgroup.com"
+                      className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 rounded-lg text-white text-sm font-medium transition-all duration-300 transform hover:scale-105"
+                    >
+                      Get Quote
+                    </a>
                   </div>
                 </div>
               </motion.div>
@@ -275,13 +325,19 @@ export default function HomePage() {
               Join the future of technology with Zion Tech Group. Let's build something extraordinary together.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center gap-2">
-                Start Your Project
+              <a
+                href="/comprehensive-2025-services-showcase"
+                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center gap-2"
+              >
+                Explore All Services
                 <ArrowRight className="w-5 h-5" />
-              </button>
-              <button className="px-8 py-4 border border-white/20 hover:border-white/40 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm bg-white/5 hover:bg-white/10">
+              </a>
+              <a
+                href="mailto:kleber@ziontechgroup.com"
+                className="px-8 py-4 border border-white/20 hover:border-white/40 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm bg-white/5 hover:bg-white/10"
+              >
                 Schedule Consultation
-              </button>
+              </a>
             </div>
           </motion.div>
         </div>
