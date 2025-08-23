@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Activity, 
   Zap, 
@@ -9,7 +9,10 @@ import {
   CheckCircle, 
   X,
   BarChart3,
-  Wifi
+  Wifi,
+  RefreshCw,
+  Minimize2,
+  Maximize2
 } from 'lucide-react';
 
 interface PerformanceMetrics {
@@ -32,20 +35,49 @@ interface PerformanceScore {
   ttfb: number;
 }
 
-// Extended interfaces for Performance API
-interface PerformanceEventTiming extends PerformanceEntry {
+// Web Performance API types
+interface LayoutShiftEntry extends PerformanceEntry {
+  value: number;
+  hadRecentInput: boolean;
+  lastInputTime: number;
+  sources: Array<{
+    node: Node;
+    currentRect: DOMRectReadOnly;
+    previousRect: DOMRectReadOnly;
+  }>;
+}
+
+interface LargestContentfulPaintEntry extends PerformanceEntry {
+  value: number;
+  id: string;
+  url: string;
+  element?: Element;
+  size: number;
+  loadTime: number;
+  renderTime: number;
+}
+
+interface FirstInputEntry extends PerformanceEntry {
   processingStart: number;
   processingEnd: number;
   target?: EventTarget;
+  interactionId: number;
 }
 
+interface PerformanceMonitorProps {
+  onToggle?: (visible: boolean) => void;
+}
 
-const PerformanceMonitor: React.FC = () => {
+const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({ onToggle }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [metrics, setMetrics] = useState<PerformanceMetrics | null>(null);
   const [score, setScore] = useState<PerformanceScore | null>(null);
   const [showDetails, setShowDetails] = useState(false);
   const [optimizationTips, setOptimizationTips] = useState<string[]>([]);
+  const [autoRefresh, setAutoRefresh] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [isMonitoring, setIsMonitoring] = useState(false);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
   // Calculate performance scores
   const calculateScores = useCallback((metrics: PerformanceMetrics): PerformanceScore => {
@@ -94,6 +126,33 @@ const PerformanceMonitor: React.FC = () => {
     return tips;
   }, []);
 
+  // Measure performance manually
+  const measurePerformance = useCallback(() => {
+    if (!('PerformanceObserver' in window)) return;
+    
+    setIsMonitoring(true);
+    
+    // Get navigation timing
+    const navigationEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+    if (navigationEntry) {
+      const fcp = navigationEntry.domContentLoadedEventEnd - navigationEntry.fetchStart;
+      const ttfb = navigationEntry.responseStart - navigationEntry.requestStart;
+      
+      setMetrics(prev => ({
+        fcp: prev?.fcp || fcp,
+        lcp: prev?.lcp || 0,
+        fid: prev?.fid || 0,
+        cls: prev?.cls || 0,
+        ttfb: prev?.ttfb || ttfb,
+        fmp: prev?.fmp || 0,
+        si: prev?.si || 0,
+        tti: prev?.tti || 0
+      }));
+    }
+    
+    setTimeout(() => setIsMonitoring(false), 1000);
+  }, []);
+
   // Monitor Core Web Vitals
   const monitorPerformance = useCallback(() => {
     if (!('PerformanceObserver' in window)) return;
@@ -101,9 +160,9 @@ const PerformanceMonitor: React.FC = () => {
     // Monitor Largest Contentful Paint
     const lcpObserver = new PerformanceObserver((entryList) => {
       const entries = entryList.getEntries();
-      const lastEntry = entries[entries.length - 1];
+      const lastEntry = entries[entries.length - 1] as LargestContentfulPaintEntry;
       if (lastEntry) {
-        setMetrics(prev => prev ? { ...prev, lcp: lastEntry.startTime } : null);
+        setMetrics(prev => prev ? { ...prev, lcp: lastEntry.value } : null);
       }
     });
     lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
@@ -113,7 +172,7 @@ const PerformanceMonitor: React.FC = () => {
       const entries = entryList.getEntries();
       entries.forEach(entry => {
         if (entry.entryType === 'first-input') {
-          const eventEntry = entry as PerformanceEventTiming;
+          const eventEntry = entry as FirstInputEntry;
           setMetrics(prev => prev ? { ...prev, fid: eventEntry.processingStart - eventEntry.startTime } : null);
         }
       });
@@ -180,130 +239,6 @@ const PerformanceMonitor: React.FC = () => {
     }
   }, [metrics, calculateScores, getOptimizationTips]);
 
-  // Get score color
-  const getScoreColor = (score: number) => {
-    if (score >= 90) return 'text-green-400';
-    if (score >= 70) return 'text-yellow-400';
-    return 'text-red-400';
-  };
-
-  // Get score icon
-  const getScoreIcon = (score: number) => {
-    if (score >= 90) return <CheckCircle className="w-5 h-5 text-green-400" />;
-    if (score >= 70) return <AlertTriangle className="w-5 h-5 text-yellow-400" />;
-    return <AlertTriangle className="w-5 h-5 text-red-400" />;
-  };
-
-  // Get First Input Delay
-  const getFID = async (): Promise<number> => {
-    if ('PerformanceObserver' in window) {
-      return new Promise((resolve) => {
-        const observer = new PerformanceObserver((list) => {
-          const entries = list.getEntries();
-          const firstEntry = entries[0] as any;
-          resolve(firstEntry.processingStart - firstEntry.startTime);
-        });
-        observer.observe({ entryTypes: ['first-input'] });
-        
-        // Fallback timeout
-        setTimeout(() => resolve(0), 5000);
-      });
-    }
-    return 0;
-  };
-
-  // Get Cumulative Layout Shift
-  const getCLS = async (): Promise<number> => {
-    if ('PerformanceObserver' in window) {
-      return new Promise((resolve) => {
-        let clsValue = 0;
-        const observer = new PerformanceObserver((list) => {
-          for (const entry of list.getEntries()) {
-            if (!(entry as any).hadRecentInput) {
-              clsValue += (entry as any).value;
-            }
-          }
-        });
-        observer.observe({ entryTypes: ['layout-shift'] });
-        
-        // Fallback timeout
-        setTimeout(() => resolve(clsValue), 5000);
-      });
-    }
-    return 0;
-  };
-
-  // Score calculations
-  const getFCPScore = (fcp: number): string => {
-    if (fcp < 1800) return 'Good';
-    if (fcp < 3000) return 'Needs Improvement';
-    return 'Poor';
-  };
-
-  const getLCPScore = (lcp: number): string => {
-    if (lcp < 2500) return 'Good';
-    if (lcp < 4000) return 'Needs Improvement';
-    return 'Poor';
-  };
-
-  const getFIDScore = (fid: number): string => {
-    if (fid < 100) return 'Good';
-    if (fid < 300) return 'Needs Improvement';
-    return 'Poor';
-  };
-
-  const getCLSScore = (cls: number): string => {
-    if (cls < 0.1) return 'Good';
-    if (cls < 0.25) return 'Needs Improvement';
-    return 'Poor';
-  };
-
-  const getTTFBScore = (ttfb: number): string => {
-    if (ttfb < 800) return 'Good';
-    if (ttfb < 1800) return 'Needs Improvement';
-    return 'Poor';
-  };
-
-  const calculateOverallScore = (scores: string[]): string => {
-    const goodCount = scores.filter(s => s === 'Good').length;
-    const total = scores.length;
-    const percentage = (goodCount / total) * 100;
-    
-    if (percentage >= 80) return 'Excellent';
-    if (percentage >= 60) return 'Good';
-    if (percentage >= 40) return 'Needs Improvement';
-    return 'Poor';
-  };
-
-  // Generate optimization suggestions
-  const generateOptimizationSuggestions = (data: any): string[] => {
-    const suggestions: string[] = [];
-
-    if (data.lcp > 4000) {
-      suggestions.push('Optimize images and reduce render-blocking resources for better LCP');
-    }
-    if (data.fid > 300) {
-      suggestions.push('Reduce JavaScript execution time and optimize event handlers');
-    }
-    if (data.cls > 0.25) {
-      suggestions.push('Fix layout shifts by setting explicit dimensions for images and ads');
-    }
-    if (data.ttfb > 1800) {
-      suggestions.push('Improve server response time and optimize database queries');
-    }
-    if (data.jsSize > 500000) {
-      suggestions.push('Implement code splitting and lazy loading for JavaScript bundles');
-    }
-    if (data.imageSize > 1000000) {
-      suggestions.push('Use WebP format and implement responsive images');
-    }
-    if (data.requests > 50) {
-      suggestions.push('Consolidate HTTP requests and implement resource bundling');
-    }
-
-    return suggestions.slice(0, 5); // Limit to top 5 suggestions
-  };
-
   // Auto-refresh functionality
   useEffect(() => {
     if (autoRefresh && isVisible) {
@@ -326,6 +261,20 @@ const PerformanceMonitor: React.FC = () => {
 
   const toggleExpanded = () => setIsExpanded(!isExpanded);
   const toggleAutoRefresh = () => setAutoRefresh(!autoRefresh);
+
+  // Get score color
+  const getScoreColor = (score: number) => {
+    if (score >= 90) return 'text-green-400';
+    if (score >= 70) return 'text-yellow-400';
+    return 'text-red-400';
+  };
+
+  // Get score icon
+  const getScoreIcon = (score: number) => {
+    if (score >= 90) return <CheckCircle className="w-5 h-5 text-green-400" />;
+    if (score >= 70) return <AlertTriangle className="w-5 h-5 text-yellow-400" />;
+    return <AlertTriangle className="w-5 h-5 text-red-400" />;
+  };
 
   if (!isVisible) return null;
 
@@ -357,7 +306,9 @@ const PerformanceMonitor: React.FC = () => {
               <X className="w-5 h-5" />
             </button>
           </div>
-          <div className="flex items-center gap-2">
+
+          {/* Control Buttons */}
+          <div className="flex items-center gap-2 p-2 border-b border-gray-700/50">
             <button
               onClick={toggleAutoRefresh}
               className={`p-1.5 rounded-lg transition-colors ${
@@ -384,7 +335,6 @@ const PerformanceMonitor: React.FC = () => {
               <X className="w-4 h-4" />
             </button>
           </div>
-        </div>
 
           {/* Overall Score */}
           {score && (
@@ -480,7 +430,7 @@ const PerformanceMonitor: React.FC = () => {
 
           {/* Optimization Tips */}
           {optimizationTips.length > 0 && (
-            <div className="p-4">
+            <div className="p-4 border-b border-gray-700/50">
               <div className="flex items-center gap-2 mb-3">
                 <TrendingUp className="w-4 h-4 text-emerald-400" />
                 <span className="text-sm font-medium text-gray-300">Optimization Tips</span>
@@ -492,10 +442,11 @@ const PerformanceMonitor: React.FC = () => {
                   </div>
                 ))}
               </div>
-            )}
+            </div>
+          )}
 
           {/* Actions */}
-          <div className="p-4">
+          <div className="p-4 border-b border-gray-700/50">
             <button
               onClick={() => setShowDetails(!showDetails)}
               className="w-full px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-sm font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200"
@@ -556,46 +507,31 @@ const PerformanceMonitor: React.FC = () => {
               </motion.div>
             )}
           </AnimatePresence>
-        </div>
 
-        {/* Footer Actions */}
-        <div className="p-3 border-t border-cyan-500/20 bg-white/5">
-          <button
-            onClick={measurePerformance}
-            disabled={isMonitoring}
-            className="w-full flex items-center justify-center gap-2 px-3 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white text-sm font-medium rounded-lg transition-all duration-300 hover:from-cyan-600 hover:to-purple-600 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {isMonitoring ? (
-              <>
-                <RefreshCw className="w-4 h-4 animate-spin" />
-                Measuring...
-              </>
-            ) : (
-              <>
-                <Activity className="w-4 h-4" />
-                Measure Performance
-              </>
-            )}
-          </button>
+          {/* Footer Actions */}
+          <div className="p-3 border-t border-cyan-500/20 bg-white/5">
+            <button
+              onClick={measurePerformance}
+              disabled={isMonitoring}
+              className="w-full flex items-center justify-center gap-2 px-3 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white text-sm font-medium rounded-lg transition-all duration-300 hover:from-cyan-600 hover:to-purple-600 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {isMonitoring ? (
+                <>
+                  <RefreshCw className="w-4 h-4 animate-spin" />
+                  Measuring...
+                </>
+              ) : (
+                <>
+                  <Activity className="w-4 h-4" />
+                  Measure Performance
+                </>
+              )}
+            </button>
+          </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </AnimatePresence>
   );
-};
-
-// Helper function to get score colors
-const getScoreColor = (score: string): string => {
-  switch (score) {
-    case 'Good':
-    case 'Excellent':
-      return 'text-green-400';
-    case 'Needs Improvement':
-      return 'text-yellow-400';
-    case 'Poor':
-      return 'text-red-400';
-    default:
-      return 'text-white/60';
-  }
 };
 
 export default PerformanceMonitor;
