@@ -110,26 +110,27 @@ import {
   XCircle,
   PlusCircle,
   MinusCircle,
-  Clock,
-  CalendarHeartCircle,
-  CalendarStarCircle,
-  CalendarAwardCircle,
-  CalendarTrophyCircle,
-  CalendarGiftCircle,
-  CalendarMusicCircle,
-  CalendarVideoCircle,
-  CalendarImageCircle,
-  CalendarFileCircle,
-  CalendarFolderCircle,
-  CalendarDatabaseCircle,
-  CalendarCloudCircle,
-  CalendarServerCircle,
-  CalendarNetworkCircle,
-  CalendarSecurityCircle,
-  CalendarLockCircle,
-  CalendarKeyCircle,
-  CalendarShieldCircle
+  GraduationCap
 } from 'lucide-react';
+
+// Add missing icon components
+const DollarSign = ({ className }: { className?: string }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+  </svg>
+);
+
+const ShoppingCart = ({ className }: { className?: string }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5M7 13l2.5 5m6-5v6a2 2 0 01-2 2H9a2 2 0 01-2-2v-6m8 0V9a2 2 0 00-2-2H9a2 2 0 00-2 2v4.01" />
+  </svg>
+);
+
+const Leaf = ({ className }: { className?: string }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+  </svg>
+);
 
 const UltraFuturisticFooter2046: React.FC = () => {
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
@@ -208,25 +209,6 @@ const UltraFuturisticFooter2046: React.FC = () => {
       ]
     }
   ];
-
-  // Add missing icon components
-  const DollarSign = ({ className }: { className?: string }) => (
-    <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-    </svg>
-  );
-
-  const ShoppingCart = ({ className }: { className?: string }) => (
-    <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5M7 13l2.5 5m6-5v6a2 2 0 01-2 2H9a2 2 0 01-2-2v-6m8 0V9a2 2 0 00-2-2H9a2 2 0 00-2 2v4.01" />
-    </svg>
-  );
-
-  const Leaf = ({ className }: { className?: string }) => (
-    <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-    </svg>
-  );
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -436,7 +418,8 @@ const UltraFuturisticFooter2046: React.FC = () => {
             className="absolute w-2 h-2 bg-cyan-400 rounded-full opacity-30"
             style={{
               left: `${20 + i * 15}%`,
-              top: `${80 + i * 5}%`
+              top: `${80 + i * 5}%`,
+              boxShadow: '0 0 10px rgba(0, 255, 255, 0.5)'
             }}
             animate={{
               y: [0, -20, 0],
@@ -447,9 +430,6 @@ const UltraFuturisticFooter2046: React.FC = () => {
               repeat: Infinity,
               ease: "easeInOut",
               delay: i * 0.5
-            }}
-            style={{
-              boxShadow: '0 0 10px rgba(0, 255, 255, 0.5)'
             }}
           />
         ))}

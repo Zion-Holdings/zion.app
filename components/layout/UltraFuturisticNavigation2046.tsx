@@ -15,23 +15,17 @@ import {
   Brain,
   Atom,
   Rocket,
-  Shield,
-  Cloud,
   Target,
   Building,
   Users,
   BookOpen,
   FileText,
-  Video,
   Code,
   Zap,
-  Star,
   Sparkles,
   Globe,
   Cpu,
-  Database,
   Eye,
-  Heart,
   Infinity,
   TrendingUp,
   Palette,
@@ -41,17 +35,11 @@ import {
   Settings,
   HelpCircle,
   MessageCircle,
-  Calendar,
-  Award,
   Lightbulb,
   Play,
   DollarSign,
   GraduationCap,
-  Lock,
-  Key,
   ShieldCheck,
-  Network,
-  Server,
   HardDrive,
   Wifi,
   Smartphone,
@@ -60,18 +48,17 @@ import {
   Tablet,
   Watch,
   Camera,
-  Microphone,
+  Mic,
   Headphones,
   Gamepad2,
   Car,
-  Plane,
   Ship,
   Train,
   Bus,
   Bike,
-  Walk,
-  Run,
-  Swim,
+  Footprints,
+  Activity,
+  GlassWater,
   Dumbbell,
   HeartPulse,
   Pill,
@@ -80,33 +67,26 @@ import {
   Thermometer,
   Bandage,
   EyeOff,
-  EyeOn,
   Ear,
-  Nose,
-  Mouth,
+  ScanFace,
+  Smile,
   Hand,
-  Foot,
   BrainCircuit,
   CircuitBoard,
-  Chip,
-  Memory,
-  Storage,
+  Microchip,
+  MemoryStick,
+  Store,
   Power,
   Battery,
-  Solar,
+  Sun,
   Wind,
-  Water,
-  Fire,
+  Droplet,
+  Flame,
   Earth,
   Moon,
-  Sun,
-  Planet,
-  Galaxy,
-  Universe,
-  BlackHole,
-  Wormhole,
-  Time,
-  Clock,
+  Space,
+  Circle,
+  Timer,
   Hourglass,
   CalendarDays,
   CalendarRange,
@@ -116,47 +96,44 @@ import {
   CalendarMinus,
   CalendarClock,
   CalendarHeart,
-  CalendarStar,
-  CalendarAward,
-  CalendarTrophy,
-  CalendarGift,
-  CalendarMusic,
-  CalendarVideo,
-  CalendarImage,
-  CalendarFile,
-  CalendarFolder,
-  CalendarDatabase,
-  CalendarCloud,
-  CalendarServer,
-  CalendarNetwork,
-  CalendarSecurity,
-  CalendarLock,
-  CalendarKey,
-  CalendarShield,
-  CalendarCheckCircle,
-  CalendarXCircle,
-  CalendarPlusCircle,
-  CalendarMinusCircle,
-  CalendarClockCircle,
-  CalendarHeartCircle,
-  CalendarStarCircle,
-  CalendarAwardCircle,
-  CalendarTrophyCircle,
-  CalendarGiftCircle,
-  CalendarMusicCircle,
-  CalendarVideoCircle,
-  CalendarImageCircle,
-  CalendarFileCircle,
-  CalendarFolderCircle,
-  CalendarDatabaseCircle,
-  CalendarCloudCircle,
-  CalendarServerCircle,
-  CalendarNetworkCircle,
-  CalendarSecurityCircle,
-  CalendarLockCircle,
-  CalendarKeyCircle,
-  CalendarShieldCircle
+  Calendar,
+  Award,
+  Trophy,
+  Gift,
+  Music,
+  Video,
+  Image,
+  File,
+  Folder,
+  Database,
+  Cloud,
+  Server,
+  Network,
+  Shield,
+  Lock,
+  Key,
+  CheckCircle,
+  XCircle,
+  PlusCircle,
+  MinusCircle,
+  Clock,
+  Heart,
+  Star
 } from 'lucide-react';
+
+// Add missing icon components
+const ShoppingCart = ({ className }: { className?: string }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5M7 13l2.5 5m6-5v6a2 2 0 01-2 2H9a2 2 0 01-2-2v-6m8 0V9a2 2 0 00-2-2H9a2 2 0 00-2 2v4.01" />
+  </svg>
+);
+
+const Package = ({ className }: { className?: string }) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+  </svg>
+);
+
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -476,19 +453,6 @@ const navigationItems: NavigationItem[] = [
     ]
   }
 ];
-
-// Add missing icon components
-const ShoppingCart = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5M7 13l2.5 5m6-5v6a2 2 0 01-2 2H9a2 2 0 01-2-2v-6m8 0V9a2 2 0 00-2-2H9a2 2 0 00-2 2v4.01" />
-  </svg>
-);
-
-const Package = ({ className }: { className?: string }) => (
-  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-  </svg>
-);
 
 const UltraFuturisticNavigation2046: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
