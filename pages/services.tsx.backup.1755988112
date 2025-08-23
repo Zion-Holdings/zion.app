@@ -5,7 +5,11 @@ import {
   Search, Grid, List,
   Brain, Atom, Shield, Target, Rocket,
   ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
+<<<<<<< HEAD
+  Building, Cpu, Database, Cloud, Lock, ShoppingCart, Lightbulb
+=======
   Building, Lock, Database
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-ff3f
 } from 'lucide-react';
 
 // Import our new service data
@@ -223,12 +227,19 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
+<<<<<<< HEAD
+  // New innovative 2037 services
+  ...innovative2037MicroSaasServices,
+  ...innovative2037ITServices,
+  ...innovative2037AIServices
+=======
   // 2026 Innovative Services
   ...innovative2026AIServicesAdditions,
   ...innovative2026ITServicesAdditions,
   ...innovative2026MicroSaasAdditions,
   ...innovative2026IndustryAIServices,
   ...innovative2026EmergingTechServices
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-ff3f
 ];
 
 const categories = [
@@ -303,6 +314,27 @@ const categories = [
     description: 'Learning and research platforms'
   },
   {
+<<<<<<< HEAD
+    id: 'manufacturing-industry',
+    name: 'Manufacturing & Industry',
+    icon: <Building className="w-6 h-6" />,
+    color: 'from-gray-500 to-slate-500',
+    description: 'Industrial automation and smart manufacturing'
+  },
+  {
+    id: 'retail-ecommerce',
+    name: 'Retail & E-commerce',
+    icon: <ShoppingCart className="w-6 h-6" />,
+    color: 'from-pink-500 to-rose-500',
+    description: 'Retail technology and e-commerce solutions'
+  },
+  {
+    id: 'consulting-strategy',
+    name: 'Consulting & Strategy',
+    icon: <Lightbulb className="w-6 h-6" />,
+    color: 'from-indigo-500 to-purple-500',
+    description: 'Strategic consulting and advisory services'
+=======
     id: 'cybersecurity',
     name: 'Cybersecurity & Security',
     icon: <Shield className="w-6 h-6" />,
@@ -322,6 +354,7 @@ const categories = [
     icon: <Lock className="w-6 h-6" />,
     color: 'from-purple-500 to-indigo-500',
     description: 'Biometric authentication and identity management'
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-ff3f
   }
 ];
 
