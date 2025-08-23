@@ -21,6 +21,10 @@ interface AccessibilityEnhancerProps {
   useEffect(() => {
     if (!settings.keyboardNavigation) return;
 
+<<<<<<< HEAD
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement;
+=======
   // Focus management
   const handleFocusChange = useCallback((e: FocusEvent) => {
     const target = e.target as HTMLElement;
@@ -68,6 +72,7 @@ interface AccessibilityEnhancerProps {
     
     const checkAccessibility = () => {
       const issues: string[] = [];
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-de9b
       
       // Skip if target is an input, textarea, or contenteditable
       if (target.matches('input, textarea, [contenteditable="true"]')) return;
