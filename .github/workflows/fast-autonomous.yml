@@ -1,0 +1,62 @@
+name: Fast Autonomous Runner
+
+on:
+  push:
+    branches: ["**"]
+  schedule:
+    - cron: "*/10 * * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fast-autonomous-runner
+  cancel-in-progress: true
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Configure Git user
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Run orchestrator
+        run: npm run autonomous:cloud || true
+
+      - name: Run curator
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: npm run autonomous:curate || true
+
+      - name: Commit changes if any
+        run: |
+          if ! git diff --quiet; then
+            git add -A
+            git commit -m "chore(fast-autonomous): updates [skip ci]"
+          fi
+
+      - name: Push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          CURRENT_BRANCH="${GITHUB_REF##*/}"
+          if [ -n "$(git log origin/$CURRENT_BRANCH..HEAD)" ]; then
+            git push origin "$CURRENT_BRANCH"
+          fi

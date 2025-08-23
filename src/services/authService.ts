@@ -1,27 +1,18 @@
-const API_URL = import.meta.env.VITE_API_URL || '';
+import { apiClient } from '@/utils/apiClient';
 
 export async function loginUser(email: string, password: string) {
-  const res = await fetch(`${API_URL}/auth/login`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    credentials: 'include',
-    body: JSON.stringify({ email, password }),
-  });
-  const data = await res.json().catch(() => ({}));
-  return { res, data };
-}
-
-export async function registerUser(name: string, email: string, password: string) {
-  const res = await fetch(`${API_URL}/auth/register`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    credentials: 'include',
-    body: JSON.stringify({ name, email, password }),
-  });
-  const data = await res.json().catch(() => ({}));
-  return { res, data };
+  try {
+    const res = await fetch('/api/auth/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
+    });
+    const data = await res.json().catch(() => ({}));
+    return { res, data };
+  } catch (error) {
+    console.error('Login request failed', error);
+    throw error;
+  }
 }

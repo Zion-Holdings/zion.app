@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2025-08-08T17:05:13.156Z",
+  "build": {
+    "ok": false,
+    "code": 1,
+    "stderr": "\n> Build error occurred\nError: ENOENT: no such file or directory, rename '/workspace/.next/export/auth/callback.html' -> '/workspace/.next/server/pages/auth/callback.html'\n    at async Object.rename (node:internal/fs/promises:778:10)\n    at async /workspace/node_modules/next/dist/build/index.js:867:29\n    at async Span.traceAsyncFn (/workspace/node_modules/next/dist/telemetry/trace/trace.js:60:20)\n    at async /workspace/node_modules/next/dist/build/index.js:926:25\n    at async Span.traceAsyncFn (/workspace/node_modules/next/dist/telemetry/trace/trace.js:60:20)\n    at async /workspace/node_modules/next/dist/build/index.js:707:13\n    at async Span.traceAsyncFn (/workspace/node_modules/next/dist/telemetry/trace/trace.js:60:20)\n    at async Object.build [as default] (/workspace/node_modules/next/dist/build/index.js:77:25) {\n  errno: -2,\n  code: 'ENOENT',\n  syscall: 'rename',\n  path: '/workspace/.next/export/auth/callback.html',\n  dest: '/workspace/.next/server/pages/auth/callback.html'\n}\n"
+  },
+  "metrics": [
+    {
+      "url": "http://localhost:3000/",
+      "statusCode": 0,
+      "ttfbMs": -1,
+      "bytes": 0
+    },
+    {
+      "url": "http://localhost:3000/enhanced-home",
+      "statusCode": 0,
+      "ttfbMs": -1,
+      "bytes": 0
+    }
+  ],
+  "thresholds": {
+    "ttfbMs": 800,
+    "bytesHtml": 250000
+  },
+  "alerts": []
+}

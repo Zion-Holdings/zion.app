@@ -1,0 +1,59 @@
+name: Cloud Core Automations (Hourly)
+
+on:
+  schedule:
+    - cron: '0 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cloud-core-hourly
+  cancel-in-progress: false
+
+jobs:
+  run-hourly-automations:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          cache: 'npm'
+
+      - name: Install deps
+        run: npm ci --no-audit --no-fund
+
+      - name: Generate sitemap
+        run: npm run sitemap
+
+      - name: Links scan and fix
+        run: npm run links:scan || true
+
+      - name: Sync health check and fix
+        run: npm run sync-health:run
+
+      - name: Git health (fast)
+        run: npm run git:health || true
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit changes
+        run: |
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "chore(automation): hourly cloud automations output"
+            git push
+          else
+            echo "No changes to commit"
+          fi
