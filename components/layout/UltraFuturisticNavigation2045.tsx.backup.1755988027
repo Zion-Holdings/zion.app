@@ -494,6 +494,7 @@ const navigationItems: NavigationItem[] = [
   }
 ];
 
+<<<<<<< HEAD
 // Quick action buttons
 const quickActions = [
   {
@@ -530,6 +531,22 @@ const UltraFuturisticNavigation2045: React.FC<UltraFuturisticNavigation2045Props
 =======
   const [searchQuery, setSearchQuery] = useState('');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+=======
+interface UltraFuturisticNavigation2045Props {
+  sidebarOpen: boolean;
+  setSidebarOpen: (open: boolean) => void;
+}
+
+const UltraFuturisticNavigation2045: React.FC<UltraFuturisticNavigation2045Props> = ({ 
+  sidebarOpen, 
+  setSidebarOpen 
+}) => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const isMobileMenuOpen = sidebarOpen;
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-e49e
   const router = useRouter();
   const navRef = useRef<HTMLElement>(null);
   const searchRef = useRef<HTMLDivElement>(null);
@@ -555,8 +572,44 @@ const UltraFuturisticNavigation2045: React.FC<UltraFuturisticNavigation2045Props
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+<<<<<<< HEAD
   // Handle search
   const handleSearch = useCallback((e: React.FormEvent) => {
+=======
+  // Handle click outside mobile menu
+  React.useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+        setSidebarOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  // Close mobile menu on route change
+  React.useEffect(() => {
+    setSidebarOpen(false);
+    setActiveDropdown(null);
+  }, [router.asPath, setSidebarOpen]);
+
+  const handleDropdownToggle = useCallback((itemLabel: string) => {
+    setActiveDropdown(activeDropdown === itemLabel ? null : itemLabel);
+  }, [activeDropdown]);
+
+  const handleSearchToggle = useCallback(() => {
+    setIsSearchOpen(!isSearchOpen);
+    if (!isSearchOpen) {
+      setTimeout(() => {
+        const searchInput = document.getElementById('search-input');
+        if (searchInput) searchInput.focus();
+      }, 100);
+    }
+  }, [isSearchOpen]);
+
+  const handleSearchSubmit = useCallback((e: React.FormEvent) => {
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-e49e
     e.preventDefault();
     if (searchQuery.trim()) {
       router.push(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
@@ -565,6 +618,7 @@ const UltraFuturisticNavigation2045: React.FC<UltraFuturisticNavigation2045Props
     }
   }, [searchQuery, router]);
 
+<<<<<<< HEAD
   // Handle navigation
   const handleNavigation = useCallback((href: string) => {
     router.push(href);
@@ -573,6 +627,11 @@ const UltraFuturisticNavigation2045: React.FC<UltraFuturisticNavigation2045Props
   const toggleMobileMenu = useCallback(() => {
     setIsMobileMenuOpen(prev => !prev);
   }, []);
+=======
+  const handleMobileMenuToggle = useCallback(() => {
+    setSidebarOpen(!sidebarOpen);
+  }, [sidebarOpen, setSidebarOpen]);
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-e49e
 
   const toggleDropdown = useCallback((dropdown: string) => {
     setActiveDropdown(activeDropdown === dropdown ? null : dropdown);

@@ -19,7 +19,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
 
   const footerSections = [
     {
-      title: 'Revolutionary Services 2045',
+      title: 'Core Services',
       links: [
         { name: 'AI Consciousness Evolution 2045', href: '/ai-consciousness-evolution-2045', icon: Brain },
         { name: 'Quantum Neural Networks 2045', href: '/quantum-neural-network-platform-2045', icon: Atom },
@@ -30,7 +30,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
       ]
     },
     {
-      title: 'Technology Solutions',
+      title: 'Featured Services',
       links: [
         { name: 'Quantum Cloud Infrastructure 2045', href: '/quantum-cloud-infrastructure-2045', icon: Cloud },
         { name: 'Autonomous DevOps Platform 2045', href: '/autonomous-devops-platform-2045', icon: Code },
