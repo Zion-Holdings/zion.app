@@ -63,6 +63,49 @@ const pricingPlans = [
   }
 ];
 
+<<<<<<< HEAD
+const serviceCategories = [
+  {
+    name: 'AI & Machine Learning',
+    icon: <Brain className="w-6 h-6 text-cyan-400" />,
+    services: [
+      { name: 'AI Consciousness Evolution', price: '$2,999/month' },
+      { name: 'Autonomous Business Operations', price: '$1,999/month' },
+      { name: 'Predictive Maintenance AI', price: '$999/month' },
+      { name: 'Content Personalization Engine', price: '$799/month' }
+    ]
+  },
+  {
+    name: 'Quantum Computing',
+    icon: <Atom className="w-6 h-6 text-purple-400" />,
+    services: [
+      { name: 'Quantum Neural Networks', price: '$3,999/month' },
+      { name: 'Quantum Financial Trading', price: '$2,999/month' },
+      { name: 'Quantum Materials Discovery', price: '$2,499/month' },
+      { name: 'Quantum Cloud Infrastructure', price: '$3,499/month' }
+    ]
+  },
+  {
+    name: 'Space Technology',
+    icon: <Rocket className="w-6 h-6 text-orange-400" />,
+    services: [
+      { name: 'Space Resource Mining', price: '$4,999/month' },
+      { name: 'AI-Powered Space Technology', price: '$3,999/month' },
+      { name: 'Autonomous Space Operations', price: '$2,999/month' }
+    ]
+  },
+  {
+    name: 'Enterprise IT',
+    icon: <Shield className="w-6 h-6 text-blue-400" />,
+    services: [
+      { name: 'Quantum-Secure Cloud Infrastructure', price: '$2,999/month' },
+      { name: 'Autonomous IT Operations Center', price: '$1,999/month' },
+      { name: 'Zero Trust Security Platform', price: '$1,499/month' },
+      { name: 'SOC 2 Compliance Automation', price: '$999/month' }
+    ]
+  }
+];
+=======
   const pricingPlans = [
     {
       id: 'starter',
@@ -210,6 +253,7 @@ const pricingPlans = [
       color: 'from-orange-500 to-red-600'
     }
   ];
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-e94e
 
 export default function Pricing() {
   return (

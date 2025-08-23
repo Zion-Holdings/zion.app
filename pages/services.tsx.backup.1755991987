@@ -19,7 +19,12 @@ export default function ServicesPage() {
     { value: '0-50', label: '$0 - $50' },
     { value: '51-100', label: '$51 - $100' },
     { value: '101-200', label: '$101 - $200' },
+<<<<<<< HEAD
+    { value: '201-500', label: '$201 - $500' },
+    { value: '501+', label: '$501+' }
+=======
     { value: '201+', label: '$201+' }
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-e94e
   ];
 
   const sortOptions = [
@@ -79,7 +84,11 @@ export default function ServicesPage() {
 
   const popularServices = getPopularServices();
 
+<<<<<<< HEAD
+  // Enhanced service categories with better descriptions
+=======
   // Enhanced service categories with better descriptions and market data
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-e94e
   const enhancedCategories = [
     {
       name: 'Quantum Computing & AI',
@@ -297,6 +306,65 @@ export default function ServicesPage() {
                 <span className="text-sm text-gray-400">Address</span>
                 <span className="text-white font-semibold text-center text-sm">{contactInfo.address}</span>
               </div>
+<<<<<<< HEAD
+            )}
+          </div>
+        </section>
+
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {filteredServices.map((service, index) => (
+            <motion.div
+              key={service.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <EnhancedFuturisticCard
+                title={service.name}
+                description={service.description}
+                icon={<span className="text-4xl">{service.icon}</span>}
+                price={service.price}
+                period={service.period}
+                features={service.features.slice(0, 4)}
+                popular={service.popular}
+                variant={service.variant}
+                color={service.color}
+                textColor={service.textColor}
+                link={service.link}
+                contactInfo={service.contactInfo}
+                stats={[
+                  {
+                    value: service.customers.toLocaleString(),
+                    label: 'Customers',
+                    icon: <Users className="w-4 h-4" />,
+                    color: 'text-blue-400'
+                  },
+                  {
+                    value: service.rating.toString(),
+                    label: 'Rating',
+                    icon: <Star className="w-4 h-4" />,
+                    color: 'text-yellow-400'
+                  },
+                  {
+                    value: service.roi.split(' ')[0],
+                    label: 'ROI',
+                    icon: <TrendingUp className="w-4 h-4" />,
+                    color: 'text-green-400'
+                  },
+                  {
+                    value: service.growthRate.split(' ')[0],
+                    label: 'Growth',
+                    icon: <Rocket className="w-4 h-4" />,
+                    color: 'text-purple-400'
+                  }
+                ]}
+              />
+            </motion.div>
+          ))}
+        </div>
+=======
     <UltraAdvancedFuturisticBackground variant="holographic-matrix">
       <Head>
         <title>Micro SaaS Services - Zion Tech Group | 200+ Revolutionary Solutions</title>
@@ -1315,6 +1383,7 @@ export default function ServicesPage() {
         </section>
       </div>
     </EnhancedFuturisticBackground>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-e94e
   );
 };
 

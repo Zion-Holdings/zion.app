@@ -9,12 +9,21 @@ import { Cloud, Bot, RefreshCw, Zap, Shield, BarChart3, ArrowRight, Check, Exter
 
 export default function HomePage() {
   const heroStats = [
+<<<<<<< HEAD
+    { value: '200+', label: 'Revolutionary Micro SaaS Services', color: 'text-cyan-400', icon: <CpuIcon className="w-6 h-6" /> },
+    { value: '99.99%', label: 'Uptime Guarantee', color: 'text-fuchsia-400', icon: <ShieldCheck className="w-6 h-6" /> },
+    { value: '30+', label: 'Day Free Trials', color: 'text-blue-400', icon: <Clock className="w-6 h-6" /> },
+    { value: '24/7', label: 'AI Support', color: 'text-green-400', icon: <Brain className="w-6 h-6" /> },
+    { value: '$25B+', label: 'Combined Market Value', color: 'text-yellow-400', icon: <TrendingUp className="w-6 h-6" /> },
+    { value: '800%+', label: 'Average ROI', color: 'text-purple-400', icon: <DollarSign className="w-6 h-6" /> },
+=======
     { value: '500+', label: 'Real Micro SaaS Services', color: 'text-cyan-400' },
     { value: '99.99%', label: 'Uptime Guarantee', color: 'text-fuchsia-400' },
     { value: '21', label: 'Day Free Trials', color: 'text-blue-400' },
     { value: '24/7', label: 'AI Support', color: 'text-green-400' },
     { value: '$2.5B+', label: 'Market Value', color: 'text-yellow-400' },
     { value: '5000%+', label: 'Average ROI', color: 'text-purple-400' },
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-e94e
   ];
 
   const heroStats = marketStats;
@@ -90,11 +99,21 @@ export default function HomePage() {
   // Service categories with market insights
   const serviceCategoriesWithInsights = [
     {
+<<<<<<< HEAD
+      name: 'Quantum Computing & AI',
+      description: 'Revolutionary quantum AI solutions with unprecedented computing power',
+      icon: <BrainIcon className="w-8 h-8" />,
+      marketSize: '$12.5B',
+      growthRate: '400%',
+      services: 25,
+      color: 'from-purple-500 to-indigo-600'
+=======
       icon: <Cloud className="w-8 h-8 text-white" />,
       title: '500+ Revolutionary Micro SaaS Services',
       description: 'Complete portfolio of cutting-edge micro SaaS tools including quantum AI, autonomous systems, biomedical research, nanotechnology, fusion energy, and emerging technologies. Starting from $49/month with 21-day free trials. All services are production-ready with enterprise-grade infrastructure.',
       color: 'bg-gradient-to-br from-cyan-500 to-blue-600',
       gradient: 'from-cyan-400 to-blue-500',
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-e94e
     },
     {
       avatar: '🏭',
@@ -136,6 +155,39 @@ export default function HomePage() {
       color: 'from-emerald-500 to-teal-600'
     },
     {
+<<<<<<< HEAD
+      title: 'IoT & Edge Computing',
+      description: 'Real-time data processing at the edge for instant insights',
+      icon: <Cpu className="w-8 h-8" />,
+      color: 'from-orange-500 to-red-600'
+    }
+  ];
+
+  const competitiveAdvantages = [
+    {
+      icon: '⚡',
+      title: 'Lightning Fast Setup',
+      description: 'Get started in minutes, not weeks. Our services are designed for immediate value delivery.',
+      color: 'from-yellow-500 to-orange-600'
+    },
+    {
+      icon: '💰',
+      title: 'Transparent Pricing',
+      description: 'No hidden fees, no enterprise sales calls. Simple monthly pricing that scales with your business.',
+      color: 'from-green-500 to-emerald-600'
+    },
+    {
+      icon: '🔒',
+      title: 'Enterprise Security',
+      description: 'Bank-level security, SOC 2 compliance, and 99.9% uptime guarantee for all services.',
+      color: 'from-blue-500 to-indigo-600'
+    },
+    {
+      icon: '📊',
+      title: 'Real Business Value',
+      description: 'Each service solves a specific business problem with measurable ROI and immediate impact.',
+      color: 'from-purple-500 to-violet-600'
+=======
       icon: <BarChart3 className="w-8 h-8 text-white" />,
       title: 'Transparent Pricing & ROI Guarantee',
       description: 'No hidden fees, simple monthly pricing that scales with your business needs. Competitive rates starting at $49/month. Volume discounts available for enterprise clients. ROI guarantee on all services.',
@@ -199,6 +251,7 @@ export default function HomePage() {
       color: 'bg-gradient-to-br from-blue-500 to-indigo-600',
       textColor: 'text-blue-400',
       gradient: 'from-blue-400 to-indigo-500',
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-e94e
     },
     {
       icon: '🌐',
@@ -210,6 +263,18 @@ export default function HomePage() {
     },
   ];
 
+<<<<<<< HEAD
+  const innovativeServices = [
+    {
+      name: 'Quantum AI Optimizer',
+      description: 'Next-generation AI optimization using quantum algorithms',
+      price: '$499/month',
+      category: 'AI & Quantum Computing',
+      icon: '⚛️',
+      color: 'from-cyan-500 to-blue-600',
+      link: 'https://ziontechgroup.com/quantum-ai-optimizer',
+      contactInfo: contactInfo
+=======
 
 
   const marketInsights = [
@@ -278,6 +343,7 @@ export default function HomePage() {
       category: 'Quantum Computing',
       variant: 'quantum',
       link: 'https://ziontechgroup.com/quantum-ai-cognitive'
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-e94e
     },
     {
       name: 'AI Cybersecurity Sentinel',
@@ -325,6 +391,11 @@ export default function HomePage() {
       price: '$399/month',
       category: 'Emerging Technologies',
       icon: '🤖',
+<<<<<<< HEAD
+      color: 'from-cyan-600 to-blue-600',
+      link: 'https://ziontechgroup.com/autonomous-ai-agents',
+      contactInfo: contactInfo
+=======
       price: '$1,499/month',
       category: 'Robotics & Automation',
       variant: 'cyberpunk',
@@ -356,6 +427,7 @@ export default function HomePage() {
       category: 'Genetic Engineering',
       variant: 'neural',
       link: 'https://ziontechgroup.com/genetic-engineering-ai'
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-e94e
     }
   ];
 
@@ -914,6 +986,14 @@ export default function HomePage() {
                 </Button>
               </div>
 
+<<<<<<< HEAD
+              {/* Final Contact Banner */}
+              <div className="bg-gradient-to-r from-cyan-900/30 to-blue-900/30 backdrop-blur-sm border border-cyan-500/30 rounded-2xl p-8">
+                <h3 className="text-2xl font-bold text-white mb-4">Get in Touch</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                  <div>
+                    <Phone className="w-6 h-6 text-cyan-400 mx-auto mb-2" />
+=======
               {/* Contact Info */}
               <div className="mt-12 p-8 bg-gradient-to-r from-gray-800/50 to-gray-900/50 rounded-2xl backdrop-blur-sm border border-gray-700/50">
                 <div className="text-center mb-6">
@@ -955,6 +1035,7 @@ export default function HomePage() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center mb-6">
                   <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-600/20 border border-blue-500/30">
                     <Phone className="w-6 h-6 text-blue-400 mb-2" />
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-e94e
                     <div className="text-sm text-gray-400">Mobile</div>
                     <div className="text-white font-medium">{contactInfo.mobile}</div>
                   </div>
@@ -978,6 +1059,9 @@ export default function HomePage() {
           </div>
         </section>
       </div>
+<<<<<<< HEAD
+    </UltraFuturisticBackground>
+=======
     </EnhancedFuturisticBackground>
 =======
       icon: '📊',
@@ -1449,5 +1533,7 @@ export default function HomePage() {
         </section>
       </main>
     </AdvancedFuturisticBackground>
+>>>>>>> main
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-e94e
   );
 }
