@@ -31,7 +31,11 @@ export default function Header() {
     { name: 'Cloud Platform', href: '/cloud-platform', description: 'Scalable cloud infrastructure' },
     { name: 'Automation Hub', href: '/automation', description: 'AI-powered workflow automation' },
     { name: 'Analytics', href: '/analytics', description: 'Real-time insights and reporting' },
+<<<<<<< HEAD
+    { name: 'Micro SaaS Services', href: '/micro-saas', description: 'Professional utility tools and services' },
+=======
     { name: 'Micro SaaS Services', href: '/micro-saas-services', description: 'Professional tools for business growth' },
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-advertising-f3e4
   ];
 
   const isActive = (href: string) => router.pathname === href;
