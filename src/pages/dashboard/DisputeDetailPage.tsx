@@ -1,25 +1,9 @@
-
 import React from 'react';
-import { SEO } from '@/components/SEO';
-import { AppHeader } from '@/layout/AppHeader';
-import { Footer } from '@/components/Footer';
-import { DisputeDetail } from '@/components/disputes';
-import { ProtectedRoute } from '@/components/ProtectedRoute';
-
-function DisputeDetailPage() {
+export function DisputeDetailPage() {
   return (
-    <ProtectedRoute>
-      <>
-        <SEO 
-          title="Dispute Details | Zion AI Marketplace" 
-          description="View and manage dispute details"
-        />
-        <AppHeader />
-        <DisputeDetail />
-        <Footer />
-      </>
-    </ProtectedRoute>
+    <div>
+      <h1>Component</h1>
+      <p>Component placeholder</p>
+    </div>
   );
 }
-
-export default DisputeDetailPage;

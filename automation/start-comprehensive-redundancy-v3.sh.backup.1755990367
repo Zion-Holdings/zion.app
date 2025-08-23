@@ -1,0 +1,1029 @@
+#!/bin/bash
+
+<<<<<<< HEAD
+# Comprehensive Redundancy V3 Startup Script
+# This script provides redundancy for all PM2, GitHub Actions, and Netlify Functions automations
+
+set -e
+
+=======
+# Comprehensive Redundancy System v3 Startup Script
+# Provides redundancy for all PM2 automations, GitHub Actions automations, and Netlify functions automations
+
+set -e
+
+# Configuration
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-89ab
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+WORKSPACE_DIR="$(dirname "$SCRIPT_DIR")"
+LOG_DIR="$WORKSPACE_DIR/automation/logs"
+PID_FILE="$LOG_DIR/comprehensive-redundancy-v3.pid"
+LOG_FILE="$LOG_DIR/comprehensive-redundancy-v3.log"
+<<<<<<< HEAD
+
+# Ensure log directory exists
+mkdir -p "$LOG_DIR"
+=======
+CONFIG_FILE="$WORKSPACE_DIR/automation/redundancy-config.json"
+REDUNDANCY_SCRIPT="$WORKSPACE_DIR/automation/comprehensive-redundancy-v3.cjs"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-89ab
+
+# Colors for output
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+<<<<<<< HEAD
+NC='\033[0m' # No Color
+
+# Function to print colored output
+print_status() {
+    echo -e "${BLUE}[$(date '+%Y-%m-%d %H:%M:%S')]${NC} $1"
+}
+
+print_success() {
+    echo -e "${GREEN}[SUCCESS]${NC} $1"
+}
+
+print_warning() {
+    echo -e "${YELLOW}[WARNING]${NC} $1"
+}
+
+print_error() {
+    echo -e "${RED}[ERROR]${NC} $1"
+}
+
+# Function to check if process is running
+is_running() {
+    if [ -f "$PID_FILE" ]; then
+        local pid=$(cat "$PID_FILE")
+        if ps -p "$pid" > /dev/null 2>&1; then
+            return 0
+        else
+            # Remove stale PID file
+            rm -f "$PID_FILE"
+            return 1
+=======
+PURPLE='\033[0;35m'
+CYAN='\033[0;36m'
+NC='\033[0m' # No Color
+
+# Ensure log directory exists
+mkdir -p "$LOG_DIR"
+
+# Logging function
+log() {
+    local level="$1"
+    local message="$2"
+    local timestamp=$(date '+%Y-%m-%d %H:%M:%S')
+    
+    case $level in
+        "INFO")
+            echo -e "[$timestamp] [${GREEN}INFO${NC}] $message" | tee -a "$LOG_FILE"
+            ;;
+        "WARN")
+            echo -e "[$timestamp] [${YELLOW}WARN${NC}] $message" | tee -a "$LOG_FILE"
+            ;;
+        "ERROR")
+            echo -e "[$timestamp] [${RED}ERROR${NC}] $message" | tee -a "$LOG_FILE"
+            ;;
+        "SUCCESS")
+            echo -e "[$timestamp] [${GREEN}SUCCESS${NC}] $message" | tee -a "$LOG_FILE"
+            ;;
+        "DEBUG")
+            echo -e "[$timestamp] [${BLUE}DEBUG${NC}] $message" | tee -a "$LOG_FILE"
+            ;;
+        *)
+            echo -e "[$timestamp] [$level] $message" | tee -a "$LOG_FILE"
+            ;;
+    esac
+}
+
+# Error handling
+error_exit() {
+    log "ERROR" "Script failed: $1"
+    exit 1
+}
+
+# Check if script is already running
+check_running() {
+    if [ -f "$PID_FILE" ]; then
+        local pid=$(cat "$PID_FILE")
+        if ps -p "$pid" > /dev/null 2>&1; then
+            log "WARN" "Comprehensive redundancy system v3 already running (PID: $pid)"
+            return 0
+        else
+            log "WARN" "Stale PID file found, removing"
+            rm -f "$PID_FILE"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-89ab
+        fi
+    fi
+    return 1
+}
+
+<<<<<<< HEAD
+    sleep 60
+done
+EOF
+    
+    chmod +x "$monitor_script"
+    
+    # Start monitoring in background
+    nohup "$monitor_script" > "$LOG_DIR/monitoring.log" 2>&1 &
+    local monitor_pid=$!
+    
+    log "INFO" "Monitoring started (PID: $monitor_pid)"
+    update_status "monitoring" "running" "Monitoring active (PID: $monitor_pid)"
+}
+
+# Start all redundancy systems
+start_all() {
+    log "INFO" "Starting comprehensive redundancy system v3.0..."
+    
+    # Check if already running
+    if check_running; then
+        log "INFO" "System already running, stopping first..."
+        stop_all
+        sleep 2
+    fi
+    
+    # Start all components
+    start_pm2_redundancy
+    start_github_redundancy
+    start_netlify_redundancy
+    start_npm_redundancy
+    start_automation_redundancy
+    start_monitoring
+    
+    # Start the comprehensive redundancy orchestrator
+    if [ -f "$WORKSPACE_DIR/automation/comprehensive-redundancy-orchestrator.cjs" ]; then
+        log "INFO" "Starting comprehensive redundancy orchestrator..."
+        cd "$WORKSPACE_DIR" && node automation/comprehensive-redundancy-orchestrator.cjs start || log "WARN" "Failed to start orchestrator"
+    fi
+    
+    # Start continuous monitoring in background
+    nohup node automation/comprehensive-redundancy-orchestrator.cjs monitor > "$LOG_DIR/comprehensive-monitor.log" 2>&1 &
+    local orchestrator_pid=$!
+    echo "$orchestrator_pid" > "$PID_FILE"
+    
+    log "INFO" "Comprehensive redundancy system v3.0 started successfully (PID: $orchestrator_pid)"
+    update_status "system" "running" "All systems started (PID: $orchestrator_pid)"
+    
+    # Show status
+    show_status
+}
+
+# Stop all redundancy systems
+stop_all() {
+    log "INFO" "Stopping comprehensive redundancy system v3.0..."
+    
+    # Stop PM2 processes
+    if command -v pm2 &> /dev/null; then
+        log "INFO" "Stopping PM2 processes..."
+        pm2 stop all || log "WARN" "Failed to stop some PM2 processes"
+        pm2 delete all || log "WARN" "Failed to delete some PM2 processes"
+    fi
+    
+    # Stop comprehensive redundancy orchestrator
+    if [ -f "$PID_FILE" ]; then
+        local pid=$(cat "$PID_FILE")
+        if ps -p "$pid" > /dev/null 2>&1; then
+            log "INFO" "Stopping comprehensive redundancy orchestrator (PID: $pid)..."
+            kill "$pid" || log "WARN" "Failed to stop process $pid"
+        fi
+        rm -f "$PID_FILE"
+    fi
+    
+    # Stop any remaining Node processes
+    pkill -f "comprehensive-redundancy-orchestrator" || true
+    pkill -f "ultimate-redundancy-master" || true
+    pkill -f "redundancy.*\.cjs" || true
+    pkill -f "monitor-comprehensive-redundancy" || true
+    
+    # Stop monitoring processes
+    pkill -f "monitor-comprehensive-redundancy.sh" || true
+    
+    log "INFO" "Comprehensive redundancy system v3.0 stopped"
+    update_status "system" "stopped" "All systems stopped"
+}
+
+# Restart all redundancy systems
+restart_all() {
+    log "INFO" "Restarting comprehensive redundancy system v3.0..."
+    stop_all
+    sleep 3
+    start_all
+}
+
+# Show system status
+show_status() {
+    log "INFO" "=== Comprehensive Redundancy System v3.0 Status ==="
+    
+    # Show status from status file
+    if [ -f "$STATUS_FILE" ]; then
+        log "INFO" "System Status:"
+        if command -v jq &> /dev/null; then
+            jq '.' "$STATUS_FILE" | sed 's/^/  /'
+        else
+            cat "$STATUS_FILE" | sed 's/^/  /'
+        fi
+    else
+        log "WARN" "Status file not found"
+    fi
+    
+    # PM2 status
+    if command -v pm2 &> /dev/null; then
+        log "INFO" "PM2 Status:"
+        pm2 status --no-daemon || log "WARN" "Failed to get PM2 status"
+    else
+        log "WARN" "PM2 not installed"
+    fi
+    
+    # Process status
+    if [ -f "$PID_FILE" ]; then
+        local pid=$(cat "$PID_FILE")
+        if ps -p "$pid" > /dev/null 2>&1; then
+            log "INFO" "Comprehensive redundancy orchestrator running (PID: $pid)"
+        else
+            log "WARN" "PID file exists but process not running"
+        fi
+    else
+        log "WARN" "No PID file found"
+    fi
+    
+    # Check log files
+    log "INFO" "Recent log entries:"
+    tail -n 10 "$LOG_FILE" 2>/dev/null || log "WARN" "No log file found"
+}
+
+# Show system health
+show_health() {
+    log "INFO" "=== Comprehensive Redundancy System v3.0 Health Check ==="
+    
+    # Run health check on orchestrator
+    if [ -f "$WORKSPACE_DIR/automation/comprehensive-redundancy-orchestrator.cjs" ]; then
+        log "INFO" "Running orchestrator health check..."
+        cd "$WORKSPACE_DIR" && node automation/comprehensive-redundancy-orchestrator.cjs check || log "WARN" "Orchestrator health check failed"
+    fi
+    
+    # Run health check on ultimate redundancy master
+    if [ -f "$WORKSPACE_DIR/automation/ultimate-redundancy-master.cjs" ]; then
+        log "INFO" "Running ultimate redundancy master health check..."
+        cd "$WORKSPACE_DIR" && node automation/ultimate-redundancy-master.cjs check || log "WARN" "Ultimate redundancy master health check failed"
+    fi
+    
+    # Show status
+    show_status
+}
+
+# Generate comprehensive report
+generate_report() {
+    log "INFO" "Generating comprehensive redundancy report..."
+    
+    # Generate report from orchestrator
+    if [ -f "$WORKSPACE_DIR/automation/comprehensive-redundancy-orchestrator.cjs" ]; then
+        cd "$WORKSPACE_DIR" && node automation/comprehensive-redundancy-orchestrator.cjs report || log "WARN" "Orchestrator report generation failed"
+    fi
+    
+    # Generate report from ultimate redundancy master
+    if [ -f "$WORKSPACE_DIR/automation/ultimate-redundancy-master.cjs" ]; then
+        cd "$WORKSPACE_DIR" && node automation/ultimate-redundancy-master.cjs report || log "WARN" "Ultimate redundancy master report generation failed"
+    fi
+    
+    # Show report locations
+    local report_files=(
+        "$WORKSPACE_DIR/automation/logs/redundancy-report.json"
+        "$WORKSPACE_DIR/automation/logs/comprehensive-redundancy-report.json"
+        "$WORKSPACE_DIR/automation/logs/ultimate-redundancy-report.json"
+    )
+    
+    for report_file in "${report_files[@]}"; do
+        if [ -f "$report_file" ]; then
+            log "INFO" "Report generated: $report_file"
+            if command -v jq &> /dev/null; then
+                jq '.' "$report_file" 2>/dev/null || cat "$report_file"
+            else
+                cat "$report_file"
+            fi
+        fi
+    done
+}
+
+# Show logs
+show_logs() {
+    local lines=${1:-50}
+    log "INFO" "Showing last $lines log lines:"
+    
+    if [ -f "$LOG_FILE" ]; then
+        tail -n "$lines" "$LOG_FILE"
+    else
+        log "WARN" "No log file found"
+    fi
+}
+
+# Run comprehensive check
+run_comprehensive_check() {
+    log "INFO" "Running comprehensive system check..."
+    
+    # Check all components
+    local components=("pm2" "github_actions" "netlify_functions" "npm_scripts" "automation_systems" "monitoring")
+    local overall_status="healthy"
+    
+    for component in "${components[@]}"; do
+        log "INFO" "Checking component: $component"
+        case "$component" in
+            "pm2")
+                if command -v pm2 &> /dev/null; then
+                    local pm2_status=$(pm2 status --no-daemon 2>/dev/null | grep -c "online" || echo "0")
+                    if [ "$pm2_status" -gt 0 ]; then
+                        log "INFO" "PM2: Healthy ($pm2_status processes online)"
+                    else
+                        log "WARN" "PM2: Warning (no processes online)"
+                        overall_status="warning"
+                    fi
+                else
+                    log "ERROR" "PM2: Not installed"
+                    overall_status="error"
+                fi
+                ;;
+            "github_actions")
+                if [ -d "$WORKSPACE_DIR/.github/workflows" ]; then
+                    local workflow_count=$(find "$WORKSPACE_DIR/.github/workflows" -name "*.yml" | wc -l)
+                    if [ "$workflow_count" -gt 0 ]; then
+                        log "INFO" "GitHub Actions: Healthy ($workflow_count workflows found)"
+                    else
+                        log "WARN" "GitHub Actions: Warning (no workflows found)"
+                        overall_status="warning"
+                    fi
+                else
+                    log "ERROR" "GitHub Actions: Workflows directory not found"
+                    overall_status="error"
+                fi
+                ;;
+            "netlify_functions")
+                if [ -f "$WORKSPACE_DIR/netlify/functions/functions-manifest.json" ]; then
+                    if command -v jq &> /dev/null; then
+                        local func_count=$(jq '.functions | length' "$WORKSPACE_DIR/netlify/functions/functions-manifest.json" 2>/dev/null || echo "0")
+                        if [ "$func_count" -gt 0 ]; then
+                            log "INFO" "Netlify Functions: Healthy ($func_count functions in manifest)"
+                        else
+                            log "WARN" "Netlify Functions: Warning (no functions in manifest)"
+                            overall_status="warning"
+                        fi
+                    else
+                        log "WARN" "Netlify Functions: Manifest found (jq not available for validation)"
+                    fi
+                else
+                    log "ERROR" "Netlify Functions: Manifest not found"
+                    overall_status="error"
+                fi
+                ;;
+            "npm_scripts")
+                if [ -f "$WORKSPACE_DIR/package.json" ]; then
+                    local script_count=$(jq '.scripts | keys | length' "$WORKSPACE_DIR/package.json" 2>/dev/null || echo "0")
+                    if [ "$script_count" -gt 0 ]; then
+                        log "INFO" "NPM Scripts: Healthy ($script_count scripts available)"
+                    else
+                        log "WARN" "NPM Scripts: Warning (no scripts found)"
+                        overall_status="warning"
+                    fi
+                else
+                    log "ERROR" "NPM Scripts: package.json not found"
+                    overall_status="error"
+                fi
+                ;;
+            "automation_systems")
+                local system_count=0
+                local total_systems=5
+                for system in "ultimate-redundancy-master.cjs" "comprehensive-redundancy-orchestrator.cjs" "master-automation-coordinator.js" "continuous-automation-improvement-system.js" "automation-guardian-10min.cjs"; do
+                    if [ -f "$WORKSPACE_DIR/automation/$system" ]; then
+                        ((system_count++))
+                    fi
+                done
+                if [ "$system_count" -eq "$total_systems" ]; then
+                    log "INFO" "Automation Systems: Healthy ($system_count/$total_systems systems available)"
+                else
+                    log "WARN" "Automation Systems: Warning ($system_count/$total_systems systems available)"
+                    overall_status="warning"
+                fi
+                ;;
+            "monitoring")
+                if [ -f "$PID_FILE" ]; then
+                    local pid=$(cat "$PID_FILE")
+                    if ps -p "$pid" > /dev/null 2>&1; then
+                        log "INFO" "Monitoring: Healthy (PID: $pid)"
+                    else
+                        log "WARN" "Monitoring: Warning (PID file exists but process not running)"
+                        overall_status="warning"
+                    fi
+                else
+                    log "WARN" "Monitoring: Warning (no PID file found)"
+                    overall_status="warning"
+                fi
+                ;;
+        esac
+    done
+    
+    log "INFO" "Overall system status: $overall_status"
+    update_status "overall" "$overall_status" "Comprehensive check completed"
+    
+    return 0
+}
+
+# Main function
+main() {
+    local command="${1:-start}"
+    
+    case "$command" in
+        start)
+            start_all
+            ;;
+        stop)
+            stop_all
+            ;;
+        restart)
+            restart_all
+            ;;
+        status)
+            show_status
+            ;;
+        health)
+            show_health
+            ;;
+        report)
+            generate_report
+            ;;
+        logs)
+            show_logs "$2"
+            ;;
+        check)
+            run_comprehensive_check
+            ;;
+        monitor)
+            cd "$WORKSPACE_DIR" && node automation/comprehensive-redundancy-orchestrator.cjs monitor
+            ;;
+        help|--help|-h)
+            echo "Comprehensive Redundancy System v3.0 - Usage:"
+            echo "  $0 [command]"
+            echo ""
+            echo "Commands:"
+            echo "  start     - Start all redundancy systems"
+            echo "  stop      - Stop all redundancy systems"
+            echo "  restart   - Restart all redundancy systems"
+            echo "  status    - Show system status"
+            echo "  health    - Run health check"
+            echo "  report    - Generate redundancy report"
+            echo "  logs [N]  - Show last N log lines (default: 50)"
+            echo "  check     - Run comprehensive system check"
+            echo "  monitor   - Start continuous monitoring"
+            echo "  help      - Show this help message"
+            ;;
+        *)
+            log "ERROR" "Unknown command: $command"
+            echo "Use '$0 help' for usage information"
+            exit 1
+            ;;
+    esac
+}
+
+# Trap signals
+trap 'log "INFO" "Received signal, cleaning up..."; stop_all; exit 0' SIGINT SIGTERM
+
+# Run main function
+main "$@"
+=======
+# Function to start the redundancy system
+start() {
+    print_status "Starting Comprehensive Redundancy V3..."
+    
+    if is_running; then
+        print_warning "Comprehensive Redundancy V3 is already running (PID: $(cat "$PID_FILE"))"
+        return 1
+    fi
+    
+    # Check if Node.js is available
+    if ! command -v node > /dev/null 2>&1; then
+        print_error "Node.js is not installed or not in PATH"
+        return 1
+    fi
+    
+    # Check if PM2 is available
+    if ! command -v pm2 > /dev/null 2>&1; then
+        print_warning "PM2 is not installed. Some redundancy features may not work properly."
+=======
+# Check prerequisites
+check_prerequisites() {
+    log "INFO" "Checking prerequisites..."
+    
+    # Check if Node.js is installed
+    if ! command -v node &> /dev/null; then
+        error_exit "Node.js is not installed. Please install Node.js first."
+    fi
+    
+    # Check Node.js version
+    local node_version=$(node --version | cut -d'v' -f2 | cut -d'.' -f1)
+    if [ "$node_version" -lt 18 ]; then
+        error_exit "Node.js version 18 or higher is required. Current version: $(node --version)"
+    fi
+    
+    # Check if npm is installed
+    if ! command -v npm &> /dev/null; then
+        error_exit "npm is not installed. Please install npm first."
+    fi
+    
+    # Check if PM2 is installed
+    if ! command -v pm2 &> /dev/null; then
+        log "WARN" "PM2 is not installed. Installing PM2..."
+        npm install -g pm2 || error_exit "Failed to install PM2"
+    fi
+    
+    # Check if redundancy script exists
+    if [ ! -f "$REDUNDANCY_SCRIPT" ]; then
+        error_exit "Redundancy script not found: $REDUNDANCY_SCRIPT"
+    fi
+    
+    # Check if node-cron is installed
+    if ! node -e "require('node-cron')" 2>/dev/null; then
+        log "WARN" "node-cron not found, installing..."
+        npm install node-cron || log "WARN" "Failed to install node-cron"
+    fi
+    
+    log "SUCCESS" "All prerequisites satisfied"
+}
+
+# Start the redundancy system
+start_redundancy() {
+    log "INFO" "Starting Comprehensive Redundancy System v3..."
+    
+    # Check if already running
+    if check_running; then
+        log "WARN" "System is already running"
+        return 0
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-89ab
+    fi
+    
+    # Start the redundancy system
+    cd "$WORKSPACE_DIR"
+<<<<<<< HEAD
+    nohup node automation/comprehensive-redundancy-v3.cjs start > "$LOG_FILE" 2>&1 &
+=======
+    nohup node "$REDUNDANCY_SCRIPT" start > "$LOG_FILE" 2>&1 &
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-89ab
+    local pid=$!
+    
+    # Save PID
+    echo "$pid" > "$PID_FILE"
+    
+<<<<<<< HEAD
+    # Wait a moment to check if it started successfully
+    sleep 2
+    if ps -p "$pid" > /dev/null 2>&1; then
+        print_success "Comprehensive Redundancy V3 started successfully (PID: $pid)"
+        print_status "Logs are being written to: $LOG_FILE"
+        return 0
+    else
+        print_error "Failed to start Comprehensive Redundancy V3"
+=======
+    # Wait a moment and check if it started successfully
+    sleep 3
+    if ps -p "$pid" > /dev/null 2>&1; then
+        log "SUCCESS" "Comprehensive Redundancy System v3 started successfully (PID: $pid)"
+        log "INFO" "Logs are being written to: $LOG_FILE"
+        return 0
+    else
+        log "ERROR" "Failed to start redundancy system"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-89ab
+        rm -f "$PID_FILE"
+        return 1
+    fi
+}
+
+<<<<<<< HEAD
+# Function to stop the redundancy system
+stop() {
+    print_status "Stopping Comprehensive Redundancy V3..."
+=======
+# Stop the redundancy system
+stop_redundancy() {
+    log "INFO" "Stopping Comprehensive Redundancy System v3..."
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-89ab
+    
+    if [ -f "$PID_FILE" ]; then
+        local pid=$(cat "$PID_FILE")
+        if ps -p "$pid" > /dev/null 2>&1; then
+<<<<<<< HEAD
+            print_status "Sending SIGTERM to process $pid..."
+            kill "$pid"
+=======
+            # Try graceful shutdown first
+            kill "$pid" 2>/dev/null || true
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-89ab
+            
+            # Wait for graceful shutdown
+            local count=0
+            while ps -p "$pid" > /dev/null 2>&1 && [ $count -lt 10 ]; do
+                sleep 1
+                count=$((count + 1))
+            done
+            
+            # Force kill if still running
+            if ps -p "$pid" > /dev/null 2>&1; then
+<<<<<<< HEAD
+                print_warning "Process did not stop gracefully, force killing..."
+                kill -9 "$pid"
+            fi
+            
+            rm -f "$PID_FILE"
+            print_success "Comprehensive Redundancy V3 stopped"
+            return 0
+        else
+            print_warning "Process not running, removing stale PID file"
+            rm -f "$PID_FILE"
+            return 0
+        fi
+    else
+        print_warning "No PID file found, process may not be running"
+        return 0
+    fi
+}
+
+# Function to restart the redundancy system
+restart() {
+    print_status "Restarting Comprehensive Redundancy V3..."
+    stop
+    sleep 2
+    start
+}
+
+# Function to check status
+status() {
+    print_status "Comprehensive Redundancy V3 Status:"
+    echo "----------------------------------------"
+    
+    if is_running; then
+        local pid=$(cat "$PID_FILE")
+        print_success "Status: RUNNING (PID: $pid)"
+        echo "Uptime: $(ps -o etime= -p "$pid" 2>/dev/null || echo "Unknown")"
+        echo "Log file: $LOG_FILE"
+        echo "PID file: $PID_FILE"
+        
+        # Check system resources
+        if command -v pm2 > /dev/null 2>&1; then
+            echo ""
+            echo "PM2 Status:"
+            pm2 status --no-daemon 2>/dev/null || echo "PM2 not accessible"
+        fi
+        
+        # Check GitHub Actions workflows
+        if [ -d "$WORKSPACE_DIR/.github/workflows" ]; then
+            echo ""
+            echo "GitHub Actions Workflows:"
+            ls -la "$WORKSPACE_DIR/.github/workflows/"*.yml 2>/dev/null | wc -l | xargs echo "Total workflows:"
+        fi
+        
+        # Check Netlify Functions
+        if [ -f "$WORKSPACE_DIR/netlify/functions/functions-manifest.json" ]; then
+            echo ""
+            echo "Netlify Functions:"
+            local func_count=$(jq '.functions | length' "$WORKSPACE_DIR/netlify/functions/functions-manifest.json" 2>/dev/null || echo "0")
+            echo "Total functions: $func_count"
+        fi
+        
+    else
+        print_error "Status: NOT RUNNING"
+        echo "PID file: $PID_FILE (not found or stale)"
+        echo "Log file: $LOG_FILE"
+    fi
+}
+
+# Function to check health
+health() {
+    print_status "Checking Comprehensive Redundancy V3 health..."
+    
+    if ! is_running; then
+        print_error "System is not running"
+        return 1
+    fi
+    
+    cd "$WORKSPACE_DIR"
+    
+    # Run health check
+    if node automation/comprehensive-redundancy-v3.cjs health > /dev/null 2>&1; then
+        print_success "Health check completed successfully"
+        
+        # Display health report if available
+        local health_report="$LOG_DIR/comprehensive-redundancy-v3-report.json"
+        if [ -f "$health_report" ]; then
+            echo ""
+            echo "Latest Health Report:"
+            echo "---------------------"
+            jq '.' "$health_report" 2>/dev/null || cat "$health_report"
+        fi
+    else
+        print_error "Health check failed"
+=======
+                log "WARN" "Force killing process (PID: $pid)"
+                kill -9 "$pid" 2>/dev/null || true
+            fi
+            
+            log "SUCCESS" "Redundancy system stopped"
+        else
+            log "WARN" "Process not running (PID: $pid)"
+        fi
+        
+        rm -f "$PID_FILE"
+    else
+        log "WARN" "No PID file found"
+    fi
+}
+
+# Restart the redundancy system
+restart_redundancy() {
+    log "INFO" "Restarting Comprehensive Redundancy System v3..."
+    stop_redundancy
+    sleep 2
+    start_redundancy
+}
+
+# Check status
+check_status() {
+    if [ -f "$PID_FILE" ]; then
+        local pid=$(cat "$PID_FILE")
+        if ps -p "$pid" > /dev/null 2>&1; then
+            log "INFO" "Comprehensive Redundancy System v3 is running (PID: $pid)"
+            
+            # Get detailed status from the script
+            if [ -f "$REDUNDANCY_SCRIPT" ]; then
+                cd "$WORKSPACE_DIR"
+                node "$REDUNDANCY_SCRIPT" status 2>/dev/null || log "WARN" "Could not get detailed status"
+            fi
+            
+            return 0
+        else
+            log "WARN" "PID file exists but process is not running"
+            rm -f "$PID_FILE"
+            return 1
+        fi
+    else
+        log "INFO" "Comprehensive Redundancy System v3 is not running"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-89ab
+        return 1
+    fi
+}
+
+<<<<<<< HEAD
+# Function to show logs
+logs() {
+    if [ -f "$LOG_FILE" ]; then
+        print_status "Showing Comprehensive Redundancy V3 logs (last 50 lines):"
+        echo "----------------------------------------"
+        tail -n 50 "$LOG_FILE"
+    else
+        print_warning "No log file found: $LOG_FILE"
+    fi
+}
+
+# Function to monitor in real-time
+monitor() {
+    print_status "Starting real-time monitoring (Ctrl+C to stop)..."
+    
+    if [ -f "$LOG_FILE" ]; then
+        tail -f "$LOG_FILE"
+    else
+        print_warning "No log file found: $LOG_FILE"
+        print_status "Waiting for logs to be created..."
+        while [ ! -f "$LOG_FILE" ]; do
+            sleep 1
+        done
+        tail -f "$LOG_FILE"
+    fi
+}
+
+# Function to run a quick check
+check() {
+    print_status "Running quick health check..."
+    
+    cd "$WORKSPACE_DIR"
+    
+    if node automation/comprehensive-redundancy-v3.cjs check > /dev/null 2>&1; then
+        print_success "Quick check completed successfully"
+        
+        # Display status
+        echo ""
+        echo "Current Status:"
+        echo "---------------"
+        node automation/comprehensive-redundancy-v3.cjs status | jq '.' 2>/dev/null || node automation/comprehensive-redundancy-v3.cjs status
+    else
+        print_error "Quick check failed"
+        return 1
+    fi
+}
+
+# Function to show help
+show_help() {
+    echo "Comprehensive Redundancy V3 Management Script"
+    echo "============================================"
+    echo ""
+    echo "Usage: $0 [COMMAND]"
+    echo ""
+    echo "Commands:"
+    echo "  start     Start the redundancy system"
+    echo "  stop      Stop the redundancy system"
+    echo "  restart   Restart the redundancy system"
+    echo "  status    Show current status"
+    echo "  health    Run health check"
+    echo "  logs      Show recent logs"
+    echo "  monitor   Monitor logs in real-time"
+    echo "  check     Run quick health check"
+    echo "  help      Show this help message"
+=======
+# Show logs
+show_logs() {
+    if [ -f "$LOG_FILE" ]; then
+        log "INFO" "Showing recent logs from: $LOG_FILE"
+        echo "----------------------------------------"
+        tail -n 50 "$LOG_FILE" 2>/dev/null || echo "No logs available"
+        echo "----------------------------------------"
+    else
+        log "WARN" "No log file found"
+    fi
+}
+
+# Perform health check
+health_check() {
+    log "INFO" "Performing health check..."
+    
+    if [ -f "$REDUNDANCY_SCRIPT" ]; then
+        cd "$WORKSPACE_DIR"
+        node "$REDUNDANCY_SCRIPT" health 2>/dev/null || log "WARN" "Health check failed"
+    else
+        log "ERROR" "Redundancy script not found"
+    fi
+}
+
+# Generate report
+generate_report() {
+    log "INFO" "Generating report..."
+    
+    if [ -f "$REDUNDANCY_SCRIPT" ]; then
+        cd "$WORKSPACE_DIR"
+        node "$REDUNDANCY_SCRIPT" report 2>/dev/null || log "WARN" "Report generation failed"
+    else
+        log "ERROR" "Redundancy script not found"
+    fi
+}
+
+# Monitor mode
+monitor_mode() {
+    log "INFO" "Starting monitor mode (press Ctrl+C to stop)..."
+    
+    # Start the redundancy system if not running
+    if ! check_running; then
+        start_redundancy
+    fi
+    
+    # Monitor loop
+    while true; do
+        clear
+        echo -e "${CYAN}========================================${NC}"
+        echo -e "${CYAN}  Comprehensive Redundancy System v3   ${NC}"
+        echo -e "${CYAN}           Monitor Mode                ${NC}"
+        echo -e "${CYAN}========================================${NC}"
+        echo ""
+        
+        # Show status
+        if check_status > /dev/null 2>&1; then
+            echo -e "${GREEN}✓ System Status: RUNNING${NC}"
+        else
+            echo -e "${RED}✗ System Status: STOPPED${NC}"
+        fi
+        
+        echo ""
+        echo -e "${YELLOW}Recent Logs:${NC}"
+        echo "----------------------------------------"
+        tail -n 10 "$LOG_FILE" 2>/dev/null || echo "No logs available"
+        echo "----------------------------------------"
+        echo ""
+        echo -e "${BLUE}Press Ctrl+C to exit monitor mode${NC}"
+        
+        sleep 10
+    done
+}
+
+# Show help
+show_help() {
+    echo -e "${CYAN}Comprehensive Redundancy System v3${NC}"
+    echo ""
+    echo "Usage: $0 [command]"
+    echo ""
+    echo "Commands:"
+    echo -e "  ${GREEN}start${NC}     - Start the redundancy system"
+    echo -e "  ${RED}stop${NC}      - Stop the redundancy system"
+    echo -e "  ${YELLOW}restart${NC}   - Restart the redundancy system"
+    echo -e "  ${BLUE}status${NC}    - Check system status"
+    echo -e "  ${PURPLE}logs${NC}     - Show recent logs"
+    echo -e "  ${CYAN}health${NC}    - Perform health check"
+    echo -e "  ${GREEN}report${NC}    - Generate status report"
+    echo -e "  ${YELLOW}monitor${NC}   - Start monitor mode"
+    echo -e "  ${BLUE}help${NC}      - Show this help message"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-89ab
+    echo ""
+    echo "Examples:"
+    echo "  $0 start"
+    echo "  $0 status"
+<<<<<<< HEAD
+    echo "  $0 health"
+    echo ""
+}
+
+# Main script logic
+case "${1:-help}" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    restart)
+        restart
+        ;;
+    status)
+        status
+        ;;
+    health)
+        health
+        ;;
+    logs)
+        logs
+        ;;
+    monitor)
+        monitor
+        ;;
+    check)
+        check
+        ;;
+    help|--help|-h)
+        show_help
+        ;;
+    *)
+        print_error "Unknown command: $1"
+        echo ""
+        show_help
+        exit 1
+        ;;
+esac
+=======
+    echo "  $0 monitor"
+    echo ""
+    echo "This system provides redundancy for:"
+    echo "  • All PM2 automations"
+    echo "  • All GitHub Actions automations"
+    echo "  • All Netlify functions automations"
+}
+
+# Main script logic
+main() {
+    local command="${1:-help}"
+    
+    case "$command" in
+        start)
+            check_prerequisites
+            start_redundancy
+            ;;
+        stop)
+            stop_redundancy
+            ;;
+        restart)
+            check_prerequisites
+            restart_redundancy
+            ;;
+        status)
+            check_status
+            ;;
+        logs)
+            show_logs
+            ;;
+        health)
+            health_check
+            ;;
+        report)
+            generate_report
+            ;;
+        monitor)
+            monitor_mode
+            ;;
+        help|--help|-h)
+            show_help
+            ;;
+        *)
+            echo -e "${RED}Unknown command: $command${NC}"
+            echo ""
+            show_help
+            exit 1
+            ;;
+    esac
+}
+
+# Run main function with all arguments
+main "$@"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-89ab
