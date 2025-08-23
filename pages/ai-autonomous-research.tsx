@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { 
   Search, 
   Brain, 
-  Flask, 
+  TestTube, 
   BookOpen, 
   TrendingUp, 
   Users,
@@ -24,7 +24,7 @@ const AIAutonomousResearch: React.FC = () => {
       description: "Advanced research into artificial consciousness and self-aware systems"
     },
     {
-      icon: <Flask className="w-6 h-6" />,
+      icon: <TestTube className="w-6 h-6" />,
       title: "Quantum AI",
       description: "Exploration of quantum computing applications in artificial intelligence"
     },

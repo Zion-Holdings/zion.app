@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
-  Robot, 
+  Bot, 
   Cpu, 
   Eye, 
   Zap, 
@@ -20,7 +20,7 @@ import {
 const AIAutonomousRoboticsPlatform: React.FC = () => {
   const platformComponents = [
     {
-      icon: <Robot className="w-6 h-6" />,
+      icon: <Bot className="w-6 h-6" />,
       title: "Autonomous Robots",
       description: "Self-navigating robots with advanced AI decision-making capabilities"
     },
