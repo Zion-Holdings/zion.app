@@ -22,6 +22,10 @@ import { realMarketServices } from '../data/real-market-services';
 import { serviceExpansions2025 } from '../data/service-expansions-2025';
 import { verifiedRealServices2025Batch2 } from '../data/verified-real-services-2025-batch2';
 import { realOperationalServices } from '../data/real-operational-services';
+<<<<<<< HEAD
+import { verified2025Additions } from '../data/verified-2025-additions';
+import { additional2025RealServices } from '../data/additional-2025-real-services';
+=======
 import { newOperationalServices2025 } from '../data/new-operational-services-2025';
 import { innovative2025Services } from '../data/innovative-2025-services';
 import { revolutionary2025Services } from '../data/revolutionary-2025-services';
@@ -62,6 +66,7 @@ import { cuttingEdge2029Services } from '../data/2029-cutting-edge-innovations';
 import { spaceColonization2029Services } from '../data/2029-space-colonization-services';
 import { aiQuantum2029Services } from '../data/2029-ai-quantum-innovations';
 import { businessIT2029Services } from '../data/2029-business-it-innovations';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-574a
 
 export default function HomePage() {
   const contactInfo = {
@@ -96,6 +101,11 @@ export default function HomePage() {
     ...realMarketServices,
     ...serviceExpansions2025,
     ...verifiedRealServices2025Batch2,
+<<<<<<< HEAD
+    ...realOperationalServices,
+    ...verified2025Additions,
+    ...additional2025RealServices
+=======
     ...innovative2025Services,
     ...emergingTechServices2025,
     ...revolutionary2025Services,
@@ -136,6 +146,7 @@ export default function HomePage() {
     ...revolutionary2027MicroSaasServices,
     ...cuttingEdge2028MicroSaas,
     ...practicalBusinessSolutions2028
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-574a
   ];
 
 const featuredServices = [

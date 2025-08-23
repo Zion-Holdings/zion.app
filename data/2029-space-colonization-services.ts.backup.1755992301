@@ -64,6 +64,16 @@ export const spaceColonization2029Services: SpaceColonization2029Service[] = [
     ],
     popular: true,
     icon: '🚀',
+<<<<<<< HEAD
+    color: 'from-red-600 to-orange-600',
+    textColor: 'text-red-400',
+    link: 'https://ziontechgroup.com/mars-colonization-automation',
+    marketPosition: 'First Mars colonization automation platform. 7-year technology advantage.',
+    targetAudience: ['Space agencies', 'Private space companies', 'Government agencies', 'Research institutions', 'Investment firms'],
+    trialDays: 120,
+    setupTime: '16 weeks',
+    category: 'Space Colonization',
+=======
     color: 'from-purple-600 to-indigo-600',
     textColor: 'text-purple-400',
     link: 'https://ziontechgroup.com/quantum-space-propulsion-system',
@@ -72,6 +82,7 @@ export const spaceColonization2029Services: SpaceColonization2029Service[] = [
     trialDays: 1,
     setupTime: '24-48 weeks',
     category: 'Advanced Space Transportation',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-574a
     realService: true,
     technology: ['Quantum Physics', 'Space Propulsion', 'Quantum Computing', 'Space-Time Physics', 'Advanced Materials', 'Quantum Engineering'],
     integrations: ['Spacecraft systems', 'Navigation platforms', 'Communication networks', 'AI systems', 'Quantum computers', 'Space stations'],
@@ -166,6 +177,17 @@ export const spaceColonization2029Services: SpaceColonization2029Service[] = [
       'Energy efficiency'
     ],
     popular: true,
+<<<<<<< HEAD
+    icon: '📡',
+    color: 'from-blue-600 to-indigo-600',
+    textColor: 'text-blue-400',
+    link: 'https://ziontechgroup.com/interplanetary-communication',
+    marketPosition: 'First interplanetary communication network. 5-year technology advantage.',
+    targetAudience: ['Space agencies', 'Telecommunications companies', 'Government agencies', 'Research institutions', 'Private space companies'],
+    trialDays: 90,
+    setupTime: '12 weeks',
+    category: 'Space Communication',
+=======
     icon: '🏭',
     color: 'from-green-600 to-emerald-600',
     textColor: 'text-green-400',
@@ -175,6 +197,7 @@ export const spaceColonization2029Services: SpaceColonization2029Service[] = [
     trialDays: 10,
     setupTime: '12-24 weeks',
     category: 'Advanced Space Manufacturing',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-574a
     realService: true,
     technology: ['AI Automation', 'Robotics', '3D Printing', 'Microgravity Manufacturing', 'Advanced Materials', 'Space Technology'],
     integrations: ['Space stations', 'Manufacturing equipment', 'AI systems', 'Robotic platforms', 'Quality control systems', 'Supply chain networks'],
@@ -217,6 +240,17 @@ export const spaceColonization2029Services: SpaceColonization2029Service[] = [
       'Resource analytics'
     ],
     popular: true,
+<<<<<<< HEAD
+    icon: '⛏️',
+    color: 'from-yellow-600 to-orange-600',
+    textColor: 'text-yellow-400',
+    link: 'https://ziontechgroup.com/space-mining-automation',
+    marketPosition: 'First space mining automation platform. 6-year technology advantage.',
+    targetAudience: ['Mining companies', 'Space agencies', 'Private space companies', 'Investment firms', 'Resource companies'],
+    trialDays: 90,
+    setupTime: '14 weeks',
+    category: 'Space Mining',
+=======
     icon: '🔬',
     color: 'from-gray-600 to-slate-600',
     textColor: 'text-gray-400',
@@ -226,6 +260,7 @@ export const spaceColonization2029Services: SpaceColonization2029Service[] = [
     trialDays: 5,
     setupTime: '10-20 weeks',
     category: 'Advanced Space Manufacturing',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-574a
     realService: true,
     technology: ['AI Automation', 'Robotics', 'Resource Processing', 'Space Technology', 'Advanced Materials', 'Automation Systems'],
     integrations: ['Mining equipment', 'Processing facilities', 'AI systems', 'Robotic platforms', 'Storage systems', 'Transportation networks'],
@@ -269,6 +304,17 @@ export const spaceColonization2029Services: SpaceColonization2029Service[] = [
       'Life support monitoring'
     ],
     popular: true,
+<<<<<<< HEAD
+    icon: '🏠',
+    color: 'from-green-600 to-teal-600',
+    textColor: 'text-green-400',
+    link: 'https://ziontechgroup.com/space-habitat-design',
+    marketPosition: 'Advanced space habitat design platform. 3-year technology advantage.',
+    targetAudience: ['Space agencies', 'Architecture firms', 'Engineering companies', 'Research institutions', 'Private space companies'],
+    trialDays: 60,
+    setupTime: '8 weeks',
+    category: 'Space Architecture',
+=======
     icon: '🌱',
     color: 'from-emerald-600 to-teal-600',
     textColor: 'text-emerald-400',
@@ -278,6 +324,7 @@ export const spaceColonization2029Services: SpaceColonization2029Service[] = [
     trialDays: 3,
     setupTime: '16-32 weeks',
     category: 'Advanced Space Life Support',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-574a
     realService: true,
     technology: ['Quantum Computing', 'Life Support Systems', 'Environmental Control', 'Waste Management', 'Advanced Materials', 'AI'],
     integrations: ['Space habitats', 'Life support equipment', 'AI systems', 'Monitoring platforms', 'Emergency systems', 'Communication networks'],
@@ -320,6 +367,17 @@ export const spaceColonization2029Services: SpaceColonization2029Service[] = [
       'Food processing'
     ],
     popular: true,
+<<<<<<< HEAD
+    icon: '⚡',
+    color: 'from-yellow-500 to-orange-500',
+    textColor: 'text-yellow-300',
+    link: 'https://ziontechgroup.com/space-energy-harvesting',
+    marketPosition: 'First space energy harvesting platform. 4-year technology advantage.',
+    targetAudience: ['Energy companies', 'Space agencies', 'Government agencies', 'Research institutions', 'Investment firms'],
+    trialDays: 75,
+    setupTime: '10 weeks',
+    category: 'Space Energy',
+=======
     icon: '🌾',
     color: 'from-yellow-600 to-amber-600',
     textColor: 'text-yellow-400',
@@ -329,6 +387,7 @@ export const spaceColonization2029Services: SpaceColonization2029Service[] = [
     trialDays: 14,
     setupTime: '8-16 weeks',
     category: 'Advanced Space Life Support',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-574a
     realService: true,
     technology: ['AI Automation', 'Hydroponics', 'Agriculture Technology', 'Space Technology', 'Climate Control', 'Robotics'],
     integrations: ['Farming equipment', 'Climate control systems', 'AI platforms', 'Robotic systems', 'Monitoring platforms', 'Processing facilities'],

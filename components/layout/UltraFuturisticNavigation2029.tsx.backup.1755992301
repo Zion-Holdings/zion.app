@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+import React from "react";
+=======
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -423,3 +426,4 @@ const UltraFuturisticNavigation2029: React.FC = () => {
 };
 
 export default UltraFuturisticNavigation2029;
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-574a
