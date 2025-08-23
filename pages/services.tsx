@@ -27,6 +27,12 @@ import { realMicroSaas2025Expansion } from '../data/real-micro-saas-2025-expansi
 import { realITServices2025Expansion } from '../data/real-it-services-2025-expansion';
 import { realAIServices2025Expansion } from '../data/real-ai-services-2025-expansion';
 
+// Import our new comprehensive 2025 service data
+import { advancedAIAutomationPlatforms2025 } from '../data/2025-advanced-ai-automation-platforms';
+import { emergingTechBreakthroughServices2025 } from '../data/2025-emerging-tech-breakthrough-services';
+import { advancedITInfrastructurePlatforms2025 } from '../data/2025-advanced-it-infrastructure-platforms';
+import { advancedBusinessIntelligencePlatforms2025 } from '../data/2025-advanced-business-intelligence-platforms';
+
 // Import our new service data
 import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
 import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas-solutions';
@@ -174,6 +180,12 @@ const allServices = [
   ...realMicroSaas2025Expansion,
   ...realITServices2025Expansion,
   ...realAIServices2025Expansion,
+  
+  // Our new comprehensive 2025 service platforms
+  ...advancedAIAutomationPlatforms2025,
+  ...emergingTechBreakthroughServices2025,
+  ...advancedITInfrastructurePlatforms2025,
+  ...advancedBusinessIntelligencePlatforms2025,
   
   ...enterpriseITSolutions,
   ...innovativeMicroSaasSolutions,
