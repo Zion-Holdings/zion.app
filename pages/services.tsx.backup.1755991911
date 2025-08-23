@@ -3,8 +3,13 @@ import Head from 'next/head';
 import { Check, Star, Zap, Shield, Users, Globe, ArrowRight, ExternalLink, TrendingUp, Clock, Target, Building, Rocket, Award, DollarSign, ChartBar, Lock, Cpu, Database, Cloud, Smartphone, Palette, Search, MessageSquare, FileText, Calendar, CreditCard, BarChart3, Settings, Zap as ZapIcon, Code, BookOpen, Activity, Database as DatabaseIcon, Play, Mail, Phone, MapPin, Filter, Grid, List, ChevronDown, ChevronUp, Sparkles, FlaskConical, Dna, Car, Leaf, Factory, Truck, Microscope, GraduationCap, ShieldCheck, Brain, Atom, Globe2, Bot, ChevronRight, LinkIcon, Building2 } from 'lucide-react';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
+<<<<<<< HEAD
+import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
+import { enhancedMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/enhanced-micro-saas-services';
+=======
 import QuantumNeuralBackground from '../components/ui/QuantumNeuralBackground';
 import { expandedMicroSaasServices, serviceCategories, getServicesByCategory, getPopularServices, getServicesByPriceRange } from '../data/expanded-micro-saas-services';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-acae
 
 export default function ServicesPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -257,7 +262,11 @@ export default function ServicesPage() {
   ];
 
   return (
+<<<<<<< HEAD
+    <UltraFuturisticBackground variant="neural" intensity="high">
+=======
     <QuantumNeuralBackground variant="holographic" intensity="high">
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-acae
       <div className="min-h-screen">
         <Head>
           <title>Complete Services Portfolio | Zion Tech Group - AI, Cloud, Security & More</title>
@@ -1234,7 +1243,11 @@ export default function ServicesPage() {
           </div>
         </section>
       </div>
+<<<<<<< HEAD
+    </UltraFuturisticBackground>
+=======
     </QuantumNeuralBackground>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-acae
   );
 }
 =======
