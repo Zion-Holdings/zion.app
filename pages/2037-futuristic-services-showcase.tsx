@@ -295,14 +295,11 @@ export default function FuturisticServicesShowcase2037() {
                     <div className="space-y-3 mb-4">
                       <div className="flex items-center justify-between">
                         <span className="text-white/50 text-sm">Starting Price:</span>
-                        <span className="text-cyan-400 font-semibold">{service.price}</span>
+                        <span className="text-cyan-400 font-semibold">{service.price || service.marketPrice}</span>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-white/50 text-sm">Rating:</span>
-                        <div className="flex items-center space-x-1">
-                          <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                          <span className="text-white text-sm">{service.rating}</span>
-                        </div>
+                        <span className="text-white/50 text-sm">Category:</span>
+                        <span className="text-cyan-400 font-semibold">{service.category}</span>
                       </div>
                     </div>
                     
@@ -325,7 +322,7 @@ export default function FuturisticServicesShowcase2037() {
                         <span>Learn More</span>
                         <ArrowRight className="w-4 h-4" />
                       </a>
-                      <span className="text-xs text-white/50">{service.launchDate}</span>
+                      <span className="text-xs text-white/50">{service.period}</span>
                     </div>
                   </div>
                 </motion.div>

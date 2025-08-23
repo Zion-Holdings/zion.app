@@ -186,7 +186,7 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
         title="Comprehensive 2025 Services Showcase - Zion Tech Group"
         description="Explore our comprehensive portfolio of innovative AI automation, IT infrastructure, micro SAAS solutions, and cutting-edge AI services. Transform your business with Zion Tech Group."
         keywords={["AI automation", "IT infrastructure", "micro SAAS", "AI services", "business solutions", "technology services"]}
-        image="https://ziontechgroup.com/og-image-2025-services.jpg"
+        ogImage="https://ziontechgroup.com/og-image-2025-services.jpg"
       />
 
       {/* Hero Section */}

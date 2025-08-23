@@ -1,629 +1,307 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
-import { motion } from 'framer-motion';
-import { 
-  Sparkles, Target, TrendingUp, BarChart3, 
-  ArrowRight, CheckCircle, Users, Globe, Brain, Atom,
-  Shield, Rocket, Star, Megaphone, Eye, MousePointer, Mail
-} from 'lucide-react';
-import Link from 'next/link';
+import Head from 'next/head';
+import UltraAdvancedFuturisticBackground from '../components/ui/UltraAdvancedFuturisticBackground';
+import Button from '../components/ui/Button';
+import { ArrowRight, CheckCircle, ExternalLink, Phone, Mail, MapPin } from 'lucide-react';
 
-const ServicesAdvertising: React.FC = () => {
-  const advertisingServices = [
-    {
-      title: 'AI-Powered Ad Targeting',
-      description: 'Advanced machine learning algorithms for precise audience segmentation and targeting',
-      features: [
-        'Behavioral analysis',
-        'Predictive modeling',
-        'Real-time optimization',
-        'Cross-platform targeting'
-      ],
-      icon: <Target className="w-8 h-8" />,
-      color: 'from-blue-500 to-cyan-600'
-    },
-    {
-      title: 'Quantum Marketing Analytics',
-      description: 'Next-generation analytics using quantum computing for deeper insights',
-      features: [
-        'Quantum pattern recognition',
-        'Multi-dimensional analysis',
-        'Predictive market modeling',
-        'Real-time performance tracking'
-      ],
-      icon: <BarChart3 className="w-8 h-8" />,
-      color: 'from-purple-500 to-pink-600'
-    },
-    {
-      title: 'Consciousness-Based Marketing',
-      description: 'Revolutionary approach using AI consciousness for emotional connection',
-      features: [
-        'Emotional intelligence',
-        'Cultural sensitivity',
-        'Personalized messaging',
-        'Brand authenticity'
-      ],
-      icon: <Brain className="w-8 h-8" />,
-      color: 'from-green-500 to-emerald-600'
-    }
+export default function ServicesAdvertisingPage() {
+  const contact = {
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709',
+    website: 'https://ziontechgroup.com'
+  };
+
+  const benefits = [
+    '1000% ROI target with measurable KPIs',
+    'Transparent pricing with market references',
+    'Fast onboarding with templates and playbooks',
+    'Enterprise-grade security and compliance',
+    '24/7 support with SLAs',
+    'Proven architectures and reference implementations'
   ];
 
-  const marketingChannels = [
-    {
-      channel: 'Digital Advertising',
-      platforms: ['Google Ads', 'Facebook/Instagram', 'LinkedIn', 'TikTok'],
-      reach: 'Global',
-      targeting: 'Advanced AI',
-      icon: <Globe className="w-6 h-6" />
-    },
-    {
-      channel: 'Content Marketing',
-      platforms: ['SEO', 'Blog', 'Video', 'Social Media'],
-      reach: 'Organic',
-      targeting: 'Intent-based',
-      icon: <Megaphone className="w-6 h-6" />
-    },
-    {
-      channel: 'Email Marketing',
-      platforms: ['Automation', 'Segmentation', 'A/B Testing', 'Analytics'],
-      reach: 'Direct',
-      targeting: 'Behavioral',
-      icon: <Mail className="w-6 h-6" />
-    },
-    {
-      channel: 'Influencer Marketing',
-      platforms: ['Micro-influencers', 'Celebrities', 'Industry experts', 'Brand ambassadors'],
-      reach: 'Niche',
-      targeting: 'Audience match',
-      icon: <Users className="w-6 h-6" />
-    }
+  const anchors = [
+    { title: 'AI & Data', href: '/services#ai' },
+    { title: 'Cloud & FinOps', href: '/services#cloud' },
+    { title: 'Observability', href: '/services#observability' },
+    { title: 'Developer Tools', href: '/services#developer-tools' },
+    { title: 'Quality & Monitoring', href: '/services#quality' }
   ];
 
-  const advertisingTechnologies = [
+  const pricingRefs = [
     {
-      technology: 'AI-Powered Optimization',
-      description: 'Machine learning algorithms that continuously optimize ad performance',
-      benefits: [
-        'Higher conversion rates',
-        'Lower cost per acquisition',
-        'Real-time adjustments',
-        'Predictive analytics'
+      title: 'AI Platforms',
+      links: [
+        { name: 'OpenAI', href: 'https://openai.com/api/pricing' },
+        { name: 'Anthropic', href: 'https://www.anthropic.com/pricing' },
+        { name: 'Langfuse', href: 'https://langfuse.com/pricing' },
+        { name: 'Groq', href: 'https://wow.groq.com/pricing' },
+        { name: 'OpenRouter', href: 'https://openrouter.ai/models' },
+        { name: 'Weights & Biases', href: 'https://wandb.ai/site/pricing' },
+        { name: 'Humanloop', href: 'https://humanloop.com/pricing' }
       ],
-      icon: <Brain className="w-6 h-6" />
+      note: 'SMB budgets: $100–$2,000/mo.'
     },
     {
-      technology: 'Quantum Computing',
-      description: 'Advanced computing power for complex marketing calculations',
-      benefits: [
-        'Faster data processing',
-        'Complex pattern recognition',
-        'Multi-variable optimization',
-        'Future trend prediction'
+      title: 'Security & Compliance',
+      links: [
+        { name: 'Wiz', href: 'https://www.wiz.io/pricing' },
+        { name: 'Prisma Cloud', href: 'https://www.paloaltonetworks.com/prisma/cloud/pricing' },
+        { name: 'HashiCorp Vault', href: 'https://www.hashicorp.com/products/vault/pricing' },
+        { name: 'Cloudflare Zero Trust', href: 'https://www.cloudflare.com/products/zero-trust/pricing/' },
+        { name: 'Snyk', href: 'https://snyk.io/plans/' }
       ],
-      icon: <Atom className="w-6 h-6" />
+      note: 'SMB budgets: $200–$5,000/mo.'
     },
     {
-      technology: 'Blockchain Advertising',
-      description: 'Transparent and verifiable advertising transactions',
-      benefits: [
-        'Ad fraud prevention',
-        'Transparent reporting',
-        'Smart contracts',
-        'Decentralized verification'
+      title: 'Vector & Search',
+      links: [
+        { name: 'Pinecone', href: 'https://www.pinecone.io/pricing/' },
+        { name: 'Weaviate', href: 'https://weaviate.io/pricing' },
+        { name: 'Qdrant', href: 'https://qdrant.tech/pricing/' },
+        { name: 'Elasticsearch Serverless', href: 'https://www.elastic.co/pricing/' }
       ],
-      icon: <Shield className="w-6 h-6" />
+      note: 'SMB budgets: $50–$1,000/mo.'
     },
     {
-      technology: 'AR/VR Marketing',
-      description: 'Immersive advertising experiences for deeper engagement',
-      benefits: [
-        'Higher engagement rates',
-        'Memorable experiences',
-        'Interactive storytelling',
-        'Brand differentiation'
+      title: 'Cloud & Edge',
+      links: [
+        { name: 'AWS Calculator', href: 'https://calculator.aws' },
+        { name: 'Azure', href: 'https://azure.microsoft.com/pricing' },
+        { name: 'Cloudflare', href: 'https://www.cloudflare.com/plans/' },
+        { name: 'Netlify', href: 'https://www.netlify.com/pricing/' },
+        { name: 'Vercel', href: 'https://vercel.com/pricing' }
       ],
-      icon: <Eye className="w-6 h-6" />
-    }
-  ];
-
-  const successMetrics = [
-    {
-      metric: 'ROI Improvement',
-      current: '25%',
-      target: '40%',
-      description: 'Return on advertising investment'
+      note: 'SMB budgets: $200–$10,000/mo.'
     },
     {
-      metric: 'Conversion Rate',
-      current: '3.2%',
-      target: '5.0%',
-      description: 'Website visitor to customer conversion'
-    },
-    {
-      metric: 'Cost Per Acquisition',
-      current: '$45',
-      target: '$30',
-      description: 'Cost to acquire new customers'
-    },
-    {
-      metric: 'Brand Awareness',
-      current: '68%',
-      target: '85%',
-      description: 'Target audience brand recognition'
-    }
-  ];
-
-  const caseStudies = [
-    {
-      client: 'Tech Startup',
-      industry: 'SaaS',
-      challenge: 'Low brand awareness in competitive market',
-      solution: 'AI-powered content marketing and influencer partnerships',
-      results: '300% increase in organic traffic, 150% growth in qualified leads'
-    },
-    {
-      client: 'E-commerce Brand',
-      industry: 'Retail',
-      challenge: 'High customer acquisition costs',
-      solution: 'Quantum analytics for audience targeting and retargeting campaigns',
-      results: '40% reduction in CAC, 200% increase in customer lifetime value'
-    },
-    {
-      client: 'B2B Company',
-      industry: 'Manufacturing',
-      challenge: 'Complex sales cycle and long decision-making process',
-      solution: 'Consciousness-based marketing with personalized content strategy',
-      results: '60% faster sales cycle, 80% improvement in lead quality'
-    }
-  ];
-
-  const pricingTiers = [
-    {
-      tier: 'Starter',
-      price: '$2,500',
-      period: '/month',
-      description: 'Perfect for small businesses starting their advertising journey',
-      features: [
-        'Basic AI targeting',
-        '2 marketing channels',
-        'Monthly reporting',
-        'Email support'
+      title: 'Observability & SRE',
+      links: [
+        { name: 'Datadog', href: 'https://www.datadoghq.com/pricing/' },
+        { name: 'New Relic', href: 'https://newrelic.com/pricing' },
+        { name: 'Grafana Cloud', href: 'https://grafana.com/products/cloud/pricing/' },
+        { name: 'PagerDuty', href: 'https://www.pagerduty.com/pricing/' }
       ],
-      bestFor: 'Small businesses, startups'
-    },
-    {
-      tier: 'Professional',
-      price: '$7,500',
-      period: '/month',
-      description: 'Comprehensive advertising solutions for growing companies',
-      features: [
-        'Advanced AI optimization',
-        '5 marketing channels',
-        'Weekly reporting',
-        'Priority support',
-        'A/B testing'
-      ],
-      bestFor: 'Growing companies, mid-market'
-    },
-    {
-      tier: 'Enterprise',
-      price: 'Custom',
-      period: '',
-      description: 'Full-service advertising with dedicated team and custom solutions',
-      features: [
-        'Full AI consciousness suite',
-        'Unlimited channels',
-        'Real-time reporting',
-        'Dedicated manager',
-        'Custom integrations'
-      ],
-      bestFor: 'Large enterprises, Fortune 500'
+      note: 'SMB budgets: $100–$3,000/mo.'
     }
   ];
 
   return (
-    <Layout
-      title="Services Advertising - Zion Tech Group"
-      description="Revolutionary advertising and marketing services powered by AI consciousness and quantum computing. Transform your brand with cutting-edge technology."
-      keywords="advertising services, marketing services, AI advertising, quantum marketing, consciousness-based marketing, Zion Tech Group"
+    <UltraAdvancedFuturisticBackground 
+      intensity="high" 
+      colorScheme="quantum-fusion"
+      particleCount={300}
+      animationSpeed={1.5}
+      enableHolographic={true}
+      enableQuantumEffects={true}
     >
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
-        {/* Hero Section */}
-        <section className="relative overflow-hidden py-20 lg:py-32">
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 via-blue-900/20 to-cyan-900/20" />
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center"
-            >
-              <div className="flex items-center justify-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center mr-4">
-                  <Sparkles className="w-8 h-8 text-white" />
+      <Head>
+        <title>AI, IT and Micro SaaS Services Advertising | Zion Tech Group</title>
+        <meta name="description" content="Explore our AI, IT, and micro SaaS services with features, capabilities, benefits, pricing references, and easy contact options." />
+        <link rel="canonical" href="https://ziontechgroup.com/services-advertising" />
+      </Head>
+
+      <div className="min-h-screen pt-24 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto space-y-12">
+          <header className="text-center">
+            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">
+              Services That Ship Outcomes
+            </h1>
+            <p className="text-gray-300 text-lg">AI platforms, enterprise IT solutions, and real micro SaaS accelerators.</p>
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button href="/contact" className="px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-700 text-white">
+                Talk to Sales <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+              <Button href="/market-pricing" variant="outline" className="px-8 py-4 border border-gray-600 text-gray-200">
+                View Market Pricing <ExternalLink className="w-5 h-5 ml-2" />
+              </Button>
+            </div>
+          </header>
+
+          <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Why Zion Tech Group</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {benefits.map((b) => (
+                <div key={b} className="p-6 rounded-2xl bg-black/40 border border-gray-700/60">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-emerald-400 mt-1" />
+                    <p className="text-gray-200">{b}</p>
+                  </div>
                 </div>
-                <h1 className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                  Services Advertising
-                </h1>
-              </div>
-              <p className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
-                Revolutionary advertising powered by AI consciousness and quantum computing
-              </p>
-              <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-                Transform your brand with cutting-edge marketing technology that understands 
-                your audience at a deeper level than ever before.
-              </p>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Advertising Services */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                Revolutionary Advertising Services
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Leveraging the latest in AI consciousness and quantum computing for unprecedented results
-              </p>
-            </motion.div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {advertisingServices.map((service, index) => (
-                <motion.div
-                  key={service.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 p-8 rounded-3xl border border-gray-700/50 hover:border-purple-500/50 transition-all duration-300"
-                >
-                  <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mx-auto mb-6`}>
-                    {service.icon}
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-4 text-center">{service.title}</h3>
-                  <p className="text-gray-300 text-center mb-6">{service.description}</p>
-                  <ul className="space-y-2 mb-6">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center space-x-2 text-sm">
-                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
-                        <span className="text-gray-300">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Link
-                    href="/contact"
-                    className="block w-full text-center py-3 px-6 bg-gradient-to-r from-purple-500 to-blue-600 text-white font-semibold rounded-2xl hover:from-purple-600 hover:to-blue-700 transition-all duration-300"
-                  >
-                    Get Started
-                    <ArrowRight className="w-4 h-4 ml-2 inline" />
-                  </Link>
-                </motion.div>
               ))}
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* Marketing Channels */}
-        <section className="py-20 bg-black/50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                Multi-Channel Marketing
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Comprehensive coverage across all major advertising platforms
-              </p>
-            </motion.div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {marketingChannels.map((channel, index) => (
-                <motion.div
-                  key={channel.channel}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6 }}
-                  viewport={{ once: true }}
-                  className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 p-6 rounded-2xl border border-gray-700/30 hover:border-blue-500/50 transition-all duration-300"
-                >
-                  <div className="flex items-center mb-4">
-                    <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl flex items-center justify-center mr-3">
-                      {channel.icon}
-                    </div>
-                    <h3 className="text-xl font-bold text-white">{channel.channel}</h3>
-                  </div>
-                  <div className="mb-4">
-                    <div className="text-gray-400 text-sm mb-2">Platforms:</div>
-                    <div className="flex flex-wrap gap-2">
-                      {channel.platforms.map((platform, platformIndex) => (
-                        <span key={platformIndex} className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs">
-                          {platform}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-2 gap-4 text-sm">
-                    <div>
-                      <div className="text-gray-400">Reach</div>
-                      <div className="text-white font-semibold">{channel.reach}</div>
-                    </div>
-                    <div>
-                      <div className="text-gray-400">Targeting</div>
-                      <div className="text-white font-semibold">{channel.targeting}</div>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Advertising Technologies */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                Cutting-Edge Technologies
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                The latest innovations powering our advertising solutions
-              </p>
-            </motion.div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {advertisingTechnologies.map((tech, index) => (
-                <motion.div
-                  key={tech.technology}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 p-6 rounded-2xl border border-gray-700/30 hover:border-green-500/50 transition-all duration-300"
-                >
-                  <div className="flex items-center mb-4">
-                    <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mr-3">
-                      {tech.icon}
-                    </div>
-                    <h3 className="text-xl font-bold text-white">{tech.technology}</h3>
-                  </div>
-                  <p className="text-gray-300 mb-4">{tech.description}</p>
-                  <ul className="space-y-2">
-                    {tech.benefits.map((benefit, benefitIndex) => (
-                      <li key={benefitIndex} className="flex items-start space-x-2 text-sm">
-                        <CheckCircle className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-300">{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Success Metrics */}
-        <section className="py-20 bg-black/50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                Measurable Results
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Track your advertising success with comprehensive metrics and analytics
-              </p>
-            </motion.div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {successMetrics.map((metric, index) => (
-                <motion.div
-                  key={metric.metric}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 p-6 rounded-2xl border border-gray-700/30 hover:border-purple-500/50 transition-all duration-300 text-center"
-                >
-                  <h3 className="text-lg font-bold text-white mb-3">{metric.metric}</h3>
-                  <div className="mb-3">
-                    <div className="text-3xl font-bold text-blue-400">{metric.current}</div>
-                    <div className="text-sm text-gray-400">Current</div>
-                  </div>
-                  <div className="mb-3">
-                    <div className="text-2xl font-bold text-green-400">{metric.target}</div>
-                    <div className="text-sm text-gray-400">Target</div>
-                  </div>
-                  <p className="text-gray-300 text-sm">{metric.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Case Studies */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                Success Stories
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Real results from real clients using our revolutionary advertising services
-              </p>
-            </motion.div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {caseStudies.map((study, index) => (
-                <motion.div
-                  key={study.client}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 p-6 rounded-2xl border border-gray-700/30 hover:border-orange-500/50 transition-all duration-300"
-                >
-                  <div className="mb-4">
-                    <div className="text-sm text-orange-400 font-semibold">{study.industry}</div>
-                    <h3 className="text-xl font-bold text-white">{study.client}</h3>
-                  </div>
-                  <div className="mb-4">
-                    <div className="text-gray-400 text-sm mb-1">Challenge:</div>
-                    <p className="text-gray-300 text-sm">{study.challenge}</p>
-                  </div>
-                  <div className="mb-4">
-                    <div className="text-gray-400 text-sm mb-1">Solution:</div>
-                    <p className="text-gray-300 text-sm">{study.solution}</p>
-                  </div>
-                  <div>
-                    <div className="text-gray-400 text-sm mb-1">Results:</div>
-                    <p className="text-green-400 text-sm font-semibold">{study.results}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Pricing Tiers */}
-        <section className="py-20 bg-black/50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                Transparent Pricing
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Choose the plan that fits your business needs and budget
-              </p>
-            </motion.div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {pricingTiers.map((tier, index) => (
-                <motion.div
-                  key={tier.tier}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className={`bg-gradient-to-br from-gray-800/30 to-gray-900/30 p-8 rounded-3xl border transition-all duration-300 ${
-                    tier.tier === 'Professional' 
-                      ? 'border-purple-500/50 scale-105' 
-                      : 'border-gray-700/30 hover:border-purple-500/50'
-                  }`}
-                >
-                  {tier.tier === 'Professional' && (
-                    <div className="text-center mb-4">
-                      <span className="px-4 py-2 bg-purple-500 text-white text-sm font-semibold rounded-full">
-                        Most Popular
-                      </span>
-                    </div>
-                  )}
-                  <h3 className="text-2xl font-bold text-white mb-2 text-center">{tier.tier}</h3>
-                  <div className="text-center mb-4">
-                    <span className="text-4xl font-bold text-white">{tier.price}</span>
-                    <span className="text-gray-400">{tier.period}</span>
-                  </div>
-                  <p className="text-gray-300 text-center mb-6">{tier.description}</p>
-                  <ul className="space-y-3 mb-8">
-                    {tier.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center space-x-2 text-sm">
-                        <CheckCircle className="w-4 h-4 text-green-400 flex-shrink-0" />
-                        <span className="text-gray-300">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="text-center mb-6">
-                    <div className="text-gray-400 text-sm">Best for:</div>
-                    <div className="text-white font-semibold">{tier.bestFor}</div>
-                  </div>
-                  <Link
-                    href="/contact"
-                    className={`block w-full text-center py-3 px-6 font-semibold rounded-2xl transition-all duration-300 ${
-                      tier.tier === 'Professional'
-                        ? 'bg-gradient-to-r from-purple-500 to-blue-600 text-white hover:from-purple-600 hover:to-blue-700'
-                        : 'bg-gradient-to-r from-gray-600 to-gray-700 text-white hover:from-gray-700 hover:to-gray-800'
-                    }`}
-                  >
-                    Get Started
-                    <ArrowRight className="w-4 h-4 ml-2 inline" />
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
-                Ready to Transform Your Advertising?
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
-                Join the future of advertising with AI consciousness and quantum computing.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-600 text-white font-semibold rounded-2xl hover:from-purple-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
-                >
-                  Start Your Campaign
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Link>
-                <a
-                  href="tel:+13024640950"
-                  className="inline-flex items-center px-8 py-4 border-2 border-purple-500/30 text-purple-400 font-semibold rounded-2xl hover:border-purple-500/50 hover:text-purple-300 transition-all duration-300"
-                >
-                  Speak to an Expert
+          <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Featured Offerings</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { name: 'LLM Gateway & Cost Control', price: '$299/mo', href: '/llm-gateway' },
+                { name: 'API Observability Starter', price: '$149/mo', href: '/api-observability-starter' },
+                { name: 'Cloud Cost Optimizer', price: '$399/mo', href: '/cloud-cost-optimizer' },
+                { name: 'SOC 2 Evidence Automation', price: '$499/mo', href: '/soc2-evidence-automation' },
+                { name: 'Vector Search Starter', price: '$249/mo', href: '/vector-search-starter' },
+                { name: 'TLS Certificate Monitor', price: '$49/mo', href: '/tls-certificate-monitor' },
+                { name: 'AI Multimodal Fusion', price: '$2,499/mo', href: '/ai-multimodal-fusion-platform' },
+                { name: 'Zero Trust Architecture', price: '$4,999/mo', href: '/zero-trust-network-architecture' },
+                { name: 'Edge Orchestration', price: '$3,499/mo', href: '/edge-computing-orchestration' }
+              ].map((o) => (
+                <a key={o.name} href={o.href} className="block p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-cyan-500/40">
+                  <div className="text-sm text-gray-400 mb-1">From</div>
+                  <div className="text-2xl font-bold text-white">{o.price}</div>
+                  <div className="text-gray-200 mt-2">{o.name}</div>
                 </a>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-      </div>
-    </Layout>
-  );
-};
+              ))}
+            </div>
+          </section>
 
-export default ServicesAdvertising;
+          <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">New in Q2 2025</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { name: 'AI Sales Playbook Generator', price: '$99/mo', href: '/services/ai-sales-playbook-generator' },
+                { name: 'Customer Journey Analytics Starter', price: '$79/mo', href: '/services/customer-journey-analytics-starter' },
+                { name: 'Incident Postmortem AI Scribe', price: '$39/mo', href: '/services/incident-postmortem-ai-scribe' },
+                { name: 'SLO Burn Rate Coach', price: '$49/mo', href: '/services/slo-burn-rate-coach' },
+                { name: 'API Changelog & SDK Publisher', price: '$59/mo', href: '/services/api-changelog-sdk-publisher' },
+                { name: 'Browser Performance Optimizer', price: '$69/mo', href: '/services/browser-performance-optimizer' },
+                { name: 'Secret Rotation Orchestrator', price: '$129/mo', href: '/services/secret-rotation-orchestrator' },
+                { name: 'SaaS Billing Anomaly Guard', price: '$119/mo', href: '/services/saas-billing-anomaly-guard' },
+                { name: 'ML Feature Store Starter', price: '$149/mo', href: '/services/ml-feature-store-starter' },
+                { name: 'Edge Cron Orchestrator', price: '$59/mo', href: '/services/edge-cron-orchestrator' }
+              ].map((o) => (
+                <a key={o.name} href={o.href} className="block p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-cyan-500/40">
+                  <div className="text-sm text-gray-400 mb-1">From</div>
+                  <div className="text-2xl font-bold text-white">{o.price}</div>
+                  <div className="text-gray-200 mt-2">{o.name}</div>
+                </a>
+              ))}
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">New in Q4 2025</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { name: 'AI Governance & Control Center', price: '$399/mo', href: '/services/ai-governance-control-center' },
+                { name: 'Cloud Cost Governance Suite', price: '$499/mo', href: '/services/cloud-cost-governance-suite' },
+                { name: 'Customer Feedback Intelligence', price: '$149/mo', href: '/services/customer-feedback-intelligence' },
+                { name: 'API Security Posture Monitor', price: '$299/mo', href: '/services/api-security-posture-monitor' },
+                { name: 'Incident Copilot Automation', price: '$129/mo', href: '/services/incident-copilot-automation' },
+                { name: 'LLM Eval & Regression Lab', price: '$199/mo', href: '/services/llm-eval-and-regression-lab' },
+                { name: 'Managed Feature Flags @ Edge', price: '$79/mo', href: '/services/managed-feature-flags-edge' },
+                { name: 'AI Sales Assistant Outreach', price: '$249/mo', href: '/services/ai-sales-assistant-outreach' },
+                { name: 'SSO & User Lifecycle Hub', price: '$229/mo', href: '/services/sso-and-user-lifecycle-hub' },
+                { name: 'AI Marketing Content Studio', price: '$119/mo', href: '/services/ai-marketing-content-studio' }
+              ].map((o) => (
+                <a key={o.name} href={o.href} className="block p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-cyan-500/40">
+                  <div className="text-sm text-gray-400 mb-1">From</div>
+                  <div className="text-2xl font-bold text-white">{o.price}</div>
+                  <div className="text-gray-200 mt-2">{o.name}</div>
+                </a>
+              ))}
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Benchmark With Market Pricing</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {pricingRefs.map((group) => (
+                <div key={group.title} className="p-6 rounded-2xl bg-black/40 border border-cyan-500/30">
+                  <h3 className="text-xl font-semibold text-white mb-3">{group.title}</h3>
+                  <ul className="text-slate-300 space-y-1">
+                    {group.links.map((l) => (
+                      <li key={l.href}><a className="text-cyan-400 underline" href={l.href} target="_blank" rel="noopener noreferrer">{l.name}: {new URL(l.href).hostname + new URL(l.href).pathname}</a></li>
+                    ))}
+                  </ul>
+                  <div className="text-sm text-slate-400 mt-3">{group.note}</div>
+                </div>
+              ))}
+            </div>
+            <div className="text-center mt-6">
+              <Button href="/market-pricing" variant="secondary" className="px-8 py-4">Full Market Pricing</Button>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Explore by Category</h2>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              {anchors.map((a) => (
+                <a key={a.title} href={a.href} className="px-4 py-2 rounded-full bg-gradient-to-r from-cyan-600/20 to-purple-600/20 border border-cyan-500/30 text-gray-200">
+                  {a.title}
+                </a>
+              ))}
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">What You Get</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[ 
+                { title: 'AI & Data', points: ['Guardrails & red-teaming', 'LLM evaluation automation', 'Vector search and RAG', 'Cost controls and caching'], note: 'Typical bundles: $499–$2,999/mo' },
+                { title: 'Cloud & FinOps', points: ['Cloud cost reviews', 'SLOs and error budgets', 'Kubernetes & edge ops', 'Managed Postgres HA'], note: 'Typical bundles: $799–$3,999/mo' },
+                { title: 'Observability & Quality', points: ['APM and tracing', 'Synthetics & uptime', 'Email deliverability & DMARC', 'GDPR DSAR automation'], note: 'Typical bundles: $199–$1,499/mo' }
+              ].map((g) => (
+                <div key={g.title} className="p-6 rounded-2xl bg-black/40 border border-gray-700/60">
+                  <div className="text-white font-semibold mb-2">{g.title}</div>
+                  <ul className="text-gray-300 space-y-2 mb-3">
+                    {g.points.map((p) => (
+                      <li key={p} className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-emerald-400 mt-0.5" /><span>{p}</span></li>
+                    ))}
+                  </ul>
+                  <div className="text-sm text-gray-400">{g.note}</div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Average Market Prices</h2>
+            <p className="text-center text-gray-300 mb-4">Reference ranges gathered from vendor public pages and analyst writeups. See full breakdown in <a href="/market-pricing" className="text-cyan-400 underline">Market Pricing</a>.</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="p-6 rounded-2xl bg-black/40 border border-gray-700/60">
+                <div className="text-white font-semibold mb-2">AI Guardrails & Evals</div>
+                <div className="text-gray-300">$199–$1,500/mo (teams), enterprise tiers vary</div>
+                <div className="text-sm text-gray-400 mt-2">Refs: <a target="_blank" rel="noreferrer" className="text-cyan-400 underline" href="https://www.lakera.ai/pricing">Lakera</a>, <a target="_blank" rel="noreferrer" className="text-cyan-400 underline" href="https://humanloop.com/pricing">Humanloop</a></div>
+              </div>
+              <div className="p-6 rounded-2xl bg-black/40 border border-gray-700/60">
+                <div className="text-white font-semibold mb-2">Vector Databases</div>
+                <div className="text-gray-300">$50–$1,500/mo starter to business</div>
+                <div className="text-sm text-gray-400 mt-2">Refs: <a target="_blank" rel="noreferrer" className="text-cyan-400 underline" href="https://www.pinecone.io/pricing/">Pinecone</a>, <a target="_blank" rel="noreferrer" className="text-cyan-400 underline" href="https://qdrant.tech/pricing/">Qdrant</a></div>
+              </div>
+              <div className="p-6 rounded-2xl bg-black/40 border border-gray-700/60">
+                <div className="text-white font-semibold mb-2">Observability</div>
+                <div className="text-gray-300">$99–$2,999/mo depending on ingest and seats</div>
+                <div className="text-sm text-gray-400 mt-2">Refs: <a target="_blank" rel="noreferrer" className="text-cyan-400 underline" href="https://www.datadoghq.com/pricing/">Datadog</a>, <a target="_blank" rel="noreferrer" className="text-cyan-400 underline" href="https://newrelic.com/pricing">New Relic</a></div>
+              </div>
+              <div className="p-6 rounded-2xl bg-black/40 border border-gray-700/60">
+                <div className="text-white font-semibold mb-2">Cloud & Edge</div>
+                <div className="text-gray-300">$200–$10,000+/mo depending on traffic/compute</div>
+                <div className="text-sm text-gray-400 mt-2">Refs: <a target="_blank" rel="noreferrer" className="text-cyan-400 underline" href="https://calculator.aws">AWS Calc</a>, <a target="_blank" rel="noreferrer" className="text-cyan-400 underline" href="https://vercel.com/pricing">Vercel</a></div>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Contact Us</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <a href={`tel:${contact.mobile.replace(/[^+\d]/g, '')}`} className="p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-cyan-500/40 flex items-center gap-3">
+                <Phone className="w-5 h-5 text-cyan-400" />
+                <span className="text-gray-200">{contact.mobile}</span>
+              </a>
+              <a href={`mailto:${contact.email}`} className="p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-purple-500/40 flex items-center gap-3">
+                <Mail className="w-5 h-5 text-purple-400" />
+                <span className="text-gray-200">{contact.email}</span>
+              </a>
+              <a href={`https://maps.google.com/?q=${encodeURIComponent(contact.address)}`} target="_blank" rel="noopener noreferrer" className="p-6 rounded-2xl bg-black/40 border border-gray-700/60 hover:border-emerald-500/40 flex items-center gap-3">
+                <MapPin className="w-5 h-5 text-emerald-400" />
+                <span className="text-gray-200 text-sm">{contact.address}</span>
+              </a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </UltraAdvancedFuturisticBackground>
+  );
+}

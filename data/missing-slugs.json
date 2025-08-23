@@ -1,6 +1,9 @@
 [
   "accessibility",
+<<<<<<< HEAD
   "ai-autonomous-vehicle-ai-platform",
+=======
+>>>>>>> ef267d731aed572a16d33348da4bc2ee8cd3772a
   "ai-consciousness-evolution",
   "ai-content-marketing-automation",
   "ai-creativity-orchestrator",
@@ -10,6 +13,16 @@
   "ai-ethics-governance",
   "ai-financial-fraud-detection",
   "ai-powered-enterprise-security",
+<<<<<<< HEAD
+=======
+  "ai-marketing-automation",
+  "automated-financial-analytics-platform",
+  "fintech-solutions",
+  "industry-solutions",
+  "intelligent-project-management-suite",
+  "quantum-cloud-migration",
+  "real-estate-technology-solutions",
+>>>>>>> ef267d731aed572a16d33348da4bc2ee8cd3772a
   "autonomous-devops-platform",
   "autonomous-it-operations",
   "autonomous-vehicle-ai",
@@ -30,6 +43,21 @@
   "quantum-threat-detection",
   "services/data-contracts-hub",
   "services/serverless-lakehouse-starter",
+<<<<<<< HEAD
   "space-data-analytics",
   "space-mining-automation-platform"
+=======
+  "services/ai-customer-success-platform",
+  "services/ai-evaluation-orchestrator",
+  "services/ai-financial-planning-platform",
+  "services/ai-powered-decision-engine",
+  "services/ai-sales-intelligence-platform",
+  "services/intelligent-content-automation-platform",
+  "services/it-asset-discovery-agent",
+  "services/managed-postgres-ha",
+  "services/seo-automation-suite",
+  "services/smart-crm-intelligence-suite",
+  "space-mining-automation-platform",
+  "transportation-logistics-solutions"
+>>>>>>> ef267d731aed572a16d33348da4bc2ee8cd3772a
 ]
