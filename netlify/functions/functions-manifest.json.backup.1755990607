@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "generatedAt": "2025-08-11T22:34:16.602Z",
+=======
   "generatedAt": "2025-08-15T03:13:06.770Z",
+>>>>>>> origin/cursor/automate-app-link-and-sublink-fixes-055b
   "functions": [
     "ai-changelog-runner",
     "auto-scheduler",
