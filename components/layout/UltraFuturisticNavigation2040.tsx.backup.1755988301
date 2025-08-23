@@ -2,11 +2,54 @@ import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Menu, X, Search, ChevronDown, Zap, Globe, Lock, 
-  Phone, Mail, MapPin, ArrowRight, Star, Users, Award,
-  Brain, Rocket, Shield, Cpu, Database, Cloud, Target,
-  BookOpen, FileText, Video, Code, Building, GraduationCap,
-  Heart, Briefcase, Newspaper, BarChart3
+  ChevronDown, 
+  Menu, 
+  X, 
+  Search,
+  User,
+  Bell,
+  Settings,
+  LogOut,
+  Home,
+  Briefcase,
+  Users,
+  Globe,
+  Zap,
+  Cpu,
+  Brain,
+  Rocket,
+  Shield,
+  Database,
+  Server,
+  CpuIcon,
+  ZapIcon,
+  Truck,
+  BookOpen,
+  FileText,
+  Handshake,
+  Newspaper,
+  Grid,
+  Atom,
+  BarChart3,
+  Palette,
+  PaletteIcon,
+  GraduationCap,
+  HeartIcon,
+  DollarSign,
+  Target,
+  Network,
+  Cloud,
+  Layers,
+  Code,
+  MessageCircle,
+  TrendingUp,
+  Monitor,
+  Lock,
+  Building,
+  Phone,
+  Mail,
+  ArrowRight,
+  Star
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -38,16 +81,38 @@ const navigationItems: NavigationItem[] = [
     badge: 'New',
     neonColor: 'shadow-blue-400/50',
     children: [
+<<<<<<< HEAD
       {
         label: 'AI & Machine Learning',
         href: '/ai-services',
+=======
+      { 
+        name: 'All Services', 
+        href: '/services', 
+        description: 'Complete revolutionary services overview',
+        icon: <Grid className="w-4 h-4" />,
+        featured: true
+      },
+      { 
+        name: '2025 Innovative Services Showcase', 
+        href: '/comprehensive-2025-innovative-services-showcase', 
+        description: 'Comprehensive showcase of our latest innovations',
+        icon: <Star className="w-4 h-4" />,
+        color: 'from-purple-500 to-pink-500',
+        featured: true
+      },
+      { 
+        name: 'AI Consciousness Evolution', 
+        href: '/ai-consciousness-evolution-2040', 
+        description: 'Next-generation AI consciousness',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-8640
         icon: <Brain className="w-4 h-4" />,
         description: 'Advanced AI solutions for enterprise'
       },
       {
         label: 'Quantum Computing',
         href: '/quantum-computing',
-        icon: <Cpu className="w-4 h-4" />,
+        icon: <Atom className="w-4 h-4" />,
         description: 'Next-generation quantum solutions'
       },
       {
@@ -65,14 +130,26 @@ const navigationItems: NavigationItem[] = [
       {
         label: 'Cloud Solutions',
         href: '/cloud-platform',
-        icon: <Cloud className="w-4 h-4" />,
+        icon: <Globe className="w-4 h-4" />,
         description: 'Scalable cloud infrastructure'
       },
       {
-        label: 'IT Infrastructure',
-        href: '/advanced-it-infrastructure-services',
-        icon: <Database className="w-4 h-4" />,
-        description: 'Enterprise IT infrastructure solutions'
+        label: 'Healthcare Solutions',
+        href: '/healthcare-solutions',
+        icon: <Heart className="w-4 h-4" />,
+        description: 'Medical technology and AI diagnostics'
+      },
+      {
+        label: 'Financial Solutions',
+        href: '/financial-solutions',
+        icon: <TrendingUp className="w-4 h-4" />,
+        description: 'Fintech and financial technology'
+      },
+      {
+        label: 'Manufacturing AI',
+        href: '/manufacturing-ai-solutions',
+        icon: <Cpu className="w-4 h-4" />,
+        description: 'Industry 4.0 and smart manufacturing'
       },
       {
         label: 'View All Services',
@@ -83,121 +160,72 @@ const navigationItems: NavigationItem[] = [
     ]
   },
   {
-    label: 'Industries',
+    label: 'Solutions',
     children: [
       {
-        label: 'Healthcare',
-        href: '/healthcare-solutions',
-        icon: <Heart className="w-4 h-4" />,
-        description: 'Medical technology solutions'
-      },
-      {
-        label: 'Finance',
-        href: '/financial-solutions',
-        icon: <BarChart3 className="w-4 h-4" />,
-        description: 'Fintech and financial solutions'
-      },
-      {
-        label: 'Manufacturing',
-        href: '/manufacturing-ai-solutions',
-        icon: <Target className="w-4 h-4" />,
-        description: 'Industry 4.0 solutions'
-      },
-      {
-        label: 'Retail',
-        href: '/retail-technology-solutions',
+        label: 'Enterprise Solutions',
+        href: '/solutions',
         icon: <Building className="w-4 h-4" />,
-        description: 'E-commerce technology'
+        description: 'Comprehensive enterprise technology solutions'
       },
       {
-        label: 'Government',
-        href: '/government-technology-solutions',
-        icon: <Shield className="w-4 h-4" />,
-        description: 'Public sector solutions'
+        name: 'AI Autonomous Ecosystem Manager',
+        href: '/ai-autonomous-ecosystem-manager',
+        description: 'Fully autonomous AI ecosystem management',
+        icon: <CpuIcon className="w-4 h-4" />,
+        featured: true
       },
       {
-        label: 'Education',
-        href: '/education-technology-solutions',
-        icon: <GraduationCap className="w-4 h-4" />,
-        description: 'EdTech solutions'
+        name: 'AI Predictive Maintenance Platform',
+        href: '/ai-predictive-maintenance-platform',
+        description: 'Predict and prevent equipment failures',
+        icon: <Settings className="w-4 h-4" />,
+        featured: true
+      },
+      {
+        name: 'AI Content Personalization Engine',
+        href: '/ai-content-personalization-engine',
+        description: 'Hyper-personalized content experiences',
+        icon: <Palette className="w-4 h-4" />,
+        featured: true
+      },
+      {
+        name: 'AI Ethics & Governance Framework',
+        href: '/ai-ethics-governance-framework',
+        description: 'Comprehensive AI ethics and governance',
+        icon: <Shield className="w-4 h-4" />
+      },
+      {
+        name: 'AI Autonomous Research Assistant',
+        href: '/ai-autonomous-research-assistant',
+        description: 'Fully autonomous research platform',
+        icon: <BookOpen className="w-4 h-4" />
+      },
+      {
+        name: 'AI Creativity Studio',
+        href: '/ai-creativity-studio',
+        description: 'AI-powered creative tools',
+        icon: <PaletteIcon className="w-4 h-4" />
+      },
+      {
+        name: 'AI Education Platform',
+        href: '/ai-education-platform',
+        description: 'Personalized AI-powered education',
+        icon: <GraduationCap className="w-4 h-4" />
+      },
+      {
+        name: 'AI Healthcare Diagnostics',
+        href: '/ai-healthcare-diagnostics',
+        description: 'AI-powered healthcare diagnostics',
+        icon: <HeartIcon className="w-4 h-4" />
+      },
+      {
+        name: 'AI Financial Intelligence',
+        href: '/ai-financial-intelligence',
+        description: 'Intelligent financial analysis',
+        icon: <DollarSign className="w-4 h-4" />
       }
     ]
-  },
-  {
-    label: 'Company',
-    children: [
-      {
-        label: 'About Us',
-        href: '/about',
-        icon: <Users className="w-4 h-4" />,
-        description: 'Our mission and values'
-      },
-      {
-        label: 'Leadership',
-        href: '/about#leadership',
-        icon: <Award className="w-4 h-4" />,
-        description: 'Meet our team'
-      },
-      {
-        label: 'Careers',
-        href: '/careers',
-        icon: <Briefcase className="w-4 h-4" />,
-        description: 'Join our team'
-      },
-      {
-        label: 'News & Updates',
-        href: '/news',
-        icon: <Newspaper className="w-4 h-4" />,
-        description: 'Latest company news'
-      },
-      {
-        label: 'Case Studies',
-        href: '/case-studies',
-        icon: <FileText className="w-4 h-4" />,
-        description: 'Success stories'
-      }
-    ]
-  },
-  {
-    label: 'Resources',
-    children: [
-      {
-        label: 'Blog',
-        href: '/blog',
-        icon: <BookOpen className="w-4 h-4" />,
-        description: 'Industry insights and updates'
-      },
-      {
-        label: 'Whitepapers',
-        href: '/white-papers',
-        icon: <FileText className="w-4 h-4" />,
-        description: 'In-depth research papers'
-      },
-      {
-        label: 'Webinars',
-        href: '/webinars',
-        icon: <Video className="w-4 h-4" />,
-        description: 'Educational content and training'
-      },
-      {
-        label: 'Documentation',
-        href: '/docs',
-        icon: <Code className="w-4 h-4" />,
-        description: 'Technical guides and API docs'
-      },
-      {
-        label: 'API Reference',
-        href: '/api-documentation',
-        icon: <Code className="w-4 h-4" />,
-        description: 'Developer resources and APIs'
-      },
-      {
-        label: 'Support',
-        href: '/support',
-        icon: <Shield className="w-4 h-4" />,
-        description: 'Help & assistance'
-      }
-  ]
   },
   {
     name: 'Quantum Technology',
@@ -501,6 +529,42 @@ const navigationItems: NavigationItem[] = [
         href: '/news',
         description: 'Company updates',
         icon: <Newspaper className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Contact & Support',
+    href: '/contact',
+    icon: <MessageCircle className="w-5 h-5" />,
+    description: 'Get in touch with our team',
+    badge: '24/7',
+    category: 'contact',
+    color: 'from-green-500 to-emerald-500',
+    children: [
+      {
+        name: 'Contact Us',
+        href: '/contact',
+        description: 'Get in touch with our team',
+        icon: <MessageCircle className="w-4 h-4" />,
+        featured: true
+      },
+      {
+        name: 'Support',
+        href: '/support',
+        description: 'Technical support and help',
+        icon: <HelpCircle className="w-4 h-4" />
+      },
+      {
+        name: 'Get Started',
+        href: '/get-started',
+        description: 'Start your journey with us',
+        icon: <Rocket className="w-4 h-4" />
+      },
+      {
+        name: 'Request Quote',
+        href: '/quote',
+        description: 'Get a custom quote',
+        icon: <Calculator className="w-4 h-4" />
       }
     ]
   }

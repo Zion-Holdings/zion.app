@@ -2,11 +2,62 @@ import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
+<<<<<<< HEAD
+  ChevronDown, 
+  Menu, 
+  X, 
+  Search,
+  User,
+  Bell,
+  Settings,
+  LogOut,
+  Home,
+  Briefcase,
+  Users,
+  Globe,
+  Zap,
+  Cpu,
+  Brain,
+  Rocket,
+  Shield,
+  Database,
+  Server,
+  CpuIcon,
+  ZapIcon,
+  Truck,
+  BookOpen,
+  FileText,
+  Handshake,
+  Newspaper,
+  Grid,
+  Atom,
+  BarChart3,
+  Palette,
+  PaletteIcon,
+  GraduationCap,
+  HeartIcon,
+  DollarSign,
+  Target,
+  Network,
+  Cloud,
+  Layers,
+  Code,
+  MessageCircle,
+  TrendingUp,
+  Monitor,
+  Lock,
+  Building,
+  Phone,
+  Mail,
+  ArrowRight,
+  Star
+=======
   Menu, X, Search, ChevronDown, Zap, Globe, Lock, 
   Phone, Mail, MapPin, ArrowRight, Star, Users, Award,
   Brain, Rocket, Shield, Cpu, Database, Cloud, Target,
   BookOpen, FileText, Video, Code, Building, GraduationCap,
   Heart, Briefcase, Newspaper, BarChart3
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-3a13
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -47,7 +98,11 @@ const navigationItems: NavigationItem[] = [
       {
         label: 'Quantum Computing',
         href: '/quantum-computing',
+<<<<<<< HEAD
+        icon: <Atom className="w-4 h-4" />,
+=======
         icon: <Cpu className="w-4 h-4" />,
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-3a13
         description: 'Next-generation quantum solutions'
       },
       {
@@ -69,10 +124,29 @@ const navigationItems: NavigationItem[] = [
         description: 'Scalable cloud infrastructure'
       },
       {
+<<<<<<< HEAD
+        label: 'Healthcare Solutions',
+        href: '/healthcare-solutions',
+        icon: <Heart className="w-4 h-4" />,
+        description: 'Medical technology and AI diagnostics'
+      },
+      {
+        label: 'Financial Solutions',
+        href: '/financial-solutions',
+        icon: <TrendingUp className="w-4 h-4" />,
+        description: 'Fintech and financial technology'
+      },
+      {
+        label: 'Manufacturing AI',
+        href: '/manufacturing-ai-solutions',
+        icon: <Cpu className="w-4 h-4" />,
+        description: 'Industry 4.0 and smart manufacturing'
+=======
         label: 'IT Infrastructure',
         href: '/advanced-it-infrastructure-services',
         icon: <Database className="w-4 h-4" />,
         description: 'Enterprise IT infrastructure solutions'
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-3a13
       },
       {
         label: 'View All Services',
@@ -83,6 +157,74 @@ const navigationItems: NavigationItem[] = [
     ]
   },
   {
+<<<<<<< HEAD
+    label: 'Solutions',
+    children: [
+      {
+        label: 'Enterprise Solutions',
+        href: '/solutions',
+        icon: <Building className="w-4 h-4" />,
+        description: 'Comprehensive enterprise technology solutions'
+      },
+      {
+        name: 'AI Autonomous Ecosystem Manager',
+        href: '/ai-autonomous-ecosystem-manager',
+        description: 'Fully autonomous AI ecosystem management',
+        icon: <CpuIcon className="w-4 h-4" />,
+        featured: true
+      },
+      {
+        name: 'AI Predictive Maintenance Platform',
+        href: '/ai-predictive-maintenance-platform',
+        description: 'Predict and prevent equipment failures',
+        icon: <Settings className="w-4 h-4" />,
+        featured: true
+      },
+      {
+        name: 'AI Content Personalization Engine',
+        href: '/ai-content-personalization-engine',
+        description: 'Hyper-personalized content experiences',
+        icon: <Palette className="w-4 h-4" />,
+        featured: true
+      },
+      {
+        name: 'AI Ethics & Governance Framework',
+        href: '/ai-ethics-governance-framework',
+        description: 'Comprehensive AI ethics and governance',
+        icon: <Shield className="w-4 h-4" />
+      },
+      {
+        name: 'AI Autonomous Research Assistant',
+        href: '/ai-autonomous-research-assistant',
+        description: 'Fully autonomous research platform',
+        icon: <BookOpen className="w-4 h-4" />
+      },
+      {
+        name: 'AI Creativity Studio',
+        href: '/ai-creativity-studio',
+        description: 'AI-powered creative tools',
+        icon: <PaletteIcon className="w-4 h-4" />
+      },
+      {
+        name: 'AI Education Platform',
+        href: '/ai-education-platform',
+        description: 'Personalized AI-powered education',
+        icon: <GraduationCap className="w-4 h-4" />
+      },
+      {
+        name: 'AI Healthcare Diagnostics',
+        href: '/ai-healthcare-diagnostics',
+        description: 'AI-powered healthcare diagnostics',
+        icon: <HeartIcon className="w-4 h-4" />
+      },
+      {
+        name: 'AI Financial Intelligence',
+        href: '/ai-financial-intelligence',
+        description: 'Intelligent financial analysis',
+        icon: <DollarSign className="w-4 h-4" />
+      }
+    ]
+=======
     label: 'Industries',
     children: [
       {
@@ -198,6 +340,7 @@ const navigationItems: NavigationItem[] = [
         description: 'Help & assistance'
       }
   ]
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-3a13
   },
   {
     name: 'Quantum Technology',
