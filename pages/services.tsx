@@ -81,6 +81,11 @@ import { cuttingEdgeInnovativeServices2025 } from '../data/2025-cutting-edge-inn
 import { emergingTechInnovativeServices2025 } from '../data/2025-emerging-tech-innovative-services';
 import { specializedIndustryServices2025 } from '../data/2025-specialized-industry-services';
 
+// Import our new innovative 2025 services
+import { innovative2025MicroSaasExpansions } from '../data/innovative-2025-micro-saas-expansions';
+import { innovative2025ITServicesExpansions } from '../data/innovative-2025-it-services-expansions';
+import { innovative2025AIServicesExpansions } from '../data/innovative-2025-ai-services-expansions';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -193,35 +198,10 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
-  // Our new 2025 advanced services
-  ...advanced2025MicroSaasExpansion,
-  ...advanced2025ITSolutionsExpansion,
-  ...advanced2025AIServicesExpansion,
-  // Our new innovative services
-  ...innovative2037MicroSaasServices,
-  ...innovative2037ITServices,
-  ...innovative2037AIServices,
-  ...innovative2038CuttingEdgeServices,
-  ...innovative2038ITInfrastructureServices,
-  // Our additional innovative services
-  ...innovative2037Services,
-  ...advanced2038Services,
-  ...revolutionary2039Services,
-  // Our revolutionary 2040-2041 services
-  ...revolutionary2040FuturisticServices,
-  ...revolutionary2041AdvancedServices,
-  // Our latest innovative services
-  ...innovative2040FuturisticServices,
-  ...advanced2041EnterpriseServices,
-  ...revolutionary2042MicroSaasServices,
-  // Our new 2025 innovative services expansion
-  ...innovative2025MicroSaasExpansion,
-  ...innovative2025ITSolutionsExpansion,
-  ...innovative2025AIServicesExpansion,
-  // Our new 2025 cutting-edge innovative services
-  ...cuttingEdgeInnovativeServices2025,
-  ...emergingTechInnovativeServices2025,
-  ...specializedIndustryServices2025
+  // Add our new innovative 2025 services
+  ...innovative2025MicroSaasExpansions,
+  ...innovative2025ITServicesExpansions,
+  ...innovative2025AIServicesExpansions
 ];
 
 const categories = [
