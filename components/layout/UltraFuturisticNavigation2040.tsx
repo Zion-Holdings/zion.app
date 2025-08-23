@@ -8,7 +8,8 @@ import {
   Grid, List, TrendingUp, 
   Calendar, Calculator, GraduationCap,
   Cpu, Cloud, Settings, Monitor, Palette, Network, Layers, Code, Heart, ShoppingCart, Clock, MessageCircle, HelpCircle, Building,
-  Zap, Infinity, Eye, Heart as HeartIcon, Code as CodeIcon, Palette as PaletteIcon
+  Zap, Infinity, Eye, Heart as HeartIcon, Code as CodeIcon, Palette as PaletteIcon,
+  BookOpen, FileText, Handshake
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -88,6 +89,13 @@ const navigationItems: NavigationItem[] = [
         description: 'Future-proof security',
         icon: <Shield className="w-4 h-4" />,
         color: 'from-red-500 to-orange-500'
+      },
+      { 
+        name: 'Brain-Computer Interface', 
+        href: '/brain-computer-interface-2040', 
+        description: 'Neural interface technology',
+        icon: <Brain className="w-4 h-4" />,
+        color: 'from-pink-500 to-purple-500'
       }
     ]
   },
@@ -214,6 +222,124 @@ const navigationItems: NavigationItem[] = [
         href: '/ai-predictive-maintenance-2041',
         description: 'Consciousness-based maintenance',
         icon: <Monitor className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Solutions',
+    href: '/solutions',
+    icon: <Target className="w-5 h-5" />,
+    description: 'Industry-specific solutions',
+    badge: 'Solutions',
+    category: 'solutions',
+    color: 'from-orange-500 to-red-500',
+    children: [
+      {
+        name: 'Healthcare Solutions',
+        href: '/healthcare-solutions',
+        description: 'AI-powered healthcare technology',
+        icon: <Heart className="w-4 h-4" />,
+        featured: true
+      },
+      {
+        name: 'Financial Services',
+        href: '/financial-solutions',
+        description: 'Quantum financial intelligence',
+        icon: <TrendingUp className="w-4 h-4" />
+      },
+      {
+        name: 'Manufacturing AI',
+        href: '/manufacturing-ai-solutions',
+        description: 'Autonomous manufacturing',
+        icon: <Cpu className="w-4 h-4" />
+      },
+      {
+        name: 'Retail Technology',
+        href: '/retail-technology-solutions',
+        description: 'Smart retail solutions',
+        icon: <ShoppingCart className="w-4 h-4" />
+      },
+      {
+        name: 'Government Solutions',
+        href: '/government-technology-solutions',
+        description: 'Public sector technology',
+        icon: <Building className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Resources',
+    href: '/resources',
+    icon: <BookOpen className="w-5 h-5" />,
+    description: 'Knowledge and support resources',
+    badge: 'Resources',
+    category: 'resources',
+    color: 'from-cyan-500 to-blue-500',
+    children: [
+      {
+        name: 'Documentation',
+        href: '/docs',
+        description: 'Technical documentation',
+        icon: <FileText className="w-4 h-4" />
+      },
+      {
+        name: 'Blog & News',
+        href: '/blog',
+        description: 'Latest insights and updates',
+        icon: <MessageCircle className="w-4 h-4" />
+      },
+      {
+        name: 'Support Center',
+        href: '/support',
+        description: 'Get help and support',
+        icon: <HelpCircle className="w-4 h-4" />
+      },
+      {
+        name: 'Training',
+        href: '/training',
+        description: 'Learn and get certified',
+        icon: <GraduationCap className="w-4 h-4" />
+      },
+      {
+        name: 'Case Studies',
+        href: '/case-studies',
+        description: 'Success stories and examples',
+        icon: <Star className="w-4 h-4" />
+      }
+    ]
+  },
+  {
+    name: 'Company',
+    href: '/about',
+    icon: <Building className="w-5 h-5" />,
+    description: 'About Zion Tech Group',
+    badge: 'Company',
+    category: 'company',
+    color: 'from-purple-500 to-pink-500',
+    children: [
+      {
+        name: 'About Us',
+        href: '/about',
+        description: 'Learn about our mission',
+        icon: <Building className="w-4 h-4" />
+      },
+      {
+        name: 'Careers',
+        href: '/careers',
+        description: 'Join our team',
+        icon: <Star className="w-4 h-4" />
+      },
+      {
+        name: 'Contact',
+        href: '/contact',
+        description: 'Get in touch',
+        icon: <Mail className="w-4 h-4" />
+      },
+      {
+        name: 'Partners',
+        href: '/partners',
+        description: 'Partnership opportunities',
+        icon: <Handshake className="w-4 h-4" />
       }
     ]
   },
