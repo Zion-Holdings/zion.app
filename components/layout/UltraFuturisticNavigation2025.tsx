@@ -33,7 +33,9 @@ import {
   Cpu,
   BarChart3,
   Lightbulb,
-  Award
+  Award,
+  Handshake,
+  Newspaper
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -239,6 +241,20 @@ const navigationItems: NavigationItem[] = [
         icon: <Users className="w-4 h-4" />,
         description: 'Join our team',
         neonColor: 'shadow-green-400/50'
+      },
+      {
+        label: 'Partners',
+        href: '/partners',
+        icon: <Handshake className="w-4 h-4" />,
+        description: 'Strategic partnerships',
+        neonColor: 'shadow-purple-400/50'
+      },
+      {
+        label: 'News & Press',
+        href: '/news',
+        icon: <Newspaper className="w-4 h-4" />,
+        description: 'Latest news and press releases',
+        neonColor: 'shadow-orange-400/50'
       },
       {
         label: 'Contact',

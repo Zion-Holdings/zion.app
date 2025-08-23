@@ -29,7 +29,8 @@ import {
   Cpu,
   Video,
   Code,
-  Handshake
+  Handshake,
+  Newspaper
 } from 'lucide-react';
 
 const UltraFuturisticFooter2025: React.FC = () => {
@@ -73,17 +74,17 @@ const UltraFuturisticFooter2025: React.FC = () => {
         { label: 'API Reference', href: '/api', icon: Code }
       ]
     },
-    {
-      title: 'Company',
-      items: [
-        { label: 'About Us', href: '/about', icon: Users },
-        { label: 'Leadership', href: '/leadership', icon: Star },
-        { label: 'Careers', href: '/careers', icon: Users },
-        { label: 'News & Press', href: '/news', icon: FileText },
-        { label: 'Partners', href: '/partners', icon: Handshake },
-        { label: 'Contact', href: '/contact', icon: Phone }
-      ]
-    }
+          {
+        title: 'Company',
+        items: [
+          { label: 'About Us', href: '/about', icon: Users },
+          { label: 'Leadership', href: '/leadership', icon: Star },
+          { label: 'Careers', href: '/careers', icon: Users },
+          { label: 'News & Press', href: '/news', icon: Newspaper },
+          { label: 'Partners', href: '/partners', icon: Handshake },
+          { label: 'Contact', href: '/contact', icon: Phone }
+        ]
+      }
   ];
 
   return (
