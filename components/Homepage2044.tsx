@@ -2,7 +2,7 @@ import React, { useEffect, useState, useCallback, Suspense, lazy } from 'react';
 import Layout from './layout/Layout';
 import { motion } from 'framer-motion';
 import { 
-  ArrowRight, Play, TrendingUp, Brain, Shield, Rocket, Globe, Cpu, Database, Atom, Star, Loader2
+  ArrowRight, Play, TrendingUp, Brain, Shield, Rocket, Globe, Cpu, Database, Atom, Star, Loader2, AlertCircle
 } from 'lucide-react';
 import Head from 'next/head';
 
@@ -97,21 +97,21 @@ const Homepage2044: React.FC = () => {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <div className="text-red-400 text-xl mb-4">Error: {error}</div>
-          <button 
-            onClick={() => window.location.reload()} 
-            className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
-          >
-            Retry
-          </button>
+          <AlertCircle className="w-16 h-16 text-red-400 mx-auto mb-4" />
+          <h1 className="text-2xl font-bold text-white mb-2">Error Loading Page</h1>
+          <p className="text-gray-400">{error}</p>
         </div>
       </div>
     );
   }
 
   return (
-    <Layout>
-      <main className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
+    <Layout 
+      title="Zion Tech Group - Revolutionary 2044 Technology"
+      description="Experience the future with our revolutionary 2044 technology solutions. AI consciousness, quantum computing, and autonomous systems that transform businesses worldwide."
+      keywords="AI consciousness, quantum computing, autonomous systems, space technology, cybersecurity, business intelligence, Zion Tech Group, 2044 technology"
+    >
+      <main className="min-h-screen bg-black text-white relative overflow-hidden">
         {/* Hero Section */}
         <section 
           className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden"
