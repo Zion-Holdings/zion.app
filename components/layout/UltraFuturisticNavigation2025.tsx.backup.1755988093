@@ -37,8 +37,12 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+<<<<<<< HEAD
+import MobileNavigation from './MobileNavigation';
+=======
 import EnhancedSearch from '../ui/EnhancedSearch';
 import ThemeToggle from '../ui/ThemeToggle';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-bbf1
 
 // Define Node type for DOM event handling
 type Node = HTMLElement | null;
@@ -431,11 +435,16 @@ const UltraFuturisticNavigation2025: React.FC = () => {
 
             {/* Right Side Actions */}
             <div className="flex items-center space-x-4">
+<<<<<<< HEAD
+              {/* Search */}
+              <div className="relative">
+=======
               {/* Theme Toggle */}
               <ThemeToggle />
               
               {/* Enhanced Search */}
               <div className="relative" ref={searchRef}>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-bbf1
                 <button
                   onClick={() => setIsSearchOpen(!isSearchOpen)}
                   className="w-10 h-10 bg-gray-800/50 hover:bg-gray-700/50 rounded-xl flex items-center justify-center text-gray-400 hover:text-white transition-colors"
@@ -450,9 +459,24 @@ const UltraFuturisticNavigation2025: React.FC = () => {
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0.95 }}
                       transition={{ duration: 0.2 }}
+<<<<<<< HEAD
+                      className="absolute top-full right-0 mt-2 w-80 bg-gray-900/95 backdrop-blur-xl border border-gray-700/50 rounded-2xl shadow-2xl shadow-black/50 p-4"
+                    >
+                      <form onSubmit={(e) => { e.preventDefault(); setIsSearchOpen(false); }}>
+                        <input
+                          ref={searchRef}
+                          type="text"
+                          placeholder="Search services, solutions..."
+                          value={searchQuery}
+                          onChange={(e) => setSearchQuery(e.target.value)}
+                          className="w-full px-4 py-3 bg-gray-800/50 border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400/50 focus:ring-2 focus:ring-cyan-400/20 transition-all"
+                        />
+                      </form>
+=======
                       className="absolute top-full right-0 mt-2 w-96 bg-gray-900/95 backdrop-blur-xl border border-cyan-400/20 rounded-2xl shadow-2xl shadow-cyan-500/10 p-4"
                     >
                       <EnhancedSearch />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-bbf1
                     </motion.div>
                   )}
                 </AnimatePresence>
