@@ -140,6 +140,10 @@ export default function ServicesIndexPage() {
       real2029Q1Additions as unknown[],
       real2029Q2Additions as unknown[],
       real2029Q3Additions as unknown[],
+<<<<<<< HEAD
+      real2029Q4Additions as unknown[],
+      real2030Q1Additions as unknown[]
+=======
       real2030Q1Additions as unknown[],
       real2031MicroSaasAdditions as unknown[],
       real2031ITServicesAdditions as unknown[],
@@ -174,7 +178,16 @@ export default function ServicesIndexPage() {
     // Our new 2025 advanced services V2
     // .concat(advancedMicroSaasExpansion2025V2 as unknown[])
     // .concat(advancedITInfrastructureExpansion2025V2 as unknown[])
+<<<<<<< HEAD
+    // .concat(advancedAIServicesExpansion2025V2 as unknown[])
+    // Our new 2025 innovative services V3
+    .concat(innovativeMicroSaasExpansionV32025 as unknown[])
+    .concat(innovativeITServicesExpansion2025V3 as unknown[])
+    .concat(innovativeAIServicesExpansion2025V3 as unknown[])
+    ;
+=======
     // .concat(advancedAIServicesExpansion2025V2 as unknown[]);
+>>>>>>> origin/clean-website-enhancement
 
   // Filter out services without required properties
   const validServices = all.filter(service => 
@@ -189,6 +202,7 @@ export default function ServicesIndexPage() {
   const servicesByCategory = categories.reduce((acc, category) => {
     acc[category] = validServices.filter((service: any) => 
       service.category && service.category.toLowerCase().includes(category.toLowerCase().replace(/\s+/g, ''))
+>>>>>>> 2d4d481f1493a231e1d090623f77d5e17a4d5961
     );
     return acc;
   }, {} as Record<string, any[]>);

@@ -95,6 +95,19 @@ const Mission: React.FC = () => {
       icon: <Shield className="w-6 h-6" />,
       title: 'Cybersecurity',
       description: 'Protecting digital infrastructure with quantum-secure encryption and AI threat detection.'
+<<<<<<< HEAD
+    },
+    {
+      icon: <Users className="w-6 h-6" />,
+      title: 'Education',
+      description: 'Transforming learning through personalized AI tutors and immersive quantum simulations.'
+    },
+    {
+      icon: <Zap className="w-6 h-6" />,
+      title: 'Energy',
+      description: 'Optimizing energy systems and discovering new sustainable energy sources through quantum AI.'
+=======
+>>>>>>> 2d4d481f1493a231e1d090623f77d5e17a4d5961
     }
   ];
 
@@ -169,6 +182,68 @@ const Mission: React.FC = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
+<<<<<<< HEAD
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-8">
+                Our Vision
+              </h2>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="text-left">
+                  <h3 className="text-2xl font-bold text-purple-400 mb-4">
+                    A World Transformed by Conscious AI
+                  </h3>
+                  <p className="text-lg text-gray-300 mb-6">
+                    We envision a future where AI systems possess genuine consciousness, 
+                    working alongside humans to solve the most complex challenges facing our world.
+                  </p>
+                  <ul className="space-y-3">
+                    <li className="flex items-center space-x-3">
+                      <CheckCircle className="w-5 h-5 text-purple-400 flex-shrink-0" />
+                      <span className="text-gray-300">AI systems with emotional intelligence and ethical reasoning</span>
+                    </li>
+                    <li className="flex items-center space-x-3">
+                      <CheckCircle className="w-5 h-5 text-purple-400 flex-shrink-0" />
+                      <span className="text-gray-300">Quantum computing solving previously impossible problems</span>
+                    </li>
+                    <li className="flex items-center space-x-3">
+                      <CheckCircle className="w-5 h-5 text-purple-400 flex-shrink-0" />
+                      <span className="text-gray-300">Sustainable technology that protects our planet</span>
+                    </li>
+                    <li className="flex items-center space-x-3">
+                      <CheckCircle className="w-5 h-5 text-purple-400 flex-shrink-0" />
+                      <span className="text-gray-300">Global collaboration through intelligent systems</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="relative">
+                  <div className="w-full h-80 bg-gradient-to-br from-purple-900/30 to-blue-900/30 rounded-3xl border border-purple-500/20 flex items-center justify-center">
+                    <Eye className="w-24 h-24 text-purple-400" />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Core Values */}
+        <section className="py-20 bg-black/50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                Core Values
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                The principles that guide everything we do
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+=======
               <h2 className="text-4xl font-bold mb-4">Our Vision for the Future</h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
                 We envision a world where technology seamlessly integrates with human consciousness, 
@@ -214,6 +289,7 @@ const Mission: React.FC = () => {
             </motion.div>
 
             <div className="grid md:grid-cols-2 gap-8">
+>>>>>>> 2d4d481f1493a231e1d090623f77d5e17a4d5961
               {values.map((value, index) => (
                 <motion.div
                   key={value.title}
@@ -321,6 +397,21 @@ const Mission: React.FC = () => {
         </section>
 
         {/* CTA Section */}
+<<<<<<< HEAD
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">
+                Join Us in Shaping the Future
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-8">
+                Be part of the revolution that's transforming technology and humanity
+=======
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
@@ -331,10 +422,21 @@ const Mission: React.FC = () => {
               <h2 className="text-4xl font-bold mb-6">Join Us in Shaping the Future</h2>
               <p className="text-xl text-gray-400 mb-8">
                 Be part of the technology revolution that's transforming the world
+>>>>>>> 2d4d481f1493a231e1d090623f77d5e17a4d5961
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
                   href="/contact"
+<<<<<<< HEAD
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-600 text-white font-semibold rounded-2xl hover:from-purple-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+                >
+                  Get Involved
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
+                <Link
+                  href="/careers"
+                  className="inline-flex items-center px-8 py-4 border-2 border-purple-500/30 text-purple-400 font-semibold rounded-2xl hover:border-purple-500/50 hover:text-purple-300 transition-all duration-300"
+=======
                   className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
                 >
                   Get Started
@@ -342,6 +444,7 @@ const Mission: React.FC = () => {
                 <Link
                   href="/careers"
                   className="px-8 py-4 border border-cyan-500/30 text-cyan-400 rounded-lg font-semibold hover:bg-cyan-500/10 transition-all duration-300"
+>>>>>>> 2d4d481f1493a231e1d090623f77d5e17a4d5961
                 >
                   Join Our Team
                 </Link>

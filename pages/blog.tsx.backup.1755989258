@@ -2,6 +2,26 @@ import React from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
+<<<<<<< HEAD
+  FileText, 
+  Calendar, 
+  User, 
+  Tag, 
+  ArrowRight, 
+  Search, 
+  Filter,
+  TrendingUp,
+  Brain,
+  Atom,
+  Rocket,
+  Shield,
+  Cloud,
+  Zap
+} from 'lucide-react';
+import Link from 'next/link';
+
+const BlogPage: React.FC = () => {
+=======
   BookOpen, Calendar, Clock, User, ArrowRight, 
   Tag, Search, Filter, TrendingUp, Brain, Atom,
   Shield, Rocket, Star, Globe, Zap
@@ -9,6 +29,7 @@ import {
 import Link from 'next/link';
 
 const Blog: React.FC = () => {
+>>>>>>> 2d4d481f1493a231e1d090623f77d5e17a4d5961
   const featuredPosts = [
     {
       title: 'The Future of AI Consciousness: What to Expect in 2045',
@@ -54,6 +75,9 @@ const Blog: React.FC = () => {
     { name: 'Innovation', icon: <Zap className="w-5 h-5" />, count: 22 }
   ];
 
+<<<<<<< HEAD
+  const recentPosts = [
+=======
   const trendingTopics = [
     "AI Consciousness Evolution",
     "Quantum Supremacy",
@@ -74,6 +98,7 @@ const Blog: React.FC = () => {
   ];
 
   const recentArticles = [
+>>>>>>> 2d4d481f1493a231e1d090623f77d5e17a4d5961
     {
       title: 'Edge Computing Orchestration: The Future of Distributed Systems',
       excerpt: 'How edge computing is transforming the way we process and analyze data.',
@@ -111,6 +136,15 @@ const Blog: React.FC = () => {
   return (
     <Layout 
       title="Blog - Zion Tech Group"
+<<<<<<< HEAD
+      description="Insights, updates, and thought leadership on AI consciousness, quantum computing, and revolutionary technology"
+      canonicalUrl="https://ziontechgroup.com/blog"
+    >
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+        {/* Hero Section */}
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto text-center">
+=======
       description="Insights, research, and thought leadership on AI consciousness, quantum computing, cybersecurity, and the future of technology."
       keywords="blog, AI consciousness, quantum computing, cybersecurity, space technology, business intelligence, Zion Tech Group"
     >
@@ -119,10 +153,38 @@ const Blog: React.FC = () => {
         <section className="relative overflow-hidden py-20 lg:py-32">
           <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 via-blue-900/20 to-cyan-900/20" />
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+>>>>>>> 2d4d481f1493a231e1d090623f77d5e17a4d5961
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+<<<<<<< HEAD
+            >
+              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+                Zion Tech Group
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400">
+                  {' '}Blog
+                </span>
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
+                Discover insights, updates, and thought leadership on the future of 
+                AI consciousness, quantum computing, and revolutionary technology.
+              </p>
+              
+              {/* Search Bar */}
+              <div className="max-w-2xl mx-auto mb-8">
+                <div className="relative">
+                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                  <input
+                    type="text"
+                    placeholder="Search articles..."
+                    className="w-full px-12 py-4 bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                  />
+                  <button className="absolute right-4 top-1/2 transform -translate-y-1/2 text-purple-400 hover:text-purple-300 transition-colors duration-300">
+                    <Filter className="w-5 h-5" />
+                  </button>
+                </div>
+=======
               className="text-center"
             >
               <div className="flex items-center justify-center mb-6">
@@ -169,6 +231,7 @@ const Blog: React.FC = () => {
                     </option>
                   ))}
                 </select>
+>>>>>>> 2d4d481f1493a231e1d090623f77d5e17a4d5961
               </div>
             </div>
           </div>
@@ -178,7 +241,11 @@ const Blog: React.FC = () => {
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div
+<<<<<<< HEAD
+              initial={{ opacity: 0, y: 20 }}
+=======
               initial={{ opacity: 0, y: 30 }}
+>>>>>>> 2d4d481f1493a231e1d090623f77d5e17a4d5961
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
@@ -209,7 +276,11 @@ const Blog: React.FC = () => {
                   </div>
                   <div className="p-6">
                     <div className="flex items-center gap-2 mb-3">
+<<<<<<< HEAD
+                      <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-medium">
+=======
                       <span className="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm font-medium">
+>>>>>>> 2d4d481f1493a231e1d090623f77d5e17a4d5961
                         {post.category}
                       </span>
                       <span className="text-gray-400 text-sm">{post.readTime}</span>
@@ -220,6 +291,17 @@ const Blog: React.FC = () => {
                     <p className="text-gray-300 text-sm mb-4 leading-relaxed">
                       {post.excerpt}
                     </p>
+<<<<<<< HEAD
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <User className="w-4 h-4 text-gray-400" />
+                        <span className="text-gray-400 text-sm">{post.author}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Calendar className="w-4 h-4 text-gray-400" />
+                        <span className="text-gray-400 text-sm">{post.date}</span>
+                      </div>
+=======
                     
                     <div className="flex items-center gap-4 text-xs text-gray-500 mb-4">
                       <div className="flex items-center gap-1">
@@ -246,6 +328,7 @@ const Blog: React.FC = () => {
                         Read More
                         <ArrowRight className="w-4 h-4 transition-all duration-300" />
                       </button>
+>>>>>>> 2d4d481f1493a231e1d090623f77d5e17a4d5961
                     </div>
                   </div>
                 </motion.article>
@@ -254,11 +337,19 @@ const Blog: React.FC = () => {
           </div>
         </section>
 
+<<<<<<< HEAD
+        {/* Categories */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+=======
         {/* Categories Grid */}
         <section className="py-20 bg-black/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
+>>>>>>> 2d4d481f1493a231e1d090623f77d5e17a4d5961
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
@@ -353,6 +444,32 @@ const Blog: React.FC = () => {
           </div>
         </section>
 
+<<<<<<< HEAD
+        {/* Newsletter Signup */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-black/20">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Stay Updated
+              </h2>
+              <p className="text-xl text-gray-300 mb-8">
+                Get the latest insights and updates delivered to your inbox.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-1 px-6 py-4 bg-white/10 backdrop-blur-lg border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                />
+                <button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105">
+                  Subscribe
+                </button>
+=======
         {/* Trending Topics */}
         <section className="py-20 bg-black/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -497,6 +614,7 @@ const Blog: React.FC = () => {
                 >
                   Contact Editorial Team
                 </a>
+>>>>>>> 2d4d481f1493a231e1d090623f77d5e17a4d5961
               </div>
             </motion.div>
           </div>

@@ -1,6 +1,10 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
 
+interface PerformanceLayoutShift {
+  value: number;
+}
+
 interface PerformanceMetrics {
   loadTime: number;
   domContentLoaded: number;
@@ -34,7 +38,7 @@ const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({
       domContentLoaded: navigation.domContentLoadedEventEnd - navigation.domContentLoadedEventStart,
       firstContentfulPaint: paintEntries.find(entry => entry.name === 'first-contentful-paint')?.startTime || 0,
       largestContentfulPaint: 0,
-      cumulativeLayoutShift: layoutShiftEntries.reduce((sum, entry) => sum + (entry as any).value, 0)
+      cumulativeLayoutShift: layoutShiftEntries.reduce((sum, entry) => sum + (entry as PerformanceLayoutShift).value, 0)
     };
 
     // Measure LCP if supported

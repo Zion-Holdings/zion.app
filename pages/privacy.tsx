@@ -4,7 +4,8 @@ import { motion } from 'framer-motion';
 import { 
   Shield, Lock, Eye, CheckCircle, 
   ArrowRight, Users, Globe, Database, 
-  Calendar, Phone, Mail, MapPin
+  Calendar, Phone, Mail, MapPin,
+  Clock
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -69,26 +70,6 @@ const Privacy: React.FC = () => {
       right: 'Rectification',
       description: 'Correct inaccurate or incomplete data',
       icon: <CheckCircle className="w-5 h-5" />
-    },
-    {
-      right: 'Erasure',
-      description: 'Request deletion of your personal data',
-      icon: <Lock className="w-5 h-5" />
-    },
-    {
-      right: 'Portability',
-      description: 'Receive your data in a structured format',
-      icon: <Database className="w-5 h-5" />
-    },
-    {
-      right: 'Objection',
-      description: 'Object to certain types of processing',
-      icon: <Shield className="w-5 h-5" />
-    },
-    {
-      right: 'Restriction',
-      description: 'Limit how we process your data',
-      icon: <Globe className="w-5 h-5" />
     }
   ];
 
@@ -183,7 +164,7 @@ const Privacy: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
               className="text-center"

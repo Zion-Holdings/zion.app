@@ -1,6 +1,102 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
+<<<<<<< HEAD
+import { 
+  Shield, Lock, Eye, CheckCircle, AlertTriangle, 
+  ArrowRight, Server, Database, Network, Key,
+  Users, Globe, Zap, Brain, Phone, Cloud
+} from 'lucide-react';
+import Link from 'next/link';
+
+const Security: React.FC = () => {
+  const securityFeatures = [
+    {
+      icon: <Shield className="w-6 h-6" />,
+      title: 'Multi-Layer Security',
+      description: 'Comprehensive security architecture with multiple defense layers',
+      features: ['Network security', 'Application security', 'Data encryption', 'Access controls']
+    },
+    {
+      icon: <Lock className="w-6 h-6" />,
+      title: 'Data Protection',
+      description: 'Advanced encryption and data protection measures',
+      features: ['End-to-end encryption', 'Data masking', 'Secure backups', 'Privacy compliance']
+    },
+    {
+      icon: <Eye className="w-6 h-6" />,
+      title: 'Continuous Monitoring',
+      description: '24/7 security monitoring and threat detection',
+      features: ['Real-time alerts', 'Threat intelligence', 'Incident response', 'Security analytics']
+    },
+    {
+      icon: <Users className="w-6 h-6" />,
+      title: 'Access Management',
+      description: 'Robust identity and access management systems',
+      features: ['Multi-factor authentication', 'Role-based access', 'Single sign-on', 'Privilege management']
+    }
+  ];
+
+  const securityCertifications = [
+    {
+      name: 'SOC 2 Type II',
+      description: 'Service Organization Control 2 compliance with Type II attestation',
+      status: 'Certified',
+      icon: <CheckCircle className="w-6 h-6" />
+    },
+    {
+      name: 'ISO 27001',
+      description: 'Information Security Management System certification',
+      status: 'Certified',
+      icon: <CheckCircle className="w-6 h-6" />
+    },
+    {
+      name: 'GDPR Compliance',
+      description: 'General Data Protection Regulation compliance',
+      status: 'Compliant',
+      icon: <CheckCircle className="w-6 h-6" />
+    },
+    {
+      name: 'CCPA Compliance',
+      description: 'California Consumer Privacy Act compliance',
+      status: 'Compliant',
+      icon: <CheckCircle className="w-6 h-6" />
+    },
+    {
+      name: 'HIPAA Compliance',
+      description: 'Health Insurance Portability and Accountability Act compliance',
+      status: 'Compliant',
+      icon: <CheckCircle className="w-6 h-6" />
+    },
+    {
+      name: 'PCI DSS',
+      description: 'Payment Card Industry Data Security Standard compliance',
+      status: 'Certified',
+      icon: <CheckCircle className="w-6 h-6" />
+    }
+  ];
+
+  const securityTechnologies = [
+    {
+      name: 'Quantum Encryption',
+      description: 'Next-generation quantum-resistant encryption algorithms',
+      icon: <Key className="w-6 h-6" />
+    },
+    {
+      name: 'AI Threat Detection',
+      description: 'Machine learning-powered security threat detection',
+      icon: <Brain className="w-6 h-6" />
+    },
+    {
+      name: 'Zero Trust Architecture',
+      description: 'Never trust, always verify security model',
+      icon: <Network className="w-6 h-6" />
+    },
+    {
+      name: 'Secure Cloud Infrastructure',
+      description: 'Enterprise-grade cloud security and compliance',
+      icon: <Cloud className="w-6 h-6" />
+=======
 import { Shield, Lock, Eye, Users, CheckCircle, AlertTriangle, Server, Globe } from 'lucide-react';
 
 const SecurityPage: React.FC = () => {
@@ -28,6 +124,7 @@ const SecurityPage: React.FC = () => {
       description: "Meeting and exceeding industry security standards and regulations",
       icon: <CheckCircle className="w-8 h-8" />,
       benefits: ["SOC 2 Type II", "ISO 27001", "GDPR compliance", "Industry standards"]
+>>>>>>> 2d4d481f1493a231e1d090623f77d5e17a4d5961
     }
   ];
 
@@ -49,6 +146,8 @@ const SecurityPage: React.FC = () => {
       incidents: 0,
       description: 'Zero security breaches or data compromises',
       status: 'Excellent'
+<<<<<<< HEAD
+=======
 =======
 import { Shield, Lock, Eye, Users, CheckCircle, AlertTriangle, Server, Globe } from 'lucide-react';
 
@@ -123,10 +222,77 @@ const SecurityPage: React.FC = () => {
       standard: "HIPAA",
       description: "Health Insurance Portability and Accountability Act compliance",
       status: "Compliant"
+>>>>>>> 2d4d481f1493a231e1d090623f77d5e17a4d5961
     }
   ];
 
   return (
+<<<<<<< HEAD
+    <Layout
+      title="Security - Zion Tech Group"
+      description="Learn about Zion Tech Group's comprehensive security measures, certifications, and commitment to protecting your data and privacy."
+      keywords="security, cybersecurity, data protection, SOC 2, ISO 27001, GDPR compliance, Zion Tech Group"
+    >
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
+        {/* Hero Section */}
+        <section className="relative overflow-hidden py-20 lg:py-32">
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-900/20 via-blue-900/20 to-cyan-900/20" />
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center"
+            >
+              <div className="flex items-center justify-center mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-600 rounded-2xl flex items-center justify-center mr-4">
+                  <Shield className="w-8 h-8 text-white" />
+                </div>
+                <h1 className="text-4xl lg:text-6xl font-bold bg-gradient-to-r from-purple-400 via-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                  Security
+                </h1>
+              </div>
+              <p className="text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
+                Enterprise-grade security protecting your data and privacy
+              </p>
+              <p className="text-lg text-gray-400 max-w-3xl mx-auto">
+                At Zion Tech Group, security is not just a feature—it's fundamental to everything we do. 
+                We employ industry-leading security measures to protect your data and ensure your privacy.
+              </p>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Security Commitment */}
+        <section className="py-20 bg-black/50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-3xl lg:text-4xl font-bold text-white mb-8">
+                Our Security Commitment
+              </h2>
+              <div className="bg-gradient-to-br from-purple-900/30 to-blue-900/30 p-8 rounded-3xl border border-purple-500/20">
+                <p className="text-2xl lg:text-3xl text-white leading-relaxed max-w-4xl mx-auto">
+                  "We are committed to maintaining the highest standards of security and data protection. 
+                  Our multi-layered security approach ensures that your information remains secure, 
+                  confidential, and protected against evolving cyber threats."
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Security Features */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+=======
+>>>>>>> 2d4d481f1493a231e1d090623f77d5e17a4d5961
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -515,6 +681,8 @@ const SecurityPage: React.FC = () => {
             </motion.div>
           </div>
         </section>
+<<<<<<< HEAD
+=======
 =======
     <Layout 
       title="Security - Zion Tech Group"
@@ -804,10 +972,15 @@ const SecurityPage: React.FC = () => {
             </motion.div>
           </div>
         </section>
+>>>>>>> 2d4d481f1493a231e1d090623f77d5e17a4d5961
       </div>
     </Layout>
   );
 };
 
+<<<<<<< HEAD
+export default Security;
+=======
 export default SecurityPage;
+>>>>>>> 2d4d481f1493a231e1d090623f77d5e17a4d5961
 
