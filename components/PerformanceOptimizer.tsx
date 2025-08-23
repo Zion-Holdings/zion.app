@@ -2,14 +2,16 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Zap, TrendingUp, AlertTriangle, CheckCircle, X, Settings, RefreshCw } from 'lucide-react';
 
-interface PerformanceMetrics {
-  fcp: number;
-  lcp: number;
-  fid: number;
-  cls: number;
-  ttfb: number;
-  score: string;
-  grade: 'A' | 'B' | 'C' | 'D' | 'F';
+// Add browser API types
+declare global {
+  interface Window {
+    gtag?: (
+      command: string,
+      action: string,
+      params?: Record<string, unknown>
+    ) => void;
+    dataLayer?: unknown[];
+  }
 }
 
 interface PerformanceOptimizerProps {

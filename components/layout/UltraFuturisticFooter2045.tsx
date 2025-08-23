@@ -73,69 +73,55 @@ const footerSections = [
     website: 'https://ziontechgroup.com'
   };
 
+  const contactInfo = {
+    mobile: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709'
+  };
+
   const footerSections = [
     {
       title: 'Revolutionary Services 2045',
       links: [
-        { name: 'AI Consciousness Evolution 2045', href: '/ai-consciousness-evolution-2045', icon: <Brain className="w-4 h-4" /> },
-        { name: 'Quantum Neural Networks 2045', href: '/quantum-neural-network-platform-2045', icon: <Atom className="w-4 h-4" /> },
-        { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence-2045', icon: <Cpu className="w-4 h-4" /> },
-        { name: 'Quantum Cybersecurity 2045', href: '/quantum-cybersecurity-platform-2045', icon: <Shield className="w-4 h-4" /> },
-        { name: 'Space Resource Intelligence 2045', href: '/space-resource-intelligence-2045', icon: <Rocket className="w-4 h-4" /> },
-        { name: 'Autonomous Customer Success 2045', href: '/autonomous-customer-success-2045', icon: <Users className="w-4 h-4" /> }
-      ]
-    },
-    {
-      title: 'Real Enterprise Services 2025',
-      links: [
-        { name: 'AI Customer Success Automation', href: '/ai-customer-success-automation-2025' },
-        { name: 'Intelligent Vendor Risk Management', href: '/intelligent-vendor-risk-management-2025' },
-        { name: 'Automated SOC2 Compliance Platform', href: '/automated-soc2-compliance-platform-2025' },
-        { name: 'Intelligent Infrastructure Drift Detection', href: '/intelligent-infrastructure-drift-detection-2025' },
-        { name: 'Advanced Kubernetes RBAC Auditor', href: '/advanced-kubernetes-rbac-auditor-2025' },
-        { name: 'Real Enterprise Services Showcase', href: '/2025-real-services-showcase' }
+        { name: 'AI Consciousness Evolution 2045', href: '/ai-consciousness-evolution-2045', icon: Brain },
+        { name: 'Quantum Neural Networks 2045', href: '/quantum-neural-network-platform-2045', icon: Atom },
+        { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence-2045', icon: Target },
+        { name: 'Quantum Cybersecurity 2045', href: '/quantum-cybersecurity-platform-2045', icon: Shield },
+        { name: 'Space Resource Intelligence 2045', href: '/space-resource-intelligence-2045', icon: Rocket },
+        { name: 'Autonomous Customer Success 2045', href: '/autonomous-customer-success-2045', icon: Users }
       ]
     },
     {
       title: 'Technology Solutions',
       links: [
-        { name: 'Quantum Cloud Infrastructure 2045', href: '/quantum-cloud-infrastructure-2045', icon: <Cloud className="w-4 h-4" /> },
-        { name: 'Autonomous DevOps Platform 2045', href: '/autonomous-devops-platform-2045', icon: <Code className="w-4 h-4" /> },
-        { name: 'Quantum Data Center Management 2045', href: '/quantum-data-center-management-2045', icon: <Server className="w-4 h-4" /> },
-        { name: 'Autonomous Network Management 2045', href: '/autonomous-network-management-2045', icon: <Network className="w-4 h-4" /> },
-        { name: 'Autonomous IT Service Management 2045', href: '/autonomous-it-service-management-2045', icon: <Settings className="w-4 h-4" /> },
-        { name: 'Autonomous Security Operations Center 2045', href: '/autonomous-security-operations-center-2045', icon: <Lock className="w-4 h-4" /> }
+        { name: 'Quantum Cloud Infrastructure 2045', href: '/quantum-cloud-infrastructure-2045', icon: Cloud },
+        { name: 'Autonomous DevOps Platform 2045', href: '/autonomous-devops-platform-2045', icon: Code },
+        { name: 'Quantum Data Center Management 2045', href: '/quantum-data-center-management-2045', icon: Server },
+        { name: 'Autonomous Network Management 2045', href: '/autonomous-network-management-2045', icon: Network },
+        { name: 'Autonomous IT Service Management 2045', href: '/autonomous-it-service-management-2045', icon: Settings },
+        { name: 'Autonomous Security Operations Center 2045', href: '/autonomous-security-operations-center-2045', icon: Lock }
       ]
     },
     {
       title: 'AI & Consciousness',
       links: [
-        { name: 'AI Consciousness Evolution 2045', href: '/ai-consciousness-evolution-2045', icon: <Brain className="w-4 h-4" /> },
-        { name: 'Quantum AI Cognitive 2045', href: '/quantum-ai-cognitive-2045', icon: <Atom className="w-4 h-4" /> },
-        { name: 'Autonomous AI Research 2045', href: '/autonomous-ai-research-2045', icon: <Zap className="w-4 h-4" /> },
-        { name: 'Emotional AI Intelligence 2045', href: '/emotional-ai-intelligence-2045', icon: <Heart className="w-4 h-4" /> },
-        { name: 'Quantum AI Metaverse 2045', href: '/quantum-ai-metaverse-2045', icon: <Star className="w-4 h-4" /> },
-        { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence-2045', icon: <Target className="w-4 h-4" /> }
+        { name: 'AI Consciousness Evolution 2045', href: '/ai-consciousness-evolution-2045', icon: Brain },
+        { name: 'Quantum AI Cognitive 2045', href: '/quantum-ai-cognitive-2045', icon: Atom },
+        { name: 'Autonomous AI Research 2045', href: '/autonomous-ai-research-2045', icon: Zap },
+        { name: 'Emotional AI Intelligence 2045', href: '/emotional-ai-intelligence-2045', icon: Heart },
+        { name: 'Quantum AI Metaverse 2045', href: '/quantum-ai-metaverse-2045', icon: Star },
+        { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence-2045', icon: Target }
       ]
     },
     {
       title: 'Company',
       links: [
-        { name: 'About Us', href: '/about', icon: <Users className="w-4 h-4" /> },
-        { name: 'Our Mission', href: '/mission', icon: <Target className="w-4 h-4" /> },
-        { name: 'Leadership Team', href: '/team', icon: <Users className="w-4 h-4" /> },
-        { name: 'Careers', href: '/careers', icon: <Zap className="w-4 h-4" /> },
-        { name: 'News & Updates', href: '/news', icon: <Globe className="w-4 h-4" /> },
-        { name: 'Press Kit', href: '/press', icon: <Play className="w-4 h-4" /> }
-      ]
-    },
-    {
-      title: 'Contact Information',
-      links: [
-        { name: 'Phone: +1 302 464 0950', href: 'tel:+1 302 464 0950' },
-        { name: 'Email: kleber@ziontechgroup.com', href: 'mailto:kleber@ziontechgroup.com' },
-        { name: 'Website: ziontechgroup.com', href: 'https://ziontechgroup.com' },
-        { name: 'Address: 364 E Main St STE 1008 Middletown DE 19709', href: '#' }
+        { name: 'About Us', href: '/about', icon: Users },
+        { name: 'Our Mission', href: '/mission', icon: Target },
+        { name: 'Leadership Team', href: '/team', icon: Users },
+        { name: 'Careers', href: '/careers', icon: Star },
+        { name: 'News & Updates', href: '/news', icon: Globe },
+        { name: 'Press Kit', href: '/press', icon: Play }
       ]
     }
   ];
@@ -315,6 +301,9 @@ const UltraFuturisticFooter2045: React.FC = () => {
                         href={link.href}
                         className="text-gray-400 hover:text-cyan-400 transition-all duration-200 group hover:translate-x-1"
                       >
+                        <div className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-200">
+                          <link.icon className="w-5 h-5" />
+                        </div>
                         <span className="text-sm group-hover:text-cyan-400 transition-colors duration-200">
                           {link.name}
                         </span>
@@ -400,56 +389,8 @@ const UltraFuturisticFooter2045: React.FC = () => {
                     className="lg:hidden p-1 hover:bg-white/10 rounded transition-colors"
                     aria-label={`Toggle ${section.title} section`}
                   >
-                    <ArrowRight className={`w-4 h-4 transition-transform ${expandedSection === section.title ? 'rotate-90' : ''}`} />
-                  </button>
-                </h3>
-                
-                <div className={`space-y-3 ${expandedSection === section.title ? 'block' : 'hidden lg:block'}`}>
-                  {section.items.map((item, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.05 }}
-                    >
-                      <Link
-                        href={item.href}
-                        className="flex items-center gap-3 text-gray-300 hover:text-cyan-300 transition-colors duration-200 group"
-                      >
-                        <item.icon className="w-4 h-4 text-cyan-400 group-hover:scale-110 transition-transform" />
-                        <span className="text-sm">{item.label}</span>
-                      </Link>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Contact & Social Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 pt-8 border-t border-white/10">
-            {/* Contact Information */}
-            <div>
-              <h3 className="text-lg font-semibold text-white mb-6">Get in Touch</h3>
-              <div className="space-y-4">
-                {contactInfo.map((contact, index) => (
-                  <motion.a
-                    key={index}
-                    href={contact.href}
-                    className="flex items-center gap-3 text-gray-300 hover:text-cyan-300 transition-colors duration-200 group"
-                    aria-label={`${contact.label}: ${contact.value}`}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    <contact.icon className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform" />
-                    <div>
-                      <div className="text-sm font-medium text-white">{contact.label}</div>
-                      <div className="text-sm text-gray-400 group-hover:text-cyan-300 transition-colors">
-                        {contact.value}
-                      </div>
-                    </div>
-                  </motion.a>
+                    <social.icon className="w-5 h-5" />
+                  </Link>
                 ))}
               </div>
             </div>
