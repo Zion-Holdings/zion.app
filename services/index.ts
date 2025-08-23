@@ -235,12 +235,10 @@ export { advancedCloudDevOpsServices } from '../data/2025-advanced-cloud-devops-
 export { industrySpecificSolutions } from '../data/2025-industry-specific-solutions';
 export { emergingTechnologyServices } from '../data/2025-emerging-technology-services';
 
-// Export new innovative 2025 ecosystem services
-export { innovativeAIAutonomousEcosystem2025 } from '../data/2025-innovative-ai-autonomous-ecosystem';
-export { innovativeITInfrastructureEcosystem2025 } from '../data/2025-innovative-it-infrastructure-ecosystem';
-export { innovativeMicroSaasEcosystem2025 } from '../data/2025-innovative-micro-saas-ecosystem';
-export { innovativeCybersecurityEcosystem2025 } from '../data/2025-innovative-cybersecurity-ecosystem';
-export { innovativeEmergingTechEcosystem2025 } from '../data/2025-innovative-emerging-tech-ecosystem';
+// Export new 2025 Ultimate Real Services
+export { ultimateRealMicroSaas2025Expansion } from '../data/2025-ultimate-real-micro-saas-expansion';
+export { ultimateRealITServices2025Expansion } from '../data/2025-ultimate-real-it-services-expansion';
+export { ultimateRealAIServices2025Expansion } from '../data/2025-ultimate-real-ai-services-expansion';
 
 // Export new service types
 export type { AIMLService } from '../data/2025-advanced-ai-ml-services';

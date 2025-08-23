@@ -90,14 +90,13 @@ const CuttingEdgeFuturisticServicesShowcase: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <SEO 
-        data={{
-          pageTitle: "2025 Cutting-Edge Futuristic Services Showcase | Zion Tech Group",
-          pageDescription: "Discover our revolutionary cutting-edge futuristic services including quantum AI, autonomous systems, holographic technology, and more. Transform your business with next-generation solutions.",
-          pageKeywords: [
-            'cutting-edge services', 'futuristic technology', 'quantum AI', 'autonomous systems', 
-            'holographic technology', 'AI automation', 'quantum computing', 'neural interfaces'
-          ]
-        }}
+        title="2025 Cutting-Edge Futuristic Services Showcase | Zion Tech Group"
+        description="Discover our revolutionary cutting-edge futuristic services including quantum AI, autonomous systems, holographic technology, and more. Transform your business with next-generation solutions."
+        keywords={[
+          'cutting-edge services', 'futuristic technology', 'quantum AI', 'autonomous systems', 
+          'holographic technology', 'AI automation', 'quantum computing', 'neural interfaces'
+        ]}
+        image="/og-cutting-edge-services.jpg"
       />
 
       {/* Hero Section */}
