@@ -193,7 +193,10 @@ const allServices = [
   ...innovative2025AIServicesExpansion,
   // Our new 2025 advanced enterprise services
   ...advancedEnterpriseServices,
+<<<<<<< HEAD
+=======
   ...innovative2025MicroSaasExpansion,
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-f4d0
   ...cuttingEdgeITInfrastructureServices
 ];
 
