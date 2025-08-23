@@ -259,3 +259,7 @@
 2025-08-23 22:58:02 - Resolving conflicts in src/main.tsx for branch 7yfp2f-codex/implement-global-error-boundary-with-toasts
 2025-08-23 22:58:02 - Resolving conflicts in src/utils/sentry.ts for branch 7yfp2f-codex/implement-global-error-boundary-with-toasts
 2025-08-23 22:58:02 - Resolving conflicts in tsconfig.json for branch 7yfp2f-codex/implement-global-error-boundary-with-toasts
+2025-08-23 22:58:03 - Merge conflicts detected in 7yshjv-codex/implement-eprivacy-directive-consent-banner
+2025-08-23 22:58:03 - Resolving conflicts in package.json for branch 7yshjv-codex/implement-eprivacy-directive-consent-banner
+2025-08-23 22:58:03 - Resolving conflicts in src/App.tsx for branch 7yshjv-codex/implement-eprivacy-directive-consent-banner
+2025-08-23 22:58:03 - Resolving conflicts in src/context/index.ts for branch 7yshjv-codex/implement-eprivacy-directive-consent-banner
