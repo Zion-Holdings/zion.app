@@ -268,7 +268,11 @@
 
 [[scheduled.functions]]
   name = "pagespeed-insights-runner"
+<<<<<<< HEAD
+  schedule = "11 */6 * * *" # every 6 hours, offset
+=======
   schedule = "11 */6 * * *"
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-72a2
 
 # Content freshness auditor
 [[scheduled.functions]]
@@ -280,6 +284,19 @@
   name = "adaptive-orchestrator"
   schedule = "*/5 * * * *"
 
+<<<<<<< HEAD
+[[scheduled.functions]]
+  name = "performance-budget-runner"
+  schedule = "*/20 * * * *"
+
+[[scheduled.functions]]
+  name = "structured-data-generator"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+  name = "internal-anchors-checker"
+  schedule = "*/30 * * * *"
+=======
 # New: automatic merge conflict resolver and sync
 [[scheduled.functions]]
   name = "merge-conflict-auto-resolver"
@@ -289,3 +306,4 @@
 [[scheduled.functions]]
   name = "autonomous-invention-orchestrator"
   schedule = "*/10 * * * *"
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-72a2

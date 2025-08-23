@@ -2234,3 +2234,25 @@ pages/main/front/index.tsx[0m
 2025-08-23 23:09:26 - [1;33m⚠️  Found conflicts in pages/main/front/index.tsx, resolving...[0m
 2025-08-23 23:09:26 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
 2025-08-23 23:09:26 - [0;32m✅ Resolved conflicts in pages/main/front/index.tsx[0m
+2025-08-23 23:09:26 - [0;32m✅ Successfully resolved conflicts and merged cursor/invent-and-deploy-autonomous-cloud-automations-bb81[0m
+2025-08-23 23:09:26 - [0;32m✅ PR #3817 (cursor/invent-and-deploy-autonomous-cloud-automations-bb81) processed successfully[0m
+2025-08-23 23:09:26 - [0;34m🔒 Closing PR #3817 via GitHub API...[0m
+2025-08-23 23:09:27 - [0;34m📊 Progress: 72/100, ✅ 72, ❌ 0[0m
+2025-08-23 23:09:29 - [0;34m📋 Processing PR #3816: Invent and deploy autonomous cloud automations (branch: cursor/invent-and-deploy-autonomous-cloud-automations-72a2)[0m
+2025-08-23 23:09:29 - [0;34m🔄 Attempting to merge cursor/invent-and-deploy-autonomous-cloud-automations-72a2...[0m
+2025-08-23 23:09:30 - [1;33m⚠️  Merge conflicts detected in cursor/invent-and-deploy-autonomous-cloud-automations-72a2 (attempt 1/3), resolving...[0m
+2025-08-23 23:09:30 - [0;34m📋 Conflicted files: netlify.toml
+netlify/functions/functions-manifest.json
+pages/index.tsx[0m
+2025-08-23 23:09:30 - [0;34m🔧 Resolving conflicts in netlify.toml for branch cursor/invent-and-deploy-autonomous-cloud-automations-72a2...[0m
+2025-08-23 23:09:30 - [1;33m⚠️  Found conflicts in netlify.toml, resolving...[0m
+2025-08-23 23:09:30 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:09:30 - [0;32m✅ Resolved conflicts in netlify.toml[0m
+2025-08-23 23:09:30 - [0;34m🔧 Resolving conflicts in netlify/functions/functions-manifest.json for branch cursor/invent-and-deploy-autonomous-cloud-automations-72a2...[0m
+2025-08-23 23:09:30 - [1;33m⚠️  Found conflicts in netlify/functions/functions-manifest.json, resolving...[0m
+2025-08-23 23:09:30 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:09:30 - [0;32m✅ Resolved conflicts in netlify/functions/functions-manifest.json[0m
+2025-08-23 23:09:30 - [0;34m🔧 Resolving conflicts in pages/index.tsx for branch cursor/invent-and-deploy-autonomous-cloud-automations-72a2...[0m
+2025-08-23 23:09:30 - [1;33m⚠️  Found conflicts in pages/index.tsx, resolving...[0m
+2025-08-23 23:09:30 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:09:30 - [0;32m✅ Resolved conflicts in pages/index.tsx[0m
