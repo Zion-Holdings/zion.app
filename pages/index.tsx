@@ -227,7 +227,6 @@ export default function Home() {
               { title: 'AI Trends Radar', desc: 'Aggregates trending AI topics into a public report.', href: '/.netlify/functions/ai-trends-radar-runner' },
               { title: 'Dependency Auto‑Upgrade', desc: 'Safely bumps minor/patch deps with build verification.', href: '/.netlify/functions/deps-auto-upgrade-runner' },
               { title: 'Autonomous Invention Orchestrator', desc: 'Discovers opportunities and applies safe, visible changes.', href: '/.netlify/functions/autonomous-invention-orchestrator' },
-              { title: 'Internal Link Map (30m)', desc: 'Generates a link graph, finds orphans, and publishes a public report.', href: '/.netlify/functions/internal-link-map-runner' },
             ].map((tool) => (
               <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
@@ -238,7 +237,6 @@ export default function Home() {
             ))}
           </div>
         </section>
-
 
         {/* New: Autonomous Automations */}
         <section className="mx-auto max-w-7xl px-6 pb-14">
@@ -317,6 +315,31 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Autonomous Intelligence Feeds */}
+        <section className="mx-auto max-w-7xl px-6 pb-14">
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Autonomous Intelligence Feeds</h2>
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <a href="/reports/github-trending" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">GitHub Trending</h3>
+              <p className="mt-1 text-sm text-white/75">Daily hottest repos across ecosystems.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>
+            <a href="/reports/ai-papers" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">AI Papers Watch</h3>
+              <p className="mt-1 text-sm text-white/75">Recent arXiv cs.AI highlights.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>
+            <a href="/reports/hn-top" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
+              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+              <h3 className="text-lg font-semibold">HN Top Stories</h3>
+              <p className="mt-1 text-sm text-white/75">Top Hacker News with points.</p>
+              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90">Open <span aria-hidden>↗</span></div>
+            </a>
+          </div>
+        </section>
+
         {/* AUTO-GENERATED: HOME_UPDATER_START */}
  <section className="mx-auto max-w-7xl px-6 pb-16">
    <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Explore more</h2>
@@ -333,10 +356,10 @@ export default function Home() {
             <Link href="/.netlify/functions/docs-index-runner"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Docs — technical notes & guides</span></a></Link>
   
    </div>
-   </section>
+ </section>
   {/* AUTO-GENERATED: HOME_UPDATER_END */}
   
-         {/* AUTO-GENERATED: HOME_VISIONARY_START */}
+          {/* AUTO-GENERATED: HOME_VISIONARY_START */}
 
         <section id="home-visionary" className="mx-auto max-w-7xl px-6 pb-20">
           <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">New Visionary Automations</h2>

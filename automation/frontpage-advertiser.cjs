@@ -15,7 +15,9 @@ function detectLinks(root) {
     { href: '/site-health', title: 'Site Health', desc: 'A11y, performance, and link integrity' },
     { href: '/reports/seo', title: 'SEO Audit', desc: 'Continuous on‑site improvements' },
     { href: '/reports/ai-trends', title: 'AI Trends', desc: 'Ecosystem intelligence signals' },
-    { href: '/reports/automation-insights', title: 'Automation Insights', desc: 'Coverage, health & activity signals' },
+    { href: '/reports/github-trending', title: 'GitHub Trending', desc: 'Daily hottest repos' },
+    { href: '/reports/ai-papers', title: 'AI Papers Watch', desc: 'Recent arXiv highlights' },
+    { href: '/reports/hn-top', title: 'HN Top Stories', desc: 'Top stories with points' },
     { href: '/newsroom', title: 'Newsroom', desc: 'Autonomous updates & evolution' },
     { href: '/main/front', title: 'Front Systems Hub', desc: 'Curated futuristic front experience' },
   ];
@@ -24,8 +26,7 @@ function detectLinks(root) {
     const parts = check.split('/').filter(Boolean);
     const candidateIndex = path.join(pagesDir, ...parts, 'index.tsx');
     const candidatePage = path.join(pagesDir, ...parts) + '.tsx';
-    const candidatePublic = path.join(root, 'public', ...parts, 'index.html');
-    if (fileExists(candidateIndex) || fileExists(candidatePage) || fileExists(candidatePublic)) links.push({ type: 'internal', ...i });
+    if (fileExists(candidateIndex) || fileExists(candidatePage)) links.push({ type: 'internal', ...i });
   });
 
   const pkgPath = path.join(root, 'package.json');
@@ -39,8 +40,6 @@ function detectLinks(root) {
 
   links.push({ type: 'external', href: repoUrl + '/actions', title: 'Live Pipelines', desc: 'CI logs & artifacts' });
   links.push({ type: 'external', href: repoUrl + '/tree/main/docs', title: 'Docs & Guides', desc: 'Technical notes' });
-  // Cloud-native function links
-  links.push({ type: 'internal', href: '/.netlify/functions/autonomous-cloud-inventor', title: 'Cloud Inventor (2m)', desc: 'Discovers, orchestrates, syncs' });
 
   const seen = new Set();
   return links.filter((l) => (seen.has(l.href) ? false : (seen.add(l.href), true)));
@@ -63,8 +62,8 @@ function main() {
     console.error('Front page not found at', target);
     process.exit(0);
   }
-  const startMarker = '{/* AUTO-GENERATED: FRONT_ADS_START */';
-  const endMarker = '/* AUTO-GENERATED: FRONT_ADS_END */}';
+  const startMarker = '{/* AUTO-GENERATED: FRONT_ADS_START */}';
+  const endMarker = '{/* AUTO-GENERATED: FRONT_ADS_END */}';
   const src = fs.readFileSync(target, 'utf8');
   const s = src.indexOf(startMarker);
   const e = src.indexOf(endMarker);
