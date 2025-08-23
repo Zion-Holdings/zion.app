@@ -1,73 +1,53 @@
 import type { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import UltraAdvancedFuturisticBackground from '../../components/ui/UltraAdvancedFuturisticBackground';
-import Card from '../../components/ui/Card';
+import { ArrowLeft } from 'lucide-react';
+import Layout from '../../components/layout/Layout';
 
-type Props = { posts: BlogPost[]; authors: string[]; topics: string[]; tags: string[] };
-
-const BlogHome: NextPage<Props> = ({ posts, authors, topics, tags }) => {
-  const [filters, setFilters] = useState<{ author?: string; topic?: string; tag?: string }>({});
-
-  const filtered = useMemo(() => {
-    return posts.filter((p) => {
-      if (filters.author && p.author !== filters.author) return false;
-      if (filters.topic && !p.topics.includes(filters.topic)) return false;
-      if (filters.tag && !p.tags.includes(filters.tag)) return false;
-      return true;
-    });
-  }, [posts, filters]);
-
-  const hero = filtered[0];
-  const rest = filtered.slice(1);
-
+export default function BlogIndex() {
   return (
-    <UltraAdvancedFuturisticBackground>
+    <Layout>
       <Head>
-        <title>Blog - Zion AI Marketplace</title>
-        <meta name="description" content="Insights on AI, DevOps, and digital transformation." />
-        <meta property="og:title" content="Zion Blog" />
-        <meta property="og:description" content="Insights on AI, DevOps, and digital transformation." />
-        <meta property="og:image" content="/images/og/blog-default.jpg" />
-        <meta property="og:type" content="website" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Zion Blog" />
-        <meta name="twitter:description" content="Insights on AI, DevOps, and digital transformation." />
-        <meta name="twitter:image" content="/images/og/blog-default.jpg" />
+        <title>Blog | Zion Tech Group</title>
+        <meta name="description" content="Latest insights and updates from Zion Tech Group" />
       </Head>
-
-      <div className="mx-auto max-w-6xl">
-        <h1 className="text-4xl font-bold mb-4">Zion Blog</h1>
-        <p className="text-gray-600 dark:text-gray-300 mb-3">Thought leadership on AI, DevOps, and building with speed.</p>
-        <div className="mb-6">
-          <PageShareButtons
-            title="Zion Blog"
-            url={typeof window === 'undefined' ? 'https://zion.app/blog' : window.location.href}
-            description="Insights on AI and DevOps from Zion."
-            onShare={(network) => fetch('/api/analytics/share', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ url: window.location.href, title: 'Zion Blog', network, utm: 'utm_source=' + network + '&utm_medium=share&utm_campaign=blog' }) }).catch(() => {})}
-          />
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {posts.map((p) => (
-            <div key={p.slug} className="p-6 bg-black/40 border border-gray-700/50 hover:border-cyan-500/40 transition-colors rounded-lg">
-              <h2 className="text-white text-xl font-semibold mb-2">{p.title}</h2>
-              <p className="text-gray-400 mb-4">{p.excerpt}</p>
-              <Link href={`/blog/${p.slug}`} className="text-cyan-400 hover:text-white font-medium">Read →</Link>
-            </div>
-          ))}
+      
+      <div className="container mx-auto px-4 py-16">
+        <div className="max-w-4xl mx-auto">
+          <div className="mb-8">
+            <Link 
+              href="/" 
+              className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Back to Home
+            </Link>
+          </div>
+          
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Blog
+          </h1>
+          
+          <p className="text-gray-300 text-lg mb-8">
+            Our blog is currently being updated. Check back soon for the latest insights on AI, quantum computing, and emerging technologies.
+          </p>
+          
+          <div className="bg-black/20 border border-gray-700/50 rounded-2xl p-8 text-center">
+            <h2 className="text-2xl font-semibold text-white mb-4">
+              Coming Soon
+            </h2>
+            <p className="text-gray-300 mb-6">
+              We're working on bringing you the latest insights and updates from the world of cutting-edge technology.
+            </p>
+            <Link 
+              href="/contact" 
+              className="inline-block bg-gradient-to-r from-cyan-500 to-blue-600 text-white px-6 py-3 rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300"
+            >
+              Contact Us
+            </Link>
+          </div>
         </div>
       </div>
-    </UltraAdvancedFuturisticBackground>
+    </Layout>
   );
-};
-
-export const getServerSideProps: GetServerSideProps = async () => {
-  const posts = listPublishedPosts();
-  const authors = listAllAuthors();
-  const topics = listAllTopics();
-  const tags = listAllTags();
-  return { props: { posts, authors, topics, tags } };
-};
-
-export default BlogHome;
+}
