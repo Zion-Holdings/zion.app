@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { 
-  Brain, Atom, Rocket, Shield, Zap, Target, Star,
-  ArrowRight, Check, TrendingUp, Users, Globe, Cpu,
-  Database, Cloud, Lock, Settings, Eye, Award, Clock
+  Brain, Atom, Rocket, Zap, Star,
+  Check, Cpu
 } from 'lucide-react';
 
 // Import our new service data
@@ -26,15 +25,13 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
     transition={{ duration: 0.5, delay: index * 0.1 }}
     className="relative group"
   >
-    <div className={`absolute inset-0 bg-gradient-to-r ${service.color} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20`}></div>
-    <div className={`relative bg-gradient-to-r ${service.color.replace('from-', 'from-').replace('to-', 'to-')} bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full`}>
+    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-20"></div>
+    <div className="relative bg-gradient-to-r from-cyan-500 to-blue-600 bg-opacity-10 border border-opacity-30 rounded-2xl p-8 hover:border-opacity-50 transition-all duration-300 h-full">
       <div className="flex items-start justify-between mb-6">
-        <div className="text-4xl">{service.icon}</div>
-        {service.popular && (
-          <span className="px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-semibold rounded-full">
-            Popular
-          </span>
-        )}
+        <div className="text-4xl">🚀</div>
+        <span className="px-3 py-1 bg-gradient-to-r from-purple-500 to-blue-500 text-white text-xs font-semibold rounded-full">
+          New
+        </span>
       </div>
       
       <h3 className="text-2xl font-bold text-white mb-3">{service.name}</h3>
@@ -51,8 +48,8 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
       
       <div className="flex items-center justify-between mb-6">
         <div>
-          <span className="text-3xl font-bold text-white">{service.price}</span>
-          <span className="text-gray-400 text-sm">{service.period}</span>
+          <span className="text-3xl font-bold text-white">{service.pricing.starter}</span>
+          <span className="text-gray-400 text-sm">/month</span>
         </div>
         <div className="text-right">
           <div className="flex items-center space-x-1 text-yellow-400">
@@ -60,22 +57,22 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => (
               <Star key={i} className={`w-4 h-4 ${i < Math.floor(service.rating) ? 'fill-current' : ''}`} />
             ))}
           </div>
-          <span className="text-gray-400 text-xs">{service.rating}/5 ({service.reviews} reviews)</span>
+          <span className="text-gray-400 text-xs">{service.rating}/5</span>
         </div>
       </div>
       
       <div className="space-y-3 mb-6 text-xs text-gray-400">
         <div className="flex justify-between">
-          <span>Setup Time:</span>
-          <span>{service.setupTime}</span>
+          <span>Category:</span>
+          <span>{service.category}</span>
         </div>
         <div className="flex justify-between">
-          <span>Trial:</span>
-          <span>{service.trialDays} days</span>
+          <span>Launch:</span>
+          <span>{service.launchDate}</span>
         </div>
         <div className="flex justify-between">
-          <span>Customers:</span>
-          <span>{service.customers.toLocaleString()}</span>
+          <span>Market Price:</span>
+          <span>{service.marketPrice}</span>
         </div>
       </div>
       

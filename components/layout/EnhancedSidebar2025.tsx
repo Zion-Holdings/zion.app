@@ -24,22 +24,22 @@ const sidebarSections = [
     icon: <Brain className="w-5 h-5" />,
     color: 'text-violet-400',
     items: [
-      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', badge: 'New' },
-      { name: 'AI Quantum Neural Network', href: '/ai-quantum-neural-network', badge: 'Hot' },
-      { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant', badge: 'New' },
-      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', badge: 'Popular' },
-      { name: 'AI Predictive Maintenance', href: '/ai-predictive-maintenance-platform', badge: 'New' },
-      { name: 'AI Content Personalization', href: '/ai-content-personalization-engine', badge: 'New' },
-      { name: 'AI Autonomous Ecosystem', href: '/ai-autonomous-ecosystem-manager' },
+      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-platform', badge: 'New' },
+      { name: 'AI Business Intelligence', href: '/ai-business-intelligence', badge: 'Hot' },
+      { name: 'AI Autonomous HR Platform', href: '/ai-autonomous-hr-platform', badge: 'New' },
+      { name: 'AI Autonomous Marketing', href: '/ai-autonomous-marketing-platform', badge: 'Popular' },
+      { name: 'AI Autonomous Sales', href: '/ai-autonomous-sales-platform', badge: 'New' },
+      { name: 'AI Autonomous Customer Service', href: '/ai-autonomous-customer-service', badge: 'New' },
+      { name: 'AI Autonomous Research', href: '/ai-autonomous-research-assistant' },
+      { name: 'AI Autonomous Decision Engine', href: '/ai-autonomous-decision-engine' },
+      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training' },
+      { name: 'AI Predictive Maintenance', href: '/ai-predictive-maintenance-platform' },
+      { name: 'AI Content Personalization', href: '/ai-content-personalization-engine' },
       { name: 'AI Ethics & Governance', href: '/ai-ethics-governance-framework' },
-      { name: 'RAG Evaluation Lab', href: '/rag-evaluation-lab/', badge: 'New' },
-      { name: 'API Performance Testing', href: '/api-performance-testing/' },
       { name: 'AI Creativity Studio', href: '/ai-creativity-studio' },
       { name: 'AI Education Platform', href: '/ai-education-platform' },
-      { name: 'AI Healthcare Diagnostics', href: '/healthcare-solutions' },
-      { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence' },
-      { name: 'AI Sustainability Platform', href: '/ai-sustainability-platform' },
-      { name: 'AI Legal Contract Analyzer', href: '/ai-legal-contract-analyzer' }
+      { name: 'AI Healthcare Diagnostics', href: '/ai-healthcare-diagnostics' },
+      { name: 'AI Financial Intelligence', href: '/ai-financial-intelligence' }
     ]
   },
   {
@@ -47,19 +47,19 @@ const sidebarSections = [
     icon: <Atom className="w-5 h-5" />,
     color: 'text-indigo-400',
     items: [
-      { name: 'Space Resource Mining', href: '/space-resource-mining-platform', badge: 'Hot' },
+      { name: 'Quantum Cybersecurity Sentinel', href: '/quantum-cybersecurity-sentinel', badge: 'Hot' },
+      { name: 'Quantum Secure Communication', href: '/quantum-secure-communication', badge: 'New' },
       { name: 'Quantum Internet Security', href: '/quantum-internet-security-platform', badge: 'New' },
-      { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform', badge: 'New' },
       { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform', badge: 'New' },
-      { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform', badge: 'New' },
       { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' },
       { name: 'Quantum Energy Platform', href: '/quantum-energy-platform' },
       { name: 'Quantum Robotics', href: '/quantum-robotics' },
-      { name: 'Quantum Cybersecurity', href: '/quantum-cybersecurity-platform' },
       { name: 'Quantum Logistics', href: '/quantum-logistics-optimization' },
       { name: 'Quantum Metaverse', href: '/quantum-metaverse' },
       { name: 'Quantum IoT Platform', href: '/quantum-iot' },
-      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading' }
+      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading' },
+      { name: 'Space Resource Mining', href: '/space-resource-mining-platform' },
+      { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform' }
     ]
   },
   {

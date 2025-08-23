@@ -35,14 +35,14 @@ const UltraFuturisticFooter2036: React.FC = () => {
       links: [
         { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-platform', featured: true },
         { name: 'Quantum Cybersecurity Sentinel', href: '/quantum-cybersecurity-sentinel', featured: true },
-        { name: 'AI Autonomous Content Factory', href: '/ai-autonomous-content-factory', featured: true },
-        { name: 'Autonomous Business Intelligence', href: '/autonomous-business-intelligence', featured: true },
-        { name: 'Quantum Supply Chain Optimizer', href: '/quantum-supply-chain-optimizer', featured: true },
-        { name: 'AI Autonomous Customer Success', href: '/ai-autonomous-customer-success', featured: true },
-        { name: 'AI Autonomous DevOps Platform', href: '/ai-autonomous-devops-platform', featured: true },
-        { name: 'Autonomous Cloud Orchestrator', href: '/autonomous-cloud-orchestrator' },
-        { name: 'Quantum Edge Computing Platform', href: '/quantum-edge-computing-platform' },
-        { name: 'AI-Powered Enterprise Architecture', href: '/ai-powered-enterprise-architecture' }
+        { name: 'AI Business Intelligence', href: '/ai-business-intelligence', featured: true },
+        { name: 'Quantum Secure Communication', href: '/quantum-secure-communication', featured: true },
+        { name: 'AI Autonomous HR Platform', href: '/ai-autonomous-hr-platform', featured: true },
+        { name: 'AI Autonomous Marketing Platform', href: '/ai-autonomous-marketing-platform', featured: true },
+        { name: 'AI Autonomous Sales Platform', href: '/ai-autonomous-sales-platform', featured: true },
+        { name: 'AI Autonomous Customer Service', href: '/ai-autonomous-customer-service' },
+        { name: 'AI Autonomous Research Assistant', href: '/ai-autonomous-research-assistant' },
+        { name: 'AI Autonomous Decision Engine', href: '/ai-autonomous-decision-engine' }
       ]
     },
     {

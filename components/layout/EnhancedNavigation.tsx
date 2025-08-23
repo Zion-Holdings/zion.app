@@ -1,5 +1,3 @@
-/// <reference types="dom" />
-
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Menu, X, ChevronDown } from 'lucide-react';
@@ -28,10 +26,11 @@ const EnhancedNavigation: React.FC = () => {
       href: '/services',
       children: [
         { label: 'AI & Automation', href: '/ai-automation-services' },
-        { label: 'IT Infrastructure', href: '/it-infrastructure-services' },
-        { label: 'Cloud Solutions', href: '/cloud-solutions' },
-        { label: 'Cybersecurity', href: '/cybersecurity-services' },
-        { label: 'Quantum Computing', href: '/quantum-computing' }
+        { label: 'Quantum Computing', href: '/quantum-services' },
+        { label: 'IT Infrastructure', href: '/it-services' },
+        { label: 'Cloud Solutions', href: '/cloud-platform' },
+        { label: 'Cybersecurity', href: '/security' },
+        { label: 'Micro SAAS', href: '/micro-saas' }
       ]
     },
     {
@@ -40,7 +39,10 @@ const EnhancedNavigation: React.FC = () => {
       children: [
         { label: 'Case Studies', href: '/case-studies' },
         { label: 'Success Stories', href: '/success-stories' },
-        { label: 'Innovation Lab', href: '/innovation-lab' }
+        { label: 'Innovation Lab', href: '/innovation-lab' },
+        { label: '2025 Services', href: '/comprehensive-2025-services-showcase' },
+        { label: '2026 Services', href: '/ultimate-2026-services-showcase' },
+        { label: '2037 Services', href: '/2037-innovative-services-showcase' }
       ]
     },
     {
@@ -49,8 +51,10 @@ const EnhancedNavigation: React.FC = () => {
       children: [
         { label: 'Documentation', href: '/docs' },
         { label: 'Blog', href: '/blog' },
-        { label: 'Research', href: '/research' },
-        { label: 'Training', href: '/training' }
+        { label: 'Research', href: '/research-development' },
+        { label: 'Training', href: '/training' },
+        { label: 'Reports', href: '/reports' },
+        { label: 'Events', href: '/events' }
       ]
     },
     {
@@ -58,9 +62,11 @@ const EnhancedNavigation: React.FC = () => {
       href: '/about',
       children: [
         { label: 'About Us', href: '/about' },
-        { label: 'Team', href: '/team' },
         { label: 'Careers', href: '/careers' },
-        { label: 'Contact', href: '/contact' }
+        { label: 'Contact', href: '/contact' },
+        { label: 'Partners', href: '/partners' },
+        { label: 'Investors', href: '/investors' },
+        { label: 'Locations', href: '/locations' }
       ]
     }
   ];
@@ -84,7 +90,7 @@ const EnhancedNavigation: React.FC = () => {
   // Close dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as Element;
+      const target = event.target as any;
       if (!target.closest('.navigation-dropdown')) {
         closeDropdown();
       }
