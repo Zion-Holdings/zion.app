@@ -454,6 +454,11 @@ export default function AutomationHealthPage({ health, controlPlane, scheduleHin
 
 export const getStaticProps: GetStaticProps = async () => {
   try {
+<<<<<<< HEAD
+    // During build time, we can't fetch from localhost, so we'll use fallback data
+    // In production, these will be fetched client-side
+    const health = {
+=======
     const readJson = (relPath: string) => {
       const filePath = path.join(process.cwd(), 'public', relPath);
       if (fs.existsSync(filePath)) {
@@ -464,6 +469,7 @@ export const getStaticProps: GetStaticProps = async () => {
     };
 
     const health = readJson(path.join('reports', 'automation', 'health.json')) || {
+>>>>>>> origin/cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c
       version: '1.0.0',
       lastUpdated: new Date().toISOString(),
       functions: {},
@@ -482,7 +488,11 @@ export const getStaticProps: GetStaticProps = async () => {
       }
     };
 
+<<<<<<< HEAD
+    const controlPlane = {
+=======
     const controlPlane = readJson(path.join('automation', 'control.json')) || {
+>>>>>>> origin/cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c
       globalPause: false,
       version: '1.0.0',
       lastUpdated: new Date().toISOString(),
@@ -492,7 +502,11 @@ export const getStaticProps: GetStaticProps = async () => {
       budgets: { openai: { dailyUsd: 2.50, monthlyUsd: 50.00, enabled: true }, github: { dailyActions: 2000, monthlyActions: 50000, enabled: true } }
     };
 
+<<<<<<< HEAD
+    const scheduleHints = {
+=======
     const scheduleHints = readJson(path.join('automation', 'schedule-hints.json')) || {
+>>>>>>> origin/cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c
       version: '1.0.0',
       lastUpdated: new Date().toISOString(),
       workflows: {},

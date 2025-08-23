@@ -28,7 +28,12 @@
     "dev": "NODE_OPTIONS=\"--max-old-space-size=4096 --openssl-legacy-provider\" next dev",
     "build": "NODE_OPTIONS=\"--max-old-space-size=6144 --openssl-legacy-provider\" next build",
     "prebuild": "npm run netlify:manifest",
+<<<<<<< HEAD
+    "preexport": "npm run sitemap",
+    "export": "rm -rf .next out tsconfig.tsbuildinfo && mkdir -p .temp && mv pages/reports .temp/ 2>/dev/null || true && NODE_OPTIONS=\"--max-old-space-size=6144 --openssl-legacy-provider\" next build --no-lint && mv .temp/reports pages/ 2>/dev/null || true && rm -rf .temp",
+=======
     "export": "npm run quality:check && rm -rf .next out tsconfig.tsbuildinfo && mkdir -p .temp && mv pages/reports .temp/ 2>/dev/null || true && NODE_OPTIONS=\"--max-old-space-size=6144 --openssl-legacy-provider\" next build --no-lint && mv .temp/reports pages/ 2>/dev/null || true && rm -rf .temp && test -d out",
+>>>>>>> origin/cursor/bc-61ed10c3-d6b9-406a-971b-955feec9361a-849c
     "start": "next start",
     "postbuild": "node automation/footer-injector.cjs || true",
     "lint": "eslint .",
