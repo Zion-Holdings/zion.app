@@ -1,290 +1,440 @@
 import React from 'react';
-import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
-  BarChart3, Database, TrendingUp, Brain, 
-  Globe, Cpu, Network, ArrowRight, CheckCircle, 
-  Star, Zap, Users, Target, PieChart
+  BarChart3, PieChart, TrendingUp, Database, Brain, 
+  Zap, Globe, Target, CheckCircle, ArrowRight, Users,
+  Rocket, Star, Cpu, Shield, Network, BarChart4, ShoppingCart, Truck, Heart
 } from 'lucide-react';
 import Link from 'next/link';
 
 const DataAnalytics: React.FC = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut" as const
-      }
-    }
-  };
-
   const analyticsServices = [
     {
-      icon: <Database className="w-8 h-8" />,
-      title: 'Data Engineering',
-      description: 'Build robust data pipelines and infrastructure',
-      features: ['ETL/ELT Processes', 'Data Warehousing', 'Real-time Streaming', 'Data Quality Management'],
-      price: 'From $4,500/month'
-    },
-    {
-      icon: <BarChart3 className="w-8 h-8" />,
-      title: 'Business Intelligence',
-      description: 'Transform data into actionable insights',
-      features: ['Interactive Dashboards', 'KPI Monitoring', 'Report Automation', 'Data Visualization'],
-      price: 'From $3,500/month'
-    },
-    {
+      title: 'AI-Powered Business Intelligence',
+      description: 'Advanced analytics platform with machine learning insights and predictive modeling',
+      features: ['Predictive Analytics', 'Natural Language Queries', 'Auto-generated Insights', 'Real-time Dashboards'],
       icon: <Brain className="w-8 h-8" />,
-      title: 'Advanced Analytics',
-      description: 'Leverage AI and ML for predictive insights',
-      features: ['Predictive Modeling', 'Machine Learning', 'Statistical Analysis', 'Forecasting'],
-      price: 'From $6,000/month'
+      color: 'from-blue-500 to-cyan-500'
     },
     {
+      title: 'Real-time Data Streaming',
+      description: 'Process and analyze data in real-time with sub-millisecond latency',
+      features: ['Stream Processing', 'Event-driven Architecture', 'Real-time Alerts', 'Live Dashboards'],
+      icon: <Zap className="w-8 h-8" />,
+      color: 'from-purple-500 to-pink-500'
+    },
+    {
+      title: 'Big Data Processing',
+      description: 'Handle petabytes of data with distributed computing and advanced algorithms',
+      features: ['Distributed Computing', 'Scalable Storage', 'Advanced Algorithms', 'Cost Optimization'],
+      icon: <Database className="w-8 h-8" />,
+      color: 'from-green-500 to-emerald-500'
+    },
+    {
+      title: 'Predictive Analytics',
+      description: 'Forecast future trends and behaviors using advanced machine learning models',
+      features: ['Time Series Analysis', 'Machine Learning Models', 'Scenario Planning', 'Risk Assessment'],
       icon: <TrendingUp className="w-8 h-8" />,
-      title: 'Performance Analytics',
-      description: 'Monitor and optimize business performance',
-      features: ['Real-time Monitoring', 'Performance Metrics', 'Alert Systems', 'Optimization'],
-      price: 'From $2,500/month'
+      color: 'from-orange-500 to-red-500'
     },
     {
-      icon: <Globe className="w-8 h-8" />,
-      title: 'Big Data Solutions',
-      description: 'Handle massive datasets with distributed computing',
-      features: ['Hadoop/Spark', 'NoSQL Databases', 'Data Lakes', 'Scalable Processing'],
-      price: 'From $5,500/month'
+      title: 'Data Visualization',
+      description: 'Interactive charts and dashboards that bring your data to life',
+      features: ['Interactive Charts', 'Custom Dashboards', 'Real-time Updates', 'Mobile Responsive'],
+      icon: <BarChart3 className="w-8 h-8" />,
+      color: 'from-yellow-500 to-orange-500'
     },
     {
-      icon: <Target className="w-8 h-8" />,
-      title: 'Customer Analytics',
-      description: 'Understand customer behavior and preferences',
-      features: ['Customer Segmentation', 'Behavior Analysis', 'Churn Prediction', 'Personalization'],
-      price: 'From $4,000/month'
+      title: 'Data Governance',
+      description: 'Ensure data quality, security, and compliance across your organization',
+      features: ['Data Quality', 'Security & Privacy', 'Compliance Tools', 'Audit Trails'],
+      icon: <Shield className="w-8 h-8" />,
+      color: 'from-indigo-500 to-purple-500'
     }
   ];
 
-  const technologies = [
-    { name: 'Apache Spark', logo: '⚡', description: 'Big Data Processing' },
-    { name: 'Tableau', logo: '📊', description: 'Data Visualization' },
-    { name: 'Python', logo: '🐍', description: 'Analytics & ML' },
-    { name: 'Snowflake', logo: '❄️', description: 'Data Warehouse' },
-    { name: 'TensorFlow', logo: '🧠', description: 'Machine Learning' },
-    { name: 'Kafka', logo: '📡', description: 'Real-time Streaming' }
+  const platformFeatures = [
+    {
+      title: 'AI-Driven Insights',
+      description: 'Machine learning algorithms automatically discover patterns and generate actionable insights',
+      icon: <Brain className="w-6 h-6" />
+    },
+    {
+      title: 'Real-time Processing',
+      description: 'Analyze data as it arrives with sub-millisecond latency for instant decision making',
+      icon: <Zap className="w-6 h-6" />
+    },
+    {
+      title: 'Scalable Architecture',
+      description: 'Handle any volume of data with auto-scaling infrastructure that grows with your needs',
+      icon: <TrendingUp className="w-6 h-6" />
+    },
+    {
+      title: 'Advanced Security',
+      description: 'Enterprise-grade security with encryption, access controls, and compliance certifications',
+      icon: <Shield className="w-6 h-6" />
+    },
+    {
+      title: 'Global Performance',
+      description: 'Distributed infrastructure ensures fast performance regardless of user location',
+      icon: <Globe className="w-6 h-6" />
+    },
+    {
+      title: 'Easy Integration',
+      description: 'Connect to any data source with pre-built connectors and APIs',
+      icon: <Network className="w-6 h-6" />
+    }
+  ];
+
+  const useCases = [
+    {
+      title: 'E-commerce Analytics',
+      description: 'Track customer behavior, optimize pricing, and increase conversion rates',
+      icon: <ShoppingCart className="w-8 h-8" />
+    },
+    {
+      title: 'Financial Risk Analysis',
+      description: 'Monitor market trends, assess risks, and optimize investment strategies',
+      icon: <TrendingUp className="w-8 h-8" />
+    },
+    {
+      title: 'Healthcare Analytics',
+      description: 'Improve patient outcomes with predictive analytics and population health insights',
+      icon: <Heart className="w-8 h-8" />
+    },
+    {
+      title: 'Manufacturing Optimization',
+      description: 'Predict maintenance needs, optimize production, and reduce costs',
+      icon: <Cpu className="w-8 h-8" />
+    },
+    {
+      title: 'Marketing Intelligence',
+      description: 'Track campaign performance, understand customer segments, and optimize ROI',
+      icon: <Target className="w-8 h-8" />
+    },
+    {
+      title: 'Supply Chain Analytics',
+      description: 'Monitor inventory levels, predict demand, and optimize logistics',
+      icon: <Truck className="w-8 h-8" />
+    }
+  ];
+
+  const dataSources = [
+    'Databases (SQL, NoSQL)',
+    'Cloud Storage (AWS S3, Azure Blob)',
+    'APIs and Web Services',
+    'IoT Devices and Sensors',
+    'Social Media Platforms',
+    'Email and Communication Tools',
+    'CRM and ERP Systems',
+    'Log Files and Metrics'
   ];
 
   const benefits = [
-    'Data-Driven Decisions',
-    'Real-time Insights',
-    'Predictive Capabilities',
-    'Cost Optimization',
-    'Competitive Advantage',
-    'Scalable Solutions'
+    {
+      number: '300%',
+      label: 'Faster Insights',
+      description: 'Real-time processing delivers insights in seconds, not hours'
+    },
+    {
+      number: '40%',
+      label: 'Cost Reduction',
+      description: 'Automated analytics reduce manual work and operational costs'
+    },
+    {
+      number: '95%',
+      label: 'Accuracy Improvement',
+      description: 'AI-powered analysis reduces errors and improves decision quality'
+    },
+    {
+      number: '24/7',
+      label: 'Continuous Monitoring',
+      description: 'Always-on analytics with automated alerts and notifications'
+    }
   ];
 
   return (
-    <Layout>
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white">
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-br from-green-600 via-blue-600 to-purple-700 overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
-          <motion.h1 
-            className="text-5xl md:text-7xl font-bold text-white mb-6"
-            variants={itemVariants}
-            initial="hidden"
-            animate="visible"
+      <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
           >
-            Data & Analytics Solutions
-          </motion.h1>
-          <motion.p 
-            className="text-xl md:text-2xl text-green-100 mb-8 max-w-4xl mx-auto"
-            variants={itemVariants}
-            initial="hidden"
-            animate="visible"
+            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
+              Data Analytics
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
+              Transform your data into actionable insights with AI-powered analytics, real-time processing, 
+              and predictive modeling. Make data-driven decisions that drive business growth.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="#services" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105">
+                Explore Services
+              </Link>
+              <Link href="/contact" className="border border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300">
+                Get Started
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+        
+        {/* Floating Elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          <motion.div
+            animate={{ y: [0, -20, 0], rotate: [0, 360] }}
+            transition={{ duration: 8, repeat: Infinity }}
+            className="absolute top-20 left-10 text-cyan-400/20"
           >
-            Transform your business with intelligent data solutions that drive insights, automation, and growth
-          </motion.p>
-          <motion.div 
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-            variants={itemVariants}
-            initial="hidden"
-            animate="visible"
+            <BarChart3 className="w-16 h-16" />
+          </motion.div>
+          <motion.div
+            animate={{ y: [0, 25, 0], scale: [1, 1.3, 1] }}
+            transition={{ duration: 6, repeat: Infinity }}
+            className="absolute top-40 right-20 text-purple-400/20"
           >
-            <Link href="/contact" className="bg-white hover:bg-gray-100 text-green-600 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2">
-              Start Analytics Journey <ArrowRight className="w-5 h-5" />
-            </Link>
-            <Link href="/case-studies" className="border-2 border-white text-white hover:bg-white hover:text-green-600 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
-              View Success Stories
-            </Link>
+            <Brain className="w-12 h-12" />
+          </motion.div>
+          <motion.div
+            animate={{ y: [0, -15, 0], rotate: [360, 0] }}
+            transition={{ duration: 10, repeat: Infinity }}
+            className="absolute bottom-40 left-20 text-blue-400/20"
+          >
+            <Database className="w-14 h-14" />
           </motion.div>
         </div>
       </section>
 
-      {/* Analytics Services Overview */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div 
+      {/* Key Benefits */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
             className="text-center mb-16"
-            variants={itemVariants}
-            initial="hidden"
-            animate="visible"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Comprehensive Analytics Services
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Why Choose Our Data Analytics Platform?
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From data engineering to advanced analytics, we provide end-to-end solutions that unlock the power of your data
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Experience the power of AI-driven analytics with enterprise-grade performance and security
             </p>
           </motion.div>
 
-          <motion.div 
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {platformFeatures.map((feature, index) => (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 backdrop-blur-xl border border-cyan-500/20 rounded-xl p-6 hover:border-cyan-500/40 transition-all duration-300"
+              >
+                <div className="w-16 h-16 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-xl flex items-center justify-center mb-4">
+                  {feature.icon}
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
+                <p className="text-gray-300">{feature.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Analytics Services */}
+      <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-cyan-500/5 to-purple-500/5">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
           >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Analytics Services
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Comprehensive analytics solutions designed for modern data challenges
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {analyticsServices.map((service, index) => (
               <motion.div
-                key={index}
-                className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
-                variants={itemVariants}
-                whileHover={{ y: -5 }}
+                key={service.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl border border-cyan-500/20 rounded-xl overflow-hidden hover:border-cyan-500/40 transition-all duration-300"
               >
-                <div className="text-green-600 mb-4">{service.icon}</div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">{service.title}</h3>
-                <p className="text-gray-600 mb-4">{service.description}</p>
-                <ul className="space-y-2 mb-6">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center gap-2 text-gray-700">
-                      <CheckCircle className="w-5 h-5 text-green-500" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <div className="text-2xl font-bold text-green-600">{service.price}</div>
+                <div className="p-8">
+                  <div className="flex items-center space-x-4 mb-6">
+                    <div className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-xl flex items-center justify-center`}>
+                      {service.icon}
+                    </div>
+                    <h3 className="text-2xl font-bold text-white">{service.title}</h3>
+                  </div>
+                  
+                  <p className="text-gray-300 mb-6">{service.description}</p>
+                  
+                  <div className="space-y-3">
+                    {service.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center text-gray-300">
+                        <CheckCircle className="w-4 h-4 text-cyan-400 mr-3 flex-shrink-0" />
+                        {feature}
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Technologies Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div 
+      {/* Use Cases */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
             className="text-center mb-16"
-            variants={itemVariants}
-            initial="hidden"
-            animate="visible"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Cutting-Edge Technologies
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Use Cases
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We leverage the latest tools and technologies to deliver powerful analytics solutions
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Our analytics platform powers insights across industries and business functions
             </p>
           </motion.div>
 
-          <motion.div 
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            {technologies.map((tech, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {useCases.map((useCase, index) => (
               <motion.div
-                key={index}
-                className="bg-gradient-to-br from-green-50 to-blue-100 rounded-lg p-8 text-center hover:shadow-lg transition-all duration-300"
-                variants={itemVariants}
-                whileHover={{ scale: 1.05 }}
+                key={useCase.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 backdrop-blur-xl border border-cyan-500/20 rounded-xl p-6 hover:border-cyan-500/40 transition-all duration-300 group"
               >
-                <div className="text-6xl mb-4">{tech.logo}</div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">{tech.name}</h3>
-                <p className="text-gray-600">{tech.description}</p>
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-xl flex items-center justify-center mb-4">
+                  {useCase.icon}
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
+                  {useCase.title}
+                </h3>
+                <p className="text-gray-300">{useCase.description}</p>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-20 bg-gradient-to-r from-green-900 to-blue-900 text-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div 
+      {/* Data Sources */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-cyan-500/5 to-purple-500/5">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
             className="text-center mb-16"
-            variants={itemVariants}
-            initial="hidden"
-            animate="visible"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Analytics Benefits
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Connect Any Data Source
             </h2>
-            <p className="text-xl text-green-200 max-w-3xl mx-auto">
-              Transform your business with data-driven insights and intelligent automation
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Our platform integrates with all your existing data sources and systems
             </p>
           </motion.div>
 
-          <motion.div 
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {dataSources.map((source, index) => (
+              <motion.div
+                key={source}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 backdrop-blur-xl border border-cyan-500/20 rounded-xl p-6 text-center hover:border-cyan-500/40 transition-all duration-300"
+              >
+                <div className="w-12 h-12 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Database className="w-6 h-6" />
+                </div>
+                <p className="text-gray-300 text-sm">{source}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Metrics */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
           >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Proven Results
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Organizations using our analytics platform see measurable improvements across key metrics
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
               <motion.div
-                key={index}
+                key={benefit.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="text-center"
-                variants={itemVariants}
               >
-                <div className="bg-white/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <Star className="w-8 h-8 text-yellow-400" />
+                <div className="w-20 h-20 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <TrendingUp className="w-8 h-8" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{benefit}</h3>
+                <div className="text-3xl md:text-4xl font-bold text-white mb-2">{benefit.number}</div>
+                <div className="text-lg font-semibold text-cyan-400 mb-2">{benefit.label}</div>
+                <div className="text-gray-300 text-sm">{benefit.description}</div>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto text-center px-6">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-cyan-500/5 to-purple-500/5">
+        <div className="max-w-4xl mx-auto text-center">
           <motion.div
-            variants={itemVariants}
-            initial="hidden"
-            animate="visible"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Ready to Unlock Your Data?
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Ready to Unlock Your Data's Potential?
             </h2>
-            <p className="text-xl text-gray-600 mb-8">
-              Let's discuss how our analytics solutions can transform your business intelligence
+            <p className="text-xl text-gray-300 mb-8">
+              Transform your business with AI-powered analytics and real-time insights. 
+              Start making data-driven decisions that drive growth and innovation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2">
-                Get Analytics Consultation <ArrowRight className="w-5 h-5" />
+              <Link href="/contact" className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105">
+                Start Free Trial
               </Link>
-              <Link href="/services" className="border-2 border-green-600 text-green-600 hover:bg-green-600 hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
-                Explore All Services
+              <Link href="/case-studies" className="border border-cyan-500/50 text-cyan-400 hover:bg-cyan-500/10 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300">
+                View Case Studies
               </Link>
             </div>
           </motion.div>
         </div>
       </section>
-    </Layout>
+    </div>
   );
 };
 
