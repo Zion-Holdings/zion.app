@@ -12,6 +12,9 @@ import { innovativeMicroSaasV2Services } from '../data/innovative-micro-saas-v2'
 import { innovative2026MicroSaasServicesV2 } from '../data/innovative-2026-micro-saas-v2';
 import { emergingTech2026ServicesV2 } from '../data/emerging-tech-2026-services-v2';
 import { enterpriseIT2026ServicesV2 } from '../data/enterprise-it-2026-services-v2';
+<<<<<<< HEAD
+import { allInnovative2026Services } from '../data/comprehensive-2026-services-index';
+=======
 import { revolutionary2026MicroSaasServices } from '../data/revolutionary-2026-micro-saas-services';
 import { revolutionary2026ITServices } from '../data/revolutionary-2026-it-services';
 import { revolutionary2026AIServices } from '../data/revolutionary-2026-ai-services';
@@ -19,6 +22,7 @@ import { innovative2030MicroSaasServices } from '../data/2030-innovative-micro-s
 import { innovative2030ITServices } from '../data/2030-innovative-it-services';
 import { innovative2030AIServices } from '../data/2030-innovative-ai-services';
 import { emergingTech2030Services } from '../data/2030-emerging-tech-services';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-51d6
 
 export default function PricingPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -87,6 +91,9 @@ export default function PricingPage() {
     ...innovative2026MicroSaasServicesV2,
     ...emergingTech2026ServicesV2,
     ...enterpriseIT2026ServicesV2,
+<<<<<<< HEAD
+    ...allInnovative2026Services
+=======
     ...revolutionary2026MicroSaasServices,
     ...revolutionary2026ITServices,
     ...revolutionary2026AIServices,
@@ -94,6 +101,7 @@ export default function PricingPage() {
     ...innovative2030ITServices,
     ...innovative2030AIServices,
     ...emergingTech2030Services
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-51d6
   ];
 
   const faqs = [

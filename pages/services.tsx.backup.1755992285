@@ -109,6 +109,11 @@ import { innovativeAIServices } from '../data/innovative-ai-services';
 import { quantumSpaceServices } from '../data/quantum-space-services';
 import { enterpriseITServices } from '../data/enterprise-it-services';
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
+<<<<<<< HEAD
+import { nextGenAIServices } from '../data/next-gen-ai-services';
+import { comprehensiveEnterpriseITServices } from '../data/comprehensive-enterprise-it-services';
+import { innovativeMicroSaasSolutions } from '../data/innovative-micro-saas-solutions';
+=======
 import { additionalEnhancedServices } from '../data/additional-real-services';
 import { newRealServices } from '../data/new-real-services';
 import { industryRealServices } from '../data/industry-real-services';
@@ -152,6 +157,7 @@ import { innovative2030MicroSaasServices } from '../data/2030-innovative-micro-s
 import { innovative2030ITServices } from '../data/2030-innovative-it-services';
 import { innovative2030AIServices } from '../data/2030-innovative-ai-services';
 import { emergingTech2030Services } from '../data/2030-emerging-tech-services';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-51d6
 
 export default function ServicesPage() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -176,6 +182,11 @@ export default function ServicesPage() {
     ...quantumSpaceServices,
     ...enterpriseITServices,
     ...enhancedRealMicroSaasServices,
+<<<<<<< HEAD
+    ...nextGenAIServices,
+    ...comprehensiveEnterpriseITServices,
+    ...innovativeMicroSaasSolutions
+=======
     ...additionalEnhancedServices,
     ...extraServices,
     ...newlyAddedServices,
@@ -219,6 +230,7 @@ export default function ServicesPage() {
     ...innovative2030ITServices,
     ...innovative2030AIServices,
     ...emergingTech2030Services
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-51d6
   ];
 
   const categories = [

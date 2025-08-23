@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { CheckCircle, ArrowRight, Star, TrendingUp, Phone, Zap, DollarSign, Shield, Mail, MapPin, Rocket, Brain, Sparkles, Atom, Dna, Users, Globe, Cpu, Target, Microscope, Lock, Cloud, BarChart3, Settings, Eye, Award, Clock, Check } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
+<<<<<<< HEAD
+=======
 import { enhancedRealMicroSaasServices } from '../data/enhanced-real-micro-saas-services';
 import { extraServices } from '../data/extra-services';
 import { additionalEnhancedServices } from '../data/additional-real-services';
@@ -72,6 +74,7 @@ import { innovative2030MicroSaasServices } from '../data/2030-innovative-micro-s
 import { innovative2030ITServices } from '../data/2030-innovative-it-services';
 import { innovative2030AIServices } from '../data/2030-innovative-ai-services';
 import { emergingTech2030Services } from '../data/2030-emerging-tech-services';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-51d6
 
 export default function HomePage() {
   const contactInfo = {
