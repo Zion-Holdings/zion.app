@@ -8,34 +8,35 @@ export default function BlogPage() {
 
   const blogPosts = [
     {
-      id: 'quantum-ai-revolution-2025',
-      title: 'Quantum AI Revolution 2025: The Next Frontier of Computing',
-      excerpt: 'Discover how quantum computing is revolutionizing AI and automation in 2025, unlocking unprecedented computational power.',
-      date: 'January 20, 2025',
-      readTime: '12 min read',
-      category: 'Quantum Computing',
+      id: 'autonomous-systems-deep-dive',
+      title: 'Autonomous Systems Deep Dive: Architecture, Implementation & Best Practices',
+      excerpt: 'A comprehensive technical guide to building production-ready autonomous systems that can operate independently, make intelligent decisions, and continuously improve their performance.',
+      date: 'January 17, 2025',
+      readTime: '15 min read',
+      category: 'Technical Deep Dive',
       featured: true
+    },
+    {
+      id: 'ai-ethics-responsible-development',
+      title: 'AI Ethics & Responsible Development: A Comprehensive Guide',
+      excerpt: 'Essential guide to AI ethics, responsible development practices, bias detection, transparency, and building trustworthy AI systems.',
+      date: 'January 16, 2025',
+      readTime: '12 min read',
+      category: 'AI Ethics'
     },
     {
       id: 'ai-automation-trends-2025',
       title: 'AI Automation Trends 2025: The Future of Autonomous Systems',
-      excerpt: 'Explore the cutting-edge trends shaping the future of AI automation and autonomous technology systems.',
-      date: 'January 17, 2025',
+      excerpt: 'Explore the cutting-edge trends shaping the future of AI automation and autonomous technology systems in 2025 and beyond.',
+      date: 'January 15, 2025',
       readTime: '8 min read',
-      category: 'AI & Automation',
-      featured: true,
-      author: {
-        name: 'Dr. Sarah Chen',
-        role: 'AI Research Director',
-        avatar: '👩‍🔬'
-      },
-      tags: ['AI', 'Automation', 'Trends', '2025', 'Technology']
+      category: 'AI & Automation'
     },
     {
       id: 'autonomous-content-generation',
       title: 'Revolutionizing Content Creation with Autonomous AI Systems',
       excerpt: 'How Zion Tech Group is transforming content generation through intelligent automation and machine learning.',
-      date: 'January 15, 2025',
+      date: 'January 14, 2025',
       readTime: '6 min read',
       category: 'Content & AI',
       featured: false,
@@ -50,7 +51,7 @@ export default function BlogPage() {
       id: 'cloud-native-automation',
       title: 'Building Cloud-Native Automation Infrastructure',
       excerpt: 'A deep dive into our cloud-native approach to building scalable, reliable automation systems.',
-      date: 'January 12, 2025',
+      date: 'January 13, 2025',
       readTime: '10 min read',
       category: 'Infrastructure',
       featured: false,
@@ -65,7 +66,7 @@ export default function BlogPage() {
       id: 'ai-ethics-automation',
       title: 'Ethical Considerations in Autonomous AI Systems',
       excerpt: 'Exploring the ethical implications and responsible development of autonomous technology.',
-      date: 'January 10, 2025',
+      date: 'January 12, 2025',
       readTime: '7 min read',
       category: 'AI Ethics',
       featured: false,
@@ -80,7 +81,7 @@ export default function BlogPage() {
       id: 'performance-optimization',
       title: 'Performance Optimization in Autonomous Systems',
       excerpt: 'Best practices for optimizing performance in large-scale autonomous technology deployments.',
-      date: 'January 8, 2025',
+      date: 'January 11, 2025',
       readTime: '9 min read',
       category: 'Performance',
       featured: false,
@@ -95,7 +96,7 @@ export default function BlogPage() {
       id: 'future-of-work',
       title: 'The Future of Work: Human-AI Collaboration',
       excerpt: 'How autonomous systems are reshaping the workplace and enhancing human capabilities.',
-      date: 'January 5, 2025',
+      date: 'January 10, 2025',
       readTime: '5 min read',
       category: 'Future of Work',
       featured: false,
@@ -138,18 +139,7 @@ export default function BlogPage() {
     }
   ];
 
-  const categories = ['All', 'AI & Automation', 'Quantum AI', 'Cybersecurity', 'Sustainability', 'Content & AI', 'Infrastructure', 'AI Ethics', 'Performance', 'Future of Work'];
-
-  const filteredPosts = blogPosts.filter(post => {
-    const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         post.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
-    const matchesCategory = selectedCategory === 'All' || post.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
-
-  const featuredPost = blogPosts.find(post => post.featured);
-  const regularPosts = filteredPosts.filter(post => !post.featured);
+  const categories = ['All', 'Technical Deep Dive', 'AI & Automation', 'Content & AI', 'Infrastructure', 'AI Ethics', 'Performance', 'Future of Work'];
 
   return (
     <Layout>

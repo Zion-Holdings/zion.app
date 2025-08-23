@@ -1,546 +1,433 @@
-import React, { useState } from 'react';
-import Layout from '../components/layout/Layout';
-import { motion } from 'framer-motion';
-import { 
-  TrendingUp, 
-  Users, 
-  DollarSign, 
-  Clock, 
-  CheckCircle, 
-  ArrowRight,
-  Star,
-  Building,
-  Brain,
-  Atom,
-  Rocket,
-  Filter,
-  Search
-} from 'lucide-react';
+import React from 'next/react';
+import Head from 'next/head';
 import Link from 'next/link';
 
-const CaseStudiesPage: React.FC = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedIndustry, setSelectedIndustry] = useState('all');
-  const [selectedService, setSelectedService] = useState('all');
-
-  const industries = [
-    { id: 'all', name: 'All Industries' },
-    { id: 'healthcare', name: 'Healthcare' },
-    { id: 'finance', name: 'Financial Services' },
-    { id: 'manufacturing', name: 'Manufacturing' },
-    { id: 'retail', name: 'Retail & E-commerce' },
-    { id: 'technology', name: 'Technology' },
-    { id: 'government', name: 'Government' }
-  ];
-
-  const services = [
-    { id: 'all', name: 'All Services' },
-    { id: 'ai', name: 'AI & Machine Learning' },
-    { id: 'quantum', name: 'Quantum Computing' },
-    { id: 'space', name: 'Space Technology' },
-    { id: 'cybersecurity', name: 'Cybersecurity' },
-    { id: 'cloud', name: 'Cloud Infrastructure' }
-  ];
-
-  const caseStudies = [
-    {
-      id: 1,
-      title: "AI-Powered Healthcare Diagnostics Platform",
-      company: "MedTech Innovations Inc.",
-      industry: "healthcare",
-      service: "ai",
-      challenge: "Reducing diagnostic errors and improving patient outcomes through intelligent medical imaging analysis.",
-      solution: "Developed a comprehensive AI platform that analyzes medical images with 99.7% accuracy, reducing diagnostic time by 80%.",
-      results: [
-        "99.7% diagnostic accuracy",
-        "80% reduction in diagnostic time",
-        "30% improvement in patient outcomes",
-        "$2.5M annual cost savings"
-      ],
-      duration: "6 months",
-      teamSize: "12 engineers",
-      featured: true,
-      metrics: {
-        accuracy: "99.7%",
-        timeReduction: "80%",
-        costSavings: "$2.5M",
-        roi: "450%"
-      }
-    },
-    {
-      id: 2,
-      title: "Quantum Financial Trading Algorithm",
-      company: "Global Capital Markets",
-      industry: "finance",
-      service: "quantum",
-      challenge: "Optimizing trading strategies in volatile markets using quantum computing for real-time decision making.",
-      solution: "Implemented quantum-enhanced algorithms that process market data 1000x faster than classical systems.",
-      results: [
-        "1000x faster market analysis",
-        "25% improvement in trading performance",
-        "15% reduction in risk exposure",
-        "$15M additional annual revenue"
-      ],
-      duration: "8 months",
-      teamSize: "8 quantum engineers",
-      featured: false,
-      metrics: {
-        speed: "1000x",
-        performance: "25%",
-        riskReduction: "15%",
-        revenue: "$15M"
-      }
-    },
-    {
-      id: 3,
-      title: "Space Resource Mining Operations",
-      company: "Asteroid Mining Corp",
-      industry: "technology",
-      service: "space",
-      challenge: "Establishing autonomous mining operations on asteroids for rare earth elements and precious metals.",
-      solution: "Deployed AI-driven autonomous mining robots with quantum navigation systems for precise resource extraction.",
-      results: [
-        "100% autonomous operations",
-        "95% resource extraction efficiency",
-        "Zero human risk exposure",
-        "$50M annual resource value"
-      ],
-      duration: "18 months",
-      teamSize: "15 space engineers",
-      featured: false,
-      metrics: {
-        autonomy: "100%",
-        efficiency: "95%",
-        safety: "100%",
-        value: "$50M"
-      }
-    },
-    {
-      id: 4,
-      title: "Zero-Trust Cybersecurity Framework",
-      company: "National Defense Systems",
-      industry: "government",
-      service: "cybersecurity",
-      challenge: "Protecting critical infrastructure from advanced persistent threats and cyber attacks.",
-      solution: "Implemented a comprehensive zero-trust security architecture with AI-powered threat detection and response.",
-      results: [
-        "99.99% threat detection rate",
-        "Zero successful breaches",
-        "60% reduction in security incidents",
-        "100% compliance achievement"
-      ],
-      duration: "12 months",
-      teamSize: "20 security experts",
-      featured: false,
-      metrics: {
-        detection: "99.99%",
-        breaches: "0",
-        incidents: "60%",
-        compliance: "100%"
-      }
-    },
-    {
-      id: 5,
-      title: "AI-Powered Manufacturing Optimization",
-      company: "Industrial Dynamics Ltd",
-      industry: "manufacturing",
-      service: "ai",
-      challenge: "Optimizing production efficiency and reducing waste in complex manufacturing processes.",
-      solution: "Deployed machine learning algorithms that continuously optimize production parameters in real-time.",
-      results: [
-        "35% increase in production efficiency",
-        "45% reduction in material waste",
-        "20% improvement in quality control",
-        "$8M annual cost savings"
-      ],
-      technologies: ['Big Data', 'Machine Learning', 'Real-time Analytics', 'Predictive Modeling'],
-      duration: '10 months',
-      teamSize: '10 data scientists + 5 engineers',
-      featured: false
-    },
-    {
-      id: 'retail-automation-revolution',
-      title: 'Retail Automation Revolution',
-      company: 'Global Retail Chain',
-      industry: 'Retail',
-      challenge: 'High operational costs, inventory management inefficiencies, and poor customer experience',
-      solution: 'Implemented comprehensive retail automation including smart inventory, automated checkout, and AI-powered customer insights',
-      results: [
-        '45% reduction in operational costs',
-        '70% improvement in inventory accuracy',
-        '60% faster checkout process',
-        '35% increase in customer satisfaction'
-      ],
-      technologies: ['Computer Vision', 'IoT Sensors', 'Machine Learning', 'Robotic Process Automation'],
-      duration: '12 months',
-      teamSize: '12 engineers + 6 retail specialists',
-      featured: true
-    },
-    {
-      id: 'energy-grid-optimization',
-      title: 'Smart Energy Grid Optimization',
-      company: 'Municipal Energy Company',
-      industry: 'Energy',
-      challenge: 'Inefficient energy distribution, high maintenance costs, and inability to handle renewable energy integration',
-      solution: 'Built AI-powered smart grid system with predictive maintenance and dynamic load balancing',
-      results: [
-        '25% reduction in energy losses',
-        '40% decrease in maintenance costs',
-        '90% improvement in renewable energy integration',
-        'Real-time grid monitoring and control'
-      ],
-      technologies: ['IoT Sensors', 'Predictive Analytics', 'Machine Learning', 'Real-time Control Systems'],
-      duration: '18 months',
-      teamSize: '15 engineers + 8 energy specialists',
-      featured: false
-    },
-    {
-      id: 'logistics-automation-platform',
-      title: 'Intelligent Logistics Automation Platform',
-      company: 'International Shipping Company',
-      industry: 'Logistics',
-      challenge: 'Complex supply chain management, high transportation costs, and delivery delays',
-      solution: 'Developed AI-powered logistics platform with route optimization, demand forecasting, and automated scheduling',
-      results: [
-        '30% reduction in transportation costs',
-        '50% improvement in delivery accuracy',
-        '25% faster order processing',
-        'Real-time shipment tracking and optimization'
-      ],
-      technologies: ['Route Optimization', 'Demand Forecasting', 'Machine Learning', 'Real-time Analytics'],
-      duration: '14 months',
-      teamSize: '9 engineers + 5 logistics specialists',
-      featured: false
-    }
-  ];
-
-  const filteredCaseStudies = caseStudies.filter(study => {
-    const matchesSearch = study.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         study.company.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         study.challenge.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesIndustry = selectedIndustry === 'all' || study.industry === selectedIndustry;
-    const matchesService = selectedService === 'all' || study.service === selectedService;
-    return matchesSearch && matchesIndustry && matchesService;
-  });
-
-  const featuredCaseStudy = caseStudies.find(study => study.featured);
-
+export default function CaseStudiesPage() {
   return (
-    <Layout>
-      {/* Hero Section */}
-      <section className="relative py-20 px-4 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-black">
-        <div className="max-w-6xl mx-auto text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent mb-6"
-          >
-            Success Stories
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl text-gray-300 max-w-3xl mx-auto"
-          >
-            Real-world transformations and measurable business outcomes from our innovative technology solutions.
-          </motion.p>
-        </div>
-      </section>
+    <>
+      <Head>
+        <title>Case Studies | Zion Tech Group - AI & Automation Success Stories</title>
+        <meta name="description" content="Explore real-world case studies showcasing how Zion Tech Group has transformed businesses through AI and automation solutions." />
+        <meta property="og:title" content="Case Studies - Zion Tech Group" />
+        <meta property="og:description" content="Real-world AI and automation success stories with measurable business outcomes." />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
+      
+      <div className="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950 text-white">
+        <main className="container mx-auto px-6 py-12">
+          <section className="text-center mb-16">
+            <h1 className="text-5xl font-extrabold mb-6 bg-gradient-to-r from-cyan-400 to-fuchsia-400 bg-clip-text text-transparent">
+              Case Studies
+            </h1>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+              Real-world success stories showcasing how our AI and automation solutions have transformed businesses 
+              across industries, delivering measurable results and competitive advantages.
+            </p>
+          </section>
 
-      {/* Search and Filters */}
-      <section className="py-12 px-4 bg-black">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
-            {/* Search */}
-            <div className="relative flex-1 max-w-md">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search case studies..."
-                className="w-full pl-12 pr-4 py-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              />
-            </div>
-
-            {/* Filters */}
-            <div className="flex flex-wrap gap-4">
-              <select
-                value={selectedIndustry}
-                onChange={(e) => setSelectedIndustry(e.target.value)}
-                className="px-4 py-3 bg-white/10 border border-white/20 rounded-full text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              >
-                {industries.map((industry) => (
-                  <option key={industry.id} value={industry.id}>
-                    {industry.name}
-                  </option>
-                ))}
-              </select>
-              <select
-                value={selectedService}
-                onChange={(e) => setSelectedService(e.target.value)}
-                className="px-4 py-3 bg-white/10 border border-white/20 rounded-full text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              >
-                {services.map((service) => (
-                  <option key={service.id} value={service.id}>
-                    {service.name}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Case Study */}
-      {featuredCaseStudy && (
-        <section className="py-16 px-4 bg-gradient-to-b from-black to-gray-900">
-          <div className="max-w-6xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-12"
-            >
-              <h2 className="text-3xl font-bold text-white mb-4">Featured Success Story</h2>
-              <p className="text-gray-300">Our most impactful transformation</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="bg-gradient-to-br from-blue-900/20 to-purple-900/20 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden hover:border-white/20 transition-all duration-300"
-            >
+          <section className="mx-auto max-w-6xl space-y-16">
+            {/* Healthcare Case Study */}
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div className="p-8">
-                  <div className="flex items-center gap-4 mb-4">
-                    <span className="px-3 py-1 bg-yellow-600/20 text-yellow-400 text-sm rounded-full border border-yellow-600/30">
-                      Featured
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="px-3 py-1 bg-green-400/20 text-green-400 text-sm rounded-full border border-green-400/30">
+                      Healthcare
                     </span>
-                    <span className="px-3 py-1 bg-blue-600/20 text-blue-400 text-sm rounded-full border border-blue-600/30">
-                      {featuredCaseStudy.industry.toUpperCase()}
+                    <span className="px-3 py-1 bg-blue-400/20 text-blue-400 text-sm rounded-full border border-blue-400/30">
+                      Medical Imaging
                     </span>
                   </div>
-                  <h3 className="text-3xl font-bold text-white mb-4 leading-tight">
-                    {featuredCaseStudy.title}
-                  </h3>
-                  <p className="text-blue-400 font-semibold mb-4">{featuredCaseStudy.company}</p>
+                  <h2 className="text-3xl font-bold mb-4 text-green-400">
+                    AI-Powered Medical Imaging Diagnosis
+                  </h2>
+                  <p className="text-white/80 mb-6">
+                    A leading hospital network partnered with us to develop an AI system that assists radiologists 
+                    in detecting early-stage lung cancer from CT scans, improving diagnostic accuracy and patient outcomes.
+                  </p>
                   
-                  <div className="mb-6">
-                    <h4 className="text-lg font-semibold text-white mb-2">The Challenge</h4>
-                    <p className="text-gray-300 leading-relaxed">{featuredCaseStudy.challenge}</p>
+                  <div className="space-y-4 mb-6">
+                    <div className="bg-white/5 rounded-lg p-4 border border-white/20">
+                      <h4 className="font-semibold text-green-300 mb-2">Challenge</h4>
+                      <p className="text-white/70 text-sm">
+                        Radiologists were struggling with high caseloads and the need to detect subtle early-stage 
+                        lung cancer indicators that could be easily missed during routine screening.
+                      </p>
+                    </div>
+                    
+                    <div className="bg-white/5 rounded-lg p-4 border border-white/20">
+                      <h4 className="font-semibold text-cyan-300 mb-2">Solution</h4>
+                      <p className="text-white/70 text-sm">
+                        Developed a deep learning system using convolutional neural networks trained on thousands 
+                        of annotated CT scans, with explainable AI features showing which image regions influenced decisions.
+                      </p>
+                    </div>
+                    
+                    <div className="bg-white/5 rounded-lg p-4 border border-white/20">
+                      <h4 className="font-semibold text-purple-300 mb-2">Results</h4>
+                      <ul className="text-white/70 text-sm space-y-1">
+                        <li>• 40% increase in early-stage cancer detection</li>
+                        <li>• 95% accuracy maintained across all demographic groups</li>
+                        <li>• 30% reduction in radiologist workload</li>
+                        <li>• 100% radiologist acceptance rate</li>
+                      </ul>
+                    </div>
                   </div>
-
-                  <div className="mb-6">
-                    <h4 className="text-lg font-semibold text-white mb-2">Our Solution</h4>
-                    <p className="text-gray-300 leading-relaxed">{featuredCaseStudy.solution}</p>
+                  
+                  <div className="flex gap-4">
+                    <Link href="/contact" className="px-6 py-3 bg-green-500 hover:bg-green-600 rounded-lg text-white font-semibold transition-colors">
+                      Learn More
+                    </Link>
+                    <Link href="/services" className="px-6 py-3 bg-white/10 hover:bg-white/20 rounded-lg text-white font-semibold transition-colors border border-white/20">
+                      View Services
+                    </Link>
                   </div>
-
-                  <div className="grid grid-cols-2 gap-4 mb-6">
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-blue-400">{featuredCaseStudy.metrics.accuracy}</div>
-                      <div className="text-sm text-gray-400">Accuracy</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-purple-400">{featuredCaseStudy.metrics.timeReduction}</div>
-                      <div className="text-sm text-gray-400">Time Reduction</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-green-400">{featuredCaseStudy.metrics.costSavings}</div>
-                      <div className="text-sm text-gray-400">Cost Savings</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-cyan-400">{featuredCaseStudy.metrics.roi}</div>
-                      <div className="text-sm text-gray-400">ROI</div>
-                    </div>
-                  </div>
-
-                  <Link
-                    href={`/case-studies/${featuredCaseStudy.id}`}
-                    className="inline-flex items-center bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105"
-                  >
-                    Read Full Case Study
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Link>
                 </div>
-                <div className="bg-gradient-to-br from-blue-600/20 to-purple-600/20 flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <div className="text-6xl mb-4">🏆</div>
-                    <p className="text-gray-300">Featured Success</p>
+                
+                <div className="bg-white/5 rounded-lg p-6 border border-white/20">
+                  <h3 className="text-xl font-semibold mb-4 text-green-300">Technical Implementation</h3>
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold text-green-200 mb-2">AI Architecture</h4>
+                      <ul className="text-white/70 text-sm space-y-1">
+                        <li>• ResNet-50 backbone with custom modifications</li>
+                        <li>• Transfer learning from ImageNet pre-trained weights</li>
+                        <li>• Attention mechanisms for interpretability</li>
+                        <li>• Ensemble methods for improved robustness</li>
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-semibold text-green-200 mb-2">Data Pipeline</h4>
+                      <ul className="text-white/70 text-sm space-y-1">
+                        <li>• 50,000+ annotated CT scans</li>
+                        <li>• Federated learning for privacy protection</li>
+                        <li>• Automated data augmentation</li>
+                        <li>• Continuous learning from new cases</li>
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-semibold text-green-200 mb-2">Deployment</h4>
+                      <ul className="text-white/70 text-sm space-y-1">
+                        <li>• Edge deployment for real-time processing</li>
+                        <li>• HIPAA-compliant security measures</li>
+                        <li>• Human-in-the-loop validation</li>
+                        <li>• Comprehensive monitoring and alerting</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
-            </motion.div>
-          </div>
-        </section>
-      )}
+            </div>
 
-      {/* Case Studies Grid */}
-      <section className="py-20 px-4 bg-black">
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-white mb-6">All Success Stories</h2>
-            <p className="text-xl text-gray-300">
-              Discover how we've transformed businesses across industries
-            </p>
-          </motion.div>
-
-          {filteredCaseStudies.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredCaseStudies.map((study, index) => (
-                <motion.article
-                  key={study.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden hover:border-white/20 transition-all duration-300 group"
-                >
-                  <div className="p-6">
-                    <div className="flex items-center gap-4 mb-4">
-                      <span className="px-3 py-1 bg-blue-600/20 text-blue-400 text-sm rounded-full border border-blue-600/30">
-                        {study.industry.toUpperCase()}
-                      </span>
-                      <span className="px-3 py-1 bg-purple-600/20 text-purple-400 text-sm rounded-full border border-purple-600/30">
-                        {study.service.toUpperCase()}
-                      </span>
-                    </div>
-                    
-                    <h3 className="text-xl font-bold text-white mb-3 leading-tight group-hover:text-blue-400 transition-colors">
-                      {study.title}
-                    </h3>
-                    <p className="text-blue-400 font-semibold mb-4">{study.company}</p>
-                    
-                    <div className="mb-4">
-                      <h4 className="text-sm font-semibold text-white mb-2">Challenge</h4>
-                      <p className="text-gray-300 text-sm leading-relaxed line-clamp-3">
-                        {study.challenge}
+            {/* Financial Services Case Study */}
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="px-3 py-1 bg-blue-400/20 text-blue-400 text-sm rounded-full border border-blue-400/30">
+                      Financial Services
+                    </span>
+                    <span className="px-3 py-1 bg-red-400/20 text-red-400 text-sm rounded-full border border-red-400/30">
+                      Fraud Detection
+                    </span>
+                  </div>
+                  <h2 className="text-3xl font-bold mb-4 text-blue-400">
+                    Real-Time Fraud Detection System
+                  </h2>
+                  <p className="text-white/80 mb-6">
+                    A major credit card company needed to upgrade their fraud detection capabilities to handle 
+                    increasing transaction volumes while maintaining high accuracy and reducing false positives.
+                  </p>
+                  
+                  <div className="space-y-4 mb-6">
+                    <div className="bg-white/5 rounded-lg p-4 border border-white/20">
+                      <h4 className="font-semibold text-blue-300 mb-2">Challenge</h4>
+                      <p className="text-white/70 text-sm">
+                        Existing rule-based systems were generating too many false positives, leading to 
+                        customer frustration and increased operational costs for manual review processes.
                       </p>
                     </div>
-
-                    <div className="mb-4">
-                      <h4 className="text-sm font-semibold text-white mb-2">Solution</h4>
-                      <p className="text-gray-300 text-sm leading-relaxed line-clamp-3">
-                        {study.solution}
+                    
+                    <div className="bg-white/5 rounded-lg p-4 border border-white/20">
+                      <h4 className="font-semibold text-cyan-300 mb-2">Solution</h4>
+                      <p className="text-white/70 text-sm">
+                        Implemented a hybrid AI system combining deep learning models with traditional 
+                        rule-based logic, featuring real-time learning and adaptive thresholds.
                       </p>
                     </div>
-
-                    <div className="grid grid-cols-2 gap-3 mb-4">
-                      {Object.entries(study.metrics).slice(0, 4).map(([key, value]) => (
-                        <div key={key} className="text-center">
-                          <div className="text-lg font-bold text-blue-400">{value}</div>
-                          <div className="text-xs text-gray-400 capitalize">{key.replace(/([A-Z])/g, ' $1')}</div>
-                        </div>
-                      ))}
-                    </div>
-
-                    <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
-                      <div className="flex items-center gap-2">
-                        <Clock className="w-4 h-4" />
-                        {study.duration}
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Users className="w-4 h-4" />
-                        {study.teamSize}
-                      </div>
-                    </div>
-
-                    <div className="flex items-center justify-between">
-                      <div className="flex flex-wrap gap-2">
-                        {study.results.slice(0, 2).map((result, resultIndex) => (
-                          <span
-                            key={resultIndex}
-                            className="px-2 py-1 bg-white/10 text-gray-300 text-xs rounded-full border border-white/20"
-                          >
-                            {result}
-                          </span>
-                        ))}
-                      </div>
-                      <Link
-                        href={`/case-studies/${study.id}`}
-                        className="text-blue-400 hover:text-blue-300 transition-colors group-hover:translate-x-1"
-                      >
-                        <ArrowRight className="w-4 h-4" />
-                      </Link>
+                    
+                    <div className="bg-white/5 rounded-lg p-4 border border-white/20">
+                      <h4 className="font-semibold text-purple-300 mb-2">Results</h4>
+                      <ul className="text-white/70 text-sm space-y-1">
+                        <li>• 85% reduction in false positives</li>
+                        <li>• 60% faster fraud detection</li>
+                        <li>• $2.3M annual cost savings</li>
+                        <li>• 99.7% fraud detection accuracy</li>
+                      </ul>
                     </div>
                   </div>
-                </motion.article>
-              ))}
+                  
+                  <div className="flex gap-4">
+                    <Link href="/contact" className="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg text-white font-semibold transition-colors">
+                      Learn More
+                    </Link>
+                    <Link href="/services" className="px-6 py-3 bg-white/10 hover:bg-white/20 rounded-lg text-white font-semibold transition-colors border border-white/20">
+                      View Services
+                    </Link>
+                  </div>
+                </div>
+                
+                <div className="bg-white/5 rounded-lg p-6 border border-white/20">
+                  <h3 className="text-xl font-semibold mb-4 text-blue-300">Technical Implementation</h3>
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold text-blue-200 mb-2">AI Models</h4>
+                      <ul className="text-white/70 text-sm space-y-1">
+                        <li>• LSTM networks for sequence modeling</li>
+                        <li>• Random Forest for feature importance</li>
+                        <li>• Gradient Boosting for ensemble learning</li>
+                        <li>• AutoML for hyperparameter optimization</li>
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-semibold text-blue-200 mb-2">Real-Time Processing</h4>
+                      <ul className="text-white/70 text-sm space-y-1">
+                        <li>• Apache Kafka for stream processing</li>
+                        <li>• Redis for caching and session management</li>
+                        <li>• Microservices architecture</li>
+                        <li>• Horizontal scaling capabilities</li>
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-semibold text-blue-200 mb-2">Security Features</h4>
+                      <ul className="text-white/70 text-sm space-y-1">
+                        <li>• End-to-end encryption</li>
+                        <li>• Multi-factor authentication</li>
+                        <li>• Audit logging and monitoring</li>
+                        <li>• Compliance with PCI DSS standards</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          ) : (
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center py-16"
-            >
-              <div className="text-6xl mb-4">🔍</div>
-              <h3 className="text-2xl font-bold text-white mb-4">No case studies found</h3>
-              <p className="text-gray-300 mb-6">
-                Try adjusting your search terms or filters
-              </p>
-              <button
-                onClick={() => {
-                  setSearchQuery('');
-                  setSelectedIndustry('all');
-                  setSelectedService('all');
-                }}
-                className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition-colors"
-              >
-                Clear Filters
-              </button>
-            </motion.div>
-          )}
-        </div>
-      </section>
 
-      {/* Call to Action */}
-      <section className="py-20 px-4 bg-gradient-to-r from-blue-900/20 via-purple-900/20 to-cyan-900/20">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-bold text-white mb-6">
-              Ready to Write Your Success Story?
-            </h2>
-            <p className="text-xl text-gray-300 mb-8">
-              Let's discuss how our innovative solutions can transform your business
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/contact"
-                className="inline-flex items-center bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105"
-              >
-                Start Your Transformation
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Link>
-              <Link
-                href="/services"
-                className="inline-flex items-center border border-white/30 hover:border-white/50 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 backdrop-blur-md hover:bg-white/10"
-              >
-                Explore Our Services
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Link>
+            {/* Manufacturing Case Study */}
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="px-3 py-1 bg-orange-400/20 text-orange-400 text-sm rounded-full border border-orange-400/30">
+                      Manufacturing
+                    </span>
+                    <span className="px-3 py-1 bg-green-400/20 text-green-400 text-sm rounded-full border border-green-400/30">
+                      Predictive Maintenance
+                    </span>
+                  </div>
+                  <h2 className="text-3xl font-bold mb-4 text-orange-400">
+                    Predictive Maintenance for Industrial Equipment
+                  </h2>
+                  <p className="text-white/80 mb-6">
+                    A global manufacturing company wanted to reduce unplanned downtime and optimize 
+                    maintenance schedules using IoT sensors and AI-powered predictive analytics.
+                  </p>
+                  
+                  <div className="space-y-4 mb-6">
+                    <div className="bg-white/5 rounded-lg p-4 border border-white/20">
+                      <h4 className="font-semibold text-orange-300 mb-2">Challenge</h4>
+                      <p className="text-white/70 text-sm">
+                        Equipment failures were causing millions in lost production time annually, 
+                        with reactive maintenance approaches proving costly and inefficient.
+                      </p>
+                    </div>
+                    
+                    <div className="bg-white/5 rounded-lg p-4 border border-white/20">
+                      <h4 className="font-semibold text-cyan-300 mb-2">Solution</h4>
+                      <p className="text-white/70 text-sm">
+                        Deployed IoT sensors across critical equipment and implemented machine learning 
+                        models to predict failures weeks in advance, enabling proactive maintenance.
+                      </p>
+                    </div>
+                    
+                    <div className="bg-white/5 rounded-lg p-4 border border-white/20">
+                      <h4 className="font-semibold text-purple-300 mb-2">Results</h4>
+                      <ul className="text-white/70 text-sm space-y-1">
+                        <li>• 70% reduction in unplanned downtime</li>
+                        <li>• 45% decrease in maintenance costs</li>
+                        <li>• 90% accuracy in failure prediction</li>
+                        <li>• $4.2M annual cost savings</li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <div className="flex gap-4">
+                    <Link href="/contact" className="px-6 py-3 bg-orange-500 hover:bg-orange-600 rounded-lg text-white font-semibold transition-colors">
+                      Learn More
+                    </Link>
+                    <Link href="/services" className="px-6 py-3 bg-white/10 hover:bg-white/20 rounded-lg text-white font-semibold transition-colors border border-white/20">
+                      View Services
+                    </Link>
+                  </div>
+                </div>
+                
+                <div className="bg-white/5 rounded-lg p-6 border border-white/20">
+                  <h3 className="text-xl font-semibold mb-4 text-orange-300">Technical Implementation</h3>
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold text-orange-200 mb-2">IoT Infrastructure</h4>
+                      <ul className="text-white/70 text-sm space-y-1">
+                        <li>• 500+ IoT sensors across 15 facilities</li>
+                        <li>• Real-time data collection every 30 seconds</li>
+                        <li>• Edge computing for local processing</li>
+                        <li>• 5G connectivity for low-latency transmission</li>
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-semibold text-orange-200 mb-2">AI Models</h4>
+                      <ul className="text-white/70 text-sm space-y-1">
+                        <li>• Time series forecasting with Prophet</li>
+                        <li>• Anomaly detection using Isolation Forest</li>
+                        <li>• Survival analysis for equipment lifetime</li>
+                        <li>• Ensemble methods for improved accuracy</li>
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-semibold text-orange-200 mb-2">Analytics Platform</h4>
+                      <ul className="text-white/70 text-sm space-y-1">
+                        <li>• Real-time dashboards and alerts</li>
+                        <li>• Mobile app for field technicians</li>
+                        <li>• Integration with CMMS systems</li>
+                        <li>• Automated report generation</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </motion.div>
-        </div>
-      </section>
-    </Layout>
+
+            {/* Retail Case Study */}
+            <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="px-3 py-1 bg-purple-400/20 text-purple-400 text-sm rounded-full border border-purple-400/30">
+                      Retail
+                    </span>
+                    <span className="px-3 py-1 bg-pink-400/20 text-pink-400 text-sm rounded-full border border-pink-400/30">
+                      Customer Experience
+                    </span>
+                  </div>
+                  <h2 className="text-3xl font-bold mb-4 text-purple-400">
+                    AI-Powered Customer Experience Platform
+                  </h2>
+                  <p className="text-white/80 mb-6">
+                    A major retail chain wanted to personalize customer experiences across all touchpoints, 
+                    from online shopping to in-store interactions, using AI-driven insights and automation.
+                  </p>
+                  
+                  <div className="space-y-4 mb-6">
+                    <div className="bg-white/5 rounded-lg p-4 border border-white/20">
+                      <h4 className="font-semibold text-purple-300 mb-2">Challenge</h4>
+                      <p className="text-white/70 text-sm">
+                        Customer data was siloed across multiple systems, making it impossible to deliver 
+                        personalized experiences and leading to declining customer satisfaction scores.
+                      </p>
+                    </div>
+                    
+                    <div className="bg-white/5 rounded-lg p-4 border border-white/20">
+                      <h4 className="font-semibold text-cyan-300 mb-2">Solution</h4>
+                      <p className="text-white/70 text-sm">
+                        Built a unified customer data platform with AI-powered recommendation engines, 
+                        predictive analytics, and automated personalization across all channels.
+                      </p>
+                    </div>
+                    
+                    <div className="bg-white/5 rounded-lg p-4 border border-white/20">
+                      <h4 className="font-semibold text-purple-300 mb-2">Results</h4>
+                      <ul className="text-white/70 text-sm space-y-1">
+                        <li>• 35% increase in customer lifetime value</li>
+                        <li>• 50% improvement in conversion rates</li>
+                        <li>• 25% reduction in customer churn</li>
+                        <li>• 40% increase in average order value</li>
+                      </ul>
+                    </div>
+                  </div>
+                  
+                  <div className="flex gap-4">
+                    <Link href="/contact" className="px-6 py-3 bg-purple-500 hover:bg-purple-600 rounded-lg text-white font-semibold transition-colors">
+                      Learn More
+                    </Link>
+                    <Link href="/services" className="px-6 py-3 bg-white/10 hover:bg-white/20 rounded-lg text-white font-semibold transition-colors border border-white/20">
+                      View Services
+                    </Link>
+                  </div>
+                </div>
+                
+                <div className="bg-white/5 rounded-lg p-6 border border-white/20">
+                  <h3 className="text-xl font-semibold mb-4 text-purple-300">Technical Implementation</h3>
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold text-purple-200 mb-2">Data Platform</h4>
+                      <ul className="text-white/70 text-sm space-y-1">
+                        <li>• Real-time data streaming with Apache Kafka</li>
+                        <li>• Data lake architecture on AWS S3</li>
+                        <li>• Real-time analytics with Apache Spark</li>
+                        <li>• Customer 360 data model</li>
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-semibold text-purple-200 mb-2">AI Features</h4>
+                      <ul className="text-white/70 text-sm space-y-1">
+                        <li>• Collaborative filtering recommendations</li>
+                        <li>• Natural language processing for chatbots</li>
+                        <li>• Computer vision for in-store analytics</li>
+                        <li>• Predictive customer behavior modeling</li>
+                      </ul>
+                    </div>
+                    
+                    <div>
+                      <h4 className="font-semibold text-purple-200 mb-2">Integration</h4>
+                      <ul className="text-white/70 text-sm space-y-1">
+                        <li>• API-first architecture</li>
+                        <li>• Real-time synchronization</li>
+                        <li>• Multi-channel orchestration</li>
+                        <li>• A/B testing framework</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Call to Action */}
+            <div className="bg-gradient-to-r from-cyan-400/10 to-fuchsia-400/10 rounded-2xl p-8 border border-cyan-400/20 text-center">
+              <h2 className="text-3xl font-bold mb-4 text-cyan-400">
+                Ready to Transform Your Business?
+              </h2>
+              <p className="text-white/80 mb-6 max-w-2xl mx-auto">
+                These case studies demonstrate the real impact our AI and automation solutions can have on your business. 
+                Let's discuss how we can help you achieve similar results.
+              </p>
+              <div className="flex gap-4 justify-center">
+                <Link href="/contact" className="px-8 py-4 bg-cyan-500 hover:bg-cyan-600 rounded-lg text-white font-semibold text-lg transition-colors">
+                  Start Your Project
+                </Link>
+                <Link href="/services" className="px-8 py-4 bg-white/10 hover:bg-white/20 rounded-lg text-white font-semibold text-lg transition-colors border border-white/20">
+                  Explore Services
+                </Link>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </>
   );
 };
 
