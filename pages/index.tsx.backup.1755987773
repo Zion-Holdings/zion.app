@@ -24,12 +24,16 @@ const HomePage: React.FC = () => {
     <ErrorBoundary>
       <SEOOptimizer />
       <AnalyticsTracker />
+<<<<<<< HEAD
+      <Homepage2037 />
+=======
       <PerformanceOptimizer />
       <MobileOptimizer showDebugInfo={false}>
         <AccessibilityEnhancer />
         <Homepage2025 />
         <PerformanceMonitor showUI={true} />
       </MobileOptimizer>
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-a975
     </ErrorBoundary>
   );
 };

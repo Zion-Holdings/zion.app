@@ -182,6 +182,18 @@ const AccessibilityEnhancer: React.FC = () => {
     }
   }, [applySettings]);
 
+<<<<<<< HEAD
+  // Focus management
+  const handleFocusChange = useCallback((e: Event) => {
+    const target = e.target as HTMLElement;
+    if (target) {
+      setCurrentFocus(target);
+      announceToScreenReader(`Focused on ${target.textContent || target.tagName.toLowerCase()}`);
+    }
+  }, []);
+
+=======
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-a975
   // Keyboard navigation enhancements
   const handleKeyDown = useCallback((e: Event) => {
     // Tab navigation detected
@@ -227,6 +239,10 @@ const AccessibilityEnhancer: React.FC = () => {
 
   // Apply font scaling
   useEffect(() => {
+<<<<<<< HEAD
+    document.documentElement.style.fontSize = `${fontScale}%`;
+  }, [fontScale]);
+=======
     const handleFocusChangeWrapper = (e: Event) => {
       const target = e.target as HTMLElement;
       if (target) {
@@ -243,6 +259,7 @@ const AccessibilityEnhancer: React.FC = () => {
       document.removeEventListener('keydown', handleKeyDown);
     };
   }, [handleKeyDown]);
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-a975
 
   // Apply contrast mode
   useEffect(() => {
