@@ -186,7 +186,11 @@ export const futuristic2028Services: Futuristic2028Service[] = [
     competitors: ['Amazon Prime Air', 'UPS Flight Forward', 'DHL Parcelcopter'],
     marketSize: '$12B drone delivery market',
     growthRate: '45% annual growth',
+<<<<<<< HEAD
+    variant: 'ai-futuristic',
+=======
     variant: 'ai-autonomous',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3ff2
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
@@ -451,7 +455,11 @@ export const futuristic2028Services: Futuristic2028Service[] = [
     competitors: ['Siemens', 'GE Digital', 'Rockwell Automation'],
     marketSize: '$30B smart manufacturing market',
     growthRate: '40% annual growth',
+<<<<<<< HEAD
+    variant: 'ai-futuristic',
+=======
     variant: 'ai-autonomous',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3ff2
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
