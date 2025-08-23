@@ -11,7 +11,19 @@ import {
   GraduationCap, Handshake
 } from 'lucide-react';
 
-const UltraFuturisticNavigation2045: React.FC = () => {
+interface UltraFuturisticNavigation2045Props {
+  sidebarOpen?: boolean;
+  setSidebarOpen?: (open: boolean) => void;
+  theme?: 'dark' | 'light';
+  onThemeToggle?: () => void;
+}
+
+const UltraFuturisticNavigation2045: React.FC<UltraFuturisticNavigation2045Props> = ({
+  sidebarOpen,
+  setSidebarOpen,
+  theme = 'dark',
+  onThemeToggle
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -50,34 +62,6 @@ const UltraFuturisticNavigation2045: React.FC = () => {
       description: 'Explore our revolutionary solutions',
       dropdown: [
         {
-          name: 'Micro SAAS Solutions',
-          href: '/services/micro-saas',
-          icon: Target,
-          description: 'Innovative micro SAAS platforms',
-          color: 'from-emerald-500 to-teal-500',
-          subItems: [
-            { name: 'AI Content & SEO Suite', href: '/services/ai-content-seo-suite', price: '$199/month' },
-            { name: 'Intelligent Support Automation', href: '/services/intelligent-support-automation', price: '$149/month' },
-            { name: 'Advanced Analytics & BI', href: '/services/advanced-analytics-bi', price: '$299/month' },
-            { name: 'E-commerce Optimization', href: '/services/ecommerce-optimization-analytics', price: '$179/month' },
-            { name: 'HR & Talent Management', href: '/services/hr-talent-management', price: '$249/month' }
-          ]
-        },
-        {
-          name: 'IT Infrastructure & DevOps',
-          href: '/services/it-infrastructure',
-          icon: Cpu,
-          description: 'Cloud and infrastructure solutions',
-          color: 'from-blue-500 to-cyan-500',
-          subItems: [
-            { name: 'Cloud Infrastructure & DevOps', href: '/services/cloud-infrastructure-devops', price: '$599/month' },
-            { name: 'Data Engineering & Analytics', href: '/services/data-engineering-analytics', price: '$799/month' },
-            { name: 'API Development & Management', href: '/services/api-development-management', price: '$349/month' },
-            { name: 'Mobile App Development', href: '/services/mobile-app-development', price: '$899/month' },
-            { name: 'Network Security & Monitoring', href: '/services/network-security-monitoring', price: '$499/month' }
-          ]
-        },
-        {
           name: 'AI & Machine Learning',
           href: '/services/ai-machine-learning',
           icon: Brain,
@@ -98,10 +82,39 @@ const UltraFuturisticNavigation2045: React.FC = () => {
           description: 'Advanced security and protection',
           color: 'from-red-500 to-orange-500',
           subItems: [
-            { name: 'Cybersecurity Threat Detection', href: '/services/cybersecurity-threat-detection', price: '$399/month' },
+            { name: 'AI Red Teaming Suite', href: '/services/ai-red-teaming-suite', price: '$299/month' },
+            { name: 'API Schema Diff Registry', href: '/services/api-schema-diff-registry', price: '$199/month' },
             { name: 'Network Security & Monitoring', href: '/services/network-security-monitoring', price: '$499/month' },
             { name: 'Compliance Automation', href: '/services/compliance-automation', price: '$299/month' },
             { name: 'Zero Trust Security', href: '/services/zero-trust-security', price: '$599/month' }
+          ]
+        },
+        {
+          name: 'IT Infrastructure & DevOps',
+          href: '/services/it-infrastructure',
+          icon: Cpu,
+          description: 'Cloud and infrastructure solutions',
+          color: 'from-blue-500 to-cyan-500',
+          subItems: [
+            { name: 'Cloud Infrastructure & DevOps', href: '/services/cloud-infrastructure-devops', price: '$599/month' },
+            { name: 'Data Engineering & Analytics', href: '/services/data-engineering-analytics', price: '$799/month' },
+            { name: 'API Development & Management', href: '/services/api-development-management', price: '$349/month' },
+            { name: 'Mobile App Development', href: '/services/mobile-app-development', price: '$899/month' },
+            { name: 'Serverless Cron Manager', href: '/services/serverless-cron-manager', price: '$99/month' }
+          ]
+        },
+        {
+          name: 'Micro SAAS Solutions',
+          href: '/services/micro-saas',
+          icon: Target,
+          description: 'Innovative micro SAAS platforms',
+          color: 'from-emerald-500 to-teal-500',
+          subItems: [
+            { name: 'AI Content & SEO Suite', href: '/services/ai-content-seo-suite', price: '$199/month' },
+            { name: 'Intelligent Support Automation', href: '/services/intelligent-support-automation', price: '$149/month' },
+            { name: 'Advanced Analytics & BI', href: '/services/advanced-analytics-bi', price: '$299/month' },
+            { name: 'E-commerce Optimization', href: '/services/ecommerce-optimization-analytics', price: '$179/month' },
+            { name: 'HR & Talent Management', href: '/services/hr-talent-management', price: '$249/month' }
           ]
         },
         {
@@ -379,7 +392,12 @@ const UltraFuturisticNavigation2045: React.FC = () => {
           {/* Mobile Menu Button */}
           <div className="lg:hidden">
             <button
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={() => {
+                setIsOpen(!isOpen);
+                if (setSidebarOpen) {
+                  setSidebarOpen(!isOpen);
+                }
+              }}
               className="text-gray-300 hover:text-white transition-colors p-2"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}

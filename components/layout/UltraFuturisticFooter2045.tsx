@@ -21,36 +21,25 @@ const UltraFuturisticFooter2045: React.FC = () => {
 
   const footerSections = [
     {
-      title: 'Revolutionary Services 2045',
+      title: 'Core Services',
       links: [
-        { name: 'AI Consciousness Evolution 2045', href: '/ai-consciousness-evolution-2045', icon: <Brain className="w-5 h-5" /> },
-        { name: 'Quantum Neural Networks 2045', href: '/quantum-neural-network-platform-2045', icon: <Atom className="w-5 h-5" /> },
-        { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence-2045', icon: <Target className="w-5 h-5" /> },
-        { name: 'Quantum Cybersecurity 2045', href: '/quantum-cybersecurity-platform-2045', icon: <Shield className="w-5 h-5" /> },
-        { name: 'Space Resource Intelligence 2045', href: '/space-resource-intelligence-2045', icon: <Rocket className="w-5 h-5" /> },
-        { name: 'Autonomous Customer Success 2045', href: '/autonomous-customer-success-2045', icon: <Users className="w-5 h-5" /> }
+        { name: 'AI & Machine Learning', href: '/services/ai-machine-learning', icon: <Brain className="w-5 h-5" /> },
+        { name: 'Cybersecurity & Compliance', href: '/services/cybersecurity', icon: <Shield className="w-5 h-5" /> },
+        { name: 'Space Technology', href: '/services/space-technology', icon: <Rocket className="w-5 h-5" /> },
+        { name: 'IT Infrastructure & DevOps', href: '/services/it-infrastructure', icon: <Cpu className="w-5 h-5" /> },
+        { name: 'Micro SAAS Solutions', href: '/services/micro-saas', icon: <Target className="w-5 h-5" /> },
+        { name: 'Solutions', href: '/solutions', icon: <Sparkles className="w-5 h-5" /> }
       ]
     },
     {
-      title: 'Technology Solutions',
+      title: 'Featured Services',
       links: [
-        { name: 'Quantum Cloud Infrastructure 2045', href: '/quantum-cloud-infrastructure-2045', icon: <Cloud className="w-5 h-5" /> },
-        { name: 'Autonomous DevOps Platform 2045', href: '/autonomous-devops-platform-2045', icon: <Code className="w-5 h-5" /> },
-        { name: 'Quantum Data Center Management 2045', href: '/quantum-data-center-management-2045', icon: <Server className="w-5 h-5" /> },
-        { name: 'Autonomous Network Management 2045', href: '/autonomous-network-management-2045', icon: <Network className="w-5 h-5" /> },
-        { name: 'Autonomous IT Service Management 2045', href: '/autonomous-it-service-management-2045', icon: <Settings className="w-5 h-5" /> },
-        { name: 'Autonomous Security Operations Center 2045', href: '/autonomous-security-operations-center-2045', icon: <Lock className="w-5 h-5" /> }
-      ]
-    },
-    {
-      title: 'AI & Consciousness',
-      links: [
-        { name: 'AI Consciousness Evolution 2045', href: '/ai-consciousness-evolution-2045', icon: <Brain className="w-5 h-5" /> },
-        { name: 'Quantum AI Cognitive 2045', href: '/quantum-ai-cognitive-2045', icon: <Atom className="w-5 h-5" /> },
-        { name: 'Autonomous AI Research 2045', href: '/autonomous-ai-research-2045', icon: <Star className="w-5 h-5" /> },
-        { name: 'Emotional AI Intelligence 2045', href: '/emotional-ai-intelligence-2045', icon: <Heart className="w-5 h-5" /> },
-        { name: 'Quantum AI Metaverse 2045', href: '/quantum-ai-metaverse-2045', icon: <Globe className="w-5 h-5" /> },
-        { name: 'AI Autonomous Business Intelligence 2045', href: '/ai-autonomous-business-intelligence-2045', icon: <Target className="w-5 h-5" /> }
+        { name: 'AI Red Teaming Suite', href: '/services/ai-red-teaming-suite', icon: <Shield className="w-5 h-5" /> },
+        { name: 'API Schema Diff Registry', href: '/services/api-schema-diff-registry', icon: <Code className="w-5 h-5" /> },
+        { name: 'Space Resource Intelligence', href: '/services/space-resource-intelligence', icon: <Rocket className="w-5 h-5" /> },
+        { name: 'Quantum Cybersecurity', href: '/services/quantum-cybersecurity', icon: <Atom className="w-5 h-5" /> },
+        { name: 'Serverless Cron Manager', href: '/services/serverless-cron-manager', icon: <Server className="w-5 h-5" /> },
+        { name: 'View All Services', href: '/services', icon: <ArrowRight className="w-5 h-5" /> }
       ]
     },
     {
@@ -60,17 +49,19 @@ const UltraFuturisticFooter2045: React.FC = () => {
         { name: 'Our Mission', href: '/mission', icon: <Target className="w-5 h-5" /> },
         { name: 'Our Team', href: '/team', icon: <Users className="w-5 h-5" /> },
         { name: 'Careers', href: '/careers', icon: <Award className="w-5 h-5" /> },
-        { name: 'Partners', href: '/partners', icon: <Handshake className="w-5 h-5" /> }
+        { name: 'Partners', href: '/partners', icon: <Handshake className="w-5 h-5" /> },
+        { name: 'Contact', href: '/contact', icon: <Phone className="w-5 h-5" /> }
       ]
     },
     {
-      title: 'Resources',
+      title: 'Resources & Support',
       links: [
         { name: 'Documentation', href: '/docs', icon: <Code className="w-5 h-5" /> },
         { name: 'API Reference', href: '/api', icon: <Server className="w-5 h-5" /> },
         { name: 'Blog & News', href: '/blog', icon: <Globe className="w-5 h-5" /> },
         { name: 'Case Studies', href: '/case-studies', icon: <TrendingUp className="w-5 h-5" /> },
-        { name: 'Support Center', href: '/support', icon: <HelpCircle className="w-5 h-5" /> }
+        { name: 'Support Center', href: '/support', icon: <HelpCircle className="w-5 h-5" /> },
+        { name: 'Pricing', href: '/pricing', icon: <TrendingUp className="w-5 h-5" /> }
       ]
     }
   ];
