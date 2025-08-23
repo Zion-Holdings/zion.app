@@ -155,7 +155,7 @@ const UltraFuturisticFooter2045: React.FC = () => {
                         className="flex items-center space-x-3 text-gray-400 hover:text-cyan-400 transition-all duration-200 group hover:translate-x-1"
                       >
                         <div className="w-5 h-5 text-cyan-400 group-hover:scale-110 transition-transform duration-200">
-                          {link.icon}
+                          <ArrowRight className="w-4 h-4" />
                         </div>
                         <span className="text-sm group-hover:text-cyan-400 transition-colors duration-200">
                           {link.name}
@@ -209,16 +209,19 @@ const UltraFuturisticFooter2045: React.FC = () => {
 
               {/* Social Links */}
               <div className="flex items-center space-x-4">
-                {socialLinks.map((social) => (
-                  <Link
-                    key={social.name}
-                    href={social.href}
-                    className={`p-2 rounded-lg bg-gray-900/50 border border-cyan-500/20 text-gray-400 ${social.color} transition-all duration-200 hover:scale-110 hover:border-cyan-500/50`}
-                    aria-label={social.name}
-                  >
-                    {social.icon}
-                  </Link>
-                ))}
+                {socialLinks.map((social) => {
+                  const IconComponent = social.icon;
+                  return (
+                    <Link
+                      key={social.name}
+                      href={social.href}
+                      className={`p-2 rounded-lg bg-gray-900/50 border border-cyan-500/20 text-gray-400 ${social.color} transition-all duration-200 hover:scale-110 hover:border-cyan-500/50`}
+                      aria-label={social.name}
+                    >
+                      <IconComponent className="w-5 h-5" />
+                    </Link>
+                  );
+                })}
               </div>
 
               {/* Additional Links */}
