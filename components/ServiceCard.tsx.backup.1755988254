@@ -1,12 +1,39 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+<<<<<<< HEAD
+import { ArrowRight, CheckCircle } from 'lucide-react';
+import Link from 'next/link';
+=======
 import { Brain, ArrowRight } from 'lucide-react';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-2309
 
 interface ServiceCardProps {
   service: {
     id: string;
     name: string;
     description: string;
+<<<<<<< HEAD
+    features: string[];
+    price: string;
+    link: string;
+  };
+  index: number;
+  colorClass: string;
+}
+
+const ServiceCard: React.FC<ServiceCardProps> = ({ service, index, colorClass }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="group relative bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-6 hover:border-cyan-400/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-400/25"
+    >
+      {/* Service Icon */}
+      <div className={`w-16 h-16 bg-gradient-to-r ${colorClass} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+        <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
+          <span className="text-2xl">🚀</span>
+=======
     type: string;
     pricing: {
       starter: string;
@@ -63,6 +90,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
             </span>
             <ArrowRight className="w-5 h-5 text-gray-500 group-hover:text-cyan-400 transition-colors duration-300" />
           </div>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-2309
         </div>
       </div>
 
