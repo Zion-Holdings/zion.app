@@ -86,11 +86,22 @@ const getServicePricing = (service: any) => {
   if (service.pricing?.starter) return service.pricing.starter;
   if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
   if (service.price?.monthly) return `$${service.price.monthly}/month`;
+<<<<<<< HEAD
+  if (service.price && typeof service.price === 'object' && service.price.monthly) {
+    return `$${service.price.monthly}/month`;
+  }
+  if (service.price && service.period) return `${service.price}${service.period}`;
+  if (service.price && typeof service.price === 'string') return service.price;
+  
+  // If we get here, log the problematic service
+  console.warn('Service with unexpected price structure:', service.id, service.name, service.price);
+=======
   if (typeof service.price === 'string') return service.price;
   if (service.price && typeof service.price === 'object') {
     if (service.price.monthly) return `$${service.price.monthly}/month`;
     if (service.price.starter) return service.price.starter;
   }
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-ab61
   return 'Contact for pricing';
 };
 
@@ -118,6 +129,31 @@ const getServiceDescription = (service: any) => {
 
 // Create unified services array
 const allServices = [
+<<<<<<< HEAD
+  // ...enterpriseITSolutions,
+  // ...innovativeMicroSaasSolutions,
+  // ...cuttingEdgeAIServices,
+  // ...realMicroSaasServices,
+  // ...innovativeAIServices,
+  // ...enterpriseITServices,
+  // ...emergingTechServices,
+  // ...newRealServices,
+  // ...realOperationalServices,
+  // ...marketReadyServices,
+  // ...marketValidatedServices,
+  // ...industryRealServices,
+  // ...real2025Q4AugmentedBatch,
+  // ...real2029Q3Additions,
+  // Our new 2025 advanced services V2
+  ...advanced2025MicroSaasExpansionV2,
+  ...advanced2025ITSolutionsExpansionV2,
+  ...advanced2025AIServicesExpansionV2,
+  // ...validatedServices2025Q4,
+  // ...real2035Q2Additions,
+  // ...real2036ServiceExpansions,
+  // ...innovative2036MicroSaasServices,
+  // ...innovative2036ITServices,
+=======
   ...enterpriseITSolutions,
   ...innovativeMicroSaasSolutions,
   ...cuttingEdgeAIServices,
@@ -141,6 +177,7 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-ab61
   // Our new 2025 advanced services
   // ...advanced2025MicroSaasExpansion,
   // ...advanced2025ITSolutionsExpansion,

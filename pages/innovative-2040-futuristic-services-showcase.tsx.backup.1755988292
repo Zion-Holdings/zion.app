@@ -40,10 +40,17 @@ interface Service {
   growthRate?: string;
   contactInfo?: {
     mobile?: string;
+<<<<<<< HEAD
+    email?: string;
+    address?: string;
+    website?: string;
+    phone?: string;
+=======
     phone?: string;
     email: string;
     address?: string;
     website: string;
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-ab61
   };
   realImplementation?: boolean | string;
   implementationDetails?: string;
