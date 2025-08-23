@@ -1,6 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+<<<<<<< HEAD
+import { Search, Filter, X, ArrowRight, Star, Brain, Atom, Rocket, Shield, Zap } from 'lucide-react';
+=======
 import { Search, X, TrendingUp, Clock, ArrowRight, Sparkles } from 'lucide-react';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-8e8b
 import Link from 'next/link';
 
 interface SearchSuggestion {
@@ -8,6 +12,10 @@ interface SearchSuggestion {
   title: string;
   description: string;
   category: string;
+<<<<<<< HEAD
+  tags: string[];
+=======
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-8e8b
   url: string;
   relevance: number;
   icon: React.ReactNode;
@@ -20,6 +28,21 @@ interface SearchFilter {
   complexity: string;
 }
 
+<<<<<<< HEAD
+const EnhancedSearch: React.FC = () => {
+  const [query, setQuery] = useState('');
+  const [results, setResults] = useState<SearchResult[]>([]);
+  const [isSearching, setIsSearching] = useState(false);
+  const [showFilters, setShowFilters] = useState(false);
+  const [filters, setFilters] = useState<SearchFilter>({
+    category: 'all',
+    priceRange: 'all',
+    technology: 'all',
+    complexity: 'all'
+  });
+  const [suggestions, setSuggestions] = useState<string[]>([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+=======
 interface EnhancedSearchProps {
   placeholder?: string;
   className?: string;
@@ -43,9 +66,63 @@ const EnhancedSearch: React.FC<EnhancedSearchProps> = ({
     'Cloud Infrastructure'
   ]);
   const [suggestions, setSuggestions] = useState<SearchSuggestion[]>([]);
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-8e8b
   const searchRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
+<<<<<<< HEAD
+  // Mock search results - in a real app, this would come from an API
+  const mockResults: SearchResult[] = [
+    {
+      id: 'ai-bi-platform',
+      title: 'AI Business Intelligence Platform',
+      description: 'Transform data into actionable insights with advanced AI analytics',
+      category: 'AI & Machine Learning',
+      tags: ['analytics', 'business intelligence', 'machine learning', 'data visualization'],
+      url: '/ai-business-intelligence-platform',
+      relevance: 0.95,
+      icon: <Brain className="w-5 h-5" />
+    },
+    {
+      id: 'quantum-secure-cloud',
+      title: 'Quantum-Secure Cloud Infrastructure',
+      description: 'Future-proof security with quantum-resistant encryption',
+      category: 'Quantum Computing',
+      tags: ['quantum', 'security', 'cloud', 'encryption'],
+      url: '/quantum-secure-cloud-infrastructure',
+      relevance: 0.92,
+      icon: <Atom className="w-5 h-5" />
+    },
+    {
+      id: 'metaverse-platform',
+      title: 'Metaverse Development Platform',
+      description: 'Build immersive virtual worlds and experiences',
+      category: 'Emerging Technologies',
+      tags: ['metaverse', 'VR', 'AR', '3D', 'virtual reality'],
+      url: '/metaverse-development-platform',
+      relevance: 0.88,
+      icon: <Rocket className="w-5 h-5" />
+    },
+    {
+      id: 'enterprise-security',
+      title: 'Enterprise Security Suite',
+      description: 'Comprehensive security solutions for enterprise environments',
+      category: 'Enterprise Solutions',
+      tags: ['security', 'enterprise', 'compliance', 'threat detection'],
+      url: '/enterprise-security-suite',
+      relevance: 0.85,
+      icon: <Shield className="w-5 h-5" />
+    },
+    {
+      id: 'micro-saas-platform',
+      title: 'Micro SAAS Platform',
+      description: 'Scalable software-as-a-service solutions for modern businesses',
+      category: 'Micro SAAS',
+      tags: ['saas', 'software', 'subscription', 'business tools'],
+      url: '/micro-saas-platform',
+      relevance: 0.82,
+      icon: <Zap className="w-5 h-5" />
+=======
   // Load recent searches from localStorage
   useEffect(() => {
     const saved = localStorage.getItem('zion-recent-searches');
@@ -55,9 +132,28 @@ const EnhancedSearch: React.FC<EnhancedSearchProps> = ({
       } catch {
         // Silently handle parsing errors
       }
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-8e8b
     }
   }, []);
 
+<<<<<<< HEAD
+  // AI-powered search suggestions
+  const aiSuggestions = [
+    'AI automation for business processes',
+    'Quantum computing solutions',
+    'Cloud security and compliance',
+    'Machine learning platforms',
+    'Blockchain enterprise solutions',
+    'IoT and edge computing',
+    'Cybersecurity automation',
+    'Data analytics and visualization'
+  ];
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+        setShowSuggestions(false);
+=======
   // Save recent searches to localStorage
   const saveRecentSearch = (search: string) => {
     const updated = [search, ...recentSearches.filter(s => s !== search)].slice(0, 5);
@@ -158,6 +254,7 @@ const EnhancedSearch: React.FC<EnhancedSearchProps> = ({
     const handleClickOutside = (event: MouseEvent) => {
       if (searchRef.current && !searchRef.current.contains(event.target as HTMLElement)) {
         setIsOpen(false);
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-8e8b
       }
     };
 
@@ -165,6 +262,95 @@ const EnhancedSearch: React.FC<EnhancedSearchProps> = ({
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+<<<<<<< HEAD
+  useEffect(() => {
+    if (query.length > 2) {
+      // Simulate AI-powered search
+      setIsSearching(true);
+      const timer = setTimeout(() => {
+        const filtered = mockResults.filter(result => 
+          result.title.toLowerCase().includes(query.toLowerCase()) ||
+          result.description.toLowerCase().includes(query.toLowerCase()) ||
+          result.tags.some(tag => tag.toLowerCase().includes(query.toLowerCase()))
+        );
+        
+        // Apply filters
+        const filteredResults = filtered.filter(result => {
+          if (filters.category !== 'all' && result.category !== filters.category) return false;
+          if (filters.technology !== 'all' && !result.tags.includes(filters.technology)) return false;
+          return true;
+        });
+
+        setResults(filteredResults);
+        setIsSearching(false);
+      }, 300);
+
+      return () => clearTimeout(timer);
+    } else {
+      setResults([]);
+    }
+  }, [query, filters]);
+
+  useEffect(() => {
+    if (query.length > 2) {
+      const filtered = aiSuggestions.filter(suggestion =>
+        suggestion.toLowerCase().includes(query.toLowerCase())
+      );
+      setSuggestions(filtered.slice(0, 5));
+      setShowSuggestions(true);
+    } else {
+      setSuggestions([]);
+      setShowSuggestions(false);
+    }
+  }, [query]);
+
+  const handleSearch = (searchQuery: string) => {
+    setQuery(searchQuery);
+    setShowSuggestions(false);
+  };
+
+  const clearSearch = () => {
+    setQuery('');
+    setResults([]);
+    setShowSuggestions(false);
+  };
+
+  const updateFilter = (key: keyof SearchFilter, value: string) => {
+    setFilters(prev => ({ ...prev, [key]: value }));
+  };
+
+  return (
+    <div className="relative w-full max-w-4xl mx-auto" ref={searchRef}>
+      {/* Search Input */}
+      <div className="relative">
+        <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+        <input
+          type="text"
+          placeholder="Search for AI services, quantum solutions, emerging tech..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          className="w-full px-12 py-4 bg-white/10 backdrop-blur-md border border-cyan-400/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:border-cyan-400/50 transition-all duration-300"
+          onFocus={() => query.length > 2 && setShowSuggestions(true)}
+        />
+        
+        {/* Filter Toggle */}
+        <button
+          onClick={() => setShowFilters(!showFilters)}
+          className={`absolute right-20 top-1/2 transform -translate-y-1/2 p-2 rounded-lg transition-all duration-300 ${
+            showFilters ? 'bg-cyan-500 text-white' : 'text-gray-400 hover:text-cyan-400'
+          }`}
+          aria-label="Toggle search filters"
+        >
+          <Filter className="w-4 h-4" />
+        </button>
+
+        {/* Clear Button */}
+        {query && (
+          <button
+            onClick={clearSearch}
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 text-gray-400 hover:text-white transition-colors"
+            aria-label="Clear search"
+=======
   // Handle keyboard navigation
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter') {
@@ -196,12 +382,43 @@ const EnhancedSearch: React.FC<EnhancedSearchProps> = ({
               setIsOpen(false);
             }}
             className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white transition-colors"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-8e8b
           >
             <X className="w-4 h-4" />
           </button>
         )}
       </div>
 
+<<<<<<< HEAD
+      {/* AI Suggestions */}
+      <AnimatePresence>
+        {showSuggestions && suggestions.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            className="absolute top-full left-0 right-0 mt-2 bg-gray-900/95 backdrop-blur-md border border-cyan-400/30 rounded-xl shadow-2xl z-50"
+          >
+            <div className="p-4">
+              <div className="flex items-center space-x-2 mb-3">
+                <Brain className="w-4 h-4 text-cyan-400" />
+                <span className="text-sm text-cyan-400 font-medium">AI Suggestions</span>
+              </div>
+              <div className="space-y-2">
+                {suggestions.map((suggestion, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleSearch(suggestion)}
+                    className="w-full text-left p-3 rounded-lg hover:bg-white/5 transition-colors text-gray-300 hover:text-white"
+                  >
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm">{suggestion}</span>
+                      <ArrowRight className="w-4 h-4 text-cyan-400" />
+                    </div>
+                  </button>
+                ))}
+              </div>
+=======
       {/* Search Dropdown */}
       <AnimatePresence>
         {isOpen && (
@@ -324,6 +541,7 @@ const EnhancedSearch: React.FC<EnhancedSearchProps> = ({
                   Space Tech
                 </button>
               </div>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-8e8b
             </div>
           </motion.div>
         )}

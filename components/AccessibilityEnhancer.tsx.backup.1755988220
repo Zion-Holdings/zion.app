@@ -1,3 +1,74 @@
+<<<<<<< HEAD
+import React, { useEffect, useState } from 'react';
+
+interface AccessibilityEnhancerProps {
+  // Add any props if needed
+}
+
+const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = () => {
+  const [isHighContrast, setIsHighContrast] = useState(false);
+  const [isReducedMotion, setIsReducedMotion] = useState(false);
+  const [fontSize, setFontSize] = useState(16);
+
+  useEffect(() => {
+    // Check for user's motion preferences
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setIsReducedMotion(prefersReducedMotion.matches);
+
+    // Check for user's color scheme preferences
+    const prefersHighContrast = window.matchMedia('(prefers-contrast: high)');
+    setIsHighContrast(prefersHighContrast.matches);
+
+    // Listen for changes in user preferences
+    const handleMotionChange = (e: MediaQueryListEvent) => setIsReducedMotion(e.matches);
+    const handleContrastChange = (e: MediaQueryListEvent) => setIsHighContrast(e.matches);
+
+    prefersReducedMotion.addEventListener('change', handleMotionChange);
+    prefersHighContrast.addEventListener('change', handleContrastChange);
+
+    // Apply initial accessibility settings
+    applyAccessibilitySettings();
+
+    return () => {
+      prefersReducedMotion.removeEventListener('change', handleMotionChange);
+      prefersHighContrast.removeEventListener('change', handleContrastChange);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Apply accessibility settings when they change
+    applyAccessibilitySettings();
+  }, [isHighContrast, isReducedMotion, fontSize]);
+
+  const applyAccessibilitySettings = () => {
+    const root = document.documentElement;
+    
+    // Apply high contrast mode
+    if (isHighContrast) {
+      root.style.setProperty('--text-primary', '#ffffff');
+      root.style.setProperty('--text-secondary', '#e5e7eb');
+      root.style.setProperty('--bg-primary', '#000000');
+      root.style.setProperty('--bg-secondary', '#111111');
+    } else {
+      root.style.removeProperty('--text-primary');
+      root.style.removeProperty('--text-secondary');
+      root.style.removeProperty('--bg-primary');
+      root.style.removeProperty('--bg-secondary');
+    }
+
+    // Apply reduced motion
+    if (isReducedMotion) {
+      root.style.setProperty('--transition-duration', '0.1s');
+      root.style.setProperty('--animation-duration', '0.1s');
+    } else {
+      root.style.removeProperty('--transition-duration');
+      root.style.removeProperty('--animation-duration');
+    }
+
+  // Load saved settings
+  useEffect(() => {
+    const saved = localStorage.getItem('accessibility-settings');
+=======
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -32,13 +103,19 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ onSetting
   // Load settings from localStorage
   useEffect(() => {
     const saved = localStorage.getItem('zion-accessibility-settings');
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-8e8b
     if (saved) {
       try {
         const parsed = JSON.parse(saved);
         setSettings(parsed);
         applySettings(parsed);
+<<<<<<< HEAD
+      } catch (e) {
+        // console.log('Failed to parse saved accessibility settings');
+=======
       } catch {
         // Silently handle parsing errors
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-8e8b
       }
     }
   }, [applySettings]);
@@ -52,6 +129,183 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ onSetting
     }
   }, []);
 
+<<<<<<< HEAD
+  // Keyboard navigation enhancements
+  const handleKeyDown = useCallback((e: Event) => {
+    // Tab navigation detected
+  }, []);
+
+  // Announce to screen reader
+  const announceToScreenReader = useCallback((message: string) => {
+    // setAnnouncements(prev => [...prev, message]); // This line was removed
+    
+    // Create live region for screen readers
+    if (!announcementRef.current) {
+      const liveRegion = document.createElement('div');
+      liveRegion.setAttribute('aria-live', 'polite');
+      liveRegion.setAttribute('aria-atomic', 'true');
+      liveRegion.className = 'sr-only';
+      document.body.appendChild(liveRegion);
+      announcementRef.current = liveRegion;
+    }
+    
+    if (announcementRef.current) {
+      announcementRef.current.textContent = message;
+    }
+    
+    // Remove announcement after a delay
+    setTimeout(() => {
+      // setAnnouncements(prev => prev.filter(a => a !== message)); // This line was removed
+    }, 5000);
+  }, []);
+
+  // Auto-optimize accessibility
+  useEffect(() => {
+    if (!autoOptimize) return;
+    
+    const checkAccessibility = () => {
+      const issues: string[] = [];
+      
+      // Check for missing alt text
+      const images = document.querySelectorAll('img');
+      images.forEach(img => {
+        if (!img.alt) {
+          issues.push(`Image missing alt text: ${img.src}`);
+        }
+      });
+
+      // Check heading structure
+      const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+      let previousLevel = 0;
+      headings.forEach(heading => {
+        const level = parseInt(heading.tagName.charAt(1));
+        if (level > previousLevel + 1) {
+          issues.push(`Heading structure issue: ${heading.tagName} follows ${previousLevel > 0 ? `h${previousLevel}` : 'no heading'}`);
+        }
+        previousLevel = level;
+      });
+
+      // Check form labels
+      const inputs = document.querySelectorAll('input, textarea, select');
+      inputs.forEach(input => {
+        const id = input.getAttribute('id');
+        if (id && !document.querySelector(`label[for="${id}"]`)) {
+          issues.push(`Input missing label: ${id}`);
+        }
+      });
+
+      if (issues.length > 0) {
+        announceToScreenReader(`Found ${issues.length} accessibility issues`);
+      } else {
+        announceToScreenReader('No accessibility issues found');
+      }
+    };
+    
+    // Run check after page load
+    const timer = setTimeout(checkAccessibility, 2000);
+    return () => clearTimeout(timer);
+  }, [autoOptimize, announceToScreenReader]);
+
+  // Set up event listeners
+  useEffect(() => {
+    document.addEventListener('focusin', handleFocusChange);
+    document.addEventListener('keydown', handleKeyDown);
+    
+    return () => {
+      document.removeEventListener('focusin', handleFocusChange);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [handleFocusChange, handleKeyDown]);
+
+  // Quick accessibility shortcuts
+  const toggleHighContrast = () => {
+    applySettings({ ...settings, highContrast: !settings.highContrast });
+  };
+
+  const increaseFontSize = () => {
+    setFontSize(prev => Math.min(prev + 2, 24));
+  };
+
+  const decreaseFontSize = () => {
+    setFontSize(prev => Math.max(prev - 2, 12));
+  };
+
+  const resetFontSize = () => {
+    setFontSize(16);
+  };
+
+  const toggleHighContrast = () => {
+    setIsHighContrast(!isHighContrast);
+  };
+
+  const toggleReducedMotion = () => {
+    setIsReducedMotion(!isReducedMotion);
+  };
+
+  // Keyboard navigation enhancement
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Skip to main content with 'S' key
+      if (e.key === 's' && e.ctrlKey) {
+        e.preventDefault();
+        const mainContent = document.getElementById('main');
+        if (mainContent) {
+          mainContent.focus();
+          mainContent.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+
+      switch (e.key) {
+        case 'Tab': {
+          // Enhanced tab navigation
+          const focusableElements = document.querySelectorAll(
+            'a[href], button, input, textarea, select, [tabindex]:not([tabindex="-1"])'
+          );
+          const currentIndex = Array.from(focusableElements).findIndex(el => el === document.activeElement);
+          
+          if (e.shiftKey) {
+            // Shift + Tab: go backwards
+            const prevIndex = currentIndex > 0 ? currentIndex - 1 : focusableElements.length - 1;
+            (focusableElements[prevIndex] as HTMLElement)?.focus();
+          } else {
+            // Tab: go forwards
+            const nextIndex = currentIndex < focusableElements.length - 1 ? currentIndex + 1 : 0;
+            (focusableElements[nextIndex] as HTMLElement)?.focus();
+          }
+          e.preventDefault();
+          break;
+        }
+          
+        case 'Escape': {
+          // Close modals, dropdowns, etc.
+          const activeModals = document.querySelectorAll('[data-modal="true"]');
+          activeModals.forEach(modal => {
+            if (modal instanceof HTMLElement) {
+              modal.style.display = 'none';
+            }
+          });
+          break;
+        }
+          
+        case 'h':
+        case 'H': {
+          // Go to home page
+          if (e.ctrlKey || e.metaKey) {
+            e.preventDefault();
+            window.location.href = '/';
+          }
+          break;
+        }
+          
+        case 's':
+        case 'S': {
+          // Go to services page
+          if (e.ctrlKey || e.metaKey) {
+            e.preventDefault();
+            window.location.href = '/services';
+          }
+          break;
+=======
       // Skip to navigation with 'N' key
       if (e.key === 'n' && e.ctrlKey) {
         e.preventDefault();
@@ -299,10 +553,82 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ onSetting
                 aria-label="Close accessibility panel"
               >
                 <X className="w-5 h-5" />
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-8e8b
               </button>
             </div>
           </div>
 
+<<<<<<< HEAD
+          {/* High Contrast Toggle */}
+          <div>
+            <label className="flex items-center space-x-2">
+              <input
+                type="checkbox"
+                checked={isHighContrast}
+                onChange={toggleHighContrast}
+                className="rounded"
+              />
+              <span className="text-sm">High Contrast</span>
+            </label>
+          </div>
+
+          {/* Reduced Motion Toggle */}
+          <div>
+            <label className="flex items-center space-x-2">
+              <input
+                type="checkbox"
+                checked={isReducedMotion}
+                onChange={toggleReducedMotion}
+                className="rounded"
+              />
+              <span className="text-sm">Reduced Motion</span>
+            </label>
+          </div>
+
+          {/* Keyboard Shortcuts Help */}
+          <div className="text-sm">
+            <h4 className="font-medium mb-2">Keyboard Shortcuts:</h4>
+            <ul className="space-y-1 text-xs">
+              <li><kbd className="bg-gray-700 px-1 rounded">Ctrl + S</kbd> Skip to main content</li>
+              <li><kbd className="bg-gray-700 px-1 rounded">Ctrl + N</kbd> Skip to navigation</li>
+              <li><kbd className="bg-gray-700 px-1 rounded">Ctrl + F</kbd> Skip to footer</li>
+              <li><kbd className="bg-gray-700 px-1 rounded">Tab</kbd> Navigate through elements</li>
+              <li><kbd className="bg-gray-700 px-1 rounded">Enter/Space</kbd> Activate buttons/links</li>
+              <li><kbd className="bg-gray-700 px-1 rounded">Escape</kbd> Close modals/dropdowns</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Live Region for Screen Readers */}
+      <div
+        aria-live="polite"
+        aria-atomic="true"
+        className="sr-only"
+        id="accessibility-announcements"
+      />
+
+      {/* Skip Links */}
+      <nav className="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:w-full focus:bg-black focus:text-white focus:p-4">
+        <ul className="space-y-2">
+          <li>
+            <a href="#main" className="block hover:text-cyan-400">
+              Skip to main content
+            </a>
+          </li>
+          <li>
+            <a href="#navigation" className="block hover:text-cyan-400">
+              Skip to navigation
+            </a>
+          </li>
+          <li>
+            <a href="#footer" className="block hover:text-cyan-400">
+              Skip to footer
+            </a>
+          </li>
+        </ul>
+      </nav>
+=======
             {/* Settings */}
             <div className="p-4 space-y-4 max-h-96 overflow-y-auto">
               {/* High Contrast */}
@@ -475,6 +801,7 @@ const AccessibilityEnhancer: React.FC<AccessibilityEnhancerProps> = ({ onSetting
       <div className="sr-only" aria-live="polite">
         Accessibility settings panel is available. Use the accessibility button in the top right corner to open it.
       </div>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-8e8b
     </>
   );
 };

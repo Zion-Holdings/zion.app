@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
+<<<<<<< HEAD
+import Link from 'next/link';
+=======
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
   Phone, Mail, MapPin, Send, 
   CheckCircle, AlertCircle, Building2, User, MessageSquare, Globe
 } from 'lucide-react';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-8e8b
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -70,13 +74,27 @@ const ContactPage: React.FC = () => {
     phone: '',
     service: '',
     message: '',
+<<<<<<< HEAD
+    budget: '',
+    timeline: ''
+=======
     service: 'general',
     budget: 'not-specified',
     timeline: 'not-specified'
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-8e8b
   });
 
   const [errors, setErrors] = useState<{[key: string]: string}>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+<<<<<<< HEAD
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+=======
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [activeField, setActiveField] = useState<string>('');
 
@@ -136,6 +154,7 @@ const ContactPage: React.FC = () => {
     
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-8e8b
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -162,6 +181,84 @@ const ContactPage: React.FC = () => {
       timeline: ''
     });
     
+<<<<<<< HEAD
+    setIsSubmitting(false);
+    alert('Thank you for your message! We\'ll get back to you within 24 hours.');
+  };
+
+  const contactMethods = [
+    {
+      icon: '📧',
+      title: 'Email Us',
+      details: 'hello@ziontechgroup.com',
+      description: 'Send us a detailed message about your project requirements',
+      color: 'cyan'
+    },
+    {
+      icon: '📞',
+      title: 'Call Us',
+      details: '+1 (555) 123-4567',
+      description: 'Speak directly with our AI automation experts',
+      color: 'fuchsia'
+    },
+    {
+      icon: '💬',
+      title: 'Live Chat',
+      details: 'Available 24/7',
+      description: 'Get instant answers to your questions via live chat',
+      color: 'green'
+    },
+    {
+      icon: '📅',
+      title: 'Schedule Meeting',
+      details: 'Book a consultation',
+      description: 'Schedule a 30-minute consultation with our team',
+      color: 'blue'
+    }
+  ];
+
+  const officeLocations = [
+    {
+      city: 'San Francisco',
+      country: 'United States',
+      address: '123 Innovation Drive, San Francisco, CA 94105',
+      phone: '+1 (555) 123-4567',
+      email: 'sf@ziontechgroup.com',
+      hours: 'Mon-Fri: 9:00 AM - 6:00 PM PST',
+      icon: '🏢',
+      color: 'cyan'
+    },
+    {
+      city: 'London',
+      country: 'United Kingdom',
+      address: '456 Tech Square, London, EC2A 4BX',
+      phone: '+44 20 1234 5678',
+      email: 'london@ziontechgroup.com',
+      hours: 'Mon-Fri: 9:00 AM - 6:00 PM GMT',
+      icon: '🏛️',
+      color: 'fuchsia'
+    },
+    {
+      city: 'Singapore',
+      country: 'Singapore',
+      address: '789 Digital Hub, Singapore 018956',
+      phone: '+65 6123 4567',
+      email: 'sg@ziontechgroup.com',
+      hours: 'Mon-Fri: 9:00 AM - 6:00 PM SGT',
+      icon: '🌆',
+      color: 'green'
+    }
+  ];
+
+  const getColorClasses = (color: string) => {
+    const colorMap: { [key: string]: string } = {
+      cyan: 'from-cyan-400 to-blue-500',
+      fuchsia: 'from-fuchsia-400 to-purple-500',
+      green: 'from-green-400 to-emerald-500',
+      blue: 'from-blue-400 to-indigo-500'
+    };
+    return colorMap[color] || 'from-gray-400 to-gray-500';
+=======
     // Reset form after 5 seconds
     setTimeout(() => {
       setIsSubmitted(false);
@@ -185,6 +282,7 @@ const ContactPage: React.FC = () => {
     const activeClasses = activeField === fieldName ? "bg-white/15 border-white/40" : "";
     
     return `${baseClasses} ${errorClasses} ${activeClasses}`;
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-8e8b
   };
 
   return (
@@ -198,6 +296,23 @@ const ContactPage: React.FC = () => {
     'Other'
   ];
 
+<<<<<<< HEAD
+  return (
+    <Layout
+      title="Contact Us | Zion Tech Group"
+      description="Get in touch with Zion Tech Group for AI consciousness, quantum computing, cybersecurity, and space technology solutions. Contact our expert team today."
+      keywords="contact Zion Tech Group, AI consciousness, quantum computing, cybersecurity, space technology, business solutions"
+      canonicalUrl="https://ziontechgroup.com/contact"
+    >
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-green-900 to-slate-900">
+        {/* Hero Section */}
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto text-center">
+            <div className="mb-8">
+              <MessageSquare className="mx-auto h-20 w-20 text-green-400 mb-6" />
+              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+                Contact Us
+=======
       <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
         {/* Enhanced Hero Section */}
         <section className="relative py-20 px-4 overflow-hidden">
@@ -221,11 +336,14 @@ const ContactPage: React.FC = () => {
               </motion.div>
               <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-6">
                 Get In Touch
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-8e8b
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto">
                 Ready to transform your business with revolutionary technology? 
                 Get in touch with our expert team today.
               </p>
+<<<<<<< HEAD
+=======
             </motion.div>
           </div>
         </section>
@@ -552,6 +670,7 @@ const ContactPage: React.FC = () => {
                   </div>
                 </div>
               </motion.div>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-8e8b
             </div>
           </div>
         </section>
