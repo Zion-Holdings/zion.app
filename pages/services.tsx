@@ -573,44 +573,30 @@ export default function Services() {
               </div>
 
               <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
-                <div className="text-4xl mb-4">🔮</div>
-                <h3 className="text-2xl font-bold mb-4 text-indigo-400">Quantum Computing Solutions</h3>
+                <div className="text-4xl mb-4">🔒</div>
+                <h3 className="text-2xl font-bold mb-4 text-red-400">AI Security & Compliance</h3>
                 <p className="text-white/70 mb-6">
-                  Next-generation quantum computing automation for complex optimization problems and advanced simulations.
+                  Comprehensive security solutions and compliance frameworks for AI systems and automation platforms.
                 </p>
                 <ul className="space-y-2 text-sm text-white/60">
-                  <li>• Quantum Algorithm Development</li>
-                  <li>• Hybrid Classical-Quantum Systems</li>
-                  <li>• Optimization Problem Solving</li>
-                  <li>• Quantum Machine Learning</li>
+                  <li>• AI Model Security</li>
+                  <li>• Data Privacy Protection</li>
+                  <li>• Compliance Auditing</li>
+                  <li>• Threat Detection</li>
                 </ul>
               </div>
 
               <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
-                <div className="text-4xl mb-4">🌐</div>
-                <h3 className="text-2xl font-bold mb-4 text-emerald-400">Edge Computing & IoT</h3>
+                <div className="text-4xl mb-4">🚀</div>
+                <h3 className="text-2xl font-bold mb-4 text-orange-400">Edge Computing Solutions</h3>
                 <p className="text-white/70 mb-6">
-                  Distributed computing solutions that bring intelligence closer to data sources for real-time decision making.
+                  Edge AI deployment and optimization for real-time processing and reduced latency applications.
                 </p>
                 <ul className="space-y-2 text-sm text-white/60">
-                  <li>• Edge Device Management</li>
-                  <li>• IoT Infrastructure</li>
+                  <li>• Edge AI Deployment</li>
+                  <li>• IoT Integration</li>
                   <li>• Real-time Processing</li>
-                  <li>• Distributed Intelligence</li>
-                </ul>
-              </div>
-
-              <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 hover:bg-white/15 transition-all duration-300">
-                <div className="text-4xl mb-4">🛡️</div>
-                <h3 className="text-2xl font-bold mb-4 text-red-400">Cybersecurity & Compliance</h3>
-                <p className="text-white/70 mb-6">
-                  Comprehensive security solutions with automated threat detection and compliance management systems.
-                </p>
-                <ul className="space-y-2 text-sm text-white/60">
-                  <li>• Threat Detection & Response</li>
-                  <li>• Compliance Automation</li>
-                  <li>• Security Monitoring</li>
-                  <li>• Zero Trust Architecture</li>
+                  <li>• Edge-Cloud Orchestration</li>
                 </ul>
               </div>
             </div>

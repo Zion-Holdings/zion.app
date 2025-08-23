@@ -68,39 +68,57 @@ const CaseStudies: React.FC = () => {
       featured: false
     },
     {
-      id: 'quantum-computing-automation',
-      title: 'Quantum Computing Automation Implementation',
-      company: 'Advanced Research Institute',
-      industry: 'Research & Development',
-      challenge: 'Complex optimization problems taking weeks to solve with classical computing methods',
-      solution: 'Implemented hybrid quantum-classical automation systems for research optimization and simulation',
+      id: 'retail-automation-revolution',
+      title: 'Retail Automation Revolution',
+      company: 'Global Retail Chain',
+      industry: 'Retail',
+      challenge: 'High operational costs, inventory management inefficiencies, and poor customer experience',
+      solution: 'Implemented comprehensive retail automation including smart inventory, automated checkout, and AI-powered customer insights',
       results: [
-        '1000x faster optimization solving',
-        '90% reduction in research time',
-        'Breakthrough discoveries accelerated',
-        'New quantum algorithms developed'
+        '45% reduction in operational costs',
+        '70% improvement in inventory accuracy',
+        '60% faster checkout process',
+        '35% increase in customer satisfaction'
       ],
-      technologies: ['Quantum Computing', 'Hybrid Algorithms', 'Optimization', 'Research Automation'],
+      technologies: ['Computer Vision', 'IoT Sensors', 'Machine Learning', 'Robotic Process Automation'],
       duration: '12 months',
-      teamSize: '15 quantum researchers + 8 engineers',
+      teamSize: '12 engineers + 6 retail specialists',
+      featured: true
+    },
+    {
+      id: 'energy-grid-optimization',
+      title: 'Smart Energy Grid Optimization',
+      company: 'Municipal Energy Company',
+      industry: 'Energy',
+      challenge: 'Inefficient energy distribution, high maintenance costs, and inability to handle renewable energy integration',
+      solution: 'Built AI-powered smart grid system with predictive maintenance and dynamic load balancing',
+      results: [
+        '25% reduction in energy losses',
+        '40% decrease in maintenance costs',
+        '90% improvement in renewable energy integration',
+        'Real-time grid monitoring and control'
+      ],
+      technologies: ['IoT Sensors', 'Predictive Analytics', 'Machine Learning', 'Real-time Control Systems'],
+      duration: '18 months',
+      teamSize: '15 engineers + 8 energy specialists',
       featured: false
     },
     {
-      id: 'edge-computing-iot',
-      title: 'Edge Computing IoT Automation',
-      company: 'Smart City Initiative',
-      industry: 'Smart Cities',
-      challenge: 'Centralized processing causing delays in critical city management decisions',
-      solution: 'Deployed edge computing infrastructure across city sensors for real-time autonomous decision making',
+      id: 'logistics-automation-platform',
+      title: 'Intelligent Logistics Automation Platform',
+      company: 'International Shipping Company',
+      industry: 'Logistics',
+      challenge: 'Complex supply chain management, high transportation costs, and delivery delays',
+      solution: 'Developed AI-powered logistics platform with route optimization, demand forecasting, and automated scheduling',
       results: [
-        '95% reduction in response time',
-        'Real-time traffic optimization',
-        'Energy consumption reduced by 25%',
-        'Public safety improved by 40%'
+        '30% reduction in transportation costs',
+        '50% improvement in delivery accuracy',
+        '25% faster order processing',
+        'Real-time shipment tracking and optimization'
       ],
-      technologies: ['Edge Computing', 'IoT Sensors', 'Real-time Processing', 'Autonomous Systems'],
-      duration: '18 months',
-      teamSize: '12 engineers + 6 city planners',
+      technologies: ['Route Optimization', 'Demand Forecasting', 'Machine Learning', 'Real-time Analytics'],
+      duration: '14 months',
+      teamSize: '9 engineers + 5 logistics specialists',
       featured: false
     }
   ];
