@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "generatedAt": "2025-08-12T01:36:02.433Z",
+=======
   "generatedAt": "2025-08-12T01:34:18.216Z",
+>>>>>>> origin/cursor/develop-autonomous-cloud-agents-for-automation-orchestration-8ac2
   "functions": [
     "a11y-alt-text-runner",
     "ai-changelog-runner",
@@ -7,7 +11,11 @@
     "auto-discovery-runner",
     "auto-scheduler",
     "automation-matrix",
+<<<<<<< HEAD
+    "autonomous-cloud-meta-orchestrator",
+=======
     "autonomous-cloud-brain",
+>>>>>>> origin/cursor/develop-autonomous-cloud-agents-for-automation-orchestration-8ac2
     "autonomous-invention-orchestrator",
     "autonomous-meta-orchestrator",
     "broken-image-scanner",

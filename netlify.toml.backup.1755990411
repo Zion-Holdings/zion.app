@@ -106,8 +106,13 @@
   schedule = "*/5 * * * *" # every 5 minutes
 
 [[scheduled.functions]]
+<<<<<<< HEAD
+  name = "autonomous-meta-orchestrator"
+  schedule = "*/1 * * * *" # every minute
+=======
   name = "autonomous-cloud-brain"
   schedule = "*/1 * * * *" # every minute for fastest sync
+>>>>>>> origin/cursor/develop-autonomous-cloud-agents-for-automation-orchestration-8ac2
 
 # New ultra-fast tools
 [[scheduled.functions]]
