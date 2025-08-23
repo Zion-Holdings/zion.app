@@ -1,14 +1,14 @@
 import React from 'react';
-import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
+import SEO from '../components/SEO';
 
-export default function Leadership() {
-	return (
-		<UltraFuturisticBackground variant="quantum" intensity="low">
-			<div className="container mx-auto px-4 py-16 text-white">
-				<h1 className="text-4xl md:text-5xl font-bold mb-4">Leadership</h1>
-				<p className="text-gray-300 max-w-3xl">Meet the leaders driving Zion Tech Group forward. For press or speaking requests, contact +1 302 464 0950 or kleber@ziontechgroup.com.</p>
-				<div className="mt-8"><a href="/contact/" className="px-5 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold">Contact Us</a></div>
-			</div>
-		</UltraFuturisticBackground>
-	);
+export default function LeadershipPage() {
+  return (
+    <div className="min-h-[60vh] px-6 py-24">
+      <SEO title="Leadership | Zion Tech Group" description="Leadership team at Zion Tech Group" />
+      <div className="max-w-3xl mx-auto">
+        <h1 className="text-4xl font-bold text-white mb-4">Leadership</h1>
+        <p className="text-gray-300">Meet our leadership team. Detailed bios are coming soon.</p>
+      </div>
+    </div>
+  );
 }
