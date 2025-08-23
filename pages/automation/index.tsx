@@ -1,3 +1,1 @@
-export default function Automation(){
-  return <div className="max-w-3xl mx-auto p-6">Automation</div>;
-}
+export default function AutomationPage() { return null }
