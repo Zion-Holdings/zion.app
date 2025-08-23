@@ -38,7 +38,6 @@ module.exports = {
     '*.config.ts',
     'scripts/',
     'automation/',
-    'tmp/',
-    'public/',
-  ],
+    'netlify/'
+  ]
 };

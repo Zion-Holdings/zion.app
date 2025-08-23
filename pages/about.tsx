@@ -1,22 +1,25 @@
-export default function About() {
-  return <div>About page</div>;
-}
+export default function Page(){return null}
 =======
-import React from "react";
-import Head from "next/head";
+import React from 'react';
 
-const Page: React.FC = () => {
+export default function AboutPage() {
   return (
-    <>
-      <Head>
-        <title>Placeholder Page</title>
-        <meta name="robots" content="noindex" />
-      </Head>
-      <main>
-        <h1>Coming soon</h1>
-      </main>
-    </>
-  );
-};
+    <div className="container mx-auto px-4 py-10">
+      <h1 className="text-2xl font-semibold">About Zion</h1>
+import type { NextPage } from 'next';
+import Head from 'next/head';
 
-export default Page;
+const About: NextPage = () => (
+  <div className="py-10">
+    <Head><title>About - Zion</title></Head>
+    <h1 className="text-2xl font-semibold text-white">About</h1>
+    <p className="text-white/80 mt-2">About page content coming soon.</p>
+  </div>
+);
+
+export default About;
+=======
+      <p className="mt-2 text-gray-600 dark:text-gray-300">Information coming soon.</p>
+    </div>
+  );
+}

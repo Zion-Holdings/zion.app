@@ -2,173 +2,14 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Menu, X, ChevronDown, Rocket, Star } from 'lucide-react';
 import Link from 'next/link';
-import DarkModeToggle from '../community/DarkModeToggle';
+import { Bell } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { useUnreadNotificationsCount } from '../../hooks/useUnreadNotificationsCount';
 
-interface NavigationItem {
-  name: string;
-  description: string;
-  href: string;
-  icon: React.ReactNode;
-  children?: {
-    name: string;
-    description: string;
-    href: string;
-  }[];
-}
-
-const EnhancedNavigation: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [isSearchFocused, setIsSearchFocused] = useState(false);
-  
-  const searchRef = useRef<HTMLInputElement>(null);
-  const mobileMenuRef = useRef<HTMLButtonElement>(null);
-  const mobileMenuContentRef = useRef<HTMLDivElement>(null);
-
-  const navigationItems: NavigationItem[] = [
-    {
-      name: 'Services',
-      description: 'Explore our comprehensive service offerings',
-      href: '/services',
-      icon: <Star className="w-4 h-4" />,
-      children: [
-        { label: 'AI & Automation', href: '/ai-automation-services' },
-        { label: 'Quantum Computing', href: '/quantum-services' },
-        { label: 'IT Infrastructure', href: '/it-services' },
-        { label: 'Cloud Solutions', href: '/cloud-platform' },
-        { label: 'Cybersecurity', href: '/security' },
-        { label: 'Micro SAAS', href: '/micro-saas' }
-      ]
-    },
-    {
-      name: 'Showcase',
-      description: 'See our work in action',
-      href: '/showcase',
-      icon: <Star className="w-4 h-4" />,
-      children: [
-        { label: 'Case Studies', href: '/case-studies' },
-        { label: 'Success Stories', href: '/success-stories' },
-        { label: 'Innovation Lab', href: '/innovation-lab' },
-        { label: '2025 Services', href: '/comprehensive-2025-services-showcase' },
-        { label: '2026 Services', href: '/ultimate-2026-services-showcase' },
-        { label: '2037 Services', href: '/2037-innovative-services-showcase' }
-      ]
-    },
-    {
-      name: 'Resources',
-      description: 'Knowledge and insights',
-      href: '/resources',
-      icon: <Star className="w-4 h-4" />,
-      children: [
-        { label: 'Documentation', href: '/docs' },
-        { label: 'Blog', href: '/blog' },
-        { label: 'Research', href: '/research-development' },
-        { label: 'Training', href: '/training' },
-        { label: 'Reports', href: '/reports' },
-        { label: 'Events', href: '/events' }
-      ]
-    },
-    {
-      name: 'Company',
-      description: 'Learn about Zion Tech Group',
-      href: '/about',
-      icon: <Star className="w-4 h-4" />,
-      children: [
-        { label: 'About Us', href: '/about' },
-        { label: 'Careers', href: '/careers' },
-        { label: 'Contact', href: '/contact' },
-        { label: 'Partners', href: '/partners' },
-        { label: 'Investors', href: '/investors' },
-        { label: 'Locations', href: '/locations' }
-      ]
-    }
-  ];
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Close mobile menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as any;
-      if (!target.closest('.navigation-dropdown')) {
-        closeDropdown();
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  // Close dropdowns when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as any;
-      if (!target.closest('.navigation-dropdown')) {
-        setActiveDropdown(null);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  // Handle escape key
-  useEffect(() => {
-    const handleEscape = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        setIsOpen(false);
-        setActiveDropdown(null);
-        setIsSearchFocused(false);
-      }
-    };
-
-    document.addEventListener('keydown', handleEscape);
-    return () => document.removeEventListener('keydown', handleEscape);
-  }, []);
-
-  const handleDropdownToggle = (name: string) => {
-    setActiveDropdown(activeDropdown === name ? null : name);
-  };
-
-  // Close dropdowns when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (navRef.current && !navRef.current.contains(event.target as Node)) {
-        setActiveDropdown(null);
-      }
-    };
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    closeMobileMenu();
-  };
-
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      window.location.href = `/search?q=${encodeURIComponent(searchQuery.trim())}`;
-    }
-  };
-
-  const handleSearchFocus = () => {
-    setIsSearchFocused(true);
-  };
-
-  const handleSearchBlur = () => {
-    setTimeout(() => setIsSearchFocused(false), 200);
-  };
+export default function EnhancedNavigation() {
+  const [isClient, setIsClient] = useState(false);
+  const unread = useUnreadNotificationsCount();
+  useEffect(() => setIsClient(true), []);
 
   return (
     <nav className="border-b border-gray-200 dark:border-gray-800 bg-white/70 dark:bg-black/40 backdrop-blur supports-backdrop-blur:bg-white/50 sticky top-0 z-40">
@@ -177,14 +18,22 @@ const EnhancedNavigation: React.FC = () => {
           <a className="font-semibold">Zion</a>
         </Link>
         <div className="flex items-center gap-4 text-sm">
-          <Link href="/providers"><a>Providers</a></Link>
+          <Link href="/services"><a>Marketplace</a></Link>
           <Link href="/about"><a>About</a></Link>
           <Link href="/blog"><a>Blog</a></Link>
-          <Link href="/investor-match"><a>Investor Match</a></Link>
-          <Link href="/automation/reports"><a>Reports</a></Link>
+          <Link href="/salary-insights"><a>Salary Insights</a></Link>
+          <Link href="/admin"><a>Admin</a></Link>
           <Link href="/contact"><a>Contact</a></Link>
-          <Link href="/investors"><a>Investors</a></Link>
-          <Link href="/franchise-portal"><a>Franchise</a></Link>
+          <Link href="/notifications">
+            <a className="relative inline-flex items-center justify-center rounded-full border border-gray-200 dark:border-gray-700 p-2 hover:bg-gray-50 dark:hover:bg-gray-800">
+              <Bell className="h-5 w-5" />
+              {isClient && unread > 0 && (
+                <span className="absolute -right-1 -top-1 inline-flex h-5 min-w-[20px] items-center justify-center rounded-full bg-gradient-to-r from-blue-500 via-cyan-500 to-purple-500 px-1 text-xs font-bold text-white shadow">
+                  {unread}
+                </span>
+              )}
+            </a>
+          </Link>
         </div>
       </nav>
 

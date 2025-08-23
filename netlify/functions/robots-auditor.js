@@ -29,4 +29,3 @@ exports.handler = async () => {
   runNode('automation/advanced-git-sync.cjs');
   return { statusCode: 200, body: JSON.stringify(report) };
 };
->>>>>>> 916d02471c24718d698d51219f240472f9d52b96

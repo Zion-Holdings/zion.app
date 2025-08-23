@@ -29,9 +29,16 @@ jobs:
         with:
           node-version: '20'
       - name: Install dependencies
-        run: npm ci
-      - name: Run Autonomous Meta Orchestrator (once)
-        run: node automation/autonomous-meta-orchestrator.cjs once
+        run: npm ci --no-audit --no-fund
+      - name: Run automations bundle
+        run: |
+          node scripts/git-ultrafast-sync.js || true
+      - name: Lint and type-check (non-blocking)
+        run: |
+          npm run lint || true
+          npm run type-check || true
+      - name: Build (non-blocking)
+        run: npm run build || true
       - name: Commit and push changes
         run: |
           if [ -n "$(git status --porcelain)" ]; then

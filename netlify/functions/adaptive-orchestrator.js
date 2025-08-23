@@ -13,7 +13,7 @@ exports.handler = async () => {
   const logs = [];
   const logStep = (name, fn) => {
     logs.push(`\n=== ${name} ===`);
-    const { status, stdout, stderr } = fn();
+    const { status, stdout, stderr } = runNode(rel, args);
     if (stdout) logs.push(stdout);
     if (stderr) logs.push(stderr);
     logs.push(`exit=${status}`);
@@ -23,5 +23,7 @@ exports.handler = async () => {
   logStep('adaptive:orchestrator', () => runNode('automation/adaptive-orchestrator.cjs'));
   logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
 
-  return { statusCode: 200, body: logs.join('\n') };
+  step('git:sync', 'automation/advanced-git-sync.cjs');
+
+  return { statusCode: 200, headers: { 'content-type': 'text/plain' }, body: logs.join('\n') };
 };

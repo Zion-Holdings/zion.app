@@ -23,8 +23,15 @@ exports.handler = async () => {
 
   process.env.CANONICAL_URL = process.env.CANONICAL_URL || process.env.SITE_URL || process.env.URL || 'https://ziontechgroup.com';
 
-  logStep('a11y:audit', () => runNode('automation/a11y-audit.cjs'));
-  logStep('git:sync', () => runNode('automation/advanced-git-sync.cjs'));
+  // If there are any local link fixers, run them (optional best-effort)
+  try {
+    logStep('links:fixer', () => runNode('automation/site-link-fixer.cjs'));
+  } catch (error) {
+    logs.push(`No site-link-fixer found or failed gracefully: ${String(error)}`);
+  }
+
+  // Commit and push any changes
+  logStep('git:sync', () => runNode('automation/git-sync.cjs'));
 
   return { statusCode: 200, body: logs.join('\n') };
 };

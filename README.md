@@ -1,48 +1,48 @@
-## Zion Assistant Monorepo
+# Zion AI Marketplace – Assistant Widget
 
-Cross-platform assistant for hiring managers and remote workers.
+An AI-powered chat assistant for the Zion AI Marketplace. It greets users, answers FAQs, and guides them through browsing listings, pricing/credits, integrations, and vendor onboarding. The widget is responsive and can be included on all pages.
 
-### Apps
-- `apps/api`: Fastify API (OpenAI, jobs, talent, projects, notifications)
-- `apps/slack-bot`: Slack Bolt app with `/zion` slash commands and notifications
-- `apps/extension`: Chrome/Edge MV3 extension with popup and background sync
+## Features
+- Floating chat bubble, always-on across pages
+- Mobile-friendly panel with accessible controls
+- Greeting + quick action buttons
+- Conversations persisted in `localStorage`
+- Server-side proxy to OpenAI (no API key in browser)
+- Lightweight FAQ context to improve response quality
 
-### Quickstart
-1. Copy env: `cp .env.example .env`
-2. Start infra: `docker compose up -d`
-3. Install deps: `pnpm i`
-4. Run dev servers: `pnpm dev`
-5. Build extension icons: `pnpm generate:icons`
+## Tech
+- Node.js + Express (ESM)
+- OpenAI API
+- Vanilla JS/CSS widget, no framework
 
-### Slack
-- Create a Slack app with OAuth scopes: `commands,chat:write,chat:write.public,users:read,app_mentions:read,channels:history`
-- Set Slash commands:
-  - `/zion` (dispatches subcommands)
-  - `/zion-post-job`, `/zion-suggest-talent`, `/zion-track-project`, `/zion-help` (optional aliases)
-- Redirect URL: `${SLACK_APP_REDIRECT_URL}`
+## Setup
+1. Copy env and set your key:
+   ```bash
+   cp .env.example .env
+   # Edit .env to set OPENAI_API_KEY and optional OPENAI_MODEL
+   ```
+2. Install and run:
+   ```bash
+   npm install
+   npm run dev
+   # Open http://localhost:3000
+   ```
 
-### Google OAuth
-- Create OAuth 2.0 Client (Web) with redirect `${GOOGLE_REDIRECT_URI}`
-- The extension uses `chrome.identity.launchWebAuthFlow` to sign in
+## Embed on your site
+Include the script and stylesheet in your global layout (so it appears on all pages):
+```html
+<link rel="stylesheet" href="/widget.css" />
+<script src="/widget.js" defer></script>
+```
+The widget mounts automatically and talks to `/api/chat` on the same origin.
 
-### Database & RLS
-- Postgres initialized via `infra/db/init.sql` with RLS policies per `user_id`
+If your site is hosted separately, deploy this server and set `ALLOWED_ORIGIN` accordingly.
 
-### **Contact Information:**
-- **Mobile**: +1 302 464 0950
-- **Email**: kleber@ziontechgroup.com
-- **Website**: https://ziontechgroup.com
-- **Address**: 364 E Main St STE 1008 Middletown DE 19709
+## Customization
+- Edit the system prompt and FAQ in `server.mjs`.
+- Adjust styles in `public/widget.css`.
+- Change greeting, quick actions, or persistence in `public/widget.js`.
 
-⚠️ **IMPORTANT**: This project uses **Supabase for authentication** and **Netlify for environment variable management**. Proper configuration is essential for the application to function correctly.
-
-### Authentication Setup
-
----
-This README is auto-generated. Do not edit manually.
-
-## 🌟 Featured Services
-
-- Intelligent Orchestrator (1m): /.netlify/functions/intelligent-orchestrator
-- Anomaly Watchdog (10m): /.netlify/functions/anomaly-watchdog
-- Pulse Sync (1m): /.netlify/functions/pulse-sync
+## Notes
+- Default model is `gpt-4o-mini`. You can set `OPENAI_MODEL` to any GPT-4 family model available to your key.
+- For enterprise usage, add authentication and stronger rate limiting.
