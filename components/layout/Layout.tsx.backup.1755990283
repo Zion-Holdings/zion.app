@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
+<<<<<<< HEAD
+import UltraFuturisticNavigation2045 from './UltraFuturisticNavigation2045';
+import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
+=======
 import UltraFuturisticNavigation2046 from './UltraFuturisticNavigation2046';
 import UltraFuturisticFooter2046 from './UltraFuturisticFooter2046';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-bc8a
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import UltraAdvancedFuturisticBackground2040 from '../backgrounds/UltraAdvancedFuturisticBackground2040';
 import TopContactBar from './TopContactBar';
@@ -116,7 +121,11 @@ export default function Layout({ children, seo }: LayoutProps) {
           <TopContactBar />
           
           {/* Navigation */}
+<<<<<<< HEAD
+          <UltraFuturisticNavigation2045 />
+=======
           <UltraFuturisticNavigation2046 />
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-bc8a
           
           {/* Sidebar and Main Content */}
           <div className="flex">
