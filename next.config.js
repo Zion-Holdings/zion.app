@@ -1,7 +1,9 @@
-const nextConfig = {
-  assetPrefix,
-  poweredByHeader: false,
-  trailingSlash: false,
+/** @type {import('next').NextConfig} */
+const path = require('path');
+
+const isIpfs = process.env.NEXT_PUBLIC_ASSET_PREFIX?.includes('/ipfs/');
+
+module.exports = {
   reactStrictMode: true,
   bundlePagesRouterDependencies: true,
 
@@ -66,158 +68,8 @@ const nextConfig = {
   },
 
   images: {
-    unoptimized: isNetlify, // Disable optimization on Netlify to prevent 404s
-    loader: 'default',
-    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    // Modern remotePatterns configuration (replaces deprecated domains)
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'via.placeholder.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'i.pravatar.cc',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'unsplash.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'randomuser.me',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'assets.aceternity.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'pbs.twimg.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'avatars.githubusercontent.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'lh3.googleusercontent.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'www.gravatar.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'images.ctfassets.net',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'cdnjs.cloudflare.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'cdn.jsdelivr.net',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'source.unsplash.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'res.cloudinary.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'picsum.photos',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'cdn.zion.org',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'app.ziontechgroup.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'http',
-        hostname: 'localhost',
-        port: '3000',
-        pathname: '/**',
-      },
-      // Support for Netlify preview URLs
-      {
-        protocol: 'https',
-        hostname: '*.netlify.app',
-        port: '',
-        pathname: '/**',
-      },
-      // Support for Netlify branch previews
-      {
-        protocol: 'https',
-        hostname: '*--*.netlify.app',
-        port: '',
-        pathname: '/**',
-      },
-      // Support for placeholder.co
-      {
-        protocol: 'https',
-        hostname: 'placehold.co',
-        port: '',
-        pathname: '/**',
-      },
-    ],
-    formats: ['image/webp', 'image/avif'],
-    minimumCacheTTL: 31536000, // 1 year
-    dangerouslyAllowSVG: true,
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    // Add error handling for Netlify
-    ...(isNetlify && {
-      // For Netlify, use more conservative settings
-      formats: ['image/webp'],
-      minimumCacheTTL: 60, // Shorter cache for debugging
-    }),
+    domains: ["localhost"],
+    unoptimized: true,
   },
 
   compiler: {
@@ -964,12 +816,8 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  pageExtensions: ['page.tsx', 'page.ts', 'page.jsx', 'page.js'],
-  async redirects() {
-    return [
-      { source: '/mobile-launch', destination: '/download', permanent: true },
-    ];
-  },
+  trailingSlash: true,
+  assetPrefix: process.env.NEXT_PUBLIC_ASSET_PREFIX || undefined,
   webpack: (config) => {
     // Support TS path alias '@/...' by mapping it to the project root
     config.resolve = config.resolve || {};
