@@ -398,7 +398,11 @@ export const futuristic2028Services: Futuristic2028Service[] = [
     competitors: ['Coursera', 'Udemy', 'Khan Academy'],
     marketSize: '$18B AI education market',
     growthRate: '35% annual growth',
+<<<<<<< HEAD
+    variant: 'ai-education',
+=======
     variant: 'ai-futuristic',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-4e2c
     contactInfo: {
       mobile: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
