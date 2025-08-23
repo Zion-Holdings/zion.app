@@ -8,9 +8,7 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..');
 const FRONT_PAGE = path.join(ROOT, 'pages', 'main', 'front', 'index.tsx');
 const START = '{/* AUTO-GENERATED: FRONT_ADS_START */}';
-const START_ALT = '/* AUTO-GENERATED: FRONT_ADS_START */';
 const END = '{/* AUTO-GENERATED: FRONT_ADS_END */}';
-const END_ALT = '/* AUTO-GENERATED: FRONT_ADS_END */';
 
 function log(msg) {
   process.stdout.write(`[front-index-auto-advertiser] ${msg}\n`);
@@ -24,7 +22,10 @@ function buildTiles() {
     { href: '/reports/ai-trends', label: 'AI Trends', tagline: 'Signals for new automations' },
     { href: '/newsroom', label: 'Newsroom', tagline: 'Autonomous updates & highlights' },
     { href: '/.netlify/functions/docs-index-runner', label: 'Docs', tagline: 'Technical notes & guides' },
-    { href: '/.netlify/functions/autonomous-cloud-inventor', label: 'Cloud Inventor (2m)', tagline: 'Discovers, orchestrates, syncs' },
+    { href: '/reports/capability-map', label: 'Capability Map', tagline: 'Live map of functions and automations' },
+    { href: '/reports/dependency-freshness', label: 'Dependency Freshness', tagline: 'Up-to-date dependency insights' },
+    { href: '/.netlify/functions/automation-status-dashboard', label: 'Automation Dashboard', tagline: 'Overview and quick links' },
+    { href: '/newsroom', label: 'AI Changelog', tagline: 'Summarized autonomous changes' }
   ];
 
   return items.map((it) => {
@@ -56,20 +57,6 @@ function ensureImports(tsx) {
   return tsx;
 }
 
-function findMarkers(tsx) {
-  let startIdx = tsx.indexOf(START);
-  let startLen = START.length;
-  if (startIdx === -1) {
-    startIdx = tsx.indexOf(START_ALT);
-    startLen = START_ALT.length;
-  }
-  let endIdx = tsx.indexOf(END);
-  if (endIdx === -1) {
-    endIdx = tsx.indexOf(END_ALT);
-  }
-  return { startIdx, startLen, endIdx };
-}
-
 function apply() {
   if (!fs.existsSync(FRONT_PAGE)) {
     throw new Error(`Front page not found at ${FRONT_PAGE}`);
@@ -77,7 +64,8 @@ function apply() {
   let tsx = fs.readFileSync(FRONT_PAGE, 'utf8');
   tsx = ensureImports(tsx);
 
-  const { startIdx, startLen, endIdx } = findMarkers(tsx);
+  const startIdx = tsx.indexOf(START);
+  const endIdx = tsx.indexOf(END);
   if (startIdx === -1 || endIdx === -1 || endIdx < startIdx) {
     throw new Error('FRONT_ADS markers not found or misordered');
   }
@@ -91,7 +79,7 @@ ${buildTiles()}
   </div>
 </section>`;
 
-  const before = tsx.slice(0, startIdx + startLen);
+  const before = tsx.slice(0, startIdx + START.length);
   const after = tsx.slice(endIdx);
   const updated = `${before}\n${replacement}\n${after}`;
 

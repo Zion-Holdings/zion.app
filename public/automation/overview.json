@@ -1,6 +1,20 @@
 {
-  "generatedAt": "2025-08-11T23:11:05.589Z",
-  "functions": [
+  "generatedAt": "2025-08-11T23:12:12.943Z",
+  "reports": [
+    {
+      "name": "ai-trends",
+      "url": "/reports/ai-trends/"
+    },
+    {
+      "name": "capability-map",
+      "url": "/reports/capability-map/"
+    },
+    {
+      "name": "seo",
+      "url": "/reports/seo/"
+    }
+  ],
+  "netlifyFunctions": [
     "a11y-audit-runner",
     "ai-changelog-runner",
     "ai-trends-radar-runner",
