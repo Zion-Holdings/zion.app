@@ -1,5 +1,3 @@
-export default function About() { return <div className="p-8">About</div>; }
-=======
 import React from 'react';
 
 const Component = () => {
@@ -12,3 +10,7 @@ const Component = () => {
 };
 
 export default Component;
+=======
+export default function About() {
+  return <div>About Zion</div>;
+}
