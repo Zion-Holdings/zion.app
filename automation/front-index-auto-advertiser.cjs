@@ -21,11 +21,11 @@ function buildTiles() {
     { href: '/reports/seo', label: 'AI SEO Auditor', tagline: 'Continuous on‑site improvements' },
     { href: '/reports/ai-trends', label: 'AI Trends', tagline: 'Signals for new automations' },
     { href: '/newsroom', label: 'Newsroom', tagline: 'Autonomous updates & highlights' },
-    { href: 'https://github.com/Zion-Holdings/zion.app/tree/main/docs', label: 'Docs', tagline: 'Technical notes & guides', external: true },
-    { href: 'https://github.com/Zion-Holdings/zion.app/blob/main/docs/CHANGELOG_AI.md', label: 'AI Changelog', tagline: 'Summarized autonomous changes', external: true },
-    ];
- 
-   return items.map((it) => {
+    { href: '/.netlify/functions/docs-index-runner', label: 'Docs', tagline: 'Technical notes & guides' },
+    { href: '/newsroom', label: 'AI Changelog', tagline: 'Summarized autonomous changes' }
+  ];
+
+  return items.map((it) => {
     if (it.external) {
       return `
             <a href="${it.href}" target="_blank" rel="noopener" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-5 text-left text-white/80 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover holo">
