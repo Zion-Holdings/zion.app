@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+import dynamic from 'next/dynamic';
+
+export default dynamic(() => import('@/pages/ProductsList'));
+=======
 import type { NextPage } from 'next';
 
 const ProductsIndex: NextPage = () => (
@@ -8,3 +13,4 @@ const ProductsIndex: NextPage = () => (
 );
 
 export default ProductsIndex;
+>>>>>>> origin/cursor/bc-37c9148a-8898-4045-b95f-8ca2f79cfa5c-9330

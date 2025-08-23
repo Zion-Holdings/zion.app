@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+import dynamic from 'next/dynamic';
+
+export default dynamic(() => import('@/pages/TalentDirectory'));
+=======
 import type { NextPage } from 'next';
 
 const TalentIndex: NextPage = () => (
@@ -8,3 +13,4 @@ const TalentIndex: NextPage = () => (
 );
 
 export default TalentIndex;
+>>>>>>> origin/cursor/bc-37c9148a-8898-4045-b95f-8ca2f79cfa5c-9330

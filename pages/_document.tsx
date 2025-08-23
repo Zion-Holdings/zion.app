@@ -1,50 +1,22 @@
-import React from 'react';
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript, DocumentContext, DocumentInitialProps } from 'next/document';
 
-export default class MyDocument extends Document {
-	static override async getInitialProps(ctx: any) {
-		const initialProps = await Document.getInitialProps(ctx);
-		return { ...initialProps };
-	}
+class MyDocument extends Document {
+  static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
+    const initialProps = await Document.getInitialProps(ctx);
+    return { ...initialProps };
+  }
 
-	override render() {
-		// Note: Using a meta CSP here for static export. Keep permissive enough for inline JSON-LD and plausible analytics.
-		const csp = [
-			"default-src 'self'",
-			"script-src 'self' 'unsafe-inline' 'unsafe-eval' https://plausible.io",
-			"style-src 'self' 'unsafe-inline'",
-			"img-src 'self' data: https:",
-			"font-src 'self' data: https:",
-			"connect-src 'self' https://plausible.io",
-			"frame-ancestors 'none'",
-			"base-uri 'self'",
-			"form-action 'self'"
-		].join('; ');
-
-		return (
-			<Html lang="en">
-				<Head>
-					<meta charSet="utf-8" />
-					<meta name="theme-color" content="#0a0a0a" />
-					<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-					<link rel="icon" href="/favicon.ico" />
-					<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-					<link rel="dns-prefetch" href="//fonts.gstatic.com" />
-					<link rel="preconnect" href="https://plausible.io" crossOrigin="anonymous" />
-					<meta property="og:type" content="website" />
-					<meta property="og:site_name" content="Zion Tech Group" />
-					<meta property="og:image" content="https://ziontechgroup.com/og-default.png" />
-					<meta name="twitter:card" content="summary_large_image" />
-					<script
-						type="application/ld+json"
-						dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
-					/>
-				</Head>
-				<body>
-					<Main />
-					<NextScript />
-				</body>
-			</Html>
-		);
-	}
+  render() {
+    return (
+      <Html lang="en">
+        <Head />
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
 }
+
+export default MyDocument;
