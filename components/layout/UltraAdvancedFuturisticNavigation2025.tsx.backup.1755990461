@@ -3,8 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Menu, X, Search, ChevronDown, ChevronRight, 
   Home, Briefcase, Users, BookOpen, Phone, 
+<<<<<<< HEAD
+  Zap, Shield, Brain, Rocket, Crown
+=======
   Globe, Zap, Shield, Brain, Rocket, Building,
   Target, Heart, Cpu, Cloud, FileText, Handshake
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-5426
 } from 'lucide-react';
 
 // Define Node type for DOM event handling
@@ -97,6 +101,36 @@ const navigationItems: NavigationItem[] = [
     category: 'enterprise-it',
     color: 'from-blue-500 to-indigo-500',
     children: [
+<<<<<<< HEAD
+      { 
+        name: 'All Enterprise IT Solutions', 
+        href: '/enterprise-it', 
+        description: 'Complete enterprise IT portfolio',
+        icon: <Grid className="w-4 h-4" />,
+        featured: true
+      },
+      { 
+        name: 'Cybersecurity Compliance Automation', 
+        href: '/cybersecurity-compliance-automation', 
+        description: 'Automated compliance and security management',
+        icon: <Shield className="w-4 h-4" />,
+        color: 'from-red-500 to-pink-500',
+        featured: true
+      },
+      { 
+        name: 'Cloud Migration Automation', 
+        href: '/cloud-migration-automation', 
+        description: 'Seamless cloud migration and optimization',
+        icon: <Cloud className="w-4 h-4" />,
+        color: 'from-blue-500 to-cyan-500'
+      },
+      { 
+        name: 'DevOps Automation Platform', 
+        href: '/devops-automation-platform', 
+        description: 'End-to-end DevOps automation and CI/CD',
+        icon: <Cpu className="w-4 h-4" />,
+        color: 'from-purple-500 to-indigo-500'
+=======
       {
         label: 'Healthcare & Biotech',
         href: '/healthcare-solutions',
@@ -120,6 +154,7 @@ const navigationItems: NavigationItem[] = [
         href: '/solutions?industry=retail',
         icon: <Globe className="w-4 h-4" />,
         description: 'Digital commerce solutions'
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-5426
       }
     ]
   },
@@ -205,6 +240,9 @@ const navigationItems: NavigationItem[] = [
     color: 'from-gray-500 to-gray-600'
   },
   {
+<<<<<<< HEAD
+    name: 'Contact',
+=======
     label: 'Resources',
     href: '/resources',
     icon: <BookOpen className="w-4 h-4" />,
@@ -270,6 +308,7 @@ const navigationItems: NavigationItem[] = [
   },
   {
     label: 'Contact',
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-5426
     href: '/contact',
     icon: <Phone className="w-5 h-5" />,
     description: 'Get in touch with our team',

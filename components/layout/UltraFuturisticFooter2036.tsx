@@ -412,5 +412,3 @@ export default function UltraFuturisticFooter2036() {
     </footer>
   );
 };
-
-export default UltraFuturisticFooter2036;

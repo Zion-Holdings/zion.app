@@ -21,12 +21,20 @@ const HomePage: React.FC = () => {
 export default function Home() {
   return (
     <ErrorBoundary>
+<<<<<<< HEAD
+      <SEOOptimizer />
+      <AnalyticsTracker />
+      <Homepage2043 />
+      <PerformanceMonitor />
+      <AccessibilityEnhancer />
+=======
       <AccessibilityEnhancer>
         <SEOOptimizer />
         <AnalyticsTracker />
         <EnhancedHomepage2026 />
         <PerformanceMonitor />
       </AccessibilityEnhancer>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-5426
     </ErrorBoundary>
   );
 };

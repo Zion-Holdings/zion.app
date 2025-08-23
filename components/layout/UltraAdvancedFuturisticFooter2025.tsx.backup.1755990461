@@ -7,6 +7,8 @@ import {
   Shield, Users, BookOpen, Briefcase, Atom
 } from 'lucide-react';
 import Link from 'next/link';
+<<<<<<< HEAD
+=======
 import { AnimatePresence } from 'framer-motion';
 
 interface FooterLink {
@@ -64,6 +66,7 @@ const footerSections: FooterSection[] = [
     ]
   }
 ];
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-5426
 
 const socialLinks = [
   { name: 'Twitter', href: '#', icon: <Twitter className="w-5 h-5" /> },
