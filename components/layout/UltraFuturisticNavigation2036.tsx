@@ -12,7 +12,12 @@ import {
   Clock,
   MessageCircle,
   Calculator,
-  Play
+  Play,
+  Brain,
+  Atom,
+  Rocket,
+  Cpu,
+  Target
 } from 'lucide-react';
 import Link from 'next/link';
 import EnhancedSearch from '../EnhancedSearch';
@@ -59,28 +64,42 @@ const navigationItems: NavigationItem[] = [
         featured: true
       },
       { 
-        name: 'AI & Machine Learning', 
+        name: '2037 Services Showcase', 
+        href: '/comprehensive-2037-services-showcase', 
+        description: 'Revolutionary 2037 technology solutions',
+        icon: <Star className="w-4 h-4" />,
+        featured: true,
+        badge: 'New'
+      },
+      { 
+        name: 'AI & Consciousness', 
         href: '/ai-services', 
-        description: 'Advanced AI solutions',
-        icon: <Play className="w-4 h-4" />
+        description: 'Advanced AI consciousness solutions',
+        icon: <Brain className="w-4 h-4" />
       },
       { 
         name: 'Quantum Technology', 
         href: '/quantum-services', 
         description: 'Quantum computing solutions',
-        icon: <Play className="w-4 h-4" />
+        icon: <Atom className="w-4 h-4" />
       },
       { 
         name: 'Space Technology', 
         href: '/space-technology', 
         description: 'Space exploration solutions',
-        icon: <Play className="w-4 h-4" />
+        icon: <Rocket className="w-4 h-4" />
       },
       { 
         name: 'IT Solutions', 
         href: '/it-services', 
         description: 'Enterprise IT infrastructure',
-        icon: <Play className="w-4 h-4" />
+        icon: <Cpu className="w-4 h-4" />
+      },
+      { 
+        name: 'Micro SAAS', 
+        href: '/micro-saas', 
+        description: 'Innovative business solutions',
+        icon: <Target className="w-4 h-4" />
       },
       { 
         name: 'Specialized Solutions', 
@@ -92,7 +111,7 @@ const navigationItems: NavigationItem[] = [
   },
   {
     name: 'Showcase & Pricing',
-    href: '/comprehensive-services-showcase-2025',
+    href: '/comprehensive-2037-services-showcase',
     icon: <Star className="w-5 h-5" />,
     description: 'Services portfolio & pricing',
     badge: 'Showcase',
@@ -100,11 +119,18 @@ const navigationItems: NavigationItem[] = [
     featured: true,
     children: [
       { 
-        name: 'Services Showcase', 
+        name: '2037 Services Showcase', 
+        href: '/comprehensive-2037-services-showcase', 
+        description: 'Revolutionary 2037 technology solutions',
+        icon: <Star className="w-4 h-4" />,
+        featured: true,
+        badge: 'New'
+      },
+      { 
+        name: '2025 Services Showcase', 
         href: '/comprehensive-services-showcase-2025', 
-        description: 'Complete services overview',
-        icon: <Calculator className="w-4 h-4" />,
-        featured: true
+        description: '2025 services overview',
+        icon: <Calculator className="w-4 h-4" />
       },
       { 
         name: 'Pricing Plans', 
