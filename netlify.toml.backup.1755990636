@@ -255,5 +255,72 @@
   schedule = "*/15 * * * *" # every 15 minutes
 
 [[scheduled.functions]]
+<<<<<<< HEAD
+  name = "internal-link-optimizer"
+  schedule = "*/7 * * * *" # every 7 minutes
+
+[[scheduled.functions]]
+  name = "revenue-ideas-orchestrator"
+  schedule = "13 */2 * * *" # every 2 hours at :13
+
+# Fresh autonomous audits
+[[scheduled.functions]]
+  name = "internal-link-graph-runner"
+  schedule = "7 */6 * * *"
+
+[[scheduled.functions]]
+  name = "anchor-integrity-runner"
+  schedule = "17 */6 * * *"
+
+[[scheduled.functions]]
+  name = "meta-tags-audit-runner"
+  schedule = "27 */6 * * *"
+
+# New background UX/perf and innovation
+[[scheduled.functions]]
+  name = "ux-a11y-auditor"
+  schedule = "*/15 * * * *"
+
+[[scheduled.functions]]
+name = "a11y-alt-text-runner"
+schedule = "*/10 * * * *" # every 10 minutes
+
+[[scheduled.functions]]
+  name = "auto-discovery-runner"
+  schedule = "*/30 * * * *" # every 30 minutes
+
+[[scheduled.functions]]
+name = "seo-audit-runner"
+schedule = "0 */2 * * *"
+[[scheduled.functions]]
+name = "ai-trends-radar-runner"
+schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+name = "stale-content-auditor-runner"
+schedule = "17 */6 * * *"
+
+[[scheduled.functions]]
+name = "deps-auto-upgrade-runner"
+schedule = "7 */12 * * *"
+
+[[scheduled.functions]]
+  name = "branch-cleanup-runner"
+  schedule = "0 3 * * *" # daily at 03:00 UTC
+
+# Newly added automations
+[[scheduled.functions]]
+  name = "content-freshness-auditor"
+  schedule = "*/10 * * * *" # every 10 minutes
+
+[[scheduled.functions]]
+  name = "deps-auto-upgrade-runner"
+  schedule = "7 */12 * * *"
+
+[[scheduled.functions]]
+  name = "website-search-index-runner"
+  schedule = "59 */6 * * *"
+=======
   name = "ux-heuristics-runner"
   schedule = "*/15 * * * *" # every 15 minutes
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-c74c

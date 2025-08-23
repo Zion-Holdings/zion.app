@@ -7,8 +7,13 @@ const path = require('path');
 
 const ROOT = process.cwd();
 const FRONT_PAGE = path.join(ROOT, 'pages', 'main', 'front', 'index.tsx');
+<<<<<<< HEAD
+const START_MARKER = '/* AUTO-GENERATED: FRONT_ADS_START */';
+const END_MARKER = '/* AUTO-GENERATED: FRONT_ADS_END */';
+=======
 const START_TOKEN = 'AUTO-GENERATED: FRONT_ADS_START';
 const END_TOKEN = 'AUTO-GENERATED: FRONT_ADS_END';
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-c74c
 
 function titleCase(slug) {
   return slug
@@ -20,6 +25,25 @@ function titleCase(slug) {
     .join(' ');
 }
 
+<<<<<<< HEAD
+function discoverInternalPages() {
+  const pagesDir = path.join(ROOT, 'pages');
+  const results = [];
+
+  function push(href, label, tagline) {
+    results.push({ type: 'internal', href, label, tagline });
+  }
+
+  // Priority pages
+  const priority = [
+    { href: '/automation', label: 'Automation Hub', tagline: 'Live agents & workflows' },
+    { href: '/site-health', label: 'Site Health', tagline: 'A11y, performance, links' },
+    { href: '/reports/seo', label: 'SEO Audit', tagline: 'Continuous improvements' },
+    { href: '/reports/ai-trends', label: 'AI Trends', tagline: 'Intelligence signals' },
+    { href: '/reports/a11y', label: 'A11y Alt Text Auditor', tagline: 'Find missing alt text' },
+    { href: '/reports/metadata', label: 'Metadata Optimizer', tagline: 'Missing meta tags' },
+    { href: '/newsroom', label: 'Newsroom', tagline: 'Latest autonomous updates' },
+=======
 function buildTiles() {
   const items = [
     { href: '/automation', label: 'Automation Hub', tagline: 'Factories, agents, live workflows' },
@@ -30,6 +54,7 @@ function buildTiles() {
     { href: '/.netlify/functions/docs-index-runner', label: 'Docs', tagline: 'Technical notes & guides' },
     { href: '/reports/ux/index.html', label: 'UX Heuristics', tagline: 'A11y and UX checks' },
     { href: '/newsroom', label: 'AI Changelog', tagline: 'Summarized autonomous changes' }
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-c74c
   ];
   for (const p of priority) {
     const check = p.href.startsWith('/reports/')
@@ -96,6 +121,25 @@ function buildCard(item) {
   return `              <Link href=\"${item.href}\"><a className=\"${common}\">${inner}  <div className=\"mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90\">Open <span aria-hidden>→</span></div></a></Link>`;
 }
 
+<<<<<<< HEAD
+function generateSection(items) {
+  return [
+    '<section id="auto-promoted" className="mx-auto max-w-7xl px-6 pb-14">',
+    '  <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Auto‑Promoted Features</h2>',
+    '  <p className="mx-auto mt-2 max-w-3xl text-center text-sm text-white/70">Continuously curated promos linking to live hubs, reports, and docs.</p>',
+    '  <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">',
+    items.map(buildCard).join('\n'),
+    '  </div>',
+    '</section>'
+  ].join('\n');
+}
+
+function replaceBetweenMarkers(source, startMarker, endMarker, replacement) {
+  const startIdx = source.indexOf(startMarker);
+  const endIdx = source.indexOf(endMarker);
+  if (startIdx === -1 || endIdx === -1 || endIdx < startIdx) {
+    throw new Error('Markers not found or invalid order in front index');
+=======
   const markerRegex = new RegExp(`(\\{?\\/\\*\\s*${START_TOKEN.replace(/[-/\\^$*+?.()|[\]{}]/g, r => r)}\\s*\\*\\/\\}?)[\\s\\S]*?(\\{?\\/\\*\\s*${END_TOKEN.replace(/[-/\\^$*+?.()|[\]{}]/g, r => r)}\\s*\\*\\/\\}?)`);
   if (!markerRegex.test(tsx)) {
     throw new Error('FRONT_ADS markers not found or misordered');
@@ -117,6 +161,7 @@ ${buildTiles()}
     log('Front ads section updated.');
   } else {
     log('No changes needed.');
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-c74c
   }
   const before = source.slice(0, startIdx + startMarker.length);
   const after = source.slice(endIdx);

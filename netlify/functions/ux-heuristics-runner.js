@@ -8,7 +8,7 @@ function runNode(relPath, args = []) {
 }
 
 exports.config = {
-  schedule: '*/1 * * * *',
+  schedule: '*/15 * * * *',
 };
 
 exports.handler = async () => {
@@ -22,14 +22,8 @@ exports.handler = async () => {
     return status;
   }
 
-  step('front-index:auto-advertise', 'automation/front-index-auto-advertiser.cjs');
-  step('front:futurizer', 'automation/front-futurizer.cjs');
-  step('homepage:updater', 'automation/homepage-updater.cjs');
-    step('homepage:auto-advertiser', 'automation/homepage-auto-advertiser.cjs');
-  // New: run UX heuristics on every ultrafast cycle
   step('ux:heuristics', 'automation/ux-heuristics-auditor.cjs');
- 
-   step('git:sync', 'automation/advanced-git-sync.cjs');
+  step('git:sync', 'automation/advanced-git-sync.cjs');
 
   return { statusCode: 200, body: logs.join('\n') };
 };
