@@ -3,8 +3,11 @@ import { motion } from 'framer-motion';
 
 interface EnhancedFuturisticBackgroundProps {
   children: React.ReactNode;
+<<<<<<< HEAD
+=======
   variant?: 'quantum' | 'holographic' | 'neural' | 'cyberpunk' | 'matrix' | 'quantum-cyberpunk' | 'holographic-matrix';
   intensity?: 'low' | 'medium' | 'high';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-8601
   className?: string;
 }
 
@@ -34,6 +37,46 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
       vy: number;
       size: number;
       color: string;
+<<<<<<< HEAD
+      life: number;
+      maxLife: number;
+    }> = [];
+
+    const colors = [
+      '#00ffff', // Cyan
+      '#ff00ff', // Magenta
+      '#ffff00', // Yellow
+      '#00ff00', // Green
+      '#ff0080', // Pink
+      '#8000ff', // Purple
+      '#0080ff', // Blue
+      '#ff8000', // Orange
+    ];
+
+    // Initialize particles
+    for (let i = 0; i < 150; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 2,
+        vy: (Math.random() - 0.5) * 2,
+        size: Math.random() * 3 + 1,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        life: Math.random() * 100,
+        maxLife: 100,
+      });
+    }
+
+    // Quantum entanglement lines
+    const entanglementLines: Array<{
+      x1: number;
+      y1: number;
+      x2: number;
+      y2: number;
+      opacity: number;
+      life: number;
+    }> = [];
+=======
       type: 'particle' | 'energy' | 'data' | 'quantum';
       life: number;
       maxLife: number;
@@ -138,6 +181,7 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
       
       return baseColors[variant]?.[type] || baseColors.quantum.particle;
     };
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-8601
 
     // Animation loop
     const animate = () => {
@@ -148,7 +192,11 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
       particles.forEach((particle, index) => {
         particle.x += particle.vx;
         particle.y += particle.vy;
+<<<<<<< HEAD
+        particle.life--;
+=======
         particle.life -= 0.5;
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-8601
 
         // Bounce off edges
         if (particle.x <= 0 || particle.x >= canvas.width) particle.vx *= -1;
@@ -162,6 +210,141 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
           particle.color = colors[Math.floor(Math.random() * colors.length)];
         }
 
+<<<<<<< HEAD
+        // Draw particle
+        const alpha = particle.life / particle.maxLife;
+        ctx.globalAlpha = alpha;
+        ctx.fillStyle = particle.color;
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Create entanglement lines
+        if (Math.random() < 0.01) {
+          const targetIndex = Math.floor(Math.random() * particles.length);
+          if (targetIndex !== index) {
+            entanglementLines.push({
+              x1: particle.x,
+              y1: particle.y,
+              x2: particles[targetIndex].x,
+              y2: particles[targetIndex].y,
+              opacity: 1,
+              life: 50,
+            });
+          }
+        }
+      });
+
+      // Update and draw entanglement lines
+      entanglementLines.forEach((line, index) => {
+        line.life--;
+        line.opacity = line.life / 50;
+
+        if (line.life > 0) {
+          ctx.globalAlpha = line.opacity * 0.3;
+          ctx.strokeStyle = '#00ffff';
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(line.x1, line.y1);
+          ctx.lineTo(line.x2, line.y2);
+          ctx.stroke();
+        } else {
+          entanglementLines.splice(index, 1);
+        }
+      });
+
+      // Draw quantum wave patterns
+      const time = Date.now() * 0.001;
+      ctx.globalAlpha = 0.1;
+      ctx.strokeStyle = '#ff00ff';
+      ctx.lineWidth = 2;
+
+      for (let i = 0; i < 5; i++) {
+        ctx.beginPath();
+        for (let x = 0; x < canvas.width; x += 5) {
+          const y = canvas.height / 2 + 
+            Math.sin(x * 0.01 + time + i) * 50 + 
+            Math.sin(x * 0.005 + time * 2 + i) * 30;
+          if (x === 0) {
+            ctx.moveTo(x, y);
+          } else {
+            ctx.lineTo(x, y);
+          }
+        }
+        ctx.stroke();
+      }
+
+      // Draw holographic grid
+      ctx.globalAlpha = 0.05;
+      ctx.strokeStyle = '#00ffff';
+      ctx.lineWidth = 1;
+
+      const gridSize = 50;
+      for (let x = 0; x < canvas.width; x += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, canvas.height);
+        ctx.stroke();
+      }
+      for (let y = 0; y < canvas.height; y += gridSize) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(canvas.width, y);
+        ctx.stroke();
+      }
+
+      requestAnimationFrame(animate);
+    };
+
+    const drawFloatingShapes = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement) => {
+      const time = Date.now() * 0.001;
+      
+      // Draw rotating triangles
+      for (let i = 0; i < 3; i++) {
+        ctx.save();
+        ctx.translate(
+          canvas.width * 0.2 + Math.sin(time + i) * 50,
+          canvas.height * 0.3 + Math.cos(time + i) * 50
+        );
+        ctx.rotate(time + i);
+        
+        ctx.beginPath();
+        ctx.moveTo(0, -20);
+        ctx.lineTo(17, 10);
+        ctx.lineTo(-17, 10);
+        ctx.closePath();
+        ctx.strokeStyle = `rgba(6, 182, 212, ${0.3 + Math.sin(time + i) * 0.2})`;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+        ctx.restore();
+      }
+
+      // Draw floating circles
+      for (let i = 0; i < 2; i++) {
+        ctx.save();
+        ctx.translate(
+          canvas.width * 0.8 + Math.sin(time * 0.5 + i) * 40,
+          canvas.height * 0.7 + Math.cos(time * 0.5 + i) * 40
+        );
+        
+        ctx.beginPath();
+        ctx.arc(0, 0, 15 + Math.sin(time + i) * 5, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(168, 85, 247, ${0.4 + Math.sin(time + i) * 0.2})`;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+        ctx.restore();
+      }
+    };
+
+    resizeCanvas();
+    createParticles();
+    animate();
+
+    // Handle resize
+    const handleResize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+=======
         // Regenerate particles that have expired
         if (particle.life <= 0) {
           particle.life = particle.maxLife;
@@ -275,6 +458,7 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-8601
     };
 
     window.addEventListener('resize', handleResize);
@@ -285,11 +469,20 @@ const EnhancedFuturisticBackground: React.FC<EnhancedFuturisticBackgroundProps> 
   }, []);
 
   return (
+<<<<<<< HEAD
+    <div className={`relative min-h-screen overflow-hidden ${className}`}>
+      {/* Quantum Canvas Background */}
+      <canvas
+        ref={canvasRef}
+        className="fixed inset-0 w-full h-full pointer-events-none z-0"
+        style={{ background: 'radial-gradient(ellipse at center, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.95) 100%)' }}
+=======
     <div className={`relative min-h-screen ${className}`}>
       <canvas
         ref={canvasRef}
         className="fixed inset-0 w-full h-full pointer-events-none z-0"
         style={{ background: 'transparent' }}
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-8601
       />
       
       {/* Floating Quantum Orbs */}
