@@ -29,10 +29,15 @@ import { toast } from "sonner";
 
 
 const formSchema = z.object({
-  reason_code: z.string()
-    .min(1, { message: "Please select a reason for the dispute" }),
-  description: z.string()
-    .min(20, { message: "Description must be at least 20 characters" }),
+  reason_code: z
+    .string()
+    .nonempty({ message: "Please select a reason for the dispute" }),
+  description: z
+    .string()
+    .nonempty({ message: "Please provide a description of the issue" })
+    .min(20, {
+      message: "Description must be at least 20 characters",
+    }),
   attachments: z.array(z.any()).optional(),
 });
 
