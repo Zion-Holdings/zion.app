@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+// This page is not needed for static export. The sitemap is generated to public/sitemap.xml by scripts/generate-sitemap.js.
+export default function Sitemap() { return null; }
+=======
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -154,3 +158,4 @@ export default function SitemapPage() {
     </>
   );
 }
+>>>>>>> origin/cursor/content-updates-and-link-fixes

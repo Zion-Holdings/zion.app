@@ -1,9 +1,18 @@
 import React from 'react';
+<<<<<<< HEAD
+=======
 import Head from 'next/head';
 import Link from 'next/link';
+>>>>>>> origin/cursor/content-updates-and-link-fixes
 
 const Component = () => {
   return (
+<<<<<<< HEAD
+    <div>
+      <h1>Page Content</h1>
+      <p>This page is under construction.</p>
+    </div>
+=======
     <>
       <Head>
         <title>About Zion Tech Group | Autonomous Innovation Hub</title>
@@ -153,6 +162,7 @@ const Component = () => {
         </main>
       </div>
     </>
+>>>>>>> origin/cursor/content-updates-and-link-fixes
   );
 };
 
