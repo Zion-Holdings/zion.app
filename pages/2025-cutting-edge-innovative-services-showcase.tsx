@@ -64,7 +64,7 @@ const CuttingEdgeInnovativeServicesShowcase2025: React.FC = () => {
   };
 
   return (
-    <Layout seo={seoConfig}>
+    <Layout>
       <div className="relative min-h-screen bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden">
         {/* Hero Section */}
         <section className="relative py-20 px-4">
