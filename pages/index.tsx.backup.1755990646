@@ -888,11 +888,31 @@ const HomePage: React.FC = () => {
               { title: 'Docs Search Index', desc: 'Refreshes the site search index for instant discovery.', href: '/.netlify/functions/docs-search-index-runner' },
               { title: 'Netlify Auto‑Healer', desc: 'Monitors and self-heals Netlify deploy issues.', href: '/.netlify/functions/netlify-auto-healer-runner' },
               { title: 'Innovation Lab (10m)', desc: 'Invents, curates, and promotes fresh ideas across the site.', href: '/.netlify/functions/innovation-lab' },
+<<<<<<< HEAD
+              { title: 'Autonomous Innovation Generator (2m)', desc: 'Synthesizes front promos and homepage refresh, then syncs to main.', href: '/.netlify/functions/autonomous-innovation-generator' },
+              { title: 'Auto Scheduler (15m)', desc: 'Smart time-based runner that chooses and executes the best tasks.', href: '/.netlify/functions/auto-scheduler' },
+              { title: 'Broken Image Scanner (6h)', desc: 'Finds broken images, optimizes assets, and syncs fixes.', href: '/.netlify/functions/broken-image-scanner' },
+              { title: 'Automation Guardian (10m)', desc: 'Runs improvement, orchestrators, quick fixes and syncs to main.', href: '/.netlify/functions/automation-guardian-runner' },
+              { title: 'Auto Discovery Runner (30m)', desc: 'Discovers and runs high‑value orchestrators autonomously.', href: '/.netlify/functions/auto-discovery-runner' },
+              { title: 'Cloud Autonomous Orchestrator (15m)', desc: 'Runs cloud orchestrations, then syncs and rebuilds.', href: '/.netlify/functions/cloud-autonomous-orchestrator-runner' },
+              { title: 'Smart Redirect Manager', desc: 'Fixes internal 404s by auto-adding smart redirects.', href: '/.netlify/functions/redirect-manager' },
+              { title: 'A11y Alt-Text Auditor', desc: 'Scans for missing alt text and publishes a report.', href: '/.netlify/functions/a11y-audit-runner' },
+              { title: 'Branch Cleanup Runner (daily)', desc: 'Deletes merged or stale ephemeral branches via GitHub API.', href: '/.netlify/functions/branch-cleanup-runner' },
+              { title: 'Redirect Healer', desc: 'Heals broken internal links by auto-adding smart redirects.', href: '/.netlify/functions/redirect-healer' },
+              { title: 'Sitemap Prioritizer', desc: 'Regenerates sitemap with popularity-weighted priorities.', href: '/.netlify/functions/sitemap-prioritizer' },
+              { title: 'Component Catalog', desc: 'Generates a live catalog of UI components with usage stats.', href: '/.netlify/functions/component-catalog-runner' },
+              { title: 'Automation Atlas', desc: 'Builds a consolidated atlas of functions, schedules, and workflows.', href: '/.netlify/functions/automation-atlas-runner' },
+              // New innovations
+              { title: 'OG Meta Auditor', desc: 'Audits pages for OG/Twitter meta coverage; publishes report.', href: '/.netlify/functions/og-meta-auditor' },
+              { title: 'Unused Media Report', desc: 'Finds unreferenced assets in public/ and reports savings.', href: '/.netlify/functions/unused-media-report' },
+              { title: 'Orphan Page Finder', desc: 'Detects unlinked pages to improve crawlability.', href: '/.netlify/functions/orphan-page-finder' },
+=======
               { title: 'Auto Scheduler (15m)', desc: 'Smart time-based runner that chooses and executes the best tasks.', href: '/.netlify/functions/auto-scheduler' },
               { title: 'Broken Image Scanner (6h)', desc: 'Finds broken images, optimizes assets, and syncs fixes.', href: '/.netlify/functions/broken-image-scanner' },
               { title: 'A11y Auditor', desc: 'Scans for accessibility issues across pages and components.', href: '/.netlify/functions/a11y-audit-runner' },
               { title: 'License Compliance', desc: 'Generates a dependency license compliance report.', href: '/.netlify/functions/license-compliance-runner' },
               { title: 'Secrets Leak Scanner', desc: 'Detects potential secrets in the repo (masked) and alerts.', href: '/.netlify/functions/secrets-leak-scanner-runner' },
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-bcd2
             ].map((tool) => (
               <a key={tool.title} href={tool.href} className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 tilt-on-hover">
                 <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
@@ -902,6 +922,14 @@ const HomePage: React.FC = () => {
               </a>
             ))}
           </div>
+<<<<<<< HEAD
+        </section>
+
+        {/* AUTO-GENERATED: HOME_UPDATER_START */}
+        <section className="mx-auto max-w-7xl px-6 pb-16">
+          <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Explore more</h2>
+          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+=======
         </section>
 
         {/* New: Autonomous Automations */}
@@ -928,6 +956,7 @@ const HomePage: React.FC = () => {
  <section className="mx-auto max-w-7xl px-6 pb-16">
    <h2 className="text-center text-2xl font-bold tracking-wide text-white/90">Explore more</h2>
    <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-bcd2
 
             <Link href="/automation"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Automation Hub — live agents & reports</span></a></Link>
             <Link href="/newsroom"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Newsroom — latest autonomous updates</span></a></Link>
@@ -935,9 +964,15 @@ const HomePage: React.FC = () => {
             <Link href="/.netlify/functions/netlify-auto-healer-runner"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Site Health — Netlify Auto‑Healer</span></a></Link>
             <Link href="/.netlify/functions/docs-index-runner"><a className="bg-white/5 hover:bg-white/10 rounded-lg p-4 transition-colors border border-white/10"><span className="text-white/90">Docs — technical notes & guides</span></a></Link>
   
+<<<<<<< HEAD
+          </div>
+        </section>
+        {/* AUTO-GENERATED: HOME_UPDATER_END */}
+=======
         </div>
       </section>
       {/* AUTO-GENERATED: HOME_UPDATER_END */}
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-bcd2
   
         {/* AUTO-GENERATED: HOME_VISIONARY_START */}
 
