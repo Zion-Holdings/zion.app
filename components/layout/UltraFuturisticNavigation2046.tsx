@@ -94,10 +94,50 @@ const navigationItems: NavigationItem[] = [
     priority: 2,
     children: [
       {
+        label: '2026 Advanced Services',
+        href: '/2026-advanced-services-showcase',
+        icon: <Star className="w-4 h-4" />,
+        description: 'Revolutionary 2026 technology solutions',
+        badge: 'Hot',
+        neonColor: 'shadow-cyan-400/50'
+      },
+      {
         label: 'AI & Machine Learning',
         href: '/services?category=ai-ml',
         icon: <Brain className="w-4 h-4" />,
         description: 'Advanced AI solutions for enterprise',
+        badge: 'New',
+        neonColor: 'shadow-cyan-400/50'
+      },
+      {
+        label: 'Quantum Technology',
+        href: '/services?category=quantum',
+        icon: <Atom className="w-4 h-4" />,
+        description: 'Quantum computing and security',
+        badge: 'Hot',
+        neonColor: 'shadow-blue-400/50'
+      },
+      {
+        label: 'Space Technology',
+        href: '/services?category=space-tech',
+        icon: <Satellite className="w-4 h-4" />,
+        description: 'Space exploration and resources',
+        badge: 'New',
+        neonColor: 'shadow-purple-400/50'
+      },
+      {
+        label: 'Emerging Technology',
+        href: '/services?category=emerging-tech',
+        icon: <Rocket className="w-4 h-4" />,
+        description: 'Cutting-edge innovations',
+        badge: 'Trending',
+        neonColor: 'shadow-pink-400/50'
+            },
+      {
+        label: 'AI & Consciousness',
+        href: '/services?category=ai-consciousness',
+        icon: <Brain className="w-4 h-4" />,
+        description: 'Advanced AI consciousness solutions',
         featured: true,
         neonColor: 'shadow-purple-400/50',
         category: 'ai',
@@ -270,29 +310,40 @@ const navigationItems: NavigationItem[] = [
           }
         ]
       },
-      {
-        label: 'Advanced Computing',
-        href: '/services?category=advanced-computing',
-        icon: <Cpu className="w-4 h-4" />,
-        description: 'Next-generation computing infrastructure',
-        featured: false,
-        neonColor: 'shadow-cyan-400/50',
-        category: 'advanced-computing',
-        priority: 6,
-        children: [
-          {
-            label: 'Neuromorphic Computing Infrastructure',
-            href: '/neuromorphic-computing-infrastructure',
-            icon: <Brain className="w-4 h-4" />,
-            description: 'Brain-inspired computing for AI workloads',
-            neonColor: 'shadow-purple-400/50',
-            category: 'neuromorphic',
-            priority: 1
-          }
-        ]
-      }
-    ]
-  },
+                      {
+          label: 'Advanced Computing',
+          href: '/services?category=advanced-computing',
+          icon: <Cpu className="w-4 h-4" />,
+          description: 'Next-generation computing infrastructure',
+          featured: false,
+          neonColor: 'shadow-cyan-400/50',
+          category: 'advanced-computing',
+          priority: 6,
+          children: [
+            {
+              label: 'Neuromorphic Computing Infrastructure',
+              href: '/neuromorphic-computing-infrastructure',
+              icon: <Brain className="w-4 h-4" />,
+              description: 'Brain-inspired computing for AI workloads',
+              neonColor: 'shadow-purple-400/50',
+              category: 'neuromorphic',
+              priority: 1
+            }
+          ]
+        },
+        {
+          label: '2026 Advanced Services',
+          href: '/2026-advanced-services-showcase',
+          icon: <Rocket className="w-4 h-4" />,
+          description: 'Latest 2026 innovative services showcase',
+          featured: true,
+          neonColor: 'shadow-yellow-400/50',
+          category: '2026-advanced',
+          priority: 7,
+          badge: 'New'
+        }
+      ]
+    },
   {
     label: 'Solutions',
     href: '/solutions',

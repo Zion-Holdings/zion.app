@@ -47,7 +47,7 @@ const UltraFuturisticFooter2046: React.FC = () => {
         { name: 'IT Infrastructure', href: '/services?category=it-infrastructure', icon: Cpu },
         { name: 'Micro SAAS Solutions', href: '/services?category=micro-saas', icon: Rocket },
         { name: 'Space Technology', href: '/services?category=space-tech', icon: Satellite },
-        { name: 'Advanced Computing', href: '/services?category=advanced-computing', icon: Cpu }
+        { name: 'Emerging Technology', href: '/services?category=emerging-tech', icon: Rocket }
       ]
     },
     {

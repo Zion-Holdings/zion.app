@@ -1,438 +1,379 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { 
-  Search, Calendar, User, Tag, ArrowRight, Clock, 
-  Eye, Heart, Share2, Filter, BookOpen, TrendingUp
-} from 'lucide-react';
+import { Calendar, Clock, User, ArrowRight, Search, Filter, Tag, BookOpen } from 'lucide-react';
 
-const BlogPage: React.FC = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('all');
-
-  const categories = [
-    { id: 'all', name: 'All Posts', count: 24 },
-    { id: 'ai-consciousness', name: 'AI Consciousness', count: 8 },
-    { id: 'quantum-computing', name: 'Quantum Computing', count: 6 },
-    { id: 'cybersecurity', name: 'Cybersecurity', count: 5 },
-    { id: 'space-technology', name: 'Space Technology', count: 3 },
-    { id: 'business-intelligence', name: 'Business Intelligence', count: 2 }
-  ];
-
-  const featuredPosts = [
+export default function Blog() {
+  const blogPosts = [
     {
       id: 1,
-      title: "The Evolution of AI Consciousness: From Machine Learning to Self-Awareness",
-      excerpt: "Explore the groundbreaking developments in AI consciousness evolution and how we're moving beyond traditional machine learning towards truly self-aware artificial intelligence systems.",
-      author: "Dr. Sarah Chen",
-      date: "2025-01-15",
-      readTime: "8 min read",
-      category: "ai-consciousness",
-      image: "/blog/ai-consciousness-evolution.jpg",
-      views: 1247,
-      likes: 89,
+      title: 'The Future of AI Consciousness: What to Expect in 2045',
+      excerpt: 'Explore the revolutionary developments in AI consciousness and how they will transform our understanding of artificial intelligence.',
+      author: 'Zion Tech Team',
+      date: '2025-01-15',
+      readTime: '8 min read',
+      category: 'AI & Consciousness',
+      tags: ['AI', 'Consciousness', 'Future Tech', 'Innovation'],
+      image: '/api/placeholder/600/400',
       featured: true
     },
     {
       id: 2,
-      title: "Quantum Computing Breakthroughs: Solving Previously Impossible Problems",
-      excerpt: "Discover how quantum computing is revolutionizing problem-solving across industries, from cryptography to drug discovery and optimization challenges.",
-      author: "Prof. Michael Rodriguez",
-      date: "2025-01-12",
-      readTime: "12 min read",
-      category: "quantum-computing",
-      image: "/blog/quantum-computing-breakthroughs.jpg",
-      views: 892,
-      likes: 67,
-      featured: true
+      title: 'Quantum Computing Breakthroughs: Reshaping Cybersecurity',
+      excerpt: 'Discover how quantum computing is revolutionizing cybersecurity and what it means for the future of digital security.',
+      author: 'Quantum Team',
+      date: '2025-01-12',
+      readTime: '6 min read',
+      category: 'Quantum Technology',
+      tags: ['Quantum Computing', 'Cybersecurity', 'Technology'],
+      image: '/api/placeholder/600/400'
     },
     {
       id: 3,
-      title: "Next-Generation Cybersecurity: AI-Powered Threat Detection",
-      excerpt: "Learn about the latest advancements in AI-driven cybersecurity systems that can predict and prevent threats before they materialize.",
-      author: "Alex Thompson",
-      date: "2025-01-10",
-      readTime: "6 min read",
-      category: "cybersecurity",
-      image: "/blog/ai-cybersecurity.jpg",
-      views: 756,
-      likes: 54,
-      featured: true
-    }
-  ];
-
-  const recentPosts = [
+      title: 'Space Technology Innovations: Mining Beyond Earth',
+      excerpt: 'Learn about the latest developments in space mining technology and how we\'re preparing for interplanetary resource extraction.',
+      author: 'Space Tech Team',
+      date: '2025-01-10',
+      readTime: '10 min read',
+      category: 'Space Technology',
+      tags: ['Space Tech', 'Mining', 'Innovation', 'Future'],
+      image: '/api/placeholder/600/400'
+    },
     {
       id: 4,
-      title: "Space Resource Intelligence: Mining the Final Frontier",
-      excerpt: "How AI and advanced robotics are enabling sustainable resource extraction from asteroids and other celestial bodies.",
-      author: "Dr. Elena Petrova",
-      date: "2025-01-08",
-      readTime: "10 min read",
-      category: "space-technology",
-      image: "/blog/space-mining.jpg",
-      views: 634,
-      likes: 42
+      title: 'Autonomous DevOps: The Future of Software Development',
+      excerpt: 'Explore how autonomous DevOps platforms are transforming software development and deployment processes.',
+      author: 'DevOps Team',
+      date: '2025-01-08',
+      readTime: '7 min read',
+      category: 'IT Services',
+      tags: ['DevOps', 'Automation', 'Software Development'],
+      image: '/api/placeholder/600/400'
     },
     {
       id: 5,
-      title: "Autonomous Business Intelligence: The Future of Decision Making",
-      excerpt: "Exploring how autonomous AI systems are transforming business intelligence and strategic decision-making processes.",
-      author: "James Wilson",
-      date: "2025-01-05",
-      readTime: "7 min read",
-      category: "business-intelligence",
-      image: "/blog/autonomous-bi.jpg",
-      views: 521,
-      likes: 38
+      title: 'AI-Powered Business Intelligence: Transforming Decision Making',
+      excerpt: 'Discover how AI is revolutionizing business intelligence and enabling data-driven decision making at unprecedented levels.',
+      author: 'AI Team',
+      date: '2025-01-05',
+      readTime: '9 min read',
+      category: 'AI & Consciousness',
+      tags: ['AI', 'Business Intelligence', 'Data Analytics'],
+      image: '/api/placeholder/600/400'
     },
     {
       id: 6,
-      title: "Quantum Neural Networks: Merging Quantum Computing with AI",
-      excerpt: "Understanding the intersection of quantum computing and neural networks, and the potential for exponential performance improvements.",
-      author: "Dr. Sarah Chen",
-      date: "2025-01-03",
-      readTime: "9 min read",
-      category: "quantum-computing",
-      image: "/blog/quantum-neural.jpg",
-      views: 478,
-      likes: 35
-    },
-    {
-      id: 7,
-      title: "Emotional Intelligence in AI: Building Machines That Understand Feelings",
-      excerpt: "The latest developments in creating AI systems that can recognize, understand, and respond to human emotions.",
-      author: "Dr. Marcus Johnson",
-      date: "2025-01-01",
-      readTime: "11 min read",
-      category: "ai-consciousness",
-      image: "/blog/emotional-ai.jpg",
-      views: 445,
-      likes: 31
-    },
-    {
-      id: 8,
-      title: "Zero-Trust Security Architecture: Beyond Traditional Perimeter Defense",
-      excerpt: "Implementing zero-trust security principles in modern enterprise environments for enhanced protection.",
-      author: "Alex Thompson",
-      date: "2024-12-30",
-      readTime: "8 min read",
-      category: "cybersecurity",
-      image: "/blog/zero-trust.jpg",
-      views: 398,
-      likes: 28
-    },
-    {
-      id: 9,
-      title: "Predictive Analytics in Healthcare: AI's Role in Preventive Medicine",
-      excerpt: "How AI-powered predictive analytics is revolutionizing healthcare and enabling proactive patient care.",
-      author: "Dr. Lisa Park",
-      date: "2024-12-28",
-      readTime: "13 min read",
-      category: "business-intelligence",
-      image: "/blog/healthcare-ai.jpg",
-      views: 367,
-      likes: 25
+      title: 'The Evolution of Micro SAAS Platforms in 2025',
+      excerpt: 'Explore the growing trend of micro SAAS platforms and how they\'re changing the software industry landscape.',
+      author: 'Product Team',
+      date: '2025-01-03',
+      readTime: '5 min read',
+      category: 'Micro SAAS',
+      tags: ['SAAS', 'Micro Platforms', 'Software Industry'],
+      image: '/api/placeholder/600/400'
     }
   ];
 
-  const allPosts = [...featuredPosts, ...recentPosts];
+  const categories = [
+    'All Categories',
+    'AI & Consciousness',
+    'Quantum Technology',
+    'Space Technology',
+    'IT Services',
+    'Micro SAAS',
+    'Innovation'
+  ];
 
-  const filteredPosts = allPosts.filter(post => {
-    const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         post.excerpt.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         post.author.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCategory = selectedCategory === 'all' || post.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
-
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', { 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
-    });
-  };
+  const popularTags = [
+    'AI', 'Quantum Computing', 'Space Tech', 'Innovation', 'Technology', 'Future', 'Cybersecurity', 'DevOps'
+  ];
 
   return (
-    <Layout 
-      title="Blog - Zion Tech Group"
-      description="Stay updated with the latest insights on AI consciousness, quantum computing, cybersecurity, and space technology from Zion Tech Group's expert team."
-      keywords="Zion Tech Group blog, AI consciousness, quantum computing, cybersecurity, space technology, technology insights, AI blog"
-    >
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white">
+    <Layout>
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-purple-500/20"></div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent mb-6">
-                Our Blog
+              <div className="inline-flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 rounded-full text-purple-300 text-sm font-medium mb-6">
+                <BookOpen className="w-4 h-4" />
+                <span>Insights & Updates</span>
+              </div>
+              
+              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+                <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent">
+                  Zion Tech
+                </span>
+                <br />
+                <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                  Blog
+                </span>
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Insights, breakthroughs, and thought leadership on the future of technology. 
-                Stay ahead with expert analysis from our revolutionary team.
+              
+              <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8 leading-relaxed">
+                Stay updated with the latest insights, innovations, and developments 
+                in AI consciousness, quantum computing, and space technology.
               </p>
             </motion.div>
           </div>
         </section>
 
-        {/* Search and Filters */}
-        <section className="py-12">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Search and Filters Section */}
+        <section className="py-10 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
               {/* Search Bar */}
-              <div className="relative flex-1 max-w-md">
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                <input
-                  type="text"
-                  placeholder="Search articles..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-                />
-              </div>
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="flex-1 max-w-md"
+              >
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                  <input
+                    type="text"
+                    placeholder="Search articles..."
+                    className="w-full pl-10 pr-4 py-3 bg-gray-900/50 border border-gray-700/50 rounded-lg text-gray-300 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all duration-200"
+                  />
+                </div>
+              </motion.div>
 
               {/* Category Filter */}
-              <div className="flex items-center gap-2">
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="flex items-center space-x-4"
+              >
                 <Filter className="w-5 h-5 text-gray-400" />
-                <select
-                  value={selectedCategory}
-                  onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-                >
-                  {categories.map((category) => (
-                    <option key={category.id} value={category.id}>
-                      {category.name} ({category.count})
+                <select className="px-4 py-3 bg-gray-900/50 border border-gray-700/50 rounded-lg text-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all duration-200">
+                  {categories.map((category, index) => (
+                    <option key={index} value={category.toLowerCase().replace(/\s+/g, '-')}>
+                      {category}
                     </option>
                   ))}
                 </select>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Featured Posts */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl font-bold text-white mb-4">Featured Articles</h2>
-              <p className="text-xl text-gray-400">Our most popular and insightful content</p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {featuredPosts.map((post, index) => (
-                <motion.article
-                  key={post.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-gradient-to-r from-gray-800/50 to-gray-900/50 rounded-2xl border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300 overflow-hidden group"
-                >
-                  {/* Image Placeholder */}
-                  <div className="h-48 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 flex items-center justify-center">
-                    <BookOpen className="w-16 h-16 text-gray-400" />
-                  </div>
-                  
-                  <div className="p-6">
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="px-3 py-1 bg-cyan-500/20 text-cyan-400 rounded-full text-sm border border-cyan-500/30">
-                        {categories.find(c => c.id === post.category)?.name}
-                      </span>
-                      <span className="text-gray-400 text-sm">{post.readTime}</span>
-                    </div>
-                    
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
-                      {post.title}
-                    </h3>
-                    
-                    <p className="text-gray-400 mb-4 line-clamp-3">
-                      {post.excerpt}
-                    </p>
-                    
-                    <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                      <div className="flex items-center gap-2">
-                        <User className="w-4 h-4" />
-                        {post.author}
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Calendar className="w-4 h-4" />
-                        {formatDate(post.date)}
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-4 text-sm text-gray-400">
-                        <span className="flex items-center gap-1">
-                          <Eye className="w-4 h-4" />
-                          {post.views}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <Heart className="w-4 h-4" />
-                          {post.likes}
-                        </span>
-                      </div>
-                      
-                      <button className="text-cyan-400 hover:text-cyan-300 transition-colors duration-300 flex items-center gap-1 group-hover:gap-2">
-                        Read More
-                        <ArrowRight className="w-4 h-4 transition-all duration-300" />
-                      </button>
-                    </div>
-                  </div>
-                </motion.article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Recent Posts */}
-        <section className="py-20 bg-gradient-to-r from-gray-900/50 to-black/50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl font-bold text-white mb-4">Latest Articles</h2>
-              <p className="text-xl text-gray-400">Stay updated with our newest insights and discoveries</p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredPosts.slice(3).map((post, index) => (
-                <motion.article
-                  key={post.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="bg-gradient-to-r from-gray-800/50 to-gray-900/50 rounded-2xl border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300 overflow-hidden group"
-                >
-                  {/* Image Placeholder */}
-                  <div className="h-48 bg-gradient-to-r from-purple-500/20 to-pink-500/20 flex items-center justify-center">
-                    <BookOpen className="w-16 h-16 text-gray-400" />
-                  </div>
-                  
-                  <div className="p-6">
-                    <div className="flex items-center gap-2 mb-3">
-                      <span className="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm border border-purple-500/30">
-                        {categories.find(c => c.id === post.category)?.name}
-                      </span>
-                      <span className="text-gray-400 text-sm">{post.readTime}</span>
-                    </div>
-                    
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-400 transition-colors duration-300">
-                      {post.title}
-                    </h3>
-                    
-                    <p className="text-gray-400 mb-4 line-clamp-3">
-                      {post.excerpt}
-                    </p>
-                    
-                    <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                      <div className="flex items-center gap-2">
-                        <User className="w-4 h-4" />
-                        {post.author}
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Calendar className="w-4 h-4" />
-                        {formatDate(post.date)}
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-4 text-sm text-gray-400">
-                        <span className="flex items-center gap-1">
-                          <Eye className="w-4 h-4" />
-                          {post.views}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <Heart className="w-4 h-4" />
-                          {post.likes}
-                        </span>
-                      </div>
-                      
-                      <button className="text-purple-400 hover:text-purple-300 transition-colors duration-300 flex items-center gap-1 group-hover:gap-2">
-                        Read More
-                        <ArrowRight className="w-4 h-4 transition-all duration-300" />
-                      </button>
-                    </div>
-                  </div>
-                </motion.article>
-              ))}
-            </div>
-
-            {filteredPosts.length === 0 && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="text-center py-12"
-              >
-                <p className="text-xl text-gray-400 mb-4">No articles match your current search criteria.</p>
-                <button
-                  onClick={() => {
-                    setSearchQuery('');
-                    setSelectedCategory('all');
-                  }}
-                  className="bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-6 py-3 rounded-xl font-semibold hover:from-cyan-600 hover:to-purple-600 transition-all duration-300"
-                >
-                  Clear Filters
-                </button>
               </motion.div>
-            )}
+            </div>
           </div>
         </section>
 
-        {/* Newsletter Signup */}
-        <section className="py-20">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* Featured Post Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-r from-cyan-500/10 to-purple-500/10 p-8 rounded-2xl border border-cyan-500/20"
+              className="text-center mb-16"
             >
-              <h2 className="text-3xl font-bold text-white mb-4">Stay Updated</h2>
-              <p className="text-xl text-gray-400 mb-6">
-                Get the latest insights on AI consciousness, quantum computing, and revolutionary technology 
-                delivered directly to your inbox.
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Featured Article
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Our latest insights on the cutting edge of technology innovation.
               </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input
-                  type="email"
-                  placeholder="Enter your email address"
-                  className="flex-1 px-4 py-3 bg-gray-800/50 border border-gray-600/50 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-                />
-                <button className="bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-6 py-3 rounded-xl font-semibold hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105">
-                  Subscribe
-                </button>
+            </motion.div>
+
+            {blogPosts.filter(post => post.featured).map((post, index) => (
+              <motion.div
+                key={post.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group"
+              >
+                <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 rounded-2xl overflow-hidden transition-all duration-300 group-hover:scale-105 group-hover:border-purple-500/30">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div className="p-8">
+                      <div className="flex items-center space-x-4 mb-4">
+                        <span className="px-3 py-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm font-medium rounded-full">
+                          Featured
+                        </span>
+                        <span className="px-3 py-1 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-sm font-medium rounded-full">
+                          {post.category}
+                        </span>
+                      </div>
+                      
+                      <h3 className="text-3xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors duration-300">
+                        {post.title}
+                      </h3>
+                      
+                      <p className="text-gray-300 mb-6 leading-relaxed">
+                        {post.excerpt}
+                      </p>
+                      
+                      <div className="flex items-center space-x-6 text-gray-400 mb-6">
+                        <span className="flex items-center space-x-2">
+                          <User className="w-4 h-4" />
+                          <span>{post.author}</span>
+                        </span>
+                        <span className="flex items-center space-x-2">
+                          <Calendar className="w-4 h-4" />
+                          <span>{new Date(post.date).toLocaleDateString()}</span>
+                        </span>
+                        <span className="flex items-center space-x-2">
+                          <Clock className="w-4 h-4" />
+                          <span>{post.readTime}</span>
+                        </span>
+                      </div>
+                      
+                      <div className="flex flex-wrap gap-2 mb-6">
+                        {post.tags.map((tag, tagIndex) => (
+                          <span
+                            key={tagIndex}
+                            className="px-3 py-1 bg-gray-700/50 text-gray-300 text-sm rounded-full border border-gray-600/50"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      
+                      <button className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium rounded-xl hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/25 flex items-center space-x-2">
+                        <span>Read More</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </button>
+                    </div>
+                    
+                    <div className="relative h-64 lg:h-auto">
+                      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl"></div>
+                      <div className="relative h-full flex items-center justify-center">
+                        <BookOpen className="w-32 h-32 text-purple-400/50" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+
+        {/* Blog Posts Grid Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-purple-900/20 to-pink-900/20">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Latest Articles
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Explore our collection of insights, tutorials, and thought leadership content.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {blogPosts.filter(post => !post.featured).map((post, index) => (
+                <motion.div
+                  key={post.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="group"
+                >
+                  <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 rounded-2xl overflow-hidden transition-all duration-300 group-hover:scale-105 group-hover:border-purple-500/30 h-full">
+                    <div className="relative h-48 bg-gradient-to-br from-purple-500/20 to-pink-500/20">
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <BookOpen className="w-16 h-16 text-purple-400/50" />
+                      </div>
+                    </div>
+                    
+                    <div className="p-6">
+                      <div className="flex items-center space-x-2 mb-4">
+                        <span className="px-2 py-1 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-xs font-medium rounded-full">
+                          {post.category}
+                        </span>
+                      </div>
+                      
+                      <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-purple-400 transition-colors duration-300 line-clamp-2">
+                        {post.title}
+                      </h3>
+                      
+                      <p className="text-gray-300 mb-4 leading-relaxed line-clamp-3">
+                        {post.excerpt}
+                      </p>
+                      
+                      <div className="flex items-center space-x-4 text-gray-400 text-sm mb-4">
+                        <span className="flex items-center space-x-1">
+                          <User className="w-3 h-3" />
+                          <span>{post.author}</span>
+                        </span>
+                        <span className="flex items-center space-x-1">
+                          <Clock className="w-3 h-3" />
+                          <span>{post.readTime}</span>
+                        </span>
+                      </div>
+                      
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {post.tags.slice(0, 3).map((tag, tagIndex) => (
+                          <span
+                            key={tagIndex}
+                            className="px-2 py-1 bg-gray-700/50 text-gray-300 text-xs rounded-full border border-gray-600/50"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      
+                      <button className="w-full px-4 py-2 border border-purple-500/30 text-purple-300 font-medium rounded-lg hover:bg-purple-500/10 transition-all duration-300 flex items-center justify-center space-x-2">
+                        <span>Read Article</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </button>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Popular Tags Section */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-3xl font-bold text-white mb-8">
+                Popular Topics
+              </h2>
+              <div className="flex flex-wrap justify-center gap-3">
+                {popularTags.map((tag, index) => (
+                  <motion.span
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="px-4 py-2 bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 text-purple-300 rounded-full hover:from-purple-500/30 hover:to-pink-500/30 transition-all duration-300 cursor-pointer"
+                  >
+                    {tag}
+                  </motion.span>
+                ))}
               </div>
-              
-              <p className="text-sm text-gray-500 mt-4">
-                No spam, unsubscribe at any time. We respect your privacy.
-              </p>
             </motion.div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-gray-900/50 to-black/50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -440,25 +381,21 @@ const BlogPage: React.FC = () => {
               viewport={{ once: true }}
             >
               <h2 className="text-4xl font-bold text-white mb-6">
-                Ready to Explore More?
+                Stay Updated with Innovation
               </h2>
-              <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
-                Discover our revolutionary services and see how we can transform your business 
-                with cutting-edge technology solutions.
+              <p className="text-xl text-gray-400 mb-8">
+                Subscribe to our newsletter and never miss the latest insights 
+                on AI, quantum computing, and space technology.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="/services"
-                  className="bg-gradient-to-r from-cyan-500 to-purple-500 text-white px-8 py-4 rounded-xl font-semibold hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105"
-                >
-                  Explore Our Services
-                </a>
-                <a
-                  href="/contact"
-                  className="border border-cyan-500 text-cyan-400 px-8 py-4 rounded-xl font-semibold hover:bg-cyan-500 hover:text-white transition-all duration-300"
-                >
-                  Get In Touch
-                </a>
+              <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-1 px-4 py-3 bg-gray-900/50 border border-purple-500/20 rounded-lg text-gray-300 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all duration-200"
+                />
+                <button className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-purple-500/25">
+                  Subscribe
+                </button>
               </div>
             </motion.div>
           </div>
@@ -466,6 +403,4 @@ const BlogPage: React.FC = () => {
       </div>
     </Layout>
   );
-};
-
-export default BlogPage;
+}
