@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import SEO from '../components/SEO';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { 
   Check, TrendingUp, Zap, Shield, Globe,
   Brain, Building, Target, Rocket, ArrowRight
 } from 'lucide-react';
 
 // Import our new 2025 services
-import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
+import { advancedAIAutomationServices } from '../data/2026-advanced-ai-automation-services';
 import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
 import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
 import { emergingTechnologyServices } from '../data/2025-emerging-technology-services';
@@ -26,7 +26,7 @@ const serviceCategories = [
     name: 'AI Automation Services',
     icon: <Brain className="w-8 h-8" />,
     color: 'from-purple-500 to-pink-500',
-    services: advancedAIAutomationServices2025
+    services: advancedAIAutomationServices
   },
   {
     id: 'it-infrastructure',
@@ -109,9 +109,9 @@ export default function InnovativePricing2025() {
   const getFilteredServices = () => {
     if (selectedCategory === 'all') {
       return [
-        ...advancedAIAutomationServices2025,
-                  ...innovativeITInfrastructureServices2025,
-          ...innovativeMicroSaasSolutions2025,
+        ...advancedAIAutomationServices,
+        ...innovativeITInfrastructureServices2025,
+        ...innovativeMicroSaasSolutions2025,
         ...emergingTechnologyServices
       ];
     }
