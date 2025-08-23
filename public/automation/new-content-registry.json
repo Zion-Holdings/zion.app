@@ -1,4 +1,35 @@
 {
+<<<<<<< HEAD
+  "generatedAt": "2025-08-14T05:40:13.698Z",
+  "items": [
+    {
+      "title": "Innovation Insight — 2025-08-14 05-40",
+      "href": "/reports/innovations/insight-2025-08-14T05-40",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T05:40:13.634Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-14 05-40",
+      "href": "/reports/updates/update-2025-08-14T05-40",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T05:40:13.634Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Innovation Insight — 2025-08-14 05-40",
+      "href": "/reports/innovations/insight-2025-08-14T05-40",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T05:40:13.634Z",
+      "source": "cloud-content-factory"
+    },
+    {
+      "title": "Autonomous Update — 2025-08-14 05-40",
+      "href": "/reports/updates/update-2025-08-14T05-40",
+      "desc": "New autonomous content",
+      "createdAt": "2025-08-14T05:40:13.634Z",
+      "source": "cloud-content-factory"
+=======
   "generatedAt": "2025-08-14T05:43:58.118Z",
   "items": [
     {
@@ -21,6 +52,7 @@
       "desc": "New autonomous content",
       "createdAt": "2025-08-14T05:43:58.084Z",
       "source": "cloud-deep-research-factory"
+>>>>>>> cce8903715 (chore(sync): advanced autonomous sync)
     }
   ]
 }
