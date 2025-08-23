@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
+  "generatedAt": "2025-08-11T23:52:53.608Z",
+=======
   "generatedAt": "2025-08-11T23:52:17.835Z",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-f41c
   "functions": [
     "a11y-alt-text-runner",
     "adaptive-orchestrator",
@@ -22,7 +26,11 @@
     "component-coupling-graph-runner",
     "component-prop-coverage-runner",
     "component-size-report",
+<<<<<<< HEAD
+    "content-freshness-score-runner",
+=======
     "content-gap-analyzer",
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-f41c
     "continuous-front-runner",
     "continuous-orchestrator",
     "contributing-refresher",
