@@ -189,12 +189,24 @@ const navigationItems: NavigationItem[] = [
   },
   {
     name: 'Showcase & Pricing',
+<<<<<<< HEAD
+    href: '/comprehensive-2025-services-showcase',
+=======
     href: '/2036-innovative-services-showcase',
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2045
     icon: <Star className="w-5 h-5" />,
     description: 'Service showcases and pricing',
     badge: 'Featured',
     category: 'showcase',
     children: [
+<<<<<<< HEAD
+      {
+        name: '2025 Services Showcase',
+        href: '/revolutionary-2025-services-showcase',
+        description: 'Latest innovations and solutions',
+        icon: <Sparkles className="w-4 h-4" />,
+        featured: true
+=======
       { 
         name: '2036 Innovation Showcase', 
         href: '/2036-innovative-services-showcase', 
@@ -207,6 +219,7 @@ const navigationItems: NavigationItem[] = [
         href: '/comprehensive-services-showcase-2025', 
         description: 'Complete services overview',
         icon: <Grid className="w-4 h-4" />,
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-2045
       },
       {
         name: '2026 Services Showcase',
