@@ -51,14 +51,8 @@ import { real2025ExtraServices } from '../../data/real-2025-extra-services';
 import { real2026Q4ExpansionsV2 } from '../../data/real-2026-q4-expansions-v2';
 import { real2036ServiceExpansions } from '../../data/real-2036-service-expansions';
 import { real2026Q4ExpansionsV3 } from '../../data/real-2026-q4-expansions-v3';
-import { real2036MicroSaasAdditions } from '../../data/real-2036-micro-saas-additions';
-import { real2036ITServicesAdditions } from '../../data/real-2036-it-services-additions';
-import { real2036AIServicesAdditions } from '../../data/real-2036-ai-services-additions';
-import { innovative2025MicroSaasBatch } from '../../data/innovative-2025-micro-saas-batch';
-import { innovative2025ITEnterpriseBatch } from '../../data/innovative-2025-it-enterprise-batch';
-import { innovative2041MicroSaasServices } from '../../data/innovative-2041-micro-saas-services';
-import { innovative2041ITServices } from '../../data/innovative-2041-it-services';
-import { innovative2041AIServices } from '../../data/innovative-2041-ai-services';
+import { real2036InnovativeServices } from '../../data/real-2036-innovative-services';
+import { real2036EmergingTechServices } from '../../data/real-2036-emerging-tech-services';
 
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -191,28 +185,11 @@ export default function ServicesIndexPage() {
       real2035Q2AdditionsExtra as unknown[],
       real2025ExtraServices as unknown[],
       real2026Q4ExpansionsV2 as unknown[],
-      real2036ServiceExpansions as unknown[],
-      real2036MicroSaasAdditions as unknown[],
-      real2036ITServicesAdditions as unknown[],
-      real2036AIServicesAdditions as unknown[]
+      real2026Q4ExpansionsV3 as unknown[],
+      real2036InnovativeServices as unknown[],
+      real2036EmergingTechServices as unknown[]
     )
-    .concat(innovative2025MicroSaasBatch as unknown[])
-    .concat(innovative2025ITEnterpriseBatch as unknown[])
-    .concat(innovative2041MicroSaasServices as unknown[])
-    .concat(innovative2041ITServices as unknown[])
-    .concat(innovative2041AIServices as unknown[]);
-
-  // Transform services to match the expected format
-  const transformedServices = all.map(transformServiceData);
-  
-  // Get valid services with pricing
-  const validServices = transformedServices.filter((service: Service) => service.price && typeof service.price === 'string');
-
-  // Group services by category
-  const servicesByCategory = categories.reduce((acc, category) => {
-    acc[category] = validServices.filter((service: any) => 
-      service.category && service.category.toLowerCase().includes(category.toLowerCase().replace(/\s+/g, ''))
-    );
+    .concat(real2036ServiceExpansions as unknown[]);
   const byCategory: Record<string, unknown[]> = {};
   for (const c of categories) byCategory[c] = [];
   // Normalize various category labels into our main buckets

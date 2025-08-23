@@ -2,19 +2,10 @@ import React, { useState } from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
-  Search, 
-  Star, 
-  Users, 
-  Award,
-  ArrowRight,
-  Phone,
-  Mail,
-  MapPin,
-  Filter,
-  SortAsc,
-  SortDesc,
-  Zap,
-  Atom
+  Search, Grid, List,
+  Brain, Atom, Shield, Target, Rocket,
+  ArrowRight, Check, Palette, Heart, Truck, GraduationCap,
+  Building, Lock, Database
 } from 'lucide-react';
 import { innovative2025MicroSaasExpansionV2 } from '../data/innovative-2025-micro-saas-expansion-v2';
 import { innovative2025ITServicesExpansionV2 } from '../data/innovative-2025-it-services-expansion-v2';
@@ -103,6 +94,24 @@ import { real2037Q1InnovativeAdditions } from '../data/real-2037-q1-innovative-a
 import { real2037Q1ITInnovations } from '../data/real-2037-q1-it-innovations';
 import { real2037Q1MicroSaasInnovations } from '../data/real-2037-q1-micro-saas-innovations';
 
+// Import 2026 innovative services
+import { innovative2026AIServicesAdditions } from '../data/innovative-2026-ai-services-additions';
+import { innovative2026ITServicesAdditions } from '../data/innovative-2026-it-services-additions';
+import { innovative2026MicroSaasAdditions } from '../data/innovative-2026-micro-saas-additions';
+import { innovative2026IndustryAIServices } from '../data/innovative-2026-industry-ai-services';
+import { innovative2026EmergingTechServices } from '../data/innovative-2026-emerging-tech-services';
+
+// Import our new innovative 2027 services
+import { innovative2027AIBusinessIntelligenceServices } from '../data/innovative-2027-ai-business-intelligence';
+import { innovative2027CybersecurityComplianceServices } from '../data/innovative-2027-cybersecurity-compliance';
+import { innovative2027CloudDevOpsServices } from '../data/innovative-2027-cloud-devops';
+import { innovative2027IndustrySolutions } from '../data/innovative-2027-industry-solutions';
+
+// Import our new 2026 advanced services
+import { real2026AdvancedServices } from '../data/real-2026-advanced-services';
+import { real2026InnovativeSolutions } from '../data/real-2026-innovative-solutions';
+import { real2026SpecializedServices } from '../data/real-2026-specialized-services';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -183,13 +192,10 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
-  ...innovative2037MicroSaasServices,
-  ...innovative2037ITServices,
-  ...innovative2037AIServices,
-  // Add our new 2037 Q1 innovative services
-  ...real2037Q1InnovativeAdditions,
-  ...real2037Q1ITInnovations,
-  ...real2037Q1MicroSaasInnovations
+  // Add our new 2026 advanced services
+  ...real2026AdvancedServices,
+  ...real2026InnovativeSolutions,
+  ...real2026SpecializedServices
 ];
 
 const categories = [
@@ -264,67 +270,25 @@ const categories = [
     description: 'Learning and research platforms'
   },
   {
-    id: 'ai-emotional',
-    name: 'AI & Emotional Intelligence',
-    icon: <Brain className="w-6 h-6" />,
-    color: 'from-pink-500 to-purple-600',
-    description: 'AI-powered emotional intelligence and consciousness'
-  },
-  {
-    id: 'quantum-security',
-    name: 'Quantum Security',
+    id: 'cybersecurity',
+    name: 'Cybersecurity & Security',
     icon: <Shield className="w-6 h-6" />,
-    color: 'from-indigo-600 to-purple-700',
-    description: 'Quantum-resistant security and communication'
+    color: 'from-red-500 to-orange-500',
+    description: 'Advanced security and compliance solutions'
   },
   {
-    id: 'autonomous-systems',
-    name: 'Autonomous Systems',
-    icon: <Cpu className="w-6 h-6" />,
-    color: 'from-green-600 to-teal-700',
-    description: 'AI-powered autonomous decision-making systems'
+    id: 'blockchain-defi',
+    name: 'Blockchain & DeFi',
+    icon: <Database className="w-6 h-6" />,
+    color: 'from-yellow-500 to-green-500',
+    description: 'Blockchain and decentralized finance solutions'
   },
   {
-    id: 'metaverse-business',
-    name: 'Metaverse Business',
-    icon: <Globe className="w-6 h-6" />,
-    color: 'from-blue-500 to-cyan-600',
-    description: 'Business infrastructure for the metaverse'
-  },
-  {
-    id: 'neural-quantum',
-    name: 'Neural & Quantum',
-    icon: <Atom className="w-6 h-6" />,
-    color: 'from-purple-600 to-pink-700',
-    description: 'Neural networks and quantum computing fusion'
-  },
-  {
-    id: 'space-technology',
-    name: 'Space & Technology',
-    icon: <Rocket className="w-6 h-6" />,
-    color: 'from-indigo-600 to-purple-700',
-    description: 'Space exploration and advanced technology solutions'
-  },
-  {
-    id: 'climate-sustainability',
-    name: 'Climate & Sustainability',
-    icon: <Globe className="w-6 h-6" />,
-    color: 'from-teal-600 to-green-700',
-    description: 'Climate change mitigation and environmental optimization'
-  },
-  {
-    id: 'digital-twin-iot',
-    name: 'Digital Twin & IoT',
-    icon: <Cpu className="w-6 h-6" />,
-    color: 'from-violet-600 to-purple-700',
-    description: 'Digital twin technology and IoT integration'
-  },
-  {
-    id: 'biotech-ai',
-    name: 'Biotech & AI',
-    icon: <Heart className="w-6 h-6" />,
-    color: 'from-emerald-600 to-green-700',
-    description: 'AI-powered biotechnology and research acceleration'
+    id: 'biometric-identity',
+    name: 'Biometric & Identity',
+    icon: <Lock className="w-6 h-6" />,
+    color: 'from-purple-500 to-indigo-500',
+    description: 'Biometric authentication and identity management'
   }
 ];
 

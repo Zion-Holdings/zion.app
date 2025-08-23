@@ -5,7 +5,12 @@ import { Zap, TrendingUp, AlertTriangle, CheckCircle, X, Settings, RefreshCw } f
 // Add browser API types
 declare global {
   interface Window {
-    gtag?: (...args: unknown[]) => void;
+    gtag?: (
+      command: string,
+      action: string,
+      params?: Record<string, unknown>
+    ) => void;
+    dataLayer?: unknown[];
   }
 }
 
