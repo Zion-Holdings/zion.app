@@ -204,6 +204,12 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
+<<<<<<< HEAD
+  // Add our new 2026 advanced services
+  ...real2026AdvancedServices,
+  ...real2026InnovativeSolutions,
+  ...real2026SpecializedServices
+=======
   // Our new innovative services
   ...innovative2037Services,
   ...advanced2038Services,
@@ -213,6 +219,7 @@ const allServices = [
   ...innovative2040FuturisticServices,
   ...advanced2041EnterpriseServices,
   ...revolutionary2042MicroSaasServices
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-f13c
 ];
 
 const categories = [
@@ -287,6 +294,13 @@ const categories = [
     description: 'Learning and research platforms'
   },
   {
+<<<<<<< HEAD
+    id: 'revolutionary-2025-2026',
+    name: 'Revolutionary 2025-2026',
+    icon: <Sparkles className="w-6 h-6" />,
+    color: 'from-cyan-500 to-purple-500',
+    description: 'Cutting-edge services for the future'
+=======
     id: 'ai-emotional',
     name: 'AI & Emotional Intelligence',
     icon: <Brain className="w-6 h-6" />,
@@ -348,6 +362,7 @@ const categories = [
     icon: <Heart className="w-6 h-6" />,
     color: 'from-emerald-600 to-green-700',
     description: 'AI-powered biotechnology and research acceleration'
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-f13c
   }
 ];
 
