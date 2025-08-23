@@ -609,6 +609,11 @@
     "redundancy:ultimate:logs": "bash automation/start-ultimate-redundancy.sh logs",
     "redundancy:ultimate:test": "bash automation/start-ultimate-redundancy.sh test",
     "redundancy:ultimate:master": "node automation/ultimate-redundancy-master.cjs",
+<<<<<<< HEAD
+    "redundancy:ultimate:pm2": "node automation/pm2-ultimate-redundancy.cjs",
+    "redundancy:ultimate:github": "node automation/github-actions-ultimate-redundancy.cjs",
+    "redundancy:ultimate:netlify": "node automation/netlify-functions-ultimate-redundancy.cjs"
+=======
     "redundancy:ultimate:master:check": "node automation/ultimate-redundancy-master.cjs check",
     "redundancy:ultimate:master:start": "node automation/ultimate-redundancy-master.cjs start",
     "redundancy:ultimate:master:stop": "node automation/ultimate-redundancy-master.cjs stop",
@@ -630,6 +635,7 @@
     "redundancy:v3:pm2:restart": "pm2 restart ecosystem.comprehensive-redundancy-v3.pm2.cjs",
     "redundancy:v3:pm2:status": "pm2 status ecosystem.comprehensive-redundancy-v3.pm2.cjs",
     "redundancy:v3:pm2:logs": "pm2 logs ecosystem.comprehensive-redundancy-v3.pm2.cjs --lines 100"
+>>>>>>> origin/cursor/automate-all-existing-automations-and-clean-up-89ab
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
