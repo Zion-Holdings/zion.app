@@ -261,6 +261,35 @@
   name = "deps-auto-upgrade-runner"
   schedule = "0 3 * * *"
 
+<<<<<<< HEAD
+# New autonomous cloud scanners
+[[scheduled.functions]]
+  name = "unused-media-scanner"
+  schedule = "*/10 * * * *"
+
+[[scheduled.functions]]
+name = "unused-media-scanner"
+schedule = "*/10 * * * *"
+
+[[scheduled.functions]]
+name = "orphan-pages-detector"
+schedule = "*/15 * * * *"
+
+[[scheduled.functions]]
+  name = "component-size-report"
+  schedule = "*/5 * * * *"
+
+[[scheduled.functions]]
+  name = "robots-and-headers-optimizer"
+  schedule = "*/10 * * * *"
+
+[[scheduled.functions]]
+  name = "readme-badges-updater"
+  schedule = "*/30 * * * *"
+
+[[scheduled.functions]]
+  name = "navigation-directory-builder"
+=======
 [[scheduled.functions]]
   name = "autonomous-code-insights"
   schedule = "*/5 * * * *"
@@ -271,4 +300,5 @@
 
 [[scheduled.functions]]
   name = "autonomous-roadmap-synthesizer"
+>>>>>>> origin/cursor/invent-and-deploy-autonomous-cloud-automations-74ba
   schedule = "*/15 * * * *"
