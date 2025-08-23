@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Head from 'next/head';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ArrowRight, Brain, Shield, Rocket, Cpu, Database, Atom, Target, Star, 
@@ -9,10 +8,14 @@ import {
 import EnhancedNavigation from '../components/EnhancedNavigation';
 import EnhancedFooter from '../components/EnhancedFooter';
 import EnhancedContactForm from '../components/EnhancedContactForm';
+import SEOHead from '../components/SEOHead';
+import { ToastContainer, useToast } from '../components/ui/Toast';
+import { Service, Feature, Stat, UpdateItem } from '../types';
 
 export default function HomePage() {
   const [currentFeature, setCurrentFeature] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const { toasts, removeToast } = useToast();
 
   useEffect(() => {
     setIsVisible(true);
@@ -25,7 +28,7 @@ export default function HomePage() {
     return () => clearInterval(interval);
   }, []);
 
-  const features = [
+  const features: Feature[] = [
     {
       icon: Brain,
       title: "AI Autonomous Ecosystem",
@@ -64,7 +67,7 @@ export default function HomePage() {
     }
   ];
 
-  const services = [
+  const services: Service[] = [
     {
       title: "AI & Machine Learning",
       description: "Custom AI solutions, neural networks, and autonomous systems",
@@ -103,24 +106,43 @@ export default function HomePage() {
     }
   ];
 
-  const stats = [
+  const stats: Stat[] = [
     { number: "500+", label: "Projects Delivered", icon: CheckCircle },
     { number: "50+", label: "Enterprise Clients", icon: Users },
     { number: "99.9%", label: "Uptime Guarantee", icon: Shield },
     { number: "24/7", label: "Support Available", icon: Clock }
   ];
 
+  const updates: UpdateItem[] = [
+    {
+      title: "Autonomous Update — 2025: 08: 15: 0508",
+      href: "/reports/updates/update-2025-08-15-0508",
+      description: "Freshly published by autonomous agents.",
+      date: "2025-08-15"
+    },
+    {
+      title: "Autonomous Update — 2025: 08: 15: 0507",
+      href: "/reports/updates/update-2025-08-15-0507",
+      description: "Freshly published by autonomous agents.",
+      date: "2025-08-15"
+    },
+    {
+      title: "Autonomous Update — 2025: 08: 15: 0457",
+      href: "/reports/updates/update-2025-08-15-0457",
+      description: "Freshly published by autonomous agents.",
+      date: "2025-08-15"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden">
-      <Head>
-        <title>Zion Tech Group — Leading-Edge Technology Solutions & Autonomous Innovation Platform</title>
-        <meta name="description" content="Zion Tech Group delivers cutting-edge AI, quantum computing, cybersecurity, and digital transformation solutions. Leading the future of autonomous innovation." />
-        <meta property="og:title" content="Zion Tech Group — Leading-Edge Technology Solutions" />
-        <meta property="og:description" content="Cutting-edge AI, quantum computing, cybersecurity, and digital transformation solutions. Leading the future of autonomous innovation." />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="keywords" content="AI, quantum computing, cybersecurity, digital transformation, autonomous systems, technology solutions" />
-        <link rel="canonical" href="https://ziontechgroup.com" />
-      </Head>
+      <SEOHead
+        title="Zion Tech Group — Leading-Edge Technology Solutions & Autonomous Innovation Platform"
+        description="Zion Tech Group delivers cutting-edge AI, quantum computing, cybersecurity, and digital transformation solutions. Leading the future of autonomous innovation."
+        keywords="AI, quantum computing, cybersecurity, digital transformation, autonomous systems, technology solutions"
+        url="https://ziontechgroup.com"
+        type="website"
+      />
 
       <EnhancedNavigation />
 
@@ -306,30 +328,24 @@ export default function HomePage() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <a href="/reports/updates/update-2025-08-15-0508" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300 transform hover:scale-105">
-              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <h3 className="text-lg font-semibold text-white">Autonomous Update — 2025: 08: 15: 0508</h3>
-              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
-              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90 group-hover:text-cyan-200 transition-colors duration-300">
-                Open <span aria-hidden>→</span>
-              </div>
-            </a>
-            <a href="/reports/updates/update-2025-08-15-0507" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300 transform hover:scale-105">
-              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <h3 className="text-lg font-semibold text-white">Autonomous Update — 2025: 08: 15: 0507</h3>
-              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
-              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90 group-hover:text-cyan-200 transition-colors duration-300">
-                Open <span aria-hidden>→</span>
-              </div>
-            </a>
-            <a href="/reports/updates/update-2025-08-15-0457" className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300 transform hover:scale-105">
-              <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
-              <h3 className="text-lg font-semibold text-white">Autonomous Update — 2025: 08: 15: 0457</h3>
-              <p className="mt-1 text-sm text-white/75">Freshly published by autonomous agents.</p>
-              <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90 group-hover:text-cyan-200 transition-colors duration-300">
-                Open <span aria-hidden>→</span>
-              </div>
-            </a>
+            {updates.map((update, index) => (
+              <motion.a
+                key={update.href}
+                href={update.href}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-6 backdrop-blur-xl hover:border-cyan-400/30 transition-all duration-300 transform hover:scale-105"
+              >
+                <div className="pointer-events-none absolute -inset-px -z-10 bg-gradient-to-r from-fuchsia-500/0 via-cyan-400/10 to-fuchsia-500/0 opacity-0 blur-2xl transition-opacity group-hover:opacity-100" />
+                <h3 className="text-lg font-semibold text-white">{update.title}</h3>
+                <p className="mt-1 text-sm text-white/75">{update.description}</p>
+                <div className="mt-3 inline-flex items-center gap-1 text-xs text-cyan-300/90 group-hover:text-cyan-200 transition-colors duration-300">
+                  Open <span aria-hidden>→</span>
+                </div>
+              </motion.a>
+            ))}
           </div>
         </div>
       </section>
@@ -357,6 +373,9 @@ export default function HomePage() {
       </section>
 
       <EnhancedFooter />
+
+      {/* Toast Container */}
+      <ToastContainer toasts={toasts} onRemove={removeToast} />
     </div>
   );
 }

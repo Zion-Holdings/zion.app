@@ -1,8 +1,11 @@
 import type { AppProps } from 'next/app';
 import '../styles/globals.css';
+import ErrorBoundary from '../components/ErrorBoundary';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+export default function App({ Component, pageProps }: AppProps) {
+  return (
+    <ErrorBoundary>
+      <Component {...pageProps} />
+    </ErrorBoundary>
+  );
 }
-
-export default MyApp;
