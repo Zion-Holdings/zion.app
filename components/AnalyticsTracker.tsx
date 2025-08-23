@@ -1,17 +1,19 @@
-import React, { useEffect } from 'react';
-import { useRouter } from 'next/router';
-
-// Extend Window interface for Google Analytics
-declare global {
-  interface Window {
-    dataLayer: any[];
-    gtag: (...args: any[]) => void;
-  }
-}
+import React, { useEffect, useCallback } from 'react';
 
 interface AnalyticsTrackerProps {
-  trackingId?: string;
-  enableDebug?: boolean;
+  pageTitle?: string;
+  pagePath?: string;
+  customEvents?: Array<{
+    name: string;
+    parameters?: Record<string, any>;
+  }>;
+}
+
+// Performance entry types for Core Web Vitals
+interface PerformanceEventTiming extends PerformanceEntry {
+  processingStart: number;
+  processingEnd: number;
+  target?: any;
 }
 
 const AnalyticsTracker: React.FC<AnalyticsTrackerProps> = ({ 

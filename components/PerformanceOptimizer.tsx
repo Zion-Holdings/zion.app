@@ -1,12 +1,5 @@
-import React, { useEffect, useState, useCallback } from 'react';
-import { motion } from 'framer-motion';
-
-// Add browser API types
-declare global {
-  interface Window {
-    gtag?: (...args: unknown[]) => void;
-  }
-}
+import React, { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface PerformanceMetrics {
   loadTime: number;
@@ -16,9 +9,11 @@ interface PerformanceMetrics {
   cumulativeLayoutShift: number;
 }
 
-interface PerformanceOptimizerProps {
-  children: React.ReactNode;
-  onMetricsUpdate?: (metrics: PerformanceMetrics) => void;
+// Performance entry types for Core Web Vitals
+interface PerformanceEventTiming extends PerformanceEntry {
+  processingStart: number;
+  processingEnd: number;
+  target?: any;
 }
 
 const PerformanceOptimizer: React.FC<PerformanceOptimizerProps> = ({ 
