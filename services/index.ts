@@ -1,169 +1,77 @@
 // Export all micro SaaS services
-export { urlShortenerService } from './urlShortenerService';
-export { passwordGeneratorService } from './passwordGeneratorService';
-export { qrCodeService } from './qrCodeService';
-export { fileConverterService } from './fileConverterService';
-export { textAnalysisService } from './textAnalysisService';
+export { default as aiLandingPageBuilderService } from './aiLandingPageBuilder';
+export { default as aiFraudDetectionService } from './aiFraudDetection';
+export { gitService } from './gitService';
 
-// Export service types and interfaces
+// Service types
 export type {
-  ShortUrl,
-  UrlAnalytics,
-  ClickEvent,
-  CreateShortUrlRequest
-} from './urlShortenerService';
+  LandingPageTemplate,
+  LandingPageConfig,
+  LandingPageAnalytics,
+  AITemplateRecommendation
+} from './aiLandingPageBuilder';
 
 export type {
-  PasswordOptions,
-  PasswordStrength,
-  GeneratedPassword
-} from './passwordGeneratorService';
+  Transaction,
+  FraudRiskScore,
+  FraudRule,
+  FraudAlert,
+  FraudAnalytics
+} from './aiFraudDetection';
 
 export type {
-  QRCodeOptions,
-  QRCodeResult,
-  QRCodeTemplate
-} from './qrCodeService';
-
-export type {
-  ConversionOptions,
-  ConversionResult,
-  SupportedFormat,
-  FileInfo
-} from './fileConverterService';
-
-export type {
-  TextAnalysisResult,
-  BasicTextStats,
-  ReadabilityMetrics,
-  SentimentAnalysis,
-  KeywordAnalysis,
-  LanguageDetection,
-  EntityExtraction,
-  TextSummary
-} from './textAnalysisService';
+  GitFileStatus,
+  GitCommit,
+  GitBranch,
+  GitRemote,
+  GitStatus
+} from './gitService';
 
 // Service categories for easy discovery
-export const SERVICE_CATEGORIES = {
-  UTILITIES: {
-    name: 'Utility Tools',
-    description: 'Essential tools for everyday tasks',
-    services: ['urlShortener', 'passwordGenerator', 'qrCodeGenerator']
-  },
-  MEDIA: {
-    name: 'Media & Files',
-    description: 'File conversion and media processing tools',
-    services: ['fileConverter']
-  },
-  ANALYSIS: {
-    name: 'Analysis & Insights',
-    description: 'Text analysis and content insights',
-    services: ['textAnalysis']
-  }
+export const serviceCategories = {
+  'AI & Automation': [
+    'aiLandingPageBuilderService',
+    'aiFraudDetectionService'
+  ],
+  'Development Tools': [
+    'gitService'
+  ]
 } as const;
 
-// Service metadata for the application
-export const SERVICES_METADATA = {
-  urlShortener: {
-    name: 'URL Shortener',
-    description: 'Create short, trackable URLs with analytics',
-    icon: '🔗',
-    category: 'UTILITIES',
+// Service metadata for the micro SaaS page
+export const serviceMetadata = {
+  aiLandingPageBuilder: {
+    name: 'AI Landing Page Builder',
+    category: 'AI & Automation',
+    price: '$59/month',
+    trialDays: 14,
+    description: 'AI-powered landing page creation with conversion optimization and A/B testing capabilities.',
     features: [
-      'Custom short codes',
-      'Click tracking',
-      'Analytics dashboard',
-      'Expiration dates',
-      'QR code generation'
-    ],
-    pricing: 'Free',
-    apiEndpoint: '/api/url-shortener'
+      'AI-powered page generation',
+      'Conversion optimization',
+      'A/B testing automation',
+      'Mobile-responsive templates',
+      'SEO optimization',
+      'Analytics & heatmaps',
+      'Integration with marketing tools',
+      'Custom domain support'
+    ]
   },
-  passwordGenerator: {
-    name: 'Password Generator',
-    description: 'Generate secure passwords with strength analysis',
-    icon: '🔐',
-    category: 'UTILITIES',
+  aiFraudDetection: {
+    name: 'AI Fraud Detection System',
+    category: 'AI & Automation',
+    price: '$119/month',
+    trialDays: 14,
+    description: 'AI-powered fraud detection with real-time monitoring and automated prevention measures.',
     features: [
-      'Multiple generation modes',
-      'Strength analysis',
-      'Custom character sets',
-      'Password history',
-      'Security recommendations'
-    ],
-    pricing: 'Free',
-    apiEndpoint: '/api/password-generator'
-  },
-  qrCodeGenerator: {
-    name: 'QR Code Generator',
-    description: 'Create QR codes for various purposes',
-    icon: '📱',
-    category: 'UTILITIES',
-    features: [
-      'Multiple QR code types',
-      'Custom styling',
-      'Logo integration',
-      'Error correction',
-      'Template library'
-    ],
-    pricing: 'Free',
-    apiEndpoint: '/api/qr-code-generator'
-  },
-  fileConverter: {
-    name: 'File Converter',
-    description: 'Convert files between different formats',
-    icon: '🔄',
-    category: 'MEDIA',
-    features: [
-      'Multiple file formats',
-      'Batch conversion',
-      'Quality settings',
-      'Metadata preservation',
-      'Cloud processing'
-    ],
-    pricing: 'Free (Basic) / $9.99/month (Pro)',
-    apiEndpoint: '/api/file-converter'
-  },
-  textAnalysis: {
-    name: 'Text Analysis',
-    description: 'Analyze text for insights and optimization',
-    icon: '📊',
-    category: 'ANALYSIS',
-    features: [
-      'Readability metrics',
-      'Sentiment analysis',
-      'Keyword extraction',
-      'Entity recognition',
-      'Language detection'
-    ],
-    pricing: 'Free (Basic) / $19.99/month (Pro)',
-    apiEndpoint: '/api/text-analysis'
+      'Real-time fraud detection',
+      'AI risk assessment',
+      'Automated prevention',
+      'Transaction monitoring',
+      'Custom fraud rules',
+      'Performance analytics',
+      'Integration with payment systems',
+      '24/7 monitoring'
+    ]
   }
 } as const;
-
-// Service availability and status
-export const getServiceStatus = () => {
-  return {
-    urlShortener: { status: 'active', uptime: '99.9%', lastUpdated: new Date() },
-    passwordGenerator: { status: 'active', uptime: '99.9%', lastUpdated: new Date() },
-    qrCodeGenerator: { status: 'active', uptime: '99.9%', lastUpdated: new Date() },
-    fileConverter: { status: 'active', uptime: '99.9%', lastUpdated: new Date() },
-    textAnalysis: { status: 'active', uptime: '99.9%', lastUpdated: new Date() }
-  };
-};
-
-// Service usage statistics
-export const getServiceStats = () => {
-  return {
-    totalUsers: 15420,
-    totalRequests: 2847500,
-    averageResponseTime: 125,
-    services: {
-      urlShortener: { users: 8920, requests: 1250000, avgResponse: 89 },
-      passwordGenerator: { users: 12450, requests: 890000, avgResponse: 45 },
-      qrCodeGenerator: { users: 6780, requests: 456000, avgResponse: 156 },
-      fileConverter: { users: 5430, requests: 234000, avgResponse: 234 },
-      textAnalysis: { users: 3890, requests: 11500, avgResponse: 178 }
-    }
-  };
-};
