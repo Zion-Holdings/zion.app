@@ -1,5 +1,62 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Layout from './layout/Layout';
+<<<<<<< HEAD
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight, Play, Star, Users, Award, TrendingUp, Brain, Shield, Rocket, Loader2, ChevronDown, Sparkles, Globe, Zap } from 'lucide-react';
+
+// Enhanced Loading fallback component with better UX
+const LoadingFallback = () => (
+  <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5 }}
+      className="text-center relative"
+    >
+      <div className="relative mb-6">
+        <Loader2 className="w-16 h-16 text-cyan-400 animate-spin mx-auto" />
+        <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full blur-xl opacity-20 animate-pulse"></div>
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+          className="absolute inset-0 border-2 border-cyan-400/30 rounded-full"
+        />
+      </div>
+      <motion.p 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 0.5 }}
+        className="text-xl text-gray-300 mb-2 font-semibold"
+      >
+        Loading Zion Tech Group...
+      </motion.p>
+      <motion.p 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5, duration: 0.5 }}
+        className="text-sm text-gray-500"
+      >
+        Preparing your digital transformation journey
+      </motion.p>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.7, duration: 0.5 }}
+        className="mt-4 flex justify-center space-x-2"
+      >
+        {[0, 1, 2].map((i) => (
+          <motion.div
+            key={i}
+            animate={{ scale: [1, 1.2, 1] }}
+            transition={{ duration: 1, repeat: Infinity, delay: i * 0.2 }}
+            className="w-2 h-2 bg-cyan-400 rounded-full"
+          />
+        ))}
+      </motion.div>
+    </motion.div>
+  </div>
+);
+=======
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
@@ -8,6 +65,7 @@ import {
   DollarSign, Truck, Cloud, GraduationCap, Eye, Play, Lock
 } from 'lucide-react';
 import { AnimatePresence } from 'framer-motion';
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3653
 
 const Homepage2025: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -184,6 +242,22 @@ const Homepage2025: React.FC = () => {
         </div>
       </motion.div>
 
+<<<<<<< HEAD
+      {/* Enhanced Progress Indicator */}
+      <motion.div 
+        className="fixed top-0 left-0 w-full h-1 bg-gray-800 z-50"
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{ duration: 2, ease: "easeOut" }}
+      >
+        <motion.div 
+          className="h-full bg-gradient-to-r from-cyan-400 to-blue-500"
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 2, delay: 0.5, ease: "easeOut" }}
+        />
+      </motion.div>
+=======
         <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -218,6 +292,7 @@ const Homepage2025: React.FC = () => {
             Zion Tech Group delivers cutting-edge AI, quantum computing, and space technology solutions that transform businesses and drive innovation. 
             Experience our revolutionary 2037-2038 micro SAAS services featuring quantum AI consciousness, holographic metaverse platforms, and neural interfaces.
           </motion.p>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3653
 
       {/* Main Content */}
       <main id="main-content" className="relative z-10" role="main" aria-label="Zion Tech Group Homepage">
@@ -552,6 +627,8 @@ const Homepage2025: React.FC = () => {
                 View All Services
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
+<<<<<<< HEAD
+=======
             </div>
           </motion.div>
 
@@ -690,6 +767,7 @@ const Homepage2025: React.FC = () => {
               >
                 Learn More <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3653
             </motion.div>
 
             {/* Holographic Metaverse */}
@@ -761,6 +839,24 @@ const Homepage2025: React.FC = () => {
               </Link>
             </motion.div>
           </div>
+<<<<<<< HEAD
+        </motion.section>
+
+        {/* New About Section */}
+        <motion.section 
+          id="about"
+          className="py-16 sm:py-20 px-4 bg-gradient-to-b from-gray-800/50 to-gray-900/50"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8 }}
+          aria-labelledby="about-heading"
+        >
+          <div className="max-w-7xl mx-auto">
+            <motion.h2 
+              id="about-heading"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 sm:mb-16 bg-gradient-to-r from-emerald-400 to-cyan-500 bg-clip-text text-transparent"
+=======
 
           {/* View All Services CTA */}
           <motion.div
@@ -801,11 +897,74 @@ const Homepage2025: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <motion.div
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3653
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
               viewport={{ once: true, margin: "-100px" }}
             >
+<<<<<<< HEAD
+              About Zion Tech Group
+            </motion.h2>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+              >
+                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6">
+                  Pioneering the Future of Technology
+                </h3>
+                <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                  At Zion Tech Group, we believe in the power of innovation to transform businesses and unlock human potential. Our team of experts combines cutting-edge technology with deep industry knowledge to deliver solutions that drive real results.
+                </p>
+                <p className="text-gray-300 text-lg leading-relaxed mb-8">
+                  From AI and quantum computing to space technology and cybersecurity, we're at the forefront of the digital revolution, helping organizations navigate the complexities of tomorrow's technology landscape.
+                </p>
+                <button 
+                  className="px-6 py-3 bg-gradient-to-r from-emerald-500 to-cyan-600 text-white font-semibold rounded-lg hover:from-emerald-600 hover:to-cyan-700 transition-all duration-300 transform hover:scale-105 flex items-center gap-2"
+                  onClick={() => window.location.href = '/about'}
+                  aria-label="Learn more about Zion Tech Group"
+                >
+                  <Users className="w-5 h-5" />
+                  Learn More About Us
+                </button>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="relative"
+              >
+                <div className="grid grid-cols-2 gap-4">
+                  {[
+                    { icon: Brain, label: "AI Innovation", color: "cyan" },
+                    { icon: Shield, label: "Security First", color: "blue" },
+                    { icon: Rocket, label: "Space Tech", color: "purple" },
+                    { icon: Zap, label: "Quantum Power", color: "emerald" }
+                  ].map((item, index) => (
+                    <motion.div
+                      key={item.label}
+                      className="p-6 rounded-xl bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 text-center group hover:border-cyan-400/50 transition-all duration-300"
+                      whileHover={{ y: -5, scale: 1.02 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                    >
+                      {React.createElement(item.icon, { 
+                        className: `w-8 h-8 mx-auto mb-3 ${getColorClasses(item.color)} group-hover:scale-110 transition-transform` 
+                      })}
+                      <p className="text-white font-semibold">{item.label}</p>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+=======
               <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <Star className="w-8 h-8 text-white" />
               </div>
@@ -888,11 +1047,16 @@ const Homepage2025: React.FC = () => {
               >
                 Explore Future Services
               </Link>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3653
             </div>
           </div>
         </section>
       </main>
 
+<<<<<<< HEAD
+      {/* AI Chatbot */}
+      <AIChatbot />
+=======
       {/* Floating Action Button */}
       <AnimatePresence>
         {showFloatingActions && (
@@ -911,6 +1075,7 @@ const Homepage2025: React.FC = () => {
           </motion.div>
         )}
       </AnimatePresence>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-3653
     </Layout>
   );
 };
