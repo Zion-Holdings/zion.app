@@ -1,279 +1,184 @@
 import React from 'react';
 import Layout from '../../components/layout/Layout';
 import { motion } from 'framer-motion';
-import { 
-  Cpu, 
-  Settings, 
-  Shield, 
-  Database, 
-  Brain, 
-  TrendingUp, 
-  Zap, 
-  Globe,
-  ArrowRight,
-  CheckCircle,
-  Star,
-  Target,
-  Rocket,
-  Brain as BrainIcon,
-  Atom,
-  Factory,
-  Gauge,
-  Wrench,
-  Cog,
-  BarChart3,
-  Network,
-  Monitor,
-  Car,
-  Pill,
-  Utensils
-} from 'lucide-react';
+import { Cpu, Sparkles, Zap, Target, Users, Award, Clock, CheckCircle, Settings, Factory } from 'lucide-react';
 import Link from 'next/link';
 
-const ManufacturingIOTPage: React.FC = () => {
-  const features = [
+const ManufacturingSolutionsPage: React.FC = () => {
+  const solutions = [
     {
+      name: 'AI-Powered Manufacturing Intelligence 2045',
+      description: 'Advanced AI manufacturing optimization with consciousness and predictive analytics',
+      href: '/ai-powered-manufacturing-intelligence-2045',
+      icon: Factory,
+      color: 'from-blue-500 to-indigo-500'
+    },
+    {
+      name: 'Quantum Manufacturing Platform 2045',
+      description: 'Quantum-powered manufacturing with consciousness and AI integration',
+      href: '/quantum-manufacturing-platform-2045',
       icon: Cpu,
-      title: "Smart Manufacturing",
-      description: "AI-powered production optimization and automation",
-      color: "from-blue-500 to-cyan-500"
+      color: 'from-indigo-500 to-purple-500'
     },
     {
+      name: 'Autonomous Production AI 2045',
+      description: 'Fully autonomous AI production management with consciousness',
+      href: '/autonomous-production-ai-2045',
       icon: Settings,
-      title: "IoT Integration",
-      description: "Connected devices and real-time monitoring",
-      color: "from-purple-500 to-pink-500"
+      color: 'from-purple-500 to-blue-500'
     },
     {
-      icon: Shield,
-      title: "Industrial Security",
-      description: "Cybersecurity for critical manufacturing systems",
-      color: "from-red-500 to-orange-500"
-    },
-    {
-      icon: Database,
-      title: "Predictive Analytics",
-      description: "AI-driven maintenance and quality control",
-      color: "from-emerald-500 to-teal-500"
-    },
-    {
-      icon: Brain,
-      title: "Machine Learning",
-      description: "Intelligent process optimization and automation",
-      color: "from-indigo-500 to-purple-500"
-    },
-    {
-      icon: TrendingUp,
-      title: "Performance Monitoring",
-      description: "Real-time KPIs and operational insights",
-      color: "from-yellow-500 to-orange-500"
+      name: 'Smart Factory Intelligence 2045',
+      description: 'AI-powered smart factory with consciousness and IoT integration',
+      href: '/smart-factory-intelligence-2045',
+      icon: Sparkles,
+      color: 'from-blue-500 to-cyan-500'
     }
   ];
 
-  const solutions = [
-    {
-      title: "Smart Factory Platform",
-      description: "Comprehensive IoT and AI-powered manufacturing solution",
-      features: ["Real-time Monitoring", "Predictive Maintenance", "Quality Control", "Energy Optimization"],
-      href: "/smart-factory-platform"
-    },
-    {
-      title: "Industrial IoT Security",
-      description: "Advanced cybersecurity for manufacturing environments",
-      features: ["Threat Detection", "Access Control", "Data Encryption", "Compliance Management"],
-      href: "/industrial-iot-security"
-    },
-    {
-      title: "Manufacturing Analytics",
-      description: "AI-driven insights for operational excellence",
-      features: ["Performance Metrics", "Predictive Analytics", "Quality Assurance", "Cost Optimization"],
-      href: "/manufacturing-analytics"
-    },
-    {
-      title: "Supply Chain Intelligence",
-      description: "End-to-end supply chain visibility and optimization",
-      features: ["Real-time Tracking", "Demand Forecasting", "Inventory Management", "Risk Assessment"],
-      href: "/supply-chain-intelligence"
-    }
+  const features = [
+    { icon: Factory, title: "Smart Manufacturing", description: "Intelligent production systems" },
+    { icon: Cpu, title: "Quantum Computing", description: "Quantum-powered optimization" },
+    { icon: Settings, title: "Autonomous AI", description: "Self-governing production" },
+    { icon: Zap, title: "IoT Integration", description: "Connected factory systems" }
   ];
 
   const stats = [
-    { number: "30%", label: "Efficiency Gain", description: "Average improvement in production" },
-    { number: "50%", label: "Cost Reduction", description: "In operational expenses" },
-    { number: "99.9%", label: "Uptime", description: "Manufacturing system reliability" },
-    { number: "200+", label: "Factories", description: "Connected worldwide" }
-  ];
-
-  const useCases = [
-    {
-      title: "Automotive Manufacturing",
-      description: "Smart production lines with AI quality control",
-      icon: Car,
-      color: "from-blue-500 to-cyan-500"
-    },
-    {
-      title: "Electronics Production",
-      description: "IoT-enabled assembly and testing automation",
-      icon: Cpu,
-      color: "from-purple-500 to-pink-500"
-    },
-    {
-      title: "Pharmaceutical Manufacturing",
-      description: "Compliant and traceable production processes",
-      icon: Pill,
-      color: "from-emerald-500 to-teal-500"
-    },
-    {
-      title: "Food & Beverage",
-      description: "Quality control and safety monitoring systems",
-      icon: Utensils,
-      color: "from-yellow-500 to-orange-500"
-    }
-  ];
-
-  const technologies = [
-    {
-      title: "Industrial IoT",
-      description: "Connected sensors and devices for real-time monitoring",
-      icon: Network,
-      color: "from-blue-500 to-cyan-500"
-    },
-    {
-      title: "Artificial Intelligence",
-      description: "Machine learning for predictive maintenance and optimization",
-      icon: Brain,
-      color: "from-purple-500 to-pink-500"
-    },
-    {
-      title: "Edge Computing",
-      description: "Local processing for real-time decision making",
-      icon: Cpu,
-      color: "from-emerald-500 to-teal-500"
-    },
-    {
-      title: "Digital Twins",
-      description: "Virtual replicas for simulation and optimization",
-      icon: Monitor,
-      color: "from-indigo-500 to-purple-500"
-    }
+    { number: "500%", label: "Efficiency Gain", icon: Zap },
+    { number: "99.9%", label: "Quality Rate", icon: CheckCircle },
+    { number: "24/7", label: "Operation", icon: Clock },
+    { number: "100+", label: "Factories", icon: Factory }
   ];
 
   return (
-    <Layout>
-      <div className="min-h-screen bg-black text-white">
+    <Layout 
+      title="Manufacturing Solutions - Zion Tech Group"
+      description="Revolutionary manufacturing solutions with AI consciousness, quantum computing, and autonomous production intelligence. Leading the future of smart manufacturing."
+      keywords="manufacturing solutions, AI manufacturing, quantum manufacturing, autonomous production, smart factory, Zion Tech Group"
+    >
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
         {/* Hero Section */}
         <section className="relative pt-32 pb-20 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-orange-900/20 via-blue-900/20 to-purple-900/20" />
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/20 to-indigo-900/20"></div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-center"
             >
-              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-orange-400 via-blue-400 to-purple-400 bg-clip-text text-transparent mb-6">
-                Manufacturing & IoT
+              <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+                Manufacturing
+                <span className="block bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+                  Revolution Platform
+                </span>
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
-                Transform manufacturing with cutting-edge IoT and AI solutions that drive efficiency, quality, and innovation in Industry 4.0.
+              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
+                Pioneering the future of manufacturing with AI consciousness, quantum computing, 
+                and autonomous production intelligence for unprecedented efficiency.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link 
-                  href="/contact" 
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-blue-600 text-white rounded-xl font-semibold hover:from-orange-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  href="/contact"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-semibold rounded-full hover:from-blue-600 hover:to-indigo-600 transition-all duration-300 transform hover:scale-105"
                 >
-                  Manufacturing Consultation
-                  <ArrowRight className="ml-2 w-5 h-5" />
+                  Transform Manufacturing
+                  <Factory className="w-5 h-5 ml-2" />
                 </Link>
                 <Link 
-                  href="/solutions" 
-                  className="inline-flex items-center px-8 py-4 border border-gray-600 text-gray-300 rounded-xl font-semibold hover:border-orange-500 hover:text-orange-400 transition-all duration-300"
+                  href="/solutions"
+                  className="inline-flex items-center px-8 py-4 border-2 border-blue-500 text-blue-400 font-semibold rounded-full hover:bg-blue-500 hover:text-white transition-all duration-300"
                 >
-                  View All Solutions
+                  Explore All Solutions
                 </Link>
               </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Features Grid */}
-        <section className="py-20 bg-gradient-to-b from-black to-gray-900">
+        {/* Features Section */}
+        <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Manufacturing Innovation Features
+                Revolutionary Manufacturing Capabilities
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Built for the manufacturing industry with IoT, AI, and automation at the core.
+                Our manufacturing platform delivers unprecedented capabilities with AI consciousness, 
+                quantum computing, and autonomous production management.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {features.map((feature, index) => (
                 <motion.div
-                  key={index}
+                  key={feature.title}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-orange-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/20"
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl rounded-2xl p-6 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300"
                 >
-                  <div className={`w-16 h-16 bg-gradient-to-r ${feature.color} rounded-2xl flex items-center justify-center mb-6`}>
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center mb-4">
                     <feature.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-4">{feature.title}</h3>
-                  <p className="text-gray-400 text-lg">{feature.description}</p>
+                  <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
+                  <p className="text-gray-400">{feature.description}</p>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Solutions Section */}
-        <section className="py-20 bg-black">
+        {/* Solutions Grid */}
+        <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
               className="text-center mb-16"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Manufacturing Solutions Portfolio
+                Our Manufacturing Solutions
               </h2>
               <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Comprehensive IoT and AI solutions designed to transform manufacturing operations and drive Industry 4.0.
+                Discover our comprehensive suite of AI-powered manufacturing and production solutions.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {solutions.map((solution, index) => (
                 <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  key={solution.name}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-orange-500/50 transition-all duration-300"
+                  viewport={{ once: true }}
+                  className="group"
                 >
-                  <h3 className="text-2xl font-bold text-white mb-4">{solution.title}</h3>
-                  <p className="text-gray-400 mb-6">{solution.description}</p>
-                  <div className="grid grid-cols-2 gap-3 mb-6">
-                    {solution.features.map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-center space-x-2">
-                        <CheckCircle className="w-5 h-5 text-orange-400" />
-                        <span className="text-gray-300 text-sm">{feature}</span>
+                  <Link href={solution.href}>
+                    <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-xl rounded-2xl p-8 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 group-hover:scale-105">
+                      <div className={`w-20 h-20 bg-gradient-to-r ${solution.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                        <solution.icon className="w-10 h-10 text-white" />
                       </div>
-                    ))}
-                  </div>
-                  <Link 
-                    href={solution.href}
-                    className="inline-flex items-center text-orange-400 hover:text-orange-300 transition-colors duration-300"
-                  >
-                    Learn More <ArrowRight className="ml-2 w-4 h-4" />
+                      <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors duration-300">
+                        {solution.name}
+                      </h3>
+                      <p className="text-gray-400 text-lg leading-relaxed">
+                        {solution.description}
+                      </p>
+                      <div className="mt-6 flex items-center text-blue-400 group-hover:text-blue-300 transition-colors duration-300">
+                        <span className="font-semibold">Learn More</span>
+                        <Factory className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                      </div>
+                    </div>
                   </Link>
                 </motion.div>
               ))}
@@ -281,111 +186,24 @@ const ManufacturingIOTPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Use Cases Section */}
-        <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Manufacturing Use Cases
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Real-world applications of our manufacturing and IoT solutions across industries.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {useCases.map((useCase, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-orange-500/50 transition-all duration-300"
-                >
-                  <div className={`w-16 h-16 bg-gradient-to-r ${useCase.color} rounded-2xl flex items-center justify-center mb-6`}>
-                    <useCase.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-4">{useCase.title}</h3>
-                  <p className="text-gray-400 text-lg">{useCase.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Technologies Section */}
-        <section className="py-20 bg-black">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Core Technologies
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Advanced technologies powering the future of manufacturing.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {technologies.map((technology, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-orange-500/50 transition-all duration-300"
-                >
-                  <div className={`w-16 h-16 bg-gradient-to-r ${technology.color} rounded-2xl flex items-center justify-center mb-6`}>
-                    <technology.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-4">{technology.title}</h3>
-                  <p className="text-gray-400 text-lg">{technology.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* Stats Section */}
-        <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
+        <section className="py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Manufacturing Impact & Scale
-              </h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Proven results in transforming manufacturing operations and efficiency.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
                 <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  key={stat.label}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
                   className="text-center"
                 >
-                  <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-orange-400 to-blue-400 bg-clip-text text-transparent mb-2">
-                    {stat.number}
+                  <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <stat.icon className="w-10 h-10 text-white" />
                   </div>
-                  <div className="text-xl font-semibold text-white mb-2">{stat.label}</div>
-                  <div className="text-gray-400">{stat.description}</div>
+                  <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.number}</div>
+                  <div className="text-gray-400">{stat.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -393,30 +211,32 @@ const ManufacturingIOTPage: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-orange-900/20 via-blue-900/20 to-purple-900/20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="py-20">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Ready to Transform Manufacturing?
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-                Let's discuss how our IoT and AI solutions can drive efficiency, quality, and innovation in your manufacturing operations.
+              <p className="text-xl text-gray-400 mb-8">
+                Join the manufacturing revolution with AI consciousness and quantum computing. 
+                Transform your production with the future of smart manufacturing.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link 
-                  href="/contact" 
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-orange-500 to-blue-600 text-white rounded-xl font-semibold hover:from-orange-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  href="/contact"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-semibold rounded-full hover:from-blue-600 hover:to-indigo-600 transition-all duration-300 transform hover:scale-105"
                 >
-                  Schedule Manufacturing Consultation
-                  <ArrowRight className="ml-2 w-5 h-5" />
+                  Transform Manufacturing
+                  <Factory className="w-5 h-5 ml-2" />
                 </Link>
                 <Link 
-                  href="/solutions" 
-                  className="inline-flex items-center px-8 py-4 border border-gray-600 text-gray-300 rounded-xl font-semibold hover:border-orange-500 hover:text-orange-400 transition-all duration-300"
+                  href="/solutions"
+                  className="inline-flex items-center px-8 py-4 border-2 border-blue-500 text-blue-400 font-semibold rounded-full hover:bg-blue-500 hover:text-white transition-all duration-300"
                 >
                   Explore All Solutions
                 </Link>
@@ -429,4 +249,4 @@ const ManufacturingIOTPage: React.FC = () => {
   );
 };
 
-export default ManufacturingIOTPage;
+export default ManufacturingSolutionsPage;

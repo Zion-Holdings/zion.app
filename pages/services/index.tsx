@@ -69,6 +69,8 @@ import { innovativeMicroSaasExpansion2025 } from '../../data/2025-innovative-mic
 import { innovative2025ITSolutionsExpansion } from '../../data/2025-innovative-it-solutions-expansion';
 import { innovative2025AISolutionsExpansion } from '../../data/2025-innovative-ai-solutions-expansion';
 
+
+
 function toSlug(value: string) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 }
@@ -164,7 +166,8 @@ export default function ServicesIndexPage() {
     // Our new 2025 innovative services
     .concat(innovativeMicroSaasExpansion2025 as unknown[])
     .concat(innovative2025ITSolutionsExpansion as unknown[])
-    .concat(innovative2025AISolutionsExpansion as unknown[]);
+    .concat(innovative2025AISolutionsExpansion as unknown[])
+
 
   // Filter out services without required properties
   const validServices = all.filter(service => 
