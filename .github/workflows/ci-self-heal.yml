@@ -12,10 +12,12 @@ concurrency:
   group: workflow-${{ github.ref }}
   cancel-in-progress: false
 jobs:
-  main:
-    name: Main Job
+  attempt-fix:
+    name: Attempt Fix
+    continue-on-error: true
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4

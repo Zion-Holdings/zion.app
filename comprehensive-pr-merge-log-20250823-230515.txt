@@ -1,0 +1,40 @@
+2025-08-23 23:05:15 - [0;32m🚀 Starting comprehensive PR merge process...[0m
+2025-08-23 23:05:15 - [0;34m🔒 Creating backup branch: backup-main-20250823-230515[0m
+2025-08-23 23:05:16 - [0;32m✅ Backup branch created successfully[0m
+2025-08-23 23:05:16 - [0;34m🔍 Checking GitHub for open PRs...[0m
+2025-08-23 23:05:17 - [0;32m📋 Found 100 open PRs[0m
+2025-08-23 23:05:17 - [0;32m✅ Successfully retrieved PR information[0m
+2025-08-23 23:05:17 - [0;32m📋 GitHub PRs found, processing...[0m
+2025-08-23 23:05:17 - [0;34m🔄 Processing GitHub PRs...[0m
+2025-08-23 23:05:17 - [0;34m📊 Total PRs to process: 100[0m
+2025-08-23 23:05:17 - [0;34m📋 Processing PR #3900: Fix failing github actions (branch: cursor/fix-failing-github-actions-e413)[0m
+2025-08-23 23:05:18 - [0;34m🔄 Attempting to merge cursor/fix-failing-github-actions-e413...[0m
+2025-08-23 23:05:19 - [1;33m⚠️  Merge conflicts detected in cursor/fix-failing-github-actions-e413 (attempt 1/3), resolving...[0m
+2025-08-23 23:05:19 - [0;34m📋 Conflicted files: .github/workflows/ci-self-heal.yml
+.github/workflows/ci.yml
+netlify/functions/functions-manifest.json
+next-env.d.ts
+pages/discover.tsx
+tsconfig.tsbuildinfo[0m
+2025-08-23 23:05:19 - [0;34m🔧 Resolving conflicts in .github/workflows/ci-self-heal.yml for branch cursor/fix-failing-github-actions-e413...[0m
+2025-08-23 23:05:19 - [1;33m⚠️  Found conflicts in .github/workflows/ci-self-heal.yml, resolving...[0m
+2025-08-23 23:05:19 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:19 - [0;32m✅ Resolved conflicts in .github/workflows/ci-self-heal.yml[0m
+2025-08-23 23:05:19 - [0;34m🔧 Resolving conflicts in .github/workflows/ci.yml for branch cursor/fix-failing-github-actions-e413...[0m
+2025-08-23 23:05:19 - [1;33m⚠️  Found conflicts in .github/workflows/ci.yml, resolving...[0m
+2025-08-23 23:05:19 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:19 - [0;32m✅ Resolved conflicts in .github/workflows/ci.yml[0m
+2025-08-23 23:05:19 - [0;34m🔧 Resolving conflicts in netlify/functions/functions-manifest.json for branch cursor/fix-failing-github-actions-e413...[0m
+2025-08-23 23:05:19 - [1;33m⚠️  Found conflicts in netlify/functions/functions-manifest.json, resolving...[0m
+2025-08-23 23:05:19 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:19 - [0;32m✅ Resolved conflicts in netlify/functions/functions-manifest.json[0m
+2025-08-23 23:05:19 - [0;34m🔧 Resolving conflicts in next-env.d.ts for branch cursor/fix-failing-github-actions-e413...[0m
+2025-08-23 23:05:19 - [1;33m⚠️  Found conflicts in next-env.d.ts, resolving...[0m
+2025-08-23 23:05:19 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:05:19 - [0;32m✅ Resolved conflicts in next-env.d.ts[0m
+2025-08-23 23:05:19 - [0;34m🔧 Resolving conflicts in pages/discover.tsx for branch cursor/fix-failing-github-actions-e413...[0m
+2025-08-23 23:05:19 - [0;34mℹ️  No conflicts found in pages/discover.tsx[0m
+2025-08-23 23:05:19 - [0;34m🔧 Resolving conflicts in tsconfig.tsbuildinfo for branch cursor/fix-failing-github-actions-e413...[0m
+2025-08-23 23:05:19 - [1;33m⚠️  Found conflicts in tsconfig.tsbuildinfo, resolving...[0m
+2025-08-23 23:05:19 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:05:19 - [0;32m✅ Resolved conflicts in tsconfig.tsbuildinfo[0m
