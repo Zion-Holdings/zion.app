@@ -85,3 +85,11 @@
 2025-08-23 22:57:34 - Resolving conflicts in tsconfig.json for branch 4fu9r9-codex/check-logs-and-fix-errors
 2025-08-23 22:57:34 - Resolving conflicts in tsconfig.tsbuildinfo for branch 4fu9r9-codex/check-logs-and-fix-errors
 2025-08-23 22:57:34 - Resolving conflicts in types/global.d.ts for branch 4fu9r9-codex/check-logs-and-fix-errors
+2025-08-23 22:57:35 - Merge conflicts detected in 4o9pcp-codex/add-test-for-failed-login-toast
+2025-08-23 22:57:35 - Resolving conflicts in package-lock.json for branch 4o9pcp-codex/add-test-for-failed-login-toast
+2025-08-23 22:57:35 - Resolving conflicts in package.json for branch 4o9pcp-codex/add-test-for-failed-login-toast
+2025-08-23 22:57:35 - Resolving conflicts in src/components/auth/login/LoginForm.tsx for branch 4o9pcp-codex/add-test-for-failed-login-toast
+2025-08-23 22:57:35 - Resolving conflicts in src/components/ui/toaster.tsx for branch 4o9pcp-codex/add-test-for-failed-login-toast
+2025-08-23 22:57:35 - Resolving conflicts in src/hooks/use-toast.ts for branch 4o9pcp-codex/add-test-for-failed-login-toast
+2025-08-23 22:57:35 - Resolving conflicts in src/services/authService.ts for branch 4o9pcp-codex/add-test-for-failed-login-toast
+2025-08-23 22:57:35 - Resolving conflicts in tests/Login.test.tsx for branch 4o9pcp-codex/add-test-for-failed-login-toast
