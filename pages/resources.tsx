@@ -21,6 +21,22 @@ export default function ResourcesPage() {
       technologies: ['Computer Vision', 'IoT Sensors', 'Predictive Analytics', 'Robotic Process Automation']
     },
     {
+      id: 'healthcare-ai-transformation',
+      title: 'AI-Powered Healthcare Diagnosis',
+      company: 'Metropolitan Medical Center',
+      industry: 'Healthcare',
+      results: '35% improvement in diagnostic accuracy, 45% reduction in wait times',
+      description: 'Implementing AI diagnostic systems to enhance patient care and operational efficiency.'
+    },
+    {
+      id: 'financial-services-automation',
+      title: 'Intelligent Financial Services Automation',
+      company: 'Global Bank International',
+      industry: 'Financial Services',
+      results: '70% faster transaction processing, 99.99% fraud detection accuracy',
+      description: 'Building autonomous financial systems for secure, efficient banking operations.'
+    },
+    {
       id: 'content-generation-scale',
       title: 'Scaling Content Generation 10x',
       company: 'Digital Marketing Agency',
@@ -30,6 +46,14 @@ export default function ResourcesPage() {
       duration: '4 months',
       teamSize: '5 developers',
       technologies: ['Natural Language Processing', 'Content Optimization', 'SEO Automation', 'Social Media Integration']
+    },
+    {
+      id: 'smart-city-infrastructure',
+      title: 'Smart City Infrastructure Management',
+      company: 'City of Innovation',
+      industry: 'Government',
+      results: '30% reduction in energy consumption, 50% improvement in traffic flow',
+      description: 'Creating intelligent urban infrastructure through AI and IoT integration.'
     },
     {
       id: 'cloud-infrastructure-optimization',
@@ -99,6 +123,30 @@ export default function ResourcesPage() {
       author: 'Prof. Michael Rodriguez, Ethics & AI Specialist'
     },
     {
+      id: 'edge-computing-healthcare',
+      title: 'Edge AI in Healthcare: A Comprehensive Guide',
+      description: 'Exploring the implementation of edge AI systems in healthcare for improved patient outcomes and operational efficiency.',
+      downloadUrl: '#',
+      pages: '38',
+      category: 'Healthcare'
+    },
+    {
+      id: 'cybersecurity-autonomous-systems',
+      title: 'Securing Autonomous Systems: Best Practices',
+      description: 'Essential cybersecurity strategies for protecting AI-powered autonomous infrastructure.',
+      downloadUrl: '#',
+      pages: '41',
+      category: 'Security'
+    },
+    {
+      id: 'sustainable-ai-implementation',
+      title: 'Sustainable AI: Green Computing for Autonomous Systems',
+      description: 'Implementing environmentally conscious AI systems while maintaining performance and reliability.',
+      downloadUrl: '#',
+      pages: '29',
+      category: 'Sustainability'
+    },
+    {
       id: 'automation-roi-calculator',
       title: 'Automation ROI Calculator Guide',
       description: 'How to calculate and maximize return on investment for automation initiatives.',
@@ -158,36 +206,32 @@ export default function ResourcesPage() {
       features: ['5-level maturity assessment', 'Capability mapping', 'Gap analysis', 'Roadmap planning']
     },
     {
+      id: 'cybersecurity-audit-tool',
+      title: 'AI Security Audit Tool',
+      description: 'Comprehensive security assessment for autonomous systems and AI infrastructure.',
+      type: 'Security Tool',
+      estimatedTime: '45 minutes'
+    },
+    {
       id: 'performance-benchmark',
       title: 'Performance Benchmarking Tool',
       description: 'Compare your automation performance against industry standards.',
       type: 'Analytics Tool',
-      estimatedTime: '20 minutes',
-      features: ['Real-time metrics', 'Industry comparisons', 'Performance trends', 'Optimization suggestions']
+      estimatedTime: '20 minutes'
     },
     {
-      id: 'security-assessment',
-      title: 'AI Security Assessment Tool',
-      description: 'Comprehensive security evaluation for AI systems and implementations.',
-      type: 'Security Tool',
-      estimatedTime: '45 minutes',
-      features: ['Vulnerability scanning', 'Compliance checking', 'Risk assessment', 'Security recommendations']
+      id: 'sustainability-calculator',
+      title: 'AI Sustainability Calculator',
+      description: 'Measure the environmental impact of your AI systems and identify optimization opportunities.',
+      type: 'Environmental Tool',
+      estimatedTime: '25 minutes'
     },
     {
-      id: 'cost-calculator',
-      title: 'AI Implementation Cost Calculator',
-      description: 'Estimate the total cost of ownership for AI automation initiatives.',
-      type: 'Financial Tool',
-      estimatedTime: '25 minutes',
-      features: ['Cost breakdown', 'ROI projections', 'Budget planning', 'Resource allocation']
-    },
-    {
-      id: 'talent-assessment',
-      title: 'AI Talent Assessment Framework',
-      description: 'Evaluate your team\'s AI capabilities and identify skill gaps.',
-      type: 'Assessment Tool',
-      estimatedTime: '35 minutes',
-      features: ['Skill evaluation', 'Gap analysis', 'Training recommendations', 'Team development planning']
+      id: 'edge-computing-optimizer',
+      title: 'Edge Computing Optimizer',
+      description: 'Optimize your edge AI deployment for maximum performance and efficiency.',
+      type: 'Optimization Tool',
+      estimatedTime: '35 minutes'
     }
   ];
 
@@ -288,136 +332,54 @@ export default function ResourcesPage() {
               </div>
             </section>
             
-            {/* Training & Certification Section */}
+            {/* Webinars and Events Section */}
             <section className="mb-20">
-              <h2 className="text-3xl font-bold mb-8 text-center text-white">Training & Certification</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-yellow-400/30 transition-all duration-300">
-                  <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">🎓</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 text-white">AI Fundamentals Course</h3>
-                  <p className="text-white/80 text-sm mb-4">Master the basics of artificial intelligence and machine learning.</p>
-                  <div className="space-y-2 mb-6">
-                    <span className="inline-block px-3 py-1 bg-yellow-400/20 text-yellow-400 text-xs rounded-full border border-yellow-400/30">
-                      Beginner
-                    </span>
-                    <span className="block text-white/60 text-xs">Duration: 8 weeks</span>
-                    <span className="block text-white/60 text-xs">Certification included</span>
-                  </div>
-                  <Link 
-                    href="/training/ai-fundamentals"
-                    className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-orange-400 text-white px-6 py-3 rounded-lg font-semibold hover:from-yellow-500 hover:to-orange-500 transition-all duration-300"
-                  >
-                    Enroll Now
-                    <span aria-hidden>→</span>
-                  </Link>
-                </div>
-
-                <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-purple-400/30 transition-all duration-300">
-                  <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-indigo-500 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">⚡</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 text-white">Advanced Automation</h3>
-                  <p className="text-white/80 text-sm mb-4">Deep dive into enterprise automation and AI deployment.</p>
-                  <div className="space-y-2 mb-6">
-                    <span className="inline-block px-3 py-1 bg-purple-400/20 text-purple-400 text-xs rounded-full border border-purple-400/30">
-                      Advanced
-                    </span>
-                    <span className="block text-white/60 text-xs">Duration: 12 weeks</span>
-                    <span className="block text-white/60 text-xs">Hands-on projects</span>
-                  </div>
-                  <Link 
-                    href="/training/advanced-automation"
-                    className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-400 to-indigo-400 text-white px-6 py-3 rounded-lg font-semibold hover:from-purple-500 hover:to-indigo-500 transition-all duration-300"
-                  >
-                    Enroll Now
-                    <span aria-hidden>→</span>
-                  </Link>
-                </div>
-
-                <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-blue-400/30 transition-all duration-300">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <span className="text-2xl">🛡️</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 text-white">AI Security Specialist</h3>
-                  <p className="text-white/80 text-sm mb-4">Learn to secure AI systems and protect against emerging threats.</p>
-                  <div className="space-y-2 mb-6">
-                    <span className="inline-block px-3 py-1 bg-blue-400/20 text-blue-400 text-xs rounded-full border border-blue-400/30">
-                      Intermediate
-                    </span>
-                    <span className="block text-white/60 text-xs">Duration: 10 weeks</span>
-                    <span className="block text-white/60 text-xs">Security certification</span>
-                  </div>
-                  <Link 
-                    href="/training/ai-security"
-                    className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-400 to-cyan-400 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-500 hover:to-cyan-500 transition-all duration-300"
-                  >
-                    Enroll Now
-                    <span aria-hidden>→</span>
-                  </Link>
-                </div>
-              </div>
-            </section>
-
-            {/* Community & Events Section */}
-            <section className="mb-20">
-              <h2 className="text-3xl font-bold mb-8 text-center text-white">Community & Events</h2>
+              <h2 className="text-3xl font-bold mb-8 text-center text-white">Upcoming Webinars & Events</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-emerald-400/30 transition-all duration-300">
-                  <h3 className="text-xl font-bold mb-4 text-white">AI Automation Summit 2025</h3>
-                  <p className="text-white/80 text-sm mb-4">Join industry leaders and experts for the premier AI automation conference.</p>
-                  <div className="space-y-3 mb-6">
-                    <div className="flex items-center gap-2 text-white/70 text-sm">
-                      <span>📅</span>
-                      <span>March 15-17, 2025</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-white/70 text-sm">
-                      <span>📍</span>
-                      <span>San Francisco, CA</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-white/70 text-sm">
-                      <span>🎯</span>
-                      <span>500+ attendees expected</span>
-                    </div>
+                <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-purple-400/30 transition-all duration-300">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="px-3 py-1 bg-purple-400/20 text-purple-400 text-sm rounded-full border border-purple-400/30">
+                      Webinar
+                    </span>
+                    <span className="text-white/60 text-sm">February 15, 2025</span>
                   </div>
-                  <Link 
-                    href="/events/summit-2025"
-                    className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-400 to-teal-400 text-white px-6 py-3 rounded-lg font-semibold hover:from-emerald-500 hover:to-teal-500 transition-all duration-300"
-                  >
+                  <h3 className="text-xl font-bold mb-3 text-white">The Future of Edge AI in Healthcare</h3>
+                  <p className="text-white/80 text-sm mb-4">
+                    Join us for an in-depth discussion on how edge AI is revolutionizing healthcare delivery, 
+                    featuring real-world case studies and expert insights.
+                  </p>
+                  <div className="flex items-center gap-4 mb-6">
+                    <span className="text-purple-400 text-sm">⏰ 2:00 PM EST</span>
+                    <span className="text-purple-400 text-sm">👥 500+ attendees</span>
+                  </div>
+                  <button className="w-full bg-gradient-to-r from-purple-400 to-indigo-400 text-white px-6 py-3 rounded-lg font-semibold hover:from-purple-500 hover:to-indigo-500 transition-all duration-300">
                     Register Now
-                    <span aria-hidden>→</span>
-                  </Link>
+                  </button>
                 </div>
-
-                <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-pink-400/30 transition-all duration-300">
-                  <h3 className="text-xl font-bold mb-4 text-white">AI Innovation Lab</h3>
-                  <p className="text-white/80 text-sm mb-4">Collaborate with peers in our monthly innovation workshops and hackathons.</p>
-                  <div className="space-y-3 mb-6">
-                    <div className="flex items-center gap-2 text-white/70 text-sm">
-                      <span>🔄</span>
-                      <span>Monthly workshops</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-white/70 text-sm">
-                      <span>👥</span>
-                      <span>Open to all skill levels</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-white/70 text-sm">
-                      <span>🏆</span>
-                      <span>Prizes and recognition</span>
-                    </div>
+                
+                <div className="bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:border-orange-400/30 transition-all duration-300">
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="px-3 py-1 bg-orange-400/20 text-orange-400 text-sm rounded-full border border-orange-400/30">
+                      Conference
+                    </span>
+                    <span className="text-white/60 text-sm">March 8-10, 2025</span>
                   </div>
-                  <Link 
-                    href="/community/innovation-lab"
-                    className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-400 to-rose-400 text-white px-6 py-3 rounded-lg font-semibold hover:from-pink-500 hover:to-rose-500 transition-all duration-300"
-                  >
-                    Join Community
-                    <span aria-hidden>→</span>
-                  </Link>
+                  <h3 className="text-xl font-bold mb-3 text-white">AI Automation Summit 2025</h3>
+                  <p className="text-white/80 text-sm mb-4">
+                    Our flagship conference featuring keynote speakers, hands-on workshops, and networking 
+                    opportunities with AI automation leaders.
+                  </p>
+                  <div className="flex items-center gap-4 mb-6">
+                    <span className="text-orange-400 text-sm">📍 San Francisco, CA</span>
+                    <span className="text-orange-400 text-sm">🎯 1000+ attendees</span>
+                  </div>
+                  <button className="w-full bg-gradient-to-r from-orange-400 to-red-400 text-white px-6 py-3 rounded-lg font-semibold hover:from-orange-500 hover:to-red-500 transition-all duration-300">
+                    Get Early Bird Tickets
+                  </button>
                 </div>
               </div>
             </section>
-
+            
             {/* Newsletter Signup */}
             <section className="text-center">
               <div className="bg-gradient-to-r from-cyan-500/10 to-fuchsia-500/10 rounded-2xl p-8 border border-cyan-500/20">

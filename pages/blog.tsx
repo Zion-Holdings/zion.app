@@ -72,6 +72,42 @@ const BlogPage: React.FC = () => {
       featured: false
     },
     {
+      id: 'sustainable-ai-green-computing',
+      title: 'Sustainable AI and Green Computing: Building Eco-Friendly Autonomous Systems',
+      excerpt: 'Discover how Zion Tech Group is pioneering sustainable AI practices and green computing solutions for environmentally conscious autonomous systems.',
+      date: 'January 20, 2025',
+      readTime: '10 min read',
+      category: 'Sustainability & AI',
+      featured: false
+    },
+    {
+      id: 'cybersecurity-autonomous-systems',
+      title: 'Cybersecurity in Autonomous Systems: Protecting AI-Powered Infrastructure',
+      excerpt: 'Learn about the critical cybersecurity challenges and solutions for autonomous systems, from threat detection to secure AI deployment.',
+      date: 'January 22, 2025',
+      readTime: '12 min read',
+      category: 'Cybersecurity & AI',
+      featured: false
+    },
+    {
+      id: 'edge-ai-iot-integration',
+      title: 'Edge AI and IoT Integration: Bringing Intelligence to the Edge',
+      excerpt: 'Explore how edge AI and IoT integration is revolutionizing autonomous systems by bringing intelligence closer to data sources.',
+      date: 'January 25, 2025',
+      readTime: '11 min read',
+      category: 'Edge Computing & IoT',
+      featured: false
+    },
+    {
+      id: 'ai-healthcare-medical-automation',
+      title: 'AI in Healthcare and Medical Automation: Transforming Patient Care',
+      excerpt: 'Discover how AI and autonomous systems are revolutionizing healthcare delivery, from diagnosis to treatment, improving patient outcomes and operational efficiency.',
+      date: 'January 28, 2025',
+      readTime: '13 min read',
+      category: 'Healthcare & AI',
+      featured: false
+    },
+    {
       id: 'autonomous-content-generation',
       title: 'Revolutionizing Content Creation with Autonomous AI Systems',
       excerpt: 'How Zion Tech Group is transforming content generation through intelligent automation and machine learning.',
@@ -119,7 +155,7 @@ const BlogPage: React.FC = () => {
     }
   ];
 
-  const categories = ['All', 'AI & Automation', 'AI & Business Intelligence', 'Cybersecurity & AI', 'Content & AI', 'Infrastructure', 'AI Ethics', 'Performance', 'Future of Work'];
+  const categories = ['All', 'AI & Automation', 'Sustainability & AI', 'Cybersecurity & AI', 'Edge Computing & IoT', 'Healthcare & AI', 'Content & AI', 'Infrastructure', 'AI Ethics', 'Performance', 'Future of Work'];
 
   return (
     <Layout>
