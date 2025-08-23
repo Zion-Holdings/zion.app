@@ -158,6 +158,11 @@ const navigationItems: NavigationItem[] = [
         description: 'Meet our team',
         icon: <Star className="w-4 h-4" />
       },
+<<<<<<< HEAD
+      {
+        name: 'Careers',
+        href: '/careers',
+=======
       { 
         name: 'Partners', 
         href: '/partners', 
@@ -167,10 +172,13 @@ const navigationItems: NavigationItem[] = [
       { 
         name: 'Careers', 
         href: '/careers', 
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-095e
         description: 'Join our team',
         icon: <Play className="w-4 h-4" />
       }
     ]
+<<<<<<< HEAD
+=======
   },
   {
     name: 'Resources',
@@ -243,6 +251,7 @@ const navigationItems: NavigationItem[] = [
         icon: <Play className="w-4 h-4" />
       }
     ]
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-095e
   }
 ];
 

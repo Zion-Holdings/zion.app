@@ -36,7 +36,11 @@
   "brain-computer-interface",
   "compliance-automation",
   "customer-intelligence-platform",
+<<<<<<< HEAD
+  "edge-computing-orchestrator",
+=======
   "docs/api-rest",
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-095e
   "industrial-automation-ai",
   "interplanetary-communication",
   "it-asset-management",

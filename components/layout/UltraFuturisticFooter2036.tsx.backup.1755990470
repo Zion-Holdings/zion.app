@@ -231,6 +231,15 @@ const UltraFuturisticFooter2036: React.FC = () => {
     }
   ];
 
+<<<<<<< HEAD
+  const socialLinks = [
+    { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: <Linkedin className="w-5 h-5" />, color: 'text-blue-400 hover:text-blue-300' },
+    { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: <Twitter className="w-5 h-5" />, color: 'text-sky-400 hover:text-sky-300' },
+    { name: 'Facebook', href: 'https://facebook.com/ziontechgroup', icon: <Facebook className="w-5 h-5" />, color: 'text-blue-600 hover:text-blue-500' },
+    { name: 'Instagram', href: 'https://instagram.com/ziontechgroup', icon: <Instagram className="w-5 h-5" />, color: 'text-pink-400 hover:text-pink-300' },
+    { name: 'YouTube', href: 'https://youtube.com/@ziontechgroup', icon: <Youtube className="w-5 h-5" />, color: 'text-red-400 hover:text-red-300' },
+    { name: 'GitHub', href: 'https://github.com/ziontechgroup', icon: <Github className="w-5 h-5" />, color: 'text-gray-400 hover:text-gray-300' }
+=======
   const quickLinks = [
     { name: 'About Us', href: '/about' },
     { name: 'Services', href: '/services' },
@@ -240,6 +249,7 @@ const UltraFuturisticFooter2036: React.FC = () => {
     { name: 'Careers', href: '/careers' },
     { name: 'Partners', href: '/partners' },
     { name: 'Contact', href: '/contact' }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-095e
   ];
 
   const contactInfo = [
