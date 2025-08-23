@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+import React from 'react';
+import Layout from '../components/layout/Layout';
+=======
 import React, { useState } from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
@@ -120,10 +124,25 @@ const BlogPage: React.FC = () => {
   });
 
   const featuredPost = blogPosts.find(post => post.featured);
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-45dc
 
 const BlogPage: React.FC = () => {
   return (
     <Layout>
+<<<<<<< HEAD
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white pt-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-5xl font-bold text-white mb-8">Blog</h1>
+          <p className="text-xl text-gray-300 mb-8">
+            Latest insights, updates, and thought leadership from Zion Tech Group.
+          </p>
+          <p className="text-lg text-gray-400">
+            Stay informed about the latest developments in AI, quantum computing, 
+            space technology, and cybersecurity.
+          </p>
+        </div>
+      </div>
+=======
       {/* Hero Section */}
       <section className="relative py-20 px-4 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-black">
         <div className="max-w-6xl mx-auto text-center">
@@ -401,8 +420,13 @@ const BlogPage: React.FC = () => {
           </motion.div>
         </div>
       </section>
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-45dc
     </Layout>
   );
 };
 
+<<<<<<< HEAD
 export default BlogPage;
+=======
+export default BlogPage;
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-45dc
