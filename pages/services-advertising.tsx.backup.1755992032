@@ -79,6 +79,16 @@ export default function ServicesAdvertisingPage() {
 					</ul>
 				</section>
 
+<<<<<<< HEAD
+				<section className="space-y-6">
+					<h2 className="text-2xl font-semibold text-white">TLS Certificate Monitor</h2>
+					<p className="text-slate-300">Expiry alerts, issuance auditing, and auto-renew guidance.</p>
+					<ul className="list-disc list-inside text-slate-300 space-y-1">
+						<li>Typical SMB budget: $5–$50/mo</li>
+						<li>References: {ext('https://letsencrypt.org/')} , {ext('https://www.ssllabs.com/ssltest/')}</li>
+					</ul>
+				</section>
+=======
           <section>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Featured Offerings</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -97,6 +107,7 @@ export default function ServicesAdvertisingPage() {
               ))}
             </div>
           </section>
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-04c6
 
 				<section className="space-y-6">
 					<h2 className="text-2xl font-semibold text-white">Domain & DNS Monitor</h2>
