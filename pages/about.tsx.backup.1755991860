@@ -105,6 +105,8 @@ import Card from '../components/ui/Card';
 import Button from '../components/ui/Button';
 
 export default function AboutPage() {
+<<<<<<< HEAD
+=======
   const values = [
     {
       icon: '🚀',
@@ -160,6 +162,7 @@ export default function AboutPage() {
     website: 'https://ziontechgroup.com'
   };
 
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-e94e
   return (
     <div className="container mx-auto px-4 py-10">
       <h1 className="text-2xl font-semibold">About Zion</h1>
@@ -174,6 +177,9 @@ const About: NextPage = () => (
   </div>
 );
 
+<<<<<<< HEAD
+export default About;
+=======
       <p className="mt-2 text-gray-600 dark:text-gray-300">Information coming soon.</p>
     </div>
 =======
@@ -386,5 +392,6 @@ const About: NextPage = () => (
         </section>
       </section>
     </>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-e94e
   );
 }

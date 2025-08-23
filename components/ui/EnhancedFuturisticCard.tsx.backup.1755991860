@@ -1,5 +1,10 @@
+<<<<<<< HEAD
+import React, { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+=======
 import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-e94e
 
 interface EnhancedFuturisticCardProps {
   children: React.ReactNode;
@@ -20,8 +25,11 @@ const EnhancedFuturisticCard: React.FC<EnhancedFuturisticCardProps> = ({
   interactive = true,
   onClick
 }) => {
+<<<<<<< HEAD
+=======
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number | undefined>(undefined);
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-e94e
   const [isHovered, setIsHovered] = useState(false);
   const [isPressed, setIsPressed] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
@@ -130,6 +138,10 @@ const EnhancedFuturisticCard: React.FC<EnhancedFuturisticCardProps> = ({
       maxLife: number;
     }> = [];
 
+<<<<<<< HEAD
+    // Create particles
+=======
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-e94e
     const createParticles = () => {
       const count = intensity === 'high' ? 20 : intensity === 'medium' ? 12 : 6;
       for (let i = 0; i < count; i++) {
@@ -145,6 +157,8 @@ const EnhancedFuturisticCard: React.FC<EnhancedFuturisticCardProps> = ({
       }
     };
 
+<<<<<<< HEAD
+=======
     const getParticleColor = (variant: string): string => {
       switch (variant) {
         case 'quantum':
@@ -162,6 +176,7 @@ const EnhancedFuturisticCard: React.FC<EnhancedFuturisticCardProps> = ({
       }
     };
 
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-e94e
     const animate = () => {
       time += 1;
       
@@ -196,6 +211,8 @@ const EnhancedFuturisticCard: React.FC<EnhancedFuturisticCardProps> = ({
       animationRef.current = requestAnimationFrame(animate);
     };
 
+<<<<<<< HEAD
+=======
     const drawHolographicGrid = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement) => {
       const time = Date.now() * 0.001;
       ctx.strokeStyle = `hsla(${160 + Math.sin(time * 0.015) * 100}, 90%, 65%, 0.3)`;
@@ -272,6 +289,7 @@ const EnhancedFuturisticCard: React.FC<EnhancedFuturisticCardProps> = ({
       }
     };
 
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-e94e
     createParticles();
     animate();
 
