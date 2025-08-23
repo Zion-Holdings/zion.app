@@ -305,7 +305,7 @@ const EnhancedNavigation2025: React.FC = () => {
               ))}
             </div>
 
-            {/* Search and Actions */}
+            {/* Right Side Actions */}
             <div className="hidden lg:flex items-center gap-4">
               {/* Search Component */}
               <SearchComponent />
@@ -313,17 +313,19 @@ const EnhancedNavigation2025: React.FC = () => {
               {/* Theme Toggle */}
               <ThemeToggle />
 
-              {/* CTA Buttons */}
+              {/* Action Buttons */}
               <div className="flex items-center gap-3">
                 <Link
                   href="/contact"
-                  className="px-6 py-2 border border-cyan-400 text-cyan-400 rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-200 font-medium"
+                  className="px-6 py-2 border border-cyan-400 text-cyan-400 rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-200 font-medium focus:outline-none focus:ring-2 focus:ring-cyan-400/50"
+                  aria-label="Get a quote for our services"
                 >
                   Get Quote
                 </Link>
                 <Link
                   href="/get-started"
-                  className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 font-medium"
+                  className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 font-medium focus:outline-none focus:ring-2 focus:ring-cyan-500/50"
+                  aria-label="Get started with Zion Tech Group"
                 >
                   Get Started
                 </Link>
@@ -350,6 +352,7 @@ const EnhancedNavigation2025: React.FC = () => {
           {/* Mobile menu button */}
           <div className="lg:hidden">
             <button
+              className="lg:hidden p-2 text-gray-300 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-500/50 rounded-lg"
               onClick={() => setIsOpen(!isOpen)}
               className="lg:hidden p-2 text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-500 rounded-lg"
               aria-label="Toggle mobile menu"

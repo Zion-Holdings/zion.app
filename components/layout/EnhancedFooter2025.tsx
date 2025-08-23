@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
@@ -10,7 +10,40 @@ import {
 } from 'lucide-react';
 
 const EnhancedFooter2025: React.FC = () => {
-  const currentYear = new Date().getFullYear();
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.trim()) return;
+
+    setIsSubmitting(true);
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    setIsSubmitting(false);
+    setEmail('');
+    // Show success message
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const stats = [
+    { number: "500+", label: "Clients Worldwide", icon: Users, color: "from-cyan-500 to-blue-500" },
+    { number: "50+", label: "Industry Awards", icon: Award, color: "from-yellow-500 to-orange-500" },
+    { number: "24/7", label: "Support Available", icon: Clock, color: "from-purple-500 to-pink-500" },
+    { number: "50+", label: "Countries Served", icon: Globe, color: "from-emerald-500 to-teal-500" }
+  ];
+
+  const socialLinks = [
+    { href: "https://linkedin.com/company/ziontechgroup", icon: Linkedin, label: "LinkedIn", color: "hover:bg-blue-600" },
+    { href: "https://twitter.com/ziontechgroup", icon: Twitter, label: "Twitter", color: "hover:bg-sky-500" },
+    { href: "https://github.com/ziontechgroup", icon: Github, label: "GitHub", color: "hover:bg-gray-700" },
+    { href: "https://youtube.com/@ziontechgroup", icon: Youtube, label: "YouTube", color: "hover:bg-red-600" },
+    { href: "https://facebook.com/ziontechgroup", icon: Facebook, label: "Facebook", color: "hover:bg-blue-700" },
+    { href: "https://instagram.com/ziontechgroup", icon: Instagram, label: "Instagram", color: "hover:bg-pink-600" }
+  ];
 
   const contactInfo = {
     mobile: '+1 302 464 0950',
@@ -21,7 +54,7 @@ const EnhancedFooter2025: React.FC = () => {
 
   const footerSections = [
     {
-      title: 'Services',
+      title: "Services",
       links: [
         { name: 'AI & Machine Learning', href: '/ai-services', icon: <Brain className="w-4 h-4" /> },
         { name: 'Quantum Technology', href: '/quantum-services', icon: <Atom className="w-4 h-4" /> },
@@ -33,7 +66,7 @@ const EnhancedFooter2025: React.FC = () => {
       ]
     },
     {
-      title: 'Solutions',
+      title: "Solutions",
       links: [
         { name: 'Enterprise Solutions', href: '/solutions/enterprise', icon: <Building className="w-4 h-4" /> },
         { name: 'Healthcare Solutions', href: '/solutions/healthcare', icon: <HeartIcon className="w-4 h-4" /> },
@@ -44,7 +77,7 @@ const EnhancedFooter2025: React.FC = () => {
       ]
     },
     {
-      title: 'Company',
+      title: "Company",
       links: [
         { name: 'About Us', href: '/about', icon: <Info className="w-4 h-4" /> },
         { name: 'Our Mission', href: '/mission', icon: <TargetIcon className="w-4 h-4" /> },
@@ -56,7 +89,7 @@ const EnhancedFooter2025: React.FC = () => {
       ]
     },
     {
-      title: 'Resources',
+      title: "Resources",
       links: [
         { name: 'Documentation', href: '/docs', icon: <FileText className="w-4 h-4" /> },
         { name: 'Blog & Articles', href: '/blog', icon: <BookOpen className="w-4 h-4" /> },
@@ -336,7 +369,6 @@ const EnhancedFooter2025: React.FC = () => {
             </Link>
           </div>
         </div>
-      </div>
 
       {/* Bottom Bar */}
       <div className="bg-gray-950/50 border-t border-gray-800/50">

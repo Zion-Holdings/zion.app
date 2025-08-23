@@ -14,11 +14,10 @@ interface State {
   errorInfo?: ErrorInfo;
 }
 
-class ErrorBoundary extends Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    this.state = { hasError: false };
-  }
+export default class ErrorBoundary extends Component<Props, State> {
+  public state: State = {
+    hasError: false
+  };
 
   static getDerivedStateFromError(error: Error): State {
     // Update state so the next render will show the fallback UI
@@ -46,6 +45,9 @@ class ErrorBoundary extends Component<Props, State> {
         }
       });
     }
+
+    // Send error to custom error reporting endpoint
+    this.reportError(error, errorInfo, errorId);
   }
 
   render() {
@@ -55,7 +57,6 @@ class ErrorBoundary extends Component<Props, State> {
         return this.props.fallback;
       }
 
-      // Default error UI
       return (
         <div className="min-h-screen bg-black text-white flex items-center justify-center px-4">
           <div className="max-w-2xl mx-auto text-center">
@@ -177,5 +178,3 @@ class ErrorBoundary extends Component<Props, State> {
     return this.props.children;
   }
 }
-
-export default ErrorBoundary;
