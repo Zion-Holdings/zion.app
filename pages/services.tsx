@@ -55,30 +55,59 @@ import { industryRealServices } from '../data/industry-real-services';
 
 // Helper function to get service category
 const getServiceCategory = (service: any) => {
-  if (service.category) return service.category;
-  if (service.type) return service.type;
+  if (typeof service.category === 'string') return service.category;
+  if (typeof service.type === 'string') return service.type;
+  if (typeof service.industry === 'string') return service.industry;
+  if (typeof service.sector === 'string') return service.sector;
   return 'Other';
 };
 
 // Helper function to get service pricing
 const getServicePricing = (service: any) => {
+  // Handle pricing object structure
   if (service.pricing?.starter) return service.pricing.starter;
   if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
-  if (service.price?.monthly) return `$${service.price.monthly}/month`;
+  if (service.pricing?.pro) return `$${service.pricing.pro}/month`;
+  if (service.pricing?.enterprise) return `$${service.pricing.enterprise}/month`;
+  
+  // Handle price object structure
+  if (service.price?.monthly) {
+    const monthly = service.price.monthly;
+    if (typeof monthly === 'number') {
+      return `$${monthly}/month`;
+    } else if (typeof monthly === 'string') {
+      return monthly;
+    }
+  }
+  
+  // Handle price as string
+  if (typeof service.price === 'string') return service.price;
+  
+  // Handle price as number
+  if (typeof service.price === 'number') return `$${service.price}/month`;
+  
+  // Handle marketPrice
+  if (service.marketPrice) return service.marketPrice;
+  
+  // Default fallback
   return 'Contact for pricing';
 };
 
 // Helper function to get service features
 const getServiceFeatures = (service: any) => {
-  if (service.features) return service.features;
-  if (service.keyFeatures) return service.keyFeatures;
+  if (Array.isArray(service.features)) return service.features;
+  if (Array.isArray(service.keyFeatures)) return service.keyFeatures;
+  if (Array.isArray(service.capabilities)) return service.capabilities;
+  if (Array.isArray(service.highlights)) return service.highlights;
   return [];
 };
 
 // Helper function to get service description
 const getServiceDescription = (service: any) => {
-  if (service.description) return service.description;
-  if (service.tagline) return service.tagline;
+  if (typeof service.description === 'string') return service.description;
+  if (typeof service.tagline === 'string') return service.tagline;
+  if (typeof service.summary === 'string') return service.summary;
+  if (typeof service.overview === 'string') return service.overview;
   return 'No description available';
 };
 
