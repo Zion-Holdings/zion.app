@@ -12,10 +12,10 @@ import {
 
 // Import our new 2025 service data
 import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
-import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
+import { innovative2025ITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
 import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
 import { cuttingEdgeAIServices2025 } from '../data/2025-cutting-edge-ai-services';
-import { innovativeAIAutonomousServices2025 } from '../data/2025-innovative-ai-autonomous-services';
+import { innovative2025AIAutonomousServices } from '../data/2025-innovative-ai-autonomous-services';
 import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services';
 
 // Import our new practical and specialized services
@@ -92,7 +92,7 @@ import { advancedAIAutomationSolutions2025 } from '../data/2025-advanced-ai-auto
 import { innovativeAIServices2025Expansion } from '../data/2025-innovative-ai-services-expansion';
 
 // Import our new revolutionary 2046 services
-import { revolutionary2046AdvancedMicroSaasServices } from '../data/revolutionary-2046-advanced-micro-saas-services';
+import { revolutionary2046AdvancedRealMicroSaas } from '../data/revolutionary-2046-advanced-real-micro-saas';
 import { revolutionary2046AdvancedITServices } from '../data/revolutionary-2046-advanced-it-services';
 import { revolutionary2046AdvancedAIServices } from '../data/revolutionary-2046-advanced-ai-services';
 // Import existing service data
@@ -143,12 +143,12 @@ const allServices = [
   
   // Our new 2025 services
   ...advancedAIAutomationServices2025,
-  ...innovativeITInfrastructureServices2025,
+  ...innovative2025ITInfrastructureServices,
   ...innovativeAIServices2025,
   ...innovativeMicroSaasSolutions2025,
   ...cuttingEdgeAIServices2025,
   ...realEnterpriseMicroSaas2025,
-  ...innovativeAIAutonomousServices2025,
+  ...innovative2025AIAutonomousServices,
   
   // Our new 2025 advanced services
   ...advancedBusinessIntelligenceServices2025,
@@ -215,7 +215,7 @@ const allServices = [
   ...innovativeAIServices2025V2,
   
   // Our new revolutionary 2046 services
-  ...revolutionary2046AdvancedMicroSaasServices,
+  ...revolutionary2046AdvancedRealMicroSaas,
   ...revolutionary2046AdvancedITServices,
   ...revolutionary2046AdvancedAIServices,
   
