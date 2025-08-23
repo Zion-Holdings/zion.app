@@ -20,6 +20,11 @@ import { real2036ServiceExpansions } from '../data/real-2036-service-expansions'
 import { innovative2036MicroSaasServices } from '../data/innovative-2036-micro-saas-services';
 import { innovative2036ITServices } from '../data/innovative-2036-it-services';
 
+// Import 2025 advanced services
+import { real2025AdvancedAIServices } from '../data/real-2025-advanced-ai-services';
+import { real2025ITInfrastructureServices } from '../data/real-2025-it-infrastructure-services';
+import { real2025InnovativeMicroSaas } from '../data/real-2025-innovative-micro-saas';
+
 // Import existing service data
 import { realMicroSaasServices } from '../data/real-micro-saas-services';
 import { innovativeAIServices } from '../data/innovative-ai-services';
@@ -80,7 +85,11 @@ const allServices = [
   ...real2035Q2Additions,
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
-  ...innovative2036ITServices
+  ...innovative2036ITServices,
+  // 2025 Advanced Services
+  ...real2025AdvancedAIServices,
+  ...real2025ITInfrastructureServices,
+  ...real2025InnovativeMicroSaas
 ];
 
 const categories = [
