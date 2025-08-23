@@ -50,7 +50,11 @@ const aiServices = [
 
 export default function AIServices() {
   return (
+<<<<<<< HEAD
+    		<QuantumHolographicMatrixBackground intensity={1.5}>
+=======
     <QuantumHolographicMatrixBackground intensity={1.5}>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-465f
       <Head>
         <title>AI Services | Zion Tech Group</title>
         <meta name="description" content="LLM apps, RAG, MLOps, and AI research enablement with transparent pricing and measurable outcomes." />

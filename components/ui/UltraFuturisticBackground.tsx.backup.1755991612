@@ -3,6 +3,14 @@ import { motion } from 'framer-motion';
 
 interface UltraFuturisticBackgroundProps {
   children: React.ReactNode;
+<<<<<<< HEAD
+  variant?: 'default' | 'quantum' | 'cyberpunk' | 'holographic' | 'neural' | 'quantum-holographic';
+}
+
+const UltraFuturisticBackground: React.FC<UltraFuturisticBackgroundProps> = ({ 
+  children, 
+  variant = 'quantum-holographic' 
+=======
   variant?: 'default' | 'quantum' | 'holographic' | 'neural' | 'cyberpunk' | 'space';
   intensity?: number;
 }
@@ -11,6 +19,7 @@ const UltraFuturisticBackground: React.FC<UltraFuturisticBackgroundProps> = ({
   children,
   variant = 'default',
   intensity = 1
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-465f
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationRef = useRef<number | undefined>(undefined);
@@ -38,12 +47,18 @@ const UltraFuturisticBackground: React.FC<UltraFuturisticBackgroundProps> = ({
       type: 'quantum' | 'holographic' | 'neural' | 'cyberpunk';
     }> = [];
 
+<<<<<<< HEAD
+    // Create initial particles
+    const createParticles = () => {
+      for (let i = 0; i < 150; i++) {
+=======
     // Initialize particles based on variant
     const initParticles = () => {
       particles.length = 0;
       const particleCount = Math.floor(intensity * 100);
       
       for (let i = 0; i < particleCount; i++) {
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-465f
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
@@ -74,6 +89,13 @@ const UltraFuturisticBackground: React.FC<UltraFuturisticBackgroundProps> = ({
       return colors[Math.floor(Math.random() * colors.length)];
     };
 
+<<<<<<< HEAD
+    const getParticleType = () => {
+      const types: Array<'quantum' | 'holographic' | 'neural' | 'cyberpunk'> = [
+        'quantum', 'holographic', 'neural', 'cyberpunk'
+      ];
+      return types[Math.floor(Math.random() * types.length)];
+=======
     // Quantum entanglement effect
     const createQuantumEntanglement = () => {
       if (variant === 'quantum' && intensity > 0.5) {
@@ -180,6 +202,7 @@ const UltraFuturisticBackground: React.FC<UltraFuturisticBackgroundProps> = ({
           ctx.fill();
         }
       }
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-465f
     };
 
     // Animation loop
@@ -203,6 +226,32 @@ const UltraFuturisticBackground: React.FC<UltraFuturisticBackgroundProps> = ({
           particles.splice(index, 1);
           return;
         }
+<<<<<<< HEAD
+
+        // Draw particle based on type
+        const alpha = particle.life / particle.maxLife;
+        ctx.globalAlpha = alpha;
+
+        switch (particle.type) {
+          case 'quantum':
+            drawQuantumParticle(ctx, particle);
+            break;
+          case 'holographic':
+            drawHolographicParticle(ctx, particle);
+            break;
+          case 'neural':
+            drawNeuralParticle(ctx, particle);
+            break;
+          case 'cyberpunk':
+            drawCyberpunkParticle(ctx, particle);
+            break;
+        }
+      });
+
+      // Add new particles
+      if (particles.length < 150) {
+        createParticles();
+=======
         
         // Draw particle
         ctx.beginPath();
@@ -259,6 +308,7 @@ const UltraFuturisticBackground: React.FC<UltraFuturisticBackgroundProps> = ({
           ctx.lineWidth = 2;
           ctx.stroke();
         }
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-465f
       }
 
       // Draw quantum entanglement lines
@@ -456,6 +506,10 @@ const UltraFuturisticBackground: React.FC<UltraFuturisticBackgroundProps> = ({
         style={{ zIndex: 0 }}
       />
       
+<<<<<<< HEAD
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black opacity-80 z-10" />
+=======
       {/* Additional overlay effects */}
       <div className="absolute inset-0 pointer-events-none z-10">
         {/* Gradient overlays */}
@@ -483,6 +537,7 @@ const UltraFuturisticBackground: React.FC<UltraFuturisticBackgroundProps> = ({
           </div>
         )}
       </div>
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-465f
       
       {/* Quantum Field Lines */}
       <div className="absolute inset-0 z-20">
