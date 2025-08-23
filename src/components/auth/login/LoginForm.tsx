@@ -1,11 +1,14 @@
 
 import { useState } from "react";
+import { useRouter } from 'next/router';
 import { useForm } from "react-hook-form";
+import type { ControllerRenderProps } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { LogIn, User, Eye, EyeOff } from "lucide-react";
 
 import { useAuth } from "@/hooks/useAuth";
+import { loginUser } from "@/services/authService";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -17,7 +20,8 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { LoadingOverlay } from "@/components/LoadingOverlay";
 
 // Form validation schema
 const loginSchema = z.object({
@@ -29,6 +33,8 @@ type LoginFormValues = z.infer<typeof loginSchema>;
 
 export function LoginForm() {
   const { isLoading, login } = useAuth();
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const [showPassword, setShowPassword] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   
@@ -45,10 +51,18 @@ export function LoginForm() {
 
     try {
       setIsSubmitting(true);
-      const result = await login(data.email, data.password);
-      if (result.error) {
-        form.setError("root", { message: result.error });
+      const { res, data: resData } = await loginUser(data.email, data.password);
+      if (!res.ok) {
+        toast.error(resData?.error || "Invalid credentials");
+        return;
       }
+      toast.success("Logged in successfully");
+      if (resData?.token) {
+        document.cookie = `token=${resData.token}; path=/`;
+      }
+      navigate("/");
+    } catch (err) {
+      toast.error("Unable to login. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -152,6 +166,7 @@ export function LoginForm() {
           {isLoading || isSubmitting ? "Logging in..." : "Login"}
         </Button>
       </form>
+      <LoadingOverlay visible={isLoading || isSubmitting} />
     </Form>
   );
 }

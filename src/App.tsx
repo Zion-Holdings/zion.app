@@ -1,14 +1,11 @@
 import React, { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { ErrorBoundary } from './components/ErrorBoundary';
 import './App.css';
 import { ThemeProvider } from "./components/ThemeProvider";
-import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
-import OfflineToast from "./components/OfflineToast";
-import PwaInstallButton from "./components/PwaInstallButton";
+import InstallPrompt from "./components/InstallPrompt";
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -20,93 +17,48 @@ import {
   ErrorRoutes,
   EnterpriseRoutes,
   CommunityRoutes,
-  DeveloperRoutes
+  DeveloperRoutes,
+  SellerRoutes
 } from './routes';
-import Home from './pages/Home';
-import AIMatcherPage from './pages/AIMatcher';
-import TalentDirectory from './pages/TalentDirectory';
-import TalentsPage from './pages/TalentsPage';
-import MoreTalentsPage from './pages/MoreTalentsPage';
-import AdditionalTalentsPage from './pages/AdditionalTalentsPage';
-import ServicesPage from './pages/ServicesPage';
-import EquipmentPage from './pages/EquipmentPage';
-import EquipmentDetail from './pages/EquipmentDetail';
-import Analytics from './pages/Analytics';
-import MobileLaunchPage from './pages/MobileLaunchPage';
-import CommunityPage from './pages/CommunityPage';
-import { CommunityProvider } from './context';
-import Categories from './pages/Categories';
-import Blog from './pages/Blog';
-import BlogPost from './pages/BlogPost';
-import NewProductsPage from './pages/NewProductsPage';
-import NewServicesPage from './pages/NewServicesPage';
-import Sitemap from './pages/Sitemap';
-import PartnersPage from './pages/Partners';
-import Help from './pages/Help';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import SimpleSignup from './pages/SimpleSignup';
-import ITOnsiteServicesPage from './pages/ITOnsiteServicesPage';
-import OpenAppRedirect from './pages/OpenAppRedirect';
-import ContactPage from './pages/Contact';
-import ZionHireAI from './pages/ZionHireAI';
-import RequestQuotePage from './pages/RequestQuote';
-import WishlistPage from './pages/Wishlist';
-import CartPage from './pages/Cart';
-import Checkout from './pages/Checkout';
-import { SupportChatbot } from './components/SupportChatbot';
+const Home = React.lazy(() => import('./pages/Home'));
+const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
+const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory'));
+const TalentsPage = React.lazy(() => import('./pages/TalentsPage'));
+const ServicesPage = React.lazy(() => import('./pages/ServicesPage'));
+const EquipmentPage = React.lazy(() => import('./pages/EquipmentPage'));
+const Analytics = React.lazy(() => import('./pages/Analytics'));
+const MobileLaunchPage = React.lazy(() => import('./pages/MobileLaunchPage'));
+const CommunityPage = React.lazy(() => import('./pages/CommunityPage'));
+const Categories = React.lazy(() => import('./pages/Categories'));
+const Login = React.lazy(() => import('./pages/Login'));
+const Signup = React.lazy(() => import('./pages/Signup'));
+const ITOnsiteServicesPage = React.lazy(() => import('./pages/ITOnsiteServicesPage'));
+const OpenAppRedirect = React.lazy(() => import('./pages/OpenAppRedirect'));
+const ContactPage = React.lazy(() => import('./pages/Contact'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
   { path: '/match', element: <AIMatcherPage /> },
   { path: '/login', element: <Login /> },
-  { path: '/register', element: <Signup /> },
-  { path: '/signup', element: <SimpleSignup /> },
+  { path: '/signup', element: <Signup /> },
   { path: '/talent', element: <TalentDirectory /> },
   { path: '/talents', element: <TalentsPage /> },
-  { path: '/more-talents', element: <MoreTalentsPage /> },
-  { path: '/additional-talents', element: <AdditionalTalentsPage /> },
   { path: '/services', element: <ServicesPage /> },
   { path: '/it-onsite-services', element: <ITOnsiteServicesPage /> },
   { path: '/categories', element: <Categories /> },
   { path: '/equipment', element: <EquipmentPage /> },
-  { path: '/equipment/:id', element: <EquipmentDetail /> },
-  { path: '/new-products', element: <NewProductsPage /> },
   { path: '/analytics', element: <Analytics /> },
   { path: '/mobile-launch', element: <MobileLaunchPage /> },
   { path: '/open-app', element: <OpenAppRedirect /> },
-  {
-    path: '/community',
-    element: (
-      <CommunityProvider>
-        <CommunityPage />
-      </CommunityProvider>
-    ),
-  },
+  { path: '/community', element: <CommunityPage /> },
   { path: '/contact', element: <ContactPage /> },
-  { path: '/partners', element: <PartnersPage /> },
-  { path: '/sitemap', element: <Sitemap /> },
-  { path: '/help', element: <Help /> },
-  { path: '/zion-hire-ai', element: <ZionHireAI /> },
-  { path: '/hire-ai', element: <ZionHireAI /> },
-  { path: '/request-quote', element: <RequestQuotePage /> },
-  { path: '/blog', element: <Blog /> },
-  { path: '/blog/:slug', element: <BlogPost /> },
-  { path: '/wishlist', element: <WishlistPage /> },
-  { path: '/cart', element: <CartPage /> },
-  { path: '/checkout', element: <Checkout /> },
 ];
 
 const App = () => {
-  console.log("App.tsx: Start");
-  // Ensure each navigation starts at the top of the page
-  useScrollToTop();
-  console.log("App.tsx: Rendering Tree");
   return (
     <WhitelabelProvider>
-      <ThemeProvider defaultTheme="dark">
+      <ThemeProvider>
         <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
-          <ErrorBoundary>
           <Routes>
             {baseRoutes.map(({ path, element }) => (
               <Route key={path} path={path} element={element} />
@@ -121,15 +73,13 @@ const App = () => {
             <Route path="/enterprise/*" element={<EnterpriseRoutes />} />
             <Route path="/community/*" element={<CommunityRoutes />} />
             <Route path="/developers/*" element={<DeveloperRoutes />} />
+            <Route path="/seller/*" element={<SellerRoutes />} />
             <Route path="*" element={<ErrorRoutes />} />
           </Routes>
-          </ErrorBoundary>
         </Suspense>
-        <OfflineToast />
         <Toaster />
         <SonnerToaster position="top-right" />
-        <SupportChatbot />
-        <PwaInstallButton />
+        <InstallPrompt />
       </ThemeProvider>
     </WhitelabelProvider>
   );
