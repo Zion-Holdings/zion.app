@@ -13,6 +13,15 @@ import { realInnovativeMicroSaasServices2025 } from '../data/2025-real-innovativ
 import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services-expansion';
 import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services-expansion';
 
+// Import our new 2025 advanced services
+import { advancedBusinessIntelligenceServices2025 } from '../data/2025-advanced-business-intelligence-services';
+import { advancedITInfrastructureServices2025 } from '../data/2025-advanced-it-infrastructure-services';
+
+// Import our new real services
+import { realMicroSaas2025Expansion } from '../data/real-micro-saas-2025-expansion';
+import { realITServices2025Expansion } from '../data/real-it-services-2025-expansion';
+import { realAIServices2025Expansion } from '../data/real-ai-services-2025-expansion';
+
 // Import our new service data
 import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
 import { innovativeMicroSaasSolutions } from '../data/2034-innovative-micro-saas-solutions';
@@ -44,7 +53,6 @@ import { ultimate2025AIServicesExpansion } from '../data/2025-ultimate-ai-servic
 
 // Import our new 2025 Q4 innovative services
 import { innovative2025Q4NewServices } from '../data/innovative-2025-q4-new-services';
-import { advancedITInfrastructureServices2025 } from '../data/advanced-it-infrastructure-services-2025';
 
 
 // Import our new innovative 2040 services
@@ -58,7 +66,6 @@ import { cuttingEdgeITInfrastructureServices } from '../data/2025-cutting-edge-i
 // Import our new 2025 cutting-edge futuristic services
 import { cuttingEdgeFuturisticServices } from '../data/2025-cutting-edge-futuristic-services';
 import { advancedAIAutomationServices } from '../data/2026-advanced-ai-automation-services';
-import { advancedITInfrastructureServices } from '../data/2025-advanced-it-infrastructure-services';
 
 // Import our new 2025 cutting-edge innovative services expansion
 import { cuttingEdgeInnovativeServices2025 } from '../data/2025-cutting-edge-innovative-services-expansion';
@@ -112,6 +119,15 @@ const allServices = [
   ...innovativeITInfrastructureServices2025,
   ...innovativeAIServices2025,
   
+  // Our new 2025 advanced services
+  ...advancedBusinessIntelligenceServices2025,
+  ...advancedITInfrastructureServices2025,
+  
+  // Our new real services 2025
+  ...realMicroSaas2025Expansion,
+  ...realITServices2025Expansion,
+  ...realAIServices2025Expansion,
+  
   ...enterpriseITSolutions,
   ...innovativeMicroSaasSolutions,
   ...cuttingEdgeAIServices,
@@ -120,7 +136,6 @@ const allServices = [
   ...enterpriseITServices,
   ...cuttingEdgeFuturisticServices,
   ...advancedAIAutomationServices,
-  ...advancedITInfrastructureServices,
   ...emergingTechServices,
   ...newRealServices,
   ...realOperationalServices,
@@ -210,6 +225,13 @@ const categories = [
     icon: <Cpu className="w-6 h-6" />,
     color: 'from-purple-500 to-pink-500',
     description: 'Cutting-edge AI and machine learning services'
+  },
+  {
+    id: 'business-intelligence',
+    name: 'Business Intelligence',
+    icon: <Target className="w-6 h-6" />,
+    color: 'from-emerald-500 to-teal-500',
+    description: 'Advanced analytics and business intelligence solutions'
   },
   {
     id: 'enterprise-it',
