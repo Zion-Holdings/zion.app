@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import UltraFuturisticNavigation2046 from './UltraFuturisticNavigation2046';
-import UltraFuturisticFooter2047 from './UltraFuturisticFooter2047';
+import UltraFuturisticNavigation2047 from './UltraFuturisticNavigation2047';
+import UltraFuturisticFooter2048 from './UltraFuturisticFooter2048';
 import EnhancedSidebar2025 from './EnhancedSidebar2025';
 import TopContactBar from './TopContactBar';
-import UltraFuturisticBackground2045 from '../backgrounds/UltraFuturisticBackground2045';
+import UltraFuturisticBackground2047 from '../backgrounds/UltraFuturisticBackground2047';
 import EnhancedPerformanceMonitor from '../EnhancedPerformanceMonitor';
 import AccessibilityEnhancer from '../EnhancedAccessibilityEnhancer';
 import CookieConsentBanner from '../CookieConsentBanner';
@@ -204,7 +204,7 @@ export default function Layout({
         )}
         
         {/* Futuristic Background */}
-        <UltraFuturisticBackground2045 />
+        <UltraFuturisticBackground2047 />
         
         {/* Layout Structure */}
         <div className="relative z-10">
@@ -212,7 +212,7 @@ export default function Layout({
           <TopContactBar />
           
           {/* Navigation */}
-          <UltraFuturisticNavigation2046 />
+          <UltraFuturisticNavigation2047 />
           
           {/* Sidebar and Main Content */}
           <div className="flex">
@@ -227,7 +227,7 @@ export default function Layout({
           </div>
           
           {/* Footer */}
-          <UltraFuturisticFooter2047 />
+          <UltraFuturisticFooter2048 />
         </div>
       </div>
 

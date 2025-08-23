@@ -23,6 +23,12 @@ import { innovativeAIAutonomousEcosystemServices2025V2 } from '../data/2025-inno
 import { innovativeITInfrastructureBreakthroughServices2025 } from '../data/2025-innovative-it-infrastructure-breakthroughs';
 import { innovativeMicroSaasBreakthroughServices2025V2 } from '../data/2025-innovative-micro-saas-breakthroughs-v2';
 
+// Import our new innovative 2025 services V3
+import { innovativeAIAutonomousEcosystemServices2025V3 } from '../data/2025-innovative-ai-autonomous-ecosystem-v3';
+import { innovativeITInfrastructureBreakthroughServices2025V3 } from '../data/2025-innovative-it-infrastructure-breakthroughs-v3';
+import { innovativeMicroSaasBreakthroughServices2025V3 } from '../data/2025-innovative-micro-saas-breakthroughs-v3';
+import { innovativeAIServicesEnhanced2025V3 } from '../data/2025-innovative-ai-services-enhanced-v3';
+
 const Homepage2046: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentServiceIndex, setCurrentServiceIndex] = useState(0);
@@ -61,7 +67,11 @@ const Homepage2046: React.FC = () => {
     ...innovativeMicroSaasBreakthroughs2025,
     ...innovativeAIAutonomousEcosystemServices2025V2,
     ...innovativeITInfrastructureBreakthroughServices2025,
-    ...innovativeMicroSaasBreakthroughServices2025V2
+    ...innovativeMicroSaasBreakthroughServices2025V2,
+    ...innovativeAIAutonomousEcosystemServices2025V3,
+    ...innovativeITInfrastructureBreakthroughServices2025V3,
+    ...innovativeMicroSaasBreakthroughServices2025V3,
+    ...innovativeAIServicesEnhanced2025V3
   ];
 
   // Get featured services for rotation
