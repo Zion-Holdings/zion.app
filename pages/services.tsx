@@ -8,11 +8,10 @@ import {
   Building, Cpu
 } from 'lucide-react';
 
-// Import our new 2025 service data
-import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
-import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
-import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
-import { cuttingEdgeAIServices2025 } from '../data/2025-cutting-edge-ai-services';
+// Import our new innovative 2025 services
+import { realInnovativeMicroSaasServices2025 } from '../data/2025-real-innovative-micro-saas-expansion';
+import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services-expansion';
+import { innovativeAIServices2025 } from '../data/2025-innovative-ai-services-expansion';
 
 // Import our new service data
 import { enterpriseITSolutions } from '../data/2034-enterprise-it-solutions';
@@ -104,10 +103,9 @@ const getServiceDescription = (service: any) => {
 // Create unified services array
 const allServices = [
   // Our new 2025 services
-  ...advancedAIAutomationServices2025,
+  ...realInnovativeMicroSaasServices2025,
   ...innovativeITInfrastructureServices2025,
-  ...innovativeMicroSaasSolutions2025,
-  ...cuttingEdgeAIServices2025,
+  ...innovativeAIServices2025,
   
   ...enterpriseITSolutions,
   ...innovativeMicroSaasSolutions,

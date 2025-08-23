@@ -6,7 +6,7 @@ import {
   Brain, Rocket, Target, Atom, Shield,
   DollarSign, BarChart3, Globe, Grid, Heart, Database,
   Cpu, Palette, Cloud, Network, TrendingUp, ShoppingCart, Settings, Building, Monitor,
-  Zap, Eye, Infinity, Sparkles, Users, Lock, Code, Server, Layers, Globe2
+  Zap, Eye, Infinity, Sparkles, Users, Lock, Code, Server, Layers, Globe2, Truck
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -86,6 +86,165 @@ const navigationItems: NavigationItem[] = [
         description: 'AI-powered customer success',
         icon: <Heart className="w-4 h-4" />,
         color: 'from-pink-500 to-purple-500'
+      },
+      { 
+        name: 'AI Customer Success Automation', 
+        href: '/ai-customer-success-automation-2025', 
+        description: 'AI-powered customer success automation',
+        icon: <Users className="w-4 h-4" />,
+        color: 'from-green-500 to-emerald-500'
+      },
+      { 
+        name: 'Intelligent Content Marketing', 
+        href: '/intelligent-content-marketing-suite-2025', 
+        description: 'AI-powered content marketing automation',
+        icon: <TrendingUp className="w-4 h-4" />,
+        color: 'from-blue-500 to-indigo-500'
+      },
+      { 
+        name: 'Smart E-commerce Analytics', 
+        href: '/smart-ecommerce-analytics-2025', 
+        description: 'AI-powered e-commerce analytics',
+        icon: <BarChart3 className="w-4 h-4" />,
+        color: 'from-purple-500 to-pink-500'
+      }
+    ]
+  },
+  {
+    name: 'IT Infrastructure & Cloud',
+    href: '/it-infrastructure',
+    icon: <Server className="w-5 h-5" />,
+    description: 'Advanced IT infrastructure solutions',
+    badge: 'New 2025',
+    category: 'it-infrastructure',
+    color: 'from-blue-500 to-indigo-500',
+    children: [
+      { 
+        name: 'Quantum-Secure Cloud Infrastructure', 
+        href: '/quantum-secure-cloud-infrastructure-2025', 
+        description: 'Quantum-resistant cloud infrastructure',
+        icon: <Cloud className="w-4 h-4" />,
+        color: 'from-cyan-500 to-blue-500',
+        featured: true
+      },
+      { 
+        name: 'Autonomous DevOps Intelligence', 
+        href: '/autonomous-devops-intelligence-2025', 
+        description: 'AI-powered DevOps automation',
+        icon: <Cpu className="w-4 h-4" />,
+        color: 'from-green-500 to-emerald-500',
+        featured: true
+      },
+      { 
+        name: 'Edge Computing Orchestration', 
+        href: '/edge-computing-orchestration-2025', 
+        description: 'AI-powered edge computing',
+        icon: <Network className="w-4 h-4" />,
+        color: 'from-purple-500 to-pink-500'
+      },
+      { 
+        name: 'Zero-Trust Network Architecture', 
+        href: '/zero-trust-network-architecture-2025', 
+        description: 'AI-powered zero-trust security',
+        icon: <Shield className="w-4 h-4" />,
+        color: 'from-red-500 to-orange-500'
+      },
+      { 
+        name: 'Intelligent Data Pipeline', 
+        href: '/intelligent-data-pipeline-orchestration-2025', 
+        description: 'AI-powered data pipeline orchestration',
+        icon: <Database className="w-4 h-4" />,
+        color: 'from-indigo-500 to-purple-500'
+      },
+      { 
+        name: 'Quantum Cybersecurity Intelligence', 
+        href: '/quantum-cybersecurity-intelligence-2025', 
+        description: 'Quantum-resistant cybersecurity',
+        icon: <Lock className="w-4 h-4" />,
+        color: 'from-red-500 to-pink-500'
+      },
+      { 
+        name: 'Autonomous Infrastructure Management', 
+        href: '/autonomous-infrastructure-management-2025', 
+        description: 'AI-powered infrastructure management',
+        icon: <Settings className="w-4 h-4" />,
+        color: 'from-yellow-500 to-orange-500'
+      },
+      { 
+        name: 'Intelligent API Management', 
+        href: '/intelligent-api-management-2025', 
+        description: 'AI-powered API management',
+        icon: <Code className="w-4 h-4" />,
+        color: 'from-cyan-500 to-blue-500'
+      }
+    ]
+  },
+  {
+    name: 'Micro SAAS Solutions',
+    href: '/micro-saas',
+    icon: <Grid className="w-5 h-5" />,
+    description: 'Innovative micro SAAS solutions',
+    badge: 'New 2025',
+    category: 'micro-saas',
+    color: 'from-emerald-500 to-teal-500',
+    children: [
+      { 
+        name: 'AI Customer Success Automation', 
+        href: '/ai-customer-success-automation-2025', 
+        description: 'AI-powered customer success automation',
+        icon: <Users className="w-4 h-4" />,
+        color: 'from-green-500 to-emerald-500',
+        featured: true
+      },
+      { 
+        name: 'Intelligent Content Marketing', 
+        href: '/intelligent-content-marketing-suite-2025', 
+        description: 'AI-powered content marketing automation',
+        icon: <TrendingUp className="w-4 h-4" />,
+        color: 'from-blue-500 to-indigo-500',
+        featured: true
+      },
+      { 
+        name: 'Smart E-commerce Analytics', 
+        href: '/smart-ecommerce-analytics-2025', 
+        description: 'AI-powered e-commerce analytics',
+        icon: <BarChart3 className="w-4 h-4" />,
+        color: 'from-purple-500 to-pink-500'
+      },
+      { 
+        name: 'Automated Social Media Management', 
+        href: '/automated-social-media-management-2025', 
+        description: 'AI-powered social media automation',
+        icon: <Globe2 className="w-4 h-4" />,
+        color: 'from-cyan-500 to-blue-500'
+      },
+      { 
+        name: 'Intelligent Project Management', 
+        href: '/intelligent-project-management-2025', 
+        description: 'AI-powered project management',
+        icon: <Target className="w-4 h-4" />,
+        color: 'from-orange-500 to-red-500'
+      },
+      { 
+        name: 'Smart HR Analytics & Automation', 
+        href: '/smart-hr-analytics-automation-2025', 
+        description: 'AI-powered HR analytics and automation',
+        icon: <Users className="w-4 h-4" />,
+        color: 'from-pink-500 to-purple-500'
+      },
+      { 
+        name: 'Intelligent Financial Planning', 
+        href: '/intelligent-financial-planning-2025', 
+        description: 'AI-powered financial planning',
+        icon: <DollarSign className="w-4 h-4" />,
+        color: 'from-green-500 to-emerald-500'
+      },
+      { 
+        name: 'Smart Supply Chain Optimization', 
+        href: '/smart-supply-chain-optimization-2025', 
+        description: 'AI-powered supply chain optimization',
+        icon: <Truck className="w-4 h-4" />,
+        color: 'from-blue-500 to-cyan-500'
       }
     ]
   },
@@ -98,6 +257,64 @@ const navigationItems: NavigationItem[] = [
     category: 'ai',
     color: 'from-purple-500 to-pink-500',
     children: [
+      { 
+        name: 'AI Business Intelligence', 
+        href: '/ai-business-intelligence-platform-2025', 
+        description: 'AI-powered business intelligence',
+        icon: <BarChart3 className="w-4 h-4" />,
+        color: 'from-blue-500 to-cyan-500',
+        featured: true
+      },
+      { 
+        name: 'Intelligent Customer Experience', 
+        href: '/intelligent-customer-experience-2025', 
+        description: 'AI-powered customer experience optimization',
+        icon: <Heart className="w-4 h-4" />,
+        color: 'from-pink-500 to-purple-500',
+        featured: true
+      },
+      { 
+        name: 'AI Marketing Automation', 
+        href: '/ai-marketing-automation-suite-2025', 
+        description: 'AI-powered marketing automation',
+        icon: <TrendingUp className="w-4 h-4" />,
+        color: 'from-green-500 to-emerald-500'
+      },
+      { 
+        name: 'Intelligent Sales Intelligence', 
+        href: '/intelligent-sales-intelligence-2025', 
+        description: 'AI-powered sales intelligence',
+        icon: <Target className="w-4 h-4" />,
+        color: 'from-orange-500 to-red-500'
+      },
+      { 
+        name: 'AI Product Recommendations', 
+        href: '/ai-product-recommendation-engine-2025', 
+        description: 'AI-powered product recommendations',
+        icon: <ShoppingCart className="w-4 h-4" />,
+        color: 'from-indigo-500 to-purple-500'
+      },
+      { 
+        name: 'Intelligent Fraud Detection', 
+        href: '/intelligent-fraud-detection-2025', 
+        description: 'AI-powered fraud detection',
+        icon: <Shield className="w-4 h-4" />,
+        color: 'from-red-500 to-pink-500'
+      },
+      { 
+        name: 'AI Predictive Maintenance', 
+        href: '/ai-predictive-maintenance-2025', 
+        description: 'AI-powered predictive maintenance',
+        icon: <Settings className="w-4 h-4" />,
+        color: 'from-yellow-500 to-orange-500'
+      },
+      { 
+        name: 'Intelligent Language Processing', 
+        href: '/intelligent-language-processing-2025', 
+        description: 'AI-powered language processing',
+        icon: <Code className="w-4 h-4" />,
+        color: 'from-cyan-500 to-blue-500'
+      },
       { 
         name: 'AI Consciousness Evolution 2045', 
         href: '/ai-consciousness-evolution-2045', 
