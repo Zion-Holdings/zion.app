@@ -14,7 +14,9 @@
     "error": "Error",
     "explore": "Explore",
     "menu": "Menu",
-    "saving": "Saving..."
+    "saving": "Saving...",
+    "open_main_menu": "Open main menu",
+    "toggle_mobile_menu": "Toggle mobile menu"
   },
   "nav": {
     "home": "Home",
@@ -65,7 +67,11 @@
   "marketplace": {
     "title": "AI & Tech Marketplace",
     "description": "Discover professional services and products for your AI and tech projects. Browse our curated collection of solutions from verified providers.",
-    "search_placeholder": "Search the marketplace..."
+    "search_placeholder": "Search the marketplace...",
+    "results_count": "Showing {{count}} results",
+    "no_results_title": "No Results Found",
+    "no_results_description": "We couldn't find any listings matching your filters. Try adjusting your search criteria.",
+    "clear_filters": "Clear Filters"
   },
   "checkout": {
     "title": "Checkout",
@@ -120,5 +126,9 @@
     "edit": "Edit",
     "saved": "Saved",
     "changes_saved": "Translation changes have been saved"
+  },
+  "error_boundary": {
+    "message": "Something went wrong.",
+    "retry": "Retry"
   }
 }
