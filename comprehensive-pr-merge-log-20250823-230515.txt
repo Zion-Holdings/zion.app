@@ -1822,3 +1822,30 @@ pages/main/front/index.tsx[0m
 2025-08-23 23:08:35 - [1;33m⚠️  Found conflicts in netlify/functions/functions-manifest.json, resolving...[0m
 2025-08-23 23:08:35 - [0;34m📝 Regular file, removing conflict markers...[0m
 2025-08-23 23:08:35 - [0;32m✅ Resolved conflicts in netlify/functions/functions-manifest.json[0m
+2025-08-23 23:08:35 - [0;32m✅ Successfully resolved conflicts and merged cursor/invent-and-deploy-autonomous-cloud-automations-f065[0m
+2025-08-23 23:08:35 - [0;32m✅ PR #3832 (cursor/invent-and-deploy-autonomous-cloud-automations-f065) processed successfully[0m
+2025-08-23 23:08:35 - [0;34m🔒 Closing PR #3832 via GitHub API...[0m
+2025-08-23 23:08:35 - [0;34m📊 Progress: 57/100, ✅ 57, ❌ 0[0m
+2025-08-23 23:08:37 - [0;34m📋 Processing PR #3831: Invent and deploy autonomous cloud automations (branch: cursor/invent-and-deploy-autonomous-cloud-automations-bbc8)[0m
+2025-08-23 23:08:37 - [0;34m🔄 Attempting to merge cursor/invent-and-deploy-autonomous-cloud-automations-bbc8...[0m
+2025-08-23 23:08:38 - [1;33m⚠️  Merge conflicts detected in cursor/invent-and-deploy-autonomous-cloud-automations-bbc8 (attempt 1/3), resolving...[0m
+2025-08-23 23:08:38 - [0;34m📋 Conflicted files: automation/front-index-ads.cjs
+netlify/functions/functions-manifest.json
+pages/index.tsx
+pages/main/front/index.tsx[0m
+2025-08-23 23:08:38 - [0;34m🔧 Resolving conflicts in automation/front-index-ads.cjs for branch cursor/invent-and-deploy-autonomous-cloud-automations-bbc8...[0m
+2025-08-23 23:08:38 - [1;33m⚠️  Found conflicts in automation/front-index-ads.cjs, resolving...[0m
+2025-08-23 23:08:38 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:08:38 - [0;32m✅ Resolved conflicts in automation/front-index-ads.cjs[0m
+2025-08-23 23:08:38 - [0;34m🔧 Resolving conflicts in netlify/functions/functions-manifest.json for branch cursor/invent-and-deploy-autonomous-cloud-automations-bbc8...[0m
+2025-08-23 23:08:38 - [1;33m⚠️  Found conflicts in netlify/functions/functions-manifest.json, resolving...[0m
+2025-08-23 23:08:38 - [0;34m📝 Regular file, removing conflict markers...[0m
+2025-08-23 23:08:38 - [0;32m✅ Resolved conflicts in netlify/functions/functions-manifest.json[0m
+2025-08-23 23:08:38 - [0;34m🔧 Resolving conflicts in pages/index.tsx for branch cursor/invent-and-deploy-autonomous-cloud-automations-bbc8...[0m
+2025-08-23 23:08:38 - [1;33m⚠️  Found conflicts in pages/index.tsx, resolving...[0m
+2025-08-23 23:08:38 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:08:38 - [0;32m✅ Resolved conflicts in pages/index.tsx[0m
+2025-08-23 23:08:38 - [0;34m🔧 Resolving conflicts in pages/main/front/index.tsx for branch cursor/invent-and-deploy-autonomous-cloud-automations-bbc8...[0m
+2025-08-23 23:08:38 - [1;33m⚠️  Found conflicts in pages/main/front/index.tsx, resolving...[0m
+2025-08-23 23:08:38 - [0;34m💻 Code file detected, attempting intelligent merge...[0m
+2025-08-23 23:08:38 - [0;32m✅ Resolved conflicts in pages/main/front/index.tsx[0m
