@@ -26,20 +26,20 @@ import Link from 'next/link';
 
 const footerSections = [
   {
-    title: 'Featured Services',
-    description: 'Our most popular and innovative solutions',
+    title: '2038 Featured Services',
+    description: 'Our latest revolutionary solutions',
     icon: <Star className="w-5 h-5 text-yellow-400" />,
     links: [
-      { name: 'AI Consciousness Evolution', href: '/ai-consciousness-evolution-2029', featured: true },
-      { name: 'Quantum Neural Networks', href: '/quantum-neural-network-platform', featured: true },
-      { name: 'Autonomous Business Operations', href: '/autonomous-business-operations-platform', featured: true },
-      { name: 'Space Resource Mining', href: '/space-resource-mining-platform', featured: true },
-      { name: 'Brain-Computer Interface', href: '/brain-computer-interface-platform', featured: true },
-      { name: 'Quantum Financial Trading', href: '/quantum-financial-trading', featured: true },
-      { name: 'AI Emotional Intelligence', href: '/ai-emotional-intelligence-training', featured: true },
-      { name: 'Quantum Materials Discovery', href: '/quantum-materials-discovery-platform' },
-      { name: 'Autonomous Vehicle AI', href: '/autonomous-vehicle-ai-platform' },
-      { name: 'Quantum Bio-Computing', href: '/quantum-bio-computing-platform' }
+      { name: 'AI Consciousness Evolution Platform', href: '/ai-consciousness-evolution-platform', featured: true },
+      { name: 'Quantum AI Fusion Platform', href: '/quantum-ai-fusion-platform', featured: true },
+      { name: 'Space Debris Mitigation Platform', href: '/space-debris-mitigation-platform', featured: true },
+      { name: 'Autonomous Cybersecurity Orchestrator', href: '/autonomous-cybersecurity-orchestrator', featured: true },
+      { name: 'Quantum Error Correction Automation', href: '/quantum-error-correction-automation', featured: true },
+      { name: 'Biometric Emotion Authentication', href: '/biometric-emotion-authentication', featured: true },
+      { name: 'Autonomous Supply Chain Orchestrator', href: '/autonomous-supply-chain-orchestrator' },
+      { name: 'Quantum Financial Risk Predictor', href: '/quantum-financial-risk-predictor' },
+      { name: 'Metaverse Reality Fusion Engine', href: '/metaverse-reality-fusion-engine' },
+      { name: 'Autonomous Energy Grid Manager', href: '/autonomous-energy-grid-manager' }
     ]
   },
   {
