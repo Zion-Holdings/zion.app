@@ -10,7 +10,7 @@ function nowIso() {
 }
 
 function log(message) {
-  const line = `[${nowIso()}] [REDUNDANCY] ${message}`;
+  const line = `[${nowIso()}] [REDUNDANCY-HEALTH-ORCHESTRATOR] ${message}`;
   console.log(line);
 }
 
@@ -34,300 +34,266 @@ function run(command, args, options = {}) {
   return { status, stdout, stderr };
 }
 
-function runGit(args, options = {}) {
-  return run("git", args, options);
-}
-
 function checkPM2Status() {
-  log("Checking PM2 status...");
-  
   try {
-    const pm2Status = run("pm2", ["status", "--json"]);
-    if (pm2Status.status === 0) {
+    log("Checking PM2 status...");
+    
+    const statusResult = run("pm2", ["status", "--json"], { verbose: false });
+    
+    if (statusResult.status === 0) {
       try {
-        const status = JSON.parse(pm2Status.stdout);
-        const processes = status.processes || [];
-        const running = processes.filter(p => p.pm2_env && p.pm2_env.status === "online").length;
-        const total = processes.length;
+        const pm2Data = JSON.parse(statusResult.stdout);
+        const processes = pm2Data || [];
         
-        log(`PM2 Status: ${running}/${total} processes running`);
-        return { success: true, running, total, processes };
-      } catch (error) {
-        log(`Error parsing PM2 status: ${String(error)}`);
-        return { success: false, error: "Failed to parse PM2 status" };
+        const redundancyProcesses = processes.filter(p => p.name && p.name.includes('redundancy'));
+        const otherProcesses = processes.filter(p => p.name && !p.name.includes('redundancy'));
+        
+        return {
+          pm2Status: {
+            totalProcesses: processes.length,
+            redundancyProcesses: redundancyProcesses.length,
+            otherProcesses: otherProcesses.length,
+            processes: processes.map(p => ({
+              name: p.name,
+              status: p.pm2_env?.status || 'unknown',
+              uptime: p.pm2_env?.pm_uptime || 0,
+              memory: p.monit?.memory || 0,
+              cpu: p.monit?.cpu || 0
+            })),
+            timestamp: nowIso()
+          }
+        };
+      } catch (parseErr) {
+        return {
+          pm2Status: {
+            error: "Failed to parse PM2 status",
+            timestamp: nowIso()
+          }
+        };
       }
     } else {
-      log("PM2 not available or failed to get status");
-      return { success: false, error: "PM2 not available" };
+      return {
+        pm2Status: {
+          error: "PM2 status command failed",
+          timestamp: nowIso()
+        }
+      };
     }
-  } catch (error) {
-    log(`Error checking PM2 status: ${String(error)}`);
-    return { success: false, error: String(error) };
-  }
-}
-
-function checkRedundancyProcesses() {
-  log("Checking redundancy processes...");
-  
-  try {
-    const pm2Status = run("pm2", ["status", "--json"]);
-    if (pm2Status.status === 0) {
-      try {
-        const status = JSON.parse(pm2Status.stdout);
-        const processes = status.processes || [];
-        const redundancyProcesses = processes.filter(p => 
-          p.name && p.name.includes("redundancy")
-        );
-        
-        const running = redundancyProcesses.filter(p => p.pm2_env && p.pm2_env.status === "online").length;
-        const total = redundancyProcesses.length;
-        
-        log(`Redundancy Processes: ${running}/${total} running`);
-        
-        const processDetails = redundancyProcesses.map(p => ({
-          name: p.name,
-          status: p.pm2_env ? p.pm2_env.status : "unknown",
-          uptime: p.pm2_env ? p.pm2_env.pm_uptime : 0,
-          restarts: p.pm2_env ? p.pm2_env.restart_time : 0
-        }));
-        
-        return { success: true, running, total, processes: processDetails };
-      } catch (error) {
-        log(`Error parsing PM2 status: ${String(error)}`);
-        return { success: false, error: "Failed to parse PM2 status" };
-      }
-    } else {
-      log("PM2 not available for redundancy check");
-      return { success: false, error: "PM2 not available" };
-    }
-  } catch (error) {
-    log(`Error checking redundancy processes: ${String(error)}`);
-    return { success: false, error: String(error) };
+  } catch (err) {
+    log(`PM2 status check failed: ${String(err)}`);
+    return { error: String(err), timestamp: nowIso() };
   }
 }
 
 function checkSystemResources() {
-  log("Checking system resources...");
-  
   try {
-    const resources = {
-      memory: null,
-      disk: null,
-      cpu: null
+    log("Checking system resources...");
+    
+    const memoryResult = run("free", ["-h"], { verbose: false });
+    const diskResult = run("df", ["-h", "."], { verbose: false });
+    const loadResult = run("uptime", [], { verbose: false });
+    
+    let memoryInfo = "Unknown";
+    let diskInfo = "Unknown";
+    let loadInfo = "Unknown";
+    
+    if (memoryResult.status === 0) {
+      const lines = memoryResult.stdout.split('\n');
+      if (lines.length > 1) {
+        const memLine = lines[1].split(/\s+/);
+        if (memLine.length > 2) {
+          memoryInfo = `${memLine[2]} used / ${memLine[1]} total`;
+        }
+      }
+    }
+    
+    if (diskResult.status === 0) {
+      const lines = diskResult.stdout.split('\n');
+      if (lines.length > 1) {
+        const diskLine = lines[1].split(/\s+/);
+        if (diskLine.length > 4) {
+          diskInfo = `${diskLine[4]} used / ${diskLine[1]} total`;
+        }
+      }
+    }
+    
+    if (loadResult.status === 0) {
+      const loadMatch = loadResult.stdout.match(/load average: ([\d.]+), ([\d.]+), ([\d.]+)/);
+      if (loadMatch) {
+        loadInfo = `${loadMatch[1]} (1m), ${loadMatch[2]} (5m), ${loadMatch[3]} (15m)`;
+      }
+    }
+    
+    return {
+      systemResources: {
+        memory: memoryInfo,
+        disk: diskInfo,
+        load: loadInfo,
+        timestamp: nowIso()
+      }
     };
+  } catch (err) {
+    log(`System resources check failed: ${String(err)}`);
+    return { error: String(err), timestamp: nowIso() };
+  }
+}
+
+function checkRedundancyReports() {
+  try {
+    log("Checking redundancy reports...");
     
-    // Check memory usage
-    try {
-      const memInfo = run("free", ["-m"]);
-      if (memInfo.status === 0) {
-        const lines = memInfo.stdout.split('\n');
-        if (lines.length > 1) {
-          const memLine = lines[1].split(/\s+/);
-          const total = parseInt(memLine[1]);
-          const used = parseInt(memLine[2]);
-          const available = parseInt(memLine[6]);
-          const usagePercent = ((used / total) * 100).toFixed(1);
-          
-          resources.memory = {
-            total: `${total}MB`,
-            used: `${used}MB`,
-            available: `${available}MB`,
-            usage: `${usagePercent}%`
-          };
-          log(`Memory: ${usagePercent}% used (${used}MB/${total}MB)`);
+    const reportFiles = [
+      "marketing-sync-redundancy-report.md",
+      "sync-health-redundancy-report.md",
+      "netlify-functions-redundancy-report.md",
+      "build-monitor-redundancy-report.md",
+      "content-quality-redundancy-report.md",
+      "security-scanner-redundancy-report.md",
+      "performance-monitor-redundancy-report.md",
+      "dependency-monitor-redundancy-report.md",
+      "seo-monitor-redundancy-report.md"
+    ];
+    
+    const reportStatus = {};
+    let totalReports = 0;
+    let recentReports = 0;
+    
+    for (const reportFile of reportFiles) {
+      const reportPath = path.join(process.cwd(), reportFile);
+      if (fs.existsSync(reportPath)) {
+        totalReports++;
+        const stats = fs.statSync(reportPath);
+        const ageHours = (Date.now() - stats.mtime.getTime()) / (1000 * 60 * 60);
+        
+        if (ageHours < 24) {
+          recentReports++;
         }
+        
+        reportStatus[reportFile] = {
+          exists: true,
+          age: `${Math.round(ageHours)} hours`,
+          recent: ageHours < 24
+        };
+      } else {
+        reportStatus[reportFile] = {
+          exists: false,
+          age: "N/A",
+          recent: false
+        };
       }
-    } catch (error) {
-      log(`Error checking memory: ${String(error)}`);
     }
     
-    // Check disk usage
-    try {
-      const diskInfo = run("df", ["-h", "."]);
-      if (diskInfo.status === 0) {
-        const lines = diskInfo.stdout.split('\n');
-        if (lines.length > 1) {
-          const diskLine = lines[1].split(/\s+/);
-          const total = diskLine[1];
-          const used = diskLine[2];
-          const available = diskLine[3];
-          const usagePercent = diskLine[4];
-          
-          resources.disk = {
-            total,
-            used,
-            available,
-            usage: usagePercent
-          };
-          log(`Disk: ${usagePercent} used (${used}/${total})`);
-        }
+    return {
+      redundancyReports: {
+        totalReports,
+        recentReports,
+        reportStatus,
+        timestamp: nowIso()
       }
-    } catch (error) {
-      log(`Error checking disk: ${String(error)}`);
-    }
-    
-    // Check CPU load
-    try {
-      const loadInfo = run("uptime");
-      if (loadInfo.status === 0) {
-        const loadMatch = loadInfo.stdout.match(/load average: ([\d.]+), ([\d.]+), ([\d.]+)/);
-        if (loadMatch) {
-          resources.cpu = {
-            load1: loadMatch[1],
-            load5: loadMatch[2],
-            load15: loadMatch[3]
-          };
-          log(`CPU Load: 1min=${loadMatch[1]}, 5min=${loadMatch[2]}, 15min=${loadMatch[3]}`);
-        }
-      }
-    } catch (error) {
-      log(`Error checking CPU: ${String(error)}`);
-    }
-    
-    return { success: true, resources };
-  } catch (error) {
-    log(`Error checking system resources: ${String(error)}`);
-    return { success: false, error: String(error) };
+    };
+  } catch (err) {
+    log(`Redundancy reports check failed: ${String(err)}`);
+    return { error: String(err), timestamp: nowIso() };
   }
 }
 
 function checkGitStatus() {
-  log("Checking git repository status...");
-  
   try {
-    const gitStatus = runGit(["status", "--porcelain"]);
-    const branch = runGit(["branch", "--show-current"]);
-    const remote = runGit(["remote", "get-url", "origin"]);
-    const lastCommit = runGit(["log", "-1", "--format=%H %s %an %ad", "--date=iso"]);
+    log("Checking git status...");
     
-    const status = {
-      hasChanges: gitStatus.stdout.trim().length > 0,
-      currentBranch: branch.stdout.trim(),
-      remoteUrl: remote.stdout.trim(),
-      lastCommit: lastCommit.stdout.trim()
+    const status = run("git", ["status", "--porcelain"]);
+    const branch = run("git", ["branch", "--show-current"]);
+    const remote = run("git", ["remote", "-v"]);
+    
+    const hasChanges = status.stdout.trim().length > 0;
+    const currentBranch = branch.stdout.trim();
+    const hasRemote = remote.stdout.includes("origin");
+    
+    return {
+      gitStatus: {
+        hasChanges,
+        currentBranch,
+        hasRemote,
+        changesCount: status.stdout.split("\n").filter(line => line.trim()).length,
+        timestamp: nowIso()
+      }
     };
-    
-    log(`Git Status: Branch=${status.currentBranch}, Changes=${status.hasChanges ? 'Yes' : 'No'}`);
-    return { success: true, ...status };
-  } catch (error) {
-    log(`Error checking git status: ${String(error)}`);
-    return { success: false, error: String(error) };
+  } catch (err) {
+    log(`Git status check failed: ${String(err)}`);
+    return { error: String(err), timestamp: nowIso() };
   }
 }
 
-function checkLogFiles() {
-  log("Checking log files...");
-  
-  try {
-    const logsDir = path.join(process.cwd(), "automation", "logs");
-    const logs = {
-      exists: false,
-      files: [],
-      totalSize: 0
-    };
-    
-    if (fs.existsSync(logsDir)) {
-      logs.exists = true;
-      const files = fs.readdirSync(logsDir);
-      
-      files.forEach(file => {
-        const filePath = path.join(logsDir, file);
-        try {
-          const stats = fs.statSync(filePath);
-          logs.files.push({
-            name: file,
-            size: stats.size,
-            modified: stats.mtime.toISOString()
-          });
-          logs.totalSize += stats.size;
-        } catch (error) {
-          log(`Error reading log file ${file}: ${String(error)}`);
-        }
-      });
-      
-      log(`Logs: ${logs.files.length} files, ${(logs.totalSize / 1024 / 1024).toFixed(2)}MB total`);
-    } else {
-      log("Logs directory not found");
-    }
-    
-    return { success: true, ...logs };
-  } catch (error) {
-    log(`Error checking log files: ${String(error)}`);
-    return { success: false, error: String(error) };
-  }
-}
-
-function generateHealthReport() {
+function generateHealthReport(pm2Status, systemResources, redundancyReports, gitStatus) {
+  const timestamp = nowIso();
   const report = {
-    generatedAt: nowIso(),
-    pm2Status: null,
-    redundancyProcesses: null,
-    systemResources: null,
-    gitStatus: null,
-    logFiles: null,
-    summary: "Health orchestrator redundancy report"
-  };
-
-  try {
-    // Run all health checks
-    report.pm2Status = checkPM2Status();
-    report.redundancyProcesses = checkRedundancyProcesses();
-    report.systemResources = checkSystemResources();
-    report.gitStatus = checkGitStatus();
-    report.logFiles = checkLogFiles();
-    
-    // Generate summary
-    const pm2Healthy = report.pm2Status.success && report.pm2Status.running > 0;
-    const redundancyHealthy = report.redundancyProcesses.success && report.redundancyProcesses.running > 0;
-    const systemHealthy = report.systemResources.success;
-    const gitHealthy = report.gitStatus.success;
-    
-    const healthyChecks = [pm2Healthy, redundancyHealthy, systemHealthy, gitHealthy].filter(Boolean).length;
-    const totalChecks = 4;
-    
-    if (healthyChecks === totalChecks) {
-      report.summary = "All systems healthy - redundancy system operating normally";
-    } else if (healthyChecks >= totalChecks * 0.75) {
-      report.summary = "Most systems healthy - minor issues detected";
-    } else {
-      report.summary = "Multiple system issues detected - attention required";
+    timestamp,
+    redundancy: true,
+    source: "pm2-redundancy",
+    healthOrchestrator: {
+      pm2Status,
+      systemResources,
+      redundancyReports,
+      gitStatus,
+      summary: {
+        overallHealth: "healthy",
+        issues: []
+      }
     }
-    
-    // Write report
-    const reportPath = path.join(process.cwd(), "health-orchestrator-redundancy-report.md");
-    const reportContent = `# Health Orchestrator Redundancy Report
+  };
+  
+  // Analyze overall health
+  if (pm2Status.pm2Status?.error) {
+    report.healthOrchestrator.summary.issues.push("PM2 status check failed");
+  }
+  
+  if (systemResources.systemResources?.error) {
+    report.healthOrchestrator.summary.issues.push("System resources check failed");
+  }
+  
+  if (redundancyReports.redundancyReports?.recentReports < 5) {
+    report.healthOrchestrator.summary.issues.push("Some redundancy reports are outdated");
+  }
+  
+  if (gitStatus.gitStatus?.hasChanges) {
+    report.healthOrchestrator.summary.issues.push("Uncommitted changes detected");
+  }
+  
+  if (report.healthOrchestrator.summary.issues.length > 0) {
+    report.healthOrchestrator.summary.overallHealth = "needs_attention";
+  }
 
-Generated: ${report.generatedAt}
+  const reportPath = path.join(process.cwd(), "health-orchestrator-redundancy-report.md");
+  const reportContent = `# Health Orchestrator Redundancy Report
 
-## Summary
-${report.summary}
+Generated: ${timestamp}
+Source: PM2 Redundancy System
 
-## System Health Score
-${healthyChecks}/${totalChecks} systems healthy (${Math.round((healthyChecks/totalChecks)*100)}%)
+## Overall Health: ${report.healthOrchestrator.summary.overallHealth.toUpperCase()}
+
+## Issues Detected
+${report.healthOrchestrator.summary.issues.length > 0 ? 
+  report.healthOrchestrator.summary.issues.map(issue => `- ⚠️ ${issue}`).join("\n") : 
+  "- ✅ No health issues detected"}
 
 ## PM2 Status
-- Status: ${report.pm2Status.success ? "✅ OK" : "❌ Failed"}
-- Running: ${report.pm2Status.running || 0}/${report.pm2Status.total || 0} processes
-
-## Redundancy Processes
-- Status: ${report.redundancyProcesses.success ? "✅ OK" : "❌ Failed"}
-- Running: ${report.redundancyProcesses.running || 0}/${report.redundancyProcesses.total || 0} processes
+- Total Processes: ${pm2Status.pm2Status?.totalProcesses || 0} 📊
+- Redundancy Processes: ${pm2Status.pm2Status?.redundancyProcesses || 0} 🔄
+- Other Processes: ${pm2Status.pm2Status?.otherProcesses || 0} ⚙️
 
 ## System Resources
-- Status: ${report.systemResources.success ? "✅ OK" : "❌ Failed"}
-- Memory: ${report.systemResources.resources?.memory?.usage || "Unknown"}
-- Disk: ${report.systemResources.resources?.disk?.usage || "Unknown"}
-- CPU Load: ${report.systemResources.resources?.cpu?.load5 || "Unknown"}
+- Memory: ${systemResources.systemResources?.memory || "Unknown"} 💾
+- Disk: ${systemResources.systemResources?.disk || "Unknown"} 💿
+- Load Average: ${systemResources.systemResources?.load || "Unknown"} 📈
+
+## Redundancy Reports
+- Total Reports: ${redundancyReports.redundancyReports?.totalReports || 0} 📋
+- Recent Reports (<24h): ${redundancyReports.redundancyReports?.recentReports || 0} ✅
 
 ## Git Status
-- Status: ${report.gitStatus.success ? "✅ OK" : "❌ Failed"}
-- Branch: ${report.gitStatus.currentBranch || "Unknown"}
-- Changes: ${report.gitStatus.hasChanges ? "Yes" : "No"}
-
-## Log Files
-- Status: ${report.logFiles.success ? "✅ OK" : "❌ Failed"}
-- Files: ${report.logFiles.files?.length || 0}
-- Total Size: ${report.logFiles.totalSize ? `${(report.logFiles.totalSize / 1024 / 1024).toFixed(2)}MB` : "Unknown"}
+- Current Branch: ${gitStatus.gitStatus?.currentBranch || "Unknown"} 🌿
+- Has Remote: ${gitStatus.gitStatus?.hasRemote ? "✅ Yes" : "❌ No"} 🔗
+- Uncommitted Changes: ${gitStatus.gitStatus?.hasChanges ? "⚠️ Yes (${gitStatus.gitStatus.changesCount})" : "✅ No"} 📝
 
 ## Details
 \`\`\`json
@@ -335,27 +301,53 @@ ${JSON.stringify(report, null, 2)}
 \`\`\`
 `;
 
-    fs.writeFileSync(reportPath, reportContent);
-    log(`Health report written to ${reportPath}`);
-    
-    return report;
-  } catch (error) {
-    log(`Error generating health report: ${String(error)}`);
-    report.error = String(error);
-    return report;
+  fs.writeFileSync(reportPath, reportContent);
+  log(`Health orchestrator report generated: ${reportPath}`);
+  return report;
+}
+
+async function commitAndPush() {
+  try {
+    run("git", ["config", "user.name", "pm2-redundancy[bot]"]);
+    run("git", ["config", "user.email", "redundancy@ziontechgroup.com"]);
+
+    const status = run("git", ["status", "--porcelain"]);
+    if (!status.stdout.trim()) {
+      log("No changes to commit.");
+      return;
+    }
+
+    run("git", ["add", "-A"]);
+    run("git", ["commit", "-m", `chore(redundancy): health orchestration via PM2 redundancy`]);
+
+    const pushResult = run("git", ["push", "origin", "main"]);
+    if (pushResult.status === 0) {
+      log("Changes pushed successfully via redundancy.");
+    } else {
+      log(`Push failed: ${pushResult.stderr}`);
+    }
+  } catch (err) {
+    log(`Commit/push error: ${String(err)}`);
   }
 }
 
-// Main execution
-function main() {
-  log("Starting health orchestrator redundancy process");
-  
+async function main() {
   try {
-    const report = generateHealthReport();
-    log(`Health orchestrator redundancy completed: ${report.summary}`);
+    log("Starting health orchestrator redundancy process...");
+    
+    const pm2Status = checkPM2Status();
+    const systemResources = checkSystemResources();
+    const redundancyReports = checkRedundancyReports();
+    const gitStatus = checkGitStatus();
+    
+    const report = generateHealthReport(pm2Status, systemResources, redundancyReports, gitStatus);
+    
+    await commitAndPush();
+    
+    log("Health orchestrator redundancy completed successfully.");
     process.exit(0);
-  } catch (error) {
-    log(`Health orchestrator redundancy failed: ${String(error)}`);
+  } catch (err) {
+    log(`Health orchestrator redundancy failed: ${String(err)}`);
     process.exit(1);
   }
 }
@@ -365,10 +357,10 @@ if (require.main === module) {
 }
 
 module.exports = { 
+  main, 
   checkPM2Status, 
-  checkRedundancyProcesses, 
   checkSystemResources, 
-  checkGitStatus, 
-  checkLogFiles, 
+  checkRedundancyReports, 
+  checkGitStatus,
   generateHealthReport 
 };

@@ -37,7 +37,11 @@ module.exports = {
         AUTO_SYNC_REMOTE: process.env.AUTO_SYNC_REMOTE || "origin",
         AUTO_SYNC_BRANCH: process.env.AUTO_SYNC_BRANCH || "main",
         AUTO_SYNC_STRATEGY: process.env.AUTO_SYNC_STRATEGY || "hardreset",
+<<<<<<< HEAD
+        AUTO_SYNC_CLEAN: process.env.AUTO_SYNC_CLEAN || "1",
+=======
         AUTO_SYNC_CLEAN: process.env.AUTO_SYNC_CLEAN || "0",
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-ece7
         AUTO_SYNC_GC: process.env.AUTO_SYNC_GC || "0"
       },
       log_date_format: "YYYY-MM-DD HH:mm:ss Z",
@@ -55,11 +59,18 @@ module.exports = {
       watch: false,
       autorestart: true,
       max_restarts: 5,
+<<<<<<< HEAD
+      cron_restart: "0 */12 * * *", // every 12 hours (matches GitHub Actions)
+      env: {
+        NODE_ENV: "production",
+        REDUNDANCY_MODE: "true",
+=======
       instances: 1,
       cron_restart: "0 */12 * * *", // every 12 hours (matches GitHub Actions)
       env: {
         NODE_ENV: "production",
         REDUNDANCY_MODE: "marketing-sync",
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-ece7
         LINKEDIN_ACCESS_TOKEN: process.env.LINKEDIN_ACCESS_TOKEN,
         LINKEDIN_URN: process.env.LINKEDIN_URN,
         IG_USER_ID: process.env.IG_USER_ID,
@@ -80,11 +91,18 @@ module.exports = {
       watch: false,
       autorestart: true,
       max_restarts: 5,
+<<<<<<< HEAD
+      cron_restart: "*/15 * * * *", // every 15 minutes (matches GitHub Actions)
+      env: {
+        NODE_ENV: "production",
+        REDUNDANCY_MODE: "true",
+=======
       instances: 1,
       cron_restart: "*/15 * * * *", // every 15 minutes (matches GitHub Actions)
       env: {
         NODE_ENV: "production",
         REDUNDANCY_MODE: "sync-health",
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-ece7
         AUTO_SYNC_STRATEGY: "hardreset",
         AUTO_SYNC_CLEAN: "0"
       },
@@ -94,6 +112,9 @@ module.exports = {
       time: true
     },
 
+<<<<<<< HEAD
+    // REDUNDANCY: Build Automation
+=======
     // REDUNDANCY: Netlify Functions Orchestrator
     {
       name: "redundancy-netlify-functions",
@@ -118,6 +139,7 @@ module.exports = {
     },
 
     // REDUNDANCY: Build and Deployment Monitor
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-ece7
     {
       name: "redundancy-build-monitor",
       script: "automation/redundancy/build-monitor-redundancy.js",
@@ -126,11 +148,18 @@ module.exports = {
       watch: false,
       autorestart: true,
       max_restarts: 5,
+<<<<<<< HEAD
+      cron_restart: "*/5 * * * *", // every 5 minutes
+      env: {
+        NODE_ENV: "production",
+        REDUNDANCY_MODE: "true"
+=======
       instances: 1,
       cron_restart: "*/5 * * * *", // every 5 minutes
       env: {
         NODE_ENV: "production",
         REDUNDANCY_MODE: "build-monitor"
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-ece7
       },
       log_date_format: "YYYY-MM-DD HH:mm:ss Z",
       error_file: "automation/logs/redundancy-build-monitor-error.log",
@@ -138,6 +167,29 @@ module.exports = {
       time: true
     },
 
+<<<<<<< HEAD
+    // REDUNDANCY: Netlify Functions Orchestrator
+    {
+      name: "redundancy-netlify-orchestrator",
+      script: "automation/redundancy/netlify-functions-redundancy.js",
+      interpreter: "node",
+      cwd: __dirname,
+      watch: false,
+      autorestart: true,
+      max_restarts: 5,
+      cron_restart: "*/30 * * * *", // every 30 minutes
+      env: {
+        NODE_ENV: "production",
+        REDUNDANCY_MODE: "true"
+      },
+      log_date_format: "YYYY-MM-DD HH:mm:ss Z",
+      error_file: "automation/logs/redundancy-netlify-orchestrator-error.log",
+      out_file: "automation/logs/redundancy-netlify-orchestrator-out.log",
+      time: true
+    },
+
+=======
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-ece7
     // REDUNDANCY: Content Quality Monitor
     {
       name: "redundancy-content-quality",
@@ -147,11 +199,18 @@ module.exports = {
       watch: false,
       autorestart: true,
       max_restarts: 5,
+<<<<<<< HEAD
+      cron_restart: "0 */6 * * *", // every 6 hours
+      env: {
+        NODE_ENV: "production",
+        REDUNDANCY_MODE: "true"
+=======
       instances: 1,
       cron_restart: "0 */6 * * *", // every 6 hours
       env: {
         NODE_ENV: "production",
         REDUNDANCY_MODE: "content-quality"
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-ece7
       },
       log_date_format: "YYYY-MM-DD HH:mm:ss Z",
       error_file: "automation/logs/redundancy-content-quality-error.log",
@@ -168,11 +227,18 @@ module.exports = {
       watch: false,
       autorestart: true,
       max_restarts: 5,
+<<<<<<< HEAD
+      cron_restart: "0 2 * * *", // daily at 2 AM
+      env: {
+        NODE_ENV: "production",
+        REDUNDANCY_MODE: "true"
+=======
       instances: 1,
       cron_restart: "0 */4 * * *", // every 4 hours
       env: {
         NODE_ENV: "production",
         REDUNDANCY_MODE: "security-scanner"
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-ece7
       },
       log_date_format: "YYYY-MM-DD HH:mm:ss Z",
       error_file: "automation/logs/redundancy-security-scanner-error.log",
@@ -189,11 +255,18 @@ module.exports = {
       watch: false,
       autorestart: true,
       max_restarts: 5,
+<<<<<<< HEAD
+      cron_restart: "0 */4 * * *", // every 4 hours
+      env: {
+        NODE_ENV: "production",
+        REDUNDANCY_MODE: "true"
+=======
       instances: 1,
       cron_restart: "0 */8 * * *", // every 8 hours
       env: {
         NODE_ENV: "production",
         REDUNDANCY_MODE: "performance-monitor"
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-ece7
       },
       log_date_format: "YYYY-MM-DD HH:mm:ss Z",
       error_file: "automation/logs/redundancy-performance-monitor-error.log",
@@ -210,11 +283,18 @@ module.exports = {
       watch: false,
       autorestart: true,
       max_restarts: 5,
+<<<<<<< HEAD
+      cron_restart: "0 6 * * *", // daily at 6 AM
+      env: {
+        NODE_ENV: "production",
+        REDUNDANCY_MODE: "true"
+=======
       instances: 1,
       cron_restart: "0 */24 * * *", // every 24 hours
       env: {
         NODE_ENV: "production",
         REDUNDANCY_MODE: "dependency-monitor"
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-ece7
       },
       log_date_format: "YYYY-MM-DD HH:mm:ss Z",
       error_file: "automation/logs/redundancy-dependency-monitor-error.log",
@@ -222,6 +302,8 @@ module.exports = {
       time: true
     },
 
+<<<<<<< HEAD
+=======
     // REDUNDANCY: SEO Monitor
     {
       name: "redundancy-seo-monitor",
@@ -243,6 +325,7 @@ module.exports = {
       time: true
     },
 
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-ece7
     // REDUNDANCY: Health Check Orchestrator
     {
       name: "redundancy-health-orchestrator",
@@ -252,11 +335,18 @@ module.exports = {
       watch: false,
       autorestart: true,
       max_restarts: 5,
+<<<<<<< HEAD
+      cron_restart: "*/10 * * * *", // every 10 minutes
+      env: {
+        NODE_ENV: "production",
+        REDUNDANCY_MODE: "true"
+=======
       instances: 1,
       cron_restart: "*/2 * * * *", // every 2 minutes
       env: {
         NODE_ENV: "production",
         REDUNDANCY_MODE: "health-orchestrator"
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-ece7
       },
       log_date_format: "YYYY-MM-DD HH:mm:ss Z",
       error_file: "automation/logs/redundancy-health-orchestrator-error.log",

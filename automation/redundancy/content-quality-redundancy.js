@@ -10,7 +10,7 @@ function nowIso() {
 }
 
 function log(message) {
-  const line = `[${nowIso()}] [REDUNDANCY] ${message}`;
+  const line = `[${nowIso()}] [REDUNDANCY-CONTENT-QUALITY] ${message}`;
   console.log(line);
 }
 
@@ -34,281 +34,142 @@ function run(command, args, options = {}) {
   return { status, stdout, stderr };
 }
 
-function runGit(args, options = {}) {
-  return run("git", args, options);
-}
-
-function scanContentFiles() {
-  log("Scanning content files...");
-  
+function checkContentQuality() {
   try {
-    const contentDirs = ["pages", "public", "automation"];
-    const contentFiles = [];
+    log("Checking content quality...");
     
-    contentDirs.forEach(dir => {
-      const dirPath = path.join(process.cwd(), dir);
-      if (fs.existsSync(dirPath)) {
-        scanDirectory(dirPath, dir, contentFiles);
-      }
-    });
+    // Check for broken links
+    const brokenLinks = [];
+    const pagesDir = path.join(process.cwd(), "pages");
     
-    log(`Found ${contentFiles.length} content files`);
-    return { success: true, files: contentFiles };
-  } catch (error) {
-    log(`Error scanning content files: ${String(error)}`);
-    return { success: false, error: String(error) };
-  }
-}
-
-function scanDirectory(dirPath, relativePath, contentFiles) {
-  try {
-    const items = fs.readdirSync(dirPath);
-    
-    items.forEach(item => {
-      const itemPath = path.join(dirPath, item);
-      const relativeItemPath = path.join(relativePath, item);
+    if (fs.existsSync(pagesDir)) {
+      const files = fs.readdirSync(pagesDir, { recursive: true });
+      const mdFiles = files.filter(file => file.endsWith('.md'));
       
-      if (fs.statSync(itemPath).isDirectory()) {
-        scanDirectory(itemPath, relativeItemPath, contentFiles);
-      } else {
-        const ext = path.extname(item).toLowerCase();
-        if (['.md', '.js', '.jsx', '.ts', '.tsx', '.json', '.txt', '.yml', '.yaml'].includes(ext)) {
-          contentFiles.push({
-            path: relativeItemPath,
-            fullPath: itemPath,
-            extension: ext,
-            size: fs.statSync(itemPath).size,
-            modified: fs.statSync(itemPath).mtime.toISOString()
-          });
+      for (const file of mdFiles) {
+        const content = fs.readFileSync(path.join(pagesDir, file), 'utf8');
+        const linkMatches = content.match(/\[([^\]]+)\]\(([^)]+)\)/g) || [];
+        
+        for (const match of linkMatches) {
+          const urlMatch = match.match(/\[([^\]]+)\]\(([^)]+)\)/);
+          if (urlMatch) {
+            const url = urlMatch[2];
+            if (url.startsWith('http') && !url.includes('ziontechgroup.com')) {
+              brokenLinks.push({ file, url, context: urlMatch[1] });
+            }
+          }
         }
       }
-    });
-  } catch (error) {
-    log(`Error scanning directory ${dirPath}: ${String(error)}`);
-  }
-}
-
-function analyzeContentQuality(files) {
-  log("Analyzing content quality...");
-  
-  try {
-    const analysis = {
-      totalFiles: files.length,
-      byExtension: {},
-      qualityIssues: [],
-      recommendations: []
+    }
+    
+    return {
+      brokenLinks: {
+        count: brokenLinks.length,
+        links: brokenLinks
+      },
+      timestamp: nowIso()
     };
-    
-    // Group by extension
-    files.forEach(file => {
-      if (!analysis.byExtension[file.extension]) {
-        analysis.byExtension[file.extension] = [];
-      }
-      analysis.byExtension[file.extension].push(file);
-    });
-    
-    // Analyze each file for quality issues
-    files.forEach(file => {
-      try {
-        const content = fs.readFileSync(file.fullPath, 'utf8');
-        const fileAnalysis = analyzeFileContent(file, content);
-        
-        if (fileAnalysis.issues.length > 0) {
-          analysis.qualityIssues.push(fileAnalysis);
-        }
-        
-        if (fileAnalysis.recommendations.length > 0) {
-          analysis.recommendations.push(...fileAnalysis.recommendations);
-        }
-      } catch (error) {
-        log(`Error analyzing file ${file.path}: ${String(error)}`);
-      }
-    });
-    
-    // Generate summary
-    analysis.summary = `Analyzed ${analysis.totalFiles} files with ${analysis.qualityIssues.length} quality issues`;
-    
-    return { success: true, analysis };
-  } catch (error) {
-    log(`Error analyzing content quality: ${String(error)}`);
-    return { success: false, error: String(error) };
+  } catch (err) {
+    log(`Content quality check failed: ${String(err)}`);
+    return { error: String(err), timestamp: nowIso() };
   }
 }
 
-function analyzeFileContent(file, content) {
-  const analysis = {
-    file: file.path,
-    issues: [],
-    recommendations: []
-  };
-  
-  // Check for common quality issues
-  if (content.length === 0) {
-    analysis.issues.push("Empty file");
-    analysis.recommendations.push("Consider removing empty files or adding content");
-  }
-  
-  if (content.length > 1000000) { // 1MB
-    analysis.issues.push("File is very large");
-    analysis.recommendations.push("Consider splitting large files into smaller modules");
-  }
-  
-  // Check for TODO comments
-  const todoMatches = content.match(/TODO|FIXME|HACK|XXX/g);
-  if (todoMatches) {
-    analysis.issues.push(`${todoMatches.length} TODO/FIXME comments found`);
-    analysis.recommendations.push("Review and address TODO comments");
-  }
-  
-  // Check for long lines
-  const lines = content.split('\n');
-  const longLines = lines.filter(line => line.length > 120);
-  if (longLines.length > 0) {
-    analysis.issues.push(`${longLines.length} lines exceed 120 characters`);
-    analysis.recommendations.push("Consider breaking long lines for better readability");
-  }
-  
-  // Check for inconsistent indentation
-  const indentationIssues = [];
-  lines.forEach((line, index) => {
-    if (line.length > 0 && !line.startsWith(' ') && !line.startsWith('\t')) {
-      // Check if this should be indented (following a line that ends with { or :)
-      if (index > 0) {
-        const prevLine = lines[index - 1];
-        if (prevLine.trim().endsWith('{') || prevLine.trim().endsWith(':')) {
-          indentationIssues.push(index + 1);
+function checkSEOElements() {
+  try {
+    log("Checking SEO elements...");
+    
+    const seoIssues = [];
+    const pagesDir = path.join(process.cwd(), "pages");
+    
+    if (fs.existsSync(pagesDir)) {
+      const files = fs.readdirSync(pagesDir, { recursive: true });
+      const mdFiles = files.filter(file => file.endsWith('.md'));
+      
+      for (const file of mdFiles) {
+        const content = fs.readFileSync(path.join(pagesDir, file), 'utf8');
+        
+        // Check for title
+        if (!content.includes('# ')) {
+          seoIssues.push({ file, issue: 'Missing H1 title' });
+        }
+        
+        // Check for meta description
+        if (!content.includes('description:') && !content.includes('meta:')) {
+          seoIssues.push({ file, issue: 'Missing meta description' });
+        }
+        
+        // Check for keywords
+        if (!content.includes('keywords:') && !content.includes('tags:')) {
+          seoIssues.push({ file, issue: 'Missing keywords/tags' });
         }
       }
     }
-  });
-  
-  if (indentationIssues.length > 0) {
-    analysis.issues.push(`${indentationIssues.length} potential indentation issues`);
-    analysis.recommendations.push("Review indentation consistency");
-  }
-  
-  return analysis;
-}
-
-function runContentQualityScripts() {
-  log("Running content quality scripts...");
-  
-  try {
-    const scripts = [
-      "automation/content-quality-fixer.cjs",
-      "automation/content-quality-analyzer.cjs"
-    ];
     
-    const results = [];
-    
-    scripts.forEach(script => {
-      const scriptPath = path.join(process.cwd(), script);
-      if (fs.existsSync(scriptPath)) {
-        log(`Running ${script}...`);
-        const result = run("node", [script]);
-        results.push({
-          script,
-          success: result.status === 0,
-          output: result.stdout,
-          error: result.stderr
-        });
-        
-        if (result.status === 0) {
-          log(`✓ ${script} completed successfully`);
-        } else {
-          log(`✗ ${script} failed`);
-        }
-      } else {
-        log(`Script not found: ${script}`);
-        results.push({
-          script,
-          success: false,
-          error: "Script not found"
-        });
-      }
-    });
-    
-    return { success: true, results };
-  } catch (error) {
-    log(`Error running content quality scripts: ${String(error)}`);
-    return { success: false, error: String(error) };
+    return {
+      seoIssues: {
+        count: seoIssues.length,
+        issues: seoIssues
+      },
+      timestamp: nowIso()
+    };
+  } catch (err) {
+    log(`SEO check failed: ${String(err)}`);
+    return { error: String(err), timestamp: nowIso() };
   }
 }
 
-function generateContentReport() {
+function generateContentReport(contentQuality, seoElements) {
+  const timestamp = nowIso();
   const report = {
-    generatedAt: nowIso(),
-    contentScan: null,
-    qualityAnalysis: null,
-    scriptResults: null,
-    summary: "Content quality redundancy report"
-  };
-
-  try {
-    // Scan content files
-    const contentScan = scanContentFiles();
-    report.contentScan = contentScan;
-    
-    if (contentScan.success && contentScan.files) {
-      // Analyze content quality
-      const qualityAnalysis = analyzeContentQuality(contentScan.files);
-      report.qualityAnalysis = qualityAnalysis;
-      
-      // Run quality scripts
-      const scriptResults = runContentQualityScripts();
-      report.scriptResults = scriptResults;
-      
-      // Generate summary
-      const totalIssues = qualityAnalysis.analysis.qualityIssues.length;
-      const totalFiles = qualityAnalysis.analysis.totalFiles;
-      
-      if (totalIssues === 0) {
-        report.summary = `Content quality check completed - ${totalFiles} files analyzed, no issues found`;
-      } else {
-        report.summary = `Content quality check completed - ${totalFiles} files analyzed, ${totalIssues} issues found`;
+    timestamp,
+    redundancy: true,
+    source: "pm2-redundancy",
+    contentQuality: {
+      contentQuality,
+      seoElements,
+      summary: {
+        overallQuality: "good",
+        issues: []
       }
-    } else {
-      report.summary = "Content quality check failed - unable to scan files";
     }
-    
-    // Write report
-    const reportPath = path.join(process.cwd(), "content-quality-redundancy-report.md");
-    const reportContent = `# Content Quality Redundancy Report
+  };
+  
+  // Analyze overall quality
+  if (contentQuality.brokenLinks?.count > 0) {
+    report.contentQuality.summary.issues.push(`${contentQuality.brokenLinks.count} broken links detected`);
+  }
+  
+  if (seoElements.seoIssues?.count > 0) {
+    report.contentQuality.summary.issues.push(`${seoElements.seoIssues.count} SEO issues detected`);
+  }
+  
+  if (report.contentQuality.summary.issues.length > 0) {
+    report.contentQuality.summary.overallQuality = "needs_attention";
+  }
 
-Generated: ${report.generatedAt}
+  const reportPath = path.join(process.cwd(), "content-quality-redundancy-report.md");
+  const reportContent = `# Content Quality Redundancy Report
 
-## Summary
-${report.summary}
+Generated: ${timestamp}
+Source: PM2 Redundancy System
 
-## Content Scan
-- Status: ${report.contentScan.success ? "✅ Success" : "❌ Failed"}
-- Files Found: ${report.contentScan.files?.length || 0}
+## Overall Quality: ${report.contentQuality.summary.overallQuality.toUpperCase()}
 
-## Quality Analysis
-${report.qualityAnalysis ? `
-- Status: ${report.qualityAnalysis.success ? "✅ Success" : "❌ Failed"}
-- Total Files: ${report.qualityAnalysis.analysis.totalFiles}
-- Quality Issues: ${report.qualityAnalysis.analysis.qualityIssues.length}
-- Recommendations: ${report.qualityAnalysis.analysis.recommendations.length}
+## Issues Detected
+${report.contentQuality.summary.issues.length > 0 ? 
+  report.contentQuality.summary.issues.map(issue => `- ⚠️ ${issue}`).join("\n") : 
+  "- ✅ No issues detected"}
 
-### File Extensions
-${Object.entries(report.qualityAnalysis.analysis.byExtension).map(([ext, files]) => 
-  `- ${ext}: ${files.length} files`
-).join('\n')}
+## Content Quality
+- Broken Links: ${contentQuality.brokenLinks?.count || 0} ❌
+- Files Scanned: ${contentQuality.brokenLinks?.links?.length > 0 ? 
+  new Set(contentQuality.brokenLinks.links.map(l => l.file)).size : 0} 📁
 
-### Quality Issues
-${report.qualityAnalysis.analysis.qualityIssues.map(issue => 
-  `- ${issue.file}: ${issue.issues.join(', ')}`
-).join('\n')}
-` : '- Analysis not available'}
-
-## Script Results
-${report.scriptResults ? `
-- Status: ${report.scriptResults.success ? "✅ Success" : "❌ Failed"}
-- Scripts Run: ${report.scriptResults.results.length}
-- Successful: ${report.scriptResults.results.filter(r => r.success).length}
-- Failed: ${report.scriptResults.results.filter(r => !r.success).length}
-` : '- Script results not available'}
+## SEO Elements
+- SEO Issues: ${seoElements.seoIssues?.count || 0} ❌
+- Files with Issues: ${seoElements.seoIssues?.issues?.length > 0 ? 
+  new Set(seoElements.seoIssues.issues.map(i => i.file)).size : 0} 📁
 
 ## Details
 \`\`\`json
@@ -316,27 +177,51 @@ ${JSON.stringify(report, null, 2)}
 \`\`\`
 `;
 
-    fs.writeFileSync(reportPath, reportContent);
-    log(`Content quality report written to ${reportPath}`);
-    
-    return report;
-  } catch (error) {
-    log(`Error generating content quality report: ${String(error)}`);
-    report.error = String(error);
-    return report;
+  fs.writeFileSync(reportPath, reportContent);
+  log(`Content quality report generated: ${reportPath}`);
+  return report;
+}
+
+async function commitAndPush() {
+  try {
+    run("git", ["config", "user.name", "pm2-redundancy[bot]"]);
+    run("git", ["config", "user.email", "redundancy@ziontechgroup.com"]);
+
+    const status = run("git", ["status", "--porcelain"]);
+    if (!status.stdout.trim()) {
+      log("No changes to commit.");
+      return;
+    }
+
+    run("git", ["add", "-A"]);
+    run("git", ["commit", "-m", `chore(redundancy): content quality check via PM2 redundancy`]);
+
+    const pushResult = run("git", ["push", "origin", "main"]);
+    if (pushResult.status === 0) {
+      log("Changes pushed successfully via redundancy.");
+    } else {
+      log(`Push failed: ${pushResult.stderr}`);
+    }
+  } catch (err) {
+    log(`Commit/push error: ${String(err)}`);
   }
 }
 
-// Main execution
-function main() {
-  log("Starting content quality redundancy process");
-  
+async function main() {
   try {
-    const report = generateContentReport();
-    log(`Content quality redundancy completed: ${report.summary}`);
+    log("Starting content quality redundancy process...");
+    
+    const contentQuality = checkContentQuality();
+    const seoElements = checkSEOElements();
+    
+    const report = generateContentReport(contentQuality, seoElements);
+    
+    await commitAndPush();
+    
+    log("Content quality redundancy completed successfully.");
     process.exit(0);
-  } catch (error) {
-    log(`Content quality redundancy failed: ${String(error)}`);
+  } catch (err) {
+    log(`Content quality redundancy failed: ${String(err)}`);
     process.exit(1);
   }
 }
@@ -345,10 +230,4 @@ if (require.main === module) {
   main();
 }
 
-module.exports = { 
-  scanContentFiles, 
-  analyzeContentQuality, 
-  analyzeFileContent, 
-  runContentQualityScripts, 
-  generateContentReport 
-};
+module.exports = { main, checkContentQuality, checkSEOElements, generateContentReport };

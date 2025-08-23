@@ -1,11 +1,20 @@
 #!/bin/bash
 
+<<<<<<< HEAD
+# Redundancy System Startup Script
+# This script starts the complete redundancy automation system
+
+set -e
+
+echo "🚀 Starting Zion Tech Group Redundancy Automation System..."
+=======
 # 🚀 Zion Tech Group - Complete Redundancy System Startup Script
 # This script starts all redundancy automation processes as a backup to GitHub Actions and Netlify Functions
 
 set -e
 
 echo "🚀 Starting Zion Tech Group Complete Redundancy System..."
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-ece7
 echo "=================================================="
 
 # Colors for output
@@ -17,6 +26,16 @@ NC='\033[0m' # No Color
 
 # Function to print colored output
 print_status() {
+<<<<<<< HEAD
+    local status=$1
+    local message=$2
+    case $status in
+        "info") echo -e "${BLUE}ℹ️  $message${NC}" ;;
+        "success") echo -e "${GREEN}✅ $message${NC}" ;;
+        "warning") echo -e "${YELLOW}⚠️  $message${NC}" ;;
+        "error") echo -e "${RED}❌ $message${NC}" ;;
+    esac
+=======
     echo -e "${BLUE}[INFO]${NC} $1"
 }
 
@@ -30,16 +49,111 @@ print_warning() {
 
 print_error() {
     echo -e "${RED}[ERROR]${NC} $1"
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-ece7
 }
 
 # Check if we're in the right directory
 if [ ! -f "package.json" ]; then
+<<<<<<< HEAD
+    print_status "error" "This script must be run from the project root directory"
+=======
     print_error "This script must be run from the project root directory"
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-ece7
     exit 1
 fi
 
 # Check if PM2 is installed
 if ! command -v pm2 &> /dev/null; then
+<<<<<<< HEAD
+    print_status "error" "PM2 is not installed. Please install it first: npm install -g pm2"
+    exit 1
+fi
+
+# Check if Node.js is available
+if ! command -v node &> /dev/null; then
+    print_status "error" "Node.js is not installed or not in PATH"
+    exit 1
+fi
+
+print_status "info" "Checking system requirements..."
+
+# Create necessary directories
+print_status "info" "Creating log directories..."
+mkdir -p automation/logs
+mkdir -p automation/redundancy
+
+# Check if redundancy ecosystem file exists
+if [ ! -f "ecosystem.redundancy.pm2.cjs" ]; then
+    print_status "error" "Redundancy ecosystem file not found: ecosystem.redundancy.pm2.cjs"
+    exit 1
+fi
+
+# Check if redundancy scripts exist
+print_status "info" "Verifying redundancy scripts..."
+REDUNDANCY_SCRIPTS=(
+    "automation/redundancy/marketing-sync-redundancy.js"
+    "automation/redundancy/sync-health-redundancy.js"
+    "automation/redundancy/netlify-functions-redundancy.js"
+    "automation/redundancy/build-monitor-redundancy.js"
+    "automation/redundancy/content-quality-redundancy.js"
+    "automation/redundancy/security-scanner-redundancy.js"
+    "automation/redundancy/performance-monitor-redundancy.js"
+    "automation/redundancy/dependency-monitor-redundancy.js"
+    "automation/redundancy/health-orchestrator-redundancy.js"
+    "automation/redundancy-unified-orchestrator.js"
+)
+
+MISSING_SCRIPTS=()
+for script in "${REDUNDANCY_SCRIPTS[@]}"; do
+    if [ ! -f "$script" ]; then
+        MISSING_SCRIPTS+=("$script")
+    fi
+done
+
+if [ ${#MISSING_SCRIPTS[@]} -gt 0 ]; then
+    print_status "warning" "Some redundancy scripts are missing:"
+    for script in "${MISSING_SCRIPTS[@]}"; do
+        echo "  - $script"
+    done
+    print_status "warning" "Continuing with available scripts..."
+fi
+
+# Stop any existing PM2 processes
+print_status "info" "Stopping existing PM2 processes..."
+pm2 stop ecosystem.redundancy.pm2.cjs 2>/dev/null || true
+pm2 delete ecosystem.redundancy.pm2.cjs 2>/dev/null || true
+
+# Start the redundancy system
+print_status "info" "Starting PM2 redundancy system..."
+pm2 start ecosystem.redundancy.pm2.cjs --update-env
+
+if [ $? -eq 0 ]; then
+    print_status "success" "PM2 redundancy system started successfully!"
+else
+    print_status "error" "Failed to start PM2 redundancy system"
+    exit 1
+fi
+
+# Wait a moment for processes to start
+print_status "info" "Waiting for processes to initialize..."
+sleep 5
+
+# Check status
+print_status "info" "Checking redundancy system status..."
+pm2 status
+
+# Show redundancy processes specifically
+print_status "info" "Redundancy processes status:"
+pm2 status | grep redundancy || echo "No redundancy processes found"
+
+# Run unified orchestrator test
+print_status "info" "Running redundancy system test..."
+node automation/redundancy-unified-orchestrator.js test
+
+# Show helpful information
+echo ""
+echo "🎉 Redundancy System Started Successfully!"
+echo "=================================================="
 echo ""
 echo "📋 Available Commands:"
 echo "  pm2 status                                    - Check PM2 status"
@@ -162,3 +276,4 @@ fi
 
 echo ""
 print_success "Setup complete! Your automation now has 100% redundancy coverage."
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-ece7

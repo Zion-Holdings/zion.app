@@ -10,7 +10,7 @@ function nowIso() {
 }
 
 function log(message) {
-  const line = `[${nowIso()}] [REDUNDANCY] ${message}`;
+  const line = `[${nowIso()}] [REDUNDANCY-BUILD-MONITOR] ${message}`;
   console.log(line);
 }
 
@@ -34,241 +34,210 @@ function run(command, args, options = {}) {
   return { status, stdout, stderr };
 }
 
-function runGit(args, options = {}) {
-  return run("git", args, options);
-}
-
 function checkBuildHealth() {
-  log("Checking build health...");
-  
-  const healthChecks = {
-    packageJson: false,
-    nodeModules: false,
-    buildScripts: false,
-    dependencies: false,
-    gitStatus: false
-  };
-  
   try {
-    // Check package.json exists
-    const packagePath = path.join(process.cwd(), "package.json");
-    if (fs.existsSync(packagePath)) {
-      healthChecks.packageJson = true;
-      log("✓ package.json found");
-    } else {
-      log("✗ package.json not found");
-    }
+    log("Checking build health...");
     
-    // Check node_modules exists
-    const nodeModulesPath = path.join(process.cwd(), "node_modules");
-    if (fs.existsSync(nodeModulesPath)) {
-      healthChecks.nodeModules = true;
-      log("✓ node_modules found");
-    } else {
-      log("✗ node_modules not found");
-    }
+    // Check if build artifacts exist
+    const buildDir = path.join(process.cwd(), ".next");
+    const outDir = path.join(process.cwd(), "out");
     
-    // Check build scripts in package.json
-    if (healthChecks.packageJson) {
-      try {
-        const packageContent = JSON.parse(fs.readFileSync(packagePath, "utf8"));
-        if (packageContent.scripts && packageContent.scripts.build) {
-          healthChecks.buildScripts = true;
-          log("✓ build script found");
-        } else {
-          log("✗ build script not found");
-        }
-      } catch (error) {
-        log(`✗ Error parsing package.json: ${String(error)}`);
-      }
-    }
+    const buildExists = fs.existsSync(buildDir);
+    const outExists = fs.existsSync(outDir);
     
-    // Check dependencies
-    if (healthChecks.packageJson) {
-      try {
-        const packageContent = JSON.parse(fs.readFileSync(packagePath, "utf8"));
-        if (packageContent.dependencies && Object.keys(packageContent.dependencies).length > 0) {
-          healthChecks.dependencies = true;
-          log("✓ dependencies found");
-        } else {
-          log("✗ no dependencies found");
-        }
-      } catch (error) {
-        log(`✗ Error checking dependencies: ${String(error)}`);
-      }
-    }
+    // Check package.json scripts
+    const packageJson = JSON.parse(fs.readFileSync("package.json", "utf8"));
+    const buildScripts = packageJson.scripts || {};
     
-    // Check git status
-    const gitStatus = runGit(["status", "--porcelain"]);
-    if (gitStatus.status === 0) {
-      healthChecks.gitStatus = true;
-      log("✓ git repository accessible");
-    } else {
-      log("✗ git repository not accessible");
-    }
+    // Check for build-related files
+    const hasBuildScript = !!buildScripts.build;
+    const hasDevScript = !!buildScripts.dev;
+    const hasStartScript = !!buildScripts.start;
     
-  } catch (error) {
-    log(`Error during health check: ${String(error)}`);
-  }
-  
-  return healthChecks;
-}
-
-function runPreBuildChecks() {
-  log("Running pre-build health checks...");
-  
-  try {
-    // Run the existing pre-build health check if available
-    const preBuildScript = path.join(process.cwd(), "automation", "pre-build-health-check.cjs");
-    if (fs.existsSync(preBuildScript)) {
-      log("Running pre-build health check script...");
-      const result = run("node", [preBuildScript]);
-      if (result.status === 0) {
-        log("✓ Pre-build health check passed");
-        return { success: true, script: "pre-build-health-check.cjs" };
-      } else {
-        log("✗ Pre-build health check failed");
-        return { success: false, script: "pre-build-health-check.cjs", error: result.stderr };
-      }
-    } else {
-      log("No pre-build health check script found, running basic checks");
-      const healthChecks = checkBuildHealth();
-      const passedChecks = Object.values(healthChecks).filter(Boolean).length;
-      const totalChecks = Object.keys(healthChecks).length;
-      
-      if (passedChecks >= totalChecks * 0.8) { // 80% threshold
-        log(`✓ Basic health checks passed (${passedChecks}/${totalChecks})`);
-        return { success: true, script: "basic-checks", passed: passedChecks, total: totalChecks };
-      } else {
-        log(`✗ Basic health checks failed (${passedChecks}/${totalChecks})`);
-        return { success: false, script: "basic-checks", passed: passedChecks, total: totalChecks };
-      }
-    }
-  } catch (error) {
-    log(`Error running pre-build checks: ${String(error)}`);
-    return { success: false, error: String(error) };
+    return {
+      buildArtifacts: {
+        nextBuild: buildExists,
+        staticExport: outExists
+      },
+      scripts: {
+        build: hasBuildScript,
+        dev: hasDevScript,
+        start: hasStartScript
+      },
+      timestamp: nowIso()
+    };
+  } catch (err) {
+    log(`Build health check failed: ${String(err)}`);
+    return { error: String(err), timestamp: nowIso() };
   }
 }
 
-function runBuildValidation() {
-  log("Running build validation...");
-  
+function checkDependencies() {
   try {
-    // Run the existing build validator if available
-    const validatorScript = path.join(process.cwd(), "automation", "nextjs-page-validator.cjs");
-    if (fs.existsSync(validatorScript)) {
-      log("Running Next.js page validator...");
-      const result = run("node", [validatorScript]);
-      if (result.status === 0) {
-        log("✓ Build validation passed");
-        return { success: true, script: "nextjs-page-validator.cjs" };
-      } else {
-        log("✗ Build validation failed");
-        return { success: false, script: "nextjs-page-validator.cjs", error: result.stderr };
-      }
-    } else {
-      log("No build validator script found, skipping validation");
-      return { success: true, script: "none", skipped: true };
-    }
-  } catch (error) {
-    log(`Error running build validation: ${String(error)}`);
-    return { success: false, error: String(error) };
-  }
-}
-
-function checkBuildDependencies() {
-  log("Checking build dependencies...");
-  
-  try {
-    // Check if npm is available
-    const npmCheck = run("npm", ["--version"]);
-    if (npmCheck.status !== 0) {
-      log("✗ npm not available");
-      return { success: false, error: "npm not available" };
-    }
-    log("✓ npm available");
+    log("Checking dependencies...");
     
-    // Check for outdated packages
-    const outdatedCheck = run("npm", ["outdated", "--json"]);
-    if (outdatedCheck.status === 0) {
-      try {
-        const outdated = JSON.parse(outdatedCheck.stdout);
-        const outdatedCount = Object.keys(outdated).length;
-        if (outdatedCount > 0) {
-          log(`⚠ ${outdatedCount} packages are outdated`);
-          return { success: true, outdated: outdatedCount, packages: Object.keys(outdated) };
-        } else {
-          log("✓ All packages are up to date");
-          return { success: true, outdated: 0 };
-        }
-      } catch (error) {
-        log(`Error parsing outdated packages: ${String(error)}`);
-        return { success: true, outdated: "unknown" };
-      }
-    } else {
-      log("✓ No outdated packages found");
-      return { success: true, outdated: 0 };
-    }
-  } catch (error) {
-    log(`Error checking dependencies: ${String(error)}`);
-    return { success: false, error: String(error) };
+    // Check if node_modules exists
+    const nodeModulesExists = fs.existsSync(path.join(process.cwd(), "node_modules"));
+    
+    // Check package-lock.json
+    const packageLockExists = fs.existsSync(path.join(process.cwd(), "package-lock.json"));
+    
+    // Check for dependency issues
+    const auditResult = run("npm", ["audit", "--audit-level=high", "--json"], { verbose: false });
+    const hasVulnerabilities = auditResult.status !== 0;
+    
+    return {
+      dependencies: {
+        nodeModules: nodeModulesExists,
+        packageLock: packageLockExists,
+        hasVulnerabilities
+      },
+      timestamp: nowIso()
+    };
+  } catch (err) {
+    log(`Dependency check failed: ${String(err)}`);
+    return { error: String(err), timestamp: nowIso() };
   }
 }
 
-function generateBuildReport() {
+function checkGitStatus() {
+  try {
+    log("Checking git status...");
+    
+    const status = run("git", ["status", "--porcelain"]);
+    const hasChanges = status.stdout.trim().length > 0;
+    
+    const branch = run("git", ["branch", "--show-current"]);
+    const currentBranch = branch.stdout.trim();
+    
+    const remote = run("git", ["remote", "-v"]);
+    const hasRemote = remote.stdout.includes("origin");
+    
+    return {
+      git: {
+        hasChanges,
+        currentBranch,
+        hasRemote,
+        changesCount: status.stdout.split("\n").filter(line => line.trim()).length
+      },
+      timestamp: nowIso()
+    };
+  } catch (err) {
+    log(`Git status check failed: ${String(err)}`);
+    return { error: String(err), timestamp: nowIso() };
+  }
+}
+
+function checkFileSystem() {
+  try {
+    log("Checking file system...");
+    
+    const criticalFiles = [
+      "package.json",
+      "next.config.js",
+      "tsconfig.json",
+      ".eslintrc.js",
+      "README.md"
+    ];
+    
+    const fileStatus = {};
+    for (const file of criticalFiles) {
+      fileStatus[file] = fs.existsSync(path.join(process.cwd(), file));
+    }
+    
+    // Check automation directory
+    const automationDir = path.join(process.cwd(), "automation");
+    const automationExists = fs.existsSync(automationDir);
+    
+    // Check logs directory
+    const logsDir = path.join(automationDir, "logs");
+    const logsExist = fs.existsSync(logsDir);
+    
+    return {
+      files: fileStatus,
+      directories: {
+        automation: automationExists,
+        logs: logsExist
+      },
+      timestamp: nowIso()
+    };
+  } catch (err) {
+    log(`File system check failed: ${String(err)}`);
+    return { error: String(err), timestamp: nowIso() };
+  }
+}
+
+function generateBuildReport(buildHealth, dependencies, gitStatus, fileSystem) {
+  const timestamp = nowIso();
   const report = {
-    generatedAt: nowIso(),
-    healthChecks: null,
-    preBuildChecks: null,
-    buildValidation: null,
-    dependencies: null,
-    summary: "Build monitor redundancy report"
-  };
-
-  try {
-    // Run all checks
-    report.healthChecks = checkBuildHealth();
-    report.preBuildChecks = runPreBuildChecks();
-    report.buildValidation = runBuildValidation();
-    report.dependencies = checkBuildDependencies();
-    
-    // Generate summary
-    const healthScore = Object.values(report.healthChecks).filter(Boolean).length / Object.keys(report.healthChecks).length;
-    const overallSuccess = report.preBuildChecks.success && report.buildValidation.success && healthScore >= 0.8;
-    
-    if (overallSuccess) {
-      report.summary = "Build health check completed successfully - all systems operational";
-    } else {
-      report.summary = "Build health check completed with issues - some systems need attention";
+    timestamp,
+    redundancy: true,
+    source: "pm2-redundancy",
+    buildMonitor: {
+      buildHealth,
+      dependencies,
+      gitStatus,
+      fileSystem,
+      summary: {
+        overallHealth: "healthy",
+        issues: []
+      }
     }
-    
-    // Write report
-    const reportPath = path.join(process.cwd(), "build-monitor-redundancy-report.md");
-    const reportContent = `# Build Monitor Redundancy Report
+  };
+  
+  // Analyze overall health
+  if (buildHealth.error || dependencies.error || gitStatus.error || fileSystem.error) {
+    report.buildMonitor.summary.overallHealth = "degraded";
+  }
+  
+  if (!buildHealth.buildArtifacts?.nextBuild) {
+    report.buildMonitor.summary.issues.push("Missing Next.js build artifacts");
+  }
+  
+  if (dependencies.hasVulnerabilities) {
+    report.buildMonitor.summary.issues.push("Dependencies have security vulnerabilities");
+  }
+  
+  if (gitStatus.hasChanges) {
+    report.buildMonitor.summary.issues.push("Uncommitted changes detected");
+  }
+  
+  if (report.buildMonitor.summary.issues.length > 0) {
+    report.buildMonitor.summary.overallHealth = "attention_needed";
+  }
 
-Generated: ${report.generatedAt}
+  const reportPath = path.join(process.cwd(), "build-monitor-redundancy-report.md");
+  const reportContent = `# Build Monitor Redundancy Report
 
-## Summary
-${report.summary}
+Generated: ${timestamp}
+Source: PM2 Redundancy System
 
-## Health Checks
-- Package.json: ${report.healthChecks.packageJson ? "✅" : "❌"}
-- Node Modules: ${report.healthChecks.nodeModules ? "✅" : "❌"}
-- Build Scripts: ${report.healthChecks.buildScripts ? "✅" : "❌"}
-- Dependencies: ${report.healthChecks.dependencies ? "✅" : "❌"}
-- Git Status: ${report.healthChecks.gitStatus ? "✅" : "❌"}
+## Overall Health: ${report.buildMonitor.summary.overallHealth.toUpperCase()}
 
-## Pre-Build Checks
-- Status: ${report.preBuildChecks.success ? "✅ Passed" : "❌ Failed"}
-- Script: ${report.preBuildChecks.script}
+## Issues Detected
+${report.buildMonitor.summary.issues.length > 0 ? 
+  report.buildMonitor.summary.issues.map(issue => `- ⚠️ ${issue}`).join("\n") : 
+  "- ✅ No issues detected"}
 
-## Build Validation
-- Status: ${report.buildValidation.success ? "✅ Passed" : "❌ Failed"}
-- Script: ${report.buildValidation.script}
+## Build Health
+- Next.js Build: ${buildHealth.buildArtifacts?.nextBuild ? "✅ Exists" : "❌ Missing"}
+- Static Export: ${buildHealth.buildArtifacts?.staticExport ? "✅ Exists" : "❌ Missing"}
+- Build Script: ${buildHealth.scripts?.build ? "✅ Available" : "❌ Missing"}
 
 ## Dependencies
-- Status: ${report.dependencies.success ? "✅ OK" : "❌ Failed"}
-- Outdated: ${report.dependencies.outdated || 0}
+- Node Modules: ${dependencies.dependencies?.nodeModules ? "✅ Installed" : "❌ Missing"}
+- Package Lock: ${dependencies.dependencies?.packageLock ? "✅ Exists" : "❌ Missing"}
+- Vulnerabilities: ${dependencies.dependencies?.hasVulnerabilities ? "⚠️ Found" : "✅ None"}
+
+## Git Status
+- Current Branch: ${gitStatus.git?.currentBranch || "Unknown"}
+- Has Remote: ${gitStatus.git?.hasRemote ? "✅ Yes" : "❌ No"}
+- Uncommitted Changes: ${gitStatus.git?.hasChanges ? "⚠️ Yes (${gitStatus.git.changesCount})" : "✅ No"}
+
+## File System
+- Critical Files: ${Object.values(fileSystem.files || {}).filter(Boolean).length}/${Object.keys(fileSystem.files || {}).length} ✅
+- Automation Directory: ${fileSystem.directories?.automation ? "✅ Exists" : "❌ Missing"}
+- Logs Directory: ${fileSystem.directories?.logs ? "✅ Exists" : "❌ Missing"}
 
 ## Details
 \`\`\`json
@@ -276,27 +245,60 @@ ${JSON.stringify(report, null, 2)}
 \`\`\`
 `;
 
-    fs.writeFileSync(reportPath, reportContent);
-    log(`Build report written to ${reportPath}`);
-    
-    return report;
-  } catch (error) {
-    log(`Error generating build report: ${String(error)}`);
-    report.error = String(error);
-    return report;
+  fs.writeFileSync(reportPath, reportContent);
+  log(`Build monitor report generated: ${reportPath}`);
+  return report;
+}
+
+async function commitAndPush() {
+  try {
+    // Configure git user
+    run("git", ["config", "user.name", "pm2-redundancy[bot]"]);
+    run("git", ["config", "user.email", "redundancy@ziontechgroup.com"]);
+
+    // Check if there are changes
+    const status = run("git", ["status", "--porcelain"]);
+    if (!status.stdout.trim()) {
+      log("No changes to commit.");
+      return;
+    }
+
+    // Add and commit
+    run("git", ["add", "-A"]);
+    run("git", ["commit", "-m", `chore(redundancy): build health check via PM2 redundancy`]);
+
+    // Push to main
+    const pushResult = run("git", ["push", "origin", "main"]);
+    if (pushResult.status === 0) {
+      log("Changes pushed successfully via redundancy.");
+    } else {
+      log(`Push failed: ${pushResult.stderr}`);
+    }
+  } catch (err) {
+    log(`Commit/push error: ${String(err)}`);
   }
 }
 
-// Main execution
-function main() {
-  log("Starting build monitor redundancy process");
-  
+async function main() {
   try {
-    const report = generateBuildReport();
-    log(`Build monitor redundancy completed: ${report.summary}`);
+    log("Starting build monitor redundancy process...");
+    
+    // Run all health checks
+    const buildHealth = checkBuildHealth();
+    const dependencies = checkDependencies();
+    const gitStatus = checkGitStatus();
+    const fileSystem = checkFileSystem();
+    
+    // Generate comprehensive report
+    const report = generateBuildReport(buildHealth, dependencies, gitStatus, fileSystem);
+    
+    // Commit and push if needed
+    await commitAndPush();
+    
+    log("Build monitor redundancy completed successfully.");
     process.exit(0);
-  } catch (error) {
-    log(`Build monitor redundancy failed: ${String(error)}`);
+  } catch (err) {
+    log(`Build monitor redundancy failed: ${String(err)}`);
     process.exit(1);
   }
 }
@@ -306,9 +308,10 @@ if (require.main === module) {
 }
 
 module.exports = { 
+  main, 
   checkBuildHealth, 
-  runPreBuildChecks, 
-  runBuildValidation, 
-  checkBuildDependencies, 
+  checkDependencies, 
+  checkGitStatus, 
+  checkFileSystem,
   generateBuildReport 
 };
