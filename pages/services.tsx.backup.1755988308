@@ -96,6 +96,19 @@ const getServicePricing = (service: any) => {
   // Handle pricing object structure
   if (service.pricing?.starter) return service.pricing.starter;
   if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
+<<<<<<< HEAD
+  if (service.price?.monthly) return `$${service.price.monthly}/month`;
+  if (service.price && service.period) return `${service.price}${service.period}`;
+  if (service.price) return service.price;
+  // Handle case where pricing is just a number
+  if (typeof service.pricing === 'number') return `$${service.pricing}/month`;
+  if (typeof service.pricing === 'object' && service.pricing !== null) {
+    // If pricing is an object but doesn't have expected fields, return a default
+    // Check if it has yearly field and use that as fallback
+    if (service.pricing.yearly) return service.pricing.yearly;
+    return 'Contact for pricing';
+  }
+=======
   if (service.pricing?.pro) return `$${service.pricing.pro}/month`;
   if (service.pricing?.enterprise) return `$${service.pricing.enterprise}/month`;
   
@@ -119,6 +132,7 @@ const getServicePricing = (service: any) => {
   if (service.marketPrice) return service.marketPrice;
   
   // Default fallback
+>>>>>>> origin/cursor/analyze-improve-and-deploy-application-d9ea
   return 'Contact for pricing';
 };
 
