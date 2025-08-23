@@ -721,6 +721,16 @@ export default function Services() {
                 </motion.a>
                 
                 <motion.a
+                  href="/2025-ultimate-services-showcase"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-bold text-lg rounded-xl hover:from-purple-600 hover:to-pink-700 transition-all duration-200 shadow-2xl shadow-purple-500/25"
+                >
+                  <Rocket className="w-6 h-6" />
+                  <span>2025 Ultimate Services</span>
+                </motion.a>
+                
+                <motion.a
                   href="/enterprise-solutions-showcase"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
