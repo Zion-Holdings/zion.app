@@ -41,11 +41,21 @@ const HomePage: React.FC = () => {
   return (
     <ErrorBoundary>
       <SEOOptimizer />
+<<<<<<< HEAD
+      <AnalyticsTracker />
+      <Homepage2045 />
+      <PerformanceMonitor showUI={true} />
+      <AccessibilityEnhancer>
+        <div></div>
+      </AccessibilityEnhancer>
+      <PerformanceOptimizer showMetrics={true} autoOptimize={true} />
+=======
       <Analytics showUI={true} autoRefresh={true} refreshInterval={60000} />
       <AccessibilityEnhancer>
         <Homepage2045 />
         <PerformanceMonitor showUI={true} />
       </AccessibilityEnhancer>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
     </ErrorBoundary>
   );
 };

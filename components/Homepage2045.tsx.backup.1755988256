@@ -2,11 +2,17 @@ import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import Layout from './layout/Layout';
 import { motion } from 'framer-motion';
 import { 
+<<<<<<< HEAD
+  Play, Star, Users, Award, TrendingUp, Brain, Rocket, 
+  Phone, Search, Grid, List, Sparkles, 
+  ArrowUpRight, CheckCircle, DollarSign
+=======
   ArrowRight, Play, Star, Users, Award, TrendingUp, Brain, Shield, Rocket, 
   Loader2, ChevronDown, Zap, Globe, Lock, Cpu, Database, Cloud, Palette, Heart,
   Phone, Mail, MapPin, Search, Grid, List, Sparkles, Target, BarChart3, 
   Lightbulb, Code, Server, Network, ShieldCheck, BrainCircuit, Atom, Satellite,
   CheckCircle, ArrowUpRight, Clock, DollarSign
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
 } from 'lucide-react';
 
 // Import our new revolutionary services
@@ -14,6 +20,14 @@ import { revolutionary2045AdvancedRealMicroSaas } from '../data/revolutionary-20
 import { revolutionary2045AdvancedITServices } from '../data/revolutionary-2045-advanced-it-services';
 import { revolutionary2045AdvancedAIServices } from '../data/revolutionary-2045-advanced-ai-services';
 
+<<<<<<< HEAD
+// Enhanced loading fallback component
+const LoadingFallback = () => (
+  <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 relative overflow-hidden">
+    {/* Enhanced animated background particles */}
+    <div className="absolute inset-0">
+      {[...Array(100)].map((_, i) => (
+=======
 // Enhanced loading fallback component with better accessibility
 const LoadingFallback = () => (
   <div 
@@ -24,6 +38,7 @@ const LoadingFallback = () => (
     {/* Animated background particles */}
     <div className="absolute inset-0" aria-hidden="true">
       {[...Array(30)].map((_, i) => (
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
         <motion.div
           key={i}
           className="absolute w-1 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"
@@ -54,10 +69,22 @@ const LoadingFallback = () => (
     >
       <div className="relative">
         <motion.div
+<<<<<<< HEAD
+          animate={{ 
+            rotate: 360,
+            scale: [1, 1.1, 1]
+          }}
+          transition={{ 
+            rotate: { duration: 3, repeat: Infinity, ease: "linear" },
+            scale: { duration: 2, repeat: Infinity, ease: "easeInOut" }
+          }}
+          className="w-32 h-32 mx-auto mb-8"
+=======
           animate={{ rotate: 360 }}
           transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
           className="w-24 h-24 mx-auto mb-6"
           aria-hidden="true"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
         >
           <div className="w-full h-full bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 rounded-full blur-xl opacity-40 animate-pulse"></div>
           <div className="absolute inset-4 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full flex items-center justify-center">
@@ -98,22 +125,59 @@ const Homepage2045: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
+<<<<<<< HEAD
+  const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const [sortBy, setSortBy] = useState<'name' | 'category' | 'popularity'>('popularity');
+
+  // Memoized services data for better performance
+=======
   const [isSearchFocused, setIsSearchFocused] = useState(false);
 
   // Memoize expensive computations
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
   const allServices = useMemo(() => [
     ...innovative2045AdvancedServices,
     ...innovative2045ITServices,
     ...innovative2045MicroSAASServices
   ], []);
 
+<<<<<<< HEAD
+  // Enhanced filtered and sorted services
+  const filteredServices = useMemo(() => {
+    let filtered = allServices.filter(service => {
+=======
   const filteredServices = useMemo(() => {
     return allServices.filter(service => {
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
       const matchesCategory = selectedCategory === 'all' || service.category.includes(selectedCategory);
       const matchesSearch = service.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
                            service.description.toLowerCase().includes(searchQuery.toLowerCase());
       return matchesCategory && matchesSearch;
     });
+<<<<<<< HEAD
+
+    // Sort services
+    filtered.sort((a, b) => {
+      switch (sortBy) {
+        case 'name':
+          return a.name.localeCompare(b.name);
+        case 'category':
+          return a.category.localeCompare(b.category);
+        case 'popularity':
+        default: {
+          // Use rating and reviews as popularity indicators
+          const aScore = (a.rating || 0) * (a.reviews || 0);
+          const bScore = (b.rating || 0) * (b.reviews || 0);
+          return bScore - aScore;
+        }
+      }
+    });
+
+    return filtered;
+  }, [allServices, selectedCategory, searchQuery, sortBy]);
+
+  const categories = ['all', 'AI', 'Quantum', 'IT', 'Micro SAAS', 'Cybersecurity', 'Space', 'Blockchain'];
+=======
   }, [allServices, selectedCategory, searchQuery]);
 
   const categories = useMemo(() => ['all', 'AI', 'Quantum', 'IT', 'Micro SAAS', 'Cybersecurity', 'Space', 'Blockchain'], []);
@@ -129,13 +193,18 @@ const Homepage2045: React.FC = () => {
     })(),
     []
   );
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
 
   useEffect(() => {
     // Simulate loading for better UX
     const timer = setTimeout(() => {
       setIsLoading(false);
       setIsVisible(true);
+<<<<<<< HEAD
+    }, 1500);
+=======
     }, 800); // Reduced loading time for better UX
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
 
     return () => clearTimeout(timer);
   }, []);
@@ -168,7 +237,11 @@ const Homepage2045: React.FC = () => {
     );
   }, [selectedCategory, allRevolutionaryServices]);
 
+<<<<<<< HEAD
+  // Enhanced animations
+=======
   // Enhanced animations with better performance
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 },
@@ -202,9 +275,44 @@ const Homepage2045: React.FC = () => {
     return colors[index % colors.length];
   };
 
+<<<<<<< HEAD
+  // Enhanced scroll to section function
+  const scrollToSection = useCallback((sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  }, []);
+
+  const handleGetStarted = useCallback(() => {
+    if (typeof window !== 'undefined') {
+      window.location.href = '/revolutionary-2045-pricing-showcase';
+    }
+  }, []);
+
+  const handleWatchDemo = useCallback(() => {
+    if (typeof window !== 'undefined') {
+      window.location.href = '/services';
+    }
+  }, []);
+
+  const handleServiceClick = useCallback((service: any) => {
+    if (typeof window !== 'undefined') {
+      window.location.href = service.slug;
+    }
+  }, []);
+
+  const handleCategoryChange = useCallback((categoryId: string) => {
+    setSelectedCategory(categoryId);
+  }, []);
+=======
   if (isLoading) {
     return <LoadingFallback />;
   }
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
 
   return (
     <Layout>
@@ -215,8 +323,13 @@ const Homepage2045: React.FC = () => {
             <div className="fixed inset-0 -z-10">
               <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900"></div>
               
+<<<<<<< HEAD
+              {/* Enhanced floating geometric shapes */}
+              {[...Array(30)].map((_, i) => (
+=======
               {/* Floating geometric shapes with reduced count for better performance */}
               {[...Array(15)].map((_, i) => (
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
                 <motion.div
                   key={i}
                   className="absolute w-40 h-40 border border-cyan-400/20 rounded-2xl"
@@ -240,8 +353,13 @@ const Homepage2045: React.FC = () => {
                 />
               ))}
               
+<<<<<<< HEAD
+              {/* Enhanced animated particles */}
+              {[...Array(150)].map((_, i) => (
+=======
               {/* Animated particles with reduced count */}
               {[...Array(60)].map((_, i) => (
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
                 <motion.div
                   key={i}
                   className="absolute w-1 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"
@@ -274,27 +392,64 @@ const Homepage2045: React.FC = () => {
                   className="mb-12"
                 >
                   <motion.div
+<<<<<<< HEAD
+                    animate={{ 
+                      scale: [1, 1.1, 1],
+                      rotate: [0, 5, -5, 0]
+                    }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                    className="inline-block p-6 rounded-full bg-gradient-to-r from-cyan-400/20 to-blue-500/20 border border-cyan-400/30 mb-8 backdrop-blur-sm"
+=======
                     animate={{ scale: [1, 1.05, 1] }}
                     transition={{ duration: 3, repeat: Infinity }}
                     className="inline-block p-4 rounded-full bg-gradient-to-r from-cyan-400/20 to-blue-500/20 border border-cyan-400/30 mb-6"
                     aria-hidden="true"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
                   >
                     <Sparkles className="w-16 h-16 text-cyan-400" />
                   </motion.div>
                   
+<<<<<<< HEAD
+                  <motion.h1 
+                    className="text-7xl md:text-9xl font-black mb-8 leading-tight"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 1, delay: 0.2 }}
+                  >
+=======
                   <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6">
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
                     <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
                       Zion Tech Group
                     </span>
                   </motion.h1>
                   
+<<<<<<< HEAD
+                  <motion.h2 
+                    className="text-4xl md:text-6xl font-bold text-white mb-10"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, delay: 0.4 }}
+                  >
+                    <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-orange-500 bg-clip-text text-transparent">
+=======
                   <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-8">
                     <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
                       2045
                     </span>
                   </motion.h2>
                   
+<<<<<<< HEAD
+                  <motion.p 
+                    className="text-2xl md:text-3xl text-gray-300 mb-16 max-w-5xl mx-auto leading-relaxed"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, delay: 0.6 }}
+                  >
+=======
                   <p className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
                     Pioneering the future with revolutionary AI, quantum computing, and space technology solutions. 
                     Transform your business with cutting-edge innovations that define tomorrow.
                   </motion.p>
@@ -312,8 +467,13 @@ const Homepage2045: React.FC = () => {
                       boxShadow: "0 20px 40px rgba(6, 182, 212, 0.3)"
                     }}
                     whileTap={{ scale: 0.95 }}
+<<<<<<< HEAD
+                    onClick={() => scrollToSection('services')}
+                    className="px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-full text-xl shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 flex items-center gap-3 group"
+=======
                     className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-full text-lg shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 flex items-center gap-2 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
                     aria-label="Explore our services"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
                   >
                     <Rocket className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300" />
                     Explore Services
@@ -326,14 +486,47 @@ const Homepage2045: React.FC = () => {
                       boxShadow: "0 20px 40px rgba(168, 85, 247, 0.3)"
                     }}
                     whileTap={{ scale: 0.95 }}
+<<<<<<< HEAD
+                    className="px-10 py-5 border-2 border-purple-400 text-purple-400 font-bold rounded-full text-xl hover:bg-purple-400 hover:text-gray-900 transition-all duration-300 flex items-center gap-3 group backdrop-blur-sm"
+=======
                     className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-bold rounded-full text-lg hover:bg-cyan-400 hover:text-gray-900 transition-all duration-300 flex items-center gap-2 focus:outline-none focus:ring-4 focus:ring-cyan-400/50"
                     aria-label="Watch our demo video"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
                   >
                     <Play className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
                     Watch Demo
                   </motion.button>
                 </motion.div>
 
+<<<<<<< HEAD
+                {/* Enhanced Floating Stats */}
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1, delay: 1 }}
+                  className="grid grid-cols-1 md:grid-cols-4 gap-8"
+                >
+                  {[
+                    { icon: Users, value: '2,500+', label: 'Enterprise Clients', color: 'from-blue-400 to-cyan-500' },
+                    { icon: Award, value: '99.9%', label: 'Uptime SLA', color: 'from-emerald-400 to-teal-500' },
+                    { icon: TrendingUp, value: '500%', label: 'Performance Boost', color: 'from-orange-400 to-red-500' },
+                    { icon: Star, value: '4.9/5', label: 'Customer Rating', color: 'from-purple-400 to-pink-500' }
+                  ].map((stat, index) => (
+                    <motion.div
+                      key={index}
+                      whileHover={{ 
+                        scale: 1.05,
+                        y: -10,
+                        boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+                      }}
+                      className="text-center p-8 rounded-3xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 backdrop-blur-sm hover:border-white/20 transition-all duration-500"
+                    >
+                      <div className={`inline-block p-4 rounded-2xl bg-gradient-to-r ${stat.color} mb-6`}>
+                        <stat.icon className="w-10 h-10 text-white" />
+                      </div>
+                      <div className="text-4xl font-bold text-white mb-3">{stat.value}</div>
+                      <div className="text-gray-300 text-lg">{stat.label}</div>
+=======
                 {/* Enhanced Floating stats */}
                 <motion.div
                   initial={{ opacity: 0, y: 50 }}
@@ -357,6 +550,7 @@ const Homepage2045: React.FC = () => {
                       </div>
                       <div className="text-2xl lg:text-3xl font-bold text-white mb-2">{stat.value}</div>
                       <div className="text-sm lg:text-base text-gray-300">{stat.label}</div>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
                     </motion.div>
                   ))}
                 </motion.div>
@@ -364,7 +558,11 @@ const Homepage2045: React.FC = () => {
             </section>
 
             {/* Enhanced Services Section */}
+<<<<<<< HEAD
+            <section id="services" className="relative py-24 px-4">
+=======
             <section id="services" className="relative py-20 px-4">
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
               <div className="max-w-7xl mx-auto">
                 <motion.div
                   initial={{ opacity: 0, y: 50 }}
@@ -373,23 +571,87 @@ const Homepage2045: React.FC = () => {
                   viewport={{ once: true }}
                   className="text-center mb-20"
                 >
+<<<<<<< HEAD
+                  <h2 className="text-6xl md:text-7xl font-bold mb-8">
+=======
                   <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
                     <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                       Revolutionary Services
                     </span>
                   </h2>
+<<<<<<< HEAD
+                  <p className="text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+=======
                   <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
                     Discover our cutting-edge portfolio of AI, quantum computing, and space technology solutions 
                     that are reshaping industries and defining the future.
                   </p>
                 </motion.div>
 
+<<<<<<< HEAD
+                {/* Enhanced Controls */}
+=======
                 {/* Enhanced Category Filter */}
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
                   viewport={{ once: true }}
+<<<<<<< HEAD
+                  className="flex flex-col lg:flex-row justify-between items-center gap-6 mb-16"
+                >
+                  {/* Category Filter */}
+                  <div className="flex flex-wrap justify-center gap-3">
+                    {categories.map((category) => (
+                      <motion.button
+                        key={category}
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() => setSelectedCategory(category)}
+                        className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                          selectedCategory === category
+                            ? 'bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg'
+                            : 'bg-white/5 text-gray-300 border border-white/10 hover:bg-white/10 hover:border-cyan-400/30'
+                        }`}
+                      >
+                        {category}
+                      </motion.button>
+                    ))}
+                  </div>
+
+                  {/* View Mode and Sort Controls */}
+                  <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-2 bg-white/5 rounded-full p-1 border border-white/10">
+                      <button
+                        onClick={() => setViewMode('grid')}
+                        className={`p-2 rounded-full transition-all duration-300 ${
+                          viewMode === 'grid' 
+                            ? 'bg-cyan-500 text-white' 
+                            : 'text-gray-400 hover:text-white'
+                        }`}
+                      >
+                        <Grid className="w-5 h-5" />
+                      </button>
+                      <button
+                        onClick={() => setViewMode('list')}
+                        className={`p-2 rounded-full transition-all duration-300 ${
+                          viewMode === 'list' 
+                            ? 'bg-cyan-500 text-white' 
+                            : 'text-gray-400 hover:text-white'
+                        }`}
+                      >
+                        <List className="w-5 h-5" />
+                      </button>
+                    </div>
+
+                    <select
+                      value={sortBy}
+                      onChange={(e) => setSortBy(e.target.value as any)}
+                      className="bg-white/5 border border-white/10 rounded-full px-4 py-2 text-white focus:outline-none focus:border-cyan-400 transition-all duration-300"
+=======
                   className="flex flex-wrap justify-center gap-3 lg:gap-4 mb-12"
                 >
                   {categories.map((category) => (
@@ -404,6 +666,7 @@ const Homepage2045: React.FC = () => {
                           : 'bg-white/5 text-gray-300 border border-white/10 hover:bg-white/10'
                       }`}
                       aria-label={`Filter services by ${category}`}
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
                     >
                       <option value="popularity">Most Popular</option>
                       <option value="name">Name A-Z</option>
@@ -425,6 +688,11 @@ const Homepage2045: React.FC = () => {
                     <input
                       type="text"
                       placeholder="Search for innovative services..."
+<<<<<<< HEAD
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      className="w-full px-16 py-5 bg-white/5 border border-white/10 rounded-full text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:bg-white/10 transition-all duration-300 text-lg"
+=======
                       defaultValue={searchQuery}
                       onChange={(e) => debouncedSearch(e.target.value)}
                       onFocus={() => setIsSearchFocused(true)}
@@ -433,6 +701,7 @@ const Homepage2045: React.FC = () => {
                         isSearchFocused ? 'border-cyan-400 shadow-lg shadow-cyan-400/25' : 'border-white/10'
                       }`}
                       aria-label="Search services"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
                     />
                     {searchQuery && (
                       <button
@@ -445,13 +714,24 @@ const Homepage2045: React.FC = () => {
                   </div>
                 </motion.div>
 
+<<<<<<< HEAD
+                {/* Enhanced Services Grid/List */}
+=======
                 {/* Enhanced Services Grid */}
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
                 <motion.div
                   variants={staggerContainer}
                   initial="initial"
                   whileInView="animate"
                   viewport={{ once: true }}
+<<<<<<< HEAD
+                  className={viewMode === 'grid' 
+                    ? "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                    : "space-y-6"
+                  }
+=======
                   className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
                 >
                   {filteredServices.slice(0, 9).map((service, index) => (
                     <motion.div
@@ -462,7 +742,13 @@ const Homepage2045: React.FC = () => {
                         y: -10,
                         boxShadow: "0 25px 50px -12px rgba(6, 182, 212, 0.25)"
                       }}
+<<<<<<< HEAD
+                      className={`group relative p-8 rounded-3xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 backdrop-blur-sm hover:border-cyan-400/50 transition-all duration-500 ${
+                        viewMode === 'list' ? 'flex items-start gap-6' : ''
+                      }`}
+=======
                       className="group relative p-6 lg:p-8 rounded-2xl bg-gradient-to-br from-white/5 to-white/10 border border-white/10 backdrop-blur-sm hover:border-cyan-400/50 transition-all duration-500"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
                     >
                       {/* Service Icon */}
                       <div className={`inline-block p-4 rounded-2xl bg-gradient-to-r from-cyan-400/20 to-blue-500/20 mb-6 group-hover:scale-110 transition-transform duration-300 ${
@@ -472,6 +758,22 @@ const Homepage2045: React.FC = () => {
                       </div>
 
                       {/* Service Content */}
+<<<<<<< HEAD
+                      <div className={`${viewMode === 'list' ? 'flex-1' : ''}`}>
+                        <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
+                          {service.name}
+                        </h3>
+                        
+                        <p className="text-gray-300 mb-6 leading-relaxed">
+                          {service.description}
+                        </p>
+
+                        {/* Service Features */}
+                        <div className="space-y-2 mb-6">
+                          {service.features && service.features.slice(0, 3).map((feature, idx) => (
+                            <div key={idx} className="flex items-center gap-2 text-sm text-gray-400">
+                              <CheckCircle className="w-4 h-4 text-emerald-400" />
+=======
                       <div className="mb-6">
                         <h3 className="text-xl lg:text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
                           {service.name}
@@ -504,9 +806,12 @@ const Homepage2045: React.FC = () => {
                           {service.features.slice(0, 3).map((feature, idx) => (
                             <li key={idx} className="flex items-start gap-2 text-sm text-gray-300">
                               <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-2 flex-shrink-0"></div>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
                               {feature}
                             </div>
                           ))}
+<<<<<<< HEAD
+=======
                         </ul>
                       </div>
 
@@ -520,6 +825,7 @@ const Homepage2045: React.FC = () => {
                         <div className="flex items-center gap-1">
                           <Users className="w-4 h-4 text-cyan-400" />
                           <span>{service.customers}</span>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
                         </div>
 
                                                  {/* Service Meta */}
@@ -544,6 +850,8 @@ const Homepage2045: React.FC = () => {
                            </motion.button>
                          </div>
                       </div>
+<<<<<<< HEAD
+=======
 
                       {/* Enhanced CTA Button */}
                       <motion.button
@@ -558,10 +866,19 @@ const Homepage2045: React.FC = () => {
 
                       {/* Enhanced Hover Effect Overlay */}
                       <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-400/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
                     </motion.div>
                   ))}
                 </motion.div>
 
+<<<<<<< HEAD
+                {/* No Results Message */}
+                {filteredServices.length === 0 && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    className="text-center py-16"
+=======
                 {/* Enhanced View All Services Button */}
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
@@ -575,6 +892,7 @@ const Homepage2045: React.FC = () => {
                     whileTap={{ scale: 0.95 }}
                     className="px-10 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-bold rounded-full text-lg shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 flex items-center gap-3 mx-auto focus:outline-none focus:ring-4 focus:ring-purple-400/50"
                     aria-label="View all available services"
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
                   >
                     <Search className="w-16 h-16 text-gray-500 mx-auto mb-4" />
                     <h3 className="text-2xl font-bold text-gray-400 mb-2">No services found</h3>
@@ -584,9 +902,15 @@ const Homepage2045: React.FC = () => {
               </div>
             </section>
 
+<<<<<<< HEAD
+            {/* Enhanced CTA Section */}
+            <section className="relative py-24 px-4">
+              <div className="max-w-6xl mx-auto text-center">
+=======
             {/* Enhanced Contact Section */}
             <section id="contact" className="relative py-20 px-4">
               <div className="max-w-4xl mx-auto text-center">
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
                 <motion.div
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -599,6 +923,32 @@ const Homepage2045: React.FC = () => {
                       Ready to Transform Your Business?
                     </span>
                   </h2>
+<<<<<<< HEAD
+                  <p className="text-xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+                    Join thousands of forward-thinking companies already leveraging our cutting-edge technology solutions. 
+                    The future is now, and it starts with Zion Tech Group.
+                  </p>
+                  
+                  <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="px-10 py-5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-full text-xl shadow-2xl hover:shadow-cyan-500/50 transition-all duration-300 flex items-center gap-3"
+                    >
+                      <Rocket className="w-6 h-6" />
+                      Get Started Today
+                    </motion.button>
+                    
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="px-10 py-5 border-2 border-white/20 text-white font-bold rounded-full text-xl hover:bg-white/10 transition-all duration-300 flex items-center gap-3"
+                    >
+                      <Phone className="w-6 h-6" />
+                      Schedule a Demo
+                    </motion.button>
+                  </div>
+=======
                   <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
                     Join the future of technology with Zion Tech Group. Let's build tomorrow together.
                   </p>
@@ -646,6 +996,7 @@ const Homepage2045: React.FC = () => {
                     Start Your Journey
                     <ArrowRight className="w-6 h-6" />
                   </motion.button>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
                 </motion.div>
               </div>
             </section>

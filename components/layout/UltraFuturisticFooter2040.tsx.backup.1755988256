@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+import React, { useState } from 'react';
+=======
 import React, { useState, useCallback } from 'react';
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -6,7 +10,11 @@ import {
   Brain, Atom, Shield, Rocket, Target, 
   Star, 
   Twitter, Linkedin, Youtube, Github, 
+<<<<<<< HEAD
+  ArrowUp, ArrowRight, ExternalLink, ChevronDown
+=======
   ArrowUp, ArrowRight, ExternalLink, ChevronDown, ChevronUp
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
 } from 'lucide-react';
 
 // Memoized footer data for better performance
@@ -79,6 +87,20 @@ const footerData = {
 
 const UltraFuturisticFooter2040: React.FC = () => {
   const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set());
+<<<<<<< HEAD
+
+  const toggleSection = (title: string) => {
+    const newExpanded = new Set(expandedSections);
+    if (newExpanded.has(title)) {
+      newExpanded.delete(title);
+    } else {
+      newExpanded.add(title);
+    }
+    setExpandedSections(newExpanded);
+  };
+
+  const scrollToTop = () => {
+=======
   const [isVisible, setIsVisible] = useState(false);
 
   // Enhanced section toggle with better accessibility
@@ -96,6 +118,7 @@ const UltraFuturisticFooter2040: React.FC = () => {
 
   // Scroll to top functionality
   const scrollToTop = useCallback(() => {
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
@@ -111,6 +134,109 @@ const UltraFuturisticFooter2040: React.FC = () => {
   }, []);
 
   return (
+<<<<<<< HEAD
+    <footer className="bg-black/90 backdrop-blur-md border-t border-gray-800/50 relative z-10" role="contentinfo">
+      {/* Newsletter Signup */}
+      <section className="py-16 px-4 border-b border-gray-800/50">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-purple-600 bg-clip-text text-transparent">
+              Stay Ahead of the Future
+            </h2>
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+              Get the latest insights on AI, quantum computing, and emerging technologies delivered to your inbox.
+            </p>
+            <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-3 bg-gray-900/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                required
+                aria-label="Email address for newsletter"
+              />
+              <button
+                type="submit"
+                className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
+              >
+                Subscribe
+              </button>
+            </form>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Main Footer Content */}
+      <div className="py-16 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            {footerSections.map((section, index) => (
+              <motion.div
+                key={section.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="space-y-4"
+              >
+                {/* Mobile Collapsible Header */}
+                <button
+                  onClick={() => toggleSection(section.title)}
+                  className="lg:hidden flex items-center justify-between w-full text-left"
+                  aria-expanded={expandedSections.has(section.title)}
+                >
+                  <div className="flex items-center space-x-2">
+                    <div className={`w-8 h-8 bg-gradient-to-r ${section.color} rounded-lg flex items-center justify-center`}>
+                      {section.icon}
+                    </div>
+                    <h3 className="text-lg font-semibold text-white">{section.title}</h3>
+                  </div>
+                  <ChevronDown 
+                    className={`w-5 h-5 text-gray-400 transition-transform duration-200 ${
+                      expandedSections.has(section.title) ? 'rotate-180' : ''
+                    }`} 
+                  />
+                </button>
+
+                {/* Desktop Header */}
+                <div className="hidden lg:block">
+                  <div className="flex items-center space-x-2 mb-4">
+                    <div className={`w-8 h-8 bg-gradient-to-r ${section.color} rounded-lg flex items-center justify-center`}>
+                      {section.icon}
+                    </div>
+                    <h3 className="text-lg font-semibold text-white">{section.title}</h3>
+                  </div>
+                  <p className="text-sm text-gray-400 mb-4">{section.description}</p>
+                </div>
+
+                {/* Links */}
+                <div className={`lg:block ${expandedSections.has(section.title) ? 'block' : 'hidden'}`}>
+                  <ul className="space-y-2">
+                    {section.links.map((link) => (
+                      <li key={link.name}>
+                        <Link
+                          href={link.href}
+                          className={`text-sm transition-colors duration-200 hover:text-cyan-400 ${
+                            link.featured 
+                              ? 'text-cyan-400 font-medium' 
+                              : 'text-gray-400'
+                          }`}
+                        >
+                          {link.name}
+                          {link.featured && (
+                            <span className="ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-cyan-500/20 text-cyan-400">
+                              Featured
+                            </span>
+                          )}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+=======
     <footer className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border-t border-gray-700/50" role="contentinfo">
       {/* Enhanced Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
@@ -264,21 +390,68 @@ const UltraFuturisticFooter2040: React.FC = () => {
                       {link.name}
                     </Link>
                   ))}
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
                 </div>
               </motion.div>
             ))}
           </div>
+<<<<<<< HEAD
+
+          {/* Contact & Social Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 py-8 border-t border-gray-800/50">
+            {/* Contact Information */}
+=======
         </div>
 
         {/* Enhanced Bottom Section */}
         <div className="py-8 border-t border-gray-700/50">
           <div className="flex flex-col lg:flex-row items-center justify-between space-y-6 lg:space-y-0">
             {/* Enhanced Copyright */}
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
+<<<<<<< HEAD
+            >
+              <h3 className="text-xl font-semibold text-white mb-6">Get in Touch</h3>
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <Phone className="w-5 h-5 text-cyan-400" />
+                  <a href={`tel:${contactInfo.mobile}`} className="text-gray-300 hover:text-cyan-400 transition-colors">
+                    {contactInfo.mobile}
+                  </a>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Mail className="w-5 h-5 text-cyan-400" />
+                  <a href={`mailto:${contactInfo.email}`} className="text-gray-300 hover:text-cyan-400 transition-colors">
+                    {contactInfo.email}
+                  </a>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <MapPin className="w-5 h-5 text-cyan-400 mt-0.5" />
+                  <address className="text-gray-300 not-italic">
+                    {contactInfo.address}
+                  </address>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <Globe className="w-5 h-5 text-cyan-400" />
+                  <a 
+                    href={contactInfo.website} 
+                    className="text-gray-300 hover:text-cyan-400 transition-colors flex items-center space-x-1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span>Visit our website</span>
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Social Links & Quick Actions */}
+=======
               className="text-center lg:text-left"
             >
               <p className="text-gray-400 text-sm">
@@ -290,11 +463,75 @@ const UltraFuturisticFooter2040: React.FC = () => {
             </motion.div>
 
             {/* Enhanced Social Links */}
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
+<<<<<<< HEAD
+              className="space-y-6"
+            >
+              <div>
+                <h3 className="text-xl font-semibold text-white mb-4">Connect With Us</h3>
+                <div className="flex space-x-4">
+                  {socialLinks.map((social) => (
+                    <a
+                      key={social.name}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-10 h-10 bg-gray-800/50 hover:bg-cyan-500/20 border border-gray-700 hover:border-cyan-500/50 rounded-lg flex items-center justify-center text-gray-400 hover:text-cyan-400 transition-all duration-300"
+                      aria-label={`Follow us on ${social.name}`}
+                    >
+                      {social.icon}
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold text-white mb-4">Quick Actions</h3>
+                <div className="space-y-2">
+                  <Link href="/get-started" className="block text-gray-300 hover:text-cyan-400 transition-colors">
+                    Get Started
+                  </Link>
+                  <Link href="/demo" className="block text-gray-300 hover:text-cyan-400 transition-colors">
+                    Request Demo
+                  </Link>
+                  <Link href="/support" className="block text-gray-300 hover:text-cyan-400 transition-colors">
+                    Get Support
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="py-6 px-4 border-t border-gray-800/50">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+          <div className="flex items-center space-x-6 text-sm text-gray-400">
+            <span>&copy; 2025 Zion Tech Group. All rights reserved.</span>
+            <Link href="/privacy" className="hover:text-cyan-400 transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="hover:text-cyan-400 transition-colors">
+              Terms of Service
+            </Link>
+          </div>
+          
+          <div className="flex items-center space-x-4">
+            <span className="text-sm text-gray-400">Made with ❤️ for the future</span>
+            <button
+              onClick={scrollToTop}
+              className="p-2 bg-gray-800/50 hover:bg-cyan-500/20 border border-gray-700 hover:border-cyan-500/50 rounded-lg text-gray-400 hover:text-cyan-400 transition-all duration-300"
+              aria-label="Scroll to top"
+            >
+              <ArrowUp className="w-5 h-5" />
+            </button>
+=======
               className="flex items-center space-x-4"
             >
               <span className="text-gray-400 text-sm mr-2">Follow us:</span>
@@ -313,10 +550,74 @@ const UltraFuturisticFooter2040: React.FC = () => {
                 </a>
               ))}
             </motion.div>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
           </div>
         </div>
       </div>
 
+<<<<<<< HEAD
+      {/* Newsletter Signup */}
+      <div className="bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="text-center">
+            <h3 className="text-2xl font-bold text-white mb-2">Stay Ahead of the Curve</h3>
+            <p className="text-white/70 mb-6 max-w-2xl mx-auto">
+              Get the latest insights on AI consciousness, quantum computing, and emerging technologies 
+              delivered directly to your inbox.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+              />
+              <button className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-medium rounded-lg hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105">
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Newsletter Signup */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.5 }}
+        className="bg-gradient-to-r from-cyan-900/20 to-purple-900/20 border-t border-cyan-400/20"
+      >
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
+          <div className="mb-6">
+            <h3 className="text-2xl font-bold text-white mb-2">
+              Stay Updated with Innovation
+            </h3>
+            <p className="text-gray-300">
+              Get the latest insights on AI, quantum computing, and cutting-edge technology
+            </p>
+          </div>
+          
+          <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="flex-1 px-4 py-3 bg-gray-800/50 border border-cyan-400/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:border-transparent"
+              aria-label="Email address for newsletter"
+              required
+            />
+            <motion.button
+              type="submit"
+              className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400/50"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label="Subscribe to newsletter"
+            >
+              Subscribe
+            </motion.button>
+          </form>
+        </div>
+      </motion.div>
+=======
       {/* Enhanced Scroll to Top Button */}
       <AnimatePresence>
         {isVisible && (
@@ -332,6 +633,7 @@ const UltraFuturisticFooter2040: React.FC = () => {
           </motion.button>
         )}
       </AnimatePresence>
+>>>>>>> origin/cursor/analyze-improve-and-deploy-ziontechgroup-app-38e7
     </footer>
   );
 };
