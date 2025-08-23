@@ -1,10 +1,1 @@
-import Head from 'next/head';
-
-export default function CybersecurityBestPracticesPage() {
-  return (
-    <>
-      <Head><title>Cybersecurity Best Practices</title></Head>
-      <div className="py-10">Content coming soon.</div>
-    </>
-  );
-}
+export default function ChatCybersecurity() { return <div className="p-6">Cybersecurity Best Practices</div>; }

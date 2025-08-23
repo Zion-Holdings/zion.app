@@ -1,3 +1,1 @@
-export default function AutoUpdatePage_160755171z() {
-  return <div className="py-10">Auto update snapshot page.</div>;
-}
+export default function AutoUpdate_160755() { return <div className="p-6">Auto Update</div>; }

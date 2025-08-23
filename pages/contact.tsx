@@ -1,5 +1,3 @@
-export default Contact;
-=======
 export default function Contact() { return <div className="py-10">Contact us</div> }
 =======
 import Head from 'next/head';
@@ -14,4 +12,8 @@ export default function ContactPage() {
       </div>
     </>
   );
+}
+=======
+export default function ContactPage() {
+  return <div className="container mx-auto p-6">Contact</div>;
 }
