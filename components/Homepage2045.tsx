@@ -4,7 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ArrowRight, Play, TrendingUp, Brain, Shield, Rocket, Globe, Cpu, Database, Atom, Target, Star, Sparkles as SparklesIcon,
   Brain as BrainIcon, Atom as AtomIcon, Shield as ShieldIcon, Rocket as RocketIcon, Zap, Eye, Heart, Infinity,
-  ChevronRight, ChevronLeft, ExternalLink, Users, Award, Clock, CheckCircle, Zap as ZapIcon
+  ChevronRight, ChevronLeft, ExternalLink, Users, Award, Clock, CheckCircle, Zap as ZapIcon,
+  Sparkles, Layers, Grid, Hexagon, Octagon, Pentagon, Triangle, Square, Circle
 } from 'lucide-react';
 
 // Import our new revolutionary services
@@ -18,6 +19,7 @@ const Homepage2045: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [hoveredService, setHoveredService] = useState<string | null>(null);
+  const [scrollY, setScrollY] = useState(0);
   
   useEffect(() => {
     setIsVisible(true);
@@ -31,12 +33,19 @@ const Homepage2045: React.FC = () => {
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
+
+    // Track scroll position for parallax effects
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
     
     window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('scroll', handleScroll);
     
     return () => {
       clearInterval(interval);
       window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -100,57 +109,133 @@ const Homepage2045: React.FC = () => {
     setSelectedCategory(categoryId);
   }, []);
 
+  // Futuristic geometric shapes for background
+  const GeometricShapes = () => (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {/* Floating geometric shapes */}
+      <motion.div
+        animate={{ 
+          x: [0, 100, 0],
+          y: [0, -100, 0],
+          rotate: [0, 360, 0]
+        }}
+        transition={{ 
+          duration: 20,
+          repeat: -1,
+          ease: "linear"
+        }}
+        className="absolute top-20 left-20 w-32 h-32 border border-cyan-400/20 rounded-lg"
+      />
+      <motion.div
+        animate={{ 
+          x: [0, -100, 0],
+          y: [0, 100, 0],
+          rotate: [0, -360, 0]
+        }}
+        transition={{ 
+          duration: 25,
+          repeat: -1,
+          ease: "linear"
+        }}
+        className="absolute top-40 right-32 w-24 h-24 border border-purple-400/20 rounded-full"
+      />
+      <motion.div
+        animate={{ 
+          x: [0, 150, 0],
+          y: [0, -150, 0],
+          rotate: [0, 720, 0]
+        }}
+        transition={{ 
+          duration: 30,
+          repeat: -1,
+          ease: "linear"
+        }}
+        className="absolute bottom-32 left-32 w-40 h-40 border border-pink-400/20 transform rotate-45"
+      />
+      
+      {/* Additional geometric shapes */}
+      <motion.div
+        animate={{ 
+          x: [0, -80, 0],
+          y: [0, 80, 0],
+          rotate: [0, 180, 0]
+        }}
+        transition={{ 
+          duration: 18,
+          repeat: -1,
+          ease: "linear"
+        }}
+        className="absolute top-60 left-1/4 w-20 h-20 border border-blue-400/20 transform rotate-45"
+      />
+      <motion.div
+        animate={{ 
+          x: [0, 120, 0],
+          y: [0, -120, 0],
+          rotate: [0, -180, 0]
+        }}
+        transition={{ 
+          duration: 22,
+          repeat: -1,
+          ease: "linear"
+        }}
+        className="absolute bottom-20 right-1/4 w-28 h-28 border border-green-400/20 rounded-full"
+      />
+      
+      {/* Hexagon pattern */}
+      <motion.div
+        animate={{ 
+          rotate: [0, 360]
+        }}
+        transition={{ 
+          duration: 40,
+          repeat: -1,
+          ease: "linear"
+        }}
+        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-cyan-400/10"
+        style={{ clipPath: 'polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)' }}
+      />
+    </div>
+  );
+
   return (
     <Layout>
       {/* Main Content */}
       <main className="relative z-10">
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-          {/* Animated Background */}
+          {/* Enhanced Animated Background */}
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-br from-black via-purple-900/20 to-cyan-900/20" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.3),transparent_50%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(236,72,153,0.2),transparent_50%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(59,130,246,0.2),transparent_50%)]" />
             
-            {/* Floating Elements */}
-            <motion.div
-              animate={{ 
-                x: [0, 100, 0],
-                y: [0, -100, 0],
-                rotate: [0, 360, 0]
-              }}
-              transition={{ 
-                duration: 20,
-                repeat: -1,
-                ease: "linear"
-              }}
-              className="absolute top-20 left-20 w-32 h-32 border border-cyan-400/20 rounded-lg"
-            />
-            <motion.div
-              animate={{ 
-                x: [0, -100, 0],
-                y: [0, 100, 0],
-                rotate: [0, -360, 0]
-              }}
-              transition={{ 
-                duration: 25,
-                repeat: -1,
-                ease: "linear"
-              }}
-              className="absolute top-40 right-32 w-24 h-24 border border-purple-400/20 rounded-full"
-            />
-            <motion.div
-              animate={{ 
-                x: [0, 150, 0],
-                y: [0, -150, 0],
-                rotate: [0, 720, 0]
-              }}
-              transition={{ 
-                duration: 30,
-                repeat: -1,
-                ease: "linear"
-              }}
-              className="absolute bottom-32 left-32 w-40 h-40 border border-pink-400/20 transform rotate-45"
-            />
+            {/* Geometric Shapes */}
+            <GeometricShapes />
+            
+            {/* Particle effect overlay */}
+            <div className="absolute inset-0 opacity-30">
+              {[...Array(20)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute w-1 h-1 bg-cyan-400 rounded-full"
+                  animate={{
+                    x: [0, Math.random() * 1000],
+                    y: [0, Math.random() * 1000],
+                    opacity: [0, 1, 0]
+                  }}
+                  transition={{
+                    duration: Math.random() * 10 + 10,
+                    repeat: -1,
+                    delay: Math.random() * 5
+                  }}
+                  style={{
+                    left: Math.random() * 100 + '%',
+                    top: Math.random() * 100 + '%'
+                  }}
+                />
+              ))}
+            </div>
           </div>
 
           {/* Hero Content */}
@@ -221,7 +306,7 @@ const Homepage2045: React.FC = () => {
                 </button>
               </motion.div>
 
-              {/* Stats */}
+              {/* Enhanced Stats */}
               <motion.div 
                 className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12"
                 initial={{ opacity: 0, y: 30 }}
@@ -229,7 +314,12 @@ const Homepage2045: React.FC = () => {
                 transition={{ duration: 1, delay: 1 }}
               >
                 {stats.map((stat, index) => (
-                  <div key={index} className="text-center group">
+                  <motion.div 
+                    key={index} 
+                    className="text-center group"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     <div className="flex justify-center mb-2">
                       <stat.icon className="w-8 h-8 text-cyan-400 group-hover:text-purple-400 transition-colors duration-300" />
                     </div>
@@ -239,14 +329,14 @@ const Homepage2045: React.FC = () => {
                     <div className="text-sm text-white/70 group-hover:text-white/90 transition-colors duration-300">
                       {stat.label}
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </motion.div>
             </motion.div>
           </div>
         </section>
 
-        {/* Category Filter */}
+        {/* Enhanced Category Filter */}
         <section className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div 
@@ -264,10 +354,10 @@ const Homepage2045: React.FC = () => {
               </p>
             </motion.div>
 
-            {/* Category Tabs */}
+            {/* Enhanced Category Tabs */}
             <div className="flex flex-wrap justify-center gap-4 mb-12">
               {categories.map((category) => (
-                <button
+                <motion.button
                   key={category.id}
                   onClick={() => handleCategoryChange(category.id)}
                   className={`group relative px-6 py-3 rounded-xl font-medium transition-all duration-300 ${
@@ -275,6 +365,8 @@ const Homepage2045: React.FC = () => {
                       ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg shadow-cyan-500/25'
                       : 'bg-white/5 text-white/70 hover:bg-white/10 hover:text-white border border-white/10'
                   }`}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   <span className="flex items-center gap-2">
                     <category.icon className="w-5 h-5" />
@@ -283,13 +375,13 @@ const Homepage2045: React.FC = () => {
                       {category.count}
                     </span>
                   </span>
-                </button>
+                </motion.button>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Services Grid */}
+        {/* Enhanced Services Grid */}
         <section className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -303,6 +395,7 @@ const Homepage2045: React.FC = () => {
                   onHoverStart={() => setHoveredService(service.id)}
                   onHoverEnd={() => setHoveredService(null)}
                   className="group relative"
+                  whileHover={{ y: -5 }}
                 >
                   <div className="relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-xl border border-white/10 rounded-2xl p-6 h-full transition-all duration-300 hover:border-cyan-400/50 hover:shadow-2xl hover:shadow-cyan-500/25 hover:scale-105">
                     {/* Service Header */}
@@ -378,7 +471,7 @@ const Homepage2045: React.FC = () => {
                       </button>
                     </div>
 
-                    {/* Hover Effect Overlay */}
+                    {/* Enhanced Hover Effect Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-purple-500/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                   </div>
                 </motion.div>
@@ -402,7 +495,7 @@ const Homepage2045: React.FC = () => {
           </div>
         </section>
 
-        {/* Featured Services Showcase */}
+        {/* Enhanced Featured Services Showcase */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent to-white/5">
           <div className="max-w-7xl mx-auto">
             <motion.div 
@@ -420,7 +513,7 @@ const Homepage2045: React.FC = () => {
               </p>
             </motion.div>
 
-            {/* Featured Services Carousel */}
+            {/* Enhanced Featured Services Carousel */}
             <div className="relative">
               <div className="flex gap-8 overflow-hidden">
                 {featuredServices.map((service, index) => (
@@ -431,6 +524,7 @@ const Homepage2045: React.FC = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, delay: index * 0.2 }}
                     viewport={{ once: true }}
+                    whileHover={{ y: -10 }}
                   >
                     <div className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl border border-white/20 rounded-2xl p-8 h-full transition-all duration-300 hover:border-cyan-400/50 hover:shadow-2xl hover:shadow-cyan-500/25 hover:scale-105">
                       <div className="absolute top-4 right-4">
@@ -479,7 +573,7 @@ const Homepage2045: React.FC = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
+        {/* Enhanced CTA Section */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
