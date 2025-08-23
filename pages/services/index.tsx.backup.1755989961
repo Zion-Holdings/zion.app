@@ -62,11 +62,15 @@ import { innovativeAIServices } from '../../data/innovative-2025-ai-services-exp
 // Import our new 2025 advanced services
 import { advanced2025MicroSaasExpansion } from '../../data/2025-advanced-micro-saas-expansion';
 import { advanced2025ITSolutionsExpansion } from '../../data/2025-advanced-it-solutions-expansion';
+<<<<<<< HEAD
+import { advancedAIServicesExpansion2025 } from '../../data/2025-advanced-ai-services-expansion';
+=======
 import { advanced2025AIServicesExpansion } from '../../data/2025-advanced-ai-services-expansion';
 // Import our new 2025 innovative services
 import { innovativeMicroSaasExpansionV2 } from '../../data/2025-innovative-micro-saas-expansion-v2';
 import { enterpriseAISolutionsExpansion } from '../../data/2025-enterprise-ai-solutions-expansion';
 import { emergingTechInnovations } from '../../data/2025-emerging-tech-innovations';
+>>>>>>> origin/cursor/add-and-advertise-new-services-then-build-d192
 
 // Import our new 2025 innovative services
 import { innovativeMicroSaasExpansion2025 } from '../../data/2025-innovative-micro-saas-expansion';
