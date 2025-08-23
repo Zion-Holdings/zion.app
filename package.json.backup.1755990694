@@ -412,6 +412,11 @@
     "venture:cron:stop": "bash automation/venture-cron.sh stop",
     "venture:cron:status": "bash automation/venture-cron.sh status",
     "venture:report": "node automation/venture-orchestrator.cjs report",
+<<<<<<< HEAD
+          "frontend-sync:autonomous:start": "node automation/launch-frontend-sync-autonomous.js",
+      "frontend-sync:autonomous:once": "node automation/frontend-sync-autonomous-orchestrator.cjs once 0",
+      "frontend-sync:autonomous:cron": "bash automation/frontend-sync-autonomous-cron.sh"
+=======
     "frontend-sync:autonomous:start": "node automation/launch-frontend-sync-autonomous.js",
     "frontend-sync:autonomous:once": "node automation/frontend-sync-autonomous-orchestrator.cjs once 0",
     "frontend-sync:autonomous:cron": "bash automation/frontend-sync-autonomous-cron.sh",
@@ -425,6 +430,7 @@
       "scan:todo": "node automation/todo-scanner.cjs",
       "scan:registry": "node automation/docs-pages-indexer.cjs",
       "scan:content": "npm run scan:todo && npm run scan:registry"
+>>>>>>> origin/cursor/automate-main-page-with-futuristic-design-e1b7
   },
   "dependencies": {
     "@google-analytics/data": "^5.2.0",
