@@ -22,6 +22,25 @@ const footerSections = [
     description: 'Our most popular and innovative solutions',
     icon: <Star className="w-5 h-5 text-yellow-400" />,
     links: [
+<<<<<<< HEAD
+      { name: 'AI Customer Success Platform', href: '/ai-customer-success-platform', featured: true },
+      { name: 'Supply Chain Optimization', href: '/intelligent-supply-chain-optimization', featured: true },
+      { name: 'AI Financial Planning', href: '/ai-financial-planning-platform', featured: true },
+      { name: 'AI Sales Intelligence', href: '/ai-sales-intelligence-platform', featured: true },
+      { name: 'HR Analytics Platform', href: '/ai-hr-analytics-platform' },
+      { name: 'AI Decision Engine', href: '/ai-powered-decision-engine' },
+      { name: 'Content Automation', href: '/intelligent-content-automation-platform' },
+      { name: 'CRM Intelligence Suite', href: '/smart-crm-intelligence-suite' },
+      { name: 'AI Evaluation Orchestrator', href: '/ai-evaluation-orchestrator', featured: true },
+      { name: 'SEO Automation Suite', href: '/seo-automation-suite' },
+      { name: 'IT Asset Discovery Agent', href: '/it-asset-discovery-agent' },
+      { name: 'Managed Postgres HA', href: '/managed-postgres-ha' },
+      // Newly added
+      { name: 'RAG Evaluation Lab', href: '/services/rag-evaluation-lab', featured: true },
+      { name: 'Browser Automation Cloud', href: '/services/browser-automation-cloud' },
+      { name: 'Secrets Rotation Automation', href: '/services/secrets-rotation-automation' },
+      { name: 'API Performance Testing', href: '/services/api-performance-testing' }
+=======
       { name: 'AI Customer Success Platform', href: '/services/ai-customer-support-suite', featured: true },
       { name: 'Supply Chain Optimization', href: '/services/ai-supply-chain-optimization' , featured: true },
       { name: 'AI Financial Planning', href: '/services/ai-financial-planning-platform', featured: true },
@@ -30,6 +49,7 @@ const footerSections = [
       { name: 'AI Decision Engine', href: '/services/ai-autonomous-decision-engine' },
       { name: 'Content Automation', href: '/services/intelligent-content-automation' },
       { name: 'CRM Intelligence Suite', href: '/services/crm-intelligence-suite' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1503
     ]
   },
   {
@@ -116,13 +136,48 @@ const footerSections = [
     description: 'Documentation, support, and learning',
     icon: <BookOpen className="w-5 h-5 text-cyan-400" />,
     links: [
+<<<<<<< HEAD
+      { name: 'Blog', href: '/blog' },
+      { name: 'Resources Hub', href: '/resources' },
+=======
       { name: 'Documentation', href: '/resources' },
       { name: 'API Reference', href: '/docs' },
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1503
       { name: 'Case Studies', href: '/case-studies' },
       { name: 'Support Center', href: '/support' },
+<<<<<<< HEAD
+      { name: 'Training & Certification', href: '/training' },
+      { name: 'Market Pricing', href: '/market-pricing' },
+      { name: 'Services Advertising', href: '/services-advertising' },
+      { name: 'RAG Evaluation Lab', href: '/rag-evaluation-lab' },
+      { name: 'SOC 2 Compliance Automation', href: '/soc2-compliance-automation' },
+      { name: 'Browser Automation Cloud', href: '/browser-automation-cloud' },
+      { name: 'Secrets Rotation Automation', href: '/secrets-rotation-automation' },
+      { name: 'API Performance Testing', href: '/api-performance-testing' }
+    ]
+  },
+  {
+    title: 'Company',
+    description: 'About Zion Tech Group',
+    icon: <Building className="w-5 h-5 text-gray-400" />,
+    links: [
+      { name: 'About Us', href: '/about', description: 'Our story and mission' },
+      { name: 'Careers', href: '/careers', description: 'Join our team' },
+      { name: 'Contact', href: '/contact', description: 'Get in touch' },
+      { name: 'Get Started', href: '/get-started', description: 'Start your journey' },
+      { name: 'Quote Request', href: '/quote', description: 'Request pricing' },
+      { name: 'Book Demo', href: '/demo', description: 'Schedule a demo' },
+      { name: 'Support', href: '/support', description: 'Technical support' },
+      { name: 'Partners', href: '/partners', description: 'Partnership opportunities' },
+      { name: 'News', href: '/news', description: 'Company updates' },
+      { name: 'Privacy Policy', href: '/privacy', description: 'Privacy information' },
+      { name: 'Terms of Service', href: '/terms', description: 'Terms and conditions' },
+      { name: 'Cookie Policy', href: '/cookies', description: 'Cookie information' }
+=======
       { name: 'Developer Portal', href: '/docs' },
       { name: 'Training & Certification', href: '/resources' },
       { name: 'Community Forum', href: '/resources' }
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-1503
     ]
   }
 ];
