@@ -241,6 +241,13 @@ const navigationItems: NavigationItem[] = [
         neonColor: 'shadow-green-400/50'
       },
       {
+        label: 'News & Press',
+        href: '/news',
+        icon: <FileText className="w-4 h-4" />,
+        description: 'Latest news and press releases',
+        neonColor: 'shadow-purple-400/50'
+      },
+      {
         label: 'Contact',
         href: '/contact',
         icon: <Phone className="w-4 h-4" />,

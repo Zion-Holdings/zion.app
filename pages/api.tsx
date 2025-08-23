@@ -2,596 +2,492 @@ import React, { useState } from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
-  Code, 
-  Database, 
-  Zap, 
-  Shield, 
-  Globe, 
-  BookOpen, 
-  Download,
-  Play,
-  Terminal,
-  Cpu,
-  Brain,
-  Atom,
-  Rocket,
-  ArrowRight,
-  ExternalLink,
-  CheckCircle,
-  Star,
-  Users,
-  Clock,
-  TrendingUp,
-  Key
+  Code, Database, Cloud, Shield, Brain, Atom, 
+  Rocket, Search, Copy, Check, ExternalLink, Download,
+  Terminal, Play, Zap, Globe, Cpu, Server, Lock, Key,
+  FileText, BookOpen, Users, Award, Lightbulb, Star
 } from 'lucide-react';
 
-const APIPage: React.FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState('all');
+const ApiReference: React.FC = () => {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [copiedEndpoint, setCopiedEndpoint] = useState<string | null>(null);
 
-  const apiCategories = [
-    { id: 'all', name: 'All APIs', icon: Code, count: 15 },
-    { id: 'ai', name: 'AI & ML', icon: Brain, count: 6 },
-    { id: 'quantum', name: 'Quantum Computing', icon: Atom, count: 4 },
-    { id: 'space', name: 'Space Technology', icon: Rocket, count: 3 },
-    { id: 'security', name: 'Security', icon: Shield, count: 2 }
-  ];
+  const copyToClipboard = async (text: string, endpoint: string) => {
+    await navigator.clipboard.writeText(text);
+    setCopiedEndpoint(endpoint);
+    setTimeout(() => setCopiedEndpoint(null), 2000);
+  };
 
   const apiEndpoints = [
     {
-      id: 1,
-      name: 'AI Consciousness API',
-      category: 'ai',
-      description: 'Access our advanced AI consciousness platform for natural language processing and understanding.',
-      endpoint: '/api/v1/ai/consciousness',
-      method: 'POST',
-      rateLimit: '1000 requests/hour',
-      authentication: 'Bearer Token',
-      status: 'Production',
-      documentation: '/docs/api/ai-consciousness',
-      sdk: 'JavaScript, Python, Go',
-      features: ['Natural Language Processing', 'Context Understanding', 'Emotional Intelligence', 'Multi-language Support']
+      category: 'AI & Consciousness',
+      icon: Brain,
+      color: 'from-purple-500 to-pink-500',
+      endpoints: [
+        {
+          method: 'POST',
+          path: '/api/v1/ai/consciousness/analyze',
+          description: 'Analyze AI consciousness patterns and emotional intelligence metrics',
+          parameters: [
+            { name: 'text', type: 'string', required: true, description: 'Text content to analyze' },
+            { name: 'context', type: 'object', required: false, description: 'Additional context for analysis' }
+          ],
+          response: {
+            success: true,
+            consciousness_score: 0.85,
+            emotional_intelligence: 0.92,
+            patterns: ['empathy', 'understanding', 'context_awareness']
+          }
+        },
+        {
+          method: 'GET',
+          path: '/api/v1/ai/consciousness/status',
+          description: 'Get current AI consciousness system status and health metrics',
+          parameters: [],
+          response: {
+            status: 'healthy',
+            uptime: '99.99%',
+            active_models: 5,
+            last_training: '2024-01-15T10:30:00Z'
+          }
+        }
+      ]
     },
     {
-      id: 2,
-      name: 'Quantum Neural Network API',
-      category: 'quantum',
-      description: 'Leverage quantum computing power for complex neural network operations and optimization.',
-      endpoint: '/api/v1/quantum/neural-network',
-      method: 'POST',
-      rateLimit: '100 requests/hour',
-      authentication: 'Bearer Token',
-      status: 'Beta',
-      documentation: '/docs/api/quantum-neural',
-      sdk: 'Python, C++',
-      features: ['Quantum Algorithms', 'Neural Network Training', 'Optimization', 'Scientific Computing']
+      category: 'Quantum Computing',
+      icon: Atom,
+      color: 'from-indigo-500 to-blue-500',
+      endpoints: [
+        {
+          method: 'POST',
+          path: '/api/v1/quantum/compute',
+          description: 'Execute quantum computing operations and algorithms',
+          parameters: [
+            { name: 'algorithm', type: 'string', required: true, description: 'Quantum algorithm to execute' },
+            { name: 'qubits', type: 'number', required: true, description: 'Number of qubits to use' },
+            { name: 'iterations', type: 'number', required: false, description: 'Number of iterations' }
+          ],
+          response: {
+            result: 'quantum_result_hash',
+            execution_time: 0.045,
+            qubits_used: 8,
+            accuracy: 0.999
+          }
+        },
+        {
+          method: 'GET',
+          path: '/api/v1/quantum/status',
+          description: 'Get quantum computing system status and availability',
+          parameters: [],
+          response: {
+            status: 'available',
+            qubits_available: 64,
+            queue_length: 3,
+            estimated_wait_time: 120
+          }
+        }
+      ]
     },
     {
-      id: 3,
-      name: 'Space Resource Intelligence API',
-      category: 'space',
-      description: 'Access real-time space resource data and analysis for space exploration and mining.',
-      endpoint: '/api/v1/space/resources',
-      method: 'GET',
-      rateLimit: '500 requests/hour',
-      authentication: 'API Key',
-      status: 'Production',
-      documentation: '/docs/api/space-resources',
-      sdk: 'JavaScript, Python, Rust',
-      features: ['Satellite Data', 'Resource Analysis', 'Predictive Modeling', 'Real-time Updates']
+      category: 'Space Technology',
+      icon: Globe,
+      color: 'from-green-500 to-emerald-500',
+      endpoints: [
+        {
+          method: 'GET',
+          path: '/api/v1/space/satellite/data',
+          description: 'Retrieve satellite data and telemetry information',
+          parameters: [
+            { name: 'satellite_id', type: 'string', required: true, description: 'Satellite identifier' },
+            { name: 'data_type', type: 'string', required: false, description: 'Type of data to retrieve' },
+            { name: 'time_range', type: 'object', required: false, description: 'Time range for data' }
+          ],
+          response: {
+            satellite_id: 'SAT-001',
+            data: 'satellite_data_payload',
+            timestamp: '2024-01-15T10:30:00Z',
+            data_size: '2.5MB'
+          }
+        },
+        {
+          method: 'POST',
+          path: '/api/v1/space/resources/analyze',
+          description: 'Analyze space resources and mining opportunities',
+          parameters: [
+            { name: 'location', type: 'object', required: true, description: 'Spatial coordinates' },
+            { name: 'resource_type', type: 'string', required: false, description: 'Type of resource to analyze' }
+          ],
+          response: {
+            location: { lat: 45.2, lng: -122.8, altitude: 400 },
+            resources_found: ['iron', 'water_ice', 'rare_metals'],
+            estimated_value: 1500000,
+            extraction_difficulty: 'medium'
+          }
+        }
+      ]
     },
     {
-      id: 4,
-      name: 'Zero-Trust Security API',
-      category: 'security',
-      description: 'Implement zero-trust security architecture with our comprehensive security API.',
-      endpoint: '/api/v1/security/zero-trust',
-      method: 'POST',
-      rateLimit: '2000 requests/hour',
-      authentication: 'Bearer Token',
-      status: 'Production',
-      documentation: '/docs/api/zero-trust',
-      sdk: 'JavaScript, Python, Java',
-      features: ['Identity Verification', 'Access Control', 'Threat Detection', 'Compliance']
+      category: 'Cybersecurity',
+      icon: Shield,
+      color: 'from-red-500 to-orange-500',
+      endpoints: [
+        {
+          method: 'POST',
+          path: '/api/v1/security/threat/analyze',
+          description: 'Analyze potential security threats and vulnerabilities',
+          parameters: [
+            { name: 'data', type: 'object', required: true, description: 'Data to analyze for threats' },
+            { name: 'threat_level', type: 'string', required: false, description: 'Minimum threat level to report' }
+          ],
+          response: {
+            threats_detected: 2,
+            risk_score: 0.75,
+            recommendations: ['update_firewall', 'enable_2fa'],
+            severity: 'high'
+          }
+        },
+        {
+          method: 'GET',
+          path: '/api/v1/security/compliance/status',
+          description: 'Get compliance status for various security standards',
+          parameters: [
+            { name: 'standard', type: 'string', required: false, description: 'Compliance standard to check' }
+          ],
+          response: {
+            soc2: 'compliant',
+            iso27001: 'compliant',
+            gdpr: 'compliant',
+            last_audit: '2024-01-10T14:00:00Z'
+          }
+        }
+      ]
     },
     {
-      id: 5,
-      name: 'AI Content Generation API',
-      category: 'ai',
-      description: 'Generate high-quality content using our advanced AI content creation platform.',
-      endpoint: '/api/v1/ai/content',
-      method: 'POST',
-      rateLimit: '2000 requests/hour',
-      authentication: 'API Key',
-      status: 'Production',
-      documentation: '/docs/api/ai-content',
-      sdk: 'JavaScript, Python, PHP',
-      features: ['Text Generation', 'Image Creation', 'Content Optimization', 'Multi-format Support']
-    },
-    {
-      id: 6,
-      name: 'Quantum Cryptography API',
-      category: 'quantum',
-      description: 'Implement quantum-resistant encryption and secure communication protocols.',
-      endpoint: '/api/v1/quantum/cryptography',
-      method: 'POST',
-      rateLimit: '500 requests/hour',
-      authentication: 'Bearer Token',
-      status: 'Beta',
-      documentation: '/docs/api/quantum-crypto',
-      sdk: 'Python, C++, Rust',
-      features: ['Quantum Encryption', 'Key Distribution', 'Post-Quantum Algorithms', 'Secure Communication']
-    },
-    {
-      id: 7,
-      name: 'Space Communication API',
-      category: 'space',
-      description: 'Access interplanetary communication protocols and satellite network management.',
-      endpoint: '/api/v1/space/communication',
-      method: 'POST',
-      rateLimit: '300 requests/hour',
-      authentication: 'Bearer Token',
-      status: 'Alpha',
-      documentation: '/docs/api/space-communication',
-      sdk: 'Python, Rust',
-      features: ['Satellite Communication', 'Network Management', 'Protocol Optimization', 'Real-time Monitoring']
-    },
-    {
-      id: 8,
-      name: 'AI Predictive Analytics API',
-      category: 'ai',
-      description: 'Leverage machine learning for advanced predictive analytics and forecasting.',
-      endpoint: '/api/v1/ai/predictive',
-      method: 'POST',
-      rateLimit: '1500 requests/hour',
-      authentication: 'API Key',
-      status: 'Production',
-      documentation: '/docs/api/ai-predictive',
-      sdk: 'JavaScript, Python, R',
-      features: ['Time Series Analysis', 'Pattern Recognition', 'Forecasting', 'Statistical Modeling']
-    }
-  ];
-
-  const filteredAPIs = selectedCategory === 'all' 
-    ? apiEndpoints 
-    : apiEndpoints.filter(api => api.category === selectedCategory);
-
-  const sdkDownloads = [
-    {
-      name: 'JavaScript SDK',
-      version: '2.1.0',
-      size: '2.4 MB',
-      downloads: '15.2K',
-      icon: 'JS',
+      category: 'Cloud Infrastructure',
+      icon: Cloud,
       color: 'from-yellow-500 to-orange-500',
-      features: ['Browser & Node.js', 'TypeScript Support', 'Promise-based', 'Error Handling']
-    },
-    {
-      name: 'Python SDK',
-      version: '1.8.2',
-      size: '3.1 MB',
-      downloads: '12.8K',
-      icon: 'PY',
-      color: 'from-blue-500 to-indigo-500',
-      features: ['Async Support', 'Data Classes', 'Type Hints', 'Pandas Integration']
-    },
-    {
-      name: 'Go SDK',
-      version: '1.5.1',
-      size: '1.8 MB',
-      downloads: '8.9K',
-      icon: 'GO',
-      color: 'from-cyan-500 to-blue-500',
-      features: ['Goroutines', 'Context Support', 'Error Handling', 'Performance Optimized']
-    },
-    {
-      name: 'Rust SDK',
-      version: '0.9.3',
-      size: '2.2 MB',
-      downloads: '5.4K',
-      icon: 'RS',
-      color: 'from-orange-500 to-red-500',
-      features: ['Memory Safe', 'Zero-cost Abstractions', 'Async Runtime', 'FFI Support']
+      endpoints: [
+        {
+          method: 'POST',
+          path: '/api/v1/cloud/deploy',
+          description: 'Deploy applications and services to cloud infrastructure',
+          parameters: [
+            { name: 'application', type: 'object', required: true, description: 'Application configuration' },
+            { name: 'environment', type: 'string', required: true, description: 'Deployment environment' }
+          ],
+          response: {
+            deployment_id: 'deploy_12345',
+            status: 'deploying',
+            estimated_completion: '2024-01-15T10:35:00Z',
+            url: 'https://app.example.com'
+          }
+        },
+        {
+          method: 'GET',
+          path: '/api/v1/cloud/status',
+          description: 'Get cloud infrastructure status and performance metrics',
+          parameters: [],
+          response: {
+            status: 'healthy',
+            uptime: '99.99%',
+            active_instances: 45,
+            cpu_utilization: 0.23,
+            memory_utilization: 0.67
+          }
+        }
+      ]
     }
   ];
 
-  const quickStartSteps = [
-    {
-      step: 1,
-      title: 'Get Your API Key',
-      description: 'Sign up for a free account and generate your API key from the dashboard.',
-      icon: Key
-    },
-    {
-      step: 2,
-      title: 'Choose Your SDK',
-      description: 'Download and install the SDK for your preferred programming language.',
-      icon: Download
-    },
-    {
-      step: 3,
-      title: 'Make Your First Request',
-      description: 'Use our code examples to make your first API call and see the results.',
-      icon: Play
-    },
-    {
-      step: 4,
-      title: 'Explore Advanced Features',
-      description: 'Dive into our comprehensive documentation to unlock advanced capabilities.',
-      icon: BookOpen
-    }
-  ];
+  const filteredEndpoints = apiEndpoints.filter(category =>
+    category.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    category.endpoints.some(endpoint =>
+      endpoint.path.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      endpoint.description.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+  );
+
+  const quickStartCode = `# Install Zion Tech Group SDK
+npm install @ziontechgroup/sdk
+
+# Initialize the client
+import { ZionTechClient } from '@ziontechgroup/sdk';
+
+const client = new ZionTechClient({
+  apiKey: 'your_api_key_here',
+  environment: 'production'
+});
+
+# Make your first API call
+const response = await client.ai.consciousness.analyze({
+  text: "Hello, how are you feeling today?",
+  context: { user_id: "user_123" }
+});
+
+console.log(response.consciousness_score);`;
 
   return (
     <Layout>
-      <div className="min-h-screen bg-black text-white">
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-purple-500/10 to-pink-500/10" />
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center"
+              transition={{ duration: 0.6 }}
             >
+              <div className="w-24 h-24 mx-auto mb-6 bg-gradient-to-br from-cyan-500 to-purple-600 rounded-2xl p-6">
+                <Code className="w-full h-full text-white" />
+              </div>
               <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-6">
                 API Reference
               </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Access the power of Zion Tech Group's cutting-edge technology through our comprehensive 
-                API suite. Build the future with AI, quantum computing, and space technology.
+              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
+                Comprehensive API documentation for all Zion Tech Group services. Integrate AI consciousness, quantum computing, space technology, and more into your applications.
               </p>
-              <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="#quick-start"
-                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105"
-                >
-                  Get Started
-                </a>
-                <a
-                  href="/docs"
-                  className="px-8 py-4 border border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300"
-                >
-                  View Documentation
-                </a>
+              
+              {/* Search Bar */}
+              <div className="max-w-2xl mx-auto">
+                <div className="relative">
+                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                  <input
+                    type="text"
+                    placeholder="Search API endpoints..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-full pl-12 pr-4 py-4 bg-gray-800/50 border border-cyan-400/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400/40 focus:ring-2 focus:ring-cyan-400/20"
+                  />
+                </div>
               </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Quick Start Section */}
-        <section id="quick-start" className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Quick Start */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Get Started in Minutes
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Follow these simple steps to start integrating our APIs into your applications.
-              </p>
+              <h2 className="text-3xl font-bold text-white mb-4">Quick Start</h2>
+              <p className="text-gray-400">Get up and running with our API in minutes</p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {quickStartSteps.map((step, index) => (
-                <motion.div
-                  key={step.step}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="text-center group"
+            <div className="bg-gray-800/30 rounded-2xl border border-cyan-400/20 p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-lg font-semibold text-white">Installation & First Call</h3>
+                <button
+                  onClick={() => copyToClipboard(quickStartCode, 'quickstart')}
+                  className="flex items-center space-x-2 px-3 py-2 bg-cyan-500/20 text-cyan-400 rounded-lg hover:bg-cyan-500/30 transition-colors"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <div className="text-white font-bold text-xl">{step.step}</div>
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
-                  <p className="text-gray-400 leading-relaxed">{step.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* SDK Downloads */}
-        <section className="py-20 bg-gradient-to-b from-black to-gray-900">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                Software Development Kits
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Choose from our comprehensive SDKs to integrate our APIs seamlessly into your applications.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {sdkDownloads.map((sdk, index) => (
-                <motion.div
-                  key={sdk.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="group"
-                >
-                  <div className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-2xl p-8 border border-cyan-400/20 hover:border-cyan-400/40 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-400/20">
-                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-purple-500/5 to-pink-500/5 rounded-2xl" />
-                    
-                    <div className="relative z-10">
-                      <div className={`w-16 h-16 bg-gradient-to-br ${sdk.color} rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                        <span className="text-white font-bold text-xl">{sdk.icon}</span>
-                      </div>
-                      
-                      <h3 className="text-xl font-bold text-white mb-2 text-center">{sdk.name}</h3>
-                      <p className="text-cyan-400 text-center mb-4">v{sdk.version}</p>
-                      
-                      <div className="space-y-2 mb-6 text-sm text-gray-400">
-                        <div className="flex justify-between">
-                          <span>Size:</span>
-                          <span>{sdk.size}</span>
-                        </div>
-                        <div className="flex justify-between">
-                          <span>Downloads:</span>
-                          <span>{sdk.downloads}</span>
-                        </div>
-                      </div>
-
-                      <div className="mb-6">
-                        <h4 className="text-sm font-semibold text-gray-400 mb-3 uppercase tracking-wider">Features</h4>
-                        <ul className="space-y-1">
-                          {sdk.features.map((feature, idx) => (
-                            <li key={idx} className="flex items-start gap-2 text-xs">
-                              <CheckCircle className="w-3 h-3 text-green-400 mt-0.5 flex-shrink-0" />
-                              <span className="text-gray-300">{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      <button className="w-full px-4 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105">
-                        Download SDK
-                      </button>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
+                  {copiedEndpoint === 'quickstart' ? (
+                    <>
+                      <Check className="w-4 h-4" />
+                      <span>Copied!</span>
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="w-4 h-4" />
+                      <span>Copy Code</span>
+                    </>
+                  )}
+                </button>
+              </div>
+              <pre className="bg-gray-900/50 rounded-xl p-6 overflow-x-auto">
+                <code className="text-gray-300 text-sm">{quickStartCode}</code>
+              </pre>
             </div>
           </div>
         </section>
 
         {/* API Endpoints */}
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                API Endpoints
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Explore our comprehensive API suite covering AI, quantum computing, space technology, and security.
-              </p>
+              <h2 className="text-3xl font-bold text-white mb-4">API Endpoints</h2>
+              <p className="text-gray-400">Explore all available API endpoints by category</p>
             </motion.div>
 
-            {/* Category Filters */}
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
-              {apiCategories.map((category) => (
-                <button
-                  key={category.id}
-                  onClick={() => setSelectedCategory(category.id)}
-                  className={`flex items-center gap-2 px-6 py-3 rounded-full border transition-all duration-300 ${
-                    selectedCategory === category.id
-                      ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white border-transparent'
-                      : 'border-cyan-400/30 text-cyan-400 hover:border-cyan-400/60'
-                  }`}
-                >
-                  <category.icon className="w-4 h-4" />
-                  <span>{category.name}</span>
-                  <span className="px-2 py-1 bg-white/20 rounded-full text-xs">
-                    {category.count}
-                  </span>
-                </button>
-              ))}
-            </div>
-
             <div className="space-y-8">
-              {filteredAPIs.map((api, index) => (
+              {filteredEndpoints.map((category, categoryIndex) => (
                 <motion.div
-                  key={api.id}
+                  key={category.category}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="group"
+                  transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-r from-gray-800/30 to-gray-900/30 backdrop-blur-sm rounded-2xl border border-cyan-400/20 overflow-hidden"
                 >
-                  <div className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-2xl p-8 border border-cyan-400/20 hover:border-cyan-400/40 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-400/20">
-                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-purple-500/5 to-pink-500/5 rounded-2xl" />
-                    
-                    <div className="relative z-10">
-                      <div className="flex items-start justify-between mb-6">
-                        <div>
-                          <span className="px-3 py-1 bg-cyan-500/20 text-cyan-400 text-sm rounded-full border border-cyan-400/30 mb-3 inline-block">
-                            {apiCategories.find(c => c.id === api.category)?.name}
-                          </span>
-                          <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
-                            {api.name}
-                          </h3>
-                          <p className="text-gray-300 leading-relaxed">{api.description}</p>
-                        </div>
-                        <div className="w-16 h-16 bg-gradient-to-br from-cyan-500 to-purple-500 rounded-full flex items-center justify-center">
-                          <Code className="w-8 h-8 text-white" />
-                        </div>
+                  <div className="p-6 border-b border-gray-700/30">
+                    <div className="flex items-center space-x-4">
+                      <div className={`w-12 h-12 bg-gradient-to-br ${category.color} rounded-xl p-3`}>
+                        <category.icon className="w-full h-full text-white" />
                       </div>
-
-                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-6">
-                        <div>
-                          <h4 className="text-sm font-semibold text-gray-400 mb-3 uppercase tracking-wider">API Details</h4>
-                          <div className="space-y-3">
-                            <div className="flex items-center justify-between">
-                              <span className="text-gray-400">Endpoint:</span>
-                              <code className="px-2 py-1 bg-gray-800 text-cyan-400 rounded text-sm">{api.endpoint}</code>
-                            </div>
-                            <div className="flex items-center justify-between">
-                              <span className="text-gray-400">Method:</span>
-                              <span className={`px-2 py-1 rounded text-sm font-mono ${
-                                api.method === 'GET' ? 'bg-green-500/20 text-green-400' :
-                                api.method === 'POST' ? 'bg-blue-500/20 text-blue-400' :
-                                'bg-yellow-500/20 text-yellow-400'
-                              }`}>
-                                {api.method}
-                              </span>
-                            </div>
-                            <div className="flex items-center justify-between">
-                              <span className="text-gray-400">Rate Limit:</span>
-                              <span className="text-white">{api.rateLimit}</span>
-                            </div>
-                            <div className="flex items-center justify-between">
-                              <span className="text-gray-400">Authentication:</span>
-                              <span className="text-white">{api.authentication}</span>
-                            </div>
-                            <div className="flex items-center justify-between">
-                              <span className="text-gray-400">Status:</span>
-                              <span className={`px-2 py-1 rounded text-xs ${
-                                api.status === 'Production' ? 'bg-green-500/20 text-green-400' :
-                                api.status === 'Beta' ? 'bg-yellow-500/20 text-yellow-400' :
-                                'bg-red-500/20 text-red-400'
-                              }`}>
-                                {api.status}
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div>
-                          <h4 className="text-sm font-semibold text-gray-400 mb-3 uppercase tracking-wider">Features</h4>
-                          <div className="flex flex-wrap gap-2 mb-4">
-                            {api.features.map((feature, idx) => (
-                              <span
-                                key={idx}
-                                className="px-2 py-1 bg-purple-500/10 text-purple-400 text-xs rounded border border-purple-400/20"
-                              >
-                                {feature}
-                              </span>
-                            ))}
-                          </div>
-
-                          <h4 className="text-sm font-semibold text-gray-400 mb-3 uppercase tracking-wider">Supported SDKs</h4>
-                          <div className="flex flex-wrap gap-2">
-                            {api.sdk.split(', ').map((sdk, idx) => (
-                              <span
-                                key={idx}
-                                className="px-2 py-1 bg-cyan-500/10 text-cyan-400 text-xs rounded border border-cyan-400/20"
-                              >
-                                {sdk}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="flex items-center justify-between">
-                        <a
-                          href={api.documentation}
-                          className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105"
-                        >
-                          View Documentation
-                          <BookOpen className="w-4 h-4" />
-                        </a>
-                        <a
-                          href={`/docs/api/${api.name.toLowerCase().replace(/\s+/g, '-')}`}
-                          className="inline-flex items-center gap-2 px-6 py-3 border border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300"
-                        >
-                          Try API
-                          <Play className="w-4 h-4" />
-                        </a>
+                      <div>
+                        <h3 className="text-2xl font-bold text-white">{category.category}</h3>
+                        <p className="text-gray-400">{category.endpoints.length} endpoints available</p>
                       </div>
                     </div>
                   </div>
+
+                  <div className="p-6 space-y-6">
+                    {category.endpoints.map((endpoint, endpointIndex) => (
+                      <div key={endpointIndex} className="bg-gray-800/20 rounded-xl p-6 border border-gray-700/30">
+                        <div className="flex items-start justify-between mb-4">
+                          <div className="flex items-center space-x-3">
+                            <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                              endpoint.method === 'GET' ? 'bg-green-500/20 text-green-400' :
+                              endpoint.method === 'POST' ? 'bg-blue-500/20 text-blue-400' :
+                              endpoint.method === 'PUT' ? 'bg-yellow-500/20 text-yellow-400' :
+                              'bg-red-500/20 text-red-400'
+                            }`}>
+                              {endpoint.method}
+                            </span>
+                            <code className="text-cyan-400 font-mono text-sm">{endpoint.path}</code>
+                          </div>
+                          <button
+                            onClick={() => copyToClipboard(endpoint.path, endpoint.path)}
+                            className="p-2 text-gray-400 hover:text-cyan-400 transition-colors"
+                          >
+                            {copiedEndpoint === endpoint.path ? (
+                              <Check className="w-4 h-4" />
+                            ) : (
+                              <Copy className="w-4 h-4" />
+                            )}
+                          </button>
+                        </div>
+
+                        <p className="text-gray-300 mb-4">{endpoint.description}</p>
+
+                        {endpoint.parameters.length > 0 && (
+                          <div className="mb-4">
+                            <h4 className="text-white font-semibold mb-2">Parameters</h4>
+                            <div className="space-y-2">
+                              {endpoint.parameters.map((param, paramIndex) => (
+                                <div key={paramIndex} className="flex items-center space-x-3 text-sm">
+                                  <code className="text-cyan-400 font-mono">{param.name}</code>
+                                  <span className="text-gray-400">({param.type})</span>
+                                  <span className={`px-2 py-1 rounded text-xs ${
+                                    param.required ? 'bg-red-500/20 text-red-400' : 'bg-gray-500/20 text-gray-400'
+                                  }`}>
+                                    {param.required ? 'Required' : 'Optional'}
+                                  </span>
+                                  <span className="text-gray-500">- {param.description}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        <div>
+                          <h4 className="text-white font-semibold mb-2">Response Example</h4>
+                          <pre className="bg-gray-900/50 rounded-lg p-4 overflow-x-auto">
+                            <code className="text-gray-300 text-sm">
+                              {JSON.stringify(endpoint.response, null, 2)}
+                            </code>
+                          </pre>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* API Status & Performance */}
-        <section className="py-20 bg-gradient-to-b from-black to-gray-900">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* SDKs & Libraries */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-center mb-16"
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-                API Performance & Status
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Monitor our API performance, uptime, and response times in real-time.
-              </p>
+              <h2 className="text-3xl font-bold text-white mb-4">SDKs & Libraries</h2>
+              <p className="text-gray-400">Official client libraries for popular programming languages</p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { icon: Globe, number: '99.99%', label: 'Uptime', color: 'from-green-500 to-emerald-500' },
-                { icon: Zap, number: '<50ms', label: 'Response Time', color: 'from-blue-500 to-cyan-500' },
-                { icon: Users, number: '50K+', label: 'Active Users', color: 'from-purple-500 to-pink-500' },
-                { icon: TrendingUp, number: '1B+', label: 'API Calls/Month', color: 'from-orange-500 to-red-500' }
-              ].map((stat, index) => (
+                { name: 'JavaScript/Node.js', package: '@ziontechgroup/sdk', icon: Code, color: 'from-yellow-500 to-orange-500' },
+                { name: 'Python', package: 'ziontechgroup-sdk', icon: Code, color: 'from-blue-500 to-cyan-500' },
+                { name: 'Java', package: 'com.ziontechgroup.sdk', icon: Code, color: 'from-red-500 to-pink-500' },
+                { name: 'Go', package: 'github.com/ziontechgroup/sdk', icon: Code, color: 'from-cyan-500 to-blue-500' },
+                { name: 'C#', package: 'ZionTechGroup.SDK', icon: Code, color: 'from-purple-500 to-pink-500' },
+                { name: 'Rust', package: 'ziontechgroup-sdk', icon: Code, color: 'from-orange-500 to-red-500' }
+              ].map((sdk, index) => (
                 <motion.div
-                  key={stat.label}
+                  key={sdk.name}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="text-center"
+                  viewport={{ once: true }}
+                  className="bg-gradient-to-br from-gray-800/30 to-gray-900/30 backdrop-blur-sm rounded-2xl p-6 border border-cyan-400/20 hover:border-cyan-400/40 transition-all duration-300"
                 >
-                  <div className={`w-16 h-16 bg-gradient-to-br ${stat.color} rounded-full flex items-center justify-center mx-auto mb-6`}>
-                    <stat.icon className="w-8 h-8 text-white" />
+                  <div className={`w-16 h-16 bg-gradient-to-br ${sdk.color} rounded-xl p-4 mb-4`}>
+                    <sdk.icon className="w-full h-full text-white" />
                   </div>
-                  <div className="text-4xl font-bold text-white mb-2">{stat.number}</div>
-                  <p className="text-gray-400">{stat.label}</p>
+                  <h3 className="text-xl font-bold text-white mb-2">{sdk.name}</h3>
+                  <code className="text-cyan-400 font-mono text-sm block mb-4">{sdk.package}</code>
+                  <div className="flex space-x-2">
+                    <button
+                      onClick={() => copyToClipboard(sdk.package, sdk.name)}
+                      className="flex-1 px-4 py-2 bg-cyan-500/20 text-cyan-400 rounded-lg hover:bg-cyan-500/30 transition-colors text-sm"
+                    >
+                      {copiedEndpoint === sdk.name ? 'Copied!' : 'Copy'}
+                    </button>
+                    <a
+                      href={`/docs/sdks/${sdk.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
+                      className="px-4 py-2 bg-purple-500/20 text-purple-400 rounded-lg hover:bg-purple-500/30 transition-colors text-sm"
+                    >
+                      Docs
+                    </a>
+                  </div>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* Call to Action */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-                Ready to Build the Future?
-              </h2>
-              <p className="text-xl text-gray-300 mb-8">
-                Start integrating our cutting-edge APIs today and unlock the power of AI, 
-                quantum computing, and space technology in your applications.
+              <h2 className="text-4xl font-bold text-white mb-6">Ready to Integrate?</h2>
+              <p className="text-xl text-gray-400 mb-8">
+                Start building with our APIs today. Get your API key and begin integrating AI consciousness, quantum computing, and space technology into your applications.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
                   href="/contact"
-                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105"
+                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold rounded-xl hover:from-cyan-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105"
                 >
-                  Get API Access
+                  Get API Key
                 </a>
                 <a
                   href="/docs"
-                  className="px-8 py-4 border border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all duration-300"
+                  className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300"
                 >
-                  Explore Documentation
+                  View Full Docs
                 </a>
               </div>
             </motion.div>
@@ -602,4 +498,4 @@ const APIPage: React.FC = () => {
   );
 };
 
-export default APIPage;
+export default ApiReference;
