@@ -1,14 +1,19 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 
+// Browser API types
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+  
+
+}
+
 // Add browser API types
 declare global {
   interface Window {
-    gtag?: (
-      command: string,
-      action: string,
-      params?: Record<string, unknown>
-    ) => void;
+    gtag?: (...args: unknown[]) => void;
   }
 }
 
@@ -54,10 +59,10 @@ export default function PerformanceOptimizer({ children }: PerformanceOptimizerP
     // Lazy load non-critical images
     const lazyLoadImages = () => {
       if (typeof window !== 'undefined' && 'IntersectionObserver' in window) {
-        const imageObserver = new (window as any).IntersectionObserver((entries: any[], observer: any) => {
+        const imageObserver = new IntersectionObserver((entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
-              const img = entry.target as any;
+              const img = entry.target as HTMLImageElement;
               if (img.dataset.src) {
                 img.src = img.dataset.src;
                 img.classList.remove('lazy');
