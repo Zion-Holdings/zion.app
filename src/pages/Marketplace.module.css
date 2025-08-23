@@ -1,0 +1,13 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.clamp-text {
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+}
