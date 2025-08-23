@@ -12,6 +12,11 @@ import { revolutionary2044AdvancedMicroSaas } from '../data/revolutionary-2044-a
 import { revolutionary2044ITServices } from '../data/revolutionary-2044-it-services';
 import { revolutionary2044AIServices } from '../data/revolutionary-2044-ai-services';
 
+// Import our new 2025 real enterprise AI services
+import { realEnterpriseAIServices2025 } from '../data/2025-real-enterprise-ai-services';
+import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
+import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
+
 // Lazy load new components for better performance
 const ServiceCard = lazy(() => import('./ServiceCard'));
 const PerformanceMetrics = lazy(() => import('./PerformanceMetrics'));
@@ -47,8 +52,15 @@ const Homepage2044: React.FC = () => {
     };
   }, []);
 
-  // Combine all revolutionary services
+  // Combine all revolutionary services with new ones first
   const allRevolutionaryServices = [
+    // New 2025 Real Enterprise AI Services
+    ...realEnterpriseAIServices2025,
+    // New 2025 Innovative IT Infrastructure Services
+    ...innovativeITInfrastructureServices2025,
+    // New 2025 Innovative Micro SAAS Solutions
+    ...innovativeMicroSaasSolutions2025,
+    // Existing revolutionary services
     ...revolutionary2044AdvancedMicroSaas,
     ...revolutionary2044ITServices,
     ...revolutionary2044AIServices

@@ -8,10 +8,15 @@ import {
   Building, Cpu
 } from 'lucide-react';
 
-// Import our new 2025 service data
-import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
+// Import our new 2025 real enterprise AI services
+import { realEnterpriseAIServices2025 } from '../data/2025-real-enterprise-ai-services';
 import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
 import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
+
+// Import our new 2025 service data
+import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
+import { innovativeITInfrastructureServices2025 as existingITInfrastructure } from '../data/2025-innovative-it-infrastructure-services';
+import { innovativeMicroSaasSolutions2025 as existingMicroSaas } from '../data/2025-innovative-micro-saas-solutions';
 import { cuttingEdgeAIServices2025 } from '../data/2025-cutting-edge-ai-services';
 
 // Import our new service data
@@ -98,35 +103,23 @@ const getServiceFeatures = (service: any) => {
 const getServiceDescription = (service: any) => {
   if (service.description) return service.description;
   if (service.tagline) return service.tagline;
-  return 'No description available';
+  return 'Advanced technology solution';
 };
 
-// Create unified services array
+// Combine all services with new ones first
 const allServices = [
-  // Our new 2025 services
-  ...advancedAIAutomationServices2025,
+  // New 2025 Real Enterprise AI Services
+  ...realEnterpriseAIServices2025,
+  // New 2025 Innovative IT Infrastructure Services
   ...innovativeITInfrastructureServices2025,
+  // New 2025 Innovative Micro SAAS Solutions
   ...innovativeMicroSaasSolutions2025,
+  // Existing services
+  ...advancedAIAutomationServices2025,
   ...cuttingEdgeAIServices2025,
-  
   ...enterpriseITSolutions,
   ...innovativeMicroSaasSolutions,
   ...cuttingEdgeAIServices,
-  ...realMicroSaasServices,
-  ...innovativeAIServices,
-  ...enterpriseITServices,
-  ...cuttingEdgeFuturisticServices,
-  ...advancedAIAutomationServices,
-  ...advancedITInfrastructureServices,
-  ...emergingTechServices,
-  ...newRealServices,
-  ...realOperationalServices,
-  ...marketReadyServices,
-  ...marketValidatedServices,
-  // Our new 2025 Q4 innovative services
-  ...innovative2025Q4NewServices,
-  ...advancedITInfrastructureServices2025,
-  ...industryRealServices,
   ...real2025Q4AugmentedBatch,
   ...real2029Q3Additions,
   ...validatedServices2025Q4,
@@ -134,37 +127,39 @@ const allServices = [
   ...real2036ServiceExpansions,
   ...innovative2036MicroSaasServices,
   ...innovative2036ITServices,
-  // Our new 2025 advanced services
-  ...ultimate2025MicroSaasExpansion,
-  ...ultimate2025ITServicesExpansion,
-  ...ultimate2025AIServicesExpansion,
-  // Our new innovative services
   ...innovative2037MicroSaasServices,
   ...innovative2037ITServices,
   ...innovative2037AIServices,
   ...innovative2038CuttingEdgeServices,
   ...innovative2038ITInfrastructureServices,
-  // Our additional innovative services
   ...innovative2037Services,
   ...advanced2038Services,
   ...revolutionary2039Services,
-  
-  // Our new innovative 2040 services
-  ...innovative2040FuturisticServices,
-  ...innovative2040ITServices,
-  // Our new comprehensive services
   ...revolutionary2040FuturisticServices,
   ...revolutionary2041AdvancedServices,
-  // Our latest innovative services
   ...advanced2041EnterpriseServices,
   ...revolutionary2042MicroSaasServices,
-  // Our new 2025 ultimate services expansion
   ...ultimate2025MicroSaasExpansion,
   ...ultimate2025ITServicesExpansion,
   ...ultimate2025AIServicesExpansion,
-  // Our new 2025 advanced enterprise services
+  ...innovative2025Q4NewServices,
+  ...advancedITInfrastructureServices2025,
+  ...innovative2040ITServices,
+  ...innovative2040FuturisticServices,
   ...advancedEnterpriseServices,
-  ...cuttingEdgeITInfrastructureServices
+  ...cuttingEdgeITInfrastructureServices,
+  ...cuttingEdgeFuturisticServices,
+  ...advancedAIAutomationServices,
+  ...advancedITInfrastructureServices,
+  ...realMicroSaasServices,
+  ...innovativeAIServices,
+  ...enterpriseITServices,
+  ...emergingTechServices,
+  ...newRealServices,
+  ...realOperationalServices,
+  ...marketReadyServices,
+  ...marketValidatedServices,
+  ...industryRealServices
 ];
 
 const categories = [

@@ -9,10 +9,9 @@ import {
 } from 'lucide-react';
 
 // Import our new 2025 services
-import { advancedAIAutomationServices } from '../data/2026-advanced-ai-automation-services';
+import { realEnterpriseAIServices2025 } from '../data/2025-real-enterprise-ai-services';
 import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
 import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
-import { emergingTechnologyServices } from '../data/2025-emerging-technology-services';
 
 const contact = {
   mobile: '+1 302 464 0950',
@@ -50,21 +49,14 @@ const categories = [
     color: 'from-green-500 to-emerald-500',
     description: 'Innovative business solutions and automation'
   },
-  {
-    id: 'emerging-tech',
-    name: 'Emerging Tech',
-    icon: <Rocket className="w-6 h-6" />,
-    color: 'from-orange-500 to-red-500',
-    description: 'Future technology and innovation services'
-  }
+
 ];
 
 // Combine all services
 const allServices = [
-  ...advancedAIAutomationServices,
+  ...realEnterpriseAIServices2025,
   ...innovativeITInfrastructureServices2025,
-  ...innovativeMicroSaasSolutions2025,
-  ...emergingTechnologyServices
+  ...innovativeMicroSaasSolutions2025
 ];
 
 export default function InnovativeServicesShowcase2025() {
@@ -78,25 +70,14 @@ export default function InnovativeServicesShowcase2025() {
                          service.tagline.toLowerCase().includes(searchTerm.toLowerCase());
     
     const matchesCategory = selectedCategory === 'all' || 
-                           service.category.toLowerCase().includes(selectedCategory.toLowerCase());
+                           (selectedCategory === 'ai-automation' && service.category.toLowerCase().includes('ai')) ||
+                           (selectedCategory === 'it-infrastructure' && service.category.toLowerCase().includes('infrastructure')) ||
+                           (selectedCategory === 'micro-saas' && service.category.toLowerCase().includes('micro'));
     
     return matchesSearch && matchesCategory;
   });
 
-  const getServiceCategory = (service: any) => {
-    if (service.category) return service.category;
-    return 'Other';
-  };
 
-  const getServicePricing = (service: any) => {
-    if (service.price?.monthly) return `$${service.price.monthly}/month`;
-    return 'Contact for pricing';
-  };
-
-  const getServiceFeatures = (service: any) => {
-    if (service.features) return service.features;
-    return [];
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
@@ -255,90 +236,40 @@ export default function InnovativeServicesShowcase2025() {
                   {/* Service Header */}
                   <div className={`p-6 ${viewMode === 'list' ? 'flex-1' : ''}`}>
                     <div className="flex items-start justify-between mb-4">
-                      <div className="text-4xl">{service.icon}</div>
-                      {service.popular && (
-                        <span className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-xs font-bold px-2 py-1 rounded-full">
-                          POPULAR
-                        </span>
-                      )}
+                      <div className="text-4xl">🚀</div>
                     </div>
                     
                     <h3 className="text-xl font-bold text-white mb-2">{service.name}</h3>
-                    <p className="text-gray-300 text-sm mb-3">{service.tagline}</p>
+                    <p className="text-gray-300 text-sm mb-4">{service.tagline}</p>
                     
-                    <div className="flex items-center gap-2 mb-4">
-                      <span className="text-2xl font-bold text-purple-400">
-                                              {getServicePricing(service)}
-                    </span>
-                    {typeof service.price !== 'string' && service.price?.yearly && (
-                      <span className="text-sm text-gray-400">
-                        (${service.price.yearly}/year)
-                      </span>
-                    )}
+                    <div className="mb-4">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="text-2xl font-bold text-purple-400">
+                          {service.pricing?.starter || 'Contact for pricing'}
+                        </span>
+                      </div>
                     </div>
 
-                    <p className="text-gray-300 text-sm mb-4 line-clamp-3">
-                      {service.description}
-                    </p>
-
-                    {/* Category Badge */}
                     <div className="mb-4">
                       <span className="inline-block px-3 py-1 bg-white/20 text-white text-xs rounded-full border border-white/30">
-                        {getServiceCategory(service)}
+                        {service.category}
                       </span>
                     </div>
 
-                    {/* Key Features */}
-                    <div className="mb-4">
-                      <h4 className="text-white font-semibold text-sm mb-2">Key Features:</h4>
-                      <div className="space-y-1">
-                        {getServiceFeatures(service).slice(0, 3).map((feature, idx) => (
-                          <div key={idx} className="flex items-center gap-2 text-gray-300 text-sm">
-                            <Check className="w-4 h-4 text-green-400 flex-shrink-0" />
-                            <span>{feature}</span>
-                          </div>
-                        ))}
-                        {getServiceFeatures(service).length > 3 && (
-                          <div className="text-gray-400 text-xs">
-                            +{getServiceFeatures(service).length - 3} more features
-                          </div>
-                        )}
+                    <div className="space-y-2 mb-6">
+                      <div className="text-xs text-gray-400">
+                        <span className="text-gray-500">Type:</span> {service.type}
+                      </div>
+                      <div className="text-xs text-gray-400">
+                        <span className="text-gray-500">Market Size:</span> {service.marketSize}
                       </div>
                     </div>
 
-                    {/* Benefits */}
-                    {'benefits' in service && service.benefits && (
-                      <div className="mb-4">
-                        <h4 className="text-white font-semibold text-sm mb-2">Benefits:</h4>
-                        <div className="space-y-1">
-                          {service.benefits.slice(0, 2).map((benefit, idx) => (
-                            <div key={idx} className="flex items-center gap-2 text-gray-300 text-sm">
-                              <TrendingUp className="w-4 h-4 text-blue-400 flex-shrink-0" />
-                              <span>{benefit}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Service Details */}
-                    <div className="grid grid-cols-2 gap-4 text-xs text-gray-400 mb-4">
-                      <div>
-                        <span className="block text-gray-500">Setup Time:</span>
-                        <span>{typeof service.price === 'string' ? 'Contact us' : service.price?.setupTime || 'Contact us'}</span>
-                      </div>
-                      <div>
-                        <span className="block text-gray-500">Trial:</span>
-                        <span>{typeof service.price === 'string' ? 'Contact us' : service.price?.trialDays || 0} days</span>
-                      </div>
-                    </div>
-
-                    {/* CTA Button */}
                     <a
-                      href={service.link}
+                      href={service.slug || `/services/${service.id}`}
                       className="w-full bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 group"
                     >
-                      Learn More
+                      View Details
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </a>
                   </div>

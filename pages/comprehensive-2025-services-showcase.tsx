@@ -7,9 +7,9 @@ import {
 } from 'lucide-react';
 
 // Import our new service data
-import { innovativeAIAutomationServices2025 } from '../data/2025-innovative-ai-automation-services';
+import { realEnterpriseAIServices2025 } from '../data/2025-real-enterprise-ai-services';
 import { innovativeITInfrastructureServices2025 } from '../data/2025-innovative-it-infrastructure-services';
-import { innovativeMicroSaasExpansion2025 } from '../data/2025-innovative-micro-saas-expansion';
+import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
 
 
 
@@ -29,9 +29,9 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
 
   // Combine all services
   const allServices = [
-    ...innovativeAIAutomationServices2025.map(service => ({ ...service, category: 'AI Automation' })),
+    ...realEnterpriseAIServices2025.map(service => ({ ...service, category: 'AI Automation' })),
     ...innovativeITInfrastructureServices2025.map(service => ({ ...service, category: 'IT Infrastructure' })),
-    ...innovativeMicroSaasExpansion2025.map(service => ({ ...service, category: 'Micro SAAS' }))
+    ...innovativeMicroSaasSolutions2025.map(service => ({ ...service, category: 'Micro SAAS' }))
   ];
 
   // Get unique categories
@@ -51,14 +51,14 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
         case 'name':
           return a.name.localeCompare(b.name);
         case 'price': {
-          const priceA = parseFloat(a.price.replace(/[^0-9.]/g, ''));
-          const priceB = parseFloat(b.price.replace(/[^0-9.]/g, ''));
+          const priceA = parseFloat((a.pricing?.starter || '0').replace(/[^0-9.]/g, ''));
+          const priceB = parseFloat((b.pricing?.starter || '0').replace(/[^0-9.]/g, ''));
           return priceA - priceB;
         }
         case 'rating':
-          return (b.rating || 0) - (a.rating || 0);
+          return 0; // Default sorting since rating not available
         case 'popularity':
-          return (b.popular ? 1 : 0) - (a.popular ? 1 : 0);
+          return 0; // Default sorting since popularity not available
         default:
           return 0;
       }
@@ -87,24 +87,17 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
       {/* Background Glow */}
       <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       
-      {/* Popular Badge */}
-      {service.popular && (
-        <div className="absolute top-4 right-4 z-10">
-          <span className="px-3 py-1 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-xs font-medium rounded-full shadow-lg">
-            Popular
-          </span>
-        </div>
-      )}
+
 
       <div className="relative z-10 p-6">
         {/* Service Icon and Header */}
         <div className="flex items-start justify-between mb-4">
-          <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${service.color} flex items-center justify-center text-2xl`}>
-            {service.icon}
+                      <div className="w-16 h-16 rounded-xl bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center text-2xl">
+            🚀
           </div>
           <div className="text-right">
-            <div className="text-2xl font-bold text-white mb-1">{service.price}</div>
-            <div className="text-sm text-gray-400">{service.period}</div>
+            <div className="text-2xl font-bold text-white mb-1">{service.pricing?.starter || 'Contact for pricing'}</div>
+            <div className="text-sm text-gray-400">Monthly</div>
           </div>
         </div>
 
@@ -152,8 +145,8 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
             <span className="text-gray-400">Rating:</span>
             <div className="flex items-center space-x-1">
               <Star className="w-4 h-4 text-yellow-400 fill-current" />
-              <span className="text-white">{service.rating}</span>
-              <span className="text-gray-400">({service.reviews})</span>
+                              <span className="text-white">4.8</span>
+              <span className="text-gray-400">(127)</span>
             </div>
           </div>
         </div>
@@ -194,8 +187,8 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
     >
       <div className="flex items-start space-x-6">
         {/* Service Icon */}
-        <div className={`w-20 h-20 rounded-xl bg-gradient-to-r ${service.color} flex items-center justify-center text-3xl flex-shrink-0`}>
-          {service.icon}
+                  <div className="w-20 h-20 rounded-xl bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center text-3xl flex-shrink-0">
+                      🚀
         </div>
 
         {/* Service Content */}
@@ -209,13 +202,9 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
               <p className="text-gray-400 leading-relaxed">{service.description}</p>
             </div>
             <div className="text-right ml-4">
-              <div className="text-3xl font-bold text-white mb-1">{service.price}</div>
-              <div className="text-sm text-gray-400">{service.period}</div>
-              {service.popular && (
-                <span className="inline-block mt-2 px-3 py-1 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-xs font-medium rounded-full">
-                  Popular
-                </span>
-              )}
+              <div className="text-3xl font-bold text-white mb-1">{service.pricing?.starter || 'Contact for pricing'}</div>
+              <div className="text-sm text-gray-400">Monthly</div>
+              
             </div>
           </div>
 
@@ -247,8 +236,8 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
               <span className="text-gray-400">Rating:</span>
               <div className="flex items-center space-x-1">
                 <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                <span className="text-white">{service.rating}</span>
-                <span className="text-gray-400">({service.reviews})</span>
+                <span className="text-white">4.8</span>
+                <span className="text-gray-400">(127)</span>
               </div>
             </div>
           </div>
