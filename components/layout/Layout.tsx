@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
-import UltraFuturisticNavigation2045 from './UltraFuturisticNavigation2045';
-import UltraFuturisticFooter2045 from './UltraFuturisticFooter2045';
+import UltraFuturisticNavigation2025 from './UltraFuturisticNavigation2025';
+import UltraFuturisticFooter2025 from './UltraFuturisticFooter2025';
 import AccessibilityEnhancer from '../AccessibilityEnhancer';
 import PerformanceOptimizer from '../PerformanceOptimizer';
 
@@ -15,43 +15,14 @@ export default function Layout({ children, seo }: LayoutProps) {
   const [theme, setTheme] = useState<'dark' | 'light'>('dark');
 
   return (
-    <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
-      {/* Skip to content link for accessibility */}
-      <a href="#main" className="skip-link">Skip to main content</a>
-      
-      {/* Futuristic Background */}
-      <UltraFuturisticBackground2036 />
-      
-      {/* Layout Structure */}
-      <div className="relative z-10">
-        {/* Top Contact Bar */}
-        <TopContactBar />
-        
-        {/* Navigation */}
-        <UltraFuturisticNavigation2040 />
-        
-        {/* Sidebar and Main Content */}
-        <div className="flex">
-          <EnhancedSidebar2025 
-            isOpen={sidebarOpen} 
-            onClose={() => setSidebarOpen(false)} 
-          />
-          
-          <main id="main" role="main" className="flex-1 pt-24 lg:pt-28">
-            {children}
-          </main>
-        </div>
-        
-        {/* Footer */}
-        <UltraFuturisticFooter2040 />
-      </div>
-
-      {/* Accessibility and Performance Tools */}
-      <AccessibilityEnhancer />
-      <PerformanceMonitor />
-      
-      {/* Cookie Consent Banner */}
-      <CookieConsentBanner />
+    <div className="min-h-screen bg-gray-900 text-white">
+      <UltraFuturisticNavigation2025 />
+      <main className="relative z-10">
+        {children}
+      </main>
+      <UltraFuturisticFooter2025 />
+      <AccessibilityEnhancer showPanel={true} autoOptimize={true} />
+      <PerformanceOptimizer showMetrics={true} autoOptimize={true} />
     </div>
   );
 };
