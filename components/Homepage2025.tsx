@@ -115,6 +115,13 @@ const Homepage2025: React.FC = () => {
       icon: BarChart3,
       href: "/quantum-financial-trading-platform-2037",
       gradient: "from-green-500 to-emerald-500"
+    },
+    {
+      title: "Innovative 2040 Services",
+      description: "Experience the future with our revolutionary 2040 services featuring AI consciousness and quantum computing.",
+      icon: Crown,
+      href: "/innovative-2040-services-showcase",
+      gradient: "from-yellow-500 to-orange-500"
     }
   ];
 
