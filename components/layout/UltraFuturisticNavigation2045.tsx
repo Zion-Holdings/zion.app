@@ -240,33 +240,33 @@ const navigationItems: NavigationItem[] = [
         label: 'Team',
         href: '/team',
         icon: <Users className="w-4 h-4" />,
-        description: 'Meet our team',
-        neonColor: 'shadow-purple-400/50',
+        description: 'Meet our experts',
+        neonColor: 'shadow-green-400/50',
         category: 'team'
       },
       {
         label: 'Careers',
         href: '/careers',
-        icon: <Award className="w-4 h-4" />,
-        description: 'Join our team',
+        icon: <Briefcase className="w-4 h-4" />,
+        description: 'Join our innovative team',
         neonColor: 'shadow-orange-400/50',
         category: 'careers'
       },
       {
-        label: 'News',
+        label: 'News & Press',
         href: '/news',
-        icon: <FileText className="w-4 h-4" />,
-        description: 'Company news and updates',
-        neonColor: 'shadow-cyan-400/50',
+        icon: <Newspaper className="w-4 h-4" />,
+        description: 'Latest company news and press releases',
+        neonColor: 'shadow-yellow-400/50',
         category: 'news'
       },
       {
-        label: 'Press',
-        href: '/press',
-        icon: <Newspaper className="w-4 h-4" />,
-        description: 'Press releases and media',
-        neonColor: 'shadow-blue-400/50',
-        category: 'press'
+        label: 'Contact Us',
+        href: '/contact',
+        icon: <MessageCircle className="w-4 h-4" />,
+        description: 'Get in touch with our team',
+        neonColor: 'shadow-red-400/50',
+        category: 'contact'
       }
     ]
   },
@@ -274,16 +274,14 @@ const navigationItems: NavigationItem[] = [
     label: 'Pricing',
     href: '/pricing',
     icon: <DollarSign className="w-4 h-4" />,
-    description: 'Transparent pricing for all services',
     neonColor: 'shadow-green-400/50',
     category: 'main'
   },
   {
     label: 'Contact',
     href: '/contact',
-    icon: <MessageCircle className="w-4 h-4" />,
-    description: 'Get in touch with our team',
-    neonColor: 'shadow-cyan-400/50',
+    icon: <Phone className="w-4 h-4" />,
+    neonColor: 'shadow-red-400/50',
     category: 'main'
   }
 ];
@@ -431,7 +429,6 @@ const UltraFuturisticNavigation2045: React.FC = () => {
               </div>
             ))}
           </div>
-
           {/* Contact Info */}
           <div className="hidden lg:flex items-center space-x-6">
             <div className="flex items-center space-x-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300">
@@ -474,28 +471,61 @@ const UltraFuturisticNavigation2045: React.FC = () => {
               {navigationItems.map((item) => (
                 <div key={item.label}>
                   {item.children ? (
-                    <button
-                      onClick={() => toggleDropdown(item.label || '')}
-                      className="flex items-center justify-between w-full p-3 text-left text-gray-300 hover:text-white transition-colors duration-300"
-                    >
-                      <div className="flex items-center space-x-3">
-                        {item.icon}
-                        <span className="font-medium">{item.label}</span>
-                        {item.badge && (
-                          <span className="px-2 py-1 text-xs font-bold bg-gradient-to-r from-emerald-500 to-cyan-500 text-white rounded-full">
-                            {item.badge}
-                          </span>
+                    <div>
+                      <button
+                        onClick={() => toggleDropdown(item.label)}
+                        className="flex items-center justify-between w-full p-3 text-left text-gray-300 hover:text-white transition-colors duration-300"
+                      >
+                        <div className="flex items-center space-x-3">
+                          {item.icon}
+                          <span className="font-medium">{item.label}</span>
+                          {item.badge && (
+                            <span className="px-2 py-1 text-xs font-bold bg-gradient-to-r from-emerald-500 to-cyan-500 text-white rounded-full">
+                              {item.badge}
+                            </span>
+                          )}
+                        </div>
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${
+                          activeDropdown === item.label ? 'rotate-180' : ''
+                        }`} />
+                      </button>
+                      <AnimatePresence>
+                        {activeDropdown === item.label && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: 'auto' }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.2, ease: "easeOut" }}
+                            className="ml-4 mt-2 space-y-2 overflow-hidden"
+                          >
+                            {item.children.map((child) => (
+                              <Link
+                                key={child.label}
+                                href={normalizeHref(child.href)}
+                                onClick={() => { closeDropdown(); setIsOpen(false); }}
+                                className="block px-3 py-2 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-lg transition-colors duration-300"
+                              >
+                                <div className="flex items-center space-x-3">
+                                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${
+                                    child.neonColor 
+                                      ? `bg-gradient-to-br ${child.neonColor.replace('shadow-', 'from-').replace('/50', ' to-').replace('-400', '-500')}` 
+                                      : 'bg-gray-700'
+                                  }`}>
+                                    {child.icon}
+                                  </div>
+                                  <span className="font-medium">{child.label}</span>
+                                </div>
+                              </Link>
+                            ))}
+                          </motion.div>
                         )}
-                      </div>
-                      <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${
-                        activeDropdown === item.label ? 'rotate-180' : ''
-                      }`} />
-                    </button>
+                      </AnimatePresence>
+                    </div>
                   ) : (
                     <Link
                       href={normalizeHref(item.href)}
                       onClick={() => setIsOpen(false)}
-                      className="flex items-center space-x-3 w-full p-3 text-left text-gray-300 hover:text-white transition-colors duration-300"
+                      className="flex items-center space-x-3 p-3 text-gray-300 hover:text-white transition-colors duration-300"
                     >
                       {item.icon}
                       <span className="font-medium">{item.label}</span>
@@ -506,38 +536,23 @@ const UltraFuturisticNavigation2045: React.FC = () => {
                       )}
                     </Link>
                   )}
-                  
-                  {activeDropdown === item.label && item.children && (
-                    <div className="ml-6 mt-2 space-y-2">
-                      {item.children?.map((child) => (
-                        <Link
-                          key={child.label}
-                          href={normalizeHref(child.href)}
-                          onClick={() => setIsOpen(false)}
-                          className="block p-3 text-gray-400 hover:text-cyan-400 transition-colors duration-300"
-                        >
-                          {child.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
                 </div>
               ))}
-              
-              <div className="pt-4 border-t border-gray-800">
-                <div className="space-y-3">
-                  <div className="flex items-center space-x-3 text-gray-300">
-                    <Phone className="w-4 h-4 text-cyan-400" />
-                    <a href="tel:+13024640950" className="text-sm">
-                      +1 302 464 0950
-                    </a>
-                  </div>
-                  <div className="flex items-center space-x-3 text-gray-300">
-                    <Mail className="w-4 h-4 text-cyan-400" />
-                    <a href="mailto:kleber@ziontechgroup.com" className="text-sm">
-                      kleber@ziontechgroup.com
-                    </a>
-                  </div>
+            </div>
+            
+            <div className="pt-4 border-t border-gray-800">
+              <div className="space-y-3">
+                <div className="flex items-center space-x-3 text-gray-300">
+                  <Phone className="w-4 h-4 text-cyan-400" />
+                  <a href="tel:+13024640950" className="text-sm">
+                    +1 302 464 0950
+                  </a>
+                </div>
+                <div className="flex items-center space-x-3 text-gray-300">
+                  <Mail className="w-4 h-4 text-cyan-400" />
+                  <a href="mailto:kleber@ziontechgroup.com" className="text-sm">
+                    kleber@ziontechgroup.com
+                  </a>
                 </div>
               </div>
             </div>

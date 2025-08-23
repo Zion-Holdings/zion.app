@@ -6,7 +6,7 @@ import {
   Brain, Rocket, Target, Atom, Shield,
   DollarSign, BarChart3, Globe, Grid, Heart, Database,
   Cpu, Palette, Cloud, Network, TrendingUp, ShoppingCart, Settings, Building, Monitor,
-  Zap, Eye, Infinity, Sparkles
+  Zap, Eye, Infinity, Sparkles, Users, FileText, Briefcase
 } from 'lucide-react';
 
 interface NavigationItem {
@@ -245,6 +245,58 @@ const navigationItems: NavigationItem[] = [
     description: 'Transparent pricing plans',
     category: 'pricing',
     color: 'from-yellow-500 to-orange-500'
+  },
+  {
+    name: 'Company',
+    href: '/about',
+    icon: <Building className="w-5 h-5" />,
+    description: 'Learn about our company',
+    category: 'company',
+    color: 'from-gray-500 to-gray-600',
+    children: [
+      { 
+        name: 'About Us', 
+        href: '/about', 
+        description: 'Our story and mission',
+        icon: <Users className="w-4 h-4" />,
+        featured: true
+      },
+      { 
+        name: 'Our Mission', 
+        href: '/mission', 
+        description: 'What drives us forward',
+        icon: <Target className="w-4 h-4" />,
+        color: 'from-blue-500 to-cyan-500'
+      },
+      { 
+        name: 'Leadership Team', 
+        href: '/team', 
+        description: 'Meet our leadership',
+        icon: <Users className="w-4 h-4" />,
+        color: 'from-purple-500 to-pink-500'
+      },
+      { 
+        name: 'Careers', 
+        href: '/careers', 
+        description: 'Join our team',
+        icon: <Briefcase className="w-4 h-4" />,
+        color: 'from-emerald-500 to-teal-500'
+      },
+      { 
+        name: 'News & Updates', 
+        href: '/news', 
+        description: 'Latest company news',
+        icon: <FileText className="w-4 h-4" />,
+        color: 'from-yellow-500 to-orange-500'
+      },
+      { 
+        name: 'Press Kit', 
+        href: '/press', 
+        description: 'Media resources',
+        icon: <FileText className="w-4 h-4" />,
+        color: 'from-indigo-500 to-purple-500'
+      }
+    ]
   },
   {
     name: 'Contact',

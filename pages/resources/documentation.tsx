@@ -1,268 +1,200 @@
 import React from 'react';
 import Layout from '../../components/layout/Layout';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 import { 
-  BookOpen, FileText, Code, Database, Server, Shield,
-  Brain, Atom, Rocket, Cloud, Cpu, Globe, ArrowRight,
-  Download, ExternalLink, Search, Filter, Star, Clock,
-  Users, Eye, Bookmark, Share2, MessageCircle
+  FileText, 
+  BookOpen, 
+  Code, 
+  Database, 
+  Cloud, 
+  Shield, 
+  Brain, 
+  Rocket, 
+  Search, 
+  Download,
+  ExternalLink,
+  CheckCircle,
+  Star,
+  Users,
+  Clock,
+  ArrowRight
 } from 'lucide-react';
 
 const DocumentationPage: React.FC = () => {
-  const documentationCategories = [
+  const categories = [
     {
-      title: 'AI & Machine Learning',
-      description: 'Comprehensive guides for AI consciousness, neural networks, and machine learning systems',
-      icon: Brain,
-      color: 'from-purple-500 to-pink-500',
-      count: 25,
-      featured: true,
+      title: 'Getting Started',
+      description: 'Quick start guides and tutorials for new users',
+      icon: <Rocket className="w-8 h-8" />,
+      color: 'from-blue-500 to-indigo-500',
       docs: [
-        {
-          title: 'AI Consciousness Evolution 2045 - User Guide',
-          description: 'Complete guide to implementing and using our revolutionary AI consciousness platform',
-          type: 'User Guide',
-          difficulty: 'Intermediate',
-          duration: '2-3 hours',
-          lastUpdated: '2024-12-15',
-          downloads: 1247,
-          rating: 4.9,
-          href: '/docs/ai-consciousness-evolution-2045-guide'
-        },
-        {
-          title: 'Neural Network Architecture Deep Dive',
-          description: 'Technical deep dive into our quantum neural network architecture and optimization',
-          type: 'Technical Guide',
-          difficulty: 'Advanced',
-          duration: '4-5 hours',
-          lastUpdated: '2024-12-10',
-          downloads: 892,
-          rating: 4.8,
-          href: '/docs/neural-network-architecture'
-        }
-      ]
-    },
-    {
-      title: 'Quantum Computing',
-      description: 'Documentation for quantum computing platforms, algorithms, and applications',
-      icon: Atom,
-      color: 'from-blue-500 to-cyan-500',
-      count: 18,
-      featured: true,
-      docs: [
-        {
-          title: 'Quantum Cybersecurity Implementation Guide',
-          description: 'Step-by-step guide to implementing quantum-resistant security solutions',
-          type: 'Implementation Guide',
-          difficulty: 'Advanced',
-          duration: '3-4 hours',
-          lastUpdated: '2024-12-12',
-          downloads: 756,
-          rating: 4.7,
-          href: '/docs/quantum-cybersecurity-implementation'
-        }
-      ]
-    },
-    {
-      title: 'Space Technology',
-      description: 'Guides for space resource intelligence, satellite technology, and orbital computing',
-      icon: Rocket,
-      color: 'from-indigo-500 to-purple-500',
-      count: 12,
-      featured: false,
-      docs: [
-        {
-          title: 'Space Resource Intelligence Platform Setup',
-          description: 'Complete setup and configuration guide for our space resource intelligence platform',
-          type: 'Setup Guide',
-          difficulty: 'Intermediate',
-          duration: '1-2 hours',
-          lastUpdated: '2024-12-08',
-          downloads: 445,
-          rating: 4.6,
-          href: '/docs/space-resource-intelligence-setup'
-        }
-      ]
-    },
-    {
-      title: 'Cloud Infrastructure',
-      description: 'Documentation for cloud platforms, deployment, and infrastructure management',
-      icon: Cloud,
-      color: 'from-emerald-500 to-teal-500',
-      count: 32,
-      featured: false,
-      docs: [
-        {
-          title: 'Zero Trust Security Architecture Guide',
-          description: 'Comprehensive guide to implementing zero trust security in cloud environments',
-          type: 'Architecture Guide',
-          difficulty: 'Advanced',
-          duration: '3-4 hours',
-          lastUpdated: '2024-12-14',
-          downloads: 678,
-          rating: 4.8,
-          href: '/docs/zero-trust-security-architecture'
-        }
+        { title: 'Quick Start Guide', description: 'Get up and running in 5 minutes', time: '5 min read', level: 'Beginner' },
+        { title: 'Installation Guide', description: 'Step-by-step installation instructions', time: '10 min read', level: 'Beginner' },
+        { title: 'First Project Setup', description: 'Create your first project with Zion Tech', time: '15 min read', level: 'Beginner' }
       ]
     },
     {
       title: 'API Reference',
-      description: 'Complete API documentation, SDKs, and integration guides',
-      icon: Code,
+      description: 'Complete API documentation and examples',
+      icon: <Code className="w-8 h-8" />,
+      color: 'from-green-500 to-teal-500',
+      docs: [
+        { title: 'REST API Guide', description: 'Complete REST API reference', time: '30 min read', level: 'Intermediate' },
+        { title: 'GraphQL API', description: 'GraphQL schema and queries', time: '25 min read', level: 'Intermediate' },
+        { title: 'WebSocket API', description: 'Real-time communication API', time: '20 min read', level: 'Advanced' }
+      ]
+    },
+    {
+      title: 'Security & Compliance',
+      description: 'Security best practices and compliance guides',
+      icon: <Shield className="w-8 h-8" />,
+      color: 'from-red-500 to-orange-500',
+      docs: [
+        { title: 'Security Best Practices', description: 'Security guidelines and recommendations', time: '20 min read', level: 'Intermediate' },
+        { title: 'Compliance Guide', description: 'Meet regulatory requirements', time: '25 min read', level: 'Intermediate' },
+        { title: 'Authentication & Authorization', description: 'User management and access control', time: '30 min read', level: 'Advanced' }
+      ]
+    },
+    {
+      title: 'AI & Machine Learning',
+      description: 'AI model development and deployment guides',
+      icon: <Brain className="w-8 h-8" />,
+      color: 'from-purple-500 to-pink-500',
+      docs: [
+        { title: 'AI Model Development', description: 'Build and train AI models', time: '45 min read', level: 'Advanced' },
+        { title: 'Model Deployment', description: 'Deploy models to production', time: '30 min read', level: 'Advanced' },
+        { title: 'AI Ethics & Bias', description: 'Responsible AI development', time: '20 min read', level: 'Intermediate' }
+      ]
+    },
+    {
+      title: 'Cloud Infrastructure',
+      description: 'Cloud deployment and infrastructure management',
+      icon: <Cloud className="w-8 h-8" />,
+      color: 'from-cyan-500 to-blue-500',
+      docs: [
+        { title: 'Cloud Deployment', description: 'Deploy to major cloud providers', time: '35 min read', level: 'Intermediate' },
+        { title: 'Infrastructure as Code', description: 'Terraform and CloudFormation guides', time: '40 min read', level: 'Advanced' },
+        { title: 'Monitoring & Logging', description: 'Observability and troubleshooting', time: '25 min read', level: 'Intermediate' }
+      ]
+    },
+    {
+      title: 'Data & Analytics',
+      description: 'Data management and analytics solutions',
+      icon: <Database className="w-8 h-8" />,
       color: 'from-orange-500 to-red-500',
-      count: 45,
-      featured: false,
       docs: [
-        {
-          title: 'REST API Reference v2.1',
-          description: 'Complete REST API reference with examples, authentication, and error handling',
-          type: 'API Reference',
-          difficulty: 'Beginner',
-          duration: '1 hour',
-          lastUpdated: '2024-12-16',
-          downloads: 2156,
-          rating: 4.9,
-          href: '/docs/api-reference-v2-1'
-        }
-      ]
-    },
-    {
-      title: 'DevOps & Automation',
-      description: 'Guides for CI/CD, automation, monitoring, and deployment strategies',
-      icon: Server,
-      color: 'from-yellow-500 to-orange-500',
-      count: 28,
-      featured: false,
-      docs: [
-        {
-          title: 'Autonomous DevOps Platform Guide',
-          description: 'Complete guide to using our autonomous DevOps platform for continuous deployment',
-          type: 'Platform Guide',
-          difficulty: 'Intermediate',
-          duration: '2-3 hours',
-          lastUpdated: '2024-12-11',
-          downloads: 567,
-          rating: 4.7,
-          href: '/docs/autonomous-devops-platform'
-        }
+        { title: 'Data Pipeline Setup', description: 'Build data processing pipelines', time: '30 min read', level: 'Intermediate' },
+        { title: 'Analytics Dashboard', description: 'Create interactive dashboards', time: '25 min read', level: 'Intermediate' },
+        { title: 'Data Governance', description: 'Data quality and compliance', time: '20 min read', level: 'Advanced' }
       ]
     }
   ];
 
-  const quickStartGuides = [
-    {
-      title: 'Getting Started with Zion Tech Group',
-      description: 'Quick start guide for new users',
-      duration: '15 minutes',
-      href: '/docs/quick-start'
-    },
-    {
-      title: 'First AI Project Setup',
-      description: 'Set up your first AI consciousness project',
-      duration: '30 minutes',
-      href: '/docs/first-ai-project'
-    },
-    {
-      title: 'Quantum Security Basics',
-      description: 'Introduction to quantum cybersecurity',
-      duration: '45 minutes',
-      href: '/docs/quantum-security-basics'
-    }
+  const popularDocs = [
+    { title: 'Quick Start Guide', views: '15.2k', rating: 4.9, category: 'Getting Started' },
+    { title: 'API Authentication', views: '12.8k', rating: 4.8, category: 'API Reference' },
+    { title: 'Security Best Practices', views: '11.5k', rating: 4.9, category: 'Security' },
+    { title: 'Cloud Deployment', views: '10.3k', rating: 4.7, category: 'Cloud' }
   ];
 
-  const searchFilters = [
-    { label: 'All Types', value: 'all', count: 180 },
-    { label: 'User Guides', value: 'user-guide', count: 45 },
-    { label: 'Technical Guides', value: 'technical', count: 38 },
-    { label: 'API Reference', value: 'api', count: 25 },
-    { label: 'Setup Guides', value: 'setup', count: 32 },
-    { label: 'Implementation', value: 'implementation', count: 28 },
-    { label: 'Architecture', value: 'architecture', count: 16 }
+  const resources = [
+    { title: 'SDK Downloads', description: 'Client libraries and SDKs', icon: <Download className="w-6 h-6" />, href: '/resources/sdk' },
+    { title: 'Code Examples', description: 'Sample code and templates', icon: <Code className="w-6 h-6" />, href: '/resources/examples' },
+    { title: 'Video Tutorials', description: 'Step-by-step video guides', icon: <ExternalLink className="w-6 h-6" />, href: '/resources/videos' },
+    { title: 'Community Forum', description: 'Get help from the community', icon: <Users className="w-6 h-6" />, href: '/community' }
   ];
 
   return (
-    <Layout>
-      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
+    <Layout 
+      title="Documentation - Zion Tech Group"
+      description="Comprehensive technical documentation, API references, and guides for Zion Tech Group solutions. Get started quickly with our detailed tutorials and examples."
+      keywords="documentation, API reference, technical guides, tutorials, Zion Tech Group, developer resources"
+    >
+      <div className="min-h-screen bg-black text-white">
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 px-4">
-          <div className="max-w-7xl mx-auto text-center">
+        <section className="relative pt-32 pb-20 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-indigo-900/20 to-purple-900/20"></div>
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="mb-8"
+              className="text-center"
             >
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30 text-blue-300 text-sm font-medium mb-6">
-                <BookOpen className="w-4 h-4 mr-2" />
-                Technical Documentation
+              <div className="flex items-center justify-center mb-6">
+                <FileText className="w-16 h-16 text-blue-400 mr-4" />
+                <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 bg-clip-text text-transparent">
+                  Documentation
+                </h1>
               </div>
-              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent mb-6">
-                Documentation
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                Comprehensive guides, tutorials, and reference materials to help you master 
-                our revolutionary technology solutions and achieve extraordinary results.
+              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-8">
+                Comprehensive technical documentation, API references, and guides to help you 
+                build amazing solutions with Zion Tech Group technology.
               </p>
-            </motion.div>
+              
+              {/* Search Bar */}
+              <div className="max-w-2xl mx-auto mb-8">
+                <div className="relative">
+                  <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                  <input
+                    type="text"
+                    placeholder="Search documentation..."
+                    className="w-full bg-gray-900/50 border border-gray-700 rounded-lg pl-12 pr-4 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"
+                  />
+                </div>
+              </div>
 
-            {/* Search Bar */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="max-w-2xl mx-auto"
-            >
-              <div className="relative">
-                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
-                <input
-                  type="text"
-                  placeholder="Search documentation..."
-                  className="w-full pl-12 pr-4 py-4 bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-xl text-white placeholder-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-200"
-                />
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <button className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
+                  Get Started
+                </button>
+                <button className="border border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
+                  View All Guides
+                </button>
               </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Quick Start Guides */}
-        <section className="py-20 px-4">
-          <div className="max-w-7xl mx-auto">
+        {/* Popular Documentation */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Quick Start Guides</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Popular Documentation
+              </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                New to Zion Tech Group? Start here with these essential guides to get up and running quickly.
+                Most viewed and highly-rated documentation to help you get started quickly.
               </p>
             </motion.div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {quickStartGuides.map((guide, index) => (
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {popularDocs.map((doc, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20"
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-xl border border-gray-700/50 rounded-xl p-6 hover:border-blue-500/50 transition-all duration-300 cursor-pointer group"
                 >
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30 mb-6">
-                    <BookOpen className="w-8 h-8 text-blue-400" />
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-sm text-gray-400">{doc.category}</span>
+                    <div className="flex items-center">
+                      <Star className="w-4 h-4 text-yellow-400 fill-current" />
+                      <span className="text-sm text-gray-300 ml-1">{doc.rating}</span>
+                    </div>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{guide.title}</h3>
-                  <p className="text-gray-400 mb-4 leading-relaxed">{guide.description}</p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-500">{guide.duration}</span>
-                    <Link
-                      href={guide.href}
-                      className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors"
-                    >
-                      Get Started
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Link>
+                  <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                    {doc.title}
+                  </h3>
+                  <div className="flex items-center text-sm text-gray-400">
+                    <Clock className="w-4 h-4 mr-1" />
+                    {doc.views} views
                   </div>
                 </motion.div>
               ))}
@@ -271,159 +203,94 @@ const DocumentationPage: React.FC = () => {
         </section>
 
         {/* Documentation Categories */}
-        <section className="py-20 px-4">
-          <div className="max-w-7xl mx-auto">
+        <section className="py-20 bg-gradient-to-r from-gray-900/50 to-gray-800/50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Documentation Categories</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Documentation Categories
+              </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Explore our comprehensive documentation organized by technology area and expertise level.
+                Organized documentation by topic to help you find exactly what you need.
               </p>
             </motion.div>
 
-            {/* Filter Tabs */}
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
-              {searchFilters.map((filter, index) => (
-                <button
-                  key={index}
-                  className={`px-6 py-3 rounded-xl font-medium transition-all duration-200 ${
-                    filter.value === 'all'
-                      ? 'bg-gradient-to-r from-blue-500 to-cyan-500 text-white'
-                      : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 border border-gray-600/50'
-                  }`}
-                >
-                  {filter.label}
-                  <span className="ml-2 text-sm opacity-75">({filter.count})</span>
-                </button>
-              ))}
-            </div>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {documentationCategories.map((category, index) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {categories.map((category, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-blue-500/20"
+                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-8 hover:border-blue-500/50 transition-all duration-300"
                 >
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="flex items-center">
-                      <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-r ${category.color} mr-4`}>
-                        <category.icon className="w-6 h-6 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="text-2xl font-bold text-white">{category.title}</h3>
-                        <div className="flex items-center gap-2">
-                          <span className="text-sm text-gray-400">{category.count} documents</span>
-                          {category.featured && (
-                            <span className="inline-flex items-center px-2 py-1 rounded-full bg-yellow-500/20 text-yellow-400 text-xs font-medium">
-                              <Star className="w-3 h-3 mr-1" />
-                              Featured
-                            </span>
-                          )}
-                        </div>
-                      </div>
-                    </div>
+                  <div className={`w-16 h-16 bg-gradient-to-r ${category.color} rounded-xl flex items-center justify-center mb-6`}>
+                    {category.icon}
                   </div>
+                  <h3 className="text-2xl font-bold text-white mb-4">{category.title}</h3>
+                  <p className="text-gray-300 mb-6">{category.description}</p>
                   
-                  <p className="text-gray-400 mb-6 leading-relaxed">{category.description}</p>
-                  
-                  <div className="space-y-4">
+                  <div className="space-y-3 mb-6">
                     {category.docs.map((doc, docIndex) => (
-                      <div key={docIndex} className="bg-gray-800/50 rounded-lg p-4 border border-gray-700/50">
-                        <div className="flex items-start justify-between mb-2">
-                          <h4 className="text-white font-medium">{doc.title}</h4>
-                          <div className="flex items-center gap-2">
-                            <span className="text-xs text-gray-400">{doc.rating}</span>
-                            <Star className="w-3 h-3 text-yellow-400 fill-current" />
-                          </div>
+                      <div key={docIndex} className="flex items-center justify-between p-3 bg-gray-800/30 rounded-lg hover:bg-gray-800/50 transition-colors cursor-pointer group">
+                        <div className="flex-1">
+                          <h4 className="text-white font-medium group-hover:text-blue-400 transition-colors">{doc.title}</h4>
+                          <p className="text-sm text-gray-400">{doc.description}</p>
                         </div>
-                        <p className="text-sm text-gray-400 mb-3">{doc.description}</p>
-                        <div className="flex items-center justify-between text-xs text-gray-500">
-                          <div className="flex items-center gap-4">
-                            <span>{doc.type}</span>
-                            <span>{doc.difficulty}</span>
-                            <span>{doc.duration}</span>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <Download className="w-3 h-3" />
-                            {doc.downloads}
-                          </div>
+                        <div className="flex items-center space-x-2 text-sm text-gray-500">
+                          <span>{doc.time}</span>
+                          <span className="px-2 py-1 bg-gray-700 rounded text-xs">{doc.level}</span>
                         </div>
                       </div>
                     ))}
                   </div>
                   
-                  <div className="mt-6 pt-6 border-t border-gray-700/50">
-                    <Link
-                      href={`/resources/documentation/${category.title.toLowerCase().replace(/\s+/g, '-')}`}
-                      className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors font-medium"
-                    >
-                      View All {category.title} Documentation
-                      <ArrowRight className="w-4 h-4 ml-2" />
-                    </Link>
-                  </div>
+                  <button className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                    View All {category.title}
+                  </button>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Documentation Features */}
-        <section className="py-20 px-4">
-          <div className="max-w-7xl mx-auto">
+        {/* Additional Resources */}
+        <section className="py-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Why Our Documentation?</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Additional Resources
+              </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                We've designed our documentation to be comprehensive, accessible, and always up-to-date.
+                Beyond documentation, we offer additional resources to help you succeed.
               </p>
             </motion.div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                {
-                  icon: Clock,
-                  title: 'Always Current',
-                  description: 'Updated regularly with the latest features and best practices'
-                },
-                {
-                  icon: Users,
-                  title: 'Community Driven',
-                  description: 'Feedback and contributions from our global user community'
-                },
-                {
-                  icon: Eye,
-                  title: 'Visual Learning',
-                  description: 'Rich diagrams, screenshots, and interactive examples'
-                },
-                {
-                  icon: MessageCircle,
-                  title: 'Expert Support',
-                  description: 'Direct access to our technical team for complex questions'
-                }
-              ].map((feature, index) => (
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {resources.map((resource, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="text-center"
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 backdrop-blur-xl border border-gray-700/50 rounded-xl p-6 hover:border-blue-500/50 transition-all duration-300 cursor-pointer group"
                 >
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30 mb-6">
-                    <feature.icon className="w-8 h-8 text-blue-400" />
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                    {resource.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
-                  <p className="text-gray-400 leading-relaxed">{feature.description}</p>
+                  <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                    {resource.title}
+                  </h3>
+                  <p className="text-gray-300 text-sm">{resource.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -431,35 +298,28 @@ const DocumentationPage: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 px-4">
-          <div className="max-w-4xl mx-auto text-center">
+        <section className="py-20 bg-gradient-to-r from-gray-900/50 to-gray-800/50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
+              className="text-center"
             >
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                 Need Help with Documentation?
               </h2>
-              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                Can't find what you're looking for? Our technical team is here to help you 
-                get the most out of our documentation and technology solutions.
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                Can't find what you're looking for? Our team is here to help you 
+                get the most out of our documentation and resources.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center px-8 py-4 rounded-xl bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold hover:from-blue-600 hover:to-cyan-600 transition-all duration-200 transform hover:scale-105"
-                >
-                  <MessageCircle className="w-5 h-5 mr-2" />
+                <button className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
                   Contact Support
-                </Link>
-                <Link
-                  href="/resources/api"
-                  className="inline-flex items-center px-8 py-4 rounded-xl border border-blue-500/50 text-blue-400 font-semibold hover:bg-blue-500/10 transition-all duration-200"
-                >
-                  <Code className="w-5 h-5 mr-2" />
-                  View API Docs
-                </Link>
+                </button>
+                <button className="border border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
+                  Request Documentation
+                </button>
               </div>
             </motion.div>
           </div>

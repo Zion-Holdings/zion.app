@@ -1,22 +1,19 @@
+import React from 'react';
 import Head from 'next/head';
+import UltraFuturisticBackground from '../components/ui/UltraFuturisticBackground';
 
 export default function ChatPage() {
 	return (
-		<>
+		<UltraFuturisticBackground variant="quantum" intensity="high">
 			<Head>
 				<title>Live Chat | Zion Tech Group</title>
+				<meta name="description" content="Reach our team via live chat or email." />
 				<link rel="canonical" href="https://ziontechgroup.com/chat" />
 			</Head>
-			<div className="min-h-screen bg-black text-white pt-24">
-				<div className="max-w-3xl mx-auto p-6">
-					<h1 className="text-4xl font-bold mb-4">Live Chat</h1>
-					<p className="text-gray-300 mb-6">Chat is coming soon. Reach us now via phone or email.</p>
-					<div className="flex gap-4">
-						<a href="tel:+13024640950" className="px-6 py-3 bg-gray-800 rounded">Call +1 302 464 0950</a>
-						<a href="mailto:kleber@ziontechgroup.com" className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded text-white">Email Us</a>
-					</div>
-				</div>
+			<div className="container mx-auto px-4 py-16 text-white">
+				<h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">Live Chat</h1>
+				<p className="text-gray-300 max-w-2xl">Live chat is coming soon. For immediate help, email <a href="mailto:kleber@ziontechgroup.com" className="text-cyan-400 underline">kleber@ziontechgroup.com</a> or call <a href="tel:+13024640950" className="text-cyan-400 underline">+1 302 464 0950</a>.</p>
 			</div>
-		</>
+		</UltraFuturisticBackground>
 	);
 }

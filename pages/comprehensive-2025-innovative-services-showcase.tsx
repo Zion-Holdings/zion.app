@@ -10,7 +10,7 @@ import {
 } from 'lucide-react';
 
 // Import our new innovative services
-import { innovativeMicroSaasServices2025V2 } from '../data/2025-innovative-micro-saas-expansion-v2';
+import { innovativeMicroSaasExpansionV2 } from '../data/2025-innovative-micro-saas-expansion-v2';
 import { emergingTechInnovations2025 } from '../data/2025-emerging-tech-innovations';
 
 // Import existing services for comprehensive showcase
@@ -18,7 +18,7 @@ import { realMicroSaasServices2025 } from '../data/2025-real-micro-saas-services
 
 // Combine all services
 const allServices = [
-  ...innovativeMicroSaasServices2025V2,
+      ...innovativeMicroSaasExpansionV2,
   ...emergingTechInnovations2025,
   ...realMicroSaasServices2025
 ];
