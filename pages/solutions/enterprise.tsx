@@ -2,150 +2,140 @@ import React from 'react';
 import Layout from '../../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { 
-  Building, Users, Shield, Cpu, Database, Globe, Zap, Target, 
-  TrendingUp, BarChart3, Lock, Cloud, Server, Network, Settings, Brain
+  Building, Shield, Users, Globe, 
+  ArrowRight, Star, CheckCircle, TrendingUp,
+  Infinity, Eye, Sparkles, Clock, Zap,
+  Cloud, Database, Lock, BarChart3
 } from 'lucide-react';
 
 const EnterpriseSolutionsPage: React.FC = () => {
   const solutions = [
     {
-      title: "Enterprise AI & Machine Learning",
-      description: "Scalable AI solutions for large enterprises with advanced machine learning capabilities",
-      icon: <Brain className="w-8 h-8" />,
-      features: ["Custom AI model development", "Enterprise ML pipelines", "AI governance & compliance", "Scalable AI infrastructure"],
-      href: "/services?category=ai-ml"
-    },
-    {
-      title: "Enterprise Cybersecurity",
-      description: "Comprehensive security solutions for enterprise environments",
-      icon: <Shield className="w-8 h-8" />,
-      features: ["Zero-trust architecture", "Advanced threat detection", "Compliance automation", "Security operations center"],
-      href: "/services?category=security"
-    },
-    {
+      icon: Cloud,
       title: "Enterprise Cloud Infrastructure",
-      description: "Robust cloud solutions designed for enterprise scale",
-      icon: <Cloud className="w-8 h-8" />,
-      features: ["Multi-cloud management", "Enterprise DevOps", "Cost optimization", "High availability"],
-      href: "/services?category=cloud"
+      description: "Scalable, secure cloud solutions for large organizations",
+      features: ["Multi-cloud management", "Hybrid cloud solutions", "Cloud security", "Cost optimization"],
+      color: "from-blue-500 to-cyan-500"
     },
     {
-      title: "Enterprise Business Intelligence",
-      description: "Advanced analytics and business intelligence for enterprise decision-making",
-      icon: <BarChart3 className="w-8 h-8" />,
-      features: ["Real-time analytics", "Predictive modeling", "Data governance", "Executive dashboards"],
-      href: "/services?category=bi"
+      icon: Shield,
+      title: "Enterprise Security & Compliance",
+      description: "Comprehensive security solutions meeting enterprise standards",
+      features: ["Zero-trust architecture", "SOC2 compliance", "Threat detection", "Data protection"],
+      color: "from-red-500 to-pink-500"
+    },
+    {
+      icon: Database,
+      title: "Enterprise Data Management",
+      description: "Advanced data solutions for enterprise-scale operations",
+      features: ["Data governance", "Big data analytics", "Data quality", "Master data management"],
+      color: "from-green-500 to-emerald-500"
+    },
+    {
+      icon: Users,
+      title: "Enterprise AI & Automation",
+      description: "AI-powered solutions for enterprise efficiency",
+      features: ["Process automation", "AI analytics", "Machine learning", "Intelligent workflows"],
+      color: "from-purple-500 to-indigo-500"
     }
   ];
 
   const benefits = [
     {
+      icon: TrendingUp,
       title: "Scalability",
-      description: "Solutions that grow with your enterprise",
-      icon: <TrendingUp className="w-6 h-6" />
+      description: "Solutions that grow with your business"
     },
     {
+      icon: Shield,
       title: "Security",
-      description: "Enterprise-grade security and compliance",
-      icon: <Lock className="w-6 h-6" />
+      description: "Enterprise-grade security and compliance"
     },
     {
-      title: "Integration",
-      description: "Seamless integration with existing systems",
-      icon: <Network className="w-6 h-6" />
+      icon: Clock,
+      title: "24/7 Support",
+      description: "Round-the-clock technical support"
     },
     {
-      title: "Support",
-      description: "24/7 enterprise support and maintenance",
-      icon: <Users className="w-6 h-6" />
+      icon: Star,
+      title: "Expert Team",
+      description: "Experienced enterprise specialists"
     }
   ];
 
   return (
-    <Layout 
-      title="Enterprise Solutions - Zion Tech Group"
-      description="Comprehensive enterprise technology solutions designed for large-scale organizations. AI, cybersecurity, cloud infrastructure, and business intelligence."
-    >
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
+    <Layout>
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
         {/* Hero Section */}
-        <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+        <section className="relative pt-32 pb-20 px-4">
           <div className="max-w-7xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.8 }}
+              className="mb-8"
             >
-              <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-6">
+              <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30 text-blue-300 text-sm font-medium mb-6">
+                <Building className="w-4 h-4 mr-2" />
                 Enterprise Solutions
-              </h1>
-              <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
-                Transform your enterprise with cutting-edge technology solutions designed for scale, 
-                security, and innovation. Built for the future, deployed today.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="/contact"
-                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
-                >
-                  Get Started
-                </a>
-                <a
-                  href="/case-studies"
-                  className="px-8 py-4 border border-cyan-500/30 text-cyan-400 rounded-lg font-semibold hover:bg-cyan-500/10 transition-all duration-300"
-                >
-                  View Case Studies
-                </a>
               </div>
+              <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent mb-6">
+                Enterprise Technology Solutions
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                Transform your enterprise with cutting-edge technology solutions designed for scale, 
+                security, and performance. Built for organizations that demand excellence.
+              </p>
             </motion.div>
           </div>
         </section>
 
         {/* Solutions Grid */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <section className="py-20 px-4">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold mb-4">Enterprise Solutions</h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Comprehensive technology solutions designed specifically for enterprise-scale organizations
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Comprehensive Enterprise Solutions
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Our enterprise solutions are designed to meet the unique challenges of large organizations
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {solutions.map((solution, index) => (
                 <motion.div
-                  key={solution.title}
+                  key={index}
                   initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.1 * index }}
-                  className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-300"
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 hover:border-blue-500/50 transition-all duration-300"
                 >
-                  <div className="flex items-center mb-4">
-                    <div className="p-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg mr-4">
-                      {solution.icon}
-                    </div>
-                    <h3 className="text-2xl font-semibold">{solution.title}</h3>
+                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-r ${solution.color} mb-6`}>
+                    <solution.icon className="w-8 h-8 text-white" />
                   </div>
-                  <p className="text-gray-300 mb-6">{solution.description}</p>
-                  <ul className="space-y-2 mb-6">
+                  
+                  <h3 className="text-2xl font-bold text-white mb-4">{solution.title}</h3>
+                  <p className="text-gray-300 mb-6 leading-relaxed">{solution.description}</p>
+                  
+                  <ul className="space-y-3 mb-6">
                     {solution.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-gray-400">
-                        <div className="w-2 h-2 bg-cyan-500 rounded-full mr-3"></div>
+                      <li key={featureIndex} className="flex items-center text-gray-300">
+                        <CheckCircle className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
                         {feature}
                       </li>
                     ))}
                   </ul>
-                  <a
-                    href={solution.href}
-                    className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors"
-                  >
+                  
+                  <button className="w-full bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 flex items-center justify-center group">
                     Learn More
-                    <Zap className="w-4 h-4 ml-2" />
-                  </a>
+                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                  </button>
                 </motion.div>
               ))}
             </div>
@@ -153,36 +143,36 @@ const EnterpriseSolutionsPage: React.FC = () => {
         </section>
 
         {/* Benefits Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/30">
+        <section className="py-20 px-4 bg-gradient-to-r from-gray-900/50 to-black/50">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold mb-4">Why Choose Zion Tech Group?</h2>
-              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-                Enterprise-grade solutions with the innovation and agility of a startup
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Why Choose Zion Tech Group?
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                We deliver enterprise solutions that drive real business value
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {benefits.map((benefit, index) => (
                 <motion.div
-                  key={benefit.title}
+                  key={index}
                   initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.1 * index }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="text-center"
                 >
-                  <div className="p-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                    <div className="text-cyan-400">
-                      {benefit.icon}
-                    </div>
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-gradient-to-r from-blue-500/20 to-cyan-500/20 border border-blue-500/30 mb-6">
+                    <benefit.icon className="w-8 h-8 text-blue-400" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
-                  <p className="text-gray-400">{benefit.description}</p>
+                  <h3 className="text-xl font-bold text-white mb-3">{benefit.title}</h3>
+                  <p className="text-gray-300">{benefit.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -190,30 +180,27 @@ const EnterpriseSolutionsPage: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <section className="py-20 px-4">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Enterprise?</h2>
-              <p className="text-xl text-gray-400 mb-8">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Ready to Transform Your Enterprise?
+              </h2>
+              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
                 Let's discuss how our enterprise solutions can drive innovation and growth in your organization
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a
-                  href="/contact"
-                  className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-semibold hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105"
-                >
-                  Schedule a Consultation
-                </a>
-                <a
-                  href="/pricing"
-                  className="px-8 py-4 border border-cyan-500/30 text-cyan-400 rounded-lg font-semibold hover:bg-cyan-500/10 transition-all duration-300"
-                >
-                  View Pricing
-                </a>
+                <button className="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 flex items-center justify-center group">
+                  Get Started
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                </button>
+                <button className="border border-gray-600 hover:border-blue-500 text-gray-300 hover:text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300">
+                  Schedule Demo
+                </button>
               </div>
             </motion.div>
           </div>
