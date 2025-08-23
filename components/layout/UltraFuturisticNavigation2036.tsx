@@ -216,121 +216,90 @@ export default function UltraFuturisticNavigation2036() {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'bg-black/80 backdrop-blur-xl border-b border-white/10 shadow-2xl' 
-        : 'bg-black/40 backdrop-blur-lg border-b border-white/5'
+        ? 'bg-black/90 backdrop-blur-xl border-b border-gray-800/50' 
+        : 'bg-transparent'
     }`}>
-      {/* Top Contact Bar */}
-      <div className="bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-10 text-xs text-white/80">
-            <div className="flex items-center space-x-4">
-              <a href={`tel:${contactInfo.mobile}`} className="flex items-center space-x-1 hover:text-cyan-400 transition-colors">
-                <Phone className="w-3 h-3" />
-                <span>{contactInfo.mobile}</span>
-              </a>
-              <a href={`mailto:${contactInfo.email}`} className="flex items-center space-x-1 hover:text-cyan-400 transition-colors">
-                <Mail className="w-3 h-3" />
-                <span>{contactInfo.email}</span>
-              </a>
-            </div>
-            <div className="flex items-center space-x-4">
-              <span className="flex items-center space-x-1">
-                <MapPin className="w-3 h-3" />
-                <span>{contactInfo.address}</span>
-              </span>
-              <a href={contactInfo.website} className="hover:text-cyan-400 transition-colors">
-                {contactInfo.website.replace('https://', '')}
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Navigation */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="flex items-center space-x-3"
+            transition={{ duration: 0.6 }}
+            className="flex-shrink-0"
           >
-            <div className="relative">
-              <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 rounded-xl shadow-lg shadow-cyan-500/25"></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/50 to-purple-500/50 rounded-xl animate-pulse"></div>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-white font-bold text-xl bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                ZionTech Group
+            <Link href="/" className="flex items-center space-x-2 group">
+              <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <Sparkles className="w-6 h-6 text-white" />
+              </div>
+              <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                Zion Tech
               </span>
-              <span className="text-xs text-white/60">Future Technology Solutions</span>
-            </div>
+            </Link>
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex space-x-1">
-            {navigationItems.map((item) => (
-              <div key={item.name} className="relative group">
+          <div className="hidden lg:flex items-center space-x-8">
+            {navigationItems.map((item, index) => (
+              <motion.div
+                key={item.name}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="relative group"
+              >
                 <button
                   onClick={() => toggleDropdown(item.name)}
-                  className={`flex items-center space-x-2 px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg ${
-                    activeDropdown === item.name
-                      ? 'text-cyan-400 bg-white/10 border border-cyan-400/30'
-                      : 'text-gray-300 hover:text-cyan-400 hover:bg-white/5'
-                  }`}
+                  className="flex items-center space-x-2 px-4 py-2 text-gray-300 hover:text-white transition-colors duration-200 group-hover:text-cyan-400"
                 >
                   {item.icon}
-                  <span>{item.name}</span>
-                  {item.badge && (
-                    <span className="px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-full">
-                      {item.badge}
-                    </span>
-                  )}
-                  <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${
+                  <span className="font-medium">{item.name}</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
                     activeDropdown === item.name ? 'rotate-180' : ''
                   }`} />
                 </button>
 
-                {/* Dropdown Menu */}
+                {/* Enhanced Dropdown */}
                 <AnimatePresence>
                   {activeDropdown === item.name && (
                     <motion.div
-                      initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
                       animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                      exit={{ opacity: 0, y: 10, scale: 0.95 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 mt-2 w-80 bg-black/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl shadow-black/50 overflow-hidden"
+                      className="absolute top-full left-0 mt-2 w-80 bg-gray-900/95 backdrop-blur-xl border border-gray-700/50 rounded-2xl shadow-2xl shadow-black/50 overflow-hidden"
                     >
                       <div className="p-4">
-                        <div className="mb-3">
-                          <h3 className="text-white font-semibold text-lg">{item.name}</h3>
-                          <p className="text-white/60 text-sm">{item.description}</p>
+                        <div className="mb-4">
+                          <h3 className="text-lg font-semibold text-white mb-2">{item.name}</h3>
+                          <p className="text-sm text-gray-400">{item.description}</p>
                         </div>
-                        <div className="space-y-1">
+                        
+                        <div className="space-y-2">
                           {item.children?.map((child) => (
                             <Link
                               key={child.name}
                               href={normalizeHref(child.href)}
                               onClick={closeAllDropdowns}
-                              className={`flex items-center space-x-3 p-3 rounded-lg transition-all duration-200 ${
-                                child.featured
-                                  ? 'bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-400/30'
-                                  : 'hover:bg-white/5'
-                              }`}
+                              className="flex items-center space-x-3 p-3 rounded-xl hover:bg-gray-800/50 transition-all duration-200 group"
                             >
-                              {child.icon}
+                              <div className="w-8 h-8 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 rounded-lg flex items-center justify-center">
+                                {child.icon}
+                              </div>
                               <div className="flex-1">
                                 <div className="flex items-center space-x-2">
-                                  <span className="text-white font-medium">{child.name}</span>
+                                  <span className="font-medium text-white group-hover:text-cyan-400 transition-colors">
+                                    {child.name}
+                                  </span>
                                   {child.featured && (
-                                    <span className="px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-full">
+                                    <span className="px-2 py-1 bg-gradient-to-r from-purple-500 to-pink-500 text-xs text-white rounded-full">
                                       Featured
                                     </span>
                                   )}
                                 </div>
-                                <p className="text-white/60 text-sm">{child.description}</p>
+                                <p className="text-sm text-gray-400">{child.description}</p>
                               </div>
-                              <ArrowRight className="w-4 h-4 text-white/40" />
+                              <ArrowRight className="w-4 h-4 text-gray-500 group-hover:text-cyan-400 transition-colors" />
                             </Link>
                           ))}
                         </div>
@@ -338,31 +307,45 @@ export default function UltraFuturisticNavigation2036() {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </div>
+              </motion.div>
             ))}
           </div>
 
-          {/* Right Side Actions */}
+          {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Link
-              href="/contact"
-              className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-lg font-medium hover:from-cyan-600 hover:to-purple-600 transition-all duration-300 shadow-lg shadow-cyan-500/25"
+            <motion.button
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="px-6 py-2 text-gray-300 hover:text-white transition-colors duration-200"
+            >
+              <Search className="w-5 h-5" />
+            </motion.button>
+            
+            <motion.button
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25"
             >
               Get Started
-            </Link>
+            </motion.button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
+          {/* Mobile menu button */}
+          <motion.button
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 text-white hover:text-cyan-400 transition-colors"
+            className="lg:hidden p-2 rounded-lg text-gray-300 hover:text-white hover:bg-gray-800 transition-colors duration-200"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          </motion.button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Enhanced Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -370,55 +353,54 @@ export default function UltraFuturisticNavigation2036() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden bg-black/95 backdrop-blur-xl border-t border-white/10"
+            className="lg:hidden bg-gray-900/95 backdrop-blur-xl border-t border-gray-700/50"
           >
             <div className="px-4 py-6 space-y-4">
               {navigationItems.map((item) => (
-                <div key={item.name}>
+                <div key={item.name} className="space-y-2">
                   <button
                     onClick={() => toggleDropdown(item.name)}
-                    className="flex items-center justify-between w-full p-3 text-left text-white hover:bg-white/5 rounded-lg transition-colors"
+                    className="flex items-center justify-between w-full p-3 text-left text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-xl transition-all duration-200"
                   >
                     <div className="flex items-center space-x-3">
                       {item.icon}
                       <span className="font-medium">{item.name}</span>
-                      {item.badge && (
-                        <span className="px-2 py-1 text-xs bg-gradient-to-r from-cyan-500 to-purple-500 text-white rounded-full">
-                          {item.badge}
-                        </span>
-                      )}
                     </div>
-                    <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
                       activeDropdown === item.name ? 'rotate-180' : ''
                     }`} />
                   </button>
                   
-                  {activeDropdown === item.name && (
-                    <div className="ml-6 mt-2 space-y-2">
-                      {item.children?.map((child) => (
-                        <Link
-                          key={child.name}
-                          href={normalizeHref(child.href)}
-                          onClick={closeAllDropdowns}
-                          className="flex items-center space-x-3 p-2 text-white/80 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
-                        >
-                          {child.icon}
-                          <span>{child.name}</span>
-                        </Link>
-                      ))}
-                    </div>
-                  )}
+                  <AnimatePresence>
+                    {activeDropdown === item.name && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="ml-8 space-y-2"
+                      >
+                        {item.children?.map((child) => (
+                          <Link
+                            key={child.name}
+                            href={normalizeHref(child.href)}
+                            onClick={closeAllDropdowns}
+                            className="flex items-center space-x-3 p-3 text-gray-400 hover:text-white hover:bg-gray-800/50 rounded-lg transition-all duration-200"
+                          >
+                            {child.icon}
+                            <span>{child.name}</span>
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               ))}
               
-              <div className="pt-4 border-t border-white/10">
-                <Link
-                  href="/contact"
-                  onClick={closeAllDropdowns}
-                  className="block w-full px-4 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 text-white text-center rounded-lg font-medium hover:from-cyan-600 hover:to-purple-600 transition-all duration-300"
-                >
+              <div className="pt-4 border-t border-gray-700/50">
+                <button className="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-medium rounded-xl hover:from-cyan-600 hover:to-blue-700 transition-all duration-300">
                   Get Started
-                </Link>
+                </button>
               </div>
             </div>
           </motion.div>

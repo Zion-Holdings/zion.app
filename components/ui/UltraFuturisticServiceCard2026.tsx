@@ -1,4 +1,17 @@
 import React, { useState, useCallback } from 'react';
+import { motion } from 'framer-motion';
+import { 
+  ArrowRight, 
+  Check, 
+  Star, 
+  Zap, 
+  Brain, 
+  Atom, 
+  Shield, 
+  Rocket,
+  TrendingUp,
+  Award
+} from 'lucide-react';
 
 interface Service {
   id: string;
@@ -31,64 +44,80 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
   const [isHovered, setIsHovered] = useState(false);
   const [isExpanded, setIsExpanded] = useState(false);
 
-  // Get variant-specific styles
+  // Get variant-specific styles with enhanced colors
   const getVariantStyles = useCallback((variant: string) => {
     switch (variant) {
       case 'quantum':
         return {
-          border: 'border-cyan-500/30 hover:border-cyan-400/60',
-          gradient: 'from-cyan-500/20 to-blue-500/20',
+          border: 'border-cyan-500/40 hover:border-cyan-400/80',
+          gradient: 'from-cyan-500/20 via-blue-500/20 to-cyan-600/20',
           text: 'text-cyan-400',
-          accent: 'bg-cyan-500/20'
+          accent: 'bg-gradient-to-r from-cyan-500/30 to-blue-500/30',
+          button: 'from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700',
+          shadow: 'hover:shadow-2xl hover:shadow-cyan-500/25'
         };
       case 'ai':
         return {
-          border: 'border-purple-500/30 hover:border-purple-400/60',
-          gradient: 'from-purple-500/20 to-pink-500/20',
+          border: 'border-purple-500/40 hover:border-purple-400/80',
+          gradient: 'from-purple-500/20 via-pink-500/20 to-purple-600/20',
           text: 'text-purple-400',
-          accent: 'bg-purple-500/20'
+          accent: 'bg-gradient-to-r from-purple-500/30 to-pink-500/30',
+          button: 'from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700',
+          shadow: 'hover:shadow-2xl hover:shadow-purple-500/25'
         };
       case 'automation':
         return {
-          border: 'border-green-500/30 hover:border-green-400/60',
-          gradient: 'from-green-500/20 to-emerald-500/20',
-          text: 'text-green-400',
-          accent: 'bg-green-500/20'
+          border: 'border-emerald-500/40 hover:border-emerald-400/80',
+          gradient: 'from-emerald-500/20 via-green-500/20 to-emerald-600/20',
+          text: 'text-emerald-400',
+          accent: 'bg-gradient-to-r from-emerald-500/30 to-green-500/30',
+          button: 'from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700',
+          shadow: 'hover:shadow-2xl hover:shadow-emerald-500/25'
         };
       case 'it':
         return {
-          border: 'border-blue-500/30 hover:border-blue-400/60',
-          gradient: 'from-blue-500/20 to-indigo-500/20',
+          border: 'border-blue-500/40 hover:border-blue-400/80',
+          gradient: 'from-blue-500/20 via-indigo-500/20 to-blue-600/20',
           text: 'text-blue-400',
-          accent: 'bg-blue-500/20'
+          accent: 'bg-gradient-to-r from-blue-500/30 to-indigo-500/30',
+          button: 'from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700',
+          shadow: 'hover:shadow-2xl hover:shadow-blue-500/25'
         };
       case 'emerging':
         return {
-          border: 'border-yellow-500/30 hover:border-yellow-400/60',
-          gradient: 'from-yellow-500/20 to-orange-500/20',
-          text: 'text-yellow-400',
-          accent: 'bg-yellow-500/20'
+          border: 'border-amber-500/40 hover:border-amber-400/80',
+          gradient: 'from-amber-500/20 via-orange-500/20 to-amber-600/20',
+          text: 'text-amber-400',
+          accent: 'bg-gradient-to-r from-amber-500/30 to-orange-500/30',
+          button: 'from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700',
+          shadow: 'hover:shadow-2xl hover:shadow-amber-500/25'
         };
       case 'enterprise':
         return {
-          border: 'border-indigo-500/30 hover:border-indigo-400/60',
-          gradient: 'from-indigo-500/20 to-purple-500/20',
+          border: 'border-indigo-500/40 hover:border-indigo-400/80',
+          gradient: 'from-indigo-500/20 via-purple-500/20 to-indigo-600/20',
           text: 'text-indigo-400',
-          accent: 'bg-indigo-500/20'
+          accent: 'bg-gradient-to-r from-indigo-500/30 to-purple-500/30',
+          button: 'from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700',
+          shadow: 'hover:shadow-2xl hover:shadow-indigo-500/25'
         };
       case 'premium':
         return {
-          border: 'border-amber-500/30 hover:border-amber-400/60',
-          gradient: 'from-amber-500/20 to-yellow-500/20',
+          border: 'border-amber-500/40 hover:border-amber-400/80',
+          gradient: 'from-amber-500/20 via-yellow-500/20 to-amber-600/20',
           text: 'text-amber-400',
-          accent: 'bg-amber-500/20'
+          accent: 'bg-gradient-to-r from-amber-500/30 to-yellow-500/30',
+          button: 'from-amber-500 to-yellow-600 hover:from-amber-600 hover:to-yellow-700',
+          shadow: 'hover:shadow-2xl hover:shadow-amber-500/25'
         };
       default:
         return {
-          border: 'border-white/20 hover:border-white/40',
-          gradient: 'from-white/10 to-white/5',
-          text: 'text-white',
-          accent: 'bg-white/10'
+          border: 'border-gray-500/40 hover:border-gray-400/80',
+          gradient: 'from-gray-500/20 via-slate-500/20 to-gray-600/20',
+          text: 'text-gray-400',
+          accent: 'bg-gradient-to-r from-gray-500/30 to-slate-500/30',
+          button: 'from-gray-500 to-slate-600 hover:from-gray-600 hover:to-slate-700',
+          shadow: 'hover:shadow-2xl hover:shadow-gray-500/25'
         };
     }
   }, []);
@@ -98,110 +127,170 @@ const UltraFuturisticServiceCard2026: React.FC<UltraFuturisticServiceCard2026Pro
   const handleCardClick = useCallback(() => {
     if (onClick) {
       onClick();
+    } else {
+      setIsExpanded(!isExpanded);
     }
-  }, [onClick]);
+  }, [onClick, isExpanded]);
 
-  const toggleExpansion = useCallback(() => {
-    setIsExpanded(!isExpanded);
-  }, [isExpanded]);
+  const getCategoryIcon = (category: string) => {
+    switch (category.toLowerCase()) {
+      case 'ai':
+        return <Brain className="w-5 h-5" />;
+      case 'quantum':
+        return <Atom className="w-5 h-5" />;
+      case 'automation':
+        return <Zap className="w-5 h-5" />;
+      case 'it':
+        return <Shield className="w-5 h-5" />;
+      case 'emerging':
+        return <Rocket className="w-5 h-5" />;
+      case 'enterprise':
+        return <TrendingUp className="w-5 h-5" />;
+      default:
+        return <Award className="w-5 h-5" />;
+    }
+  };
 
   return (
-    <div
-      className={`group relative overflow-hidden rounded-2xl transition-all duration-500 transform hover:scale-105 cursor-pointer ${className}`}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      whileHover={{ y: -5 }}
+      className={`relative group cursor-pointer transition-all duration-500 ${className}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={handleCardClick}
-      role="button"
-      tabIndex={0}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          handleCardClick();
-        }
-      }}
-      aria-label={`${service.name} service card`}
     >
-      {/* Background */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${variantStyles.gradient} ${variantStyles.border} transition-all duration-500`} />
-      
-      {/* Glow Effect */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${variantStyles.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500 blur-xl`} />
-      
-      {/* Content */}
-      <div className="relative z-10 p-6 h-full flex flex-col">
-        {/* Header */}
-        <div className="flex items-start justify-between mb-4">
-          <div className="text-4xl mb-3" aria-hidden="true">
-            {service.icon}
+      {/* Popular Badge */}
+      {service.popular && (
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.3, delay: 0.2 }}
+          className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10"
+        >
+          <div className="px-4 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 text-white text-xs font-semibold rounded-full shadow-lg flex items-center space-x-1">
+            <Star className="w-3 h-3 fill-current" />
+            <span>Most Popular</span>
           </div>
-          {service.popular && (
-            <div className={`px-3 py-1 rounded-full text-xs font-semibold ${variantStyles.accent} ${variantStyles.text}`}>
-              Popular
-            </div>
-          )}
+        </motion.div>
+      )}
+
+      {/* Main Card */}
+      <motion.div
+        animate={{
+          scale: isHovered ? 1.02 : 1,
+          rotateY: isHovered ? 2 : 0
+        }}
+        transition={{ duration: 0.3 }}
+        className={`relative overflow-hidden rounded-2xl border-2 ${variantStyles.border} bg-gradient-to-br ${variantStyles.gradient} backdrop-blur-sm transition-all duration-500 ${variantStyles.shadow}`}
+      >
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_50%)]" />
         </div>
 
-        {/* Service Info */}
-        <div className="flex-1">
-          <h3 className={`text-xl font-bold mb-2 ${variantStyles.text}`}>
-            {service.name}
-          </h3>
-          <p className="text-gray-300 text-sm mb-3">
-            {service.tagline}
-          </p>
-          
+        {/* Content */}
+        <div className="relative p-6">
+          {/* Header */}
+          <div className="flex items-start justify-between mb-4">
+            <div className="flex items-center space-x-3">
+              <div className={`w-12 h-12 ${variantStyles.accent} rounded-xl flex items-center justify-center text-2xl`}>
+                {service.icon}
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white mb-1">{service.name}</h3>
+                <p className="text-sm text-gray-300">{service.tagline}</p>
+              </div>
+            </div>
+            <div className="flex items-center space-x-1 text-yellow-400">
+              {getCategoryIcon(service.category)}
+            </div>
+          </div>
+
+          {/* Description */}
+          <p className="text-gray-300 mb-6 leading-relaxed">{service.description}</p>
+
           {/* Price */}
-          <div className="mb-4">
-            <span className="text-2xl font-bold text-white">
-              {service.price}
-            </span>
-            <span className="text-gray-400 text-sm ml-1">
-              {service.period}
-            </span>
+          <div className="mb-6">
+            <div className="flex items-baseline space-x-2">
+              <span className="text-3xl font-bold text-white">{service.price}</span>
+              <span className="text-gray-400">/{service.period}</span>
+            </div>
           </div>
 
           {/* Features */}
-          <div className="space-y-2 mb-4">
-            {service.features.slice(0, isExpanded ? undefined : 3).map((feature, index) => (
-              <div key={index} className="flex items-center text-sm text-gray-300">
-                <div className={`w-2 h-2 rounded-full mr-3 ${variantStyles.accent}`} />
-                {feature}
-              </div>
-            ))}
+          <div className="mb-6">
+            <h4 className="text-sm font-semibold text-gray-300 mb-3">Key Features:</h4>
+            <div className="space-y-2">
+              {service.features.slice(0, isExpanded ? service.features.length : 3).map((feature, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  className="flex items-center space-x-2 text-sm text-gray-300"
+                >
+                  <Check className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                  <span>{feature}</span>
+                </motion.div>
+              ))}
+            </div>
+            
+            {/* Show More/Less */}
+            {service.features.length > 3 && (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsExpanded(!isExpanded);
+                }}
+                className="mt-3 text-sm text-cyan-400 hover:text-cyan-300 transition-colors duration-200 flex items-center space-x-1"
+              >
+                <span>{isExpanded ? 'Show Less' : `Show ${service.features.length - 3} More`}</span>
+                <motion.div
+                  animate={{ rotate: isExpanded ? 180 : 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <ArrowRight className="w-3 h-3" />
+                </motion.div>
+              </button>
+            )}
           </div>
 
-          {/* Show More/Less */}
-          {service.features.length > 3 && (
-            <button
-              onClick={toggleExpansion}
-              className={`text-sm ${variantStyles.text} hover:underline focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-cyan-400`}
-            >
-              {isExpanded ? 'Show Less' : `Show ${service.features.length - 3} More`}
-            </button>
-          )}
+          {/* CTA Button */}
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className={`w-full py-3 px-6 bg-gradient-to-r ${variantStyles.button} text-white font-semibold rounded-xl transition-all duration-300 flex items-center justify-center space-x-2 group/btn`}
+          >
+            <span>Get Started</span>
+            <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-200" />
+          </motion.button>
         </div>
 
-        {/* Action Button */}
-        <button
-          className={`w-full mt-4 py-3 px-4 rounded-lg font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black ${
-            variant === 'default'
-              ? 'bg-white/10 text-white hover:bg-white/20 focus:ring-white/40'
-              : `bg-${variantStyles.text.replace('text-', '')}/20 text-${variantStyles.text.replace('text-', '')} hover:bg-${variantStyles.text.replace('text-', '')}/30 focus:ring-${variantStyles.text.replace('text-', '')}/40`
-          }`}
-          onClick={(e) => {
-            e.stopPropagation();
-            handleCardClick();
-          }}
-        >
-          Get Started
-        </button>
-      </div>
+        {/* Hover Effects */}
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          initial={false}
+        />
+      </motion.div>
 
-      {/* Hover Effects */}
-      {isHovered && (
-        <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      )}
-    </div>
+      {/* Floating Elements */}
+      <motion.div
+        className="absolute -top-2 -right-2 w-4 h-4 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+        animate={{
+          scale: [1, 1.2, 1],
+          rotate: [0, 180, 360]
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "linear"
+        }}
+      />
+    </motion.div>
   );
 };
 
