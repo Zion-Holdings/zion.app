@@ -358,3 +358,9 @@
 2025-08-23 22:58:21 - Resolving conflicts in src/context/ThemeContext.tsx for branch 9qozr5-codex/implement-light/dark-theme-with-persistence
 2025-08-23 22:58:23 - Merge conflicts detected in 9zcb49-codex/fix-npm-eio-error-during-install
 2025-08-23 22:58:23 - Resolving conflicts in setup.sh for branch 9zcb49-codex/fix-npm-eio-error-during-install
+2025-08-23 22:58:24 - Merge conflicts detected in a12zhz-codex/support-metric--imperial-units
+2025-08-23 22:58:24 - Resolving conflicts in api/shipping-rates.js for branch a12zhz-codex/support-metric--imperial-units
+2025-08-23 22:58:24 - Resolving conflicts in src/components/CheckoutShippingOptions.tsx for branch a12zhz-codex/support-metric--imperial-units
+2025-08-23 22:58:24 - Resolving conflicts in src/main.tsx for branch a12zhz-codex/support-metric--imperial-units
+2025-08-23 22:58:24 - Resolving conflicts in src/pages/Checkout.tsx for branch a12zhz-codex/support-metric--imperial-units
+2025-08-23 22:58:24 - Resolving conflicts in src/pages/EquipmentDetail.tsx for branch a12zhz-codex/support-metric--imperial-units
