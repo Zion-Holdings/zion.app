@@ -1,8 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Performance optimizations
+  // Enable React strict mode for better development experience
+  reactStrictMode: true,
+  
+  // Enable SWC minification for faster builds
+  swcMinify: true,
+  
+  // Enable experimental features for better performance
   experimental: {
+    // Enable modern React features
+    optimizeCss: true,
     optimizePackageImports: ['lucide-react', 'framer-motion'],
+    
+    // Enable modern image optimization
     turbo: {
       rules: {
         '*.svg': {
@@ -11,20 +21,31 @@ const nextConfig = {
         },
       },
     },
+
+    // Enable modern bundling
+    esmExternals: true,
+    
+    // Enable modern CSS features
+    cssChunking: true,
+    
+    // Enable modern JavaScript features
+    modernCss: true,
   },
-  
-  // Image optimization
+
+  // Image optimization configuration
   images: {
     formats: ['image/webp', 'image/avif'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60,
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
 
-  // Bundle analyzer (optional)
+  // Webpack configuration for better performance
   webpack: (config, { dev, isServer }) => {
-    // Bundle splitting optimizations
-    if (!dev && !isServer) {
+    // Optimize bundle splitting
+    if (!isServer) {
       config.optimization.splitChunks = {
         chunks: 'all',
         cacheGroups: {
@@ -51,16 +72,16 @@ const nextConfig = {
       use: ['@svgr/webpack'],
     });
 
+    // Handle SVG files
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+
     return config;
   },
 
-  // Compression
-  compress: true,
-  
-  // Powered by header removal
-  poweredByHeader: false,
-  
-  // Security headers
+  // Headers for better security and performance
   async headers() {
     return [
       {
@@ -84,6 +105,24 @@ const nextConfig = {
           },
         ],
       },
+      {
+        source: '/api/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600, stale-while-revalidate=86400',
+          },
+        ],
+      },
+      {
+        source: '/_next/static/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
     ];
   },
 
@@ -103,15 +142,52 @@ const nextConfig = {
     ];
   },
 
-  // Rewrites for dynamic routes
+  // Rewrites for better routing
   async rewrites() {
     return [
       {
-        source: '/api/:path*',
-        destination: '/api/:path*',
+        source: '/sitemap.xml',
+        destination: '/api/sitemap',
+      },
+      {
+        source: '/robots.txt',
+        destination: '/api/robots',
       },
     ];
   },
+
+  // Environment variables
+  env: {
+    CUSTOM_KEY: process.env.CUSTOM_KEY,
+  },
+
+  // Enable compression
+  compress: true,
+
+  // Enable powered by header removal
+  poweredByHeader: false,
+
+  // Enable trailing slash for better SEO
+  trailingSlash: false,
+
+  // Enable page extensions
+  pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
+
+  // Enable source maps in development
+  productionBrowserSourceMaps: false,
+
+  // Bundle analyzer configuration
+  ...(process.env.ANALYZE === 'true' && {
+    webpack: (config) => {
+      config.plugins.push(
+        new (require('webpack-bundle-analyzer').BundleAnalyzerPlugin)({
+          analyzerMode: 'static',
+          openAnalyzer: false,
+        })
+      );
+      return config;
+    },
+  }),
 };
 
 module.exports = nextConfig;
