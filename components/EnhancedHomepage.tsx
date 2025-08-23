@@ -327,7 +327,7 @@ const EnhancedHomepage: React.FC = () => {
                     description: service.description,
                     category: service.category,
                     type: "Micro SAAS",
-                    features: service.features,
+                    features: service.features || [],
                     slug: service.id
                   }}
                   variant="default"
