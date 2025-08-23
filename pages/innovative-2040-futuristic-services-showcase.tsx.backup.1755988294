@@ -45,10 +45,17 @@ interface Service {
     address?: string;
     website: string;
   };
+<<<<<<< HEAD
+  realImplementation?: boolean | string;
+  implementationDetails?: string;
+  launchDate?: string;
+  customers: number | string;
+=======
   realImplementation?: string | boolean;
   implementationDetails?: string;
   launchDate?: string;
   customers: string | number;
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-e06c
   rating: number;
   reviews: number;
   benefits?: string[];
@@ -61,6 +68,9 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
   const [sortBy, setSortBy] = useState<'name' | 'price' | 'popularity' | 'category'>('name');
   const [isLoading, setIsLoading] = useState(true);
 
+<<<<<<< HEAD
+  // Combine all services with proper mapping
+=======
   // Helper function to safely render prices
   const renderPrice = (price: any) => {
     if (typeof price === 'string') return price;
@@ -71,6 +81,7 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
   };
 
   // Combine all services
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-e06c
   const allServices: Service[] = [
     ...innovative2040FuturisticServices.map(service => ({
       id: service.id,
@@ -389,7 +400,11 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                     {/* Price */}
                     <div className="flex items-center justify-between mb-4">
                       <div className="text-2xl font-bold text-cyan-400">
+<<<<<<< HEAD
+                        {typeof service.price === 'string' ? service.price : 'Contact for pricing'}
+=======
                         {renderPrice(service.price)}
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-e06c
                         <span className="text-sm text-gray-400">
                           /month
                         </span>
@@ -491,7 +506,11 @@ const Innovative2040FuturisticServicesShowcase: React.FC = () => {
                           </div>
                           <div className="text-right">
                                                        <div className="text-3xl font-bold text-cyan-400 mb-1">
+<<<<<<< HEAD
+                             {typeof service.price === 'string' ? service.price : 'Contact for pricing'}
+=======
                              {renderPrice(service.price)}
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-e06c
                              <span className="text-lg text-gray-400">
                                /month
                              </span>

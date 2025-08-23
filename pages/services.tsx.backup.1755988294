@@ -77,6 +77,23 @@ const getServiceCategory = (service: any) => {
 
 // Helper function to get service pricing
 const getServicePricing = (service: any) => {
+<<<<<<< HEAD
+  // Debug logging to identify problematic services
+  if (!service.price && !service.pricing) {
+    console.warn('Service missing price field:', service.id, service.name);
+    return 'Contact for pricing';
+  }
+  
+  if (service.pricing?.starter) return service.pricing.starter;
+  if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
+  if (service.price?.monthly) return `$${service.price.monthly}/month`;
+  if (typeof service.price === 'string') return service.price;
+  if (service.price && typeof service.price === 'object') {
+    if (service.price.monthly) return `$${service.price.monthly}/month`;
+    if (service.price.starter) return service.price.starter;
+  }
+  return 'Contact for pricing';
+=======
   try {
     if (service.pricing?.starter) return String(service.pricing.starter);
     if (service.pricing?.monthly) return `$${service.pricing.monthly}/month`;
@@ -90,6 +107,7 @@ const getServicePricing = (service: any) => {
   } catch (error) {
     return 'Contact for pricing';
   }
+>>>>>>> origin/cursor/website-audit-content-update-and-deployment-e06c
 };
 
 // Helper function to get service features
