@@ -29,7 +29,12 @@ jobs:
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
 
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+      - name: Promote and update front content
+        run: |
+          node automation/front-index-advertiser.cjs || true
+          node automation/front-index-directory-builder.cjs || true
+          node automation/front-index-auto-advertiser.cjs || true
+          node automation/front-actions-advertiser.cjs || true
+          node automation/homepage-updater.cjs || true
+          node scripts/generate-readme.js
 

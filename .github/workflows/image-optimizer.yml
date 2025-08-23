@@ -1,8 +1,8 @@
-name: Dead Code Report
+name: Image Optimizer
 
 on:
   schedule:
-    - cron: '7 */6 * * *'
+    - cron: '29 */6 * * *'
   workflow_dispatch: {}
 
 permissions:
@@ -10,11 +10,11 @@ permissions:
   actions: read
 
 concurrency:
-  group: dead-code-report-${{ github.ref }}
+  group: image-optimizer-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
-  analyze:
+  optimize:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -31,8 +31,8 @@ jobs:
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
 
-      - name: Run dead code scanner
-        run: node automation/dead-code-scanner.cjs || true
+      - name: Run image optimizer
+        run: node automation/image-optimizer.cjs || true
 
       - name: Lint and Build (non-blocking)
         run: |
@@ -49,7 +49,7 @@ jobs:
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add -A
-            git commit -m "chore(automation): dead code report updates [skip ci]"
+            git commit -m "chore(automation): image optimization updates [skip ci]"
             git push origin HEAD:main
           else
             echo "No changes to push"
