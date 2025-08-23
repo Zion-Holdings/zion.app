@@ -10,7 +10,7 @@ import {
 // Import our new service data
 import { advancedAIAutomationServices2025 } from '../data/2025-advanced-ai-automation-services';
 import { innovative2025ITInfrastructureServices } from '../data/2025-innovative-it-infrastructure-services';
-import { innovative2025MicroSaasServices } from '../data/2025-innovative-micro-saas-services';
+import { innovativeMicroSaasSolutions2025 } from '../data/2025-innovative-micro-saas-solutions';
 import { cuttingEdgeAIServices2025 } from '../data/2025-cutting-edge-ai-services';
 
 // Import existing service data
@@ -121,8 +121,8 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
   // Combine all services
   const allServices: UnifiedService[] = [
     ...advancedAIAutomationServices2025.map(normalizeService),
-          ...innovative2025ITInfrastructureServices.map(normalizeService),
-          ...innovative2025MicroSaasServices.map(normalizeService),
+    ...innovative2025ITInfrastructureServices.map(normalizeService),
+    ...innovativeMicroSaasSolutions2025.map(normalizeService),
     ...cuttingEdgeAIServices2025.map(normalizeService),
     ...realMicroSaasServices.map(normalizeService),
     ...innovativeAIServices.map(normalizeService),
@@ -186,7 +186,7 @@ const Comprehensive2025ServicesShowcase: React.FC = () => {
         title="Comprehensive 2025 Services Showcase - Zion Tech Group"
         description="Explore our comprehensive portfolio of innovative AI automation, IT infrastructure, micro SAAS solutions, and cutting-edge AI services. Transform your business with Zion Tech Group."
         keywords={["AI automation", "IT infrastructure", "micro SAAS", "AI services", "business solutions", "technology services"]}
-        ogImage="https://ziontechgroup.com/og-image-2025-services.jpg"
+        image="https://ziontechgroup.com/og-image-2025-services.jpg"
       />
 
       {/* Hero Section */}

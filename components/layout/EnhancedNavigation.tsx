@@ -176,6 +176,18 @@ const navigationItems: NavigationItem[] = [
         href: '/white-papers',
         icon: <FileText className="w-4 h-4" />,
         description: 'In-depth research papers'
+      },
+      {
+        label: 'Case Studies',
+        href: '/case-studies',
+        icon: <FileText className="w-4 h-4" />,
+        description: 'Success stories and implementations'
+      },
+      {
+        label: 'Training',
+        href: '/training',
+        icon: <Award className="w-4 h-4" />,
+        description: 'Professional development courses'
       }
     ]
   },

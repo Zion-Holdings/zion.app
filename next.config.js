@@ -123,19 +123,19 @@ const nextConfig = {
     ];
   },
 
-  // Rewrites for API routes
-  async rewrites() {
-    return [
-      {
-        source: '/api/analytics',
-        destination: '/api/analytics',
-      },
-      {
-        source: '/api/error-reporting',
-        destination: '/api/error-reporting',
-      },
-    ];
-  },
+  // Rewrites for API routes (removed since using Netlify Functions for static export)
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: '/api/analytics',
+  //       destination: '/api/analytics',
+  //     },
+  //     {
+  //       source: '/api/error-reporting',
+  //       destination: '/api/error-reporting',
+  //     },
+  //   ];
+  // },
 
   // Environment variables
   env: {
@@ -158,7 +158,7 @@ const nextConfig = {
   assetPrefix: '',
 
   // Output configuration
-  output: 'standalone',
+  output: 'export',
 };
 
 module.exports = nextConfig;
