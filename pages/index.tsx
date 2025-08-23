@@ -6,7 +6,7 @@ import ErrorBoundary from '../components/ErrorBoundary';
 import PerformanceOptimizer from '../components/PerformanceOptimizer';
 import AccessibilityEnhancer from '../components/AccessibilityEnhancer';
 import PerformanceMonitor from '../components/PerformanceMonitor';
-import MobileOptimizer from '../components/MobileOptimizer';
+
 
 const HomePage: React.FC = () => {
   return (
@@ -15,7 +15,9 @@ const HomePage: React.FC = () => {
       <AnalyticsTracker />
       <Homepage2045 />
       <PerformanceMonitor showUI={true} />
-      <AccessibilityEnhancer showPanel={true} autoOptimize={true} />
+      <AccessibilityEnhancer>
+        <div></div>
+      </AccessibilityEnhancer>
       <PerformanceOptimizer showMetrics={true} autoOptimize={true} />
     </ErrorBoundary>
   );
